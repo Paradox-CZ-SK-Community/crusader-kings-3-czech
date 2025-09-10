@@ -1,0 +1,21 @@
+name: Upload Mod via SSH
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  upload_mod:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan -H ${{ secrets.VPS_IP }} >> ~/.ssh/known_hosts
+
+      - name: Run mod upload script on VPS
+        run: |
+          ssh ${{ secrets.VPS_USER }}@${{ secrets.VPS_IP }} "cd ~/ck3 && ./mod_upload.sh"

@@ -3,4 +3,4 @@ tags={
 	"Translation"
 }
 name="Čeština od komunity Paradox CZ/SK"
-supported_version="1.16.*"
+supported_version="1.17.*"

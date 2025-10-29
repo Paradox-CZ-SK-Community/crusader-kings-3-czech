@@ -1,7 +1,7 @@
 ﻿l_polish:
  administraction_tab_themes: "[GetPlayer.Custom('GetProvincePluralConceptNoTooltip')]"
  administraction_tab_families: "Šlechtické rody"
- ADMINISTRATIVE_GOVERNMENT_HEADER: "Administrativní vláda"
+ ADMINISTRATIVE_GOVERNMENT_HEADER: "[GetPlayer.GetTopLiege.GetGovernment.GetNameNoTooltip] vláda" # todo: Administrativní vláda
  ADMINISTRATIVE_GOVERNMENT_HOUSE_WITH_NAME: "#high Rod [DynastyHouse.GetBaseNameNoTooltip]#!"
  ADMINISTRATIVE_GOVERNMENT_HOUSE_HEAD: "[Concept('house_head_head','$game_concept_house_head_head$')|E]: [DynastyHouse.GetHeadOfHouse.GetShortUIName|U]"
  ADMINISTRATIVE_GOVERNMENT_FAMILY_RATING: "[Concept('powerful_family_rating_mid','$game_concept_powerful_family_rating_mid$')|E]: #V #underline [DynastyHouse.GetHousePower]#!#!"
@@ -9,12 +9,12 @@
  ADMINISTRATIVE_GOVERNMENT_IS_POWERFUL_FAMILY: "Je [Concept('powerful_family','$game_concept_powerful_family$')|E]"
  ADMINISTRATIVE_GOVERNMENT_IS_DOMINANT_FAMILY: "Je [Concept('dominant_family','$game_concept_dominant_family$')|E]"
  ADMINISTRATIVE_GOVERNMENT_BONUS_TOOLTIP: "#T [Concept('powerful_family_bonus_short','$game_concept_powerful_family_bonus_short$')|E]: [HousePowerBonus.GetName]#!\n[HousePowerBonus.GetDescription][AddLocalizationIf( And( Not( DynastyHouse.IsPowerful), Not( DynastyHouse.IsDominant) ), 'ADMINISTRATIVE_GOVERNMENT_BONUS_TOOLTIP_INACTIVE' )][AddLocalizationIf( DynastyHouse.IsDominant, 'ADMINISTRATIVE_GOVERNMENT_BONUS_TOOLTIP_DOMINANT' )]"
- ADMINISTRATIVE_GOVERNMENT_BONUS_TOOLTIP_INACTIVE: "\n\n@warning_icon! #warning [Concept('powerful_family_bonus_short','$game_concept_powerful_family_bonus_short$')|E] je neaktivní, protože [Concept('house','$game_concept_house$')|El] #bold není#! [Concept('powerful_family','vlivnou rodinou')|E]#!"
- ADMINISTRATIVE_GOVERNMENT_BONUS_TOOLTIP_DOMINANT: "\n\n@alert_icon! #alert_trial Tento [Concept('house','$game_concept_house$')|El] je [Concept('dominant_family','dominantní rodinou')|E] a [Concept('powerful_family_bonus_short','$game_concept_powerful_family_bonus_short$')|El] #bold nepřináší#! užitek [Concept('liege','lennímu pánovi')|E]"
+ ADMINISTRATIVE_GOVERNMENT_BONUS_TOOLTIP_INACTIVE: "$FAMILY_ATTRIBUTE_WINDOW_ALERT$" # todo: \n\n@warning_icon! #warning [Concept('powerful_family_bonus_short','$game_concept_powerful_family_bonus_short$')|E] je neaktivní, protože [Concept('house','$game_concept_house$')|El] #bold není#! [Concept('powerful_family','vlivnou rodinou')|E]#!
+ ADMINISTRATIVE_GOVERNMENT_BONUS_TOOLTIP_DOMINANT: "@alert_icon! #alert_trial Tato [house|E] je [dominant_family|E] a [DynastyHouse.GetHouseAspirationFlavorName] #bold neprospívá#! [liege|E]#!" # todo: \n\n@alert_icon! #alert_trial Tento [Concept('house','$game_concept_house$')|El] je [Concept('dominant_family','dominantní rodinou')|E] a [Concept('powerful_family_bonus_short','$game_concept_powerful_family_bonus_short$')|El] #bold nepřináší#! užitek [Concept('liege','lennímu pánovi')|E]
  ADMIN_GOVERNMENT_HOUSE_MEMBER_COUNT: "[DynastyHouse.GetNumberOfMembers] členů"
  ADMIN_WINDOW_MEMBERS_OF_HOUSE_TITLE: "Členové domu [DynastyHouse.GetBaseNameNoTooltip]"
  ADMIN_WINDOW_FAMILY_GROUP_HEADER: "$NAME$ #weak ($SIZE$)#!"
- ADMIN_WINDOW_THEME_NAME: "[Title.GetNameNoTooltip]"
+ ADMIN_WINDOW_THEME_NAME: "[Title.GetNameNoTooltip|U]" # todo: [Title.GetNameNoTooltip]
  ADMIN_WINDOW_THEME_HOLDER: "Držitel: [SelectLocalization( Character.IsValid, Character.GetShortUINameNoTooltip, 'ADMIN_WINDOW_THEME_GOVERNOR_EFFICIENCY_INVALID' )]"
  ADMIN_WINDOW_THEME_COUNTIES: "[Concept('de_jure','$game_concept_de_jure$')|e] [Concept('counties','$game_concept_counties$')|e] v [AdminVassalDetailView.GetTitle.GetHolder.Custom('GetProvinceConceptNoTooltip')]: #high [AdminVassalDetailView.GetNumCounties]#!"
  ADMIN_WINDOW_THEME_IMPERIAL_LANDS_HEADER: "Součást [Title.GetHolder.GetTitleAsNamePossessiveNoTooltip] [Concept('domain','domény')|e]"
@@ -31,41 +31,41 @@
  ADMIN_WINDOW_THEME_GOVERNOR_EFFICIENCY_LONG: "@governor_efficiency! [Concept('governor_efficiency','$game_concept_governor_efficiency$')|e]: $ADMIN_WINDOW_THEME_GOVERNOR_EFFICIENCY_VALID$"
  ADMIN_WINDOW_THEME_GOVERNOR_EFFICIENCY_TT: "[AddLocalizationIf( Character.IsValid, 'ADMIN_WINDOW_THEME_GOVERNOR_EFFICIENCY_VALID_TT' )]"
  ADMIN_WINDOW_THEME_GOVERNOR_EFFICIENCY_VALID_TT: "#T [Concept('governor_efficiency','$game_concept_governor_efficiency$')|e]: $ADMIN_WINDOW_THEME_GOVERNOR_EFFICIENCY_VALUE$#!\n#weak (Min: #N -50%#! - Max: #P +50%#!)#!\n\nZáklad: #N -100#!\n[Character.MakeScope().GetScriptValueDesc( 'governor_efficiency' )]"
- ADMIN_WINDOW_THEME_ADMINISTRATION_TYPE: "[Title.GetHolder.GetVassalContract.GetShortObligationLevelNameWithHighlightFor( 'administrative_themes' )]"
- ADMIN_WINDOW_THEME_ADMINISTRATION_TYPE_TEXT_ICON: "[Title.GetHolder.GetVassalContract.GetTextIconObligationLevelNameWithHighlightFor( 'administrative_themes' )]"
- ADMIN_WINDOW_THEME_ADMINISTRATION_LEVIES: "@soldier_icon! #high [AdministrativeThemeItem.GetLevies|0]#!"
- ADMIN_WINDOW_THEME_ADMINISTRATION_TAXES: "@gold_icon! #high [AdministrativeThemeItem.GetTaxes|2]#!"
+ ADMIN_WINDOW_THEME_ADMINISTRATION_TYPE: "[Title.GetHolder.GetVassalContract.GetAdminDivisionShortName]" # todo: [Title.GetHolder.GetVassalContract.GetShortObligationLevelNameWithHighlightFor( 'administrative_themes' )]
+ ADMIN_WINDOW_THEME_ADMINISTRATION_TYPE_TEXT_ICON: "[Title.GetHolder.GetVassalContract.GetAdminDivisionTextIcon]" # todo: [Title.GetHolder.GetVassalContract.GetTextIconObligationLevelNameWithHighlightFor( 'administrative_themes' )]
+ ADMIN_WINDOW_THEME_ADMINISTRATION_LEVIES: "@soldier_icon! #high [AdministrativeTitleItem.GetLevies|0]#!" # todo: @soldier_icon! #high [AdministrativeThemeItem.GetLevies|0]#!
+ ADMIN_WINDOW_THEME_ADMINISTRATION_TAXES: "@gold_icon! #high [AdministrativeTitleItem.GetTaxes|2]#!" # todo: @gold_icon! #high [AdministrativeThemeItem.GetTaxes|2]#!
  ADMIN_WINDOW_THEME_ADMINISTRATION_UNASSIGNED_COUNTIES: "Hrabství, která nejsou v [Concept('theme','tématu')|e]"
  ADMIN_WINDOW_THEME_ADMINISTRATION_ASSIGNED_KINGDOM_THEMES: "Přidělené [Concept('themes','$game_concept_themes$')|e] na úrovni [Concept('kingdom','$game_concept_kingdom$')|e]"
  ADMIN_WINDOW_THEME_ADMINISTRATION_ASSIGNED_DUCHY_THEMES: "Přidělené [Concept('themes','$game_concept_themes$')|e] na úrovni [Concept('duchy','$game_concept_duchy$')|e]"
  ADMIN_WINDOW_THEME_ADMINISTRATION_UNASSIGNED_KINGDOM_THEMES: "Nepřidělené [Concept('themes','$game_concept_themes$')|e] na úrovni [Concept('kingdom','$game_concept_kingdom$')|e]"
  ADMIN_WINDOW_THEME_ADMINISTRATION_UNASSIGNED_DUCHY_THEMES: "Nepřidělené [Concept('themes','$game_concept_themes$')|e] na úrovni [Concept('duchy','$game_concept_duchy$')|e]"
- ADMIN_WINDOW_THEME_ADMINISTRATION_THEME_TT: "#T [Title.GetNameNoTooltip]#!\n#I Kliknutím zobrazíte podrobnosti#!"
+ ADMIN_WINDOW_THEME_ADMINISTRATION_THEME_TT: "#T [Title.GetNameNoTooltip|U]#!\n#I Kliknutím zobrazíte podrobnosti#!" # todo: #T [Title.GetNameNoTooltip]#!\n#I Kliknutím zobrazíte podrobnosti#!
  ADMIN_WINDOW_THEME_ADMINISTRATION_CURRENT_THEME: "Aktuální"
  ADMIN_WINDOW_THEME_ADMINISTRATION_SELECTED_THEME: "Vybrané"
- ADMIN_WINDOW_THEME_ADMINISTRATION_NO_VALID_SUCCESSOR_TT: "Toto [Concept('theme','$game_concept_theme$')|el] nemá platného kandidáta v linii následnictví a vrátí se k vrchnímu pánovi"
- ADMIN_WINDOW_THEME_ADMINISTRATION_LOCAL_PLAYER_HAS_CANDIDATE_WINNING_TT: "Váš kandidát v linii následnictví pro toto [Concept('theme','$game_concept_theme$')|e] vede"
- ADMIN_WINDOW_THEME_ADMINISTRATION_LOCAL_PLAYER_HAS_CANDIDATE_LOSING_TT: "Váš kandidát v linii následnictví pro toto [Concept('theme','$game_concept_theme$')|e] prohrává"
- ADMIN_WINDOW_THEME_ADMINISTRATION_LOCAL_PLAYER_HAS_INVESTED_WINNING_TT: "Investovali jste do kandidáta v linii následnictví pro toto [Concept('theme','$game_concept_theme$')|e], který vede"
- ADMIN_WINDOW_THEME_ADMINISTRATION_LOCAL_PLAYER_HAS_INVESTED_LOSING_TT: "Investovali jste do kandidáta v linii následnictví pro toto [Concept('theme','$game_concept_theme$')|e], který prohrává"
+ ADMIN_WINDOW_THEME_ADMINISTRATION_NO_VALID_SUCCESSOR_TT: "Tato [province|E] nemá platného kandidáta v [line_of_succession|E] a vrátí se k [top_liege|E]" # todo: Toto [Concept('theme','$game_concept_theme$')|el] nemá platného kandidáta v linii následnictví a vrátí se k vrchnímu pánovi
+ ADMIN_WINDOW_THEME_ADMINISTRATION_LOCAL_PLAYER_HAS_CANDIDATE_WINNING_TT: "Váš kandidát v [line_of_succession|E] pro tuto [province|E] vede" # todo: Váš kandidát v linii následnictví pro toto [Concept('theme','$game_concept_theme$')|e] vede
+ ADMIN_WINDOW_THEME_ADMINISTRATION_LOCAL_PLAYER_HAS_CANDIDATE_LOSING_TT: "Váš kandidát v [line_of_succession|E] pro tuto [province|E] prohrává" # todo: Váš kandidát v linii následnictví pro toto [Concept('theme','$game_concept_theme$')|e] prohrává
+ ADMIN_WINDOW_THEME_ADMINISTRATION_LOCAL_PLAYER_HAS_INVESTED_WINNING_TT: "Investovali jste do kandidáta v [line_of_succession|E] pro tuto [province|E], který vede" # todo: Investovali jste do kandidáta v linii následnictví pro toto [Concept('theme','$game_concept_theme$')|e], který vede
+ ADMIN_WINDOW_THEME_ADMINISTRATION_LOCAL_PLAYER_HAS_INVESTED_LOSING_TT: "Investovali jste do kandidáta v [line_of_succession|E] pro tuto [province|E], který prohrává" # todo: Investovali jste do kandidáta v linii následnictví pro toto [Concept('theme','$game_concept_theme$')|e], který prohrává
  ADMIN_WINDOW_THEME_GROUP_BY_HOUSE: "Seskupit podle [Concept('house','rodů')|E]"
  ADMIN_WINDOW_THEME_SORT_BY: "#T Pořadí řazení: [Select_CString( GovernmentAdministrationWindow.GetSortOrder, 'Vzestupně', 'Sestupně' )]\n#!\n#I Kliknutím přepnete#!"
- REPLACE_GOVERNOR_TOOLTIP: "#T Vyměnit guvernéra#!\n#warning Ještě není implementováno#!"
+ REPLACE_GOVERNOR_TOOLTIP: "#T Nahradit [Character.Custom('GetGovernorConceptNoTooltip')]#!\n#warning Ještě není implementováno#!" # todo: #T Vyměnit guvernéra#!\n#warning Ještě není implementováno#!
  ADMIN_WINDOW_THEME_GOVERNOR_EFFICIENCY_LABEL: "[Concept('governor_efficiency','$game_concept_governor_efficiency$')|E]:"
- ADMIN_WINDOW_HOUSE_DROPDOWN: "[Concept('themes','$game_concept_themes$')|E] držené [DynastyHouse.GetName]:"
- ADMIN_WINDOW_UNASSIGNED_THEME: "Nepřidělené [Concept('themes','$game_concept_themes$')|E]"
- ADMIN_WINDOW_ASSIGNED_THEME: "Přidělené [Concept('themes','$game_concept_themes$')|E]"
+ ADMIN_WINDOW_HOUSE_DROPDOWN: "[Title.GetHolder.Custom('GetProvincePluralConcept')] v držení [DynastyHouse.GetName]:" # todo: [Concept('themes','$game_concept_themes$')|E] držené [DynastyHouse.GetName]:
+ ADMIN_WINDOW_UNASSIGNED_THEME: "Nepřiřazené [Title.GetHolder.Custom('GetProvincePluralConcept')]" # todo: Nepřidělené [Concept('themes','$game_concept_themes$')|E]
+ ADMIN_WINDOW_ASSIGNED_THEME: "Přiřazené [Title.GetHolder.Custom('GetProvincePluralConcept')]" # todo: Přidělené [Concept('themes','$game_concept_themes$')|E]
  ADMIN_WINDOW_VASSAL_GOVERNMENT_TYPE: "[Title.GetHolder.GetGovernment.GetNameWithIcon]"
  ADMIN_WINDOW_VASSAL_KINGDOM: "toto [Concept('kingdom','$game_concept_kingdom$')|E]"
- ADMIN_VASSAL_DETAILS_TITLE_TIER: "[Title.GetRankConcept]-[Concept('title_tier','$game_concept_title_tier$')|E] [Title.GetTierAsNameNoTooltip]"
+ ADMIN_VASSAL_DETAILS_TITLE_TIER: "[Title.GetRankConcept]-[title_tier|E] [province|E]" # todo: [Title.GetRankConcept]-[Concept('title_tier','$game_concept_title_tier$')|E] [Title.GetTierAsNameNoTooltip]
  ADMIN_VASSAL_DETAILS_INCOME_HEADER: "Příjmy z [Title.GetTierAsName]"
- ADMIN_VASSAL_DETAILS_INCOME_DESCRIPTION: "Příjmy jsou ovlivněny efektivitou guvernéra"
- ADMIN_VASSAL_DETAILS_TAX_CONTRIBUTION: "[AdminVassalDetailView.GetTaxContribution|V]"
+ ADMIN_VASSAL_DETAILS_INCOME_DESCRIPTION: "Příjmy jsou ovlivněny efektivitou [Character.Custom('GetGovernorConceptPossessiveNoTooltip')]" # todo: Příjmy jsou ovlivněny efektivitou guvernéra
+ ADMIN_VASSAL_DETAILS_TAX_CONTRIBUTION: "[AdminVassalDetailView.GetTaxContribution|V2]" # todo: [AdminVassalDetailView.GetTaxContribution|V]
  ADMIN_VASSAL_DETAILS_LEVY_CONTRIBUTION: "[AdminVassalDetailView.GetLevyContribution|V0]"
  ADMIN_VASSAL_DETAILS_TROOP_CONTRIBUTION: "[AdminVassalDetailView.GetTroopContribution|V]"
- ADMIN_VASSAL_DETAILS_GOVERNOR_TITLE: "Guvernér:"
+ ADMIN_VASSAL_DETAILS_GOVERNOR_TITLE: "[Character.Custom('GetGovernorConceptNoTooltip')]:" # todo: Guvernér:
  ADMIN_VASSAL_DETAILS_REVOKE_BUTTON: "$revoke_governorship_interaction$"
- ADMIN_VASSAL_DETAILS_APPOINT_BUTTON: "Jmenovat guvernéra"
+ ADMIN_VASSAL_DETAILS_APPOINT_BUTTON: "Jmenovat [Character.Custom('GetGovernorConceptNoTooltip')]" # todo: Jmenovat guvernéra
  ADMIN_VASSAL_DETAILS_SUCCESSION_LABEL: "[Title.GetTierAsName] Nástupnictví"
  ADMIN_VASSAL_DETAILS_VOTE_FOR_SUCCESSOR_BUTTON: "$influence_candidacy_interaction$"
  ADMIN_VASSAL_DETAILS_SUCCESSOR_SCORES: "[AdminVassalSuccessorCandidate.GetScore|V0]"
@@ -73,16 +73,110 @@
  ADMIN_VASSAL_DETAILS_NO_SUCCESSORS: "Nejsou žádní významní kandidáti."
  ADMIN_VASSAL_CANDIDATE_SCORE_TT_HEADING: "[Concept('candidate_score','$game_concept_candidate_score$')|E]: [AdminVassalSuccessorCandidate.GetScore|V0]"
  ADMIN_VASSAL_MAP_MODE_TT_EFFICIENCY: "[Concept('governor_efficiency','$game_concept_governor_efficiency$')|E]: $ADMIN_WINDOW_THEME_GOVERNOR_EFFICIENCY$"
- ADMIN_VASSAL_MAP_MODE_TT_TAXES: "[Concept('tax','$game_concept_tax$')|E] příspěvek: @gold_icon! #high [ThemesTypeMapIcon.GetTaxes|2]#!"
- ADMIN_VASSAL_MAP_MODE_TT_TROOPS: "[Concept('levy','$game_concept_levy$')|E] příspěvek: @soldier_icon! #high [ThemesTypeMapIcon.GetTroops|0]#!"
- THEME_DUCHY_SORT_GOVERNOR_EFFICIENCY: "Efektivita guvernéra"
+ ADMIN_VASSAL_MAP_MODE_TT_TAXES: "Příspěvek na [tax|E]: @gold_icon! #high [AdminProvinceMapIcon.GetTaxes|2]#!" # todo: [Concept('tax','$game_concept_tax$')|E] příspěvek: @gold_icon! #high [ThemesTypeMapIcon.GetTaxes|2]#!
+ ADMIN_VASSAL_MAP_MODE_TT_TROOPS: "Příspěvek na [levy|E]: @soldier_icon! #high [AdminProvinceMapIcon.GetTroops|0]#!" # todo: [Concept('levy','$game_concept_levy$')|E] příspěvek: @soldier_icon! #high [ThemesTypeMapIcon.GetTroops|0]#!
+ THEME_DUCHY_SORT_GOVERNOR_EFFICIENCY: "Efektivita [GetPlayer.Custom('GetGovernorConceptNoTooltip')]" # todo: Efektivita guvernéra
  THEME_DUCHY_SORT_CANDIDATE_IN_SUCCESSION: "Kandidát v následnictví"
  THEME_DUCHY_SORT_KINGDOM: "De jure království"
  THEME_DUCHY_SORT_INCOME: "Příjmy"
  THEME_DUCHY_SORT_THEME_TROOPS: "Tematické jednotky"
  THEME_DUCHY_SORT_OBLIGATION_TYPE: "Typ povinnosti"
  THEME_DUCHY_SORT_SIZE: "Velikost"
- HEADER_IMPERIAL_FAMILY: "$game_concept_imperial_family$"
+ HEADER_IMPERIAL_FAMILY: "[GetPlayer.GetTopLiege.Custom('GetImperialFamilyType')]" # todo: $game_concept_imperial_family$
  HEADER_DOMINANT_FAMILIES: "[Concept('dominant_families','$game_concept_dominant_families$')|E]"
  HEADER_POWERFUL_FAMILIES: "[Concept('powerful_families','$game_concept_powerful_families$')|E]"
  HEADER_NOBLE_FAMILIES: "[Concept('noble_families','$game_concept_noble_families$')|E]"
+ administraction_tab_family: "Vaše rodina"  # todo: NEW TRANSLATION
+ admin_vassal_tab_overview: "Přehled"  # todo: NEW TRANSLATION
+ admin_vassal_tab_appointment: "[GetPlayer.Custom('GetGovernorConceptNoTooltip')] Jmenování"  # todo: NEW TRANSLATION
+ ADMINISTRATIVE_GOVERNMENT_BONUS_TOOLTIP_HEADING: "[DynastyHouse.GetHousePowerName][AddLocalizationIf( HouseAspiration.HasMultipleLevels, 'ADMINISTRATIVE_GOVERNMENT_BONUS_TOOLTIP_LEVELED_NAME' )]"  # todo: NEW TRANSLATION
+ ADMINISTRATIVE_GOVERNMENT_BONUS_TOOLTIP_LEVELED_NAME: " #weak ([HouseAspiration.GetLevelName( DynastyHouse.GetHouseAspirationLevelIndex )])#!"  # todo: NEW TRANSLATION
+ ADMINISTRATIVE_GOVERNMENT_BONUS_TOOLTIP_IMPERIAL: "Tento [house|E] je [imperial_family|E] a [house_head|E] získává bonusy od [powerful_families|E] pod jejich velením."  # todo: NEW TRANSLATION
+ ADMIN_WINDOW_FAMILY_GROUP_HEADER_MAX: "$NAME$ #weak ($SIZE$/$MAX$)#!"  # todo: NEW TRANSLATION
+ ADMIN_WINDOW_FAMILY_BLOC_LEADER: "Vůdce"  # todo: NEW TRANSLATION
+ ADMIN_WINDOW_HOUSE_LAND_SHARE: "@house_realm_county_control_icon! [DynastyHouse.GetHouseLandShareInRealm]"  # todo: NEW TRANSLATION
+ ADMIN_WINDOW_HOUSE_LAND_SHARE_TOOLTIP: "#T Počet spravovaných hrabství: [DynastyHouse.GetHouseLandShareInRealmShort]#!\nČlenové rodu [DynastyHouse.GetName] kontrolují [DynastyHouse.GetHouseLandShareInRealmShort] z [counties|E] v [Character.GetTopLiege.GetPrimaryTitle.GetNameNoTooltip].\n\nPři [EmptyScope.ScriptValue('dominant_family_threshold_value')|V0%] je [house|E] považován za [dominant_family|E]."  # todo: NEW TRANSLATION
+ ADMIN_WINDOW_HOUSE_LAND_SHARE_IN_REALM: "Kontroluje $SIZE|V1%$ hrabství"  # todo: NEW TRANSLATION
+ ADMIN_WINDOW_HOUSE_LAND_SHARE_IN_REALM_SHORT: "$SIZE|V1%$"  # todo: NEW TRANSLATION
+ ADMIN_WINDOW_HOUSE_RANK: "$VALUE|0O$"  # todo: NEW TRANSLATION
+ ADMIN_WINDOW_HOUSE_RANK_AND_POWER: "$VALUE|0O$ ($POWER$)"  # todo: NEW TRANSLATION
+ ADMIN_WINDOW_PROMINENT_MEMBERS: "Významní členové rodu"  # todo: NEW TRANSLATION
+ ADMIN_WINDOW_NO_FAMILY_MEMBERS: "Žádné postavy nebyly nalezeny"  # todo: NEW TRANSLATION
+ ADMIN_WINDOW_CHILD_EXAM: "Dětská zkouška"  # todo: NEW TRANSLATION
+ ADMIN_WINDOW_MERIT: "Zásluhy:"  # todo: NEW TRANSLATION
+ ADMIN_WINDOW_MERIT_CAPPED: "@warning_icon! #X Strop zásluh#!"  # todo: NEW TRANSLATION
+ ADMIN_WINDOW_MERIT_CAPPED_TT: "[SelectLocalization(Character.IsLocalPlayer, 'ADMIN_WINDOW_MERIT_CAPPED_TT_YOU', 'ADMIN_WINDOW_MERIT_CAPPED_TT_OTHER')]"  # todo: NEW TRANSLATION
+ ADMIN_WINDOW_MERIT_CAPPED_TT_YOU: "[Character.GetShortUINameNoTooltip|U] nemůže zlepšit vaše [merit_level|E], dokud neabsolvujete více [examinations|E]."  # todo: NEW TRANSLATION
+ ADMIN_WINDOW_MERIT_CAPPED_TT_OTHER: "[Character.GetShortUINameNoTooltip|U] nemůže zlepšit [Character.GetHerHis] [merit_level|E], dokud [Character.GetSheHe] neabsolvuje více [examinations|E]."  # todo: NEW TRANSLATION
+ ADMIN_WINDOW_COMPLETED_EXAMINATIONS: "Absolvované [examinations|E]:"  # todo: NEW TRANSLATION
+ ADMIN_WINDOW_APPOINTMENT_COOLDOWN_TT: "#T Nelze jmenovat#!\nNelze jmenovat alespoň do #italic at least#! [Character.GetNewAppointmentCooldownDate.GetString|V]\n\n[Character.GetAppointmentTimeoutText]"  # todo: NEW TRANSLATION
+ ADMIN_WINDOW_APPOINTMENT_ON_COOLDOWN: "#L Nelze jmenovat#!"  # todo: NEW TRANSLATION
+ recent_appointment_cooldown: "[CHARACTER.GetShortUIName|U] [CharWereWas( CHARACTER )] nedávno jmenován"  # todo: NEW TRANSLATION
+ ADMIN_WINDOW_BUTTON_FIND_APPOINTMENT: "Najít jmenování"  # todo: NEW TRANSLATION
+ ADMIN_WINDOW_BUTTON_PROMOTE_SCHEME: "Prosadit plán"  # todo: NEW TRANSLATION
+ ADMIN_WINDOW_FIND_APPOINTMENT_TITLE: "Dostupné provincie pro [Character.GetShortUINameNotMe]"  # todo: NEW TRANSLATION
+ ADMIN_WINDOW_FIND_APPOINTMENT_BACK_BUTTON_TT: "#T Zobrazit předchozí zobrazení#!\n#I Kliknutím se vraťte na $administraction_tab_family$#!"  # todo: NEW TRANSLATION
+ ADMIN_WINDOW_FIND_APPOINTMENT_GROUP_HEADER: "$NAME$ #weak ($SIZE$)#!"  # todo: NEW TRANSLATION
+ ADMIN_WINDOW_FIND_APPOINTMENT_ACTIVE: "Aktivní kandidatura"  # todo: NEW TRANSLATION
+ ADMIN_WINDOW_FIND_APPOINTMENT_POSSIBLE: "Možná jmenování"  # todo: NEW TRANSLATION
+ ADMIN_WINDOW_FIND_APPOINTMENT_SUCCESSION_LINE: "@appointment_score! $SCORE|V0$ požadováno pro první místo. Současná pozice: $ORDER$"  # todo: NEW TRANSLATION
+ ADMIN_WINDOW_FIND_APPOINTMENT_SUCCESSION_LINE_SHORT: "@appointment_score! $SCORE|V0$ požadováno pro první místo."  # todo: NEW TRANSLATION
+ ADMIN_WINDOW_FIND_APPOINTMENT_SUCCESSION_NOT_IN_LINE: "@appointment_score! $SCORE|V0$ požadováno pro první místo. Nemáte žádného kandidáta v linii nástupnictví."  # todo: NEW TRANSLATION
+ ADMIN_WINDOW_FIND_APPOINTMENT_SUCCESSION_LINE_WARNING: "#alert_trial @alert_icon! Již máte [Character.GetShortUIName] v linii nástupnictví.#!"  # todo: NEW TRANSLATION
+ ADMIN_WINDOW_FIND_APPOINTMENT_TAXES: "@gold_icon! [ProminentThemeItem.GetTaxes|V2]"  # todo: NEW TRANSLATION
+ ADMIN_WINDOW_FIND_APPOINTMENT_LEVIES: "@soldier_icon! [ProminentThemeItem.GetLevies|V0]"  # todo: NEW TRANSLATION
+ ADMIN_WINDOW_STATE_FAITH_COUNTIES: "$VALUE|V0$/$MAX|V0$ [counties|E]"  # todo: NEW TRANSLATION
+ ADMIN_WINDOW_THEME_TAXES: "@gold_icon! [AdministrativeTitleItem.GetTaxes|V2]"  # todo: NEW TRANSLATION
+ ADMIN_WINDOW_THEME_LEVIES: "@soldier_icon! [AdministrativeTitleItem.GetLevies|V0]"  # todo: NEW TRANSLATION
+ ADMIN_WINDOW_THEME_TITLE_TROOPS: "[AdministrativeTitleItem.GetTotalMaa|V0]"  # todo: NEW TRANSLATION
+ ADMIN_WINDOW_THEME_GOVERNOR_EFFICIENCY_NO_ICON: "[SelectLocalization( Character.IsValid, 'ADMIN_WINDOW_THEME_GOVERNOR_EFFICIENCY_VALID_NO_ICON', 'ADMIN_WINDOW_THEME_GOVERNOR_EFFICIENCY_INVALID' )]"  # todo: NEW TRANSLATION
+ ADMIN_WINDOW_THEME_GOVERNOR_EFFICIENCY_VALID_NO_ICON: "$ADMIN_WINDOW_THEME_GOVERNOR_EFFICIENCY_VALUE$"  # todo: NEW TRANSLATION
+ ADMIN_WINDOW_THEME_GOVERNOR_EFFICIENCY_TAX_LEVY_TT: "Upraveno o $ADMIN_WINDOW_THEME_GOVERNOR_EFFICIENCY_VALUE$ z [governor_efficiency|E]"  # todo: NEW TRANSLATION
+ ADMIN_WINDOW_GROUP_HEADER: "$NAME$ #weak ($SIZE$)#!"  # todo: NEW TRANSLATION
+ ADMIN_WINDOW_NON_ADMIN_THEME: "Neadministrativní [titles|E]"  # todo: NEW TRANSLATION
+ ADMIN_WINDOW_NON_ADMIN_THEME_FAIL_DEMAND_INTERACTION: "#X @warning_icon! Pouze [liege|E] postavy [Character.GetShortUIName] může požadovat administrativní správu nad [Title.GetName]#!"  # todo: NEW TRANSLATION
+ ADMIN_VASSAL_DETAILS_OVERVIEW_DESC: "Současná efektivita [Character.Custom('GetGovernorConceptPossessiveNoTooltip')] ovlivňuje příjmy z daní a odvodů i sílu provinční armády"  # todo: NEW TRANSLATION
+ ADMIN_VASSAL_DETAILS_LOCATION: "#T Poloha#!\nPoloha [Title.GetName]\n\n#I $GO_TO_CLICK$#!"  # todo: NEW TRANSLATION
+ ADMIN_VASSAL_DETAILS_TAX_EFFICIENCY_BONUS: "#low (#![AdminVassalDetailView.GetTaxEfficiencyBonus|1=]#low )#!"  # todo: NEW TRANSLATION
+ ADMIN_VASSAL_DETAILS_LEVY_EFFICIENCY_BONUS: "#low (#![AdminVassalDetailView.GetLevyEfficiencyBonus|1=]#low )#!"  # todo: NEW TRANSLATION
+ ADMIN_VASSAL_DETAILS_CURRENT_GOVERNOR: "Současný [Character.Custom('GetGovernorConceptNoTooltip')]"  # todo: NEW TRANSLATION
+ ADMIN_VASSAL_DETAILS_PROMOTE_BUTTON: "$start_promote_interaction$"  # todo: NEW TRANSLATION
+ ADMIN_VASSAL_DETAILS_PROMOTE_BUTTON_FOR: "$start_promote_interaction$ pro [Character.GetShortUINameNoTooltip]"  # todo: NEW TRANSLATION
+ ADMIN_VASSAL_DETAILS_VOTE_FOR_SUCCESSOR_BUTTON_FOR: "$influence_candidacy_interaction$ pro [Character.GetShortUINameNoTooltip]"  # todo: NEW TRANSLATION
+ ADMIN_VASSAL_DETAILS_SUBJECT_OBLIGATION_INFO: "[SubjectContractType.GetName]: [ObligationLevel.GetShortName]"  # todo: NEW TRANSLATION
+ ADMIN_VASSAL_DETAILS_SUCCESSION_DETAILS: "Když současný [GetPlayer.Custom('GetGovernorConceptNoTooltip')] odejde, na jeho místo nastoupí nejvyšší kandidát"  # todo: NEW TRANSLATION
+ THEME_DUCHY_SORT_TITLE_TROOPS: "[GovernmentAdministrationWindow.GetTitle.GetHolder.Custom('GetProvincialArmiesConceptNoTooltip')]"  # todo: NEW TRANSLATION
+ APPOINTMENT_THEME_SORT_PROVINCE_RATING: "Hodnocení provincie"  # todo: NEW TRANSLATION
+ APPOINTMENT_THEME_SORT_INFLUENCE_COST: "Cena vlivu"  # todo: NEW TRANSLATION
+ APPOINTMENT_THEME_SORT_TAXES: "Daně"  # todo: NEW TRANSLATION
+ APPOINTMENT_THEME_SORT_LEVIES: "Odvody"  # todo: NEW TRANSLATION
+ ADMIN_WINDOW_MERIT_ITEM_DESC: "[Character.GetUINameNoTooltip] - [Character.GetMerit|V0]"  # todo: NEW TRANSLATION
+ VASSAL_DIRECTIVE_ICON_TOOLTIP: "#T [vassal_directive|E]: [Character.Custom('vassal_directive_text_and_icon')|V]#!\n[Character.Custom('vassal_directive_text')]"  # todo: NEW TRANSLATION
+ ADMIN_WINDOW_MERIT_POOLS: "#high Bazény zásluh:#!"  # todo: NEW TRANSLATION
+ ADMIN_WINDOW_MERIT_POOLS_REQUIRED_MERIT: "[characters|E] s [merit_level|E] alespoň $MERIT_LEVEL$, kteří #bold nejsou#! [governor|E] vyššího [title_tier|E] titulu, mohou získat [AdminMeritPool.GetTitleTierName] [provinces|E] s těmito správami:"  # todo: NEW TRANSLATION
+ ADMIN_WINDOW_MERIT_POOLS_TYPE_CIVILIAN: "Civilní"  # todo: NEW TRANSLATION
+ ADMIN_WINDOW_MERIT_POOLS_TYPE_MILITARY: "Vojenský"  # todo: NEW TRANSLATION
+ ADMIN_WINDOW_MERIT_POOLS_CIVILIAN: "$ADMIN_WINDOW_MERIT_POOLS_TYPE_CIVILIAN$ [AdminMeritPool.GetTitleTierName] [title_tier|E] [merit_pool|E]"  # todo: NEW TRANSLATION
+ ADMIN_WINDOW_MERIT_POOLS_MILITARY: "$ADMIN_WINDOW_MERIT_POOLS_TYPE_MILITARY$ [AdminMeritPool.GetTitleTierName] [title_tier|E] [merit_pool|E]"  # todo: NEW TRANSLATION
+ ADMIN_WINDOW_MERIT_POOLS_CIVILIAN_TT: "$ADMIN_WINDOW_MERIT_POOLS_CIVILIAN$\n\n#I Kliknutím otevřete seznam kandidátů #!"  # todo: NEW TRANSLATION
+ ADMIN_WINDOW_MERIT_POOLS_MILITARY_TT: "$ADMIN_WINDOW_MERIT_POOLS_MILITARY$\n\n#I Kliknutím otevřete seznam kandidátů #!"  # todo: NEW TRANSLATION
+ ADMIN_WINDOW_MERIT_POOLS_EMPTY: "Žádní kandidáti v bazénu zásluh"  # todo: NEW TRANSLATION
+ ADMIN_WINDOW_MERIT_POOLS_SORT_NAME: "Jméno"  # todo: NEW TRANSLATION
+ ADMIN_WINDOW_MERIT_POOLS_SORT_GOVERNOR_EFFICIENCY: "Efektivita guvernéra"  # todo: NEW TRANSLATION
+ ADMIN_WINDOW_MERIT_POOLS_SORT_INFLUENCE: "Vliv"  # todo: NEW TRANSLATION
+ ADMIN_WINDOW_MERIT_POOLS_SORT_MERIT: "Zásluhy"  # todo: NEW TRANSLATION
+ ADMIN_WINDOW_MERIT_POOLS_SORT_SCORE: "Skóre"  # todo: NEW TRANSLATION
+ ADMIN_WINDOW_MERIT_POOLS_CHARACTER_ORDER: "Index:"  # todo: NEW TRANSLATION
+ ADMIN_WINDOW_MERIT_POOLS_CHARACTER_SCORE: "Skóre:"  # todo: NEW TRANSLATION
+ ADMIN_WINDOW_MERIT_POOLS_CHARACTER_ORDER_TT: "Index v datovém modelu. Měl by odrážet pořadí nástupnictví při vybrané správné možnosti řazení"  # todo: NEW TRANSLATION
+ ADMIN_WINDOW_MERIT_POOLS_CHARACTER_SCORE_TT: "Založeno na [candidate_score|E] v [civilian_governor|E] nebo [military_governor|E]"  # todo: NEW TRANSLATION
+ ADMIN_WINDOW_MERIT_POOLS_CHARACTER_MERIT: "#low (Hodnota: [Character.GetMerit|V0])#!"  # todo: NEW TRANSLATION
+ ADMIN_WINDOW_MERIT_POOLS_TITLE_RATING: "Hodnocení:"  # todo: NEW TRANSLATION
+ ADMIN_WINDOW_MERIT_POOLS_TITLE_RATING_TT: "Založeno na skriptované hodnotě [candidate_score|E].\n\nPoužívá se k určení, který titul má nejvyšší hodnotu a tudíž by měl připadnout nejzáslužnějšímu kandidátovi v linii."  # todo: NEW TRANSLATION
+ ADMIN_WINDOW_MERIT_POOLS_PARTICIPANT_INFO: "Může být [governors|E] pro [AdminMeritPool.GetTitleTierName] [provinces|E] s následujícími správami:"  # todo: NEW TRANSLATION
+ ADMIN_WINDOW_MERIT_POOLS_PARTICIPANT_REQUIREMENTS: "Vyžaduje alespoň [merit_level|E]: "  # todo: NEW TRANSLATION
+ ADMIN_WINDOW_MERIT_POOLS_APPOINTMENT_SCORE: "@appointment_score! [MeritPoolWindow.GetScore( CharacterListItem.GetIndex )|0]"  # todo: NEW TRANSLATION
+ ADMIN_WINDOW_MERIT_POOLS_APPOINTMENT_SCORE_TT_TITLE: "#T Skóre kandidáta: $SCORE|V0$#!"  # todo: NEW TRANSLATION
+ ADMIN_WINDOW_MERIT_POOLS_CANDIDATE_RANKING: "[merit_pool|E]"  # todo: NEW TRANSLATION
+ ADMIN_WINDOW_MERIT_POOLS_CANDIDATE_RANKING_DESC: "Kandidáti jsou seřazeni podle [merit_level|E] a v rámci každého stupně podle [candidate_score|E]."  # todo: NEW TRANSLATION
+ ADMIN_WINDOW_FAMILY_RANK_TOOLTIP: "#T $game_concept_powerful_family$ pořadí: [RankedHouseItem.GetRank|V]#!\nRod [DynastyHouse.GetNameNoTooltip] má [RankedHouseItem.GetRank|V] nejvyšší [powerful_family_rating_mid|E] v [GetPlayer.GetTopLiege.GetPrimaryTitle.GetName]\n\nNejlepších [GetDefine('NHouse', 'POWERFUL_HOUSE_MAX_COUNT')|V] [houses|E] jsou považovány za [powerful_families|E]"  # todo: NEW TRANSLATION

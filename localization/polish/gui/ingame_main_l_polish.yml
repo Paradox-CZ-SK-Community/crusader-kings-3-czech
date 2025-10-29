@@ -3,7 +3,7 @@
  SCHEMES_BUTTON: "#T Plány#!"
  MILITARY_BUTTON: "#T Vojenské#!"
  DECISIONS_BUTTON_CONTAINER: "[SelectLocalization( Or( GetPlayer.IsGovernor, IsLandlessAdventurer( GetPlayer ) ), 'DECISIONS_AND_CONTRACTS_BUTTON', 'DECISIONS_BUTTON' )]"
- DECISIONS_BUTTON: "#T Rozhodnutí#!"
+ DECISIONS_BUTTON: "#T $DECISIONS_VIEW_TITLE$#!" # todo: #T Rozhodnutí#!
  DECISIONS_AND_CONTRACTS_BUTTON: "#T Rozhodnutí & [GetPlayer.Custom('GetContractOrIssue')]#!"
  ACTIVITY_LIST_BUTTON: "#T Aktivity#!"
  COUNCIL_BUTTON: "#T [GetPlayer.Custom( 'GetCouncilWindowTitle' )|U]#!"
@@ -12,7 +12,7 @@
  PRISON_BUTTON: "#T Vězni#!"
  COURT_BUTTON: "#T [SelectLocalization( IsLandlessAdventurer( GetPlayer ), 'Táborové doprovody', 'Dvorané')]#!"
  TAX_JURISDICTIONS_BUTTON: "#T Daňové jurisdikce#!"
- ADMINISTRATIVE_BUTTON: "#T Administrativní vláda#!"
+ ADMINISTRATIVE_BUTTON: "#T $ADMINISTRATIVE_GOVERNMENT_HEADER$#!" # todo: #T Administrativní vláda#!
  IM_TT_FIND_TITLE: "#T Najít titul#!\nNajděte libovolný [title|El] ve hře."
  IM_TT_SHOW_LEGACY: "#T Zobrazit rodokmen#!\nZobrazí všechny postavy, kterými jste hráli."
  IM_TT_FIND_CHARACTER: "#T Najít postavu#!\nNajděte jakoukoli živou postavu ve hře."
@@ -20,8 +20,8 @@
  FOCUS_BUTTON: "Zobrazit zaměření"
  GOTO_PLAYER: "#T Přejít na vaši polohu#!\nPosuňte kameru na [GetPlayer.GetCurrentLocation.GetName|V]"
  GOTO_CAPITAL: "#T Přejít na vaše [realm_capital|E]#!\nPosuňte kameru na [GetPlayer.GetCapitalLocation.GetName|V]"
- MAPMODE_REALMS: "#T Panství\n#!Zobrazí [Concept('rulers','vládce')|E] a jejich [realms|El] na mapě.\nCtrl+klik na panství pro zobrazení jeho [Concept('vassals','vazalů')|E]."
- MAPMODE_TERRAIN: "#T #V Terén#! Režim mapy#!"
+ MAPMODE_REALMS: "#T Panství\n#!Zobrazuje [rulers|E] a jejich [realms|E] na mapě.\n#I Ctrl+kliknutím na panství zobrazíte jeho [vassals|E].#!" # todo: #T Panství\n#!Zobrazí [Concept('rulers','vládce')|E] a jejich [realms|El] na mapě.\nCtrl+klik na panství pro zobrazení jeho [Concept('vassals','vazalů')|E].
+ MAPMODE_TERRAIN: "#T $MAPMODE_TERRAIN_NAME$\n#!Zobrazuje krajinné rysy mapy s jednoduchými hranicemi [realm|E]." # todo: #T #V Terén#! Režim mapy#!
  MAPMODE_CULTURES: "#T Kultury\n#!Zobrazuje [Concept('culture','kulturu')|E] každého [Concept('county','hrabství')|E] na mapě.\nV pruhovaných oblastech má hrabství a [Concept('top_liege','nejvyšší pán')|E] odlišnou kulturu."
  MAPMODE_AREAS: "#T #V Oblasti#! Režim mapy #D (Ladění)#!#!"
  MAPMODE_DJ_EMPIRES: "#T Tituly říše\n#!Zobrazuje [Concept('titles','tituly')|E] [Concept('empire','říší')|E] a jejich [de_jure|El] území na mapě."
@@ -31,8 +31,8 @@
  MAPMODE_BARONIES: "#T #V Baronie#! Režim mapy#!"
  MAPMODE_PLAYERS_LABEL: "Hráči"
  MAPMODE_PLAYERS: "#T $MAPMODE_PLAYERS_LABEL$\n#!Zobrazuje všechny účastníky multiplayeru na mapě."
- MAPMODE_RELIGIONS: "#T Vyznání\n#!Zobrazuje [Concept('faith','víru')|E] každého [Concept('county','hrabství')|E] na mapě.\nV pruhovaných oblastech má hrabství a [Concept('top_liege','nejvyšší pán')|E] odlišnou víru.\nVyberte vyznání pro zobrazení její [Concept('holy_sites','svatých míst')|E]."
- MAPMODE_SIMPLE_TERRAIN_NAME: "@forest! Terén"
+ MAPMODE_RELIGIONS: "#T Náboženství\n#!Zobrazuje [faith|E] každého [county|E] na mapě.\nV pruhovaných oblastech má hrabství a jeho [top_liege|E] jiné náboženství.\n#I Klikněte na náboženství pro zobrazení jeho [holy_sites|E]." # todo: #T Vyznání\n#!Zobrazuje [Concept('faith','víru')|E] každého [Concept('county','hrabství')|E] na mapě.\nV pruhovaných oblastech má hrabství a [Concept('top_liege','nejvyšší pán')|E] odlišnou víru.\nVyberte vyznání pro zobrazení její [Concept('holy_sites','svatých míst')|E].
+ MAPMODE_SIMPLE_TERRAIN_NAME: "Jednoduchý terén" # todo: @forest! Terén
  MAPMODE_SIMPLE_TERRAIN: "#T $MAPMODE_SIMPLE_TERRAIN_NAME$\n#!Zobrazuje [terrain|El] každé baronie na mapě."
  MAPMODE_COUNTY_DEVELOPMENT_NAME: "@development_icon! Rozvoj"
  MAPMODE_COUNTY_DEVELOPMENT: "#T $MAPMODE_COUNTY_DEVELOPMENT_NAME$\n#!Zobrazuje [development|El] každého [county|El] na mapě."
@@ -43,7 +43,7 @@
  MAPMODE_COURT_LANGUAGES_NAME: "Jazyky dvora"
  MAPMODE_COURT_LANGUAGES: "#T $MAPMODE_COURT_LANGUAGES_NAME$#!\nZobrazuje [court_languages|El] na mapě."
  MAPMODE_DIPLOMACY: "Diplomatický dosah"
- MAPMODE_HOUSES: "#T Domy\n#!Zobrazuje [houses|E] každého [independent_ruler|E] na mapě."
+ MAPMODE_HOUSES: "#T Rody\n#!Zobrazuje [houses|E] [rulers|E] na mapě.\n#I Ctrl+klikněte na rod pro zobrazení [vassal|E] rodů.#!" # todo: #T Domy\n#!Zobrazuje [houses|E] každého [independent_ruler|E] na mapě.
  MAPMODE_ECONOMY_BUILDINGS_LABEL: "Ekonomika"
  MAPMODE_ECONOMY_BUILDINGS: "#T Ekonomika a budovy\n#!Zobrazuje nezměněný příjem každého držení a speciálních budov na mapě."
  MAPMODE_COUNTY_CONTROL_NAME: "@control_icon! Kontrola hrabství"
@@ -241,3 +241,58 @@
  TT_TRAVELING_WITH_DOMICILE_WIDGET: "#T Cestujete s [Character.Custom('GetRealmOrDomicile')|U]#!\nMomentálně cestujete přes [Character.GetCapitalLocation.GetName] se svým [Character.Custom('GetRealmOrDomicileConcept')]\n\n#I Klikněte pro zobrazení plánovače [Concept('travel','cest')|E]#!"
  ACTIVITY_VIEW_TRAVEL: "Zobrazit cestu"
  SELECT_VALID_OPTION: "Vyberte platnou možnost"
+ SITUATIONS_BUTTON: "#T Situace#!"  # todo: NEW TRANSLATION
+ MAPMODE_DJ_HEGEMONIES: "#T Hegemonické tituly\n#!Zobrazuje [hegemony|E] [titles|E] a jejich [de_jure|E] území na mapě."  # todo: NEW TRANSLATION
+ MAPMODE_TERRAIN_NAME: "Terén"  # todo: NEW TRANSLATION
+ PIETY_LEVEL_LABEL_6: "@piety_level_6_icon_christian! [GetModifier( 'piety_level_6' ).GetNameWithTooltip|L]"  # todo: NEW TRANSLATION
+ PIETY_LEVEL_LABEL_7: "@piety_level_7_icon_christian! [GetModifier( 'piety_level_7' ).GetNameWithTooltip|L]"  # todo: NEW TRANSLATION
+ PIETY_LEVEL_LABEL_8: "@piety_level_8_icon_christian! [GetModifier( 'piety_level_8' ).GetNameWithTooltip|L]"  # todo: NEW TRANSLATION
+ PIETY_LEVEL_LABEL_6_christian: "@piety_level_6_icon_christian! [GetModifier( 'piety_level_6' ).GetNameWithTooltip|L]"  # todo: NEW TRANSLATION
+ PIETY_LEVEL_LABEL_7_christian: "@piety_level_7_icon_christian! [GetModifier( 'piety_level_7' ).GetNameWithTooltip|L]"  # todo: NEW TRANSLATION
+ PIETY_LEVEL_LABEL_8_christian: "@piety_level_8_icon_christian! [GetModifier( 'piety_level_8' ).GetNameWithTooltip|L]"  # todo: NEW TRANSLATION
+ PIETY_LEVEL_LABEL_6_islam: "@piety_level_6_icon_islam! [GetModifier( 'piety_level_6' ).GetNameWithTooltip|L]"  # todo: NEW TRANSLATION
+ PIETY_LEVEL_LABEL_7_islam: "@piety_level_7_icon_islam! [GetModifier( 'piety_level_7' ).GetNameWithTooltip|L]"  # todo: NEW TRANSLATION
+ PIETY_LEVEL_LABEL_8_islam: "@piety_level_8_icon_islam! [GetModifier( 'piety_level_8' ).GetNameWithTooltip|L]"  # todo: NEW TRANSLATION
+ PIETY_LEVEL_LABEL_6_pagan: "@piety_level_6_icon_pagan! [GetModifier( 'piety_level_6' ).GetNameWithTooltip|L]"  # todo: NEW TRANSLATION
+ PIETY_LEVEL_LABEL_7_pagan: "@piety_level_7_icon_pagan! [GetModifier( 'piety_level_7' ).GetNameWithTooltip|L]"  # todo: NEW TRANSLATION
+ PIETY_LEVEL_LABEL_8_pagan: "@piety_level_8_icon_pagan! [GetModifier( 'piety_level_8' ).GetNameWithTooltip|L]"  # todo: NEW TRANSLATION
+ PIETY_LEVEL_LABEL_6_eastern: "@piety_level_6_icon_eastern! [GetModifier( 'piety_level_6' ).GetNameWithTooltip|L]"  # todo: NEW TRANSLATION
+ PIETY_LEVEL_LABEL_7_eastern: "@piety_level_7_icon_eastern! [GetModifier( 'piety_level_7' ).GetNameWithTooltip|L]"  # todo: NEW TRANSLATION
+ PIETY_LEVEL_LABEL_8_eastern: "@piety_level_8_icon_eastern! [GetModifier( 'piety_level_8' ).GetNameWithTooltip|L]"  # todo: NEW TRANSLATION
+ PIETY_LEVEL_LABEL_6_judaism: "@piety_level_6_icon_judaism! [GetModifier( 'piety_level_6' ).GetNameWithTooltip|L]"  # todo: NEW TRANSLATION
+ PIETY_LEVEL_LABEL_7_judaism: "@piety_level_7_icon_judaism! [GetModifier( 'piety_level_7' ).GetNameWithTooltip|L]"  # todo: NEW TRANSLATION
+ PIETY_LEVEL_LABEL_8_judaism: "@piety_level_8_icon_judaism! [GetModifier( 'piety_level_8' ).GetNameWithTooltip|L]"  # todo: NEW TRANSLATION
+ PIETY_LEVEL_LABEL_6_zoroastrian: "@piety_level_6_icon_zoroastrian! [GetModifier( 'piety_level_6' ).GetNameWithTooltip|L]"  # todo: NEW TRANSLATION
+ PIETY_LEVEL_LABEL_7_zoroastrian: "@piety_level_7_icon_zoroastrian! [GetModifier( 'piety_level_7' ).GetNameWithTooltip|L]"  # todo: NEW TRANSLATION
+ PIETY_LEVEL_LABEL_8_zoroastrian: "@piety_level_8_icon_zoroastrian! [GetModifier( 'piety_level_8' ).GetNameWithTooltip|L]"  # todo: NEW TRANSLATION
+ PIETY_LEVEL_LABEL_0_confucianism: "@piety_level_0_icon_confucianism! [GetModifier( 'piety_level_0' ).GetNameWithTooltip|L]"  # todo: NEW TRANSLATION
+ PIETY_LEVEL_LABEL_1_confucianism: "@piety_level_1_icon_confucianism! [GetModifier( 'piety_level_1' ).GetNameWithTooltip|L]"  # todo: NEW TRANSLATION
+ PIETY_LEVEL_LABEL_2_confucianism: "@piety_level_2_icon_confucianism! [GetModifier( 'piety_level_2' ).GetNameWithTooltip|L]"  # todo: NEW TRANSLATION
+ PIETY_LEVEL_LABEL_3_confucianism: "@piety_level_3_icon_confucianism! [GetModifier( 'piety_level_3' ).GetNameWithTooltip|L]"  # todo: NEW TRANSLATION
+ PIETY_LEVEL_LABEL_4_confucianism: "@piety_level_4_icon_confucianism! [GetModifier( 'piety_level_4' ).GetNameWithTooltip|L]"  # todo: NEW TRANSLATION
+ PIETY_LEVEL_LABEL_5_confucianism: "@piety_level_5_icon_confucianism! [GetModifier( 'piety_level_5' ).GetNameWithTooltip|L]"  # todo: NEW TRANSLATION
+ PIETY_LEVEL_LABEL_6_confucianism: "@piety_level_6_icon_confucianism! [GetModifier( 'piety_level_6' ).GetNameWithTooltip|L]"  # todo: NEW TRANSLATION
+ PIETY_LEVEL_LABEL_7_confucianism: "@piety_level_7_icon_confucianism! [GetModifier( 'piety_level_7' ).GetNameWithTooltip|L]"  # todo: NEW TRANSLATION
+ PIETY_LEVEL_LABEL_8_confucianism: "@piety_level_8_icon_confucianism! [GetModifier( 'piety_level_8' ).GetNameWithTooltip|L]"  # todo: NEW TRANSLATION
+ PIETY_LEVEL_LABEL_0_taoism: "@piety_level_0_icon_taoism! [GetModifier( 'piety_level_0' ).GetNameWithTooltip|L]"  # todo: NEW TRANSLATION
+ PIETY_LEVEL_LABEL_1_taoism: "@piety_level_1_icon_taoism! [GetModifier( 'piety_level_1' ).GetNameWithTooltip|L]"  # todo: NEW TRANSLATION
+ PIETY_LEVEL_LABEL_2_taoism: "@piety_level_2_icon_taoism! [GetModifier( 'piety_level_2' ).GetNameWithTooltip|L]"  # todo: NEW TRANSLATION
+ PIETY_LEVEL_LABEL_3_taoism: "@piety_level_3_icon_taoism! [GetModifier( 'piety_level_3' ).GetNameWithTooltip|L]"  # todo: NEW TRANSLATION
+ PIETY_LEVEL_LABEL_4_taoism: "@piety_level_4_icon_taoism! [GetModifier( 'piety_level_4' ).GetNameWithTooltip|L]"  # todo: NEW TRANSLATION
+ PIETY_LEVEL_LABEL_5_taoism: "@piety_level_5_icon_taoism! [GetModifier( 'piety_level_5' ).GetNameWithTooltip|L]"  # todo: NEW TRANSLATION
+ PIETY_LEVEL_LABEL_6_taoism: "@piety_level_6_icon_taoism! [GetModifier( 'piety_level_6' ).GetNameWithTooltip|L]"  # todo: NEW TRANSLATION
+ PIETY_LEVEL_LABEL_7_taoism: "@piety_level_7_icon_taoism! [GetModifier( 'piety_level_7' ).GetNameWithTooltip|L]"  # todo: NEW TRANSLATION
+ PIETY_LEVEL_LABEL_8_taoism: "@piety_level_8_icon_taoism! [GetModifier( 'piety_level_8' ).GetNameWithTooltip|L]"  # todo: NEW TRANSLATION
+ MERIT_LEVEL_LABEL_0: "@merit_level_0_icon! [GetModifier( 'merit_level_0' ).GetNameWithTooltip|L]"  # todo: NEW TRANSLATION
+ MERIT_LEVEL_LABEL_1: "@merit_level_1_icon! [GetModifier( 'merit_level_1' ).GetNameWithTooltip|L]"  # todo: NEW TRANSLATION
+ MERIT_LEVEL_LABEL_2: "@merit_level_2_icon! [GetModifier( 'merit_level_2' ).GetNameWithTooltip|L]"  # todo: NEW TRANSLATION
+ MERIT_LEVEL_LABEL_3: "@merit_level_3_icon! [GetModifier( 'merit_level_3' ).GetNameWithTooltip|L]"  # todo: NEW TRANSLATION
+ MERIT_LEVEL_LABEL_4: "@merit_level_4_icon! [GetModifier( 'merit_level_4' ).GetNameWithTooltip|L]"  # todo: NEW TRANSLATION
+ MERIT_LEVEL_LABEL_5: "@merit_level_5_icon! [GetModifier( 'merit_level_5' ).GetNameWithTooltip|L]"  # todo: NEW TRANSLATION
+ MERIT_LEVEL_LABEL_6: "@merit_level_6_icon! [GetModifier( 'merit_level_6' ).GetNameWithTooltip|L]"  # todo: NEW TRANSLATION
+ MERIT_LEVEL_LABEL_7: "@merit_level_7_icon! [GetModifier( 'merit_level_7' ).GetNameWithTooltip|L]"  # todo: NEW TRANSLATION
+ MERIT_LEVEL_LABEL_8: "@merit_level_8_icon! [GetModifier( 'merit_level_8' ).GetNameWithTooltip|L]"  # todo: NEW TRANSLATION
+ MERIT_LEVEL_LABEL_9: "@merit_level_9_icon! [GetModifier( 'merit_level_9' ).GetNameWithTooltip|L]"  # todo: NEW TRANSLATION
+ MERIT_PROGRESS_TOOLTIP: "Pokrok: $VALUE|0V$/$MAX|0$ k dalšímu [merit_level|E]"  # todo: NEW TRANSLATION
+ SILK_ROAD_HEADER: "Zobrazeno: Hedvábná stezka"  # todo: NEW TRANSLATION
+ SELECT_MANDALA_MAPMODE: "Vyberte režim mapy Mandala"  # todo: NEW TRANSLATION

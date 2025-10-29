@@ -1,10 +1,10 @@
 ﻿l_polish:
- SUCCESSION_FORM_NAME: "[CHARACTER.GetActiveLawInGroupWithFlag('succession_gender_laws').GetName] [CHARACTER.GetActiveLawInGroupWithFlag('succession_order_laws').GetName]"
+ SUCCESSION_FORM_NAME: "[Character.GetActiveLawInGroupWithFlag('succession_gender_laws').GetName] [Character.GetActiveLawInGroupWithFlag('succession_order_laws').GetName]" # todo: [Character.GetActiveLawInGroupWithFlag('succession_gender_laws').GetName] [Character.GetActiveLawInGroupWithFlag('succession_order_laws').GetName]
  SUCCESSION_TITLE_LAW_WARNING: "@alert_icon! Any title with special [title_succession|E] will take precedence over your realm [succession_law|E]"
  accepted_faith_succession_desc: "[faith|E] považována [state_faith|E] za přijatou"
  accepted_foreign_culture: "Integrovaná [culture|E] v [ROOT.Char.GetTopLiege.GetCapitalLocation.GetTitle.GetNameNoTier]"
  acclamation_succession_law: "Akklamační nástupnictví"
- acclamation_succession_law_effects: "Podle $acclamation_succession_law$ bude [empire|E] [title|E] a s ním spojené [holdings|E] zděděn kandidátem s nejvyšším [candidate_score|E]. Okruh kandidátů zahrnuje [noble_families|E] [realm|E], [governors|E] a jejich rodinné příslušníky."
+ acclamation_succession_law_effects: "\n#V Typ [appointment_succession_law|E]. Pod $acclamation_succession_law$ bude [empire|E] [title|E] a s ním spojené [holdings|E] děděno kandidátem s nejvyšším [candidate_score|E].\n\nSkupinu kandidátů tvoří [house_heads|E] of the [realm|E]'s [noble_families|E], [governors|E] a jejich rodinní příslušníci.\n#!" # todo: \n#V Druh [appointment_succession_law|E]. Pod $acclamation_succession_law$ bude [empire|E] [title|E] a jeho přidružená [holdings|E] budou zděděny kandidátem s nejvyšším [candidate_score|E].\n\nDo okruhu kandidátů patří [house_heads|E] [realm|E]'s [noble_families|E], [governors|E] a členové jejich rodin.\n#!
  acclamation_succession_law_subname: "$appointment_succession_law_subname$"
  admin_renounced_throne: "Vzdal se nároků na trůn"
  adolescent_candidate_desc: "Dospívající"
@@ -15,7 +15,7 @@
  appointment_male_only_desc: "[GetLaw('male_only_law').GetName] #weak (-[EmptyScope.ScriptValue('appointment_opposite_gender_penalty_value')|0%])#!"
  appointment_male_preference_desc: "[GetLaw('male_preference_law').GetName] #weak (-[EmptyScope.ScriptValue('appointment_non_preferred_gender_penalty_value')|0%])#!"
  appointment_succession_law: "Jmenovací nástupnictví"
- appointment_succession_law_effects: "Under $appointment_succession_law$, the [title|E] and its associated [holdings|E] will be inherited by the Candidate with the highest [candidate_score|E]. Any [adult|E] in the [realm|E] may strive to attain a [governorship|E] through various means from [scheming|E] to spending [influence|E]."
+ appointment_succession_law_effects: "\n#V Typ [appointment_succession_law|E]. Pod $appointment_succession_law$ bude [title|E] a s ním spojené [holdings|E] děděno kandidátem s nejvyšším [candidate_score|E].\n\nJakýkoli [adult|E] v [realm|E] se může snažit získat [governorship|E] různými prostředky, od [scheming|E] až po utrácení [influence|E].\n#!" # todo: \n#V Druh [appointment_succession_law|E]. Pod $appointment_succession_law$ bude [title|E] a jeho přidružená [holdings|E] budou zděděny kandidátem s nejvyšším [candidate_score|E].\n\nKaždý [adult|E] v [realm|E] se může snažit získat [governorship|E] různými způsoby, od [scheming|E] až po utrácení [influence|E].\n#!
  appointment_succession_law_subname: "Kandidát s nejvyšším skóre dědí"
  astray_faith_succession_desc: "[faith|E] považována [state_faith|E] za bludnou"
  bishop_theocratic_succession_law: "Teokratické"
@@ -39,8 +39,8 @@
  clan_impassive_partition_succession_law: "Lhostejné nástupnictví"
  clan_impassive_partition_succession_law_effects: "\n#V Under $clan_impassive_partition_succession_law$, your [player_heir] is guaranteed to receive a certain portion of your [titles] – the rest will be divided between your remaining children.#!\n\n#weak $partition_base_desc$\n#!Vašemu [player_heir|E] #emp always#! připadne nejméně čtvrť titulů zesnulého vladaře.\n#!"
  clan_impassive_partition_succession_law_subname: "Všechny děti dědí"
- close_family_holder_desc: "[holder|E] je [close_family|E]"
- close_family_married_to_holder_desc: "[holder_possessive|E] [spouse|E] je [close_family|E]"
+ close_family_holder_desc: "[close_family|E] současného [holder|E]" # todo: [close_family|E] současného [holder|E]
+ close_family_married_to_holder_desc: "[close_family|E] současného [holder_possessive|E] [spouse|E]" # todo: [close_family|E] současného [holder_possessive|E] [spouse|E]
  confederate_partition_succession_law: "Konfederátní dělení"
  confederate_partition_succession_law_effects: "\n#V Pod $confederate_partition_succession_law$ budou vaše [titles] rozděleny rovnoměrně mezi vaše děti. Pro mladší [realm_heirs] mohou být vytvořeny nové [titles].#!\n\n#weak $partition_base_desc$\nMladším dětem budou vytvořeny tituly, pokud je držen dostatek země.\n\n#!#X Kmenoví vládci jsou vázáni na tento typ nástupnictví.#!\n"
  confederate_partition_succession_law_subname: "Všechny děti dědí rovným dílem"
@@ -92,9 +92,9 @@
  get_hre_elector_5: "\n$EFFECT_LIST_BULLET$[ROOT.Var('hre_elector_5').GetLandedTitle.GetName]"
  get_hre_elector_6: "\n$EFFECT_LIST_BULLET$[ROOT.Var('hre_elector_6').GetLandedTitle.GetName]"
  get_hre_elector_7: "\n$EFFECT_LIST_BULLET$[ROOT.Var('hre_elector_7').GetLandedTitle.GetName]"
- governor_best_friend_desc: "[best_friend|E] držitele"
+ governor_best_friend_desc: "Současný [holder|E] je [best_friend|E]" # todo: Současný [holder|E] je [best_friend|E]
  governor_diarch_desc: "[diarch|E] [title|e]"
- governor_friend_desc: "[friend|E] držitele"
+ governor_friend_desc: "Současný [holder|E] je [friend|E]" # todo: Současný [holder|E] je [friend|E]
  herder_succession_law: "Pastevecké dědictví"
  herder_succession_law_effects: "Při nástupu na trůn budou všechny [titles|e] vládce uděleny jejich následníkovi."
  high_partition_succession_law: "Vysoké dělení"
@@ -176,7 +176,7 @@
  single_heir_dynasty_house_effects: "\n#V Pod $single_heir_dynasty_house$ [succession] nejstarší člen vašeho [house] zdědí všechny vaše tituly.#!\n\n#weak Při nástupu na trůn budou všechny [titles|e] zesnulého vladaře uděleny nejstaršímu oprávněnému členu jejich [house|E]. Vaše děti nic nedostanou, pokud některé z nich není nejstarším členem rodu.\n#!"
  single_heir_dynasty_house_subname: "Nejstarší člen [house] dědí"
  single_heir_succession_kurultai_law: "Kurultai"
- single_heir_succession_kurultai_law_effects: "Při Kurultai nástupnictví hraje [council|E] důležitou roli při rozhodování, kdo bude další v řadě. Pokud mezi [kurultai|E] zazní nesouhlasné hlasy, povede to k Chaotickému nástupnictví.\n\nPři Chaotickém nástupnictví je řada nejasná a [heir|E] utrpí na začátku svého panování určité negativní efekty.\n\nPokud se všichni Kurultai sjednotí, království zažije Stabilní nástupnictví, kde [heir|E] usedne na trůn za podpory všech svých nejsilnějších podporovatelů."
+ single_heir_succession_kurultai_law_effects: "U kurultajového dědění hraje [council|E] důležitou roli při rozhodování, kdo bude další v linii. Pokud mezi [kurultai|E] zazní nesouhlasné hlasy, povede to k Chaotickému dědění.\n\nPři Chaotickém dědění je linie nejasná a [heir|E] na začátku svého panování pocítí některé negativní efekty.\n\nPokud se všechny Kurultaje sjednotí, říše zažije Stabilní dědění, při kterém [heir|E] usedne na trůn s podporou všech svých nejsilnějších stoupenců." # todo: Při Kurultai následnictví hraje [council|E] důležitou roli při rozhodování, kdo bude dalším v pořadí. Pokud mezi [kurultai|E] zazní neshodné hlasy, povede to k chaotickému následnictví.\n\nPři chaotickém následnictví je pořadí nejasné a [heir|E] pocítí na začátku svého panování některé negativní efekty.\n\nPokud se všechny Kurultai srovnají, říše zažije stabilní následnictví, při kterém [heir|E] usedne na trůn s podporou všech svých nejsilnějších stoupenců.
  single_heir_succession_kurultai_subname: "Nejstarší dítě dědí"
  single_heir_succession_law: "Primogenitura"
  single_heir_succession_law_effects: "\n#V Pod $single_heir_succession_law$ [succession] vaše nejstarší dítě zdědí všechny vaše [titles].#!\n\n#weak Při nástupu na trůn budou všechny [titles|e] zesnulého vladaře uděleny [player_heir|E], což je jejich nejstarší [eligible_child|E]. Mladší děti nic nedostanou.\n#!"
@@ -213,5 +213,54 @@
  tribal_elective_succession_law_effects: "[ruler|E] a všichni [de_jure|E] [vassals|E], kteří jsou buď [house_heads|E], nebo dospělí s [piety_level|E] 2 či vyšší, mohou nominovat [title_heir|E] z řad [extended_family|E] vládce, [direct_vassals|E] a dostupných [claimants|E]. [voting_power|E] v tomto [succession_law|E] je ovlivněna celkovým [county_development|E] [domain|E] a [county_opinion|E] [capital|E] každého [elector|E]."
  tribal_elective_succession_law_subname: "Jirga"
  witch_and_criminal_desc: "[GetTrait('witch').GetName( GetNullCharacter )] #weak (považován za [criminal|E])#!"
-
- 
+ not_of_local_culture_succession_desc: "Není místní [culture|E]"   # todo: NEW TRANSLATION
+ governor_elder_desc: "Současný [holder|E] je [elder|E]"   # todo: NEW TRANSLATION
+ governor_disciple_desc: "Současný [holder|E] je [disciple|E]"   # todo: NEW TRANSLATION
+ ceremonial_liege_desc: "[ceremonial_liege|E]"   # todo: NEW TRANSLATION
+ extended_family_holder_desc: "[extended_family|E] současného [holder|E]"   # todo: NEW TRANSLATION
+ grandparent_holder_desc: "Vnuk či vnučka současného [holder|E]"   # todo: NEW TRANSLATION
+ parent_holder_desc: "Dítě současného [holder|E]"   # todo: NEW TRANSLATION
+ sibling_holder_desc: "Sourozenec současného [holder|E]"   # todo: NEW TRANSLATION
+ unsound_mind_desc: "Je duševně nezpůsobilý"   # todo: NEW TRANSLATION
+ mandala_succession_law: "Mandala nástupnictví"   # todo: NEW TRANSLATION
+ mandala_succession_law_subname: "Mandala nástupnictví"   # todo: NEW TRANSLATION
+ mandala_succession_law_effects: "#high The $mandala_succession_law$ allows your oldest child to inherit your [titles|E].\n\nUpon succession the new ruler will have to pass [mandala_trials|E] to keep control of the entire realm and its [tributaries|E]#!.\n\n"   # todo: NEW TRANSLATION
+ celestial_appointment_succession_law: "Nebeské jmenování"   # todo: NEW TRANSLATION
+ celestial_appointment_succession_law_subname: "Dědí kandidát s nejvyšším skóre"   # todo: NEW TRANSLATION
+ celestial_appointment_succession_law_effects: "\n[succession|E] je založeno na [merit_level|E] a [merit_pools|E]\n\n#high Typ [appointment_succession_law|E]. Pod $celestial_appointment_succession_law$ budou [title|E] a jeho přidružené [holdings|E] zděděny kandidátem s nejvyšším [candidate_score|E]. Jakýkoli [adult|E] v [realm|E] se může snažit získat [governorship|E] různými způsoby, například dosažením vysokého [merit_level|E] nebo utrácením [influence|E].#!\n\n"   # todo: NEW TRANSLATION
+ celestial_military_appointment_succession_law: "Nebeské jmenování velitele"   # todo: NEW TRANSLATION
+ celestial_military_appointment_succession_law_subname: "Dědí kandidát s nejvyššími [martial|E] schopnostmi"   # todo: NEW TRANSLATION
+ celestial_military_appointment_succession_law_effects: "\n[succession|E] je založeno na [merit_level|E] a [merit_pools|E]\n\n#high Typ [appointment_succession_law|E]. Pod $celestial_military_appointment_succession_law$ budou [title|E] a jeho přidružené [holdings|E] zděděny kandidátem s nejvyšším [candidate_score|E]. Jakýkoli [adult|E] v [realm|E] se může snažit získat vojenské [governorship|E] například dobrými [martial_skill|E], získáním [commander_traits|E] nebo utrácením [influence|E].#!\n\n"   # todo: NEW TRANSLATION
+ merit_level_desc: "[merit_level|E]"   # todo: NEW TRANSLATION
+ merit_level_too_low_ministry_desc: "Pod očekávanou [merit_level|E] pro [titlepossessive|E] (#V 2#!)"   # todo: NEW TRANSLATION
+ merit_level_too_low_empire_desc: "Pod očekávanou [merit_level|E] pro [titlepossessive|E] ([EmptyScope.ScriptValue('merit_level_expected_empire_value')|0])"   # todo: NEW TRANSLATION
+ merit_level_too_low_kingdom_desc: "Pod očekávanou [merit_level|E] pro [titlepossessive|E] ([EmptyScope.ScriptValue('merit_level_expected_kingdom_value')|0])"   # todo: NEW TRANSLATION
+ merit_level_too_low_duchy_desc: "Pod očekávanou [merit_level|E] pro [titlepossessive|E] ([EmptyScope.ScriptValue('merit_level_expected_duchy_value')|0])"   # todo: NEW TRANSLATION
+ marshal_governor_desc: "[title.GetHolder.GetTitledFirstNamePossessive] [marshal|E]"   # todo: NEW TRANSLATION
+ has_trait_education_martial_1: "[GetTrait('education_martial_1').GetName( GetNullCharacter )]"   # todo: NEW TRANSLATION
+ has_trait_education_martial_2: "[GetTrait('education_martial_2').GetName( GetNullCharacter )]"   # todo: NEW TRANSLATION
+ has_trait_education_martial_3: "[GetTrait('education_martial_3').GetName( GetNullCharacter )]"   # todo: NEW TRANSLATION
+ has_trait_education_martial_4: "[GetTrait('education_martial_4').GetName( GetNullCharacter )]"   # todo: NEW TRANSLATION
+ has_trait_education_martial_5: "[GetTrait('education_martial_5').GetName( GetNullCharacter )]"   # todo: NEW TRANSLATION
+ number_of_commander_traits_desc: "Počet [commander_traits|E]"   # todo: NEW TRANSLATION
+ has_warfare_legacy_track_desc: "$warfare_legacy_track_name$ [Concept( 'dynasty_perk', 'Legacy Track' )|E] #weak (+10/Dědictví)#!"   # todo: NEW TRANSLATION
+ cannot_be_commander: "Není #bold povoleno#! být [commander|E]"   # todo: NEW TRANSLATION
+ governor_of_same_or_higher_tier_desc: "Je [governor|E] stejné nebo vyšší [rank|E]"   # todo: NEW TRANSLATION
+ celestial_appointment_allowed_desc: "Váš [GetPlayer.Custom('GetProvinceAdministrationConcept')] #bold není#! civilní [governorship|E]"   # todo: NEW TRANSLATION
+ celestial_military_appointment_allowed_desc: "Váš [GetPlayer.Custom('GetProvinceAdministrationConcept')] #bold není#! vojenský [governorship|E]"   # todo: NEW TRANSLATION
+ celestial_ministry_appointment_succession_law: "Jmenování ministra"   # todo: NEW TRANSLATION
+ celestial_ministry_appointment_succession_law_subname: "Dědí kandidát s nejvyšším skóre"   # todo: NEW TRANSLATION
+ celestial_ministry_appointment_succession_law_effects: "\n[succession|E] je založeno na [merit_level|E] a [merit_pools|E]\n\n#high Typ [appointment_succession_law|E]. $celestial_appointment_succession_law$ je nástupnictvím pro ministerská [titles|E]. Jsou to vysoce ceněné pozice vyhrazené těm s nejvyššími [merit_levels|E]. [movements|E], [merit|E] a [influence|E] hrají zásadní roli při zvyšování [candidate_score|E] kandidáta.#!"   # todo: NEW TRANSLATION
+ celestial_ministry_appointment_cannot_remove_desc: "U tohoto [title|E] #bold nelze#! odstranit [succession_law|E]"   # todo: NEW TRANSLATION
+ celestial_grand_marshal_appointment_succession_law: "Jmenování velkého maršála"   # todo: NEW TRANSLATION
+ celestial_grand_marshal_appointment_succession_law_subname: "$celestial_military_appointment_succession_law_subname$"   # todo: NEW TRANSLATION
+ celestial_grand_marshal_appointment_succession_law_effects: "\n[succession|E] je založeno na [merit_level|E] a [merit_pools|E]\n\n#high Typ [appointment_succession_law|E] používaný pouze [minister_grand_marshal|E], pozice vyhrazená velitelům s nejvyššími [merit_levels|E]. Pod $celestial_grand_marshal_appointment_succession_law$ bude [title|E] zděděn kandidátem s nejvyšším [candidate_score|E]. Skóre je primárně ovlivněno [martial_skill|E], získáváním [commander_traits|E] nebo utrácením [influence|E].#!"   # todo: NEW TRANSLATION
+ meritocratic_appointment_succession_law: "Meritokratické jmenování"   # todo: NEW TRANSLATION
+ meritocratic_appointment_succession_law_subname: "$celestial_appointment_succession_law_subname$"   # todo: NEW TRANSLATION
+ meritocratic_appointment_succession_law_effects: "\n#high Typ [appointment_succession_law|E]. Pod $meritocratic_appointment_succession_law$ budou [title|E] a jeho přidružené [holdings|E] zděděny kandidátem s nejvyšším [candidate_score|E]. Jakýkoli [adult|E] v [realm|E] se může snažit získat [governorship|E] různými způsoby, například dosažením vysokého [merit_level|E] nebo utrácením [influence|E].#!\n\n"   # todo: NEW TRANSLATION
+ meritocratic_military_appointment_succession_law: "Meritokratické jmenování velitele"   # todo: NEW TRANSLATION
+ meritocratic_military_appointment_succession_law_subname: "$celestial_military_appointment_succession_law_subname$"   # todo: NEW TRANSLATION
+ meritocratic_military_appointment_succession_law_effects: "\n#high Typ [appointment_succession_law|E]. Pod $meritocratic_military_appointment_succession_law$ budou [title|E] a jeho přidružené [holdings|E] zděděny kandidátem s nejvyšším [candidate_score|E]. Jakýkoli [adult|E] v [realm|E] se může snažit získat vojenské [governorship|E] například dobrými [martial_skill|E], získáním [commander_traits|E] nebo utrácením [influence|E].#!\n\n"   # todo: NEW TRANSLATION
+ meritocratic_regency_succession_law: "Meritokratické regentské nástupnictví"   # todo: NEW TRANSLATION
+ meritocratic_regency_succession_law_subname: "$appointment_succession_law_subname$"   # todo: NEW TRANSLATION
+ meritocratic_regency_succession_law_effects: "Pod $meritocratic_regency_succession_law$ budou [title|E] a jeho přidružené [holdings|E] zdědeny kandidátem s nejvyšším skóre. Do výběru kandidátů patří [noble_families|E], [governors|E] a členové jejich rodin.\n\nPokud bude [ceremonial_liege|E] zvolen jako další [ceremonial_regent|E], bude mu dána volba buď abdikovat, nebo se pokusit znovu ustavit přímou vládu."   # todo: NEW TRANSLATION

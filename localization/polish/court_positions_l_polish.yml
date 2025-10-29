@@ -12,7 +12,7 @@
  APPOINT_COURT_POSITION_VIEW_REPLACE_CONSEQUENCE_FOR_REVOKE: "#T Odebrání této pozice způsobí: #!"
  APPOINT_COURT_POSITION_VIEW_REPLACE_CONSEQUENCE_FOR_REVOKE_TOOLTIP: "#X [AppointCourtPositionView.ReplaceRevokeText] #!"
  APPOINT_COURT_POSITION_VIEW_REPLACE_CURRENTLY_APPOINTED: "Aktuálně jmenovaný [CourtPosition.GetNameNoTooltip]"
- APPOINT_COURT_POSITION_VIEW_REPLACE_CURRENT_SALARY: "Měsíční plat: #L [CourtPosition.GetSalaryText]#!"
+ APPOINT_COURT_POSITION_VIEW_REPLACE_CURRENT_SALARY: "Měsíční plat: #L [CourtPosition.GetEmployerSalaryText]#!" # todo: Měsíční plat: #L [CourtPosition.GetEmployerSalaryText]#!
  APPOINT_COURT_POSITION_VIEW_REPLACE_FIRE_CURRENT_HOLDER: "Propustit"
  APPOINT_COURT_POSITION_VIEW_REVOKE_CONSEQUENCES_HEADER: "@warning_icon! Odebrání této pozice na dvoře způsobí:"
  APPOINT_COURT_POSITION_VIEW_REVOKE_CONSEQUENCE_FOR_APPOINTMENT: "#T Pokud se rozhodnete později tuto pozici odebrat, způsobí to: #!"
@@ -87,7 +87,7 @@
  COURT_POSITION_APTITUDE_TOOLTIP_HEADER: "Způsobilost"
  COURT_POSITION_AUTOMATION_CURRENT: "Když se uvolní:\n[Select_CString( CourtPositionType.HasAutomationNone( GetPlayer.Self ), '@check_icon!', '@small_dot!' )] Žádná automatizace\n[Select_CString( CourtPositionType.HasAutomationShowEvent( GetPlayer.Self ), '@check_icon!', '@small_dot!' )] Navrhnout nejlepší kandidáty v události\n#indent_newline:5 [Select_CString( CourtPositionType.HasAutomationAssignBest( GetPlayer.Self ), '@check_icon!', '@small_dot!' )] Automaticky přiřadit kandidáta s nejvyšší [aptitude|e], pokud je k dispozici#!\n#indent_newline:5 [Select_CString( CourtPositionType.HasAutomationAssignBestOrEvent( GetPlayer.Self ), '@check_icon!', '@small_dot!' )] Automaticky přiřadit kandidáta s nejvyšší [aptitude|e], nebo upozornit pomocí události#!"
  COURT_POSITION_AUTOMATION_DISABLE_TOOLTIP: "#T Aktuální automatizace #!\n$COURT_POSITION_AUTOMATION_CURRENT$\n#I Klikněte pro vypnutí automatizace#!"
- COURT_POSITION_EMPLOYER_COURT_EFFECTS: "#S Účinky na [GetPlayer.Custom('GetCourtOwnerConcept')]'s [GetPlayer.Custom('GetRealmOrDomicileConcept')]:#!#indent_newline:2 \n[CourtPosition.GetEmployerCourtBonuses]#!"
+ COURT_POSITION_EMPLOYER_COURT_EFFECTS: "#S Účinky na [Character.Custom('GetCourtOwnerConcept')] v [Character.Custom('GetRealmOrDomicileConcept')]:#!#indent_newline:2 \n[CourtPosition.GetEmployerCourtBonuses]#!" # todo: #S Účinky pro [Character.Custom('GetCourtOwnerConcept')] v [Character.Custom('GetRealmOrDomicileConcept')]:#!#indent_newline:2 \n[CourtPosition.GetEmployerCourtBonuses]#!
  COURT_POSITION_FOR_EMPLOYER: "Pro [CourtPosition.GetEmployer.GetUINameNoTooltip]"
  COURT_POSITION_HAS_TASKS_FILTER: "Pozice s úkoly"
  COURT_POSITION_NAME: "[CourtPosition.GetNameNoTooltip]"
@@ -101,7 +101,7 @@
  COURT_POSITION_SALARY_BREAKDOWN_BASE: "Základní plat"
  COURT_POSITION_TASK: "[court_position_task_short|E]"
  COURT_POSITION_TASK_CLICK_TT: "[SelectLocalization( CourtPosition.IsActiveTask( CourtPositionTaskType.Self ), 'ACTIVE_COURT_POSITION_TASK_CLICK_TT', 'POTENTIAL_COURT_POSITION_TASK_CLICK_TT' )]"
- COURT_POSITION_TASK_COST: "#S Náklady (za měsíc):#!#indent_newline:2 \n[CourtPositionTaskType.GetCostText( CourtPosition.GetEmployer.Self )]#!"
+ COURT_POSITION_TASK_COST: "#S Náklady (za měsíc):#!#indent_newline:2 \n[CourtPositionTaskType.GetEmployerCostText( CourtPosition.GetEmployer.Self )]#!" # todo: #S Náklady (za měsíc):#!#indent_newline:2 \n[CourtPositionTaskType.GetEmployerCostText( CourtPosition.GetEmployer.Self )]#!
  COURT_POSITION_TASK_COST_BREAKDOWN_BASE: "[court_position_task_short|E] Náklady"
  COURT_POSITION_TASK_EFFECTS_HEADER: "#S Účinky#!\n"
  COURT_POSITION_TASK_EMPLOYEE_EFFECTS: "#S Efekt na [CourtPositionType.GetName]:#!#indent_newline:2 \n[CourtPositionTaskType.GetEmployeeModifierDescription]#!"
@@ -111,7 +111,7 @@
  COURT_POSITION_TASK_EMPLOYER_GENERIC_EFFECTS: "#S Efekt na [liege|E]:#!#indent_newline:2 \n[CourtPositionTaskType.GetEmployerModifierGenericDescription]#!"
  COURT_POSITION_TASK_END_EFFECTS: "#S Po zastavení:#!#indent_newline:2 \n[CourtPositionTaskType.GetOnEndEffectDesc( CourtPosition.Self )]#!"
  COURT_POSITION_TASK_END_GENERIC_EFFECTS: "#S Po zastavení:#!#indent_newline:2 \n[CourtPositionTaskType.GetOnEndEffectGenericDesc]#!"
- COURT_POSITION_TASK_GENERIC_COST: "#S Náklady (za měsíc):#!#indent_newline:2 \n[CourtPositionTaskType.GetCostText( GetPlayer )]#!"
+ COURT_POSITION_TASK_GENERIC_COST: "#S Náklady (za měsíc):#!#indent_newline:2 \n[CourtPositionTaskType.GetEmployerCostText( GetPlayer )]#!" # todo: #S Náklady (za měsíc):#!#indent_newline:2 \n[CourtPositionTaskType.GetEmployerCostText( GetPlayer )]#!
  COURT_POSITION_TASK_GENERIC_TT: "Můj [CourtPositionType.GetNameNoTooltip] bude aktivně vykonávat [CourtPositionTaskType.GetName|V] [court_position_task_short|e]."
  COURT_POSITION_TASK_HEADER: "#T [CourtPositionTaskType.GetName]#!"
  COURT_POSITION_TASK_HINT: "#weak Potenciální [court_position_tasks_short|E]#!"
@@ -407,7 +407,7 @@
  court_position_inappetetic_trait: "[GetTrait('inappetetic').GetName( ROOT.Char )]"
  court_position_incapable_trait: "[GetTrait('incapable').GetName( ROOT.Char )]"
  court_position_infirm_trait: "[GetTrait('infirm').GetName( ROOT.Char )]"
- court_position_innovation_mural_sextant: "[dynasty|E] má [GetInnovation('fp3_innovation_mural_sextant').GetName]"
+ court_position_innovation_mural_sextant: "[dynasty|E] má $fp3_innovation_mural_sextant$" # todo: [dynasty|E] má $fp3_innovation_mural_sextant$
  court_position_intellect_good_1_trait: "[GetTrait('intellect_good_1').GetName( ROOT.Char )]"
  court_position_intellect_good_2_trait: "[GetTrait('intellect_good_2').GetName( ROOT.Char )]"
  court_position_intellect_good_3_trait: "[GetTrait('intellect_good_3').GetName( ROOT.Char )]"
@@ -429,7 +429,7 @@
  court_position_mystic_1_trait: "[GetTrait('lifestyle_mystic').GetName( ROOT.Char )]"
  court_position_mystic_2_trait: "$court_position_mystic_1_trait$"
  court_position_mystic_3_trait: "$court_position_mystic_1_trait$"
- court_position_no_poet_trait: "Není nositelem [GetTrait('poet').GetName( ROOT.Char )] [trait|E]"
+ court_position_no_poet_trait: "Nemá #bold tuto vlastnost#! [GetTrait('lifestyle_poet').GetName( ROOT.Char )] [trait|E]" # todo: Nemá #bold [GetTrait('lifestyle_poet').GetName( ROOT.Char )]#! [trait|E]
  court_position_nomadic: "Their government is [GetGovernment( 'nomad_government' ).GetName]"
  court_position_north_germanic: "Jejich [culture|E] patří k $heritage_north_germanic_name$ [heritage|E]"
  court_position_not_kurultai: "They are not a [kurultai_member|E]"
@@ -449,7 +449,7 @@
  court_position_physique_good_2_trait: "[GetTrait('physique_good_2').GetName( ROOT.Char )]"
  court_position_physique_good_3_trait: "[GetTrait('physique_good_3').GetName( ROOT.Char )]"
  court_position_pilgrim_trait: "[GetTrait('pilgrim').GetName( ROOT.Char )]"
- court_position_poet_trait: "[GetTrait('poet').GetName( ROOT.Char )]"
+ court_position_poet_trait: "[GetTrait('lifestyle_poet').GetName( ROOT.Char )]" # todo: [GetTrait('lifestyle_poet').GetName( ROOT.Char )]
  court_position_profligate_trait: "[GetTrait('profligate').GetName( ROOT.Char )]"
  court_position_reaver_trait: "[GetTrait('reaver').GetName( ROOT.Char )]"
  court_position_reckless_trait: "[GetTrait('reckless').GetName( ROOT.Char )]"
@@ -793,3 +793,169 @@
  yurtchi_prosperous_times: "Uspořádat veselí"
  yurtchi_prosperous_times_desc: "Tato postava dbá na štěstí klanu, i za značné náklady."
  yurtchi_validity_trigger_tt: "[stewardship_i][stewardship|E] je #high 12#! nebo více"
+ APPOINT_COURT_POSITION_VIEW_EMPLOYER_SALARY: "Měsíční plat: [CourtPositionType.GetEmployerSalaryTextFor( Character.Self )]"   # todo: NEW TRANSLATION
+ APPOINT_COURT_POSITION_VIEW_EMPLOYEE_SALARY: "Měsíční plat: [CourtPositionType.GetEmployeeSalaryTextFor( Character.Self )]"   # todo: NEW TRANSLATION
+ COURT_POSITIONS_WINDOW_EMPLOYER_SALARY_SHORT: "#L [CourtPosition.GetEmployerSalaryTextShort]#!"   # todo: NEW TRANSLATION
+ COURT_POSITIONS_WINDOW_EMPLOYEE_SALARY_SHORT: "#L [CourtPosition.GetEmployeeSalaryTextShort]#!"   # todo: NEW TRANSLATION
+ COURT_POSITIONS_WINDOW_POSITION_AI_SHORT: "Pozice AI: [CourtPositionItem.GetPositionAiScore|0]"   # todo: NEW TRANSLATION
+ COURT_POSITIONS_WINDOW_BEST_CANDIDATE_AI_SHORT: "AI kandidáta: [CourtPositionItem.GetBestCandidateAiScore|0]"   # todo: NEW TRANSLATION
+ COURT_POSITION_TOOLTIP_SALARIES_HERD_PAID: "[herd_i][herd|E] Vyplacené platy"   # todo: NEW TRANSLATION
+ COURT_POSITION_TOOLTIP_SALARIES_HERD_EARNED: "[herd_i][herd|E] Přijaté platy"   # todo: NEW TRANSLATION
+ COURT_POSITION_TOOLTIP_SALARIES_TREASURY_PAID: "[treasury_i][treasury|E] Vyplacené platy"   # todo: NEW TRANSLATION
+ COURT_POSITION_TOOLTIP_SALARIES_TREASURY_EARNED: "[treasury_i][treasury|E] Přijaté platy"   # todo: NEW TRANSLATION
+ COURT_POSITION_TOOLTIP_SALARIES_MERIT_PAID: "[merit_i][merit|E] Vyplacené platy"   # todo: NEW TRANSLATION
+ COURT_POSITION_TOOLTIP_SALARIES_MERIT_EARNED: "[merit_i][merit|E] Přijaté platy"   # todo: NEW TRANSLATION
+ COURT_POSITION_TYPE_TOOLTIP_EMPLOYER_SALARY: "Plat: [CourtPositionType.GetEmployerSalaryTextFor( GetPlayer )]"   # todo: NEW TRANSLATION
+ COURT_POSITION_TYPE_TOOLTIP_EMPLOYEE_SALARY: "Plat: [CourtPositionType.GetEmployeeSalaryTextFor( GetPlayer )]"   # todo: NEW TRANSLATION
+ court_position_merit_level: "[merit_level|E]"   # todo: NEW TRANSLATION
+ court_position_disciples: "[disciples|E]"   # todo: NEW TRANSLATION
+ court_position_your_disciple: "Váš [disciple|E]"   # todo: NEW TRANSLATION
+ court_position_tgp_dynasty_legacy: "[GetDynastyPerk( 'tgp_chinese_legacy_5' ).GetName]"   # todo: NEW TRANSLATION
+ court_position_surveyor_trait: "[GetTrait('lifestyle_surveyor').GetName( ROOT.Char )]"   # todo: NEW TRANSLATION
+ court_position_poet_is_advancement: "Člen [GetSituation('dynastic_cycle').GetTopParticipantGroupByKey( 'advancement_movement' ).GetName]"   # todo: NEW TRANSLATION
+ court_position_liege_is_advancement: "Jeho pán je členem [GetSituation('dynastic_cycle').GetTopParticipantGroupByKey( 'advancement_movement' ).GetName]"   # todo: NEW TRANSLATION
+ courtier_inspired_message: "$poet_inspired_message$"   # todo: NEW TRANSLATION
+ courtier_inspired_effect: "Váš [courtier|E] [inspired_courtier.GetFirstName] získal @inspiration_icon![inspiration|E]"   # todo: NEW TRANSLATION
+ is_not_a_ceremonial_liege_trigger: "Nejsou #bold not#! [ceremonial_liege|E]"   # todo: NEW TRANSLATION
+ court_position_confucian_education_trait: "[GetTrait('confucian_education').GetName( ROOT.Char )]"   # todo: NEW TRANSLATION
+ court_physician_celestial_imperial: "Palácový lékař"   # todo: NEW TRANSLATION
+ court_physician_celestial_imperial_desc: "The $court_physician_celestial_imperial$ is responsible for the health and well-being of the [court|E] they are in. They will treat disease and suture wounds to the best of their abilities."   # todo: NEW TRANSLATION
+ court_physician_celestial: "Hlavní lékař"   # todo: NEW TRANSLATION
+ court_physician_celestial_desc: "The $court_physician_celestial$ is responsible for the health and well-being of the [court|E] they are in. They will treat disease and suture wounds to the best of their abilities."   # todo: NEW TRANSLATION
+ court_astrologer_celestial_imperial: "Hlavní astrolog"   # todo: NEW TRANSLATION
+ court_astrologer_celestial_imperial_desc: "The $court_astrologer_celestial_imperial$ searches the skies to predict what fate may be upon us."   # todo: NEW TRANSLATION
+ court_astrologer_celestial: "Věštec"   # todo: NEW TRANSLATION
+ court_astrologer_celestial_desc: "The $court_astrologer_celestial$ searches the skies to predict what fate may be upon us."   # todo: NEW TRANSLATION
+ travel_leader_celestial_imperial: "Čistič cesty"   # todo: NEW TRANSLATION
+ travel_leader_celestial_imperial_desc: "The $travel_leader_celestial_imperial$ assists you when traveling and takes charge of all itineraries. They aim to ensure you arrive at your destination safely and on-time."   # todo: NEW TRANSLATION
+ travel_leader_celestial: "Přední průzkumník"   # todo: NEW TRANSLATION
+ travel_leader_celestial_desc: "The $travel_leader_celestial$ assists you when traveling and takes charge of all itineraries. They aim to ensure you arrive at your destination safely and on-time."   # todo: NEW TRANSLATION
+ antiquarian_celestial: "Strážce pokladů"   # todo: NEW TRANSLATION
+ antiquarian_celestial_desc: "The $antiquarian_celestial$ is responsible for the upkeep, care, and procurement of artifacts."   # todo: NEW TRANSLATION
+ seneschal_celestial: "Hlavní správce"   # todo: NEW TRANSLATION
+ seneschal_celestial_desc: "The $seneschal_celestial$ serves an important role in the day-to-day life of the royal household, administering the servants and keeping everything running smoothly."   # todo: NEW TRANSLATION
+ court_tutor_celestial: "Erudovaný vychovatel"   # todo: NEW TRANSLATION
+ court_tutor_celestial_desc: "The $court_tutor_celestial$ is in charge of the [education|E] of all children at court, and their skill will influence how much they influence the students. Children can still have individual [guardians|E]."   # todo: NEW TRANSLATION
+ chief_eunuch_celestial_imperial: "Palácový sluha"   # todo: NEW TRANSLATION
+ chief_eunuch_celestial_imperial_desc: "The $chief_eunuch_celestial_imperial$ is a trusted servant responsible for the eunuchs at court. Not much goes on that they don't hear about, both among the servants and the royals."   # todo: NEW TRANSLATION
+ chief_eunuch_celestial: "Eunuch sluha"   # todo: NEW TRANSLATION
+ chief_eunuch_celestial_desc: "The $chief_eunuch_celestial$ is a trusted servant responsible for the eunuchs at court. Not much goes on that they don't hear about, both among the servants and the royals."   # todo: NEW TRANSLATION
+ master_of_horse_celestial_imperial: "Prefekt stájí"   # todo: NEW TRANSLATION
+ master_of_horse_celestial_imperial_desc: "The $master_of_horse_celestial_imperial$ is responsible for their Liege's majestic steeds and stables. They have their work cut out for them since a well-kept horse is a boon both on the battlefield and on the road."   # todo: NEW TRANSLATION
+ master_of_horse_celestial: "Stájník"   # todo: NEW TRANSLATION
+ master_of_horse_celestial_desc: "The $master_of_horse_celestial$ is responsible for their Liege's majestic steeds and stables. They have their work cut out for them since a well-kept horse is a boon both on the battlefield and on the road."   # todo: NEW TRANSLATION
+ master_of_hunt_celestial: "Správce lovů"   # todo: NEW TRANSLATION
+ master_of_hunt_celestial_desc: "The $master_of_hunt_celestial$ is responsible for any hunting parties that members of their Liege's court arrange. They are also in charge of the kennels and the dogs within it."   # todo: NEW TRANSLATION
+ cave_hermit_celestial: "Moudrý poustevník"   # todo: NEW TRANSLATION
+ cave_hermit_celestial_desc: "The $cave_hermit_celestial$ is someone that will inhabit your castle grounds and entertain your guests with prophecies and riddles. Some say they may be actual mystics."   # todo: NEW TRANSLATION
+ court_gardener_celestial_imperial: "Hlavní zahradník"   # todo: NEW TRANSLATION
+ court_gardener_celestial_imperial_desc: "The $court_gardener_celestial_imperial$ is responsible for the well-being of the gardens belonging to their liege, pouring time and skill into making them truly flourish."   # todo: NEW TRANSLATION
+ court_gardener_celestial: "Zahradník"   # todo: NEW TRANSLATION
+ court_gardener_celestial_desc: "The $court_gardener_celestial$ is responsible for the well-being of the gardens belonging to their liege, pouring time and skill into making them truly flourish."   # todo: NEW TRANSLATION
+ chronicler_celestial_imperial: "Hlavní písař"   # todo: NEW TRANSLATION
+ chronicler_celestial_imperial_desc: "The $chronicler_celestial_imperial$ is tasked with dedicating the deeds of their employer to paper."   # todo: NEW TRANSLATION
+ chronicler_celestial: "Zapisovatel"   # todo: NEW TRANSLATION
+ chronicler_celestial_desc: "The $chronicler_celestial$ is tasked with dedicating the deeds of their employer to paper."   # todo: NEW TRANSLATION
+ champion_celestial_imperial: "Tygr-odvážný pán"   # todo: NEW TRANSLATION
+ champion_celestial_imperial_desc: "A $champion_celestial_imperial$ is a skilled and deadly fighter that can represent their Liege in duels."   # todo: NEW TRANSLATION
+ champion_celestial: "Tygr-odvážný voják"   # todo: NEW TRANSLATION
+ champion_celestial_desc: "A $champion_celestial$ is a skilled and deadly fighter that can represent their Liege in duels."   # todo: NEW TRANSLATION
+ court_brewmaster_celestial: "Správce vína"   # todo: NEW TRANSLATION
+ court_brewmaster_celestial_desc: "The $court_brewmaster_celestial$ is a representative chosen to interact directly with the brewers of the realm, to ensure the liege can get their hands on the best of brews."   # todo: NEW TRANSLATION
+ lady_in_waiting_celestial_imperial: "Palácová dáma"   # todo: NEW TRANSLATION
+ lady_in_waiting_celestial_imperial_desc: "A $lady_in_waiting_celestial_imperial$ is an assistant and companion to a Queen or Empress, attending to her every need and fulfilling every whim."   # todo: NEW TRANSLATION
+ lady_in_waiting_celestial: "Komorná"   # todo: NEW TRANSLATION
+ lady_in_waiting_celestial_desc: "A $lady_in_waiting_celestial$ is an assistant and companion to a Queen or Empress, attending to her every need and fulfilling every whim."   # todo: NEW TRANSLATION
+ royal_architect_celestial: "Mistr řemeslník"   # todo: NEW TRANSLATION
+ royal_architect_celestial_desc: "The $royal_architect_celestial$ oversees any prestigious building projects within the realm; not a brick is laid, nor a second spent, without their express permission."   # todo: NEW TRANSLATION
+ court_poet_celestial: "Dvorský básník"   # todo: NEW TRANSLATION
+ court_poet_celestial_desc: "The $court_poet_celestial$ is a connoisseur of words and verse, providing their Liege and all at court with entertainment, intellectual stimulation, and emotional experiences."   # todo: NEW TRANSLATION
+ court_musician_celestial_imperial: "Mistr hudby"   # todo: NEW TRANSLATION
+ court_musician_celestial_imperial_desc: "A $court_musician_celestial_imperial$ is an artist who sings and plays instruments to entertain their Liege and the court."   # todo: NEW TRANSLATION
+ court_musician_celestial: "Hudebník"   # todo: NEW TRANSLATION
+ court_musician_celestial_desc: "A $court_musician_celestial$ is an artist who sings and plays instruments to entertain their Liege and the court."   # todo: NEW TRANSLATION
+ bodyguard_celestial_imperial: "Císařský strážný"   # todo: NEW TRANSLATION
+ bodyguard_celestial_imperial_desc: "A $bodyguard_celestial_imperial$ is the final line of defense against any and all attackers. Where their charge goes they follow, and they will not hesitate to put themselves in the way of any danger that might be lurking out there."   # todo: NEW TRANSLATION
+ bodyguard_celestial: "Dvorní strážný"   # todo: NEW TRANSLATION
+ bodyguard_celestial_desc: "A $bodyguard_celestial$ is the final line of defense against any and all attackers. Where their charge goes they follow, and they will not hesitate to put themselves in the way of any danger that might be lurking out there."   # todo: NEW TRANSLATION
+ court_artificer_celestial_imperial: "Palácový řemeslník"   # todo: NEW TRANSLATION
+ court_artificer_celestial_imperial_desc: "A $court_artificer_celestial_imperial$ is someone who's proven themselves able to craft great things. While they mostly lull around in your court, the hope is for inspiration to strike once more."   # todo: NEW TRANSLATION
+ court_artificer_celestial: "Řemeslník"   # todo: NEW TRANSLATION
+ court_artificer_celestial_desc: "A $court_artificer_celestial$ is someone who's proven themselves able to craft great things. While they mostly lull around in your court, the hope is for inspiration to strike once more."   # todo: NEW TRANSLATION
+ grand_preceptor_court_position: "Velký vychovatel"   # todo: NEW TRANSLATION
+ grand_preceptor_court_position_desc: "The $grand_preceptor_court_position$'s is the moral pillar of their court, their duty to serve as a beacon of righteousness for all others to admire and emulate."   # todo: NEW TRANSLATION
+ grand_preceptor_court_position_task_instill_righteousness: "Vnést mravní zbožnost"   # todo: NEW TRANSLATION
+ grand_preceptor_court_position_task_instill_righteousness_desc: "The $grand_preceptor_court_position$ will apply themselves to the moral cultivation of their liege."   # todo: NEW TRANSLATION
+ grand_preceptor_court_position_task_propagate_civic_virtue: "Propagovat občanské ctnosti"   # todo: NEW TRANSLATION
+ grand_preceptor_court_position_task_propagate_civic_virtue_desc: "The $grand_preceptor_court_position$ will take a leading role in the propagation of moral virtue among the general population."   # todo: NEW TRANSLATION
+ grand_preceptor_court_position_task_exalt_imperial_deeds: "Oslavovat císařské činy"   # todo: NEW TRANSLATION
+ grand_preceptor_court_position_task_exalt_imperial_deeds_desc: "As $grand_preceptor_court_position$, this character's words carry immense moral authority, and many are those willing to accept their statements as truth."   # todo: NEW TRANSLATION
+ grand_preceptor_powerfuL_family_score_desc: "$grand_preceptor_court_position$"   # todo: NEW TRANSLATION
+ grand_guardian_court_position: "Velký strážce"   # todo: NEW TRANSLATION
+ grand_guardian_court_position_desc: "The $grand_guardian_court_position$ is the sword and shield of the realm, revered for their martial experience and strategic insight."   # todo: NEW TRANSLATION
+ grand_guardian_court_position_task_guard_the_capital: "Chránit hlavní město"   # todo: NEW TRANSLATION
+ grand_guardian_court_position_task_guard_the_capital_desc: "The $grand_guardian_court_position$ will take charge of the protection of the imperial capital's security."   # todo: NEW TRANSLATION
+ grand_guardian_court_position_task_shield_the_realm: "Chránit říši"   # todo: NEW TRANSLATION
+ grand_guardian_court_position_task_shield_the_realm_desc: "The $grand_guardian_court_position$ will apply their formidable strategic skills to the defense of the realm as a whole."   # todo: NEW TRANSLATION
+ grand_guardian_court_position_task_instill_martial_discipline: "Vnést vojenskou kázeň"   # todo: NEW TRANSLATION
+ grand_guardian_court_position_task_instill_martial_discipline_desc: "The $grand_guardian_court_position$ will endeavor to instill the accumulated lessons of their distinguished career on those who lack the privilege of experience."   # todo: NEW TRANSLATION
+ grand_guardian_guard_the_capital_modifier: "Chráněno Velkým strážcem"   # todo: NEW TRANSLATION
+ MODIFIER_DEFINITION_VALUE_GRAND_GUARDIAN_APTITUDE: " \t#weak Zvýšení za každou úroveň $grand_guardian_court_position$ [aptitude|E]#!"   # todo: NEW TRANSLATION
+ grand_guardian_powerfuL_family_score_desc: "$grand_guardian_court_position$"   # todo: NEW TRANSLATION
+ grand_mentor_court_position: "Velký mentor"   # todo: NEW TRANSLATION
+ grand_mentor_court_position_desc: "The $grand_mentor_court_position$ attends to the edification of the ruling family, and is tasked with the weighty duty of ensuring that the next generation lives up to the august examples of their forebears."   # todo: NEW TRANSLATION
+ grand_mentor_court_position_task_edify_heirs: "Vychovávat císařské dědice"   # todo: NEW TRANSLATION
+ grand_mentor_court_position_task_edify_heirs_desc: "The $grand_mentor_court_position$ will dedicate their days to the diligent cultivation of the next generation."   # todo: NEW TRANSLATION
+ grand_mentor_edify_heirs_tt: "Každý měsíc mohou členové vládnoucího [house|E], kteří jsou [courtiers|E] nebo [direct_vassals|E] [liege|E], získat [diplomacy_i][stewardship_i][learning_i][martial_i][skills|E], [GetTrait('governor').GetName( GetPlayer )] or [GetTrait('confucian_education').GetName( GetPlayer )] [trait_level_track_xp|E]"   # todo: NEW TRANSLATION
+ grand_mentor_edify_heirs_fallback: "Každý měsíc mohou členové vládnoucího [house|E], kteří jsou [courtiers|E] nebo [direct_vassals|E] [liege|E], získat [diplomacy_i][stewardship_i][learning_i][martial_i][skills|E], [GetTrait('governor').GetName( GetPlayer )] or [GetTrait('confucian_education').GetName( GetPlayer )] [trait_level_track_xp|E]"   # todo: NEW TRANSLATION
+ grand_mentor_court_position_task_teach_liege: "Vychovávat císaře"   # todo: NEW TRANSLATION
+ grand_mentor_court_position_task_teach_liege_desc: "The $grand_mentor_court_position$ will exclusively attend to the edification of their liege."   # todo: NEW TRANSLATION
+ grand_mentor_teach_liege_tt: "Každý měsíc může [liege|E] získat [diplomacy_i][stewardship_i][learning_i][martial_i][skills|E], [GetTrait('governor').GetName( GetPlayer )] or [GetTrait('confucian_education').GetName( GetPlayer )] [trait_level_track_xp|E]"   # todo: NEW TRANSLATION
+ grand_mentor_teach_liege_fallback: "Každý měsíc může [liege|E] získat [diplomacy_i][stewardship_i][learning_i][martial_i][skills|E], [GetTrait('governor').GetName( GetPlayer )] or [GetTrait('confucian_education').GetName( GetPlayer )] [trait_level_track_xp|E]"   # todo: NEW TRANSLATION
+ grand_mentor_court_position_task_train_officials: "Vychovávat záslužné úředníky"   # todo: NEW TRANSLATION
+ grand_mentor_court_position_task_train_officials_desc: "The $grand_mentor_court_position$ will see to it that the officials of the realm possess skills in equal measure to their wisdom and virtue."   # todo: NEW TRANSLATION
+ grand_mentor_train_officials_tt: "Každý měsíc může držitel [court_position|E] nebo [direct_vassal|E] získat [diplomacy_i][stewardship_i][learning_i][martial_i][skills|E], [GetTrait('governor').GetName( GetPlayer )] or [GetTrait('confucian_education').GetName( GetPlayer )] [trait_level_track_xp|E], or [merit|E]"   # todo: NEW TRANSLATION
+ grand_mentor_train_officials_fallback: "Každý měsíc může držitel [court_position|E] nebo [direct_vassal|E] získat [diplomacy_i][stewardship_i][learning_i][martial_i][skills|E], [GetTrait('governor').GetName( GetPlayer )] or [GetTrait('confucian_education').GetName( GetPlayer )] [trait_level_track_xp|E], or [merit|E]"   # todo: NEW TRANSLATION
+ grand_mentor_mentoring_title: "Mentorství [target_character.GetFullNameNoTooltip]"   # todo: NEW TRANSLATION
+ grand_mentor_mentoring_notification_desc: "[ROOT.Char.GetShortUIName|U] zlepšili [target_character.GetTitledFirstNamePossessive] dovednosti"   # todo: NEW TRANSLATION
+ grand_mentor_powerfuL_family_score_desc: "$grand_mentor_court_position$"   # todo: NEW TRANSLATION
+ fire_dragon_engineer_court_position: "Inženýr ohnivého draka"   # todo: NEW TRANSLATION
+ fire_dragon_engineer_court_position_desc: "The $fire_dragon_engineer_court_position$ is a master of firearms, furnishing troops with formidable flame-belching instruments of war."   # todo: NEW TRANSLATION
+ fire_dragon_engineer_court_position_forge_fire_dragons: "Kovat ohnivé draky"   # todo: NEW TRANSLATION
+ fire_dragon_engineer_court_position_forge_fire_dragons_desc: "The $fire_dragon_engineer_court_position$ will focus their energies on the forging of firearms, keeping an abundant arsenal ever at the ready."   # todo: NEW TRANSLATION
+ fire_dragon_engineer_court_position_command_artillery: "Velit dělostřelectvu"   # todo: NEW TRANSLATION
+ fire_dragon_engineer_court_position_command_artillery_desc: "The $fire_dragon_engineer_court_position$ will personally oversee the deployment and employment of their instruments of destruction on the battlefield."   # todo: NEW TRANSLATION
+ keeper_of_the_harem_court_position: "Správce harému"   # todo: NEW TRANSLATION
+ keeper_of_the_harem_court_position_desc: "The $keeper_of_the_harem_court_position$ occupies a position of no small importance in the imperial harem, supervising everything from the concubines' garments to the auspicious scheduling of imperial intercourse."   # todo: NEW TRANSLATION
+ keeper_of_the_harem_court_position_task_maintain_decorum: "Udržovat slušnost v harému"   # todo: NEW TRANSLATION
+ keeper_of_the_harem_court_position_task_maintain_decorum_desc: "The $keeper_of_the_harem_court_position$ will focus on suppressing the venomous intrigues of the harem and shielding it from the untoward attentions of the outside world."   # todo: NEW TRANSLATION
+ keeper_of_the_harem_maintaining_decorum.tt: "The $keeper_of_the_harem_court_position$ will significantly impede [schemes|U] targeting members of the harem."   # todo: NEW TRANSLATION
+ keeper_of_the_harem_court_position_task_attend_to_wellness: "Pečovat o zdraví konkubín"   # todo: NEW TRANSLATION
+ keeper_of_the_harem_court_position_task_attend_to_wellness_desc: "The $keeper_of_the_harem_court_position$ will pay special attention to the health and well-being of the harem, treating the ill and easing their burdens."   # todo: NEW TRANSLATION
+ keeper_of_the_harem_attend_to_wellness.tt: "The $keeper_of_the_harem_court_position$ will look for and tend to an ill member of the harem every month, alleviating their stress and the symptoms that ail them."   # todo: NEW TRANSLATION
+ keeper_of_the_harem_court_position_task_select_palace_beauties: "Vyhledávat palácové krásky"   # todo: NEW TRANSLATION
+ keeper_of_the_harem_court_position_task_select_palace_beauties_desc: "The $keeper_of_the_harem_court_position$ will periodically review the composition of the harem, gracefully retiring the aged and childless while recruiting talented and fair substitutes."   # todo: NEW TRANSLATION
+ keeper_of_the_harem_select_palace_beauties.tt: "Every year, the $keeper_of_the_harem_court_position$ will potentially retire one aged and childless concubine and recruit one new concubine to the harem."   # todo: NEW TRANSLATION
+ court_guru_court_position: "Guru"   # todo: NEW TRANSLATION
+ court_guru_court_position_desc: "A guru serves as both counselor and sage, advising rulers on earthly concerns and sacred truths."   # todo: NEW TRANSLATION
+ guru_teach_learning: "Prosvětlit mysl"   # todo: NEW TRANSLATION
+ guru_teach_learning_desc: "The guru shares sacred texts and scholarly wisdom to sharpen their liege's intellect."   # todo: NEW TRANSLATION
+ guru_teach_diplomacy: "Zjemnit řeč"   # todo: NEW TRANSLATION
+ guru_teach_diplomacy_desc: "The guru instructs in courtly speech, measured silence, and the art of graceful persuasion."   # todo: NEW TRANSLATION
+ guru_teach_intrigue: "Ostřit smysly"   # todo: NEW TRANSLATION
+ guru_teach_intrigue_desc: "Through parables and subtle games, the guru trains the ruler to see hidden motives and deceive with poise."   # todo: NEW TRANSLATION
+ court_brahmin_court_position: "Dvorsky bráhmín"   # todo: NEW TRANSLATION
+ court_brahmin_court_position_desc: "A venerable priest found in Hindu and Buddhist courts alike, the Court Brahmin is responsible for performing rituals, overseeing ceremonies, and promoting the legitimacy of the ruler."   # todo: NEW TRANSLATION
+ court_brahmin_court_position_task_increase_tribute: "Zvýšit tribut"   # todo: NEW TRANSLATION
+ court_brahmin_court_position_task_increase_tribute_desc: "This character will diligently tend to amplifying the flow of wealth from tributary to suzerain."   # todo: NEW TRANSLATION
+ khlon_glan_court_position: "Khlon Glan"   # todo: NEW TRANSLATION
+ khlon_glan_court_position_desc: "The Khlon Glan is a high-ranking official, in charge of managing the realm's storehouses and military supplies."   # todo: NEW TRANSLATION
+ khlon_glan_assist_provisioning: "Rozvíjet hlavní město"   # todo: NEW TRANSLATION
+ khlon_glan_assist_provisioning_desc: "This character is focusing on improving the Mandala capital."   # todo: NEW TRANSLATION
+ favored_minister_court_position: "Oblíbený ministr"   # todo: NEW TRANSLATION
+ favored_minister_court_position_desc: "The $favored_minister_court_position$ is the chosen favorite [councillor|E] of a [celestial|E] [son_of_heaven|E] and is granted the freedom to run their ministry as they wish."   # todo: NEW TRANSLATION
+ favored_minister_employee_custom_desc: "[personal_movement_power|E]: [movement_power_i][EmptyScope.ScriptValue('favored_minister_movement_power_bonus_value')|+=0%]"   # todo: NEW TRANSLATION
+ favored_minister_desc: "[GetCourtPositionType( 'favored_minister_court_position' ).GetName()]"   # todo: NEW TRANSLATION
+ minister_bureaucrat_court_position: "Úřední pomocník"   # todo: NEW TRANSLATION
+ minister_bureaucrat_court_position_desc: "Within the upper echelons of the celestial government, a large array of bureaucrats is required. Hand-picked by the head of each department, they ensure everything runs smoothly."   # todo: NEW TRANSLATION
+ minister_bureaucrat_court_position_mod_desc: "$EFFECT_LIST_BULLET$Pomocník zlepšuje různé úkoly související s [ministry|E], jako jsou [great_projects|E] (založeno na [aptitude|E])"   # todo: NEW TRANSLATION

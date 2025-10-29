@@ -59,7 +59,7 @@
  TITLE_VIEW_USURP_TITLE: "Uzurpovat"
  USURP_TITLE_TITLE: "Uzurpovat [TITLE.GetBaseNameNoTooltip]"
  USURP_TITLE_TOOLTIP_TITLE: "#T Uzurpovat [TITLE.GetBaseName]#!"
- USURP_TITLE_TEXT: "Uzurpovat [TITLE.GetName] od [TITLE.GetHolder.GetUIName].\nNáklady:\n[gold_i]$GOLD|0V$\n\nZískám [prestige_i]$PRESTIGE|0V$\n\n[TITLE.GetHolder.GetUIName] ztratí [legitimacy|E]."
+ USURP_TITLE_TEXT: "Převzít [TITLE.GetName] od [TITLE.GetHolder.GetUIName].\n Cena:\n[SelectLocalization(GetPlayer.GetGovernment.IsType('meritocratic_government'), 'USURP_TITLE_DESC_TREASURY', 'USURP_TITLE_DESC_GOLD')]$GOLD|0V$\n\nZískám [prestige_i]$PRESTIGE|0V$\n\n[TITLE.GetHolder.GetUIName] ztratí [legitimacy|E]." # todo: Uzurpovat [TITLE.GetName] od [TITLE.GetHolder.GetUIName].\nNáklady:\n[gold_i]$GOLD|0V$\n\nZískám [prestige_i]$PRESTIGE|0V$\n\n[TITLE.GetHolder.GetUIName] ztratí [legitimacy|E].
  USURP_TITLE_ACCEPT: "Uzurpovat"
  CREATE_TITLE_HOLDER_HAS_LAND: "@warning_icon! #X Nelze uzurpovat [title|E] od někoho, kdo považuje vaši [faith|E] za [Concept( 'faith_hostility', 'Hostile' )|E] nebo horší, zatímco ovládá jakoukoli z jeho [de_jure|E] zemí#!"
  DESTROY_TITLE_VASSAL_OPINION: "$BULLET$ [de_jure|E] [vassals|E] titulu [TITLE.GetName] ztratí $OPINION_CHANGE|N$ názor na vás po dobu $TIME|V$ let"
@@ -119,8 +119,8 @@
  TITLE_MAKE_PRIMARY_TOOLTIP: "#T Nastavit [TitleViewWindow.GetTitle.GetName] jako váš [primary_title|E]#!"
  TV_TIER_INFO: "[Title.GetRankConcept] [title|E]"
  TV_HOLY_ORDER_LABEL: "[FAITH.GetReligion.GetAdjective] [holy_order|E]"
- TV_MERCENARY_COMPANY_LABEL: "[mercenary_company|E]"
- TITLE_VIEW_HEAD_OF_FAITH: "$ENTRIES$ [head_of_faith|E]"
+ TV_MERCENARY_COMPANY_LABEL: "[mercenary_company|E] [title|E]" # todo: [mercenary_company|E]
+ TITLE_VIEW_HEAD_OF_FAITH: "$ENTRIES$ [head_of_faith|E] [title|E]" # todo: $ENTRIES$ [head_of_faith|E]
  TITLE_VIEW_HEAD_OF_FAITH_ENTRY: "[FAITH.GetAdjective]"
  TV_NO_CLAIM: "#weak Nemáte na tento titul žádný [claim|E]#!"
  TV_NOT_CREATED: "#weak Ještě nevytvořeno#!"
@@ -129,8 +129,8 @@
  TITLE_VIEW_CANT_HAVE_CLAIMS_TT: "Není možné mít nároky na tituly pro [mercenary_company|E], [holy_orders|E], [baronies|E] a [head_of_faith|E]"
  TITLE_ALLEGIANCE_VASSAL_LIST: "Vasálové přísahající [title_allegiance|E]"
  TITLE_VIEW_SUCCESSION: "[line_of_succession|E]"
- TITLE_VIEW_SUCCESSION_DESCRIPTION_CHARACTER: "Následnictví v říši: Bude děděno podle [CHARACTER.GetShortUINamePossessive] zákona $LAWS$"
- TITLE_VIEW_SUCCESSION_DESCRIPTION_TITLE: "[title_succession|E]: Bude děděno podle [TITLE.GetNamePossessive] zákona $LAWS$"
+ TITLE_VIEW_SUCCESSION_DESCRIPTION_CHARACTER: "Říše [succession|E]: Bude zděděno podle [CHARACTER.GetShortUINamePossessive] $LAWS$ [law|E]" # todo: Následnictví v říši: Bude děděno podle [CHARACTER.GetShortUINamePossessive] zákona $LAWS$
+ TITLE_VIEW_SUCCESSION_DESCRIPTION_TITLE: "[title_succession|E]: Bude zděděno podle [TITLE.GetNamePossessive] $LAWS$ [law|E]" # todo: [title_succession|E]: Bude děděno podle [TITLE.GetNamePossessive] zákona $LAWS$
  TITLE_VIEW_ELECTION: "$game_concept_nominate_heir$"
  TITLE_VIEW_DE_JURE: "De Jure"
  TITLE_VIEW_VASSALS: "Příslušnost titulu"
@@ -192,6 +192,36 @@
  TITLE_VIEW_APPOINTMENT: "Zobrazit následnictví"
  TITLE_VIEW_APPOINTMENT_TOOLTIP: "#T Zobrazit následnictví jmenováním#!\nTitul bude následovat [Title.GetHolder.GetPrimaryTitle.GetName]"
  ADD_LAWS_TOOLTIP: "#T Přidat zákon dědění"
- CREATE_TITLE_FAIL_REASON_ADMIN_VASSAL: "@warning_icon! #X [CHARACTER.GetShortUINameNoTooltip|U] [Select_CString( CHARACTER.IsLocalPlayer, 'are', 'is' )] [administrative|e] [governor|e]#!"
+ CREATE_TITLE_FAIL_REASON_ADMIN_VASSAL: "@warning_icon! #X Váš [top_liege_possessive|E] [government|E] nedovoluje [vassals|E] mít [royal_court|E]#!" # todo: @warning_icon! #X [CHARACTER.GetShortUINameNoTooltip|U] [Select_CString( CHARACTER.IsLocalPlayer, 'are', 'is' )] [administrative|e] [governor|e]#!
  GRANT_TO_LOCAL_CULTURE_NOBLE_ACCEPTANCE: "Toto zvyšuje přijetí"
  UNCROWNED_TITLE_GAIN_WARNING: "#EMP @alert_icon! Při povýšení vašeho [title|E] [title_tier|E] na [kingdom|E] nebo [empire|E] se stanete [GetLaw('uncrowned').GetName], dokud neprovedete [coronation|E]#!"
+ TITLE_VIEW_TRIBUTARIES_COUNTIES: "Vaše [tributary|E] [counties|E] : $NUM|V$\n#weak Vždy potřebujete alespoň jedno [de_jure|E] [county|E]#!"  # todo: NEW TRANSLATION
+ TITLE_VIEW_TREASURY_TEXT: "[treasury_i]$VALUE|0V$"  # todo: NEW TRANSLATION
+ CREATE_TITLE_GOLD_TITLE: "Vytvořit [TITLE.GetBaseNameNoTooltip]"  # todo: NEW TRANSLATION
+ CREATE_TITLE_TREASURY_TITLE: "$CREATE_TITLE_GOLD_TITLE$"  # todo: NEW TRANSLATION
+ CREATE_TITLE_GOLD_TEXT: "Získáte [prestige_i]$PRESTIGE|0V$ a [legitimacy_i]$LEGITIMACY|0V$\n\nNáklady: [gold_i]$VALUE|0V$"  # todo: NEW TRANSLATION
+ CREATE_TITLE_TREASURY_TEXT: "Získáte [prestige_i]$PRESTIGE|0V$ a [legitimacy_i]$LEGITIMACY|0V$\n\nNáklady: [treasury_i]$VALUE|0V$"  # todo: NEW TRANSLATION
+ CREATE_TITLE_GOLD_ACCEPT: "$CREATE$"  # todo: NEW TRANSLATION
+ CREATE_TITLE_TREASURY_ACCEPT: "$CREATE$"  # todo: NEW TRANSLATION
+ CREATE_TITLE_TREASURY: "@warning_icon! #X Vyžaduje [treasury_i]$VALUE|0V$#!"  # todo: NEW TRANSLATION
+ USURP_TITLE_DESC_GOLD: "[gold_i]"  # todo: NEW TRANSLATION
+ USURP_TITLE_DESC_TREASURY: "[treasury_i]"  # todo: NEW TRANSLATION
+ CREATE_TITLE_COST_GOLD: "Náklady: [gold_i]$VALUE|0V$"  # todo: NEW TRANSLATION
+ CREATE_TITLE_COST_TREASURY: "Náklady: [treasury_i]$VALUE|0V$"  # todo: NEW TRANSLATION
+ TV_PROVINCE_LABEL: "[TITLE.GetRankConcept]-[title_tier|E] [province|E] [title|E]"  # todo: NEW TRANSLATION
+ CREATE_TITLE_PIETY_LEVEL: "Vyžaduje [GetPietyLevelName('(int32)$LEVEL|q$')]"  # todo: NEW TRANSLATION
+ WARNING_CREATE_TITLE_PIETY_LEVEL: "@warning_icon! $CREATE_TITLE_PIETY_LEVEL$"  # todo: NEW TRANSLATION
+ CAN_CREATE_TITLE_PIETY_LEVEL: "[Select_CString( TitleViewWindow.HasEnoughPietyLevel, '@check_icon!', '@cross_icon!')] $CREATE_TITLE_PIETY_LEVEL$"  # todo: NEW TRANSLATION
+ TITLE_VIEW_PIETY_TEXT: "[piety_i]$VALUE|0V$"  # todo: NEW TRANSLATION
+ CREATE_TITLE_COST_PIETY: "Náklady: $TITLE_VIEW_PIETY_TEXT$"  # todo: NEW TRANSLATION
+ ENOUGH_PIETY_COST: "[Select_CString( Title.HasEnoughPiety(GetPlayer), '@check_icon!', '@cross_icon!')] $CREATE_TITLE_COST_PIETY$"  # todo: NEW TRANSLATION
+ CREATE_TITLE_PIETY_TITLE: "$CREATE_TITLE_GOLD_TITLE$"  # todo: NEW TRANSLATION
+ CREATE_TITLE_PIETY_TEXT: "Získáte [prestige_i]$PRESTIGE|0V$ a [legitimacy_i]$LEGITIMACY|0V$\n\nNáklady: [piety_i]$VALUE|0V$"  # todo: NEW TRANSLATION
+ CREATE_TITLE_PIETY_ACCEPT: "$CREATE$"  # todo: NEW TRANSLATION
+ TITLE_VIEW_DISABLED_BORDER_WARS: "[Title.GetHolder.GetTopLiege.GetPrimaryTitle.GetTierAsNamePossessive] [GetLawGroup('border_wars_laws').GetName]: [GetLaw('top_liege_not_redirected_to_border_wars_law').GetName]"  # todo: NEW TRANSLATION
+ TITLE_VIEW_ENABLED_BORDER_WARS: "[Title.GetHolder.GetTopLiege.GetPrimaryTitle.GetTierAsNamePossessive] [GetLawGroup('border_wars_laws').GetName]: [GetLaw('top_liege_redirected_to_border_wars_law').GetName]"  # todo: NEW TRANSLATION
+ TITLE_TOOLTIP_DISABLED_BORDER_WARS: "[Character.GetTopLiege.GetPrimaryTitle.GetTierAsNamePossessive] [GetLawGroup('border_wars_laws').GetName]: [GetLaw('top_liege_not_redirected_to_border_wars_law').GetName]"  # todo: NEW TRANSLATION
+ TITLE_TOOLTIP_ENABLED_BORDER_WARS: "[Character.GetTopLiege.GetPrimaryTitle.GetTierAsNamePossessive] [GetLawGroup('border_wars_laws').GetName]: [GetLaw('top_liege_redirected_to_border_wars_law').GetName]"  # todo: NEW TRANSLATION
+ TITLE_VIEW_PROMINENCE: "[appointment_prominence|E]: $ORDER|VO$ #weak ([Title.MakeScope.ScriptValue('appointment_title_value')|L0])#!"  # todo: NEW TRANSLATION
+ CREATE_TITLE_REQUIRE_AT_LEAST_ONE_DEJURE_COUNTY: "@warning_icon! #X  Nemáte žádné de jure hrabství v hranicích [TITLE.GetName]#!"  # todo: NEW TRANSLATION
+ prominence_breakdown_header: "[appointment_prominence|E] Skóre: #V [Title.MakeScope.ScriptValue('appointment_title_value')|0]#!"  # todo: NEW TRANSLATION

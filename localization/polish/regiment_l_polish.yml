@@ -81,9 +81,9 @@
  SHOW_MAA_ORIGIN_TT: "#T [stationed_regiment|E]#!\n[Province.GetTitle.GetHolder.GetShortUIName|U] [Province.GetTitle.GetHolder.LocalPlayerString( 'have', 'has' )] [stationed|E] [regiment|E] [Province.GetMaaOriginHere.GetName] #weak ([Province.GetMaaOriginHere.GetMAAType.GetBaseTypeName])#! v tomto [holding|E]."
  SIEGE_TIER_BEATS_ALL_FORTS: "$EFFECT_LIST_BULLET$Poráží všechny [fort_level|E]"
  SIEGE_TIER_MAX_FORT_LEVEL: "$EFFECT_LIST_BULLET$Maximální [fort_level|E]: $VALUE|V$"
- TRANSFER_TITLE_MAA_ALREADY_CONTROLS_MAA: "@warning_icon! [TITLE.GetShortUIName] již ovládá jeden nebo více cílových regimentů men-at-arms."
- TRANSFER_TITLE_MAA_ALREADY_OWNS_MAA: "@warning_icon! [TITLE.GetShortUIName] již vlastní jeden nebo více cílových regimentů men-at-arms."
- TRANSFER_TITLE_MAA_NOT_ADMINISTRATIVE: "@warning_icon! [TITLE.GetShortUINameNoTooltip] #bold není#! pod [GetGovernment( 'administrative_government' ).GetName]"
+ TRANSFER_TITLE_MAA_ALREADY_CONTROLS_MAA: "@warning_icon! [TITLE.GetName] již kontroluje jeden nebo více z cílových regimentů ozbrojených mužů." # todo: @warning_icon! [TITLE.GetName] již ovládá jeden nebo více z cílových pluků obrněnců.
+ TRANSFER_TITLE_MAA_ALREADY_OWNS_MAA: "@warning_icon! [TITLE.GetName] již kontroluje jeden nebo více z cílových regimentů ozbrojených mužů." # todo: @warning_icon! [TITLE.GetName] již vlastní jeden nebo více z cílových pluků obrněnců.
+ TRANSFER_TITLE_MAA_NOT_ADMINISTRATIVE: "@warning_icon! [TITLE.GetNameNoTooltip] #bold není#! pod [GetGovernment( 'administrative_government' ).GetName]" # todo: @warning_icon! [TITLE.GetNameNoTooltip] #bold není#! pod [GetGovernment( 'administrative_government' ).GetName]
  TRANSFER_TITLE_MAA_NOT_TITLE_MAA: "@warning_icon! Pouze titulní [men_at_arms|E] regimenty lze přenést mezi tituly."
  VIEW_MAA_ORIGIN_TT: "#T Zobrazit [stationed_regiment|E]#!"
  abudrar: "Abudrar"
@@ -252,7 +252,7 @@
  teutonic_knights: "Řádoví rytíři"
  teutonic_knights_flavor: "#F Těžce obrnění a zbožní rytíři, specializovaní na bitvy proti hromadné pěchotě i těžké jízdní nájezdy.#!"
  torch_bearers: "Nositelé pochodní"
- torch_bearers_flavor: "#F Na nekonečném stepu nejsou potřeba obléhací věže ani katapulty — stačí planoucí pochodně a rychlý kůň, aby shořela každá jurta.#!"
+ torch_bearers_flavor: "#F Na bezbřehé stepi nejsou potřeba obléhací věže ani katapulty — stačí planoucí pochodeň a rychlý kůň, aby každá jurta vzplála.#!" # todo: #F Na nekonečné stepi nejsou potřeba obléhací věže ani katapulty — stačí plápolající pochodeň a svižný kůň, aby každou jurtu zapálili.#!
  trebuchet: "Trebuchety"
  trebuchet_flavor: "#F Protikladný trebuchet dokáže vrhnout velké projektily s mnohem větší silou než mangonely nebo onagry.#!"
  varangian_guards: "Varyjská garda"
@@ -261,3 +261,49 @@
  war_elephant_flavor: "#F Nabíhající slon je téměř nezastavitelný, činí z nich vynikající šokové jednotky.#!"
  zbrojnosh: "Zbrojnoši"
  zbrojnosh_flavor: "#F Domácí v kopcích a lesích střední Evropy, Zbrojnoši jsou obávaní široko daleko.#!"
+ TITLE_MEN_AT_ARMS_TYPE_TOOLTIP_CREATION_COST: "Náklady na vytvoření: [MenAtArmsType.GetTitleRegimentCostString(GetPlayer)]"   # todo: NEW TRANSLATION
+ gunpowder: "[gunpowder|E]"   # todo: NEW TRANSLATION
+ peasant_militia: "[peasant_militia|E]"   # todo: NEW TRANSLATION
+ handgunners: "Mušketýři"   # todo: NEW TRANSLATION
+ pikemen_militia: "Milice pikenýrů"   # todo: NEW TRANSLATION
+ ballista: "Obléhací kuše"   # todo: NEW TRANSLATION
+ cloud_ladder: "Sklopné žebříky"   # todo: NEW TRANSLATION
+ siege_tower: "Pohyblivé věže"   # todo: NEW TRANSLATION
+ cannon: "Stroje Ohnivého draka"   # todo: NEW TRANSLATION
+ shenbigong: "Shenbigong"   # todo: NEW TRANSLATION
+ fire_lancers: "Ohniví kopiníci"   # todo: NEW TRANSLATION
+ gakgung_archers: "Gakgung lučištníci"   # todo: NEW TRANSLATION
+ ballista_elephant: "Balistní sloni"   # todo: NEW TRANSLATION
+ pesilat_warriors: "Pesilatští bojovníci"   # todo: NEW TRANSLATION
+ samurai: "Samurajové"   # todo: NEW TRANSLATION
+ japanese_horse_archers: "Jízdní samurajové"   # todo: NEW TRANSLATION
+ emishi_horse_archers: "Emišští jezdci"   # todo: NEW TRANSLATION
+ warrior_monks: "Váleční mniši"   # todo: NEW TRANSLATION
+ zhanmadao_infantry: "Zhanmadao pěchota"   # todo: NEW TRANSLATION
+ tiefutu: "Tiefutu jízda"   # todo: NEW TRANSLATION
+ burenjia: "Burenjia pěchota"   # todo: NEW TRANSLATION
+ rocket_carts: "Raketové vozíky"   # todo: NEW TRANSLATION
+ ordo_riders_horse_archers: "Jezdci Orda"   # todo: NEW TRANSLATION
+ handgunners_flavor: "#F Drahé a výbušné v rovné míře, tyto hrubé palné zbraně jsou neobyčejně účinné.#!\n#help Umožněno budovou [GetBuilding('powder_magazine_01').GetName].#!"   # todo: NEW TRANSLATION
+ fire_lancers_flavor: "#F Díky experimentálním směsím dokážou muži ozbrojení podivnými kopími sypat oheň na vyděšené nepřátele.#!\n#help Umožněno budovou [GetBuilding('powder_magazine_01').GetName].#!"   # todo: NEW TRANSLATION
+ gakgung_archers_flavor: "#F Vybaveni silnými reflexními luky a prstenci na palec pro zesílení nátažení, tito lučištníci dokážou střílet šípy na neuvěřitelnou vzdálenost."   # todo: NEW TRANSLATION
+ pesilat_warriors_flavor: "#F Ačkoliv jsou často vyzbrojeni #italic kris#!, #italic golok#! nebo nesčetným množstvím dalších zbraní na blízko, praktikanti silatu jsou stejně zběhlí v boji bez zbraní.#!"   # todo: NEW TRANSLATION
+ samurai_flavor: "#F #italic Bushi#! vazalové pečují o potřeby šlechty a nejvyšších vrstev společnosti, ozbrojeni mečem a chráněni lakovaným koženým či kovovým brněním.#!"   # todo: NEW TRANSLATION
+ zhanmadao_infantry_flavor: "#F Vybaveni obrovskými dvouručními meči jsou tito vojáci cvičeni používat své čepele proti jízdě pomocí oslnivé škály bodnutí, sečných úderů a fint.#!"   # todo: NEW TRANSLATION
+ tiefutu_flavor: "Známí jako Železné pagody tito těžce ozbrojení jezdci byli do Číny v hojném počtu zavlečeni džečenskou dynastií Jin. Vynikající jezdecké umění spolu s těžkým, všudypřítomným brněním z nich činilo obávané protivníky na jakémkoli bojišti."   # todo: NEW TRANSLATION
+ burenjia_flavor: "#F Nasazeni ve velkém počtu, v těsných formacích, tvoří tato pěchota páteř císařských armád. Složené až z 1000 lamelových kusů, těžké brnění těchto vojáků jim umožňuje odolávat téměř jakémukoli vetřelci.#!"   # todo: NEW TRANSLATION
+ rocket_carts_flavor: "#F Skupinka mužů může jedním jiskřením zasáhnout nepřítele silou stovky lučištníků, ač by možná stálo za to dávat pozor na typ mužů, kteří by ochotně pracovali s tímto druhem zařízení.#!"   # todo: NEW TRANSLATION
+ ordo_riders_horse_archers_flavor: "#F Step tvořila zocelené válečníky, sloužící svému chánovi a vybírající tributy od různých sousedů. Tito jezdci, organizovaní v Ordu, tvoří páteř každé elitní kočovné síly.#!"   # todo: NEW TRANSLATION
+ ballista_flavor: "#F Velké kuše namontované na kolovém podstavci, které dokážou vystřelovat šípy se železnými hroty na impozantní vzdálenosti#!"   # todo: NEW TRANSLATION
+ cloud_ladder_flavor: "#F Závěsný skládací žebřík s jednoduchým tažným mechanismem, který se rozloží, jakmile je v dosahu nepřátelských hradeb.#!"   # todo: NEW TRANSLATION
+ siege_tower_flavor: "#F Velká dřevěná věž na kolech, kterou lze přitlačit k nepřátelským hradbám, nabízí větší ochranu a stabilitu než obléhací žebříky.#!"   # todo: NEW TRANSLATION
+ cannon_flavor: "#F Tyto relativně malé, ale smrtící děla byla podepřena u ústí a připíchnuta do země, aby se tlumil zpětný ráz.#!"   # todo: NEW TRANSLATION
+ ballista_elephant_flavor: "#F Nabíhající slon je sám o sobě dost znepokojivý, ovšem nabíhající slon vybavený na zádech silnou balistou dokáže znervóznit i ty nejzkušenejší válčené protivníky.#!"   # todo: NEW TRANSLATION
+ shenbigong_flavor: "#F Tito elitní kušníci jsou ozbrojeni mocným Shenbigongem, zvaným "Božím lukem". Každá vystřelená šipka dokáže prorazit brnění i formace s znepokojující přesností.#!"   # todo: NEW TRANSLATION
+ emishi_horse_archers_flavor: "#F Přinuceni bránit se silnějším hrozbám, Emiští jízdní lučištníci jsou mistry taktiky úder-ústup, nájezdů a přepadů.#!"   # todo: NEW TRANSLATION
+ japanese_horse_archers_flavor: "#F Převzavši techniky severních Emišů, ale používajíce těžší brnění, samurajové nasednou do sedla s yumi v ruce a sužují své nepřátele šípy."   # todo: NEW TRANSLATION
+ warrior_monks_flavor: "#F Bráníce věřící a sloužící svým patronům, životy těchto mnichů zasvěcené oddanosti poskytují mnoho času k výcviku a silná přesvědčení.#!"   # todo: NEW TRANSLATION
+ pikemen_militia_flavor: "#F Připravení bojovat za svou zemi a důstojnost. Dotlačeni na pokraj zoufalství, zaměří se na jakéhokoli šlechtického statkáře, aby si vzali, co jim náleží.#!"   # todo: NEW TRANSLATION
+ gunpowder_lowercase: "mušketýři"   # todo: NEW TRANSLATION
+ accolade_maa_handgunners: "Mušketýři družiny"   # todo: NEW TRANSLATION
+ accolade_maa_handgunners_flavor: "[retinue_maa|E]\n#F Postupujíce klidně skrz dým střelného prachu, tito vysoce vycvičení mušketýři mohou svými mistrně zhotovenými zbraněmi rozbít řady nepřítele.#!"   # todo: NEW TRANSLATION

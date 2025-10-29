@@ -35,7 +35,7 @@
  DYNASTY_HOUSE_TT_LIVING_MEMBERS: "Žijící členové: [DynastyHouse.GetNumberOfMembers|V]"
  HOUSE_VIEW_FOUNDING_HOUSE: "Zakládající rod"
  HOUSE_HEAD_PRESTIGE_GAIN_CAP: "Limit získávání prestiže"
- DYNASTY_PRESTIGE_LEVEL_EFFECT: "• Děti se rodí s [prestige_i]$BIRTH|V0$\n• Sňatek do této dynastie uděluje [prestige_i]$MARRIAGE|0+=$\n• Vladaři mají maximální názor z dlouhého panování $LONG_REIGN|V0=$"
+ DYNASTY_PRESTIGE_LEVEL_EFFECT: "• Děti se rodí s [prestige_i]$BIRTH|V0$\n• Sňatek do této dynastie přináší [prestige_i]$MARRIAGE|0+=$\n• Vládci získají maximálně $LONG_REIGN|V0=$ [long_reign|E] názoru" # todo: • Děti se rodí s [prestige_i]$BIRTH|V0$\n• Sňatek do této dynastie uděluje [prestige_i]$MARRIAGE|0+=$\n• Vladaři mají maximální názor z dlouhého panování $LONG_REIGN|V0=$
  DYNASTY_PRESTIGE_NEXT_LEVEL: "\n\nDalší úroveň je $NEXT$"
  dynasty_level_0_c: "@dynasty_prestige_icon_0! [dynasty_prestige_level_0|L]"
  dynasty_level_1_c: "@dynasty_prestige_icon_0! [dynasty_prestige_level_1|L]"
@@ -95,13 +95,41 @@
  HOUSE_UNITY_AFFECT_UNITY_CHANGE_GOVERNMENT: "K dosažení této úrovně musíte změnit typ vlády"
  HOUSE_VIEW_POWERFUL_FAMILY_ATTRIBUTE: "[powerful_family_bonus_short|E]: [DynastyHouse.GetHousePowerBonus.GetName]"
  HOUSE_VIEW_POWERLESS_FAMILY: "#X @warning_icon! Není považován za [powerful_family|E]#!"
- HOUSE_VIEW_POWER_BONUS: "[SelectLocalization( HousePowerBonus.IsValid, HousePowerBonus.GetName )]"
+ HOUSE_VIEW_POWER_BONUS: "[SelectLocalization( HouseAspiration.IsValid, HouseAspiration.GetName )]" # todo: [SelectLocalization( HousePowerBonus.IsValid, HousePowerBonus.GetName )]
  HOUSE_VIEW_BONUS_LIEGE: "#bold [liege|E]:#!"
  HOUSE_VIEW_BONUS_MEMBER: "#bold [house|E] Členové:#!"
  HOUSE_VIEW_DOMICILE_HEADER: "Rod [DOMICILE_TYPE.GetNameNoTooltip]"
- HOUSE_VIEW_DOMICILE_LOCATION: "Poloha: [CHARACTER.GetDomicile.GetLocation.GetBaronyNameExplicitly]"
+ HOUSE_VIEW_DOMICILE_LOCATION: "Poloha: [Domicile.GetLocation.GetBaronyNameExplicitly]" # todo: Poloha: [CHARACTER.GetDomicile.GetLocation.GetBaronyNameExplicitly]
  INFLUENCE_ALLIED_TO_TOP_LIEGE: "[allied|E] s [Concept('top_liege','nejvyšším pánem')|E]"
  INFLUENCE_ALLIED_TO_HOUSE_HEAD: "[allied|E] s [Concept('house_head','hlavou rodu')|E]: [CHARACTER.GetTitledFirstName]"
  INFLUENCE_BEING_GOVERNOR: "Jste [governor|El]"
  INFLUENCE_HAVING_GOVERNOR_HOUSE_MEMBER: "[landed|E] členové [Concept('house','rodu')|E] #weak (pozitivní [opinion|El])#!"
  INFLUENCE_HAVING_GOVERNOR_HOUSE_MEMBER_OPINION: "[Character.GetName]"
+ HOUSE_VIEW_DOMICILE_NAME: "[Domicile.GetName|U]"  # todo: NEW TRANSLATION
+ DYNASTY_HOUSE_BLOC_MEMBERSHIP_STATUS: "[SelectLocalization(ObjectsEqual( DynastyHouse.Self, Confederation.GetLeadingHouse.Self ), 'DYNASTY_HOUSE_BLOC_MEMBERSHIP_STATUS_LEADER', 'DYNASTY_HOUSE_BLOC_MEMBERSHIP_STATUS_MEMBER')] "  # todo: NEW TRANSLATION
+ DYNASTY_HOUSE_BLOC_MEMBERSHIP_STATUS_LEADER: "[Confederation.GetName] Vůdce"  # todo: NEW TRANSLATION
+ DYNASTY_HOUSE_BLOC_MEMBERSHIP_STATUS_MEMBER: "[Confederation.GetName]"  # todo: NEW TRANSLATION
+ HOUSE_DYNASTY_TAB_BUTTON: "Dynastie"  # todo: NEW TRANSLATION
+ HOUSE_RELATIONS_TAB_BUTTON: "Vztahy domu"  # todo: NEW TRANSLATION
+ HOUSE_UNITY_TAB_BUTTON: "Jednota domu"  # todo: NEW TRANSLATION
+ HOUSE_RELATION_ITEM_NAME: "[HouseRelation.GetLevel.GetName|V] s [DynastyHouse.GetName|V]"  # todo: NEW TRANSLATION
+ HOUSE_RELATION_ITEM_HISTORY: "Historie [HouseRelation.GetName]"  # todo: NEW TRANSLATION
+ HOUSE_RELATION_ITEM_LATEST_CHANGE: "[HouseRelation.GetLatestChangeDescription] – [HouseRelation.GetLatestChangeDate.GetString]"  # todo: NEW TRANSLATION
+ HOUSE_RELATION_ITEM_HISTORY_SIZE: "([GetDataModelSize( HouseRelation.GetHistory )])"  # todo: NEW TRANSLATION
+ HOUSE_RELATION_ITEM_SHOW_HISTORY_BUTTON_TOOLTIP: "#T Zobrazit historii vztahu#!"  # todo: NEW TRANSLATION
+ HOUSE_VIEW_HOUSE_POWER_LEVEL_TT: "#T [HouseAspiration.GetName]#!\n[HouseAspiration.GetLevelName( PdxGuiWidget.GetIndexInDataModel )]\n\n[HouseAspiration.GetLevelDesc( PdxGuiWidget.GetIndexInDataModel )]"  # todo: NEW TRANSLATION
+ HOUSE_VIEW_POWERFUL_FAMILY_LIEGE: "#bold [powerful_family|E] — [top_liege|E]:#!"  # todo: NEW TRANSLATION
+ HOUSE_VIEW_POWERFUL_FAMILY_MEMBER: "#bold [powerful_family|E] Členové:#!"  # todo: NEW TRANSLATION
+ HOUSE_VIEW_POWER_LEVEL_PARAMETERS: ""  # todo: NEW TRANSLATION
+ HOUSE_VIEW_ANY_HOUSE_MEMBER: "#bold Členové [house|E]#!"  # todo: NEW TRANSLATION
+ HOUSE_VIEW_HOUSE_HEAD: "#bold [house_head|E]#!"  # todo: NEW TRANSLATION
+ HOUSE_VIEW_CHANGE_HOUSE_POWER: "#T Změnit své [AddLocalizationIf( GetPlayer.GetGovernment.HasGovernmentFlag( 'government_is_mandala' ), 'game_concept_house_possessive' )] [DynastyHouse.GetHouseAspirationFlavorName]#!"  # todo: NEW TRANSLATION
+ HOUSE_VIEW_CHANGE_HOUSE_POWER_DISABLED: "$HOUSE_VIEW_CHANGE_HOUSE_POWER$\n@warning_icon! #X Nejste [house_head|E] domu [DynastyHouse.GetBaseNameNoTooltip]#!"  # todo: NEW TRANSLATION
+ ADMINISTRATIVE_GOVERNMENT_HOUSE_POWERFULNESS_TOOLTIP: "#T $ADMINISTRATIVE_GOVERNMENT_HOUSE_POWERFULNESS_TOOLTIP_HEADING$#!\n[powerful_family_rating|E]: [DynastyHouse.GetHousePower|V0]"  # todo: NEW TRANSLATION
+ ADMINISTRATIVE_GOVERNMENT_HOUSE_POWERFULNESS_TOOLTIP_HEADING: "[SelectLocalization(DynastyHouse.GetHeadOfHouse.IsIndependentRuler,'ADMINISTRATIVE_GOVERNMENT_HOUSE_POWERFULNESS_TOOLTIP_HEADING_TOP_LIEGE',SelectLocalization(DynastyHouse.IsDominant, 'ADMINISTRATIVE_GOVERNMENT_HOUSE_POWERFULNESS_TOOLTIP_HEADING_DOMINANT', SelectLocalization(DynastyHouse.IsPowerful, 'ADMINISTRATIVE_GOVERNMENT_HOUSE_POWERFULNESS_TOOLTIP_HEADING_POWERFUL', 'ADMINISTRATIVE_GOVERNMENT_HOUSE_POWERFULNESS_TOOLTIP_HEADING_NOBLE')))]"  # todo: NEW TRANSLATION
+ ADMINISTRATIVE_GOVERNMENT_HOUSE_POWERFULNESS_TOOLTIP_HEADING_TOP_LIEGE: "[DynastyHouse.GetBaseNameNoTooltip] je [DynastyHouse.GetHeadOfHouse.Custom('GetImperialFamilyType')]"  # todo: NEW TRANSLATION
+ ADMINISTRATIVE_GOVERNMENT_HOUSE_POWERFULNESS_TOOLTIP_HEADING_DOMINANT: "[DynastyHouse.GetBaseNameNoTooltip] je [dominant_family|E]"  # todo: NEW TRANSLATION
+ ADMINISTRATIVE_GOVERNMENT_HOUSE_POWERFULNESS_TOOLTIP_HEADING_POWERFUL: "[DynastyHouse.GetBaseNameNoTooltip] je [powerful_family|E]"  # todo: NEW TRANSLATION
+ ADMINISTRATIVE_GOVERNMENT_HOUSE_POWERFULNESS_TOOLTIP_HEADING_NOBLE: "[DynastyHouse.GetBaseNameNoTooltip] je [noble_family|E]"  # todo: NEW TRANSLATION
+ HOUSE_RELATIONS_CURRENT_RELATION: "Aktuální vztah:"  # todo: NEW TRANSLATION
+ HOUSE_VIEW_NO_RELATIONS: "Dům [DynastyHouse.GetBaseNameNoTooltip] nemá žádné [house_relations|E] s žádným jiným [house|E]"  # todo: NEW TRANSLATION

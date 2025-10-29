@@ -18,7 +18,7 @@
  create_claimant_faction_against_interaction: "Založit frakci nápadníků"
  create_claimant_faction_against_interaction_desc: "Založit [claimant_faction|E] proti [secondary_actor.GetShortUINameNoTooltip]"
  general_rebellion_decline_summary: "[recipient.Custom2('RevokeTitleDeclineSummary', SCOPE.sC('actor'))]"
- general_rebellion_decline_summary_warning: "@warning_icon! #X Pokud [ROOT.Char.GetShortUIName] odmítne, [ROOT.Char.GetSheHe] povstane v rebelii spolu s dalšími nespokojenými $game_concept_vassals$!#!"
+ general_rebellion_decline_summary_warning: "@warning_icon! #X Pokud [ROOT.Char.GetShortUIName] odmítne, [ROOT.Char.GetSheHe] se vzbouří spolu s dalšími nespokojenými [vassals|E]!#!" # todo: @warning_icon! #X Pokud [ROOT.Char.GetShortUIName] odmítne, [ROOT.Char.GetSheHe] povstane v rebelii spolu s dalšími nespokojenými $game_concept_vassals$!#!
  general_rebellion_decline_summary_auto_accept: ""
  stop_attacker_vassal_war_interaction: "Ukončit vazalskou válku"
  stop_defender_vassal_war_interaction: "Požadovat kapitulaci ve vazalské válce"
@@ -113,19 +113,19 @@
  vassal_directive_raid_herd_intent: "[recipient.GetUIName] se bude soustředit na [raiding|E] za účelem získání [herd|E]"
  vassal_directive_remove_directive: "[recipient.GetUIName] nechá odstranit svůj současný [directive|E]"
  removes_directive_refusal_perk_effect: "[vassals|E] již neodmítají [directives|E]"
- improve_development_text: "[directive|E]: Použít #V $task_develop_county$#! [councillor_task|E]"
- train_commanders_text: "[directive|E]: Použít #V $task_train_commanders$#! [councillor_task|E]"
- build_maa_text: "[directive|E]: Nábor [men_at_arms|E]"
- convert_faith_text: "[directive|E]: Použít #V $task_conversion$#! [councillor_task|E]"
- convert_culture_text: "[directive|E]: Použít #V $task_promote_culture$#! [councillor_task|E]"
- improve_cultural_acceptance_text: "[directive|E]: Použít #V $task_accept_culture$#! [councillor_task|E]"
- building_focus_fortification_text: "[directive|E]: Stavět [fortification_buildings|E]"
- building_focus_military_text: "[directive|E]: Stavět [military_buildings|E]"
- building_focus_economy_text: "[directive|E]: Stavět [economic_buildings|E]"
- county_fertility_text: "[directive|E]: Použít #V $task_kurultai_fertility_1$#! [councillor_task|E]"
- explore_cultures_text: "[directive|E]: Použít #V $task_kurultai_culture_1$#! [councillor_task|E]"
- culture_text: "[directive|E]: Rabovat za účelem získání [innovations|E]"
- herd_text: "[directive|E]: Rabovat za účelem získání [herd|E]"
+ improve_development_text: "Použití #V $task_develop_county$#! [councillor_task|E]" # todo: [directive|E]: Použít #V $task_develop_county$#! [councillor_task|E]
+ train_commanders_text: "Použití #V $task_train_commanders$#! [councillor_task|E]" # todo: [directive|E]: Použít #V $task_train_commanders$#! [councillor_task|E]
+ build_maa_text: "Najímání [men_at_arms|E]" # todo: [directive|E]: Nábor [men_at_arms|E]
+ convert_faith_text: "Použití #V $task_conversion$#! [councillor_task|E]" # todo: [directive|E]: Použít #V $task_conversion$#! [councillor_task|E]
+ convert_culture_text: "Použití #V $task_promote_culture$#! [councillor_task|E]" # todo: [directive|E]: Použít #V $task_promote_culture$#! [councillor_task|E]
+ improve_cultural_acceptance_text: "Použití #V $task_accept_culture$#! [councillor_task|E]" # todo: [directive|E]: Použít #V $task_accept_culture$#! [councillor_task|E]
+ building_focus_fortification_text: "Budování [fortification_buildings|E]" # todo: [directive|E]: Stavět [fortification_buildings|E]
+ building_focus_military_text: "Budování [military_buildings|E]" # todo: [directive|E]: Stavět [military_buildings|E]
+ building_focus_economy_text: "Budování [economic_buildings|E]" # todo: [directive|E]: Stavět [economic_buildings|E]
+ county_fertility_text: "Použití #V $task_kurultai_fertility_1$#! [councillor_task|E]" # todo: [directive|E]: Použít #V $task_kurultai_fertility_1$#! [councillor_task|E]
+ explore_cultures_text: "Použití #V $task_kurultai_culture_1$#! [councillor_task|E]" # todo: [directive|E]: Použít #V $task_kurultai_culture_1$#! [councillor_task|E]
+ culture_text: "Plenění pro [innovations|E]" # todo: [directive|E]: Rabovat za účelem získání [innovations|E]
+ herd_text: "Plenění pro [herd|E]" # todo: [directive|E]: Rabovat za účelem získání [herd|E]
  refusing_directive_text: "Tento [vassal|E] odmítá plnit vaši [directive|E]!"
  no_directive_text: "Tento [vassal|E] nemá žádnou [directive|E]"
  has_any_directive: "[recipient.GetFullName] #bold nemá#! [directive|E], kterou lze odstranit"
@@ -134,7 +134,7 @@
  ASK_FOR_PARDON_NOTIFICATION: "Pokorně vás prosím o udělení milosti za mé zločiny."
  pardon_interaction: "Udělit milost"
  pardon_interaction_desc: "Považujete [recipient.GetName] za [criminal|E] ([recipient.GetImprisonmentReasons( actor.Self )]), což vám umožňuje [imprison|E] jej kdykoli bez získání [tyranny|E].\n\nPokud byste raději, aby zůstal volný, můžete mu udělit milost. Tím se odstraní všechny důvody, které máte k [imprison|E], a zvýší se jeho [opinion|E] o vás."
- pardon_interaction_has_jirga_desc: "Považujete [recipient.GetName] za [criminal|E] ([recipient.GetImprisonmentReasons( actor.Self )]), což vám umožňuje [imprison|E] jej kdykoli bez získání [tyranny|E].\n\nPokud byste raději, aby zůstal volný, můžete mu udělit milost. Tím se odstraní všechny důvody, které máte k [imprison|E], a zvýší se jeho [opinion|E] o vás, a navíc vám to přinese prestiž díky vaší tradici $tradition_fp3_jirga_name$#!."
+ pardon_interaction_has_jirga_desc: "Získáte prestiž díky tradici $tradition_fp3_jirga_name$#!." # todo: Považujete [recipient.GetName] za [criminal|E] ([recipient.GetImprisonmentReasons( actor.Self )]), což vám umožňuje [imprison|E] jej kdykoli bez získání [tyranny|E].\n\nPokud byste raději, aby zůstal volný, můžete mu udělit milost. Tím se odstraní všechny důvody, které máte k [imprison|E], a zvýší se jeho [opinion|E] o vás, a navíc vám to přinese prestiž díky vaší tradici $tradition_fp3_jirga_name$#!.
  pardon_interaction_toast: "Váš milosrdný pán [actor.GetFirstName] vám prominul zločiny!"
  pardon_interaction_toast_title: "Milost udělena"
  county_must_have_city_tt: "[CHARACTER.GetPrimaryTitle.GetNameNoTooltip] musí obsahovat jedno [city|E] nebo mít úroveň [development|E] nad 20."
@@ -149,3 +149,13 @@
  grant_court_position: "Udělit dvorní pozici"
  grant_court_position_desc: "Udělit [recipient.GetShortUINameNoTooltip] [court_position|E]"
  request_court_position_extra_icon: "$hook_extra_icon$"
+ general_rebellion_decline_summary_bloc: "@warning_icon! #X Pokud [ROOT.Char.GetShortUIName] odmítne, [ROOT.Char.GetSheHe] povstane v rebelii spolu se všemi ostatními členy [ROOT.Char.GetConfederation.GetName|V] a jakýmikoli dalšími nespokojenými [vassals|E]!#!"  # todo: NEW TRANSLATION
+ ask_for_pardon_interaction_minister_desc: "Požádejte [minister_of_justice|E], aby vám odpustil vaše [crimes|E] a tím zrušil jakékoli [imprisonment_reasons|E], [banish_reasons|E], [revoke_title_reasons|E] nebo [execute_reasons|E] směřující proti vám"  # todo: NEW TRANSLATION
+ county_fertility: "@county_fertility_icon! Použijte #V $task_kurultai_fertility_1$#! [councillor_task|E]"  # todo: NEW TRANSLATION
+ culture_directive: "@culture_icon! Plenit kvůli [innovations|E]"  # todo: NEW TRANSLATION
+ herd_directive: "@herd_icon! Plenit kvůli [herd|E]"  # todo: NEW TRANSLATION
+ no_directive: "@directive_none! Žádné"  # todo: NEW TRANSLATION
+ refusing_directive: "@directive_refusal! Tento [vassal|E] odmítá dodržet vaši [directive|E]!"  # todo: NEW TRANSLATION
+ pardon_interaction_minister_desc: "[recipient.GetLiege.GetShortUIName] považuje [recipient.GetName] za [criminal|E] ([recipient.GetImprisonmentReasons( recipient.GetLiege.Self )]), což vám umožňuje je kdykoli [imprison|E] bez získání [tyranny|E].\n\nPokud byste si přáli, aby zůstali na svobodě, můžete je omilostnit. Tím odstraníte všechny důvody, které [recipient.GetLiege.GetTitleAsNameNoTooltip] má k jejich [imprison|E], a zvýšíte jejich [opinion|E] o vás."  # todo: NEW TRANSLATION
+ pardon_interaction_toast_minister: "Váš milosrdný [minister_of_justice|E], [actor.GetFirstName], vám udělil milost za vaše zločiny!"  # todo: NEW TRANSLATION
+ pardon_interaction_toast_minister_liege: "[minister_of_justice|E], [actor.GetFirstName], omilostnil zločiny [recipient.GetShortUIName]!"  # todo: NEW TRANSLATION

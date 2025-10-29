@@ -1,6 +1,6 @@
 ﻿l_polish:
  CONTRACT_EFFECTS_HEADER: "Efekty:"
- CONTRACT_NAME: "[SubjectContract.GetContractGroup.GetNameNoTooltip] smlouva"
+ CONTRACT_NAME: "[SubjectContract.GetContractGroup.GetName] smlouva" # todo: [SubjectContract.GetContractGroup.GetName] Smlouva
  FEUDAL_CONTRACT: "Smlouva s poddaným"
  HERD_CONTRIBUTION_KNOWN_VALUE: "@herd_icon! [herd|E]: $VALUE|+=%1$"
  HERD_CONTRIBUTION_MIN_KNOWN_VALUE: "@herd_icon! Minimální [herd|E]: $VALUE|+=%1$"
@@ -17,7 +17,7 @@
  MRW_GOVERNMENT_FILTER_ALL: "Vše"
  MRW_GOVERNMENT_FILTER_ALL_TT: "#T Zobrazit [vassals|E] všech [governments|E]#!"
  MRW_GOVERNMENT_FILTER_DROPDOWN_TT: "#T [government|E] Filter#!"
- MRW_GOVERNMENT_FILTER_ENTRY: "[GovernmentTypeFilter.GetGovernmentType.GetNameWithIcon] ([GovernmentTypeFilter.GetVassalsCount|V])"
+ MRW_GOVERNMENT_FILTER_ENTRY: "[GovernmentTypeFilter.GetGovernmentType.GetNameNoTooltip] ([GovernmentTypeFilter.GetVassalsCount|V])" # todo: [GovernmentTypeFilter.GetGovernmentType.GetNameNoTooltip] ([GovernmentTypeFilter.GetVassalsCount|V])
  MRW_GOVERNMENT_FILTER_ENTRY_TT: "#T Zobrazit [GovernmentTypeFilter.GetGovernmentType.GetNameWithIcon] [vassals|E]#!"
  MRW_GOVERNMENT_FILTER_TT: "[SelectLocalization( GovernmentTypeFilter.IsAllFilter, 'MRW_GOVERNMENT_FILTER_ALL_TT', 'MRW_GOVERNMENT_FILTER_ENTRY_TT' )]"
  MRW_HEIR_PREFERRED: "[Concept('vassal_stance','Preferred')|E] Od: [MyRealmWindow.GetCharacter.GetVassalStancesThatPrefer( Character.Self )]"
@@ -114,7 +114,7 @@
  MY_REALM_WINDOW_LAWS_PROGRESS_BAR_OPPOSES: "[MyRealmWindow.GetPowerfulVassalLawOpposes] #X Odporuje#!"
  MY_REALM_WINDOW_LAWS_PROGRESS_BAR_TITLE: "[powerful_vassal|E] Schválení"
  MY_REALM_WINDOW_LAWS_PROVINCIAL_LAWS: "Provincální zákony"
- MY_REALM_WINDOW_LAWS_PROVINCIAL_LAWS_DESC: "Provincální zákony může měnit pouze basileus Byzantské říše"
+ MY_REALM_WINDOW_LAWS_PROVINCIAL_LAWS_DESC: "Pouze [MyRealmWindow.GetCharacter.GetTopLiege.GetTitleAsName] z [MyRealmWindow.GetCharacter.GetTopLiege.GetPrimaryTitle.GetDefinitiveName] může měnit provinční zákony" # todo: Pouze [MyRealmWindow.GetCharacter.GetTopLiege.GetTitleAsName] z [MyRealmWindow.GetCharacter.GetTopLiege.GetPrimaryTitle.GetDefinitiveName] může měnit provinční zákony
  MY_REALM_WINDOW_LAWS_PROVINCIAL_LAWS_DESC_DISABLED: "@warning_icon! #X $MY_REALM_WINDOW_LAWS_PROVINCIAL_LAWS_DESC$#!"
  MY_REALM_WINDOW_LAWS_REALM_LAWS: "Zákony panství"
  MY_REALM_WINDOW_LAWS_SPECIFIC_SUCCESSION_LAWS: "Specifické zákony o nástupnictví"
@@ -132,7 +132,7 @@
  MY_REALM_WINDOW_MY_TAX_LEVEL: "$SUBJECT_CONTRACT_MY_OBLIGATIONS_TITLE$: [SubjectContract.GetShortObligationLevelNameWithHighlightFor( 'feudal_government_taxes' )]"
  MY_REALM_WINDOW_NOT_PRIMARY_HEIR: "@warning_icon! #X [MyRealmWindow.GetCharacter.GetPlayerHeir.GetShortUINameNoTooltip] není vaším [primary_heir|E]#!"
  MY_REALM_WINDOW_NO_CHILDREN: "@warning_icon! #X Nemáte žádné dítě, které by mohlo být určeno jako váš dědic#!"
- MY_REALM_WINDOW_NO_FEUDAL_CONTRACT_TT: "#T Žádné individuální povinnosti\n#!Jen [feudal|E], [nomad|E] a [clan|E] [vassals|E] (nepočítaje [barons|E]) mohou mít individuální [obligations|E]"
+ MY_REALM_WINDOW_NO_FEUDAL_CONTRACT_TT: "#T Žádné individuální povinnosti\n#!Pouze [landed|E] [feudal|E], [administrative|E], [nomad|E] a [clan|E] [vassals|E] (nepočítaje [barons|E]) mohou mít individuální [obligations|E]" # todo: #T Žádné individuální povinnosti\n#!Pouze [landed|E] [feudal|E], [administrative|E], [nomad|E] a [clan|E] [vassals|E] (nepočítaje [barons|E]) mohou mít individuální [obligations|E]
  MY_REALM_WINDOW_NO_HEIR_FLAVOR: "@warning_icon! #X Nemáte žádného dědice. Hra skončí po vaší smrti#!"
  MY_REALM_WINDOW_OBEDIENT: "@obedience_icon! [obedient|E]"
  MY_REALM_WINDOW_OBLIGATION_CHANGED: "$NAME|V$"
@@ -173,11 +173,11 @@
  MY_REALM_WINDOW_VASSAL_LIMIT: "[vassal_limit|E]#V :#! "
  MY_REALM_WINDOW_VASSAL_LIMIT_VALUE: "#V [GetPlayer.GetNumVassalsTowardsLimit]/[GetPlayer.GetVassalLimit]#!"
  MY_REALM_WINDOW_VASSAL_OBLIGATION: "$SUBJECT_CONTRACT_OBLIGATIONS_TITLE$: [SubjectContract.GetShortObligationLevelNameWithHighlightFor( 'feudal_government_taxes' )]\n$SUBJECT_CONTRACT_OBLIGATIONS_TITLE_LEVIES$: [SubjectContract.GetShortObligationLevelNameWithHighlightFor( 'feudal_government_levies' )]"
- MY_REALM_WINDOW_VASSAL_OPINION: "#E Názor vazalů#!: [MyRealmWindow.GetVassalOpinion|=+]"
- MY_REALM_WINDOW_VASSAL_OPINION_TT: "#T Názor [opinion|E]: [MyRealmWindow.GetVassalOpinion|=+]\n#!Toto je součet názorů, které ovlivní všechny vaše [vassals|E]. Pokud je tato hodnota nízká, pravděpodobně máte mnoho [factions|E] vám protivných!\n\n#S Zdroje#!\n[MyRealmWindow.GetVassalOpinionBreakdown]"
+ MY_REALM_WINDOW_VASSAL_OPINION: "Názor vazala: #color:{[ToTextFormatColor(GetOpinionTint( MyRealmWindow.GetVassalOpinion ))]} [MyRealmWindow.GetVassalOpinion|=]#!" # todo: Názor vazalů: #color:{[ToTextFormatColor(GetOpinionTint( MyRealmWindow.GetVassalOpinion ))]} [MyRealmWindow.GetVassalOpinion|=]#!
+ MY_REALM_WINDOW_VASSAL_OPINION_TT: "#T Vazal [opinion|E]: #color:{[ToTextFormatColor(GetOpinionTint( MyRealmWindow.GetVassalOpinion ))]} [MyRealmWindow.GetVassalOpinion|=]#!\n#!Jedná se o součet názorů, které budou ovlivňovat všechny vaše [vassals|E]. Pokud je tato hodnota nízká, pravděpodobně máte mnoho [factions|E], které jsou proti vám!\n\n#S Zdroje#!\n[MyRealmWindow.GetVassalOpinionBreakdown]" # todo: #T Vazal [opinion|E]: #color:{[ToTextFormatColor(GetOpinionTint( MyRealmWindow.GetVassalOpinion ))]} [MyRealmWindow.GetVassalOpinion|=]#!\n#!Toto je součet názorů, které budou ovlivňovat všechny vaše [vassals|E]. Pokud je tato hodnota nízká, je pravděpodobné, že máte mnoho [factions|E] proti sobě!\n\n#S Zdroje#!\n[MyRealmWindow.GetVassalOpinionBreakdown]
  MY_REALM_WINDOW_VASSAL_STANCES: "[vassal_stances|E]#V :#!"
  MY_REALM_WINDOW_VASSAL_STANCE_COUNT: "[VassalStance.GetTextIconNoFormat] [MyRealmWindow.GetNumVassalsWithStance( VassalStance.Self )|V]"
- MY_REALM_WINDOW_VASSAL_STANCE_COUNT_TT: "#T [VassalStance.GetTextIcon][VassalStance.GetName] [opinion|E]: [VassalStance.GetModifierValueFor( MyRealmWindow.GetCharacter )|=+0]#!\n[vassals|E] s [VassalStance.GetTextIcon][VassalStance.GetName] [vassal_stance|E]: [MyRealmWindow.GetNumVassalsWithStance( VassalStance.Self )|V]\n\n#S Zdroje#!:\n[VassalStance.GetModifierDescriptionFor( MyRealmWindow.GetCharacter )]"
+ MY_REALM_WINDOW_VASSAL_STANCE_COUNT_TT: "#T [VassalStance.GetTextIcon][VassalStance.GetName] [opinion|E]: #color:{[ToTextFormatColor(GetOpinionTint(FixedPointToInt(VassalStance.GetModifierValueFor( MyRealmWindow.GetCharacter ))))]} [VassalStance.GetModifierValueFor( MyRealmWindow.GetCharacter )|=0]#!#!\n[vassals|E] s [VassalStance.GetTextIcon][VassalStance.GetName] [vassal_stance|E]: [MyRealmWindow.GetNumVassalsWithStance( VassalStance.Self )|V]\n\n#S Zdroje#!:\n[VassalStance.GetModifierDescriptionFor( MyRealmWindow.GetCharacter )]" # todo: #T [VassalStance.GetTextIcon][VassalStance.GetName] [opinion|E]: #color:{[ToTextFormatColor(GetOpinionTint(FixedPointToInt(VassalStance.GetModifierValueFor( MyRealmWindow.GetCharacter ))))]} [VassalStance.GetModifierValueFor( MyRealmWindow.GetCharacter )|=0]#!#!\n[vassals|E] s [VassalStance.GetTextIcon][VassalStance.GetName] [vassal_stance|E]: [MyRealmWindow.GetNumVassalsWithStance( VassalStance.Self )|V]\n\n#S Zdroje#!:\n[VassalStance.GetModifierDescriptionFor( MyRealmWindow.GetCharacter )]
  MY_REALM_WINDOW_VOTE: "Zobrazit volbu"
  MY_REALM_WINDOW_VOTE_TOOLTIP: "#T Nominovat dědice#!\n#I Klikněte pro [Concept( 'nominate_heir', 'Nominate an Heir' )|E]#!"
  MY_REALM_WINDOW_YOUR_INCOME: "Váš příjem:"
@@ -202,9 +202,9 @@
  SUBJECT_CONTRACT_OBLIGATIONS_TITLE_HERD: "Úroveň stád"
  SUBJECT_CONTRACT_OBLIGATIONS_TITLE_LEVIES: "Úroveň vojsk"
  SUBJECT_CONTRACT_OBLIGATIONS_TITLE_PRESTIGE: "Úroveň prestiže"
- SUBJECT_CONTRACT_OBLIGATION_LEVEL_EFFECT_TOOLTIP: "$NAME|S$"
- SUBJECT_CONTRACT_OBLIGATION_LEVEL_HERD_EFFECT_TOOLTIP: "Stádo: $HERD|%1V$ ($HERD_CHANGE|+=%1$)"
- SUBJECT_CONTRACT_OBLIGATION_LEVEL_HERD_EFFECT_TOOLTIP_CURRENT: "Stádo: $HERD|%1V$"
+ SUBJECT_CONTRACT_OBLIGATION_LEVEL_EFFECT_TOOLTIP: "$NAME|T$" # todo: $NAME|T$
+ SUBJECT_CONTRACT_OBLIGATION_LEVEL_HERD_EFFECT_TOOLTIP: "$game_concept_herd$: $HERD|%1V$ ($HERD_CHANGE|+=%1$)" # todo: $game_concept_herd$: $HERD|%1V$ ($HERD_CHANGE|+=%1$)
+ SUBJECT_CONTRACT_OBLIGATION_LEVEL_HERD_EFFECT_TOOLTIP_CURRENT: "$game_concept_herd$: $HERD|%1V$" # todo: $game_concept_herd$: $HERD|%1V$
  SUBJECT_CONTRACT_OBLIGATION_LEVEL_LEVIES_EFFECT_TOOLTIP: "Vojská: $LEVIES|%1V$ ($LEVIES_CHANGE|+=%1$)"
  SUBJECT_CONTRACT_OBLIGATION_LEVEL_LEVIES_EFFECT_TOOLTIP_CURRENT: "Vojská: $LEVIES|%1V$"
  SUBJECT_CONTRACT_OBLIGATION_LEVEL_PRESTIGE_EFFECT_TOOLTIP: "$game_concept_prestige$: $PRESTIGE|%1V$ ($PRESTIGE_CHANGE|+=%1$)"
@@ -232,9 +232,9 @@
  VASSAL_CONTRACT_NOT_DEFAULT: "Tento [vassal_contract|E] byl v minulosti změněn tak, že obsahuje nestandardní [obligations|E]."
  VASSAL_CONTRACT_OBLIGATION_ONLY_ONCE: "#weak Jednou pro každou postavu můžete změnit [vassal_contract|E]#!"
  VASSAL_CONTRACT_VASSAL_TITLE: "Úprava smlouvy\n#high [SubjectContract.GetSubject.GetFirstNameNoTooltip] [SubjectContract.GetSubject.GetHouse.GetNameNoTooltip]\nVládce [SubjectContract.GetSubject.GetPrimaryTitle.GetNameNoTierNoTooltip]#!"
- VASSAL_CONTRACT_VASSAL_TITLE_ADMIN: "Úprava správy\n#high [SubjectContract.GetSubject.GetPrimaryTitle.GetNameNoTooltip]\nSpravováno [SubjectContract.GetSubject.GetFirstNameNoTooltip] [SubjectContract.GetSubject.GetHouse.GetNameNoTooltip]#!"
+ VASSAL_CONTRACT_VASSAL_TITLE_ADMIN: "Úprava správy\n[SubjectContract.GetSubject.GetPrimaryTitle.GetNameNoTooltip]\n#high Spravováno [SubjectContract.GetSubject.GetTitledFirstNameNoTooltip]#!" # todo: Úprava správy\n[SubjectContract.GetSubject.GetPrimaryTitle.GetNameNoTooltip]\n#high Spravuje [SubjectContract.GetSubject.GetTitledFirstNameNoTooltip]#!
  VASSAL_LIMIT_TOOLTIP_END: "[CHARACTER.GetVassalLimitBreakdown]"
- VASSAL_LIMIT_TOOLTIP_START: "#T Limit vazalů#!\n[CHARACTER.GetNumVassalsTowardsLimit]/[CHARACTER.GetVassalLimit] vazalů ([count|E] nebo více)"
+ VASSAL_LIMIT_TOOLTIP_START: "#T Ne-[baron|E] [vassals|E]: [CHARACTER.GetNumVassalsTowardsLimit|V]/[CHARACTER.GetVassalLimit|V]#!" # todo: #T Ne-[baron|E] [vassals|E]: [CHARACTER.GetNumVassalsTowardsLimit|V]/[CHARACTER.GetVassalLimit|V]#!
  VASSAL_OPINION_DIPLOMACY: "Osobní [diplomacy|E]"
  VASSAL_OPINION_DOMAIN_OVERRUN: "Překročeno [domain_limit|E]"
  VASSAL_OPINION_DUCHIES_OVERRUN: "Příliš mnoho [duchies|E]"
@@ -261,3 +261,30 @@
  my_realm_window_tax_contribution_theocracy_government: ""
  my_realm_window_tax_contribution_tribal_government: "Příspěvek [tax|E] od [tribal_government|E] [vassals|E] závisí na [prestige_level|E] jejich [liege|E]"
  MY_REALM_WINDOW_LAW_NAME: "#E [Law.GetName]#!"
+ MY_REALM_WINDOW_LAWS_PROVINCIAL_NO_LAWS_DESC: "Tento [realm|E] nemá žádné $MY_REALM_WINDOW_LAWS_PROVINCIAL_LAWS$"   # todo: NEW TRANSLATION
+ MY_REALM_WINDOW_LAWS_TREASURY_BUDGET_LAWS: "Zákony rozpočtu pokladny"   # todo: NEW TRANSLATION
+ MY_REALM_WINDOW_LAWS_TREASURY_BUDGET_LAWS_DESC_DISABLED: "@warning_icon! #X $MY_REALM_WINDOW_LAWS_TREASURY_BUDGET_LAWS_DESC$#!"   # todo: NEW TRANSLATION
+ MY_REALM_WINDOW_MANAGE_TREASURY_BUDGET: "Spravovat rozpočet pokladny"   # todo: NEW TRANSLATION
+ MRW_TT_PIETY_TO_MY_OVERLORD: "#weak [piety|E] uděleno vašemu [overlord|E]#!"   # todo: NEW TRANSLATION
+ MRW_TT_PIETY_TO_ME: "#weak [piety|E] uděleno vám vaším [subject|E]#!"   # todo: NEW TRANSLATION
+ MRW_TT_BARTER_GOODS_TO_ME: "#weak [barter_goods|E] uděleno vám vaším [subject|E]#!"   # todo: NEW TRANSLATION
+ SUBJECT_CONTRACT_OBLIGATION_LEVEL_PIETY_EFFECT_TOOLTIP: "$game_concept_piety$: $PIETY|%1V$ ($PIETY_CHANGE|+=%1$)"   # todo: NEW TRANSLATION
+ SUBJECT_CONTRACT_OBLIGATION_LEVEL_PIETY_EFFECT_TOOLTIP_CURRENT: "$game_concept_piety$: $PIETY|%1V$"   # todo: NEW TRANSLATION
+ subject_contract_obligation_cannot_change_tt: "Nesplňujete požadavky pro změnu této úrovně závazku:"   # todo: NEW TRANSLATION
+ SUBJECT_CONTRACT_OBLIGATIONS_TITLE_PIETY: "Úroveň zbožnosti"   # todo: NEW TRANSLATION
+ MY_REALM_WINDOW_TITLES_LOST_LABEL: "[TitleSuccessionItem.GetTitlesLostToText( Character.Self )]:"   # todo: NEW TRANSLATION
+ MY_REALM_WINDOW_LINE_OF_SUCCESSION_ORDERED_NAME: "#bold [LineOfSuccessionItem.GetOrder|V]#!  [Character.GetShortUINameNoTooltip], "   # todo: NEW TRANSLATION
+ MY_REALM_WINDOW_HOLDING_BARTER_GOODS: "@barter_goods_icon! [Holding.GetBarterGoodsIncome|1V]"   # todo: NEW TRANSLATION
+ MY_REALM_WINDOW_DOMAIN_BARTER_GOODS: "[domain|E] [barter_goods|E]"   # todo: NEW TRANSLATION
+ MY_REALM_WINDOW_VASSAL_BARTER_GOODS: "[vassal|E] [barter_goods|E]"   # todo: NEW TRANSLATION
+ MY_REALM_WINDOW_TRIBUTARY_BARTER_GOODS: "[tributary|E] [barter_goods|E]"   # todo: NEW TRANSLATION
+ PIETY_CONTRIBUTION_KNOWN_VALUE: "@piety_icon! [piety|E] převod jako podíl ze všech zisků: $VALUE|+=%1$"   # todo: NEW TRANSLATION
+ PIETY_CONTRIBUTION_MIN_KNOWN_VALUE: "@piety_icon! [piety|E] Minimálně: $VALUE|+=%1$"   # todo: NEW TRANSLATION
+ BARTER_GOODS_CONTRIBUTION_KNOWN_VALUE: "[barter_goods|E]: $VALUE|+=%1$"   # todo: NEW TRANSLATION
+ BARTER_GOODS_CONTRIBUTION_MIN_KNOWN_VALUE: "[barter_goods|E] Minimálně: $VALUE|+=%1$"   # todo: NEW TRANSLATION
+ MY_REALM_WINDOW_SUBJECT_STANDING: "Aktuální [SubjectContract.GetSubject.Custom('SubjectStanding')]: [SubjectContract.GetSubjectStanding|V0]"   # todo: NEW TRANSLATION
+ MY_REALM_WINDOW_SUBJECT_STANDING_TT: "[SubjectContract.GetSubject.Custom('SubjectStandingLoss')]"   # todo: NEW TRANSLATION
+ MY_REALM_WINDOW_SUZERAIN_NAME: "[suzerain|E] : [Character.GetSuzerain.GetShortUIName]"   # todo: NEW TRANSLATION
+ MY_REALM_WINDOW_LIEGE_NAME: "[liege|E] : [Character.GetLiege.GetShortUIName]"   # todo: NEW TRANSLATION
+ SUBJECT_CONTRACT_OBLIGATIONS_TITLE_BARTER_GOODS: "Výměnné zboží"   # todo: NEW TRANSLATION
+ CANT_CHANGE_LAW_TOOLTIP: "Nejsou k dispozici žádné další [succession_laws|E]"   # todo: NEW TRANSLATION

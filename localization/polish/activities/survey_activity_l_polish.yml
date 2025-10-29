@@ -60,7 +60,7 @@
  activity_survey_desc: "Proveďte důkladnou inspekci svých zemí, abyste zajistili, že vaše říše funguje jako dobře namazaný stroj, a hledejte příležitosti, jak zlepšit stávající byrokracii a situaci."
  activity_survey_destination_selection: "\n[inspections|E] mají prospěch z konání v [counties|E] s nízkou [county_control|E] nebo podél hranic s cizími [realms|E], kde místní byrokracie pokulhává. Tyto oblasti vám mohou nabídnout více příležitostí a mají zvýšenou [inspection_success_chance_no_prefix|E]."
  activity_survey_guest_desc: ""
- activity_survey_host_desc: "$BULLET_WITH_TAB$Může získat @pressed_claim![claims|E]\n$BULLET_WITH_TAB$Může zvýšit @vassal_icon![offer_vassalization|E] Přijetí\n$BULLET_WITH_TAB$Může zlepšit @gold_icon![taxes|E] v [county|E]\n$BULLET_WITH_TAB$Může zlepšit @development_icon![development|E] v [county|E]\n$BULLET_WITH_TAB$Může zlepšit @control_icon![control|E] v [county|E]\n$BULLET_WITH_TAB$Může zlepšit @stationed_regiment_icon![levies|E] v [county|E]\n$BULLET_WITH_TAB$Může zlepšit @opinion_icon![opinion|E]\n$BULLET_WITH_TAB$Může zlepšit @domain_icon![county_opinion|E]"
+ activity_survey_host_desc: "[AddLocalizationIf( GetPlayer.GetGovernment.HasRule( 'merit' ), 'activity_survey_gain_merit_desc' )]$BULLET_WITH_TAB$Může získat @pressed_claim![claims|E]\n$BULLET_WITH_TAB$Může zvýšit přijetí @vassal_icon![offer_vassalization|E]\n$BULLET_WITH_TAB$Může zlepšit @gold_icon![taxes|E] v [county|E]\n$BULLET_WITH_TAB$Může zlepšit @development_icon![development|E] v [county|E]\n$BULLET_WITH_TAB$Může zlepšit @control_icon![control|E] v [county|E]\n$BULLET_WITH_TAB$Může zlepšit @stationed_regiment_icon![levies|E] v [county|E]\n$BULLET_WITH_TAB$Může zlepšit @opinion_icon![opinion|E]\n$BULLET_WITH_TAB$Může zlepšit @domain_icon![county_opinion|E][AddLocalizationIf( GetPlayer.GetFaith.HasParameterByKey('inspections_unlocked_and_costs_piety' ), 'activity_survey_tenet_bonus' )]" # todo: $BULLET_WITH_TAB$Může získat @pressed_claim![claims|E]\n$BULLET_WITH_TAB$Může zvýšit @vassal_icon![offer_vassalization|E] Přijetí\n$BULLET_WITH_TAB$Může zlepšit @gold_icon![taxes|E] v [county|E]\n$BULLET_WITH_TAB$Může zlepšit @development_icon![development|E] v [county|E]\n$BULLET_WITH_TAB$Může zlepšit @control_icon![control|E] v [county|E]\n$BULLET_WITH_TAB$Může zlepšit @stationed_regiment_icon![levies|E] v [county|E]\n$BULLET_WITH_TAB$Může zlepšit @opinion_icon![opinion|E]\n$BULLET_WITH_TAB$Může zlepšit @domain_icon![county_opinion|E]
  activity_survey_predicted_cost: "Náklady na [inspection|E] jsou primárně ovlivněny množstvím prostředků přidělených [activity|E]. Více financí usnadní splnění úkolů, ale bude dražší."
  activity_survey_province_desc: "Cestujete do [ROOT.Province.GetName]"
  activity_survey_selection_tooltip: "Zajistěte, aby vaše říše byla spravována kompetentními poddanými skrze důkladnou inspekci\n\nOčekávané odměny: $rewards_inspection_tt$"
@@ -223,8 +223,8 @@
  bp3_survey.1050.t: "Rozšiřování městských hradeb"
  bp3_survey.1060.a: "Na co čekáme? Kopat! KOPAT!"
  bp3_survey.1060.desc.copper: "„Můj pane,“ náhle vykřikne jeden z mých vojáků, [soldier_character.GetFirstNameNoTooltip], „není tohle žíla mědi?“"
- bp3_survey.1060.desc.gold: "„Můj pane,“ náhle vykřikne jeden z mých vojáků, [soldier_character.GetFirstNameNoTooltip], s rozšířenýma očima, „je tohle kousek zlata?“"
- bp3_survey.1060.desc.silver: "„Můj pane,“ náhle vykřikne jeden z mých vojáků, [soldier_character.GetFirstNameNoTooltip], „tohle záření musí být stříbro!“"
+ bp3_survey.1060.desc.gold: ""[ROOT.Char.Custom('FormOfAddressForLiege')|U]," Jeden z mých vojáků, [soldier_character.GetFirstNameNoTooltip], náhle vykřikne s rozšířenýma očima, "Je to hrudka zlata?" # todo: „Můj pane,“ náhle vykřikne jeden z mých vojáků, [soldier_character.GetFirstNameNoTooltip], s rozšířenýma očima, „je tohle kousek zlata?“
+ bp3_survey.1060.desc.silver: ""[ROOT.Char.Custom('FormOfAddressForLiege')|U]," Jeden z mých vojáků, [soldier_character.GetFirstNameNoTooltip], náhle zvolá, "Tohle musí být stříbro!" # todo: „Můj pane,“ náhle vykřikne jeden z mých vojáků, [soldier_character.GetFirstNameNoTooltip], „tohle záření musí být stříbro!“
  bp3_survey.1060.desc: "Při průzkumu vnitrozemí [province.GetName] můj doprovod a já narazíme na skrytou starou cestu. I když je dobře skrytá, vede k malému kopci a konkrétně do jeskyně, kde nacházíme pohozené opuštěné hornické vybavení rozházené po dně jeskyně.\n\n"
  bp3_survey.1060.t: "Postarej se o doly"
  bp3_survey.1070.a.flavor: "Učiňte z těch viníků příklad, aby ostatní věděli, o co jde."
@@ -244,7 +244,7 @@
  bp3_survey.1080.desc.holy_site: "Zdá se, že [ROOT.GetCharacter.GetFaith.GetReligion.GetAdherentNamePluralNoTooltip] zdaleka přišli do [location_province.GetName] navštívit místní svaté místo, a byli přepadeni zločinci."
  bp3_survey.1080.desc.outro: "Pokud dovolíme banditům a pouličním lupiči dál se živit na návštěvnících... Je jen otázka času, než začnou hledat jinde."
  bp3_survey.1080.desc.poi: "Zdá se, že lidé zdaleka sem přijeli, aby viděli [location_province.Custom('GetSpecialBuildingPrefix')][location_province.GetHolding.GetSpecialBuildingType.GetName], a byli přepadeni zločinci."
- bp3_survey.1080.desc: "„Není to vůbec bezpečné, můj [ROOT.GetCharacter.GetLadyLord],“ říká mi unaveně vypadající cestovatel. „Těsně jsem unikl smrti.“ Zdá se, podle slov [traveler_character.GetHerHis], že [traveler_character.GetSheHe] toho opravdu hodně zažil(a).\n\n"
+ bp3_survey.1080.desc: ""Není to tu vůbec bezpečné, [ROOT.Char.Custom('FormOfAddressForLiege')]", vypráví mi unaveně vypadající cestovatel. "Stěží jsem přežil." Podle [traveler_character.GetHerHis] slov to vypadá, že [traveler_character.GetSheHe] má za sebou pořádný zážitek\n\n" # todo: „Není to vůbec bezpečné, můj [ROOT.GetCharacter.GetLadyLord],“ říká mi unaveně vypadající cestovatel. „Těsně jsem unikl smrti.“ Zdá se, podle slov [traveler_character.GetHerHis], že [traveler_character.GetSheHe] toho opravdu hodně zažil(a).\n\n
  bp3_survey.1080.t: "Místo hodné návštěvy"
  bp3_survey.1090.a: "Najmeme pár stráží, které budou hlídkovat vnitrozemí."
  bp3_survey.1090.b: "Naverbujte místní lovce, kteří oblast už znají."
@@ -453,3 +453,18 @@
  survey_overseer_intent: "Záměr dohlížejícího"
  survey_overseer_intent_desc: "Místní správci a šlechtici jsou známí svými dodatečnými daněmi a hlubokými kapsami, pojďme tomu učinit přítrž.\n\n#emp Zvyšuje [inspection_success_chance_no_prefix|E]#!"
  survey_very_low_county_control: "\n#positive_value +++ Velmi nízká kontrola hrabství#!"
+ activity_survey_tenet_bonus: "\n$BULLET_WITH_TAB$Při dokončení poskytne [piety_experience|E]"  # todo: NEW TRANSLATION
+ activity_survey_gain_merit_desc: "$BULLET_WITH_TAB$$may_gain_merit_desc$\n"  # todo: NEW TRANSLATION
+ inspection_conclusion_success_piety_key_title: "Zbožná inspekce"  # todo: NEW TRANSLATION
+ inspection_conclusion_success_piety_key: "[host.GetShortUIName] získal [piety_experience|E] během [host.GetHerHis] inspekce při návštěvě [province.GetName]."  # todo: NEW TRANSLATION
+ inspection_conclusion_failure_devotion_key_title: "$inspection_conclusion_failure_merit_key_title$"  # todo: NEW TRANSLATION
+ inspection_conclusion_failure_devotion_key: "[host.GetShortUIName] získal [piety_experience|E] během [host.GetHerHis] inspekce při návštěvě [province.GetName], i když nebyla příliš úspěšná."  # todo: NEW TRANSLATION
+ inspection_conclusion_success_merit_key_title: "Záslužná inspekce"  # todo: NEW TRANSLATION
+ inspection_conclusion_success_merit_key: "[host.GetShortUIName] získal [merit|E] po úspěšné inspekci v [province.GetName]."  # todo: NEW TRANSLATION
+ inspection_conclusion_failure_merit_key_title: "Neúspěšná inspekce"  # todo: NEW TRANSLATION
+ inspection_conclusion_failure_merit_key: "[host.GetShortUIName] získal nějaký [merit|E], přestože inspekce v [province.GetName] nebyla příliš úspěšná."  # todo: NEW TRANSLATION
+ inspection_conclusion_success_salary_key_title: "Velký platový bonus"  # todo: NEW TRANSLATION
+ inspection_conclusion_success_salary_key: "[host.GetShortUIName] získal hodně zlata a významný platový bonus po provedení úspěšné inspekce"  # todo: NEW TRANSLATION
+ inspection_conclusion_failure_salary_key_title: "Skromný platový bonus"  # todo: NEW TRANSLATION
+ inspection_conclusion_failure_salary_key: "[host.GetShortUIName] získal nějaké zlato a malý platový bonus, přestože inspekce nebyla úspěšná."  # todo: NEW TRANSLATION
+ neither_local_inspection_perk_nor_merit: "Nemáte [GetPerk('local_inspection_perk').GetName(GetPlayer)] [perk|E], ani [government|E] založenou na [government_bureaucratic_type|E]"  # todo: NEW TRANSLATION

@@ -20,13 +20,13 @@
  greeting_family_negative: "[ROOT.Char.Custom2('GreetingToFamilyNegative', second)]"
  greeting_family_positive: "[ROOT.Char.Custom2('GreetingToFamilyPositive', second)]"
  greeting_foreign_ruler: "Pozdravy [second.GetNameNoTooltip],"
- greeting_foreign_ruler_negative: "K [second.Custom('InsultAdjective')]mu [second.GetTitledFirstNameNoTooltip],"
+ greeting_foreign_ruler_negative: "Pro [second.Custom2('InsultAdjective', ROOT.Char)] [second.GetTitledFirstNameNoTooltip]," # todo: K [second.Custom('InsultAdjective')]mu [second.GetTitledFirstNameNoTooltip],
  greeting_foreign_ruler_positive: "K [second.Custom('ComplimentAdjective')]mu [second.GetNameNoTooltip],"
  greeting_generic: "Pozdravy [second.GetNameNoTooltip],"
- greeting_generic_negative: "K [second.Custom('InsultAdjective')]mu [second.GetFirstNameNoTooltip],"
+ greeting_generic_negative: "Pro [second.Custom2('InsultAdjective', ROOT.Char)] [second.GetFirstNameNoTooltip]," # todo: K [second.Custom('InsultAdjective')]mu [second.GetFirstNameNoTooltip],
  greeting_generic_positive: "K [second.Custom('ComplimentAdjective')]mu [second.GetFirstNameNoTooltip],"
  greeting_liege_dislike: "Mému lennímu pánu,"
- greeting_liege_fallback: "Pozdravy, můj lenní pane,"
+ greeting_liege_fallback: "[ROOT.Char.Custom2('GreetingToLiegeNeutral', second)]," # todo: Pozdravy, můj lenní pane,
  greeting_liege_liked: "Pozdravy, můj [second.Custom('ComplimentAdjective')] lenní pane,"
  greeting_liege_negative: "[ROOT.Char.Custom2('GreetingToLiegeNegative', second)]"
  greeting_liege_positive: "[ROOT.Char.Custom2('GreetingToLiegePositive', second)]"
@@ -49,9 +49,43 @@
  greeting_supplimentary.positive.flattery.5: "Tvoje nemilosrdnost je záviděníhodná."
  greeting_supplimentary.positive.flattery.6: "Tvé velké chutě jsou proslulé po celém světě."
  greeting_supplimentary.positive: "[ROOT.Char.Custom2('PositiveSupplimentaryGreeting', second)]"
- greeting_vassal_dislike: "Mému [second.Custom('InsultAdjective')] vazalovi,"
- greeting_vassal_fallback: "Mému vazalovi,"
+ greeting_vassal_dislike: "Mému [second.Custom2('InsultAdjective', ROOT.Char)] vazalovi," # todo: Mému [second.Custom('InsultAdjective')] vazalovi,
+ greeting_vassal_fallback: "[ROOT.Char.Custom2('GreetingToVassalNeutral', second)]" # todo: Mému vazalovi,
  greeting_vassal_liked: "Pozdravy, můj [second.Custom('ComplimentAdjective')] vazale,"
  greeting_vassal_negative: "[ROOT.Char.Custom2('GreetingToVassalNegative', second)]"
  greeting_vassal_positive: "[ROOT.Char.Custom2('GreetingToVassalPositive', second)]"
  greeting_vassal_relative_liked: "[ROOT.Char.Custom2('GreetingToFamily', second)]"
+ greeting_liege_liked_regent: "Zdravím, [second.Custom('ComplimentAdjective')] [ROOT.Char.GetTopLiege.GetTitleAsNameNoTooltip],"  # todo: NEW TRANSLATION
+ greeting_liege_dislike_regent: "Zdravím, [second.Custom('ComplimentAdjective')] [ROOT.Char.GetTopLiege.GetTitleAsNameNoTooltip],"  # todo: NEW TRANSLATION
+ greeting_liege_neutral: "Zdravím, můj pán,"  # todo: NEW TRANSLATION
+ greeting_liege_neutral_regent: "Zdravím [ROOT.Char.GetTopLiege.GetTitleAsNameNoTooltip],"  # todo: NEW TRANSLATION
+ greeting_ceremonial_regent_liked: "Zdravím, velice [second.Custom('ComplimentAdjective')] [second.GetTitledFirstNameNoTooltip],"  # todo: NEW TRANSLATION
+ greeting_ceremonial_regent_dislike: "K [second.GetTitleAsNameNoTooltip],"  # todo: NEW TRANSLATION
+ greeting_ceremonial_liege_fallback: "Zdravím [second.GetTitledFirstNameNoTooltip],"  # todo: NEW TRANSLATION
+ greeting_vassal_liked_regent: "Zdravím, [second.Custom('ComplimentAdjective')] poddaný [ROOT.Char.Custom('GetCeremonialLiegeOrLiegeTitle')],"  # todo: NEW TRANSLATION
+ greeting_vassal_liked_ceremonial_liege: "Můj [second.Custom2('ComplimentAdjective', ROOT.Char)|U] [ROOT.Char.Custom('GetCeremonialLiegeOrLiegeTitle')],"  # todo: NEW TRANSLATION
+ greeting_vassal_dislike_regent: "[second.Custom2('InsultAdjective', ROOT.Char)|U] poddaný [ROOT.Char.Custom('GetCeremonialLiegeOrLiegeTitle')],"  # todo: NEW TRANSLATION
+ greeting_vassal_dislike_ceremonial_liege: "Můj [second.Custom2('InsultAdjective', ROOT.Char)|U] [ROOT.Char.Custom('GetCeremonialLiegeOrLiegeTitle')],"  # todo: NEW TRANSLATION
+ greeting_vassal_neutral: "Mému vazalovi,"  # todo: NEW TRANSLATION
+ greeting_vassal_neutral_regent: "K [ROOT.Char.Custom('GetCeremonialLiegeOrLiegeTitlePossessive')] poddanému,"  # todo: NEW TRANSLATION
+ greeting_vassal_neutral_ceremonial_liege: "Můj [ROOT.Char.GetTitleAsNameNoTooltip],"  # todo: NEW TRANSLATION
+ greeting_appropriate_negative_liege_regent: "[ROOT.Char.Custom2('GreetingToLiegeNegative', second)]"  # todo: NEW TRANSLATION
+ greeting_appropriate_negative_vassal_regent: "[ROOT.Char.Custom2('GreetingToVassalNegative', second)]"  # todo: NEW TRANSLATION
+ form_of_address_your_excellency: "Vaše Excelence"  # todo: NEW TRANSLATION
+ form_of_address_excellency: "Excelence"  # todo: NEW TRANSLATION
+ form_of_address_my_ladylord: "můj [ROOT.Char.GetLadyLord]"  # todo: NEW TRANSLATION
+ form_of_address_ladylord_regent: "[ROOT.Char.GetLadyLord|U] regent"  # todo: NEW TRANSLATION
+ form_of_address_your_holiness: "Vaše Svatosti"  # todo: NEW TRANSLATION
+ form_of_address_your_highness: "Vaše Jasnosti"  # todo: NEW TRANSLATION
+ form_of_address_highness: "Jasnost"  # todo: NEW TRANSLATION
+ form_of_address_your_majesty: "Vaše Veličenstvo"  # todo: NEW TRANSLATION
+ form_of_address_my_liege_title: "můj [ROOT.Char.GetTitleAsNameNoTooltip|l]"  # todo: NEW TRANSLATION
+ form_of_address_liege_title: "[ROOT.Char.GetTitleAsNameNoTooltip|l]"  # todo: NEW TRANSLATION
+ form_of_address_great_liege_title: "Velký [ROOT.Char.GetTitleAsNameNoTooltip]"  # todo: NEW TRANSLATION
+ form_of_address_my_sovereign_ladylord: "můj svrchovaný [ROOT.Char.GetLadyLord]"  # todo: NEW TRANSLATION
+ form_of_address_son_of_heaven: "Syn nebes"  # todo: NEW TRANSLATION
+ form_of_address_your_radiance: "Vaše Záře"  # todo: NEW TRANSLATION
+ ceremonial_liege_title_from_any_vassal: "[ROOT.Char.GetTopLiege.GetPrimaryTitle.MakeScope.Var('administrative_ui_special_title').Title.GetHolder.GetTitleAsNameNoTooltip]"  # todo: NEW TRANSLATION
+ ceremonial_liege_title_from_any_vassal_possessive: "[ROOT.Char.GetTopLiege.GetPrimaryTitle.MakeScope.Var('administrative_ui_special_title').Title.GetHolder.GetTitleAsNamePossessiveNoTooltip]"  # todo: NEW TRANSLATION
+ top_liege_title_from_any_vassal: "[ROOT.Char.GetTopLiege.GetPrimaryTitle.MakeScope.Var('administrative_ui_special_title').Title.GetHolder.GetTitleAsNameNoTooltip]"  # todo: NEW TRANSLATION
+ top_liege_title_from_any_vassal_possessive: "[ROOT.Char.GetTopLiege.GetPrimaryTitle.MakeScope.Var('administrative_ui_special_title').Title.GetHolder.GetTitleAsNamePossessiveNoTooltip]"  # todo: NEW TRANSLATION

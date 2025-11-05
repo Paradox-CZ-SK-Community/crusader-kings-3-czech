@@ -2,21 +2,21 @@
  ACTIVATE_SCHEME_COUNTERMEASURE_ACCEPT: "Aktivovat"
  ACTIVATE_SCHEME_COUNTERMEASURE_COST: "\n\n#bold Cena aktivace:#!\n[SchemeCountermeasureType.GetActivationCostDesc( Character.Self )]"
  ACTIVATE_SCHEME_COUNTERMEASURE_MODIFIERS: "\n\n#bold Modifikátory:#!\n[SchemeCountermeasureType.GetOwnerModifierDesc]"
- ACTIVATE_SCHEME_COUNTERMEASURE_PARAMETERS: "\n\n[SchemeCountermeasureType.GetParameterListDesc()]"
- ACTIVATE_SCHEME_COUNTERMEASURE_TEXT: "[SchemeCountermeasureType.GetDesc][SelectLocalization( SchemeCountermeasureType.HasParameters, 'ACTIVATE_SCHEME_COUNTERMEASURE_PARAMETERS', '')][SelectLocalization( SchemeCountermeasureType.HasActivationCost, 'ACTIVATE_SCHEME_COUNTERMEASURE_COST', '')][SelectLocalization( SchemeCountermeasureType.HasOwnerModifier, 'ACTIVATE_SCHEME_COUNTERMEASURE_MODIFIERS', '')]"
+ ACTIVATE_SCHEME_COUNTERMEASURE_PARAMETERS: "[SchemeCountermeasureType.GetParameterListDesc]" # todo: [SchemeCountermeasureType.GetParameterListDesc]
+ ACTIVATE_SCHEME_COUNTERMEASURE_TEXT: "[SelectLocalization( SchemeCountermeasureType.HasParameters, 'ACTIVATE_SCHEME_COUNTERMEASURE_PARAMETERS', '')][SelectLocalization( SchemeCountermeasureType.HasActivationCost, 'ACTIVATE_SCHEME_COUNTERMEASURE_COST', '')][SelectLocalization( SchemeCountermeasureType.HasOwnerModifier, 'ACTIVATE_SCHEME_COUNTERMEASURE_MODIFIERS', '')]\n\n[SchemeCountermeasureType.GetDesc]" # todo: [SelectLocalization( SchemeCountermeasureType.HasParameters, 'ACTIVATE_SCHEME_COUNTERMEASURE_PARAMETERS', '')][SelectLocalization( SchemeCountermeasureType.HasActivationCost, 'ACTIVATE_SCHEME_COUNTERMEASURE_COST', '')][SelectLocalization( SchemeCountermeasureType.HasOwnerModifier, 'ACTIVATE_SCHEME_COUNTERMEASURE_MODIFIERS', '')]\n\n[SchemeCountermeasureType.GetDesc]
  ACTIVATE_SCHEME_COUNTERMEASURE_TITLE: "Aktivovat '[SchemeCountermeasureType.GetName]'"
  DEACTIVATE_SCHEME_COUNTERMEASURE_ACCEPT: "Deaktivovat"
  DEACTIVATE_SCHEME_COUNTERMEASURE_TEXT: "#WEAK Nebezpečí už je jistě pryč?#!\n$EFFECT_LIST_BULLET$Všechny [scheme_countermeasure|E] bonusy a postihy vůči konkrétním [schemes|E] jsou vypnuty\n$EFFECT_LIST_BULLET$Všechny probíhající negativní [modifiers|E] od [scheme_countermeasure_countermeasures|E] jsou vypnuty"
  DEACTIVATE_SCHEME_COUNTERMEASURE_TITLE: "Deaktivovat '[SchemeCountermeasureType.GetName]'"
  INTRIGUE_WINDOW_SCHEME_COUNTERMEASURE_ITEM_AI_VALUE_LABLE: "#D AI: [IntrigueWindowCountermeasureItem.GetAiWillDo()] #!"
  INTRIGUE_WINDOW_SCHEME_COUNTERMEASURE_NONE_ACTIVATED: "Žádné speciální [scheme_countermeasure|E] není momentálně aktivní.\nVyberte jedno, pokud víte nebo tušíte, že se na dvoře nachází [hostile_scheme|E]"
- SCHEME_COUNTERMEASURE_ITEM_TOOLTIP: "#size:22 [SchemeCountermeasureType.GetName]#!\n$ACTIVATE_SCHEME_COUNTERMEASURE_TEXT$\n\n$HINT$"
+ SCHEME_COUNTERMEASURE_ITEM_TOOLTIP: "#T [SchemeCountermeasureType.GetName]#!\n$ACTIVATE_SCHEME_COUNTERMEASURE_TEXT$\n\n$HINT$" # todo: #T [SchemeCountermeasureType.GetName]#!\n$ACTIVATE_SCHEME_COUNTERMEASURE_TEXT$\n\n$HINT$
  SCHEME_COUNTERMEASURE_MISSING_ON_TARGET: "Žádné $game_concept_scheme_countermeasure_countermeasure$ zaměření"
- SCHEME_COUNTERMEASURE_NONE_TOOLTIP: "Žádné $game_concept_scheme_countermeasure_countermeasure$ Zaměření\n#WEAK Jen blázen vymění důstojnost za bezpečí bezdůvodně.#!"
+ SCHEME_COUNTERMEASURE_NONE_TOOLTIP: "#T Žádné $game_concept_scheme_countermeasure_countermeasure$ zaměření\n#!#WEAK Jen blázen vymění důstojnost za bezpečí bez pádného důvodu.#!" # todo: #T Žádné zaměření $game_concept_scheme_countermeasure_countermeasure$\n#!#WEAK Pouze blázen obětuje důstojnost kvůli bezpečí bez vážného důvodu.#!
  SCHEME_COUNTERMEASURE_PROTECTING_TARGET: "#T [Scheme.GetSchemeCountermeasureProtectingTarget().GetName()]#!\n[Scheme.GetSchemeCountermeasureProtectingTarget().GetDesc()]\n\n[Scheme.GetSchemeCountermeasureProtectingTarget().GetParameterListDesc()]\n\n#BOL Modifikátory:#!\n[Scheme.GetSchemeCountermeasureProtectingTarget().GetOwnerModifierDesc]"
- SCHEME_COUNTERMEASURE_TOOLTIP_CURRENT: "Toto je vaše aktuální protiopatření."
+ SCHEME_COUNTERMEASURE_TOOLTIP_CURRENT: "Aktuální protiopatření" # todo: Aktuální protiopatření
  SCHEME_COUNTERMEASURE_TOOLTIP_FAILURE_REASONS: "$REASONS$"
- SCHEME_COUNTERMEASURE_TOOLTIP_INSTRUCTION: "#I Klikněte pro aktivaci protiopatření #!"
+ SCHEME_COUNTERMEASURE_TOOLTIP_INSTRUCTION: "#I Klikněte pro aktivaci protiopatření#!" # todo: #I Klikněte pro aktivaci protiopatření#!
  TRAIT_FLAG_DESC_trait_unlocks_t2_arbitrary_arrests: "$countermeasures_unlocks_t2_arbitrary_arrests$"
  TRAIT_FLAG_DESC_trait_unlocks_t2_countermeasures: "$countermeasures_unlocks_all_t2$"
  TRAIT_FLAG_DESC_trait_unlocks_t2_withdraw_from_view: "$countermeasures_unlocks_t2_withdraw_from_view$"
@@ -59,7 +59,7 @@
  culture_parameter_cultrad_unlocks_t4_bounties_for_whispers: "$countermeasures_unlocks_t4_bounties_for_whispers$"
  doctrine_parameter_tenet_unlocks_t3_withdraw_from_view: "$countermeasures_unlocks_t3_withdraw_from_view$"
  doctrine_parameter_tenet_unlocks_t4_bounties_for_whispers: "$countermeasures_unlocks_t4_bounties_for_whispers$"
- indirect_schemes_boilerplate.tt: "\n$BULLET_WITH_TAB$[GetScheme('claim_throne').GetTypeName]\n$BULLET_WITH_TAB$[GetScheme('fabricate_hook').GetTypeName]"
+ indirect_schemes_boilerplate.tt: "\n$BULLET_WITH_TAB$[GetScheme('claim_throne').GetTypeName]\n$BULLET_WITH_TAB$[GetScheme('fabricate_hook').GetTypeName][AddLocalizationIf( GetPlayer.GetGovernment.HasGovernmentFlag( 'government_is_mandala' ), 'tgp_disbelieve_mandala_boilerplate.tt' )]" # todo: \n$BULLET_WITH_TAB$[GetScheme('claim_throne').GetTypeName]\n$BULLET_WITH_TAB$[GetScheme('fabricate_hook').GetTypeName][AddLocalizationIf( GetPlayer.GetGovernment.HasGovernmentFlag( 'government_is_mandala' ), 'tgp_disbelieve_mandala_boilerplate.tt' )]
  opportunistic_schemes_boilerplate.tt: "\n$BULLET_WITH_TAB$[GetScheme('seduce').GetTypeName]\n$BULLET_WITH_TAB$[GetScheme('convert_to_witchcraft').GetTypeName]\n$BULLET_WITH_TAB$[GetScheme('elope').GetTypeName]"
  scheme_countermeasure_parameter_characters_more_likely_to_accept_agenthood_against_if_arrogant: "[GetTrait('arrogant').GetName(GetNullCharacter)] [characters|E] mají [EmptyScope.ScriptValue('countermeasure_disliked_by_trait_agenthood_acceptance_value')|=/N0] přijetí [agent|E] vůči vám"
  scheme_countermeasure_parameter_characters_more_likely_to_accept_agenthood_against_if_deceitful: "[GetTrait('deceitful').GetName(GetNullCharacter)] [characters|E] mají [EmptyScope.ScriptValue('countermeasure_disliked_by_trait_agenthood_acceptance_value')|=/N0] přijetí [agent|E] vůči vám"
@@ -92,7 +92,7 @@
  scheme_countermeasure_parameter_success_chance_vs_opportunistic_schemes_malus_medium: "[EmptyScope.ScriptValue('countermeasure_scheme_category_success_chance_malus_against_medium_value')|=/N%0] [success_chance|E] pro nepřátelská [schemes|E] jako:$opportunistic_schemes_boilerplate.tt$"
  scheme_countermeasure_parameter_success_chance_vs_opportunistic_schemes_malus_minor: "[EmptyScope.ScriptValue('countermeasure_scheme_category_success_chance_malus_against_minor_value')|=/N%0] [success_chance|E] pro nepřátelská [schemes|E] jako:$opportunistic_schemes_boilerplate.tt$"
  scheme_countermeasure_type_arbitrary_arrests: "Arbitrární zatýkání"
- scheme_countermeasure_type_arbitrary_arrests_desc: "#WEAK Nasazování poutek na každého služebníka, poddaného a posla, kdo jen mrkne, je jistě účinné donucení. Jen to není příliš populární.#!\n\nSilně se soustředí na snížení [secrecy|E] za vysokou cenu reputace."
+ scheme_countermeasure_type_arbitrary_arrests_desc: "#WEAK Připoutat pouty každého služebníka, družiníka a vyslance, který jen pohnul víčkem, je jistě účinné donucení. Jen není příliš oblíbené.#!" # todo: #WEAK Připoutat okovy každému služebníku, vazalovi a emisáři, kdo jen mrkne, je sice účinné nucení. Jen to není zrovna populární.#!
  scheme_countermeasure_type_arbitrary_arrests_t1: "$scheme_countermeasure_type_arbitrary_arrests$"
  scheme_countermeasure_type_arbitrary_arrests_t1_desc: "$scheme_countermeasure_type_arbitrary_arrests_desc$"
  scheme_countermeasure_type_arbitrary_arrests_t2: "$scheme_countermeasure_type_arbitrary_arrests$"
@@ -102,7 +102,7 @@
  scheme_countermeasure_type_arbitrary_arrests_t4: "$scheme_countermeasure_type_arbitrary_arrests$"
  scheme_countermeasure_type_arbitrary_arrests_t4_desc: "$scheme_countermeasure_type_arbitrary_arrests_desc$"
  scheme_countermeasure_type_bounties_for_whispers: "Odměny za šepoty"
- scheme_countermeasure_type_bounties_for_whispers_desc: "#WEAK Peníze dokážou rozhýbat pomluvy — i když to *opravdu* vyžaduje jejich poslouchání.#!\n\nZaměřuje se na nenápadné snížení [secrecy|E] za cenu reputace."
+ scheme_countermeasure_type_bounties_for_whispers_desc: "#WEAK Peníze často stačí, aby se špína rozpovídala — i když to *opravdu* vyžaduje, abyste naslouchali.#!" # todo: #WEAK Peníze často donutí pomluvy promluvit — i když to *doopravdy* znamená, že je musíte poslouchat.#!
  scheme_countermeasure_type_bounties_for_whispers_t1: "$scheme_countermeasure_type_bounties_for_whispers$"
  scheme_countermeasure_type_bounties_for_whispers_t1_desc: "$scheme_countermeasure_type_bounties_for_whispers_desc$"
  scheme_countermeasure_type_bounties_for_whispers_t2: "$scheme_countermeasure_type_bounties_for_whispers$"
@@ -112,7 +112,7 @@
  scheme_countermeasure_type_bounties_for_whispers_t4: "$scheme_countermeasure_type_bounties_for_whispers$"
  scheme_countermeasure_type_bounties_for_whispers_t4_desc: "$scheme_countermeasure_type_bounties_for_whispers_desc$"
  scheme_countermeasure_type_redouble_guards: "Zdvojnásobit stráže"
- scheme_countermeasure_type_redouble_guards_desc: "#WEAK Ozbrojení příslušníci excelují ve zmaření těch se zlými úmysly, ale nezastaví skrytou zprávu zasunutou pod dveře ani rozhovor v temném koutě.#!\n\nChrání proti ozbrojeným spiknutím."
+ scheme_countermeasure_type_redouble_guards_desc: "#WEAK Ozbrojení družiníci vynikají v odražení těch se skutečně zlými úmysly, ale nezastaví tajný dopis vklouznuvší pod dveře ani rozhovor v tmavém koutě.#!" # todo: #WEAK Ozbrojení vazalové excelují v zmařování těch se zjevnými zlými úmysly, ale nezastaví skrytý dopis vhozený pod dveře ani rozhovor ve stinném koutě.#!
  scheme_countermeasure_type_redouble_guards_t1: "$scheme_countermeasure_type_redouble_guards$"
  scheme_countermeasure_type_redouble_guards_t1_desc: "$scheme_countermeasure_type_redouble_guards_desc$"
  scheme_countermeasure_type_redouble_guards_t2: "$scheme_countermeasure_type_redouble_guards$"
@@ -122,7 +122,7 @@
  scheme_countermeasure_type_redouble_guards_t4: "$scheme_countermeasure_type_redouble_guards$"
  scheme_countermeasure_type_redouble_guards_t4_desc: "$scheme_countermeasure_type_redouble_guards_desc$"
  scheme_countermeasure_type_strengthen_sentries: "Posílit stráže"
- scheme_countermeasure_type_strengthen_sentries_desc: "#WEAK Ostražité oči drží popocházející nápadníky pryč docela dobře, ale zápasí s dobře organizovanými, ozbrojenými spiklenci.#!\n\nChrání proti náhlým vetřelcům."
+ scheme_countermeasure_type_strengthen_sentries_desc: "#WEAK Bdělé oči udrží bloumající nápadníky daleko, ale mají potíže s dobře organizovanými a dobře vyzbrojenými spiklenci.#!" # todo: #WEAK Bystré oči drží pryč potulné ctitele, ale proti dobře organizovaným a dobře ozbrojeným spiklencům sotva stačí.#!
  scheme_countermeasure_type_strengthen_sentries_t1: "$scheme_countermeasure_type_strengthen_sentries$"
  scheme_countermeasure_type_strengthen_sentries_t1_desc: "$scheme_countermeasure_type_strengthen_sentries_desc$"
  scheme_countermeasure_type_strengthen_sentries_t2: "$scheme_countermeasure_type_strengthen_sentries$"
@@ -132,7 +132,7 @@
  scheme_countermeasure_type_strengthen_sentries_t4: "$scheme_countermeasure_type_strengthen_sentries$"
  scheme_countermeasure_type_strengthen_sentries_t4_desc: "$scheme_countermeasure_type_strengthen_sentries_desc$"
  scheme_countermeasure_type_withdraw_from_view: "Stáhnout se z očí veřejnosti"
- scheme_countermeasure_type_withdraw_from_view_desc: "#WEAK Když je bezpečí vážnou starostí, ale neznáte přesné nebezpečí, možností je prostě zříci se veškerých povinností.#!\n\nChrání proti většině hrozeb, ale ne efektivně."
+ scheme_countermeasure_type_withdraw_from_view_desc: "#WEAK Když je bezpečnost vážnou starostí, ale hrozba je neznámá, je možné se prostě zříci všech povinností.#!" # todo: #WEAK Když je bezpečnost vážným problémem, ale hrozba je neznámá, může být řešením prosté zřeknutí se všech povinností.#!
  scheme_countermeasure_type_withdraw_from_view_t1: "$scheme_countermeasure_type_withdraw_from_view$"
  scheme_countermeasure_type_withdraw_from_view_t1_desc: "$scheme_countermeasure_type_withdraw_from_view_desc$"
  scheme_countermeasure_type_withdraw_from_view_t2: "$scheme_countermeasure_type_withdraw_from_view$"
@@ -141,3 +141,21 @@
  scheme_countermeasure_type_withdraw_from_view_t3_desc: "$scheme_countermeasure_type_withdraw_from_view_desc$"
  scheme_countermeasure_type_withdraw_from_view_t4: "$scheme_countermeasure_type_withdraw_from_view$"
  scheme_countermeasure_type_withdraw_from_view_t4_desc: "$scheme_countermeasure_type_withdraw_from_view_desc$"
+ tgp_disbelieve_mandala_boilerplate.tt: "\n$BULLET_WITH_TAB$[GetScheme('disbelieve_mandala').GetTypeName]"   # todo: NEW TRANSLATION
+ scheme_countermeasure_type_bribe_officials: "Podplatit úředníky"   # todo: NEW TRANSLATION
+ scheme_countermeasure_type_bribe_officials_desc: "#WEAK Když se proti vám ozvou politickí rivalové, dobře umístěné pytle s mincemi a tahání za nitky jistě podkopají jejich snahy.#!"   # todo: NEW TRANSLATION
+ scheme_countermeasure_type_bribe_officials_t1: "$scheme_countermeasure_type_bribe_officials$"   # todo: NEW TRANSLATION
+ scheme_countermeasure_type_bribe_officials_t1_desc: "$scheme_countermeasure_type_bribe_officials_desc$"   # todo: NEW TRANSLATION
+ scheme_countermeasure_type_bribe_officials_t2: "$scheme_countermeasure_type_bribe_officials$"   # todo: NEW TRANSLATION
+ scheme_countermeasure_type_bribe_officials_t2_desc: "$scheme_countermeasure_type_bribe_officials_desc$"   # todo: NEW TRANSLATION
+ scheme_countermeasure_type_bribe_officials_t3: "$scheme_countermeasure_type_bribe_officials$"   # todo: NEW TRANSLATION
+ scheme_countermeasure_type_bribe_officials_t3_desc: "$scheme_countermeasure_type_bribe_officials_desc$"   # todo: NEW TRANSLATION
+ countermeasures_unlocks_bribe_officials_one_tier: "Vylepšuje #V $scheme_countermeasure_type_bribe_officials$#! [scheme_countermeasure_countermeasure|E] #weak (+1 úroveň)#!"   # todo: NEW TRANSLATION
+ scheme_countermeasure_parameter_success_chance_vs_political_schemes_bonus_minor: "[EmptyScope.ScriptValue('countermeasure_scheme_category_success_chance_bonus_against_minor_value')|=/P%0] [success_chance|E] proti [political_schemes|E] jako:$political_schemes_boilerplate.tt$"   # todo: NEW TRANSLATION
+ scheme_countermeasure_parameter_success_chance_vs_political_schemes_bonus_medium: "[EmptyScope.ScriptValue('countermeasure_scheme_category_success_chance_bonus_against_medium_value')|=/P%0] [success_chance|E] proti [political_schemes|E] jako:$political_schemes_boilerplate.tt$"   # todo: NEW TRANSLATION
+ scheme_countermeasure_parameter_success_chance_vs_political_schemes_bonus_major: "[EmptyScope.ScriptValue('countermeasure_scheme_category_success_chance_bonus_against_major_value')|=/P%0] [success_chance|E] proti [political_schemes|E] jako:$political_schemes_boilerplate.tt$"   # todo: NEW TRANSLATION
+ scheme_countermeasure_parameter_success_chance_vs_political_schemes_malus_minor: "[EmptyScope.ScriptValue('countermeasure_scheme_category_success_chance_malus_against_minor_value')|=/N%0] [success_chance|E] proti [political_schemes|E] jako:$political_schemes_boilerplate.tt$"   # todo: NEW TRANSLATION
+ scheme_countermeasure_parameter_success_chance_vs_political_schemes_malus_medium: "[EmptyScope.ScriptValue('countermeasure_scheme_category_success_chance_malus_against_medium_value')|=/N%0] [success_chance|E] proti [political_schemes|E] jako:$political_schemes_boilerplate.tt$"   # todo: NEW TRANSLATION
+ scheme_countermeasure_parameter_success_chance_vs_political_schemes_malus_major: "[EmptyScope.ScriptValue('countermeasure_scheme_category_success_chance_malus_against_major_value')|=/N%0] [success_chance|E] proti [political_schemes|E] jako:$political_schemes_boilerplate.tt$"   # todo: NEW TRANSLATION
+ political_schemes_boilerplate.tt: "\n$BULLET_WITH_TAB$[GetScheme('slander').GetTypeName]\n$BULLET_WITH_TAB$[GetScheme('challenge_status').GetTypeName]\n$BULLET_WITH_TAB$[GetScheme('depose').GetTypeName]"   # todo: NEW TRANSLATION
+ countermeasures.desc.bribe_officials: "$EFFECT_LIST_BULLET$Nový [scheme_countermeasure_countermeasure|E]: $scheme_countermeasure_type_bribe_officials$\nMírně snížená [success_chance|E] pro většinu [political_schemes|E]"   # todo: NEW TRANSLATION

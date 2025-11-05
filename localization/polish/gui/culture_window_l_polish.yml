@@ -32,7 +32,7 @@
  CULTURE_ACCEPTANCE_CHANGELOG_HEADER: "#S Nedávné změny:#!"
  CULTURE_ACCEPTANCE_TOOLTIP: "#T Kulturní přijetí: [Culture.GetAcceptance( GetPlayer.GetCulture )|%/0]\n#!#weak Vzájemné přijetí mezi [GetPlayer.GetCulture.GetName] a [Culture.GetNameNoTooltip]#!\n\n[Culture.GetYearlyAcceptanceChangeDesc( GetPlayer.GetCulture )]\n\n[Culture.GetAcceptanceBaselineDesc( GetPlayer.GetCulture )]\n\n[Culture.GetAcceptanceChangelog( GetPlayer.GetCulture )]"
  CULTURE_AESTHETICS: "[Culture.GetNameNoTooltip] estetika"
- CULTURE_AESTHETICS_TOOLTIP: "#T Estetika [Culture.GetNameNoTooltip]#!\nZpůsob pojmenování: [Culture.GetNamingListName|V]\nArchitektura: [Culture.GetBuildingGfxName|V]\nMóda: [Culture.GetClothingGfxName|V]\nErb: [Culture.GetCoAGfxName|V]\nVojenské vybavení: [Culture.GetUnitGfxName|V]"
+ CULTURE_AESTHETICS_TOOLTIP: "#T [Culture.GetNameNoTooltip] Estetika#!\nPojmenovací zvyklosti: [Culture.GetNamingListName|V]\nArchitektura: [Culture.GetBuildingGfxName|V]\nMóda: [Culture.GetClothingGfxName|V]\nErb: [Culture.GetCoAGfxName|V]\nVojenské vybavení: [Culture.GetUnitGfxName|V]\nStyl pojmenovávání: [Culture.GetNamingAestheticName|V]" # todo: #T Estetika [Culture.GetNameNoTooltip]#!\nZpůsob pojmenování: [Culture.GetNamingListName|V]\nArchitektura: [Culture.GetBuildingGfxName|V]\nMóda: [Culture.GetClothingGfxName|V]\nErb: [Culture.GetCoAGfxName|V]\nVojenské vybavení: [Culture.GetUnitGfxName|V]
  CULTURE_CLICK_TO_ADD_TRADITION: "#I Založit novou [Concept('tradition','kulturní tradici')|E]#!"
  CULTURE_CLICK_TO_REPLACE: "#I Klikněte pro nahrazení#!"
  CULTURE_COOLTIP_CLICK: "#I Klikněte pro zobrazení [Culture.GetNameNoTooltip]#!"
@@ -46,7 +46,7 @@
  CULTURE_CREATION_DATE_HYBRID: "Vznikla, když se v roce [DATE.GetYear] spojila [CULTURE.GetName|l] kultura s [TARGET_CULTURE.GetName|l] kulturou"
  CULTURE_ERA_BLOCKED_BLOCKED_TILE: "Éra [CultureEra.GetNameNoTooltip] zatím nebyla dosažena [CultureEra.GetCulture.GetCollectiveNounNoTooltip]"
  CULTURE_ERA_INNOVATION_COUNT: "[CultureEra.GetNumberOfActiveInnovations]/[CultureEra.GetNumberOfInnovations]"
- CULTURE_ERA_INNOVATION_COUNT_JOIN_LEAVE: "[GuiCultureEra.GetJoinedLeftString]\n[CultureEra.GetNumberOfActiveInnovations]/[CultureEra.GetNumberOfInnovations]"
+ CULTURE_ERA_INNOVATION_COUNT_JOIN_LEAVE: "#clickable [GuiCultureEra.GetJoinedLeftString]#!\n[CultureEra.GetNumberOfActiveInnovations]/[CultureEra.GetNumberOfInnovations]" # todo: [GuiCultureEra.GetJoinedLeftString]\n[CultureEra.GetNumberOfActiveInnovations]/[CultureEra.GetNumberOfInnovations]
  CULTURE_ERA_TOOLTIP_REACHED: "#P [CultureEra.GetCulture.GetCollectiveNounNoTooltip] dosáhli této éry#!"
  CULTURE_PILLAR_ESTABLISHING_PROGRESS_HEADER: "#S Zakládá se#!\n#weak Dokud nebude založen, žádný z efektů [CulturePillar.GetTypeName] se neuplatní#!"
  CULTURE_PILLAR_ESTABLISHING_TOOLTIP: "Pokrok: [CultureReformation.GetProgress|2]/100 ([CultureReformation.GetTimeLeft] zbývá)\nMěsíční pokrok [CultureReformation.GetProgressBreakdown]\n\n[CulturePillar.GetEffectDescription( Culture.Self )]\n\n[CulturePillar.GetDescription( Culture.Self )|F]"
@@ -80,7 +80,7 @@
  CULTURE_VIEW_TRADITIONS: "Tradice"
  CULTURE_WINDOW_CULTURE: "[Culture.GetNameNoTooltip] kultura"
  CULTURE_WINDOW_CULTURE_HEAD_INFO: "#weak Vládcem této kultury je ten, kdo má nejvíce [CULTURE.GetNameNoTooltip] [Concept('counties','$game_concept_counties$')|El] ve svém [Concept('realm','$game_concept_realm$')|El] ($COUNT|V$ hrabství)#!"
- CULTURE_WINDOW_CULTURE_HEAD_INFO_FROM_HERD: "#weak Vládcem této kultury je ten, kdo vlastní největší [Concept('herd','$game_concept_herd$')|El] ([herd_i]$HERD_SIZE|V$)#!"
+ CULTURE_WINDOW_CULTURE_HEAD_INFO_FROM_HERD: "#weak Vládce této kultury s nejvyšším [title_tier|E] ([title_i]$TITLE_TIER$) nebo s největším počtem [herd|E], spojeným s $MILITARY_SCALE|V0%$ vojenské síly ([herd_i][soldier_i]$HERD_AND_MILITARY_SIZE|V$)#!" # todo: #weak Vládcem této kultury je ten, kdo vlastní největší [Concept('herd','$game_concept_herd$')|El] ([herd_i]$HERD_SIZE|V$)#!
  CULTURE_WINDOW_CULTURE_HEAD_NOTPLAYER: "[CultureWindow.GetCultureHeadInfo( Character.Self )].\n[CultureWindow.GetMyCultureInfo( GetPlayer.Self )]"
  CULTURE_WINDOW_CULTURE_HEAD_TITLE: "[Concept('culture_head','$game_concept_culture_head$')|E]: [Character.GetUIName|U]"
  CULTURE_WINDOW_ERA_DISCOVERED_BY: "Objeveno [CULTURE.GetName]"
@@ -89,10 +89,10 @@
  CULTURE_WINDOW_ERA_JOINED_LEFT: "$JOINED$–$LEFT$"
  CULTURE_WINDOW_ERA_LEFT: ""
  CULTURE_WINDOW_ERA_NAME: "[CultureEra.GetNameNoTooltip] [Concept('era','$game_concept_era$')|E]\n[GuiCultureEra.GetJoinedLeftString]"
- CULTURE_WINDOW_HEAD_FASCINATION: "[Concept('fascination','$game_concept_fascination$')|E]: [CultureWindow.GetCulture.GetFascination.GetName]"
- CULTURE_WINDOW_INNOVATIONS: "[Culture.GetNameNoTooltip] [Concept('innovations','$game_concept_innovations$')|E]"
+ CULTURE_WINDOW_HEAD_FASCINATION: "Aktuální [fascination|E]:" # todo: [Concept('fascination','$game_concept_fascination$')|E]: [CultureWindow.GetCulture.GetFascination.GetName]
+ CULTURE_WINDOW_INNOVATIONS: "[Culture.GetNameNoTooltip] [innovations|E] podle [era|E]" # todo: [Culture.GetNameNoTooltip] [Concept('innovations','$game_concept_innovations$')|E]
  CULTURE_WINDOW_MY_CULTURE_INFO: "#weak Máte $COUNT|V$ [CULTURE.GetNameNoTooltip] hrabství ve vašem [Concept('realm','$game_concept_realm$')|E]l.#!"
- CULTURE_WINDOW_MY_CULTURE_INFO_FROM_HERD: "#weak Máte [herd_i]$HERD_SIZE|V$.#!"
+ CULTURE_WINDOW_MY_CULTURE_INFO_FROM_HERD: "#weak Máte [title_tier|E] ([title_i]$TITLE_TIER$), [herd|E] spojený s $MILITARY_SCALE|V0%$ vojenské síly ([herd_i][soldier_i]$HERD_AND_MILITARY_SIZE|V$).#!" # todo: #weak Máte [herd_i]$HERD_SIZE|V$.#!
  CULTURE_WINDOW_NO_HEAD: "Žádná [Concept('culture_head','$game_concept_culture_head$')|El]"
  CULTURE_WINDOW_NO_HEAD_NO_COUNTIES: "Žádná hrabství kultury"
  CULTURE_WINDOW_NO_VALID_HEAD: "Žádný platný kandidát"
@@ -112,7 +112,7 @@
  INNOVATION_CHANCE_BREAKDOWN_EXPOSURE_TYPE_RELIGION: "[Concept('exposure','$game_concept_exposure$')|E] #weak (Sdílí [Concept('religion','$game_concept_religion$')|El] s [CULTURE.GetCollectiveNoun])#!"
  INNOVATION_CHANCE_BREAKDOWN_FASCINATION: "[Concept('fascination','$game_concept_fascination$')|E]"
  INNOVATION_CLICK_TO_SELECT_FASCINATION: "#I Kliknutím vyberte jako [Concept('cultural_fascination','kulturní fascinaci')|E]#!"
- INNOVATION_ERA_NOT_ENOUGH_INNOVATIONS_FROM_PREVIOUS_ERA: "#N Nebyly objeveny alespoň [GetDefine('NCulture', 'MINIMUM_INNOVATIONS_TO_NEXT_ERA')|%0] inovací z éry [ERA.GetName] (chybí $NUM_MISSING|V$)#!"
+ INNOVATION_ERA_NOT_ENOUGH_INNOVATIONS_FROM_PREVIOUS_ERA: "#N Nebylo objeveno alespoň [GetDefine('NCulture', 'MINIMUM_INNOVATIONS_TO_NEXT_ERA')|V] inovací [ERA.GetName] [era|E] (chybí $NUM_MISSING|V$)#!" # todo: #N Nebyly objeveny alespoň [GetDefine('NCulture', 'MINIMUM_INNOVATIONS_TO_NEXT_ERA')|%0] inovací z éry [ERA.GetName] (chybí $NUM_MISSING|V$)#!
  INNOVATION_ERA_NOT_IN_PREVIOUS_ERA: "#N Nejprve je nutné dosáhnout  [Concept('era','éru')|E] [ERA.GetName]#!"
  INNOVATION_ERA_NOT_IN_YEAR: "#N Tato éra není dostupná do roku $YEAR$ n. l.#!"
  INNOVATION_ERA_PROGRESS_ESTIMATED_TIME_LEFT: " #weak (~$TIME_LEFT$)#!"
@@ -124,12 +124,12 @@
  INNOVATION_GAIN_BREAKDOWN_BASE: "Základní pokrok"
  INNOVATION_GAIN_BREAKDOWN_DEVELOPMENT: "Průměrný [Concept('development','$game_concept_development$')|El] [CULTURE.GetNameNoTooltip] [Concept('counties','$game_concept_counties$')|El]"
  INNOVATION_GAIN_BREAKDOWN_ERAS_AHEAD: "Z předchozí [Concept('era','éry')|E] $NAME|V$"
- INNOVATION_MEN_AT_ARMS_TYPE_BONUS: "$NAME$ bonus:"
+ INNOVATION_MEN_AT_ARMS_TYPE_BONUS: "$NAME$ [men_at_arms|E]:" # todo: $NAME$ bonus:
  INNOVATION_NOT_IN_ERA: "#X Není v [Concept('era','éře')|E] $ERA_TYPE|V$#!"
  INNOVATION_NOT_IN_REGION: "@warning_icon! #X Kultura $CULTURE_NAME|V$ není přítomna v $REGION$:\n      Aby byla přítomna, buď:\n  $BULLET_WITH_TAB$$MIN_REGION|V$ hrabství v $REGION$ jsou $CULTURE_NAME$ (Aktuálně: $CURRENT|V$)\n  $BULLET_WITH_TAB$$CULTURE_PERC|%0V$ ze #bold všech#! hrabství $CULTURE_NAME$ jsou uvnitř $REGION$ (Aktuálně: $CULTURE_CURRENT_PERC|%0V$)#!"
- INNOVATION_STATE_BLOCKED: "[CULTURE.GetCollectiveNoun] to nemůžou získat"
- INNOVATION_STATE_DISCOVERED: "[CULTURE.GetCollectiveNoun] to již znají"
- INNOVATION_STATE_PROGRESSING: "Očekává se objevení přibližně za $TIME|V$"
+ INNOVATION_STATE_BLOCKED: "Nedostupné" # todo: [CULTURE.GetCollectiveNoun] to nemůžou získat
+ INNOVATION_STATE_DISCOVERED: "Objeveno" # todo: [CULTURE.GetCollectiveNoun] to již znají
+ INNOVATION_STATE_PROGRESSING: "$TIME|V$ zbývá" # todo: Očekává se objevení přibližně za $TIME|V$
  INNOVATION_TOOLTIP_ERA: "[Concept('era','$game_concept_era$')|E]: [CultureInnovation.GetCultureEra.GetName]"
  INNOVATION_TOOLTIP_GAIN: "Existuje [CultureInnovation.GetProgressChance|V%] šance získat [CultureInnovation.GetProgressGain|V^] pokroku každý měsíc:"
  INNOVATION_TOOLTIP_PROGRESS: "Pokrok: [CultureInnovation.GetProgress|0V]/100"
@@ -189,3 +189,32 @@
  tradition_group_regional: "Regionální"
  tradition_group_ritual: "Rituály"
  tradition_group_societal: "Sociální"
+ CULTURE_WINDOW_NOT_CULTURE_HEAD_INFO: "#weak Pouze [culture_head|E] může změnit [fascination|E]"  # todo: NEW TRANSLATION
+ CULTURE_WINDOW_NO_SPREAD: "Žádné"  # todo: NEW TRANSLATION
+ CULTURE_WINDOW_CURRENT_SPREAD: "Kulturní [spread|E]:"  # todo: NEW TRANSLATION
+ CULTURE_WINDOW_NEXT_SPREAD_PREVIEW: "Další [spread|E] pravděpodobně bude [CultureWindow.GetNextSpreadInnovation.GetName] od [CultureWindow.GetNextSpreadCulture.GetName] [culture|e]"  # todo: NEW TRANSLATION
+ CULTURE_WINDOW_MY_CULTURE_INFO_NEED_HIGHER_TIER: "#weak Máte pouze [title_tier|E] ([title_i]$TITLE_TIER$).#!"  # todo: NEW TRANSLATION
+ CULTURE_WINDOW_MY_CULTURE_INFO_NEED_BIGGER_HERD: "#weak Váš [herd|E] v kombinaci s $MILITARY_SCALE|V0%$ vojenské síly je ([herd_i][soldier_i]$HERD_AND_MILITARY_SIZE|V$).#!"  # todo: NEW TRANSLATION
+ INNOVATION_ERA_WITH_ERA_CONCEPT: "[CultureInnovation.GetCultureEra.GetName] [era|E]"  # todo: NEW TRANSLATION
+ INNOVATION_GAIN_BREAKDOWN_BONUS_FASCINATION: "Z bonusu [fascination|e]"  # todo: NEW TRANSLATION
+ INNOVATION_GAIN_BREAKDOWN_ERAS_BEHIND: "Z následující $NAME|V$ [era|E]"  # todo: NEW TRANSLATION
+ INNOVATION_GAIN_BREAKDOWN_AHEAD_OF_TIME_INNOVATION_COUNT: "Z #V $DISCOVERED_INNOVATIONS_COUNT$ #! již objevených [innovations|e] v $NAME|V$ [era|E]"  # todo: NEW TRANSLATION
+ INNOVATION_CHANCE_BREAKDOWN_SPREAD_TYPE_BORDERS: "[spread|E] #weak (Hraničí s [CULTURE.GetCollectiveNoun])#!"  # todo: NEW TRANSLATION
+ INNOVATION_CHANCE_BREAKDOWN_SPREAD_TYPE_REALM: "[spread|E] #weak (Sdílí [realm|E] s [CULTURE.GetCollectiveNoun])#!"  # todo: NEW TRANSLATION
+ INNOVATION_CHANCE_BREAKDOWN_SPREAD_TYPE_RELIGION: "[spread|E] #weak (Sdílí [religion|E] s [CULTURE.GetCollectiveNoun])#!"  # todo: NEW TRANSLATION
+ INNOVATION_SPREAD_SOURCE: "#medium [Culture.GetSpreadingCulture.GetNameNoTooltip]#!"  # todo: NEW TRANSLATION
+ INNOVATION_STATE_DISCOVERED_OLD: "Známé [CULTURE.GetCollectiveNoun]"  # todo: NEW TRANSLATION
+ INNOVATION_STATE_STALE: "Nepokračuje"  # todo: NEW TRANSLATION
+ INNOVATION_STATE_PROGRESSING_OLD: "Očekává se objevení přibližně za $TIME|V$"  # todo: NEW TRANSLATION
+ INNOVATION_STATE_STALE_OLD: "[CULTURE.GetCollectiveNoun] nedělají žádný viditelný pokrok v objevování této [innovation|e]"  # todo: NEW TRANSLATION
+ INNOVATION_STATE_BLOCKED_OLD: "Není dostupné pro [CULTURE.GetCollectiveNoun]"  # todo: NEW TRANSLATION
+ INNOVATION_SPREAD_MARKER_TOOLTIP: "#T Aktuální [spread|E]#!\nTato [culture|E] je momentálně vystavena [innovation|E], což urychluje její pokrok."  # todo: NEW TRANSLATION
+ CULTURE_INNOVATION_FASCINATION_SKILL_TT: "Tato [innovation|E] těží z [SkillItem.GetName] [skill|E], když je vybrána jako [fascination|E]."  # todo: NEW TRANSLATION
+ CULTURE_INNOVATION_MISSING_BONUS_FASCINATION_TT: "Tato [innovation|E] by mohla těžit z bonusového přírůstku postupu, když je vybrána jako [fascination|E]."  # todo: NEW TRANSLATION
+ INNOVATION_CHANCE_BASE_SPREAD: "[spread|E] od [CULTURE.GetCollectiveNoun]"  # todo: NEW TRANSLATION
+ INNOVATION_CHANCE_CULTURAL_ACCEPTANCE_WITH_FASCINATION: "[Concept('fascination', 'Fascinated')|E] s aktuálně [spread|E] [innovation|E]"  # todo: NEW TRANSLATION
+ INNOVATION_PROGRESS_CHANCE_TITLE_TT: "Šance na postup:"  # todo: NEW TRANSLATION
+ INNOVATION_PROGRESS_GAIN_TITLE_TT: "Přírůstek postupu:"  # todo: NEW TRANSLATION
+ INNOVATION_IS_FASCINATION: "Je to již vaše [fascination|E]"  # todo: NEW TRANSLATION
+ CULTURE_INNOVATION_NAME_NO_TOOLTIP_WITH_BASE_NAME: "[CultureInnovation.GetNameNoTooltip] [AddLocalizationIf( Not( EqualTo_string(CultureInnovation.GetNameNoTooltip, CultureInnovation.GetType.GetName) ), 'CULTURE_INNOVATION_NAME_NO_TOOLTIP_WITH_BASE_NAME_BASE_NAME' )] "  # todo: NEW TRANSLATION
+ CULTURE_INNOVATION_NAME_NO_TOOLTIP_WITH_BASE_NAME_BASE_NAME: "#weak ([CultureInnovation.GetType.GetName])#!"  # todo: NEW TRANSLATION

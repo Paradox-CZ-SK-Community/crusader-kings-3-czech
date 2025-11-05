@@ -18,7 +18,7 @@
  ACTIVITY_GUEST_LIST_INFO_REGULAR: "Pozvěte [Concept('activity_guests','hosty')|E] pomocí kategorií"
  ACTIVITY_GUEST_LIST_INFO_SPECIAL: "Vyberte pozvaného hosta, aby byl [ActivityGuestListWindow.GetSelectingSpecialGuest.GetType.GetNameIfHost( ActivityGuestListWindow.GetHost )]"
  ACTIVITY_GUEST_LIST_INVITE_GROUP: "Kategorie hostů"
- ACTIVITY_GUEST_LIST_INVITING_OVER_MAX: "@alert_icon! #alert_trial Pozváno bylo více než [ActivityType.GetMaxNumGuests|V] hostů. Někteří mohou pozvánku odmítnout#!"
+ ACTIVITY_GUEST_LIST_INVITING_OVER_MAX: "@alert_icon! #alert_trial Bylo pozváno více než [ActivityGuestListWindow.GetMaxNumGuests|V] hostů. Někteří pozvání odmítnou.#!" # todo: @alert_icon! #alert_trial Pozváno bylo více než [ActivityType.GetMaxNumGuests|V] hostů. Někteří mohou pozvánku odmítnout#!
  ACTIVITY_GUEST_LIST_SELECT_HONORARY_GUEST: "#T Vyberte [ActivityGuestListWindow.GetSelectingSpecialGuest.GetType.GetNameIfHost( ActivityGuestListWindow.GetHost )]#!\nVyberte [Character.GetShortUINameNoTooltip], aby byl [ActivityGuestListWindow.GetSelectingSpecialGuest.GetType.GetNameIfHost( ActivityGuestListWindow.GetHost )], [ActivityType.GetLocalizedTextWithFallback( 'special_guest_acceptance', 'ACTIVITY_SPECIAL_GUEST_ACCEPTANCE' )]."
  ACTIVITY_GUEST_LIST_SPECIAL_GUEST_TT: "#T [ActivitySpecialGuest.GetType.GetNameIfHost( ActivityGuestListWindow.GetHost )]#!\n[ActivitySpecialGuest.GetType.GetDescriptionIfHost( ActivityGuestListWindow.GetHost )]\n[ConcatIfNeitherEmpty('Po pozvání:\n', ActivityGuestListWindow.GetSpecialGuestOnInviteEffectDesc( ActivitySpecialGuest.Self ) )]"
  ACTIVITY_GUEST_LIST_TRAVEL_TIME_INFO: "Cesta: ~[ActivityGuestListWindow.GetTravelTimeEstimation( CharacterListItem.Self )] dní"
@@ -29,7 +29,7 @@
  ACTIVITY_INTENT_SELECTION_HEADER: "Změnit záměr [ActivityType.GetNameNoTooltip]"
  ACTIVITY_INTENT_SELECTION_TEXT: "Vyberte svůj [Concept('intent','$game_concept_intent$')|El] pro [ActivityType.GetName]"
  ACTIVITY_INTENT_TARGET_LABEL: "Cíl [ActivityIntent.GetName]"
- ACTIVITY_INVITED_GUEST_hud: "#T [Select_CString(Character.IsFemale,'Pozvána','Pozván')] do akce#!\n[Character.GetUIName|U] je [Select_CString(Character.IsFemale,'pozvána','pozván')] na [Activity.GetNameNoTooltip] v $ACTIVITY_CURRENT_LOCATION$."
+ ACTIVITY_INVITED_GUEST_hud: "#T Pozvaná aktivita#!\n[Character.GetUIName|U] [Character.LocalPlayerString( 'are', 'is' )] pozván(a) na [Activity.GetNameNoTooltip] v $ACTIVITY_CURRENT_LOCATION$.\n\n#I Klikněte pro zobrazení aktivity#!" # todo: #T [Select_CString(Character.IsFemale,'Pozvána','Pozván')] do akce#!\n[Character.GetUIName|U] je [Select_CString(Character.IsFemale,'pozvána','pozván')] na [Activity.GetNameNoTooltip] v $ACTIVITY_CURRENT_LOCATION$.
  ACTIVITY_INVITED_GUEST_status: "[Character.GetUIName|U] je [Select_CString(Character.IsFemale,'pozvána','pozván')] na tento [Activity.GetShortNameNoTooltip]"
  ACTIVITY_INVITED_GUEST_tooltip: "[Character.GetUIName|U] je [Select_CString(Character.IsFemale,'pozvána','pozván')] na [Activity.GetShortNameNoTooltip] v $ACTIVITY_CURRENT_LOCATION$."
  ACTIVITY_INVITED_SPECIAL_GUEST_hud: "#T [Select_CString(Character.IsFemale,'Pozvána','Pozván')] do akce#!\n[Character.GetUIName|U] je [Select_CString(Character.IsFemale,'pozvána','pozván')] jako [ACTIVITY_SPECIAL_GUEST.GetNameIfHost( Activity.GetHost )] na [Activity.GetNameNoTooltip] v $ACTIVITY_CURRENT_LOCATION$."
@@ -106,3 +106,5 @@
  activity_window_character_travel_spouse_2: "[Character.Custom('GetBrideGroom')|U]\n[Character.GetShortUINameNoTooltip|U]\n[Concept('traveling','$game_concept_traveling$')|E] v [Character.GetCurrentLocation.GetName]\n ~[Character.GetTravelPlan.GetData.GetNextDestination.GetEstimatedArrivalDate.GetStringLong|V]"
  activity_window_character_travel_tour_host: "$activity_window_character_tour_host$\n[Character.GetShortUINameNoTooltip|U]\n[Concept('traveling','$game_concept_traveling$')|E] v [Character.GetCurrentLocation.GetName]\n ~[Character.GetTravelPlan.GetData.GetNextDestination.GetEstimatedArrivalDate.GetStringLong|V]"
  honorary_guest_traveling_murder: "$activity_window_character_honorary_guest$\n[Character.GetShortUINameNoTooltip|U]\n[Concept('traveling','$game_concept_traveling$')|E] v [Character.GetCurrentLocation.GetName]\n ~[Character.GetTravelPlan.GetData.GetNextDestination.GetEstimatedArrivalDate.GetStringLong|V]"
+ OPEN_ACTIVITY_NEVER_SEEN: "Nikdy se nekonalo"  # todo: NEW TRANSLATION
+ OPEN_ACTIVITY_LAST_SEEN: "Naposledy se konalo před [GetTimeBetweenDates(DATE.Self, GetCurrentDate)]"  # todo: NEW TRANSLATION

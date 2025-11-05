@@ -1,6 +1,6 @@
 ﻿l_polish:
  activity_coronation: "Korunovace"
- activity_coronation_host_desc: "$BULLET_WITH_TAB$@law_icon![GetLaw('crowned_king').GetName] nebo [GetLaw('crowned_emperor').GetName] [law|E]\n$BULLET_WITH_TAB$Dokud korunovace trvá, @faction_icon![factions|E] nemohou vymáhat požadavky\n$BULLET_WITH_TAB$[opinion_i][opinion|E]\n$BULLET_WITH_TAB$[prestige_i][prestige|E]\n$BULLET_WITH_TAB$[legitimacy_i][legitimacy|E]\n$BULLET_WITH_TAB$Silný [oath|E] [decision|E]\n\n@warning_icon! #X @faction_icon![factions|E] a další nepřátelé poškodí [coronation_magnificence|E] korunovace#!"
+ activity_coronation_host_desc: "$BULLET_WITH_TAB$@law_icon![GetLaw('crowned_king').GetName] nebo [GetLaw('crowned_emperor').GetName] [law|El]\n$BULLET_WITH_TAB$Dokud korunovace trvá, @faction_icon![factions|El] nemohou vymáhat požadavky\n$BULLET_WITH_TAB$[opinion_i][opinion|E]\n$BULLET_WITH_TAB$[prestige_i][prestige|E]\n$BULLET_WITH_TAB$[legitimacy_i][legitimacy|E]\n$BULLET_WITH_TAB$Silnou [Concept('oath','přísahu')|E]\n\n@warning_icon! #X @faction_icon![factions|E] a další nepřátelé poškodí [coronation_magnificence|El] korunovace.#!"
  activity_coronation_guest_desc: "$BULLET_WITH_TAB$Účastníci mohou získat [opinion_i][opinion|E] o ostatních účastnících\n$BULLET_WITH_TAB$Účastníci mohou získat jedinečné příležitosti založené na jejich [intent|E]"
  activity_coronation_desc: "Pozvěte veliké a mocné z říše, aby byli svědky vašeho nástupu na trůn. To položí základy dlouhého a úspěšného panování."
  activity_coronation_conclusion_desc: "[GetActivityType( 'activity_coronation' ).GetName] byla ukončena."
@@ -27,7 +27,7 @@
  coronation_phase_feast: "Hostina"
  coronation_phase_feast_desc: ""
  coronation_type_normal: "Korunovace"
- coronation_type_normal_desc: "$BULLET_WITH_TAB$Dokažte svou [legitimacy_i][legitimacy|E]\n$BULLET_WITH_TAB$Přisáhněte [oath|E] a stanovte směr svého panování\n$BULLET_WITH_TAB$Můžete získat [opinion_i][opinion|E] u [vassals|E]\n$BULLET_WITH_TAB$[vassals|E] mohou opustit @faction_icon![factions|E]\n$BULLET_WITH_TAB$Můžete se korunovat sami pro další [prestige_i][prestige|E]\n\n#weak $coronation_type_normal_flavor$#!"
+ coronation_type_normal_desc: "$BULLET_WITH_TAB$Prokázat svou [legitimacy_i][legitimacy|E]\n$BULLET_WITH_TAB$Složit [oath|E] a zavázat směr své vlády\n$BULLET_WITH_TAB$Můžete získat [opinion_i][opinion|E] u [vassals|E] [AddLocalizationIf( GetPlayer.GetGovernment.HasGovernmentFlag( 'government_is_mandala' ), 'coronation_type_tributaries' )]\n$BULLET_WITH_TAB$[vassals|E] mohou opustit @faction_icon![factions|E]\n$BULLET_WITH_TAB$Můžete se korunovat pro dodatečné [prestige_i][prestige|E]\n\n#weak $coronation_type_normal_flavor$#!" # todo: $BULLET_WITH_TAB$Dokažte svou [legitimacy_i][legitimacy|E]\n$BULLET_WITH_TAB$Přisáhněte [oath|E] a stanovte směr svého panování\n$BULLET_WITH_TAB$Můžete získat [opinion_i][opinion|E] u [vassals|E]\n$BULLET_WITH_TAB$[vassals|E] mohou opustit @faction_icon![factions|E]\n$BULLET_WITH_TAB$Můžete se korunovat sami pro další [prestige_i][prestige|E]\n\n#weak $coronation_type_normal_flavor$#!
  coronation_type_normal_flavor: "Důstojný obřad prokáže oprávněnost vašeho panování a majestát říše bude vaším suverénním rouchem."
  coronation_type_anointment: "Pomazání"
  coronation_type_anointment_desc: "$BULLET_WITH_TAB$Dokažte svou [legitimacy_i][legitimacy|E] bez jakýchkoli pochyb\n$BULLET_WITH_TAB$Získejte [piety_i][piety|E], @fervor_icon![fervor|E] a přízeň [GetVassalStance( 'zealot' ).GetTextIcon][GetVassalStance( 'zealot' ).GetName|U] [vassals|E]\n$BULLET_WITH_TAB$Přisáhněte [oath|E] a stanovte směr svého panování\n$BULLET_WITH_TAB$Získejte [opinion_i][opinion|E] u [vassals|E]\n$BULLET_WITH_TAB$Získejte [opinion_i][opinion|E] u ostatních [rulers|E]\n$BULLET_WITH_TAB$[vassals|E] mohou opustit @faction_icon![factions|E]\n$BULLET_WITH_TAB$@alert_icon! #alert_trial Musí se konat ve [holy_site|E] vaší [faith|E]#!\n\n#weak $coronation_type_anointment_flavor$#!"
@@ -37,16 +37,16 @@
  coronation_small_ceremony: "Jednoduché obřady"
  coronation_small_ceremony_desc: "$EFFECT_LIST_BULLET$Snížená [coronation_magnificence|E]\n$EFFECT_LIST_BULLET$Zahraniční [rulers|E] se [activity|E] nezúčastní\n$EFFECT_LIST_BULLET$Pokud bude [coronation_magnificence|E] na konci nižší než #high 50#!, získáte [GetModifier('ach_coronation_low_ceremony_modifier').GetNameWithTooltip] na #high 10 let#!\n\n#weak Já už jsem přeci panovník, ne? Proč svolávat všechna království kvůli této pouhé formalitě...?#!"
  coronation_medium_ceremony: "Časem ověřená nádhera"
- coronation_medium_ceremony_desc: "$EFFECT_LIST_BULLET$Zvýšená [coronation_magnificence|E]\n$EFFECT_LIST_BULLET$[activity_guests|E] budou o něco pravděpodobněji přijímat účast\n\n#weak Posvátné sliby vlády musí být doplněny královským prostředím a rozsáhlým, uctivým shromážděním.#!"
+ coronation_medium_ceremony_desc: "$EFFECT_LIST_BULLET$Zvýšené [coronation_magnificence|E]\n$EFFECT_LIST_BULLET$[activity_guests|E] budou o něco pravděpodobněji ochotni připojit se\n\n#weak Posvátné přísahy vlády musejí být doprovázeny královským prostředím a rozsáhlým, uctivým shromážděním.#!" # todo: $EFFECT_LIST_BULLET$Zvýšená [coronation_magnificence|E]\n$EFFECT_LIST_BULLET$[activity_guests|E] budou o něco pravděpodobněji přijímat účast\n\n#weak Posvátné sliby vlády musí být doplněny královským prostředím a rozsáhlým, uctivým shromážděním.#!
  coronation_large_ceremony: "Sláva a nádhera"
- coronation_large_ceremony_desc: "$EFFECT_LIST_BULLET$Výrazně zvýšená [coronation_magnificence|E]\n$EFFECT_LIST_BULLET$[activity_guests|E] se budou s velkou pravděpodobností účastnit\n\n#weak Mezi posvátnými relikviemi a třpytivými šperky, prosyceni nádhernou hudbou, budou všichni mí příbuzní, moji vazalové a vážení hosté zdálky.#!"
+ coronation_large_ceremony_desc: "$EFFECT_LIST_BULLET$Výrazně zvýšené [coronation_magnificence|E]\n$EFFECT_LIST_BULLET$[activity_guests|E] budou výrazně pravděpodobněji ochotni připojit se\n\n#weak Mezi posvátnými relikviemi a třpytivými klenoty, prostoupenými nádhernou hudbou, budou všichni moji příbuzní, moji vazalové a prestižní hosté z daleka.#!" # todo: $EFFECT_LIST_BULLET$Výrazně zvýšená [coronation_magnificence|E]\n$EFFECT_LIST_BULLET$[activity_guests|E] se budou s velkou pravděpodobností účastnit\n\n#weak Mezi posvátnými relikviemi a třpytivými šperky, prosyceni nádhernou hudbou, budou všichni mí příbuzní, moji vazalové a vážení hosté zdálky.#!
  ceremony_feast_type: "Oslavy"
  ceremony_feast_type_austere: "Skromné obřady"
- ceremony_feast_type_austere_desc: "$EFFECT_LIST_BULLET$Snížená [coronation_magnificence|E]\n$EFFECT_LIST_BULLET$Pokud bude [coronation_magnificence|E] na konci nižší než #high 50#!, získáte [GetModifier('ach_coronation_low_feast_modifier').GetNameWithTooltip] na #high 10 let#!\n\n#weak Nestačí snad pozvání na tuto historickou událost jako potěšení...?#!"
+ ceremony_feast_type_austere_desc: "$EFFECT_LIST_BULLET$Snížené [coronation_magnificence|E]\n$EFFECT_LIST_BULLET$Pokud bude [coronation_magnificence|E] na konci nižší než #high 50#!, získáte [SelectLocalization( GetPlayer.GetGovernment.HasGovernmentFlag( 'government_is_mandala' ), 'mandala_coronation_low_feast', 'generic_coronation_low_feast' )] na #high 10 let#!\n\n#weak Není pozvání na tuto historickou událost samo o sobě dostatečným potěšením...?#!" # todo: $EFFECT_LIST_BULLET$Snížená [coronation_magnificence|E]\n$EFFECT_LIST_BULLET$Pokud bude [coronation_magnificence|E] na konci nižší než #high 50#!, získáte [GetModifier('ach_coronation_low_feast_modifier').GetNameWithTooltip] na #high 10 let#!\n\n#weak Nestačí snad pozvání na tuto historickou událost jako potěšení...?#!
  ceremony_feast_type_regular: "Náležité veselí"
- ceremony_feast_type_regular_desc: "$EFFECT_LIST_BULLET$Zvýšená [coronation_magnificence|E]\n\n#weak Nebude se šetřit na velkém shromáždění šlechty ani na vynikajících pokrmech po obřadu.#!"
+ ceremony_feast_type_regular_desc: "$EFFECT_LIST_BULLET$Zvýšené [coronation_magnificence|E]\n\n#weak Nebude se šetřit na velkém shromáždění šlechty ani na výtečných pokrmech po obřadu.#!" # todo: $EFFECT_LIST_BULLET$Zvýšená [coronation_magnificence|E]\n\n#weak Nebude se šetřit na velkém shromáždění šlechty ani na vynikajících pokrmech po obřadu.#!
  ceremony_feast_type_lavish: "Okázalé hostiny"
- ceremony_feast_type_lavish_desc: "$EFFECT_LIST_BULLET$Výrazně zvýšená [coronation_magnificence|E]\n$EFFECT_LIST_BULLET$Snížené riziko negativních událostí\n\n#weak Nekonečné chody voňavých lahůdek čekají; nádherné požitky, které posílí vysoký stůl monarcha.#!"
+ ceremony_feast_type_lavish_desc: "$EFFECT_LIST_BULLET$Výrazně zvýšené [coronation_magnificence|E]\n$EFFECT_LIST_BULLET$Snížené riziko negativních událostí\n\n#weak Čekají nekonečné chody voňavých lahůdek; velkolepé požitky, jež obohatí panovníkův hlavní stůl.#!" # todo: $EFFECT_LIST_BULLET$Výrazně zvýšená [coronation_magnificence|E]\n$EFFECT_LIST_BULLET$Snížené riziko negativních událostí\n\n#weak Nekonečné chody voňavých lahůdek čekají; nádherné požitky, které posílí vysoký stůl monarcha.#!
  ach_coronation_low_ceremony_modifier: "Korunován v anonymitě"
  ach_coronation_low_ceremony_modifier_desc: "Lid sotva tuší, že je tento vladař skutečně jejich pán, a šlechta rychle zapomíná na jeho skromné inaugurační obřady."
  ach_coronation_low_feast_modifier: "Pohrdaná šlechta"
@@ -186,7 +186,7 @@
  oath_greatest_hunter: "Největší lovec"
  oath_greatest_hunter_desc: "#V Hunt#! odměny [prestige|E]: #P +10%#!"
  oath_heir_preparation: "Připravený dědic"
- oath_heir_preparation_heir: "Dědic připraven"
+ oath_heir_preparation_heir: "Připravený dědic" # todo: Dědic připraven
  oath_heir_preparation_desc: "Zdědená hodnota [legitimacy|E]: #P +20%#!"
  oath_install_claimants: "Dosadil nárokovače"
  oath_mend_the_fracture: "Zahojená trhlina"
@@ -202,12 +202,12 @@
  oath_provide_for_the_poor_province_desc: "Odemkne stavbu [GetBuilding('oath_poor_building_04').GetName] [building|E] v této [barony|E]"
  oath_repent: "Pokání"
  coronation_events.0100.t: "Přísaha pro věky"
- coronation_events.0100.desc.opening: "Shromáždění mě sleduje. Někteří s nadějí, někteří s pochyby, všichni čekají, až promluvím o svém panování a přísahám budoucnost. Slyším otázky, které nevyslovili. Budu spravedlivý? Budu čestný?"
+ coronation_events.0100.desc.opening: "Shromáždění mě sleduje. Někteří s nadějí, někteří se skepsí, všichni čekají, až promluvím o své vládě a vyslovím přísahu do budoucna. Slyším otázky, které nevyslovují. Budu spravedlivý? Budu fér?" # todo: Shromáždění mě sleduje. Někteří s nadějí, někteří s pochyby, všichni čekají, až promluvím o svém panování a přísahám budoucnost. Slyším otázky, které nevyslovili. Budu spravedlivý? Budu čestný?
  coronation_events.0100.desc.previous_ruler_close_family: "Dokážu se vyrovnat mému [ROOT.Char.Custom2( 'RelationToMeShort', previous_ruler )]?"
  coronation_events.0100.desc.previous_ruler_not_family_no_house: "Překonám svého předchůdce, [previous_ruler.GetFirstNameNicknamed]?"
  coronation_events.0100.desc.previous_ruler_not_family: "Překonám svého předchůdce, [previous_ruler.GetFirstName] [previous_ruler.GetHouse.GetName]?"
  coronation_events.0100.desc.first_ruler: "Jak budu vládnout jako první [ROOT.Char.GetTitleAsNameNoTooltip|l] těchto zemí?"
- coronation_events.0100.desc.outro: "\n\nNestojím zde jako [ROOT.Char.GetTitleAsName], abych jen opakoval jejich očekávání. Přišel jsem si zvolit vlastní cestu a ukázat směr pro [ROOT.Char.GetPrimaryTitle.GetTierAsNameNoTooltip|l].\n\nČímkoli se [ROOT.Char.GetPrimaryTitle.GetNameNoTier] stane — čímkoli se stanu já — začíná v tuto chvíli."
+ coronation_events.0100.desc.outro: "\n\nNestojím zde jako [ROOT.Char.GetTitleAsNameNoTooltip|l], abych jen opakoval jejich očekávání. Přišel jsem, abych si zvolil vlastní cestu a směr pro [ROOT.Char.GetPrimaryTitle.GetTierAsNameNoTooltip|l].\n\nAť už se z [ROOT.Char.GetPrimaryTitle.GetNameNoTier] stane cokoli — ať už se stanu cokoli — začíná to právě v tomto okamžiku." # todo: \n\nNestojím zde jako [ROOT.Char.GetTitleAsName], abych jen opakoval jejich očekávání. Přišel jsem si zvolit vlastní cestu a ukázat směr pro [ROOT.Char.GetPrimaryTitle.GetTierAsNameNoTooltip|l].\n\nČímkoli se [ROOT.Char.GetPrimaryTitle.GetNameNoTier] stane — čímkoli se stanu já — začíná v tuto chvíli.
  diplomacy_oath_reason: "Toto je [diplomacy|E] [oath|E]"
  martial_oath_reason: "Toto je [martial|E] [oath|E]"
  stewardship_oath_reason: "Toto je [stewardship|E] [oath|E]"
@@ -255,7 +255,7 @@
  coronation_events.0110.t: "Přísaha"
  coronation_events.0110.desc.intro: "[activity.GetHost.GetFirstName] stojí s [activity.GetHost.GetHerselfHimself] před davem, zatímco všichni očekávají [activity.GetHost.GetHerHis] přísahu.\n\n"
  coronation_events.0110.desc.diplomacy_oath_1: "#emp \"Žádné panství neprosperuje samo o sobě. Moc nespočívá pouze v armádách, ale v poutech důvěry, v dohodách utvrzených slovem a vůlí.\n\nZ [activity.GetHost.GetCapitalLocation.GetName] podám ruku přátelství, spletu aliance, které ochrání [activity.GetHost.GetPrimaryTitle.GetNameNoTier] pro příští generace.\"#!"
- coronation_events.0110.desc.diplomacy_oath_2: "#emp \"Síla panství nespočívá pouze v vyhraných aliancích, ale v tichém slibu kontinuitu. Zajištěním, že [activity.GetHost.GetHouse.GetName] přetrvá, poskytnu panství základ tak pevný jako kámen.\n\nSkrze naše děti zůstane linie [activity.GetHost.GetHouse.GetName] nezlomena, uchová stabilitu a povede naše panství skrze vše, co může přijít.\"#!"
+ coronation_events.0110.desc.diplomacy_oath_2: "#emp \"Síla království nespočívá pouze v uzavřených spojenectvích, ale v tichém slibu kontinuity. Zajistěním, že [activity.GetHost.GetHouse.GetName] přetrvá, poskytnu království základ pevný jako kámen.\n\nSkrze naše děti zůstane linie [activity.GetHost.GetHouse.GetName] neporušená, zachová stabilitu a povede naše království skrze vše, co může přijít.\"#!" # todo: #emp \"Síla panství nespočívá pouze v vyhraných aliancích, ale v tichém slibu kontinuitu. Zajištěním, že [activity.GetHost.GetHouse.GetName] přetrvá, poskytnu panství základ tak pevný jako kámen.\n\nSkrze naše děti zůstane linie [activity.GetHost.GetHouse.GetName] nezlomena, uchová stabilitu a povede naše panství skrze vše, co může přijít.\"#!
  coronation_events.0110.desc.martial_oath_1: "#emp \"Dnes nevstupuji jen proto, abych vládnul, ale abych budoval. Ne jen abych uchoval to, co je, ale abych tvořil to, co může být. [activity.GetHost.GetPrimaryTitle.GetNameNoTier] nelze omezit na vzpomínky nebo mapu, musí růst.\n\nPro naši budoucnost i budoucnost našeho lidu.\"#!"
  coronation_events.0110.desc.martial_oath_2: "#emp \"Příliš dlouho země, které patří [activity.GetHost.GetPrimaryTitle.GetNameNoTier], trpěly vládou horších rukou. Těch, kdo spletli vlastnictví s legitimností.\n\nTo dnes končí. Z [activity.GetHost.GetCapitalLocation.GetName] poznají pravé vládnutí. Díky mně.\"#!"
  coronation_events.0110.desc.stewardship_oath_1: "#emp \"Vládce musí dělat víc než bránit hranice, musí v nich učinit život hoden žití. Budu střežit mír, starat se o panství a plánovat ne pro válku, ale pro růst.\n\nZ [activity.GetHost.GetCapitalLocation.GetName] dovedu [activity.GetHost.GetPrimaryTitle.GetNameNoTier] do nového zlatého věku.\"#!"
@@ -474,11 +474,11 @@
  greatest_hunter_oath_decision_confirm: "Jsem lovec bez srovnání"
  greatest_hunter_decision_l3_trigger: "Uspořádejte úspěšný #V legendární#! [GetActivityType('activity_hunt').GetTextIcon][GetActivityType('activity_hunt').GetName] #V 3#! krát ([THIS.Char.MakeScope.Var('greatest_hunter_oath_l_counter').GetValue|0]/3)"
  greatest_hunter_decision_l1_trigger: "Uspořádejte úspěšný #V legendární#! [GetActivityType('activity_hunt').GetTextIcon][GetActivityType('activity_hunt').GetName] #V jednou#!([THIS.Char.MakeScope.Var('greatest_hunter_oath_l_counter').GetValue|0]/1)"
- greatest_hunter_decision_r10_trigger: "Uspořádejte úspěšný [GetActivityType('activity_hunt').GetTextIcon][GetActivityType('activity_hunt').GetName] #V 10#! krát ([THIS.Char.MakeScope.Var('greatest_hunter_oath_l_counter').GetValue|0]/10)"
+ greatest_hunter_decision_r10_trigger: "Uspořádat úspěšný [GetActivityType('activity_hunt').GetTextIcon][GetActivityType('activity_hunt').GetName] #V 10#! krát ([THIS.Char.MakeScope.Var('greatest_hunter_oath_r_counter').GetValue|0]/10)" # todo: Uspořádejte úspěšný [GetActivityType('activity_hunt').GetTextIcon][GetActivityType('activity_hunt').GetName] #V 10#! krát ([THIS.Char.MakeScope.Var('greatest_hunter_oath_l_counter').GetValue|0]/10)
  greatest_hunter_decision_trigger_2: "Vlastníte [artifact|E] typu #V Luk#!"
  heir_preparation_oath_decision: "$GetHeirPreparationOathText$ [CoronationTimer('heir_preparation_oath_decision','heir_preparation_oath_decision_timer')]"
  heir_preparation_oath_decision_timer: "\t#weak ([RemainingTime('heir_preparation_oath_timer')])#!"
- heir_preparation_oath_decision_desc: "Zavázal jsem se připravit svého [primary_heir|E] na zkoušky, které přijdou. Mé panování nemá větší účel než to, co po něm přijde. $heir_preparation_oath_decision_desc_extra$"
+ heir_preparation_oath_decision_desc: "Přísahal jsem, že připravím svého dědice na zkoušky, které přijdou. Moje vláda nemá vyššího cíle než to, co po ní přijde. $heir_preparation_oath_decision_desc_extra$" # todo: Zavázal jsem se připravit svého [primary_heir|E] na zkoušky, které přijdou. Mé panování nemá větší účel než to, co po něm přijde. $heir_preparation_oath_decision_desc_extra$
  heir_preparation_oath_decision_desc_extra: "\n\n@alert_icon!#alert_trial Zbývá [RemainingTime('heir_preparation_oath_timer')] k dokončení [oath|E]#![IsOngoingCoronationOath('heir_preparation_oath')]"
  heir_preparation_oath_decision_tooltip: "Připravte svého [primary_heir|E] na budoucnost"
  heir_preparation_oath_decision_confirm: "Nástupnictví je v bezpečí"
@@ -728,3 +728,8 @@
  heir_preparation_oath_decision_heir_stats_intellect: "Váš [primary_heir|E] má [trait|E] ze skupiny bystrých myslí"
  heir_preparation_oath_decision_heir_stats_beauty: "Váš [primary_heir|E] má [trait|E] ze skupiny krásných postav"
  heir_preparation_oath_decision_heir_stats_physique: "Váš [primary_heir|E] má [trait|E] ze skupiny fyzických exemplářů"
+ coronation_type_tributaries: "a [tributaries|E]"  # todo: NEW TRANSLATION
+ generic_coronation_low_feast: "[GetModifier('ach_coronation_low_feast_modifier').GetNameWithTooltip]"  # todo: NEW TRANSLATION
+ mandala_coronation_low_feast: "[GetModifier('mandala_coronation_low_feast_modifier').GetNameWithTooltip]"  # todo: NEW TRANSLATION
+ mandala_coronation_low_feast_modifier: "Pohrdaní poddaní"  # todo: NEW TRANSLATION
+ mandala_coronation_low_feast_modifier_desc: "$ach_coronation_low_feast_modifier_desc$"  # todo: NEW TRANSLATION

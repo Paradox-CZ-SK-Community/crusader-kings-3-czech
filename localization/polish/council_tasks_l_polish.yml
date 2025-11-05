@@ -258,7 +258,7 @@
  task_conversion.tt.forbidden.due_to_struggle_phase: "You cannot use [convert_county|E] within this [struggle|E] [struggle_region_region|E] in this [struggle_phase_phase|E]"
  task_conversion: "Převést víru v hrabství"
  task_conversion_development_gain: "\n$EFFECT_LIST_BULLET$#P Zvýšení rozvoje hrabství#!"
- task_conversion_effect_desc: "#S Při #V 100%#!#!:\n$TAB$[county|E] změní [faith|E] na [councillor.GetFaith.GetName]"
+ task_conversion_effect_desc: "#S Při #V 100%#!#!:\n$TAB$Hrabství [county|E] změní [faith|E] na[councillor.GetFaith.GetTextIcon][councillor.GetFaith.GetName]" # todo: #S Při #V 100%#!#!:\n$TAB$Ve [county|E] se [faith|E] změní na [councillor.GetFaith.GetTextIcon][councillor.GetFaith.GetName]
  task_conversion_levy_gain: "\n$EFFECT_LIST_BULLET$#P Zvýšení odvodů hrabství#!"
  task_conversion_notification_tooltip: "Od $task_conversion$"
  task_conversion_opinion_gain: "\n$EFFECT_LIST_BULLET$#P Zvýšení názoru hrabství#!"
@@ -407,7 +407,7 @@
  task_kurultai_court_astrologer_3: "$task_kurultai_court_astrologer_1$"
  task_kurultai_court_astrologer_4: "$task_kurultai_court_astrologer_1$"
  task_kurultai_court_astrologer_aptitude_desc: "[GetCourtPositionType('court_astrologer_court_position').GetName()] [aptitude|E]: #P [aptitude_i]+[SCOPE.ScriptValue('kurultai_court_astrologer_aptitude_final_value')|1]#!\n$TAB$Základ: #P [aptitude_i]+[SCOPE.ScriptValue('kurultai_court_astrologer_aptitude_base_value')|1]#!\n$TAB$[councillor.Custom('GetCouncillorKurultaiMemberPossessive')] [learning_i][learning_skill|E]: #P [aptitude_i]+[SCOPE.ScriptValue('kurultai_court_astrologer_aptitude_skill_value')|1]#!"
- task_kurultai_court_astrologer_effect_desc: "#weak Zvyšováno podle [kurultai|E] člena [learning_i][learning|E] (#color_white [councillor.MakeScope.ScriptValue('kurultai_court_astrologer_skill_tooltip')]#!)#!\n"
+ task_kurultai_court_astrologer_effect_desc: "#weak Zvýšeno o [councillor.GetCouncilTitlePossessive] [learning_i][learning|E] (#color_white [councillor.MakeScope.ScriptValue('kurultai_court_astrologer_skill_tooltip')]#!)#!\n" # todo: #weak Zvýšeno o [councillor.GetCouncilTitlePossessive] [learning_i][learning|E] (#color_white [councillor.MakeScope.ScriptValue('kurultai_court_astrologer_skill_tooltip')]#!)#!\n
  task_kurultai_court_astrologer_modifier: "$task_kurultai_court_astrologer_1$ #weak (Úkol rádce Kurultaje)#!"
  task_kurultai_court_astrologer_piety_desc: "Měsíční zisk [piety|E]: #P [piety_i]+[SCOPE.ScriptValue('kurultai_court_astrologer_piety_final_value')|1]%#!\n$TAB$Základ: #P [piety_i]+[SCOPE.ScriptValue('kurultai_court_astrologer_piety_base_value')|1]%#!\n$TAB$[councillor.Custom('GetCouncillorKurultaiMemberPossessive')] [learning_i][learning_skill|E]: #P [piety_i]+[SCOPE.ScriptValue('kurultai_court_astrologer_piety_skill_value')|1]%#!\n"
  task_kurultai_court_astrologer_zealous_proselytizer_bonus_desc: "\n$TAB$[GetPerk('zealous_proselytizer_perk').GetName(GetPlayer)]: #P +[SCOPE.ScriptValue('kurultai_court_astrologer_piety_final_value')|2]#!"
@@ -478,7 +478,7 @@
  task_kurultai_raider_3: "$task_kurultai_raider_1$"
  task_kurultai_raider_4: "$task_kurultai_raider_1$"
  task_kurultai_raider_attrition_desc: "\nNepřátelské hrabství [attrition|E] během [raiding|E]: #P [attrition_i]-[SCOPE.ScriptValue('kurultai_organize_raiders_loot_final_value')|1]%#!\n$TAB$Základ: #P [attrition_i]-[SCOPE.ScriptValue('kurultai_organize_raiders_loot_base_value')|1]%#!\n$TAB$[councillor.Custom('GetCouncillorKurultaiMemberPossessive')] [martial_i][martial_skill|E]: #P [attrition_i]-[SCOPE.ScriptValue('kurultai_organize_raiders_loot_skill_value')|1]%#!"
- task_kurultai_raider_loot_desc: "Maximální [raid_loot|E]: #P [raid_loot_i]+[SCOPE.ScriptValue('kurultai_organize_raiders_loot_final_value')|1]%#!\n$TAB$Základ: #P [raid_loot_i]+[SCOPE.ScriptValue('kurultai_organize_raiders_loot_base_value')|1]%#!\n$TAB$[councillor.Custom('GetCouncillorKurultaiMemberPossessive')] [martial_i][martial_skill|E]: #P [raid_loot_i]+[SCOPE.ScriptValue('kurultai_organize_raiders_loot_skill_value')|1]%#!"
+ task_kurultai_raider_loot_desc: "Maximálně [loot|E]: #P [loot_i]+[SCOPE.ScriptValue('kurultai_organize_raiders_loot_final_value')|1]%#!\n$TAB$Základ: #P [loot_i]+[SCOPE.ScriptValue('kurultai_organize_raiders_loot_base_value')|1]%#!\n$TAB$[councillor.Custom('GetCouncillorKurultaiMemberPossessive')] [martial_i][martial_skill|E]: #P [loot_i]+[SCOPE.ScriptValue('kurultai_organize_raiders_loot_skill_value')|1]%#!" # todo: Maximální [loot|E]: #P [loot_i]+[SCOPE.ScriptValue('kurultai_organize_raiders_loot_final_value')|1]%#!\n$TAB$Základ: #P [loot_i]+[SCOPE.ScriptValue('kurultai_organize_raiders_loot_base_value')|1]%#!\n$TAB$[councillor.Custom('GetCouncillorKurultaiMemberPossessive')] [martial_i][martial_skill|E]: #P [loot_i]+[SCOPE.ScriptValue('kurultai_organize_raiders_loot_skill_value')|1]%#!
  task_kurultai_raider_modifier: "$task_kurultai_raider_1$ #weak (Úkol rádce Kurultaje)#!"
  task_kurultai_raider_raiding_desc: "\n[raid|E] Rychlost & Rychlost pohybu během nájezdů: #P [raid_i]-[SCOPE.ScriptValue('kurultai_organize_raiders_raid_final_value')|1]%#!\n$TAB$Základ: #P [raid_i]-[SCOPE.ScriptValue('kurultai_organize_raiders_raid_base_value')|1]%#!\n$TAB$[councillor.Custom('GetCouncillorKurultaiMemberPossessive')] [martial_i][martial_skill|E]: #P [raid_i]-[SCOPE.ScriptValue('kurultai_organize_raiders_raid_skill_value')|1]%#!"
  task_kurultai_raiders_gain_dread: "\n$EFFECT_LIST_BULLET$#P Získání hrůzy#!"
@@ -565,12 +565,12 @@
  task_stewardship_good_unskilled_notification_tooltip: "K tomu došlo i přes [active_councillor.GetCouncilTitlePossessive] [active_councillor.Custom('stewardship_skill_level')] dovednost v hospodářství."
  task_support_schemes: "Podpora intrik"
  task_support_schemes_base_desc: "[hostile_scheme|E] [scheme_speed_single|E]: @scheme_phase_duration_icon!#P [SCOPE.ScriptValue('spymaster_espionage_modifier_final_scale')|0]#!\n$TAB$[intrigue_i] [councillor|E]'s [intrigue|E]: #P [SCOPE.ScriptValue('spymaster_espionage_modifier_base_scale')|0] dní#!"
- task_support_schemes_consulted_house_bonus_desc: "\n$TAB$$unity_consulted_house_member_desc$: #P +[SCOPE.ScriptValue('spymaster_espionage_consulted_house_bonus')|P]%#!"
+ task_support_schemes_consulted_house_bonus_desc: "\n$TAB$$unity_consulted_house_member_desc$: #P [SCOPE.ScriptValue('spymaster_espionage_consulted_house_bonus')|P]%#!" # todo: \n$TAB$$unity_consulted_house_member_desc$: #P [SCOPE.ScriptValue('spymaster_espionage_consulted_house_bonus')|P]%#!
  task_support_schemes_effect_desc: "[councillor.GetModifierDescForTask('task_support_schemes')]"
  task_support_schemes_fail_scheme: "\n$EFFECT_LIST_BULLET$#N Neúspěch intriky#!"
- task_support_schemes_family_business_bonus_desc: "\n$TAB$$tradition_family_entrepreneurship_name$: #P +[SCOPE.ScriptValue('spymaster_espionage_family_business_bonus')|P1]#!"
+ task_support_schemes_family_business_bonus_desc: "\n$TAB$$tradition_family_entrepreneurship_name$: #P [SCOPE.ScriptValue('spymaster_espionage_family_business_bonus')|P1]#!" # todo: \n$TAB$$tradition_family_entrepreneurship_name$: #P [SCOPE.ScriptValue('spymaster_espionage_family_business_bonus')|P1]#!
  task_support_schemes_learn_secret: "\n$EFFECT_LIST_BULLET$#P Tajemství odhaleno#!"
- task_support_schemes_legacy_bonus_desc: "\n$TAB$[GetDynastyPerk('erudition_legacy_5').GetName]: #P +[SCOPE.ScriptValue('spymaster_espionage_legacy_bonus')|P1]#!"
+ task_support_schemes_legacy_bonus_desc: "\n$TAB$[GetDynastyPerk('erudition_legacy_5').GetName]: #P [SCOPE.ScriptValue('spymaster_espionage_legacy_bonus')|P1]#!" # todo: \n$TAB$[GetDynastyPerk('erudition_legacy_5').GetName]: #P [SCOPE.ScriptValue('spymaster_espionage_legacy_bonus')|P1]#!
  task_support_schemes_lose_piety: "\n$EFFECT_LIST_BULLET$#N Ztráta zbožnosti#!"
  task_support_schemes_lose_prestige: "\n$EFFECT_LIST_BULLET$#N Ztráta prestiže#!"
  task_support_schemes_modifier: "Špión — špionáž"
@@ -612,4 +612,10 @@
  task_vizier_manage_domain_effect_desc: "$task_manage_domain_effect_desc$"
  task_vizier_patronage: "$task_patronage$"
  task_vizier_patronage_effect_desc: "$task_patronage_effect_desc$"
-task_domestic_affairs_tyranny_consulted_house_bonus_desc: "\n$TAB$$unity_consulted_house_member_desc$: #P +[SCOPE.ScriptValue('chancellor_domestic_affairs_tyranny_consulted_house_bonus')|P0]%#!"
+ task_domestic_affairs_tyranny_consulted_house_bonus_desc: "\n$TAB$$unity_consulted_house_member_desc$: #P +[SCOPE.ScriptValue('chancellor_domestic_affairs_tyranny_consulted_house_bonus')|P0]%#!"
+ task_collect_taxes_innovation_double_entry_bookkeeping_bonus_desc: "\n$TAB$$innovation_double_entry_bookkeeping$: #P +10%#!"   # todo: NEW TRANSLATION
+ task_develop_county_minister_of_works_VALUE_NAME: "$task_develop_county_VALUE_NAME$"   # todo: NEW TRANSLATION
+ task_conversion_china_effect_desc: "#S Při #V 100%#!#!:\n$TAB$Okres [county|E] změní [faith|E] na [councillor.GetLiege.GetFaith.GetTextIcon][councillor.GetLiege.GetFaith.GetName]"   # todo: NEW TRANSLATION
+ task_conversion_development_loss_desc: "\n#indent_newline:4 $TAB$Okres [county|E] ztratí [development_i]#N 1#! [development|E], plus[development_i]#N 1#! za každých #V 10#! existujícího rozvoje#!"   # todo: NEW TRANSLATION
+ COURT_CHAPLAIN_CONVERSION_PURE_LAND_MODIFIER: "[county.GetProvince.GetCounty.GetFaith.GetName] — [GetFaithDoctrine('tenet_pure_land').GetBaseName]"   # todo: NEW TRANSLATION
+ STEWARD_PROMOTE_CULTURE_DEFIANT_AMBUSHERS: "[county.GetProvince.GetCounty.GetCulture.GetName] [culture_traditions|E]"   # todo: NEW TRANSLATION

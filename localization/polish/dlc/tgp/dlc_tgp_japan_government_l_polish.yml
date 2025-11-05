@@ -1,0 +1,161 @@
+﻿l_polish:
+ japan_personal_relation_ceremonial_liege_same: "[ceremonial_liege|E]" # todo: NEW TRANSLATION
+ japan_personal_relation_ceremonial_liege_other: "[liege.GetShortUINamePossessive] [ceremonial_liege|E]" # todo: NEW TRANSLATION
+ japan_personal_relation_ceremonial_regent_same: "[ceremonial_regent|E]" # todo: NEW TRANSLATION
+ japan_personal_relation_ceremonial_regent_other: "[vassal.GetShortUINamePossessive] [ceremonial_regent|E]" # todo: NEW TRANSLATION
+ japan_administrative_government: "Ritsuryō" # todo: NEW TRANSLATION
+ japan_administrative_government_adjective: "$japan_administrative_government$" # todo: NEW TRANSLATION
+ japan_administrative_government_with_icon: "@government_type_ritsuryo! $japan_administrative_government$" # todo: NEW TRANSLATION
+ japan_administrative_government_desc: "\n$japan_administrative_government$ je typ [administrative|E] [government|E] jedinečný pro Japonsko.\n\nJe to centralizovaný [government_bureaucratic_type|E] [government_form|E], kde jsou [characters|E] jmenováni jako [governors|E] jménem svého [liege|E], mají přístup k [influence|E] a [noble_family|E] [house_head_heads|E] mají [family_manor|E] a [house_aspiration|E].\n\nA [kampaku|E] vládne [realm|E] jménem [japanese_emperor|E], a může být zvolen z řad [noble_family|E] [house_head_heads|E] nebo vynucen požadavkem [faction|E].\n\n$japan_administrative_government$ [vassals|E] obvykle spravují pouze jednu [county|E], ale mohou centralizovaný systém odmítnout a stát se místními pány [soryo|E], aby si vybudovali vlastní moc, což je obvykle považováno za [criminal|E].\n\n$japan_administrative_government$ $game_concept_house_heads$ mohou v [realm|E] vytvářet a připojovat se k [house_blocs|E], které podpoří [leading_house|E] v tom, aby se stala $game_concept_kampaku$.\n\n$japan_government_domain_limit_help$\n\n#F Systém $japan_administrative_government$ odkazuje na centralizovanou administrativní vládu Japonska, inspirovanou čínskou konfuciánskou byrokracií.#!" # todo: NEW TRANSLATION
+ japan_feudal_government: "Sōryō" # todo: NEW TRANSLATION
+ japan_feudal_government_adjective: "$japan_feudal_government$" # todo: NEW TRANSLATION
+ japan_feudal_government_with_icon: "@government_type_soryo! $japan_feudal_government$" # todo: NEW TRANSLATION
+ japan_feudal_government_desc: "\n$japan_feudal_government$ je typ [feudal|E] [government|E] jedinečný pro Japonsko.\n\n$japan_feudal_government$ představuje místní pány, kteří odvrhli nebo nahradili dosah centrální vlády [ritsuryo|E] a vládnou provinciím jako svým vlastním fiefům.\n\nPostavy s $japan_feudal_government$ nepoužívají [influence|E], ale [noble_family|E] [house_head_heads|E] si ponechávají své [family_manor|E] a [house_aspiration|E].\n\nAčkoli nemohou být voleni [ceremonial_regent|E], $japan_feudal_government$ [rulers|E] mohou získat moc prostřednictvím #V $replace_ceremonial_regent_faction_name$#! [faction|E], a použít #V Formalize Shōgunate#! [decision|E].\n\n$japan_feudal_government$ $game_concept_ceremonial_regents$ vládnou [realm|E] jménem [japanese_emperor|E], dědí podle $single_heir_succession_law$ [succession|E], a mohou být svrženi požadavkem [faction|E].\n\n$japan_feudal_government$ $game_concept_house_heads$ mohou v [realm|E] vytvářet a připojovat se k [house_blocs|E].$japan_government_domain_limit_help$\n\n\n\n#F $japan_feudal_government$ odkazuje na rané fáze japonského feudalismu začínající v období Heian a postupně formalizované během prvního šógunátu v období Kamakura.#!" # todo: NEW TRANSLATION
+ japan_government_domain_limit_help: "@alert_icon! #HELP Japonská $game_concept_governments$ mají nižší [domain_limit|E] než ostatní, které lze zvýšit povýšením $game_concept_family_manor$.#!" # todo: NEW TRANSLATION
+ tgp_is_japanese_governor_trigger: "Jste [GetGovernment('japan_administrative_government').GetName] [governor|E]" # todo: NEW TRANSLATION
+ japanese_appointment_succession_law: "$japan_administrative_government$ Jmenovací následnictví" # todo: NEW TRANSLATION
+ japanese_appointment_succession_law_subname: "Dědí kandidát s nejvyšším skóre" # todo: NEW TRANSLATION
+ japanese_appointment_succession_law_effects: "\nTyp [appointment_succession_law|E]. Pod $japanese_appointment_succession_law$ bude [title|E] a s ním spojené [holdings|E] zděděny kandidátem s nejvyšším skóre. Každý [adult|E] v [realm|E] může usilovat o získání [governorship|E] různými prostředky, od [scheming|E] po utrácení [influence|E]." # todo: NEW TRANSLATION
+ japanese_military_appointment_succession_law: "$japan_administrative_government$ Vojenské následnictví" # todo: NEW TRANSLATION
+ japanese_military_appointment_succession_law_subname: "Dědí kandidát s nejvyšším skóre" # todo: NEW TRANSLATION
+ japanese_military_appointment_succession_law_effects: "\nTyp [appointment_succession_law|E]. Pod $japanese_military_appointment_succession_law$ bude [title|E] a s ním spojené [holdings|E] zděděny kandidátem s nejvyšším [candidate_score|E]. Každý [adult|E] v [realm|E] může usilovat o získání vojenského [governorship|E] tím, že má dobrý [martial_skill|E], získá [commander_traits|E], nebo utratí [influence|E].#!" # todo: NEW TRANSLATION
+ japanese_regency_succession_law: "Japonské regentské následnictví" # todo: NEW TRANSLATION
+ japanese_regency_succession_law_subname: "$appointment_succession_law_subname$" # todo: NEW TRANSLATION
+ japanese_regency_succession_law_effects: "Pod $japanese_regency_succession_law$ bude [title|E] a s ním spojené [holdings|E] zděděny kandidátem s nejvyšším skóre. Výběr kandidátů zahrnuje [noble_families|E], [governors|E] a jejich rodinné příslušníky v [realm|E].\n\nPokud bude [japanese_emperor|E] zvolen jako další [ceremonial_regent|E], bude mít na výběr buď abdikovat jako [tenno|E] nebo se pokusit znovu nastolit přímou vládu!" # todo: NEW TRANSLATION
+ japanese_kampaku_house_past_kampaku_desc: "Předchozí [ROOT.Char.GetDynasty.GetName] #weak [ceremonial_regents|E] #weak ([ROOT.Char.MakeScope.ScriptValue('japanese_kampaku_house_past_kampaku_value')|0])#!" # todo: NEW TRANSLATION
+ japanese_kampaku_house_imperial_parent_desc: "[ROOT.Char.GetHouse.GetBaseName] s rodiči z [ceremonial_house|E] #weak ([ROOT.Char.MakeScope.ScriptValue('japanese_kampaku_house_imperial_parent_value')|0])#!" # todo: NEW TRANSLATION
+ japanese_kampaku_house_imperial_child_desc: "[ceremonial_house|E] s rodiči z [ROOT.Char.GetHouse.GetBaseName] #weak ([ROOT.Char.MakeScope.ScriptValue('japanese_kampaku_house_imperial_child_value')|0])#!" # todo: NEW TRANSLATION
+ japanese_kampaku_imperial_spouse_desc: "[ROOT.Char.GetHouse.GetBaseName] [spouses|E] [ceremonial_liege|E] #weak ([ROOT.Char.MakeScope.ScriptValue('japanese_kampaku_imperial_spouse_value')|0])#!" # todo: NEW TRANSLATION
+ japanese_kampaku_house_imperial_spouse_desc: "[ceremonial_house|E] s [ROOT.Char.GetHouse.GetBaseName] [spouses|E] #weak ([ROOT.Char.MakeScope.ScriptValue('japanese_kampaku_house_imperial_spouse_value')|0])#!" # todo: NEW TRANSLATION
+ japanese_kampaku_dynasty_splendor_desc: "[ROOT.Char.GetDynasty.GetName] [dynasty_prestige_level|E] ([dynasty|E])" # todo: NEW TRANSLATION
+ japanese_kampaku_house_governorship_desc: "[ROOT.Char.GetHouse.GetBaseName] [governorships|E] #weak ([ROOT.Char.MakeScope.ScriptValue('japanese_kampaku_house_governorship_value')|0])#!" # todo: NEW TRANSLATION
+ ceremonial_liege_opinion_desc: "[ceremonial_liege|E] [opinion|E]" # todo: NEW TRANSLATION
+ japanese_kampaku_house_devoted_desc: "[GetTrait('devoted').GetName( GetNullCharacter )] [ROOT.Char.GetHouse.GetBaseName] členové #weak ([ROOT.Char.MakeScope.ScriptValue('japanese_kampaku_house_devoted_value')|0])#!" # todo: NEW TRANSLATION
+ ceremonial_house_member_desc: "Člen [ceremonial_house|E]" # todo: NEW TRANSLATION
+ ceremonial_house_heir_desc: "[ceremonial_house|E] [heir|E]" # todo: NEW TRANSLATION
+ ceremonial_house_non_heir_desc: "Nedědící [ceremonial_house|E]" # todo: NEW TRANSLATION
+ japanese_kampaku_devoted_desc: "Je [GetTrait('devoted').GetName( GetNullCharacter )]" # todo: NEW TRANSLATION
+ japanese_kampaku_domicile_capital_desc: "[ROOT.Char.GetHouse.GetBaseName] [manor|E] v [capital|E]" # todo: NEW TRANSLATION
+ japanese_kampaku_age_desc: "Věk" # todo: NEW TRANSLATION
+ japanese_kampaku_house_bloc_size_desc: "Velikost vedoucího [bloc|E]" # todo: NEW TRANSLATION
+ japanese_kampaku_house_bloc_size_heir_desc: "Velikost [bloc|E] předchůdce" # todo: NEW TRANSLATION
+ game_concept_regent_family: "Regentská rodina" # todo: NEW TRANSLATION
+ game_concept_regent_family_desc: "$game_concept_regent_family$ je nejvyšší [house|E] v [realm|E] s [ceremonial_regent|E]." # todo: NEW TRANSLATION
+ game_concept_house_bloc: "Rodový blok" # todo: NEW TRANSLATION
+ game_concept_house_blocs: "Rodové bloky" # todo: NEW TRANSLATION
+ game_concept_house_bloc_possessive: "Rodového bloku" # todo: NEW TRANSLATION
+ game_concept_bloc: "Blok" # todo: NEW TRANSLATION
+ game_concept_blocs: "Bloky" # todo: NEW TRANSLATION
+ game_concept_bloc_possessive: "Bloku" # todo: NEW TRANSLATION
+ game_concept_house_bloc_desc: "A $game_concept_house_bloc$ je obranný svazek [houses|E] v rámci [realm|E]. Jakýkoli [member_house|E], který je napaden, bude brán všemi ostatními $game_concept_member_houses$.\n\n[house_heads|E] rozhodují, zda se stanou [bloc_member_houses|E], přičemž všichni vládnoucí členové jejich rodu v [realm|E] je následují.\n\nBloky vždy mají [leading_house|E], která může vyloučit ostatní členy, je oblíbeným [ceremonial_regent|E] všech členů a jejímž [house_aspiration|E] jsou určeny bonusy, které poskytují vyšší úrovně [cohesion|E].\n\nPouze $game_concept_leading_house_possessive$ $game_concept_house_head$ může vytvářet [factions|E] proti [top_liege|E], a všichni členové $game_concept_bloc_member_houses$ se připojí ke všem [factions|E], které vytvoří." # todo: NEW TRANSLATION
+ game_concept_bloc_cohesion: "Soudržnost bloku" # todo: NEW TRANSLATION
+ game_concept_cohesion: "Soudržnost" # todo: NEW TRANSLATION
+ game_concept_bloc_cohesion_desc: "$game_concept_cohesion$ měří jednotu [house_bloc|E]; vyšší úrovně poskytují rostoucí výhody členům [bloc_member_houses|E] podle [leading_house_possessive|E] [house_aspiration|E].\n\nHlavním zdrojem jsou [house_relations|E] mezi $game_concept_bloc_member_houses$, které mohou $game_concept_cohesion$ ovlivnit kladně i záporně. Navíc celková velikost bloku nebo nevyrovnané $game_concept_house_aspirations$ či [government|E] členů mohou $game_concept_cohesion$ snížit.\n\nUdržování úrovně $game_concept_bloc_cohesion$ udělí [member_houses|E] různé bonusy podle aspirace $game_concept_leading_house$.\n\nPo dosažení #V 0#! $game_concept_cohesion$ se $game_concept_house_bloc$ automaticky rozpustí." # todo: NEW TRANSLATION
+ game_concept_bloc_cohesion_tt: "#T @bloc_cohesion! $game_concept_bloc_cohesion$#!\n\n$game_concept_bloc_cohesion_desc$" # todo: NEW TRANSLATION
+ game_concept_bloc_member_house: "Členský rod bloku" # todo: NEW TRANSLATION
+ game_concept_bloc_member_houses: "Členské rody bloku" # todo: NEW TRANSLATION
+ game_concept_bloc_house: "Rod bloku" # todo: NEW TRANSLATION
+ game_concept_bloc_houses: "Rody bloku" # todo: NEW TRANSLATION
+ game_concept_member_house: "Členský rod" # todo: NEW TRANSLATION
+ game_concept_member_houses: "Členské rody" # todo: NEW TRANSLATION
+ game_concept_bloc_member_house_desc: "A $game_concept_bloc_member_house$ je jakýkoli [house|E], který se připojil k [house_bloc|E], včetně jeho [leading_house|E]." # todo: NEW TRANSLATION
+ game_concept_aligned_bloc_member_house: "Sladěný členský rod bloku" # todo: NEW TRANSLATION
+ game_concept_aligned_bloc_member_houses: "Sladěné členské rody bloku" # todo: NEW TRANSLATION
+ game_concept_aligned_bloc_house: "Sladěný rod bloku" # todo: NEW TRANSLATION
+ game_concept_aligned_bloc_houses: "Sladěné rody bloku" # todo: NEW TRANSLATION
+ game_concept_aligned_bloc_member_house_desc: "A $game_concept_aligned_bloc_member_house$ je [house|E], který se připojil k [house_bloc|E] a má stejné [house_aspirations|E] jako [leading_house|E]." # todo: NEW TRANSLATION
+ game_concept_divergent_bloc_member_house: "Odlišný členský rod bloku" # todo: NEW TRANSLATION
+ game_concept_divergent_bloc_member_houses: "Odlišné členské rody bloku" # todo: NEW TRANSLATION
+ game_concept_divergent_bloc_house: "Odlišný rod bloku" # todo: NEW TRANSLATION
+ game_concept_divergent_bloc_houses: "Odlišné rody bloku" # todo: NEW TRANSLATION
+ game_concept_divergent_bloc_member_house_desc: "A $game_concept_divergent_bloc_member_house$ je [house|E], který se připojil k [house_bloc|E], ale má jinou [house_aspirations|E] než [leading_house|E]." # todo: NEW TRANSLATION
+ game_concept_bloc_member_ruler: "Vládce člena bloku" # todo: NEW TRANSLATION
+ game_concept_bloc_member_rulers: "Vládci členů bloku" # todo: NEW TRANSLATION
+ game_concept_bloc_ruler: "Vládce bloku" # todo: NEW TRANSLATION
+ game_concept_bloc_rulers: "Vládci bloku" # todo: NEW TRANSLATION
+ game_concept_bloc_member_ruler_desc: "A $game_concept_bloc_member_ruler$ je [ruler|E], který je členem [house_bloc|E]." # todo: NEW TRANSLATION
+ game_concept_leading_house: "Vůdčí rod" # todo: NEW TRANSLATION
+ game_concept_leading_houses: "Vůdčí rody" # todo: NEW TRANSLATION
+ game_concept_leading_house_possessive: "Vůdčího rodu" # todo: NEW TRANSLATION
+ game_concept_house_bloc_leadership: "Vedení rodového bloku" # todo: NEW TRANSLATION
+ game_concept_bloc_leadership: "Vedení bloku" # todo: NEW TRANSLATION
+ game_concept_leading_house_desc: "A $game_concept_leading_house$ je [house|E], který je dohodnutým vůdcem [house_bloc|E]." # todo: NEW TRANSLATION
+ JAPANESE_HOUSE_HEAD_ALLIANCE_REASON: "[noble_family|E] [house_head|E]: $VALUE|=+0$" # todo: NEW TRANSLATION
+ japan_offensive_wars_ban_tt: "[rulers|E] v [GetTitleByKey('e_japan').GetBaseNameNoTier] nemohou vyhlašovat vnější [wars|E], pokud [imperial_policy|E] není [GetLaw('imperial_expansion_law').GetName]" # todo: NEW TRANSLATION
+ ceremonial_liege_line_cannot_be_governor_trigger: "[governorships|E] nelze udělit [ceremonial_liege|E] ani osobám v jejich přímé [line_of_succession|E]" # todo: NEW TRANSLATION
+ ceremonial_liege_house_can_not_be_ruler_trigger: "[ceremonial_liege|E] je jediným členem [ceremonial_house|E], který se může stát [ruler|E] pomocí [influence_i|E][influence|E]" # todo: NEW TRANSLATION
+ ceremonial_liege_only_heir_can_be_ruler_trigger: "[ceremonial_liege_possessive|E] [player_heir|E] je jediným členem [ceremonial_house|E], který se může stát [ruler|E] pomocí [influence_i|E][influence|E]" # todo: NEW TRANSLATION
+ tgp_blocked_ceremonial_title_revocation_trigger: "Titul [ceremonial_liege|E] nelze odejmout!" # todo: NEW TRANSLATION
+ tgp_blocked_ruler_against_ceremonial_action_trigger: "Tuto akci nelze provést proti [ceremonial_liege|E]" # todo: NEW TRANSLATION
+ tgp_blocked_ceremonial_house_matrilineal_marriage_trigger: "[ceremonial_liege|E] by to nepřijal" # todo: NEW TRANSLATION
+ tgp_is_ceremonial_liege_tt: "[THIS.Char.GetShortUIName|U] [CharAreIs(THIS.Char)] [ceremonial_liege|E]" # todo: NEW TRANSLATION
+ tgp_has_ceremonial_liege_title_tt: "[THIS.Char.GetShortUIName|U] [CharHaveHas(THIS.Char)] [ceremonial_liege|E] [title|E] #weak ([THIS.Char.GetTopLiege.GetPrimaryTitle.MakeScope.Var('administrative_ui_special_title').Title.GetDefinitiveName|V])#!" # todo: NEW TRANSLATION
+ tgp_has_ceremonial_liege_title_no_title_tt: "[THIS.Char.GetShortUIName|U] [CharHaveHas(THIS.Char)] [ceremonial_liege|E] [title|E]" # todo: NEW TRANSLATION
+ tgp_is_in_ceremonial_house_tt: "[THIS.Char.GetShortUIName|U] [CharAreIs( THIS.Char )] členem [ceremonial_house|E] #weak ([THIS.Char.GetTopLiege.GetPrimaryTitle.MakeScope.Var('administrative_ui_special_title').Title.GetHolder.GetHouse.GetName|V])#!" # todo: NEW TRANSLATION
+ tgp_realm_has_ceremonial_liege_tt: "[THIS.Char.GetTopLiege.GetPrimaryTitle.GetDefinitiveName|U] má [ceremonial_liege|E]" # todo: NEW TRANSLATION
+ influence_candidacy_interaction_desc_japan: "Utratit [influence|E] na podporu nebo podkopání kandidatúry postavy na [recipient.GetTopLiege.Custom('GetGovernorConcept')] nebo [ceremonial_regent|E]" # todo: NEW TRANSLATION
+ request_appointment_support_desc_japan: "Požádejte [recipient.GetShortUINameNoTooltip], aby podpořil vás nebo člena [house|E] při získání role budoucího [actor.GetTopLiege.Custom('GetGovernorConcept')] nebo [ceremonial_regent|E]" # todo: NEW TRANSLATION
+ demand_admin_interaction_desc_japan: "Požádejte [recipient.GetShortUIName|U], aby opustil [recipient.GetGovernment.GetAdjective] [government|E] a stal se [GetGovernment('japan_administrative_government').GetName] [governor|E]" # todo: NEW TRANSLATION
+ defense_mobilization_law_valid_trigger: "Musí být držen alespoň #V 1#! [de_jure|E] [county|E] [GetTitleByKey('e_japan').GetDefinitiveName] jiným [realm|E], nebo [top_liege|E] musí vést obranný [war|E] proti jinému $game_concept_realm$" # todo: NEW TRANSLATION
+ imperial_expansion_internal_peace_trigger: "[realm|E] musí být v [peace|E]" # todo: NEW TRANSLATION
+ shogunate_law_required: "Vyžaduje [feudal_government|E]" # todo: NEW TRANSLATION
+ CEREMONIAL_HOUSE_MARRYING_DOWN_REASON: "Sňatek s [ceremonial_house|E] – dopad na [dynasty_prestige_level|E]: $VALUE|=+0$" # todo: NEW TRANSLATION
+ CEREMONIAL_HOUSE_MARRYING_NON_HOUSE_HEAD: "[ceremonial_house|E] sňatek s ne-[noble_family|E] hlavou: $VALUE|=+0$" # todo: NEW TRANSLATION
+ CEREMONIAL_HOUSE_SECONDARY_SPOUSE_HEAD: "[ceremonial_house|E] neochota být sekundárním [spouse|E]: $VALUE|=+0$" # todo: NEW TRANSLATION
+ CEREMONIAL_HOUSE_PETITION_REASON: "$petition_ceremonial_liege_decision$: $VALUE|=+0$" # todo: NEW TRANSLATION
+ government_is_japanese: "Je [ritsuryo|E] nebo [soryo|E]" # todo: NEW TRANSLATION
+ japan_feudal_vassal: "$game_concept_soryo$" # todo: NEW TRANSLATION
+ japan_feudal_vassal_desc: "$game_concept_soryo_government_desc$" # todo: NEW TRANSLATION
+ japan_administrative_obligations: "$japan_administrative_government$ Povinnosti" # todo: NEW TRANSLATION
+ japan_administrative_provinces: "$administrative_themes$" # todo: NEW TRANSLATION
+ japan_administrative_vassal: "$japan_administrative_government$" # todo: NEW TRANSLATION
+ japan_administrative_vassal_desc: "$game_concept_ritsuryo_government_desc$" # todo: NEW TRANSLATION
+ japan_administrative_province_standard: "@japan_administrative_standard_administration! Standardní správa" # todo: NEW TRANSLATION
+ japan_administrative_province_standard_short: "Standardní" # todo: NEW TRANSLATION
+ japan_administrative_province_standard_text_icon: "@japan_administrative_standard_administration!" # todo: NEW TRANSLATION
+ japan_administrative_province_standard_benefits: "#emphasis #bold Výhody pro [vassal|E]:#!#!\nPoužívá [GetLaw('japanese_appointment_succession_law').GetName]" # todo: NEW TRANSLATION
+ japan_administrative_province_standard_desc: "#low Civilní typ, který se stará o každodenní potřeby vlády a místních obyvatel#!" # todo: NEW TRANSLATION
+ japan_administrative_province_trade: "@japan_administrative_trade_administration! Průmyslová správa" # todo: NEW TRANSLATION
+ japan_administrative_province_trade_short: "Průmyslová" # todo: NEW TRANSLATION
+ japan_administrative_province_trade_text_icon: "@japan_administrative_trade_administration!" # todo: NEW TRANSLATION
+ japan_administrative_province_trade_benefits: "#emphasis #bold Výhody pro [vassal|E]:#!#!\nPoužívá [GetLaw('japanese_appointment_succession_law').GetName]\n\n#alert_trial @alert_icon! Omezeno na [EmptyScope.ScriptValue('japan_administrative_province_trade_max_value')|V0]#!" # todo: NEW TRANSLATION
+ japan_administrative_province_trade_desc: "#low Civilní správa zaměřená na námořní obchod a dlouhodobý rozvoj.#!" # todo: NEW TRANSLATION
+ japan_administrative_province_trade_amount_desc: "$japan_administrative_province_trade_short$ limit dosažen" # todo: NEW TRANSLATION
+ japan_administrative_province_military: "@japan_administrative_military_administration! Vojenská správa" # todo: NEW TRANSLATION
+ japan_administrative_province_military_short: "Vojenská" # todo: NEW TRANSLATION
+ japan_administrative_province_military_text_icon: "@japan_administrative_military_administration!" # todo: NEW TRANSLATION
+ japan_administrative_province_military_benefits: "#emphasis #bold Výhody pro [vassal|E]:#!#!\n$EFFECT_LIST_BULLET$ Používá [GetLaw('japanese_appointment_succession_law').GetName]\n\n#alert_trial @alert_icon! Omezeno na [EmptyScope.ScriptValue('japan_administrative_province_military_max_value')|V0]#!" # todo: NEW TRANSLATION
+ japan_administrative_province_military_desc: "#low Vojenská správa zaměřená na opevnění a nábor. Poskytuje říši prostředky k obraně nebo rozšíření hranic, když je to nutné.#!" # todo: NEW TRANSLATION
+ japan_administrative_province_military_amount_desc: "$japan_administrative_province_military_short$ limit dosažen" # todo: NEW TRANSLATION
+ should_hold_a_lower_tier_governorship_first: "Nevlastní [governorship|E] nižšího [title_rank|E]" # todo: NEW TRANSLATION
+ soryo_or_bushido_trigger: "[THIS.Char.GetShortUIName|U] [CharHaveHas(THIS.Char)] [GetGovernment('japan_feudal_government').GetName] [government|E] nebo [GetCultureTradition('tradition_tgp_bushido').GetName] [tradition|E]" # todo: NEW TRANSLATION
+ challenge_house_head_japanese_admin: "Kvůli tomu, že nemá [GetGovernment('japan_feudal_government').GetName] [government|E] nebo [GetCultureTradition('tradition_tgp_bushido').GetName] [tradition|E]:" # todo: NEW TRANSLATION
+ BLOC_MEMBER_CALL_TO_ARMS_REASON: "Válka je proti mému členovi [bloc|E]: $VALUE|=+0$" # todo: NEW TRANSLATION
+ cannot_transfer_bloc_leader_as_vassal_tt: "[house_heads|E] [leading_houses|E] z [blocs|E] nelze převést jako [vassals|E]" # todo: NEW TRANSLATION
+ councillor_chancellor_japan_feudal: "Yūhitsu" # todo: NEW TRANSLATION
+ councillor_chancellor_japan_feudal_possessive: "Yūhitsu's" # todo: NEW TRANSLATION
+ councillor_steward_japan_feudal: "Bugyō" # todo: NEW TRANSLATION
+ councillor_steward_japan_feudal_possessive: "Bugyō's" # todo: NEW TRANSLATION
+ councillor_marshal_japan_feudal: "Taishō" # todo: NEW TRANSLATION
+ councillor_marshal_japan_feudal_possessive: "Taishō's" # todo: NEW TRANSLATION
+ councillor_spymaster_japan_feudal: "Metsuke" # todo: NEW TRANSLATION
+ councillor_spymaster_japan_feudal_possessive: "Metsuke's" # todo: NEW TRANSLATION
+ councillor_chancellor_japan_administrative: "Bettō" # todo: NEW TRANSLATION
+ councillor_chancellor_japan_administrative_possessive: "Bettō's" # todo: NEW TRANSLATION
+ councillor_steward_japan_administrative: "Karei" # todo: NEW TRANSLATION
+ councillor_steward_japan_administrative_possessive: "Karei's" # todo: NEW TRANSLATION
+ councillor_marshal_japan_administrative: "Saburai" # todo: NEW TRANSLATION
+ councillor_marshal_japan_administrative_possessive: "Saburai's" # todo: NEW TRANSLATION
+ councillor_spymaster_japan_administrative: "Mokudai" # todo: NEW TRANSLATION
+ councillor_spymaster_japan_administrative_possessive: "Mokudai's" # todo: NEW TRANSLATION
+ japan_government_japan_kingdom_restriction_tt: "[GetGovernment('japan_administrative_government').GetName] a [GetGovernment('japan_feudal_government').GetName] [rulers|E] mohou vytvářet [kingdoms|E] v Japonsku pouze pokud jsou [independent|E] nebo drží [kingdom|E] [title|E] bez držení [GetTitleByKey('e_japan').GetBaseNameNoTier]" # todo: NEW TRANSLATION
+ japan_government_japan_duchy_restriction_tt: "[GetGovernment('japan_feudal_government').GetName] [counts|E] a [GetGovernment('japan_administrative_government').GetName] [governments|E] běžně nemohou vytvářet [de_jure|E] [duchies|E] na japonských ostrovech\n#HELP [GetGovernment('japan_feudal_government').GetName] [rulers|E] mohou toto obejít pomocí [GetDecisionWithKey('tgp_japan_assert_regional_dominion_government_decision').GetName|V] [decision|E]" # todo: NEW TRANSLATION
+ tgp_bloc_change_cohesion_install_bloc_member_tt: "[attacker.GetShortUIName|U] vyhrál [attacker.GetHerHisYour] [bloc_expansion_war|E] o [target_title.GetBaseName]" # todo: NEW TRANSLATION
+ tgp_bloc_change_cohesion_bloc_war_victory_tt: "[winner.GetConfederation.GetName|V] prokázal svou [supremacy|E] nad [icon.GetConfederation.GetName|V]" # todo: NEW TRANSLATION
+ tgp_bloc_change_cohesion_bloc_war_defeat_tt: "[loser.GetConfederation.GetName|V] byl donucen přijmout [supremacy|E] [icon.GetConfederation.GetName|V]" # todo: NEW TRANSLATION
+ tgp_bloc_change_cohesion_leader_aspiration_tt: "[house_head|E] změnil [house.GetBaseName] [aspiration|E]" # todo: NEW TRANSLATION
+ tgp_bloc_change_cohesion_court_poet_tt: "[court_poet_from_task.GetEmployer.GetShortUINamePossessive|U] [GetCourtPositionType('court_poet_court_position').GetName()], [court_poet_from_task.GetShortUIName], inspiroval jednotu" # todo: NEW TRANSLATION
+ tgp_bloc_change_cohesion_festival_tt: "[icon.GetShortUIName|U] jednotu na [GetActivityType( 'activity_festival').GetName]" # todo: NEW TRANSLATION
+ msg_bloc_cohesion_increased: "Soudržnost bloku se zlepšila" # todo: NEW TRANSLATION
+ msg_bloc_cohesion_decreased: "Soudržnost bloku poškozena" # todo: NEW TRANSLATION
+ japan_castle_construction_trigger_tt: "[GetGovernment('japan_administrative_government').GetName] [government|E] může stavět nebo vylepšovat [castle|E] [holdings|E] pouze když je aktivní [GetLaw('disarmament_law').GetName] [imperial_policy|E]" # todo: NEW TRANSLATION

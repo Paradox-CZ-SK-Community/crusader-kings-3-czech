@@ -27,7 +27,7 @@
  TASK_CONTRACT_MOVE_DOMICILE_TO_ACCEPT: "@camp_travel_domicile_icon! Přesunout tábor pro přijetí"
  TASK_CONTRACT_NAME.CRIMINAL: "[Concept('criminal_task_contract','$game_concept_criminal_task_contract$')|E]"
  TASK_CONTRACT_NAME.NOT_CRIMINAL: "[Concept('task_contract','$game_concept_task_contract$')|E]"
- TASK_CONTRACT_NAME: "#T [TaskContract.GetType.GetName]#!\n[Concept('contractor','$game_concept_contractor$')|E]: [CHARACTER.GetShortUIName]\n[SelectLocalization(IsLandlessAdventurer( TaskContract.GetTaker ) , 'TASK_CONTRACT_TIER' , SelectLocalization(IsAdministrativeRuler( TaskContract.GetTaker ), 'GOVERNANCE_ISSUE_TIER', 'SETTLEMENT_ISSUE_TIER'))]: #V [Select_CString( TaskContract.IsHard, '3', Select_CString( TaskContract.IsMedium, '2', '1'))]#!\n\n[TaskContract.GetTaskContractRequest]\n\n#weak [TaskContract.GetTaskContractDescription]#!"
+ TASK_CONTRACT_NAME: "#T [TaskContractType.GetName]#!\n[contractor|E]: [Character.GetShortUIName]\n[SelectLocalization(IsLandlessAdventurer( TaskContract.GetTaker ), 'TASK_CONTRACT_TIER', 'OTHER_TASK_CONTRACT_TIERS' )]: $TIER|V$\n\n[TaskContract.GetTaskContractRequest]\n\n#weak [TaskContract.GetTaskContractDescription]#!" # todo: #T [TaskContract.GetType.GetName]#!\n[Concept('contractor','$game_concept_contractor$')|E]: [CHARACTER.GetShortUIName]\n[SelectLocalization(IsLandlessAdventurer( TaskContract.GetTaker ) , 'TASK_CONTRACT_TIER' , SelectLocalization(IsAdministrativeRuler( TaskContract.GetTaker ), 'GOVERNANCE_ISSUE_TIER', 'SETTLEMENT_ISSUE_TIER'))]: #V [Select_CString( TaskContract.IsHard, '3', Select_CString( TaskContract.IsMedium, '2', '1'))]#!\n\n[TaskContract.GetTaskContractRequest]\n\n#weak [TaskContract.GetTaskContractDescription]#!
  TASK_CONTRACT_REWARD_NAME: "$REWARD_NAME$"
  TASK_CONTRACT_SETTLEMENT_ISSUE: "Problém sídla"
  TASK_CONTRACT_SETTLEMENT_ISSUE_PLURAL: "Problémy sídel"
@@ -72,3 +72,8 @@
  task_contract_reward_effect_success_success_standard_desc: "$task_contract_reward_effect_success_standard_desc$"
  task_contract_tab_failure: "Potenciální neúspěchy"
  task_contract_tab_success: "Potenciální odměny"
+ TASK_CONTRACT_MANDALA_RITUAL: "Rituál"  # todo: NEW TRANSLATION
+ TASK_CONTRACT_MANDALA_RITUAL_PLURAL: "Rituály"  # todo: NEW TRANSLATION
+ TASK_CONTRACT_MANDALA_RITUAL_POSSESSIVE: "Rituálu"  # todo: NEW TRANSLATION
+ TASK_CONTRACT_MANDALA_RITUAL_POSSESSIVE_PLURAL: "Rituálů"  # todo: NEW TRANSLATION
+ TASK_CONTRACT_NAME_NO_EMPLOYER: "#T [TaskContractType.GetName]#!\n[SelectLocalization( IsLandlessAdventurer( TaskContract.GetTaker ), 'TASK_CONTRACT_TIER', 'OTHER_TASK_CONTRACT_TIERS' )]: $TIER|V$\n\n[TaskContract.GetTaskContractRequest]\n\n#weak [TaskContract.GetTaskContractDescription]#!"  # todo: NEW TRANSLATION

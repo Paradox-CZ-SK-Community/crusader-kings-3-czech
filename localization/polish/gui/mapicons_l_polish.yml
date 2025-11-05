@@ -10,16 +10,16 @@
  ARMY_TOOLTIP_IS_GATHERING: "Shromažďuje se ([Army.GetGatheringDaysLeft] dní)"
  ARMY_TOOLTIP_IS_MOVEMENT_LOCKED: "[movement_locked|E]"
  UNIT_ITEMS: "([UnitMapIcon.GetShownCount])"
- RAID_ARMY_TOOLTIP: "#T Nájezdník#!\nTato armáda je na [raid|E].\nNese [gold_i][Army.GetRaidLoot|V0]."
- ARMY_AT_LOOT_CAP: "Nemůže nést více [raid_loot|E]"
- ARMY_AT_LOOT_CAP_TOOLTIP: "#T Plná kapacita kořisti#!\nTato armáda nese [gold_i][Army.GetRaidLoot|V0] a nemůže dále [raid|E], dokud se nevrátí domů."
+ RAID_ARMY_TOOLTIP: "#T Nájezdník#!\nToto vojsko je na a [raid|E].\nNese [loot_i][Army.GetRaidLoot|V0]." # todo: #T Nájezdník#!\nTato armáda je na [raid|E].\nNese [gold_i][Army.GetRaidLoot|V0].
+ ARMY_AT_LOOT_CAP: "Nelze nést více [loot|E]" # todo: Nemůže nést více [raid_loot|E]
+ ARMY_AT_LOOT_CAP_TOOLTIP: "#T Plná kapacita lupu#!\nToto vojsko nese [loot_i][Army.GetRaidLoot|V0] a nemůže před návratem domů dále [raid|E]." # todo: #T Plná kapacita kořisti#!\nTato armáda nese [gold_i][Army.GetRaidLoot|V0] a nemůže dále [raid|E], dokud se nevrátí domů.
  ARMY_RETREATING: "V [retreat|E]"
  ARMY_IS_AUTOMATED: "Armáda je automatizovaná"
  ARMY_IS_ALLY: "Spojenecká armáda"
- MAP_RAID_TOOLTIP: "#T Probíhající nájezd#!\nOdhadované dokončení: [Raid.GetEta.GetString].\nVýsledná [raid_loot|E]: [raid_loot_i][Raid.GetProvince.GetProvinceLoot|0V].\n\n#I Klikněte pro zobrazení nájezdu.#!"
+ MAP_RAID_TOOLTIP: "#T Probíhající nájezd#!\nOdhad dokončení: [Raid.GetEta.GetString].\nZískaný [loot|E]: [loot_i][Raid.GetProvince.GetLoot|0V].\n\n#I Klikněte pro zobrazení nájezdu.#!" # todo: #T Probíhající nájezd#!\nOdhadované dokončení: [Raid.GetEta.GetString].\nVýsledná [raid_loot|E]: [raid_loot_i][Raid.GetProvince.GetProvinceLoot|0V].\n\n#I Klikněte pro zobrazení nájezdu.#!
  RECENTLY_RAIDED_TOOLTIP: "#T Nedávno vypleněno#!\nToto panství bylo nedávno vypleněno a nebude možné ho znovu vyplenit do [Province.GetEndOfRecentlyLooted.GetString]"
- ARMY_LOOT_INFO: "[raid_loot|E]: [raid_loot_i][Army.GetRaidLoot|V0]/[Army.GetLootCap|0]"
- MAP_ICON_EMBARK_COST: "@gold_icon![FleetPredictionMapIcon.GetEmbarkCost|V0][Select_CString(FleetPredictionMapIcon.IsCostOverOwned, '@warning_icon!', '')]"
+ ARMY_LOOT_INFO: "[loot|E]: [loot_i][Army.GetRaidLoot|V0]/[Army.GetLootCap|0]" # todo: [raid_loot|E]: [raid_loot_i][Army.GetRaidLoot|V0]/[Army.GetLootCap|0]
+ MAP_ICON_EMBARK_COST: "[GetPlayer.GetTreasuryOrGoldPrefix][FleetPredictionMapIcon.GetEmbarkCost|V0][Select_CString(FleetPredictionMapIcon.IsCostOverOwned, '@warning_icon!', '')]" # todo: @gold_icon![FleetPredictionMapIcon.GetEmbarkCost|V0][Select_CString(FleetPredictionMapIcon.IsCostOverOwned, '@warning_icon!', '')]
  MAP_ICON_UNIQUE_BUILDING_CAN_BUILD: "#I Můžete postavit tuto budovu#!\n\n"
  MAP_ICON_UNIQUE_BUILDING_CANT_BUILD: "#X @warning_icon! Nemůžete postavit tuto budovu#!\n\n"
  MAP_ICON_UNIQUE_BUILDING_CANT_USE: "#X @warning_icon! Nemůžete použít tuto budovu#!\n\n"
@@ -27,8 +27,22 @@
  MAP_ICON_PROVISIONS_LOW_TT: "#X [provisions|E] budou za tímto bodem na nízké úrovni — nastanou události [privation|E]#!"
  MAP_ICON_PROVISIONS_CRITICAL_TT: "#XB [provisions|E] dojdou za tímto bodem — nastanou extrémní události [privation|E]#!"
  MAP_ICON_LANDLESS_RULERS_COUNT: "+[Subtract_int32( LandlessRulersMapIcon.GetValidDomicilesCount, '(int32)1')]"
- MAP_ICON_DETAILED_RAID_LOOT: "@loot_icon![DetailedRaidIcon.GetProvince.GetProvinceLoot|0V]"
- MAP_ICON_DETAILED_RAID_TT: "#T [DetailedRaidIcon.GetProvince.GetNameNoTooltip]#!\nKořist: [raid_loot_i] [DetailedRaidIcon.GetLoot|0]"
- MAP_ICON_DETAILED_RAID_LOOT_POTENTIAL_TT: "#T Potenciální nájezd#!\n Výsledná [raid_loot|E]: [raid_loot_i][DetailedRaidIcon.GetLoot|0]\n\n$MAP_ICON_DETAILED_RAID_LOOT_HOLD_ALT_TT$"
- MAP_ICON_DETAILED_RAID_LOOT_ONGOING_TT: "#T Probíhající nájezd#!\nOdhadované dokončení: [DetailedRaidIcon.GetRaid.GetEta.GetString].\nVýsledná [raid_loot|E]: [raid_loot_i][DetailedRaidIcon.GetProvince.GetProvinceLoot|0V].\n\n#I Klikněte pro zobrazení [raid|e].#!\n$MAP_ICON_DETAILED_RAID_LOOT_HOLD_ALT_TT$"
+ MAP_ICON_DETAILED_RAID_LOOT: "@loot_icon![DetailedRaidIcon.GetProvince.GetLoot|0V]" # todo: @loot_icon![DetailedRaidIcon.GetProvince.GetProvinceLoot|0V]
+ MAP_ICON_DETAILED_RAID_TT: "#T [DetailedRaidIcon.GetProvince.GetNameNoTooltip]#!\nKořist: [loot_i] [DetailedRaidIcon.GetLoot|0]" # todo: #T [DetailedRaidIcon.GetProvince.GetNameNoTooltip]#!\nKořist: [raid_loot_i] [DetailedRaidIcon.GetLoot|0]
+ MAP_ICON_DETAILED_RAID_LOOT_POTENTIAL_TT: "#T Potenciální nájezd#!\n Resulting [loot|E]: [loot_i][DetailedRaidIcon.GetLoot|0]\n\n$MAP_ICON_DETAILED_RAID_LOOT_HOLD_ALT_TT$" # todo: #T Potenciální nájezd#!\n Výsledná [raid_loot|E]: [raid_loot_i][DetailedRaidIcon.GetLoot|0]\n\n$MAP_ICON_DETAILED_RAID_LOOT_HOLD_ALT_TT$
+ MAP_ICON_DETAILED_RAID_LOOT_ONGOING_TT: "#T Probíhající nájezd#!\nOdhad dokončení: [DetailedRaidIcon.GetRaid.GetEta.GetString].\nOčekávaný [loot|E]: [loot_i][DetailedRaidIcon.GetProvince.GetLoot|0V].\n\n#I Klikněte pro zobrazení [raid|e].#!\n$MAP_ICON_DETAILED_RAID_LOOT_HOLD_ALT_TT$" # todo: #T Probíhající nájezd#!\nOdhadované dokončení: [DetailedRaidIcon.GetRaid.GetEta.GetString].\nVýsledná [raid_loot|E]: [raid_loot_i][DetailedRaidIcon.GetProvince.GetProvinceLoot|0V].\n\n#I Klikněte pro zobrazení [raid|e].#!\n$MAP_ICON_DETAILED_RAID_LOOT_HOLD_ALT_TT$
  MAP_ICON_DETAILED_RAID_LOOT_HOLD_ALT_TT: "#I Držte Alt pro zobrazení všech panství s kořistí, které můžete [raid|e].#!"
+ MAP_PIN_BARTER_GOODS_NEEDED: "@barter_goods_icon! [DetailedBarterIcon.GetProvince.GetBarterGoodsNeeded|0V]"  # todo: NEW TRANSLATION
+ MAP_PIN_BARTER_LOOT_RECEIVED: "@loot_icon![DetailedBarterIcon.GetProvince.GetLoot|0V]"  # todo: NEW TRANSLATION
+ MAP_BARTER_TOOLTIP: "#T Probíhající barterová mise#!\nOdhadované dokončení: [BarterMission.GetEta.GetString].\nZískaný [loot|E]: [loot_i][BarterMission.GetProvince.GetLoot|0V].\n\n#I Klikněte pro zobrazení barteru.#!"  # todo: NEW TRANSLATION
+ BARTER_ARMY_TOOLTIP: "#T Barterující#!\nToto vojsko je na [barter|E] misi.\nNese [loot_i][Army.GetBarterLoot|V0] [loot|E]."  # todo: NEW TRANSLATION
+ RECENTLY_BARTERED_TOOLTIP: "#T Nedávno vyměněno#!\nToto panství bylo nedávno vyměněno a znovu s ním nelze obchodovat do [Province.GetEndOfRecentlyLooted.GetString]"  # todo: NEW TRANSLATION
+ MAP_ICON_GREAT_BUILDING: "#T [Building.GetNameNoTooltip]#!\n[Building.GetDescription]\n\n[SelectLocalization( And( Not( GreatBuildingIcon.IsBuilt ), GreatBuildingIcon.CanConstruct ), 'MAP_ICON_UNIQUE_BUILDING_CAN_BUILD', '' )][SelectLocalization( And( Not( GreatBuildingIcon.IsBuilt), Not( GreatBuildingIcon.CanConstruct ) ), 'MAP_ICON_UNIQUE_BUILDING_CANT_BUILD', '' )][SelectLocalization( And( GreatBuildingIcon.IsBuilt, Not( GreatBuildingIcon.IsEnabled ) ), 'MAP_ICON_UNIQUE_BUILDING_CANT_USE', '' )]\n[GreatBuildingIcon.GetEffect]"  # todo: NEW TRANSLATION
+ MAP_ICON_GREAT_PROJECTS_COUNT: "+[Subtract_int32( GetDataModelSize( GreatProjectMapIcon.GetProjects ), '(int32)1')]"  # todo: NEW TRANSLATION
+ MAP_ICON_DETAILED_BARTER_TT: "#T [DetailedBarterIcon.GetProvince.GetNameNoTooltip]#!\nKořist: [loot_i] [DetailedBarterIcon.GetLoot|0]"  # todo: NEW TRANSLATION
+ MAP_ICON_BARTER_WARNING: "[SelectLocalization( LessThan_CFixedPoint( GetPlayer.GetCurrency('barter_goods'), DetailedBarterIcon.GetProvince.GetBarterGoodsNeeded ), 'MAP_ICON_DETAILED_BARTER_INSUFFICIENT_GOODS', '')]"  # todo: NEW TRANSLATION
+ MAP_ICON_DETAILED_BARTER_INSUFFICIENT_GOODS: "@warning_icon! #X Nedostatek [barter_goods] pro [barter] zde#!\n"  # todo: NEW TRANSLATION
+ MAP_ICON_DETAILED_BARTER_LOOT_POTENTIAL_TT: "#T Potenciální barterová mise#!\nZískaný [loot|E]: [loot_i][DetailedBarterIcon.GetLoot|0V]\nPožadované [barter_goods|E]: [barter_goods_i][DetailedBarterIcon.GetProvince.GetBarterGoodsNeeded|0V]\n$MAP_ICON_BARTER_WARNING$\n$MAP_ICON_DETAILED_BARTER_LOOT_HOLD_ALT_TT$"  # todo: NEW TRANSLATION
+ MAP_ICON_DETAILED_BARTER_LOOT_ONGOING_TT: "#T Probíhající barterová mise#!\nOdhadované dokončení: [DetailedBarterIcon.GetBarter.GetEta.GetString]\nZískaný [loot|E]: [loot_i][DetailedBarterIcon.GetProvince.GetLoot|0V]\nPožadované [barter_goods|E]: [barter_goods_i][DetailedBarterIcon.GetProvince.GetBarterGoodsNeeded|0V]\n$MAP_ICON_BARTER_WARNING$\n#I Klikněte pro zobrazení [barter|E].#!\n$MAP_ICON_DETAILED_BARTER_LOOT_HOLD_ALT_TT$"  # todo: NEW TRANSLATION
+ MAP_ICON_DETAILED_BARTER_LOOT_HOLD_ALT_TT: "#I Podržte Alt pro zobrazení všech držeb s kořistí, se kterými můžete [barter|E].#!"  # todo: NEW TRANSLATION
+ MAP_ICON_ACTIVITY_DISABLED: "[Activity.GetInvolvementText( Character.Self, 'hud' )]\n\n#X @warning_icon! Aktivita již začala, nedorazíte včas nebo jste nebyli pozváni#!"  # todo: NEW TRANSLATION

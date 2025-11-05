@@ -30,3 +30,38 @@
  SITUATION_PHASE_TYPE_MODIFIERS_LABEL: "Efekty fáze:"
  SITUATION_PHASE_TYPE_CONCEPT_LINK: "[situation_phase|E]"
  SITUATION_PARTICIPANT_GROUP_TYPE_CONCEPT_LINK: "[situation|E] [situation_participant_group|E]"
+ SITUATION_CURRENT_PHASE_NAME: "[SituationPhase.GetName]" # todo: NEW TRANSLATION
+ SITUATION_CURRENT_PHASE_ENDS: "Končí: [SituationPhase.GetEndDate.GetStringLong]" # todo: NEW TRANSLATION
+ SITUATION_WINDOW_CURRENT_PHASE_FATALITIES: "[fatalities|E]: [Situation.MakeScope.Var( 'fatalities' ).GetValue|V0]" # todo: NEW TRANSLATION
+ SITUATION_PARTICIPANTS_TITLE: "Účastníci" # todo: NEW TRANSLATION
+ SITUATION_PARTICIPANT_GROUPS_TITLE: "Skupiny účastníků" # todo: NEW TRANSLATION
+ SITUATION_PARTICIPANT_GROUP_SUBTITLE_DC_HEGEMON: "[SelectLocalization( Or( Or( ObjectsEqual( SituationParticipantGroup.Self, GetSituation('dynastic_cycle').GetTopParticipantGroupByKey('hegemon_ruler') ), ObjectsEqual( SituationParticipantGroup.Self, GetSituation('dynastic_cycle').GetTopParticipantGroupByKey('undecided_movement') ) ), ObjectsEqual( SituationParticipantGroup.Self, GetSituation('dynastic_cycle').GetTopParticipantGroupByKey('other_rulers') ) ), '','SITUATION_PARTICIPANT_GROUP_SUBTITLE_DC_LEADER')] [SelectLocalization( Or( ObjectsEqual( SituationParticipantGroup.Self, GetSituation('dynastic_cycle').GetTopParticipantGroupByKey('hegemon_ruler') ), ObjectsEqual( SituationParticipantGroup.Self, GetSituation('dynastic_cycle').GetTopParticipantGroupByKey('other_rulers') ) ), '','SITUATION_PARTICIPANT_GROUP_SUBTITLE_DC_POWER')]" # todo: NEW TRANSLATION
+ SITUATION_PARTICIPANT_GROUP_SUBTITLE_DC_LEADER: "| [movement_leader|E]: [SelectLocalization( SituationParticipantGroup.IsCharacterParticipant(SituationParticipantGroup.MakeScope.Var('movement_leader').Char), 'SITUATION_PARTICIPANT_GROUP_SUBTITLE_DC_LEADER_NAME','SITUATION_PARTICIPANT_GROUP_SUBTITLE_DC_NO_LEADER')]" # todo: NEW TRANSLATION
+ SITUATION_PARTICIPANT_GROUP_SUBTITLE_DC_POWER: "| [movement_power|E]: [movement_power_i][SituationParticipantGroup.MakeScope.Var('movement_power').GetValue]" # todo: NEW TRANSLATION
+ SITUATION_PARTICIPANT_GROUP_SUBTITLE_DC_LEADER_NAME: "[SituationParticipantGroup.MakeScope.Var('movement_leader').Char.GetShortUIName]" # todo: NEW TRANSLATION
+ SITUATION_PARTICIPANT_GROUP_SUBTITLE_DC_NO_LEADER: "Žádný" # todo: NEW TRANSLATION
+ SITUATION_PARTICIPANT_YOUR_GROUP_SUBTITLE: "Vaše skupina účastníků" # todo: NEW TRANSLATION
+ SITUATION_PARTICIPANT_GROUP_VIEW_ALL: "Zobrazit všechny skupiny" # todo: NEW TRANSLATION
+ VIEW_PARTICIPANTS_TEXT: "Zobrazit účastníky" # todo: NEW TRANSLATION
+ CAN_SELECT_FASCINATION: "[SelectLocalization( ObjectsEqual(GetPlayer.GetCulture.GetFascinationType.Self, CultureInnovation.GetCulture.GetFascinationType.Self),'INNOVATION_IS_FASCINATION','INNOVATION_CLICK_TO_SELECT_FASCINATION')]" # todo: NEW TRANSLATION
+ SITUATION_PARTICIPANT_GROUP_IN_PHASE_TYPE_SUBHEADER: "V [situation_phase] [SituationPhaseType.GetName]" # todo: NEW TRANSLATION
+ SITUATION_PARTICIPANT_LAND: "@land_held! [SituationParticipantCharacterList.GetLandHeldPercentage( CharacterListItem.Self )|V0%]" # todo: NEW TRANSLATION
+ SITUATION_PARTICIPANT_MILITARY: "@soldier_icon! [CharacterListItem.GetMilitaryStrength|V0]" # todo: NEW TRANSLATION
+ SITUATION_PARTICIPANT_LAND_TT: "#T Držené území: $LAND_HELD_PERCENTAGE|V%$ #!\n[Character.GetShortUINameNoTooltip|U] a [Character.GetHerHisYour] [tributaries|E] vlastní $OWNED_COUNTIES|V0$ z $TOTAL_COUNTIES|V0$ [counties|E] v oblasti [Situation.GetNameNoTooltip]" # todo: NEW TRANSLATION
+ SITUATION_PARTICIPANT_MILITARY_TT: "#T Vojenská síla: #!\n$MILITARY_DATA_BREAKDOWN$" # todo: NEW TRANSLATION
+ NATURAL_DISASTER_PARTICIPANT_HEADER: "Postižení [characters|E]" # todo: NEW TRANSLATION
+ SITUATION_RECOMMENDATIONS_HEADER: "Doporučení" # todo: NEW TRANSLATION
+ natural_disaster_flood_severity_type: "Závažnost záplav:" # todo: NEW TRANSLATION
+ natural_disaster_earthquake_severity_type: "Závažnost zemětřesení:" # todo: NEW TRANSLATION
+ situation_disaster_china_desc_before: " In [GetTitleByKey('h_china').GetDefinitiveName], subjects will consider this a result of the ruler dynasty's corruption." # todo: NEW TRANSLATION
+ situation_disaster_china_desc_after: " In [GetTitleByKey('h_china').GetDefinitiveName], subjects will consider restoration a sign the ruler dynasty is recovering the [mandate_of_heaven|E]." # todo: NEW TRANSLATION
+ situation_disaster_warning_description: "Brzy tuto oblast zasáhne [natural_disaster|E]![AddLocalizationIf(ObjectsEqual(GetPlayer.GetTopLiege.Self,GetTitleByKey('h_china').GetHolder), 'situation_disaster_china_desc_before')]" # todo: NEW TRANSLATION
+ situation_disaster_impact_description: "Tato oblast je zdevastována [natural_disaster|E]![AddLocalizationIf(ObjectsEqual(GetPlayer.GetTopLiege.Self,GetTitleByKey('h_china').GetHolder), 'situation_disaster_china_desc_before')]" # todo: NEW TRANSLATION
+ situation_disaster_recovery_description: "Nyní, když je nejhorší za námi, můžete věnovat prostředky na záchranné práce.[AddLocalizationIf(ObjectsEqual(GetPlayer.GetTopLiege.Self,GetTitleByKey('h_china').GetHolder), 'situation_disaster_china_desc_after')]" # todo: NEW TRANSLATION
+ situation_disaster_warning_recommendations: "$EFFECT_LIST_BULLET$ Přesuňte pryč [armies|E] a [characters|E], na kterých vám záleží (včetně vás!)\n$EFFECT_LIST_BULLET$ Nyní se vyhněte velkým investicím do této oblasti\n$EFFECT_LIST_BULLET$ Ušetřete své [SelectLocalization( GetPlayer.GetGovernment.HasGovernmentFlag( 'government_has_treasury' ), 'situation_disaster_warning_recommendations_treasury', 'situation_disaster_warning_recommendations_gold' )] abyste přispěli na záchranné práce [great_project|e]" # todo: NEW TRANSLATION
+ situation_disaster_warning_recommendations_treasury: "[treasury|E]" # todo: NEW TRANSLATION
+ situation_disaster_warning_recommendations_gold: "[gold|E]" # todo: NEW TRANSLATION
+ situation_disaster_impact_recommendations: "$EFFECT_LIST_BULLET$ Jestliže jste v oblasti, opusťte ji co nejdříve!\n$EFFECT_LIST_BULLET$ Počkejte, až to pomine\n$EFFECT_LIST_BULLET$ Naskladněte zásoby, abyste se připravili na záchranné práce" # todo: NEW TRANSLATION
+ until_the_disaster_is_over: "doba rekonstrukce" # todo: NEW TRANSLATION
+ SITUATION_SUBREGION_CATALYSTS_BUTTON_TOOLIP: "#T $SILK_ROAD_CATALYSTS_WINDOW_HEADER$#!\n$CLICK_TO_VIEW$" # todo: NEW TRANSLATION
+ SILK_ROAD_CATALYSTS_WINDOW_HEADER: "Katalyzátory v regionu [SituationSubRegion.GetNameNoTooltip]" # todo: NEW TRANSLATION

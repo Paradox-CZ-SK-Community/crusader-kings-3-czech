@@ -13,7 +13,7 @@
  ACTIVITY_LIST_HOST_NO_REGULAR_ACTIVITIES: "Žádné aktivity"
  ACTIVITY_LIST_NO_ACTIVITY_INVITATIONS: "Nemáte žádné nevyřízené pozvánky na aktivity"
  ACTIVITY_LIST_NO_JOINABLE_ACTIVITIES: "Žádný [Concept('ruler','$game_concept_ruler$')|El] v okolí momentálně nepořádá [GetActivityType( 'activity_tournament' ).GetNameNoTooltip], ke kterému byste se mohli připojit"
- ACTIVITY_LIST_NOTIFY_ME_ABOUT_TOURNAMENTS: "Upozornit, kdy se můžete připojit k turnajům"
+ ACTIVITY_LIST_NOTIFY_ME_ABOUT_TOURNAMENTS: "Upozornit, když se můžete zúčastnit [GetActivityType( 'activity_tournament' ).GetLocalizedText('plural')]" # todo: Upozornit, kdy se můžete připojit k turnajům
  ACTIVITY_LIST_OPEN_TRAVEL_SETTINGS: "Otevřít nastavení cestování"
  ACTIVITY_LIST_CLOSE_TRAVEL_SETTINGS: "Zavřít nastavení cestování"
  ACTIVITY_LIST_VIEW_ACTIVITY: "Zobrazit aktivitu"
@@ -42,7 +42,7 @@
  ACTIVITY_LIST_INVITATION_SIGNATURE: "S pozdravem,\n#font:TitleFont [Character.GetUINameNoTooltip]#!"
  ACTIVITY_LIST_DETAIL_JOIN_DEPARTURE_TIME: "Musíte vyrazit do [ActivityListDetailJoinView.GetLatestDepartureDate.GetTimeToDate|V]"
  ACTIVITY_LIST_DETAIL_JOIN_REQUIRED_SPECIAL_GUEST: "Jako [ActivitySpecialGuestType.GetNameForGuest] bude [Concept('activity','$game_concept_activity$')|E] čekat, až začnete"
- ACTIVITY_LIST_DETAIL_JOIN_MAY_NOT_ARRIVE_IN_TIME: "@warning_icon! #X Možná se nestačíte dostat na [Activity.GetShortNameNoTooltip] včas#!"
+ ACTIVITY_LIST_DETAIL_JOIN_MAY_NOT_ARRIVE_IN_TIME: "@alert_icon! #X Možná se na [Activity.GetShortNameNoTooltip] nedostanete včas#!" # todo: @warning_icon! #X Možná se nestačíte dostat na [Activity.GetShortNameNoTooltip] včas#!
  ACTIVITY_LIST_DECLINE_INVITE: "#T Odmítnout pozvánku#!\nOdmítnout pozvánku na [Activity.GetName]\n\n#I Klikněte pro odmítnutí#!"
  ACTIVITY_DECLINE_INVITE_POPUP_TITLE: "Odmítnout pozvánku"
  ACTIVITY_DECLINE_INVITE_POPUP_BODY: "Odmítnout pozvánku na [Activity.GetName]"
@@ -71,3 +71,21 @@
  activity_playdate_host_an_a: "$host_activity_a$"
  activity_witch_ritual_host_an_a: "$host_activity_a$"
  activity_coronation_host_an_a: "$host_activity_a$"
+ LOCAL_EXAMINATIONS_NOTIFY_TOGGLE_TT: "[SelectLocalization( ActivityType.ShouldNotifyCanJoinOpenActivity, 'LOCAL_EXAMINATIONS_NOTIFY_TOGGLE_TT_ON', 'LOCAL_EXAMINATIONS_NOTIFY_TOGGLE_TT_OFF' )]"  # todo: NEW TRANSLATION
+ LOCAL_EXAMINATIONS_NOTIFY_TOGGLE_TT_ON: "#T $LOCAL_EXAMINATIONS_NOTIFY_TOGGLE_TT_HEADER$: #V Zapnuto#!\n#!$LOCAL_EXAMINATIONS_NOTIFY_TOGGLE_TT_DESC$\n\n$EXAMINATIONS_TOGGLE_OFF_INSTRUCTION$"  # todo: NEW TRANSLATION
+ LOCAL_EXAMINATIONS_NOTIFY_TOGGLE_TT_OFF: "#T $LOCAL_EXAMINATIONS_NOTIFY_TOGGLE_TT_HEADER$: #V Vypnuto#!\n#!$LOCAL_EXAMINATIONS_NOTIFY_TOGGLE_TT_DESC$\n\n$EXAMINATIONS_TOGGLE_ON_INSTRUCTION$"  # todo: NEW TRANSLATION
+ LOCAL_EXAMINATIONS_NOTIFY_TOGGLE_TT_HEADER: "[GetActivityType( 'activity_local_examination' ).GetLocalizedText('plural')] oznámení"  # todo: NEW TRANSLATION
+ LOCAL_EXAMINATIONS_NOTIFY_TOGGLE_TT_DESC: "Pokud je zapnuto, upozorní vás, kdy se můžete připojit k [GetActivityType( 'activity_local_examination' ).GetLocalizedText('plural')]"  # todo: NEW TRANSLATION
+ CAPITAL_EXAMINATIONS_NOTIFY_TOGGLE_TT: "[SelectLocalization( ActivityType.ShouldNotifyCanJoinOpenActivity, 'CAPITAL_EXAMINATIONS_NOTIFY_TOGGLE_TT_ON', 'CAPITAL_EXAMINATIONS_NOTIFY_TOGGLE_TT_OFF' )]"  # todo: NEW TRANSLATION
+ CAPITAL_EXAMINATIONS_NOTIFY_TOGGLE_TT_ON: "#T $CAPITAL_EXAMINATIONS_NOTIFY_TOGGLE_TT_HEADER$: #V Zapnuto#!\n#!$CAPITAL_EXAMINATIONS_NOTIFY_TOGGLE_TT_DESC$\n\n$EXAMINATIONS_TOGGLE_OFF_INSTRUCTION$"  # todo: NEW TRANSLATION
+ CAPITAL_EXAMINATIONS_NOTIFY_TOGGLE_TT_OFF: "#T $CAPITAL_EXAMINATIONS_NOTIFY_TOGGLE_TT_HEADER$: #V Vypnuto#!\n#!$CAPITAL_EXAMINATIONS_NOTIFY_TOGGLE_TT_DESC$\n\n$EXAMINATIONS_TOGGLE_ON_INSTRUCTION$"  # todo: NEW TRANSLATION
+ CAPITAL_EXAMINATIONS_NOTIFY_TOGGLE_TT_HEADER: "[GetActivityType( 'activity_imperial_examination' ).GetLocalizedText('plural')] oznámení"  # todo: NEW TRANSLATION
+ CAPITAL_EXAMINATIONS_NOTIFY_TOGGLE_TT_DESC: "Pokud je zapnuto, upozorní vás, kdy se můžete připojit k [GetActivityType( 'activity_imperial_examination' ).GetLocalizedText('plural')]"  # todo: NEW TRANSLATION
+ EXAMINATIONS_TOGGLE_ON_INSTRUCTION: "#I Klikněte pro zapnutí#!"  # todo: NEW TRANSLATION
+ EXAMINATIONS_TOGGLE_OFF_INSTRUCTION: "#I Klikněte pro vypnutí#!"  # todo: NEW TRANSLATION
+ ACTIVITY_LIST_NOTIFY_ME_ABOUT_HOSTING_EXAMINATIONS_LOCAL_TT: "#T Upozornit, když můžete pořádat [GetActivityType( 'activity_local_examination' ).GetLocalizedText('plural')]#!\n\n#I Klikněte pro přepnutí#!"  # todo: NEW TRANSLATION
+ ACTIVITY_LIST_NOTIFY_ME_ABOUT_HOSTING_EXAMINATIONS_IMPERIAL_TT: "#T Upozornit, když můžete pořádat [GetActivityType( 'activity_imperial_examination' ).GetLocalizedText('plural')]#!\n\n#I Klikněte pro přepnutí#!"  # todo: NEW TRANSLATION
+ ACTIVITY_LIST_NOTIFY_ME_ABOUT_DEBATES: "Upozornit, když se můžete připojit k [GetActivityType( 'activity_debate' ).GetLocalizedText('plural')]"  # todo: NEW TRANSLATION
+ ACTIVITY_LIST_JOIN_GENERIC: "Připojit se k [ActivityType.GetNameNoTooltip]"  # todo: NEW TRANSLATION
+ ACTIVITY_LIST_HOST_GENERIC: "Pořádat [ActivityType.GetNameNoTooltip]"  # todo: NEW TRANSLATION
+ activity_imperial_examination_host_an_a: "$host_activity_an$"  # todo: NEW TRANSLATION

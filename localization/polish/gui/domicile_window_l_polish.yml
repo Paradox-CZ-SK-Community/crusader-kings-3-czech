@@ -1,5 +1,5 @@
 ﻿l_polish:
- CHARACTER_MODIFIERS_LABEL: "#BOLD;EMP Modifikátory postav#!"
+ CHARACTER_MODIFIERS_LABEL: "#low Vlastník:#!" # todo: #BOLD;EMP Modifikátory postav#!
  DOMICILE_OVERVIEW_MOVE_BUTTON_TEXT: "Přesuň [Domicile.GetType.GetNameNoTooltip]"
  DOMICILE_WINDOW_ABORT_ACCEPT: "Přerušit"
  DOMICILE_WINDOW_ABORT_TEXT: "Přerušení stavby [DOMICILE_BUILDING_TYPE.GetName] vám vrátí náklady a umožní zde postavit jinou budovu.\n\n#weak Zbývající doba stavby:#! $MOD_TIME_PREFIX$$DAYS$"
@@ -14,15 +14,15 @@
  DOMICILE_WINDOW_BOOKMARK_FOLLOWERS_TEMPERAMENT_NEUTRAL: "Uspokojený"
  DOMICILE_WINDOW_BOOKMARK_FOLLOWERS_TEMPERAMENT_POSITIVE: "Neochvějný"
  DOMICILE_WINDOW_BOOKMARK_FOLLOWERS_TITLE: "Táboroví stoupenci"
- DOMICILE_WINDOW_BOOKMARK_FOLLOWERS_TT: "#T $DOMICILE_WINDOW_BOOKMARK_FOLLOWERS_TITLE$#!\n#I Klikněte pro zobrazení vašich následovníků#!"
+ DOMICILE_WINDOW_BOOKMARK_FOLLOWERS_TT: "#T $DOMICILE_WINDOW_BOOKMARK_FOLLOWERS_TITLE$#!\n#I Klikněte pro zobrazení [DomicileWindow.GetCharacter.GetShortUINamePossessiveNoTooltip] následovníků#!" # todo: #T $DOMICILE_WINDOW_BOOKMARK_FOLLOWERS_TITLE$#!\n#I Klikněte pro zobrazení vašich následovníků#!
  DOMICILE_WINDOW_BOOKMARK_OVERVIEW_BUILDINGS_LIST: "Aktuální budovy"
  DOMICILE_WINDOW_BOOKMARK_OVERVIEW_RESOURCES: "Zdroje"
  DOMICILE_WINDOW_BOOKMARK_OVERVIEW_TITLE: "[Domicile.GetType.GetNameNoTooltip] přehled"
- DOMICILE_WINDOW_BOOKMARK_OVERVIEW_TT: "#T $DOMICILE_WINDOW_BOOKMARK_OVERVIEW_TITLE$#!\n#I Klikněte pro zobrazení přehledu vašich budov#!"
+ DOMICILE_WINDOW_BOOKMARK_OVERVIEW_TT: "#T $DOMICILE_WINDOW_BOOKMARK_OVERVIEW_TITLE$#!\n#I Kliknutím zobrazíte přehled [DomicileWindow.GetCharacter.GetShortUINamePossessiveNoTooltip] budov#!" # todo: #T $DOMICILE_WINDOW_BOOKMARK_OVERVIEW_TITLE$#!\n#I Klikněte pro zobrazení přehledu vašich budov#!
  DOMICILE_WINDOW_BOOKMARK_PATRONS_FAR_AWAY: "Vzdálení [Concept('contact_list_contacts','$game_concept_contact_list_contacts$')|El]"
  DOMICILE_WINDOW_BOOKMARK_PATRONS_INFO: "Místní [Concept('contact_list_contacts','$game_concept_contact_list_contacts$')|El]"
  DOMICILE_WINDOW_BOOKMARK_PATRONS_TITLE: "$game_concept_contact_list$"
- DOMICILE_WINDOW_BOOKMARK_PATRONS_TT: "#T $DOMICILE_WINDOW_BOOKMARK_PATRONS_TITLE$#!\n#I Klikněte pro zobrazení vašich $game_concept_contact_list_contacts$#!"
+ DOMICILE_WINDOW_BOOKMARK_PATRONS_TT: "#T $DOMICILE_WINDOW_BOOKMARK_PATRONS_TITLE$#!\n#I Klikněte pro zobrazení [DomicileWindow.GetCharacter.GetShortUINamePossessiveNoTooltip] $game_concept_contact_list_contacts$#!" # todo: #T $DOMICILE_WINDOW_BOOKMARK_PATRONS_TITLE$#!\n#I Klikněte pro zobrazení vašich $game_concept_contact_list_contacts$#!
  DOMICILE_WINDOW_BUILDING_LEVEL: "Úroveň $LEVEL$"
  DOMICILE_WINDOW_BUILDING_LEVEL_SHORT: "$LEVEL$"
  DOMICILE_WINDOW_CAN_UPGRADE_MAIN: "Lze vylepšit [DOMICILE_BUILDING_TYPE.GetName]"
@@ -76,7 +76,13 @@
  MOVE_DOMICILE_TO_IMPASSABLE_TERRAIN: "@warning_icon! #X Nelze přesunout [Domicile.GetType.GetNameNoTooltip] na neprůchodný terén#!"
  MOVE_DOMICILE_TO_WATER: "@warning_icon! #X Nelze přesunout [Domicile.GetType.GetNameNoTooltip] na vodu#!"
  MOVE_DOMICILE_TRAVEL: "@warning_icon! #X Nelze přesunout [Domicile.GetType.GetNameNoTooltip], když cestujete#!"
- PROVINCE_MODIFIERS_LABEL: "#BOLD;EMP Modifikátory baronie#!"
- can_move_domicile_estate_realm_tt: "[Concept('estate','$game_concept_estate$')|E] nelze přesunout mimo [owner.GetTopLiege.GetPrimaryTitle.GetDefinitiveName]"
+ PROVINCE_MODIFIERS_LABEL: "#low Baronie:#!" # todo: #BOLD;EMP Modifikátory baronie#!
+ can_move_domicile_estate_realm_tt: "[estate|E] nelze přesunout mimo [owner.GetTopLiege.GetPrimaryTitle.GetDefinitiveName]" # todo: [Concept('estate','$game_concept_estate$')|E] nelze přesunout mimo [owner.GetTopLiege.GetPrimaryTitle.GetDefinitiveName]
  can_move_domicile_estate_same_location_tt: "[Concept('estate','$game_concept_estate$')|E] se již nachází v [province_temp.GetBaronyNameExplicitly]"
  can_move_domicile_estate_war_tt: "[Concept('estate','$game_concept_estate$')|E] nelze přesunout, pokud probíhá [Concept('war','válka')|E] v [owner.GetTopLiege.GetPrimaryTitle.GetDefinitiveName]"
+ DOMICILE_WINDOW_BOOKMARK_DISCIPLES_TITLE: "Mistr a učedníci"  # todo: NEW TRANSLATION
+ DOMICILE_WINDOW_BOOKMARK_DISCIPLES_DISCIPLE: "[DomicileWindow.GetCharacter.GetShortUINamePossessiveNoTooltip|U] [disciples|E]$TAB$[disciple_limit_short|E]: #V [GetDataModelSize( DomicileWindow.GetRelationOfType( GetRelation( 'disciple' ) ) )]/[Character.MakeScope().ScriptValue('disciples_limit_value')]#!"  # todo: NEW TRANSLATION
+ DOMICILE_WINDOW_BOOKMARK_DISCIPLES_FIND: "#T Najít [disciples|E]#!\n\n#I Klikněte pro otevření interakce $request_mentoring_interaction$ cílící na váš dvůr"  # todo: NEW TRANSLATION
+ DOMICILE_WINDOW_BOOKMARK_DISCIPLES_ELDER: "[DomicileWindow.GetCharacter.GetShortUINamePossessiveNoTooltip|U] [elder|E]"  # todo: NEW TRANSLATION
+ DOMICILE_WINDOW_BOOKMARK_DISCIPLES_DISCIPLE_FELLOW: "Spolu [disciples|E] [DomicileWindow.GetCharacter.GetShortUINamePossessiveNoTooltip] [elder|E]"  # todo: NEW TRANSLATION
+ DOMICILE_WINDOW_BOOKMARK_DISCIPLES_TT: "#T $DOMICILE_WINDOW_BOOKMARK_DISCIPLES_TITLE$#!\n#I Klikněte pro zobrazení [DomicileWindow.GetCharacter.GetShortUINamePossessiveNoTooltip] mistra a učedníků#!"  # todo: NEW TRANSLATION

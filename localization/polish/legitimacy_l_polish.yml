@@ -1,7 +1,7 @@
 ﻿l_polish:
  LEGITIMACY_AVERAGE_EXPECTATIONS: "#S [Character.GetShortUINamePossessive|U] průměrné [expected_legitimacy|E]:#!\n$BULLET$[powerful_vassals|E]: [LegitimacyType.GetFlavorName( Character.GetAveragePowerfulVassalLegitimacyExpectation )|V] #weak ([Character.GetAveragePowerfulVassalLegitimacyExpectation.GetIndex]/[Subtract_int32( GetDataModelSize( LegitimacyType.GetLevels ), '(int32)1' )])#!\n$BULLET$[vassals|E]: [LegitimacyType.GetFlavorName( Character.GetAverageVassalLegitimacyExpectation )|V] #weak ([Character.GetAverageVassalLegitimacyExpectation.GetIndex]/[Subtract_int32( GetDataModelSize( LegitimacyType.GetLevels ), '(int32)1' )])#!"
  LEGITIMACY_BELOW_AVERAGE_EXPECTATIONS: "@warning_icon! #X Nižší než očekávaná legitimita všech vazalů#!"
- LEGITIMACY_EFFECTS: "#S Účinky:#!\n[LegitimacyLevel.GetModifierDesc]"
+ LEGITIMACY_EFFECTS: "$LEGITIMACY_CHANGED_EFFECTS$#S Účinky:#!\n[LegitimacyLevel.GetModifierDesc]" # todo: $LEGITIMACY_CHANGED_EFFECTS$#S Účinky:#!\n[LegitimacyLevel.GetModifierDesc]
  LEGITIMACY_TRACK_TITLE: "Legitimita [Character.GetLegitimacy|V^0]/[LegitimacyType.GetMaxLegitimacy( Character.Self )|V^0]"
  LEGITIMACY_TRACK_TOOLTIP: "#T [LegitimacyType.GetFlavorName( LegitimacyLevel.Self )]#!\nVyžaduje alespoň [LegitimacyLevel.GetThreshold( Character.Self )|V^] legitimity\n\n$LEGITIMACY_EFFECTS$"
  VASSAL_BELOW_EXPECTED_LEGITIMACY_TT: "\n@warning_icon! #X [legitimacy_levels|E] pod očekáváním [Character.GetHerHis]: [Subtract_int32( Character.GetLegitimacyExpectationsOfLiege, GetPlayer.GetLegitimacyLevel.GetIndex )|V]#!"
@@ -30,3 +30,17 @@
  legitimacy_swing_scales_dearer_tt: "#weak Náklady zvýšeny kvůli vysoké [legitimacy|E] [recipient.GetShortUINamePossessive] ([recipient.GetLegitimacyLevel.GetIndex|V])#!"
  legitmacy_flavor_and_level: "[LegitimacyType.GetFlavorName( LegitimacyLevel.Self )|V] #weak ([LegitimacyLevel.GetIndex]/[Subtract_int32( GetDataModelSize( LegitimacyType.GetLevels ), '(int32)1' )])#!"
  nomadic_legitimacy_type_name: "[GetGovernment( 'nomad_government' ).GetName] [ruler|E]"
+ default_legitimacy_level_6: "[legitimacy|E] $LEVEL|V:roman$"   # todo: NEW TRANSLATION
+ default_legitimacy_level_7: "[legitimacy|E] $LEVEL|V:roman$"   # todo: NEW TRANSLATION
+ default_legitimacy_level_8: "[legitimacy|E] $LEVEL|V:roman$"   # todo: NEW TRANSLATION
+ default_legitimacy_level_6_flavor: "Předurčený"   # todo: NEW TRANSLATION
+ default_legitimacy_level_7_flavor: "Kosmický"   # todo: NEW TRANSLATION
+ default_legitimacy_level_8_flavor: "Věčný"   # todo: NEW TRANSLATION
+ mandate_legitimacy_level_7_flavor: "Nebeský"   # todo: NEW TRANSLATION
+ hegemon_legitimacy_type_name: "[hegemon|E] [rank|E]"   # todo: NEW TRANSLATION
+ mandate_legitimacy_type_name: "[mandate_of_heaven|E] [rank|E]"   # todo: NEW TRANSLATION
+ mandala_legitimacy_type_name: "[GetGovernment( 'mandala_government' ).GetName] [ruler|E]"   # todo: NEW TRANSLATION
+ LEGITIMACY_CHANGED_EFFECTS: "\n[LegitimacyLevel.GetOnLevelEnteredDesc( Character.Self )]"   # todo: NEW TRANSLATION
+ LEGITIMACY_AVERAGE_EXPECTATIONS_NO_POWERFUL_VASSALS: "#S [Character.GetShortUINamePossessive|U] průměrné [expected_legitimacy|E]:#!\n$BULLET$[vassals|E]: [LegitimacyType.GetFlavorName( Character.GetAverageVassalLegitimacyExpectation )|V] #weak ([Character.GetAverageVassalLegitimacyExpectation.GetIndex]/[Subtract_int32( GetDataModelSize( LegitimacyType.GetLevels ), '(int32)1' )])#!"   # todo: NEW TRANSLATION
+ legitimacy_on_level_entered: "#S Při změně úrovně:#!\n"   # todo: NEW TRANSLATION
+ legitimacy_on_entered_lost_mandate: "$legitimacy_on_level_entered$@warning_icon! #X Aktivuje "$catalyst_hegemon_lost_mandate_of_heaven$", která přesune [dynastic_cycle|E] do [GetSituationType('dynastic_cycle').GetPhaseType('situation_dynastic_cycle_phase_chaos').GetName] [situation_dynastic_cycle_phase|E]#!"   # todo: NEW TRANSLATION

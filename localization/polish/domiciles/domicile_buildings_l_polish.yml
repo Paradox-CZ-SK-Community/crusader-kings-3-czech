@@ -258,7 +258,7 @@
  domicile_building_parameter_camp_infection_chance_buff_4: "[camp|E] získává #P dodatečnou mírnou#! odolnost vůči [epidemics|E]"
  domicile_building_parameter_camp_infection_chance_buff_5: "[camp|E] získává #P dodatečnou mírnou#! odolnost vůči [epidemics|E]"
  domicile_building_parameter_camp_infection_chance_buff_6: "[camp|E] získává #P dodatečnou výraznou#! odolnost vůči [epidemics|E]"
- domicile_building_parameter_camp_more_likely_to_become_poet: "Větší pravděpodobnost získání [GetTrait('poet').GetName( GetNullCharacter )] [trait|E]"
+ domicile_building_parameter_camp_more_likely_to_become_poet: "Větší pravděpodobnost získání [GetTrait('lifestyle_poet').GetName( GetNullCharacter )] [trait|E]" # todo: Větší pravděpodobnost získání [GetTrait('poet').GetName( GetNullCharacter )] [trait|E]
  domicile_building_parameter_camp_pleasure_tent_recruitment_events: "Umožňuje občas naverbovat zajímavé postavy"
  domicile_building_parameter_camp_recruit_fool_events: "Obdržíte občasné události k náboru vychytralých bláznů"
  domicile_building_parameter_camp_recruit_locals_events: "Obdržíte občasné události k náboru užitečných místních"
@@ -338,9 +338,9 @@
  domicile_building_parameter_estate_increase_master_of_horse_aptitude: "[GetCourtPositionType('master_of_horse_court_position').GetName()] [aptitude|E]: #P +[EmptyScope.ScriptValue('estate_increase_master_of_horse_aptitude_value')|0]#!"
  domicile_building_parameter_estate_increase_master_of_hunt_aptitude: "[GetCourtPositionType('master_of_hunt_court_position').GetName()] [aptitude|E]: #P +[EmptyScope.ScriptValue('estate_increase_master_of_hunt_aptitude_value')|0]#!"
  domicile_building_parameter_estate_increase_physician_aptitude: "[GetCourtPositionType('court_physician_court_position').GetName()] [aptitude|E]: #P +[EmptyScope.ScriptValue('estate_increase_physician_aptitude_value')|0]#!"
- domicile_building_parameter_estate_increase_powerful_family_rating: "Zvyšuje [powerful_family_rating|E]"
- domicile_building_parameter_estate_increase_safe_treatment_success_1: "Šance na úspěch bezpečného ošetření nemocí [GetCourtPositionType('court_physician_court_position').GetName()] mírně zvýšena"
- domicile_building_parameter_estate_increase_safe_treatment_success_2: "Šance na úspěch bezpečného ošetření nemocí [GetCourtPositionType('court_physician_court_position').GetName()] zvýšena"
+ domicile_building_parameter_estate_increase_powerful_family_rating: "[powerful_family_rating|E]: [EmptyScope.ScriptValue('estate_powerful_family_rating_1_value')|=+0]" # todo: Zvyšuje [powerful_family_rating|E]
+ domicile_building_parameter_estate_increase_safe_treatment_success_1: "[GetCourtPositionType('court_physician_court_position').GetName()] má mírně zvýšenou šanci na úspěch při použití #high Bezpečné ošetření#!" # todo: Šance na úspěch bezpečného ošetření nemocí [GetCourtPositionType('court_physician_court_position').GetName()] mírně zvýšena
+ domicile_building_parameter_estate_increase_safe_treatment_success_2: "[GetCourtPositionType('court_physician_court_position').GetName()] má středně zvýšenou šanci na úspěch při použití #high Bezpečné ošetření#!" # todo: Šance na úspěch bezpečného ošetření nemocí [GetCourtPositionType('court_physician_court_position').GetName()] zvýšena
  domicile_building_parameter_estate_increased_governance_scheme_success: "Šance úspěchu [governor|E] smlouvy: @scheme_success_icon!#P +[EmptyScope.ScriptValue('estate_increased_governance_scheme_success_value')|0]%#!"
  domicile_building_parameter_estate_increased_tutor_aptitude: "[GetCourtPositionType('court_tutor_court_position').GetName()] [aptitude|E]: #P +[EmptyScope.ScriptValue('estate_increased_tutor_aptitude_value')|0]#!"
  domicile_building_parameter_estate_inherit_influence_large_bonus: "Zvyšuje [influence|E] zděděné při [succession|E]: #P +[EmptyScope.ScriptValue('influence_inherit_large_bonus_value')|0%]#!"
@@ -385,7 +385,7 @@
  domicile_building_parameter_influence_gain_from_hof_support_6: "$influence_gain_from_hof_support_general$ @influence_icon!#positive_value [GetPlayer.MakeScope.ScriptValue('ep3_requested_faith_support_6_value')|0]#!"
  domicile_building_parameter_kennels_more_successful_hunts_1: "[GetActivityType('activity_hunt').GetName] Základní šance na úspěch: #P +[EmptyScope.ScriptValue('kennels_more_successful_hunts_1_value')|0]#!"
  domicile_building_parameter_kennels_more_successful_hunts_2: "[GetActivityType('activity_hunt').GetName] Základní šance na úspěch: #P +[EmptyScope.ScriptValue('kennels_more_successful_hunts_2_value')|0]#!"
- domicile_building_parameter_legitimacy_counter: "Členové rodu [GetPlayer.GetHouse.GetName] obdrží navíc [legitimacy_i][GetPlayer.GetHouse.MakeScope.Var('ep3_legacy_legitimacy_counter').GetValue|V0] poté, co se stanou [GetPlayer.GetTopLiege.GetTitleAsName] [GetPlayer.GetTopLiege.GetPrimaryTitle.GetName|l]#WEAK;indent_newline:5 \n#indent_newline:2 $EFFECT_LIST_BULLET$Tato hodnota se zvyšuje, když členové [house|E] pořádají [GetActivityType('activity_feast').GetName] nebo [GetActivityType('activity_wedding').GetName] v [barony|E], kde se nachází [GetPlayer.GetDynasty.GetBaseNameNoTooltip] [estate|E]#!#!"
+ domicile_building_parameter_legitimacy_counter: "Členové rodu [GetPlayer.GetHouse.GetName] obdrží navíc [legitimacy_i][GetPlayer.GetHouse.MakeScope.Var('ep3_legacy_legitimacy_counter').GetValue|V0] když se stanou [GetPlayer.GetTopLiege.GetTitleAsName] [GetPlayer.GetTopLiege.GetPrimaryTitle.GetName]#WEAK;indent_newline:5 \n#indent_newline:2 $EFFECT_LIST_BULLET$Tato hodnota se zvyšuje, když členové [house|E] uspořádají [GetActivityType('activity_feast').GetName] nebo [GetActivityType('activity_wedding').GetName] v [barony|E], kde se nachází [GetPlayer.GetDynasty.GetBaseNameNoTooltip] [estate|E]#!#!" # todo: Členové rodu [GetPlayer.GetHouse.GetName] obdrží navíc [legitimacy_i][GetPlayer.GetHouse.MakeScope.Var('ep3_legacy_legitimacy_counter').GetValue|V0] poté, co se stanou [GetPlayer.GetTopLiege.GetTitleAsName] [GetPlayer.GetTopLiege.GetPrimaryTitle.GetName|l]#WEAK;indent_newline:5 \n#indent_newline:2 $EFFECT_LIST_BULLET$Tato hodnota se zvyšuje, když členové [house|E] pořádají [GetActivityType('activity_feast').GetName] nebo [GetActivityType('activity_wedding').GetName] v [barony|E], kde se nachází [GetPlayer.GetDynasty.GetBaseNameNoTooltip] [estate|E]#!#!
  domicile_building_parameter_more_successful_heresies: "Zvyšuje šanci na úspěch #high $push_heresy_as_state_faith$#! [decision|E], pokud [county|E], kde se [estate|E] nachází, vyznává stejnou [faith|E]"
  domicile_building_parameter_raids_less_likely_to_make_prisoners_1: "Je o něco méně pravděpodobné, že nepřátelské [raids|E] a [sieges|E] vezmou postavy nacházející se v [estate|E] jako [prisoners|E]"
  domicile_building_parameter_raids_less_likely_to_make_prisoners_2: "Je méně pravděpodobné, že nepřátelské [raids|E] a [sieges|E] vezmou postavy nacházející se v [estate|E] jako [prisoners|E]"
@@ -404,25 +404,25 @@
  elephant_pasture_04_domicile_building: "Pastviny pro slony"
  elephant_pasture_05_domicile_building: "Dostatečné pastviny pro slony"
  elephant_pasture_06_domicile_building: "Rozsáhlé pastviny pro slony"
- estate_cheaper_feast_cost_desc: "[GetDomicileBuilding('courtyard_02').GetName]"
- estate_cheaper_hunt_cost_desc: "[GetDomicileBuilding('stable_kennel_05').GetName]"
- estate_garden_building: "[GetDomicileBuilding('garden_01').GetName]"
+ estate_cheaper_feast_cost_desc: "[domicile|E]" # todo: [GetDomicileBuilding('courtyard_02').GetName]
+ estate_cheaper_hunt_cost_desc: "[domicile|E]" # todo: [GetDomicileBuilding('stable_kennel_05').GetName]
+ estate_garden_building: "[domicile|E]" # todo: [GetDomicileBuilding('garden_01').GetName]
  estate_has_kennels: "[GetDomicileBuilding('stable_kennel_04').GetName]"
- estate_increase_antiquarian_aptitude_desc: "[GetDomicileBuilding('workshop_carpenter_06').GetName]"
- estate_increase_bodyguard_aptitude_desc: "[GetDomicileBuilding('guardhouse_02').GetName]"
+ estate_increase_antiquarian_aptitude_desc: "[domicile|E]" # todo: [GetDomicileBuilding('workshop_carpenter_06').GetName]
+ estate_increase_bodyguard_aptitude_desc: "[domicile|E]" # todo: [GetDomicileBuilding('guardhouse_02').GetName]
  estate_increase_charioteer_aptitude_desc: "[GetDomicileBuilding('stable_chariot_04').GetName]"
  estate_increase_influence_on_building_construction_desc: "[influence_i|E][influence|E] získané při stavbě [buildings|E] v držených [counties|E]:"
- estate_increase_master_of_horse_aptitude_desc: "[GetDomicileBuilding('stable_grand_05').GetName]"
- estate_increase_master_of_hunt_aptitude_desc: "[GetDomicileBuilding('stable_kennel_06').GetName]"
- estate_increase_physician_aptitude_desc: "[GetDomicileBuilding('library_02').GetName]"
- estate_increased_governance_scheme_success_desc: "[GetDomicileBuilding('office_03').GetName]: $VALUE|0+=$"
- estate_increased_tutor_aptitude_desc: "[GetDomicileBuilding('library_education_04').GetName]"
+ estate_increase_master_of_horse_aptitude_desc: "[domicile|E]" # todo: [GetDomicileBuilding('stable_grand_05').GetName]
+ estate_increase_master_of_hunt_aptitude_desc: "[domicile|E]" # todo: [GetDomicileBuilding('stable_kennel_06').GetName]
+ estate_increase_physician_aptitude_desc: "[domicile|E]" # todo: [GetDomicileBuilding('library_02').GetName]
+ estate_increased_governance_scheme_success_desc: "[domicile|E]: $VALUE|0+=$" # todo: [GetDomicileBuilding('office_03').GetName]: $VALUE|0+=$
+ estate_increased_tutor_aptitude_desc: "[domicile|E]" # todo: [GetDomicileBuilding('library_education_04').GetName]
  estate_main_01_domicile_building: "Vila"
  estate_main_02_domicile_building: "Sídlo"
  estate_main_03_domicile_building: "Rezidence"
  estate_main_04_domicile_building: "Panství"
  estate_main_05_domicile_building: "Velké panství"
- estate_reduced_tutor_cost_desc: "[GetDomicileBuilding('library_education_03').GetName]"
+ estate_reduced_tutor_cost_desc: "[domicile|E]" # todo: [GetDomicileBuilding('library_education_03').GetName]
  estate_torture_grants_influence_desc: "Odhalení [secret|E] uděluje [influence_i][influence|E]"
  feast_estate_reward_tt: "Budova $courtyard_01_domicile_building$ udělala na hosty dojem"
  feast_estate_reward_tt_title: "$final_reward_tt$"
@@ -691,3 +691,48 @@
  workshop_textile_04_domicile_building: "Krejčovská dílna"
  workshop_textile_05_domicile_building: "Krejčí - tovaryš"
  workshop_textile_06_domicile_building: "Dílna tkalce hedvábí"
+ rice_field_01_domicile_building: "Skromné rýžové pole"  # todo: NEW TRANSLATION
+ rice_field_02_domicile_building: "Rýžové pole"  # todo: NEW TRANSLATION
+ rice_field_03_domicile_building: "Rozsáhlé rýžové pole"  # todo: NEW TRANSLATION
+ rice_field_04_domicile_building: "Obrovské rýžové pole"  # todo: NEW TRANSLATION
+ rice_field_05_domicile_building: "Ohromné rýžové pole"  # todo: NEW TRANSLATION
+ rice_field_06_domicile_building: "Obří rýžové pole"  # todo: NEW TRANSLATION
+ health_01_domicile_building: "Bylinková síň"  # todo: NEW TRANSLATION
+ health_02_domicile_building: "Soukromá lékárna"  # todo: NEW TRANSLATION
+ health_03_domicile_building: "Odloučená ošetřovna"  # todo: NEW TRANSLATION
+ health_04_domicile_building: "Lékařova klinika"  # todo: NEW TRANSLATION
+ health_05_domicile_building: "Zdravotní sanatorium"  # todo: NEW TRANSLATION
+ health_06_domicile_building: "Lékařský pavilon"  # todo: NEW TRANSLATION
+ ancestral_shrine_01_domicile_building: "Svatyně předků"  # todo: NEW TRANSLATION
+ ancestral_shrine_02_domicile_building: "Síň předků"  # todo: NEW TRANSLATION
+ ancestral_shrine_03_domicile_building: "Pamětní komnaty"  # todo: NEW TRANSLATION
+ ancestral_shrine_04_domicile_building: "Obětní pavilon"  # todo: NEW TRANSLATION
+ ancestral_shrine_05_domicile_building: "Rodinné mauzoleum"  # todo: NEW TRANSLATION
+ ancestral_shrine_06_domicile_building: "Komplex hrobek"  # todo: NEW TRANSLATION
+ tea_01_domicile_building: "Čajová zahrada"  # todo: NEW TRANSLATION
+ tea_02_domicile_building: "Čajová chatka"  # todo: NEW TRANSLATION
+ tea_03_domicile_building: "Čajová školka"  # todo: NEW TRANSLATION
+ tea_04_domicile_building: "Čajová pole"  # todo: NEW TRANSLATION
+ tea_05_domicile_building: "Čajová plantáž"  # todo: NEW TRANSLATION
+ tea_06_domicile_building: "Obrovská čajová plantáž"  # todo: NEW TRANSLATION
+ domicile_building_parameter_estate_increase_powerful_family_rating_2: "[powerful_family_rating|E]: [EmptyScope.ScriptValue('estate_powerful_family_rating_2_value')|=+0]"  # todo: NEW TRANSLATION
+ domicile_building_parameter_estate_increase_powerful_family_rating_3: "[powerful_family_rating|E]: [EmptyScope.ScriptValue('estate_powerful_family_rating_3_value')|=+0]"  # todo: NEW TRANSLATION
+ domicile_building_parameter_estate_increase_powerful_family_rating_4: "[powerful_family_rating|E]: [EmptyScope.ScriptValue('estate_powerful_family_rating_4_value')|=+0]"  # todo: NEW TRANSLATION
+ domicile_building_parameter_estate_increase_powerful_family_rating_5: "[powerful_family_rating|E]: [EmptyScope.ScriptValue('estate_powerful_family_rating_5_value')|=+0]"  # todo: NEW TRANSLATION
+ domicile_building_parameter_estate_increase_powerful_family_rating_6: "[powerful_family_rating|E]: [EmptyScope.ScriptValue('estate_powerful_family_rating_6_value')|=+0]"  # todo: NEW TRANSLATION
+ domicile_building_parameter_increased_gardener_aptitude_3: "[GetCourtPositionType('court_gardener_court_position').GetName()] [aptitude|E]: #P +[EmptyScope.ScriptValue('estate_increase_gardener_aptitude_value_3')|0]#!"  # todo: NEW TRANSLATION
+ domicile_building_parameter_increased_gardener_aptitude_4: "[GetCourtPositionType('court_gardener_court_position').GetName()] [aptitude|E]: #P +[EmptyScope.ScriptValue('estate_increase_gardener_aptitude_value_4')|0]#!"  # todo: NEW TRANSLATION
+ domicile_building_parameter_increased_gardener_aptitude_5: "[GetCourtPositionType('court_gardener_court_position').GetName()] [aptitude|E]: #P +[EmptyScope.ScriptValue('estate_increase_gardener_aptitude_value_5')|0]#!"  # todo: NEW TRANSLATION
+ domicile_building_parameter_increased_gardener_aptitude_6: "[GetCourtPositionType('court_gardener_court_position').GetName()] [aptitude|E]: #P +[EmptyScope.ScriptValue('estate_increase_gardener_aptitude_value_6')|0]#!"  # todo: NEW TRANSLATION
+ domicile_building_parameter_estate_improve_political_scheme_countermeasure: "$countermeasures_unlocks_bribe_officials_one_tier$"  # todo: NEW TRANSLATION
+ estate_tutor_building: "[domicile|E]"  # todo: NEW TRANSLATION
+ estate_cheaper_pilgrimage_cost_desc: "[domicile|E]"  # todo: NEW TRANSLATION
+ domicile_building_parameter_estate_increase_house_member_investment_cap_5: "[investment_cap|E] každého člena [house|E]: #P +50#!"  # todo: NEW TRANSLATION
+ domicile_building_parameter_japanese_manor_increase_house_member_investment_cap_1: "[investment_cap|E] každého člena [house|E]: #P +5#!"  # todo: NEW TRANSLATION
+ domicile_building_parameter_japanese_manor_increase_house_member_investment_cap_2: "[investment_cap|E] každého člena [house|E]: #P +10#!"  # todo: NEW TRANSLATION
+ domicile_building_parameter_japanese_manor_increase_house_member_investment_cap_3: "[investment_cap|E] každého člena [house|E]: #P +15#!"  # todo: NEW TRANSLATION
+ domicile_building_parameter_japanese_manor_increase_house_member_investment_cap_4: "[investment_cap|E] každého člena [house|E]: #P +20#!"  # todo: NEW TRANSLATION
+ domicile_building_parameter_japanese_manor_increase_house_member_investment_cap_5: "[investment_cap|E] každého člena [house|E]: #P +25#!"  # todo: NEW TRANSLATION
+ domicile_building_parameter_japanese_manor_increase_house_member_investment_cap_6: "[investment_cap|E] každého člena [house|E]: #P +30#!"  # todo: NEW TRANSLATION
+ domicile_building_parameter_can_use_incite_revolts: "Získává přístup k $incite_revolts_interaction$ [interaction|E]"  # todo: NEW TRANSLATION
+ domicile_building_parameter_can_join_peasant_factions: "Může se přidat k [escalated_peasant_faction|E]"  # todo: NEW TRANSLATION

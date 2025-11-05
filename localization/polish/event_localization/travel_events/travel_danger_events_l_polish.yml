@@ -1,7 +1,7 @@
 ﻿l_polish:
  travel_danger_prefix: "Nebezpečí:"
- travel_danger_events.1000.t: "$travel_danger_prefix$ Z kopců do hor"
- travel_danger_events.1000.desc: "Cesta se za poslední hodiny neuvěřitelně zvlnila a všichni začínají být unavení. Když se v dohledu neukazuje konec kopců, můj [ROOT.Char.Custom2('RelationToMeShort', SCOPE.sC('travel_leader'))] [travel_leader.GetFirstName] přistoupí ke mně a říká:\n\n\"M'[ROOT.Char.GetLadyLord], naše koně tohle už dlouho nevydrží. Chudáci potřebují odpočinek, jinak se podle mě zhroutí! Musíme se zastavit a odpočinout si!\"\n\n[travel_leader.GetSheHe|U] dobře ví, že nás to zdrží na cestě do [destination.GetName]..."
+ travel_danger_events.1000.t: "$travel_danger_prefix$ Dělat z komára velblouda" # todo: $travel_danger_prefix$ Z kopců do hor
+ travel_danger_events.1000.desc: "Cesta byla v posledních několika hodinách neskutečně kopcovitá a všichni začínají být unavení. Když v dohledu není vidět konec kopců, můj [ROOT.Char.Custom2('RelationToMeShort', SCOPE.sC('travel_leader'))] [travel_leader.GetFirstName] ke mně přistoupí a říká:\n\n"[ROOT.Char.Custom('FormOfAddressForLiege')|U], naši koně takhle už dlouho nevydrží. Chudá zvířata potřebují odpočinek, jinak se bojím, že se sesypou! Musíme se zastavit a odpočinout si!"\n\n[travel_leader.GetSheHe|U] moc dobře ví, že tím zpozdíme naši cestu do [destination.GetName]..." # todo: Cesta se za poslední hodiny neuvěřitelně zvlnila a všichni začínají být unavení. Když se v dohledu neukazuje konec kopců, můj [ROOT.Char.Custom2('RelationToMeShort', SCOPE.sC('travel_leader'))] [travel_leader.GetFirstName] přistoupí ke mně a říká:\n\n\"M'[ROOT.Char.GetLadyLord], naše koně tohle už dlouho nevydrží. Chudáci potřebují odpočinek, jinak se podle mě zhroutí! Musíme se zastavit a odpočinout si!\"\n\n[travel_leader.GetSheHe|U] dobře ví, že nás to zdrží na cestě do [destination.GetName]...
  travel_danger_events.1000.a: "\"[travel_leader.GetSheHe|U] má pravdu. Bylo by rozumné si odpočinout.\""
  travel_danger_events.1000.b: "\"Žádná zdržení nepřipouštím. Pokračujeme dál!\""
  travel_danger_events.1001.t: "$travel_danger_events.1000.t$"
@@ -67,7 +67,7 @@
  travel_danger_events.1008.good_intentions: "[zombie.GetFirstNameNoTooltip] nemá zlý úmysl"
  travel_danger_events.1008.bad_intentions: "[zombie.GetFirstNameNoTooltip] má temné úmysly"
  travel_danger_events.1009.t: "$travel_danger_events.1008.t$, Dobré úmysly"
- travel_danger_events.1009.desc: "Vyhublý [zombie.GetWomanMan] rychle překoná vzdálenost mezi námi, nevěnujíc pozornost desítkám těl rozházených kolem. [zombie.GetSheHe|U] skloní [zombie.GetHerHis] hlavu a osloví mě:\n\n\"Můj [ROOT.Char.GetLadyLord], můj domov byl vypálen na popel a moje živobytí mi bylo ukradeno. Vrhám se k vašemu milosrdenství. #EMP Prosím, pomozte mi!#!\""
+ travel_danger_events.1009.desc: "Vyhublý [zombie.GetWomanMan] rychle urazí vzdálenost mezi námi, aniž by věnoval vůbec pozornost desítkám těl, která pokrývají zem. [zombie.GetSheHe|U] skloní [zombie.GetHerHis] hlavu a osloví mě:\n\n "[ROOT.Char.Custom('FormOfAddressForLiege')|U], můj domov byl spálen na uhel a mé živobytí mi bylo vzato. Upínám se k vaší milosti. #EMP Prosím, pomozte mi!#!"" # todo: Vyhublý [zombie.GetWomanMan] rychle překoná vzdálenost mezi námi, nevěnujíc pozornost desítkám těl rozházených kolem. [zombie.GetSheHe|U] skloní [zombie.GetHerHis] hlavu a osloví mě:\n\n\"Můj [ROOT.Char.GetLadyLord], můj domov byl vypálen na popel a moje živobytí mi bylo ukradeno. Vrhám se k vašemu milosrdenství. #EMP Prosím, pomozte mi!#!\"
  travel_danger_events.1009.a: "\"Ty chudáku...\""
  travel_danger_events.1009.b: "#EMP Zabijte [zombie.GetHerHim] přesto!#!"
  travel_danger_events.1009.c: "\"Vezmu tě pod svou ochranu!\""
@@ -150,3 +150,20 @@
  travel_danger_events.1013.c: "Nechci riskovat, že by se ztratilo více lidí."
  delayed_toast: "Jste zdrženi"
  travel_hired_foreign_guide: "Najatý zahraniční průvodce"
+ travel_danger_events.1020.t: "[ROOT.Char.GetCurrentLocation.Custom('TerrainTypeProvince')|U] z"  # todo: NEW TRANSLATION
+ travel_danger_events.1020.t.wetlands: "Utrpení"  # todo: NEW TRANSLATION
+ travel_danger_events.1020.t.floodplains: "Strachu"  # todo: NEW TRANSLATION
+ travel_danger_events.1020.t.jungle: "Nebezpečí"  # todo: NEW TRANSLATION
+ travel_danger_events.1020.t.taiga: "Hrůzy"  # todo: NEW TRANSLATION
+ travel_danger_events.1020.desc.intro: "Putujeme dny, abychom dorazili do cíle, doprovod je unavený, stejně jako můj mohutný kůň, [ROOT.Char.Custom('WarhorseStoryName')]. Když se chystám sesednout, něco poleká mého [ROOT.Char.Custom('HorseStoryMareStallion')], a [ROOT.Char.Custom('HorseStorySheHe')] se rozběhne náhodným směrem. Snažím se držet jako o život, než mě s hlasitým rázem odhodí na zem.\n\nKdyž se pomalu zvedám po pádu, [ROOT.Char.Custom('WarhorseStoryName')] v dálce začne řehtat a celý můj oddíl vbíhá blízko, aby zjistil, co se děje.\n\nMůj kůň bojuje o [ROOT.Char.Custom('HorseStoryHerHis')] život,#!"  # todo: NEW TRANSLATION
+ travel_danger_events.1020.wetlands: "bažina pohlcuje [ROOT.Char.Custom('HorseStoryHerHim')], kousek po kousku."  # todo: NEW TRANSLATION
+ travel_danger_events.1020.floodplains: "marně se prodírá proudy."  # todo: NEW TRANSLATION
+ travel_danger_events.1020.jungle: "písek sype po bocích [ROOT.Char.Custom('HorseStoryHerHis')], pomalu ale jistě se propadá do písečné jámy."  # todo: NEW TRANSLATION
+ travel_danger_events.1020.taiga: "snaží se najít cestu ven z propadliny — marné úsilí."  # todo: NEW TRANSLATION
+ travel_danger_events.1020.a: ""Bojuj proti tomu, [ROOT.Char.Custom('WarhorseStoryName')]!"""  # todo: NEW TRANSLATION
+ travel_danger_events.1020.a.success: "Zachráníte [ROOT.Char.Custom('WarhorseStoryName')]"  # todo: NEW TRANSLATION
+ travel_danger_events.1020.a.failure: "[ROOT.Char.Custom('WarhorseStoryName')] je stržen dolů"  # todo: NEW TRANSLATION
+ travel_danger_events.1020.b: ""Nestůjte tam jen tak, udělejte #EMPněco!#!"""  # todo: NEW TRANSLATION
+ travel_danger_events.1020.b.success: "[horse_helper.GetFirstNameNoTooltip] zachrání [ROOT.Char.Custom('WarhorseStoryName')]"  # todo: NEW TRANSLATION
+ travel_danger_events.1020.b.failure: "Jak [horse_helper.GetFirstNameNoTooltip], tak i [ROOT.Char.Custom('WarhorseStoryName')] jsou strženi dolů"  # todo: NEW TRANSLATION
+ travel_danger_events.1020.c: "Nedá se nic dělat..."  # todo: NEW TRANSLATION

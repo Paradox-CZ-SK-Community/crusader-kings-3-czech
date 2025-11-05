@@ -114,14 +114,14 @@
  ARTIFACT_DYNASTY_BANNER_REASON: "Toto je [recipient.GetShortUINamePossessiveNoTooltip] [dynasty|E] praporec: $VALUE|=+0$"
  ARTIFACT_GREED_REASON: "[recipient.GetShortUINamePossessiveNoTooltip] Chamtivost: $VALUE|=+0$"
  ARTIFACT_HONOR_REASON: "[recipient.GetShortUINamePossessiveNoTooltip] Čest: $VALUE|=+0$"
- ARTIFACT_LIEGE_REASON: "Jste vrchním pánem [recipient.GetShortUINamePossessiveNoTooltip]: $VALUE|=+0$"
+ ARTIFACT_LIEGE_REASON: "Jste [recipient.GetShortUINamePossessiveNoTooltip] [liege|E]: $VALUE|=+0$" # todo: Jste [recipient.GetShortUINamePossessiveNoTooltip] [liege|E]: $VALUE|=+0$
  ARTIFACT_MILITARY_STRONGER_REASON: "Vojenské síly [recipient.GetShortUINamePossessiveNoTooltip] jsou slabší než vaše: $VALUE|=+0$"
  ARTIFACT_MILITARY_WEAKER_REASON: "Vojenské síly [recipient.GetShortUINamePossessiveNoTooltip] jsou silnější než vaše: $VALUE|=+0$"
- ARTIFACT_NEMESIS_REASON: "[recipient.GetShortUINameNoTooltip] je vaším nepřítelem: $VALUE|=+0$"
+ ARTIFACT_NEMESIS_REASON: "[recipient.GetShortUINameNoTooltip] je váš [nemesis|E]: $VALUE|=+0$" # todo: [recipient.GetShortUINameNoTooltip] je vaším [nemesis|E]: $VALUE|=+0$
  ARTIFACT_NOT_BENEFIT_REASON: "Tento artefakt není pro [recipient.GetShortUINameNoTooltip] relevantní: $VALUE|=+0$"
  ARTIFACT_NOT_EQUIPPABLE_REASON: "Tento artefakt je pro [recipient.GetShortUINameNoTooltip] k ničemu: $VALUE|=+0$"
  ARTIFACT_REASON: "Artefakty jsou vzácné a drahocenné: $VALUE|=+0$"
- ARTIFACT_RIVAL_REASON: "[recipient.GetShortUINameNoTooltip] je vaším rivalem: $VALUE|=+0$"
+ ARTIFACT_RIVAL_REASON: "[recipient.GetShortUINameNoTooltip] je váš [rival|E]: $VALUE|=+0$" # todo: [recipient.GetShortUINameNoTooltip] je vaším [rival|E]: $VALUE|=+0$
  ARTIFACT_USELESS_BANNER_REASON: "Tento praporec nemá s [recipient.GetShortUINameNoTooltip] žádnou spojitost: $VALUE|=+0$"
  ASK_FOR_CONVERSION_ACTOR_IS_PIOUS: "[actor.GetShortUINamePossessive|U] [piety_level|E]: $VALUE|=+0$"
  ASK_FOR_CONVERSION_ADAPTIVENESS: "[recipient.GetFaith.GetAdjective|U] [core_tenet|E] - adaptivní: $VALUE|=+0$"
@@ -199,9 +199,9 @@
  BLACKMAIL_NOTIFICATION_SECRET_UNMARRIED_ILLEGITIMATE_CHILD_TARGET_OTHER: "\nVím identitu vašeho pravého otce, [secret_target.GetRealFather.GetShortUIName]!"
  BLACKMAIL_NOTIFICATION_SECRET_WITCH: "\nMám důkazy o tom, že se stýkáte s démony!"
  BLACKMAIL_NOTIFICATION_THREAT: "Pokud chcete, abych mlčel, uděláte, co řeknu!"
- CALL_ALLY_NOTIFICATION: "Vybízím vás, abyste dodrželi naši alianci a připojili se ke mně v [target.GetName]!"
+ CALL_ALLY_NOTIFICATION: "Vyzývám vás, abyste dodrželi naši alianci a připojili se ke mně v [target.GetName]!" # todo: Vyzývám tě, abys dodržel naši alianci a připojil se ke mně v [target.GetName]!
  CALL_DYNASTY_MEMBER_NOTIFICATION: "Jako hlava vaší dynastie vás vyzývám, abyste se ke mně připojili v [target.GetName]!"
- CALL_HOUSE_MEMBER_NOTIFICATION: "Jako hlava rodu [actor.GetHouse.GetName] vás vyzývám, abyste se ke mně připojili v [target.GetName]!"
+ CALL_HOUSE_MEMBER_NOTIFICATION: "Jako hlava rodu [actor.GetHouse.GetName] vás vyzývám, abyste se ke mně připojili v [target.GetName]!" # todo: Jako hlava rodu [actor.GetHouse.GetName] tě vyzývám, abys se ke mně přidal v [target.GetName]!
  CALL_IN_DIARCH_RIGHTS: "Použít [diarch_powers|E]"
  CANNOT_DECLARE_WAR_LIEGE_IS_FIGHTING: "[liege|E] již bojuje proti [TARGET_CHARACTER.GetShortUIName]"
  CANNOT_DECLARE_WAR_MY_LIEGE_IS_FIGHTING: "Váš [liege|E] již bojuje proti [TARGET_CHARACTER.GetShortUIName]"
@@ -480,7 +480,7 @@
  I_CANNOT_CALL_A_LIEGE_AS_ALLY: "Nemůžete povolat svého [liege|E] do svých vlastních válek jako [ally|E]"
  I_CANNOT_CALL_A_VASSAL_AS_ALLY: "Nemůžete povolat [vassals|E] jako [allies|E] do války"
  I_CANNOT_CALL_LIEGE_AGAINST_FELLOW_VASSAL: "Nemůžete povolat svého [liege|E] jako [ally|E] proti jinému [vassal|E]"
- I_CANNOT_DECLARE_WAR_WHILE_BANKRUPT: "Nemůžete vyhlásit válku, zatímco jste v [debt|E]"
+ I_CANNOT_DECLARE_WAR_WHILE_BANKRUPT: "Nemůžete vyhlásit válku, pokud jste v [debt|E][AddLocalizationIf( Character.ShouldReplaceGoldCostByTreasury, 'I_CANNOT_DECLARE_WAR_WHILE_BANKRUPT_TREASURY' )]" # todo: Nemůžete vyhlásit válku, zatímco jste v [debt|E][AddLocalizationIf( Character.ShouldReplaceGoldCostByTreasury, 'I_CANNOT_DECLARE_WAR_WHILE_BANKRUPT_TREASURY' )]
  I_CANNOT_DECLARE_WAR_WHILE_BLOCKING_DEFENDING_ARMY: "Nemůžete vyhlásit válku, zatímco vaše armády okupují cílové panství"
  I_CANNOT_DECLARE_WAR_WITHOUT_USING_HOOK_ON_LIEGE: "Nemohu vyhlásit tuto válku bez použití [hook|E] na můj liege kvůli zákonům říše"
  I_CANNOT_IMPRISON_ALLY_WITHOUT_REASON: "Nemůžete uvěznit [ally|E] bez důvodu"
@@ -561,12 +561,12 @@
  NOT_SECONDARY_RECIPIENT_CAN_MARRY: "[TARGET_CHARACTER.GetShortUIName|U] NENÍ k dispozici k sňatku s [CHARACTER.GetShortUIName]"
  NOT_TAKE_VOWS_INTERACTION_MARTIAL_EDUCATION: "[TARGET_CHARACTER.GetTitledFirstName] #bold nemá#! [martial|E] [education_trait|E]"
  NOT_TITLE_IS_REAL_HEAD: "[TITLE.GetName] #bold ne#! ovládá [faith|E]"
- NOT_basic_capable_claimant_found: "[CHARACTER.GetShortUIName|U] nemá žádného platného nárokujícího na žádný ze svých titulů"
- NOT_basic_claimant_found: "[CHARACTER.GetShortUIName|U] nemá žádného nárokujícího na žádný ze svých titulů"
+ NOT_basic_capable_claimant_found: "Nejsou žádní platní [claimants|E] na žádný z [CHARACTER.GetShortUINamePossessive] [titles|E]" # todo: Neexistují žádní platní [claimants|E] na žádný z [CHARACTER.GetShortUINamePossessive] [titles|E]
+ NOT_basic_claimant_found: "Nejsou žádní [claimants|E] na žádný z [CHARACTER.GetShortUINamePossessive] [titles|E]" # todo: Neexistují žádní [claimants|E] na žádný z [CHARACTER.GetShortUINamePossessive] [titles|E]
  NOT_character_can_not_target_self: "Nelze cílit na sebe"
  NOT_character_interaction_within_diplomatic_range: "[TARGET_CHARACTER.GetUIName] je příliš daleko na to, aby s ním [CHARACTER.GetUIName] mohl navázat interakci"
  NOT_claimant_faction_already_exists: "Frakce pro [TARGET_CHARACTER.GetShortUINamePossessive|U] [claim|E] na [TITLE.GetName] již existuje"
- NOT_offer_fealty_neighboring_condition: "[CHARACTER.GetShortUIName|U] není ani vaším de jure vrchním pánem, ani sousedním vrchním pánem"
+ NOT_offer_fealty_neighboring_condition: "[CHARACTER.GetShortUIName|U] není sousedním lenním pánem" # todo: [CHARACTER.GetShortUIName|U] není sousedním lenním pánem
  NO_CASUS_BELLI_REASON: "Nemá žádný Casus Belli: $VALUE|0+=$"
  OFFER_CONCUBINE_NOTIFICATION: "Myslím, že [secondary_actor.GetShortUIName] by vám sloužil/a dobře jako [concubine|E]. Pustíte [secondary_actor.GetHerHim] do svého lože?"
  OFFER_COURTIER_NOTIFICATION: "Nabízím vám službu mého [actor.Custom2('RelationToMeShort', SCOPE.sC('secondary_actor'))], [secondary_actor.GetShortUIName], vysoce schopného [secondary_actor.GetWomanMan] s rozsáhlými znalostmi [secondary_actor.Custom('highest_skill_noun')].\n\nDoufám, že tento projev štědrosti bude dobře přijat a že dovolíte [secondary_actor.GetHerHim] sloužit na vašem [recipient.Custom('GetCourt')]."
@@ -845,7 +845,7 @@
  ask_for_conversion_interaction_desc: "Požadovat, aby se [recipient.GetShortUINameNoTooltip] obrátil(a) k vaší [faith|E]\n#weak (Z [recipient.GetFaith.GetName] na [actor.GetFaith.GetName])#!"
  auto_accept_interaction_ai: "Je to v nejlepším zájmu [TARGET_CHARACTER.GetFirstNamePossessiveNoTooltip]"
  bankrupt_reason: "Jste na mizině: $VALUE|+=0$"
- become_tributary_interaction: "Podřídit se vrchnosti"
+ become_tributary_interaction: "[recipient.Custom('BecomeTributaryInteractionName')]" # todo: [recipient.Custom('BecomeTributaryInteractionName')]
  become_tributary_interaction_desc: "Požádat stát se [tributary|E] [recipient.GetShortUINameNoTooltip]"
  befriend_interaction: "Sblížit se #weak (Intrika)#!"
  befriend_interaction_notification: "Stát se přáteli"
@@ -869,11 +869,11 @@
  call_ally.0001.opening: "[actor.Custom2('AppropriateGreeting', ROOT.Char)]"
  call_ally.0100.desc: "Samozřejmě se k vám do této války připojím! Naši nepřátelé se naučí bát [recipient.Custom('WomenMenPeople_GenderPreference')] z [recipient.GetPrimaryTitle.GetNameNoTierNoTooltip]!"
  call_ally.0100.opening: "[recipient.Custom2('AppropriateGreeting', ROOT.Char)]"
- call_ally.0101.a: "Jaký [recipient.Custom('InsultAdjective')] [recipient.Custom('InsultNoun')]!"
+ call_ally.0101.a: "Jaký [recipient.Custom2('InsultAdjective', ROOT.Char)] [recipient.Custom2('InsultNoun', ROOT.Char)]!" # todo: Co to je za [recipient.Custom2('InsultAdjective', ROOT.Char)] [recipient.Custom2('InsultNoun', ROOT.Char)]!
  call_ally.0101.desc: "Bohužel se nemohu do vašich válek zaplést."
- call_ally: "Vyzvat do války"
- call_ally_interaction: "Vyzvat do války"
- call_ally_interaction_desc: "Vyzvat svého [ally|E], aby vám pomohl ve válkách"
+ call_ally: "Přivolání do války" # todo: Přivolat do války
+ call_ally_interaction: "Přivolání do války" # todo: Přivolat do války
+ call_ally_interaction_desc: "Požádejte svého [ally|E], aby vám pomohl v [wars|E]" # todo: Přivolejte svého [ally|E], aby vám pomohl ve vašich [wars|E]
  can_be_granted_titles_interaction_tt: "[recipient.GetWomenMen|U] musí být v rámci vaší [faith|E] ([actor.GetFaith.GetName]) dominantní, rovné nebo klérické pohlaví"
  can_recruit_character_to_court_trigger.tt.laamps_invitation_restrictions: "[adventurers|E] mohou pozvat do svého [camp|E] pouze svého [player_heir|E], [soulmate|E], [best_friend|E] nebo [spouses|E]"
  candidate_score_sort_name: "$game_concept_candidate_score$"
@@ -883,7 +883,7 @@
  castrate_interaction: "Kastrace vězně"
  castrate_interaction_desc: "Udělat z [recipient.GetShortUINameNoTooltip] [GetTrait('eunuch_1').GetName( GetPlayer )] nebo [GetTrait('beardless_eunuch').GetName( GetNullCharacter )]"
  cease_paying_tribute_interaction: "Přestat platit tribut"
- cease_paying_tribute_interaction_desc: "Přestaňte platit [tribute|E] [recipient.GetTitledFirstNameNoTooltip]. Už nebudou vaším [suzerain|E]."
+ cease_paying_tribute_interaction_desc: "Přestaňte platit [Concept('tributary','tribute')|E] [recipient.GetTitledFirstNameNoTooltip]. Už nebudou vaším [suzerain|E]." # todo: Přestaňte platit [Concept('tributary','tribute')|E] [recipient.GetTitledFirstNameNoTooltip]. Už nebudou vaším [suzerain|E].
  cease_tribute_payments_interaction_ai_will_do_label_0: "#color_green Žádné#!"
  cease_tribute_payments_interaction_ai_will_do_label_1: "#color_yellow Minimální#!"
  cease_tribute_payments_interaction_ai_will_do_label_2: "#color_red Pravděpodobné#!"
@@ -915,7 +915,7 @@
  char_interaction.0040.a: "Co? Proč!?"
  char_interaction.0040.desc: "Jako hlava dynastie vás tímto prohlašuji za hanebníka a ostudu celé dynastie [actor.GetDynastyName]!"
  char_interaction.0041.a: "Pomluva!"
- char_interaction.0041.desc: "Vaše [recipient.Custom('InsultBehavior')] a dekadentní chování přináší hanbu celé rodině [actor.GetHouse.GetBaseName] — a jako hlava rodu považuji za svou povinnost informovat zbytek klanu o vašich [recipient.Custom('InsultAdjective')] skutcích.\n\nAť vás [actor.GetFaith.HighGodNamePossessive] vede zpět na ctnostnou cestu... i když v to pochybuji."
+ char_interaction.0041.desc: "Tvůj [recipient.Custom2('InsultBehavior', SCOPE.sC('actor'))] a dekadentní chování přináší ostudu celému rodu [actor.GetHouse.GetBaseName] — a jako hlava rodu považuji za svou povinnost informovat zbytek klanu o tvých [recipient.Custom2('InsultAdjective', SCOPE.sC('actor'))] způsobech.\n\nNechť tě světlo [actor.GetFaith.HighGodNamePossessive] navede zpět na ctnostnou cestu... i když o tom pochybuji." # todo: Tvé [recipient.Custom2('InsultBehavior', SCOPE.sC('actor'))] a dekadentní chování přináší ostudu celému rodu [actor.GetHouse.GetBaseName] — a jako hlava rodu považuji za svou povinnost informovat zbytek klanu o tvých [recipient.Custom2('InsultAdjective', SCOPE.sC('actor'))] způsobech.\n\nAť tě světlo [actor.GetFaith.HighGodNamePossessive] navede zpět na ctnostnou cestu... i když o tom pochybuji.
  char_interaction.0042.a: "Rozkošné!"
  char_interaction.0042.desc: "Jste jak [recipient.Custom('FormalComplimentAdjective')], tak [recipient.Custom('ComplimentAdjective')], inspirace pro celou rodinu [actor.GetHouse.GetBaseName] — a jako hlava rodu je mojí povinností oslavovat vaše ctnosti před celým klanem!\n\nAť zůstanete v milosti [actor.GetFaith.HighGodNamePossessive]."
  char_interaction.0050.a: "Byla učiněna spravedlnost!"
@@ -972,7 +972,7 @@
  char_interaction.0131.desc_personal: "Raději zhniju ve vaší věznici, než abych přijal váš nepřijatelný výkup."
  char_interaction.0131.opening: "[recipient.Custom2('AppropriateGreetingNegative', actor )]"
  char_interaction.0140.desc: "Přijímám vaši nabídku výkupného. [secondary_recipient.GetShortUIName|U] vám bude neprodleně vrácen(a)!"
- char_interaction.0141.a: "Zatracený ten [actor.Custom('InsultAdjective')] [actor.Custom('InsultNoun')]!"
+ char_interaction.0141.a: "Ať je proklet ten [actor.Custom2('InsultAdjective', ROOT.Char)] [actor.Custom2('InsultNoun', ROOT.Char)]!" # todo: Ať je proklet ten [actor.Custom2('InsultAdjective', ROOT.Char)] [actor.Custom2('InsultNoun', ROOT.Char)]!
  char_interaction.0141.desc: "Vaše nabídka výkupného mne zcela nezaujala. Myslím, že si [secondary_recipient.GetShortUIName] prozatím ponechám."
  char_interaction.0150.desc: "Dobře, propustím vás, přiznávám však, že jsem si zvykl na vaši společnost."
  char_interaction.0151.desc: "Bojím se, že musím vaši nabídku na výkup odmítnout. Budete muset snášet mou pohostinnost o něco déle."
@@ -1019,7 +1019,7 @@
  char_interaction.0231.title: "Spravedlnost"
  char_interaction.0232.a: "Nebudeš stát sám!"
  char_interaction.0232.b: "Ty jsi zrádce!"
- char_interaction.0232.desc: "Příliš dlouho jsem trpěl(a) urážky z rukou [actor.GetTitledFirstName]. Nebudu stát bezmocně, zatímco náš vrchní pán zneužívá své loajální vazaly. Naléhavě vás vyzývám, abyste se ke mně přidali v boji za svržení tohoto tyrana."
+ char_interaction.0232.desc: "Příliš dlouho jsem snášel ústrky z rukou [actor.GetTitledFirstName].\n\n" # todo: Příliš dlouho jsem trpěl ponižováním ze strany [actor.GetTitledFirstName].\n\n
  char_interaction.0233.a: "Cože!?! To je nehorázné!"
  char_interaction.0233.desc: "Z důvodu zločinů proti koruně jste tímto zatčen(a)."
  char_interaction.0234.a: "Vypadá to, že příliš nezbývá na výběr..."
@@ -1078,7 +1078,7 @@
  char_interaction.0361.desc: "Tvé ubohé chvění i skromné dary jsou pod naší úroveň."
  char_interaction.0361.opening: "[recipient.Custom2('AppropriateGreetingNegative', actor )]"
  char_interaction.0362.a: "Přijímám tvou štědrou nabídku tributů."
- char_interaction.0362.desc: "[actor.GetFirstName], jakékoliv skromné bohatství, které [recipient.GetPrimaryTitle.GetName] sežene, bude věnováno tvé slávě!"
+ char_interaction.0362.desc: "[actor.GetFirstName], veškeré bohatství, které [recipient.GetPrimaryTitle.GetName] dokáže shromáždit, bude věnováno vaší slávě!" # todo: [actor.GetFirstName], veškeré bohatství, které [recipient.GetPrimaryTitle.GetName] shromáždí, bude věnováno tvé slávě!
  char_interaction.0362.opening: "[recipient.Custom2('AppropriateGreetingPositive', actor )]"
  char_interaction.0363.a: "To bude #EMP drahá#! chyba."
  char_interaction.0363.desc: "[recipient.GetPrimaryTitle.GetName|U] se nikdy nepoddá tvé tyranii."
@@ -1144,7 +1144,7 @@
  court_amenities_interactions.0002.t: "Módní debata"
  court_amenities_interactions.0003.desc_won.nakey: "Zdá se, že jsem vyhrál!\n\n [actor.GetName] byl/a donucen/a obléci šaty běžného člověka a skrýt své hanebně zanedbané tělo před světem."
  court_amenities_interactions.0003.desc_won: "Zdá se, že jsem vyhrál!\n\n Tak byl [actor.GetName] donucen svléknout se až do [actor.GetHerHis] spodního prádla! Všichni přítomní u dvora viděli [actor.GetHerHim] přesně tak, jak ho stvořil [ROOT.Char.GetFaith.CreatorName]!"
- court_amenities_interactions.0004.a: "Možná tento přestupek přehlédnu, za laskavost..."
+ court_amenities_interactions.0004.a: "Možná tento přestupek přehlédnu, za laskavost..." # todo: Možná toto porušení přehlédnu, za protislužbu...
  court_amenities_interactions.0004.b: "[victim.GetSheHe|U] by vypadl/a lépe v vězeňských hadrech!"
  court_amenities_interactions.0004.desc: "Vypadá to, že právní porušení [victim.GetNameNoTooltip] je trestným činem trestaným v maximální míře podle zákonů [debate_locale.GetNameNoTierNoTooltip]! To znamená, že mohu uvěznit [victim.GetNameNoTooltip]! Ač to není výsledek, který jsem očekával, dává mi to rozhodně mocnou pozici!"
  court_interaction: "Romantika #weak (Intrika)#!"
@@ -1186,7 +1186,7 @@
  demand_conversion_vassal_ruler_interaction_extra_icon: "$hook_extra_icon$"
  demand_conversion_vassal_ruler_is_crime: "\n[refusing_conversion_crime|E] je [crime|E]"
  demand_courtier_interaction: "Požadovat dvořana"
- demand_courtier_interaction_desc: "Požadovat [courtier|E] od vašeho [tributary|E] #weak (nebo [subject|E], pokud [GetGovernment( 'nomad_government' ).GetName])#! [recipient.GetTitledFirstName]\n\n#help Požadovaný [courtier|E] nemůže být:\n$BULLET_WITH_TAB$ Jedním z [recipient.GetHerHis] [heirs|E]\n$BULLET_WITH_TAB$ [child|E]\n$BULLET_WITH_TAB$ Jedním z [recipient.GetHerHis] [spouses|E] nebo [concubines|E]\n$BULLET_WITH_TAB$ V ne-dominantním [marriage|E]\n$BULLET_WITH_TAB$ [recipient.GetHerHis|U] [regent|E]#!"
+ demand_courtier_interaction_desc: "Požadujte [courtier|E] od [recipient.GetTitledFirstName]\n\n#help Požadovaný [courtier|E] nesmí být:\n$BULLET_WITH_TAB$ Jedním z [recipient.GetHerHis] [heirs|E]\n$BULLET_WITH_TAB$ [child|E]\n$BULLET_WITH_TAB$ Jedním z [recipient.GetHerHis] [spouses|E] nebo [concubines|E]\n$BULLET_WITH_TAB$ V nedominantním [marriage|E]\n$BULLET_WITH_TAB$ [recipient.GetHerHis|U] [regent|E]#!" # todo: Požadovat [courtier|E] od [recipient.GetTitledFirstName]\n\n#help Požadovaný [courtier|E] nesmí být:\n$BULLET_WITH_TAB$ Jeden z [recipient.GetHerHis] [heirs|E]\n$BULLET_WITH_TAB$ [child|E]\n$BULLET_WITH_TAB$ Jeden z [recipient.GetHerHis] [spouses|E] nebo [concubines|E]\n$BULLET_WITH_TAB$ V nedominantním [marriage|E]\n$BULLET_WITH_TAB$ [recipient.GetHerHis|U] [regent|E]#!
  demand_courtier_valid_courtier_tt: "[recipient.GetShortUIName] nemá žádné dostupné, zdravé dospělé [courtiers|E]"
  demand_dynasty_banner_artifact_tt: "[artifact|E] musí být praporec vaší [dynasty|E]"
  demand_dynasty_banner_interaction: "Požádat o dynastický praporec"
@@ -1373,7 +1373,7 @@
  invite_to_court_interaction: "Pozvat do [actor.Custom('GetCourt')|U]"
  invite_to_court_interaction_desc: "Pozvat [recipient.GetShortUINameNoTooltip], aby se přestěhoval(a) do tvého [actor.Custom('GetCourtConcept')], kde bude tvým [actor.Custom('GetCourtierConcept')]"
  invite_to_court_interaction_extra_icon: "$hook_extra_icon$"
- invite_to_court_interaction_notification: "Dorazil(a) do [actor.Custom('GetCourt')]"
+ invite_to_court_interaction_notification: "Dorazil do [actor.Custom('GetCourt')|U]" # todo: Dorazil(a) na [actor.Custom('GetCourt')|U]
  is_a_herder_defender_tt: "[defender.GetShortUIName] je [GetGovernment( 'herder_government' ).GetName] a nelze na něj zaútočit.\nAbyste získali jejich země, můžete buď:\n$BULLET_WITH_TAB$Použít #V $mpo_retrieve_land_from_herder_interaction$#! [interaction|E]\n$BULLET_WITH_TAB$Zaútočit na jejich [suzerain|E], aby byli převedeni jako [tributary|E]"
  is_a_herder_recipient_tt: "[recipient.GetShortUIName] je [GetGovernment( 'herder_government' ).GetName] a nelze na něj zaútočit.\nAbyste získali jejich země, můžete buď:\n$BULLET_WITH_TAB$Použít #V $mpo_retrieve_land_from_herder_interaction$#! [interaction|E]\n$BULLET_WITH_TAB$Zaútočit na jejich [suzerain|E], aby byli převedeni jako [tributary|E]"
  is_ai: "Je to postava řízená AI"
@@ -1404,7 +1404,7 @@
  join_war_interaction_target_not_contract_war: "[CHARACTER.GetUIName|U] [CharDontDoesnt(CHARACTER)] nemá [task_contract|E] pro tuto válku"
  join_war_interaction_vassal_war_invalidated_message: "Tvůj [liege|E] [actor.GetShortUIName] se přidal na stranu [invalid_combatant.GetShortUINamePossessive] v [target.GetName] a nuceně ukončil tvou válku proti [invalid_combatant.GetShortUIName]."
  joining_vassal_count_tt: "[actor.MakeScope.Var('joining_vassal_count').GetValue]"
- just_widowed_interaction_reason: "[recipient.GetShortUIName] je podezíravý(á) ohledně úmrtí vašeho předchozího manžela při velké svatbě: $VALUE|=+0$"
+ just_widowed_interaction_reason: "[recipient.GetShortUINameNoTooltip] má podezření, že váš předchozí partner zemřel během vaší Velké svatby: $VALUE|=+0$" # todo: [recipient.GetShortUINameNoTooltip] má podezření, že váš předchozí manžel/ka zemřel/a během vaší velké svatby: $VALUE|=+0$
  kick_from_court_claimant_warning_tt: "@warning_icon! #X [kicked.GetShortUIName] má [claim|E] na [kicked_claim.GetName]#!"
  kick_from_court_commander_warning_tt: "@warning_icon! #X [kicked.GetShortUIName] je můj [commander|E]#!"
  kick_from_court_councillor_warning_tt: "@warning_icon! #X [kicked.GetShortUIName] je můj [kicked.GetCouncilTitle]#!"
@@ -1456,38 +1456,38 @@
  marriage_interaction.0010.ending.a_both_desc: "\n\nNechť [recipient.GetFaith.HighGodName] obdaří nás dlouhým životem a mnoha dětmi, můj [secondary_actor.Custom('ComplimentAdjective')] [secondary_actor.Custom('WifeHusband')]!"
  marriage_interaction.0010.ending.a_desc: "\n\nNechť [recipient.GetFaith.HighGodName] obdaří je dlouhým životem a mnoha dětmi!"
  marriage_interaction.0010.ending.a_recipient_desc: "\n\nNechť [recipient.GetFaith.HighGodName] obdaří nás dlouhým životem a mnoha dětmi!"
- marriage_interaction.0010.ending.b_actor_desc: "\n\nNechť [recipient.GetFaith.FertilityGodName] požehná vašemu svazku!"
- marriage_interaction.0010.ending.b_both_desc: "\n\nNechť [recipient.GetFaith.FertilityGodName] požehná našemu svazku, můj [secondary_actor.Custom('ComplimentAdjective')] [secondary_actor.Custom('WifeHusband')]!"
- marriage_interaction.0010.ending.b_desc: "\n\nNechť [recipient.GetFaith.FertilityGodName] požehná jejich svazku!"
- marriage_interaction.0010.ending.b_recipient_desc: "\n\nNechť [recipient.GetFaith.FertilityGodName] požehná našemu svazku!"
- marriage_interaction.0010.ending.c_actor_desc: "\n\nNechť váš svazek přinese štěstí a naplnění!"
- marriage_interaction.0010.ending.c_both_desc: "\n\nNechť náš svazek přinese štěstí a naplnění, můj [secondary_actor.Custom('ComplimentAdjective')] [secondary_actor.Custom('WifeHusband')]!"
- marriage_interaction.0010.ending.c_desc: "\n\nNechť jejich svazek přinese štěstí a naplnění!"
- marriage_interaction.0010.ending.c_recipient_desc: "\n\nNechť náš svazek přinese štěstí a naplnění!"
+ marriage_interaction.0010.ending.b_actor_desc: "\n\nAť vás oba požehná [recipient.GetFaith.FertilityGodName]!" # todo: \n\nAť vás [recipient.GetFaith.FertilityGodName] oba požehná!
+ marriage_interaction.0010.ending.b_both_desc: "\n\nAť nás oba požehná [recipient.GetFaith.FertilityGodName], můj [secondary_actor.Custom('ComplimentAdjective')] [secondary_actor.Custom('WifeHusband')]!" # todo: \n\nAť nás oba požehná [recipient.GetFaith.FertilityGodName], můj [secondary_actor.Custom('ComplimentAdjective')] [secondary_actor.Custom('WifeHusband')]!
+ marriage_interaction.0010.ending.b_desc: "\n\nAť [recipient.GetFaith.FertilityGodName] oba požehná!" # todo: \n\nAť je [recipient.GetFaith.FertilityGodName] požehná oběma!
+ marriage_interaction.0010.ending.b_recipient_desc: "\n\nAť nás oba požehná [recipient.GetFaith.FertilityGodName]!" # todo: \n\nAť nás oba požehná [recipient.GetFaith.FertilityGodName]!
+ marriage_interaction.0010.ending.c_actor_desc: "\n\nAť si přinášíte navzájem štěstí a naplnění!" # todo: \n\nAť si navzájem přinášíte štěstí a naplnění!
+ marriage_interaction.0010.ending.c_both_desc: "\n\nAť si navzájem přinášíme štěstí a naplnění, můj [secondary_actor.Custom('ComplimentAdjective')] [secondary_actor.Custom('WifeHusband')]!" # todo: \n\nAť si navzájem přinášíme štěstí a naplnění, můj [secondary_actor.Custom('ComplimentAdjective')] [secondary_actor.Custom('WifeHusband')]!
+ marriage_interaction.0010.ending.c_desc: "\n\nAť si přinášejí navzájem štěstí a naplnění!" # todo: \n\nAť si navzájem přinášejí štěstí a naplnění!
+ marriage_interaction.0010.ending.c_recipient_desc: "\n\nAť si navzájem přinášíme štěstí a naplnění!" # todo: \n\nAť si navzájem přinášíme štěstí a naplnění!
  marriage_interaction.0010.ending.d_actor_desc: "\n\nNechť je vaše manželství plodné navzdory špatné krvi mezi vámi."
- marriage_interaction.0010.ending.d_both_desc: "\n\nNechť je naše manželství plodné navzdory špatné krvi mezi námi, můj [secondary_actor.Custom('InsultAdjective')] [secondary_actor.Custom('WifeHusband')]!"
+ marriage_interaction.0010.ending.d_both_desc: "\n\nAť je náš sňatek plodný i přes nepřátelské vztahy mezi námi, můj [secondary_actor.Custom2('InsultAdjective', ROOT.Char)] [secondary_actor.Custom('WifeHusband')]!" # todo: \n\nAť je naše manželství plodné navzdory špatným vztahům mezi námi, můj [secondary_actor.Custom2('InsultAdjective', ROOT.Char)] [secondary_actor.Custom('WifeHusband')]!
  marriage_interaction.0010.ending.d_desc: "\n\nNechť je jejich manželství plodné navzdory špatné krvi mezi nimi."
  marriage_interaction.0010.ending.d_recipient_desc: "\n\nNechť je naše manželství plodné navzdory špatné krvi mezi námi."
  marriage_interaction.0010.ending.e_actor_desc: "\n\nNikdy jsem neviděl(a) tak dokonalý pár, vy jste stvořeni jeden pro druhého!"
- marriage_interaction.0010.ending.e_both_desc: "\n\nKonečně jsme spojeni ve svatém manželství i duši a srdci, můj [secondary_actor.Custom('ComplimentAdjective')] [secondary_actor.Custom('WifeHusband')]!"
+ marriage_interaction.0010.ending.e_both_desc: "\n\nKonečně jsme spojeni v [secondary_actor.Custom('GetCulturallyAppropriateMarriageReference')] i v duši a srdci, můj [secondary_actor.Custom('ComplimentAdjective')] [secondary_actor.Custom('WifeHusband')]!" # todo: \n\nKonečně jsme spojeni v [secondary_actor.Custom('GetCulturallyAppropriateMarriageReference')] i duší a srdcem, můj [secondary_actor.Custom('ComplimentAdjective')] [secondary_actor.Custom('WifeHusband')]!
  marriage_interaction.0010.ending.e_desc: "\n\nNikdy jsem neviděl(a) tak dokonalý pár, byli stvořeni jeden pro druhého!"
- marriage_interaction.0010.ending.e_recipient_desc: "\n\nKonečně jsme spojeni ve svatém manželství i duši a srdci!"
- marriage_interaction.0010.ending.f_actor_desc: "\n\nNevím, proč by si někdo vzal tu [secondary_recipient.Custom('InsultAdjective')] [secondary_recipient.Custom('InsultNoun')], tak hodně štěstí."
- marriage_interaction.0010.ending.f_desc: "\n\nNevím, proč by si někdo vzal tu [secondary_recipient.Custom('InsultAdjective')] [secondary_recipient.Custom('InsultNoun')], ale přeji jim to nejlepší."
+ marriage_interaction.0010.ending.e_recipient_desc: "\n\nKonečně jsme spojeni v [secondary_actor.Custom('GetCulturallyAppropriateMarriageReference')] i v duši a srdci!" # todo: \n\nKonečně jsme spojeni v [secondary_actor.Custom('GetCulturallyAppropriateMarriageReference')] i duší a srdcem!
+ marriage_interaction.0010.ending.f_actor_desc: "\n\nProč by se kdokoli chtěl oženit s tím [secondary_recipient.Custom2('InsultAdjective', ROOT.Char)] [secondary_recipient.Custom2('InsultNoun', ROOT.Char)], to přesahuje moje chápání, takže hodně štěstí." # todo: \n\nProč by si někdo bral toho [secondary_recipient.Custom2('InsultAdjective', ROOT.Char)] [secondary_recipient.Custom2('InsultNoun', ROOT.Char)], to nechápu, tak hodně štěstí.
+ marriage_interaction.0010.ending.f_desc: "\n\nProč by se kdokoli chtěl oženit s tím [secondary_recipient.Custom2('InsultAdjective', ROOT.Char)] [secondary_recipient.Custom2('InsultNoun', ROOT.Char)], to přesahuje moje chápání, ale přeji jim to nejlepší." # todo: \n\nProč by si někdo bral toho [secondary_recipient.Custom2('InsultAdjective', ROOT.Char)] [secondary_recipient.Custom2('InsultNoun', ROOT.Char)], to nechápu, ale přeji jim hodně štěstí.
  marriage_interaction.0010.ending.g_actor_desc: "\n\nModlím se, abyste spolu nalezli vykoupení a odpuštění, stejně jako štěstí."
  marriage_interaction.0010.ending.g_both_desc: "\n\nModlím se, abychom spolu nalezli vykoupení a odpuštění, stejně jako štěstí, [secondary_actor.Custom('WifeHusband')]."
  marriage_interaction.0010.ending.g_desc: "\n\nModlím se, aby spolu nalezli vykoupení a odpuštění, stejně jako štěstí."
  marriage_interaction.0010.ending.g_recipient_desc: "\n\nModlím se, abychom spolu nalezli vykoupení a odpuštění, stejně jako štěstí."
- marriage_interaction.0010.ending.h_actor_desc: "\n\nNechť najdete sílu a oporu ve vašem svazku!"
- marriage_interaction.0010.ending.h_both_desc: "\n\nNechť najdeme sílu a oporu v našem svazku, můj [secondary_actor.Custom('ComplimentAdjective')] [secondary_actor.Custom('WifeHusband')]!"
- marriage_interaction.0010.ending.h_desc: "\n\nNechť najdou sílu a oporu ve svém svazku!"
- marriage_interaction.0010.ending.h_recipient_desc: "\n\nNechť najdeme sílu a oporu v našem svazku!"
+ marriage_interaction.0010.ending.h_actor_desc: "\n\nAť v sobě nacházíte sílu a oporu!" # todo: \n\nAť v sobě nacházíte sílu a oporu!
+ marriage_interaction.0010.ending.h_both_desc: "\n\nAť v sobě nacházíme sílu a oporu, můj [secondary_actor.Custom('ComplimentAdjective')] [secondary_actor.Custom('WifeHusband')]!" # todo: \n\nAť v sobě nacházíme sílu a oporu, můj [secondary_actor.Custom('ComplimentAdjective')] [secondary_actor.Custom('WifeHusband')]!
+ marriage_interaction.0010.ending.h_desc: "\n\nAť v sobě nalézají sílu a oporu!" # todo: \n\nAť v sobě nacházejí sílu a oporu!
+ marriage_interaction.0010.ending.h_recipient_desc: "\n\nAť v sobě nacházíme sílu a oporu!" # todo: \n\nAť v sobě nacházíme sílu a oporu!
  marriage_interaction.0010.gwedding.desc: "\n\nTěším se také na slíbenou [GetActivityType('activity_wedding').GetName]; snažte se mě nenechat zklamat."
- marriage_interaction.0010.mid.a_desc: "\n\nVáš [actor.Custom2('RelationToMe', SCOPE.sC('secondary_actor'))], [secondary_actor.GetFirstName], a můj [recipient.Custom2('RelationToMe', SCOPE.sC('secondary_recipient'))], [secondary_recipient.GetFirstName], budou spojeni v svatém manželství."
- marriage_interaction.0010.mid.a_no_acquaintance_desc: "\n\nVáš dvořan, [secondary_actor.GetFirstName], a můj [recipient.Custom2('RelationToMe', SCOPE.sC('secondary_recipient'))], [secondary_recipient.GetFirstName], budou spojeni v svatém manželství."
- marriage_interaction.0010.mid.b_desc: "\n\nBudete spojeni s [Select_CString(secondary_recipient.IsFemale,'mojí','mým')] [recipient.Custom2('RelationToMe', SCOPE.sC('secondary_recipient'))], [secondary_recipient.GetFirstName], v svatém manželství."
- marriage_interaction.0010.mid.c_desc: "\n\nS vděkem přijmu ruku vašeho [actor.Custom2('RelationToMe', SCOPE.sC('secondary_actor'))], [secondary_actor.GetFirstName], v svatém manželství."
- marriage_interaction.0010.mid.c_no_acquaintance_desc: "\n\nS vděkem přijmu ruku vašeho dvořana, [secondary_actor.GetFirstName], v svatém manželství."
+ marriage_interaction.0010.mid.a_desc: "\n\nVáš [actor.Custom2('RelationToMe', SCOPE.sC('secondary_actor'))], [secondary_actor.GetFirstName], a můj [recipient.Custom2('RelationToMe', SCOPE.sC('secondary_recipient'))], [secondary_recipient.GetFirstName], budou spojeni v [secondary_actor.Custom('GetCulturallyAppropriateMarriageReference')]." # todo: \n\nVáš [actor.Custom2('RelationToMe', SCOPE.sC('secondary_actor'))], [secondary_actor.GetFirstName], a můj [recipient.Custom2('RelationToMe', SCOPE.sC('secondary_recipient'))], [secondary_recipient.GetFirstName], budou spojeni v [secondary_actor.Custom('GetCulturallyAppropriateMarriageReference')].
+ marriage_interaction.0010.mid.a_no_acquaintance_desc: "\n\nVáš dvoran, [secondary_actor.GetFirstName], a můj [recipient.Custom2('RelationToMe', SCOPE.sC('secondary_recipient'))], [secondary_recipient.GetFirstName], budou spojeni v [secondary_actor.Custom('GetCulturallyAppropriateMarriageReference')]." # todo: \n\nVáš dvořan, [secondary_actor.GetFirstName], a můj [recipient.Custom2('RelationToMe', SCOPE.sC('secondary_recipient'))], [secondary_recipient.GetFirstName], budou spojeni v [secondary_actor.Custom('GetCulturallyAppropriateMarriageReference')].
+ marriage_interaction.0010.mid.b_desc: "\n\nBudete spojeni s mým [recipient.Custom2('RelationToMe', SCOPE.sC('secondary_recipient'))], [secondary_recipient.GetFirstName], v [secondary_actor.Custom('GetCulturallyAppropriateMarriageReference')]." # todo: \n\nBudeš spojen s mým [recipient.Custom2('RelationToMe', SCOPE.sC('secondary_recipient'))], [secondary_recipient.GetFirstName], v [secondary_actor.Custom('GetCulturallyAppropriateMarriageReference')].
+ marriage_interaction.0010.mid.c_desc: "\n\nS pokorou přijmu ruku vašeho [actor.Custom2('RelationToMe', SCOPE.sC('secondary_actor'))], [secondary_actor.GetFirstName], v [secondary_actor.Custom('GetCulturallyAppropriateMarriageReference')]." # todo: \n\nS vděkem přijmu ruku vašeho [actor.Custom2('RelationToMe', SCOPE.sC('secondary_actor'))], [secondary_actor.GetFirstName], v [secondary_actor.Custom('GetCulturallyAppropriateMarriageReference')].
+ marriage_interaction.0010.mid.c_no_acquaintance_desc: "\n\nS pokorou přijmu ruku vašeho dvorana, [secondary_actor.GetFirstName], v [secondary_actor.Custom('GetCulturallyAppropriateMarriageReference')]." # todo: \n\nS vděkem přijmu ruku vašeho dvořana, [secondary_actor.GetFirstName], v [secondary_actor.Custom('GetCulturallyAppropriateMarriageReference')].
  marriage_interaction.0010.mid.d_desc: "\n\nVáš [actor.Custom2('RelationToMe', SCOPE.sC('secondary_actor'))], [secondary_actor.GetFirstName], bude zasnouben s mým [recipient.Custom2('RelationToMe', SCOPE.sC('secondary_recipient'))], [secondary_recipient.GetFirstName]."
  marriage_interaction.0010.mid.e_desc: "\n\nBudete zasnoubeni s mým [recipient.Custom2('RelationToMe', SCOPE.sC('secondary_recipient'))], [secondary_recipient.GetFirstName]."
  marriage_interaction.0010.mid.f_desc: "\n\nS vděkem vezmu ruku vašeho [actor.Custom2('RelationToMe', SCOPE.sC('secondary_actor'))], [secondary_actor.GetFirstName], až nadejde čas."
@@ -1501,7 +1501,7 @@
  marriage_interaction.0020.both_desc: "Rozhodl jsem se zrušit naše zasnoubení. Naše manželství se neuskuteční."
  marriage_interaction.0020.desc: "Rozhodl jsem se zrušit zasnoubení mezi [rejecting_betrothed.GetShortUIName] a [rejected_betrothed.GetShortUIName]."
  marriage_interaction.0020.recipient_desc: "Rozhodl jsem se zrušit vaše zasnoubení s [rejecting_betrothed.GetShortUIName]."
- marriage_interaction.0030.a: "Konečně jsem volný od toho [actor.Custom('InsultAdjective')] [actor.Custom('InsultNoun')]!"
+ marriage_interaction.0030.a: "Konečně jsem zbaven toho [actor.Custom2('InsultAdjective', ROOT.Char)] [actor.Custom2('InsultNoun', ROOT.Char)]!" # todo: Konečně jsem volný/á od toho [actor.Custom2('InsultAdjective', ROOT.Char)] [actor.Custom2('InsultNoun', ROOT.Char)]!
  marriage_interaction.0030.a_love: "[actor.GetFirstName], ne! Miluji tě!"
  marriage_interaction.0030.desc: "Naše manželství očividně není po vůli [actor.GetFaith.HighGodName]. Je u konce."
  marriage_interaction.0040.a: "Budiž."
@@ -1510,7 +1510,7 @@
  marriage_interaction.0041.desc: "Propustil jsem vašeho [ROOT.Char.Custom2('RelationToMe', SCOPE.sC('recipient'))] z mého žaláře, aby mi sloužil(a) jako konkubína."
  marriage_interaction.0042.desc: "Rozhodl jsem se dát vás [recipient.GetTitledFirstName] jako [recipient.GetHerHis] konkubínu."
  marriage_interaction.0043.desc_concubine: "Propustil jsem vaši konkubínu z mého žaláře, aby sloužila jako konkubína [recipient.GetTitledFirstNamePossessive]."
- marriage_interaction.0043.desc_spouse: "Propustil jsem vašeho [secondary_actor.Custom('WifeHusband')] z mého žaláře, aby sloužil(a) jako konkubína [recipient.GetTitledFirstNamePossessive]."
+ marriage_interaction.0043.desc_spouse: "Propustil jsem vaši [secondary_recipient.Custom('WifeHusband')] z mého vězení, aby se stala [recipient.GetTitledFirstNamePossessive] konkubínou." # todo: Propustil(a) jsem vašeho/vaši [secondary_recipient.Custom('WifeHusband')] z mého vězení, aby sloužil(a) jako [recipient.GetTitledFirstNamePossessive] konkubína/konkubín.
  marriage_interaction.0050.a: "Budiž."
  marriage_interaction.0050.desc: "Vaše služby jako mé konkubíny již nejsou požadovány."
  marry: "Oženit se"
@@ -1524,7 +1524,7 @@
  migration_interaction_desc: "Jako [GetGovernment( 'nomad_government' ).GetName] [ruler|E] byste se měli [migrate|E] pokud je vaše [domain_fertility|E] nízká.\n\n[realms|E] s velkou [domain|E] a vysokým [dominance|E] už nemusí migrovat, protože jejich [fertility_equilibrium|E] bude dostatečně vysoká pro podporu růstu.\n\n#I Klikněte pro naplánování [migration|E]#!"
  modify_vassal_contract: "Upravit smlouvu s vassalem"
  modify_vassal_contract_interaction_SEND: "Upravit vazalskou smlouvu"
- modify_vassal_contract_interaction_notification: "Smlouva s vasalem upravena"
+ modify_vassal_contract_interaction_notification: "Upravená smlouva vazala" # todo: Upravená smlouva poddaného
  mongol_demand_subjugation_interaction: "Požadovat podrobení"
  mongol_demand_subjugation_interaction_desc: "Požadujte, aby se [recipient.GetShortUINameNoTooltip] stal vaším [vassal|E] pod hrozbou [war|E]"
  mongol_demand_subjugation_interaction_tooltip: "[recipient.GetShortUIName|U] dostane možnost odpovědět"
@@ -1551,7 +1551,7 @@
  negotiate_alliance_effect_recipient_tooltip: "Uzavře vzájemnou [alliance|E] s [actor.GetTitledFirstName]"
  negotiate_alliance_effect_tooltip: "[recipient.GetTitledFirstName] a já uzavíráme vzájemnou [alliance|E]"
  negotiate_alliance_interaction: "Vyjednat alianci"
- negotiate_alliance_interaction_desc: "Využij stávajících rodinných vazeb s rodinou [recipient.GetTitledFirstNamePossessive], abys vytvořil alianci s [recipient.GetHerHim]"
+ negotiate_alliance_interaction_desc: "Využijte stávající vazby s rodinou [recipient.GetTitledFirstNamePossessive], abyste uzavřeli [alliance|E] s [recipient.GetHerHim]" # todo: Využijte stávající vazby s rodinou [recipient.GetTitledFirstNamePossessive] k vytvoření [alliance|E] s [recipient.GetHerHim]
  negotiate_alliance_interaction_extra_icon: "$hook_extra_icon$"
  no_heirs_can_be_sent_tt: "[secondary_actor.GetShortUIName] je váš [heir|E]"
  no_primary_wars_tt: "Jste [war_leader|E] ve [war|E]"
@@ -1629,7 +1629,7 @@
  pay_ransom_interaction_desc: "Nabídnout zaplacení výkupného za [imprisoned|E] [vassal|E] nebo [courtier|E]"
  pay_ransom_interaction_extra_icon: "$hook_extra_icon$"
  perk_alliance_interaction: "Navrhnout alianci"
- perk_alliance_interaction_desc: "Využij strategické diplomacie k vytvoření aliance s [recipient.GetTitledFirstNameNoTooltip] — ne krví, ale slovy!"
+ perk_alliance_interaction_desc: "Využijte strategickou diplomacii, abyste uzavřeli [alliance|E] s [recipient.GetTitledFirstNameNoTooltip] — ne krví, ale slovy!" # todo: Využijte strategickou diplomacii k vytvoření [alliance|E] s [recipient.GetTitledFirstNameNoTooltip] — ne krví, ale slovy!
  perk_alliance_interaction_extra_icon: "$hook_extra_icon$"
  prison_break_contract_interaction: "Zahájit smlouvu o útěku z vězení"
  prison_break_contract_interaction_desc: "[contractor|E] vás požádal, abyste pomocí [scheme|E] zachránil někoho z vězení"
@@ -1740,7 +1740,7 @@
  sun_trial_interaction.success.tt: "[recipient.GetTitledFirstName] zahyne na slunci"
  sun_trial_interaction: "Sluneční zkouška"
  support_feudalize_tribal_holding_interaction: "Pomoci kmenovému rozvoji"
- support_feudalize_tribal_holding_interaction_desc: "Pomoci [recipient.GetShortUIName] rozvinout [recipient.GetHerHis] [tribal|E] území a přeměnit jednu z [recipient.GetHerHis] [tribal|E] [holdings|E] na [castle|E]"
+ support_feudalize_tribal_holding_interaction_desc: "Pomozte [recipient.GetShortUIName] rozvíjet [recipient.GetHerHis] [tribal|E] půdu a proměňte jednu z [recipient.GetHerHis] [tribal|E] [holdings|E] na [SelectLocalization( GetPlayer.GetGovernment.HasGovernmentFlag( 'government_is_mandala' ), 'temple_citadel_holding_concept_key', 'castle_holding_concept_key' )] " # todo: Pomozte [recipient.GetShortUIName] rozvinout [recipient.GetHerHis] [tribal|E] území a přeměnit jedno z [recipient.GetHerHis] [tribal|E] [holdings|E] na [SelectLocalization( GetPlayer.GetGovernment.HasGovernmentFlag( 'government_is_mandala' ), 'temple_citadel_holding_concept_key', 'castle_holding_concept_key' )] 
  sway_interaction: "Ovlivnit #weak (Intrika)#!"
  sway_interaction_notification: "Ovlivnění"
  take_concubine_allowed_more: "Nelze mít více [concubines|E]"
@@ -1803,3 +1803,157 @@
  I_AM_DEVIANT: "Jsem deviant(ka): $VALUE|=+0$"
  I_AM_WITCH: "Jsem čaroděj(ka): $VALUE|=+0$"
  I_AM_LIEGE_TOP_LIEGE: "Jsem [recipient.GetShortUINamePossessive] [liege|E] nebo [top_liege|E]: $VALUE|=+0$"
+ merit_sort_name: "$game_concept_merit$"   # todo: NEW TRANSLATION
+ become_tributary_interaction_hegemon: "K [recipient.Custom('BecomeTributaryInteractionName')], použijte [GetDecision('tribute_mission_decision').GetName] [decision|E]"   # todo: NEW TRANSLATION
+ BECOME_TRIBUTARY_INTERACTION_NAME_HEGEMONY: "Uznat hegemona"   # todo: NEW TRANSLATION
+ BECOME_TRIBUTARY_INTERACTION_NAME_FALLBACK: "Podřídit se vrchnímu pánovi"   # todo: NEW TRANSLATION
+ exact_tribute_interaction: "Vymáhat tribut"   # todo: NEW TRANSLATION
+ exact_tribute_interaction_desc: "Požádejte, aby [recipient.GetShortUIName] poslal [tribute|E] vám"   # todo: NEW TRANSLATION
+ exact_tribute_interaction_recently_tribute_missioned_tt: "[recipient.GetShortUINameNoTooltip] nedávno podnikl [tribute_mission|E] k vám"   # todo: NEW TRANSLATION
+ exact_tribute_interaction_no_tribute_tt: "[recipient.GetShortUINameNoTooltip] nemá žádný vhodný [tribute|E] k odeslání"   # todo: NEW TRANSLATION
+ exact_tribute_interaction_recently_refused_tt: "[recipient.GetShortUINameNoTooltip] nedávno odmítl provést [tribute_mission|E]"   # todo: NEW TRANSLATION
+ exact_tribute_interaction_already_engaged_tt: "[recipient.GetShortUINameNoTooltip] již připravuje [tribute_mission|E]"   # todo: NEW TRANSLATION
+ request_gold_tribute: "Požadovat [gold_i][gold|E] jako [tribute|E]"   # todo: NEW TRANSLATION
+ request_herd_tribute: "Požadovat [herd_i][herd|E] jako [tribute|E]"   # todo: NEW TRANSLATION
+ request_artifact_tribute: "Požadovat [artifact_i][artifact|E] jako [tribute|E]"   # todo: NEW TRANSLATION
+ exact_tribute_interaction_no_suitable_artifact_tt: "[recipient.GetShortUINameNoTooltip] nemá žádný vhodný [artifact|E] k nabídnutí"   # todo: NEW TRANSLATION
+ request_concubine_tribute: "Požadovat @concubine_icon![concubine|E] jako [tribute|E]"   # todo: NEW TRANSLATION
+ exact_tribute_interaction_no_suitable_concubine_tt: "[recipient.GetShortUINameNoTooltip] nemá žádný vhodný [concubine|E] k nabídnutí"   # todo: NEW TRANSLATION
+ exact_tribute_interaction_unable_to_take_more_concubines_tt: "[recipient.GetShortUINameNoTooltip] nemá volné místo pro dalšího [concubine|E]"   # todo: NEW TRANSLATION
+ request_eunuch_tribute: "Požadovat @eunuch_icon! [GetTrait('eunuch_1').GetName( GetNullCharacter )] jako [tribute|E]"   # todo: NEW TRANSLATION
+ exact_tribute_interaction_no_suitable_eunuchs_tt: "[recipient.GetShortUINameNoTooltip] nemá žádné vhodné [GetTrait('eunuch_1').GetName( GetNullCharacter )] k nabídnutí"   # todo: NEW TRANSLATION
+ exact_tribute_interaction_gold_tt: "[recipient.GetShortUINameNoTooltip] přinese [gold_i][gold|E]"   # todo: NEW TRANSLATION
+ exact_tribute_interaction_herd_tt: "[recipient.GetShortUINameNoTooltip] přinese [herd_i][herd|E]"   # todo: NEW TRANSLATION
+ exact_tribute_interaction_artifact_tt: "[recipient.GetShortUINameNoTooltip] přinese [artifact_i][artifact|E] jako [tribute|E]"   # todo: NEW TRANSLATION
+ exact_tribute_interaction_concubine_tt: "[recipient.GetShortUINameNoTooltip] přinese @concubine_icon![concubine|E] jako [tribute|E]"   # todo: NEW TRANSLATION
+ exact_tribute_interaction_eunuch_tt: "[recipient.GetShortUINameNoTooltip] přinese @eunuch_icon! [GetTrait('eunuch_1').GetName( GetNullCharacter )]"   # todo: NEW TRANSLATION
+ EXACT_TRIBUTE_INTERACTION_NOTIFICATION: "Jako tvůj [recipient.Custom2('RelationToMe', recipient.GetOverlord )] je mou povinností informovat tě o #EMP tvých#! povinnostech. Můj sál zní prázdnotou bez tvé přítomnosti. Neotálej s tím, [recipient.GetTitleAsNameNoTooltip]. Můj dvůr čeká..."   # todo: NEW TRANSLATION
+ exact_tribute_player_interaction: "$exact_tribute_interaction$"   # todo: NEW TRANSLATION
+ exact_tribute_player_interaction_desc: "$exact_tribute_interaction_desc$"   # todo: NEW TRANSLATION
+ exact_tribute_player_interaction_accept_tt: "[recipient.GetShortUINameNoTooltip|U] přinese [tribute|E] pro [actor.GetShortUINameNoTooltip][AddLocalizationIf( recipient.IsLocalPlayer, 'exact_tribute_player_interaction_help' )]"   # todo: NEW TRANSLATION
+ exact_tribute_player_interaction_help: "\n\n@alert_icon! #alert_trial Musíš vykonat [tribute_mission|E] k [GetPlayer.GetOverlord.GetShortUINameNoTooltip] během #V [EmptyScope.ScriptValue('requested_tribute_mission_deadline_years')|0] let#! nebo ponesíš následky#!"   # todo: NEW TRANSLATION
+ EXACT_TRIBUTE_PLAYER_INTERACTION_NOTIFICATION: "$EXACT_TRIBUTE_INTERACTION_NOTIFICATION$"   # todo: NEW TRANSLATION
+ declined_tribute_mission_opinion: "Odmítnutá mise tributu"   # todo: NEW TRANSLATION
+ demand_courtier_interaction_extra_icon: "$hook_extra_icon$"   # todo: NEW TRANSLATION
+ recipient_secondary_offer_concubine: "Konkubína"   # todo: NEW TRANSLATION
+ studying_confucian_education_trait: "Má šanci získat [GetTrait('confucian_education').GetName(GetNullCharacter)] [trait|E] a [trait_level_track_xp|E]"   # todo: NEW TRANSLATION
+ studying_confucian_education_disciple: "Má šanci stát se [disciple|E] [recipient.GetName]"   # todo: NEW TRANSLATION
+ imprison_decline_summary_war_bloc: "@warning_icon! #X Pokud selžete s uvězněním [ROOT.Char.GetShortUINameNoTooltip], [ROOT.Char.GetSheHe] povstane v rebelii s [ROOT.Char.GetHerHis] [house_bloc|E] a jakýmikoliv dalšími nespokojenými [vassals|E]!#!"   # todo: NEW TRANSLATION
+ public_execution_tooltip_global: "Protože konáte veřejnou popravu, vaše [capital|E]:"   # todo: NEW TRANSLATION
+ public_execution_tooltip_first: "$public_execution_tooltip_global$"   # todo: NEW TRANSLATION
+ public_execution_tooltip_third: "$public_execution_tooltip_global$"   # todo: NEW TRANSLATION
+ RELEASE_DEMAND_ADMIN: "Stát se [administrative|E]"   # todo: NEW TRANSLATION
+ I_CANNOT_DECLARE_WAR_WHILE_BANKRUPT_TREASURY: " nebo v [treasury_debt|E]"   # todo: NEW TRANSLATION
+ too_low_rank_to_call_hegemon: "Musíte mít [emperor|E] [rank|E] nebo vyšší, abyste mohli svolat [hegemon|E] do [wars|E]"   # todo: NEW TRANSLATION
+ offer_tributarization_interaction_aibehavior_not_higher_rank: "Máte vyšší hodnost než [recipient.GetShortUIName|U]"   # todo: NEW TRANSLATION
+ hof_interaction_unreformed_faith_global: "$HOF_INTERACTION_UNREFORMED_FAITH$"   # todo: NEW TRANSLATION
+ offer_vassalization_interaction_aibehavior_hightier_tt: "[recipient.GetShortUIName|U] [CharAreIs(recipient)] [recipient.GetTitleTierName] [title_tier|E]: $VALUE|=+0$"   # todo: NEW TRANSLATION
+ offer_vassalization_interaction_aibehavior_hegemony_tt: "[actor.GetShortUIName|U] [CharAreIs(actor)] [hegemony|E] [title_tier|E] [ruler|E]: $VALUE|=+0$"   # todo: NEW TRANSLATION
+ offer_vassalization_interaction_aibehavior_vassal_limit_tt: "Dosáhli jste nebo překročili svůj [vassal_limit|E]: $VALUE|=+0$"   # todo: NEW TRANSLATION
+ ai_will_do_debug: "$VALUE|=+0$"   # todo: NEW TRANSLATION
+ offer_fealty_interaction_aibehavior_hightier_tt: "[actor.GetShortUINameNoTooltip|U] [CharAreIs(actor)] [actor.GetTitleTierName] [title_tier|E]: $VALUE|=+0$"   # todo: NEW TRANSLATION
+ tributary_interaction_aibehavior_recipient_tier_tt: "[recipient.GetShortUINameNoTooltip|U] [CharAreIs(recipient)] [recipient.GetTitleTierName] [title_tier|E]: $VALUE|=+0$"   # todo: NEW TRANSLATION
+ tributary_interaction_aibehavior_actor_tier_tt: "[actor.GetShortUINameNoTooltip|U] [CharAreIs(recipient)] [actor.GetTitleTierName] [title_tier|E]: $VALUE|=+0$"   # todo: NEW TRANSLATION
+ tributary_interaction_aibehavior_recipient_capital_complex: "[recipient.GetShortUINameNoTooltip|U] [CharHaveHas(recipient)] a $building_type_mandala_capital_01$ v [recipient.GetCapitalLocation.GetTitle.GetNameNoTierNoTooltip]: $VALUE|=+0$"   # todo: NEW TRANSLATION
+ tributary_interaction_aibehavior_actor_capital_complex: "[actor.GetShortUINameNoTooltip|U] [CharHaveHas(recipient)] a $building_type_mandala_capital_01$ v [actor.GetCapitalLocation.GetTitle.GetNameNoTierNoTooltip]: $VALUE|=+0$"   # todo: NEW TRANSLATION
+ tributary_interaction_aibehavior_recipient_same_faith: "[recipient.GetShortUINameNoTooltip|U] [CharAreIs(recipient)] a [actor.GetFaith.GetAdjective] Božský král: $VALUE|=+0$"   # todo: NEW TRANSLATION
+ tributary_interaction_aibehavior_recipient_hegemon_tier_tt: "[recipient.GetShortUINameNoTooltip|U] hold[_s(actor)] [recipient.GetPrimaryTitle.GetName]: $VALUE|=+0$"   # todo: NEW TRANSLATION
+ tributary_interaction_aibehavior_actor_hegemon_tier_tt: "[actor.GetShortUIName|U] hold[_s(actor)] [actor.GetPrimaryTitle.GetName]: $VALUE|=+0$"   # todo: NEW TRANSLATION
+ tributary_interaction_aibehavior_recipient_confucian_government_tt: "[recipient.GetShortUINameNoTooltip|U] [CharHaveHas(recipient)] [recipient.GetGovernment.GetName] [government|E]: $VALUE|=+0$"   # todo: NEW TRANSLATION
+ tributary_interaction_aibehavior_recipient_low_legitimacy_tt: "[recipient.GetShortUINameNoTooltip|U] nesplňuje očekávanou [legitimacy|E]: $VALUE|=+0$"   # todo: NEW TRANSLATION
+ tributary_interaction_aibehavior_recipient_high_legitimacy_tt: "[recipient.GetShortUINameNoTooltip|U] překračuje očekávanou [legitimacy|E]: $VALUE|=+0$"   # todo: NEW TRANSLATION
+ tributary_interaction_aibehavior_recipient_unstable_cycle_tt: "[recipient.GetShortUINameNoTooltip|U] je v nestabilním cyklu: $VALUE|=+0$"   # todo: NEW TRANSLATION
+ embrace_tributarization_interaction_aibehavior_rival_tt: "[actor.GetShortUINameNoTooltip|U] [CharAreIs(actor)] [recipient.GetShortUINamePossessive|U] [rival|E]: $VALUE|=+0$"   # todo: NEW TRANSLATION
+ embrace_tributarization_interaction_aibehavior_nemesis_tt: "[actor.GetShortUINameNoTooltip|U] [CharAreIs(actor)] [recipient.GetShortUINamePossessive|U] [nemesis|E]: $VALUE|=+0$"   # todo: NEW TRANSLATION
+ embrace_tributarization_interaction_aibehavior_dynasty_tt: "[actor.GetSheHe|U] patří k [recipient.GetShortUINamePossessive|U] [dynasty|E]: $VALUE|=+0$"   # todo: NEW TRANSLATION
+ embrace_as_tributary_interaction_same_faith: "[recipient.GetShortUINameNoTooltip|U] [CharAreIs(recipient)] Božský král [actor.GetFaith.GetName] [faith|E]: $VALUE|=+0$"   # todo: NEW TRANSLATION
+ embrace_as_tributary_interaction_same_religion: "[recipient.GetShortUINameNoTooltip|U] [CharAreIs(recipient)] Božský král [actor.GetReligion.GetName] [religion|E]: $VALUE|=+0$"   # todo: NEW TRANSLATION
+ embrace_as_tributary_interaction_other_religion_family: "[actor.GetShortUINameNoTooltip|U] [CharAreIs(actor)] Božský král [actor.GetFaith.GetReligion.GetFamily.GetName] [religion|E]: $VALUE|=+0$"   # todo: NEW TRANSLATION
+ tributary_interaction_aibehavior_recipient_other_religion_family: "[recipient.GetShortUINameNoTooltip|U] [CharAreIs(actor)] [recipient.GetFaith.GetReligion.GetFamily.GetName] Božský král: $VALUE|=+0$"   # todo: NEW TRANSLATION
+ embrace_as_tributary_interaction_wrong_government: "[recipient.GetShortUINameNoTooltip|U] má [recipient.GetGovernment.GetName|E] vládu: $VALUE|=+0$"   # todo: NEW TRANSLATION
+ OFFER_TRIBUTARY_STATUS_INTERACTION_NOTIFICATION: "Přijď, uzři světlo a přidej se k mému shromáždění zbožných tributářů. Společně učiníme tento svět lepším."   # todo: NEW TRANSLATION
+ char_interaction.0232.liege: "Nehodlám přihlížet, zatímco náš vrchní pán zneužívá loajální vassaly [actor.GetHerHis]. Vyzývám tě, abys se ke mně přidal v boji o sesazení tohoto tyrana."   # todo: NEW TRANSLATION
+ char_interaction.0232.regent: "Nehodlám přihlížet, zatímco [actor.GetSheHe] zneužívá loajální vassaly [ceremonial_liege.GetTitledFirstNamePossessive]. Vyzývám tě, abys se ke mně přidal v boji o sesazení tohoto tyrana."   # todo: NEW TRANSLATION
+ holy_matrimony: "posvátné manželství"   # todo: NEW TRANSLATION
+ blessed_union: "požehnaný svazek"   # todo: NEW TRANSLATION
+ harmonious_union: "harmonický svazek"   # todo: NEW TRANSLATION
+ auspicious_wedlock: "příznivý svazek"   # todo: NEW TRANSLATION
+ matrimony: "manželství"   # todo: NEW TRANSLATION
+ liege_modify_vassal_contract_mandala_cooldown: "[actor.GetShortUIName|U] [actor.LocalPlayerString( 'have', 'has' )] nedávno změnil povinnosti a musí počkat až do [GetCurrentDateWithDiff( GetVarTimeRemaining( actor.MakeScope, 'liege_recently_adjusted_mandala_vassal_contract') )]"   # todo: NEW TRANSLATION
+ vassal_modify_vassal_contract_mandala_cooldown: "[actor.GetShortUIName|U] [actor.LocalPlayerString( 'have', 'has' )] nedávno změnil povinnosti a musí počkat až do [GetCurrentDateWithDiff( GetVarTimeRemaining( actor.MakeScope, 'vassal_recently_adjusted_mandala_vassal_contract') )]"   # todo: NEW TRANSLATION
+ suzerain_modify_subject_contract_mandala_cooldown: "[actor.GetShortUIName|U] [actor.LocalPlayerString( 'have', 'has' )] nedávno změnil povinnosti a musí počkat až do [GetCurrentDateWithDiff( GetVarTimeRemaining( actor.MakeScope, 'suzerain_recently_adjusted_mandala_subject_contract') )]"   # todo: NEW TRANSLATION
+ subject_modify_subject_contract_mandala_cooldown: "[actor.GetShortUIName|U] [actor.LocalPlayerString( 'have', 'has' )] nedávno změnil povinnosti a musí počkat až do [GetCurrentDateWithDiff( GetVarTimeRemaining( actor.MakeScope, 'subject_recently_adjusted_mandala_subject_contract') )]"   # todo: NEW TRANSLATION
+ AI_YOUR_ELDER: "[recipient.GetSheHe|U] je tvůj starší: $VALUE|=+0$"   # todo: NEW TRANSLATION
+ AI_YOUR_DISCIPLE: "[recipient.GetSheHe|U] je tvůj žák: $VALUE|=+0$"   # todo: NEW TRANSLATION
+ join_vassal_war_interaction: "Chránit vazala"   # todo: NEW TRANSLATION
+ join_vassal_war_interaction_desc: "Připojte se k [war|E] na straně svého [vassal|E], abyste ochránili své území a tituly"   # todo: NEW TRANSLATION
+ liege_feudalized_holding_interaction_notification: "Vrchní pán feudalizoval državu"   # todo: NEW TRANSLATION
+ sanctified_holding_interaction_notification: "Država posvěcena"   # todo: NEW TRANSLATION
+ liege_sanctified_holding_interaction_notification: "Vrchní pán posvětil državu"   # todo: NEW TRANSLATION
+ NOT_offer_fealty_neighboring_and_de_jure_condition: "[CHARACTER.GetShortUIName|U] není ani tvůj de jure vrchní pán, ani sousední vrchní pán"   # todo: NEW TRANSLATION
+ char_interaction.0253.desc: "[actor.Custom2('PositiveSupplimentaryGreeting', recipient)]\nBylo rozhodnuto, že typ správy [recipient.GetPrimaryTitle.GetNameNoTooltip] bude změněn.\n\nToto rozhodnutí slouží většímu dobru [actor.GetPrimaryTitle.GetNameNoTierNoTooltip].\n"   # todo: NEW TRANSLATION
+ char_interaction.0253.a: "Převezmu své nové povinnosti."   # todo: NEW TRANSLATION
+ char_interaction.0252.desc: "[actor.Custom2('PositiveSupplimentaryGreeting', recipient)]\nNa důkaz našich obětí a úcty k [recipient.GetPrimaryTitle.GetNameNoTooltip] vás žádám, abyste tuto oddanost ocenil udělením [SCOPE.Custom('CelestialTributaryRequest')].\n\nKéž tato laskavost posílí harmonii mezi vaším trůnem a naším skromným královstvím."   # todo: NEW TRANSLATION
+ char_interaction.0252.a: "Umožním vám přístup k našim tržním stánkům."   # todo: NEW TRANSLATION
+ char_interaction.0252.b: "Ano, vaše dynastie se ukázala hodna spojení s mou."   # todo: NEW TRANSLATION
+ char_interaction.0252.c: "Dokud zůstanete věrni svému [recipient.GetTitleTierName]!"   # todo: NEW TRANSLATION
+ char_interaction.0252.d: "Považujte své daňové povinnosti za snížené."   # todo: NEW TRANSLATION
+ char_interaction.0252.d.alt: "Místo toho snížím vaše daňové povinnosti."   # todo: NEW TRANSLATION
+ char_interaction.0252.e: "Uznám svrchovanost [actor.GetPrimaryTitle.GetNamePossessiveNoTooltip]."   # todo: NEW TRANSLATION
+ char_interaction.0252.e.alt: "Dovolte mi místo toho uznat svrchovanost [actor.GetPrimaryTitle.GetNamePossessiveNoTooltip]."   # todo: NEW TRANSLATION
+ CELESTIAL_TRIBUTARY_REQUEST_TRADE: "přednostní přístup na císařské trhy"   # todo: NEW TRANSLATION
+ CELESTIAL_TRIBUTARY_REQUEST_MARRIAGE: "budoucí povolení spojit naše dynastie sňatkem"   # todo: NEW TRANSLATION
+ CELESTIAL_TRIBUTARY_REQUEST_POLITICS: "právo stýkat se s vašimi rádci v císařském paláci"   # todo: NEW TRANSLATION
+ CELESTIAL_TRIBUTARY_REQUEST_GENERIC: "trochu úlevy od našich probíhajících povinností"   # todo: NEW TRANSLATION
+ INTERACTION_GREGARIOUS: "[GetTrait('gregarious').GetName( recipient )]: $VALUE|=+0$"   # todo: NEW TRANSLATION
+ INTERACTION_ZEALOUS: "[GetTrait('zealous').GetName( recipient )]: $VALUE|=+0$"   # todo: NEW TRANSLATION
+ AI_HOUSE_RELATION_REASON: "[house_relation|E] úroveň: $VALUE|0+=$"   # todo: NEW TRANSLATION
+ AI_RELATIVE_FAMILY_RATING_REASON: "Relativní [powerful_family_rating_mid|E]: $VALUE|0+=$"   # todo: NEW TRANSLATION
+ AI_TENNO_FEUDAL_AVERSION_REASON: "[tenno|E] nedůvěřuje [soryo|E]: $VALUE|0+=$"   # todo: NEW TRANSLATION
+ AI_SAME_DYNASTY_REASON: "Stejná [dynasty|E]: $VALUE|0+=$"   # todo: NEW TRANSLATION
+ AI_SAME_HOUSE_REASON: "Stejný [house|E]: $VALUE|0+=$"   # todo: NEW TRANSLATION
+ AI_DIFFERENT_GOVERNMENT_REASON: "Odlišný [government|E]: $VALUE|0+=$"   # todo: NEW TRANSLATION
+ AI_DISTANT_DOMICILE_REASON: "Vzdálené [manor|E]: $VALUE|0+=$"   # todo: NEW TRANSLATION
+ AI_DIFFERENT_ASPIRATION_REASON: "Jiný [house_aspiration|E]: $VALUE|0+=$"   # todo: NEW TRANSLATION
+ AI_DIFFERENT_LEADING_ASPIRATION_REASON: "Jiný [house_aspiration|E] než [bloc|E] [leading_house|E]: $VALUE|0+=$"   # todo: NEW TRANSLATION
+ AI_NOT_IN_A_BLOC_REASON: "Není v [bloc|E]: $VALUE|0+=$"   # todo: NEW TRANSLATION
+ AI_RELATIVE_BLOC_STRENGTH_REASON: "Relativní síla [bloc|E]: $VALUE|0+=$"   # todo: NEW TRANSLATION
+ AI_RELATIVE_PRESTIGE_LEVEL_REASON: "Relativní [prestige_level|E]: $VALUE|0+=$"   # todo: NEW TRANSLATION
+ AI_RELATIVE_INFLUENCE_LEVEL_REASON: "Relativní [influence_level|E]: $VALUE|0+=$"   # todo: NEW TRANSLATION
+ AI_RELATIVE_DYNASTY_PRESTIGE_REASON: "Relativní [dynasty_prestige_level|E]: $VALUE|0+=$"   # todo: NEW TRANSLATION
+ AI_OLD_BLOC_HEAD_AVERAGE_OPINION_REASON: "Názor starých [bloc|E] [house_heads|E]: $VALUE|0+=$"   # todo: NEW TRANSLATION
+ AI_NEW_BLOC_HEAD_AVERAGE_OPINION_REASON: "Názor nových [bloc|E] [house_heads|E]: $VALUE|0+=$"   # todo: NEW TRANSLATION
+ AI_RELATIVE_MILITARY_POWER: "Relativní [house|E] [military_power|E]: $VALUE|0+=$"   # todo: NEW TRANSLATION
+ AI_THREATENED_SORYO_REASON: "Ohroženo [soryo|E] [rulers|E]: $VALUE|0+=$"   # todo: NEW TRANSLATION
+ AI_THREATENED_RITSURYO_REASON: "Ohroženo [soryo|E] [rulers|E]: $VALUE|0+=$"   # todo: NEW TRANSLATION
+ AI_THREATENED_BLOC_REASON: "Ohroženo vládnoucím [bloc|E]: $VALUE|0+=$"   # todo: NEW TRANSLATION
+ AI_RELATIVE_BLOC_SIZE: "Relativní velikost [bloc|E]: $VALUE|0+=$"   # todo: NEW TRANSLATION
+ AI_RELATIVE_BLOC_MILITARY_POWER: "Relativní [bloc|E] [military_power|E]: $VALUE|0+=$"   # todo: NEW TRANSLATION
+ AI_RELATIVE_HOUSE_MILITARY_POWER: "Relativní [house|E] [military_power|E]: $VALUE|0+=$"   # todo: NEW TRANSLATION
+ AI_RELATIVE_BLOC_HOUSE_RELATIONS: "Relativní [house_relations|E] v [bloc|E]: $VALUE|0+=$"   # todo: NEW TRANSLATION
+ AI_ALREADY_IN_BLOC_REASON: "Již v [bloc|E]: $VALUE|0+=$"   # todo: NEW TRANSLATION
+ AI_DISTANT_SORYO_BLOC_REASON: "Vzdálenost členů [bloc|E]: $VALUE|0+=$"   # todo: NEW TRANSLATION
+ AI_VULNERABLE_GOVERNMENT_REASON: "Zranitelná [government|E]: $VALUE|0+=$"   # todo: NEW TRANSLATION
+ AI_LANDED_HOUSE_MEMBERS_REASON: "[landed|E] členové [house|E]: $VALUE|0+=$"   # todo: NEW TRANSLATION
+ AI_RELATIVE_BLOC_OPINION_REASON: "Relativní názor [bloc|E]: $VALUE|0+=$"   # todo: NEW TRANSLATION
+ AI_NEARBY_BLOC_REASON: "Blízcí členové [bloc|E]: $VALUE|0+=$"   # todo: NEW TRANSLATION
+ AI_BLOC_FEW_HOUSES_REASON: "Málo [bloc|E] [member_house|E]: $VALUE|0+=$"   # todo: NEW TRANSLATION
+ AI_BLOC_FEW_MEMBERS_REASON: "Málo členů [bloc|E]: $VALUE|0+=$"   # todo: NEW TRANSLATION
+ AI_INVITER_BLOC_OPINION_REASON: "Názor nového [bloc|E]: $VALUE|0+=$"   # todo: NEW TRANSLATION
+ AI_JOINER_BLOC_OPINION_REASON: "Názor starého [bloc|E]: $VALUE|0+=$"   # todo: NEW TRANSLATION
+ AI_BLOC_SIZE_AVERSION_REASON: "Velikost [bloc|E]: $VALUE|0+=$"   # todo: NEW TRANSLATION
+ AI_BLOC_COHESION_REASON: "[bloc_cohesion|E]: $VALUE|0+=$"   # todo: NEW TRANSLATION
+ AI_BLOC_RELATIVE_COHESION_REASON: "Relativní [bloc_cohesion|E]: $VALUE|0+=$"   # todo: NEW TRANSLATION
+ AI_SAME_ASPIRATION_REASON: "Stejný [house_aspiration|E]: $VALUE|0+=$"   # todo: NEW TRANSLATION
+ AI_SAME_LEADING_ASPIRATION_REASON: "Stejný [house_aspiration|E] jako [bloc|E] [leading_house|E]: $VALUE|0+=$"   # todo: NEW TRANSLATION
+ AI_BETTER_LEADING_ASPIRATION_REASON: "Vyšší úroveň [house_aspiration|E]: $VALUE|0+=$"   # todo: NEW TRANSLATION
+ AI_LOW_COHESION_REASON: "Nízká [bloc_cohesion|E]: $VALUE|0+=$"   # todo: NEW TRANSLATION
+ AI_BLOCK_JOIN_SAME_DYNASTY_LEGACY_BONUS: "[GetDynastyPerk('tgp_japan_legacy_1').GetName]: $VALUE|0+=$"   # todo: NEW TRANSLATION
+ AI_BLOCK_JOIN_LIFESTYLE_PERK: "[GetPerk('forced_vassalage_perk').GetName(GetNullCharacter)]: $VALUE|0+=$"   # todo: NEW TRANSLATION
+ CHARACTER_INTERACTION_CANDIDATE_SCORE_TT_HEADING: "[candidate_score|E]: [CharacterInteractionConfirmationWindow.GetCandidateScore( CharacterListItem.Self )|V0]"   # todo: NEW TRANSLATION
+ ritsuryo_to_soryo_invalid_to_transfer: "[soryo|E] [vassals|E] nelze převést na [ritsuryo|E] $game_concept_vassals$ [ritsuryo|E] [liege|E]"   # todo: NEW TRANSLATION
+ INTERACTION_RULER_TOO_YOUNG: "Vládce je stále mladý: $VALUE|0+=$"   # todo: NEW TRANSLATION
+ INTERACTION_HEIR_NOT_MY_DESCENDENT: "Dědic není potomkem [recipient.GetShortUINamePossessive]: $VALUE|0+=$"   # todo: NEW TRANSLATION
+ INTERACTION_HEIR_TOO_YOUNG: "Dědic je stále mladý: $VALUE|0+=$"   # todo: NEW TRANSLATION
+ INTERACTION_BAD_RELATIONSHIP_WITH_ACTOR: "Špatný vztah: $VALUE|0+=$"   # todo: NEW TRANSLATION
+ INTERACTION_POOR_HEALTH: "Špatné [health|E]: $VALUE|0+=$"   # todo: NEW TRANSLATION

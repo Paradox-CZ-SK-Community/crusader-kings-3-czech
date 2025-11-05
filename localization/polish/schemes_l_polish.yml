@@ -53,14 +53,14 @@
  SCHEME_AGENT_DE_JURE_TITLE: "@titles_icon! Udělte jim [county|E], který vlastníte a který jim [de_jure|E] náleží"
  SCHEME_AGENT_GOLD: "[gold_i] Úplatek"
  SCHEME_AGENT_GOLD_SIGNIFICANT: "[gold_i] #EMP Štědrý#! Úplatek"
- SCHEME_AGENT_GOLD_SIGNIFICANT_VALID: "Zaplaťte [recipient.GetShortUINameNoTooltip] [gold_i][SCOPE.ScriptValue('greater_bribe_value')|V0]"
- SCHEME_AGENT_GOLD_VALID: "Zaplaťte [recipient.GetShortUINameNoTooltip] [gold_i][SCOPE.ScriptValue('bribe_value')|V0]"
+ SCHEME_AGENT_GOLD_SIGNIFICANT_VALID: "Zaplaťte [gold_i][SCOPE.ScriptValue('greater_bribe_value')|V0] [recipient.GetShortUINameNoTooltip]" # todo: Zaplaťte [gold_i][SCOPE.ScriptValue('greater_bribe_value')|V0] příjemci [recipient.GetShortUINameNoTooltip]
+ SCHEME_AGENT_GOLD_VALID: "Zaplaťte [gold_i][SCOPE.ScriptValue('bribe_value')|V0] [recipient.GetShortUINameNoTooltip]" # todo: Zaplaťte [gold_i][SCOPE.ScriptValue('bribe_value')|V0] příjemci [recipient.GetShortUINameNoTooltip]
  SCHEME_AGENT_HERD: "[herd_i] Nabídněte část svého [herd|E]"
- SCHEME_AGENT_HERD_VALID: "Předejte [recipient.GetShortUINameNoTooltip] [herd_i][SCOPE.ScriptValue('herd_bribe_value')|V0]"
+ SCHEME_AGENT_HERD_VALID: "Předejte [herd_i][SCOPE.ScriptValue('herd_bribe_value')|V0] [recipient.GetShortUINameNoTooltip]" # todo: Předejte [herd_i][SCOPE.ScriptValue('herd_bribe_value')|V0] příjemci [recipient.GetShortUINameNoTooltip]
  SCHEME_AGENT_HOOK: "[hook_i] Nabídněte [hook|E] na sebe"
  SCHEME_AGENT_HOOK_STRONG: "[strong_hook_i] Nabídněte [strong_hook|E] na sebe"
  SCHEME_AGENT_INFLUENCE: "[influence_i] Nabídněte své [influential|E] kontakty"
- SCHEME_AGENT_INFLUENCE_VALID: "Předejte [recipient.GetShortUINameNoTooltip] [influence_i][SCOPE.ScriptValue('influence_bribe_value')|V0]"
+ SCHEME_AGENT_INFLUENCE_VALID: "Předejte [influence_i][SCOPE.ScriptValue('influence_bribe_value')|V0] [recipient.GetShortUINameNoTooltip]" # todo: Předejte [influence_i][SCOPE.ScriptValue('influence_bribe_value')|V0] příjemci [recipient.GetShortUINameNoTooltip]
  SCHEME_AGENT_LEARNING: "Agent [learning|E]: $VALUE|+=0$"
  SCHEME_AGENT_OPPORTUNITIES_T1: "[intrigue_i] Využijte své [scheme_opportunities|E] #WEAK (x[EmptyScope.ScriptValue('invite_agent_opportunities_t1_value')])#!"
  SCHEME_AGENT_OPPORTUNITIES_T2: "[intrigue_i] Využijte své [scheme_opportunities|E] #WEAK (x[EmptyScope.ScriptValue('invite_agent_opportunities_t2_value')])#!"
@@ -68,7 +68,7 @@
  SCHEME_AGENT_PIETY: "[piety_i] Využijte svou [pious|E] pověst"
  SCHEME_AGENT_PIETY_VALID: "Utratit [piety_i][SCOPE.ScriptValue('piety_bribe_value')|V0] k přesvědčení [recipient.GetShortUINameNoTooltip]"
  SCHEME_AGENT_PRESTIGE: "[prestige_i] Nabídněte své [prestigious|E] dobré slovo"
- SCHEME_AGENT_PRESTIGE_VALID: "Předejte [recipient.GetShortUINameNoTooltip] [prestige_i][SCOPE.ScriptValue('prestige_bribe_value')|V0]"
+ SCHEME_AGENT_PRESTIGE_VALID: "Předejte [prestige_i][SCOPE.ScriptValue('prestige_bribe_value')|V0] [recipient.GetShortUINameNoTooltip]" # todo: Předejte [prestige_i][SCOPE.ScriptValue('prestige_bribe_value')|V0] příjemci [recipient.GetShortUINameNoTooltip]
  SCHEME_APA_POSITIVE_SUCCESS_CHANCE_ADD: "@scheme_success_icon! @change_up_good_1!"
  SCHEME_FAILED_HEADER: "Intrika selhala"
  SCHEME_FULL_ACTION_NAME: "[SCHEME.GetActionName] [SCHEME.GetTarget.GetNameNoTooltip]"
@@ -1222,7 +1222,7 @@
  scheme_critical_moments.0002.e.tt.some_opportunities: "$scheme_critical_moments.0001.h.tt.some_opportunities$"
  scheme_critical_moments.0002.e.tt.zero_opportunities: "$scheme_critical_moments.0001.h.tt.zero_opportunities$"
  scheme_critical_moments.0002.e: "$scheme_critical_moments.0001.h$"
- scheme_critical_moments.0002.t: "$scheme_critical_moments.0001.t$"
+ scheme_critical_moments.0002.t: "$scheme_critical_moments.0001.t.scheme$" # todo: $scheme_critical_moments.0001.t.scheme$
  scheme_critical_moments.0011.a.tt: "@warning_icon! #X Už nebudete dostávat upozornění, když tato [scheme|E] dosáhne maximálního počtu [scheme_opportunity_opportunities|E]#!"
  scheme_critical_moments.0011.a: "Budu jednat, až uznám za vhodné, ne dříve!"
  scheme_critical_moments.0011.b.tt: "Pokud tato [scheme|E] dosáhne znovu maximálního počtu [scheme_opportunity_opportunities|E] za rok, budete znovu upozorněni"
@@ -1278,7 +1278,7 @@
  scheme_odds.learning.target: "[target.GetFirstNamePossessive] [learning|E]"
  scheme_odds.martial.owner: "Vaše [martial|E]"
  scheme_odds.martial.target: "[target.GetFirstNamePossessive] [martial|E]"
- scheme_odds.misc_modifiers: "[scheme|E] $game_concept_modifiers$
+ scheme_odds.misc_modifiers: "[scheme|E] $game_concept_modifiers$"
  scheme_odds.owner.dynasty_legacy_kinslaying_bonus_from_fp3_khvarenah_legacy_2: "[GetDynastyPerk('fp3_khvarenah_legacy_2').GetName]"
  scheme_odds.owner.is_target_host_spymaster: "Jste [target.GetFirstNamePossessive] hosta [spymaster|E]"
  scheme_odds.owner.is_target_liege_spymaster: "Jste [target.GetFirstNamePossessive] [liege_possessive|E] [spymaster|E]"
@@ -1302,7 +1302,7 @@
  scheme_odds.target.is_pool_char: "[target.GetFirstName] je tulák"
  scheme_odds.target.opinion_of_owner: "[target.GetFirstNamePossessive] [opinion|E] o vás"
  scheme_odds.target.spies_behind_every_corner_modifier: "[target.GetFirstNamePossessive] [GetModifier('spies_behind_everycorner_modifier').GetNameWithTooltip] [modifier|E]"
- scheme_odds.target.tier: "[target.GetFirstNamePossessive] [title|E] [title_tier|E]"
+ scheme_odds.target.tier: "[target.GetName] [title|E] [title_tier|E]" # todo: [target.GetName] [title|E] [title_tier|E]
  scheme_odds.trait.owner.vengeful: "Jste [GetTrait('vengeful').GetName( GetPlayer )]"
  scheme_odds.trait.target.paranoid: "[target.GetFirstName] je [GetTrait('paranoid').GetName( GetPlayer )]"
  scheme_odds_prediction_level_abysmal: "#scheme_odds_abysmal @aptitude:1:inherit_color!Velmi těžké#!"
@@ -1480,3 +1480,61 @@
  title_test: "Test intriky na tituly"
  title_test_action: "Pohrávání si s"
  title_test_desc: "Snažím se zjistit, jestli můžeme dělat intriky proti titulům jako [SCHEME.GetTargetTitle.GetName]"
+ SCHEME_AGENT_TREASURY: "[treasury_i] [treasury|E] Převod"   # todo: NEW TRANSLATION
+ not_two_overrides: "Nemůžete použít dvě možnosti automatického přijetí"   # todo: NEW TRANSLATION
+ SCHEME_AGENT_MANDALA_TRICKSTER: "Využijte svůj [aspect_of_trickery|E]"   # todo: NEW TRANSLATION
+ scheme_cancelled: "[owner.GetShortUIName|U] zanechal spiknutí"   # todo: NEW TRANSLATION
+ SCHEME_AGENT_TREASURY_VALID: "Převést [treasury_i][SCOPE.ScriptValue('treasury_bribe_value')|V0] na [recipient.GetShortUINameNoTooltip]"   # todo: NEW TRANSLATION
+ SCHEME_AGENT_MANDALA_TRICKSTER_VALID: "Utratit [piety_i][SCOPE.ScriptValue('trickster_mandala_force_agent_bribe_value')|V0] k přesvědčení [recipient.GetShortUINameNoTooltip]"   # todo: NEW TRANSLATION
+ celestial_siphon_treasury_interaction.tt.agent_focus_balance: "$schemes.tt.agent_packages.list_boilerplate$\n$EFFECT_LIST_BULLET$[success_chance_max_i] [GetAgentSlotType( 'agent_muscle' ).GetName]\n$EFFECT_LIST_BULLET$[success_chance_max_i] [GetAgentSlotType( 'agent_muscle' ).GetName]\n$EFFECT_LIST_BULLET$[scheme_speed_i] [GetAgentSlotType( 'agent_infiltrator' ).GetName]\n$EFFECT_LIST_BULLET$[scheme_speed_i] [GetAgentSlotType( 'agent_planner' ).GetName]\n$EFFECT_LIST_BULLET$[secrecy_i] [GetAgentSlotType( 'agent_lookout' ).GetName]"   # todo: NEW TRANSLATION
+ celestial_siphon_treasury_interaction.tt.agent_focus_success: "$schemes.tt.agent_packages.list_boilerplate$\n$EFFECT_LIST_BULLET$[success_chance_max_i] [GetAgentSlotType( 'agent_muscle' ).GetName]\n$EFFECT_LIST_BULLET$[success_chance_max_i] [GetAgentSlotType( 'agent_muscle' ).GetName]\n$EFFECT_LIST_BULLET$[success_chance_max_i] [GetAgentSlotType( 'agent_diplomat' ).GetName]\n$EFFECT_LIST_BULLET$[scheme_speed_i] [GetAgentSlotType( 'agent_infiltrator' ).GetName]\n$EFFECT_LIST_BULLET$[secrecy_i] [GetAgentSlotType( 'agent_lookout' ).GetName]"   # todo: NEW TRANSLATION
+ celestial_siphon_treasury_interaction.tt.agent_focus_speed: "$schemes.tt.agent_packages.list_boilerplate$\n$EFFECT_LIST_BULLET$[scheme_speed_i] [GetAgentSlotType( 'agent_infiltrator' ).GetName]\n$EFFECT_LIST_BULLET$[scheme_speed_i] [GetAgentSlotType( 'agent_footpad' ).GetName]\n$EFFECT_LIST_BULLET$[scheme_speed_i] [GetAgentSlotType( 'agent_planner' ).GetName]\n$EFFECT_LIST_BULLET$[success_chance_max_i] [GetAgentSlotType( 'agent_muscle' ).GetName]\n$EFFECT_LIST_BULLET$[secrecy_i] [GetAgentSlotType( 'agent_lookout' ).GetName]"   # todo: NEW TRANSLATION
+ celestial_siphon_treasury_interaction.tt.agent_focus_secrecy: "$schemes.tt.agent_packages.list_boilerplate$\n$EFFECT_LIST_BULLET$[secrecy_i] [GetAgentSlotType( 'agent_lookout' ).GetName]\n$EFFECT_LIST_BULLET$[secrecy_i] [GetAgentSlotType( 'agent_decoy' ).GetName]\n$EFFECT_LIST_BULLET$[secrecy_i] [GetAgentSlotType( 'agent_decoy' ).GetName]\n$EFFECT_LIST_BULLET$[success_chance_max_i] [GetAgentSlotType( 'agent_muscle' ).GetName]\n$EFFECT_LIST_BULLET$[scheme_speed_i] [GetAgentSlotType( 'agent_infiltrator' ).GetName]"   # todo: NEW TRANSLATION
+ scheme_odds.target.holder.spies_behind_every_corner_modifier: "[target.GetHolder.GetFirstNamePossessive] [GetModifier('spies_behind_every_corner_modifier').GetNameWithTooltip] [modifier|E]"   # todo: NEW TRANSLATION
+ scheme.owner.spies_behind_every_corner_modifier.value_desc: "$scheme_odds.owner.spies_behind_every_corner_modifier$: $VALUE|+=0$"   # todo: NEW TRANSLATION
+ scheme.target.spies_behind_every_corner_modifier.value_desc: "[target.GetFirstNamePossessive] [GetModifier('spies_behind_every_corner_modifier').GetNameWithTooltip] [modifier|E]: $VALUE|+=0$"   # todo: NEW TRANSLATION
+ scheme.target.holder.spies_behind_every_corner_modifier.value_desc: "[target.GetHolder.GetFirstNamePossessive] [GetModifier('spies_behind_every_corner_modifier').GetNameWithTooltip] [modifier|E]: $VALUE|+=0$"   # todo: NEW TRANSLATION
+ scheme_odds.intrigue.target_holder: "[target.GetHolder.GetFirstNamePossessive] [intrigue|E]"   # todo: NEW TRANSLATION
+ scheme_odds.creation_aspect: "Váš [aspect|E] [skill|E] #weak ([stewardship|E])#!"   # todo: NEW TRANSLATION
+ scheme_odds.serenity_aspect: "Váš [aspect|E] [skill|E] #weak ([diplomacy|E])#!"   # todo: NEW TRANSLATION
+ scheme_odds.destruction_aspect: "Váš [aspect|E] [skill|E] #weak ([martial|E])#!"   # todo: NEW TRANSLATION
+ scheme_odds.trickery_aspect: "Váš [aspect|E] [skill|E] #weak ([intrigue|E])#!"   # todo: NEW TRANSLATION
+ scheme_odds.target.creation_aspect: "[target.GetFirstName|U] a vy sdílíte [aspect|E]"   # todo: NEW TRANSLATION
+ scheme_odds.target.serenity_aspect: "[target.GetFirstName|U] a vy sdílíte [aspect|E]"   # todo: NEW TRANSLATION
+ scheme_odds.target.destruction_aspect: "[target.GetFirstName|U] a vy sdílíte [aspect|E]"   # todo: NEW TRANSLATION
+ scheme_odds.target.trickery_aspect: "[target.GetFirstName|U] a vy sdílíte [aspect|E]"   # todo: NEW TRANSLATION
+ scheme_odds.target.suzerain.creation_aspect: "[target.GetFirstName|U] sdílí [aspect|E] s [target.GetHerHis] [suzerain|E]"   # todo: NEW TRANSLATION
+ scheme_odds.target.suzerain.serenity_aspect: "[target.GetFirstName|U] sdílí [aspect|E] s [target.GetHerHis] [suzerain|E]"   # todo: NEW TRANSLATION
+ scheme_odds.target.suzerain.destruction_aspect: "[target.GetFirstName|U] sdílí [aspect|E] s [target.GetHerHis] [suzerain|E]"   # todo: NEW TRANSLATION
+ scheme_odds.target.suzerain.trickery_aspect: "[target.GetFirstName|U] sdílí [aspect|E] s [target.GetHerHis] [suzerain|E]"   # todo: NEW TRANSLATION
+ scheme_odds.dislikes_suzerain: "[target.GetFirstName|U] nesnáší [target.GetHerHis] [suzerain|E]"   # todo: NEW TRANSLATION
+ scheme_odds.no_suzerain: "[target.GetFirstName|U] nemá [suzerain|E]"   # todo: NEW TRANSLATION
+ scheme_odds.disbelieved_mandala: "Jste [GetModifier( 'disbelieved_mandala_modifier' ).GetNameWithTooltip|L]"   # todo: NEW TRANSLATION
+ scheme_odds.realm_size: "[target.GetShortUINamePossessive|U] [realm_size|E]"   # todo: NEW TRANSLATION
+ scheme_odds.target_suzerain_has_greater_radiance: "[suzerain|E] [target.GetSuzerain.GetShortUINamePossessive] [radiance|E]"   # todo: NEW TRANSLATION
+ scheme_odds.not_same_mandala_aspect: "Máte odlišné [aspects|E]"   # todo: NEW TRANSLATION
+ SCHEME_TARGET_MARTIAL: "[target.GetShortUINamePossessive|U] [martial|E]: $VALUE|+=0$"   # todo: NEW TRANSLATION
+ SCHEME_TARGET_IMPATIENT: "[target.GetShortUIName|U] je [GetTrait('lazy').GetName( target )]: $VALUE|+0=$"   # todo: NEW TRANSLATION
+ SCHEME_OWNER_STUBBORN: "Jste [GetTrait('stubborn').GetName( owner )]: $VALUE|+0=$"   # todo: NEW TRANSLATION
+ SCHEME_OWNER_AMBITIOUS: "Jste [GetTrait('ambitious').GetName( owner )]: $VALUE|+0=$"   # todo: NEW TRANSLATION
+ SCHEME_OWNER_IMPATIENT: "Jste [GetTrait('impatient').GetName( owner )]: $VALUE|+0=$"   # todo: NEW TRANSLATION
+ SCHEME_YOUR_ASPECT_SKILL_CREATION: "Váš [aspect|E] [skill|E] #weak ([stewardship|E])#!: $VALUE|+=0$"   # todo: NEW TRANSLATION
+ SCHEME_YOUR_ASPECT_SKILL_SERENITY: "Váš [aspect|E] [skill|E] #weak ([diplomacy|E])#!: $VALUE|+=0$"   # todo: NEW TRANSLATION
+ SCHEME_YOUR_ASPECT_SKILL_DESTRUCTION: "Váš [aspect|E] [skill|E] #weak ([martial|E])#!: $VALUE|+=0$"   # todo: NEW TRANSLATION
+ SCHEME_YOUR_ASPECT_SKILL_TRICKERY: "Váš [aspect|E] [skill|E] #weak ([intrigue|E])#!: $VALUE|+=0$"   # todo: NEW TRANSLATION
+ SCHEME_TARGET_ASPECT_SKILL_CREATION: "[target.GetFirstName|U] a vy sdílíte [aspect|E] #weak (na základě vašeho [stewardship|E])#!: $VALUE|+=0$"   # todo: NEW TRANSLATION
+ SCHEME_TARGET_ASPECT_SKILL_SERENITY: "[target.GetFirstName|U] a vy sdílíte [aspect|E] #weak (na základě vašeho [diplomacy|E])#!: $VALUE|+=0$"   # todo: NEW TRANSLATION
+ SCHEME_TARGET_ASPECT_SKILL_DESTRUCTION: "[target.GetFirstName|U] a vy sdílíte [aspect|E] #weak (na základě vašeho [martial|E])#!: $VALUE|+=0$"   # todo: NEW TRANSLATION
+ SCHEME_TARGET_ASPECT_SKILL_TRICKERY: "[target.GetFirstName|U] a vy sdílíte [aspect|E] #weak (na základě vašeho [intrigue|E])#!: $VALUE|+=0$"   # todo: NEW TRANSLATION
+ SCHEME_TARGET_HAS_NO_SUZERAIN: "[target.GetFirstName|U] nemá [suzerain|E]: $VALUE|+=0$"   # todo: NEW TRANSLATION
+ SCHEME_TARGET_REALM_SIZE: "[target.GetShortUINamePossessive|U] [realm_size|E]: $VALUE|+=0$"   # todo: NEW TRANSLATION
+ SCHEME_TARGET_NOT_SAME_ASPECT: "[target.GetFirstName|U] nemá stejný [aspect|E] jako vy: $VALUE|+=0$"   # todo: NEW TRANSLATION
+ SCHEME_SUZERAIN_ASPECT_SKILL_CREATION: "[target.GetFirstName|U] má stejný [aspect|E] jako [target.GetHerHis] [suzerain|E] #weak (na základě [target.GetSuzerain.GetShortUINamePossessive|U] [stewardship|E])#!: $VALUE|+=0$"   # todo: NEW TRANSLATION
+ SCHEME_SUZERAIN_ASPECT_SKILL_SERENITY: "[target.GetFirstName|U] má stejný [aspect|E] jako [target.GetHerHis] [suzerain|E] #weak (na základě [target.GetSuzerain.GetShortUINamePossessive|U] [diplomacy|E])#!: $VALUE|+=0$"   # todo: NEW TRANSLATION
+ SCHEME_SUZERAIN_ASPECT_SKILL_DESTRUCTION: "[target.GetFirstName|U] má stejný [aspect|E] jako [target.GetHerHis] [suzerain|E] #weak (na základě [target.GetSuzerain.GetShortUINamePossessive|U] [martial|E])#!: $VALUE|+=0$"   # todo: NEW TRANSLATION
+ SCHEME_SUZERAIN_ASPECT_SKILL_TRICKERY: "[target.GetFirstName|U] má stejný [aspect|E] jako [target.GetHerHis] [suzerain|E] #weak (na základě [target.GetSuzerain.GetShortUINamePossessive|U] [intrigue|E])#!: $VALUE|+=0$"   # todo: NEW TRANSLATION
+ SUZERAIN_HAS_GREATER_RADIANCE: "[suzerain|E] [target.GetSuzerain.GetShortUIName] má větší [radiance|E]: $VALUE|+=0$"   # todo: NEW TRANSLATION
+ coup_ceremonial_liege_interaction.tt.agent_focus_balance: "$schemes.tt.agent_packages.list_boilerplate$\n$EFFECT_LIST_BULLET$[success_chance_max_i] [GetAgentSlotType( 'agent_muscle' ).GetName]\n$EFFECT_LIST_BULLET$[success_chance_max_i] [GetAgentSlotType( 'agent_muscle' ).GetName]\n$EFFECT_LIST_BULLET$[scheme_speed_i] [GetAgentSlotType( 'agent_infiltrator' ).GetName]\n$EFFECT_LIST_BULLET$[scheme_speed_i] [GetAgentSlotType( 'agent_planner' ).GetName]\n$EFFECT_LIST_BULLET$[secrecy_i] [GetAgentSlotType( 'agent_lookout' ).GetName]"   # todo: NEW TRANSLATION
+ coup_ceremonial_liege_interaction.tt.agent_focus_success: "$schemes.tt.agent_packages.list_boilerplate$\n$EFFECT_LIST_BULLET$[success_chance_max_i] [GetAgentSlotType( 'agent_muscle' ).GetName]\n$EFFECT_LIST_BULLET$[success_chance_max_i] [GetAgentSlotType( 'agent_muscle' ).GetName]\n$EFFECT_LIST_BULLET$[success_chance_max_i] [GetAgentSlotType( 'agent_diplomat' ).GetName]\n$EFFECT_LIST_BULLET$[scheme_speed_i] [GetAgentSlotType( 'agent_infiltrator' ).GetName]\n$EFFECT_LIST_BULLET$[secrecy_i] [GetAgentSlotType( 'agent_lookout' ).GetName]"   # todo: NEW TRANSLATION
+ coup_ceremonial_liege_interaction.tt.agent_focus_speed: "$schemes.tt.agent_packages.list_boilerplate$\n$EFFECT_LIST_BULLET$[scheme_speed_i] [GetAgentSlotType( 'agent_infiltrator' ).GetName]\n$EFFECT_LIST_BULLET$[scheme_speed_i] [GetAgentSlotType( 'agent_footpad' ).GetName]\n$EFFECT_LIST_BULLET$[scheme_speed_i] [GetAgentSlotType( 'agent_planner' ).GetName]\n$EFFECT_LIST_BULLET$[success_chance_max_i] [GetAgentSlotType( 'agent_muscle' ).GetName]\n$EFFECT_LIST_BULLET$[secrecy_i] [GetAgentSlotType( 'agent_lookout' ).GetName]"   # todo: NEW TRANSLATION
+ coup_ceremonial_liege_interaction.tt.agent_focus_secrecy: "$schemes.tt.agent_packages.list_boilerplate$\n$EFFECT_LIST_BULLET$[secrecy_i] [GetAgentSlotType( 'agent_lookout' ).GetName]\n$EFFECT_LIST_BULLET$[secrecy_i] [GetAgentSlotType( 'agent_decoy' ).GetName]\n$EFFECT_LIST_BULLET$[secrecy_i] [GetAgentSlotType( 'agent_decoy' ).GetName]\n$EFFECT_LIST_BULLET$[success_chance_max_i] [GetAgentSlotType( 'agent_muscle' ).GetName]\n$EFFECT_LIST_BULLET$[scheme_speed_i] [GetAgentSlotType( 'agent_infiltrator' ).GetName]"   # todo: NEW TRANSLATION

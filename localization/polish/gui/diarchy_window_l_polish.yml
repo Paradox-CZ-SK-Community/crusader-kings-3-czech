@@ -24,7 +24,7 @@
  DIARCHY_WINDOW_MONTHLY_SWING_GENERIC: "$MONTHLY|-2$"
  DIARCHY_WINDOW_MONTHLY_SWING_PLAYER_DIARCH: "$MONTHLY|+2$"
  DIARCHY_WINDOW_MONTHLY_SWING_TEXT: "Aktuální hodnota posunu: $CURRENT|^V$\n\nPříští měsíc se [Concept('scales_of_power','$game_concept_scales_of_power$')|El] posunou o $MONTHLY_TEXT$, dokud se nevyrovnají na $BALANCE|V^$ ze #V 100#!"
- DIARCHY_WINDOW_OPEN_TOOLTIP: "#T Otevřít [Concept('diarchy','$game_concept_diarchy$')|E]#!\n[SelectLocalization(GetPlayer.GetDiarchy.IsValid,'DIARCHY_WINDOW_OPEN_TOOLTIP_YOUR_DIARCHY','DIARCHY_WINDOW_OPEN_TOOLTIP_LIEGE_DIARCHY')]"
+ DIARCHY_WINDOW_OPEN_TOOLTIP: "#T [diarchy|E]#!\n[SelectLocalization(GetPlayer.GetDiarchy.IsValid,'DIARCHY_WINDOW_OPEN_TOOLTIP_YOUR_DIARCHY','DIARCHY_WINDOW_OPEN_TOOLTIP_LIEGE_DIARCHY')]\n\n$CLICK_TO_VIEW$" # todo: #T Otevřít [Concept('diarchy','$game_concept_diarchy$')|E]#!\n[SelectLocalization(GetPlayer.GetDiarchy.IsValid,'DIARCHY_WINDOW_OPEN_TOOLTIP_YOUR_DIARCHY','DIARCHY_WINDOW_OPEN_TOOLTIP_LIEGE_DIARCHY')]
  DIARCHY_WINDOW_OPEN_TOOLTIP_LIEGE_DIARCHY: "[GetPlayer.GetLiege.GetDiarchyTypeName]\n[Concept('scales_of_power','$game_concept_scales_of_power$')|E] Úroveň: [GetPlayer.GetLiege.GetDiarchy.GetPowerLevel|V]"
  DIARCHY_WINDOW_OPEN_TOOLTIP_YOUR_DIARCHY: "[GetPlayer.GetDiarchyTypeName]\n[Concept('scales_of_power','$game_concept_scales_of_power$')|E] Úroveň: [GetPlayer.GetDiarchy.GetPowerLevel|V]"
  DIARCHY_WINDOW_PARAMETER_ITEM: "• $TEXT$"
@@ -67,3 +67,4 @@
  diarch.succession_offence.succession_score: "\n\n@warning_icon! #WEAK $diarch.succession_offence.succession_score.guts$#!"
  diarch.succession_offence.unrelated_lowborn.guts: "Jmenování nespřízněného [Concept('lowborn','neurozeného')|E] pobouří [Select_CString(ROOT.Char.GetLiege.IsLocalPlayer, 'vaše', ROOT.Char.GetLiege.GetHerHis )] ([ROOT.Char.GetLiege.MakeScope.ScriptValue('number_of_courtly_vassals')|V0]) [GetVassalStance( 'courtly' ).GetTextIcon][GetVassalStance( 'courtly' ).GetName] [Concept('vassals','vazaly')|E], což je přiměje ztratit [EmptyScope.ScriptValue('courtly_offence_scandalise_value')|N0] [Concept('opinion','$game_concept_opinion$')|El] na [Select_CString(ROOT.Char.GetLiege.IsLocalPlayer, 'vás', ROOT.Char.GetLiege.GetHerHim )]"
  diarch.succession_offence.unrelated_lowborn: "\n\n@warning_icon! #WEAK $diarch.succession_offence.unrelated_lowborn.guts$#!"
+ DIARCHY_WINDOW_NO_SUCCESSION: "#weak [Character.GetDiarchyTypeName] nepoužívá [diarch_succession|E].#!"  # todo: NEW TRANSLATION

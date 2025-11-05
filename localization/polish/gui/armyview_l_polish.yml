@@ -131,7 +131,7 @@
  START_RAIDING: "#T Začít plenit#!\nTato jednotka nyní bude moci provádět [Concept('raid','nájezdy')|E] mimo vaše území"
  END_RAIDING: "#T Přestat být nájezdní armádou#!\nTato [Concept('army','$game_concept_army$')|El] přestane být nájezdní armádou a opět se může doplnit"
  START_RAID: "#T Začít nájezd#!"
- RAID_ACTION_INFO: "Potrvá přibližně [PROVINCE.GetLootTime( ARMY.Self )|V] dní.\nVyloupí [gold_i|E][PROVINCE.GetRaidLoot|0V]."
+ RAID_ACTION_INFO: "Potrvá přibližně [PROVINCE.GetLootTime( ARMY.Self )|V] dní.\nVyloupí [gold_i|E][PROVINCE.GetLoot|0V]." # todo: Potrvá přibližně [PROVINCE.GetLootTime( ARMY.Self )|V] dní.\nVyloupí [gold_i|E][PROVINCE.GetRaidLoot|0V].
  START_RAID_ALREADY_RAIDING: "@warning_icon! #X Toto [Concept('holding','$game_concept_holding$')|El] je již [Concept('raiding','přepadáváno')|E]#!"
  START_RAID_NOT_A_RAID_ARMY: "@warning_icon! #X Není [Concept('raid','nájezdnícká')|E] armáda#!"
  START_RAID_LOOT_CAP: "@warning_icon! #X Nelze nést více [Concept('raid','nájezdnícké')|E] kořisti#!"
@@ -149,7 +149,7 @@
  START_RAID_TOO_FEW_MEN: "@warning_icon! #X [Concept('raid','$game_concept_raid$')|E] armáda je příliš malá na nájezdy (potřebujete alespoň $VALUE|0$ mužů)#!"
  START_RAID_RECENTLY_LOOTED: "@warning_icon! #X Toto [Concept('holding','$game_concept_holding$')|El] bylo nedávno vyrabováno. Znovu bude možné vyrabovat [DATE.GetString|V]#!"
  RAID_PROVINCE_TOOLTIP_RECENTLY_LOOTED: "Toto [Concept('holding','$game_concept_holding$')|El] bylo nedávno vyrabováno. Znovu bude možné vyrabovat [DATE.GetString|V]"
- RAID_PROVINCE_TOOLTIP_LOOT: "Výnos z nájezdu [Concept('raid_loot','$game_concept_raid_loot$')|El]: [gold_i]$VALUE|0V$"
+ RAID_PROVINCE_TOOLTIP_LOOT: "Kořist nájezdu [loot|E]: [gold_i]$VALUE|0V$" # todo: Výnos z nájezdu [Concept('raid_loot','$game_concept_raid_loot$')|El]: [gold_i]$VALUE|0V$
  START_RAID_ALREADY_BEING_LOOTED: "@warning_icon! #X Toto [Concept('holding','$game_concept_holding$')|El] je již vyrabováno [ARMY.GetName]#!"
  START_RAID_UNDER_SIEGE: "@warning_icon! #X Nelze vykonat [Concept('raid','$game_concept_raid$')|El] na [Concept('holding','$game_concept_holding$')|El], který je pod [Concept('siege','obléhánim')|E]#!"
  TOGGLE_RAID_IN_COMBAT: "@warning_icon! #X Nelze přepínat [Concept('raiding','$game_concept_raiding$')|El] během boje#!"
@@ -157,7 +157,7 @@
  TOGGLE_RAID_ONLY_OWN_TERRITORY: "@warning_icon! #X Nelze přepínat [Concept('raiding','$game_concept_raiding$')|El] mimo vlastní území#!"
  TOGGLE_RAID_CANNOT_RAID: "@warning_icon! #X Nelze [Concept('raid','$game_concept_raid$')|El]#!"
  TOGGLE_RAID_MERCENARY: "@warning_icon! #X Žoldnéři nemohou [Concept('raid','$game_concept_raid$')|El]#!"
- ARMY_RAID_LOOT_TOOLTIP: "#T Kořist z nájezdů#!\nNese [raid_loot_i][Army.GetRaidLoot|0V].\nMaximálně může nést [raid_loot_i][Army.GetLootCap|0V] kvůli velikosti armády."
+ ARMY_RAID_LOOT_TOOLTIP: "#T Kořist nájezdu#!\nTato [army|E] nese [loot_i][Army.GetRaidLoot|0V] [loot|E].\nVzhledem k velikosti armády může nést maximálně [loot_i][Army.GetLootCap|0V] [loot|E]." # todo: #T Kořist z nájezdů#!\nNese [raid_loot_i][Army.GetRaidLoot|0V].\nMaximálně může nést [raid_loot_i][Army.GetLootCap|0V] kvůli velikosti armády.
  CHANGE_COMMANDER_IN_RETREAT: "@warning_icon! #X Armáda ustupuje#!"
  TOGGLE_LOOTER_STANCE: "#T [Select_CString( Army.HasLooterStance, 'Vždy', 'Nikdy' )] vykonávat nájezdy#!\n[SelectLocalization( Army.HasLooterStance, 'TOGGLE_LOOTER_STANCE_DESC_ON', 'TOGGLE_LOOTER_STANCE_DESC_OFF' )]"
  TOGGLE_LOOTER_STANCE_DESC_ON: "Tato [Concept('army','$game_concept_army$')|El] bude automaticky vykonávat [Concept('raid','$game_concept_raids$')|El] každé vhodné [Concept('holding','državy')|E], ve kterém se zastaví"
@@ -207,3 +207,26 @@
  RAID_OPEN_INTENT_WINDOW_DISABLED: "$RAID_SINGLE_INTENT_TOOLTIP$\n\n#X Nelze změnit [Concept('raid_intent','úmysl nájezdu')|E] během aktivních událostí!#!"
  RAID_CHANGE_INTENT_TT: "#T Změnit $game_concept_raid_intent$#!"
  INVALID_RAID_INTENT: "@warning_icon! #X Neplatný [Concept('raid_intent','úmysl nájezdu')|E]#!"
+ START_BARTERING: "#T Začít směňování#!\nTato jednotka nyní bude moci provádět akci [barter|E] mimo vaše [realm|E]"  # todo: NEW TRANSLATION
+ END_BARTERING: "#T Ukončit směňování#!\nTato [army|E] přestane být armádou provádějící směny a bude se moci znovu doplnit"  # todo: NEW TRANSLATION
+ START_BARTER: "#T Zahájit směnu#!"  # todo: NEW TRANSLATION
+ BARTER_ACTION_INFO: "Směňování potrvá přibližně [PROVINCE.GetLootTime( ARMY.Self )|V] dní.\nArmáda obdrží [loot_i|E][PROVINCE.GetLoot|0V]."  # todo: NEW TRANSLATION
+ START_BARTER_INSUFFICIENT_BARTER_GOODS: "@warning_icon! #X Nedostatek [barter_goods|E] pro zahájení [bartering|E]#!"  # todo: NEW TRANSLATION
+ START_BARTER_ALREADY_BARTERING: "@warning_icon! #X Už [bartering|E] s touto držbou#!"  # todo: NEW TRANSLATION
+ START_BARTER_NOT_A_BARTER_ARMY: "@warning_icon! #X Není to [barter|E] armáda#!"  # todo: NEW TRANSLATION
+ START_BARTER_LOOT_CAP: "@warning_icon! #X Nelze nést více [barter|E] kořisti#!"  # todo: NEW TRANSLATION
+ START_BARTER_NOT_OWN_REALM: "@warning_icon! #X Nelze [barter|E] ve vašem vlastním [realm|E]#!"  # todo: NEW TRANSLATION
+ START_BARTER_NO_HOLDING: "@warning_icon! #X Tady není žádné [holding|E], se kterým by šlo [barter|E]#!"  # todo: NEW TRANSLATION
+ START_BARTER_MOVING: "@warning_icon! #X Nelze [barter|E] při pohybu#!"  # todo: NEW TRANSLATION
+ START_BARTER_IN_COMBAT: "@warning_icon! #X Nelze [barter|E] během boje#!"  # todo: NEW TRANSLATION
+ START_BARTER_RECENTLY_LOOTED: "@warning_icon! #X Držba byla nedávno vyloupena nebo s ní bylo směňováno. Bude možné s ní znovu [barter|E] dne [DATE.GetString|V]#!"  # todo: NEW TRANSLATION
+ BARTER_PROVINCE_TOOLTIP_RECENTLY_LOOTED: "Držba byla nedávno vyloupena nebo s ní bylo směňováno. Bude možné s ní znovu [barter|E] dne [DATE.GetString|V]"  # todo: NEW TRANSLATION
+ BARTER_PROVINCE_TOOLTIP_LOOT: "[loot|E]: [loot_i]$VALUE|0V$"  # todo: NEW TRANSLATION
+ START_BARTER_ALREADY_BEING_LOOTED: "@warning_icon! #X Držba je již vyloupena armádou [ARMY.GetName]#!"  # todo: NEW TRANSLATION
+ START_BARTER_UNDER_SIEGE: "@warning_icon! #X Nelze [barter|E] držbu, která je pod [siege|E]#!"  # todo: NEW TRANSLATION
+ TOGGLE_BARTER_IN_COMBAT: "@warning_icon! #X Nelze přepínat [bartering|E] během boje#!"  # todo: NEW TRANSLATION
+ TOGGLE_BARTER_RETREATING: "@warning_icon! #X Nelze přepínat [bartering|E] při ústupu#!"  # todo: NEW TRANSLATION
+ TOGGLE_BARTER_ONLY_OWN_TERRITORY: "@warning_icon! #X Nelze přepínat [bartering|E] mimo vlastní území#!"  # todo: NEW TRANSLATION
+ TOGGLE_BARTER_CANNOT_BARTER: "@warning_icon! #X Nelze provést [barter|E]#!"  # todo: NEW TRANSLATION
+ TOGGLE_BARTER_MERCENARY: "@warning_icon! #X Žoldnéři nemohou [barter|E]#!"  # todo: NEW TRANSLATION
+ ARMY_BARTER_LOOT_TOOLTIP: "#T Kořist#!\nTato [army|E] nese [loot_i][Army.GetBarterLoot|0V] [loot|E].\nMůže nést maximálně [loot_i][Army.GetLootCap|0V] [loot|E] kvůli své velikosti."  # todo: NEW TRANSLATION

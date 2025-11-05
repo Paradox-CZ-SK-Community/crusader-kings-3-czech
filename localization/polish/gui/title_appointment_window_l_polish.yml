@@ -1,11 +1,28 @@
 ﻿l_polish:
  TITLE_APPOINTMENT_HEADER: "Nástupnictví pro [Title.GetName]"
- TITLE_APPOINTMENT_LAW: "Zákon o následnictví: [SuccessionAppointmentWindow.GetSuccessionLaw.GetName]"
- TITLE_APPOINTMENT_CURRENT_HOLDER: "Současný držitel: [Title.GetHolder.GetShortUIName]"
+ TITLE_APPOINTMENT_LAW: "[succession_law|E]: [SuccessionAppointmentWindow.GetSuccessionLaw.GetName]" # todo: Zákon o následnictví: [SuccessionAppointmentWindow.GetSuccessionLaw.GetName]
+ TITLE_APPOINTMENT_CURRENT_HOLDER: "Současný [holder|E]: [Title.GetHolder.GetShortUIName|U]" # todo: Současný držitel: [Title.GetHolder.GetShortUIName]
  TITLE_APPOINTMENT_GOVERNOR_EFFICIENCY: "$ADMIN_WINDOW_THEME_GOVERNOR_EFFICIENCY_VALID$"
  TITLE_APPOINTMENT_RANK_TOOLTIP: "Pozice v pořadí následnictví"
  TITLE_APPOINTMENT_HOUSE: "Součást [house|E] [DynastyHouse.GetName]"
- TITLE_APPOINTMENT_SUCCESSION_SCORE: "[candidate_score|E]: #UND [CharacterListItem.GetFixedPoint( 'score' )|V0]#!"
- TITLE_APPOINTMENT_CANDIDATE_SCORE_TT_HEADING: "[candidate_score|E]: #UND [CharacterListItem.GetFixedPoint( 'score' )|V0]#!"
+ TITLE_APPOINTMENT_SUCCESSION_SCORE: "[candidate_score|E]: #UND [AppointmentCandidateCharacterList.GetAppointmentScoreByIndex( CharacterListItem.GetIndex )|V0]#!" # todo: [candidate_score|E]: #UND [CharacterListItem.GetFixedPoint( 'score' )|V0]#!
+ TITLE_APPOINTMENT_CANDIDATE_SCORE_TT_HEADING: "[candidate_score|E]: #UND [AppointmentCandidateCharacterList.GetAppointmentScoreByIndex( CharacterListItem.GetIndex )|V0]#!" # todo: [candidate_score|E]: #UND [CharacterListItem.GetFixedPoint( 'score' )|V0]#!
  TITLE_APPOINTMENT_SUCCESSION_TOP_CANDIDATE: "Váš hlavní kandidát:"
- TITLE_APPOINTMENT_RANK: "[CharacterListItem.GetFixedPoint( 'position' )|0]."
+ TITLE_APPOINTMENT_RANK: "[AppointmentCandidateCharacterList.GetSuccessionOrderByIndex( CharacterListItem.GetIndex )|0]" # todo: [CharacterListItem.GetFixedPoint( 'position' )|0].
+ TITLE_APPOINTMENT_SORT_ORDER: "Výchozí"  # todo: NEW TRANSLATION
+ TITLE_APPOINTMENT_SORT_NAME: "Jméno"  # todo: NEW TRANSLATION
+ TITLE_APPOINTMENT_SCORE: "@appointment_score! [AppointmentCandidateCharacterList.GetAppointmentScoreByIndex( CharacterListItem.GetIndex )|0]"  # todo: NEW TRANSLATION
+ TITLE_APPOINTMENT_RANK_SMALL: "[SelectLocalization( IsZero( AdminMeritPool.GetCandidatePosition( Character.Self ) ), 'TITLE_APPOINTMENT_RANK_SMALL_NONE', 'TITLE_APPOINTMENT_RANK_SMALL_NUMBER' )]"  # todo: NEW TRANSLATION
+ TITLE_APPOINTMENT_RANK_SMALL_NONE: "Žádný"  # todo: NEW TRANSLATION
+ TITLE_APPOINTMENT_RANK_SMALL_NUMBER: "[AdminMeritPool.GetCandidatePosition( Character.Self )|O]"  # todo: NEW TRANSLATION
+ TITLE_APPOINTMENT_POOL_TOOLTIP_HEADER: "#T [SelectLocalization( AdminMeritPool.IsMilitary, 'celestial_province_military_text_icon', 'celestial_province_standard_text_icon' )] [AdminMeritPool.GetPoolTypeName] Kandidát: [AdminMeritPool.GetTitleTierName] [title_tier|E]#!\n"  # todo: NEW TRANSLATION
+ TITLE_APPOINTMENT_POOL_TOOLTIP_FOOTER: "#i Klikněte pro zobrazení seznamu kandidátů#!"  # todo: NEW TRANSLATION
+ TITLE_APPOINTMENT_POOL_TOOLTIP_POSITION: "[AdminMeritPool.GetCandidatePosition( Character.Self )|VO] v pořadí, až bude k dispozici [AdminMeritPool.GetTitleTierName] [title_tier|E] [AdminMeritPool.GetPoolTypeName] [title|E].\n\n"  # todo: NEW TRANSLATION
+ TITLE_APPOINTMENT_POOL_TOOLTIP_POSITION_SAME_TIER: "[AdminMeritPool.GetCandidatePosition( Character.Self )|VO] v pořadí, až bude k dispozici titul vyššího [appointment_prominence|E] [AdminMeritPool.GetTitleTierName] [title_tier|E] [AdminMeritPool.GetPoolTypeName] [title|E].\n"  # todo: NEW TRANSLATION
+ TITLE_APPOINTMENT_POOL_TOOLTIP_POSITION_NONE: "Nejste v pořadí na žádný [AdminMeritPool.GetTitleTierName] [title_tier|E] [AdminMeritPool.GetPoolTypeName] [title|E].\nAktuálně držíte titul [Character.GetPrimaryTitle.GetTierAsName] [title_tier|E], který může být příliš vysoký pro současný [merit_level|E].\n\n"  # todo: NEW TRANSLATION
+ TITLE_APPOINTMENT_POOL_TOOLTIP_HIGHER_CANDIDATE_SCORE: "$HIGHER_CANDIDATE_SCORE_COUNT|V$ [Select_CString(IsOne('(int32)$HIGHER_CANDIDATE_SCORE_COUNT|q$'), 'kandidát', 'kandidátů')] lze překonat vyšším @appointment_score_small! [candidate_score|E].\n\n"  # todo: NEW TRANSLATION
+ TITLE_APPOINTMENT_POOL_TOOLTIP_CURRENT_PROMINENCE: "Drží $ADMIN_POOL_TITLE_PROMINENCE_POSITION|OV$ nejvýznamnější [title|E] tohoto [title_tier|E]: [TITLE.GetName]\n\n"  # todo: NEW TRANSLATION
+ TITLE_APPOINTMENT_POOL_TOOLTIP_TIMEOUT: "@time_icon!Nelze být jmenován do [Character.GetNewAppointmentCooldownDate.GetString|V] ([Character.GetNewAppointmentCooldownDate.GetTimeDiffFromNow]):\n[Character.GetAppointmentTimeoutText]\n[AddLocalizationIf( ObjectsEqual( GetPlayer.Self, Character.Self ), 'TITLE_APPOINTMENT_POOL_TOOLTIP_TIMEOUT_DECISION')]\n"  # todo: NEW TRANSLATION
+ TITLE_APPOINTMENT_POOL_TOOLTIP_TIMEOUT_DECISION: "#weak (lze odstranit rozhodnutím [GetDecisionWithKey('tgp_resume_appointments_decision').GetName])#!\n"  # todo: NEW TRANSLATION
+ TITLE_APPOINTMENT_MERIT_CANDIDATE_DESC: "Kandidáti musí být platnými [AdminMeritPool.GetPoolTypeName] [GetPlayer.Custom('GetProvinceConceptNoTooltip')] kandidáty"  # todo: NEW TRANSLATION
+ TITLE_APPOINTMENT_MERIT_CANDIDATE_RANK: "Kandidáti jsou seřazeni nejprve podle [merit_level|E], poté podle jejich [candidate_score|E]"  # todo: NEW TRANSLATION

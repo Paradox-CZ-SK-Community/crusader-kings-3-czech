@@ -1,0 +1,91 @@
+﻿l_polish:
+ tribute_mission_decision: "[ROOT.Char.Custom('TributeMissionDecision')]" # todo: NEW TRANSLATION
+ tribute_mission_decision_china: "Poklonit se [GetTitleByKey('h_china').GetNameNoTierNoTooltip]" # todo: NEW TRANSLATION
+ tribute_mission_decision_generic: "Zaplatit tribut" # todo: NEW TRANSLATION
+ tribute_mission_decision_desc_china: "[GetTitleByKey('h_china').GetHolder.GetTitleAsName] [GetTitleByKey('h_china').GetDefinitiveName] se nám tyčí na obzoru a tiše požaduje, abychom prokázali svou úctu. Poslání tributu mimo jiné zvýší naši legitimitu a může přinést i další výhody..." # todo: NEW TRANSLATION
+ tribute_mission_decision_desc: "Je čas složit úctu — a tribut — našemu uctívanému [ROOT.Char.Custom2('RelationToMe', ROOT.Char.GetOverlord )] [ROOT.Char.GetOverlord.GetTitledFirstName]. Prokázání našeho blízkého vztahu k [ROOT.Char.GetOverlord.GetTitleAsNameNoTooltip] mimo jiné zvýší naši legitimitu a může přinést i další výhody..." # todo: NEW TRANSLATION
+ tribute_mission_decision_tooltip: "Vydejte se na [tribute_mission|E]" # todo: NEW TRANSLATION
+ tribute_mission_decision_effects_tt: "Cestujete [travel|E] do [tribute_mission_target.GetTitledFirstNamePossessive] [court|E], abyste předali svůj [tribute|E]" # todo: NEW TRANSLATION
+ tribute_mission_interaction_extra_effects_tt: "Cestujete [travel|E] do [actor.GetOverlord.GetTitledFirstNamePossessive] [court|E], abyste předali svůj [tribute|E]" # todo: NEW TRANSLATION
+ tribute_mission_interaction_anticipated_rewards_tt_imperial_grace: "Očekávané odměny:\n$BULLET_WITH_TAB$Další [imperial_grace|E]\n$tribute_mission_interaction_anticipated_rewards_tt_common$\n$BULLET_WITH_TAB$[GetPlayer.Custom('SealOfInvestitureChance')]" # todo: NEW TRANSLATION
+ tribute_mission_interaction_anticipated_rewards_tt: "Očekávané odměny:\n$tribute_mission_interaction_anticipated_rewards_tt_common$" # todo: NEW TRANSLATION
+ tribute_mission_interaction_anticipated_rewards_tt_common: "$BULLET_WITH_TAB$[legitimacy_i][legitimacy|E]\n$BULLET_WITH_TAB$[opinion_i] [opinion|E]\n$BULLET_WITH_TAB$Může objevit nové @innovation_icon![innovations|E] k odemčení\n$BULLET_WITH_TAB$Může získat postup @fascination_icon! [fascination|E]\n$BULLET_WITH_TAB$Může získat [THIS.Char.GetOverlord.GetCulture.GetNameNoTooltip] [artifact_i][artifact|E]\n$BULLET_WITH_TAB$Může získat [THIS.Char.GetOverlord.GetFaith.GetNameNoTooltip] @skill_learning_icon! mnicha" # todo: NEW TRANSLATION
+ tribute_mission_decision_confirm: "Určete tribut" # todo: NEW TRANSLATION
+ tribute_mission_grace_tt: "#weak [tributary_mission|E] nebude dostupný po dobu #V [SCOPE.ScriptValue('tribute_mission_cooldown_years')]#! let#!" # todo: NEW TRANSLATION
+ IMPERIAL_GRACE_PLAYER_CHOICE_SEAL_OF_INVESTITURE: "[GetPlayer.GetOverlord.GetShortUIName] vám může udělit [seal_of_investiture|E]" # todo: NEW TRANSLATION
+ IMPERIAL_GRACE_NO_CHANCE_SEAL_OF_INVESTITURE: "Nebude #tooltip:NO_CHANCE_SEAL_OF_INVESTITURE_TT #E udělen [seal_of_investiture|E]" # todo: NEW TRANSLATION
+ IMPERIAL_GRACE_SMALL_CHANCE_SEAL_OF_INVESTITURE: "#tooltip:CHANCE_SEAL_OF_INVESTITURE_TT #E Mohl by#!#! být udělen [seal_of_investiture|E]" # todo: NEW TRANSLATION
+ IMPERIAL_GRACE_MEDIUM_CHANCE_SEAL_OF_INVESTITURE: "#tooltip:CHANCE_SEAL_OF_INVESTITURE_TT #E Může#!#! být udělen [seal_of_investiture|E]" # todo: NEW TRANSLATION
+ IMPERIAL_GRACE_HIGH_CHANCE_SEAL_OF_INVESTITURE: "Bude #tooltip:CHANCE_SEAL_OF_INVESTITURE_TT #E pravděpodobně#!#! udělen [seal_of_investiture|E]" # todo: NEW TRANSLATION
+ IMPERIAL_GRACE_WILL_GET_SEAL_OF_INVESTITURE: "#tooltip:WILL_GET_SEAL_OF_INVESTITURE_TT #E Bude#!#! udělen [seal_of_investiture|E]" # todo: NEW TRANSLATION
+ NO_CHANCE_SEAL_OF_INVESTITURE_TT: "Váš titul [GetPlayer.GetTitleAsName] vyžaduje, aby vaše [imperial_grace|E] byla alespoň [GetPlayer.MakeScope.ScriptValue('seal_of_investiture_minimum_subject_standing')|v0] (aktuálně [GetPlayer.GetSubjectContract.GetSubjectStanding|v0]), abyste na této misi získali [seal_of_investiture|E]." # todo: NEW TRANSLATION
+ CHANCE_SEAL_OF_INVESTITURE_TT: "Vaše [imperial_grace|E] [GetPlayer.GetSubjectContract.GetSubjectStanding|v0] dává [GetPlayer.MakeScope.ScriptValue('tribute_mission_chance_to_receive_seal_of_investiture')|v%0] šanci, že vám bude na této misi udělen [seal_of_investiture|E]." # todo: NEW TRANSLATION
+ WILL_GET_SEAL_OF_INVESTITURE_TT: "Vaše [imperial_grace|E] [GetPlayer.GetSubjectContract.GetSubjectStanding|v0] zajišťuje, že vám bude na této misi udělen [seal_of_investiture|E]." # todo: NEW TRANSLATION
+ tribute_mission_invalidated: "Tributní mise zrušena" # todo: NEW TRANSLATION
+ tribute_mission_invalidated_desc: "Tributní mise byla zrušena" # todo: NEW TRANSLATION
+ tribute_mission_costs_refunded: "Náklady na tribut vráceny" # todo: NEW TRANSLATION
+ tribute_mission_notification.title: "[tributary_scope.GetShortUIName|U] zaplatil tribut" # todo: NEW TRANSLATION
+ tribute_mission_notification.desc: "[tributary_scope.GetShortUIName|U] se vydal na [tribute_mission|E] a zaplatil tribut na vašem [court|E]" # todo: NEW TRANSLATION
+ qualifies_for_tribute_mission_trigger: "Nemáte žádný platný [tribute|E]" # todo: NEW TRANSLATION
+ qualifies_for_tribute_mission_gold_trigger: "Nemáte @gold_icon! [GetPlayer.MakeScope.ScriptValue('imperial_grace_expected_tribute_value')|0]" # todo: NEW TRANSLATION
+ qualifies_for_tribute_mission_gold_or_herd_trigger: "Nemáte dostatečné očekávané [tribute|E]. Požadujete buď @gold_icon! [GetPlayer.MakeScope.ScriptValue('imperial_grace_expected_tribute_value')|0] nebo @herd_icon! [GetPlayer.MakeScope.ScriptValue('imperial_grace_expected_tribute_herd_value')|0]." # todo: NEW TRANSLATION
+ tribute_mission_decision.already_on_mission: "Jste již na [tribute_mission|E]" # todo: NEW TRANSLATION
+ suzerain_is_china: "[GetTitleByKey('h_china').GetHolder.GetShortUIName] je vaším [suzerain|E]" # todo: NEW TRANSLATION
+ neighbor_is_china: "Jste [independent|E] [ruler|E] sousedící s [GetTitleByKey('h_china').GetDefinitiveName]" # todo: NEW TRANSLATION
+ tribute_mission_gold: "$petition_liege_gold$" # todo: NEW TRANSLATION
+ tribute_mission_gold_tooltip: "Vyberte množství [gold|E], které nabídnete jako tribut" # todo: NEW TRANSLATION
+ tribute_mission_decision_option_gold: "$petition_liege_gold$\n#low Nabídněte @gold_icon![gold|E]#!" # todo: NEW TRANSLATION
+ tribute_mission_herd: "Stádo" # todo: NEW TRANSLATION
+ tribute_mission_herd_tooltip: "Vyberte množství [herd|E], které nabídnete jako tribut" # todo: NEW TRANSLATION
+ tribute_mission_decision_option_herd: "$game_concept_herd$\n#low Nabídněte @herd_icon![herd|E]#!" # todo: NEW TRANSLATION
+ tribute_mission_artifact: "Artefakt" # todo: NEW TRANSLATION
+ tribute_mission_artifact_tooltip: "Vyberte [artifact|E], který nabídnete jako tribut" # todo: NEW TRANSLATION
+ tribute_mission_decision_option_artifact: "$game_concept_artifact$\n#low Nabídněte @artifact_icon![artifact|E]#!" # todo: NEW TRANSLATION
+ tribute_mission_concubine: "Konkubína" # todo: NEW TRANSLATION
+ tribute_mission_concubine_tooltip: "Vyberte [courtier|E], kterého pošlete jako [concubine|E] tribut" # todo: NEW TRANSLATION
+ tribute_mission_decision_option_concubine: "$game_concept_concubine$\n#low Nabídněte @concubine_icon![concubine|E]#!" # todo: NEW TRANSLATION
+ tribute_mission_eunuch: "Eunuch" # todo: NEW TRANSLATION
+ tribute_mission_eunuch_tooltip: "Vyberte [courtier|E], kterého pošlete jako [GetTrait('eunuch_1').GetName( GetNullCharacter )] tribut" # todo: NEW TRANSLATION
+ tribute_mission_decision_option_eunuch: "$trait_eunuch$\n#low Nabídněte @eunuch_icon![GetTrait('eunuch_1').GetName( GetNullCharacter )]#!" # todo: NEW TRANSLATION
+ CHOOSE_TRIBUTE_DECISION_NEXT_STEP_BUTTON: "Vyberte typ tributu" # todo: NEW TRANSLATION
+ PAY_TRIBUTE_DECISION_SELECT_TRIBUTE_TITLE: "Vyberte [tribute|E]" # todo: NEW TRANSLATION
+ imperial_grace_tribute_gold_tooltip: "Přineste očekávaný @gold_icon! [gold|E] [tribute]\n\n$imperial_grace_tribute_common_tooltip$" # todo: NEW TRANSLATION
+ imperial_grace_tribute_herd_tooltip: "Přineste očekávaný @herd_icon! [herd|E] [tribute]\n\n$imperial_grace_tribute_common_tooltip$" # todo: NEW TRANSLATION
+ tribute_mission_expected_gold: "Očekávaný [tribute] ve výši @gold_icon! [GetPlayer.MakeScope.ScriptValue('imperial_grace_expected_tribute_value')|v0] [gold|E]" # todo: NEW TRANSLATION
+ tribute_mission_expected_herd: "Očekávaný [tribute] ve výši @herd_icon! [GetPlayer.MakeScope.ScriptValue('imperial_grace_expected_tribute_herd_value')|v0] [herd|E]" # todo: NEW TRANSLATION
+ imperial_grace_tribute_common_tooltip: "#weak Množství $game_concept_tribute$, které se od vás očekává, roste s vaší [GetPlayer.Custom('SubjectStanding')], která je aktuálně [GetPlayer.GetSubjectContract.GetSubjectStanding|v0].\n\nPro zlepšení přijetí můžete zvolit zaslat dodatečný $game_concept_tribute$ nad rámec minimálních očekávání.#!" # todo: NEW TRANSLATION
+ tribute_mission_hegemonic_extras_interaction: "Vyberte tribut" # todo: NEW TRANSLATION
+ no_extra_tribute: "Přineste pouze očekávaný [tribute|E]" # todo: NEW TRANSLATION
+ extra_gold_tribute: "Nabídněte další @gold_icon! [gold|E]" # todo: NEW TRANSLATION
+ extra_herd_tribute: "Nabídněte další @herd_icon! [herd|E]" # todo: NEW TRANSLATION
+ extra_concubine_tribute: "Nabídněte [concubine|E]" # todo: NEW TRANSLATION
+ extra_eunuch_tribute: "Nabídněte [GetTrait('eunuch_1').GetName( GetNullCharacter )]" # todo: NEW TRANSLATION
+ tribute_mission.travel_to.tt: "Začněte cestu do [recipient.GetShortUINamePossessive] [capital|E] v [recipient.GetCapitalLocation.GetName]" # todo: NEW TRANSLATION
+ tribute_mission_gold_interaction: "Vyberte zlatý tribut" # todo: NEW TRANSLATION
+ small_gold_tribute: "Malý @gold_icon! tribut" # todo: NEW TRANSLATION
+ tribute_mission_gold_interaction.small_reserved_gold: "#weak Rezervujte @gold_icon!#V [Add_CFixedPoint(actor.MakeScope.Var('offered_gold_value').GetValue,actor.MakeScope.ScriptValue('small_gold_tribute_value'))|v0]#! pro [tribute|E]#!" # todo: NEW TRANSLATION
+ adequate_gold_tribute: "Dostatečný @gold_icon! tribut" # todo: NEW TRANSLATION
+ tribute_mission_gold_interaction.adequate_reserved_gold: "#weak Rezervujte @gold_icon!#V [Add_CFixedPoint(actor.MakeScope.Var('offered_gold_value').GetValue,actor.MakeScope.ScriptValue('adequate_gold_tribute_value'))|v0]#! pro [tribute|E]#!" # todo: NEW TRANSLATION
+ excessive_gold_tribute: "Nadměrný @gold_icon! tribut" # todo: NEW TRANSLATION
+ tribute_mission_gold_interaction.excessive_reserved_gold: "#weak Rezervujte @gold_icon!#V [Add_CFixedPoint(actor.MakeScope.Var('offered_gold_value').GetValue,actor.MakeScope.ScriptValue('excessive_gold_tribute_value'))|v0]#! pro [tribute|E]#!" # todo: NEW TRANSLATION
+ tribute_mission_herd_interaction: "Vyberte stádo jako tribut" # todo: NEW TRANSLATION
+ small_herd_tribute: "Malý @herd_icon! tribut" # todo: NEW TRANSLATION
+ tribute_mission_herd_interaction.small_reserved_herd: "#weak Rezervujte @herd_icon!#V [Add_CFixedPoint(actor.MakeScope.Var('offered_herd_value').GetValue,actor.MakeScope.ScriptValue('small_herd_tribute_value'))|v0]#! pro [tribute|E]#!" # todo: NEW TRANSLATION
+ adequate_herd_tribute: "Dostatečný @herd_icon! tribut" # todo: NEW TRANSLATION
+ tribute_mission_herd_interaction.adequate_reserved_herd: "#weak Rezervujte @herd_icon!#V [Add_CFixedPoint(actor.MakeScope.Var('offered_herd_value').GetValue,actor.MakeScope.ScriptValue('adequate_herd_tribute_value'))|v0]#! pro [tribute|E]#!" # todo: NEW TRANSLATION
+ excessive_herd_tribute: "Nadměrný @herd_icon! tribut" # todo: NEW TRANSLATION
+ tribute_mission_herd_interaction.excessive_reserved_herd: "#weak Rezervujte @herd_icon!#V [Add_CFixedPoint(actor.MakeScope.Var('offered_herd_value').GetValue,actor.MakeScope.ScriptValue('excessive_herd_tribute_value'))|v0]#! pro [tribute|E]#!" # todo: NEW TRANSLATION
+ tribute_mission_artifact_interaction: "Vyberte artefakt jako tribut" # todo: NEW TRANSLATION
+ tribute_mission_artifact_interaction.tooltip: "#weak [target.GetName] bude vybrán pro [tribute|E]#!" # todo: NEW TRANSLATION
+ tribute_mission_concubine_interaction.no_valid_artifacts: "Nemáte žádné vhodné [artifacts|E] k nabídnutí" # todo: NEW TRANSLATION
+ tribute_mission_concubine_interaction: "Vyberte konkubínu jako tribut" # todo: NEW TRANSLATION
+ recipient_secondary_tribute_mission_concubine_interaction: "$recipient_secondary_offer_concubine$" # todo: NEW TRANSLATION
+ tribute_mission_concubine_interaction.tooltip: "[secondary_recipient.GetShortUIName] se připojí k [recipient.GetShortUINamePossessive] [court|E] s možností stát se [concubine|E]" # todo: NEW TRANSLATION
+ tribute_mission_concubine_interaction.no_valid_concubines: "Nemáte žádné [courtiers|E], které by bylo možné nabídnout jako [concubine|E]" # todo: NEW TRANSLATION
+ tribute_mission_concubine_interaction.overlord_no_use_concubines: "[GetPlayer.GetOverlord.GetShortUIName] nemá zájem o $game_concept_concubines$" # todo: NEW TRANSLATION
+ tribute_mission_eunuch_interaction: "Vyberte eunucha jako tribut" # todo: NEW TRANSLATION
+ recipient_secondary_tribute_mission_eunuch_interaction: "$recipient_secondary_offer_eunuch_interaction$" # todo: NEW TRANSLATION
+ tribute_mission_eunuch_interaction.tooltip: "[secondary_recipient.GetShortUIName] se připojí k [recipient.GetShortUINamePossessive] [court|E] jako [GetTrait('eunuch_1').GetName( GetNullCharacter )]" # todo: NEW TRANSLATION
+ tribute_mission_eunuch_interaction.no_valid_eunuchs: "Nemáte žádné [courtiers|E], které by bylo možné nabídnout jako [GetTrait('eunuch_1').GetName( GetNullCharacter )]" # todo: NEW TRANSLATION
+ tribute_mission_concubine_interaction.overlord_no_use_eunuchs: "[GetPlayer.GetOverlord.GetShortUIName] nemá zájem o eunuchy" # todo: NEW TRANSLATION
+ tribute_mission_eunuch_interaction.slated_for_castration: "#weak [secondary_recipient.GetShortUIName] se může pokusit uniknout [secondary_recipient.GetHerHis] osudu#!" # todo: NEW TRANSLATION

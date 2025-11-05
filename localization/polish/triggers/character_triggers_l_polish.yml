@@ -53,8 +53,8 @@
  NOT_I_HAVE_TRAIT_TRIGGER: "Vy #bold not#! máte vlastnost: [TRAIT.GetName( CHARACTER.Self )|L]"
  THEY_HAVE_TRAIT_TRIGGER: "[CHARACTER.GetShortUIName|U] má vlastnost: [TRAIT.GetName( CHARACTER.Self )|L]"
  NOT_THEY_HAVE_TRAIT_TRIGGER: "[CHARACTER.GetShortUIName|U] má #bold not#! vlastnost: [TRAIT.GetName( CHARACTER.Self )|L]"
- NONE_HAS_TRAIT_TRIGGER: "Mají vlastnost: [TRAIT.GetName( CHARACTER.Self )|L]"
- NOT_NONE_HAS_TRAIT_TRIGGER: "Nemají #bold not#! vlastnost: [TRAIT.GetName( CHARACTER.Self )|L]"
+ NONE_HAS_TRAIT_TRIGGER: "Mají vlastnost: [TRAIT.GetName( GetNullCharacter )|L]" # todo: Mají vlastnost: [TRAIT.GetName( CHARACTER.Self )|L]
+ NOT_NONE_HAS_TRAIT_TRIGGER: "Nemají vlastnost: [TRAIT.GetName( GetNullCharacter )|L]" # todo: Nemají #bold not#! vlastnost: [TRAIT.GetName( CHARACTER.Self )|L]
  HAS_TRAIT_GROUP_TRIGGER: "Má vlastnost ze skupiny [TRAIT_GROUP.GetName]"
  NOT_HAS_TRAIT_GROUP_TRIGGER: "Má #bold not#! vlastnost ze skupiny [TRAIT_GROUP.GetName]"
  I_HAVE_TRAIT_GROUP_TRIGGER: "Máte vlastnost ze skupiny [TRAIT_GROUP.GetName]"
@@ -63,12 +63,12 @@
  NOT_THEY_HAVE_TRAIT_GROUP_TRIGGER: "[CHARACTER.GetShortUIName|U] má #bold not#! vlastnost ze skupiny [TRAIT_GROUP.GetName]"
  HAS_TRAIT_GROUP_TRIGGER_NONE: "Má vlastnost ze skupiny [TRAIT_GROUP.GetName]"
  NOT_HAS_TRAIT_GROUP_TRIGGER_NONE: "Má #bold not#! vlastnost ze skupiny [TRAIT_GROUP.GetName]"
- HAS_CHARACTER_MODIFIER_TRIGGER: "Má modifikátor: $MODIFIER|V$"
- NOT_HAS_CHARACTER_MODIFIER_TRIGGER: "Má #bold not#! modifikátor: $MODIFIER|V$"
- I_HAVE_CHARACTER_MODIFIER_TRIGGER: "Máte modifikátor: $MODIFIER|V$"
- NOT_I_HAVE_CHARACTER_MODIFIER_TRIGGER: "Vy #bold not#! máte modifikátor: $MODIFIER|V$"
- THEY_HAVE_CHARACTER_MODIFIER_TRIGGER: "[CHARACTER.GetShortUIName|U] má modifikátor: $MODIFIER|V$"
- NOT_THEY_HAVE_CHARACTER_MODIFIER_TRIGGER: "[CHARACTER.GetShortUIName|U] má #bold not#! modifikátor: $MODIFIER|V$""
+ HAS_CHARACTER_MODIFIER_TRIGGER: "Má [modifier|E]: $MODIFIER|V$" # todo: Má modifikátor: $MODIFIER|V$
+ NOT_HAS_CHARACTER_MODIFIER_TRIGGER: "Nemá [modifier|E]: $MODIFIER|V$" # todo: Má #bold not#! modifikátor: $MODIFIER|V$
+ I_HAVE_CHARACTER_MODIFIER_TRIGGER: "Máte [modifier|E]: $MODIFIER|V$" # todo: Máte modifikátor: $MODIFIER|V$
+ NOT_I_HAVE_CHARACTER_MODIFIER_TRIGGER: "Nemáte [modifier|E]: $MODIFIER|V$" # todo: Vy #bold not#! máte modifikátor: $MODIFIER|V$
+ THEY_HAVE_CHARACTER_MODIFIER_TRIGGER: "[CHARACTER.GetShortUIName|U] má [modifier|E]: $MODIFIER|V$" # todo: [CHARACTER.GetShortUIName|U] má modifikátor: $MODIFIER|V$
+ NOT_THEY_HAVE_CHARACTER_MODIFIER_TRIGGER: "[CHARACTER.GetShortUIName|U] nemá [modifier|E]: $MODIFIER|V$" # todo: [CHARACTER.GetShortUIName|U] má #bold not#! modifikátor: $MODIFIER|V$"
  HAS_OPINION: "Má alespoň $NUM|V$ [opinion|E] vůči [TARGET_CHARACTER.GetShortUIName]"
  I_HAVE_OPINION: "Máte alespoň $NUM|V$ [opinion|E] vůči [TARGET_CHARACTER.GetShortUIName]"
  THEY_HAVE_OPINION: "[CHARACTER.GetShortUIName|U] má alespoň $NUM|V$ [opinion|E] vůči [TARGET_CHARACTER.GetShortUIName]"
@@ -324,12 +324,12 @@
  HAS_HOOK_FROM_SECRET_GLOBAL: "Má [hook|E] založený na [SECRET.GetName]"
  HAS_HOOK_FROM_SECRET_FIRST: "Máte [hook|E] založený na [SECRET.GetName]"
  HAS_HOOK_FROM_SECRET_THIRD: "[CHARACTER.GetUIName] má [hook|E] založený na [SECRET.GetName]"
- HAS_REALM_LAW_TRIGGER: "Má zákon [LAW.GetName|V]"
- NOT_HAS_REALM_LAW_TRIGGER: "Nemá zákon [LAW.GetName|V]"
- I_HAVE_REALM_LAW_TRIGGER: "Máte zákon [LAW.GetName|V]"
- NOT_I_HAVE_REALM_LAW_TRIGGER: "Vy #bold NEMÁTE#! zákon [LAW.GetName|V]"
- THEY_HAVE_REALM_LAW_TRIGGER: "[CHARACTER.GetUIName|U] má zákon [LAW.GetName|V]"
- NOT_THEY_HAVE_REALM_LAW_TRIGGER: "[CHARACTER.GetUIName|U] nemá zákon [LAW.GetName|V]"
+ HAS_REALM_LAW_TRIGGER: "Má [LAW.GetName|V] [law|E]" # todo: Má zákon [LAW.GetName|V]
+ NOT_HAS_REALM_LAW_TRIGGER: "Nemá [LAW.GetName|V] [law|E]" # todo: Nemá zákon [LAW.GetName|V]
+ I_HAVE_REALM_LAW_TRIGGER: "Máte [LAW.GetName|V] [law|E]" # todo: Máte zákon [LAW.GetName|V]
+ NOT_I_HAVE_REALM_LAW_TRIGGER: "Nemáte [LAW.GetName|V] [law|E]" # todo: Vy #bold NEMÁTE#! zákon [LAW.GetName|V]
+ THEY_HAVE_REALM_LAW_TRIGGER: "[CHARACTER.GetUIName|U] má [LAW.GetName|V] [law|E]" # todo: [CHARACTER.GetUIName|U] má zákon [LAW.GetName|V]
+ NOT_THEY_HAVE_REALM_LAW_TRIGGER: "[CHARACTER.GetUIName|U] nemá [LAW.GetName|V] [law|E]" # todo: [CHARACTER.GetUIName|U] nemá zákon [LAW.GetName|V]
  CLAIMANT_ALREADY_PRESSING_THEIR_CLAIM_THIRD: "[CHARACTER.GetShortUIName] už je ve [war|E] a uplatňuje [CHARACTER.GetHerHis] [claim|E] na [TARGET_TITLE.GetName]"
  CLAIMANT_TITLES_HELD_BY_ATTACKER_VASSALS_FIRST: "Tento [title|E] drží váš [vassal|E] a musí být [revoked|E]"
  CLAIMANT_TITLES_HELD_BY_YOU_OR_VASSAL_FIRST: "Tento [title|E] držíte vy nebo váš [vassal|E]"
@@ -743,8 +743,8 @@
  NOT_TYRANNY_TRIGGER_THIRD: "[CHARACTER.GetShortUIName|U] má méně než $NUM|E$ [tyranny|E]"
  WOMENMEN_ARE_ALLOWED_TO_BE_WARRIORS_IN_FAITH: "[CHARACTER.GetWomenMen|U] mají povoleno být bojovníky ve víře [TARGET_CHARACTER.GetFaith.GetName]"
  WOMENMEN_ARE_NOT_ALLOWED_TO_BE_WARRIORS_IN_FAITH: "[CHARACTER.GetWomenMen|U] jsou #bold not#! povoleni být bojovníky ve víře [TARGET_CHARACTER.GetFaith.GetName]"
- WOMENMEN_ARE_ALLOWED_TO_BE_WARRIORS_IN_CULTURE: "Kultura [TARGET_CHARACTER.GetCulture.GetName] [culture|E] umožňuje [CHARACTER.GetWomenMen] být bojovníky"
- WOMENMEN_ARE_NOT_ALLOWED_TO_BE_WARRIORS_IN_CULTURE: "Kultura [TARGET_CHARACTER.GetCulture.GetName] [culture|E] #bold not#! neumožňuje [CHARACTER.GetWomenMen] být bojovníky"
+ WOMENMEN_ARE_ALLOWED_TO_BE_WARRIORS_IN_CULTURE: "[CHARACTER.GetCulture.GetName] [culture|E] umožňuje [TARGET_CHARACTER.GetWomenMen] být bojovníky" # todo: Kultura [TARGET_CHARACTER.GetCulture.GetName] [culture|E] umožňuje [CHARACTER.GetWomenMen] být bojovníky
+ WOMENMEN_ARE_NOT_ALLOWED_TO_BE_WARRIORS_IN_CULTURE: "[CHARACTER.GetCulture.GetName] [culture|E] neumožňuje [TARGET_CHARACTER.GetWomenMen] být bojovníky" # todo: Kultura [TARGET_CHARACTER.GetCulture.GetName] [culture|E] #bold not#! neumožňuje [CHARACTER.GetWomenMen] být bojovníky
  NONE_ARE_ALLOWED_TO_BE_WARRIORS_IN_CULTURE: "Jejich [culture|E] jim umožňuje být bojovníky"
  NONE_ARE_NOT_ALLOWED_TO_BE_WARRIORS_IN_CULTURE: "Jejich [culture|E] #bold not#! neumožňuje jim být bojovníky"
  HAS_AN_IMPRISONMENT_REASON_ON_CHARACTER: "Má platný [imprisonment_reason|E] na [TARGET_CHARACTER.GetShortUIName]"
@@ -981,3 +981,143 @@
  CHARACTER_IS_LAND_REALM_NEIGHBOR_GLOBAL_NOT: "Nesdílí pozemní hranici s [TARGET_CHARACTER.GetShortUIName|U]"
  CHARACTER_IS_LAND_REALM_NEIGHBOR_FIRST_NOT: "[TARGET_CHARACTER.GetShortUIName|U] a já nesháníme pozemní hranici"
  CHARACTER_IS_LAND_REALM_NEIGHBOR_THIRD_NOT: "[CHARACTER.GetShortUIName|U] a [TARGET_CHARACTER.GetShortUIName|U] neshání pozemní hranici"
+ treasury_first: "Máte [treasury_i]$NUM|V0$"  # todo: NEW TRANSLATION
+ not_treasury_first: "Nemáte [treasury_i]$NUM|V0$"  # todo: NEW TRANSLATION
+ treasury_third: "[CHARACTER.GetShortUIName|V] má [treasury_i]$NUM|V0$"  # todo: NEW TRANSLATION
+ not_treasury_third: "[CHARACTER.GetShortUIName|V] nemá [treasury_i]$NUM|V0$"  # todo: NEW TRANSLATION
+ treasury_global: "Má [treasury_i]$NUM|V0$"  # todo: NEW TRANSLATION
+ not_treasury_global: "Nemá [treasury_i]$NUM|V0$"  # todo: NEW TRANSLATION
+ has_treasury_first: "Máte [treasury|E]"  # todo: NEW TRANSLATION
+ not_has_treasury_first: "Nemáte [treasury|E]"  # todo: NEW TRANSLATION
+ has_treasury_third: "[CHARACTER.GetShortUIName|V] má [treasury|E]"  # todo: NEW TRANSLATION
+ not_has_treasury_third: "[CHARACTER.GetShortUIName|V] nemá [treasury|E]"  # todo: NEW TRANSLATION
+ has_treasury_global: "Má [treasury|E]"  # todo: NEW TRANSLATION
+ not_has_treasury_global: "Nemá [treasury|E]"  # todo: NEW TRANSLATION
+ TREASURY_TRIGGER_GLOBAL: "Má [treasury_i]$NUM|V0$"  # todo: NEW TRANSLATION
+ NOT_TREASURY_TRIGGER_GLOBAL: "Nemá [treasury_i]$NUM|V0$"  # todo: NEW TRANSLATION
+ TREASURY_TRIGGER_FIRST: "Máte [treasury_i]$NUM|V0$"  # todo: NEW TRANSLATION
+ NOT_TREASURY_TRIGGER_FIRST: "Nemáte [treasury_i]$NUM|V0$"  # todo: NEW TRANSLATION
+ TREASURY_TRIGGER_THIRD: "[CHARACTER.GetShortUIName|U] má [treasury_i]$NUM|V0$"  # todo: NEW TRANSLATION
+ NOT_TREASURY_TRIGGER_THIRD: "[CHARACTER.GetShortUIName|U] nemá [treasury_i]$NUM|V0$"  # todo: NEW TRANSLATION
+ NONE_IS_COUNCILLOR_OF_TRIGGER: "Je radní"  # todo: NEW TRANSLATION
+ NONE_ARE_LANDLESS_ADVENTURER_TRIGGER: "Jsou [adventurer|E]"  # todo: NEW TRANSLATION
+ NOT_NONE_ARE_LANDLESS_ADVENTURER_TRIGGER: "Nejsou [adventurer|E]"  # todo: NEW TRANSLATION
+ SUBJECT_STANDING_TRIGGER_FIRST: "Máte $COMPARATOR$ $NUM|V2$ [CHARACTER.Custom('SubjectStanding')]"  # todo: NEW TRANSLATION
+ NOT_SUBJECT_STANDING_TRIGGER_FIRST: "Nemáte $COMPARATOR$ $NUM|V2$ [CHARACTER.Custom('SubjectStanding')]"  # todo: NEW TRANSLATION
+ SUBJECT_STANDING_TRIGGER_THIRD: "[CHARACTER.GetShortUIName|U] má $COMPARATOR$ $NUM|V2$ [CHARACTER.Custom('SubjectStanding')]"  # todo: NEW TRANSLATION
+ NOT_SUBJECT_STANDING_TRIGGER_THIRD: "[CHARACTER.GetShortUIName|U] nemá $COMPARATOR$ $NUM|V2$ [CHARACTER.Custom('SubjectStanding')]"  # todo: NEW TRANSLATION
+ SUBJECT_STANDING_TRIGGER_GLOBAL: "Nemá $COMPARATOR$ $NUM|V2$ [CHARACTER.Custom('SubjectStanding')]"  # todo: NEW TRANSLATION
+ merit_level_global: "$MERIT_LEVEL_CONCEPT$"  # todo: NEW TRANSLATION
+ not_merit_level_global: "$NOT_MERIT_LEVEL_CONCEPT$"  # todo: NEW TRANSLATION
+ merit_first: "Máte [merit_i]$NUM|V0$"  # todo: NEW TRANSLATION
+ not_merit_first: "Nemáte [merit_i]$NUM|V0$"  # todo: NEW TRANSLATION
+ merit_third: "[CHARACTER.GetShortUIName|V] má [merit_i]$NUM|V0$"  # todo: NEW TRANSLATION
+ not_merit_third: "[CHARACTER.GetShortUIName|V] nemá [merit_i]$NUM|V0$"  # todo: NEW TRANSLATION
+ merit_global: "Má [merit_i]$NUM|V0$"  # todo: NEW TRANSLATION
+ not_merit_global: "Nemá [merit_i]$NUM|V0$"  # todo: NEW TRANSLATION
+ merit_greater_or_equal_first: "$merit_first$"  # todo: NEW TRANSLATION
+ not_merit_greater_or_equal_first: "$not_merit_first$"  # todo: NEW TRANSLATION
+ merit_greater_or_equal_third: "$merit_third$"  # todo: NEW TRANSLATION
+ not_merit_greater_or_equal_third: "$not_merit_third$"  # todo: NEW TRANSLATION
+ merit_greater_or_equal_global: "$merit_global$"  # todo: NEW TRANSLATION
+ not_merit_greater_or_equal_global: "$not_merit_global$"  # todo: NEW TRANSLATION
+ merit_less_than_first: "$merit_first$"  # todo: NEW TRANSLATION
+ not_merit_less_than_first: "$not_merit_first$"  # todo: NEW TRANSLATION
+ merit_less_than_third: "$merit_third$"  # todo: NEW TRANSLATION
+ not_merit_less_than_third: "$not_merit_third$"  # todo: NEW TRANSLATION
+ merit_less_than_global: "$merit_global$"  # todo: NEW TRANSLATION
+ not_merit_less_than_global: "$not_merit_global$"  # todo: NEW TRANSLATION
+ treasury_or_gold_first: "Máte [SelectLocalization( Character.ShouldReplaceGoldCostByTreasury, 'MOD_MONTHLY_TREASURY_PREFIX', 'MOD_GOLD_PREFIX')]$NUM|V0$"  # todo: NEW TRANSLATION
+ not_treasury_or_gold_first: "Nemáte [SelectLocalization( Character.ShouldReplaceGoldCostByTreasury, 'MOD_MONTHLY_TREASURY_PREFIX', 'MOD_GOLD_PREFIX')]$NUM|V0$"  # todo: NEW TRANSLATION
+ treasury_or_gold_third: "[Character.GetShortUIName|V] má [SelectLocalization( Character.ShouldReplaceGoldCostByTreasury, 'MOD_MONTHLY_TREASURY_PREFIX', 'MOD_GOLD_PREFIX')]$NUM|V0$"  # todo: NEW TRANSLATION
+ not_treasury_or_gold_third: "[Character.GetShortUIName|V] nemá [SelectLocalization( Character.ShouldReplaceGoldCostByTreasury, 'MOD_MONTHLY_TREASURY_PREFIX', 'MOD_GOLD_PREFIX')]$NUM|V0$"  # todo: NEW TRANSLATION
+ treasury_or_gold_global: "Má [SelectLocalization( Character.ShouldReplaceGoldCostByTreasury, 'MOD_MONTHLY_TREASURY_PREFIX', 'MOD_GOLD_PREFIX')]$NUM|V0$"  # todo: NEW TRANSLATION
+ not_treasury_or_gold_global: "Nemá [SelectLocalization( Character.ShouldReplaceGoldCostByTreasury, 'MOD_MONTHLY_TREASURY_PREFIX', 'MOD_GOLD_PREFIX')]$NUM|V0$"  # todo: NEW TRANSLATION
+ treasury_or_gold_greater_or_equal_first: "$treasury_or_gold_first$"  # todo: NEW TRANSLATION
+ not_treasury_or_gold_greater_or_equal_first: "$not_treasury_or_gold_first$"  # todo: NEW TRANSLATION
+ treasury_or_gold_greater_or_equal_third: "$treasury_or_gold_third$"  # todo: NEW TRANSLATION
+ not_treasury_or_gold_greater_or_equal_third: "$not_treasury_or_gold_third$"  # todo: NEW TRANSLATION
+ treasury_or_gold_greater_or_equal_global: "$treasury_or_gold_global$"  # todo: NEW TRANSLATION
+ not_treasury_or_gold_greater_or_equal_global: "$not_treasury_or_gold_global$"  # todo: NEW TRANSLATION
+ treasury_or_gold_less_than_first: "$treasury_or_gold_first$"  # todo: NEW TRANSLATION
+ not_treasury_or_gold_less_than_first: "$not_treasury_or_gold_first$"  # todo: NEW TRANSLATION
+ treasury_or_gold_less_than_third: "$treasury_or_gold_third$"  # todo: NEW TRANSLATION
+ not_treasury_or_gold_less_than_third: "$not_treasury_or_gold_third$"  # todo: NEW TRANSLATION
+ treasury_or_gold_less_than_global: "$treasury_or_gold_global$"  # todo: NEW TRANSLATION
+ not_treasury_or_gold_less_than_global: "$not_treasury_or_gold_global$"  # todo: NEW TRANSLATION
+ has_appointment_level_for_title_first: "$has_appointment_level_for_title_global$"  # todo: NEW TRANSLATION
+ has_appointment_level_for_title_third: "$has_appointment_level_for_title_global$"  # todo: NEW TRANSLATION
+ has_appointment_level_for_title_global: "[CHARACTER.GetShortUINamePossessive|U] [appointment_level|E] je vyšší než požadavek pro [TARGET_TITLE.GetName]"  # todo: NEW TRANSLATION
+ not_has_appointment_level_for_title_first: "$not_has_appointment_level_for_title_global$"  # todo: NEW TRANSLATION
+ not_has_appointment_level_for_title_third: "$not_has_appointment_level_for_title_global$"  # todo: NEW TRANSLATION
+ not_has_appointment_level_for_title_global: "[CHARACTER.GetShortUINamePossessive|U] [appointment_level|E] není vyšší než požadavek pro [TARGET_TITLE.GetName]"  # todo: NEW TRANSLATION
+ appointment_level_for_title_first: "$appointment_level_for_title_global$"  # todo: NEW TRANSLATION
+ appointment_level_for_title_third: "$appointment_level_for_title_global$"  # todo: NEW TRANSLATION
+ appointment_level_for_title_global: "[CHARACTER.GetShortUINamePossessive|U] [appointment_level|E] pro [TARGET_TITLE.GetName] je $COMPARATOR$ $NUM|V0$ (aktuálně: $CURRENT_VALUE|V0$)"  # todo: NEW TRANSLATION
+ appointment_level_for_title_greater_than_first: "$appointment_level_for_title_global$"  # todo: NEW TRANSLATION
+ appointment_level_for_title_greater_than_third: "$appointment_level_for_title_global$"  # todo: NEW TRANSLATION
+ appointment_level_for_title_greater_than_global: "$appointment_level_for_title_global$"  # todo: NEW TRANSLATION
+ appointment_level_for_title_greater_or_equal_first: "$appointment_level_for_title_global$"  # todo: NEW TRANSLATION
+ appointment_level_for_title_greater_or_equal_third: "$appointment_level_for_title_global$"  # todo: NEW TRANSLATION
+ appointment_level_for_title_greater_or_equal_global: "$appointment_level_for_title_global$"  # todo: NEW TRANSLATION
+ not_appointment_level_for_title_first: "$not_appointment_level_for_title_global$"  # todo: NEW TRANSLATION
+ not_appointment_level_for_title_third: "$not_appointment_level_for_title_global$"  # todo: NEW TRANSLATION
+ not_appointment_level_for_title_global: "[CHARACTER.GetShortUINamePossessive|U] [appointment_level|E] pro [TARGET_TITLE.GetName] není $COMPARATOR$ $NUM|V0$ (aktuálně: $CURRENT_VALUE|V0$)"  # todo: NEW TRANSLATION
+ not_appointment_level_for_title_greater_than_first: "$not_appointment_level_for_title_global$"  # todo: NEW TRANSLATION
+ not_appointment_level_for_title_greater_than_third: "$not_appointment_level_for_title_global$"  # todo: NEW TRANSLATION
+ not_appointment_level_for_title_greater_than_global: "$not_appointment_level_for_title_global$"  # todo: NEW TRANSLATION
+ not_appointment_level_for_title_greater_or_equal_first: "$not_appointment_level_for_title_global$"  # todo: NEW TRANSLATION
+ not_appointment_level_for_title_greater_or_equal_third: "$not_appointment_level_for_title_global$"  # todo: NEW TRANSLATION
+ not_appointment_level_for_title_greater_or_equal_global: "$not_appointment_level_for_title_global$"  # todo: NEW TRANSLATION
+ min_appointment_level_first: "$min_appointment_level_global$"  # todo: NEW TRANSLATION
+ min_appointment_level_third: "$min_appointment_level_global$"  # todo: NEW TRANSLATION
+ min_appointment_level_global: "[TARGET_TITLE.GetNamePossessive] minimum je [appointment_level|E] $NUM$"  # todo: NEW TRANSLATION
+ min_appointment_level_greater_or_equal_first: "$min_appointment_level_greater_or_equal_global$"  # todo: NEW TRANSLATION
+ min_appointment_level_greater_or_equal_third: "$min_appointment_level_greater_or_equal_global$"  # todo: NEW TRANSLATION
+ min_appointment_level_greater_or_equal_global: "[TITLE.GetNamePossessive] minimální [appointment_level|E] je $COMPARATOR$ $NUM|V0$ (aktuálně: $CURRENT_VALUE|0$)"  # todo: NEW TRANSLATION
+ not_min_appointment_level_first: "$not_min_appointment_level_global$"  # todo: NEW TRANSLATION
+ not_min_appointment_level_third: "$not_min_appointment_level_global$"  # todo: NEW TRANSLATION
+ not_min_appointment_level_global: "[TARGET_TITLE.GetNamePossessive] minimum [appointment_level|E] není $NUM$"  # todo: NEW TRANSLATION
+ not_min_appointment_level_greater_or_equal_first: "$not_min_appointment_level_greater_or_equal_global$"  # todo: NEW TRANSLATION
+ not_min_appointment_level_greater_or_equal_third: "$not_min_appointment_level_greater_or_equal_global$"  # todo: NEW TRANSLATION
+ not_min_appointment_level_greater_or_equal_global: "[TITLE.GetNamePossessive] minimální [appointment_level|E] není $COMPARATOR$ $NUM|V0$ (aktuálně: $CURRENT_VALUE|V0$)"  # todo: NEW TRANSLATION
+ is_available_quick_ai: "[Character.GetShortUIName|U] musí být AI"  # todo: NEW TRANSLATION
+ is_available_quick_alive: "[Character.GetShortUIName|U] musí být naživu"  # todo: NEW TRANSLATION
+ is_available_quick_female: "[Character.GetShortUIName|U] musí být žena"  # todo: NEW TRANSLATION
+ is_available_quick_adult: "[Character.GetShortUIName|U] musí být dospělý"  # todo: NEW TRANSLATION
+ is_available_quick_incapable: "[Character.GetShortUIName|U] musí být neschopný"  # todo: NEW TRANSLATION
+ is_available_quick_imprisoned: "[Character.GetShortUIName|U] musí být ve vězení"  # todo: NEW TRANSLATION
+ is_available_quick_hostage: "[Character.GetShortUIName|U] musí být rukojmím"  # todo: NEW TRANSLATION
+ is_available_quick_traveling: "[Character.GetShortUIName|U] musí být na cestách"  # todo: NEW TRANSLATION
+ is_available_quick_activity: "[Character.GetShortUIName|U] musí se věnovat [activity|E]"  # todo: NEW TRANSLATION
+ is_available_quick_ruler: "[Character.GetShortUIName|U] musí být [ruler|E]"  # todo: NEW TRANSLATION
+ is_available_quick_playable: "[Character.GetShortUIName|U] musí být hratelná postava"  # todo: NEW TRANSLATION
+ is_available_quick_landed: "[Character.GetShortUIName|U] musí být [landed|E]"  # todo: NEW TRANSLATION
+ is_available_quick_at_war: "[Character.GetShortUIName|U] musí být ve [war|E]"  # todo: NEW TRANSLATION
+ is_available_quick_army: "[Character.GetShortUIName|U] musí být buď [commander|E] nebo [knight|E] v [army|E]"  # todo: NEW TRANSLATION
+ not_is_available_quick_ai: "[Character.GetShortUIName|U] nesmí být AI"  # todo: NEW TRANSLATION
+ not_is_available_quick_alive: "[Character.GetShortUIName|U] musí být mrtvý"  # todo: NEW TRANSLATION
+ not_is_available_quick_female: "[Character.GetShortUIName|U] musí být muž"  # todo: NEW TRANSLATION
+ not_is_available_quick_adult: "[Character.GetShortUIName|U] nesmí být dospělý"  # todo: NEW TRANSLATION
+ not_is_available_quick_incapable: "[Character.GetShortUIName|U] nesmí být neschopný"  # todo: NEW TRANSLATION
+ not_is_available_quick_imprisoned: "[Character.GetShortUIName|U] nesmí být ve vězení"  # todo: NEW TRANSLATION
+ not_is_available_quick_hostage: "[Character.GetShortUIName|U] nesmí být rukojmím"  # todo: NEW TRANSLATION
+ not_is_available_quick_traveling: "[Character.GetShortUIName|U] nesmí být na cestách"  # todo: NEW TRANSLATION
+ not_is_available_quick_activity: "[Character.GetShortUIName|U] nesmí se věnovat [activity|E]"  # todo: NEW TRANSLATION
+ not_is_available_quick_ruler: "[Character.GetShortUIName|U] nesmí být [ruler|E]"  # todo: NEW TRANSLATION
+ not_is_available_quick_playable: "[Character.GetShortUIName|U] nesmí být hratelná postava"  # todo: NEW TRANSLATION
+ not_is_available_quick_landed: "[Character.GetShortUIName|U] musí být [unlanded|E]"  # todo: NEW TRANSLATION
+ not_is_available_quick_at_war: "[Character.GetShortUIName|U] nesmí být ve [war|E]"  # todo: NEW TRANSLATION
+ not_is_available_quick_army: "[Character.GetShortUIName|U] nesmí být [commander|E] ani [knight|E] v [army|E]"  # todo: NEW TRANSLATION
+ is_liege_or_above_of_global: "Je [TARGET_CHARACTER.GetShortUINamePossessive] [liege|E] nebo výše"  # todo: NEW TRANSLATION
+ is_liege_or_above_of_first: "Jste [TARGET_CHARACTER.GetShortUINamePossessive] [liege|E] nebo výše"  # todo: NEW TRANSLATION
+ is_liege_or_above_of_third: "[CHARACTER.GetShortUIName|U] je [TARGET_CHARACTER.GetShortUINamePossessive] [liege|E] nebo výše"  # todo: NEW TRANSLATION
+ not_is_liege_or_above_of_global: "Není [TARGET_CHARACTER.GetShortUINamePossessive] [liege|E] nebo výše"  # todo: NEW TRANSLATION
+ not_is_liege_or_above_of_first: "Nejste [TARGET_CHARACTER.GetShortUINamePossessive] [liege|E] nebo výše"  # todo: NEW TRANSLATION
+ not_is_liege_or_above_of_third: "[CHARACTER.GetShortUIName|U] není [TARGET_CHARACTER.GetShortUINamePossessive] [liege|E] nebo výše"  # todo: NEW TRANSLATION
+ can_have_concubines_name_tt: "[THIS.GetCharacter.GetCulture.GetName] [culture|E] má buď [GetCultureTradition('tradition_concubines').GetName] [tradition|E] nebo [GetFaithDoctrine('doctrine_concubines').GetBaseName] [core_tenet|E] a může pojmout více konkubin"  # todo: NEW TRANSLATION
+ character_this_equal_global: "[CHARACTER.GetShortUIName|U] [CharAreIs(CHARACTER)] [TARGET_CHARACTER.GetShortUIName]"  # todo: NEW TRANSLATION
+ character_this_not_equal_global: "[CHARACTER.GetShortUIName|U] [CharAreIs(CHARACTER)] NENÍ [TARGET_CHARACTER.GetShortUIName]"  # todo: NEW TRANSLATION
+ realm_law_group_at_minimum_level: "[LawGroup.GetName] je na minimální úrovni"  # todo: NEW TRANSLATION
+ realm_law_group_at_maximum_level: "[LawGroup.GetName] je na maximální úrovni"  # todo: NEW TRANSLATION
+ treasury_months_since_budget_enact_date: "[CHARACTER.GetShortUIName] [CharHaveHas( CHARACTER )] nezavedl nový [treasury_budget|E] v posledních $NUM|V0$ měsících"  # todo: NEW TRANSLATION

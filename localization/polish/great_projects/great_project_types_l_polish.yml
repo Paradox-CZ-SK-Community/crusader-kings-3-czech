@@ -271,7 +271,7 @@
  cultural_acceptance_gain_minister_project: "[great_project|E] integrační úsilí" # todo: NEW TRANSLATION
  great_project_type_grand_campaign_project_contribution_tt: "Přispěvatel získá přístup k #V [GetCasusBelliType('grand_campaign_kingdom_invasion_cb').GetName]#! [casus_belli|E] až do dokončení [great_project|E] #weak (10 let)#!" # todo: NEW TRANSLATION
  great_project_type_grand_campaign_project_contribution_win_named_tt: "[contributor.GetName] se očekává, že #P vyhraje#! [war|E] jménem [GetTitleByKey('h_china').GetHolder.GetName]" # todo: NEW TRANSLATION
- great_project_type_grand_campaign_project_contribution_win_tt: "Očekává se, že přispěvatel #P vyhraje#! [war|E] jménem [GetTitleByKey('h_china').GetHolder.GetName]" # todo: NEW TRANSLATION
+ great_project_type_grand_campaign_project_contribution_win_tt: "[GetTitleByKey('h_china').GetHolder.GetShortUIName|U] se stane novým [holder|E] sporných [titles|E]"
  grand_campaign_attack: "Přispěvatel se připojuje k [war|E] za" # todo: NEW TRANSLATION
  grand_campaign_attack_1: "$grand_campaign_attack$ [great_project.MakeScope.Var('attack_1').Title.GetName]" # todo: NEW TRANSLATION
  grand_campaign_attack_2: "$grand_campaign_attack$ [great_project.MakeScope.Var('attack_2').Title.GetName]" # todo: NEW TRANSLATION
@@ -351,8 +351,8 @@
  movement_power_decreased_grand_campaign_name: "Prohraná velká kampaň" # todo: NEW TRANSLATION
  grand_campaign_movement_power_gain_tt: "Získává [movement_power|E]: [movement_power_i]#P +100#! " # todo: NEW TRANSLATION
  grand_campaign_movement_power_loss_tt: "Ztrácí [movement_power|E]: [movement_power_i]#N -100#! " # todo: NEW TRANSLATION
- grand_campaign_won_tt: "Pokud přispěvatelé nebo [owner.GetShortUIName] [completely_control|E] alespoň #V 50%#! sporných [titles|E]:\n$BULLET_WITH_TAB$Každý přispěvatel:\n$TAB$$BULLET_WITH_TAB$$grand_campaign_movement_power_gain_tt$\n$BULLET_WITH_TAB$[owner.GetShortUIName|U] získá [legitimacy_i][EmptyScope.ScriptValue('major_legitimacy_gain')|+0]" # todo: NEW TRANSLATION
- grand_campaign_lost_tt: "Jinak:\n$BULLET_WITH_TAB$Každý přispěvatel:\n$TAB$$BULLET_WITH_TAB$$grand_campaign_movement_power_loss_tt$\n$BULLET_WITH_TAB$[owner.GetShortUIName|U] spustí $catalyst_hegemon_lost_war$" # todo: NEW TRANSLATION
+ grand_campaign_won_tt: "Pokud přispěvatelé nebo [owner.GetShortUIName] [completely_control|E] alespoň #V 50%#! sporných [titles|E]:\n$BULLET_WITH_TAB$Každý přispěvatel:\n$TAB$$BULLET_WITH_TAB$$grand_campaign_movement_power_gain_tt$\n$BULLET_WITH_TAB$[owner.GetShortUIName|U] získá [legitimacy_i][EmptyScope.ScriptValue('major_legitimacy_gain')|+0]\n$BULLET_WITH_TAB$[SelectLocalization( Or( ObjectsEqual( GetSituation('dynastic_cycle').GetTopCurrentPhase.GetType.GetName,  GetSituationType('dynastic_cycle').GetPhaseType('situation_dynastic_cycle_phase_stability_advancement').GetName),ObjectsEqual( GetSituation('dynastic_cycle').GetTopCurrentPhase.GetType.GetName, GetSituationType('dynastic_cycle').GetPhaseType('situation_dynastic_cycle_phase_instability').GetName) ), 'great_project_type_grand_campaign_project_contribution_win_tributaries_tt', 'great_project_type_grand_campaign_project_contribution_win_tt' )]\n$BULLET_WITH_TAB$[owner.GetShortUIName|U] spustí '$catalyst_grand_campaign$'"
+ grand_campaign_lost_tt: "Jinak:\n$BULLET_WITH_TAB$Každý přispěvatel:\n$TAB$$BULLET_WITH_TAB$$grand_campaign_movement_power_loss_tt$\n$BULLET_WITH_TAB$[owner.GetShortUIName|U] spustí '$catalyst_grand_campaign_lost$'"
  great_project_type_minister_project_development: "Rozvoj komunit" # todo: NEW TRANSLATION
  great_project_type_minister_project_development_desc: "Řetěz kovaný z železa je tak silný jako jeho nejslabší článek. Pokud jeden článek selže, řetěz ztrácí smysl. Regiony naší velké říše nejsou výjimkou. Každý kout [GetPlayer.GetPrimaryTitle.GetNameNoTier] musí vzkvétat, aby naše prosperita přetrvala. Postavíme kanály a silnice, zlepšíme přístup k vodě, dobře plánovaná města — to vše vybudujeme." # todo: NEW TRANSLATION
  great_project_type_minister_project_development_possessive: "Rozvoje komunit" # todo: NEW TRANSLATION
@@ -377,3 +377,8 @@
  great_project_type_minister_project_establish_control_contribution_court_magistrates: "Soudní úředníci" # todo: NEW TRANSLATION
  great_project_logistics_generic: "Logistika" # todo: NEW TRANSLATION
  great_project_logistics_generic_desc: "Projekty této velikosti vyžadují značné plánování." # todo: NEW TRANSLATION
+ great_project_type_grand_campaign_project_contribution_win_tributaries_tt: "[GetTitleByKey('h_china').GetHolder.GetShortUIName|U] se stane novým [suzerain|E] sporných [titlepossessive|E] [holders|E]" # todo: NEW TRANSLATION
+ grand_campaign_start_tt: "[GetTitleByKey('e_minister_grand_marshal').GetName] [title|E] [holder|E] zahájí [GetCasusBelliType('grand_campaign_kingdom_invasion_cb').GetName] [war|E]" # todo: NEW TRANSLATION
+ you_have_a_minister_of_works_desc: "Máte [minister_of_works|E]" # todo: NEW TRANSLATION
+ you_have_a_minister_of_rites_desc: "Máte [minister_of_rites|E]" # todo: NEW TRANSLATION
+ you_have_a_grand_marshal_desc: "Máte [minister_grand_marshal|E]" # todo: NEW TRANSLATION

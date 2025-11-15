@@ -12,9 +12,9 @@
  IMPERIAL_BUREAUCRACY_IS_ON_COOLDOWN: "Nedávno jste změnili [imperial_bureaucracy|E]\n    @alert_icon! #alert_trial Lze změnit znovu po [GetCurrentDateWithDiff( GetVarTimeRemaining( CHARACTER.MakeScope, 'imperial_bureaucracy_cooldown') )]#!"
  I_HAVE_POWERFUL_VASSAL_WITH_NEGATIVE_OPINION: "Máte jednoho nebo více [powerful_vassals|E], kteří mají na vás negativní názor a blokují všechny změny [succession_law|E]"
  I_LACK_ADMIN_LAW_ALLOWING_SUCCESSION_LAW_CHANGE: "Nemáte [GetLaw('imperial_bureaucracy_2').GetName] [imperial_bureaucracy|E] nebo lepší"
- I_LACK_LAW_ALLOWING_DESIGNATE_HEIR: "Nemáte [GetLaw('crown_authority_3').GetName] [crown_authority|E]"
- I_LACK_LAW_ALLOWING_PARTITION_SUCCESSION_LAW_CHANGE: "Nemáte [GetLaw('crown_authority_2').GetName] [crown_authority|E]"
- I_LACK_LAW_ALLOWING_SUCCESSION_LAW_CHANGE: "Nemáte vysokou [crown_authority|E]"
+ I_LACK_LAW_ALLOWING_DESIGNATE_HEIR: "Nemáte zákon, který by vám umožňoval určit dědice"
+ I_LACK_LAW_ALLOWING_PARTITION_SUCCESSION_LAW_CHANGE: "[SelectLocalization( GetPlayer.GetGovernment.HasGovernmentFlag( 'government_is_japan_feudal' ), 'I_LACK_LAW_ALLOWING_SUCCESSION_LAW_CHANGE_JAPANESE_FEUDAL', 'I_LACK_LAW_ALLOWING_SUCCESSION_LAW_CHANGE_FEUDAL' )]"
+ I_LACK_LAW_ALLOWING_SUCCESSION_LAW_CHANGE: "[SelectLocalization( GetPlayer.GetGovernment.HasGovernmentFlag( 'government_is_japan_feudal' ), 'I_LACK_LAW_ALLOWING_SUCCESSION_LAW_CHANGE_JAPANESE_FEUDAL', 'I_LACK_LAW_ALLOWING_SUCCESSION_LAW_CHANGE_FEUDAL' )]"
  I_LACK_LAW_ALLOWING_TITLE_REVOCATION_ADMIN: "Nemáte [GetLaw('imperial_bureaucracy_1').GetName] [imperial_bureaucracy|E] nebo lepší"
  I_LACK_LAW_ALLOWING_TITLE_REVOCATION_CROWN: "Nemáte [GetLaw('crown_authority_1').GetName] [crown_authority|E] nebo lepší"
  I_LACK_LAW_ALLOWING_TITLE_REVOCATION_TRIBAL: "Nemáte [GetLaw('tribal_authority_2').GetName] [tribal_authority|E] nebo lepší"
@@ -378,7 +378,7 @@
  CONFUCIAN_BUREAUCRACY_IS_ON_COOLDOWN: "Nedávno jste změnili [meritocratic_bureaucracy|E]. Lze změnit znovu po [GetCurrentDateWithDiff( GetVarTimeRemaining( CHARACTER.MakeScope, 'imperia l_bureaucracy_cooldown') )]" # todo: NEW TRANSLATION
  japanese_bureaucracy: "[japanese_bureaucracy|E]" # todo: NEW TRANSLATION
  japanese_bureaucracy_0: "Autonomní guvernéři" # todo: NEW TRANSLATION
- japanese_bureaucracy_0_effects: "$EFFECT_LIST_BULLET$#indent_newline:3 Tituly [vassals|E] nemohou být zděděny postavami mimo [realm|E]#!" # todo: NEW TRANSLATION
+ japanese_bureaucracy_0_effects: "$EFFECT_LIST_BULLET$#indent_newline:3 Tituly vazalů [titles|E] nemohou být děděny postavami mimo [realm|E]#!\n$EFFECT_LIST_BULLET$Vládcové mohou určit svého [heir|E]"
  japanese_bureaucracy_1: "Omezený dohled" # todo: NEW TRANSLATION
  japanese_bureaucracy_1_effects: "$EFFECT_LIST_BULLET$[titles|E] lze odejmout\n$EFFECT_LIST_BULLET$[vassals|E] lze odvolat" # todo: NEW TRANSLATION
  japanese_bureaucracy_1_effects_not_in_prev: "$EFFECT_LIST_BULLET$#indent_newline:3 Ne-[administrative|E] [vassals|E] nemohou vyhlásit [war|E] proti jiným vazalům, pokud nepoužijí [hook|E] na svého [liege|E]#!" # todo: NEW TRANSLATION
@@ -425,3 +425,8 @@
  conservative_ministers_tt: "Nejméně [CHARACTER.MakeScope.ScriptValue('needed_conservative_ministers_value')] [ministers|E] musí být členy [GetSituation('dynastic_cycle').GetTopParticipantGroupByKey('conservative_movement').GetName] #weak (aktuálně: $VALUE|0$)#!" # todo: NEW TRANSLATION
  not_conservative_powerful_families_tt: "[house_heads|E] nejméně [CHARACTER.MakeScope.ScriptValue('needed_conservative_powerful_families_value')] [powerful_families|E] #bold nesmí#! být členy [GetSituation('dynastic_cycle').GetTopParticipantGroupByKey('conservative_movement').GetName] #weak (aktuálně: $VALUE|0$)#!" # todo: NEW TRANSLATION
  not_conservative_ministers_tt: "Nejméně [CHARACTER.MakeScope.ScriptValue('needed_conservative_ministers_value')] [ministers|E] #bold nesmí#! být členy [GetSituation('dynastic_cycle').GetTopParticipantGroupByKey('conservative_movement').GetName] #weak (aktuálně: $VALUE|0$)#!" # todo: NEW TRANSLATION
+ I_LACK_LAW_ALLOWING_SUCCESSION_LAW_CHANGE_FEUDAL: "Nemáte [GetLaw('crown_authority_2').GetName] [crown_authority|E] nebo vyšší" # todo: NEW TRANSLATION
+ I_LACK_LAW_ALLOWING_SUCCESSION_LAW_CHANGE_JAPANESE_FEUDAL: "Nemáte [GetLaw('japanese_bureaucracy_2').GetName] [crown_authority|E] nebo vyšší" # todo: NEW TRANSLATION
+ I_LACK_ADMIN_ALLOWING_DESIGNATE_HEIR: "Nemáte [noble_family|E] [title|e]" # todo: NEW TRANSLATION
+ I_LACK_CROWN_AUTHORITY_DESIGNATE_HEIR: "Nemáte [GetLaw( 'crown_authority_3' ).GetName] [crown_authority|E]" # todo: NEW TRANSLATION
+ can_have_single_heir_succession_law_trigger_merit_or_japan_tt: "Jedno z následujících:\n$BULLET_WITH_TAB$Vaše [culture|E] má $innovation_primogeniture$ [innovation|E]\n$BULLET_WITH_TAB$Jste [independent|E] [ruler|E]\n$BULLET_WITH_TAB$Jste [ceremonial_liege|E]" # todo: NEW TRANSLATION

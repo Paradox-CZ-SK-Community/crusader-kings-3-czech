@@ -35,13 +35,13 @@
  COA_LINE_OF_SUCCESSION: "[Concept('line_of_succession','$game_concept_line_of_succession$')|E]:\n"
  COA_REALM_SIZE_TOOLTIP: "Velikost říše: [Character.RealmSize|V] [Concept('counties','$game_concept_counties$')|El]"
  COA_REALM_SUZERAIN_INFO: "\n[Concept('suzerain','$game_concept_suzerain$')|E]: [Character.GetSuzerain.GetUIName]"
- COA_REALM_TOOLTIP_CHARACTER: "[SelectLocalization( Character.IsAlive, 'COA_REALM_TOOLTIP_CHARACTER_ALIVE', 'COA_REALM_TOOLTIP_CHARACTER_DEAD' )]" # todo: #T [CHARACTER.GetPrimaryTitle.GetNameWithUnderlyingNoTooltip|U]#!\n[Character.Custom('GetRealmOrDomicileTooltip')]\n[Concept('holder','$game_concept_holder$')|E]: [CHARACTER.GetUIName|U]\nVojenská síla: [CHARACTER.GetMilitaryStrengthText|V] [Concept('soldiers','$game_concept_soldiers$')|E]\n[SelectLocalization( GreaterThan_int32( CHARACTER.RealmSize, '(int32)0' ), 'COA_REALM_SIZE_TOOLTIP', 'CV_UNLANDED')][SelectLocalization(CHARACTER.HasSuzerain, 'COA_REALM_SUZERAIN_INFO', '')]\n\n#S Nástupnictví#!\nZákon nástupnictví: $SUCCESSION_FORM_NAME$\n\n[Concept('line_of_succession','$game_concept_line_of_succession$')|E]:\n[CHARACTER.GetPrimaryTitle.GetLineOfSuccessionDesc]
+ COA_REALM_TOOLTIP_CHARACTER: "[SelectLocalization( Character.IsAlive, 'COA_REALM_TOOLTIP_CHARACTER_ALIVE', 'COA_REALM_TOOLTIP_CHARACTER_DEAD' )]"
  COA_REALM_TOOLTIP_CHARACTER_CLICK_INFO: "#I [Select_CString(CHARACTER.IsShownInCharacterWindow, 'Kliknutím jít na lokalitu', 'Kliknutím zobrazit lokalitu')]\nKlikněte pravým tlačítkem pro interakci s [CHARACTER.GetShortUINameNoTooltip]#!"
  COA_REALM_TOOLTIP_GUI_CLICK_INFO: "#I [Select_CString(Character.IsShownInCharacterWindow, 'Kliknutím jít na lokalitu', 'Kliknutím zobrazit lokalitu')]\nKlikněte pravým tlačítkem pro interakci s [Character.GetShortUINameNoTooltip]#!"
  COA_REALM_TOOLTIP_PRIMARY_TITLE_CLICK_INFO: "#I Klikněte pro zobrazení primárního titulu [CHARACTER.GetPrimaryTitle.GetNameNoTooltip|V]#!"
  COA_TOOLTIP_CLICK_INFO: "#I [SelectLocalization(TITLE.IsShownInTitleView, 'GO_TO_CLICK', 'VIEW_CLICK')]\n$GO_TO_RIGHT_CLICK$#!"
  COA_TOOLTIP_CLICK_INFO_GUI: "#I [SelectLocalization(Title.IsShownInTitleView, 'GO_TO_CLICK', 'VIEW_CLICK')]\n$GO_TO_RIGHT_CLICK$#!"
- COA_TOOLTIP_HOLDER: "[GetPlayer.Custom2_Title( 'TitleRelationToMe', TITLE.Self )][TITLE.GetLeaseInfo][holder|E]: [TITLE.GetHolder.GetFullNameNicknamed]\n[SelectLocalization( TITLE.GetHolder.HasRealmLaw('top_liege_not_redirected_to_border_wars_law'), 'TITLE_VIEW_DISABLED_BORDER_WARS', 'TITLE_VIEW_ENABLED_BORDER_WARS' ) ]\n[SelectLocalization(DataModelHasItems(TITLE.GetLineOfSuccession), 'COA_LINE_OF_SUCCESSION', '')][TITLE.GetLineOfSuccessionDesc]\n" # todo: [GetPlayer.Custom2_Title( 'TitleRelationToMe', TITLE.Self )][TITLE.GetLeaseInfo][Concept('holder','$game_concept_holder$')|E]: [TITLE.GetHolder.GetFullNameNicknamed]\n[SelectLocalization(DataModelHasItems(TITLE.GetLineOfSuccession), 'COA_LINE_OF_SUCCESSION', '')][TITLE.GetLineOfSuccessionDesc]\n
+ COA_TOOLTIP_HOLDER: "[GetPlayer.Custom2_Title( 'TitleRelationToMe', TITLE.Self )][TITLE.GetLeaseInfo][holder|E]: [TITLE.GetHolder.GetFullNameNicknamed]\n[SelectLocalization( TITLE.GetHolder.HasRealmLaw('top_liege_not_redirected_to_border_wars_law'), 'TITLE_VIEW_DISABLED_BORDER_WARS', 'TITLE_VIEW_ENABLED_BORDER_WARS' ) ]\n[SelectLocalization(DataModelHasItems(TITLE.GetLineOfSuccession), 'COA_LINE_OF_SUCCESSION', '')][TITLE.GetLineOfSuccessionDesc]\n"
  COA_TOOLTIP_NO_HOLDER: "Nevytvořeno\n"
  COA_TOOLTIP_REQUIRED_HEIR_GOVERNMENT: "Požadované [Concept('governments','$game_concept_governments$')|El] pro dědění:"
  CULTURE_COOLTIP_GETNAME: "[Culture.GetNameNoTooltip]"
@@ -91,7 +91,7 @@
  RIGHT_CLICK_DISMISS: "#I Klikněte pravým tlačítkem pro skrytí#!"
  SORT_BY: "Seřadit podle: "
  TITLE_LEASED_OUT_TO: "[Concept('lessee','$game_concept_lessee$')|E]: [CHARACTER.GetUIName]\n"
- TITLE_LINE_OF_SUCCESSION_ENTRY: "[CHARACTER.GetUIName|U]\n" # todo: [CHARACTER.GetUIName]\n
+ TITLE_LINE_OF_SUCCESSION_ENTRY: "[CHARACTER.GetUIName|U]\n"
  TITUS_FILTER_SAME_VERSION: "Stejný kontrolní součet #weak ([GetMPChecksum])#!"
  TOP_BAR_VERSION: "Verze hry: [GetGameVersionInfo]\nKontrolní součet MP: [GetMPChecksum|V] $MODIFIED_CHECKSUM$ [GetRandomLogInfo]"
  TT_GAME_MODULE_ADDITIONAL_VERSION_INFO: "   Kontrolní součet MP: #V [GetMPChecksum]#! #V [GetRandomLogInfo]#!"

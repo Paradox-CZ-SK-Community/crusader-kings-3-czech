@@ -16,7 +16,7 @@
  IS_OCCUPIED_TRIGGER: "Držení je [occupied|E]"
  MAX_MILITARY_STRENGTH_TRIGGER: "Maximální vojenská síla: $VALUE|+0=$"
  NUM_UNREAD_ACTION: "1"
- RAID_LOOT_TRIGGER: "[raid|E] [loot|E] je: $COMPARATOR$ $NUM|V0$" # todo: [raid|E] [loot|E] je: $COMPARATOR$ $NUM|V0$
+ RAID_LOOT_TRIGGER: "[raid|E] [loot|E] je: $COMPARATOR$ $NUM|V0$"
  TLFR_CROWN_AUTHORITY_TIP: "#help Nejspolehlivějším způsobem, jak tomu předejít, je zvýšit vaši [crown_authority|E] na [GetLaw('crown_authority_2').GetName]. To ale může být také způsobeno tím, že dotyčný vazal nemá legitimní děti. Pokud je [married|E] a plodný/á, problém se může vyřešit sám.#!"
  TLFR_FOREIGN_RULER_SUCCESSION_TIPS: "#help Pokud vazal získá titul v cizí říši s vyšším [title_rank|E], než je jeho současný [primary_title|E], přestane být vaším vazalem.\n\nMůže být možné zabránit tomu, aby vazalova země opustila vaši říši tím, že:\n$BULLET_WITH_TAB$[Concept( 'revoke', 'Revoking' )|E] jeho tituly\n$BULLET_WITH_TAB$udělíte vazalovi titul stejného [Concept('title_tier', 'Tier')|E], jaký zdědí#!"
  USING_CB_TRIGGER: "[casus_belli|E] je $CASUS_BELLI$"
@@ -91,7 +91,7 @@
  action_can_ask_hof_for_claim_combined_group_name: "@hof_icon! Vaše hlava víry by udělila nároky"
  action_can_ask_hof_for_claim_combined_label: "[target_title.Custom('GetTierIcon')] [target_title.GetNameNoTooltip] from [recipient.GetShortUINameNoTooltip]"
  action_can_ask_hof_for_claim_desc: "Máte dostatek [piety|E] a váš [head_of_faith|E], [secondary_recipient.GetUIName], má o vás dostatečně vysoké [opinion|E], aby vám udělil [claim|E] na [target_title.Custom('GetTierIcon')][target_title.GetBaseName].$action_can_ask_hof_for_claim_HELP$"
- action_can_ask_hof_for_claim_label: "@hof_icon! Váš náboženský představený, [secondary_recipient.GetUINameNoTooltip], by udělil nárok na [target_title.Custom('GetTierIcon')][target_title.GetNameNoTooltip]" # todo: @hof_icon! Váš představený víry, [secondary_recipient.GetUINameNoTooltip], by udělil nárok na [target_title.Custom('GetTierIcon')][target_title.GetNameNoTooltip]
+ action_can_ask_hof_for_claim_label: "@hof_icon! Váš náboženský představený, [secondary_recipient.GetUINameNoTooltip], by udělil nárok na [target_title.Custom('GetTierIcon')][target_title.GetNameNoTooltip]"
  action_can_ask_hof_for_money: "@gold_icon!Můžete požádat svou hlavu víry o zlato"
  action_can_ask_hof_for_money_click: "#I Klikněte pro $hof_ask_for_gold_interaction$#!"
  action_can_ask_hof_for_money_desc: "Váš [head_of_faith|E], [recipient.GetUIName], by přijal prosbu o [gold|E].\n\n#help Pokud máte málo [gold|E], je to způsob, jak utratit své [piety|E] a rozšířit pokladnici!#!"
@@ -103,10 +103,10 @@
  action_can_assign_guardian_combined_group_label: "@child_icon! Dětem chybí opatrovníci"
  action_can_assign_guardian_combined_group_name: "$action_can_assign_guardian$"
  action_can_assign_guardian_combined_label: "Váš [actor.Custom2('RelationToMe', recipient)], [recipient.GetShortUINameNoTooltip], [recipient.GetAge] [recipient.Custom2('GetSuccessionLinePositionCurrentSituation', actor)]"
- action_can_assign_guardian_combined_unimportant: "@warning_icon! #X Pouze vašim mladším dětem chybí [guardians|E]#!" # todo: @warning_icon! #X Pouze vašim mladším dětem chybí [guardians|E]#!
+ action_can_assign_guardian_combined_unimportant: "@warning_icon! #X Pouze vašim mladším dětem chybí [guardians|E]#!"
  action_can_assign_guardian_desc: "Můžete určit [guardian|E] pro [recipient.GetShortUIName], [recipient.GetAge]. [recipient.Custom2('GetSuccessionLinePositionCurrentSituation', actor)]$action_can_assign_guardian_HELP$"
  action_can_assign_guardian_label: "@child_icon! Můžete určit opatrovníka pro svého [actor.Custom2('RelationToMe', recipient)] [recipient.GetShortUINameNoTooltip], [recipient.GetAge] [recipient.Custom2('GetSuccessionLinePositionCurrentSituation', actor)]"
- action_can_assign_guardian_unimportant: "@warning_icon! #X Není ve třetím nebo vyšším pořadí dědění pro váš primární titul#!"
+ action_can_assign_guardian_unimportant: "@warning_icon! #X Toto dítě pravděpodobně nezdědí váš [primary_title|E]#!"
  action_can_call_ally: "@alliance_icon! Můžete svolat spojence"
  action_can_call_ally_click: "#I Klikněte pro svolání spojence#!"
  action_can_call_ally_combined_group_description: "Můžete přivolat své [allies|E] do vašich [wars|E].$CALL_TO_WAR_HELP$"
@@ -321,7 +321,7 @@
  action_can_start_join_war_contract_combined_group_label: "Můžete se připojit k válkám k dokončení pracovních smluv"
  action_can_start_join_war_contract_combined_label: "$action_can_start_join_war_contract_label$"
  action_can_start_join_war_contract_desc: "Můžete se přidat na stranu [recipient.GetNamePossessive] ve [war|E] proti [task_contract.MakeScope.Var('task_contract_target').Char.GetName] a dokončit [task_contract.GetType.GetName] [task_contract|E]"
- action_can_start_join_war_contract_label: "@war_icon! Můžete se připojit k válce [task_contract.MakeScope.Var('task_contract_war').War.GetName], abyste splnili úkol smlouvy [task_contract.GetType.GetName]" # todo: @war_icon! Můžete se připojit k válce [task_contract.MakeScope.Var('task_contract_war').War.GetName], abyste dokončili úkol smlouvy [task_contract.GetType.GetName]
+ action_can_start_join_war_contract_label: "@war_icon! Můžete se připojit k válce [task_contract.MakeScope.Var('task_contract_war').War.GetName], abyste splnili úkol smlouvy [task_contract.GetType.GetName]"
  action_can_start_laamp_raid_contract: "Vyhlásit válku"
  action_can_start_laamp_raid_contract_click: "#I Kliknutím zobrazíte [casus_bellis|E]#!"
  action_can_start_laamp_raid_contract_combined_group_label: "@war_icon! Můžete vyhlásit války k dokončení smluv"
@@ -398,7 +398,7 @@
  action_designate_regent_for_hook_click: "#I Kliknutím otevřete okno Diarchy#!"
  action_designate_regent_for_hook_desc: "Vaše [health|E] začíná selhávat — můžete brzy zemřít a váš dědic [recipient.GetTitledFirstName] je velmi mladý.\n\nPokud předem jmenujete #P Selfless#! regenta, bude i po vaší [character_death_death|E] věrně sloužit [recipient.GetFirstNameNoTooltip].$action_designate_regent_for_hook_help$"
  action_designate_regent_for_hook_help: "\n\n#help [recipient.GetFirstNameNoTooltip] získá [strong_hook|E] na kterémkoli #P Selfless#! regentovi, kterého jmenujete, pokud bude stále #P Selfless#!, až zemřete. Tento [hook|E] vyprší, když bude [recipient.GetSheHe] mít 21 let.#!"
- action_designate_regent_for_hook_label: "@declare_regent_icon! Jmenování #P Nesobeckého#! [actor.GetLiege.GetDiarchTitle] nyní může pomoci vašemu [actor.Custom2('RelationToMe', recipient)] [recipient.GetFirstNameNoTooltip|V] pokud zemřete příliš brzy" # todo: @declare_regent_icon! Určení #P Nezištného#! [actor.GetLiege.GetDiarchTitle] nyní může pomoci vašemu [actor.Custom2('RelationToMe', recipient)] [recipient.GetFirstNameNoTooltip|V] pokud zemřete příliš brzy
+ action_designate_regent_for_hook_label: "@declare_regent_icon! Jmenování #P Nesobeckého#! [actor.GetLiege.GetDiarchTitle] nyní může pomoci vašemu [actor.Custom2('RelationToMe', recipient)] [recipient.GetFirstNameNoTooltip|V] pokud zemřete příliš brzy"
  action_disabled_building: "@building_icon! Deaktivovaná budova v [landed_title.GetNameNoTierNoTooltip]"
  action_disabled_building_HELP: "\n\n#help Deaktivovaná budova neposkytuje svému vlastníkovi žádné výhody. I když může být mnoho důvodů, proč je budova deaktivovaná, nejběžnějším je, že máte nesprávný typ [government|E].#!"
  action_disabled_building_click: "#I Klikněte pro zobrazení#!"
@@ -461,7 +461,7 @@
  action_grant_vassal_to_rightful_liege_combined_group_label: "@vassal_icon! Můžete postoupit vazaly právoplatnému lennímu pánu"
  action_grant_vassal_to_rightful_liege_combined_group_name: "@vassal_icon! Vazalové mohou být postoupeni svému právoplatnému lennímu pánu"
  action_grant_vassal_to_rightful_liege_combined_label: "Předat [secondary_actor.GetPrimaryTitle.Custom('GetTierIcon')][secondary_actor.GetUINameNoTooltip] [recipient.GetPrimaryTitle.Custom('GetTierIcon')][recipient.GetUINameNoTooltip]"
- action_grant_vassal_to_rightful_liege_desc: "Převodem [secondary_actor.GetNameNoTooltip] na [recipient.GetNameNoTooltip] se zbavíte penalizace [rightful_liege|E].$action_grant_vassal_to_rightful_liege_HELP$" # todo: Převodem [secondary_actor.GetNameNoTooltip] na [recipient.GetNameNoTooltip] se zbavíte trestu [rightful_liege|E].$action_grant_vassal_to_rightful_liege_HELP$
+ action_grant_vassal_to_rightful_liege_desc: "Převodem [secondary_actor.GetNameNoTooltip] na [recipient.GetNameNoTooltip] se zbavíte penalizace [rightful_liege|E].$action_grant_vassal_to_rightful_liege_HELP$"
  action_grant_vassal_to_rightful_liege_label: "@vassal_icon! Můžete postoupit [secondary_actor.GetPrimaryTitle.Custom('GetTierIcon')][secondary_actor.GetUINameNoTooltip] na [recipient.GetPrimaryTitle.Custom('GetTierIcon')][recipient.GetUINameNoTooltip]"
  action_has_any_display_cb_on: "@war_icon! Můžete vyhlásit [war|E] na [recipient.GetShortUINameNoTooltip]"
  action_has_any_display_cb_on_HELP: "\n\n#help Pokud jsou vaše ozbrojené síly a [allies|E] silnější než nepřítel, válka může být velmi výhodná. Můžete přivlastnit [titles|E], rozšířit své [realm|E] a získat [prestige_experience|E].\n\nVálky jsou však nákladné, zvláště pokud musíte uznat [defeat|E]. Ambiciózní sousedé mohou využít vaši oslabenou říši.#!"
@@ -554,7 +554,7 @@
  action_join_tributary_war_click: "#I Kliknutím se připojíte k válce#!"
  action_join_tributary_war_combined_group_label: "Můžete se připojit k válkám"
  action_join_tributary_war_desc: "Můžete se připojit k [war|E] na straně [recipient.GetNamePossessive] proti [tributary_war_attacker.GetShortUIName]"
- action_join_tributary_war_label: "@war_icon! Můžete se připojit k [war|E] proti vašemu tributáři, [recipient.GetShortUIName]" # todo: @war_icon! Můžete se připojit k [war|E] proti vašemu Tributary, [recipient.GetShortUIName]
+ action_join_tributary_war_label: "@war_icon! Můžete se připojit k [war|E] proti vašemu tributáři, [recipient.GetShortUIName]"
  action_join_tributary_warcombined_label: "$action_can_start_join_war_contract_label$"
  action_laamp_apprehension_threat: "@prison_icon! Jste uprchlík v [apprehender.GetPrimaryTitle.GetBaseNameNoTierNoTooltip|V]"
  action_laamp_apprehension_threat_HELP: "\n\n#help Mohou se pokusit vás násilím [imprison|E] a rozehnat váš [camp|E], a zde si nebudete moci brát [task_contracts|E]\n\nMěli byste opustit [realm|E], pokud nejste dostatečně silní, abyste jim mohli čelit ve [war|E]#!"
@@ -566,11 +566,11 @@
  action_laamp_apprehension_threat_desc: "Váš [camp|E] je v [actor.GetShortUINamePossessive] [realm|E], který vás považuje za [criminal|E]$action_laamp_apprehension_threat_HELP$"
  action_laamp_apprehension_threat_label: "@prison_icon! Uprchlík v [apprehender.GetPrimaryTitle.GetBaseNameNoTierNoTooltip|V] ([actor.GetTitledFirstNameRegnal])"
  action_laamp_camp_purpose: "Dostupný [camp_purpose|E]"
- action_laamp_camp_purpose_click: "Můžete pro svůj [camp|E] zvolit [camp_purpose|E].\n\n#help Přepnutí na jiný [camp_purpose|E] vám může pomoci specializovat váš [camp|E] směrem, který zvolíte, odemknout speciální [domicile_buildings|E], specifičtější [task_contracts|E] a v některých případech odemknout unikátní [interactions|E] nebo [casus_bellis|E].\n#!"
- action_laamp_camp_purpose_desc: ""
+ action_laamp_camp_purpose_click: "#I Klikněte pro výběr $game_concept_camp_purpose$#!"
+ action_laamp_camp_purpose_desc: "Pro svůj [camp|E] můžete zvolit [camp_purpose|E].\n\n#help Přepnutí na jiný [camp_purpose|E] vám může pomoci specializovat váš [camp|E] směrem, který si vyberete, odemykat speciální [domicile_buildings|E], více specifické [task_contracts|E] a v některých případech odemykat jedinečné [interactions|E] nebo [casus_bellis|E]." # todo:
  action_laamp_camp_purpose_label: "@prison_icon! Uprchlík v [apprehender.GetPrimaryTitle.GetBaseNameNoTierNoTooltip|V] ([actor.GetTitledFirstNameRegnal])"
  action_legal_meddling: "Získat nároky v [realm|E] vašeho [liege|E] jako [actor.GetLiege.GetDiarchTitle]"
- action_legal_meddling_click: "#I Klikněte pro otevření interakce s postavou#!" # todo: #I Klikněte pro otevření interakce s postavou#!
+ action_legal_meddling_click: "#I Klikněte pro otevření interakce s postavou#!"
  action_legal_meddling_combined_group_description: "$action_legal_meddling_desc$"
  action_legal_meddling_combined_group_label: "@unpressed_claim! Můžete vyrobit nároky v [realm|E] vašeho [liege|E] jako [actor.GetLiege.GetDiarchTitle]"
  action_legal_meddling_combined_group_name: "$action_legal_meddling$"
@@ -627,7 +627,7 @@
  action_new_criminal_task_contract_combined_label: "$action_new_criminal_task_contract_label$"
  action_new_criminal_task_contract_combined_unimportant: "$action_new_task_contract_combined_unimportant$"
  action_new_criminal_task_contract_desc: "$action_new_task_contract_desc$"
- action_new_criminal_task_contract_label: "@gallowsbait_icon! Trestní smlouva: [task_contract.GetType.GetName] ([recipient.GetShortUINameNoTooltip])" # todo: @gallowsbait_icon! Kriminální smlouva: [task_contract.GetType.GetName] ([recipient.GetShortUINameNoTooltip])
+ action_new_criminal_task_contract_label: "@gallowsbait_icon! Trestní smlouva: [task_contract.GetType.GetName] ([recipient.GetShortUINameNoTooltip])"
  action_new_criminal_task_contract_unimportant: "$action_new_task_contract_unimportant$"
  action_new_governance_issue: "@task_contract_icon! Čekající správní záležitost"
  action_new_governance_issue_click: "#I Kliknutím zobrazíte správní záležitost#!"
@@ -637,7 +637,7 @@
  action_new_governance_issue_combined_label: "$action_new_governance_issue_label$"
  action_new_governance_issue_combined_unimportant: "#help Musíte dokončit svou současnou správní záležitost, abyste mohli přijmout čekající správní smlouvy#!"
  action_new_governance_issue_desc: "[task_contract.GetTaskContractRequest]"
- action_new_governance_issue_label: "@task_contract_icon! Problém správy: [task_contract.GetType.GetName]" # todo: @task_contract_icon! Problém správy: [task_contract.GetType.GetName]
+ action_new_governance_issue_label: "@task_contract_icon! Problém správy: [task_contract.GetType.GetName]"
  action_new_governance_issue_unimportant: "#help Musíte dokončit svou současnou správní záležitost, abyste mohli přijmout tuto#!"
  action_new_task_contract: "@task_contract_icon! Dostupná smlouva"
  action_new_task_contract_click: "#I Kliknutím zobrazíte smlouvu#!"
@@ -647,7 +647,7 @@
  action_new_task_contract_combined_label: "$action_new_task_contract_label$"
  action_new_task_contract_combined_unimportant: "#help Musíte buď přesunout svůj tábor, nebo dokončit svou současnou smlouvu, abyste mohli přijmout dostupné smlouvy#!"
  action_new_task_contract_desc: "[task_contract.GetTaskContractRequest]"
- action_new_task_contract_label: "@task_contract_icon! Smlouva: [task_contract.GetType.GetName] ([recipient.GetShortUINameNoTooltip])" # todo: @task_contract_icon! Smlouva: [task_contract.GetType.GetName] ([recipient.GetShortUINameNoTooltip])
+ action_new_task_contract_label: "@task_contract_icon! Smlouva: [task_contract.GetType.GetName] ([recipient.GetShortUINameNoTooltip])"
  action_new_task_contract_unimportant: "#help Musíte buď přesunout svůj tábor, nebo dokončit svou současnou smlouvu, abyste mohli přijmout tuto smlouvu#!"
  action_new_tier_3_governance_issue: "@task_contract_tier_icon! Čekající správní záležitost vyšší úrovně"
  action_new_tier_3_governance_issue_click: "$action_new_governance_issue_click$"
@@ -657,7 +657,7 @@
  action_new_tier_3_governance_issue_combined_label: "$action_new_governance_issue_combined_label$"
  action_new_tier_3_governance_issue_combined_unimportant: "$action_new_governance_issue_combined_unimportant$"
  action_new_tier_3_governance_issue_desc: "$action_new_governance_issue_desc$"
- action_new_tier_3_governance_issue_label: "@task_contract_tier_icon! Závažný problém správy: [task_contract.GetType.GetName]" # todo: @task_contract_tier_icon! Problém správy vyšší úrovně: [task_contract.GetType.GetName]
+ action_new_tier_3_governance_issue_label: "@task_contract_tier_icon! Závažný problém správy: [task_contract.GetType.GetName]"
  action_new_tier_3_governance_issue_unimportant: "$action_new_governance_issue_unimportant$"
  action_new_tier_3_task_contract: "@task_contract_tier_icon! Dostupná smlouva vyšší úrovně"
  action_new_tier_3_task_contract_click: "$action_new_task_contract_click$"
@@ -667,7 +667,7 @@
  action_new_tier_3_task_contract_combined_label: "$action_new_task_contract_combined_label$"
  action_new_tier_3_task_contract_combined_unimportant: "$action_new_task_contract_combined_unimportant$"
  action_new_tier_3_task_contract_desc: "$action_new_task_contract_desc$"
- action_new_tier_3_task_contract_label: "@task_contract_tier_icon! Smlouva vysoké úrovně: [task_contract.GetType.GetName] ([recipient.GetShortUINameNoTooltip])" # todo: @task_contract_tier_icon! Smlouva vysoké úrovně: [task_contract.GetType.GetName] ([recipient.GetShortUINameNoTooltip])
+ action_new_tier_3_task_contract_label: "@task_contract_tier_icon! Smlouva vysoké úrovně: [task_contract.GetType.GetName] ([recipient.GetShortUINameNoTooltip])"
  action_new_tier_3_task_contract_unimportant: "$action_new_task_contract_unimportant$"
  action_no_heir: "Žádný [player_heir|E]"
  action_no_heir_click: "#I Klikněte pro zobrazení vaší postavy#!"
@@ -768,7 +768,7 @@
  action_recent_hunt_sighting_desc: "Je vhodná doba uspořádat [GetActivityType('activity_hunt').GetName] v [landed_title.GetNameNoTier].$action_recent_hunt_sighting_HELP$"
  action_recent_hunt_sighting_label: "@activity_hunt! [landed_title.Custom('GetAnimalSightingDescriptionType')]"
  action_regent_imprison: "Uvěznit postavu jako [actor.GetLiege.GetDiarchTitle]"
- action_regent_imprison_click: "#I Klikněte pro otevření interakce s postavou#!" # todo: #I Klikněte pro otevření interakce s postavou#!
+ action_regent_imprison_click: "#I Klikněte pro otevření interakce s postavou#!"
  action_regent_imprison_combined_group_description: "$action_regent_imprison_desc$"
  action_regent_imprison_combined_group_label: "@prison_icon! Máte postavy, které můžete uvěznit jako [actor.GetLiege.GetDiarchTitle]"
  action_regent_imprison_combined_group_name: "$action_regent_imprison$"
@@ -777,7 +777,7 @@
  action_regent_imprison_help: "\n\n#help Normálně můžete zatýkat pouze své vlastní [vassals|E], [courtiers|E] nebo [guests|E].\n\nPokud [recipient.GetTitledFirstName] odmítne, budete mít možnost ustoupit bez vyhlášení [war|E].#!"
  action_regent_imprison_label: "@prison_icon! Můžete uvěznit vašeho [actor.Custom2('RelationToMe', recipient)], [recipient.GetUINameNoTooltip], #low @soldier_icon![recipient.GetMilitaryStrengthText]#!, jako [actor.GetLiege.GetDiarchTitle]"
  action_regent_retract: "Odebrat vazala jako [actor.GetLiege.GetDiarchTitle]"
- action_regent_retract_click: "#I Klikněte pro otevření interakce s postavou#!" # todo: #I Klikněte pro otevření interakce s postavou#!
+ action_regent_retract_click: "#I Klikněte pro otevření interakce s postavou#!"
  action_regent_retract_combined_group_description: "$action_regent_retract_desc$"
  action_regent_retract_combined_group_label: "@vassal_icon! Máte vazaly, které můžete odebrat jako [actor.GetLiege.GetDiarchTitle]"
  action_regent_retract_combined_group_name: "$action_regent_retract$"
@@ -786,7 +786,7 @@
  action_regent_retract_help: "\n\n#help Normálně můžete $game_concept_retract$ pouze od svých vlastních $game_concept_vassals$.\n\nPokud [recipient.GetTitledFirstName] odmítne, budete mít stále možnost ustoupit bez vyhlášení [war|E].#!"
  action_regent_retract_label: "@vassal_icon! Můžete odebrat vazaly vašemu [actor.Custom2('RelationToMe', recipient)], [recipient.GetUINameNoTooltip], #low @soldier_icon![recipient.GetMilitaryStrengthText]#!, jako [actor.GetLiege.GetDiarchTitle]"
  action_regent_revoke: "Odňít titul jako [actor.GetLiege.GetDiarchTitle]"
- action_regent_revoke_click: "#I Klikněte pro otevření interakce s postavou#!" # todo: #I Klikněte pro otevření interakce s postavou#!
+ action_regent_revoke_click: "#I Klikněte pro otevření interakce s postavou#!"
  action_regent_revoke_combined_group_description: "$action_regent_revoke_desc$"
  action_regent_revoke_combined_group_label: "@revoke_title! Máte tituly, které můžete odňít jako [actor.GetLiege.GetDiarchTitle]"
  action_regent_revoke_combined_group_name: "$action_regent_revoke$"
@@ -820,7 +820,7 @@
  action_send_yourself_to_university_label: "$action_send_yourself_to_university$"
  action_send_yourself_to_university_unimportant: "$action_send_child_to_university_unimportant$"
  action_shift_privileges: "Ukrást zlato od spoluvazalů jako [actor.GetLiege.GetDiarchTitle]"
- action_shift_privileges_click: "#I Klikněte pro otevření interakce s postavou#!" # todo: #I Klikněte pro otevření interakce s postavou#!
+ action_shift_privileges_click: "#I Klikněte pro otevření interakce s postavou#!"
  action_shift_privileges_combined_group_description: "$action_shift_privileges_desc$"
  action_shift_privileges_combined_group_label: "[gold_i] Můžete ukrást zlato od svých spoluvazalů jako [actor.GetLiege.GetDiarchTitle]"
  action_shift_privileges_combined_group_name: "$action_shift_privileges$"
@@ -843,22 +843,22 @@
  action_station_men_at_arms_desc: "Máte alespoň jeden [men_at_arms|E] [regiment|E], který můžete [station|E] v [holding|E] ve vašem [domain|E].$action_station_men_at_arms_HELP$"
  action_station_men_at_arms_label: "@stationed_regiment_icon! Můžete rozmístit regiment Men-at-Arms"
  action_subsidise_liege_authority: "Posílit autoritu, kterou vám dává váš pán"
- action_subsidise_liege_authority_click: "#I Klikněte pro otevření interakce s postavou#!" # todo: #I Klikněte pro otevření interakce s postavou#!
+ action_subsidise_liege_authority_click: "#I Klikněte pro otevření interakce s postavou#!"
  action_subsidise_liege_authority_desc: "[recipient.GetTitledFirstNamePossessive] kontrola nad [realm|E] je slabá, což vám brání v používání některých vašich [diarch_powers|E].\n\nPomocí pomoci [recipient.GetHerHim] při upevňování [recipient.GetHerHis] autority můžete obětovat popularitu za moc.$action_subsidise_liege_authority_help$"
  action_subsidise_liege_authority_help: "\n\n#help Vaši spoluvazalové [vassals|E] vás za to budou obviňovat.#!"
  action_subsidise_liege_authority_label: "@icon_contract_modification_single! Posilte autoritu svého pána, abyste si odemkli více $game_concept_diarch_powers$"
  action_swing_scales_liege_entrenched_dangerous: "Nakloňte $game_concept_scales_of_power$"
- action_swing_scales_liege_entrenched_dangerous_click: "#I Klikněte pro otevření interakce s postavou#!" # todo: #I Klikněte pro otevření interakce s postavou#!
+ action_swing_scales_liege_entrenched_dangerous_click: "#I Klikněte pro otevření interakce s postavou#!"
  action_swing_scales_liege_entrenched_dangerous_desc: "[recipient.GetUIName] získává znepokojivé množství kontroly nad vaším [realm|E], což [recipient.GetHerHim] dává přístup k mocným [diarch_powers|E].\n\nMěli byste zvážit omezení [recipient.GetHerHis] rostoucí moci.$action_swing_scales_liege_entrenched_dangerous_help$"
  action_swing_scales_liege_entrenched_dangerous_help: "\n\n#help Pokud [recipient.GetFirstNameNoTooltip] zesílí příliš, bude obtížné zbavit [recipient.GetHerHim] funkce [actor.GetDiarchTitle].#!"
  action_swing_scales_liege_entrenched_dangerous_label: "@law_icon! Můžete naklonit $game_concept_scales_of_power$ — váš [actor.Custom2('RelationToMe', recipient)], [actor.GetDiarchTitle], [recipient.GetUINameNoTooltip], nabývá vlivu"
  action_swing_scales_regent: "Nakloňte $game_concept_scales_of_power$"
- action_swing_scales_regent_click: "#I Klikněte pro otevření interakce s postavou#!" # todo: #I Klikněte pro otevření interakce s postavou#!
+ action_swing_scales_regent_click: "#I Klikněte pro otevření interakce s postavou#!"
  action_swing_scales_regent_desc: "Můžete získat více moci v [realm|E] vašeho [liege|E] utrácením [gold|E], [prestige|E] nebo [piety|E] (pokud vy a [recipient.GetTitledFirstName] sdílíte [faith|E]).$action_swing_scales_regent_help$"
  action_swing_scales_regent_help: "\n\n#help Čím více se $game_concept_scales_of_power$ zvýší, tím více [diarch_powers|E] odemknete jako [actor.GetDiarchTitle].#!"
  action_swing_scales_regent_label: "@law_icon! Můžete naklonit $game_concept_scales_of_power$"
  action_syphon_treasury: "Ukrást zlato od svého pána jako [actor.GetLiege.GetDiarchTitle]"
- action_syphon_treasury_click: "#I Klikněte pro otevření interakce s postavou#!" # todo: #I Klikněte pro otevření interakce s postavou#!
+ action_syphon_treasury_click: "#I Klikněte pro otevření interakce s postavou#!"
  action_syphon_treasury_desc: "Jako [actor.GetLiege.GetDiarchTitle] máte volný přístup k pokladnici, účtům a obecnému majetku vašeho [liege|E]. Bylo by velmi snadné si z toho trochu vzít.$action_syphon_treasury_help$"
  action_syphon_treasury_help: "\n\n#help Pozor: pokud [recipient.GetTitledFirstName] odhalí vaši krádež, může vás [recipient.GetSheHe] donutit peníze vrátit.#!"
  action_syphon_treasury_label: "[gold_i] Můžete ukrást zlato svému pánovi jako [actor.GetLiege.GetDiarchTitle]"
@@ -1047,158 +1047,172 @@
  action_active_repent_oath_label: "[coronation_i] Přísaha: $GetRepentOathText$ [CoronationTimer('repent_oath_decision','repent_oath_decision_timer')]"
  action_active_repent_oath_desc: "Během vaší [coronation|E] jste složili #V $GetRepentOathText$#! [oath|E]. Na splnění máte [RemainingTime('repent_oath_timer')] let."
  action_active_repent_oath_click: "$action_active_diplomacy_oath_1_click$"
- action_in_treasury_debt: "$action_in_debt$"   # todo: NEW TRANSLATION
- action_in_treasury_debt_label: "$action_in_debt_label$"   # todo: NEW TRANSLATION
- action_in_treasury_debt_desc: "Máte méně než [treasury_i|E]#V 0#! [treasury|E] a jste proto v [treasury_debt|E]!\n\nBýt v dluhu má následující účinky:\n$BULLET_WITH_TAB$Nemůžete vyhlásit [war|E]\n$BULLET_WITH_TAB$Nelze doplnit [men_at_arms|E], kteří vyžadují [treasury_i|E][treasury|E]\n$BULLET_WITH_TAB$[county_corruption|E] se šíří ve vašem [domain|E]\n$BULLET_WITH_TAB$[vassals|E] mají větší pravděpodobnost připojení k [factions|E]\n\nČím hlubší dluh máte, tím tvrdší tresty budete čelit. Vaše současná úroveň dluhu má následující dodatečné účinky:\n\n[GetPlayer.GetTreasuryDebtModifierDescription]\n\n#help Pokud každý měsíc nezískáváte [treasury|E], zvažte snížení výdajů, například:\n$BULLET_WITH_TAB$Rozpuštěním [armies|E]\n$BULLET_WITH_TAB$Zmenšením velikosti nebo zničením vašich [men_at_arms|E]\n$BULLET_WITH_TAB$Zvýšením [control|E] pomocí vašeho [marshal|E]\n$BULLET_WITH_TAB$Odvoláním [court_positions|E]#!"   # todo: NEW TRANSLATION
- action_in_treasury_debt_click: "$action_in_debt_click$"   # todo: NEW TRANSLATION
- action_join_tributary_war_combined_label: "$action_join_tributary_war_desc$"   # todo: NEW TRANSLATION
- action_join_tributary_war_combined_group_name: "$action_join_tributary_war_combined_group_label$"   # todo: NEW TRANSLATION
- action_join_tributary_war_combined_group_description: "$action_join_tributary_war_desc$"   # todo: NEW TRANSLATION
- action_too_many_celestial_province_types: "Nad limitem administrace"   # todo: NEW TRANSLATION
- action_too_many_celestial_province_types_label: "Máte příliš mnoho provincií přiřazených k administračnímu typu [GetSubjectContractType( 'celestial_provinces' ).GetObligationName( 'celestial_province_metropolitan' )]"   # todo: NEW TRANSLATION
- action_too_many_celestial_province_types_desc: "Máte příliš mnoho [provinces|E] s [province_administration_short|E] typu [GetSubjectContractType( 'celestial_provinces' ).GetObligationNameShort( 'celestial_province_metropolitan' )].$celestial_province_types_help_desc$"   # todo: NEW TRANSLATION
- action_too_many_celestial_province_types_click: "#I Klikněte pro zobrazení provincií#!"   # todo: NEW TRANSLATION
- action_too_many_celestial_province_types_2: "$action_too_many_celestial_province_types$"   # todo: NEW TRANSLATION
- action_too_many_celestial_province_types_2_label: "Máte příliš mnoho provincií přiřazených k administračnímu typu [GetSubjectContractType( 'celestial_provinces' ).GetObligationName( 'celestial_province_protectorate' )]"   # todo: NEW TRANSLATION
- action_too_many_celestial_province_types_2_desc: "Máte příliš mnoho [provinces|E] s [province_administration_short|E] typu [GetSubjectContractType( 'celestial_provinces' ).GetObligationNameShort( 'celestial_province_protectorate' )].$celestial_province_types_help_desc$"   # todo: NEW TRANSLATION
- action_too_many_celestial_province_types_2_click: "$action_too_many_celestial_province_types_click$"   # todo: NEW TRANSLATION
- celestial_province_types_help_desc: "\n\n#help To bude postupně snižovat vaši [legitimacy|E]. Měli byste změnit administraci dostatečného počtu [provinces|E], abyste byli na nebo pod limitem.#!"   # todo: NEW TRANSLATION
- action_celestial_tributary_has_low_imperial_grace_tributary: "Nízké [actor.Custom('SubjectStanding')]"   # todo: NEW TRANSLATION
- action_celestial_tributary_has_low_imperial_grace_tributary_desc: "Vaše [actor.Custom('SubjectStanding')] je nebezpečně nízká a váš [suzerain|E] [recipient.GetShortUIName] může brzy od vás $exact_tribute_interaction$.$action_celestial_tributary_has_low_imperial_grace_tributary_help_desc$"   # todo: NEW TRANSLATION
- action_celestial_tributary_has_low_imperial_grace_tributary_label: "Máte nízké [actor.Custom('SubjectStanding')]"   # todo: NEW TRANSLATION
- action_celestial_tributary_has_low_imperial_grace_tributary_click: "#I Klikněte pro naplánování $tribute_mission_decision$#!"   # todo: NEW TRANSLATION
- action_celestial_tributary_has_low_imperial_grace_tributary_help_desc: "\n\n#help Vždy se snažte udržovat rezervu [actor.Custom('SubjectStanding')] tím, že budete často plnit své povinnosti [tributary|E].#!"   # todo: NEW TRANSLATION
- action_celestial_tributary_has_low_imperial_grace_suzerain: "Tributář v prodlení"   # todo: NEW TRANSLATION
- action_celestial_tributary_has_low_imperial_grace_suzerain_combined_group_label: "Tributáři v prodlení"   # todo: NEW TRANSLATION
- action_celestial_tributary_has_low_imperial_grace_suzerain_combined_group_name: "$action_celestial_tributary_has_low_imperial_grace_suzerain_combined_group_label$"   # todo: NEW TRANSLATION
- action_celestial_tributary_has_low_imperial_grace_suzerain_desc: "Jeden z vašich [tributaries|E], [recipient.GetPrimaryTitle.Custom('GetTierIcon')][recipient.GetUIName], zanedbával své povinnosti [recipient.GetHerHis] a už nějakou dobu vám nepřispěl.$action_celestial_tributary_has_low_imperial_grace_suzerain_help_desc$"   # todo: NEW TRANSLATION
- action_celestial_tributary_has_low_imperial_grace_suzerain_combined_group_description: "Můžete si vymoci $exact_tribute_interaction$ od několika [tributaries|E].$action_celestial_tributary_has_low_imperial_grace_suzerain_help_desc$"   # todo: NEW TRANSLATION
- action_celestial_tributary_has_low_imperial_grace_suzerain_label: "Můžete si vymoci $exact_tribute_interaction$ od [recipient.GetPrimaryTitle.Custom('GetTierIcon')][recipient.GetUINameNoTooltip]"   # todo: NEW TRANSLATION
- action_celestial_tributary_has_low_imperial_grace_suzerain_combined_label: "[recipient.GetPrimaryTitle.Custom('GetTierIcon')] [recipient.GetUINameNoTooltip]"   # todo: NEW TRANSLATION
- action_celestial_tributary_has_low_imperial_grace_suzerain_click: "#I Klikněte pro $exact_tribute_interaction$#!"   # todo: NEW TRANSLATION
- action_celestial_tributary_has_low_imperial_grace_suzerain_help_desc: "\n\n#help Někdy [tributaries|E] potřebují malé popostrčení, a možná i naznačenou hrozbu, aby si připomněli své povinnosti vůči svému [suzerain|E].#!"   # todo: NEW TRANSLATION
- action_would_accept_mandala_embrace: "Vladař by mohl být přijat jako tributář"   # todo: NEW TRANSLATION
- action_would_accept_mandala_embrace_label: "Existují potenciální [rulers|E], kterým můžete nabídnout $offer_tributary_status_interaction$"   # todo: NEW TRANSLATION
- action_would_accept_mandala_embrace_desc: "[recipient.GetShortUINameNoTooltip] by mohl potenciálně být přijat jako tributář.$would_accept_mandala_embrace_help_desc$"   # todo: NEW TRANSLATION
- action_would_accept_mandala_embrace_combined_label: "[recipient.GetPrimaryTitle.Custom('GetTierIcon')] [recipient.GetUINameNoTooltip]"   # todo: NEW TRANSLATION
- action_would_accept_mandala_embrace_click: "#I Klikněte k pokusu o $reassert_tributary_interaction$#!"   # todo: NEW TRANSLATION
- action_would_accept_mandala_embrace_combined_group_name: "@mandala_radiance_icon! Potenciální tributáři"   # todo: NEW TRANSLATION
- action_would_accept_mandala_embrace_combined_group_label: "@mandala_radiance_icon! Vladaři by se mohli stát tributáři"   # todo: NEW TRANSLATION
- action_would_accept_mandala_embrace_combined_group_description: "Několik [rulers|E] by mohlo zvážit být přijato vámi $would_accept_mandala_embrace_help_desc$"   # todo: NEW TRANSLATION
- would_accept_mandala_embrace_help_desc: "\n\n#help Můžete zvýšit své šance tím, že zvýšíte jejich [opinion|E] o vás, zvýšíte svou vlastní [radiance|E] nebo zajistíte, že v okolí nejsou žádní jiní Radiant Mandala [rulers|E].#!"   # todo: NEW TRANSLATION
- action_mandala_tributary_at_risk_of_breakaway: "Tributář může přestat platit tribut"   # todo: NEW TRANSLATION
- action_mandala_tributary_at_risk_of_breakaway_label: "$action_pacify_tributary_label$"   # todo: NEW TRANSLATION
- action_mandala_tributary_at_risk_of_breakaway_desc: "Jeden z vašich [tributaries|E] zvažuje $cease_paying_tribute_interaction$, aby přestal být vaším tributářem.$mandala_tributary_at_risk_of_breakaway_help_desc$"   # todo: NEW TRANSLATION
- action_mandala_tributary_at_risk_of_breakaway_combined_label: "[recipient.GetPrimaryTitle.Custom('GetTierIcon')] [recipient.GetShortUINameNoTooltip]"   # todo: NEW TRANSLATION
- action_mandala_tributary_at_risk_of_breakaway_click: "#I Klikněte k pokusu o $reassert_tributary_interaction$#!"   # todo: NEW TRANSLATION
- action_mandala_tributary_at_risk_of_breakaway_combined_group_name: "@tributary_icon! Nespokojení tributáři"   # todo: NEW TRANSLATION
- action_mandala_tributary_at_risk_of_breakaway_combined_group_label: "@tributary_icon! Tributáři zvažují $cease_paying_tribute_interaction$"   # todo: NEW TRANSLATION
- action_mandala_tributary_at_risk_of_breakaway_combined_group_description: "Několik vašich [tributaries|E] zvažuje $cease_paying_tribute_interaction$ vůči vám$mandala_tributary_at_risk_of_breakaway_help_desc$"   # todo: NEW TRANSLATION
- mandala_tributary_at_risk_of_breakaway_help_desc: "\n\n#help Tomu můžete zabránit buď úspěšným znovupotvrzením tributáře, zvýšením jejich [opinion|E] o vás nebo zvýšením vaší vlastní [radiance|E], mimo jiné.#!"   # todo: NEW TRANSLATION
- action_plan_great_project: "Můžete naplánovat [great_project.GetName]"   # todo: NEW TRANSLATION
- action_plan_great_project_label: "[great_project.GetName]"   # todo: NEW TRANSLATION
- action_plan_great_project_desc: "Můžete mít užitek z naplánování [great_project.GetName]"   # todo: NEW TRANSLATION
- action_plan_great_project_click: "#I Klikněte pro zahájení plánování [great_project.GetName]#!"   # todo: NEW TRANSLATION
- action_contribute_to_great_project: "Můžete přispět na [great_project.GetName]"   # todo: NEW TRANSLATION
- action_contribute_to_great_project_label: "[great_project.GetName]"   # todo: NEW TRANSLATION
- action_contribute_to_great_project_desc: "Můžete financovat některé [great_project_contributions|E] pro [great_project.GetName]"   # todo: NEW TRANSLATION
- action_contribute_to_great_project_click: "#I Klikněte pro zobrazení dostupných [great_project_contributions|E] pro [great_project.GetName]#!"   # todo: NEW TRANSLATION
- action_no_mandala_aspect: "Žádné [mandala_aspect|E] nezvoleno"   # todo: NEW TRANSLATION
- action_no_mandala_aspect_label: "Žádný mandalový aspekt"   # todo: NEW TRANSLATION
- action_no_mandala_aspect_desc: "Váš [house_possessive|E] ještě nepřijal [mandala_aspect|E]\n\n#help Aby vy a váš [house_possessive|E] zahájili cestu k božství, musíte nejprve zvolit [aspect|E], který tvaruje váš společný osud.#!"   # todo: NEW TRANSLATION
- action_no_mandala_aspect_click: "#I Klikněte pro prohlídku aspektů#!"   # todo: NEW TRANSLATION
- action_can_upgrade_mandala_aspect: "Vylepšit [mandala_aspect|E]"   # todo: NEW TRANSLATION
- action_can_upgrade_mandala_aspect_label: "Vylepšit aspekt"   # todo: NEW TRANSLATION
- action_can_upgrade_mandala_aspect_desc: "Můžete posílit svůj [mandala_aspect|E] jeho vylepšením"   # todo: NEW TRANSLATION
- action_can_upgrade_mandala_aspect_click: "#I Klikněte pro vylepšení vašeho [aspect|E]#!"   # todo: NEW TRANSLATION
- action_no_mandala_decree: "Žádný [mandala_decree|E]"   # todo: NEW TRANSLATION
- action_no_mandala_decree_label: "Vyberte dekret"   # todo: NEW TRANSLATION
- action_no_mandala_decree_desc: "Nevybrali jste [mandala_decree|E]\n\n#help Nechte svůj dekret pomoci řídit vaše [subjects|E], a tím i vaše Realm, správným směrem.#!"   # todo: NEW TRANSLATION
- action_no_mandala_decree_click: "#I Klikněte k prohlédnutí [decree|E]#!"   # todo: NEW TRANSLATION
- action_new_mandala_ritual: "@task_contract_icon! Mandalový rituál dostupný"   # todo: NEW TRANSLATION
- action_new_mandala_ritual_label: "@task_contract_icon! Mandalový rituál: [task_contract.GetType.GetName]"   # todo: NEW TRANSLATION
- action_new_mandala_ritual_desc: "[task_contract.GetTaskContractRequest]"   # todo: NEW TRANSLATION
- action_new_mandala_ritual_click: "#I Klikněte pro zobrazení rituálu#!"   # todo: NEW TRANSLATION
- action_new_mandala_ritual_combined_group_name: "$action_new_mandala_ritual_combined_group_label$"   # todo: NEW TRANSLATION
- action_new_mandala_ritual_combined_group_label: "@task_contract_icon! Dostupné mandalové rituály"   # todo: NEW TRANSLATION
- action_new_mandala_ritual_combined_group_description: "Máte několik dostupných [mandala_rituals|E]"   # todo: NEW TRANSLATION
- action_new_mandala_ritual_combined_label: "$action_new_mandala_ritual_label$"   # todo: NEW TRANSLATION
- action_could_exact_tribute_from: "Tribut může být vymáhán"   # todo: NEW TRANSLATION
- action_could_exact_tribute_from_label: "Máte [tributaries|E], od kterých můžete $exact_tribute_interaction$"   # todo: NEW TRANSLATION
- action_could_exact_tribute_from_desc: "[recipient.GetShortUINameNoTooltip] by vám mohl poskytnout tribut.$would_accept_exact_tribute_help_desc$"   # todo: NEW TRANSLATION
- action_could_exact_tribute_from_combined_label: "[recipient.GetPrimaryTitle.Custom('GetTierIcon')] [recipient.GetUINameNoTooltip]"   # todo: NEW TRANSLATION
- action_could_exact_tribute_from_click: "#I Klikněte k pokusu o $exact_tribute_interaction$#!"   # todo: NEW TRANSLATION
- action_could_exact_tribute_from_combined_group_name: "@tributary_icon! Potenciální tribut"   # todo: NEW TRANSLATION
- action_could_exact_tribute_from_combined_group_label: "@tributary_icon! Může #V $exact_tribute_interaction$#! od tributářů"   # todo: NEW TRANSLATION
- action_could_exact_tribute_from_combined_group_description: "Několik [tributaries|E] by vám mohlo poskytnout tribut"   # todo: NEW TRANSLATION
- would_accept_exact_tribute_help_desc: "\n\n#help Můžete zvýšit své šance například tím, že zvýšíte jejich [opinion|E] o vás nebo zvýšíte svou vlastní [radiance|E].#!"   # todo: NEW TRANSLATION
- action_can_call_tributary: "@expansion_decree_icon! Můžete povolat tributáře"   # todo: NEW TRANSLATION
- action_can_call_tributary_label: "Máte [tributaries|E] you may $exact_tribute_interaction$ from"   # todo: NEW TRANSLATION
- action_can_call_tributary_desc: "Můžete povolat svého [tributary|E] [recipient.GetUIName] do svých [wars|E].\n\n[recipient.GetSheHe|U] má @soldier_icon![recipient.GetMilitaryStrengthText] [soldiers|E], kteří by mohli pomoci ve vašich [wars|E].$can_call_tributary_help_desc$"   # todo: NEW TRANSLATION
- action_can_call_tributary_combined_label: "[recipient.GetPrimaryTitle.Custom('GetTierIcon')] [recipient.GetUINameNoTooltip], #low @soldier_icon![recipient.GetMilitaryStrengthText]#!"   # todo: NEW TRANSLATION
- action_can_call_tributary_click: "#I Klikněte pro povolání tributáře#!"   # todo: NEW TRANSLATION
- action_can_call_tributary_combined_group_name: "@expansion_decree_icon! Můžete povolat tributáře"   # todo: NEW TRANSLATION
- action_can_call_tributary_combined_group_label: "@expansion_decree_icon! Můžete povolat tributáře do války"   # todo: NEW TRANSLATION
- action_can_call_tributary_combined_group_description: "Můžete povolat své [tributaries|E] do svých [wars|E].$can_call_tributary_help_desc$"   # todo: NEW TRANSLATION
- can_call_tributary_help_desc: "\n\n#help Povolání jiných [rulers|E] do vaší války zvyšuje pravděpodobnost vítězství, ale uvědomte si, že musíte utratit [piety|E] za každého [tributary|E], který se připojí.#!"   # todo: NEW TRANSLATION
- action_can_upgrade_house_aspiration: "Vylepšit [house_aspiration|E]"   # todo: NEW TRANSLATION
- action_can_upgrade_house_aspiration_label: "Vylepšit aspiraci"   # todo: NEW TRANSLATION
- action_can_upgrade_house_aspiration_desc: "Můžete vylepšit [actor.GetHouse.GetHousePowerName|V] [aspiration|E] vašeho [house_possessive|E]\n\n#help Každá úroveň aspirace rodu poskytuje členům rodu silnější výhody.#!"   # todo: NEW TRANSLATION
- action_can_upgrade_house_aspiration_click: "#I Klikněte pro vylepšení vaší [aspiration|E]#!"   # todo: NEW TRANSLATION
- action_can_go_on_tribute_mission: "Podniknout [tribute_mission|E]"   # todo: NEW TRANSLATION
- action_can_go_on_tribute_mission_label: "Zaplaťte tribut svému suzerénovi"   # todo: NEW TRANSLATION
- action_can_go_on_tribute_mission_desc: "Můžete uskutečnit [tribute_mission|E] do hlavního města vašeho [suzerain|E]\n\n#help To by mělo pomoci zvýšit vaši [legitimacy|E] a může přinést další odměny.#!"   # todo: NEW TRANSLATION
- action_can_go_on_tribute_mission_click: "$action_celestial_tributary_has_low_imperial_grace_tributary_click$"   # todo: NEW TRANSLATION
- action_aspiration_does_not_match_house_bloc: "@house_bloc_icon! Rozdílná rodová aspirace"   # todo: NEW TRANSLATION
- action_aspiration_does_not_match_house_bloc_label: "@house_bloc_icon! Aspirace se liší od vedoucího rodu"   # todo: NEW TRANSLATION
- action_aspiration_does_not_match_house_bloc_desc: "Vaše [house_possessive|E] [aspiration|E] je [house.GetHousePowerName], zatímco váš [bloc_possessive|E] [leading_house_possessive|E] je [leading_house.GetHousePowerName], což snižuje [bloc_cohesion|E].\n\n#help Přepnutí aspirace [house.GetBaseName] tak, aby odpovídala rodu [leading_house.GetBaseName], pomůže udržet soudržnost.#!"   # todo: NEW TRANSLATION
- action_aspiration_does_not_match_house_bloc_unimportant: "@warning_icon! #X Nemáte dost [prestige|E] k změně vaší [house_aspiration|E]#!"   # todo: NEW TRANSLATION
- action_aspiration_does_not_match_house_bloc_click: "#I Klikněte pro zobrazení#!"   # todo: NEW TRANSLATION
- action_no_house_aspiration: "Žádná [house_aspiration|E] zvolena"   # todo: NEW TRANSLATION
- action_no_house_aspiration_label: "Žádná rodová aspirace"   # todo: NEW TRANSLATION
- action_no_house_aspiration_desc: "Nevybrali jste [house_aspiration|E]\n\n#help Abyste přispěli k [house_bloc|E] [cohesion|E] a zlepšili svůj [house|E], nejprve musíte zvolit [aspiration|E], která utvoří vaši rodinu.#!"   # todo: NEW TRANSLATION
- action_no_house_aspiration_click: "#I Klikněte pro prohlédnutí aspirací#!"   # todo: NEW TRANSLATION
- action_missing_elder: "Můžete najít [elder|E] a stát se [disciple|E]"   # todo: NEW TRANSLATION
- action_missing_elder_label: "@elder! Můžete najít [elder|E]"   # todo: NEW TRANSLATION
- action_missing_elder_desc: "Nejste [disciple|E] žádného [elder|E].\n\n#help Stát se $game_concept_disciple$ někoho s vyšším [merit_level|E] než vy vám umožní postupně získávat více [merit_i][merit|E].#!"   # todo: NEW TRANSLATION
- action_missing_elder_click: "#I Klikněte pro otevření interakce $find_elder_interaction$#!"   # todo: NEW TRANSLATION
- action_can_request_treasury: "@minister! Můžete požádat o prostředky [treasury|E]"   # todo: NEW TRANSLATION
- action_can_request_treasury_label: "@minister! Můžete požádat o [treasury_i][treasury|E] od [recipient.GetCouncilTitle]"   # todo: NEW TRANSLATION
- action_can_request_treasury_desc: "Můžete požádat [recipient.GetShortUIName], aby vám poskytl další prostředky pro váš [treasury|E]"   # todo: NEW TRANSLATION
- action_can_request_treasury_click: "#I Klikněte pro otevření $celestial_request_treasury_interaction$#!"   # todo: NEW TRANSLATION
- action_can_request_examination_support: "@minister! Můžete požádat o podporu [examinations|E]"   # todo: NEW TRANSLATION
- action_can_request_examination_support_label: "@minister! Můžete požádat o podporu k uspořádání [GetActivityType('activity_local_examination').GetTextIcon][GetActivityType('activity_local_examination').GetName] od [recipient.GetCouncilTitle]"   # todo: NEW TRANSLATION
- action_can_request_examination_support_desc: "Můžete požádat [recipient.GetCouncilTitle], [recipient.GetShortUIName], aby zaplatil náklady na uspořádání vašeho příštího [GetActivityType('activity_local_examination').GetTextIcon][GetActivityType('activity_local_examination').GetName] [activity|E]"   # todo: NEW TRANSLATION
- action_can_request_examination_support_click: "#I Klikněte pro otevření $celestial_request_examination_support_interaction$#!"   # todo: NEW TRANSLATION
- action_can_make_elder_request: "Požádejte o podporu členy vašeho [movement|E]"   # todo: NEW TRANSLATION
- action_can_make_elder_request_label: "@gold_icon! Můžete podat žádost"   # todo: NEW TRANSLATION
- action_can_make_elder_request_combined_group_label: "$action_can_make_elder_request_label$"   # todo: NEW TRANSLATION
- action_can_make_elder_request_combined_group_name: "$action_can_make_elder_request$"   # todo: NEW TRANSLATION
- action_can_make_elder_request_combined_group_description: "$action_can_make_elder_request_desc$"   # todo: NEW TRANSLATION
- action_can_make_elder_request_combined_label: "Vašemu [actor.Custom2('RelationToMe', recipient)], [recipient.GetShortUINameNoTooltip]"   # todo: NEW TRANSLATION
- action_can_make_elder_request_desc: "Můžete požádat svého [elder|E], [disciples|E] nebo [movement_leader|E], aby splnil skromnou žádost"   # todo: NEW TRANSLATION
- action_can_make_elder_request_click: "#I Klikněte pro otevření interakce $celestial_request_elders_support_interaction$#!"   # todo: NEW TRANSLATION
- action_start_great_project: "@great_project_icon! Zahájit velký projekt"   # todo: NEW TRANSLATION
- action_start_great_project_label: "@great_project_icon! Můžete zahájit velký projekt"   # todo: NEW TRANSLATION
- action_start_great_project_desc: "Je pro vás dostupný [great_project|E].\n\n#help Jako vlastník [great_project|E] si vyberete jeho umístění a sklidíte většinu odměn.#!"   # todo: NEW TRANSLATION
- action_start_great_project_click: "#I Klikněte pro zobrazení#!"   # todo: NEW TRANSLATION
- action_can_send_to_childrens_examination_label: "@child_exam_icon![recipient.GetShortUINameNoTooltip] může být poslán na Dětskou zkoušku"   # todo: NEW TRANSLATION
- action_can_send_to_childrens_examination_combined_group_label: "@child_exam_icon! Děti lze poslat na Dětskou zkoušku"   # todo: NEW TRANSLATION
- action_can_send_to_childrens_examination_combined_label: "Váš [actor.Custom2('RelationToMe', recipient)], [recipient.GetShortUINameNoTooltip], [recipient.GetAge] let"   # todo: NEW TRANSLATION
- action_can_send_to_childrens_examination: "@child_exam_icon! Dítě může být posláno na Dětskou zkoušku"   # todo: NEW TRANSLATION
- action_can_send_to_childrens_examination_combined_group_name: "$action_can_send_to_childrens_examination_combined_group_label$"   # todo: NEW TRANSLATION
- action_can_send_to_childrens_examination_desc: "Můžete poslat svého [actor.Custom2('RelationToMe', recipient)], [recipient.GetShortUIName], na Dětskou zkoušku.$action_can_send_to_childrens_examination_HELP$"   # todo: NEW TRANSLATION
- action_can_send_to_childrens_examination_combined_group_description: "Můžete poslat některé ze svých příbuzných na Dětskou zkoušku.$action_can_send_to_childrens_examination_HELP$"   # todo: NEW TRANSLATION
- action_can_send_to_childrens_examination_click: "#I Klikněte pro odeslání na zkoušku#!"   # todo: NEW TRANSLATION
- action_can_send_to_childrens_examination_HELP: "\n\n#help Účast na Dětské zkoušce není nutná pro úspěšnou vládní kariéru. Nicméně, v závislosti na [child|E] [learning_skill|E] mohou získat [merit|E] a urychlit tak svou cestu k vyšším úrovním [examinations|E].#!"   # todo: NEW TRANSLATION
- action_opportunity_to_study_classics: "$tgp_china_study_confucian_classics_decision$"   # todo: NEW TRANSLATION
- action_opportunity_to_study_classics_label: "@merit_icon!Máte čas studovat konfuciánské klasiky"   # todo: NEW TRANSLATION
- action_opportunity_to_study_classics_desc: "Nejste [governor|E], takže máte čas připravit se na složení [imperial_examinations|E]\n\n#help Studium zvýší váš [stress|E], ale přináší širokou škálu výhod pro vaši budoucí kariéru.#!"   # todo: NEW TRANSLATION
- action_opportunity_to_study_classics_click: "#I Klikněte pro zahájení studia#!"   # todo: NEW TRANSLATION
- action_unaligned_join_movement: "@unaligned_movement!Jste $dynastic_cycle_participant_group_undecided_movement$ v $game_concept_dynastic_cycle$"   # todo: NEW TRANSLATION
- action_unaligned_join_movement_label: "$action_unaligned_join_movement$"   # todo: NEW TRANSLATION
- action_unaligned_join_movement_desc: "Nejste spojeni s žádným [movement|E] v [dynastic_cycle|E].\n\n#help Zůstávání $dynastic_cycle_participant_group_undecided_movement$ znamená, že nezískáváte žádné výhody plynoucí z členství v $game_concept_movement$.#!"   # todo: NEW TRANSLATION
- action_unaligned_join_movement_click: "#I Klikněte pro připojení k hnutí#!"   # todo: NEW TRANSLATION
- action_landless_admin_escape_to_realm: "Uprchnout do jiné říše"   # todo: NEW TRANSLATION
- action_landless_admin_escape_to_realm_desc: "Jste bezzemný [noble_family|E] [title|E] [holder|E] pod [liege|E] s jiným [government|E]\n\n#help Můžete požádat jiné [independent_rulers|E] s vaším [government|E], aby se stali vaším novým pánem a přesunuli vaše [domicile|E] do jejich [capital|E]#!"   # todo: NEW TRANSLATION
- action_landless_admin_escape_to_realm_click: "#I Klikněte pro otevření interakce $landless_admin_switch_non_admin_top_liege_interaction$"   # todo: NEW TRANSLATION
+ action_in_treasury_debt: "$action_in_debt$" # todo: NEW TRANSLATION
+ action_in_treasury_debt_label: "$action_in_debt_label$" # todo: NEW TRANSLATION
+ action_in_treasury_debt_desc: "Máte méně než [treasury_i|E]#V 0#! [treasury|E] a jste proto v [treasury_debt|E]!\n\nBýt v dluhu má následující účinky:\n$BULLET_WITH_TAB$Nemůžete vyhlásit [war|E]\n$BULLET_WITH_TAB$Nelze doplnit [men_at_arms|E], kteří vyžadují [treasury_i|E][treasury|E]\n$BULLET_WITH_TAB$[county_corruption|E] se šíří ve vašem [domain|E]\n$BULLET_WITH_TAB$[vassals|E] mají větší pravděpodobnost připojení k [factions|E]\n\nČím hlubší dluh máte, tím tvrdší tresty budete čelit. Vaše současná úroveň dluhu má následující dodatečné účinky:\n\n[GetPlayer.GetTreasuryDebtModifierDescription]\n\n#help Pokud každý měsíc nezískáváte [treasury|E], zvažte snížení výdajů, například:\n$BULLET_WITH_TAB$Rozpuštěním [armies|E]\n$BULLET_WITH_TAB$Zmenšením velikosti nebo zničením vašich [men_at_arms|E]\n$BULLET_WITH_TAB$Zvýšením [control|E] pomocí vašeho [marshal|E]\n$BULLET_WITH_TAB$Odvoláním [court_positions|E]#!" # todo: NEW TRANSLATION
+ action_in_treasury_debt_click: "$action_in_debt_click$" # todo: NEW TRANSLATION
+ action_join_tributary_war_combined_label: "$action_join_tributary_war_desc$" # todo: NEW TRANSLATION
+ action_join_tributary_war_combined_group_name: "$action_join_tributary_war_combined_group_label$" # todo: NEW TRANSLATION
+ action_join_tributary_war_combined_group_description: "$action_join_tributary_war_desc$" # todo: NEW TRANSLATION
+ action_too_many_celestial_province_types: "Nad limitem administrace" # todo: NEW TRANSLATION
+ action_too_many_celestial_province_types_label: "Máte příliš mnoho provincií přiřazených k administračnímu typu [GetSubjectContractType( 'celestial_provinces' ).GetObligationName( 'celestial_province_metropolitan' )]" # todo: NEW TRANSLATION
+ action_too_many_celestial_province_types_desc: "Máte příliš mnoho [provinces|E] s [province_administration_short|E] typu [GetSubjectContractType( 'celestial_provinces' ).GetObligationNameShort( 'celestial_province_metropolitan' )].$celestial_province_types_help_desc$" # todo: NEW TRANSLATION
+ action_too_many_celestial_province_types_click: "#I Klikněte pro zobrazení provincií#!" # todo: NEW TRANSLATION
+ action_too_many_celestial_province_types_2: "$action_too_many_celestial_province_types$" # todo: NEW TRANSLATION
+ action_too_many_celestial_province_types_2_label: "Máte příliš mnoho provincií přiřazených k administračnímu typu [GetSubjectContractType( 'celestial_provinces' ).GetObligationName( 'celestial_province_protectorate' )]" # todo: NEW TRANSLATION
+ action_too_many_celestial_province_types_2_desc: "Máte příliš mnoho [provinces|E] s [province_administration_short|E] typu [GetSubjectContractType( 'celestial_provinces' ).GetObligationNameShort( 'celestial_province_protectorate' )].$celestial_province_types_help_desc$" # todo: NEW TRANSLATION
+ action_too_many_celestial_province_types_2_click: "$action_too_many_celestial_province_types_click$" # todo: NEW TRANSLATION
+ celestial_province_types_help_desc: "\n\n#help To bude postupně snižovat vaši [legitimacy|E]. Měli byste změnit administraci dostatečného počtu [provinces|E], abyste byli na nebo pod limitem.#!" # todo: NEW TRANSLATION
+ action_celestial_tributary_has_low_imperial_grace_tributary: "Nízké [actor.Custom('SubjectStanding')]" # todo: NEW TRANSLATION
+ action_celestial_tributary_has_low_imperial_grace_tributary_desc: "Vaše [actor.Custom('SubjectStanding')] je nebezpečně nízká a váš [suzerain|E] [recipient.GetShortUIName] může brzy od vás $exact_tribute_interaction$.$action_celestial_tributary_has_low_imperial_grace_tributary_help_desc$" # todo: NEW TRANSLATION
+ action_celestial_tributary_has_low_imperial_grace_tributary_label: "Máte nízké [actor.Custom('SubjectStanding')]" # todo: NEW TRANSLATION
+ action_celestial_tributary_has_low_imperial_grace_tributary_click: "#I Klikněte pro naplánování $tribute_mission_decision$#!" # todo: NEW TRANSLATION
+ action_celestial_tributary_has_low_imperial_grace_tributary_help_desc: "\n\n#help Vždy se snažte udržovat rezervu [actor.Custom('SubjectStanding')] tím, že budete často plnit své povinnosti [tributary|E].#!" # todo: NEW TRANSLATION
+ action_celestial_tributary_has_low_imperial_grace_suzerain: "Tributář v prodlení" # todo: NEW TRANSLATION
+ action_celestial_tributary_has_low_imperial_grace_suzerain_combined_group_label: "Tributáři v prodlení" # todo: NEW TRANSLATION
+ action_celestial_tributary_has_low_imperial_grace_suzerain_combined_group_name: "$action_celestial_tributary_has_low_imperial_grace_suzerain_combined_group_label$" # todo: NEW TRANSLATION
+ action_celestial_tributary_has_low_imperial_grace_suzerain_desc: "Jeden z vašich [tributaries|E], [recipient.GetPrimaryTitle.Custom('GetTierIcon')][recipient.GetUIName], zanedbával své povinnosti [recipient.GetHerHis] a už nějakou dobu vám nepřispěl.$action_celestial_tributary_has_low_imperial_grace_suzerain_help_desc$" # todo: NEW TRANSLATION
+ action_celestial_tributary_has_low_imperial_grace_suzerain_combined_group_description: "Můžete si vymoci $exact_tribute_interaction$ od několika [tributaries|E].$action_celestial_tributary_has_low_imperial_grace_suzerain_help_desc$" # todo: NEW TRANSLATION
+ action_celestial_tributary_has_low_imperial_grace_suzerain_label: "Můžete si vymoci $exact_tribute_interaction$ od [recipient.GetPrimaryTitle.Custom('GetTierIcon')][recipient.GetUINameNoTooltip]" # todo: NEW TRANSLATION
+ action_celestial_tributary_has_low_imperial_grace_suzerain_combined_label: "[recipient.GetPrimaryTitle.Custom('GetTierIcon')] [recipient.GetUINameNoTooltip]" # todo: NEW TRANSLATION
+ action_celestial_tributary_has_low_imperial_grace_suzerain_click: "#I Klikněte pro $exact_tribute_interaction$#!" # todo: NEW TRANSLATION
+ action_celestial_tributary_has_low_imperial_grace_suzerain_help_desc: "\n\n#help Někdy [tributaries|E] potřebují malé popostrčení, a možná i naznačenou hrozbu, aby si připomněli své povinnosti vůči svému [suzerain|E].#!" # todo: NEW TRANSLATION
+ action_would_accept_mandala_embrace: "Vladař by mohl být přijat jako tributář" # todo: NEW TRANSLATION
+ action_would_accept_mandala_embrace_label: "Existují potenciální [rulers|E], kterým můžete nabídnout $offer_tributary_status_interaction$" # todo: NEW TRANSLATION
+ action_would_accept_mandala_embrace_desc: "[recipient.GetShortUINameNoTooltip] by mohl potenciálně být přijat jako tributář.$would_accept_mandala_embrace_help_desc$" # todo: NEW TRANSLATION
+ action_would_accept_mandala_embrace_combined_label: "[recipient.GetPrimaryTitle.Custom('GetTierIcon')] [recipient.GetUINameNoTooltip]" # todo: NEW TRANSLATION
+ action_would_accept_mandala_embrace_click: "#I Klikněte k pokusu o $reassert_tributary_interaction$#!" # todo: NEW TRANSLATION
+ action_would_accept_mandala_embrace_combined_group_name: "@mandala_radiance_icon! Potenciální tributáři" # todo: NEW TRANSLATION
+ action_would_accept_mandala_embrace_combined_group_label: "@mandala_radiance_icon! Vladaři by se mohli stát tributáři" # todo: NEW TRANSLATION
+ action_would_accept_mandala_embrace_combined_group_description: "Několik [rulers|E] by mohlo zvážit být přijato vámi $would_accept_mandala_embrace_help_desc$" # todo: NEW TRANSLATION
+ would_accept_mandala_embrace_help_desc: "\n\n#help Můžete zvýšit své šance tím, že zvýšíte jejich [opinion|E] o vás, zvýšíte svou vlastní [radiance|E] nebo zajistíte, že v okolí nejsou žádní jiní Radiant Mandala [rulers|E].#!" # todo: NEW TRANSLATION
+ action_mandala_tributary_at_risk_of_breakaway: "Tributář může přestat platit tribut" # todo: NEW TRANSLATION
+ action_mandala_tributary_at_risk_of_breakaway_label: "$action_pacify_tributary_label$" # todo: NEW TRANSLATION
+ action_mandala_tributary_at_risk_of_breakaway_desc: "Jeden z vašich [tributaries|E] zvažuje $cease_paying_tribute_interaction$, aby přestal být vaším tributářem.$mandala_tributary_at_risk_of_breakaway_help_desc$" # todo: NEW TRANSLATION
+ action_mandala_tributary_at_risk_of_breakaway_combined_label: "[recipient.GetPrimaryTitle.Custom('GetTierIcon')] [recipient.GetShortUINameNoTooltip]" # todo: NEW TRANSLATION
+ action_mandala_tributary_at_risk_of_breakaway_click: "#I Klikněte k pokusu o $reassert_tributary_interaction$#!" # todo: NEW TRANSLATION
+ action_mandala_tributary_at_risk_of_breakaway_combined_group_name: "@tributary_icon! Nespokojení tributáři" # todo: NEW TRANSLATION
+ action_mandala_tributary_at_risk_of_breakaway_combined_group_label: "@tributary_icon! Tributáři zvažují $cease_paying_tribute_interaction$" # todo: NEW TRANSLATION
+ action_mandala_tributary_at_risk_of_breakaway_combined_group_description: "Několik vašich [tributaries|E] zvažuje $cease_paying_tribute_interaction$ vůči vám$mandala_tributary_at_risk_of_breakaway_help_desc$" # todo: NEW TRANSLATION
+ mandala_tributary_at_risk_of_breakaway_help_desc: "\n\n#help Tomu můžete zabránit buď úspěšným znovupotvrzením tributáře, zvýšením jejich [opinion|E] o vás nebo zvýšením vaší vlastní [radiance|E], mimo jiné.#!" # todo: NEW TRANSLATION
+ action_plan_great_project: "Můžete naplánovat [great_project.GetName]" # todo: NEW TRANSLATION
+ action_plan_great_project_label: "[great_project.GetName]" # todo: NEW TRANSLATION
+ action_plan_great_project_desc: "Můžete mít užitek z naplánování [great_project.GetName]" # todo: NEW TRANSLATION
+ action_plan_great_project_click: "#I Klikněte pro zahájení plánování [great_project.GetName]#!" # todo: NEW TRANSLATION
+ action_contribute_to_great_project: "Můžete přispět na [great_project.GetName]" # todo: NEW TRANSLATION
+ action_contribute_to_great_project_label: "[great_project.GetName]" # todo: NEW TRANSLATION
+ action_contribute_to_great_project_desc: "Můžete financovat některé [great_project_contributions|E] pro [great_project.GetName]" # todo: NEW TRANSLATION
+ action_contribute_to_great_project_click: "#I Klikněte pro zobrazení dostupných [great_project_contributions|E] pro [great_project.GetName]#!" # todo: NEW TRANSLATION
+ action_no_mandala_aspect: "Žádné [mandala_aspect|E] nezvoleno" # todo: NEW TRANSLATION
+ action_no_mandala_aspect_label: "Žádný mandalový aspekt" # todo: NEW TRANSLATION
+ action_no_mandala_aspect_desc: "Váš [house_possessive|E] ještě nepřijal [mandala_aspect|E]\n\n#help Aby vy a váš [house_possessive|E] zahájili cestu k božství, musíte nejprve zvolit [aspect|E], který tvaruje váš společný osud.#!" # todo: NEW TRANSLATION
+ action_no_mandala_aspect_click: "#I Klikněte pro prohlídku aspektů#!" # todo: NEW TRANSLATION
+ action_can_upgrade_mandala_aspect: "Vylepšit [mandala_aspect|E]" # todo: NEW TRANSLATION
+ action_can_upgrade_mandala_aspect_label: "Vylepšit aspekt" # todo: NEW TRANSLATION
+ action_can_upgrade_mandala_aspect_desc: "Můžete posílit svůj [mandala_aspect|E] jeho vylepšením" # todo: NEW TRANSLATION
+ action_can_upgrade_mandala_aspect_click: "#I Klikněte pro vylepšení vašeho [aspect|E]#!" # todo: NEW TRANSLATION
+ action_no_mandala_decree: "Žádný [mandala_decree|E]" # todo: NEW TRANSLATION
+ action_no_mandala_decree_label: "Vyberte dekret" # todo: NEW TRANSLATION
+ action_no_mandala_decree_desc: "Nevybrali jste [mandala_decree|E]\n\n#help Nechte svůj dekret pomoci řídit vaše [subjects|E], a tím i vaše Realm, správným směrem.#!" # todo: NEW TRANSLATION
+ action_no_mandala_decree_click: "#I Klikněte k prohlédnutí [decree|E]#!" # todo: NEW TRANSLATION
+ action_new_mandala_ritual: "@task_contract_icon! Mandalový rituál dostupný" # todo: NEW TRANSLATION
+ action_new_mandala_ritual_label: "@task_contract_icon! Mandalový rituál: [task_contract.GetType.GetName]" # todo: NEW TRANSLATION
+ action_new_mandala_ritual_desc: "[task_contract.GetTaskContractRequest]" # todo: NEW TRANSLATION
+ action_new_mandala_ritual_click: "#I Klikněte pro zobrazení rituálu#!" # todo: NEW TRANSLATION
+ action_new_mandala_ritual_combined_group_name: "$action_new_mandala_ritual_combined_group_label$" # todo: NEW TRANSLATION
+ action_new_mandala_ritual_combined_group_label: "@task_contract_icon! Dostupné mandalové rituály" # todo: NEW TRANSLATION
+ action_new_mandala_ritual_combined_group_description: "Máte několik dostupných [mandala_rituals|E]" # todo: NEW TRANSLATION
+ action_new_mandala_ritual_combined_label: "$action_new_mandala_ritual_label$" # todo: NEW TRANSLATION
+ action_could_exact_tribute_from: "Tribut může být vymáhán" # todo: NEW TRANSLATION
+ action_could_exact_tribute_from_label: "Máte [tributaries|E], od kterých můžete $exact_tribute_interaction$" # todo: NEW TRANSLATION
+ action_could_exact_tribute_from_desc: "[recipient.GetShortUINameNoTooltip] by vám mohl poskytnout tribut.$would_accept_exact_tribute_help_desc$" # todo: NEW TRANSLATION
+ action_could_exact_tribute_from_combined_label: "[recipient.GetPrimaryTitle.Custom('GetTierIcon')] [recipient.GetUINameNoTooltip]" # todo: NEW TRANSLATION
+ action_could_exact_tribute_from_click: "#I Klikněte k pokusu o $exact_tribute_interaction$#!" # todo: NEW TRANSLATION
+ action_could_exact_tribute_from_combined_group_name: "@tributary_icon! Potenciální tribut" # todo: NEW TRANSLATION
+ action_could_exact_tribute_from_combined_group_label: "@tributary_icon! Může #V $exact_tribute_interaction$#! od tributářů" # todo: NEW TRANSLATION
+ action_could_exact_tribute_from_combined_group_description: "Několik [tributaries|E] by vám mohlo poskytnout tribut" # todo: NEW TRANSLATION
+ would_accept_exact_tribute_help_desc: "\n\n#help Můžete zvýšit své šance například tím, že zvýšíte jejich [opinion|E] o vás nebo zvýšíte svou vlastní [radiance|E].#!" # todo: NEW TRANSLATION
+ action_can_call_tributary: "@expansion_decree_icon! Můžete povolat tributáře" # todo: NEW TRANSLATION
+ action_can_call_tributary_label: "Máte [tributaries|E] you may $exact_tribute_interaction$ from" # todo: NEW TRANSLATION
+ action_can_call_tributary_desc: "Můžete povolat svého [tributary|E] [recipient.GetUIName] do svých [wars|E].\n\n[recipient.GetSheHe|U] má @soldier_icon![recipient.GetMilitaryStrengthText] [soldiers|E], kteří by mohli pomoci ve vašich [wars|E].$can_call_tributary_help_desc$" # todo: NEW TRANSLATION
+ action_can_call_tributary_combined_label: "[recipient.GetPrimaryTitle.Custom('GetTierIcon')] [recipient.GetUINameNoTooltip], #low @soldier_icon![recipient.GetMilitaryStrengthText]#!" # todo: NEW TRANSLATION
+ action_can_call_tributary_click: "#I Klikněte pro povolání tributáře#!" # todo: NEW TRANSLATION
+ action_can_call_tributary_combined_group_name: "@expansion_decree_icon! Můžete povolat tributáře" # todo: NEW TRANSLATION
+ action_can_call_tributary_combined_group_label: "@expansion_decree_icon! Můžete povolat tributáře do války" # todo: NEW TRANSLATION
+ action_can_call_tributary_combined_group_description: "Můžete povolat své [tributaries|E] do svých [wars|E].$can_call_tributary_help_desc$" # todo: NEW TRANSLATION
+ can_call_tributary_help_desc: "\n\n#help Povolání jiných [rulers|E] do vaší války zvyšuje pravděpodobnost vítězství, ale uvědomte si, že musíte utratit [piety|E] za každého [tributary|E], který se připojí.#!" # todo: NEW TRANSLATION
+ action_can_upgrade_house_aspiration: "Vylepšit [house_aspiration|E]" # todo: NEW TRANSLATION
+ action_can_upgrade_house_aspiration_label: "Vylepšit aspiraci" # todo: NEW TRANSLATION
+ action_can_upgrade_house_aspiration_desc: "Můžete vylepšit [actor.GetHouse.GetHousePowerName|V] [aspiration|E] vašeho [house_possessive|E]\n\n#help Každá úroveň aspirace rodu poskytuje členům rodu silnější výhody.#!" # todo: NEW TRANSLATION
+ action_can_upgrade_house_aspiration_click: "#I Klikněte pro vylepšení vaší [aspiration|E]#!" # todo: NEW TRANSLATION
+ action_can_go_on_tribute_mission: "Podniknout [tribute_mission|E]" # todo: NEW TRANSLATION
+ action_can_go_on_tribute_mission_label: "Zaplaťte tribut svému suzerénovi" # todo: NEW TRANSLATION
+ action_can_go_on_tribute_mission_desc: "Můžete uskutečnit [tribute_mission|E] do hlavního města vašeho [suzerain|E]\n\n#help To by mělo pomoci zvýšit vaši [legitimacy|E] a může přinést další odměny.#!" # todo: NEW TRANSLATION
+ action_can_go_on_tribute_mission_click: "$action_celestial_tributary_has_low_imperial_grace_tributary_click$" # todo: NEW TRANSLATION
+ action_aspiration_does_not_match_house_bloc: "@house_bloc_icon! Rozdílná rodová aspirace" # todo: NEW TRANSLATION
+ action_aspiration_does_not_match_house_bloc_label: "@house_bloc_icon! Aspirace se liší od vedoucího rodu" # todo: NEW TRANSLATION
+ action_aspiration_does_not_match_house_bloc_desc: "Vaše [house_possessive|E] [aspiration|E] je [house.GetHousePowerName], zatímco váš [bloc_possessive|E] [leading_house_possessive|E] je [leading_house.GetHousePowerName], což snižuje [bloc_cohesion|E].\n\n#help Přepnutí aspirace [house.GetBaseName] tak, aby odpovídala rodu [leading_house.GetBaseName], pomůže udržet soudržnost.#!" # todo: NEW TRANSLATION
+ action_aspiration_does_not_match_house_bloc_unimportant: "@warning_icon! #X Nemáte dost [prestige|E] k změně vaší [house_aspiration|E]#!" # todo: NEW TRANSLATION
+ action_aspiration_does_not_match_house_bloc_click: "#I Klikněte pro zobrazení#!" # todo: NEW TRANSLATION
+ action_no_house_aspiration: "Žádná [house_aspiration|E] zvolena" # todo: NEW TRANSLATION
+ action_no_house_aspiration_label: "Žádná rodová aspirace" # todo: NEW TRANSLATION
+ action_no_house_aspiration_desc: "Nevybrali jste [house_aspiration|E]\n\n#help Abyste přispěli k [house_bloc|E] [cohesion|E] a zlepšili svůj [house|E], nejprve musíte zvolit [aspiration|E], která utvoří vaši rodinu.#!" # todo: NEW TRANSLATION
+ action_no_house_aspiration_click: "#I Klikněte pro prohlédnutí aspirací#!" # todo: NEW TRANSLATION
+ action_missing_elder: "Můžete najít [elder|E] a stát se [disciple|E]" # todo: NEW TRANSLATION
+ action_missing_elder_label: "@elder! Můžete najít [elder|E]" # todo: NEW TRANSLATION
+ action_missing_elder_desc: "Nejste [disciple|E] žádného [elder|E].\n\n#help Stát se $game_concept_disciple$ někoho s vyšším [merit_level|E] než vy vám umožní postupně získávat více [merit_i][merit|E].#!" # todo: NEW TRANSLATION
+ action_missing_elder_click: "#I Klikněte pro otevření interakce $find_elder_interaction$#!" # todo: NEW TRANSLATION
+ action_can_request_treasury: "@minister! Můžete požádat o prostředky [treasury|E]" # todo: NEW TRANSLATION
+ action_can_request_treasury_label: "@minister! Můžete požádat o [treasury_i][treasury|E] od [recipient.GetCouncilTitle]" # todo: NEW TRANSLATION
+ action_can_request_treasury_desc: "Můžete požádat [recipient.GetShortUIName], aby vám poskytl další prostředky pro váš [treasury|E]" # todo: NEW TRANSLATION
+ action_can_request_treasury_click: "#I Klikněte pro otevření $celestial_request_treasury_interaction$#!" # todo: NEW TRANSLATION
+ action_can_request_examination_support: "@minister! Můžete požádat o podporu [examinations|E]" # todo: NEW TRANSLATION
+ action_can_request_examination_support_label: "@minister! Můžete požádat o podporu k uspořádání [GetActivityType('activity_local_examination').GetTextIcon][GetActivityType('activity_local_examination').GetName] od [recipient.GetCouncilTitle]" # todo: NEW TRANSLATION
+ action_can_request_examination_support_desc: "Můžete požádat [recipient.GetCouncilTitle], [recipient.GetShortUIName], aby zaplatil náklady na uspořádání vašeho příštího [GetActivityType('activity_local_examination').GetTextIcon][GetActivityType('activity_local_examination').GetName] [activity|E]" # todo: NEW TRANSLATION
+ action_can_request_examination_support_click: "#I Klikněte pro otevření $celestial_request_examination_support_interaction$#!" # todo: NEW TRANSLATION
+ action_can_make_elder_request: "Požádejte o podporu členy vašeho [movement|E]" # todo: NEW TRANSLATION
+ action_can_make_elder_request_label: "@gold_icon! Můžete podat žádost" # todo: NEW TRANSLATION
+ action_can_make_elder_request_combined_group_label: "$action_can_make_elder_request_label$" # todo: NEW TRANSLATION
+ action_can_make_elder_request_combined_group_name: "$action_can_make_elder_request$" # todo: NEW TRANSLATION
+ action_can_make_elder_request_combined_group_description: "$action_can_make_elder_request_desc$" # todo: NEW TRANSLATION
+ action_can_make_elder_request_combined_label: "Vašemu [actor.Custom2('RelationToMe', recipient)], [recipient.GetShortUINameNoTooltip]" # todo: NEW TRANSLATION
+ action_can_make_elder_request_desc: "Můžete požádat svého [elder|E], [disciples|E] nebo [movement_leader|E], aby splnil skromnou žádost" # todo: NEW TRANSLATION
+ action_can_make_elder_request_click: "#I Klikněte pro otevření interakce $celestial_request_elders_support_interaction$#!" # todo: NEW TRANSLATION
+ action_start_great_project: "@great_project_icon! Zahájit velký projekt" # todo: NEW TRANSLATION
+ action_start_great_project_label: "@great_project_icon! Můžete zahájit velký projekt" # todo: NEW TRANSLATION
+ action_start_great_project_desc: "Je pro vás dostupný [great_project|E].\n\n#help Jako vlastník [great_project|E] si vyberete jeho umístění a sklidíte většinu odměn.#!" # todo: NEW TRANSLATION
+ action_start_great_project_click: "#I Klikněte pro zobrazení#!" # todo: NEW TRANSLATION
+ action_can_send_to_childrens_examination_label: "@child_exam_icon![recipient.GetShortUINameNoTooltip] může být poslán na Dětskou zkoušku" # todo: NEW TRANSLATION
+ action_can_send_to_childrens_examination_combined_group_label: "@child_exam_icon! Děti lze poslat na Dětskou zkoušku" # todo: NEW TRANSLATION
+ action_can_send_to_childrens_examination_combined_label: "Váš [actor.Custom2('RelationToMe', recipient)], [recipient.GetShortUINameNoTooltip], [recipient.GetAge] let" # todo: NEW TRANSLATION
+ action_can_send_to_childrens_examination: "@child_exam_icon! Dítě může být posláno na Dětskou zkoušku" # todo: NEW TRANSLATION
+ action_can_send_to_childrens_examination_combined_group_name: "$action_can_send_to_childrens_examination_combined_group_label$" # todo: NEW TRANSLATION
+ action_can_send_to_childrens_examination_desc: "Můžete poslat svého [actor.Custom2('RelationToMe', recipient)], [recipient.GetShortUIName], na Dětskou zkoušku.$action_can_send_to_childrens_examination_HELP$" # todo: NEW TRANSLATION
+ action_can_send_to_childrens_examination_combined_group_description: "Můžete poslat některé ze svých příbuzných na Dětskou zkoušku.$action_can_send_to_childrens_examination_HELP$" # todo: NEW TRANSLATION
+ action_can_send_to_childrens_examination_click: "#I Klikněte pro odeslání na zkoušku#!" # todo: NEW TRANSLATION
+ action_can_send_to_childrens_examination_HELP: "\n\n#help Účast na Dětské zkoušce není nutná pro úspěšnou vládní kariéru. Nicméně, v závislosti na [child|E] [learning_skill|E] mohou získat [merit|E] a urychlit tak svou cestu k vyšším úrovním [examinations|E].#!" # todo: NEW TRANSLATION
+ action_opportunity_to_study_classics: "$tgp_china_study_confucian_classics_decision$" # todo: NEW TRANSLATION
+ action_opportunity_to_study_classics_label: "@merit_icon!Máte čas studovat konfuciánské klasiky" # todo: NEW TRANSLATION
+ action_opportunity_to_study_classics_desc: "Nejste [governor|E], takže máte čas připravit se na složení [imperial_examinations|E]\n\n#help Studium zvýší váš [stress|E], ale přináší širokou škálu výhod pro vaši budoucí kariéru.#!" # todo: NEW TRANSLATION
+ action_opportunity_to_study_classics_click: "#I Klikněte pro zahájení studia#!" # todo: NEW TRANSLATION
+ action_unaligned_join_movement: "@unaligned_movement!Jste $dynastic_cycle_participant_group_undecided_movement$ v $game_concept_dynastic_cycle$" # todo: NEW TRANSLATION
+ action_unaligned_join_movement_label: "$action_unaligned_join_movement$" # todo: NEW TRANSLATION
+ action_unaligned_join_movement_desc: "Nejste spojeni s žádným [movement|E] v [dynastic_cycle|E].\n\n#help Zůstávání $dynastic_cycle_participant_group_undecided_movement$ znamená, že nezískáváte žádné výhody plynoucí z členství v $game_concept_movement$.#!" # todo: NEW TRANSLATION
+ action_unaligned_join_movement_click: "#I Klikněte pro připojení k hnutí#!" # todo: NEW TRANSLATION
+ action_landless_admin_escape_to_realm: "Uprchnout do jiné říše" # todo: NEW TRANSLATION
+ action_landless_admin_escape_to_realm_desc: "Jste bezzemný [noble_family|E] [title|E] [holder|E] pod [liege|E] s jiným [government|E]\n\n#help Můžete požádat jiné [independent_rulers|E] s vaším [government|E], aby se stali vaším novým pánem a přesunuli vaše [domicile|E] do jejich [capital|E]#!" # todo: NEW TRANSLATION
+ action_landless_admin_escape_to_realm_click: "#I Klikněte pro otevření interakce $landless_admin_switch_non_admin_top_liege_interaction$" # todo: NEW TRANSLATION
+ action_hegemonic_tributary_has_low_subject_standing_tributary: "Nízké [ConcatIfNeitherEmpty(GetPlayer.Custom('SubjectStandingIcon'),' ')][actor.Custom('SubjectStanding')]" # todo: NEW TRANSLATION
+ action_hegemonic_tributary_has_low_subject_standing_tributary_desc: "Vaše [ConcatIfNeitherEmpty(GetPlayer.Custom('SubjectStandingIcon'),' ')][actor.Custom('SubjectStanding')] je nebezpečně nízké, a váš [suzerain|E] [recipient.GetShortUIName] si od vás možná brzy $exact_tribute_interaction$.$action_hegemonic_tributary_has_low_subject_standing_tributary_help_desc$" # todo: NEW TRANSLATION
+ action_hegemonic_tributary_has_low_subject_standing_tributary_label: "Máte nízké [ConcatIfNeitherEmpty(GetPlayer.Custom('SubjectStandingIcon'),' ')][actor.Custom('SubjectStanding')]" # todo: NEW TRANSLATION
+ action_hegemonic_tributary_has_low_subject_standing_tributary_click: "#I Klikněte pro naplánování $tribute_mission_decision$#!" # todo: NEW TRANSLATION
+ action_hegemonic_tributary_has_low_subject_standing_tributary_help_desc: "\n\n#help Vždy se snažte udržovat zásobu [actor.Custom('SubjectStanding')] tím, že budete často plnit své povinnosti vůči [tributary|E].#!" # todo: NEW TRANSLATION
+ action_hegemonic_tributary_has_low_subject_standing_suzerain: "Zanedbaný tributář" # todo: NEW TRANSLATION
+ action_hegemonic_tributary_has_low_subject_standing_suzerain_combined_group_label: "Zanedbaní tributáři" # todo: NEW TRANSLATION
+ action_hegemonic_tributary_has_low_subject_standing_suzerain_combined_group_name: "$action_celestial_tributary_has_low_subject_standing_suzerain_combined_group_label$" # todo: NEW TRANSLATION
+ action_hegemonic_tributary_has_low_subject_standing_suzerain_desc: "Jeden z vašich [tributaries|E], [recipient.GetPrimaryTitle.Custom('GetTierIcon')][recipient.GetUIName], byl laxní ve [recipient.GetHerHis] povinnostech a už nějakou dobu vám nepřispíval.$action_celestial_tributary_has_low_subject_standing_suzerain_help_desc$" # todo: NEW TRANSLATION
+ action_hegemonic_tributary_has_low_subject_standing_suzerain_combined_group_description: "Můžete $exact_tribute_interaction$ od několika [tributaries|E].$action_celestial_tributary_has_low_subject_standing_suzerain_help_desc$" # todo: NEW TRANSLATION
+ action_hegemonic_tributary_has_low_subject_standing_suzerain_label: "Můžete $exact_tribute_interaction$ od [recipient.GetPrimaryTitle.Custom('GetTierIcon')][recipient.GetUINameNoTooltip]" # todo: NEW TRANSLATION
+ action_hegemonic_tributary_has_low_subject_standing_suzerain_combined_label: "[recipient.GetPrimaryTitle.Custom('GetTierIcon')] [recipient.GetUINameNoTooltip]" # todo: NEW TRANSLATION
+ action_hegemonic_tributary_has_low_subject_standing_suzerain_click: "#I Klikněte pro $exact_tribute_interaction$#!" # todo: NEW TRANSLATION
+ action_hegemonic_tributary_has_low_subject_standing_suzerain_help_desc: "\n\n#help Někdy [tributaries|E] potřebují malé popostrčení, možná i naznačenou hrozbu, aby si připomněli své povinnosti vůči svému [suzerain|E].#!" # todo: NEW TRANSLATION

@@ -21,8 +21,8 @@
  DYNASTIC_CYCLE_WINDOW_PHASES_LIST_TT: "#T $DYNASTIC_CYCLE_WINDOW_PHASES_LIST$#!\n$CLICK_TO_VIEW$" # todo: NEW TRANSLATION
  DYNASTIC_CYCLE_WINDOW_EFFECTS_ON_GROUP: "Účinky během aktuální éry ([SituationPhase.GetName])" # todo: NEW TRANSLATION
  DYNASTIC_CYCLE_WINDOW_GROUP_MEMBERS_BUTTON_LABEL: "[GetDataModelSize( SituationParticipantGroup.GetCharacters )] Účastníci" # todo: NEW TRANSLATION
- DYNASTIC_CYCLE_WINDOW_GROUP_POWER: "[SituationParticipantGroup.MakeScope.Var('movement_power').GetValue|V0]" # todo: NEW TRANSLATION
- DYNASTIC_CYCLE_WINDOW_GROUP_POWER_TOOLTIP: "#T [movement_power|E]: [SituationParticipantGroup.MakeScope.Var('movement_power').GetValue|V0]#!\nCelkem [personal_movement_power|E] všech členů [SituationParticipantGroup.GetName]" # todo: NEW TRANSLATION
+ DYNASTIC_CYCLE_WINDOW_GROUP_POWER: "[SituationDynasticCycleWindow.GetMovementPowerValue( SituationParticipantGroup.Self )|V0]"
+ DYNASTIC_CYCLE_WINDOW_GROUP_POWER_TOOLTIP: "#T [movement_power|E]: [SituationDynasticCycleWindow.GetMovementPowerValue( SituationParticipantGroup.Self )|V0]#!\nCelková [personal_movement_power|E] všech členů [SituationParticipantGroup.GetName]\n\n[SituationDynasticCycleWindow.GetMovementPowerValueDesc( SituationParticipantGroup.Self )]"
  DYNASTIC_CYCLE_WINDOW_GROUP_LEADER_LABEL: "[movement_leader|E]" # todo: NEW TRANSLATION
  DYNASTIC_CYCLE_WINDOW_GROUP_YOUR_GROUP_LABEL: "Vaše [movement|E]" # todo: NEW TRANSLATION
  DYNASTIC_CYCLE_WINDOW_EFFECTS_OF_ERA: "Účinky na vás ([SituationSubRegion.GetCharacterParticipantGroup( GetPlayer ).GetName])" # todo: NEW TRANSLATION
@@ -57,7 +57,7 @@
  DYNASTIC_CYCLE_WINDOW_PORTRAIT_MOVEMENT_POWER: "[movement_power_i][Character.MakeScope.Var('movement_power').GetValue|0V]" # todo: NEW TRANSLATION
  DYNASTIC_CYCLE_WINDOW_PORTRAIT_INDEPENDENT_RULER_LAND: "@house_realm_county_control_icon! [SituationDynasticCycleWindow.GetLandHeldPercentage( Character.Self )|V0%]" # todo: NEW TRANSLATION
  DYNASTIC_CYCLE_WINDOW_PORTRAIT_INDEPENDENT_RULER_POWER: "@soldier_icon! [SituationDynasticCycleWindow.GetMilitaryStrength( Character.Self )|V0]" # todo: NEW TRANSLATION
- DYNASTIC_CYCLE_WINDOW_MOVEMENT_TAB_POWER: "[SituationParticipantGroup.MakeScope.Var('movement_power').GetValue|V0]" # todo: NEW TRANSLATION
+ DYNASTIC_CYCLE_WINDOW_MOVEMENT_TAB_POWER: "[SituationDynasticCycleWindow.GetMovementPowerValue( SituationParticipantGroup.Self )|V0]"
  DYNASTIC_CYCLE_HUD_INDEPENDENT_RULER_LAND: "@house_realm_county_control_icon! [InGameBottomBar.GetDynasticCycleOwnedLand|V0%]" # todo: NEW TRANSLATION
  CUSTOM_SORT_MOVEMENT_POWER: "$game_concept_movement_power$" # todo: NEW TRANSLATION
  CUSTOM_SORT_INDIVIDUAL_MOVEMENT_POWER: "$personal_movement_power$" # todo: NEW TRANSLATION
@@ -97,3 +97,7 @@
  DYNASTIC_CYCLE_CURRENT_PHASE_TT: "#T Prohlížená éra: [SituationPhaseType.GetName]#!" # todo: NEW TRANSLATION
  DYNASTIC_CYCLE_POTENTIAL_PHASE_TT: "#T Náhled éry: [SituationPhaseType.GetName]#!" # todo: NEW TRANSLATION
  DYNASTIC_CYCLE_CLICK_TO_GO_BACK_TT: "#I Klikněte pro zobrazení aktuální éry" # todo: NEW TRANSLATION
+ DYNASTIC_CYCLE_WINDOW_PORTRAIT_MOVEMENT_POWER_TT: "#T [movement_power_i] [personal_movement_power|E]: [Character.MakeScope().Var( 'movement_power' ).GetValue|0V]\n#![Character.MakeScope().GetScriptValueDesc( 'movement_power_character_value' )]" # todo: NEW TRANSLATION
+ DYNASTIC_CYCLE_HUD_PERSONAL_MOVEMENT_POWER_TT: "#T [movement_power_i] [personal_movement_power|E]: [Character.MakeScope.Var('movement_power').GetValue|0V]\n#![Character.MakeScope().GetScriptValueDesc( 'movement_power_character_value' )]" # todo: NEW TRANSLATION
+ DYNASTIC_CYCLE_HUD_GROUP_POWER_TOOLTIP: "#T [movement_power_i] [SituationParticipantGroup.GetNameNoTooltip]: [SituationParticipantGroup.MakeScope().Var( 'movement_power' ).GetValue|V0]#!\nCelkem [personal_movement_power|E] všech členů [SituationParticipantGroup.GetName]\n\n[SituationParticipantGroup.MakeScope().GetScriptValueDesc( 'movement_power_value' )]\n\n$CLICK_TO_VIEW$" # todo: NEW TRANSLATION
+ DYNASTIC_CYCLE_HUD_GROUP_OWNED_LAND_TOOLTIP: "#T [GetSituation('dynastic_cycle').GetName]: [SituationParticipantGroup.GetNameNoTooltip]#!\n[SituationParticipantGroup.GetDescription]\n\nVlastníte @house_realm_county_control_icon! [InGameBottomBar.GetDynasticCycleOwnedLandPercentage|V0%] z [counties|E] v [GetSituation('dynastic_cycle').GetNameNoTooltip].\n\n$CLICK_TO_VIEW$" # todo: NEW TRANSLATION

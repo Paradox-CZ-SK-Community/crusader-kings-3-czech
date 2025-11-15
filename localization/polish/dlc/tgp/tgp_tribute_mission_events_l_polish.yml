@@ -1,9 +1,9 @@
 ﻿l_polish:
  tribute_mission_header: "Tributní mise:" # todo: NEW TRANSLATION
  tribute_mission_suzerain_legitimacy_gain_title: "Získaná legitimita z tributu" # todo: NEW TRANSLATION
- tribute_mission_tributary_subject_standing_gain_title: "Získáno [tributary_scope.Custom('SubjectStanding')]" # todo: NEW TRANSLATION
- tribute_mission_tributary_subject_standing_gain_tt_minor: "[tributary_scope.GetShortUIName|U] získal(a) trochu [tributary_scope.Custom('SubjectStanding')]" # todo: NEW TRANSLATION
- tribute_mission_tributary_subject_standing_gain_tt_major: "[tributary_scope.GetShortUIName|U] získal(a) #EMP hodně#! [tributary_scope.Custom('SubjectStanding')]" # todo: NEW TRANSLATION
+ tribute_mission_tributary_subject_standing_gain_title: "Získáno [ConcatIfNeitherEmpty(GetPlayer.Custom('SubjectStandingIcon'),' ')][tributary_scope.Custom('SubjectStanding')]"
+ tribute_mission_tributary_subject_standing_gain_tt_minor: "[tributary_scope.GetShortUIName|U] získal trochu [ConcatIfNeitherEmpty(tributary_scope.Custom('SubjectStandingIcon'),' ')][tributary_scope.Custom('SubjectStanding')]"
+ tribute_mission_tributary_subject_standing_gain_tt_major: "[tributary_scope.GetShortUIName|U] získal #EMP hodně#! [ConcatIfNeitherEmpty(tributary_scope.Custom('SubjectStandingIcon'),' ')][tributary_scope.Custom('SubjectStanding')]"
  tribute_mission.1000.t: "$tribute_mission_header$ Placení tributu" # todo: NEW TRANSLATION
  tribute_mission.1000.intro: "Vstupujeme do velkého sálu [overlord_scope.GetCapitalLocation.GetBaronyNameExplicitlyNoTooltip] a vítá nás" # todo: NEW TRANSLATION
  tribute_mission.1000.intro.overlord: "[overlord_scope.GetTitledFirstName], královsky pokynuje, abychom přistoupili." # todo: NEW TRANSLATION
@@ -206,11 +206,11 @@
  tribute_mission.1006.decline.dont_wanna: "[tributary_scope.GetSheHe|U] si takovou poctu nezaslouží." # todo: NEW TRANSLATION
  refused_seal_of_investiture_opinion: "Odmítnutí udělení [seal_of_investiture|E]" # todo: NEW TRANSLATION
  tribute_mission.1007.t: "$tribute_mission_header$ Pečeť investitury" # todo: NEW TRANSLATION
- tribute_mission.1007.desc: "Po napjaté pauze [receiving_character.GetTitledFirstName] slavnostně vstane. Na povel vyjde císařský písař [scribe_character.GetShortUIName] z davu, nese mistrovně vyrobený $game_concept_seal_of_investiture$ — s mým jménem na něm!\n\n[receiving_character.GetTitledFirstName] ho opatrně vezme a prosí mě, abych vstal. Publikum je úplně uchváceno.\n\nKdyž přijímám požehnání Syna nebes, probleskne mi myšlenka: jaké nové dveře by tato vzácná smlouva mohla otevřít?" # todo: NEW TRANSLATION
+ tribute_mission.1007.desc: "Po napjaté pauze se [receiving_character.GetTitledFirstName] slavnostně zvedne. Na povel císařský písař [scribe_character.GetShortUIName] vychází z davu, nesouc dokonale zhotovený $game_concept_seal_of_investiture$ — s mým jménem na něm!\n\n[receiving_character.GetTitledFirstName] jej opatrně převezme a požádá mě, abych vstala. Publikum je zcela pohlceno pozorností.\n\nKdyž přijímám požehnání Syna Nebes, napadne mě: jaké nové možnosti by tato vzácná smlouva mohla otevřít?"
  tribute_mission.1007.a: "To mění všechno." # todo: NEW TRANSLATION
  tribute_mission.1008.t: "$tribute_mission_header$ Průběžný tribut" # todo: NEW TRANSLATION
- tribute_mission.1008.desc: "Při výměně darů během obřadu cítím, jak se po dvoře šíří očekávání, jako by určitá slova zůstala nevyslovena. Ačkoli to nikdy není řečeno otevřeně, očekávání vůči mně se pomalu stává zřejmým.\n\n[receiving_character.GetTitledFirstNameNoTooltip] si přeje, abych přísahal, že tyto dary budou i nadále plynout, výměnou za přízeň [receiving_character.GetPrimaryTitle.GetNameNoTierPossessiveNoTooltip].\n\nJe stále čas nabídku čestně odmítnout a přitom si zachovat nezávislost — se vším, co to může přinést." # todo: NEW TRANSLATION
- tribute_mission.1008.a: "\"...a samozřejmě by [ROOT.Char.GetPrimaryTitle.GetNameNoTierNoTooltip] pravidelně nosil dary do [receiving_character.GetCapitalLocation.GetNameNoTooltip].\"" # todo: NEW TRANSLATION
+ tribute_mission.1008.desc: "Když se při obřadu vyměňují dary, cítím na dvoře rostoucí napětí, jako by některá slova zůstala nevyslovena. I když to nikdy není řečeno přímo, očekávání vůči mně se pomalu stává zřejmým.\n\n[receiving_character.GetTitledFirstNameNoTooltip] si přeje, abych slíbil, že budu tyto dary nadále posílat, výměnou za přízeň [receiving_character.GetLiege.GetPrimaryTitle.GetNameNoTierPossessiveNoTooltip].\n\nJe stále čas nabídku čestně odmítnout a přitom si zachovat nezávislost, se vším, co to může přinést."
+ tribute_mission.1008.a: ""...a samozřejmě by [ROOT.Char.GetPrimaryTitle.GetNameNoTierNoTooltip] pravidelně nosil dary do [receiving_character.GetLiege.GetCapitalLocation.GetNameNoTooltip].""
  tribute_mission.1008.b: "[ROOT.Char.GetPrimaryTitle.GetNameNoTierNoTooltip] nebude klanět kolena." # todo: NEW TRANSLATION
  tribute_mission.3006.t: "$tribute_mission.1006.t$" # todo: NEW TRANSLATION
  tribute_mission.3006.desc: "$tribute_mission.1006.desc$" # todo: NEW TRANSLATION
@@ -282,3 +282,12 @@
  slated_for_castration_opinion: "Hrozí kastrace" # todo: NEW TRANSLATION
  suzerain_trade_post_modifier: "Suzerénovy obchodní stanice" # todo: NEW TRANSLATION
  suzerain_trade_post_modifier_desc: "Toto hrabství přijímá stálý příliv obchodníků z obchodních stanic suzeréna." # todo: NEW TRANSLATION
+ tribute_mission.1000.desc.bunga_mas: " \"Obdivujte tuto nádheru; sada stromů bunga mas té nejvyšší kvality, vytvořená pouze pro nejvelkolepějšího [overlord_scope.GetTitledFirstNameNoTooltip]!\" Oči davu se rozšíří a sálem se rozléhá několik šepotů." # todo: NEW TRANSLATION
+ tribute_mission.1005.t.ai.bunga_mas: "$tribute_mission_header$ [newly_created_bunga_mas.GetNameNoTooltip]" # todo: NEW TRANSLATION
+ tribute_mission.1005.t.bunga_mas: "$tribute_mission_header$ [tributary_scope.GetTitledFirstNamePossessiveNoTooltip] Zlaté květy" # todo: NEW TRANSLATION
+ tribute_mission.1005.desc.bunga_mas: "\n\nZlatý květinový strom! Tento vzácný artefakt převyšuje zbytek ostatních, v porovnání méněcenných darů. Malé lístky zachycují světlo a zdají se vyzařovat záři, kterou lze srovnat jen s mou vlastní.\n\nRychle se sbírám, snažím se nic příliš neprozradit, zatímco přemýšlím, jaké dobrodiní udělím na oplátku za tento velkolepý dar..." # todo: NEW TRANSLATION
+ tribute_mission.3000.desc.bunga_mas: "$tribute_mission.1000.desc.bunga_mas$" # todo: NEW TRANSLATION
+ tribute_mission_common_bunga_mas_desc: " [Glossary( 'Bunga Mas', 'BUNGA_MAS_GLOSS' )], předložený jako tribut [overlord_scope.GetTitledFirstName] od [tributary_scope.GetTitledFirstName]." # todo: NEW TRANSLATION
+ tribute_mission_masterwork_bunga_mas_desc: "Poprvé nabídnut jako tribut [overlord_scope.GetTitledFirstName] od [tributary_scope.GetTitledFirstName], tento kvalitní soubor [Glossary( 'Bunga Mas', 'BUNGA_MAS_GLOSS' )] se spektakulárně leskne ve světle." # todo: NEW TRANSLATION
+ tribute_mission_famed_bunga_mas_desc: "Tyto dva vynikající zlaté a stříbrné stromy, [Glossary( 'Bunga Mas', 'BUNGA_MAS_GLOSS' )], byly předloženy [overlord_scope.GetTitledFirstName] jako tribut od [tributary_scope.GetTitledFirstName]. Práce s kovem a vyřezávání vyprávějí příběh jemného řemeslného umění." # todo: NEW TRANSLATION
+ tribute_mission_illustrious_bunga_mas_desc: "Nabídnuté jako tribut [overlord_scope.GetTitledFirstName] od [tributary_scope.GetTitledFirstName], [Glossary( 'Bunga Mas', 'BUNGA_MAS_GLOSS' )] sestává z velkolepé sady zlatých a stříbrných stromů, pečlivě kovaných a vyřezávaných z nejlepších kovů; květy zachyceny jako věčně rozkvetlé." # todo: NEW TRANSLATION

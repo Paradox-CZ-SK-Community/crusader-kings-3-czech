@@ -1,15 +1,15 @@
 ﻿l_polish:
- tribute_mission_decision: "[ROOT.Char.Custom('TributeMissionDecision')]" # todo: NEW TRANSLATION
+ tribute_mission_decision: "Zaplatit tribut"
  tribute_mission_decision_china: "Poklonit se [GetTitleByKey('h_china').GetNameNoTierNoTooltip]" # todo: NEW TRANSLATION
  tribute_mission_decision_generic: "Zaplatit tribut" # todo: NEW TRANSLATION
- tribute_mission_decision_desc_china: "[GetTitleByKey('h_china').GetHolder.GetTitleAsName] [GetTitleByKey('h_china').GetDefinitiveName] se nám tyčí na obzoru a tiše požaduje, abychom prokázali svou úctu. Poslání tributu mimo jiné zvýší naši legitimitu a může přinést i další výhody..." # todo: NEW TRANSLATION
+ tribute_mission_decision_desc_china: "[GetTitleByKey('h_china').GetHolder.GetTitleAsName] z [GetTitleByKey('h_china').GetDefinitiveName] $tribute_mission_decision_hegemony_common$"
  tribute_mission_decision_desc: "Je čas složit úctu — a tribut — našemu uctívanému [ROOT.Char.Custom2('RelationToMe', ROOT.Char.GetOverlord )] [ROOT.Char.GetOverlord.GetTitledFirstName]. Prokázání našeho blízkého vztahu k [ROOT.Char.GetOverlord.GetTitleAsNameNoTooltip] mimo jiné zvýší naši legitimitu a může přinést i další výhody..." # todo: NEW TRANSLATION
  tribute_mission_decision_tooltip: "Vydejte se na [tribute_mission|E]" # todo: NEW TRANSLATION
  tribute_mission_decision_effects_tt: "Cestujete [travel|E] do [tribute_mission_target.GetTitledFirstNamePossessive] [court|E], abyste předali svůj [tribute|E]" # todo: NEW TRANSLATION
  tribute_mission_interaction_extra_effects_tt: "Cestujete [travel|E] do [actor.GetOverlord.GetTitledFirstNamePossessive] [court|E], abyste předali svůj [tribute|E]" # todo: NEW TRANSLATION
- tribute_mission_interaction_anticipated_rewards_tt_imperial_grace: "Očekávané odměny:\n$BULLET_WITH_TAB$Další [imperial_grace|E]\n$tribute_mission_interaction_anticipated_rewards_tt_common$\n$BULLET_WITH_TAB$[GetPlayer.Custom('SealOfInvestitureChance')]" # todo: NEW TRANSLATION
- tribute_mission_interaction_anticipated_rewards_tt: "Očekávané odměny:\n$tribute_mission_interaction_anticipated_rewards_tt_common$" # todo: NEW TRANSLATION
- tribute_mission_interaction_anticipated_rewards_tt_common: "$BULLET_WITH_TAB$[legitimacy_i][legitimacy|E]\n$BULLET_WITH_TAB$[opinion_i] [opinion|E]\n$BULLET_WITH_TAB$Může objevit nové @innovation_icon![innovations|E] k odemčení\n$BULLET_WITH_TAB$Může získat postup @fascination_icon! [fascination|E]\n$BULLET_WITH_TAB$Může získat [THIS.Char.GetOverlord.GetCulture.GetNameNoTooltip] [artifact_i][artifact|E]\n$BULLET_WITH_TAB$Může získat [THIS.Char.GetOverlord.GetFaith.GetNameNoTooltip] @skill_learning_icon! mnicha" # todo: NEW TRANSLATION
+ tribute_mission_interaction_anticipated_rewards_tt_imperial_grace: "$tribute_mission_interaction_anticipated_rewards_tt_subject_standing$\n$tribute_mission_interaction_anticipated_rewards_tt_common$\n$tribute_mission_interaction_anticipated_rewards_tt_suzerain$\n$tribute_mission_interaction_anticipated_rewards_tt_seal_of_investiture$"
+ tribute_mission_interaction_anticipated_rewards_tt: "Očekávané odměny:\n$tribute_mission_interaction_anticipated_rewards_tt_common$\n$tribute_mission_interaction_anticipated_rewards_tt_suzerain$"
+ tribute_mission_interaction_anticipated_rewards_tt_common: "$BULLET_WITH_TAB$[legitimacy_i][legitimacy|E]\n$BULLET_WITH_TAB$[opinion_i] [opinion|E]\n$BULLET_WITH_TAB$Může objevit nové @innovation_icon![innovations|E] k odemknutí\n$BULLET_WITH_TAB$Může získat @fascination_icon! [fascination|E] pokrok"
  tribute_mission_decision_confirm: "Určete tribut" # todo: NEW TRANSLATION
  tribute_mission_grace_tt: "#weak [tributary_mission|E] nebude dostupný po dobu #V [SCOPE.ScriptValue('tribute_mission_cooldown_years')]#! let#!" # todo: NEW TRANSLATION
  IMPERIAL_GRACE_PLAYER_CHOICE_SEAL_OF_INVESTITURE: "[GetPlayer.GetOverlord.GetShortUIName] vám může udělit [seal_of_investiture|E]" # todo: NEW TRANSLATION
@@ -18,20 +18,20 @@
  IMPERIAL_GRACE_MEDIUM_CHANCE_SEAL_OF_INVESTITURE: "#tooltip:CHANCE_SEAL_OF_INVESTITURE_TT #E Může#!#! být udělen [seal_of_investiture|E]" # todo: NEW TRANSLATION
  IMPERIAL_GRACE_HIGH_CHANCE_SEAL_OF_INVESTITURE: "Bude #tooltip:CHANCE_SEAL_OF_INVESTITURE_TT #E pravděpodobně#!#! udělen [seal_of_investiture|E]" # todo: NEW TRANSLATION
  IMPERIAL_GRACE_WILL_GET_SEAL_OF_INVESTITURE: "#tooltip:WILL_GET_SEAL_OF_INVESTITURE_TT #E Bude#!#! udělen [seal_of_investiture|E]" # todo: NEW TRANSLATION
- NO_CHANCE_SEAL_OF_INVESTITURE_TT: "Váš titul [GetPlayer.GetTitleAsName] vyžaduje, aby vaše [imperial_grace|E] byla alespoň [GetPlayer.MakeScope.ScriptValue('seal_of_investiture_minimum_subject_standing')|v0] (aktuálně [GetPlayer.GetSubjectContract.GetSubjectStanding|v0]), abyste na této misi získali [seal_of_investiture|E]." # todo: NEW TRANSLATION
- CHANCE_SEAL_OF_INVESTITURE_TT: "Vaše [imperial_grace|E] [GetPlayer.GetSubjectContract.GetSubjectStanding|v0] dává [GetPlayer.MakeScope.ScriptValue('tribute_mission_chance_to_receive_seal_of_investiture')|v%0] šanci, že vám bude na této misi udělen [seal_of_investiture|E]." # todo: NEW TRANSLATION
- WILL_GET_SEAL_OF_INVESTITURE_TT: "Vaše [imperial_grace|E] [GetPlayer.GetSubjectContract.GetSubjectStanding|v0] zajišťuje, že vám bude na této misi udělen [seal_of_investiture|E]." # todo: NEW TRANSLATION
+ NO_CHANCE_SEAL_OF_INVESTITURE_TT: "Váš [title|E] z [GetPlayer.GetTitleAsName] požaduje, aby vaše [imperial_grace|E] byla alespoň [ConcatIfNeitherEmpty(GetPlayer.Custom('SubjectStandingIcon'),' ')][GetPlayer.MakeScope.ScriptValue('seal_of_investiture_minimum_subject_standing')|v0] (aktuálně [ConcatIfNeitherEmpty(GetPlayer.Custom('SubjectStandingIcon'),' ')][GetPlayer.GetSubjectContract.GetSubjectStanding|v0]) pro nárok na [seal_of_investiture|E] při této misi"
+ CHANCE_SEAL_OF_INVESTITURE_TT: "Vaše [imperial_grace|E] [ConcatIfNeitherEmpty(GetPlayer.Custom('SubjectStandingIcon'),' ')][GetPlayer.GetSubjectContract.GetSubjectStanding|v0] poskytuje [GetPlayer.MakeScope.ScriptValue('tribute_mission_chance_to_receive_seal_of_investiture')|v%0] šanci, že vám bude udělen [seal_of_investiture|E] při této misi"
+ WILL_GET_SEAL_OF_INVESTITURE_TT: "Vaše [imperial_grace|E] [ConcatIfNeitherEmpty(GetPlayer.Custom('SubjectStandingIcon'),' ')][GetPlayer.GetSubjectContract.GetSubjectStanding|v0] zaručuje, že vám bude udělen [seal_of_investiture|E] při této misi"
  tribute_mission_invalidated: "Tributní mise zrušena" # todo: NEW TRANSLATION
  tribute_mission_invalidated_desc: "Tributní mise byla zrušena" # todo: NEW TRANSLATION
  tribute_mission_costs_refunded: "Náklady na tribut vráceny" # todo: NEW TRANSLATION
- tribute_mission_notification.title: "[tributary_scope.GetShortUIName|U] zaplatil tribut" # todo: NEW TRANSLATION
+ tribute_mission_notification.title: "Tribut zaplacen od [tributary_scope.GetPrimaryTitle.GetNameNoTierNoTooltip]"
  tribute_mission_notification.desc: "[tributary_scope.GetShortUIName|U] se vydal na [tribute_mission|E] a zaplatil tribut na vašem [court|E]" # todo: NEW TRANSLATION
  qualifies_for_tribute_mission_trigger: "Nemáte žádný platný [tribute|E]" # todo: NEW TRANSLATION
  qualifies_for_tribute_mission_gold_trigger: "Nemáte @gold_icon! [GetPlayer.MakeScope.ScriptValue('imperial_grace_expected_tribute_value')|0]" # todo: NEW TRANSLATION
  qualifies_for_tribute_mission_gold_or_herd_trigger: "Nemáte dostatečné očekávané [tribute|E]. Požadujete buď @gold_icon! [GetPlayer.MakeScope.ScriptValue('imperial_grace_expected_tribute_value')|0] nebo @herd_icon! [GetPlayer.MakeScope.ScriptValue('imperial_grace_expected_tribute_herd_value')|0]." # todo: NEW TRANSLATION
  tribute_mission_decision.already_on_mission: "Jste již na [tribute_mission|E]" # todo: NEW TRANSLATION
- suzerain_is_china: "[GetTitleByKey('h_china').GetHolder.GetShortUIName] je vaším [suzerain|E]" # todo: NEW TRANSLATION
- neighbor_is_china: "Jste [independent|E] [ruler|E] sousedící s [GetTitleByKey('h_china').GetDefinitiveName]" # todo: NEW TRANSLATION
+ suzerain_is_china: "[GetTitleByKey('h_china').GetHolder.GetShortUIName|U] is [ROOT.Char.GetShortUINamePossessive] [suzerain|E]"
+ neighbor_is_china: "[ROOT.Char.GetShortUIName|U] [CharAreIs(ROOT.Char)] [independent|E] [ruler|E] sousedící s [GetTitleByKey('h_china').GetDefinitiveName]"
  tribute_mission_gold: "$petition_liege_gold$" # todo: NEW TRANSLATION
  tribute_mission_gold_tooltip: "Vyberte množství [gold|E], které nabídnete jako tribut" # todo: NEW TRANSLATION
  tribute_mission_decision_option_gold: "$petition_liege_gold$\n#low Nabídněte @gold_icon![gold|E]#!" # todo: NEW TRANSLATION
@@ -89,3 +89,62 @@
  tribute_mission_eunuch_interaction.no_valid_eunuchs: "Nemáte žádné [courtiers|E], které by bylo možné nabídnout jako [GetTrait('eunuch_1').GetName( GetNullCharacter )]" # todo: NEW TRANSLATION
  tribute_mission_concubine_interaction.overlord_no_use_eunuchs: "[GetPlayer.GetOverlord.GetShortUIName] nemá zájem o eunuchy" # todo: NEW TRANSLATION
  tribute_mission_eunuch_interaction.slated_for_castration: "#weak [secondary_recipient.GetShortUIName] se může pokusit uniknout [secondary_recipient.GetHerHis] osudu#!" # todo: NEW TRANSLATION
+ tribute_mission_decision_mandala: "$tribute_mission_decision$ k [ROOT.Char.GetSuzerain.GetPrimaryTitle.GetNameNoTierNoTooltip]" # todo: NEW TRANSLATION
+ tribute_mission_decision_roman_empire: "$tribute_mission_decision$ k [GetTitleByKey('h_roman_empire').GetNameNoTierNoTooltip]" # todo: NEW TRANSLATION
+ tribute_mission_decision_eastern_roman_empire: "$tribute_mission_decision$ k [GetTitleByKey('h_eastern_roman_empire').GetNameNoTierNoTooltip]" # todo: NEW TRANSLATION
+ tribute_mission_decision_dar_al_islam: "$tribute_mission_decision$ k [GetTitleByKey('h_dar_al_islam').GetNameNoTierNoTooltip]" # todo: NEW TRANSLATION
+ tribute_mission_decision_india: "$tribute_mission_decision$ k [GetTitleByKey('h_india').GetNameNoTierNoTooltip]" # todo: NEW TRANSLATION
+ tribute_mission_decision_desc_mandala: "Je čas vzdát naše úcty i tribut našemu uctívanému [ROOT.Char.Custom2('RelationToMe', ROOT.Char.GetOverlord )] [ROOT.Char.GetOverlord.GetTitledFirstName]. Ukázání našeho blízkého vztahu s [ROOT.Char.GetOverlord.GetTitleAsNameNoTooltip] zvýší mimo jiné naši legitimitu a může přinést i jiné výhody..." # todo: NEW TRANSLATION
+ tribute_mission_decision_hegemony_common: "se těžce rýsuje na našem obzoru a tiše nás vyzývá, abychom projevili naši úctu. Poslání tributu mimo jiné zvýší naši legitimitu a může přinést i další výhody..." # todo: NEW TRANSLATION
+ tribute_mission_decision_desc_roman_empire: "[GetTitleByKey('h_roman_empire').GetHolder.GetTitleAsName] z [GetTitleByKey('h_roman_empire').GetDefinitiveName] $tribute_mission_decision_hegemony_common$" # todo: NEW TRANSLATION
+ tribute_mission_decision_desc_eastern_roman_empire: "[GetTitleByKey('h_eastern_roman_empire').GetHolder.GetTitleAsName] z [GetTitleByKey('h_eastern_roman_empire').GetDefinitiveName] $tribute_mission_decision_hegemony_common$" # todo: NEW TRANSLATION
+ tribute_mission_decision_desc_dar_al_islam: "[GetTitleByKey('h_dar_al_islam').GetHolder.GetTitleAsName] z [GetTitleByKey('h_dar_al_islam').GetDefinitiveName] $tribute_mission_decision_hegemony_common$" # todo: NEW TRANSLATION
+ tribute_mission_decision_desc_india: "[GetTitleByKey('h_india').GetHolder.GetTitleAsName] z [GetTitleByKey('h_india').GetDefinitiveName]  $tribute_mission_decision_hegemony_common$" # todo: NEW TRANSLATION
+ tribute_mission_decision_mandala_tooltip: "$tribute_mission_decision_tooltip$" # todo: NEW TRANSLATION
+ tribute_mission_decision_china_tooltip: "$tribute_mission_decision_tooltip$" # todo: NEW TRANSLATION
+ tribute_mission_decision_roman_empire_tooltip: "$tribute_mission_decision_tooltip$" # todo: NEW TRANSLATION
+ tribute_mission_decision_eastern_roman_empire_tooltip: "$tribute_mission_decision_tooltip$" # todo: NEW TRANSLATION
+ tribute_mission_decision_dar_al_islam_tooltip: "$tribute_mission_decision_tooltip$" # todo: NEW TRANSLATION
+ tribute_mission_decision_india_tooltip: "$tribute_mission_decision_tooltip$" # todo: NEW TRANSLATION
+ tribute_mission_decision_mandala_confirm: "$tribute_mission_decision_confirm$" # todo: NEW TRANSLATION
+ tribute_mission_decision_china_confirm: "$tribute_mission_decision_confirm$" # todo: NEW TRANSLATION
+ tribute_mission_decision_roman_empire_confirm: "$tribute_mission_decision_confirm$" # todo: NEW TRANSLATION
+ tribute_mission_decision_eastern_roman_empire_confirm: "$tribute_mission_decision_confirm$" # todo: NEW TRANSLATION
+ tribute_mission_decision_dar_al_islam_confirm: "$tribute_mission_decision_confirm$" # todo: NEW TRANSLATION
+ tribute_mission_decision_india_confirm: "$tribute_mission_decision_confirm$" # todo: NEW TRANSLATION
+ tribute_mission_decision_effects_mandala_tt: "Vy [travel|E] do [THIS.Char.GetSuzerain.GetTitledFirstNamePossessive] [court|E], abyste předali svůj [tribute|E]" # todo: NEW TRANSLATION
+ tribute_mission_decision_effects_china_tt: "Vy [travel|E] do [GetTitleByKey('h_china').GetHolder.GetTitledFirstNamePossessive] [court|E], abyste předali svůj [tribute|E]" # todo: NEW TRANSLATION
+ tribute_mission_decision_effects_roman_empire_tt: "Vy [travel|E] do [GetTitleByKey('h_roman_empire').GetHolder.GetTitledFirstNamePossessive] [court|E], abyste předali svůj [tribute|E]" # todo: NEW TRANSLATION
+ tribute_mission_decision_effects_eastern_roman_empire_tt: "Vy [travel|E] do [GetTitleByKey('h_eastern_roman_empire').GetHolder.GetTitledFirstNamePossessive] [court|E], abyste předali svůj [tribute|E]" # todo: NEW TRANSLATION
+ tribute_mission_decision_effects_dar_al_islam_tt: "Vy [travel|E] do [GetTitleByKey('h_dar_al_islam').GetHolder.GetTitledFirstNamePossessive] [court|E], abyste předali svůj [tribute|E]" # todo: NEW TRANSLATION
+ tribute_mission_decision_effects_india_tt: "Vy [travel|E] do [GetTitleByKey('h_india').GetHolder.GetTitledFirstNamePossessive] [court|E], abyste předali svůj [tribute|E]" # todo: NEW TRANSLATION
+ tribute_mission_interaction_anticipated_rewards_tt_subject_standing: "Očekávané odměny:\n$BULLET_WITH_TAB$ Navíc [ConcatIfNeitherEmpty(GetPlayer.Custom('SubjectStandingIcon'),' ')][GetPlayer.Custom('SubjectStanding')]" # todo: NEW TRANSLATION
+ tribute_mission_interaction_anticipated_rewards_tt_generic_hegemon: "$tribute_mission_interaction_anticipated_rewards_tt_subject_standing$\n$tribute_mission_interaction_anticipated_rewards_tt_common$\n$tribute_mission_interaction_anticipated_rewards_tt_suzerain$" # todo: NEW TRANSLATION
+ tribute_mission_interaction_anticipated_rewards_tt_seal_of_investiture: "$BULLET_WITH_TAB$[GetPlayer.Custom('SealOfInvestitureChance')]" # todo: NEW TRANSLATION
+ tribute_mission_interaction_anticipated_rewards_tt_suzerain: "$BULLET_WITH_TAB$Může získat [THIS.Char.GetOverlord.GetCulture.GetNameNoTooltip] [artifact_i][artifact|E]\n$BULLET_WITH_TAB$Může získat [THIS.Char.GetOverlord.GetFaith.GetNameNoTooltip] @skill_learning_icon! Mnich" # todo: NEW TRANSLATION
+ tribute_mission_interaction_anticipated_rewards_tt_china: "$tribute_mission_interaction_anticipated_rewards_tt_subject_standing$\n$tribute_mission_interaction_anticipated_rewards_tt_common$\n$BULLET_WITH_TAB$Může získat [GetTitleByKey('h_china').GetHolder.GetCulture.GetNameNoTooltip] [artifact_i][artifact|E]\n$BULLET_WITH_TAB$Může získat [GetTitleByKey('h_china').GetHolder.GetFaith.GetNameNoTooltip] @skill_learning_icon! Mnich" # todo: NEW TRANSLATION
+ tribute_mission_interaction_anticipated_rewards_tt_roman_empire: "$tribute_mission_interaction_anticipated_rewards_tt_subject_standing$\n$tribute_mission_interaction_anticipated_rewards_tt_common$\n$BULLET_WITH_TAB$Může získat [GetTitleByKey('h_roman_empire').GetHolder.GetCulture.GetNameNoTooltip] [artifact_i][artifact|E]\n$BULLET_WITH_TAB$Může získat [GetTitleByKey('h_roman_empire').GetHolder.GetFaith.GetNameNoTooltip] @skill_learning_icon! Mnich" # todo: NEW TRANSLATION
+ tribute_mission_interaction_anticipated_rewards_tt_eastern_roman_empire: "$tribute_mission_interaction_anticipated_rewards_tt_subject_standing$\n$tribute_mission_interaction_anticipated_rewards_tt_common$\n$BULLET_WITH_TAB$Může získat [GetTitleByKey('h_eastern_roman_empire').GetHolder.GetCulture.GetNameNoTooltip] [artifact_i][artifact|E]\n$BULLET_WITH_TAB$Může získat [GetTitleByKey('h_eastern_roman_empire').GetHolder.GetFaith.GetNameNoTooltip] @skill_learning_icon! Mnich" # todo: NEW TRANSLATION
+ tribute_mission_interaction_anticipated_rewards_tt_dar_al_islam: "$tribute_mission_interaction_anticipated_rewards_tt_subject_standing$\n$tribute_mission_interaction_anticipated_rewards_tt_common$\n$BULLET_WITH_TAB$Může získat [GetTitleByKey('h_dar_al_islam').GetHolder.GetCulture.GetNameNoTooltip] [artifact_i][artifact|E]\n$BULLET_WITH_TAB$Může získat [GetTitleByKey('h_dar_al_islam').GetHolder.GetFaith.GetNameNoTooltip] @skill_learning_icon! Mnich" # todo: NEW TRANSLATION
+ tribute_mission_interaction_anticipated_rewards_tt_india: "$tribute_mission_interaction_anticipated_rewards_tt_subject_standing$\n$tribute_mission_interaction_anticipated_rewards_tt_common$\n$BULLET_WITH_TAB$Může získat [GetTitleByKey('h_india').GetHolder.GetCulture.GetNameNoTooltip] [artifact_i][artifact|E]\n$BULLET_WITH_TAB$Může získat [GetTitleByKey('h_india').GetHolder.GetFaith.GetNameNoTooltip] @skill_learning_icon! Mnich" # todo: NEW TRANSLATION
+ neighboring_hegemon_title_china: "[GetTitleByKey('h_china').GetHolder.GetTitleAsNameNoTooltip]" # todo: NEW TRANSLATION
+ neighboring_hegemon_title_roman_empire: "[GetTitleByKey('h_roman_empire').GetHolder.GetTitleAsNameNoTooltip]" # todo: NEW TRANSLATION
+ neighboring_hegemon_title_eastern_roman_empire: "[GetTitleByKey('h_eastern_roman_empire').GetHolder.GetTitleAsNameNoTooltip]" # todo: NEW TRANSLATION
+ neighboring_hegemon_title_dar_al_islam: "[GetTitleByKey('h_dar_al_islam').GetHolder.GetTitleAsNameNoTooltip]" # todo: NEW TRANSLATION
+ neighboring_hegemon_title_india: "[GetTitleByKey('h_india').GetHolder.GetTitleAsNameNoTooltip]" # todo: NEW TRANSLATION
+ neighboring_hegemon_definitive_name_china: "[GetTitleByKey('h_china').GetDefinitiveNameNoTooltip]" # todo: NEW TRANSLATION
+ neighboring_hegemon_definitive_name_roman_empire: "[GetTitleByKey('h_roman_empire').GetDefinitiveNameNoTooltip]" # todo: NEW TRANSLATION
+ neighboring_hegemon_definitive_name_eastern_roman_empire: "[GetTitleByKey('h_eastern_roman_empire').GetDefinitiveNameNoTooltip]" # todo: NEW TRANSLATION
+ neighboring_hegemon_definitive_name_dar_al_islam: "[GetTitleByKey('h_dar_al_islam').GetDefinitiveNameNoTooltip]" # todo: NEW TRANSLATION
+ neighboring_hegemon_definitive_name_india: "[GetTitleByKey('h_india').GetDefinitiveNameNoTooltip]" # todo: NEW TRANSLATION
+ null: "" # todo: NEW TRANSLATION
+ neighbor_is_hegemony: "[ROOT.Char.GetShortUIName|U] [CharAreIs(ROOT.Char)] [independent|E] [ruler|E] sousedící s [hegemony]" # todo: NEW TRANSLATION
+ tribute_mission_bunga_mas: "Bunga Mas" # todo: NEW TRANSLATION
+ tribute_mission_bunga_mas_tooltip: "Vyberte [Glossary( 'Bunga Mas', 'BUNGA_MAS_GLOSS' )] k nabídnutí jako tribut" # todo: NEW TRANSLATION
+ tribute_mission_decision_option_bunga_mas: "$tribute_mission_bunga_mas$\n#low Nabídnout @bunga_mas_icon![Glossary( 'Bunga Mas', 'BUNGA_MAS_GLOSS' )]#!" # todo: NEW TRANSLATION
+ tribute_mission_bunga_mas_interaction: "Vyberte tribut [Glossary( 'Bunga Mas', 'BUNGA_MAS_GLOSS' )]" # todo: NEW TRANSLATION
+ tribute_mission_bunga_mas_interaction.tooltip: "$tribute_mission_artifact_interaction.tooltip$\n$EFFECT_LIST_BULLET$Po doručení získáte [GetModifier('bunga_mas_tribute_modifier').GetNameWithTooltip]" # todo: NEW TRANSLATION
+ tribute_mission_bunga_mas_interaction.no_valid_bunga_mas: "Nemáte žádné [Glossary( 'Bunga Mas', 'BUNGA_MAS_GLOSS' )] objednané vámi, které byste mohli nabídnout" # todo: NEW TRANSLATION
+ bunga_mas_tribute_modifier: "Bunga Mas Tribut" # todo: NEW TRANSLATION
+ bunga_mas_tribute_modifier_desc: "Tato postava nedávno svému suzerénovi věnovala Bunga Mas tribut." # todo: NEW TRANSLATION
+ modifier_definition_value_per_bunga_mas_streak: "\t#weak Zvýšení za každý po sobě jdoucí darovaný Bunga Mas (max [EmptyScope.ScriptValue('bunga_mas_tribute_modifier_cap')])#!" # todo: NEW TRANSLATION

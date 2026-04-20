@@ -1,866 +1,872 @@
 ﻿l_polish:
- ADD_UNITY_VALUE_GLOBAL: "[house|E] [DynastyHouse.GetBaseName|V] [house_unity|E] se změní o $VALUE|=+0$ @dynasty_house_unity!"
- ADMINISTRATIVE_CONTRACT: "[Character.Custom( 'GetProvinceConceptNoTooltip' )] Správa"
- AI_HOUSE_UNITY: "Vaše [house_unity|E]: $VALUE|=+0$"
- CB_CONFEDERATION_VASSALS: "Útok na jiného člena [confederation|E]"
- CB_UNITY_COST: "Vaše [house_unity|E]"
- CHARACTER_WINDOW_MILITARY_STRENGTH_TOOLTIP: "[CharacterWindow.GetMilitaryStrengthTooltip][AddLocalizationIf(Not(StringIsEmpty(CharacterWindow.GetMenAtArmsSubjectRecruitmentPotentialTooltip)),'MAA_SUBJECT_ACCESS_POTENTIAL')]"
- CHOOSE_UNITY_DIRECTION: "Vyberte směr"
- CONTRACT_LIEGE_SIGNATURE: "Tento [SelectLocalization( SubjectContract.IsTributary, 'CONTRACT_LIEGE_SIGNATURE_SUZERAIN_TYPE', 'CONTRACT_LIEGE_SIGNATURE_LIEGE_TYPE' )],\n[SubjectContract.GetLiege.GetTitledFirstNameNoTooltip]\nz rodu [SubjectContract.GetLiege.GetHouse.GetBaseNameNoTooltip]"
- CONTRACT_LIEGE_SIGNATURE_LIEGE_TYPE: "Liege"
- CONTRACT_LIEGE_SIGNATURE_SUZERAIN_TYPE: "Suzerain"
- CONTRACT_VASSAL_SIGNATURE: "Tento [SelectLocalization( SubjectContract.IsTributary, 'CONTRACT_VASSAL_SIGNATURE_TRIBUTARY_TYPE', 'CONTRACT_VASSAL_SIGNATURE_VASSAL_TYPE' )],\n[SubjectContract.GetSubject.GetTitledFirstNameNoTooltip]\nz rodu [SubjectContract.GetSubject.GetHouse.GetBaseNameNoTooltip]"
- CONTRACT_VASSAL_SIGNATURE_TRIBUTARY_TYPE: "Tributář"
- CONTRACT_VASSAL_SIGNATURE_VASSAL_TYPE: "Vazal"
- GOVERNMENT_CLAN_NOT_ALLIED: "Žádné [alliance|E] jako klanový [vassal|E]"
- GOVERNMENT_CLAN_NOT_ALLIED_POWERFUL: "Žádné [alliance|E] jako mocný klanový [vassal|E]"
- GOVERNMENT_HOLDING_INFO: "$EFFECT_LIST_BULLET$ Může držet [HOLDING_TYPE.GetName|V] [holdings|E]"
- GOVERNMENT_RULE_INFO: "$EFFECT_LIST_BULLET$ Může $RULE|V$"
- HAS_HOUSE_UNITY_STAGE_GLOBAL: "[house_unity|E] je @dynasty_house_unity_[HouseUnityStage.GetKey]! [HouseUnityStage.GetName|V]"
- I_HAVE_HOUSE_UNITY_STAGE_GLOBAL: "Mé [house_unity|E] je @dynasty_house_unity_[HouseUnityStage.GetKey]! [HouseUnityStage.GetName|V]"
- MAA_SUBJECT_ACCESS_POTENTIAL: "\n\n#EMP Poskytl by přístup k novým [men_at_arms|E], pokud by byli tvým [tributary|E] nebo [vassal|E]:#! #indent_newline:2 \n[CharacterWindow.GetMenAtArmsSubjectRecruitmentPotentialTooltip]#!"
- MAA_SUBJECT_ACCESS_POTENTIAL_ENTRY: "@[MEN_AT_ARMS_TYPE.GetIconKey]_icon![Nbsp][MEN_AT_ARMS_TYPE.GetName]"
- NOMAD_CONTRACT: "Nomádní smlouva"
- NOT_HAS_HOUSE_UNITY_STAGE_GLOBAL: "[house_unity|E] #bold není#! @dynasty_house_unity_[HouseUnityStage.GetKey]! [HouseUnityStage.GetName|V]"
- NOT_I_HAVE_HOUSE_UNITY_STAGE_GLOBAL: "Mé [house_unity|E] #bold není#! @dynasty_house_unity_[HouseUnityStage.GetKey]! [HouseUnityStage.GetName|V]"
- NOT_THEY_HAVE_HOUSE_UNITY_STAGE_GLOBAL: "[house|E] [DYNASTY_HOUSE.GetBaseName|V] [house_unity|E] #bold není#! @dynasty_house_unity_[HouseUnityStage.GetKey]! [HouseUnityStage.GetName|V]"
- STEER_HOUSE_UNITY_SELECT_DIRECTION_TITLE: "Vyberte směr [unity|E]"
- SUBJECT_MAA_HINT: "Mohl bys najmout @[MenAtArmsType.GetIconKey]_icon![Nbsp][MenAtArmsType.GetName] z následujících [realms|E], pokud by byli tvým [tributary|E] nebo [vassal|E]:#indent_newline:2 \n$BREAKDOWN$#!"
- SUBJECT_MAA_HINT_ENTRY: "[CHARACTER.GetPrimaryTitle.GetBaseNameNoTier] ([CHARACTER.GetShortUIName])"
- SUPPLY_MULT_DIFERENT_GOVERNMENT: "[GOVERNMENT_TYPE.GetAdjective] území"
- THEY_HAVE_HOUSE_UNITY_STAGE_GLOBAL: "[house|E] [DYNASTY_HOUSE.GetBaseName|V] [house_unity|E] je @dynasty_house_unity_[HouseUnityStage.GetKey]! [HouseUnityStage.GetName|V]"
- active_unity_level_description_tt: "#weak Toto je způsobeno vaší aktivní úrovní [house_unity_level|E]#!"
- admin_contract_forbids_revocation_desc: "Nemůžete odejmout [titles|E] ani odvolat jmenování od [vassal|E], který spravuje pomocí [GetSubjectContractType( 'administrative_themes' ).GetObligationName( 'admin_theme_imperial' )], pokud nemáte [revoke_title_reason|E]"
- admin_theme_balanced: "@balanced_administration! Vyvážená administrace"
- admin_theme_balanced_desc: "#flavor Vyvážená administrace usiluje o přiměřenost, aby zajistila rovnoměrnou pozornost ve všech oblastech správy.#!"
- admin_theme_balanced_short: "@balanced_administration! Vyvážená"
- admin_theme_balanced_text_icon: "@balanced_administration!"
- admin_theme_civilian: "@civilian_administration! Civilní správa"
- admin_theme_civilian_benefits: "#emphasis #bold [vassal|E] Výhody:#!#!\n$EFFECT_LIST_BULLET$ Zvyšuje [governor_efficiency|E] na základě [stewardship|E]#indent_newline:4 \n#weak Přidává navíc [EmptyScope.ScriptValue('efficiency_skill_increase_value')|+1%/] za každý bod [skill|E]#!#!\n[influence|E] získaný stavbou [buildings|E] v ovládaných [counties|E] je zvýšen"
- admin_theme_civilian_desc: "#flavor Osvobozená od vojenské služby, civilní správa se zaměřuje na zlepšení ekonomiky a blahobytu obyvatel.#!"
- admin_theme_civilian_short: "@civilian_administration! Civilní"
- admin_theme_civilian_text_icon: "@civilian_administration!"
- admin_theme_frontier: "@frontier_administration! Pohraniční správa"
- admin_theme_frontier_benefits: "#emphasis #bold [liege|E] Výhody:#!#!\n$EFFECT_LIST_BULLET$ Odemkne #high $frontier_influence_war_interaction$#! [interaction|E], který umožňuje [liege|E] požádat [vassal|E] o vyhlášení války za cizí [duchy|E]-úrovňový [title|E]\n\n#emphasis #bold [vassal|E] Výhody:#!#!\n$EFFECT_LIST_BULLET$ Zvyšuje [governor_efficiency|E] na základě [prowess|E]#indent_newline:4 \n#weak Přidává navíc [EmptyScope.ScriptValue('efficiency_skill_increase_value')|+1%/] za každý bod [skill|E]#!#!\n$EFFECT_LIST_BULLET$ Odemkne #high $EXPANSION_DUCHY_CB_NAME$#! [casus_belli|E]\n$EFFECT_LIST_BULLET$ Umožňuje [raiding|E]"
- admin_theme_frontier_desc: "#flavor Hraniční území nelze nechat bez obrany. Pohraniční správa zajistí obranu říše a bude připravena odrazit případné útočníky.#!"
- admin_theme_frontier_short: "@frontier_administration! Pohraniční"
- admin_theme_frontier_text_icon: "@frontier_administration!"
- admin_theme_frontier_valid_desc: "[vassal.Custom( 'GetProvinceConceptNoTooltip' )] musí sousedit s jiným [realm|E]"
- admin_theme_imperial: "@imperial_administration! Císařská správa"
- admin_theme_imperial_benefits: "#emphasis #bold [vassal|E] Výhody:#!#!\n$EFFECT_LIST_BULLET$ Zvyšuje [governor_efficiency|E] na základě [prestige_level|E]#indent_newline:4 \n#weak Přidává navíc [EmptyScope.ScriptValue('efficiency_currency_level_increase_value')|+0%/] za každou úroveň#!#!\n$EFFECT_LIST_BULLET$ Zvyšuje hodnocení [powerful_family|E]\nJmenování nelze odvolat bez [revoke_title_reason|E]"
- admin_theme_imperial_desc: "#flavor Císařská správa poskytuje značnou míru autonomie a osvobození od mnoha běžných povinností. Je to nejprestižnější forma správy, jakou lze mít.#!"
- admin_theme_imperial_short: "@imperial_administration! Císařská"
- admin_theme_imperial_text_icon: "@imperial_administration!"
- admin_theme_imperial_valid_desc: "Pouze jeden [vassal.Custom( 'GetProvinceConceptNoTooltip' )] může mít tuto správu aktivní"
- admin_theme_military: "@military_administration! Vojenská správa"
- admin_theme_military_benefits: "#emphasis #bold [vassal|E] Výhody:#!#!\n$EFFECT_LIST_BULLET$ Zvyšuje [governor_efficiency|E] na základě [martial|E]#indent_newline:4 \n#weak Přidává navíc [EmptyScope.ScriptValue('efficiency_skill_increase_value')|+1%/] za každý bod [skill|E]#!#!"
- admin_theme_military_desc: "#flavor Vojenská administrace soustředí veškerou energii na nábor a výcvik impozantních jednotek pro císařskou armádu.#!"
- admin_theme_military_short: "@military_administration! Vojenská"
- admin_theme_military_text_icon: "@military_administration!"
- admin_theme_naval: "@naval_administration! Námořní správa"
- admin_theme_naval_benefits: "#emphasis #bold [liege|E] Výhody:#!#!\n$EFFECT_LIST_BULLET$ Odemkne #high $frontier_influence_war_interaction$#! [interaction|E], který umožňuje [liege|E] požádat [vassal|E] o vyhlášení války za cizí [duchy|E]-úrovňový [title|E]\n\n#emphasis #bold [vassal|E] Výhody:#!#!\n$EFFECT_LIST_BULLET$ Zvyšuje [governor_efficiency|E] za každou kontrolovanou #high [GetBuilding('common_tradeport_01').GetTypeName]#!#indent_newline:4 \n#weak Přidává navíc [EmptyScope.ScriptValue('efficiency_building_increase_value')|+0%/] za každou [GetBuilding('common_tradeport_01').GetTypeName]#!#!\n$EFFECT_LIST_BULLET$ Odemkne #high $NAVAL_EXPANSION_DUCHY_CB_NAME$#! [casus_belli|E]"
- admin_theme_naval_desc: "#flavor Námořnictvo je páteří každého expanzivního panství. S věnovanou námořní správou budou bezpečnost a efektivita na moři výrazně zvýšeny.#!"
- admin_theme_naval_short: "@naval_administration! Námořní"
- admin_theme_naval_text_icon: "@naval_administration!"
- admin_theme_naval_valid_desc: "[vassal.Custom( 'GetProvinceConceptNoTooltip' )] musí být pobřežní"
- admin_vassal: "Administrativní"
- admin_vassal_desc: "$game_concept_administrative_desc$"
- administrative_government: "Administrativní"
- administrative_government_adjective: "Administrativní"
- administrative_government_desc: "\n$game_concept_administrative_desc$\n\n#F Administrativní je vysoce centralizovaná forma vlády, kde moc sídlí převážně v hlavním městě. Dědičné právo, ač stále důležité, není tak výrazné jako v feudální říši. S dostatečnými schopnostmi a ambicemi může kdokoli, i z nejskromnějšího původu, vystoupat a stát se vlivným guvernérem nebo usilovat o trůn a stát se císařem.#!"
- administrative_government_realm: "Administrativní říše"
- administrative_government_vassals_label: "[administrative|E] [obligations|E] jsou založeny na [GetPlayer.Custom('GetProvinceAdministrationConcept')]"
- administrative_government_with_icon: "@government_type_administrative! $administrative_government$"
- administrative_obligations: "Administrativní povinnosti"
- administrative_themes: "Dostupné typy administrace"
- adult_rulers_only: "#N Může být vládnuto pouze [adults|E]#!"
- adventurer_rule: "získává pouze [gold|E] a [prestige|E] vykonáváním [task_contracts|E]"
- antagonistic: "Svářlivý"
- antagonistic_desc: "Téměř nic nevyburcuje lidi jako rivalita nebo žárlivost. V tomto domě si musíš hlídat záda, jinak se může stát, že se někdo pokusí zasadit nůž do zad."
- antagonistic_house_approves_war_victory: "Všichni [house|E] [vassals|E] [attacker.GetShortUINamePossessive] získají #P 10#! [opinion|E] o [attacker.GetShortUIName] na #V 10 let#! #weak (Impressed by Offensive Victory)#!"
- antagonistic_house_approves_war_victory_defensive: "Všichni [house|E] [vassals|E] [defender.GetShortUINamePossessive] získají #P 15#! [opinion|E] o [defender.GetShortUIName] na #V 10 let#! #weak (Impressed by Defensive Victory)#!"
- antagonistic_house_disapproves_war_defeat: "Všichni [house|E] [vassals|E] [attacker.GetShortUINamePossessive] ztratí #N 20#! [opinion|E] o [attacker.GetShortUIName] na #V 10 let#! #weak (Embarrassed by Defeat)#!"
- antagonistic_house_disapproves_war_defeat_defender: "Všichni [house|E] [vassals|E] [defender.GetShortUINamePossessive] ztratí #N 20#! [opinion|E] o [defender.GetShortUIName] na #V 10 let#! #weak (Embarrassed by Defeat)#!"
- antagonistic_house_disapproves_war_white_peace: "Všichni [house|E] [vassals|E] [attacker.GetShortUINamePossessive] ztratí #N 10#! [opinion|E] o [attacker.GetShortUIName] na #V 10 let#! #weak (Finds White Peace Weak)#!"
- antagonistic_house_disapproves_war_white_peace_defender: "Všichni [house|E] [vassals|E] [defender.GetShortUINamePossessive] ztratí #N 10#! [opinion|E] o [defender.GetShortUIName] na #V 10 let#! #weak (Finds White Peace Weak)#!"
- can_raze_holdings: "Může vypálit [holdings|E] za [gold|E]"
- can_start_war_with_raised_troops: "Může zahájit [wars|E] s povolanými [armies|E]"
- can_wage_wars: "Může vyhlašovat války"
- clan_government: "Klan"
- clan_government_adjective: "Klanské"
- clan_government_desc: "\n$game_concept_clan_desc$\n\n#F Klan je sjednocen příbuzenstvím — buď krví, nebo sdíleným vztahem k symbolickému předkovi. Vůdce klanu se silně spoléhá na podporu klanu. Jednotní jsou velkou silou, ale nespokojený klan uvadá zevnitř.#!"
- clan_government_levies_contribution_postfix: " (maximum [FixedPointToProgressbarValue(EmptyScope.ScriptValue('clan_government_levies_max_possible'))|1V])"
- clan_government_min_contribution_label: "Minimálně [crown_authority|E]"
- clan_government_obligations: "Z [opinion|E]"
- clan_government_realm: "Klan"
- clan_government_tax_contribution_postfix: " (maximum [FixedPointToProgressbarValue(EmptyScope.ScriptValue('clan_government_tax_max_possible'))|1V])"
- clan_government_unclamped_contribution_label: "Vychází z [opinion|E] o mně"
- clan_government_vassals_label: "Klánové [obligations|E] jsou založeny na [opinion|E]"
- clan_government_with_icon: "@government_type_clan! $clan_government$"
- clan_tax_slot: "Daňová jurisdikce"
- clan_vassal: "Klan"
- clan_vassal_desc: "$game_concept_clan_desc$"
- coinage_rights: "Právo razby mincí"
- coinage_rights_granted: "$coinage_rights$ Udělena"
- coinage_rights_granted_desc: "#flavor [vassal] dostává právo razit a používat nové mince, což posiluje jejich [development|E] na úkor [liege].#!"
- coinage_rights_granted_short: "Uděleno"
- coinage_rights_none: "Žádné $coinage_rights$"
- coinage_rights_none_short: "Žádné"
- competitive: "Soutěživý"
- competitive_desc: "Soutěž v rodině může být zdravá věc. Nutí členy rodu překonávat jeden druhého, ať už na bojišti, nebo při snaze získat trůn..."
- conditional_maa_refill_rule: "pouze [reinforce_soldiers|E] jednotky"
- council_rights: "Práva v radě"
- council_rights_guaranteed: "$council_rights$ Zaručena"
- council_rights_guaranteed_desc: "#emphasis #bold [vassal|E] Právo:#!#!\n$EFFECT_LIST_BULLET$ #high $force_onto_council$#! [interaction|E] lze používat dle libosti\n\n#flavor [vassal] získává zvláštní [council] výsady a bude očekávat trvalé místo v [council]. Udělení tohoto práva příliš mnoha [vassals] nakonec rozladí [powerful_vassals] [realm|E].#!"
- council_rights_guaranteed_short: "Zaručeno"
- council_rights_none: "Žádná $council_rights$"
- council_rights_none_desc: "#flavor [vassal] není uděleno žádné nadstandardní právo týkající se [council].#!"
- council_rights_none_short: "Žádné"
- create_cadet_branches_rule: "Vytvořit [cadet_branches|E]"
- create_cadet_branches_trigger: "Vytvoření [cadet_branches|E]"
- default_tax_collector: "Základní daně"
- default_tax_collector_desc: "Základní [obligations|E] platí, v závislosti na [aptitude|E] přiděleného [tax_collector|E]"
- default_tax_collector_flavor_desc: "Standardní daň. Daňoví poplatníci platí ani více, ani méně, než se od nich očekává."
- default_tributary_levies: "[tributary|E] [levies|U]"
- default_tributary_prestige: "[tributary|E] [prestige|U]"
- default_tributary_taxes: "[tributary|E] [taxes|U]"
- deqhan_special_rights_tax_collector: "Dehqan"
- deqhan_special_rights_tax_collector_flavor_desc: "Perské magnáty v rámci starobylého, decentralizovaného systému výběru daní; dehqani pečlivě spravují svá území, aby podporovali produktivitu – a vlastní prestiž."
- feudal_government: "Feudální"
- feudal_government_adjective: "Feudální"
- feudal_government_desc: "\n$game_concept_feudal_desc$\n\n#F Feudalismus byl dominantní formou vlády v Evropě mezi 9. a 15. stoletím. Feudální systém je založen na vztahu mezi držitelem půdy a těmi, kteří na ní vykonávají služby a práci, aby zde mohli žít. Vládci, kteří drží půdu, jmenují vazaly, kterým jsou svěřeny léna k spravování. Na oplátku vazalové poskytují svému pánovi [soldiers|E] a [taxes|E].#!"
- feudal_government_levies: "[GetGovernment( 'feudal_government' ).GetNameNoTooltip] [levies|U]"
- feudal_government_obligations: "[GetGovernment( 'feudal_government' ).GetName] [obligations|E]"
- feudal_government_prestige: "[GetGovernment( 'feudal_government' ).GetNameNoTooltip] [prestige|U]"
- feudal_government_realm: "Feudální panství"
- feudal_government_taxes: "[GetGovernment( 'feudal_government' ).GetNameNoTooltip] [taxes|U]"
- feudal_government_vassals_label: "Feudální [obligations|E] vycházejí z [vassal|E]ova [vassal_contract|E]"
- feudal_government_with_icon: "@government_type_feudal! $feudal_government$"
- feudal_levies_exempt: "Bez příspěvku"
- feudal_levies_exempt_short: "Žádné"
- feudal_levies_extortionate: "Obrovský příspěvek k $game_concept_levy$"
- feudal_levies_extortionate_short: "Obrovské"
- feudal_levies_high: "Vysoký příspěvek k $game_concept_levy$"
- feudal_levies_high_short: "Vysoké"
- feudal_levies_low: "Nízký příspěvek k $game_concept_levy$"
- feudal_levies_low_short: "Nízké"
- feudal_levies_normal: "Normální příspěvek k $game_concept_levy$"
- feudal_levies_normal_short: "Normální"
- feudal_obligation_high: "Vysoké $feudal_government_obligations$"
- feudal_obligation_high_short: "Vysoké"
- feudal_obligation_low: "Nízké $feudal_government_obligations$"
- feudal_obligation_low_short: "Nízké"
- feudal_obligation_normal: "Normální $feudal_government_obligations$"
- feudal_obligation_normal_short: "Normální"
- feudal_prestige_high: "Vysoký příspěvek k $game_concept_prestige$"
- feudal_prestige_high_short: "Vysoké"
- feudal_prestige_none: "Bez příspěvku"
- feudal_prestige_none_short: "Žádné"
- feudal_prestige_normal: "Částečný příspěvek k $game_concept_prestige$"
- feudal_prestige_normal_short: "Nízké"
- feudal_tax_exempt: "[tax|E] Osvobozen"
- feudal_tax_exempt_short: "Osvobozen"
- feudal_tax_extortionate: "Vyděračské $game_concept_taxes$"
- feudal_tax_extortionate_short: "Vyděračské"
- feudal_tax_high: "Vysoké $game_concept_taxes$"
- feudal_tax_high_short: "Vysoké"
- feudal_tax_low: "Nízké $game_concept_taxes$"
- feudal_tax_low_short: "Nízké"
- feudal_tax_normal: "Normální $game_concept_taxes$"
- feudal_tax_normal_short: "Normální"
- feudal_vassal: "Feudální"
- feudal_vassal_desc: "$game_concept_feudal_desc$"
- fortification_rights: "Práva na opevnění"
- fortification_rights_granted: "$fortification_rights$ Udělena"
- fortification_rights_granted_desc: "#flavor [vassal] dostává právo stavět nové hrady a opevnění za podpory svého [liege]. Tato podpora v praxi znamená, že [vassal] platí #high [EmptyScope.ScriptValue('fortification_rights_contract_taxes_tooltip')|0]%#! méně [tax] než stanovují jejich $feudal_government_taxes$ [obligations].#!"
- fortification_rights_granted_short: "Uděleno"
- fortification_rights_none: "Žádná $fortification_rights$"
- fortification_rights_none_short: "Žádné"
- friendly: "Přátelský"
- friendly_desc: "Možná si vždy nebudou rozumět, ale členové tohoto rodu jsou navzájem stále v přátelských vztazích."
- ghazi_special_rights_tax_collector: "Status gházi"
- ghazi_special_rights_tax_collector_desc: "#emphasis #bold [vassal|E] Právo:#!#!\n$EFFECT_LIST_BULLET$ [vassal|E] platí méně [piety|E] za použití [holy_war|E] [casus_bellis|E], ale více [prestige_i][prestige|E] za jakýkoli jiný [casus_bellis|E]\n$EFFECT_LIST_BULLET$ Umožňuje [raiding|E]\n\n#flavor [vassal|E] je vybrán [liege|E] jako válečník [faith|E], pověřen rozšiřováním hranic skrze [holy_war|E].#!"
- ghazi_special_rights_tax_collector_flavor_desc: "Bojovníci víry a pohraničí, gházi vybírají příjmy z kořisti a zbojstva a vedou nekonečnou válku proti náboženským nepřátelům státu."
- government_can_raid_rule: "#indent_newline:3 [government|E] umožňuje [raiding|E] cizích [counties|E] za účelem získání [loot|E]#!"
- government_can_use_subject_men_at_arms: "Může najmout [men_at_arms|E] od [vassals|E] a [tributaries|E]"
- government_can_use_tributary_men_at_arms: "Může #V verbovat#! [men_at_arms|E] od [tributaries|E]"
- government_has_influence: "Používá [influence_i|E][influence|E]"
- government_has_powerful_families: "Umožňuje [noble_families|E]"
- government_has_title_men_at_arms: "Umožňuje nábor [title_men_at_arms|E]"
- government_is_administrative: "Má přístup k [estate|E]"
- government_is_clan: "Používá [tax_jurisdictions|E]"
- government_is_feudal: "Používá [vassal_contracts|E]"
- government_is_herder: "Nelze hrát"
- government_is_holy_order: "Nelze hrát"
- government_is_landless_adventurer: "Má přístup k [camp|E]"
- government_is_mercenary: "Nelze hrát"
- government_is_nomadic: "Má [herd|E]"
- government_is_not_republic_or_admin_desc: "[government|E] #bold není#! [GetGovernment('republic_government').GetName] nebo [GetGovernment('administrative_government').GetName]"
- government_is_republic: "Nelze hrát"
- government_is_theocracy: "Nelze hrát"
- government_is_tribal: "Je kmenového typu [government|E]"
- harmonious: "Harmonický"
- harmonious_desc: "Rod v dokonalé harmonii. Členové rodu dělají, co mohou, aby stáli při sobě a navzájem si kdykoli pomohli."
- has_detailed_ledgers_perk: "[liege|E] má [GetPerk( 'detailed_ledgers_perk' ).GetName( GetPlayer )]"
- has_house_unity_parameter: "Má $PARAMETER_NAME$"
- herd_tax_exempt: "$game_concept_herd$ Osvobozeno"
- herd_tax_exempt_short: "Osvobozeno"
- herd_tax_extortionate: "Vyděračské $game_concept_herd$"
- herd_tax_extortionate_short: "Vyděračské"
- herd_tax_high: "Vysoké $game_concept_herd$"
- herd_tax_high_short: "Vysoké"
- herd_tax_low: "Nízké $game_concept_herd$"
- herd_tax_low_short: "Nízké"
- herd_tax_normal: "Normální $game_concept_herd$"
- herd_tax_normal_short: "Normální"
- herder_government: "Chovatel"
- herder_government_adjective: "Pastýřský"
- herder_government_desc: "\n$game_concept_herder_desc$\n\n#F Pastýři se nezabývají žádnými aspekty vlády. Starají se o svá stáda, a jen o stáda.#!"
- herder_government_realm: "Pastviny"
- herder_government_vassals_label: "Pastýřské [obligations|E] nelze upravit"
- herder_government_with_icon: "@government_type_herder! $herder_government$"
- herder_vassal: "Pastýř"
- herder_vassal_desc: "$game_concept_herder_desc$"
- holy_order_government: "Svatý řád"
- holy_order_government_adjective: "Řád"
- holy_order_government_desc: "\nSvatí válečníci řádů zasvětili svůj život boji proti nevěřícím a službě své víře. Mohou držet hrady udělené jim zbožnými držiteli půdy. Vůdce řádu je volen uvnitř řádu."
- holy_order_government_realm: "Řád"
- holy_order_government_with_icon: "@government_type_holy_order! $holy_order_government$"
- house_unity_can_create_cadet_branches_tt: "[house_unity|E] je @dynasty_house_unity_antagonistic! $antagonistic$"
- house_unity_parameter_unity_antagonistic_cb_cost: "[casus_belli|E] Náklady: @war_icon!#P [EmptyScope.ScriptValue('unity_antagonistic_cb_cost_display_value')|0]%#!"
- house_unity_parameter_unity_can_challenge_house_head: "Členové [house|E] mohou vyzvat svého [house_head|E] a pokusit se ho nahradit"
- house_unity_parameter_unity_can_create_cadet_branches: "[independent|E] členové [house|E] mohou vytvořit [cadet_branches|E]"
- house_unity_parameter_unity_competitive_cb_cost: "[casus_belli|E] Náklady: @war_icon!#P [EmptyScope.ScriptValue('unity_competitive_cb_cost_display_value')|0]%#!"
- house_unity_parameter_unity_disable_invasions: "[rulers|E] nemohou použít Invasion [casus_belli|E]"
- house_unity_parameter_unity_friendly_cb_cost: "[casus_belli|E] Náklady: @war_icon!#N +[EmptyScope.ScriptValue('unity_friendly_cb_cost_display_value')|0]%#!"
- house_unity_parameter_unity_harmonious_cb_cost: "[casus_belli|E] Náklady: @war_icon!#N +[EmptyScope.ScriptValue('unity_harmonious_cb_cost_display_value')|0]%#!"
- house_unity_parameter_unity_has_liberate_house_members_cb: "Odemkne [fp3_free_house_member_cb|E] [casus_belli|E]"
- house_unity_parameter_unity_has_unify_house_cb: "Odemkne [fp3_unify_house_cb|E] [casus_belli|E]"
- house_unity_parameter_unity_less_likely_factions: "[house|E] [vassals|E] jsou #P méně pravděpodobní#! vytvořit [factions|E]"
- house_unity_parameter_unity_lower_prestige_requirements: "Všechny [casus_bellis|E] vyžadující konkrétní [prestige_level|E] vyžadují o jednu úroveň méně"
- house_unity_parameter_unity_more_likely_claimant_factions: "[house|E] [vassals|E] jsou #N více pravděpodobní#! vytvořit [claimant_factions|E]"
- house_unity_parameter_unity_multiple_invasions: "[rulers|E] mohou použít [GetCasusBelliType('invasion_war').GetName] [casus_belli|E] jednou každých [EmptyScope.ScriptValue('unity_antagonistic_invasion_cooldown_value')|V0]#! let"
- house_unity_parameter_unity_significantly_less_likely_factions: "[house|E] [vassals|E] jsou #P výrazně méně pravděpodobní#! vytvořit [factions|E]"
- house_unity_parameter_unity_significantly_more_likely_claimant_factions: "[house|E] [vassals|E] jsou #N výrazně častěji#! náchylní k vytvoření [claimant_factions|E]"
- house_unity_parameter_unity_succession_clan_antagonistic_partition_succession: "[house_succession_law|E] je [GetLaw('clan_antagonistic_partition_succession_law').GetName]"
- house_unity_parameter_unity_succession_clan_competitive_partition_succession: "[house_succession_law|E] je [GetLaw('clan_competitive_partition_succession_law').GetName]"
- house_unity_parameter_unity_succession_clan_friendly_partition_succession: "[house_succession_law|E] je [GetLaw('clan_friendly_partition_succession_law').GetName]"
- house_unity_parameter_unity_succession_clan_harmonious_partition_succession: "[house_succession_law|E] je [GetLaw('clan_harmonious_partition_succession_law').GetName]"
- house_unity_parameter_unity_succession_clan_impassive_partition_succession: "[house_succession_law|E] je [GetLaw('clan_impassive_partition_succession_law').GetName]"
- house_unity_parameter_unity_unlimited_invasions: "[rulers|E] mají neomezený přístup k [GetCasusBelliType('invasion_war').GetName] [casus_belli|E], který nahrazuje jakýkoli běžný Invasion Casus Belli"
- house_unity_parameter_unity_unlock_befriend_scheme: "Členové [house|E] se mohou [GetScheme('befriend').GetTypeName] navzájem"
- house_unity_parameter_unity_unlock_fabricate_hooks: "Členové [house|E] mohou používat [GetScheme('fabricate_hook').GetTypeName] [scheme|E] proti sobě"
- house_unity_parameter_unity_war_opinion: "[victory|E], [white_peace|E] a [defeat|E] mají různé efekty na [house|E] [vassal|E] [opinion|E]"
- house_unity_parameter_vassal_house_members_more_upset_without_alliance: "Postih 'No [alliance|E]' v [opinion|E] je u [vassals|E] ze stejného [house|E] vyšší"
- ignores_faith_marriage_penalties: "#indent_newline:3 Ignoruje [faith|E] při sjednávání [marriages|E] s [GetGovernment( 'nomad_government' ).GetName] nebo [GetGovernment( 'herder_government' ).GetName] [rulers|E] nebo jejich [tributaries|E]#!"
- impassive: "Lhostejný"
- impassive_desc: "Proč plýtvat časem a energií staráním se o to, co dělají ostatní členové rodu? Tito členové se většinou starají především o sebe."
- iqta_special_rights_tax_collector: "Udělení iqta"
- iqta_special_rights_tax_collector_desc: "[vassal|E] má nižší povinnosti, ale pomáhá přispívat [men_at_arms|E] pro [liege|E]."
- iqta_special_rights_tax_collector_flavor_desc: "Iqta je systém daňového farmářství, kde jsou místním magnátům uděleny široké pravomoci vybírat daně v zastoupení státu."
- is_nomad_title: "Je to [GetGovernment( 'nomad_government' ).GetName] Camp [title|E]"
- jizya_special_rights: "$jizya_special_rights_tax_collector$"
- jizya_special_rights_default: "Výchozí $jizya_special_rights$"
- jizya_special_rights_default_short: "Výchozí"
- jizya_special_rights_granted: "Uplatněno $jizya_special_rights$"
- jizya_special_rights_granted_desc: "$jizya_special_rights_tax_collector_desc$"
- jizya_special_rights_granted_short: "Uděleno"
- jizya_special_rights_tax_collector: "Status džizji"
- jizya_special_rights_tax_collector_desc: "#emphasis #bold [vassal|E] Práva:#!#!\n$EFFECT_LIST_BULLET$ [liege|E] nemůže požadovat [demand_conversion|E] od [vassal|E]\n[liege|E] nemůže použít [convert_county|E] na území [vassals|E]\n$EFFECT_LIST_BULLET$ [liege|E] nemůže použít [faith|E] jako důvod k vyhnutí se [tyranny|E] při odnímání titulů\n$EFFECT_LIST_BULLET$ [liege|E] nemůže odňít [vassals_possessive|E] [titles|E]\n\n#flavor [vassal|E] má zaručené vlastnictví svých [titles], čímž se brání [liege|E] v jejich odnětí – bez ohledu na to, zda $game_concept_liege$ má [revoke_title_reason|E] či nikoliv.\n\n$game_concept_vassal$ je také uděleno zvláštní chráněné postavení, přičemž království oficiálně uznává jejich právo praktikovat vlastní [faith|E].#!"
- jizya_special_rights_tax_collector_flavor_desc: "Džizja je zvláštní daň uložená #italic dhimmis#!, náboženským menšinám, výměnou za výsadu vykonávat své odlišné vyznání v míru."
- kurultai_rights: "Práva Kurultaje"
- kurultai_rights_guaranteed: "$kurultai_rights$ zaručeno"
- kurultai_rights_guaranteed_desc: "#emphasis #bold [vassal|E] Právo:#!#!\n$EFFECT_LIST_BULLET$ #high $force_onto_council$#! [interaction|E] lze používat dle libosti\n\n#flavor [vassal] získává zvláštní [kurultai|E] výsady a bude očekávat trvalé místo v [kurultai|E]. Udělení tohoto práva příliš mnoha [vassals] nakonec rozladí [powerful_vassals] [realm|E].#!"
- kurultai_rights_guaranteed_short: "Zaručeno"
- kurultai_rights_none: "Žádná $kurultai_rights$"
- kurultai_rights_none_desc: "#flavor [vassal] není uděleno žádné mimořádné privilegium, pokud jde o [kurultai|E].#!"
- kurultai_rights_none_short: "Žádné"
- land_raiding_movement_speed_from_government: "$MOD_MOVEMENT_SPEED_LAND_RAIDING$: #P +10%#!"
- landless_adventurer_government: "Dobrodruh"
- landless_adventurer_government_adjective: "Dobrodružný"
- landless_adventurer_government_desc: "\n$game_concept_adventurer_desc$"
- landless_adventurer_government_realm: "Tábor dobrodruhů"
- landless_adventurer_government_with_icon: "@government_type_adventurer! $landless_adventurer_government$"
- liege_war_participation_obligation: "Podpora suzeréna ve válce"
- liege_war_participation_obligation_forced: "Vynucená $liege_war_participation_obligation$"
- liege_war_participation_obligation_forced_desc: "#emphasis #bold [vassal|E] Právo:#!#!\n$EFFECT_LIST_BULLET$ [vassal|E] může použít $call_ally_interaction$ [interaction|E] na [liege|E]\n\n.#flavor Odmítnutí povede ke ztrátě [prestige|E] pro [liege|E] a [vassal|E] přestane být [obedient|E], pokud jím byl předtím.#!"
- liege_war_participation_obligation_forced_short: "Vynucená"
- liege_war_participation_obligation_none: "Žádná $liege_war_participation_obligation$"
- liege_war_participation_obligation_none_desc: "#flavor [liege|E] se nepřipojí k válkám [vassal|E].#!"
- liege_war_participation_obligation_none_short: "Žádná"
- maguh_special_rights_tax_collector: "Status maguh"
- maguh_special_rights_tax_collector_flavor_desc: "Starý sásánovský způsob okresní správy; maguh podporují místní rozvoj výměnou za snížené daně státu."
- marriage_favor_rights: "Právo přednosti při sňatku"
- marriage_favor_rights_default: "Výchozí $marriage_favor_rights$"
- marriage_favor_rights_default_short: "Výchozí"
- marriage_favor_rights_granted: "Udělené $marriage_favor_rights$"
- marriage_favor_rights_granted_desc: "#emphasis #bold [vassal|E] Právo:#!#!\n$EFFECT_LIST_BULLET$ [liege|E] se zavazuje uzavírat sňatky členů své blízké rodiny za účelem aliance dříve, než je spojí s kýmkoli jiným\n\n#flavor [vassal|E] je mezi oblíbenými [liege|E] a měl by být schopen uzavřít alianci prostřednictvím sňatku.#!"
- marriage_favor_rights_granted_short: "Uděleno"
- may_appoint_viziers: "Může jmenovat [viziers|E]"
- may_elevate_co_monarch: "#indent_newline:3 Umožňuje [rulers|E] alespoň [kingdom|E]-[title_tier|E] povýšit [co_monarch|E] z řad dospělých [children|E]#!"
- mercenary_government: "Žoldnéřská společnost"
- mercenary_government_adjective: "Žoldnéřská společnost"
- mercenary_government_desc: "\nŽoldnéřské společnosti se pohybují po zemích hledajíce zaměstnání a berou zbraň tomu, kdo nabídne nejvíce. Loajalita je pro dobrou pověst zásadní, ale trvá jen do konce smlouvy. Vůdce žoldnéřské společnosti je volen z řad společnosti."
- mercenary_government_realm: "Žoldnéřská společnost"
- mercenary_government_with_icon: "@government_type_mercenary! $mercenary_government$"
- mercenary_rule: "mohou být najati, aby sloužili jako [mercenaries|E] [landed|E] [rulers|E]"
- movement_speed_from_government: "$MOD_MOVEMENT_SPEED$: #P +10%#!"
- muqata_special_rights_tax_collector: "Status muqata"
- muqata_special_rights_tax_collector_flavor_desc: "Muqata je daňový systém, kde jsou vzdáleným oblastem dána větší autonomie a nižší daně, aby se podpořila stabilita a dlouhodobý rozvoj."
- no_hostile_attrition_in_steppe: "#indent_newline:3 Žádné #V nepřátelské okresní#! [attrition|E] při [raiding|E] v [the_great_steppe|E]#!"
- nomad_government: "Nomádský"
- nomad_government_adjective: "Nomádský"
- nomad_government_desc: "\n$game_concept_nomadic_desc$\n\n#F Pro nomády je pohyb způsobem života. Hlavní starostí je zajistit, aby stádo mohlo růst. Každý vládce je silný jen tolik, kolik je síla jeho lidu.#!"
- nomad_government_herd: "[herd|U] Desátky"
- nomad_government_prestige: "[GetGovernment( 'nomad_government' ).GetNameNoTooltip] [prestige|U]"
- nomad_government_realm: "Nomádská země"
- nomad_government_taxes: "[GetGovernment( 'nomad_government' ).GetNameNoTooltip] [taxes|U]"
- nomad_government_vassals_label: "Nomádské [obligations|E] jsou založeny na [vassal|E] [vassal_contract|E]"
- nomad_government_with_icon: "@government_type_nomad! $nomad_government$"
- nomad_prestige_high: "Vysoký příspěvek k $game_concept_prestige$"
- nomad_prestige_high_short: "Vysoké"
- nomad_prestige_none: "Bez příspěvku"
- nomad_prestige_none_short: "Žádné"
- nomad_prestige_normal: "Částečný příspěvek k $game_concept_prestige$"
- nomad_prestige_normal_short: "Nízké"
- nomad_tax_exempt: "[tax|E] Osvobozen"
- nomad_tax_exempt_short: "Osvobozen"
- nomad_tax_extortionate: "Vyděračské $game_concept_taxes$"
- nomad_tax_extortionate_short: "Vyděračské"
- nomad_tax_high: "Vysoké $game_concept_taxes$"
- nomad_tax_high_short: "Vysoké"
- nomad_tax_low: "Nízké $game_concept_taxes$"
- nomad_tax_low_short: "Nízké"
- nomad_tax_normal: "Střední $game_concept_taxes$"
- nomad_tax_normal_short: "Střední"
- nomad_vassal: "Nomádský"
- nomad_vassal_desc: "V rámci Nomádského [government_form|E] poskytuje [nomad|E] část [herd|E] svému [liege|E] výměnou za půdu a ochranu. Podrobnosti upravuje [vassal_contract|E] mezi vazalem a suzerénem."
- not_has_house_unity_parameter: "Nemá přístup k $PARAMETER_NAME$"
- prestige_transfer_high: "Vysoký přenos $game_concept_prestige$"
- prestige_transfer_high_short: "Vysoký"
- prestige_transfer_none: "Žádný přenos $game_concept_prestige$"
- prestige_transfer_none_short: "Žádný"
- prestige_transfer_normal: "Nízký přenos $game_concept_prestige$"
- prestige_transfer_normal_short: "Nízký"
- religious_rights: "Náboženská práva"
- religious_rights_none: "Nábožensky nechráněn"
- religious_rights_none_short: "Nechráněn"
- religious_rights_protected: "Nábožensky chráněn"
- religious_rights_protected_desc: "#emphasis #bold [vassal|E] Práva:#!#!\n$EFFECT_LIST_BULLET$ [liege|E] nemůže požadovat [demand_conversion|E] od [vassal|E]\n[liege|E] nemůže použít [convert_county|E] na území [vassals|E]\n$EFFECT_LIST_BULLET$ [liege|E] nemůže použít [faith|E] jako důvod k vyhnutí se [tyranny|E] při odnímání titulů\n\n#flavor [vassal|E] získává zvláštní chráněné postavení, přičemž království oficiálně uznává jejich právo praktikovat vlastní [faith|E].#!"
- religious_rights_protected_short: "Chráněn"
- republic_government: "Republika"
- republic_government_adjective: "Republikánský"
- republic_government_desc: "\n$game_concept_republic_desc$\n\n#F Města jsou spravována privilegovanými občany buržovské vrstvy, z nichž je jeden zvolen jako starosta. Ač má starosta značný vliv, závisí na popularitě, aby byl znovuzvolen.#!"
- republic_government_obligations: "Republikánské [obligations|E]"
- republic_government_realm: "Republika"
- republic_government_vassals_label: "Republikánské [obligations|E] jsou u všech republikánských [vassals|E] stejné"
- republic_government_with_icon: "@government_type_republic! $republic_government$"
- republic_vassal: "Republika"
- republic_vassal_desc: "$game_concept_republic_desc$"
- republican_vassals_pay_more_parameter: "Z [liege|E] [culture_traditions|E]"
- scutage: "Scutage"
- scutage_disabled: "$scutage$ $scutage_disabled_short$"
- scutage_disabled_short: "Zakázáno"
- scutage_enabled: "$scutage$ $scutage_enabled_short$"
- scutage_enabled_short: "Povoleno"
- scutage_levies_overwrite_postfix: " #weak (overwrites)#!"
- search_administors_decision.tt: "Až tři [characters|E] různé dovednosti se připojí k vašemu [court|E]"
- special_contract: "#color_black [Concept( 'vassal_contract', 'Special Contract' )|BU]#!"
- special_contract_castellan: "Smlouva kastelána"
- special_contract_castellan_desc: "#flavor Pokud jsou podřízeni $special_contract_castellan$, [vassal|E] obdrží bonusy ke svým [levies] a obranným schopnostem. Poskytují #high [EmptyScope.ScriptValue('march_contract_taxes_tooltip')|0]%#! méně [tax|E], ale #high [EmptyScope.ScriptValue('castellan_contract_levies_tooltip')|0]%#! více [levy|E], než jak ukládá jejich $feudal_government_taxes$ [obligation|E].#!"
- special_contract_castellan_short: "Kastelán"
- special_contract_march: "Pohraniční smlouva"
- special_contract_march_border_trigger: "[vassal.GetName] nesousedí s cizím [realm|E]"
- special_contract_march_desc: "#flavor Pokud je [vassal|E] podřízen $special_contract_march$, získá bonusy ke svým [levies] a obranným schopnostem, ale poskytuje o #high [EmptyScope.ScriptValue('march_contract_taxes_tooltip')|0]%#! méně [tax|E], než jak určuje jejich $feudal_government_taxes$ [obligation|E].#!"
- special_contract_march_short: "Pohraniční"
- special_contract_none: "Žádná zvláštní smlouva"
- special_contract_none_short: "Žádné"
- special_contract_palatinate: "Palatinská smlouva"
- special_contract_palatinate_desc: "#flavor Pokud je [vassal|E] podřízen $special_contract_palatinate$, požívá v rámci říše mnoha privilegií, která zvyšují jeho postavení a dávají mu větší politický vliv. $special_contract_palatinate_short$ [vassals|E] zvyšují [prestige|E] svého [liege|E], ale poskytují o #high [EmptyScope.ScriptValue('palatinate_contract_taxes_tooltip')|0]%#! méně [tax|E] a [levies|E], než jak určují jejich $feudal_government_taxes$ a $feudal_government_levies$ [obligations|E].#!"
- special_contract_palatinate_short: "Palatinský"
- special_contract_scutage: "Smlouva o scutage"
- special_contract_scutage_desc: "#flavor Pokud je [vassal|E] podřízen $special_contract_scutage$, zaplatí o #high [EmptyScope.ScriptValue('scutage_contract_tax_tooltip')|0]%#! více [tax|E], než jak určuje jejich $feudal_government_taxes$ [obligation|E], přičemž zároveň poskytne o #high [EmptyScope.ScriptValue('scutage_contract_levies_tooltip')|0]%#! méně [levies|E], než jak určuje jejich $feudal_government_levies$ [obligation|E].#!"
- special_contract_scutage_short: "Scutage"
- steer_unity_notification_title: "[house_head|E] změnil [unity|E]"
- steer_unity_towards_antagonistic_desc: "Využijte svou pozici [house_head|E] a nasměrujte svou [house_unity|E] směrem k #V $antagonistic$#!"
- steer_unity_towards_antagonistic_name: "Nasměrujte rod směrem k #V $antagonistic$#!\n#low Snižuje [house_unity|E]#!"
- steer_unity_towards_antagonistic_passive_loss_tt: "[house_unity|E] #N se snižuje#! ročně po následujících #V 10#! letech"
- steer_unity_towards_antagonistic_toast: "[ROOT.Char.GetShortUINameNoTooltip|U] nasměroval [house_unity|E] směrem k $antagonistic$"
- steer_unity_towards_antagonistic_tooltip: "$unity_steer_house_direction_decision_second_tooltip$"
- steer_unity_towards_antagonistic_tt: "#X Váš [house|E] již má #V $antagonistic$#! [house_unity_level|E]#!"
- steer_unity_towards_harmonious_desc: "Využijte svou pozici [house_head|E] a nasměrujte svou [house_unity|E] směrem k #V $harmonious$#!"
- steer_unity_towards_harmonious_name: "Nasměrujte rod směrem k #V $harmonious$#!\n#low Zvyšuje [house_unity|E]#!"
- steer_unity_towards_harmonious_passive_gain_tt: "[house_unity|E] #P se zvyšuje#! ročně po následujících #V 10#! letech"
- steer_unity_towards_harmonious_toast: "[ROOT.Char.GetShortUINameNoTooltip|U] nasměroval [house_unity|E] směrem k $harmonious$"
- steer_unity_towards_harmonious_tooltip: "$unity_steer_house_direction_decision_second_tooltip$"
- steer_unity_towards_harmonious_tt: "#X Váš [house|E] již má #V $harmonious$#! [house_unity_level|E]#!"
- strict_taxation_tax_collector: "Zakat"
- strict_taxation_tax_collector_flavor_desc: "Zakat je daň z bohatství, obvykle uvalená na majetné jako prostředek k získání dodatečných příjmů pro stát a k pomoci potřebným."
- succession_rights: "Práva dědění"
- succession_rights_default: "Výchozí $succession_rights$"
- succession_rights_default_short: "Výchozí"
- succession_rights_forced_partition: "Vynucené dělení"
- succession_rights_forced_partition_desc: "#emphasis #bold [vassal|E] Omezení:#!#!\n$EFFECT_LIST_BULLET$ [vassal|E] nesmí mít žádný [succession_law|E] jiný než Partition\n$EFFECT_LIST_BULLET$ [vassal|E] přepne své [succession_law|E] na Partition\n$EFFECT_LIST_BULLET$ [vassal|E] platí #high [EmptyScope.ScriptValue('succession_rights_contract_law_cost_tooltip')|0]%#! více [prestige|E] za změnu [laws|E]\n\n#flavor [vassal|E] je nucen nikdy nemít jinou formu následnictví než Partition pro své [realm|E]. Administrativní překážka navíc zvyšuje náklady [vassals] [law] o #high [EmptyScope.ScriptValue('succession_rights_contract_law_cost_tooltip')|0]%.#!#!"
- succession_rights_forced_partition_short: "Vynucené dělení"
- suzerain_war_participation_guarantee: "Garance suzeréna"
- suzerain_war_participation_guarantee_available: "$suzerain_war_participation_guarantee$"
- suzerain_war_participation_guarantee_available_desc: "#emphasis #bold [tributary|E] Právo:#!#!\n$EFFECT_LIST_BULLET$ Pokud je napaden, [tributary|E] může použít $call_ally_interaction$ [interaction|E] na [suzerain|E].\n\n#flavor Odmítnutí povede ke ztrátě [prestige|E] pro [suzerain|E] a [tributary|E] bude propuštěn.#!"
- suzerain_war_participation_guarantee_available_short: "Zaručeno"
- suzerain_war_participation_guarantee_none: "Žádná $suzerain_war_participation_guarantee$"
- suzerain_war_participation_guarantee_none_desc: "#flavor [suzerain|E] nemůže být povolán do obranných válek [tributary|E], ale může nabídnout, že se připojí.#!"
- suzerain_war_participation_guarantee_none_short: "Žádná"
- theocracy_government: "Teokracie"
- theocracy_government_adjective: "Teokratický"
- theocracy_government_desc: "\n$game_concept_theocracy_desc$\n\n#F V teokratické vládě veškerá autorita náleží náboženské instituci. Vládne kněz nebo kněžka, kteří vykonávají vůli božstva na Zemi.#!"
- theocracy_government_obligations: "Teokratické [obligations|E]"
- theocracy_government_realm: "Teokracie"
- theocracy_government_vassal_contribution_piety_level: "[liege|E] je [GetPietyLevelName(liege.GetPietyLevel)|L]"
- theocracy_government_vassal_contribution_wrong_faith: "@warning_icon! #X [liege|E] má nesprávné [faith|E]#!"
- theocracy_government_vassals_label: "Teokratické [obligations|E] vycházejí z [piety_level|E] [liege|E]"
- theocracy_government_with_icon: "@government_type_theocracy! $theocracy_government$"
- theocracy_vassal: "Teokracie"
- theocracy_vassal_desc: "$game_concept_theocracy_desc$"
- title_revocation_rights: "Odnímání titulů"
- title_revocation_rights_default: "Výchozí $title_revocation_rights$"
- title_revocation_rights_default_short: "Výchozí"
- title_revocation_rights_protected: "Chráněná $title_revocation_rights$"
- title_revocation_rights_protected_desc: "#emphasis #bold [vassal|E] Právo:#!#!\n$EFFECT_LIST_BULLET$ [liege|E] nemůže odňít [vassals_possessive|E] [titles|E]\n\n#flavor [vassal] má zaručené vlastnictví svých [titles], což zabraňuje [liege|E] je odňít – bez ohledu na to, zda má [liege|E] [revoke_title_reason] nebo ne.#!"
- title_revocation_rights_protected_short: "Chráněno"
- tribal_government: "Kmen"
- tribal_government_adjective: "Kmenový"
- tribal_government_desc: "\n$game_concept_tribal_desc$\n\n#F V kmeni znamená síla vše. Kmenový vůdce závisí na respektu a slávě spíše než na mincích, aby rozvíjel své panství a posiloval armády.#!"
- tribal_government_obligations: "Z [liege|E] [prestige_level|E]"
- tribal_government_realm: "Kmen"
- tribal_government_vassals_label: "Kmenové [obligations|E] vycházejí z [prestige_level|E] [liege|E]"
- tribal_government_with_icon: "@government_type_tribal! $tribal_government$"
- tribal_liege_inefficiency: "[liege|E] je [tribal|E]"
- tribal_liege_inefficiency_plus_perk: "[liege|E] je [tribal|E] a má [GetPerk( 'detailed_ledgers_perk' ).GetName( GetPlayer )]"
- tribal_vassal: "Kmenový"
- tribal_vassal_desc: "$game_concept_tribal_desc$"
- tributary_levies_exempt: "Žádné [levies|e]"
- tributary_levies_exempt_short: "Žádné"
- tributary_levies_high: "Vysoké [levies|e]"
- tributary_levies_high_short: "Vysoké"
- tributary_levies_low: "Nízké [levies|e]"
- tributary_levies_low_short: "Nízké"
- tributary_tax_high: "Vysoké [taxes|E]"
- tributary_tax_high_short: "Vysoké"
- tributary_tax_low: "Nízké [taxes|E]"
- tributary_tax_low_short: "Nízké"
- tributary_tax_none: "Žádné [taxes|E]"
- tributary_tax_none_short: "Žádné"
- tributary_war_participation_obligation: "Podpora tributáře ve válce"
- tributary_war_participation_obligation_forced: "Vynucená $tributary_war_participation_obligation$"
- tributary_war_participation_obligation_forced_desc: "#emphasis #bold [suzerain|E] Výsada:#!#!\n[tributary|E] bude automaticky povolán do válek [suzerain|E]."
- tributary_war_participation_obligation_forced_short: "Vynucená"
- tributary_war_participation_obligation_none: "Žádná $tributary_war_participation_obligation$"
- tributary_war_participation_obligation_none_desc: "#flavor [tributary|E] se automaticky nepřipojí k válkám [suzerain|E], ale může nabídnout, že se připojí.#!"
- tributary_war_participation_obligation_none_short: "Žádná"
- unity_consult_house_decision.tt_cooldown: "Již jste konzultoval členy svého [house|E]"
- unity_consult_house_decision.tt_house_council_bonus: "Základní postup a vliv [skill|E] na [councillor_tasks|E] je zvýšen o #P +10%#! pro členy [house|E] sloužící ve vaší [council|E]"
- unity_consult_house_decision.tt_lifetime: "To zůstane aktivní, dokud váš charakter nezemře"
- unity_consult_house_decision.tt_no_unity_change: "Přiřazování členů [house|E] do vaší [council|E] a jejich odvolávání již neovlivňuje [house_unity|E]"
- unity_consult_house_decision: "Konzultovat členy rodu"
- unity_consult_house_decision_confirm: "Konzultovat členy rodu"
- unity_consult_house_decision_desc: "Jednotná rada je schopná jednat rychle a bezpečně. S malým konzultováním mohu zajistit, že členové mého rodu budou efektivnější ve svých rolích radních."
- unity_consult_house_decision_tooltip: "Nasměrujte členy svého rodu, aby se stali efektivnějšími radními"
- unity_consulted_house_member_desc: "Konzultovaný člen rodu"
- unity_educate_youth_in_madrasas_decision.t_houses_of_worship: "[ROOT.Char.GetFaith.HouseOfWorshipPlural|U]"
- unity_educate_youth_in_madrasas_decision.t_intro: "Vzdělávat mládež v"
- unity_educate_youth_in_madrasas_decision.t_madrasas: "Madrasách"
- unity_educate_youth_in_madrasas_decision.tt_intro: "Všichni mladí"
- unity_educate_youth_in_madrasas_decision.tt_men: "$unity_educate_youth_in_madrasas_decision.tt_intro$ $loc_men$ $unity_educate_youth_in_madrasas_decision.tt_outro$"
- unity_educate_youth_in_madrasas_decision.tt_num_intro: "Aktuálně, #V [SCOPE.ScriptValue('number_of_madrasa_pupils')]#!"
- unity_educate_youth_in_madrasas_decision.tt_num_men: "$unity_educate_youth_in_madrasas_decision.tt_num_intro$ young men $unity_educate_youth_in_madrasas_decision.tt_num_outro$"
- unity_educate_youth_in_madrasas_decision.tt_num_outro: "ve vašem hlavním městě by z tohoto rozhodnutí měli prospěch"
- unity_educate_youth_in_madrasas_decision.tt_num_people: "$unity_educate_youth_in_madrasas_decision.tt_num_intro$ youths $unity_educate_youth_in_madrasas_decision.tt_num_outro$"
- unity_educate_youth_in_madrasas_decision.tt_num_women: "$unity_educate_youth_in_madrasas_decision.tt_num_intro$ young women $unity_educate_youth_in_madrasas_decision.tt_num_outro$"
- unity_educate_youth_in_madrasas_decision.tt_outro: "žijící ve vašem [capital|E] mají během následujících 20 let šanci zvýšit svůj [learning|E] [skill|E] a získat [GetTrait('lifestyle_physician').GetName(GetNullCharacter)] [experience|E]"
- unity_educate_youth_in_madrasas_decision.tt_people: "$unity_educate_youth_in_madrasas_decision.tt_intro$ $people$ $unity_educate_youth_in_madrasas_decision.tt_outro$"
- unity_educate_youth_in_madrasas_decision.tt_women: "$unity_educate_youth_in_madrasas_decision.tt_intro$ $women$ $unity_educate_youth_in_madrasas_decision.tt_outro$"
- unity_educate_youth_in_madrasas_decision_confirm: "Informujte [ROOT.Char.GetFaith.PriestNeuterPlural]"
- unity_educate_youth_in_madrasas_decision_desc_intro: "Mír v říši nechal mladé"
- unity_educate_youth_in_madrasas_decision_desc_outro: "z [ROOT.Char.GetCapitalLocation.GetTitle.GetNameNoTierNoTooltip] bez činnosti a cíle. Mohl bych místo toho zřídit školy v [ROOT.Char.GetFaith.HouseOfWorshipPlural], které by těmto mladým vyučovaly filozofii a lékařství ve volném čase."
- unity_educate_youth_in_madrasas_decision_tooltip: "Vzdělávejte mládež v hlavním městě v oblasti filozofie a medicíny"
- unity_encourage_house_economy_decision: "Povzbuďte rod ke zlepšení ekonomiky"
- unity_encourage_house_economy_decision_confirm: "Podpořit silnější ekonomiku!"
- unity_encourage_house_economy_decision_desc: "Říše je tak schopná, jak schopná je země, na které je postavena. Musím zajistit, aby všichni členové rodu měli možnost utrácet potřebné prostředky na vybudování silnější říše."
- unity_encourage_house_economy_decision_tooltip: "Nasměrujte členy svého rodu, aby se soustředili na ekonomiku"
- unity_establish_futuwaa_lodges_decision.tt_intro: "Všichni svobodní mladí"
- unity_establish_futuwaa_lodges_decision.tt_men: "$unity_establish_futuwaa_lodges_decision.tt_intro$ $loc_men$ $unity_establish_futuwaa_lodges_decision.tt_outro$"
- unity_establish_futuwaa_lodges_decision.tt_num_intro: "Aktuálně, #V [SCOPE.ScriptValue('number_of_futuwaa_members')]#!"
- unity_establish_futuwaa_lodges_decision.tt_num_men: "$unity_establish_futuwaa_lodges_decision.tt_num_intro$ young men $unity_establish_futuwaa_lodges_decision.tt_num_outro$"
- unity_establish_futuwaa_lodges_decision.tt_num_outro: "ve vašem hlavním městě by z tohoto rozhodnutí měli prospěch"
- unity_establish_futuwaa_lodges_decision.tt_num_people: "$unity_establish_futuwaa_lodges_decision.tt_num_intro$ youths $unity_establish_futuwaa_lodges_decision.tt_num_outro$"
- unity_establish_futuwaa_lodges_decision.tt_num_women: "$unity_establish_futuwaa_lodges_decision.tt_num_intro$ young women $unity_establish_futuwaa_lodges_decision.tt_num_outro$"
- unity_establish_futuwaa_lodges_decision.tt_outro: "žijící ve vašem [capital|E] mají během následujících 20 let šanci zvýšit své [martial|E] a [prowess|E] [skills|E] a získat [virtuous|E] [trait|E]"
- unity_establish_futuwaa_lodges_decision.tt_people: "$unity_establish_futuwaa_lodges_decision.tt_intro$ $people$ $unity_establish_futuwaa_lodges_decision.tt_outro$"
- unity_establish_futuwaa_lodges_decision.tt_women: "$unity_establish_futuwaa_lodges_decision.tt_intro$ $women$ $unity_establish_futuwaa_lodges_decision.tt_outro$"
- unity_establish_futuwaa_lodges_decision: "Zřídit futuwaa lóže"
- unity_establish_futuwaa_lodges_decision_confirm: "Sponzorovat lóže"
- unity_establish_futuwaa_lodges_decision_desc_intro: "Mladí"
- unity_establish_futuwaa_lodges_decision_desc_outro: "z [ROOT.Char.GetCapitalLocation.GetTitle.GetNameNoTierNoTooltip], kterým chybí vhodné vyžití, se po hlavním městě potulují v improvizovaných gangách. Mohl bych místo toho zřídit #italic futuwaa#! lóže po celém hlavním městě, aby v době nečinnosti pěstovaly bojové dovednosti a morálku."
- unity_establish_futuwaa_lodges_decision_tooltip: "Podporovat ctnosti a zdatnost u mládeže ve vašem hlavním městě"
- unity_establish_network_decision: "Zavést síť intrik"
- unity_establish_network_decision_confirm: "Vydat a spálit edikt"
- unity_establish_network_decision_desc: "Členové mého rodu jsou každý svým způsobem mazaní. Díky mému vedení můžeme vytvořit pavučinu intrik, která chytí i ty nejprohnanější cizince."
- unity_establish_network_decision_tooltip: "Získat členy svého rodu na ochranu proti nepřátelským intrikám a k provádění vlastních plánů"
- unity_has_liberate_house_members_cb_name: "[fp3_free_house_member_cb|E]"
- unity_has_unify_house_cb_name: "[fp3_unify_house_cb|E]"
- unity_improve_logistics_decision: "Požadovat sdílenou vojenskou logistiku"
- unity_improve_logistics_decision_confirm: "Požadovat sdílenou logistiku"
- unity_improve_logistics_decision_desc: "Války rozhoduje mnoho různých faktorů. Dobrá logistika a zásoby jsou stejně důležité jako schopní vojáci. Mohu v rámci rodu prosadit nové politiky a požadovat, aby všichni sdíleli zásoby a vybavení, čímž výrazně zvýšíme schopnosti armády."
- unity_improve_logistics_decision_tooltip: "Vyžadujte od členů svého rodu sdílení logistiky a zásob, aby lépe vyhovovaly potřebám armády"
- unity_improve_taxation_decision: "Zlepšit zdanění"
- unity_improve_taxation_decision_confirm: "Uspořádáme schůzku"
- unity_improve_taxation_decision_desc: "Můj rod má mnoho členů, kteří jsou efektivní ve vybírání daní a správě říše. Sdílením nápadů a schopných lidí můžeme všichni profitovat z vyšších příjmů."
- unity_improve_taxation_decision_tooltip: "Spolupracujte s členy svého rodu na zlepšení výběru daní a příjmů říše"
- unity_organize_house_for_war_decision: "Organizovat členy rodu k válce"
- unity_organize_house_for_war_decision_confirm: "Podporovat válku a konflikty!"
- unity_organize_house_for_war_decision_desc: "Zlepšení říše vyžaduje oddanost a často také spoustu dobyvačných válek. Vydáváním konkrétních ediktů a vedením členů rodu je mohu přimět k větší ochotě vést války a dobývat nová území."
- unity_organize_house_for_war_decision_tooltip: "Nasměrujte členy svého rodu k častějším válečným tažením"
- unity_placate_vassals_decision: "Uklidnit vazaly"
- unity_placate_vassals_decision_confirm: "Uklidnit vazaly"
- unity_placate_vassals_decision_desc: "I harmonický dvůr čelí zkouškám. Využitím svého vlivu jako hlavy rodu mohu uhladit tyto společenské šrámy dříve, než se promění v trhliny."
- unity_placate_vassals_decision_tooltip: "Připomeňte členům svého rodu svou autoritu jako jejich vrchnosti"
- unity_promote_development_decision: "Podpořit rozvoj"
- unity_promote_development_decision_confirm: "Podporovat rozvoj"
- unity_promote_development_decision_desc: "Naše kultura má dlouhou historii vynikajících administrativních schopností. V našem rodu působí mnoho zdatných dozorců a správců. Můžeme toho využít ve svůj prospěch a dále rozvíjet říši."
- unity_promote_development_decision_tooltip: "Podporujte členy svého rodu, aby rozvíjeli a zlepšovali říši"
- unity_reinforce_army_decision: "Posílit armádu loajálními důstojníky"
- unity_reinforce_army_decision_confirm: "Vydat rozkazy."
- unity_reinforce_army_decision_desc: "Armáda je jen tak silná jako důstojníci, kteří ji vedou. Když požádám členy svého rodu o zkušené vojáky, získám přístup k vojákům s bohatými zkušenostmi. Můžu je povýšit do velitelských pozic v mé armádě, čímž zvýším efektivitu jednotek. Všichni členové přispívají našemu rodu pro společné dobro a z toho všichni profitují!"
- unity_reinforce_army_decision_tooltip: "Požádejte členy svého rodu, aby vám poslali schopné důstojníky"
- unity_search_for_administrators_decision.msg.desc: "Nový administrátor jménem [new_administrator.GetName] dorazil na váš dvůr a je připraven k zaměstnání."
- unity_search_for_administrators_decision.msg.t: "Administrátor dorazil"
- unity_search_for_administrators_decision: "Hledat výběrčí daní"
- unity_search_for_administrators_decision_confirm: "Nařídit pátrání"
- unity_search_for_administrators_decision_desc: "Daně jsou páteří každé říše. Stojí za to věnovat čas hledání schopných správců a bývalých vojáků, které zaměstnáme jako výběrčí daní."
- unity_search_for_administrators_decision_tooltip: "Hledejte schopné administrátory a vojáky, abyste posílili řady výběrčích daní"
- unity_send_bailiffs_decision: "Poslat úředníky"
- unity_send_bailiffs_decision_confirm: "Poslat pro úředníky"
- unity_send_bailiffs_decision_desc: "Mohu využít spolupracujícího postoje členů svého rodu tím, že k nim pošlu své úředníky, aby vynucovali mé rozkazy a udržovali pořádek v celé říši."
- unity_send_bailiffs_decision_tooltip: "Spolupracujte s členy svého rodu, aby se zvýšila kontrola v říši"
- unity_steer_house_direction_decision: "Nasměrovat jednotu rodu"
- unity_steer_house_direction_decision_confirm: "$unity_steer_house_direction_decision$"
- unity_steer_house_direction_decision_desc: "Jako hlava rodu má má slova velkou váhu mezi členy rodu. Pečlivými slovy a činy mohu nenápadně přimět své spolurodiny k určitému chování, což výrazně ovlivní naši společnou jednotu."
- unity_steer_house_direction_decision_second_tooltip: "$DESC$\n"
- unity_steer_house_direction_decision_tooltip: "Vyberte směr, kterým nasměrujete svou [house_unity|E]"
- unlock_jizya_contract_name: "[GetFaithDoctrine('tenet_tax_nonbelievers').GetBaseName] [core_tenet|E]"
- wage_war_allowed_external: "Povoleny vnější války"
- wage_war_allowed_external_short: "Vnější"
- wage_war_allowed_internal: "Povoleny vnitřní války"
- wage_war_allowed_internal_short: "Vnitřní"
- wage_war_disallowed: "Vasalské války zakázány"
- wage_war_disallowed_short: "Zakázáno"
- wage_war_realm_law: "Války podle zákonů říše"
- wage_war_realm_law_short: "Podle říše"
- war_declaration_rights: "Vyhlašování válek"
- war_declaration_rights_allowed: "Schválená $war_declaration_rights$"
- war_declaration_rights_allowed_desc: "#emphasis #bold [vassal|E] Práva:#!#!\n$EFFECT_LIST_BULLET$ [vassal|E] může vyhlašovat [war|E] bez ohledu na [liege|E]'s [crown_authority|E]\n$EFFECT_LIST_BULLET$ [vassal|E] platí #high [EmptyScope.ScriptValue('war_declaration_rights_allowed_cost_reduction_tooltip')|0]%#! méně za [casus_bellis|E] v rámci [realm|E]\n\n#flavor [vassal] nemusí utrácet [hook], pokud jim [lieges] [crown_authority] zabrání vést válku. Toto zvláštní zacházení také usnadňuje [vassal] vyhlašování válek uvnitř [realm|E], snižuje náklady o #high [EmptyScope.ScriptValue('war_declaration_rights_allowed_cost_reduction_tooltip')|0]%#!.#!"
- war_declaration_rights_allowed_short: "Schváleno"
- war_declaration_rights_default: "Výchozí $war_declaration_rights$"
- war_declaration_rights_default_short: "Výchozí"
- government_is_wanua: "Umožňuje [barter_goods_i][bartering|E]" # todo: NEW TRANSLATION
- use_prestige_to_buy_maa: "Používá [prestige|E] k nákupu [men_at_arms|E]" # todo: NEW TRANSLATION
- government_is_celestial: "Má přístup k [estate|E] a [top_liege|E] má [mandate_of_heaven|E]" # todo: NEW TRANSLATION
- government_is_mandala: "Používá [mandala|E] #V [GetBuilding('mandala_capital_01').GetTypeName]#! [great_project|E] a [great_building|E]" # todo: NEW TRANSLATION
- government_is_japan_feudal: "$government_is_japan_administrative$" # todo: NEW TRANSLATION
- government_is_japan_administrative: "Má přístup k [manor|E], [blocs|E] a [house_aspirations|E]" # todo: NEW TRANSLATION
- government_is_meritocratic: "Má přístup k [estate|E] a používá [merit|E]" # todo: NEW TRANSLATION
- government_is_steppe_admin: "Má přístup k [estate|E] a používá [merit|E] a [obedience|E]" # todo: NEW TRANSLATION
- government_has_merit: "Používá [merit_i|E][merit|E]" # todo: NEW TRANSLATION
- government_has_treasury: "Používá [treasury_i|E][treasury|E]" # todo: NEW TRANSLATION
- government_ignores_rightful_liege_penalties: "Ignoruje penalizace za to, že není právoplatný vrchní pán" # todo: NEW TRANSLATION
- government_is_bureaucratic: "Je [government_bureaucratic_type|E]" # todo: NEW TRANSLATION
- house_unity_parameter_unity_enable_border_wars: "[independent|E] členové [house|E] #V [GetLawGroup('border_wars_laws').GetName]#! jsou uzamčeni na [GetLaw('top_liege_not_redirected_to_border_wars_law').GetName] [title_law|E]" # todo: NEW TRANSLATION
- mandala_government_piety: "[mandala|U] $game_concept_piety$" # todo: NEW TRANSLATION
- mandala_piety_low: "Nízký příspěvek $game_concept_piety$" # todo: NEW TRANSLATION
- mandala_piety_low_short: "Nízký" # todo: NEW TRANSLATION
- mandala_piety_normal: "Normální příspěvek $game_concept_piety$" # todo: NEW TRANSLATION
- mandala_piety_normal_short: "Normální" # todo: NEW TRANSLATION
- mandala_piety_high: "Vysoký příspěvek $game_concept_piety$" # todo: NEW TRANSLATION
- mandala_piety_high_short: "Vysoký" # todo: NEW TRANSLATION
- mandala_government_taxes: "[mandala|U] Daně" # todo: NEW TRANSLATION
- mandala_tax_exempt: "Osvobozeno od daní" # todo: NEW TRANSLATION
- mandala_tax_exempt_short: "Osvobozeno" # todo: NEW TRANSLATION
- mandala_tax_low: "Nízké daně" # todo: NEW TRANSLATION
- mandala_tax_low_short: "Nízké" # todo: NEW TRANSLATION
- mandala_tax_normal: "Normální daně" # todo: NEW TRANSLATION
- mandala_tax_normal_short: "Normální" # todo: NEW TRANSLATION
- mandala_tax_high: "Vysoké daně" # todo: NEW TRANSLATION
- mandala_tax_high_short: "Vysoké" # todo: NEW TRANSLATION
- mandala_tax_extortionate: "Vykořisťující daně" # todo: NEW TRANSLATION
- mandala_tax_extortionate_short: "Vykořisťující" # todo: NEW TRANSLATION
- mandala_government_levies: "[mandala|U] $game_concept_levies$" # todo: NEW TRANSLATION
- mandala_levies_exempt: "Žádný příspěvek" # todo: NEW TRANSLATION
- mandala_levies_exempt_short: "Žádný" # todo: NEW TRANSLATION
- mandala_levies_low: "Nízký příspěvek $game_concept_levy$" # todo: NEW TRANSLATION
- mandala_levies_low_short: "Nízký" # todo: NEW TRANSLATION
- mandala_levies_medium: "Střední příspěvek $game_concept_levy$" # todo: NEW TRANSLATION
- mandala_levies_medium_short: "Střední" # todo: NEW TRANSLATION
- mandala_levies_high: "Vysoký příspěvek $game_concept_levy$" # todo: NEW TRANSLATION
- mandala_levies_high_short: "Vysoký" # todo: NEW TRANSLATION
- mandala_levies_extortionate: "Obrovský příspěvek $game_concept_levy$" # todo: NEW TRANSLATION
- mandala_levies_extortionate_short: "Obrovský" # todo: NEW TRANSLATION
- mandala_government_prestige: "[mandala|U] $game_concept_prestige$" # todo: NEW TRANSLATION
- mandala_prestige_low: "Nízký příspěvek $game_concept_prestige$" # todo: NEW TRANSLATION
- mandala_prestige_low_short: "Nízký" # todo: NEW TRANSLATION
- mandala_prestige_normal: "Normální příspěvek $game_concept_prestige$" # todo: NEW TRANSLATION
- mandala_prestige_normal_short: "Normální" # todo: NEW TRANSLATION
- mandala_prestige_high: "Vysoký příspěvek $game_concept_prestige$" # todo: NEW TRANSLATION
- mandala_prestige_high_short: "Vysoký" # todo: NEW TRANSLATION
- mandala_suzerain_war_participation_guarantee: "$suzerain_war_participation_guarantee$" # todo: NEW TRANSLATION
- mandala_suzerain_war_participation_guarantee_none: "$suzerain_war_participation_guarantee_none$" # todo: NEW TRANSLATION
- mandala_suzerain_war_participation_guarantee_none_desc: "$suzerain_war_participation_guarantee_none_desc$" # todo: NEW TRANSLATION
- mandala_suzerain_war_participation_guarantee_none_short: "$suzerain_war_participation_guarantee_none_short$" # todo: NEW TRANSLATION
- mandala_suzerain_war_participation_guarantee_available: "$suzerain_war_participation_guarantee_available$" # todo: NEW TRANSLATION
- mandala_suzerain_war_participation_guarantee_available_desc: "$suzerain_war_participation_guarantee_available_desc$" # todo: NEW TRANSLATION
- mandala_suzerain_war_participation_guarantee_available_short: "$suzerain_war_participation_guarantee_available_short$" # todo: NEW TRANSLATION
- raiding_rights: "Práva na nájezdy" # todo: NEW TRANSLATION
- raiding_rights_none: "Žádná $raiding_rights$" # todo: NEW TRANSLATION
- raiding_rights_none_desc: "#flavor Tento [vassal|E] nemůže nájezdovat na žádné jiné vazaly.#!" # todo: NEW TRANSLATION
- raiding_rights_none_short: "Žádné" # todo: NEW TRANSLATION
- raiding_rights_granted: "$raiding_rights$ povolena" # todo: NEW TRANSLATION
- raiding_rights_granted_desc: "#emphasis #bold [vassal|E] Oprávnění:#!#!\n$EFFECT_LIST_BULLET$ [vassal|E] smí nájezdovat na jiné stejné vazaly\n\n#flavor Omezující pravidla týkající se nájezdů na ostatní [vassals|E] jsou zrušena a vazal může cílit na jakéhokoli jiného rovnocenného vazala.#!" # todo: NEW TRANSLATION
- raiding_rights_granted_short: "Povoleno" # todo: NEW TRANSLATION
- mandala_government: "Mandala" # todo: NEW TRANSLATION
- mandala_government_with_icon: "@government_type_mandala! $mandala_government$" # todo: NEW TRANSLATION
- mandala_government_adjective: "Mandala" # todo: NEW TRANSLATION
- mandala_government_realm: "Mandalská říše" # todo: NEW TRANSLATION
- mandala_government_desc: "\n$game_concept_mandala_desc$\n\n#F Okvětní lístky vlády Mandaly mohou uvadat a hynout, ale v jádru stojí božské právo, ztělesněné v Devarajovi. Dosti ambiciózní vládce může učinit Mandalu trvalou, #EMP věčně#!. #!" # todo: NEW TRANSLATION
- mandala_vassal: "Mandala" # todo: NEW TRANSLATION
- mandala_vassal_desc: "$game_concept_mandala_desc$" # todo: NEW TRANSLATION
- liege_piety_level_desc: "Vaše [piety_level|E] je [GetPietyLevelName(liege.GetPietyLevel)|L]" # todo: NEW TRANSLATION
- suzerain_piety_level_desc: "Vaše [piety_level|E] je [GetPietyLevelName(suzerain.GetPietyLevel)|L]" # todo: NEW TRANSLATION
- has_coerce_tributary_scheme: "Může použít [GetScheme('coerce_tributary').GetTypeName] [scheme|E]" # todo: NEW TRANSLATION
- additional_piety_from_religious_buildings: "Získává dodatečné [piety|E] z výstavby [pious_buildings|E] a [temple_citadels|E]" # todo: NEW TRANSLATION
- can_perform_ritual_contracts: "Province říše a [subjects|E] občas vyvolávají [mandala_rituals|E]" # todo: NEW TRANSLATION
- uses_mandala_aspects: "Používá [mandala_aspects|E]" # todo: NEW TRANSLATION
- uses_mandala_decrees: "Používá [mandala_decrees|E]" # todo: NEW TRANSLATION
- devaraja_blessings_msg: "Požehnání Devarajy na vás září" # todo: NEW TRANSLATION
- devaraja_divinity_msg: "Vaši stoupenci Devarajy vás zbožňují" # todo: NEW TRANSLATION
- celestial_obligations: "Nebeské povinnosti" # todo: NEW TRANSLATION
- celestial_provinces: "$administrative_themes$" # todo: NEW TRANSLATION
- celestial_province_standard: "@celestial_standard_administration! Standardní správa" # todo: NEW TRANSLATION
- celestial_province_standard_short: "Standardní" # todo: NEW TRANSLATION
- celestial_province_standard_text_icon: "@celestial_standard_administration!" # todo: NEW TRANSLATION
- celestial_province_standard_benefits: "#emphasis #bold Výhody pro [vassal|E]:#!#!\nPoužívá [GetLaw('celestial_appointment_succession_law').GetName]" # todo: NEW TRANSLATION
- celestial_province_standard_desc: "#low Civilní správa, která se stará o každodenní potřeby vlády a místních obyvatel#!" # todo: NEW TRANSLATION
- celestial_province_industrial: "@celestial_industrial_administration! Průmyslová správa" # todo: NEW TRANSLATION
- celestial_province_industrial_short: "Průmyslová" # todo: NEW TRANSLATION
- celestial_province_industrial_text_icon: "@celestial_industrial_administration!" # todo: NEW TRANSLATION
- celestial_province_industrial_benefits: "#emphasis #bold Výhody pro [vassal|E]:#!#!\nPoužívá [GetLaw('celestial_appointment_succession_law').GetName]\n\n#alert_trial @alert_icon! Omezeno na [EmptyScope.ScriptValue('celestial_province_industrial_max_value')|V0]#!" # todo: NEW TRANSLATION
- celestial_province_industrial_desc: "#low Civilní správa zaměřená na zlepšení produktivity oblasti a dlouhodobého rozvoje.#!" # todo: NEW TRANSLATION
- celestial_province_industrial_amount_desc: "$celestial_province_industrial_short$ limit dosažen" # todo: NEW TRANSLATION
- celestial_province_metropolitan: "@celestial_metropolitan_administration! Metropolitní správa" # todo: NEW TRANSLATION
- celestial_province_metropolitan_short: "Metropolitní" # todo: NEW TRANSLATION
- celestial_province_metropolitan_text_icon: "@celestial_metropolitan_administration!" # todo: NEW TRANSLATION
- celestial_province_metropolitan_benefits: "#emphasis #bold Výhody pro [vassal|E]:#!#!\n$EFFECT_LIST_BULLET$ Zvyšuje [governor_efficiency|E] podle [diplomacy|E]#indent_newline:4 \n#weak Přidává navíc [EmptyScope.ScriptValue('efficiency_skill_increase_value')|+1%/] za každý bod [skill|E]#!#!\n$EFFECT_LIST_BULLET$ Používá [GetLaw('celestial_appointment_succession_law').GetName]\n\n#alert_trial @alert_icon! Omezeno na [EmptyScope.ScriptValue('celestial_province_metropolitan_max_value')|V0]#!" # todo: NEW TRANSLATION
- celestial_province_metropolitan_desc: "#low Efektivní civilní správa používaná ve větších městských oblastech. Silně se zaměřuje na efektivní využití daní a prosperitu měst.#!" # todo: NEW TRANSLATION
- celestial_province_metropolitan_amount_desc: "$celestial_province_metropolitan_short$ limit dosažen" # todo: NEW TRANSLATION
- celestial_province_military: "@celestial_military_administration! Vojenská správa" # todo: NEW TRANSLATION
- celestial_province_military_short: "Vojenská" # todo: NEW TRANSLATION
- celestial_province_military_text_icon: "@celestial_military_administration!" # todo: NEW TRANSLATION
- celestial_province_military_benefits: "#emphasis #bold [vassal|E] Výhody:#!#!\n$EFFECT_LIST_BULLET$ Může najmout [GetMaA('zhanmadao_infantry').GetName]\n$EFFECT_LIST_BULLET$ Používá [GetLaw('celestial_military_appointment_succession_law').GetName]\n\n#alert_trial @alert_icon! Omezeno na [EmptyScope.ScriptValue('celestial_province_military_max_value')|V0] na této úrovni#!"
- celestial_province_military_desc: "#low Vojenská správa umožňující shromažďování vojsk. Poskytuje říši prostředky k obraně nebo k rozšíření hranic, když je to nutné.#!" # todo: NEW TRANSLATION
- celestial_province_military_amount_desc: "$celestial_province_military_short$ limit dosažen" # todo: NEW TRANSLATION
- celestial_province_protectorate: "@celestial_protectorate_administration! Protektorátní správa" # todo: NEW TRANSLATION
- celestial_province_protectorate_short: "Protektorát" # todo: NEW TRANSLATION
- celestial_province_protectorate_text_icon: "@celestial_protectorate_administration!" # todo: NEW TRANSLATION
- celestial_province_protectorate_benefits: "#emphasis #bold Výhody pro [liege|E]:#!#!\n$EFFECT_LIST_BULLET$ Odemkne #high $frontier_influence_war_interaction$#! [interaction|E], která umožňuje vrchnímu pánu požádat [vassal|E], aby vyhlásil válku kvůli cizímu [duchy|E]-stupňovému [title|E]\n\n#emphasis #bold Výhody pro [vassal|E]:#!#!\n$EFFECT_LIST_BULLET$ Zvyšuje [governor_efficiency|E] podle [martial|E]#indent_newline:4 \n#weak Přidává navíc [EmptyScope.ScriptValue('efficiency_skill_increase_value')|+1%/] za každý bod [skill|E]#!#!\n$EFFECT_LIST_BULLET$ Může najímat [GetMaA('zhanmadao_infantry').GetName]\n$EFFECT_LIST_BULLET$ Používá [GetLaw('celestial_military_appointment_succession_law').GetName]\n\n#alert_trial @alert_icon! Omezeno na [EmptyScope.ScriptValue('celestial_province_protectorate_max_value')|V0]#!" # todo: NEW TRANSLATION
- celestial_province_protectorate_desc: "#low Výrazně vylepšená vojenská správa. Protektorát výrazně posílí naši vojenskou sílu!#!" # todo: NEW TRANSLATION
- celestial_province_protectorate_amount_desc: "$celestial_province_protectorate_short$ limit dosažen" # todo: NEW TRANSLATION
- celestial_province_de_jure_desc: "Není #bold [de_jure|E] [title|E]" # todo: NEW TRANSLATION
- celestial_province_metropolitan_name_desc: "[GetSubjectContractType( 'celestial_provinces' ).GetObligationName( 'celestial_province_metropolitan' )]" # todo: NEW TRANSLATION
- celestial_province_protectorate_name_desc: "[GetSubjectContractType( 'celestial_provinces' ).GetObligationName( 'celestial_province_protectorate' )]" # todo: NEW TRANSLATION
- celestial_government_vassals_label: "[celestial|E] [obligations|E] jsou založeny na [GetPlayer.Custom('GetProvinceAdministrationConcept')]" # todo: NEW TRANSLATION
- celestial_ministry_obligations: "[ministry_obligations|E]" # todo: NEW TRANSLATION
- celestial_minister_none: "Žádný" # todo: NEW TRANSLATION
- celestial_minister_none_short: "$celestial_minister_none$" # todo: NEW TRANSLATION
- celestial_minister_civil: "Povinnosti ministerstva" # todo: NEW TRANSLATION
- celestial_minister_civil_short: "Ministerstvo" # todo: NEW TRANSLATION
- celestial_minister_military: "Povinnosti velkého maršála" # todo: NEW TRANSLATION
- celestial_minister_military_short: "Velký maršál" # todo: NEW TRANSLATION
- wanua_government: "Wanua" # todo: NEW TRANSLATION
- wanua_government_with_icon: "@government_type_wanua! $wanua_government$" # todo: NEW TRANSLATION
- wanua_government_adjective: "Wanua" # todo: NEW TRANSLATION
- wanua_government_realm: "Wanua říše" # todo: NEW TRANSLATION
- wanua_government_desc: "\n$game_concept_wanua_desc$\n\n#F Ze svých pobřežních sídel mohou vládci [Glossary( 'Wanua', 'WANUA_GLOSS' )] přeplouvat moře a vyměňovat zboží či nájezdovat mnohem efektivněji než jejich kontinentální $tribal_government_adjective$ protějšky.#!" # todo: NEW TRANSLATION
- WANUA_GLOSS: "Soustava malých vesnic a venkovských komunit v námořní jihovýchodní Asii se často nazývá #italic Wanua#!, #italic Banwa#!, #italic Manua#! a mnoha dalšími jazykovými variantami malajského kořene." # todo: NEW TRANSLATION
- wanua_government_obligations: "$tribal_government_obligations$" # todo: NEW TRANSLATION
- wanua_government_vassals_label: "$wanua_government_adjective$ [obligations|E] jsou založeny na [prestige_level|E] [liege|E]" # todo: NEW TRANSLATION
- wanua_liege_inefficiency_plus_perk: "[liege|E] je [wanua|E] a má [GetPerk( 'detailed_ledgers_perk' ).GetName( GetPlayer )]" # todo: NEW TRANSLATION
- wanua_liege_inefficiency: "[liege|E] je [wanua|E]" # todo: NEW TRANSLATION
- wanua_vassal: "$wanua_government_adjective$" # todo: NEW TRANSLATION
- wanua_vassal_desc: "$game_concept_wanua_desc$" # todo: NEW TRANSLATION
- government_enables_trade_ports: "#indent_newline:3 Umožňuje stavbu řady #V $building_type_common_tradeport_01$#! [buildings|E] v pobřežních [wanua|E] [holdings|E]#!" # todo: NEW TRANSLATION
- government_enables_river_travel: "#indent_newline:3 $unlocks_sailable_major_rivers$#!" # todo: NEW TRANSLATION
- government_enables_naval_raiding: "#indent_newline:3 $unlocks_naval_raiding$#!" # todo: NEW TRANSLATION
- celestial_treasury: "[treasury_vassal_development|E]" # todo: NEW TRANSLATION
- celestial_treasury_very_low: "Velmi nízký $game_concept_treasury_vassal_development$" # todo: NEW TRANSLATION
- celestial_treasury_very_low_short: "Velmi nízký" # todo: NEW TRANSLATION
- celestial_treasury_low: "Nízký $game_concept_treasury_vassal_development$" # todo: NEW TRANSLATION
- celestial_treasury_low_short: "Nízký" # todo: NEW TRANSLATION
- celestial_treasury_medium: "Střední $game_concept_treasury_vassal_development$" # todo: NEW TRANSLATION
- celestial_treasury_medium_short: "Střední" # todo: NEW TRANSLATION
- celestial_treasury_high: "Vysoký $game_concept_treasury_vassal_development$" # todo: NEW TRANSLATION
- celestial_treasury_high_short: "Vysoký" # todo: NEW TRANSLATION
- celestial_treasury_very_high: "Velmi vysoký $game_concept_treasury_vassal_development$" # todo: NEW TRANSLATION
- celestial_treasury_very_high_short: "Velmi vysoký" # todo: NEW TRANSLATION
- celestial_salary: "[governor_salary|E]" # todo: NEW TRANSLATION
- celestial_salary_very_low: "Bídný plat" # todo: NEW TRANSLATION
- celestial_salary_very_low_short: "Bídný" # todo: NEW TRANSLATION
- celestial_salary_low: "Skromný plat" # todo: NEW TRANSLATION
- celestial_salary_low_short: "Skromný" # todo: NEW TRANSLATION
- celestial_salary_medium: "Průměrný plat" # todo: NEW TRANSLATION
- celestial_salary_medium_short: "Průměrný" # todo: NEW TRANSLATION
- celestial_salary_high: "Štědrý plat" # todo: NEW TRANSLATION
- celestial_salary_high_short: "Štědrý" # todo: NEW TRANSLATION
- celestial_salary_very_high: "Rozmařilý plat" # todo: NEW TRANSLATION
- celestial_salary_very_high_short: "Rozmařilý" # todo: NEW TRANSLATION
- salary: "$celestial_salary$" # todo: NEW TRANSLATION
- salary_very_low: "$celestial_salary_very_low$" # todo: NEW TRANSLATION
- salary_very_low_short: "$celestial_salary_very_low$" # todo: NEW TRANSLATION
- salary_low: "$celestial_salary_low$" # todo: NEW TRANSLATION
- salary_low_short: "$celestial_salary_low_short$" # todo: NEW TRANSLATION
- salary_medium: "$celestial_salary_medium$" # todo: NEW TRANSLATION
- salary_medium_short: "$celestial_salary_medium_short$" # todo: NEW TRANSLATION
- salary_high: "$celestial_salary_high$" # todo: NEW TRANSLATION
- salary_high_short: "$celestial_salary_high_short$" # todo: NEW TRANSLATION
- salary_very_high: "$celestial_salary_very_high$" # todo: NEW TRANSLATION
- salary_very_high_short: "$celestial_salary_very_high_short$" # todo: NEW TRANSLATION
- treasury_very_low: "$celestial_treasury_very_low$" # todo: NEW TRANSLATION
- treasury_very_low_short: "$celestial_treasury_very_low_short$" # todo: NEW TRANSLATION
- treasury_low: "$celestial_treasury_low$" # todo: NEW TRANSLATION
- treasury_low_short: "$celestial_treasury_low_short$" # todo: NEW TRANSLATION
- treasury_medium: "$celestial_treasury_medium$" # todo: NEW TRANSLATION
- treasury_medium_short: "$celestial_treasury_medium_short$" # todo: NEW TRANSLATION
- treasury_high: "$celestial_treasury_high$" # todo: NEW TRANSLATION
- treasury_high_short: "$celestial_treasury_high_short$" # todo: NEW TRANSLATION
- treasury_very_high: "$celestial_treasury_very_high$" # todo: NEW TRANSLATION
- treasury_very_high_short: "$celestial_treasury_very_high_short$" # todo: NEW TRANSLATION
- celestial_ministry_budget: "Rozpočet ministerstva" # todo: NEW TRANSLATION
- celestial_ministry_budget_low: "Nízký rozpočet" # todo: NEW TRANSLATION
- celestial_ministry_budget_low_short: "Nízký" # todo: NEW TRANSLATION
- celestial_ministry_budget_medium: "Střední rozpočet" # todo: NEW TRANSLATION
- celestial_ministry_budget_medium_short: "Střední" # todo: NEW TRANSLATION
- celestial_ministry_budget_high: "Vysoký rozpočet" # todo: NEW TRANSLATION
- celestial_ministry_budget_high_short: "Vysoký" # todo: NEW TRANSLATION
- tributary_celestial: "Nebeský tributář"
- tributaries_celestial: "Nebeské tributáře"
- tributary_celestial_desc: "Nebeský [tributary|E] pravidelně poskytuje svému [suzerain|E] [gold|E] a [prestige|E]. Na oplátku získají [legitimacy|E] od svého [suzerain|E], který se také zdrží [raiding|E] nebo vedení [war|E] proti nim.\n\n$tributaries_celestial$ s vysokým @imperial_grace_icon! [imperial_grace|E] mohou být obdarovány [seal_of_investiture|E] od svého $game_concept_suzerain$, čímž získají další výhody."
- celestial_tribute_gold: "[gold|U]" # todo: NEW TRANSLATION
- celestial_tributary_tax_none: "Žádné [taxes|E]" # todo: NEW TRANSLATION
- celestial_tributary_tax_none_short: "Žádné" # todo: NEW TRANSLATION
- celestial_tributary_tax_low: "Nízké [taxes|E]" # todo: NEW TRANSLATION
- celestial_tributary_tax_low_short: "Nízké" # todo: NEW TRANSLATION
- celestial_tributary_tax_normal: "Střední [taxes|E]" # todo: NEW TRANSLATION
- celestial_tributary_tax_normal_short: "Střední" # todo: NEW TRANSLATION
- celestial_tributary_tax_high: "Vysoké [taxes|E]" # todo: NEW TRANSLATION
- celestial_tributary_tax_high_short: "Vysoké" # todo: NEW TRANSLATION
- celestial_tribute_prestige: "[prestige|U]" # todo: NEW TRANSLATION
- celestial_prestige_transfer_none: "Žádný převod $game_concept_prestige$" # todo: NEW TRANSLATION
- celestial_prestige_transfer_none_short: "Žádný" # todo: NEW TRANSLATION
- celestial_prestige_transfer_low: "Nízký převod $game_concept_prestige$" # todo: NEW TRANSLATION
- celestial_prestige_transfer_low_short: "Nízký" # todo: NEW TRANSLATION
- celestial_prestige_transfer_normal: "Střední převod $game_concept_prestige$" # todo: NEW TRANSLATION
- celestial_prestige_transfer_normal_short: "Střední" # todo: NEW TRANSLATION
- celestial_prestige_transfer_high: "Vysoký převod $game_concept_prestige$" # todo: NEW TRANSLATION
- celestial_prestige_transfer_high_short: "Vysoký" # todo: NEW TRANSLATION
- celestial_salary_rank: "Platový stupeň" # todo: NEW TRANSLATION
- celestial_salary_rank_none: "Žádný" # todo: NEW TRANSLATION
- celestial_salary_rank_none_short: "Žádný" # todo: NEW TRANSLATION
- celestial_salary_rank_county: "[county|E] [title_tier|E]: Prefektura" # todo: NEW TRANSLATION
- celestial_salary_rank_county_short: "Prefektura" # todo: NEW TRANSLATION
- celestial_salary_rank_duchy: "[duchy|E] [title_tier|E]: Provincie" # todo: NEW TRANSLATION
- celestial_salary_rank_duchy_short: "Provincie" # todo: NEW TRANSLATION
- celestial_salary_rank_kingdom: "[kingdom|E] [title_tier|E]: Okruh" # todo: NEW TRANSLATION
- celestial_salary_rank_kingdom_short: "Okruh" # todo: NEW TRANSLATION
- celestial_salary_rank_empire: "[empire|E] [title_tier|E]: Velký okruh" # todo: NEW TRANSLATION
- celestial_salary_rank_empire_short: "Velký okruh" # todo: NEW TRANSLATION
- celestial_salary_rank_minister: "[empire|E] [title_tier|E]: Minister" # todo: NEW TRANSLATION
- celestial_salary_rank_minister_short: "Minister" # todo: NEW TRANSLATION
- administrative_salary_rank: "$celestial_salary_rank$" # todo: NEW TRANSLATION
- administrative_salary_rank_none: "$celestial_salary_rank_none$" # todo: NEW TRANSLATION
- administrative_salary_rank_none_short: "$celestial_salary_rank_none_short$" # todo: NEW TRANSLATION
- administrative_salary_rank_duchy: "[duchy|E] [title_tier|E]: Theme" # todo: NEW TRANSLATION
- administrative_salary_rank_duchy_short: "Téma" # todo: NEW TRANSLATION
- administrative_salary_rank_kingdom: "[kingdom|E] [title_tier|E]: Catepan" # todo: NEW TRANSLATION
- administrative_salary_rank_kingdom_short: "Katepán" # todo: NEW TRANSLATION
- administrative_salary_rank_empire: "[empire|E] [title_tier|E]: Great Catepan" # todo: NEW TRANSLATION
- administrative_salary_rank_empire_short: "Velký katepán" # todo: NEW TRANSLATION
- celestial_tributary_investiture_privilege_trade: "Obchodní výsady" # todo: NEW TRANSLATION
- investiture_trade_yes_short: "Přístup na trhy" # todo: NEW TRANSLATION
- investiture_trade_yes: "Přístup na císařské trhy" # todo: NEW TRANSLATION
- investiture_trade_yes_desc: "#emphasis #bold Výsady pro [tributary|E]:#!#!\n$EFFECT_LIST_BULLET$ Roční [development_growth|E] (až do [EmptyScope.ScriptValue('celestial_investiture_trade_bonus_max')|v0]) v [tributary_possessive|E] [capital|E] [province|E]\n\n#flavor Přístup k rušným trhům [GetTitleByKey('h_china').GetDefinitiveNamePossessive] prospívá blahobytu jejich privilegovaných [tributaries|E]. Efekt se zvyšuje s rozdílem v [development|E] mezi $game_concept_capitals$ a množstvím [imperial_grace|E], které si privilegovaný $game_concept_tributary$ nashromáždil.#!" # todo: NEW TRANSLATION
- investiture_trade_no: "Odříznut od císařských trhů" # todo: NEW TRANSLATION
- msg_tributary_capital_province_development_growth_title: "Úspěšná obchodní mise" # todo: NEW TRANSLATION
- msg_tributary_capital_province_development_growth_desc: "Živý obchod s císařskými trhy v [GetTitleByKey('h_china').GetDefinitiveName] zlepšil [development|E] v [ROOT.Char.GetCapitalLocation.GetName]." # todo: NEW TRANSLATION
- celestial_tributary_investiture_privilege_marriage: "Rodinné výsady" # todo: NEW TRANSLATION
- investiture_marriage_yes_short: "Přístup do rodiny" # todo: NEW TRANSLATION
- investiture_marriage_yes: "Pozván do císařské rodiny" # todo: NEW TRANSLATION
- investiture_marriage_yes_desc: "#emphasis #bold Výsady pro [tributary|E]:#!#!\n$EFFECT_LIST_BULLET$ Zvýšené [marriage|E] Přijetí s [GetTitleByKey('h_china').GetDefinitiveNamePossessive] vládnoucí [dynasty|E]\n$EFFECT_LIST_BULLET$ Zrušeny tresty k přijetí [marriage|E] vyplývající z #BOLD $tradition_cultural_primacy_name$#!\n\n#flavor Císařská rodina [GetTitleByKey('h_china').GetDefinitiveName] je často pro cizince neproniknutelná. Formální pozvání do rodiny poskytuje bonus k Přijetí úměrný [imperial_grace|E] a odstraňuje obvyklé tresty, které se vztahují na cizince.#!" # todo: NEW TRANSLATION
- investiture_marriage_no: "Bez přístupu k císařské rodině" # todo: NEW TRANSLATION
- INCREASED_MARRIAGE_ACCEPTANCE_INVESTITURE_MARRIAGE_REASON: "[tributary|E] has $celestial_tributary_investiture_privilege_marriage$: $VALUE|=+0$" # todo: NEW TRANSLATION
- celestial_tributary_investiture_privilege_politics: "Palácové výsady" # todo: NEW TRANSLATION
- investiture_politics_yes_short: "Přístup do paláce" # todo: NEW TRANSLATION
- investiture_politics_yes: "Přístup do císařského paláce" # todo: NEW TRANSLATION
- investiture_politics_yes_desc: "#emphasis #bold Výsady pro [tributary|E]:#!#!\n$EFFECT_LIST_BULLET$ Stává se aktivním účastníkem [dynastic_cycle|E]\n$EFFECT_LIST_BULLET$ Získává [movement_power|E] v závislosti na [imperial_grace|E]\n\n#flavor Zatímco od většiny [tributaries|E] [GetTitleByKey('h_china').GetDefinitiveName] se očekává pouze pozorování nebeského řádu, některým vyvoleným může být udělen hlas v jeho otáčení. Přístup do císařského paláce zapojuje privilegiovaného $game_concept_tributary$ do $game_concept_dynastic_cycle$, umožňujíc jim připojit se k [movement|E] a ovlivnit jeho [situation_dynastic_cycle_phase|E].#!" # todo: NEW TRANSLATION
- investiture_politics_no: "Bez přístupu do císařského paláce" # todo: NEW TRANSLATION
- TRIBUTARY_GAIN_LEGITIMACY: "Tributář získává @legitimacy_icon! za každou [suzerain|E] [radiance|e] [CHARACTER.GetRadianceValueNoTooltip|V0]/[GetDefine( 'NMandala', 'MAX_RADIANCE' )|V0]" # todo: NEW TRANSLATION
- wanua_obligations: "$tribal_government_obligations$" # todo: NEW TRANSLATION
- barter_goods_obligations: "[barter_goods|E]" # todo: NEW TRANSLATION
- barter_goods_low: "Nízké [barter_goods|E]" # todo: NEW TRANSLATION
- barter_goods_low_short: "Nízké" # todo: NEW TRANSLATION
- barter_goods_medium: "Střední [barter_goods|E]" # todo: NEW TRANSLATION
- barter_goods_medium_short: "Střední" # todo: NEW TRANSLATION
- barter_goods_high: "Vysoké [barter_goods|E]" # todo: NEW TRANSLATION
- barter_goods_high_short: "Vysoké" # todo: NEW TRANSLATION
- meritocratic_treasury: "$celestial_treasury$" # todo: NEW TRANSLATION
- meritocratic_salary: "$celestial_salary$" # todo: NEW TRANSLATION
- meritocratic_salary_rank: "$celestial_salary_rank$" # todo: NEW TRANSLATION
- meritocratic_salary_rank_none: "$celestial_salary_rank_none$" # todo: NEW TRANSLATION
- meritocratic_salary_rank_none_short: "$celestial_salary_rank_none_short$" # todo: NEW TRANSLATION
- meritocratic_salary_rank_county: "$celestial_salary_rank_county$" # todo: NEW TRANSLATION
- meritocratic_salary_rank_county_short: "$celestial_salary_rank_county_short$" # todo: NEW TRANSLATION
- meritocratic_salary_rank_duchy: "$celestial_salary_rank_duchy$" # todo: NEW TRANSLATION
- meritocratic_salary_rank_duchy_short: "$celestial_salary_rank_duchy_short$" # todo: NEW TRANSLATION
- meritocratic_salary_rank_kingdom: "$celestial_salary_rank_kingdom$" # todo: NEW TRANSLATION
- meritocratic_salary_rank_kingdom_short: "$celestial_salary_rank_kingdom_short$" # todo: NEW TRANSLATION
- meritocratic_salary_rank_empire: "$celestial_salary_rank_empire$" # todo: NEW TRANSLATION
- meritocratic_salary_rank_empire_short: "$celestial_salary_rank_empire_short$" # todo: NEW TRANSLATION
- meritocratic_government_vassals_label: "[meritocratic|E] [obligations|E] jsou založeny na [GetPlayer.Custom('GetProvinceAdministrationConcept')]" # todo: NEW TRANSLATION
- appointment_title_value.county_income: "Příjem z každého drženého [county|E]" # todo: NEW TRANSLATION
- appointment_title_value.counties: "Každý držený [county|E]" # todo: NEW TRANSLATION
- appointment_title_value.maa_size: "Velikost [title_men_at_arms|E]" # todo: NEW TRANSLATION
- appointment_title_value.neighboring_enemy_counties: "Každý sousední nepřátelský [county|E]" # todo: NEW TRANSLATION
- appointment_title_value.protectorate: "[GetSubjectContractType( 'celestial_provinces' ).GetObligationName( 'celestial_province_protectorate' )]" # todo: NEW TRANSLATION
- appointment_title_value.capital_income: "[capital_possessive|E] příjem" # todo: NEW TRANSLATION
- appointment_title_value.diarch: "[grand_secretariat_director|E]" # todo: NEW TRANSLATION
- appointment_title_value.minister: "[minister|E] [title|E]" # todo: NEW TRANSLATION
- appointment_title_value.distance_to_capital: "Vzdálenost od [GetTitleByKey('h_china').GetNamePossessive] [capital|E]" # todo: NEW TRANSLATION
- block_same_government_type_vassal_courts: "Vasálové s tímto pravidlem nemohou mít královské dvory, pokud jejich nejvyšší pán má stejné pravidlo" # todo: NEW TRANSLATION
- liege_is_not_civilian_desc: "[liege.GetShortUIName|U] [CharAreIs( liege )] #bold není#! [civilian_governor|E]" # todo: NEW TRANSLATION
- liege_is_not_military_desc: "[liege.GetShortUIName|U] [CharAreIs( liege )] #bold není#! [military_governor|E]" # todo: NEW TRANSLATION
- tributary_hegemonic: "Hegemonický tributární stát" # todo: NEW TRANSLATION
- tributaries_hegemonic: "Hegemonické tributární státy" # todo: NEW TRANSLATION
- tributary_hegemonic_desc: "Hegemonický [tributary|E] pravidelně poskytuje svému [suzerain|E] [gold|E] a [prestige|E]. Na oplátku získává [legitimacy|E] od svého [suzerain|E], který se také zdrží [raiding|E] nebo vedení [war|E] proti němu." # todo: NEW TRANSLATION
- hegemonic_tribute_gold: "[gold|U]" # todo: NEW TRANSLATION
- hegemonic_tributary_tax_none: "Žádné [taxes|E]" # todo: NEW TRANSLATION
- hegemonic_tributary_tax_none_short: "Žádné" # todo: NEW TRANSLATION
- hegemonic_tributary_tax_low: "Nízké [taxes|E]" # todo: NEW TRANSLATION
- hegemonic_tributary_tax_low_short: "Nízké" # todo: NEW TRANSLATION
- hegemonic_tributary_tax_normal: "Střední [taxes|E]" # todo: NEW TRANSLATION
- hegemonic_tributary_tax_normal_short: "Střední" # todo: NEW TRANSLATION
- hegemonic_tributary_tax_high: "Vysoké [taxes|E]" # todo: NEW TRANSLATION
- hegemonic_tributary_tax_high_short: "Vysoké" # todo: NEW TRANSLATION
- hegemonic_tribute_prestige: "[prestige|U]" # todo: NEW TRANSLATION
- hegemonic_prestige_transfer_none: "Žádný převod $game_concept_prestige$" # todo: NEW TRANSLATION
- hegemonic_prestige_transfer_none_short: "Žádný" # todo: NEW TRANSLATION
- hegemonic_prestige_transfer_low: "Nízký převod $game_concept_prestige$" # todo: NEW TRANSLATION
- hegemonic_prestige_transfer_low_short: "Nízký" # todo: NEW TRANSLATION
- hegemonic_prestige_transfer_normal: "Střední převod $game_concept_prestige$" # todo: NEW TRANSLATION
- hegemonic_prestige_transfer_normal_short: "Střední" # todo: NEW TRANSLATION
- hegemonic_prestige_transfer_high: "Vysoký převod $game_concept_prestige$" # todo: NEW TRANSLATION
- hegemonic_prestige_transfer_high_short: "Vysoký" # todo: NEW TRANSLATION
+  ADD_UNITY_VALUE_GLOBAL: "[house|E] [DynastyHouse.GetBaseName|V] [house_unity|E] se změní o $VALUE|=+0$ @dynasty_house_unity!"
+  ADMINISTRATIVE_CONTRACT: "[Character.Custom( 'GetProvinceConceptNoTooltip' )] Správa"
+  AI_HOUSE_UNITY: "Vaše [house_unity|E]: $VALUE|=+0$"
+  CB_CONFEDERATION_VASSALS: "Útok na jiného člena [confederation|E]"
+  CB_UNITY_COST: "Vaše [house_unity|E]"
+  CHARACTER_WINDOW_MILITARY_STRENGTH_TOOLTIP: "[CharacterWindow.GetMilitaryStrengthTooltip][AddLocalizationIf(Not(StringIsEmpty(CharacterWindow.GetMenAtArmsSubjectRecruitmentPotentialTooltip)),'MAA_SUBJECT_ACCESS_POTENTIAL')]"
+  CHOOSE_UNITY_DIRECTION: "Vyberte směr"
+  CONTRACT_LIEGE_SIGNATURE: "Tento [SelectLocalization( SubjectContract.IsTributary, 'CONTRACT_LIEGE_SIGNATURE_SUZERAIN_TYPE', 'CONTRACT_LIEGE_SIGNATURE_LIEGE_TYPE' )],\n[SubjectContract.GetLiege.GetTitledFirstNameNoTooltip]\nz rodu [SubjectContract.GetLiege.GetHouse.GetBaseNameNoTooltip]"
+  CONTRACT_LIEGE_SIGNATURE_LIEGE_TYPE: "Liege"
+  CONTRACT_LIEGE_SIGNATURE_SUZERAIN_TYPE: "Suzerain"
+  CONTRACT_VASSAL_SIGNATURE: "Tento [SelectLocalization( SubjectContract.IsTributary, 'CONTRACT_VASSAL_SIGNATURE_TRIBUTARY_TYPE', 'CONTRACT_VASSAL_SIGNATURE_VASSAL_TYPE' )],\n[SubjectContract.GetSubject.GetTitledFirstNameNoTooltip]\nz rodu [SubjectContract.GetSubject.GetHouse.GetBaseNameNoTooltip]"
+  CONTRACT_VASSAL_SIGNATURE_TRIBUTARY_TYPE: "Tributář"
+  CONTRACT_VASSAL_SIGNATURE_VASSAL_TYPE: "Vazal"
+  GOVERNMENT_CLAN_NOT_ALLIED: "Žádné [alliance|E] jako klanový [vassal|E]"
+  GOVERNMENT_CLAN_NOT_ALLIED_POWERFUL: "Žádné [alliance|E] jako mocný klanový [vassal|E]"
+  GOVERNMENT_HOLDING_INFO: "$EFFECT_LIST_BULLET$ Může držet [HOLDING_TYPE.GetName|V] [holdings|E]"
+  GOVERNMENT_RULE_INFO: "$EFFECT_LIST_BULLET$ Může $RULE|V$"
+  HAS_HOUSE_UNITY_STAGE_GLOBAL: "[house_unity|E] je @dynasty_house_unity_[HouseUnityStage.GetKey]! [HouseUnityStage.GetName|V]"
+  I_HAVE_HOUSE_UNITY_STAGE_GLOBAL: "Mé [house_unity|E] je @dynasty_house_unity_[HouseUnityStage.GetKey]! [HouseUnityStage.GetName|V]"
+  MAA_SUBJECT_ACCESS_POTENTIAL: "\n\n#EMP Poskytl by přístup k novým [men_at_arms|E], pokud by byli tvým [tributary|E] nebo [vassal|E]:#! #indent_newline:2 \n[CharacterWindow.GetMenAtArmsSubjectRecruitmentPotentialTooltip]#!"
+  MAA_SUBJECT_ACCESS_POTENTIAL_ENTRY: "@[MEN_AT_ARMS_TYPE.GetIconKey]_icon![Nbsp][MEN_AT_ARMS_TYPE.GetName]"
+  NOMAD_CONTRACT: "Nomádní smlouva"
+  NOT_HAS_HOUSE_UNITY_STAGE_GLOBAL: "[house_unity|E] #bold není#! @dynasty_house_unity_[HouseUnityStage.GetKey]! [HouseUnityStage.GetName|V]"
+  NOT_I_HAVE_HOUSE_UNITY_STAGE_GLOBAL: "Mé [house_unity|E] #bold není#! @dynasty_house_unity_[HouseUnityStage.GetKey]! [HouseUnityStage.GetName|V]"
+  NOT_THEY_HAVE_HOUSE_UNITY_STAGE_GLOBAL: "[house|E] [DYNASTY_HOUSE.GetBaseName|V] [house_unity|E] #bold není#! @dynasty_house_unity_[HouseUnityStage.GetKey]! [HouseUnityStage.GetName|V]"
+  STEER_HOUSE_UNITY_SELECT_DIRECTION_TITLE: "Vyberte směr [unity|E]"
+  SUBJECT_MAA_HINT: "Mohl bys najmout @[MenAtArmsType.GetIconKey]_icon![Nbsp][MenAtArmsType.GetName] z následujících [realms|E], pokud by byli tvým [tributary|E] nebo [vassal|E]:#indent_newline:2 \n$BREAKDOWN$#!"
+  SUBJECT_MAA_HINT_ENTRY: "[CHARACTER.GetPrimaryTitle.GetBaseNameNoTier] ([CHARACTER.GetShortUIName])"
+  SUPPLY_MULT_DIFERENT_GOVERNMENT: "[GOVERNMENT_TYPE.GetAdjective] území"
+  THEY_HAVE_HOUSE_UNITY_STAGE_GLOBAL: "[house|E] [DYNASTY_HOUSE.GetBaseName|V] [house_unity|E] je @dynasty_house_unity_[HouseUnityStage.GetKey]! [HouseUnityStage.GetName|V]"
+  active_unity_level_description_tt: "#weak Toto je způsobeno vaší aktivní úrovní [house_unity_level|E]#!"
+  admin_contract_forbids_revocation_desc: "Nemůžete odejmout [titles|E] ani odvolat jmenování od [vassal|E], který spravuje pomocí [GetSubjectContractType( 'administrative_themes' ).GetObligationName( 'admin_theme_imperial' )], pokud nemáte [revoke_title_reason|E]"
+  admin_theme_balanced: "@balanced_administration! Vyvážená administrace"
+  admin_theme_balanced_desc: "#flavor Vyvážená administrace usiluje o přiměřenost, aby zajistila rovnoměrnou pozornost ve všech oblastech správy.#!"
+  admin_theme_balanced_short: "@balanced_administration! Vyvážená"
+  admin_theme_balanced_text_icon: "@balanced_administration!"
+  admin_theme_civilian: "@civilian_administration! Civilní správa"
+  admin_theme_civilian_benefits: "#emphasis #bold [vassal|E] Výhody:#!#!\n$EFFECT_LIST_BULLET$ Zvyšuje [governor_efficiency|E] na základě [stewardship|E]#indent_newline:4 \n#weak Přidává navíc [EmptyScope.ScriptValue('efficiency_skill_increase_value')|+1%/] za každý bod [skill|E]#!#!\n[influence|E] získaný stavbou [buildings|E] v ovládaných [counties|E] je zvýšen"
+  admin_theme_civilian_desc: "#flavor Osvobozená od vojenské služby, civilní správa se zaměřuje na zlepšení ekonomiky a blahobytu obyvatel.#!"
+  admin_theme_civilian_short: "@civilian_administration! Civilní"
+  admin_theme_civilian_text_icon: "@civilian_administration!"
+  admin_theme_frontier: "@frontier_administration! Pohraniční správa"
+  admin_theme_frontier_benefits: "#emphasis #bold [liege|E] Výhody:#!#!\n$EFFECT_LIST_BULLET$ Odemkne #high $frontier_influence_war_interaction$#! [interaction|E], který umožňuje [liege|E] požádat [vassal|E] o vyhlášení války za cizí [duchy|E]-úrovňový [title|E]\n\n#emphasis #bold [vassal|E] Výhody:#!#!\n$EFFECT_LIST_BULLET$ Zvyšuje [governor_efficiency|E] na základě [prowess|E]#indent_newline:4 \n#weak Přidává navíc [EmptyScope.ScriptValue('efficiency_skill_increase_value')|+1%/] za každý bod [skill|E]#!#!\n$EFFECT_LIST_BULLET$ Odemkne #high $EXPANSION_DUCHY_CB_NAME$#! [casus_belli|E]\n$EFFECT_LIST_BULLET$ Umožňuje [raiding|E]"
+  admin_theme_frontier_desc: "#flavor Hraniční území nelze nechat bez obrany. Pohraniční správa zajistí obranu říše a bude připravena odrazit případné útočníky.#!"
+  admin_theme_frontier_short: "@frontier_administration! Pohraniční"
+  admin_theme_frontier_text_icon: "@frontier_administration!"
+  admin_theme_frontier_valid_desc: "[vassal.Custom( 'GetProvinceConceptNoTooltip' )] musí sousedit s jiným [realm|E]"
+  admin_theme_imperial: "@imperial_administration! Císařská správa"
+  admin_theme_imperial_benefits: "#emphasis #bold [vassal|E] Výhody:#!#!\n$EFFECT_LIST_BULLET$ Zvyšuje [governor_efficiency|E] na základě [prestige_level|E]#indent_newline:4 \n#weak Přidává navíc [EmptyScope.ScriptValue('efficiency_currency_level_increase_value')|+0%/] za každou úroveň#!#!\n$EFFECT_LIST_BULLET$ Zvyšuje hodnocení [powerful_family|E]\nJmenování nelze odvolat bez [revoke_title_reason|E]"
+  admin_theme_imperial_desc: "#flavor Císařská správa poskytuje značnou míru autonomie a osvobození od mnoha běžných povinností. Je to nejprestižnější forma správy, jakou lze mít.#!"
+  admin_theme_imperial_short: "@imperial_administration! Císařská"
+  admin_theme_imperial_text_icon: "@imperial_administration!"
+  admin_theme_imperial_valid_desc: "Pouze jeden [vassal.Custom( 'GetProvinceConceptNoTooltip' )] může mít tuto správu aktivní"
+  admin_theme_military: "@military_administration! Vojenská správa"
+  admin_theme_military_benefits: "#emphasis #bold [vassal|E] Výhody:#!#!\n$EFFECT_LIST_BULLET$ Zvyšuje [governor_efficiency|E] na základě [martial|E]#indent_newline:4 \n#weak Přidává navíc [EmptyScope.ScriptValue('efficiency_skill_increase_value')|+1%/] za každý bod [skill|E]#!#!"
+  admin_theme_military_desc: "#flavor Vojenská administrace soustředí veškerou energii na nábor a výcvik impozantních jednotek pro císařskou armádu.#!"
+  admin_theme_military_short: "@military_administration! Vojenská"
+  admin_theme_military_text_icon: "@military_administration!"
+  admin_theme_naval: "@naval_administration! Námořní správa"
+  admin_theme_naval_benefits: "#emphasis #bold [liege|E] Výhody:#!#!\n$EFFECT_LIST_BULLET$ Odemkne #high $frontier_influence_war_interaction$#! [interaction|E], který umožňuje [liege|E] požádat [vassal|E] o vyhlášení války za cizí [duchy|E]-úrovňový [title|E]\n\n#emphasis #bold [vassal|E] Výhody:#!#!\n$EFFECT_LIST_BULLET$ Zvyšuje [governor_efficiency|E] za každou kontrolovanou #high [GetBuilding('common_tradeport_01').GetTypeName]#!#indent_newline:4 \n#weak Přidává navíc [EmptyScope.ScriptValue('efficiency_building_increase_value')|+0%/] za každou [GetBuilding('common_tradeport_01').GetTypeName]#!#!\n$EFFECT_LIST_BULLET$ Odemkne #high $NAVAL_EXPANSION_DUCHY_CB_NAME$#! [casus_belli|E]"
+  admin_theme_naval_desc: "#flavor Námořnictvo je páteří každého expanzivního panství. S věnovanou námořní správou budou bezpečnost a efektivita na moři výrazně zvýšeny.#!"
+  admin_theme_naval_short: "@naval_administration! Námořní"
+  admin_theme_naval_text_icon: "@naval_administration!"
+  admin_theme_naval_valid_desc: "[vassal.Custom( 'GetProvinceConceptNoTooltip' )] musí být pobřežní"
+  admin_vassal: "Administrativní"
+  admin_vassal_desc: "$game_concept_administrative_desc$"
+  administrative_government: "Administrativní"
+  administrative_government_adjective: "Administrativní"
+  administrative_government_desc: "\n$game_concept_administrative_desc$\n\n#F Administrativní je vysoce centralizovaná forma vlády, kde moc sídlí převážně v hlavním městě. Dědičné právo, ač stále důležité, není tak výrazné jako v feudální říši. S dostatečnými schopnostmi a ambicemi může kdokoli, i z nejskromnějšího původu, vystoupat a stát se vlivným guvernérem nebo usilovat o trůn a stát se císařem.#!"
+  administrative_government_realm: "Administrativní říše"
+  administrative_government_vassals_label: "[administrative|E] [obligations|E] jsou založeny na [GetPlayer.Custom('GetProvinceAdministrationConcept')]"
+  administrative_government_with_icon: "@government_type_administrative! $administrative_government$"
+  administrative_obligations: "Administrativní povinnosti"
+  administrative_themes: "Dostupné typy administrace"
+  adult_rulers_only: "#N Může být vládnuto pouze [adults|E]#!"
+  adventurer_rule: "získává pouze [gold|E] a [prestige|E] vykonáváním [task_contracts|E]"
+  antagonistic: "Svářlivý"
+  antagonistic_desc: "Téměř nic nevyburcuje lidi jako rivalita nebo žárlivost. V tomto domě si musíš hlídat záda, jinak se může stát, že se někdo pokusí zasadit nůž do zad."
+  antagonistic_house_approves_war_victory: "Všichni [attacker.GetShortUINamePossessive] [house|E] [vassals|E] získají #P 10#! [opinion|E] k [attacker.GetShortUIName] na #V 10 let#! #weak (Ohromeni útočným vítězstvím)#!" # todo: CHANGED
+  antagonistic_house_approves_war_victory_defensive: "Všichni [defender.GetShortUINamePossessive] [house|E] [vassals|E] získají #P 15#! [opinion|E] k [defender.GetShortUIName] na #V 10 let#! #weak (Ohromeni obranným vítězstvím)#!" # todo: CHANGED
+  antagonistic_house_disapproves_war_defeat: "Všichni [attacker.GetShortUINamePossessive] [house|E] [vassals|E] ztratí #N 20#! [opinion|E] k [attacker.GetShortUIName] na #V 10 let#! #weak (Zahanbeni porážkou)#!" # todo: CHANGED
+  antagonistic_house_disapproves_war_defeat_defender: "Všichni [house|E] [vassals|E] [defender.GetShortUINamePossessive] ztratí #N 20#! [opinion|E] o [defender.GetShortUIName] na #V 10 let#! #weak (Embarrassed by Defeat)#!"
+  antagonistic_house_disapproves_war_white_peace: "Všichni [attacker.GetShortUINamePossessive] [house|E] [vassals|E] ztratí #N 10#! [opinion|E] k [attacker.GetShortUIName] na #V 10 let#! #weak (Považují příměří za slabé)#!" # todo: CHANGED
+  antagonistic_house_disapproves_war_white_peace_defender: "Všichni [house|E] [vassals|E] [defender.GetShortUINamePossessive] ztratí #N 10#! [opinion|E] o [defender.GetShortUIName] na #V 10 let#! #weak (Finds White Peace Weak)#!"
+  can_raze_holdings: "Může vypálit [holdings|E] za [gold|E]"
+  can_start_war_with_raised_troops: "Může zahájit [wars|E] s povolanými [armies|E]"
+  can_wage_wars: "Může vyhlašovat války"
+  clan_government: "Klan"
+  clan_government_adjective: "Klanské"
+  clan_government_desc: "\n$game_concept_clan_desc$\n\n#F Klan je sjednocen příbuzenstvím — buď krví, nebo sdíleným vztahem k symbolickému předkovi. Vůdce klanu se silně spoléhá na podporu klanu. Jednotní jsou velkou silou, ale nespokojený klan uvadá zevnitř.#!"
+  clan_government_levies_contribution_postfix: " (maximum [FixedPointToProgressbarValue(EmptyScope.ScriptValue('clan_government_levies_max_possible'))|1V])"
+  clan_government_min_contribution_label: "Minimálně [crown_authority|E]"
+  clan_government_obligations: "Z [opinion|E]"
+  clan_government_realm: "Klan"
+  clan_government_tax_contribution_postfix: " (maximum [FixedPointToProgressbarValue(EmptyScope.ScriptValue('clan_government_tax_max_possible'))|1V])"
+  clan_government_unclamped_contribution_label: "Vychází z [opinion|E] o mně"
+  clan_government_vassals_label: "Klánové [obligations|E] jsou založeny na [opinion|E]"
+  clan_government_with_icon: "@government_type_clan! $clan_government$"
+  clan_tax_slot: "Daňová jurisdikce"
+  clan_vassal: "Klan"
+  clan_vassal_desc: "$game_concept_clan_desc$"
+  coinage_rights: "Právo razby mincí"
+  coinage_rights_granted: "$coinage_rights$ Udělena"
+  coinage_rights_granted_desc: "#flavor [vassal] dostává právo razit a používat nové mince, což posiluje jejich [development|E] na úkor [liege].#!"
+  coinage_rights_granted_short: "Uděleno"
+  coinage_rights_none: "Žádné $coinage_rights$"
+  coinage_rights_none_short: "Žádné"
+  competitive: "Soutěživý"
+  competitive_desc: "Soutěž v rodině může být zdravá věc. Nutí členy rodu překonávat jeden druhého, ať už na bojišti, nebo při snaze získat trůn..."
+  conditional_maa_refill_rule: "pouze [reinforce_soldiers|E] jednotky"
+  council_rights: "Práva v radě"
+  council_rights_guaranteed: "$council_rights$ Zaručena"
+  council_rights_guaranteed_desc: "#emphasis #bold [vassal|E] Právo:#!#!\n$EFFECT_LIST_BULLET$ #high $force_onto_council$#! [interaction|E] lze používat dle libosti\n\n#flavor [vassal] získává zvláštní [council] výsady a bude očekávat trvalé místo v [council]. Udělení tohoto práva příliš mnoha [vassals] nakonec rozladí [powerful_vassals] [realm|E].#!"
+  council_rights_guaranteed_short: "Zaručeno"
+  council_rights_none: "Žádná $council_rights$"
+  council_rights_none_desc: "#flavor [vassal] není uděleno žádné nadstandardní právo týkající se [council].#!"
+  council_rights_none_short: "Žádné"
+  create_cadet_branches_rule: "Vytvořit [cadet_branches|E]"
+  create_cadet_branches_trigger: "Vytvoření [cadet_branches|E]"
+  default_tax_collector: "Základní daně"
+  default_tax_collector_desc: "Základní [obligations|E] platí, v závislosti na [aptitude|E] přiděleného [tax_collector|E]"
+  default_tax_collector_flavor_desc: "Standardní daň. Daňoví poplatníci platí ani více, ani méně, než se od nich očekává."
+  default_tributary_levies: "[tributary|E] [levies|U]"
+  default_tributary_prestige: "[tributary|E] [prestige|U]"
+  default_tributary_taxes: "[tributary|E] [taxes|U]"
+  deqhan_special_rights_tax_collector: "Dehqan"
+  deqhan_special_rights_tax_collector_flavor_desc: "Perské magnáty v rámci starobylého, decentralizovaného systému výběru daní; dehqani pečlivě spravují svá území, aby podporovali produktivitu – a vlastní prestiž."
+  feudal_government: "Feudální"
+  feudal_government_adjective: "Feudální"
+  feudal_government_desc: "\n$game_concept_feudal_desc$\n\n#F Feudalismus byl dominantní formou vlády v Evropě mezi 9. a 15. stoletím. Feudální systém je založen na vztahu mezi držitelem půdy a těmi, kteří na ní vykonávají služby a práci, aby zde mohli žít. Vládci, kteří drží půdu, jmenují vazaly, kterým jsou svěřeny léna k spravování. Na oplátku vazalové poskytují svému pánovi [soldiers|E] a [taxes|E].#!"
+  feudal_government_levies: "[GetGovernment( 'feudal_government' ).GetNameNoTooltip] [levies|U]"
+  feudal_government_obligations: "[GetGovernment( 'feudal_government' ).GetName] [obligations|E]"
+  feudal_government_prestige: "[GetGovernment( 'feudal_government' ).GetNameNoTooltip] [prestige|U]"
+  feudal_government_realm: "Feudální panství"
+  feudal_government_taxes: "[GetGovernment( 'feudal_government' ).GetNameNoTooltip] [taxes|U]"
+  feudal_government_vassals_label: "Feudální [obligations|E] vycházejí z [vassal|E]ova [vassal_contract|E]"
+  feudal_government_with_icon: "@government_type_feudal! $feudal_government$"
+  feudal_levies_exempt: "Bez příspěvku"
+  feudal_levies_exempt_short: "Žádné"
+  feudal_levies_extortionate: "Obrovský příspěvek k $game_concept_levy$"
+  feudal_levies_extortionate_short: "Obrovské"
+  feudal_levies_high: "Vysoký příspěvek k $game_concept_levy$"
+  feudal_levies_high_short: "Vysoké"
+  feudal_levies_low: "Nízký příspěvek k $game_concept_levy$"
+  feudal_levies_low_short: "Nízké"
+  feudal_levies_normal: "Normální příspěvek k $game_concept_levy$"
+  feudal_levies_normal_short: "Normální"
+  feudal_obligation_high: "Vysoké $feudal_government_obligations$"
+  feudal_obligation_high_short: "Vysoké"
+  feudal_obligation_low: "Nízké $feudal_government_obligations$"
+  feudal_obligation_low_short: "Nízké"
+  feudal_obligation_normal: "Normální $feudal_government_obligations$"
+  feudal_obligation_normal_short: "Normální"
+  feudal_prestige_high: "Vysoký příspěvek k $game_concept_prestige$"
+  feudal_prestige_high_short: "Vysoké"
+  feudal_prestige_none: "Bez příspěvku"
+  feudal_prestige_none_short: "Žádné"
+  feudal_prestige_normal: "Částečný příspěvek k $game_concept_prestige$"
+  feudal_prestige_normal_short: "Nízké"
+  feudal_tax_exempt: "[tax|E] Osvobozen"
+  feudal_tax_exempt_short: "Osvobozen"
+  feudal_tax_extortionate: "Vyděračské $game_concept_taxes$"
+  feudal_tax_extortionate_short: "Vyděračské"
+  feudal_tax_high: "Vysoké $game_concept_taxes$"
+  feudal_tax_high_short: "Vysoké"
+  feudal_tax_low: "Nízké $game_concept_taxes$"
+  feudal_tax_low_short: "Nízké"
+  feudal_tax_normal: "Normální $game_concept_taxes$"
+  feudal_tax_normal_short: "Normální"
+  feudal_vassal: "Feudální"
+  feudal_vassal_desc: "$game_concept_feudal_desc$"
+  fortification_rights: "Práva na opevnění"
+  fortification_rights_granted: "$fortification_rights$ Udělena"
+  fortification_rights_granted_desc: "#flavor [vassal] dostává právo stavět nové hrady a opevnění za podpory svého [liege]. Tato podpora v praxi znamená, že [vassal] platí #high [EmptyScope.ScriptValue('fortification_rights_contract_taxes_tooltip')|0]%#! méně [tax] než stanovují jejich $feudal_government_taxes$ [obligations].#!"
+  fortification_rights_granted_short: "Uděleno"
+  fortification_rights_none: "Žádná $fortification_rights$"
+  fortification_rights_none_short: "Žádné"
+  friendly: "Přátelský"
+  friendly_desc: "Možná si vždy nebudou rozumět, ale členové tohoto rodu jsou navzájem stále v přátelských vztazích."
+  ghazi_special_rights_tax_collector: "Status gházi"
+  ghazi_special_rights_tax_collector_desc: "#emphasis #bold [vassal|E] Právo:#!#!\n$EFFECT_LIST_BULLET$ [vassal|E] platí méně [piety|E] za použití [holy_war|E] [casus_bellis|E], ale více [prestige_i][prestige|E] za jakýkoli jiný [casus_bellis|E]\n$EFFECT_LIST_BULLET$ Umožňuje [raiding|E]\n\n#flavor [vassal|E] je vybrán [liege|E] jako válečník [faith|E], pověřen rozšiřováním hranic skrze [holy_war|E].#!"
+  ghazi_special_rights_tax_collector_flavor_desc: "Bojovníci víry a pohraničí, gházi vybírají příjmy z kořisti a zbojstva a vedou nekonečnou válku proti náboženským nepřátelům státu."
+  government_can_raid_rule: "#indent_newline:3 [government|E] umožňuje [raiding|E] cizích [counties|E] za účelem získání [loot|E]#!"
+  government_can_use_subject_men_at_arms: "Může najmout [men_at_arms|E] od [vassals|E] a [tributaries|E]"
+  government_can_use_tributary_men_at_arms: "Může #V verbovat#! [men_at_arms|E] od [tributaries|E]"
+  government_has_influence: "Používá [influence_i|E][influence|E]"
+  government_has_powerful_families: "Umožňuje [noble_families|E]"
+  government_has_title_men_at_arms: "Umožňuje nábor [title_men_at_arms|E]"
+  government_is_administrative: "Má přístup k [estate|E]"
+  government_is_clan: "Používá [tax_jurisdictions|E]"
+  government_is_feudal: "Používá [vassal_contracts|E]"
+  government_is_herder: "Nelze hrát"
+  government_is_holy_order: "Nelze hrát"
+  government_is_landless_adventurer: "Má přístup k [camp|E]"
+  government_is_mercenary: "Nelze hrát"
+  government_is_nomadic: "Má [herd|E]"
+  government_is_not_republic_or_admin_desc: "[government|E] #bold není#! [GetGovernment('republic_government').GetName] nebo [GetGovernment('administrative_government').GetName]"
+  government_is_republic: "Nelze hrát"
+  government_is_theocracy: "Nelze hrát"
+  government_is_tribal: "Je kmenového typu [government|E]"
+  harmonious: "Harmonický"
+  harmonious_desc: "Rod v dokonalé harmonii. Členové rodu dělají, co mohou, aby stáli při sobě a navzájem si kdykoli pomohli."
+  has_detailed_ledgers_perk: "[liege|E] má [GetPerk( 'detailed_ledgers_perk' ).GetName( GetPlayer )]"
+  has_house_unity_parameter: "Má $PARAMETER_NAME$"
+  herd_tax_exempt: "$game_concept_herd$ Osvobozeno"
+  herd_tax_exempt_short: "Osvobozeno"
+  herd_tax_extortionate: "Vyděračské $game_concept_herd$"
+  herd_tax_extortionate_short: "Vyděračské"
+  herd_tax_high: "Vysoké $game_concept_herd$"
+  herd_tax_high_short: "Vysoké"
+  herd_tax_low: "Nízké $game_concept_herd$"
+  herd_tax_low_short: "Nízké"
+  herd_tax_normal: "Normální $game_concept_herd$"
+  herd_tax_normal_short: "Normální"
+  herder_government: "Chovatel"
+  herder_government_adjective: "Pastýřský"
+  herder_government_desc: "\n$game_concept_herder_desc$\n\n#F Pastýři se nezabývají žádnými aspekty vlády. Starají se o svá stáda, a jen o stáda.#!"
+  herder_government_realm: "Pastviny"
+  herder_government_vassals_label: "Pastýřské [obligations|E] nelze upravit"
+  herder_government_with_icon: "@government_type_herder! $herder_government$"
+  herder_vassal: "Pastýř"
+  herder_vassal_desc: "$game_concept_herder_desc$"
+  holy_order_government: "Svatý řád"
+  holy_order_government_adjective: "Řád"
+  holy_order_government_desc: "\nSvatí válečníci řádů zasvětili svůj život boji proti nevěřícím a službě své víře. Mohou držet hrady udělené jim zbožnými držiteli půdy. Vůdce řádu je volen uvnitř řádu."
+  holy_order_government_realm: "Řád"
+  holy_order_government_with_icon: "@government_type_holy_order! $holy_order_government$"
+  house_unity_can_create_cadet_branches_tt: "[house_unity|E] je @dynasty_house_unity_antagonistic! $antagonistic$"
+  house_unity_parameter_unity_antagonistic_cb_cost: "[casus_belli|E] Náklady: @war_icon!#P [EmptyScope.ScriptValue('unity_antagonistic_cb_cost_display_value')|0]%#!"
+  house_unity_parameter_unity_can_challenge_house_head: "Členové [house|E] mohou vyzvat svého [house_head|E] a pokusit se ho nahradit"
+  house_unity_parameter_unity_can_create_cadet_branches: "[independent|E] členové [house|E] mohou vytvořit [cadet_branches|E]"
+  house_unity_parameter_unity_competitive_cb_cost: "[casus_belli|E] Náklady: @war_icon!#P [EmptyScope.ScriptValue('unity_competitive_cb_cost_display_value')|0]%#!"
+  house_unity_parameter_unity_disable_invasions: "[rulers|E] nemohou použít Invasion [casus_belli|E]"
+  house_unity_parameter_unity_friendly_cb_cost: "[casus_belli|E] Náklady: @war_icon!#N +[EmptyScope.ScriptValue('unity_friendly_cb_cost_display_value')|0]%#!"
+  house_unity_parameter_unity_harmonious_cb_cost: "[casus_belli|E] Náklady: @war_icon!#N +[EmptyScope.ScriptValue('unity_harmonious_cb_cost_display_value')|0]%#!"
+  house_unity_parameter_unity_has_liberate_house_members_cb: "Odemkne [fp3_free_house_member_cb|E] [casus_belli|E]"
+  house_unity_parameter_unity_has_unify_house_cb: "Odemkne [fp3_unify_house_cb|E] [casus_belli|E]"
+  house_unity_parameter_unity_less_likely_factions: "[house|E] [vassals|E] jsou #P méně pravděpodobní#! vytvořit [factions|E]"
+  house_unity_parameter_unity_lower_prestige_requirements: "Všechny [casus_bellis|E] vyžadující konkrétní [prestige_level|E] vyžadují o jednu úroveň méně"
+  house_unity_parameter_unity_more_likely_claimant_factions: "[house|E] [vassals|E] jsou #N více pravděpodobní#! vytvořit [claimant_factions|E]"
+  house_unity_parameter_unity_multiple_invasions: "[rulers|E] mohou použít [GetCasusBelliType('invasion_war').GetName] [casus_belli|E] jednou každých [EmptyScope.ScriptValue('unity_antagonistic_invasion_cooldown_value')|V0]#! let"
+  house_unity_parameter_unity_significantly_less_likely_factions: "[house|E] [vassals|E] jsou #P výrazně méně pravděpodobní#! vytvořit [factions|E]"
+  house_unity_parameter_unity_significantly_more_likely_claimant_factions: "[house|E] [vassals|E] jsou #N výrazně častěji#! náchylní k vytvoření [claimant_factions|E]"
+  house_unity_parameter_unity_succession_clan_antagonistic_partition_succession: "[house_succession_law|E] je [GetLaw('clan_antagonistic_partition_succession_law').GetName]"
+  house_unity_parameter_unity_succession_clan_competitive_partition_succession: "[house_succession_law|E] je [GetLaw('clan_competitive_partition_succession_law').GetName]"
+  house_unity_parameter_unity_succession_clan_friendly_partition_succession: "[house_succession_law|E] je [GetLaw('clan_friendly_partition_succession_law').GetName]"
+  house_unity_parameter_unity_succession_clan_harmonious_partition_succession: "[house_succession_law|E] je [GetLaw('clan_harmonious_partition_succession_law').GetName]"
+  house_unity_parameter_unity_succession_clan_impassive_partition_succession: "[house_succession_law|E] je [GetLaw('clan_impassive_partition_succession_law').GetName]"
+  house_unity_parameter_unity_unlimited_invasions: "[rulers|E] mají neomezený přístup k [GetCasusBelliType('invasion_war').GetName] [casus_belli|E], který nahrazuje jakýkoli běžný Invasion Casus Belli"
+  house_unity_parameter_unity_unlock_befriend_scheme: "Členové [house|E] se mohou [GetScheme('befriend').GetTypeName] navzájem"
+  house_unity_parameter_unity_unlock_fabricate_hooks: "Členové [house|E] mohou používat [GetScheme('fabricate_hook').GetTypeName] [scheme|E] proti sobě"
+  house_unity_parameter_unity_war_opinion: "[victory|E], [white_peace|E] a [defeat|E] mají různé efekty na [house|E] [vassal|E] [opinion|E]"
+  house_unity_parameter_vassal_house_members_more_upset_without_alliance: "Postih 'No [alliance|E]' v [opinion|E] je u [vassals|E] ze stejného [house|E] vyšší"
+  ignores_faith_marriage_penalties: "#indent_newline:3 Ignoruje [faith|E] při sjednávání [marriages|E] s [GetGovernment( 'nomad_government' ).GetName] nebo [GetGovernment( 'herder_government' ).GetName] [rulers|E] nebo jejich [tributaries|E]#!"
+  impassive: "Lhostejný"
+  impassive_desc: "Proč plýtvat časem a energií staráním se o to, co dělají ostatní členové rodu? Tito členové se většinou starají především o sebe."
+  iqta_special_rights_tax_collector: "Udělení iqta"
+  iqta_special_rights_tax_collector_desc: "[vassal|E] má nižší povinnosti, ale pomáhá přispívat [men_at_arms|E] pro [liege|E]."
+  iqta_special_rights_tax_collector_flavor_desc: "Iqta je systém daňového farmářství, kde jsou místním magnátům uděleny široké pravomoci vybírat daně v zastoupení státu."
+  is_nomad_title: "Je to [GetGovernment( 'nomad_government' ).GetName] Camp [title|E]"
+  jizya_special_rights: "$jizya_special_rights_tax_collector$"
+  jizya_special_rights_default: "Výchozí $jizya_special_rights$"
+  jizya_special_rights_default_short: "Výchozí"
+  jizya_special_rights_granted: "Uplatněno $jizya_special_rights$"
+  jizya_special_rights_granted_desc: "$jizya_special_rights_tax_collector_desc$"
+  jizya_special_rights_granted_short: "Uděleno"
+  jizya_special_rights_tax_collector: "Status džizji"
+  jizya_special_rights_tax_collector_desc: "#emphasis #bold [vassal|E] Práva:#!#!\n$EFFECT_LIST_BULLET$ [liege|E] nemůže požadovat [demand_conversion|E] od [vassal|E]\n[liege|E] nemůže použít [convert_county|E] na území [vassals|E]\n$EFFECT_LIST_BULLET$ [liege|E] nemůže použít [faith|E] jako důvod k vyhnutí se [tyranny|E] při odnímání titulů\n$EFFECT_LIST_BULLET$ [liege|E] nemůže odňít [vassals_possessive|E] [titles|E]\n\n#flavor [vassal|E] má zaručené vlastnictví svých [titles], čímž se brání [liege|E] v jejich odnětí – bez ohledu na to, zda $game_concept_liege$ má [revoke_title_reason|E] či nikoliv.\n\n$game_concept_vassal$ je také uděleno zvláštní chráněné postavení, přičemž království oficiálně uznává jejich právo praktikovat vlastní [faith|E].#!"
+  jizya_special_rights_tax_collector_flavor_desc: "Džizja je zvláštní daň uložená #italic dhimmis#!, náboženským menšinám, výměnou za výsadu vykonávat své odlišné vyznání v míru."
+  kurultai_rights: "Práva Kurultaje"
+  kurultai_rights_guaranteed: "$kurultai_rights$ zaručeno"
+  kurultai_rights_guaranteed_desc: "#emphasis #bold [vassal|E] Právo:#!#!\n$EFFECT_LIST_BULLET$ #high $force_onto_council$#! [interaction|E] lze používat dle libosti\n\n#flavor [vassal] získává zvláštní [kurultai|E] výsady a bude očekávat trvalé místo v [kurultai|E]. Udělení tohoto práva příliš mnoha [vassals] nakonec rozladí [powerful_vassals] [realm|E].#!"
+  kurultai_rights_guaranteed_short: "Zaručeno"
+  kurultai_rights_none: "Žádná $kurultai_rights$"
+  kurultai_rights_none_desc: "#flavor [vassal] není uděleno žádné mimořádné privilegium, pokud jde o [kurultai|E].#!"
+  kurultai_rights_none_short: "Žádné"
+  land_raiding_movement_speed_from_government: "$MOD_MOVEMENT_SPEED_LAND_RAIDING$: #P +10%#!"
+  landless_adventurer_government: "Dobrodruh"
+  landless_adventurer_government_adjective: "Dobrodružný"
+  landless_adventurer_government_desc: "\n$game_concept_adventurer_desc$"
+  landless_adventurer_government_realm: "Tábor dobrodruhů"
+  landless_adventurer_government_with_icon: "@government_type_adventurer! $landless_adventurer_government$"
+  liege_war_participation_obligation: "Podpora suzeréna ve válce"
+  liege_war_participation_obligation_forced: "Vynucená $liege_war_participation_obligation$"
+  liege_war_participation_obligation_forced_desc: "#emphasis #bold [vassal|E] Právo:#!#!\n$EFFECT_LIST_BULLET$ [vassal|E] může použít $call_ally_interaction$ [interaction|E] na [liege|E]\n\n.#flavor Odmítnutí povede ke ztrátě [prestige|E] pro [liege|E] a [vassal|E] přestane být [obedient|E], pokud jím byl předtím.#!"
+  liege_war_participation_obligation_forced_short: "Vynucená"
+  liege_war_participation_obligation_none: "Žádná $liege_war_participation_obligation$"
+  liege_war_participation_obligation_none_desc: "#flavor [liege|E] se nepřipojí k válkám [vassal|E].#!"
+  liege_war_participation_obligation_none_short: "Žádná"
+  maguh_special_rights_tax_collector: "Status maguh"
+  maguh_special_rights_tax_collector_flavor_desc: "Starý sásánovský způsob okresní správy; maguh podporují místní rozvoj výměnou za snížené daně státu."
+  marriage_favor_rights: "Právo přednosti při sňatku"
+  marriage_favor_rights_default: "Výchozí $marriage_favor_rights$"
+  marriage_favor_rights_default_short: "Výchozí"
+  marriage_favor_rights_granted: "Udělené $marriage_favor_rights$"
+  marriage_favor_rights_granted_desc: "#emphasis #bold [vassal|E] Právo:#!#!\n$EFFECT_LIST_BULLET$ [liege|E] se zavazuje uzavírat sňatky členů své blízké rodiny za účelem aliance dříve, než je spojí s kýmkoli jiným\n\n#flavor [vassal|E] je mezi oblíbenými [liege|E] a měl by být schopen uzavřít alianci prostřednictvím sňatku.#!"
+  marriage_favor_rights_granted_short: "Uděleno"
+  may_appoint_viziers: "Může jmenovat [viziers|E]"
+  may_elevate_co_monarch: "#indent_newline:3 Umožňuje [rulers|E] alespoň [kingdom|E]-[title_tier|E] povýšit [co_monarch|E] z řad dospělých [children|E]#!"
+  mercenary_government: "Žoldnéřská společnost"
+  mercenary_government_adjective: "Žoldnéřská společnost"
+  mercenary_government_desc: "\nŽoldnéřské společnosti se pohybují po zemích hledajíce zaměstnání a berou zbraň tomu, kdo nabídne nejvíce. Loajalita je pro dobrou pověst zásadní, ale trvá jen do konce smlouvy. Vůdce žoldnéřské společnosti je volen z řad společnosti."
+  mercenary_government_realm: "Žoldnéřská společnost"
+  mercenary_government_with_icon: "@government_type_mercenary! $mercenary_government$"
+  mercenary_rule: "mohou být najati, aby sloužili jako [mercenaries|E] [landed|E] [rulers|E]"
+  movement_speed_from_government: "$MOD_MOVEMENT_SPEED$: #P +10%#!"
+  muqata_special_rights_tax_collector: "Status muqata"
+  muqata_special_rights_tax_collector_flavor_desc: "Muqata je daňový systém, kde jsou vzdáleným oblastem dána větší autonomie a nižší daně, aby se podpořila stabilita a dlouhodobý rozvoj."
+  no_hostile_attrition_in_steppe: "#indent_newline:3 Žádné #V nepřátelské okresní#! [attrition|E] při [raiding|E] v [the_great_steppe|E]#!"
+  nomad_government: "Nomádský"
+  nomad_government_adjective: "Nomádský"
+  nomad_government_desc: "\n$game_concept_nomadic_desc$\n\n#F Pro nomády je pohyb způsobem života. Hlavní starostí je zajistit, aby stádo mohlo růst. Každý vládce je silný jen tolik, kolik je síla jeho lidu.#!"
+  nomad_government_herd: "[herd|U] Desátky"
+  nomad_government_prestige: "[GetGovernment( 'nomad_government' ).GetNameNoTooltip] [prestige|U]"
+  nomad_government_realm: "Nomádská země"
+  nomad_government_taxes: "[GetGovernment( 'nomad_government' ).GetNameNoTooltip] [taxes|U]"
+  nomad_government_vassals_label: "Nomádské [obligations|E] jsou založeny na [vassal|E] [vassal_contract|E]"
+  nomad_government_with_icon: "@government_type_nomad! $nomad_government$"
+  nomad_prestige_high: "Vysoký příspěvek k $game_concept_prestige$"
+  nomad_prestige_high_short: "Vysoké"
+  nomad_prestige_none: "Bez příspěvku"
+  nomad_prestige_none_short: "Žádné"
+  nomad_prestige_normal: "Částečný příspěvek k $game_concept_prestige$"
+  nomad_prestige_normal_short: "Nízké"
+  nomad_tax_exempt: "[tax|E] Osvobozen"
+  nomad_tax_exempt_short: "Osvobozen"
+  nomad_tax_extortionate: "Vyděračské $game_concept_taxes$"
+  nomad_tax_extortionate_short: "Vyděračské"
+  nomad_tax_high: "Vysoké $game_concept_taxes$"
+  nomad_tax_high_short: "Vysoké"
+  nomad_tax_low: "Nízké $game_concept_taxes$"
+  nomad_tax_low_short: "Nízké"
+  nomad_tax_normal: "Střední $game_concept_taxes$"
+  nomad_tax_normal_short: "Střední"
+  nomad_vassal: "Nomádský"
+  nomad_vassal_desc: "V rámci Nomádského [government_form|E] poskytuje [nomad|E] část [herd|E] svému [liege|E] výměnou za půdu a ochranu. Podrobnosti upravuje [vassal_contract|E] mezi vazalem a suzerénem."
+  not_has_house_unity_parameter: "Nemá přístup k $PARAMETER_NAME$"
+  prestige_transfer_high: "Vysoký přenos $game_concept_prestige$"
+  prestige_transfer_high_short: "Vysoký"
+  prestige_transfer_none: "Žádný přenos $game_concept_prestige$"
+  prestige_transfer_none_short: "Žádný"
+  prestige_transfer_normal: "Nízký přenos $game_concept_prestige$"
+  prestige_transfer_normal_short: "Nízký"
+  religious_rights: "Náboženská práva"
+  religious_rights_none: "Nábožensky nechráněn"
+  religious_rights_none_short: "Nechráněn"
+  religious_rights_protected: "Nábožensky chráněn"
+  religious_rights_protected_desc: "#emphasis #bold [vassal|E] Práva:#!#!\n$EFFECT_LIST_BULLET$ [liege|E] nemůže požadovat [demand_conversion|E] od [vassal|E]\n[liege|E] nemůže použít [convert_county|E] na území [vassals|E]\n$EFFECT_LIST_BULLET$ [liege|E] nemůže použít [faith|E] jako důvod k vyhnutí se [tyranny|E] při odnímání titulů\n\n#flavor [vassal|E] získává zvláštní chráněné postavení, přičemž království oficiálně uznává jejich právo praktikovat vlastní [faith|E].#!"
+  religious_rights_protected_short: "Chráněn"
+  republic_government: "Republika"
+  republic_government_adjective: "Republikánský"
+  republic_government_desc: "\n$game_concept_republic_desc$\n\n#F Města jsou spravována privilegovanými občany buržovské vrstvy, z nichž je jeden zvolen jako starosta. Ač má starosta značný vliv, závisí na popularitě, aby byl znovuzvolen.#!"
+  republic_government_obligations: "Republikánské [obligations|E]"
+  republic_government_realm: "Republika"
+  republic_government_vassals_label: "Republikánské [obligations|E] jsou u všech republikánských [vassals|E] stejné"
+  republic_government_with_icon: "@government_type_republic! $republic_government$"
+  republic_vassal: "Republika"
+  republic_vassal_desc: "$game_concept_republic_desc$"
+  republican_vassals_pay_more_parameter: "Z [liege|E] [culture_traditions|E]"
+  scutage: "Scutage"
+  scutage_disabled: "$scutage$ $scutage_disabled_short$"
+  scutage_disabled_short: "Zakázáno"
+  scutage_enabled: "$scutage$ $scutage_enabled_short$"
+  scutage_enabled_short: "Povoleno"
+  scutage_levies_overwrite_postfix: " #weak (overwrites)#!"
+  search_administors_decision.tt: "Až tři [characters|E] různé dovednosti se připojí k vašemu [court|E]"
+  special_contract: "#color_black [Concept( 'vassal_contract', 'Special Contract' )|BU]#!"
+  special_contract_castellan: "Smlouva kastelána"
+  special_contract_castellan_desc: "#flavor Pokud jsou podřízeni $special_contract_castellan$, [vassal|E] obdrží bonusy ke svým [levies] a obranným schopnostem. Poskytují #high [EmptyScope.ScriptValue('march_contract_taxes_tooltip')|0]%#! méně [tax|E], ale #high [EmptyScope.ScriptValue('castellan_contract_levies_tooltip')|0]%#! více [levy|E], než jak ukládá jejich $feudal_government_taxes$ [obligation|E].#!"
+  special_contract_castellan_short: "Kastelán"
+  special_contract_march: "Pohraniční smlouva"
+  special_contract_march_border_trigger: "[vassal.GetName] nesousedí s cizím [realm|E]"
+  special_contract_march_desc: "#flavor Pokud je [vassal|E] podřízen $special_contract_march$, získá bonusy ke svým [levies] a obranným schopnostem, ale poskytuje o #high [EmptyScope.ScriptValue('march_contract_taxes_tooltip')|0]%#! méně [tax|E], než jak určuje jejich $feudal_government_taxes$ [obligation|E].#!"
+  special_contract_march_short: "Pohraniční"
+  special_contract_none: "Žádná zvláštní smlouva"
+  special_contract_none_short: "Žádné"
+  special_contract_palatinate: "Palatinská smlouva"
+  special_contract_palatinate_desc: "#flavor Pokud je [vassal|E] podřízen $special_contract_palatinate$, požívá v rámci říše mnoha privilegií, která zvyšují jeho postavení a dávají mu větší politický vliv. $special_contract_palatinate_short$ [vassals|E] zvyšují [prestige|E] svého [liege|E], ale poskytují o #high [EmptyScope.ScriptValue('palatinate_contract_taxes_tooltip')|0]%#! méně [tax|E] a [levies|E], než jak určují jejich $feudal_government_taxes$ a $feudal_government_levies$ [obligations|E].#!"
+  special_contract_palatinate_short: "Palatinský"
+  special_contract_scutage: "Smlouva o scutage"
+  special_contract_scutage_desc: "#flavor Pokud je [vassal|E] podřízen $special_contract_scutage$, zaplatí o #high [EmptyScope.ScriptValue('scutage_contract_tax_tooltip')|0]%#! více [tax|E], než jak určuje jejich $feudal_government_taxes$ [obligation|E], přičemž zároveň poskytne o #high [EmptyScope.ScriptValue('scutage_contract_levies_tooltip')|0]%#! méně [levies|E], než jak určuje jejich $feudal_government_levies$ [obligation|E].#!"
+  special_contract_scutage_short: "Scutage"
+  steer_unity_notification_title: "[house_head|E] změnil [unity|E]"
+  steer_unity_towards_antagonistic_desc: "Využijte svou pozici [house_head|E] a nasměrujte svou [house_unity|E] směrem k #V $antagonistic$#!"
+  steer_unity_towards_antagonistic_name: "Nasměrujte rod směrem k #V $antagonistic$#!\n#low Snižuje [house_unity|E]#!"
+  steer_unity_towards_antagonistic_passive_loss_tt: "[house_unity|E] #N se snižuje#! ročně po následujících #V 10#! letech"
+  steer_unity_towards_antagonistic_toast: "[ROOT.Char.GetShortUINameNoTooltip|U] nasměroval [house_unity|E] směrem k $antagonistic$"
+  steer_unity_towards_antagonistic_tooltip: "$unity_steer_house_direction_decision_second_tooltip$"
+  steer_unity_towards_antagonistic_tt: "#X Váš [house|E] již má #V $antagonistic$#! [house_unity_level|E]#!"
+  steer_unity_towards_harmonious_desc: "Využijte svou pozici [house_head|E] a nasměrujte svou [house_unity|E] směrem k #V $harmonious$#!"
+  steer_unity_towards_harmonious_name: "Nasměrujte rod směrem k #V $harmonious$#!\n#low Zvyšuje [house_unity|E]#!"
+  steer_unity_towards_harmonious_passive_gain_tt: "[house_unity|E] #P se zvyšuje#! ročně po následujících #V 10#! letech"
+  steer_unity_towards_harmonious_toast: "[ROOT.Char.GetShortUINameNoTooltip|U] nasměroval [house_unity|E] směrem k $harmonious$"
+  steer_unity_towards_harmonious_tooltip: "$unity_steer_house_direction_decision_second_tooltip$"
+  steer_unity_towards_harmonious_tt: "#X Váš [house|E] již má #V $harmonious$#! [house_unity_level|E]#!"
+  strict_taxation_tax_collector: "Zakat"
+  strict_taxation_tax_collector_flavor_desc: "Zakat je daň z bohatství, obvykle uvalená na majetné jako prostředek k získání dodatečných příjmů pro stát a k pomoci potřebným."
+  succession_rights: "Práva dědění"
+  succession_rights_default: "Výchozí $succession_rights$"
+  succession_rights_default_short: "Výchozí"
+  succession_rights_forced_partition: "Vynucené dělení"
+  succession_rights_forced_partition_desc: "#emphasis #bold [vassal|E] Omezení:#!#!\n$EFFECT_LIST_BULLET$ [vassal|E] nesmí mít žádný [succession_law|E] jiný než Partition\n$EFFECT_LIST_BULLET$ [vassal|E] přepne své [succession_law|E] na Partition\n$EFFECT_LIST_BULLET$ [vassal|E] platí #high [EmptyScope.ScriptValue('succession_rights_contract_law_cost_tooltip')|0]%#! více [prestige|E] za změnu [laws|E]\n\n#flavor [vassal|E] je nucen nikdy nemít jinou formu následnictví než Partition pro své [realm|E]. Administrativní překážka navíc zvyšuje náklady [vassals] [law] o #high [EmptyScope.ScriptValue('succession_rights_contract_law_cost_tooltip')|0]%.#!#!"
+  succession_rights_forced_partition_short: "Vynucené dělení"
+  suzerain_war_participation_guarantee: "Garance suzeréna"
+  suzerain_war_participation_guarantee_available: "$suzerain_war_participation_guarantee$"
+  suzerain_war_participation_guarantee_available_desc: "#emphasis #bold [tributary|E] Právo:#!#!\n$EFFECT_LIST_BULLET$ Pokud je napaden, [tributary|E] může použít $call_ally_interaction$ [interaction|E] na [suzerain|E].\n\n#flavor Odmítnutí povede ke ztrátě [prestige|E] pro [suzerain|E] a [tributary|E] bude propuštěn.#!"
+  suzerain_war_participation_guarantee_available_short: "Zaručeno"
+  suzerain_war_participation_guarantee_none: "Žádná $suzerain_war_participation_guarantee$"
+  suzerain_war_participation_guarantee_none_desc: "#flavor [suzerain|E] nemůže být povolán do obranných válek [tributary|E], ale může nabídnout, že se připojí.#!"
+  suzerain_war_participation_guarantee_none_short: "Žádná"
+  theocracy_government: "Teokracie"
+  theocracy_government_adjective: "Teokratický"
+  theocracy_government_desc: "\n$game_concept_theocracy_desc$\n\n#F V teokratické vládě veškerá autorita náleží náboženské instituci. Vládne kněz nebo kněžka, kteří vykonávají vůli božstva na Zemi.#!"
+  theocracy_government_obligations: "Teokratické [obligations|E]"
+  theocracy_government_realm: "Teokracie"
+  theocracy_government_vassal_contribution_piety_level: "[liege|E] je [GetPietyLevelName(liege.GetPietyLevel)|L]"
+  theocracy_government_vassal_contribution_wrong_faith: "@warning_icon! #X [liege|E] má nesprávné [faith|E]#!"
+  theocracy_government_vassals_label: "Teokratické [obligations|E] vycházejí z [piety_level|E] [liege|E]"
+  theocracy_government_with_icon: "@government_type_theocracy! $theocracy_government$"
+  theocracy_vassal: "Teokracie"
+  theocracy_vassal_desc: "$game_concept_theocracy_desc$"
+  title_revocation_rights: "Odnímání titulů"
+  title_revocation_rights_default: "Výchozí $title_revocation_rights$"
+  title_revocation_rights_default_short: "Výchozí"
+  title_revocation_rights_protected: "Chráněná $title_revocation_rights$"
+  title_revocation_rights_protected_desc: "#emphasis #bold [vassal|E] Právo:#!#!\n$EFFECT_LIST_BULLET$ [liege|E] nemůže odňít [vassals_possessive|E] [titles|E]\n\n#flavor [vassal] má zaručené vlastnictví svých [titles], což zabraňuje [liege|E] je odňít – bez ohledu na to, zda má [liege|E] [revoke_title_reason] nebo ne.#!"
+  title_revocation_rights_protected_short: "Chráněno"
+  tribal_government: "Kmen"
+  tribal_government_adjective: "Kmenový"
+  tribal_government_desc: "\n$game_concept_tribal_desc$\n\n#F V kmeni znamená síla vše. Kmenový vůdce závisí na respektu a slávě spíše než na mincích, aby rozvíjel své panství a posiloval armády.#!"
+  tribal_government_obligations: "Z [liege|E] [prestige_level|E]"
+  tribal_government_realm: "Kmen"
+  tribal_government_vassals_label: "Kmenové [obligations|E] vycházejí z [prestige_level|E] [liege|E]"
+  tribal_government_with_icon: "@government_type_tribal! $tribal_government$"
+  tribal_liege_inefficiency: "[liege|E] je [tribal|E]"
+  tribal_liege_inefficiency_plus_perk: "[liege|E] je [tribal|E] a má [GetPerk( 'detailed_ledgers_perk' ).GetName( GetPlayer )]"
+  tribal_vassal: "Kmenový"
+  tribal_vassal_desc: "$game_concept_tribal_desc$"
+  tributary_levies_exempt: "Žádné [levies|e]"
+  tributary_levies_exempt_short: "Žádné"
+  tributary_levies_high: "Vysoké [levies|e]"
+  tributary_levies_high_short: "Vysoké"
+  tributary_levies_low: "Nízké [levies|e]"
+  tributary_levies_low_short: "Nízké"
+  tributary_tax_high: "Vysoké [taxes|E]"
+  tributary_tax_high_short: "Vysoké"
+  tributary_tax_low: "Nízké [taxes|E]"
+  tributary_tax_low_short: "Nízké"
+  tributary_tax_none: "Žádné [taxes|E]"
+  tributary_tax_none_short: "Žádné"
+  tributary_war_participation_obligation: "Podpora tributáře ve válce"
+  tributary_war_participation_obligation_forced: "Vynucená $tributary_war_participation_obligation$"
+  tributary_war_participation_obligation_forced_desc: "#emphasis #bold [suzerain|E] Výsada:#!#!\n[tributary|E] bude automaticky povolán do válek [suzerain|E]."
+  tributary_war_participation_obligation_forced_short: "Vynucená"
+  tributary_war_participation_obligation_none: "Žádná $tributary_war_participation_obligation$"
+  tributary_war_participation_obligation_none_desc: "#flavor [tributary|E] se automaticky nepřipojí k válkám [suzerain|E], ale může nabídnout, že se připojí.#!"
+  tributary_war_participation_obligation_none_short: "Žádná"
+  unity_consult_house_decision.tt_cooldown: "Již jste konzultoval členy svého [house|E]"
+  unity_consult_house_decision.tt_house_council_bonus: "Základní postup a vliv [skill|E] na [councillor_tasks|E] je zvýšen o #P +10%#! pro členy [house|E] sloužící ve vaší [council|E]"
+  unity_consult_house_decision.tt_lifetime: "To zůstane aktivní, dokud váš charakter nezemře"
+  unity_consult_house_decision.tt_no_unity_change: "Přiřazování členů [house|E] do vaší [council|E] a jejich odvolávání již neovlivňuje [house_unity|E]"
+  unity_consult_house_decision: "Konzultovat členy rodu"
+  unity_consult_house_decision_confirm: "Konzultovat členy rodu"
+  unity_consult_house_decision_desc: "Jednotná rada je schopná jednat rychle a bezpečně. S malým konzultováním mohu zajistit, že členové mého rodu budou efektivnější ve svých rolích radních."
+  unity_consult_house_decision_tooltip: "Nasměrujte členy svého rodu, aby se stali efektivnějšími radními"
+  unity_consulted_house_member_desc: "Konzultovaný člen rodu"
+  unity_educate_youth_in_madrasas_decision.t_houses_of_worship: "[ROOT.Char.GetFaith.HouseOfWorshipPlural|U]"
+  unity_educate_youth_in_madrasas_decision.t_intro: "Vzdělávat mládež v"
+  unity_educate_youth_in_madrasas_decision.t_madrasas: "Madrasách"
+  unity_educate_youth_in_madrasas_decision.tt_intro: "Všichni mladí"
+  unity_educate_youth_in_madrasas_decision.tt_men: "$unity_educate_youth_in_madrasas_decision.tt_intro$ $loc_men$ $unity_educate_youth_in_madrasas_decision.tt_outro$"
+  unity_educate_youth_in_madrasas_decision.tt_num_intro: "Aktuálně, #V [SCOPE.ScriptValue('number_of_madrasa_pupils')]#!"
+  unity_educate_youth_in_madrasas_decision.tt_num_men: "$unity_educate_youth_in_madrasas_decision.tt_num_intro$ young men $unity_educate_youth_in_madrasas_decision.tt_num_outro$"
+  unity_educate_youth_in_madrasas_decision.tt_num_outro: "ve vašem hlavním městě by z tohoto rozhodnutí měli prospěch"
+  unity_educate_youth_in_madrasas_decision.tt_num_people: "$unity_educate_youth_in_madrasas_decision.tt_num_intro$ youths $unity_educate_youth_in_madrasas_decision.tt_num_outro$"
+  unity_educate_youth_in_madrasas_decision.tt_num_women: "$unity_educate_youth_in_madrasas_decision.tt_num_intro$ young women $unity_educate_youth_in_madrasas_decision.tt_num_outro$"
+  unity_educate_youth_in_madrasas_decision.tt_outro: "žijící ve vašem [capital|E] mají během následujících 20 let šanci zvýšit svůj [learning|E] [skill|E] a získat [GetTrait('lifestyle_physician').GetName(GetNullCharacter)] [experience|E]"
+  unity_educate_youth_in_madrasas_decision.tt_people: "$unity_educate_youth_in_madrasas_decision.tt_intro$ $people$ $unity_educate_youth_in_madrasas_decision.tt_outro$"
+  unity_educate_youth_in_madrasas_decision.tt_women: "$unity_educate_youth_in_madrasas_decision.tt_intro$ $women$ $unity_educate_youth_in_madrasas_decision.tt_outro$"
+  unity_educate_youth_in_madrasas_decision_confirm: "Informujte [ROOT.Char.GetFaith.PriestNeuterPlural]"
+  unity_educate_youth_in_madrasas_decision_desc_intro: "Mír v říši nechal mladé"
+  unity_educate_youth_in_madrasas_decision_desc_outro: "z [ROOT.Char.GetCapitalLocation.GetTitle.GetNameNoTierNoTooltip] bez činnosti a cíle. Mohl bych místo toho zřídit školy v [ROOT.Char.GetFaith.HouseOfWorshipPlural], které by těmto mladým vyučovaly filozofii a lékařství ve volném čase."
+  unity_educate_youth_in_madrasas_decision_tooltip: "Vzdělávejte mládež v hlavním městě v oblasti filozofie a medicíny"
+  unity_encourage_house_economy_decision: "Povzbuďte rod ke zlepšení ekonomiky"
+  unity_encourage_house_economy_decision_confirm: "Podpořit silnější ekonomiku!"
+  unity_encourage_house_economy_decision_desc: "Říše je tak schopná, jak schopná je země, na které je postavena. Musím zajistit, aby všichni členové rodu měli možnost utrácet potřebné prostředky na vybudování silnější říše."
+  unity_encourage_house_economy_decision_tooltip: "Nasměrujte členy svého rodu, aby se soustředili na ekonomiku"
+  unity_establish_futuwaa_lodges_decision.tt_intro: "Všichni svobodní mladí"
+  unity_establish_futuwaa_lodges_decision.tt_men: "$unity_establish_futuwaa_lodges_decision.tt_intro$ $loc_men$ $unity_establish_futuwaa_lodges_decision.tt_outro$"
+  unity_establish_futuwaa_lodges_decision.tt_num_intro: "Aktuálně, #V [SCOPE.ScriptValue('number_of_futuwaa_members')]#!"
+  unity_establish_futuwaa_lodges_decision.tt_num_men: "$unity_establish_futuwaa_lodges_decision.tt_num_intro$ young men $unity_establish_futuwaa_lodges_decision.tt_num_outro$"
+  unity_establish_futuwaa_lodges_decision.tt_num_outro: "ve vašem hlavním městě by z tohoto rozhodnutí měli prospěch"
+  unity_establish_futuwaa_lodges_decision.tt_num_people: "$unity_establish_futuwaa_lodges_decision.tt_num_intro$ youths $unity_establish_futuwaa_lodges_decision.tt_num_outro$"
+  unity_establish_futuwaa_lodges_decision.tt_num_women: "$unity_establish_futuwaa_lodges_decision.tt_num_intro$ young women $unity_establish_futuwaa_lodges_decision.tt_num_outro$"
+  unity_establish_futuwaa_lodges_decision.tt_outro: "žijící ve vašem [capital|E] mají během následujících 20 let šanci zvýšit své [martial|E] a [prowess|E] [skills|E] a získat [virtuous|E] [trait|E]"
+  unity_establish_futuwaa_lodges_decision.tt_people: "$unity_establish_futuwaa_lodges_decision.tt_intro$ $people$ $unity_establish_futuwaa_lodges_decision.tt_outro$"
+  unity_establish_futuwaa_lodges_decision.tt_women: "$unity_establish_futuwaa_lodges_decision.tt_intro$ $women$ $unity_establish_futuwaa_lodges_decision.tt_outro$"
+  unity_establish_futuwaa_lodges_decision: "Zřídit futuwaa lóže"
+  unity_establish_futuwaa_lodges_decision_confirm: "Sponzorovat lóže"
+  unity_establish_futuwaa_lodges_decision_desc_intro: "Mladí"
+  unity_establish_futuwaa_lodges_decision_desc_outro: "z [ROOT.Char.GetCapitalLocation.GetTitle.GetNameNoTierNoTooltip], kterým chybí vhodné vyžití, se po hlavním městě potulují v improvizovaných gangách. Mohl bych místo toho zřídit #italic futuwaa#! lóže po celém hlavním městě, aby v době nečinnosti pěstovaly bojové dovednosti a morálku."
+  unity_establish_futuwaa_lodges_decision_tooltip: "Podporovat ctnosti a zdatnost u mládeže ve vašem hlavním městě"
+  unity_establish_network_decision: "Zavést síť intrik"
+  unity_establish_network_decision_confirm: "Vydat a spálit edikt"
+  unity_establish_network_decision_desc: "Členové mého rodu jsou každý svým způsobem mazaní. Díky mému vedení můžeme vytvořit pavučinu intrik, která chytí i ty nejprohnanější cizince."
+  unity_establish_network_decision_tooltip: "Získat členy svého rodu na ochranu proti nepřátelským intrikám a k provádění vlastních plánů"
+  unity_has_liberate_house_members_cb_name: "[fp3_free_house_member_cb|E]"
+  unity_has_unify_house_cb_name: "[fp3_unify_house_cb|E]"
+  unity_improve_logistics_decision: "Požadovat sdílenou vojenskou logistiku"
+  unity_improve_logistics_decision_confirm: "Požadovat sdílenou logistiku"
+  unity_improve_logistics_decision_desc: "Války rozhoduje mnoho různých faktorů. Dobrá logistika a zásoby jsou stejně důležité jako schopní vojáci. Mohu v rámci rodu prosadit nové politiky a požadovat, aby všichni sdíleli zásoby a vybavení, čímž výrazně zvýšíme schopnosti armády."
+  unity_improve_logistics_decision_tooltip: "Vyžadujte od členů svého rodu sdílení logistiky a zásob, aby lépe vyhovovaly potřebám armády"
+  unity_improve_taxation_decision: "Zlepšit zdanění"
+  unity_improve_taxation_decision_confirm: "Uspořádáme schůzku"
+  unity_improve_taxation_decision_desc: "Můj rod má mnoho členů, kteří jsou efektivní ve vybírání daní a správě říše. Sdílením nápadů a schopných lidí můžeme všichni profitovat z vyšších příjmů."
+  unity_improve_taxation_decision_tooltip: "Spolupracujte s členy svého rodu na zlepšení výběru daní a příjmů říše"
+  unity_organize_house_for_war_decision: "Organizovat členy rodu k válce"
+  unity_organize_house_for_war_decision_confirm: "Podporovat válku a konflikty!"
+  unity_organize_house_for_war_decision_desc: "Zlepšení říše vyžaduje oddanost a často také spoustu dobyvačných válek. Vydáváním konkrétních ediktů a vedením členů rodu je mohu přimět k větší ochotě vést války a dobývat nová území."
+  unity_organize_house_for_war_decision_tooltip: "Nasměrujte členy svého rodu k častějším válečným tažením"
+  unity_placate_vassals_decision: "Uklidnit vazaly"
+  unity_placate_vassals_decision_confirm: "Uklidnit vazaly"
+  unity_placate_vassals_decision_desc: "I harmonický dvůr čelí zkouškám. Využitím svého vlivu jako hlavy rodu mohu uhladit tyto společenské šrámy dříve, než se promění v trhliny."
+  unity_placate_vassals_decision_tooltip: "Připomeňte členům svého rodu svou autoritu jako jejich vrchnosti"
+  unity_promote_development_decision: "Podpořit rozvoj"
+  unity_promote_development_decision_confirm: "Podporovat rozvoj"
+  unity_promote_development_decision_desc: "Naše kultura má dlouhou historii vynikajících administrativních schopností. V našem rodu působí mnoho zdatných dozorců a správců. Můžeme toho využít ve svůj prospěch a dále rozvíjet říši."
+  unity_promote_development_decision_tooltip: "Podporujte členy svého rodu, aby rozvíjeli a zlepšovali říši"
+  unity_reinforce_army_decision: "Posílit armádu loajálními důstojníky"
+  unity_reinforce_army_decision_confirm: "Vydat rozkazy."
+  unity_reinforce_army_decision_desc: "Armáda je jen tak silná jako důstojníci, kteří ji vedou. Když požádám členy svého rodu o zkušené vojáky, získám přístup k vojákům s bohatými zkušenostmi. Můžu je povýšit do velitelských pozic v mé armádě, čímž zvýším efektivitu jednotek. Všichni členové přispívají našemu rodu pro společné dobro a z toho všichni profitují!"
+  unity_reinforce_army_decision_tooltip: "Požádejte členy svého rodu, aby vám poslali schopné důstojníky"
+  unity_search_for_administrators_decision.msg.desc: "Nový administrátor jménem [new_administrator.GetName] dorazil na váš dvůr a je připraven k zaměstnání."
+  unity_search_for_administrators_decision.msg.t: "Administrátor dorazil"
+  unity_search_for_administrators_decision: "Hledat výběrčí daní"
+  unity_search_for_administrators_decision_confirm: "Nařídit pátrání"
+  unity_search_for_administrators_decision_desc: "Daně jsou páteří každé říše. Stojí za to věnovat čas hledání schopných správců a bývalých vojáků, které zaměstnáme jako výběrčí daní."
+  unity_search_for_administrators_decision_tooltip: "Hledejte schopné administrátory a vojáky, abyste posílili řady výběrčích daní"
+  unity_send_bailiffs_decision: "Poslat úředníky"
+  unity_send_bailiffs_decision_confirm: "Poslat pro úředníky"
+  unity_send_bailiffs_decision_desc: "Mohu využít spolupracujícího postoje členů svého rodu tím, že k nim pošlu své úředníky, aby vynucovali mé rozkazy a udržovali pořádek v celé říši."
+  unity_send_bailiffs_decision_tooltip: "Spolupracujte s členy svého rodu, aby se zvýšila kontrola v říši"
+  unity_steer_house_direction_decision: "Nasměrovat jednotu rodu"
+  unity_steer_house_direction_decision_confirm: "$unity_steer_house_direction_decision$"
+  unity_steer_house_direction_decision_desc: "Jako hlava rodu má má slova velkou váhu mezi členy rodu. Pečlivými slovy a činy mohu nenápadně přimět své spolurodiny k určitému chování, což výrazně ovlivní naši společnou jednotu."
+  unity_steer_house_direction_decision_second_tooltip: "$DESC$\n"
+  unity_steer_house_direction_decision_tooltip: "Vyberte směr, kterým nasměrujete svou [house_unity|E]"
+  unlock_jizya_contract_name: "[GetFaithDoctrine('tenet_tax_nonbelievers').GetBaseName] [core_tenet|E]"
+  wage_war_allowed_external: "Povoleny vnější války"
+  wage_war_allowed_external_short: "Vnější"
+  wage_war_allowed_internal: "Povoleny vnitřní války"
+  wage_war_allowed_internal_short: "Vnitřní"
+  wage_war_disallowed: "Vasalské války zakázány"
+  wage_war_disallowed_short: "Zakázáno"
+  wage_war_realm_law: "Války podle zákonů říše"
+  wage_war_realm_law_short: "Podle říše"
+  war_declaration_rights: "Vyhlašování válek"
+  war_declaration_rights_allowed: "Schválená $war_declaration_rights$"
+  war_declaration_rights_allowed_desc: "#emphasis #bold [vassal|E] Práva:#!#!\n$EFFECT_LIST_BULLET$ [vassal|E] může vyhlašovat [war|E] bez ohledu na [liege|E]'s [crown_authority|E]\n$EFFECT_LIST_BULLET$ [vassal|E] platí #high [EmptyScope.ScriptValue('war_declaration_rights_allowed_cost_reduction_tooltip')|0]%#! méně za [casus_bellis|E] v rámci [realm|E]\n\n#flavor [vassal] nemusí utrácet [hook], pokud jim [lieges] [crown_authority] zabrání vést válku. Toto zvláštní zacházení také usnadňuje [vassal] vyhlašování válek uvnitř [realm|E], snižuje náklady o #high [EmptyScope.ScriptValue('war_declaration_rights_allowed_cost_reduction_tooltip')|0]%#!.#!"
+  war_declaration_rights_allowed_short: "Schváleno"
+  war_declaration_rights_default: "Výchozí $war_declaration_rights$"
+  war_declaration_rights_default_short: "Výchozí"
+  government_is_wanua: "Umožňuje [barter_goods_i][bartering|E]" # todo: NEW TRANSLATION
+  use_prestige_to_buy_maa: "Používá [prestige|E] k nákupu [men_at_arms|E]" # todo: NEW TRANSLATION
+  government_is_celestial: "Má přístup k [estate|E] a [top_liege|E] má [mandate_of_heaven|E]" # todo: NEW TRANSLATION
+  government_is_mandala: "Používá [mandala|E] #V [GetBuilding('mandala_capital_01').GetTypeName]#! [great_project|E] a [great_building|E]" # todo: NEW TRANSLATION
+  government_is_japan_feudal: "$government_is_japan_administrative$" # todo: NEW TRANSLATION
+  government_is_japan_administrative: "Má přístup k [manor|E], [blocs|E] a [house_aspirations|E]" # todo: NEW TRANSLATION
+  government_is_meritocratic: "Má přístup k [estate|E]" # todo: CHANGED
+  government_is_steppe_admin: "Má přístup k [estate|E] a používá [obedience|E]" # todo: CHANGED
+  government_has_merit: "Používá [merit_i|E][merit|E]" # todo: NEW TRANSLATION
+  government_has_treasury: "Používá [treasury_i|E][treasury|E]" # todo: NEW TRANSLATION
+  government_ignores_rightful_liege_penalties: "Ignoruje penalizace za to, že není právoplatný vrchní pán" # todo: NEW TRANSLATION
+  government_is_bureaucratic: "Je [government_bureaucratic_type|E]" # todo: NEW TRANSLATION
+  house_unity_parameter_unity_enable_border_wars: "[independent|E] členové [house|E] #V [GetLawGroup('border_wars_laws').GetName]#! jsou uzamčeni na [GetLaw('top_liege_not_redirected_to_border_wars_law').GetName] [title_law|E]" # todo: NEW TRANSLATION
+  mandala_government_piety: "[mandala|U] $game_concept_piety$" # todo: NEW TRANSLATION
+  mandala_piety_low: "Nízký příspěvek $game_concept_piety$" # todo: NEW TRANSLATION
+  mandala_piety_low_short: "Nízký" # todo: NEW TRANSLATION
+  mandala_piety_normal: "Normální příspěvek $game_concept_piety$" # todo: NEW TRANSLATION
+  mandala_piety_normal_short: "Normální" # todo: NEW TRANSLATION
+  mandala_piety_high: "Vysoký příspěvek $game_concept_piety$" # todo: NEW TRANSLATION
+  mandala_piety_high_short: "Vysoký" # todo: NEW TRANSLATION
+  mandala_government_taxes: "[mandala|U] Daně" # todo: NEW TRANSLATION
+  mandala_tax_exempt: "Osvobozeno od daní" # todo: NEW TRANSLATION
+  mandala_tax_exempt_short: "Osvobozeno" # todo: NEW TRANSLATION
+  mandala_tax_low: "Nízké daně" # todo: NEW TRANSLATION
+  mandala_tax_low_short: "Nízké" # todo: NEW TRANSLATION
+  mandala_tax_normal: "Normální daně" # todo: NEW TRANSLATION
+  mandala_tax_normal_short: "Normální" # todo: NEW TRANSLATION
+  mandala_tax_high: "Vysoké daně" # todo: NEW TRANSLATION
+  mandala_tax_high_short: "Vysoké" # todo: NEW TRANSLATION
+  mandala_tax_extortionate: "Vykořisťující daně" # todo: NEW TRANSLATION
+  mandala_tax_extortionate_short: "Vykořisťující" # todo: NEW TRANSLATION
+  mandala_government_levies: "[mandala|U] $game_concept_levies$" # todo: NEW TRANSLATION
+  mandala_levies_exempt: "Žádný příspěvek" # todo: NEW TRANSLATION
+  mandala_levies_exempt_short: "Žádný" # todo: NEW TRANSLATION
+  mandala_levies_low: "Nízký příspěvek $game_concept_levy$" # todo: NEW TRANSLATION
+  mandala_levies_low_short: "Nízký" # todo: NEW TRANSLATION
+  mandala_levies_medium: "Střední příspěvek $game_concept_levy$" # todo: NEW TRANSLATION
+  mandala_levies_medium_short: "Střední" # todo: NEW TRANSLATION
+  mandala_levies_high: "Vysoký příspěvek $game_concept_levy$" # todo: NEW TRANSLATION
+  mandala_levies_high_short: "Vysoký" # todo: NEW TRANSLATION
+  mandala_levies_extortionate: "Obrovský příspěvek $game_concept_levy$" # todo: NEW TRANSLATION
+  mandala_levies_extortionate_short: "Obrovský" # todo: NEW TRANSLATION
+  mandala_government_prestige: "[mandala|U] $game_concept_prestige$" # todo: NEW TRANSLATION
+  mandala_prestige_low: "Nízký příspěvek $game_concept_prestige$" # todo: NEW TRANSLATION
+  mandala_prestige_low_short: "Nízký" # todo: NEW TRANSLATION
+  mandala_prestige_normal: "Normální příspěvek $game_concept_prestige$" # todo: NEW TRANSLATION
+  mandala_prestige_normal_short: "Normální" # todo: NEW TRANSLATION
+  mandala_prestige_high: "Vysoký příspěvek $game_concept_prestige$" # todo: NEW TRANSLATION
+  mandala_prestige_high_short: "Vysoký" # todo: NEW TRANSLATION
+  mandala_suzerain_war_participation_guarantee: "$suzerain_war_participation_guarantee$" # todo: NEW TRANSLATION
+  mandala_suzerain_war_participation_guarantee_none: "$suzerain_war_participation_guarantee_none$" # todo: NEW TRANSLATION
+  mandala_suzerain_war_participation_guarantee_none_desc: "$suzerain_war_participation_guarantee_none_desc$" # todo: NEW TRANSLATION
+  mandala_suzerain_war_participation_guarantee_none_short: "$suzerain_war_participation_guarantee_none_short$" # todo: NEW TRANSLATION
+  mandala_suzerain_war_participation_guarantee_available: "$suzerain_war_participation_guarantee_available$" # todo: NEW TRANSLATION
+  mandala_suzerain_war_participation_guarantee_available_desc: "$suzerain_war_participation_guarantee_available_desc$" # todo: NEW TRANSLATION
+  mandala_suzerain_war_participation_guarantee_available_short: "$suzerain_war_participation_guarantee_available_short$" # todo: NEW TRANSLATION
+  raiding_rights: "Práva na nájezdy" # todo: NEW TRANSLATION
+  raiding_rights_none: "Žádná $raiding_rights$" # todo: NEW TRANSLATION
+  raiding_rights_none_desc: "#flavor Tento [vassal|E] nemůže nájezdovat na žádné jiné vazaly.#!" # todo: NEW TRANSLATION
+  raiding_rights_none_short: "Žádné" # todo: NEW TRANSLATION
+  raiding_rights_granted: "$raiding_rights$ povolena" # todo: NEW TRANSLATION
+  raiding_rights_granted_desc: "#emphasis #bold [vassal|E] Oprávnění:#!#!\n$EFFECT_LIST_BULLET$ [vassal|E] smí nájezdovat na jiné stejné vazaly\n\n#flavor Omezující pravidla týkající se nájezdů na ostatní [vassals|E] jsou zrušena a vazal může cílit na jakéhokoli jiného rovnocenného vazala.#!" # todo: NEW TRANSLATION
+  raiding_rights_granted_short: "Povoleno" # todo: NEW TRANSLATION
+  mandala_government: "Mandala" # todo: NEW TRANSLATION
+  mandala_government_with_icon: "@government_type_mandala! $mandala_government$" # todo: NEW TRANSLATION
+  mandala_government_adjective: "Mandala" # todo: NEW TRANSLATION
+  mandala_government_realm: "Mandalská říše" # todo: NEW TRANSLATION
+  mandala_government_desc: "\n$game_concept_mandala_desc$\n\n#F Okvětní lístky vlády Mandaly mohou uvadat a hynout, ale v jádru stojí božské právo, ztělesněné v Devarajovi. Dosti ambiciózní vládce může učinit Mandalu trvalou, #EMP věčně#!. #!" # todo: NEW TRANSLATION
+  mandala_vassal: "Mandala" # todo: NEW TRANSLATION
+  mandala_vassal_desc: "$game_concept_mandala_desc$" # todo: NEW TRANSLATION
+  liege_piety_level_desc: "Vaše [piety_level|E] je [GetPietyLevelName(liege.GetPietyLevel)|L]" # todo: NEW TRANSLATION
+  suzerain_piety_level_desc: "Vaše [piety_level|E] je [GetPietyLevelName(suzerain.GetPietyLevel)|L]" # todo: NEW TRANSLATION
+  has_coerce_tributary_scheme: "Může použít [GetScheme('coerce_tributary').GetTypeName] [scheme|E]" # todo: NEW TRANSLATION
+  additional_piety_from_religious_buildings: "Získává dodatečné [piety|E] z výstavby [pious_buildings|E] a [temple_citadels|E]" # todo: NEW TRANSLATION
+  can_perform_ritual_contracts: "Province říše a [subjects|E] občas vyvolávají [mandala_rituals|E]" # todo: NEW TRANSLATION
+  uses_mandala_aspects: "Používá [mandala_aspects|E]" # todo: NEW TRANSLATION
+  uses_mandala_decrees: "Používá [mandala_decrees|E]" # todo: NEW TRANSLATION
+  devaraja_blessings_msg: "Požehnání Devarajy na vás září" # todo: NEW TRANSLATION
+  devaraja_divinity_msg: "Vaši stoupenci Devarajy vás zbožňují" # todo: NEW TRANSLATION
+  celestial_obligations: "Nebeské povinnosti" # todo: NEW TRANSLATION
+  celestial_provinces: "$administrative_themes$" # todo: NEW TRANSLATION
+  celestial_province_standard: "@celestial_standard_administration! Standardní správa" # todo: NEW TRANSLATION
+  celestial_province_standard_short: "Standardní" # todo: NEW TRANSLATION
+  celestial_province_standard_text_icon: "@celestial_standard_administration!" # todo: NEW TRANSLATION
+  celestial_province_standard_benefits: "#emphasis #bold Výhody pro [vassal|E]:#!#!\nPoužívá [GetLaw('celestial_appointment_succession_law').GetName]" # todo: NEW TRANSLATION
+  celestial_province_standard_desc: "#low Civilní správa, která se stará o každodenní potřeby vlády a místních obyvatel#!" # todo: NEW TRANSLATION
+  celestial_province_industrial: "@celestial_industrial_administration! Průmyslová správa" # todo: NEW TRANSLATION
+  celestial_province_industrial_short: "Průmyslová" # todo: NEW TRANSLATION
+  celestial_province_industrial_text_icon: "@celestial_industrial_administration!" # todo: NEW TRANSLATION
+  celestial_province_industrial_benefits: "#emphasis #bold Výhody pro [vassal|E]:#!#!\nPoužívá [GetLaw('celestial_appointment_succession_law').GetName]\n\n#alert_trial @alert_icon! Omezeno na [EmptyScope.ScriptValue('celestial_province_industrial_max_value')|V0]#!" # todo: NEW TRANSLATION
+  celestial_province_industrial_desc: "#low Civilní správa zaměřená na zlepšení produktivity oblasti a dlouhodobého rozvoje.#!" # todo: NEW TRANSLATION
+  celestial_province_industrial_amount_desc: "$celestial_province_industrial_short$ limit dosažen" # todo: NEW TRANSLATION
+  celestial_province_metropolitan: "@celestial_metropolitan_administration! Metropolitní správa" # todo: NEW TRANSLATION
+  celestial_province_metropolitan_short: "Metropolitní" # todo: NEW TRANSLATION
+  celestial_province_metropolitan_text_icon: "@celestial_metropolitan_administration!" # todo: NEW TRANSLATION
+  celestial_province_metropolitan_benefits: "#emphasis #bold Výhody pro [vassal|E]:#!#!\n$EFFECT_LIST_BULLET$ Zvyšuje [governor_efficiency|E] podle [diplomacy|E]#indent_newline:4 \n#weak Přidává navíc [EmptyScope.ScriptValue('efficiency_skill_increase_value')|+1%/] za každý bod [skill|E]#!#!\n$EFFECT_LIST_BULLET$ Používá [GetLaw('celestial_appointment_succession_law').GetName]\n\n#alert_trial @alert_icon! Omezeno na [EmptyScope.ScriptValue('celestial_province_metropolitan_max_value')|V0]#!" # todo: NEW TRANSLATION
+  celestial_province_metropolitan_desc: "#low Efektivní civilní správa používaná ve větších městských oblastech. Silně se zaměřuje na efektivní využití daní a prosperitu měst.#!" # todo: NEW TRANSLATION
+  celestial_province_metropolitan_amount_desc: "$celestial_province_metropolitan_short$ limit dosažen" # todo: NEW TRANSLATION
+  celestial_province_military: "@celestial_military_administration! Vojenská správa" # todo: NEW TRANSLATION
+  celestial_province_military_short: "Vojenská" # todo: NEW TRANSLATION
+  celestial_province_military_text_icon: "@celestial_military_administration!" # todo: NEW TRANSLATION
+  celestial_province_military_benefits: "#emphasis #bold [vassal|E] Výhody:#!#!\n$EFFECT_LIST_BULLET$ Může najmout [GetMaA('zhanmadao_infantry').GetName]\n$EFFECT_LIST_BULLET$ Používá [GetLaw('celestial_military_appointment_succession_law').GetName]\n\n#alert_trial @alert_icon! Omezeno na [EmptyScope.ScriptValue('celestial_province_military_max_value')|V0] na této úrovni#!"
+  celestial_province_military_desc: "#low Vojenská správa umožňující shromažďování vojsk. Poskytuje říši prostředky k obraně nebo k rozšíření hranic, když je to nutné.#!" # todo: NEW TRANSLATION
+  celestial_province_military_amount_desc: "$celestial_province_military_short$ limit dosažen" # todo: NEW TRANSLATION
+  celestial_province_protectorate: "@celestial_protectorate_administration! Protektorátní správa" # todo: NEW TRANSLATION
+  celestial_province_protectorate_short: "Protektorát" # todo: NEW TRANSLATION
+  celestial_province_protectorate_text_icon: "@celestial_protectorate_administration!" # todo: NEW TRANSLATION
+  celestial_province_protectorate_benefits: "#emphasis #bold Výhody pro [liege|E]:#!#!\n$EFFECT_LIST_BULLET$ Odemkne #high $frontier_influence_war_interaction$#! [interaction|E], která umožňuje vrchnímu pánu požádat [vassal|E], aby vyhlásil válku kvůli cizímu [duchy|E]-stupňovému [title|E]\n\n#emphasis #bold Výhody pro [vassal|E]:#!#!\n$EFFECT_LIST_BULLET$ Zvyšuje [governor_efficiency|E] podle [martial|E]#indent_newline:4 \n#weak Přidává navíc [EmptyScope.ScriptValue('efficiency_skill_increase_value')|+1%/] za každý bod [skill|E]#!#!\n$EFFECT_LIST_BULLET$ Může najímat [GetMaA('zhanmadao_infantry').GetName]\n$EFFECT_LIST_BULLET$ Používá [GetLaw('celestial_military_appointment_succession_law').GetName]\n\n#alert_trial @alert_icon! Omezeno na [EmptyScope.ScriptValue('celestial_province_protectorate_max_value')|V0]#!" # todo: NEW TRANSLATION
+  celestial_province_protectorate_desc: "#low Výrazně vylepšená vojenská správa. Protektorát výrazně posílí naši vojenskou sílu!#!" # todo: NEW TRANSLATION
+  celestial_province_protectorate_amount_desc: "$celestial_province_protectorate_short$ limit dosažen" # todo: NEW TRANSLATION
+  celestial_province_de_jure_desc: "Není #bold [de_jure|E] [title|E]" # todo: NEW TRANSLATION
+  celestial_province_metropolitan_name_desc: "[GetSubjectContractType( 'celestial_provinces' ).GetObligationName( 'celestial_province_metropolitan' )]" # todo: NEW TRANSLATION
+  celestial_province_protectorate_name_desc: "[GetSubjectContractType( 'celestial_provinces' ).GetObligationName( 'celestial_province_protectorate' )]" # todo: NEW TRANSLATION
+  celestial_government_vassals_label: "[celestial|E] [obligations|E] jsou založeny na [GetPlayer.Custom('GetProvinceAdministrationConcept')]" # todo: NEW TRANSLATION
+  celestial_ministry_obligations: "[ministry_obligations|E]" # todo: NEW TRANSLATION
+  celestial_minister_none: "Žádný" # todo: NEW TRANSLATION
+  celestial_minister_none_short: "$celestial_minister_none$" # todo: NEW TRANSLATION
+  celestial_minister_civil: "Povinnosti ministerstva" # todo: NEW TRANSLATION
+  celestial_minister_civil_short: "Ministerstvo" # todo: NEW TRANSLATION
+  celestial_minister_military: "Povinnosti velkého maršála" # todo: NEW TRANSLATION
+  celestial_minister_military_short: "Velký maršál" # todo: NEW TRANSLATION
+  wanua_government: "Wanua" # todo: NEW TRANSLATION
+  wanua_government_with_icon: "@government_type_wanua! $wanua_government$" # todo: NEW TRANSLATION
+  wanua_government_adjective: "Wanua" # todo: NEW TRANSLATION
+  wanua_government_realm: "Wanua říše" # todo: NEW TRANSLATION
+  wanua_government_desc: "\n$game_concept_wanua_desc$\n\n#F Ze svých pobřežních sídel mohou vládci [Glossary( 'Wanua', 'WANUA_GLOSS' )] přeplouvat moře a vyměňovat zboží či nájezdovat mnohem efektivněji než jejich kontinentální $tribal_government_adjective$ protějšky.#!" # todo: NEW TRANSLATION
+  WANUA_GLOSS: "Soustava malých vesnic a venkovských komunit v námořní jihovýchodní Asii se často nazývá #italic Wanua#!, #italic Banwa#!, #italic Manua#! a mnoha dalšími jazykovými variantami malajského kořene." # todo: NEW TRANSLATION
+  wanua_government_obligations: "$tribal_government_obligations$" # todo: NEW TRANSLATION
+  wanua_government_vassals_label: "$wanua_government_adjective$ [obligations|E] jsou založeny na [prestige_level|E] [liege|E]" # todo: NEW TRANSLATION
+  wanua_liege_inefficiency_plus_perk: "[liege|E] je [wanua|E] a má [GetPerk( 'detailed_ledgers_perk' ).GetName( GetPlayer )]" # todo: NEW TRANSLATION
+  wanua_liege_inefficiency: "[liege|E] je [wanua|E]" # todo: NEW TRANSLATION
+  wanua_vassal: "$wanua_government_adjective$" # todo: NEW TRANSLATION
+  wanua_vassal_desc: "$game_concept_wanua_desc$" # todo: NEW TRANSLATION
+  government_enables_trade_ports: "#indent_newline:3 Umožňuje stavbu řady #V $building_type_common_tradeport_01$#! [buildings|E] v pobřežních [wanua|E] [holdings|E]#!" # todo: NEW TRANSLATION
+  government_enables_river_travel: "#indent_newline:3 $unlocks_sailable_major_rivers$#!" # todo: NEW TRANSLATION
+  government_enables_naval_raiding: "#indent_newline:3 $unlocks_naval_raiding$#!" # todo: NEW TRANSLATION
+  celestial_treasury: "[treasury_vassal_development|E]" # todo: NEW TRANSLATION
+  celestial_treasury_very_low: "Velmi nízký $game_concept_treasury_vassal_development$" # todo: NEW TRANSLATION
+  celestial_treasury_very_low_short: "Velmi nízký" # todo: NEW TRANSLATION
+  celestial_treasury_low: "Nízký $game_concept_treasury_vassal_development$" # todo: NEW TRANSLATION
+  celestial_treasury_low_short: "Nízký" # todo: NEW TRANSLATION
+  celestial_treasury_medium: "Střední $game_concept_treasury_vassal_development$" # todo: NEW TRANSLATION
+  celestial_treasury_medium_short: "Střední" # todo: NEW TRANSLATION
+  celestial_treasury_high: "Vysoký $game_concept_treasury_vassal_development$" # todo: NEW TRANSLATION
+  celestial_treasury_high_short: "Vysoký" # todo: NEW TRANSLATION
+  celestial_treasury_very_high: "Velmi vysoký $game_concept_treasury_vassal_development$" # todo: NEW TRANSLATION
+  celestial_treasury_very_high_short: "Velmi vysoký" # todo: NEW TRANSLATION
+  celestial_salary: "[governor_salary|E]" # todo: NEW TRANSLATION
+  celestial_salary_very_low: "Bídný plat" # todo: NEW TRANSLATION
+  celestial_salary_very_low_short: "Bídný" # todo: NEW TRANSLATION
+  celestial_salary_low: "Skromný plat" # todo: NEW TRANSLATION
+  celestial_salary_low_short: "Skromný" # todo: NEW TRANSLATION
+  celestial_salary_medium: "Průměrný plat" # todo: NEW TRANSLATION
+  celestial_salary_medium_short: "Průměrný" # todo: NEW TRANSLATION
+  celestial_salary_high: "Štědrý plat" # todo: NEW TRANSLATION
+  celestial_salary_high_short: "Štědrý" # todo: NEW TRANSLATION
+  celestial_salary_very_high: "Rozmařilý plat" # todo: NEW TRANSLATION
+  celestial_salary_very_high_short: "Rozmařilý" # todo: NEW TRANSLATION
+  salary: "$celestial_salary$" # todo: NEW TRANSLATION
+  salary_very_low: "$celestial_salary_very_low$" # todo: NEW TRANSLATION
+  salary_very_low_short: "$celestial_salary_very_low$" # todo: NEW TRANSLATION
+  salary_low: "$celestial_salary_low$" # todo: NEW TRANSLATION
+  salary_low_short: "$celestial_salary_low_short$" # todo: NEW TRANSLATION
+  salary_medium: "$celestial_salary_medium$" # todo: NEW TRANSLATION
+  salary_medium_short: "$celestial_salary_medium_short$" # todo: NEW TRANSLATION
+  salary_high: "$celestial_salary_high$" # todo: NEW TRANSLATION
+  salary_high_short: "$celestial_salary_high_short$" # todo: NEW TRANSLATION
+  salary_very_high: "$celestial_salary_very_high$" # todo: NEW TRANSLATION
+  salary_very_high_short: "$celestial_salary_very_high_short$" # todo: NEW TRANSLATION
+  treasury_very_low: "$celestial_treasury_very_low$" # todo: NEW TRANSLATION
+  treasury_very_low_short: "$celestial_treasury_very_low_short$" # todo: NEW TRANSLATION
+  treasury_low: "$celestial_treasury_low$" # todo: NEW TRANSLATION
+  treasury_low_short: "$celestial_treasury_low_short$" # todo: NEW TRANSLATION
+  treasury_medium: "$celestial_treasury_medium$" # todo: NEW TRANSLATION
+  treasury_medium_short: "$celestial_treasury_medium_short$" # todo: NEW TRANSLATION
+  treasury_high: "$celestial_treasury_high$" # todo: NEW TRANSLATION
+  treasury_high_short: "$celestial_treasury_high_short$" # todo: NEW TRANSLATION
+  treasury_very_high: "$celestial_treasury_very_high$" # todo: NEW TRANSLATION
+  treasury_very_high_short: "$celestial_treasury_very_high_short$" # todo: NEW TRANSLATION
+  celestial_ministry_budget: "Rozpočet ministerstva" # todo: NEW TRANSLATION
+  celestial_ministry_budget_low: "Nízký rozpočet" # todo: NEW TRANSLATION
+  celestial_ministry_budget_low_short: "Nízký" # todo: NEW TRANSLATION
+  celestial_ministry_budget_medium: "Střední rozpočet" # todo: NEW TRANSLATION
+  celestial_ministry_budget_medium_short: "Střední" # todo: NEW TRANSLATION
+  celestial_ministry_budget_high: "Vysoký rozpočet" # todo: NEW TRANSLATION
+  celestial_ministry_budget_high_short: "Vysoký" # todo: NEW TRANSLATION
+  tributary_celestial: "Nebeský tributář"
+  tributaries_celestial: "Nebeské tributáře"
+  tributary_celestial_desc: "Nebeský [tributary|E] pravidelně poskytuje svému [suzerain|E] [gold|E] a [prestige|E]. Na oplátku získají [legitimacy|E] od svého [suzerain|E], který se také zdrží [raiding|E] nebo vedení [war|E] proti nim.\n\n$tributaries_celestial$ s vysokým @imperial_grace_icon! [imperial_grace|E] mohou být obdarovány [seal_of_investiture|E] od svého $game_concept_suzerain$, čímž získají další výhody."
+  celestial_tribute_gold: "[gold|U]" # todo: NEW TRANSLATION
+  celestial_tributary_tax_none: "Žádné [taxes|E]" # todo: NEW TRANSLATION
+  celestial_tributary_tax_none_short: "Žádné" # todo: NEW TRANSLATION
+  celestial_tributary_tax_low: "Nízké [taxes|E]" # todo: NEW TRANSLATION
+  celestial_tributary_tax_low_short: "Nízké" # todo: NEW TRANSLATION
+  celestial_tributary_tax_normal: "Střední [taxes|E]" # todo: NEW TRANSLATION
+  celestial_tributary_tax_normal_short: "Střední" # todo: NEW TRANSLATION
+  celestial_tributary_tax_high: "Vysoké [taxes|E]" # todo: NEW TRANSLATION
+  celestial_tributary_tax_high_short: "Vysoké" # todo: NEW TRANSLATION
+  celestial_tribute_prestige: "[prestige|U]" # todo: NEW TRANSLATION
+  celestial_prestige_transfer_none: "Žádný převod $game_concept_prestige$" # todo: NEW TRANSLATION
+  celestial_prestige_transfer_none_short: "Žádný" # todo: NEW TRANSLATION
+  celestial_prestige_transfer_low: "Nízký převod $game_concept_prestige$" # todo: NEW TRANSLATION
+  celestial_prestige_transfer_low_short: "Nízký" # todo: NEW TRANSLATION
+  celestial_prestige_transfer_normal: "Střední převod $game_concept_prestige$" # todo: NEW TRANSLATION
+  celestial_prestige_transfer_normal_short: "Střední" # todo: NEW TRANSLATION
+  celestial_prestige_transfer_high: "Vysoký převod $game_concept_prestige$" # todo: NEW TRANSLATION
+  celestial_prestige_transfer_high_short: "Vysoký" # todo: NEW TRANSLATION
+  celestial_salary_rank: "Platový stupeň" # todo: NEW TRANSLATION
+  celestial_salary_rank_none: "Žádný" # todo: NEW TRANSLATION
+  celestial_salary_rank_none_short: "Žádný" # todo: NEW TRANSLATION
+  celestial_salary_rank_county: "[county|E] [title_tier|E]: Prefektura" # todo: NEW TRANSLATION
+  celestial_salary_rank_county_short: "Prefektura" # todo: NEW TRANSLATION
+  celestial_salary_rank_duchy: "[duchy|E] [title_tier|E]: Provincie" # todo: NEW TRANSLATION
+  celestial_salary_rank_duchy_short: "Provincie" # todo: NEW TRANSLATION
+  celestial_salary_rank_kingdom: "[kingdom|E] [title_tier|E]: Okruh" # todo: NEW TRANSLATION
+  celestial_salary_rank_kingdom_short: "Okruh" # todo: NEW TRANSLATION
+  celestial_salary_rank_empire: "[empire|E] [title_tier|E]: Velký okruh" # todo: NEW TRANSLATION
+  celestial_salary_rank_empire_short: "Velký okruh" # todo: NEW TRANSLATION
+  celestial_salary_rank_minister: "[empire|E] [title_tier|E]: Minister" # todo: NEW TRANSLATION
+  celestial_salary_rank_minister_short: "Minister" # todo: NEW TRANSLATION
+  administrative_salary_rank: "$celestial_salary_rank$" # todo: NEW TRANSLATION
+  administrative_salary_rank_none: "$celestial_salary_rank_none$" # todo: NEW TRANSLATION
+  administrative_salary_rank_none_short: "$celestial_salary_rank_none_short$" # todo: NEW TRANSLATION
+  administrative_salary_rank_duchy: "[duchy|E] [title_tier|E]: Theme" # todo: NEW TRANSLATION
+  administrative_salary_rank_duchy_short: "Téma" # todo: NEW TRANSLATION
+  administrative_salary_rank_kingdom: "[kingdom|E] [title_tier|E]: Catepan" # todo: NEW TRANSLATION
+  administrative_salary_rank_kingdom_short: "Katepán" # todo: NEW TRANSLATION
+  administrative_salary_rank_empire: "[empire|E] [title_tier|E]: Great Catepan" # todo: NEW TRANSLATION
+  administrative_salary_rank_empire_short: "Velký katepán" # todo: NEW TRANSLATION
+  celestial_tributary_investiture_privilege_trade: "Obchodní výsady" # todo: NEW TRANSLATION
+  investiture_trade_yes_short: "Přístup na trhy" # todo: NEW TRANSLATION
+  investiture_trade_yes: "Přístup na císařské trhy" # todo: NEW TRANSLATION
+  investiture_trade_yes_desc: "#emphasis #bold Výsady pro [tributary|E]:#!#!\n$EFFECT_LIST_BULLET$ Roční [development_growth|E] (až do [EmptyScope.ScriptValue('celestial_investiture_trade_bonus_max')|v0]) v [tributary_possessive|E] [capital|E] [province|E]\n\n#flavor Přístup k rušným trhům [GetTitleByKey('h_china').GetDefinitiveNamePossessive] prospívá blahobytu jejich privilegovaných [tributaries|E]. Efekt se zvyšuje s rozdílem v [development|E] mezi $game_concept_capitals$ a množstvím [imperial_grace|E], které si privilegovaný $game_concept_tributary$ nashromáždil.#!" # todo: NEW TRANSLATION
+  investiture_trade_no: "Odříznut od císařských trhů" # todo: NEW TRANSLATION
+  msg_tributary_capital_province_development_growth_title: "Úspěšná obchodní mise" # todo: NEW TRANSLATION
+  msg_tributary_capital_province_development_growth_desc: "Živý obchod s císařskými trhy v [GetTitleByKey('h_china').GetDefinitiveName] zlepšil [development|E] v [ROOT.Char.GetCapitalLocation.GetName]." # todo: NEW TRANSLATION
+  celestial_tributary_investiture_privilege_marriage: "Rodinné výsady" # todo: NEW TRANSLATION
+  investiture_marriage_yes_short: "Přístup do rodiny" # todo: NEW TRANSLATION
+  investiture_marriage_yes: "Pozván do císařské rodiny" # todo: NEW TRANSLATION
+  investiture_marriage_yes_desc: "#emphasis #bold Výsady pro [tributary|E]:#!#!\n$EFFECT_LIST_BULLET$ Zvýšené [marriage|E] Přijetí s [GetTitleByKey('h_china').GetDefinitiveNamePossessive] vládnoucí [dynasty|E]\n$EFFECT_LIST_BULLET$ Zrušeny tresty k přijetí [marriage|E] vyplývající z #BOLD $tradition_cultural_primacy_name$#!\n\n#flavor Císařská rodina [GetTitleByKey('h_china').GetDefinitiveName] je často pro cizince neproniknutelná. Formální pozvání do rodiny poskytuje bonus k Přijetí úměrný [imperial_grace|E] a odstraňuje obvyklé tresty, které se vztahují na cizince.#!" # todo: NEW TRANSLATION
+  investiture_marriage_no: "Bez přístupu k císařské rodině" # todo: NEW TRANSLATION
+  INCREASED_MARRIAGE_ACCEPTANCE_INVESTITURE_MARRIAGE_REASON: "[tributary|E] has $celestial_tributary_investiture_privilege_marriage$: $VALUE|=+0$" # todo: NEW TRANSLATION
+  celestial_tributary_investiture_privilege_politics: "Palácové výsady" # todo: NEW TRANSLATION
+  investiture_politics_yes_short: "Přístup do paláce" # todo: NEW TRANSLATION
+  investiture_politics_yes: "Přístup do císařského paláce" # todo: NEW TRANSLATION
+  investiture_politics_yes_desc: "#emphasis #bold Výsady pro [tributary|E]:#!#!\n$EFFECT_LIST_BULLET$ Stává se aktivním účastníkem [dynastic_cycle|E]\n$EFFECT_LIST_BULLET$ Získává [movement_power|E] v závislosti na [imperial_grace|E]\n\n#flavor Zatímco od většiny [tributaries|E] [GetTitleByKey('h_china').GetDefinitiveName] se očekává pouze pozorování nebeského řádu, některým vyvoleným může být udělen hlas v jeho otáčení. Přístup do císařského paláce zapojuje privilegiovaného $game_concept_tributary$ do $game_concept_dynastic_cycle$, umožňujíc jim připojit se k [movement|E] a ovlivnit jeho [situation_dynastic_cycle_phase|E].#!" # todo: NEW TRANSLATION
+  investiture_politics_no: "Bez přístupu do císařského paláce" # todo: NEW TRANSLATION
+  TRIBUTARY_GAIN_LEGITIMACY: "Tributář získává @legitimacy_icon! za každou [suzerain|E] [radiance|e] [CHARACTER.GetRadianceValueNoTooltip|V0]/[GetDefine( 'NMandala', 'MAX_RADIANCE' )|V0]" # todo: NEW TRANSLATION
+  wanua_obligations: "$tribal_government_obligations$" # todo: NEW TRANSLATION
+  barter_goods_obligations: "[barter_goods|E]" # todo: NEW TRANSLATION
+  barter_goods_low: "Nízké [barter_goods|E]" # todo: NEW TRANSLATION
+  barter_goods_low_short: "Nízké" # todo: NEW TRANSLATION
+  barter_goods_medium: "Střední [barter_goods|E]" # todo: NEW TRANSLATION
+  barter_goods_medium_short: "Střední" # todo: NEW TRANSLATION
+  barter_goods_high: "Vysoké [barter_goods|E]" # todo: NEW TRANSLATION
+  barter_goods_high_short: "Vysoké" # todo: NEW TRANSLATION
+  meritocratic_treasury: "$celestial_treasury$" # todo: NEW TRANSLATION
+  meritocratic_salary: "$celestial_salary$" # todo: NEW TRANSLATION
+  meritocratic_salary_rank: "$celestial_salary_rank$" # todo: NEW TRANSLATION
+  meritocratic_salary_rank_none: "$celestial_salary_rank_none$" # todo: NEW TRANSLATION
+  meritocratic_salary_rank_none_short: "$celestial_salary_rank_none_short$" # todo: NEW TRANSLATION
+  meritocratic_salary_rank_county: "$celestial_salary_rank_county$" # todo: NEW TRANSLATION
+  meritocratic_salary_rank_county_short: "$celestial_salary_rank_county_short$" # todo: NEW TRANSLATION
+  meritocratic_salary_rank_duchy: "$celestial_salary_rank_duchy$" # todo: NEW TRANSLATION
+  meritocratic_salary_rank_duchy_short: "$celestial_salary_rank_duchy_short$" # todo: NEW TRANSLATION
+  meritocratic_salary_rank_kingdom: "$celestial_salary_rank_kingdom$" # todo: NEW TRANSLATION
+  meritocratic_salary_rank_kingdom_short: "$celestial_salary_rank_kingdom_short$" # todo: NEW TRANSLATION
+  meritocratic_salary_rank_empire: "$celestial_salary_rank_empire$" # todo: NEW TRANSLATION
+  meritocratic_salary_rank_empire_short: "$celestial_salary_rank_empire_short$" # todo: NEW TRANSLATION
+  meritocratic_government_vassals_label: "[meritocratic|E] [obligations|E] jsou založeny na [GetPlayer.Custom('GetProvinceAdministrationConcept')]" # todo: NEW TRANSLATION
+  appointment_title_value.county_income: "Příjem z každého drženého [county|E]" # todo: NEW TRANSLATION
+  appointment_title_value.counties: "Každý držený [county|E]" # todo: NEW TRANSLATION
+  appointment_title_value.maa_size: "Velikost [title_men_at_arms|E]" # todo: NEW TRANSLATION
+  appointment_title_value.neighboring_enemy_counties: "Každý sousední nepřátelský [county|E]" # todo: NEW TRANSLATION
+  appointment_title_value.protectorate: "[GetSubjectContractType( 'celestial_provinces' ).GetObligationName( 'celestial_province_protectorate' )]" # todo: NEW TRANSLATION
+  appointment_title_value.capital_income: "[capital_possessive|E] příjem" # todo: NEW TRANSLATION
+  appointment_title_value.diarch: "[grand_secretariat_director|E]" # todo: NEW TRANSLATION
+  appointment_title_value.minister: "[minister|E] [title|E]" # todo: NEW TRANSLATION
+  appointment_title_value.distance_to_capital: "Vzdálenost od [capital|E]" # todo: CHANGED
+  block_same_government_type_vassal_courts: "Vasálové s tímto pravidlem nemohou mít královské dvory, pokud jejich nejvyšší pán má stejné pravidlo" # todo: NEW TRANSLATION
+  liege_is_not_civilian_desc: "[liege.GetShortUIName|U] [CharAreIs( liege )] #bold není#! [civilian_governor|E]" # todo: NEW TRANSLATION
+  liege_is_not_military_desc: "[liege.GetShortUIName|U] [CharAreIs( liege )] #bold není#! [military_governor|E]" # todo: NEW TRANSLATION
+  tributary_hegemonic: "Hegemonický tributární stát" # todo: NEW TRANSLATION
+  tributaries_hegemonic: "Hegemonické tributární státy" # todo: NEW TRANSLATION
+  tributary_hegemonic_desc: "Hegemonický [tributary|E] pravidelně poskytuje svému [suzerain|E] [gold|E] a [prestige|E]. Na oplátku získává [legitimacy|E] od svého [suzerain|E], který se také zdrží [raiding|E] nebo vedení [war|E] proti němu." # todo: NEW TRANSLATION
+  hegemonic_tribute_gold: "[gold|U]" # todo: NEW TRANSLATION
+  hegemonic_tributary_tax_none: "Žádné [taxes|E]" # todo: NEW TRANSLATION
+  hegemonic_tributary_tax_none_short: "Žádné" # todo: NEW TRANSLATION
+  hegemonic_tributary_tax_low: "Nízké [taxes|E]" # todo: NEW TRANSLATION
+  hegemonic_tributary_tax_low_short: "Nízké" # todo: NEW TRANSLATION
+  hegemonic_tributary_tax_normal: "Střední [taxes|E]" # todo: NEW TRANSLATION
+  hegemonic_tributary_tax_normal_short: "Střední" # todo: NEW TRANSLATION
+  hegemonic_tributary_tax_high: "Vysoké [taxes|E]" # todo: NEW TRANSLATION
+  hegemonic_tributary_tax_high_short: "Vysoké" # todo: NEW TRANSLATION
+  hegemonic_tribute_prestige: "[prestige|U]" # todo: NEW TRANSLATION
+  hegemonic_prestige_transfer_none: "Žádný převod $game_concept_prestige$" # todo: NEW TRANSLATION
+  hegemonic_prestige_transfer_none_short: "Žádný" # todo: NEW TRANSLATION
+  hegemonic_prestige_transfer_low: "Nízký převod $game_concept_prestige$" # todo: NEW TRANSLATION
+  hegemonic_prestige_transfer_low_short: "Nízký" # todo: NEW TRANSLATION
+  hegemonic_prestige_transfer_normal: "Střední převod $game_concept_prestige$" # todo: NEW TRANSLATION
+  hegemonic_prestige_transfer_normal_short: "Střední" # todo: NEW TRANSLATION
+  hegemonic_prestige_transfer_high: "Vysoký převod $game_concept_prestige$" # todo: NEW TRANSLATION
+  hegemonic_prestige_transfer_high_short: "Vysoký" # todo: NEW TRANSLATION
+  GOVERNMENT_TYPE_INCOMPATIBLE_WITH_PRIMARY_HOLDING: "[CHARACTER.GetName] primární [holding|E] [HOLDING.GetName] ([HOLDING.GetType.GetName]) v [PROVINCE.GetName] je neslučitelný s [GOVERNMENT_TYPE.GetName] [government|E]" # todo: NEW TRANSLATION
+  suzerain_war_participation_guarantee_tt: "[recipient.GetShortUIName] #bold nemá#! [GetSubjectContractType( 'suzerain_war_participation_guarantee' ).GetObligationName( 'suzerain_war_participation_guarantee_available' )] [tributary_contract|E] právo" # todo: NEW TRANSLATION
+  mandala_government_vassals_label: "Mandala [obligations|E] jsou založeny na [vassal|E] [vassal_contract|E] každého." # todo: NEW TRANSLATION
+  change_to_administrative_holding_tt: "[capital|E] [barony|E] ([THIS.Char.GetCapitalLocation.GetTitle.GetBaseNameNoTier]) se stává [castle|E] [holding|E]" # todo: NEW TRANSLATION
+  change_to_administrative_permafrost_tt: "[THIS.Char.GetCapitalLocation.GetTitle.GetDeJureLiege.GetBaseNameNoTier] [county|E] ztrácí [GetModifier('mpo_siberian_permafrost_modifier').GetNameWithTooltip] [modifier|E]" # todo: NEW TRANSLATION
+  change_to_administrative_permafrost_bad_tt: "[THIS.Char.GetCapitalLocation.GetTitle.GetDeJureLiege.GetBaseNameNoTier] [county|E] ztrácí [GetModifier('mpo_siberian_permafrost_modifier_bad').GetNameWithTooltip] [modifier|E]" # todo: NEW TRANSLATION

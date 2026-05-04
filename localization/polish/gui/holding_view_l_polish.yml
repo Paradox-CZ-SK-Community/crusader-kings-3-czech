@@ -1,6 +1,8 @@
 ﻿l_polish:
  HOLDING_TAX: "[tax|E]:"
  HOLDING_TAX_VALUE: "@gold_icon! [Holding.GetIncome|2]"
+ HOLDING_BARTER_GOODS: "[barter_goods|E]:" # todo: NEW TRANSLATION
+ HOLDING_BARTER_GOODS_VALUE: "@barter_goods_icon! [HoldingView.GetHolding.GetBarterGoodsIncome|1=]" # todo: NEW TRANSLATION
  HOLDING_LOOT: "[raid_loot|E]:"
  HOLDING_LOOT_VALUE: "@loot_icon! [Holding.GetProvince.GetRaidLoot|0V]"
  HOLDING_FORT_LEVEL: "[fort_level|E]"
@@ -17,6 +19,7 @@
  CV_BUILDING_LEVEL_AND_NAME: "Úroveň I: #high [Building.GetNameNoTooltip]#!"
  BUILDING_TYPE_REGULAR: "[building|E]"
  BUILDING_TYPE_SPECIAL: "[special_building|E]"
+ BUILDING_TYPE_GREAT: "[great_building|E]" # todo: NEW TRANSLATION
  BUILDING_TYPE_DUCHY: "[duchy_building|E]"
  CONSTRUCT_HOLDING_TITLE: "#T Postavit [holding|E]#!"
  CANT_CONSTRUCT_HOLDING_NO_AVAILABLE: "#X @warning_icon! Nejsou k dispozici žádné [Concept('holdings','državy')|E] k výstavbě#!"
@@ -53,8 +56,11 @@
  ALREADY_CONSTRUCTED: "@warning_icon! #X $NAME$ již byl postaven#!"
  PREVIOUS_NOT_CONSTRUCTED: "@warning_icon! #X Nejprve musí být postaven $PREVIOUS_NAME$#!"
  HOLDING_TAXES_TOOLTIP_HEADER: "#T Daně#!"
- HOLDING_RAID_INCOME_TOOLTIP_HEADER: "#T Kořist#!"
- HOLDING_RAID_INCOME_TOOLTIP_TOTAL: "Celkem [Concept('raid_loot','kořisti')|E]"
+ HOLDING_INCOME_TOOLTIP_HEADER: "#T Kořist#!" # todo: NEW TRANSLATION
+ HOLDING_INCOME_TOOLTIP_TOTAL: "Celkem [loot|E]" # todo: NEW TRANSLATION
+ HOLDING_BARTER_INCOME_TOOLTIP_HEADER: "#T Kořist#!" # todo: NEW TRANSLATION
+ HOLDING_BARTER_INCOME_TOOLTIP_TOTAL: "Celkem [loot|E]" # todo: NEW TRANSLATION
+ BARTER_TT_MONTHLY_LOOT: "Měsíční [loot|E]" # todo: NEW TRANSLATION
  HOLDING_TAXES_TOOLTIP_PLAYER: "Můj příjem"
  HOLDING_TAXES_TOOLTIP_TOTAL: "Celkem [Concept('tax','daní')|E]"
  HOLDING_LEVIES_TOOLTIP_HEADER: "#T Odvedenci#!"
@@ -108,8 +114,7 @@
  COUNTY_CONTROL_VALUE_DISPLAY: "$VALUE|0$"
  COUNTY_CONTROL_OUT_OF_MAX: "$VALUE|0$/$MAX|0$"
  COUNTY_CONTROL_OUT_OF_MAX_ABSOLUTE: "[absolute_control_short|E]"
- COUNTY_CONTROL_TOOLTIP_HEADERnájemné vojáky: "Nadvláda nad hrabstvím: [County.GetControlLevelOutOfMax]"
-
+ COUNTY_CONTROL_TOOLTIP_HEADER: "nájemné vojáky: "Nadvláda nad hrabstvím: [County.GetControlLevelOutOfMax]"
  COUNTY_CONTROL_NO_EFFECTS: "Žádné aktuální efekty, ale pokud nadvláda klesne pod 100, [levies|El] a [taxes|El] v hrabství budou sníženy"
  COUNTY_CONTROL_NO_EFFECTS_HERD: "Žádné aktuální efekty, ale pokud nadvláda klesne pod 100, měsíční přírůstek [Concept('herd','stáda')|E] v hrabství bude snížen"
  COUNTY_CONTROL_LEVIES_MULT: "@soldier_icon! [levies|E] v hrabství jsou změněny o $MULT|%+0=$"
@@ -165,6 +170,7 @@
  CANT_SET_REALM_CAPITAL_IN_WAR: "#X Nemůžete změnit své [realm_capital|El], zatímco jste ve [Concept('war','válce')|E]#!"
  CANT_SET_REALM_CAPITAL_WHILE_TRAVELING: "#X Nemůžete změnit své [realm_capital|El] během [Concept('traveling','cestování')|E]#!"
  CANT_SET_REALM_CAPITAL_DISABLED_HOLDING: "#X Nemůžete přesunout své [realm_capital|El] do deaktivované [Concept('holding','državy')|E]#!"
+ GOVERNMENT_TYPE_PREVENTS_MOVING_REALM_CAPITAL: "#X [GOVERNMENT_TYPE.GetName] [government|E] vám brání přesunout vaše [realm_capital|E]#!" # todo: NEW TRANSLATION
  CHURCH_PROPERTY_TOOLTIP: "#T [church_property|E]#!\n[lessee|E]: [Title.GetLessee.GetUIName]\n[holder|E]: [Title.GetHolder.GetUIName]"
  HOLDING_VIEW_NO_HOLDER_EFFECTS_FROM_BUILDINGS: "$NO_EFFECTS$"
  HOLDING_TERRAIN_TOOLTIP: "#T [Terrain.GetNameNoTooltip]#!\n[Terrain.GetEffects]"
@@ -194,7 +200,12 @@
  BUILDING_EFFECT_COUNTY_HOLDER_CHARACTER_HEADER: "#low Držitel tohoto hrabství:#!"
  BUILDING_EFFECT_DUCHY_CAPITAL_HEADER: "#low Všechny držby v tomto vévodství:#!"
  BUILDING_CONSTRUCTION_COMPLETE_EFFECT_HEADER: "#low Po dokončení stavby:#!\n"
+ BUILDING_UPGRADE_VIA_GREAT_PROJECT: "#v Toto vám umožní naplánovat projekt \"$ProjectName$\" [great_project|E]#!" # todo: NEW TRANSLATION
+ CONSTRUCT_BUILDING_PLAN_EXPANSION: "Naplánovat rozšíření" # todo: NEW TRANSLATION
+ CONSTRUCT_BUILDING_SEE_UPGRADE_PROJECT: "Zobrazit velký projekt" # todo: NEW TRANSLATION
+ REBUILD_GREAT_BUILDING_BUTTON: "Obnovit" # todo: NEW TRANSLATION
  RAID_TT_NO_LOOT_RAIDED: "@warning_icon! #X Žádná kořist dostupná kvůli nedávnému vyloupení#!"
+ BARTER_TT_NO_LOOT_RAIDED: "@warning_icon! #X Žádná dostupná kořist kvůli nedávným směnným transakcím#!" # todo: NEW TRANSLATION
  HOLDING_VIEW_YOUR_COUNTY: "Vaše [county|El]"
  HOLDING_VIEW_TOP_REALM_COUNTY: "[county|E] ve stejném [realm|El] jako vy"
  HOLDING_VIEW_FOREIGN_COUNTY: "[county|E] v [Character.GetTopLiege.GetPrimaryTitle.GetNameNoTooltip]"
@@ -207,8 +218,8 @@
  HOLDING_SELECTION_VIEW_WRONG_HOLDING_TYPE_INFO_THEOCRATIC: "Chrám bude po dokončení pronajat vašemu [Concept('realm_priest','knězi říše')|E]"
  HOLDING_VIEW_CAN_UPGRADE_BUILDING: "#help Můžete vylepšit tuto [Concept('holding','državu')|E], klikněte pro zobrazení podrobností a zahájení stavby! #!"
  HOLDING_VIEW_CAN_NOT_UPGRADE_BUILDING: "#help V současnosti nemůžete vylepšit tuto [Concept('holding','državu')|E], klikněte pro zobrazení podrobností a možných budoucích vylepšení. #!"
- RAID_TT_MONTHS_OF_RAID_LOOT_MULT: "Měsíce [Concept('raid_loot','kořisti')|E]"
- RAID_TT_MONTHLY_LOOT: "Měsíční [raid_loot|El]"
+ TT_MONTHS_OF_RAID_LOOT_MULT: "Měsíce [loot|E]" # todo: NEW TRANSLATION
+ TT_MONTHLY_LOOT: "Měsíční [loot|E]" # todo: NEW TRANSLATION
  BUILDNING_MODIFIER_FROM_CULTURE: "$BUILDING_NAME$ #weak (z kultury)#!"
  CLICK_TO_VIEW_HOLDING: "#I Klikněte pro zobrazení [Concept('holding','državy')|E]#!"
  DISABLED_LEGEND_PROVINCE_MODIFIERS: "@alert_icon! Modifikátory [barony|E] a [county|El] jsou deaktivovány. [barony|E] musí být v rámci říše promotéra nebo vlastníka [Concept('legend','legendy')|E]"
@@ -248,3 +259,16 @@
  RAZE_HOLDING_COOLDOWN: "@warning_icon! #X Zničení [Province.GetName] je v době obnovy do [Date.GetString]"
  RAZE_HOLDING_DOES_NOT_CONTROL_HOLDING: "@warning_icon! #X Neovládáte zcela [Province.GetName]"
  province_razed_toast_title: "[province.GetNameNoTooltip] zničena"
+ REBUILDING_BUILDING_TITLE: "#T #high Obnova:#! [Building.GetNameNoTooltip]#! #weak ([Building.GetTypeName])#!\n\n" # todo: NEW TRANSLATION
+ RUINED_BUILDING_TITLE: "#T #high Zničené:#! [Building.GetNameNoTooltip]#! #weak ([Building.GetTypeName])#!\n\n" # todo: NEW TRANSLATION
+ BUILDING_EFFECT_AND_DESC_RUINED_TOOLTIP: "[Building.GetEffectDescriptionAtProvince( Character.Self, Province.Self )]\n\n$RUINED$\n\n[Building.GetDescription]" # todo: NEW TRANSLATION
+ RUINED_BUILDING: "@warning_icon! #X Stavba leží v troskách a musí být [rebuilt|El]#!\nNáklady na obnovu: [Building.GetRebuildCostDescription( Character.Self )]" # todo: NEW TRANSLATION
+ REBUILD_GREAT_BUILDING_TIME: "$MOD_TIME_PREFIX$$DAYS$" # todo: NEW TRANSLATION
+ GREAT_BUILDING_RUINED: "@warning_icon! #X $TYPE$ je [ruined|El]#!" # todo: NEW TRANSLATION
+ REBUILD_GREAT_BUILDING_TOOLTIP: "#T Obnovit [Building.GetNameNoTooltip]#!\nObnovte [Building.GetName] [great_building|E] v [Province.GetName].\n\n" # todo: NEW TRANSLATION
+ REBUILD_GREAT_BUILDING_CONFIRMATION_TITLE: "Obnovit [great_building]" # todo: NEW TRANSLATION
+ REBUILD_GREAT_BUILDING_CONFIRMATION_TEXT: "Utratit zdroje na obnovení [great_building|E] a vrátit mu bývalou slávu.\n\n" # todo: NEW TRANSLATION
+ REBUILD_GREAT_BUILDING_EFFECT: "$EFFECT_LIST_BULLET$[BUILDING.GetName] je obnoven v [PROVINCE.GetName]" # todo: NEW TRANSLATION
+ REBUILD_GREAT_BUILDING_CONFIRMATION_ACCEPT: "Obnovit" # todo: NEW TRANSLATION
+ REBUILD_GREAT_BUILDING_CANNOT_AFFORD: "@warning_icon! #X Nemůžete si dovolit: #! $COST$" # todo: NEW TRANSLATION
+ YOUR_NEXT_HOLDING: "#T Přejít na další [holding|e]#!" # todo: NEW TRANSLATION

@@ -4,7 +4,7 @@
  celestial_demand_treasury_interaction_send_name: "$celestial_demand_treasury_interaction$" # todo: NEW TRANSLATION
  HIGHLIGHTED_DEMAND_TREASURY: "#weak [recipient.GetShortUINameNoTooltip] má #EMP velmi#! velkou [treasury]#!" # todo: NEW TRANSLATION
  celestial_demand_treasury_interaction_recipient_desc: "Neuniklo mi, že [recipient.GetShortUINamePossessive] [treasury|E] je ve velmi dobrém stavu. Mezitím má moje vlastní pokladna... řekněme, postrádá prostředky. Uděláte mi čest, když pomůžete ji doplnit. #EMP Polovina#! vaší pokladny postačí." # todo: NEW TRANSLATION
- celestial_demand_treasury_interaction_declined_desc: "[recipient.GetShortUIName|U] odmítl(a) žádost [actor.GetShortUINamePossessive] o prostředky" # todo: NEW TRANSLATION
+ celestial_demand_treasury_interaction_declined_desc: "[recipient.GetShortUIName|U] [Select_CString(recipient.IsFemale,'odmítla','odmítl')] žádost [actor.GetShortUINamePossessive] o prostředky" # todo: NEW TRANSLATION
  celestial_give_treasury_interaction: "Poslat prostředky" # todo: NEW TRANSLATION
  celestial_give_treasury_interaction_desc: "Podpořte [recipient.GetShortUIName] a [recipient.GetHerHis] [recipient.Custom('GetProvinceConcept')] tím, že poskytnete tolik potřebné [treasury|E]" # todo: NEW TRANSLATION
  celestial_give_treasury_interaction_send_name: "$celestial_give_treasury_interaction$" # todo: NEW TRANSLATION
@@ -14,8 +14,8 @@
  tgp_interaction_event.0001.a: "Překvapení to je, ale vítané." # todo: NEW TRANSLATION
  request_mentoring_interaction: "Požádat o mentorství" # todo: NEW TRANSLATION
  request_mentoring_interaction_mentee: "Požádat o žáka" # todo: NEW TRANSLATION
- request_mentoring_interaction_desc: "Požádejte [recipient.GetShortUIName], aby se stal(a) vaším mentorem a vyučil vás v tématu, v němž je zručný(á)" # todo: NEW TRANSLATION
- request_mentoring_interaction_mentee_desc: "Požádejte jiného [character|E], aby se stal vaším žákem a vyučil ho v tématu, v němž jste zdatný(á)" # todo: NEW TRANSLATION
+ request_mentoring_interaction_desc: "Požádejte [recipient.GetShortUIName], aby se [Select_CString(recipient.IsFemale,'stala','stal')] vaším mentorem a vyučil vás v tématu, v němž je zručný(á)" # todo: NEW TRANSLATION
+ request_mentoring_interaction_mentee_desc: "Požádejte jiného [character|E], aby se [Select_CString(ROOT.Char.IsFemale,'stala','stal')] vaším žákem a vyučil ho v tématu, v němž jste zdatný(á)" # todo: NEW TRANSLATION
  mentoring_interaction_notification: "$mentoring$" # todo: NEW TRANSLATION
  mentoring_no_option_selected: "Musíte vybrat téma ke studiu" # todo: NEW TRANSLATION
  recipient_secondary_request_mentoring_interaction: "Žák" # todo: NEW TRANSLATION
@@ -88,19 +88,19 @@
  tgp_interaction_event.0011.desc: "[actor.GetShortUIName|U] žádal o vojska v [actor.GetHerHis] snaze zajistit mír a stabilitu v [actor.GetPrimaryTitle.GetNameNoTierNoTooltip]. Máte shromáždit své síly a okamžitě ukončit konflikt." # todo: NEW TRANSLATION
  tgp_interaction_event.0011.a: "Jak rozkázáno, [recipient.GetCouncilTitle]." # todo: NEW TRANSLATION
  tgp_interaction_event.0011.b: "Jak si přejete, [recipient.GetTitleAsNameNoTooltip]." # todo: NEW TRANSLATION
- tgp_interaction_event.0012.desc_marshal: "Obdržel(a) jsem vaši žádost a rozhodl(a) jsem se vám osobně pomoci. Mé prapory jsou vztyčeny a armáda je na cestě." # todo: NEW TRANSLATION
- tgp_interaction_event.0012.desc_governor: "Potvrdil(a) jsem vaši žádost a rozkázal(a) jsem [joining_character.GetShortUIName] se připojit k vaší válce a pomoci vám. [joining_character.GetHerHis|U] vojska jsou již na cestě." # todo: NEW TRANSLATION
+ tgp_interaction_event.0012.desc_marshal: "[Select_CString(ROOT.Char.IsFemale,'Obdržela','Obdržel')] jsem vaši žádost a [Select_CString(ROOT.Char.IsFemale,'rozhodla','rozhodl')] jsem se vám osobně pomoci. Mé prapory jsou vztyčeny a armáda je na cestě." # todo: NEW TRANSLATION
+ tgp_interaction_event.0012.desc_governor: "[Select_CString(ROOT.Char.IsFemale,'Potvrdila','Potvrdil')] jsem vaši žádost a [Select_CString(ROOT.Char.IsFemale,'rozkázala','rozkázal')] jsem [joining_character.GetShortUIName] se připojit k vaší válce a pomoci vám. [joining_character.GetHerHis|U] vojska jsou již na cestě." # todo: NEW TRANSLATION
  tgp_interaction_event.0012.a: "Výborně!" # todo: NEW TRANSLATION
  celestial_send_military_aid_interaction: "Poslat vojenského guvernéra do války" # todo: NEW TRANSLATION
  celestial_send_military_aid_interaction_desc: "Rozkažte vojenskému [governor|E], aby se připojil k [recipient.GetShortUINamePossessive] [wars|E]" # todo: NEW TRANSLATION
  recipient_secondary_celestial_send_military_aid_interaction: "Vojenský guvernér" # todo: NEW TRANSLATION
  celestial_send_military_aid_confirmation: "Vojenský guvernér vstoupil do války" # todo: NEW TRANSLATION
  celestial_send_military_aid_effect_desc: "[governor_joining.GetShortUIName|U] [Select_CString( governor_joining.IsLocalPlayer, 'join', 'joins' )] [governor_at_war.GetShortUINamePossessive] [wars|E]" # todo: NEW TRANSLATION
- tgp_interaction_event.0015.desc: "Nejste v tomto konfliktu sami. Rozkázal(a) jsem [governor_joining.GetShortUIName], aby okamžitě shromáždil(a) [governor_joining.GetHerHis] síly a pomohl vám ve vašich válkách." # todo: NEW TRANSLATION
+ tgp_interaction_event.0015.desc: "Nejste v tomto konfliktu sami. [Select_CString(ROOT.Char.IsFemale,'Rozkázala','Rozkázal')] jsem [governor_joining.GetShortUIName], aby okamžitě [Select_CString(governor_joining.IsFemale,'shromáždila','shromáždil')] [governor_joining.GetHerHis] síly a [Select_CString(ROOT.Char.IsFemale,'pomohla','pomohl')] vám ve vašich válkách." # todo: NEW TRANSLATION
  tgp_interaction_event.0016.desc: "[governor_at_war.GetShortUIName|U] je zapojen do války v [governor_at_war.GetPrimaryTitle.GetNameNoTierNoTooltip]. Vztyčte prapory ihned, veliteli, a vyřešte tento konflikt." # todo: NEW TRANSLATION
  tgp_interaction_event.0016.a: "Jak si přejete, [actor.GetTitleAsNameNoTooltip]." # todo: NEW TRANSLATION
  celestial_request_treasury_interaction: "Požádat o finanční prostředky" # todo: NEW TRANSLATION
- celestial_request_treasury_interaction_desc: "Pošlete žádost [recipient.GetShortUIName], aby zajistil(a) další prostředky pro vaši [treasury|E]" # todo: NEW TRANSLATION
+ celestial_request_treasury_interaction_desc: "Pošlete žádost [recipient.GetShortUIName], aby [Select_CString(recipient.IsFemale,'zajistila','zajistil')] další prostředky pro vaši [treasury|E]" # todo: NEW TRANSLATION
  celestial_request_treasury_interaction_extra_icon: "$hook_extra_icon$" # todo: NEW TRANSLATION
  celestial_request_treasury_interaction_msg: "Lituji, že o to musím žádat, ale má pokladna je na minimu a potřebuji další financování." # todo: NEW TRANSLATION
  celestial_request_commander_interaction: "Požádat o velitele" # todo: NEW TRANSLATION
@@ -117,7 +117,7 @@
  AI_SECONDARY_RECIPIENT_MARTIAL_SKILL: "[secondary_recipient.GetShortUINamePossessive|U] [martial_skill|E]: $VALUE|=+0$" # todo: NEW TRANSLATION
  AI_ACTOR_IS_CIVILIAN_GOVERNOR: "[actor.GetShortUIName|U] [CharAreIs(actor)] civilní [governor|E]: $VALUE|=+0$" # todo: NEW TRANSLATION
  celestial_request_examination_support_interaction: "Požádat o podporu zkoušek" # todo: NEW TRANSLATION
- celestial_request_examination_support_interaction_desc: "Požádejte [recipient.GetShortUIName], aby pomohl(a) zorganizovat a zaplatit pořádání [GetActivityType('activity_local_examination').GetTextIcon][GetActivityType( 'activity_local_examination').GetName] [activity|E]" # todo: NEW TRANSLATION
+ celestial_request_examination_support_interaction_desc: "Požádejte [recipient.GetShortUIName], aby [Select_CString(recipient.IsFemale,'pomohla','pomohl')] zorganizovat a zaplatit pořádání [GetActivityType('activity_local_examination').GetTextIcon][GetActivityType( 'activity_local_examination').GetName] [activity|E]" # todo: NEW TRANSLATION
  celestial_request_examination_support_interaction_extra_icon: "$hook_extra_icon$" # todo: NEW TRANSLATION
  celestial_request_examination_support_interaction_accepted_t: "Podpora zkoušek poskytnuta" # todo: NEW TRANSLATION
  celestial_request_examination_support_interaction_declined_t: "Podpora zkoušek odmítnuta" # todo: NEW TRANSLATION
@@ -131,10 +131,10 @@
  recipient_above_retirement_age_desc: "[recipient.GetShortUIName] je nad oficiálním důchodovým věkem" # todo: NEW TRANSLATION
  recipient_above_retirement_age_value_desc: "[recipient.GetShortUIName] je nad oficiálním důchodovým věkem: $VALUE|=+0$" # todo: NEW TRANSLATION
  is_above_retirement_age_desc: "Věk #weak (nad věkem odchodu do důchodu)#!" # todo: NEW TRANSLATION
- old_age_desc: "Věk #weak (starý a zkušený)#!" # todo: NEW TRANSLATION
+ old_age_desc: "Věk #weak ([Select_CString(ROOT.Char.IsFemale,'stará','starý')] a zkušený)#!" # todo: NEW TRANSLATION
  young_age_desc: "Věk #weak (mladý a nezkušený)#!" # todo: NEW TRANSLATION
  influence_meritorious_career_interaction: "Ovlivnit kariéru" # todo: NEW TRANSLATION
- influence_meritorious_career_interaction_desc: "Utratit [influence|E], aby se dočasně zvýšil [recipient.GetShortUINamePossessive] [candidate_score|E] a ovlivnila pravděpodobnost, že [CharYouHerHim( recipient )] bude jmenován(a) do [title|E]" # todo: NEW TRANSLATION
+ influence_meritorious_career_interaction_desc: "Utratit [influence|E], aby se dočasně zvýšil [recipient.GetShortUINamePossessive] [candidate_score|E] a ovlivnila pravděpodobnost, že [CharYouHerHim( recipient )] bude [Select_CString(recipient.IsFemale,'jmenována','jmenován')] do [title|E]" # todo: NEW TRANSLATION
  influence_meritorious_career_effect_desc: "[recipient.GetShortUINamePossessive|U] [candidate_score|E] se změní o [increased_career_score|=+0]" # todo: NEW TRANSLATION
  influence_meritorious_career_effect_civilian_desc: "[recipient.GetShortUINamePossessive|U] [candidate_score|E] pro civilní [appointment_succession|E] se zvýší o [increased_career_score|=+0]" # todo: NEW TRANSLATION
  influence_meritorious_career_effect_military_desc: "[recipient.GetShortUINamePossessive|U] [candidate_score|E] pro vojenské [appointment_succession|E] se zvýší o [increased_career_score|=+0]" # todo: NEW TRANSLATION
@@ -144,7 +144,7 @@
  merit_career_score_bonus_desc: "Ovlivněný [candidate_score|E]" # todo: NEW TRANSLATION
  break_with_elder: "Přerušit vztah se starším" # todo: NEW TRANSLATION
  break_with_elder_desc: "Přestat být [recipient.GetShortUINamePossessive] [disciple|E]" # todo: NEW TRANSLATION
- tgp_interaction_event.0030.desc: "Rozhodl(a) jsem se změnit svou cestu a již nebudu vaším žákem. Vězte, že si vaší rady stále velmi vážím." # todo: NEW TRANSLATION
+ tgp_interaction_event.0030.desc: "[Select_CString(ROOT.Char.IsFemale,'Rozhodla','Rozhodl')] jsem se změnit svou cestu a již nebudu vaším žákem. Vězte, že si vaší rady stále velmi vážím." # todo: NEW TRANSLATION
  tgp_interaction_event.0030.desc_new_elder: "[new_elder.GetName] bude nyní mým novým učitelem." # todo: NEW TRANSLATION
  tgp_interaction_event.0030.a: "Předpokládám, že to byla jen otázka času." # todo: NEW TRANSLATION
  tgp_interaction_event.0030.a_new_elder: "[new_elder.GetFirstNameNoTooltip] očarovává mé žáky?" # todo: NEW TRANSLATION
@@ -155,13 +155,13 @@
  find_elder_no_eligible_character: "Nikdo v [recipient.GetShortUINamePossessive] [court|E] nemá vyšší [merit_i][merit_level|E] než vy nebo je pod svým [disciple_limit|E]" # todo: NEW TRANSLATION
  HIGHLIGHTED_FIND_ELDER: "#EMP [actor.GetShortUIName|U] nemá žádného [elder|E]#!" # todo: NEW TRANSLATION
  tgp_interaction_event.0031.opening: "[actor.Custom2('AppropriateGreetingPositive', ROOT.Char)]" # todo: NEW TRANSLATION
- tgp_interaction_event.0031.desc: "Vaše ctnosti a důvtip jsou známé po celém nebi. Hledám u vás radu a patronát. Budu vděčný/á, když se stanu vaším pokorným žákem." # todo: NEW TRANSLATION
+ tgp_interaction_event.0031.desc: "Vaše ctnosti a důvtip jsou známé po celém nebi. Hledám u vás radu a patronát. Budu [Select_CString(ROOT.Char.IsFemale,'vděčná','vděčný')], když se stanu vaším pokorným žákem." # todo: NEW TRANSLATION
  tgp_interaction_event.0031.a: "Mám vám mnoho co naučit!" # todo: NEW TRANSLATION
  tgp_interaction_event.0031.b: "Ne, najdi si někoho jiného, kdo bude tvým starším." # todo: NEW TRANSLATION
  tgp_interaction_event.0031.b.tt: "Odmítá stát se vaším [elder|E]" # todo: NEW TRANSLATION
  secondary_recipient_has_disciples: "[secondary_recipient.GetShortUIName] má mnoho [disciples|E]: $VALUE|+=0$" # todo: NEW TRANSLATION
- refused_to_be_elder_opinion: "Odmítl být mým [elder|E]" # todo: NEW TRANSLATION
- refused_to_be_disciple_opinion: "Odmítl být mým [disciple|E]" # todo: NEW TRANSLATION
+ refused_to_be_elder_opinion: "[Select_CString(ROOT.Char.IsFemale,'Odmítla','Odmítl')] být mým [elder|E]" # todo: NEW TRANSLATION
+ refused_to_be_disciple_opinion: "[Select_CString(ROOT.Char.IsFemale,'Odmítla','Odmítl')] být mým [disciple|E]" # todo: NEW TRANSLATION
  tgp_interaction_event.00311.opening: "[secondary_recipient.Custom2('AppropriateGreetingPositive', ROOT.Char)]" # todo: NEW TRANSLATION
  tgp_interaction_event.00311.desc.intro: "Vaše slibná kariéra nezůstala bez povšimnutí. Bude mi potěšením vás vést ve studiu.\n\n" # todo: NEW TRANSLATION
  tgp_interaction_event.00311.desc.movement: "Přidejte se k [elder_movement.GetName] a budeme vás v tomto obtížném úsilí podporovat." # todo: NEW TRANSLATION
@@ -175,10 +175,10 @@
  actor_has_virtuous_traits: "[actor.GetShortUIName] má ctnostné rysy: $VALUE|+=0$" # todo: NEW TRANSLATION
  actor_has_confucian_education: "[actor.GetShortUIName] zná konfucianismus: $VALUE|+=0$" # todo: NEW TRANSLATION
  actors_age_difference: "Věkový rozdíl: $VALUE|+=0$" # todo: NEW TRANSLATION
- actors_age_old: "[actor.GetShortUIName] je příliš starý/á: $VALUE|+=0$" # todo: NEW TRANSLATION
+ actors_age_old: "[actor.GetShortUIName] je příliš [Select_CString(actor.IsFemale,'stará','starý')]: $VALUE|+=0$" # todo: NEW TRANSLATION
  break_with_disciple: "Přerušit vztah s žákem" # todo: NEW TRANSLATION
  break_with_disciple_desc: "Přestat být [recipient.GetShortUINamePossessive] [elder|E]" # todo: NEW TRANSLATION
- tgp_interaction_event.0032.desc: "Rozhodl(a) jsem se vás propustit a už nebudu vaším starším. Strávili jsme nespočet hodin debatami a zkoušením, ale nyní jste přesáhl(a) mé schopnosti. Je čas, abyste našel(a) někoho moudřejšího než já." # todo: NEW TRANSLATION
+ tgp_interaction_event.0032.desc: "[Select_CString(ROOT.Char.IsFemale,'Rozhodla','Rozhodl')] jsem se vás propustit a už nebudu vaším starším. Strávili jsme nespočet hodin debatami a zkoušením, ale nyní jste [Select_CString(ROOT.Char.IsFemale,'přesáhla','přesáhl')] mé schopnosti. Je čas, abyste [Select_CString(ROOT.Char.IsFemale,'našela','našel')] někoho moudřejšího než já." # todo: NEW TRANSLATION
  tgp_interaction_event.0032.a: "$tgp_interaction_event.0030.a$" # todo: NEW TRANSLATION
  celestial_request_elders_support_interaction: "$contact_list_request_interaction$" # todo: NEW TRANSLATION
  celestial_request_elders_support_interaction_desc: "Požádejte o podporu od vašeho [elder|E], [movement_leader|E], [disciples|E] nebo ostatních žáků" # todo: NEW TRANSLATION
@@ -217,25 +217,25 @@
  join_house_bloc_effect: "[house|E] [CHARACTER.GetHouse.GetBaseName] se připojí k [TARGET_CHARACTER.GetConfederation.GetName|V]" # todo: NEW TRANSLATION
  join_house_bloc_effect_past: "[house|E] [CHARACTER.GetHouse.GetBaseName] se připojil k [TARGET_CHARACTER.GetConfederation.GetName|V]" # todo: NEW TRANSLATION
  leave_house_bloc_effect: "[house|E] [CHARACTER.GetHouse.GetBaseName] opustí [TARGET_CHARACTER.GetConfederation.GetName|V]" # todo: NEW TRANSLATION
- leave_house_bloc_effect_past: "[house|E] [CHARACTER.GetHouse.GetBaseName] opustil [TARGET_CHARACTER.GetConfederation.GetName|V]" # todo: NEW TRANSLATION
+ leave_house_bloc_effect_past: "[house|E] [CHARACTER.GetHouse.GetBaseName] [Select_CString(ROOT.Char.IsFemale,'opustila','opustil')] [TARGET_CHARACTER.GetConfederation.GetName|V]" # todo: NEW TRANSLATION
  leave_house_bloc_cooldown_effect: "[house|E] [CHARACTER.GetHouse.GetBaseName] opustí [TARGET_CHARACTER.GetConfederation.GetName|V] a nesmí se znovu připojit po dobu #V 5 let#!" # todo: NEW TRANSLATION
- leave_house_bloc_cooldown_effect_past: "[house|E] [CHARACTER.GetHouse.GetBaseName] opustil [TARGET_CHARACTER.GetConfederation.GetName|V] a nesmí se znovu připojit po dobu #V 5 let#!" # todo: NEW TRANSLATION
+ leave_house_bloc_cooldown_effect_past: "[house|E] [CHARACTER.GetHouse.GetBaseName] [Select_CString(ROOT.Char.IsFemale,'opustila','opustil')] [TARGET_CHARACTER.GetConfederation.GetName|V] a nesmí se znovu připojit po dobu #V 5 let#!" # todo: NEW TRANSLATION
  disband_house_bloc_effect: "[CHARACTER.GetConfederation.GetName|V] se rozpustí" # todo: NEW TRANSLATION
- disband_house_bloc_effect_past: "[CHARACTER.GetConfederation.GetName|V] byl rozpuštěn" # todo: NEW TRANSLATION
+ disband_house_bloc_effect_past: "[CHARACTER.GetConfederation.GetName|V] [Select_CString(CHARACTER.GetConfederation.IsFemale,'byla','byl')] rozpuštěn" # todo: NEW TRANSLATION
  change_house_bloc_leader_effect: "[house|E] [CHARACTER.GetHouse.GetBaseName] nahradí [TARGET_CHARACTER.GetHouse.GetBaseName] jako [leading_house|E] [CHARACTER.GetHouse.GetConfederation.GetName|V]" # todo: NEW TRANSLATION
  change_house_bloc_leader_effect_past: "[house|E] [CHARACTER.GetHouse.GetBaseName] nahradil [TARGET_CHARACTER.GetHouse.GetBaseName] jako [leading_house|E] [CHARACTER.GetHouse.GetConfederation.GetName|V]" # todo: NEW TRANSLATION
  join_house_bloc_tt_no_scope: "[house|E] [joiner.GetBaseName] se připojí k #V [inviter.GetBaseNameNoTooltip] [bloc|E]#!" # todo: NEW TRANSLATION
  every_eligible_house_bloc_joiner_custom: "Všichni způsobilí [rulers|E] této [house|E] v [realm|E]" # todo: NEW TRANSLATION
  every_bloc_member_custom: "Každý člen [bloc|E]" # todo: NEW TRANSLATION
  forced_bloc_membership_tt: "Nebudete moci opustit [bloc|E] po dobu 10 let" # todo: NEW TRANSLATION
- forced_bloc_membership_blocker_tt: "Nemůžete opustit [bloc|E], do kterého jste byl nucen vstoupit" # todo: NEW TRANSLATION
+ forced_bloc_membership_blocker_tt: "Nemůžete opustit [bloc|E], do kterého jste [Select_CString(ROOT.Char.IsFemale,'byla','byl')] nucen vstoupit" # todo: NEW TRANSLATION
  only_house_heads_can_start_bloc_tt: "Nelze založit [bloc|E] s vaší vlastní [house|E]" # todo: NEW TRANSLATION
  led_bloc_size_desc: "Velikost vedoucího [bloc|E]" # todo: NEW TRANSLATION
  blocs_cannot_mix_government_types_tt: "Členové [bloc|E] musí mít stejný typ [government|E]" # todo: NEW TRANSLATION
  actor_stole_recipient_leader_house_tt: "[actor.GetHouse.GetBaseName] [house_relation|E] with [bloc_leader.GetHouse.GetBaseName] #N is damaged#!" # todo: NEW TRANSLATION
  recipient_joins_actor_bloc_tt: "[house|E] [recipient.GetHouse.GetBaseName] se připojí k [bloc_leader.GetBaseName] [bloc|E]" # todo: NEW TRANSLATION
  joined_house_bloc_opinion: "Připojen k rodinnému bloku" # todo: NEW TRANSLATION
- left_house_bloc_opinion: "Opustil rodinný blok" # todo: NEW TRANSLATION
+ left_house_bloc_opinion: "[Select_CString(ROOT.Char.IsFemale,'Opustila','Opustil')] rodinný blok" # todo: NEW TRANSLATION
  kicked_from_house_bloc_opinion: "Vyloučen z rodinného bloku" # todo: NEW TRANSLATION
  set_bloc_leader_tt: "[house|E] [house_temp.GetBaseName] se stává vůdcem [bloc_temp.GetName]" # todo: NEW TRANSLATION
  forced_bloc_membership_showing_failures_tt: "Byli jste nuceni vstoupit do [bloc|E] pomocí [hook|E] a musíte zůstat #V 10 let#!" # todo: NEW TRANSLATION
@@ -245,8 +245,8 @@
  join_house_bloc_interaction_extra_icon: "$hook_extra_icon$" # todo: NEW TRANSLATION
  JOIN_HOUSE_BLOC_NOTIFICATION: "Můj dům a tvůj mají mnoho společných zájmů. Usilujeme o moudrost tvého vedení a o společnost tvých přátel." # todo: NEW TRANSLATION
  join_bloc_already_leading_another_tt: "[leading_house|E] nemůže vstoupit do jiného [bloc|E]\n#HELP Opusťte svůj současný $game_concept_bloc$ nebo předejte $game_concept_bloc_leadership$" # todo: NEW TRANSLATION
- join_bloc_left_cooldown_tt: "Váš [house|E] opustil nebo byl vyloučen z tohoto [bloc|E] v posledních #V 5 letech#!" # todo: NEW TRANSLATION
- join_bloc_left_cooldown_recipient_tt: "[THIS.Char.GetShortUINamePossessive|U] [house|E] opustil(a) nebo byl(a) odstraněn(a) z [actor.GetConfederation.GetName|V] během posledních #V 5 let#! #weak ([THIS.Char.GetHouse.GetBaseName])#!" # todo: NEW TRANSLATION
+ join_bloc_left_cooldown_tt: "Váš [house|E] [Select_CString(ROOT.Char.IsFemale,'opustila','opustil')] nebo [Select_CString(ROOT.Char.IsFemale,'byla','byl')] vyloučen z tohoto [bloc|E] v posledních #V 5 letech#!" # todo: NEW TRANSLATION
+ join_bloc_left_cooldown_recipient_tt: "[THIS.Char.GetShortUINamePossessive|U] [house|E] [Select_CString(THIS.Char.IsFemale,'opustila','opustil')] nebo [Select_CString(THIS.Char.IsFemale,'byla','byl')] [Select_CString(THIS.Char.IsFemale,'odstraněna','odstraněn')] z [actor.GetConfederation.GetName|V] během posledních #V 5 let#! #weak ([THIS.Char.GetHouse.GetBaseName])#!" # todo: NEW TRANSLATION
  join_bloc_vassal_house_tt: "[vassal|E] [houses|E] se nemohou připojit k [bloc|E], pokud v něm není jejich [liege|E]"
  join_bloc_war_tt: "Nesmíte být ve [war|E] s nikým jiným než s [recipient.GetShortUIName]" # todo: NEW TRANSLATION
  join_bloc_recent_house_join_tt: "[houses|E] nemohou vstoupit do jiného [bloc|E] během #V 5 let#! od připojení #weak ([GetTimeDifferenceWithDays( recipient.GetHouse.MakeScope.VarRemaining( 'recently_joined_bloc' ) )] remaining)#!" # todo: NEW TRANSLATION
@@ -300,15 +300,15 @@
  msg_joined_bloc_desc: "[joiner.GetUIName|U] se připojil k [bloc.GetName|V]" # todo: NEW TRANSLATION
  msg_joined_bloc_root: "Vladař se připojil k [bloc.GetName|V]" # todo: NEW TRANSLATION
  msg_joined_bloc_desc_root: "Připojili jste se k [bloc.GetName|V]" # todo: NEW TRANSLATION
- msg_house_left_bloc: "Dům opustil blok: [house.GetBaseNameNoTooltip|V]" # todo: NEW TRANSLATION
- msg_house_left_bloc_desc: "[house|E] [house.GetBaseName] opustil [bloc.GetName|V] [house_head.Custom('GetReasonForLeavingBloc')]" # todo: NEW TRANSLATION
- msg_house_left_bloc_root: "Dům opustil [bloc.GetName|V]" # todo: NEW TRANSLATION
- msg_house_left_bloc_desc_root: "Váš [house|E] opustil [bloc.GetName|V]" # todo: NEW TRANSLATION
- msg_house_left_bloc_no_reason: "[house|E] [house.GetBaseName] opustil(a) [bloc.GetName|V]" # todo: NEW TRANSLATION
- msg_left_bloc: "Vladař opustil blok: [leaver.GetShortUINameNoTooltip]" # todo: NEW TRANSLATION
- msg_left_bloc_desc: "[leaver.GetUIName|U] opustil [bloc.GetName|V] [leaver.Custom('GetReasonForLeavingBloc')]" # todo: NEW TRANSLATION
- msg_left_bloc_root: "Vladař opustil [bloc.GetName|V]" # todo: NEW TRANSLATION
- msg_left_bloc_desc_root: "Váš [house|E] opustil [bloc.GetName|V]" # todo: NEW TRANSLATION
+ msg_house_left_bloc: "Dům [Select_CString(ROOT.Char.IsFemale,'opustila','opustil')] blok: [house.GetBaseNameNoTooltip|V]" # todo: NEW TRANSLATION
+ msg_house_left_bloc_desc: "[house|E] [house.GetBaseName] [Select_CString(ROOT.Char.IsFemale,'opustila','opustil')] [bloc.GetName|V] [house_head.Custom('GetReasonForLeavingBloc')]" # todo: NEW TRANSLATION
+ msg_house_left_bloc_root: "Dům [Select_CString(ROOT.Char.IsFemale,'opustila','opustil')] [bloc.GetName|V]" # todo: NEW TRANSLATION
+ msg_house_left_bloc_desc_root: "Váš [house|E] [Select_CString(ROOT.Char.IsFemale,'opustila','opustil')] [bloc.GetName|V]" # todo: NEW TRANSLATION
+ msg_house_left_bloc_no_reason: "[house|E] [house.GetBaseName] [Select_CString(ROOT.Char.IsFemale,'opustila','opustil')] [bloc.GetName|V]" # todo: NEW TRANSLATION
+ msg_left_bloc: "Vladař [Select_CString(ROOT.Char.IsFemale,'opustila','opustil')] blok: [leaver.GetShortUINameNoTooltip]" # todo: NEW TRANSLATION
+ msg_left_bloc_desc: "[leaver.GetUIName|U] [Select_CString(leaver.IsFemale,'opustila','opustil')] [bloc.GetName|V] [leaver.Custom('GetReasonForLeavingBloc')]" # todo: NEW TRANSLATION
+ msg_left_bloc_root: "Vladař [Select_CString(ROOT.Char.IsFemale,'opustila','opustil')] [bloc.GetName|V]" # todo: NEW TRANSLATION
+ msg_left_bloc_desc_root: "Váš [house|E] [Select_CString(ROOT.Char.IsFemale,'opustila','opustil')] [bloc.GetName|V]" # todo: NEW TRANSLATION
  msg_bloc_leader_aspiration_changed: "Aspirace vůdce bloku se změnila" # todo: NEW TRANSLATION
  msg_bloc_member_aspiration_changed: "Aspirace člena bloku se změnila" # todo: NEW TRANSLATION
  msg_bloc_member_aspiration_changed_tt: "[house|E] [house.GetName] přijala [house.GetHouseAspiration.GetName|V] [house_aspiration|E]" # todo: NEW TRANSLATION
@@ -316,11 +316,11 @@
  msg_bloc_member_aspiration_diverge_tt: "To se liší od [leading_house_possessive|E] [house.GetConfederation.GetLeadingHouse.GetHouseAspiration.GetName] $game_concept_aspiration$ ([house.GetConfederation.GetLeadingHouse.GetName|V])" # todo: NEW TRANSLATION
  msg_bloc_new_leading_house: "Nový vůdce bloku: [leader.GetBaseNameNoTooltip|V]" # todo: NEW TRANSLATION
  msg_bloc_new_leading_house_desc: "[house|E] [leader.GetBaseName] nahradil dům [old_leader.GetBaseName] jako [leading_house|E] [bloc.GetName|V]" # todo: NEW TRANSLATION
- TRUCE_LEFT_BLOC: "Opustil [bloc.GetName]" # todo: NEW TRANSLATION
+ TRUCE_LEFT_BLOC: "[Select_CString(ROOT.Char.IsFemale,'Opustila','Opustil')] [bloc.GetName]" # todo: NEW TRANSLATION
  msg_house_bloc_created: "Rodinný blok vytvořen" # todo: NEW TRANSLATION
- msg_house_bloc_created_desc: "[bloc.GetName|V] byl vytvořen " # todo: NEW TRANSLATION
+ msg_house_bloc_created_desc: "[bloc.GetName|V] [Select_CString(bloc.IsFemale,'byla','byl')] vytvořen " # todo: NEW TRANSLATION
  msg_house_bloc_disbanded: "Rodinný blok rozpuštěn" # todo: NEW TRANSLATION
- msg_house_bloc_disbanded_desc: "[bloc.GetName|V] byl rozpuštěn " # todo: NEW TRANSLATION
+ msg_house_bloc_disbanded_desc: "[bloc.GetName|V] [Select_CString(bloc.IsFemale,'byla','byl')] rozpuštěn " # todo: NEW TRANSLATION
  tgp_join_house_bloc_tt: "[house|E] [joiner.GetName] se připojí k [inviter.GetBaseNameNoTooltip|V] [bloc|E]" # todo: NEW TRANSLATION
  tgp_leave_house_bloc_tt: "[house|E] [leaver.GetName] opustí [bloc.GetName|V]" # todo: NEW TRANSLATION
  tgp_set_house_bloc_leader_tt: "[house|E] [leader.GetName] převezme [house_bloc_leadership|E] [bloc.GetName|V]" # todo: NEW TRANSLATION
@@ -353,7 +353,7 @@
  ACTOR_MERIT_MARRIAGE_REASON: "[actor.GetShortUINamePossessive|U] [merit|E]: $VALUE|=+0$" # todo: NEW TRANSLATION
  SECONDARY_ACTOR_MERIT_MARRIAGE_REASON: "[secondary_actor.GetShortUINamePossessive|U] [merit|E]: $VALUE|=+0$" # todo: NEW TRANSLATION
  change_career_path_for_family_member_interaction: "Změnit kariérní dráhu" # todo: NEW TRANSLATION
- change_career_path_for_family_member_interaction_desc: "Změňte kariérní dráhu člena rodiny, aby byl způsobilý pro Civilní nebo Vojenské [GetPlayer.Custom('GetProvincePluralConcept')]" # todo: NEW TRANSLATION
+ change_career_path_for_family_member_interaction_desc: "Změňte kariérní dráhu člena rodiny, aby [Select_CString(ROOT.Char.IsFemale,'byla','byl')] způsobilý pro Civilní nebo Vojenské [GetPlayer.Custom('GetProvincePluralConcept')]" # todo: NEW TRANSLATION
  change_career_path_for_family_member_header: "Kariérní dráha" # todo: NEW TRANSLATION
  CIVILIAN_PATH_OPTION: "Civilní kariéra" # todo: NEW TRANSLATION
  MILITARY_PATH_OPTION: "Vojenská kariéra" # todo: NEW TRANSLATION
@@ -391,20 +391,20 @@
  tgp_cranial_trophy_artifact: "[dead_one.GetTitledFirstNamePossessiveNoTooltip|U] lebková trofej" # todo: NEW TRANSLATION
  tgp_cranial_trophy_artifact_desc: "Odseknutá hlava [dead_one.GetTitledFirstName]. Pečlivě uchovaná zůstává v tomto světě jako trvalé svědectví o převaze [the_killer.GetTitledFirstName]." # todo: NEW TRANSLATION
  landless_admin_switch_non_admin_top_liege_interaction: "Přejít do jiného panství" # todo: NEW TRANSLATION
- landless_admin_switch_non_admin_top_liege_interaction_desc: "Jako bezpozemní [noble_family|E] pod [liege|E] s jinou formou [government|E] můžete přesunout váš [government|E] do jiné říše. Požádejte [recipient.GetShortUIName] aby se stal vaším [liege|E]" # todo: NEW TRANSLATION
+ landless_admin_switch_non_admin_top_liege_interaction_desc: "Jako bezpozemní [noble_family|E] pod [liege|E] s jinou formou [government|E] můžete přesunout váš [government|E] do jiné říše. Požádejte [recipient.GetShortUIName] aby se [Select_CString(recipient.IsFemale,'stala','stal')] vaším [liege|E]" # todo: NEW TRANSLATION
  actor_moved_to_other_realm: "Vasál přešel do jiné říše" # todo: NEW TRANSLATION
  actor_moved_to_other_realm_title: "$actor_moved_to_other_realm$" # todo: NEW TRANSLATION
- actor_moved_to_other_realm_desc: "[actor.GetShortUIName] mě opustil, přemístěním svého panství a přísahou věrnosti [recipient.GetShortUIName]" # todo: NEW TRANSLATION
+ actor_moved_to_other_realm_desc: "[actor.GetShortUIName] mě [Select_CString(actor.IsFemale,'opustila','opustil')], přemístěním svého panství a přísahou věrnosti [recipient.GetShortUIName]" # todo: NEW TRANSLATION
  demand_aspiration_change_interaction: "Požadovat změnu aspirace" # todo: NEW TRANSLATION
  demand_aspiration_change_interaction_desc: "Požádejte [house|E] [recipient.GetHouse.GetBaseName], aby následoval vaši [aspiration|E] #weak ([actor.GetHouse.GetHouseAspiration.GetName])#!" # todo: NEW TRANSLATION
  DEMAND_ASPIRATION_CHANGE_NOTIFICATION: "Je čas držet se naší linie; váš dům musí následovat mé vedení, pokud mají být naše společné zájmy hájeny." # todo: NEW TRANSLATION
  demand_aspiration_change_interaction_power_tt: "[house|E] [recipient.GetHouse.GetBaseName|V] musí mít jinou [aspiration|E] než [actor.GetHouse.GetBaseName|V]" # todo: NEW TRANSLATION
  censor_find_secrets_interaction: "Najít tajemství" # todo: NEW TRANSLATION
- censor_find_secrets_interaction_desc: "Jako [minister_censor|E] můžete provést vyšetřování v [court|E] [recipient.GetShortUIName] abyste nalezl/a jakákoliv [secrets|E]" # todo: NEW TRANSLATION
+ censor_find_secrets_interaction_desc: "Jako [minister_censor|E] můžete provést vyšetřování v [court|E] [recipient.GetShortUIName] abyste [Select_CString(recipient.IsFemale,'nalezla','nalezl')] jakákoliv [secrets|E]" # todo: NEW TRANSLATION
  censor_find_secrets_interaction_desc_justice: "Jako [minister_of_justice|E] můžete provést vyšetřování v [court|E] [recipient.GetShortUIName], abyste našli jakékoli [secrets|E] nebo [imprison|E] či udělili milost známým [criminals|E]" # todo: NEW TRANSLATION
  celestial_minister_find_secrets_scheme: "Cenzor: Najít tajemství" # todo: NEW TRANSLATION
  celestial_minister_find_secrets_scheme_action: "Najít tajemství u dvora" # todo: NEW TRANSLATION
- celestial_minister_find_secrets_scheme_desc: "[minister_censor|E] provádí vyšetřování v [court|E] [scheme_target|E], aby nalezl jakákoliv [secrets|E]" # todo: NEW TRANSLATION
+ celestial_minister_find_secrets_scheme_desc: "[minister_censor|E] provádí vyšetřování v [court|E] [scheme_target|E], aby [Select_CString(ROOT.Char.IsFemale,'nalezla','nalezl')] jakákoliv [secrets|E]" # todo: NEW TRANSLATION
  celestial_minister_find_secrets_scheme_desc_general: "$celestial_minister_find_secrets_scheme_desc$" # todo: NEW TRANSLATION
  scheme_critical_moments.8070.t: "$celestial_minister_find_secrets_scheme$" # todo: NEW TRANSLATION
  scheme_critical_moments.8070.a: "Mít moc nad [character_to_hook.GetFirstNameNoTooltip] je příliš lákavé na to, abych to nevyužil!" # todo: NEW TRANSLATION
@@ -420,9 +420,9 @@
  examination_bypass_option_desc: "Udělit výjimku z [examination|E]" # todo: NEW TRANSLATION
  examination_bypass_option_warning_desc: "@alert_icon!#alert_trial Toto privilegium lze bez následků použít #bold pouze jednou#! za celý váš život#!" # todo: NEW TRANSLATION
  examination_bypass_option_you_have_been_warned_desc: "@warning_icon! #X Toto privilegium jste již využil; jeho opětovné použití je zneužitím vašeho úřadu#!" # todo: NEW TRANSLATION
- bolstered_career_notification: "[actor.GetTitledFirstName] posílil(a) vaši kariéru" # todo: NEW TRANSLATION
+ bolstered_career_notification: "[actor.GetTitledFirstName] [Select_CString(actor.IsFemale,'posílila','posílil')] vaši kariéru" # todo: NEW TRANSLATION
  exam_bypass_notification: "Byla vám udělena výjimka ze zkoušek" # todo: NEW TRANSLATION
- has_passed_all_exams: "[recipient.GetShortUIName] již složil(a) potřebné [examinations|E]" # todo: NEW TRANSLATION
+ has_passed_all_exams: "[recipient.GetShortUIName] již [Select_CString(recipient.IsFemale,'složila','složil')] potřebné [examinations|E]" # todo: NEW TRANSLATION
  pay_treasury_debt_interaction: "Oddlužení" # todo: NEW TRANSLATION
  pay_treasury_debt_interaction_desc: "Zrušit [recipient.GetShortUINamePossessive] [treasury_debt|E] #weak ([treasury_i]#V [recipient.GetTreasury|0]#!)#!" # todo: NEW TRANSLATION
  MINISTER_OF_REVENUE_REASON: "Jste [minister_of_revenue|E]: $VALUE|=+0$" # todo: NEW TRANSLATION

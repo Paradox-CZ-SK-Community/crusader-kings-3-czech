@@ -13,7 +13,7 @@
  festival.002.a.bored_child: "Dítě nemá rádo vyprávění." # todo: NEW TRANSLATION
  festival.002.b: "Nepoučili tě rodiče, abys nemluvil s cizinci?" # todo: NEW TRANSLATION
  festival.002.b.flavor: "#weak Tento drzý spratek si zaslouží „odměnu“ za svou drzost.#!" # todo: NEW TRANSLATION
- festival.002.c: "Někdo odveď [curious_child.GetHerHim] zpět k [curious_child.GetHerHis] rodičům. #EMP Rychle#!." # todo: NEW TRANSLATION
+ festival.002.c: "Někdo odveď [curious_child.GetHerHim] zpět k [Select_CString(curious_child.IsFemale,'jejím','jeho')] rodičům. #EMP Rychle#!." # todo: NEW TRANSLATION
  child_is_excited: "Dítě je nadšené tvými příběhy" # todo: NEW TRANSLATION
  child_is_bored: "Dítě při tvém vyprávění zívne a odchází" # todo: NEW TRANSLATION
  child_is_kicked: "Rychlý plácnutí přes ucho a dítě uteče zpátky do davu" # todo: NEW TRANSLATION
@@ -34,13 +34,13 @@
  prosperity_festival_health_modifier: "Přání zdraví" # todo: NEW TRANSLATION
  prosperity_festival_health_modifier_desc: "Tato postava si přála zdraví" # todo: NEW TRANSLATION
  festival.005.t: "Upoutané publikum" # todo: NEW TRANSLATION
- festival.005.desc: "Jak se festival blíží ke svému vrcholu, můj [target.chaplain.Custom('MyPriestTitle')] vystupuje na pódium, [target_chaplain.GetHerHis] hlas se nese nad davem. [target_chaplain.GetSheHe|U] začíná vychvalovat mravní reformu a duchovní kázeň, snaží se přesměrovat radostnou energii festivalu do kázání. Někteří považují [target_chaplain.GetHerHis] slova za inspirativní, zatímco jiní reptají, že festival není místo pro takovou vážnost." # todo: NEW TRANSLATION
+ festival.005.desc: "Jak se festival blíží ke svému vrcholu, můj [target.chaplain.Custom('MyPriestTitle')] vystupuje na pódium, [Select_CString(target_chaplain.IsFemale,'její','jeho')] hlas se nese nad davem. [target_chaplain.GetSheHe|U] začíná vychvalovat mravní reformu a duchovní kázeň, snaží se přesměrovat radostnou energii festivalu do kázání. Někteří považují [Select_CString(target_chaplain.IsFemale,'její','jeho')] slova za inspirativní, zatímco jiní reptají, že festival není místo pro takovou vážnost." # todo: NEW TRANSLATION
  festival.005.a: "[target_chaplain.GetSheHe|U] mluví jménem boha." # todo: NEW TRANSLATION
  festival.005.b: "Sám [target_chaplain.GetHerHim]u promluvím do rozumu." # todo: NEW TRANSLATION
  festival.005.c: "Už mě unavuje toto kázání; sundejte [target_chaplain.GetHerHim] odtud!" # todo: NEW TRANSLATION
  festival.005.b.success: "Podařilo se vám přimět [target_chaplain.GetHerHim] odejít ze pódia" # todo: NEW TRANSLATION
  festival.005.b.tt.success: "Přesvědčili jste [target_chaplain.GetHerHim]" # todo: NEW TRANSLATION
- festival.005.b.failure: "[target_chaplain.GetHerHis] božsky poháněné nadšení nezhaslo" # todo: NEW TRANSLATION
+ festival.005.b.failure: "[Select_CString(target_chaplain.IsFemale,'její','jeho')] božsky poháněné nadšení nezhaslo" # todo: NEW TRANSLATION
  festival.005.b.tt.failure: "Nepodařilo se vám přesvědčit [target_chaplain.GetHerHim]" # todo: NEW TRANSLATION
  festival.006.t: "Rituál očištění" # todo: NEW TRANSLATION
  festival.006.desc: "Po jejich vážných modlitbách [ROOT.Char.GetFaith.PriestNeuterPlural] zahajují očistný rituál, který smyje veškeré duchovní nečistoty a zajistí harmonický rok. Jako součást obřadu bude mou posvátnou povinností nabrat čistou vodu z posvátné studny." # todo: NEW TRANSLATION
@@ -91,7 +91,7 @@
  festival.016.a: "Nedbalý hlupák! [clumsy_oaf.GetSheHe|U] za to zaplatí!" # todo: NEW TRANSLATION
  festival.016.b: "Roucha lze nahradit." # todo: NEW TRANSLATION
  festival.017.t: "Vzpourné marionety" # todo: NEW TRANSLATION
- festival.017.desc: "Putující loutkář se rozhodl udělat ze své přehlídky na festivalu [puppeteer.GetHerHis] pódium, obklopen desítkami chichotajících se diváků.\n\nKdyž sleduji tanec loutek, jejich vystoupení přerůstá v něco nepříjemného; postava panovníka je na můj vkus až příliš povědomá a dav se příliš baví [ROOT.Char.GetHerHis] nemotornostmi." # todo: NEW TRANSLATION
+ festival.017.desc: "Putující loutkář se rozhodl udělat ze své přehlídky na festivalu [Select_CString(puppeteer.IsFemale,'její','jeho')] pódium, obklopen desítkami chichotajících se diváků.\n\nKdyž sleduji tanec loutek, jejich vystoupení přerůstá v něco nepříjemného; postava panovníka je na můj vkus až příliš povědomá a dav se příliš baví [Select_CString(ROOT.Char.IsFemale,'jejími','jeho')] nemotornostmi." # todo: NEW TRANSLATION
  festival.017.a: "Zasměju se hlasitěji než kdokoli jiný!" # todo: NEW TRANSLATION
  festival.017.b: "Spalte ty drzé panáky." # todo: NEW TRANSLATION
  festival.017.c: "Moji agenti by měli sledovat reakce publika." # todo: NEW TRANSLATION
@@ -100,8 +100,8 @@
  festival.018.a: "Pošlete pro saké a napijme se spolu!" # todo: NEW TRANSLATION
  festival.018.b: "Co takhle skromný šálek a pozvání..." # todo: NEW TRANSLATION
  festival.018.c: "Tento spektákl skončil." # todo: NEW TRANSLATION
- friend_invited_priestess: "[CHARACTER.GetShortUIName|U] [Select_CString(CHARACTER.IsFemale,'pozvala','pozval')] [TARGET_CHARACTER.GetShortUIName] do [CHARACTER.GetHerHis] dvora poté, co [Select_CString(TARGET_CHARACTER.IsFemale,'viděla','viděl')] [TARGET_CHARACTER.GetHerHis] působivé vystoupení na festivalu." # todo: NEW TRANSLATION
- friend_invited_priestess_corresponding: "[CHARACTER.GetShortUIName|U] [Select_CString(CHARACTER.IsFemale,'byla','byl')] [Select_CString(CHARACTER.IsFemale,'pozvána','pozván')] na dvůr [TARGET_CHARACTER.GetShortUINamePossessive] poté, co [Select_CString(TARGET_CHARACTER.IsFemale,'viděla','viděl')] [CHARACTER.GetHerHis] působivé vystoupení na festivalu." # todo: NEW TRANSLATION
+ friend_invited_priestess: "[CHARACTER.GetShortUIName|U] [Select_CString(CHARACTER.IsFemale,'pozvala','pozval')] [TARGET_CHARACTER.GetShortUIName] do [Select_CString(CHARACTER.IsFemale,'jejího','jeho')] dvora poté, co [Select_CString(TARGET_CHARACTER.IsFemale,'viděla','viděl')] [Select_CString(TARGET_CHARACTER.IsFemale,'její','jeho')] působivé vystoupení na festivalu." # todo: NEW TRANSLATION
+ friend_invited_priestess_corresponding: "[CHARACTER.GetShortUIName|U] [Select_CString(CHARACTER.IsFemale,'byla','byl')] [Select_CString(CHARACTER.IsFemale,'pozvána','pozván')] na dvůr [TARGET_CHARACTER.GetShortUINamePossessive] poté, co [Select_CString(TARGET_CHARACTER.IsFemale,'viděla','viděl')] [Select_CString(CHARACTER.IsFemale,'její','jeho')] působivé vystoupení na festivalu." # todo: NEW TRANSLATION
  festival.019.t: "Drama na rozkaz" # todo: NEW TRANSLATION
  festival.019.desc: "Můj správce [play_planner.GetFirstName] se přede mnou úctivě ukloní. „Bude se hrát divadelní kus, [ROOT.Char.Custom('FormOfAddressForLiege')],“ říká [play_planner.GetSheHe]. „Volba příběhu je však vaše privilegium.“ Má to být něco, co pobaví lid, nebo mu připomene jeho místo?" # todo: NEW TRANSLATION
  festival.019.a: "Ať to je sága o slávě mé rodiny." # todo: NEW TRANSLATION
@@ -162,7 +162,7 @@
  displayed_magnificence_title: "$festival.006.t$" # todo: NEW TRANSLATION
  displayed_magnificence: "[CHARACTER.GetShortUIName|U] [Select_CString(CHARACTER.IsFemale,'uspořádala','uspořádal')] impozantní podívanou." # todo: NEW TRANSLATION
  served_with_humility_title: "$festival.006.t$" # todo: NEW TRANSLATION
- served_with_humility: "[CHARACTER.GetShortUIName|U] [Select_CString(CHARACTER.IsFemale,'splnila','splnil')] [CHARACTER.GetHerHis] roli s pokorou." # todo: NEW TRANSLATION
+ served_with_humility: "[CHARACTER.GetShortUIName|U] [Select_CString(CHARACTER.IsFemale,'splnila','splnil')] [Select_CString(CHARACTER.IsFemale,'její','jeho')] roli s pokorou." # todo: NEW TRANSLATION
  fought_for_fortune_title: "$festival.007.t$" # todo: NEW TRANSLATION
  fought_for_fortune: "[CHARACTER.GetShortUIName|U] [Select_CString(CHARACTER.IsFemale,'vstoupila','vstoupil')] do soutěže, aby [Select_CString(CHARACTER.IsFemale,'získala','získal')] přízeň štěstěny." # todo: NEW TRANSLATION
  observed_dance_title: "$festival.008.t$" # todo: NEW TRANSLATION
@@ -170,7 +170,7 @@
  spied_on_wishes_title: "$festival.009.t$" # todo: NEW TRANSLATION
  spied_on_wishes: "[CHARACTER.GetShortUIName|U] [Select_CString(CHARACTER.IsFemale,'nahlédla','nahlédl')] do skryté temnoty v srdcích ostatních." # todo: NEW TRANSLATION
  purchased_trinkets_title: "$festival.010.t$" # todo: NEW TRANSLATION
- purchased_trinkets: "[CHARACTER.GetShortUIName|U] [Select_CString(CHARACTER.IsFemale,'koupila','koupil')] slavnostní ozdoby pro [CHARACTER.GetHerselfHimself] a [CHARACTER.GetHerHis] rodinu." # todo: NEW TRANSLATION
+ purchased_trinkets: "[CHARACTER.GetShortUIName|U] [Select_CString(CHARACTER.IsFemale,'koupila','koupil')] slavnostní ozdoby pro [CHARACTER.GetHerselfHimself] a [Select_CString(CHARACTER.IsFemale,'její','jeho')] rodinu." # todo: NEW TRANSLATION
  contemplated_crowd_title: "$festival.012.t$" # todo: NEW TRANSLATION
  contemplated_crowd: "[CHARACTER.GetShortUIName|U] [Select_CString(CHARACTER.IsFemale,'kráčela','kráčel')] mezi lidmi a [Select_CString(CHARACTER.IsFemale,'podílela','podílel')] se na jejich slavnostní radosti." # todo: NEW TRANSLATION
  demanded_compensation_for_mishap_title: "$festival.016.t$" # todo: NEW TRANSLATION
@@ -182,7 +182,7 @@
  enjoyed_puppetry_title: "$festival.017.t$" # todo: NEW TRANSLATION
  enjoyed_puppetry: "[CHARACTER.GetShortUIName|U] [Select_CString(CHARACTER.IsFemale,'projevila','projevil')] velkorysost těch mocných a významných." # todo: NEW TRANSLATION
  observed_crowd_title: "$festival.017.t$" # todo: NEW TRANSLATION
- observed_crowd: "[CHARACTER.GetShortUIName|U] [Select_CString(CHARACTER.IsFemale,'nahlédla','nahlédl')] do srdcí [CHARACTER.GetHerHis] lidu." # todo: NEW TRANSLATION
+ observed_crowd: "[CHARACTER.GetShortUIName|U] [Select_CString(CHARACTER.IsFemale,'nahlédla','nahlédl')] do srdcí [Select_CString(CHARACTER.IsFemale,'jejímu','jeho')] lidu." # todo: NEW TRANSLATION
  ejected_priestess_title: "$festival.018.t$" # todo: NEW TRANSLATION
  ejected_priestess: "[CHARACTER.GetShortUIName|U] [Select_CString(CHARACTER.IsFemale,'pochybovala','pochyboval')] o pravosti božského požadavku." # todo: NEW TRANSLATION
  made_offering_title: "$festival.018.t$" # todo: NEW TRANSLATION
@@ -202,7 +202,7 @@
  fire_drilled_people_title: "$festival.021.t$" # todo: NEW TRANSLATION
  fire_drilled_people: "[CHARACTER.GetShortUIName|U] [Select_CString(CHARACTER.IsFemale,'připomněla','připomněl')] lidem nebezpečí požáru." # todo: NEW TRANSLATION
  banned_brawling_title: "$festival.022.t$" # todo: NEW TRANSLATION
- banned_brawling: "[CHARACTER.GetShortUIName|U] [Select_CString(CHARACTER.IsFemale,'zakázala','zakázal')] soutěž síly a [Select_CString(CHARACTER.IsFemale,'posílila','posílil')] [CHARACTER.GetHerHis] autoritu." # todo: NEW TRANSLATION
+ banned_brawling: "[CHARACTER.GetShortUIName|U] [Select_CString(CHARACTER.IsFemale,'zakázala','zakázal')] soutěž síly a [Select_CString(CHARACTER.IsFemale,'posílila','posílil')] [Select_CString(CHARACTER.IsFemale,'její','jeho')] autoritu." # todo: NEW TRANSLATION
  keen_eye_for_business_title: "$festival.022.t$" # todo: NEW TRANSLATION
  keen_eye_for_business: "[CHARACTER.GetShortUIName|U] [Select_CString(CHARACTER.IsFemale,'využila','využil')] výnosnou příležitost." # todo: NEW TRANSLATION
  rewarded_brawlers_title: "$festival.022.t$" # todo: NEW TRANSLATION
@@ -232,7 +232,7 @@
  every_drunkard_or_lifestyle_reveler_attendee: "Každý účastník, který je [GetTrait('drunkard').GetName( GetNullCharacter )] nebo [GetTrait('lifestyle_reveler').GetName( GetNullCharacter )]" # todo: NEW TRANSLATION
  every_poet_attendee: "Každý [GetTrait('lifestyle_poet').GetName( GetNullCharacter )] přítomný" # todo: NEW TRANSLATION
  festival.100.t: "Za měsíční noci" # todo: NEW TRANSLATION
- festival.100.desc: "Posel, který mě [Select_CString(ROOT.Char.IsFemale,'pozvala','pozval')] na [target_character.GetTitledFirstNamePossessive] večírek pozorování měsíce, sotva doplnil svou žádost, když dorazil další, nesoucí dopis, který mě místo toho zve k [target_character2.GetTitledFirstName]!\n\nTakové načasování #EMP sotva#! může být náhodné. Každý z nich očividně chce změřit mou hodnotu, a přijetí jedné pozvánky bude chápáno jako znak mé sympatie k jejímu autorovi, a stejně jako projev pohrdání [target_character.GetHerHis] rivalem." # todo: NEW TRANSLATION
+ festival.100.desc: "Posel, který mě [Select_CString(ROOT.Char.IsFemale,'pozvala','pozval')] na [target_character.GetTitledFirstNamePossessive] večírek pozorování měsíce, sotva doplnil svou žádost, když dorazil další, nesoucí dopis, který mě místo toho zve k [target_character2.GetTitledFirstName]!\n\nTakové načasování #EMP sotva#! může být náhodné. Každý z nich očividně chce změřit mou hodnotu, a přijetí jedné pozvánky bude chápáno jako znak mé sympatie k jejímu autorovi, a stejně jako projev pohrdání [Select_CString(target_character.IsFemale,'jejím','jeho')] rivalem." # todo: NEW TRANSLATION
  festival.100.a: "Poctím svou přítomností [target_character.GetTitledFirstNameNoTooltip]." # todo: NEW TRANSLATION
  festival.100.b: "Myslím, že dávám přednost společnosti [target_character2.GetTitledFirstNamePossessiveNoTooltip]." # todo: NEW TRANSLATION
  festival.100.c: "Pošlete oběma mé omluvy spolu se symboly mé úcty." # todo: NEW TRANSLATION
@@ -262,7 +262,7 @@
  festival_toasted_head_house_log_title: "Pohár pozvednut" # todo: NEW TRANSLATION
  festival_toasted_head_house_log: "[CHARACTER.GetHouse.GetName] [Select_CString(CHARACTER.GetHouse.IsFemale,'připila','připil')] [TARGET_CHARACTER.GetHouse.GetName]" # todo: NEW TRANSLATION
  festival.103.t: "Chlubivé jazyky" # todo: NEW TRANSLATION
- festival.103.desc: "Když se spolu se společníky prodíráme davem, zaslechnu hlasité volání.\n\n„Můj $language_chinese_name$ je #EMP vynikající#!! Před pouhými dvěma týdny [target_character2.GetTitledFirstName] podrobil mou básnickou zdatnost zkoušce a [Select_CString(target_character2.IsFemale,'byla','byl')] pokořen mým uměním!“ [target_character.GetTitledFirstName] se chlubí.\n\nNepamatuji si žádné pověsti, že by [target_character.GetHerHim] [Select_CString(ROOT.Char.IsFemale,'měla','měl')] básnický talent; posílení [target_character.GetHerHis] tvrzení by mi však mohlo prospět. Ale dát tomuhle chvastounovi lekci by bylo těžké odolat." # todo: NEW TRANSLATION
+ festival.103.desc: "Když se spolu se společníky prodíráme davem, zaslechnu hlasité volání.\n\n„Můj $language_chinese_name$ je #EMP vynikající#!! Před pouhými dvěma týdny [target_character2.GetTitledFirstName] podrobil mou básnickou zdatnost zkoušce a [Select_CString(target_character2.IsFemale,'byla','byl')] pokořen mým uměním!“ [target_character.GetTitledFirstName] se chlubí.\n\nNepamatuji si žádné pověsti, že by [target_character.GetHerHim] [Select_CString(ROOT.Char.IsFemale,'měla','měl')] básnický talent; posílení [Select_CString(target_character.IsFemale,'její','jeho')] tvrzení by mi však mohlo prospět. Ale dát tomuhle chvastounovi lekci by bylo těžké odolat." # todo: NEW TRANSLATION
  festival.103.a: "„[target_character.GetSheHe|U] mluví pravdu.“" # todo: NEW TRANSLATION
  festival.103.b: "„Obdař nás svými talenty, [target_character.GetTitledFirstNameNoTooltip].“" # todo: NEW TRANSLATION
  festival.103.c: "Talenty #EMP my#! přátel jsou mnohem velkolepější." # todo: NEW TRANSLATION
@@ -295,7 +295,7 @@
  festival.105.t: "Zkouška důvtipu" # todo: NEW TRANSLATION
  festival.105.desc: "Papírek, psaný elegantním rukopisem, visí křehce na větvi. „[target_character.GetTitledFirstName] nám dal hádanku!“ vykřikne [target_character2.GetTitledFirstName].\n\n„Výzva,“ oponuje [target_character3.GetTitledFirstName]. „[target_character.GetSheHe|U] si myslí, že je mezi námi nejchytřejší. [Select_CString(ROOT.Char.IsFemale,'Nabídla','Nabídl')] prvnímu, kdo ji rozluští, jakoukoli výhodu, jakou by [Select_CString(ROOT.Char.IsFemale,'mohla','mohl')] chtít od [target_character.GetHerHim]; #EMP clearly#! [target_character.GetSheHe] neočekává, že by někdo z nás uspěl.“" # todo: NEW TRANSLATION
  festival.105.a: "Rozluštím tuto hádanku a s ní i [target_character.GetTitledFirstNamePossessiveNoTooltip] aroganci!" # todo: NEW TRANSLATION
- festival.105.b: "Jaký spletitý výtvor! [target_character.GetHerHis|U] důvtip je skutečně nepřekonatelný." # todo: NEW TRANSLATION
+ festival.105.b: "Jaký spletitý výtvor! [Select_CString(target_character.IsFemale,'Její','Jeho')] důvtip je skutečně nepřekonatelný." # todo: NEW TRANSLATION
  festival.105.c: "Začátek soutěže důvtipu!" # todo: NEW TRANSLATION
  festival.105.a.success: "Hádanku rozluštíte s působivou lehkostí" # todo: NEW TRANSLATION
  festival.105.a.success.toast: "Hádanku snadno rozpleťete" # todo: NEW TRANSLATION

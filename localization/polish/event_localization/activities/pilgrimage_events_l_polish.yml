@@ -132,7 +132,7 @@
  pilgrimage_changed_ways_log_title: "Zanechání hříchu"
  pilgrimage_changed_ways_log: "[CHARACTER.GetShortUIName|U] zanechal své hříšné způsoby"
  pilgrimage_the_calling_log_title: "Volání"
- pilgrimage_the_calling_log: "[CHARACTER.GetShortUIName|U] umožnil [TARGET_CHARACTER.GetShortUIName] zůstat v [PROVINCE.GetNameNoTooltip] a naplnit [TARGET_CHARACTER.GetHerHis] náboženské povolání"
+ pilgrimage_the_calling_log: "[CHARACTER.GetShortUIName|U] umožnil [TARGET_CHARACTER.GetShortUIName] zůstat v [PROVINCE.GetNameNoTooltip] a naplnit [Select_CString(TARGET_CHARACTER.IsFemale,'její','jeho')] náboženské povolání"
  pilgrimage_theological_debate_log_title: "Disputace"
  pilgrimage_theological_debate_log: "[CHARACTER.GetShortUIName|U] vedl teologickou disputaci s [TARGET_CHARACTER.GetShortUIName]"
  pilgrimage_acquired_relic_log_title: "Relikvie získána"
@@ -150,15 +150,15 @@
  pilgrimage_exotic_wares_log_title: "Exotické zboží"
  pilgrimage_exotic_wares_log: "[CHARACTER.GetShortUIName|U] nabízel některé exotické zboží"
  pilgrimage_translator_log_title: "Překladatel"
- pilgrimage_translator_log: "[CHARACTER.GetShortUIName|U] přeložil nápisy na místní památce pro užitek [CHARACTER.GetHerHis] spolupoutníků"
+ pilgrimage_translator_log: "[CHARACTER.GetShortUIName|U] přeložil nápisy na místní památce pro užitek [Select_CString(CHARACTER.IsFemale,'jejích','jeho')] spolupoutníků"
  pilgrimage_recruited_courtier_log_title: "Naverbován dvořan"
- pilgrimage_recruited_courtier_log: "[CHARACTER.GetShortUIName|U] přetáhl schopného [TARGET_CHARACTER.GetShortUIName], aby se připojil k [CHARACTER.GetHerHis] dvoru."
+ pilgrimage_recruited_courtier_log: "[CHARACTER.GetShortUIName|U] přetáhl schopného [TARGET_CHARACTER.GetShortUIName], aby se připojil k [Select_CString(CHARACTER.IsFemale,'jejímu','jeho')] dvoru."
  pilgrimage_host_death_log_title: "Smrt poutníka"
  pilgrimage_host_death_log: "[CHARACTER.GetShortUIName|U] zahynul na cestě do [PROVINCE.GetNameNoTooltip]"
  pilgrimage_inherited_pilgrimage_log_title: "Pouť převzatá"
  pilgrimage_inherited_pilgrimage_log: "[CHARACTER.GetShortUIName|U] se rozhodl pokračovat v pouti do [PROVINCE.GetNameNoTooltip]"
  pilgrimage_burial_log_title: "[Select_CString(ROOT.Char.IsFemale,'Uložena','Uložen')] k poslednímu odpočinku"
- pilgrimage_burial_log: "[CHARACTER.GetShortUIName|U] uložil ostatky [CHARACTER.GetHerHis] předchůdce [TARGET_CHARACTER.GetShortUIName] k odpočinku na svatém místě v [PROVINCE.GetNameNoTooltip]"
+ pilgrimage_burial_log: "[CHARACTER.GetShortUIName|U] uložil ostatky [Select_CString(CHARACTER.IsFemale,'její','jeho')] předchůdce [TARGET_CHARACTER.GetShortUIName] k odpočinku na svatém místě v [PROVINCE.GetNameNoTooltip]"
  pilgrimage.0040.t: "$pilgrimage_header$ Konec cesty"
  pilgrimage.0040.desc: "A tak má duchovní pouť náhle skončila. Podobně jako list padající do bouřlivé řeky však můžeme jen sledovat, kam nás nové okolnosti zavedou."
  pilgrimage.0040.desc_moved_capital: "Nyní, když je moje hlavní sídlo skutečně zářivým místem [ROOT.Char.GetCapitalLocation.GetTitle.GetNameNoTierNoTooltip], nemá pro mě velký smysl pokračovat v [GetActivityType('activity_pilgrimage').GetNameNoTooltip].\n\nMěl bych se soustředit na dokončení pouti tam a zkusit štěstí u jiného svatého místa."
@@ -170,10 +170,10 @@
  pilgrimage.0041.a.tt: "Vaše [THIS.Char.GetInvolvedActivity.GetName] bude pokračovat" # todo: RETRANSLATED ENGLISH
  pilgrimage.0041.b: "Ne, to je příliš nebezpečné."
  pilgrimage.0042.t: "$pilgrimage_header$ Pohřben doma"
- pilgrimage.0042.desc: "Naše cesta byla přerušena a vydáme se zpět do [ROOT.Char.GetCapitalLocation.GetTitle.GetNameNoTierNoTooltip], abychom uložili [old_pilgrimage_host.GetTitledFirstName] k [old_pilgrimage_host.GetHerHis] poslednímu odpočinku."
+ pilgrimage.0042.desc: "Naše cesta byla přerušena a vydáme se zpět do [ROOT.Char.GetCapitalLocation.GetTitle.GetNameNoTierNoTooltip], abychom uložili [old_pilgrimage_host.GetTitledFirstName] k [Select_CString(old_pilgrimage_host.IsFemale,'jejímu','jeho')] poslednímu odpočinku."
  pilgrimage.0042.a: "Je to, co by si [old_pilgrimage_host.GetSheHe] přál."
  pilgrimage.0500.t: "Smrt poutníka"
- pilgrimage.0500.desc: "„[first_holy_site.GetProvince.GetNameNoTooltip]. [second_holy_site.GetProvince.GetNameNoTooltip]. Ach, [second_holy_site.GetProvince.GetNameNoTooltip]...,“ křehké tělo mého [ROOT.Char.Custom2('RelationToMe' , SCOPE.sC('pilgrimage_dying_relative'))] [pilgrimage_dying_relative.GetTitledFirstName] leží na [pilgrimage_dying_relative.GetHerHis] lůžku, schránka [pilgrimage_dying_relative.GetHerHis] bývalého já. Když se přiblížím k posteli, [pilgrimage_dying_relative.GetSheHe] se snaží zaostřit [pilgrimage_dying_relative.GetHerHis] mlhavé oči na mě.\n\n„[pilgrimage_dying_relative.Custom2('RelationToMe' , ROOT.Char)|U]... věci, kterých lituješ, nejsou věci, které jsi udělal, ale věci, které jsi neudělal.“ Přiblížím se blíž a cítím rozklad na dechu [pilgrimage_dying_relative.GetHerHis], když [pilgrimage_dying_relative.GetSheHe] pokračuje: „Nenech každodenní pasti odvrátit tě od tvé pravé cesty k [ROOT.Char.GetFaith.HighGodName].“\n\nNa tváři [pilgrimage_dying_relative.GetHerHis] se objeví bolestný výraz a já pochopím, že rozhovor je u konce."
+ pilgrimage.0500.desc: "„[first_holy_site.GetProvince.GetNameNoTooltip]. [second_holy_site.GetProvince.GetNameNoTooltip]. Ach, [second_holy_site.GetProvince.GetNameNoTooltip]...,“ křehké tělo mého [ROOT.Char.Custom2('RelationToMe' , SCOPE.sC('pilgrimage_dying_relative'))] [pilgrimage_dying_relative.GetTitledFirstName] leží na [Select_CString(pilgrimage_dying_relative.IsFemale,'jejímu','jeho')] lůžku, schránka [pilgrimage_dying_relative.GetHerHis] bývalého já. Když se přiblížím k posteli, [pilgrimage_dying_relative.GetSheHe] se snaží zaostřit [Select_CString(pilgrimage_dying_relative.IsFemale,'její','jeho')] mlhavé oči na mě.\n\n„[pilgrimage_dying_relative.Custom2('RelationToMe' , ROOT.Char)|U]... věci, kterých lituješ, nejsou věci, které jsi udělal, ale věci, které jsi neudělal.“ Přiblížím se blíž a cítím rozklad na dechu [pilgrimage_dying_relative.GetHerHis], když [pilgrimage_dying_relative.GetSheHe] pokračuje: „Nenech každodenní pasti odvrátit tě od tvé pravé cesty k [ROOT.Char.GetFaith.HighGodName].“\n\nNa tváři [Select_CString(pilgrimage_dying_relative.IsFemale,'její','jeho')] se objeví bolestný výraz a já pochopím, že rozhovor je u konce."
  pilgrimage.0500.a: "Ano, samozřejmě."
  pilgrimage.0500.a.flavor: "Pokud to usnadní odpočinek [pilgrimage_dying_relative.GetHerHim]."
  pilgrimage.0500.a.tt_pilgrimage: "Vaše další [pilgrimage|E] bude levnější" # todo: RETRANSLATED ENGLISH
@@ -237,7 +237,7 @@
  pilgrimage.1130.t: "$pilgrimage_header$ Kaplička u cesty"
  pilgrimage.1130.desc: "U rozcestí těsně za [shrine_province.GetName] stojí opuštěná [shrine_province.GetCounty.GetFaith.GetAdjective] svatyně označená [shrine_province.GetCounty.GetFaith.ReligiousSymbol], uprostřed [shrine_province.Custom('GetProvinceGroundDesc')].\n\nVe výklenku jsou skromné dary zanechané poutníky a místními, obklopené zbytky nesčetných svící, nyní uhašených." # todo: RETRANSLATED ENGLISH
  pilgrimage.1130.both: "\n\nMůj [ROOT.Char.Custom2('RelationToMeShort', shrine_faithist)], [shrine_faithist.GetName], se zastaví, aby se pomodlil, zatímco můj [ROOT.Char.Custom2('RelationToMeShort', shrine_mocker)], [shrine_mocker.GetName], protočí oči a hlasitě si odfrkne."
- pilgrimage.1130.faithist: "\n\nMůj [ROOT.Char.Custom2('RelationToMeShort', shrine_faithist)], [shrine_faithist.GetName], se zastaví, aby se pomodlil, a přidá [shrine_faithist.GetHerHis] vlastní malý dar do sbírky."
+ pilgrimage.1130.faithist: "\n\nMůj [ROOT.Char.Custom2('RelationToMeShort', shrine_faithist)], [shrine_faithist.GetName], se zastaví, aby se pomodlil, a přidá [Select_CString(shrine_faithist.IsFemale,'její','jeho')] vlastní malý dar do sbírky."
  pilgrimage.1130.mocker: "\n\nMůj [ROOT.Char.Custom2('RelationToMeShort', shrine_mocker)], [shrine_mocker.GetName], se při pohledu na to posměšně zasměje a mumlá něco o [shrine_mocker.GetFaith.NegativeAfterLife]."
  pilgrimage.1130.a: "Mohu něco obětovat." # todo: RETRANSLATED ENGLISH
  pilgrimage.1130.b: "Proč ne..."
@@ -307,7 +307,7 @@
  pilgrimage.2009.a: "Ať [ROOT.Char.GetFaith.HighGodNameAlternate] smiluje."
  pilgrimage.2009.a.tt: "Cestování s [GetTrait('pneumonic').GetName( GetPlayer )] představuje nebezpečná zdravotní rizika"
  pilgrimage.2010.t: "$pilgrimage_header$ Mystik"
- pilgrimage.2010.desc: "[2010_mystic.GetTitledFirstName] je jedním z podivnějších lidí, které jsem na této cestě potkal. [2010_mystic.GetSheHe|U] se zdá být pevným věřícím, ale také rozvádí pravou podstatu [ROOT.Char.GetFaith.HighGodName] a co to všechno znamená. V noci je [2010_mystic.GetHerHis] stan osvětlen svíčkami a občas z něj vychází podivné zpěvy a nezvyklé kadidlo.\n\nJsem zcela nepřipraven, když mě [2010_mystic.GetFirstNameNoTooltip] vyzve, abych vstoupil."
+ pilgrimage.2010.desc: "[2010_mystic.GetTitledFirstName] je jedním z podivnějších lidí, které jsem na této cestě potkal. [2010_mystic.GetSheHe|U] se zdá být pevným věřícím, ale také rozvádí pravou podstatu [ROOT.Char.GetFaith.HighGodName] a co to všechno znamená. V noci je [Select_CString(2010_mystic.IsFemale,'její','jeho')] stan osvětlen svíčkami a občas z něj vychází podivné zpěvy a nezvyklé kadidlo.\n\nJsem zcela nepřipraven, když mě [2010_mystic.GetFirstNameNoTooltip] vyzve, abych vstoupil."
  pilgrimage.2010.a: "Jsem celkem zvědavý..."
  pilgrimage.2010.a.tt: "Vstoupíte do stanu"
  pilgrimage.2010.b: "Ne, děkuji, tady to všechno smrdí kacířstvím!"
@@ -351,7 +351,7 @@
  pilgrimage.2020.c_cynical: "Takže #EMP tohle#! je vůle [ROOT.Char.GetFaith.HighGodNamePossessive], hm."
  pilgrimage.2020.c.flavor: "Kdo jsem já, abych zasahoval do plánů [ROOT.Char.GetFaith.HighGodNamePossessive]."
  pilgrimage.2021.t: "$pilgrimage_header$ Pokání"
- pilgrimage.2021.desc: "Podařilo se mi přesvědčit [thief_to_convert.GetTitledFirstName] aby [Select_CString(thief_to_convert.IsFemale,'změnila','změnil')] své způsoby. [thief_to_convert.GetSheHe|U] stojí přede mnou, tíha [thief_to_convert.GetHerHis] hanby mu/které klopí ramena, když se vyhýbá mému pohledu.\n\n„To nebyla moje volba, tenhle život,“ říká pomalu [thief_to_convert.GetFirstNameNoTooltip]. „Co mám udělat, abych odčinil své hříchy?“"
+ pilgrimage.2021.desc: "Podařilo se mi přesvědčit [thief_to_convert.GetTitledFirstName] aby [Select_CString(thief_to_convert.IsFemale,'změnila','změnil')] své způsoby. [thief_to_convert.GetSheHe|U] stojí přede mnou, tíha [Select_CString(thief_to_convert.IsFemale,'její','jeho')] hanby mu/které klopí ramena, když se vyhýbá mému pohledu.\n\n„To nebyla moje volba, tenhle život,“ říká pomalu [thief_to_convert.GetFirstNameNoTooltip]. „Co mám udělat, abych odčinil své hříchy?“"
  pilgrimage.2021.a: "Šiř slovo o [ROOT.Char.GetFaith.GetReligion.GetNameNoTooltip]."
  pilgrimage.2021.b: "Trestání sebe sama mi vždy #EMP nějak#! pomůže cítit se lépe..."
  pilgrimage.2021.c: "Tvrdá práce všechno vyřeší."
@@ -390,7 +390,7 @@
  pilgrimage.6001.a: "Mám vždy otevřené ucho pro přítele."
  pilgrimage.6001.b: "Myslím, že raději zůstanu sám, díky."
  pilgrimage.6001.c: "Hanba ti. Jsme tady, abychom se soustředili na víru!"
- pilgrimage.6002.desc: "[friend.GetFirstNameNoTooltip|U] a já strávíme zbytek dnešní cesty povídáním o tom a onom, intrikách a vtipech, bitvách a milencích, starých přátelích a nových. Ponořeni jsme do poutavého rozhovoru, když z čela kolony zazní ospalý výkřik: „Tady děláme tábor!“\n\n[friend.GetFirstNameNoTooltip|U] se na mě podívá s lišáckým úsměvem na [friend.GetHerHis] tváři a říká: „Konečně! Ale co bys [Select_CString(ROOT.Char.IsFemale,'řekla','řekl')] na krátkou odbočku před postavením tábora? Dlouhá denní cesta může [friend.GetWomanMan] udělat žíznivým...“"
+ pilgrimage.6002.desc: "[friend.GetFirstNameNoTooltip|U] a já strávíme zbytek dnešní cesty povídáním o tom a onom, intrikách a vtipech, bitvách a milencích, starých přátelích a nových. Ponořeni jsme do poutavého rozhovoru, když z čela kolony zazní ospalý výkřik: „Tady děláme tábor!“\n\n[friend.GetFirstNameNoTooltip|U] se na mě podívá s lišáckým úsměvem na [Select_CString(friend.IsFemale,'její','jeho')] tváři a říká: „Konečně! Ale co bys [Select_CString(ROOT.Char.IsFemale,'řekla','řekl')] na krátkou odbočku před postavením tábora? Dlouhá denní cesta může [friend.GetWomanMan] udělat žíznivým...“"
  pilgrimage.6002.a: "Tekuté osvěžení zní božsky!"
  pilgrimage.6002.a_tt: "Navštívit místní krčmu"
  pilgrimage.6002.b: "Jdi napřed..."
@@ -411,12 +411,12 @@
  pilgrimage.6005.a: "To máme ale laskavé a ohleduplné spolucestující!"
  pilgrimage.6005.b: "„Měli bychom zaplatit za škody!“"
  pilgrimage.6005.c: "„Je trestné bavit se?“"
- pilgrimage.6006.desc: "[friend.GetFirstName] a já se blížíme ke konci dnešní cesty. Pomalu míříme k určenému místu zastavení, když někdo vpředu vykřikne: „Podívejte! Jaký #EMP nádherný#! západ slunce!“\n\nVšichni se prchlivě vrhnou vpřed s posledními zbytky sil, aby zahlédli majestátní pohled. „Jaké divy nám jsou dopřány v tomto smrtelném životě! Teď je ideální čas k rozjímání o víře,“ říkám [friend.GetFirstNameNoTooltip], ale [friend.GetSheHe] se vůbec nediví, nechá z [friend.GetHerHis] rtů uniknout ostrý posměch.\n\n„Je to jen západ slunce!“ křičí [friend.GetSheHe]. „Musí se všechno, co na této cestě děláme, týkat [ROOT.Char.GetFaith.HighGodName]? Já jen chci cestovat a vidět svět — ani nejsem přesvědčen, že [ROOT.Char.GetFaith.HighGodName] vůbec existuje #EMP!#“"
+ pilgrimage.6006.desc: "[friend.GetFirstName] a já se blížíme ke konci dnešní cesty. Pomalu míříme k určenému místu zastavení, když někdo vpředu vykřikne: „Podívejte! Jaký #EMP nádherný#! západ slunce!“\n\nVšichni se prchlivě vrhnou vpřed s posledními zbytky sil, aby zahlédli majestátní pohled. „Jaké divy nám jsou dopřány v tomto smrtelném životě! Teď je ideální čas k rozjímání o víře,“ říkám [friend.GetFirstNameNoTooltip], ale [friend.GetSheHe] se vůbec nediví, nechá z [Select_CString(friend.IsFemale,'jejích','jeho')] rtů uniknout ostrý posměch.\n\n„Je to jen západ slunce!“ křičí [friend.GetSheHe]. „Musí se všechno, co na této cestě děláme, týkat [ROOT.Char.GetFaith.HighGodName]? Já jen chci cestovat a vidět svět — ani nejsem přesvědčen, že [ROOT.Char.GetFaith.HighGodName] vůbec existuje #EMP!#“"
  pilgrimage.6006.a: "„Tvoje tajemství je u mě v bezpečí, příteli.“"
  pilgrimage.6006.b: "„Nesnesu přítele, který nevěří.“"
  pilgrimage.6006.c: "„Říkáš pár dobrých věcí...“"
  pilgrimage.6007.t: "Žít z modlitby"
- pilgrimage.6007.desc: "Můj [ROOT.Char.Custom2('RelationToMe' , SCOPE.sC('friend'))] [friend.GetFirstName], sužovaný [friend.GetHerHis] neduživostí, má potíže dotrvat s námi na pouti. Tak jdu po [friend.GetHerHim] boku a dělám mu společnost. Putující [ROOT.Char.GetFaith.PriestNeuter] cestuje s námi už delší dobu a všimne si [friend.GetFirstNamePossessiveNoTooltip] potíží.\n\n„Chudáku. Dítě [ROOT.Char.GetFaith.HighGodName] by se nemělo tak trápit na své cestě do [ROOT.Char.GetTravelPlan.GetData.GetNextDestination.GetProvince.GetNameNoTooltip],“ říká. „Možná by mi [ROOT.Char.GetFaith.HealthGodName] mohl dopřát moc tě uzdravit z tvé neduhy. Dovolíš mi to zkusit?“\n\nMůj [ROOT.Char.Custom2('RelationToMe' , SCOPE.sC('friend'))] se otočí ke mně a hledá mé vedení. „Co si myslíš, [ROOT.Char.GetFirstName]?“"
+ pilgrimage.6007.desc: "Můj [ROOT.Char.Custom2('RelationToMe' , SCOPE.sC('friend'))] [friend.GetFirstName], sužovaný [Select_CString(friend.IsFemale,'její','jeho')] neduživostí, má potíže dotrvat s námi na pouti. Tak jdu po [friend.GetHerHim] boku a dělám mu společnost. Putující [ROOT.Char.GetFaith.PriestNeuter] cestuje s námi už delší dobu a všimne si [friend.GetFirstNamePossessiveNoTooltip] potíží.\n\n„Chudáku. Dítě [ROOT.Char.GetFaith.HighGodName] by se nemělo tak trápit na své cestě do [ROOT.Char.GetTravelPlan.GetData.GetNextDestination.GetProvince.GetNameNoTooltip],“ říká. „Možná by mi [ROOT.Char.GetFaith.HealthGodName] mohl dopřát moc tě uzdravit z tvé neduhy. Dovolíš mi to zkusit?“\n\nMůj [ROOT.Char.Custom2('RelationToMe' , SCOPE.sC('friend'))] se otočí ke mně a hledá mé vedení. „Co si myslíš, [ROOT.Char.GetFirstName]?“"
  pilgrimage.6007.a: "[ROOT.Char.GetFaith.HighGodName] se skutečně stará o nás."
  pilgrimage.6007.a.success: "[friend.GetFirstNameNoTooltip] je uzdraven"
  pilgrimage.6007.a.failure: "Stav [friend.GetFirstNamePossessiveNoTooltip] se zhorší"
@@ -466,7 +466,7 @@
  pilgrimage.2511.b: "Nadechni se... vydechni..."
  pilgrimage.2511.c: "Musí tu #EMP být#! lepší způsob, jak se s tímto hněvem vypořádat."
  pilgrimage.3001.t: "$pilgrimage_header$ Slzy [ROOT.Char.GetFaith.WaterGodName]"
- pilgrimage.3001.desc: "I když jsem na pouti, kněží stále slouží mši každou neděli. Když není v blízkosti kostel, koná se pod širým nebem, ale brzy dnes ráno přišla bouře a stále trvá.\n\nNeodradil ji horlivý [ROOT.Char.Custom('DefaultPriestTitle')], který stojí v lijáku a pronáší kázání o vytrvalosti tváří v tvář protivenstvím. Přesto se počet [zealous_priest.GetHerHis] posluchačů rychle snižuje, jak se odrazení věřící uchylují do úkrytů před přívalovým deštěm."
+ pilgrimage.3001.desc: "I když jsem na pouti, kněží stále slouží mši každou neděli. Když není v blízkosti kostel, koná se pod širým nebem, ale brzy dnes ráno přišla bouře a stále trvá.\n\nNeodradil ji horlivý [ROOT.Char.Custom('DefaultPriestTitle')], který stojí v lijáku a pronáší kázání o vytrvalosti tváří v tvář protivenstvím. Přesto se počet [Select_CString(zealous_priest.IsFemale,'jejích','jeho')] posluchačů rychle snižuje, jak se odrazení věřící uchylují do úkrytů před přívalovým deštěm."
  pilgrimage.3001.a: "Co je trochu deště pro věrného [ROOT.Char.GetFaith.GetAdherentNameNoTooltip]?"
  pilgrimage.3001.a.tt: "$pilgrimage.2008.a.tt$"
  pilgrimage.3001.b: "Tuto šílenost nechám být, budu ve svém stanu."
@@ -475,7 +475,7 @@
  pilgrimage.3002.a: "[naked_preacher.GetSheHe|U] má pravdu! Nikdy jsem se necítil tak blízko [ROOT.Char.GetFaith.HighGodName]!"
  pilgrimage.3002.b: "Kacíř! Sundejte [naked_preacher.GetHerHim] odtud!"
  pilgrimage.3002.c: "Vyzvěte [naked_preacher.GetHerHim] na teologickou debatu."
- pilgrimage.3002.c.success: "Přesvědčíte kazatele o [naked_preacher.GetHerHis] pošetilosti"
+ pilgrimage.3002.c.success: "Přesvědčíte kazatele o [Select_CString(naked_preacher.IsFemale,'její','jeho')] pošetilosti"
  pilgrimage.3002.c.success.tt: "Vy rozhodnete, co se stane dál"
  pilgrimage.3002.c.failure: "Nedokážete vyvrátit kazatelovy argumenty"
  pilgrimage.3002.d: "Ignorujte [naked_preacher.GetHerHim] a pokračujte v cestě."
@@ -633,7 +633,7 @@
  pilgrimage.6510.b_failure.desc: "Nápis zůstává záhadou"
  pilgrimage.6510.c: "Eh, to se sotva vyplatí."
  pilgrimage.6520.t: "Je čas brzy jít domů?"
- pilgrimage.6520.desc: "[impatient_pilgrim.GetTitledFirstName] poskakuje kolem s naším poutním houfem, hlasitě vzdychajíc a táhnouc [impatient_pilgrim.GetHerHis] nohy: „Máme pocit, že tu jsme už věčnost. Není čas začít se pomalu vracet domů?“ [impatient_pilgrim.GetSheHe] mrmlá netrpělivě.\n\nMrknu na [impatient_pilgrim.GetHerHim] pohledem z boku, a"
+ pilgrimage.6520.desc: "[impatient_pilgrim.GetTitledFirstName] poskakuje kolem s naším poutním houfem, hlasitě vzdychajíc a táhnouc [Select_CString(impatient_pilgrim.IsFemale,'její','jeho')] nohy: „Máme pocit, že tu jsme už věčnost. Není čas začít se pomalu vracet domů?“ [impatient_pilgrim.GetSheHe] mrmlá netrpělivě.\n\nMrknu na [impatient_pilgrim.GetHerHim] pohledem z boku, a"
  pilgrimage.6520.desc_forgiving: "cítím trochu soucitu s [impatient_pilgrim.GetHerHim]. Není příjemné být vláčen."
  pilgrimage.6520.desc_nonforgiving: "nemohu uvěřit té #EMP drzosti#! [impatient_pilgrim.GetHerHim]. Sevřu pěsti."
  pilgrimage.6520.a: "Jak si #EMP troufáš#! být tak drzý!"
@@ -643,7 +643,7 @@
  pilgrimage.6530.desc_intro: "Když se pomalu procházíme kolem stánků na trhu [ROOT.Char.GetCurrentLocation.GetCounty.GetTitle.GetNameNoTierNoTooltip], osloví nás"
  pilgrimage.6530.desc_adult: "podivný [local_guide.GetWomanMan]. [local_guide.GetSheHe|U] nás bez ostychu osloví:\n\n„Má [ROOT.Char.GetLadyLord], vypadáte jako urozený[ROOT.Char.GetWomanMan]! Znám jeden zcela #EMP božský#! zážitek nedaleko [ROOT.Char.GetCurrentLocation.GetCounty.GetTitle.GetNameNoTierNoTooltip], který by jistě zaujal každého oddaného poutníka!“"
  pilgrimage.6530.desc_child: "malé dítě s velkýma, jasnýma očima. [local_guide.GetSheHe|U] se na nás podívá a vyhrkne:\n\n„Znám tajné místo, kde žije [ROOT.Char.GetFaith.HighGodName]!“ [local_guide.GetSheHe] si přitom nasadí odhodlaný výraz a pokračuje: „Mohu vám ho ukázat, chcete-li?“"
- pilgrimage.6530.desc_warning: "\n\n[warning_character.GetTitledFirstName], po mé pravici, zamračí se a nenápadně zavrtí [warning_character.GetHerHis] hlavou. Varování?"
+ pilgrimage.6530.desc_warning: "\n\n[warning_character.GetTitledFirstName], po mé pravici, zamračí se a nenápadně zavrtí [Select_CString(warning_character.IsFemale,'její','jeho')] hlavou. Varování?"
  pilgrimage.6530.desc_learned: "\n\nPo prostudování map vím, že na té straně [ROOT.Char.GetCurrentLocation.GetCounty.GetTitle.GetNameNoTierNoTooltip] není nic kromě nebezpečné pustiny."
  pilgrimage.6530.a: "Zaujalo mě to."
  pilgrimage.6530.a_child.tt: "Následujete dítě"
@@ -711,7 +711,7 @@
  pilgrimage.6760.a: "„Nebudu poslouchat toto kacířské blábolení!“"
  pilgrimage.6760.b: "„A víš, jak Efezský koncil dopadl pro #EMP něj#!.“"
  pilgrimage.6760.b.success: "[bishop_pilgrim.GetShortUIName] je přesvědčen"
- pilgrimage.6760.b.failure: "[bishop_pilgrim.GetShortUIName] trvá na [bishop_pilgrim.GetHerHis] stanovisku"
+ pilgrimage.6760.b.failure: "[bishop_pilgrim.GetShortUIName] trvá na [Select_CString(bishop_pilgrim.IsFemale,'jejímu','jeho')] stanovisku"
  pilgrimage.6760.c: "„Dobře řečeno, příteli. Pojďme se teď projít.“"
  pilgrimage.6770.t: "Pravá relikvie"
  pilgrimage.6770.desc.intro: "Když se procházím mezi stánky na trhu — vyhýbaje se co největšímu množství místních jídel, vlnám lidí, kteří se mne snaží vmanipulovat do svých domů — všimnu si většího shromáždění kolem jednoho obchodníka.\n\n„Přijďte koupit pravou relikvii za cenu, která by [ROOT.Char.GetFaith.WealthGodName] nechala dekády se smát. Ta"
@@ -728,7 +728,7 @@
  pilgrimage.6770.c: "„Mám lepší způsoby, jak utratit zlato.“"
  pilgrimage.6770.d: "„To nevypadá moc autenticky...“"
  pilgrimage.6780.t: "Zručný dvořan"
- pilgrimage.6780.desc: "Neexistuje tolik modliteb, které by [ROOT.Char.GetWomanMan] mohl vykonat, aniž by nehledal jiné, stejně důležité způsoby, jak trávit čas. A [current_employer.GetTitledFirstName] má krásné sídlo, které mi [current_employer.GetSheHe] tak laskavě dovolí navštívit.\n\nSlyším hlasy z jednoho z pokojů: „...a tímto bys [Select_CString(ROOT.Char.IsFemale,'dosáhla','dosáhl')] největší techniky.“ Nakouknu dovnitř a uvidím [stolen_courtier.GetTitledFirstName], jak vysvětluje [stolen_courtier.GetHerHis] řemeslo skupině zaujatých dvořanů, kteří dychtivě následují [stolen_courtier.GetHerHis] učení."
+ pilgrimage.6780.desc: "Neexistuje tolik modliteb, které by [ROOT.Char.GetWomanMan] mohl vykonat, aniž by nehledal jiné, stejně důležité způsoby, jak trávit čas. A [current_employer.GetTitledFirstName] má krásné sídlo, které mi [current_employer.GetSheHe] tak laskavě dovolí navštívit.\n\nSlyším hlasy z jednoho z pokojů: „...a tímto bys [Select_CString(ROOT.Char.IsFemale,'dosáhla','dosáhl')] největší techniky.“ Nakouknu dovnitř a uvidím [stolen_courtier.GetTitledFirstName], jak vysvětluje [Select_CString(stolen_courtier.IsFemale,'její','jeho')] řemeslo skupině zaujatých dvořanů, kteří dychtivě následují [Select_CString(stolen_courtier.IsFemale,'její','jeho')] učení."
  pilgrimage.6780.a: "Jaký to zručný mistr, možná bych [Select_CString(ROOT.Char.IsFemale,'měla','měl')] najmout [stolen_courtier.GetHerHim]."
  pilgrimage.6780.b: "„Takový odborník se v takovém dvoře marní...“"
  pilgrimage.6780.b.success.t: "Dvořan přijat"
@@ -740,7 +740,7 @@
  obligation_hook_tt: "#EMP Povinnost#! [hooks|E] snižují platy [court_position|E] o [gold_i]#P -50%#!"
  generic_cp_discount: "Smluvní snížení"
  pilgrimage.6790.t: "Duchovní probuzení v [ROOT.Char.GetCurrentLocation.GetCounty.GetTitle.GetNameNoTierNoTooltip]"
- pilgrimage.6790.desc: "„[spiritual_mentor.GetSheHe|U] je nejlepší [spiritual_mentor.GetWomanMan] na celé šíři země. [spiritual_mentor.GetSheHe|U] každý den bdí nad svatým místem, po každém bdění se [spiritual_mentor.GetSheHe] vrací do [spiritual_mentor.GetHerHis] tábora, hned za městem, a modlí se až do svítání, než měsíc odejde.“\n\nZhluboka se nadechnu, než přistoupím k ohni, kde [spiritual_mentor.GetSheHe] odpočívá, poté, co jsem slyšel o [spiritual_mentor.GetHerHis] zázracích.\n\n„Čekal jsem na tebe,“ říká [spiritual_mentor.GetSheHe], dívaje se přímo na mě, „a stejně tak i [spiritual_mentor.GetFaith.HighGodName]. Jsi připraven opustit své [ROOT.Char.Custom('SinfulTrait')|l] způsoby?“"
+ pilgrimage.6790.desc: "„[spiritual_mentor.GetSheHe|U] je nejlepší [spiritual_mentor.GetWomanMan] na celé šíři země. [spiritual_mentor.GetSheHe|U] každý den bdí nad svatým místem, po každém bdění se [spiritual_mentor.GetSheHe] vrací do [Select_CString(spiritual_mentor.IsFemale,'jejího','jeho')] tábora, hned za městem, a modlí se až do svítání, než měsíc odejde.“\n\nZhluboka se nadechnu, než přistoupím k ohni, kde [spiritual_mentor.GetSheHe] odpočívá, poté, co jsem slyšel o [Select_CString(spiritual_mentor.IsFemale,'jejích','jeho')] zázracích.\n\n„Čekal jsem na tebe,“ říká [spiritual_mentor.GetSheHe], dívaje se přímo na mě, „a stejně tak i [spiritual_mentor.GetFaith.HighGodName]. Jsi připraven opustit své [ROOT.Char.Custom('SinfulTrait')|l] způsoby?“"
  pilgrimage.6790.a: "„Jsem. Já #EMP jsem#!.“"
  pilgrimage.6790.b: "„O vaše učení mám větší zájem.“"
  pilgrimage.6790.c: "„Nemusím #EMP nic#! na sobě měnit.“"
@@ -780,7 +780,7 @@
  pilgrimage.6840.b.tt: "Získá [prestige_i|E]#positive_value +0.5%#! Měsíčně [prestige|E]"
  blessed_artifact_desc: "[blessed_artifact.GetDesc]\n\nPo posvěcení ve svatém místě [holy_site_scope.GetNameNoTooltip] září čistou aurou."
  pilgrimage.6850.t: "Mistr zlodějů" # todo: NEW TRANSLATION
- pilgrimage.6850.desc: "Probudím se z neklidného odpočinku a před mnou v tmě vyčnívá postava. Když přemýšlím o svém dalším životě, [wise_priest.GetName] vystupuje ze stínů, [wise_priest.GetHerHis] tvář se smála úlisným úsměvem.\n\n„Urozený [ROOT.Char.GetTitleAsNameNoTooltip], odpusťte náš zásah, některé lekce musí být prožity, aby byly pochopeny.\n\nZloděj využívá stíny, slepá místa a zkorumpované úředníky k usnadnění svého zločinu. Podobně zlý [ROOT.Char.GetFaith.PriestNeuter] se oddává smilstvu ve stínech, káže falešnou doktrínu ve vašich slepých místech a je povyšován zkorumpovanými úředníky.„" # todo: NEW TRANSLATION
+ pilgrimage.6850.desc: "Probudím se z neklidného odpočinku a před mnou v tmě vyčnívá postava. Když přemýšlím o svém dalším životě, [wise_priest.GetName] vystupuje ze stínů, [Select_CString(wise_priest.IsFemale,'její','jeho')] tvář se smála úlisným úsměvem.\n\n„Urozený [ROOT.Char.GetTitleAsNameNoTooltip], odpusťte náš zásah, některé lekce musí být prožity, aby byly pochopeny.\n\nZloděj využívá stíny, slepá místa a zkorumpované úředníky k usnadnění svého zločinu. Podobně zlý [ROOT.Char.GetFaith.PriestNeuter] se oddává smilstvu ve stínech, káže falešnou doktrínu ve vašich slepých místech a je povyšován zkorumpovanými úředníky.„" # todo: NEW TRANSLATION
  pilgrimage.6850.a: "Prozářím tam, kde je stín." # todo: NEW TRANSLATION
  pilgrimage.6850.b: "Jestli budu slepý, můj [ROOT.Char.GetCouncillorPosition( 'councillor_spymaster' ).GetPositionName] bude mýma očima." # todo: NEW TRANSLATION
  pilgrimage.6850.c: "Znám zkorumpovaného úředníka, který je zkaženým [ROOT.Char.GetFaith.PriestNeuter]." # todo: NEW TRANSLATION
@@ -800,7 +800,7 @@
  pilgrimage.7000.desc_mid_worldly: "Možná jsem zmeškal pár světských příležitostí, ale celkově jsem s touto zkušeností spokojen."
  pilgrimage.7000.desc_low_worldly: "Jsem trochu ustaraný, že jsem nezískal tolik zkušeností s jinými kulturami a památkami, kolik bych si přál."
  pilgrimage.7000.outro_buried_predecessor_here: "\n\nNavzdory nešťastným událostem, které vedly k [old_pilgrimage_host.GetTitledFirstNamePossessive] úmrtí, a zjevnému smutku, který tuto cestu provázel — samotná pouť se ukázala být zajímavým zážitkem, kterého si budu vřele vážit."
- pilgrimage.7000.outro_bury_predecessor_home: "\n\nTeď, když jsme učinili to poctivé a dokončujeme [old_pilgrimage_host.GetTitledFirstNamePossessive] pouť na toto místo, zbývá už jen bezpečně se vrátit domů a uložit [old_pilgrimage_host.GetHerHim] k [old_pilgrimage_host.GetHerHis] poslednímu odpočinku."
+ pilgrimage.7000.outro_bury_predecessor_home: "\n\nTeď, když jsme učinili to poctivé a dokončujeme [old_pilgrimage_host.GetTitledFirstNamePossessive] pouť na toto místo, zbývá už jen bezpečně se vrátit domů a uložit [old_pilgrimage_host.GetHerHim] k [Select_CString(old_pilgrimage_host.IsFemale,'jejímu','jeho')] poslednímu odpočinku."
  pilgrimage.7000.outro_first: "\n\nJelikož jde o mou první pouť — a přestože žádná pouť není úplně stejná — cítím se jistěji a vím, co od tohoto typu duchovní cesty očekávat v budoucnu."
  pilgrimage.7000.outro_second: "\n\nJelikož jde o mou druhou pouť, nemohu si pomoci a porovnávám ji s mou předchozí návštěvou [first_pilgrimage_memory.MakeScope.Var('pilgrimage_destination').GetProvince.GetNameNoTooltip], se vší její posvátností."
  pilgrimage.7000.outro_second_revisit: "\n\nTato pouť, která je mou druhou návštěvou svatého místa [ROOT.Char.GetCurrentLocation.GetNameNoTooltip], mě nijak nemrzí — znovu jsem sem přišel a obdivoval jeho svatost a nádheru."
@@ -819,20 +819,20 @@
  pilgrimage.9001.t: "$pilgrimage_header$ Návrat"
  pilgrimage.9001.desc_intro: "Má cesta byla dlouhá, ale konečně jsem zase doma. "
  pilgrimage.9001.desc_invalidated: "\n\nKvůli nešťastnému obratu událostí byla má pouť přerušena a bohužel jsem se [Select_CString(ROOT.Char.IsFemale,'nedostala','nedostal')] k návštěvě [missed_holy_site.GetNameNoTooltip]. Trápí mě to, ale s každým dnem o něco méně.\n\nMohu jen předpokládat, že to všechno bylo součástí plánu [ROOT.Char.GetFaith.HighGodNameAlternatePossessive]."
- pilgrimage.9001.desc_buried_there: "Z odhodlání dokončit pouť [old_pilgrimage_host.GetTitledFirstNamePossessive] nyní odpočívám s pocitem klidu, protože vím, že [old_pilgrimage_host.GetSheHe] má [old_pilgrimage_host.GetHerHis] poslední místo odpočinku v posvátnosti [burial_location.GetNameNoTierNoTooltip].\n\nA ač toho zůstalo mnoho stejné, moji [ROOT.Char.GetFaith.AltPriestTermPlural] trvají na tom, že tato svatá cesta něco se mnou změnila, ať už to vidím sám/sama nebo ne."
+ pilgrimage.9001.desc_buried_there: "Z odhodlání dokončit pouť [old_pilgrimage_host.GetTitledFirstNamePossessive] nyní odpočívám s pocitem klidu, protože vím, že [old_pilgrimage_host.GetSheHe] má [Select_CString(old_pilgrimage_host.IsFemale,'její','jeho')] poslední místo odpočinku v posvátnosti [burial_location.GetNameNoTierNoTooltip].\n\nA ač toho zůstalo mnoho stejné, moji [ROOT.Char.GetFaith.AltPriestTermPlural] trvají na tom, že tato svatá cesta něco se mnou změnila, ať už to vidím sám/sama nebo ne."
  pilgrimage.9001.desc: "Ač mnoho zůstalo stejné, něco se změnilo v tom, jak ke mně přistupují [ROOT.Char.GetFaith.PriestNeuterPlural] a [ROOT.Char.GetFaith.BishopNeuterPlural].\n\n[Select_CString(ROOT.Char.IsFemale,'Podstoupila','Podstoupil')] jsem pouť jako [ROOT.Char.GetWomanMan] a oni trvají na tom, že mě to nějak změnilo, ať už to vidím sám/sama nebo ne."
  pilgrimage.9001.a: "Je dobré být doma."
  pilgrimage.9001.a_invalidated: "Ať už to dopadne jakkoli."
  pilgrimage.9001.a.tt: "Vaše cesta skončila"
  pilgrimage.9010.t: "$pilgrimage_header$ Návrat domů"
- pilgrimage.9010.desc.relation_family: "Dorazíme do [ROOT.Char.GetCurrentLocation.GetNameNoTooltip] pozdě odpoledne a služebnictvo, #EMP moji#! služebníci, okamžitě začnou zařizovat nezbytná opatření, aby uložili mého [ROOT.Char.Custom2('RelationToMeShort', SCOPE.sC('old_pilgrimage_host'))] k [old_pilgrimage_host.GetHerHis] poslednímu odpočinku.\n\n"
- pilgrimage.9010.desc.relation_liked: "Dorazíme do [ROOT.Char.GetCurrentLocation.GetNameNoTooltip] pozdě odpoledne a služebnictvo, #EMP moji#! služebníci, okamžitě začnou zařizovat nezbytná opatření, aby uložili drahého [old_pilgrimage_host.GetFirstName] k [old_pilgrimage_host.GetHerHis] poslednímu odpočinku.\n\n"
- pilgrimage.9010.desc.relation_neutral: "Dorazíme do [ROOT.Char.GetCurrentLocation.GetNameNoTooltip] pozdě odpoledne a služebnictvo, #EMP moji#! služebníci, okamžitě začnou zařizovat nezbytná opatření, aby uložili [old_pilgrimage_host.GetTitledFirstName] k [old_pilgrimage_host.GetHerHis] poslednímu odpočinku.\n\n"
+ pilgrimage.9010.desc.relation_family: "Dorazíme do [ROOT.Char.GetCurrentLocation.GetNameNoTooltip] pozdě odpoledne a služebnictvo, #EMP moji#! služebníci, okamžitě začnou zařizovat nezbytná opatření, aby uložili mého [ROOT.Char.Custom2('RelationToMeShort', SCOPE.sC('old_pilgrimage_host'))] k [Select_CString(old_pilgrimage_host.IsFemale,'jejímu','jeho')] poslednímu odpočinku.\n\n"
+ pilgrimage.9010.desc.relation_liked: "Dorazíme do [ROOT.Char.GetCurrentLocation.GetNameNoTooltip] pozdě odpoledne a služebnictvo, #EMP moji#! služebníci, okamžitě začnou zařizovat nezbytná opatření, aby uložili drahého [old_pilgrimage_host.GetFirstName] k [Select_CString(old_pilgrimage_host.IsFemale,'jejímu','jeho')] poslednímu odpočinku.\n\n"
+ pilgrimage.9010.desc.relation_neutral: "Dorazíme do [ROOT.Char.GetCurrentLocation.GetNameNoTooltip] pozdě odpoledne a služebnictvo, #EMP moji#! služebníci, okamžitě začnou zařizovat nezbytná opatření, aby uložili [old_pilgrimage_host.GetTitledFirstName] k [Select_CString(old_pilgrimage_host.IsFemale,'jejímu','jeho')] poslednímu odpočinku.\n\n"
  pilgrimage.9010.desc.turned_back_liked: "S těžkým srdcem dohlížím na rituály a snažím se najít alespoň trochu útěchy v tom, že [ROOT.Char.GetFaith.HighGodName] jistě musel být s [old_pilgrimage_host.GetHerHim], když [Select_CString(old_pilgrimage_host.IsFemale,'zemřela','zemřel')] na cestě k poutnímu místu [previous_holy_site.GetNameNoTierNoTooltip].\n\nKdo jiného by [Select_CString(ROOT.Char.IsFemale,'měla','měl')] [ROOT.Char.GetFaith.HighGodNameAlternate] chránit, než poutníky?"
  pilgrimage.9010.desc.turned_back_neutral: "Zatímco si stále zvykám na své nové [ROOT.Char.Custom('GetRealmOrDomicile')|l], a [ROOT.Char.Custom('GetCourtierPlural')|l] se hrnou na mou stranu v snaze získat mou přízeň, přivezení těla [old_pilgrimage_host.GetTitledFirstName] pomáhá utvrdit ostatní v tom, že [old_pilgrimage_host.GetSheHe] se nevrátí a že #EMP já#! jsem novým [ROOT.Char.GetTitleAsNameNoTooltip]."
- pilgrimage.9010.desc.there_and_back_liked: "Zatímco oplakávám odchod [old_pilgrimage_host.GetHerHis], nacházím útěchu v tom, že jsem [Select_CString(ROOT.Char.IsFemale,'splnila','splnil')] [old_pilgrimage_host.GetHerHis] přání a [Select_CString(ROOT.Char.IsFemale,'dokončila','dokončil')] naši pouť do [previous_holy_site.GetNameNoTierNoTooltip].\n\nOpravdu, musí být [Select_CString(old_pilgrimage_host.IsFemale,'spokojená','spokojený')], kdekoli nyní je, a to mi přináší letmý úsměv."
+ pilgrimage.9010.desc.there_and_back_liked: "Zatímco oplakávám odchod [old_pilgrimage_host.GetHerHis], nacházím útěchu v tom, že jsem [Select_CString(ROOT.Char.IsFemale,'splnila','splnil')] [Select_CString(old_pilgrimage_host.IsFemale,'její','jeho')] přání a [Select_CString(ROOT.Char.IsFemale,'dokončila','dokončil')] naši pouť do [previous_holy_site.GetNameNoTierNoTooltip].\n\nOpravdu, musí být [Select_CString(old_pilgrimage_host.IsFemale,'spokojená','spokojený')], kdekoli nyní je, a to mi přináší letmý úsměv."
  pilgrimage.9010.desc.there_and_back_neutral: "To, že jsem [Select_CString(ROOT.Char.IsFemale,'cestovala','cestoval')] do [previous_holy_site.GetNameNoTierNoTooltip] a zpět, aby byly splněny přání [old_pilgrimage_host.GetTitledFirstNamePossessive], mi přineslo důvěru u [old_pilgrimage_host.GetHerHis] [ROOT.Char.Custom('GetCourtierPlural')|l], #EMP moji#! [ROOT.Char.Custom('GetCourtierPlural')|l], a začínám si tady zvykat na to, že jsem novým [ROOT.Char.GetTitleAsNameNoTooltip]."
- pilgrimage.9010.desc.invalidated_pilgrimage_liked: "Truchlím nad odchodem [old_pilgrimage_host.GetHerHis] a cítím velkou lítost, že jsem [Select_CString(ROOT.Char.IsFemale,'nedostala','nedostal')] možnost uložit [old_pilgrimage_host.GetHerHim] k odpočinku v [previous_holy_site.GetNameNoTierNoTooltip]."
+ pilgrimage.9010.desc.invalidated_pilgrimage_liked: "Truchlím nad odchodem [Select_CString(old_pilgrimage_host.IsFemale,'její','jeho')] a cítím velkou lítost, že jsem [Select_CString(ROOT.Char.IsFemale,'nedostala','nedostal')] možnost uložit [old_pilgrimage_host.GetHerHim] k odpočinku v [previous_holy_site.GetNameNoTierNoTooltip]."
  pilgrimage.9010.desc.invalidated_pilgrimage_neutral: "Jsem trochu [Select_CString(ROOT.Char.IsFemale,'naštvaná','naštvaný')], že jsem [Select_CString(ROOT.Char.IsFemale,'nedostala','nedostal')] příležitost uložit [old_pilgrimage_host.GetHerHim] k odpočinku v [previous_holy_site.GetNameNoTierNoTooltip], ale prakticky vzato je nyní konečně [Select_CString(old_pilgrimage_host.IsFemale,'uložena','uložen')] k poslednímu odpočinku."
  pilgrimage.9010.a: "[ROOT.Char.GetCurrentLocation.GetNameNoTooltip], jedno srdce, jeden domov."
  pilgrimage.9010.a_interrupted: "Aspoň jsme doma a vcelku."
@@ -849,7 +849,7 @@
  pilgrimage.9100.b: "Bylo by rozumné si je ponechat."
  pilgrimage.9100.b.tt: "Dostanete příležitost použít zboží ke zvýšení síly spiknutí a šance na úspěch vašeho dalšího [personal_scheme|E]"
  pilgrimage_seasia.100.t: "$pilgrimage_header$ Potápěč perel" # todo: NEW TRANSLATION
- pilgrimage_seasia.100.desc: "Když náš [Glossary( 'djong', 'DJONG_GLOSS' )] pluje po okraji [background_terrain_scope.GetName], rozhodneme se na chvíli zastavit v [background_terrain_scope.Custom('TerrainTypeProvincePrefix')] pobřežní oblasti [background_terrain_scope.Custom('TerrainTypeProvince')].\n\nZ vody vyjde jedna postava, dítě.\n\n„Duch obrovské mušle mi [Select_CString(ROOT.Char.IsFemale,'řekla','řekl')], abych jeho poklad nabídl jako dar pro [ROOT.Char.GetTitleAsName] nad námi.“ Dítě podává [pearl_diver_child.GetHerHis] ruku, v dlaní leží perla." # todo: NEW TRANSLATION
+ pilgrimage_seasia.100.desc: "Když náš [Glossary( 'djong', 'DJONG_GLOSS' )] pluje po okraji [background_terrain_scope.GetName], rozhodneme se na chvíli zastavit v [background_terrain_scope.Custom('TerrainTypeProvincePrefix')] pobřežní oblasti [background_terrain_scope.Custom('TerrainTypeProvince')].\n\nZ vody vyjde jedna postava, dítě.\n\n„Duch obrovské mušle mi [Select_CString(ROOT.Char.IsFemale,'řekla','řekl')], abych jeho poklad nabídl jako dar pro [ROOT.Char.GetTitleAsName] nad námi.“ Dítě podává [Select_CString(pearl_diver_child.IsFemale,'její','jeho')] ruku, v dlaní leží perla." # todo: NEW TRANSLATION
  pilgrimage_seasia.100.a: "Duchové komunikují s tímto dítětem, musím se postarat o [pearl_diver_child.GetHerHim]." # todo: NEW TRANSLATION
  pilgrimage_seasia.100.b: "To je znamení od [ROOT.Char.GetFaith.HighGodName]!" # todo: NEW TRANSLATION
  pilgrimage_seasia.100.c: "Krásná drobnost, děkuji, dítě." # todo: NEW TRANSLATION
@@ -873,7 +873,7 @@
  pilgrimage_seasia.400.c: "Prosím, požehnejte nás." # todo: NEW TRANSLATION
  a_good_prophecy_tt: "Obdržíte příznivou předpověď pro nadcházející cestu... nebo jsou to možná jen prázdná slova?" # todo: NEW TRANSLATION
  pilgrimage_seasia.500.t: "$pilgrimage_header$ Rybáři z [background_terrain_scope.GetNameNoTooltip]" # todo: NEW TRANSLATION
- pilgrimage_seasia.500.desc: "Pobřežní vody [background_terrain_scope.GetName] jsou plné rybářů, kteří házejí [Glossary('jalas', 'JALA_GLOSS')] a stahují [Glossary('bubus', 'BUBU_GLOSS')]. Najednou však nastane zmatek!\n\n„To je [ROOT.Char.GetTitleAsNameNoTooltip]!“ zazní hlas [local_character.GetWomanMan]. „Rychle, všichni, musíme se naplnit [ROOT.Char.GetHerHis] božskou přítomností!“ Během okamžiku je náš [Glossary( 'djong', 'DJONG_GLOSS' )] obklopen dychtivými rybářskými čluny." # todo: NEW TRANSLATION
+ pilgrimage_seasia.500.desc: "Pobřežní vody [background_terrain_scope.GetName] jsou plné rybářů, kteří házejí [Glossary('jalas', 'JALA_GLOSS')] a stahují [Glossary('bubus', 'BUBU_GLOSS')]. Najednou však nastane zmatek!\n\n„To je [ROOT.Char.GetTitleAsNameNoTooltip]!“ zazní hlas [local_character.GetWomanMan]. „Rychle, všichni, musíme se naplnit [Select_CString(ROOT.Char.IsFemale,'její','jeho')] božskou přítomností!“ Během okamžiku je náš [Glossary( 'djong', 'DJONG_GLOSS' )] obklopen dychtivými rybářskými čluny." # todo: NEW TRANSLATION
  pilgrimage_seasia.500.a: "Přijďte všichni a pohlédněte na mou dobrotu!" # todo: NEW TRANSLATION
  pilgrimage_seasia.500.b: "Rozprchněte se, moji poddaní, a vyprávějte všem o [local_character.GetFaith.GetNameNoTooltip]." # todo: NEW TRANSLATION
  pilgrimage_seasia.500.c: "Připojte se ke mně, ó moji nej[local_character.Custom('RandomPositiveShallowAdjective')] poddaní!" # todo: NEW TRANSLATION

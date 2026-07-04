@@ -96,7 +96,7 @@
  writing_prose_desc: "Tato postava právě pracuje na nové knize" # todo: NEW TRANSLATION
  prose_theme_philosophy: "filozofie" # todo: NEW TRANSLATION
  prose_topic_history: "historie" # todo: NEW TRANSLATION
- prose_book_description: "Toto je rozsáhlejší pojednání o [SCOPE.Custom('GetProseTheme')] od [author.GetFirstName], které ukazuje [author.GetHerHis] zvládnutí [SCOPE.Custom('GetProseTopic')] i [author.GetHerHis] stylistickou zručnost.\n[SCOPE.Custom('GetProseQuality')]" # todo: NEW TRANSLATION
+ prose_book_description: "Toto je rozsáhlejší pojednání o [SCOPE.Custom('GetProseTheme')] od [author.GetFirstName], které ukazuje [Select_CString(author.IsFemale,'její','jeho')] zvládnutí [SCOPE.Custom('GetProseTopic')] i [Select_CString(author.IsFemale,'její','jeho')] stylistickou zručnost.\n[SCOPE.Custom('GetProseQuality')]" # todo: NEW TRANSLATION
  prose_name_hashcollision: "Úvahy [author.GetFirstNameNoTooltip]" # todo: NEW TRANSLATION
  prose_theme_comentary: "komentář ke čtyřem knihám" # todo: NEW TRANSLATION
  prose_theme_logic: "celkové použití přísné logiky" # todo: NEW TRANSLATION
@@ -121,7 +121,7 @@
  author_book.0005.c.tt: "Tato volba může vést k získání [artifact|E] stejně jako vytvoření knihy." # todo: NEW TRANSLATION
  writing_monograph: "Psaní monografie" # todo: NEW TRANSLATION
  writing_monograph_desc: "Tato postava je právě zaujatá psaním a výzkumem nové monografie" # todo: NEW TRANSLATION
- monograph_description_full: "Toto je obsáhlý svazek na téma [SCOPE.Custom('GetMonographTheme')] napsaný učeným úředníkem [author.GetName] a čerpající z [author.GetHerHis] rozsáhlých studií v oblasti [SCOPE.Custom('GetMonographTopic')].\n\n[SCOPE.Custom('GetMonographQuality')]" # todo: NEW TRANSLATION
+ monograph_description_full: "Toto je obsáhlý svazek na téma [SCOPE.Custom('GetMonographTheme')] napsaný učeným úředníkem [author.GetName] a čerpající z [Select_CString(author.IsFemale,'jejích','jeho')] rozsáhlých studií v oblasti [SCOPE.Custom('GetMonographTopic')].\n\n[SCOPE.Custom('GetMonographQuality')]" # todo: NEW TRANSLATION
  monograph_name_hashcollision: "Svazek o [SCOPE.Custom('GetMonographTopic')]" # todo: NEW TRANSLATION
  monograph_topic_mathematics: "matematika" # todo: NEW TRANSLATION
  monograph_topic_geography: "zeměpis" # todo: NEW TRANSLATION
@@ -142,7 +142,7 @@
  monograph_description_quality_mid: "Kniha obsahuje několik originálních postřehů ve svém oboru." # todo: NEW TRANSLATION
  monograph_description_quality_great: "Kniha je napsána s jasností a dokonalostí a slibuje být skvělým referenčním bodem pro učence po generace." # todo: NEW TRANSLATION
  author_book.1000.t: "[newly_created_artifact.GetNameNoTooltip]" # todo: NEW TRANSLATION
- author_book.1000.poem_intro.desc: "Když recituji svou nově složenou báseň [ROOT.Char.Custom2('RelationToMe', SCOPE.sC('trusted_influencer'))] [trusted_influencer.GetFirstName], nemohu si pomoci, cítím jistou hrdost na to, čeho jsem dosáhl. Téma, [SCOPE.Custom('GetCiPoemTheme')], je podle mého názoru něco, co dříve nebylo zachyceno tímto způsobem. Očekávavě se podívám na [trusted_influencer.GetFirstNameNoTooltip] a čekám na [trusted_influencer.GetHerHis] ohodnocení mé práce.\n\n" # todo: NEW TRANSLATION
+ author_book.1000.poem_intro.desc: "Když recituji svou nově složenou báseň [ROOT.Char.Custom2('RelationToMe', SCOPE.sC('trusted_influencer'))] [trusted_influencer.GetFirstName], nemohu si pomoci, cítím jistou hrdost na to, čeho jsem dosáhl. Téma, [SCOPE.Custom('GetCiPoemTheme')], je podle mého názoru něco, co dříve nebylo zachyceno tímto způsobem. Očekávavě se podívám na [trusted_influencer.GetFirstNameNoTooltip] a čekám na [Select_CString(trusted_influencer.IsFemale,'její','jeho')] ohodnocení mé práce.\n\n" # todo: NEW TRANSLATION
  author_book.1000.poem_weak.desc: "„Všechno má krásu, ale ne každý ji vidí.“ [trusted_influencer.GetHerHis] to pronáší — což musí být ocenění?\n\nMožná toto nově vytvořené dílo není tak brilantní, jak jsem doufal." # todo: NEW TRANSLATION
  author_book.1000.poem_mid.desc: "„Pohnuté dílo,“ říká [trusted_influencer.GetSheHe] a podívá se na mě souhlasně poté, co byla ticho, které připadalo jako věčnost." # todo: NEW TRANSLATION
  author_book.1000.poem_great.desc: "„Získej nové poznání přemýšlením o tom starém a můžeš se stát učitelem jiných,“ [trusted_influencer.GetSheHe|U] zjevně oceňuje mé nové dílo." # todo: NEW TRANSLATION
@@ -151,7 +151,7 @@
  author_book.1000.prose_mid.desc: "„To je skvělé psaní, dobře jsi zachytil podstatu problému,“ říká můj [ROOT.Char.Custom2('RelationToMe', SCOPE.sC('trusted_influencer'))] [trusted_influencer.GetFirstName], jako první čtenář mé práce." # todo: NEW TRANSLATION
  author_book.1000.prose_great.desc: "„Podařilo se ti mluvit s jasností, kterou má jen málokdo v naší době!“ prohlašuje můj [ROOT.Char.Custom2('RelationToMe', SCOPE.sC('trusted_influencer'))] [trusted_influencer.GetFirstName].\nJe zřejmé, že se mi podařilo svými slovy vyvolat opravdové emoce." # todo: NEW TRANSLATION
  author_book.1000.scholarship_intro.desc: "Nebyl to rychlý podnik, ale konečně jsem na konci. Moje nová monografie o [SCOPE.Custom('GetMonographTopic')] je hotová a čas, který jsem strávil probíráním související literatury, mě učinil v tomto tématu obratnějším než kdy dříve.\n\n" # todo: NEW TRANSLATION
- author_book.1000.scholarship_weak.desc: "„Velký milník ve tvé kariéře!“ vykřikuje můj [ROOT.Char.Custom2('RelationToMe', SCOPE.sC('trusted_influencer'))] [trusted_influencer.GetFirstName] a vidím v [trusted_influencer.GetHerHis] očích jistou hrdost. Přesto se ptám, jestli bych to při druhé šanci nedokázal lépe." # todo: NEW TRANSLATION
+ author_book.1000.scholarship_weak.desc: "„Velký milník ve tvé kariéře!“ vykřikuje můj [ROOT.Char.Custom2('RelationToMe', SCOPE.sC('trusted_influencer'))] [trusted_influencer.GetFirstName] a vidím v [Select_CString(trusted_influencer.IsFemale,'jejích','jeho')] očích jistou hrdost. Přesto se ptám, jestli bych to při druhé šanci nedokázal lépe." # todo: NEW TRANSLATION
  author_book.1000.scholarship_mid.desc: "„Schopná a poučná kniha, kterou doporučím ostatním!“ říká můj [ROOT.Char.Custom2('RelationToMe', SCOPE.sC('trusted_influencer'))] [trusted_influencer.GetFirstName], když ji [Select_CString(trusted_influencer.IsFemale,'dočetla','dočetl')].\nMěl bych být se svou prací spokojený, a přesto je těžké necítit, že bych v budoucnu mohl napsat něco ještě lepšího." # todo: NEW TRANSLATION
  author_book.1000.scholarship_great.desc: "„Průlomové dílo, které staví tvé jméno mezi největší autory naší doby!“\nMůj první čtenář, můj [ROOT.Char.Custom2('RelationToMe', SCOPE.sC('trusted_influencer'))] [trusted_influencer.GetFirstName], to říká poté, co dílo dokončil. Toto je úspěch, na který jen tak nezapomenu." # todo: NEW TRANSLATION
  author_book.1000.a: "Z této zkušenosti jsem se mnoho naučil." # todo: NEW TRANSLATION

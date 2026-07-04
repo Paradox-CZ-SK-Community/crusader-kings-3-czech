@@ -8,7 +8,7 @@
  imperial_examination.1001.desc: "Budoucí státní úředníci lemují ulice [ROOT.Char.GetCurrentLocation.GetName]. Město ožívá, rozzářené hedvábnými róbami uchazečů a krásnými kurtizánami, které je provázejí. \n\nÚspěch u císařských zkoušek znamená prokázat důkladné porozumění pěti ctnostem, jež představují vrchol konfuciánského učení. \n\nNejde o pouhé recitování, ale o pěstování ctnostného přesvědčení a morálního jednání." # todo: NEW TRANSLATION
  imperial_examination.1001.a: "Shromáždění čeká." # todo: NEW TRANSLATION
  imperial_examination.1002.t: "$imperial_examination.1000.t$" # todo: NEW TRANSLATION
- imperial_examination.1002.desc: "Vstupuji do města [ROOT.Char.GetCurrentLocation.GetName] s [ROOT.Char.Custom2('RelationToMe', candidate )] [candidate.GetTitledFirstName] po svém boku. Ulice jsou zametené a bohatě vyzdobené pro náš příchod.\n\nJakmile bude [Select_CString(candidate.IsFemale,'umístěna','umístěn')] v ubytovně pro uchazeče, má schopnost ovlivňovat [candidate.GetHerHis] postup bude malá. Možná bych [Select_CString(ROOT.Char.IsFemale,'měla','měl')] nabídnout pár slov rady." # todo: NEW TRANSLATION
+ imperial_examination.1002.desc: "Vstupuji do města [ROOT.Char.GetCurrentLocation.GetName] s [ROOT.Char.Custom2('RelationToMe', candidate )] [candidate.GetTitledFirstName] po svém boku. Ulice jsou zametené a bohatě vyzdobené pro náš příchod.\n\nJakmile bude [Select_CString(candidate.IsFemale,'umístěna','umístěn')] v ubytovně pro uchazeče, má schopnost ovlivňovat [Select_CString(candidate.IsFemale,'její','jeho')] postup bude malá. Možná bych [Select_CString(ROOT.Char.IsFemale,'měla','měl')] nabídnout pár slov rady." # todo: NEW TRANSLATION
  imperial_examination.1002.a: "„Uspěj za každou cenu, [ROOT.Char.Custom2('RelationToMe', candidate )].“" # todo: NEW TRANSLATION
  imperial_examination.1002.a.tt: "[candidate.GetFirstNameNoTooltip] získá více příležitostí k podvádění.\n@alert_icon! #alert_trial Možná bude [Select_CString(candidate.IsFemale,'přistižena','přistižen')]!#!" # todo: NEW TRANSLATION
  imperial_examination.1002.b: "„Nezostuď dům [ROOT.Char.GetHouse.GetNameNoTooltip].“" # todo: NEW TRANSLATION
@@ -20,7 +20,7 @@
  imperial_examination.1003.passed_all_exams: "Jako někdo, kdo [Select_CString(ROOT.Char.IsFemale,'absolvovala','absolvoval')] všechny úrovně zkoušek, mě zkoušející nyní vítají jako jednoho z nich, když vstoupím do nejprestižnějších studoven ve městě." # todo: NEW TRANSLATION
  imperial_examination.1003.a: "$imperial_examination.1001.a$" # todo: NEW TRANSLATION
  imperial_examination.1020.t: "Nové tváře" # todo: NEW TRANSLATION
- imperial_examination.1020.desc: "V ubytovně si všímají dalšího uchazeče u stolu, který vypadá vážně a nervózně okusuje nehty [new_entrant.GetHerHis].\n\nKdyž se podívám, naše pohledy se na okamžik setkají a zahajuji rozhovor: „Pozdrav — jsem [ROOT.Char.GetTitledFirstNameNoTooltip]. Kdo vy jste?“\n\n[pnew_entrant.GetHerHis|U] pohled neklidně bloudí po místnosti, když [new_entrant.GetSheHe] odpovídá: „[new_entrant.GetTitledFirstName]. A co s tím?“" # todo: NEW TRANSLATION
+ imperial_examination.1020.desc: "V ubytovně si všímají dalšího uchazeče u stolu, který vypadá vážně a nervózně okusuje nehty [new_entrant.GetHerHis].\n\nKdyž se podívám, naše pohledy se na okamžik setkají a zahajuji rozhovor: „Pozdrav — jsem [ROOT.Char.GetTitledFirstNameNoTooltip]. Kdo vy jste?“\n\n[Select_CString(pnew_entrant.IsFemale,'Její','Jeho')] pohled neklidně bloudí po místnosti, když [new_entrant.GetSheHe] odpovídá: „[new_entrant.GetTitledFirstName]. A co s tím?“" # todo: NEW TRANSLATION
  imperial_examination.1020.a: "„Jsi taky nervózní?“" # todo: NEW TRANSLATION
  imperial_examination.1020.a.success.tt: "Sbližuješ se s [new_entrant.GetShortUIName]" # todo: NEW TRANSLATION
  imperial_examination.1020.a.failure.tt: "Tvoje malé povídání vyznělo naprázdno" # todo: NEW TRANSLATION
@@ -82,7 +82,7 @@
  imperial_examination.2010.t: "Příprava scény" # todo: NEW TRANSLATION
  imperial_examination.2010.desc.two: "„To musí být příjemné mít na zkoušce tolik členů své dynastie,“ říká mi můj zkoušející [examiner.GetTitledFirstName]. „I když nemám zvlášť vysoké naděje na [entrant_to_meet_2.GetTitledFirstName].“\n\n" # todo: NEW TRANSLATION
  imperial_examination.2010.desc.one: "„Vidím, že [dynasty_member.GetTitledFirstName] se [Select_CString(dynasty_member.IsFemale,'dostala','dostal')] na zkoušku,“ říká mi můj zkoušející [examiner.GetTitledFirstName]. „Musíš být [Select_CString(ROOT.Char.IsFemale,'potěšena','potěšen')].“\n\n" # todo: NEW TRANSLATION
- imperial_examination.2010.desc.outro: "[examiner.GetFirstNamePossessiveNoTooltip] oči přejíždějí po seznamu uchazečů a vidím typický výčnělek v [examiner.GetHerHis] měšci od úplatků již přijatých od starostů dynastií. \n\nNemám pochyb — [Select_CString(ROOT.Char.IsFemale,'mohla','mohl')] bych sám/sama přispět malou sumou, abych podpořil člena svého rodu." # todo: NEW TRANSLATION
+ imperial_examination.2010.desc.outro: "[examiner.GetFirstNamePossessiveNoTooltip] oči přejíždějí po seznamu uchazečů a vidím typický výčnělek v [Select_CString(examiner.IsFemale,'jejími','jeho')] měšci od úplatků již přijatých od starostů dynastií. \n\nNemám pochyb — [Select_CString(ROOT.Char.IsFemale,'mohla','mohl')] bych sám/sama přispět malou sumou, abych podpořil člena svého rodu." # todo: NEW TRANSLATION
  imperial_examination.2010.a: "[entrant_to_meet.GetShortUINameNoTooltip] si zaslouží uznání." # todo: NEW TRANSLATION
  imperial_examination.2010.a.tt: "[entrant_to_meet.GetTitledFirstName] má #BOL zvýšenou#! šanci na #BOL úspěch#! díky [exam_advantage|E]" # todo: NEW TRANSLATION
  imperial_examination.2010.b: "Můj zklamaný [ROOT.Char.Custom2('RelationToMe', entrant_to_meet_2 )] potřebuje veškerou pomoc, kterou [entrant_to_meet_2.GetSheHe] může dostat." # todo: NEW TRANSLATION
@@ -98,7 +98,7 @@
  imperial_examination.2030.b: "Dám si na toho pozor." # todo: NEW TRANSLATION
  imperial_examination.2030.c: "Všichni jsou opravdu pod nebem rovni." # todo: NEW TRANSLATION
  imperial_examination.2040.t: "Úplatek v ruce" # todo: NEW TRANSLATION
- imperial_examination.2040.desc: "Dávají se zvěsti, že zkoušející [rumored_examiner.GetTitledFirstName] #EMP přijímá výhody#! za podporu určitých uchazečů. \n\nSkutečně, [rumored_examiner.GetHerHis] měšec vypadá napěchovaný mincemi a [rumored_examiner.GetSheHe] se kolem uchazečů pohybuje bliž, než by odpovídalo [rumored_examiner.GetHerHis] postavení. \n\nVyšetřování není potřeba. Tento [rumored_examiner.GetWomanMan] ostuzuje mou zkoušku!" # todo: NEW TRANSLATION
+ imperial_examination.2040.desc: "Dávají se zvěsti, že zkoušející [rumored_examiner.GetTitledFirstName] #EMP přijímá výhody#! za podporu určitých uchazečů. \n\nSkutečně, [Select_CString(rumored_examiner.IsFemale,'její','jeho')] měšec vypadá napěchovaný mincemi a [rumored_examiner.GetSheHe] se kolem uchazečů pohybuje bliž, než by odpovídalo [Select_CString(rumored_examiner.IsFemale,'její','jeho')] postavení. \n\nVyšetřování není potřeba. Tento [rumored_examiner.GetWomanMan] ostuzuje mou zkoušku!" # todo: NEW TRANSLATION
  imperial_examination.2040.a: "[rumored_examiner.GetFirstNameNoTooltip] uhradí říši odškodnění." # todo: NEW TRANSLATION
  imperial_examination.2040.b: "Znám někoho, kdo by potřeboval trochu #EMP pomoci#!." # todo: NEW TRANSLATION
  imperial_examination.2040.b.tt: "[dynasty_member.GetTitledFirstName] má #BOL zvýšenou#! šanci na #BOL úspěch#! díky [exam_advantage|E]" # todo: NEW TRANSLATION
@@ -145,12 +145,12 @@
  imperial_examination.3030.b: "Budu si to pamatovat." # todo: NEW TRANSLATION
  imperial_examination.3030.c: "Jistě si toho kromě nás nikdo nevšiml." # todo: NEW TRANSLATION
  imperial_examination.4000.t: "S trochou pomoci" # todo: NEW TRANSLATION
- imperial_examination.4000.desc: "Písmena, symboly... Když zavřu oči, vidím útržky pasáží, které jsem celé dny pilně studoval. Každý tah štětce se mi zdá vznášet ve tmě, přesto zůstává jejich význam nejasný. Stihnu za čas zvládnout všechny nutné interpretace?\n\nJiný uchazeč se ke mně přimkne, [exam_taker.GetHerHis] róba se mnou lehce šimrá. „Není rozumné trápit mysl buzením celou noc kvůli jedné zkoušce. Máš celý život na učení. Nech mě udělat zkoušku za tebe a odpočiň si.“" # todo: NEW TRANSLATION
+ imperial_examination.4000.desc: "Písmena, symboly... Když zavřu oči, vidím útržky pasáží, které jsem celé dny pilně studoval. Každý tah štětce se mi zdá vznášet ve tmě, přesto zůstává jejich význam nejasný. Stihnu za čas zvládnout všechny nutné interpretace?\n\nJiný uchazeč se ke mně přimkne, [Select_CString(exam_taker.IsFemale,'její','jeho')] róba se mnou lehce šimrá. „Není rozumné trápit mysl buzením celou noc kvůli jedné zkoušce. Máš celý život na učení. Nech mě udělat zkoušku za tebe a odpočiň si.“" # todo: NEW TRANSLATION
  imperial_examination.4000.a: "Já #EMP opravdu#! potřebuji veškerou pomoc, kterou mohu získat..." # todo: NEW TRANSLATION
  imperial_examination.4000.b: "Ne, to je špatně." # todo: NEW TRANSLATION
  imperial_examination.4000.b.cheater: "Dává to smysl..." # todo: NEW TRANSLATION
  imperial_examination.4010.t: "Výhody ve zatemněných místnostech" # todo: NEW TRANSLATION
- imperial_examination.4010.desc: "S každým krokem, který zkoušející [examiner_to_bribe.GetFirstName] udělá, doprovází zvuk cinkajících mincí. [examiner_to_bribe.GetHerHis|U] měšec praská ve švech. Několikrát vidím [examiner_to_bribe.GetHerHim] v tlumených rozhovorech s uchazeči, snažící se uniknout od pohledů zvědavců.\n\nJe jasné, že tento [examiner_to_bribe.GetWomanMan] podniká #EMP výhodné#! dohody..." # todo: NEW TRANSLATION
+ imperial_examination.4010.desc: "S každým krokem, který zkoušející [examiner_to_bribe.GetFirstName] udělá, doprovází zvuk cinkajících mincí. [Select_CString(examiner_to_bribe.IsFemale,'Její','Jeho')] měšec praská ve švech. Několikrát vidím [examiner_to_bribe.GetHerHim] v tlumených rozhovorech s uchazeči, snažící se uniknout od pohledů zvědavců.\n\nJe jasné, že tento [examiner_to_bribe.GetWomanMan] podniká #EMP výhodné#! dohody..." # todo: NEW TRANSLATION
  imperial_examination.4010.a: "[Select_CString(ROOT.Char.IsFemale,'Měla','Měl')] bych se představit." # todo: NEW TRANSLATION
  imperial_examination.4010.b: "Nestojí to za riziko." # todo: NEW TRANSLATION
  imperial_examination.4020.t: "Noční trápení" # todo: NEW TRANSLATION
@@ -178,11 +178,11 @@
  imperial_examination.4060.b: "Možná má [promising_lowborn.GetSheHe] nějaké rozumné argumenty?" # todo: NEW TRANSLATION
  imperial_examination.4060.c: "Odmítnout se zapojit." # todo: NEW TRANSLATION
  imperial_examination.4060.d: "Ty [promising_lowborn.Custom('GetDaughterSon')] kuplíře!" # todo: NEW TRANSLATION
- imperial_examination.4060.d.tt: "Necháte [promising_lowborn.GetTitledFirstName] vyhodit ze zkoušky z důvodu domnělého povolání [promising_lowborn.GetHerHis] rodiny." # todo: NEW TRANSLATION
+ imperial_examination.4060.d.tt: "Necháte [promising_lowborn.GetTitledFirstName] vyhodit ze zkoušky z důvodu domnělého povolání [Select_CString(promising_lowborn.IsFemale,'její','jeho')] rodiny." # todo: NEW TRANSLATION
  imperial_examination.4070.t: "Nežádaná rodinná podpora" # todo: NEW TRANSLATION
  imperial_examination.4070.desc: "Slyším známý hlas u vchodu do zkušební síně a vykolejím při pohledu na mého [parent.GetMotherFather], jak se baví s [examiner.GetTitledFirstName]. \n\nTáhnu [parent.GetMotherFather] stranou a ptám se, co tu dělá, načež mi potěšeně odpoví: „Chci ti jen pomoci. Mám taky kontakty, víš! Jen mi dovol dát tvé jméno vpřed a zajistit, aby ses [Select_CString(ROOT.Char.IsFemale,'dostala','dostal')] k příležitosti uspět.“ \n\nRozhlédnu se, jestli nás žádný z mých vrstevníků nezahlédl. Zatím mám čas poslat [parent.GetTitledFirstName] domů, aniž by byla zničena má pověst." # todo: NEW TRANSLATION
  imperial_examination.4070.a: "Jen pokud se [parent.GetSheHe] bude umět chovat nenápadně." # todo: NEW TRANSLATION
- imperial_examination.4070.a.success: "Váš [parent.GetMotherFather] úspěšně skryl [parent.GetHerHis] úmysly" # todo: NEW TRANSLATION
+ imperial_examination.4070.a.success: "Váš [parent.GetMotherFather] úspěšně skryl [Select_CString(parent.IsFemale,'její','jeho')] úmysly" # todo: NEW TRANSLATION
  imperial_examination.4070.a.failure: "Plány [parent.GetMotherFatherPossessive] vyjdou najevo" # todo: NEW TRANSLATION
  imperial_examination.4070.b: "Mohu snést ponížení, abych [Select_CString(ROOT.Char.IsFemale,'uspěla','uspěl')]/uspěla." # todo: NEW TRANSLATION
  imperial_examination.4070.c: "[parent.GetMotherFather|U], prosím! Jdi #EMP pryč#!." # todo: NEW TRANSLATION
@@ -227,7 +227,7 @@
  imperial_examination.9000.desc.intro: "Po skončení metropolitní zkoušky zkoušející [examiner.GetFirstName] představí nejlépe hodnoceného uchazeče, [first_char.GetTitledFirstName].\n\n„Tento [first_char.GetWomanMan] má zálibu v" # todo: NEW TRANSLATION
  imperial_examination.9000.desc.diplomacy: "diplomacii" # todo: NEW TRANSLATION
  imperial_examination.9000.desc.martial: "válečnictví" # todo: NEW TRANSLATION
- imperial_examination.9000.outro: "nás dnes všechny ohromil,„ říká [examiner.GetFirstNameNoTooltip]. ‚Ostatní vysoce hodnocení uchazeči jsou právě odváděni do císařského paláce.‘\n\n[first_char.GetFirstNameNoTooltip] se hluboce ukloní a [first_char.GetHerHis] hlas, ztišený úctou, říká: „Žiji, abych [Select_CString(first_char.IsFemale,'sloužila','sloužil')] [ROOT.Char.GetTitleAsNameNoTooltip].“" # todo: NEW TRANSLATION
+ imperial_examination.9000.outro: "nás dnes všechny ohromil,„ říká [examiner.GetFirstNameNoTooltip]. ‚Ostatní vysoce hodnocení uchazeči jsou právě odváděni do císařského paláce.‘\n\n[first_char.GetFirstNameNoTooltip] se hluboce ukloní a [Select_CString(first_char.IsFemale,'její','jeho')] hlas, ztišený úctou, říká: „Žiji, abych [Select_CString(first_char.IsFemale,'sloužila','sloužil')] [ROOT.Char.GetTitleAsNameNoTooltip].“" # todo: NEW TRANSLATION
  imperial_examination.9000.a: "[Select_CString(ROOT.Char.IsFemale,'Očekávala','Očekával')] jsem [ROOT.Char.GetInvolvedActivity.Custom('GetExamFocusSkill')]." # todo: NEW TRANSLATION
  imperial_examination.9000.a.tt_martial: "Tuto možnost získáváte kvůli vašemu $imperial_examination_focus_martial$ [activity_option|E]" # todo: NEW TRANSLATION
  imperial_examination.9000.a.tt_learning: "Tuto možnost získáváte kvůli vašemu $imperial_examination_focus_learning$ [activity_option|E]" # todo: NEW TRANSLATION
@@ -237,14 +237,14 @@
  exam_focus_learning: "učenec vědění" # todo: NEW TRANSLATION
  exam_focus_stewardship: "učenec správy" # todo: NEW TRANSLATION
  examination_first_place_entrant_noticed_title: "Nebeské uznání" # todo: NEW TRANSLATION
- examination_first_place_entrant_noticed: "[host.GetTitleAsNameNoTooltip] [Select_CString(ROOT.Char.IsFemale,'pogratulovala','pogratuloval')] [TARGET_CHARACTER.GetShortUIName] k [TARGET_CHARACTER.GetHerHis] vysokému umístění." # todo: NEW TRANSLATION
+ examination_first_place_entrant_noticed: "[host.GetTitleAsNameNoTooltip] [Select_CString(ROOT.Char.IsFemale,'pogratulovala','pogratuloval')] [TARGET_CHARACTER.GetShortUIName] k [Select_CString(TARGET_CHARACTER.IsFemale,'jejímu','jeho')] vysokému umístění." # todo: NEW TRANSLATION
  imperial_examination.9001.t: "Pod dohledem nebe" # todo: NEW TRANSLATION
  imperial_examination.9001.desc: "Kosmeticky ještě nevyschly kapky potu na mém čele, než mě přivedou před [host.GetTitleAsNameNoTooltip]. Ruka mě bolí z pevného sevření mého" # todo: NEW TRANSLATION
  imperial_examination.9001.desc_brush: "štětce" # todo: NEW TRANSLATION
  imperial_examination.9001.desc_weapon: "zbraně" # todo: NEW TRANSLATION
  imperial_examination.9001.desc_bridge: "po celý den. Je mi řečeno, že jsem [Select_CString(ROOT.Char.IsFemale,'dosáhla','dosáhl')] nejvyššího skóre ze všech vybraných [ROOT.Char.GetWomenMen] v říši." # todo: NEW TRANSLATION
  imperial_examination.9001.desc_denied: "\n\nK mému překvapení [host.GetTitleAsNameNoTooltip] věnuje mému prostrčení jediný pohled, když se před [host.GetHerHim] pokláním, a pak říká: „[Select_CString(ROOT.Char.IsFemale,'Očekávala','Očekával')] jsem [ROOT.Char.GetInvolvedActivity.Custom('GetExamFocusSkill')].“\n\nMoje tvář zrudne, když přivedou jiného uchazeče, aby místo mě přijal pochvalu, [favored_entrant.Custom2('MyCharacterIntroduction', ROOT.Char)]." # todo: NEW TRANSLATION
- imperial_examination.9001.desc_merit: "\n\nPokloním se před [host.Custom('GetDaughterSon')] Nebes a ukloním se tak hluboko, jak mi to záda dovolí.\n\n„[Select_CString(ROOT.Char.IsFemale,'Poctila','Poctil')] jste říši dobře,“ říká [host.GetSheHe]. [Select_CString(ROOT.Char.IsFemale,'Zachytila','Zachytil')] jsem náznak pýchy v [host.GetHerHis] očích? Světla v této soudní síni mi musí dělat iluze." # todo: NEW TRANSLATION
+ imperial_examination.9001.desc_merit: "\n\nPokloním se před [host.Custom('GetDaughterSon')] Nebes a ukloním se tak hluboko, jak mi to záda dovolí.\n\n„[Select_CString(ROOT.Char.IsFemale,'Poctila','Poctil')] jste říši dobře,“ říká [host.GetSheHe]. [Select_CString(ROOT.Char.IsFemale,'Zachytila','Zachytil')] jsem náznak pýchy v [Select_CString(host.IsFemale,'jejích','jeho')] očích? Světla v této soudní síni mi musí dělat iluze." # todo: NEW TRANSLATION
  imperial_examination.9001.a: "Žiji, abych [Select_CString(ROOT.Char.IsFemale,'sloužila','sloužil')]." # todo: NEW TRANSLATION
  imperial_examination.9001.b: "Nikdy na to nezapomenu!" # todo: NEW TRANSLATION
  imperial_examination.9001.c: "Budu lepší, za každou cenu." # todo: NEW TRANSLATION
@@ -316,7 +316,7 @@
  imperial_examination.duel.archery.great_success.tt: "Tvůj výstřel je velký úspěch" # todo: NEW TRANSLATION
  imperial_examination.duel.archery.success.tt: "Tvůj výstřel je uspokojivý" # todo: NEW TRANSLATION
  imperial_examination.duel.archery.failure.tt: "Tvůj výstřel zcela mine cíl" # todo: NEW TRANSLATION
- other_entrant_impressive_success: "z davu diváků zazní šepot souhlasu, když [other_entrant.GetSheHe] pevně zaboří [other_entrant.GetHerHis] šíp do terče." # todo: NEW TRANSLATION
+ other_entrant_impressive_success: "z davu diváků zazní šepot souhlasu, když [other_entrant.GetSheHe] pevně zaboří [Select_CString(other_entrant.IsFemale,'její','jeho')] šíp do terče." # todo: NEW TRANSLATION
  other_entrant_spinning_safe: "Šíp letí nízkým obloukem, divoce se točí ve větru, ale přesto zasáhne dolní okraj terče." # todo: NEW TRANSLATION
  other_entrant_embarrased_cough: "Šíp letí tak mimo, že neslyším, jak dopadne za terčem. Někde někdo zakašle." # todo: NEW TRANSLATION
  other_entrant_piercing_success: "Šíp se zaboří do terče natolik, že z něj zezadu čouhá." # todo: NEW TRANSLATION
@@ -329,11 +329,11 @@
  imperial_examination.5160.c: "„Zkoušející [ROOT.Char.MakeScope.Var('has_bribed_examiner').Char.GetFirstNameNoTooltip], sledujte mě!“" # todo: NEW TRANSLATION
  imperial_examination.5160.d: "„[ROOT.Char.MakeScope.Var('has_blackmailed_examiner').Char.GetFirstNameNoTooltip], víš o manželských schopnostech mého rodiče!“" # todo: NEW TRANSLATION
  imperial_examination.5160.e: "„[ROOT.Char.MakeScope.Var('has_blackmailed_examiner').Char.GetFirstNameNoTooltip], nepřipomíná ti to #EMP daleký dosah# mé rodiny?“" # todo: NEW TRANSLATION
- other_entrant_cutting_success: "odsekne hlavu [other_entrant.GetHerHis] terče efektním pohybem, který přivodí úsměv na tvářích zkoušejících." # todo: NEW TRANSLATION
- other_entrant_practiced_safe: "točí se, paríruje a odkopne [other_entrant.GetHerHis] slaměného soupeře v obratných, byť poněkud předvídatelných pohybech." # todo: NEW TRANSLATION
- other_entrant_stuck_fail: "vykoná odvážný výpad proti [other_entrant.GetHerHis] terči, ale nějak se mu/ji podaří zbraň zaseknout v malém slaměném těle." # todo: NEW TRANSLATION
+ other_entrant_cutting_success: "odsekne hlavu [Select_CString(other_entrant.IsFemale,'její','jeho')] terče efektním pohybem, který přivodí úsměv na tvářích zkoušejících." # todo: NEW TRANSLATION
+ other_entrant_practiced_safe: "točí se, paríruje a odkopne [Select_CString(other_entrant.IsFemale,'jejího','jeho')] slaměného soupeře v obratných, byť poněkud předvídatelných pohybech." # todo: NEW TRANSLATION
+ other_entrant_stuck_fail: "vykoná odvážný výpad proti [Select_CString(other_entrant.IsFemale,'jejími','jeho')] terči, ale nějak se mu/ji podaří zbraň zaseknout v malém slaměném těle." # todo: NEW TRANSLATION
  other_entrant_practiced_success: "pohybuje se s obratností a téměř přirozenou lehkostí, což vyvolá závistný šepot v davu." # todo: NEW TRANSLATION
- other_entrant_stumbling_fail: "zakopne a upadne, [other_entrant.GetHerHis] zbraň s rachotem dopadne na zem. Oddechnu si úlevou." # todo: NEW TRANSLATION
+ other_entrant_stumbling_fail: "zakopne a upadne, [Select_CString(other_entrant.IsFemale,'její','jeho')] zbraň s rachotem dopadne na zem. Oddechnu si úlevou." # todo: NEW TRANSLATION
  imperial_examination.duel.polearm.critical_success.tt: "Tvoje forma je dokonalá" # todo: NEW TRANSLATION
  imperial_examination.duel.polearm.great_success.tt: "Tvoje forma je působivá" # todo: NEW TRANSLATION
  imperial_examination.duel.polearm.success.tt: "Tvoje forma je uspokojivá" # todo: NEW TRANSLATION
@@ -348,16 +348,16 @@
  horse_exam_tourney_success_first: "Tuto možnost získáváte díky vašemu [GetTrait('tourney_participant').GetName( GetNullCharacter )] [trait|E]" # todo: NEW TRANSLATION
  horse_exam_hunter_success_first: "Tuto možnost získáváte díky vašemu [GetTrait('lifestyle_hunter').GetName( GetNullCharacter )] [trait|E]" # todo: NEW TRANSLATION
  other_entrant_thundering_success: "vtrhne do pole, kopyta duní přes planinu. Přes rychlost koně [other_entrant.GetSheHe] sedí naprosto klidně na jeho hřbetě. Je to působivý a místy skličující pohled." # todo: NEW TRANSLATION
- other_entrant_practiced_ride: "cválá s obratnou lehkostí přes střelnici, ale postrádá odvahu natáhnout [other_entrant.GetHerHis] luk, což je žalostné." # todo: NEW TRANSLATION
+ other_entrant_practiced_ride: "cválá s obratnou lehkostí přes střelnici, ale postrádá odvahu natáhnout [Select_CString(other_entrant.IsFemale,'její','jeho')] luk, což je žalostné." # todo: NEW TRANSLATION
  other_entrant_spooked_horse: "zapíchne ostrohy, aby vylekal chudého tvora, který ho úspěšně shodí. Je to ubohý, ale do jisté míry uklidňující pohled." # todo: NEW TRANSLATION
- other_entrant_swift_success: "projede planinou rychle, posílá salvu šípů v rychlém sledu, [other_entrant.GetHerHis] pohyby plynou jako voda." # todo: NEW TRANSLATION
- other_entrant_shortstop_fail: "cválá přes pole, [Select_CString(ROOT.Char.IsFemale,'nakloněna','nakloněn')] přesně vpřed nad sedlem, ale žádný z [other_entrant.GetHerHis] šípů nepadá tam, kam má."
+ other_entrant_swift_success: "projede planinou rychle, posílá salvu šípů v rychlém sledu, [Select_CString(other_entrant.IsFemale,'její','jeho')] pohyby plynou jako voda." # todo: NEW TRANSLATION
+ other_entrant_shortstop_fail: "cválá přes pole, [Select_CString(ROOT.Char.IsFemale,'nakloněna','nakloněn')] přesně vpřed nad sedlem, ale žádný z [Select_CString(other_entrant.IsFemale,'jejích','jeho')] šípů nepadá tam, kam má."
  imperial_examination.duel.riding.critical_success.tt: "Tvoje technika je dokonalá" # todo: NEW TRANSLATION
  imperial_examination.duel.riding.great_success.tt: "Tvoje technika je působivá" # todo: NEW TRANSLATION
  imperial_examination.duel.riding.success.tt: "Tvoje technika je uspokojivá" # todo: NEW TRANSLATION
  imperial_examination.duel.riding.failure.tt: "Tvoje technika je zklamáním" # todo: NEW TRANSLATION
  imperial_examination.6000.t: "[Select_CString(ROOT.Char.IsFemale,'Přistižena','Přistižen')]!" # todo: NEW TRANSLATION
- imperial_examination.6000.desc: "Silně se potím, zatímco zkoušející [examiner.GetFirstName] mě přísně prohlíží od hlavy k patě, ruce na [examiner.GetHerHis] zádech. „Jak si to #EMP dovoliš#!, ty drzé štěně. [Select_CString(ROOT.Char.IsFemale,'Měla','Měl')] bych jít rovnou k [activity.GetHost.GetTitleAsNameNoTooltip|U] a oznámit [activity.GetHost.GetHerHis] excelenci o tvých #EMP neřestech#!. Pokud budeš mít štěstí, #EMP pouze#! ti useknou kůži před tvým skoncováním.“\n\nPot splyne po mých zádech, rychle se snažím zhodnotit situaci a pročistit své velmi, velmi suché hrdlo:" # todo: NEW TRANSLATION
+ imperial_examination.6000.desc: "Silně se potím, zatímco zkoušející [examiner.GetFirstName] mě přísně prohlíží od hlavy k patě, ruce na [Select_CString(examiner.IsFemale,'jejích','jeho')] zádech. „Jak si to #EMP dovoliš#!, ty drzé štěně. [Select_CString(ROOT.Char.IsFemale,'Měla','Měl')] bych jít rovnou k [activity.GetHost.GetTitleAsNameNoTooltip|U] a oznámit [activity.GetHost.GetHerHis] excelenci o tvých #EMP neřestech#!. Pokud budeš mít štěstí, #EMP pouze#! ti useknou kůži před tvým skoncováním.“\n\nPot splyne po mých zádech, rychle se snažím zhodnotit situaci a pročistit své velmi, velmi suché hrdlo:" # todo: NEW TRANSLATION
  imperial_examination.6000.a: "„Rámují mě, nevidíte to?!“" # todo: NEW TRANSLATION
  imperial_examination.6000.b: "„Určitě to můžeme nějak zařídit, aby to zmizelo!“" # todo: NEW TRANSLATION
  imperial_examination.6000.c: "„Víš, [friend_to_sacrifice.GetTitledFirstNameNoTooltip] [Select_CString(friend_to_sacrifice.IsFemale,'byla','byl')] #EMP ten skutečný#! iniciátor... !“" # todo: NEW TRANSLATION
@@ -377,11 +377,11 @@
  imperial_examination.cheat.failure.desc: "Jste [Select_CString(ROOT.Char.IsFemale,'přistižena','přistižen')]" # todo: NEW TRANSLATION
  imperial_examination.cheat.failure.tt: "Jakékoli [merit|E] získané z této [examination|E] [activity|E] bude #N penalizováno#!" # todo: NEW TRANSLATION
  imperial_examination.5200.t: "Ukázka střelby z luku" # todo: NEW TRANSLATION
- imperial_examination.5200.desc: "[host.GetTitleAsNameNoTooltip] se na mě zadívá hodnotícím pohledem. S širokým gestem směrem k nám soutěžícím [host.GetSheHe] prohlašuje, „Nesprávný postoj prozrazuje nedostatek ctnosti. Špatná technika odhaluje křehkou sílu vůle.“\n\n[host.GetSheHe|U] proplete [host.GetHerHis] prsty a pohlédne přes nádvoří. „Z dráhy tvého šípu posoudím tvou schopnost dobývat města a chránit naše hranice. Toto je tvá poslední šance mě zaujmout.“\n\n[host.GetSheHe|U] se otočí a přizve mě kupředu." # todo: NEW TRANSLATION
+ imperial_examination.5200.desc: "[host.GetTitleAsNameNoTooltip] se na mě zadívá hodnotícím pohledem. S širokým gestem směrem k nám soutěžícím [host.GetSheHe] prohlašuje, „Nesprávný postoj prozrazuje nedostatek ctnosti. Špatná technika odhaluje křehkou sílu vůle.“\n\n[host.GetSheHe|U] proplete [Select_CString(host.IsFemale,'její','jeho')] prsty a pohlédne přes nádvoří. „Z dráhy tvého šípu posoudím tvou schopnost dobývat města a chránit naše hranice. Toto je tvá poslední šance mě zaujmout.“\n\n[host.GetSheHe|U] se otočí a přizve mě kupředu." # todo: NEW TRANSLATION
  imperial_examination.5200.a: "Dám do toho vše!" # todo: NEW TRANSLATION
  imperial_examination.5200.b: "Raději nebudu riskovat." # todo: NEW TRANSLATION
  imperial_examination.5300.t: "Císařská esej" # todo: NEW TRANSLATION
- imperial_examination.5300.desc: "[host.GetTitleAsNameNoTooltip] se na mě zadívá hodnotícím pohledem. S širokým gestem směrem k nám soutěžícím [host.GetSheHe] prohlašuje, „Chabé klasické vzdělání prozrazuje nedostatek mravnosti. Slabý komentář odhaluje poddajné odhodlání.“\n\n[host.GetSheHe|U] spojí [host.GetHerHis] prsty a pohlédne přes nádvoří. „Z tahů tvého štětce posoudím tvou schopnost vládnout lidu a udržovat naše tradice. Toto je tvá poslední šance mě zaujmout.“\n\n[host.GetSheHe|U] se otočí a přizve mě kupředu." # todo: NEW TRANSLATION
+ imperial_examination.5300.desc: "[host.GetTitleAsNameNoTooltip] se na mě zadívá hodnotícím pohledem. S širokým gestem směrem k nám soutěžícím [host.GetSheHe] prohlašuje, „Chabé klasické vzdělání prozrazuje nedostatek mravnosti. Slabý komentář odhaluje poddajné odhodlání.“\n\n[host.GetSheHe|U] spojí [Select_CString(host.IsFemale,'její','jeho')] prsty a pohlédne přes nádvoří. „Z tahů tvého štětce posoudím tvou schopnost vládnout lidu a udržovat naše tradice. Toto je tvá poslední šance mě zaujmout.“\n\n[host.GetSheHe|U] se otočí a přizve mě kupředu." # todo: NEW TRANSLATION
  imperial_examination.5300.a: "Předložím důkladné pojednání." # todo: NEW TRANSLATION
  imperial_examination.5300.b: "$imperial_examination.5200.b$" # todo: NEW TRANSLATION
  imperial_examination.5400.t: "$imperial_examination.5300.t$" # todo: NEW TRANSLATION
@@ -452,10 +452,10 @@
  imperial_examination.7050.a.tt_singular: "[house_member.GetShortUINameNoTooltip|U] se pokusí dostavit na další [GetActivityType('activity_imperial_examination').GetNameNoTooltip]" # todo: NEW TRANSLATION
  demand_retake_exam_effect: "#weak Tito jedinci se pokusí dostavit na další [GetActivityType('activity_imperial_examination').GetNameNoTooltip]#!" # todo: NEW TRANSLATION
  imperial_examination.7050.b: "Zásluhu, samozřejmě, mám já." # todo: NEW TRANSLATION
- imperial_examination.7050.c.singular: "Jsem si jistý, že [Select_CString(house_member.IsFemale,'vynaložila','vynaložil')] [house_member.GetHerHis] maximum." # todo: NEW TRANSLATION
+ imperial_examination.7050.c.singular: "Jsem si jistý, že [Select_CString(house_member.IsFemale,'vynaložila','vynaložil')] [Select_CString(house_member.IsFemale,'její','jeho')] maximum." # todo: NEW TRANSLATION
  imperial_examination.7050.c.plural: "Jsem si jistý, že se snažili ze všech sil." # todo: NEW TRANSLATION
  imperial_examination.7055.t: "Rod poctěn na Palácové zkoušce" # todo: NEW TRANSLATION
- imperial_examination.7055.desc: "Je opravdovým požehnáním, že je rod [ROOT.Char.GetHouse.GetNameNoTooltip] zastoupen na Palácové zkoušce. Mí příbuzní stanuli před [host.Custom('GetDaughterSon')] Nebes [host.GetHerselfHimself] a prokázali, že si zaslouží [host.GetHerHis] pochvalu.\n\nTo je jistě znamení blahobytných časů, které přijdou."
+ imperial_examination.7055.desc: "Je opravdovým požehnáním, že je rod [ROOT.Char.GetHouse.GetNameNoTooltip] zastoupen na Palácové zkoušce. Mí příbuzní stanuli před [host.Custom('GetDaughterSon')] Nebes [host.GetHerselfHimself] a prokázali, že si zaslouží [Select_CString(host.IsFemale,'její','jeho')] pochvalu.\n\nTo je jistě znamení blahobytných časů, které přijdou."
  imperial_examination.7055.b: "Jak se dalo očekávat od člena rodu [ROOT.Char.GetHouse.GetNameNoTooltip]" # todo: NEW TRANSLATION
  imperial_examination.7060.t: "Rod zneuctěn na Metropolitní zkoušce" # todo: NEW TRANSLATION
  imperial_examination.7060.desc: "Jak se mohu ukázat mezi svými vrstevníky, když se moji příbuzní ztrapní a nedokáží dodržet naši nejuctívanější tradici? Možná bude třeba přísné kázně." # todo: NEW TRANSLATION

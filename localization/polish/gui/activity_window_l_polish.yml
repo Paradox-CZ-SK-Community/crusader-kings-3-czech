@@ -53,12 +53,12 @@
  JOIN_CHANCE: "Šance na přijetí"
  ACTIVITY_PHASE_TOOLTIP: "#T [ActivityPhase.GetName]#!\n[ActivityPhase.GetDescription]"
  activity_waiting_for_guests: "čeká na [Concept('activity_guests','hosty')|E], zbývá [Activity.GetNumWaitingForCharacters]"
- activity_waiting_for_phase: "čeká na zahájení [Activity.GetCurrentPhase.GetPhase.GetName]"
+ activity_waiting_for_phase: "čeká, až [Activity.GetCurrentPhase.GetPhase.GetName] začne"
  activity_travel_state_short: "[Concept('travel','Cestuje')|E]"
  activity_travel_state_full: "[Character.GetUIName|U] [Concept('travel','cestuje')|E] na [Activity.GetShortNameNoTooltip]"
  activity_passive_state_short: "Čeká"
- activity_passive_state_full: "[Character.GetUIName|U] je [SelectLocalization( Or( Activity.GetType.IsOpenInvite, EqualTo_int32( Activity.GetNumWaitingForCharacters, '(int32)0') ), 'activity_waiting_for_phase', 'activity_waiting_for_guests' )]"
- activity_active_state_short: "Zapojen"
+ activity_passive_state_full: "[Character.GetUIName|U] [SelectLocalization( Or( Activity.GetType.IsOpenInvite, EqualTo_int32( Activity.GetNumWaitingForCharacters, '(int32)0') ), 'activity_waiting_for_phase', 'activity_waiting_for_guests' )]"
+ activity_active_state_short: "Zapojení"
  activity_active_state_full: "[Character.GetUIName|U] je [Select_CString(Character.IsFemale,'zapojena','zapojen')] do [Activity.GetCurrentPhase.GetPhase.GetName]"
  activity_uninvolved_state_short: "Nezapojen"
  activity_uninvolved_state_full: "[Character.GetUIName|U] není [Select_CString(Character.IsFemale,'zapojena','zapojen')] v [Activity.GetCurrentPhase.GetPhase.GetName]"
@@ -105,6 +105,6 @@
  ACTIVITY_WINDOW_SPECIAL_PROGRESS_TOOLTIP: "Skóre: [ActivityWindow.GetSpecialProgressValue|^V]"
  ACTIVITY_WINDOW_PHASE_IN_PROGRESS_TOOLTIP: "#T [ActivityPhase.GetName]#!\nPoslední akce: [ActivityWindow.GetLastWeeklyPulseEffectData.GetTitle|V][AddLine( ActivityWindow.GetLastWeeklyPulseEffectData.GetEffectText )]\n\n[Subtract_int32( DaysPerWeek, GetTicksSinceLastProgress( Activity.GetID, DaysPerWeek ) )|V] dnů do další příležitosti k pokročení [Concept('activity_phase_action','fázi')|E].\n\n[ActivityPhase.GetDescription]"
  ACTIVITY_PULSE_ACTION_NONE: "Žádné"
- ACTIVITY_TIME_UNTIL_PROGRESS: " ([Activity.GetEstimatedProgressPhaseDate.GetTimeToDate] do toho, než [Select_CString(Activity.IsCurrentPhaseActive, 'ends', 'begins')])"
+ ACTIVITY_TIME_UNTIL_PROGRESS: " ([Activity.GetEstimatedProgressPhaseDate.GetTimeToDate] do [Select_CString(Activity.IsCurrentPhaseActive, 'konce', 'začátku')])"
  OPEN_ACTIVITY_NEVER_SEEN: "Nikdy se nekonalo" # todo: NEW TRANSLATION
  OPEN_ACTIVITY_LAST_SEEN: "Naposledy se konalo před [GetTimeBetweenDates(DATE.Self, GetCurrentDate)]" # todo: NEW TRANSLATION

@@ -84,7 +84,7 @@
  action_can_lawfully_imprison: "@prison_icon! Zločinec může být uvězněn"
  action_can_lawfully_imprison_label: "@prison_icon! Můžete zákonně uvěznit svého [actor.Custom2('RelationToMe', recipient)] [recipient.Custom('GetPrimaryTitleTierIcon')][recipient.GetShortUINameNoTooltip]"
  action_can_lawfully_imprison_combined_label: "Váš [actor.Custom2('RelationToMe', recipient)] [recipient.Custom('GetPrimaryTitleTierIcon')][recipient.GetShortUINameNoTooltip]"
- action_can_lawfully_imprison_desc: "[recipient.GetUIName] spáchal(a) [crimes|E] ([recipient.GetImprisonmentReasons( actor.Self )]), což vám umožňuje uvěznit [recipient.GetHerHim] bez získání [tyranny|E].$action_can_lawfully_imprison_HELP$"
+ action_can_lawfully_imprison_desc: "[recipient.GetUIName] [Select_CString(recipient.IsFemale,'spáchala','spáchal')] [crimes|E] ([recipient.GetImprisonmentReasons( actor.Self )]), což vám umožňuje uvěznit [recipient.GetHerHim] bez získání [tyranny|E].$action_can_lawfully_imprison_HELP$"
  action_can_lawfully_imprison_click: "#I Klikněte pro uvěznění [recipient.GetHerHim]#!"
  action_can_lawfully_imprison_combined_group_label: "@prison_icon! Lze uvěznit zločince"
  action_can_lawfully_imprison_combined_group_name: "@prison_icon! Lze uvěznit zločince"
@@ -238,7 +238,7 @@
  action_title_lost_from_realm_on_succession_combined_group_label: "@bad_icon! Říše ztratí území, pokud vazalové zemřou"
  action_title_lost_from_realm_on_succession_combined_group_name: "@bad_icon! Říše ztratí území, pokud vazalové zemřou"
  action_title_lost_from_realm_on_succession_combined_group_description: "Někteří z vašich [vassals|E] drží [titles|E], které zdědí [rulers|E], kteří nejsou vašimi [vassals|E].\n\n$TLFR_CROWN_AUTHORITY_TIP$"
- TLFR_CROWN_AUTHORITY_TIP: "#help Nejspolehlivějším způsobem, jak tomu předejít, je zvýšit vaši [crown_authority|E] na [GetLaw('crown_authority_2').GetName]. To ale může být také způsobeno tím, že dotyčný vazal nemá legitimní děti. Pokud je [married|E] a plodný/á, problém se může vyřešit sám.#!"
+ TLFR_CROWN_AUTHORITY_TIP: "#help Nejspolehlivějším způsobem, jak tomu předejít, je zvýšit vaši [crown_authority|E] na [GetLaw('crown_authority_2').GetName]. To ale může být také způsobeno tím, že dotyčný vazal nemá legitimní děti. Pokud je [married|E] a [Select_CString(ROOT.Char.IsFemale,'plodná','plodný')], problém se může vyřešit sám.#!"
  action_title_lost_from_realm_on_foreign_ruler_succession: "@bad_icon! Říše ztratí území, pokud vazal zdědí cizí titul"
  action_title_lost_from_realm_on_foreign_ruler_succession_label: "@bad_icon! Říše ztratí území, pokud [recipient.GetPrimaryTitle.Custom('GetTierIcon')][recipient.GetUINameNoTooltip] zdědí [landed_title.Custom('GetTierIcon')][landed_title.GetBaseNameNoTooltip]"
  action_title_lost_from_realm_on_foreign_ruler_succession_desc: "Váš [vassal|E] [recipient.GetShortUIName] je [heir|E] k [landed_title.GetBaseName], cizímu [title|E] s vyšším [Concept( 'title_tier', 'Tier' )|E], než je [recipient.GetHerHis] současný [primary_title|E].\n\n$TLFR_FOREIGN_RULER_SUCCESSION_TIPS$"
@@ -296,7 +296,7 @@
  action_can_join_open_activity_click: "#I Klikněte pro zobrazení [activity.GetNameNoTooltip]#!"
  action_invited_to_activity: "Pozvánka na aktivitu: [activity.GetNameNoTooltip]"
  action_invited_to_activity_label: "[activity.GetName]"
- action_invited_to_activity_desc: "Jste pozván(a) k účasti na [activity.GetName] v [activity.GetCurrentPhase.GetLocation.GetBaronyNameExplicitly]"
+ action_invited_to_activity_desc: "Jste [Select_CString(ROOT.Char.IsFemale,'pozvána','pozván')] k účasti na [activity.GetName] v [activity.GetCurrentPhase.GetLocation.GetBaronyNameExplicitly]"
  action_invited_to_activity_click: "#I Klikněte pro zobrazení [activity.GetNameNoTooltip]#!"
  action_ask_for_pardon: "@prison_icon! Možnost milosti"
  action_ask_for_pardon_label: "@prison_icon! Můžete požádat o milost"
@@ -390,8 +390,8 @@
  action_in_line_of_succession_for_title: "@titles_icon! Jste #high [actor.GetPlaceInSuccession(landed_title)|O]#! v linii pro dědění [landed_title.Custom('GetTierIcon')][landed_title.GetNameNoTooltip] [actor.Custom2('GetInOrOutsideRealm', landed_title.GetHolder)]"
  action_in_line_of_succession_for_title_combined_group_label: "@titles_icon! Jste v linii dědění titulů"
  action_in_line_of_succession_for_title_combined_group_name: "@titles_icon! Jste v linii dědění více [titles|E]"
- action_in_line_of_succession_for_title_desc: "Jste [actor.GetPlaceInSuccession(landed_title)|O] v [line|E] pro [landed_title.GetName].\n\n#help I když je možné, že tento titul nakonec zdědíte i bez zásahu, [GetScheme('murder').GetTypeName] by mohl urychlit jeho získání a zabránit tomu, abyste přišel o své místo v linii.#!"
- action_in_line_of_succession_for_title_combined_group_description: "Jste vysoko v [line_of_succession|E] pro více [titles|E].\n\n#help I když je možné, že tyto tituly zdědíte i bez zásahu, [GetScheme('murder').GetTypeName] by mohl urychlit jejich získání a zabránit ztrátě vašeho místa v linii.#!"
+ action_in_line_of_succession_for_title_desc: "Jste [actor.GetPlaceInSuccession(landed_title)|O] v [line|E] pro [landed_title.GetName].\n\n#help I když je možné, že tento titul nakonec zdědíte i bez zásahu, [GetScheme('murder').GetTypeName] by [Select_CString(ROOT.Char.IsFemale,'mohla','mohl')] urychlit jeho získání a zabránit tomu, abyste přišel o své místo v linii.#!"
+ action_in_line_of_succession_for_title_combined_group_description: "Jste vysoko v [line_of_succession|E] pro více [titles|E].\n\n#help I když je možné, že tyto tituly zdědíte i bez zásahu, [GetScheme('murder').GetTypeName] by [Select_CString(ROOT.Char.IsFemale,'mohla','mohl')] urychlit jejich získání a zabránit ztrátě vašeho místa v linii.#!"
  action_in_line_of_succession_for_title_label: "$action_in_line_of_succession_for_title$"
  action_in_line_of_succession_for_title_combined_label: "#high [actor.GetPlaceInSuccession(landed_title)|O]#! v linii pro [landed_title.Custom('GetTierIcon')][landed_title.GetNameNoTooltip] [actor.Custom2('GetInOrOutsideRealm', landed_title.GetHolder)]"
  action_in_line_of_succession_for_title_click: "#I Klikněte pro zobrazení [title|E]#!"
@@ -400,8 +400,8 @@
  action_heir_in_line_of_succession_for_title: "@titles_icon! Dědic [actor.GetPlaceInSuccession(landed_title)|O] v linii pro dědění [landed_title.GetNameNoTierNoTooltip] [actor.Custom2('GetInOrOutsideRealm', landed_title.GetHolder)]"
  action_heir_in_line_of_succession_for_title_combined_group_label: "@titles_icon! Dědic v linii k dědění titulů"
  action_heir_in_line_of_succession_for_title_combined_group_name: "@titles_icon! Dědic v linii k dědění více [titles|E]"
- action_heir_in_line_of_succession_for_title_desc: "Váš [player_heir|E] [actor.GetShortUIName] je [actor.GetPlaceInSuccession(landed_title)|O] v [line_of_succession|E] pro [landed_title.Custom('GetTierIcon')][landed_title.GetName].\n\n#help I když je možné, že [actor.GetSheHe] tento titul zdědí sám/sama, [GetScheme('murder').GetTypeName] by mohl urychlit jeho získání a zajistit, aby [actor.GetSheHe] neztratil(a) své místo v linii.#!"
- action_heir_in_line_of_succession_for_title_combined_group_description: "Váš [player_heir|E] [actor.GetShortUIName] je vysoko v [line_of_succession|E] pro více [titles|E].\n\n#help I když je možné, že [actor.GetSheHe] tyto tituly zdědí sama/sám, [GetScheme('murder').GetTypeName] by mohl urychlit jejich získání a zajistit, že [actor.GetSheHe] neztratí své místo v linii.#!"
+ action_heir_in_line_of_succession_for_title_desc: "Váš [player_heir|E] [actor.GetShortUIName] je [actor.GetPlaceInSuccession(landed_title)|O] v [line_of_succession|E] pro [landed_title.Custom('GetTierIcon')][landed_title.GetName].\n\n#help I když je možné, že [actor.GetSheHe] tento titul zdědí sám/sama, [GetScheme('murder').GetTypeName] by [Select_CString(ROOT.Char.IsFemale,'mohla','mohl')] urychlit jeho získání a zajistit, aby [Select_CString(actor.IsFemale,'neztratila','neztratil')] své místo v linii.#!"
+ action_heir_in_line_of_succession_for_title_combined_group_description: "Váš [player_heir|E] [actor.GetShortUIName] je vysoko v [line_of_succession|E] pro více [titles|E].\n\n#help I když je možné, že [actor.GetSheHe] tyto tituly zdědí sama/sám, [GetScheme('murder').GetTypeName] by [Select_CString(ROOT.Char.IsFemale,'mohla','mohl')] urychlit jejich získání a zajistit, že [actor.GetSheHe] neztratí své místo v linii.#!"
  action_heir_in_line_of_succession_for_title_label: "$action_heir_in_line_of_succession_for_title$"
  action_heir_in_line_of_succession_for_title_combined_label: "[actor.GetPlaceInSuccession(landed_title)|O] v linii pro [landed_title.Custom('GetTierIcon')][landed_title.GetNameNoTooltip] [actor.Custom2('GetInOrOutsideRealm', landed_title.GetHolder)]"
  action_heir_in_line_of_succession_for_title_click: "#I Klikněte pro zobrazení [title|E]#!"
@@ -441,7 +441,7 @@
  action_should_pay_ransom: "@gold_icon! Měli byste zaplatit důležité výkupné"
  action_should_pay_ransom_combined_group_label: "@gold_icon! Měli byste zaplatit důležitá výkupná"
  action_should_pay_ransom_combined_group_name: "$action_should_pay_ransom_combined_group_label$"
- action_should_pay_ransom_desc: "Váš [actor.Custom2('RelationToMe', secondary_recipient)], [secondary_recipient.Custom('GetPrimaryTitleTierIcon')][secondary_recipient.GetShortUIName] [secondary_recipient.Custom2('GetSuccessionLinePositionCurrentSituation', actor)], je v [secondary_recipient.Custom('PrisonTypeModifier')] a může mu/ji hrozit poškození zdraví nebo dokonce [executed|E], pokud zůstane v [prison|E]. Měli byste zaplatit [secondary_recipient.GetHerHis] výkupné, pokud chcete ochránit [secondary_recipient.GetHerHis] [health|E].\n\n[secondary_recipient.GetHerHis|U] výkupné je @gold_icon!#V [secondary_recipient.MakeScope.ScriptValue('ransom_cost_value')|0]#! [gold|E].$action_should_pay_ransom_HELP$"
+ action_should_pay_ransom_desc: "Váš [actor.Custom2('RelationToMe', secondary_recipient)], [secondary_recipient.Custom('GetPrimaryTitleTierIcon')][secondary_recipient.GetShortUIName] [secondary_recipient.Custom2('GetSuccessionLinePositionCurrentSituation', actor)], je v [secondary_recipient.Custom('PrisonTypeModifier')] a může mu/ji hrozit poškození zdraví nebo dokonce [executed|E], pokud zůstane v [prison|E]. Měli byste zaplatit [Select_CString(secondary_recipient.IsFemale,'její','jeho')] výkupné, pokud chcete ochránit [secondary_recipient.GetHerHis] [health|E].\n\n[Select_CString(secondary_recipient.IsFemale,'Její','Jeho')] výkupné je @gold_icon!#V [secondary_recipient.MakeScope.ScriptValue('ransom_cost_value')|0]#! [gold|E].$action_should_pay_ransom_HELP$"
  action_should_pay_ransom_combined_group_description: "Máte důležité postavy, které jsou [imprisoned|E]; měli byste zaplatit jejich výkupné, pokud chcete ochránit jejich [health|E].$action_vassal_ransom_gives_hook_HELP$"
  action_should_pay_ransom_label: "@gold_icon! Měli byste zaplatit výkupné za svého [actor.Custom2('RelationToMe', secondary_recipient)] [secondary_recipient.Custom('GetPrimaryTitleTierIcon')][secondary_recipient.GetShortUINameNoTooltip] [secondary_recipient.Custom2('GetSuccessionLinePositionCurrentSituation', actor)], @gold_icon!#V [secondary_recipient.MakeScope.ScriptValue('ransom_cost_value')|0]#!"
  action_should_pay_ransom_combined_label: "Váš [actor.Custom2('RelationToMe', secondary_recipient)], [secondary_recipient.Custom('GetPrimaryTitleTierIcon')][secondary_recipient.GetShortUINameNoTooltip] [secondary_recipient.Custom2('GetSuccessionLinePositionCurrentSituation', actor)], @gold_icon!#V [secondary_recipient.MakeScope.ScriptValue('ransom_cost_value')|0]#!"
@@ -452,7 +452,7 @@
  action_vassal_ransom_gives_hook: "@cs_weak_hook_icon! Zaplatit výkupné vazalovi pro získání Hook"
  action_vassal_ransom_gives_hook_combined_group_label: "$action_vassal_ransom_gives_hook$"
  action_vassal_ransom_gives_hook_combined_group_name: "$action_vassal_ransom_gives_hook$"
- action_vassal_ransom_gives_hook_desc: "Váš [vassal|E], [secondary_recipient.Custom('GetPrimaryTitleTierIcon')][secondary_recipient.GetShortUIName], má čestnou [personality|E] a byl by vám zavázán [hook_i][weak_hook|E], pokud byste zaplatili [secondary_recipient.GetHerHis] výkupné.\n\n[secondary_recipient.GetHerHis|U] výkupné je @gold_icon!#V [secondary_recipient.MakeScope.ScriptValue('ransom_cost_value')|0]#! [gold|E].$action_vassal_ransom_gives_hook_HELP$"
+ action_vassal_ransom_gives_hook_desc: "Váš [vassal|E], [secondary_recipient.Custom('GetPrimaryTitleTierIcon')][secondary_recipient.GetShortUIName], má čestnou [personality|E] a byl by vám zavázán [hook_i][weak_hook|E], pokud byste zaplatili [Select_CString(secondary_recipient.IsFemale,'její','jeho')] výkupné.\n\n[Select_CString(secondary_recipient.IsFemale,'Její','Jeho')] výkupné je @gold_icon!#V [secondary_recipient.MakeScope.ScriptValue('ransom_cost_value')|0]#! [gold|E].$action_vassal_ransom_gives_hook_HELP$"
  action_vassal_ransom_gives_hook_combined_group_description: "Máte [vassals|E] s čestnými [personalities|E], které by vám byly zavázány [hook_i][weak_hook|E], pokud byste zaplatili jejich výkupné.$action_vassal_ransom_gives_hook_HELP$"
  action_vassal_ransom_gives_hook_label: "@cs_weak_hook_icon! Můžete zaplatit výkupné svému vazalovi [secondary_recipient.Custom('GetPrimaryTitleTierIcon')][secondary_recipient.GetShortUINameNoTooltip], @gold_icon!#V [secondary_recipient.MakeScope.ScriptValue('ransom_cost_value')|0]#!"
  action_vassal_ransom_gives_hook_combined_label: "Váš [actor.Custom2('RelationToMe', secondary_recipient)], [secondary_recipient.Custom('GetPrimaryTitleTierIcon')][secondary_recipient.GetShortUINameNoTooltip], @gold_icon!#V [secondary_recipient.MakeScope.ScriptValue('ransom_cost_value')|0]#!"
@@ -482,7 +482,7 @@
  action_can_potentially_propose_alliance_to_family_member: "@alliance_icon! Potenciální vyjednávání o alianci"
  action_can_potentially_propose_alliance_to_family_member_combined_group_label: "@alliance_icon! Potenciální vyjednávání o alianci"
  action_can_potentially_propose_alliance_to_family_member_combined_group_name: "$action_can_potentially_propose_alliance_to_family_member_combined_group_label$"
- action_can_potentially_propose_alliance_to_family_member_desc: "Váš [actor.Custom2('RelationToMe', recipient)] [recipient.GetUIName] by #EMP not#! přijal [alliance|E] s vámi právě teď, ale potenciálně by mohl být přesvědčen.\n\n[actor.Custom2('GetInOrOutsideRealmAllianceInfo', recipient)]#help \n\nPokud potřebujete [Alliance], zlepšení [opinion|E] nebo získání [hook|E] by vám mohlo umožnit vyjednat ji.\n\nMůžete zkontrolovat, jak blízko jsou k přijetí vaší nabídky aliance, když otevřete interakci a najetím myší zjistíte skóre přijetí.#!"
+ action_can_potentially_propose_alliance_to_family_member_desc: "Váš [actor.Custom2('RelationToMe', recipient)] [recipient.GetUIName] by #EMP not#! přijal [alliance|E] s vámi právě teď, ale potenciálně by [Select_CString(ROOT.Char.IsFemale,'mohla','mohl')] být přesvědčen.\n\n[actor.Custom2('GetInOrOutsideRealmAllianceInfo', recipient)]#help \n\nPokud potřebujete [Alliance], zlepšení [opinion|E] nebo získání [hook|E] by vám mohlo umožnit vyjednat ji.\n\nMůžete zkontrolovat, jak blízko jsou k přijetí vaší nabídky aliance, když otevřete interakci a najetím myší zjistíte skóre přijetí.#!"
  action_can_potentially_propose_alliance_to_family_member_combined_group_description: "Tito jedinci by #EMP not#! nyní nepřijali [alliance|E] s vámi, ale potenciálně by mohli být přesvědčeni.\n\n[actor.Custom2('GetInOrOutsideRealmAllianceInfo', recipient)]#help \n\nPokud potřebujete [Alliance], zlepšení [opinion|E] nebo získání [hook|E] by vám mohlo umožnit ji vyjednat.\n\nMůžete zjistit, jak blízko jsou k přijetí vaší nabídky aliance, když otevřete interakci a najedete kurzorem na skóre přijetí.#!"
  action_can_potentially_propose_alliance_to_family_member_label: "@alliance_icon! Potenciálně můžete vyjednat alianci se svým [actor.Custom2('RelationToMe', recipient)] [recipient.GetPrimaryTitle.Custom('GetTierIcon')][recipient.GetShortUINameNoTooltip], #low @soldier_icon![recipient.GetMilitaryStrengthText]#! [actor.Custom2('GetInOrOutsideRealm', recipient)]"
  action_can_potentially_propose_alliance_to_family_member_combined_label: "$action_can_propose_alliance_to_family_member_combined_label$"
@@ -571,7 +571,7 @@
  action_can_pardon: "@law_icon! Lze udělit milost zločinci"
  action_can_pardon_label: "@law_icon! Můžete udělit milost svému [actor.Custom2('RelationToMe', recipient)] [recipient.Custom('GetPrimaryTitleTierIcon')][recipient.GetShortUINameNoTooltip]"
  action_can_pardon_combined_label: "Váš [actor.Custom2('RelationToMe', recipient)] [recipient.Custom('GetPrimaryTitleTierIcon')][recipient.GetShortUINameNoTooltip]"
- action_can_pardon_desc: "[recipient.GetUIName] spáchal [crimes|E] ([recipient.GetImprisonmentReasons( actor.Self )]), za které můžete udělit milost [recipient.GetHerHim]."
+ action_can_pardon_desc: "[recipient.GetUIName] [Select_CString(recipient.IsFemale,'spáchala','spáchal')] [crimes|E] ([recipient.GetImprisonmentReasons( actor.Self )]), za které můžete udělit milost [recipient.GetHerHim]."
  action_can_pardon_click: "#I Klikněte pro udělení milosti [recipient.GetHerHim]#!"
  action_can_pardon_combined_group_label: "@law_icon! Lze udělit milost zločincům"
  action_can_pardon_combined_group_name: "@law_icon! Lze udělit milost zločincům"
@@ -640,7 +640,7 @@
  action_accolade_can_spend_attribute: "@acclaimed_knight_icon! [accolade|e] lze vylepšit" # todo: NEW TRANSLATION
  action_accolade_can_spend_attribute_label: "@acclaimed_knight_icon! [recipient.GetNameNoTooltip] lze vylepšit" # todo: NEW TRANSLATION
  action_accolade_can_spend_attribute_desc: "[recipient.GetName] má alespoň jeden [accolade_type|e] k dispozici.$action_accolade_can_spend_attribute_HELP$" # todo: NEW TRANSLATION
- action_accolade_can_spend_attribute_HELP: "\n\n#help [recipient.GetNameNoTooltip] získal/a dostatek [glory|e] pro zvýšení [accolade_rank|e], čímž získá další odemknutí [accolade_type|e]." # todo: NEW TRANSLATION
+ action_accolade_can_spend_attribute_HELP: "\n\n#help [recipient.GetNameNoTooltip] [Select_CString(recipient.IsFemale,'získala','získal')] dostatek [glory|e] pro zvýšení [accolade_rank|e], čímž získá další odemknutí [accolade_type|e]." # todo: NEW TRANSLATION
  action_accolade_can_spend_attribute_click: "#I Klikněte pro zobrazení rytířů#!" # todo: NEW TRANSLATION
  action_accolade_can_spend_attribute_combined_label: "@acclaimed_knight_icon! [recipient.GetNameNoTooltip] lze vylepšit" # todo: NEW TRANSLATION
  action_accolade_can_spend_attribute_combined_group_label: "@acclaimed_knight_icon! Můžete vylepšit ocenění" # todo: NEW TRANSLATION
@@ -660,7 +660,7 @@
  action_swing_scales_regent_click: "#I Klikněte pro otevření interakce s postavou#!"
  action_swing_scales_liege_entrenched_dangerous: "Nakloňte $game_concept_scales_of_power$"
  action_swing_scales_liege_entrenched_dangerous_label: "@law_icon! Můžete naklonit $game_concept_scales_of_power$ — váš [actor.Custom2('RelationToMe', recipient)], [actor.GetDiarchTitle], [recipient.GetUINameNoTooltip], nabývá vlivu"
- action_swing_scales_liege_entrenched_dangerous_desc: "[recipient.GetUIName] získává znepokojivé množství kontroly nad vaším [realm|E], což [recipient.GetHerHim] dává přístup k mocným [diarch_powers|E].\n\nMěli byste zvážit omezení [recipient.GetHerHis] rostoucí moci.$action_swing_scales_liege_entrenched_dangerous_help$"
+ action_swing_scales_liege_entrenched_dangerous_desc: "[recipient.GetUIName] získává znepokojivé množství kontroly nad vaším [realm|E], což [recipient.GetHerHim] dává přístup k mocným [diarch_powers|E].\n\nMěli byste zvážit omezení [Select_CString(recipient.IsFemale,'její','jeho')] rostoucí moci.$action_swing_scales_liege_entrenched_dangerous_help$"
  action_swing_scales_liege_entrenched_dangerous_help: "\n\n#help Pokud [recipient.GetFirstNameNoTooltip] zesílí příliš, bude obtížné zbavit [recipient.GetHerHim] funkce [actor.GetDiarchTitle].#!"
  action_swing_scales_liege_entrenched_dangerous_click: "#I Klikněte pro otevření interakce s postavou#!"
  action_regent_revoke: "Odňít titul jako [actor.GetLiege.GetDiarchTitle]"
@@ -675,7 +675,7 @@
  action_regent_retract: "Odebrat vazala jako [actor.GetLiege.GetDiarchTitle]"
  action_regent_retract_label: "@vassal_icon! Můžete odebrat vazaly vašemu [actor.Custom2('RelationToMe', recipient)], [recipient.GetUINameNoTooltip], #low @soldier_icon![recipient.GetMilitaryStrengthText]#!, jako [actor.GetLiege.GetDiarchTitle]"
  action_regent_retract_combined_label: "Váš [actor.Custom2('RelationToMe', recipient)], [recipient.GetUINameNoTooltip], #low @soldier_icon![recipient.GetMilitaryStrengthText]#!"
- action_regent_retract_desc: "Jako [actor.GetLiege.GetDiarchTitle] jste nabyli dost moci, abyste mohl(a) [retract|E] své [de_jure|E] [vassals|E] od jiných [characters|E] ve [realm|E] vašeho [liege|E].\n\nPlatní $game_concept_characters$, které lze převzít, musí být nižší než váš [title_tier|E] a musí být $game_concept_de_jure$ $game_concept_vassals$ k titulu [title|E], který již držíte.$action_regent_retract_help$"
+ action_regent_retract_desc: "Jako [actor.GetLiege.GetDiarchTitle] jste nabyli dost moci, abyste [Select_CString(ROOT.Char.IsFemale,'mohla','mohl')] [retract|E] své [de_jure|E] [vassals|E] od jiných [characters|E] ve [realm|E] vašeho [liege|E].\n\nPlatní $game_concept_characters$, které lze převzít, musí být nižší než váš [title_tier|E] a musí být $game_concept_de_jure$ $game_concept_vassals$ k titulu [title|E], který již držíte.$action_regent_retract_help$"
  action_regent_retract_help: "\n\n#help Normálně můžete $game_concept_retract$ pouze od svých vlastních $game_concept_vassals$.\n\nPokud [recipient.GetTitledFirstName] odmítne, budete mít stále možnost ustoupit bez vyhlášení [war|E].#!"
  action_regent_retract_click: "#I Klikněte pro otevření interakce s postavou#!"
  action_regent_retract_combined_group_name: "$action_regent_retract$"
@@ -684,7 +684,7 @@
  action_regent_imprison: "Uvěznit postavu jako [actor.GetLiege.GetDiarchTitle]"
  action_regent_imprison_label: "@prison_icon! Můžete uvěznit vašeho [actor.Custom2('RelationToMe', recipient)], [recipient.GetUINameNoTooltip], #low @soldier_icon![recipient.GetMilitaryStrengthText]#!, jako [actor.GetLiege.GetDiarchTitle]"
  action_regent_imprison_combined_label: "Váš [actor.Custom2('RelationToMe', recipient)], [recipient.GetUINameNoTooltip], #low @soldier_icon![recipient.GetMilitaryStrengthText]#!"
- action_regent_imprison_desc: "Máte dost vlivu jako [actor.GetLiege.GetDiarchTitle], abyste mohl(a) [imprison|E] některé své nepřátele v [realm|E] vašeho [liege|E].$action_regent_imprison_help$"
+ action_regent_imprison_desc: "Máte dost vlivu jako [actor.GetLiege.GetDiarchTitle], abyste [Select_CString(ROOT.Char.IsFemale,'mohla','mohl')] [imprison|E] některé své nepřátele v [realm|E] vašeho [liege|E].$action_regent_imprison_help$"
  action_regent_imprison_help: "\n\n#help Normálně můžete zatýkat pouze své vlastní [vassals|E], [courtiers|E] nebo [guests|E].\n\nPokud [recipient.GetTitledFirstName] odmítne, budete mít možnost ustoupit bez vyhlášení [war|E].#!"
  action_regent_imprison_click: "#I Klikněte pro otevření interakce s postavou#!"
  action_regent_imprison_combined_group_name: "$action_regent_imprison$"
@@ -707,7 +707,7 @@
  action_shift_privileges: "Ukrást zlato od spoluvazalů jako [actor.GetLiege.GetDiarchTitle]"
  action_shift_privileges_label: "[gold_i] Můžete ukrást zlato držené vaším [actor.Custom2('RelationToMe', recipient)], [recipient.GetUINameNoTooltip], #low @soldier_icon![recipient.GetMilitaryStrengthText]#!, jako [actor.GetLiege.GetDiarchTitle]"
  action_shift_privileges_combined_label: "Váš [actor.Custom2('RelationToMe', recipient)], [recipient.GetUINameNoTooltip], #low @soldier_icon![recipient.GetMilitaryStrengthText]#!"
- action_shift_privileges_desc: "Jako [actor.GetLiege.GetDiarchTitle] můžete prodávat falešná povolení, certifikáty a další papírování týkající se pozemků vašich spoluvazalů, abyste získal(a) [gold|E].$action_shift_privileges_help$"
+ action_shift_privileges_desc: "Jako [actor.GetLiege.GetDiarchTitle] můžete prodávat falešná povolení, certifikáty a další papírování týkající se pozemků vašich spoluvazalů, abyste [Select_CString(ROOT.Char.IsFemale,'získala','získal')] [gold|E].$action_shift_privileges_help$"
  action_shift_privileges_help: "\n\n#help Ačkoliv nepopulární, je to dobrý a nízkorizikový způsob, jak získat další $game_concept_gold$.#!"
  action_shift_privileges_click: "#I Klikněte pro otevření interakce s postavou#!"
  action_shift_privileges_combined_group_name: "$action_shift_privileges$"
@@ -715,7 +715,7 @@
  action_shift_privileges_combined_group_description: "$action_shift_privileges_desc$"
  action_subsidise_liege_authority: "Posílit autoritu, kterou vám dává váš pán"
  action_subsidise_liege_authority_label: "@icon_contract_modification_single! Posilte autoritu svého pána, abyste si odemkli více $game_concept_diarch_powers$"
- action_subsidise_liege_authority_desc: "[recipient.GetTitledFirstNamePossessive] kontrola nad [realm|E] je slabá, což vám brání v používání některých vašich [diarch_powers|E].\n\nPomocí pomoci [recipient.GetHerHim] při upevňování [recipient.GetHerHis] autority můžete obětovat popularitu za moc.$action_subsidise_liege_authority_help$"
+ action_subsidise_liege_authority_desc: "[recipient.GetTitledFirstNamePossessive] kontrola nad [realm|E] je slabá, což vám brání v používání některých vašich [diarch_powers|E].\n\nPomocí pomoci [recipient.GetHerHim] při upevňování [Select_CString(recipient.IsFemale,'její','jeho')] autority můžete obětovat popularitu za moc.$action_subsidise_liege_authority_help$"
  action_subsidise_liege_authority_help: "\n\n#help Vaši spoluvazalové [vassals|E] vás za to budou obviňovat.#!"
  action_subsidise_liege_authority_click: "#I Klikněte pro otevření interakce s postavou#!"
  action_designate_regent_for_hook: "Zajistit budoucí regentství [recipient.GetFirstNamePossessiveNoTooltip]"
@@ -726,7 +726,7 @@
  action_appoint_co_emperor_junior: "Udělit status $game_concept_junior_emperor$"
  action_appoint_co_emperor_junior_label: "@declare_regent_icon! $action_appoint_co_emperor_junior$"
  action_appoint_co_emperor_junior_desc: "Dospíváte do váženého věku a jmenování jednoho z vašich [children|E] jako [Concept( 'duumvirate', 'Nominal Co-Emperor' )|E] by mohlo pomoci zajistit trůn pro vaši dynastii v případě vašeho [Concept( 'character_death', 'unfortunate demise' )|E].$action_appoint_co_emperor_junior_help$"
- action_appoint_co_emperor_junior_help: "\n\n#help Můžete si vybrat kterékoli z vašich způsobilých dětí.\n\nPokud byste raději jmenoval(a) $game_concept_co_emperor$ z oprávněných členů [powerful_family|E] ve vašem [realm|E], použijte místo toho akci @declare_regent_icon! #high $appoint_co_emperor_interaction$#! na sebe.#!"
+ action_appoint_co_emperor_junior_help: "\n\n#help Můžete si vybrat kterékoli z vašich způsobilých dětí.\n\nPokud byste raději [Select_CString(ROOT.Char.IsFemale,'jmenovala','jmenoval')] $game_concept_co_emperor$ z oprávněných členů [powerful_family|E] ve vašem [realm|E], použijte místo toho akci @declare_regent_icon! #high $appoint_co_emperor_interaction$#! na sebe.#!"
  action_appoint_co_emperor_junior_unimportant: "@alert_icon! #X Postrádáte požadované @prestige_icon![Nbsp][prestige|E] nebo @influence_icon![Nbsp][influence|E] k $appoint_junior_emperor_interaction$#!"
  action_appoint_co_emperor_junior_click: "#I Kliknutím vyberte $game_concept_junior_emperor$#!"
  action_appoint_co_emperor_adult_child: "Udělit status $game_concept_co_emperor$"
@@ -781,7 +781,7 @@
  action_can_complete_task_contract_combined_label: "Vydejte se do [task_contract.MakeScope.Var('task_contract_destination').GetProvince.GetName], abyste dokončili [task_contract.GetType.GetName] smlouvu"
  action_can_complete_steal_artifact_contract: "Zahájit plán ukradení artefaktu"
  action_can_complete_steal_artifact_contract_label: "@steal_artifact_icon! Můžete zahájit plán ukradení artefaktu k dokončení smlouvy"
- action_can_complete_steal_artifact_contract_desc: "Můžete zahájit Steal Artifact [scheme|E] proti [contract.MakeScope.Var('task_contract_target').Char.GetName], abyste ukradl(a) [task_contract.MakeScope.Var('task_contract_object').Artifact.GetName] k dokončení [task_contract_employer.GetFirstNamePossessive] [task_contract.GetType.GetName] [task_contract|E]"
+ action_can_complete_steal_artifact_contract_desc: "Můžete zahájit Steal Artifact [scheme|E] proti [contract.MakeScope.Var('task_contract_target').Char.GetName], abyste [Select_CString(ROOT.Char.IsFemale,'ukradla','ukradl')] [task_contract.MakeScope.Var('task_contract_object').Artifact.GetName] k dokončení [task_contract_employer.GetFirstNamePossessive] [task_contract.GetType.GetName] [task_contract|E]"
  action_can_complete_steal_artifact_contract_click: "#I Kliknutím otevřete interakci s postavou#!"
  action_can_start_laamp_raid_contract: "Vyhlásit válku"
  action_can_start_laamp_raid_contract_label: "@war_icon! Můžete vyhlásit válku k dokončení smlouvy"
@@ -973,15 +973,15 @@
  action_hegemonic_tributary_has_low_subject_standing_suzerain: "Zanedbaný tributář" # todo: NEW TRANSLATION
  action_hegemonic_tributary_has_low_subject_standing_suzerain_combined_group_label: "Zanedbaní tributáři" # todo: NEW TRANSLATION
  action_hegemonic_tributary_has_low_subject_standing_suzerain_combined_group_name: "$action_celestial_tributary_has_low_subject_standing_suzerain_combined_group_label$" # todo: NEW TRANSLATION
- action_hegemonic_tributary_has_low_subject_standing_suzerain_desc: "Jeden z vašich [tributaries|E], [recipient.GetPrimaryTitle.Custom('GetTierIcon')][recipient.GetUIName], byl laxní ve [recipient.GetHerHis] povinnostech a už nějakou dobu vám nepřispíval.$action_celestial_tributary_has_low_subject_standing_suzerain_help_desc$" # todo: NEW TRANSLATION
+ action_hegemonic_tributary_has_low_subject_standing_suzerain_desc: "Jeden z vašich [tributaries|E], [recipient.GetPrimaryTitle.Custom('GetTierIcon')][recipient.GetUIName], byl laxní ve [Select_CString(recipient.IsFemale,'jejích','jeho')] povinnostech a už nějakou dobu vám nepřispíval.$action_celestial_tributary_has_low_subject_standing_suzerain_help_desc$" # todo: NEW TRANSLATION
  action_hegemonic_tributary_has_low_subject_standing_suzerain_combined_group_description: "Můžete $exact_tribute_interaction$ od několika [tributaries|E].$action_celestial_tributary_has_low_subject_standing_suzerain_help_desc$" # todo: NEW TRANSLATION
  action_hegemonic_tributary_has_low_subject_standing_suzerain_label: "Můžete $exact_tribute_interaction$ od [recipient.GetPrimaryTitle.Custom('GetTierIcon')][recipient.GetUINameNoTooltip]" # todo: NEW TRANSLATION
  action_hegemonic_tributary_has_low_subject_standing_suzerain_combined_label: "[recipient.GetPrimaryTitle.Custom('GetTierIcon')] [recipient.GetUINameNoTooltip]" # todo: NEW TRANSLATION
  action_hegemonic_tributary_has_low_subject_standing_suzerain_click: "#I Klikněte pro $exact_tribute_interaction$#!" # todo: NEW TRANSLATION
  action_hegemonic_tributary_has_low_subject_standing_suzerain_help_desc: "\n\n#help Někdy [tributaries|E] potřebují malé popostrčení, možná i naznačenou hrozbu, aby si připomněli své povinnosti vůči svému [suzerain|E].#!" # todo: NEW TRANSLATION
- action_would_accept_mandala_embrace: "Vladař by mohl být přijat jako tributář" # todo: NEW TRANSLATION
+ action_would_accept_mandala_embrace: "Vladař by [Select_CString(ROOT.Char.IsFemale,'mohla','mohl')] být přijat jako tributář" # todo: NEW TRANSLATION
  action_would_accept_mandala_embrace_label: "Existují potenciální [rulers|E], kterým můžete nabídnout $offer_tributary_status_interaction$" # todo: NEW TRANSLATION
- action_would_accept_mandala_embrace_desc: "[recipient.GetShortUINameNoTooltip] by mohl potenciálně být přijat jako tributář.$would_accept_mandala_embrace_help_desc$" # todo: NEW TRANSLATION
+ action_would_accept_mandala_embrace_desc: "[recipient.GetShortUINameNoTooltip] by [Select_CString(recipient.IsFemale,'mohla','mohl')] potenciálně být přijat jako tributář.$would_accept_mandala_embrace_help_desc$" # todo: NEW TRANSLATION
  action_would_accept_mandala_embrace_combined_label: "[recipient.GetPrimaryTitle.Custom('GetTierIcon')] [recipient.GetUINameNoTooltip]" # todo: NEW TRANSLATION
  action_would_accept_mandala_embrace_click: "#I Klikněte k pokusu o $reassert_tributary_interaction$#!" # todo: NEW TRANSLATION
  action_would_accept_mandala_embrace_combined_group_name: "@mandala_radiance_icon! Potenciální tributáři" # todo: NEW TRANSLATION
@@ -1027,7 +1027,7 @@
  action_new_mandala_ritual_combined_label: "$action_new_mandala_ritual_label$" # todo: NEW TRANSLATION
  action_could_exact_tribute_from: "Tribut může být vymáhán" # todo: NEW TRANSLATION
  action_could_exact_tribute_from_label: "Máte [tributaries|E], od kterých můžete $exact_tribute_interaction$" # todo: NEW TRANSLATION
- action_could_exact_tribute_from_desc: "[recipient.GetShortUINameNoTooltip] by vám mohl poskytnout tribut.$would_accept_exact_tribute_help_desc$" # todo: NEW TRANSLATION
+ action_could_exact_tribute_from_desc: "[recipient.GetShortUINameNoTooltip] by vám [Select_CString(recipient.IsFemale,'mohla','mohl')] poskytnout tribut.$would_accept_exact_tribute_help_desc$" # todo: NEW TRANSLATION
  action_could_exact_tribute_from_combined_label: "[recipient.GetPrimaryTitle.Custom('GetTierIcon')] [recipient.GetUINameNoTooltip]" # todo: NEW TRANSLATION
  action_could_exact_tribute_from_click: "#I Klikněte k pokusu o $exact_tribute_interaction$#!" # todo: NEW TRANSLATION
  action_could_exact_tribute_from_combined_group_name: "@tributary_icon! Potenciální tribut" # todo: NEW TRANSLATION
@@ -1212,7 +1212,7 @@
  action_pay_governors_treasury_debt_combined_label: "[recipient.GetShortUINamePossessiveNoTooltip] nashromážděný [treasury_debt|E] činí [treasury_i]#X [recipient.GetTreasury|0]#!" # todo: NEW TRANSLATION
  action_pay_governors_treasury_debt: "@minister!Dluh guvernéra v pokladně lze splatit" # todo: NEW TRANSLATION
  action_pay_governors_treasury_debt_combined_group_name: "$action_pay_governors_treasury_debt_combined_group_label$" # todo: NEW TRANSLATION
- action_pay_governors_treasury_debt_desc: "Můžete poslat [treasury_i][treasury|E] [recipient.GetShortUIName], čímž vyrovnáte [recipient.GetHerHis] účetnictví." # todo: NEW TRANSLATION
+ action_pay_governors_treasury_debt_desc: "Můžete poslat [treasury_i][treasury|E] [recipient.GetShortUIName], čímž vyrovnáte [Select_CString(recipient.IsFemale,'její','jeho')] účetnictví." # todo: NEW TRANSLATION
  action_pay_governors_treasury_debt_combined_group_description: "Můžete poslat [treasury_i][treasury|E] [governors|E], abyste splatili všechny jejich [treasury_debt|E]." # todo: NEW TRANSLATION
  action_pay_governors_treasury_debt_click: "#I Klikněte pro otevření interakce $action_pay_governors_treasury_debt$#!" # todo: NEW TRANSLATION
  action_minister_can_pay_treasury_debt_label: "@minister!Váš dluh v pokladně může být uhrazen [recipient.GetShortUIName]" # todo: NEW TRANSLATION

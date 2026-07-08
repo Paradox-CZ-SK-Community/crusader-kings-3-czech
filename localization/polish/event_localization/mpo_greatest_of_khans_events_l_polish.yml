@@ -37,7 +37,7 @@
  gok_obedient_vassals_leave_war_tt: "@alert_icon! #alert_trial Všichni [vassals|E], kteří se přidali k tvé [war|E], jsou z ní odstraněni#!"
  gok_joiners_wars_cancelled_tt: "Tito [vassals|E] budou odebráni z jiných [wars|E] nebo je ukončí [white_peace|E]"
  mpo_greatest_of_khans.0102.t: "Chycení za vesmír"
- mpo_greatest_of_khans.0102.desc: "Popelaví jezdci a zničené národy prchají z nelítostné země [gurkhan_to_gok.GetPrimaryTitle.GetBaseNameNoTier], všichni lkají jedno jméno – [gurkhan_to_gok.GetName]!\n\n[gurkhan_to_gok.GetSheHe|U], nejstrašnější z nomádů, nyní vyžaduje podrobení všech klanů. Spojeni pod [gurkhan_to_gok.GetHerHis] krvavým praporem sní o ovládnutí celého světa!\n\nObrovská koalice, svolaná [primary_coalition_defender.GetName], povstává proti pýše [gurkhan_to_gok.GetTitledFirstNamePossessiveNoTooltip]... válka začala a smrt zní v dusotu kopyt."
+ mpo_greatest_of_khans.0102.desc: "Popelaví jezdci a zničené národy prchají z nelítostné země [gurkhan_to_gok.GetPrimaryTitle.GetBaseNameNoTier], všichni lkají jedno jméno – [gurkhan_to_gok.GetName]!\n\n[gurkhan_to_gok.GetSheHe|U], nejstrašnější z nomádů, nyní vyžaduje podrobení všech klanů. Spojeni pod [Select_CString(gurkhan_to_gok.IsFemale,'jejím','jeho')] krvavým praporem sní o ovládnutí celého světa!\n\nObrovská koalice, svolaná [primary_coalition_defender.GetName], povstává proti pýše [gurkhan_to_gok.GetTitledFirstNamePossessiveNoTooltip]... válka začala a smrt zní v dusotu kopyt."
  mpo_greatest_of_khans.0102.a: "#EMP Chán chánů, jedu po tvém boku!#!"
  mpo_greatest_of_khans.0102.b: "Musíme [gurkhan_to_gok.GetTitledFirstNameNoTooltip]a srazit!"
  mpo_greatest_of_khans.0102.c: "[gurkhan_to_gok.GetFirstNameNoTooltip] nelze zastavit. Musím se podrobit."
@@ -93,14 +93,14 @@
  gok_slaughter_victim.t: "Popraveni dobyvateli"
  gok_destruction.t: "[defender.GetPrimaryTitle.GetBaseNameNoTierNoTooltip] zpustošeno"
  gok_destruction.tooltip: "[attacker.GetPrimaryTitle.GetAdjective] hordy zaplavují země [defender.GetTitledFirstName]! V divokém běsnění srovnávají se zemí #N [destroyed_holdings]#! [holdings|E] a vraždí všechny obyvatele.\n\nTakto se projevuje hněv Velkého [attacker.GetTitleAsNamePossessive]."
- gok_slaughter_victim.tooltip: "[victim.GetShortUIName] byl chycen při postupu [gok.GetPrimaryTitle.GetAdjective] hord a nemilosrdně zabit."
+ gok_slaughter_victim.tooltip: "[victim.GetShortUIName] byl chycen při postupu [gok.GetPrimaryTitle.GetAdjective] hord a nemilosrdně [Select_CString(victim.IsFemale,'zabita','zabit')]."
  custom.every_taken_county: "Každý nově získaný [county|E]"
  mpo_gok_onslaught_victory_attacker_admin: "Získáte všechna [defender.GetShortUINamePossessive] území a tituly." # todo: NEW TRANSLATION
  mpo_gok_onslaught_victory_defender_admin: "[attacker.GetShortUIName|U] vám bere všechna vaše území a tituly!" # todo: NEW TRANSLATION
  mpo_gok_onslaught_victory_admin: "[attacker.GetShortUIName|U] bere všechna [defender.GetShortUINamePossessive] území a tituly." # todo: NEW TRANSLATION
- mpo_gok_onslaught_victory_attacker: "Získáte všechna [defender.GetShortUINamePossessive] území, stejně jako tituly, které patří [defender.GetHerHim] a [defender.GetHerHis] silnějším vazalům."
+ mpo_gok_onslaught_victory_attacker: "Získáte všechna [defender.GetShortUINamePossessive] území, stejně jako tituly, které patří [defender.GetHerHim] a [Select_CString(defender.IsFemale,'jejím','jeho')] silnějším vazalům."
  mpo_gok_onslaught_victory_defender: "[attacker.GetShortUIName|U] vezme všechna vaše území, stejně jako tituly náležející vám a vašim silnějším vazalům!"
- mpo_gok_onslaught_victory: "[attacker.GetShortUIName|U] získá všechna [defender.GetShortUINamePossessive] území, stejně jako tituly náležející [defender.GetHerHim] a [defender.GetHerHis] silnějším vazalům."
+ mpo_gok_onslaught_victory: "[attacker.GetShortUIName|U] získá všechna [defender.GetShortUINamePossessive] území, stejně jako tituly náležející [defender.GetHerHim] a [Select_CString(defender.IsFemale,'jejím','jeho')] silnějším vazalům."
  mpo_gok_onslaught_white_peace: "[defender.GetShortUIName|U] zůstává nezávislým vládcem, ztrácí pouze obsazená hrabství."
  mpo_gok_onslaught_white_peace_defender: "Zůstáváte nezávislým vládcem, ztrácíte pouze obsazená hrabství."
  mpo_gok_onslaught_defeat_attacker: "$mpo_gok_onslaught_white_peace$ Jsi ponížen."
@@ -187,8 +187,8 @@
  hegemony_feudal_turkic: "Ikh-Khaganate" # todo: NEW TRANSLATION
  hegemony_feudal_mongolic: "Bedük Khaganate" # todo: NEW TRANSLATION
  mpo_greatest_of_khans.0050.opening: "Tvoje smrt je těmito slovy odložena." # todo: NEW TRANSLATION
- mpo_greatest_of_khans.0050.desc: "Velký [attacker.GetTitleAsName] — [attacker.GetSheHe], jehož osudem je rozdrtit všechny říše pod koňskými kopyty, [attacker.GetSheHe], který pálí a drancuje — ti dovolí žít, abys mohl(a) sloužit [attacker.GetPrimaryTitle.GetName].\n\n" # todo: NEW TRANSLATION
- mpo_greatest_of_khans.0050.desc_end: "Pes [defender_primary.GetNameNoTier]: budeš dohlížet na obrovské stádo [attacker.GetTitleAsNamePossessiveNoTooltip] lidí a žebrat o zbytky podle [attacker.GetHerHis] libosti." # todo: NEW TRANSLATION
+ mpo_greatest_of_khans.0050.desc: "Velký [attacker.GetTitleAsName] — [attacker.GetSheHe], jehož osudem je rozdrtit všechny říše pod koňskými kopyty, [attacker.GetSheHe], který pálí a drancuje — ti dovolí žít, abys [Select_CString(ROOT.Char.IsFemale,'mohla','mohl')] sloužit [attacker.GetPrimaryTitle.GetName].\n\n" # todo: NEW TRANSLATION
+ mpo_greatest_of_khans.0050.desc_end: "Pes [defender_primary.GetNameNoTier]: budeš dohlížet na obrovské stádo [attacker.GetTitleAsNamePossessiveNoTooltip] lidí a žebrat o zbytky podle [Select_CString(attacker.IsFemale,'její','jeho')] libosti." # todo: NEW TRANSLATION
  mpo_greatest_of_khans.0050.desc_reorganized: "[attacker.GetTitleAsNameNoTooltip] nemá zájem slyšet tvůj malicherný hlas. Budeš podléhat [liege.GetName]." # todo: NEW TRANSLATION
  mpo_greatest_of_khans.0050.a: "Možná odejdou tak rychle, jak přišli..." # todo: NEW TRANSLATION
  mpo_greatest_of_khans.0051.opening: "Všem [defender_primary.GetAdjective] ubožákům," # todo: NEW TRANSLATION

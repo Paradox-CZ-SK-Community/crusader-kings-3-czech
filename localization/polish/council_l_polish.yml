@@ -21,22 +21,22 @@
  START_COUNCIL_TASK_SEND_COURT: "Pošlete svého [COUNCIL_TASK.GetPositionName] vykonávat [COUNCIL_TASK_TYPE.GetName] na dvoře [TARGET.GetShortUINamePossessive]"
  START_COUNCIL_TASK_ABORTED: "\n@warning_icon! #X Aktuální úkol vašeho [COUNCIL_TASK.GetPositionNamePossesive] ('[COUNCIL_TASK.GetTaskType.GetName]') bude zrušen.#!"
  COUNCILLOR_TASK_ALREADY_IN_PROCESS: "Úkol již probíhá"
- COUNCILLOR_TIMEOUT_FIRE: "@warning_icon! #X [Concept('councillor','$game_concept_councillor$')|E] nelze odvolat do [DATE.GetString]#!"
- COUNCILLOR_TIMEOUT_REASSIGN: "@warning_icon! #X [Concept('councillor','$game_concept_councillor$')|E] nelze znovu přiřadit do [DATE.GetString]#!"
- COUNCILLOR_ALREADY_CHANGED: "@warning_icon! #X [Concept('councillor','$game_concept_councillor$')|E] již byl jednou odvolán nebo jmenován#!"
+ COUNCILLOR_TIMEOUT_FIRE: "@warning_icon! #X [Concept('councillor','Rádce')|E] nelze odvolat do [DATE.GetString]#!" # todo: CONCEPT CASE
+ COUNCILLOR_TIMEOUT_REASSIGN: "@warning_icon! #X [Concept('councillor','Rádce')|E] nelze znovu přiřadit do [DATE.GetString]#!" # todo: CONCEPT CASE
+ COUNCILLOR_ALREADY_CHANGED: "@warning_icon! #X [Concept('councillor','Rádce')|E] již byl jednou odvolán nebo jmenován#!" # todo: CONCEPT CASE
  COUNCILLOR_CAN_CHANGE_ONCE: "@warning_icon! #X Po jmenování na [COUNCIL_POSITION_TYPE.GetName|V] nelze [CHARACTER.GetShortUIName] odvolat ani mu přiřadit jinou pozici#!"
  COUNCILLOR_CLICK_TO_HIRE: "Klikněte pro jmenování [ActiveCouncilTask.GetPositionName|E]"
- COUNCILLOR_BLANK_LIEGE: "Váš [Concept('liege','$game_concept_liege$')|E] nemá [ActiveCouncilTask.GetPositionName|E]"
- COUNCILLOR_MISSING_SPOUSE: "Nemáte žádného [Concept('available_spouse','$game_concept_available_spouse$')|E]"
- COUNCILLOR_LIEGE_MISSING_SPOUSE: "[CouncilWindow.GetCharacter.GetShortUIName] nemá žádného [Concept('available_spouse','$game_concept_available_spouse$')|E]"
- COUNCILLOR_WILL_BE_ASSIGNED: "[Concept('councillor','$game_concept_councillor$')|E] má být brzy přiřazen"
- COUNCILLOR_MISSING_VIZIER: "Nemáte žádného [Concept('vizier','$game_concept_vizier$')|E] nebo [Concept('spouse','$game_concept_spouse$')|E]"
- COUNCILLOR_LIEGE_MISSING_VIZIER: "[CouncilWindow.GetCharacter.GetShortUIName] nemá žádného [Concept('vizier','$game_concept_vizier$')|E] nebo [Concept('spouse','$game_concept_spouse$')|E]"
- COUNCILLOR_MISSING_CHANCELLOR: "Nemáte žádného [Concept('chancellor','$game_concept_chancellor$')|E]"
- COUNCILLOR_MISSING_MARSHAL: "Nemáte žádného [Concept('marshal','$game_concept_marshal$')|E]"
- COUNCILLOR_MISSING_STEWARD: "Nemáte žádného [Concept('steward','$game_concept_steward$')|E]"
+ COUNCILLOR_BLANK_LIEGE: "Váš [Concept('liege','lenní pán')|E] nemá [ActiveCouncilTask.GetPositionName|E]" # todo: CONCEPT CASE
+ COUNCILLOR_MISSING_SPOUSE: "Nemáte žádného [Concept('available_spouse','dostupné chotě')|E]" # todo: CONCEPT CASE
+ COUNCILLOR_LIEGE_MISSING_SPOUSE: "[CouncilWindow.GetCharacter.GetShortUIName] nemá žádného [Concept('available_spouse','dostupné chotě')|E]" # todo: CONCEPT CASE
+ COUNCILLOR_WILL_BE_ASSIGNED: "[Concept('councillor','Rádce')|E] má být brzy přiřazen" # todo: CONCEPT CASE
+ COUNCILLOR_MISSING_VIZIER: "Nemáte žádného [Concept('vizier','vezíra')|E] nebo [Concept('spouse','choť')|E]" # todo: CONCEPT CASE
+ COUNCILLOR_LIEGE_MISSING_VIZIER: "[CouncilWindow.GetCharacter.GetShortUIName] nemá žádného [Concept('vizier','vezíra')|E] nebo [Concept('spouse','choť')|E]" # todo: CONCEPT CASE
+ COUNCILLOR_MISSING_CHANCELLOR: "Nemáte žádného [Concept('chancellor','kancléře')|E]" # todo: CONCEPT CASE
+ COUNCILLOR_MISSING_MARSHAL: "Nemáte žádného [Concept('marshal','maršála')|E]" # todo: CONCEPT CASE
+ COUNCILLOR_MISSING_STEWARD: "Nemáte žádného [Concept('steward','správce')|E]" # todo: CONCEPT CASE
  COUNCILLOR_MISSING_SPYMASTER: "Nemáte žádného [Concept('spymaster','$game_concept_spymaster$')|E]"
- COUNCILLOR_MISSING_COURT_CHAPLAIN: "Nemáte žádného [Concept('court_chaplain','$game_concept_court_chaplain$')|E]"
+ COUNCILLOR_MISSING_COURT_CHAPLAIN: "Nemáte žádného [Concept('court_chaplain','dvorního kaplana')|E]" # todo: CONCEPT CASE
  learn_on_the_job_modifier: "$learn_on_the_job_perk_name$"
  councillor_coregent: "Koregent"
  councillor_coregent_possessive: "Koregenta"
@@ -309,8 +309,8 @@
  councillor_spouse_count_possessive: "Hraběcí"
  councillor_spouse_baron_possessive: "Baronův"
  councillor_leaving_court_message_title: "Radní [Select_CString(ROOT.Char.IsFemale,'opustila','opustil')] dvůr"
- councillor_leaving_court_marriage_notification: "Váš [council_task.GetPositionName], [councillor.GetShortUINameNoTooltip|U], [Select_CString(councillor.IsFemale,'opustila','opustil')] svou funkci a také váš [old_employer.Custom('GetCourtConcept')] v důsledku [councillor.GetHerHis] [marriage|E] s [landed|E] partnerem. #weak ([councillor.GetPrimarySpouse.GetShortUIName|U])#!"
+ councillor_leaving_court_marriage_notification: "Váš [council_task.GetPositionName], [councillor.GetShortUINameNoTooltip|U], [Select_CString(councillor.IsFemale,'opustila','opustil')] svou funkci a také váš [old_employer.Custom('GetCourtConcept')] v důsledku [councillor.GetHerHis] [Concept('marriage','sňatku')|E] s [Concept('landed','zeměpánem')|E] partnerem. #weak ([councillor.GetPrimarySpouse.GetShortUIName|U])#!" # todo: CONCEPT CASE
  councillor_leaving_court_landed_notification: "Váš [council_task.GetPositionName], [councillor.GetShortUINameNoTooltip|U], [Select_CString(councillor.IsFemale,'opustila','opustil')] svou pozici a váš [old_employer.Custom('GetCourtConcept')] poté, co získal titul. #weak ([councillor.GetPrimaryTitle.GetBaseName|V])#!"
- councillor_leaving_court_generic_fallback_notification: "Váš [old_employer.Custom2('RelationToMeShort', councillor)], [councillor.GetShortUINameNoTooltip|U], [Select_CString(councillor.IsFemale,'opustila','opustil')] svou pozici v [Concept('council','$game_concept_council$')|E] a váš [old_employer.Custom('GetCourtConcept')]."
+ councillor_leaving_court_generic_fallback_notification: "Váš [old_employer.Custom2('RelationToMeShort', councillor)], [councillor.GetShortUINameNoTooltip|U], [Select_CString(councillor.IsFemale,'opustila','opustil')] svou pozici v [Concept('council','radě')|E] a váš [old_employer.Custom('GetCourtConcept')]." # todo: CONCEPT CASE
  councillor_court_chaplain_shintoism_religion: "Dvorský kněz" # todo: NEW TRANSLATION
  councillor_court_chaplain_shintoism_religion_possessive: "Dvorského kněze" # todo: NEW TRANSLATION

@@ -1,7 +1,7 @@
 ﻿l_polish:
- HISTORICAL_CHARACTER_TOOLTIP: "#T Historická postava#!\n\n#high [Character.Custom('HistoricalCharacterDesc')]#!\n\n#weak Tato postava je historická, ale může se lišit od skutečného protějšku [Select_CString(Character.IsFemale,'její','jeho')] v závislosti na [culture|E] a [faith|E] místa původu. [Character.GetSheHe|U] se také může objevit mírně mimo historické datum své prominence přibližně o 1–5 let.#!"
- danger_dynasty_abandon_tt: "#X @warning_icon! Opustíte svou [dynasty|E] a nebudete moci nadále v roli této dynastie hrát!#!"
- will_wander_tt: "[historical_character.GetFullName] se stane [wanderer|E]"
+ HISTORICAL_CHARACTER_TOOLTIP: "#T Historická postava#!\n\n#high [Character.Custom('HistoricalCharacterDesc')]#!\n\n#weak Tato postava je historická, ale může se lišit od skutečného protějšku [Select_CString(Character.IsFemale,'její','jeho')] v závislosti na [Concept('culture','kulturu')|E] a [Concept('faith','víra')|E] místa původu. [Character.GetSheHe|U] se také může objevit mírně mimo historické datum své prominence přibližně o 1–5 let.#!" # todo: CONCEPT CASE
+ danger_dynasty_abandon_tt: "#X @warning_icon! Opustíte svou [Concept('dynasty','dynastii')|E] a nebudete moci nadále v roli této dynastie hrát!#!" # todo: CONCEPT CASE
+ will_wander_tt: "[historical_character.GetFullName] se stane [Concept('wanderer','pocestný')|E]" # todo: CONCEPT CASE
  historical_char_creation_events.t: "Ozvěny historie: [historical_character.GetFullNameNicknamedNoTooltip]"
  historical_char_creation_events.desc: "[historical_character.Custom('HistoricalCharacterJobDesc')] známý jako [historical_character.GetFullNameNicknamed] se údajně potuluje mým panstvím hledaje zaměstnání. [historical_character.GetSheHe|U] pochází z [birth_location.GetName] a má na sobě jisté kouzlo... [historical_character.Custom('DescriptorPositiveStandalone')] přesto poněkud [historical_character.Custom('DescriptorNegativeStandalone')].\n\n\n@historical_character_icon! #weak Tato postava je historická:#!\n#help_light_background [historical_character.Custom('HistoricalCharacterDesc')]#!"
  historical_char_creation_events_alternative.desc: "[historical_character.Custom('HistoricalCharacterJobDesc')], známý jako [historical_character.GetFullNameNicknamed], si už vybudoval pověst na dvoře. [historical_character.GetSheHe|U] je [historical_character.Custom('DescriptorPositiveStandalone')], a ač to nedokážu přesně pojmenovat, je na [historical_character.GetHerHim] něco výjimečného...\n\n\n@historical_character_icon! #weak Tato postava je historická:#!\n#help_light_background [historical_character.Custom('HistoricalCharacterDesc')]#!"
@@ -12,10 +12,10 @@
  historical_char_creation_events.2.desc: "[inspiration_owner.GetFullName] tráví nespočet dní a nocí nad knihami a písmy, a napsal nespočet dokumentů a tezí. [Select_CString(inspiration_owner.IsFemale,'Její','Jeho')] génius je nepopiratelný, když čtu to, co [inspiration_owner.GetSheHe] napsal...\n\nNeuvěřitelné. To by mohlo změnit #EMP vše.#!"
  historical_char_creation_events.2.a: "Tato posvátná slova musí být sdílena!"
  religious_reformer_modifier: "Náboženský reformátor"
- religious_reformer_modifier_desc: "S podporou velké mysli je tato postava připravena vytvořit novou víru.\n\nTento modifikátor bude odstraněn, pokud bude vytvořena nová [faith|E]"
- mass_conversion_tt: "Umožňuje jedno použití #V $legendary_conversion$#! [decision|E]"
+ religious_reformer_modifier_desc: "S podporou velké mysli je tato postava připravena vytvořit novou víru.\n\nTento modifikátor bude odstraněn, pokud bude vytvořena nová [Concept('faith','víra')|E]" # todo: CONCEPT CASE
+ mass_conversion_tt: "Umožňuje jedno použití #V $legendary_conversion$#! [Concept('decision','rozhodnutí')|E]" # todo: CONCEPT CASE
  religious_inspiration: "Náboženská inspirace"
- religious_inspiration_desc: "Postava s Náboženskou inspirací je [inspired|E] k tomu, aby vložila srdce i duši do zkoumání složitostí a tajemství [faith|E]. Často bývají velkými reformátory nebo vůdci náboženských hnutí. Tato inspirace je #EMP velmi vzácná.#!"
+ religious_inspiration_desc: "Postava s Náboženskou inspirací je [Concept('inspired','inspirovaný')|E] k tomu, aby vložila srdce i duši do zkoumání složitostí a tajemství [Concept('faith','víra')|E]. Často bývají velkými reformátory nebo vůdci náboženských hnutí. Tato inspirace je #EMP velmi vzácná.#!" # todo: CONCEPT CASE
  historical_character.karunakara: "Karunakara byl slavný generál chólského krále Kulottungy, který rozdrtil jak nepřátele, tak zrádce proti chólské věci. Život Karunakary je popisován v básni Kalinkkattuparani, kde je oslavováno jeho ovládnutí Kalingy a následný hold Kulottungovi."
  historical_character.sekkilhar: "Sekkilhar byl zázračné dítě, které byl v raném věku naverbováno raja Kulothungou jako cenný ministr a státník. Sekkilhar je nejvíce známý svým dílem Periya Puranam, životopisem 63 šaivských Nayanarů v 4253 verších. Nakonec se Sekkilhar stal i procesní božskou postavou v regionu."
  historical_character.omar_khayyam: "Omar Khajjám byl perský polymath, básník, matematik a astronom 11. století. Dnes je nejznámější pro svou poezii sesbíranou v „The Rubaiyat,“ a významně přispěl k algebře a astronomii v Persii. Jeho odborné práce na klasifikaci a řešení kubických rovnic představují monumentální úspěch v matematice."
@@ -172,9 +172,9 @@
  historical_character.author: "Plodný autor a básník"
  rule_historical_characters: "Historické postavy"
  setting_default_historical_characters: "Výchozí"
- setting_default_historical_characters_desc: "Různé historické postavy jako Tomáš Akvinský, Ibn Battuta nebo Hildegarda z Bingenu se mohou objevit. Budete o tom informováni pouze pokud se narodí ve vašem [domain|E] nebo pokud jsou velmi známé."
+ setting_default_historical_characters_desc: "Různé historické postavy jako Tomáš Akvinský, Ibn Battuta nebo Hildegarda z Bingenu se mohou objevit. Budete o tom informováni pouze pokud se narodí ve vašem [Concept('domain','doméně')|E] nebo pokud jsou velmi známé." # todo: CONCEPT CASE
  setting_all_historical_characters: "#high Notify All#!"
- setting_all_historical_characters_desc: "Různé historické postavy jako Tomáš Akvinský, Ibn Battuta nebo Hildegarda z Bingenu se mohou objevit. Budete upozorněni na každého, kdo se narodí v celé vaší pod-[realm|E]."
+ setting_all_historical_characters_desc: "Různé historické postavy jako Tomáš Akvinský, Ibn Battuta nebo Hildegarda z Bingenu se mohou objevit. Budete upozorněni na každého, kdo se narodí v celé vaší pod-[Concept('realm','panstvím')|E]." # todo: CONCEPT CASE
  setting_no_historical_characters: "#high Disable Spawns#!"
  setting_no_historical_characters_desc: "Neobjeví se žádné historické postavy."
  rule_easteregg_characters: "Skryté postavy" # todo: NEW TRANSLATION

@@ -111,19 +111,19 @@
  ep3_laamp_decision_event.1001.a: "Zásoby jsou tudy."
  ep3_laamp_decision_event.1001.a_second: "Podívejme se znovu na ty zásoby..."
  ep3_laamp_decision_event.1001.a.tt: "Jít ke stánkům se zásobami"
- full_on_supplies.tt: "Už máte #V max#! množství [provisions|E]"
- already_received_supplies.tt: "Tuto návštěvu jste už obdrželi [provisions|E] od [laamp_supply_merchant.GetShortUIName]"
- already_bought_supplies.tt: "Tuto návštěvu jste už koupili [provisions|E]"
+ full_on_supplies.tt: "Už máte #V max#! množství [Concept('provisions','proviant')|E]" # todo: CONCEPT CASE
+ already_received_supplies.tt: "Tuto návštěvu jste už obdrželi [Concept('provisions','proviant')|E] od [laamp_supply_merchant.GetShortUIName]" # todo: CONCEPT CASE
+ already_bought_supplies.tt: "Tuto návštěvu jste už koupili [Concept('provisions','proviant')|E]" # todo: CONCEPT CASE
  guards_were_summoned.tt: "[laamp_supply_merchant.GetShortUIName] si vás už nechce znovu vidět"
  ep3_laamp_decision_event.1001.b: "Třeba bych [Select_CString(ROOT.Char.IsFemale,'mohla','mohl')] prodat nějaké artefakty."
  ep3_laamp_decision_event.1001.b_second: "Vlastně by bylo lepší vrátit se k prodavačům artefaktů."
  ep3_laamp_decision_event.1001.b.tt: "Jít ke stánkům s artefakty"
- already_sold_artifact.tt: "Tuto návštěvu jste už prodali [artifact|E]"
+ already_sold_artifact.tt: "Tuto návštěvu jste už prodali [Concept('artifact','artefakt')|E]" # todo: CONCEPT CASE
  ep3_laamp_decision_event.1001.c: "Zdá se, že [ROOT.Char.Custom('GetTowncrierElder')] by nám [Select_CString(ROOT.Char.IsFemale,'mohla','mohl')] něco nabídnout."
  ep3_laamp_decision_event.1001.c_second: "Je na čase znovu navštívit [ROOT.Char.Custom('GetTowncrierElder')]."
  ep3_laamp_decision_event.1001.c.tt: "Vyhledat zakázku"
- no_contracts.tt: "Momentálně nejsou k dispozici žádné [task_contracts|E] — zkuste to znovu [GetCurrentDateWithDiff( GetVarTimeRemaining( THIS.Char.MakeScope, '1025_has_contracted_recently') )]"
- already_spawned_contracts.tt: "Nedávno jste vygenerovali [task_contracts|E] — zkuste to znovu [GetCurrentDateWithDiff( GetVarTimeRemaining( THIS.Char.MakeScope, '1025_has_contracted_recently') )]"
+ no_contracts.tt: "Momentálně nejsou k dispozici žádné [Concept('task_contracts','zakázky')|E] — zkuste to znovu [GetCurrentDateWithDiff( GetVarTimeRemaining( THIS.Char.MakeScope, '1025_has_contracted_recently') )]" # todo: CONCEPT CASE
+ already_spawned_contracts.tt: "Nedávno jste vygenerovali [Concept('task_contracts','zakázky')|E] — zkuste to znovu [GetCurrentDateWithDiff( GetVarTimeRemaining( THIS.Char.MakeScope, '1025_has_contracted_recently') )]" # todo: CONCEPT CASE
  ep3_laamp_decision_event.1001.d: "$ep3_laamp_decision_event.1010.e$"
  ep3_laamp_decision_event.1010.t: "[visiting_location.GetBaronyNameExplicitlyNoTooltip]: Zásoby!"
  ep3_laamp_decision_event.1010.desc_posh_stalls: "Stánky v potravinové čtvrti [visiting_location.GetBaronyNameExplicitly] doslova přetékají zbožím, což tlačí ceny dolů. Najdu stánek obchodníka se zásobami [laamp_supply_merchant.GetFirstNamePossessive]; vynikající poměr mezi kvalitou a rozumnou cenou.\n\nKdyž si všimne mého zájmu,"
@@ -183,8 +183,8 @@
  ep3_laamp_decision_event.1010.a_prowess.success: "$ep3_laamp_decision_event.1010.a_martial.success$"
  ep3_laamp_decision_event.1010.a_prowess.failure: "$ep3_laamp_decision_event.1010.a_martial.failure$"
  ep3_laamp_decision_event.1010.a_prowess.critical_failure: "$ep3_laamp_decision_event.1010.a_martial.critical_failure$"
- ep3_laamp_decision_event.1010.a.failure.tt: "Cena [provision|E] je #N zvýšena#! po dobu #V [EmptyScope.ScriptValue('visit_settlement_minimum_cooldown_months')|0] měsíců#!"
- ep3_laamp_decision_event.1010.a.cooldown.tt: "V poslední době jste se pokusili získat zdarma [provisions|E] — zkuste to znovu [GetCurrentDateWithDiff( GetVarTimeRemaining( THIS.Char.MakeScope, '1010_has_convinced_recently') )]"
+ ep3_laamp_decision_event.1010.a.failure.tt: "Cena [Concept('provision','proviant')|E] je #N zvýšena#! po dobu #V [EmptyScope.ScriptValue('visit_settlement_minimum_cooldown_months')|0] měsíců#!" # todo: CONCEPT CASE
+ ep3_laamp_decision_event.1010.a.cooldown.tt: "V poslední době jste se pokusili získat zdarma [Concept('provisions','proviant')|E] — zkuste to znovu [GetCurrentDateWithDiff( GetVarTimeRemaining( THIS.Char.MakeScope, '1010_has_convinced_recently') )]" # todo: CONCEPT CASE
  ep3_laamp_decision_event.1010.b: "„Koupím si něco odsud i odtud.“"
  ep3_laamp_decision_event.1010.c_callous: "„[Select_CString(ROOT.Char.IsFemale,'Mohla','Mohl')] bych ti vyměnit tohoto mladého učně výměnou za zásoby.“"
  ep3_laamp_decision_event.1010.c: "„...možná bych [Select_CString(ROOT.Char.IsFemale,'mohla','mohl')] vyměnit mladého učně?“"
@@ -194,7 +194,7 @@
  ep3_laamp_decision_event.1010.d.flavor: "[visiting_partner.GetFirstNameNoTooltip], #EMP jdi!#!"
  ep3_laamp_decision_event.1010.d.success: "[visiting_partner.GetShortUIName] úspěšně ukradne spoustu zásob"
  ep3_laamp_decision_event.1010.d.failure: "$ep3_laamp_decision_event.1010.a_martial.critical_failure$"
- ep3_laamp_decision_event.1010.d.cooldown.tt: "V poslední době jste se pokusili ukrást [provisions|E] — zkuste to znovu [GetCurrentDateWithDiff( GetVarTimeRemaining( THIS.Char.MakeScope, '1010_has_stolen_recently') )]"
+ ep3_laamp_decision_event.1010.d.cooldown.tt: "V poslední době jste se pokusili ukrást [Concept('provisions','proviant')|E] — zkuste to znovu [GetCurrentDateWithDiff( GetVarTimeRemaining( THIS.Char.MakeScope, '1010_has_stolen_recently') )]" # todo: CONCEPT CASE
  ep3_laamp_decision_event.1010.e: "Pojďme zpět."
  ep3_laamp_decision_event.1020.t: "[visiting_location.GetBaronyNameExplicitlyNoTooltip]: Bez otázek"
  ep3_laamp_decision_event.1020.desc_intro_reused_peddler: "Hlas se prořezává hemžením stánků s artefakty: „Vždy si cením vracejícího se zákazníka!“ vykřikne [laamp_artifact_peddler.GetFirstName], zatímco se [laamp_artifact_peddler.GetSheHe] přiblíží, aby [Select_CString(laamp_artifact_peddler.IsFemale,'nahlédla','nahlédl')] do mého inventáře."
@@ -291,37 +291,37 @@
  ep3_laamp_decision_event.1025.b: "[ROOT.Char.Custom('TownCrierOptionB')]"
  ep3_laamp_decision_event.1025.c: "[ROOT.Char.Custom('TownCrierOptionC')]"
  ep3_laamp_decision_event.1025.option.legendary: "„Pojďme prozkoumat toho vzdáleného šlechtice!“"
- ep3_laamp_decision_event.1025.legendary_contract_tt: "Vytvoří [task_contract|E] s vysokým [task_contract_tier|E] někde na mapě"
+ ep3_laamp_decision_event.1025.legendary_contract_tt: "Vytvoří [Concept('task_contract','zakázka')|E] s vysokým [task_contract_tier|E] někde na mapě" # todo: CONCEPT CASE
  ep3_laamp_decision_event.1025.option.treasure_map: "„Lov pokladu, říkáte?“"
- ep3_laamp_decision_event.1025.treasure_map_contract_tt: "Vytvoří [treasure_map_task_contract|E] na mapě"
+ ep3_laamp_decision_event.1025.treasure_map_contract_tt: "Vytvoří [Concept('treasure_map_task_contract','zakázka s mapou k pokladu')|E] na mapě" # todo: CONCEPT CASE
  ep3_laamp_decision_event.1025.option.transport_contracts: "„[Select_CString(ROOT.Char.IsFemale,'Byla','Byl')] bych pro nějaké cestování.“"
- ep3_laamp_decision_event.1025.transport_contracts_tt: "Vytvoří až #V [EmptyScope.ScriptValue('num_contracts_spawned_value')|0]#! [transport_task_contracts|E] na mapě"
+ ep3_laamp_decision_event.1025.transport_contracts_tt: "Vytvoří až #V [EmptyScope.ScriptValue('num_contracts_spawned_value')|0]#! [Concept('transport_task_contracts','přepravní zakázky')|E] na mapě" # todo: CONCEPT CASE
  ep3_laamp_decision_event.1025.option.criminal_contracts: "„...#EMP Já#! jsem otevřený lukrativním příležitostem.“"
- ep3_laamp_decision_event.1025.criminal_contracts_tt: "Vytvoří až #V [EmptyScope.ScriptValue('num_contracts_spawned_value')|0]#! [criminal_task_contracts|E] na mapě"
+ ep3_laamp_decision_event.1025.criminal_contracts_tt: "Vytvoří až #V [EmptyScope.ScriptValue('num_contracts_spawned_value')|0]#! [Concept('criminal_task_contracts','zločinné zakázky')|E] na mapě" # todo: CONCEPT CASE
  ep3_laamp_decision_event.1025.option.justicar_contracts: "„Tento den je zralý pro spravedlnost!“"
- ep3_laamp_decision_event.1025.justicar_contracts_tt: "Vytvoří až #V [EmptyScope.ScriptValue('num_contracts_spawned_value')|0]#! [justicar_task_contracts|E] na mapě"
+ ep3_laamp_decision_event.1025.justicar_contracts_tt: "Vytvoří až #V [EmptyScope.ScriptValue('num_contracts_spawned_value')|0]#! [Concept('justicar_task_contracts','zakázky justiciára')|E] na mapě" # todo: CONCEPT CASE
  ep3_laamp_decision_event.1025.option.hireling_contracts: "„Maršálské povinnosti? Jsem pro.“"
- ep3_laamp_decision_event.1025.hireling_contracts_tt: "Vytvoří až #V [EmptyScope.ScriptValue('num_contracts_spawned_value')|0]#! [hireling_task_contracts|E] na mapě"
+ ep3_laamp_decision_event.1025.hireling_contracts_tt: "Vytvoří až #V [EmptyScope.ScriptValue('num_contracts_spawned_value')|0]#! [Concept('hireling_task_contracts','námezdní zakázky')|E] na mapě" # todo: CONCEPT CASE
  ep3_laamp_decision_event.1025.option.diplomacy_contracts: "„Mohu se pokusit o nějaké diplomatické záležitosti.“"
- ep3_laamp_decision_event.1025.diplomacy_contracts_tt: "Vytvoří až #V [EmptyScope.ScriptValue('num_contracts_spawned_value')|0]#! [diplomacy_task_contracts|E] na mapě"
+ ep3_laamp_decision_event.1025.diplomacy_contracts_tt: "Vytvoří až #V [EmptyScope.ScriptValue('num_contracts_spawned_value')|0]#! [Concept('diplomacy_task_contracts','diplomatické zakázky')|E] na mapě" # todo: CONCEPT CASE
  ep3_laamp_decision_event.1025.option.stewardship_contracts: "„Organizace je přesně moje parketa.“"
- ep3_laamp_decision_event.1025.stewardship_contracts_tt: "Vytvoří až #V [EmptyScope.ScriptValue('num_contracts_spawned_value')|0]#! [stewardship_task_contracts|E] na mapě"
+ ep3_laamp_decision_event.1025.stewardship_contracts_tt: "Vytvoří až #V [EmptyScope.ScriptValue('num_contracts_spawned_value')|0]#! [Concept('stewardship_task_contracts','správcovské zakázky')|E] na mapě" # todo: CONCEPT CASE
  ep3_laamp_decision_event.1025.option.learning_contracts: "„Vědecká práce by byla příjemná změna.“"
- ep3_laamp_decision_event.1025.learning_contracts_tt: "Vytvoří až #V [EmptyScope.ScriptValue('num_contracts_spawned_value')|0]#! [learning_task_contracts|E] na mapě"
+ ep3_laamp_decision_event.1025.learning_contracts_tt: "Vytvoří až #V [EmptyScope.ScriptValue('num_contracts_spawned_value')|0]#! [Concept('learning_task_contracts','učenecké zakázky')|E] na mapě" # todo: CONCEPT CASE
  ep3_laamp_decision_event.1025.option.intrigue_contracts: "„Spolupracovník? Jak #EMP podnětné#!.“"
- ep3_laamp_decision_event.1025.intrigue_contracts_tt: "Vytvoří až #V [EmptyScope.ScriptValue('num_contracts_spawned_value')|0]#! [intrigue_task_contracts|E] na mapě"
+ ep3_laamp_decision_event.1025.intrigue_contracts_tt: "Vytvoří až #V [EmptyScope.ScriptValue('num_contracts_spawned_value')|0]#! [Concept('intrigue_task_contracts','pletichářské zakázky')|E] na mapě" # todo: CONCEPT CASE
  ep3_laamp_decision_event.1025.d: "$ep3_laamp_decision_event.1021.d$"
  ep3_laamp_decision_event.1025.d_nothing: "Hm. To je asi všechno."
  laamp_treasure_map_contract: "Mapa pokladu"
  laamp_treasure_map_contract_contract: "$laamp_treasure_map_contract$"
  laamp_treasure_map_contract_desc_title: "Poklad na celý život"
  laamp_treasure_map_contract_desc: "Důchodce a hledač pokladů [TaskContract.GetEmployer.GetName] potřebuje pomoc s nalezením posledního těžko uchopitelného pokladu. Tato smlouva zůstane platná, dokud budete vlastnit mapu pokladu."
- laamp_treasure_map_contract_request: "Tento [task_contract|E] vyžaduje, abyste [travel|E] na místo pokladu pomocí rozhodnutí [GetDecisionWithKey('treasure_map_contract_decision').GetName] [decision|E]"
- overflowing_provisions_to_gold.tt: "#EMP Protože by vás to dostalo nad kapacitu [provisions|E], budou dodatečné @provisions_icon![provisions_overflow_value|V0] prodány na místním trhu za @gold_icon![provisions_transformed_to_gold_value|V0]#!"
+ laamp_treasure_map_contract_request: "Tento [Concept('task_contract','zakázka')|E] vyžaduje, abyste [Concept('travel','cestování')|E] na místo pokladu pomocí rozhodnutí [GetDecisionWithKey('treasure_map_contract_decision').GetName] [Concept('decision','rozhodnutí')|E]" # todo: CONCEPT CASE
+ overflowing_provisions_to_gold.tt: "#EMP Protože by vás to dostalo nad kapacitu [Concept('provisions','proviant')|E], budou dodatečné @provisions_icon![provisions_overflow_value|V0] prodány na místním trhu za @gold_icon![provisions_transformed_to_gold_value|V0]#!" # todo: CONCEPT CASE
  treasure_map: "Mapa pokladu"
  treasure_map_desc: "Ošuntělá mapa, údajně vedoucí k dávným bohatstvím v [newly_created_map.MakeScope.Var('artifact_treasure_location').GetProvince.GetBaronyNameExplicitlyNoTooltip]. Získána od hlásného v [newly_created_map.MakeScope.Var('picked_up_in_location').GetProvince.GetBaronyNameExplicitlyNoTooltip]."
- artifact_is_related_to_contract_tt: "Tento [artifact|E] souvisí s [task_contract|E] a nelze jej zničit"
- gallowsbait_thief_blocked_from_contract.tt: "Jste příliš hluboko v [GetTrait('gallowsbait').GetName( GetNullCharacter )] [GetTrait( 'gallowsbait' ).GetTraitTrackByKey( 'thief' ).GetName] [trait|E], než abyste byli důvěryhodní pro tento [vassal_contract|E]"
+ artifact_is_related_to_contract_tt: "Tento [Concept('artifact','artefakt')|E] souvisí s [Concept('task_contract','zakázkou')|E] a nelze jej zničit" # todo: CONCEPT CASE
+ gallowsbait_thief_blocked_from_contract.tt: "Jste příliš hluboko v [GetTrait('gallowsbait').GetName( GetNullCharacter )] [GetTrait( 'gallowsbait' ).GetTraitTrackByKey( 'thief' ).GetName] [Concept('trait','ryse')|E], než abyste byli důvěryhodní pro tento [Concept('vassal_contract','vazalská smlouva')|E]" # todo: CONCEPT CASE
  ep3_laamp_decision_event.1030.t: "[visiting_location.GetBaronyNameExplicitlyNoTooltip]: the [ROOT.Char.Custom('GetTavernDwelling')|U]"
  ep3_laamp_decision_event.1030.desc_returned_01: "Znovu vstupuji do taverny a zjišťuji, že se toho mnoho nezměnilo — cestovatelé a tuláci odpočívají, zatímco se jim dostává péče."
  ep3_laamp_decision_event.1030.desc_nomad_returned_01: "Znovu vstupuji do obydlí, znovu mě zasáhne pohostinnost a přátelská atmosféra a dovolím si uvolněné povzdechnutí."
@@ -369,14 +369,14 @@
  ep3_laamp_decision_event.1030.b: "Podívejme se, kdo by [Select_CString(ROOT.Char.IsFemale,'byla','byl')] k verbování."
  ep3_laamp_decision_event.1030.b_second: "Možná bychom někoho měli verbovat, nakonec."
  ep3_laamp_decision_event.1030.b.tt: "Informovat se u nezaměstnaných [THIS.Char.Custom('GetTaverngoersTribespeople')]"
- ep3_laamp_decision_event.1030.b.cooldown.tt: "Tento nálezce [follower|E] jste již během této návštěvy verbovali"
+ ep3_laamp_decision_event.1030.b.cooldown.tt: "Tento nálezce [Concept('follower','družiník')|E] jste již během této návštěvy verbovali" # todo: CONCEPT CASE
  ep3_laamp_decision_event.1030.c: "No teda. Kdo je #EMP ten#!?"
  ep3_laamp_decision_event.1030.c_second: "K [laamp_spouse_material.GetFirstNameNoTooltip]. #EMP Teď#!."
  ep3_laamp_decision_event.1030.c.tt: "Přistoupit k [laamp_spouse_material.Custom('RaunchyComplimentNoun')] u pultu"
  ep3_laamp_decision_event.1030.c.tt_second: "Pokračovat v hovoru s [laamp_spouse_material.GetShortUIName]"
- ep3_laamp_decision_event.1030.c.cooldown.tt: "Nedávno jste verbovali potenciálního [spouse|E] jako [follower|E] — vraťte se [GetCurrentDateWithDiff( GetVarTimeRemaining( THIS.Char.MakeScope, '1035_has_spoused_recently') )]"
- ep3_laamp_decision_event.1030.c.success.cooldown.tt: "Již jste během této návštěvy verbovali potenciálního [spouse|E]"
- ep3_laamp_decision_event.1030.c.failure.cooldown.tt: "Během této návštěvy jste se již pokusili verbovat potenciálního [spouse|E]"
+ ep3_laamp_decision_event.1030.c.cooldown.tt: "Nedávno jste verbovali potenciálního [Concept('spouse','chotě')|E] jako [Concept('follower','družiník')|E] — vraťte se [GetCurrentDateWithDiff( GetVarTimeRemaining( THIS.Char.MakeScope, '1035_has_spoused_recently') )]" # todo: CONCEPT CASE
+ ep3_laamp_decision_event.1030.c.success.cooldown.tt: "Již jste během této návštěvy verbovali potenciálního [Concept('spouse','chotě')|E]" # todo: CONCEPT CASE
+ ep3_laamp_decision_event.1030.c.failure.cooldown.tt: "Během této návštěvy jste se již pokusili verbovat potenciálního [Concept('spouse','chotě')|E]" # todo: CONCEPT CASE
  ep3_laamp_decision_event.1030.d: "Co za zajímavou zahalenou postavu..."
  ep3_laamp_decision_event.1030.d_second: "Další rozhovor s [laamp_hooded_figure.GetFirstNameNoTooltip] neuškodí."
  ep3_laamp_decision_event.1030.d_third: "[Select_CString(ROOT.Char.IsFemale,'Měla','Měl')] bych se vrátit k [laamp_hooded_figure.GetFirstNameNoTooltip]."
@@ -441,7 +441,7 @@
  ep3_laamp_decision_event.1033.b: "[laamp_second_recruit.GetFirstNameNoTooltip] vypadá jako vhodný kandidát."
  ep3_laamp_decision_event.1033.c: "Vidím potenciál jen v [laamp_third_recruit.GetFirstNameNoTooltip]."
  ep3_laamp_decision_event.1033.d: "„...[laamp_generic_jane.GetFirstNameNoTooltip], že? Přidej se ke mně.“"
- ep3_laamp_decision_event.1033.d.cooldown.tt: "Nedávno jste přijali bezplatného [follower|E] — vraťte se [GetCurrentDateWithDiff( GetVarTimeRemaining( THIS.Char.MakeScope, '1033_generic_jane_cooldown') )]"
+ ep3_laamp_decision_event.1033.d.cooldown.tt: "Nedávno jste přijali bezplatného [Concept('follower','družiníka')|E] — vraťte se [GetCurrentDateWithDiff( GetVarTimeRemaining( THIS.Char.MakeScope, '1033_generic_jane_cooldown') )]" # todo: CONCEPT CASE
  ep3_laamp_decision_event.1033.e: "$ep3_laamp_decision_event.1021.d$"
  ep3_laamp_decision_event.1035.t: "[visiting_location.GetBaronyNameExplicitlyNoTooltip]: Potenciální protějšek"
  ep3_laamp_decision_event.1035.desc_returned_01: "Vrátím se ke stolu [laamp_spouse_material.GetFirstNamePossessive] a okamžitě mi začne krev bušit v uších.\n\nZůstat. Klid. #EMP Navázat rozhovor.#!\n\n[laamp_spouse_material.GetFirstNameNoTooltip] si při mém přiblížení povídá s poblíž sedícím [laamp_spouse_material.Custom('WomanManOpposite')], a [Select_CString(laamp_spouse_material.IsFemale,'její','jeho')] oči se zúží v očekávání:"
@@ -458,7 +458,7 @@
  ep3_laamp_decision_event.1035.b.success: "[laamp_spouse_material.GetShortUIName] je [Select_CString(laamp_spouse_material.IsFemale,'okouzlena','okouzlen')] tvými návrhy"
  ep3_laamp_decision_event.1035.b.failure: "Nepodařilo se ti zaujmout [laamp_spouse_material.GetShortUIName]"
  ep3_laamp_decision_event.1035.b.failure.tt: "[laamp_spouse_material.GetShortUIName] začne tě ignorovat"
- ep3_laamp_decision_event.1035.b.cooldown.tt: "Nedávno jste se pokusili svést potenciálního [spouse|E] — zkuste to znovu [GetCurrentDateWithDiff( GetVarTimeRemaining( THIS.Char.MakeScope, '1035_spouse_duelled_recently') )]"
+ ep3_laamp_decision_event.1035.b.cooldown.tt: "Nedávno jste se pokusili svést potenciálního [Concept('spouse','chotě')|E] — zkuste to znovu [GetCurrentDateWithDiff( GetVarTimeRemaining( THIS.Char.MakeScope, '1035_spouse_duelled_recently') )]" # todo: CONCEPT CASE
  ep3_laamp_decision_event.1035.c: "„...proč to nepřesunout někam #EMP pohodlnějšímu#!...“"
  ep3_laamp_decision_event.1035.c.cooldown.tt: "Nedávno jste se uvolnili v [ROOT.Char.Custom('GetTavernDwelling')] — vraťte se [GetCurrentDateWithDiff( GetVarTimeRemaining( THIS.Char.MakeScope, '1035_spouse_unwinded_recently') )]"
  ep3_laamp_decision_event.1035.d: "$ep3_laamp_decision_event.1021.d$"
@@ -695,8 +695,8 @@
  ep3_laamp_decision_event.1050.c: "Možná by ti otrhaní [visiting_location.GetCounty.GetCulture.GetCollectiveNounNoTooltip] vojáci mohli být k užitku?"
  ep3_laamp_decision_event.1050.c_second: "Demoralizovaní [visiting_location.GetCounty.GetCulture.GetCollectiveNounNoTooltip] by stále mohli být užiteční."
  ep3_laamp_decision_event.1050.c.tt: "Jít k demoralizovaným vojákům"
- ep3_laamp_decision_event.1050.c.cooldown.tt: "Vaši noví [men_at_arms|E] [soldiers|E] se právě stěhují do vašeho tábora"
- ep3_laamp_decision_event.1050.c.cooldown_province.tt: "V posledních 90 dnech jste posílil [men_at_arms|E] v [visiting_location.GetBaronyNameExplicitly]"
+ ep3_laamp_decision_event.1050.c.cooldown.tt: "Vaši noví [Concept('men_at_arms','ozbrojenci')|E] [Concept('soldiers','vojáci')|E] se právě stěhují do vašeho tábora" # todo: CONCEPT CASE
+ ep3_laamp_decision_event.1050.c.cooldown_province.tt: "V posledních 90 dnech jste posílil [Concept('men_at_arms','ozbrojenci')|E] v [visiting_location.GetBaronyNameExplicitly]" # todo: CONCEPT CASE
  ep3_laamp_decision_event.1050.d: "Zajímalo by mě, o čem se hádají?"
  ep3_laamp_decision_event.1050.d_second: "Popovídejme si znovu s bývalým tělesným strážcem."
  ep3_laamp_decision_event.1050.d.tt: "Přistupte k hádajícím se [laamp_bodyguard_recruit.GetWomenMen]"
@@ -739,8 +739,8 @@
  ep3_laamp_decision_event.1055.desc: "Tábor stanů na okraji [visiting_location.GetBaronyNameExplicitlyNoTooltip] je narvaný vojáky a bojovníky, velkými i malými, z různých kultur, ale převážně [visiting_location.GetCounty.GetCulture.GetCollectiveNounNoTooltip].\n\nSešli se ve skupinách, většina z nich mračí a rozhlíží se, jako by hledala cestu z bídy.\n\nPokračuji, dokud nenajdu impozantního [laamp_maa_reinforcer.GetWomanMan], [Select_CString(ROOT.Char.IsFemale,'která','který')] právě dořval na pár ošlehaných bojovníků, a [laamp_maa_reinforcer.GetSheHe] mě podezřívavě pozoruje."
  ep3_laamp_decision_event.1055.a: "„Jeď se mnou — vážený [ROOT.Char.GetTitledFirstNameNoTooltip]!“"
  ep3_laamp_decision_event.1055.a.flavor: "Prestižní? Dělám jen to, co je třeba."
- ep3_laamp_decision_event.1055.a.cooldown.tt: "V poslední době jste [Select_CString(ROOT.Char.IsFemale,'využila','využil')] svůj [prestige_level|E] — více vojáků toužících po slávě se shromáždí [GetCurrentDateWithDiff( GetVarTimeRemaining( THIS.Char.MakeScope, '1055_reinforced_with_prestige_recently') )]"
- ep3_laamp_decision_event.1055.prestige_level: "Kvůli vašemu [prestige_level|E]:"
+ ep3_laamp_decision_event.1055.a.cooldown.tt: "V poslední době jste [Select_CString(ROOT.Char.IsFemale,'využila','využil')] svůj [Concept('prestige_level','úroveň slávy')|E] — více vojáků toužících po slávě se shromáždí [GetCurrentDateWithDiff( GetVarTimeRemaining( THIS.Char.MakeScope, '1055_reinforced_with_prestige_recently') )]" # todo: CONCEPT CASE
+ ep3_laamp_decision_event.1055.prestige_level: "Kvůli vašemu [Concept('prestige_level','úrovni slávy')|E]:" # todo: CONCEPT CASE
  ep3_laamp_decision_event.1055.prestige_full.tt: "$ep3_laamp_decision_event.1055.prestige_level$$ep3_laamp_decision_event.1055.full.tt$"
  ep3_laamp_decision_event.1055.prestige_partial_80.tt: "$ep3_laamp_decision_event.1055.prestige_level$$ep3_laamp_decision_event.1055.all_regiments$$ep3_laamp_decision_event.1055.positive_partial.tt$ (#V 80#!%)#!"
  ep3_laamp_decision_event.1055.prestige_partial_60.tt: "$ep3_laamp_decision_event.1055.prestige_level$$ep3_laamp_decision_event.1055.all_regiments$$ep3_laamp_decision_event.1055.positive_partial.tt$ (#V 60#!%)#!"
@@ -748,20 +748,20 @@
  ep3_laamp_decision_event.1055.prestige_partial_20.tt: "$ep3_laamp_decision_event.1055.prestige_level$$ep3_laamp_decision_event.1055.all_regiments$$ep3_laamp_decision_event.1055.alert_partial.tt$ (#V 20#!%)#!"
  ep3_laamp_decision_event.1055.b: "„Přidej se ke mně, ve službě [ROOT.Char.GetFaith.GetNameNoTooltip]!“"
  ep3_laamp_decision_event.1055.b.flavor: "Pouze [ROOT.Char.GetFaith.HighGodName] posoudí mou zbožnost."
- ep3_laamp_decision_event.1055.b.cooldown.tt: "V poslední době jste [Select_CString(ROOT.Char.IsFemale,'využila','využil')] svůj [piety_level|E] — více zapálených vojáků se shromáždí [GetCurrentDateWithDiff( GetVarTimeRemaining( THIS.Char.MakeScope, '1055_reinforced_with_piety_recently') )]"
- ep3_laamp_decision_event.1055.piety_level: "Kvůli vašemu [piety_level|E]:"
+ ep3_laamp_decision_event.1055.b.cooldown.tt: "V poslední době jste [Select_CString(ROOT.Char.IsFemale,'využila','využil')] svůj [Concept('piety_level','úroveň oddanosti')|E] — více zapálených vojáků se shromáždí [GetCurrentDateWithDiff( GetVarTimeRemaining( THIS.Char.MakeScope, '1055_reinforced_with_piety_recently') )]" # todo: CONCEPT CASE
+ ep3_laamp_decision_event.1055.piety_level: "Kvůli vašemu [Concept('piety_level','úrovni oddanosti')|E]:" # todo: CONCEPT CASE
  ep3_laamp_decision_event.1055.piety_full.tt: "$ep3_laamp_decision_event.1055.piety_level$$ep3_laamp_decision_event.1055.full.tt$"
  ep3_laamp_decision_event.1055.piety_partial_80.tt: "$ep3_laamp_decision_event.1055.piety_level$$ep3_laamp_decision_event.1055.all_regiments$$ep3_laamp_decision_event.1055.positive_partial.tt$ (#V 80#!%)#!"
  ep3_laamp_decision_event.1055.piety_partial_60.tt: "$ep3_laamp_decision_event.1055.piety_level$$ep3_laamp_decision_event.1055.all_regiments$$ep3_laamp_decision_event.1055.positive_partial.tt$ (#V 60#!%)#!"
  ep3_laamp_decision_event.1055.piety_partial_40.tt: "$ep3_laamp_decision_event.1055.piety_level$$ep3_laamp_decision_event.1055.all_regiments$$ep3_laamp_decision_event.1055.alert_partial.tt$ (#V 40#!%)#!"
  ep3_laamp_decision_event.1055.piety_partial_20.tt: "$ep3_laamp_decision_event.1055.piety_level$$ep3_laamp_decision_event.1055.all_regiments$$ep3_laamp_decision_event.1055.alert_partial.tt$ (#V 20#!%)#!"
  ep3_laamp_decision_event.1055.c: "„Možná bychom si mohli vyměnit pár věcí?“"
- ep3_laamp_decision_event.1055.c.tt: "A random [men_at_arms|E] [regiment|E]: \n#P #EMP $BULLET_WITH_TAB$Je plně doplněn!#!#!"
+ ep3_laamp_decision_event.1055.c.tt: "A random [Concept('men_at_arms','ozbrojenci')|E] [Concept('regiment','pluk')|E]: \n#P #EMP $BULLET_WITH_TAB$Je plně doplněn!#!#!" # todo: CONCEPT CASE
  ep3_laamp_decision_event.1055.d: "„Tohle je tvá šance bojovat za #EMP spravedlnost!#!“"
  ep3_laamp_decision_event.1055.d.flavor: "Společně pro lepší svět."
- ep3_laamp_decision_event.1055.d.tt: "Vzhledem k tvému [GetTrait('knight_errant').GetName( GetNullCharacter )] [trait_level_track_xp|E]:$refill_maa_regiments_fully_reinforced_tt$"
+ ep3_laamp_decision_event.1055.d.tt: "Vzhledem k tvému [GetTrait('knight_errant').GetName( GetNullCharacter )] [Concept('trait_level_track_xp','zkušenostem rysu')|E]:$refill_maa_regiments_fully_reinforced_tt$" # todo: CONCEPT CASE
  ep3_laamp_decision_event.1055.e: "$ep3_laamp_decision_event.1021.d$"
- ep3_laamp_decision_event.1055.all_regiments: "\n$BULLET_WITH_TAB$Všechny vaše [men_at_arms|E] [regiments|E] (#V [num_damaged_maa_regiments]#!):"
+ ep3_laamp_decision_event.1055.all_regiments: "\n$BULLET_WITH_TAB$Všechny vaše [Concept('men_at_arms','ozbrojenci')|E] [Concept('regiments','pluky')|E] (#V [num_damaged_maa_regiments]#!):" # todo: CONCEPT CASE
  ep3_laamp_decision_event.1055.full.tt: "$ep3_laamp_decision_event.1055.all_regiments$$refill_maa_regiments_fully_reinforced_tt$"
  ep3_laamp_decision_event.1055.positive_partial.tt: "#P #EMP \n$BULLET_WITH_TAB$Regimenty budou částečně doplněny!"
  ep3_laamp_decision_event.1055.alert_partial.tt: "#alert_trial \n$BULLET_WITH_TAB$Regimenty budou částečně doplněny!"
@@ -803,16 +803,16 @@
  ep3_laamp_decision_event.1060.a: "Zbraně se teď nejvíce hodí."
  ep3_laamp_decision_event.1060.a_second: "Ty zbraně vypadaly zajímavě."
  ep3_laamp_decision_event.1060.a.tt: "Přejít ke stánku zbrojíře"
- ep3_laamp_decision_event.1060.a.cooldown.tt: "Během této návštěvy jste již zakoupili zbraň [artifact|E]"
+ ep3_laamp_decision_event.1060.a.cooldown.tt: "Během této návštěvy jste již zakoupili zbraň [Concept('artifact','artefakt')|E]" # todo: CONCEPT CASE
  ep3_laamp_decision_event.1060.b: "Mé brnění potřebuje vylepšení."
  ep3_laamp_decision_event.1060.b_second: "Zbrojíř [Select_CString(ROOT.Char.IsFemale,'měla','měl')] několik vhodných kousků."
  ep3_laamp_decision_event.1060.b.tt: "Jít do zbrojířovy kovárny"
- ep3_laamp_decision_event.1060.b.cooldown.tt: "Během této návštěvy jste již zakoupili brnění [artifact|E]"
+ ep3_laamp_decision_event.1060.b.cooldown.tt: "Během této návštěvy jste již zakoupili brnění [Concept('artifact','artefakt')|E]" # todo: CONCEPT CASE
  recruited_armorer.tt: "[laamp_armorer_craftsman.GetShortUIName] se právě stěhuje do vašeho tábora " # todo: RETRANSLATED ENGLISH
  ep3_laamp_decision_event.1060.c: "Mám zájem o doplňky."
  ep3_laamp_decision_event.1060.c_second: "Musím se znovu podívat do klenotnictví."
  ep3_laamp_decision_event.1060.c.tt: "Přejít do klenotnického obydlí"
- ep3_laamp_decision_event.1060.c.cooldown.tt: "Během této návštěvy jste již zakoupili šperk [artifact|E]"
+ ep3_laamp_decision_event.1060.c.cooldown.tt: "Během této návštěvy jste již zakoupili šperk [Concept('artifact','artefakt')|E]" # todo: CONCEPT CASE
  ep3_laamp_decision_event.1060.d: "Pojďme si promluvit s #EMP panem#! [laamp_quartermaster_recruit.GetFirstNameNoTooltip]."
  ep3_laamp_decision_event.1060.d_second: "Měli bychom znovu navštívit zásobovače [laamp_quartermaster_recruit.GetFirstNameNoTooltip]."
  ep3_laamp_decision_event.1060.d.tt: "Přistoupit k [laamp_quartermaster_recruit.GetShortUIName]"
@@ -856,7 +856,7 @@
  ep3_laamp_decision_event.1067.desc: "Následuji [laamp_quartermaster_recruit.GetFirstName] do blízké krčmy. Světlo zhůru klesá a pach zkyslých nápojů mi přehluší smysly.\n\n[laamp_quartermaster_recruit.GetFirstNameNoTooltip] sedne u pultu a zavolá si pití. „Dřív jsem [Select_CString(ROOT.Char.IsFemale,'byla','byl')] někdo...,“ opakuje si [laamp_quartermaster_recruit.GetSheHe] jako mantru, zatímco dloubá do svého poháru otlučeným nehtem.\n\nPřistoupím k zkaženému zásobovači a zhluboka se nadechnu, než promluvím:"
  ep3_laamp_decision_event.1067.a: "$ep3_laamp_decision_event.1047.a$"
  ep3_laamp_decision_event.1067.b: "„Mám docela značný počet následovníků, které bys [Select_CString(ROOT.Char.IsFemale,'mohla','mohl')] zorganizovat!“"
- not_enough_followers.tt: "Máte méně než #V [EmptyScope.ScriptValue('many_followers_value')|0]#! [followers|E]"
+ not_enough_followers.tt: "Máte méně než #V [EmptyScope.ScriptValue('many_followers_value')|0]#! [Concept('followers','družiníci')|E]" # todo: CONCEPT CASE
  ep3_laamp_decision_event.1067.c: "„Vsadím se, že bys v mém táboře [Select_CString(ROOT.Char.IsFemale,'nevydržela','nevydržel')] ani #EMP den#!“"
  ep3_laamp_decision_event.1067.c.success: "[laamp_quartermaster_recruit.GetShortUIName] přijímá vaši výzvu"
  ep3_laamp_decision_event.1067.c.failure: "Nepodařilo se vám nalákat [laamp_quartermaster_recruit.GetShortUIName]"
@@ -874,44 +874,44 @@
  laamp_decision_exotic_story_intrigue_gain_modifier_desc: "Tato postava si z exotického příběhu odnesla ponaučení v intrikách."
  laamp_decision_exotic_story_learning_gain_modifier: "Exotické poznatky"
  laamp_decision_exotic_story_learning_gain_modifier_desc: "Tato postava si z exotického příběhu odnesla nové poznatky."
- MODIFIER_DEFINITION_VALUE_PER_PHYSICIAN_APTITUDE: " \t#weak Zvýšení za každou úroveň $court_physician_court_position$ [aptitude|E]#!"
+ MODIFIER_DEFINITION_VALUE_PER_PHYSICIAN_APTITUDE: " \t#weak Zvýšení za každou úroveň $court_physician_court_position$ [Concept('aptitude','způsobilost')|E]#!" # todo: CONCEPT CASE
  laamp_decision_church_health_modifier: "Osvědčené ošetření"
  laamp_decision_church_health_modifier_desc: "Tato postava byla ošetřena zkušeným lékařem."
  laamp_decision_church_health_partner_modifier: "Experimentální ošetření"
  laamp_decision_church_health_partner_modifier_desc: "Tato postava byla ošetřena učeným společníkem."
- MODIFIER_DEFINITION_VALUE_BASED_ON_PIETY_LEVEL: " \t#weak Zvýšení za každou úroveň [piety_level|E]#!"
+ MODIFIER_DEFINITION_VALUE_BASED_ON_PIETY_LEVEL: " \t#weak Zvýšení za každou úroveň [Concept('piety_level','úroveň oddanosti')|E]#!" # todo: CONCEPT CASE
  laamp_decision_church_blessing_stress_loss_modifier: "Požehnání míru"
  laamp_decision_church_blessing_stress_loss_modifier_desc: "Tato postava byla požehnána a cítí větší vnitřní klid."
  laamp_decision_church_blessing_stress_gain_modifier: "Požehnání odolnosti"
  laamp_decision_church_blessing_stress_gain_modifier_desc: "Tato postava byla požehnána a cítí se odolnější."
  divine_springs_modifier: "Božské prameny"
  divine_springs_modifier_desc: "Tato postava zažila božské prameny a uvědomila si krásu za hranicemi materiálních pokladů."
- local_holding_type_concept_no_holding: "[holding|E]"
- local_holding_type_concept_nomad_holding: "[nomadic_holding|E]"
- local_holding_type_concept_herder_holding: "[herder_holding|E]"
- local_holding_type_concept_tribal_holding: "[tribal_holding|E]"
- local_holding_type_concept_church_holding: "[church_holding|E]"
- local_holding_type_concept_temple_holding: "[temple_holding|E]"
- local_holding_type_concept_castle_holding: "[castle_holding|E]"
- local_holding_type_concept_city_holding: "[city_holding|E]"
- local_holding_type_concept_temple_citadel_holding: "[temple_citadel_holding|E]" # todo: NEW TRANSLATION
- local_holding_type_no_holding: "$game_concept_holding$"
- local_holding_type_nomad_holding: "$game_concept_nomadic$ držba"
- local_holding_type_herder_holding: "$game_concept_herder$ držba"
- local_holding_type_tribal_holding: "$game_concept_tribal$ držba"
- local_holding_type_church_holding: "$game_concept_church$ držba"
- local_holding_type_temple_holding: "$game_concept_temple$ držba"
- local_holding_type_castle_holding: "$game_concept_castle$ držba"
- local_holding_type_city_holding: "$game_concept_city$ držba"
- local_holding_type_temple_citadel_holding: "$game_concept_temple_citadel$ držba" # todo: NEW TRANSLATION
+ local_holding_type_concept_no_holding: "[Concept('holding','Država')|E]" # todo: CONCEPT CASE
+ local_holding_type_concept_nomad_holding: "[Concept('nomadic_holding','Kočovné sídliště')|E]" # todo: CONCEPT CASE
+ local_holding_type_concept_herder_holding: "[Concept('herder_holding','Pastevecké sídliště')|E]" # todo: CONCEPT CASE
+ local_holding_type_concept_tribal_holding: "[Concept('tribal_holding','Kmenová država')|E]" # todo: CONCEPT CASE
+ local_holding_type_concept_church_holding: "[Concept('church_holding','Církevní država')|E]" # todo: CONCEPT CASE
+ local_holding_type_concept_temple_holding: "[Concept('temple_holding','Chrámová država')|E]" # todo: CONCEPT CASE
+ local_holding_type_concept_castle_holding: "[Concept('castle_holding','Hradní država')|E]" # todo: CONCEPT CASE
+ local_holding_type_concept_city_holding: "[Concept('city_holding','Městská država')|E]" # todo: CONCEPT CASE
+ local_holding_type_concept_temple_citadel_holding: "[Concept('temple_citadel_holding','Država chrámové citadely')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ local_holding_type_no_holding: "Država" # todo: CONCEPT CASE
+ local_holding_type_nomad_holding: "Kočovná držba" # todo: CONCEPT CASE
+ local_holding_type_herder_holding: "Pastevec držba" # todo: CONCEPT CASE
+ local_holding_type_tribal_holding: "Kmenová držba" # todo: CONCEPT CASE
+ local_holding_type_church_holding: "Církev držba" # todo: CONCEPT CASE
+ local_holding_type_temple_holding: "Chrám držba" # todo: CONCEPT CASE
+ local_holding_type_castle_holding: "Hrad držba" # todo: CONCEPT CASE
+ local_holding_type_city_holding: "Město držba" # todo: CONCEPT CASE
+ local_holding_type_temple_citadel_holding: "Chrámová citadela držba" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  local_holding_type_capitalized_no_holding: "Držba"
- local_holding_type_capitalized_nomad_holding: "$game_concept_nomadic$ Držba"
- local_holding_type_capitalized_herder_holding: "$game_concept_herder$ Držba"
- local_holding_type_capitalized_tribal_holding: "$game_concept_tribal$ Držba"
- local_holding_type_capitalized_church_holding: "$game_concept_church$ Držba"
- local_holding_type_capitalized_temple_holding: "$game_concept_temple$ Držba"
- local_holding_type_capitalized_castle_holding: "$game_concept_castle$ Držba"
- local_holding_type_capitalized_city_holding: "$game_concept_city$ Držba"
+ local_holding_type_capitalized_nomad_holding: "Kočovná Držba" # todo: CONCEPT CASE
+ local_holding_type_capitalized_herder_holding: "Pastevec Držba" # todo: CONCEPT CASE
+ local_holding_type_capitalized_tribal_holding: "Kmenová Držba" # todo: CONCEPT CASE
+ local_holding_type_capitalized_church_holding: "Církev Držba" # todo: CONCEPT CASE
+ local_holding_type_capitalized_temple_holding: "Chrám Držba" # todo: CONCEPT CASE
+ local_holding_type_capitalized_castle_holding: "Hrad Držba" # todo: CONCEPT CASE
+ local_holding_type_capitalized_city_holding: "Město Držba" # todo: CONCEPT CASE
  local_holding_type_capitalized_temple_citadel_holding: "Držba chrámové citadely" # todo: NEW TRANSLATION
  is_encampment: "tábor"
  is_settlement: "$local_holding_type_no_holding$"
@@ -987,5 +987,5 @@
  positive_shallow_adjective_with_article_ravishing: "$positive_shallow_adjective_ravishing$"
  positive_shallow_adjective_with_article_seductive: "$positive_shallow_adjective_seductive$"
  positive_shallow_adjective_with_article_stunning: "$positive_shallow_adjective_stunning$"
- NOT_HAVE_MASTER_OF_ARMS_BUILDING: "Potřebujete [GetDomicileBuilding('proving_grounds_01').GetName] k zaměstnání [GetCourtPositionType('master_of_arms_camp_officer').GetName()] [officer|E]"
- NOT_HAVE_ARMORER_BUILDING: "Potřebujete [GetDomicileBuilding('supply_tent_smithy').GetName] k zaměstnání [GetCourtPositionType('armorer_camp_officer').GetName()] [officer|E]"
+ NOT_HAVE_MASTER_OF_ARMS_BUILDING: "Potřebujete [GetDomicileBuilding('proving_grounds_01').GetName] k zaměstnání [GetCourtPositionType('master_of_arms_camp_officer').GetName()] [Concept('officer','důstojníkovi')|E]" # todo: CONCEPT CASE
+ NOT_HAVE_ARMORER_BUILDING: "Potřebujete [GetDomicileBuilding('supply_tent_smithy').GetName] k zaměstnání [GetCourtPositionType('armorer_camp_officer').GetName()] [Concept('officer','důstojníkovi')|E]" # todo: CONCEPT CASE

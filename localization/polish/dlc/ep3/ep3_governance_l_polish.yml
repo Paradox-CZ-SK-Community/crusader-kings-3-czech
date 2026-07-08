@@ -1,11 +1,11 @@
 ﻿l_polish:
  governor_tax_scheme: "Vybírat daně"
- governor_tax_scheme_desc_general: "Ve schématu Vybírat daně [scheme|E] se snažíte získat informace o chybějících daních a přimět podezřelou vesnici, aby zaplatila."
+ governor_tax_scheme_desc_general: "Ve schématu Vybírat daně [Concept('scheme','intrika')|E] se snažíte získat informace o chybějících daních a přimět podezřelou vesnici, aby zaplatila." # todo: CONCEPT CASE
  governor_tax_scheme_desc: "Daně jsou pečlivě vybírány a zaznamenávány pro každý distrikt a vesnici, což umožňuje zjistit, kdy byly daně skutečně zaplaceny tak, jak je vyžadováno. A co je důležitější, kdy platby #EMP chybějí#!."
  governor_tax_scheme_action: "Vybírat daně v"
  governor_tax_scheme_invalidated_title: "$governor_tax_scheme$: Schéma zrušeno"
  msg_governance_contract_appear.t: "Nový správní problém"
- msg_governance_contract_appear.desc: "Se vyskytl [new_governance_issue.GetType.GetName|V] [governance_issue|E] v [target_province.GetName], v rámci [target_province.GetCounty.GetTitle.GetName]"
+ msg_governance_contract_appear.desc: "Se vyskytl [new_governance_issue.GetType.GetName|V] [Concept('governance_issue','$TASK_CONTRACT_ISSUE$')|E] v [target_province.GetName], v rámci [target_province.GetCounty.GetTitle.GetName]" # todo: CONCEPT CASE
  task_contract_governance_desc_title: "Je třeba mého úsudku jako [GetPlayer.Custom('GetGovernorConceptNoTooltip')]!"
  overdue_taxes_contract: "Neodvedené daně"
  overdue_taxes_desc: "Ať už spiknutím, nedostatkem či prostou nedbalostí, vesnice v této oblasti neodeslala svůj podíl úrody jako daně."
@@ -72,7 +72,7 @@
  governor_contract_event.1020.d: "Darujme to charitě a potřebným."
  governor_contract_event.1020.e: "Naplňte sýpky a přebytek prodejte."
  governor_contract_event.1020.f: "Přesuňte #EMP všechen#! na mé panství."
- harvest_claim_it_yourself_estate_tt: "Množství je zvýšeno o #P +[EmptyScope.ScriptValue('estate_granary_gold_bonus_value')|+0%]#! díky [GetDomicileBuilding('storage_granary_03').GetName] ve vašem [estate|E]"
+ harvest_claim_it_yourself_estate_tt: "Množství je zvýšeno o #P +[EmptyScope.ScriptValue('estate_granary_gold_bonus_value')|+0%]#! díky [GetDomicileBuilding('storage_granary_03').GetName] ve vašem [Concept('estate','statku')|E]" # todo: CONCEPT CASE
  governor_contract_event.1030.t: "Rozmáhající se bandité"
  governor_contract_event.1030.desc: "Přečtu si zprávu znovu. #EMP bandité#!, pro které jsou moji zákonuposluchající daňoví poplatníci jen tučné ovce na stříhání!\n\nA skutečně, drsní zločinci srazili mé lidi k zemi... vesnice terorizovány, karavany ztraceny.\n\nZvláště nebezpečná skupina zločinců si vybudovala pevné postavení v [task_contract_location.GetProvince.GetTerrain.GetNameNoTooltip|l] poblíž [bandit_destination.GetName]. Dokud nebudou vyhnáni, zůstane oblast nekontrolovatelná."
  governor_contract_event.1030.a: "Svolej kontingent vojáků. Vyrazíme ihned!"
@@ -393,13 +393,13 @@
  ep3_war_compensations_modifier: "Válečné kompenzace"
  ep3_war_compensations_modifier_desc: "Toto hrabství získává speciální podporu, aby prospívalo i během probíhající války."
  admin_contract_invalidated_title: "[GetPlayer.Custom('GetContractOrIssue')] zrušeno"
- admin_contract_invalidated_desc: "Probíhající [governance_issue|E] byl zrušen"
- governor_scheme_success_chance_desc: "Úspěšné dokončení tohoto [contract_scheme|E] vám přinese odměnu za vaše úsilí."
- governor_trait_desc: "[GetTrait('governor').GetName( GetNullCharacter )] [trait|E]: $VALUE|=+0$"
- governor_trait_desc_short: "[GetTrait('governor').GetName( GetNullCharacter )] [trait|E]" # todo: NEW TRANSLATION
- governor_trait_with_character_desc: "[GetTrait('governor').GetName( ROOT.Char )] [trait|E]: $VALUE|=+0$"
- administrator_trait_desc: "[GetTrait('administrator').GetName( GetNullCharacter )] [trait|E]: $VALUE|=+0$"
- overseer_trait_desc: "[GetTrait('overseer').GetName( GetNullCharacter )] [trait|E]: $VALUE|=+0$"
+ admin_contract_invalidated_desc: "Probíhající [Concept('governance_issue','$TASK_CONTRACT_ISSUE$')|E] byl zrušen" # todo: CONCEPT CASE
+ governor_scheme_success_chance_desc: "Úspěšné dokončení tohoto [Concept('contract_scheme','intriky zakázky')|E] vám přinese odměnu za vaše úsilí." # todo: CONCEPT CASE
+ governor_trait_desc: "[GetTrait('governor').GetName( GetNullCharacter )] [Concept('trait','Rys')|E]: $VALUE|=+0$" # todo: CONCEPT CASE
+ governor_trait_desc_short: "[GetTrait('governor').GetName( GetNullCharacter )] [Concept('trait','Rys')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ governor_trait_with_character_desc: "[GetTrait('governor').GetName( ROOT.Char )] [Concept('trait','Rys')|E]: $VALUE|=+0$" # todo: CONCEPT CASE
+ administrator_trait_desc: "[GetTrait('administrator').GetName( GetNullCharacter )] [Concept('trait','Rys')|E]: $VALUE|=+0$" # todo: CONCEPT CASE
+ overseer_trait_desc: "[GetTrait('overseer').GetName( GetNullCharacter )] [Concept('trait','Rys')|E]: $VALUE|=+0$" # todo: CONCEPT CASE
  ep3_governance_tax_relief: "Daňová úleva"
  ep3_governance_tax_relief_desc: "Toto hrabství získalo daňovou úlevu od regionálního guvernéra, ku velké spokojenosti místního obyvatelstva."
  ep3_governance_stationed_troops: "Posílená posádka"
@@ -418,12 +418,12 @@
  ep3_governance_workforce_desc: "V tomto hrabství bylo mnoho lidí naverbováno do pracovní síly sloužící obci."
  ep3_governance_rampant_bandits: "Přemnoření bandité"
  ep3_governance_rampant_bandits_desc: "Toto hrabství sužují bandité; násilné útoky na cestovatele a obchodníky jsou běžné."
- SCHEME_TIER_DIFFICULTY: "[task_contract_tier|E]: $VALUE|+=0$"
- admin_contract_success_tt_trait: "Můžete získat [GetTrait('governor').GetName( GetNullCharacter )] [trait|E]"
- admin_contract_success_tt_xp: "[trait_level_track_xp|E] v [GetTrait('governor').GetName( GetNullCharacter )] [trait|E]"
- admin_contract_success_tt_rewards: "Můžete si vybrat z řady odměn, včetně:#indent_newline:3 \n$EFFECT_LIST_BULLET$$admin_contract_success_tt_xp$\n$EFFECT_LIST_BULLET$[gold_i|E][gold|E]\n$EFFECT_LIST_BULLET$[influence_i|E][influence|E]\n$EFFECT_LIST_BULLET$[prestige_i|E][prestige|E]\n$EFFECT_LIST_BULLET$[piety_i|E][piety|E]\n$EFFECT_LIST_BULLET$Vylepšení vašich [counties|E] nebo [holdings|E]#!"
- admin_contract_merit_bullet: "\n$EFFECT_LIST_BULLET$[merit_i|E][merit|E]"
- admin_contract_failure_tt: "Můžete utrpět drobné tresty, například ztrátu [prestige_i|E][prestige|E] nebo [influence_i|E][influence|E]"
+ SCHEME_TIER_DIFFICULTY: "[Concept('task_contract_tier','Úroveň $TASK_CONTRACT_CONTRACT$')|E]: $VALUE|+=0$" # todo: CONCEPT CASE
+ admin_contract_success_tt_trait: "Můžete získat [GetTrait('governor').GetName( GetNullCharacter )] [Concept('trait','rys')|E]" # todo: CONCEPT CASE
+ admin_contract_success_tt_xp: "[Concept('trait_level_track_xp','Zkušenosti rysu')|E] v [GetTrait('governor').GetName( GetNullCharacter )] [Concept('trait','ryse')|E]" # todo: CONCEPT CASE
+ admin_contract_success_tt_rewards: "Můžete si vybrat z řady odměn, včetně:#indent_newline:3 \n$EFFECT_LIST_BULLET$$admin_contract_success_tt_xp$\n$EFFECT_LIST_BULLET$[Concept('gold_i','@gold_icon!')|E][Concept('gold','Zlato')|E]\n$EFFECT_LIST_BULLET$[Concept('influence_i','@influence_icon!')|E][Concept('influence','Vliv')|E]\n$EFFECT_LIST_BULLET$[Concept('prestige_i','@prestige_icon!')|E][Concept('prestige','Prestiž')|E]\n$EFFECT_LIST_BULLET$[Concept('piety_i','[GetLocalPlayerPietyTextIcon]')|E][Concept('piety','Zbožnost')|E]\n$EFFECT_LIST_BULLET$Vylepšení vašich [Concept('counties','hrabství')|E] nebo [Concept('holdings','državy')|E]#!" # todo: CONCEPT CASE
+ admin_contract_merit_bullet: "\n$EFFECT_LIST_BULLET$[Concept('merit_i','@merit_icon!')|E][Concept('merit','Zásluhy')|E]" # todo: CONCEPT CASE
+ admin_contract_failure_tt: "Můžete utrpět drobné tresty, například ztrátu [prestige_i|E][Concept('prestige','prestiž')|E] nebo [Concept('influence_i','@influence_icon!')|E][Concept('influence','vliv')|E]" # todo: CONCEPT CASE
  has_active_governance_issue: "Již máte probíhající [governance_issue|E]"
  task_contract_reward_effect_taxes_governor_desc: "Možný výsledek:"
  task_contract_reward_effect_taxes_paid_in_full_desc: "$label_success_standard$"
@@ -518,21 +518,21 @@
  task_contract_reward_effect_wartime_lookouts_desc: "$label_success_standard$"
  task_contract_reward_effect_wartime_compensations_desc: "$label_success_standard$"
  admin_request_choose_opportunity: "Tato situace vám umožňuje zvolit výsledek"
- overdue_taxes_request: "Vyřešte situaci s případným využitím vašeho [diplomacy|E] nebo [stewardship|E]"
+ overdue_taxes_request: "Vyřešte situaci s případným využitím vašeho [Concept('diplomacy','diplomacií')|E] nebo [Concept('stewardship','správcovství')|E]" # todo: CONCEPT CASE
  hoarding_mayor_request: "$admin_request_choose_opportunity$"
  bountiful_harvest_request: "$admin_request_choose_opportunity$"
- rampant_bandits_request: "Vyřešte situaci s případným využitím vašeho [martial|E] nebo [intrigue|E]"
+ rampant_bandits_request: "Vyřešte situaci s případným využitím vašeho [Concept('martial','válečnictvím')|E] nebo [Concept('intrigue','pletichářství')|E]" # todo: CONCEPT CASE
  discontent_soldiers_request: "$admin_request_choose_opportunity$"
  inept_mayor_request: "$admin_request_choose_opportunity$"
- prov_investment_request: "Vyřešte situaci s případným využitím vašeho [martial|E], [stewardship|E] nebo [intrigue|E]"
+ prov_investment_request: "Vyřešte situaci s případným využitím vašeho [Concept('martial','válečnictvím')|E], [Concept('stewardship','správcovstvím')|E] nebo [Concept('intrigue','pletichářství')|E]" # todo: CONCEPT CASE
  raiding_peasants_request: "$admin_request_choose_opportunity$"
- wild_predators_request: "Vyřešte situaci s případným využitím vašeho [martial|E], [stewardship|E] nebo [prowess|E]"
+ wild_predators_request: "Vyřešte situaci s případným využitím vašeho [Concept('martial','válečnictvím')|E], [Concept('stewardship','správcovstvím')|E] nebo [Concept('prowess','udatnost')|E]" # todo: CONCEPT CASE
  evil_presence_request: "$admin_request_choose_opportunity$"
  miraculous_healing_request: "$admin_request_choose_opportunity$"
  buried_treasure_request: "$admin_request_choose_opportunity$"
  public_land_request: "$admin_request_choose_opportunity$"
- mad_prophet_request: "Vyřešte situaci s případným využitím vašeho [martial|E] nebo [learning|E]"
+ mad_prophet_request: "Vyřešte situaci s případným využitím vašeho [Concept('martial','válečnictvím')|E] nebo [Concept('learning','učenost')|E]" # todo: CONCEPT CASE
  titles_sale_request: "$admin_request_choose_opportunity$"
  hungry_times_request: "$admin_request_choose_opportunity$"
- wartime_measures_request: "Vyřešte situaci s případným využitím vašeho [martial|E] nebo [stewardship|E]"
- task_contract_location_not_in_realm: "Nejste [GetPlayer.Custom('GetGovernorConcept')] lokality [task_contract_possessive|E]"
+ wartime_measures_request: "Vyřešte situaci s případným využitím vašeho [Concept('martial','válečnictvím')|E] nebo [Concept('stewardship','správcovství')|E]" # todo: CONCEPT CASE
+ task_contract_location_not_in_realm: "Nejste [GetPlayer.Custom('GetGovernorConcept')] lokality [Concept('task_contract_possessive','zakázky')|E]" # todo: CONCEPT CASE

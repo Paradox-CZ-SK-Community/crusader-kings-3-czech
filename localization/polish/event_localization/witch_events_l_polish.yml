@@ -34,7 +34,7 @@
  witch.2003.desc: "Pozoruji spící postavu [target.GetFirstName], zatímco pronesu krátkou modlitbu k [owner.GetFaith.WitchGodName]. Jakmile poslední šeptané slovo opustí mé rty, [target.GetSheHe] se pohně, jako by jeho/její podvědomí na tento okamžik čekalo.\n\nKdyž vystoupím ze stínů a nabídnu [target.GetFirstNameNoTooltip] [owner.GetFaith.WitchGodHerHis|U] požehnání, v jeho/jejích očích není strachu ani váhání. Ne, jeho/její přijetí je upřímné a hladové."
  witch.2003.a: "Vítej v našem společenství, [target.Custom('SisterBrother')|U]."
  witch.2003.b: "Teď mohu [target.GetHerHim] konečně ukázat svou pravou tvář."
- witch.2003.b.tt: "[target.GetShortUIName|U] musí znát tvé [secret|E], aby [Select_CString(target.IsFemale,'byla','byl')] pozván na $activity_witch_ritual$"
+ witch.2003.b.tt: "[target.GetShortUIName|U] musí znát tvé [Concept('secret','tajemství')|E], aby [Select_CString(target.IsFemale,'byla','byl')] pozván na $activity_witch_ritual$" # todo: CONCEPT CASE
  witch.2003.c: "[target.GetSheHe|U] si musí najít vlastní cestu."
  witch.2003.message: "Čarodějnice mi odhalí [owner.GetHerselfHimself]"
  witch.2004.t: "$convert_to_witch$: Zavřená mysl, studené srdce"
@@ -59,7 +59,7 @@
  witch.leave.2010: "Jakmile jsem [target.GetFirstName] [Select_CString(target.IsFemale,'předala','předal')] to nejpodstatnější z moudrosti [ROOT.Char.GetFaith.WitchGodHerHis|U] a [Select_CString(target.IsFemale,'dala','dal')] [target.GetHerHim] jeho/její vlastní grimoár, odejdu."
  witch.end.2010: "\n\nKdyž otevírám dveře komnaty, slyším rychlé kroky mizet po chodbě. [Select_CString(ROOT.Char.IsFemale,'Poslouchala','Poslouchal')] mě někdo?"
  witch.2010.a: "Ať je zatracen [ROOT.Char.GetFaith.HighGodName]!"
- witch.2010.a.tt: "Někdo zná tvé [secret|E]"
+ witch.2010.a.tt: "Někdo zná tvé [Concept('secret','tajemství')|E]" # todo: CONCEPT CASE
  witch.2010.message: "Tajemství odhaleno"
  convert_to_witchcraft_key: "Přivést k čarodějnictví"
  convert_to_witchcraft_interaction: "$convert_to_witchcraft_key$ #weak (Plán)#!"
@@ -86,15 +86,15 @@
  activity_witch_ritual: "Velký obřad"
  activity_witch_ritual_name: "[ACTIVITY.GetOwner.GetNamePossessiveOrMy|U] Velký obřad"
  activity_witch_ritual_owner: "Hostitel"
- activity_witch_ritual_desc: "Skuteční následovníci s [GetTrait('witch').GetName( GetNullCharacter )] [trait|E] jsou pozváni oslavit moc [GetPlayer.GetFaith.WitchGodName] a ponořit se do jeho/jejích tajemství."
- activity_witch_ritual_destination_selection: "Velký obřad můžeš pořádat pouze ve svém [capital|E]."
- activity_witch_ritual_selection_tooltip: "Uctívej [GetPlayer.GetFaith.WitchGodName] a přijmi [GetPlayer.GetFaith.WitchGodHerHis|U] temný dar\n\nOčekávané odměny:\n$BULLET_WITH_TAB$[opinion_i] [opinion|E]\n$BULLET_WITH_TAB$[stress_loss_i] [stress|E] ztráta"
- activity_witch_ritual_province_capital_desc: "Toto je tvůj [capital|E]"
- activity_witch_ritual_province_domicile_desc: "Toto je tvůj [domicile|E]"
- activity_witch_ritual_province_both_desc: "$activity_witch_ritual_province_capital_desc$ a [domicile|E]"
- activity_witch_ritual_host_desc: "$BULLET_WITH_TAB$Může získat zkušenosti s životním stylem\n$BULLET_WITH_TAB$Účastníci mohou získat u přítomných postav [opinion|E]\n$BULLET_WITH_TAB$Účastníci mohou ztratit [stress_loss_i][stress|E]"
+ activity_witch_ritual_desc: "Skuteční následovníci s [GetTrait('witch').GetName( GetNullCharacter )] [Concept('trait','rysem')|E] jsou pozváni oslavit moc [GetPlayer.GetFaith.WitchGodName] a ponořit se do jeho/jejích tajemství." # todo: CONCEPT CASE
+ activity_witch_ritual_destination_selection: "Velký obřad můžeš pořádat pouze ve svém [Concept('capital','hlavním sídle')|E]." # todo: CONCEPT CASE
+ activity_witch_ritual_selection_tooltip: "Uctívej [GetPlayer.GetFaith.WitchGodName] a přijmi [GetPlayer.GetFaith.WitchGodHerHis|U] temný dar\n\nOčekávané odměny:\n$BULLET_WITH_TAB$[opinion_i] [Concept('opinion','Mínění')|E]\n$BULLET_WITH_TAB$[stress_loss_i] [Concept('stress','Stres')|E] ztráta" # todo: CONCEPT CASE
+ activity_witch_ritual_province_capital_desc: "Toto je tvůj [Concept('capital','hlavní sídlo')|E]" # todo: CONCEPT CASE
+ activity_witch_ritual_province_domicile_desc: "Toto je tvůj [Concept('domicile','domicil')|E]" # todo: CONCEPT CASE
+ activity_witch_ritual_province_both_desc: "$activity_witch_ritual_province_capital_desc$ a [Concept('domicile','domicil')|E]" # todo: CONCEPT CASE
+ activity_witch_ritual_host_desc: "$BULLET_WITH_TAB$Může získat zkušenosti s životním stylem\n$BULLET_WITH_TAB$Účastníci mohou získat u přítomných postav [Concept('opinion','mínění')|E]\n$BULLET_WITH_TAB$Účastníci mohou ztratit [stress_loss_i][Concept('stress','stres')|E]" # todo: CONCEPT CASE
  activity_witch_ritual_conclusion_desc: "[GetActivityType( 'activity_witch_ritual' ).GetName] skončil"
- activity_witch_ritual_guest_desc: "$BULLET_WITH_TAB$Účastníci mohou získat u přítomných postav [opinion|E]\n$BULLET_WITH_TAB$Účastníci mohou ztratit [stress_loss_i][stress|E]"
+ activity_witch_ritual_guest_desc: "$BULLET_WITH_TAB$Účastníci mohou získat u přítomných postav [Concept('opinion','mínění')|E]\n$BULLET_WITH_TAB$Účastníci mohou ztratit [stress_loss_i][Concept('stress','stres')|E]" # todo: CONCEPT CASE
  activity_witch_ritual_guest_help_text: "$activity_witch_ritual_desc$"
  witch_ritual_phase_desc: "Odevzdej se [GetPlayer.GetFaith.WitchGodName]"
  host_witch_ritual_title: "Velký obřad"
@@ -208,7 +208,7 @@
  witch.4001.b.neutral: "[annoying_clergy.GetShortUINameNoTooltip] je [Select_CString(annoying_clergy.IsFemale,'nejistá','nejistý')]"
  witch.4001.b.neutral.tt: "Můžeš se rozhodnout vzdát se nebo pokračovat v pokusech"
  witch.4001.b.failure: "Nepodaří se ti ovlivnit [annoying_clergy.GetShortUINameNoTooltip]"
- witch_4001_corruption_success_effect.tt: "Můžeš [blackmail|E] [annoying_clergy.GetShortUIName] kvůli [annoying_clergy.GetHerHis] [secret|E]"
+ witch_4001_corruption_success_effect.tt: "Můžeš [Concept('blackmail','vydírání')|E] [annoying_clergy.GetShortUIName] kvůli [annoying_clergy.GetHerHis] [Concept('secret','tajemství')|E]" # todo: CONCEPT CASE
  witch.4002.witch.desc: "[ROOT.Char.GetFaith.WitchGodName|U] mi musel pomoci, protože můj plán dopadl ještě lépe, než jsem [Select_CString(ROOT.Char.IsFemale,'čekala','čekal')]!\n\n"
  witch.4002.impious.desc: "Můj plán [Select_CString(ROOT.Char.IsFemale,'byla','byl')] dokonalý!\n\n"
  witch.4002.gluttonous.desc: "[annoying_clergy.GetTitledFirstName] se [Select_CString(annoying_clergy.IsFemale,'přecpala','přecpal')] [annoying_clergy.GetHerselfHimself] dorty napuštěnými drogami, které jsem [Select_CString(annoying_clergy.IsFemale,'poslala','poslal')] do [Select_CString(annoying_clergy.IsFemale,'jejích','jeho')] komnat. Pak [Select_CString(annoying_clergy.IsFemale,'pobíhala','pobíhal')] po městě s džemem a drobečky umazanými kolem [Select_CString(annoying_clergy.IsFemale,'jejích','jeho')] úst, než [Select_CString(annoying_clergy.IsFemale,'usnula','usnul')] na schodech [annoying_clergy.GetFaith.HouseOfWorship]!"

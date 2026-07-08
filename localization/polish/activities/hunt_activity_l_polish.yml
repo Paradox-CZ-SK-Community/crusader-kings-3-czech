@@ -8,35 +8,35 @@
  legendary_header: "$hunt_type_legendary$:"
  falconry_header: "$hunt_type_falconry$:"
  activity_hunt_destination_selection: "[SelectLocalization( GetPlayer.GetGovernment.HasGovernmentFlag( 'government_is_nomadic' ), 'activity_hunt_destination_selection_nomadic', 'activity_hunt_destination_selection_regular' )]"
- activity_hunt_destination_selection_nomadic: "Některá území jsou pro lov vhodnější než jiná. U běžných lovů obdržíte vyšší [hunt_success_chance_no_prefix|E] v divokých, odlehlých provinciích; pro Nerges chcete vysoce [fertility|E] provincie, které dlouho neviděly Nerge."
- activity_hunt_destination_selection_regular: "Některá území jsou pro lov vhodnější než jiná; [hunt_success_chance_no_prefix|E] bude vyšší v provinciích, které jsou divoké, odlehlé, mají nedávné [hunt_sightings_no_prefix|E] nebo speciální [buildings|E]."
- hunt_success_bar: "[hunt_success_chance_no_prefix|E]: [Activity.MakeScope.Var( 'hunt_success_chance' ).GetValue|V1]%#!"
- hunt_cannot_hunt_parameter_tt: "[culture|E] nemůže lovit"
- activity_hunt_province_desc: "Pořádáte lov v [ROOT.Province.GetName]\nRůzné faktory ovlivňují [hunt_success_chance|E]\n"
+ activity_hunt_destination_selection_nomadic: "Některá území jsou pro lov vhodnější než jiná. U běžných lovů obdržíte vyšší [Concept('hunt_success_chance_no_prefix','šance na úspěch')|E] v divokých, odlehlých provinciích; pro Nerges chcete vysoce [Concept('fertility','plodnost')|E] provincie, které dlouho neviděly Nerge." # todo: CONCEPT CASE
+ activity_hunt_destination_selection_regular: "Některá území jsou pro lov vhodnější než jiná; [Concept('hunt_success_chance_no_prefix','šance na úspěch')|E] bude vyšší v provinciích, které jsou divoké, odlehlé, mají nedávné [Concept('hunt_sightings_no_prefix','zpozorování')|E] nebo speciální [Concept('buildings','budovy')|E]." # todo: CONCEPT CASE
+ hunt_success_bar: "[Concept('hunt_success_chance_no_prefix','Šance na úspěch')|E]: [Activity.MakeScope.Var( 'hunt_success_chance' ).GetValue|V1]%#!" # todo: CONCEPT CASE
+ hunt_cannot_hunt_parameter_tt: "[Concept('culture','Kultura')|E] nemůže lovit" # todo: CONCEPT CASE
+ activity_hunt_province_desc: "Pořádáte lov v [ROOT.Province.GetName]\nRůzné faktory ovlivňují [Concept('hunt_success_chance','šance na úspěch lovu')|E]\n" # todo: CONCEPT CASE
  activity_hunt_province_desc_standard_sighting: "#P +++ [ROOT.Province.GetTitle.GetDeJureLiege.Custom('GetAnimalType')|U] pozorování#!\n"
  activity_hunt_province_desc_dangerous_sighting: "#P +++ [ROOT.Province.GetTitle.GetDeJureLiege.Custom('GetAnimalType')|U] pozorování#!\n"
  activity_hunt_province_desc_falconry_sighting: "#P +++ [ROOT.Province.GetTitle.GetDeJureLiege.Custom('GetAnimalType')|U] pozorování#!\n"
- activity_hunt_province_desc_terrain_great: "#P ++ [ROOT.Province.GetTerrain.GetNameNoTooltip]#! ([terrain|E])\n"
- activity_hunt_province_desc_terrain_good: "#P + [ROOT.Province.GetTerrain.GetNameNoTooltip]#! ([terrain|E])\n"
- activity_hunt_province_desc_terrain_bad: "#N - [ROOT.Province.GetTerrain.GetNameNoTooltip]#! ([terrain|E])\n"
- activity_hunt_province_desc_terrain_terrible: "#N -- [ROOT.Province.GetTerrain.GetNameNoTooltip]#! ([terrain|E])\n"
+ activity_hunt_province_desc_terrain_great: "#P ++ [ROOT.Province.GetTerrain.GetNameNoTooltip]#! ([Concept('terrain','terén')|E])\n" # todo: CONCEPT CASE
+ activity_hunt_province_desc_terrain_good: "#P + [ROOT.Province.GetTerrain.GetNameNoTooltip]#! ([Concept('terrain','terén')|E])\n" # todo: CONCEPT CASE
+ activity_hunt_province_desc_terrain_bad: "#N - [ROOT.Province.GetTerrain.GetNameNoTooltip]#! ([Concept('terrain','terén')|E])\n" # todo: CONCEPT CASE
+ activity_hunt_province_desc_terrain_terrible: "#N -- [ROOT.Province.GetTerrain.GetNameNoTooltip]#! ([Concept('terrain','terén')|E])\n" # todo: CONCEPT CASE
  activity_hunt_province_desc_mismanaged_game: "#N - [GetModifier('hunt_mismanaged_game_modifier').GetName]#!"
  activity_hunt_province_desc_punished_poachers: "#P + [GetModifier('hunt_punished_locals_modifier').GetName]#!"
  activity_hunt_province_desc_abundant_game: "#P + [GetModifier('ep3_abundant_game_modifier').GetName]#!"
  activity_hunt_province_desc_no_holding: "#P + Žádné [holding|P]#!\n"
- activity_hunt_province_desc_hunting_grounds_minor: "#P + $building_type_hunting_grounds_01$#! ([building|E])\n"
- activity_hunt_province_desc_hunting_grounds_medium: "#P ++ $building_type_hunting_grounds_01$#! ([building|E])\n"
- activity_hunt_province_desc_hunting_grounds_major: "#P +++ $building_type_hunting_grounds_01$#! ([building|E])\n"
- activity_hunt_province_desc_rainbow_mountains_major: "#P +++ $building_type_rainbow_mountains_01$#! ([building|E])\n"
- activity_hunt_province_desc_chocolate_hills_major: "#P +++ $building_type_chocolate_hills_01$#! ([building|E])\n" # todo: NEW TRANSLATION
- activity_hunt_province_desc_visegrad_castle_01_major: "#P +++ $building_type_visegrad_castle_01$#! ([building|E])\n"
- activity_hunt_province_desc_legendary_hunting_lodge: "#P +++ $building_legendary_hunting_lodge$ ([building|E])#!\n" # todo: NEW TRANSLATION
- activity_hunt_province_desc_logging_camps_minor: "#N - $building_type_logging_camps_01$#! ([building|E])\n"
- activity_hunt_province_desc_logging_camps_medium: "#N -- $building_type_logging_camps_01$#! ([building|E])\n"
- activity_hunt_province_desc_logging_camps_major: "#N --- $building_type_logging_camps_01$#! ([building|E])\n"
- activity_hunt_province_desc_royal_forest_minor: "#P + $building_type_royal_forest_01$#! ([building|E])\n"
- activity_hunt_province_desc_royal_forest_medium: "#P ++ $building_type_royal_forest_01$#! ([building|E])\n"
- activity_hunt_province_desc_royal_forest_major: "#P +++ $building_type_royal_forest_01$#! ([building|E])\n"
+ activity_hunt_province_desc_hunting_grounds_minor: "#P + $building_type_hunting_grounds_01$#! ([Concept('building','budova')|E])\n" # todo: CONCEPT CASE
+ activity_hunt_province_desc_hunting_grounds_medium: "#P ++ $building_type_hunting_grounds_01$#! ([Concept('building','budova')|E])\n" # todo: CONCEPT CASE
+ activity_hunt_province_desc_hunting_grounds_major: "#P +++ $building_type_hunting_grounds_01$#! ([Concept('building','budova')|E])\n" # todo: CONCEPT CASE
+ activity_hunt_province_desc_rainbow_mountains_major: "#P +++ $building_type_rainbow_mountains_01$#! ([Concept('building','budova')|E])\n" # todo: CONCEPT CASE
+ activity_hunt_province_desc_chocolate_hills_major: "#P +++ $building_type_chocolate_hills_01$#! ([Concept('building','budova')|E])\n" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ activity_hunt_province_desc_visegrad_castle_01_major: "#P +++ $building_type_visegrad_castle_01$#! ([Concept('building','budova')|E])\n" # todo: CONCEPT CASE
+ activity_hunt_province_desc_legendary_hunting_lodge: "#P +++ $building_legendary_hunting_lodge$ ([Concept('building','budova')|E])#!\n" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ activity_hunt_province_desc_logging_camps_minor: "#N - $building_type_logging_camps_01$#! ([Concept('building','budova')|E])\n" # todo: CONCEPT CASE
+ activity_hunt_province_desc_logging_camps_medium: "#N -- $building_type_logging_camps_01$#! ([Concept('building','budova')|E])\n" # todo: CONCEPT CASE
+ activity_hunt_province_desc_logging_camps_major: "#N --- $building_type_logging_camps_01$#! ([Concept('building','budova')|E])\n" # todo: CONCEPT CASE
+ activity_hunt_province_desc_royal_forest_minor: "#P + $building_type_royal_forest_01$#! ([Concept('building','budova')|E])\n" # todo: CONCEPT CASE
+ activity_hunt_province_desc_royal_forest_medium: "#P ++ $building_type_royal_forest_01$#! ([Concept('building','budova')|E])\n" # todo: CONCEPT CASE
+ activity_hunt_province_desc_royal_forest_major: "#P +++ $building_type_royal_forest_01$#! ([Concept('building','budova')|E])\n" # todo: CONCEPT CASE
  activity_hunt_province_desc_development: "#N - Vysoký rozvoj#!\n"
  activity_hunt_province_desc_development_bad: "#N -- Vysoký rozvoj#!\n"
  activity_hunt_province_desc_development_terrible: "#N --- Vysoký rozvoj#!\n"
@@ -44,30 +44,30 @@
  activity_hunt_province_desc_recent_hunt_medium: "#N -- Nedávno konané lovy#!\n"
  activity_hunt_province_desc_recent_hunt_minor: "#N - Nedávno konaný lov#!\n"
  activity_hunt_province_desc_wild_predators: "#N - [GetModifier('ep3_wild_predators_modifier').GetName]#!"
- activity_hunt_province_desc_culture: "#P + [ROOT.Province.GetTerrain.GetNameNoTooltip]#! ([culture_traditions|E])\n"
+ activity_hunt_province_desc_culture: "#P + [ROOT.Province.GetTerrain.GetNameNoTooltip]#! ([Concept('culture_traditions','kulturní tradice')|E])\n" # todo: CONCEPT CASE
  activity_hunt_province_desc_hidden_hinterlands: "#p +++ Skrytá pohraničí#!\n"
  activity_hunt_province_desc_fertility: "#P + Vysoká úrodnost#!\n"
  activity_hunt_province_desc_fertility_good: "#P ++ Vysoká úrodnost#!\n"
  activity_hunt_province_desc_fertility_great: "#P +++ Vysoká úrodnost#!\n"
- activity_hunt_host_desc_piety: "$BULLET_WITH_TAB$Účastníci mohou získat [piety_i|E][piety|E]\n$BULLET_WITH_TAB$Účastníci mohou ztratit [stress_loss_i][stress|E]\n"
- activity_hunt_host_desc_prestige: "$BULLET_WITH_TAB$Účastníci mohou získat [prestige_i|E][prestige|E]\n$BULLET_WITH_TAB$Účastníci mohou získat [legitimacy_i] [legitimacy|E]\n$BULLET_WITH_TAB$Účastníci mohou ztratit [stress_loss_i][stress|E]\n"
- activity_hunt_host_desc_trait_xp: "$BULLET_WITH_TAB$Účastníci mohou získat [GetTrait('lifestyle_hunter').GetName( GetNullCharacter )] [trait_level_track_xp|E]\n"
- activity_hunt_host_desc_trait: "$BULLET_WITH_TAB$Účastníci mohou získat [GetTrait('lifestyle_hunter').GetName( GetNullCharacter )] [trait|E]\n"
- activity_hunt_host_desc: "[SelectLocalization(ObjectsEqual(GetPlayer.GetGovernment, GetGovernment('nomad_government')),'activity_hunt_nomad_additions_desc', 'blank_line')]$BULLET_WITH_TAB$Může získat[GetVassalStance( 'glory_hound' ).GetTextIcon][GetVassalStance( 'glory_hound' ).GetName] [vassal|E] [opinion|E]\n$BULLET_WITH_TAB$Může získat trofej [artifacts|E]\n"
+ activity_hunt_host_desc_piety: "$BULLET_WITH_TAB$Účastníci mohou získat [Concept('piety_i','[GetLocalPlayerPietyTextIcon]')|E][Concept('piety','zbožnost')|E]\n$BULLET_WITH_TAB$Účastníci mohou ztratit [stress_loss_i][Concept('stress','stres')|E]\n" # todo: CONCEPT CASE
+ activity_hunt_host_desc_prestige: "$BULLET_WITH_TAB$Účastníci mohou získat [Concept('prestige_i','@prestige_icon!')|E][Concept('prestige','prestiž')|E]\n$BULLET_WITH_TAB$Účastníci mohou získat [legitimacy_i] [Concept('legitimacy','legitimita')|E]\n$BULLET_WITH_TAB$Účastníci mohou ztratit [stress_loss_i][Concept('stress','stres')|E]\n" # todo: CONCEPT CASE
+ activity_hunt_host_desc_trait_xp: "$BULLET_WITH_TAB$Účastníci mohou získat [GetTrait('lifestyle_hunter').GetName( GetNullCharacter )] [Concept('trait_level_track_xp','zkušenosti rysu')|E]\n" # todo: CONCEPT CASE
+ activity_hunt_host_desc_trait: "$BULLET_WITH_TAB$Účastníci mohou získat [GetTrait('lifestyle_hunter').GetName( GetNullCharacter )] [Concept('trait','rys')|E]\n" # todo: CONCEPT CASE
+ activity_hunt_host_desc: "[SelectLocalization(ObjectsEqual(GetPlayer.GetGovernment, GetGovernment('nomad_government')),'activity_hunt_nomad_additions_desc', 'blank_line')]$BULLET_WITH_TAB$Může získat[GetVassalStance( 'glory_hound' ).GetTextIcon][GetVassalStance( 'glory_hound' ).GetName] [Concept('vassal','vazal')|E] [Concept('opinion','mínění')|E]\n$BULLET_WITH_TAB$Může získat trofej [Concept('artifacts','artefakty')|E]\n" # todo: CONCEPT CASE
  activity_legend_seed_tt: "$BULLET_WITH_TAB$Může získat [legend_seed|E]\n"
- activity_hunt_guest_desc_accolade: "$BULLET_WITH_TAB$Účastní [acclaimed_knights|E] mohou získat [glory|E]\n"
- activity_hunt_host_desc_animal: "\nKořist [hunt_danger_no_prefix|E]/Odměny podle vzácnosti:\n$BULLET_WITH_TAB$[prestige_i|E][prestige|E]\n$BULLET_WITH_TAB$Trofej [artifacts|E]"
+ activity_hunt_guest_desc_accolade: "$BULLET_WITH_TAB$Účastní [Concept('acclaimed_knights','uznávaní rytíři')|E] mohou získat [Concept('glory','sláva')|E]\n" # todo: CONCEPT CASE
+ activity_hunt_host_desc_animal: "\nKořist [Concept('hunt_danger_no_prefix','nebezpečnost')|E]/Odměny podle vzácnosti:\n$BULLET_WITH_TAB$[Concept('prestige_i','@prestige_icon!')|E][Concept('prestige','Prestiž')|E]\n$BULLET_WITH_TAB$Trofej [Concept('artifacts','artefakty')|E]" # todo: CONCEPT CASE
  activity_hunt_host_desc_moh: "\n@warning_icon! #negative_value Nepovoláváte [GetCourtPositionType('master_of_hunt_court_position').GetName()]"
  activity_hunt_host_desc_huntsperson: "\n@warning_icon! #negative_value Nepovoláváte [GetCourtPositionType('huntperson_camp_officer').GetName()]"
- activity_hunt_host_desc_recent: "\n@warning_icon! #negative_value Ve všech spravovaných [counties|E] se nedávno konal [GetActivityType('activity_hunt').GetName]"
+ activity_hunt_host_desc_recent: "\n@warning_icon! #negative_value Ve všech spravovaných [Concept('counties','hrabství')|E] se nedávno konal [GetActivityType('activity_hunt').GetName]" # todo: CONCEPT CASE
  activity_hunt_conclusion_desc_legendary_success: "Lov na bájného [activity.Custom('GetLegendaryColor')] [activity.Custom('GetAnimalType')] je konečně u konce! O tomto dni budou zpívány písně a dovednosti potřebné k sražení takového zvířete budou oslavovány!"
  activity_hunt_conclusion_desc_legendary: "Pátrání po [activity.Custom('GetLegendaryColor')] [activity.Custom('GetAnimalType')] pokračuje; jeho konec zatím není na obzoru..."
  activity_hunt_conclusion_desc_falconry_success: "Naši [activity.Custom('GetRaptorPlural')] se v lovu na [activity.Custom('GetAnimalPlural')] vyznamenali!"
  activity_hunt_conclusion_desc_falconry: "Naši [activity.Custom('GetRaptorPlural')] nebyli úspěšní v lovu [activity.Custom('GetAnimalPlural')]..."
  activity_hunt_conclusion_desc_standard_success: "Vracíme se domů ze lovu [activity.Custom('GetAnimalPlural')] ve slávě!"
  activity_hunt_conclusion_desc_standard: "Náš lov na [activity.Custom('GetAnimalPlural')] tentokrát nebyl úspěšný..."
- activity_hunt_guest_help_text: "[activity_guests|E] budou mít příležitost k družení, a pokud se aktivně zapojí, zlepší své lovecké a bojové schopnosti.\n[GetVassalStance( 'glory_hound' ).GetTextIcon][GetVassalStance( 'glory_hound' ).GetName] [vassals|E] ocení tento sport a získají [opinion|E].\n$activity_hunt_guest_help_text_party_size$."
- activity_hunt_guest_help_text_party_size: "Každý přítomný [GetTrait('lifestyle_hunter').GetName( GetNullCharacter )] mírně zvýší [hunt_success_chance_no_prefix|E]"
+ activity_hunt_guest_help_text: "[Concept('activity_guests','Hosté aktivity')|E] budou mít příležitost k družení, a pokud se aktivně zapojí, zlepší své lovecké a bojové schopnosti.\n[GetVassalStance( 'glory_hound' ).GetTextIcon][GetVassalStance( 'glory_hound' ).GetName] [Concept('vassals','Vazalové')|E] ocení tento sport a získají [Concept('opinion','mínění')|E].\n$activity_hunt_guest_help_text_party_size$." # todo: CONCEPT CASE
+ activity_hunt_guest_help_text_party_size: "Každý přítomný [GetTrait('lifestyle_hunter').GetName( GetNullCharacter )] mírně zvýší [Concept('hunt_success_chance_no_prefix','šance na úspěch')|E]" # todo: CONCEPT CASE
  hunt_type_stress: "$BULLET_WITH_TAB$@stress_icon! Snížení stresu"
  hunt_type_safety: "$BULLET_WITH_TAB$@death_icon! Bezpečí"
  hunt_type_skill_prowess: "$BULLET_WITH_TAB$@skill_prowess_icon! Obratnost"
@@ -75,28 +75,28 @@
  hunt_type_skill_learning: "$BULLET_WITH_TAB$@skill_learning_icon! Učení"
  hunt_phase: "Lov"
  hunt_type_standard: "Lov"
- hunt_type_standard_desc: "$EFFECT_LIST_BULLET$ Vyberte kořist z různých místních zvířat\n$EFFECT_LIST_BULLET$ Zvyšuje $trait_track_hunter$ [GetTrait('lifestyle_hunter').GetName( GetNullCharacter )] [trait_level_track_xp|E]\n$EFFECT_LIST_BULLET$ Vyšší [hunt_danger_no_prefix|E] dává více [prestige_i|E][prestige|E]\n$EFFECT_LIST_BULLET$ Postavy s vojenským zaměřením se mohou aktivně zapojit\n$EFFECT_LIST_BULLET$ Postavy bez vojenského zaměření mohou pouze pozorovat\n#weak Hrdá a prohnaná zvířata číhají ve volné přírodě; přelstít a přemoci je zkouší statečnost a zdokonaluje dovednosti.#!"
+ hunt_type_standard_desc: "$EFFECT_LIST_BULLET$ Vyberte kořist z různých místních zvířat\n$EFFECT_LIST_BULLET$ Zvyšuje $trait_track_hunter$ [GetTrait('lifestyle_hunter').GetName( GetNullCharacter )] [Concept('trait_level_track_xp','zkušenosti rysu')|E]\n$EFFECT_LIST_BULLET$ Vyšší [Concept('hunt_danger_no_prefix','nebezpečnost')|E] dává více [Concept('prestige_i','@prestige_icon!')|E][Concept('prestige','prestiž')|E]\n$EFFECT_LIST_BULLET$ Postavy s vojenským zaměřením se mohou aktivně zapojit\n$EFFECT_LIST_BULLET$ Postavy bez vojenského zaměření mohou pouze pozorovat\n#weak Hrdá a prohnaná zvířata číhají ve volné přírodě; přelstít a přemoci je zkouší statečnost a zdokonaluje dovednosti.#!" # todo: CONCEPT CASE
  hunt_type_legendary: "Legendární"
- hunt_type_legendary_desc: "$EFFECT_LIST_BULLET$ Hledejte mýtické zvíře pozorované v oblasti\n$EFFECT_LIST_BULLET$ Zvyšuje $trait_track_hunter$ [GetTrait('lifestyle_hunter').GetName( GetNullCharacter )] [trait_level_track_xp|E]\n$EFFECT_LIST_BULLET$ Vyšší [hunt_danger_no_prefix|E] dává více [prestige_i|E][prestige|E]\n$EFFECT_LIST_BULLET$ Postavy s vojenským zaměřením se mohou účastnit\n$EFFECT_LIST_BULLET$ Postavy bez vojenského zaměření mohou pouze pozorovat\n#weak Mytologická stvoření jsou často učenci považována za legendu, ale lesy mohou stále skrývat mnoho záhad.#!"
+ hunt_type_legendary_desc: "$EFFECT_LIST_BULLET$ Hledejte mýtické zvíře pozorované v oblasti\n$EFFECT_LIST_BULLET$ Zvyšuje $trait_track_hunter$ [GetTrait('lifestyle_hunter').GetName( GetNullCharacter )] [Concept('trait_level_track_xp','zkušenosti rysu')|E]\n$EFFECT_LIST_BULLET$ Vyšší [Concept('hunt_danger_no_prefix','nebezpečnost')|E] dává více [Concept('prestige_i','@prestige_icon!')|E][Concept('prestige','prestiž')|E]\n$EFFECT_LIST_BULLET$ Postavy s vojenským zaměřením se mohou účastnit\n$EFFECT_LIST_BULLET$ Postavy bez vojenského zaměření mohou pouze pozorovat\n#weak Mytologická stvoření jsou často učenci považována za legendu, ale lesy mohou stále skrývat mnoho záhad.#!" # todo: CONCEPT CASE
  hunt_type_falconry: "Sokolnictví"
- hunt_type_falconry_desc: "$EFFECT_LIST_BULLET$ Vyberte kořist z různých druhů ptactva\n$EFFECT_LIST_BULLET$ Zvyšuje $trait_track_falconer$ [GetTrait('lifestyle_hunter').GetName( GetNullCharacter )] [trait_level_track_xp|E]\n$EFFECT_LIST_BULLET$ Obě pohlaví se mohou účastnit\n#weak Ačkoli nákladné, sokolnictví přináší radost z ovládnutí přírody, kterou nelze mezi šlechtickými zálibami rovnat.#!"
+ hunt_type_falconry_desc: "$EFFECT_LIST_BULLET$ Vyberte kořist z různých druhů ptactva\n$EFFECT_LIST_BULLET$ Zvyšuje $trait_track_falconer$ [GetTrait('lifestyle_hunter').GetName( GetNullCharacter )] [Concept('trait_level_track_xp','zkušenosti rysu')|E]\n$EFFECT_LIST_BULLET$ Obě pohlaví se mohou účastnit\n#weak Ačkoli nákladné, sokolnictví přináší radost z ovládnutí přírody, kterou nelze mezi šlechtickými zálibami rovnat.#!" # todo: CONCEPT CASE
  hunt_option_attendants: "Doprovod"
  hunt_attendants_few: "Místní strážci zvěře"
  hunt_attendants_few_desc: "#weak Malá skupina doprovodných lovců je nápomocna místním strážcům zvěře.#!"
  hunt_attendants_normal: "Pátrací družiny"
- hunt_attendants_normal_desc: "$BULLET_WITH_TAB$Mírně zvyšuje [hunt_success_chance_no_prefix|E]$hunt_attendants_roco_tt$\n\n#weak Skupiny služebníků pomáhají při hledání a zatlačování zvěře.#!"
+ hunt_attendants_normal_desc: "$BULLET_WITH_TAB$Mírně zvyšuje [Concept('hunt_success_chance_no_prefix','šance na úspěch')|E]$hunt_attendants_roco_tt$\n\n#weak Skupiny služebníků pomáhají při hledání a zatlačování zvěře.#!" # todo: CONCEPT CASE
  hunt_attendants_many: "Honiči"
- hunt_attendants_many_desc: "$BULLET_WITH_TAB$Výrazně zvyšuje [hunt_success_chance_no_prefix|E]$hunt_attendants_roco_tt$\n\n#weak Oddané skupiny lovců jsou připraveny pronásledovat a směrovat zvěř.#!"
+ hunt_attendants_many_desc: "$BULLET_WITH_TAB$Výrazně zvyšuje [Concept('hunt_success_chance_no_prefix','šance na úspěch')|E]$hunt_attendants_roco_tt$\n\n#weak Oddané skupiny lovců jsou připraveny pronásledovat a směrovat zvěř.#!" # todo: CONCEPT CASE
  hunt_option_party_size: "Velikost družiny"
  hunt_party_size_few: "Malá družina"
- hunt_party_size_few_desc: "$BULLET_WITH_TAB$Vaši [GetPlayer.Custom('GetHuntMasterTooltipDesc')], [GetCourtPositionType('bodyguard_court_position').GetName()], [GetCourtPositionType('court_physician_court_position').GetName()], [spouses|E], [friends|E], [lovers|E], a lovci se připojí\n\n#weak Malá skupina důvěrníků a dvořanů.#!"
+ hunt_party_size_few_desc: "$BULLET_WITH_TAB$Vaši [GetPlayer.Custom('GetHuntMasterTooltipDesc')], [GetCourtPositionType('bodyguard_court_position').GetName()], [GetCourtPositionType('court_physician_court_position').GetName()], [Concept('spouses','choti')|E], [Concept('friends','přátele')|E], [Concept('lovers','milence')|E], a lovci se připojí\n\n#weak Malá skupina důvěrníků a dvořanů.#!" # todo: CONCEPT CASE
  hunt_party_size_normal: "Rozumná družina"
- hunt_party_size_normal_desc: "$BULLET_WITH_TAB$Více [prestige_i|E][prestige|E] po skončení\n$BULLET_WITH_TAB$Bezúzemní $knight_culture_player_plural$ a [GetTrait('lazy').GetName( GetNullCharacter )] nebo vojensky vychovaní [courtiers|E] a [guests|E] se připojí\n\n#weak Poctivá skupina významných osob a dvořanů z říše.#!"
+ hunt_party_size_normal_desc: "$BULLET_WITH_TAB$Více [Concept('prestige_i','@prestige_icon!')|E][Concept('prestige','prestiž')|E] po skončení\n$BULLET_WITH_TAB$Bezúzemní $knight_culture_player_plural$ a [GetTrait('lazy').GetName( GetNullCharacter )] nebo vojensky vychovaní [Concept('courtiers','dvořané')|E] a [Concept('guests','hosté')|E] se připojí\n\n#weak Poctivá skupina významných osob a dvořanů z říše.#!" # todo: CONCEPT CASE
  hunt_party_size_many: "Rozsáhlá družina"
- hunt_party_size_many_desc: "$BULLET_WITH_TAB$Výrazně více [prestige_i|E][prestige|E] po skončení\n$BULLET_WITH_TAB$Všichni [courtiers|E] a [guests|E] se připojí\n\n#weak Rozsáhlý výběr z dvoru, říše a jejího okolí.#!"
+ hunt_party_size_many_desc: "$BULLET_WITH_TAB$Výrazně více [Concept('prestige_i','@prestige_icon!')|E][Concept('prestige','prestiž')|E] po skončení\n$BULLET_WITH_TAB$Všichni [Concept('courtiers','dvořané')|E] a [Concept('guests','hosté')|E] se připojí\n\n#weak Rozsáhlý výběr z dvoru, říše a jejího okolí.#!" # todo: CONCEPT CASE
  hunt_activity_master_of_hunt_appointed: "$master_of_hunt_court_position$ jmenován"
  hunt_attendants_roco_tt: "[SelectLocalization( HasDlcFeature( 'royal_court' ), 'hunt_attendants_roco_tt_ROCO_DLC', 'hunt_attendants_roco_tt_NO_ROCO_DLC' )]"
- hunt_attendants_roco_tt_ROCO_DLC: "\n$BULLET_WITH_TAB$Efekt roste s $court_servants$ [court_amenities|E]"
+ hunt_attendants_roco_tt_ROCO_DLC: "\n$BULLET_WITH_TAB$Efekt roste s $court_servants$ [Concept('court_amenities','dvorský komfort')|E]" # todo: CONCEPT CASE
  hunt_attendants_roco_tt_NO_ROCO_DLC: ""
  artifact_animal_trinket_name: "[owner.Custom('GetAnimalType')|U] [newly_created_artifact.Custom('ArtifactAnimalTrinketType')|U]"
  artifact_animal_trinket_description: "[newly_created_artifact.Custom('ArtifactAnimalTrinketType')] z [owner.Custom('GetAnimalType')], ulovený [creator.GetName] v [location.GetBaronyNameExplicitly]."
@@ -130,35 +130,35 @@
  I_AM_REMOVED_FROM_ACTIVITY_PAST: "[Select_CString(ROOT.Char.IsFemale,'Byla','Byl')] jsem [Select_CString(ROOT.Char.IsFemale,'odstraněna','odstraněn')] z aktivity"
  CHARACTER_IS_REMOVED_FROM_ACTIVITY_PAST: "[Select_CString(ROOT.Char.IsFemale,'Odstraněna','Odstraněn')] [CHARACTER.GetShortUIName] z aktivity"
  GLOBAL_IS_REMOVED_FROM_ACTIVITY_PAST: "[CHARACTER.GetShortUIName] [Select_CString(CHARACTER.IsFemale,'byla odstraněna','byl odstraněn')] z aktivity"
- hunt_success_chance: "[hunt_success_chance_no_prefix|E]"
+ hunt_success_chance: "[Concept('hunt_success_chance_no_prefix','Šance na úspěch')|E]" # todo: CONCEPT CASE
  hunt_base_cost: "Základní náklady"
- steppe_season_hunt_discount_desc: "[steppe_season|E]"
+ steppe_season_hunt_discount_desc: "[Concept('steppe_season','Stepní období')|E]" # todo: CONCEPT CASE
  hunt_activity_every_brave_participant_tt: "Všichni účastníci, kteří nejsou [GetTrait('craven').GetName( GetNullCharacter )]:"
  hunt_activity_every_craven_participant_tt: "Všichni účastníci s [GetTrait('craven').GetName( GetNullCharacter )]:"
- hunt.hide_tt: "Obdrží [activity.Custom('GetAnimalType')] kůži [court_artifact|E]"
- hunt.skull_tt: "Obdrží lebku [activity.Custom('GetAnimalType')] [court_artifact|E]"
- hunt.trinket_tt: "Obdrží ozdobu [activity.Custom('GetAnimalType')] [artifact|E]"
+ hunt.hide_tt: "Obdrží [activity.Custom('GetAnimalType')] kůži [Concept('court_artifact','dvorský artefakt')|E]" # todo: CONCEPT CASE
+ hunt.skull_tt: "Obdrží lebku [activity.Custom('GetAnimalType')] [Concept('court_artifact','dvorský artefakt')|E]" # todo: CONCEPT CASE
+ hunt.trinket_tt: "Obdrží ozdobu [activity.Custom('GetAnimalType')] [Concept('artifact','artefakt')|E]" # todo: CONCEPT CASE
  hunt_location_no_game_tt: "V tomto hrabství není vhodná zvěř"
  activity_every_attendee_tt: "Každý účastník [activity.GetShortName]"
  hunt_every_hunter_attendee_tt: "Každý přítomný [GetTrait('lifestyle_hunter').GetName( GetNullCharacter )]"
- every_other_attendee_tt: "Každý jiný [activity_guest|E]"
+ every_other_attendee_tt: "Každý jiný [Concept('activity_guest','host aktivity')|E]" # todo: CONCEPT CASE
  hunt_ends_tt: "[GetActivityType('activity_hunt').GetName] končí"
  hunt_success_tt: "[activity.GetShortName] #positive_value uspěje#!"
- hunt_fails_tt: "[activity.GetShortName] #X selže#! (#weak [hunt_success_chance_no_prefix|E]: [activity.MakeScope.Var('hunt_success_chance').GetValue|1]%)#!"
- hunt_activity_chase_tt: "[host.GetShortUIName|U] se pokusí #V zatlačit#! [activity.Custom('GetAnimalType')] #weak (Spear)#!\n@warning_icon! #X Tato metoda je více [hunt_dangerous|E]#!"
+ hunt_fails_tt: "[activity.GetShortName] #X selže#! (#weak [Concept('hunt_success_chance_no_prefix','šance na úspěch')|E]: [activity.MakeScope.Var('hunt_success_chance').GetValue|1]%)#!" # todo: CONCEPT CASE
+ hunt_activity_chase_tt: "[host.GetShortUIName|U] se pokusí #V zatlačit#! [activity.Custom('GetAnimalType')] #weak (Spear)#!\n@warning_icon! #X Tato metoda je více [Concept('hunt_dangerous','nebezpečné')|E]#!" # todo: CONCEPT CASE
  hunt_activity_ambush_tt: "[host.GetShortUIName|U] se pokusí #V přepadnout#! [activity.Custom('GetAnimalType')] #weak (Bow)#!"
  hunt_activity_stealth_tt: "[host.GetShortUIName|U] se pokusí #V překvapit#! [activity.Custom('GetAnimalType')] #weak (Bow)#!"
- hunt_activity_captive_tt: "[host.GetShortUIName|U] se pokusí #V osvobodit a zabít vašeho #V zajatce#! [activity.Custom('GetAnimalType')] #weak (Spear)#!\n@warning_icon! #X Tato metoda je [hunt_dangerous|E]#!"
+ hunt_activity_captive_tt: "[host.GetShortUIName|U] se pokusí #V osvobodit a zabít vašeho #V zajatce#! [activity.Custom('GetAnimalType')] #weak (Spear)#!\n@warning_icon! #X Tato metoda je [Concept('hunt_dangerous','nebezpečné')|E]#!" # todo: CONCEPT CASE
  hunt_activity_falconry_tt: "Pokusíte se #V sokolnit#! [activity.Custom('GetAnimalType')] #weak (Raptor)#!"
- hunt_activity_success_increase_minor_tt: "[hunt_success_chance_no_prefix|E] #positive_value se mírně zvýší#!"
- hunt_activity_success_increase_medium_tt: "[hunt_success_chance_no_prefix|E] #positive_value se zvýší#!"
- hunt_activity_success_increase_major_tt: "[hunt_success_chance_no_prefix|E] #positive_value se výrazně zvýší#!"
- hunt_activity_success_increase_massive_tt: "[hunt_success_chance_no_prefix|E] #positive_value se nesmírně zvýší#!"
- hunt_activity_success_increase_adventurer_initial_medium_tt: "[hunt_success_chance_no_prefix|E] #positive_value se výrazně zvýší#!"
- hunt_activity_success_increase_adventurer_initial_high_tt: "[hunt_success_chance_no_prefix|E] #positive_value se nesmírně zvýší#!"
- hunt_activity_success_decrease_minor_tt: "[hunt_success_chance_no_prefix|E] #negative_value se mírně sníží#!"
- hunt_activity_success_decrease_medium_tt: "[hunt_success_chance_no_prefix|E] #negative_value se sníží#!"
- hunt_activity_success_decrease_major_tt: "[hunt_success_chance_no_prefix|E] #negative_value se výrazně sníží#!"
+ hunt_activity_success_increase_minor_tt: "[Concept('hunt_success_chance_no_prefix','Šance na úspěch')|E] #positive_value se mírně zvýší#!" # todo: CONCEPT CASE
+ hunt_activity_success_increase_medium_tt: "[Concept('hunt_success_chance_no_prefix','Šance na úspěch')|E] #positive_value se zvýší#!" # todo: CONCEPT CASE
+ hunt_activity_success_increase_major_tt: "[Concept('hunt_success_chance_no_prefix','Šance na úspěch')|E] #positive_value se výrazně zvýší#!" # todo: CONCEPT CASE
+ hunt_activity_success_increase_massive_tt: "[Concept('hunt_success_chance_no_prefix','Šance na úspěch')|E] #positive_value se nesmírně zvýší#!" # todo: CONCEPT CASE
+ hunt_activity_success_increase_adventurer_initial_medium_tt: "[Concept('hunt_success_chance_no_prefix','Šance na úspěch')|E] #positive_value se výrazně zvýší#!" # todo: CONCEPT CASE
+ hunt_activity_success_increase_adventurer_initial_high_tt: "[Concept('hunt_success_chance_no_prefix','Šance na úspěch')|E] #positive_value se nesmírně zvýší#!" # todo: CONCEPT CASE
+ hunt_activity_success_decrease_minor_tt: "[Concept('hunt_success_chance_no_prefix','Šance na úspěch')|E] #negative_value se mírně sníží#!" # todo: CONCEPT CASE
+ hunt_activity_success_decrease_medium_tt: "[Concept('hunt_success_chance_no_prefix','Šance na úspěch')|E] #negative_value se sníží#!" # todo: CONCEPT CASE
+ hunt_activity_success_decrease_major_tt: "[Concept('hunt_success_chance_no_prefix','Šance na úspěch')|E] #negative_value se výrazně sníží#!" # todo: CONCEPT CASE
  hunt_seek_current_tt: "[host.GetShortUIName|U] bude hledat [activity.Custom('GetAnimalType')|V]:\n[activity.Custom('ActivityAnimalSafety')]\n[activity.Custom('ActivityAnimalPrestige')]"
  hunt_seek_current_legendary_tt: "[host.GetShortUIName|U] bude hledat [activity.Custom('GetLegendaryColor')|V] [activity.Custom('GetAnimalType')|V]:\n[activity.Custom('ActivityAnimalSafety')]\n[activity.Custom('ActivityAnimalPrestige')]"
  hunt_seek_current_falconry_tt: "[host.GetShortUIName|U] se pokusí #V sokolnit#! [activity.Custom('GetAnimalType')|V]:\n[activity.Custom('ActivityAnimalPrestige')]"
@@ -170,14 +170,14 @@
  hunt_seek_wolf_tt: "Budete hledat [THIS.Char.Custom('GetRegionalWolfType')|V]:\n$hunt_animal_safety_middling$\n$hunt_animal_prestige_middling$"
  hunt_seek_boar_tt: "Budete hledat #V $animal_type_boar$#!:\n$hunt_animal_safety_dangerous$\n$hunt_animal_prestige_high$"
  hunt_seek_hare_falconry_tt: "Pokusíte se #V sokolnit#! #V hare#!:\n$hunt_animal_prestige_middling$"
- hunt_modifier_success_slightly_improved_location_tt: "Dokud je tento modifikátor aktivní, vaše [hunt_success_chance|E] bude v tomto [county|E] #positive_value mírně lepší#!"
- hunt_modifier_success_slightly_improved_tt: "Dokud je tento modifikátor aktivní, vaše [hunt_success_chance|E] bude #positive_value mírně zlepšená#!"
- hunt_modifier_success_slightly_worse_tt: "Dokud je tento modifikátor aktivní, vaše [hunt_success_chance|E] bude #negative_value mírně horší#!"
- hunt_pelt_damaged_tt: "Kožešinová trofej [artifact|E] #negative_value nebude#! dostupná"
- hunt_no_antlers_tt: "[activity.Custom('GetAnimalType')|U] trofej z parohů [artifact|E] #negative_value nebude#! dostupná"
- hunt_skull_damaged_tt: "[activity.Custom('GetAnimalType')|U] lebka - trofej [court_artifact|E] #negative_value nebude#! dostupná"
- hunt_female_quarry_tt: "Lov udělí #negative_value polovinu#! [prestige_i|E][prestige|E]"
- hunt_female_quarry_piety_tt: "Lov udělí #negative_value polovinu#! [piety_i|E][piety|E]"
+ hunt_modifier_success_slightly_improved_location_tt: "Dokud je tento modifikátor aktivní, vaše [Concept('hunt_success_chance','šance na úspěch lovu')|E] bude v tomto [Concept('county','hrabství')|E] #positive_value mírně lepší#!" # todo: CONCEPT CASE
+ hunt_modifier_success_slightly_improved_tt: "Dokud je tento modifikátor aktivní, vaše [Concept('hunt_success_chance','šance na úspěch lovu')|E] bude #positive_value mírně zlepšená#!" # todo: CONCEPT CASE
+ hunt_modifier_success_slightly_worse_tt: "Dokud je tento modifikátor aktivní, vaše [Concept('hunt_success_chance','šance na úspěch lovu')|E] bude #negative_value mírně horší#!" # todo: CONCEPT CASE
+ hunt_pelt_damaged_tt: "Kožešinová trofej [Concept('artifact','artefakt')|E] #negative_value nebude#! dostupná" # todo: CONCEPT CASE
+ hunt_no_antlers_tt: "[activity.Custom('GetAnimalType')|U] trofej z parohů [Concept('artifact','artefaktu')|E] #negative_value nebude#! dostupná" # todo: CONCEPT CASE
+ hunt_skull_damaged_tt: "[activity.Custom('GetAnimalType')|U] lebka - trofej [Concept('court_artifact','dvorský artefakt')|E] #negative_value nebude#! dostupná" # todo: CONCEPT CASE
+ hunt_female_quarry_tt: "Lov udělí #negative_value polovinu#! [prestige_i|E][Concept('prestige','prestiže')|E]" # todo: CONCEPT CASE
+ hunt_female_quarry_piety_tt: "Lov udělí #negative_value polovinu#! [piety_i|E][Concept('piety','zbožnosti')|E]" # todo: CONCEPT CASE
  hunt_no_artifact_tt: "Trofeje #negative_value nebudou#! dostupné"
  hunt_random_attendee_injured_tt: "@death_icon! Náhodný účastník je zraněn"
  hunt_random_attendee_killed_tt: "@death_icon! Náhodný účastník umírá"
@@ -186,39 +186,39 @@
  hunt_target_attendee_killed_tt: "@death_icon![murder_target.GetShortUIName] umírá"
  hunt_murder_involvement_discovered_tt: "@warning_icon! #X Vaše účast může být odhalena#!"
  hunt_every_hunter_tt: "Každý účastník"
- hunt_every_slay_beast_hunter_tt: "Každý účastník s $slay_beast_intent$ [intent|E]"
+ hunt_every_slay_beast_hunter_tt: "Každý účastník s $slay_beast_intent$ [Concept('intent','záměr')|E]" # todo: CONCEPT CASE
  hunt_every_other_hunter_tt: "Každý zúčastněný host"
- hunt_progress_towards_trait_0_tt: "[THIS.Char.GetShortUINameNoFormat|U] může přijmout [GetTrait('lifestyle_hunter').GetName( GetNullCharacter )] [lifestyle_trait|E]"
- hunt_progress_towards_trait_1_tt: "Mírně zvyšuje [GetTrait('lifestyle_hunter').GetName( GetNullCharacter )] [trait_level_track_xp|E]"
- hunt_progress_towards_trait_2_tt: "Zvyšuje [GetTrait('lifestyle_hunter').GetName( GetNullCharacter )] [trait_level_track_xp|E]"
- hunt_progress_towards_trait_3_tt: "Výrazně zvyšuje [GetTrait('lifestyle_hunter').GetName( GetNullCharacter )] [trait_level_track_xp|E]"
+ hunt_progress_towards_trait_0_tt: "[THIS.Char.GetShortUINameNoFormat|U] může přijmout [GetTrait('lifestyle_hunter').GetName( GetNullCharacter )] [Concept('lifestyle_trait','rys životního stylu')|E]" # todo: CONCEPT CASE
+ hunt_progress_towards_trait_1_tt: "Mírně zvyšuje [GetTrait('lifestyle_hunter').GetName( GetNullCharacter )] [Concept('trait_level_track_xp','zkušenosti rysu')|E]" # todo: CONCEPT CASE
+ hunt_progress_towards_trait_2_tt: "Zvyšuje [GetTrait('lifestyle_hunter').GetName( GetNullCharacter )] [Concept('trait_level_track_xp','zkušenosti rysu')|E]" # todo: CONCEPT CASE
+ hunt_progress_towards_trait_3_tt: "Výrazně zvyšuje [GetTrait('lifestyle_hunter').GetName( GetNullCharacter )] [Concept('trait_level_track_xp','zkušenosti rysu')|E]" # todo: CONCEPT CASE
  every_non_cynical_dharmic_attendee_tt: "Účastníci víry [GetFaithDoctrine('tenet_dharmic_pacifism').GetBaseName], kteří nejsou [GetTrait('cynical').GetName( GetNullCharacter )]"
  every_non_cynical_dharmic_attendee_reverse_tt: "Ostatní účastníci"
  hunter_xp_gain_message: "[GetTrait('lifestyle_hunter').GetNameNoTooltip( GetNullCharacter )] zkušenosti"
  hunter_prestige_gain_message: "Lovil [activity.Custom('GetAnimalType')|U]"
- hunter_accident_victim_family_tt: "[murder_target.GetShortUINamePossessive] [family|E]"
- hunt_animal_safety_safest: "@death_icon![hunt_danger_no_prefix|E]: #P Neškodný#! #weak (1/5)#!"
- hunt_animal_safety_safer: "@death_icon![hunt_danger_no_prefix|E]: #P Mírný#! #weak (2/5)#!"
- hunt_animal_safety_middling: "@death_icon![hunt_danger_no_prefix|E]: Střední #weak (3/5)#!"
- hunt_animal_safety_dangerous: "@death_icon![hunt_danger_no_prefix|E]: #N Nebezpečný#! #weak (4/5)#!"
- hunt_animal_safety_treacherous: "@death_icon![hunt_danger_no_prefix|E]: #N Zrádný#! #weak (5/5)#!"
- hunt_animal_prestige_lowest: "[prestige_i|E][prestige|E]: #N Triviální#! #weak (1/5)#!"
- hunt_animal_prestige_lower: "[prestige_i|E][prestige|E]: #N Průměrný#! #weak (2/5)#!"
- hunt_animal_prestige_middling: "[prestige_i|E][prestige|E]: Střední #weak (3/5)#!"
- hunt_animal_prestige_high: "[prestige_i|E][prestige|E]: #P Impozantní#! #weak (4/5)#!"
- hunt_animal_prestige_highest: "[prestige_i|E][prestige|E]: #P Slavný#! #weak (5/5)#!"
+ hunter_accident_victim_family_tt: "[murder_target.GetShortUINamePossessive] [Concept('family','Rodina')|E]" # todo: CONCEPT CASE
+ hunt_animal_safety_safest: "@death_icon![Concept('hunt_danger_no_prefix','Nebezpečnost')|E]: #P Neškodný#! #weak (1/5)#!" # todo: CONCEPT CASE
+ hunt_animal_safety_safer: "@death_icon![Concept('hunt_danger_no_prefix','Nebezpečnost')|E]: #P Mírný#! #weak (2/5)#!" # todo: CONCEPT CASE
+ hunt_animal_safety_middling: "@death_icon![Concept('hunt_danger_no_prefix','Nebezpečnost')|E]: Střední #weak (3/5)#!" # todo: CONCEPT CASE
+ hunt_animal_safety_dangerous: "@death_icon![Concept('hunt_danger_no_prefix','Nebezpečnost')|E]: #N Nebezpečný#! #weak (4/5)#!" # todo: CONCEPT CASE
+ hunt_animal_safety_treacherous: "@death_icon![Concept('hunt_danger_no_prefix','Nebezpečnost')|E]: #N Zrádný#! #weak (5/5)#!" # todo: CONCEPT CASE
+ hunt_animal_prestige_lowest: "[Concept('prestige_i','@prestige_icon!')|E][Concept('prestige','Prestiž')|E]: #N Triviální#! #weak (1/5)#!" # todo: CONCEPT CASE
+ hunt_animal_prestige_lower: "[Concept('prestige_i','@prestige_icon!')|E][Concept('prestige','Prestiž')|E]: #N Průměrný#! #weak (2/5)#!" # todo: CONCEPT CASE
+ hunt_animal_prestige_middling: "[Concept('prestige_i','@prestige_icon!')|E][Concept('prestige','Prestiž')|E]: Střední #weak (3/5)#!" # todo: CONCEPT CASE
+ hunt_animal_prestige_high: "[Concept('prestige_i','@prestige_icon!')|E][Concept('prestige','Prestiž')|E]: #P Impozantní#! #weak (4/5)#!" # todo: CONCEPT CASE
+ hunt_animal_prestige_highest: "[Concept('prestige_i','@prestige_icon!')|E][Concept('prestige','Prestiž')|E]: #P Slavný#! #weak (5/5)#!" # todo: CONCEPT CASE
  hunt_increases_safety_tt: "Zvyšuje bezpečnost"
  hunt_character_wound_tt: "@warning_icon!Může být vážně [Select_CString(ROOT.Char.IsFemale,'zraněna','zraněn')]"
  hunt_attempted_accident_murder_tt: "@warning_icon! #X Lidé jsou po poslední „lovecké nehodě“ opatrnější#!"
- hunt_any_county_legendary_sighting_tt: "Vyžaduje [GetModifier('hunt_sighting_legendary_modifier').GetNameWithTooltip] hlášený ve vašem [realm|E]"
- hunt_start_health_tt: "Váš [health|E] je příliš nízký"
+ hunt_any_county_legendary_sighting_tt: "Vyžaduje [GetModifier('hunt_sighting_legendary_modifier').GetNameWithTooltip] hlášený ve vašem [Concept('realm','panství')|E]" # todo: CONCEPT CASE
+ hunt_start_health_tt: "Váš [Concept('health','zdraví')|E] je příliš nízký" # todo: CONCEPT CASE
  hunt_captive_animal_tt: "[host.GetShortUIName|U] bude lovit zajatého [host.Custom('GetAnimalTypeCaptive')|V]"
  hunt_every_attempted_murderer_tt: "Proti každému vrahovi, vy"
- activity_hunt_location_legendary_sighting_tt: "[county|E] musí mít [GetModifier('hunt_sighting_legendary_modifier').GetNameWithTooltip]"
+ activity_hunt_location_legendary_sighting_tt: "[Concept('county','Hrabství')|E] musí mít [GetModifier('hunt_sighting_legendary_modifier').GetNameWithTooltip]" # todo: CONCEPT CASE
  activity_hunt_location_any_game_tt: "Místo musí mít nějakou zvěř k lovu"
- activity_hunt_selection_tooltip: "Lovte divokou zvěř se svým dvorem pro sport a slávu\n\nOčekávané odměny:\n$BULLET_WITH_TAB$[prestige_i] [prestige|E]\n$BULLET_WITH_TAB$[legitimacy_i] [legitimacy|E] Získáno\n$BULLET_WITH_TAB$[stress_loss_i] [stress|E] Ztráta"
- activity_hunt_nomad_additions_tooltip: "\n$BULLET_WITH_TAB$[GetPlayer.Custom('GetGovernmentIcon')] [GetPlayer.GetGovernment.GetName] [rulers|E]: [GetModifier('mpo_si_slaughtered_animals').GetNameWithTooltip]\n$BULLET_WITH_TAB$[GetPlayer.Custom('GetGovernmentIcon')] [GetPlayer.GetGovernment.GetName] [rulers|E]: [dread_i][dread|E] ([GetModifier('hunt_sighting_dangerous_modifier').GetNameWithTooltip])\n$BULLET_WITH_TAB$[GetPlayer.Custom('GetGovernmentIcon')] [GetPlayer.GetGovernment.GetName] [rulers|E]: [prowess_i][prowess|E] ([GetModifier('hunt_sighting_dangerous_modifier').GetNameWithTooltip])"
- activity_hunt_nomad_additions_desc: "$BULLET_WITH_TAB$[GetPlayer.Custom('GetGovernmentIcon')] [GetPlayer.GetGovernment.GetName] [rulers|E] mohou získat [GetModifier('mpo_si_slaughtered_animals').GetNameWithTooltip]\n$BULLET_WITH_TAB$[GetPlayer.Custom('GetGovernmentIcon')] [GetPlayer.GetGovernment.GetName] [rulers|E] získávají [dread_i][dread|E] při odstranění [GetModifier('hunt_sighting_dangerous_modifier').GetNameWithTooltip]\n$BULLET_WITH_TAB$[GetPlayer.Custom('GetGovernmentIcon')] [GetPlayer.GetGovernment.GetName] [rulers|E] získávají [prowess_i][prowess|E] při odstranění [GetModifier('hunt_sighting_dangerous_modifier').GetNameWithTooltip]\n"
+ activity_hunt_selection_tooltip: "Lovte divokou zvěř se svým dvorem pro sport a slávu\n\nOčekávané odměny:\n$BULLET_WITH_TAB$[prestige_i] [Concept('prestige','Prestiž')|E]\n$BULLET_WITH_TAB$[legitimacy_i] [Concept('legitimacy','Legitimita')|E] Získáno\n$BULLET_WITH_TAB$[stress_loss_i] [Concept('stress','Stres')|E] Ztráta" # todo: CONCEPT CASE
+ activity_hunt_nomad_additions_tooltip: "\n$BULLET_WITH_TAB$[GetPlayer.Custom('GetGovernmentIcon')] [GetPlayer.GetGovernment.GetName] [Concept('rulers','Vládci')|E]: [GetModifier('mpo_si_slaughtered_animals').GetNameWithTooltip]\n$BULLET_WITH_TAB$[GetPlayer.Custom('GetGovernmentIcon')] [GetPlayer.GetGovernment.GetName] [Concept('rulers','Vládci')|E]: [dread_i][Concept('dread','hrůza')|E] ([GetModifier('hunt_sighting_dangerous_modifier').GetNameWithTooltip])\n$BULLET_WITH_TAB$[GetPlayer.Custom('GetGovernmentIcon')] [GetPlayer.GetGovernment.GetName] [Concept('rulers','Vládci')|E]: [prowess_i][Concept('prowess','udatnost')|E] ([GetModifier('hunt_sighting_dangerous_modifier').GetNameWithTooltip])" # todo: CONCEPT CASE
+ activity_hunt_nomad_additions_desc: "$BULLET_WITH_TAB$[GetPlayer.Custom('GetGovernmentIcon')] [GetPlayer.GetGovernment.GetName] [Concept('rulers','Vládci')|E] mohou získat [GetModifier('mpo_si_slaughtered_animals').GetNameWithTooltip]\n$BULLET_WITH_TAB$[GetPlayer.Custom('GetGovernmentIcon')] [GetPlayer.GetGovernment.GetName] [Concept('rulers','Vládci')|E] získávají [dread_i][Concept('dread','hrůza')|E] při odstranění [GetModifier('hunt_sighting_dangerous_modifier').GetNameWithTooltip]\n$BULLET_WITH_TAB$[GetPlayer.Custom('GetGovernmentIcon')] [GetPlayer.GetGovernment.GetName] [Concept('rulers','Vládci')|E] získávají [prowess_i][Concept('prowess','udatnosti')|E] při odstranění [GetModifier('hunt_sighting_dangerous_modifier').GetNameWithTooltip]\n" # todo: CONCEPT CASE
  nomad_good_hunt_tt: "Tento [activity.Custom('GetAnimalType')] bude skvělý pro budoucí [GetActivityType('activity_feast').GetName]!"
  nomad_meager_hunt_tt: "Ačkoli úspěšný, jediný [activity.Custom('GetAnimalType')] ještě hostinu nedělá..."
  hunt_kill_success_melee_root: "Zabijete [activity.Custom('GetAnimalTypeKill')]"
@@ -662,7 +662,7 @@
  hunt_success_memory_desc_second_perspective: "Zúčastnil ses [host.GetTitledFirstNamePossessive] úspěšného [GetActivityType('activity_hunt').GetName] pro [SCOPE.Custom('GetAnimalType')] v [ROOT.Var('location').Province.GetBaronyNameExplicitly]"
  hunt_success_memory_desc_host_third_perspective: "[owner.GetTitledFirstName] uspořádal úspěšný [GetActivityType('activity_hunt').GetName] pro [SCOPE.Custom('GetAnimalType')] v [ROOT.Var('location').Province.GetBaronyNameExplicitly]"
  hunt_success_memory_desc_third_perspective: "[owner.GetTitledFirstName] se zúčastnil [host.GetTitledFirstNamePossessive] úspěšného [GetActivityType('activity_hunt').GetName] pro [SCOPE.Custom('GetAnimalType')] v [ROOT.Var('location').Province.GetBaronyNameExplicitly]"
- adventurer_3_courtiers: "Potřebujete alespoň #V 3#! [followers|E] schopných lovit"
+ adventurer_3_courtiers: "Potřebujete alespoň #V 3#! [Concept('followers','družiníci')|E] schopných lovit" # todo: CONCEPT CASE
  activity_huntmaster_desc_adventurer: "[GetCourtPositionType('huntperson_camp_officer').GetNameNoTooltip()]"
  activity_huntmaster_desc_regular: "Mistr lovu"
  activity_huntmaster_tooltip_desc_adventurer: "[GetCourtPositionType('huntperson_camp_officer').GetName()]"
@@ -673,4 +673,4 @@
  gamekeepers_nomadic: "Mistři honu"
  gamekeepers_regular: "hlídači zvěře"
  poacher_opinion: "Pytlačení v #EMP My#! zemích"
- hunt_invalidated_warning_tt: "@warning_icon! #X Nebudete moci uspořádat další [GetActivityType( 'activity_hunt' ).GetName] [activity|E] po dobu [SCOPE.ScriptValue('standard_hunting_cooldown_time')|V0] let#!"
+ hunt_invalidated_warning_tt: "@warning_icon! #X Nebudete moci uspořádat další [GetActivityType( 'activity_hunt' ).GetName] [Concept('activity','aktivita')|E] po dobu [SCOPE.ScriptValue('standard_hunting_cooldown_time')|V0] let#!" # todo: CONCEPT CASE

@@ -1,23 +1,23 @@
 ﻿l_polish:
- INVALID_ACTIVITY_TYPE: "@warning_icon! #X Neplatný typ [Concept('activity','$game_concept_activity$')|El]#!"
- INVALID_ACTIVITY_HOST: "@warning_icon! #X Neplatný [Concept('activity_host_short','$game_concept_activity_host_short$')|El]#!"
- INVALID_ACTIVITY_HOST_INTENT: "@warning_icon! #X Neplatný [Concept('intent','$game_concept_intent$')|El]#!"
- INVALID_ACTIVITY_HOST_INTENT_NO_TARGET: "@warning_icon! #X [Concept('intent','$game_concept_intent$')|E] vyžaduje cíl.#!"
+ INVALID_ACTIVITY_TYPE: "@warning_icon! #X Neplatný typ [Concept('activity','aktivita')|El]#!" # todo: CONCEPT CASE
+ INVALID_ACTIVITY_HOST: "@warning_icon! #X Neplatný [Concept('activity_host_short','pořadatel')|El]#!" # todo: CONCEPT CASE
+ INVALID_ACTIVITY_HOST_INTENT: "@warning_icon! #X Neplatný [Concept('intent','záměr')|El]#!" # todo: CONCEPT CASE
+ INVALID_ACTIVITY_HOST_INTENT_NO_TARGET: "@warning_icon! #X [Concept('intent','Záměr')|E] vyžaduje cíl.#!" # todo: CONCEPT CASE
  INVALID_ACTIVITY_HOST_INTENT_INVALID_TARGET: "@warning_icon! #X Neplatný cíl [Concept('intent','záměru')|E].#!"
- INVALID_ACTIVITY_NO_PLANNED_PHASES: "@warning_icon! #X Žádné naplánované [Concept('activity_phases','$game_concept_activity_phases$')|El]#!"
- INVALID_ACTIVITY_PHASE_WITHOUT_TYPE: "@warning_icon! #X Jedna z [Concept('activity_phases','fází aktivit')|E] postrádá typ fáze#!"
- INVALID_ACTIVITY_PHASE_WITHOUT_LOCATION: "@warning_icon! #X Pro jednu z [Concept('activity_phases','fází aktivit')|E] není vybráno místo konání#!"
- INVALID_ACTIVITY_HOST_ALREADY_IN_ACTIVITY: "@warning_icon! #X [CHARACTER.GetUIName|U] je již zapojen do [Concept('activity','$game_concept_activity$')|El]#!"
+ INVALID_ACTIVITY_NO_PLANNED_PHASES: "@warning_icon! #X Žádné naplánované [Concept('activity_phases','fáze aktivity')|El]#!" # todo: CONCEPT CASE
+ INVALID_ACTIVITY_PHASE_WITHOUT_TYPE: "@warning_icon! #X Jedna z [Concept('activity_phases','fáze aktivity')|E] postrádá typ fáze#!" # todo: CONCEPT CASE
+ INVALID_ACTIVITY_PHASE_WITHOUT_LOCATION: "@warning_icon! #X Pro jednu z [Concept('activity_phases','fáze aktivity')|E] není vybráno místo konání#!" # todo: CONCEPT CASE
+ INVALID_ACTIVITY_HOST_ALREADY_IN_ACTIVITY: "@warning_icon! #X [CHARACTER.GetUIName|U] je již zapojen do [Concept('activity','aktivity')|El]#!" # todo: CONCEPT CASE
  INVALID_ACTIVITY_IN_THE_PAST: "@warning_icon! #X Nelze zahájit [Concept('activity','aktivitu')|E] v minulosti#!"
  INVALID_ACTIVITY_REQUIRED_SPECIAL_GUEST_EMPTY: "@warning_icon! #X Někdo se musí zúčastnit jako [ACTIVITY_SPECIAL_GUEST.GetNameForHost]#!"
  INVALID_ACTIVITY_REQUIRED_SPECIAL_GUEST_DECLINED: "@warning_icon! #X [CHARACTER.GetUIName|U] se musí zúčastnit jako [ACTIVITY_SPECIAL_GUEST.GetNameForHost]#!"
  INVALID_ACTIVITY_REQUIRED_SPECIAL_GUEST_DEAD: "@warning_icon! #X [CHARACTER.GetUIName|U] [Select_CString(CHARACTER.IsFemale,'zemřela','zemřel')] a už se nemůže zúčastnit jako [ACTIVITY_SPECIAL_GUEST.GetNameForHost]#!"
  INVALID_ACTIVITY_REQUIRED_SPECIAL_GUEST_INVALID: "@warning_icon! #X [CHARACTER.GetUIName|U] se nemůže zúčastnit jako [ACTIVITY_SPECIAL_GUEST.GetNameForHost]#!"
- INVALID_ACTIVITY_SINGLE_LOCATION_REQUIRED: "@warning_icon! #X Všechny [Concept('activity_phases','$game_concept_activity_phases$')|El] musí proběhnout na stejném místě#!"
+ INVALID_ACTIVITY_SINGLE_LOCATION_REQUIRED: "@warning_icon! #X Všechny [Concept('activity_phases','fázi aktivity')|El] musí proběhnout na stejném místě#!" # todo: CONCEPT CASE
  INVALID_ACTIVITY_MAXIMUM_DELAY_DAYS: "@warning_icon! #X Aktivita byla odložena o více než [GetDefine( 'NActivity', 'MAX_PHASE_DELAY_DAYS' )|V] dní#!"
  INVALID_ACTIVITY_MISSING_FEATURE_FLAG: "@warning_icon! #X Chybí příznak funkce DLC '$FEATURE_FLAG$'#!"
- INVALID_ACTIVITY_NO_INVITED_CHARACTERS: "@warning_icon! #X Žádní pozvaní [Concept('activity_guests','$game_concept_activity_guests_short$')|El]#!"
- INVALID_ACTIVITY_NO_ATTENDING_CHARACTERS: "@warning_icon! #X Žádní [Concept('activity_guests','$game_concept_activity_guests$')|El]#!"
+ INVALID_ACTIVITY_NO_INVITED_CHARACTERS: "@warning_icon! #X Žádní pozvaní [Concept('activity_guests','hosté')|El]#!" # todo: CONCEPT CASE
+ INVALID_ACTIVITY_NO_ATTENDING_CHARACTERS: "@warning_icon! #X Žádní [Concept('activity_guests','hosté aktivity')|El]#!" # todo: CONCEPT CASE
  ACTIVITY_PLANNER_PHASE_PROVINCE_TOOLTIP: "#T [Province.GetBaronyNameExplicitlyNoTooltip]#!\n$ACTIVITY_PROVINCE_DESCRIPTION$\n\n#I Klikněte pro výběr destinace#!"
  ACTIVITY_PLANNER_PHASE_PROVINCE_BLOCKED_TOOLTIP: "#T [Province.GetBaronyNameExplicitlyNoTooltip]#!\nZde #bold nemůžete#! pořádat [ActivityType.GetNameNoTooltip], protože:\n$BLOCK_REASON$"
  ACTIVITY_PLANNER_CAN_PROGRESS_ALL_HAVE_LOCATION: "@warning_icon! #X Musíte vybrat cílové místo#!"
@@ -30,39 +30,39 @@
  ACTIVITY_PLANNER_SUMMARY: "Souhrn"
  ACTIVITY_SUMMARY_COOLDOWN_HEADER: "Období obnovy"
  ACTIVITY_COOLDOWN: "@alert_icon! #alert_trial Nelze uspořádat další [ActivityType.GetNameNoTooltip] po dobu [GetTimeDifferenceWithDays( ActivityType.CalcCooldownDays( GetPlayer ) )]#!"
- activity_filter_capital: "[Concept('realm_capital','$game_concept_realm_capital$')|E]"
- activity_filter_domain: "[Concept('domain','$game_concept_domain$')|E]"
- activity_filter_realm: "[Concept('realm','$game_concept_realm$')|E]"
- activity_filter_top_realm: "[Concept('top_realm','$game_concept_top_realm$')|E]"
- activity_filter_holy_sites: "[Concept('holy_sites','$game_concept_holy_sites$')|E]"
- activity_filter_domicile: "[Concept('domicile','$game_concept_domicile$')|E]"
- activity_filter_domicile_domain: "[Concept('domicile','$game_concept_domicile$')|E] [Concept('domain','$game_concept_domain$')|E]"
- activity_filter_domicile_realm: "[Concept('domicile','$game_concept_domicile$')|E] [Concept('realm','$game_concept_realm$')|E]"
- activity_filter_holy_sites_realm: "[holy_sites|E] [realm|E]"
+ activity_filter_capital: "[Concept('realm_capital','Hlavní sídlo panství')|E]" # todo: CONCEPT CASE
+ activity_filter_domain: "[Concept('domain','Doména')|E]" # todo: CONCEPT CASE
+ activity_filter_realm: "[Concept('realm','Panství')|E]" # todo: CONCEPT CASE
+ activity_filter_top_realm: "[Concept('top_realm','Nejvyšší říše')|E]" # todo: CONCEPT CASE
+ activity_filter_holy_sites: "[Concept('holy_sites','Svatá místa')|E]" # todo: CONCEPT CASE
+ activity_filter_domicile: "[Concept('domicile','Domicil')|E]" # todo: CONCEPT CASE
+ activity_filter_domicile_domain: "[Concept('domicile','Domicil')|E] [Concept('domain','Doména')|E]" # todo: CONCEPT CASE
+ activity_filter_domicile_realm: "[Concept('domicile','Domicil')|E] [Concept('realm','Panství')|E]" # todo: CONCEPT CASE
+ activity_filter_holy_sites_realm: "[Concept('holy_sites','Svatá místa')|E] [Concept('realm','Panství')|E]" # todo: CONCEPT CASE
  GOVERNMENT_ADJECTIVE: "[Character.GetGovernment.GetAdjective]"
- GOVERNMENT_ADJECTIVE_ICON: "[Character.Custom('GetGovernmentIcon')] [Character.GetGovernment.GetAdjective] [Concept('realm','$game_concept_realm$')|E]"
- GOVERNMENT_ADJECTIVE_ICON_NOMAD: "[Character.Custom('GetGovernmentIcon')] [Character.GetGovernment.GetAdjective] [Concept('realm','$game_concept_realm$')|E] - [Character.GetDomicile.GetFaith.GetAdjective] [Character.GetDomicile.GetCulture.GetCollectiveNoun]"
+ GOVERNMENT_ADJECTIVE_ICON: "[Character.Custom('GetGovernmentIcon')] [Character.GetGovernment.GetAdjective] [Concept('realm','Panství')|E]" # todo: CONCEPT CASE
+ GOVERNMENT_ADJECTIVE_ICON_NOMAD: "[Character.Custom('GetGovernmentIcon')] [Character.GetGovernment.GetAdjective] [Concept('realm','Panství')|E] - [Character.GetDomicile.GetFaith.GetAdjective] [Character.GetDomicile.GetCulture.GetCollectiveNoun]" # todo: CONCEPT CASE
  GOVERNMENT_ADJECTIVE_ICON_ADVENTURER: "[Character.Custom('GetGovernmentIcon')] [Character.GetGovernment.GetAdjective]"
- GOVERNORSHIP_TOOLTIP: "[ROOT.Char.GetVassalContract.GetAdminDivisionTextIcon] [SelectLocalization( ROOT.Char.GetGovernment.IsValid(), 'GOVERNMENT_ADJECTIVE', '' )] [governorship|E]"
- VASSAL_TOOLTIP: "[SelectLocalization( ROOT.Char.GetGovernment.IsValid(), 'GOVERNMENT_ADJECTIVE_ICON', '' )] [Concept('vassal','$game_concept_vassal$')|E]"
+ GOVERNORSHIP_TOOLTIP: "[ROOT.Char.GetVassalContract.GetAdminDivisionTextIcon] [SelectLocalization( ROOT.Char.GetGovernment.IsValid(), 'GOVERNMENT_ADJECTIVE', '' )] [Concept('governorship','Guvernérství')|E]" # todo: CONCEPT CASE
+ VASSAL_TOOLTIP: "[SelectLocalization( ROOT.Char.GetGovernment.IsValid(), 'GOVERNMENT_ADJECTIVE_ICON', '' )] [Concept('vassal','Vazal')|E]" # todo: CONCEPT CASE
  REALM_TOOLTIP: "[SelectLocalization( ROOT.Char.GetGovernment.IsValid(), 'GOVERNMENT_ADJECTIVE_ICON', '' )]"
- activity_filter_capital_blocker: "@warning_icon! #X [Province.GetBaronyNameExplicitlyNoTooltip] #bold není#! vaše [Concept('realm_capital','$game_concept_realm_capital$')|El]#!"
+ activity_filter_capital_blocker: "@warning_icon! #X [Province.GetBaronyNameExplicitlyNoTooltip] #bold není#! vaše [Concept('realm_capital','hlavní sídlo panství')|El]#!" # todo: CONCEPT CASE
  activity_filter_domain_blocker: "@warning_icon! #X [Province.GetBaronyNameExplicitlyNoTooltip] #bold není#! ve vaší [Concept('domain','doméně')|E]#!"
- activity_filter_realm_blocker: "@warning_icon! #X [Province.GetBaronyNameExplicitlyNoTooltip] #bold není#! ve vašem [Concept('realm','$game_concept_realm$')|El]#!"
+ activity_filter_realm_blocker: "@warning_icon! #X [Province.GetBaronyNameExplicitlyNoTooltip] #bold není#! ve vašem [Concept('realm','panství')|El]#!" # todo: CONCEPT CASE
  activity_filter_top_realm_blocker: "@warning_icon! #X [Province.GetBaronyNameExplicitlyNoTooltip] #bold není#! ve vašem [Concept('top_realm','nejvyšším panství')|E]#!"
  activity_filter_holy_sites_blocker: "@warning_icon! #X [Province.GetBaronyNameExplicitlyNoTooltip] #bold není#! jedním ze [Concept('holy_sites','svatých míst')|E] vaší [Concept('faith','víry')|E] #!"
  activity_filter_domicile_blocker: "@warning_icon! #X [Province.GetBaronyNameExplicitlyNoTooltip] #bold není#! ve vašem [Concept('domicile','sídle')|E]#!"
  activity_filter_domicile_domain_blocker: "@warning_icon! #X [Province.GetBaronyNameExplicitlyNoTooltip] #bold není#! ve vašem [Concept('domicile','sídle')|E] nebo [Concept('domain','doméně')|E]#!"
- activity_filter_domicile_realm_blocker: "@warning_icon! #X [Province.GetBaronyNameExplicitlyNoTooltip] #bold není#! ve vašem [Concept('domicile','sídle')|E] nebo [Concept('realm','$game_concept_realm$')|El]#!"
- activity_filter_holy_sites_realm_blocker: "@warning_icon! #X [Province.GetBaronyNameExplicitlyNoTooltip] #bold není#! ve vašem [realm|El] ani ve [Concept('holy_site','svatém míste')|E]#!"
+ activity_filter_domicile_realm_blocker: "@warning_icon! #X [Province.GetBaronyNameExplicitlyNoTooltip] #bold není#! ve vašem [Concept('domicile','sídle')|E] nebo [Concept('realm','panství')|El]#!" # todo: CONCEPT CASE
+ activity_filter_holy_sites_realm_blocker: "@warning_icon! #X [Province.GetBaronyNameExplicitlyNoTooltip] #bold není#! ve vašem [Concept('realm','panství')|El] ani ve [Concept('holy_site','svatém místě')|E]#!" # todo: CONCEPT CASE
  ACTIVITY_PLANNER_SUMMARY_HEADER: "Souhrn plánování:"
  ACTIVITY_DESTINATION_SELECTION_HEADER: "Výběr cíle"
  ACTIVITY_DESTINATION_SELECTION: "Místa, která si můžete vybrat, jsou zobrazena na mapě.\n[ActivityType.GetLocalizedText( 'destination_selection' )]\n\n#I Vyberte místo pro váš [ActivityType.GetNameNoTooltip]#!"
- ACTIVITY_DESTINATION_INVALID_MAX_PHASES_IN_PROVINCE: "@warning_icon! #X [Province.GetBaronyNameExplicitly] je již cílem naplánované [Concept('activity_phase','$game_concept_activity_phase$')|El] #weak (maximálně $AMOUNT_ALLOWED|V$ v [Concept('barony','$game_concept_barony$')|E])#!#!"
+ ACTIVITY_DESTINATION_INVALID_MAX_PHASES_IN_PROVINCE: "@warning_icon! #X [Province.GetBaronyNameExplicitly] je již cílem naplánované [Concept('activity_phase','fáze aktivity')|El] #weak (maximálně $AMOUNT_ALLOWED|V$ v [Concept('barony','baronství')|E])#!#!" # todo: CONCEPT CASE
  ACTIVITY_DESTINATION_INVALID_TOTAL_MAX_PHASES_REACHED: "@warning_icon! #X Vybrali jste maximální počet [Concept('activity_phases','fází aktivity')|E] ($AMOUNT_ALLOWED$)#!"
  ACTIVITY_TYPE_CONCEPT_SELECTOR: "[SelectLocalization( ActivityType.IsGrandActivity, grand_activity, activity )|E]"
  ACTIVITY_PLANNER_MAIN_HEADING: "Plánování $ACTIVITY_TYPE_CONCEPT_SELECTOR$: [ActivityType.GetName]"
- ACTIVITY_PLANNER_CONTEST_HEADER: "[Concept('contests','$game_concept_contests$')|e]:"
+ ACTIVITY_PLANNER_CONTEST_HEADER: "[Concept('contests','Soutěže')|e]:" # todo: CONCEPT CASE
  ACTIVITY_PLANNER_QUIT: "Ukončit plánování aktivity"
  ACTIVITY_PLANNER_START: "Zahájit [ActivityType.GetNameNoTooltip]"
  ACTIVITY_PLANNER_SPECIAL_GUEST_PLANNING_TT: "#T [ActivitySpecialGuest.GetType.GetNameForHost()]#!\n[ActivitySpecialGuest.GetType.GetDescriptionForHost()][AddLine( ConcatIfNeitherEmpty('Po pozvání:\n', ActivityPlanner.GetSpecialGuestOnInviteEffectDesc( ActivitySpecialGuest.Self ) ) )]"

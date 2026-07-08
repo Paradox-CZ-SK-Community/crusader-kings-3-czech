@@ -5,7 +5,7 @@
  hold_court.3000.desc.likes: "„[ROOT.Char.Custom('FormOfAddressForLiege')], pod vaší vládou je mnoho důvodů k oslavám! Dovolte mi prosím uhradit náklady na vaši příští hostinu! Možná byste mi jako odměnu v budoucnu [Select_CString(ROOT.Char.IsFemale,'prokázala','prokázal')] laskavost?"
  hold_court.3000.desc.dislikes: "„[ROOT.Char.Custom('FormOfAddressForLiege')]. Lidé ve vašem panství občas potřebují radostné shromáždění, kde mohou zapomenout na své starosti. Rád/a bych [Select_CString(ROOT.Char.IsFemale,'financovala','financoval')] hostinu, i kdyby byla pořádána pod vaším jménem, protože je to ku prospěchu [ROOT.Char.GetPrimaryTitle.GetNameNoTierNoTooltip]. [Select_CString(ROOT.Char.IsFemale,'Očekávala','Očekával')] bych však náležitou protislužbu."
  hold_court.3000.a: "Dobře, přijímám."
- hold_court.3000.a.tt: "Uspořádání hostiny v blízké budoucnosti přinese odměnu [court_grandeur_value|E]."
+ hold_court.3000.a.tt: "Uspořádání hostiny v blízké budoucnosti přinese odměnu [Concept('court_grandeur_value','hodnotu velkoleposti dvora')|E]." # todo: CONCEPT CASE
  hold_court.3000.b: "Bez žádných podmínek! Váš pán si to žádá!"
  hold_court.3000.c: "Možná bychom mohli sjednat něco přijatelnějšího?"
  hold_court.3000.c.success: "[feast_vassal.GetTitledFirstNameNoTooltip] souhlasí, že odstoupí od svého požadavku na laskavost"
@@ -28,7 +28,7 @@
  hold_court.3020.a: "„Zbořte to!“"
  hold_court.3020.b: "Dejte formální souhlas k obnově."
  hold_court.3020.c: "Postavte místo toho jiný pomník — který bude reprezentovat obě kultury."
- every_county_of_culture: "Každý [realm|E] [county|E] kultury [village.GetCountyData.GetCulture.GetName]"
+ every_county_of_culture: "Každý [Concept('realm','panství')|E] [Concept('county','hrabství')|E] kultury [village.GetCountyData.GetCulture.GetName]" # todo: CONCEPT CASE
  3020_MONUMENT_VALUE: "Obnovená socha"
  3020_multicultural_monument: "Multikulturní památník"
  3020_multicultural_monument_desc: "Důležitý kulturní památník byl nedávno upraven tak, aby zahrnoval prvky jiné kultury, čímž se rozostřily hranice, které rozdělují obě kultury.\n\n#P +10%#! Rychlost kulturní konverze"
@@ -46,7 +46,7 @@
  hold_court.3040.c: "Pokud se [kill_joy.GetTitledFirstNameNoTooltip] nerad směje, uděláme z [kill_joy.GetHerHim] směšnou osobu!"
  hold_court.3040.d: "Toto NENÍ tržiště pro sedláky! Šašek nemá místo na tomto dvoře!"
  hold_court.3040.e: "Možná se tomu budu věnovat jindy."
- generic_cp_discount_tt: "Toto [court_position|E] bude #P 50%#! levnější k zaměstnání"
+ generic_cp_discount_tt: "Toto [Concept('court_position','dvorský úřad')|E] bude #P 50%#! levnější k zaměstnání" # todo: CONCEPT CASE
  hold_court.3060.t: "Řešení korupce"
  hold_court.3060.desc.opening: "Můj [ROOT.GetCharacter.Custom2('RelationToMe', SCOPE.sC('county_petitioner'))], [county_petitioner.GetTitledFirstName], [ROOT.Char.Custom2('QuirkPresentPosOrNeg', SCOPE.sC('county_petitioner'))] předstoupí, aby vyřkl svou prosbu. „[ROOT.Char.Custom2('RelationToMeAddress', county_petitioner)|U], žádám vaši pomoc při potírání problému "
  hold_court.3060.desc.thieves: "zloději, kteří okrádají [corrupt_county.GetNameNoTier] a jeho obyvatele!"
@@ -62,7 +62,7 @@
  hold_court.3060.b: "Můj komoří vám může nabídnout radu."
  hold_court.3060.c: "Bohužel je pokladna chudá."
  hold_court.3060.d: "Můj [ROOT.GetCharacter.Custom2('RelationToMe', SCOPE.sC('cp_steward_replacement'))], [cp_steward_replacement.GetFirstNameNoTooltip], by byl lepším správcem."
- every_low_county_control: "Každý [realm|E] [county|E] s 33 [control|E] nebo méně"
+ every_low_county_control: "Každý [Concept('realm','panství')|E] [Concept('county','hrabství')|E] s 33 [Concept('control','kontrolou')|E] nebo méně" # todo: CONCEPT CASE
  hold_court.3080.t: "Vystavení sbírky [ROOT.GetCharacter.GetTitledFirstNamePossessive]"
  hold_court.3080.desc: "Můj [ROOT.GetCharacter.Custom2('RelationToMe', SCOPE.sC('antiquarian'))], [antiquarian.GetTitledFirstName], ke mně přistupuje s jiskrou v kroku.\n\n„[ROOT.Char.Custom2('RelationToMeAddress', antiquarian)|U]!“ říká [antiquarian.GetFirstNameNoTooltip], plný nadšení. „Mám skvělý nápad, který vám může přinést buď peníze, nebo slávu! Nasbírali jste opravdu impozantní sbírku artefaktů, [ROOT.Char.Custom('FormOfAddressForLiege')], tak proč je neukázat? Můžeme vybírat vstupné za prohlídku vaší sbírky, nebo ji nabídnout zdarma, aby ji vidělo více lidí.“\n\n[antiquarian.GetSheHe|U] si odkašle [Select_CString(antiquarian.IsFemale,'jejím','jeho')] před pokračováním, „Lidé mají sklon toužit po věcech, které vidí, takže nevýhodou může být, že více lidí se pokusí vaše artefakty získat."
  hold_court.3080.a: "Chci, aby lidé platili, i když uvidí jen záblesk mé slávy!"

@@ -2,33 +2,33 @@
  MILITARY: "Vojenské"
  CREATE_BANNER: "Vytvořit shromaždiště"
  SOLDIERS_INFO: "$CURRENT$/$MAX$"
- DISBAND_ALL_ARMIES: "#T Rozpustit všechny [armies|El] #!"
+ DISBAND_ALL_ARMIES: "#T Rozpustit všechny [Concept('armies','armády')|El] #!" # todo: CONCEPT CASE
  DISBAND_ALL_ARMIES_ARMIES_INFO: "$DISBANDED$ armád bude rozpuštěno"
  DISBAND_ALL_ARMIES_GATHERING_ARMIES_INFO: "$DISBANDED$ z $TOTAL$ shromažďujících se armád bude rozpuštěno"
  DISBAND_NO_ARMIES: "$DISBAND_ALL_ARMIES$\n@warning_icon! #X Žádné armády nelze rozpustit#!"
  DISBAND_NO_DISBANDABLE_ARMIES: "@warning_icon! #X Žádné armády nelze rozpustit#!"
  DISBAND_ALL_CONFIRM_TITLE: "Rozpustit všechny armády"
- DISBAND_ALL_CONFIRM: "Všechny povolané a shromažďující se [armies|El] budou rozpuštěny."
+ DISBAND_ALL_CONFIRM: "Všechny povolané a shromažďující se [Concept('armies','armádami')|El] budou rozpuštěny." # todo: CONCEPT CASE
  DISBAND_ALL_CONFIRM_ACCEPT: "Rozpustit vše"
- LEVIES_LABEL: "[levies|E]"
+ LEVIES_LABEL: "[Concept('levies','Odvedenci')|E]" # todo: CONCEPT CASE
  LEVIES_MAX: "$RAISE_MAX|V$"
  LEVIES_NOT_MAX: "$CURRENT|V$/$RAISE_MAX|V$"
- LEVIES_TOOLTIP: "#T Nepovolaný [levies|El]: $CURRENT|0V$/$RAISE_MAX|0V$#!"
- LEVIES_AFFECTED_BY_COUNTIES_HEADER: "#T Počet [Concept('levies','odvedenců')|E] u [rally_point|El] je snížen#!"
- LEVIES_AFFECTED_BY_COUNTY_CONTROL: "@warning_icon! #X [rally_point|E] má hrabství se sníženou [county_control]#!"
+ LEVIES_TOOLTIP: "#T Nepovolaný [Concept('levies','odvedenci')|El]: $CURRENT|0V$/$RAISE_MAX|0V$#!" # todo: CONCEPT CASE
+ LEVIES_AFFECTED_BY_COUNTIES_HEADER: "#T Počet [Concept('levies','odvedenců')|E] u [Concept('rally_point','shromaždiště')|El] je snížen#!" # todo: CONCEPT CASE
+ LEVIES_AFFECTED_BY_COUNTY_CONTROL: "@warning_icon! #X [Concept('rally_point','Shromaždiště')|E] má hrabství se sníženou [county_control]#!" # todo: CONCEPT CASE
  FROM_DOMAIN: "Z [Concept('domain','domény')|E]"
  FROM_VASSALS: "Od [Concept('vassals','vazalů')|E]"
  FROM_BISHOPS: "Od [Concept('realm_priest','kněze říše')|E]"
- BANNER_MEN_AT_ARMS_LABEL: "[men_at_arms|E]:"
- ADVENTURER_CAP_HINT: "Vylepšete svůj [camp|El], abyste zvýšili limit"
+ BANNER_MEN_AT_ARMS_LABEL: "[Concept('men_at_arms','Ozbrojenci')|E]:" # todo: CONCEPT CASE
+ ADVENTURER_CAP_HINT: "Vylepšete svůj [Concept('camp','tábor')|El], abyste zvýšili limit" # todo: CONCEPT CASE
  BANNER_MEN_AT_ARMS: "$UNRAISED|0V$"
  BANNER_MEN_AT_ARMS_NOT_MAX: "$UNRAISED|0$/$RAISE_MAX|0$"
- BANNER_MEN_AT_ARMS_TOOLTIP: "#T Nepovolaný [men_at_arms|El]: $UNRAISED|0V$/$RAISE_MAX|0V$#!"
+ BANNER_MEN_AT_ARMS_TOOLTIP: "#T Nepovolaný [Concept('men_at_arms','ozbrojenci')|El]: $UNRAISED|0V$/$RAISE_MAX|0V$#!" # todo: CONCEPT CASE
  BANNER_KNIGHTS_LABEL: "$knight_culture_player_plural$:"
  BANNER_TROOPS_TAB: "Vaše armády"
  BANNER_KNIGHTS_TAB: "$knight_culture_player_plural_no_tooltip$"
- RAISE_BANNER_TT_TITLE: "#T Povolat armádu na [rally_point|E]#!"
- RAISE_BANNER_TT_NO_SOLDIERS: "@warning_icon! #X Žádní [soldiers|El] k povolání#!"
+ RAISE_BANNER_TT_TITLE: "#T Povolat armádu na [Concept('rally_point','shromaždiště')|E]#!" # todo: CONCEPT CASE
+ RAISE_BANNER_TT_NO_SOLDIERS: "@warning_icon! #X Žádní [Concept('soldiers','vojáci')|El] k povolání#!" # todo: CONCEPT CASE
  RAISE_BANNER_TT_LEVIES: "$UNRAISED|0V$ z $RAISE_MAX|0V$ [Concept('levies','odvedenců')|E] lze povolat"
  RAISE_BANNER_TT_MAA: "$UNRAISED|0V$ z $RAISE_MAX|0V$ [Concept('men_at_arms','ozbrojenců')|E] lze povolat"
  MEN_AT_ARMS_CURRENT_MAX_TOOLTIP: "[MEN_AT_ARMS_TYPE.GetName]: $CURRENT|0V$/$MAX|0V$."
@@ -39,12 +39,12 @@
  REINFORCEMENT_MAA: "$MAA_FULL_MAINTENANCE_TEXT$: $VALUE$/měsíc"
  STACK_SIZE_MAA: "Velikost regimentu: $VALUE|V$"
  ADVENTURER_MAINTENANCE_INFO: "[SelectLocalization( GetPlayer.GetGovernment.HasGovernmentFlag( 'government_is_nomadic' ), 'ADVENTURER_MAINTENANCE_INFO_NOMADIC', 'ADVENTURER_MAINTENANCE_INFO_ADVENTURER' )]"
- ADVENTURER_MAINTENANCE_INFO_ADVENTURER: "[adventurers|E] mohou posílit [Concept('men_at_arms','ozbrojence')|E] pouze použitím #V $refill_maa_interaction$#!, #V $reinforce_soldiers_interaction$#!, nebo prostřednictvím [adventurer_siege_replenishment|El] během [Concept('war','války')|E]"
- ADVENTURER_MAINTENANCE_INFO_NOMADIC: "[nomads|E] mohou své [Concept('men_at_arms','ozbrojence')|E] posílit pouze použitím #V $refill_maa_interaction$#! a zaplacením [Concept('herd','stáda')|E] nebo [Concept('gold','zlata')|E]."
- CONDITIONAL_MAINTENANCE_INFO: "Vaše [government|El] může $conditional_maa_refill_rule$"
+ ADVENTURER_MAINTENANCE_INFO_ADVENTURER: "[Concept('adventurers','Dobrodruzi')|E] mohou posílit [Concept('men_at_arms','ozbrojence')|E] pouze použitím #V $refill_maa_interaction$#!, #V $reinforce_soldiers_interaction$#!, nebo prostřednictvím [Concept('adventurer_siege_replenishment','doplnění po obléhání')|El] během [Concept('war','války')|E]" # todo: CONCEPT CASE
+ ADVENTURER_MAINTENANCE_INFO_NOMADIC: "[Concept('nomads','Nomádi')|E] mohou své [Concept('men_at_arms','ozbrojence')|E] posílit pouze použitím #V $refill_maa_interaction$#! a zaplacením [Concept('herd','stádem')|E] nebo [Concept('gold','zlata')|E]." # todo: CONCEPT CASE
+ CONDITIONAL_MAINTENANCE_INFO: "Vaše [Concept('government','vláda')|El] může $conditional_maa_refill_rule$" # todo: CONCEPT CASE
  MONTHLY_MAINTENANCE_LABEL: "Měsíční náklady:"
  MONTHLY_MAX_MAINTENANCE_LABEL: "#weak Max:#!"
- MONTHLY_MAX_MAINTENANCE_TT: "#T Maximální vojenská údržba#!\nToto jsou předpokládané vojenské výdaje, když máte všechny síly povolány a na plné síle.\n@warning_icon! #X Mít [armies|E] na [fleets|E] může zvýšit skutečné náklady na údržbu.#!\n\nS aktuálním množstvím [gold|E] a [income|E] můžete mít všechny své jednotky povolané po dobu [MilitaryView.GetAllRaisedTimeGold] předtím, než zbankrotujete."
+ MONTHLY_MAX_MAINTENANCE_TT: "#T Maximální vojenská údržba#!\nToto jsou předpokládané vojenské výdaje, když máte všechny síly povolány a na plné síle.\n@warning_icon! #X Mít [Concept('armies','armády')|E] na [Concept('fleets','loďstva')|E] může zvýšit skutečné náklady na údržbu.#!\n\nS aktuálním množstvím [Concept('gold','zlatem')|E] a [Concept('income','příjem')|E] můžete mít všechny své jednotky povolané po dobu [MilitaryView.GetAllRaisedTimeGold] předtím, než zbankrotujete." # todo: CONCEPT CASE
  MONTHLY_MAX_MAINTENANCE_VIEW: "([MilitaryView.GetAllRaisedTimeGold])"
  MONTHLY_MAX_MAINTENANCE_TREASURY_VIEW: "([MilitaryView.GetAllRaisedTimeTreasury])" # todo: NEW TRANSLATION
  MONTHLY_REINFORCEMENT_COST_LABEL: "Měsíční doplňování"
@@ -55,19 +55,19 @@
  ADD_MEN_AT_ARMS_LABEL: "Vytvořit pluk mužů zbraní"
  MAA_COUNT_AND_CAP: "$CURRENT|V$/$MAX|V$"
  MAA_COUNT_AND_CAP_ABOVE_CAP: "$CURRENT|N$/$MAX|V$"
- MAA_COUNT_ABOVE_CAP: "$VALUE|V$ [men_at_arms|El] nad limitem kapacity"
+ MAA_COUNT_ABOVE_CAP: "$VALUE|V$ [Concept('men_at_arms','Ozbrojenci')|El] nad limitem kapacity" # todo: CONCEPT CASE
  HIRE_TROOPS: "Najmout vojáky"
  MV_SHOW_MAA: "Zobrazit [Concept('men_at_arms','ozbrojence')|E]"
  MV_UNRAISED_MAA: "Nepovolaní"
  TT_IMPERIAL_ARMIES: "#T Armáda [Title.GetNameNoTierNoTooltip] #!\n#I Klikněte pro zobrazení podrobností#!"
  TT_MAINTENANCE_TITLE: "#T Náklady na údržbu: $VALUE$/měsíc#!"
  TT_MAINTENANCE_RAISED_ARMIES: "Povolané armády: @gold_icon!$VALUE|1$/měsíc"
- TT_MAINTENANCE_MAA: "[men_at_arms|E]: $VALUE$/měsíc"
+ TT_MAINTENANCE_MAA: "[Concept('men_at_arms','Ozbrojenci')|E]: $VALUE$/měsíc" # todo: CONCEPT CASE
  TT_MAINTENANCE_NO: "#weak Žádné náklady na údržbu#!"
  TT_REINFORCING_MAA_YES_TITLE: "#T Doplňování [Concept('men_at_arms','ozbrojenců')|E]#!"
- TT_REINFORCING_MAA_FULL_STRENGTH: "[men_at_arms|E] v plné síle"
+ TT_REINFORCING_MAA_FULL_STRENGTH: "[Concept('men_at_arms','Ozbrojenci')|E] v plné síle" # todo: CONCEPT CASE
  TT_REINFORCING_MAA_FULL_STRENGTH_TIME: "$TIME|V$ měsíců do dosažení plné síly"
- TT_REINFORCING_MAA_NOT_TITLE: "#T [men_at_arms|E] se nedoplňují#!"
+ TT_REINFORCING_MAA_NOT_TITLE: "#T [Concept('men_at_arms','Ozbrojenci')|E] se nedoplňují#!" # todo: CONCEPT CASE
  TT_REINFORCING_MAA_CLICK_STOP: "\n#I Klikněte pro zastavení doplňování#!"
  TT_REINFORCING_MAA_CLICK_START: "\n#I Klikněte pro zahájení doplňování#!"
  MAINTENANCE_COST_PART: "Údržba: $VALUE$/měsíc"
@@ -80,36 +80,36 @@
  TT_CAP_REGIMENT_CURRENT: "Aktuálně: $CURRENT|V$"
  TT_CAP_REGIMENT_CAP: "Limit"
  TT_CAP_TIER_REASON: "Jste $TIER$"
- TT_RAISE_ALL_MAA_INFO: "[men_at_arms|E], [special_troops|El], [mercenaries|El] a [holy_orders|El] budou povolány na [rally_point|El] nejblíže vašemu [Concept('realm_capital','hlavnímu městu panství')|E]."
- TT_RAISE_ALL: "#T Povolat všechny armády#!\n[levies|E] budou povolány na jejich nejbližší [Concept('rally_point','schromaždišti')|E].\n\n$TT_RAISE_ALL_MAA_INFO$"
- TT_RAISE_ALL_RAIDERS: "#T Povolat všechny armády jako [Concept('raiders','nájezdníky')|E]#!\nPovolat všechny armády, a ty se vybaví jako [raiders|El] "
- TT_RAISE_ALL_BARTERERS: "#T Nasadit všechny armády jako Barterers#!\nNasadíte všechny armády a ty se vybaví jako [barterers|E] " # todo: NEW TRANSLATION
- TT_RAISE_ALL_MEN_AT_ARMS: "#T Povolat všechny [Concept('men_at_arms','ozbrojence')|E]#!\n[men_at_arms|E] budou povolány na [rally_point|El] nejblíže vašemu [Concept('realm_capital','hlavnímu městu panství')|E]."
+ TT_RAISE_ALL_MAA_INFO: "[Concept('men_at_arms','Ozbrojenci')|E], [Concept('special_troops','vojsko z událostí')|El], [Concept('mercenaries','žoldnéři')|El] a [Concept('holy_orders','svaté řády')|El] budou povolány na [Concept('rally_point','shromaždiště')|El] nejblíže vašemu [Concept('realm_capital','hlavnímu městu panství')|E]." # todo: CONCEPT CASE
+ TT_RAISE_ALL: "#T Povolat všechny armády#!\n[Concept('levies','Odvedenci')|E] budou povolány na jejich nejbližší [Concept('rally_point','schromaždišti')|E].\n\n$TT_RAISE_ALL_MAA_INFO$" # todo: CONCEPT CASE
+ TT_RAISE_ALL_RAIDERS: "#T Povolat všechny armády jako [Concept('raiders','nájezdníky')|E]#!\nPovolat všechny armády, a ty se vybaví jako [Concept('raiders','nájezdníci')|El] " # todo: CONCEPT CASE
+ TT_RAISE_ALL_BARTERERS: "#T Nasadit všechny armády jako Barterers#!\nNasadíte všechny armády a ty se vybaví jako [Concept('barterers','směnné výpravy')|E] " # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TT_RAISE_ALL_MEN_AT_ARMS: "#T Povolat všechny [Concept('men_at_arms','ozbrojence')|E]#!\n[Concept('men_at_arms','Ozbrojenci')|E] budou povolány na [Concept('rally_point','shromaždiště')|El] nejblíže vašemu [Concept('realm_capital','hlavnímu městu panství')|E]." # todo: CONCEPT CASE
  TT_RAISE_ALL_LEVIES: "Nepovolaní [Concept('levies','odvedenci')|E]: $UNRAISED|0V$/$RAISE_MAX|0V$"
  TT_RAISE_ALL_MAA: "Nepovolaní [Concept('men_at_arms','ozbrojenci')|E]: $UNRAISED|0V$/$RAISE_MAX|0V$"
  TT_HIRE_TROOPS: "#T Najmout vojáky#!\nZobrazí vojáky dostupné k najmutí"
- TT_MAA_RAISED: "#T [men_at_arms|E] povoláni#!"
- TT_MAA_UNRAISED: "#T [men_at_arms|E] nepovolaní#!"
- TT_MAA_ENTRY_BUTTON: "#T Spravovat [regiment|El]#!"
+ TT_MAA_RAISED: "#T [Concept('men_at_arms','Ozbrojenci')|E] povoláni#!" # todo: CONCEPT CASE
+ TT_MAA_UNRAISED: "#T [Concept('men_at_arms','Ozbrojenci')|E] nepovolaní#!" # todo: CONCEPT CASE
+ TT_MAA_ENTRY_BUTTON: "#T Spravovat [Concept('regiment','pluk')|El]#!" # todo: CONCEPT CASE
  TT_CANT_RAISE_AT_WAR: "@warning_icon! #X Nelze povolat regimenty během míru#!"
  TT_MERCENARIES_HIREABLE_RULER: "#T [Character.GetShortUINameNoTooltip] #!\n#I Klikněte pro zobrazení podrobností#!"
  MEN_AT_ARMS_TYPE_NAME: "Typ: #high [MenAtArmsType.GetBaseTypeName]#!"
- MILITARY_VIEW_BANNERS: "[rally_points|E]"
- MILITARY_VIEW_EVENT_TROOPS: "[special_troops|E]"
+ MILITARY_VIEW_BANNERS: "[Concept('rally_points','Shromaždiště')|E]" # todo: CONCEPT CASE
+ MILITARY_VIEW_EVENT_TROOPS: "[Concept('special_troops','Vojsko z událostí')|E]" # todo: CONCEPT CASE
  MILITARY_VIEW_EVENT_TROOPS_ASSOCIATED_WAR: "Budou rozpuštěny, když [War.GetName] skončí"
  MILITARY_VIEW_EVENT_TROOPS_RAISE: "Povolat"
- MILITARY_VIEW_EVENT_TROOPS_RAISE_TT: "#T Povolat [MilitaryViewEventTroop.GetName]\n#!Nová [army|El] s [soldier_i][MilitaryViewEventTroop.GetNumberOfRaisableSoldiers|V] [Concept('soldiers','vojáky')|E] bude povolána v [MilitaryViewEventTroop.GetRaiseProvinceName|V]"
- MILITARY_VIEW_EVENT_TROOPS_NOT_INHERITABLE: "Budou rozpuštěny při [succession|El]"
- MILITARY_VIEW_EVENT_TROOPS_INHERITABLE: "Budou zděděny při [succession|El]"
- MILITARY_VIEW_HIRED_TROOPS: "[mercenaries|E] a [holy_orders|El]"
+ MILITARY_VIEW_EVENT_TROOPS_RAISE_TT: "#T Povolat [MilitaryViewEventTroop.GetName]\n#!Nová [Concept('army','armáda')|El] s [soldier_i][MilitaryViewEventTroop.GetNumberOfRaisableSoldiers|V] [Concept('soldiers','vojáky')|E] bude povolána v [MilitaryViewEventTroop.GetRaiseProvinceName|V]" # todo: CONCEPT CASE
+ MILITARY_VIEW_EVENT_TROOPS_NOT_INHERITABLE: "Budou rozpuštěny při [Concept('succession','nástupnictví')|El]" # todo: CONCEPT CASE
+ MILITARY_VIEW_EVENT_TROOPS_INHERITABLE: "Budou zděděny při [Concept('succession','nástupnictví')|El]" # todo: CONCEPT CASE
+ MILITARY_VIEW_HIRED_TROOPS: "[Concept('mercenaries','Žoldnéři')|E] a [Concept('holy_orders','svaté řády')|El]" # todo: CONCEPT CASE
  HIRED_TROOPS_STRENGTH: "Síla"
  HIRED_TROOPS_REGIMENTS: "Regimenty"
- BD_LEVIES_MAINTENANCE: "[levies|E]"
- BD_MAA_MAINTENANCE: "[men_at_arms|E]"
+ BD_LEVIES_MAINTENANCE: "[Concept('levies','Odvedenci')|E]" # todo: CONCEPT CASE
+ BD_MAA_MAINTENANCE: "[Concept('men_at_arms','Ozbrojenci')|E]" # todo: CONCEPT CASE
  BD_ARMY_EMBARKED: "@embarked_icon! Naloděno"
- BD_ARMY_RAID_DISCOUNT: "[raid|E] [army|E]" # todo: NEW TRANSLATION
- BD_ARMY_BARTER_DISCOUNT: "[barter|E] [army|E]" # todo: NEW TRANSLATION
- MV_EMBARKED_TT: "#T [embarked|E] [armies|El]\n#!Za jeden nebo více naloděných armád jsou placeny dodatečné náklady."
+ BD_ARMY_RAID_DISCOUNT: "[Concept('raid','Nájezd')|E] [Concept('army','Armáda')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ BD_ARMY_BARTER_DISCOUNT: "[Concept('barter','Směna')|E] [Concept('army','Armáda')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MV_EMBARKED_TT: "#T [Concept('embarked','Naloděno')|E] [Concept('armies','Armády')|El]\n#!Za jeden nebo více naloděných armád jsou placeny dodatečné náklady." # todo: CONCEPT CASE
  BD_ARMY_MAINTENANCE_NAME: "[ARMY.GetName] [Select_CString(ARMY.IsEmbarked,'@embarked_icon!','')]"
  BD_UNRAISED_MAA_MAINTENANCE: "Nepovolaní [Concept('men_at_arms','ozbrojenci')|E]"
  BD_UNRAISED_MAA_MAINTENANCE_BASE: "Nepovolaní [Concept('men_at_arms','ozbrojenci')|E]"
@@ -118,14 +118,14 @@
  BD_RAISED_MAA_MAINTENANCE: "Povolaní [Concept('men_at_arms','ozbrojenci')|E]"
  BD_RAISED_MAA_MAINTENANCE_BASE: "Povolaní [Concept('men_at_arms','ozbrojenci')|E]"
  BD_MAA_MAINTENANCE_BASE: "Náklady"
- MV_RALLY_POINTS: "[rally_points|E]:"
- MV_ADD_RALLY_POINT: "#I Klikněte pro přidání nového [rally_point|El]#!"
+ MV_RALLY_POINTS: "[Concept('rally_points','Shromaždiště')|E]:" # todo: CONCEPT CASE
+ MV_ADD_RALLY_POINT: "#I Klikněte pro přidání nové [Concept('rally_point','shromaždiště')|El]#!" # todo: CONCEPT CASE
  MV_RALLY_POINT_NUMBER_INFO: "$CURRENT|V$/$MAX|V$"
- MV_REMOVE_RALLY_POINT: "#T Odebrat shromaždiště#!\n[armies|E] mohou být povolány na další nejbližší [rally_point|El]."
+ MV_REMOVE_RALLY_POINT: "#T Odebrat shromaždiště#!\n[Concept('armies','Armády')|E] mohou být povolány na další nejbližší [Concept('rally_point','shromaždiště')|El]." # todo: CONCEPT CASE
  MV_TOTAL_SOLDIERS: "Celkem vojáků"
  MV_UNRAISED_SOLDIERS: "Nepovolaní vojáci"
  MV_KNIGHTS: "$knight_culture_player_plural$"
- MV_KNIGHTS_AND_ACCOLADES: "$knight_culture_player_plural$ a [accolades|El]"
+ MV_KNIGHTS_AND_ACCOLADES: "$knight_culture_player_plural$ a [Concept('accolades','vyznamenání')|El]" # todo: CONCEPT CASE
  MV_MANAGE_KNIGHTS: "#low Klikněte pro správu...#!"
  MV_MERCENARIES: "Žoldnéři"
  MV_HOLY_ORDERS: "Svaté řády"
@@ -134,29 +134,29 @@
  MV_LEVY_MAINTENANCE: "[gold_i][MilitaryView.GetLevyGoldExpense|1]"
  MV_LEVY_MAINTENANCE_TOOLTIP: "#T Náklady: [gold_i][MilitaryView.GetLevyGoldExpense|2]/měsíc#!\n[MilitaryView.GetNumberOfRaisedLevies|0] [Concept('levies','ozbrojenců')|E] povoláno"
  MV_LEVY_MAINTENANCE_TREASURY: "[treasury_i][MilitaryView.GetLevyTreasuryExpense|1]" # todo: NEW TRANSLATION
- MV_LEVY_MAINTENANCE_TREASURY_TOOLTIP: "#T Údržba: [treasury_i][MilitaryView.GetLevyTreasuryExpense|2]/měsíc#!\n[MilitaryView.GetNumberOfRaisedLevies|0] [levies|E] povoláno" # todo: NEW TRANSLATION
+ MV_LEVY_MAINTENANCE_TREASURY_TOOLTIP: "#T Údržba: [treasury_i][MilitaryView.GetLevyTreasuryExpense|2]/měsíc#!\n[MilitaryView.GetNumberOfRaisedLevies|0] [Concept('levies','Odvedenci')|E] povoláno" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  MV_LEVY_MAINTENANCE_BARTER_GOODS: "[barter_goods_i][MilitaryView.GetLevyBarterGoodsExpense|1]" # todo: NEW TRANSLATION
- MV_LEVY_MAINTENANCE_BARTER_GOODS_TOOLTIP: "#T Údržba: [barter_goods_i][MilitaryView.GetLevyBarterGoodsExpense|2]/měsíc#!\n[MilitaryView.GetNumberOfRaisedLevies|0] [levies|E] povoláno" # todo: NEW TRANSLATION
+ MV_LEVY_MAINTENANCE_BARTER_GOODS_TOOLTIP: "#T Údržba: [barter_goods_i][MilitaryView.GetLevyBarterGoodsExpense|2]/měsíc#!\n[MilitaryView.GetNumberOfRaisedLevies|0] [Concept('levies','Odvedenci')|E] povoláno" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  KV_HEADER: "$knight_culture_player_plural_no_tooltip$"
  KV_HEADER_ACCOLADES: "$knight_culture_player_plural_no_tooltip$ a ocenění"
- BREAKDOWN_LEVY_MAINTENANCE: "[levies|E]"
- BREAKDOWN_MAA_MAINTENANCE: "[men_at_arms|E]"
+ BREAKDOWN_LEVY_MAINTENANCE: "[Concept('levies','Odvedenci')|E]" # todo: CONCEPT CASE
+ BREAKDOWN_MAA_MAINTENANCE: "[Concept('men_at_arms','Ozbrojenci')|E]" # todo: CONCEPT CASE
  MV_RALLY_POINT_TT: "#T [RallyPointItem.GetRallyPoint.GetName]\n#!\n$CLICK_TO_SELECT$"
- MV_MEN_AT_ARMS_LABEL: "[men_at_arms|E]:"
+ MV_MEN_AT_ARMS_LABEL: "[Concept('men_at_arms','Ozbrojenci')|E]:" # todo: CONCEPT CASE
  MV_MEN_AT_ARMS_NONE: " None"
  MV_REGIMENT_START_SIZE: "Začne s 5 vojáky (a doplní se na [MenAtArmsType.GetStackSize])"
  MV_REGIMENT_START_SIZE_ADVENTURER: "Začne s 5 vojáky (z [MenAtArmsType.GetStackSize])"
- MV_CREATE_REGIMENT_MAX_SIZE_TT: "#T Počet vojáků na velikost: [MenAtArmsType.GetStackSize]\n#!Ve Velikosti 1 bude tento [regiment|El] mít [MenAtArmsType.GetStackSize] [Concept('soldiers','vojáků')|E]. Pokaždé, když zvýšíte velikost pluku, bude přidáno dalších [MenAtArmsType.GetStackSize] vojáků."
+ MV_CREATE_REGIMENT_MAX_SIZE_TT: "#T Počet vojáků na velikost: [MenAtArmsType.GetStackSize]\n#!Ve Velikosti 1 bude tento [Concept('regiment','pluk')|El] mít [MenAtArmsType.GetStackSize] [Concept('soldiers','vojáků')|E]. Pokaždé, když zvýšíte velikost pluku, bude přidáno dalších [MenAtArmsType.GetStackSize] vojáků." # todo: CONCEPT CASE
  MV_CREATE_REGIMENT_SIZE: "[MenAtArmsType.GetStackSize] (Velikost 1)"
  MV_KNIGHTS_TT: "#T $knight_culture_player_plural$\n#!#I Klikněte, abyste [Select_CString( MilitaryView.AreKnightsShown, 'skrýt', 'zobrazit' )] seznam vašich dostupných $knight_culture_player_plural$#!"
- MV_LEVY_TT: "#T [levies|E]\n#!#I Klikněte, abyste [Select_CString( MilitaryView.AreLeviesShown, 'skrýt', 'zobrazit' )] podrobnosti o vašich [levies|E]#!"
+ MV_LEVY_TT: "#T [Concept('levies','Odvedenci')|E]\n#!#I Klikněte, abyste [Select_CString( MilitaryView.AreLeviesShown, 'skrýt', 'zobrazit' )] podrobnosti o vašich [Concept('levies','odvedenců')|E]#!" # todo: CONCEPT CASE
  STRENGTH_COMPARISON_TOTAL_STRENGTH: "@soldier_icon! [GuiMilitaryStrength.GetTargetTotal|0]"
- STRENGTH_COMPARISON_ALLIES: "[ally_i|E] [GuiMilitaryStrength.GetTargetAlliesCount]"
+ STRENGTH_COMPARISON_ALLIES: "[Concept('ally_i','@alliance_icon!')|E] [GuiMilitaryStrength.GetTargetAlliesCount]" # todo: CONCEPT CASE
  MV_ARMIES_SELECTION_PERSONAL: "Vaše armády"
  MV_ARMIES_SELECTION_IMPERIAL: "[GetPlayer.Custom('GetProvincialArmiesConceptNoTooltip')]"
  MV_MERCENARIES_SELECTION_MERCENARIES: "Žoldnéři"
  MV_MERCENARIES_SELECTION_HIREABLE_RULERS: "Speciální žoldnéři"
- MV_MERCENARIES_NO_HIREABLE_RULERS_IN_RANGE: "V rámci vašeho [realm|el] nejsou žádní najímatelní [adventurers|El] (nebo podobní)"
+ MV_MERCENARIES_NO_HIREABLE_RULERS_IN_RANGE: "V rámci vašeho [Concept('realm','panství')|el] nejsou žádní najímatelní [Concept('adventurers','dobrodruzi')|El] (nebo podobní)" # todo: CONCEPT CASE
  MV_MERCENARIES_HIREABLE_RULER_STATUS: "[HiredTroopItem.GetHirableRulerStatus]"
  MV_MERCENARIES_STATUS_AVAILABLE: "#I K dispozici"
  MV_MERCENARIES_STATUS_COMMANDED: "#I Vedené vámi"
@@ -174,17 +174,17 @@
  MV_ADMIN_ARMY_ARMIES_NAME: "[Title.GetNameNoTooltip]"
  MV_ADMIN_ARMY_ARMIES_LOANED_LABEL: "#high Půjčeno: #!"
  MV_ADMIN_ARMY_HIRE_DIRECTLY: "Armády, které můžete najmout přímo"
- MV_ADMIN_ARMY_ASK_EMPEROR: "Požádejte svého [Concept('top_liege','lenního pána')|E] o další #HIGH $game_concept_men_at_arms$#!"
+ MV_ADMIN_ARMY_ASK_EMPEROR: "Požádejte svého [Concept('top_liege','nejvyššího lenního pána')|E] o další #HIGH ozbrojence#!" # todo: CONCEPT CASE
  MV_ADMIN_ARMY_NO_CONTROLLED_TITLES: "Nevelíte žádným dalším [GetPlayer.Custom('GetProvincialArmiesConcept')]"
- MV_ADMIN_ARMY_NO_UNCONTROLLED_TITLES: "Žádní dostupní [title_men_at_arms|El], které byste mohli ovládat"
- MV_NO_MAA_FOR_TITLE: "Žádný [title_men_at_arms|El] pro tento #HIGH Titul#!"
- MV_NO_MAA_FOR_TITLE_YET: "Pro tento #HIGH Title# dosud nebyli vytvořeni žádní [title_men_at_arms|E]!" # todo: NEW TRANSLATION
+ MV_ADMIN_ARMY_NO_UNCONTROLLED_TITLES: "Žádní dostupní [Concept('title_men_at_arms','tituloví ozbrojenci')|El], které byste mohli ovládat" # todo: CONCEPT CASE
+ MV_NO_MAA_FOR_TITLE: "Žádný [Concept('title_men_at_arms','tituloví ozbrojenci')|El] pro tento #HIGH Titul#!" # todo: CONCEPT CASE
+ MV_NO_MAA_FOR_TITLE_YET: "Pro tento #HIGH Title# dosud nebyli vytvořeni žádní [Concept('title_men_at_arms','tituloví ozbrojenci')|E]!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  NOMAD_RIDERS_LABEL: "[GetMaA('nomadic_riders').GetName]"
  UPGRADE_HORDE_REGIMENT_LABEL: "Vylepšit regiment hordy"
- UPGRADE_HORDE_TOOLTIP: "#T Vylepšit [regiment|El] hordy#!\n#weak Zaplatíte [gold|El] za přeměnu vaší [Concept('horde','hordy')|E] na [Concept('men_at_arms','ozbrojence')|E]#!"
+ UPGRADE_HORDE_TOOLTIP: "#T Vylepšit [Concept('regiment','pluk')|El] hordy#!\n#weak Zaplatíte [Concept('gold','zlato')|El] za přeměnu vaší [Concept('horde','nomádskou hordu')|E] na [Concept('men_at_arms','ozbrojence')|E]#!" # todo: CONCEPT CASE
  MV_REGIMENT_START_SIZE_NOMAD: "Začne na plné síle ([MenAtArmsType.GetStackSize])"
  RECRUIT_FROM_SUBJECTS_LABEL: "Najmout od poddaných"
- RECRUIT_FROM_SUBJECTS_TOOLTIP: "#T Najmout od poddaných#!\n#weak Zaplatíte [gold|El] za naverbování [Concept('men_at_arms','ozbrojenců')|E], ke kterým má váš [subject|El] přístup, ale vy ne#!"
+ RECRUIT_FROM_SUBJECTS_TOOLTIP: "#T Najmout od poddaných#!\n#weak Zaplatíte [Concept('gold','zlato')|El] za naverbování [Concept('men_at_arms','ozbrojence')|E], ke kterým má váš [Concept('subject','subjekt')|El] přístup, ale vy ne#!" # todo: CONCEPT CASE
  RECRUIT_FROM_SUBJECTS_ICON: "@recruit_from_subjects_icon!"
  CELESTIAL_REQUEST_MILITARY_AID_NAME: "$celestial_request_military_aid_interaction$" # todo: NEW TRANSLATION
  MY_PROVINCIAL_ARMIES_TITLE: "Vaše [GetPlayer.Custom( 'GetProvincialArmiesConcept' )]" # todo: NEW TRANSLATION

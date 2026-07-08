@@ -1,16 +1,16 @@
 ﻿l_polish:
- BS_INITIAL_SOLDIERS: "#T Počáteční [Concept('soldiers','$game_concept_soldiers$')|El]#!"
+ BS_INITIAL_SOLDIERS: "#T Počáteční [Concept('soldiers','vojáci')|El]#!" # todo: CONCEPT CASE
  BS_LOSSES: "#T Ztráty#!"
  BS_SURVIVORS: "#T Přeživší#!"
- BS_TT_ADVANTAGE: "#T Celková [Concept('advantage','$game_concept_advantage$')|El]: $ADVANTAGE$#!\nJednal $NUM_ACTED$ krát"
- BS_TT_COUNTER: "#T Nepřátelská [Concept('advantage','$game_concept_advantage$')|El] zneplatněna protiútokem: $COUNTERED$#!\nProvedeno $NUM_ACTED$ protiútoků"
+ BS_TT_ADVANTAGE: "#T Celková [Concept('advantage','výhoda')|El]: $ADVANTAGE$#!\nJednal $NUM_ACTED$ krát" # todo: CONCEPT CASE
+ BS_TT_COUNTER: "#T Nepřátelská [Concept('advantage','výhoda')|El] zneplatněna protiútokem: $COUNTERED$#!\nProvedeno $NUM_ACTED$ protiútoků" # todo: CONCEPT CASE
  BS_TT_LEVIES_KILLS: "#T Zabito [Concept('levies','odvedenců')|E]#!"
  BS_TT_LEVIES_LOSSES: "#T Ztraceno [Concept('levies','odvedenců')|E]#!"
  BS_NO_DETAILS_TO_SHOW: "Během této bitvy žádní žoldnéři nezasáhli."
  BS_GOTO: "Přejít na lokaci"
  TOGGLE_BATTLE_EVENTS: "Přepnout události bitvy"
- BATTLE_SUMMARY_YOUR_SOLDIERS: "Vaši [Concept('soldiers','$game_concept_soldiers$')|El]"
- BATTLE_SUMMARY_ENEMY_SOLDIERS: "Nepřátelští [Concept('soldiers','$game_concept_soldiers$')|El]"
+ BATTLE_SUMMARY_YOUR_SOLDIERS: "Vaši [Concept('soldiers','vojáky')|El]" # todo: CONCEPT CASE
+ BATTLE_SUMMARY_ENEMY_SOLDIERS: "Nepřátelští [Concept('soldiers','vojáci')|El]" # todo: CONCEPT CASE
  BATTLE_SUMMARY_KL: "K/L"
  BATTLE_SUMMARY_KL_TT: "#T Zabití a ztráty#!"
  BATTLE_SUMMARY_KILLS_TOTAL_TT: "#T Celkem zabito#!"
@@ -28,8 +28,8 @@
  BATTLE_SUMMARY_KNIGHTS_KILLED_TT: "#T Byl [Select_CString(ROOT.Char.IsFemale,'zabita','zabit')] v této bitvě#!"
  BATTLE_SUMMARY_SOLDIERS: "Vojáci"
  BATTLE_SUMMARY_KNIGHTS: "$knight_culture_player_plural_no_tooltip$"
- BATTLE_SUMMARY_LEFT_KNIGHTS_HEADER: "@knight_icon! [GetDataModelSize( BattleSummaryWindow.GetLeftKnightsStats )] [Concept('knights','$game_concept_knights$')|E]"
- BATTLE_SUMMARY_RIGHT_KNIGHTS_HEADER: "@knight_icon! [GetDataModelSize( BattleSummaryWindow.GetRightKnightsStats )] [Concept('knights','$game_concept_knights$')|E]"
+ BATTLE_SUMMARY_LEFT_KNIGHTS_HEADER: "@knight_icon! [GetDataModelSize( BattleSummaryWindow.GetLeftKnightsStats )] [Concept('knights','Rytíři')|E]" # todo: CONCEPT CASE
+ BATTLE_SUMMARY_RIGHT_KNIGHTS_HEADER: "@knight_icon! [GetDataModelSize( BattleSummaryWindow.GetRightKnightsStats )] [Concept('knights','Rytíři')|E]" # todo: CONCEPT CASE
  BATTLE_SUMMARY_REGIMENT_COUNT: "#T Počet jednotek#!\nZbývá/Počáteční"
  BATTLE_SUMMARY_YOUR_KNIGHTS: "Vaši [BattleSummaryWindow.GetLeftSideMainParticipant.Custom('KnightCulturePlural')] ([GetDataModelSize( BattleSummaryWindow.GetLeftKnightsStats )])"
  BATTLE_SUMMARY_ENEMY_KNIGHTS: "([GetDataModelSize( BattleSummaryWindow.GetRightKnightsStats )]) Nepřátelští [BattleSummaryWindow.GetRightSideMainParticipant.Custom('KnightCulturePlural')]"
@@ -69,5 +69,5 @@
  BATTLE_SUMMARY_FLAVOR_MINOR_BATTLE: "Potyčka"
  BATTLE_SUMMARY_BATTLE_TITLE: "[SelectLocalization(BattleSummaryWindow.IsMinorBattle, 'BATTLE_SUMMARY_FLAVOR_MINOR_BATTLE', '')][SelectLocalization(BattleSummaryWindow.IsBigLosses, 'BATTLE_SUMMARY_FLAVOR_BIG_LOSSES', '')][SelectLocalization(Not(Or(BattleSummaryWindow.IsMinorBattle, BattleSummaryWindow.IsBigLosses)), 'BATTLE_SUMMARY_FLAVOR_BATTLE', '')] u [BattleSummaryWindow.GetLocation.GetName]"
  BATTLE_SUMMARY_KNIGHT_EVENT_EXPAND_HEADER_TT: "[BattleEvent.GetRightCharacter( BattleSummaryWindow.IsPlayerAttacker ).GetNameNoTooltip] byl:"
- BATTLE_SUMMARY_KNIGHT_EVENT_EXPAND_ENTRY_TT: "[BattleEvent.GetOutcomeDesc] [Character.GetName] #weak ([Character.GetSkill( 'prowess' )] [Concept('prowess','$game_concept_prowess$')|E])#!"
- BATTLE_SUMMARY_KNIGHT_OUTCOME_TEXT: " [Character.GetProwess] [Concept('prowess','$game_concept_prowess$')|E] [BattleSummaryWindow.GetOutcomeText( Character.Self )]"
+ BATTLE_SUMMARY_KNIGHT_EVENT_EXPAND_ENTRY_TT: "[BattleEvent.GetOutcomeDesc] [Character.GetName] #weak ([Character.GetSkill( 'prowess' )] [Concept('prowess','udatnost')|E])#!" # todo: CONCEPT CASE
+ BATTLE_SUMMARY_KNIGHT_OUTCOME_TEXT: " [Character.GetProwess] [Concept('prowess','Udatnost')|E] [BattleSummaryWindow.GetOutcomeText( Character.Self )]" # todo: CONCEPT CASE

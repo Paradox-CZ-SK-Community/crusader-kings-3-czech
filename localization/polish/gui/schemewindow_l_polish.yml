@@ -1,10 +1,10 @@
 ﻿l_polish:
- SCHEME_WINDOW_MY_SCHEMES_TITLE: "Vaše [schemes|E]"
- SCHEME_WINDOW_KNOWN_SCHEMES_TITLE: "Objevené [secret_schemes|E]"
+ SCHEME_WINDOW_MY_SCHEMES_TITLE: "Vaše [Concept('schemes','intriky')|E]" # todo: CONCEPT CASE
+ SCHEME_WINDOW_KNOWN_SCHEMES_TITLE: "Objevené [Concept('secret_schemes','tajné intriky')|E]" # todo: CONCEPT CASE
  SCHEME_WINDOW_INVITE_MEMBERS: "Pozvat ([SchemeItem.GetScheme.MakeScope.GetName])"
- SCHEME_WINDOW_SHOW_MEMBERS: "[SchemeItem.GetScheme.MakeScope.ScriptValue('current_scheme_filled_agent_slots_value')|V0] z [SchemeItem.GetNumberOfOwnerAgents|V] [agent|E] míst obsazeno"
- SCHEME_WINDOW_TT_SHOW_MEMBERS: "#T Zobrazit [agents|E]#!"
- SCHEME_WINDOW_TT_HIDE_MEMBERS: "#T Skrýt [agents|E]#!"
+ SCHEME_WINDOW_SHOW_MEMBERS: "[SchemeItem.GetScheme.MakeScope.ScriptValue('current_scheme_filled_agent_slots_value')|V0] z [SchemeItem.GetNumberOfOwnerAgents|V] [Concept('agent','spolčence')|E] míst obsazeno" # todo: CONCEPT CASE
+ SCHEME_WINDOW_TT_SHOW_MEMBERS: "#T Zobrazit [Concept('agents','spolčenci')|E]#!" # todo: CONCEPT CASE
+ SCHEME_WINDOW_TT_HIDE_MEMBERS: "#T Skrýt [Concept('agents','spolčenci')|E]#!" # todo: CONCEPT CASE
  SCHEME_WINDOW_AUTOFILL_BUTTON: "Automaticky doplnit"
  SCHEME_WINDOW_ITEM_NAME: "[Scheme.GetFullActionName]"
  SCHEME_WINDOW_TT_ITEM: "[Scheme.GetTypeDescription]"
@@ -13,34 +13,34 @@
  SCHEME_WINDOW_CANCEL_CONFIRMATION_TITLE: "Opustit spiknutí"
  SCHEME_WINDOW_CANCEL_CONTRACT_CONFIRMATION_TITLE: "Opustit spiknutí [GetPlayer.Custom('GetContractOrIssue')]"
  SCHEME_WINDOW_CANCEL_CONFIRMATION_TEXT: "Spiknutí [SCHEME.GetName] namířené proti $NAME$ bude opuštěno.\n\n[SCHEME.GetCooldownInfo]"
- SCHEME_WINDOW_CONTRACT_CANCEL_CONFIRMATION_TEXT: "Bude také opuštěn [TASK_CONTRACT.GetType.GetName] [task_contract|E]."
+ SCHEME_WINDOW_CONTRACT_CANCEL_CONFIRMATION_TEXT: "Bude také opuštěn [TASK_CONTRACT.GetType.GetName] [Concept('task_contract','zakázka')|E]." # todo: CONCEPT CASE
  SCHEME_WINDOW_CANCEL_CONFIRMATION_ACCEPT: "Opustit"
  SCHEME_COOLDOWN_INFO: "Nemůžete zahájit další [SCHEME.GetSchemeType.GetTypeName] proti [SCHEME.GetTarget.GetName] po dobu $TIME|V$."
  SCHEME_WINDOW_PROGRESS_TOOLTIP: "#T [SchemeItem.GetProgressDescription]#! \n[Scheme.GetChangeDesc]"
- SCHEME_WINDOW_PROGRESS_INFO: "[GetGameTimeDurationDays(Subtract_int32(Scheme.GetProgressGoal, Scheme.GetProgress))|V] do dalšího [scheme_phase_phase|E]"
+ SCHEME_WINDOW_PROGRESS_INFO: "[GetGameTimeDurationDays(Subtract_int32(Scheme.GetProgressGoal, Scheme.GetProgress))|V] do dalšího [Concept('scheme_phase_phase','fáze')|E]" # todo: CONCEPT CASE
  SCHEME_WINDOW_PROGRESS_FROZEN: "#weak Spiknutí je pozastaveno, protože cestujete"
  SCHEME_WINDOW_PROGRESS_INFO_BASIC: "[GetGameTimeDurationDays(Subtract_int32(Scheme.GetProgressGoal, Scheme.GetProgress))] do dokončení"
  SCHEME_WINDOW_PROGRESS_INFO_BREAKDOWN: "[Scheme.GetSpeedDescription]"
- SCHEME_WINDOW_OPPORTUNITIES_INFO_BREAKDOWN: "1 [scheme_opportunity_opportunity|E] získaná za každých [Scheme.GetPhasesPerOpportunity] [scheme_phase_phases|E]\n[Scheme.GetPhasesRemainingUntilOpportunity] [scheme_phase_phases|E] do dalšího [scheme_opportunity_opportunity|E]\n#EMP Alespoň#! [Scheme.MakeScope.ScriptValue('scheme_charge_to_advance_threshold_value')] [scheme_opportunity_opportunities|E] je potřeba k vykonání#!"
+ SCHEME_WINDOW_OPPORTUNITIES_INFO_BREAKDOWN: "1 [Concept('scheme_opportunity_opportunity','výhoda')|E] získaná za každých [Scheme.GetPhasesPerOpportunity] [Concept('scheme_phase_phases','fáze')|E]\n[Scheme.GetPhasesRemainingUntilOpportunity] [Concept('scheme_phase_phases','Fáze')|E] do dalšího [Concept('scheme_opportunity_opportunity','výhody')|E]\n#EMP Alespoň#! [Scheme.MakeScope.ScriptValue('scheme_charge_to_advance_threshold_value')] [Concept('scheme_opportunity_opportunities','výhody')|E] je potřeba k vykonání#!" # todo: CONCEPT CASE
  SCHEME_WINDOW_OPPORTUNITIES_INFO: "[SelectLocalization(GreaterThan_int32( Scheme.GetAgentCharges, '(int32)0' ), 'SCHEME_WINDOW_OPPORTUNITIES_INFO.COUNT', 'SCHEME_WINDOW_OPPORTUNITIES_INFO.NONE')]"
- SCHEME_WINDOW_OPPORTUNITIES_INFO.NONE: "Zatím žádné [scheme_opportunity_opportunities|E]"
+ SCHEME_WINDOW_OPPORTUNITIES_INFO.NONE: "Zatím žádné [Concept('scheme_opportunity_opportunities','výhody')|E]" # todo: CONCEPT CASE
  SCHEME_WINDOW_OPPORTUNITIES_INFO.COUNT: "[SelectLocalization(EqualTo_int32( Scheme.GetAgentCharges, '(int32)1' ), 'SCHEME_WINDOW_OPPORTUNITIES_INFO.COUNT.ONLY_ONE', 'SCHEME_WINDOW_OPPORTUNITIES_INFO.COUNT.GREATER_THAN_ONE')]"
- SCHEME_WINDOW_OPPORTUNITIES_INFO.COUNT.ONLY_ONE: "[Scheme.GetAgentCharges] [scheme_opportunity_opportunity|E]"
- SCHEME_WINDOW_OPPORTUNITIES_INFO.COUNT.GREATER_THAN_ONE: "[Scheme.GetAgentCharges] [scheme_opportunity_opportunities|E]"
- SCHEME_WINDOW_OPEN_PREP_EXPLANATION_TT: "Utratit [scheme_opportunity_opportunities|E] k interakci s vaším [Scheme.GetName] [scheme|E]"
+ SCHEME_WINDOW_OPPORTUNITIES_INFO.COUNT.ONLY_ONE: "[Scheme.GetAgentCharges] [Concept('scheme_opportunity_opportunity','Výhoda')|E]" # todo: CONCEPT CASE
+ SCHEME_WINDOW_OPPORTUNITIES_INFO.COUNT.GREATER_THAN_ONE: "[Scheme.GetAgentCharges] [Concept('scheme_opportunity_opportunities','Výhody')|E]" # todo: CONCEPT CASE
+ SCHEME_WINDOW_OPEN_PREP_EXPLANATION_TT: "Utratit [Concept('scheme_opportunity_opportunities','výhody')|E] k interakci s vaším [Scheme.GetName] [Concept('scheme','intrikou')|E]" # todo: CONCEPT CASE
  SCHEME_WINDOW_OPEN_PREP_TT: "Vykonat spiknutí"
  SCHEME_WINDOW_INVITE_TOOLTIP: "#T Pozvat agenty do spiknutí#!\n[SchemeItem.GetNumberOfPotentialOwnerAgents|V] postav by šlo přesvědčit, aby se přidaly"
- SCHEME_WINDOW_NOT_OWNED_SCHEMES: "Žádné #high [SkillSchemeGroup.GetTypeName]#! [scheme|E] nejsou v průběhu\nZačněte jedno interakcí s jinou postavou"
- SCHEME_WINDOW_NOT_KNOWN_SCHEMES: "#weak Dosud nebyly objeveny žádné [schemes|E]#!"
+ SCHEME_WINDOW_NOT_OWNED_SCHEMES: "Žádné #high [SkillSchemeGroup.GetTypeName]#! [Concept('scheme','intrika')|E] nejsou v průběhu\nZačněte jedno interakcí s jinou postavou" # todo: CONCEPT CASE
+ SCHEME_WINDOW_NOT_KNOWN_SCHEMES: "#weak Dosud nebyly objeveny žádné [Concept('schemes','intriky')|E]#!" # todo: CONCEPT CASE
  SCHEME_WINDOW_UNKNOWN_OWNER_TOOLTIP: "Majitel tohoto spiknutí je neznámý"
- SCHEME_WINDOW_MODIFIERS: "[modifiers|E]:"
- SCHEME_WINDOW_TT_SPEED: "$SPEED|1V$ [scheme_speed|E]"
- SCHEME_RESISTANCE_DESCRIPTION_HEADER: "[scheme_resistance|E]"
- SCHEME_PHASE_DURATION_DESCRIPTION_HEADER: "#T [scheme_speed|E]#!\nDní za $game_concept_scheme_phase_phase$"
+ SCHEME_WINDOW_MODIFIERS: "[Concept('modifiers','Modifikátory')|E]:" # todo: CONCEPT CASE
+ SCHEME_WINDOW_TT_SPEED: "$SPEED|1V$ [Concept('scheme_speed','Délka fáze intriky')|E]" # todo: CONCEPT CASE
+ SCHEME_RESISTANCE_DESCRIPTION_HEADER: "[Concept('scheme_resistance','Odolnost vůči intrikám')|E]" # todo: CONCEPT CASE
+ SCHEME_PHASE_DURATION_DESCRIPTION_HEADER: "#T [Concept('scheme_speed','Délka fáze intriky')|E]#!\nDní za fázi" # todo: CONCEPT CASE
  SCHEME_TIER_INFLUENCE: "[CHARACTER.GetShortUINamePossessive|U] hodnost"
  SCHEME_SPYMASTER: "[CHARACTER.GetShortUINamePossessive|U] šéf špionáže"
  SCHEME_WINDOW_TT_CHARACTER_EXPOSED: "@warning_icon! #X @exposed_icon!Aktuálně odhalen#!"
- SCHEME_WINDOW_MEMBER_LIST: "Objevení [agents|E]"
+ SCHEME_WINDOW_MEMBER_LIST: "Objevení [Concept('agents','spolčence')|E]" # todo: CONCEPT CASE
  SCHEME_WINDOW_SCHEME_OWNER: "#T Majitel spiknutí#!: [CHARACTER.GetUIName|U]"
  SCHEME_WINDOW_SCHEME_MEMBER: "#T Člen spiknutí#!: [CHARACTER.GetUIName|U]"
  SCHEME_WINDOW_SCHEME_TARGET: "#T Cíl spiknutí#!: [Character.GetUIName|U]"
@@ -81,59 +81,59 @@
  PERSONAL_SCHEME: "Osobní"
  POLITICAL_SCHEME: "Politické"
  SCHEME_COOLDOWN_DATE_FORMAT: "[DATE.GetStringShort|V]"
- SCHEME_WINDOW_SUCCESS_CHANCE_MAIN: "#V [SelectLocalization(EqualTo_CFixedPoint(Scheme.GetMaxSuccessChance, Scheme.GetSuccessChance), '#SUCGLOW ', '')][Scheme.GetSuccessChance|%/0][SelectLocalization(EqualTo_CFixedPoint(Scheme.GetMaxSuccessChance, Scheme.GetSuccessChance), '#!', '')] #weak ([Scheme.GetSuccessChanceGrowth|/1%P=] za $game_concept_scheme_phase_phase$)#! [SelectLocalization(EqualTo_CFixedPoint(Scheme.GetMaxSuccessChance, Scheme.GetSuccessChance), '#SUCGLOW ', '')]z [Scheme.GetMaxSuccessChance|0%/]#![SelectLocalization(EqualTo_CFixedPoint(Scheme.GetMaxSuccessChance, Scheme.GetSuccessChance), '#!', '')] [success_chance|E]"
- SCHEME_WINDOW_SUCCESS_CHANCE: "$SCHEME_WIDGET_SUCCESS_CHANCE$ [success_chance|E]"
+ SCHEME_WINDOW_SUCCESS_CHANCE_MAIN: "#V [SelectLocalization(EqualTo_CFixedPoint(Scheme.GetMaxSuccessChance, Scheme.GetSuccessChance), '#SUCGLOW ', '')][Scheme.GetSuccessChance|%/0][SelectLocalization(EqualTo_CFixedPoint(Scheme.GetMaxSuccessChance, Scheme.GetSuccessChance), '#!', '')] #weak ([Scheme.GetSuccessChanceGrowth|/1%P=] za fázi)#! [SelectLocalization(EqualTo_CFixedPoint(Scheme.GetMaxSuccessChance, Scheme.GetSuccessChance), '#SUCGLOW ', '')]z [Scheme.GetMaxSuccessChance|0%/]#![SelectLocalization(EqualTo_CFixedPoint(Scheme.GetMaxSuccessChance, Scheme.GetSuccessChance), '#!', '')] [Concept('success_chance','šancí na úspěch')|E]" # todo: CONCEPT CASE
+ SCHEME_WINDOW_SUCCESS_CHANCE: "$SCHEME_WIDGET_SUCCESS_CHANCE$ [Concept('success_chance','Šance na úspěch')|E]" # todo: CONCEPT CASE
  SCHEME_WIDGET_SUCCESS_CHANCE: "#V [SelectLocalization(EqualTo_CFixedPoint(Scheme.GetMaxSuccessChance, Scheme.GetSuccessChance), '#SUCGLOW ', '')][Scheme.GetSuccessChance|%/0][SelectLocalization(EqualTo_CFixedPoint(Scheme.GetMaxSuccessChance, Scheme.GetSuccessChance), '#!', '')]#!"
  SCHEME_WIDGET_SUCCESS_CHANCE_SHORT: "[Scheme.GetSuccessChance|%/0]"
  SCHEME_WIDGET_NO_PULSE_ACTION: "Bez změny"
- SCHEME_WINDOW_SECRECY: "#V [Scheme.GetSecrecy|%/]#! [secrecy|E] #DIE1 #WEAK [SelectLocalization(LessThanOrEqualTo_CFixedPoint( Scheme.MakeScope.Var('secrecy_grace_period').GetValue, '(CFixedPoint)0' ), '', 'SCHEME_WINDOW_SECRECY_GRACE_PERIOD_TIMER')]#!#!"
- SCHEME_WINDOW_SECRECY_LABEL: "[secrecy|E]:"
- SCHEME_WINDOW_SECRECY_GRACE_PERIOD_TIMER: "([Scheme.MakeScope.Var('secrecy_grace_period').GetValue] měsíců [secrecy_grace|E] zbývá)"
+ SCHEME_WINDOW_SECRECY: "#V [Scheme.GetSecrecy|%/]#! [Concept('secrecy','utajení')|E] #DIE1 #WEAK [SelectLocalization(LessThanOrEqualTo_CFixedPoint( Scheme.MakeScope.Var('secrecy_grace_period').GetValue, '(CFixedPoint)0' ), '', 'SCHEME_WINDOW_SECRECY_GRACE_PERIOD_TIMER')]#!#!" # todo: CONCEPT CASE
+ SCHEME_WINDOW_SECRECY_LABEL: "[Concept('secrecy','Utajení')|E]:" # todo: CONCEPT CASE
+ SCHEME_WINDOW_SECRECY_GRACE_PERIOD_TIMER: "([Scheme.MakeScope.Var('secrecy_grace_period').GetValue] měsíců [Concept('secrecy_grace','ochranné lhůty')|E] zbývá)" # todo: CONCEPT CASE
  SCHEME_WINDOW_SECRECY_MONTHLY_REVEAL_CHANCE: "([Scheme.MakeScope.ScriptValue('monthly_scheme_discovery_chance_value')|%/1] měsíční šance odhalení)"
  SCHEME_WIDGET_SECRECY_SHORT: "[Scheme.GetSecrecy|%/]"
  SCHEME_WINDOW_BREACHES: "$SCHEME_WINDOW_BREACHES_ACTUAL$"
- SCHEME_WINDOW_BREACHES_ACTUAL: "#V [Scheme.GetBreaches]#! [scheme_breaches_short|E] z #V [Scheme.GetSchemeType.GetMaximumBreaches]#!"
- SCHEME_WINDOW_BREACHES_SHORT: "#V [Scheme.GetBreaches]/[Scheme.GetSchemeType.GetMaximumBreaches]#! [scheme_breaches_short|E]"
- SCHEME_WINDOW_REMOVE_AGENT_TITLE: "Odstranit [agent|E]"
- SCHEME_WINDOW_REMOVE_AGENT_TEXT: "Odebrat [Character.GetUIName] jako [agent|e] z [Scheme.GetFullActionName] [scheme|e]?"
+ SCHEME_WINDOW_BREACHES_ACTUAL: "#V [Scheme.GetBreaches]#! [Concept('scheme_breaches_short','narušení')|E] z #V [Scheme.GetSchemeType.GetMaximumBreaches]#!" # todo: CONCEPT CASE
+ SCHEME_WINDOW_BREACHES_SHORT: "#V [Scheme.GetBreaches]/[Scheme.GetSchemeType.GetMaximumBreaches]#! [Concept('scheme_breaches_short','narušení')|E]" # todo: CONCEPT CASE
+ SCHEME_WINDOW_REMOVE_AGENT_TITLE: "Odstranit [Concept('agent','spolčenec')|E]" # todo: CONCEPT CASE
+ SCHEME_WINDOW_REMOVE_AGENT_TEXT: "Odebrat [Character.GetUIName] jako [Concept('agent','spolčenec')|e] z [Scheme.GetFullActionName] [Concept('scheme','intriky')|e]?" # todo: CONCEPT CASE
  SCHEME_WINDOW_REMOVE_AGENT_ACCEPT: "Odebrat"
- SCHEME_WINDOW_AUTO_ASSIGN_AGENTS_TOOLTIP: "Automaticky pozvat ochotné postavy k zaplnění prázdných [agent|E] míst"
- SCHEME_WINDOW_AUTO_ASSIGN_AGENTS: "Automaticky pozvat [agents|E]"
+ SCHEME_WINDOW_AUTO_ASSIGN_AGENTS_TOOLTIP: "Automaticky pozvat ochotné postavy k zaplnění prázdných [Concept('agent','spolčencům')|E] míst" # todo: CONCEPT CASE
+ SCHEME_WINDOW_AUTO_ASSIGN_AGENTS: "Automaticky pozvat [Concept('agents','spolčenci')|E]" # todo: CONCEPT CASE
  SCHEME_PREPARATIONS_WINDOW_SUCCESS_CHANCE: "#V [SelectLocalization(EqualTo_CFixedPoint(Scheme.GetMaxSuccessChance, Scheme.GetSuccessChance), 'SCHEME_PREPARATIONS_WINDOW_SUCCESS_CHANCE_GLOW', 'SCHEME_PREPARATIONS_WINDOW_SUCCESS_CHANCE_NEUTRAL')]#! #WEAK (max. [Scheme.GetMaxSuccessChance|1]%)#!"
  SCHEME_PREPARATIONS_WINDOW_SUCCESS_CHANCE_NEUTRAL: "[Scheme.GetSuccessChance|%/1]"
  SCHEME_PREPARATIONS_WINDOW_SUCCESS_CHANCE_GLOW: "#SUCGLOW [Scheme.GetSuccessChance|%/1]#!"
  SCHEME_PREPARATIONS_WINDOW_SECRECY: "#V [Scheme.GetSecrecy|%/]#! #DIE1 #WEAK [SelectLocalization(LessThanOrEqualTo_CFixedPoint( Scheme.MakeScope.Var('secrecy_grace_period').GetValue, '(CFixedPoint)0' ), 'SCHEME_WINDOW_SECRECY_MONTHLY_REVEAL_CHANCE', 'SCHEME_WINDOW_SECRECY_GRACE_PERIOD_TIMER')]#!#!"
  SCHEME_PREPARATIONS_WINDOW_OPPORTUNITIES: "[Scheme.GetAgentCharges()] Výhody"
  SCHEME_ITEM_PROGRESS_TOOLTIP: "#T [Scheme.GetProgressDescription]#!\n\n[Scheme.GetSpeedDescription]\n\n[Scheme.GetResistanceDescription]"
- SCHEME_SUCCESS_FROM_AGENTS: "Od [agents|E]: $MOD_SUCCESS_PREFIX$ $VALUE|+%/1=$"
- SCHEME_SUCCESS_GROWTH_FROM_AGENTS: "Od [agents|E]: $MOD_SUCCESS_GROWTH_PREFIX$$VALUE|+%/1=$$MOD_PER_SCHEME_PHASE_POSTFIX$"
- SCHEME_SUCCESS_MAX_FROM_AGENTS: "Od [agents|E]: $MOD_SUCCESS_MAX_PREFIX$$VALUE|+%/1=$"
+ SCHEME_SUCCESS_FROM_AGENTS: "Od [Concept('agents','spolčenců')|E]: $MOD_SUCCESS_PREFIX$ $VALUE|+%/1=$" # todo: CONCEPT CASE
+ SCHEME_SUCCESS_GROWTH_FROM_AGENTS: "Od [Concept('agents','spolčenců')|E]: $MOD_SUCCESS_GROWTH_PREFIX$$VALUE|+%/1=$$MOD_PER_SCHEME_PHASE_POSTFIX$" # todo: CONCEPT CASE
+ SCHEME_SUCCESS_MAX_FROM_AGENTS: "Od [Concept('agents','spolčenců')|E]: $MOD_SUCCESS_MAX_PREFIX$$VALUE|+%/1=$" # todo: CONCEPT CASE
  SCHEME_SUCCESS_ACCUMULATED_GROWTH: "Nashromážděno v průběhu času: $MOD_SUCCESS_PREFIX$$VALUE|+%/1=$"
- SCHEME_SUCCESS_FROM_STARTER_PACKAGE: "[scheme_precaution|E]: $MOD_SUCCESS_PREFIX$$VALUE|+%/1=$"
- SCHEME_SUCCESS_MAX_FROM_STARTER_PACKAGE: "[scheme_precaution|E]: $MOD_SUCCESS_MAX_PREFIX$$VALUE|+%/1=$"
- SCHEME_POTENTIAL_MINIMUM: "#weak [scheme_potential|E] je vždy alespoň#! $VALUE|%/1$"
- SCHEME_POTENTIAL_MAXIMUM: "#weak [scheme_potential|E] může dosáhnout nejvýše#! $VALUE|%/1$"
- SCHEME_SUCCESS_MINIMUM: "#weak Minimální [success_chance|E]:#! $VALUE|+%/0$"
+ SCHEME_SUCCESS_FROM_STARTER_PACKAGE: "[Concept('scheme_precaution','Dodatečné opatření')|E]: $MOD_SUCCESS_PREFIX$$VALUE|+%/1=$" # todo: CONCEPT CASE
+ SCHEME_SUCCESS_MAX_FROM_STARTER_PACKAGE: "[Concept('scheme_precaution','Dodatečné opatření')|E]: $MOD_SUCCESS_MAX_PREFIX$$VALUE|+%/1=$" # todo: CONCEPT CASE
+ SCHEME_POTENTIAL_MINIMUM: "#weak [Concept('scheme_potential','Potenciál intriky')|E] je vždy alespoň#! $VALUE|%/1$" # todo: CONCEPT CASE
+ SCHEME_POTENTIAL_MAXIMUM: "#weak [Concept('scheme_potential','Potenciál intriky')|E] může dosáhnout nejvýše#! $VALUE|%/1$" # todo: CONCEPT CASE
+ SCHEME_SUCCESS_MINIMUM: "#weak Minimální [Concept('success_chance','šance na úspěch')|E]:#! $VALUE|+%/0$" # todo: CONCEPT CASE
  SCHEME_SUCCESS_CHANCE_MAX_BASE: "Základ: $MOD_SUCCESS_MAX_PREFIX$$VALUE|%/1$"
  SCHEME_SUCCESS_TOOLTIP_GROWTH_MINIMUM: "(Minimální růst $VALUE|+%/1=$)"
  SCHEME_SUCCESS_TOOLTIP_GROWTH_TOTAL: ""
- SCHEME_SUCCESS_TOOLTIP_MAX_TOTAL_BASIC: "#T [scheme_potential|E]: $MOD_SUCCESS_MAX_PREFIX$$VALUE|+%/1$#!"
+ SCHEME_SUCCESS_TOOLTIP_MAX_TOTAL_BASIC: "#T [Concept('scheme_potential','Potenciál intriky')|E]: $MOD_SUCCESS_MAX_PREFIX$$VALUE|+%/1$#!" # todo: CONCEPT CASE
  SCHEME_SUCCESS_TOOLTIP_MAX_TOTAL: "$SCHEME_SUCCESS_TOOLTIP_MAX_TOTAL_BASIC$"
  SCHEME_BASE_SECRECY: "Základ: $VALUE|Z0%/$"
- SCHEME_SECRECY_TRIGGER: "[secrecy|E]: $VALUE|+%/0$"
- SCHEME_SECRECY_FROM_SUCCESS: "Od [success_chance|E]: $VALUE|+=0/%$"
- SCHEME_SECRECY_FROM_STARTER_PACKAGE: "[scheme_precaution|E]: $MOD_SECRECY_PREFIX$$VALUE|+%/1=$"
+ SCHEME_SECRECY_TRIGGER: "[Concept('secrecy','Utajení')|E]: $VALUE|+%/0$" # todo: CONCEPT CASE
+ SCHEME_SECRECY_FROM_SUCCESS: "Od [Concept('success_chance','šancí na úspěch')|E]: $VALUE|+=0/%$" # todo: CONCEPT CASE
+ SCHEME_SECRECY_FROM_STARTER_PACKAGE: "[Concept('scheme_precaution','Dodatečné opatření')|E]: $MOD_SECRECY_PREFIX$$VALUE|+%/1=$" # todo: CONCEPT CASE
  SCHEME_SECRECY_MINIMUM: "#weak Minimální utajení:#! $VALUE|+%/0$"
  SCHEME_PHASE_DURATION_MINIMUM: "Minimální rychlost"
  SCHEME_WINDOW_SUCCESS_TOOLTIP: "$SCHEME_WINDOW_SUCCESS_TOOLTIP_TITLE$\n[Scheme.GetSuccessChanceDescription]"
- SCHEME_WINDOW_SUCCESS_TOOLTIP_TITLE: "#T [success_chance|E]: @scheme_success_icon![Scheme.GetSuccessChance|V%/1] #! #weak (maximálně [Scheme.GetMaxSuccessChance]%)#!"
- SCHEME_WINDOW_SUCCESS_BASIC_TOOLTIP: "#T [success_chance|E]: @scheme_success_icon![Scheme.GetSuccessChance|V%/1] #! #weak (maximálně [Scheme.GetMaxSuccessChance]%)#!\n[Scheme.GetSuccessChanceDescription]"
- SCHEME_WINDOW_SUCCESS_DISCOVERED_TOOLTIP: "#T [success_chance|E]: [Scheme.GetSuccessChance|V%/1] #! #weak (maximálně [Scheme.GetMaxSuccessChance]%)#! \n#weak Neznámé faktory#!"
- SCHEME_WINDOW_SECRECY_TOOLTIP: "#T [secrecy|E]: [Scheme.GetSecrecy|V%/] #! #weak (maximálně [Scheme.GetSchemeType.MaxSecrecy]%)#! \n[Scheme.GetSecrecyDescription]"
- SCHEME_WINDOW_SECRECY_DISCOVERED_TOOLTIP: "#T [secrecy|E]: [Scheme.GetSecrecy|V%/] #! #weak (maximálně [Scheme.GetSchemeType.MaxSecrecy]%)#! \n#weak Neznámé faktory#!"
+ SCHEME_WINDOW_SUCCESS_TOOLTIP_TITLE: "#T [Concept('success_chance','Šance na úspěch')|E]: @scheme_success_icon![Scheme.GetSuccessChance|V%/1] #! #weak (maximálně [Scheme.GetMaxSuccessChance]%)#!" # todo: CONCEPT CASE
+ SCHEME_WINDOW_SUCCESS_BASIC_TOOLTIP: "#T [Concept('success_chance','Šance na úspěch')|E]: @scheme_success_icon![Scheme.GetSuccessChance|V%/1] #! #weak (maximálně [Scheme.GetMaxSuccessChance]%)#!\n[Scheme.GetSuccessChanceDescription]" # todo: CONCEPT CASE
+ SCHEME_WINDOW_SUCCESS_DISCOVERED_TOOLTIP: "#T [Concept('success_chance','Šance na úspěch')|E]: [Scheme.GetSuccessChance|V%/1] #! #weak (maximálně [Scheme.GetMaxSuccessChance]%)#! \n#weak Neznámé faktory#!" # todo: CONCEPT CASE
+ SCHEME_WINDOW_SECRECY_TOOLTIP: "#T [Concept('secrecy','Utajení')|E]: [Scheme.GetSecrecy|V%/] #! #weak (maximálně [Scheme.GetSchemeType.MaxSecrecy]%)#! \n[Scheme.GetSecrecyDescription]" # todo: CONCEPT CASE
+ SCHEME_WINDOW_SECRECY_DISCOVERED_TOOLTIP: "#T [Concept('secrecy','Utajení')|E]: [Scheme.GetSecrecy|V%/] #! #weak (maximálně [Scheme.GetSchemeType.MaxSecrecy]%)#! \n#weak Neznámé faktory#!" # todo: CONCEPT CASE
  SCHEME_BASE_SUCCESS: "Základ: $VALUE|Z=1$"
- SCHEME_AGENT_TOOLTIP: "#T Agent [SchemeAgentSlotItem.GetCharacter.GetShortUIName|U]#! \n[SchemeAgentSlotItem.GetSuccessDesc]\n\n[scheme_speed|E]: [SchemeAgentSlotItem.GetContribution|1=+]"
- SCHEME_AGENT_SUCCESS: "[success_chance|E]: $VALUE|+=1$\n$DESC$"
+ SCHEME_AGENT_TOOLTIP: "#T Agent [SchemeAgentSlotItem.GetCharacter.GetShortUIName|U]#! \n[SchemeAgentSlotItem.GetSuccessDesc]\n\n[Concept('scheme_speed','Délka fáze intriky')|E]: [SchemeAgentSlotItem.GetContribution|1=+]" # todo: CONCEPT CASE
+ SCHEME_AGENT_SUCCESS: "[Concept('success_chance','Šance na úspěch')|E]: $VALUE|+=1$\n$DESC$" # todo: CONCEPT CASE
  SCHEME_WINDOW_EXPOSED_TOOLTIP: "#T Odhaleno#! \nTento plán byl odhalen a cílová osoba o jeho existenci ví."
  SCHEME_WINDOW_NO_KNOWN_AGENTS: "#weak Ještě žádní odhalení agenti#!"
  SCHEME_IS_EXPOSED: "Spiknutí je odhaleno: $VALUE|0=+%/$"
@@ -143,15 +143,15 @@
  SCHEME_PREPARED_FOR_ANYTHING_LIEGE_PERK_MODIFIER: "Lenní pán má [GetPerk( 'prepared_for_anything_perk' ).GetName( GetPlayer )]: $VALUE|0=+%/$"
  SCHEME_A_JOB_DONE_RIGHT_PERK_MODIFIER: "[GetPerk( 'a_job_done_right_perk' ).GetName( GetPlayer )]: $VALUE|0=+%/$"
  SCHEME_WINDOW_CLICK_FOR_SETUP: "#I Klikněte pro otevření okna příprav#!"
- SCHEME_GROWTH_PER_SKILL_POINT: "[scheme_growth_growth|E] založeno na [CHARACTER.GetShortUINamePossessive|U] $SKILL$: $MOD_SUCCESS_GROWTH_PREFIX$$VALUE|+%/1=$$MOD_PER_SCHEME_PHASE_POSTFIX$"
- SCHEME_AGENT_IS_SPYMASTER: "[target.GetShortUINamePossessiveNoTooltip] [spymaster|E]"
- SCHEME_AGENT_IS_SPYMASTER_IN_MY_COURT: "[spymaster|E] z [target.GetShortUINamePossessiveNoTooltip] [court|E]"
- SCHEME_AGENT_IS_SPOUSE: "[target.GetShortUINamePossessiveNoTooltip] [spouse|E]"
+ SCHEME_GROWTH_PER_SKILL_POINT: "[Concept('scheme_growth_growth','Růst')|E] založeno na [CHARACTER.GetShortUINamePossessive|U] $SKILL$: $MOD_SUCCESS_GROWTH_PREFIX$$VALUE|+%/1=$$MOD_PER_SCHEME_PHASE_POSTFIX$" # todo: CONCEPT CASE
+ SCHEME_AGENT_IS_SPYMASTER: "[target.GetShortUINamePossessiveNoTooltip] [Concept('spymaster','Špehmistr')|E]" # todo: CONCEPT CASE
+ SCHEME_AGENT_IS_SPYMASTER_IN_MY_COURT: "[Concept('spymaster','Špehmistr')|E] z [target.GetShortUINamePossessiveNoTooltip] [Concept('court','dvora')|E]" # todo: CONCEPT CASE
+ SCHEME_AGENT_IS_SPOUSE: "[target.GetShortUINamePossessiveNoTooltip] [Concept('spouse','Choť')|E]" # todo: CONCEPT CASE
  SCHEME_AGENT_IS_BEST_FRIEND: "[target.GetShortUINamePossessiveNoTooltip] Nejlepší přítel"
- SCHEME_AGENT_IS_GUARDIAN: "[target.GetShortUINamePossessiveNoTooltip] [guardian|E]"
- SCHEME_AGENT_IS_DIARCH: "[target.GetShortUINamePossessiveNoTooltip] [diarch|E]"
+ SCHEME_AGENT_IS_GUARDIAN: "[target.GetShortUINamePossessiveNoTooltip] [Concept('guardian','Poručník')|E]" # todo: CONCEPT CASE
+ SCHEME_AGENT_IS_DIARCH: "[target.GetShortUINamePossessiveNoTooltip] [Concept('diarch','Diarcha')|E]" # todo: CONCEPT CASE
  SCHEME_AGENT_IS_FRIEND: "[target.GetShortUINamePossessiveNoTooltip] Přítel"
- SCHEME_AGENT_IS_CONCUBINE: "[target.GetShortUINamePossessiveNoTooltip] [concubine|E]"
+ SCHEME_AGENT_IS_CONCUBINE: "[target.GetShortUINamePossessiveNoTooltip] [Concept('concubine','Konkubína')|E]" # todo: CONCEPT CASE
  SCHEME_AGENT_IS_LOVER: "[target.GetShortUINamePossessiveNoTooltip] Milostný partner"
  SCHEME_AGENT_IS_COURT_PHYSICIAN: "[target.GetShortUINamePossessiveNoTooltip] $court_physician_court_position$"
  SCHEME_AGENT_IS_FOOD_TASTER: "[target.GetShortUINamePossessiveNoTooltip] $food_taster_court_position$"
@@ -159,41 +159,41 @@
  SCHEME_AGENT_IS_CHIEF_EUNUCH: "[target.GetShortUINamePossessiveNoTooltip] $chief_eunuch_court_position$"
  SCHEME_AGENT_IS_BODYGUARD: "[target.GetShortUINamePossessiveNoTooltip] $bodyguard_court_position$"
  SCHEME_AGENT_IS_LADY_IN_WAITING: "[target.GetShortUINamePossessiveNoTooltip] $lady_in_waiting_court_position$"
- SCHEME_AGENT_IS_COUNCILLOR: "[target.GetShortUINamePossessiveNoTooltip] [councillor|E]"
- SCHEME_AGENT_IS_CLOSE_KIN: "Člen [target.GetShortUINamePossessiveNoTooltip] [close_family|E]"
- SCHEME_AGENT_IS_POWERFUL_VASSAL: "[target.GetShortUINamePossessiveNoTooltip] [powerful_vassal|E]"
+ SCHEME_AGENT_IS_COUNCILLOR: "[target.GetShortUINamePossessiveNoTooltip] [Concept('councillor','Rádce')|E]" # todo: CONCEPT CASE
+ SCHEME_AGENT_IS_CLOSE_KIN: "Člen [target.GetShortUINamePossessiveNoTooltip] [Concept('close_family','blízká rodina')|E]" # todo: CONCEPT CASE
+ SCHEME_AGENT_IS_POWERFUL_VASSAL: "[target.GetShortUINamePossessiveNoTooltip] [Concept('powerful_vassal','Mocný vazal')|E]" # todo: CONCEPT CASE
  SCHEME_AGENT_IS_NEMESIS: "[target.GetShortUINamePossessiveNoTooltip] Nemesis"
- SCHEME_AGENT_IS_EXTENDED_FAMILY: "Člen [target.GetShortUINamePossessiveNoTooltip] [extended_family|E]"
+ SCHEME_AGENT_IS_EXTENDED_FAMILY: "Člen [target.GetShortUINamePossessiveNoTooltip] [Concept('extended_family','širší rodina')|E]" # todo: CONCEPT CASE
  SCHEME_AGENT_IS_RIVAL: "[target.GetShortUINamePossessiveNoTooltip] Rival"
- SCHEME_AGENT_IS_VASSAL: "[target.GetShortUINamePossessiveNoTooltip] [vassal|E]"
- SCHEME_AGENT_IS_VASSAL_OF_LIEGE: "[vassal|E] u [target.GetShortUINamePossessiveNoTooltip] [liege|E]"
- SCHEME_AGENT_IS_COURTIER: "[target.GetShortUINamePossessiveNoTooltip] [courtier|E]"
- SCHEME_AGENT_IS_GUEST: "[target.GetShortUINamePossessiveNoTooltip] [guest|E]"
- SCHEME_AGENT_INTRIGUE: "Od [intrigue|E]"
- SCHEME_AGENT_IS_FELLOW_COURTIER: "Ve stejném [court|E] jako [target.GetShortUINameNoTooltip]"
- SCHEME_AGENT_IS_COURTIER_MY_COURT: "[target.Char.GetShortUINameNoTooltip] je ve stejném [court|E]"
- SCHEME_TARGET_IN_MY_COURT: "[target.GetShortUINameNoTooltip] je ve vašem [court|E]: $VALUE|=+0$"
+ SCHEME_AGENT_IS_VASSAL: "[target.GetShortUINamePossessiveNoTooltip] [Concept('vassal','Vazal')|E]" # todo: CONCEPT CASE
+ SCHEME_AGENT_IS_VASSAL_OF_LIEGE: "[Concept('vassal','Vazal')|E] u [target.GetShortUINamePossessiveNoTooltip] [Concept('liege','lenního pána')|E]" # todo: CONCEPT CASE
+ SCHEME_AGENT_IS_COURTIER: "[target.GetShortUINamePossessiveNoTooltip] [Concept('courtier','Dvořan')|E]" # todo: CONCEPT CASE
+ SCHEME_AGENT_IS_GUEST: "[target.GetShortUINamePossessiveNoTooltip] [Concept('guest','Host')|E]" # todo: CONCEPT CASE
+ SCHEME_AGENT_INTRIGUE: "Od [Concept('intrigue','pletichářství')|E]" # todo: CONCEPT CASE
+ SCHEME_AGENT_IS_FELLOW_COURTIER: "Ve stejném [Concept('court','dvoře')|E] jako [target.GetShortUINameNoTooltip]" # todo: CONCEPT CASE
+ SCHEME_AGENT_IS_COURTIER_MY_COURT: "[target.Char.GetShortUINameNoTooltip] je ve stejném [Concept('court','dvoře')|E]" # todo: CONCEPT CASE
+ SCHEME_TARGET_IN_MY_COURT: "[target.GetShortUINameNoTooltip] je ve vašem [Concept('court','dvoře')|E]: $VALUE|=+0$" # todo: CONCEPT CASE
  SCHEME_TARGET_TRAVELLING_UNSAFE_ROADS: "[target.GetShortUINameNoTooltip] je na cestách, nechráněný a sám: $VALUE|=+0$"
  SCHEME_TARGET_TRAVELLING_INCOGNITO: "[target.GetShortUINameNoTooltip] cestuje inkognito: $VALUE|=+0$"
- SCHEME_I_AM_SPYMASTER: "Jste [target.GetShortUINamePossessiveNoTooltip] [spymaster|E]: $VALUE|=+0$"
- SCHEME_I_AM_SPYMASTER_OF_LIEGE: "Jste [target.GetShortUINamePossessiveNoTooltip] [liege|E]'s [spymaster|E]: $VALUE|=+0$"
- SCHEME_I_AM_SPYMASTER_OF_HOST: "Jste [spymaster|E] [target.GetShortUINamePossessiveNoTooltip] [host|E]: $VALUE|=+0$"
- SCHEME_I_AM_GUARDIAN: "Jste [target.GetShortUINamePossessiveNoTooltip] [guardian|E]: $VALUE|=+0$"
- SCHEME_I_AM_DIARCH: "Jste [target.GetShortUINamePossessiveNoTooltip] [diarch|E]: $VALUE|=+0$"
- SCHEME_I_AM_COUNCILLOR: "Jste [target.GetShortUINamePossessiveNoTooltip] [councillor|E]: $VALUE|=+0$"
+ SCHEME_I_AM_SPYMASTER: "Jste [target.GetShortUINamePossessiveNoTooltip] [Concept('spymaster','špehmistr')|E]: $VALUE|=+0$" # todo: CONCEPT CASE
+ SCHEME_I_AM_SPYMASTER_OF_LIEGE: "Jste [target.GetShortUINamePossessiveNoTooltip] [Concept('liege','lenní pán')|E]'s [spymaster|E]: $VALUE|=+0$" # todo: CONCEPT CASE
+ SCHEME_I_AM_SPYMASTER_OF_HOST: "Jste [Concept('spymaster','špehmistr')|E] [target.GetShortUINamePossessiveNoTooltip] [Concept('host','hostitel')|E]: $VALUE|=+0$" # todo: CONCEPT CASE
+ SCHEME_I_AM_GUARDIAN: "Jste [target.GetShortUINamePossessiveNoTooltip] [Concept('guardian','poručník')|E]: $VALUE|=+0$" # todo: CONCEPT CASE
+ SCHEME_I_AM_DIARCH: "Jste [target.GetShortUINamePossessiveNoTooltip] [Concept('diarch','diarcha')|E]: $VALUE|=+0$" # todo: CONCEPT CASE
+ SCHEME_I_AM_COUNCILLOR: "Jste [target.GetShortUINamePossessiveNoTooltip] [Concept('councillor','rádce')|E]: $VALUE|=+0$" # todo: CONCEPT CASE
  SCHEME_TARGET_IS_CLOSE_TO_ME: "[target.GetShortUIName] je vám blízký: $VALUE|=+0$"
  SCHEME_TARGET_IS_LOVER: "[target.GetShortUIName] je váš milostný partner: $VALUE|=+0$"
- SCHEME_TARGET_IS_SPOUSE: "[target.GetShortUIName] je váš [spouse|E]: $VALUE|=+0$"
- SCHEME_TARGET_IS_CONCUBINE: "[target.GetShortUIName] je váš [concubine|E]: $VALUE|=+0$"
- SCHEME_TARGET_IS_CLOSE_FAMILY: "[target.GetShortUIName] je vaším [close_family|E]: $VALUE|=+0$"
- SCHEME_TARGET_IS_EXTENDED_FAMILY: "[target.GetShortUIName] je vaším [extended_family|E]: $VALUE|=+0$"
- SCHEME_TARGET_IS_COURTIER: "[target.GetShortUIName] je vaším [courtier|E]: $VALUE|=+0$"
- SCHEME_TARGET_IS_VASSAL: "[target.GetShortUIName] je vaším [vassal|E]: $VALUE|=+0$"
+ SCHEME_TARGET_IS_SPOUSE: "[target.GetShortUIName] je váš [Concept('spouse','choť')|E]: $VALUE|=+0$" # todo: CONCEPT CASE
+ SCHEME_TARGET_IS_CONCUBINE: "[target.GetShortUIName] je váš [Concept('concubine','konkubína')|E]: $VALUE|=+0$" # todo: CONCEPT CASE
+ SCHEME_TARGET_IS_CLOSE_FAMILY: "[target.GetShortUIName] je vaším [Concept('close_family','blízkou rodinou')|E]: $VALUE|=+0$" # todo: CONCEPT CASE
+ SCHEME_TARGET_IS_EXTENDED_FAMILY: "[target.GetShortUIName] je vaším [Concept('extended_family','širší rodinou')|E]: $VALUE|=+0$" # todo: CONCEPT CASE
+ SCHEME_TARGET_IS_COURTIER: "[target.GetShortUIName] je vaším [Concept('courtier','dvořanem')|E]: $VALUE|=+0$" # todo: CONCEPT CASE
+ SCHEME_TARGET_IS_VASSAL: "[target.GetShortUIName] je vaším [Concept('vassal','vazalem')|E]: $VALUE|=+0$" # todo: CONCEPT CASE
  SCHEME_VENGEFUL_RIVAL: "Jste [GetTrait('vengeful').GetName( GetNullCharacter )] a [target.GetShortUIName] je váš rival: $VALUE|=+0$"
- SCHEME_EYE_FOR_AN_EYE: "Vaše [culture|E] má tradici $tradition_eye_for_an_eye_name$ [culture_tradition|E] a [target.GetShortUIName] je váš rival: $VALUE|+0=$"
- SCHEME_WEDDING_CEREMONIES: "Vaše [culture|E] má tradici $tradition_wedding_ceremonies_name$ [culture_tradition|E] a [target.GetShortUIName] je váš [spouse|E]: $VALUE|+0=$"
- SCHEME_TARGET_IS_AN_EMPEROR: "[target.GetShortUIName] vládne [empire|E]: $VALUE|+0=$"
- SCHEME_TARGET_IS_A_KING: "[target.GetShortUIName] vládne [kingdom|E]: $VALUE|+0=$"
+ SCHEME_EYE_FOR_AN_EYE: "Vaše [Concept('culture','kultura')|E] má tradici $tradition_eye_for_an_eye_name$ [Concept('culture_tradition','kulturní tradice')|E] a [target.GetShortUIName] je váš rival: $VALUE|+0=$" # todo: CONCEPT CASE
+ SCHEME_WEDDING_CEREMONIES: "Vaše [Concept('culture','kultura')|E] má tradici $tradition_wedding_ceremonies_name$ [Concept('culture_tradition','kulturní tradice')|E] a [target.GetShortUIName] je váš [Concept('spouse','choť')|E]: $VALUE|+0=$" # todo: CONCEPT CASE
+ SCHEME_TARGET_IS_AN_EMPEROR: "[target.GetShortUIName] vládne [Concept('empire','říše')|E]: $VALUE|+0=$" # todo: CONCEPT CASE
+ SCHEME_TARGET_IS_A_KING: "[target.GetShortUIName] vládne [Concept('kingdom','království')|E]: $VALUE|+0=$" # todo: CONCEPT CASE
  HAS_ATTEMPTED_TO_MURDER_TARGET_BEFORE: "[target.GetShortUIName|U] ví, že jste se pokusili zavraždit [target.GetHerHim] dříve: $VALUE|+0=$"
  MURDER_HERBALIST_BONUS: "Vaše znalost jedovatých bylin: $VALUE|+0=$"
  MURDER_FOOL_NEMESIS_BONUS: "Soustředíte se na [target.GetShortUIName|U] poté, co vás [target.GetHerHim] korunoval jako Blázna: $VALUE|+0=$"
@@ -209,20 +209,20 @@
  SCHEME_BEFRIEND_THEIR_PARANOIA: "[target.GetTitledFirstName] je paranoidní: $VALUE|+0=$ "
  SCHEME_BEFRIEND_THEIR_TRUST: "[target.GetTitledFirstName] je důvěřivý: $VALUE|+0=$ "
  SCHEME_BEFRIEND_THEIR_LIFESTYLE: "[target.GetTitledFirstName] má diplomatické vzdělání: $VALUE|+0=$ "
- SCHEME_BEFRIEND_TIER_DIFFERENCE_TARGET: "Máte vyšší [rank|E] než [target.GetTitledFirstName]: $VALUE|+0=$ "
- SCHEME_BEFRIEND_TIER_DIFFERENCE_TARGET_NEGATIVE: "[target.GetTitledFirstName] má vyšší [rank|E] než vy: $VALUE|+0=$ "
+ SCHEME_BEFRIEND_TIER_DIFFERENCE_TARGET: "Máte vyšší [Concept('rank','hodnosti')|E] než [target.GetTitledFirstName]: $VALUE|+0=$ " # todo: CONCEPT CASE
+ SCHEME_BEFRIEND_TIER_DIFFERENCE_TARGET_NEGATIVE: "[target.GetTitledFirstName] má vyšší [Concept('rank','hodnosti')|E] než vy: $VALUE|+0=$ " # todo: CONCEPT CASE
  SCHEME_BEFRIEND_OUR_TRAITS: "[target.GetTitledFirstNamePossessive] náklonnost: $VALUE|+0=$ "
- SCHEME_BEFRIEND_TIER_DIFFERENCE_TARGET_LIEGE: "[target.GetTitledFirstNamePossessive] [liege|E] má vyšší [rank|E] než vy: $VALUE|+0=$ "
- HIGHER_RANK_THAN_SCHEME_TARGET: "Váš [rank|E] je vyšší než [target.GetShortUINamePossessive]: $VALUE|+0=-+$"
- LOWER_RANK_THAN_SCHEME_TARGET: "Váš [rank|E] je nižší než [target.GetShortUINamePossessive]: $VALUE|+0=-+$"
- HIGHER_RANK_THAN_SCHEME_TARGET_LIEGE: "Váš [rank|E] je vyšší než u [target.GetShortUINamePossessive] [liege|E]: $VALUE|+0=-+$"
- LOWER_RANK_THAN_SCHEME_TARGET_LIEGE: "Váš [rank|E] je nižší než u [target.GetShortUINamePossessive] [liege|E]: $VALUE|+0=-+$"
- TRIBE_ROMANCING_OTHER_GOVERNMENTS: "Jste [tribal|E], ale [target.GetTitledFirstName] není: $VALUE|+0=-+$"
- SCHEME_VS_RELIGIOUS_HEAD: "[target.GetTitledFirstName] je váš [head_of_faith|E]: $VALUE|+0=-+$"
- SCHEME_VS_SPIRITUAL_HOF: "[target.GetTitledFirstName] je váš [spiritual_head_of_faith|E]: $VALUE|+0=-+$"
- SCHEME_VS_SPIRITUAL_HOF_HOLDER: "[target.GetHolder.GetTitledFirstName] je vaším [spiritual_head_of_faith|E]: $VALUE|+0=-+$" # todo: NEW TRANSLATION
- SCHEME_AT_WAR: "Jste ve [war|E]: $VALUE|+0=-+$"
- SCHEME_AT_WAR_WITH_LIEGE: "Jste ve [war|E] s [target.GetTitledFirstNamePossessive] [liege|E]: $VALUE|+0=-+$"
+ SCHEME_BEFRIEND_TIER_DIFFERENCE_TARGET_LIEGE: "[target.GetTitledFirstNamePossessive] [Concept('liege','Lenní pán')|E] má vyšší [Concept('rank','hodnosti')|E] než vy: $VALUE|+0=$ " # todo: CONCEPT CASE
+ HIGHER_RANK_THAN_SCHEME_TARGET: "Váš [Concept('rank','hodnost')|E] je vyšší než [target.GetShortUINamePossessive]: $VALUE|+0=-+$" # todo: CONCEPT CASE
+ LOWER_RANK_THAN_SCHEME_TARGET: "Váš [Concept('rank','hodnost')|E] je nižší než [target.GetShortUINamePossessive]: $VALUE|+0=-+$" # todo: CONCEPT CASE
+ HIGHER_RANK_THAN_SCHEME_TARGET_LIEGE: "Váš [Concept('rank','hodnost')|E] je vyšší než u [target.GetShortUINamePossessive] [Concept('liege','lenního pána')|E]: $VALUE|+0=-+$" # todo: CONCEPT CASE
+ LOWER_RANK_THAN_SCHEME_TARGET_LIEGE: "Váš [Concept('rank','hodnost')|E] je nižší než u [target.GetShortUINamePossessive] [Concept('liege','lenního pána')|E]: $VALUE|+0=-+$" # todo: CONCEPT CASE
+ TRIBE_ROMANCING_OTHER_GOVERNMENTS: "Jste [Concept('tribal','kmenový')|E], ale [target.GetTitledFirstName] není: $VALUE|+0=-+$" # todo: CONCEPT CASE
+ SCHEME_VS_RELIGIOUS_HEAD: "[target.GetTitledFirstName] je váš [Concept('head_of_faith','hlava víry')|E]: $VALUE|+0=-+$" # todo: CONCEPT CASE
+ SCHEME_VS_SPIRITUAL_HOF: "[target.GetTitledFirstName] je váš [Concept('spiritual_head_of_faith','duchovní hlava víry')|E]: $VALUE|+0=-+$" # todo: CONCEPT CASE
+ SCHEME_VS_SPIRITUAL_HOF_HOLDER: "[target.GetHolder.GetTitledFirstName] je vaším [Concept('spiritual_head_of_faith','duchovní hlavou víry')|E]: $VALUE|+0=-+$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ SCHEME_AT_WAR: "Jste ve [Concept('war','válce')|E]: $VALUE|+0=-+$" # todo: CONCEPT CASE
+ SCHEME_AT_WAR_WITH_LIEGE: "Jste ve [Concept('war','válce')|E] s [target.GetTitledFirstNamePossessive] [Concept('liege','lenním pánem')|E]: $VALUE|+0=-+$" # todo: CONCEPT CASE
  SCHEME_BEFRIEND_THEIR_STUBBORNESS: "[target.GetTitledFirstName] je tvrdohlavý: $VALUE|+0=-+$"
  SCHEME_BEFRIEND_THEIR_FICKLENESS: "[target.GetTitledFirstName] je vrtkavý: $VALUE|+0=-+$"
  SCHEME_BEFRIEND_THEIR_OPINION: "Názor [target.GetTitledFirstNamePossessive] na vás: $VALUE|+0=-+$"
@@ -238,8 +238,8 @@
  TEMPTATION_FOCUS_BONUS: "[GetFocus('intrigue_temptation_focus').GetName]: $VALUE|+0=-+$"
  SCHEME_SEDUCE_WRONG_GENDER: "Nepřitahují mě [target.GetWomenMen]: $VALUE|0=-+$"
  SCHEME_SEDUCE_TABOO_INCEST: "Incest je tabu: $VALUE|0=-+$"
- SCHEME_SEDUCE_UNWILLING_INCEST: "Jste [family|E]: $VALUE|0=-+$"
- SCHEME_SEDUCE_UNWILLING_INCEST_TOO_YOUNG: "Jste [family|E], a [TARGET_CHARACTER.GetShortUIName|U] je příliš [Select_CString(TARGET_CHARACTER.IsFemale,'mladá','mladý')] na to, aby vás [Select_CString(TARGET_CHARACTER.IsFemale,'vnímala','vnímal')] jinak."
+ SCHEME_SEDUCE_UNWILLING_INCEST: "Jste [Concept('family','rodina')|E]: $VALUE|0=-+$" # todo: CONCEPT CASE
+ SCHEME_SEDUCE_UNWILLING_INCEST_TOO_YOUNG: "Jste [Concept('family','rodina')|E], a [TARGET_CHARACTER.GetShortUIName|U] je příliš [Select_CString(TARGET_CHARACTER.IsFemale,'mladá','mladý')] na to, aby vás [Select_CString(TARGET_CHARACTER.IsFemale,'vnímala','vnímal')] jinak." # todo: CONCEPT CASE
  SCHEME_SEDUCE_TABOO_SODOMY: "Homosexualita je tabu: $VALUE|0=-+$"
  SCHEME_CONVINCED_AT_FEAST: "Přesvědčen na hostině: $VALUE|0=-+$"
  COMPASSIONATE_REASON: "[ROOT.Char.GetAIPersonality] považuje toto za nemorální: $VALUE|+0=$"
@@ -250,17 +250,17 @@
  SCHEME_COMPASSIONATE_NOT_MURDER_CHILDREN: "Nechce se mi ublížit dítěti: $VALUE|+0=$"
  SCHEME_I_AM_A_COWARD: "[ROOT.Char.GetAIPersonality] si myslí, že je to příliš nebezpečné: $VALUE|+0=$"
  SCHEME_I_AM_BOLD: "[ROOT.Char.GetAIPersonality] je zaujatý: $VALUE|+0=$"
- SCHEME_I_AM_INTIMIDATED: "Cítím se [intimidated|E] vůči [target.GetShortUINameNoTooltip]: $VALUE|+0=$"
- SCHEME_I_AM_COWED: "Cítím se [cowed|E] vůči [target.GetShortUINameNoTooltip]: $VALUE|+0=$"
+ SCHEME_I_AM_INTIMIDATED: "Cítím se [Concept('intimidated','zastrašeným')|E] vůči [target.GetShortUINameNoTooltip]: $VALUE|+0=$" # todo: CONCEPT CASE
+ SCHEME_I_AM_COWED: "Cítím se [Concept('cowed','vyděšeným')|E] vůči [target.GetShortUINameNoTooltip]: $VALUE|+0=$" # todo: CONCEPT CASE
  SCHEME_ZEALOUS_AGAINST_HEATHEN: "Jsou [target.GetFaith.GetAdjective]: $VALUE|+0=$"
  SCHEME_I_LIKE_TARGET: "Mám rád [target.GetShortUINameNoTooltip]: $VALUE|+0=$"
  SCHEME_I_DISLIKE_TARGET: "Nemám rád [target.GetShortUINameNoTooltip]: $VALUE|+0=$"
- SCHEME_MY_OPINION_OF_YOU: "Mé [opinion|E] o vás: $VALUE|+0=$"
- SCHEME_MY_OPINION_OF_TARGET: "Mé [opinion|E] o [target.GetShortUINameNoTooltip]: $VALUE|+0=$"
+ SCHEME_MY_OPINION_OF_YOU: "Mé [Concept('opinion','mínění')|E] o vás: $VALUE|+0=$" # todo: CONCEPT CASE
+ SCHEME_MY_OPINION_OF_TARGET: "Mé [Concept('opinion','mínění')|E] o [target.GetShortUINameNoTooltip]: $VALUE|+0=$" # todo: CONCEPT CASE
  SCHEME_ENERGY: "[ROOT.Char.GetAIPersonality] postrádá energii: $VALUE|+0=$"
  SCHEME_NOTHING_TO_GAIN: "[ROOT.Char.GetAIPersonality] nemá co získat: $VALUE|+0=$"
  SCHEME_I_MUST_TAKE_VENGEANCE: "Musím se pomstít [target.GetShortUINameNoTooltip]!: $VALUE|+0=$"
- SCHEME_GET_RID_OF_UNRULY_CLAIMANT: "Tím se zbavím vzdorovitého [claimant|E]: $VALUE|+0=$"
+ SCHEME_GET_RID_OF_UNRULY_CLAIMANT: "Tím se zbavím vzdorovitého [Concept('claimant','pretendentem')|E]: $VALUE|+0=$" # todo: CONCEPT CASE
  SCHEME_AGAINST_SPOUSE_POSITIVE: "Choť si to zaslouží: $VALUE|+0=$"
  SCHEME_SOCIAL_CLIMBER_RANK_BONUS: "[target.GetShortUIName] to vidí jako příležitost: $VALUE|0=-+$"
  SCHEME_SOCIAL_CLIMBER_RANK_PENALTY: "[target.GetShortUIName] v tom nevidí příležitost: $VALUE|0=-+$"
@@ -272,34 +272,34 @@
  SCHEME_I_DO_NOT_PRACTICE_CRYPTO_RELIGION: "Nepraktikuji Crypto-[owner.GetSecretFaith.GetName]: $VALUE|0=-+$"
  SCHEME_I_PRACTICE_SAME_CRYPTO_RELIGION: "Praktikuji Crypto-[owner.GetSecretFaith.GetName]: $VALUE|0=-+$"
  SCHEME_IS_MY_CHILD: "[target.GetShortUIName] je moje [target.Custom('GetDaughterSon')]: $VALUE|0=-+$"
- SCHEME_HOOK_USED: "[hook|E] použit: $VALUE|+0=$"
- SCHEME_WEAK_HOOK_USED: "[weak_hook|E] použit: $VALUE|+0=$"
- SCHEME_STRONG_HOOK_USED: "[strong_hook|E] použit: $VALUE|+0=$"
- SCHEME_WITH_GIFT_SIGNIFICANT: "Získám [gold_i][gold|E]: $VALUE|+0=$"
- SCHEME_WITH_OFFER_HOOK: "Získám [hook_i][hook|E]: $VALUE|+0=$"
- SCHEME_WITH_OFFER_HOOK_STRONG: "Získám [strong_hook_i][strong_hook|E]: $VALUE|+0=$"
- SCHEME_WITH_OPPORTUNITIES: "Využito [scheme_opportunity_opportunities|E]: $VALUE|+0=$"
- SCHEME_WITH_PRESTIGE: "Získám [prestige_i][prestige|E]: $VALUE|+0=$"
- SCHEME_WITH_INFLUENCE: "Získám [influence_i][influence|E]: $VALUE|+0=$"
- SCHEME_WITH_COUNCIL_RIGHTS: "Získám [vassal_contract|E] ústupky: $VALUE|+0=$"
- SCHEME_WITH_DE_JURE_TITLE: "Získám [title|E]: $VALUE|+0=$"
- SCHEME_WITH_CLAIMED_TITLE: "Získám [title|E]: $VALUE|+0=$"
- SCHEME_WITH_PIETY: "Získám [piety_i][piety|E]: $VALUE|+0=$"
- SCHEME_WITH_HERD: "Získám [herd_i][herd|E]: $VALUE|+0=$"
- SCHEME_TARGET_LEARNING_MODIFIER: "Učitelovo [learning|E]: $VALUE|+0=$"
- SCHEME_LEARNING_MODIFIER: "Vaše [learning|E]: $VALUE|+0=$"
- SCHEME_PIETY_LEVEL_MODIFIER: "Vaše [piety_level|E]: $VALUE|+0=$"
+ SCHEME_HOOK_USED: "[Concept('hook','Páka')|E] použit: $VALUE|+0=$" # todo: CONCEPT CASE
+ SCHEME_WEAK_HOOK_USED: "[Concept('weak_hook','Slabá páka')|E] použit: $VALUE|+0=$" # todo: CONCEPT CASE
+ SCHEME_STRONG_HOOK_USED: "[Concept('strong_hook','Silná páka')|E] použit: $VALUE|+0=$" # todo: CONCEPT CASE
+ SCHEME_WITH_GIFT_SIGNIFICANT: "Získám [gold_i][Concept('gold','zlato')|E]: $VALUE|+0=$" # todo: CONCEPT CASE
+ SCHEME_WITH_OFFER_HOOK: "Získám [hook_i][Concept('hook','páka')|E]: $VALUE|+0=$" # todo: CONCEPT CASE
+ SCHEME_WITH_OFFER_HOOK_STRONG: "Získám [strong_hook_i][Concept('strong_hook','silná páka')|E]: $VALUE|+0=$" # todo: CONCEPT CASE
+ SCHEME_WITH_OPPORTUNITIES: "Využito [Concept('scheme_opportunity_opportunities','výhody')|E]: $VALUE|+0=$" # todo: CONCEPT CASE
+ SCHEME_WITH_PRESTIGE: "Získám [prestige_i][Concept('prestige','prestiž')|E]: $VALUE|+0=$" # todo: CONCEPT CASE
+ SCHEME_WITH_INFLUENCE: "Získám [influence_i][Concept('influence','vliv')|E]: $VALUE|+0=$" # todo: CONCEPT CASE
+ SCHEME_WITH_COUNCIL_RIGHTS: "Získám [Concept('vassal_contract','vazalská smlouva')|E] ústupky: $VALUE|+0=$" # todo: CONCEPT CASE
+ SCHEME_WITH_DE_JURE_TITLE: "Získám [Concept('title','titul')|E]: $VALUE|+0=$" # todo: CONCEPT CASE
+ SCHEME_WITH_CLAIMED_TITLE: "Získám [Concept('title','titul')|E]: $VALUE|+0=$" # todo: CONCEPT CASE
+ SCHEME_WITH_PIETY: "Získám [piety_i][Concept('piety','zbožnost')|E]: $VALUE|+0=$" # todo: CONCEPT CASE
+ SCHEME_WITH_HERD: "Získám [herd_i][Concept('herd','stádo')|E]: $VALUE|+0=$" # todo: CONCEPT CASE
+ SCHEME_TARGET_LEARNING_MODIFIER: "Učitelovo [Concept('learning','učenost')|E]: $VALUE|+0=$" # todo: CONCEPT CASE
+ SCHEME_LEARNING_MODIFIER: "Vaše [Concept('learning','učenost')|E]: $VALUE|+0=$" # todo: CONCEPT CASE
+ SCHEME_PIETY_LEVEL_MODIFIER: "Vaše [Concept('piety_level','úroveň oddanosti')|E]: $VALUE|+0=$" # todo: CONCEPT CASE
  SCHEME_SKULDUGGERY_FOCUS: "[GetFocus('intrigue_skulduggery_focus').GetName]: $VALUE|+0=$"
  SCHEME_DUTY_FOCUS: "[target.GetShortUIName] má [GetFocus('stewardship_duty_focus').GetName]: $VALUE|+0=$"
  SCHEME_FOREIGN_AFFAIRS_FOCUS: "[GetFocus('intrigue_foreign_affairs_focus').GetName]: $VALUE|+0=$"
  SCHEME_FAMILY_FOCUS: "[GetFocus('intrigue_family_focus').GetName]: $VALUE|+0=$"
  LEARN_LANGUAGE_PEDAGOGY_PERK_DESC: "[GetPerk( 'pedagogy_perk' ).GetName( GetPlayer )]: $VALUE|+0=$"
  BEFRIEND_THICKER_THAN_WATER_PERK_DESC: "[GetPerk( 'thicker_than_water_perk' ).GetName( GetPlayer )]: $VALUE|+0=$"
- ACCOLADE_COURT_SEDUCTION_VULNERABILITY_DESC: "[acclaimed_knight|E] podporuje promiskuitu: $VALUE|+0=$"
+ ACCOLADE_COURT_SEDUCTION_VULNERABILITY_DESC: "[Concept('acclaimed_knight','Uznávaný rytíř')|E] podporuje promiskuitu: $VALUE|+0=$" # todo: CONCEPT CASE
  BEFRIEND_FLATTERER_PERK_DESC: "[GetPerk( 'flatterer_perk' ).GetName( GetPlayer )]: $VALUE|+0=$"
  KIN_LEGACY_DESC: "[GetDynastyPerk( 'kin_legacy_4' ).GetName]: $VALUE|+0=$"
- KIN_PARAMETER_DESC: "Ze [traditions|E] oproti stejnému rodu: $VALUE|+0=$"
- SPOUSE_PARAMETER_DESC: "Ze [traditions|E] oproti [spouse|E]: $VALUE|+0=$"
+ KIN_PARAMETER_DESC: "Ze [Concept('traditions','tradic')|E] oproti stejnému rodu: $VALUE|+0=$" # todo: CONCEPT CASE
+ SPOUSE_PARAMETER_DESC: "Ze [Concept('traditions','tradic')|E] oproti [Concept('spouse','choti')|E]: $VALUE|+0=$" # todo: CONCEPT CASE
  MORTAL_ADORATION_REDUCED_HOSTILE_SCHEME_JOIN_CHANCE: "[GetPerk( 'mortal_adoration_perk' ).GetName( GetPlayer )]: $VALUE|+0=$"
  SCHEME_COURTSHIP_PERK: "[GetPerk( 'courtship_perk' ).GetName( GetPlayer )]: $VALUE|+0=$"
  SCHEME_FORGER_PERK: "[GetPerk( 'accomplished_forger_perk' ).GetName( GetPlayer )]: $VALUE|+0=$"
@@ -342,24 +342,24 @@
  SCHEME_TRAIT_STUBBORN: "[GetTrait('stubborn').GetName( owner.Self )]: $VALUE|+0=$"
  SCHEME_TRAIT_FICKLE: "[GetTrait('fickle').GetName( owner.Self )]: $VALUE|+0=$"
  SCHEME_TRAIT_POET: "[GetTrait('lifestyle_poet').GetName( owner.Self )]: $VALUE|+0=$"
- SCHEME_HERITAGE_MODIFIER: "Sdílené [heritage|E]: $VALUE|+0=$"
- SCHEME_LOYAL_SOLDIERS_MODIFIER: "Z [traditions|E] vůči [liege|E]: $VALUE|+0=$"
+ SCHEME_HERITAGE_MODIFIER: "Sdílené [Concept('heritage','dědictví')|E]: $VALUE|+0=$" # todo: CONCEPT CASE
+ SCHEME_LOYAL_SOLDIERS_MODIFIER: "Z [Concept('traditions','tradic')|E] vůči [Concept('liege','lennímu pánovi')|E]: $VALUE|+0=$" # todo: CONCEPT CASE
  SCHEME_YOUTH_MODIFIER: "Jste [Select_CString(ROOT.Char.IsFemale,'mladá','mladý')] a [Select_CString(ROOT.Char.IsFemale,'chtivá','chtivý')] se učit: $VALUE|+0=$"
- SCHEME_CHAPLAIN_HELP_LEARNING_MODIFIER: "Učení vašeho [Concept( 'realm_priest', GetPlayer.GetCouncillorPosition( 'councillor_court_chaplain' ).GetPositionNamePossesive )|E] [learning|E]: $VALUE|+0=$"
- SCHEME_KNOWN_LANGUAGES_MODIFIER: "Počet již naučených [languages|E]: $VALUE|+0=$"
- SCHEME_TARGET_FRIEND: "Jste [target.GetShortUINamePossessive] [friend|E]: $VALUE|+0=$" # todo: NEW TRANSLATION
- SCHEME_SCHOLAR_OFFICIALS_MODIFIER: "Z [traditions|E] za znalost jazyka [target.GetCulture.GetLanguage.GetName]: $VALUE|+0=$" # todo: NEW TRANSLATION
+ SCHEME_CHAPLAIN_HELP_LEARNING_MODIFIER: "Učení vašeho [Concept( 'realm_priest', GetPlayer.GetCouncillorPosition( 'councillor_court_chaplain' ).GetPositionNamePossesive )|E] [Concept('learning','učenosti')|E]: $VALUE|+0=$" # todo: CONCEPT CASE
+ SCHEME_KNOWN_LANGUAGES_MODIFIER: "Počet již naučených [Concept('languages','jazyků')|E]: $VALUE|+0=$" # todo: CONCEPT CASE
+ SCHEME_TARGET_FRIEND: "Jste [target.GetShortUINamePossessive] [Concept('friend','přítel')|E]: $VALUE|+0=$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ SCHEME_SCHOLAR_OFFICIALS_MODIFIER: "Z [Concept('traditions','tradic')|E] za znalost jazyka [target.GetCulture.GetLanguage.GetName]: $VALUE|+0=$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  SCHEME_TARGET_TRAIT_AMBITIOUS: "[target.GetShortUIName] is [GetTrait('ambitious').GetName( target.Self )]: $VALUE|+0=$"
- scheme_executes_immediately: "Tento [scheme|E] se provede okamžitě"
+ scheme_executes_immediately: "Tento [Concept('scheme','intrika')|E] se provede okamžitě" # todo: CONCEPT CASE
  OPEN_SCHEMES_TAB: "Intriky"
  OPEN_HOOKS_AND_SECRETS_TAB: "Páky a tajemství"
- INTRIGUE_WINDOW_MY_HOOKS_TITLE: "[hooks|E], které vlastníte"
- INTRIGUE_WINDOW_HOOKS_ON_ME_TITLE: "[hooks|E] na vás"
- INTRIGUE_WINDOW_SECRETS_KNOWN_TO_ME_TITLE: "[secrets|E] známé mně"
+ INTRIGUE_WINDOW_MY_HOOKS_TITLE: "[Concept('hooks','Páky')|E], které vlastníte" # todo: CONCEPT CASE
+ INTRIGUE_WINDOW_HOOKS_ON_ME_TITLE: "[Concept('hooks','Páky')|E] na vás" # todo: CONCEPT CASE
+ INTRIGUE_WINDOW_SECRETS_KNOWN_TO_ME_TITLE: "[Concept('secrets','Tajemství')|E] známé mně" # todo: CONCEPT CASE
  INTRIGUE_WINDOW_SECRET_DESC: "[IntrigueWindowSecretItem.GetSecret.GetDesc]"
  INTRIGUE_WINDOW_SECRET_TOOLTIP: "#T [Secret.GetCategoryName]#! \n[IntrigueWindowSecretItem.GetSecret.GetDesc]"
  INTRIGUE_WINDOW_SECRET_KNOWN_TO_ME_BLACKMAIL: "Vydírání"
- INTRIGUE_WINDOW_MY_SECRETS_TITLE: "Vaše [secrets|E]"
+ INTRIGUE_WINDOW_MY_SECRETS_TITLE: "Vaše [Concept('secrets','tajemství')|E]" # todo: CONCEPT CASE
  INTRIGUE_WINDOW_MY_SECRET_KNOWN_TO_NUM: "Známo [GetDataModelSize( IntrigueWindowSecretItem.GetKnownBy )] dalším"
  INTRIGUE_WINDOW_MY_SECRET_KNOWN_TO_NONE: "Nikomu známo"
  INTRIGUE_WINDOW_MY_SECRETS_KNOWN_SHOW: "Zobrazit"
@@ -370,10 +370,10 @@
  I_HAVE_NO_SECRETS: "#weak Nemáte žádná tajemství#!"
  INTRIGUE_WINDOW_PRISONERS: "Vězni"
  INTRIGUE_WINDOW_SORT_DURATION: "Doba ve vězení"
- INTRIGUE_WINDOW_WEAK_HOOKS_COUNT: "#T Počet [weak_hooks|E]#!"
- INTRIGUE_WINDOW_STRONG_HOOKS_COUNT: "#T Počet [strong_hooks|E]#!"
- INTRIGUE_WINDOW_BLACKMAIL_STRONG_HOOK_TT: "#T Tajemství silné páky#!\nPokud [Character.GetShortUIName] přijme vaše [blackmail|E] s tímto [secret|E], získáte [strong_hook|E] na [Character.GetHerHim]"
- INTRIGUE_WINDOW_BLACKMAIL_WEAK_HOOK_TT: "#T Tajemství slabé páky#!\nPokud [Character.GetShortUIName] přijme vaše [blackmail|E] s tímto [secret|E], získáte [weak_hook|E] na [Character.GetHerHim]"
+ INTRIGUE_WINDOW_WEAK_HOOKS_COUNT: "#T Počet [Concept('weak_hooks','slabé páky')|E]#!" # todo: CONCEPT CASE
+ INTRIGUE_WINDOW_STRONG_HOOKS_COUNT: "#T Počet [Concept('strong_hooks','silné páky')|E]#!" # todo: CONCEPT CASE
+ INTRIGUE_WINDOW_BLACKMAIL_STRONG_HOOK_TT: "#T Tajemství silné páky#!\nPokud [Character.GetShortUIName] přijme vaše [Concept('blackmail','vydírání')|E] s tímto [Concept('secret','tajemstvím')|E], získáte [Concept('strong_hook','silná páka')|E] na [Character.GetHerHim]" # todo: CONCEPT CASE
+ INTRIGUE_WINDOW_BLACKMAIL_WEAK_HOOK_TT: "#T Tajemství slabé páky#!\nPokud [Character.GetShortUIName] přijme vaše [Concept('blackmail','vydírání')|E] s tímto [Concept('secret','tajemstvím')|E], získáte [Concept('weak_hook','slabá páka')|E] na [Character.GetHerHim]" # todo: CONCEPT CASE
  INTRIGUE_WINDOW_BLACKMAIL_SECRET_EXPOSED: "(Již odhaleno)"
  INTRIGUE_WINDOW_BLACKMAIL_SECRET_SPENT: "(Již použito k vydírání)"
  INTRIGUE_WINDOW_HOOK_EXPIRATION: "Vyprší [Hook.GetExpirationDate.GetString]"
@@ -382,29 +382,29 @@
  INTRIGUE_WINDOW_AGENT_DISCOVERED_TT: "#T $INTRIGUE_WINDOW_AGENT_DISCOVERED$#!\nOdhaleným agentům hrozí uvěznění"
  INTRIGUE_WINDOW_REMOVE_AGENT_TT: "Odstranit [Character.GetUIName] z [Select_CString(Character.IsFemale,'její','jeho')] pozice [SchemeAgentSlotItem.GetSlot.GetName]"
  INTRIGUE_WINDOW_SCHEME_CONTRIBUTION_TT: "#T Příspěvek:#! [SchemeAgentSlotItem.GetContributionDesc] \n [SchemeAgentSlotItem.GetContributionBreakdown]"
- INTRIGUE_WINDOW_SCHEME_CONTRIBUTION_SPEED_DESC: "#T [scheme_speed|E]#!"
- INTRIGUE_WINDOW_SCHEME_CONTRIBUTION_SECRECY_DESC: "#T [secrecy|E]#!"
- INTRIGUE_WINDOW_SCHEME_CONTRIBUTION_SUCCESS_CHANCE_DESC: "#T [scheme_success_chance|E]#!"
- INTRIGUE_WINDOW_SCHEME_CONTRIBUTION_SUCCESS_CHANCE_GROWTH_DESC: "#T [scheme_growth|E]#!"
- INTRIGUE_WINDOW_SCHEME_CONTRIBUTION_SUCCESS_CHANCE_MAX_DESC: "#T [scheme_potential|E]#!"
+ INTRIGUE_WINDOW_SCHEME_CONTRIBUTION_SPEED_DESC: "#T [Concept('scheme_speed','Délka fáze intriky')|E]#!" # todo: CONCEPT CASE
+ INTRIGUE_WINDOW_SCHEME_CONTRIBUTION_SECRECY_DESC: "#T [Concept('secrecy','Utajení')|E]#!" # todo: CONCEPT CASE
+ INTRIGUE_WINDOW_SCHEME_CONTRIBUTION_SUCCESS_CHANCE_DESC: "#T [Concept('scheme_success_chance','Šance na úspěch intriky')|E]#!" # todo: CONCEPT CASE
+ INTRIGUE_WINDOW_SCHEME_CONTRIBUTION_SUCCESS_CHANCE_GROWTH_DESC: "#T [Concept('scheme_growth','Růst intriky')|E]#!" # todo: CONCEPT CASE
+ INTRIGUE_WINDOW_SCHEME_CONTRIBUTION_SUCCESS_CHANCE_MAX_DESC: "#T [Concept('scheme_potential','Potenciál intriky')|E]#!" # todo: CONCEPT CASE
  INTRIGUE_WINDOW_SCHEME_CONTRIBUTION_TT_AGENT_SLOT_EMPTY: "#T Příspěvek:#! [SchemeAgentSlotItem.GetContributionDesc]"
  INTRIGUE_WINDOW_SECRET_EXPOSE: "Odhalit"
- INTRIGUE_WINDOW_SECRET_EXPOSE_TT: "#T Odhalit [secret|E]#!\n\nOdhalením [secret|E] zničíte všechny [hooks|E] poskytnuté tímto [secret|E]"
+ INTRIGUE_WINDOW_SECRET_EXPOSE_TT: "#T Odhalit [Concept('secret','tajemství')|E]#!\n\nOdhalením [Concept('secret','tajemstvím')|E] zničíte všechny [Concept('hooks','páky')|E] poskytnuté tímto [Concept('secret','tajemstvím')|E]" # todo: CONCEPT CASE
  INTRIGUE_WINDOW_EXPOSE_TITLE: "Odhalit tajemství"
- INTRIGUE_WINDOW_EXPOSE_DESCRIPTION: "Vyberte, které z [CHARACTER.GetShortUINamePossessiveNoTooltip] [secrets|E] odhalíte"
- INTRIGUE_WINDOW_SECRET_BLACKMAIL_CANT_BLACKMAIL: "@warning_icon! #X Žádné [secret|E] momentálně nelze použít k vydírání#!"
+ INTRIGUE_WINDOW_EXPOSE_DESCRIPTION: "Vyberte, které z [CHARACTER.GetShortUINamePossessiveNoTooltip] [Concept('secrets','tajemství')|E] odhalíte" # todo: CONCEPT CASE
+ INTRIGUE_WINDOW_SECRET_BLACKMAIL_CANT_BLACKMAIL: "@warning_icon! #X Žádné [Concept('secret','tajemství')|E] momentálně nelze použít k vydírání#!" # todo: CONCEPT CASE
  INTRIGUE_WINDOW_SECRET_BLACKMAIL_TT: "#T Vydírání#!\n\n[SelectLocalization( IntrigueWindowSecretGroup.CanBlackmail, 'blackmail_interaction_desc', 'INTRIGUE_WINDOW_SECRET_BLACKMAIL_CANT_BLACKMAIL' )]"
- INTRIGUE_WINDOW_SECRET_EXPOSE_DESC: "@warning_icon! #X Nemůžete #bold odhalit#! [TARGET_CHARACTER.GetUINamePossessive] [SECRET.GetName] [secret|E]#!"
+ INTRIGUE_WINDOW_SECRET_EXPOSE_DESC: "@warning_icon! #X Nemůžete #bold odhalit#! [TARGET_CHARACTER.GetUINamePossessive] [SECRET.GetName] [Concept('secret','tajemství')|E]#!" # todo: CONCEPT CASE
  is_forced_into_scheme_trigger: "Je [Select_CString(ROOT.Char.IsFemale,'nucena','nucen')] účastnit se intriky"
  SCHEME_TYPE_TRIGGER: "Plán je typu $SCHEME_NAME|V$"
- SCHEME_NUMBER_OF_EXPOSED_AGENTS_TRIGGER: "Odhalení agenti v [scheme|E]: $COMPARATOR$ $NUM|V0$"
+ SCHEME_NUMBER_OF_EXPOSED_AGENTS_TRIGGER: "Odhalení agenti v [Concept('scheme','intrice')|E]: $COMPARATOR$ $NUM|V0$" # todo: CONCEPT CASE
  SCHEME_MONTHLY_PROGRESS_TRIGGER: "Měsíční pokrok plánu je: $COMPARATOR$ $NUM|V0$"
- SCHEME_TEACHER_KNOWS_YOUR_LANGUAGE_MODIFIER: "Učitel zná váš [language|E]: $VALUE|+0=$"
+ SCHEME_TEACHER_KNOWS_YOUR_LANGUAGE_MODIFIER: "Učitel zná váš [Concept('language','jazyk')|E]: $VALUE|+0=$" # todo: CONCEPT CASE
  KHVARENAH_LEGACY_DESC: "[GetDynastyPerk( 'fp3_khvarenah_legacy_2' ).GetName]: $VALUE|+0=$"
- SCHEME_ASSASSIN_APTITUDE_MODIFIER: "Schopnost vašeho [GetCourtPositionType('master_assassin_court_position').GetName()]: [aptitude|E]: $VALUE|+0=$"
+ SCHEME_ASSASSIN_APTITUDE_MODIFIER: "Schopnost vašeho [GetCourtPositionType('master_assassin_court_position').GetName()]: [Concept('aptitude','způsobilosti')|E]: $VALUE|+0=$" # todo: CONCEPT CASE
  SCHEME_TARGET_IS_YOUNG: "[target.GetShortUINameNoTooltip] je [Select_CString(target.IsFemale,'mladá','mladý')]: $VALUE|+0=$"
  SCHEME_TARGET_IS_CLERGY: "$court_position_clergy_trait$: $VALUE|+0=$"
- SCHEME_TARGET_IS_FEUD_TARGET: "[target.GetShortUINameNoTooltip] je členem [house_feud|E] [house|E]: $VALUE|+0=$"
+ SCHEME_TARGET_IS_FEUD_TARGET: "[target.GetShortUINameNoTooltip] je členem [house_feud|E] [Concept('house','rodem')|E]: $VALUE|+0=$" # todo: CONCEPT CASE
  SCHEME_WNIGHT_COURT_MEMENTO: "[target.GetShortUIName] vám dal památku jako symbol vaší lásky ve svatební noci: $VALUE|+0=$"
  SCHEME_WNIGHT_SEDUCE_MEMENTO: "[target.GetShortUIName] vám dal památku jako symbol vašeho společného toužení ve svatební noci: $VALUE|+0=$"
  SCHEME_DISCOVERED_ESCAPE_TUNNEL: "Objevili jste únikovou chodbu [target.GetShortUINamePossessiveNoTooltip]: $VALUE|+0=$"
@@ -420,7 +420,7 @@
  SCHEME_TOO_SCARED_TO_RUN: "[recipient.GetShortUIName] je [Select_CString(recipient.IsFemale,'vystrašená','vystrašený')]: $VALUE|+0=$"
  SCHEME_TOO_TERRIFIED_TO_RUN: "[recipient.GetShortUIName] je [Select_CString(recipient.IsFemale,'zděšená','zděšený')]: $VALUE|+0=$"
  SCHEME_EMPIRE_TIER: "[actor.GetShortUIName|U] jsou císařského stupně: $VALUE|+0=$"
- SCHEME_GOVERNOR_EFFICIENCY_DISSUADES_FLEEING: "[actor.GetShortUINamePossessive|U] vysoká [governor_efficiency|E] odrazuje od útěku: $VALUE|+0=$"
+ SCHEME_GOVERNOR_EFFICIENCY_DISSUADES_FLEEING: "[actor.GetShortUINamePossessive|U] vysoká [Concept('governor_efficiency','efektivita guvernéra')|E] odrazuje od útěku: $VALUE|+0=$" # todo: CONCEPT CASE
  SCHEME_RESTARTED: "Neúspěšné pokusy: $VALUE|+0=$"
  SCHEME_PREFERRED_CLAIMANT: "Preferovaný žadatel: $VALUE|+0=$"
  poet_for_diplo_schemes_modifier_tt: "$poet_for_diplo_schemes_modifier$: $VALUE|+0=$" # todo: NEW TRANSLATION

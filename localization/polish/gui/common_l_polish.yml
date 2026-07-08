@@ -28,32 +28,32 @@
  GO_TO_CLICK: "Klikněte pro přechod na lokaci"
  GO_TO_RIGHT_CLICK: "Klikněte pravým tlačítkem pro přechod na lokaci"
  VIEW_CLICK: "Klikněte pro zobrazení"
- COA_LINE_OF_SUCCESSION: "[Concept('line_of_succession','$game_concept_line_of_succession$')|E]:\n"
- COA_TOOLTIP_HOLDER: "[GetPlayer.Custom2_Title( 'TitleRelationToMe', TITLE.Self )][TITLE.GetLeaseInfo][holder|E]: [TITLE.GetHolder.GetFullNameNicknamed]\n[SelectLocalization( TITLE.GetHolder.HasRealmLaw('top_liege_not_redirected_to_border_wars_law'), 'TITLE_VIEW_DISABLED_BORDER_WARS', 'TITLE_VIEW_ENABLED_BORDER_WARS' ) ]\n[SelectLocalization(DataModelHasItems(TITLE.GetLineOfSuccession), 'COA_LINE_OF_SUCCESSION', '')][TITLE.GetLineOfSuccessionDesc]\n"
- TITLE_LEASED_OUT_TO: "[Concept('lessee','$game_concept_lessee$')|E]: [CHARACTER.GetUIName]\n"
+ COA_LINE_OF_SUCCESSION: "[Concept('line_of_succession','Linie následnictví')|E]:\n" # todo: CONCEPT CASE
+ COA_TOOLTIP_HOLDER: "[GetPlayer.Custom2_Title( 'TitleRelationToMe', TITLE.Self )][TITLE.GetLeaseInfo][Concept('holder','Držitel')|E]: [TITLE.GetHolder.GetFullNameNicknamed]\n[SelectLocalization( TITLE.GetHolder.HasRealmLaw('top_liege_not_redirected_to_border_wars_law'), 'TITLE_VIEW_DISABLED_BORDER_WARS', 'TITLE_VIEW_ENABLED_BORDER_WARS' ) ]\n[SelectLocalization(DataModelHasItems(TITLE.GetLineOfSuccession), 'COA_LINE_OF_SUCCESSION', '')][TITLE.GetLineOfSuccessionDesc]\n" # todo: CONCEPT CASE
+ TITLE_LEASED_OUT_TO: "[Concept('lessee','Nájemce')|E]: [CHARACTER.GetUIName]\n" # todo: CONCEPT CASE
  COA_TOOLTIP_NO_HOLDER: "Nevytvořeno\n"
  COA_TOOLTIP_CLICK_INFO: "#I [SelectLocalization(TITLE.IsShownInTitleView, 'GO_TO_CLICK', 'VIEW_CLICK')]\n$GO_TO_RIGHT_CLICK$#!"
  COA_TOOLTIP_CLICK_INFO_GUI: "#I [SelectLocalization(Title.IsShownInTitleView, 'GO_TO_CLICK', 'VIEW_CLICK')]\n$GO_TO_RIGHT_CLICK$#!"
  COA_DEFAULT_TOOLTIP_TITLE: "#T [TITLE.GetNameWithUnderlyingNoTooltip|U]#!\n"
  COA_DE_JURE_TOOLTIP_TITLE: "#T [TITLE.GetNameWithUnderlyingNoTooltip|U]#!\n"
  COA_DE_JURE_TOOLTIP_DE_JURE_TITLE: "De jure součást: [TITLE.GetDeJureLiege.GetName]\n"
- COA_HAS_LAWS: "@title_succession! Zákon o [Concept('title_succession','$game_concept_title_succession$')|El]:"
- COA_HIGHLIGHT_CLAIM: "@pressed_claim! Máte $CLAIM$ na tento [Concept('title','$game_concept_title$')|El]"
- COA_HIGHLIGHT_SUCCESSION: "#TUT_KW Jste v linii [Concept('succession','$game_concept_succession$')|El] pro tento titul#!"
- COA_HIGHLIGHT_DE_JURE_LIEGE: "#TUT_KW Tento [Concept('de_jure','$game_concept_de_jure$')|El] titul vám patří#!"
+ COA_HAS_LAWS: "@title_succession! Zákon o [Concept('title_succession','nástupnictví titulu')|El]:" # todo: CONCEPT CASE
+ COA_HIGHLIGHT_CLAIM: "@pressed_claim! Máte $CLAIM$ na tento [Concept('title','titul')|El]" # todo: CONCEPT CASE
+ COA_HIGHLIGHT_SUCCESSION: "#TUT_KW Jste v linii [Concept('succession','nástupnictví')|El] pro tento titul#!" # todo: CONCEPT CASE
+ COA_HIGHLIGHT_DE_JURE_LIEGE: "#TUT_KW Tento [Concept('de_jure','de iure')|El] titul vám patří#!" # todo: CONCEPT CASE
  COA_DEFAULT_TOOLTIP: "$COA_HOLDER$"
- COA_TOOLTIP_REQUIRED_HEIR_GOVERNMENT: "Požadované [Concept('governments','$game_concept_governments$')|El] pro dědění:"
+ COA_TOOLTIP_REQUIRED_HEIR_GOVERNMENT: "Požadované [Concept('governments','vlády')|El] pro dědění:" # todo: CONCEPT CASE
  COA_DE_JURE_TOOLTIP: "$COA_TITLE$$COA_DE_JURE_TITLE$$COA_HOLDER$$COA_CLICK_INFO$"
  CHARACTER_TOOLTIP_PORTRAIT: "$CHARACTER_TOOLTIP$\n\n$CHARACTER_TOOLTIP_INSTRUCTION$"
  CHARACTER_TOOLTIP_INSTRUCTION: "#I [Select_CString(Character.IsShownInCharacterWindow,'Kliknutím jít na lokalitu', 'Kliknutím zobrazit lokalitu')]\nKlikněte pravým tlačítkem pro interakci#!"
  CHARACTER_TOOLTIP_INSTRUCTION_CODE: "#I [Select_CString(CHARACTER.IsShownInCharacterWindow,'Kliknutím jít na lokalitu', 'Kliknutím zobrazit lokalitu')]\nKlikněte pravým tlačítkem pro interakci#!"
  CHARACTER_TOOLTIP_INSTRUCTION_COURT_SCENE: "#I Klikněte pro zobrazení\nKlikněte pravým tlačítkem pro interakci#!"
  CHARACTER_TOOLTIP_NO_PORTRAIT: "#T Žádná postava#!"
- PORTRAIT_NO_COUNCILLOR: "#T Žádný [Concept('councillor','$game_concept_councillor$')|El] jmenován#!"
- PORTRAIT_NO_KURULTAI: "#T Žádný člen [Concept('kurultai','$game_concept_kurultai$')|El] jmenován#!"
+ PORTRAIT_NO_COUNCILLOR: "#T Žádný [Concept('councillor','rádce')|El] jmenován#!" # todo: CONCEPT CASE
+ PORTRAIT_NO_KURULTAI: "#T Žádný člen [Concept('kurultai','kurultaj')|El] jmenován#!" # todo: CONCEPT CASE
  ON_COUNCIL_EFFECTS: "#T Účinky na vás\n#![GetPlayer.GetCouncillorModifierDesc]"
  PORTRAIT_NO_SPOUSE: "#T Žádná choť#!"
- HEIR_TO_HEADER: "[Concept('heir','$game_concept_heir$')|E]:\n"
+ HEIR_TO_HEADER: "[Concept('heir','Dědic')|E]:\n" # todo: CONCEPT CASE
  CHARACTER_LINE_OF_SUCCESSION_MORE: "A $COUNT|V$ dalších [Concept('titles','titulů')|E]"
  MILITARY_STRENGTH_COMPARISON_TOOLTIP_LABEL: "#T Vojenská síla obránců je $STRENGTH|V$ vůči útočníkům#!\n"
  MILITARY_STRENGTH_COMPARISON_ATTACKER_TOOLTIP_LABEL: "#T Vojenská síla útočníků je $STRENGTH|V$ vůči obráncům#!\n"
@@ -68,7 +68,7 @@
  MILITARY_STRENGTH_ATTACKER_DEFENDER: "#weak Útočná síla:#! \n$THEIR$\n\n#weak Obranná síla:#! \n$OUR$"
  MILITARY_STRENGTH_THEIR: "$THEIR$"
  TITLE_LINE_OF_SUCCESSION_ENTRY: "[CHARACTER.GetUIName|U]\n"
- CHARACTER_LINE_OF_SUCCESSION: "\nAktuální [Concept('line_of_succession','$game_concept_line_of_succession$')|El]:\n"
+ CHARACTER_LINE_OF_SUCCESSION: "\nAktuální [Concept('line_of_succession','linie následnictví')|El]:\n" # todo: CONCEPT CASE
  CHARACTER_LINE_OF_SUCCESSION_ENTRY: "[TITLE.GetName]\n"
  DISMISS: "Skrýt"
  DISMISS_ALL: "Skrýt vše"
@@ -78,21 +78,21 @@
  DISMISS_SUGGESTION_TT: "#T $DISMISS$#!\nSkrýt toto doporučení. Nové doporučení se objeví každých [GetDefine('NSuggestions', 'GLOBAL_SPAN_MONTHS')] měsíců."
  UNLANDED_TITLE: "$SUBJECT_TYPE$ z [CHARACTER.GetShortUIName]"
  RIGHT_CLICK_DISMISS: "#I Klikněte pravým tlačítkem pro skrytí#!"
- REALM_TOOLTIP_HOLDER: "[Concept('ruler','$game_concept_ruler$')|E]: [TITLE.GetHolder.GetName]\nAktuální [Concept('line_of_succession','$game_concept_line_of_succession$')|E]:\n[TITLE.GetLineOfSuccessionDesc]\n"
- COA_REALM_SIZE_TOOLTIP: "Velikost říše: [Character.RealmSize|V] [Concept('counties','$game_concept_counties$')|El]"
- COA_REALM_SUZERAIN_INFO: "\n[Concept('suzerain','$game_concept_suzerain$')|E]: [Character.GetSuzerain.GetUIName]"
- COA_REALM_SUZERAIN_INFO_NOMADIC: "@tributary_nomadic!Kočovný [tributary|E]" # todo: NEW TRANSLATION
- COA_REALM_SUZERAIN_INFO_SETTLED: "@tributary_settled![tributary|E]" # todo: NEW TRANSLATION
- COA_REALM_TOOLTIP_CHARACTER_ALIVE: "#T [Character.GetPrimaryTitle.GetNameWithUnderlyingNoTooltip|U]#!\n[Character.Custom('GetRealmOrDomicileTooltip')]\n[holder|E]: [Character.GetUIName|U]\nVojenská síla: [Character.GetMilitaryStrengthText|V] [soldiers|E]\n[SelectLocalization( GreaterThan_int32( Character.RealmSize, '(int32)0' ), 'COA_REALM_SIZE_TOOLTIP', 'CV_UNLANDED')][SelectLocalization(Character.HasSuzerain, 'COA_REALM_SUZERAIN_INFO', '')][AddLine( AddTextIf( Not( IsLandlessAdventurer( Character ) ), SelectLocalization( Character.HasRealmLaw('top_liege_not_redirected_to_border_wars_law'), 'TITLE_TOOLTIP_DISABLED_BORDER_WARS' , 'TITLE_TOOLTIP_ENABLED_BORDER_WARS' )))]\n\n#S Nástupnictví#!\nPravidla nástupnictví: $SUCCESSION_FORM_NAME$\n\n[line_of_succession|E]:\n[Character.GetPrimaryTitle.GetLineOfSuccessionDesc]" # todo: NEW TRANSLATION
+ REALM_TOOLTIP_HOLDER: "[Concept('ruler','Vládce')|E]: [TITLE.GetHolder.GetName]\nAktuální [Concept('line_of_succession','linie následnictví')|E]:\n[TITLE.GetLineOfSuccessionDesc]\n" # todo: CONCEPT CASE
+ COA_REALM_SIZE_TOOLTIP: "Velikost říše: [Character.RealmSize|V] [Concept('counties','hrabství')|El]" # todo: CONCEPT CASE
+ COA_REALM_SUZERAIN_INFO: "\n[Concept('suzerain','Suzerén')|E]: [Character.GetSuzerain.GetUIName]" # todo: CONCEPT CASE
+ COA_REALM_SUZERAIN_INFO_NOMADIC: "@tributary_nomadic!Kočovný [Concept('tributary','tributář')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ COA_REALM_SUZERAIN_INFO_SETTLED: "@tributary_settled![Concept('tributary','Tributář')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ COA_REALM_TOOLTIP_CHARACTER_ALIVE: "#T [Character.GetPrimaryTitle.GetNameWithUnderlyingNoTooltip|U]#!\n[Character.Custom('GetRealmOrDomicileTooltip')]\n[Concept('holder','Držitel')|E]: [Character.GetUIName|U]\nVojenská síla: [Character.GetMilitaryStrengthText|V] [Concept('soldiers','vojáci')|E]\n[SelectLocalization( GreaterThan_int32( Character.RealmSize, '(int32)0' ), 'COA_REALM_SIZE_TOOLTIP', 'CV_UNLANDED')][SelectLocalization(Character.HasSuzerain, 'COA_REALM_SUZERAIN_INFO', '')][AddLine( AddTextIf( Not( IsLandlessAdventurer( Character ) ), SelectLocalization( Character.HasRealmLaw('top_liege_not_redirected_to_border_wars_law'), 'TITLE_TOOLTIP_DISABLED_BORDER_WARS' , 'TITLE_TOOLTIP_ENABLED_BORDER_WARS' )))]\n\n#S Nástupnictví#!\nPravidla nástupnictví: $SUCCESSION_FORM_NAME$\n\n[Concept('line_of_succession','Linie následnictví')|E]:\n[Character.GetPrimaryTitle.GetLineOfSuccessionDesc]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  COA_REALM_TOOLTIP_CHARACTER_DEAD: "#T [Character.GetPrimaryTitle.GetNameAtDateNoTooltip( Character.GetDeathDate )|U]#!\n[Character.Custom('GetRealmOrDomicileTooltip')]" # todo: NEW TRANSLATION
  COA_REALM_TOOLTIP_CHARACTER: "[SelectLocalization( Character.IsAlive, 'COA_REALM_TOOLTIP_CHARACTER_ALIVE', 'COA_REALM_TOOLTIP_CHARACTER_DEAD' )]"
  CHARACTER_WINDOW_REALM_TOOLTIP: "[Character.GetDefaultRealmFlagTooltipNoClickInfo]\n\n[Title.GetClickInfo]"
  COA_REALM_TOOLTIP_CHARACTER_CLICK_INFO: "#I [Select_CString(CHARACTER.IsShownInCharacterWindow, 'Kliknutím jít na lokalitu', 'Kliknutím zobrazit lokalitu')]\nKlikněte pravým tlačítkem pro interakci s [CHARACTER.GetShortUINameNoTooltip]#!"
  COA_REALM_TOOLTIP_PRIMARY_TITLE_CLICK_INFO: "#I Klikněte pro zobrazení primárního titulu [CHARACTER.GetPrimaryTitle.GetNameNoTooltip|V]#!"
  COA_REALM_TOOLTIP_GUI_CLICK_INFO: "#I [Select_CString(Character.IsShownInCharacterWindow, 'Kliknutím jít na lokalitu', 'Kliknutím zobrazit lokalitu')]\nKlikněte pravým tlačítkem pro interakci s [Character.GetShortUINameNoTooltip]#!"
- cooltip_spouse_listing: "[Concept('spouse','$game_concept_spouse$')|E]: [ROOT.Char.GetPrimarySpouseOrBetrothed.GetName]"
- cooltip_betrothed_listing: "[Concept('betrothed','$game_concept_betrothed$')|E]: [ROOT.Char.GetPrimarySpouseOrBetrothed.GetName]"
- cooltip_concubine_listing: "[Concept('concubine','$game_concept_concubine$')|E]: [ROOT.Char.GetConcubinist.GetName]"
+ cooltip_spouse_listing: "[Concept('spouse','Choť')|E]: [ROOT.Char.GetPrimarySpouseOrBetrothed.GetName]" # todo: CONCEPT CASE
+ cooltip_betrothed_listing: "[Concept('betrothed','Zasnoubený')|E]: [ROOT.Char.GetPrimarySpouseOrBetrothed.GetName]" # todo: CONCEPT CASE
+ cooltip_concubine_listing: "[Concept('concubine','Konkubína')|E]: [ROOT.Char.GetConcubinist.GetName]" # todo: CONCEPT CASE
  cooltip_unmarried_listing: "Nezadaný"
  GLOBAL_OBSERVER: "Sleduje"
  PLAYER_OBSERVER: "Sledujete jako [GetPlayer.GetShortUINameNotMeNoTooltip] ([SelectLocalization(GetPlayer.IsPlayer, 'OBSERVER_PLAYER_NAME', 'OBSERVER_AI')])"
@@ -100,10 +100,10 @@
  OBSERVER_AI: "AI"
  END_OF_COMBAT_CONTRIBUTION_TOOLTIP: "#T Příspěvek do války se změnil o #V [BattleSummaryWindow.GetCombatResultData.GetWarContribution( GetPlayer )|=]#!#!"
  CHARACTER_LOCATION_TOOLTIP: "Nachází se v [Character.GetCurrentLocation.GetName]"
- CHARACTER_IMPRISONED_TOOLTIP: "[Concept('imprisoned','$game_concept_imprisoned$')|E] od [Character.GetImprisonedBy.GetUIName]"
+ CHARACTER_IMPRISONED_TOOLTIP: "[Concept('imprisoned','Uvězněný')|E] od [Character.GetImprisonedBy.GetUIName]" # todo: CONCEPT CASE
  CHARACTER_BIRTH_NAME_TOOLTIP: "Rodné jméno: [Character.GetOriginalFirstName]"
  CHARACTER_COURT_POSITIONS_TOOLTIP: "[Character.GetLiege.GetShortUINamePossessive|U] [Character.GetHeldCourtAndCouncilPositionsString]"
- cooltip_opinion_of_player: "[Concept('opinion','$game_concept_opinion$')|E] na mně: #P [Character.GetOpinionOf( GetPlayer )|+=]#!"
+ cooltip_opinion_of_player: "[Concept('opinion','Mínění')|E] na mně: #P [Character.GetOpinionOf( GetPlayer )|+=]#!" # todo: CONCEPT CASE
  CHARACTER_KILLER_TOOLTIP: "Vrah: [Character.GetKiller.GetUIName]"
  FAITH_COOLTIP_WINDOW: "[Faith.GetAdjective]"
  CULTURE_COOLTIP_WINDOW: "[Culture.GetName]"

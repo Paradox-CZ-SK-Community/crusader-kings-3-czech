@@ -6,31 +6,31 @@
  RP_RAISE_PROMPT: "#T Svolat armádu a všechny vojáky přiřazené k tomuto shromaždišti zde#!"
  RP_RAISE_ALL_PROMPT: "#T Svolat zde všechny armády a všechny vojáky#!"
  RP_TOOLTIP_HEADER: "#T $NAME$#!"
- RP_RAISE_RAID_TOOLTIP: "#T Svolat nájezdnickou armádu#!\n[GetPlayer.GetStartRaidBlockers]\nÚdržba [raid|E] armád činí [GetDefine('NArmy', 'RAID_ARMY_COST_MULT')|%P0] nákladů oproti údržbě běžných armád.\nNájezdnické armády nelze doplňovat."
- RP_NO_RAISABLE_TROOPS_ASSIGNED: "#X K tomuto [rally_point|E] nejsou přiřazeni žádní nesvolaní vojáci#!"
+ RP_RAISE_RAID_TOOLTIP: "#T Svolat nájezdnickou armádu#!\n[GetPlayer.GetStartRaidBlockers]\nÚdržba [Concept('raid','nájezd')|E] armád činí [GetDefine('NArmy', 'RAID_ARMY_COST_MULT')|%P0] nákladů oproti údržbě běžných armád.\nNájezdnické armády nelze doplňovat." # todo: CONCEPT CASE
+ RP_NO_RAISABLE_TROOPS_ASSIGNED: "#X K tomuto [Concept('rally_point','shromaždišti')|E] nejsou přiřazeni žádní nesvolaní vojáci#!" # todo: CONCEPT CASE
  RP_NO_RAISABLE_TROOPS_ALL: "#X Žádní nesvolaní vojáci nejsou k dispozici#!"
  RP_NO_RAISABLE_TROOPS_MEN_AT_ARMS: "#X Nejsou k dispozici žádní nesvolaní žoldnéři#!"
- RP_LOCAL_LEVIES_LABEL: "Místní [levies|E]"
- RP_LOCAL_LEVIES_TOOLTIP: "#T Místní [levies|E]#!\nNesvolaní: [RallyPointWindow.GetUnraisedLocalLevies|V]\nŽiví: [RallyPointWindow.GetAliveLocalLevies|V]\nCelkem: [RallyPointWindow.GetTotalLocalLevies|V]"
- RP_ALL_SOLDIERS_LABEL: "Všichni [soldiers|E]"
+ RP_LOCAL_LEVIES_LABEL: "Místní [Concept('levies','odvedenci')|E]" # todo: CONCEPT CASE
+ RP_LOCAL_LEVIES_TOOLTIP: "#T Místní [Concept('levies','odvedenci')|E]#!\nNesvolaní: [RallyPointWindow.GetUnraisedLocalLevies|V]\nŽiví: [RallyPointWindow.GetAliveLocalLevies|V]\nCelkem: [RallyPointWindow.GetTotalLocalLevies|V]" # todo: CONCEPT CASE
+ RP_ALL_SOLDIERS_LABEL: "Všichni [Concept('soldiers','vojáci')|E]" # todo: CONCEPT CASE
  RP_KNIGHTS_ENTRY: "[knight_i]$knight_culture_player_plural$: [GetPlayer.GetKnightCount|V]"
  RP_KNIGHTS_TOOLTIP: "#T $knight_culture_player_plural$: [knight_i][GetPlayer.GetKnightCount|V]#!\n[GetPlayer.GetUnraisedKnightBreakdown]"
- RP_LEVIES_ENTRY: "[levies|E]: [ArmyComposition.GetMaxNumberOfLevies|V]"
- RP_MAA_ENTRY: "[men_at_arms|E]: [ArmyComposition.GetMaxNumberOfMAA|V]"
+ RP_LEVIES_ENTRY: "[Concept('levies','Odvedenci')|E]: [ArmyComposition.GetMaxNumberOfLevies|V]" # todo: CONCEPT CASE
+ RP_MAA_ENTRY: "[Concept('men_at_arms','Ozbrojenci')|E]: [ArmyComposition.GetMaxNumberOfMAA|V]" # todo: CONCEPT CASE
  RP_TIME_TO_RAISE: "Doba svolání: $VALUE|V$"
- RP_TIME_TO_RAISE_DELAY: "Doba svolání zahrnuje zpoždění ve výši $VALUE$ způsobené tím, že se [soldiers|E] vracejí domů po nedávném rozpuštění"
+ RP_TIME_TO_RAISE_DELAY: "Doba svolání zahrnuje zpoždění ve výši $VALUE$ způsobené tím, že se [Concept('soldiers','vojáky')|E] vracejí domů po nedávném rozpuštění" # todo: CONCEPT CASE
  RP_RAISE_TOOLTIP_HEADER: "#T $RP_RAISE$#!"
- RP_RAISE_TOOLTIP_DESC: "Svolat všechny [armies|E], které jsou nejblíže tomuto konkrétnímu [rally_point|E].\n#weak Pokud máte pouze jedno shromaždiště, všechny armády budou svolány sem.#!"
+ RP_RAISE_TOOLTIP_DESC: "Svolat všechny [Concept('armies','armády')|E], které jsou nejblíže tomuto konkrétnímu [Concept('rally_point','shromaždišti')|E].\n#weak Pokud máte pouze jedno shromaždiště, všechny armády budou svolány sem.#!" # todo: CONCEPT CASE
  RP_RAISE_MEN_AT_ARMS_TOOLTIP_HEADER: "#T $RP_RAISE$#!"
- RP_RAISE_MEN_AT_ARMS_TOOLTIP_DESC: "Svolat zde všechny [men_at_arms|E]"
+ RP_RAISE_MEN_AT_ARMS_TOOLTIP_DESC: "Svolat zde všechny [Concept('men_at_arms','ozbrojence')|E]" # todo: CONCEPT CASE
  RP_RAISE_RAID_TOOLTIP_HEADER: "#T $RP_RAISE_RAID$#!"
- RP_RAISE_RAID_TOOLTIP_DESC: "Svolat všechny [armies|E], které jsou nejblíže tomuto konkrétnímu [rally_point|E], jako [raiders|E].\n#weak Pokud máte pouze jedno shromaždiště, všechny armády budou svolány sem.#!"
+ RP_RAISE_RAID_TOOLTIP_DESC: "Svolat všechny [Concept('armies','armády')|E], které jsou nejblíže tomuto konkrétnímu [Concept('rally_point','shromaždišti')|E], jako [Concept('raiders','nájezdníci')|E].\n#weak Pokud máte pouze jedno shromaždiště, všechny armády budou svolány sem.#!" # todo: CONCEPT CASE
  RP_RAISE_ALL_TOOLTIP_HEADER: "#T $RP_RAISE_ALL$#!"
- RP_RAISE_ALL_TOOLTIP_DESC: "Svolat #emphasis všechny#! vaše [armies|E] sem, bez ohledu na to, které [rally_point|E] je nejbližší"
+ RP_RAISE_ALL_TOOLTIP_DESC: "Svolat #emphasis všechny#! vaše [Concept('armies','armády')|E] sem, bez ohledu na to, které [Concept('rally_point','shromaždiště')|E] je nejbližší" # todo: CONCEPT CASE
  RP_MOVE_RALLY_POINT: "#T Přesunout shromaždiště\n#! #I Alternativně klikněte pravým tlačítkem přímo na mapu#!"
- RP_CANNOT_MOVE_RALLY_POINT: "#X Postavy bez území nemohou přesunout své [rally_point|E]#!"
- RP_RAISE_BLOCK_AT_WAR: "@warning_icon! #X Nemůžete svolat [raiders|E] během [war|E]#!"
+ RP_CANNOT_MOVE_RALLY_POINT: "#X Postavy bez území nemohou přesunout své [Concept('rally_point','shromaždiště')|E]#!" # todo: CONCEPT CASE
+ RP_RAISE_BLOCK_AT_WAR: "@warning_icon! #X Nemůžete svolat [Concept('raiders','nájezdníci')|E] během [Concept('war','války')|E]#!" # todo: CONCEPT CASE
  RP_RAISE_BARTER: "Povolat místní barteréry" # todo: NEW TRANSLATION
- RP_RAISE_BARTER_TOOLTIP: "#T Povolat armádu barterérů#!\n[GetPlayer.GetStartBarterBlockers]\n[barter|E] armády stojí [GetDefine('NArmy', 'BARTER_ARMY_COST_MULT')|%P0] nákladů na udržení běžných armád.\n[barter|E] armády se nemohou doplňovat." # todo: NEW TRANSLATION
+ RP_RAISE_BARTER_TOOLTIP: "#T Povolat armádu barterérů#!\n[GetPlayer.GetStartBarterBlockers]\n[Concept('barter','Směna')|E] armády stojí [GetDefine('NArmy', 'BARTER_ARMY_COST_MULT')|%P0] nákladů na udržení běžných armád.\n[Concept('barter','Směna')|E] armády se nemohou doplňovat." # todo: NEW TRANSLATION # todo: CONCEPT CASE
  RP_RAISE_BARTER_TOOLTIP_HEADER: "#T $RP_RAISE_BARTER$#!" # todo: NEW TRANSLATION
- RP_RAISE_BARTER_TOOLTIP_DESC: "#T Povolat všechny [armies|E], které jsou nejblíže tomuto konkrétnímu [rally_point|E] jako [barterers|E].\n#weak Pokud máte pouze jeden shromažďovací bod, budou zde povolány všechny armády.#!" # todo: NEW TRANSLATION
+ RP_RAISE_BARTER_TOOLTIP_DESC: "#T Povolat všechny [Concept('armies','armády')|E], které jsou nejblíže tomuto konkrétnímu [Concept('rally_point','shromaždišti')|E] jako [Concept('barterers','směnné výpravy')|E].\n#weak Pokud máte pouze jeden shromažďovací bod, budou zde povolány všechny armády.#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE

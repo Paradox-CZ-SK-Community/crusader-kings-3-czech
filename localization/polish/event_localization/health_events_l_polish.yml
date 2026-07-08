@@ -227,15 +227,15 @@
  health.3001.already_sick.desc: "Konečně moji služebníci našli lidi, kteří by mohli být způsobilí sloužit jako můj lékař. Tak či onak, obávám se, že si teď nemohu dovolit být vybraný."
  health.3001.a: "Zdá se, že [high_skill_option.GetFirstNameNoTooltip] má značné zkušenosti."
  health.3001.a.tt: "[GetCourtPositionType('court_physician_court_position').GetName()] má také měsíční plat [gold_i][SCOPE.ScriptValue('court_position_physician_salary')]"
- health.3001.a.aptitude: "[high_skill_option.GetUINamePossessive|U] [aptitude|E] je [high_skill_option.GetCourtPositionAptitude( GetCourtPositionType( 'court_physician_court_position' ) )]"
+ health.3001.a.aptitude: "[high_skill_option.GetUINamePossessive|U] [Concept('aptitude','Způsobilost')|E] je [high_skill_option.GetCourtPositionAptitude( GetCourtPositionType( 'court_physician_court_position' ) )]" # todo: CONCEPT CASE
  health.3001.b: "[low_skill_option.GetFirstNameNoTooltip] se zdá nadšený, pokud nic jiného."
- health.3001.b.aptitude: "[low_skill_option.GetUINamePossessive|U] [aptitude|E] je [low_skill_option.GetCourtPositionAptitude( GetCourtPositionType( 'court_physician_court_position' ) )]"
+ health.3001.b.aptitude: "[low_skill_option.GetUINamePossessive|U] [Concept('aptitude','Způsobilost')|E] je [low_skill_option.GetCourtPositionAptitude( GetCourtPositionType( 'court_physician_court_position' ) )]" # todo: CONCEPT CASE
  health.3001.c: "[mystic_option.GetFirstNameNoTooltip] tvrdí, že se vyzná v „alternativní medicíně.“"
- health.3001.c.aptitude: "[mystic_option.GetUINamePossessive|U] [aptitude|E] je [mystic_option.GetCourtPositionAptitude( GetCourtPositionType( 'court_physician_court_position' ) )]"
+ health.3001.c.aptitude: "[mystic_option.GetUINamePossessive|U] [Concept('aptitude','Způsobilost')|E] je [mystic_option.GetCourtPositionAptitude( GetCourtPositionType( 'court_physician_court_position' ) )]" # todo: CONCEPT CASE
  health.3001.d.two: "Ani jeden z nich mě neoslnil."
  health.3001.d.more: "Žádný z nich mě neoslnil."
  health.3001.e: "[excellent_skill_option.GetFirstNameNoTooltip] je ve vědeckých kruzích široce známý."
- health.3001.e.aptitude: "[excellent_skill_option.GetUINamePossessive|U] [aptitude|E] je [excellent_skill_option.GetCourtPositionAptitude( GetCourtPositionType( 'court_physician_court_position' ) )]"
+ health.3001.e.aptitude: "[excellent_skill_option.GetUINamePossessive|U] [Concept('aptitude','Způsobilost')|E] je [excellent_skill_option.GetCourtPositionAptitude( GetCourtPositionType( 'court_physician_court_position' ) )]" # todo: CONCEPT CASE
  health.3001.d.tt: "Nepřijmu nikoho jako svého [GetCourtPositionType('court_physician_court_position').GetName()]"
  health.3101.t: "[SCOPE.Custom('EventTitleDisease')]: Čas na léčbu"
  health.3101.start.desc: "Smrtelný zápach bublajících tinktur a rozmačkaných mastí útočí na mé smysly, když se prodírám do pracovny mého lékaře [physician.GetFirstNamePossessive]. [physician.GetSheHe|U] zvedá pohled od mazání, které [physician.GetSheHe] připravuje.\n\n„[Select_CString(ROOT.Char.IsFemale,'přišla','Přišel')] čas, [ROOT.Char.Custom('FormOfAddressForLiege')]. Znám několik způsobů, jak léčit vaše"
@@ -407,9 +407,9 @@
  health.4105.t: "$health_wounded_title$ Nastala katastrofa"
  health.4105.end.desc: "\n\n[Select_CString(ROOT.Char.IsFemale,'Nemyslela','Nemyslel')] jsem, že by mě něco mohlo bolet víc, ale brzy jsem [Select_CString(ROOT.Char.IsFemale,'byla přesvědčena','byl přesvědčen')] o opaku."
  disease_contraction_feed_message.t: "[message_receiver.Custom2( 'RelationToMeShort', CHARACTER.Self )|U] Onemocní"
- disease_contraction_feed_message.d_1: "[LEFT_CHARACTER.GetShortUIName|U] [Select_CString(LEFT_CHARACTER.IsFemale,'získala','získal')] [trait|E] [disease_trait.GetName( CHARACTER.Self )|LV]"
- disease_contraction_feed_message.d_2: "[LEFT_CHARACTER.GetShortUIName|U] a [RIGHT_CHARACTER.GetShortUIName|U] získali [trait|E] [disease_trait.GetName( CHARACTER.Self )|LV]"
- disease_contraction_feed_message.d: "[LEFT_CHARACTER.GetShortUIName|U], [RIGHT_CHARACTER.GetShortUIName|U] a $message_consolidation_others$ získali [trait|E] [disease_trait.GetName( LEFT_CHARACTER.Self )|LV]"
+ disease_contraction_feed_message.d_1: "[LEFT_CHARACTER.GetShortUIName|U] [Select_CString(LEFT_CHARACTER.IsFemale,'získala','získal')] [Concept('trait','Rys')|E] [disease_trait.GetName( CHARACTER.Self )|LV]" # todo: CONCEPT CASE
+ disease_contraction_feed_message.d_2: "[LEFT_CHARACTER.GetShortUIName|U] a [RIGHT_CHARACTER.GetShortUIName|U] získali [Concept('trait','rys')|E] [disease_trait.GetName( CHARACTER.Self )|LV]" # todo: CONCEPT CASE
+ disease_contraction_feed_message.d: "[LEFT_CHARACTER.GetShortUIName|U], [RIGHT_CHARACTER.GetShortUIName|U] a $message_consolidation_others$ získali [Concept('trait','rys')|E] [disease_trait.GetName( LEFT_CHARACTER.Self )|LV]" # todo: CONCEPT CASE
  disease_recovery_feed_message.t: "[message_receiver.Custom2('RelationToMeShort', SCOPE.sC('sick_character'))|U] se uzdravuje"
  health.6001.t: "Pokus"
  health.6001.desc_opening: "Ukončím svůj život. Nemohu se ubránit smutku, který mi stoupá v srdci při pomyšlení na vše, co zanechám, ale mé rozhodnutí je pevné."

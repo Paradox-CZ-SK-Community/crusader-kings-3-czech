@@ -44,7 +44,7 @@
  legend_spread_events.0030.b.tt.success: "Všichni si pamatují váš skvělý čin"
  legend_spread_events.0030.b.tt.failure: "Lidé nejsou přesvědčeni"
  legend_spread_events.0030.c: "Necítím potřebu to znovu zmiňovat."
- humble_content_courtiers_and_guests: "Všichni [GetTrait('humble').GetName( GetNullCharacter )] nebo [GetTrait('content').GetName( GetNullCharacter )] [courtiers|E] a [guests|E]"
+ humble_content_courtiers_and_guests: "Všichni [GetTrait('humble').GetName( GetNullCharacter )] nebo [GetTrait('content').GetName( GetNullCharacter )] [Concept('courtiers','dvořané')|E] a [Concept('guests','hosté')|E]" # todo: CONCEPT CASE
  legend_lazy_modifier: "Není to moje práce"
  legend_lazy_modifier_desc: "Tato postava nechala katalogizaci podrobností své legendy na někom jiném."
  legend_memory_deed_modifier: "Čerstvá vzpomínka"
@@ -180,9 +180,9 @@
  legend_spread_events.5055.c: "Poddaní [vassal2.GetCulture.GetNameNoTooltip] potřebují někoho, ke komu by se mohli obrátit."
  legend_spread_events.5055.d: "[Select_CString(ROOT.Char.IsFemale,'Měla','Měl')] bych se vyvarovat si nepřátel."
  legend_spread_events.5055.d.tt: "Je mnohem snazší vyhýbat se konfliktu než dělat prohlášení."
- 5055_vassal1_culture: "Každý vazal [vassal1.GetCulture.GetName] [culture|E]"
- 5055_vassal2_culture: "Každý vazal [vassal2.GetCulture.GetName] [culture|E]"
- 5055_every_culture_vassal: "Každý vazal [vassal1.GetCulture.GetName] a [vassal2.GetCulture.GetName] [culture|E]"
+ 5055_vassal1_culture: "Každý vazal [vassal1.GetCulture.GetName] [Concept('culture','kultura')|E]" # todo: CONCEPT CASE
+ 5055_vassal2_culture: "Každý vazal [vassal2.GetCulture.GetName] [Concept('culture','kultura')|E]" # todo: CONCEPT CASE
+ 5055_every_culture_vassal: "Každý vazal [vassal1.GetCulture.GetName] a [vassal2.GetCulture.GetName] [Concept('culture','kultura')|E]" # todo: CONCEPT CASE
  legend_spread_events.5060.t: "Svaté zjevy"
  legend_spread_events.5060.opening: "„Víte, můj [ROOT.Char.GetLiege.GetTitleAsNameNoTooltip],“ začne váhavě [chronicler.GetFirstName], když škobrtáme přes [ROOT.Char.Custom('GetCourtyard')], „váhám to zmínit, ale věřící budou chtít vědět, jak jste [Select_CString(chronicler.IsFemale,'přišla','přišel')] o své"
  legend_spread_events.5060.one_eyed: "oko.„"
@@ -338,7 +338,7 @@
  legend_spread_events.5320.a: "Určitě by [vassal.GetSheHe] to neodmítl?"
  legend_spread_events.5320.a.success: "[vassal.GetFirstNameNoTooltip] přijímá s vděčností"
  legend_spread_events.5320.a.failure: "[vassal.GetFirstNameNoTooltip] to odmítne"
- legend_spread_events.5320.a.artifact: "Váš [artifact.GetName] získává #negative_value negativní#! [prestige|E] modifikátor"
+ legend_spread_events.5320.a.artifact: "Váš [artifact.GetName] získává #negative_value negativní#! [Concept('prestige','prestiž')|E] modifikátor" # todo: CONCEPT CASE
  legend_spread_events.5320.b: "Investice do [capital_county.GetNameNoTierNoTooltip] by mohla být přesvědčivá."
  legend_spread_events.5320.b.success: "[vassal.GetFirstNameNoTooltip] je uchvácen nabídkou"
  legend_spread_events.5320.b.failure: "[vassal.GetFirstNameNoTooltip] není [Select_CString(vassal.IsFemale,'ohromena','ohromen')]"
@@ -381,7 +381,7 @@
  legend_spread_events.8000.desc: "Přes veškeré snahy stále existují tací, kteří popírají, že [promoted_legend.GetProtagonist.GetCulture.GetName] jsou pravými dědici lidu [promoted_legend.GetProperty('culture').Culture.GetName]. Dnes ke mně [Select_CString(ROOT.Char.IsFemale,'přišla','přišel')] [chronicler.Custom2('MyCharacterIntroduction', ROOT.Char)] s informací, která by měla rozptýlit veškeré pochybnosti o legitimnosti mého nároku!\n\n[chronicler.GetSheHe|U] mi vypráví o starobylém svazku, o jehož existenci [chronicler.GetSheHe] věří, že se nachází někde v [promoted_legend.GetProperty('original_region').GeographicalRegion.GetName], konkrétně v [province_to_visit.GetName]. Zdroje jsou možná pochybných, ale jestli bych se pokusil ten svazek nalézt, [Select_CString(ROOT.Char.IsFemale,'mohla','mohl')] bych tím snad dokázat legitimitu [promoted_legend.GetName]."
  legend_spread_events.8000.a: "Jdu na dobrodružství!"
  legend_spread_events.8000.b: "Zůstávám doma!"
- travel_to_tome_tt: "Zamíříte [travel|E] do [province_to_visit.GetName], kde můžete nalézt starobylý svazek"
+ travel_to_tome_tt: "Zamíříte [Concept('travel','cestování')|E] do [province_to_visit.GetName], kde můžete nalézt starobylý svazek" # todo: CONCEPT CASE
  legend_spread_events.8001.t: "Svazek [promoted_legend.GetProperty('culture').Culture.GetNameNoTooltip]: Ztracen časem"
  legend_spread_events.8001.desc: "Bohužel mě okolnosti donutily opustit plány cestovat a stopa důkazů, kterou jsem sledoval, vychladla. Nyní nic nemohu udělat, abych ten tom vystopoval, a obávám se, že [Select_CString(ROOT.Char.IsFemale,'mohla','mohl')] být ztracen v čase."
  legend_spread_events.8001.a: "Zatracení!"
@@ -473,7 +473,7 @@
  legend_spread_events.8110.a.lose: "Nejste přesvědčivý"
  legend_spread_events.8110.b: "Ne, to není pravda."
  legend_spread_events.8110.c: "Bitva byla skvělá a měla by být připomenuta."
- travel_to_distant_land_tt: "Budete [travel|E] do [distant_location.GetName]"
+ travel_to_distant_land_tt: "Budete [Concept('travel','cestování')|E] do [distant_location.GetName]" # todo: CONCEPT CASE
  legend_spread_events.8120.t: "Mystický [distant_title.GetBaseNameNoTooltip|U]"
  legend_spread_events.8120.desc: "Pozdravil mě [chronicler.Custom2('MyCharacterIntroduction', ROOT.Char)|U], který je rozjařený vzrušením.\n\n[chronicler.GetSheHe|U] mi vypráví o mystické zemi zvané „[distant_title.GetBaseNameNoTooltip|U]“ a rozprostře mi před oči mapu této úžasné země. Říká, že řeky tu tečou mlékem a medem, a že i rolníci jsou tu tlustí díky hojnosti. I když bych obvykle tak daleko necestoval, příběhy o mé hrdinské cestě by jistě měly vliv na [legend.GetName]!"
  legend_spread_events.8120.a: "Musím tam jít!"
@@ -697,10 +697,10 @@
  legend_chain_spouse_modifier_desc: "Tato postava byla pohnuta neocenitelnou podporou svého partnera pro svou legendu."
  legend_chain_chancellor_modifier: "Obratná legenda"
  legend_chain_chancellor_modifier_desc: "Tato postava se spolehla na pomoc svého kancléře, aby znovu získala jistotu ve své legendě."
- legend_protagonist_legitimacy_miniscule_tt: "Získáte #positive_value [SCOPE.ScriptValue('miniscule_legitimacy_gain')|0]#! dalších [legitimacy|E] od vašeho [legend_protagonist|E]"
- legend_protagonist_legitimacy_minor_tt: "Získáte #positive_value [SCOPE.ScriptValue('minor_legitimacy_gain')|0]#! dalších [legitimacy|E] od vašeho [legend_protagonist|E]"
- legend_protagonist_legitimacy_medium_tt: "Získáte #positive_value [SCOPE.ScriptValue('medium_legitimacy_gain')|0]#! dalších [legitimacy|E] od vašeho [legend_protagonist|E]"
- legend_protagonist_legitimacy_major_tt: "Získáte #positive_value [SCOPE.ScriptValue('major_legitimacy_gain')|0]#! dalších [legitimacy|E] od vašeho [legend_protagonist|E]"
+ legend_protagonist_legitimacy_miniscule_tt: "Získáte #positive_value [SCOPE.ScriptValue('miniscule_legitimacy_gain')|0]#! dalších [Concept('legitimacy','legitimit')|E] od vašeho [legend_protagonist|E]" # todo: CONCEPT CASE
+ legend_protagonist_legitimacy_minor_tt: "Získáte #positive_value [SCOPE.ScriptValue('minor_legitimacy_gain')|0]#! dalších [Concept('legitimacy','legitimit')|E] od vašeho [legend_protagonist|E]" # todo: CONCEPT CASE
+ legend_protagonist_legitimacy_medium_tt: "Získáte #positive_value [SCOPE.ScriptValue('medium_legitimacy_gain')|0]#! dalších [Concept('legitimacy','legitimit')|E] od vašeho [legend_protagonist|E]" # todo: CONCEPT CASE
+ legend_protagonist_legitimacy_major_tt: "Získáte #positive_value [SCOPE.ScriptValue('major_legitimacy_gain')|0]#! dalších [Concept('legitimacy','legitimit')|E] od vašeho [legend_protagonist|E]" # todo: CONCEPT CASE
  legend_spread_events.5400.t: "Nutné nadsázky"
  legend_spread_events.5400.desc: "„Kdybych vás [Select_CString(ROOT.Char.IsFemale,'mohla','mohl')] na chvíli obtěžovat, [ROOT.Char.Custom('FormOfAddressForLiege')],“ začíná [chronicler.GetFirstName], trochu uboze podle mého vkusu, „bylo by pro nás obrovskou výhodou, kdybychom mohli přidat více detailů do [promoted_legend.GetName]. Čím... #EMP veličejnější,#! tím lépe!“ [chronicler.GetSheHe|U] se na mě očekávavě dívá.\n\nV mé mysli začínají klíčit semínka spiknutí. Přepracovat stávající příběh v okázalejších detailech jistě neuškodí, ale úplná náhrada této části příběhu má také své výhody..."
  legend_spread_events.5400.a: "„Samozřejmě, že to ještě jednou projdu!“"

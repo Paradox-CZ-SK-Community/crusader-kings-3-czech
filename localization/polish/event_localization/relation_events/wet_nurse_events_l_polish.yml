@@ -4,9 +4,9 @@
  bp2_decision.0001.desc_widower: "Vzhledem k tomu, že výchova dítěte šlechtického stavu je zdaleka ne osamělá práce$bp2_decision.0001.desc_candidates$"
  bp2_decision.0001.desc_candidates: ", nechal jsem své úředníky najít schopné ženy pro roli [GetCourtPositionType('wet_nurse_court_position').GetName()].\n\nNyní mi předkládají několik místních k posouzení."
  bp2_decision.0001.a: "Preferuji zkušenou [wet_nurse_candidate_1.GetFirstNameNoTooltip]."
- bp2_decision.0001.a.aptitude: "[wet_nurse_candidate_1.GetUINamePossessive] [aptitude|E] je [wet_nurse_candidate_1.GetCourtPositionAptitude( GetCourtPositionType( 'wet_nurse_court_position' ) )]"
+ bp2_decision.0001.a.aptitude: "[wet_nurse_candidate_1.GetUINamePossessive] [Concept('aptitude','Způsobilost')|E] je [wet_nurse_candidate_1.GetCourtPositionAptitude( GetCourtPositionType( 'wet_nurse_court_position' ) )]" # todo: CONCEPT CASE
  bp2_decision.0001.b: "[wet_nurse_candidate_2.GetFirstNameNoTooltip] je dost dobrá."
- bp2_decision.0001.b.aptitude: "[wet_nurse_candidate_2.GetUINamePossessive] [aptitude|E] je [wet_nurse_candidate_2.GetCourtPositionAptitude( GetCourtPositionType( 'wet_nurse_court_position' ) )]"
+ bp2_decision.0001.b.aptitude: "[wet_nurse_candidate_2.GetUINamePossessive] [Concept('aptitude','Způsobilost')|E] je [wet_nurse_candidate_2.GetCourtPositionAptitude( GetCourtPositionType( 'wet_nurse_court_position' ) )]" # todo: CONCEPT CASE
  bp2_decision.0001.c: "Žádná se mi nelíbí."
  bp2_yearly.7000.t: "Nemocenská"
  bp2_yearly.7000.desc: "Kojna, [wet_nurse.GetFirstName], požádala o okamžitou audienci u mě.\n\n„Má drahá [wet_nurse.Custom2('RelationToMe', ROOT.Char)], onemocněla jsem! Potřebuji prosit o pár dní odpočinku — mé špatné rozpoložení by mohlo ublížit dětem v mé péči.“\n\n[wet_nurse.GetSheHe|U] to sténá s chorobnou naléhavostí." # todo: RETRANSLATED ENGLISH
@@ -25,7 +25,7 @@
  bp2_yearly.7001.desc_lover: "It seems... I've been less than careful."
  bp2_yearly.7001.desc_no_lover: "[jealous_spouse.GetFirstNameNoTooltip] is attacking me over nothing! Right...?"
  bp2_yearly.7001.a: "Chceš, abych [Select_CString(ROOT.Char.IsFemale,'ignorovala','ignoroval')] naše potomstvo?!"
- bp2_yearly.7001.a.tt: "Tato možnost je dostupná, protože máte [lover|E]"
+ bp2_yearly.7001.a.tt: "Tato možnost je dostupná, protože máte [Concept('lover','milenec')|E]" # todo: CONCEPT CASE
  bp2_yearly.7001.b: "Nesmysl, má drahá: víš, že jsem věrný!"
  bp2_yearly.7001.b.spouse_convinced: "Přesvědčíte [jealous_spouse.GetFirstNameNoTooltip]"
  bp2_yearly.7001.b.spouse_not_convinced: "[jealous_spouse.GetFirstNameNoTooltip] vám nevěří"
@@ -180,11 +180,11 @@
  bp2_decision.0002.desc_cleansing: "Očistná moc $cleansing_type_element$ může být překonána pouze trpělivostí a horlivostí."
  bp2_decision.0002.desc_end: "\n\nPokud [teentribal.GetFirstNameNoTooltip] projde některou z těchto zkoušek, bude mít přízeň v očích [ROOT.Char.GetFaith.HighGodName], a bude poctěn jako hodný [ROOT.Char.GetCulture.GetNameNoTooltip] [teentribal.GetWomanMan]."
  bp2_decision.0002.desc_end_root: "\n\nPokud projdu kteroukoliv z těchto zkoušek, stanu se hodným v očích [ROOT.Char.GetFaith.HighGodName] a budu poctěn jako [ROOT.Char.GetCulture.GetNameNoTooltip] [teentribal.GetWomanMan]."
- bp2_decision.0002.effect_tt: "Získá rys [personality_trait|E], zkušenost [lifestyle_experience|E] nebo bod dovednosti [skill|E]."
+ bp2_decision.0002.effect_tt: "Získá rys [Concept('personality_trait','osobnostní rys')|E], zkušenost [Concept('lifestyle_experience','zkušenosti životního stylu')|E] nebo bod dovednosti [Concept('skill','dovednost')|E]." # todo: CONCEPT CASE
  bp2_decision.0002.effect_modifier_tt: "Získá buď [GetModifier('proven_adult_modifier').GetNameWithTooltip] nebo [GetModifier('insecure_adult_modifier').GetNameWithTooltip] na #V 10 let#!"
  bp2_decision.0002.a: "Souboj."
  bp2_decision.0002.a.flavor: "Bude to [teentribal.Custom('GirlBoy')] proti [teentribal.GetWomanMan]!"
- bp2_decision.0002.a.tt: "Vyberete si protivníka pro [single_combat_duel|E]"
+ bp2_decision.0002.a.tt: "Vyberete si protivníka pro [Concept('single_combat_duel','duel')|E]" # todo: CONCEPT CASE
  bp2_decision.0002.a.win: "Pokud bude souboj vyhrán"
  bp2_decision.0002.a.lose: "Pokud bude souboj prohrán"
  bp2_decision.0002.b: "Rituál jizvení."
@@ -194,13 +194,13 @@
  bp2_decision.0002.b_modifier: "Pokud je čepel sotva použita"
  bp2_decision.0002.c: "Odloučení."
  bp2_decision.0002.c.tt: "Krutá divočina odhalí pravé já."
- bp2_decision.0002.c.destination: "Vyberete si [travel_destination|E]"
+ bp2_decision.0002.c.destination: "Vyberete si [Concept('travel_destination','cíli cesty')|E]" # todo: CONCEPT CASE
  bp2_decision.0002.c_win: "Pokud bude odloučení mistrovské"
  bp2_decision.0002.c_lose: "Pokud je odloučení trýznivé"
- bp2_decision.0002.c_trait: "Získá [commander_trait|E] podle terénu cílového místa"
+ bp2_decision.0002.c_trait: "Získá [Concept('commander_trait','velitelský rys')|E] podle terénu cílového místa" # todo: CONCEPT CASE
  bp2_decision.0002.d: "Oholení hlavy."
  bp2_decision.0002.d.tt: "Ať jsou výsady dětství ostříhány!"
- bp2_decision.0002.d_artifact: "Získá [artifact|E]"
+ bp2_decision.0002.d_artifact: "Získá [Concept('artifact','artefakt')|E]" # todo: CONCEPT CASE
  bp2_decision.0002.d_bald: "Pokud je vše oholeno"
  bp2_decision.0002.d_shave: "Pokud je ustřižen pouze pramínek vlasů"
  fire_cleanse: "oheň"
@@ -213,22 +213,22 @@
  bp2_decision.0002.e.tt: "Pradávná síla $cleansing_type_element$ očistí mysl i tělo."
  bp2_decision.0002.e.full: "Pokud je prvek plně přijat"
  bp2_decision.0002.e.partially: "Pokud je obřad proveden polovičatě"
- bp2_decision.0002.e_flip: "Šance změnit [sinful|E] [trait|E] na [virtuous|E]"
+ bp2_decision.0002.e_flip: "Šance změnit [Concept('sinful','hříšný')|E] [Concept('trait','rys')|E] na [Concept('virtuous','ctnostného')|E]" # todo: CONCEPT CASE
  bp2_decision.0002.f: "$bp2_decision.0002.backout$."
  bp2_decision.0002.backout: "[SelectLocalization(ObjectsEqual(teentribal, ROOT.Char),'I am',teentribal.GetFirstNameNoTooltip)] [SelectLocalization(ObjectsEqual(teentribal, ROOT.Char),'','is ')]je ještě nepřipraven"
- bp2_decision.0002.cooldown: "@alert_icon! #alert_trial $bp2_decision.0002.t$ [decision|E] bude nedostupné po dobu #V 1 roku#!"
+ bp2_decision.0002.cooldown: "@alert_icon! #alert_trial $bp2_decision.0002.t$ [Concept('decision','Rozhodnutí')|E] bude nedostupné po dobu #V 1 roku#!" # todo: CONCEPT CASE
  bp2_yearly.7021.t: "$bp2_decision.0002.t$: $rites_of_passage_duel$"
  bp2_yearly.7021.desc: "Každý [ROOT.Char.GetCulture.GetName] [teentribal.GetWomanMan] musí pohrdat strachem, odmítat slabost a počítat s tím, že v životě pozná bolest.\n\nMladý [teentribal.GetFirstName] se střetl s ostatními mládenci, ale nikdy nezažil nápor dospělého [ROOT.Char.GetCulture.GetNameNoTooltip].\n\nMnozí jsou stateční válečníci našeho kmene, ale jen jeden může vyzkoušet hodnotu mého [ROOT.Char.Custom2('RelationToMePossessive',teentribal)]."
  bp2_yearly.7021.desc_root: "Válečník se rodí ze zápasu, zrozen v krvi.\n\nUdeřil jsem jiné mladíky, ale nikdy skutečně hodného protivníka: dospělého [ROOT.Char.GetCulture.GetName].\n\nMnozí jsou silní bojovníci našeho kmene, ale já mohu vyzvat jen jednoho, abych dokázal svou připravenost."
  bp2_yearly.7021.a: "[teentribal.GetSheHe|U] čelí [teentribal.GetHerHis] [teentribal.Custom2('RelationToMeShort', family_duelist)|l]!"
  bp2_yearly.7021.a_root: "[teentribal.Custom2('RelationToMeShort', family_duelist)|U], prokážu se proti tobě!"
- bp2_yearly.7021.a.tt: "[teentribal.GetFirstName] vyzývá [teentribal.GetHerHis] [teentribal.Custom2('RelationToMeShort', family_duelist)|l] [family_duelist.GetFirstName] na [single_combat_duel|E]"
+ bp2_yearly.7021.a.tt: "[teentribal.GetFirstName] vyzývá [teentribal.GetHerHis] [teentribal.Custom2('RelationToMeShort', family_duelist)|l] [family_duelist.GetFirstName] na [Concept('single_combat_duel','duel')|E]" # todo: CONCEPT CASE
  bp2_yearly.7021.b_root: "Vyzývám svého [ROOT.Char.Custom2('RelationToMeShort', duelist_1)], [duelist_1.GetFirstNameNoTooltip]!"
  bp2_yearly.7021.b: "[teentribal.GetSheHe|U] bude zápasit s mým [teentribal.Custom2('RelationToMeShort', duelist_1)|l], [duelist_1.GetFirstNameNoTooltip]!"
- bp2_yearly.7021.b.tt: "[teentribal.GetFirstName] vyzývá [duelist_1.GetFirstName] na [single_combat_duel|E]"
+ bp2_yearly.7021.b.tt: "[teentribal.GetFirstName] vyzývá [duelist_1.GetFirstName] na [Concept('single_combat_duel','duel')|E]" # todo: CONCEPT CASE
  bp2_yearly.7021.c: "[duelist_2.Custom('ComplimentAdjective')] [duelist_2.GetFirstNameNoTooltip] — vpřed!"
  bp2_yearly.7021.c_root: "Raději bych se utkal se svým [ROOT.Char.Custom2('RelationToMeShort', duelist_2)], [duelist_2.GetFirstNameNoTooltip]."
- bp2_yearly.7021.c.tt: "[teentribal.GetFirstName] vyzývá [duelist_2.GetFirstName] na [single_combat_duel|E]"
+ bp2_yearly.7021.c.tt: "[teentribal.GetFirstName] vyzývá [duelist_2.GetFirstName] na [Concept('single_combat_duel','duel')|E]" # todo: CONCEPT CASE
  bp2_yearly.7021.d: "$bp2_decision.0002.f$"
  bp2_yearly.7021.d.tt: "$bp2_decision.0002.cooldown$"
  bp2_yearly.7022.t: "$bp2_decision.0002.t$: Rituál $rites_of_passage_duel$ proběhl"
@@ -273,7 +273,7 @@
  bp2_yearly.7024.b.realm: "[teentribal.GetFirstName] se vydá do [realm_location.GetTerrain.GetNameNoTooltip|l] [realm_location.GetName]"
  bp2_yearly.7024.c: "Místní divočina postačí."
  bp2_yearly.7024.c.tt: "#P Nižší#! šance nebezpečí"
- bp2_yearly.7024.c.capital: "[teentribal.GetFirstName] se uchýlí na [rite_location.GetTerrain.GetNameNoTooltip|l] [rite_location.GetName], [realm_capital|E]"
+ bp2_yearly.7024.c.capital: "[teentribal.GetFirstName] se uchýlí na [rite_location.GetTerrain.GetNameNoTooltip|l] [rite_location.GetName], [Concept('realm_capital','hlavní sídlo panství')|E]" # todo: CONCEPT CASE
  bp2_yearly.7024.d: "$bp2_decision.0002.f$"
  bp2_yearly.7024.d.tt: "$bp2_decision.0002.cooldown$"
  bp2_yearly.7025.t: "$bp2_decision.0002.t$: $rites_of_passage_seclusion$"

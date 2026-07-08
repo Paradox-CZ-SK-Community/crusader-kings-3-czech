@@ -90,7 +90,7 @@
  romance_opinion: "Romantika"
  mysterious_opinion: "Tajemný"
  disappointed_opinion: "Zklamaný"
- requested_money_opinion: "Požádal o [gold|E]"
+ requested_money_opinion: "Požádal o [Concept('gold','zlato')|E]" # todo: CONCEPT CASE
  weak_opinion: "Slabý"
  disgusted_opinion: "Znechucený"
  pleased_opinion: "Potěšený"
@@ -135,13 +135,13 @@
  imprisoned_family_member_dungeon: "Uvěznil člena rodiny"
  moved_to_house_arrest_opinion: "Dal člena rodiny do domácího vězení"
  family_moved_to_dungeon_opinion: "Uvrhl člena rodiny do žaláře"
- pressed_my_claim: "Prosazoval můj [claim|E]"
+ pressed_my_claim: "Prosazoval můj [Concept('claim','nárok')|E]" # todo: CONCEPT CASE
  revoked_title: "Odňal mi titul"
- granted_vassal: "Udělen mi [vassal|E]"
- retracted_vassal: "Odvolal mého [vassal|E]"
- became_vassal: "Stal se [vassal|E]"
- treasonous_retract_refusal: "Odmítl odvolat [vassal|E]"
- made_co_ruler_opinion: "Učinil mě [co_ruler|E]"
+ granted_vassal: "Udělen mi [Concept('vassal','vazalovi')|E]" # todo: CONCEPT CASE
+ retracted_vassal: "Odvolal mého [Concept('vassal','vazala')|E]" # todo: CONCEPT CASE
+ became_vassal: "Stal se [Concept('vassal','vazalem')|E]" # todo: CONCEPT CASE
+ treasonous_retract_refusal: "Odmítl odvolat [Concept('vassal','vazal')|E]" # todo: CONCEPT CASE
+ made_co_ruler_opinion: "Učinil mě [Concept('co_ruler','spoluvládce')|E]" # todo: CONCEPT CASE
  hired_me_opinion: "Najal mě"
  botched_my_treatment_crime_opinion: "Zpackal mé ošetření"
  botched_treatment_of_kin_crime_opinion: "Zpackal ošetření příbuzného"
@@ -155,7 +155,7 @@
  grateful_ward_opinion: "Vděčný vychovanec"
  plotting_against_liege_opinion: "Spikání proti lennímu pánovi"
  plotting_against_me_opinion: "Spikání proti mně"
- plotting_against_diarch_opinion: "Spikání proti [regent|E]"
+ plotting_against_diarch_opinion: "Spikání proti [Concept('regent','regentovi')|E]" # todo: CONCEPT CASE
  spying_on_liege_opinion: "Špehování lenního pána"
  forgiven_opinion: "Odpustil mi"
  comforted_opinion: "Uklidnil mě"
@@ -187,42 +187,42 @@
  attempted_arrest_opinion: "Pokus o zatčení"
  attempted_imprisonment_opinion: "Pokus o uvěznění"
  treachery_opinion: "Zrádce"
- treasonous_revoke_refusal: "Odmítl odejmutí [title|E]"
- treasonous_imprison_refusal: "Odmítl uvěznění [vassal|E]"
- treasonous_disobeyed_diarch: "Odmítl požadavek [diarch_power|E]"
+ treasonous_revoke_refusal: "Odmítl odejmutí [Concept('title','titul')|E]" # todo: CONCEPT CASE
+ treasonous_imprison_refusal: "Odmítl uvěznění [Concept('vassal','vazal')|E]" # todo: CONCEPT CASE
+ treasonous_disobeyed_diarch: "Odmítl požadavek [Concept('diarch_power','propůjčená moc')|E]" # todo: CONCEPT CASE
  orchestrated_coup_opinion: "Zorganizoval převrat"
- treasonous_usurped_my_diarch: "Zmocnil se mého [regent|E]"
+ treasonous_usurped_my_diarch: "Zmocnil se mého [Concept('regent','regentem')|E]" # todo: CONCEPT CASE
  rebellious_vassal_opinion: "Vzbouřený vazal"
  helped_me_against_tyrant_opinion: "Pomohl proti tyranovi"
  sided_with_tyrant_opinion: "Stal na straně tyrana"
  opinion_of_predecessor: "Názor na předchůdce"
  promise_to_predecessor: "Slib předchůdci"
  upset_elites_opinion: "Rozhněval elity"
- courtly_title_creation_opinion: "[GetVassalStance( 'courtly' ).GetTextIcon][GetVassalStance( 'courtly' ).GetName] schvaluje vytvoření [title|E]"
- courtly_lowborn_grant_opinion: "[GetVassalStance( 'courtly' ).GetTextIcon][GetVassalStance( 'courtly' ).GetName] neschvaluje udělení [lowborn|E] [title|E]"
- courtly_disinherit_opinion: "[GetVassalStance( 'courtly' ).GetTextIcon][GetVassalStance( 'courtly' ).GetName] neschvaluje [disinheriting|E] nesporného dědice"
- courtly_court_position_opinion: "[GetVassalStance( 'courtly' ).GetTextIcon][GetVassalStance( 'courtly' ).GetName] schvaluje [court_position|E]"
- antagonistic_house_approves_war_victory_opinion: "@dynasty_house_unity_antagonistic! $antagonistic$ člen [house|E] ohromen ofenzivním [victory|E]"
- antagonistic_house_approves_war_victory_defensive_opinion: "@dynasty_house_unity_antagonistic! $antagonistic$ člen [house|E] ohromen defenzivním [victory|E]"
- antagonistic_house_disapproves_war_white_peace_opinion: "@dynasty_house_unity_antagonistic! $antagonistic$ člen [house|E] považuje [white_peace|E] za slabé"
- antagonistic_house_disapproves_war_defeat_opinion: "@dynasty_house_unity_antagonistic! $antagonistic$ člen [house|E] zahanben [defeat|E]"
- glory_hound_approves_war_victory_opinion: "[GetVassalStance( 'glory_hound' ).GetTextIcon][GetVassalStance( 'glory_hound' ).GetName] schvaluje ofenzivní [victory|E]"
- glory_hound_disapproves_war_white_peace_opinion: "[GetVassalStance( 'glory_hound' ).GetTextIcon][GetVassalStance( 'glory_hound' ).GetName] neschvaluje [white_peace|E]"
- glory_hound_disapproves_war_defeat_opinion: "[GetVassalStance( 'glory_hound' ).GetTextIcon][GetVassalStance( 'glory_hound' ).GetName] neschvaluje [defeat|E]"
- parochial_approves_holding_construction_opinion: "[GetVassalStance( 'parochial' ).GetTextIcon][GetVassalStance( 'parochial' ).GetName] schvaluje výstavbu [holding|E]"
- parochial_approves_holding_upgrade_opinion: "[GetVassalStance( 'parochial' ).GetTextIcon][GetVassalStance( 'parochial' ).GetName] schvaluje vylepšení [holding|E]"
- parochial_disapproves_strong_war_enemy_opinion: "[GetVassalStance( 'parochial' ).GetTextIcon][GetVassalStance( 'parochial' ).GetName] neschvaluje vážné vyhlášení [war|E]"
- zealot_approves_temple_construction_opinion: "[GetVassalStance( 'zealot' ).GetTextIcon][GetVassalStance( 'zealot' ).GetName] schvaluje stavbu [temple|E]"
- zealot_approves_temple_upgrade_opinion: "[GetVassalStance( 'zealot' ).GetTextIcon][GetVassalStance( 'zealot' ).GetName] schvaluje vylepšení [temple|E]"
- zealot_disapproves_of_asking_hof_for_gold_opinion: "[GetVassalStance( 'zealot' ).GetTextIcon][GetVassalStance( 'zealot' ).GetName] neschvaluje žádání [head_of_faith|E] o [gold|E]"
+ courtly_title_creation_opinion: "[GetVassalStance( 'courtly' ).GetTextIcon][GetVassalStance( 'courtly' ).GetName] schvaluje vytvoření [Concept('title','titul')|E]" # todo: CONCEPT CASE
+ courtly_lowborn_grant_opinion: "[GetVassalStance( 'courtly' ).GetTextIcon][GetVassalStance( 'courtly' ).GetName] neschvaluje udělení [Concept('lowborn','neurozený')|E] [Concept('title','titul')|E]" # todo: CONCEPT CASE
+ courtly_disinherit_opinion: "[GetVassalStance( 'courtly' ).GetTextIcon][GetVassalStance( 'courtly' ).GetName] neschvaluje [Concept('disinheriting','vydědění')|E] nesporného dědice" # todo: CONCEPT CASE
+ courtly_court_position_opinion: "[GetVassalStance( 'courtly' ).GetTextIcon][GetVassalStance( 'courtly' ).GetName] schvaluje [Concept('court_position','dvorský úřad')|E]" # todo: CONCEPT CASE
+ antagonistic_house_approves_war_victory_opinion: "@dynasty_house_unity_antagonistic! $antagonistic$ člen [Concept('house','rod')|E] ohromen ofenzivním [Concept('victory','vítězstvími')|E]" # todo: CONCEPT CASE
+ antagonistic_house_approves_war_victory_defensive_opinion: "@dynasty_house_unity_antagonistic! $antagonistic$ člen [Concept('house','rod')|E] ohromen defenzivním [Concept('victory','vítězstvími')|E]" # todo: CONCEPT CASE
+ antagonistic_house_disapproves_war_white_peace_opinion: "@dynasty_house_unity_antagonistic! $antagonistic$ člen [Concept('house','rod')|E] považuje [Concept('white_peace','bílý mír')|E] za slabé" # todo: CONCEPT CASE
+ antagonistic_house_disapproves_war_defeat_opinion: "@dynasty_house_unity_antagonistic! $antagonistic$ člen [Concept('house','rod')|E] zahanben [Concept('defeat','porážka')|E]" # todo: CONCEPT CASE
+ glory_hound_approves_war_victory_opinion: "[GetVassalStance( 'glory_hound' ).GetTextIcon][GetVassalStance( 'glory_hound' ).GetName] schvaluje ofenzivní [Concept('victory','vítězství')|E]" # todo: CONCEPT CASE
+ glory_hound_disapproves_war_white_peace_opinion: "[GetVassalStance( 'glory_hound' ).GetTextIcon][GetVassalStance( 'glory_hound' ).GetName] neschvaluje [Concept('white_peace','bílý mír')|E]" # todo: CONCEPT CASE
+ glory_hound_disapproves_war_defeat_opinion: "[GetVassalStance( 'glory_hound' ).GetTextIcon][GetVassalStance( 'glory_hound' ).GetName] neschvaluje [Concept('defeat','porážka')|E]" # todo: CONCEPT CASE
+ parochial_approves_holding_construction_opinion: "[GetVassalStance( 'parochial' ).GetTextIcon][GetVassalStance( 'parochial' ).GetName] schvaluje výstavbu [Concept('holding','državu')|E]" # todo: CONCEPT CASE
+ parochial_approves_holding_upgrade_opinion: "[GetVassalStance( 'parochial' ).GetTextIcon][GetVassalStance( 'parochial' ).GetName] schvaluje vylepšení [Concept('holding','država')|E]" # todo: CONCEPT CASE
+ parochial_disapproves_strong_war_enemy_opinion: "[GetVassalStance( 'parochial' ).GetTextIcon][GetVassalStance( 'parochial' ).GetName] neschvaluje vážné vyhlášení [Concept('war','válka')|E]" # todo: CONCEPT CASE
+ zealot_approves_temple_construction_opinion: "[GetVassalStance( 'zealot' ).GetTextIcon][GetVassalStance( 'zealot' ).GetName] schvaluje stavbu [Concept('temple','chrám')|E]" # todo: CONCEPT CASE
+ zealot_approves_temple_upgrade_opinion: "[GetVassalStance( 'zealot' ).GetTextIcon][GetVassalStance( 'zealot' ).GetName] schvaluje vylepšení [Concept('temple','chrám')|E]" # todo: CONCEPT CASE
+ zealot_disapproves_of_asking_hof_for_gold_opinion: "[GetVassalStance( 'zealot' ).GetTextIcon][GetVassalStance( 'zealot' ).GetName] neschvaluje žádání [Concept('head_of_faith','hlava víry')|E] o [Concept('gold','zlato')|E]" # todo: CONCEPT CASE
  zealot_approves_of_learning_language_opinion: "[GetVassalStance( 'zealot' ).GetTextIcon][GetVassalStance( 'zealot' ).GetName] schvaluje učení jazyka"
  zealot_approves_of_religious_display_opinion: "[GetVassalStance( 'zealot' ).GetTextIcon][GetVassalStance( 'zealot' ).GetName] schvaluje náboženské projevy"
  zealot_disapproves_of_cynicism_opinion: "[GetVassalStance( 'zealot' ).GetTextIcon][GetVassalStance( 'zealot' ).GetName] neschvaluje cynismus"
  minority_disapproves_of_conversion_opinion: "[GetVassalStance( 'minority' ).GetTextIcon][GetVassalStance( 'minority' ).GetName] neschvaluje konverzi"
  barons_and_minor_landholders_disapproves_baron_revocations_opinion: "[GetVassalStance( 'barons_and_minor_landholders' ).GetTextIcon][GetVassalStance( 'barons_and_minor_landholders' ).GetName] neschvaluje odnětí baronií"
  kicked_me_from_court: "Vyloučil mě z dvora"
- kicked_follower_from_camp_opinion: "Vyhodil [follower|E] z [camp|E]"
- kicked_rival_from_camp_opinion: "Vyhodil [rival|E] z [camp|E]"
+ kicked_follower_from_camp_opinion: "Vyhodil [Concept('follower','družiník')|E] z [Concept('camp','táboru')|E]" # todo: CONCEPT CASE
+ kicked_rival_from_camp_opinion: "Vyhodil [Concept('rival','sok')|E] z [Concept('camp','táboru')|E]" # todo: CONCEPT CASE
  break_up_opinion: "Opustil mě"
  kicked_relative_from_court: "Vyloučil příbuzného z dvora"
  attempt_to_force_end_war_opinion: "Pokusil se ukončit válku"
@@ -299,7 +299,7 @@
  absorbed_de_jure_opinion: "Převzal de jure území"
  disgruntled_opinion: "Nespokojený"
  mollified_opinion: "Zmírněný"
- strife_opinion: "Způsobil [strife|E]"
+ strife_opinion: "Způsobil [Concept('strife','svár')|E]" # todo: CONCEPT CASE
  rebuffed_opinion: "Odmítl mě"
  cheater_opinion: "Podvodník"
  loyalty_opinion: "Věrnost"
@@ -312,8 +312,8 @@
  doubted_me: "Pochyboval o mně"
  tasty_food_opinion: "Pohoštěn vynikajícím jídlem"
  passed_me_over_for_regent_opinion: "Přehlédnut pro regenta"
- appointed_vizier_over_designated_regent_opinion: "Jmenoval [vizier|E] nad určeným [regent|E]"
- appointed_co_ruler_over_designated_regent_opinion: "Jmenoval [co_ruler|E] nad určeným [regent|E]"
+ appointed_vizier_over_designated_regent_opinion: "Jmenoval [Concept('vizier','vezír')|E] nad určeným [Concept('regent','regentem')|E]" # todo: CONCEPT CASE
+ appointed_co_ruler_over_designated_regent_opinion: "Jmenoval [Concept('co_ruler','spoluvládce')|E] nad určeným [Concept('regent','regentem')|E]" # todo: CONCEPT CASE
  designated_bad_regent_opinion: "Určen špatný regent"
  designated_me_regent_opinion: "Určil mě regentem"
  emulating_culture_opinion: "Napodobuje mou kulturu"

@@ -77,8 +77,8 @@
  ach_coronation.0010.a.tt.success: "[hof.GetTitledFirstNameNoTooltip] slyší tvé prosby! Chvála [ROOT.Char.GetFaith.HighGodName]!"
  ach_coronation.0010.a.tt.failure: "[hof.GetTitledFirstNameNoTooltip] odmítá se setkat"
  ach_coronation.0010.a.tt.anger: "[hof.GetTitledFirstNameNoTooltip] je uražen, že jsi vůbec požádal"
- ach_coronation_0010_hof_desc_host.tt: "[hof.GetTitledFirstNamePossessive] schválení zlepší tvou [legitimacy|E] a [fervor|E] [hof.GetFaith.GetAdjective] [faith|E]"
- ach_coronation_0010_hof_desc_guest.tt: "Požehnání [hof.GetTitledFirstNamePossessive] zlepší [host.GetTitledFirstNamePossessive] [legitimacy|E] a [fervor|E] [hof.GetFaith.GetName] [faith|E]"
+ ach_coronation_0010_hof_desc_host.tt: "[hof.GetTitledFirstNamePossessive] schválení zlepší tvou [Concept('legitimacy','legitimitu')|E] a [Concept('fervor','horlivost')|E] [hof.GetFaith.GetAdjective] [Concept('faith','víra')|E]" # todo: CONCEPT CASE
+ ach_coronation_0010_hof_desc_guest.tt: "Požehnání [hof.GetTitledFirstNamePossessive] zlepší [host.GetTitledFirstNamePossessive] [Concept('legitimacy','legitimita')|E] a [Concept('fervor','horlivost')|E] [hof.GetFaith.GetName] [Concept('faith','víra')|E]" # todo: CONCEPT CASE
  activity_hof_arrival_log: "[TARGET_CHARACTER.GetUIName|U] a delegace [TARGET_CHARACTER.GetPrimaryTitle.GetAdjective] dorazili na korunovaci [CHARACTER.GetTitledFirstNamePossessive], což vyvolalo velké oslavy mezi prostými."
  activity_hof_arrival_log_title: "$ep2_wedding.1170.t$"
  ach_coronation.0011.t: "Stíny před trůnem"
@@ -89,14 +89,14 @@
  ach_coronation.0011.a.failure: "[plotter.GetTitledFirstName] je příliš lstivý"
  ach_coronation.0011.b: "[coward.GetTitledFirstNameNoTooltip], ven s tím. #BER ALE HNED.#!"
  ach_coronation.0011.b.flavor: "[coward.GetSheHe|U] už je na pokraji slz — malé štuchnutí by [coward.GetHerHim] jistě zlomilo."
- ach_coronation.0011.b.tt: "[coward.GetTitledFirstName] odhalí [scheme|E], a pokud neexistuje, pak [secret|E]"
+ ach_coronation.0011.b.tt: "[coward.GetTitledFirstName] odhalí [Concept('scheme','intrika')|E], a pokud neexistuje, pak [Concept('secret','tajemství')|E]" # todo: CONCEPT CASE
  ach_coronation.0011.c: "Máš mě za blázna!? #EMP Stráže!#!"
  ach_coronation.0011.c.paranoid: "Já #EMP JSEM TO VĚDĚL#!! Zatkněte tyto zrádce!"
  ach_coronation.0011.c.wrathful: "Jak se opovažuješ!? Myslíš si, že jsem blázen! Stráže!"
  ach_coronation.0011.d: "Budu si muset dávat pozor na [Select_CString(plotter.IsFemale,'ní','něho')]..."
- ach_coronation.0011.scheme.plotter.toast: "[plotter.GetTitledFirstNamePossessive] [hostile_scheme.GetSchemeType.GetTypeNameNoTooltip] [scheme|E] vůči [hostile_scheme.GetTargetCharacter.GetFirstName] je odhaleno!"
- ach_coronation.0011.scheme.coward.toast: "[coward.GetTitledFirstNamePossessive] [coward_scheme.GetSchemeType.GetTypeNameNoTooltip] [scheme|E] proti [coward_scheme.GetTargetCharacter.GetFirstName] je odhaleno!"
- ach_coronation.0011.secret.coward.toast: "Dozvíte se o [coward.GetTitledFirstNamePossessive] [revealed_secret.GetName] [secret|E]"
+ ach_coronation.0011.scheme.plotter.toast: "[plotter.GetTitledFirstNamePossessive] [hostile_scheme.GetSchemeType.GetTypeNameNoTooltip] [Concept('scheme','Intrika')|E] vůči [hostile_scheme.GetTargetCharacter.GetFirstName] je odhaleno!" # todo: CONCEPT CASE
+ ach_coronation.0011.scheme.coward.toast: "[coward.GetTitledFirstNamePossessive] [coward_scheme.GetSchemeType.GetTypeNameNoTooltip] [Concept('scheme','Intrika')|E] proti [coward_scheme.GetTargetCharacter.GetFirstName] je odhaleno!" # todo: CONCEPT CASE
+ ach_coronation.0011.secret.coward.toast: "Dozvíte se o [coward.GetTitledFirstNamePossessive] [revealed_secret.GetName] [Concept('secret','tajemství')|E]" # todo: CONCEPT CASE
  ach_coronation.0011.coward.success: "[coward.GetSheHe|U] se během sekund zlomí"
  ach_coronation.0011.hook.toast: "[coward.GetTitledFirstNamePossessive] začne plakat a blábolit, ujišťuje vás, že [coward.GetSheHe] udělá cokoli, aby [Select_CString(coward.IsFemale,'prokázala její','prokázal jeho')] loajalitu"
  ach_coronation.0011.false.toast: "[plotter.GetSheHe|U] měl v úmyslu připravit příjemný dar"
@@ -113,14 +113,14 @@
  ach_coronation.0012.e: "[ROOT.Char.Custom('GetRandomCoronationObject')|U]? Nést to jedním z #EMP vás#?!"
  coronation_elaborate_ceremony_log_title: "Okázalý obřad"
  coronation_elaborate_ceremony_log: "[CHARACTER.GetUIName|U] a [TARGET_CHARACTER.GetUIName|U] byli přesvědčeni, aby zkusili náročnou dvouosobní roli při korunovaci společně navzdory jejich dlouholetému odporu k sobě."
- buddy_becomes_supporter_tt: "Stává se [coronation_supporter|E] tvé [coronation|E]"
- buddy_becomes_supporter_tt.guest: "Stává se [coronation_supporter|E] [host.GetShortUINamePossessive] [coronation|E]"
- hater_leaves_supporters_tt: "Přestává být [coronation_supporter|E] tvé [coronation|E]"
- hater_leaves_supporters_tt.guest: "Přestává být [coronation_supporter|E] [host.GetShortUINamePossessive] [coronation|E]"
- buddy_leaves_detractors_tt: "Přestává být [coronation_detractor|E] tvé [coronation|E]"
- buddy_leaves_detractors_tt.guest: "Přestává být [coronation_detractor|E] [host.GetShortUINamePossessive] [coronation|E]"
- hater_becomes_detractor_tt: "Stává se [coronation_detractor|E] tvé [coronation|E]"
- hater_becomes_detractor_tt.guest: "Stává se [coronation_detractor|E] [host.GetShortUINamePossessive] [coronation|E]"
+ buddy_becomes_supporter_tt: "Stává se [Concept('coronation_supporter','podporovatelem')|E] tvé [Concept('coronation','korunovací')|E]" # todo: CONCEPT CASE
+ buddy_becomes_supporter_tt.guest: "Stává se [Concept('coronation_supporter','podporovatelem')|E] [host.GetShortUINamePossessive] [Concept('coronation','korunovací')|E]" # todo: CONCEPT CASE
+ hater_leaves_supporters_tt: "Přestává být [Concept('coronation_supporter','podporovatel')|E] tvé [Concept('coronation','korunovace')|E]" # todo: CONCEPT CASE
+ hater_leaves_supporters_tt.guest: "Přestává být [Concept('coronation_supporter','podporovatel')|E] [host.GetShortUINamePossessive] [Concept('coronation','korunovace')|E]" # todo: CONCEPT CASE
+ buddy_leaves_detractors_tt: "Přestává být [Concept('coronation_detractor','odpůrce')|E] tvé [Concept('coronation','korunovace')|E]" # todo: CONCEPT CASE
+ buddy_leaves_detractors_tt.guest: "Přestává být [Concept('coronation_detractor','odpůrce')|E] [host.GetShortUINamePossessive] [Concept('coronation','korunovace')|E]" # todo: CONCEPT CASE
+ hater_becomes_detractor_tt: "Stává se [Concept('coronation_detractor','odpůrcem')|E] tvé [Concept('coronation','korunovací')|E]" # todo: CONCEPT CASE
+ hater_becomes_detractor_tt.guest: "Stává se [Concept('coronation_detractor','odpůrcem')|E] [host.GetShortUINamePossessive] [Concept('coronation','korunovací')|E]" # todo: CONCEPT CASE
  ach_coronation.0013.t: "[ROOT.Char.GetTitleAsNameNoTooltip]ové a prostí lidé"
  ach_coronation.0013.intro: "Den trávím plněním povinností v relativním klidu [ROOT.Char.GetCurrentLocation.GetBaronyNameExplicitly]. Právě tam,"
  ach_coronation.0013.desc_opening.rainy_day: "kryji se před deštěm"
@@ -157,8 +157,8 @@
  ach_coronation.0013.e.disagrees: "Existuji daleko nad těmito blázny."
  ach_coronation.0013.e.flavor.mean: "Proč bych se sakra staral o tlachání prostých?"
  ach_coronation.0013.e.flavor.nice: "A kdo říká, že prostí jsou negramotní?!"
- two_detractors_get_negative_rumors_tt: "Dva [coronation_detractors|E] získají #N [GetModifier('ach_negative_rumors_modifier').GetNameWithTooltip]#! [modifier|E]"
- because_you_have_overseer_tt: "#P Tvoje zkušenost jako [GetTrait('overseer').GetName( GetNullCharacter )] ti pomůže vyhnout se negativním dopadům na tvé [coronation_magnificence|E]#!"
+ two_detractors_get_negative_rumors_tt: "Dva [Concept('coronation_detractors','odpůrci')|E] získají #N [GetModifier('ach_negative_rumors_modifier').GetNameWithTooltip]#! [Concept('modifier','modifikátor')|E]" # todo: CONCEPT CASE
+ because_you_have_overseer_tt: "#P Tvoje zkušenost jako [GetTrait('overseer').GetName( GetNullCharacter )] ti pomůže vyhnout se negativním dopadům na tvé [Concept('coronation_magnificence','pompéznost')|E]#!" # todo: CONCEPT CASE
  violated_city_rights_opinion: "Porušená městská práva"
  ach_coronation.0014.t: "Na hraně chaosu"
  ach_coronation.0014.desc: "Ze zadních řad davu sleduji, jak přijíždí delegace [first.GetTitleAsName] [first.GetPrimaryTitle.GetNameNoTier] na korunovaci [host.GetTitledFirstNamePossessive]."
@@ -178,21 +178,21 @@
  ach_coronation.0014.a.indoors: "#BER „HOŘÍ!“#!"
  ach_coronation.0014.a.tt.success: "Vyvoláte panický útěk davu"
  ach_coronation.0014.a.tt.failure: "Minete"
- ach_coronation.0014.a.tt.host.success: "To může neúmyslně posílit pověst [host.GetTitledFirstNamePossessive] — váš neúspěch vám může způsobit [stress|E]"
- ach_coronation.0014.a.tt.host.failure.magnificence: "[coronation_magnificence|E] [host.GetTitledFirstNamePossessive] korunovace může být značně snížena"
- ach_coronation.0014.a.tt.host.failure.host: "[host.GetTitledFirstName] může ztratit [legitimacy|E] nebo [prestige|E]"
- ach_coronation.0014.a.tt.host.failure.crackdown: "[host.GetTitledFirstName] může přehnat reakci, potenciálně zabít mnohem více a zvýšit [host.GetHerHis] [dread|E] a [tyranny|E]"
+ ach_coronation.0014.a.tt.host.success: "To může neúmyslně posílit pověst [host.GetTitledFirstNamePossessive] — váš neúspěch vám může způsobit [Concept('stress','stres')|E]" # todo: CONCEPT CASE
+ ach_coronation.0014.a.tt.host.failure.magnificence: "[Concept('coronation_magnificence','Pompéznost')|E] [host.GetTitledFirstNamePossessive] korunovace může být značně snížena" # todo: CONCEPT CASE
+ ach_coronation.0014.a.tt.host.failure.host: "[host.GetTitledFirstName] může ztratit [Concept('legitimacy','legitimita')|E] nebo [Concept('prestige','prestiž')|E]" # todo: CONCEPT CASE
+ ach_coronation.0014.a.tt.host.failure.crackdown: "[host.GetTitledFirstName] může přehnat reakci, potenciálně zabít mnohem více a zvýšit [host.GetHerHis] [Concept('dread','hrůza')|E] a [Concept('tyranny','tyranie')|E]" # todo: CONCEPT CASE
  ach_coronation.0014.a.tt.failure.indoors: "Vaše volání přehluší hluk."
- ach_coronation.0014.a.rock: "[first.GetShortUIName] je zasažen kamenem do obličeje a získá [trait|E] [GetTrait('wounded_1').GetName( GetNullCharacter )|LV]"
+ ach_coronation.0014.a.rock: "[first.GetShortUIName] je zasažen kamenem do obličeje a získá [Concept('trait','rys')|E] [GetTrait('wounded_1').GetName( GetNullCharacter )|LV]" # todo: CONCEPT CASE
  ach_coronation.0014.b: "Možná má dav i jiné využití..."
  ach_coronation.0014.b.flavor: "Moji agenti se pohybují bez povšimnutí po [coronation_site.GetHolding.GetHoldingType.GetName]."
- ach_coronation.0014.b.tt: "Buď jste [GetTrait('schemer').GetName( GetNullCharacter )], [GetTrait('deceitful').GetName( GetNullCharacter )], nebo máte alespoň [SCOPE.ScriptValue('very_high_skill_rating')|0V] [intrigue|E]"
+ ach_coronation.0014.b.tt: "Buď jste [GetTrait('schemer').GetName( GetNullCharacter )], [GetTrait('deceitful').GetName( GetNullCharacter )], nebo máte alespoň [SCOPE.ScriptValue('very_high_skill_rating')|0V] [Concept('intrigue','pletichářství')|E]" # todo: CONCEPT CASE
  ach_coronation.0014.c: "Budu první, kdo vzdá poctu."
  if_host_calms_crowd_desc: "Pokud [TARGET_CHARACTER.GetShortUIName] uvede pořádek:"
  if_crush_happens_desc: "#X Jinak:#!"
  ach_coronation.0015.t: "Velký panický útěk z roku [GetCurrentDate.GetYear]"
  ach_coronation.0015.desc: "Katastrofa! Dav sledující průvod nedávno příchozího [first.GetTitledFirstName] se — z důvodů mně neznámých — zhroutil do chaosu. Přicházím právě včas, abych viděl masu místních, jak se hrnou sem a tam, stráže [first.GetTitleAsNamePossessiveNoTooltip] buď bijí padlé prosté lidi, nebo jsou sami strháváni a sešlapáváni spolu s nimi.\n\nStráže sotva stačí odrážet davy a násilí jen zvyšuje jejich paniku. Brzy to bude panický útěk davu!"
- ach_coronation.0015.has_happened: "K tomu došlo kvůli činům zákeřného [coronation_detractor|E]!"
+ ach_coronation.0015.has_happened: "K tomu došlo kvůli činům zákeřného [Concept('coronation_detractor','odpůrce')|E]!" # todo: CONCEPT CASE
  ach_coronation.0015.a: "Musím zklidnit dav!"
  ach_coronation.0015.a.august: "Spoluobčané! Váš [ROOT.Char.GetTitleAsNameNoTooltip] žádá klid!"
  ach_coronation.0015.a.august.tt: "Vaše nepopiratelná autorita uklidní dav."
@@ -275,19 +275,19 @@
  ach_coronation.0018.b: "Proč vést, když se můžete připojit?"
  ach_coronation.0018.b.tt.gossip_with_servants: "Užíváte si pomlouvání"
  ach_coronation.0018.b.tt.secret_unknown_desc: "Ó, tohle je #EMP pikantní#!"
- ach_coronation.0018.b.tt.secret_unknown: "Odhalíte [secret|E]"
- ach_coronation.0018.b.tt.secret: "Odhalíte [secret_holder.GetFirstNamePossessive] [SECRET.GetName] [secret|E]"
+ ach_coronation.0018.b.tt.secret_unknown: "Odhalíte [Concept('secret','tajemství')|E]" # todo: CONCEPT CASE
+ ach_coronation.0018.b.tt.secret: "Odhalíte [secret_holder.GetFirstNamePossessive] [SECRET.GetName] [Concept('secret','tajemství')|E]" # todo: CONCEPT CASE
  ach_coronation.0018.c: "Zdá se, že je to dobrá příležitost k učení!"
  ach_coronation.0018.c.flavor: "Z neúspěchů personálu se toho lze mnoho naučit."
  ach_coronation.0018.d: "Naštěstí je to [Select_CString(host.IsFemale,'její','jeho')] problém, ne můj."
- ach_coronation.0018.diplomacy_trait.tt: "Protože máte [GetTrait('diplomat').GetName( GetNullCharacter )] nebo [GetTrait('gregarious').GetName( GetNullCharacter )] [traits|E], [servant_boss.GetTitledFirstNameNoTooltip] nebude uražen"
+ ach_coronation.0018.diplomacy_trait.tt: "Protože máte [GetTrait('diplomat').GetName( GetNullCharacter )] nebo [GetTrait('gregarious').GetName( GetNullCharacter )] [Concept('traits','rysy')|E], [servant_boss.GetTitledFirstNameNoTooltip] nebude uražen" # todo: CONCEPT CASE
  ach_coronation.0018.servant_boss_opinion.tt: "[servant_boss.GetTitledFirstNameNoTooltip] to může považovat za pokus ukrást [servant_boss.GetHerHis] místo"
  ach_coronation.0018.d.pleased_servant_boss: "[servant_boss.GetFirstNameNoTooltip] je vděčný za vaši pomoc"
  ach_coronation.0018.d.annoyed_servant_boss: "[servant_boss.GetFirstNameNoTooltip] má pocit, že se snažíte ukrást [Select_CString(servant_boss.IsFemale,'její','jeho')] práci"
  ach_coronation.0018.a.seneschal: "[host.GetTitledFirstNameNoTooltip] vás jmenuje [GetCourtPositionType('seneschal_court_position').GetName]"
- ach_coronation.0018.a.vassal: "[host.GetTitledFirstNameNoTooltip] vám nabízí [title|E]!"
+ ach_coronation.0018.a.vassal: "[host.GetTitledFirstNameNoTooltip] vám nabízí [Concept('title','titul')|E]!" # todo: CONCEPT CASE
  ach_coronation.0018.a.tt.vassal: "Bude vám nabídnut titul podle výběru [host.GetTitledFirstNamePossessive]"
- ach_can_refuse_reward: "Budete mít možnost odmítnout následující odměnu výměnou za [gold_i][host.MakeScope.ScriptValue('minor_gold_value')|0V] [gold|E] nebo zlepšení vztahů s [host.GetShortUIName]:"
+ ach_can_refuse_reward: "Budete mít možnost odmítnout následující odměnu výměnou za [gold_i][host.MakeScope.ScriptValue('minor_gold_value')|0V] [Concept('gold','zlato')|E] nebo zlepšení vztahů s [host.GetShortUIName]:" # todo: CONCEPT CASE
  ach_coronation.0019.opening: "[host.Custom2('AppropriateGreetingPositive', ROOT.Char)]"
  ach_coronation.0019.desc: "Vaše pomoc zde v [host.GetCurrentLocation.Custom('GetCoronationSitePrefix')][host.GetCurrentLocation.Custom('GetCoronationSite')] nezůstala bez povšimnutí."
  ach_coronation.0019.desc.title: "Potřebuji vazaly, kterým mohu důvěřovat, a věřím, že [grantable_title.GetName] potřebuje nového vládce. Co říkáš?"
@@ -345,7 +345,7 @@
  ach_coronation.0025.b.flavor: "S tolika pitím, které bychom mohli sehnat, pozná [feast_location.GetName] #EMP pravou#! veselici!"
  ach_coronation.0025.b.tt.success: "[baron.GetTitledFirstName] souhlasí — ať proudí zábava!"
  ach_coronation.0025.b.tt.failure: "[baron.GetTitledFirstName] nevidí, jak je váš nápad skvělý"
- ach_coronation.0025.b.tt: "Buď jste [GetTrait('lifestyle_reveler').GetName( GetNullCharacter )] nebo [GetTrait('drunkard').GetName( GetNullCharacter )], a máte alespoň [gold_i][GetPlayer.MakeScope.ScriptValue('minor_gold_value')|0V] [gold|E]"
+ ach_coronation.0025.b.tt: "Buď jste [GetTrait('lifestyle_reveler').GetName( GetNullCharacter )] nebo [GetTrait('drunkard').GetName( GetNullCharacter )], a máte alespoň [gold_i][GetPlayer.MakeScope.ScriptValue('minor_gold_value')|0V] [Concept('gold','zlato')|E]" # todo: CONCEPT CASE
  ach_coronation.0025.c: "Možná ne... více pro mě!"
  ach_coronation.0025.c.temperate: "Člověk nemusí pít, aby se bavil!"
  ach_coronation.0025.c.flavor: "Uvnitř je ještě spousta zábavy"
@@ -388,24 +388,24 @@
  ach_coronation.0029.a.flavor.impress_attendees: "A ty zajistíš, aby o tom uslyšelo celé [ROOT.Char.GetPrimaryTitle.GetNameNoTierNoTooltip]!"
  ach_coronation.0029.a.flavor.embrace_supporters: "Spojí mě to s mými stoupenci!"
  ach_coronation.0029.a.flavor.exalt_crown: "A náš úlovek bude symbolem mé vlády!"
- ach_coronation.0029.a.impressive_hunt: "Váš další [GetActivityType('activity_hunt').GetName] zvýší [vassals|E] [opinion|E] vůči vám"
- ach_coronation.0029.a.personal_hunt: "Váš další [GetActivityType('activity_hunt').GetName] může udělit [vassal|E] [guests|E] [GetTrait('loyal').GetName( GetNullCharacter )] [trait|E]"
- ach_coronation.0029.a.glorious_hunt: "Váš další [GetActivityType('activity_hunt').GetName] zvýší vaši [legitimacy|E]"
+ ach_coronation.0029.a.impressive_hunt: "Váš další [GetActivityType('activity_hunt').GetName] zvýší [Concept('vassals','vazalové')|E] [Concept('opinion','mínění')|E] vůči vám" # todo: CONCEPT CASE
+ ach_coronation.0029.a.personal_hunt: "Váš další [GetActivityType('activity_hunt').GetName] může udělit [Concept('vassal','vazal')|E] [Concept('guests','hosté')|E] [GetTrait('loyal').GetName( GetNullCharacter )] [Concept('trait','rys')|E]" # todo: CONCEPT CASE
+ ach_coronation.0029.a.glorious_hunt: "Váš další [GetActivityType('activity_hunt').GetName] zvýší vaši [Concept('legitimacy','legitimitu')|E]" # todo: CONCEPT CASE
  ach_coronation.0029.b: "Co kdybychom místo toho lovili s dravci?"
- ach_coronation.0029.b.free_falconry: "Váš další $hunt_type_falconry$ [GetActivityType('activity_hunt').GetName] nebude stát žádné [gold|E]"
+ ach_coronation.0029.b.free_falconry: "Váš další $hunt_type_falconry$ [GetActivityType('activity_hunt').GetName] nebude stát žádné [Concept('gold','zlato')|E]" # todo: CONCEPT CASE
  ach_coronation.0029.b.flavor: "A vy dva samozřejmě dodáte dravce!"
  ach_coronation.0029.c: "Ha! Budu příliš zaneprázdněn!"
  ach_coronation.0029.c.virtuous: "Co se stalo s 'uměřeností ve všem'?"
- ach_coronation.0029.c.virtuous.tt: "Tato možnost je dostupná, protože vaše [THIS.Char.GetFaith.GetAdjective] [faith|E] považuje [GetTrait('temperate').GetName( GetNullCharacter )] [trait|E] za [virtuous|E]"
+ ach_coronation.0029.c.virtuous.tt: "Tato možnost je dostupná, protože vaše [THIS.Char.GetFaith.GetAdjective] [Concept('faith','víra')|E] považuje [GetTrait('temperate').GetName( GetNullCharacter )] [Concept('trait','rys')|E] za [Concept('virtuous','ctnostného')|E]" # todo: CONCEPT CASE
  hunt_kings_hunt_header: "[ROOT.Char.GetTitleAsNamePossessiveNoTooltip] lov"
  hunt_default_header: "Lov"
- every_non_disloyal_vassal_attendee_tt: "Ne-[GetTrait('disloyal').GetName( GetNullCharacter )] [vassals|E] [host.GetTitledFirstName] na korunovaci"
- every_detractor_tt: "Každý [coronation_detractor|E] na [coronation|E]"
- every_non_detractor_tt: "Každý ne-[coronation_detractor|E] [coronation|E] [guest|E]"
- every_zealot_vassal_guest_tt: "Každý [GetVassalStance( 'zealot' ).GetTextIcon][GetVassalStance( 'zealot' ).GetName] [vassal|E] u této [activity|E]"
- every_faith_warrior_guest_tt: "Každý [GetTrait('faith_warrior').GetName( GetNullCharacter )] nebo [GetTrait('crusader_king').GetName( GetNullCharacter )] na této [activity|E]"
- available_because_host_intent_tt: "Tato možnost je dostupná díky záměru [host.GetInvolvedActivityIntent.GetName] [intent|e] [host.GetTitledFirstName]"
- available_because_skill_learning_tt: "Tato možnost je dostupná díky vaší vysoké [learning|E] [skill|E]"
- available_because_piety_vs_host_tt: "Tato možnost je dostupná, protože vaše [piety_level|E] je vyšší než u [host.GetTitledFirstName]"
+ every_non_disloyal_vassal_attendee_tt: "Ne-[GetTrait('disloyal').GetName( GetNullCharacter )] [Concept('vassals','vazalové')|E] [host.GetTitledFirstName] na korunovaci" # todo: CONCEPT CASE
+ every_detractor_tt: "Každý [Concept('coronation_detractor','odpůrce')|E] na [Concept('coronation','korunovaci')|E]" # todo: CONCEPT CASE
+ every_non_detractor_tt: "Každý ne-[Concept('coronation_detractor','odpůrce')|E] [Concept('coronation','korunovace')|E] [Concept('guest','host')|E]" # todo: CONCEPT CASE
+ every_zealot_vassal_guest_tt: "Každý [GetVassalStance( 'zealot' ).GetTextIcon][GetVassalStance( 'zealot' ).GetName] [Concept('vassal','vazal')|E] u této [Concept('activity','aktivity')|E]" # todo: CONCEPT CASE
+ every_faith_warrior_guest_tt: "Každý [GetTrait('faith_warrior').GetName( GetNullCharacter )] nebo [GetTrait('crusader_king').GetName( GetNullCharacter )] na této [Concept('activity','aktivitě')|E]" # todo: CONCEPT CASE
+ available_because_host_intent_tt: "Tato možnost je dostupná díky záměru [host.GetInvolvedActivityIntent.GetName] [Concept('intent','záměru')|e] [host.GetTitledFirstName]" # todo: CONCEPT CASE
+ available_because_skill_learning_tt: "Tato možnost je dostupná díky vaší vysoké [Concept('learning','učenosti')|E] [Concept('skill','dovednosti')|E]" # todo: CONCEPT CASE
+ available_because_piety_vs_host_tt: "Tato možnost je dostupná, protože vaše [Concept('piety_level','úroveň oddanosti')|E] je vyšší než u [host.GetTitledFirstName]" # todo: CONCEPT CASE
  available_because_of_shared_religion_tt: "Tato možnost je dostupná, protože jste oba [THIS.Char.GetFaith.GetReligion.GetAdherentNamePlural]"
  because_you_have_diligent_tt: "#P Protože jste [GetTrait('diligent').GetName( GetNullCharacter )], nebudete nabývat [GetModifier('ach_negative_rumors_modifier').GetNameWithTooltip]#!"

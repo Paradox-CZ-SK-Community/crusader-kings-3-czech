@@ -1,5 +1,5 @@
 ﻿l_polish:
- court_6000_all_courtiers_and_guests: "Všichni vaši [courtiers|E] a [guests|E]"
+ court_6000_all_courtiers_and_guests: "Všichni vaši [Concept('courtiers','dvořany')|E] a [Concept('guests','hosté')|E]" # todo: CONCEPT CASE
  court.6000.t: "Tajná historie"
  court.6000.desc_opening: "Když vstoupím do místnosti, jsem naprosto zaražen překvapeným výkřikem [courtier.GetFirstName], který byl předtím pohroužen do rukopisu s názvem 'Tajná historie [ROOT.Char.GetPrimaryTitle.GetNameNoTier]'."
  court.6000.desc_liege: "\n\n„Můj [SCOPE.sC('courtier').Custom2('RelationToMe', ROOT.GetCharacter)]!"
@@ -38,13 +38,13 @@
  court.6010.b: "Vyhoďte toho blázna z mého dvora!"
  court.6010.c: "[preacher.GetSheHe|U] ať káže potkanům, mně to je jedno..."
  court.6010.c.tt: "Pán [preacher_liege.GeTitledFirstName], pod kterým slouží [preacher.GetHerHim|U], bude nespokojen."
- court.6010.c.tt2: "Váš [chaplain.GetCouncilTitlePossessive|U] [councillor_task|E] $task_conversion$ je #P účinnější#! v hrabstvích vyznávajících [preacher.GetFaith.GetName] po dobu 20 let"
- court.6010.c.tt3: "Váš [chaplain.GetCouncilTitlePossessive|U] [councillor_task|E] $task_conversion$ je #N méně#! účinný v hrabstvích vyznávajících [preacher.GetFaith.GetName] po dobu 20 let"
- court.6010.a_every_county: "Každé [preacher.GetFaith.GetName] [county|E] ve vašem [realm|E] ([preacher_faith_counties_size])"
+ court.6010.c.tt2: "Váš [chaplain.GetCouncilTitlePossessive|U] [Concept('councillor_task','úkol rádce')|E] $task_conversion$ je #P účinnější#! v hrabstvích vyznávajících [preacher.GetFaith.GetName] po dobu 20 let" # todo: CONCEPT CASE
+ court.6010.c.tt3: "Váš [chaplain.GetCouncilTitlePossessive|U] [Concept('councillor_task','úkol rádce')|E] $task_conversion$ je #N méně#! účinný v hrabstvích vyznávajících [preacher.GetFaith.GetName] po dobu 20 let" # todo: CONCEPT CASE
+ court.6010.a_every_county: "Každé [preacher.GetFaith.GetName] [Concept('county','hrabství')|E] ve vašem [Concept('realm','panství')|E] ([preacher_faith_counties_size])" # todo: CONCEPT CASE
  court_6010_harsh_conversions: "Tvrdé konverze"
  court_6010_tolerant_conversions: "Tolerantní přístup"
  court.6010.d: "DOST téhle #EMP BLASFÉMIE#!!"
- court_6010_all_courtiers_and_guests_faith: "Všichni vaši [preacher.GetFaith.GetAdjectiveNoTooltip] [courtiers|E] a [guests|E]"
+ court_6010_all_courtiers_and_guests_faith: "Všichni vaši [preacher.GetFaith.GetAdjectiveNoTooltip] [Concept('courtiers','dvořany')|E] a [Concept('guests','hosté')|E]" # todo: CONCEPT CASE
  court.6011.desc_opening: "[preacher_liege.Custom2('AppropriateGreetingNegative', ROOT.Char)]"
  court.6011.desc_prisoner: "Bylo mi hlášeno, že jste nedávno [Select_CString(ROOT.Char.IsFemale,'uvěznila','uvěznil')] mého poddaného jen z důvodu kázání [Select_CString(preacher.IsFemale,'její','jeho')] víry - #EMP mé vlastní víry#! - na vašem dvoře. \n\nDoufám, že je to nedorozumění a okamžitě to napravíte, abych si nevytvořil špatný dojem o vašich úmyslech."
  court.6011.desc_executed: "S velkým znepokojením jsem se dozvěděl, že jste nedávno popravili mého poddaného - hosta na vašem dvoře - jako nebezpečného kacíře. \n\nRád bych předpokládal, že šlo o nedorozumění a že jste nechtěli #EMP skutečně#! mě urazit a zpochybnit mou víru."
@@ -72,8 +72,8 @@
  court.6020.e: "Není to nic jiného než mozková nemoc. [court_physician.GetFirstNameNoTooltip]?"
  court.6020.f: "Nechte [possessed_char.GetHerHim] být."
  court.6020.b.tt: "Mít #EMP prorocké vize#! je považováno za velkou pomoc pro $court_poet_court_position$, $court_musician_court_position$ nebo $cave_hermit_court_position$"
- court_6020_all_courtiers_and_guests_christian: "Všichni vaši [courtiers|E] a [guests|E] stejného vyznání"
- court_6020_all_courtiers_or_guests_polith: "Všichni vaši ostatní (ne-cyničtí) [courtiers|E] a [guests|E]"
+ court_6020_all_courtiers_and_guests_christian: "Všichni vaši [Concept('courtiers','dvořany')|E] a [Concept('guests','hosté')|E] stejného vyznání" # todo: CONCEPT CASE
+ court_6020_all_courtiers_or_guests_polith: "Všichni vaši ostatní (ne-cyničtí) [Concept('courtiers','dvořané')|E] a [Concept('guests','hosté')|E]" # todo: CONCEPT CASE
  court.6030.t: "Balada o česneku [ROOT.Char.Custom('GetQueenKing')]"
  court.6030.desc: "„#EMP V našem malém městě koluje příběh,\n(o) [ROOT.Char.Custom('GetQueenKing')] s česnekovou korunou,\naby bojovala proti [ROOT.Char.Custom('GetUnbelieverNamePlural')] [ROOT.Char.GetSheHe] jel na oslovi,\nale [Select_CString(ROOT.Char.IsFemale,'jejím','jeho')] jediným úspěchem byl proti malému opičákovi...#!“\n\nTato prokletá balada se stala mezi potulnými minstrely a lidem náramně populární - #EMP příliš populární#! na můj vkus, protože jsem objevil znepokojivé množství podobností mezi mnou a jejím protagonistou... Ale slyšet ji, bezostyšně mi ji zpívanou do obličeje [6030_courtier.Custom2('MyCharacterIntroduction', ROOT.Char)], už je příliš!"
  court.6030.a: "Ale to #EMP je#! takový vtipný příběh!"
@@ -111,12 +111,12 @@
  court.6050.b.tt.2: "Děti vychovávané na vašem dvoře budou mít větší pravděpodobnost, že získají [GetTrait('pensive').GetName( GetNullCharacter )], [GetTrait('chaste').GetName( GetNullCharacter )] nebo [GetTrait('zealous').GetName( GetNullCharacter )] osobnost"
  court.6050.c: "Kultura přichází v mnoha podobách. Nechte je číst."
  court.6050.c.tt: "Děti vychovávané na vašem dvoře budou mít větší pravděpodobnost, že získají [GetTrait('curious').GetName( GetNullCharacter )], [GetTrait('lustful').GetName( GetNullCharacter )] nebo [GetTrait('cynical').GetName( GetNullCharacter )] osobnost"
- court.6050.c.unlock_text: "Tato volba je dostupná díky vaší vysoké dovednosti [learning|E]"
+ court.6050.c.unlock_text: "Tato volba je dostupná díky vaší vysoké dovednosti [Concept('learning','učenost')|E]" # todo: CONCEPT CASE
  court.6050.d: "Uhhh, šťavnaté!"
  court.6050.e: "Proč bychom se měli omezovat na čtení, [courtier.GetFirstNameNoTooltip]?"
  court.6050.e.tt: "Čerpáš inspiraci z četby"
  court.6050.f: "Uděláš to pryč a já budu předstírat, že jsem nic neviděl."
- court_6050_courtiers_or_guests: "Všichni tvoji nestydatí [courtiers|E] a [guests|E]"
+ court_6050_courtiers_or_guests: "Všichni tvoji nestydatí [Concept('courtiers','dvořané')|E] a [Concept('guests','hosté')|E]" # todo: CONCEPT CASE
  court.6060.t: "Radosti vína"
  court.6060.desc_opening: "Najednou vtrhnou do trůnního sálu [court_chaplain.GetCouncilTitle] [court_chaplain.GetTitledFirstName] a [court_physician.Custom2('MyCharacterIntroduction', ROOT.Char)], hádající se.\n\n„Víno uráží [ROOT.Char.GetFaith.HighGodName]! Musí být #EMP vyhnáno#!“ křičí [court_chaplain.GetFirstNameNoTooltip].\n\n„Trocha vína je zdravá pro tělo!“ odpovídá [court_physician.GetFirstNameNoTooltip]."
  court.6060.desc_drunkard_courtier: "\n\nZ rohu místnosti přeruší diskusi [courtier_drunkard.GetTitledFirstName]: „Jediné množství vína, které je pro tebe dobré, je #EMP VŠE#!!“"
@@ -140,7 +140,7 @@
  court.6070.d.tt: "Když to řeknu dost přesvědčivě, možná mi uvěří..."
  court.6070.d.tt.success: "Uvěří mé zjevné lži!"
  court.6070.d.tt.failure: "Prohlédnou mě"
- every_courtier_or_guest_6070_learning: "Všichni vaši gramotní [courtiers|E] a [guests|E]"
+ every_courtier_or_guest_6070_learning: "Všichni vaši gramotní [Concept('courtiers','dvořané')|E] a [Concept('guests','hosté')|E]" # todo: CONCEPT CASE
  court.6071.desc: "#EMP D...r...o...h...ý p...r...o...k...l...u...d,#!\n\n„Ano, to vypadá v pořádku!“\n\n[Select_CString(ROOT.Char.IsFemale,'Strávila','Strávil')] jsem bezpočet hodin procvičováním abecedy pod přísným pohledem [tutor_6070.Custom2('MyCharacterIntroduction', ROOT.Char)] a zdá se, že se mé úsilí vyplatilo! Mezinárodní korespondence, zprávy radních i závazky vazalů pro mě nejsou již žádné tajemství! \n\nPodaj mi pero - chci podepsat další věci!"
  court.6071.a: "Jsem prostě příliš [Select_CString(ROOT.Char.IsFemale,'chytrá','chytrý')]."
  court.6071.b: "[tutor_6070.GetFirstNameNoTooltip] si zaslouží odměnu."

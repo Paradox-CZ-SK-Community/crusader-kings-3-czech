@@ -1,9 +1,9 @@
 ﻿l_polish:
- SUCCESSION_ELECTION_WINDOW_TITLE: "Volba pro [title_heir|E]"
+ SUCCESSION_ELECTION_WINDOW_TITLE: "Volba pro [Concept('title_heir','dědice titulu')|E]" # todo: CONCEPT CASE
  SUCCESSION_ELECTION_WINDOW_CANDIDATES: "Kandidáti ([GetDataModelSize( SuccessionElectionWindow.GetCandidates.GetList )])"
  SUCCESSION_ELECTION_WINDOW_ELECTORS: "Volitelé ([GetDataModelSize( SuccessionElectionWindow.GetElectors.GetList )])"
  SUCCESSION_ELECTION_WINDOW_THEIR_ELECTORS: "[Select_CString(Character.IsFemale,'Její','Jeho')] Volitelé"
- SUCCESSION_ELECTION_WINDOW_CANDIDATE_SCORE: "#T Celkové skóre tohoto kandidáta: [SuccessionElectionWindowCandidate.GetScore|V]#!\nVolitelé hlasující pro [SuccessionElectionWindowCandidate.GetCandidate.GetUINameNoTooltip]:\n[SuccessionElectionWindowCandidate.GetVotesInFavor]\n\nKandidát s nejvyšším skóre zdědí titul podle [succession|E]."
+ SUCCESSION_ELECTION_WINDOW_CANDIDATE_SCORE: "#T Celkové skóre tohoto kandidáta: [SuccessionElectionWindowCandidate.GetScore|V]#!\nVolitelé hlasující pro [SuccessionElectionWindowCandidate.GetCandidate.GetUINameNoTooltip]:\n[SuccessionElectionWindowCandidate.GetVotesInFavor]\n\nKandidát s nejvyšším skóre zdědí titul podle [Concept('succession','nástupnictví')|E]." # todo: CONCEPT CASE
  SUCCESSION_ELECTION_WINDOW_CANDIDATE_RANK: "Pořadí: [SuccessionElectionWindowCandidate.GetElectionRank|V]"
  SUCCESSION_ELECTION_WINDOW_NOMINATE: "Nominovat"
  SUCCESSION_ELECTION_WINDOW_FORCE_VOTE: "Vynutit hlasování"
@@ -15,26 +15,26 @@
  SUCCESSION_ELECTION_WINDOW_VOTE_BREAKDOWN_IS_LOCAL_PLAYER: "$SUCCESSION_ELECTION_WINDOW_VOTE_BREAKDOWN_NOMINEE$\nRozhoduji"
  SUCCESSION_ELECTION_WINDOW_VOTE_BREAKDOWN_FORCED_VOTE: "$SUCCESSION_ELECTION_WINDOW_VOTE_BREAKDOWN_NOMINEE$\n$SUCCESSION_ELECTION_WINDOW_TT_FORCED_VOTE$"
  SUCCESSION_ELECTION_VOTE_REASON_SUM: "Skóre: $VALUE|+$"
- SUCCESSION_ELECTION_ELECTOR_VOTE_STRENGTH_SUM: "#T [vote_strength|E]: $VALUE|+$#!"
+ SUCCESSION_ELECTION_ELECTOR_VOTE_STRENGTH_SUM: "#T [Concept('vote_strength','Síla hlasu')|E]: $VALUE|+$#!" # todo: CONCEPT CASE
  SUCCESSION_ELECTION_VOTE_FORCED_ME: "Jste nuceni hlasovat stejně jako [TARGET_CHARACTER.GetUIName]"
  SUCCESSION_ELECTION_VOTE_FORCED_THIRD: "[CHARACTER.GetShortUINameNotMeNoTooltip] je nucen hlasovat stejně jako [TARGET_CHARACTER.GetUIName]"
  SUCCESSION_ELECTION_WINDOW_MY_CANDIDATE: "Váš kandidát"
  SUCCESSION_ELECTION_WINDOW_MY_CANDIDATE_INFO: "[Character.GetShortUINameNoTooltip]"
  SUCCESSION_ELECTION_WINDOW_SELECT_CANDIDATE_INFO: "Nominujte kandidáta níže"
  SUCCESSION_ELECTION_WINDOW_MY_VOTING_STRENGTH: "Vaše hlasovací síla: "
- SUCCESSION_ELECTION_WINDOW_NO_ELECTORS: "Žádní [electors|E] nehlasují pro [Character.GetHerHim]"
+ SUCCESSION_ELECTION_WINDOW_NO_ELECTORS: "Žádní [Concept('electors','volitelé')|E] nehlasují pro [Character.GetHerHim]" # todo: CONCEPT CASE
  SUCCESSION_ELECTION_WINDOW_NUM_ELECTORS: "#high [GetDataModelSize( SuccessionElectionWindowCandidate.GetElectors )]#! [Select_CString( GreaterThan_int32( GetDataModelSize( SuccessionElectionWindowCandidate.GetElectors ), '(int32)1' ), 'Volitelé hlasují', 'Volitel hlasuje' )] pro [Character.GetHerHim]"
  SUCCESSION_ELECTION_WINDOW_RULES_ELECTORS: "Volitelé: #bold [SuccessionElectionWindow.GetElectorsGrouping|E]#!"
  SUCCESSION_ELECTION_WINDOW_RULES_CANDIDATES: "Kandidáti: #bold [SuccessionElectionWindow.GetCandidatesGrouping|E]#!"
  CLOSE_ELECTION_VIEW: "Zpět na zobrazení titulu"
- SUCCESSION_ELECTION_WINDOW_TT_FORCED_VOTE: "Hlas vynucený [hook|E]"
+ SUCCESSION_ELECTION_WINDOW_TT_FORCED_VOTE: "Hlas vynucený [Concept('hook','páka')|E]" # todo: CONCEPT CASE
  SUCCESSION_ELECTION_WINDOW_LAW: "Zákon o následnictví: [SuccessionElectionWindow.GetSuccessionLaw.GetName]"
  SUCCESSION_ELECTION_WINDOW_TOGGLE_ELECTORS: "#T Přepnout seznam volitelů#!"
  SUCCESSION_ELECTION_ELECTOR_ENTRY: "[CHARACTER.GetShortUINameNotMe]: $STRENGTH|V$"
  SUCCESSION_ELECTION_CANDIDATE_SCORE: "Skóre: [SuccessionElectionWindowElectorVote.GetScore|+]"
  SUCCESSION_ELECTION_ELECTOR_PREFERENCE: "Preference pro mého kandidáta: [SuccessionElectionWindowElector.GetScoreDiff|+]"
  SUCCESSION_ELECTION_ELECTOR_MY_CHOICE: "Druhá volba"
- SUCCESSION_ELECTION_WINDOW_NOT_ELECTOR: "Nejste jedním z [electors|E] a nemůžete hlasovat"
+ SUCCESSION_ELECTION_WINDOW_NOT_ELECTOR: "Nejste jedním z [Concept('electors','volitelů')|E] a nemůžete hlasovat" # todo: CONCEPT CASE
  SUCCESSION_ELECTION_WINDOW_CANDIDATE: "Kandidát"
  SUCCESSION_ELECTION_WINDOW_RANK: "Pořadí: [SuccessionElectionWindow.GetCandidateFromCharacter( SuccessionElectionWindowElector.GetElectorCandidate.GetCandidate ).GetElectionRank]"
  SUCCESSION_ELECTION_WINDOW_NO_PLAYER_NOMINEE: "#T Žádný kandidát od hráče#!\nMusíte někoho nominovat, abyste viděli rozdíl v preferencích volitelů"
@@ -47,6 +47,6 @@
  SUCCESSION_ELECTION_WINDOW_CAST_VOTE: "#T Odevzdat hlas#!"
  SUCCESSION_ELECTION_WINDOW_SUPPORT: "#T Podpořit#!"
  SUCCESSION_ELECTION_WINDOW_VOTE_BUTTON: "[GetPlayer.Custom('GetSuccessionVoteSupport')]"
- SUCCESSION_ELECTION_WINDOW_MY_CANDIDATE_NOT_MY_DYNASTY: "@warning_icon! #X Není součástí mé [dynasty|E]#!"
+ SUCCESSION_ELECTION_WINDOW_MY_CANDIDATE_NOT_MY_DYNASTY: "@warning_icon! #X Není součástí mé [Concept('dynasty','dynastie')|E]#!" # todo: CONCEPT CASE
  SUCCESSION_ELECTION_WINDOW_MY_CANDIDATE_NOT_MY_DYNASTY_NEWLINE: "\n$SUCCESSION_ELECTION_WINDOW_MY_CANDIDATE_NOT_MY_DYNASTY$"
  NOMINATE_CANDIDATE_TOOLTIP: "[Title.GetCanCharacterControlVoteReason( GetPlayer )][SelectLocalization( ObjectsEqual( Character.GetDynasty, GetPlayer.GetDynasty ), '', 'SUCCESSION_ELECTION_WINDOW_MY_CANDIDATE_NOT_MY_DYNASTY_NEWLINE' )]"

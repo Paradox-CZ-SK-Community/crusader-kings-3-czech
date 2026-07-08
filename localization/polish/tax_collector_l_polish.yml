@@ -2,29 +2,29 @@
  clan_tax_slot_no_tax_collector: "Daňová jurisdikce"
  clan_tax_slot_tax_collector: "Daňová jurisdikce: [character.GetName]"
  TAX_SLOT_SAME_OBLIGATION: "Povinnost nezměněna!"
- TAX_SLOT_INVALID_TAX_SLOT: "Neplatné [tax_jurisdiction|E]!"
- TAX_SLOT_ADD_TAX_COLLECTOR_INVALID: "Neplatný [tax_collector|E]!"
+ TAX_SLOT_INVALID_TAX_SLOT: "Neplatné [Concept('tax_jurisdiction','daňová jurisdikce')|E]!" # todo: CONCEPT CASE
+ TAX_SLOT_ADD_TAX_COLLECTOR_INVALID: "Neplatný [Concept('tax_collector','výběrčí daní')|E]!" # todo: CONCEPT CASE
  TAX_SLOT_REMOVE_EMPTY_TAX_COLLECTOR: "[tax_jurisdiction] nemá žádný [TAX_SLOT.GetCourtPositionType.GetName] k odebrání!"
  TAX_SLOT_REMOVE_VASSAL_NOT_IN_TAX_SLOT: "[CHARACTER.GetName] není v [TAX_SLOT.GetName]"
  TAX_SLOT_ADD_VASSAL_WRONG_GOV: "Vasali [CHARACTER.GetGovernment.GetName] neodpovídají [TAX_SLOT.GetGovernment.GetName] [TAX_SLOT.GetName]"
  TAX_SLOT_NO_CHANGES_TT: "Žádné změny!"
- TAX_SLOT_MANAGE_TAX_PAYERS_BUTTON: "#T Spravovat [taxpayers|E]#!"
+ TAX_SLOT_MANAGE_TAX_PAYERS_BUTTON: "#T Spravovat [Concept('taxpayers','poplatníci')|E]#!" # todo: CONCEPT CASE
  TAX_SLOT_REPLACE_TAX_COLLECTOR_BUTTON: "#T Vyměnit [TaxSlotItem.GetTaxCollector.GetName]#!\n#X [TaxSlotItem.GetTaxSlot.GetOnFireTaxCollectorDesc]#!"
- TAX_SLOT_REPLACE_TAX_COLLECTOR_BUTTON_NO_TAX_COLLECTOR: "#T Vyměnit [tax_collector|E]#!"
+ TAX_SLOT_REPLACE_TAX_COLLECTOR_BUTTON_NO_TAX_COLLECTOR: "#T Vyměnit [Concept('tax_collector','výběrčí daní')|E]#!" # todo: CONCEPT CASE
  TAX_SLOT_FIRE_TAX_COLLECTOR_BUTTON: "#T Propustit [TaxSlotItem.GetTaxCollector.GetName]#!\n#X [TaxSlotItem.GetTaxSlot.GetOnFireTaxCollectorDesc]#!"
- TAX_SLOT_FIRE_TAX_COLLECTOR_BUTTON_NO_TAX_COLLECTOR: "#T Propustit [tax_collector|E]#!"
- TAX_SLOT_CHANGE_COLLECTION_OPTION_BUTTON: "#T Změnit [tax_decree|E]#!"
- TAX_SLOT_ADD_NEW_TAX_COLLECTOR_BUTTON: "#T Jmenovat [tax_collector|E]#!"
- APPOINT_TAX_COLLECTOR_VIEW_APTITUDE: "#L [TaxSlotType.GetTaxCollectorAptitudeTextFor(Character.Self)]#! [aptitude|e]"
+ TAX_SLOT_FIRE_TAX_COLLECTOR_BUTTON_NO_TAX_COLLECTOR: "#T Propustit [Concept('tax_collector','výběrčí daní')|E]#!" # todo: CONCEPT CASE
+ TAX_SLOT_CHANGE_COLLECTION_OPTION_BUTTON: "#T Změnit [Concept('tax_decree','daňové nařízení')|E]#!" # todo: CONCEPT CASE
+ TAX_SLOT_ADD_NEW_TAX_COLLECTOR_BUTTON: "#T Jmenovat [Concept('tax_collector','výběrčí daní')|E]#!" # todo: CONCEPT CASE
+ APPOINT_TAX_COLLECTOR_VIEW_APTITUDE: "#L [TaxSlotType.GetTaxCollectorAptitudeTextFor(Character.Self)]#! [Concept('aptitude','způsobilost')|e]" # todo: CONCEPT CASE
  VASSAL_CONTRIBUTION_TAX_COLLECTOR_APTIDUE: "Schopnost výběrčího daní: $APTITUDE$"
- VASSAL_CONTRIBUTION_NO_TAX_COLLECTOR: "[tax_jurisdiction|E]: [TAX_SLOT.GetName]"
+ VASSAL_CONTRIBUTION_NO_TAX_COLLECTOR: "[Concept('tax_jurisdiction','Daňová jurisdikce')|E]: [TAX_SLOT.GetName]" # todo: CONCEPT CASE
  TAX_SLOTS_WINDOW_HEADER: "Vaše daňové jurisdikce"
  TAX_COLLECTOR_SLOT_NAME: "[TaxSlot.GetName]"
- TAX_COLLECTOR_SLOT_OPEN_OBLIGATION_BUTTON: "[tax_decrees|E]: [TaxSlot.GetObligation.GetName]"
+ TAX_COLLECTOR_SLOT_OPEN_OBLIGATION_BUTTON: "[Concept('tax_decrees','Daňová nařízení')|E]: [TaxSlot.GetObligation.GetName]" # todo: CONCEPT CASE
  TAX_COLLECTOR_SLOT_OBLIGATION_TEXT: "[TaxSlot.GetObligation.GetName]"
  TAX_COLLECTOR_SLOT_OPEN_ASSIGN_VASSALS_BUTTON: "Přiřadit vazaly"
- TAX_COLLECTOR_OBLIGATION_WINDOW_HEADER: "[tax_decrees|E] pro [TaxSlot.GetName]"
- TAX_COLLECTOR_TAXED_VASSALS_COUNT: "[taxpayers|E]: #TOOLTIP:TAX_SLOT_VASSAL_LIMIT_DESC [TaxSlot.GetTaxedVassalsAmount]/[TaxSlot.GetVassalLimit]#!"
+ TAX_COLLECTOR_OBLIGATION_WINDOW_HEADER: "[Concept('tax_decrees','Daňová nařízení')|E] pro [TaxSlot.GetName]" # todo: CONCEPT CASE
+ TAX_COLLECTOR_TAXED_VASSALS_COUNT: "[Concept('taxpayers','Poplatníci')|E]: #TOOLTIP:TAX_SLOT_VASSAL_LIMIT_DESC [TaxSlot.GetTaxedVassalsAmount]/[TaxSlot.GetVassalLimit]#!" # todo: CONCEPT CASE
  TAX_SLOT_TAX_CONTRIBUTION: "@gold_icon! [ValueBreakdown.GetValue]"
  TAX_SLOT_LEVY_CONTRIBUTION: "@soldier_icon! [ValueBreakdown.GetValue]"
  OPEN_TAX_SLOTS_BUTTON: "Daňové jurisdikce"
@@ -36,52 +36,52 @@
  TAX_SLOT_VASSAL_WINDOW_SORT_TAX_CONTRIBUTION: "Daňový příspěvek"
  TAX_SLOT_VASSAL_WINDOW_SORT_LEVY_CONTRIBUTION: "Příspěvek odvodů"
  TAX_SLOT_VASSAL_WINDOW_TAXABLE: "Zdanitelné:"
- TAX_SLOT_VASSAL_WINDOW_UNASSIGNED_VASSAL_TAXABLE_INCOME: "[gold_i|E] [UnassignedVassalList.GetTaxableIncome( CharacterListItem.Self )|=2]"
- TAX_SLOT_VASSAL_WINDOW_UNASSIGNED_VASSAL_LEVIES: "[soldier_i|E] [UnassignedVassalList.GetLevies( CharacterListItem.Self )]"
+ TAX_SLOT_VASSAL_WINDOW_UNASSIGNED_VASSAL_TAXABLE_INCOME: "[Concept('gold_i','@gold_icon!')|E] [UnassignedVassalList.GetTaxableIncome( CharacterListItem.Self )|=2]" # todo: CONCEPT CASE
+ TAX_SLOT_VASSAL_WINDOW_UNASSIGNED_VASSAL_LEVIES: "[Concept('soldier_i','@soldier_icon!')|E] [UnassignedVassalList.GetLevies( CharacterListItem.Self )]" # todo: CONCEPT CASE
  TAX_SLOT_VASSAL_WINDOW_ASSIGNED_VASSAL_TAX_CONTRIBUTION: "[AssignedVassalList.GetTaxContribution( CharacterListItem.Self )|2=]"
  TAX_SLOT_VASSAL_WINDOW_ASSIGNED_VASSAL_LEVY_CONTRIBUTION: "[AssignedVassalList.GetLevyContribution( CharacterListItem.Self )|^=]"
  TAX_SLOT_VASSAL_WINDOW_UNASSIGNED_VASSAL_TAX_SLOT_UNASSIGNED: "#X Nepřiřazeno#!"
  TAX_SLOT_VASSAL_WINDOW_UNASSIGNED_VASSAL_TAX_SLOT_UNTAXED: "#X Nezdaněno#!"
  TAX_SLOT_VASSAL_WINDOW_UNASSIGNED_VASSAL_TAX_SLOT_NAME: "[TaxSlot.GetName]"
  TAX_COLLECTOR_SIGNATURE: "[Character.GetTitledFirstNameNoTooltip]\nz rodu [Character.GetHouse.GetBaseNameNoTooltip]"
- TAX_SLOT_VASSAL_WINDOW_HEADER: "[taxpayers|E] v [TaxSlot.GetName]"
- TAX_SLOT_VASSAL_WINDOW_ASSIGNED_VASSALS: "Máte #TOOLTIP:TAX_SLOT_VASSAL_LIMIT_DESC [TaxSlot.GetTaxedVassalsAmount]/[TaxSlot.GetVassalLimit]#! [taxpayers|E] v této [tax_jurisdiction|E]"
+ TAX_SLOT_VASSAL_WINDOW_HEADER: "[Concept('taxpayers','Poplatníci')|E] v [TaxSlot.GetName]" # todo: CONCEPT CASE
+ TAX_SLOT_VASSAL_WINDOW_ASSIGNED_VASSALS: "Máte #TOOLTIP:TAX_SLOT_VASSAL_LIMIT_DESC [TaxSlot.GetTaxedVassalsAmount]/[TaxSlot.GetVassalLimit]#! [Concept('taxpayers','poplatníci')|E] v této [Concept('tax_jurisdiction','daňové jurisdikci')|E]" # todo: CONCEPT CASE
  TAX_SLOT_VASSAL_WINDOW_SELECT_ALL: "Vybrat vše"
  TAX_SLOT_VASSAL_WINDOW_CLEAR_SELECTION: "Zrušit výběr"
  TAX_SLOT_VASSAL_WINDOW_EFFECT_HEADER: "Efekty"
- TAX_SLOT_VASSAL_WINDOW_EFFECT_THIS_JURISDICTION: "[tax_jurisdiction|E] po změnách:"
+ TAX_SLOT_VASSAL_WINDOW_EFFECT_THIS_JURISDICTION: "[Concept('tax_jurisdiction','Daňová jurisdikce')|E] po změnách:" # todo: CONCEPT CASE
  TAX_SLOT_VASSAL_WINDOW_TAB_CURRENT: "Spravovat stávající plátce daní"
- TAX_SLOT_VASSAL_WINDOW_TAB_CURRENT_DESC: "Můžete zobrazit a odstranit [taxpayers|E] z této [tax_jurisdiction|E] výběrem a potvrzením této akce"
- TAX_SLOT_VASSAL_WINDOW_TAB_CURRENT_PREVIEW: "Náhled změn při odstraňování [taxpayers|E] z této [tax_jurisdiction|E]"
- TAX_SLOT_VASSAL_WINDOW_TAB_CURRENT_EFFECT_SUB_HEADER: "[GetDataModelSize( AssignedVassalList.GetSelectedCharacters )] [vassals|E] jsou odstraněni jako [taxpayers|E]"
+ TAX_SLOT_VASSAL_WINDOW_TAB_CURRENT_DESC: "Můžete zobrazit a odstranit [Concept('taxpayers','poplatníci')|E] z této [Concept('tax_jurisdiction','daňové jurisdikce')|E] výběrem a potvrzením této akce" # todo: CONCEPT CASE
+ TAX_SLOT_VASSAL_WINDOW_TAB_CURRENT_PREVIEW: "Náhled změn při odstraňování [Concept('taxpayers','poplatnících')|E] z této [Concept('tax_jurisdiction','daňové jurisdikce')|E]" # todo: CONCEPT CASE
+ TAX_SLOT_VASSAL_WINDOW_TAB_CURRENT_EFFECT_SUB_HEADER: "[GetDataModelSize( AssignedVassalList.GetSelectedCharacters )] [Concept('vassals','Vazalové')|E] jsou odstraněni jako [Concept('taxpayers','poplatníci')|E]" # todo: CONCEPT CASE
  TAX_SLOT_VASSAL_WINDOW_TAB_CURRENT_BUTTON: "Odstranit plátce daní"
  TAX_SLOT_VASSAL_WINDOW_TAB_ASSIGN: "Přiřadit nové plátce daní"
- TAX_SLOT_VASSAL_WINDOW_TAB_ASSIGN_DESC: "Můžete přiřadit nové [vassals|E] jako [taxpayers|E] do této [tax_jurisdiction|E] výběrem a potvrzením této akce"
- TAX_SLOT_VASSAL_WINDOW_TAB_ASSIGN_SELECT_ALL: "Vybrat [unassigned_vassals|E]"
- TAX_SLOT_VASSAL_WINDOW_TAB_ASSIGN_PREVIEW: "Náhled změn při přiřazování nových [taxpayers|E] do této [tax_jurisdiction|E]"
- TAX_SLOT_VASSAL_WINDOW_TAB_ASSIGN_EFFECT_SUB_HEADER: "[GetDataModelSize( UnassignedVassalList.GetSelectedCharacters )] [vassals|E] jsou přiřazeni jako [taxpayers|E] v této [tax_jurisdiction|E]"
+ TAX_SLOT_VASSAL_WINDOW_TAB_ASSIGN_DESC: "Můžete přiřadit nové [Concept('vassals','vazaly')|E] jako [Concept('taxpayers','poplatníci')|E] do této [Concept('tax_jurisdiction','daňové jurisdikce')|E] výběrem a potvrzením této akce" # todo: CONCEPT CASE
+ TAX_SLOT_VASSAL_WINDOW_TAB_ASSIGN_SELECT_ALL: "Vybrat [Concept('unassigned_vassals','nezdanění vazalové')|E]" # todo: CONCEPT CASE
+ TAX_SLOT_VASSAL_WINDOW_TAB_ASSIGN_PREVIEW: "Náhled změn při přiřazování nových [Concept('taxpayers','poplatnících')|E] do této [Concept('tax_jurisdiction','daňové jurisdikce')|E]" # todo: CONCEPT CASE
+ TAX_SLOT_VASSAL_WINDOW_TAB_ASSIGN_EFFECT_SUB_HEADER: "[GetDataModelSize( UnassignedVassalList.GetSelectedCharacters )] [Concept('vassals','Vazalové')|E] jsou přiřazeni jako [Concept('taxpayers','poplatníci')|E] v této [Concept('tax_jurisdiction','daňové jurisdikci')|E]" # todo: CONCEPT CASE
  TAX_SLOT_VASSAL_WINDOW_TAB_ASSIGN_BUTTON: "Přiřadit plátce daní"
  TAX_SLOT_ADD_VASSAL_ALREADY_ASSIGNED: "[CHARACTER.GetName] je již přiřazen k [TaxSlot.GetName]"
  TAX_SLOT_ADD_VASSAL_NO_SPACE: "[TaxSlot.GetName] má již #TOOLTIP:TAX_SLOT_VASSAL_LIMIT_DESC [TaxSlot.GetTaxedVassalsAmount]/[TaxSlot.GetVassalLimit]#! přiřazených vazalů."
  TAX_SLOT_ADD_VASSAL_ONLY_SPACE_FOR: "[TaxSlot.GetName] má místo pouze pro [Subtract_int32( TaxSlot.GetVassalLimit, TaxSlot.GetTaxedVassalsAmount )] nových vazalů."
  TAX_SLOT_VASSAL_WINDOW_TAX_SLOT_TAX: "Příspěvek ve zlatě"
- TAX_SLOT_VASSAL_WINDOW_TAX_SLOT_TAX_DESC: "Tohle je [gold|E] získané od všech vašich [taxpayers|E] přiřazených k [TaxSlot.GetName]"
+ TAX_SLOT_VASSAL_WINDOW_TAX_SLOT_TAX_DESC: "Tohle je [Concept('gold','zlato')|E] získané od všech vašich [Concept('taxpayers','poplatníků')|E] přiřazených k [TaxSlot.GetName]" # todo: CONCEPT CASE
  TAX_SLOT_VASSAL_WINDOW_TAX_SLOT_LEVIES: "Příspěvek odvodů"
- TAX_SLOT_VASSAL_WINDOW_TAX_SLOT_LEVIES_DESC: "To jsou [levies|E] získané od všech vašich [taxpayers|E] přiřazených k [TaxSlot.GetName]"
+ TAX_SLOT_VASSAL_WINDOW_TAX_SLOT_LEVIES_DESC: "To jsou [Concept('levies','odvedenci')|E] získané od všech vašich [Concept('taxpayers','poplatníků')|E] přiřazených k [TaxSlot.GetName]" # todo: CONCEPT CASE
  TAX_SLOT_VASSAL_WINDOW_TAX_SLOT_SUBHEADER: "Vazalové #medium #TOOLTIP:TAX_SLOT_VASSAL_LIMIT_DESC [GetDataModelSize( ValueBreakdown.GetSubValues )]/[TaxSlot.GetVassalLimit]#!#!"
  TAX_SLOT_VASSAL_WINDOW_TAX_SLOT_NO_VASSALS_ASSIGNED: "Žádní přiřazení plátci daní"
  TAX_SLOT_VASSAL_WINDOW_NO_TAX_SLOTS: "Žádné daňové jurisdikce"
  TAX_SLOT_VASSAL_WINDOW_TOTAL_SUB_HEADER: "Daňová jurisdikce #medium [GetDataModelSize( ValueBreakdown.GetSubValues )]/[Character.GetMaxTaxSlotsCount]#!"
- TAX_SLOT_VASSAL_WINDOW_TOTAL_TAX: "Zlato od všech [taxpayers|E]"
- TAX_SLOT_VASSAL_WINDOW_TOTAL_TAX_DESC: "Toto je [gold|E] získané od všech vašich [taxpayers|E] přiřazených k [tax_jurisdictions|E]"
- TAX_SLOT_VASSAL_WINDOW_TOTAL_LEVIES: "Odvody od všech [taxpayers|E]"
- TAX_SLOT_VASSAL_WINDOW_TOTAL_LEVIES_DESC: "To jsou [levies|E] získané od všech vašich [taxpayers|E] přiřazených k [tax_jurisdictions|E]"
- TAX_SLOT_VASSAL_WINDOW_TOTAL_TAX_SLOTS: "Maximální počet [tax_jurisdictions|E]"
- TAX_SLOT_OVERVIEW_WINDOW_ASSIGNED_TAX_SLOTS: "[tax_collectors|E]: [Character.GetTaxedTaxSlotsCount|V]/[ValueBreakdown.GetValue|V]"
+ TAX_SLOT_VASSAL_WINDOW_TOTAL_TAX: "Zlato od všech [Concept('taxpayers','poplatníků')|E]" # todo: CONCEPT CASE
+ TAX_SLOT_VASSAL_WINDOW_TOTAL_TAX_DESC: "Toto je [Concept('gold','zlato')|E] získané od všech vašich [Concept('taxpayers','poplatníků')|E] přiřazených k [Concept('tax_jurisdictions','daňovým jurisdikcím')|E]" # todo: CONCEPT CASE
+ TAX_SLOT_VASSAL_WINDOW_TOTAL_LEVIES: "Odvody od všech [Concept('taxpayers','poplatníků')|E]" # todo: CONCEPT CASE
+ TAX_SLOT_VASSAL_WINDOW_TOTAL_LEVIES_DESC: "To jsou [Concept('levies','odvedenci')|E] získané od všech vašich [Concept('taxpayers','poplatníků')|E] přiřazených k [Concept('tax_jurisdictions','daňovým jurisdikcím')|E]" # todo: CONCEPT CASE
+ TAX_SLOT_VASSAL_WINDOW_TOTAL_TAX_SLOTS: "Maximální počet [Concept('tax_jurisdictions','daňové jurisdikce')|E]" # todo: CONCEPT CASE
+ TAX_SLOT_OVERVIEW_WINDOW_ASSIGNED_TAX_SLOTS: "[Concept('tax_collectors','Výběrčí daní')|E]: [Character.GetTaxedTaxSlotsCount|V]/[ValueBreakdown.GetValue|V]" # todo: CONCEPT CASE
  TAX_SLOT_NAME: "[Select_CString( Character.IsValid, Character.GetFirstNameNicknamedPossessiveNoTooltip, '#weak Empty#!' )] [TaxSlotType.GetName]"
  APPOINT_TAX_COLLECTOR_WINDOW_NO_CURRENT_COLLECTOR: "Současný výběrčí: #weak Žádný#!"
- APPOINT_TAX_COLLECTOR_WINDOW_DESC: "[tax_collectors|E] mají na starosti vybírání [levies|E] a [gold|E] od [taxpayers|E] v [tax_jurisdiction|E]. Pouze postavy bez pozemků mohou být [tax_collectors|E]."
- APPOINT_TAX_COLLECTOR_NO_SELECTED_DESC: "Vyberte postavu k jmenování jako [tax_collector|E]"
+ APPOINT_TAX_COLLECTOR_WINDOW_DESC: "[Concept('tax_collectors','Výběrčí daní')|E] mají na starosti vybírání [Concept('levies','odvedenci')|E] a [Concept('gold','zlato')|E] od [Concept('taxpayers','poplatníků')|E] v [Concept('tax_jurisdiction','daňové jurisdikci')|E]. Pouze postavy bez pozemků mohou být [Concept('tax_collectors','výběrčí daní')|E]." # todo: CONCEPT CASE
+ APPOINT_TAX_COLLECTOR_NO_SELECTED_DESC: "Vyberte postavu k jmenování jako [Concept('tax_collector','výběrčí daní')|E]" # todo: CONCEPT CASE
  APPOINT_TAX_COLLECTOR_FIRE_CURRENT: "Propustit"
  APPOINT_TAX_COLLECTOR_FIRE_CURRENT_TT: "#T Propustit [Character.GetName]#!\n#X [TaxSlot.GetOnFireTaxCollectorDesc]#!"
  APPOINT_TAX_COLLECTOR_UNTAXED_TAX_SLOT: "(Nezdaněno)"
@@ -89,24 +89,24 @@
  TAX_SLOT_OBLIGATIONS_WINDOW_SELECTED: "Vybráno: [TaxSlotObligationsWindow.GetSelectedObligation.GetName]"
  TAX_SLOT_OBLIGATIONS_WINDOW_CURRENT: "Aktuální: [TaxSlotObligationsWindow.GetTaxSlot.GetObligation.GetName]"
  TAX_SLOT_OBLIGATIONS_WINDOW_CONTRACT_HEADER: "Daňní smlouva"
- TAX_SLOT_OBLIGATIONS_WINDOW_CONTRACT_DESC: "[TaxSlot.GetTaxCollector.GetName], [tax_collector|E] této [tax_jurisdictions|E], prosadí následující smlouvu se svými [taxpayers|E]:"
- TAX_SLOT_OBLIGATIONS_WINDOW_CONTRACT_DESC_NO_TAX_COLLECTOR: "Jakmile bude [tax_collector|E] přiřazen k [TaxSlot.GetName], prosadí následující smlouvu se svými [taxpayers|E]:"
- TAX_SLOT_OBLIGATIONS_WINDOW_CONTRIBUTIONS_CURRENT: "Aktuální [taxes|E]"
- TAX_SLOT_OBLIGATIONS_WINDOW_CONTRIBUTIONS_PREVIEW: "[taxes|E] po změnách"
+ TAX_SLOT_OBLIGATIONS_WINDOW_CONTRACT_DESC: "[TaxSlot.GetTaxCollector.GetName], [Concept('tax_collector','výběrčí daní')|E] této [Concept('tax_jurisdictions','daňovým jurisdikcím')|E], prosadí následující smlouvu se svými [Concept('taxpayers','poplatníky')|E]:" # todo: CONCEPT CASE
+ TAX_SLOT_OBLIGATIONS_WINDOW_CONTRACT_DESC_NO_TAX_COLLECTOR: "Jakmile bude [Concept('tax_collector','výběrčí daní')|E] přiřazen k [TaxSlot.GetName], prosadí následující smlouvu se svými [Concept('taxpayers','poplatníky')|E]:" # todo: CONCEPT CASE
+ TAX_SLOT_OBLIGATIONS_WINDOW_CONTRIBUTIONS_CURRENT: "Aktuální [Concept('taxes','daně')|E]" # todo: CONCEPT CASE
+ TAX_SLOT_OBLIGATIONS_WINDOW_CONTRIBUTIONS_PREVIEW: "[Concept('taxes','Daně')|E] po změnách" # todo: CONCEPT CASE
  TAX_SLOT_OBLIGATIONS_WINDOW_ACCEPT: "Přijmout"
  TAX_SLOT_OBLIGATIONS_WINDOW_SELECTED_OBLIGATION: "Vybráno"
  TAX_SLOT_OBLIGATIONS_WINDOW_CURRENT_OBLIGATION: "Aktuální"
- TAX_SLOT_OBLIGATIONS_WINDOW_ALREADY_SELECTED_DESC: "Toto je vaše aktuálně aktivní [tax_decree|E]"
- TAX_SLOT_OVERVIEW_WINDOW_HEADER: "Vaše [tax_jurisdictions|E]"
+ TAX_SLOT_OBLIGATIONS_WINDOW_ALREADY_SELECTED_DESC: "Toto je vaše aktuálně aktivní [Concept('tax_decree','daňové nařízení')|E]" # todo: CONCEPT CASE
+ TAX_SLOT_OVERVIEW_WINDOW_HEADER: "Vaše [Concept('tax_jurisdictions','daňové jurisdikce')|E]" # todo: CONCEPT CASE
  TAX_SLOT_OVERVIEW_WINDOW_TOTAL_CONTRIBUTION: "Celkový příspěvek:"
- TAX_SLOT_OVERVIEW_WINDOW_DESC: "Přiřaďte své [clan|E] [vassals|E] k [tax_jurisdictions|E], abyste spravovali jejich příspěvky. [tax_collector|E] a [tax_decrees|E] každé jurisdikce určí, jak budou [vassals|E] zdaněni."
- TAX_SLOT_OVERVIEW_WINDOW_TAX_SLOTS_WARNING: "Máte [Character.GetUntaxedJurisdictionCount] [untaxed_jurisdictions|E]"
- TAX_SLOT_OVERVIEW_WINDOW_UNASSIGNED_VASSALS_WARNING: "Máte [Character.GetUnassignedVassalsCount] [unassigned_vassals|E]"
+ TAX_SLOT_OVERVIEW_WINDOW_DESC: "Přiřaďte své [Concept('clan','klan')|E] [Concept('vassals','vazaly')|E] k [Concept('tax_jurisdictions','daňovým jurisdikcím')|E], abyste spravovali jejich příspěvky. [Concept('tax_collector','Výběrčí daní')|E] a [Concept('tax_decrees','daňová nařízení')|E] každé jurisdikce určí, jak budou [Concept('vassals','vazalové')|E] zdaněni." # todo: CONCEPT CASE
+ TAX_SLOT_OVERVIEW_WINDOW_TAX_SLOTS_WARNING: "Máte [Character.GetUntaxedJurisdictionCount] [Concept('untaxed_jurisdictions','nezdaněných jurisdikcí')|E]" # todo: CONCEPT CASE
+ TAX_SLOT_OVERVIEW_WINDOW_UNASSIGNED_VASSALS_WARNING: "Máte [Character.GetUnassignedVassalsCount] [Concept('unassigned_vassals','nezdaněných vazalů')|E]" # todo: CONCEPT CASE
  TAX_SLOT_OVERVIEW_WINDOW_TOTAL_SUB_HEADER: "Daňové jurisdikce #medium [GetDataModelSize( ValueBreakdown.GetSubValues )]/[Character.GetMaxTaxSlotsCount]#!"
  TAX_SLOT_OVERVIEW_WINDOW_RETURN_BUTTON: "Vrátit se do říše"
- TAX_SLOT_OVERVIEW_AUTO_ASSIGN_BUTTON: "Automaticky přiřadit [vassals|E] k [tax_jurisdictions|E]"
- clan_tax_collector_obligations: "[tax_collector|E] Schopnost"
- TT_TAX_SLOT_VASSAL_LIMIT_HEADER: "#T [taxpayers|E] Limit: $MAX|V$#!"
+ TAX_SLOT_OVERVIEW_AUTO_ASSIGN_BUTTON: "Automaticky přiřadit [Concept('vassals','vazalové')|E] k [Concept('tax_jurisdictions','daňovým jurisdikcím')|E]" # todo: CONCEPT CASE
+ clan_tax_collector_obligations: "[Concept('tax_collector','Výběrčí daní')|E] Schopnost" # todo: CONCEPT CASE
+ TT_TAX_SLOT_VASSAL_LIMIT_HEADER: "#T [Concept('taxpayers','Poplatníci')|E] Limit: $MAX|V$#!" # todo: CONCEPT CASE
  TT_TAX_SLOT_VASSAL_LIMIT: "Limit"
  TT_TAX_SLOT_VASSAL_LIMIT_CURRENT: "Aktuální: $CURRENT|V$"
  TAX_SLOT_VASSAL_LIMIT_DESC: "[TaxSlot.GetVassalLimitDesc]"
@@ -116,61 +116,61 @@
  TAX_SLOT_REALM_VIEW_OPEN_ASSIGN_VIEW: "#weak Daňová jurisdikce:#! [Character.GetAssignedTaxSlot.GetName]"
  TAX_SLOT_REALM_VIEW_OPEN_ASSIGN_VIEW_UNASSIGNED: "#weak Daňová jurisdikce:#! #Warning Nepřiřazeno#!"
  TAX_SLOT_ASSIGN_VASSAL_VIEW_HEADER: "Vyberte daňovou jurisdikci"
- TAX_SLOT_ASSIGN_VASSAL_VIEW_DESC: "Aby získali příjem od [clan|E] [vassals|E], musí být přiřazeni k [tax_jurisdiction|E] s jmenovaným [tax_collector|E]."
+ TAX_SLOT_ASSIGN_VASSAL_VIEW_DESC: "Aby získali příjem od [Concept('clan','klanu')|E] [Concept('vassals','vazalů')|E], musí být přiřazeni k [Concept('tax_jurisdiction','daňové jurisdikci')|E] s jmenovaným [Concept('tax_collector','výběrčími daní')|E]." # todo: CONCEPT CASE
  TAX_SLOT_ASSIGN_VASSAL_VIEW_CURRENT_TAX_SLOT: "Současná daňová jurisdikce: [TaxSlot.GetName]"
  TAX_SLOT_ASSIGN_VASSAL_VIEW_CURRENT_TAX_SLOT_UNASSIGNED: "Současná daňová jurisdikce: #N Nepřiřazeno#!"
  TAX_SLOT_ASSIGN_VASSAL_VIEW_TAX_COLLECTOR: "Výběrčí daní: [Character.GetShortUIName]"
  TAX_SLOT_ASSIGN_VASSAL_VIEW_TAX_COLLECTOR_APTITUDE: "Schopnost: [TaxSlot.GetTaxSlotType.GetTaxCollectorAptitudeTextFor( Character.Self )]"
  TAX_SLOT_ASSIGN_VASSAL_VIEW_NO_AVAILABLE_TAX_SLOT: "Žádné dostupné daňové jurisdikce"
- TAX_SLOT_ASSIGN_VASSAL_VIEW_NO_SELECTION_DESC: "Vyberte [tax_jurisdiction|E] pro vašeho [vassal|E] pro náhled změn"
- TAX_SLOT_ASSIGN_VASSAL_VIEW_EFFECT_DESC: "[Character.GetName] je přiřazen k této [tax_jurisdiction|E] jako [taxpayer|E]"
+ TAX_SLOT_ASSIGN_VASSAL_VIEW_NO_SELECTION_DESC: "Vyberte [Concept('tax_jurisdiction','daňová jurisdikce')|E] pro vašeho [Concept('vassal','vazala')|E] pro náhled změn" # todo: CONCEPT CASE
+ TAX_SLOT_ASSIGN_VASSAL_VIEW_EFFECT_DESC: "[Character.GetName] je přiřazen k této [Concept('tax_jurisdiction','daňové jurisdikci')|E] jako [Concept('taxpayer','poplatník')|E]" # todo: CONCEPT CASE
  TAX_SLOT_ASSIGN_VASSAL_VIEW_EFFECT_VASSAL_NAME: "[Character.GetName]:"
  TAX_SLOT_ASSIGN_VASSAL_VIEW_ASSIGN_BUTTON: "Přiřadit"
  TAX_SLOT_ASSIGN_VASSAL_TAX_CHANGE: "[ValueBreakdown.GetValue] #weak ([TaxSlotVassalChange.GetTaxChange|2+=])"
  TAX_SLOT_REMOVE_VASSAL_TAX_CHANGE: "[ValueBreakdown.GetValue] #weak ([Negate_CFixedPoint( TaxSlotVassalChange.GetTaxChange )|2+=])"
- TAX_SLOT_ASSIGN_VASSAL_TAX_DESC: "To bude [gold|E] získané od nových [taxpayers|E] po přiřazení k [Character.GetShortUIName]"
- TAX_SLOT_REMOVE_VASSAL_TAX_DESC: "To bude [gold|E] získané od zbývajících [taxpayers|E] přiřazených k [Character.GetShortUIName]"
+ TAX_SLOT_ASSIGN_VASSAL_TAX_DESC: "To bude [Concept('gold','zlato')|E] získané od nových [Concept('taxpayers','poplatníků')|E] po přiřazení k [Character.GetShortUIName]" # todo: CONCEPT CASE
+ TAX_SLOT_REMOVE_VASSAL_TAX_DESC: "To bude [Concept('gold','zlato')|E] získané od zbývajících [Concept('taxpayers','poplatníků')|E] přiřazených k [Character.GetShortUIName]" # todo: CONCEPT CASE
  TAX_SLOT_ASSIGN_VASSAL_LEVIES_CHANGE: "[ValueBreakdown.GetValue] #weak ([TaxSlotVassalChange.GetLeviesChange|+=])"
  TAX_SLOT_REMOVE_VASSAL_LEVIES_CHANGE: "[ValueBreakdown.GetValue] #weak ([Negate_int32( TaxSlotVassalChange.GetLeviesChange )|+=])"
- TAX_SLOT_ASSIGN_VASSAL_LEVIES_DESC: "To budou [levies|E] získané od nových [taxpayers|E] po přiřazení k [Character.GetShortUIName]"
- TAX_SLOT_REMOVE_VASSAL_LEVIES_DESC: "To budou [levies|E] získané od zbývajících [taxpayers|E] přiřazených k [Character.GetShortUIName]"
- VASSAL_TAX_CONTRIBUTION: "Příspěvek jako [taxpayer|E]"
- VASSAL_TAX_CONTRIBUTION_DESC: "Toto je, kolik [gold|E] [Character.GetName] přispěje jako [taxpayer|E]"
- VASSAL_LEVIES_CONTRIBUTION: "Příspěvek jako [taxpayer|E]"
- VASSAL_LEVIES_CONTRIBUTION_DESC: "Toto ukazuje, kolik [levies|E] [Character.GetName] přispěje jako [taxpayer|E]"
+ TAX_SLOT_ASSIGN_VASSAL_LEVIES_DESC: "To budou [Concept('levies','odvedenci')|E] získané od nových [Concept('taxpayers','poplatníků')|E] po přiřazení k [Character.GetShortUIName]" # todo: CONCEPT CASE
+ TAX_SLOT_REMOVE_VASSAL_LEVIES_DESC: "To budou [Concept('levies','odvedenci')|E] získané od zbývajících [Concept('taxpayers','poplatníků')|E] přiřazených k [Character.GetShortUIName]" # todo: CONCEPT CASE
+ VASSAL_TAX_CONTRIBUTION: "Příspěvek jako [Concept('taxpayer','poplatník')|E]" # todo: CONCEPT CASE
+ VASSAL_TAX_CONTRIBUTION_DESC: "Toto je, kolik [Concept('gold','zlato')|E] [Character.GetName] přispěje jako [Concept('taxpayer','poplatník')|E]" # todo: CONCEPT CASE
+ VASSAL_LEVIES_CONTRIBUTION: "Příspěvek jako [Concept('taxpayer','poplatník')|E]" # todo: CONCEPT CASE
+ VASSAL_LEVIES_CONTRIBUTION_DESC: "Toto ukazuje, kolik [Concept('levies','odvedence')|E] [Character.GetName] přispěje jako [Concept('taxpayer','poplatník')|E]" # todo: CONCEPT CASE
  GO_TO_TAX_SLOTS_BUTTON_HEADER: "Daňové jurisdikce"
  GO_TO_TAX_SLOTS_BUTTON_VALUE: "[Character.GetTaxedTaxSlotsCount]/[Character.GetTotalTaxSlotsCount]"
- TAX_SLOT_ASSIGN_VASSAL_ASSIGNING_DESC: "Přiřazujete [Character.GetShortUINameNoTooltip] k [tax_jurisdiction|E]"
- TAX_SLOT_REALM_VIEW_LIEGES_TAX_COLLECTOR: "[tax_collector|e] vládce [liege|e]: [TaxSlot.GetTaxCollector.GetName] #weak ([TaxSlot.GetTaxSlotType.GetTaxCollectorAptitudeTextFor( TaxSlot.GetTaxCollector.Self )])#!"
- TAX_SLOT_REALM_VIEW_LIEGES_TAX_COLLECTOR_UNASSIGNED: "[tax_collector|e] vládce [liege|e]: #weak Nepřiřazeno#!"
- TAX_COLLECTION_OPTION_INSTRUCTIONS: "Vyberte jeden z následujících [tax_decrees|E] pro náhled změn v této [tax_jurisdiction|E]. Všimněte si, že můžete měnit [tax_decree|e] pouze každých [GetDefine('NTaxSlot', 'TAX_DECREE_COOLDOWN')|0] let"
+ TAX_SLOT_ASSIGN_VASSAL_ASSIGNING_DESC: "Přiřazujete [Character.GetShortUINameNoTooltip] k [Concept('tax_jurisdiction','daňové jurisdikci')|E]" # todo: CONCEPT CASE
+ TAX_SLOT_REALM_VIEW_LIEGES_TAX_COLLECTOR: "[Concept('tax_collector','Výběrčí daní')|e] vládce [Concept('liege','lenní pán')|e]: [TaxSlot.GetTaxCollector.GetName] #weak ([TaxSlot.GetTaxSlotType.GetTaxCollectorAptitudeTextFor( TaxSlot.GetTaxCollector.Self )])#!" # todo: CONCEPT CASE
+ TAX_SLOT_REALM_VIEW_LIEGES_TAX_COLLECTOR_UNASSIGNED: "[Concept('tax_collector','Výběrčí daní')|e] vládce [Concept('liege','lenní pán')|e]: #weak Nepřiřazeno#!" # todo: CONCEPT CASE
+ TAX_COLLECTION_OPTION_INSTRUCTIONS: "Vyberte jeden z následujících [Concept('tax_decrees','daňových nařízení')|E] pro náhled změn v této [Concept('tax_jurisdiction','daňové jurisdikci')|E]. Všimněte si, že můžete měnit [Concept('tax_decree','daňové nařízení')|e] pouze každých [GetDefine('NTaxSlot', 'TAX_DECREE_COOLDOWN')|0] let" # todo: CONCEPT CASE
  TAX_OPTION_EFFECT_LABEL: "Efekty"
- TAX_OPTION_TOOLTIP_CLICK_TO_SELECT: "#I Klikněte pro výběr [tax_decree|E]#!"
- RELATION_TAX_COLLECTOR: "[tax_collector|E]"
+ TAX_OPTION_TOOLTIP_CLICK_TO_SELECT: "#I Klikněte pro výběr [Concept('tax_decree','daňové nařízení')|E]#!" # todo: CONCEPT CASE
+ RELATION_TAX_COLLECTOR: "[Concept('tax_collector','Výběrčí daní')|E]" # todo: CONCEPT CASE
  RENAME_TAX_SLOT: "#T Přejmenovat daňovou jurisdikci#!"
  RENAME_TAX_SLOT_TITLE: "Přejmenování [TaxSlot.GetName]"
  RENAME_TAX_SLOT_DESC: "Změnit jméno [TaxSlot.GetName]"
  RENAME_TAX_SLOT_ACCEPT: "Přijmout"
- TAX_SLOT_TAXPAYER_LIMIT: "Limit [taxpayer|E]"
- TAX_COLLECTOR_NEW_HIRE: "Najmout [Character.GetUIName] jako [tax_collector|E]"
+ TAX_SLOT_TAXPAYER_LIMIT: "Limit [Concept('taxpayer','poplatník')|E]" # todo: CONCEPT CASE
+ TAX_COLLECTOR_NEW_HIRE: "Najmout [Character.GetUIName] jako [Concept('tax_collector','výběrčí daní')|E]" # todo: CONCEPT CASE
  TAX_COLLECTOR_VALUE_CHANGE_DIFFERENCE: " #weak ([Subtract_CFixedPoint( ValueBreakdown.GetFixedPointValue, TaxCollectorValueChange.GetForCurrentCollector )|^+=])"
  TAX_COLLECTOR_VALUE_CHANGE_DIFFERENCE_INT: " #weak ([Subtract_CFixedPoint( ValueBreakdown.GetFixedPointValue, TaxCollectorValueChange.GetForCurrentCollector )|0+=])"
  TAX_COLLECTOR_VALUE_CHANGE: "[ValueBreakdown.GetValue][AddLocalizationIf( NotEqualTo_CFixedPoint( ValueBreakdown.GetFixedPointValue, TaxCollectorValueChange.GetForCurrentCollector ), 'TAX_COLLECTOR_VALUE_CHANGE_DIFFERENCE' )]"
  TAX_COLLECTOR_VALUE_CHANGE_INT: "[ValueBreakdown.GetValue][AddLocalizationIf( NotEqualTo_CFixedPoint( ValueBreakdown.GetFixedPointValue, TaxCollectorValueChange.GetForCurrentCollector ), 'TAX_COLLECTOR_VALUE_CHANGE_DIFFERENCE_INT' )]"
- TAX_COLLECTOR_NEW_HIRE_TAX_DESC: "To bude [gold|E] získané od všech vašich [taxpayers|E] při přiřazení k [Character.GetShortUIName]"
- TAX_COLLECTOR_NEW_HIRE_LEVIES_DESC: "To budou [levies|E] získané od všech vašich [taxpayers|E] při přiřazení k [Character.GetShortUIName]"
+ TAX_COLLECTOR_NEW_HIRE_TAX_DESC: "To bude [Concept('gold','zlato')|E] získané od všech vašich [Concept('taxpayers','poplatníků')|E] při přiřazení k [Character.GetShortUIName]" # todo: CONCEPT CASE
+ TAX_COLLECTOR_NEW_HIRE_LEVIES_DESC: "To budou [Concept('levies','odvedenci')|E] získané od všech vašich [Concept('taxpayers','poplatníků')|E] při přiřazení k [Character.GetShortUIName]" # todo: CONCEPT CASE
  TAX_SLOT_FIRE_TAX_COLLECTOR_CONFIRMATION_TITLE: "Propustit [TaxSlot.GetTaxCollector.GetName]"
  TAX_SLOT_FIRE_TAX_COLLECTOR_CONFIRMATION_TEXT: "[TaxSlot.GetOnFireTaxCollectorDesc]"
  TAX_SLOT_FIRE_TAX_COLLECTOR_CONFIRMATION_ACCEPT: "Přijmout"
  TAX_SLOT_REPLACE_TAX_COLLECTOR_CONFIRMATION_TITLE: "Vyměnit [TaxSlot.GetTaxCollector.GetName]"
  TAX_SLOT_REPLACE_TAX_COLLECTOR_CONFIRMATION_TEXT: "[TaxSlot.GetOnFireTaxCollectorDesc]"
  TAX_SLOT_REPLACE_TAX_COLLECTOR_CONFIRMATION_ACCEPT: "Přijmout"
- INVALID_VASSAL_COUNT: "$NUM$ [vassals|E] nejsou platní pro tento [tax_decree|E] a budou odstraněni, pokud bude aplikován:"
- VASSAL_IS_NOT_FAR_ENOUGH: "[CHARACTER.GetShortUIName] je příliš blízko vašemu [capital|E]"
- VASSAL_HAS_THE_WRONG_RELIGION: "[CHARACTER.GetShortUIName] má stejnou [religion|E] jako vy"
- VASSAL_HAS_THE_WRONG_FAITH: "[CHARACTER.GetShortUIName] #Bold není#! téže [faith|E] jako vy"
+ INVALID_VASSAL_COUNT: "$NUM$ [Concept('vassals','Vazalové')|E] nejsou platní pro tento [Concept('tax_decree','daňové nařízení')|E] a budou odstraněni, pokud bude aplikován:" # todo: CONCEPT CASE
+ VASSAL_IS_NOT_FAR_ENOUGH: "[CHARACTER.GetShortUIName] je příliš blízko vašemu [Concept('capital','hlavnímu sídlu')|E]" # todo: CONCEPT CASE
+ VASSAL_HAS_THE_WRONG_RELIGION: "[CHARACTER.GetShortUIName] má stejnou [Concept('religion','náboženství')|E] jako vy" # todo: CONCEPT CASE
+ VASSAL_HAS_THE_WRONG_FAITH: "[CHARACTER.GetShortUIName] #Bold není#! téže [Concept('faith','víře')|E] jako vy" # todo: CONCEPT CASE
  NO_TAX_SLOT_AVAILABLE: "#X Žádné platné daňové sloty, mohou se aktivovat příští měsíc#!"
- TAX_SLOT_OBLIGATION_LIEGE_MODIFIER: "#S [liege|E] za vazala:#!"
- TAX_SLOT_OBLIGATION_VASSAL_MODIFIER: "#S [vassal|E]:#!"
+ TAX_SLOT_OBLIGATION_LIEGE_MODIFIER: "#S [Concept('liege','Lenní pán')|E] za vazala:#!" # todo: CONCEPT CASE
+ TAX_SLOT_OBLIGATION_VASSAL_MODIFIER: "#S [Concept('vassal','Vazal')|E]:#!" # todo: CONCEPT CASE
  TAX_SLOT_OBLIGATION_SELECT_WARNING_TOOLTIP: "[JoinText( '\n\n', TaxSlotObligationsWindow.CanSelectObligationDesc( TaxSlotObligation.Self ), TaxSlotObligationsWindow.GetInvalidVassalsForObligationDesc( TaxSlotObligation.Self ) )]"
- TAX_SLOT_OBLIGATION_COOLDOWN: "#X @warning_icon! Nemůžete změnit [tax_decree|E] do $DATE$#!"
+ TAX_SLOT_OBLIGATION_COOLDOWN: "#X @warning_icon! Nemůžete změnit [Concept('tax_decree','daňové nařízení')|E] do $DATE$#!" # todo: CONCEPT CASE

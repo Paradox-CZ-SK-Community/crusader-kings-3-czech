@@ -1,16 +1,16 @@
 ﻿l_polish:
  designate_gruesome_festivals_sacrifice_interaction: "Určit oběť"
- designate_gruesome_festivals_sacrifice_interaction_desc: "Vyberte [recipient.GetShortUINameNoTooltip] jako svou osobní [designate_chief_sacrifice_chief_sacrifice|E] na nadcházejícím [actor.Custom('GruesomeFestivalName')]"
+ designate_gruesome_festivals_sacrifice_interaction_desc: "Vyberte [recipient.GetShortUINameNoTooltip] jako svou osobní [Concept('designate_chief_sacrifice_chief_sacrifice','hlavní oběť')|E] na nadcházejícím [actor.Custom('GruesomeFestivalName')]" # todo: CONCEPT CASE
  designate_gruesome_festivals_sacrifice_interaction.recipient.notification.t: "Vybrán k lidské oběti"
  designate_gruesome_festivals_sacrifice_interaction.recipient.notification.tt: "Bude popraven za tři měsíce"
  remove_designated_gruesome_festivals_sacrifice_interaction: "Zrušit oběť"
- remove_designated_gruesome_festivals_sacrifice_interaction_desc: "Zabraňte, aby [recipient.GetShortUINameNoTooltip] byl vaším [designate_chief_sacrifice_chief_sacrifice|E] na nadcházejícím [actor.Custom('GruesomeFestivalName')]"
+ remove_designated_gruesome_festivals_sacrifice_interaction_desc: "Zabraňte, aby [recipient.GetShortUINameNoTooltip] byl vaším [Concept('designate_chief_sacrifice_chief_sacrifice','hlavní obětí')|E] na nadcházejícím [actor.Custom('GruesomeFestivalName')]" # todo: CONCEPT CASE
  designate_gruesome_festivals_sacrifice_modifier_removed_effect.t: "Už není $designate_gruesome_festivals_sacrifice_interaction.recipient.notification.t$"
  designate_gruesome_festivals_sacrifice_modifier_removed_effect.manual.tt: "[actor.GetFirstNameNoTooltip] projevil slitování"
  designate_gruesome_festivals_sacrifice_modifier_removed_effect.override.tt: "[actor.GetFirstNameNoTooltip] se rozhodl pro jinou oběť"
  designate_gruesome_festivals_sacrifice_modifier_removed_effect.invalidation.tt: "Festival byl zrušen"
  challenge_to_trial_by_combat_interaction: "Soudní souboj"
- challenge_to_trial_by_combat_interaction_desc: "Vyzvěte [recipient.GetShortUINameNoTooltip] na [trial_by_combat|E]"
+ challenge_to_trial_by_combat_interaction_desc: "Vyzvěte [recipient.GetShortUINameNoTooltip] na [Concept('trial_by_combat','soudní souboj')|E]" # todo: CONCEPT CASE
  challenge_to_trial_by_combat_interaction_HIGHLIGHTED: "Zvýrazněno, protože příležitost k soudnímu souboji je vzácná!"
  REQUEST_TRIAL_BY_COMBAT_TEXT: "[recipient.Custom('InsultNoun')|U]! Tvé zločiny proti mně jsou odsouzeníhodné. Setkej se se mnou v souboji jeden na jednoho a nech bitvu rozhodnout naše spory."
  fp1_tbc_no_available_champions: "Postava není způsobilým bojovníkem a nemá k dispozici žádné šampiony"
@@ -22,12 +22,12 @@
  TBC_GOLD: "Zlato"
  TBC_WEAK_HOOK: "Lehké zranění"
  TBC_HUMILIATION: "Ponížení"
- TBC_PROWESS_ACTOR: "[actor.GetShortUINamePossessive|U] [prowess|E]: $VALUE|=+0$"
- TBC_PROWESS_RECIPIENT: "[recipient.GetShortUINamePossessive|U] [prowess|E]: $VALUE|=+0$"
- TBC_OPINION_DEATH: "[single_combat_duel_plural|E] k [character_death_death|E]"
- TBC_OPINION_GOLD: "[single_combat_duel_plural|E] za [gold|E]"
- TBC_OPINION_WEAK_HOOK: "[single_combat_duel_plural|E] za [weak_hook|E]"
- TBC_OPINION_HUMILIATION: "[single_combat_duel_plural|E] pro veřejné ponížení"
+ TBC_PROWESS_ACTOR: "[actor.GetShortUINamePossessive|U] [Concept('prowess','Udatnost')|E]: $VALUE|=+0$" # todo: CONCEPT CASE
+ TBC_PROWESS_RECIPIENT: "[recipient.GetShortUINamePossessive|U] [Concept('prowess','Udatnost')|E]: $VALUE|=+0$" # todo: CONCEPT CASE
+ TBC_OPINION_DEATH: "[Concept('single_combat_duel_plural','Duely')|E] k [Concept('character_death_death','smrti')|E]" # todo: CONCEPT CASE
+ TBC_OPINION_GOLD: "[Concept('single_combat_duel_plural','Duely')|E] za [Concept('gold','zlato')|E]" # todo: CONCEPT CASE
+ TBC_OPINION_WEAK_HOOK: "[Concept('single_combat_duel_plural','Duely')|E] za [Concept('weak_hook','slabou páku')|E]" # todo: CONCEPT CASE
+ TBC_OPINION_HUMILIATION: "[Concept('single_combat_duel_plural','Duely')|E] pro veřejné ponížení" # todo: CONCEPT CASE
  TBC_OPINION_DEATH_TRAIT_CRAVEN: "[GetTrait('craven').GetName(recipient.Self)] nesnáší $TBC_OPINION_DEATH$: $VALUE|=+0$"
  TBC_OPINION_DEATH_TRAIT_FORGIVING: "[GetTrait('forgiving').GetName(recipient.Self)] nesnáší $TBC_OPINION_DEATH$: $VALUE|=+0$"
  TBC_OPINION_DEATH_TRAIT_COMPASSIONATE: "[GetTrait('compassionate').GetName(recipient.Self)] nesouhlasí s $TBC_OPINION_DEATH$: $VALUE|=+0$"
@@ -50,5 +50,5 @@
  TBC_OPINION_HUMILIATION_TRAIT_FORGIVING: "[GetTrait('forgiving').GetName(recipient.Self)] schvaluje $TBC_OPINION_HUMILIATION$: $VALUE|=+0$"
  designate_shieldmaiden_interaction_extra_icon: "$hook_extra_icon$"
  designate_shieldmaiden_interaction: "Udělat štítmaidenkou"
- designate_shieldmaiden_interaction_desc: "Nabídněte [recipient.GetFirstNameNoTooltip] příležitost bojovat ve vašich řadách jako [recipient.Custom('ShieldPersonFemaleMale')|U].\n\n#weak [recipient.Custom('ShieldPersonFemaleMale')|U] může sloužit jako [actor.Custom('KnightCulture')] nebo [commander|E] a může vás dokonce zachránit před [GetScheme('murder').GetTypeName] [scheme|E]. Nabídku stát se [recipient.Custom('ShieldPersonFemaleMale')|U] lze dát pouze členům [close_family|E].#!"
+ designate_shieldmaiden_interaction_desc: "Nabídněte [recipient.GetFirstNameNoTooltip] příležitost bojovat ve vašich řadách jako [recipient.Custom('ShieldPersonFemaleMale')|U].\n\n#weak [recipient.Custom('ShieldPersonFemaleMale')|U] může sloužit jako [actor.Custom('KnightCulture')] nebo [Concept('commander','velitel')|E] a může vás dokonce zachránit před [GetScheme('murder').GetTypeName] [Concept('scheme','intrikou')|E]. Nabídku stát se [recipient.Custom('ShieldPersonFemaleMale')|U] lze dát pouze členům [Concept('close_family','blízké rodině')|E].#!" # todo: CONCEPT CASE
  designate_shieldmaiden_interaction_notification: "[recipient.GetShortUIName] se stal [recipient.Custom('ShieldPersonFemaleMale')|U]!"

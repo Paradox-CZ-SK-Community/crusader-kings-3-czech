@@ -118,9 +118,9 @@
  CHARACTER_DEAD_TOOLTIP: "[Character.GetDeathReason|U] dne $CHARACTER_DEAD_TOOLTIP_DATE_INFO$"
  CHARACTER_DEAD_LINEAGE: "[Character.GetDeathReason|U] dne [Character.GetDeathDate.GetString]"
  CHARACTER_DEAD_TOOLTIP_HIDE_KILLER: "[Character.GetDeathReasonHideKiller|U] dne $CHARACTER_DEAD_TOOLTIP_DATE_INFO$"
- CHARACTER_HOSTAGE_TOOLTIP: "#T Rukojmí#!\n[Character.GetUINameNotMe] je momentálně držen jako [hostage|E] [TARGET_CHARACTER.GetShortUIName] jako jejich [warden|E] s [TARGET_CHARACTER_2.GetShortUIName] jako jejich [home_court|E]"
+ CHARACTER_HOSTAGE_TOOLTIP: "#T Rukojmí#!\n[Character.GetUINameNotMe] je momentálně držen jako [Concept('hostage','rukojmí')|E] [TARGET_CHARACTER.GetShortUIName] jako jejich [Concept('warden','strážce')|E] s [TARGET_CHARACTER_2.GetShortUIName] jako jejich [Concept('home_court','domovský dvůr')|E]" # todo: CONCEPT CASE
  CHARACTER_INCAPABLE_TOOLTIP: "#T Neschopný#!\n[Character.GetUINameNotMe] je [GetTrait('incapable').GetName( Character.Self )] a nemůže jednat samostatně"
- CHARACTER_TRAVELING_TOOLTIP: "#T Cestuje#!\n[traveling|E] směrem k [Character.GetTravelPlan.GetData.GetNextDestination.GetProvince.GetName] [SelectLocalization(Character.GetTravelPlan.GetData.GetActivity.IsValid, 'CHARACTER_TRAVELING_ACTIVITY_TOOLTIP_ADDITION', '')]"
+ CHARACTER_TRAVELING_TOOLTIP: "#T Cestuje#!\n[Concept('traveling','Cestování')|E] směrem k [Character.GetTravelPlan.GetData.GetNextDestination.GetProvince.GetName] [SelectLocalization(Character.GetTravelPlan.GetData.GetActivity.IsValid, 'CHARACTER_TRAVELING_ACTIVITY_TOOLTIP_ADDITION', '')]" # todo: CONCEPT CASE
  CHARACTER_AWAY_TOOLTIP: "#T Mimo domov#!\n[SelectLocalization( Or( Character.IsCommandingArmy, Character.IsKnightInArmy ), 'CHARACTER_AWAY_DETAIL_ARMY_TOOLTIP', 'CHARACTER_AWAY_DETAIL_GENERIC_TOOLTIP' )]" # todo: NEW TRANSLATION
  CHARACTER_AWAY_DETAIL_ARMY_TOOLTIP: "[SelectLocalization( Character.IsCommandingArmy, 'CHARACTER_AWAY_DETAIL_COMMANDING_ARMY', 'CHARACTER_AWAY_DETAIL_KNIGHT_IN_ARMY' )] se nachází v [SelectLocalization( Character.IsCommandingArmy, Character.GetCommandingArmy.GetLocation.GetName, Character.GetKnightArmy.GetLocation.GetName )]" # todo: NEW TRANSLATION
  CHARACTER_AWAY_DETAIL_GENERIC_TOOLTIP: "Momentálně v [Character.GetCurrentLocation.GetName]" # todo: NEW TRANSLATION
@@ -137,12 +137,12 @@
  CHARACTER_INTERACTION_NO_TARGET_SELECTED: "@warning_icon! #X Není vybrán žádný cíl#! "
  CHARACTER_OTHER_PLAYER_TOOLTIP: "Tato postava je ovládána [Character.PlayerName]."
  BASE_COLON: "Základ: $VALUE|V0$"
- BASE_GOLD: "Základní [gold_i|E]"
- BASE_PIETY: "Základní [piety_i|E]"
- BASE_PRESTIGE: "Základní [prestige_i|E]"
- BASE_INFLUENCE: "Základní [influence_i|E]"
- BASE_TREASURY: "Základní [treasury_i|E]" # todo: NEW TRANSLATION
- BASE_MERIT: "Základní [merit_i|E]" # todo: NEW TRANSLATION
+ BASE_GOLD: "Základní [Concept('gold_i','@gold_icon!')|E]" # todo: CONCEPT CASE
+ BASE_PIETY: "Základní [Concept('piety_i','[GetLocalPlayerPietyTextIcon]')|E]" # todo: CONCEPT CASE
+ BASE_PRESTIGE: "Základní [Concept('prestige_i','@prestige_icon!')|E]" # todo: CONCEPT CASE
+ BASE_INFLUENCE: "Základní [Concept('influence_i','@influence_icon!')|E]" # todo: CONCEPT CASE
+ BASE_TREASURY: "Základní [Concept('treasury_i','@treasury_icon!')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ BASE_MERIT: "Základní [Concept('merit_i','@merit_icon!')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  BASE_TIME: "Základní @time_icon!"
  VALUE_COLON: "$KEY$: $VALUE|V0$"
  VALUE_COLON_POSITIVE_DIFF: "$KEY$: $VALUE|+=0$"
@@ -223,32 +223,32 @@
  CHARACTER_WIFE_PLURAL: "manželky"
  CHARACTER_HUSBAND_PLURAL: "manželé"
  CHARACTER_SPOUSE_PLURAL: "partneři"
- CHARACTER_CONCUBINE_MALE: "$game_concept_concubine_male$"
- CHARACTER_CONCUBINE_FEMALE: "$game_concept_concubine_female$"
+ CHARACTER_CONCUBINE_MALE: "Konkubín" # todo: CONCEPT CASE
+ CHARACTER_CONCUBINE_FEMALE: "Konkubína" # todo: CONCEPT CASE
  CHARACTER_MOTHER: "matka"
  CHARACTER_FATHER: "otec"
- VASSAL_TO: "[vassal|E] k $LIEGE$"
+ VASSAL_TO: "[Concept('vassal','Vazal')|E] k $LIEGE$" # todo: CONCEPT CASE
  RELATION_LIST: "[CHARACTER.GetShortUINamePossessive|U] $LIST$"
  RELATION_LIST_UNRELATED: "$LIST$"
  RELATION_LONG_LIST: "$LIST$"
  RELATION_LIST_EXTENDED: "$LIST$ #low (+$MORE_RELATIONS$)#!"
- VASSAL: "[vassal|E]"
- LIEGE: "[liege|E]"
- LIEGE_POSSESSIVE: "[liege_possessive|E]"
- TRIBUTARY: "[tributary|E]"
- SUZERAIN: "[suzerain|E]"
+ VASSAL: "[Concept('vassal','Vazal')|E]" # todo: CONCEPT CASE
+ LIEGE: "[Concept('liege','Lenní pán')|E]" # todo: CONCEPT CASE
+ LIEGE_POSSESSIVE: "[Concept('liege_possessive','Lenního pána')|E]" # todo: CONCEPT CASE
+ TRIBUTARY: "[Concept('tributary','Tributář')|E]" # todo: CONCEPT CASE
+ SUZERAIN: "[Concept('suzerain','Suzerén')|E]" # todo: CONCEPT CASE
  KNIGHT: "[CHARACTER.GetLiege.Custom('KnightCulture')]"
  COUNCILLOR: "[CHARACTER.GetCouncilTitle]"
- COURTIER: "[courtier|E]"
- COURTIER_PLURAL: "[courtiers|E]"
- GUEST: "[guest|E]"
- RELATION_NEIGHBORING_RULER: "Sousední [ruler|E]"
- RELATION_FOREIGN_RULER: "Zahraniční [ruler|E]"
- RELATION_MY_TOP_LIEGE: "Váš [top_liege|E]"
- RELATION_BELOW_VASSAL: "[vassal|E] ve vašem [realm|E]"
- RELATION_FELLOW_VASSAL: "Spoluvazal [vassal|E]"
- RELATION_NEIGHBORING_FELLOW_VASSAL: "Sousední spoluvazal [vassal|E]"
- RELATION_VASSAL_IN_REALM: "[vassal|E] v [CHARACTER.GetPrimaryTitle.GetBaseName]"
+ COURTIER: "[Concept('courtier','Dvořan')|E]" # todo: CONCEPT CASE
+ COURTIER_PLURAL: "[Concept('courtiers','Dvořané')|E]" # todo: CONCEPT CASE
+ GUEST: "[Concept('guest','Host')|E]" # todo: CONCEPT CASE
+ RELATION_NEIGHBORING_RULER: "Sousední [Concept('ruler','vládce')|E]" # todo: CONCEPT CASE
+ RELATION_FOREIGN_RULER: "Zahraniční [Concept('ruler','vládce')|E]" # todo: CONCEPT CASE
+ RELATION_MY_TOP_LIEGE: "Váš [Concept('top_liege','nejvyšší lenní pán')|E]" # todo: CONCEPT CASE
+ RELATION_BELOW_VASSAL: "[Concept('vassal','Vazal')|E] ve vašem [Concept('realm','panství')|E]" # todo: CONCEPT CASE
+ RELATION_FELLOW_VASSAL: "Spoluvazal [Concept('vassal','vazal')|E]" # todo: CONCEPT CASE
+ RELATION_NEIGHBORING_FELLOW_VASSAL: "Sousední spoluvazal [Concept('vassal','vazal')|E]" # todo: CONCEPT CASE
+ RELATION_VASSAL_IN_REALM: "[Concept('vassal','Vazal')|E] v [CHARACTER.GetPrimaryTitle.GetBaseName]" # todo: CONCEPT CASE
  RELATION_POOL_CHARACTER_LOCATION: "Potulný"
  RELATION_POOL_CHARACTER: "Potulný"
  RELATION_COUNCIL_POSITION: "[CHARACTER.GetCouncilTitle] u [TARGET_CHARACTER.GetShortUIName]"
@@ -266,10 +266,10 @@
  MILITARY_VIEW: "Armáda"
  INTRIGUE_VIEW: "Intriky"
  REALM_VIEW: "Pohled na říši (starý vojenský pohled)"
- ARMY_LEVIES: "[levies|E]"
+ ARMY_LEVIES: "[Concept('levies','Odvedenci')|E]" # todo: CONCEPT CASE
  DOMAIN: "Panství"
- VASSALS: "[vassals|E]"
- TRIBUTARIES: "[tributaries|E]" # todo: NEW TRANSLATION
+ VASSALS: "[Concept('vassals','Vazalové')|E]" # todo: CONCEPT CASE
+ TRIBUTARIES: "[Concept('tributaries','Tributáři')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  HIRED: "Najato"
  RAISE_ALL: "Povolat všechny armády"
  RAISE_ALL_RAIDERS: "Povolat všechny jako nájezdníky"
@@ -286,25 +286,25 @@
  SORT_INCOME: "Příjem"
  SORT_HEALTH: "Zdraví"
  SORT_ACCEPTANCE: "Přijetí"
- TT_CURRENT_GOLD: "[gold_i|E] #high [GetPlayer.GetGold|1]#!"
+ TT_CURRENT_GOLD: "[Concept('gold_i','@gold_icon!')|E] #high [GetPlayer.GetGold|1]#!" # todo: CONCEPT CASE
  TT_CURRENT_BALANCE: "#high [GetPlayerBalance|=+1]#!/měsíc"
- CURRENT_BALANCE_TOOLTIP: "#T Vaše [gold_i][gold|E]#!\n[GetPlayer.GetBalanceBreakdown]"
+ CURRENT_BALANCE_TOOLTIP: "#T Vaše [gold_i][Concept('gold','zlato')|E]#!\n[GetPlayer.GetBalanceBreakdown]" # todo: CONCEPT CASE
  FULL_BALANCE_INFO: "Měsíční bilance: [gold_i]$BALANCE|=+1$\n\n$INCOME_DESC$\n$EXPENSE_DESC$"
  ESTIMATE_TAX_VASSAL: "[CHARACTER.GetUIName]"
- ESTIMATE_TAX_INFO: "Celkový příjem z [tax|E]: [gold_i]$TOTAL|=+1$\n - [domain|E]: [gold_i]$DOMAIN|=+1$\n - [vassals|E]: [gold_i]$VASSALS|=+1$"
- ESTIMATE_TAX_LIEGE: "Placeno [liege|E]: [gold_i]#N -$VALUE|1$#!"
+ ESTIMATE_TAX_INFO: "Celkový příjem z [Concept('tax','daně')|E]: [gold_i]$TOTAL|=+1$\n - [Concept('domain','domény')|E]: [gold_i]$DOMAIN|=+1$\n - [Concept('vassals','vazalů')|E]: [gold_i]$VASSALS|=+1$" # todo: CONCEPT CASE
+ ESTIMATE_TAX_LIEGE: "Placeno [Concept('liege','lenní pán')|E]: [gold_i]#N -$VALUE|1$#!" # todo: CONCEPT CASE
  ESTIMATE_HERD_VASSAL: "[CHARACTER.GetUIName]"
- ESTIMATE_HERD_INFO: "Celkový příjem z [tax|E]: [herd_i]$TOTAL|=+1$\n - [domain|E]: [herd_i]$DOMAIN|=+1$\n - [vassals|E]: [herd_i]$VASSALS|=+1$"
- ESTIMATE_HERD_LIEGE: "Placeno [liege|E]: [herd_i]#N -$VALUE|1$#!"
+ ESTIMATE_HERD_INFO: "Celkový příjem z [Concept('tax','daně')|E]: [herd_i]$TOTAL|=+1$\n - [Concept('domain','domény')|E]: [herd_i]$DOMAIN|=+1$\n - [Concept('vassals','vazalů')|E]: [herd_i]$VASSALS|=+1$" # todo: CONCEPT CASE
+ ESTIMATE_HERD_LIEGE: "Placeno [Concept('liege','lenní pán')|E]: [herd_i]#N -$VALUE|1$#!" # todo: CONCEPT CASE
  ESTIMATE_BARTER_GOODS_SUBJECT: "[CHARACTER.GetUIName]" # todo: NEW TRANSLATION
  ARMY_MAINTENANCE: "Údržba armády: [gold_i]$VALUE|=+1$"
- BREAKDOWN_ARMY_MAINTENANCE: "Povoláno [armies|E]"
- BREAKDOWN_ARMY_MAINTENANCE_EMBARKED: "Povoláno [armies|E] [embarked_i]"
- MAA_TOTAL_COST: "[men_at_arms|E]: [gold_i]$VALUE|=+1$"
+ BREAKDOWN_ARMY_MAINTENANCE: "Povoláno [Concept('armies','armády')|E]" # todo: CONCEPT CASE
+ BREAKDOWN_ARMY_MAINTENANCE_EMBARKED: "Povoláno [Concept('armies','armády')|E] [embarked_i]" # todo: CONCEPT CASE
+ MAA_TOTAL_COST: "[Concept('men_at_arms','Ozbrojenci')|E]: [gold_i]$VALUE|=+1$" # todo: CONCEPT CASE
  MAA_MAINTENENCE_COST: " - Údržba: [directive_maa]$VALUE|=+1$"
  MAA_REINFORCEMENT_COST: " - Posily: [gold_i]$VALUE|=+1$"
  BREAKDOWN_TOTAL_TAX: "Celková daň"
- BREAKDOWN_MEN_AT_ARMS: "[men_at_arms|E]"
+ BREAKDOWN_MEN_AT_ARMS: "[Concept('men_at_arms','Ozbrojenci')|E]" # todo: CONCEPT CASE
  BREAKDOWN_REINFORCEMENT: "Posily"
  BREAKDOWN_MONTHLY_BALENCE: "Měsíční bilance"
  BREAKDOWN_YEARLY_BALENCE: "Roční bilance"
@@ -320,12 +320,12 @@
  GOLD_COST_LONG_MAINTENANCE: "Zlato: [gold_i] $VALUE|2$"
  GOLD_K: "[gold_i] $VALUE|1$K"
  GOLD_TEXT: "$VALUE|0$ zlato"
- GOLD_CONCEPT: "[gold|E]"
+ GOLD_CONCEPT: "[Concept('gold','Zlato')|E]" # todo: CONCEPT CASE
  GOLD_NO_ICON: "$VALUE|0$"
  GOLD_K_NO_ICON: "$VALUE|1$K"
- GOLD_SIMPLE_TOOLTIP: "#T [CHARACTER.GetShortUINamePossessive|U] [gold|E]: $VALUE|V0$#!"
- GOLD_WITH_BALANCE_TOOLTIP: "#T [gold|E]: $VALUE|V0$#!\n$BALANCE|V=1$/měsíc"
- TREASURY_WITH_BALANCE_TOOLTIP: "#T [treasury|E]: $VALUE|V0$#!\n$BALANCE|V=1$/měsíc" # todo: NEW TRANSLATION
+ GOLD_SIMPLE_TOOLTIP: "#T [CHARACTER.GetShortUINamePossessive|U] [Concept('gold','Zlato')|E]: $VALUE|V0$#!" # todo: CONCEPT CASE
+ GOLD_WITH_BALANCE_TOOLTIP: "#T [Concept('gold','Zlato')|E]: $VALUE|V0$#!\n$BALANCE|V=1$/měsíc" # todo: CONCEPT CASE
+ TREASURY_WITH_BALANCE_TOOLTIP: "#T [Concept('treasury','Pokladnice')|E]: $VALUE|V0$#!\n$BALANCE|V=1$/měsíc" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  TREASURY_COST_REINFORCE: "[treasury_i] $VALUE|2$" # todo: NEW TRANSLATION
  TREASURY_COST_MAINTENANCE: "[treasury_i] $VALUE|2$" # todo: NEW TRANSLATION
  COST_PER_DAY: "/den"
@@ -339,9 +339,9 @@
  PIETY_COST_LONG: "Zbožnost: [piety_i] $VALUE|0$"
  PIETY_COST_LONG_MAINTENANCE: "Zbožnost: [piety_i] $VALUE|2$"
  PIETY_K: "[piety_i] $VALUE|1$K"
- PIETY_CONCEPT: "[piety|E]"
- PIETY_LEVEL_CONCEPT: "[piety_level|E]"
- PIETY_WITH_BALANCE_TOOLTIP: "#T [piety|E]: $VALUE|V0$#!\n$BALANCE|V=1$/měsíc\n\n#T [piety_level|E]: #!$LEVEL$"
+ PIETY_CONCEPT: "[Concept('piety','Zbožnost')|E]" # todo: CONCEPT CASE
+ PIETY_LEVEL_CONCEPT: "[Concept('piety_level','Úroveň oddanosti')|E]" # todo: CONCEPT CASE
+ PIETY_WITH_BALANCE_TOOLTIP: "#T [Concept('piety','Zbožnost')|E]: $VALUE|V0$#!\n$BALANCE|V=1$/měsíc\n\n#T [Concept('piety_level','Úroveň oddanosti')|E]: #!$LEVEL$" # todo: CONCEPT CASE
  PRESTIGE: "[prestige_i] $VALUE|0$"
  PRESTIGE_COST: "[prestige_i] $VALUE|0$"
  PRESTIGE_COST_REINFORCE: "[prestige_i] $VALUE|1$"
@@ -349,49 +349,49 @@
  PRESTIGE_COST_LONG: "Prestiž: [prestige_i] $VALUE|0$"
  PRESTIGE_COST_LONG_MAINTENANCE: "Prestiž: [prestige_i] $VALUE|2$"
  PRESTIGE_K: "[prestige_i] $VALUE|1$K"
- PRESTIGE_CONCEPT: "[prestige|E]"
- PRESTIGE_LEVEL_CONCEPT: "[prestige_level|E]"
- NOT_PRESTIGE_LEVEL_CONCEPT: "Nedostatek [prestige_level|E]"
- PRESTIGE_WITH_BALANCE_TOOLTIP: "#T [prestige|E]: $VALUE|V0$#!\n$BALANCE|V=1$/měsíc\n\n#T [prestige_level|E]: #!$LEVEL$"
+ PRESTIGE_CONCEPT: "[Concept('prestige','Prestiž')|E]" # todo: CONCEPT CASE
+ PRESTIGE_LEVEL_CONCEPT: "[Concept('prestige_level','Úroveň slávy')|E]" # todo: CONCEPT CASE
+ NOT_PRESTIGE_LEVEL_CONCEPT: "Nedostatek [Concept('prestige_level','úroveň slávy')|E]" # todo: CONCEPT CASE
+ PRESTIGE_WITH_BALANCE_TOOLTIP: "#T [Concept('prestige','Prestiž')|E]: $VALUE|V0$#!\n$BALANCE|V=1$/měsíc\n\n#T [Concept('prestige_level','Úroveň slávy')|E]: #!$LEVEL$" # todo: CONCEPT CASE
  DYNASTY_PRESTIGE: "[dynasty_prestige_i] $VALUE|0$"
  DYNASTY_PRESTIGE_COST: "[dynasty_prestige_i] $VALUE|0$"
  DYNASTY_PRESTIGE_COST_LONG: "Pověst: [dynasty_prestige_i] $VALUE|0$"
  DYNASTY_PRESTIGE_COST_LONG_MAINTENANCE: "Pověst: [dynasty_prestige_i] $VALUE|2$"
  DYNASTY_PRESTIGE_K: "[dynasty_prestige_i] $VALUE|1$K"
- DYNASTY_PRESTIGE_CONCEPT: "[dynasty_prestige|E]"
- DYNASTY_PRESTIGE_LEVEL_CONCEPT: "[dynasty_prestige_level|E]"
- DYNASTY_PRESTIGE_WITH_BALANCE_TOOLTIP: "#T [dynasty_prestige|E]: $VALUE|V0$#!\n$BALANCE|V=1$/měsíc\n\n#T [dynasty_prestige_level|E]: #!$LEVEL$" # todo: NEW TRANSLATION
+ DYNASTY_PRESTIGE_CONCEPT: "[Concept('dynasty_prestige','Věhlas')|E]" # todo: CONCEPT CASE
+ DYNASTY_PRESTIGE_LEVEL_CONCEPT: "[Concept('dynasty_prestige_level','Úroveň věhlasu')|E]" # todo: CONCEPT CASE
+ DYNASTY_PRESTIGE_WITH_BALANCE_TOOLTIP: "#T [Concept('dynasty_prestige','Věhlas')|E]: $VALUE|V0$#!\n$BALANCE|V=1$/měsíc\n\n#T [Concept('dynasty_prestige_level','Úroveň věhlasu')|E]: #!$LEVEL$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  INFLUENCE_COST: "[influence_i] $VALUE|0$"
  INFLUENCE_COST_LONG: "Vliv: [influence_i] $VALUE|0$"
  INFLUENCE_COST_LONG_MAINTENANCE: "Vliv: [influence_i] $VALUE|2$"
- INFLUENCE_CONCEPT: "[influence|E]"
- INFLUENCE_LEVEL_CONCEPT: "[influence_level|E]"
- INFLUENCE_WITH_BALANCE_TOOLTIP: "#T [influence|E]: $VALUE|V0$#!\n$BALANCE|V=1$/měsíc\n\n#T [influence_level|E]: #!$LEVEL$" # todo: NEW TRANSLATION
+ INFLUENCE_CONCEPT: "[Concept('influence','Vliv')|E]" # todo: CONCEPT CASE
+ INFLUENCE_LEVEL_CONCEPT: "[Concept('influence_level','Úroveň vlivu')|E]" # todo: CONCEPT CASE
+ INFLUENCE_WITH_BALANCE_TOOLTIP: "#T [Concept('influence','Vliv')|E]: $VALUE|V0$#!\n$BALANCE|V=1$/měsíc\n\n#T [Concept('influence_level','Úroveň vlivu')|E]: #!$LEVEL$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  HERD_COST: "[herd_i] $VALUE|0$"
  HERD_COST_LONG: "Stádo: [herd_i] $VALUE|0$"
  HERD_COST_LONG_MAINTENANCE: "Stádo: [herd_i] $VALUE|2$" # todo: NEW TRANSLATION
  MERIT_COST: "[merit_i] $VALUE|0$" # todo: NEW TRANSLATION
  MERIT_COST_LONG: "Zásluhy: [merit_i] $VALUE|0$" # todo: NEW TRANSLATION
  MERIT_COST_LONG_MAINTENANCE: "Zásluhy: [merit_i] $VALUE|2$" # todo: NEW TRANSLATION
- MERIT_CONCEPT: "[merit|E]" # todo: NEW TRANSLATION
- MERIT_LEVEL_CONCEPT: "[merit_level|E]" # todo: NEW TRANSLATION
- NOT_MERIT_LEVEL_CONCEPT: "Nedostatečné [merit_level|E]" # todo: NEW TRANSLATION
- MERIT_WITH_BALANCE_TOOLTIP: "#T [merit|E]: $VALUE|V0$#!\n$BALANCE|V=1$/měsíc\n\n#T [merit_level|E]: #!$LEVEL$" # todo: NEW TRANSLATION
+ MERIT_CONCEPT: "[Concept('merit','Zásluhy')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MERIT_LEVEL_CONCEPT: "[Concept('merit_level','Hodnost zásluh')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ NOT_MERIT_LEVEL_CONCEPT: "Nedostatečné [Concept('merit_level','hodnost zásluh')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MERIT_WITH_BALANCE_TOOLTIP: "#T [Concept('merit','Zásluhy')|E]: $VALUE|V0$#!\n$BALANCE|V=1$/měsíc\n\n#T [Concept('merit_level','Hodnost zásluh')|E]: #!$LEVEL$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  TREASURY_COST_BREAK: "Cena [treasury_i]" # todo: NEW TRANSLATION
  TREASURY_COST: "[treasury_i] $VALUE|0$" # todo: NEW TRANSLATION
  TREASURY_COST_LONG: "Pokladna: [treasury_i] $VALUE|0$" # todo: NEW TRANSLATION
  TREASURY_COST_LONG_MAINTENANCE: "Pokladna: [treasury_i] $VALUE|2$" # todo: NEW TRANSLATION
- TREASURY_CONCEPT: "[treasury|E]" # todo: NEW TRANSLATION
+ TREASURY_CONCEPT: "[Concept('treasury','Pokladnice')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  BARTER_GOODS_COST: "[barter_goods_i] $VALUE|0$" # todo: NEW TRANSLATION
  BARTER_GOODS_COST_MAINTENANCE: "[barter_goods_i] $VALUE|2$" # todo: NEW TRANSLATION
  BARTER_GOODS_COST_REINFORCE: "[barter_goods_i] $VALUE|2$" # todo: NEW TRANSLATION
- BARTER_GOODS_WITH_BALANCE_TOOLTIP: "#T [barter_goods|E]: $VALUE|V0$#!\n$BALANCE|V=1$/měsíc" # todo: NEW TRANSLATION
- NUMBER_OF_MEN_DESC: "[soldiers|E]"
+ BARTER_GOODS_WITH_BALANCE_TOOLTIP: "#T [Concept('barter_goods','Směnné zboží')|E]: $VALUE|V0$#!\n$BALANCE|V=1$/měsíc" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ NUMBER_OF_MEN_DESC: "[Concept('soldiers','Vojáci')|E]" # todo: CONCEPT CASE
  NUMBER_OF_MEN_VALUE: "#TOOLTIP:NUMBER_OF_MEN_DESC $VALUE|0$ #!"
  NUMBER_OF_MEN_VALUE_K: "#TOOLTIP:NUMBER_OF_MEN_DESC $VALUE$ #!"
  NUMBER_OF_MEN_VALUE_K_NO_TOOLTIP: "$VALUE|1$"
- NUMBER_OF_MEN_VALUE_WITH_LABEL: "$VALUE|0V$ [soldiers|E]"
- NUMBER_OF_MEN_ARRIVED: "$VALUE|0V$ [soldiers|E] již se shromáždili."
+ NUMBER_OF_MEN_VALUE_WITH_LABEL: "$VALUE|0V$ [Concept('soldiers','Vojáci')|E]" # todo: CONCEPT CASE
+ NUMBER_OF_MEN_ARRIVED: "$VALUE|0V$ [Concept('soldiers','Vojáci')|E] již se shromáždili." # todo: CONCEPT CASE
  CONTRACTED_VALUE: "$VALUE|0$"
  CONTRACTED_VALUE_K: "$VALUE|1$K"
  COMMON_INFO_LIST_PREFIX: "* "
@@ -399,7 +399,7 @@
  YOU_HAVE_HOOK: "Máte páku na $WHO$."
  INCOME: "Měsíční [income|L]"
  EXPENSES: "Měsíční výdaje"
- LEVIES: "[levies|E]:"
+ LEVIES: "[Concept('levies','Odvedenci')|E]:" # todo: CONCEPT CASE
  TOTAL_TAX: "Celková daň"
  TAXABLE_VASSAL_INCOME: "Zdanitelný příjem"
  TAXABLE_VASSAL_HERD: "Zdanitelné stádo"
@@ -414,7 +414,7 @@
  TOTAL_PIETY: "Přispěná zbožnost" # todo: NEW TRANSLATION
  TOTAL_BARTER_GOODS: "Přispěné obchodní zboží" # todo: NEW TRANSLATION
  LEVIES_ICON: "[soldier_i]"
- OPINION_HEADER: "[opinion|E]"
+ OPINION_HEADER: "[Concept('opinion','Mínění')|E]" # todo: CONCEPT CASE
  AUTOSAVE_IN_PROGRESS: "Automatické ukládání..."
  SAVE_IN_PROGRESS: "Ukládání..."
  MISSING_DLCS_HEADER: "@warning_icon! #X Chybějící DLC:#!"
@@ -515,7 +515,7 @@
  DURATION_DATE_RANGE: "$[DATE_MIN.GetStringShort|V]$ - $[DATE_MAX.GetStringShort|V]$"
  DURATION_NO_DATE: "$DURATION$"
  DURATION_NO_DATE_RANGE: "mezi $DURATION_MIN$ a $DURATION_MAX$"
- NUMBER_OF_MEN: "[soldiers|E]: "
+ NUMBER_OF_MEN: "[Concept('soldiers','Vojáci')|E]: " # todo: CONCEPT CASE
  NUMBER_OF_REGIMENTS: "Počet pluků"
  TIME_TO_RAISE: "Čas shromáždění: "
  DAYS: "Dny"
@@ -535,8 +535,8 @@
  SCOPE_RELIGION: "[ROOT.Religion.GetName]:"
  SCOPE_GREAT_HOLY_WAR: "[ROOT.GreatHolyWar.GetName]:"
  SCOPE_WAR: "[ROOT.War.GetName]:"
- SCOPE_DYNASTY: "[dynasty|E] [ROOT.Dynasty.GetName]:"
- SCOPE_DYNASTY_HOUSE: "[house|E] [ROOT.House.GetName]:"
+ SCOPE_DYNASTY: "[Concept('dynasty','Dynastie')|E] [ROOT.Dynasty.GetName]:" # todo: CONCEPT CASE
+ SCOPE_DYNASTY_HOUSE: "[Concept('house','Rod')|E] [ROOT.House.GetName]:" # todo: CONCEPT CASE
  SCOPE_FACTION: "[ROOT.Faction.GetName]:"
  SCOPE_CULTURE: "[ROOT.Culture.GetName]:"
  SCOPE_ARMY: "[ROOT.Army.GetName]:"
@@ -562,24 +562,24 @@
  intrigue: "Intriky"
  learning: "Učení"
  prowess: "Zdatnost"
- diplomacy_modifier: "[diplomacy|E]"
- martial_modifier: "[martial|E]"
- stewardship_modifier: "[stewardship|E]"
- intrigue_modifier: "[intrigue|E]"
- learning_modifier: "[learning|E]"
- prowess_modifier: "[prowess|E]"
+ diplomacy_modifier: "[Concept('diplomacy','Diplomacie')|E]" # todo: CONCEPT CASE
+ martial_modifier: "[Concept('martial','Válečnictví')|E]" # todo: CONCEPT CASE
+ stewardship_modifier: "[Concept('stewardship','Správcovství')|E]" # todo: CONCEPT CASE
+ intrigue_modifier: "[Concept('intrigue','Pletichářství')|E]" # todo: CONCEPT CASE
+ learning_modifier: "[Concept('learning','Učenost')|E]" # todo: CONCEPT CASE
+ prowess_modifier: "[Concept('prowess','Udatnost')|E]" # todo: CONCEPT CASE
  diplomacy_modifier_with_offset: "$diplomacy_modifier$"
  martial_modifier_with_offset: "$martial_modifier$"
  stewardship_modifier_with_offset: "$stewardship_modifier$"
  intrigue_modifier_with_offset: "$intrigue_modifier$"
  learning_modifier_with_offset: "$learning_modifier$"
  general_skill: "Všeobecné"
- diplomacy_concept: "[diplomacy|E]"
- martial_concept: "[martial|E]"
- stewardship_concept: "[stewardship|E]"
- intrigue_concept: "[intrigue|E]"
- learning_concept: "[learning|E]"
- prowess_concept: "[prowess|E]"
+ diplomacy_concept: "[Concept('diplomacy','Diplomacie')|E]" # todo: CONCEPT CASE
+ martial_concept: "[Concept('martial','Válečnictví')|E]" # todo: CONCEPT CASE
+ stewardship_concept: "[Concept('stewardship','Správcovství')|E]" # todo: CONCEPT CASE
+ intrigue_concept: "[Concept('intrigue','Pletichářství')|E]" # todo: CONCEPT CASE
+ learning_concept: "[Concept('learning','Učenost')|E]" # todo: CONCEPT CASE
+ prowess_concept: "[Concept('prowess','Udatnost')|E]" # todo: CONCEPT CASE
  event_target_desc: "Rozsah lze uložit jako „cílový objekt události“. Poté bude přístupný z jakéhokoli spouštěče/efektu, který lze „sledovat zpětně“ v přímé linii až k místu, kde jste cílový objekt události uložili (tj. jakékoliv spouštěče, které se kontrolují, nebo efekty, které se spouští po uložení cílového objektu události, ale pouze v souvislém řetězci, jako je řetězec událostí). Pokud řetězec událostí skončí, cílový objekt události se ztratí.\nPoznámka: Několik on_actions nastavených kódem a několik speciálních interakcí má své vlastní předdefinované cílové objekty událostí.\nZávěrem: Jako cílové objekty událostí můžete také uložit hodnoty a booleany, což může být v některých situacích užitečné."
  parameter_desc: "Pozůstatek ze Stellaris. Pokud to zvažujete, pravděpodobně je lepší použít rozsahy uložené jako proměnné. (Změňte tento popis, pokud jsme začali pro nějaký účel používat „parameter“!)"
  variable_desc: "Skriptové proměnné jsou skriptem přístupné a upravitelné. Aktuálně se vyskytují v následujících formách:\n\nvariable:example_number = 1\nvariable:example_flag = flag:example\nvariable:example_scope = root\nvariable:example_bool = yes"
@@ -616,9 +616,9 @@
  SISTER_WIFE: "Sestra-manželka"
  BROTHER_IN_LAW: "Švagr"
  SISTER_IN_LAW: "Švagrová"
- RELATION_CONCUBINE_MAN: "$game_concept_concubine_male$"
- RELATION_CONCUBINE_WOMAN: "$game_concept_concubine_female$"
- PLAYER_HEIR_RELATION: "[player_heir|E]"
+ RELATION_CONCUBINE_MAN: "Konkubín" # todo: CONCEPT CASE
+ RELATION_CONCUBINE_WOMAN: "Konkubína" # todo: CONCEPT CASE
+ PLAYER_HEIR_RELATION: "[Concept('player_heir','Hráčský dědic')|E]" # todo: CONCEPT CASE
  DIARCH_RELATION: "[CHARACTER.GetDiarchTitle]"
  UNCLE: "Strýc"
  AUNT: "Teta"
@@ -635,7 +635,7 @@
  RELATION_PRISONER_HOME: "[TARGET_CHARACTER.GetShortUINamePossessive] vězeň"
  RELATION_PRISONER_AWAY: "Vězeň"
  RELATION_COURT_POSITION: "[COURT_POSITION.GetName] [COURT_POSITION.GetPositionType.GetTextIcon]"
- RELATION_COMMANDER: "[commander|E]"
+ RELATION_COMMANDER: "[Concept('commander','Velitel')|E]" # todo: CONCEPT CASE
  RELATION_LIEGE_COUNCILLOR: "[TARGET_CHARACTER.GetShortUINamePossessive] [CHARACTER.GetCouncilTitle]"
  RELATION_LIEGE_COURT_POSITION: "[CHARACTER.GetShortUINamePossessive] [COURT_POSITION.GetName] [COURT_POSITION.GetPositionType.GetTextIcon]"
  MY_VALUE_COLON: "#T $KEY$: $VALUE|V$#!"
@@ -659,40 +659,40 @@
  END_OF_COMBAT_ACTION_ITEM: "#T $WINLOSE$#!\n$BATTLENAME$\n"
  DIPLOMATIC_ITEM_TOOLTIP: "[DiplomaticItem.GetTooltip]\n[DiplomaticItem.GetTimeoutDesc]\n[DiplomaticItem.GetInteractionDesc]"
  TRAIT_TOOLTIP_IN_LIST: "[TRAIT.GetName( CHARACTER.Self )|V]"
- TRAIT_LEVEL_TRACK_DEGRADATION: "@warning_icon! #X [trait_level_track_xp|E] se bude snižovat o $CHANGE|-1$ za měsíc#!"
- TRAIT_LEVEL_TRACK_DEGRADATION_MINIMUM: "@warning_icon! #X [trait_level_track_xp|E] se bude snižovat o $CHANGE|-1$ za měsíc #weak (minimum $MINIMUM|0$)#!#!"
+ TRAIT_LEVEL_TRACK_DEGRADATION: "@warning_icon! #X [Concept('trait_level_track_xp','Zkušenosti rysu')|E] se bude snižovat o $CHANGE|-1$ za měsíc#!" # todo: CONCEPT CASE
+ TRAIT_LEVEL_TRACK_DEGRADATION_MINIMUM: "@warning_icon! #X [Concept('trait_level_track_xp','Zkušenosti rysu')|E] se bude snižovat o $CHANGE|-1$ za měsíc #weak (minimum $MINIMUM|0$)#!#!" # todo: CONCEPT CASE
  TRAIT_CAN_NOT_HAVE_CHILDREN: "@warning_icon! #X Nemůže mít děti#!"
  TRAIT_FLAG_DESC_can_not_marry: "@warning_icon! #X Nesmí uzavřít manželství#!"
- TRAIT_FLAG_DESC_can_murder_own_children: "Může použít [hostile_schemes|E] proti vlastním dětem"
- TRAIT_FLAG_DESC_agent_acceptance_25: "[agent|E] Přijetí: #P +25#!"
- TRAIT_FLAG_DESC_scheme_start_progress: "Počáteční postup [scheme|E]: #P +3#!"
- TRAIT_FLAG_DESC_offer_vassalisation_25: "[offer_vassalization|E] Přijetí: #P +25#!"
- TRAIT_FLAG_DESC_better_war_hostages: "[war_score|E] z nabídky [hostages|E]: #P +5#!\nMax. [war_score|E] z nabídky [hostages|E]: #P +10#!"
- TRAIT_FLAG_DESC_extra_scheme_success_chance_vs_rivals: "[hostile_scheme|E] [success_chance|E] proti rivalům: #P +[EmptyScope.ScriptValue('vengeful_scheme_success_chance_modifier')|0]#!"
- TRAIT_FLAG_DESC_lower_chance_of_dying_in_combat: "Pravděpodobnost smrti v [battle|E]: #P -50%#!"
- TRAIT_FLAG_DESC_higher_chance_of_dying_in_battle: "Pravděpodobnost smrti v [battle|E]: #N +100%#!"
- TRAIT_FLAG_DESC_can_offer_strong_hook_to_agents: "Může nabídnout potenciálním [agents|E] [strong_hook|E]"
- TRAIT_FLAG_DESC_is_immortal: "Nemůže zemřít stářím ani ztratit [health|E] se stárnutím"
+ TRAIT_FLAG_DESC_can_murder_own_children: "Může použít [Concept('hostile_schemes','nepřátelské intriky')|E] proti vlastním dětem" # todo: CONCEPT CASE
+ TRAIT_FLAG_DESC_agent_acceptance_25: "[Concept('agent','Spolčenec')|E] Přijetí: #P +25#!" # todo: CONCEPT CASE
+ TRAIT_FLAG_DESC_scheme_start_progress: "Počáteční postup [Concept('scheme','intrika')|E]: #P +3#!" # todo: CONCEPT CASE
+ TRAIT_FLAG_DESC_offer_vassalisation_25: "[Concept('offer_vassalization','Nabídnout vazalizaci')|E] Přijetí: #P +25#!" # todo: CONCEPT CASE
+ TRAIT_FLAG_DESC_better_war_hostages: "[Concept('war_score','Válečné skóre')|E] z nabídky [Concept('hostages','rukojmí')|E]: #P +5#!\nMax. [Concept('war_score','Válečné skóre')|E] z nabídky [Concept('hostages','rukojmí')|E]: #P +10#!" # todo: CONCEPT CASE
+ TRAIT_FLAG_DESC_extra_scheme_success_chance_vs_rivals: "[Concept('hostile_scheme','Nepřátelská intrika')|E] [Concept('success_chance','Šance na úspěch')|E] proti rivalům: #P +[EmptyScope.ScriptValue('vengeful_scheme_success_chance_modifier')|0]#!" # todo: CONCEPT CASE
+ TRAIT_FLAG_DESC_lower_chance_of_dying_in_combat: "Pravděpodobnost smrti v [Concept('battle','bitvě')|E]: #P -50%#!" # todo: CONCEPT CASE
+ TRAIT_FLAG_DESC_higher_chance_of_dying_in_battle: "Pravděpodobnost smrti v [Concept('battle','bitvě')|E]: #N +100%#!" # todo: CONCEPT CASE
+ TRAIT_FLAG_DESC_can_offer_strong_hook_to_agents: "Může nabídnout potenciálním [Concept('agents','spolčenci')|E] [Concept('strong_hook','silnou pákou')|E]" # todo: CONCEPT CASE
+ TRAIT_FLAG_DESC_is_immortal: "Nemůže zemřít stářím ani ztratit [Concept('health','zdraví')|E] se stárnutím" # todo: CONCEPT CASE
  TRAIT_FLAG_DESC_immortal_visuals: "Nebude vizuálně stárnout"
- TRAIT_FLAG_DESC_immortal_fertility: "[fertility|E] závisí na vizuálním věku [character|E]"
+ TRAIT_FLAG_DESC_immortal_fertility: "[Concept('fertility','Plodnost')|E] závisí na vizuálním věku [Concept('character','postavě')|E]" # todo: CONCEPT CASE
  TRAIT_FLAG_DESC_immortal_incapability: "Nemůže se stát [GetTrait('incapable').GetName( GetNullCharacter )]"
  TRAIT_FLAG_DESC_nomadic_philosophy_maa: "[SelectLocalization( IsNomad( GetPlayer ), 'blank_line', 'trait_nomadic_philosophy_maa_desc' )]"
  trait_nomadic_philosophy_maa_desc: "Může verbovat [GetMaA('heavy_horse_archers').GetName], [GetMaA('horse_archers').GetName], [GetMaA('nomad_lancers').GetName] a [GetMaA('steppe_raiders').GetName] i když není [GetGovernment( 'nomad_government' ).GetName]"
  TRAIT_FLAG_DESC_nomadic_philosophy_introduce_heir: "[SelectLocalization( IsNomad( GetPlayer ), 'blank_line', 'trait_introduce_heir_desc' )]"
- trait_introduce_heir_desc: "Umožňuje [GetDecisionWithKey('mpo_decision_introduce_heir').GetName] [decision|E]"
+ trait_introduce_heir_desc: "Umožňuje [GetDecisionWithKey('mpo_decision_introduce_heir').GetName] [Concept('decision','rozhodnutí')|E]" # todo: CONCEPT CASE
  TRAIT_FLAG_DESC_can_recruit_open_specialist_trait: "$culture_parameter_can_recruit_open_specialist$"
  TRAIT_FLAG_DESC_unlock_voluntary_laampdom_trait: "$culture_parameter_unlock_voluntary_laampdom$"
- TRAIT_FLAG_DESC_no_demand_conversion_trait: "Nemůže požadovat konverzi, pokud nemá [GetTrait('zealous').GetName( GetNullCharacter )] [trait|E]"
- TRAIT_FLAG_DESC_nomadic_philosophy_inheritance_trait: "Pokud se [GetGovernment( 'nomad_government' ).GetName] [character|E] usadí mimo [the_great_steppe|E], zdědí tento [trait|E] pouze jejich [children|E]."
+ TRAIT_FLAG_DESC_no_demand_conversion_trait: "Nemůže požadovat konverzi, pokud nemá [GetTrait('zealous').GetName( GetNullCharacter )] [Concept('trait','rys')|E]" # todo: CONCEPT CASE
+ TRAIT_FLAG_DESC_nomadic_philosophy_inheritance_trait: "Pokud se [GetGovernment( 'nomad_government' ).GetName] [Concept('character','postavou')|E] usadí mimo [Concept('the_great_steppe','velké stepi')|E], zdědí tento [Concept('trait','rys')|E] pouze jejich [Concept('children','děti')|E]." # todo: CONCEPT CASE
  TRAIT_FLAG_DESC_nomadic_philosophy_cheaper_culture_convert: "[SelectLocalization( IsNomad( GetPlayer ), 'blank_line', 'nomadic_philosophy_cheaper_culture_convert_desc' )]"
  TRAIT_FLAG_DESC_nomadic_philosophy_cheaper_to_hybridize: "[SelectLocalization( IsNomad( GetPlayer ), 'blank_line', 'nomadic_philosophy_cheaper_to_hybridize_desc' )]"
  TRAIT_FLAG_DESC_nomadic_philosophy_easier_to_hybridize: "[SelectLocalization( IsNomad( GetPlayer ), 'blank_line', 'nomadic_philosophy_easier_to_hybridize' )]"
- nomadic_philosophy_cheaper_culture_convert_desc: "[GetDecisionWithKey('convert_to_local_culture_decision').GetName] [decision|E] Náklady: [prestige_i]#P -75%#!"
- nomadic_philosophy_cheaper_to_hybridize_desc: "Náklady na vytvoření hybridní [culture|E]: [prestige_i]#P -75%#!"
- nomadic_philosophy_easier_to_hybridize: "Vytvoření hybridní [culture|E] vyžaduje #V o 50% méně# [cultural_acceptance|E]#!"
- TRAIT_BLOCK_INHERITANCE: "@warning_icon! #X Nemůže dědit [titles|E]#!"
+ nomadic_philosophy_cheaper_culture_convert_desc: "[GetDecisionWithKey('convert_to_local_culture_decision').GetName] [Concept('decision','Rozhodnutí')|E] Náklady: [prestige_i]#P -75%#!" # todo: CONCEPT CASE
+ nomadic_philosophy_cheaper_to_hybridize_desc: "Náklady na vytvoření hybridní [Concept('culture','kulturu')|E]: [prestige_i]#P -75%#!" # todo: CONCEPT CASE
+ nomadic_philosophy_easier_to_hybridize: "Vytvoření hybridní [Concept('culture','kultura')|E] vyžaduje #V o 50% méně# [Concept('cultural_acceptance','kulturní přijetí')|E]#!" # todo: CONCEPT CASE
+ TRAIT_BLOCK_INHERITANCE: "@warning_icon! #X Nemůže dědit [Concept('titles','tituly')|E]#!" # todo: CONCEPT CASE
  TRAIT_FLAVOR_DESC: "$DESC|F$"
- FERTILITY_COLON: "[fertility|E]: $VALUE|V$"
+ FERTILITY_COLON: "[Concept('fertility','Plodnost')|E]: $VALUE|V$" # todo: CONCEPT CASE
  BIRTH_DATE: "Narozen dne [DATE.GetStringShort|V]"
  YEARS_COUNT_SINGULAR: "#V 1 rok#!"
  YEARS_COUNT_PLURAL: "#V $VALUE$ let#!"
@@ -718,8 +718,8 @@
  skill_level_average: "průměrný"
  skill_level_good: "dobrý"
  skill_level_excellent: "vynikající"
- MY_REALM_LABEL: "Váš [realm|E]: #V [TITLE.GetName]#!"
- REALM_LABEL: "[realm|E]: #V [TITLE.GetName]#!"
+ MY_REALM_LABEL: "Váš [Concept('realm','panství')|E]: #V [TITLE.GetName]#!" # todo: CONCEPT CASE
+ REALM_LABEL: "[Concept('realm','Panství')|E]: #V [TITLE.GetName]#!" # todo: CONCEPT CASE
  CHARACTER_PORTRAIT_TOOLTIP: "[Character.GetFullNameNicknamedNoTooltip]\n[Character.GetDebugTooltip]"
  TOOLTIP_HEADER: "#T $NAME$#!"
  ATTACKERS: "#attacker_color Útočníci#!"
@@ -762,21 +762,21 @@
  VALUE_BREAKDOWN_INDICATOR_NEUTRAL_NONE: "@change_none_neutral!"
  GOVERNMENT_TYPE_DESCRIPTION: "[GovernmentType.GetRuleInfo][GovernmentType.GetFlagInfo][GovernmentType.GetDescription]"
  GOVERNMENT_FLAG_INFO: "$EFFECT_LIST_BULLET$ $FLAG$"
- GOVERNMENT_IGNORED_DEVELOPMENT: "$EFFECT_LIST_BULLET$ [development|E] ve vlastněných [counties|E] se ignoruje"
- government_custom_piety_level: "$EFFECT_LIST_BULLET$ Nejvyšší [piety_level|E] je $PIETY_LEVEL|L$" # todo: NEW TRANSLATION
- government_custom_prestige_level: "$EFFECT_LIST_BULLET$ Nejvyšší [prestige_level|E] je $PRESTIGE_LEVEL|L$" # todo: NEW TRANSLATION
- government_custom_influence_level: "$EFFECT_LIST_BULLET$ Nejvyšší [influence_level|E] je $INFLUENCE_LEVEL|L$" # todo: NEW TRANSLATION
- government_custom_merit_level: "$EFFECT_LIST_BULLET$ Nejvyšší [merit_level|E] je $MERIT_LEVEL|L$" # todo: NEW TRANSLATION
+ GOVERNMENT_IGNORED_DEVELOPMENT: "$EFFECT_LIST_BULLET$ [Concept('development','Rozvoj')|E] ve vlastněných [Concept('counties','hrabstvích')|E] se ignoruje" # todo: CONCEPT CASE
+ government_custom_piety_level: "$EFFECT_LIST_BULLET$ Nejvyšší [Concept('piety_level','úroveň oddanosti')|E] je $PIETY_LEVEL|L$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ government_custom_prestige_level: "$EFFECT_LIST_BULLET$ Nejvyšší [Concept('prestige_level','úroveň slávy')|E] je $PRESTIGE_LEVEL|L$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ government_custom_influence_level: "$EFFECT_LIST_BULLET$ Nejvyšší [Concept('influence_level','úroveň vlivu')|E] je $INFLUENCE_LEVEL|L$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ government_custom_merit_level: "$EFFECT_LIST_BULLET$ Nejvyšší [Concept('merit_level','hodnost zásluh')|E] je $MERIT_LEVEL|L$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  DEVELOPMENT_CURRENT_LEVEL: "#T Úroveň rozvoje: $LEVEL|+0$ #!"
- DEVELOPMENT_PROGRESS_TO_LEVEL: "[development_growth|E]: $CURRENT|V0$/$THRESHOLD|V0$"
+ DEVELOPMENT_PROGRESS_TO_LEVEL: "[Concept('development_growth','Růst rozvoje')|E]: $CURRENT|V0$/$THRESHOLD|V0$" # todo: CONCEPT CASE
  DEVELOPMENT_PROGRESS: "Měsíční změna"
  CONTROL_CURRENT_LEVEL: "#T Kontrola hrabství: $VALUE|1$/100% #!"
  CONTROL_PROGRESS: "Měsíční nárůst"
  BASE_FACTOR_COLON: "Základ: $VALUE|%0+=$"
  BASE_AI_WILLINGNESS: "Základní ochota: $VALUE|0+=$"
  BASE_AI_RELUCTANCE: "Základní neochota: $VALUE|0+=$"
- COUNTY_OPINION_SAME_CULTURE: "Stejná [culture|E]"
- COUNTY_OPINION_DIFFERENT_CULTURE: "[cultural_acceptance|E]"
+ COUNTY_OPINION_SAME_CULTURE: "Stejná [Concept('culture','kultura')|E]" # todo: CONCEPT CASE
+ COUNTY_OPINION_DIFFERENT_CULTURE: "[Concept('cultural_acceptance','Kulturní přijetí')|E]" # todo: CONCEPT CASE
  COUNTY_OPINION_DIFFERENT_CULTURE_KNOWS_LANGUAGE: " #weak (o [GetDefine('NCharacterOpinion', 'CULTURE_ACCEPTANCE_MULT_KNOWS_LANGUAGE')|%0] méně, protože [CHARACTER.GetShortUIName] umí mluvit [CULTURE.GetLanguage.GetName])#!"
  BULLET_WITH_TAB: "    • "
  BULLET: "$EFFECT_LIST_BULLET$"
@@ -815,15 +815,15 @@
  BASE_VALUE_FORMAT_DECIMALS: "$KEY$: $VALUE|V2$"
  BASE_VALUE_FORMAT_DECIMALS_PLUS_NEGATIVE: "$KEY$: #N +$VALUE|2$#!"
  BASE_VALUE_FORMAT_DECIMALS_MINUS_POSITIVE: "$KEY$: #P $VALUE|2$#!"
- learning_law_cost_tooltip: "[learning|E] dovednost"
- poor_learning_law_cost_tooltip: "Špatné [learning|E]"
+ learning_law_cost_tooltip: "[Concept('learning','Učenost')|E] dovednost" # todo: CONCEPT CASE
+ poor_learning_law_cost_tooltip: "Špatné [Concept('learning','učenost')|E]" # todo: CONCEPT CASE
  rite_legalism_law_cost_tooltip: "Obřad legalismu"
  rite_pronouncements_law_cost_tooltip: "Náboženský zákon"
  rite_primitivism_law_cost_tooltip: "Přirozený primitivismus"
- clan_government_cost_tooltip: "Tvůj typ [government|E] je [GetGovernment('clan_government').GetName]"
+ clan_government_cost_tooltip: "Tvůj typ [Concept('government','vláda')|E] je [GetGovernment('clan_government').GetName]" # todo: CONCEPT CASE
  character_modifiers_law_cost_tooltip: "Modifikátory postavy"
  SCRIPTED_COST_HEADER: "#S $TEXT$#!"
- SCRIPTED_COST_NO_DYNAST: "Pouze [dynast|E] může utrácet [dynasty_prestige|E]"
+ SCRIPTED_COST_NO_DYNAST: "Pouze [Concept('dynast','hlava dynastie')|E] může utrácet [Concept('dynasty_prestige','věhlas')|E]" # todo: CONCEPT CASE
  GAME_DATE_STRING: "$DAY$ $MONTH$, $YEAR$"
  GAME_DATE_STRING_SHORT: "$DAY$ $MONTH_SHORT$ $YEAR$$ERA_BCE$"
  GAME_DATE_STRING_SHORT_NO_YEAR: "$DAY$ $MONTH_SHORT$"
@@ -837,7 +837,7 @@
  CHARACTER_ARMY_COMPOSITION_NAME: "Armáda [CHARACTER.GetShortUINameNotMe]"
  ARMY_ICON_HEADER: "#T Armády na tomto místě #!"
  BREAKDOWN_FORMAT_REALM_SIZE_PRESTIGE_COST: "$KEY$: $VALUE|=-0$"
- realm_size: "[realm_size|E]"
+ realm_size: "[Concept('realm_size','Velikost panství')|E]" # todo: CONCEPT CASE
  RENAME_STRING_TOO_LONG: "@warning_icon! #X Jméno je příliš dlouhé#!"
  RENAME_STRING_TOO_LONG_NAMED: "@warning_icon! #X $NAME$ je příliš dlouhé#!"
  RENAME_STRING_EMPTY: "@warning_icon! #X Jméno je prázdné#!"
@@ -863,23 +863,23 @@
  CURRENT_SITUATION_SUGGESTIONS_EMPTY: "Žádné dostupné"
  CURRENT_SITUATION_HEADER: "Současná situace"
  MARK_ALL_READ: "#T Označit vše jako přečtené#!" # todo: NEW TRANSLATION
- CHARACTER_INTERACTION_BLACKMAIL_NO_SECRET: "Žádné [secret|E], které lze použít pro [blackmail|E]"
- CHARACTER_INTERACTION_BLACKMAIL_ALREADY_STRONG_HOOK: "[CHARACTER.GetShortUIName|U] již [CharHaveHas(CHARACTER)] a [strong_hook|E] na [TARGET_CHARACTER.GetShortUIName|U]"
+ CHARACTER_INTERACTION_BLACKMAIL_NO_SECRET: "Žádné [Concept('secret','tajemství')|E], které lze použít pro [Concept('blackmail','vydírání')|E]" # todo: CONCEPT CASE
+ CHARACTER_INTERACTION_BLACKMAIL_ALREADY_STRONG_HOOK: "[CHARACTER.GetShortUIName|U] již [CharHaveHas(CHARACTER)] a [Concept('strong_hook','silná páka')|E] na [TARGET_CHARACTER.GetShortUIName|U]" # todo: CONCEPT CASE
  RESET_DISMISSED_BUTTON_TEXT: "Obnovit"
  RESET_DISMISSED_TOOLTIP: "#T Obnovit#!\nVrátit #EMP $CURRENT_SITUATION_HEADER$#! položky a upozornění, která jste odstranili.\n\n#I Klikněte pro obnovení seznamu#!"
- CHARACTER_INTERACTION_SAME_REALM_AS: "Musí být součástí vašeho [realm|E]"
- NOT_CHARACTER_INTERACTION_SAME_REALM_AS: "Nesmí být součástí vašeho [realm|E]"
- CHARACTER_INTERACTION_NOT_ALLOWED_IN_VARANGIAN_GUARD: "Nesmí sloužit jako [knight|E] v cílovém [court|E]"
+ CHARACTER_INTERACTION_SAME_REALM_AS: "Musí být součástí vašeho [Concept('realm','panství')|E]" # todo: CONCEPT CASE
+ NOT_CHARACTER_INTERACTION_SAME_REALM_AS: "Nesmí být součástí vašeho [Concept('realm','panství')|E]" # todo: CONCEPT CASE
+ CHARACTER_INTERACTION_NOT_ALLOWED_IN_VARANGIAN_GUARD: "Nesmí sloužit jako [Concept('knight','rytíř')|E] v cílovém [Concept('court','dvoře')|E]" # todo: CONCEPT CASE
  SET_CHARACTER_CONTROLLER_TITLE: "$TITLE$"
  SET_CHARACTER_CONTROLLER_TEXT: "$TEXT$"
- TRAIT_FLAG_DESC_can_dismiss_hooks_interaction: "Odemkne [dismiss_strong_hook_interaction|E]"
- TRAIT_FLAG_DESC_can_abandon_hooks_interaction: "Odemkne [abandon_hook_interaction|E]"
- TRAIT_FLAG_DESC_can_duel_criminals_interaction: "Odemkne [force_duel_criminals_interaction|E]"
- TRAIT_FLAG_DESC_can_duel_anyone_interaction: "Odemkne [force_duel_anyone_interaction|E]"
- TRAIT_FLAG_DESC_can_improve_hostile_schemes_decision: "Odemkne [deceitful_progress_hostile_schemes_decision|E]"
- TRAIT_FLAG_DESC_can_improve_capital_decision: "Odemkne [diligent_development_focus_decision|E]"
- TRAIT_FLAG_DESC_can_accelerate_schemes_decision: "Odemkne [impatient_rushing_all_schemes_decision|E]"
- TRAIT_FLAG_DESC_can_fabricate_hooks_on_rivals: "Umožňuje [GetScheme('fabricate_hook').GetTypeName] [scheme|E] proti vašim [rivals|E]"
+ TRAIT_FLAG_DESC_can_dismiss_hooks_interaction: "Odemkne [Concept('dismiss_strong_hook_interaction','interakce $dismiss_strong_hook_interaction$')|E]" # todo: CONCEPT CASE
+ TRAIT_FLAG_DESC_can_abandon_hooks_interaction: "Odemkne [Concept('abandon_hook_interaction','interakce $abandon_hook_interaction$')|E]" # todo: CONCEPT CASE
+ TRAIT_FLAG_DESC_can_duel_criminals_interaction: "Odemkne [Concept('force_duel_criminals_interaction','interakce $force_duel_criminals_interaction$')|E]" # todo: CONCEPT CASE
+ TRAIT_FLAG_DESC_can_duel_anyone_interaction: "Odemkne [Concept('force_duel_anyone_interaction','interakce $force_duel_anyone_interaction$')|E]" # todo: CONCEPT CASE
+ TRAIT_FLAG_DESC_can_improve_hostile_schemes_decision: "Odemkne [Concept('deceitful_progress_hostile_schemes_decision','rozhodnutí $deceitful_progress_hostile_schemes_decision$')|E]" # todo: CONCEPT CASE
+ TRAIT_FLAG_DESC_can_improve_capital_decision: "Odemkne [Concept('diligent_development_focus_decision','rozhodnutí $diligent_development_focus_decision$')|E]" # todo: CONCEPT CASE
+ TRAIT_FLAG_DESC_can_accelerate_schemes_decision: "Odemkne [Concept('impatient_rushing_all_schemes_decision','rozhodnutí $impatient_rushing_all_schemes_decision$')|E]" # todo: CONCEPT CASE
+ TRAIT_FLAG_DESC_can_fabricate_hooks_on_rivals: "Umožňuje [GetScheme('fabricate_hook').GetTypeName] [Concept('scheme','intrika')|E] proti vašim [rivals|E]" # todo: CONCEPT CASE
  INVALID: "Neplatné"
  RENAME_STRING_STARTS_WITH_SPACE: "@warning_icon! #X Jméno začíná mezerou#!"
  RENAME_STRING_STARTS_WITH_SPACE_NAMED: "@warning_icon! #X $NAME$ začíná mezerou#!"
@@ -924,61 +924,61 @@
  compare_date_trigger_operator_less_or_equal: "v nebo před"
  compare_date_trigger_operator_equal: "dne"
  compare_date_trigger_operator_not_equal: "není dne"
- COURT_CONCEPT: "[court|E]"
- CAMP: "[camp|E]"
- CAMP_BUILDINGS: "[camp_buildings|E]"
- DUNGEON_CONCEPT: "[dungeon|E]"
- ESTATE: "[estate|E]"
- ESTATE_BUILDINGS: "[estate_buildings|E]"
- GOVERNORSHIP: "[governorship|E]"
- FOLLOWER: "[follower|E]"
- FOLLOWER_PLURAL: "[followers|E]"
+ COURT_CONCEPT: "[Concept('court','Dvůr')|E]" # todo: CONCEPT CASE
+ CAMP: "[Concept('camp','Tábor')|E]" # todo: CONCEPT CASE
+ CAMP_BUILDINGS: "[Concept('camp_buildings','Vylepšení tábora')|E]" # todo: CONCEPT CASE
+ DUNGEON_CONCEPT: "[Concept('dungeon','Žalář')|E]" # todo: CONCEPT CASE
+ ESTATE: "[Concept('estate','Statek')|E]" # todo: CONCEPT CASE
+ ESTATE_BUILDINGS: "[Concept('estate_buildings','Budovy statků')|E]" # todo: CONCEPT CASE
+ GOVERNORSHIP: "[Concept('governorship','Guvernérství')|E]" # todo: CONCEPT CASE
+ FOLLOWER: "[Concept('follower','Družiník')|E]" # todo: CONCEPT CASE
+ FOLLOWER_PLURAL: "[Concept('followers','Družiníci')|E]" # todo: CONCEPT CASE
  ADVENTURER: "[SelectLocalization( ROOT.Char.GetGovernment.IsValid(), 'GOVERNMENT_ADJECTIVE_ICON_ADVENTURER', '' )] [ROOT.Char.Custom('GetAdventurerType')]"
- TASK_CONTRACT: "[task_contract|E]"
- TASK_CONTRACT_TIER: "[task_contract_tier|E]"
- GOVERNANCE_ISSUE: "[governance_issue|E]"
- GOVERNANCE_ISSUE_TIER: "[governance_issue_tier|E]"
- SETTLEMENT_ISSUE: "[settlement_issue|E]"
- SETTLEMENT_ISSUE_TIER: "[settlement_issue_tier|E]"
- MANDALA_RITUAL: "[mandala_ritual|E]" # todo: NEW TRANSLATION
- MANDALA_RITUAL_TIER: "[mandala_ritual_tier|E]" # todo: NEW TRANSLATION
+ TASK_CONTRACT: "[Concept('task_contract','Zakázka')|E]" # todo: CONCEPT CASE
+ TASK_CONTRACT_TIER: "[Concept('task_contract_tier','Úroveň $TASK_CONTRACT_CONTRACT$')|E]" # todo: CONCEPT CASE
+ GOVERNANCE_ISSUE: "[Concept('governance_issue','$TASK_CONTRACT_ISSUE$')|E]" # todo: CONCEPT CASE
+ GOVERNANCE_ISSUE_TIER: "[Concept('governance_issue_tier','Úroveň $TASK_CONTRACT_ISSUE$')|E]" # todo: CONCEPT CASE
+ SETTLEMENT_ISSUE: "[Concept('settlement_issue','Záležitost osídlení')|E]" # todo: CONCEPT CASE
+ SETTLEMENT_ISSUE_TIER: "[Concept('settlement_issue_tier','Úroveň záležitosti osídlení')|E]" # todo: CONCEPT CASE
+ MANDALA_RITUAL: "[Concept('mandala_ritual','Rituál mandaly')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MANDALA_RITUAL_TIER: "[Concept('mandala_ritual_tier','Úroveň rituálu mandaly')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  OTHER_TASK_CONTRACT_TIERS: "[GetPlayer.Custom('GetTaskContractTierName')]" # todo: NEW TRANSLATION
- COURT_POISTION: "[court_position|E]"
- OFFICER: "[officer|E]"
- OFFICER_PLURAL: "[officers|E]"
- COURT_POSITION_PLURAL: "[court_positions|E]"
- NOBLE_FAMILY: "[SelectLocalization( ROOT.Char.GetGovernment.IsValid(), 'GOVERNMENT_ADJECTIVE_ICON', '' )] [noble_family|E]"
+ COURT_POISTION: "[Concept('court_position','Dvorský úřad')|E]" # todo: CONCEPT CASE
+ OFFICER: "[Concept('officer','Důstojník')|E]" # todo: CONCEPT CASE
+ OFFICER_PLURAL: "[Concept('officers','Důstojníci')|E]" # todo: CONCEPT CASE
+ COURT_POSITION_PLURAL: "[Concept('court_positions','Dvorské úřady')|E]" # todo: CONCEPT CASE
+ NOBLE_FAMILY: "[SelectLocalization( ROOT.Char.GetGovernment.IsValid(), 'GOVERNMENT_ADJECTIVE_ICON', '' )] [Concept('noble_family','Šlechtická rodina')|E]" # todo: CONCEPT CASE
  ESTATE_FAMILY: "[Character.GetHouse.GetBaseName]"
  CAMP_LEADER: "[Character.GetFirstNamePossessive]"
  NOMAD: "[SelectLocalization( ROOT.Char.GetGovernment.IsValid(), 'GOVERNMENT_ADJECTIVE_ICON_NOMAD', '' )]"
  HERDER: "[SelectLocalization( ROOT.Char.GetGovernment.IsValid(), 'GOVERNMENT_ADJECTIVE_ICON', '' )]"
- KURULTAI: "[kurultai|E]"
+ KURULTAI: "[Concept('kurultai','Kurultaj')|E]" # todo: CONCEPT CASE
  CONFIRM_COMMAND_TITLE: "Potvrdit akci"
  CONFIRM_COMMAND_TEXT: "Opravdu to chcete udělat?"
  CONFIRM_COMMAND_ACCEPT: "Potvrdit"
- secrecy.num_agents: "Počet [agents|E]"
- secrecy.scheme_owner.diplomacy: "Vaše [diplomacy|E]"
- secrecy.scheme_owner.martial: "Vaše [martial|E]"
- secrecy.scheme_owner.stewardship: "Vaše [stewardship|E]"
- secrecy.scheme_owner.intrigue: "Vaše [intrigue|E]"
- secrecy.scheme_owner.learning: "Vaše [learning|E]"
- secrecy.scheme_owner.prowess: "Vaše [prowess|E]"
+ secrecy.num_agents: "Počet [Concept('agents','spolčenci')|E]" # todo: CONCEPT CASE
+ secrecy.scheme_owner.diplomacy: "Vaše [Concept('diplomacy','diplomacie')|E]" # todo: CONCEPT CASE
+ secrecy.scheme_owner.martial: "Vaše [Concept('martial','válečnictví')|E]" # todo: CONCEPT CASE
+ secrecy.scheme_owner.stewardship: "Vaše [Concept('stewardship','správcovství')|E]" # todo: CONCEPT CASE
+ secrecy.scheme_owner.intrigue: "Vaše [Concept('intrigue','pletichářství')|E]" # todo: CONCEPT CASE
+ secrecy.scheme_owner.learning: "Vaše [Concept('learning','učenost')|E]" # todo: CONCEPT CASE
+ secrecy.scheme_owner.prowess: "Vaše [Concept('prowess','udatnost')|E]" # todo: CONCEPT CASE
  realm_chart_perk_same_realm_secrecy: "$realm_charts_perk_name$"
- secrecy.scheme_owner.spymaster.disrupt_schemes: "[spymaster|E] pověřený [disrupt_schemes|E]"
+ secrecy.scheme_owner.spymaster.disrupt_schemes: "[Concept('spymaster','Špehmistr')|E] pověřený [Concept('disrupt_schemes','$task_disrupt_schemes$')|E]" # todo: CONCEPT CASE
  tooltipped_camp_purpose_wanderers: "[GetLaw('camp_purpose_wanderers').GetName]"
  tooltipped_camp_purpose_mercenaries: "[GetLaw('camp_purpose_mercenaries').GetName]"
  tooltipped_camp_purpose_scholars: "[GetLaw('camp_purpose_scholars').GetName]"
  tooltipped_camp_purpose_explorers: "[GetLaw('camp_purpose_explorers').GetName]"
  tooltipped_camp_purpose_brigands: "[GetLaw('camp_purpose_brigands').GetName]"
  tooltipped_camp_purpose_legitimists: "[GetLaw('camp_purpose_legitimists').GetName]"
- GAIN_FROM_ALL_TRIBUTARIES: "[tributaries|E]"
+ GAIN_FROM_ALL_TRIBUTARIES: "[Concept('tributaries','Tributáři')|E]" # todo: CONCEPT CASE
  GAIN_FROM_TRIBUTARY: "[CHARACTER.GetShortUIName]"
- LOSS_TO_SUZERAIN: "Svěřeno [suzerain|E]"
- YURT: "[yurt|E]"
- YURT_BUILDINGS: "[yurt_buildings|E]"
- BASE_HERD_CAPACITY: "[title_tier|E]"
+ LOSS_TO_SUZERAIN: "Svěřeno [Concept('suzerain','suzerén')|E]" # todo: CONCEPT CASE
+ YURT: "[Concept('yurt','Kočovné hlavní sídlo')|E]" # todo: CONCEPT CASE
+ YURT_BUILDINGS: "[Concept('yurt_buildings','Budovy jurty')|E]" # todo: CONCEPT CASE
+ BASE_HERD_CAPACITY: "[Concept('title_tier','Úroveň')|E]" # todo: CONCEPT CASE
  domicile_header_faith_culture: "[Domicile.GetFaith.GetAdjective] [Domicile.GetCulture.GetCollectiveNoun]"
- HERDER_VASSAL_HERD: "Stádo od [herder|E]"
+ HERDER_VASSAL_HERD: "Stádo od [Concept('herder','pastevce')|E]" # todo: CONCEPT CASE
  HERDER_VASSAL_COUNTY: "Stádo z [County.GetName]"
  TITLE_NOMAD_NAME_CULTURE_HEAD: "$CULTURE_COLLECTIVE$"
  TITLE_NOMAD_NAME_HOUSE_HEAD: "$DYNASTY_NAME$ $CULTURE_COLLECTIVE$"
@@ -990,25 +990,25 @@
  TITLE_NOMAD_NAME_HOUSE_HEAD_WITH_UNDERLYING_NAME_DEFINITE_FORM: "$DYNASTY_NAME$ $CULTURE_COLLECTIVE$ #F ($BASE_NAME$) #!"
  MILITARY_STRENGTH: "Vojenská síla:"
  COMBINED_MILITARY_STRENGTH: "Souhrnná vojenská síla:"
- BREAKDOWN_ENTRY_GOLD_TO_TREASURY: "Do [treasury|E]" # todo: NEW TRANSLATION
+ BREAKDOWN_ENTRY_GOLD_TO_TREASURY: "Do [Concept('treasury','pokladnice')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  BREAKDOWN_ENTRY_BASE_TREASURY: "Příspěvek z daní" # todo: NEW TRANSLATION
- BREAKDOWN_ENTRY_TOTAL_TREASURY: "Celkem [treasury|E]" # todo: NEW TRANSLATION
- BREAKDOWN_ENTRY_TO_LIEGE: "Pro [liege|E]" # todo: NEW TRANSLATION
- BREAKDOWN_ENTRY_TREASURY_FROM_LIEGE: "[treasury_vassal_development|E]" # todo: NEW TRANSLATION
- BREAKDOWN_ENTRY_TREASURY_TO_VASSALS: "[treasury_vassal_development|E]" # todo: NEW TRANSLATION
+ BREAKDOWN_ENTRY_TOTAL_TREASURY: "Celkem [Concept('treasury','pokladnice')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ BREAKDOWN_ENTRY_TO_LIEGE: "Pro [Concept('liege','lenního pána')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ BREAKDOWN_ENTRY_TREASURY_FROM_LIEGE: "[Concept('treasury_vassal_development','Rozvoj vazalů')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ BREAKDOWN_ENTRY_TREASURY_TO_VASSALS: "[Concept('treasury_vassal_development','Rozvoj vazalů')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  BREAKDOWN_ENTRY_OTHER_SOURCES: "Jiné zdroje" # todo: NEW TRANSLATION
  BREAKDOWN_ENTRY_VASSAL_SALARY_EXPENSE: "[CHARACTER.GetName]" # todo: NEW TRANSLATION
- BREAKDOWN_ENTRY_TREASURY_GOLD_INCOME: "Konverze [treasury|E]" # todo: NEW TRANSLATION
- BREAKDOWN_ENTRY_TREASURY_MINISTRY_BUDGET: "[treasury_ministry_budget|E]" # todo: NEW TRANSLATION
- BREAKDOWN_ENTRY_TREASURY_MINISTRY_BUDGET_BASE: "[treasury_budget_base_rate_short|E]" # todo: NEW TRANSLATION
+ BREAKDOWN_ENTRY_TREASURY_GOLD_INCOME: "Konverze [Concept('treasury','pokladnice')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ BREAKDOWN_ENTRY_TREASURY_MINISTRY_BUDGET: "[Concept('treasury_ministry_budget','Rozpočet ministerstva')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ BREAKDOWN_ENTRY_TREASURY_MINISTRY_BUDGET_BASE: "[Concept('treasury_budget_base_rate_short','Základní sazba')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  BREAKDOWN_ENTRY_TREASURY_MINISTRY_BUDGET_MULT: "Násobitel rozpočtu" # todo: NEW TRANSLATION
  BREAKDOWN_ENTRY_TREASURY_MINISTRY_BUDGET_VASSAL: "[CHARACTER.GetPrimaryTitle.GetName]" # todo: NEW TRANSLATION
- BREAKDOWN_ENTRY_TREASURY_SALARY_BUDGET: "[treasury_salary_budget|E]" # todo: NEW TRANSLATION
- BREAKDOWN_ENTRY_TREASURY_SALARY_BUDGET_BASE: "[treasury_budget_base_rate_short|E]" # todo: NEW TRANSLATION
+ BREAKDOWN_ENTRY_TREASURY_SALARY_BUDGET: "[Concept('treasury_salary_budget','Rozpočet na platy')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ BREAKDOWN_ENTRY_TREASURY_SALARY_BUDGET_BASE: "[Concept('treasury_budget_base_rate_short','Základní sazba')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  BREAKDOWN_ENTRY_TREASURY_SALARY_BUDGET_MULT: "Násobitel platů" # todo: NEW TRANSLATION
  BREAKDOWN_ENTRY_TREASURY_SALARY_BUDGET_VASSAL: "[CHARACTER.GetName]" # todo: NEW TRANSLATION
- BREAKDOWN_ENTRY_TREASURY_MILITARY_BUDGET: "[treasury_military_budget|E]" # todo: NEW TRANSLATION
- BREAKDOWN_ENTRY_TREASURY_MILITARY_BUDGET_BASE: "[treasury_budget_base_rate_short|E]" # todo: NEW TRANSLATION
+ BREAKDOWN_ENTRY_TREASURY_MILITARY_BUDGET: "[Concept('treasury_military_budget','Vojenský rozpočet')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ BREAKDOWN_ENTRY_TREASURY_MILITARY_BUDGET_BASE: "[Concept('treasury_budget_base_rate_short','Základní sazba')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  BREAKDOWN_ENTRY_TREASURY_MILITARY_BUDGET_MULT: "Násobitel rozpočtu" # todo: NEW TRANSLATION
  BREAKDOWN_ENTRY_TREASURY_MILITARY_BUDGET_VASSAL: "[CHARACTER.GetPrimaryTitle.GetName]" # todo: NEW TRANSLATION
  CANT_TICK_UNPAUSED: "Tohle nelze provést, když hra není pozastavena." # todo: NEW TRANSLATION

@@ -2,7 +2,7 @@
  ONMAP_ARMY_UNIT_TOOLTIP: "$NAME$ ($CONTROLLER$)\n($MORALE|V$%)(morálka)\nPosily/měsíc: $REINFORCEMENTS|V$\nBranci: $LEVIES$ / $MAX_LEVIES|V$\nProfesní jednotky: $MEN_AT_ARMS$ / $MAX_MEN_AT_ARMS|V$\nRegimenty: $REGIMENTS|V$\nÚdržba: $MAINTENANCE$\nZásoby: $SUPPLY|V$ / $MAX_SUPPLY|V$\nLimit zásob: $SUPPLY_LIMIT|V$"
  UNIT_WILL_ARRIVE: "$NAME$, [DATE.GetTimeToDate] zbývá ([DATE.GetStringShort|V])"
  UNIT_WILL_ARRIVE_RETREAT: "Ústup do $NAME$, [DATE.GetTimeToDate] zbývá ([DATE.GetStringShort|V])"
- UNIT_WILL_MOVEMENT_LOCK: "[movement_lock|E] za [DATE.GetTimeToDate]"
+ UNIT_WILL_MOVEMENT_LOCK: "[Concept('movement_lock','Uzamčení pohybu')|E] za [DATE.GetTimeToDate]" # todo: CONCEPT CASE
  UNIT_IS_EMBARKED: "Na palubě"
  UNIT_WILL_EMBARK: "Naloží se"
  UNIT_IS_EMBARKING: "Naloďuje se"
@@ -19,13 +19,13 @@
  CHARACTER_ACTIVITY_TOOLTIP: "[CHARACTER.GetUIName] se účastní této aktivity"
  CHARACTER_AT_LOCATION: "V [PROVINCE.GetName|V]"
  CHARACTER_AT_ACTIVITY: "Účastní se [ACTIVITY.GetName|V] v [PROVINCE.GetName|V]"
- CHARACTER_AT_ARMY: "Velí [army|E] v [PROVINCE.GetName|V]"
+ CHARACTER_AT_ARMY: "Velí [Concept('army','armáda')|E] v [PROVINCE.GetName|V]" # todo: CONCEPT CASE
  CHARACTER_TRAVEL_TO_LOCATION: "Cestuje do [PROVINCE.GetName|V]"
  CHARACTER_IMPRISONED_AT: "Uvězněn u [CHARACTER.GetUIName|V] v [PROVINCE.GetName|V]"
  CHARACTER_AT_COURT_VISITING: "Navštěvuje [CHARACTER.GetShortUINamePossessive|V] [CHARACTER.Custom('GetCourtConcept')] v [PROVINCE.GetName|V]"
  CHARACTER_AT_COURT: "Na [CHARACTER.GetShortUINamePossessive|V] [CHARACTER.Custom('GetCourtConcept')] v [PROVINCE.GetName|V]"
  CHARACTER_TRAVELING_OWNER: "V [PROVINCE.GetName|V] na cestách"
- CHARACTER_TRAVELING_ENTOURAGE: "V [TRAVEL_PLAN.GetData.GetOwner.GetShortUINamePossessive|V] [entourage|E] v [PROVINCE.GetName|V]"
+ CHARACTER_TRAVELING_ENTOURAGE: "V [TRAVEL_PLAN.GetData.GetOwner.GetShortUINamePossessive|V] [Concept('entourage','doprovodu')|E] v [PROVINCE.GetName|V]" # todo: CONCEPT CASE
  FORD_TOOLTIP: "Bro mezi $FROM$ a $TO$"
  STRAIT_TOOLTIP: "Průliv mezi $FROM$ a $TO$"
  MAP_REALM_TT_HEADER: "#T [TITLE.GetNameNoTooltip|U]#!"
@@ -59,35 +59,35 @@
  PROVINCE_TOOLTIP_NO_PATH_ALL: "@warning_icon! #X Nelze sem pochodovat#!"
  PROVINCE_TOOLTIP_NOT_ALLOWED_TO_MOVE_AUTOMATED_ARMY: "@warning_icon! #X Nemůžete zadávat rozkazy, když $ARMY_AUTOMATION_FEATURE_NAME$ ovládá vaše armády#!"
  PROVINCE_TOOLTIP_NO_PATH_SOME: "@warning_icon! #X Některé ze vybraných armád sem nemohou pochodovat#!"
- PROVINCE_TOOLTIP_IMPASSABLE: "@warning_icon! #X Tato [barony|E] má nepřekonatelný terén#!"
+ PROVINCE_TOOLTIP_IMPASSABLE: "@warning_icon! #X Tato [Concept('barony','baronství')|E] má nepřekonatelný terén#!" # todo: CONCEPT CASE
  PROVINCE_TOOLTIP_NON_TRAVERSIBLE_WATER: "@warning_icon! #X Nelze překročit tento vodní útvar#!"
- PROVINCE_TOOLTIP_CANNOT_RAID_ACROSS_SEA: "@warning_icon! #X Nelze [raid|E] přes moře#!"
+ PROVINCE_TOOLTIP_CANNOT_RAID_ACROSS_SEA: "@warning_icon! #X Nelze [Concept('raid','nájezd')|E] přes moře#!" # todo: CONCEPT CASE
  PROVINCE_TOOLTIP_CLICK_TO_GO: "\n#I Klikněte pravým tlačítkem pro pochod sem#!"
  PROVINCE_TOOLTIP_SHIFT_TO_APPEND: "#I - Držte Shift pro zařazení pohybu do fronty#!"
  PROVINCE_TOOLTIP_CTRL_TO_FORCE_GATHERING: "#I - Držte Ctrl pro zastavení @gathering_icon!Shromáždění a okamžitý pohyb #!"
  PROVINCE_TOOLTIP_ETA: "#I - Odhadovaný příjezd: [DATE.GetTimeDiffFromNow] ([DATE.GetStringShortNoYear])#!"
  PROVINCE_TOOLTIP_WINTER: "Přísnost zimy: [PROVINCE.GetWinterSeverityName|V]"
- PROVINCE_TOOLTIP_ARMY_ADVANTAGE: "    [advantage|E] na tomto místě: @advantage_icon!$BASE$"
+ PROVINCE_TOOLTIP_ARMY_ADVANTAGE: "    [Concept('advantage','Výhoda')|E] na tomto místě: @advantage_icon!$BASE$" # todo: CONCEPT CASE
  PROVINCE_TOOLTIP_ARMY_ADVANTAGE_NO_ADJUSTMENT: "+0"
  PROVINCE_TOOLTIP_ARMY_ADVANTAGE_ADJUSTMENT: "$ADJUSTMENTS|=+$"
  PROVINCE_TOOLTIP_CLICK_TO_RETREAT: "\n#I Pravým tlačítkem klikněte pro opuštění bitvy a ústup sem#!"
  PROVINCE_TOOLTIP_CLICK_CANT_RETREAT: "Nelze ustoupit z bitvy ještě $DAYS$ dní"
- PROVINCE_TOOLTIP_ADD_RALLY_POINT_HERE: "#I Klikněte pro přidání [rally_point|E] sem#!"
+ PROVINCE_TOOLTIP_ADD_RALLY_POINT_HERE: "#I Klikněte pro přidání [Concept('rally_point','shromaždiště')|E] sem#!" # todo: CONCEPT CASE
  PROVINCE_TOOLTIP_ADD_RALLY_POINT_CANCEL: "#I Pravým tlačítkem klikněte pro zrušení#!"
- PROVINCE_TOOLTIP_MOVE_RALLY_POINT_HERE: "#I Klikněte pro přesun [rally_point|E] sem#!"
- PROVINCE_TOOLTIP_MOVE_RALLY_POINT_HERE_RIGHT_CLICK: "#I Pravým tlačítkem klikněte pro přesun [rally_point|E] sem#!"
+ PROVINCE_TOOLTIP_MOVE_RALLY_POINT_HERE: "#I Klikněte pro přesun [Concept('rally_point','shromaždiště')|E] sem#!" # todo: CONCEPT CASE
+ PROVINCE_TOOLTIP_MOVE_RALLY_POINT_HERE_RIGHT_CLICK: "#I Pravým tlačítkem klikněte pro přesun [Concept('rally_point','shromaždiště')|E] sem#!" # todo: CONCEPT CASE
  PROVINCE_TOOLTIP_MOVE_RALLY_POINT_CANCEL: "#I Pravým tlačítkem klikněte pro zrušení#!"
  PROVINCE_TOOLTIP_SELECT_MAA_ORIGIN_HERE: "#I Klikněte pro umístění [REGIMENT.GetNameNoTooltip] sem#!"
  PROVINCE_TOOLTIP_SELECT_MAA_ORIGIN_CANCEL: "#I Pravým tlačítkem klikněte pro zrušení#!"
- PROVINCE_TOOLTIP_SELECT_RAISE_ARMIES_AT_LOCATION_LAND: "#T [PROVINCE.GetNameNoTooltip]#!\n$PROVINCE_TOOLTIP_TERRAIN$\n[supply_limit|E]: [PROVINCE.GetSupplyLimitFor(GetPlayer)]"
+ PROVINCE_TOOLTIP_SELECT_RAISE_ARMIES_AT_LOCATION_LAND: "#T [PROVINCE.GetNameNoTooltip]#!\n$PROVINCE_TOOLTIP_TERRAIN$\n[Concept('supply_limit','Limit zásobování')|E]: [PROVINCE.GetSupplyLimitFor(GetPlayer)]" # todo: CONCEPT CASE
  PROVINCE_TOOLTIP_SELECT_RAISE_ARMIES_AT_LOCATION_WATER: "#T [PROVINCE.GetNameNoTooltip]#!\n[PROVINCE.GetTerrain.GetNameNoTooltip]"
  PROVINCE_TOOLTIP_SELECT_RAISE_ARMIES_AT_LOCATION_IMPASSABLE: "#T Nepřekonatelné#!"
  PROVINCE_TOOLTIP_SELECT_RAISE_ARMIES_AT_LOCATION_VALID: "#I Klikněte pro povolání armád sem#!"
  PROVINCE_TOOLTIP_SELECT_RAISE_ARMIES_AT_LOCATION_INVALID: "#X @warning_icon! Nemůžete zde povolat armády#!"
  PROVINCE_TOOLTIP_SELECT_RAISE_ARMIES_AT_LOCATION_CANCEL: "#I Pravým tlačítkem klikněte pro zrušení#!"
- SELECT_RAISE_TROOPS_AT_LOCATION: "Povolat dostupné [armies|E] na místě, přeskočit [rally_points|E]"
+ SELECT_RAISE_TROOPS_AT_LOCATION: "Povolat dostupné [Concept('armies','armády')|E] na místě, přeskočit [Concept('rally_points','shromaždiště')|E]" # todo: CONCEPT CASE
  SELECT_RAISE_TROOPS_CHOOSE_LOCATION: "Vyberte místo na mapě"
- SELECT_RAISE_TROOPS_MAP_INSTRUCTION: "#I Klikněte pro výběr místa\nCtrl-klik pro #bold ne#! rozdělovat [armies|E] podle [Concept( 'supply_limit', 'Supply Limits')|E]\nPravým tlačítkem klikněte pro zrušení#!"
+ SELECT_RAISE_TROOPS_MAP_INSTRUCTION: "#I Klikněte pro výběr místa\nCtrl-klik pro #bold ne#! rozdělovat [Concept('armies','armády')|E] podle [Concept( 'supply_limit', 'Supply Limits')|E]\nPravým tlačítkem klikněte pro zrušení#!" # todo: CONCEPT CASE
  DE_JURE_DRIFT_TARGET_DESCRIPTION: "#high De Jure Drift:#! [TITLE.GetNameNoTooltip] se přibližně za $DURATION$ stane součástí [TARGET_TITLE.GetNameNoTooltip]"
  DE_JURE_DRIFT_PROGRESS_DESCRIPTION: "[TITLE.GetNameNoTooltip] má průběh De Jure driftu směrem k [TARGET_TITLE.GetNameNoTooltip] $DURATION$"
  MAP_TOP_REALM_MAIN_TEXT: "Nejvyšší panství: [TITLE.GetDeFactoTopLiege.GetNameNoTooltip|V]"
@@ -129,15 +129,15 @@
  ECONOMY_MAP_TOOLTIP_ENTRY: "\n[HOLDING.GetType.GetName] [HOLDING.GetNameNoTooltip]: @gold_icon![HOLDING.GetIncome|+=1]/měsíc"
  ECONOMY_MAP_TOOLTIP: "#T Hrabství [ROOT.Province.GetCounty.GetName]#!\n[GetEconomyMapModeTooltip( ROOT.Province )]"
  DEBUG_CONSTRUCTION_MAP_TOOLTIP: "#T [ROOT.Province.GetHolding.GetType.GetName|V] [ROOT.Province.GetName]#!\nDržitel: [ROOT.Province.GetHolding.GetLesseeOrHolder.GetPrimaryTitle.GetRankConcept] [ROOT.Province.GetHolding.GetLesseeOrHolder.GetUIName]\nVe výstavbě: [Select_CString( ROOT.Province.GetHolding.GetConstructionBuilding.IsValid, ROOT.Province.GetHolding.GetConstructionBuilding.GetName, 'Žádné')|V] Úroveň##[ROOT.Province.GetHolding.GetConstructionBuilding.GetLevel] ([ROOT.Province.GetHolding.GetConstructionProgress|%/])\n[ROOT.Province.GetHolding.GetLesseeOrHolder.Custom( 'AIEconomicPersonality' )]\nZlato: [gold_i] [ROOT.Province.GetHolding.GetLesseeOrHolder.GetGold|0]\nPokladna: [treasury_i] [ROOT.Province.GetHolding.GetLesseeOrHolder.GetTreasury|0]\n\n[ROOT.Province.GetHolding.GetLesseeOrHolder.GetAiBudgetDescription]" # todo: NEW TRANSLATION
- COUNTY_CONTROL_MAP_MODE_TOOLTIP: "#T Kontrola hrabství [ROOT.Province.GetCounty.GetName] ([control|e]): [ROOT.Province.GetCounty.GetControlLevelOutOfMax]#!\n[ROOT.Province.GetCounty.GetCountyControlEffectsDesc]"
+ COUNTY_CONTROL_MAP_MODE_TOOLTIP: "#T Kontrola hrabství [ROOT.Province.GetCounty.GetName] ([Concept('control','kontrola')|e]): [ROOT.Province.GetCounty.GetControlLevelOutOfMax]#!\n[ROOT.Province.GetCounty.GetCountyControlEffectsDesc]" # todo: CONCEPT CASE
  ADDITIONAL_MAPMODES: "Další režimy"
  ADDITIONAL_MAP_SETTINGS: "Další nastavení"
  ZOOM_LEVEL_PAPER_MAP: "Papírová mapa"
- ZOOM_LEVEL_PAPER_MAP_TOOLTIP: "#T $ZOOM_LEVEL_PAPER_MAP$#!\n$ZOOM_LEVEL_PAPER_MAP$ vám poskytuje přehled všech nezávislých [realms|E] ve světě.\n\n#TUT V tomto režimu mapy kliknutím na mapu vyberete [realms|E]#!"
+ ZOOM_LEVEL_PAPER_MAP_TOOLTIP: "#T $ZOOM_LEVEL_PAPER_MAP$#!\n$ZOOM_LEVEL_PAPER_MAP$ vám poskytuje přehled všech nezávislých [Concept('realms','panství')|E] ve světě.\n\n#TUT V tomto režimu mapy kliknutím na mapu vyberete [Concept('realms','panství')|E]#!" # todo: CONCEPT CASE
  ZOOM_LEVEL_POLITICAL: "Politická mapa"
- ZOOM_LEVEL_POLITICAL_TOOLTIP: "#T $ZOOM_LEVEL_POLITICAL$#!\n$ZOOM_LEVEL_POLITICAL$ poskytuje komplexní přehled o [rulers|E] v oblasti a je ideální pro plánování [wars|E], řízení [vassals|E] a průzkum [realms|E].\n\n#TUT V tomto režimu mapy kliknutím na mapu vyberete [realms|E]#!"
+ ZOOM_LEVEL_POLITICAL_TOOLTIP: "#T $ZOOM_LEVEL_POLITICAL$#!\n$ZOOM_LEVEL_POLITICAL$ poskytuje komplexní přehled o [Concept('rulers','vládce')|E] v oblasti a je ideální pro plánování [Concept('wars','války')|E], řízení [Concept('vassals','vazaly')|E] a průzkum [Concept('realms','panství')|E].\n\n#TUT V tomto režimu mapy kliknutím na mapu vyberete [Concept('realms','panství')|E]#!" # todo: CONCEPT CASE
  ZOOM_LEVEL_DETAILS: "Detailní mapa"
- ZOOM_LEVEL_DETAILS_TOOLTIP: "#T $ZOOM_LEVEL_DETAILS$#!\n$ZOOM_LEVEL_DETAILS$ poskytuje přehled [terrain|E] a vašeho [domain|E], a je ideální pro přesuny [regiments|E] a stavbu [buildings|E].\n\n#TUT V tomto režimu mapy kliknutím na mapu vyberete [holdings|E]#!"
+ ZOOM_LEVEL_DETAILS_TOOLTIP: "#T $ZOOM_LEVEL_DETAILS$#!\n$ZOOM_LEVEL_DETAILS$ poskytuje přehled [Concept('terrain','terén')|E] a vašeho [Concept('domain','domény')|E], a je ideální pro přesuny [Concept('regiments','pluky')|E] a stavbu [Concept('buildings','budovy')|E].\n\n#TUT V tomto režimu mapy kliknutím na mapu vyberete [Concept('holdings','državy')|E]#!" # todo: CONCEPT CASE
  ZOOM_LEVEL_DOMAIN: "Mapa domény"
  ZOOM_LEVEL_SELECTING_BARONIES: "Výběr: panství"
  ZOOM_LEVEL_SELECTING_REALMS: "Výběr: říše"
@@ -173,14 +173,14 @@
  ADMIN_VASSAL_TYPES_MAP_MODE_TT_HEADER: "#T [TITLE.GetNameNoTooltip|U]#!"
  ADMIN_VASSAL_TYPES_MAP_MODE_TT_HOLDER: "Spravováno: [CHARACTER.GetNameNoTooltip]"
  ADMIN_VASSAL_TYPES_MAP_MODE_TT_TYPE: "Správa: [CHARACTER.GetVassalContract.GetAdminDivisionShortName]"
- ADMIN_VASSAL_TYPES_MAP_MODE_TT_EFFICIENCY: "[governor_efficiency|E]: @governor_efficiency!$ADMIN_WINDOW_THEME_GOVERNOR_EFFICIENCY_VALUE$"
+ ADMIN_VASSAL_TYPES_MAP_MODE_TT_EFFICIENCY: "[Concept('governor_efficiency','Efektivita guvernéra')|E]: @governor_efficiency!$ADMIN_WINDOW_THEME_GOVERNOR_EFFICIENCY_VALUE$" # todo: CONCEPT CASE
  ADMIN_VASSAL_TYPES_MAP_MODE_TT_TAXES: "Daně: @gold_icon! #high $TAXES|2$ #!"
  ADMIN_VASSAL_TYPES_MAP_MODE_TT_TITLE_TROOPS_LABEL: "[TITLE.GetNameNoTooltip] armády:"
  ADMIN_VASSAL_TYPES_MAP_MODE_TT_TROOP_ENTRY: "$TAB$[MenAtArmsType.GetBaseTypeName]: $CURRENT$/$MAX$"
  ADMIN_VASSAL_TYPES_MAP_MODE_TT_HELD_BY_TOP_LIEGE: "#X [TITLE.GetName] je držen [CHARACTER.GetTitleTierName|V]#!"
- ADMIN_VASSAL_TYPES_MAP_MODE_TT_NOT_HELD_BY_GOVERNOR: "#X [TITLE.GetName] není držen [governor|E]#!"
+ ADMIN_VASSAL_TYPES_MAP_MODE_TT_NOT_HELD_BY_GOVERNOR: "#X [TITLE.GetName] není držen [Concept('governor','guvernér')|E]#!" # todo: CONCEPT CASE
  ADMIN_VASSAL_TYPES_MAP_MODE_TT_NOT_IN_REALM: "#X [TITLE.GetName] není součástí [TARGET_TITLE.GetNameNoTooltip]#!"
- ADMIN_VASSAL_TYPES_MAP_MODE_TT_NOT_ADMIN_VASSAL: "#X [CHARACTER.GetShortUIName] z [TITLE.GetName] není [administrative|E] [governor|E]#!"
+ ADMIN_VASSAL_TYPES_MAP_MODE_TT_NOT_ADMIN_VASSAL: "#X [CHARACTER.GetShortUIName] z [TITLE.GetName] není [Concept('administrative','administrativního')|E] [Concept('governor','guvernéra')|E]#!" # todo: CONCEPT CASE
  ADMIN_VASSAL_TYPES_MAP_MODE_TT_NOT_ASSIGNED: "#X [TITLE.GetName|U] není vytvořen#!"
  ADMIN_VASSAL_TYPES_MAP_MODE_TT_TOP_REALM: "Vrchní říše: [TITLE.GetName]"
  ADMIN_VASSAL_TYPES_MAP_MODE_TT_LEFT_CLICK: "#I Levým kliknutím otevřete podrobnosti#!"
@@ -190,9 +190,9 @@
  MIGRATION_KINGDOMS_MAPMODE_TOOLTIP: "#T [ROOT.Province.GetTitle.GetDeJureLiegeOfTier('kingdom').GetNameNoTooltip]#!\n[ROOT.Province.GetTitle.GetDeJureLiegeOfTier('kingdom').GetDeJureDriftTooltip]\nPrůměrná plodnost: [ROOT.Province.GetTitle.GetDeJureLiegeOfTier('kingdom').GetAverageFertility|0]"
  MIGRATION_EMPIRES_MAPMODE_TOOLTIP: "#T [ROOT.Province.GetTitle.GGetDeJureLiegeOfTier('empire').GetNameNoTooltip]#!\n[ROOT.Province.GetTitle.GetDeJureLiegeOfTier('empire').GetDeJureDriftTooltip]\nPrůměrná plodnost: [ROOT.Province.GetTitle.GetDeJureLiegeOfTier('empire').GetAverageFertility|0]"
  MIGRATION_HEGEMONIES_MAPMODE_TOOLTIP: "#T [ROOT.Province.GetTitle.GGetDeJureLiegeOfTier('hegemony').GetNameNoTooltip]#!\n[ROOT.Province.GetTitle.GetDeJureLiegeOfTier('hegemony').GetDeJureDriftTooltip]\nPrůměrná plodnost: [ROOT.Province.GetTitle.GetDeJureLiegeOfTier('hegemony').GetAverageFertility|0]" # todo: NEW TRANSLATION
- DIPLOMATIC_RELATION_WAR_ENEMY_TOOLTIP: "#T Vůdce nepřátel ve válce: [TARGET_CHARACTER.GetPrimaryTitle.GetNameNoTooltip]#!\nVládce: [TARGET_CHARACTER.GetUIName]\nJe [war_leader|E] ve [war|E] s [CHARACTER.GetPrimaryTitle.GetName].\n\n$DIPLO_INFO$\n#i Kliknutím vyberte, abyste viděli jejich diplomatické vztahy#!"
- DIPLOMATIC_RELATION_WAR_ENEMY_ALLY_TOOLTIP: "#T Spojenec nepřítele ve válce: [TARGET_CHARACTER.GetPrimaryTitle.GetNameNoTooltip]#!\nVládce: [TARGET_CHARACTER.GetUIName]\nJe nepřátelským spojencem v [war|E] s [CHARACTER.GetPrimaryTitle.GetName].\n\n$DIPLO_INFO$\n#i Kliknutím vyberte, abyste viděli jejich diplomatické vztahy#!"
- DIPLOMATIC_RELATION_WAR_ALLY_TOOLTIP: "#T Spojenec ve válce: [TARGET_CHARACTER.GetPrimaryTitle.GetNameNoTooltip]#!\nVládce: [TARGET_CHARACTER.GetUIName]\nJe spojencem v [war|E] s [CHARACTER.GetPrimaryTitle.GetName].\n$DIPLO_INFO$\n#i Kliknutím vyberte pro zobrazení jejich diplomatických vztahů#!"
+ DIPLOMATIC_RELATION_WAR_ENEMY_TOOLTIP: "#T Vůdce nepřátel ve válce: [TARGET_CHARACTER.GetPrimaryTitle.GetNameNoTooltip]#!\nVládce: [TARGET_CHARACTER.GetUIName]\nJe [Concept('war_leader','vůdce války')|E] ve [Concept('war','válce')|E] s [CHARACTER.GetPrimaryTitle.GetName].\n\n$DIPLO_INFO$\n#i Kliknutím vyberte, abyste viděli jejich diplomatické vztahy#!" # todo: CONCEPT CASE
+ DIPLOMATIC_RELATION_WAR_ENEMY_ALLY_TOOLTIP: "#T Spojenec nepřítele ve válce: [TARGET_CHARACTER.GetPrimaryTitle.GetNameNoTooltip]#!\nVládce: [TARGET_CHARACTER.GetUIName]\nJe nepřátelským spojencem v [Concept('war','válce')|E] s [CHARACTER.GetPrimaryTitle.GetName].\n\n$DIPLO_INFO$\n#i Kliknutím vyberte, abyste viděli jejich diplomatické vztahy#!" # todo: CONCEPT CASE
+ DIPLOMATIC_RELATION_WAR_ALLY_TOOLTIP: "#T Spojenec ve válce: [TARGET_CHARACTER.GetPrimaryTitle.GetNameNoTooltip]#!\nVládce: [TARGET_CHARACTER.GetUIName]\nJe spojencem v [Concept('war','válce')|E] s [CHARACTER.GetPrimaryTitle.GetName].\n$DIPLO_INFO$\n#i Kliknutím vyberte pro zobrazení jejich diplomatických vztahů#!" # todo: CONCEPT CASE
  DIPLOMATIC_RELATION_WAR_ENEMY_ENEMY_TOOLTIP: "#T Nepřátelský: [TARGET_CHARACTER.GetPrimaryTitle.GetNameNoTooltip]#!\nVládce: [TARGET_CHARACTER.GetUIName]\nJe ve válce s říší, se kterou je také [CHARACTER.GetPrimaryTitle.GetName] ve válce.\n$DIPLO_INFO$\n#i Kliknutím vyberte pro zobrazení jejich diplomatických vztahů#!"
  DIPLOMATIC_RELATION_RAID_ON_ME_TOOLTIP: "#T Vypleněn: [TARGET_CHARACTER.GetPrimaryTitle.GetNameNoTooltip]#!\nVládce: [TARGET_CHARACTER.GetUIName]\n$DIPLO_INFO$\n#i Kliknutím vyberte pro zobrazení jejich diplomatických vztahů#!"
  DIPLOMATIC_RELATION_RAID_BY_ME_TOOLTIP: "#T Plundruje: [TARGET_CHARACTER.GetPrimaryTitle.GetNameNoTooltip]#!\nVládce: [TARGET_CHARACTER.GetUIName]\n$DIPLO_INFO$\n#i Kliknutím vyberte pro zobrazení jejich diplomatických vztahů#!"
@@ -200,7 +200,7 @@
  DIPLOMATIC_RELATION_ALLY_TOOLTIP: "#T Spojenec: [TARGET_CHARACTER.GetPrimaryTitle.GetNameNoTooltip]#!\nVládce: [TARGET_CHARACTER.GetUIName]\nSpojen s [CHARACTER.GetPrimaryTitle.GetName].\n$DIPLO_INFO$\n#i Kliknutím vyberte pro zobrazení jejich diplomatických vztahů#!"
  DIPLOMATIC_RELATION_TRIBUTARY_TOOLTIP: "#T Tributář: [TARGET_CHARACTER.GetPrimaryTitle.GetNameNoTooltip]#!\nVládce: [TARGET_CHARACTER.GetUIName]\nTributář [CHARACTER.GetPrimaryTitle.GetName].\n$DIPLO_INFO$\n#i Kliknutím vyberte pro zobrazení jejich diplomatických vztahů#!"
  DIPLOMATIC_RELATION_TRUCE_TOOLTIP: "#T Příměří: [TARGET_CHARACTER.GetPrimaryTitle.GetNameNoTooltip]#!\nVládce: [TARGET_CHARACTER.GetUIName]\n$DIPLO_INFO$\n#i Kliknutím vyberte pro zobrazení jejich diplomatických vztahů#!"
- DIPLOMATIC_RELATION_LIEGE_TOOLTIP: "#T Svrchovaný pán: [TARGET_CHARACTER.GetPrimaryTitle.GetNameNoTooltip]#!\nVládce: [TARGET_CHARACTER.GetUIName]\nJe [liege|E] [CHARACTER.GetPrimaryTitle.GetName].\n$DIPLO_INFO$\n#i Kliknutím vyberte pro zobrazení jejich diplomatických vztahů#!"
+ DIPLOMATIC_RELATION_LIEGE_TOOLTIP: "#T Svrchovaný pán: [TARGET_CHARACTER.GetPrimaryTitle.GetNameNoTooltip]#!\nVládce: [TARGET_CHARACTER.GetUIName]\nJe [Concept('liege','lenní pán')|E] [CHARACTER.GetPrimaryTitle.GetName].\n$DIPLO_INFO$\n#i Kliknutím vyberte pro zobrazení jejich diplomatických vztahů#!" # todo: CONCEPT CASE
  DIPLOMATIC_RELATION_OTHER_TOOLTIP: "#T Žádný vztah: [TARGET_CHARACTER.GetTopLiege.GetPrimaryTitle.GetNameNoTooltip]#!\nVládce: [TARGET_CHARACTER.GetTopLiege.GetUIName]\n$DIPLO_INFO$\n#i Kliknutím vyberte pro zobrazení jejich diplomatických vztahů#!"
  tributary_map_mode_tooltip: "[ROOT.Province.GetTributarizationChanceTooltip]" # todo: NEW TRANSLATION
  tributary_map_mode_you: "To je [TARGET_CHARACTER.GetUINamePossessive] území" # todo: NEW TRANSLATION

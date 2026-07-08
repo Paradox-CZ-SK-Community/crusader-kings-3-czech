@@ -11,14 +11,14 @@
  NOT_IS_HELD_BY: "Je #bold not#! držen [TARGET_CHARACTER.GetShortUIName]"
  TITLE_IS_HELD_BY: "[TITLE.GetName] je držen [TARGET_CHARACTER.GetShortUIName]"
  NOT_TITLE_IS_HELD_BY: "[TITLE.GetName] je #bold not#! držen [TARGET_CHARACTER.GetShortUIName]"
- LIEGE_EQUAL_FIRST: "Jste [courtier|E] nebo [vassal|E] [TARGET_CHARACTER.GetShortUIName]"
- NOT_LIEGE_EQUAL_FIRST: "Jste #bold not#! [courtier|E] nebo [vassal|E] [TARGET_CHARACTER.GetShortUIName]"
- LIEGE_EQUAL_THIRD: "[CHARACTER.GetShortUIName|U] je [TARGET_CHARACTER.GetShortUINamePossessive] [courtier|E] nebo [vassal|E]"
- NOT_LIEGE_EQUAL_THIRD: "[CHARACTER.GetShortUIName|U] je #bold not#! [TARGET_CHARACTER.GetShortUINamePossessive] [courtier|E] nebo [vassal|E]"
- LIEGE_EQUAL_NONE: "Jsou vaším [courtier|E], [vassal|E] nebo [follower|E]"
- NOT_LIEGE_EQUAL_NONE: "Jsou #bold not#! vaším [courtier|E], [vassal|E] nebo [follower|E]"
- TOP_LIEGE_EQUAL_FIRST: "Jste [top_liege|E]"
- NOT_TOP_LIEGE_EQUAL_FIRST: "Jste #bold not#! [top_liege|E]"
+ LIEGE_EQUAL_FIRST: "Jste [Concept('courtier','dvořan')|E] nebo [Concept('vassal','vazal')|E] [TARGET_CHARACTER.GetShortUIName]" # todo: CONCEPT CASE
+ NOT_LIEGE_EQUAL_FIRST: "Jste #bold not#! [Concept('courtier','dvořan')|E] nebo [Concept('vassal','vazal')|E] [TARGET_CHARACTER.GetShortUIName]" # todo: CONCEPT CASE
+ LIEGE_EQUAL_THIRD: "[CHARACTER.GetShortUIName|U] je [TARGET_CHARACTER.GetShortUINamePossessive] [Concept('courtier','dvořan')|E] nebo [Concept('vassal','vazal')|E]" # todo: CONCEPT CASE
+ NOT_LIEGE_EQUAL_THIRD: "[CHARACTER.GetShortUIName|U] je #bold not#! [TARGET_CHARACTER.GetShortUINamePossessive] [Concept('courtier','dvořan')|E] nebo [Concept('vassal','vazal')|E]" # todo: CONCEPT CASE
+ LIEGE_EQUAL_NONE: "Jsou vaším [Concept('courtier','dvořanem')|E], [Concept('vassal','vazalem')|E] nebo [Concept('follower','družiník')|E]" # todo: CONCEPT CASE
+ NOT_LIEGE_EQUAL_NONE: "Jsou #bold not#! vaším [Concept('courtier','dvořanem')|E], [Concept('vassal','vazalem')|E] nebo [Concept('follower','družiník')|E]" # todo: CONCEPT CASE
+ TOP_LIEGE_EQUAL_FIRST: "Jste [Concept('top_liege','nejvyšší lenní pán')|E]" # todo: CONCEPT CASE
+ NOT_TOP_LIEGE_EQUAL_FIRST: "Jste #bold not#! [Concept('top_liege','nejvyšší lenní pán')|E]" # todo: CONCEPT CASE
  KILLER_EQUAL_THIRD: "[CHARACTER.GetShortUIName|U] byl [Select_CString(CHARACTER.IsFemale,'zabita','zabit')] [TARGET_CHARACTER.GetShortUIName]"
  NOT_KILLER_EQUAL_THIRD: "[CHARACTER.GetShortUIName|U] byl #bold not#! [Select_CString(ROOT.Char.IsFemale,'zabita','zabit')] [TARGET_CHARACTER.GetShortUIName]"
  IMPRISONER_EQUAL_FIRST: "Jste vězněm [TARGET_CHARACTER.GetShortUIName]"
@@ -45,13 +45,13 @@
  NOT_REAL_FATHER_EQUAL_FIRST: "[TARGET_CHARACTER.GetShortUIName] je #bold not#! váš skutečný otec"
  REAL_FATHER_EQUAL_THIRD: "[TARGET_CHARACTER.GetShortUIName|U] je [CHARACTER.GetShortUINamePossessive] skutečný otec"
  NOT_REAL_FATHER_EQUAL_THIRD: "[TARGET_CHARACTER.GetShortUIName|U] je #bold not#! [CHARACTER.GetShortUINamePossessive] skutečný otec"
- PLAYER_HEIR_EQUAL_FIRST: "[TARGET_CHARACTER.GetShortUIName|U] je váš [player_heir|E]"
- PLAYER_HEIR_EQUAL_THIRD: "[TARGET_CHARACTER.GetShortUIName|U] je [CHARACTER.GetShortUINamePossessive] [player_heir|E]"
+ PLAYER_HEIR_EQUAL_FIRST: "[TARGET_CHARACTER.GetShortUIName|U] je váš [Concept('player_heir','hráčský dědic')|E]" # todo: CONCEPT CASE
+ PLAYER_HEIR_EQUAL_THIRD: "[TARGET_CHARACTER.GetShortUIName|U] je [CHARACTER.GetShortUINamePossessive] [Concept('player_heir','hráčský dědic')|E]" # todo: CONCEPT CASE
  CHARACTER_FAITH_EQUAL_FIRST: "Jste [FAITH.GetAdjective]"
  NOT_CHARACTER_FAITH_EQUAL_FIRST: "Jste #bold not#! [FAITH.GetAdjective]"
  CHARACTER_FAITH_EQUAL_THIRD: "[CHARACTER.GetShortUIName|U] je [FAITH.GetAdjective]"
  NOT_CHARACTER_FAITH_EQUAL_THIRD: "[CHARACTER.GetShortUIName|U] je #bold not#! [FAITH.GetAdjective]"
- CHARACTER_FAITH_NONE: "Je stoupencem stejné [faith|e]"
+ CHARACTER_FAITH_NONE: "Je stoupencem stejné [Concept('faith','víra')|e]" # todo: CONCEPT CASE
  CHARACTER_FAITH_GLOBAL: "$CHARACTER_FAITH_NONE$" # todo: NEW TRANSLATION
  CHARACTER_RELIGION_EQUAL_FIRST: "Jste [RELIGION.GetAdjective]"
  NOT_CHARACTER_RELIGION_EQUAL_FIRST: "Jste #bold not#! [RELIGION.GetAdjective]"
@@ -61,15 +61,15 @@
  NOT_CHARACTER_CULTURE_EQUAL_FIRST: "Jste #bold not#! [TARGET_CULTURE.GetName]"
  CHARACTER_CULTURE_EQUAL_THIRD: "[CHARACTER.GetShortUIName|U] je [TARGET_CULTURE.GetName]"
  NOT_CHARACTER_CULTURE_EQUAL_THIRD: "[CHARACTER.GetShortUIName|U] je #bold not#! [TARGET_CULTURE.GetName]"
- CHARACTER_HOUSE_EQUAL_FIRST: "Patříte k [house|E] [DYNASTY_HOUSE.GetName]"
- NOT_CHARACTER_HOUSE_EQUAL_FIRST: "Nejste #bold not#! členem [house|E] [DYNASTY_HOUSE.GetName]"
- CHARACTER_HOUSE_EQUAL_THIRD: "[CHARACTER.GetShortUIName|U] patří k [house|E] [DYNASTY_HOUSE.GetName]"
- NOT_CHARACTER_HOUSE_EQUAL_THIRD: "[CHARACTER.GetShortUIName|U] #bold nepatří#! k [house|E] [DYNASTY_HOUSE.GetName]" # todo: RETRANSLATED ENGLISH
- CHARACTER_DYNASTY_EQUAL_FIRST: "Jste součástí [dynasty|E] [DYNASTY.GetName]"
- NOT_CHARACTER_DYNASTY_EQUAL_FIRST: "Jste #bold not#! součástí [dynasty|E] [DYNASTY.GetName]"
- CHARACTER_DYNASTY_EQUAL_THIRD: "[CHARACTER.GetShortUIName|U] je součástí [dynasty|E] [DYNASTY.GetName]"
- NOT_CHARACTER_DYNASTY_EQUAL_THIRD: "[CHARACTER.GetShortUIName|U] #bold není#! součástí [dynasty|E] [DYNASTY.GetName]" # todo: RETRANSLATED ENGLISH
- CHARACTER_HOUSE_EQUAL_NONE: "Je členem stejného [house|E] členu"
+ CHARACTER_HOUSE_EQUAL_FIRST: "Patříte k [Concept('house','rodu')|E] [DYNASTY_HOUSE.GetName]" # todo: CONCEPT CASE
+ NOT_CHARACTER_HOUSE_EQUAL_FIRST: "Nejste #bold not#! členem [Concept('house','rodem')|E] [DYNASTY_HOUSE.GetName]" # todo: CONCEPT CASE
+ CHARACTER_HOUSE_EQUAL_THIRD: "[CHARACTER.GetShortUIName|U] patří k [Concept('house','rodu')|E] [DYNASTY_HOUSE.GetName]" # todo: CONCEPT CASE
+ NOT_CHARACTER_HOUSE_EQUAL_THIRD: "[CHARACTER.GetShortUIName|U] #bold nepatří#! k [Concept('house','rodu')|E] [DYNASTY_HOUSE.GetName]" # todo: RETRANSLATED ENGLISH # todo: CONCEPT CASE
+ CHARACTER_DYNASTY_EQUAL_FIRST: "Jste součástí [Concept('dynasty','dynastií')|E] [DYNASTY.GetName]" # todo: CONCEPT CASE
+ NOT_CHARACTER_DYNASTY_EQUAL_FIRST: "Jste #bold not#! součástí [Concept('dynasty','dynastií')|E] [DYNASTY.GetName]" # todo: CONCEPT CASE
+ CHARACTER_DYNASTY_EQUAL_THIRD: "[CHARACTER.GetShortUIName|U] je součástí [Concept('dynasty','dynastií')|E] [DYNASTY.GetName]" # todo: CONCEPT CASE
+ NOT_CHARACTER_DYNASTY_EQUAL_THIRD: "[CHARACTER.GetShortUIName|U] #bold není#! součástí [Concept('dynasty','dynastií')|E] [DYNASTY.GetName]" # todo: RETRANSLATED ENGLISH # todo: CONCEPT CASE
+ CHARACTER_HOUSE_EQUAL_NONE: "Je členem stejného [Concept('house','rodu')|E] členu" # todo: CONCEPT CASE
  LANDED_TITLE_FAITH_EQUAL_THIRD: "[TITLE.GetName] je [FAITH.GetAdjective]"
  NOT_LANDED_TITLE_FAITH_EQUAL_THIRD: "[TITLE.GetName] je #bold not#! [FAITH.GetAdjective]"
  LANDED_TITLE_FAITH_EQUAL_GLOBAL: "Je [FAITH.GetAdjective]"
@@ -100,9 +100,9 @@
  NOT_PROVINCE_CAPITAL_EQUAL_THIRD: "[CHARACTER.GetShortUINamePossessive] [realm_capital] je #bold not#! [PROVINCE.GetBaronyNameExplicitly]"
  PROVINCE_CAPITAL_EQUAL_FIRST: "Vaše [realm_capital] je [PROVINCE.GetBaronyNameExplicitly]"
  NOT_PROVINCE_CAPITAL_EQUAL_FIRST: "Vaše [realm_capital] je #bold not#! [PROVINCE.GetBaronyNameExplicitly]"
- FAITH_RELIGION_EQUAL_THIRD: "[FAITH.GetName] je [RELIGION.GetAdjective] [faith|E]"
- NOT_FAITH_RELIGION_EQUAL_THIRD: "[FAITH.GetName] je #bold not#! [RELIGION.GetAdjective] [faith|E]"
- FAITH_RELIGION_EQUAL_GLOBAL: "Je [RELIGION.GetAdjective] [faith|E]"
- NOT_FAITH_RELIGION_EQUAL_GLOBAL: "Je #bold not#! [RELIGION.GetAdjective] [faith|E]"
- ACCOLADE_TYPE_EQUAL_GLOBAL: "Tento [accolade_type|e] je neplatný"
- ACCOLADE_TYPE_EQUAL_NONE: "Tento [accolade_type|e] je neplatný"
+ FAITH_RELIGION_EQUAL_THIRD: "[FAITH.GetName] je [RELIGION.GetAdjective] [Concept('faith','víra')|E]" # todo: CONCEPT CASE
+ NOT_FAITH_RELIGION_EQUAL_THIRD: "[FAITH.GetName] je #bold not#! [RELIGION.GetAdjective] [Concept('faith','víra')|E]" # todo: CONCEPT CASE
+ FAITH_RELIGION_EQUAL_GLOBAL: "Je [RELIGION.GetAdjective] [Concept('faith','víra')|E]" # todo: CONCEPT CASE
+ NOT_FAITH_RELIGION_EQUAL_GLOBAL: "Je #bold not#! [RELIGION.GetAdjective] [Concept('faith','víra')|E]" # todo: CONCEPT CASE
+ ACCOLADE_TYPE_EQUAL_GLOBAL: "Tento [Concept('accolade_type','atribut vyznamenání')|e] je neplatný" # todo: CONCEPT CASE
+ ACCOLADE_TYPE_EQUAL_NONE: "Tento [Concept('accolade_type','atribut vyznamenání')|e] je neplatný" # todo: CONCEPT CASE

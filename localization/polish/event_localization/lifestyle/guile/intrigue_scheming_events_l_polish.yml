@@ -1,7 +1,7 @@
 ﻿l_polish:
- available_because_of_dread_tt: "Tato volba je k dispozici kvůli vašemu [dread|E]"
- intrigue_lifestyle_perk_indication: "Můžete získat [intrigue_lifestyle|E] [perk|E]"
- intrigue_scheming_focus_point_clear_gain: "Vaše porozumění [intrigue_lifestyle|E] se zvyšuje"
+ available_because_of_dread_tt: "Tato volba je k dispozici kvůli vašemu [Concept('dread','hrůze')|E]" # todo: CONCEPT CASE
+ intrigue_lifestyle_perk_indication: "Můžete získat [Concept('intrigue_lifestyle','pletichářský životní styl')|E] [Concept('perk','talent')|E]" # todo: CONCEPT CASE
+ intrigue_scheming_focus_point_clear_gain: "Vaše porozumění [Concept('intrigue_lifestyle','pletichářský životní styl')|E] se zvyšuje" # todo: CONCEPT CASE
  intrigue_scheming.1001.t: "[county.GetNameNoTierNoTooltip]ův žal"
  intrigue_scheming.1001.desc: "„Potřebujeme tyto zdroje pro vojáky! Pokud musí zhladovět i jedna malá vesnice v [county.GetNameNoTier]—“\n\nRozhořčená hádka mezi mými radními mě doprovází z místnosti, a [councillor.GetTitledFirstName], zástupce z [county.GetNameNoTierNoTooltip], mě přivítá unavenýma očima, když se přibližuji."
  intrigue_scheming.1001.a: "Tady. Tento dekret je donutí vás nechat na pokoji."
@@ -25,9 +25,9 @@
  intrigue_scheming.1013.desc_substitution: "Systém, který nahrazuje písmena čísly, by nám nejlépe vyhovoval; naši nepřátelé by to považovali za nesmysl!"
  intrigue_scheming.1013.desc_cipher: "Šifra, aby nepřítel věřil, že každá zachycená zpráva je napsaná v cizím jazyce, nám poslouží nejlépe!"
  intrigue_scheming.1013.a: "Nikdo to nebude schopen prolomit!"
- intrigue_scheming.1013.a.tt: "Získáte #T [THIS.Var('intrigue_exp_gain_value').GetValue]#! [intrigue_rigueint|E] bodů"
- intrigue_scheming.1013.b.tt: "Získáte #T [THIS.Var('intrigue_exp_gain_value').GetValue]#! [intrigue_9_14_20_18_9_7_21_5|E] bodů"
- intrigue_scheming.1013.c.tt: "Získáte #T [THIS.Var('intrigue_exp_gain_value').GetValue]#! [intrigue_lqwuljxh|E] bodů"
+ intrigue_scheming.1013.a.tt: "Získáte #T [THIS.Var('intrigue_exp_gain_value').GetValue]#! [Concept('intrigue_rigueint','rigueint')|E] bodů" # todo: CONCEPT CASE
+ intrigue_scheming.1013.b.tt: "Získáte #T [THIS.Var('intrigue_exp_gain_value').GetValue]#! [Concept('intrigue_9_14_20_18_9_7_21_5','9 14 20 18 9 7 21 5')|E] bodů" # todo: CONCEPT CASE
+ intrigue_scheming.1013.c.tt: "Získáte #T [THIS.Var('intrigue_exp_gain_value').GetValue]#! [Concept('intrigue_lqwuljxh','lqwuljxh')|E] bodů" # todo: CONCEPT CASE
  intrigue_scheming.1014.desc_alive: "Bohužel, i když jsem se [Select_CString(ROOT.Char.IsFemale,'snažila','snažil')], [Select_CString(ROOT.Char.IsFemale,'nebyla','nebyl')] jsem schopen porozumět [cryptographer.GetTitledFirstNamePossessive] tajemnému kryptografickému umění. \n\n[cryptographer.GetWomanMan] mě ujišťuje, že kód, který [cryptographer.GetSheHe] vyvinul, je bez pochyby bezpečný, přesto se nemohu zbavit pocitu, že to byla zmeškaná příležitost pro mě zdokonalit své dovednosti."
  intrigue_scheming.1014.desc_dead: "S [cryptographer.GetTitledFirstName] mrtvým musí být mé úsilí vytvořit tajný kód pro bezpečnou výměnu citlivých informací odloženo. \n\nMohu jen doufat, že brzy přijde další příležitost zlepšit obranu mého [ROOT.Char.Custom('GetCourt')] proti špionáži."
  intrigue_scheming.1014.a: "Jaká škoda..."
@@ -172,19 +172,19 @@
  intrigue_scheming.4021.c: "Vyhrožovat mučením [prisoner.GetHerHim], pokud se [prisoner.GetSheHe] nepřizná!"
  intrigue_scheming.4021.c.success: "Moje výhrůžky přiměly [prisoner.GetTitledFirstName] k přiznání"
  intrigue_scheming.4021.c.failure: "Zdá se, že mé výhrůžky [prisoner.GetTitledFirstName] nevyvedou z míry"
- intrigue_scheming.4021.success: "Dozvím se [secret|E], které [prisoner.GetTitledFirstName] zná"
+ intrigue_scheming.4021.success: "Dozvím se [Concept('secret','tajemstvím')|E], které [prisoner.GetTitledFirstName] zná" # todo: CONCEPT CASE
  intrigue_scheming.4021.failure: "Nic důležitého se nedozvím"
  intrigue_scheming.4040.t: "Přesměrování podezření"
  intrigue_scheming.4040.desc: "Je obecně známo, že [ROOT.Char.Custom('GetCourtierPlural')] intrikují a spřádají plány, ale to mohu využít ve svůj prospěch.\n\nPokud udržím své [ROOT.Char.Custom('GetCourtierPlural')] navzájem podezřívavé a rozptýlené vnitřními spory, nebudou mít čas ani prostředky plánovat spiknutí proti mně!"
  intrigue_scheming.4040.a: "Okamžitě začnu šířit pomluvy!"
  intrigue_scheming.4040.a.success: "Pomluvy způsobí, že si moji [ROOT.Char.Custom('GetCourtierPlural')] začnou navzájem nedůvěřovat"
- intrigue_scheming.4040.a.success.tt: "[courtier_1.GetFirstName], [courtier_2.GetFirstName] a [courtier_3.GetFirstName] ztratí #N [EmptyScope.ScriptValue('medium_positive_opinion')|N0]#! [opinion|E] k sobě navzájem."
+ intrigue_scheming.4040.a.success.tt: "[courtier_1.GetFirstName], [courtier_2.GetFirstName] a [courtier_3.GetFirstName] ztratí #N [EmptyScope.ScriptValue('medium_positive_opinion')|N0]#! [Concept('opinion','mínění')|E] k sobě navzájem." # todo: CONCEPT CASE
  intrigue_scheming.4040.a.success.desc: "Pomluvy, které jsem [Select_CString(ROOT.Char.IsFemale,'rozšířila','rozšířil')] po svém [ROOT.Char.Custom('GetCourt')], vytvořily nedůvěru mezi několika z mých [ROOT.Char.Custom('GetCourtierPlural')]"
  intrigue_scheming.4040.a.failure: "Pomluvy jsou odmítnuty jako bezvýznamné nesmysly"
  intrigue_scheming.4040.a.failure.tt: "Pomluvy, které jste [Select_CString(ROOT.Char.IsFemale,'rozšířila','rozšířil')] po svém [ROOT.Char.Custom('GetCourt')], byly odmítnuty jako bezvýznamné nesmysly"
  intrigue_scheming.4040.b: "Pokud mezi ně umístím nějaké špehy, budu v bezpečí."
  intrigue_scheming.4040.c.dread: "Moji [ROOT.Char.Custom('GetCourtierPlural')] už vědí, že se proti mně nespiknou!"
- intrigue_scheming.4040.c.dread.tt: "Tato možnost je dostupná díky vaší vysoké [dread|E]."
+ intrigue_scheming.4040.c.dread.tt: "Tato možnost je dostupná díky vaší vysoké [Concept('dread','hrůze')|E]." # todo: CONCEPT CASE
  intrigue_scheming.4050.t: "Obchodování s informacemi"
  intrigue_scheming.4050.desc.start: "Očekávám, že by [buyer.GetTitledFirstName] [Select_CString(buyer.IsFemale,'byla','byl')] velmi [Select_CString(buyer.IsFemale,'zainteresována','zainteresován')] na informacích, které jsem [Select_CString(buyer.IsFemale,'získala','získal')], naznačujících"
  intrigue_scheming.4050.desc.lover: "[buyer.GetHerHis] [buyer.Custom2('RelationToMeShort', SCOPE.sC('owner'))], [owner.GetTitledFirstName], má poměr s [target.GetTitledFirstName]..."

@@ -1,11 +1,11 @@
 ﻿l_polish:
  activity_pilgrimage: "Pouť"
  activity_pilgrimage_desc: "$game_concept_pilgrimage_desc$"
- activity_pilgrimage_host_desc: "$BULLET_WITH_TAB$[piety_i|E][piety|E] Zisk\n$BULLET_WITH_TAB$[legitimacy_i] [legitimacy|E] Zisk\n$BULLET_WITH_TAB$[stress_loss_i][stress|E] Snížení\n[GetPlayer.Custom('GetPilgrimOrHajjiTrait')]"
- activity_pilgrimage_pilgrim_custom_host_desc: "$BULLET_WITH_TAB$@pilgrim_trait_icon! [GetTrait('pilgrim').GetName( GetNullCharacter )] [trait|E] / [GetTrait('pilgrim').GetName( GetNullCharacter )] [trait_level_track_xp|E]\n$BULLET_WITH_TAB$@gallowsbait_trait_icon! [GetTrait('gallowsbait').GetName( GetNullCharacter )] [trait|E] ztráta během zbožné [pilgrimage|E]"
- activity_pilgrimage_hajjaj_custom_host_desc: "$BULLET_WITH_TAB$@hajjaj_trait_icon! [GetTrait('hajjaj').GetName( GetNullCharacter )] [trait|E]\n$BULLET_WITH_TAB$@gallowsbait_trait_icon! [GetTrait('gallowsbait').GetName( GetNullCharacter )] [trait|E] ztráta během zbožného [hajj|E]"
- activity_pilgrimage_selection_tooltip: "Uskutečněte [pilgrimage|E], abyste prokázali svou oddanost [GetPlayer.GetFaith.PantheonTerm]\n\nOčekávané odměny:\n$BULLET_WITH_TAB$[piety_i] [piety|E] Zisk\n$BULLET_WITH_TAB$[legitimacy_i] [legitimacy|E] Zisk\n$BULLET_WITH_TAB$[stress_loss_i] [stress|E] Snížení"
- activity_pilgrimage_destination_selection: "Čím dál od vašeho hlavního města je cíl, tím více prokazujete svou oddanost [GetPlayer.GetFaith.PantheonTerm] a získáte další [piety|E]."
+ activity_pilgrimage_host_desc: "$BULLET_WITH_TAB$[Concept('piety_i','[GetLocalPlayerPietyTextIcon]')|E][Concept('piety','Zbožnost')|E] Zisk\n$BULLET_WITH_TAB$[legitimacy_i] [Concept('legitimacy','Legitimita')|E] Zisk\n$BULLET_WITH_TAB$[stress_loss_i][Concept('stress','Stres')|E] Snížení\n[GetPlayer.Custom('GetPilgrimOrHajjiTrait')]" # todo: CONCEPT CASE
+ activity_pilgrimage_pilgrim_custom_host_desc: "$BULLET_WITH_TAB$@pilgrim_trait_icon! [GetTrait('pilgrim').GetName( GetNullCharacter )] [Concept('trait','Rys')|E] / [GetTrait('pilgrim').GetName( GetNullCharacter )] [Concept('trait_level_track_xp','zkušenosti rysu')|E]\n$BULLET_WITH_TAB$@gallowsbait_trait_icon! [GetTrait('gallowsbait').GetName( GetNullCharacter )] [Concept('trait','Rys')|E] ztráta během zbožné [Concept('pilgrimage','poutě')|E]" # todo: CONCEPT CASE
+ activity_pilgrimage_hajjaj_custom_host_desc: "$BULLET_WITH_TAB$@hajjaj_trait_icon! [GetTrait('hajjaj').GetName( GetNullCharacter )] [Concept('trait','Rys')|E]\n$BULLET_WITH_TAB$@gallowsbait_trait_icon! [GetTrait('gallowsbait').GetName( GetNullCharacter )] [Concept('trait','Rys')|E] ztráta během zbožného [hajj|E]" # todo: CONCEPT CASE
+ activity_pilgrimage_selection_tooltip: "Uskutečněte [Concept('pilgrimage','pouť')|E], abyste prokázali svou oddanost [GetPlayer.GetFaith.PantheonTerm]\n\nOčekávané odměny:\n$BULLET_WITH_TAB$[piety_i] [Concept('piety','Zbožnost')|E] Zisk\n$BULLET_WITH_TAB$[legitimacy_i] [Concept('legitimacy','Legitimita')|E] Zisk\n$BULLET_WITH_TAB$[stress_loss_i] [Concept('stress','Stres')|E] Snížení" # todo: CONCEPT CASE
+ activity_pilgrimage_destination_selection: "Čím dál od vašeho hlavního města je cíl, tím více prokazujete svou oddanost [GetPlayer.GetFaith.PantheonTerm] a získáte další [Concept('piety','zbožnost')|E]." # todo: CONCEPT CASE
  activity_pilgrimage_owner: "Poutník"
  activity_pilgrimage_name: "Pouť"
  activity_pilgrimage_province_unvisited_desc: "\n#positive_value + Nenavštívené svaté místo#!"
@@ -21,60 +21,60 @@
  activity_pilgrimage_province_very_far_desc: "\n#positive_value +++ Velmi vzdálené#!\n#negative_value --- Drahé#!\n\nDodatečné náklady: [gold_i][SCOPE.ScriptValue('pilgrimage_length_cost_tier_6')|0]"
  activity_pilgrimage_province_extraordinarily_far_desc: "\n#positive_value +++ Mimořádně daleko#!\n#negative_value --- Velmi drahé#!\n\nDodatečné náklady: [gold_i][SCOPE.ScriptValue('pilgrimage_length_cost_tier_7')|0]"
  activity_pilgrimage_imaginary_friend_location_desc: "\n#positive_value +++ Uctěte svého imaginárního přítele#!"
- activity_pilgrimage_province_medium_mult_desc: "\n\n#bold Efekty z pořádání [GetActivityType('activity_pilgrimage').GetName] zde#!\n$BULLET_WITH_TAB$[piety_i|E][piety|E] Odměna za aktivitu: #p +[EmptyScope.ScriptValue('medium_pilgrimage_piety_multiplier')|0]%#!"
- activity_pilgrimage_province_long_mult_desc: "\n\n#bold Efekty z pořádání [GetActivityType('activity_pilgrimage').GetName] zde#!\n$BULLET_WITH_TAB$[piety_i|E][piety|E] Odměna za aktivitu: #p +[EmptyScope.ScriptValue('long_pilgrimage_piety_multiplier')|0]%#!"
- activity_pilgrimage_province_very_long_mult_desc: "\n\n#bold Efekty z pořádání [GetActivityType('activity_pilgrimage').GetName] zde#!\n$BULLET_WITH_TAB$[piety_i|E][piety|E] Odměna za aktivitu: #p +[EmptyScope.ScriptValue('very_long_pilgrimage_piety_multiplier')|0]%#!"
+ activity_pilgrimage_province_medium_mult_desc: "\n\n#bold Efekty z pořádání [GetActivityType('activity_pilgrimage').GetName] zde#!\n$BULLET_WITH_TAB$[Concept('piety_i','[GetLocalPlayerPietyTextIcon]')|E][Concept('piety','Zbožnost')|E] Odměna za aktivitu: #p +[EmptyScope.ScriptValue('medium_pilgrimage_piety_multiplier')|0]%#!" # todo: CONCEPT CASE
+ activity_pilgrimage_province_long_mult_desc: "\n\n#bold Efekty z pořádání [GetActivityType('activity_pilgrimage').GetName] zde#!\n$BULLET_WITH_TAB$[Concept('piety_i','[GetLocalPlayerPietyTextIcon]')|E][Concept('piety','Zbožnost')|E] Odměna za aktivitu: #p +[EmptyScope.ScriptValue('long_pilgrimage_piety_multiplier')|0]%#!" # todo: CONCEPT CASE
+ activity_pilgrimage_province_very_long_mult_desc: "\n\n#bold Efekty z pořádání [GetActivityType('activity_pilgrimage').GetName] zde#!\n$BULLET_WITH_TAB$[Concept('piety_i','[GetLocalPlayerPietyTextIcon]')|E][Concept('piety','Zbožnost')|E] Odměna za aktivitu: #p +[EmptyScope.ScriptValue('very_long_pilgrimage_piety_multiplier')|0]%#!" # todo: CONCEPT CASE
  activity_pilgrimage_conclusion_desc: "Naše pouť byla úspěšně dokončena"
  pilgrimage_header: "[ROOT.Char.Custom('PilgrimageHeader')]"
- ACTIVITY_PILGRIMATE_VISITED_HOLY_SITE: "Navštíveno $ACTIVITY_CURRENT_LOCATION$ [holy_site|E]"
+ ACTIVITY_PILGRIMATE_VISITED_HOLY_SITE: "Navštíveno $ACTIVITY_CURRENT_LOCATION$ [Concept('holy_site','svaté místo')|E]" # todo: CONCEPT CASE
  activity_window_character_pilgrim: "Poutník\n[Character.GetShortUINameNoTooltip|U]"
  pilgrimage_pious_type_tt_positive: "Vaše [GetActivityType('activity_pilgrimage').GetName] se stane #P více zbožná#!"
  pilgrimage_pious_type_tt_very_positive: "Vaše [GetActivityType('activity_pilgrimage').GetName] se stane #P velmi zbožná#!"
  pilgrimage_worldly_type_tt_positive: "Vaše [GetActivityType('activity_pilgrimage').GetName] se stane #P více světská#!"
  pilgrimage_worldly_type_tt_very_positive: "Vaše [GetActivityType('activity_pilgrimage').GetName] se stane #P velmi světská#!"
- pilgrimage_cultural_acceptance_all_encountered.tt: "Každá setkaná [culture|E]"
- pilgrimage_because_global_have_armed_pilgrimages: "Protože [CHARACTER.GetShortUINamePossessive] [faith|E] má [GetFaithDoctrine('tenet_armed_pilgrimages').GetBaseName] [core_tenet|E]:"
- pilgrimage_because_global_had_armed_pilgrimages: "Protože [CHARACTER.GetShortUINamePossessive] [faith|E] měla [GetFaithDoctrine('tenet_armed_pilgrimages').GetBaseName] [core_tenet|E]:"
+ pilgrimage_cultural_acceptance_all_encountered.tt: "Každá setkaná [Concept('culture','kultura')|E]" # todo: CONCEPT CASE
+ pilgrimage_because_global_have_armed_pilgrimages: "Protože [CHARACTER.GetShortUINamePossessive] [Concept('faith','víra')|E] má [GetFaithDoctrine('tenet_armed_pilgrimages').GetBaseName] [Concept('core_tenet','zásady')|E]:" # todo: CONCEPT CASE
+ pilgrimage_because_global_had_armed_pilgrimages: "Protože [CHARACTER.GetShortUINamePossessive] [Concept('faith','víra')|E] měla [GetFaithDoctrine('tenet_armed_pilgrimages').GetBaseName] [Concept('core_tenet','zásady')|E]:" # todo: CONCEPT CASE
  pilgrimage_because_they_have_armed_pilgrimages: "$pilgrimage_because_global_have_armed_pilgrimages$"
  pilgrimage_because_they_had_armed_pilgrimages: "$pilgrimage_because_global_had_armed_pilgrimages$"
- pilgrimage_because_i_have_armed_pilgrimages: "Protože vaše [faith|E] má [GetFaithDoctrine('tenet_armed_pilgrimages').GetBaseName] [core_tenet|E]:"
- pilgrimage_because_i_had_armed_pilgrimages: "Protože vaše [faith|E] měla [GetFaithDoctrine('tenet_armed_pilgrimages').GetBaseName] [core_tenet|E]:"
- pilgrimage_because_global_have_tenet_mendicant_preachers: "Protože [CHARACTER.GetShortUINamePossessive] [faith|E] má [GetFaithDoctrine('tenet_mendicant_preachers').GetBaseName] [core_tenet|E]:"
- pilgrimage_because_global_had_tenet_mendicant_preachers: "Protože [CHARACTER.GetShortUINamePossessive] [faith|E] měla [GetFaithDoctrine('tenet_mendicant_preachers').GetBaseName] [core_tenet|E]:"
+ pilgrimage_because_i_have_armed_pilgrimages: "Protože vaše [Concept('faith','víra')|E] má [GetFaithDoctrine('tenet_armed_pilgrimages').GetBaseName] [Concept('core_tenet','zásady')|E]:" # todo: CONCEPT CASE
+ pilgrimage_because_i_had_armed_pilgrimages: "Protože vaše [Concept('faith','víra')|E] měla [GetFaithDoctrine('tenet_armed_pilgrimages').GetBaseName] [Concept('core_tenet','zásady')|E]:" # todo: CONCEPT CASE
+ pilgrimage_because_global_have_tenet_mendicant_preachers: "Protože [CHARACTER.GetShortUINamePossessive] [Concept('faith','víra')|E] má [GetFaithDoctrine('tenet_mendicant_preachers').GetBaseName] [Concept('core_tenet','zásady')|E]:" # todo: CONCEPT CASE
+ pilgrimage_because_global_had_tenet_mendicant_preachers: "Protože [CHARACTER.GetShortUINamePossessive] [Concept('faith','víra')|E] měla [GetFaithDoctrine('tenet_mendicant_preachers').GetBaseName] [Concept('core_tenet','zásady')|E]:" # todo: CONCEPT CASE
  pilgrimage_because_they_have_tenet_mendicant_preachers: "$pilgrimage_because_global_have_tenet_mendicant_preachers$"
  pilgrimage_because_they_had_tenet_mendicant_preachers: "$pilgrimage_because_global_had_tenet_mendicant_preachers$"
- pilgrimage_because_i_have_tenet_mendicant_preachers: "Protože vaše [faith|E] má [GetFaithDoctrine('tenet_mendicant_preachers').GetBaseName] [core_tenet|E]:"
- pilgrimage_because_i_had_tenet_mendicant_preachers: "Protože vaše [faith|E] měla [GetFaithDoctrine('tenet_mendicant_preachers').GetBaseName] [core_tenet|E]:"
- pilgrimage_because_global_have_tenet_pentarchy: "Protože [CHARACTER.GetShortUINamePossessive] [faith|E] má [GetFaithDoctrine('tenet_pentarchy').GetBaseName] [core_tenet|E]:"
- pilgrimage_because_global_had_tenet_pentarchy: "Protože [CHARACTER.GetShortUINamePossessive] [faith|E] měla [GetFaithDoctrine('tenet_pentarchy').GetBaseName] [core_tenet|E]:"
+ pilgrimage_because_i_have_tenet_mendicant_preachers: "Protože vaše [Concept('faith','víra')|E] má [GetFaithDoctrine('tenet_mendicant_preachers').GetBaseName] [Concept('core_tenet','zásady')|E]:" # todo: CONCEPT CASE
+ pilgrimage_because_i_had_tenet_mendicant_preachers: "Protože vaše [Concept('faith','víra')|E] měla [GetFaithDoctrine('tenet_mendicant_preachers').GetBaseName] [Concept('core_tenet','zásady')|E]:" # todo: CONCEPT CASE
+ pilgrimage_because_global_have_tenet_pentarchy: "Protože [CHARACTER.GetShortUINamePossessive] [Concept('faith','víra')|E] má [GetFaithDoctrine('tenet_pentarchy').GetBaseName] [Concept('core_tenet','zásady')|E]:" # todo: CONCEPT CASE
+ pilgrimage_because_global_had_tenet_pentarchy: "Protože [CHARACTER.GetShortUINamePossessive] [Concept('faith','víra')|E] měla [GetFaithDoctrine('tenet_pentarchy').GetBaseName] [Concept('core_tenet','zásady')|E]:" # todo: CONCEPT CASE
  pilgrimage_because_they_have_tenet_pentarchy: "$pilgrimage_because_global_have_tenet_pentarchy$"
  pilgrimage_because_they_had_tenet_pentarchy: "$pilgrimage_because_global_had_tenet_pentarchy$"
- pilgrimage_because_i_have_tenet_pentarchy: "Protože vaše [faith|E] má [GetFaithDoctrine('tenet_pentarchy').GetBaseName] [core_tenet|E]:"
- pilgrimage_because_i_had_tenet_pentarchy: "Protože vaše [faith|E] měla [GetFaithDoctrine('tenet_pentarchy').GetBaseName] [core_tenet|E]:"
- pilgrimage_because_global_have_tenet_esotericism: "Protože [CHARACTER.GetShortUINamePossessive] [faith|E] má [GetFaithDoctrine('tenet_esotericism').GetBaseName] [core_tenet|E]:"
- pilgrimage_because_global_had_tenet_esotericism: "Protože [CHARACTER.GetShortUINamePossessive] [faith|E] měla [GetFaithDoctrine('tenet_esotericism').GetBaseName] [core_tenet|E]:"
+ pilgrimage_because_i_have_tenet_pentarchy: "Protože vaše [Concept('faith','víra')|E] má [GetFaithDoctrine('tenet_pentarchy').GetBaseName] [Concept('core_tenet','zásady')|E]:" # todo: CONCEPT CASE
+ pilgrimage_because_i_had_tenet_pentarchy: "Protože vaše [Concept('faith','víra')|E] měla [GetFaithDoctrine('tenet_pentarchy').GetBaseName] [Concept('core_tenet','zásady')|E]:" # todo: CONCEPT CASE
+ pilgrimage_because_global_have_tenet_esotericism: "Protože [CHARACTER.GetShortUINamePossessive] [Concept('faith','víra')|E] má [GetFaithDoctrine('tenet_esotericism').GetBaseName] [Concept('core_tenet','zásady')|E]:" # todo: CONCEPT CASE
+ pilgrimage_because_global_had_tenet_esotericism: "Protože [CHARACTER.GetShortUINamePossessive] [Concept('faith','víra')|E] měla [GetFaithDoctrine('tenet_esotericism').GetBaseName] [Concept('core_tenet','zásady')|E]:" # todo: CONCEPT CASE
  pilgrimage_because_they_have_tenet_esotericism: "$pilgrimage_because_global_have_tenet_esotericism$"
  pilgrimage_because_they_had_tenet_esotericism: "$pilgrimage_because_global_had_tenet_esotericism$"
- pilgrimage_because_i_have_tenet_esotericism: "Protože vaše [faith|E] má [GetFaithDoctrine('tenet_esotericism').GetBaseName] [core_tenet|E]:"
- pilgrimage_because_i_had_tenet_esotericism: "Protože vaše [faith|E] měla [GetFaithDoctrine('tenet_esotericism').GetBaseName] [core_tenet|E]:"
- pilgrimage_because_global_have_tenet_struggle_submission: "Protože [CHARACTER.GetShortUINamePossessive] [faith|E] má [GetFaithDoctrine('tenet_struggle_submission').GetBaseName] [core_tenet|E]:"
- pilgrimage_because_global_had_tenet_struggle_submission: "Protože [CHARACTER.GetShortUINamePossessive] [faith|E] měla [GetFaithDoctrine('tenet_struggle_submission').GetBaseName] [core_tenet|E]:"
+ pilgrimage_because_i_have_tenet_esotericism: "Protože vaše [Concept('faith','víra')|E] má [GetFaithDoctrine('tenet_esotericism').GetBaseName] [Concept('core_tenet','zásady')|E]:" # todo: CONCEPT CASE
+ pilgrimage_because_i_had_tenet_esotericism: "Protože vaše [Concept('faith','víra')|E] měla [GetFaithDoctrine('tenet_esotericism').GetBaseName] [Concept('core_tenet','zásady')|E]:" # todo: CONCEPT CASE
+ pilgrimage_because_global_have_tenet_struggle_submission: "Protože [CHARACTER.GetShortUINamePossessive] [Concept('faith','víra')|E] má [GetFaithDoctrine('tenet_struggle_submission').GetBaseName] [Concept('core_tenet','zásady')|E]:" # todo: CONCEPT CASE
+ pilgrimage_because_global_had_tenet_struggle_submission: "Protože [CHARACTER.GetShortUINamePossessive] [Concept('faith','víra')|E] měla [GetFaithDoctrine('tenet_struggle_submission').GetBaseName] [Concept('core_tenet','zásady')|E]:" # todo: CONCEPT CASE
  pilgrimage_because_they_have_tenet_struggle_submission: "$pilgrimage_because_global_have_tenet_struggle_submission$"
  pilgrimage_because_they_had_tenet_struggle_submission: "$pilgrimage_because_global_had_tenet_struggle_submission$"
- pilgrimage_because_i_have_tenet_struggle_submission: "Protože vaše [faith|E] má [GetFaithDoctrine('tenet_struggle_submission').GetBaseName] [core_tenet|E]:"
- pilgrimage_because_i_had_tenet_struggle_submission: "Protože vaše [faith|E] měla [GetFaithDoctrine('tenet_struggle_submission').GetBaseName] [core_tenet|E]:"
- pilgrimage_because_global_have_tenet_ancestor_worship: "Protože [CHARACTER.GetShortUINamePossessive] [faith|E] má [GetFaithDoctrine('tenet_ancestor_worship').GetBaseName] [core_tenet|E]:"
- pilgrimage_because_global_had_tenet_ancestor_worship: "Protože [CHARACTER.GetShortUINamePossessive] [faith|E] [Select_CString(CHARACTER.IsFemale,'měla','měl')] [GetFaithDoctrine('tenet_ancestor_worship').GetBaseName] [core_tenet|E]:"
+ pilgrimage_because_i_have_tenet_struggle_submission: "Protože vaše [Concept('faith','víra')|E] má [GetFaithDoctrine('tenet_struggle_submission').GetBaseName] [Concept('core_tenet','zásady')|E]:" # todo: CONCEPT CASE
+ pilgrimage_because_i_had_tenet_struggle_submission: "Protože vaše [Concept('faith','víra')|E] měla [GetFaithDoctrine('tenet_struggle_submission').GetBaseName] [Concept('core_tenet','zásady')|E]:" # todo: CONCEPT CASE
+ pilgrimage_because_global_have_tenet_ancestor_worship: "Protože [CHARACTER.GetShortUINamePossessive] [Concept('faith','víra')|E] má [GetFaithDoctrine('tenet_ancestor_worship').GetBaseName] [Concept('core_tenet','zásady')|E]:" # todo: CONCEPT CASE
+ pilgrimage_because_global_had_tenet_ancestor_worship: "Protože [CHARACTER.GetShortUINamePossessive] [Concept('faith','víra')|E] [Select_CString(CHARACTER.IsFemale,'měla','měl')] [GetFaithDoctrine('tenet_ancestor_worship').GetBaseName] [Concept('core_tenet','zásada')|E]:" # todo: CONCEPT CASE
  pilgrimage_because_they_have_tenet_ancestor_worship: "$pilgrimage_because_global_have_tenet_ancestor_worship$"
  pilgrimage_because_they_had_tenet_ancestor_worship: "$pilgrimage_because_global_had_tenet_ancestor_worship$"
- pilgrimage_because_i_have_tenet_ancestor_worship: "Protože vaše [faith|E] má [GetFaithDoctrine('tenet_ancestor_worship').GetBaseName] [core_tenet|E]:"
- pilgrimage_because_i_had_tenet_ancestor_worship: "Protože vaše [faith|E] měla [GetFaithDoctrine('tenet_ancestor_worship').GetBaseName] [core_tenet|E]:"
+ pilgrimage_because_i_have_tenet_ancestor_worship: "Protože vaše [Concept('faith','víra')|E] má [GetFaithDoctrine('tenet_ancestor_worship').GetBaseName] [Concept('core_tenet','zásady')|E]:" # todo: CONCEPT CASE
+ pilgrimage_because_i_had_tenet_ancestor_worship: "Protože vaše [Concept('faith','víra')|E] měla [GetFaithDoctrine('tenet_ancestor_worship').GetBaseName] [Concept('core_tenet','zásady')|E]:" # todo: CONCEPT CASE
  pilgrimage_learn_from_the_bishops: "Snažit se porozumět svatým učitelům"
  pilgrimage_learn_from_the_bishops_success: "Vstřebali jste poučení"
  pilgrimage_learn_from_the_bishops_failure: "Poznání vám stále uniká"
- pilgrimage_piousness_because_i_have_tenet_armed_pilgrimages: "Protože vaše [faith|E] má [GetFaithDoctrine('tenet_armed_pilgrimages').GetBaseName] [core_tenet|E]:\n$EFFECT_LIST_BULLET$$pilgrimage_pious_type_tt_positive$\n"
- pilgrimage_piousness_because_i_have_tenet_struggle_submission: "Protože vaše [faith|E] má [GetFaithDoctrine('tenet_struggle_submission').GetBaseName] [core_tenet|E]:\n$EFFECT_LIST_BULLET$$pilgrimage_pious_type_tt_positive$\n"
- pilgrimage_piousness_because_i_have_tenet_warmonger: "Protože vaše [faith|E] má [GetFaithDoctrine('tenet_warmonger').GetBaseName] [core_tenet|E]:\n$EFFECT_LIST_BULLET$$pilgrimage_pious_type_tt_positive$\n"
+ pilgrimage_piousness_because_i_have_tenet_armed_pilgrimages: "Protože vaše [Concept('faith','víra')|E] má [GetFaithDoctrine('tenet_armed_pilgrimages').GetBaseName] [Concept('core_tenet','zásady')|E]:\n$EFFECT_LIST_BULLET$$pilgrimage_pious_type_tt_positive$\n" # todo: CONCEPT CASE
+ pilgrimage_piousness_because_i_have_tenet_struggle_submission: "Protože vaše [Concept('faith','víra')|E] má [GetFaithDoctrine('tenet_struggle_submission').GetBaseName] [Concept('core_tenet','zásady')|E]:\n$EFFECT_LIST_BULLET$$pilgrimage_pious_type_tt_positive$\n" # todo: CONCEPT CASE
+ pilgrimage_piousness_because_i_have_tenet_warmonger: "Protože vaše [Concept('faith','víra')|E] má [GetFaithDoctrine('tenet_warmonger').GetBaseName] [Concept('core_tenet','zásady')|E]:\n$EFFECT_LIST_BULLET$$pilgrimage_pious_type_tt_positive$\n" # todo: CONCEPT CASE
  pilgrimage_base_cost: "Základní náklady"
  pilgrimage_cost_triggered_by_ghosts: "Vliv duchů"
  pilgrimage_cost_triggered_by_dead_hajj_relative: "Slibovaný Hajj"
@@ -84,29 +84,29 @@
  pilgrimage_cost_distance: "Náklady za vzdálenost"
  pilgrimage_phase_solo: "Pouť"
  pilgrimage_phase_solo_desc: "Pouť je duchovní cesta do osobních přesvědčení. Úspěch pouti závisí při cestě stejně tak na rozhodnutích učiněných na cíli."
- activity_pilgrimage_guest_desc: "$BULLET_WITH_TAB$Účastníci mohou získat [piety|E]\n$BULLET_WITH_TAB$Účastníci mohou získat [legitimacy_i] [legitimacy|E]\n$BULLET_WITH_TAB$Účastníci mohou ztratit [stress_loss_i][stress|E]\n$BULLET_WITH_TAB$Účastníci mohou získat [GetTrait('pilgrim').GetName( GetNullCharacter )] [trait|E]"
+ activity_pilgrimage_guest_desc: "$BULLET_WITH_TAB$Účastníci mohou získat [Concept('piety','zbožnost')|E]\n$BULLET_WITH_TAB$Účastníci mohou získat [legitimacy_i] [Concept('legitimacy','legitimita')|E]\n$BULLET_WITH_TAB$Účastníci mohou ztratit [stress_loss_i][Concept('stress','stres')|E]\n$BULLET_WITH_TAB$Účastníci mohou získat [GetTrait('pilgrim').GetName( GetNullCharacter )] [Concept('trait','rys')|E]" # todo: CONCEPT CASE
  pilgrimage_type_pious: "Pobožná pouť"
- pilgrimage_type_pious_desc: "$EFFECT_LIST_BULLET$ Některé možnosti událostí umožní obzvlášť pobožné činy\n$EFFECT_LIST_BULLET$ Volby tohoto typu přinesou při dokončení zvýšené množství [piety|E]\n\n#weak Účelem pouti je vzdát úctu božskému, skutečně se spojit se samotnou podstatou své duše.#!"
+ pilgrimage_type_pious_desc: "$EFFECT_LIST_BULLET$ Některé možnosti událostí umožní obzvlášť pobožné činy\n$EFFECT_LIST_BULLET$ Volby tohoto typu přinesou při dokončení zvýšené množství [Concept('piety','zbožnosti')|E]\n\n#weak Účelem pouti je vzdát úctu božskému, skutečně se spojit se samotnou podstatou své duše.#!" # todo: CONCEPT CASE
  pilgrimage_type_worldly: "Světská pouť"
  pilgrimage_type_worldly_desc: "$EFFECT_LIST_BULLET$ Některé možnosti událostí umožní turistické činnosti\n$EFFECT_LIST_BULLET$ Volby tohoto typu přinesou při dokončení stupňovitý multikulturní bonus\n\n#weak Cítit sladkou zvláštnost cizího vzduchu, rozluštit podivnosti cizích jazyků — může být něco lepšího?#!"
  pilgrimage_type_hajj: "Hajj"
- pilgrimage_type_hajj_desc: "$EFFECT_LIST_BULLET$ Všichni schopní muslimové musí jednou vykonat Hajj\n$EFFECT_LIST_BULLET$ Ostatní typy se stanou dostupnými po získání [GetTrait('hajjaj').GetName(GetNullCharacter)] [trait|E]\n\n#weak Pamatujte — Hajj není povinnost, je to příležitost. K odevzdání, k pokoře, k odpuštění. Inshallah!#!"
+ pilgrimage_type_hajj_desc: "$EFFECT_LIST_BULLET$ Všichni schopní muslimové musí jednou vykonat Hajj\n$EFFECT_LIST_BULLET$ Ostatní typy se stanou dostupnými po získání [GetTrait('hajjaj').GetName(GetNullCharacter)] [Concept('trait','ryse')|E]\n\n#weak Pamatujte — Hajj není povinnost, je to příležitost. K odevzdání, k pokoře, k odpuštění. Inshallah!#!" # todo: CONCEPT CASE
  pilgrimage_option_fidelity: "Závaznost"
  pilgrimage_fidelity_obligatory: "Povinná"
- pilgrimage_fidelity_obligatory_desc: "$EFFECT_LIST_BULLET$ Rychlost [travel|E] se zvýší o #positive_value 50%#!\n$EFFECT_LIST_BULLET$ Po dokončení získáte o #EMP méně#! [piety|E]\n\n#weak Ano, ano, duchovní naplnění, morální povinnost, osud mé nesmrtelné duše, atd. Můžeme už konečně vyrazit?#!"
+ pilgrimage_fidelity_obligatory_desc: "$EFFECT_LIST_BULLET$ Rychlost [Concept('travel','cestování')|E] se zvýší o #positive_value 50%#!\n$EFFECT_LIST_BULLET$ Po dokončení získáte o #EMP méně#! [Concept('piety','zbožnost')|E]\n\n#weak Ano, ano, duchovní naplnění, morální povinnost, osud mé nesmrtelné duše, atd. Můžeme už konečně vyrazit?#!" # todo: CONCEPT CASE
  pilgrimage_fidelity_pilgrim: "Poutnická"
- pilgrimage_fidelity_pilgrim_desc: "$EFFECT_LIST_BULLET$ Rychlost [travel|E] není ovlivněna\n$EFFECT_LIST_BULLET$ Odměny [piety|E] při dokončení nejsou ovlivněny\n\n#weak S radostným srdcem a dobrou vůlí vyrážíme obhlédnout posvátná místa této země.#!"
+ pilgrimage_fidelity_pilgrim_desc: "$EFFECT_LIST_BULLET$ Rychlost [Concept('travel','cestování')|E] není ovlivněna\n$EFFECT_LIST_BULLET$ Odměny [Concept('piety','zbožnost')|E] při dokončení nejsou ovlivněny\n\n#weak S radostným srdcem a dobrou vůlí vyrážíme obhlédnout posvátná místa této země.#!" # todo: CONCEPT CASE
  pilgrimage_fidelity_contemplative: "Rozjímavá"
- pilgrimage_fidelity_contemplative_desc: "$EFFECT_LIST_BULLET$ Rychlost [travel|E] se sníží o #negative_value 50%#!\n$EFFECT_LIST_BULLET$ Po dokončení získáte více [piety|E]\n\n#weak Pokud je cílem pouti rozjímání, jaký smysl má spěchat? Cesta je přeci polovina smyslu.#!"
+ pilgrimage_fidelity_contemplative_desc: "$EFFECT_LIST_BULLET$ Rychlost [Concept('travel','cestování')|E] se sníží o #negative_value 50%#!\n$EFFECT_LIST_BULLET$ Po dokončení získáte více [Concept('piety','zbožnost')|E]\n\n#weak Pokud je cílem pouti rozjímání, jaký smysl má spěchat? Cesta je přeci polovina smyslu.#!" # todo: CONCEPT CASE
  pilgrimage_option_pomp: "Okázalost"
  pilgrimage_pomp_humble: "Skromná"
- pilgrimage_pomp_humble_desc: "$EFFECT_LIST_BULLET$ Nevezmete nikoho z [court|E], což činí [travel|E] nebezpečným\n$EFFECT_LIST_BULLET$ Připojíte se k průvodu [EmptyScope.ScriptValue('pilgrimage_entourage_pomp_humble_max_value')] náhodných poutníků\n$EFFECT_LIST_BULLET$ Po dokončení získáte více [piety|E]\n\n#weak Pouť je čas tiché reflexe. Společný průvod neznámých poutníků je k tomu nejlepší místo.#!"
+ pilgrimage_pomp_humble_desc: "$EFFECT_LIST_BULLET$ Nevezmete nikoho z [Concept('court','dvora')|E], což činí [Concept('travel','cestování')|E] nebezpečným\n$EFFECT_LIST_BULLET$ Připojíte se k průvodu [EmptyScope.ScriptValue('pilgrimage_entourage_pomp_humble_max_value')] náhodných poutníků\n$EFFECT_LIST_BULLET$ Po dokončení získáte více [Concept('piety','zbožnost')|E]\n\n#weak Pouť je čas tiché reflexe. Společný průvod neznámých poutníků je k tomu nejlepší místo.#!" # todo: CONCEPT CASE
  pilgrimage_pomp_appropriate: "Patřičná"
- pilgrimage_pomp_appropriate_desc: "$EFFECT_LIST_BULLET$ Přivedete tělesnou stráž nebo zdatné rytíře, a možná i přítele\n$EFFECT_LIST_BULLET$ Až [EmptyScope.ScriptValue('pilgrimage_entourage_pomp_appropriate_max_value')] náhodných poutníků se připojí k vašemu průvodu\n$EFFECT_LIST_BULLET$ Odměny [piety|E] při dokončení nejsou ovlivněny\n\n#weak Cesty jsou nebezpečné a cesta dlouhá. Duchovní čistota je jedna věc, chovat se nerozumně je věc druhá.#!"
+ pilgrimage_pomp_appropriate_desc: "$EFFECT_LIST_BULLET$ Přivedete tělesnou stráž nebo zdatné rytíře, a možná i přítele\n$EFFECT_LIST_BULLET$ Až [EmptyScope.ScriptValue('pilgrimage_entourage_pomp_appropriate_max_value')] náhodných poutníků se připojí k vašemu průvodu\n$EFFECT_LIST_BULLET$ Odměny [Concept('piety','zbožnost')|E] při dokončení nejsou ovlivněny\n\n#weak Cesty jsou nebezpečné a cesta dlouhá. Duchovní čistota je jedna věc, chovat se nerozumně je věc druhá.#!" # todo: CONCEPT CASE
  pilgrimage_pomp_ceremonial: "Ceremoniální"
- pilgrimage_pomp_ceremonial_desc: "$EFFECT_LIST_BULLET$ Vy #EMP také#! přivedete sluhy & zbožné doprovodné osoby\n$EFFECT_LIST_BULLET$ Až [EmptyScope.ScriptValue('pilgrimage_entourage_pomp_ceremonial_max_value')] náhodných poutníků se připojí k vašemu průvodu\n$EFFECT_LIST_BULLET$ Po dokončení získáte více [piety|E]\n\n#weak Víra vyžaduje formálnost, i daleko od domova. A jak být formální bez následovníků?#!"
+ pilgrimage_pomp_ceremonial_desc: "$EFFECT_LIST_BULLET$ Vy #EMP také#! přivedete sluhy & zbožné doprovodné osoby\n$EFFECT_LIST_BULLET$ Až [EmptyScope.ScriptValue('pilgrimage_entourage_pomp_ceremonial_max_value')] náhodných poutníků se připojí k vašemu průvodu\n$EFFECT_LIST_BULLET$ Po dokončení získáte více [Concept('piety','zbožnost')|E]\n\n#weak Víra vyžaduje formálnost, i daleko od domova. A jak být formální bez následovníků?#!" # todo: CONCEPT CASE
  pilgrimage_pomp_throng: "Dav"
- pilgrimage_pomp_throng_desc: "$EFFECT_LIST_BULLET$ Každý zájemce [character|E] na [court|E] se k vám připojí\n$EFFECT_LIST_BULLET$ Až [EmptyScope.ScriptValue('pilgrimage_entourage_pomp_throng_max_value')] náhodných poutníků se připojí k vašemu průvodu\n$EFFECT_LIST_BULLET$ Po dokončení získáte výrazně více [piety|E]\n\n#weak Všichni věřící by měli spatřit naše posvátná místa... a já jim k tomu hodlám pomoci.#!"
+ pilgrimage_pomp_throng_desc: "$EFFECT_LIST_BULLET$ Každý zájemce [Concept('character','postava')|E] na [Concept('court','dvůr')|E] se k vám připojí\n$EFFECT_LIST_BULLET$ Až [EmptyScope.ScriptValue('pilgrimage_entourage_pomp_throng_max_value')] náhodných poutníků se připojí k vašemu průvodu\n$EFFECT_LIST_BULLET$ Po dokončení získáte výrazně více [Concept('piety','zbožnost')|E]\n\n#weak Všichni věřící by měli spatřit naše posvátná místa... a já jim k tomu hodlám pomoci.#!" # todo: CONCEPT CASE
  reflections_intent_header: "Rozjímání:"
  reflection_intent: "Rozjímání"
  reflection_intent_desc: "Přijali jste vnímavý přístup k cestě a budete hledat příležitosti ke zmírnění stresu."
@@ -176,7 +176,7 @@
  pilgrimage.0500.desc: "„[first_holy_site.GetProvince.GetNameNoTooltip]. [second_holy_site.GetProvince.GetNameNoTooltip]. Ach, [second_holy_site.GetProvince.GetNameNoTooltip]...,“ křehké tělo mého [ROOT.Char.Custom2('RelationToMe' , SCOPE.sC('pilgrimage_dying_relative'))] [pilgrimage_dying_relative.GetTitledFirstName] leží na [Select_CString(pilgrimage_dying_relative.IsFemale,'jejímu','jeho')] lůžku, schránka [pilgrimage_dying_relative.GetHerHis] bývalého já. Když se přiblížím k posteli, [pilgrimage_dying_relative.GetSheHe] se snaží zaostřit [Select_CString(pilgrimage_dying_relative.IsFemale,'její','jeho')] mlhavé oči na mě.\n\n„[pilgrimage_dying_relative.Custom2('RelationToMe' , ROOT.Char)|U]... věci, kterých lituješ, nejsou věci, které jsi udělal, ale věci, které jsi neudělal.“ Přiblížím se blíž a cítím rozklad na dechu [pilgrimage_dying_relative.GetHerHis], když [pilgrimage_dying_relative.GetSheHe] pokračuje: „Nenech každodenní pasti odvrátit tě od tvé pravé cesty k [ROOT.Char.GetFaith.HighGodName].“\n\nNa tváři [Select_CString(pilgrimage_dying_relative.IsFemale,'její','jeho')] se objeví bolestný výraz a já pochopím, že rozhovor je u konce."
  pilgrimage.0500.a: "Ano, samozřejmě."
  pilgrimage.0500.a.flavor: "Pokud to usnadní odpočinek [pilgrimage_dying_relative.GetHerHim]."
- pilgrimage.0500.a.tt_pilgrimage: "Vaše další [pilgrimage|E] bude levnější" # todo: RETRANSLATED ENGLISH
+ pilgrimage.0500.a.tt_pilgrimage: "Vaše další [Concept('pilgrimage','pouť')|E] bude levnější" # todo: RETRANSLATED ENGLISH # todo: CONCEPT CASE
  pilgrimage.0500.b: "Jsem v těchto dnech zaneprázdněný [ROOT.Char.GetWomanMan], [ROOT.Char.Custom2('RelationToMe' , SCOPE.sC('pilgrimage_dying_relative'))]."
  pilgrimage.0500.b.flavor: "Opravdu bych raději ne."
  pilgrimage.1100.t.greek: "$pilgrimage_header$ Plamenná Heléna"
@@ -199,7 +199,7 @@
  every_family_member_tt: "Každý člen rodiny"
  pilgrimage.1100.success: "Jste bezpečně vedeni dál"
  pilgrimage.1100.failure: "Bouře vás svede z kurzu"
- pilgrimage_random_pilgrim_tt: "Náhodný poutník zemře, rozruší to členy [family|E]"
+ pilgrimage_random_pilgrim_tt: "Náhodný poutník zemře, rozruší to členy [Concept('family','rodinu')|E]" # todo: CONCEPT CASE
  pilgrimage_fell_overboard_tt: "[victim_pilgrim.GetFirstName] spadl přes palubu"
  pilgrimage.1110.t: "$pilgrimage_header$ [ROOT.Char.Custom2('GetUnbelieverTerm', heathen_raider)|U] lupičství"
  pilgrimage.1110.desc: "Při přechodu [ROOT.Char.GetCurrentLocation.Custom('GetTerrainTypePlural')] v [heathen_raider_county.GetNameNoTierNoTooltip] zahlédneme prapory malé družiny, ozdobené [heathen_raider.GetFaith.GetAdjective]m [heathen_raider.GetFaith.ReligiousSymbol]. Jsou to otrhaní pobudové, kteří se zaměřují na poutníky směřující do [ROOT.Char.GetInvolvedActivity.GetCurrentPhase.GetLocation.GetName].\n\nVůdce rychle zablokuje naši cestu, zvedne koně na zadní a prohlásí [heathen_raider.GetHerselfHimself] za [heathen_raider.GetFirstName]."
@@ -737,7 +737,7 @@
  pilgrimage.6780.b.failure.desc: "[stolen_courtier.GetShortUIName] odmítne vaši nabídku"
  pilgrimage.6780.c: "Jedna osoba nestojí za riskování hněvu [current_employer.GetTitledFirstNameNoTooltip]."
  obligation_hook_salary: "Plat závazku"
- obligation_hook_tt: "#EMP Povinnost#! [hooks|E] snižují platy [court_position|E] o [gold_i]#P -50%#!"
+ obligation_hook_tt: "#EMP Povinnost#! [Concept('hooks','páky')|E] snižují platy [Concept('court_position','dvorský úřad')|E] o [gold_i]#P -50%#!" # todo: CONCEPT CASE
  generic_cp_discount: "Smluvní snížení"
  pilgrimage.6790.t: "Duchovní probuzení v [ROOT.Char.GetCurrentLocation.GetCounty.GetTitle.GetNameNoTierNoTooltip]"
  pilgrimage.6790.desc: "„[spiritual_mentor.GetSheHe|U] je nejlepší [spiritual_mentor.GetWomanMan] na celé šíři země. [spiritual_mentor.GetSheHe|U] každý den bdí nad svatým místem, po každém bdění se [spiritual_mentor.GetSheHe] vrací do [Select_CString(spiritual_mentor.IsFemale,'jejího','jeho')] tábora, hned za městem, a modlí se až do svítání, než měsíc odejde.“\n\nZhluboka se nadechnu, než přistoupím k ohni, kde [spiritual_mentor.GetSheHe] odpočívá, poté, co jsem slyšel o [Select_CString(spiritual_mentor.IsFemale,'jejích','jeho')] zázracích.\n\n„Čekal jsem na tebe,“ říká [spiritual_mentor.GetSheHe], dívaje se přímo na mě, „a stejně tak i [spiritual_mentor.GetFaith.HighGodName]. Jsi připraven opustit své [ROOT.Char.Custom('SinfulTrait')|l] způsoby?“"
@@ -776,8 +776,8 @@
  pilgrimage.6840.a: "„Prosím, učiňte mou [blessed_artifact.GetNameNoTooltip] zbožnější!“"
  pilgrimage.6840.b: "„Ať všichni vidí slávu mé [blessed_artifact.GetNameNoTooltip]!“"
  pilgrimage.6840.c: "Mám lepší využití pro své zlato."
- pilgrimage.6840.a.tt: "Získá [piety_i|E]#positive_value +2%#! Měsíčně [piety|E]"
- pilgrimage.6840.b.tt: "Získá [prestige_i|E]#positive_value +0.5%#! Měsíčně [prestige|E]"
+ pilgrimage.6840.a.tt: "Získá [Concept('piety_i','[GetLocalPlayerPietyTextIcon]')|E]#positive_value +2%#! Měsíčně [Concept('piety','zbožnost')|E]" # todo: CONCEPT CASE
+ pilgrimage.6840.b.tt: "Získá [Concept('prestige_i','@prestige_icon!')|E]#positive_value +0.5%#! Měsíčně [Concept('prestige','prestiž')|E]" # todo: CONCEPT CASE
  blessed_artifact_desc: "[blessed_artifact.GetDesc]\n\nPo posvěcení ve svatém místě [holy_site_scope.GetNameNoTooltip] září čistou aurou."
  pilgrimage.6850.t: "Mistr zlodějů" # todo: NEW TRANSLATION
  pilgrimage.6850.desc: "Probudím se z neklidného odpočinku a před mnou v tmě vyčnívá postava. Když přemýšlím o svém dalším životě, [wise_priest.GetName] vystupuje ze stínů, [Select_CString(wise_priest.IsFemale,'její','jeho')] tvář se smála úlisným úsměvem.\n\n„Urozený [ROOT.Char.GetTitleAsNameNoTooltip], odpusťte náš zásah, některé lekce musí být prožity, aby byly pochopeny.\n\nZloděj využívá stíny, slepá místa a zkorumpované úředníky k usnadnění svého zločinu. Podobně zlý [ROOT.Char.GetFaith.PriestNeuter] se oddává smilstvu ve stínech, káže falešnou doktrínu ve vašich slepých místech a je povyšován zkorumpovanými úředníky.„" # todo: NEW TRANSLATION
@@ -847,7 +847,7 @@
  pilgrimage.9100.a_triple.tt: "Prodáte zboží za trojnásobek částky"
  pilgrimage.9100.a_has_gift: "[Select_CString(ROOT.Char.IsFemale,'Ráda','Rád')] to přijmu!"
  pilgrimage.9100.b: "Bylo by rozumné si je ponechat."
- pilgrimage.9100.b.tt: "Dostanete příležitost použít zboží ke zvýšení síly spiknutí a šance na úspěch vašeho dalšího [personal_scheme|E]"
+ pilgrimage.9100.b.tt: "Dostanete příležitost použít zboží ke zvýšení síly spiknutí a šance na úspěch vašeho dalšího [Concept('personal_scheme','osobní intriky')|E]" # todo: CONCEPT CASE
  pilgrimage_seasia.100.t: "$pilgrimage_header$ Potápěč perel" # todo: NEW TRANSLATION
  pilgrimage_seasia.100.desc: "Když náš [Glossary( 'djong', 'DJONG_GLOSS' )] pluje po okraji [background_terrain_scope.GetName], rozhodneme se na chvíli zastavit v [background_terrain_scope.Custom('TerrainTypeProvincePrefix')] pobřežní oblasti [background_terrain_scope.Custom('TerrainTypeProvince')].\n\nZ vody vyjde jedna postava, dítě.\n\n„Duch obrovské mušle mi [Select_CString(ROOT.Char.IsFemale,'řekla','řekl')], abych jeho poklad nabídl jako dar pro [ROOT.Char.GetTitleAsName] nad námi.“ Dítě podává [Select_CString(pearl_diver_child.IsFemale,'její','jeho')] ruku, v dlaní leží perla." # todo: NEW TRANSLATION
  pilgrimage_seasia.100.a: "Duchové komunikují s tímto dítětem, musím se postarat o [pearl_diver_child.GetHerHim]." # todo: NEW TRANSLATION

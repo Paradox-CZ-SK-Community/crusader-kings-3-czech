@@ -62,25 +62,25 @@
  reception_hall_03_domicile_building: "Velkolepý pavilon"
  reception_hall_04_domicile_building: "Královský taneční sál"
  reception_hall_05_domicile_building: "Císařské belvedere"
- domicile_building_parameter_legitimacy_counter: "Členové rodu [GetPlayer.GetHouse.GetName] obdrží navíc [legitimacy_i][GetPlayer.GetHouse.MakeScope.Var('ep3_legacy_legitimacy_counter').GetValue|V0] když se stanou [GetPlayer.GetTopLiege.GetTitleAsName] [GetPlayer.GetTopLiege.GetPrimaryTitle.GetName]#WEAK;indent_newline:5 \n#indent_newline:2 $EFFECT_LIST_BULLET$Tato hodnota se zvyšuje, když členové [house|E] uspořádají [GetActivityType('activity_feast').GetName] nebo [GetActivityType('activity_wedding').GetName] v [barony|E], kde se nachází [GetPlayer.GetDynasty.GetBaseNameNoTooltip] [estate|E]#!#!"
- domicile_building_parameter_reception_hall_legitimacy_loss_01: "#N 100%#! z [legitimacy_i][legitimacy|E] počítadla ztraceno při nástupnictví"
- domicile_building_parameter_reception_hall_legitimacy_loss_02: "#N 75%#! z [legitimacy_i][legitimacy|E] počítadla ztraceno při nástupnictví"
- domicile_building_parameter_reception_hall_legitimacy_loss_03: "#N 50%#! z [legitimacy_i][legitimacy|E] počítadla ztraceno při nástupnictví"
- domicile_building_parameter_reception_hall_legitimacy_loss_04: "#N 25%#! z [legitimacy_i][legitimacy|E] počítadla ztraceno při nástupnictví"
- domicile_building_parameter_reception_hall_legitimacy_loss_05: "#P 0%#! z [legitimacy_i][legitimacy|E] počítadla ztraceno při nástupnictví"
+ domicile_building_parameter_legitimacy_counter: "Členové rodu [GetPlayer.GetHouse.GetName] obdrží navíc [legitimacy_i][GetPlayer.GetHouse.MakeScope.Var('ep3_legacy_legitimacy_counter').GetValue|V0] když se stanou [GetPlayer.GetTopLiege.GetTitleAsName] [GetPlayer.GetTopLiege.GetPrimaryTitle.GetName]#WEAK;indent_newline:5 \n#indent_newline:2 $EFFECT_LIST_BULLET$Tato hodnota se zvyšuje, když členové [Concept('house','rod')|E] uspořádají [GetActivityType('activity_feast').GetName] nebo [GetActivityType('activity_wedding').GetName] v [Concept('barony','baronství')|E], kde se nachází [GetPlayer.GetDynasty.GetBaseNameNoTooltip] [Concept('estate','statkem')|E]#!#!" # todo: CONCEPT CASE
+ domicile_building_parameter_reception_hall_legitimacy_loss_01: "#N 100%#! z [legitimacy_i][Concept('legitimacy','legitimity')|E] počítadla ztraceno při nástupnictví" # todo: CONCEPT CASE
+ domicile_building_parameter_reception_hall_legitimacy_loss_02: "#N 75%#! z [legitimacy_i][Concept('legitimacy','legitimity')|E] počítadla ztraceno při nástupnictví" # todo: CONCEPT CASE
+ domicile_building_parameter_reception_hall_legitimacy_loss_03: "#N 50%#! z [legitimacy_i][Concept('legitimacy','legitimity')|E] počítadla ztraceno při nástupnictví" # todo: CONCEPT CASE
+ domicile_building_parameter_reception_hall_legitimacy_loss_04: "#N 25%#! z [legitimacy_i][Concept('legitimacy','legitimity')|E] počítadla ztraceno při nástupnictví" # todo: CONCEPT CASE
+ domicile_building_parameter_reception_hall_legitimacy_loss_05: "#P 0%#! z [legitimacy_i][Concept('legitimacy','legitimity')|E] počítadla ztraceno při nástupnictví" # todo: CONCEPT CASE
  cabinet_of_curiosities_01_domicile_building: "Kabinet kuriozit"
  cabinet_of_curiosities_02_domicile_building: "Síň zázraků"
  cabinet_of_curiosities_03_domicile_building: "Galerie divů"
- cabinet_of_curiosities_upgrade_trigger_2_global_not: "[artifact|E] Skóre kvality musí být #V 15#! nebo vyšší"
- cabinet_of_curiosities_upgrade_trigger_3_global_not: "[artifact|E] Skóre kvality musí být #V 35#! nebo vyšší"
- DOMICILE_ARTIFACT_COUNTER_TOOLTIP: "#T Skóre kvality [artifact|E]: [DomicileWindow.GetCharacter.GetHouse.MakeScope.ScriptValue('cabinet_of_curiosities_artifact_score')|V0]#!\n\nBěžné artefakty ([DomicileWindow.GetCharacter.GetHouse.MakeScope.Var('ep3_legacy_domicile_artifact_counter_common').GetValue|V0]): #P +[DomicileWindow.GetCharacter.GetHouse.MakeScope.ScriptValue('ep3_legacy_domicile_artifact_counter_common_score')|0]#!\nMistrovské artefakty ([DomicileWindow.GetCharacter.GetHouse.MakeScope.Var('ep3_legacy_domicile_artifact_counter_masterwork').GetValue|V0]): #P +[DomicileWindow.GetCharacter.GetHouse.MakeScope.ScriptValue('ep3_legacy_domicile_artifact_counter_masterwork_score')|0]#!\nProslulé artefakty ([DomicileWindow.GetCharacter.GetHouse.MakeScope.Var('ep3_legacy_domicile_artifact_counter_famed').GetValue|V0]): #P +[DomicileWindow.GetCharacter.GetHouse.MakeScope.ScriptValue('ep3_legacy_domicile_artifact_counter_famed_score')|0]#!\nVýznačné artefakty ([DomicileWindow.GetCharacter.GetHouse.MakeScope.Var('ep3_legacy_domicile_artifact_counter_illustrious').GetValue|V0]): #P +[DomicileWindow.GetCharacter.GetHouse.MakeScope.ScriptValue('ep3_legacy_domicile_artifact_counter_illustrious_score')|0]#!\n"
- domicile_building_parameter_can_receive_artifacts: "Vylepšení budovy závisí na přispěných [artifacts|E]"
- domicile_building_parameter_house_head_can_ask_for_artifacts: "[house_head|E] může přidávat [artifacts|E] do Kabinetu pomocí $cabinet_of_curiosities_interaction$ [interaction|E]"
+ cabinet_of_curiosities_upgrade_trigger_2_global_not: "[Concept('artifact','Artefakt')|E] Skóre kvality musí být #V 15#! nebo vyšší" # todo: CONCEPT CASE
+ cabinet_of_curiosities_upgrade_trigger_3_global_not: "[Concept('artifact','Artefakt')|E] Skóre kvality musí být #V 35#! nebo vyšší" # todo: CONCEPT CASE
+ DOMICILE_ARTIFACT_COUNTER_TOOLTIP: "#T Skóre kvality [Concept('artifact','artefakt')|E]: [DomicileWindow.GetCharacter.GetHouse.MakeScope.ScriptValue('cabinet_of_curiosities_artifact_score')|V0]#!\n\nBěžné artefakty ([DomicileWindow.GetCharacter.GetHouse.MakeScope.Var('ep3_legacy_domicile_artifact_counter_common').GetValue|V0]): #P +[DomicileWindow.GetCharacter.GetHouse.MakeScope.ScriptValue('ep3_legacy_domicile_artifact_counter_common_score')|0]#!\nMistrovské artefakty ([DomicileWindow.GetCharacter.GetHouse.MakeScope.Var('ep3_legacy_domicile_artifact_counter_masterwork').GetValue|V0]): #P +[DomicileWindow.GetCharacter.GetHouse.MakeScope.ScriptValue('ep3_legacy_domicile_artifact_counter_masterwork_score')|0]#!\nProslulé artefakty ([DomicileWindow.GetCharacter.GetHouse.MakeScope.Var('ep3_legacy_domicile_artifact_counter_famed').GetValue|V0]): #P +[DomicileWindow.GetCharacter.GetHouse.MakeScope.ScriptValue('ep3_legacy_domicile_artifact_counter_famed_score')|0]#!\nVýznačné artefakty ([DomicileWindow.GetCharacter.GetHouse.MakeScope.Var('ep3_legacy_domicile_artifact_counter_illustrious').GetValue|V0]): #P +[DomicileWindow.GetCharacter.GetHouse.MakeScope.ScriptValue('ep3_legacy_domicile_artifact_counter_illustrious_score')|0]#!\n" # todo: CONCEPT CASE
+ domicile_building_parameter_can_receive_artifacts: "Vylepšení budovy závisí na přispěných [Concept('artifacts','artefakty')|E]" # todo: CONCEPT CASE
+ domicile_building_parameter_house_head_can_ask_for_artifacts: "[Concept('house_head','Hlava rodu')|E] může přidávat [Concept('artifacts','artefakty')|E] do Kabinetu pomocí $cabinet_of_curiosities_interaction$ [Concept('interaction','interakce')|E]" # todo: CONCEPT CASE
  grand_solar_01_domicile_building: "Venkovský krb"
  grand_solar_02_domicile_building: "Rodinné salónky"
  grand_solar_03_domicile_building: "Prostorný rodinný salonek"
  grand_solar_04_domicile_building: "Salonek rodových relikvií"
- domicile_building_parameter_solar_white_peace_stress_loss: "Při [white_peace|E] každý člen [house|E] ztrácí [stress|E]"
+ domicile_building_parameter_solar_white_peace_stress_loss: "Při [Concept('white_peace','bílém míru')|E] každý člen [Concept('house','rod')|E] ztrácí [Concept('stress','stres')|E]" # todo: CONCEPT CASE
  temple_small_01_domicile_building: "Svatyně"
  temple_small_02_domicile_building: "Kaple"
  temple_small_03_domicile_building: "Kamenná kaple"
@@ -100,8 +100,8 @@
  barracks_04_domicile_building: "Kancelář čtvrtmistra"
  barracks_05_domicile_building: "Sklad zbraní"
  barracks_06_domicile_building: "Velká kasárna"
- domicile_building_parameter_house_head_can_ask_for_knight: "[house_head|E] může žádat o [knights|E] prostřednictvím $house_head_request_interaction$ [interaction|E]"
- domicile_building_parameter_house_head_can_ask_for_maa: "[house_head|E] může žádat o [men_at_arms|E] prostřednictvím $house_head_request_interaction$ [interaction|E]"
+ domicile_building_parameter_house_head_can_ask_for_knight: "[Concept('house_head','Hlava rodu')|E] může žádat o [Concept('knights','rytíře')|E] prostřednictvím $house_head_request_interaction$ [Concept('interaction','interakci')|E]" # todo: CONCEPT CASE
+ domicile_building_parameter_house_head_can_ask_for_maa: "[Concept('house_head','Hlava rodu')|E] může žádat o [Concept('men_at_arms','ozbrojence')|E] prostřednictvím $house_head_request_interaction$ [Concept('interaction','interakci')|E]" # todo: CONCEPT CASE
  watchtower_01_domicile_building: "Hlásná věž"
  watchtower_02_domicile_building: "Strážní věž"
  watchtower_03_domicile_building: "Věž stráže"
@@ -121,7 +121,7 @@
  garden_fruit_04_domicile_building: "Ovocná zahrada"
  garden_fruit_05_domicile_building: "Sad"
  garden_fruit_06_domicile_building: "Bohatý sad"
- estate_garden_building: "[domicile|E]"
+ estate_garden_building: "[Concept('domicile','Domicil')|E]" # todo: CONCEPT CASE
  stable_01_domicile_building: "Stáje"
  stable_02_domicile_building: "Seníkové kasárna"
  stable_03_domicile_building: "Stájníci"
@@ -154,7 +154,7 @@
  storage_warehouse_04_domicile_building: "Velký sklad"
  storage_granary_03_domicile_building: "Sklad obilí"
  storage_granary_04_domicile_building: "Velký sklad obilí"
- domicile_building_parameter_house_head_can_ask_building_support: "[house_head|E] může žádat o podporu [domicile|E] budovy prostřednictvím $house_head_request_interaction$ [interaction|E]"
+ domicile_building_parameter_house_head_can_ask_building_support: "[Concept('house_head','Hlava rodu')|E] může žádat o podporu [Concept('domicile','domicil')|E] budovy prostřednictvím $house_head_request_interaction$ [Concept('interaction','interakci')|E]" # todo: CONCEPT CASE
  market_01_domicile_building: "Tržiště"
  market_02_domicile_building: "Tržištní náměstí"
  market_03_domicile_building: "Tržiště"
@@ -224,126 +224,126 @@
  tea_04_domicile_building: "Čajová pole" # todo: NEW TRANSLATION
  tea_05_domicile_building: "Čajová plantáž" # todo: NEW TRANSLATION
  tea_06_domicile_building: "Obrovská čajová plantáž" # todo: NEW TRANSLATION
- domicile_building_parameter_estate_inherit_influence_small_bonus: "Zvyšuje [influence|E] zděděné při [succession|E]: #P +[EmptyScope.ScriptValue('influence_inherit_small_bonus_value')|0%]#!"
- domicile_building_parameter_estate_inherit_influence_medium_bonus: "Zvyšuje [influence|E] zděděné při [succession|E]: #P +[EmptyScope.ScriptValue('influence_inherit_medium_bonus_value')|0%]#!"
- domicile_building_parameter_estate_inherit_influence_large_bonus: "Zvyšuje [influence|E] zděděné při [succession|E]: #P +[EmptyScope.ScriptValue('influence_inherit_large_bonus_value')|0%]#!"
- domicile_building_parameter_estate_unlock_hire_agents_decision: "Odemkne #high $estate_hire_agents_decisions$#! [decision|E]"
- domicile_building_parameter_estate_governor_efficiency_bonus: "[governor|E] Efektivita: #P +[EmptyScope.ScriptValue('estate_governor_efficiency_bonus_value')|+0%]#!"
- domicile_building_parameter_estate_governor_efficiency_bonus_for_house_members: "[governor|E] Efektivita pro členy [house|E]: #P +[EmptyScope.ScriptValue('estate_governor_efficiency_house_bonus_value')|+0%]#!"
- domicile_building_parameter_estate_increased_governance_scheme_success: "Šance úspěchu [governor|E] smlouvy: @scheme_success_icon!#P +[EmptyScope.ScriptValue('estate_increased_governance_scheme_success_value')|0]%#!"
- domicile_building_parameter_estate_local_theme_cost_reduction: "Snižuje náklady [influence|E] na povýšení kandidátů v [governorship|E], kde se nachází vaše [estate|E]: #P [EmptyScope.ScriptValue('estate_local_theme_cost_reduction_value')|0%]#!"
+ domicile_building_parameter_estate_inherit_influence_small_bonus: "Zvyšuje [Concept('influence','vliv')|E] zděděné při [Concept('succession','nástupnictví')|E]: #P +[EmptyScope.ScriptValue('influence_inherit_small_bonus_value')|0%]#!" # todo: CONCEPT CASE
+ domicile_building_parameter_estate_inherit_influence_medium_bonus: "Zvyšuje [Concept('influence','vliv')|E] zděděné při [Concept('succession','nástupnictví')|E]: #P +[EmptyScope.ScriptValue('influence_inherit_medium_bonus_value')|0%]#!" # todo: CONCEPT CASE
+ domicile_building_parameter_estate_inherit_influence_large_bonus: "Zvyšuje [Concept('influence','vliv')|E] zděděné při [Concept('succession','nástupnictví')|E]: #P +[EmptyScope.ScriptValue('influence_inherit_large_bonus_value')|0%]#!" # todo: CONCEPT CASE
+ domicile_building_parameter_estate_unlock_hire_agents_decision: "Odemkne #high $estate_hire_agents_decisions$#! [Concept('decision','rozhodnutí')|E]" # todo: CONCEPT CASE
+ domicile_building_parameter_estate_governor_efficiency_bonus: "[Concept('governor','Guvernér')|E] Efektivita: #P +[EmptyScope.ScriptValue('estate_governor_efficiency_bonus_value')|+0%]#!" # todo: CONCEPT CASE
+ domicile_building_parameter_estate_governor_efficiency_bonus_for_house_members: "[Concept('governor','Guvernér')|E] Efektivita pro členy [Concept('house','rod')|E]: #P +[EmptyScope.ScriptValue('estate_governor_efficiency_house_bonus_value')|+0%]#!" # todo: CONCEPT CASE
+ domicile_building_parameter_estate_increased_governance_scheme_success: "Šance úspěchu [Concept('governor','guvernéra')|E] smlouvy: @scheme_success_icon!#P +[EmptyScope.ScriptValue('estate_increased_governance_scheme_success_value')|0]%#!" # todo: CONCEPT CASE
+ domicile_building_parameter_estate_local_theme_cost_reduction: "Snižuje náklady [Concept('influence','vliv')|E] na povýšení kandidátů v [Concept('governorship','guvernérství')|E], kde se nachází vaše [Concept('estate','statek')|E]: #P [EmptyScope.ScriptValue('estate_local_theme_cost_reduction_value')|0%]#!" # todo: CONCEPT CASE
  domicile_building_parameter_estate_reduced_tutor_cost: "[GetCourtPositionType('court_tutor_court_position').GetName()] Plat: #P -[EmptyScope.ScriptValue('estate_court_tutor_cost_reduction_value')|0%]#!"
- domicile_building_parameter_estate_unlock_tier_5_education: "[children|E] vzdělané ve vašem [court|E] mohou získat pátou úroveň [education_trait|E]"
- domicile_building_parameter_estate_unlock_mount_travel_option: "Odemkne [GetTravelOption('estate_mounts_option').GetName] [travel_option|E]"
- domicile_building_parameter_estate_increase_charioteer_aptitude: "[GetCourtPositionType('charioteer_court_position').GetName()] [aptitude|E]: #P +[EmptyScope.ScriptValue('estate_increase_charioteer_aptitude_value')|0]#!"
- domicile_building_parameter_estate_unlock_adopt_puppy_decision: "Odemkne #high $adopt_puppy_decision_name$#! [decision|E]"
- domicile_building_parameter_estate_unlock_feast_influence_option_1: "Odemkne #high $feast_option_wine$#! [activity_option|E] pro [GetActivityType('activity_feast').GetName] [activity|E]"
- domicile_building_parameter_estate_unlock_feast_influence_option_2: "Odemkne #high $feast_wine_normal$#! [activity_option|E] pro [GetActivityType('activity_feast').GetName] [activity|E]"
- domicile_building_parameter_estate_unlock_feast_influence_option_3: "Odemkne #high $feast_wine_extensive$#! [activity_option|E] pro [GetActivityType('activity_feast').GetName] [activity|E]"
- domicile_building_parameter_estate_improved_wine_cellar_1: "Získán [influence|E] z [GetDomicileBuilding('wine_cellar_01').GetName] řady budov: #P +[EmptyScope.ScriptValue('estate_improved_wine_cellar_1_value')|+0%]#!"
- domicile_building_parameter_estate_improved_wine_cellar_2: "Získán [influence|E] z [GetDomicileBuilding('wine_cellar_01').GetName] řady budov: #P +[EmptyScope.ScriptValue('estate_improved_wine_cellar_2_value')|+0%]#!"
- domicile_building_parameter_estate_improved_wine_cellar_3: "Získán [influence|E] z [GetDomicileBuilding('wine_cellar_01').GetName] řady budov: #P +[EmptyScope.ScriptValue('estate_improved_wine_cellar_3_value')|+0%]#!"
- domicile_building_parameter_estate_unlock_patrol_decision: "Odemkne #high $estate_governor_patrols_decision$#! [decision|E]"
- domicile_building_parameter_estate_increase_bodyguard_aptitude_1: "[GetCourtPositionType('bodyguard_court_position').GetName()] [aptitude|E]: #P +[EmptyScope.ScriptValue('estate_increase_bodyguard_aptitude_1_value')|0]#!"
- domicile_building_parameter_estate_increase_bodyguard_aptitude_2: "[GetCourtPositionType('bodyguard_court_position').GetName()] [aptitude|E]: #P +[EmptyScope.ScriptValue('estate_increase_bodyguard_aptitude_2_value')|0]#!"
- domicile_building_parameter_estate_increase_bodyguard_aptitude_3: "[GetCourtPositionType('bodyguard_court_position').GetName()] [aptitude|E]: #P +[EmptyScope.ScriptValue('estate_increase_bodyguard_aptitude_3_value')|0]#!" # todo: NEW TRANSLATION
- domicile_building_parameter_estate_increase_bodyguard_aptitude_4: "[GetCourtPositionType('bodyguard_court_position').GetName()] [aptitude|E]: #P +[EmptyScope.ScriptValue('estate_increase_bodyguard_aptitude_4_value')|0]#!" # todo: NEW TRANSLATION
- domicile_building_parameter_estate_increase_bodyguard_aptitude_5: "[GetCourtPositionType('bodyguard_court_position').GetName()] [aptitude|E]: #P +[EmptyScope.ScriptValue('estate_increase_bodyguard_aptitude_5_value')|0]#!" # todo: NEW TRANSLATION
- domicile_building_parameter_estate_increase_bodyguard_aptitude_6: "[GetCourtPositionType('bodyguard_court_position').GetName()] [aptitude|E]: #P +[EmptyScope.ScriptValue('estate_increase_bodyguard_aptitude_6_value')|0]#!" # todo: NEW TRANSLATION
- domicile_building_parameter_estate_unlock_bolster_security_decision: "Odemkne #high $estate_bolster_security_decision$#! [decision|E]"
- domicile_building_parameter_estate_improved_feast_opinion: "Zvyšuje [opinion|E] získané při pořádání [GetActivityType('activity_feast').GetName] v tomto [location|E]"
+ domicile_building_parameter_estate_unlock_tier_5_education: "[Concept('children','Děti')|E] vzdělané ve vašem [Concept('court','dvoře')|E] mohou získat pátou úroveň [Concept('education_trait','rys vzdělání')|E]" # todo: CONCEPT CASE
+ domicile_building_parameter_estate_unlock_mount_travel_option: "Odemkne [GetTravelOption('estate_mounts_option').GetName] [Concept('travel_option','možnost cesty')|E]" # todo: CONCEPT CASE
+ domicile_building_parameter_estate_increase_charioteer_aptitude: "[GetCourtPositionType('charioteer_court_position').GetName()] [Concept('aptitude','Způsobilost')|E]: #P +[EmptyScope.ScriptValue('estate_increase_charioteer_aptitude_value')|0]#!" # todo: CONCEPT CASE
+ domicile_building_parameter_estate_unlock_adopt_puppy_decision: "Odemkne #high $adopt_puppy_decision_name$#! [Concept('decision','rozhodnutí')|E]" # todo: CONCEPT CASE
+ domicile_building_parameter_estate_unlock_feast_influence_option_1: "Odemkne #high $feast_option_wine$#! [Concept('activity_option','možnost aktivity')|E] pro [GetActivityType('activity_feast').GetName] [Concept('activity','aktivitu')|E]" # todo: CONCEPT CASE
+ domicile_building_parameter_estate_unlock_feast_influence_option_2: "Odemkne #high $feast_wine_normal$#! [Concept('activity_option','možnost aktivity')|E] pro [GetActivityType('activity_feast').GetName] [Concept('activity','aktivitu')|E]" # todo: CONCEPT CASE
+ domicile_building_parameter_estate_unlock_feast_influence_option_3: "Odemkne #high $feast_wine_extensive$#! [Concept('activity_option','možnost aktivity')|E] pro [GetActivityType('activity_feast').GetName] [Concept('activity','aktivitu')|E]" # todo: CONCEPT CASE
+ domicile_building_parameter_estate_improved_wine_cellar_1: "Získán [Concept('influence','vliv')|E] z [GetDomicileBuilding('wine_cellar_01').GetName] řady budov: #P +[EmptyScope.ScriptValue('estate_improved_wine_cellar_1_value')|+0%]#!" # todo: CONCEPT CASE
+ domicile_building_parameter_estate_improved_wine_cellar_2: "Získán [Concept('influence','vliv')|E] z [GetDomicileBuilding('wine_cellar_01').GetName] řady budov: #P +[EmptyScope.ScriptValue('estate_improved_wine_cellar_2_value')|+0%]#!" # todo: CONCEPT CASE
+ domicile_building_parameter_estate_improved_wine_cellar_3: "Získán [Concept('influence','vliv')|E] z [GetDomicileBuilding('wine_cellar_01').GetName] řady budov: #P +[EmptyScope.ScriptValue('estate_improved_wine_cellar_3_value')|+0%]#!" # todo: CONCEPT CASE
+ domicile_building_parameter_estate_unlock_patrol_decision: "Odemkne #high $estate_governor_patrols_decision$#! [Concept('decision','rozhodnutí')|E]" # todo: CONCEPT CASE
+ domicile_building_parameter_estate_increase_bodyguard_aptitude_1: "[GetCourtPositionType('bodyguard_court_position').GetName()] [Concept('aptitude','Způsobilost')|E]: #P +[EmptyScope.ScriptValue('estate_increase_bodyguard_aptitude_1_value')|0]#!" # todo: CONCEPT CASE
+ domicile_building_parameter_estate_increase_bodyguard_aptitude_2: "[GetCourtPositionType('bodyguard_court_position').GetName()] [Concept('aptitude','Způsobilost')|E]: #P +[EmptyScope.ScriptValue('estate_increase_bodyguard_aptitude_2_value')|0]#!" # todo: CONCEPT CASE
+ domicile_building_parameter_estate_increase_bodyguard_aptitude_3: "[GetCourtPositionType('bodyguard_court_position').GetName()] [Concept('aptitude','Způsobilost')|E]: #P +[EmptyScope.ScriptValue('estate_increase_bodyguard_aptitude_3_value')|0]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ domicile_building_parameter_estate_increase_bodyguard_aptitude_4: "[GetCourtPositionType('bodyguard_court_position').GetName()] [Concept('aptitude','Způsobilost')|E]: #P +[EmptyScope.ScriptValue('estate_increase_bodyguard_aptitude_4_value')|0]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ domicile_building_parameter_estate_increase_bodyguard_aptitude_5: "[GetCourtPositionType('bodyguard_court_position').GetName()] [Concept('aptitude','Způsobilost')|E]: #P +[EmptyScope.ScriptValue('estate_increase_bodyguard_aptitude_5_value')|0]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ domicile_building_parameter_estate_increase_bodyguard_aptitude_6: "[GetCourtPositionType('bodyguard_court_position').GetName()] [Concept('aptitude','Způsobilost')|E]: #P +[EmptyScope.ScriptValue('estate_increase_bodyguard_aptitude_6_value')|0]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ domicile_building_parameter_estate_unlock_bolster_security_decision: "Odemkne #high $estate_bolster_security_decision$#! [Concept('decision','rozhodnutí')|E]" # todo: CONCEPT CASE
+ domicile_building_parameter_estate_improved_feast_opinion: "Zvyšuje [Concept('opinion','mínění')|E] získané při pořádání [GetActivityType('activity_feast').GetName] v tomto [Concept('location','poloze')|E]" # todo: CONCEPT CASE
  domicile_building_parameter_estate_cheaper_feast_cost: "Snižuje náklady na pořádání [GetActivityType('activity_feast').GetName]: #P -[EmptyScope.ScriptValue('estate_cheaper_feast_cost_value')|0%]#!"
- domicile_building_parameter_estate_torture_reduce_stress: "Mučení vězňů může snížit [stress_loss_i][stress|E]"
- domicile_building_parameter_estate_torture_grants_influence: "Zjištění [secrets|E] pomocí #high $torture_interaction$#! uděluje [influence_i|E][influence|E]"
+ domicile_building_parameter_estate_torture_reduce_stress: "Mučení vězňů může snížit [stress_loss_i][Concept('stress','stres')|E]" # todo: CONCEPT CASE
+ domicile_building_parameter_estate_torture_grants_influence: "Zjištění [Concept('secrets','tajemství')|E] pomocí #high $torture_interaction$#! uděluje [Concept('influence_i','@influence_icon!')|E][Concept('influence','vliv')|E]" # todo: CONCEPT CASE
  domicile_building_parameter_estate_reduce_council_position_cost: "#high $request_council_interaction$#! náklady: [influence_i]#P -[EmptyScope.ScriptValue('estate_reduce_council_position_cost_value')|0%]#!"
- domicile_building_parameter_estate_reduce_commission_artifact_cost: "#high $commission_artifact_decision$#! [decision|E] náklady: #P -[EmptyScope.ScriptValue('estate_reduce_commission_artifact_cost_value')|0%]#!"
- domicile_building_parameter_estate_increase_antiquarian_aptitude: "[GetCourtPositionType('antiquarian_court_position').GetName()] [aptitude|E]: #P +[EmptyScope.ScriptValue('estate_increase_antiquarian_aptitude_value')|0]#!"
- domicile_building_parameter_estate_improved_inspirations_1: "Mírně zvýšená kvalita sponzorovaných [inspirations|E]"
- domicile_building_parameter_estate_improved_inspirations_2: "Zvýšená kvalita sponzorovaných [inspirations|E]"
- domicile_building_parameter_estate_increase_physician_aptitude_1: "[GetCourtPositionType('court_physician_court_position').GetName()] [aptitude|E]: #P +[EmptyScope.ScriptValue('estate_increase_physician_aptitude_1_value')|0]#!" # todo: NEW TRANSLATION
- domicile_building_parameter_estate_increase_physician_aptitude_2: "[GetCourtPositionType('court_physician_court_position').GetName()] [aptitude|E]: #P +[EmptyScope.ScriptValue('estate_increase_physician_aptitude_2_value')|0]#!" # todo: NEW TRANSLATION
- domicile_building_parameter_estate_increase_physician_aptitude_3: "[GetCourtPositionType('court_physician_court_position').GetName()] [aptitude|E]: #P +[EmptyScope.ScriptValue('estate_increase_physician_aptitude_3_value')|0]#!" # todo: NEW TRANSLATION
- domicile_building_parameter_estate_increase_physician_aptitude_4: "[GetCourtPositionType('court_physician_court_position').GetName()] [aptitude|E]: #P +[EmptyScope.ScriptValue('estate_increase_physician_aptitude_4_value')|0]#!" # todo: NEW TRANSLATION
- domicile_building_parameter_estate_increase_physician_aptitude_5: "[GetCourtPositionType('court_physician_court_position').GetName()] [aptitude|E]: #P +[EmptyScope.ScriptValue('estate_increase_physician_aptitude_5_value')|0]#!" # todo: NEW TRANSLATION
- domicile_building_parameter_estate_increase_physician_aptitude_6: "[GetCourtPositionType('court_physician_court_position').GetName()] [aptitude|E]: #P +[EmptyScope.ScriptValue('estate_increase_physician_aptitude_6_value')|0]#!" # todo: NEW TRANSLATION
- domicile_building_parameter_domicile_increase_physician_aptitude_1: "[GetCourtPositionType('wet_nurse_court_position').GetName()] [aptitude|E]: #P +[EmptyScope.ScriptValue('domicile_increase_wet_nurse_aptitude_1_value')|0]#!" # todo: NEW TRANSLATION
- domicile_building_parameter_domicile_increase_physician_aptitude_2: "[GetCourtPositionType('wet_nurse_court_position').GetName()] [aptitude|E]: #P +[EmptyScope.ScriptValue('domicile_increase_wet_nurse_aptitude_2_value')|0]#!" # todo: NEW TRANSLATION
- domicile_building_parameter_domicile_increase_physician_aptitude_3: "[GetCourtPositionType('wet_nurse_court_position').GetName()] [aptitude|E]: #P +[EmptyScope.ScriptValue('domicile_increase_wet_nurse_aptitude_3_value')|0]#!" # todo: NEW TRANSLATION
- domicile_building_parameter_domicile_increase_physician_aptitude_4: "[GetCourtPositionType('wet_nurse_court_position').GetName()] [aptitude|E]: #P +[EmptyScope.ScriptValue('domicile_increase_wet_nurse_aptitude_4_value')|0]#!" # todo: NEW TRANSLATION
- domicile_building_parameter_domicile_increase_physician_aptitude_5: "[GetCourtPositionType('wet_nurse_court_position').GetName()] [aptitude|E]: #P +[EmptyScope.ScriptValue('domicile_increase_wet_nurse_aptitude_5_value')|0]#!" # todo: NEW TRANSLATION
- domicile_building_parameter_domicile_increase_physician_aptitude_6: "[GetCourtPositionType('wet_nurse_court_position').GetName()] [aptitude|E]: #P +[EmptyScope.ScriptValue('domicile_increase_wet_nurse_aptitude_6_value')|0]#!" # todo: NEW TRANSLATION
- domicile_building_parameter_estate_increase_master_of_hunt_aptitude: "[GetCourtPositionType('master_of_hunt_court_position').GetName()] [aptitude|E]: #P +[EmptyScope.ScriptValue('estate_increase_master_of_hunt_aptitude_value')|0]#!"
- domicile_building_parameter_estate_increase_master_of_horse_aptitude: "[GetCourtPositionType('master_of_horse_court_position').GetName()] [aptitude|E]: #P +[EmptyScope.ScriptValue('estate_increase_master_of_horse_aptitude_value')|0]#!"
+ domicile_building_parameter_estate_reduce_commission_artifact_cost: "#high $commission_artifact_decision$#! [Concept('decision','rozhodnutí')|E] náklady: #P -[EmptyScope.ScriptValue('estate_reduce_commission_artifact_cost_value')|0%]#!" # todo: CONCEPT CASE
+ domicile_building_parameter_estate_increase_antiquarian_aptitude: "[GetCourtPositionType('antiquarian_court_position').GetName()] [Concept('aptitude','Způsobilost')|E]: #P +[EmptyScope.ScriptValue('estate_increase_antiquarian_aptitude_value')|0]#!" # todo: CONCEPT CASE
+ domicile_building_parameter_estate_improved_inspirations_1: "Mírně zvýšená kvalita sponzorovaných [Concept('inspirations','inspirací')|E]" # todo: CONCEPT CASE
+ domicile_building_parameter_estate_improved_inspirations_2: "Zvýšená kvalita sponzorovaných [Concept('inspirations','inspirací')|E]" # todo: CONCEPT CASE
+ domicile_building_parameter_estate_increase_physician_aptitude_1: "[GetCourtPositionType('court_physician_court_position').GetName()] [Concept('aptitude','Způsobilost')|E]: #P +[EmptyScope.ScriptValue('estate_increase_physician_aptitude_1_value')|0]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ domicile_building_parameter_estate_increase_physician_aptitude_2: "[GetCourtPositionType('court_physician_court_position').GetName()] [Concept('aptitude','Způsobilost')|E]: #P +[EmptyScope.ScriptValue('estate_increase_physician_aptitude_2_value')|0]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ domicile_building_parameter_estate_increase_physician_aptitude_3: "[GetCourtPositionType('court_physician_court_position').GetName()] [Concept('aptitude','Způsobilost')|E]: #P +[EmptyScope.ScriptValue('estate_increase_physician_aptitude_3_value')|0]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ domicile_building_parameter_estate_increase_physician_aptitude_4: "[GetCourtPositionType('court_physician_court_position').GetName()] [Concept('aptitude','Způsobilost')|E]: #P +[EmptyScope.ScriptValue('estate_increase_physician_aptitude_4_value')|0]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ domicile_building_parameter_estate_increase_physician_aptitude_5: "[GetCourtPositionType('court_physician_court_position').GetName()] [Concept('aptitude','Způsobilost')|E]: #P +[EmptyScope.ScriptValue('estate_increase_physician_aptitude_5_value')|0]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ domicile_building_parameter_estate_increase_physician_aptitude_6: "[GetCourtPositionType('court_physician_court_position').GetName()] [Concept('aptitude','Způsobilost')|E]: #P +[EmptyScope.ScriptValue('estate_increase_physician_aptitude_6_value')|0]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ domicile_building_parameter_domicile_increase_physician_aptitude_1: "[GetCourtPositionType('wet_nurse_court_position').GetName()] [Concept('aptitude','Způsobilost')|E]: #P +[EmptyScope.ScriptValue('domicile_increase_wet_nurse_aptitude_1_value')|0]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ domicile_building_parameter_domicile_increase_physician_aptitude_2: "[GetCourtPositionType('wet_nurse_court_position').GetName()] [Concept('aptitude','Způsobilost')|E]: #P +[EmptyScope.ScriptValue('domicile_increase_wet_nurse_aptitude_2_value')|0]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ domicile_building_parameter_domicile_increase_physician_aptitude_3: "[GetCourtPositionType('wet_nurse_court_position').GetName()] [Concept('aptitude','Způsobilost')|E]: #P +[EmptyScope.ScriptValue('domicile_increase_wet_nurse_aptitude_3_value')|0]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ domicile_building_parameter_domicile_increase_physician_aptitude_4: "[GetCourtPositionType('wet_nurse_court_position').GetName()] [Concept('aptitude','Způsobilost')|E]: #P +[EmptyScope.ScriptValue('domicile_increase_wet_nurse_aptitude_4_value')|0]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ domicile_building_parameter_domicile_increase_physician_aptitude_5: "[GetCourtPositionType('wet_nurse_court_position').GetName()] [Concept('aptitude','Způsobilost')|E]: #P +[EmptyScope.ScriptValue('domicile_increase_wet_nurse_aptitude_5_value')|0]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ domicile_building_parameter_domicile_increase_physician_aptitude_6: "[GetCourtPositionType('wet_nurse_court_position').GetName()] [Concept('aptitude','Způsobilost')|E]: #P +[EmptyScope.ScriptValue('domicile_increase_wet_nurse_aptitude_6_value')|0]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ domicile_building_parameter_estate_increase_master_of_hunt_aptitude: "[GetCourtPositionType('master_of_hunt_court_position').GetName()] [Concept('aptitude','Způsobilost')|E]: #P +[EmptyScope.ScriptValue('estate_increase_master_of_hunt_aptitude_value')|0]#!" # todo: CONCEPT CASE
+ domicile_building_parameter_estate_increase_master_of_horse_aptitude: "[GetCourtPositionType('master_of_horse_court_position').GetName()] [Concept('aptitude','Způsobilost')|E]: #P +[EmptyScope.ScriptValue('estate_increase_master_of_horse_aptitude_value')|0]#!" # todo: CONCEPT CASE
  domicile_building_parameter_estate_cheaper_hunt_cost: "Snižuje náklady na pořádání [GetActivityType('activity_hunt').GetName]: #P -[EmptyScope.ScriptValue('estate_cheaper_hunt_cost_value')|0%]#!"
- domicile_building_parameter_estate_charioteer_training_task: "Odemkne #high $charioteer_training$#! [GetCourtPositionType('charioteer_court_position').GetName()] [court_position_task_short|E]"
- domicile_building_parameter_estate_increase_powerful_family_rating: "[powerful_family_rating|E]: [EmptyScope.ScriptValue('estate_powerful_family_rating_1_value')|=+0]"
- domicile_building_parameter_estate_increase_powerful_family_rating_2: "[powerful_family_rating|E]: [EmptyScope.ScriptValue('estate_powerful_family_rating_2_value')|=+0]" # todo: NEW TRANSLATION
- domicile_building_parameter_estate_increase_powerful_family_rating_3: "[powerful_family_rating|E]: [EmptyScope.ScriptValue('estate_powerful_family_rating_3_value')|=+0]" # todo: NEW TRANSLATION
- domicile_building_parameter_estate_increase_powerful_family_rating_4: "[powerful_family_rating|E]: [EmptyScope.ScriptValue('estate_powerful_family_rating_4_value')|=+0]" # todo: NEW TRANSLATION
- domicile_building_parameter_estate_increase_powerful_family_rating_5: "[powerful_family_rating|E]: [EmptyScope.ScriptValue('estate_powerful_family_rating_5_value')|=+0]" # todo: NEW TRANSLATION
- domicile_building_parameter_estate_increase_powerful_family_rating_6: "[powerful_family_rating|E]: [EmptyScope.ScriptValue('estate_powerful_family_rating_6_value')|=+0]" # todo: NEW TRANSLATION
- domicile_building_parameter_estate_additional_internal_slots_desc: "Počet míst pro [domicile_building_upgrade|E]: #P +2#!"
- domicile_building_parameter_estate_powerful_family_rating_per_dynasty_level: "[powerful_family_rating|E] za úroveň [dynasty_prestige_level|E]: #P +[EmptyScope.ScriptValue('estate_increase_powerful_famil_rating_per_dynasty_level_value')|0]#!"
- domicile_building_parameter_estate_unlock_granary_decision: "Odemkne #high $estate_granary_decision$#! [decision|E]#indent_newline:4 \n#weak Rozhodnutí se škáluje podle [estate|E] [location|E] a [GetDomicileBuilding('grain_field_01').GetName] [building|E]#!#!"
- estate_increase_influence_on_building_construction_desc: "[influence_i|E][influence|E] získané při stavbě [buildings|E] v držených [counties|E]:"
+ domicile_building_parameter_estate_charioteer_training_task: "Odemkne #high $charioteer_training$#! [GetCourtPositionType('charioteer_court_position').GetName()] [Concept('court_position_task_short','úkolu')|E]" # todo: CONCEPT CASE
+ domicile_building_parameter_estate_increase_powerful_family_rating: "[Concept('powerful_family_rating','Hodnocení mocné rodiny')|E]: [EmptyScope.ScriptValue('estate_powerful_family_rating_1_value')|=+0]" # todo: CONCEPT CASE
+ domicile_building_parameter_estate_increase_powerful_family_rating_2: "[Concept('powerful_family_rating','Hodnocení mocné rodiny')|E]: [EmptyScope.ScriptValue('estate_powerful_family_rating_2_value')|=+0]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ domicile_building_parameter_estate_increase_powerful_family_rating_3: "[Concept('powerful_family_rating','Hodnocení mocné rodiny')|E]: [EmptyScope.ScriptValue('estate_powerful_family_rating_3_value')|=+0]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ domicile_building_parameter_estate_increase_powerful_family_rating_4: "[Concept('powerful_family_rating','Hodnocení mocné rodiny')|E]: [EmptyScope.ScriptValue('estate_powerful_family_rating_4_value')|=+0]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ domicile_building_parameter_estate_increase_powerful_family_rating_5: "[Concept('powerful_family_rating','Hodnocení mocné rodiny')|E]: [EmptyScope.ScriptValue('estate_powerful_family_rating_5_value')|=+0]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ domicile_building_parameter_estate_increase_powerful_family_rating_6: "[Concept('powerful_family_rating','Hodnocení mocné rodiny')|E]: [EmptyScope.ScriptValue('estate_powerful_family_rating_6_value')|=+0]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ domicile_building_parameter_estate_additional_internal_slots_desc: "Počet míst pro [Concept('domicile_building_upgrade','vnitřní vylepšení')|E]: #P +2#!" # todo: CONCEPT CASE
+ domicile_building_parameter_estate_powerful_family_rating_per_dynasty_level: "[Concept('powerful_family_rating','Hodnocení mocné rodiny')|E] za úroveň [Concept('dynasty_prestige_level','úroveň věhlasu')|E]: #P +[EmptyScope.ScriptValue('estate_increase_powerful_famil_rating_per_dynasty_level_value')|0]#!" # todo: CONCEPT CASE
+ domicile_building_parameter_estate_unlock_granary_decision: "Odemkne #high $estate_granary_decision$#! [Concept('decision','rozhodnutím')|E]#indent_newline:4 \n#weak Rozhodnutí se škáluje podle [Concept('estate','statku')|E] [Concept('location','polohy')|E] a [GetDomicileBuilding('grain_field_01').GetName] [Concept('building','budova')|E]#!#!" # todo: CONCEPT CASE
+ estate_increase_influence_on_building_construction_desc: "[Concept('influence_i','@influence_icon!')|E][Concept('influence','Vliv')|E] získané při stavbě [Concept('buildings','budovám')|E] v držených [Concept('counties','hrabstvích')|E]:" # todo: CONCEPT CASE
  domicile_building_parameter_estate_increase_influence_on_building_construction_1: "$estate_increase_influence_on_building_construction_desc$ #P +[EmptyScope.ScriptValue('estate_construction_influence_bonus_1_value')|+0%]#!"
  domicile_building_parameter_estate_increase_influence_on_building_construction_2: "$estate_increase_influence_on_building_construction_desc$ #P +[EmptyScope.ScriptValue('estate_construction_influence_bonus_2_value')|+0%]#!"
  domicile_building_parameter_estate_increase_influence_on_building_construction_3: "$estate_increase_influence_on_building_construction_desc$ #P +[EmptyScope.ScriptValue('estate_construction_influence_bonus_3_value')|+0%]#!"
  domicile_building_parameter_estate_increase_influence_on_building_construction_4: "$estate_increase_influence_on_building_construction_desc$ #P +[EmptyScope.ScriptValue('estate_construction_influence_bonus_4_value')|+0%]#!"
  domicile_building_parameter_estate_increase_influence_on_building_construction_5: "$estate_increase_influence_on_building_construction_desc$ #P +[EmptyScope.ScriptValue('estate_construction_influence_bonus_5_value')|+0%]#!"
- domicile_building_parameter_estate_governor_trait_xp_bonus_for_contracts: "[GetTrait('governor').GetName( GetPlayer )] [trait_level_track_xp|E] při dokončení [task_contracts|E]: #P +[EmptyScope.ScriptValue('estate_governance_contract_bonus_value')|0%]#!"
- domicile_building_parameter_estate_unlock_silk_regalia_decision: "Odemkne [GetDecisionWithKey('commission_silk_regalia_decision').GetName] [decision|E]"
+ domicile_building_parameter_estate_governor_trait_xp_bonus_for_contracts: "[GetTrait('governor').GetName( GetPlayer )] [Concept('trait_level_track_xp','Zkušenosti rysu')|E] při dokončení [Concept('task_contracts','zakázkách')|E]: #P +[EmptyScope.ScriptValue('estate_governance_contract_bonus_value')|0%]#!" # todo: CONCEPT CASE
+ domicile_building_parameter_estate_unlock_silk_regalia_decision: "Odemkne [GetDecisionWithKey('commission_silk_regalia_decision').GetName] [Concept('decision','rozhodnutí')|E]" # todo: CONCEPT CASE
  domicile_building_parameter_estate_increase_safe_treatment_success_1: "[GetCourtPositionType('court_physician_court_position').GetName()] má mírně zvýšenou šanci na úspěch při použití #high Bezpečné ošetření#!"
  domicile_building_parameter_estate_increase_safe_treatment_success_2: "[GetCourtPositionType('court_physician_court_position').GetName()] má středně zvýšenou šanci na úspěch při použití #high Bezpečné ošetření#!"
- domicile_building_parameter_estate_unlocks_commission_icon: "Odemkne #high $commission_icon_decision$#! [decision|E]"
- domicile_building_parameter_reduce_state_faith_cost: "Snižuje náklady na rozhodnutí #high $change_state_faith$#! [decision|E]"
- domicile_building_parameter_more_successful_heresies: "Zvyšuje šanci na úspěch #high $push_heresy_as_state_faith$#! [decision|E], pokud [county|E], kde se [estate|E] nachází, vyznává stejnou [faith|E]"
- domicile_building_parameter_increased_gardener_aptitude_1: "[GetCourtPositionType('court_gardener_court_position').GetName()] [aptitude|E]: #P +[EmptyScope.ScriptValue('estate_increase_gardener_aptitude_value_1')|0]#!"
- domicile_building_parameter_increased_gardener_aptitude_2: "[GetCourtPositionType('court_gardener_court_position').GetName()] [aptitude|E]: #P +[EmptyScope.ScriptValue('estate_increase_gardener_aptitude_value_2')|0]#!"
- domicile_building_parameter_increased_gardener_aptitude_3: "[GetCourtPositionType('court_gardener_court_position').GetName()] [aptitude|E]: #P +[EmptyScope.ScriptValue('estate_increase_gardener_aptitude_value_3')|0]#!" # todo: NEW TRANSLATION
- domicile_building_parameter_increased_gardener_aptitude_4: "[GetCourtPositionType('court_gardener_court_position').GetName()] [aptitude|E]: #P +[EmptyScope.ScriptValue('estate_increase_gardener_aptitude_value_4')|0]#!" # todo: NEW TRANSLATION
- domicile_building_parameter_increased_gardener_aptitude_5: "[GetCourtPositionType('court_gardener_court_position').GetName()] [aptitude|E]: #P +[EmptyScope.ScriptValue('estate_increase_gardener_aptitude_value_5')|0]#!" # todo: NEW TRANSLATION
- domicile_building_parameter_increased_gardener_aptitude_6: "[GetCourtPositionType('court_gardener_court_position').GetName()] [aptitude|E]: #P +[EmptyScope.ScriptValue('estate_increase_gardener_aptitude_value_6')|0]#!" # todo: NEW TRANSLATION
- domicile_building_parameter_trophy_room_victory_influence: "Při [war|E] [victory|E] každý člen [house|E] získá [influence|E]"
+ domicile_building_parameter_estate_unlocks_commission_icon: "Odemkne #high $commission_icon_decision$#! [Concept('decision','rozhodnutí')|E]" # todo: CONCEPT CASE
+ domicile_building_parameter_reduce_state_faith_cost: "Snižuje náklady na rozhodnutí #high $change_state_faith$#! [Concept('decision','rozhodnutí')|E]" # todo: CONCEPT CASE
+ domicile_building_parameter_more_successful_heresies: "Zvyšuje šanci na úspěch #high $push_heresy_as_state_faith$#! [Concept('decision','rozhodnutí')|E], pokud [Concept('county','hrabství')|E], kde se [Concept('estate','statkem')|E] nachází, vyznává stejnou [Concept('faith','vírou')|E]" # todo: CONCEPT CASE
+ domicile_building_parameter_increased_gardener_aptitude_1: "[GetCourtPositionType('court_gardener_court_position').GetName()] [Concept('aptitude','Způsobilost')|E]: #P +[EmptyScope.ScriptValue('estate_increase_gardener_aptitude_value_1')|0]#!" # todo: CONCEPT CASE
+ domicile_building_parameter_increased_gardener_aptitude_2: "[GetCourtPositionType('court_gardener_court_position').GetName()] [Concept('aptitude','Způsobilost')|E]: #P +[EmptyScope.ScriptValue('estate_increase_gardener_aptitude_value_2')|0]#!" # todo: CONCEPT CASE
+ domicile_building_parameter_increased_gardener_aptitude_3: "[GetCourtPositionType('court_gardener_court_position').GetName()] [Concept('aptitude','Způsobilost')|E]: #P +[EmptyScope.ScriptValue('estate_increase_gardener_aptitude_value_3')|0]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ domicile_building_parameter_increased_gardener_aptitude_4: "[GetCourtPositionType('court_gardener_court_position').GetName()] [Concept('aptitude','Způsobilost')|E]: #P +[EmptyScope.ScriptValue('estate_increase_gardener_aptitude_value_4')|0]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ domicile_building_parameter_increased_gardener_aptitude_5: "[GetCourtPositionType('court_gardener_court_position').GetName()] [Concept('aptitude','Způsobilost')|E]: #P +[EmptyScope.ScriptValue('estate_increase_gardener_aptitude_value_5')|0]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ domicile_building_parameter_increased_gardener_aptitude_6: "[GetCourtPositionType('court_gardener_court_position').GetName()] [Concept('aptitude','Způsobilost')|E]: #P +[EmptyScope.ScriptValue('estate_increase_gardener_aptitude_value_6')|0]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ domicile_building_parameter_trophy_room_victory_influence: "Při [Concept('war','válce')|E] [Concept('victory','vítězství')|E] každý člen [Concept('house','rod')|E] získá [Concept('influence','vliv')|E]" # todo: CONCEPT CASE
  house_gains_influence_victory: "Rod získá vojenské vítězství"
- domicile_building_parameter_increased_success_personal_schemes_1: "[personal_scheme|E] Šance na úspěch: @scheme_success_icon!#P +[EmptyScope.ScriptValue('estate_increased_personal_scheme_success_1_value')|0]#!"
- domicile_building_parameter_increased_success_personal_schemes_2: "[personal_scheme|E] Šance na úspěch: @scheme_success_icon!#P +[EmptyScope.ScriptValue('estate_increased_personal_scheme_success_2_value')|0]#!"
- domicile_building_parameter_increased_success_personal_schemes_3: "[personal_scheme|E] Šance na úspěch: @scheme_success_icon!#P +[EmptyScope.ScriptValue('estate_increased_personal_scheme_success_3_value')|0]#!"
+ domicile_building_parameter_increased_success_personal_schemes_1: "[Concept('personal_scheme','Osobní intrika')|E] Šance na úspěch: @scheme_success_icon!#P +[EmptyScope.ScriptValue('estate_increased_personal_scheme_success_1_value')|0]#!" # todo: CONCEPT CASE
+ domicile_building_parameter_increased_success_personal_schemes_2: "[Concept('personal_scheme','Osobní intrika')|E] Šance na úspěch: @scheme_success_icon!#P +[EmptyScope.ScriptValue('estate_increased_personal_scheme_success_2_value')|0]#!" # todo: CONCEPT CASE
+ domicile_building_parameter_increased_success_personal_schemes_3: "[Concept('personal_scheme','Osobní intrika')|E] Šance na úspěch: @scheme_success_icon!#P +[EmptyScope.ScriptValue('estate_increased_personal_scheme_success_3_value')|0]#!" # todo: CONCEPT CASE
  grazing_land_in_domicile: "Hnojivo z [GetDomicileBuilding('grazing_land_01').GetName]"
- domicile_building_parameter_cheaper_grain_fields_buildings_1: "Cena [estate|E] [buildings|E] typu Obilná pole #P -15%#!"
- domicile_building_parameter_cheaper_grain_fields_buildings_2: "Cena [estate|E] [buildings|E] typu Obilná pole #P -25%#!"
- domicile_building_parameter_cheaper_grain_fields_buildings_3: "Cena [estate|E] [buildings|E] typu Obilná pole #P -35%#!"
- domicile_building_parameter_reduce_success_of_raid_estate: "Každá úroveň této budovy postupně snižuje šanci na úspěch nepřátelských [GetScheme('raid_estate').GetTypeName] [schemes|E]"
- domicile_building_parameter_raids_less_likely_to_make_prisoners_1: "Je o něco méně pravděpodobné, že nepřátelské [raids|E] a [sieges|E] vezmou postavy nacházející se v [estate|E] jako [prisoners|E]"
- domicile_building_parameter_raids_less_likely_to_make_prisoners_2: "Je méně pravděpodobné, že nepřátelské [raids|E] a [sieges|E] vezmou postavy nacházející se v [estate|E] jako [prisoners|E]"
- domicile_building_parameter_raids_less_likely_to_make_prisoners_3: "Je mnohem méně pravděpodobné, že nepřátelské [raids|E] a [sieges|E] vezmou postavy nacházející se v [estate|E] jako [prisoners|E]"
+ domicile_building_parameter_cheaper_grain_fields_buildings_1: "Cena [Concept('estate','statek')|E] [Concept('buildings','budovy')|E] typu Obilná pole #P -15%#!" # todo: CONCEPT CASE
+ domicile_building_parameter_cheaper_grain_fields_buildings_2: "Cena [Concept('estate','statek')|E] [Concept('buildings','budovy')|E] typu Obilná pole #P -25%#!" # todo: CONCEPT CASE
+ domicile_building_parameter_cheaper_grain_fields_buildings_3: "Cena [Concept('estate','statek')|E] [Concept('buildings','budovy')|E] typu Obilná pole #P -35%#!" # todo: CONCEPT CASE
+ domicile_building_parameter_reduce_success_of_raid_estate: "Každá úroveň této budovy postupně snižuje šanci na úspěch nepřátelských [GetScheme('raid_estate').GetTypeName] [Concept('schemes','intrik')|E]" # todo: CONCEPT CASE
+ domicile_building_parameter_raids_less_likely_to_make_prisoners_1: "Je o něco méně pravděpodobné, že nepřátelské [Concept('raids','nájezdy')|E] a [Concept('sieges','obléhání')|E] vezmou postavy nacházející se v [Concept('estate','statku')|E] jako [Concept('prisoners','vězni')|E]" # todo: CONCEPT CASE
+ domicile_building_parameter_raids_less_likely_to_make_prisoners_2: "Je méně pravděpodobné, že nepřátelské [Concept('raids','nájezdy')|E] a [Concept('sieges','obléhání')|E] vezmou postavy nacházející se v [Concept('estate','statku')|E] jako [Concept('prisoners','vězni')|E]" # todo: CONCEPT CASE
+ domicile_building_parameter_raids_less_likely_to_make_prisoners_3: "Je mnohem méně pravděpodobné, že nepřátelské [Concept('raids','nájezdy')|E] a [Concept('sieges','obléhání')|E] vezmou postavy nacházející se v [Concept('estate','statku')|E] jako [Concept('prisoners','vězni')|E]" # todo: CONCEPT CASE
  estate_has_kennels: "[GetDomicileBuilding('stable_kennel_04').GetName]"
  domicile_building_parameter_kennels_more_successful_hunts_1: "[GetActivityType('activity_hunt').GetName] Základní šance na úspěch: #P +[EmptyScope.ScriptValue('kennels_more_successful_hunts_1_value')|0]#!"
  domicile_building_parameter_kennels_more_successful_hunts_2: "[GetActivityType('activity_hunt').GetName] Základní šance na úspěch: #P +[EmptyScope.ScriptValue('kennels_more_successful_hunts_2_value')|0]#!"
  domicile_building_parameter_estate_improve_political_scheme_countermeasure: "$countermeasures_unlocks_bribe_officials_one_tier$" # todo: NEW TRANSLATION
- estate_reduced_tutor_cost_desc: "[domicile|E]"
- estate_increased_tutor_aptitude_desc: "[domicile|E]"
+ estate_reduced_tutor_cost_desc: "[Concept('domicile','Domicil')|E]" # todo: CONCEPT CASE
+ estate_increased_tutor_aptitude_desc: "[Concept('domicile','Domicil')|E]" # todo: CONCEPT CASE
  estate_increase_charioteer_aptitude_desc: "[GetDomicileBuilding('stable_chariot_04').GetName]"
- estate_increase_bodyguard_aptitude_desc: "[domicile|E]"
- estate_cheaper_feast_cost_desc: "[domicile|E]"
- estate_torture_grants_influence_desc: "Odhalení [secret|E] uděluje [influence_i][influence|E]"
- estate_increase_antiquarian_aptitude_desc: "[domicile|E]"
- estate_increase_physician_aptitude_desc: "[domicile|E]"
- estate_increase_master_of_hunt_aptitude_desc: "[domicile|E]"
- estate_increase_master_of_horse_aptitude_desc: "[domicile|E]"
- estate_cheaper_hunt_cost_desc: "[domicile|E]"
- estate_increased_governance_scheme_success_desc: "[domicile|E]: $VALUE|0+=$"
- estate_tutor_building: "[domicile|E]" # todo: NEW TRANSLATION
- estate_cheaper_pilgrimage_cost_desc: "[domicile|E]" # todo: NEW TRANSLATION
+ estate_increase_bodyguard_aptitude_desc: "[Concept('domicile','Domicil')|E]" # todo: CONCEPT CASE
+ estate_cheaper_feast_cost_desc: "[Concept('domicile','Domicil')|E]" # todo: CONCEPT CASE
+ estate_torture_grants_influence_desc: "Odhalení [Concept('secret','tajemství')|E] uděluje [influence_i][Concept('influence','vliv')|E]" # todo: CONCEPT CASE
+ estate_increase_antiquarian_aptitude_desc: "[Concept('domicile','Domicil')|E]" # todo: CONCEPT CASE
+ estate_increase_physician_aptitude_desc: "[Concept('domicile','Domicil')|E]" # todo: CONCEPT CASE
+ estate_increase_master_of_hunt_aptitude_desc: "[Concept('domicile','Domicil')|E]" # todo: CONCEPT CASE
+ estate_increase_master_of_horse_aptitude_desc: "[Concept('domicile','Domicil')|E]" # todo: CONCEPT CASE
+ estate_cheaper_hunt_cost_desc: "[Concept('domicile','Domicil')|E]" # todo: CONCEPT CASE
+ estate_increased_governance_scheme_success_desc: "[Concept('domicile','Domicil')|E]: $VALUE|0+=$" # todo: CONCEPT CASE
+ estate_tutor_building: "[Concept('domicile','Domicil')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ estate_cheaper_pilgrimage_cost_desc: "[Concept('domicile','Domicil')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  feast_option_wine: "Výběr vína"
  feast_wine_none: "Žádné víno"
- feast_wine_none_desc: "$EFFECT_LIST_BULLET$ Žádný dodatečný zisk [influence|E]\n\n#weak Na víno a nápoje nebude utraceno žádné další zlato.#!"
+ feast_wine_none_desc: "$EFFECT_LIST_BULLET$ Žádný dodatečný zisk [Concept('influence','vliv')|E]\n\n#weak Na víno a nápoje nebude utraceno žádné další zlato.#!" # todo: CONCEPT CASE
  feast_wine_limited: "Omezený výběr vína"
- feast_wine_limited_desc: "#indent_newline:4 $EFFECT_LIST_BULLET$ Získáte malé množství [influence|E] na účastníka#!\n\n#weak Utratíte malé množství zlata za nabídku místního vína.#!"
+ feast_wine_limited_desc: "#indent_newline:4 $EFFECT_LIST_BULLET$ Získáte malé množství [Concept('influence','vliv')|E] na účastníka#!\n\n#weak Utratíte malé množství zlata za nabídku místního vína.#!" # todo: CONCEPT CASE
  feast_wine_normal: "Dostatečný výběr vína"
- feast_wine_normal_desc: "#indent_newline:4 $EFFECT_LIST_BULLET$ Získáte střední množství [influence|E] na účastníka#!\n\n#weak Nabídnete rozšířený výběr vín a exotických nápojů.#!"
+ feast_wine_normal_desc: "#indent_newline:4 $EFFECT_LIST_BULLET$ Získáte střední množství [Concept('influence','vliv')|E] na účastníka#!\n\n#weak Nabídnete rozšířený výběr vín a exotických nápojů.#!" # todo: CONCEPT CASE
  feast_wine_extensive: "Štědrý výběr vína"
- feast_wine_extensive_desc: "#indent_newline:4 $EFFECT_LIST_BULLET$ Získáte značné množství [influence|E] na účastníka#!\n\n#weak K dispozici je rozsáhlý výběr vín, jak místních variant, tak těch dovezených z daleka, v hojném množství!#!"
+ feast_wine_extensive_desc: "#indent_newline:4 $EFFECT_LIST_BULLET$ Získáte značné množství [Concept('influence','vliv')|E] na účastníka#!\n\n#weak K dispozici je rozsáhlý výběr vín, jak místních variant, tak těch dovezených z daleka, v hojném množství!#!" # todo: CONCEPT CASE
  wine_limited_reward_tt_title: "$final_reward_tt$"
  wine_limited_reward_tt: "Dostupné víno stačilo uspokojit hosty"
  wine_normal_reward_tt_title: "$final_reward_tt$"
@@ -352,7 +352,7 @@
  wine_extensive_reward_tt: "Výběr vín hosty velmi potěšil"
  feast_estate_reward_tt_title: "$final_reward_tt$"
  feast_estate_reward_tt: "Budova $courtyard_01_domicile_building$ udělala na hosty dojem"
- can_recruit_archer_cavalry_trigger_desc: "Vy #bold nemáte#! přístup k žádným [archer_cavalry|E] [men_at_arms|E]"
+ can_recruit_archer_cavalry_trigger_desc: "Vy #bold nemáte#! přístup k žádným [Concept('archer_cavalry','jízdním lučištníkům')|E] [Concept('men_at_arms','ozbrojencům')|E]" # todo: CONCEPT CASE
  camp_main_01_domicile_building: "Pavilon"
  camp_main_01_domicile_building_desc: "Srdce tábora, shluk těsně postavených stanů kolem sídla vůdce."
  camp_main_02_domicile_building: "$camp_main_01_domicile_building$"
@@ -521,7 +521,7 @@
  proving_grounds_nightly_barding_drills_domicile_building_desc: "#weak (Requires [GetDomicileBuilding('proving_grounds_01').GetName])#!\nOdkazy se kroutí, kůže praská, plechy reziví a výcvik vyprchává stejně pro elitní těžkou jízdu jako pro kohokoli jiného."
  proving_grounds_life_in_the_saddle_domicile_building: "Život v sedle"
  proving_grounds_life_in_the_saddle_domicile_building_desc: "#weak (Requires [GetDomicileBuilding('proving_grounds_01').GetName])#!\nNěkteří jsou k tomu předurčeni, jiní se k tomu vychovají později v životě."
- proving_grounds_life_in_the_saddle_horse_archers_tt: "Musíte mít [regiment|E] [GetMaA('heavy_horse_archers').GetName] nebo [GetMaA('horse_archers').GetName]"
+ proving_grounds_life_in_the_saddle_horse_archers_tt: "Musíte mít [Concept('regiment','pluk')|E] [GetMaA('heavy_horse_archers').GetName] nebo [GetMaA('horse_archers').GetName]" # todo: CONCEPT CASE
  proving_grounds_the_stump_domicile_building: "Pařez"
  proving_grounds_the_stump_domicile_building_desc: "#weak (Requires [GetDomicileBuilding('proving_grounds_01').GetName])#!\nVidíš tamto? Vidíš terč na něm? To je dnešní cíl. Napněte luky!"
  proving_grounds_personal_bouts_domicile_building: "Osobní souboje"
@@ -562,94 +562,94 @@
  camp_perimeter_ditch_domicile_building_desc: "#weak (Requires [GetDomicileBuilding('camp_perimeter_01').GetName])#!\n#EMP Nic#! neregimentuje vojáky tak jako přinutit je každý den na konci dne vykopat zemní opevnění, den co den, navždy."
  camp_perimeter_camp_hygiene_domicile_building: "Hygiena tábora"
  camp_perimeter_camp_hygiene_domicile_building_desc: "#weak (Requires [GetDomicileBuilding('camp_perimeter_01').GetName])#!\nKdyž to smrdí, jde to daleko od nás ostatních. Jednoduché pravidlo, vynucované svědomitým bičováním."
- domicile_building_parameter_camp_unlocks_second_officer: "Odemkne [GetCourtPositionType('second_camp_officer').GetName()] [officer|E]"
- domicile_building_parameter_camp_unlocks_camp_priest_officer: "Odemkne [GetCourtPositionType('camp_priest_camp_officer').GetName()] [officer|E]"
- domicile_building_parameter_camp_unlocks_quartermaster_officer: "Odemkne [GetCourtPositionType('quartermaster_camp_officer').GetName()] [officer|E]"
- domicile_building_parameter_camp_unlocks_armorer_officer: "Odemkne [GetCourtPositionType('armorer_camp_officer').GetName()] [officer|E]"
- domicile_building_parameter_camp_unlocks_chief_forager_officer: "Odemkne [GetCourtPositionType('chief_forager_camp_officer').GetName()] [officer|E]"
- domicile_building_parameter_camp_unlocks_master_thief_officer: "Odemkne [GetCourtPositionType('master_thief_camp_officer').GetName()] [officer|E]"
- domicile_building_parameter_camp_reduced_criminal_contract_xp_gain: "[GetTrait('gallowsbait').GetName( GetNullCharacter )] [trait_level_track_xp|E] Zisk: #P -[EmptyScope.ScriptValue('reduced_criminal_contract_xp_gain_loc_value')|0%]#!"
- domicile_building_parameter_camp_improved_court_physician_aptitude: "[GetCourtPositionType('court_physician_court_position').GetName()] [aptitude|E]: #P +[EmptyScope.ScriptValue('camp_improved_court_physician_aptitude_value')|0]#!"
- camp_improved_court_physician_aptitude_desc: "$barber_tent_surgeons_tools_domicile_building$ [camp_building|E]"
- domicile_building_parameter_camp_unlocks_torture_interaction: "Může [torture|E] [prisoners|E]"
- laamp_torture_requires_tools_tt: "Musíte mít $barber_tent_01_domicile_building$ [camp_building|E] s vylepšením $barber_tent_torturers_tools_domicile_building$"
- domicile_building_parameter_camp_unlocks_graverobbing_contracts: "Může přijmout #high rabování hrobů#! [task_contracts|E]"
- domicile_building_parameter_camp_gold_from_victories_or_nearby_battles: "Získá [gold_i|E][gold|E] z vašich [battle|E] vítězství a z bitev, které skončí v [county|E] vašeho [camp|E]"
+ domicile_building_parameter_camp_unlocks_second_officer: "Odemkne [GetCourtPositionType('second_camp_officer').GetName()] [Concept('officer','důstojník')|E]" # todo: CONCEPT CASE
+ domicile_building_parameter_camp_unlocks_camp_priest_officer: "Odemkne [GetCourtPositionType('camp_priest_camp_officer').GetName()] [Concept('officer','důstojník')|E]" # todo: CONCEPT CASE
+ domicile_building_parameter_camp_unlocks_quartermaster_officer: "Odemkne [GetCourtPositionType('quartermaster_camp_officer').GetName()] [Concept('officer','důstojník')|E]" # todo: CONCEPT CASE
+ domicile_building_parameter_camp_unlocks_armorer_officer: "Odemkne [GetCourtPositionType('armorer_camp_officer').GetName()] [Concept('officer','důstojník')|E]" # todo: CONCEPT CASE
+ domicile_building_parameter_camp_unlocks_chief_forager_officer: "Odemkne [GetCourtPositionType('chief_forager_camp_officer').GetName()] [Concept('officer','důstojník')|E]" # todo: CONCEPT CASE
+ domicile_building_parameter_camp_unlocks_master_thief_officer: "Odemkne [GetCourtPositionType('master_thief_camp_officer').GetName()] [Concept('officer','důstojník')|E]" # todo: CONCEPT CASE
+ domicile_building_parameter_camp_reduced_criminal_contract_xp_gain: "[GetTrait('gallowsbait').GetName( GetNullCharacter )] [Concept('trait_level_track_xp','Zkušenosti rysu')|E] Zisk: #P -[EmptyScope.ScriptValue('reduced_criminal_contract_xp_gain_loc_value')|0%]#!" # todo: CONCEPT CASE
+ domicile_building_parameter_camp_improved_court_physician_aptitude: "[GetCourtPositionType('court_physician_court_position').GetName()] [Concept('aptitude','Způsobilost')|E]: #P +[EmptyScope.ScriptValue('camp_improved_court_physician_aptitude_value')|0]#!" # todo: CONCEPT CASE
+ camp_improved_court_physician_aptitude_desc: "$barber_tent_surgeons_tools_domicile_building$ [Concept('camp_building','Vylepšení tábora')|E]" # todo: CONCEPT CASE
+ domicile_building_parameter_camp_unlocks_torture_interaction: "Může [Concept('torture','mučení')|E] [Concept('prisoners','vězni')|E]" # todo: CONCEPT CASE
+ laamp_torture_requires_tools_tt: "Musíte mít $barber_tent_01_domicile_building$ [Concept('camp_building','vylepšení tábora')|E] s vylepšením $barber_tent_torturers_tools_domicile_building$" # todo: CONCEPT CASE
+ domicile_building_parameter_camp_unlocks_graverobbing_contracts: "Může přijmout #high rabování hrobů#! [Concept('task_contracts','zakázek')|E]" # todo: CONCEPT CASE
+ domicile_building_parameter_camp_gold_from_victories_or_nearby_battles: "Získá [Concept('gold_i','@gold_icon!')|E][Concept('gold','zlato')|E] z vašich [Concept('battle','bitvy')|E] vítězství a z bitev, které skončí v [Concept('county','hrabství')|E] vašeho [Concept('camp','táboru')|E]" # todo: CONCEPT CASE
  camp_gold_from_victories_or_nearby_battles_message_title: "$barber_tent_morticians_tools_domicile_building$"
  camp_gold_from_victories_or_nearby_battles_message_desc_nearby: "Kořist [losing_side_owner.GetPrimaryTitle.GetAdjective] získána po nedaleké bitvě u [battle_province.GetName]"
  camp_gold_from_victories_or_nearby_battles_message_desc_victory: "Kořist [losing_side_owner.GetPrimaryTitle.GetAdjective] získána po vítězství u [battle_province.GetName]"
- domicile_building_parameter_camp_better_scout_for_talent: "Najde více [officers|E] pomocí [GetTravelOption('adventurers_scout_for_talent_option').GetName]"
- domicile_building_parameter_camp_unlocks_head_porter_officer: "Odemkne [GetCourtPositionType('head_porter_camp_officer').GetName()] [officer|E]"
- domicile_building_parameter_receives_more_escort_contracts: "Obdrží více [transport_task_contracts|E]"
- domicile_building_parameter_fireside_chat_intent_unlock: "Odemkne záměr Debata u ohně [intent|E] pro [GetActivityType('activity_camp_party').GetName] [activity|E]"
- domicile_building_parameter_camp_unlocks_head_groom_officer: "Odemkne [GetCourtPositionType('head_groom_camp_officer').GetName()] [officer|E]"
+ domicile_building_parameter_camp_better_scout_for_talent: "Najde více [Concept('officers','důstojníci')|E] pomocí [GetTravelOption('adventurers_scout_for_talent_option').GetName]" # todo: CONCEPT CASE
+ domicile_building_parameter_camp_unlocks_head_porter_officer: "Odemkne [GetCourtPositionType('head_porter_camp_officer').GetName()] [Concept('officer','důstojník')|E]" # todo: CONCEPT CASE
+ domicile_building_parameter_receives_more_escort_contracts: "Obdrží více [Concept('transport_task_contracts','přepravní zakázky')|E]" # todo: CONCEPT CASE
+ domicile_building_parameter_fireside_chat_intent_unlock: "Odemkne záměr Debata u ohně [Concept('intent','záměr')|E] pro [GetActivityType('activity_camp_party').GetName] [Concept('activity','aktivitu')|E]" # todo: CONCEPT CASE
+ domicile_building_parameter_camp_unlocks_head_groom_officer: "Odemkne [GetCourtPositionType('head_groom_camp_officer').GetName()] [Concept('officer','důstojník')|E]" # todo: CONCEPT CASE
  domicile_building_parameter_camp_recruit_porters_events: "Obdržíte občasné události k náboru zručných nosičů"
- domicile_building_parameter_camp_unlocks_huntperson_officer: "Odemkne [GetCourtPositionType('huntperson_camp_officer').GetName()] [officer|E]"
- domicile_building_parameter_camp_unlocks_kennelperson_officer: "Odemkne [GetCourtPositionType('kennelperson_camp_officer').GetName()] [officer|E]"
- domicile_building_parameter_camp_unlocks_adopt_a_kennel_dog_decision: "Odemkne rozhodnutí [GetDecisionWithKey('adopt_a_kennel_dog').GetName] [decision|E]"
- domicile_building_parameter_camp_unlocks_chief_engineer_officer: "Odemkne [GetCourtPositionType('chief_engineer_camp_officer').GetName()] [officer|E]"
- domicile_building_parameter_camp_unlocks_siege_maa_types: "Může naverbovat [siege_weapon|E] [men_at_arms|E]"
- domicile_building_parameter_camp_improved_learning_contract_rewards: "[learning_i][learning|E] [task_contract|E] Odměny: #P +50%#!"
- domicile_building_parameter_camp_improved_stewardship_contract_rewards: "[stewardship_i][stewardship|E] [task_contract|E] Odměny: #P +50%#!"
- domicile_building_parameter_camp_unlocks_pawn_gear_interaction: "Odemkne #high $pawn_gear_interaction$#! [interaction|E]"
- domicile_building_parameter_camp_unlocks_witness_officer: "Odemkne [GetCourtPositionType('witness_camp_officer').GetName()] [officer|E]"
- domicile_building_parameter_camp_unlocks_person_haggler_officer: "Odemkne [GetCourtPositionType('person_haggler_camp_officer').GetName()] [officer|E]"
- domicile_building_parameter_camp_reduced_prisoner_escape_chance: "U [prisoners|E] bude menší pravděpodobnost útěku"
- domicile_building_parameter_camp_unlocks_abduct_scheme: "Odemkne [GetScheme('abduct').GetTypeName] [scheme|E]"
- domicile_building_parameter_camp_improves_wipe_slate_decision: "Zlepšuje účinnost [GetDecisionWithKey('wipe_slate_decision').GetName] [decision|E]"
- domicile_building_parameter_camp_improved_learning_contract_success: "[learning_i][learning|E] [task_contract|E] [success_chance|E]: #P +25%#!"
- domicile_building_parameter_camp_improved_learning_contract_success_desc: "$baggage_train_ascetics_domicile_building$ [domicile_building|E]: $VALUE|+=0$"
+ domicile_building_parameter_camp_unlocks_huntperson_officer: "Odemkne [GetCourtPositionType('huntperson_camp_officer').GetName()] [Concept('officer','důstojník')|E]" # todo: CONCEPT CASE
+ domicile_building_parameter_camp_unlocks_kennelperson_officer: "Odemkne [GetCourtPositionType('kennelperson_camp_officer').GetName()] [Concept('officer','důstojník')|E]" # todo: CONCEPT CASE
+ domicile_building_parameter_camp_unlocks_adopt_a_kennel_dog_decision: "Odemkne rozhodnutí [GetDecisionWithKey('adopt_a_kennel_dog').GetName] [Concept('decision','rozhodnutí')|E]" # todo: CONCEPT CASE
+ domicile_building_parameter_camp_unlocks_chief_engineer_officer: "Odemkne [GetCourtPositionType('chief_engineer_camp_officer').GetName()] [Concept('officer','důstojník')|E]" # todo: CONCEPT CASE
+ domicile_building_parameter_camp_unlocks_siege_maa_types: "Může naverbovat [Concept('siege_weapon','obléhací zbraň')|E] [Concept('men_at_arms','ozbrojenci')|E]" # todo: CONCEPT CASE
+ domicile_building_parameter_camp_improved_learning_contract_rewards: "[learning_i][Concept('learning','Učenost')|E] [Concept('task_contract','Zakázka')|E] Odměny: #P +50%#!" # todo: CONCEPT CASE
+ domicile_building_parameter_camp_improved_stewardship_contract_rewards: "[stewardship_i][Concept('stewardship','Správcovství')|E] [Concept('task_contract','Zakázka')|E] Odměny: #P +50%#!" # todo: CONCEPT CASE
+ domicile_building_parameter_camp_unlocks_pawn_gear_interaction: "Odemkne #high $pawn_gear_interaction$#! [Concept('interaction','interakce')|E]" # todo: CONCEPT CASE
+ domicile_building_parameter_camp_unlocks_witness_officer: "Odemkne [GetCourtPositionType('witness_camp_officer').GetName()] [Concept('officer','důstojník')|E]" # todo: CONCEPT CASE
+ domicile_building_parameter_camp_unlocks_person_haggler_officer: "Odemkne [GetCourtPositionType('person_haggler_camp_officer').GetName()] [Concept('officer','důstojník')|E]" # todo: CONCEPT CASE
+ domicile_building_parameter_camp_reduced_prisoner_escape_chance: "U [Concept('prisoners','vězňů')|E] bude menší pravděpodobnost útěku" # todo: CONCEPT CASE
+ domicile_building_parameter_camp_unlocks_abduct_scheme: "Odemkne [GetScheme('abduct').GetTypeName] [Concept('scheme','intrika')|E]" # todo: CONCEPT CASE
+ domicile_building_parameter_camp_improves_wipe_slate_decision: "Zlepšuje účinnost [GetDecisionWithKey('wipe_slate_decision').GetName] [Concept('decision','rozhodnutí')|E]" # todo: CONCEPT CASE
+ domicile_building_parameter_camp_improved_learning_contract_success: "[learning_i][Concept('learning','Učenost')|E] [Concept('task_contract','Zakázka')|E] [Concept('success_chance','Šance na úspěch')|E]: #P +25%#!" # todo: CONCEPT CASE
+ domicile_building_parameter_camp_improved_learning_contract_success_desc: "$baggage_train_ascetics_domicile_building$ [Concept('domicile_building','Budova domicilu')|E]: $VALUE|+=0$" # todo: CONCEPT CASE
  domicile_building_parameter_camp_pleasure_tent_recruitment_events: "Umožňuje občas naverbovat zajímavé postavy"
- domicile_building_parameter_camp_unlocks_camp_cook_officer: "Odemkne [GetCourtPositionType('camp_cook_camp_officer').GetName()] [officer|E]"
- domicile_building_parameter_camp_unlocks_poisoner_scheme_agents: "[GetScheme('murder').GetTypeName] [schemes|E] začínají s volným #high $agent_poisoner$#! [agent|E] místem"
- domicile_building_parameter_camp_unlocks_camp_party_decision: "Odemkne [GetDecisionWithKey('hold_camp_party_decision').GetName] [decision|E]"
- domicile_building_parameter_camp_improved_camp_party_activity_gains: "Zlepšuje výsledky [GetActivityType('activity_camp_party').GetName] [activity|E]"
- domicile_building_parameter_camp_unlocks_hearty_meal_decision: "Odemkne [GetDecisionWithKey('eat_hearty_meal_decision').GetName] [decision|E]"
- domicile_building_parameter_camp_unlocks_master_bard_officer: "Odemkne [GetCourtPositionType('master_bard_camp_officer').GetName()] [officer|E]"
- domicile_building_parameter_camp_improved_musician_scheme_agent: "$agent_musician$ [agent|E] Schopnost: #P +[EmptyScope.ScriptValue('agent_trait_bonus_t2_value')|0]#!"
- domicile_building_parameter_camp_improved_poet_scheme_agent: "$agent_poet$ [agent|E] Schopnost: #P +[EmptyScope.ScriptValue('agent_trait_bonus_t2_value')|0]#!"
- domicile_building_parameter_camp_more_likely_to_become_poet: "Větší pravděpodobnost získání [GetTrait('lifestyle_poet').GetName( GetNullCharacter )] [trait|E]"
- domicile_building_parameter_camp_improves_stooge_officer: "Zlepšuje základní [aptitude|E] jakéhokoli [GetCourtPositionType('stooge_camp_officer').GetName()] [officer|E]"
+ domicile_building_parameter_camp_unlocks_camp_cook_officer: "Odemkne [GetCourtPositionType('camp_cook_camp_officer').GetName()] [Concept('officer','důstojník')|E]" # todo: CONCEPT CASE
+ domicile_building_parameter_camp_unlocks_poisoner_scheme_agents: "[GetScheme('murder').GetTypeName] [Concept('schemes','Intriky')|E] začínají s volným #high $agent_poisoner$#! [Concept('agent','spolčenec')|E] místem" # todo: CONCEPT CASE
+ domicile_building_parameter_camp_unlocks_camp_party_decision: "Odemkne [GetDecisionWithKey('hold_camp_party_decision').GetName] [Concept('decision','rozhodnutí')|E]" # todo: CONCEPT CASE
+ domicile_building_parameter_camp_improved_camp_party_activity_gains: "Zlepšuje výsledky [GetActivityType('activity_camp_party').GetName] [Concept('activity','aktivita')|E]" # todo: CONCEPT CASE
+ domicile_building_parameter_camp_unlocks_hearty_meal_decision: "Odemkne [GetDecisionWithKey('eat_hearty_meal_decision').GetName] [Concept('decision','rozhodnutí')|E]" # todo: CONCEPT CASE
+ domicile_building_parameter_camp_unlocks_master_bard_officer: "Odemkne [GetCourtPositionType('master_bard_camp_officer').GetName()] [Concept('officer','důstojník')|E]" # todo: CONCEPT CASE
+ domicile_building_parameter_camp_improved_musician_scheme_agent: "$agent_musician$ [Concept('agent','Spolčenec')|E] Schopnost: #P +[EmptyScope.ScriptValue('agent_trait_bonus_t2_value')|0]#!" # todo: CONCEPT CASE
+ domicile_building_parameter_camp_improved_poet_scheme_agent: "$agent_poet$ [Concept('agent','Spolčenec')|E] Schopnost: #P +[EmptyScope.ScriptValue('agent_trait_bonus_t2_value')|0]#!" # todo: CONCEPT CASE
+ domicile_building_parameter_camp_more_likely_to_become_poet: "Větší pravděpodobnost získání [GetTrait('lifestyle_poet').GetName( GetNullCharacter )] [Concept('trait','rys')|E]" # todo: CONCEPT CASE
+ domicile_building_parameter_camp_improves_stooge_officer: "Zlepšuje základní [Concept('aptitude','způsobilost')|E] jakéhokoli [GetCourtPositionType('stooge_camp_officer').GetName()] [Concept('officer','důstojníka')|E]" # todo: CONCEPT CASE
  domicile_building_parameter_camp_recruit_fool_events: "Obdržíte občasné události k náboru vychytralých bláznů"
  domicile_building_parameter_camp_recruit_locals_events: "Obdržíte občasné události k náboru užitečných místních"
- domicile_building_parameter_camp_unlock_trade_oath_interaction: "Odemkne #high $trade_oath_interaction$#! [interaction|E]"
- domicile_building_parameter_camp_improved_criminal_contract_rewards: "[criminal_task_contract|E] Odměny: #P +50%#!"
- domicile_building_parameter_camp_unlocks_master_of_arms_officer: "Odemkne [GetCourtPositionType('master_of_arms_camp_officer').GetName()] [officer|E]"
- domicile_building_parameter_camp_unlocks_light_cavalry_captain_officer: "Odemkne [GetCourtPositionType('light_cavalry_captain_camp_officer').GetName()] [officer|E]"
- domicile_building_parameter_camp_unlocks_camelry_captain_officer: "Odemkne [GetCourtPositionType('camelry_captain_camp_officer').GetName()] [officer|E]"
- domicile_building_parameter_camp_unlocks_elephantry_captain_officer: "Odemkne [GetCourtPositionType('elephantry_captain_camp_officer').GetName()] [officer|E]"
- domicile_building_parameter_camp_reinforce_elephant_regiments_anywhere: "Může naverbovat [elephant_cavalry|E] [men_at_arms|E]"
- domicile_building_parameter_camp_unlocks_heavy_cavalry_captain_officer: "Odemkne [GetCourtPositionType('heavy_cavalry_captain_camp_officer').GetName()] [officer|E]"
- domicile_building_parameter_camp_unlocks_horse_archer_captain_officer: "Odemkne [GetCourtPositionType('horse_archer_captain_camp_officer').GetName()] [officer|E]"
- domicile_building_parameter_camp_unlocks_archer_captain_officer: "Odemkne [GetCourtPositionType('archer_captain_camp_officer').GetName()] [officer|E]"
- domicile_building_parameter_camp_unlocks_heavy_infantry_captain_officer: "Odemkne [GetCourtPositionType('heavy_infantry_captain_camp_officer').GetName()] [officer|E]"
- domicile_building_parameter_camp_unlocks_light_infantry_captain_officer: "Odemkne [GetCourtPositionType('light_infantry_captain_camp_officer').GetName()] [officer|E]"
- domicile_building_parameter_camp_unlocks_pike_captain_officer: "Odemkne [GetCourtPositionType('pike_captain_camp_officer').GetName()] [officer|E]"
- domicile_building_parameter_camp_unlocks_master_of_spoils_officer: "Odemkne [GetCourtPositionType('master_of_spoils_camp_officer').GetName()] [officer|E]"
- domicile_building_parameter_camp_improved_mercenary_contract_rewards: "[mercenary_task_contract|E] Odměny: [EmptyScope.ScriptValue('camp_improved_mercenary_contract_rewards_loc_value')|=+0%]"
+ domicile_building_parameter_camp_unlock_trade_oath_interaction: "Odemkne #high $trade_oath_interaction$#! [Concept('interaction','interakce')|E]" # todo: CONCEPT CASE
+ domicile_building_parameter_camp_improved_criminal_contract_rewards: "[Concept('criminal_task_contract','Zločinná zakázka')|E] Odměny: #P +50%#!" # todo: CONCEPT CASE
+ domicile_building_parameter_camp_unlocks_master_of_arms_officer: "Odemkne [GetCourtPositionType('master_of_arms_camp_officer').GetName()] [Concept('officer','důstojník')|E]" # todo: CONCEPT CASE
+ domicile_building_parameter_camp_unlocks_light_cavalry_captain_officer: "Odemkne [GetCourtPositionType('light_cavalry_captain_camp_officer').GetName()] [Concept('officer','důstojník')|E]" # todo: CONCEPT CASE
+ domicile_building_parameter_camp_unlocks_camelry_captain_officer: "Odemkne [GetCourtPositionType('camelry_captain_camp_officer').GetName()] [Concept('officer','důstojník')|E]" # todo: CONCEPT CASE
+ domicile_building_parameter_camp_unlocks_elephantry_captain_officer: "Odemkne [GetCourtPositionType('elephantry_captain_camp_officer').GetName()] [Concept('officer','důstojník')|E]" # todo: CONCEPT CASE
+ domicile_building_parameter_camp_reinforce_elephant_regiments_anywhere: "Může naverbovat [Concept('elephant_cavalry','sloní jízda')|E] [Concept('men_at_arms','ozbrojenci')|E]" # todo: CONCEPT CASE
+ domicile_building_parameter_camp_unlocks_heavy_cavalry_captain_officer: "Odemkne [GetCourtPositionType('heavy_cavalry_captain_camp_officer').GetName()] [Concept('officer','důstojník')|E]" # todo: CONCEPT CASE
+ domicile_building_parameter_camp_unlocks_horse_archer_captain_officer: "Odemkne [GetCourtPositionType('horse_archer_captain_camp_officer').GetName()] [Concept('officer','důstojník')|E]" # todo: CONCEPT CASE
+ domicile_building_parameter_camp_unlocks_archer_captain_officer: "Odemkne [GetCourtPositionType('archer_captain_camp_officer').GetName()] [Concept('officer','důstojník')|E]" # todo: CONCEPT CASE
+ domicile_building_parameter_camp_unlocks_heavy_infantry_captain_officer: "Odemkne [GetCourtPositionType('heavy_infantry_captain_camp_officer').GetName()] [Concept('officer','důstojník')|E]" # todo: CONCEPT CASE
+ domicile_building_parameter_camp_unlocks_light_infantry_captain_officer: "Odemkne [GetCourtPositionType('light_infantry_captain_camp_officer').GetName()] [Concept('officer','důstojník')|E]" # todo: CONCEPT CASE
+ domicile_building_parameter_camp_unlocks_pike_captain_officer: "Odemkne [GetCourtPositionType('pike_captain_camp_officer').GetName()] [Concept('officer','důstojník')|E]" # todo: CONCEPT CASE
+ domicile_building_parameter_camp_unlocks_master_of_spoils_officer: "Odemkne [GetCourtPositionType('master_of_spoils_camp_officer').GetName()] [Concept('officer','důstojník')|E]" # todo: CONCEPT CASE
+ domicile_building_parameter_camp_improved_mercenary_contract_rewards: "[Concept('mercenary_task_contract','Žoldnéřská zakázka')|E] Odměny: [EmptyScope.ScriptValue('camp_improved_mercenary_contract_rewards_loc_value')|=+0%]" # todo: CONCEPT CASE
  domicile_building_parameter_camp_improved_entice_local_mercenaries: "Vylepšený nábor z #high Nalákat místní žoldáky#!"
- domicile_building_parameter_camp_unlocks_handpicked_faithful_maa_type: "Může naverbovat #high Pečlivě vybraní oddaní#! [men_at_arms|E]"
- domicile_building_parameter_camp_improved_tracker_contract_success: "Příslušný [task_contract|E] [success_chance|E]: #P +25%#!"
- domicile_building_parameter_camp_improved_tracker_contract_success_desc: "$baggage_train_trackers_domicile_building$ [domicile_building|E]: $VALUE|+=0$"
- domicile_building_parameter_camp_improves_gather_provisions_decision: "Podstatně zlepšuje [GetDecisionWithKey('gather_provisions_decision').GetName] [decision|E]"
- domicile_building_parameter_camp_unlocks_forward_scouts: "Umožňuje [GetTravelOption('adventurers_forward_scouts_option').GetName] [travel_option|E]"
- domicile_building_parameter_camp_improves_gather_provisions_hunting: "Získejte [EmptyScope.ScriptValue('camp_improves_gather_provisions_hunting_loc_value')|=+0%] [provisions_i][provisions|E] při lovu s [GetDecisionWithKey('gather_provisions_decision').GetName] [decision|E]"
- domicile_building_parameter_camp_improves_gather_provisions_foraging: "Získejte [EmptyScope.ScriptValue('camp_improves_gather_provisions_foraging_loc_value')|=+0%] [provisions_i][provisions|E] při sběru zásob s [GetDecisionWithKey('gather_provisions_decision').GetName] [decision|E]"
- domicile_building_parameter_camp_infection_chance_buff_6: "[camp|E] získává #P dodatečnou výraznou#! odolnost vůči [epidemics|E]"
- domicile_building_parameter_camp_infection_chance_buff_5: "[camp|E] získává #P dodatečnou mírnou#! odolnost vůči [epidemics|E]"
- domicile_building_parameter_camp_infection_chance_buff_4: "[camp|E] získává #P dodatečnou mírnou#! odolnost vůči [epidemics|E]"
- domicile_building_parameter_camp_infection_chance_buff_3: "[camp|E] získává #P dodatečnou mírnou#! odolnost vůči [epidemics|E]"
- domicile_building_parameter_camp_infection_chance_buff_2: "[camp|E] získává #P dodatečnou mírnou#! odolnost vůči [epidemics|E]"
- domicile_building_parameter_camp_infection_chance_buff_1: "[camp|E] získává #P výraznou#! odolnost vůči [epidemics|E]"
- domicile_building_parameter_camp_enable_conversion: "Odemkne $ask_for_conversion_courtier_interaction$ [interaction|E]"
- domicile_building_parameter_camp_cheaper_cavalry_reinforcement: "Náklady @gold_icon! [gold|E] na [reinforce_soldiers|E] [interaction|E] pro jezdecké regimenty: #P -50%#!"
- domicile_building_parameter_estate_unlock_teach_governor_interaction: "Umožňuje [GetScheme('teach_governor').GetTypeName] [scheme|E]"
- domicile_building_parameter_estate_unlock_ingratiate_family_interaction: "Umožňuje [GetScheme('ingratiate_family').GetTypeName] [scheme|E]"
- domicile_building_parameter_camp_unlocks_camp_party_food_option: "Odemkne další možnosti pro [GetActivityType('activity_camp_party').GetName] [activity|E]"
- valid_demand_conversion_conditions_trigger.tt.domicile_requires_shrine: "[adventurers|E] vyžadují vylepšení $baggage_train_shrine_domicile_building$ u $baggage_train_01_domicile_building$, aby mohli konvertovat [followers|E]"
+ domicile_building_parameter_camp_unlocks_handpicked_faithful_maa_type: "Může naverbovat #high Pečlivě vybraní oddaní#! [Concept('men_at_arms','ozbrojenci')|E]" # todo: CONCEPT CASE
+ domicile_building_parameter_camp_improved_tracker_contract_success: "Příslušný [Concept('task_contract','zakázka')|E] [Concept('success_chance','šance na úspěch')|E]: #P +25%#!" # todo: CONCEPT CASE
+ domicile_building_parameter_camp_improved_tracker_contract_success_desc: "$baggage_train_trackers_domicile_building$ [Concept('domicile_building','Budova domicilu')|E]: $VALUE|+=0$" # todo: CONCEPT CASE
+ domicile_building_parameter_camp_improves_gather_provisions_decision: "Podstatně zlepšuje [GetDecisionWithKey('gather_provisions_decision').GetName] [Concept('decision','rozhodnutí')|E]" # todo: CONCEPT CASE
+ domicile_building_parameter_camp_unlocks_forward_scouts: "Umožňuje [GetTravelOption('adventurers_forward_scouts_option').GetName] [Concept('travel_option','možnost cesty')|E]" # todo: CONCEPT CASE
+ domicile_building_parameter_camp_improves_gather_provisions_hunting: "Získejte [EmptyScope.ScriptValue('camp_improves_gather_provisions_hunting_loc_value')|=+0%] [provisions_i][Concept('provisions','proviant')|E] při lovu s [GetDecisionWithKey('gather_provisions_decision').GetName] [Concept('decision','rozhodnutím')|E]" # todo: CONCEPT CASE
+ domicile_building_parameter_camp_improves_gather_provisions_foraging: "Získejte [EmptyScope.ScriptValue('camp_improves_gather_provisions_foraging_loc_value')|=+0%] [provisions_i][Concept('provisions','proviant')|E] při sběru zásob s [GetDecisionWithKey('gather_provisions_decision').GetName] [Concept('decision','rozhodnutím')|E]" # todo: CONCEPT CASE
+ domicile_building_parameter_camp_infection_chance_buff_6: "[Concept('camp','Tábor')|E] získává #P dodatečnou výraznou#! odolnost vůči [epidemics|E]" # todo: CONCEPT CASE
+ domicile_building_parameter_camp_infection_chance_buff_5: "[Concept('camp','Tábor')|E] získává #P dodatečnou mírnou#! odolnost vůči [epidemics|E]" # todo: CONCEPT CASE
+ domicile_building_parameter_camp_infection_chance_buff_4: "[Concept('camp','Tábor')|E] získává #P dodatečnou mírnou#! odolnost vůči [epidemics|E]" # todo: CONCEPT CASE
+ domicile_building_parameter_camp_infection_chance_buff_3: "[Concept('camp','Tábor')|E] získává #P dodatečnou mírnou#! odolnost vůči [epidemics|E]" # todo: CONCEPT CASE
+ domicile_building_parameter_camp_infection_chance_buff_2: "[Concept('camp','Tábor')|E] získává #P dodatečnou mírnou#! odolnost vůči [epidemics|E]" # todo: CONCEPT CASE
+ domicile_building_parameter_camp_infection_chance_buff_1: "[Concept('camp','Tábor')|E] získává #P výraznou#! odolnost vůči [epidemics|E]" # todo: CONCEPT CASE
+ domicile_building_parameter_camp_enable_conversion: "Odemkne $ask_for_conversion_courtier_interaction$ [Concept('interaction','interakci')|E]" # todo: CONCEPT CASE
+ domicile_building_parameter_camp_cheaper_cavalry_reinforcement: "Náklady @gold_icon! [Concept('gold','zlato')|E] na [Concept('reinforce_soldiers','ručně doplnit')|E] [Concept('interaction','interakci')|E] pro jezdecké regimenty: #P -50%#!" # todo: CONCEPT CASE
+ domicile_building_parameter_estate_unlock_teach_governor_interaction: "Umožňuje [GetScheme('teach_governor').GetTypeName] [Concept('scheme','intrika')|E]" # todo: CONCEPT CASE
+ domicile_building_parameter_estate_unlock_ingratiate_family_interaction: "Umožňuje [GetScheme('ingratiate_family').GetTypeName] [Concept('scheme','intrika')|E]" # todo: CONCEPT CASE
+ domicile_building_parameter_camp_unlocks_camp_party_food_option: "Odemkne další možnosti pro [GetActivityType('activity_camp_party').GetName] [Concept('activity','aktivitu')|E]" # todo: CONCEPT CASE
+ valid_demand_conversion_conditions_trigger.tt.domicile_requires_shrine: "[Concept('adventurers','Dobrodruzi')|E] vyžadují vylepšení $baggage_train_shrine_domicile_building$ u $baggage_train_01_domicile_building$, aby mohli konvertovat [Concept('followers','družiníci')|E]" # todo: CONCEPT CASE
  adventurers_forward_scouts_option: "Přední průzkumníci"
  adventurers_forward_scouts_option_desc: "Pošlete průzkumníky vpředu, aby hlásili, které cesty jsou nejméně nebezpečné."
- adventurers_forward_scouts_option.tt.has_right_parameter: "Máte [GetDomicileBuilding('camp_perimeter_01').GetName] [domicile_building|E]"
+ adventurers_forward_scouts_option.tt.has_right_parameter: "Máte [GetDomicileBuilding('camp_perimeter_01').GetName] [Concept('domicile_building','budovy domicilu')|E]" # todo: CONCEPT CASE
  supply_tent_reserve_provisions.tt.unlocked_by_purpose: "Váš $camp_purpose$ musí být [GetLaw('camp_purpose_explorers').GetName]"
  supply_tent_reserve_water.tt.unlocked_by_purpose: "Váš $camp_purpose$ musí být [GetLaw('camp_purpose_explorers').GetName]"
  supply_tent_climbing_gear.tt.unlocked_by_purpose: "Váš $camp_purpose$ musí být [GetLaw('camp_purpose_explorers').GetName]"
@@ -725,28 +725,28 @@
  GetStumpName_Floodplains: "pařez"
  GetStumpName_Drylands: "hrb"
  GetStumpName_Winter: "hrouda"
- domicile_building_parameter_camp_improved_reinforcement_from_gold: "Levnější je použít @gold_icon! [gold|E] při [reinforce_soldiers|E] [interaction|E]"
- laamp_clear_inappropriate_buildings_effect.tt.buildings_may_be_lost: "Nově neplatné [camp_buildings|E] nebo vylepšení specifická pro váš $camp_purpose$ budou ztracena #WEAK (a částečně vrácena)#!"
- influence_gain_from_hof_support_general: "[influence|E] získané z #V $ep3_hof_ask_for_influence_interaction$#! [interaction|E]:"
+ domicile_building_parameter_camp_improved_reinforcement_from_gold: "Levnější je použít @gold_icon! [Concept('gold','zlato')|E] při [Concept('reinforce_soldiers','ručně doplnit')|E] [Concept('interaction','interakci')|E]" # todo: CONCEPT CASE
+ laamp_clear_inappropriate_buildings_effect.tt.buildings_may_be_lost: "Nově neplatné [Concept('camp_buildings','vylepšení tábora')|E] nebo vylepšení specifická pro váš $camp_purpose$ budou ztracena #WEAK (a částečně vrácena)#!" # todo: CONCEPT CASE
+ influence_gain_from_hof_support_general: "[Concept('influence','Vliv')|E] získané z #V $ep3_hof_ask_for_influence_interaction$#! [Concept('interaction','interakce')|E]:" # todo: CONCEPT CASE
  domicile_building_parameter_influence_gain_from_hof_support_1: "$influence_gain_from_hof_support_general$ @influence_icon!#positive_value [GetPlayer.MakeScope.ScriptValue('ep3_requested_faith_support_1_value')|0]#!"
  domicile_building_parameter_influence_gain_from_hof_support_2: "$influence_gain_from_hof_support_general$ @influence_icon!#positive_value [GetPlayer.MakeScope.ScriptValue('ep3_requested_faith_support_2_value')|0]#!"
  domicile_building_parameter_influence_gain_from_hof_support_3: "$influence_gain_from_hof_support_general$ @influence_icon!#positive_value [GetPlayer.MakeScope.ScriptValue('ep3_requested_faith_support_3_value')|0]#!"
  domicile_building_parameter_influence_gain_from_hof_support_4: "$influence_gain_from_hof_support_general$ @influence_icon!#positive_value [GetPlayer.MakeScope.ScriptValue('ep3_requested_faith_support_4_value')|0]#!"
  domicile_building_parameter_influence_gain_from_hof_support_5: "$influence_gain_from_hof_support_general$ @influence_icon!#positive_value [GetPlayer.MakeScope.ScriptValue('ep3_requested_faith_support_5_value')|0]#!"
  domicile_building_parameter_influence_gain_from_hof_support_6: "$influence_gain_from_hof_support_general$ @influence_icon!#positive_value [GetPlayer.MakeScope.ScriptValue('ep3_requested_faith_support_6_value')|0]#!"
- domicile_building_parameter_estate_increase_house_member_investment_cap_1: "U každého člena [house|E] je [investment_cap|E]: #P +10#!"
- domicile_building_parameter_estate_increase_house_member_investment_cap_2: "U každého člena [house|E] je [investment_cap|E]: #P +20#!"
- domicile_building_parameter_estate_increase_house_member_investment_cap_3: "U každého člena [house|E] je [investment_cap|E]: #P +30#!"
- domicile_building_parameter_estate_increase_house_member_investment_cap_4: "U každého člena [house|E] je [investment_cap|E]: #P +40#!"
- domicile_building_parameter_estate_increase_house_member_investment_cap_5: "[investment_cap|E] každého člena [house|E]: #P +50#!" # todo: NEW TRANSLATION
- domicile_building_parameter_japanese_manor_increase_house_member_investment_cap_1: "[investment_cap|E] každého člena [house|E]: #P +5#!" # todo: NEW TRANSLATION
- domicile_building_parameter_japanese_manor_increase_house_member_investment_cap_2: "[investment_cap|E] každého člena [house|E]: #P +10#!" # todo: NEW TRANSLATION
- domicile_building_parameter_japanese_manor_increase_house_member_investment_cap_3: "[investment_cap|E] každého člena [house|E]: #P +15#!" # todo: NEW TRANSLATION
- domicile_building_parameter_japanese_manor_increase_house_member_investment_cap_4: "[investment_cap|E] každého člena [house|E]: #P +20#!" # todo: NEW TRANSLATION
- domicile_building_parameter_japanese_manor_increase_house_member_investment_cap_5: "[investment_cap|E] každého člena [house|E]: #P +25#!" # todo: NEW TRANSLATION
- domicile_building_parameter_japanese_manor_increase_house_member_investment_cap_6: "[investment_cap|E] každého člena [house|E]: #P +30#!" # todo: NEW TRANSLATION
+ domicile_building_parameter_estate_increase_house_member_investment_cap_1: "U každého člena [Concept('house','rod')|E] je [Concept('investment_cap','investiční kapacita')|E]: #P +10#!" # todo: CONCEPT CASE
+ domicile_building_parameter_estate_increase_house_member_investment_cap_2: "U každého člena [Concept('house','rod')|E] je [Concept('investment_cap','investiční kapacita')|E]: #P +20#!" # todo: CONCEPT CASE
+ domicile_building_parameter_estate_increase_house_member_investment_cap_3: "U každého člena [Concept('house','rod')|E] je [Concept('investment_cap','investiční kapacita')|E]: #P +30#!" # todo: CONCEPT CASE
+ domicile_building_parameter_estate_increase_house_member_investment_cap_4: "U každého člena [Concept('house','rod')|E] je [Concept('investment_cap','investiční kapacita')|E]: #P +40#!" # todo: CONCEPT CASE
+ domicile_building_parameter_estate_increase_house_member_investment_cap_5: "[Concept('investment_cap','Investiční kapacita')|E] každého člena [Concept('house','rod')|E]: #P +50#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ domicile_building_parameter_japanese_manor_increase_house_member_investment_cap_1: "[Concept('investment_cap','Investiční kapacita')|E] každého člena [Concept('house','rod')|E]: #P +5#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ domicile_building_parameter_japanese_manor_increase_house_member_investment_cap_2: "[Concept('investment_cap','Investiční kapacita')|E] každého člena [Concept('house','rod')|E]: #P +10#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ domicile_building_parameter_japanese_manor_increase_house_member_investment_cap_3: "[Concept('investment_cap','Investiční kapacita')|E] každého člena [Concept('house','rod')|E]: #P +15#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ domicile_building_parameter_japanese_manor_increase_house_member_investment_cap_4: "[Concept('investment_cap','Investiční kapacita')|E] každého člena [Concept('house','rod')|E]: #P +20#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ domicile_building_parameter_japanese_manor_increase_house_member_investment_cap_5: "[Concept('investment_cap','Investiční kapacita')|E] každého člena [Concept('house','rod')|E]: #P +25#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ domicile_building_parameter_japanese_manor_increase_house_member_investment_cap_6: "[Concept('investment_cap','Investiční kapacita')|E] každého člena [Concept('house','rod')|E]: #P +30#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  baggage_train_ample_steeds.tt.ate_steeds: "Nedávno jste snědli své rezervní koně"
  baggage_train_kennel.tt.ate_dogs: "Nedávno jste snědli všechny své psy"
  proving_grounds_elephantry_reserve.tt.ate_elephants: "Nedávno jste snědli své slony"
- domicile_building_parameter_can_use_incite_revolts: "Získává přístup k $incite_revolts_interaction$ [interaction|E]" # todo: NEW TRANSLATION
+ domicile_building_parameter_can_use_incite_revolts: "Získává přístup k $incite_revolts_interaction$ [Concept('interaction','interakci')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  domicile_building_parameter_can_join_peasant_factions: "Může se přidat k [escalated_peasant_faction|E]" # todo: NEW TRANSLATION

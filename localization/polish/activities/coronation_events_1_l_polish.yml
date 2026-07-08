@@ -40,7 +40,7 @@
  coronation_events.1011.desc: "V tichu před mou korunovací úředníci odhalí [ancestor_artifact.GetName]! Jeho lesk zpívá o vítězstvích mých předků.\n\nVzpomínám na mého [ROOT.Char.Custom2('RelationToMe', SCOPE.sC('previous_holder'))], [previous_holder.GetTitledFirstNameRegnal], jehož mistrovství v [previous_holder.Custom('education_focus')] formovalo [Select_CString(previous_holder.IsFemale,'její','jeho')] požehnanou vládu. Stejně tak bude i moje panování poznamenáno činy [ROOT.Char.Custom('education_focus')]. Mé činy zase naplní [ancestor_artifact.GetName] novými písněmi, na jisté téma."
  coronation_events.1011.refit: "Mé pověsti patří mě."
  coronation_events.1011.previous: "Tento artefakt ctí odkaz [previous_holder.GetFirstNamePossessiveNoTooltipRegnal]."
- coronation_events.1011.root_reward.tt: "#weak Nové [skill|E] [modifier|E] [artifact|E] vychází z typu [education|E]#!"
+ coronation_events.1011.root_reward.tt: "#weak Nové [Concept('skill','dovednosti')|E] [Concept('modifier','modifikátory')|E] [Concept('artifact','artefakty')|E] vychází z typu [Concept('education','vzdělání')|E]#!" # todo: CONCEPT CASE
  coronation_events.1011.previous_reward.tt: "Nechat koruně zachovat její dřívější účel posiluje artefakt Modifikátory ctící Předchůdcovu Výchovu."
  artifact_monthly_diplomacy_lifestyle_xp_1_modifier: "Měsíční zkušenost diplomatického životního stylu"
  artifact_monthly_diplomacy_lifestyle_xp_2_modifier: "Měsíční zkušenost diplomatického životního stylu"
@@ -121,18 +121,18 @@
  coronation_events.1020.t: "Obavy mezi klany"
  coronation_events.1020.desc: "Jak se korunovační hostina chýlí ke konci, zvednuté hlasy prorazí sál. „Rod [ROOT.Char.GetDynastyName] je silou království,“ [dynasty_vassal.Custom2('MyCharacterIntroduction', ROOT.Char)|U] trvá na svém. „Naši příbuzní by měli vést, jak tradice žádá.“\n\nNapříč stolem [not_dynasty_vassal.Custom2('MyCharacterIntroduction', ROOT.Char)] odvětí: „A co my ostatní? Máme platit vašim bratrancům a držet jazyk za zuby?“"
  coronation_events.1020.embrace_supporters: "Dám přednost věrným."
- coronation_events.1020.embrace_supporters.tt: "#EMP #low Ovlivněné [characters|E] jsou [coronation_supporters|E]#!#!"
+ coronation_events.1020.embrace_supporters.tt: "#EMP #low Ovlivněné [Concept('characters','postavy')|E] jsou [Concept('coronation_supporters','podporovatelé')|E]#!#!" # todo: CONCEPT CASE
  coronation_events.1020.weaken_detractors: "A proč bych vám vůbec naslouchal?"
- coronation_events.1020.weaken_detractors.tt: "#weak #EMP [characters|E], kterým přibývá [stress|E], jsou [coronation_detractors|E]#!#!"
+ coronation_events.1020.weaken_detractors.tt: "#weak #EMP [Concept('characters','Postavy')|E], kterým přibývá [Concept('stress','stres')|E], jsou [Concept('coronation_detractors','odpůrci')|E]#!#!" # todo: CONCEPT CASE
  coronation_events.1020.a: "Vyslechněte je a najděte společnou řeč."
  coronation_events.1020.a.flavor: "Svolávám jak vazaly, tak i posluchače a naslouchám opatrně, usiluji uklidnit vášně a potvrdit pouta, která drží náš dům pohromadě."
  coronation_events.1020.b: "Postavím se na stranu obav [not_dynasty_vassal.GetFirstNamePossessiveNoTooltip]."
- coronation_events.1020.b.custom: "Každý [vassal|E] ze stejné [dynasty|E]"
+ coronation_events.1020.b.custom: "Každý [Concept('vassal','vazal')|E] ze stejné [Concept('dynasty','dynastie')|E]" # todo: CONCEPT CASE
  coronation_events.1020.b.tt: "Tví příbuzní ti budou vyčítat, že stojíš na straně tohoto cizince, abys [Select_CString(ROOT.Char.IsFemale,'získala','získal')] [Select_CString(not_dynasty_vassal.IsFemale,'její','jeho')] loajalitu."
  coronation_events.1020.c: "Taková drzost nesmí být tolerována."
  coronation_events.1020.d: "Moje povinnost je především vůči mým příbuzným."
- clan_unity_coronation_increased: "rozhodl se upřednostnit [house|E] před cizinci při korunovaci"
- clan_unity_coronation_decreased: "rozhodl se upřednostnit cizince před [house|E] při korunovaci"
+ clan_unity_coronation_increased: "rozhodl se upřednostnit [Concept('house','rod')|E] před cizinci při korunovaci" # todo: CONCEPT CASE
+ clan_unity_coronation_decreased: "rozhodl se upřednostnit cizince před [Concept('house','rodem')|E] při korunovaci" # todo: CONCEPT CASE
  coronation_events.1021.t: "Zlato před korunou"
  coronation_events.1021.desc: "Ještě dříve, než mi koruna spočine na čele, mě tíží starosti říše. Můj [ROOT.Char.Custom2('RelationToMe', SCOPE.sC('taxman'))], [taxman.GetTitledFirstName], vykročí vpřed a prohlásí, „Vaše Milosti, musím požádat o svolení vybírat celý desátek, na který mám nárok — bez zásahů vašich dvorových magistrů — jinak budou mé fiskální povinnosti nespravedlivým břemenem.“\n\nPo boku [taxman.GetHerHim] můj [ROOT.Char.Custom2('RelationToMe', SCOPE.sC('supporter'))], [supporter.GetName], pozoruje pozorně, [Select_CString(supporter.IsFemale,'její','jeho')] oči se ptají: skloním se před tímto otevřeným projevem chamtivosti? Stanou se výběrčí daní jako [taxman.GetFirstNameNoTooltip] rozhodci mé spravedlnosti?"
  coronation_events.1021.embrace_supporters: "[supporter.GetFirstNameNoTooltip], prosím pozoruj tohoto ďábla pozorně."
@@ -151,10 +151,10 @@
  coronation_events.1021.a.flavor: "Neukloním se před zlatem, dokud koruna není nasazena. Nechť všichni vidí, kdo komu rozkazuje."
  coronation_events.1021.b: "Ustoupím — v zájmu stability."
  coronation_events.1021.b.flavor: "Nechť [taxman.GetHerHim] vybírá, co [taxman.GetSheHe] chce, dokud vládnu."
- custom.every_tax_slot_vassal: "Každý [vassal|E] v [tax_collector.GetShortUINamePossessive] [tax_jurisdiction|E]"
+ custom.every_tax_slot_vassal: "Každý [Concept('vassal','vazal')|E] v [tax_collector.GetShortUINamePossessive] [Concept('tax_jurisdiction','daňové jurisdikci')|E]" # todo: CONCEPT CASE
  coronation_events.1021.c: "Mé pokladny mají přednost. Naplňte je."
  coronation_events.1021.c.flavor: "Jestliže zlato dláždí cestu k moci, nechť je naskládáno vysoko a hluboko. Dejte [taxman.GetFirstNameNoTooltip] volnou ruku."
- clan_unity_coronation_nepotism.desc: "[Select_CString(ROOT.Char.IsFemale,'podporovala','podporoval')] nepotismus upřednostněním [unity_character.GetHerHis] vlastního [house|E] během korunovace [unity_character.GetHerHis]"
+ clan_unity_coronation_nepotism.desc: "[Select_CString(ROOT.Char.IsFemale,'podporovala','podporoval')] nepotismus upřednostněním [unity_character.GetHerHis] vlastního [Concept('house','rodu')|E] během korunovace [unity_character.GetHerHis]" # todo: CONCEPT CASE
  bp4_empowered_tax_collectors_modifier: "Zmocnění daňoví výběrčí"
  coronation_events.1022.t: "Hedvábná nabídka"
  coronation_events.1022.desc: "Můj [ROOT.Char.Custom2('RelationToMe', SCOPE.sC('supporter'))], [supporter.GetName], klečí přede mnou, zvedá truhlu vyšívaných rouch a říká:\n\n„Vaše Milosti, má mysl je zahrada, která kvete vzpomínkami, jež jsme sdíleli. Na důkaz krásy minulosti nabízím tyto hedvábné rouchy, dostatečné k vyzdobení celého vašeho dvora. Žádám pouze, abyste urozené [ROOT.Char.Custom('KnightCulturePluralNoTooltip')] vašeho doprovodu vždy oblékal v nepřekonatelném přepychu."
@@ -230,7 +230,7 @@
  coronation_events.1028.d: "Zcela se otázce vyhnout."
  coronation_events.1028.detractor.tt: "Každý ne-[GetTrait('cynical').GetName( GetNullCharacter )] účastník stejné víry"
  coronation_events.1028.a.tt: "Každý [GetTrait('zealous').GetName( GetNullCharacter )] účastník stejné víry"
- coronation_events.1028.a.tt3: "Každý účastník [clergy_representative.GetShortUINamePossessive] [faith|E]"
+ coronation_events.1028.a.tt3: "Každý účastník [clergy_representative.GetShortUINamePossessive] [Concept('faith','víra')|E]" # todo: CONCEPT CASE
  coronation_events.1028.b.tt: "Každý [GetTrait('zealous').GetName( GetNullCharacter )] účastník stejné víry"
  coronation_events.1028.c.tt: "Každý [GetTrait('zealous').GetName( GetNullCharacter )] účastník stejné víry"
  coronation_events.1029.t: "Zapomenutý slib"
@@ -275,16 +275,16 @@
  coronation_events.1032.b: "„[supporter.GetFirstNameNoTooltip]: vyhlašme naši věčnou věrnost.“"
  coronation_events.1032.c: "S novým řádem shromáždím věrné!"
  coronation_events.1032.c.flavor: "[supporter.GetFirstNameNoTooltip] připraví prohlášení o novém Svatém řádu."
- create_holy_order_decision_effect_message_coronation: "Bude založen [holy_order|E] vaší [faith|E]\n$EFFECT_LIST_BULLET$Stanete se patronem řádu [holy_order_patron|E]\n$EFFECT_LIST_BULLET$[barony.GetName] se stane sídlem řádu"
+ create_holy_order_decision_effect_message_coronation: "Bude založen [Concept('holy_order','svatý řád')|E] vaší [Concept('faith','víru')|E]\n$EFFECT_LIST_BULLET$Stanete se patronem řádu [Concept('holy_order_patron','patrona svatého řádu')|E]\n$EFFECT_LIST_BULLET$[barony.GetName] se stane sídlem řádu" # todo: CONCEPT CASE
  coronation_events.1032.d: "„Zvědavé oči mají být — #EMP vytrženy!#!“"
  coronation_events.1032.d.flavor: "[detractor.GetFirstNameNoTooltip] bude během obřadu vybrán k veřejnému trestu. Nesouhlas nebude tolerován."
  coronation_events.1032.a: "Ať se k oslavám připojí i samo nebe!"
  coronation_events.1032.a.flavor: "Nechte své služebníky vypustit hejná zajatých ptáků do vzduchu; ať jsou všechny klece vyprázdněny!"
- every_compassionate_calm_supporter: "Každý [GetTrait('compassionate').GetName( GetNullCharacter )], [GetTrait('calm').GetName( GetNullCharacter )] nebo [coronation_supporter|E] účastník"
+ every_compassionate_calm_supporter: "Každý [GetTrait('compassionate').GetName( GetNullCharacter )], [GetTrait('calm').GetName( GetNullCharacter )] nebo [Concept('coronation_supporter','podporovatel')|E] účastník" # todo: CONCEPT CASE
  every_ambitious_wrathful_vassal: "Každý [GetTrait('ambitious').GetName( GetNullCharacter )] nebo [GetTrait('wrathful').GetName( GetNullCharacter )] účastník"
  every_attending_sadistic_arbitrary: "Každý [GetTrait('sadistic').GetName( GetNullCharacter )] nebo [GetTrait('arbitrary').GetName( GetNullCharacter )] účastník"
  every_attending_compassionate_just: "Každý [GetTrait('compassionate').GetName( GetNullCharacter )] nebo [GetTrait('just').GetName( GetNullCharacter )] účastník"
- create_alliance_supporter_tt: "Vy a [supporter.GetShortUIName] tvoříte [alliance|E]"
+ create_alliance_supporter_tt: "Vy a [supporter.GetShortUIName] tvoříte [Concept('alliance','aliance')|E]" # todo: CONCEPT CASE
  coronation_events.1032.e: "Jen se těším, až to bude za mnou..."
  coronation_events.1033.t: "Nesouznějící hlas"
  coronation_events.1033.desc: "„Tato #EMP výplod#! fraška zesměšňuje [ROOT.Char.GetPrimaryTitle.GetNameNoTier], pomlouvá jeho lidi a znečišťuje hroby těch, kteří nám předcházeli!“ zahřmí [rival.GetFirstName], můj [ROOT.Char.Custom2('RelationToMe', SCOPE.sC('rival'))].\n\nPálivá stopa [ROOT.Char.Custom('RegionalDrink')] je na dechu [rival.GetHerHis]: ten opilec je už podnapilý! [Select_CString(rival.IsFemale,'Její','Jeho')] pohled se vlní napříč šlechtou, [ROOT.Char.GetFaith.PriestNeuterPlural] a zahraničními vyslanci, vyzývajíc je, aby postavili odpor tomuto neotesanému představení. „Jakým právem si [ROOT.Char.GetFirstName] nárokuje tuhle korunu? #EMP Hm?#! Jakým právem?!?“\n\nPo síni se rozléhají úžasy."
@@ -306,10 +306,10 @@
  bp4_asserting_coronation_alt: "Upevňující korunovace"
  bp4_impressive_coronation: "Impozantní korunovace"
  bp4_impressive_coronation_alt: "Impozantní korunovace"
- weaken_detractors_opinion: "$EFFECT_LIST_BULLET$Kvůli vašemu #V [GetPlayer.GetInvolvedActivityIntent.GetName]#! záměru:\n$BULLET_WITH_TAB$Každý ne-[coronation_detractor|E] [GetVassalStance( 'belligerent' ).GetTextIcon][GetVassalStance( 'belligerent' ).GetName] [vassal|E]"
- exalt_crown_opinion: "$EFFECT_LIST_BULLET$Kvůli vašemu #V [GetPlayer.GetInvolvedActivityIntent.GetName]#! záměru:\n$BULLET_WITH_TAB$Každý [GetVassalStance( 'parochial' ).GetTextIcon][GetVassalStance( 'parochial' ).GetName] [vassal|E]"
- embrace_supporters_opinion: "$EFFECT_LIST_BULLET$Kvůli vašemu #V [GetPlayer.GetInvolvedActivityIntent.GetName]#! záměru:\n$BULLET_WITH_TAB$Každý [GetVassalStance( 'glory_hound' ).GetTextIcon][GetVassalStance( 'glory_hound' ).GetName] a [GetVassalStance( 'zealot' ).GetTextIcon][GetVassalStance( 'zealot' ).GetName] [vassal|E]"
- impress_attendees_opinion: "$EFFECT_LIST_BULLET$Kvůli vašemu #V [GetPlayer.GetInvolvedActivityIntent.GetName]#! záměru:\n$BULLET_WITH_TAB$Každý [GetVassalStance( 'courtly' ).GetTextIcon][GetVassalStance( 'courtly' ).GetName] a [GetVassalStance( 'minority' ).GetTextIcon][GetVassalStance( 'minority' ).GetName] [vassal|E]"
+ weaken_detractors_opinion: "$EFFECT_LIST_BULLET$Kvůli vašemu #V [GetPlayer.GetInvolvedActivityIntent.GetName]#! záměru:\n$BULLET_WITH_TAB$Každý ne-[Concept('coronation_detractor','odpůrce')|E] [GetVassalStance( 'belligerent' ).GetTextIcon][GetVassalStance( 'belligerent' ).GetName] [Concept('vassal','vazal')|E]" # todo: CONCEPT CASE
+ exalt_crown_opinion: "$EFFECT_LIST_BULLET$Kvůli vašemu #V [GetPlayer.GetInvolvedActivityIntent.GetName]#! záměru:\n$BULLET_WITH_TAB$Každý [GetVassalStance( 'parochial' ).GetTextIcon][GetVassalStance( 'parochial' ).GetName] [Concept('vassal','vazal')|E]" # todo: CONCEPT CASE
+ embrace_supporters_opinion: "$EFFECT_LIST_BULLET$Kvůli vašemu #V [GetPlayer.GetInvolvedActivityIntent.GetName]#! záměru:\n$BULLET_WITH_TAB$Každý [GetVassalStance( 'glory_hound' ).GetTextIcon][GetVassalStance( 'glory_hound' ).GetName] a [GetVassalStance( 'zealot' ).GetTextIcon][GetVassalStance( 'zealot' ).GetName] [Concept('vassal','vazal')|E]" # todo: CONCEPT CASE
+ impress_attendees_opinion: "$EFFECT_LIST_BULLET$Kvůli vašemu #V [GetPlayer.GetInvolvedActivityIntent.GetName]#! záměru:\n$BULLET_WITH_TAB$Každý [GetVassalStance( 'courtly' ).GetTextIcon][GetVassalStance( 'courtly' ).GetName] a [GetVassalStance( 'minority' ).GetTextIcon][GetVassalStance( 'minority' ).GetName] [Concept('vassal','vazal')|E]" # todo: CONCEPT CASE
  ach_maintenance_events.0100.t: "Smrt [host.GetTitleAsNamePossessiveNoTooltip]"
  ach_maintenance_events.0100.desc: "[host.GetName] [host.GetDeathReason] na prahu [Select_CString(host.IsFemale,'jejímu','jeho')] nástupu na trůn. Mně zbývá málo jiného než shromáždit svůj průvod a odejít."
  ach_maintenance_events.0100.a: "Ať [ROOT.Char.GetFaith.HighGodName] smiluje nad [host.GetPrimaryTitle.GetNameNoTooltip]."
@@ -384,7 +384,7 @@
  coronation_events.1039.d: "Rozviň svitek s pobožnou básní." # todo: NEW TRANSLATION
  coronation_events_1039_poem_name: "Požehnané společenství" # todo: NEW TRANSLATION
  coronation_events_1039_poem_desc: "Mistrovská a pobožná báseň vytvořená [owner.GetTitledHouseNameOrFirstName] na počest kami při [Select_CString(owner.IsFemale,'její','jeho')] vlastní korunovaci." # todo: NEW TRANSLATION
- coronation_events.1039.d.tt: "Obdržíte báseň [artifact|E]" # todo: NEW TRANSLATION
+ coronation_events.1039.d.tt: "Obdržíte báseň [Concept('artifact','artefakt')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  coronation_events.1039.d.flavor: "„V [ROOT.Char.GetCurrentLocation.GetNameNoTooltip] kvete osamělý květ...“„" # todo: NEW TRANSLATION
  coronation_events.1040.t: "Lekce pomíjivosti" # todo: NEW TRANSLATION
  coronation_events.1040.desc: "„Jak probíhají přípravy mandaly, můj [ROOT.Char.GetTitleAsNameNoTooltip]?“ zeptal se [tributary_1.Custom2('MyCharacterIntroduction', ROOT.Char)] vážným tónem. Je zvykem, že se vytvoří [Glossary('sand mandala', 'GLOSS_MANDALA')] na počest nového [ROOT.Char.GetTitleAsNameNoTooltip], jen aby byla po příslušných ritech okamžitě zničena.\n\nStále jsem nad tím přemýšlel, protože rituál je velmi symbolický, ale to, že takové dílo umění má být po jeho dokončení zničeno, působí téměř... plýtvavě." # todo: NEW TRANSLATION

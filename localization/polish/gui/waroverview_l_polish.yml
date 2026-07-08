@@ -10,11 +10,11 @@
  PARTICIPATION_SCORE_BREAKDOWN_FROM_SIEGES: "Obléhání"
  PARTICIPATION_SCORE_BREAKDOWN_FROM_OCCUPATION: "Obsazení"
  PARTICIPATION_SCORE_MINIMUM_CONTRIBUTION: "@warning_icon! #X Musíte přispět alespoň $MIN$, abyste získali jakoukoli odměnu.#!"
- WARSCORE_TOOLTIP_HEADER: "#T Celkem [war_score|E]#!"
- IMPRISONMENT_WARSCORE_TOOLTIP_HEADER: "#T [war_score|E] z vězňů#!"
- BATTLES_WARSCORE_TOOLTIP_HEADER: "#T [war_score|E] z [battles|E]#!"
- OCCUPATION_WARSCORE_TOOLTIP_HEADER: "#T [war_score|E] z obsazených [holdings|E]#!"
- TICKING_WARSCORE_TOOLTIP_HEADER: "#T [war_score|E] z držených [objectives|E]#!"
+ WARSCORE_TOOLTIP_HEADER: "#T Celkem [Concept('war_score','válečné skóre')|E]#!" # todo: CONCEPT CASE
+ IMPRISONMENT_WARSCORE_TOOLTIP_HEADER: "#T [Concept('war_score','Válečné skóre')|E] z vězňů#!" # todo: CONCEPT CASE
+ BATTLES_WARSCORE_TOOLTIP_HEADER: "#T [Concept('war_score','Válečné skóre')|E] z [Concept('battles','bitev')|E]#!" # todo: CONCEPT CASE
+ OCCUPATION_WARSCORE_TOOLTIP_HEADER: "#T [Concept('war_score','Válečné skóre')|E] z obsazených [Concept('holdings','držav')|E]#!" # todo: CONCEPT CASE
+ TICKING_WARSCORE_TOOLTIP_HEADER: "#T [Concept('war_score','Válečné skóre')|E] z držených [Concept('objectives','cílů')|E]#!" # todo: CONCEPT CASE
  NO_IMPRISONMENT_WARSCORE: "#weak Nebyli zajati žádní významní vězni#!"
  NO_BATTLES_WARSCORE: "#weak Nebyla svedena žádná bitva#!"
  NO_OCCUPATION_WARSCORE: "#weak Nebyla obsazena žádná sídla#!"
@@ -30,21 +30,21 @@
  NOTABLE_DEATH_COMMANDER: "  $NAME$, velitel [TITLE.GetBaseName]" # todo: NEW TRANSLATION
  NOTABLE_DEATH_RULER: "  $NAME$" # todo: NEW TRANSLATION
  NOTABLE_DEATH_HEIR: "  $NAME$, dědic [TITLE.GetBaseName]" # todo: NEW TRANSLATION
- ATTRITION_LOSSES_TT: "[attrition|e] Ztráty" # todo: NEW TRANSLATION
+ ATTRITION_LOSSES_TT: "[Concept('attrition','Opotřebení')|e] Ztráty" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  LOSSES_WAR_OVERVIEW: "Ztráty" # todo: NEW TRANSLATION
- WAR_LEADER_TOOLTIP: "#T [war_leader|E]:#!\n[CHARACTER.GetUINameNotMe]"
+ WAR_LEADER_TOOLTIP: "#T [Concept('war_leader','Vůdce války')|E]:#!\n[CHARACTER.GetUINameNotMe]" # todo: CONCEPT CASE
  WAR_PARTICIPANT_TOOLTIP: "#T [CHARACTER.GetUINameNotMeNoTooltip]#!"
  WAR_OVERVIEW_WARSCORE: "$WARSCORE|0%=+$"
  BATTLES_WAR_SCORE_CAPPED: "Max!"
  WAR_OVERVIEW_IMPRISONMENT: "Zajatí: $WARSCORE$"
- WAR_OVERVIEW_BATTLES: "[battles|E]: $WARSCORE$"
+ WAR_OVERVIEW_BATTLES: "[Concept('battles','Bitvy')|E]: $WARSCORE$" # todo: CONCEPT CASE
  WAR_OVERVIEW_OCCUPATION: "Obsazení: $WARSCORE$"
  WAR_OVERVIEW_TICKING: "Postupný zisk: $WARSCORE$"
- WAR_OVERVIEW_CANNOT_SEND: "@warning_icon! #X Jen [war_leaders|E] mohou nabídnout mír.#!"
+ WAR_OVERVIEW_CANNOT_SEND: "@warning_icon! #X Jen [Concept('war_leaders','vůdci války')|E] mohou nabídnout mír.#!" # todo: CONCEPT CASE
  SEND_BUTTON_VICTORY: "Vynutit požadavky"
  SEND_BUTTON_WHITE_PEACE: "Nabídnout bílý mír"
  SEND_BUTTON_DEFEAT: "Kapitulovat"
- WARSCORE_MODIFIER: "[war_score|E]: $VALUE|+=0$"
+ WARSCORE_MODIFIER: "[Concept('war_score','Válečné skóre')|E]: $VALUE|+=0$" # todo: CONCEPT CASE
  WOULD_WIN_MODIFIER: "Vyhráli by: $VALUE|+=0$"
  PEACEMAKER_PERK_MODIFIER: "[GetPerk( 'peacemaker_perk' ).GetName( GetPlayer )]: $VALUE|+=0$"
  NOMAD_LEGACY_PERK_MODIFIER: "[GetDynastyPerk('mpo_nomad_legacy_3').GetName]: $VALUE|+=0$"
@@ -52,31 +52,31 @@
  CONCERN_ABOUT_OTHER_WARS: "Jiné války: $VALUE|+=0$"
  COMPLETELY_BANKRUPT: "Výrazně zadlužený: $VALUE|+=0$"
  WAR_COST: "Náklady:"
- WAR_OVERVIEW_MY_CONTRIBUTION: "Váš [war_contribution|E]"
- WAR_OVERVIEW_BENEFICIARY: "Váš [beneficiary|E]"
+ WAR_OVERVIEW_MY_CONTRIBUTION: "Váš [Concept('war_contribution','válečný příspěvek')|E]" # todo: CONCEPT CASE
+ WAR_OVERVIEW_BENEFICIARY: "Váš [Concept('beneficiary','příjemce')|E]" # todo: CONCEPT CASE
  WAR_OVERVIEW_BENEFICIARY_NAME: "[CHARACTER.GetUIName]"
  WAR_OVERVIEW_NO_BENEFICIARY: "#X Ještě nevybráno#!"
  WAR_OVERVIEW_CONTRIBUTION_RANK: "[WarOverviewWindow.GetContributionRank(GetPlayer)|O]"
  WAR_OVERVIEW_CONTRIBUTION_NO_RANK: "-"
  WAR_OVERVIEW_PEACE_TERMS: "Podmínky míru"
- WAR_OVERVIEW_ALLIES_LEFT: "[allies|E] #weak ([GetDataModelSize( WarOverviewWindow.GetLeftSideParticipantItems ) ])#!"
- WAR_OVERVIEW_ALLIES_RIGHT: "[allies|E] #weak ([GetDataModelSize( WarOverviewWindow.GetRightSideParticipantItems ) ])#!"
- WAR_OVERVIEW_SHOW_ALLIES: "#T Přepnout [allies|E]#!"
- WAR_OVERVIEW_TOTAL_SOLDIERS: "Celkem [soldiers|E]"
- WAR_PARTICIPANT_SOLDIERS: "[soldiers|E]: [soldier_i]$SOLDIERS$\n$knight_culture_player_plural$: [knight_i]$KNIGHTS$"
+ WAR_OVERVIEW_ALLIES_LEFT: "[Concept('allies','Spojenci')|E] #weak ([GetDataModelSize( WarOverviewWindow.GetLeftSideParticipantItems ) ])#!" # todo: CONCEPT CASE
+ WAR_OVERVIEW_ALLIES_RIGHT: "[Concept('allies','Spojenci')|E] #weak ([GetDataModelSize( WarOverviewWindow.GetRightSideParticipantItems ) ])#!" # todo: CONCEPT CASE
+ WAR_OVERVIEW_SHOW_ALLIES: "#T Přepnout [Concept('allies','spojenci')|E]#!" # todo: CONCEPT CASE
+ WAR_OVERVIEW_TOTAL_SOLDIERS: "Celkem [Concept('soldiers','vojáci')|E]" # todo: CONCEPT CASE
+ WAR_PARTICIPANT_SOLDIERS: "[Concept('soldiers','Vojáci')|E]: [soldier_i]$SOLDIERS$\n$knight_culture_player_plural$: [knight_i]$KNIGHTS$" # todo: CONCEPT CASE
  WAR_OVERVIEW_HOSTAGE_OFFER: "Nabídnout"
  WAR_OVERVIEW_HOSTAGE_DEMAND: "Požadovat"
- WAR_OVERVIEW_HOSTAGE_INFO: "Vyberte člena vaší rodiny, který bude nabídnut jako [hostage|E], nebo požadujte člena rodiny protivníka, aby se připojil k vašemu dvoru jako [hostage|E]. Pravděpodobnost přijetí bude ovlivněna."
- WAR_OVERVIEW_HOSTAGE_PICK_OFFER: "Vyberte někoho, koho nabídnete jako [hostage|E]."
- WAR_OVERVIEW_HOSTAGE_PICK_DEMAND: "Vyberte někoho, koho požadujete jako [hostage|E]."
- WAR_OVERVIEW_HOSTAGE_ACCEPTED: "Může být vybrán jako [hostage|E]."
- WAR_OVERVIEW_HOSTAGE_DENIED: "Nemůže být vybrán jako [hostage|E]."
- WAR_OVERVIEW_HOSTAGE_OFFER_VALUE: "Hodnota [secondary_actor.GetShortUINamePossessive|U] jako [hostage|E]: $VALUE|=+0$"
- WAR_OVERVIEW_HOSTAGE_DEMAND_VALUE: "Hodnota [secondary_recipient.GetShortUINamePossessive|U] jako [hostage|E]: $VALUE|0+=$"
- WAR_OVERVIEW_WHITE_PEACE_HOSTAGE_OFFER_VALUE: "Hodnota [secondary_actor.GetShortUINamePossessive|U] jako [hostage|E] pro bílý mír: $VALUE|0+=$"
- WAR_OVERVIEW_WHITE_PEACE_HOSTAGE_DEMAND_VALUE: "Hodnota [secondary_recipient.GetShortUINamePossessive|U] jako [hostage|E] pro bílý mír: $VALUE|0+=$"
- WAR_OVERVIEW_HOSTAGES_DISALLOWED: "[hostages|E] nelze použít k urovnání [WarOverviewWindow.GetWar.GetActiveCB.GetType.GetName]"
- WAR_OVERVIEW_HOSTAGES_DISALLOWED_LANDLESS_ADVENTURER: "[hostages|E] nelze použít u [adventurers|E]"
- WAR_OVERVIEW_HOSTAGE_DEMAND_BLOCKED: "[recipient.GetShortUIName] ztratí [recipient.GetHerHis] [realm|E]: $VALUE|0+=$"
+ WAR_OVERVIEW_HOSTAGE_INFO: "Vyberte člena vaší rodiny, který bude nabídnut jako [Concept('hostage','rukojmí')|E], nebo požadujte člena rodiny protivníka, aby se připojil k vašemu dvoru jako [Concept('hostage','rukojmí')|E]. Pravděpodobnost přijetí bude ovlivněna." # todo: CONCEPT CASE
+ WAR_OVERVIEW_HOSTAGE_PICK_OFFER: "Vyberte někoho, koho nabídnete jako [Concept('hostage','rukojmí')|E]." # todo: CONCEPT CASE
+ WAR_OVERVIEW_HOSTAGE_PICK_DEMAND: "Vyberte někoho, koho požadujete jako [Concept('hostage','rukojmí')|E]." # todo: CONCEPT CASE
+ WAR_OVERVIEW_HOSTAGE_ACCEPTED: "Může být vybrán jako [Concept('hostage','rukojmí')|E]." # todo: CONCEPT CASE
+ WAR_OVERVIEW_HOSTAGE_DENIED: "Nemůže být vybrán jako [Concept('hostage','rukojmí')|E]." # todo: CONCEPT CASE
+ WAR_OVERVIEW_HOSTAGE_OFFER_VALUE: "Hodnota [secondary_actor.GetShortUINamePossessive|U] jako [Concept('hostage','rukojmí')|E]: $VALUE|=+0$" # todo: CONCEPT CASE
+ WAR_OVERVIEW_HOSTAGE_DEMAND_VALUE: "Hodnota [secondary_recipient.GetShortUINamePossessive|U] jako [Concept('hostage','rukojmí')|E]: $VALUE|0+=$" # todo: CONCEPT CASE
+ WAR_OVERVIEW_WHITE_PEACE_HOSTAGE_OFFER_VALUE: "Hodnota [secondary_actor.GetShortUINamePossessive|U] jako [Concept('hostage','rukojmí')|E] pro bílý mír: $VALUE|0+=$" # todo: CONCEPT CASE
+ WAR_OVERVIEW_WHITE_PEACE_HOSTAGE_DEMAND_VALUE: "Hodnota [secondary_recipient.GetShortUINamePossessive|U] jako [Concept('hostage','rukojmí')|E] pro bílý mír: $VALUE|0+=$" # todo: CONCEPT CASE
+ WAR_OVERVIEW_HOSTAGES_DISALLOWED: "[Concept('hostages','Rukojmí')|E] nelze použít k urovnání [WarOverviewWindow.GetWar.GetActiveCB.GetType.GetName]" # todo: CONCEPT CASE
+ WAR_OVERVIEW_HOSTAGES_DISALLOWED_LANDLESS_ADVENTURER: "[Concept('hostages','Rukojmí')|E] nelze použít u [Concept('adventurers','dobrodruhů')|E]" # todo: CONCEPT CASE
+ WAR_OVERVIEW_HOSTAGE_DEMAND_BLOCKED: "[recipient.GetShortUIName] ztratí [recipient.GetHerHis] [Concept('realm','panství')|E]: $VALUE|0+=$" # todo: CONCEPT CASE
  WAR_OVERVIEW_WHITE_PEACE_GOK: "Nápor Největších chánů: $VALUE|0+=$" # todo: NEW TRANSLATION
- WAR_OVERVIEW_WHITE_PEACE_GOK_OCCUPATION: "Obsazené [counties|E], které budou odebrány: $VALUE|0+=$" # todo: NEW TRANSLATION
+ WAR_OVERVIEW_WHITE_PEACE_GOK_OCCUPATION: "Obsazené [Concept('counties','hrabství')|E], které budou odebrány: $VALUE|0+=$" # todo: NEW TRANSLATION # todo: CONCEPT CASE

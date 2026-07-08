@@ -1,9 +1,9 @@
 ﻿l_polish:
- greeting_lover_object: "[second.GetTitledFirstName|U], můj [ROOT.Char.Custom2('LoverSeductionObject', SCOPE.sC('second'))],"
- greeting_lover_fallback: "[second.GetTitledFirstName|U], můj drahý [second.Custom('LoverPetName')],"
+ greeting_lover_object: "[second.GetTitledFirstName|U], [Select_CString(second.IsFemale,'moje','můj')] [ROOT.Char.Custom2('LoverSeductionObject', SCOPE.sC('second'))],"
+ greeting_lover_fallback: "[second.GetTitledFirstName|U], [Select_CString(second.IsFemale,'moje drahá','můj drahý')] [second.Custom('LoverPetName')],"
  greeting_liege_positive: "[ROOT.Char.Custom2('GreetingToLiegePositive', second)]"
  greeting_liege_negative: "[ROOT.Char.Custom2('GreetingToLiegeNegative', second)]"
- greeting_liege_liked: "Pozdravy, můj [second.Custom('ComplimentAdjective')] lenní pane,"
+ greeting_liege_liked: "Pozdravy, [Select_CString(second.IsFemale,'moje','můj')] [second.Custom('ComplimentAdjective')] lenní [Select_CString(second.IsFemale,'paní','pane')],"
  greeting_liege_liked_regent: "Zdravím, [second.Custom('ComplimentAdjective')] [ROOT.Char.GetTopLiege.GetTitleAsNameNoTooltip]," # todo: NEW TRANSLATION
  greeting_liege_dislike: "Mému lennímu pánu,"
  greeting_liege_dislike_regent: "Zdravím, [second.Custom('ComplimentAdjective')] [ROOT.Char.GetTopLiege.GetTitleAsNameNoTooltip]," # todo: NEW TRANSLATION
@@ -18,14 +18,14 @@
  greeting_vassal_relative_liked: "[ROOT.Char.Custom2('GreetingToFamily', second)]"
  greeting_vassal_liked: "Pozdravy, můj [second.Custom('ComplimentAdjective')] vazale,"
  greeting_vassal_liked_regent: "Zdravím, [second.Custom('ComplimentAdjective')] poddaný [ROOT.Char.Custom('GetCeremonialLiegeOrLiegeTitle')]," # todo: NEW TRANSLATION
- greeting_vassal_liked_ceremonial_liege: "Můj [second.Custom2('ComplimentAdjective', ROOT.Char)|U] [ROOT.Char.Custom('GetCeremonialLiegeOrLiegeTitle')]," # todo: NEW TRANSLATION
+ greeting_vassal_liked_ceremonial_liege: "[Select_CString(ROOT.Char.IsFemale,'Moje','Můj')] [second.Custom2('ComplimentAdjective', ROOT.Char)|U] [ROOT.Char.Custom('GetCeremonialLiegeOrLiegeTitle')],"
  greeting_vassal_dislike: "Mému [second.Custom2('InsultAdjective', ROOT.Char)] vazalovi,"
  greeting_vassal_dislike_regent: "[second.Custom2('InsultAdjective', ROOT.Char)|U] poddaný [ROOT.Char.Custom('GetCeremonialLiegeOrLiegeTitle')]," # todo: NEW TRANSLATION
- greeting_vassal_dislike_ceremonial_liege: "Můj [second.Custom2('InsultAdjective', ROOT.Char)|U] [ROOT.Char.Custom('GetCeremonialLiegeOrLiegeTitle')]," # todo: NEW TRANSLATION
+ greeting_vassal_dislike_ceremonial_liege: "[Select_CString(second.IsFemale,'Moje','Můj')] [second.Custom2('InsultAdjective', ROOT.Char)|U] [ROOT.Char.Custom('GetCeremonialLiegeOrLiegeTitle')],"
  greeting_vassal_fallback: "[ROOT.Char.Custom2('GreetingToVassalNeutral', second)]"
- greeting_vassal_neutral: "Mému vazalovi," # todo: NEW TRANSLATION
+ greeting_vassal_neutral: "[Select_CString(second.IsFemale,'Mé vazalce','Mému vazalovi')],"
  greeting_vassal_neutral_regent: "K [ROOT.Char.Custom('GetCeremonialLiegeOrLiegeTitlePossessive')] poddanému," # todo: NEW TRANSLATION
- greeting_vassal_neutral_ceremonial_liege: "Můj [ROOT.Char.GetTitleAsNameNoTooltip]," # todo: NEW TRANSLATION
+ greeting_vassal_neutral_ceremonial_liege: "[Select_CString(ROOT.Char.IsFemale,'Moje','Můj')] [ROOT.Char.GetTitleAsNameNoTooltip],"
  greeting_family_positive: "[ROOT.Char.Custom2('GreetingToFamilyPositive', second)]"
  greeting_family_negative: "[ROOT.Char.Custom2('GreetingToFamilyNegative', second)]"
  greeting_family_liked: "Můj drahý [ROOT.Char.Custom2('RelationToMeShort', second)],"
@@ -73,7 +73,7 @@
  greeting_supplimentary.positive.flattery.6: "Tvé velké chutě jsou proslulé po celém světě."
  form_of_address_your_excellency: "Vaše Excelence" # todo: NEW TRANSLATION
  form_of_address_excellency: "Excelence" # todo: NEW TRANSLATION
- form_of_address_my_ladylord: "můj [ROOT.Char.GetLadyLord]" # todo: NEW TRANSLATION
+ form_of_address_my_ladylord: "[Select_CString(ROOT.Char.IsFemale,'moje','můj')] [ROOT.Char.GetLadyLord]"
  form_of_address_ladylord_regent: "[ROOT.Char.GetLadyLord|U] regent" # todo: NEW TRANSLATION
  form_of_address_your_holiness: "Vaše Svatosti" # todo: NEW TRANSLATION
  form_of_address_your_highness: "Vaše Jasnosti" # todo: NEW TRANSLATION

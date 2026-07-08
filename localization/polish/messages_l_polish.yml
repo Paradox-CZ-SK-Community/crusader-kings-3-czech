@@ -9,7 +9,7 @@
  msg_marriage: "Sňatek: Váš [GetPlayer.Custom2('RelationToMeShort', LEFT_CHARACTER.Self )] #high [LEFT_CHARACTER.GetFirstNameNoTooltip]#! a #high [RIGHT_CHARACTER.GetFirstNameNoTooltip]#!"
  msg_marriage_desc: "Váš [GetPlayer.Custom2('RelationToMeShort', LEFT_CHARACTER.Self )], [LEFT_CHARACTER.GetShortUINameNotMe], a vaše [GetPlayer.Custom2('RelationToMeShort', RIGHT_CHARACTER.Self )], [RIGHT_CHARACTER.GetUINameNotMe] uzavřeli manželství"
  msg_building_done: "#high [BUILDING.GetNameNoTooltip]#! Postaveno"
- msg_building_done_desc: "[BUILDING.GetName] [building|E] postaven v [PROVINCE.GetBaronyNameExplicitly]"
+ msg_building_done_desc: "[building|E] [BUILDING.GetName] postavena v [PROVINCE.GetBaronyNameExplicitly]"
  msg_new_heir: "Nový dědic"
  msg_new_heir_desc: "Váš [GetPlayer.Custom2('RelationToMeShort', LEFT_CHARACTER.Self )], [LEFT_CHARACTER.GetShortUIName], je vaším novým [player_heir|E]"
  msg_new_heir_newborn: "Nový dědic"
@@ -186,7 +186,7 @@
  msg_law_invalidated_no_new_law: "Zákon odstraněn"
  msg_law_invalidated_no_new_law_desc: "Váš [LAW.GetName] [law|E] už není platný a [Select_CString(LAW.IsFemale,'byla','byl')] odstraněn"
  msg_law_invalidated: "Zákon [Select_CString(ROOT.Char.IsFemale,'nahrazena','nahrazen')]"
- msg_law_invalidated_desc: "Váš [LAW.GetName] [law|E] už není platný a [Select_CString(LAW.IsFemale,'byla','byl')] [Select_CString(LAW.IsFemale,'nahrazena','nahrazen')] [TARGET_LAW.GetName]"
+ msg_law_invalidated_desc: "Váš [LAW.GetName] [law|E] už není platný a [Select_CString(LAW.IsFemale,'byla nahrazena','byl nahrazen')] [TARGET_LAW.GetName]"
  msg_faction_local_not_leader_anymore: "Nový vůdce frakce"
  msg_faction_local_not_leader_anymore_desc: "[LEFT_CHARACTER.GetShortUINameNoTooltip] vás [Select_CString(LEFT_CHARACTER.IsFemale,'nahradila','nahradil')] jako vůdce [FACTION.GetName] [faction|E]"
  msg_faction_local_becomes_leader: "Nový vůdce frakce"
@@ -296,14 +296,14 @@
  msg_free_house_member_war_invalidated_message: "Válka [war.GetName] skončila: [defender.GetTitledFirstName] již nevlastní žádné uvězněné členy [house|E] [attacker.GetHouse.GetBaseNameNoTooltip]"
  msg_unify_house_war_invalidated_message: "Válka [war.GetName] skončila: [defender.GetTitledFirstName] již nemá žádné vazaly [house|E] [attacker.GetHouse.GetBaseNameNoTooltip]"
  msg_laamp_raid_contract_war_invalidated_message: "Válka [war.GetName] skončila: [attacker.GetShortUINamePossessive] [GetTaskContractType('laamp_raid_contract').GetName] [task_contract|E] už není platný."
- msg_celestial_war_invalidation_no_longer_son_of_heaven: "Válka [war.GetName] skončila: [attacker.GetShortUINamePossessive] [Select_CString(attacker.IsFemale,'přišela','přišel')] o [mandate|E]" # todo: NEW TRANSLATION
+ msg_celestial_war_invalidation_no_longer_son_of_heaven: "Válka [war.GetName] skončila: [attacker.GetShortUINamePossessive] [Select_CString(attacker.IsFemale,'přišla','přišel')] o [mandate|E]" # todo: NEW TRANSLATION
  msg_celestial_war_invalidation_chaos: "[dynastic_cycle|E] se nachází v [GetSituationType('dynastic_cycle').GetPhaseType('situation_dynastic_cycle_phase_chaos').GetName] [situation_dynastic_cycle_phase|E]" # todo: NEW TRANSLATION
  msg_my_hook_replaced: "Hook [Select_CString(ROOT.Char.IsFemale,'nahrazena','nahrazen')]"
- msg_my_hook_replaced_desc: "Váš [hook|E] na [LEFT_CHARACTER.GetShortUIName] [Select_CString(LEFT_CHARACTER.IsFemale,'byla','byl')] [Select_CString(LEFT_CHARACTER.IsFemale,'nahrazena','nahrazen')] [HOOK.GetName] Hookem"
+ msg_my_hook_replaced_desc: "Váš [hook|E] na [LEFT_CHARACTER.GetShortUIName] [Select_CString(LEFT_CHARACTER.IsFemale,'byla nahrazena','byl nahrazen')] [HOOK.GetName] Hookem"
  msg_my_hook_added: "Hook získán"
  msg_my_hook_added_desc: "Získali jste [HOOK.GetName] [hook|E] na [LEFT_CHARACTER.GetShortUIName]"
  msg_hook_on_me_replaced: "Hook na vás [Select_CString(ROOT.Char.IsFemale,'nahrazena','nahrazen')]"
- msg_hook_on_me_replaced_desc: "[LEFT_CHARACTER.GetShortUINamePossessive] [hook|E] vůči vám [Select_CString(LEFT_CHARACTER.IsFemale,'byla','byl')] [Select_CString(LEFT_CHARACTER.IsFemale,'nahrazena','nahrazen')] [HOOK.GetName] Hookem"
+ msg_hook_on_me_replaced_desc: "[LEFT_CHARACTER.GetShortUINamePossessive] [hook|E] vůči vám [Select_CString(LEFT_CHARACTER.IsFemale,'byla nahrazena','byl nahrazen')] [HOOK.GetName] Hookem"
  msg_hook_on_me_added: "Hook získán na vás"
  msg_hook_on_me_added_replaced: "Hook získán na vás"
  msg_hook_on_me_added_desc: "[LEFT_CHARACTER.GetShortUIName|U] [Select_CString(LEFT_CHARACTER.IsFemale,'získala','získal')] [HOOK.GetName] [hook|E] vůči vám"
@@ -396,8 +396,8 @@
  msg_execute_prisoner_desc: "[recipient.GetTitledFirstName] [recipient.GetDeathReason]"
  msg_artifact_gained_title: "Dědictví: [artifact_inherited.GetNameNoTooltip]"
  msg_artifact_gained_desc: "[Select_CString(ROOT.Char.IsFemale,'Zdělila','Zdělil')] jste [artifact_inherited.GetNameNoTooltip] po [old_owner.GetUIName]!"
- msg_rival_dethroned: "Váš rival [actor.GetTitledFirstName] [Select_CString(actor.IsFemale,'přišela','přišel')] o titul"
- msg_rival_dethroned_desc: "Váš [rival|E] [actor.GetTitledFirstName] [Select_CString(actor.IsFemale,'přišela','přišel')] o [title.GetBaseName]"
+ msg_rival_dethroned: "Váš rival [actor.GetTitledFirstName] [Select_CString(actor.IsFemale,'přišla','přišel')] o titul"
+ msg_rival_dethroned_desc: "Váš [rival|E] [actor.GetTitledFirstName] [Select_CString(actor.IsFemale,'přišla','přišel')] o [title.GetBaseName]"
  msg_court_position_gained: "[Select_CString(ROOT.Char.IsFemale,'Jmenována','Jmenován')] [COURT_POSITION_TYPE.GetNameNoTooltip]"
  msg_court_position_gained_desc: "[Select_CString(ROOT.Char.IsFemale,'Byla','Byl')] jste [Select_CString(ROOT.Char.IsFemale,'jmenována','jmenován')] [LEFT_CHARACTER.GetShortUINamePossessive] [COURT_POSITION_TYPE.GetNameNoTooltip]"
  msg_court_position_removed: "[COURT_POSITION_TYPE.GetNameNoTooltip] pozice odebrána"
@@ -505,9 +505,9 @@
  on_diarch_change.notification.vassal.inheritance.t: "$on_diarch_change.notification.vassal.boilerplate.t$"
  on_diarch_change.notification.vassal.inheritance.desc: "Díky dědictví jsem nyní [liege.GetDiarchTitle] pro [liege.GetShortUIName]."
  on_diarch_change.notification.liege.fallback.t: "$on_diarch_change.notification.liege.boilerplate.t$"
- on_diarch_change.notification.liege.fallback.desc: "[old_diarch.GetShortUIName|U] [Select_CString(old_diarch.IsFemale,'byla','byl')] [Select_CString(old_diarch.IsFemale,'nahrazena','nahrazen')] [diarch.GetShortUIName] jako tvůj nový [liege.GetDiarchTitle]."
+ on_diarch_change.notification.liege.fallback.desc: "[old_diarch.GetShortUIName|U] [Select_CString(old_diarch.IsFemale,'byla nahrazena','byl nahrazen')] [diarch.GetShortUIName] jako tvůj nový [liege.GetDiarchTitle]."
  on_diarch_change.notification.vassal.fallback.t: "$on_diarch_change.notification.vassal.boilerplate.t$"
- on_diarch_change.notification.vassal.fallback.desc: "[old_diarch.GetShortUIName|U] [Select_CString(old_diarch.IsFemale,'byla','byl')] [Select_CString(old_diarch.IsFemale,'nahrazena','nahrazen')] [diarch.GetShortUIName] jako nový [liege.GetDiarchTitle] tvého vládce."
+ on_diarch_change.notification.vassal.fallback.desc: "[old_diarch.GetShortUIName|U] [Select_CString(old_diarch.IsFemale,'byla nahrazena','byl nahrazen')] [diarch.GetShortUIName] jako nový [liege.GetDiarchTitle] tvého vládce."
  msg_diarchy_more_power_title: "[LEFT_CHARACTER.GetLiege.GetDiarchTitle] je nyní mocnější"
  msg_diarchy_more_power_effect: "Váhy [scales_of_power|E] dosáhly nové úrovně a více [diarch_powers|E] je k dispozici [LEFT_CHARACTER.GetLiege.GetDiarchTitle]"
  msg_diarchy_less_power_title: "[LEFT_CHARACTER.GetLiege.GetDiarchTitle] je nyní méně mocný(á)"
@@ -547,11 +547,11 @@
  msg_great_project_planned_title: "[GreatProject.GetNameNoTooltip] se plánuje" # todo: NEW TRANSLATION
  msg_great_project_planned_desc: "[GreatProject.GetName] se plánuje v [GreatProject.GetLocation.GetName].\nPotřebuje [GreatProject.GetRequiredContributionCount|V] [great_project_contributions|E] k zahájení." # todo: NEW TRANSLATION
  msg_great_project_started_title: "[GreatProject.GetNameNoTooltip] zahájeno" # todo: NEW TRANSLATION
- msg_great_project_started_desc: "[GreatProject.GetName] [Select_CString(GreatProject.IsFemale,'získala','získal')] dostatek [great_project_contributions|E] pro zahájení prací.\nBude dokončen za [GreatProject.GetConstructionEndDate.GetTimeToDate|V]." # todo: NEW TRANSLATION
- msg_great_project_aborted_title: "[GreatProject.GetNameNoTooltip] [Select_CString(GreatProject.IsFemale,'byla','byl')] zrušen" # todo: NEW TRANSLATION
+ msg_great_project_started_desc: "[GreatProject.GetName] získal dostatek [great_project_contributions|E] pro zahájení prací.\nBude dokončen za [GreatProject.GetConstructionEndDate.GetTimeToDate|V]." # todo: NEW TRANSLATION
+ msg_great_project_aborted_title: "[GreatProject.GetNameNoTooltip] byl zrušen" # todo: NEW TRANSLATION
  msg_great_project_aborted_desc: "[GreatProject.GetType.GetName] [great_project|E] umístěný v [GreatProject.GetLocation.GetName] již není dostupný pro příspěvky." # todo: NEW TRANSLATION
  msg_great_project_completed_title: "[GreatProject.GetNameNoTooltip] dokončeno" # todo: NEW TRANSLATION
- msg_great_project_completed_desc: "[GreatProject.GetName] [Select_CString(GreatProject.IsFemale,'byla','byl')] úspěšně dokončen v [GreatProject.GetOwner.GetCapitalLocation.GetName]" # todo: NEW TRANSLATION
+ msg_great_project_completed_desc: "[GreatProject.GetName] byl úspěšně dokončen v [GreatProject.GetOwner.GetCapitalLocation.GetName]" # todo: NEW TRANSLATION
  msg_known_pregnancy: "[LEFT_CHARACTER.GetTitledFirstNameNoTooltip] otěhotní"
  msg_government_changed: "Změna vlády"
  msg_poem_sold_title: "Muwashshah báseň prodána"
@@ -570,21 +570,21 @@
  msg_admin_title_gained_investor.tt: "Podporovaný kandidát získává jmenování"
  msg_admin_title_gained_foe.tt: "Oponovaný kandidát získává jmenování"
  msg_admin_title_gained.desc: "Váš [GetPlayer.Custom2('RelationToMeShort', SCOPE.sC('title_gainer'))], [title_gainer.GetShortUIName|U], nyní vládne [title.GetName]"
- msg_admin_title_lost_house.tt: "Člen domu [Select_CString(ROOT.Char.IsFemale,'přišela','přišel')] o úřad"
- msg_admin_title_lost_investor.tt: "Podporovaný držitel [Select_CString(ROOT.Char.IsFemale,'přišela','přišel')] o úřad"
- msg_admin_title_lost_foe.tt: "Držitel v opozici [Select_CString(ROOT.Char.IsFemale,'přišela','přišel')] o úřad"
+ msg_admin_title_lost_house.tt: "Člen domu [Select_CString(ROOT.Char.IsFemale,'přišla','přišel')] o úřad"
+ msg_admin_title_lost_investor.tt: "Podporovaný držitel [Select_CString(ROOT.Char.IsFemale,'přišla','přišel')] o úřad"
+ msg_admin_title_lost_foe.tt: "Držitel v opozici [Select_CString(ROOT.Char.IsFemale,'přišla','přišel')] o úřad"
  msg_admin_title_lost.desc: "Váš [GetPlayer.Custom2('RelationToMeShort', SCOPE.sC('title_loser'))], [title_loser.GetShortUIName|U], už nevládne [title.GetName]"
  msg_estate_damaged.title: "$game_concept_estate$ poškozeno"
- msg_estate_damaged.desc: "Váš [estate|E] [Select_CString(ROOT.Char.IsFemale,'byla','byl')] poškozen a jedna nebo více [estate_buildings|E] ztratily úroveň nebo byly zničeny.\n\n[estate|E] [Select_CString(ROOT.Char.IsFemale,'byla','byl')] přemístěn do [new_estate_location.GetName]."
+ msg_estate_damaged.desc: "Váš [estate|E] byl poškozen a jedna nebo více [estate_buildings|E] ztratily úroveň nebo byly zničeny.\n\n[estate|E] byl přemístěn do [new_estate_location.GetName]."
  msg_admin_provincial_army_request_accepted.title: "Žádost o jednotky schválena"
  msg_admin_provincial_army_request_denied.title: "Žádost o jednotky zamítnuta"
  msg_admin_provincial_army_request_denied.desc: "[recipient.GetShortUIName|U] zamítl vaši žádost o jednotky"
  msg_courtier_child_of_age_title: "Dvořan dospěl"
  msg_dynasty_child_of_age_title: "Dynastické dítě dospělo"
- msg_dynasty_child_of_age_desc: "Váš [relative.Custom2('RelationToMeShort', SCOPE.sC('educated_child'))], [educated_child.GetShortUIName|U], dospěl ve vašem [relative.Custom('GetCourt')|l]"
+ msg_dynasty_child_of_age_desc: "[Select_CString(educated_child.IsFemale,'Vaše','Váš')] [relative.Custom2('RelationToMeShort', SCOPE.sC('educated_child'))], [educated_child.GetShortUIName|U], dospěl ve vašem [relative.Custom('GetCourt')|l]"
  msg_child_of_age_title: "Vaše dítě dospělo" # todo: NEW TRANSLATION
  msg_child_of_age_desc: "Váš [relative.Custom2('RelationToMeShort', SCOPE.sC('educated_child'))], [educated_child.GetShortUIName|U], [Select_CString(educated_child.IsFemale,'dosáhla','dosáhl')] dospělosti." # todo: NEW TRANSLATION
  msg_appointed_to_title: "[Select_CString(ROOT.Char.IsFemale,'Jmenována','Jmenován')] do titulu"
- msg_appointed_to_title_desc: "Jako hlavní kandidát jste [Select_CString(ROOT.Char.IsFemale,'byla','byl')] [Select_CString(ROOT.Char.IsFemale,'jmenována','jmenován')] [governor|E] [RIGHT_TITLE.GetDefinitiveName]" # todo: NEW TRANSLATION
+ msg_appointed_to_title_desc: "Jako hlavní kandidát jste [Select_CString(ROOT.Char.IsFemale,'byla jmenována','byl jmenován')] [governor|E] [RIGHT_TITLE.GetDefinitiveName]" # todo: NEW TRANSLATION
  msg_tributary_invalidated_title: "Tributární smlouva zrušena" # todo: NEW TRANSLATION
  msg_tributary_invalidated_desc: "Tributární smlouva mezi [LEFT_CHARACTER.GetName] a [RIGHT_CHARACTER.GetName] již není platná." # todo: NEW TRANSLATION

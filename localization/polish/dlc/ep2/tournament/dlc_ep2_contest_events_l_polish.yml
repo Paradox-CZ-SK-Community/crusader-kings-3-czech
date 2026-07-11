@@ -37,7 +37,7 @@
  contest_events.0500.c: "Můj kůň #EMP bude# přihlášen!"
  contest_events.0500.d: "[rival_contestant.GetTitledFirstNamePossessiveNoTooltip] se #EMP nepřihlásí#."
  contest_events.0500.e: "Musí existovat způsob, jak dostat mého koně do toho závodu..."
- contest_events_place_wager_tt: "Vsadit [gold_i|E][gold|E] na vítěze [activity.GetCurrentPhase.GetPhase.GetName] [contest|E]"
+ contest_events_place_wager_tt: "Vsadit [Concept('gold_i','@gold_icon!')|E][Concept('gold','zlato')|E] na vítěze [activity.GetCurrentPhase.GetPhase.GetName] [Concept('contest','soutěž')|E]" # todo: CONCEPT CASE
  contest_events.0505.t: "Vítěz soutěže"
  contest_events.0505.t.horse_race: "$tournament_phase_horse_race$: $contest_events.0505.t$"
  contest_events.0505.horse_race: "[contest_winner.GetShortUINamePossessiveNoFormat|U] kůň, #EMP [contest_winner.Custom('GetContestHorseRaceName')|U]#!, přebíhá cílovou čáru při výbuchu radosti davu, těsně následován [second_place.GetShortUINamePossessiveNoFormat] #EMP [second_place.Custom('GetContestHorseRaceName')|U]#! a [third_place.GetShortUINamePossessiveNoFormat] #EMP [third_place.Custom('GetContestHorseRaceName')|U]#!!\n\n"
@@ -109,7 +109,7 @@
  contest_events.0600.closing: "To bude zajímavé."
  contest_events.0600.a: "Na pole!"
  contest_events.0600.a.contestant: "Sláva bude naše!"
- contest_events.0600.captains_tt: "[my_team_captain.GetShortUIName|U] a [other_team_captain.GetShortUIName] jsou kapitáni týmů díky [rank|E] a zkušenostem"
+ contest_events.0600.captains_tt: "[my_team_captain.GetShortUIName|U] a [other_team_captain.GetShortUIName] jsou kapitáni týmů díky [Concept('rank','hodnosti')|E] a zkušenostem" # todo: CONCEPT CASE
  contest_events.0600.team_tt: "Jste v týmu [my_team_captain.GetShortUINamePossessive]"
  contest_events.0605.t.melee: "$tournament_phase_melee$: $contest_events.0605.t$"
  contest_events.0605.t: "Vítězové soutěže"
@@ -866,36 +866,36 @@
  tournament_disqualify_tt_first: "[CHARACTER.GetShortUIName|U] jsou diskvalifikováni z [CHARACTER.GetInvolvedActivity.GetName]"
  tournament_disqualify_tt_past: "[CHARACTER.GetShortUIName|U] [Select_CString(CHARACTER.IsFemale,'byla diskvalifikována','byl diskvalifikován')] z [CHARACTER.GetInvolvedActivity.GetName]"
  tournament_disqualify_tt_past_first: "[CHARACTER.GetShortUIName|U] byli diskvalifikováni z [CHARACTER.GetInvolvedActivity.GetName]"
- tournament_contest_disqualify_tt: "[CHARACTER.GetShortUIName|U] je [Select_CString(CHARACTER.IsFemale,'diskvalifikována','diskvalifikován')] z [CHARACTER.GetInvolvedActivity.GetCurrentPhase.GetPhase.GetName] [contest|E]"
- tournament_contest_disqualify_tt_first: "[CHARACTER.GetShortUIName|U] jsou diskvalifikováni z [CHARACTER.GetInvolvedActivity.GetCurrentPhase.GetPhase.GetName] [contest|E]"
- tournament_contest_disqualify_tt_past: "[CHARACTER.GetShortUIName|U] [Select_CString(CHARACTER.IsFemale,'byla diskvalifikována','byl diskvalifikován')] z [CHARACTER.GetInvolvedActivity.GetCurrentPhase.GetPhase.GetName] [contest|E]"
- tournament_contest_disqualify_tt_past_first: "[CHARACTER.GetShortUIName|U] byli diskvalifikováni z [CHARACTER.GetInvolvedActivity.GetCurrentPhase.GetPhase.GetName] [contest|E]"
- tournament_contest_disqualify_round_tt: "[CHARACTER.GetShortUIName|U] postupuje přes [CHARACTER.GetInvolvedActivity.GetCurrentPhase.GetPhase.GetName] [contest|E] [CHARACTER.GetInvolvedActivity.Custom('GetVersusRound')] automaticky kvůli diskvalifikaci [TARGET_CHARACTER.GetShortUINamePossessive]"
- tournament_contest_disqualify_round_tt_first: "[CHARACTER.GetShortUIName|U] postupují přes [CHARACTER.GetInvolvedActivity.GetCurrentPhase.GetPhase.GetName] [contest|E] [CHARACTER.GetInvolvedActivity.Custom('GetVersusRound')] automaticky kvůli diskvalifikaci [TARGET_CHARACTER.GetShortUINamePossessive]"
- tournament_contest_disqualify_round_tt_past: "[CHARACTER.GetShortUIName|U] postoupili přes [CHARACTER.GetInvolvedActivity.GetCurrentPhase.GetPhase.GetName] [contest|E] [CHARACTER.GetInvolvedActivity.Custom('GetVersusRound')] automaticky kvůli diskvalifikaci [TARGET_CHARACTER.GetShortUINamePossessive]"
- tournament_contest_disqualify_win_tt: "[CHARACTER.GetShortUIName|U] vyhrává [CHARACTER.GetInvolvedActivity.GetCurrentPhase.GetPhase.GetName] [contest|E] automaticky kvůli diskvalifikaci [TARGET_CHARACTER.GetShortUINamePossessive]"
- tournament_contest_disqualify_win_tt_first: "[CHARACTER.GetShortUIName|U] vyhrávají [CHARACTER.GetInvolvedActivity.GetCurrentPhase.GetPhase.GetName] [contest|E] automaticky kvůli diskvalifikaci [TARGET_CHARACTER.GetShortUINamePossessive]"
- tournament_contest_disqualify_win_tt_past: "[CHARACTER.GetShortUIName|U] vyhráli [CHARACTER.GetInvolvedActivity.GetCurrentPhase.GetPhase.GetName] [contest|E] automaticky kvůli diskvalifikaci [TARGET_CHARACTER.GetShortUINamePossessive]"
- tournament_contest_resign_tt: "[CHARACTER.GetShortUIName|U] odstupuje z [CHARACTER.GetInvolvedActivity.GetCurrentPhase.GetPhase.GetName] [contest|E]"
- tournament_contest_resign_tt_first: "[CHARACTER.GetShortUIName|U] odstupují z [CHARACTER.GetInvolvedActivity.GetCurrentPhase.GetPhase.GetName] [contest|E]"
- tournament_contest_resign_tt_past: "[CHARACTER.GetShortUIName|U] [Select_CString(CHARACTER.IsFemale,'odstoupila','odstoupil')] z [CHARACTER.GetInvolvedActivity.GetCurrentPhase.GetPhase.GetName] [contest|E]"
+ tournament_contest_disqualify_tt: "[CHARACTER.GetShortUIName|U] je [Select_CString(CHARACTER.IsFemale,'diskvalifikována','diskvalifikován')] z [CHARACTER.GetInvolvedActivity.GetCurrentPhase.GetPhase.GetName] [Concept('contest','soutěže')|E]" # todo: CONCEPT CASE
+ tournament_contest_disqualify_tt_first: "[CHARACTER.GetShortUIName|U] jsou diskvalifikováni z [CHARACTER.GetInvolvedActivity.GetCurrentPhase.GetPhase.GetName] [Concept('contest','soutěže')|E]" # todo: CONCEPT CASE
+ tournament_contest_disqualify_tt_past: "[CHARACTER.GetShortUIName|U] [Select_CString(CHARACTER.IsFemale,'byla diskvalifikována','byl diskvalifikován')] z [CHARACTER.GetInvolvedActivity.GetCurrentPhase.GetPhase.GetName] [Concept('contest','soutěže')|E]" # todo: CONCEPT CASE
+ tournament_contest_disqualify_tt_past_first: "[CHARACTER.GetShortUIName|U] byli diskvalifikováni z [CHARACTER.GetInvolvedActivity.GetCurrentPhase.GetPhase.GetName] [Concept('contest','soutěže')|E]" # todo: CONCEPT CASE
+ tournament_contest_disqualify_round_tt: "[CHARACTER.GetShortUIName|U] postupuje přes [CHARACTER.GetInvolvedActivity.GetCurrentPhase.GetPhase.GetName] [Concept('contest','soutěž')|E] [CHARACTER.GetInvolvedActivity.Custom('GetVersusRound')] automaticky kvůli diskvalifikaci [TARGET_CHARACTER.GetShortUINamePossessive]" # todo: CONCEPT CASE
+ tournament_contest_disqualify_round_tt_first: "[CHARACTER.GetShortUIName|U] postupují přes [CHARACTER.GetInvolvedActivity.GetCurrentPhase.GetPhase.GetName] [Concept('contest','soutěž')|E] [CHARACTER.GetInvolvedActivity.Custom('GetVersusRound')] automaticky kvůli diskvalifikaci [TARGET_CHARACTER.GetShortUINamePossessive]" # todo: CONCEPT CASE
+ tournament_contest_disqualify_round_tt_past: "[CHARACTER.GetShortUIName|U] postoupili přes [CHARACTER.GetInvolvedActivity.GetCurrentPhase.GetPhase.GetName] [Concept('contest','soutěž')|E] [CHARACTER.GetInvolvedActivity.Custom('GetVersusRound')] automaticky kvůli diskvalifikaci [TARGET_CHARACTER.GetShortUINamePossessive]" # todo: CONCEPT CASE
+ tournament_contest_disqualify_win_tt: "[CHARACTER.GetShortUIName|U] vyhrává [CHARACTER.GetInvolvedActivity.GetCurrentPhase.GetPhase.GetName] [Concept('contest','soutěž')|E] automaticky kvůli diskvalifikaci [TARGET_CHARACTER.GetShortUINamePossessive]" # todo: CONCEPT CASE
+ tournament_contest_disqualify_win_tt_first: "[CHARACTER.GetShortUIName|U] vyhrávají [CHARACTER.GetInvolvedActivity.GetCurrentPhase.GetPhase.GetName] [Concept('contest','soutěž')|E] automaticky kvůli diskvalifikaci [TARGET_CHARACTER.GetShortUINamePossessive]" # todo: CONCEPT CASE
+ tournament_contest_disqualify_win_tt_past: "[CHARACTER.GetShortUIName|U] vyhráli [CHARACTER.GetInvolvedActivity.GetCurrentPhase.GetPhase.GetName] [Concept('contest','soutěž')|E] automaticky kvůli diskvalifikaci [TARGET_CHARACTER.GetShortUINamePossessive]" # todo: CONCEPT CASE
+ tournament_contest_resign_tt: "[CHARACTER.GetShortUIName|U] odstupuje z [CHARACTER.GetInvolvedActivity.GetCurrentPhase.GetPhase.GetName] [Concept('contest','soutěže')|E]" # todo: CONCEPT CASE
+ tournament_contest_resign_tt_first: "[CHARACTER.GetShortUIName|U] odstupují z [CHARACTER.GetInvolvedActivity.GetCurrentPhase.GetPhase.GetName] [Concept('contest','soutěže')|E]" # todo: CONCEPT CASE
+ tournament_contest_resign_tt_past: "[CHARACTER.GetShortUIName|U] [Select_CString(CHARACTER.IsFemale,'odstoupila','odstoupil')] z [CHARACTER.GetInvolvedActivity.GetCurrentPhase.GetPhase.GetName] [Concept('contest','soutěže')|E]" # todo: CONCEPT CASE
  tournament_contest_resign_round_tt: "[CHARACTER.GetShortUIName|U] postupuje automaticky kvůli odstoupení [TARGET_CHARACTER.GetShortUINamePossessive]"
  tournament_contest_resign_round_tt_first: "[CHARACTER.GetShortUIName|U] postupují automaticky kvůli odstoupení [TARGET_CHARACTER.GetShortUINamePossessive]"
  tournament_contest_resign_round_tt_past: "[CHARACTER.GetShortUIName|U] postupovali automaticky kvůli odstoupení [TARGET_CHARACTER.GetShortUINamePossessive]"
- tournament_contest_resign_win_tt: "[CHARACTER.GetShortUIName|U] vyhrává [CHARACTER.GetInvolvedActivity.GetCurrentPhase.GetPhase.GetName] [contest|E] automaticky kvůli odstoupení [TARGET_CHARACTER.GetShortUINamePossessive]"
- tournament_contest_resign_win_tt_first: "[CHARACTER.GetShortUIName|U] vyhrávají [CHARACTER.GetInvolvedActivity.GetCurrentPhase.GetPhase.GetName] [contest|E] automaticky kvůli odstoupení [TARGET_CHARACTER.GetShortUINamePossessive]"
- tournament_contest_resign_win_tt_past: "[CHARACTER.GetShortUIName|U] vyhráli [CHARACTER.GetInvolvedActivity.GetCurrentPhase.GetPhase.GetName] [contest|E] automaticky kvůli odstoupení [TARGET_CHARACTER.GetShortUINamePossessive]"
- tournament_contest_withdraw_tt: "[CHARACTER.GetShortUIName|U] odstupuje z [CHARACTER.GetInvolvedActivity.GetCurrentPhase.GetPhase.GetName] [contest|E]"
- tournament_contest_withdraw_tt_past: "[CHARACTER.GetShortUIName|U] [Select_CString(CHARACTER.IsFemale,'odstoupila','odstoupil')] z [CHARACTER.GetInvolvedActivity.GetCurrentPhase.GetPhase.GetName] [contest|E]"
- tournament_contest_knocked_tt: "[CHARACTER.GetShortUIName|U] je vyloučen z [CHARACTER.GetInvolvedActivity.GetCurrentPhase.GetPhase.GetName] [contest|E]"
- tournament_contest_knocked_tt_first: "[CHARACTER.GetShortUIName|U] jsou vyloučeni z [CHARACTER.GetInvolvedActivity.GetCurrentPhase.GetPhase.GetName] [contest|E]"
- tournament_contest_knocked_tt_past: "[CHARACTER.GetShortUIName|U] [Select_CString(CHARACTER.IsFemale,'byla','byl')] vyloučen z [CHARACTER.GetInvolvedActivity.GetCurrentPhase.GetPhase.GetName] [contest|E]"
+ tournament_contest_resign_win_tt: "[CHARACTER.GetShortUIName|U] vyhrává [CHARACTER.GetInvolvedActivity.GetCurrentPhase.GetPhase.GetName] [Concept('contest','soutěž')|E] automaticky kvůli odstoupení [TARGET_CHARACTER.GetShortUINamePossessive]" # todo: CONCEPT CASE
+ tournament_contest_resign_win_tt_first: "[CHARACTER.GetShortUIName|U] vyhrávají [CHARACTER.GetInvolvedActivity.GetCurrentPhase.GetPhase.GetName] [Concept('contest','soutěž')|E] automaticky kvůli odstoupení [TARGET_CHARACTER.GetShortUINamePossessive]" # todo: CONCEPT CASE
+ tournament_contest_resign_win_tt_past: "[CHARACTER.GetShortUIName|U] vyhráli [CHARACTER.GetInvolvedActivity.GetCurrentPhase.GetPhase.GetName] [Concept('contest','soutěž')|E] automaticky kvůli odstoupení [TARGET_CHARACTER.GetShortUINamePossessive]" # todo: CONCEPT CASE
+ tournament_contest_withdraw_tt: "[CHARACTER.GetShortUIName|U] odstupuje z [CHARACTER.GetInvolvedActivity.GetCurrentPhase.GetPhase.GetName] [Concept('contest','soutěže')|E]" # todo: CONCEPT CASE
+ tournament_contest_withdraw_tt_past: "[CHARACTER.GetShortUIName|U] [Select_CString(CHARACTER.IsFemale,'odstoupila','odstoupil')] z [CHARACTER.GetInvolvedActivity.GetCurrentPhase.GetPhase.GetName] [Concept('contest','soutěže')|E]" # todo: CONCEPT CASE
+ tournament_contest_knocked_tt: "[CHARACTER.GetShortUIName|U] je vyloučen z [CHARACTER.GetInvolvedActivity.GetCurrentPhase.GetPhase.GetName] [Concept('contest','soutěže')|E]" # todo: CONCEPT CASE
+ tournament_contest_knocked_tt_first: "[CHARACTER.GetShortUIName|U] jsou vyloučeni z [CHARACTER.GetInvolvedActivity.GetCurrentPhase.GetPhase.GetName] [Concept('contest','soutěže')|E]" # todo: CONCEPT CASE
+ tournament_contest_knocked_tt_past: "[CHARACTER.GetShortUIName|U] [Select_CString(CHARACTER.IsFemale,'byla','byl')] vyloučen z [CHARACTER.GetInvolvedActivity.GetCurrentPhase.GetPhase.GetName] [Concept('contest','soutěže')|E]" # todo: CONCEPT CASE
  tournament_contest_round_tt: "[CHARACTER.GetShortUIName|U] vyráží z [TARGET_CHARACTER.GetShortUIName]"
  tournament_contest_round_tt_first: "[CHARACTER.GetShortUIName|U] vyřazuje [TARGET_CHARACTER.GetShortUIName]"
  tournament_contest_round_tt_past: "[CHARACTER.GetShortUIName|U] [Select_CString(CHARACTER.IsFemale,'vyřadila','vyřadil')] [TARGET_CHARACTER.GetShortUIName]"
- tournament_contest_round_win_tt: "[CHARACTER.GetShortUIName|U] poráží [TARGET_CHARACTER.GetShortUIName] a vyhrává [CHARACTER.GetInvolvedActivity.GetCurrentPhase.GetPhase.GetName] [contest|E]"
- tournament_contest_round_win_tt_first: "[CHARACTER.GetShortUIName|U] porazí [TARGET_CHARACTER.GetShortUIName] a vyhraje [CHARACTER.GetInvolvedActivity.GetCurrentPhase.GetPhase.GetName] [contest|E]"
- tournament_contest_round_win_tt_past: "[CHARACTER.GetShortUIName|U] [Select_CString(CHARACTER.IsFemale,'porazila','porazil')] [TARGET_CHARACTER.GetShortUIName] a [Select_CString(TARGET_CHARACTER.IsFemale,'vyhrála','vyhrál')] [CHARACTER.GetInvolvedActivity.GetCurrentPhase.GetPhase.GetName] [contest|E]"
+ tournament_contest_round_win_tt: "[CHARACTER.GetShortUIName|U] poráží [TARGET_CHARACTER.GetShortUIName] a vyhrává [CHARACTER.GetInvolvedActivity.GetCurrentPhase.GetPhase.GetName] [Concept('contest','soutěž')|E]" # todo: CONCEPT CASE
+ tournament_contest_round_win_tt_first: "[CHARACTER.GetShortUIName|U] porazí [TARGET_CHARACTER.GetShortUIName] a vyhraje [CHARACTER.GetInvolvedActivity.GetCurrentPhase.GetPhase.GetName] [Concept('contest','soutěž')|E]" # todo: CONCEPT CASE
+ tournament_contest_round_win_tt_past: "[CHARACTER.GetShortUIName|U] [Select_CString(CHARACTER.IsFemale,'porazila','porazil')] [TARGET_CHARACTER.GetShortUIName] a [Select_CString(TARGET_CHARACTER.IsFemale,'vyhrála','vyhrál')] [CHARACTER.GetInvolvedActivity.GetCurrentPhase.GetPhase.GetName] [Concept('contest','soutěž')|E]" # todo: CONCEPT CASE
  tournament_contest_replaced_tt: "[CHARACTER.GetShortUIName|U] nahrazuje [TARGET_CHARACTER.GetShortUIName]"
  tournament_contest_replaced_tt_first: "[CHARACTER.GetShortUIName|U] nahrazují [TARGET_CHARACTER.GetShortUIName]"
  tournament_contest_replaced_tt_past: "[CHARACTER.GetShortUIName|U] nahradil [TARGET_CHARACTER.GetShortUIName]"
@@ -975,7 +975,7 @@
  wager_odds_7_to_1: "7/1"
  wager_odds_8_to_1: "8/1"
  wager_odds_9_to_1: "9/1"
- ep2_tournament_maysir_tt: "@warning_icon! #negative_value [GetReligionByKey('islam_religion').GetAdjective] [faiths|E] povolují sázení pouze u lukostřelby a dostihů [contests|E]#!"
+ ep2_tournament_maysir_tt: "@warning_icon! #negative_value [GetReligionByKey('islam_religion').GetAdjective] [Concept('faiths','Víry')|E] povolují sázení pouze u lukostřelby a dostihů [Concept('contests','soutěží')|E]#!" # todo: CONCEPT CASE
  tournament_versus_contest_implement_lance: "kopí"
  tournament_versus_contest_implement_horse: "kůň"
  tournament_versus_contest_implement_hands: "ruce"
@@ -997,7 +997,7 @@
  tournament_chant_negative_fat_1: "Kdo snědl všechny koláče?\nKdo snědl všechny koláče?\nTy tlustý parchante, ty tlustý parchante\nTy snědl všechny koláče!"
  contest_team_winners_tt: "Soutěžící v vítězném týmu"
  contest_team_losers_tt: "Soutěžící v poraženém týmu"
- contest_individual_losers_tt: "Všichni [contest_qualifying|E] [contestants|E]"
+ contest_individual_losers_tt: "Všichni [Concept('contest_qualifying','kvalifikovaný')|E] [Concept('contestants','soutěžící')|E]" # todo: CONCEPT CASE
  tournament_qualifier_replaced_toast: "Kvalifikant nahrazen"
  winning_knight_rewards_tt: "Vaši $knight_culture_player_plural$ ve vítězném týmu:"
  losing_knight_rewards_tt: "Vaši $knight_culture_player_plural$ v poraženém týmu:"

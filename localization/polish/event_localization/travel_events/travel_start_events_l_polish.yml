@@ -8,14 +8,14 @@
  travel_start_event.1000.desc_sick: "Jsem si dobře vědom, že vyrazit na cestu v mém stavu — nemoc je dalším rizikem nad rámec běžného nebezpečí spojeného s cestováním. Nicméně i v mém nevalném stavu musí představení pokračovat.\n\nVydejme se směrem k [ROOT.Char.GetTravelPlan.GetData.GetNextDestination.GetProvince.GetName] a kéž [ROOT.Char.GetFaith.HighGodName] bdí nad našimi cestami."
  travel_start_event.1000.desc: "Vše sbaleno a připraveno, konečně jsme se dostali do bodu, kdy můžeme zahájit naši cestu z [ROOT.Char.GetCurrentLocation.GetName] do další destinace v [ROOT.Char.GetTravelPlan.GetData.GetNextDestination.GetProvince.GetName].\n\nKdyž opouštíme sídlo a naše koně začínají vstupovat na novou půdu, jsem si jistý, že se brzy vrátíme vcelku."
  travel_start_event.1000.desc_migrating: "Celý tábor hučí jako zuřící vodopád: děti pobíhají kolem, zvířata protestují a chrochtají, dospělí dokončují balení.\n\nDesítky a desítky vzpomínek neuspořádaně svázaných do balíků.\n\nMrknu naposledy na [ROOT.Char.GetCurrentLocation.GetName], zatímco poklepávám koně do boku. Mohu jen doufat, že [ROOT.Char.GetTravelPlan.GetData.GetNextDestination.GetProvince.GetName] k nám bude stejně přívětivá jako toto místo."
- travel_start_event.1010.tt.tournament.every_knight: "Jelikož se účastníte [GetActivityType( 'activity_tournament' ).GetName], každý dostupný [unlanded|E] [knight|E], kterého máte, vás doprovodí, aby soutěžil"
+ travel_start_event.1010.tt.tournament.every_knight: "Jelikož se účastníte [GetActivityType( 'activity_tournament' ).GetName], každý dostupný [Concept('unlanded','bezzemek')|E] [Concept('knight','rytíř')|E], kterého máte, vás doprovodí, aby soutěžil" # todo: CONCEPT CASE
  travel_start_event.1000.a: "Nemůžu se dočkat!"
  travel_start_event.1000.a_cynical: "Asi to musíme..."
  travel_start_event.1000.a_craven: "Doufám, že to dobře dopadne..."
  travel_start_event.1000.a_hajj: "Na tohle jsem čekal celý svůj život."
  travel_start_event.1000.a_hajj_revisit: "Nemůžu se dočkat, až znovu uvidím lesknoucí se zdi."
  travel_start_event.1000.take_test: "Musím prokázat svou zásluhu v zkouškách." # todo: NEW TRANSLATION
- travel_start_event.1000.take_test_tt: "Protože [landed|E] [governors|E] nesmějí skládat zkoušky, musíte odejít do výslužby, abyste odemkli nové [merit_levels|E]." # todo: NEW TRANSLATION
+ travel_start_event.1000.take_test_tt: "Protože [Concept('landed','zeměpán')|E] [Concept('governors','guvernéři')|E] nesmějí skládat zkoušky, musíte odejít do výslužby, abyste odemkli nové [Concept('merit_levels','hodnosti zásluh')|E]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
  travel_start_event.1010.t_sick_tournament: "$activity_tournament$: $travel_start_event.1000.t_sick$"
  travel_start_event.1010.t_tournament: "$activity_tournament$: $travel_start_event.1000.t$"
  travel_start_event.1010.desc_tournament_intro: "Můj [ROOT.Char.Custom2('RelationToMe', SCOPE.sC('host'))] [ROOT.Char.GetInvolvedActivity.GetHost.GetTitledFirstName] pořádá [ROOT.Char.GetInvolvedActivity.GetShortName] v okolí [ROOT.Char.GetTravelPlan.GetData.GetNextDestination.GetProvince.GetName] a nastal čas, abychom vyrazili."
@@ -37,7 +37,7 @@
  travel_start_event.1020.desc_tour_majesty: "Těším se, až navštívím [next_stop_liege.GetHerHim] a prohlédnu si své panství, jedno držení po druhém.\n\nJsem si jistý, že poddaní [ROOT.Char.GetPrimaryTitle.GetNamePossessiveNoTooltip] budou o mé dobrotě ještě dlouho mluvit."
  travel_start_event.1020.desc_tour_tax: "Těším se, že pomohu lidem přispět do pokladnice říše všemi dostupnými prostředky.\n\nPo skončení této cesty by poddaní [ROOT.Char.GetPrimaryTitle.GetNamePossessiveNoTooltip] rozhodně neměli mít žádné přebytky skryté před korunou."
  travel_start_event.1020.desc_tour_dread: "Těším se, že vzbudím hrůzu v mých ubohých poddaných, jedno sídlo za druhým.\n\nPostarám se, aby poddaní [ROOT.Char.GetPrimaryTitle.GetNamePossessiveNoTooltip] na tuto [ROOT.Char.GetInvolvedActivity.GetShortNameNoTooltip] nikdy nezapomněli, opravdu..."
- due_to_activity_options_tt: "Kvůli vašim [activity_options|E]:"
+ due_to_activity_options_tt: "Kvůli vašim [Concept('activity_options','možnostem aktivity')|E]:" # todo: CONCEPT CASE
  travel_start_event.1030.t_red_wedding: "$activity_wedding$: $travel_start_event.1000.t_murder$"
  travel_start_event.1030.t_sick_wedding: "$activity_wedding$: $travel_start_event.1000.t_sick$"
  travel_start_event.1030.t_wedding: "$activity_wedding$: $travel_start_event.1000.t$"
@@ -173,7 +173,7 @@
  travel_start_event.1100.desc_exam_wrong_gender: "\n\nVím, že mé místo v těchto zkouškách bude zpochybňováno, ale #EMP zasloužím si# svou zásluhu." # todo: NEW TRANSLATION
  travel_start_event.1100.desc_exam_outro: "\n\nZajímá mě, jestli se mi podaří vyniknout mezi ostatními." # todo: NEW TRANSLATION
  travel_start_event.1100.desc_my_exam_outro: "\n\nZajímá mě, kdo z nich vynikne mezi ostatními." # todo: NEW TRANSLATION
- wrong_examination_gender_tt: "@warning_icon! #X Kvůli [gender_law|E] v říši#!" # todo: NEW TRANSLATION
+ wrong_examination_gender_tt: "@warning_icon! #X Kvůli [Concept('gender_law','zákonu o pohlaví')|E] v říši#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  tgp_wrong_examination_gender_female_modifier: "Odsuzovaná účast" # todo: NEW TRANSLATION
  tgp_wrong_examination_gender_female_modifier_desc: "Tato postava se rozhodla zúčastnit se zkoušky navzdory svému pohlaví." # todo: NEW TRANSLATION
  tgp_wrong_examination_gender_male_modifier: "$tgp_wrong_examination_gender_female_modifier$" # todo: NEW TRANSLATION

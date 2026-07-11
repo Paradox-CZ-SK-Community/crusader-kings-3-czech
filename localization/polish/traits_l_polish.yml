@@ -1,11 +1,11 @@
 ﻿l_polish:
- TRAIT_LEVEL_TRACK_ENTRY_DESC_BASE: "Vyžaduje [TraitLevelTrackEntry.GetXpRequired|V0]+ [Concept('trait_level_track_xp','$game_concept_trait_level_track_xp$')|E]\n[TraitLevelTrackEntry.GetModifierDescription( Character.Self )][AddLocalizationIf( GreaterThan_int32( TraitLevelTrackEntry.GetLevel, '(int32)1' ), 'MODIFIER_PREVIOUS_LEVELS_APPLY_NEWLINE' )]"
+ TRAIT_LEVEL_TRACK_ENTRY_DESC_BASE: "Vyžaduje [TraitLevelTrackEntry.GetXpRequired|V0]+ [Concept('trait_level_track_xp','zkušenosti rysu')|E]\n[TraitLevelTrackEntry.GetModifierDescription( Character.Self )][AddLocalizationIf( GreaterThan_int32( TraitLevelTrackEntry.GetLevel, '(int32)1' ), 'MODIFIER_PREVIOUS_LEVELS_APPLY_NEWLINE' )]" # todo: CONCEPT CASE
  TRAIT_LEVEL_TRACK_ENTRY_DESC: "#V Úroveň [TraitLevelTrackEntry.GetLevel]#!\n$TRAIT_LEVEL_TRACK_ENTRY_DESC_BASE$"
  TRAIT_LEVEL_TRACK_ENTRY_DESC_TT: "\n\n#S Úroveň [TraitLevelTrackEntry.GetLevel]#!\n$TRAIT_LEVEL_TRACK_ENTRY_DESC_BASE$"
- TRAIT_LEVEL_TRACK_TT: "#T [TraitLevelTrack.GetName]#!\nAktuální uroveň: [Character.GetTraitTrackLevel( Trait.Self, TraitLevelTrack.Self )|V] #weak ([ComplexBar.GetCurrentValue] [trait_level_track_xp|E])#!\n#flavor [TraitLevelTrack.GetDescription]#![AddLocalizationIf( GreaterThan_int32( TraitLevelTrackEntry.GetLevel, '(int32)0' ), 'TRAIT_LEVEL_TRACK_ENTRY_DESC_TT' )]"
+ TRAIT_LEVEL_TRACK_TT: "#T [TraitLevelTrack.GetName]#!\nAktuální uroveň: [Character.GetTraitTrackLevel( Trait.Self, TraitLevelTrack.Self )|V] #weak ([ComplexBar.GetCurrentValue] [Concept('trait_level_track_xp','zkušenosti rysu')|E])#!\n#flavor [TraitLevelTrack.GetDescription]#![AddLocalizationIf( GreaterThan_int32( TraitLevelTrackEntry.GetLevel, '(int32)0' ), 'TRAIT_LEVEL_TRACK_ENTRY_DESC_TT' )]" # todo: CONCEPT CASE
  TRAIT_LEVEL_TRACK_SHORT_TT: "#T [TraitLevelTrack.GetName] [Trait.GetName( Character.Self )]#!\n#flavor [TraitLevelTrack.GetDescription]#!"
- TRAIT_LEVEL_TRACK_PROGRESS_TOOTLIP: "#T [TraitLevelTrack.GetName]#!\nAktuální [Concept('trait_level_track_xp','$game_concept_trait_level_track_xp$')|E]: [ComplexBar.GetNextValue|0V]\n#flavor [TraitLevelTrack.GetDescription]#!"
- TRAIT_LEVEL_TRACKS_HEADER: "[trait_level_track|E] [Trait.GetNameNoTooltipWithDefault( Character.Self )|l]"
+ TRAIT_LEVEL_TRACK_PROGRESS_TOOTLIP: "#T [TraitLevelTrack.GetName]#!\nAktuální [Concept('trait_level_track_xp','zkušenosti rysu')|E]: [ComplexBar.GetNextValue|0V]\n#flavor [TraitLevelTrack.GetDescription]#!" # todo: CONCEPT CASE
+ TRAIT_LEVEL_TRACKS_HEADER: "[Concept('trait_level_track','Cesta rysu')|E] [Trait.GetNameNoTooltipWithDefault( Character.Self )|l]" # todo: CONCEPT CASE
  TRAIT_LEVEL_TRACK_HEADER: "#V #bold [TraitLevelTrack.GetName]#!#!\n#flavor [TraitLevelTrack.GetDescription]#!\n"
  ALREADY_CONTAINTS_TRAIT: "@warning_icon! #X $CHARACTER_NAME$ již má vlastnost [TRAIT.GetName( CHARACTER.Self )]#!"
  CONTAINTS_OPPOSITE_TRAIT: "@warning_icon! #X [TRAIT.GetName( CHARACTER.Self )] nelze přidat, protože $CHARACTER_NAME$ již má opačnou vlastnost [TRAIT_2.GetName( CHARACTER.Self )]#!"
@@ -316,9 +316,9 @@
  trait_loyal: "Loajální"
  trait_loyal_desc: "Tato postava bere své vztahy vážněji než většina."
  trait_loyal_character_desc: "[ROOT.GetCharacter.GetFirstNameNoTooltip] bere své vztahy vážněji než ostatní."
- TRAIT_FLAG_DESC_join_factions_less: "Menší pravděpodobnost vstoupit do [Concept('factions','$game_concept_factions$')|E] proti svému [Concept('liege','$game_concept_liege$')|El]"
- TRAIT_FLAG_DESC_join_factions_more: "Větší pravděpodobnost vstoupit do [Concept('factions','$game_concept_factions$')|E] proti svému [Concept('liege','$game_concept_liege$')|El]"
- TRAIT_FLAG_DESC_cannot_inherit_titles: "@warning_icon! #X Nelze zdědit [Concept('titles','$game_concept_titles$')|El]#!"
+ TRAIT_FLAG_DESC_join_factions_less: "Menší pravděpodobnost vstoupit do [Concept('factions','frakcí')|E] proti svému [Concept('liege','lennímu pánovi')|El]" # todo: CONCEPT CASE
+ TRAIT_FLAG_DESC_join_factions_more: "Větší pravděpodobnost vstoupit do [Concept('factions','frakcí')|E] proti svému [Concept('liege','lennímu pánovi')|El]" # todo: CONCEPT CASE
+ TRAIT_FLAG_DESC_cannot_inherit_titles: "@warning_icon! #X Nelze zdědit [Concept('titles','tituly')|El]#!" # todo: CONCEPT CASE
  trait_disloyal: "Neloajální"
  trait_disloyal_desc: "Kde většina lidí vidí vztah, tato postava vidí příležitost."
  trait_disloyal_character_desc: "Kde většina lidí vidí vztah, [ROOT.GetCharacter.GetFirstNameNoTooltip] vidí příležitost."
@@ -437,7 +437,7 @@
  trait_withering_mind_character_desc: "Paměť zahalená mlhou, [ROOT.GetCharacter.GetFirstNameNoTooltip] bloudí bdělými sny, [Select_CString(ROOT.GetCharacter.IsFemale,'její','jeho')] včerejky opadávají jako listí před zimním větrem." # todo: NEW TRANSLATION
  trait_track_withering_mind: "Uvadající mysl" # todo: NEW TRANSLATION
  trait_track_withering_mind_desc: "Pomalý sestup do zapomnění." # todo: NEW TRANSLATION
- culture_parameter_withering_mind_less_likely: "The [GetTrait('withering_mind').GetName( GetNullCharacter )] [trait|E] is less common" # todo: NEW TRANSLATION
+ culture_parameter_withering_mind_less_likely: "[GetTrait('withering_mind').GetName( GetNullCharacter )] [Concept('trait','rys')|E] je méně častý"
  trait_clouded_eyes: "Zakalené oči" # todo: NEW TRANSLATION
  trait_clouded_eyes_desc: "Svět i slova blednou za kalným závojem, zatímco tato postava se snaží chytat stíny tam, kde dříve panovala jistota." # todo: NEW TRANSLATION
  trait_clouded_eyes_character_desc: "Svět i slova blednou za kalným závojem, zatímco [ROOT.GetCharacter.GetFirstNameNoTooltip] se snaží chytat stíny tam, kde dříve panovala jistota." # todo: NEW TRANSLATION
@@ -453,15 +453,15 @@
  trait_fragile_bones_character_desc: "Křehké tělo, [ROOT.GetCharacter.GetFirstNameNoTooltip] cítí každý náraz jako úder kladiva a žije ve strachu ze sebemenšího zakopnutí." # todo: NEW TRANSLATION
  trait_track_fragile_bones: "Křehké kosti" # todo: NEW TRANSLATION
  trait_track_fragile_bones_desc: "Každým dnem je tělo blíž zlomení." # todo: NEW TRANSLATION
- TRAIT_FLAG_DESC_infirm_random_xp_gain: "\n#indent_newline:6 @time_icon!#help Tento [trait_level_track|E] postupuje každý rok a při [sick|E]. Lze ho [Concept( 'infirm_mitigation', 'zmírnit' )|E].#!#!#!"
- TRAIT_FLAG_DESC_incapable_on_max_level: "#indent_newline:7 @alert_icon! #alert_trial Pokud [trait_level_track|E] dosáhne úrovně #V 4#!, stanou se #V [GetTrait('incapable').GetName( GetNullCharacter )]#!#!#!" # todo: NEW TRANSLATION
- TRAIT_FLAG_DESC_withering_mind_random_xp_gain: "\n#indent_newline:6 @time_icon!#help Tento [trait_level_track|E] postupuje každý rok. Lze ho [Concept( 'withering_mind_mitigation', 'zmírnit' )|E].#!#!#!"
- TRAIT_FLAG_DESC_blind_on_max_level: "#indent_newline:7 @alert_icon! #alert_trial Pokud [trait_level_track|E] dosáhne úrovně #V 4#!, stanou se #V [GetTrait('blind').GetName( GetNullCharacter )]#!#!#!" # todo: NEW TRANSLATION
- TRAIT_FLAG_DESC_clouded_eyes_random_xp_gain: "\n#indent_newline:6 @time_icon!#help Tento [trait_level_track|E] postupuje každý rok. Lze ho [Concept( 'clouded_eyes_mitigation', 'zmírnit' )|E].#!#!#!"
- TRAIT_FLAG_DESC_death_on_max_level: "#indent_newline:7 @alert_icon! #alert_trial Pokud [trait_level_track|E] dosáhne úrovně #V 4#!, zemřou [character_death_die|E]#!#!#!" # todo: NEW TRANSLATION
- TRAIT_FLAG_DESC_faltering_heart_random_xp_gain: "\n@time_icon!#help Tento [trait_level_track|E] postupuje při každém [mental_break|E]#!" # todo: NEW TRANSLATION
+ TRAIT_FLAG_DESC_infirm_random_xp_gain: "\n#indent_newline:6 @time_icon!#help Tento [Concept('trait_level_track','cesta rysu')|E] postupuje každý rok a při [Concept('sick','chorém')|E]. Lze ho [Concept( 'infirm_mitigation', 'zmírnit' )|E].#!#!#!" # todo: CONCEPT CASE
+ TRAIT_FLAG_DESC_incapable_on_max_level: "#indent_newline:7 @alert_icon! #alert_trial Pokud [Concept('trait_level_track','cesta rysu')|E] dosáhne úrovně #V 4#!, stanou se #V [GetTrait('incapable').GetName( GetNullCharacter )]#!#!#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRAIT_FLAG_DESC_withering_mind_random_xp_gain: "\n#indent_newline:6 @time_icon!#help Tento [Concept('trait_level_track','cesta rysu')|E] postupuje každý rok. Lze ho [Concept( 'withering_mind_mitigation', 'zmírnit' )|E].#!#!#!" # todo: CONCEPT CASE
+ TRAIT_FLAG_DESC_blind_on_max_level: "#indent_newline:7 @alert_icon! #alert_trial Pokud [Concept('trait_level_track','cesta rysu')|E] dosáhne úrovně #V 4#!, stanou se #V [GetTrait('blind').GetName( GetNullCharacter )]#!#!#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRAIT_FLAG_DESC_clouded_eyes_random_xp_gain: "\n#indent_newline:6 @time_icon!#help Tento [Concept('trait_level_track','cesta rysu')|E] postupuje každý rok. Lze ho [Concept( 'clouded_eyes_mitigation', 'zmírnit' )|E].#!#!#!" # todo: CONCEPT CASE
+ TRAIT_FLAG_DESC_death_on_max_level: "#indent_newline:7 @alert_icon! #alert_trial Pokud [Concept('trait_level_track','cesta rysu')|E] dosáhne úrovně #V 4#!, zemřou [Concept('character_death_die','zemřít')|E]#!#!#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRAIT_FLAG_DESC_faltering_heart_random_xp_gain: "\n@time_icon!#help Tento [Concept('trait_level_track','cesta rysu')|E] postupuje při každém [Concept('mental_break','duševním zhroucení')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  TRAIT_FLAG_DESC_wounds_twice_as_bad: "#indent_newline:7 @alert_icon! #alert_trial Vždy, kdy by se stali #V [GetTrait('wounded_1').GetName( GetNullCharacter )]#!, budou místo toho #V [GetTrait('wounded_2').GetName( GetNullCharacter )]#! nebo #V [GetTrait('wounded_3').GetName( GetNullCharacter )]#!#!#!" # todo: NEW TRANSLATION
- TRAIT_FLAG_DESC_fragile_bones_random_xp_gain: "\n#indent_newline:6 @time_icon!#help Tento [trait_level_track|E] postupuje každý rok. Lze ho [Concept( 'fragile_bones_mitigation', 'zmírnit' )|E].#!#!#!"
+ TRAIT_FLAG_DESC_fragile_bones_random_xp_gain: "\n#indent_newline:6 @time_icon!#help Tento [Concept('trait_level_track','cesta rysu')|E] postupuje každý rok. Lze ho [Concept( 'fragile_bones_mitigation', 'zmírnit' )|E].#!#!#!" # todo: CONCEPT CASE
  your_mind_withers_feed_message_title: "Vaše mysl uvadá..." # todo: NEW TRANSLATION
  your_mind_withers_slowly_feed_message_title: "Vaše mysl uvadá, ale pomalu!" # todo: NEW TRANSLATION
  your_bones_weaken_feed_message_title: "Vaše kosti slábnou..." # todo: NEW TRANSLATION
@@ -471,13 +471,13 @@
  your_body_weakens_fast_feed_message_title: "Vaše tělo rychle slábne..." # todo: NEW TRANSLATION
  your_body_weakens_disease_feed_message_title: "Vaše tělo slábne kvůli nemoci..." # todo: NEW TRANSLATION
  game_concept_clouded_eyes_mitigation: "Zmírnění kalných očí"
- game_concept_clouded_eyes_mitigation_desc: "Ačkoli nelze zabránit tomu, aby [GetTrait('clouded_eyes').GetName( GetNullCharacter )] postupovaly, můžeš jejich postup zpomalit takto:\n$EFFECT_LIST_BULLET$Vyhýbej se [Concept('travel','cestování')|E]\n$EFFECT_LIST_BULLET$Vyhýbej se místům s [Concept('terrain','terénem')|E] typu [GetTerrain( 'desert' ).GetName] nebo [GetTerrain( 'desert_mountains' ).GetName]\n$EFFECT_LIST_BULLET$Vyhýbej se místům s [Concept('winter_severity_normal','běžnou zimou')|E] nebo [Concept('winter_severity_harsh','krutou zimou')|E]"
+ game_concept_clouded_eyes_mitigation_desc: "Ačkoli nelze zabránit tomu, aby [GetTrait('clouded_eyes').GetName( GetNullCharacter )] postupovaly, můžeš jejich postup zpomalit takto:\n$EFFECT_LIST_BULLET$Vyhýbej se [Concept('travel','cestováním')|E]\n$EFFECT_LIST_BULLET$Vyhýbej se místům s [Concept('terrain','terénem')|E] typu [GetTerrain( 'desert' ).GetName] nebo [GetTerrain( 'desert_mountains' ).GetName]\n$EFFECT_LIST_BULLET$Vyhýbej se místům s [Concept('winter_severity_normal','běžnou zimou')|E] nebo [Concept('winter_severity_harsh','krutou zimou')|E]" # todo: CONCEPT CASE
  game_concept_fragile_bones_mitigation: "Zmírnění křehkých kostí"
- game_concept_fragile_bones_mitigation_desc: "Ačkoli nelze zabránit tomu, aby [GetTrait('fragile_bones').GetName( GetNullCharacter )] postupovaly, můžeš zabránit výraznému postupu [Concept('trait_level_track','cesty rysu')|E] takto:\n$EFFECT_LIST_BULLET$Vyhýbej se [Concept('travel','cestování')|E] a [Concept('activities','aktivitám')|E]\n$EFFECT_LIST_BULLET$Vyhýbej se působení jako [Concept( 'commander', 'velitel' )|E]"
+ game_concept_fragile_bones_mitigation_desc: "Ačkoli nelze zabránit tomu, aby [GetTrait('fragile_bones').GetName( GetNullCharacter )] postupovaly, můžeš zabránit výraznému postupu [Concept('trait_level_track','cestě rysu')|E] takto:\n$EFFECT_LIST_BULLET$Vyhýbej se [Concept('travel','cestováním')|E] a [Concept('activities','aktivitám')|E]\n$EFFECT_LIST_BULLET$Vyhýbej se působení jako [Concept( 'commander', 'velitel' )|E]" # todo: CONCEPT CASE
  game_concept_withering_mind_mitigation: "Zmírnění chřadnoucí mysli"
- game_concept_withering_mind_mitigation_desc: "Ačkoli nelze zabránit tomu, aby [GetTrait('withering_mind').GetName( GetNullCharacter )] postupovala, můžeš její postup zpomalit takto:\n$EFFECT_LIST_BULLET$Měj [Concept('friends','přátele')|E] #weak (čím více, tím lépe)#!\n$EFFECT_LIST_BULLET$Měj [Concept('lovers','milence')|E] #weak (čím více, tím lépe)#!\n$EFFECT_LIST_BULLET$Udržuj svůj [Concept('stress','stres')|E] na nízké úrovni\n$EFFECT_LIST_BULLET$Měj [Concept('traits','rysy')|E] [GetTrait('family_first').GetName( GetNullCharacter )] nebo [GetTrait('seducer').GetName( GetNullCharacter )]\n$EFFECT_LIST_BULLET$Věnuj se [Concept('traveling','cestování')|E] a účastni se [Concept('activities','aktivit')|E]\n\nMnohé z těchto faktorů také snižují pravděpodobnost, že tento [Concept('trait','rys')|E] vůbec získáš."
+ game_concept_withering_mind_mitigation_desc: "Ačkoli nelze zabránit tomu, aby [GetTrait('withering_mind').GetName( GetNullCharacter )] postupovala, můžeš její postup zpomalit takto:\n$EFFECT_LIST_BULLET$Měj [Concept('friends','přátele')|E] #weak (čím více, tím lépe)#!\n$EFFECT_LIST_BULLET$Měj [Concept('lovers','milence')|E] #weak (čím více, tím lépe)#!\n$EFFECT_LIST_BULLET$Udržuj svůj [Concept('stress','stres')|E] na nízké úrovni\n$EFFECT_LIST_BULLET$Měj [Concept('traits','rysy')|E] [GetTrait('family_first').GetName( GetNullCharacter )] nebo [GetTrait('seducer').GetName( GetNullCharacter )]\n$EFFECT_LIST_BULLET$Věnuj se [Concept('traveling','cestováním')|E] a účastni se [Concept('activities','aktivitami')|E]\n\nMnohé z těchto faktorů také snižují pravděpodobnost, že tento [Concept('trait','rys')|E] vůbec získáš." # todo: CONCEPT CASE
  game_concept_infirm_mitigation: "Zmírnění neduživosti"
- game_concept_infirm_mitigation_desc: "Hlavním způsobem, jak oddálit neduživost, je zůstat zdravý.\n\n[Concept('trait','Rys')|E] [GetTrait('infirm').GetName( GetNullCharacter )] postoupí o celou úroveň při propuknutí [Concept('illness','nemoci')|E] a každý rok o malou hodnotu.\n\nPokud jsi nemocný delší dobu, [Concept('trait_level_track','cesta rysu')|E] bude každý rok postupovat mnohem rychleji. Mnohem rychleji bude postupovat také tehdy, pokud je ti více než 65 let."
+ game_concept_infirm_mitigation_desc: "Hlavním způsobem, jak oddálit neduživost, je zůstat zdravý.\n\n[Concept('trait','Rys')|E] [GetTrait('infirm').GetName( GetNullCharacter )] postoupí o celou úroveň při propuknutí [Concept('illness','nemoci')|E] a každý rok o malou hodnotu.\n\nPokud jsi nemocný delší dobu, [Concept('trait_level_track','cestu rysu')|E] bude každý rok postupovat mnohem rychleji. Mnohem rychleji bude postupovat také tehdy, pokud je ti více než 65 let." # todo: CONCEPT CASE
  game_concept_elder_traits: "Zdravotní rysy stáří"
  game_concept_elder_traits_desc: "Jak [Concept('characters','postavy')|E] stárnou, mohou získávat věkem podmíněné [Concept('traits','rysy')|E], jako jsou [GetTrait('faltering_heart').GetName( GetNullCharacter )] nebo [GetTrait('fragile_bones').GetName( GetNullCharacter )]. Ty se obvykle objevují kolem věku #V 50#! let, ale mohou se projevit i dříve.\n\nPravděpodobnost získání těchto rysů je nižší, pokud máš:\n$BULLET_WITH_TAB$Dobré [Concept('health','zdraví')|E]\n$BULLET_WITH_TAB$[GetTrait('athletic').GetName( GetNullCharacter )], [GetTrait('physique_good_1').GetName( GetNullCharacter )] nebo [GetTrait('whole_of_body').GetName( GetNullCharacter )]\n$BULLET_WITH_TAB$#indent_newline:6 Pro [GetTrait('withering_mind').GetName( GetNullCharacter )]: [GetTrait('family_first').GetName( GetNullCharacter )], [GetTrait('seducer').GetName( GetNullCharacter )], znalost [Concept('languages','jazyků')|E], mnoho [Concept('friends','přátel')|E] a [Concept('lovers','milenců')|E]#!\n\nPravděpodobnost získání těchto rysů je vyšší, pokud máš:\n$BULLET_WITH_TAB$Špatné [Concept('health','zdraví')|E]\n$BULLET_WITH_TAB$[GetTrait('drunkard').GetName( GetNullCharacter )] nebo [GetTrait('reclusive').GetName( GetNullCharacter )]\n$BULLET_WITH_TAB$[GetModifier( 'obese_modifier' ).GetNameWithTooltip] nebo [GetModifier( 'malnourished_modifier' ).GetNameWithTooltip]\n$BULLET_WITH_TAB$Vysoký [Concept('stress','stres')|E]\n$BULLET_WITH_TAB$Rodiče nebo prarodiče s těmito rysy"
  trait_incapable: "Neschopný"
@@ -697,7 +697,7 @@
  trait_greatest_of_khans_character_desc: "[ROOT.GetCharacter.GetFirstNameNoTooltip] byl prohlášen vládcem samotného vesmíru právem dobytí."
  trait_conqueror: "Dobyvatel"
  trait_conqueror_desc: "#low Svět leží přede mnou, zralý k uchopení. Bude můj.#!"
- TRAIT_FLAG_DESC_conqueror_bonuses_modifier: "$struggle_parameter_unlocks_forced_vassalization_casus_belli$\nOdstraňuje [prestige_i|E][Concept('prestige','$game_concept_prestige$')|E] náklady z [Concept('casus_bellis','$game_concept_casus_bellis$')|E]\nOdstraňuje [piety_i|E][Concept('piety','$game_concept_piety$')|E] náklady z [Concept('casus_bellis','$game_concept_casus_bellis$')|E]\n[Concept('armies','$game_concept_armies$')|e] se budou #bold hrnout#! k jejich praporům\n[Concept('claimants','$game_concept_claimants$')|e] se budou #bold tlačit#! do jejich [Concept('court','$game_concept_court$')|e]\n[Concept('vassals','$game_concept_vassals$')|e] se budou #bold podřizovat#!"
+ TRAIT_FLAG_DESC_conqueror_bonuses_modifier: "$struggle_parameter_unlocks_forced_vassalization_casus_belli$\nOdstraňuje [Concept('prestige_i','@prestige_icon!')|E][Concept('prestige','prestiž')|E] náklady z [Concept('casus_bellis','casu belli')|E]\nOdstraňuje [Concept('piety_i','[GetLocalPlayerPietyTextIcon]')|E][Concept('piety','zbožnost')|E] náklady z [Concept('casus_bellis','casu belli')|E]\n[Concept('armies','Armády')|e] se budou #bold hrnout#! k jejich praporům\n[Concept('claimants','Pretendenti')|e] se budou #bold tlačit#! do jejich [Concept('court','dvůr')|e]\n[Concept('vassals','Vazalové')|e] se budou #bold podřizovat#!" # todo: CONCEPT CASE
  trait_savior: "Spasitel"
  trait_savior_desc: "Tato postava je zde, aby nás vykoupila."
  trait_savior_character_desc: "[ROOT.GetCharacter.GetFirstNameNoTooltip] je zde, aby nás [Select_CString(ROOT.GetCharacter.IsFemale,'vykoupila','vykoupil')]."
@@ -745,8 +745,8 @@
  trait_wild_oat_desc: "Tato postava se narodila mimo manželství."
  trait_wild_oat_character_desc: "[ROOT.GetCharacter.GetFirstNameNoTooltip] se [Select_CString(ROOT.GetCharacter.IsFemale,'narodila','narodil')] mimo manželství."
  trait_bastard_founder: "Zakladatel rodu (narozen jako nemanželský potomek)"
- trait_bastard_founder_desc: "Bývalý nemanželský potomek, který založil vlastní [Concept('dynasty','dynastii')|E]."
- trait_bastard_founder_character_desc: "Bývalý nemanželský potomek, který založil vlastní [Concept('dynasty','dynastii')|E]."
+ trait_bastard_founder_desc: "Bývalý nemanželský potomek, který založil vlastní [Concept('dynasty','dynastie')|E]." # todo: CONCEPT CASE
+ trait_bastard_founder_character_desc: "Bývalý nemanželský potomek, který založil vlastní [Concept('dynasty','dynastie')|E]." # todo: CONCEPT CASE
  trait_kinslayer_1: "Dynastický vrah"
  trait_kinslayer_1_desc: "Tato postava spáchala hřích vraždy člena dynastie."
  trait_kinslayer_1_character_desc: "[ROOT.GetCharacter.GetFirstNameNoTooltip] [Select_CString(ROOT.GetCharacter.IsFemale,'spáchala','spáchal')] hřích vraždy člena dynastie."
@@ -978,16 +978,16 @@
  trait_sea_raider_character_desc: "[ROOT.GetCharacter.GetFirstNameNoTooltip] se nebojí drsnosti živlů na moři a užívá kombinaci odvahy a dovedné navigace k bleskovým útokům na nechráněné pobřeží."
  trait_disinherited: "Vyděděný"
  trait_disinherited_desc: "Tato postava byla vyděděna [Concept('dynast','hlavou dynastie')|E] a nemůže zdědit žádný titul od žádného jiného člena dynastie."
- trait_disinherited_character_desc: "[ROOT.GetCharacter.GetFirstNameNoTooltip] [Select_CString(ROOT.GetCharacter.IsFemale,'byla vyděděna její','byl vyděděn jeho')] [ROOT.GetCharacter.GetHerHis] [Concept('dynast','hlavou dynastie')|E] a nemůže zdědit žádný titul od žádného jiného člena dynastie."
+ trait_disinherited_character_desc: "[ROOT.GetCharacter.GetFirstNameNoTooltip] [Select_CString(ROOT.GetCharacter.IsFemale,'byla vyděděna její','byl vyděděn jeho')] [ROOT.GetCharacter.GetHerHis] [Concept('dynast','Hlava dynastie')|E] a nemůže zdědit žádný titul od žádného jiného člena dynastie." # todo: CONCEPT CASE
  trait_denounced: "Odsouzen"
  trait_denounced_desc: "Tato postava byla odsouzena její [Concept('dynast','hlavou dynastie')|E] a nyní může být uvězněna kterýmkoli jiným členem dynastie."
- trait_denounced_character_desc: "[ROOT.GetCharacter.GetFirstNameNoTooltip] [Select_CString(ROOT.GetCharacter.IsFemale,'byla odsouzena její','byl odsouzen jeho')] [Concept('dynast','hlavou dynastie')|E] a nyní může být [Select_CString(ROOT.GetCharacter.IsFemale,'uvězněna','uvězněn')] kterýmkoli jiným členem dynastie."
+ trait_denounced_character_desc: "[ROOT.GetCharacter.GetFirstNameNoTooltip] [Select_CString(ROOT.GetCharacter.IsFemale,'byla odsouzena její','byl odsouzen jeho')] [Concept('dynast','Hlava dynastie')|E] a nyní může být [Select_CString(ROOT.GetCharacter.IsFemale,'uvězněna','uvězněn')] kterýmkoli jiným členem dynastie." # todo: CONCEPT CASE
  trait_decadent: "Obviněný z dekadence"
- trait_decadent_desc: "Tato postava byla obviněna z dekadence svojí [Concept('house_head','hlavou rodu')|E)]. Ať už jsou obvinění pravdivá nebo ne, pověst a důvěryhodnost této postavy jsou výrazně pošramoceny."
+ trait_decadent_desc: "Tato postava byla obviněna z dekadence svojí [Concept('house_head','hlavu rodu')|E)]. Ať už jsou obvinění pravdivá nebo ne, pověst a důvěryhodnost této postavy jsou výrazně pošramoceny." # todo: CONCEPT CASE
  trait_decadent_character_desc: "[ROOT.GetCharacter.GetFirstNameNoTooltip] [Select_CString(ROOT.GetCharacter.IsFemale,'byla obviněna','byl obviněn')] z dekadence [Select_CString(ROOT.GetCharacter.IsFemale,'její','jeho')] [Concept('house_head','hlavy rodu')|E]. Ať už jsou obvinění pravdivá nebo ne, [Select_CString(ROOT.GetCharacter.IsFemale,'její','jeho')] pověst a důvěryhodnost jsou výrazně pošramoceny."
  trait_extolled: "Chválen rodem"
- trait_extolled_desc: "Tato postava byla pochválena za ctnosti svojí [Concept('house_head','hlavou rodu')|E]. Ať už si to zaslouží, či ne, těžko se teď vyhýbá zvědavým očím veřejnosti."
- trait_extolled_character_desc: "[ROOT.GetCharacter.GetFirstNameNoTooltip] [Select_CString(ROOT.GetCharacter.IsFemale,'měla své ctnosti vychválené její','měl své ctnosti vychválené jeho')] [Concept('house_head','hlavou rodu')|E]. Ať už si to zaslouží, či ne, teď těžko uniká zvědavým očím veřejnosti."
+ trait_extolled_desc: "Tato postava byla pochválena za ctnosti svojí [Concept('house_head','hlavu rodu')|E]. Ať už si to zaslouží, či ne, těžko se teď vyhýbá zvědavým očím veřejnosti." # todo: CONCEPT CASE
+ trait_extolled_character_desc: "[ROOT.GetCharacter.GetFirstNameNoTooltip] [Select_CString(ROOT.GetCharacter.IsFemale,'měla své ctnosti vychválené její','měl své ctnosti vychválené jeho')] [Concept('house_head','Hlava rodu')|E]. Ať už si to zaslouží, či ne, teď těžko uniká zvědavým očím veřejnosti." # todo: CONCEPT CASE
  trait_gallivanter: "Volnomyšlenkář"
  trait_gallivanter_desc: "Tato postava se vyhýbá odpovědnostem nad rámec svých povinností - její čas je vzácný a nechce ho promrhávat na bezvýznamné povinnosti a prázdné ambice."
  trait_gallivanter_character_desc: "[ROOT.GetCharacter.GetFirstNameNoTooltip] se vyhýbá odpovědnostem nad rámec toho, co již má - [Select_CString(ROOT.GetCharacter.IsFemale,'její','jeho')] čas je vzácný a nechce, aby byl promrhán na zbytečné povinnosti a bezvýznamné ambice."
@@ -1150,7 +1150,7 @@
  trait_track_lifestyle_poet_desc: "Slova mohou získat věčnou slávu a pero může řezat ostřeji než nejostřejší meč." # todo: NEW TRANSLATION
  trait_governor: "Guvernér"
  trait_track_governor: "$trait_governor$"
- trait_track_governor_desc: "Daně. Půda. Vojsko. Vše lze a mělo by být spravováno k dokonalosti.\n\n#weak Tento [Concept('trait','$game_concept_trait$')|E] může být zvyšován prostřednictvím akcí, které zlepšují držené [Concept('counties','$game_concept_counties$')|E] nebo prospívají [Concept('realm','$game_concept_realm$')|E], jako je dokončení [Concept('governance_issues','$game_concept_governance_issues$')|E], výstavba [Concept('buildings','$game_concept_buildings$')|E] nebo volba určitých možností v událostech.#!"
+ trait_track_governor_desc: "Daně. Půda. Vojsko. Vše lze a mělo by být spravováno k dokonalosti.\n\n#weak Tento [Concept('trait','rys')|E] může být zvyšován prostřednictvím akcí, které zlepšují držené [Concept('counties','hrabství')|E] nebo prospívají [Concept('realm','panství')|E], jako je dokončení [Concept('governance_issues','$TASK_CONTRACT_ISSUE_PLURAL$')|E], výstavba [Concept('buildings','budovy')|E] nebo volba určitých možností v událostech.#!" # todo: CONCEPT CASE
  trait_governor_desc: "Tato postava získala cenné dovednosti ve své roli guvernéra."
  trait_governor_3_byz: "Veterán $duke_administrative_male_byzantine_group$"
  trait_governor_3: "Veteránský guvernér"
@@ -1182,16 +1182,16 @@
  trait_violet_poet: "Fialový básník"
  trait_violet_poet_desc: "Co dokáže rozproudit srdce a rozezvučet hlas víc než samotná láska? [ROOT.GetCharacter.GetFirstNameNoTooltip] to zná a ovládá to mistrně."
  trait_track_violet_poet: "Rapsód"
- trait_track_violet_poet_desc: "Nejpravdivější vyjádření básníka nejsou pouze slova, ale i duše a tělo.\n\n#weak Tento [Concept('trait','$game_concept_trait$')|E] lze zvyšovat dvěma způsoby: buď psaním poezie, nebo více #UND milostnými#! metodami."
+ trait_track_violet_poet_desc: "Nejpravdivější vyjádření básníka nejsou pouze slova, ale i duše a tělo.\n\n#weak Tento [Concept('trait','rys')|E] lze zvyšovat dvěma způsoby: buď psaním poezie, nebo více #UND milostnými#! metodami." # todo: CONCEPT CASE
  trait_knight_errant: "Potulný rytíř"
  trait_knight_errant_character: "$knight_culture_player_no_tooltip$-Errant"
  trait_knight_errant_desc: "Rytíř proslulý svou ctí; tato postava brání slabé, chrání bezbranné a poráží zlé."
  trait_knight_errant_character_desc: "Potulný $knight_culture_player_no_tooltip_lowercase$, [ROOT.GetCharacter.GetFirstNameNoTooltip], brání slabé, chrání bezbranné a poráží zlé."
  trait_track_knight_errant: "Činitel dobra"
- trait_track_knight_errant_desc: "Nestačí tvrdit, že jsi spravedlivý — musíš to i prokazovat.\n\n#weak Tento [Concept('trait','$game_concept_trait$')|E] lze zvyšovat plněním Justicar, Prowess nebo Martial [Concept('task_contracts','$game_concept_task_contracts$')|E], které ukazují čestné vlastnosti."
+ trait_track_knight_errant_desc: "Nestačí tvrdit, že jsi spravedlivý — musíš to i prokazovat.\n\n#weak Tento [Concept('trait','rys')|E] lze zvyšovat plněním Justicar, Prowess nebo Martial [Concept('task_contracts','zakázky')|E], které ukazují čestné vlastnosti." # todo: CONCEPT CASE
  the_wake: "Bdělý"
  trait_track_the_wake: "Fenstalker"
- trait_track_the_wake_desc: "Osud tká svůj nenápadný pavučin. Co je mé právem, bude vzato zpět silou.\n\n#weak Tento trait lze zvyšovat porážkou [Concept('characters','$game_concept_characters$')|E] #BOL $norman$#! [Concept('culture','$game_concept_culture$')|E] v [Concept('battle','$game_concept_battle$')|E] nebo v [Concept('single_combat_duel_plural','$game_concept_single_combat_duel_plural$')|E].#!"
+ trait_track_the_wake_desc: "Osud tká svůj nenápadný pavučin. Co je mé právem, bude vzato zpět silou.\n\n#weak Tento trait lze zvyšovat porážkou [Concept('characters','postavami')|E] #BOL $norman$#! [Concept('culture','kultura')|E] v [Concept('battle','bitvě')|E] nebo v [Concept('single_combat_duel_plural','duelech')|E].#!" # todo: CONCEPT CASE
  the_wake_1: "Vyhnanec"
  the_wake_2: "Vyvrhel"
  the_wake_3: "Řezník"
@@ -1221,17 +1221,17 @@
  trait_lifestyle_seasoned_pastor: "Zkušený pastýř"
  trait_lifestyle_seasoned_pastor_desc: "Tato postava se stala odborníkem v hospodaření se stádem a dokáže zajistit, aby její dobytek co nejlépe využíval pastviny."
  trait_lifestyle_seasoned_pastor_character_desc: "[ROOT.GetCharacter.GetFirstNameNoTooltip] se [Select_CString(ROOT.GetCharacter.IsFemale,'stala','stal')] odborníkem v hospodaření se stádem a dokáže zajistit, že dobytek co nejlépe využije pastviny."
- unlock_maa_steppe_raiders: "Může najmout [GetMaA('steppe_raiders').GetName] jako [Concept('men_at_arms','$game_concept_men_at_arms$')|El]"
- unlock_maa_heavy_horse_archers: "Může najmout [GetMaA('heavy_horse_archers').GetName] jako [Concept('men_at_arms','$game_concept_men_at_arms$')|El]"
- unlock_maa_nomad_lancers: "Může najmout [GetMaA('nomad_lancers').GetName] jako [Concept('men_at_arms','$game_concept_men_at_arms$')|El]"
- TRAIT_FLAG_DESC_gok_obedience_flag: "Výrazně zvýšené @obedience_icon![Concept('obedience','$game_concept_obedience$')|E] od [Concept('subjects','$game_concept_subjects$')|El]"
+ unlock_maa_steppe_raiders: "Může najmout [GetMaA('steppe_raiders').GetName] jako [Concept('men_at_arms','ozbrojenci')|El]" # todo: CONCEPT CASE
+ unlock_maa_heavy_horse_archers: "Může najmout [GetMaA('heavy_horse_archers').GetName] jako [Concept('men_at_arms','ozbrojenci')|El]" # todo: CONCEPT CASE
+ unlock_maa_nomad_lancers: "Může najmout [GetMaA('nomad_lancers').GetName] jako [Concept('men_at_arms','ozbrojenci')|El]" # todo: CONCEPT CASE
+ TRAIT_FLAG_DESC_gok_obedience_flag: "Výrazně zvýšené @obedience_icon![Concept('obedience','poslušnost')|E] od [Concept('subjects','$game_concept_subjects$')|El]" # todo: CONCEPT CASE
  trait_golden_lineage: "Zlatá linie"
  trait_golden_lineage_desc: "To, co krev této postavy přinesla světu, nelze zapomenout. Jsou zlatým potomkem ohně a dobytí."
  trait_golden_lineage_character_desc: "To, co [ROOT.GetCharacter.GetFirstNamePossessiveNoTooltip] krev přinesla světu, nelze zapomenout. Je zlatým potomkem ohně a dobytí."
  descendants_gain_golden_lineage_female: "Všechny ženské potomkyně [golden_lineage.GetShortUIName] a jejich děti" # todo: NEW TRANSLATION
  descendants_gain_golden_lineage_male: "Všichni mužští potomci [golden_lineage.GetShortUIName] a jejich děti" # todo: NEW TRANSLATION
  trait_track_confucian_education: "Konfucianismus" # todo: NEW TRANSLATION
- trait_track_confucian_education_desc: "Zdrženlivostí a laskavostí budujeme společně lepší společnost.\n\n#weak Tento [trait|E] lze rozvíjet prostřednictvím #V $request_mentoring_interaction$#! [character_interaction|E] nebo prostřednictvím [court_position_tasks|E] #V $grand_mentor_court_position$#! nebo #V $court_tutor_court_position$#! [court_positions|E]" # todo: RETRANSLATED ENGLISH
+ trait_track_confucian_education_desc: "Zdrženlivostí a laskavostí budujeme společně lepší společnost.\n\n#weak Tento [Concept('trait','rys')|E] lze rozvíjet prostřednictvím #V $request_mentoring_interaction$#! [Concept('character_interaction','interakci s postavou')|E] nebo prostřednictvím [Concept('court_position_tasks','úkolů dvorských úřadů')|E] #V $grand_mentor_court_position$#! nebo #V $court_tutor_court_position$#! [Concept('court_positions','dvorské úřady')|E]" # todo: RETRANSLATED ENGLISH # todo: CONCEPT CASE
  trait_confucian_education_character_desc: "Tato postava právě začala cestu k moudrosti." # todo: NEW TRANSLATION
  trait_confucian_education: "Konfuciánské vzdělání" # todo: NEW TRANSLATION
  trait_confucian_education_desc: "[ROOT.GetCharacter.GetFirstNameNoTooltip] právě začíná [Select_CString(ROOT.GetCharacter.IsFemale,'její','jeho')] cestu k moudrosti." # todo: NEW TRANSLATION

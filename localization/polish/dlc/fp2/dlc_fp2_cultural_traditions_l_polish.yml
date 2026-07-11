@@ -1,16 +1,16 @@
 ﻿l_polish:
  tradition_fp2_state_ransoming_name: "Státní výkupné"
  tradition_fp2_state_ransoming_desc: "Každý voják jde do bitvy připraven riskovat život pro svého pána! Nezaslouží si pán nabídnout jim nějakou záruku bezpečí, bez ohledu na postavení, pokud budou zajati na bojišti?"
- culture_parameter_knights_die_less_but_are_captured_more: "[knights|E] v [battle|E] umírají méně, ale častěji jsou zajati"
- culture_parameter_characters_more_likely_to_be_captured_in_sieges: "[characters|E] s [liege|E] této [culture|E] mají větší pravděpodobnost zajetí v [sieges|E]"
- culture_parameter_can_demand_higher_ransoms_from_lower_tiers: "Může požadovat vyšší výkupné za nižší [rank|E] [rulers|E]"
+ culture_parameter_knights_die_less_but_are_captured_more: "[Concept('knights','Rytíři')|E] v [Concept('battle','bitvě')|E] umírají méně, ale častěji jsou zajati" # todo: CONCEPT CASE
+ culture_parameter_characters_more_likely_to_be_captured_in_sieges: "[Concept('characters','Postavy')|E] s [Concept('liege','lenním pánem')|E] této [Concept('culture','kulturou')|E] mají větší pravděpodobnost zajetí v [Concept('sieges','obléhání')|E]" # todo: CONCEPT CASE
+ culture_parameter_can_demand_higher_ransoms_from_lower_tiers: "Může požadovat vyšší výkupné za nižší [Concept('rank','hodnost')|E] [Concept('rulers','vládce')|E]" # todo: CONCEPT CASE
  tradition_fp2_strategy_gamers_name: "Stolní válečníci"
  tradition_fp2_strategy_gamers_desc: "Každý velitel může vsadit a mít v den bitvy štěstí. #EMP Pravý#! stratég si udržuje mysl ostře procvičováním a hraním, takže nemá #EMP potřebu#! „štěstí“."
- culture_parameter_commanders_likelier_to_gain_commander_traits: "[commanders|E] mají větší šanci získat [commander_traits|E]"
- culture_parameter_may_challenge_to_board_games: "Může vždy vyzvat jiné [characters|E] ke [board_games|E]"
- culture_parameter_may_wager_land_on_board_games: "Může vsadit osobně držený [county|E] v [board_games|E], pokud oba hráči mají toto pravidlo"
+ culture_parameter_commanders_likelier_to_gain_commander_traits: "[Concept('commanders','Velitelé')|E] mají větší šanci získat [Concept('commander_traits','velitelské rysy')|E]" # todo: CONCEPT CASE
+ culture_parameter_may_challenge_to_board_games: "Může vždy vyzvat jiné [Concept('characters','postavy')|E] ke [Concept('board_games','deskovým hrám')|E]" # todo: CONCEPT CASE
+ culture_parameter_may_wager_land_on_board_games: "Může vsadit osobně držený [Concept('county','hrabství')|E] v [Concept('board_games','deskových hrách')|E], pokud oba hráči mají toto pravidlo" # todo: CONCEPT CASE
  challenge_to_2p_chess_interaction: "Výzva ke stolní hře"
- challenge_to_2p_chess_interaction_desc: "Zahraj si s [recipient.GetName] [board_game|E]"
+ challenge_to_2p_chess_interaction_desc: "Zahraj si s [recipient.GetName] [Concept('board_game','deskovou hrou')|E]" # todo: CONCEPT CASE
  CHALLENGE_TO_2P_CHESS_INTERACTION_NOTIFICATION: "Pozdravy, můj ctěný [actor.Custom2('RelationToMeShort', recipient)]! Nechtěl bys si zahrát strhující partii [actor.Custom('BG_GameType_Concept_Dark')]?"
  CHESS_FRIENDLY: "Přátelská hra"
  CHESS_PRESTIGE: "Vsadit slávu"
@@ -21,12 +21,12 @@
  challenge_to_2p_chess_interaction.accept.game_commences.tt: "Hra [actor.Custom('BG_GameType_Concept')] začne okamžitě"
  perk_interaction.0122.victor_toast.t: "Vyhráváš hru!"
  perk_interaction.0122.loser_toast.t: "Prohráváš hru!"
- fp2_bg_interaction.winner.actor: "Pokud [Select_CString( actor.IsLocalPlayer, 'you win', 'your opponent wins' )] sázku"
- fp2_bg_interaction.winner.recipient: "Pokud [Select_CString( recipient.IsLocalPlayer, 'you win', 'your opponent wins' )] sázku"
- fp2_bg_recipient_banned_from_board_games: "[character|E] momentálně nemůže hrát stolní hru"
- challenge_to_2p_chess_interaction.need_bordering_non_capital_domains.tt: "Ty a tvůj protivník musíte mít sousední [domains|E], které nejsou vašimi [realm_capitals|E]"
- bet_gold_actor_not_enough_gold: "Nemáš dost [gold|E]"
- bet_gold_recipient_not_enough_gold: "Tvůj protivník nemá dost [gold|E]"
+ fp2_bg_interaction.winner.actor: "Pokud [Select_CString(actor.IsLocalPlayer,'vyhráš','tvůj oponent vyhrá')] sázku"
+ fp2_bg_interaction.winner.recipient: "Pokud [Select_CString( recipient.IsLocalPlayer, 'vyhráš', 'tvůj oponent vyhrá' )] sázku"
+ fp2_bg_recipient_banned_from_board_games: "[Concept('character','Postava')|E] momentálně nemůže hrát stolní hru" # todo: CONCEPT CASE
+ challenge_to_2p_chess_interaction.need_bordering_non_capital_domains.tt: "Ty a tvůj protivník musíte mít sousední [Concept('domains','domény')|E], které nejsou vašimi [Concept('realm_capitals','hlavními sídly panství')|E]" # todo: CONCEPT CASE
+ bet_gold_actor_not_enough_gold: "Nemáš dost [Concept('gold','zlato')|E]" # todo: CONCEPT CASE
+ bet_gold_recipient_not_enough_gold: "Tvůj protivník nemá dost [Concept('gold','zlato')|E]" # todo: CONCEPT CASE
  BG_OPINION_OWN_SKILL_ASSESSMENT: "Moje dovednost: $VALUE|=+0$"
  BG_OPINION_STAKES_ARE_LOW: "Nízké sázky: $VALUE|=+0$"
  BG_OPINION_FRIENDLY_TRAIT_GREGARIOUS: "[GetTrait('gregarious').GetName(recipient.Self)] miluje představu $CHESS_FRIENDLY$: $VALUE|=+0$"
@@ -57,10 +57,10 @@
  BG_OPINION_LAND_TRAIT_CRAVEN: "[GetTrait('craven').GetName(recipient.Self)] si nepřeje $CHESS_LAND$: $VALUE|=+0$"
  BG_OPINION_LAND_TRAIT_CONTENT: "[GetTrait('content').GetName(recipient.Self)] si nepřeje $CHESS_LAND$: $VALUE|=+0$"
  BG_OPINION_LAND_TRAIT_JUST: "[GetTrait('just').GetName(recipient.Self)] myslí, že by bylo nezákonné $CHESS_LAND$: $VALUE|=+0$"
- BG_OPINION_RELATIONSHIP_GOOD_MILD: "Máme pozitivní [relationship|E]: $VALUE|=+0$"
+ BG_OPINION_RELATIONSHIP_GOOD_MILD: "Máme pozitivní [Concept('relationship','zvláštního vztahu')|E]: $VALUE|=+0$" # todo: CONCEPT CASE
  BG_OPINION_RELATIONSHIP_GOOD_MODERATE: "$BG_OPINION_RELATIONSHIP_GOOD_MILD$"
  BG_OPINION_RELATIONSHIP_GOOD_MAJOR: "$BG_OPINION_RELATIONSHIP_GOOD_MILD$"
- BG_OPINION_RELATIONSHIP_BAD_MILD: "Máme negativní [relationship|E]: $VALUE|=+0$"
+ BG_OPINION_RELATIONSHIP_BAD_MILD: "Máme negativní [Concept('relationship','zvláštního vztahu')|E]: $VALUE|=+0$" # todo: CONCEPT CASE
  BG_OPINION_RELATIONSHIP_BAD_MODERATE: "$BG_OPINION_RELATIONSHIP_BAD_MILD$"
  BG_OPINION_RELATIONSHIP_BAD_MAJOR: "$BG_OPINION_RELATIONSHIP_BAD_MILD$"
  BG_OPINION_RELATIONSHIP_BAD_SRSGMR_MILD: "Chci tě na hrách #EMP zničit#!: $VALUE|=+0$"
@@ -68,20 +68,20 @@
  BG_OPINION_RELATIONSHIP_BAD_SRSGMR_MAJOR: "$BG_OPINION_RELATIONSHIP_BAD_SRSGMR_MILD$"
  tradition_fp2_malleable_subjects_name: "Poddajní poddaní"
  tradition_fp2_malleable_subjects_desc: "Kdo říká, co je svoboda? Jeden král je podobný druhému bez ohledu na kulturu. Skutečná svoboda přichází s uměním žít s jakýmkoli vládcem."
- culture_parameter_harder_to_convert_county_culture_without_heritage: "Těžší [promote_culture|E] v [counties|E] této [culture|E], pokud nesdílíte [heritage|E]"
- culture_parameter_easier_to_convert_county_culture_with_heritage: "Snazší [promote_culture|E] v [counties|E] této [culture|E], pokud sdílíte [heritage|E]"
- culture_parameter_powerful_foreign_knights_find_you_attractive: "Větší pravděpodobnost přilákání putujících [knight|E] [characters|E]"
- iberian_heritage_trigger: "Tato [culture|E] musí mít iberské [heritage|E]"
- TRADITION_EASIER_TO_CULTURE_CONVERT_WITH_HERITAGE_MODIFIER: "Místní [cultural|E] [tradition|E] bonus"
- TRADITION_HARDER_TO_CULTURE_CONVERT_WITHOUT_HERITAGE_MODIFIER: "Místní [cultural|E] [tradition|E] penalizace"
+ culture_parameter_harder_to_convert_county_culture_without_heritage: "Těžší [Concept('promote_culture','$task_promote_culture$')|E] v [Concept('counties','hrabství')|E] této [Concept('culture','kultuře')|E], pokud nesdílíte [Concept('heritage','dědictví')|E]" # todo: CONCEPT CASE
+ culture_parameter_easier_to_convert_county_culture_with_heritage: "Snazší [Concept('promote_culture','$task_promote_culture$')|E] v [Concept('counties','hrabství')|E] této [Concept('culture','kultuře')|E], pokud sdílíte [Concept('heritage','dědictví')|E]" # todo: CONCEPT CASE
+ culture_parameter_powerful_foreign_knights_find_you_attractive: "Větší pravděpodobnost přilákání putujících [Concept('knight','rytířů')|E] [Concept('characters','postav')|E]" # todo: CONCEPT CASE
+ iberian_heritage_trigger: "Tato [Concept('culture','kultura')|E] musí mít iberské [Concept('heritage','dědictví')|E]" # todo: CONCEPT CASE
+ TRADITION_EASIER_TO_CULTURE_CONVERT_WITH_HERITAGE_MODIFIER: "Místní [Concept('cultural','kulturní')|E] [Concept('tradition','tradice')|E] bonus" # todo: CONCEPT CASE
+ TRADITION_HARDER_TO_CULTURE_CONVERT_WITHOUT_HERITAGE_MODIFIER: "Místní [Concept('cultural','kulturní')|E] [Concept('tradition','tradice')|E] penalizace" # todo: CONCEPT CASE
  tradition_fp2_ritualised_friendship_name: "Rituální přátelství"
  tradition_fp2_ritualised_friendship_desc: "Krev může být hustší než voda, ale víno dělá život lepším."
- culture_parameter_automatic_befriend_access: "Automaticky má přístup k [GetScheme('befriend').GetTypeName] [scheme|E]"
- culture_parameter_may_propose_best_friendship: "Může požádat [friends|E], aby se stali [best_friends|E]"
- culture_parameter_strong_hooks_and_stress_effects_best_friends: "[best_friends|E] získávají na sobě [strong_hooks|E], ale při jejich používání nabývají [stress|E]"
- culture_parameter_may_select_friendship_synergy_bonus: "[best_friends|E] mohou použít interakci k získání bonusu ke [skills|E] přes [modifiers|E] za cenu zvýšeného [stress|E]"
+ culture_parameter_automatic_befriend_access: "Automaticky má přístup k [GetScheme('befriend').GetTypeName] [Concept('scheme','intrice')|E]" # todo: CONCEPT CASE
+ culture_parameter_may_propose_best_friendship: "Může požádat [Concept('friends','přátelé')|E], aby se stali [Concept('best_friends','nejlepší přátelé')|E]" # todo: CONCEPT CASE
+ culture_parameter_strong_hooks_and_stress_effects_best_friends: "[Concept('best_friends','Nejlepší přátelé')|E] získávají na sobě [Concept('strong_hooks','silným pákám')|E], ale při jejich používání nabývají [Concept('stress','stres')|E]" # todo: CONCEPT CASE
+ culture_parameter_may_select_friendship_synergy_bonus: "[Concept('best_friends','Nejlepší přátelé')|E] mohou použít interakci k získání bonusu ke [Concept('skills','dovednostem')|E] přes [Concept('modifiers','modifikátory')|E] za cenu zvýšeného [Concept('stress','stresu')|E]" # todo: CONCEPT CASE
  propose_best_friendship_interaction: "Složit přísahu pravého přátelství"
- propose_best_friendship_interaction_desc: "Navrhnout, aby se [recipient.GetShortUINameNoTooltip] a ty stali [best_friends|E]"
+ propose_best_friendship_interaction_desc: "Navrhnout, aby se [recipient.GetShortUINameNoTooltip] a ty stali [Concept('best_friends','nejlepší přátelé')|E]" # todo: CONCEPT CASE
  propose_best_friendship_interaction.tt.already_best_friends: "Už jste nejlepšími přáteli!"
  propose_best_friendship_interaction.tt.actor_has_best_friend: "Ty už #EMP máš#! nejlepšího přítele!"
  propose_best_friendship_interaction.tt.recipient_has_best_friend: "[recipient.GetFirstNameNoTooltip] už #EMP má#! nejlepšího přítele!"
@@ -99,22 +99,22 @@
  reaffirm_best_friendship_interaction.decline.actor.tt: "[recipient.GetTitledFirstNameNoTooltip] pohrdá vaším přátelstvím"
  reaffirm_best_friendship_interaction.decline.recipient.tt: "[actor.GetTitledFirstNameNoTooltip] se cítí hrozně zrazený"
  synergise_friendship_interaction: "Synergizovat přátelství"
- synergise_friendship_interaction_desc: "Čerpat podporu ze vzdělání a výcviku tvého [best_friend_possessive|E]"
+ synergise_friendship_interaction_desc: "Čerpat podporu ze vzdělání a výcviku tvého [Concept('best_friend_possessive','nejlepšího přítele')|E]" # todo: CONCEPT CASE
  SYNERGISE_FRIENDSHIP_NOTIFICATION: "[recipient.GetFirstNameNoTooltip], vím, že se na tebe mohu spolehnout ve všem, a chci se zeptat... zavážeš se, že si budeme navzájem vždy pomáhat při získávání zkušeností a výcviku?"
  synergise_friendship_interaction.accept.actor.tt: "$propose_best_friendship_interaction.accept.actor.tt$"
  synergise_friendship_interaction.accept.recipient.tt: "$propose_best_friendship_interaction.accept.recipient.tt$"
  synergise_friendship_interaction.decline.actor.tt: "$propose_best_friendship_interaction.decline.actor.tt$"
  synergise_friendship_interaction.decline.recipient.tt: "$propose_best_friendship_interaction.decline.recipient.tt$"
- PROPOSE_BEST_FRIEND_OPINION_TRAIT_SHY: "[GetTrait('shy').GetName(recipient.Self)] je nervózní z toho stát se [best_friends|E]: $VALUE|=+0$"
- PROPOSE_BEST_FRIEND_OPINION_TRAIT_ARBITRAY: "[GetTrait('arbitrary').GetName(recipient.Self)] má obavy stát se [best_friends|E]: $VALUE|=+0$"
- PROPOSE_BEST_FRIEND_OPINION_TRAIT_GREGARIOUS: "[GetTrait('gregarious').GetName(recipient.Self)] schvaluje stát se [best_friends|E]: $VALUE|=+0$"
- PROPOSE_BEST_FRIEND_OPINION_TRAIT_JUST: "[GetTrait('just').GetName(recipient.Self)] schvaluje stát se [best_friends|E]: $VALUE|=+0$"
- PROPOSE_BEST_FRIEND_OPINION_LACKING_CULTURAL_PARAMETER: "[recipient.GetCulture.GetName] [culture|E] nechápe pravý význam přátelství: $VALUE|=+0$"
- REAFFIRM_BEST_FRIEND_OPINION_HAS_CULTURAL_PARAMETER: "[recipient.GetCulture.GetName] [culture|E] chápe pravý význam přátelství: $VALUE|=+0$"
- SYNERGY_BONUS_ACTOR: "Čerpat primárně ze svého [education|E]"
- SYNERGY_BONUS_RECIPIENT: "Čerpat primárně z [best_friend_possessive|E] [education|E]"
- SYNERGY_BONUS_MIXED: "Čerpat z kombinace obou vašich [educations|E]"
- synergise_friendship_interaction_cannot_share_education: "Nemůžeš čerpat výhradně z [best_friend_possessive|E] [education|E], pokud je totožné s tvým"
+ PROPOSE_BEST_FRIEND_OPINION_TRAIT_SHY: "[GetTrait('shy').GetName(recipient.Self)] je nervózní z toho stát se [Concept('best_friends','nejlepšími přáteli')|E]: $VALUE|=+0$" # todo: CONCEPT CASE
+ PROPOSE_BEST_FRIEND_OPINION_TRAIT_ARBITRAY: "[GetTrait('arbitrary').GetName(recipient.Self)] má obavy stát se [Concept('best_friends','nejlepšími přáteli')|E]: $VALUE|=+0$" # todo: CONCEPT CASE
+ PROPOSE_BEST_FRIEND_OPINION_TRAIT_GREGARIOUS: "[GetTrait('gregarious').GetName(recipient.Self)] schvaluje stát se [Concept('best_friends','nejlepšími přáteli')|E]: $VALUE|=+0$" # todo: CONCEPT CASE
+ PROPOSE_BEST_FRIEND_OPINION_TRAIT_JUST: "[GetTrait('just').GetName(recipient.Self)] schvaluje stát se [Concept('best_friends','nejlepšími přáteli')|E]: $VALUE|=+0$" # todo: CONCEPT CASE
+ PROPOSE_BEST_FRIEND_OPINION_LACKING_CULTURAL_PARAMETER: "[recipient.GetCulture.GetName] [Concept('culture','Kultura')|E] nechápe pravý význam přátelství: $VALUE|=+0$" # todo: CONCEPT CASE
+ REAFFIRM_BEST_FRIEND_OPINION_HAS_CULTURAL_PARAMETER: "[recipient.GetCulture.GetName] [Concept('culture','Kultura')|E] chápe pravý význam přátelství: $VALUE|=+0$" # todo: CONCEPT CASE
+ SYNERGY_BONUS_ACTOR: "Čerpat primárně ze svého [Concept('education','vzdělání')|E]" # todo: CONCEPT CASE
+ SYNERGY_BONUS_RECIPIENT: "Čerpat primárně z [Concept('best_friend_possessive','nejlepšího přítele')|E] [Concept('education','vzdělání')|E]" # todo: CONCEPT CASE
+ SYNERGY_BONUS_MIXED: "Čerpat z kombinace obou vašich [Concept('educations','vzdělání')|E]" # todo: CONCEPT CASE
+ synergise_friendship_interaction_cannot_share_education: "Nemůžeš čerpat výhradně z [Concept('best_friend_possessive','nejlepšího přítele')|E] [Concept('education','vzdělání')|E], pokud je totožné s tvým" # todo: CONCEPT CASE
  fp2_single_synergy_neutral_modifier_desc_label: "Tato postava navázala spolupracující vztah se svým nejlepším přítelem. I když je to užitečné, úsilí může být vyčerpávající."
  fp2_single_synergy_diplomacy_modifier: "Zvýšená diplomacie"
  fp2_single_synergy_diplomacy_modifier_desc: "$fp2_single_synergy_neutral_modifier_desc_label$"
@@ -186,10 +186,10 @@
  lost_ritualised_best_friend: "Ztracený nejlepší přítel"
  on_hook_used.tt.best_friend_stress: "Zneužíváš své přátelství s [target.GetShortUINameNoTooltip]"
  death.lost_ritualised_best_friend.tt: "Tvůj nejlepší přítel na světě zemřel"
- need_at_least_one_friend: "Potřebuješ alespoň jednoho [friend|E]"
- guess_you_need_more_friends_desc: "Nemáš alespoň tři [friends|E]"
- scheme_phase_duration_against_friend_add: "[scheme_speed|E] proti [friends|E]"
- scheme_phase_duration_against_best_friend_add: "[scheme_speed|E] proti [best_friends|E]"
+ need_at_least_one_friend: "Potřebuješ alespoň jednoho [Concept('friend','přítele')|E]" # todo: CONCEPT CASE
+ guess_you_need_more_friends_desc: "Nemáš alespoň tři [Concept('friends','přátelé')|E]" # todo: CONCEPT CASE
+ scheme_phase_duration_against_friend_add: "[Concept('scheme_speed','Délka fáze intriky')|E] proti [Concept('friends','přátelům')|E]" # todo: CONCEPT CASE
+ scheme_phase_duration_against_best_friend_add: "[Concept('scheme_speed','Délka fáze intriky')|E] proti [Concept('best_friends','nejlepším přátelům')|E]" # todo: CONCEPT CASE
  on_set_relation_best_friend.gain_hook.root.tt: "Tvé přátelství s [target.GetFirstNameNoTooltip] má rituální význam"
  on_set_relation_best_friend.gain_hook.target.tt: "Tvé přátelství s [ROOT.Char.GetFirstNameNoTooltip] má rituální význam"
  on_remove_relation_best_friend.lose_hook.root.tt: "Bez přátelství nad [target.GetFirstNameNoTooltip] nemáš žádný vliv"

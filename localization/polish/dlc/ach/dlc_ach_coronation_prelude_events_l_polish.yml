@@ -6,11 +6,11 @@
  prelude_events.0001.b.tt.supporter: "[guest.GetShortUIName] se stává vaším #high stoupencem#!"
  prelude_events.0001.c.tt.every_supporter: "Získáte [prestige_i]#P 20#! za $every_supporter$"
  prelude_events.0001.c: "„Dejte o tom vědět!“"
- prelude_events.0001.c.opinion: "$every_detractor$ získá #P 10#! [opinion|E] o vás #weak (-1.20/rok) (Respekt)#!"
- every_supporter: "Každý [coronation_supporter|E] ([THIS.ScriptValue('number_of_supporters_activity')|V0])"
- every_supporter_activity: "Každý [coronation_supporter|E] ([THIS.ScriptValue('number_of_supporters_activity')|V0])"
- every_detractor: "Každý [coronation_detractor|E] ([THIS.ScriptValue('number_of_detractors_activity')|V0])"
- every_detractor_activity: "Každý [coronation_detractor|E] ([THIS.ScriptValue('number_of_detractors_activity')|V0])"
+ prelude_events.0001.c.opinion: "$every_detractor$ získá #P 10#! [Concept('opinion','mínění')|E] o vás #weak (-1.20/rok) (Respekt)#!" # todo: CONCEPT CASE
+ every_supporter: "Každý [Concept('coronation_supporter','podporovatel')|E] ([THIS.ScriptValue('number_of_supporters_activity')|V0])" # todo: CONCEPT CASE
+ every_supporter_activity: "Každý [Concept('coronation_supporter','podporovatel')|E] ([THIS.ScriptValue('number_of_supporters_activity')|V0])" # todo: CONCEPT CASE
+ every_detractor: "Každý [Concept('coronation_detractor','odpůrce')|E] ([THIS.ScriptValue('number_of_detractors_activity')|V0])" # todo: CONCEPT CASE
+ every_detractor_activity: "Každý [Concept('coronation_detractor','odpůrce')|E] ([THIS.ScriptValue('number_of_detractors_activity')|V0])" # todo: CONCEPT CASE
  silent_coronation_modifier: "Tichá korunovace"
  silent_coronation_modifier_desc: "Nechává své činy mluvit za sebe."
  prelude_events.0010.t: "Zprávy z domova"
@@ -57,7 +57,7 @@
  prelude_events.0040.a: "[guest.GetSheHe|U] nebude tolik mluvit, až skončím."
  prelude_events.0040.b: "„[Select_CString(ROOT.Char.IsFemale,'Inspirovala','Inspiroval')] jsem se tvou matkou.“"
  prelude_events.0040.c: "Budu naslouchat každému slovu, které zde [guest.GetFirstNameNoTooltip] pronese."
- prelude_events.0040.c.tt: "[scheme|E] bude mít #P zvýšenou#! [success_chance|E]"
+ prelude_events.0040.c.tt: "[Concept('scheme','Intrika')|E] bude mít #P zvýšenou#! [Concept('success_chance','šance na úspěch')|E]" # todo: CONCEPT CASE
  prelude_events.0040.d: "„Tohle není místo na hádky.“"
  every_callous_vengeful_wrathful_guest: "Každý host, který je [GetTrait('callous').GetName( GetNullCharacter )], [GetTrait('vengeful').GetName( GetNullCharacter )] nebo [GetTrait('wrathful').GetName( GetNullCharacter )]"
  prelude_events.0050.t: "Známá tvář"
@@ -133,7 +133,7 @@
  prelude_events.0100.c: "„Možná bych se [Select_CString(ROOT.Char.IsFemale,'měla','měl')] zaměřit na studium technik...“"
  coronation_vassal_building_tt: "Kvůli vašemu [GetModifier('coronation_vassal_building_modifier').GetName]"
  coronation_vassal_building_modifier: "Příslib stavby"
- coronation_vassal_building_modifier_desc: "Tato postava získá [prestige_i][prestige|E] pokaždé, když na územích svých vazalů postaví budovy."
+ coronation_vassal_building_modifier_desc: "Tato postava získá [prestige_i][Concept('prestige','prestiž')|E] pokaždé, když na územích svých vazalů postaví budovy." # todo: CONCEPT CASE
  friend_coronation_paid_for_building: "[CHARACTER.GetShortUIName|U] [Select_CString(CHARACTER.IsFemale,'přispěla','přispěl')] zlatem na stavební práce [TARGET_CHARACTER.GetShortUINamePossessive]."
  friend_coronation_paid_for_building_corresponding: "[TARGET_CHARACTER.GetShortUIName|U] [Select_CString(TARGET_CHARACTER.IsFemale,'přispěla','přispěl')] zlatem na stavební práce [CHARACTER.GetShortUINamePossessive]."
  prelude_events.0110.t: "Nevyslyšen"
@@ -157,17 +157,17 @@
  prelude_events.0130.t: "Požehnání vašim vlastnictvím"
  prelude_events.0130.desc: "„Ať [coronator.GetFaith.HighGodName] zasype vás požehnáním v tento šťastný den, [ROOT.Char.GetTitledFirstNameNoTooltip].“ [coronator.GetTitledFirstName] sklání [Select_CString(coronator.IsFemale,'její','jeho')] hlavu, [coronator.Custom('quirk_pos_pp')].\n\n„[Select_CString(ROOT.Char.IsFemale,'Chtěla','Chtěl')] bych tuto příležitost zaznamenat požehnáním nad vaším nejmilovanějším [my_artifact.GetName].“"
  prelude_events.0130.a: "Ať [coronator.GetFaith.HighGodName] to chrání."
- prelude_events.0130.a.tt: "[my_artifact.GetName]:\n$BULLET_WITH_TAB$Získává [piety_i|E]#positive_value +10%#! měsíčně [piety|E]\n$BULLET_WITH_TAB$Získává #positive_value +10#! [clergy|E] [opinion|E]"
+ prelude_events.0130.a.tt: "[my_artifact.GetName]:\n$BULLET_WITH_TAB$Získává [Concept('piety_i','[GetLocalPlayerPietyTextIcon]')|E]#positive_value +10%#! měsíčně [Concept('piety','zbožnost')|E]\n$BULLET_WITH_TAB$Získává #positive_value +10#! [Concept('clergy','duchovenstvo')|E] [Concept('opinion','mínění')|E]" # todo: CONCEPT CASE
  prelude_events.0130.b: "Ať to slouží jako připomínka korunovace."
- prelude_events.0130.b.tt: "[my_artifact.GetName]:\n$BULLET_WITH_TAB$Získává [prestige_i|E]#positive_value +8%#! měsíčně [prestige|E]"
+ prelude_events.0130.b.tt: "[my_artifact.GetName]:\n$BULLET_WITH_TAB$Získává [Concept('prestige_i','@prestige_icon!')|E]#positive_value +8%#! měsíčně [Concept('prestige','prestiž')|E]" # todo: CONCEPT CASE
  prelude_events.0130.c: "„Mí hosté by to rádi viděli.“"
- prelude_events_0130_cynical_tt: "Kvůli vašemu #high [GetTrait('cynical').GetName( GetNullCharacter )] [trait|E]#! se [coronation_magnificence|E] u [GetActivityType('activity_coronation').GetName] #P výrazně zvyšuje#!"
+ prelude_events_0130_cynical_tt: "Kvůli vašemu #high [GetTrait('cynical').GetName( GetNullCharacter )] [Concept('trait','rysu')|E]#! se [Concept('coronation_magnificence','pompézností')|E] u [GetActivityType('activity_coronation').GetName] #P výrazně zvyšuje#!" # todo: CONCEPT CASE
  coronation_blessed_artifact_desc: "[my_artifact.GetDesc]\n\nZdá se, že vyzařuje chvějivé světlo. Připomínka požehnání uděleného během korunovace [artifact_owner.GetTitledFirstNamePossessive]."
  prelude_events.0140.t: "Ve vaší slavné záři"
  prelude_events.0140.desc: "[host.GetTitledFirstName] si chvíli prohlíží dav, [host.Custom('quirk_pos_pp')]. Hlasy dvořanů jsou stejně stálé jako cvrlikání ptáků a nemám pochyb, že se k nim [guest.GetTitledFirstName] hodlá připojit.\n\n„Dobrý [ROOT.Char.GetTitleAsNameNoTooltip]!“ říká [guest.GetSheHe|U], přikročí ke mně. „Mohu si dovolit zeptat se, co si myslíte o oslavě? Nemám pochyb, že vláda [host.GetTitledFirstNamePossessiveNoTooltip] bude vládou lásky a spravedlnosti.“"
  prelude_events.0140.a: "#EMP Nic neříkej.#!"
  prelude_events.0140.b: "„Budou nás považovat za šťastné, že jsme tu byli!“"
- prelude_events.0140.b.offer_support_tt: "Kvůli vašemu #high $coronation_offer_support$#! [intent|E] se [coronation_magnificence|E] u [GetActivityType('activity_coronation').GetName] #P výrazně zvýší#!"
+ prelude_events.0140.b.offer_support_tt: "Kvůli vašemu #high $coronation_offer_support$#! [Concept('intent','záměr')|E] se [Concept('coronation_magnificence','pompézností')|E] u [GetActivityType('activity_coronation').GetName] #P výrazně zvýší#!" # todo: CONCEPT CASE
  prelude_events.0140.c: "„Ať [host.GetSheHe] dlouho vládne!“"
  prelude_events.0150.t: "Znáte [guest.GetHerHim|U]?"
  prelude_events.0150.desc: "„[ROOT.Char.GetTitledFirstNameNoTooltip],“ volá na mě [host.GetTitledFirstName] s velkým úsměvem. Vedle [host.GetHerHim] stojí další host, [guest.GetTitleAsNameNoTooltip|l], kterého neznám.\n\n„To je [guest.GetTitledFirstName],“ představuje [host.GetTitledFirstNameNoTooltip] [guest.GetHerHim]. „Věřím, že byste si spolu hodně rozuměli. Možná [guest.Custom('MatchingConversationSubject_alone')|U].“"
@@ -203,7 +203,7 @@
  prelude_events.0170.c.bad: "Pošlete žvanila, aby obtěžoval nevzdělaného stoupence."
  prelude_events.0170.c.bad_flavor: "[guest.GetFirstNamePossessiveNoTooltip] blábolení rozzuří toho nevzdělaného blba [supporter.GetName]!"
  cheaper_to_convert_to_guest_faith_tt: "Získáváte #P 50%#! slevu při konverzi k [guest.GetFaith.GetName]"
- prelude_events.0170.c.disrupt_loyalists_tt: "Kvůli vašemu #high $coronation_disrupt_loyalists$#! [intent|E] je [coronation_magnificence|E] aktivity [GetActivityType('activity_coronation').GetName] #N snížena#!"
+ prelude_events.0170.c.disrupt_loyalists_tt: "Kvůli vašemu #high $coronation_disrupt_loyalists$#! [Concept('intent','záměrem')|E] je [Concept('coronation_magnificence','pompéznost')|E] aktivity [GetActivityType('activity_coronation').GetName] #N snížena#!" # todo: CONCEPT CASE
  prelude_events.0180.t: "Tichá chvíle"
  prelude_events.0180.desc.host: "Opouštím své hosty a navštěvuji místní [ROOT.Char.GetCurrentLocation.GetCounty.GetFaith.HouseOfWorship], abych nalezl chvilku klidu, než na mě dolehne tíha koruny.\n\n"
  prelude_events.0180.desc.outro: "Oltář zasvěcený [ROOT.Char.GetFaith.HighGodName] slabě září, osvětlený tuctem svící. Chladné zdi naplňuje vonné ticho. Po mé pravici mě z nástěnné malby přísně pozoruje [ROOT.Char.GetFaith.WealthGodName]. Po levici pomalu bledne freska, na niž byl kdysi [ROOT.Char.GetFaith.HealthGodName], [ROOT.Char.GetFaith.HealthGodHerHis] úsměv je již sotva postřehnutelný."
@@ -212,7 +212,7 @@
  prelude_events.0180.b: "[ROOT.Char.GetFaith.WarGodName], ať je [host.GetTitledFirstNameNoTooltip] sražen k zemi!"
  prelude_events.0180.c: "[ROOT.Char.GetFaith.HealthGodName], svěřuji se do tvých rukou."
  prelude_events.0180.d: "[ROOT.Char.GetFaith.WealthGodName] povede mé kroky."
- prelude_events.0180.a.impress_attendees_tt: "Kvůli vašemu #high $coronation_impress_attendees$#! [intent|E] se [coronation_magnificence|E] aktivity [GetActivityType('activity_coronation').GetName] #P značně zvýší#!"
+ prelude_events.0180.a.impress_attendees_tt: "Kvůli vašemu #high $coronation_impress_attendees$#! [Concept('intent','záměr')|E] se [Concept('coronation_magnificence','pompézností')|E] aktivity [GetActivityType('activity_coronation').GetName] #P značně zvýší#!" # todo: CONCEPT CASE
  coronation_good_health_modifier: "Modlitba za dobré zdraví"
  coronation_good_health_modifier_desc: "Tato postava si při korunovaci našla chvilku, aby se pomodlila za dobré zdraví."
  coronation_wealth_modifier: "Modlitba za bohatství"

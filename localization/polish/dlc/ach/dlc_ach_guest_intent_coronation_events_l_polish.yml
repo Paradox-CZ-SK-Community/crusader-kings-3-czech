@@ -14,17 +14,17 @@
  guest_intent_coronation_events.0010.c: "Spojenectví by bylo nejvýhodnějším tahem."
  friend_coronation_offer_support: "[CHARACTER.GetShortUIName|U] [Select_CString(CHARACTER.IsFemale,'podpořila','podpořil')] [TARGET_CHARACTER.GetShortUIName] během [Select_CString(TARGET_CHARACTER.IsFemale,'její','jeho')] korunovace."
  friend_coronation_offer_support_corresponding: "[TARGET_CHARACTER.GetShortUIName|U] [Select_CString(TARGET_CHARACTER.IsFemale,'podpořila','podpořil')] [CHARACTER.GetShortUIName] během korunovace."
- create_alliance_host_tt: "Vy a [petition_sender.GetShortUIName] vytvoříte [alliance|E]"
- create_alliance_guest_tt: "Vy a [host.GetShortUIName] vytvoříte [alliance|E]"
+ create_alliance_host_tt: "Vy a [petition_sender.GetShortUIName] vytvoříte [Concept('alliance','aliance')|E]" # todo: CONCEPT CASE
+ create_alliance_guest_tt: "Vy a [host.GetShortUIName] vytvoříte [Concept('alliance','aliance')|E]" # todo: CONCEPT CASE
  guest_intent_coronation_events.0020.t: "Prosazování domény"
  guest_intent_coronation_events.0020.desc.collective: "Zjišťuji, že jsem ponořen do rozhovoru o [guest.Custom('MatchingConversationSubject_alone')], který [guest.GetTitledFirstName] stále nedovolí ukončit.\n\n„Ale počkej!“ [guest.GetSheHe] náhle přestane. „Zdá se, že náš [host.GetLadyLord] [host.GetTitleAsNameNoTooltip] míří také ke svým komnatám. To je naše šance, [ROOT.Char.GetFirstName]. Udělejme, ať [ROOT.Char.GetPrimaryTitle.GetNameNoTierNoTooltip] a [guest.GetPrimaryTitle.GetNameNoTier] vzkvétají.“"
  guest_intent_coronation_events.0020.desc.alone: "Nemohu si přestat myslet na [ROOT.Char.Custom('MatchingConversationSubject_alone')], když se vracím do svých komnat. Brzy si však uvědomím, že v těchto chodbách nejsem sám.\n\n[host.GetTitledFirstName] vypadá, že míří stejným směrem. To může být moje šance zajistit, aby [ROOT.Char.GetPrimaryTitle.GetNameNoTier] získalo zaslouženou pomoc."
  guest_intent_coronation_events.0020.a: "Musíme soustředit úsilí na rozvoj našich měst."
  guest_intent_coronation_events.0020.b: "Není vlády bez kontroly."
  guest_intent_coronation_events.0020.c: "Důvěra lidu je nejdůležitější."
- guest_intent_coronation_events_advocate_domain_development_tt: "Každý další přítomný [character|E] s #high Doménou zastánce#! [intent|E] zvýší [development_growth|E] ve svých držených [counties|E] o #P [EmptyScope.ScriptValue('major_development_progress_gain')|0]#!"
- guest_intent_coronation_events_advocate_domain_control_tt: "Každý další přítomný [character|E] s #high Doménou zástance#! [intent|E] zvýší [control|E] ve svých držených [counties|E] o #P +[EmptyScope.ScriptValue('major_county_control_gain')|0]#!"
- guest_intent_coronation_events_advocate_domain_county_opinion_tt: "Každý další přítomný [character|E] s #high Doménou zástance#! [intent|E] získá [GetModifier('coronation_advocate_domain_county_opinion_modifier').GetNameWithTooltip] ve svých držených [counties|E] na #V 10#! let"
+ guest_intent_coronation_events_advocate_domain_development_tt: "Každý další přítomný [Concept('character','postava')|E] s #high Doménou zastánce#! [Concept('intent','záměr')|E] zvýší [Concept('development_growth','růst rozvoje')|E] ve svých držených [Concept('counties','hrabstvích')|E] o #P [EmptyScope.ScriptValue('major_development_progress_gain')|0]#!" # todo: CONCEPT CASE
+ guest_intent_coronation_events_advocate_domain_control_tt: "Každý další přítomný [Concept('character','postava')|E] s #high Doménou zástance#! [Concept('intent','záměr')|E] zvýší [Concept('control','kontrola')|E] ve svých držených [Concept('counties','hrabstvích')|E] o #P +[EmptyScope.ScriptValue('major_county_control_gain')|0]#!" # todo: CONCEPT CASE
+ guest_intent_coronation_events_advocate_domain_county_opinion_tt: "Každý další přítomný [Concept('character','postava')|E] s #high Doménou zástance#! [Concept('intent','záměr')|E] získá [GetModifier('coronation_advocate_domain_county_opinion_modifier').GetNameWithTooltip] ve svých držených [Concept('counties','hrabstvích')|E] na #V 10#! let" # todo: CONCEPT CASE
  coronation_advocate_domain_county_opinion_modifier: "Prosazované panství"
  coronation_advocate_domain_county_opinion_modifier_desc: "Tato postava hájila své panství a blaho svého lidu při korunovaci."
  guest_intent_coronation_events.0030.t: "Je to mé právo"
@@ -49,7 +49,7 @@
  guest_intent_coronation_events.0050.b: "[Select_CString(ROOT.Char.IsFemale,'Měla','Měl')] bych se soustředit na přesvědčování ostatních hostů."
  guest_intent_coronation_events.0050.c: "Je čas ponížit našeho hostitele."
  guest_intent_coronation_events.0050.d: "Nebudu se otevřeně postavit proti [host.GetFirstNameNoTooltip]."
- guest_intent_coronation_events.0050.d_tt: "Další [ruler|E] s [THIS.Char.GetInvolvedActivityIntent.GetName] [intent|E] ohrozí [host.GetShortUIName] snížením #N#! [coronation_magnificence|E]"
+ guest_intent_coronation_events.0050.d_tt: "Další [Concept('ruler','vládce')|E] s [THIS.Char.GetInvolvedActivityIntent.GetName] [Concept('intent','záměrem')|E] ohrozí [host.GetShortUIName] snížením #N#! [Concept('coronation_magnificence','pompézností')|E]" # todo: CONCEPT CASE
  guest_intent_coronation_events.0050.d_tt_acceptance: "#alert_trial @alert_icon! [host.GetShortUIName] bude méně ochotný ustoupit#!"
  guest_intent_coronation_events.0050.e: "$guest_intent_coronation_events.0050.d$"
  guest_intent_coronation_events.0050.e_tt: "#alert_trial @alert_icon! Nebudete mít další příležitost narušit [host.GetShortUIName]#!"
@@ -98,19 +98,19 @@
  guest_intent_coronation_events.0100.a.tt: "[host.GetShortUIName] přijímá vaši žádost"
  guest_intent_coronation_events.0100.b.tt: "[host.GetShortUIName] odmítá vaši žádost"
  guest_intent_coronation_events.0100.critical_fail.tt: "@warning_icon! #X Toto ukončí aktivitu#!"
- guest_intent_coronation_events.0100.b.rejected_detractor_tt: "Všichni ostatní zúčastnění [coronation_detractors|E] ztratí #N 30#! [opinion|E] vůči [host.GetShortUIName] #weak (Nenávist)#!"
- guest_intent_coronation_events.0100.b.rejected_tt: "Všichni ostatní žádající hosté ztratí #N 10#! [opinion|E] vůči [host.GetShortUIName] na #high 20 let#! #weak (Odmítnuto)#!"
+ guest_intent_coronation_events.0100.b.rejected_detractor_tt: "Všichni ostatní zúčastnění [Concept('coronation_detractors','odpůrci')|E] ztratí #N 30#! [Concept('opinion','mínění')|E] vůči [host.GetShortUIName] #weak (Nenávist)#!" # todo: CONCEPT CASE
+ guest_intent_coronation_events.0100.b.rejected_tt: "Všichni ostatní žádající hosté ztratí #N 10#! [Concept('opinion','mínění')|E] vůči [host.GetShortUIName] na #high 20 let#! #weak (Odmítnuto)#!" # todo: CONCEPT CASE
  guest_intent_coronation_events.0100.a.piety_tt: "Všichni ostatní žádající hosté získají [piety_i]#P [THIS.ScriptValue('major_piety_gain')]#!"
  guest_intent_coronation_events.0100.aa: "#EMP Plivni jim k nohám.#!"
- every_offer_support_guest_opinion: "Každý host s $coronation_offer_support$ [intent|E]:\nZíská #P 50#! [opinion|E] od [host.GetShortUIName]"
- every_seize_advantages_guest_prestige: "Každý host s $coronation_seize_advantages$ [intent|E]:\nZíská [prestige_i]#P [EmptyScope.ScriptValue('medium_prestige_gain')|0]#! [prestige|E]"
- guest_intent_coronation_events_petition_sender_disrupt_tt: "@alert_icon!#alert_trial [host.GetShortUIName] rozhodne, zda přijme vaši urážku#!\n$EFFECT_LIST_BULLET$#low #EMP Toto je významný výsledek vaší [THIS.Char.GetInvolvedActivityIntent.GetName] [intent|E]#!#!"
- guest_intent_coronation_events_petition_sender_tt: "@alert_icon!#alert_trial [host.GetShortUIName] rozhodne, zda přijme vaši žádost#!\n$EFFECT_LIST_BULLET$#low #EMP Toto je významný výsledek vaší [THIS.Char.GetInvolvedActivityIntent.GetName] [intent|E]#!#!"
- coronation_medium_magnificence_increase_tt: "Tato volba #EMP mírně#! #P zvýší#! vaše [coronation_magnificence|E]"
- coronation_minor_magnificence_increase_tt: "Tato volba #EMP lehce#! #P zvýší#! vaše [coronation_magnificence|E]"
- coronation_disrupt_loyalists_host_rivalry_tt: "Buď se [host.GetShortUIName] stane vaším [rival|E], nebo postoupíte směrem k [rivalry|E]"
+ every_offer_support_guest_opinion: "Každý host s $coronation_offer_support$ [Concept('intent','záměr')|E]:\nZíská #P 50#! [Concept('opinion','mínění')|E] od [host.GetShortUIName]" # todo: CONCEPT CASE
+ every_seize_advantages_guest_prestige: "Každý host s $coronation_seize_advantages$ [Concept('intent','záměrem')|E]:\nZíská [prestige_i]#P [EmptyScope.ScriptValue('medium_prestige_gain')|0]#! [Concept('prestige','prestiž')|E]" # todo: CONCEPT CASE
+ guest_intent_coronation_events_petition_sender_disrupt_tt: "@alert_icon!#alert_trial [host.GetShortUIName] rozhodne, zda přijme vaši urážku#!\n$EFFECT_LIST_BULLET$#low #EMP Toto je významný výsledek vaší [THIS.Char.GetInvolvedActivityIntent.GetName] [Concept('intent','záměru')|E]#!#!" # todo: CONCEPT CASE
+ guest_intent_coronation_events_petition_sender_tt: "@alert_icon!#alert_trial [host.GetShortUIName] rozhodne, zda přijme vaši žádost#!\n$EFFECT_LIST_BULLET$#low #EMP Toto je významný výsledek vaší [THIS.Char.GetInvolvedActivityIntent.GetName] [Concept('intent','záměru')|E]#!#!" # todo: CONCEPT CASE
+ coronation_medium_magnificence_increase_tt: "Tato volba #EMP mírně#! #P zvýší#! vaše [Concept('coronation_magnificence','pompéznost')|E]" # todo: CONCEPT CASE
+ coronation_minor_magnificence_increase_tt: "Tato volba #EMP lehce#! #P zvýší#! vaše [Concept('coronation_magnificence','pompéznost')|E]" # todo: CONCEPT CASE
+ coronation_disrupt_loyalists_host_rivalry_tt: "Buď se [host.GetShortUIName] stane vaším [Concept('rival','sokem')|E], nebo postoupíte směrem k [Concept('rivalry','sokovství')|E]" # todo: CONCEPT CASE
  coronation_factions_modifier_tt: "Každý člen získá [GetModifier('coronation_faction_bolstered_modifier').GetNameWithTooltip] na #high 5 let#!"
  coronation_faction_bolstered_modifier: "Tvář rebelů"
  coronation_faction_bolstered_modifier_desc: "Poté, co zasel semínka nesvárů na korunovaci svého pána, se této postavě začali sbíhat k praporu nespokojení bojovníci."
- coronation_guest_intent_disrupt_happened_tt: "#weak #EMP K tomu došlo kvůli silné přítomnosti [coronation_detractors|E] na vaší [coronation|E]#!#!"
+ coronation_guest_intent_disrupt_happened_tt: "#weak #EMP K tomu došlo kvůli silné přítomnosti [Concept('coronation_detractors','odpůrci')|E] na vaší [Concept('coronation','korunovaci')|E]#!#!" # todo: CONCEPT CASE
  coronation_guest_intent_disrupt_happened_sender_tt: "#weak #EMP K tomu došlo kvůli mocnému vlivu [petition_sender.GetTitledFirstName]#!#!"

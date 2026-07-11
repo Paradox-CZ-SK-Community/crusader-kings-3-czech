@@ -1,9 +1,9 @@
 ﻿l_polish:
- scheme_odds.misc_is_herder: "[target.GetFirstName] je [herder|E]"
- scheme_agent_aptitude.is_herder: "Je [herder|E]"
+ scheme_odds.misc_is_herder: "[target.GetFirstName] je [Concept('herder','pastevec')|E]" # todo: CONCEPT CASE
+ scheme_agent_aptitude.is_herder: "Je [Concept('herder','pastevec')|E]" # todo: CONCEPT CASE
  SCHEME_STEAL_HERD_IS_HERDER: "$scheme_odds.misc_is_herder$: $VALUE|=+0$"
  SCHEME_STEAL_HERD_GALLOWSBAIT: "[GetTrait('gallowsbait').GetName( GetNullCharacter )]: $VALUE|=+0$"
- SCHEME_STEAL_HERD_AMOUNT: "[herd|E] množství: $VALUE|=+0$"
+ SCHEME_STEAL_HERD_AMOUNT: "[Concept('herd','Stádo')|E] množství: $VALUE|=+0$" # todo: CONCEPT CASE
  HAS_ATTEMPTED_TO_STEAL_HERD_BEFORE: "[target.GetShortUIName|U] ví, že jste se dříve pokusili ukrást [Select_CString(target.IsFemale,'její','jeho')] stádo: $VALUE|+0=$"
  stole_my_herd: "Ukradeno mé stádo"
  stole_my_herd_crime: "Ukradeno mé stádo"
@@ -13,41 +13,41 @@
  steal_herd: "Ukrást stádo"
  steal_herd_interaction_notification: "Ukrást stádo"
  steal_herd_action: "Ukrást stádo"
- steal_herd_desc: "Pokusím se ukrást [herd|E] od [SCHEME.GetTargetCharacter.GetShortUIName]"
- steal_herd_desc_general: "V [scheme|E] 'Ukrást stádo' se pokoušíte ukrást [herd|E] jinému vládci"
+ steal_herd_desc: "Pokusím se ukrást [Concept('herd','stádo')|E] od [SCHEME.GetTargetCharacter.GetShortUIName]" # todo: CONCEPT CASE
+ steal_herd_desc_general: "V [Concept('scheme','intrice')|E] 'Ukrást stádo' se pokoušíte ukrást [Concept('herd','stádo')|E] jinému vládci" # todo: CONCEPT CASE
  steal_herd_invalidated_title: "@scheme_icon! Plán 'Ukrást stádo' končí"
  steal_herd_invalidated_war: "Kvůli vaší válce už nemůžete $steal_herd_action$ [target.GetShortUIName]"
  steal_herd_invalidated_war_target: "Kvůli [Select_CString(target.IsFemale,'její','jeho')] válce už nemůžete $steal_herd_action$ [target.GetShortUIName]"
  steal_herd_invalidated_no_herd: "Protože [target.GetShortUIName] již nemá žádné stádo, nemůžete už $steal_herd_action$ [target.GetShortUIName]"
  steal_herd_interaction: "$steal_herd$"
- scheme_interaction_tt_steal_herd_approved: "Pokusit se ukrást [herd|E] od [recipient.GetShortUIName]"
+ scheme_interaction_tt_steal_herd_approved: "Pokusit se ukrást [Concept('herd','stádo')|E] od [recipient.GetShortUIName]" # todo: CONCEPT CASE
  schemes.t.herd_amount: "Množství ke krádeži"
- steal_herd_low: "#P malé#! množství [herd|E]"
- steal_herd_interaction.tt.low: "Pokusíte se propašovat pár koní z tábora [recipient.GetShortUINamePossessive]\n\n[scheme|E] Šance na úspěch: #p +10%#!"
- steal_herd_normal: "#color_yellow střední#! množství [herd|E]"
- steal_herd_interaction.tt.normal: "Snažíte se získat značnou část stáda [recipient.GetShortUINamePossessive]\n\n[scheme|E] Šance na úspěch #bold nebude#! ovlivněna"
- steal_herd_high: "#n velké#! množství [herd|E]"
- steal_herd_interaction.tt.high: "Pokusíte se ukrást značnou část [recipient.GetShortUINamePossessive] [herd|E]\n\n[scheme|E] Šance na úspěch: #n -10%#!"
- steal_herd_blocked_target_none: "[TARGET_CHARACTER.GetName] nemá žádné [herd|E]"
- steal_herd_interaction_tt.warning: "#warning @warning_icon! Úspěšné ukradení vás dostane na nebo nad kapacitu vašich [herd|E]#!"
- steal_herd_vassal_tt: "Každý [powerful_vassal|E] [target.GetShortUIName]:\n$EFFECT_LIST_BULLET$Ztrácí #n 15#! [opinion|E] vůči #V vám#! #weak (-0.60/rok) (Ukradl stádo mého pána)#!"
+ steal_herd_low: "#P malé#! množství [Concept('herd','stádo')|E]" # todo: CONCEPT CASE
+ steal_herd_interaction.tt.low: "Pokusíte se propašovat pár koní z tábora [recipient.GetShortUINamePossessive]\n\n[Concept('scheme','Intrika')|E] Šance na úspěch: #p +10%#!" # todo: CONCEPT CASE
+ steal_herd_normal: "#color_yellow střední#! množství [Concept('herd','stádo')|E]" # todo: CONCEPT CASE
+ steal_herd_interaction.tt.normal: "Snažíte se získat značnou část stáda [recipient.GetShortUINamePossessive]\n\n[Concept('scheme','Intrika')|E] Šance na úspěch #bold nebude#! ovlivněna" # todo: CONCEPT CASE
+ steal_herd_high: "#n velké#! množství [Concept('herd','stádo')|E]" # todo: CONCEPT CASE
+ steal_herd_interaction.tt.high: "Pokusíte se ukrást značnou část [recipient.GetShortUINamePossessive] [Concept('herd','stáda')|E]\n\n[Concept('scheme','Intrika')|E] Šance na úspěch: #n -10%#!" # todo: CONCEPT CASE
+ steal_herd_blocked_target_none: "[TARGET_CHARACTER.GetName] nemá žádné [Concept('herd','stádo')|E]" # todo: CONCEPT CASE
+ steal_herd_interaction_tt.warning: "#warning @warning_icon! Úspěšné ukradení vás dostane na nebo nad kapacitu vašich [Concept('herd','stáda')|E]#!" # todo: CONCEPT CASE
+ steal_herd_vassal_tt: "Každý [Concept('powerful_vassal','mocný vazal')|E] [target.GetShortUIName]:\n$EFFECT_LIST_BULLET$Ztrácí #n 15#! [Concept('opinion','mínění')|E] vůči #V vám#! #weak (-0.60/rok) (Ukradl stádo mého pána)#!" # todo: CONCEPT CASE
  steal_herd_event_title: "Ukrást stádo:"
  steal_herd_outcome.1001.t: "$steal_herd_event_title$ Úspěch!"
  steal_herd_outcome.1001.desc: "Můj [ROOT.Char.Custom2('RelationToMeShort', SCOPE.sC('courtier'))], [courtier.GetName], hrdě vstupuje do tábora. Za [courtier.GetHerHim] kráčí neznámý pastýř, který přivádí stádo ke mně.\n\n„Ze tábora [target.GetTitledFirstName]!“ zvolá [courtier.GetSheHe|U]. Když přesměruji pastýřovu péči o mé nové zvířata, nemohu si odpustit zlomyslný úsměv. Mé stádo roste na síle, a téměř mě to nic nestojí."
  steal_herd_outcome.1001.a: "Jsem vděčný za tvou 'štědrost', [target.GetFirstNameNoTooltip]!"
  steal_herd_outcome.1003.desc: "[courtier.GetSheHe|U] rozebírá detaily naší krádeže, včetně našeho mistrovství nad obranou [target.GetFirstNamePossessiveNoTooltip]. Protože jsme do tábora [target.GetFirstNamePossessiveNoTooltip] pronikli s takovou lehkostí, zajímá mě, co dalšího mohu vzít z [Select_CString(target.IsFemale,'jejího','jeho')] dosahu..."
  steal_herd_outcome.1003.a: "[courtier.GetFirstNameNoTooltip], můžeš to ještě jednou vysvětlit?"
- steal_herd_outcome.1003.a_desc: "Snažíte se ukrást více z [target.GetFirstNamePossessiveNoTooltip] [herd|E]"
+ steal_herd_outcome.1003.a_desc: "Snažíte se ukrást více z [target.GetFirstNamePossessiveNoTooltip] [Concept('herd','stáda')|E]" # todo: CONCEPT CASE
  steal_herd_outcome.1003.win: "Vaše krádeže pokračují"
  steal_herd_outcome.1003.lose: "Nepodaří se vám vzít víc"
  steal_herd_outcome.1003.b: "Prohledal bych [Select_CString(target.IsFemale,'její','jeho')] pokladnice."
  steal_herd_outcome.1003.b_desc: "Snažíte se ukrást zlato od [target.GetFirstNameNoTooltip]"
  steal_herd_outcome.1003.c: "[target.GetPrimarySpouse.GetFirstName] zatím také patří [target.GetFirstNameNoTooltip]."
- steal_herd_outcome.1003.c_tt: "Zahajuji [GetScheme('seduce').GetTypeName] [scheme|E] proti [target.GetPrimarySpouse.GetFirstName] s #p zvýšenou#! #V šancí na úspěch#!"
+ steal_herd_outcome.1003.c_tt: "Zahajuji [GetScheme('seduce').GetTypeName] [Concept('scheme','intrika')|E] proti [target.GetPrimarySpouse.GetFirstName] s #p zvýšenou#! #V šancí na úspěch#!" # todo: CONCEPT CASE
  mpo_steal_herd_seduce_modifier: "Dotek pastýře"
  mpo_steal_herd_murder_modifier: "Agenti v pastvinách"
  steal_herd_outcome.1003.d: "[Select_CString(target.IsFemale,'Její','Jeho')] život, možná?"
- steal_herd_outcome.1003.d_tt: "Zahajuji [GetScheme('murder').GetTypeName] [scheme|E] proti [target.GetFirstName] s #p zvýšenou#! #V šancí na úspěch#!"
+ steal_herd_outcome.1003.d_tt: "Zahajuji [GetScheme('murder').GetTypeName] [Concept('scheme','intrika')|E] proti [target.GetFirstName] s #p zvýšenou#! #V šancí na úspěch#!" # todo: CONCEPT CASE
  steal_herd_outcome.1003.e: "Prozatím jsem vzal dost."
  steal_herd_outcome.1002.t: "$steal_herd_event_title$ Ukradené stádo!"
  steal_herd_outcome.1002.desc: "[spymaster.GetName] přichází se zlou zprávou. „[ROOT.Char.GetFirstName], některá zvířata, která jsme měli na nádvoří, se ztratila.“\n\n[spymaster.GetSheHe|U] si odkašle, „Po důkladném vyšetřování se zdá, že [owner.GetName] poslal své pomocníky, aby stádo 'vyzvedli', a přesvědčil pastýře, že to bylo na váš rozkaz.“"

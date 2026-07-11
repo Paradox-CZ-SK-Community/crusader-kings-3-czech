@@ -7,8 +7,8 @@
  ep3_laamps.0001.desc: "Vyhnali mě do divočiny, zatímco [winner.GetTitledFirstName] a [Select_CString(winner.IsFemale,'její','jeho')] vojáci slaví své vítězství!\n\nPřišel jsem o [lost_primary_title.GetAdjectiveNoTooltip] trůn... a ten [winner.Custom('PersonalityGetNegativeTraitDesc')] [winner.Custom2('InsultNoun', ROOT.Char)] může právě v tuto chvíli přijímat insignie #EMP my#! [lost_primary_title.GetTierAsNameNoTooltip]!"
  ep3_laamps.0001.a: "Jednoho dne #EMP si je vrátím#!"
  ep3_laamps.0001.b: "Všechno připadne [alt_1.GetFirstNameNoTooltipRegnal]."
- target_character_government: "[government|E]: [TARGET_CHARACTER.GetGovernment.GetName]"
- target_character_independent: "[independent_ruler|E]"
+ target_character_government: "[Concept('government','Vláda')|E]: [TARGET_CHARACTER.GetGovernment.GetName]" # todo: CONCEPT CASE
+ target_character_independent: "[Concept('independent_ruler','Nezávislý vládce')|E]" # todo: CONCEPT CASE
  target_character_liege: "[Select_CString(TARGET_CHARACTER.IsIndependentRuler, 'Nezávislý', 'Vazal ')][Select_CString(TARGET_CHARACTER.IsIndependentRuler, „“, TARGET_CHARACTER.GetLiege.GetName)]"
  ep3_laamps.0001.c: "[alt_2.GetFirstNameNoTooltipRegnal] musí vykovat budoucnost našeho rodu."
  ep3_laamps.0001.d: "Nyní se obracíme na [alt_3.GetFirstNameNoTooltipRegnal]."
@@ -17,8 +17,8 @@
  ep3_laamps.0003.desc: "Ty a tvá ohavná družina možná vytrhli mé [lost_primary_title.GetTierAsNameNoTooltip|l], ale věz: ještě jsem neskončil a tak snadno se nevzdám [lost_primary_title.GetBaseNameNoTierNoTooltip]!"
  ep3_laamps.0003.a: "Ha! Ten blázen má ducha!"
  ep3_laamps.0004.desc: "Ti zatracení zrádci mi vytrhli mé [conquered.GetTierAsNameNoTooltip|l], vyhnali mě do divočiny, zatímco [winner.GetTitledFirstName] a [Select_CString(winner.IsFemale,'její','jeho')] vojáci oslavují [heir.GetTitledFirstName] na mém místě!\n\nDovolil jsem odpadlíkům a lhářům, aby mi vzali [conquered.GetAdjectiveNoTooltip] trůn... skutečně jsme jen hračkami [ROOT.Char.GetFaith.FateGodName]..."
- lose_all_prestige_tt: "Zůstává vám pouze až do #V 100#! [prestige_i][prestige|E]"
- lose_all_prestige_level_tt: "Ztratíte #value 3#! [prestige_levels|E]"
+ lose_all_prestige_tt: "Zůstává vám pouze až do #V 100#! [prestige_i][Concept('prestige','prestiže')|E]" # todo: CONCEPT CASE
+ lose_all_prestige_level_tt: "Ztratíte #value 3#! [Concept('prestige_levels','úrovně slávy')|E]" # todo: CONCEPT CASE
  ep3_laamps.0010.t: "Menší [potential_laamp.Custom('GetDaughterSon')|U] z [ROOT.Char.GetPrimaryTitle.GetBaseNameNoTierNoTooltip]"
  ep3_laamps.0010.single: "Jako můj [ROOT.Char.Custom2('RelationToMeShort', SCOPE.sC('potential_laamp'))]"
  ep3_laamps.0010.multi: "Jako moji sourozenci"
@@ -121,7 +121,7 @@
  ep3_laamps.0800.independent: "\n\nJsem předurčen převzít žezlo a usednout v [new_capital.GetCountyData.GetCapital.GetBaronyNameExplicitlyNoTooltip], jako svrchovaný [ROOT.Char.GetLadyLord] ve vlastním právu?"
  ep3_laamps.0800.desc: "\n\nŽivot na cestě je jistě plný zkoušek a nebezpečí, ale jaká svoboda! Nemohu popřít jeho přitažlivost, osvobozený od mnoha povinností vlády.\n\n"
  ep3_laamps.0800.a: "Ano, je čas opustit můj tábor..."
- ep3_laamps.0800.a.tt: "#mixed_value #BER [THIS.Char.GetShortUIName|U] se stane [landed|E] [ruler|E]#!#!"
+ ep3_laamps.0800.a.tt: "#mixed_value #BER [THIS.Char.GetShortUIName|U] se stane [Concept('landed','zeměpán')|E] [Concept('ruler','vládce')|E]#!#!" # todo: CONCEPT CASE
  ep3_laamps.0800.b: "Cesta mě volá: nechť můj [ROOT.Char.Custom2('RelationToMeShort', SCOPE.sC('alt_1'))], [alt_1.GetFirstNameNoTooltip], si ho vezme!"
  ep3_laamps.0800.b.claimant: "Cesta mě volá: nechť [alt_1.GetFirstNameNoTooltip] přijme svůj nárok!"
  ep3_laamps.0800.c: "Svěřím [new_title.GetBaseNameNoTierNoTooltip] mému [ROOT.Char.Custom2('RelationToMeShort', SCOPE.sC('alt_2'))], [alt_2.GetFirstNameNoTooltip]."
@@ -130,33 +130,33 @@
  ep3_laamps.0800.d.claimant: "Moje podpora jde na nárok [alt_3.GetFirstNamePossessiveNoTooltip]!"
  ep3_laamps.0800.e: "Zřeknu se těchto zemí, ať je má někdo jiný!"
  ep3_laamps.0800.e.liege: "Zřeknu se těchto zemí, ať je má [new_liege.GetTitleAsNameNoTooltip]!"
- ep3_laamps.0800.claim.tt: "@warning_icon! #N Ztratíte všechny [claims|E] k zřeknutým [titles|E]#!"
+ ep3_laamps.0800.claim.tt: "@warning_icon! #N Ztratíte všechny [Concept('claims','nároky')|E] k zřeknutým [Concept('titles','titulům')|E]#!" # todo: CONCEPT CASE
  renounced_land_to_me_opinion: "Zřeknuté tituly mně"
  renounced_land_to_weaker_claim_opinion: "Zřeknuté tituly slabšímu nárokovateli"
  renounced_land_to_other_opinion: "Zřeknuté tituly někomu jinému"
  renounced_land_outside_family_opinion: "Zřeknutí titulů mimo rodinu"
  adventurer_titles_renounced_title: "Zřeknuté tituly"
- adventurer_titles_renounced_to_me_desc: "[adventurer.GetFirstName] se zřekl [adventurer.GetHerHis] nových [titles|E], aby zůstal [adventurer|E]"
- adventurer_titles_renounced_by_me_desc: "Zřekl jsem se svých nových [titles|E] ve prospěch [beneficiary.GetTitledFirstName]"
+ adventurer_titles_renounced_to_me_desc: "[adventurer.GetFirstName] se zřekl [adventurer.GetHerHis] nových [Concept('titles','titulů')|E], aby zůstal [Concept('adventurer','dobrodruh')|E]" # todo: CONCEPT CASE
+ adventurer_titles_renounced_by_me_desc: "Zřekl jsem se svých nových [Concept('titles','tituly')|E] ve prospěch [beneficiary.GetTitledFirstName]" # todo: CONCEPT CASE
  ep3_laamps.1001.t: "Cesty, kterými kráčíme"
  ep3_laamps.1001.desc.intro: "Cesta před námi se táhne dál a dál, osamělá klikatá nit splétající se k vzdálenému obzoru.\n\nMůj tábor je... tichý, jen pár roztroušených stanů a nákladní zvířata zívající ve vánku. Cizinci a povaleči vstávají s dnem a neochotně se připravují na své ranní povinnosti.\n\nVětšina z nich jsou všelijaké plevy, které se mihnou ve skupině na cestě při každém novém sídle."
  ep3_laamps.1001.desc.blind: "Jen pár hlasů je takových, které poznávám, alespoň víc než letmo."
  ep3_laamps.1001.desc.at_least_one_working_eye: "Jen pár tváří upoutá mou pozornost jako těch, které poznávám, alespoň víc než povrchně."
  ep3_laamps.1001.a: "Naštěstí ti, které [Select_CString(ROOT.Char.IsFemale,'známa','znám')], jsou výřeční společníci."
- ep3_laamps.1001.a.tt: "Začínáte se dvěma [followers|E] zdatnými v [diplomacy|E]"
+ ep3_laamps.1001.a.tt: "Začínáte se dvěma [Concept('followers','družiníkům')|E] zdatnými v [Concept('diplomacy','diplomacii')|E]" # todo: CONCEPT CASE
  ep3_laamps.1001.b: "Jednoho dne z toho bude armáda."
- ep3_laamps.1001.b.tt: "Začínáte se dvěma [followers|E] zdatnými v [martial|E]"
+ ep3_laamps.1001.b.tt: "Začínáte se dvěma [Concept('followers','družiníkům')|E] zdatnými v [Concept('martial','válečnictví')|E]" # todo: CONCEPT CASE
  ep3_laamps.1001.c: "S těmito lidmi vybuduji impérium."
- ep3_laamps.1001.c.tt: "Začínáte se dvěma [followers|E] zdatnými v [stewardship|E]"
+ ep3_laamps.1001.c.tt: "Začínáte se dvěma [Concept('followers','družiníkům')|E] zdatnými v [Concept('stewardship','správcovství')|E]" # todo: CONCEPT CASE
  ep3_laamps.1001.d: "Hm, a dokonce žádné krádeže v noci."
- ep3_laamps.1001.d.tt: "Začínáte se dvěma [followers|E] zdatnými v [intrigue|E]"
+ ep3_laamps.1001.d.tt: "Začínáte se dvěma [Concept('followers','družiníkům')|E] zdatnými v [Concept('intrigue','pletichářství')|E]" # todo: CONCEPT CASE
  ep3_laamps.1001.e: "Díky [ROOT.Char.GetFaith.KnowledgeGodName] máme alespoň nějaké intelektuály!"
- ep3_laamps.1001.e.tt: "Začínáte se dvěma [followers|E] zdatnými v [learning|E]"
+ ep3_laamps.1001.e.tt: "Začínáte se dvěma [Concept('followers','družiníkům')|E] zdatnými v [Concept('learning','učenosti')|E]" # todo: CONCEPT CASE
  ep3_laamps.1001.f: "Alespoň mám pár dobrých rváčů."
- ep3_laamps.1001.f.tt: "Začínáte se dvěma [followers|E] zdatnými v [prowess|E]"
+ ep3_laamps.1001.f.tt: "Začínáte se dvěma [Concept('followers','družiníkům')|E] zdatnými v [Concept('prowess','udatnosti')|E]" # todo: CONCEPT CASE
  ep3_laamps.1001.g: "Dosud jsem si nepřivedl žádné hodné následovníky."
- ep3_laamps.1001.g.tt.followers: "Začínáte bez vygenerovaných [followers|E] — pouze s jakoukoli [family|E] a [friends|E], které již máte"
- ep3_laamps.1001.g.tt.difficulty: "@alert_icon! #alert_trial Můžete zjistit, že [task_contracts|E] jsou obtížné, nebo nemožné, dokud nezískáte [followers|E]#!"
+ ep3_laamps.1001.g.tt.followers: "Začínáte bez vygenerovaných [Concept('followers','družiníků')|E] — pouze s jakoukoli [Concept('family','rodinu')|E] a [Concept('friends','přátelé')|E], které již máte" # todo: CONCEPT CASE
+ ep3_laamps.1001.g.tt.difficulty: "@alert_icon! #alert_trial Můžete zjistit, že [Concept('task_contracts','zakázky')|E] jsou obtížné, nebo nemožné, dokud nezískáte [Concept('followers','družiníci')|E]#!" # todo: CONCEPT CASE
  ep3_laamps.1011.t: "Přísaháno mečem"
  ep3_laamps.1011.desc.four_plus_titles: "„... a přísahám, že navždy budu hájit vaše práva na [title_1.GetNameNoTier], na [title_2.GetNameNoTier], na [title_3.GetNameNoTier] a na jakékoli a každé panství, které by vám právem náleželo, můj pane“, "
  ep3_laamps.1011.desc.three_titles: "„...a přísahám navždy hájit tvá práva na [title_1.GetNameNoTier], na [title_2.GetNameNoTier] a na [title_3.GetNameNoTier], můj pane“, "
@@ -196,12 +196,12 @@
  ep3_laamps.5005.c: "„Musím vás požádat, abyste odešel.“ "
  ep3_laamps.5005.c.tt: "Jednoduše tu není dost místa: nikoho z mých stoupenců bych nikdy nenuťil, aby se vzdal postele pro cizince!"
  ep3_laamps.5005.d: "„Zmizni! Takové jako ty tady nechceme!“"
- every_non_faith_follower: "Každý ne-[priest.GetFaith.GetAdjective] [follower|E]"
+ every_non_faith_follower: "Každý ne-[priest.GetFaith.GetAdjective] [Concept('follower','družiník')|E]" # todo: CONCEPT CASE
  ep3_laamps.5010.t: "Bolesti a neduhy"
  ep3_laamps.5010.desc: "#EMP Au!#!\n\nZjišťuji, že teď večer u táboráku při usedání vydávám takové zvuky. Staří vždycky říkají, že se to stává, když zestárneš, ale mně je jen [ROOT.Char.GetAge]...\n\nNe, to je daň za drsný život. Vidím, jak se to podepisuje i na ostatních: [follower.GetName] sebou trochu škubne, když se vedle mě skácí."
  ep3_laamps.5010.a: "Ta krčma, kterou jsme minuli, měla mnoho volných postelí..."
  ep3_laamps.5010.b: "Mé ubohé záda vyžadují více pohodlí."
- ep3_laamps.5010.b.tt: "Vylepšete své $camp_main_01_domicile_building$ [building|E] se slevou"
+ ep3_laamps.5010.b.tt: "Vylepšete své $camp_main_01_domicile_building$ [Concept('building','budova')|E] se slevou" # todo: CONCEPT CASE
  ep3_laamps.5010.c: "Musíme pokračovat."
  ep3_laamps.5010.c.success: "Tělo si zvykne"
  ep3_laamps.5010.c.failure: "Stále trpíte"
@@ -230,7 +230,7 @@
  ep3_laamps.5025.a: "Já #EMP musím#! si v budoucnu nárokovat nějaká území."
  ep3_laamps.5025.b: "Tento život si docela užívám."
  ep3_laamps.5025.b.flavor: "Tak si na to budu muset zvyknout!"
- ep3_laamps.5025.b.tt: "Přidá #value 2#! nové [task_contracts|E]"
+ ep3_laamps.5025.b.tt: "Přidá #value 2#! nové [Concept('task_contracts','zakázky')|E]" # todo: CONCEPT CASE
  ep3_laamps.5025.c: "Nejlépe si nechat otevřené možnosti."
  ep3_laamps.5025.c.flavor: "...a taky je nejlepší zásobit se na to, co přijde."
  ep3_laamps.5025.c.toast: "Naučíte se hodnotu přizpůsobivosti"
@@ -238,7 +238,7 @@
  ep3_laamps.5030.t: "Hospody a potíže"
  ep3_laamps.5030.desc: "Když se štrádujeme po cestě, vynoří se budova. Zaskočený nápis venku hlásá „[ROOT.Char.Custom('GetPubName')] - Hostinec“.\n\n„U nás dnes noc nepočítejte. Sotva máme místo pro stávající ubytované, natož pro někoho dalšího.“ Uvnitř hostinský odmítavě potřásá [Select_CString(innkeeper.IsFemale,'její','jeho')] hlavou. „A #EMP rozhodně#! ne pro takové jako vy!“\n\n#EMP Ošuntělci?!#!"
  ep3_laamps.5030.a: "Ach, nevadí. Dejme si jen něco k pití."
- ep3_laamps.5030.a.tt: "Tato volba je pro vás dostupná díky vysokému [dynasty_prestige|E]\n"
+ ep3_laamps.5030.a.tt: "Tato volba je pro vás dostupná díky vysokému [Concept('dynasty_prestige','věhlasu')|E]\n" # todo: CONCEPT CASE
  ep3_laamps.5030.b: "Nejsem žebrák. Jsem [ROOT.Char.GetFirstNameNoTooltip] z rodu [ROOT.Char.GetHouse.GetNameNoTooltip]."
  ep3_laamps.5030.b.tt: "„A #EMP požaduji#! pohostinnost!“„"
  ep3_laamps.5030.c: "Obávám se, že nutně potřebuji ubytování."
@@ -273,8 +273,8 @@
  ep3_laamps.5040.a.failure.tt: "Nic nenajdete"
  ep3_laamps.5040.b: "Raději zůstat v bezpečí a koupit zásoby."
  ep3_laamps.5040.c: "Možná by se někdo z nich k nám přidal?"
- ep3_laamps.5040.c.critsuccess.tt: "Dva [followers|E] se přidají"
- ep3_laamps.5040.c.success.tt: "Jeden [follower|E] se přidá"
+ ep3_laamps.5040.c.critsuccess.tt: "Dva [Concept('followers','družiníci')|E] se přidají" # todo: CONCEPT CASE
+ ep3_laamps.5040.c.success.tt: "Jeden [Concept('follower','družiník')|E] se přidá" # todo: CONCEPT CASE
  ep3_laamps.5040.c.failure.tt: "Nikdo se nepřidá"
  ep3_laamps.5040.c.critsuccess: "Dva se chopí vaší nabídky"
  ep3_laamps.5040.c.success: "Někdo se rozhodne přidat k vám"
@@ -282,7 +282,7 @@
  ep3_laamps.5045.t: "Kuloáry moci"
  ep3_laamps.5045.desc: "Jídlo v sídle [local_lord.GetFullNamePossessive] v [location.GetName] je samozřejmě vynikající. Vzdálené od obvyklé drsné stravy, na kterou jsem tak zvyklý.\n\n„Jsem velmi rád, že jste [Select_CString(ROOT.Char.IsFemale,'mohla','mohl')] přijít na mé svolání,“ říká [local_lord.GetFirstNameNoTooltip], ukazujíc mým směrem. „Rád bych zjistil, zda si nemůžeme nějak pomoci.“\n\n„Koneckonců jsou chvíle, kdy se [local_lord.GetWomanMan] mého postavení nemůže tak úplně #EMP zašpinit v bahně#!, jak to některé práce vyžadují...“"
  ep3_laamps.5045.a: "Víte, už mám docela dost toulavého života..."
- ep3_laamps.5045.a.tt: "Toto je pro vás dostupné, protože máte [GetModifier( 'ep3_lust_for_land_modifier' ).GetNameWithTooltip] [modifier|E]"
+ ep3_laamps.5045.a.tt: "Toto je pro vás dostupné, protože máte [GetModifier( 'ep3_lust_for_land_modifier' ).GetNameWithTooltip] [Concept('modifier','modifikátoru')|E]" # todo: CONCEPT CASE
  ep3_laamps.5045.a.success: "Vaše slova se ukážou jako přesvědčivá"
  ep3_laamps.5045.a.failure: "[local_lord.GetSheHe|U] to odkýve smíchem"
  ep3_laamps.5045.b: "Zlato se nikdy neztratí..."
@@ -290,7 +290,7 @@
  ep3_laamps.5045.d: "Stačí mi práce, abych [Select_CString(ROOT.Char.IsFemale,'mohla','mohl')] sloužit těmto zemím."
  world_africa_sahara_provisions_usage_multiplier_modifier: "Saharská provincie"
  world_africa_sahara_provisions_usage_multiplier_modifier_desc: "Tato provincie podléhá plnému hněvu mocné Sahary (nebo jednoho z jejích přiléhajících horských pásů) — jen blázen nebo odborník by se ji pokusil přejít."
- duel_to_the_death.tt: "@death_icon! #X Okamžitě vstupujete do [single_combat_duel|E] na [character_death_death|E]#!"
+ duel_to_the_death.tt: "@death_icon! #X Okamžitě vstupujete do [Concept('single_combat_duel','duelu')|E] na [Concept('character_death_death','smrt')|E]#!" # todo: CONCEPT CASE
  ep3_laamp_flavour_ewan.0001.t: "Růžové odstíny"
  ep3_laamp_flavour_ewan.0001.desc.intro.preamble: "Brzký večer je časem intenzivní činnosti v táboře, lidé a zásoby jsou sem a tam přehazovány, když se naše přenosné sídlo opět zakládá. Obvykle je to také chvíle, kdy si půjdu udělat procházku, abych si pročistil hlavu a"
  ep3_laamp_flavour_ewan.0001.desc.intro.lazy: "vyhnout se všem drobným úkolům a otázkám, které mi kladou moji stoupenci.\n\n"
@@ -754,7 +754,7 @@
  ep3_laamp_flavour_ewan.1081.desc: "„[ROOT.Char.GetMotherFather|U],“ začne moje [child.Custom('GetDaughterSon')] [child.GetFirstName], když ke mně pochoduje, „[Select_CString(child.IsFemale,'rozhodla','rozhodl')] jsem se, že když jsem nyní [child.GetWomanMan], budu mít svůj vlastní stan. Už žádné sdílení s nikým pro mě!“\n\nMladík/ice stojí nehnutě, proslov dokončen, rozmrzelá vzdorovitost vyzařující z [Select_CString(child.IsFemale,'její','jeho')] postoje. Téměř mimoděk si zvednu obočí nad tímto neoprávněným představením.\n\n„V tomhle neuhnu! Jsem [Select_CString(ROOT.Char.IsFemale,'dospělá','dospělý')] a požaduji, aby se se mnou zacházelo jako s dospělým!“"
  ep3_laamp_flavour_ewan.1081.a: "Hmm, dobře. Jsi teď [child.GetWomanMan]."
  ep3_laamp_flavour_ewan.1081.b: "Chceš to? Získej si to."
- ep3_laamp_flavour_ewan.1081.b.f: "Dáš svému [child.Custom('GetDaughterSon')] výzvu, určenou tvou [education_trait|E]."
+ ep3_laamp_flavour_ewan.1081.b.f: "Dáš svému [child.Custom('GetDaughterSon')] výzvu, určenou tvou [Concept('education_trait','rys vzdělání')|E]." # todo: CONCEPT CASE
  ep3_laamp_flavour_ewan.1081.b.tt.success: "[child.GetFirstNameNoTooltip] vítězí"
  ep3_laamp_flavour_ewan.1081.b.tt.failure: "[child.GetSheHe|U] tě nedokáže zaujmout"
  ep3_laamp_flavour_ewan.1081.c: "Bah, jsi dítě, dokud neřeknu jinak."
@@ -909,7 +909,7 @@
  ep3_laamp_flavour_ewan.2031.desc.intro: "„... a tvé kňouravé, plaché řeči, tvé pochody na smrt nikam, a tvé naprosté selhání jako [ROOT.Char.GetTitleAsNameNoTooltip]! Slyšíš mě? Mám toho #EMP dost!#!“ vykřikuje [firebrand.GetFirstName], [firebrand.Custom('ArmArms')] divoce mává, zatímco [firebrand.GetSheHe] gestikuluje ke zástupu diváků.\n\n"
  ep3_laamp_flavour_ewan.2031.desc.waverers.some: "Mnoho mých ostatních následovníků má též na tvářích nespokojené výrazy, zdají se být připraveni odejít spolu s [firebrand.GetFirstNameNoTooltip] — #EMP pokud#! [firebrand.GetSheHe] bude dovoleno."
  ep3_laamp_flavour_ewan.2031.desc.waverers.none: "Zbytek mých následovníků se zdá nesoucitný. Navzdory [Select_CString(firebrand.IsFemale,'jejím','jeho')] výbuchům a řvaní o mých zlých stránkách stojí [firebrand.GetFirstNameNoTooltip] [Select_CString(firebrand.IsFemale,'sáma','sám')] ve svém intenzivním odporu ke mně."
- ep3_laamp_flavour_ewan.2031.tt.success.wavering_courtiers: "Všichni váhající [followers|E]"
+ ep3_laamp_flavour_ewan.2031.tt.success.wavering_courtiers: "Všichni váhající [Concept('followers','družiníci')|E]" # todo: CONCEPT CASE
  ep3_laamp_flavour_ewan.2031.tt.failure.wavering_courtiers_move_to_pool: "$ep3_laamp_flavour_ewan.2031.tt.success.wavering_courtiers$"
  ep3_laamp_flavour_ewan.2031.a: "Možná tě přesvědčím..."
  ep3_laamp_flavour_ewan.2031.a.tt.success: "Zklidníš nespokojenost"
@@ -956,11 +956,11 @@
  ep3_laamp_flavour_ewan.2071.desc.sic_vacant: "Post zástupce je už nějakou dobu neobsazen."
  ep3_laamp_flavour_ewan.2071.desc.outro: "Nespokojenost s tímto stavem konečně vygradovala natolik, že se přihlásili tři kandidáti, aby nabídli svou službu.\n\n[candidate_1.GetFirstName], který nabízí přísahat [candidate_1.GetHerselfHimself] mi až do [Select_CString(candidate_1.IsFemale,'jejího','jeho')] posledního dechu.\n\n[candidate_2.GetFirstName], který se zdá být ochoten pro mě [candidate_2.GetHerselfHimself] pracovat do vyčerpání.\n\nA samozřejmě [candidate_3.GetFirstName] — bezpochyby nejlépe kvalifikovaný v táboře pro tuto roli."
  ep3_laamp_flavour_ewan.2071.a: "Přijmout loajalitu [candidate_1.GetFirstNamePossessiveNoTooltip]."
- ep3_laamp_flavour_ewan.2071.a.tt.candidate_aptitude: "[candidate_1.GetFirstNamePossessive] [aptitude|E] by bylo [candidate_1.GetCourtPositionAptitude( GetCourtPositionType( 'second_camp_officer') )]"
+ ep3_laamp_flavour_ewan.2071.a.tt.candidate_aptitude: "[candidate_1.GetFirstNamePossessive] [Concept('aptitude','Způsobilost')|E] by bylo [candidate_1.GetCourtPositionAptitude( GetCourtPositionType( 'second_camp_officer') )]" # todo: CONCEPT CASE
  ep3_laamp_flavour_ewan.2071.b: "Využít pracovní morálky [candidate_2.GetFirstNamePossessiveNoTooltip]."
- ep3_laamp_flavour_ewan.2071.b.tt.candidate_aptitude: "[candidate_2.GetFirstNamePossessive] [aptitude|E] by bylo [candidate_2.GetCourtPositionAptitude( GetCourtPositionType( 'second_camp_officer') )]"
+ ep3_laamp_flavour_ewan.2071.b.tt.candidate_aptitude: "[candidate_2.GetFirstNamePossessive] [Concept('aptitude','Způsobilost')|E] by bylo [candidate_2.GetCourtPositionAptitude( GetCourtPositionType( 'second_camp_officer') )]" # todo: CONCEPT CASE
  ep3_laamp_flavour_ewan.2071.c: "Využít evidentních dovedností [candidate_3.GetFirstNamePossessiveNoTooltip]."
- ep3_laamp_flavour_ewan.2071.c.tt.candidate_aptitude: "[candidate_3.GetFirstNamePossessive] [aptitude|E] by bylo [candidate_3.GetCourtPositionAptitude( GetCourtPositionType( 'second_camp_officer') )]"
+ ep3_laamp_flavour_ewan.2071.c.tt.candidate_aptitude: "[candidate_3.GetFirstNamePossessive] [Concept('aptitude','Způsobilost')|E] by bylo [candidate_3.GetCourtPositionAptitude( GetCourtPositionType( 'second_camp_officer') )]" # todo: CONCEPT CASE
  ep3_laamp_flavour_ewan.2071.d.post_filled: "[current_sic.GetFirstNameNoTooltip] si ponechá [Select_CString(current_sic.IsFemale,'její','jeho')] post!"
  ep3_laamp_flavour_ewan.2071.d.post_empty: "Zůstane neobsazeno."
  ep3_laamp_flavour_ewan_2071_b_work_self_to_death_modifier: "Pracuje až do vyčerpání"
@@ -1057,7 +1057,7 @@
  ep3_laamp_flavour_ewan.3041.desc.fallback: "přísahali jsme a hodláme své přísahy držet až do smrti.„"
  ep3_laamp_flavour_ewan.3041.desc.title_claimed: "\n\n„Stále požadujete [former_title.GetBaseNameNoTierNoTooltip], vezměte #EMP nás#! jako svůj právoplatný díl!“"
  ep3_laamp_flavour_ewan.3041.desc.title_forsaken: "\n\n„Ať už chcete [former_title.GetBaseNameNoTierNoTooltip] znovu získat nebo ne, raději vám budeme sloužit, než zůstat tam.“"
- ep3_laamp_flavour_ewan.3041.tt.up_to_ten_usurper_held_counties: "Až deset [counties|E] ovládaných usurpátory"
+ ep3_laamp_flavour_ewan.3041.tt.up_to_ten_usurper_held_counties: "Až deset [Concept('counties','hrabství')|E] ovládaných usurpátory" # todo: CONCEPT CASE
  ep3_laamp_flavour_ewan.3041.a.imperial: "Více vojska pro císařskou armádu v exilu!"
  ep3_laamp_flavour_ewan.3041.a.royal: "Více vojska pro královskou armádu v exilu!"
  ep3_laamp_flavour_ewan.3041.b: "Vaše loajalita je zaznamenána, ale potřebuji podvratníky."
@@ -1140,13 +1140,13 @@
  ep3_laamp_flavour_ewan.4021.desc: "Uplynulo několik dní od té doby, co tábor naposledy našel stabilní zdroj vody.\n\nJídlo — jídlo, bez kterého se [ROOT.Char.GetWomanMan] může obejít — na čas. Hladový žaludek může trvat týdny, než zabije.\n\nBez vody však, bez možností ji doplnit na dohled a s rezervami na ústupu, hrozí žízeň mnohem #EMP rychlejší#! vyhynutí."
  ep3_laamp_flavour_ewan.4021.tt.dehydration_increments: "[GetModifier('ep3_laamp_flavour_ewan_4021_extended_period_of_dehydration_t1_modifier').GetNameWithTooltip] se výrazně zhorší"
  ep3_laamp_flavour_ewan.4021.tt.dehydration_already_at_worst: "[GetModifier('ep3_laamp_flavour_ewan_4021_extended_period_of_dehydration_t3_modifier').GetNameWithTooltip] už nemůže být horší"
- ep3_laamp_flavour_ewan.4021.tt.every_courtier_at_your_location_with_less_than_excellent_health: "Každý [follower|E] s méně než výborným [health|E]"
+ ep3_laamp_flavour_ewan.4021.tt.every_courtier_at_your_location_with_less_than_excellent_health: "Každý [Concept('follower','družiník')|E] s méně než výborným [Concept('health','zdravím')|E]" # todo: CONCEPT CASE
  ep3_laamp_flavour_ewan.4021.a: "Tady musí být #EMP něco#!..."
  ep3_laamp_flavour_ewan.4021.a.tt.success: "Zdroj vody objeven"
  ep3_laamp_flavour_ewan.4021.a.tt.failure: "Suché jako troud"
  ep3_laamp_flavour_ewan.4021.b: "[forager.GetFirstNameNoTooltip], jdi hledat."
  ep3_laamp_flavour_ewan.4021.c: "[hunter.GetFirstNameNoTooltip], jdi hledat."
- ep3_laamp_flavour_ewan.4021.tt.officer_aptitude: "#WEAK Tento souboj rozhoduje [officer|E]ova [aptitude|E]#!"
+ ep3_laamp_flavour_ewan.4021.tt.officer_aptitude: "#WEAK Tento souboj rozhoduje [Concept('officer','důstojník')|E]ova [Concept('aptitude','způsobilost')|E]#!" # todo: CONCEPT CASE
  ep3_laamp_flavour_ewan.4021.tt.delegated_to_officer.success: "Váš důstojník uspěje"
  ep3_laamp_flavour_ewan.4021.tt.delegated_to_officer.failure: "Váš důstojník selže"
  ep3_laamp_flavour_ewan.4021.d: "Můžeme to přečkat příděly."
@@ -1212,7 +1212,7 @@
  ep3_laamp_flavour_ewan.4041.tt.struck_by_lightning: "Je zasažen bleskem"
  ep3_laamp_flavour_ewan.4041.tt.struck_by_lightning.dead: "Blesk ho zasáhl, ale těsně přežil"
  ep3_laamp_flavour_ewan.4041.tt.struck_by_lightning.alive: "Blesk zasáhl a [Select_CString(ROOT.Char.IsFemale,'zabila','zabil')]"
- ep3_laamp_flavour_ewan.4041.tt.modifier_worse_for_vulnerable_characters: "#WEAK Tento modifikátor je horší pro mladé a staré [characters|E]#!"
+ ep3_laamp_flavour_ewan.4041.tt.modifier_worse_for_vulnerable_characters: "#WEAK Tento modifikátor je horší pro mladé a staré [Concept('characters','postavy')|E]#!" # todo: CONCEPT CASE
  ep3_laamp_flavour_ewan.4041.tt.regiments_take_damage_range.wildfire: "Ztrácí mnoho vojáků kvůli ohni a kouři"
  ep3_laamp_flavour_ewan.4041.tt.regiments_take_damage_range.avalanche: "Ztrácí mnoho vojáků kvůli padajícím lavinám"
  ep3_laamp_flavour_ewan.4041.tt.regiments_take_damage_range.flash_floods: "Ztrácí mnoho vojáků kvůli rozbouřeným povodňovým vodám"
@@ -1244,11 +1244,11 @@
  ep3_laamp_flavour_ewan_4041_wildfire_lungs_adult_modifier_desc: "Plíce této postavy byly nedávným lesním požárem poškozeny, ale pravděpodobně se zotaví."
  ep3_laamp_flavour_ewan_4041_wildfire_lungs_vulnerable_modifier: "Kouř v křehkých plicích"
  ep3_laamp_flavour_ewan_4041_wildfire_lungs_vulnerable_modifier_desc: "Plíce této postavy nejsou uzpůsobeny odolávat poškození, které utrpěly v nedávném lesním požáru."
- ep3_laamp_flavour_ewan.4041.tt.every_regiment: "Každý [regiment|E]"
+ ep3_laamp_flavour_ewan.4041.tt.every_regiment: "Každý [Concept('regiment','pluk')|E]" # todo: CONCEPT CASE
  ep3_laamp_flavour_ewan.4051.t: "Chybějící zásoby"
- ep3_laamp_flavour_ewan.4051.tt.most_provisions_regained: "Většina $game_concept_provisions$ byla získána zpět"
- ep3_laamp_flavour_ewan.4051.tt.some_provisions_regained: "Část $game_concept_provisions$ byla získána zpět"
- ep3_laamp_flavour_ewan.4051.tt.provisions_lost: "Všechny $game_concept_provisions$ zůstávají ztracené"
+ ep3_laamp_flavour_ewan.4051.tt.most_provisions_regained: "Většina proviantu byla získána zpět" # todo: CONCEPT CASE
+ ep3_laamp_flavour_ewan.4051.tt.some_provisions_regained: "Část proviantu byla získána zpět" # todo: CONCEPT CASE
+ ep3_laamp_flavour_ewan.4051.tt.provisions_lost: "Všechny provianty zůstávají ztracené" # todo: CONCEPT CASE
  ep3_laamp_flavour_ewan.4051.desc: "S tolika vojáky pod jedním putujícím praporem a přes to všechno #EMP pochybném#! území k překonání je očekávatelné, že občas něco zásob zmizí.\n\nToto nejsou pár zásob.\n\nJe to obrovské, #EMP obrovské#! množství zásob, které nějaký sobecký blbec prodal místním nebo rozvracečům mezi mými vojáky, ztratil z nekompetence, vůbec je nekoupil, nebo je prostě promrhal, a představuje to nesmírné porušení disciplíny."
  ep3_laamp_flavour_ewan.4051.a: "Přineste mi bič a najdeme viníka!"
  ep3_laamp_flavour_ewan.4051.a.tt.success: "Chytíte zloděje"
@@ -1287,11 +1287,11 @@
  ep3_laamp_flavour_ewan.4061.desc.terrain.plains: "k širokým, vlnícím se pláním, přes které postupujeme. Rovné, ale ne úplně rovné, s dostatkem vršků a prohlubní, kde se mohou skrývat nejrůznější hrůzy."
  ep3_laamp_flavour_ewan.4061.desc.outro: "Sleduje. Čeká. Hlad se pomalu buduje pro jeho večerní pokrm."
  ep3_laamp_flavour_ewan.4061.a: "Zpřísněte hlídky."
- ep3_laamp_flavour_ewan.4061.a.tt.duel.safe: "V nejhorším případě bestie sní pár vašich jmenovaných [followers|E]"
+ ep3_laamp_flavour_ewan.4061.a.tt.duel.safe: "V nejhorším případě bestie sní pár vašich jmenovaných [Concept('followers','družiníků')|E]" # todo: CONCEPT CASE
  ep3_laamp_flavour_ewan.4061.a.tt.success: "Zachyceno a zlikvidováno"
  ep3_laamp_flavour_ewan.4061.a.tt.failure: "Ještě pár úmrtí"
  ep3_laamp_flavour_ewan.4061.b: "Vezmu mu hlavu!"
- ep3_laamp_flavour_ewan.4061.a.tt.duel.risky: "Osobně se vydáte za bestií, riskujete potenciální [character_death_death|E] výměnou za [prestige|E]"
+ ep3_laamp_flavour_ewan.4061.a.tt.duel.risky: "Osobně se vydáte za bestií, riskujete potenciální [Concept('character_death_death','smrt')|E] výměnou za [Concept('prestige','prestiž')|E]" # todo: CONCEPT CASE
  ep3_laamp_flavour_ewan.4061.a.tt.duel.risky.are_you_sure: "@alert_icon! #alert_trial V závislosti na tom, co to je — a jak velké to skutečně je — to může být poměrně snadné nebo velice, velice těžké, a jakmile vyrazíte, nemůžete se stáhnout#!"
  ep3_laamp_flavour_ewan.4061.c: "Dokud nesežere nikoho důležitého."
  ep3_laamp_flavour_ewan.4061.c.tt.success: "Nesežralo."
@@ -1406,9 +1406,9 @@
  ep3_laamp_flavour_ewan.4071.a.tt.failure: "Brutální mela"
  ep3_laamp_flavour_ewan.4071.b: "Vstup do souboje s vedoucím otrokářem."
  ep3_laamp_flavour_ewan.4071.c: "Vyjednejte a prodejte pár méně významných následovníků."
- ep3_laamp_flavour_ewan.4071.c.sale_explanation.profit: "Obdržíte [gold|E] odpovídající součtu [skills|E] vašich pěti nejhorších [followers|E]"
+ ep3_laamp_flavour_ewan.4071.c.sale_explanation.profit: "Obdržíte [Concept('gold','zlato')|E] odpovídající součtu [Concept('skills','dovednostem')|E] vašich pěti nejhorších [Concept('followers','družiníků')|E]" # todo: CONCEPT CASE
  ep3_laamp_flavour_ewan.4071.c.sale_explanation.limitations: "Kdokoli, kdo je pro vás důležitý, zvláště zručný, nebo je nemocný či zraněný, je z prodeje vyloučen"
- ep3_laamp_flavour_ewan.4071.c.sale_explanation.death: "Prodej [character|E] do otroctví je jejich vyřazením ze hry, v podstatě se to počítá jako [character_death_death|E]"
+ ep3_laamp_flavour_ewan.4071.c.sale_explanation.death: "Prodej [Concept('character','postava')|E] do otroctví je jejich vyřazením ze hry, v podstatě se to počítá jako [Concept('character_death_death','smrt')|E]" # todo: CONCEPT CASE
  ep3_laamp_flavour_ewan.4071.d: "Ignorujte výkřiky a doufejte v nejlepší."
  ep3_laamp_flavour_ewan.4071.d.tt.success: "[ROOT.Char.GetFaith.FateGodName] se na vás usmívá"
  ep3_laamp_flavour_ewan.4071.d.tt.failure: "Výkřiky mizí v noci"
@@ -1425,8 +1425,8 @@
  ep3_laamp_flavour_ewan.4081.a.tt.failure: "Slova na ně moc nezabírají"
  ep3_laamp_flavour_ewan.4081.b: "Pokud chtějí zásoby, musí #EMP zaplatit!#!"
  ep3_laamp_flavour_ewan.4081.b.tt.success: "Pěkný zisk"
- ep3_laamp_flavour_ewan.4081.b.tt.success.every_compassionate_or_generous_follower: "Každý [GetTrait('compassionate').GetName( GetNullCharacter )] nebo [GetTrait('generous').GetName( GetNullCharacter )] [follower|E]"
- ep3_laamp_flavour_ewan.4081.b.tt.success.every_callous_greedy_or_sadistic_follower: "Každý [GetTrait('greedy').GetName( GetNullCharacter )] nebo [GetTrait('sadistic').GetName( GetNullCharacter )] [follower|E]"
+ ep3_laamp_flavour_ewan.4081.b.tt.success.every_compassionate_or_generous_follower: "Každý [GetTrait('compassionate').GetName( GetNullCharacter )] nebo [GetTrait('generous').GetName( GetNullCharacter )] [Concept('follower','družiník')|E]" # todo: CONCEPT CASE
+ ep3_laamp_flavour_ewan.4081.b.tt.success.every_callous_greedy_or_sadistic_follower: "Každý [GetTrait('greedy').GetName( GetNullCharacter )] nebo [GetTrait('sadistic').GetName( GetNullCharacter )] [Concept('follower','družiník')|E]" # todo: CONCEPT CASE
  ep3_laamp_flavour_ewan.4081.b.tt.failure: "Hladová šílenost"
  ep3_laamp_flavour_ewan.4081.c: "Odrážejte tu chásku."
  ep3_laamp_flavour_ewan.4081.c.tt.success: "Vaši ozbrojení družiníci zlomí dost kostí"
@@ -1441,12 +1441,12 @@
  ep3_laamp_flavour_ewan.4091.b.tt.success: "Úspěšný nájezd"
  ep3_laamp_flavour_ewan.4091.b.tt.failure: "$ep3_laamp_flavour_ewan.4091.a.tt.failure$"
  ep3_laamp_flavour_ewan.4091.c: "Schovejte se před chaosem."
- ep3_laamp_flavour_ewan.4091.c.every_non_craven_follower: "Každý ne-[GetTrait('craven').GetName( GetNullCharacter )] [follower|E]"
+ ep3_laamp_flavour_ewan.4091.c.every_non_craven_follower: "Každý ne-[GetTrait('craven').GetName( GetNullCharacter )] [Concept('follower','družiník')|E]" # todo: CONCEPT CASE
  ep3_laamps.5999.t: "Zprávy z ostrova"
  ep3_laamps.5999.desc: "Můj otec [Select_CString(ROOT.Char.IsFemale,'byla','byl')] přísný muž. S odstupem let vidím, že moje... pochybení vůči němu byla přijata s humorem, jaký zasloužila. Jeho prosba k [edward.GetTitledFirstName] byla vyslyšena, a tak jsem se ocitl zde v [location.GetName], vykonávaje špinavou práci pro [flanders.GetTitledFirstName].\n\nAle uplynula dlouhá léta a Anglie se nachází v zmatku. [edward.GetTitledFirstNameNoTooltip] je mrtvý, [harold.GetTitledFirstName] uchvátil trůn a jeho nepřátelé [william.GetTitledFirstName] a [harald.GetTitledFirstName] spřádají jeho pád.\n\nSnad se veškeré nepokoje nadcházejících dnů vyhnou mé rodině a našim zemím."
  ep3_laamps.5999.a: "Musím situaci sledovat."
  ep3_laamps.5999.b: "Můj osud neleží v Anglii."
- ep3_laamps.5999.b.tt: "Přidá nový [task_contract|E]"
+ ep3_laamps.5999.b.tt: "Přidá nová [Concept('task_contract','zakázka')|E]" # todo: CONCEPT CASE
  ep3_laamps.6000.t: "Osud"
  ep3_laamps.6000.intro: "Otáčím dopis v rukou, cítím jeho drsný povrch, voskovou pečeť a vytlačený erb. Erb [ROOT.Char.GetHouse.GetBaseName]. Přerýžu pečeť a začnu číst.\n\nZprávy jsou skutečně hrozné."
  ep3_laamps.6000.body.alive: "Můj bratr [brother.GetFirstName] žije — a opravdu je to jeho ruka, která tento dopis napsala — ale zvěsti z Normandie se ukázaly být pravdivé."
@@ -1467,21 +1467,21 @@
  ep3_laamps.6001.b.one: "Ten [frederick.GetWomanMan] utíká pryč"
  ep3_laamps.6001.b.one.tt: "Získáte [brother.GetFirstNamePossessiveNoTooltip] tělo nepoškozené"
  ep3_laamps.6001.b.two: "Ten [frederick.GetWomanMan] se k vám přibližuje, se zbraní vztyčenou"
- ep3_laamps.6001.b.two.tt: "Začíná [single_combat_duel|E]"
+ ep3_laamps.6001.b.two.tt: "Začíná [Concept('single_combat_duel','duel')|E]" # todo: CONCEPT CASE
  ep3_laamps.6003.t: "Pokrm nejlépe podávaný..."
  ep3_laamps.6003.desc: "Pohodlně přejdu přes [frederick.GetFirstNamePossessive] škubající se mršinu a vrátím se k tělu [brother.GetFirstNamePossessive]. Časem bude vykopán hrob, bude konán obřad a ceremoniál na památku [Select_CString(brother.IsFemale,'jejího','jeho')] krutě krátkého života. Prozatím se večer změní v noc a já sedím a vzpomínám.\n\n[brother.GetSheHe|U] [Select_CString(ROOT.Char.IsFemale,'byla','byl')] poklidný [brother.GetWomanMan]. Nebylo spravedlivé, že někdo, kdo si jen přál vést svůj život bez úhony, utrpěl takový osud. Bez svolení mi dojde jedno poznání.\n\n[frederick.GetCulture.GetCollectiveNoun]. [brother.GetSheHe|U] by [Select_CString(ROOT.Char.IsFemale,'byla','byl')] naživu, kdyby nebylo jich. Bude tisíc bratrů, tisíc sester, tisíc otců a matek a synů i dcer, #EMP všichni#! po celé zemi, #EMP všichni#! umírající dnes v noci, #EMP všichni#! kvůli těm...\n\n#EMP Prokletí. [frederick.GetCulture.GetCollectiveNounNoTooltip|U].#!"
  ep3_laamps.6003.a: "„Pomstím tě, bratře. To slibuji.“"
  ep3_laamps.6003.b: "První z mnoha odplat čeká."
  ep3_laamps.6003.b.flavor: "Ta hnusoba, kterou jsem [Select_CString(ROOT.Char.IsFemale,'zabila','zabil')], zdála se mít alespoň nějaké jmění..."
- ep3_laamps.6003.b.tt: "Získejte drobný předmět [artifact|E]"
+ ep3_laamps.6003.b.tt: "Získejte drobný předmět [Concept('artifact','artefakt')|E]" # todo: CONCEPT CASE
  ep3_laamps.6005.t: "Zpět v bažinách"
  ep3_laamps.6005.desc: "Už je to příliš mnoho let, co jsem naposledy vstoupil na tyto země. A nešlo o lehký krok — a to z dobrého důvodu. I teď mi bažinatá půda přisává boty.\n\nTyto země — můj domov — byly po mnoho generací nazývány '[Glossary( 'The Fens', 'FENS_GLOSS' )]'. V některých částech voda stoupá natolik, že Ely je technicky ostrov.\n\nNení čas ztrácet. I teď ten normanský psisko utahuje [Select_CString(william.IsFemale,'její','jeho')] sevření nad dobrou anglosaskou zemí. Abychom vůbec mohli klást odpor, budeme potřebovat tyto dvojí životodárné zdroje každého válečného tažení: peníze a muže."
  ep3_laamps.6005.a: "Nejdříve musíme naplnit pokladny všemi dostupnými prostředky."
  ep3_laamps.6005.a.tt: "Myslím, že právě teď vidím šlechtice, který je špatně chráněn, jak tam kráčí..."
  ep3_laamps.6005.b: "Možná by se místní rytíř dal přesvědčit, aby se přidal na mou stranu?"
  ep3_laamps.6005.b.tt: "A protože je místní, snad by dobře znal, jak se nejlépe orientovat v tomto terénu..."
- every_fenland_holding: "Každé [holding|E] v The Fens"
- FENS_GLOSS: "Úrodné bažinaté oblasti obklopující The Wash jsou místně běžně nazývány 'The Fens'. Obsahují mnoho z nejznámějších kostelů a katedrál v Anglii.\n\nFenlandy jsou běžně považovány za zahrnující následující [baronies|E]:\n\n$EFFECT_LIST_BULLET$[GetTitleByKey('b_lynn').GetBaseName]\n$EFFECT_LIST_BULLET$[GetTitleByKey('b_cambridge').GetBaseName]\n$EFFECT_LIST_BULLET$[GetTitleByKey('b_radfield').GetBaseName]\n$EFFECT_LIST_BULLET$[GetTitleByKey('b_papworth').GetBaseName]\n$EFFECT_LIST_BULLET$[GetTitleByKey('b_ely').GetBaseName]\n$EFFECT_LIST_BULLET$[GetTitleByKey('b_hurstingstone').GetBaseName]\n$EFFECT_LIST_BULLET$[GetTitleByKey('b_norman_cross').GetBaseName]\n$EFFECT_LIST_BULLET$[GetTitleByKey('b_stamford').GetBaseName]\n$EFFECT_LIST_BULLET$[GetTitleByKey('b_boston').GetBaseName]\n$EFFECT_LIST_BULLET$[GetTitleByKey('b_peterborough').GetBaseName]"
+ every_fenland_holding: "Každé [Concept('holding','država')|E] v The Fens" # todo: CONCEPT CASE
+ FENS_GLOSS: "Úrodné bažinaté oblasti obklopující The Wash jsou místně běžně nazývány 'The Fens'. Obsahují mnoho z nejznámějších kostelů a katedrál v Anglii.\n\nFenlandy jsou běžně považovány za zahrnující následující [Concept('baronies','baronství')|E]:\n\n$EFFECT_LIST_BULLET$[GetTitleByKey('b_lynn').GetBaseName]\n$EFFECT_LIST_BULLET$[GetTitleByKey('b_cambridge').GetBaseName]\n$EFFECT_LIST_BULLET$[GetTitleByKey('b_radfield').GetBaseName]\n$EFFECT_LIST_BULLET$[GetTitleByKey('b_papworth').GetBaseName]\n$EFFECT_LIST_BULLET$[GetTitleByKey('b_ely').GetBaseName]\n$EFFECT_LIST_BULLET$[GetTitleByKey('b_hurstingstone').GetBaseName]\n$EFFECT_LIST_BULLET$[GetTitleByKey('b_norman_cross').GetBaseName]\n$EFFECT_LIST_BULLET$[GetTitleByKey('b_stamford').GetBaseName]\n$EFFECT_LIST_BULLET$[GetTitleByKey('b_boston').GetBaseName]\n$EFFECT_LIST_BULLET$[GetTitleByKey('b_peterborough').GetBaseName]" # todo: CONCEPT CASE
  ep3_laamps.6010.t: "[powerful_vassal.Custom2('AppropriateGreetingPositive', ROOT.Char)]"
  ep3_laamps.6010.desc: "Slyšel jsem o tvých skutcích a o dobré práci, kterou konáš v The Fens.\n\nRád bych tě pozval do [powerful_vassal_capital.GetName]: máme co probrat."
  ep3_laamps.6010.a: "Můžeš se mnou počítat v následujících dnech."
@@ -1491,8 +1491,8 @@
  ep3_laamps.6015.t: "Pro Anglii"
  ep3_laamps.6015.desc: "[powerful_vassal.GetTitledFirstNameRegnal], nejsilnější ze zbývajících pánů [powerful_vassal.GetCulture.GetName], mě [Select_CString(powerful_vassal.GetCulture.IsFemale,'přijala','přijal')] s otevřenou náručí. Během našich rozhovorů se téma jen zřídka vzdálilo od toho zjevného.\n\n„U nás nejsme cizinci, kteří jsou ovládáni cizinci.“ prohlašuje [powerful_vassal.GetFirstNameNoTooltip] s křivým úsměvem na [Select_CString(powerful_vassal.IsFemale,'její','jeho')] tváři, prsty důrazně sepjatými. „Naši otcové byli podřízeni více než jednomu Dánovi. Ale tohle... tohle je jiné.“\n\n„Mám v úmyslu postavit se tomu #EMP [william.GetFirstNameNoTooltip]#!,“ vyplivne [powerful_vassal.GetSheHe] jméno jedovatě, „ale potřebuji podporu. Loajalita téměř všech je vratká.“ [powerful_vassal.GetSheHe|U] zvedne na mě [Select_CString(powerful_vassal.IsFemale,'její','jeho')] oči.\n\n„Mohu spoléhat na tvou pomoc?“"
  ep3_laamps.6015.a: "Máš mou podporu."
- every_direct_vassal_william: "Každý normanský [direct_vassal|E] [william.GetFirstNameRegnal]"
- every_anglo_noble: "Každý anglosaský [noble|E]"
+ every_direct_vassal_william: "Každý normanský [Concept('direct_vassal','přímý vazal')|E] [william.GetFirstNameRegnal]" # todo: CONCEPT CASE
+ every_anglo_noble: "Každý anglosaský [Concept('noble','urozený')|E]" # todo: CONCEPT CASE
  ep3_laamps.6015.b: "Potřebuji více času."
  ep3_laamps.6016.t: "Neblahý konec"
  ep3_laamps.6016.frustrated: "„Toho času nemáme!“ [powerful_vassal.GetFirstName|U] udeří do stolu, aby to zdůraznil, a na [Select_CString(powerful_vassal.IsFemale,'její','jeho')] tváři se mihne záblesk hněvu. „Ještě teď se šíří šepoty o odvetě! Čím déle váháme, tím více času má [william.GetSheHe] nasbírat podporu.“\n\n„My #EMP musíme#! jednat rychle. Vezmi si čas, který potřebuješ, ale mohu tě jen naléhat, abys si vybral stranu, dokud ještě můžeš.“\n\n"
@@ -1504,8 +1504,8 @@
  ep3_laamps.6020.desc: "Dosazení nového, cizího krále — a navíc [william.GetCulture.GetName] nemanžela — stačilo k tomu, aby se přetrhla už tak na hraně napjatá šňůra, která drží Anglii pohromadě. Místní povstání, podporovaná a podněcovaná poraženými, rozhořčenými anglosaskými [Glossary( 'Æthelings', 'AETHELINGS_GLOSS' )], se rozšířila po zemi jako požár.\n\n[william.GetTitledFirstName], který si zajistil mocenskou základnu na jihu, se nyní dívá na sever, aby uklidnil ty, kdo jsou dost odvážní či pošetilí, aby mu vzdorovali. Kamkoli padne jeho pohled, následuje smrt a zkáza, a rozpoutal se zoufalý boj o zemi.\n\n[william.GetFirstNameNoTooltip] bude muset najít tenkou hranici mezi mírností a tvrdostí. Příliš jemný přístup mu může připravit ztrátu království, ale příliš krutá odplata nechá z království málo, co by vládl.\n\nPro Æthelingy čeká jen smrt nebo sláva."
  ep3_laamps.6020.a: "Anglie visí na vlásku."
  AETHELINGS_GLOSS: "„Ætheling“ je anglosaský termín používaný k označení Anglosasa urozeného původu; předpona 'Æthel' byla často připojována k jejich jménům."
- every_aetheling: "Každý $anglo_saxon$ [vassal|E] [william.GetTitledFirstName]"
- every_county: "Každý [county|E]"
+ every_aetheling: "Každý $anglo_saxon$ [Concept('vassal','vazal')|E] [william.GetTitledFirstName]" # todo: CONCEPT CASE
+ every_county: "Každý [Concept('county','hrabství')|E]" # todo: CONCEPT CASE
  ep3_laamps.6021.desc: "Mé právoplatné dosazení na trůn Anglie stačilo k tomu, aby se přetrhla už tak tenká šňůra, jež drží království pohromadě. Místní povstání, podporovaná a podněcovaná poraženými, rozhořčenými anglosaskými [Glossary( 'Æthelings', 'AETHELINGS_GLOSS' )], se rozšířila po celé zemi jako divoký oheň.\n\nJakmile mám svou mocenskou základnu na jihu zajištěnou, musím se nyní obrátit na sever, abych zkročil ty, kdo jsou dost odvážní či hloupí, aby se mi postavili. Kamkoli padne můj pohled, následuje smrt a zkáza, pokud mi pozice nebude uchvácena intrikami místních.\n\nMusím kráčet po tenké hraně mezi mírností a tvrdostí. Příliš jemný přístup mi může připravit ztrátu království, ale příliš brutální odplata by zanechala jen málo království, které bych [Select_CString(ROOT.Char.IsFemale,'mohla','mohl')] vládnout. Co se týče Æthelingů...\n\nPro ty, kteří neprojeví věrnost, nesmí být milosrdenství."
  ep3_laamps.7000.t: "Jiná cesta"
  ep3_laamps.7000.desc: "S tímto zmatkem, který zachvacuje země [england.GetName], si občas kladu otázku, zda můj osud neleží jinde.\n\nUž nyní začíná nepokoj v důsledku [william.GetTitledFirstNamePossessive] uchopení kontroly nad královstvím. Mám podezření, že to bude ještě hnusnější, než je teď, a život na cestě ve stopách mého otce má jisté lákadlo.\n\nMožná bych [Select_CString(ROOT.Char.IsFemale,'mohla','mohl')] jít na sever, do Skotska? Nebo snad na jih Itálie, do apulijských podhůří?"
@@ -1551,15 +1551,15 @@
  ep3_laamp_flavour_ewan.9521.desc.reaction.changed_to: "Samozřejmě, když jsem [Select_CString(ROOT.Char.IsFemale,'sáma','sám')] [new_culture.GetNameNoTooltip], [Select_CString(new_culture.IsFemale,'mohla','mohl')] jsem [visitor.GetHerHim] dokonale vychovat #EMP bez#! toho, aby [Select_CString(visitor.IsFemale,'musela','musel')] trávit roky mimo nás."
  ep3_laamp_flavour_ewan.9521.desc.reaction.uninvolved: "Je zvláštní vidět, jak čas změnil [visitor.GetHerHim], ale předpokládám, že všichni procházíme obdobími proměny."
  ep3_laamp_flavour_ewan.9521.desc.outro: "\n\n[visitor.GetFirstNameNoTooltip] [visitor.GetHerselfHimself] se zdá nebýt znepokojen svou proměnou a prostě je rád, že je zpět v táboře."
- ep3_laamp_flavour_ewan.9521.tt.primary_skill.diplomacy: "Získal [skill_1.GetValue|V0] [diplomacy|E] [skill|E] učením se přijmout [new_culture.GetName] [ethos|E]"
- ep3_laamp_flavour_ewan.9521.tt.primary_skill.martial: "Získal [skill_1.GetValue|V0] [martial|E] [skill|E] učením se přijmout [new_culture.GetName] [ethos|E]"
- ep3_laamp_flavour_ewan.9521.tt.primary_skill.stewardship: "Získal [skill_1.GetValue|V0] [stewardship|E] [skill|E] učením se přijmout [new_culture.GetName] [ethos|E]"
- ep3_laamp_flavour_ewan.9521.tt.primary_skill.learning: "Získal [skill_1.GetValue|V0] [learning|E] [skill|E] učením se přijmout [new_culture.GetName] [ethos|E]"
- ep3_laamp_flavour_ewan.9521.tt.secondary_skill.diplomacy: "Získal [skill_2.GetValue|V0] [diplomacy|E] [skill|E] učením se přijmout [new_culture.GetName] [ethos|E]"
- ep3_laamp_flavour_ewan.9521.tt.secondary_skill.stewardship: "Získal [skill_2.GetValue|V0] [stewardship|E] [skill|E] učením se přijmout [new_culture.GetName] [ethos|E]"
- ep3_laamp_flavour_ewan.9521.tt.secondary_skill.intrigue: "Získal [skill_2.GetValue|V0] [intrigue|E] [skill|E] učením se přijmout [new_culture.GetName] [ethos|E]"
- ep3_laamp_flavour_ewan.9521.tt.secondary_skill.learning: "Získal [skill_2.GetValue|V0] [learning|E] [skill|E] učením se přijmout [new_culture.GetName] [ethos|E]"
- ep3_laamp_flavour_ewan.9521.tt.secondary_skill.prowess: "Získal [skill_2.GetValue|V0] [prowess|E] [skill|E] učením se přijmout [new_culture.GetName] [ethos|E]"
+ ep3_laamp_flavour_ewan.9521.tt.primary_skill.diplomacy: "Získal [skill_1.GetValue|V0] [Concept('diplomacy','diplomacie')|E] [Concept('skill','dovednost')|E] učením se přijmout [new_culture.GetName] [Concept('ethos','étos')|E]" # todo: CONCEPT CASE
+ ep3_laamp_flavour_ewan.9521.tt.primary_skill.martial: "Získal [skill_1.GetValue|V0] [Concept('martial','válečnictví')|E] [Concept('skill','dovednost')|E] učením se přijmout [new_culture.GetName] [Concept('ethos','étos')|E]" # todo: CONCEPT CASE
+ ep3_laamp_flavour_ewan.9521.tt.primary_skill.stewardship: "Získal [skill_1.GetValue|V0] [Concept('stewardship','správcovství')|E] [Concept('skill','dovednost')|E] učením se přijmout [new_culture.GetName] [Concept('ethos','étos')|E]" # todo: CONCEPT CASE
+ ep3_laamp_flavour_ewan.9521.tt.primary_skill.learning: "Získal [skill_1.GetValue|V0] [Concept('learning','učenost')|E] [Concept('skill','dovednost')|E] učením se přijmout [new_culture.GetName] [Concept('ethos','étos')|E]" # todo: CONCEPT CASE
+ ep3_laamp_flavour_ewan.9521.tt.secondary_skill.diplomacy: "Získal [skill_2.GetValue|V0] [Concept('diplomacy','diplomacie')|E] [Concept('skill','dovednost')|E] učením se přijmout [new_culture.GetName] [Concept('ethos','étos')|E]" # todo: CONCEPT CASE
+ ep3_laamp_flavour_ewan.9521.tt.secondary_skill.stewardship: "Získal [skill_2.GetValue|V0] [Concept('stewardship','správcovství')|E] [Concept('skill','dovednost')|E] učením se přijmout [new_culture.GetName] [Concept('ethos','étos')|E]" # todo: CONCEPT CASE
+ ep3_laamp_flavour_ewan.9521.tt.secondary_skill.intrigue: "Získal [skill_2.GetValue|V0] [Concept('intrigue','pletichářství')|E] [Concept('skill','dovednost')|E] učením se přijmout [new_culture.GetName] [Concept('ethos','étos')|E]" # todo: CONCEPT CASE
+ ep3_laamp_flavour_ewan.9521.tt.secondary_skill.learning: "Získal [skill_2.GetValue|V0] [Concept('learning','učenost')|E] [Concept('skill','dovednost')|E] učením se přijmout [new_culture.GetName] [Concept('ethos','étos')|E]" # todo: CONCEPT CASE
+ ep3_laamp_flavour_ewan.9521.tt.secondary_skill.prowess: "Získal [skill_2.GetValue|V0] [Concept('prowess','udatnost')|E] [Concept('skill','dovednost')|E] učením se přijmout [new_culture.GetName] [Concept('ethos','étos')|E]" # todo: CONCEPT CASE
  ep3_laamp_flavour_ewan.9521.a.changed_away: "Podivné, ale pořád jsi jeden z nás!"
  ep3_laamp_flavour_ewan.9521.a.changed_to: "Rozumné rozhodnutí!"
  ep3_laamp_flavour_ewan.9521.a.uninvolved: "Vítej zpět!"
@@ -1602,7 +1602,7 @@
  ep3_laamp_flavour_ewan.9523.f: "$ep3_laamp_flavour_ewan.9522.f$"
  ep3_laamp_flavour_ewan.9531.t: "Zmizel následovník: [visitor.GetTitledFirstNameNicknamedNoTooltip]"
  ep3_laamp_flavour_ewan.9531.desc: "Už uplynuly roky a je nyní jasné, že můj nepřítomný následovník [visitor.GetTitledFirstNameNicknamed] se nevrátí.\n\nNěco na absenci zpráv mi říká, že [visitor.GetSheHe] zemřel během svého pobytu pryč, i když přesnou příčinu neznám.\n\nUž přestaňme hledat [Select_CString(visitor.IsFemale,'její','jeho')] návrat."
- ep3_laamp_flavour_ewan.9531.tt.follower_is_dead: "[visitor.GetTitledFirstName] zemřel během pobytu mimo [camp|E]"
+ ep3_laamp_flavour_ewan.9531.tt.follower_is_dead: "[visitor.GetTitledFirstName] zemřel během pobytu mimo [Concept('camp','táboru')|E]" # todo: CONCEPT CASE
  ep3_laamp_flavour_ewan.9531.a: "Pomysli, už [visitor.GetHerHim] nikdy neuvidíme..."
  ep3_laamp_flavour_ewan.9531.b: "#EMP Eh.#!"
  ep3_laamp_flavour_ewan.9532.t: "$ep3_laamp_flavour_ewan.9531.t$"
@@ -1611,16 +1611,16 @@
  ep3_laamp_flavour_ewan.9532.b: "[imprisoner.GetFirstNameNoTooltip] si může [visitor.GetHerHim] nechat, jak chci."
  ep3_laamp_flavour_ewan.9533.t: "$ep3_laamp_flavour_ewan.9531.t$"
  ep3_laamp_flavour_ewan.9533.desc: "Po mnoha letech pryč začínáme znepokojovat o [visitor.GetTitledFirstNameNicknamed], který už měl být dávno zpět.\n\nBohužel se naše obavy potvrdily: tento večer [visitor.GetSheHe] zakolísal zpět do tábora a složil se, zcela zničený. Jak se mu to stalo a jak se v takovém stavu dostal zpět, nevím.\n\nV tom stavu ani [Select_CString(visitor.IsFemale,'sáma','sám')] neví, co se stalo."
- ep3_laamp_flavour_ewan.9533.tt.follower_is_incapable: "[visitor.GetTitledFirstName] [Select_CString(visitor.IsFemale,'byla','byl')] během pobytu mimo [camp|E] učiněn [GetTrait('incapable').GetName( GetNullCharacter )]"
+ ep3_laamp_flavour_ewan.9533.tt.follower_is_incapable: "[visitor.GetTitledFirstName] [Select_CString(visitor.IsFemale,'byla','byl')] během pobytu mimo [Concept('camp','táboru')|E] učiněn [GetTrait('incapable').GetName( GetNullCharacter )]" # todo: CONCEPT CASE
  ep3_laamp_flavour_ewan.9533.a: "Co se to [visitor.GetHerHim] stalo?"
  ep3_laamp_flavour_ewan.9533.b: "Neboj se, [visitor.GetFirstNameNoTooltip], postaráme se o tebe."
  ep3_laamp_flavour_ewan.9533.c: "Vyžeňte toho blázna dřív, než někoho šokuje."
  ep3_laamp_flavour_ewan.9534.t: "$ep3_laamp_flavour_ewan.9531.t$"
  ep3_laamp_flavour_ewan.9534.desc: "[visitor.GetTitledFirstNameNicknamed] už měl být zpátky.\n\n[visitor.GetSheHe|U] neměl být pryč tak dlouho, a přesto se [visitor.GetSheHe] ani nevrátil ani neposlal žádnou zprávu. Možná [visitor.GetSheHe] ztratil naši stopu a nedokáže ji znovu najít.\n\nAť je tomu jakkoli, zdá se jasné, že [visitor.GetFirstNameNoTooltip] se nám už nikdy nevrátí."
- ep3_laamp_flavour_ewan.9534.tt.follower_is_lost: "[visitor.GetTitledFirstName] se někde nějak ztratil a nevrátí se do [camp|E]"
+ ep3_laamp_flavour_ewan.9534.tt.follower_is_lost: "[visitor.GetTitledFirstName] se někde nějak ztratil a nevrátí se do [Concept('camp','táboru')|E]" # todo: CONCEPT CASE
  ep3_laamp_flavour_ewan.9534.a: "Zajímalo by mě, co se mohlo stát [visitor.GetHerHim]..."
  ep3_laamp_flavour_ewan.9541.t.nickname_gained: "Následovník získává přezdívku"
- ep3_laamp_flavour_ewan.9541.desc.nickname_gained: "Lidé v táboře dali [eponymee.GetFirstName] přezdívku podle [eponymee.GetHerHis] [personality|E] a [traits|E].\n$EFFECT_LIST_BULLET$Je nyní [Select_CString(eponymee.IsFemale,'známa','znám')] jako #V [eponymee.GetFirstNameNicknamed]#!"
+ ep3_laamp_flavour_ewan.9541.desc.nickname_gained: "Lidé v táboře dali [eponymee.GetFirstName] přezdívku podle [eponymee.GetHerHis] [Concept('personality','osobnosti')|E] a [Concept('traits','rysy')|E].\n$EFFECT_LIST_BULLET$Je nyní [Select_CString(eponymee.IsFemale,'známa','znám')] jako #V [eponymee.GetFirstNameNicknamed]#!" # todo: CONCEPT CASE
  ep3_laamp_flavour_ewan.9541.t.dog_gained: "Následovník získává psa"
  ep3_laamp_flavour_ewan.9541.desc.dog_gained: "[pet_owner.GetFirstNameNicknamed] si [Select_CString(pet_owner.IsFemale,'pořídila','pořídil')] psího mazlíčka."
  ep3_laamp_flavour_ewan.9541.t.cat_gained: "Následovník adoptován kočkou"

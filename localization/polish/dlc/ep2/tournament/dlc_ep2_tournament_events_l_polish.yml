@@ -107,7 +107,7 @@
  tournament_events.1100.b: "To je zábava!"
  tournament_events.1100.c: "Musím vidět tohoto [pas_darmes_instigator.GetWomanMan]!"
  tournament_events.1100.d: "Toto pošetilé chování je zakázáno."
- pas_darmes_token_claim_tt: "Každý [spouse|E], rodič a [child|E] [pas_darmes_victim.GetName]"
+ pas_darmes_token_claim_tt: "Každý [Concept('spouse','choť')|E], rodič a [Concept('child','dítě')|E] [pas_darmes_victim.GetName]" # todo: CONCEPT CASE
  tournament_events.1101.t: "$tournament_events.1100.t$"
  tournament_events.1101.desc: "Přitahnut k mému turnaji příslibem slávy a nadbytku soupeřů, cizí [pas_darmes_instigator.Custom('MountedWarriorTerm')] prohlásil poblíž [activity.GetCurrentPhase.GetLocation.GetName] pas d'armes.\n\n[pas_darmes_instigator.GetSheHe|U] se nazývá '[pas_darmes_instigator.GetFullName]' a tvrdí, že pochází z dalekých [exotic_origin.GetDeJureLiege.GetAdjectiveNoTooltip] krajů. Každý [ROOT.Char.Custom('MountedWarriorTerm')], který chce projít [Select_CString(pas_darmes_instigator.IsFemale,'jejím','jeho')] táborem, se s [pas_darmes_instigator.GetHerHim] musí střetnout kopím — jinak ztratí čest.\n\nBýt takto potupen cizincem jistě rozhnevuše šlechtu [ROOT.Char.GetPrimaryTitle.GetAdjectiveNoTooltip]."
  tournament_events.1101.a: "Dobře, naši bojovníci musí být stále v pozoru."
@@ -208,7 +208,7 @@
  tournament_events.1251.many: "Při [favor_recipient.GetFaith.HouseholdGodName] ztrácím přehled o počtu přízní, které jsem [Select_CString(ROOT.Char.IsFemale,'obdržela','obdržel')] - kdyby o sobě jen věděly..."
  tournament_events.1251.two: "Tohle je druhá přízeň, která mi byla nabídnuta! Co mám dělat se všemi těmito kousky látky."
  tournament_events.1251.one: "[favor_giver.GetSheHe|U] mi přiváže symbol na paži a usměje se, „Vezmi si to, když budeš soutěžit, přinese ti to štěstí!“"
- tournament_events.1251.favor_tt: "Každá nasazená přízeň mírně #positive_value zvyšuje#! šanci na vítězství v [contests|E]"
+ tournament_events.1251.favor_tt: "Každá nasazená přízeň mírně #positive_value zvyšuje#! šanci na vítězství v [Concept('contests','soutěžích')|E]" # todo: CONCEPT CASE
  tournament_events.1251.a.spouse: "Děkuji, drahoušku."
  tournament_events.1251.a.consort: "Ach, jak dojemné."
  tournament_events.1251.a.lover: "To je moc, má lásko."
@@ -267,8 +267,8 @@
  tournament_events.1300.desc: "„Ne, ne docela. Posuň nohu trochu zpátky pro rovnováhu a švihni #EMP skrz#! terč a... ano! Perfektní! Dobrá práce [young_knight.Custom('GetLassLad')]!“\n\nPřed sebou vidím zbrázděného starého veterána [old_knight.GetFirstName], jak cvičí [young_knight.GetFirstName], zjevně předávajícího zkušenosti jednoho [ROOT.Char.Custom('KnightCultureNoTooltipLowercase')] druhému. [old_knight.GetFirstNameNoTooltip] mě zahlédne, když přicházím.\n\n„Dobré ráno, můj [ROOT.Char.GetTitleAsNameNoTooltip]! Pomáhám tady [young_knight.GetFirstNameNoTooltip] zdokonalit [Select_CString(young_knight.IsFemale,'její','jeho')] postoje. Máte už talentovaného mladého bojovníka!“ [young_knight.GetFirstNameNoTooltip] se snaží, ale nedaří se mu skrýt rozpaky a potěšený úsměv nad chválou od [Select_CString(young_knight.IsFemale,'jejího','jeho')] mentora."
  tournament_events.1300.a: "Skvělé! Pokračujte!"
  tournament_events.1300.b: "Možná bych se toho [Select_CString(ROOT.Char.IsFemale,'měla','měl')] ujmout."
- tournament_events.1300.b.success: "[young_knight.GetFirstNameNoTooltip] získává #color_white 10#! [GetTrait('tourney_participant').GetName( GetNullCharacter )] $game_concept_trait_level_track_xp$ ve náhodném $game_concept_trait_level_track$"
- tournament_events.1300.b.failure: "[young_knight.GetFirstNameNoTooltip] ztrácí #color_white 5#! [GetTrait('tourney_participant').GetName( GetNullCharacter )] $game_concept_trait_level_track_xp$ v náhodném $game_concept_trait_level_track$"
+ tournament_events.1300.b.success: "[young_knight.GetFirstNameNoTooltip] získává #color_white 10#! [GetTrait('tourney_participant').GetName( GetNullCharacter )] $game_concept_trait_level_track_xp$ ve náhodném cestě rysu" # todo: CONCEPT CASE
+ tournament_events.1300.b.failure: "[young_knight.GetFirstNameNoTooltip] ztrácí #color_white 5#! [GetTrait('tourney_participant').GetName( GetNullCharacter )] $game_concept_trait_level_track_xp$ v náhodném cestě rysu" # todo: CONCEPT CASE
  tournament_events.1300.c: "[Select_CString(ROOT.Char.IsFemale,'Mohla','Mohl')] bys mě to taky naučit?"
  tournament_events.1310.t: "Slavný host"
  tournament_events.1310.desc: "Proslulá fanfára prorazí vzduch. Kolem mě projíždí herald na koni a rozvine pergamen.\n\n„Slyšte, slyšte! V tento krásný den jsme požehnáni přítomností skutečného virtuosa. [famous_knight.GetSheHe|U] porazil všechny protivníky od Irska až po Cathay! Je mi ctí a výsadou představit nejzručnějšího, nejvznešenějšího, nejlepšího na světě: [famous_knight.GetTitledFirstName]!“\n\nPostava prorazí kolem heraldy, zabrzdí koně a záblesk slunce osvítí [famous_knight.GetHerHim] jako svatozář, dav burácí, až se zdá, že se země chvěje."
@@ -623,8 +623,8 @@
  tournament_events.7000.b: "Mohla bych využít služby někoho jako ty."
  tournament_events.7000.b.tt: "Stane se tvým [mulan.Custom('KnightCulture')]"
  tournament_events.7000.c: "Stráže! #EMP Stráže!#! V našem turnaji je #EMP [mulan.GetWomanMan]#!"
- tournament_not_competing_tt: "[THIS.Char.GetShortUIName|U] nebude soutěžit v žádných [contests|E]"
- tournament_prize_template_tt: "Nelze vybavit [GetActivityType( 'activity_tournament' ).GetName] [prize|E], dokud mu nebyla udělena"
+ tournament_not_competing_tt: "[THIS.Char.GetShortUIName|U] nebude soutěžit v žádných [Concept('contests','soutěžích')|E]" # todo: CONCEPT CASE
+ tournament_prize_template_tt: "Nelze vybavit [GetActivityType( 'activity_tournament' ).GetName] [Concept('prize','cena')|E], dokud mu nebyla udělena" # todo: CONCEPT CASE
  tournament_placed_joust_wager_log_title: "Sázka na joust"
  tournament_placed_joust_wager_log: "[CHARACTER.GetTitledFirstName] vsadil na [TARGET_CHARACTER.GetTitledFirstName], že vyhraje jízdní souboj"
  tournament_placed_archery_wager_log_title: "Sázka na střelbu z luku"

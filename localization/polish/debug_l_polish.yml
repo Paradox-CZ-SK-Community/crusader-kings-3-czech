@@ -123,7 +123,7 @@
  debug_change_every_county: "Proveď akci ve všech hrabstvích"
  debug_change_every_county.a: "Zcela ovládnout"
  debug_change_every_county.b: "Nastavit populární názor na:"
- debug_change_every_county.b.a: "$debug_change_every_county.b$ $game_concept_high$"
+ debug_change_every_county.b.a: "$debug_change_every_county.b$ Vysoká" # todo: CONCEPT CASE
  debug_change_every_county.b.b: "$debug_change_every_county.b$ Nízké"
  test_effect_localization_interaction: "Otestovat lokalizaci efektu interakce"
  change_cultural_acceptance_debug_interaction: "Změnit kulturní přijetí"
@@ -194,23 +194,23 @@
  buddhism_relic: "[GetReligionByKey('buddhism_religion').GetAdjective] relikvie"
  judaism_relic: "[GetReligionByKey('judaism_religion').GetAdjective] relikvie"
  add_artifact_claim_interaction: "Uplatnit nárok na artefakt"
- add_claim_on_artifact_interaction: "Přidat [personal_artifact_claim|E]"
- add_house_claim_on_artifact_interaction: "Přidat [house_artifact_claim|E]"
+ add_claim_on_artifact_interaction: "Přidat [Concept('personal_artifact_claim','osobní nárok na artefakt')|E]" # todo: CONCEPT CASE
+ add_house_claim_on_artifact_interaction: "Přidat [Concept('house_artifact_claim','rodový nárok na artefakt')|E]" # todo: CONCEPT CASE
  take_artifact_player: "Dát hráči"
  give_away_random_artifact_interaction: "Darovat náhodnému sousedovi"
  take_artifact_interaction: "Vzít artefakt"
  debug_impact_house_relation_interaction: "Ovlivnit vztah domu" # todo: NEW TRANSLATION
- debug_impact_house_relation_interaction_desc: "Zlepšit nebo zhoršit [house_relation|E] mezi [house|E] [actor.GetHouse.GetName] a [recipient.GetHouse.GetName]." # todo: NEW TRANSLATION
- debug_impact_house_relation_for_the_significantly_better: "Výrazně #P zlepšit#! [house_relation|E] (+300%)" # todo: NEW TRANSLATION
- debug_impact_house_relation_for_the_noticeably_better: "Poznatelně #P zlepšit#! [house_relation|E] (+100%)" # todo: NEW TRANSLATION
- debug_impact_house_relation_for_the_slightly_better: "Mírně #P zlepšit#! [house_relation|E] (+30%)" # todo: NEW TRANSLATION
+ debug_impact_house_relation_interaction_desc: "Zlepšit nebo zhoršit [Concept('house_relation','vztah rodů')|E] mezi [Concept('house','rodem')|E] [actor.GetHouse.GetName] a [recipient.GetHouse.GetName]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ debug_impact_house_relation_for_the_significantly_better: "Výrazně #P zlepšit#! [Concept('house_relation','vztah rodů')|E] (+300%)" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ debug_impact_house_relation_for_the_noticeably_better: "Poznatelně #P zlepšit#! [Concept('house_relation','vztah rodů')|E] (+100%)" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ debug_impact_house_relation_for_the_slightly_better: "Mírně #P zlepšit#! [Concept('house_relation','vztah rodů')|E] (+30%)" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  debug_impact_house_relation_by_setting_to_neutral: "#M Vytvořit/Nastavit na neutrální#!" # todo: NEW TRANSLATION
- debug_impact_house_relation_for_the_slightly_worse: "Mírně #N zhoršit#! [house_relation|E] (-30%)" # todo: NEW TRANSLATION
- debug_impact_house_relation_for_the_noticeably_worse: "Poznatelně #N zhoršit#! [house_relation|E] (-100%)" # todo: NEW TRANSLATION
- debug_impact_house_relation_for_the_significantly_worse: "Výrazně #N zhoršit#! [house_relation|E] (-300%)" # todo: NEW TRANSLATION
- debug_impact_house_relation_by_clearing_it: "#V Vymazat [house_relation|E] (příští tik)#!" # todo: NEW TRANSLATION
+ debug_impact_house_relation_for_the_slightly_worse: "Mírně #N zhoršit#! [Concept('house_relation','vztah rodů')|E] (-30%)" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ debug_impact_house_relation_for_the_noticeably_worse: "Poznatelně #N zhoršit#! [Concept('house_relation','vztah rodů')|E] (-100%)" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ debug_impact_house_relation_for_the_significantly_worse: "Výrazně #N zhoršit#! [Concept('house_relation','vztah rodů')|E] (-300%)" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ debug_impact_house_relation_by_clearing_it: "#V Vymazat [Concept('house_relation','vztah rodů')|E] (příští tik)#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  debug_impact_house_relation_by_starting_a_feud: "#DIE1 Zahájit svár#!" # todo: NEW TRANSLATION
- debug_impact_house_relation_change_description: "[house_relation|E] se změnil o #D debug interaction#!." # todo: NEW TRANSLATION
+ debug_impact_house_relation_change_description: "[Concept('house_relation','Vztah rodů')|E] se změnil o #D debug interaction#!." # todo: NEW TRANSLATION # todo: CONCEPT CASE
  inspire_interaction: "Inspirovat"
  inspire_interaction_book: "Dostane inspiraci k napsání knihy"
  inspire_interaction_weaver: "Dostane inspiraci k tkaní"
@@ -244,7 +244,7 @@
  ai_sociability_trigger: "Společenskost AI"
  ai_values_divergence_trigger: "[TARGET_CHARACTER.GetShortUINamePossessive] odchylka hodnot AI: $VALUE|V$"
  has_province_modifier_trigger: "Má provinční modifikátor"
- NOT_has_province_modifier_trigger: "Má #bold ne#! $MODIFIER|V$ [province|E] [modifier|E]" # todo: NEW TRANSLATION
+ NOT_has_province_modifier_trigger: "Má #bold ne#! $MODIFIER|V$ [Concept('province','provincie')|E] [Concept('modifier','modifikátor')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  current_day_trigger: "Aktuální den je"
  current_month_trigger: "Aktuální měsíc je"
  current_year_trigger: "Aktuální rok je"
@@ -307,7 +307,7 @@
  has_relation_potential_lover_trigger: "[TARGET_CHARACTER.GetShortUIName] je označen jako potenciální milenec pro [CHARACTER.GetShortUIName]"
  has_relation_potential_friend_trigger: "[TARGET_CHARACTER.GetShortUIName] je označen jako potenciální přítel pro [CHARACTER.GetShortUIName]"
  has_any_secret_relation_trigger: "Má jakýkoli typ tajných vztahů"
- has_trait_with_flag_trigger: "Má [trait|E] s $FLAG$"
+ has_trait_with_flag_trigger: "Má [Concept('trait','rys')|E] s $FLAG$" # todo: CONCEPT CASE
  is_frontend_character_selected: "Je vybrána postava v rozhraní"
  fertility_trigger: "Plodnost: $NUM|V0$"
  witchcraft_scheme_blocked_trigger: "Schéma čarodějnictví možné"
@@ -354,7 +354,7 @@
  generate_artifact_with_history_debug_conquest: "Dobyt [ROOT.Char.GetShortUIName] ve válce proti [recipient.GetShortUIName]"
  generate_artifact_with_history_debug_taken_in_siege: "Dobyt [ROOT.Char.GetShortUIName] po obléhání [recipient.GetCurrentLocation.GetName]"
  add_glory_interaction: "Přidat slávu ocenění"
- add_glory_debug_high_tt: "Přidat 2500 slávy (nastavit [accolade|E] na maximální hodnost)"
+ add_glory_debug_high_tt: "Přidat 2500 slávy (nastavit [Concept('accolade','vyznamenání')|E] na maximální hodnost)" # todo: CONCEPT CASE
  add_glory_debug_low_tt: "Přidat 250 slávy"
  add_glory_debug_delete_tt: "Nastavit slávu na 0"
  debug_progress_all_active_schemes_interaction: "Dokončit aktivní spiknutí"
@@ -368,7 +368,7 @@
  BETA_PROMPT_MESSAGE: "Toto je beta verze nadcházejícího obsahu CK3. NEZVEŘEJŇUJTE žádné informace z této verze veřejně. Tato verze zpracovává minimální množství osobních údajů za účelem dohledání možných úniků." # todo: NEW TRANSLATION
  debug_destroy_artifact_interaction: "Zničit/Poškodit artefakt"
  destroy_artifact: "Zničit"
- damage_artifact: "Poškodit (snížit [durability|E] na polovinu)"
+ damage_artifact: "Poškodit (snížit [Concept('durability','trvanlivost')|E] na polovinu)" # todo: CONCEPT CASE
  end_diarchy_interaction: "Ukončit diarchii"
  debug_travel_to_ruler_interaction: "Cesta za vládcem"
  designate_diarch_interaction: "Určit diarcha"
@@ -544,7 +544,7 @@
  debug_sub_realm_flood_tt: "[recipient.GetShortUIName|U] musí vlastnit území u velké řeky, které není aktuálně zaplaveno" # todo: NEW TRANSLATION
  CONFEDERATION_HOUSE_NAME: "[bloc_creator.GetBaseNameNoTooltip] Blok" # todo: NEW TRANSLATION
  debug_set_mandala_aspect: "Nastavit #BOLD #M aspekt mandaly#! #!" # todo: NEW TRANSLATION
- debug_set_mandala_aspect_desc: "Nastavit [mandala_aspect|E] [house|E] [recipient.GetShortUINamePossessive]" # todo: NEW TRANSLATION
+ debug_set_mandala_aspect_desc: "Nastavit [Concept('mandala_aspect','aspekt mandaly')|E] [Concept('house','rod')|E] [recipient.GetShortUINamePossessive]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  debug_set_mandala_aspect_none: "Bez aspektu" # todo: NEW TRANSLATION
  debug_set_mandala_aspect_creation_01: "Stvoření 01" # todo: NEW TRANSLATION
  debug_set_mandala_aspect_creation_02: "Stvoření 02" # todo: NEW TRANSLATION

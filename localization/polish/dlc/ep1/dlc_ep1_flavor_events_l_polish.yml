@@ -23,7 +23,7 @@
  ep1_flavor.0001.t: "Tajné [scion_actual.Custom('GetDaughterSon')|U]"
  ep1_flavor.0001.desc: "Malé obchodní jednání ve městě přivádí mě a mou družinu, žíznivé a hladové, do malé kouřem naplněné krčmy.\n\nZe všech lidí bych nejméně očekával, že [scion_parent.GetTitledFirstName] sedí vzadu, špatně přestrojený v plášti a kapuci. Vedle [scion_parent.GetHerHim] sedí mladý [scion_actual.GetWomanMan], který... to přece nemůže být!\n\nZ [Select_CString(scion_actual.IsFemale,'její','jeho')] tváře, způsobu, jakým [scion_actual.GetSheHe] s úžasem rozhlíží po místnosti, a [Select_CString(scion_actual.IsFemale,'její','jeho')] napodobování charakteristických gest [scion_parent.GetFirstNameNoTooltip], jsem #EMP přesvědčen#! [scion_actual.GetSheHe] musí být nějaký tajný nemanželský potomek [scion_parent.GetTitleAsNameNoTooltip], možná poprvé spatřující svět venku."
  ep1_flavor.0001.a: "[scion_parent.GetFirstNameNoTooltip]! Přivedl jsi mi [scion_actual.Custom('GetBrideGroom')]?"
- ep1_flavor.0001.a.tt.success: "Násilím sjednáte [marriage|E] [alliance|E]"
+ ep1_flavor.0001.a.tt.success: "Násilím sjednáte [Concept('marriage','sňatek')|E] [Concept('alliance','aliance')|E]" # todo: CONCEPT CASE
  ep1_flavor.0001.a.tt.failure: "[scion_parent.GetFirstNameNoTooltip] uprchne s [scion_parent.GetHerHis] [scion_actual.Custom('GetDaughterSon')]"
  ep1_flavor.0001.b: "[scion_parent.GetFirstNameNoTooltip]! Přivedl jsi mému [ROOT.Char.Custom2('RelationToMeShort',SCOPE.sC('prospective_spouse'))] [scion_actual.Custom('GetBrideGroom')]?"
  ep1_flavor.0001.c: "Přiveď městského hlásatele, #EMP okamžitě#!!"
@@ -44,11 +44,11 @@
  ep1_flavor.0021.t: "Dvě říše rozdělené dvorským jazykem"
  ep1_flavor.0021.desc: "Při vstupu do komnaty mě přivítá chichotání: hlouček dvořanů vedený [nitpicker.GetTitledFirstName] se tlačí kolem čerstvého dopisu od [rival_monarch.GetTitledFirstName].\n\n[nitpicker.GetFirstNameNoTooltip] mi zamává a volá smějíc se.\n\n„[ROOT.Char.Custom('FormOfAddressForLiege')|U], prostě to #EMP musíte#! přečíst! Nese oficiální pečeť [rival_realm.GetNameNoTier], ale každé druhé slovo je napsáno, jako by ho psal negramotný sedlák. Ti roztržití lenoši ani nepoužívají správné souhlásky, natož aby mluvili dobře [ROOT.Char.GetCourtLanguage.GetName], a je to #EMP k popukání#!."
  ep1_flavor.0021.a: "Tato zpráva postrádá polovinu samohlásek! Ohavné!"
- ep1_flavor.0021.a.tt: "Oba [courts|E] ztrácejí [SCOPE.ScriptValue('ep1_flavour_0021_courts_lose_opinion_value')|N0] [opinion|E] vůči sobě."
+ ep1_flavor.0021.a.tt: "Oba [Concept('courts','dvory')|E] ztrácejí [SCOPE.ScriptValue('ep1_flavour_0021_courts_lose_opinion_value')|N0] [Concept('opinion','mínění')|E] vůči sobě." # todo: CONCEPT CASE
  ep1_flavor.0021.a.tt.success: "Pravopis [ROOT.Char.GetPrimaryTitle.GetAdjectiveNoTooltip] je nejlepší!"
  ep1_flavor.0021.a.tt.failure: "Pravopis [rival_monarch.GetPrimaryTitle.GetAdjectiveNoTooltip] je nejlepší!"
  ep1_flavor.0021.b: "Nejsou to snad naši jazykoví příbuzní?"
- ep1_flavor.0021.b.tt: "Oba [courts|E] získávají [SCOPE.ScriptValue('ep1_flavour_0021_courts_gain_opinion_value')|P0] [opinion|E] vůči sobě."
+ ep1_flavor.0021.b.tt: "Oba [Concept('courts','dvory')|E] získávají [SCOPE.ScriptValue('ep1_flavour_0021_courts_gain_opinion_value')|P0] [Concept('opinion','mínění')|E] vůči sobě." # todo: CONCEPT CASE
  ep1_flavor.0021.c: "Dva urozené dvory a mezi nimi ani špetka rozumu..."
  ep1_flavor.0021.c.tt: "$ep1_flavor.0021.a.tt$"
  cultural_acceptance_courtly_spelling_differences: "Šlechtické hádky o pravopisu"
@@ -60,8 +60,8 @@
  ep1_flavor.0031.c: "Existují techniky, které může naučit jen zkušenost..."
  ep1_flavor.0031.c.tt: "Ukážete novým učencům, jak se to dělá"
  ep1_flavor.0031.d: "Tyto rituály jsou #EMP nevhodné#! pro učence."
- ep1_flavor.0031.inspire.scholar_1.tt: "[scholar_1.GetFirstNameNoTooltip] se stává [inspired|E]"
- ep1_flavor.0031.inspire.scholar_2.tt: "[scholar_2.GetFirstNameNoTooltip] se stává [inspired|E]"
+ ep1_flavor.0031.inspire.scholar_1.tt: "[scholar_1.GetFirstNameNoTooltip] se stává [Concept('inspired','inspirovaným')|E]" # todo: CONCEPT CASE
+ ep1_flavor.0031.inspire.scholar_2.tt: "[scholar_2.GetFirstNameNoTooltip] se stává [Concept('inspired','inspirovaným')|E]" # todo: CONCEPT CASE
  ep1_flavor.2000.t: "Vojenské cvičení"
  ep1_flavor.2000.desc_intro: "Když prohlížím místní vojenský tábor, je jasné, že [marshal_scope.GetTitledFirstName] a [knight_scope.GetTitledFirstName] se mě snaží přesvědčit. \n\n„Panovníku, muži lenoší, když panuje mír; některé aktivity by je udržely v pohybu...“ pobízí můj [marshal_scope.GetCouncilTitle]."
  ep1_flavor.2000.desc_archers: "„[ROOT.Char.Custom('GetRegionalArcherMAA')|l] jsou nenahraditelní, měli bychom zajistit, aby jejich šípy vždy zasahovaly cíl.“"
@@ -112,7 +112,7 @@
  ep1_2000_generic_modifier_desc: "Tato postava podporovala vojenské sporty, aby klíčoví bojovníci byli vždy připraveni."
  infantry: "pěchota"
  cavalry: "jízda"
- ep1_flavor.2000.tradition_tt: "V důsledku vašich [culture_possessive|E] [traditions|E]"
+ ep1_flavor.2000.tradition_tt: "V důsledku vašich [Concept('culture_possessive','kultur')|E] [Concept('traditions','tradic')|E]" # todo: CONCEPT CASE
  ep1_flavor.2010.t: "Dvůr zmijí"
  ep1_flavor.2010.desc: "Každou noc, jakmile jsou svíčky uhašeny a temný [ROOT.Char.Custom('FortifiedBuilding')] ztichne, komnaty obchází šeptání o spiknutí, které má za cíl [real_plot.GetSchemeType.GetTypeNameNoTooltip|l] mě."
  ep1_flavor.2010.desc_spy_real: "[spymaster.GetCouncilTitleFirstName] se zdá být jistý, že za tím stojí můj [ROOT.Char.Custom2('RelationToMeShort', SCOPE.sC('real_plotter'))], [real_plotter.GetTitledFirstName]... \n\n"
@@ -315,8 +315,8 @@
  promoter_of_courtly_love_modifier_desc: "Tato postava nadšeně hlásá platónskou lásku a něžnou poezii."
  scheme_promoter_of_courtly_love: "Dvůr lásky: $VALUE|0=-+$"
  scheme_detractor_of_courtly_love: "Dvůr odmítá dvorní lásku: $VALUE|0=-+$"
- court_9000.c.tt: "[GetScheme('seduce').GetTypeName] [schemes|E] u vašeho dvora jsou úspěšnější po #P 20 let#!"
- court_9000.b.tt: "[GetScheme('seduce').GetTypeName] [schemes|E] u vašeho dvora jsou méně úspěšné po #P 20 let#!"
+ court_9000.c.tt: "[GetScheme('seduce').GetTypeName] [Concept('schemes','Intriky')|E] u vašeho dvora jsou úspěšnější po #P 20 let#!" # todo: CONCEPT CASE
+ court_9000.b.tt: "[GetScheme('seduce').GetTypeName] [Concept('schemes','Intriky')|E] u vašeho dvora jsou méně úspěšné po #P 20 let#!" # todo: CONCEPT CASE
  knight_of_love_modifier: "Rytíř lásky"
  knight_of_love_modifier_desc: "Tato postava bojovala za lásku a zvítězila."
  fought_for_courtly_love_modifier: "Bojoval za dvorní lásku"
@@ -324,5 +324,5 @@
  promise_of_feasts_modifier: "Příslib nadcházejících hodů"
  promise_of_feasts_modifier_desc: "Tato postava chce hýčkat své dvořany hostinami a je za to milována. Hostiny jsou pro ni levnější."
  more_work_less_fun_modifier: "Více práce, méně zábavy"
- feasts_more_expensive_tt: "[GetActivityType('activity_feast').GetName] @gold_icon![gold|E] je zvýšena#!"
- feasts_more_expensive_modifier_tt: "Zvýšené náklady na [GetActivityType('activity_feast').GetName] @gold_icon![gold|E]#!"
+ feasts_more_expensive_tt: "[GetActivityType('activity_feast').GetName] @gold_icon![Concept('gold','Zlato')|E] je zvýšena#!" # todo: CONCEPT CASE
+ feasts_more_expensive_modifier_tt: "Zvýšené náklady na [GetActivityType('activity_feast').GetName] @gold_icon![Concept('gold','zlato')|E]#!" # todo: CONCEPT CASE

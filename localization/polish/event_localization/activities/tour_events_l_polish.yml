@@ -1049,13 +1049,13 @@
  tour_general.9998.a: "To je škoda."
  you_progress_deeper_tt: "Pokračujete hlouběji..."
  progress_to_unlock_journal_mystery_tt: "Jste o krok blíže odhalení záhad deníku..."
- bonus_to_hostile_schemes: "Získáváte #EMP obrovský#! bonus k [GetScheme('abduct').GetTypeName] a [GetScheme('murder').GetTypeName] [schemes|E] zaměřeným na vašeho vazala"
+ bonus_to_hostile_schemes: "Získáváte #EMP obrovský#! bonus k [GetScheme('abduct').GetTypeName] a [GetScheme('murder').GetTypeName] [Concept('schemes','intriky')|E] zaměřeným na vašeho vazala" # todo: CONCEPT CASE
  take_liege_to_pub_tt: "Vezmete svého lenního pána do místní hospody"
  may_get_favor_tt: "Můžete získat páku"
  vassal_may_get_hook_tt: "Na vás může být získána páka"
  stop_host_is_informed_tt: "Váš hostitel bude [Select_CString(ROOT.Char.IsFemale,'informována','informován')]"
- progress_towards_hook_tt: "Získáváte postup směrem k [hook|E]"
- second_progress_towards_hook_tt: "[subject.GetFirstName] získává pokrok k získání páky [hook|E] vůči vám"
+ progress_towards_hook_tt: "Získáváte postup směrem k [Concept('hook','páce')|E]" # todo: CONCEPT CASE
+ second_progress_towards_hook_tt: "[subject.GetFirstName] získává pokrok k získání páky [Concept('hook','páka')|E] vůči vám" # todo: CONCEPT CASE
  vassal_is_offended_tt: "Váš vazal bude velmi [Select_CString(ROOT.Char.IsFemale,'uražena','uražen')]..."
  vassal_may_be_offended_tt: "#EMP Váš hostitel může být [Select_CString(ROOT.Char.IsFemale,'uražena','uražen')] a podniknout kroky#!"
  marshal_may_like_tt: "Váleční a bojovně založení jedinci to mohou ocenit"
@@ -1141,7 +1141,7 @@
  rival_silenced_me_corresponding: "[TARGET_CHARACTER.GetShortUIName|U] umlčel [CHARACTER.GetShortUIName]"
  friend_entertained: "[TARGET_CHARACTER.GetShortUIName|U] [Select_CString(TARGET_CHARACTER.IsFemale,'byla','byl')] pobaven [CHARACTER.GetShortUIName]"
  friend_entertained_corresponding: "[CHARACTER.GetShortUIName|U] [Select_CString(CHARACTER.IsFemale,'byla','byl')] pobaven [TARGET_CHARACTER.GetShortUIName]"
- reject_at_gates_tt: "To může vést k #warning rivalitě#! s vaším [liege|E]!"
+ reject_at_gates_tt: "To může vést k #warning rivalitě#! s vaším [Concept('liege','lenním pánem')|E]!" # todo: CONCEPT CASE
  tour_begin_tour_grounds_tt: "$tour_grounds_begins_tt$"
  tour_grounds_begins_tt: "Zahájit aktivitu Prohlídka areálu"
  tour_begin_dinner_tt: "Zahájit aktivitu 'Večeře'"
@@ -1164,7 +1164,7 @@
  kill_horse_tt: "Zabijete svého koně"
  host_dinner_if_liege_eat_tt: "Pokud váš suzerén sní srdce"
  host_dinner_if_liege_refuse_tt: "Pokud váš suzerén odmítne"
- final_reward_tt: "[activity|E] dokončeno"
+ final_reward_tt: "[Concept('activity','Aktivita')|E] dokončeno" # todo: CONCEPT CASE
  level_5_reward_tt: "Odměny prohlídky – stupeň 5"
  level_4_reward_tt: "Odměny prohlídky – stupeň 4"
  level_3_reward_tt: "Odměny prohlídky – stupeň 3"
@@ -1173,11 +1173,11 @@
  failed_to_get_reward_tt: "Utěšující cena"
  if_vassal_accepts_tt: "Pokud váš vazal přijme"
  if_vassal_rejects_tt: "Pokud váš vazal odmítne"
- activity_tour_special_type_bar_segment_tt_0: "Získáte #P [prestige_i][GetPlayer.MakeScope.ScriptValue('tour_level_1_prestige_reward')|0]#! [prestige|E]"
- activity_tour_special_type_bar_segment_tt_1: "Získáte #P [prestige_i][GetPlayer.MakeScope.ScriptValue('tour_level_2_prestige_reward')|0]#! [prestige|E]\nZískáte #P [dynasty_prestige_i]50#! [dynasty_prestige|E]\nKaždý zúčastněný $parochial_vassal$ získá #P 30#! [opinion|E]"
- activity_tour_special_type_bar_segment_tt_2: "Získáte #P [prestige_i][GetPlayer.MakeScope.ScriptValue('tour_level_3_prestige_reward')|0]#! [prestige|E]\nZískáte #P [dynasty_prestige_i]75#! [dynasty_prestige|E]\nKaždý účastnící se $parochial_vassal$ získá #P 35#! [opinion|E]\nKaždý [vassal|E], kterého jste navštívili, získá #P 20#! [opinion|E]"
- activity_tour_special_type_bar_segment_tt_3: "Získáte #P [prestige_i][GetPlayer.MakeScope.ScriptValue('tour_level_4_prestige_reward')|0]#! [prestige|E]\nZískáte #P [dynasty_prestige_i]150#! [dynasty_prestige|E]\nKaždý účastnící se $parochial_vassal$ získá #P 40#! [opinion|E]\nKaždý [vassal|E], kterého jste navštívili, získá #P 25#! [opinion|E]\nZískejte [GetModifier('itinerant_liege_modifier').GetNameWithTooltip|L] na 20 let"
- activity_tour_special_type_bar_segment_tt_4: "Získáte #P [prestige_i][GetPlayer.MakeScope.ScriptValue('tour_level_5_prestige_reward')|0]#! [prestige|E]\nZískáte #P [dynasty_prestige_i]150#! [dynasty_prestige|E]\nKaždý účastnící se $parochial_vassal$ získá #P 50#! [opinion|E]\nKaždý [vassal|E], kterého jste navštívili, získá #P 30#! [opinion|E]\nZískejte [GetModifier('mega_itinerant_liege_modifier').GetNameWithTooltip|L] na 20 let"
+ activity_tour_special_type_bar_segment_tt_0: "Získáte #P [prestige_i][GetPlayer.MakeScope.ScriptValue('tour_level_1_prestige_reward')|0]#! [Concept('prestige','prestiž')|E]" # todo: CONCEPT CASE
+ activity_tour_special_type_bar_segment_tt_1: "Získáte #P [prestige_i][GetPlayer.MakeScope.ScriptValue('tour_level_2_prestige_reward')|0]#! [Concept('prestige','prestiž')|E]\nZískáte #P [dynasty_prestige_i]50#! [Concept('dynasty_prestige','věhlas')|E]\nKaždý zúčastněný $parochial_vassal$ získá #P 30#! [Concept('opinion','mínění')|E]" # todo: CONCEPT CASE
+ activity_tour_special_type_bar_segment_tt_2: "Získáte #P [prestige_i][GetPlayer.MakeScope.ScriptValue('tour_level_3_prestige_reward')|0]#! [Concept('prestige','prestiž')|E]\nZískáte #P [dynasty_prestige_i]75#! [Concept('dynasty_prestige','věhlas')|E]\nKaždý účastnící se $parochial_vassal$ získá #P 35#! [Concept('opinion','míněním')|E]\nKaždý [Concept('vassal','vazal')|E], kterého jste navštívili, získá #P 20#! [Concept('opinion','mínění')|E]" # todo: CONCEPT CASE
+ activity_tour_special_type_bar_segment_tt_3: "Získáte #P [prestige_i][GetPlayer.MakeScope.ScriptValue('tour_level_4_prestige_reward')|0]#! [Concept('prestige','prestiž')|E]\nZískáte #P [dynasty_prestige_i]150#! [Concept('dynasty_prestige','věhlas')|E]\nKaždý účastnící se $parochial_vassal$ získá #P 40#! [Concept('opinion','míněním')|E]\nKaždý [Concept('vassal','vazal')|E], kterého jste navštívili, získá #P 25#! [Concept('opinion','mínění')|E]\nZískejte [GetModifier('itinerant_liege_modifier').GetNameWithTooltip|L] na 20 let" # todo: CONCEPT CASE
+ activity_tour_special_type_bar_segment_tt_4: "Získáte #P [prestige_i][GetPlayer.MakeScope.ScriptValue('tour_level_5_prestige_reward')|0]#! [Concept('prestige','prestiž')|E]\nZískáte #P [dynasty_prestige_i]150#! [Concept('dynasty_prestige','věhlas')|E]\nKaždý účastnící se $parochial_vassal$ získá #P 50#! [Concept('opinion','míněním')|E]\nKaždý [Concept('vassal','vazal')|E], kterého jste navštívili, získá #P 30#! [Concept('opinion','mínění')|E]\nZískejte [GetModifier('mega_itinerant_liege_modifier').GetNameWithTooltip|L] na 20 let" # todo: CONCEPT CASE
  very_impressed_by_hunting_tt: "[stop_host_scope.GetFirstName] je #EMP velmi#! [Select_CString(ROOT.Char.IsFemale,'ohromena','ohromen')]!"
  impressed_by_hunting_tt: "[stop_host_scope.GetFirstName] je [Select_CString(stop_host_scope.IsFemale,'ohromena','ohromen')]"
  not_very_impressed_by_hunting_tt: "Ztrapníte se před [stop_host_scope.GetFirstName]"
@@ -1210,8 +1210,8 @@
  courtier_trait_stewardship: "ziskové způsoby"
  courtier_trait_intrigue: "tajné způsoby"
  courtier_trait_prowess: "zdatnost"
- every_title_held_by_vassal: "Každý [county|E] titul, který drží [stop_host_scope.GetFirstName]"
- every_title_held_by_vassal_and_vassals: "Každý [county|E] titul v [stop_host_scope.GetFirstNamePossessive] panství"
+ every_title_held_by_vassal: "Každý [Concept('county','hrabství')|E] titul, který drží [stop_host_scope.GetFirstName]" # todo: CONCEPT CASE
+ every_title_held_by_vassal_and_vassals: "Každý [Concept('county','hrabství')|E] titul v [stop_host_scope.GetFirstNamePossessive] panství" # todo: CONCEPT CASE
  artifact_secret_journal_name: "Tajemný deník"
  artifact_secret_journal_description: "Koženě vázaná kniha zamčená nepochopitelnou hádankou. Pohled na ni ve vás vzbuzuje zvědavost i děs."
  haunted_by_ghosts_log_title: "Pronásledován duchy"

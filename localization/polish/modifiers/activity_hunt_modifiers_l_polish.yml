@@ -13,7 +13,7 @@
  modifier_hunt_friend_of_animal_desc: "Tato postava má podivuhodné nadání pro zacházení se zvířaty."
  hunt_guide_local_madman_modifier: "Místní průvodce"
  hunt_guide_local_madman_modifier_desc: "Tato postava byla během lovu majitelem bažiny provedena bažinou.\n#weak $hunt_modifier_success_slightly_improved_location_tt$#!\n"
- hunt_guide_local_madman_modifier_custom_desc: "Tato postava byla během lovu majitelem bažiny provedena bažinou.\n#weak Dokud je tento modifikátor aktivní, vaše [hunt_success_chance|E] bude #positive_value mírně lepší#! v [SCOPE.sTitle('activity_place').GetNameNoTier]#!\n"
+ hunt_guide_local_madman_modifier_custom_desc: "Tato postava byla během lovu majitelem bažiny provedena bažinou.\n#weak Dokud je tento modifikátor aktivní, vaše [Concept('hunt_success_chance','šance na úspěch lovu')|E] bude #positive_value mírně lepší#! v [SCOPE.sTitle('activity_place').GetNameNoTier]#!\n" # todo: CONCEPT CASE
  hunt_killed_local_madman_modifier: "[Select_CString(ROOT.Char.IsFemale,'Zabita','Zabit')] místní"
  hunt_killed_local_madman_modifier_desc: "Známý bažinný obyvatel tohoto hrabství byl [Select_CString(ROOT.Char.IsFemale,'zabita','zabit')] příliš horlivým lovcem."
  hunt_talked_to_madman_modifier: "Vyslyšel obavy místních"
@@ -63,17 +63,17 @@
  hunt_protected_their_secret_modifier: "Střežící tajemství"
  hunt_protected_their_secret_modifier_desc: "Tato postava drží karty u těla."
  hunt_sighting_standard_modifier: "Pozorování zvěře"
- hunt_sighting_standard_modifier_desc: "V tomto hrabství bylo spatřeno mnoho slibné zvěře.\n#weak [hunt_success_chance|E] je v tomto [county|E] zvýšen#!"
- hunt_sighting_standard_modifier_custom_desc: "Ve zprávách bylo v tomto hrabství spatřeno mnoho [SCOPE.sTitle('sighting_county').Custom('GetAnimalPlural')].\n#weak Zvyšuje [hunt_success_chance_no_prefix|E] lovů na [SCOPE.sTitle('sighting_county').Custom('GetAnimalType')|U]#!"
+ hunt_sighting_standard_modifier_desc: "V tomto hrabství bylo spatřeno mnoho slibné zvěře.\n#weak [Concept('hunt_success_chance','Šance na úspěch lovu')|E] je v tomto [Concept('county','hrabství')|E] zvýšen#!" # todo: CONCEPT CASE
+ hunt_sighting_standard_modifier_custom_desc: "Ve zprávách bylo v tomto hrabství spatřeno mnoho [SCOPE.sTitle('sighting_county').Custom('GetAnimalPlural')].\n#weak Zvyšuje [Concept('hunt_success_chance_no_prefix','šance na úspěch')|E] lovů na [SCOPE.sTitle('sighting_county').Custom('GetAnimalType')|U]#!" # todo: CONCEPT CASE
  hunt_sighting_dangerous_modifier: "Pozorování šelmy"
- hunt_sighting_dangerous_modifier_desc: "Údajně tuto oblast sužuje krutá šelma.\n#weak [hunt_success_chance|E] je v tomto [county|E] zvýšen#!"
- hunt_sighting_dangerous_modifier_custom_desc: "Údajně tuto oblast sužuje krutá [SCOPE.sTitle('sighting_county').Custom('GetAnimalType')].\n#weak Zvyšuje [hunt_success_chance_no_prefix|E] lovů na [SCOPE.sTitle('sighting_county').Custom('GetAnimalType')|U]#!"
+ hunt_sighting_dangerous_modifier_desc: "Údajně tuto oblast sužuje krutá šelma.\n#weak [Concept('hunt_success_chance','Šance na úspěch lovu')|E] je v tomto [Concept('county','hrabství')|E] zvýšen#!" # todo: CONCEPT CASE
+ hunt_sighting_dangerous_modifier_custom_desc: "Údajně tuto oblast sužuje krutá [SCOPE.sTitle('sighting_county').Custom('GetAnimalType')].\n#weak Zvyšuje [Concept('hunt_success_chance_no_prefix','šance na úspěch')|E] lovů na [SCOPE.sTitle('sighting_county').Custom('GetAnimalType')|U]#!" # todo: CONCEPT CASE
  hunt_sighting_legendary_modifier: "Legendární pozorování"
- hunt_sighting_legendary_modifier_desc: "Ve zprávách bylo v tomto hrabství spatřeno mytické zvíře.\n#weak V tomto [county|E] může být uspořádán $hunt_type_legendary$ [GetActivityType('activity_hunt').GetName]#!"
- hunt_sighting_legendary_modifier_custom_desc: "Údajně bylo v tomto hrabství spatřeno mytické [SCOPE.sTitle('sighting_county').Custom('GetLegendaryColor')] [SCOPE.sTitle('sighting_county').Custom('GetAnimalType')].\n#weak V tomto [county|E] lze ulovit legendárního [SCOPE.sTitle('sighting_county').Custom('GetLegendaryColor')|UV] [SCOPE.sTitle('sighting_county').Custom('GetAnimalType')|UV]#!"
+ hunt_sighting_legendary_modifier_desc: "Ve zprávách bylo v tomto hrabství spatřeno mytické zvíře.\n#weak V tomto [Concept('county','hrabství')|E] může být uspořádán $hunt_type_legendary$ [GetActivityType('activity_hunt').GetName]#!" # todo: CONCEPT CASE
+ hunt_sighting_legendary_modifier_custom_desc: "Údajně bylo v tomto hrabství spatřeno mytické [SCOPE.sTitle('sighting_county').Custom('GetLegendaryColor')] [SCOPE.sTitle('sighting_county').Custom('GetAnimalType')].\n#weak V tomto [Concept('county','hrabství')|E] lze ulovit legendárního [SCOPE.sTitle('sighting_county').Custom('GetLegendaryColor')|UV] [SCOPE.sTitle('sighting_county').Custom('GetAnimalType')|UV]#!" # todo: CONCEPT CASE
  hunt_sighting_falconry_modifier: "Pozorování ptáků"
- hunt_sighting_falconry_modifier_desc: "Nedávná pozorování hnízdících nebo migrujících ptáků činí toto hrabství ideálním pro sokolnictví.\n#weak $hunt_type_falconry$ [hunt_success_chance|E] je v tomto [county|E] zvýšen#!"
- hunt_sighting_falconry_modifier_custom_desc: "Pozorování hnízdících nebo migrujících [SCOPE.sTitle('sighting_county').Custom('GetAnimalPlural')] činí toto hrabství ideálním pro sokolnictví.\n#weak Zvyšuje [hunt_success_chance_no_prefix|E] lovů na [SCOPE.sTitle('sighting_county').Custom('GetAnimalType')|U]#!"
+ hunt_sighting_falconry_modifier_desc: "Nedávná pozorování hnízdících nebo migrujících ptáků činí toto hrabství ideálním pro sokolnictví.\n#weak $hunt_type_falconry$ [Concept('hunt_success_chance','Šance na úspěch lovu')|E] je v tomto [Concept('county','hrabství')|E] zvýšen#!" # todo: CONCEPT CASE
+ hunt_sighting_falconry_modifier_custom_desc: "Pozorování hnízdících nebo migrujících [SCOPE.sTitle('sighting_county').Custom('GetAnimalPlural')] činí toto hrabství ideálním pro sokolnictví.\n#weak Zvyšuje [Concept('hunt_success_chance_no_prefix','šance na úspěch')|E] lovů na [SCOPE.sTitle('sighting_county').Custom('GetAnimalType')|U]#!" # todo: CONCEPT CASE
  hunt_heir_murder_exposed_modifier: "Lidová spravedlnost"
  hunt_heir_murder_exposed_modifier_desc: "Tato postava upřednostnila spravedlnost před reputací dvořana."
  hunt_disrespected_locals_modifier: "Pohrdaní místní"
@@ -99,29 +99,29 @@
  hunt_witch_suspicion_modifier: "Podezření z čarodějnictví"
  hunt_witch_suspicion_modifier_desc: "Zájem této postavy o přírodu vyvolal otázky ohledně její věrnosti pravému bohu."
  hunt_mismanaged_game_modifier: "Špatně spravovaná zvěř"
- hunt_mismanaged_game_modifier_desc: "Lov srnčí zvěře snížil zásoby zvěře v tomto hrabství.\n#weak Budoucí [hunt_success_chance|E] proti tomuto druhu zvířat budou v tomto [county|E] #negative_value mírně horší#!"
- hunt_mismanaged_game_modifier_custom_desc: "Tato postava chytila kolouška a vychovala ho krotce, aby oklamala jeho divoké příbuzné.\n#weak Budoucí [ROOT.Char.Custom('GetAnimalTypeMismanaged')|UV] [hunt_success_chance|E] budou v tomto [county|E] #negative_value mírně horší#!"
+ hunt_mismanaged_game_modifier_desc: "Lov srnčí zvěře snížil zásoby zvěře v tomto hrabství.\n#weak Budoucí [Concept('hunt_success_chance','šancích na úspěch lovu')|E] proti tomuto druhu zvířat budou v tomto [Concept('county','hrabství')|E] #negative_value mírně horší#!" # todo: CONCEPT CASE
+ hunt_mismanaged_game_modifier_custom_desc: "Tato postava chytila kolouška a vychovala ho krotce, aby oklamala jeho divoké příbuzné.\n#weak Budoucí [ROOT.Char.Custom('GetAnimalTypeMismanaged')|UV] [Concept('hunt_success_chance','šance na úspěch lovu')|E] budou v tomto [Concept('county','hrabství')|E] #negative_value mírně horší#!" # todo: CONCEPT CASE
  hunt_tame_deer_modifier: "Ochočený koloušek"
- hunt_tame_deer_modifier_desc: "Tato postava chytila kolouška a vychovala ho krotce, aby oklamala jeho divoké příbuzné.\n#weak V budoucnu budou [hunt_success_chance|E] proti tomuto druhu zvířete #positive_value mírně lepší#!#!\n"
- hunt_tame_deer_modifier_custom_desc: "Tato postava chytila kolouška a vychovala ho krotce, aby oklamala jeho divoké příbuzné.\n#weak [ROOT.Char.Custom('GetAnimalTypeTame')|UV] [hunt_success_chance|E] je #P mírně lepší#!#!"
+ hunt_tame_deer_modifier_desc: "Tato postava chytila kolouška a vychovala ho krotce, aby oklamala jeho divoké příbuzné.\n#weak V budoucnu budou [Concept('hunt_success_chance','šance na úspěch lovu')|E] proti tomuto druhu zvířete #positive_value mírně lepší#!#!\n" # todo: CONCEPT CASE
+ hunt_tame_deer_modifier_custom_desc: "Tato postava chytila kolouška a vychovala ho krotce, aby oklamala jeho divoké příbuzné.\n#weak [ROOT.Char.Custom('GetAnimalTypeTame')|UV] [Concept('hunt_success_chance','Šance na úspěch lovu')|E] je #P mírně lepší#!#!" # todo: CONCEPT CASE
  hunt_captive_beast_modifier: "Zajaté zvíře"
- hunt_captive_beast_modifier_desc: "Tato postava chytla nebezpečné zvíře živé pro vystavení a zábavu.\n#weak Může být použito k [GetActivityType('activity_hunt').GetName] tohoto zvířete s #P vysokou#! [hunt_success_chance_no_prefix|E]\n"
- hunt_captive_beast_modifier_custom_desc: "Tato postava chová [ROOT.Char.Custom('GetAnimalAdjectiveCaptive')] [ROOT.Char.Custom('GetAnimalTypeCaptive')] pro vystavení a zábavu.\n#weak Může být použito k [GetActivityType('activity_hunt').GetName] [ROOT.Char.Custom('GetAnimalTypeCaptive')|UV] s #P vysokou#! [hunt_success_chance_no_prefix|E]"
+ hunt_captive_beast_modifier_desc: "Tato postava chytla nebezpečné zvíře živé pro vystavení a zábavu.\n#weak Může být použito k [GetActivityType('activity_hunt').GetName] tohoto zvířete s #P vysokou#! [Concept('hunt_success_chance_no_prefix','šancemi na úspěch')|E]\n" # todo: CONCEPT CASE
+ hunt_captive_beast_modifier_custom_desc: "Tato postava chová [ROOT.Char.Custom('GetAnimalAdjectiveCaptive')] [ROOT.Char.Custom('GetAnimalTypeCaptive')] pro vystavení a zábavu.\n#weak Může být použito k [GetActivityType('activity_hunt').GetName] [ROOT.Char.Custom('GetAnimalTypeCaptive')|UV] s #P vysokou#! [Concept('hunt_success_chance_no_prefix','šancemi na úspěch')|E]" # todo: CONCEPT CASE
  dog_story_scenthound_modifier: "Stopařský pes"
- dog_story_scenthound_modifier_desc: "Lojální pes, vycvičený k vyhledávání zvěře, provází tuto postavu kamkoli jde\n#weak Mírně zvyšuje [hunt_success_chance|E]#!"
+ dog_story_scenthound_modifier_desc: "Lojální pes, vycvičený k vyhledávání zvěře, provází tuto postavu kamkoli jde\n#weak Mírně zvyšuje [Concept('hunt_success_chance','šance na úspěch lovu')|E]#!" # todo: CONCEPT CASE
  dog_story_beasthound_modifier: "Pes na šelmy"
- dog_story_beasthound_modifier_desc: "Lojální pes, vycvičený k boji s nebezpečnými šelmami, provází tuto postavu kamkoli jde\n#weak Mírně zvyšuje [hunt_success_chance|E]#! proti [hunt_dangerous|E] šelmám"
- hunt_success_chance.trait: "[GetTrait('lifestyle_hunter').GetName( GetNullCharacter )] [trait_level_track_xp|E]"
- hunt_success_chance.terrain: "[ROOT.Activity.GetCurrentPhase.GetLocation.GetBaronyNameExplicitly] má [ROOT.Activity.GetCurrentPhase.GetLocation.GetTerrain.GetName] [terrain|E]"
- hunt_success_chance.development: "Vysoký [development|E] v [ROOT.Activity.GetCurrentPhase.GetLocation.GetBaronyNameExplicitly]"
- hunt_success_chance.no_holding: "Žádné [holding|E] v [ROOT.Activity.GetCurrentPhase.GetLocation.GetBaronyNameExplicitly]"
- hunt_success_chance.master_of_hunt: "[ROOT.Activity.GetHost.Custom('GetHuntMasterTooltipDesc')] [aptitude|E]"
- hunt_success_chance.master_of_hunt_holder: "Drží [ROOT.Activity.GetHost.Custom('GetHuntMasterTooltipDesc')] [court_position|E]"
- hunt_success_chance.hunt_option_attendants: "$hunt_option_attendants$ [activity_option|E]"
+ dog_story_beasthound_modifier_desc: "Lojální pes, vycvičený k boji s nebezpečnými šelmami, provází tuto postavu kamkoli jde\n#weak Mírně zvyšuje [Concept('hunt_success_chance','šance na úspěch lovu')|E]#! proti [Concept('hunt_dangerous','nebezpečným')|E] šelmám" # todo: CONCEPT CASE
+ hunt_success_chance.trait: "[GetTrait('lifestyle_hunter').GetName( GetNullCharacter )] [Concept('trait_level_track_xp','Zkušenosti rysu')|E]" # todo: CONCEPT CASE
+ hunt_success_chance.terrain: "[ROOT.Activity.GetCurrentPhase.GetLocation.GetBaronyNameExplicitly] má [ROOT.Activity.GetCurrentPhase.GetLocation.GetTerrain.GetName] [Concept('terrain','terénu')|E]" # todo: CONCEPT CASE
+ hunt_success_chance.development: "Vysoký [Concept('development','rozvoj')|E] v [ROOT.Activity.GetCurrentPhase.GetLocation.GetBaronyNameExplicitly]" # todo: CONCEPT CASE
+ hunt_success_chance.no_holding: "Žádné [Concept('holding','država')|E] v [ROOT.Activity.GetCurrentPhase.GetLocation.GetBaronyNameExplicitly]" # todo: CONCEPT CASE
+ hunt_success_chance.master_of_hunt: "[ROOT.Activity.GetHost.Custom('GetHuntMasterTooltipDesc')] [Concept('aptitude','Způsobilost')|E]" # todo: CONCEPT CASE
+ hunt_success_chance.master_of_hunt_holder: "Drží [ROOT.Activity.GetHost.Custom('GetHuntMasterTooltipDesc')] [Concept('court_position','dvorský úřad')|E]" # todo: CONCEPT CASE
+ hunt_success_chance.hunt_option_attendants: "$hunt_option_attendants$ [Concept('activity_option','Možnost aktivity')|E]" # todo: CONCEPT CASE
  hunt_success_chance.nomadic: "Je [GetGovernment( 'nomad_government' ).GetName]"
  hunt_success_chance.forced_type: "Vynucený [ROOT.Activity.MakeScope.Var('animal_type').GetFlagName|U] lov"
  hunt_success_chance.captive_release: "Lov zajatého [ROOT.Activity.MakeScope.Var('animal_type').GetFlagName|U]"
- hunt_success_chance.attending_hunters: "[GetTrait('lifestyle_hunter').GetName( GetNullCharacter )] [activity_guests_short|E]"
+ hunt_success_chance.attending_hunters: "[GetTrait('lifestyle_hunter').GetName( GetNullCharacter )] [Concept('activity_guests_short','Hosté')|E]" # todo: CONCEPT CASE
  hunt_success_chance.hunt_guide_local_madman_modifier: "[GetModifier( 'hunt_guide_local_madman_modifier' ).GetNameWithTooltip]"
  hunt_success_chance.hunt_tame_deer_modifier: "[GetModifier( 'hunt_tame_deer_modifier' ).GetNameWithTooltip]"
  hunt_success_chance.ep2_beastmaster_modifier: "[GetModifier( 'ep2_beastmaster_modifier' ).GetNameWithTooltip]"
@@ -134,16 +134,16 @@
  hunt_success_chance.hidden_hinterlands_recruit_modifier: "[GetModifier( 'inspection_hidden_hinterlands_recruit_modifier' ).GetNameWithTooltip]"
  hunt_success_chance.hidden_hinterlands_huntsmen_modifier: "[GetModifier( 'inspection_hidden_hinterlands_hunters_modifier' ).GetNameWithTooltip]"
  hunt_success_chance.recent_hunt_held: "Nedávné lovy v [ROOT.Activity.GetCurrentPhase.GetLocation.GetBaronyNameExplicitly]"
- hunt_success_chance.hunting_grounds: "$building_type_hunting_grounds_01$ [building|E]"
- hunt_success_chance.rainbow_mountains_01: "$building_type_rainbow_mountains_01$ [building|E]"
- hunt_success_chance.chocolate_hills_01: "$building_type_chocolate_hills_01$ [building|E]" # todo: NEW TRANSLATION
- hunt_success_chance.visegrad_castle_01: "$building_type_visegrad_castle_01$ [building|E]"
- hunt_success_chance.logging_camps: "$building_type_logging_camps_01$ [building|E]"
- hunt_success_chance.royal_forest: "$building_type_royal_forest_01$ [building|E]"
- hunt_success_chance.legendary_hunting_lodge: "$building_legendary_hunting_lodge$ [building|E]" # todo: NEW TRANSLATION
- hunt_success_chance.culture: "[ROOT.Activity.GetHost.GetCulture.GetName] [culture_traditions|E]"
+ hunt_success_chance.hunting_grounds: "$building_type_hunting_grounds_01$ [Concept('building','Budova')|E]" # todo: CONCEPT CASE
+ hunt_success_chance.rainbow_mountains_01: "$building_type_rainbow_mountains_01$ [Concept('building','Budova')|E]" # todo: CONCEPT CASE
+ hunt_success_chance.chocolate_hills_01: "$building_type_chocolate_hills_01$ [Concept('building','Budova')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ hunt_success_chance.visegrad_castle_01: "$building_type_visegrad_castle_01$ [Concept('building','Budova')|E]" # todo: CONCEPT CASE
+ hunt_success_chance.logging_camps: "$building_type_logging_camps_01$ [Concept('building','Budova')|E]" # todo: CONCEPT CASE
+ hunt_success_chance.royal_forest: "$building_type_royal_forest_01$ [Concept('building','Budova')|E]" # todo: CONCEPT CASE
+ hunt_success_chance.legendary_hunting_lodge: "$building_legendary_hunting_lodge$ [Concept('building','Budova')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ hunt_success_chance.culture: "[ROOT.Activity.GetHost.GetCulture.GetName] [Concept('culture_traditions','Kulturní tradice')|E]" # todo: CONCEPT CASE
  hunt_success_chance.events: "Události"
- hunt_success_chance.sighting: "[ROOT.Activity.Custom('GetAnimalType')|U] [hunt_sighting_no_prefix|E]"
+ hunt_success_chance.sighting: "[ROOT.Activity.Custom('GetAnimalType')|U] [Concept('hunt_sighting_no_prefix','Zpozorování')|E]" # todo: CONCEPT CASE
  hunt_success_chance.hunting_eagle: "[GetModifier( 'eagle_story_modifier' ).GetNameWithTooltip]"
  hunt_dangerous_beast_slain_modifier: "Nebezpečná šelma zabita"
  hunt_dangerous_beast_slain_modifier_desc: "Místní obyvatelstvo je uklidněno vědomím, že v divočině je o jednu hrozbu méně."

@@ -2,7 +2,7 @@
  destination_events.10.t: "Zkušený cestovatel"
  destination_events.10.desc: "„[ROOT.Char.Custom('FormOfAddressForLiege')|U],“ Můj [ROOT.Char.Custom2('RelationToMe', SCOPE.sC('provider_character'))], [provider_character.GetFirstName], začíná, když [provider_character.GetSheHe] vstoupí do mé pracovny. „Nedávno jsem [Select_CString(ROOT.Char.IsFemale,'měla','měl')] nějaké záležitosti s mistrem karavany, které by mohly být zajímavé pro vaše cesty. [travel_leader_character.GetSheHe|U] má za sebou cesty po dalekých krajích a má zkušenosti, které jsme hledali.“\n\nMěli jsme potíže najít někoho, kdo by [Select_CString(ROOT.Char.IsFemale,'měla','měl')] na starosti mé cesty, takže by to mohla být dobrá příležitost?"
  destination_events.10.a: "Najměme tedy tohoto cestovatele."
- destination_events.10.a.tt: "[travel_leader_character.GetUINamePossessive|U] [aptitude|E] je [travel_leader_character.GetCourtPositionAptitude( GetCourtPositionType( 'travel_leader_court_position' ) )]"
+ destination_events.10.a.tt: "[travel_leader_character.GetUINamePossessive|U] [Concept('aptitude','Způsobilost')|E] je [travel_leader_character.GetCourtPositionAptitude( GetCourtPositionType( 'travel_leader_court_position' ) )]" # todo: CONCEPT CASE
  destination_events.10.b: "[travel_leader_character.GetSheHe|U] mě nezajímá."
  destination_events.20.t: "Příprava na výpravu"
  destination_events.20.desc: "„Cože? Přebytečné zásoby, říkáte?“ odpovím, když můj [ROOT.Char.Custom2('RelationToMe', SCOPE.sC('provider_character'))], [provider_character.GetFirstName], přednese zprávu o nedávném nálezu v jedné z mých skladovacích místností.\n\n„Opravdu není jasné, proč chyběly v našich účetních knihách. Ale je to malé požehnání. Máte představu, co s nimi chcete dělat?“\n\nTyto přebytečné zásoby by se mohly hodit na mé další cestě"
@@ -10,13 +10,13 @@
  destination_events.20.b: "Uvidíme, jestli je můžeme vyměnit za nějaké koně."
  destination_events.20.c: "Prodat přebytečné zásoby."
  destination_excursion_safety_modifier: "Připraven na výpravy: Bezpečnost"
- destination_excursion_safety_modifier_desc: "#emp Zmizí po dosažení [destination|E]#!\nZásoby byly odloženy pro příští cestu, aby byla zajištěna bezpečná jízda."
+ destination_excursion_safety_modifier_desc: "#emp Zmizí po dosažení [Concept('destination','cíli')|E]#!\nZásoby byly odloženy pro příští cestu, aby byla zajištěna bezpečná jízda." # todo: CONCEPT CASE
  destination_excursion_speed_modifier: "Připraven na výpravy: Rychlost"
- destination_excursion_speed_modifier_desc: "#emp Zmizí po dosažení [destination|E]#!\nPro příští cestu byly připraveny přídavné koně, aby byla zajištěna rychlá a efektivní jízda."
+ destination_excursion_speed_modifier_desc: "#emp Zmizí po dosažení [Concept('destination','cíli')|E]#!\nPro příští cestu byly připraveny přídavné koně, aby byla zajištěna rychlá a efektivní jízda." # todo: CONCEPT CASE
  destination_events.30.t: "Cesta do [journey_province.GetHolding.GetSpecialBuildingType.GetNameNoTooltip]"
  destination_events.30.desc: "Nedávno jsem [Select_CString(ROOT.Char.IsFemale,'narazila','narazil')] na malý cestovní itinerář popisující cestu místního obchodníka do města [journey_province.GetName]. Podrobně popisuje, jak [Select_CString(ROOT.Char.IsFemale,'navštívila','navštívil')] [journey_province.GetHolding.GetSpecialBuildingType.GetName] a všechna místní místa, která by člověk ve městě [Select_CString(ROOT.Char.IsFemale,'měla','měl')] vidět.\n\nMožná je to místo, kam bych [Select_CString(ROOT.Char.IsFemale,'měla','měl')] zamířit při příštím návratu na cestu..."
  destination_events.30.a: "To zní jako nezapomenutelné místo!"
- destination_events.30.a.tt: "Můžete získat dodatečné [wanderer_lifestyle|E] zkušenosti, pokud navštívíte [journey_province.GetName] během [GetActivityType('activity_journey').GetName]"
+ destination_events.30.a.tt: "Můžete získat dodatečné [Concept('wanderer_lifestyle','potulný životní styl')|E] zkušenosti, pokud navštívíte [journey_province.GetName] během [GetActivityType('activity_journey').GetName]" # todo: CONCEPT CASE
  destination_events.30.toast.title: "Cesta do [activity.GetCurrentPhase.GetLocation.GetNameNoTooltip]"
  destination_events.40.t: "Jazyk [poi_province.GetCulture.GetLanguage.GetNameNoTooltip]"
  destination_events.40.desc: "Z nějakého důvodu si často vzpomínám na svou cestu do [poi_province.GetName], a zejména na jazyk [poi_province.GetCulture.GetLanguage.GetName], který jsem tam tak často [Select_CString(poi_province.GetCulture.GetLanguage.IsFemale,'slyšela','slyšel')]. Byl na něm něco #emp [poi_province.Custom('DestinationInspiredLanguageDescriptor')]#!, co prostě nemohu zapomenout.\n\nJak to osud zařídil, do mého dvora přišel učenec [teacher_character.GetCulture.GetName] jménem [teacher_character.GetFirstName]. [Select_CString(ROOT.Char.IsFemale,'Mohla','Mohl')] bych požádat [teacher_character.GetHerHim] o [Select_CString(teacher_character.IsFemale,'její','jeho')] služby a třeba by mě [Select_CString(teacher_character.IsFemale,'mohla','mohl')] naučit [poi_province.GetCulture.GetLanguage.GetNameNoTooltip]."

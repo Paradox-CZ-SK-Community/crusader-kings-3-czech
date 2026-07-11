@@ -1,6 +1,6 @@
 ﻿l_polish:
  influence_child_personality_interaction: "Ovlivnit osobnost svěřence"
- influence_child_personality_interaction_desc: "Předat [personality_trait|E] svému [ward|E]"
+ influence_child_personality_interaction_desc: "Předat [Concept('personality_trait','osobnostní rys')|E] svému [Concept('ward','svěřenci')|E]" # todo: CONCEPT CASE
  had_guardian_influence_interaction: "Interakce proběhla nedávno [DATE.GetStringLong]"
  bp2_character_interaction.1001.t: "$influence_child_personality_interaction$: [target_trait.GetNameNoTooltip(GetPlayer)] — Úspěch"
  bp2_character_interaction.1001.desc_intro: "Přistoupím ke svému [ROOT.Char.Custom2('RelationToMeShort', recipient)] [recipient.GetFirstName]"
@@ -136,16 +136,16 @@
  bp2_character_interaction.1002.a: "Dosáhnu někdy této [recipient.Custom('GetLassLad')]...?"
  bp2_character_interaction.1002.a.tt: "Nepodařilo se předat vlastnost [target_trait.GetNameNoTooltip(GetPlayer)|l]"
  bp2_character_interaction.1002.a.flavor: "Tvoje učení naráží na neochotné uši."
- selected_sinful_trait_tt: "Vybraný [trait|E] je [sinful|E] v [recipient.GetFaith.GetName]: $VALUE|+=0$"
- selected_virtuous_trait_tt: "Vybraný [trait|E] je [virtuous|E] v [recipient.GetFaith.GetName]: $VALUE|+=0$"
- has_three_traits_already: "[recipient.GetShortUIName] už má #V 3#! [personality_traits|E]: $VALUE|+=0$"
- has_commander_traits_already: "[recipient.GetShortUIName] už má [commander_traits|E]: $VALUE|+=0$"
- has_compatible_personality_tt: "[recipient.GetShortUIName] má kompatibilní [childhood_trait|E]: $VALUE|+=0$"
- has_incompatible_personality_tt: "[recipient.GetShortUIName] má nekompatibilní [childhood_trait|E]: $VALUE|+=0$"
+ selected_sinful_trait_tt: "Vybraný [Concept('trait','rys')|E] je [Concept('sinful','hříšný')|E] v [recipient.GetFaith.GetName]: $VALUE|+=0$" # todo: CONCEPT CASE
+ selected_virtuous_trait_tt: "Vybraný [Concept('trait','rys')|E] je [Concept('virtuous','ctnostný')|E] v [recipient.GetFaith.GetName]: $VALUE|+=0$" # todo: CONCEPT CASE
+ has_three_traits_already: "[recipient.GetShortUIName] už má #V 3#! [Concept('personality_traits','osobnostní rysy')|E]: $VALUE|+=0$" # todo: CONCEPT CASE
+ has_commander_traits_already: "[recipient.GetShortUIName] už má [Concept('commander_traits','velitelské rysy')|E]: $VALUE|+=0$" # todo: CONCEPT CASE
+ has_compatible_personality_tt: "[recipient.GetShortUIName] má kompatibilní [Concept('childhood_trait','dětského rysu')|E]: $VALUE|+=0$" # todo: CONCEPT CASE
+ has_incompatible_personality_tt: "[recipient.GetShortUIName] má nekompatibilní [Concept('childhood_trait','dětského rysu')|E]: $VALUE|+=0$" # todo: CONCEPT CASE
  guardian_influenced_personality: "Ovlivnit osobnost dítěte"
  guardian_influenced_personality_desc: "[actor.GetShortUINameNoTooltip] vtiskl vlastnost [target_trait.GetName(recipient)] tvému dítěti, [recipient.GetShortUINameNoTooltip]."
  guardian_influenced_personality_fail: "Nepodařilo se ovlivnit osobnost dítěte"
  guardian_influenced_personality_fail_desc: "[actor.GetShortUINameNoTooltip] se pokusil vtisknout vlastnost [target_trait.GetName(actor)] tvému dítěti, [recipient.GetShortUINameNoTooltip], ale neuspěl."
- influence_child_personality_interaction_trait_limit: "[CHARACTER.GetShortUINameNoTooltip] již má #V 4#! [personality_traits|E]"
- influence_child_personality_interaction_all_same_traits: "[CHARACTER.GetShortUINameNoTooltip] již má stejné [personality_traits|E] nebo opačné vlastnosti"
+ influence_child_personality_interaction_trait_limit: "[CHARACTER.GetShortUINameNoTooltip] již má #V 4#! [Concept('personality_traits','osobnostní rysy')|E]" # todo: CONCEPT CASE
+ influence_child_personality_interaction_all_same_traits: "[CHARACTER.GetShortUINameNoTooltip] již má stejné [Concept('personality_traits','osobnostních rysů')|E] nebo opačné vlastnosti" # todo: CONCEPT CASE
  crusading_claim_cb_reason: "$crusading_claim_cb$: $VALUE|=+0$"

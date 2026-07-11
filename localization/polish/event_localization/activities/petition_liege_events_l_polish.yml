@@ -3,7 +3,7 @@
  petition_liege.0001.opening: "[petition_vassal.Custom2('AppropriateGreetingPositive', ROOT.Char )]"
  petition_liege.0001.desc: "Můj doprovod a já jsme právě dorazili do [petition_liege.GetCapitalLocation.GetTitle.GetNameNoTierNoTooltip] po únavném putování, abychom se s Vámi setkali.\n\nŽádám o audienci co nejdříve."
  petition_liege.0001.a: "Přivolejte [petition_vassal.GetTitledFirstNameNoTooltip] a přiveďte [petition_vassal.GetHerHim] ke mně!"
- petition_liege.0001.a.tt: "Přijímáte [petition_vassal.GetTitledFirstName] ve svém [royal_court|E]"
+ petition_liege.0001.a.tt: "Přijímáte [petition_vassal.GetTitledFirstName] ve svém [Concept('royal_court','královském dvoře')|E]" # todo: CONCEPT CASE
  petition_liege.0001.b: "Teď nemám čas se zabývat [petition_vassal.GetHerHim]."
  petition_liege.0001.b.arrogant: "Pche, nemám čas zabývat se pouhým #EMP [petition_vassal.GetTitleAsNameNoTooltip]#!!"
  petition_liege.0001.b.humble: "Pošlete [petition_vassal.GetTitledFirstNameNoTooltip] mé nejhlubší politování, že [petition_vassal.GetHerHim] nemohu přijmout."
@@ -260,19 +260,19 @@
  petition_liege.9001.house_fief: "Ustanovování nových způsobů vlády už není zločinem." # todo: NEW TRANSLATION
  petition_liege.9001.fallback: "Prostě naplňte mou pokladnici."
  petition_liege.0101.accept.fallback: "Dobře, vaše pokladnice budou naplněny."
- petition_liege_block_firing_councillor_effect_tt: "Nelze odvolat z [council|E] po dobu 5 let"
- petition_liege_0101_county_control_effect_tt: "Všechna držená hrabství s méně než 66 [control|E]"
+ petition_liege_block_firing_councillor_effect_tt: "Nelze odvolat z [Concept('council','rady')|E] po dobu 5 let" # todo: CONCEPT CASE
+ petition_liege_0101_county_control_effect_tt: "Všechna držená hrabství s méně než 66 [Concept('control','kontrola')|E]" # todo: CONCEPT CASE
  petition_liege_county_control_modifier: "Královští šerifové"
  petition_liege_county_control_modifier_desc: "Držitel tohoto hrabství požádal svého suzeréna o pomoc královských šerifů při obnově pořádku."
- petition_liege_county_control_modifier_tt: "[increase_control|E] bude probíhat rychleji v hrabstvích s tímto modifikátorem"
- petition_liege_0101_county_convert_effect_tt: "Všechna [petition_vassal.GetShortUINamePossessive] [holdings|E] patřící jiné [faith|E]"
+ petition_liege_county_control_modifier_tt: "[Concept('increase_control','$task_increase_control$')|E] bude probíhat rychleji v hrabstvích s tímto modifikátorem" # todo: CONCEPT CASE
+ petition_liege_0101_county_convert_effect_tt: "Všechna [petition_vassal.GetShortUINamePossessive] [Concept('holdings','državy')|E] patřící jiné [Concept('faith','víra')|E]" # todo: CONCEPT CASE
  petition_liege_county_convert_modifier: "Sponzorovaní misionáři"
  petition_liege_county_convert_modifier_desc: "Držitel tohoto hrabství požádal svého suzeréna, aby sponzoroval jeho obrácení na pravou víru."
- petition_liege_county_convert_modifier_tt: "[convert_county|E] bude postupovat rychleji v hrabstvích s tímto modifikátorem"
- petition_liege_0101_county_opinion_effect_tt: "Všechny [petition_vassal.GetShortUINamePossessive] [holdings|E] s [county_opinion|E] #negative_value [SCOPE.ScriptValue('petition_county_opinion_value')]#! nebo méně"
+ petition_liege_county_convert_modifier_tt: "[Concept('convert_county','$task_conversion$')|E] bude postupovat rychleji v hrabstvích s tímto modifikátorem" # todo: CONCEPT CASE
+ petition_liege_0101_county_opinion_effect_tt: "Všechny [petition_vassal.GetShortUINamePossessive] [Concept('holdings','državy')|E] s [Concept('county_opinion','lidovým míněním')|E] #negative_value [SCOPE.ScriptValue('petition_county_opinion_value')]#! nebo méně" # todo: CONCEPT CASE
  petition_liege_county_opinion_modifier: "Královská návštěva"
  petition_liege_county_opinion_modifier_desc: "Držitel tohoto hrabství požádal svého suzeréna, aby jej navštívil a uspořádal pro lid představení."
- petition_liege_0101_fortify_border_effect_tt: "Všechna [petition_vassal.GetShortUINamePossessive] [holdings|E] hraničící s jinými říšemi"
+ petition_liege_0101_fortify_border_effect_tt: "Všechna [petition_vassal.GetShortUINamePossessive] [Concept('holdings','državy')|E] hraničící s jinými říšemi" # todo: CONCEPT CASE
  petition_liege_fortify_border_modifier: "Pohraniční opevnění"
  petition_liege_fortify_border_modifier_desc: "Držitel tohoto hrabství požádal svého suzeréna, aby opevnil pohraniční oblasti říše."
  petition_liege_development_modifier: "Příliv osadníků"
@@ -284,8 +284,8 @@
  petition_liege_second_if_tt: "#bold Pokud [TARGET_CHARACTER.GetTitledFirstNameRegnal] přijme:#!"
  petition_liege_costs_refunded: "$petition_liege_decision$ náklady byly vráceny"
  petition_ceremonial_liege_costs_refunded: "$petition_ceremonial_liege_decision$ náklady vráceny" # todo: NEW TRANSLATION
- petition_liege.0001.a.tt_non_royal: "Přijmete [petition_vassal.GetTitledFirstName] v [royal_court|E] vašeho [liege|E]" # todo: NEW TRANSLATION
- petition_liege.0101.desc_non_royal: "[petition_vassal.GetTitledFirstName] je konečně přiveden do mé [liege_possessive|E] velké síně a neplýtvá časem, než vykročí k trůnu a hluboce se ukloní. \n\n„Děkuji, že jste mě přijal, [petition_liege.GetTitledFirstNamePossessive]. Přicházím k vám dnes s naléhavou žádostí —" # todo: RETRANSLATED ENGLISH
+ petition_liege.0001.a.tt_non_royal: "Přijmete [petition_vassal.GetTitledFirstName] v [Concept('royal_court','královském dvoře')|E] vašeho [Concept('liege','lenním pánovi')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ petition_liege.0101.desc_non_royal: "[petition_vassal.GetTitledFirstName] je konečně přiveden do mé [Concept('liege_possessive','lenního pána')|E] velké síně a neplýtvá časem, než vykročí k trůnu a hluboce se ukloní. \n\n„Děkuji, že jste mě přijal, [petition_liege.GetTitledFirstNamePossessive]. Přicházím k vám dnes s naléhavou žádostí —" # todo: RETRANSLATED ENGLISH # todo: CONCEPT CASE
  petition_liege.0101.desc.title_liege_non_royal: "s úctou, můj [petition_liege.GetTitleAsNameNoTooltip], [petition_claim.GetName] mi právem náleží!„ \n\n„Dohlížíte na mocný [petition_liege.GetPrimaryTitle.GetTierAsNameNoTooltip], můj [petition_liege.GetLadyLord], nemůžete mi udělit pouhý jeden [petition_claim.GetTierAsNameNoTooltip], upřímně požadovaný?“" # todo: NEW TRANSLATION
  petition_liege.0201.a_non_royal: "Děkuji, můj [petition_liege.GetLadyLord]!" # todo: NEW TRANSLATION
  petition_liege.0221.a: "Moje věčná vděčnost, veliký [petition_liege.GetTitleAsNameNoTooltip]!" # todo: NEW TRANSLATION

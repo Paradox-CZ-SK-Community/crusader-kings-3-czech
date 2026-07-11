@@ -1,16 +1,16 @@
 ﻿l_polish:
  activity_wedding: "Velkolepá svatba"
- activity_wedding_selection_tooltip: "Uspořádejte [GetActivityType('activity_wedding').GetName], velkolepé oslavení spojení páru\n\nOčekávané odměny:\n$BULLET_WITH_TAB$[prestige_i] [prestige|E]\n$BULLET_WITH_TAB$[opinion_i] [opinion|E]\n$BULLET_WITH_TAB$[stress_loss_i] [stress|E] ztráta"
+ activity_wedding_selection_tooltip: "Uspořádejte [GetActivityType('activity_wedding').GetName], velkolepé oslavení spojení páru\n\nOčekávané odměny:\n$BULLET_WITH_TAB$[prestige_i] [Concept('prestige','Prestiž')|E]\n$BULLET_WITH_TAB$[opinion_i] [Concept('opinion','Mínění')|E]\n$BULLET_WITH_TAB$[stress_loss_i] [Concept('stress','Stres')|E] ztráta" # todo: CONCEPT CASE
  activity_wedding_desc: "Velkolepé oslavení spojení páru.\n\nNicméně to není jen svatební obřad; je to veřejná demonstrace vlivu a společenská událost, kde se šlechta schází, aby cvičila umění diplomacie, svádění a vraždy — nebo aby si s přáteli připila!"
- activity_wedding_host_desc: "$BULLET_WITH_TAB$Vybraní [spouses|E] se [married|E]\n$BULLET_WITH_TAB$[prestige_i|E] [prestige|E]\n$BULLET_WITH_TAB$[legitimacy_i] [legitimacy|E]\n$BULLET_WITH_TAB$Názor hostů [opinion|E]\n$BULLET_WITH_TAB$[GetVassalStance( 'courtly' ).GetTextIcon][GetVassalStance( 'courtly' ).GetName] [vassals|E] [opinion|E]\n$BULLET_WITH_TAB$Může získat [GetTrait('lifestyle_reveler').GetName( GetNullCharacter )] [trait_level_track_xp|E]\n$BULLET_WITH_TAB$Může ztratit [stress_loss_i][stress|E]\n$BULLET_WITH_TAB$Může získat [GetModifier( 'gwedding_magnificent_host_modifier' ).GetNameWithTooltip|L]\n$BULLET_WITH_TAB$Může získat [GetModifier( 'gwedding_gracious_host_modifier' ).GetNameWithTooltip|L]"
- wedding_need_to_promise: "Musíte mít [grand_wedding_promised|E] [GetActivityType( 'activity_wedding' ).GetName] abyste ji mohli uspořádat!"
+ activity_wedding_host_desc: "$BULLET_WITH_TAB$Vybraní [Concept('spouses','choti')|E] se [Concept('married','sezdán')|E]\n$BULLET_WITH_TAB$[Concept('prestige_i','@prestige_icon!')|E] [Concept('prestige','Prestiž')|E]\n$BULLET_WITH_TAB$[legitimacy_i] [Concept('legitimacy','Legitimita')|E]\n$BULLET_WITH_TAB$Názor hostů [Concept('opinion','mínění')|E]\n$BULLET_WITH_TAB$[GetVassalStance( 'courtly' ).GetTextIcon][GetVassalStance( 'courtly' ).GetName] [Concept('vassals','Vazalové')|E] [Concept('opinion','Mínění')|E]\n$BULLET_WITH_TAB$Může získat [GetTrait('lifestyle_reveler').GetName( GetNullCharacter )] [Concept('trait_level_track_xp','zkušenosti rysu')|E]\n$BULLET_WITH_TAB$Může ztratit [stress_loss_i][Concept('stress','stres')|E]\n$BULLET_WITH_TAB$Může získat [GetModifier( 'gwedding_magnificent_host_modifier' ).GetNameWithTooltip|L]\n$BULLET_WITH_TAB$Může získat [GetModifier( 'gwedding_gracious_host_modifier' ).GetNameWithTooltip|L]" # todo: CONCEPT CASE
+ wedding_need_to_promise: "Musíte mít [Concept('grand_wedding_promised','přislíbena')|E] [GetActivityType( 'activity_wedding' ).GetName] abyste ji mohli uspořádat!" # todo: CONCEPT CASE
  wedding_need_to_be_valid: "Oba snoubenci musí být dospělí a připravení se vzít"
  activity_wedding_conclusion_characters_header: "Novomanželé"
  spouse_1: "Manžel/ka"
  spouse_2: "$spouse_1$"
  spouse_1_for_host: "$spouse_1$"
  spouse_2_for_host: "$spouse_2$"
- spouse_1_desc: "[GetActivityType( 'activity_wedding' ).GetName] oslavuje svazek dvou [spouses|E]. Jsou základní součástí této události, kterou nelze uspořádat, pokud není [GetActivityType( 'activity_wedding' ).GetNameNoTooltip] při [betrothal|E] [grand_wedding_promised|E] páru.\n\nManželé vždy přijmou pozvání na svou svatbu a na konci této události získají specifické odměny.\n"
+ spouse_1_desc: "[GetActivityType( 'activity_wedding' ).GetName] oslavuje svazek dvou [spouses|E]. Jsou základní součástí této události, kterou nelze uspořádat, pokud není [GetActivityType( 'activity_wedding' ).GetNameNoTooltip] při [Concept('betrothal','zasnoubení')|E] [Concept('grand_wedding_promised','přislíbena')|E] páru.\n\nManželé vždy přijmou pozvání na svou svatbu a na konci této události získají specifické odměny.\n" # todo: CONCEPT CASE
  spouse_2_desc: "$spouse_1_desc$"
  spouse_1_desc_for_host: "$spouse_1_desc$"
  spouse_2_desc_for_host: "$spouse_2_desc$"
@@ -19,19 +19,19 @@
  activity_wedding_conclusion_desc: "[GetActivityType( 'activity_wedding' ).GetName] skončila"
  activity_wedding_destination_selection: ""
  activity_wedding_province_desc: ""
- province_desc_wedding_capital: "\n#P + Je to vaše hlavní město#!\n#weak To povede ke zisku [gold_i] [gold|E].#!"
- province_desc_wedding_gardens: "\n#P + $building_royal_garden_01$#!\n#weak To povede ke zvýšenému zisku [dynasty_prestige_i] [dynasty_prestige|E] a ke ztrátě [stress_loss_i] [stress|E].#!"
- province_desc_wedding_gardens_2: "\n#P ++ $building_royal_garden_02$#!\n#weak To povede ke zvýšenému zisku [dynasty_prestige_i] [dynasty_prestige|E] a ke ztrátě [stress_loss_i] [stress|E].#!"
- province_desc_wedding_gardens_3: "\n#P +++ $building_royal_garden_03$#!\n#weak To povede ke zvýšenému zisku [dynasty_prestige_i] [dynasty_prestige|E] a ke ztrátě [stress_loss_i] [stress|E].#!"
- province_desc_wedding_palace: "\n#P + $building_leisure_palace_01$#!\n#weak To povede ke zvýšenému zisku [dynasty_prestige_i] [dynasty_prestige|E] a ke ztrátě [stress_loss_i][stress|E].#!"
- province_desc_wedding_palace_2: "\n#P ++ $building_leisure_palace_02$#!\n#weak To povede ke zvýšenému zisku [dynasty_prestige_i] [dynasty_prestige|E] a ke ztrátě [stress_loss_i][stress|E].#!"
- province_desc_wedding_palace_3: "\n#P +++ $building_leisure_palace_03$#!\n#weak To povede ke zvýšenému zisku [dynasty_prestige_i] [dynasty_prestige|E] a ke ztrátě [stress_loss_i][stress|E].#!"
- province_desc_wedding_pleasure_dome: "\n#P +++ $building_leisure_palace_03$#!\n#weak To povede ke zvýšenému zisku [dynasty_prestige_i] [dynasty_prestige|E] a ke ztrátě [stress_loss_i][stress|E].#!"
- province_desc_wedding_izumo_taisha: "\n#P +++ $building_izumo_taisha_01$#!\n#weak To povede k vyššímu zisku [dynasty_prestige_i] [dynasty_prestige|E] a ke ztrátě [stress_loss_i][stress|E].#!" # todo: NEW TRANSLATION
- province_desc_wedding_holy_site: "\n#P + Je to posvátné místo vaší víry#!\n#weak To povede ke zisku [piety_i] [piety|E].#!"
+ province_desc_wedding_capital: "\n#P + Je to vaše hlavní město#!\n#weak To povede ke zisku [gold_i] [Concept('gold','zlatu')|E].#!" # todo: CONCEPT CASE
+ province_desc_wedding_gardens: "\n#P + $building_royal_garden_01$#!\n#weak To povede ke zvýšenému zisku [dynasty_prestige_i] [Concept('dynasty_prestige','věhlasu')|E] a ke ztrátě [stress_loss_i] [Concept('stress','stresu')|E].#!" # todo: CONCEPT CASE
+ province_desc_wedding_gardens_2: "\n#P ++ $building_royal_garden_02$#!\n#weak To povede ke zvýšenému zisku [dynasty_prestige_i] [Concept('dynasty_prestige','věhlasu')|E] a ke ztrátě [stress_loss_i] [Concept('stress','stresu')|E].#!" # todo: CONCEPT CASE
+ province_desc_wedding_gardens_3: "\n#P +++ $building_royal_garden_03$#!\n#weak To povede ke zvýšenému zisku [dynasty_prestige_i] [Concept('dynasty_prestige','věhlasu')|E] a ke ztrátě [stress_loss_i] [Concept('stress','stresu')|E].#!" # todo: CONCEPT CASE
+ province_desc_wedding_palace: "\n#P + $building_leisure_palace_01$#!\n#weak To povede ke zvýšenému zisku [dynasty_prestige_i] [Concept('dynasty_prestige','věhlasu')|E] a ke ztrátě [stress_loss_i][Concept('stress','stresu')|E].#!" # todo: CONCEPT CASE
+ province_desc_wedding_palace_2: "\n#P ++ $building_leisure_palace_02$#!\n#weak To povede ke zvýšenému zisku [dynasty_prestige_i] [Concept('dynasty_prestige','věhlasu')|E] a ke ztrátě [stress_loss_i][Concept('stress','stresu')|E].#!" # todo: CONCEPT CASE
+ province_desc_wedding_palace_3: "\n#P +++ $building_leisure_palace_03$#!\n#weak To povede ke zvýšenému zisku [dynasty_prestige_i] [Concept('dynasty_prestige','věhlasu')|E] a ke ztrátě [stress_loss_i][Concept('stress','stresu')|E].#!" # todo: CONCEPT CASE
+ province_desc_wedding_pleasure_dome: "\n#P +++ $building_leisure_palace_03$#!\n#weak To povede ke zvýšenému zisku [dynasty_prestige_i] [Concept('dynasty_prestige','věhlasu')|E] a ke ztrátě [stress_loss_i][Concept('stress','stresu')|E].#!" # todo: CONCEPT CASE
+ province_desc_wedding_izumo_taisha: "\n#P +++ $building_izumo_taisha_01$#!\n#weak To povede k vyššímu zisku [dynasty_prestige_i] [Concept('dynasty_prestige','věhlasu')|E] a ke ztrátě [stress_loss_i][Concept('stress','stresu')|E].#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ province_desc_wedding_holy_site: "\n#P + Je to posvátné místo vaší víry#!\n#weak To povede ke zisku [piety_i] [Concept('piety','zbožnosti')|E].#!" # todo: CONCEPT CASE
  every_cruel_vassal: "Každý krutý vazal"
  wedding_every_other_vassal: "Všichni ostatní vazalové"
- activity_wedding_guest_desc: "$BULLET_WITH_TAB$Zisk [prestige_i|E][prestige|E]\n$BULLET_WITH_TAB$Hostitel a snoubenci [opinion|E]\n$BULLET_WITH_TAB$Může ztratit [stress_loss_i][stress|E]\n$BULLET_WITH_TAB$Může získat [GetModifier( 'wedding_of_the_century_modifier' ).GetNameWithTooltip|L]\n$BULLET_WITH_TAB$Může získat [GetTrait('lifestyle_reveler').GetName( GetNullCharacter )] [trait_level_track_xp|E]"
+ activity_wedding_guest_desc: "$BULLET_WITH_TAB$Zisk [Concept('prestige_i','@prestige_icon!')|E][Concept('prestige','prestiž')|E]\n$BULLET_WITH_TAB$Hostitel a snoubenci [Concept('opinion','mínění')|E]\n$BULLET_WITH_TAB$Může ztratit [stress_loss_i][Concept('stress','stres')|E]\n$BULLET_WITH_TAB$Může získat [GetModifier( 'wedding_of_the_century_modifier' ).GetNameWithTooltip|L]\n$BULLET_WITH_TAB$Může získat [GetTrait('lifestyle_reveler').GetName( GetNullCharacter )] [Concept('trait_level_track_xp','zkušenosti rysu')|E]" # todo: CONCEPT CASE
  activity_wedding_guest_help_text: "\nHosté se účastní oslav a jsou připraveni být ohromeni velkolepostí události a snoubenci i hostitelem!\nSvatby jsou společenské a politické události, plné příležitostí k pohoštění i navazování důležitých kontaktů s hosty."
  wedding_phase_ceremony: "Svatební obřad"
  wedding_phase_ceremony_desc: "Všechny rituály a přípravy, které vedou k výměně slibů, jež manželství stvrzují."
@@ -42,34 +42,34 @@
  wedding_type_normal: "Velkolepá svatba"
  wedding_type_normal_desc: "\n#weak Svatba má být velkolepou oslavou spojení dvou snoubenců, ale také dvou rodin.#!\n\n@warning_icon! #X Slibovaná [GetActivityType('activity_wedding').GetName] musí být uspořádána dříve, než slib vyprší, jinak utrpíte postihy#!"
  wedding_type_bloody: "Krvavá svatba"
- wedding_type_bloody_desc: "Zabijete druhou rodinu.\n#weak Neorganizujete svatbu, plánujete pohřeb.#!\n\n@warning_icon! #X Nebudete moci pořádat Krvavou [GetActivityType('activity_wedding').GetName] po dobu 15 let#!\n@warning_icon! #X Zacílení na vašeho [liege|E] nebo [head_of_faith|E] povede k větším postihům#!\n\n@alert_icon! #alert_trial Postavy s [GetTrait('just').GetName( GetNullCharacter )], [GetTrait('compassionate').GetName( GetNullCharacter )] a [GetTrait('calm').GetName( GetNullCharacter )] rysy získají [stress|E]#!"
+ wedding_type_bloody_desc: "Zabijete druhou rodinu.\n#weak Neorganizujete svatbu, plánujete pohřeb.#!\n\n@warning_icon! #X Nebudete moci pořádat Krvavou [GetActivityType('activity_wedding').GetName] po dobu 15 let#!\n@warning_icon! #X Zacílení na vašeho [Concept('liege','lenního pána')|E] nebo [Concept('head_of_faith','hlava víry')|E] povede k větším postihům#!\n\n@alert_icon! #alert_trial Postavy s [GetTrait('just').GetName( GetNullCharacter )], [GetTrait('compassionate').GetName( GetNullCharacter )] a [GetTrait('calm').GetName( GetNullCharacter )] rysy získají [Concept('stress','stres')|E]#!" # todo: CONCEPT CASE
  wedding_option_entertainment: "Zábava"
  wedding_entertainment_bad: "Domácí zábava"
- wedding_entertainment_bad_desc: "$EFFECT_LIST_BULLET$ Snížený zisk [prestige|E]\n\n#weak Baviči, kteří jsou u dvora denně jako šašci a žongléři, se svatby zúčastní.#!"
+ wedding_entertainment_bad_desc: "$EFFECT_LIST_BULLET$ Snížený zisk [Concept('prestige','prestiž')|E]\n\n#weak Baviči, kteří jsou u dvora denně jako šašci a žongléři, se svatby zúčastní.#!" # todo: CONCEPT CASE
  wedding_entertainment_normal: "Akrobati a hudebníci"
- wedding_entertainment_normal_desc: "$wedding_normal_option_desc$\n$EFFECT_LIST_BULLET$ Průměrný zisk [prestige|E]\n\n#weak Základní vystoupení na každém důstojném dvoře.#!"
+ wedding_entertainment_normal_desc: "$wedding_normal_option_desc$\n$EFFECT_LIST_BULLET$ Průměrný zisk [Concept('prestige','prestiž')|E]\n\n#weak Základní vystoupení na každém důstojném dvoře.#!" # todo: CONCEPT CASE
  wedding_entertainment_good: "Trubadúři a exotická stvoření"
- wedding_entertainment_good_desc: "$EFFECT_LIST_BULLET$ [GetTrait('lifestyle_reveler').GetName( GetNullCharacter )] [trait_level_track_xp|E]\n$wedding_good_option_desc$\n$EFFECT_LIST_BULLET$ Zvýšený zisk [prestige|E]\n\n#weak Pouze ti nejlepší umělci a nejvzácnější bestie!#!"
+ wedding_entertainment_good_desc: "$EFFECT_LIST_BULLET$ [GetTrait('lifestyle_reveler').GetName( GetNullCharacter )] [Concept('trait_level_track_xp','Zkušenosti rysu')|E]\n$wedding_good_option_desc$\n$EFFECT_LIST_BULLET$ Zvýšený zisk [Concept('prestige','prestiž')|E]\n\n#weak Pouze ti nejlepší umělci a nejvzácnější bestie!#!" # todo: CONCEPT CASE
  wedding_option_food: "Jídlo a pití"
  wedding_food_bad: "Skromná hostina"
- wedding_food_bad_desc: "$EFFECT_LIST_BULLET$ Snížený nárůst [opinion|E] u všech přítomných postav\n\n#weak Hostina odpovídající očekávání, ale nic, co by si hosté pamatovali.#!"
+ wedding_food_bad_desc: "$EFFECT_LIST_BULLET$ Snížený nárůst [Concept('opinion','mínění')|E] u všech přítomných postav\n\n#weak Hostina odpovídající očekávání, ale nic, co by si hosté pamatovali.#!" # todo: CONCEPT CASE
  wedding_food_normal: "Štědrá hostina"
- wedding_food_normal_desc: "$wedding_normal_option_desc$\n$EFFECT_LIST_BULLET$ Průměrný nárůst [opinion|E] u všech přítomných postav\n\n#weak Vhodná hostina, která potěší všechny hosty.#!"
+ wedding_food_normal_desc: "$wedding_normal_option_desc$\n$EFFECT_LIST_BULLET$ Průměrný nárůst [Concept('opinion','mínění')|E] u všech přítomných postav\n\n#weak Vhodná hostina, která potěší všechny hosty.#!" # todo: CONCEPT CASE
  wedding_food_good: "Ohromná hostina"
- wedding_food_good_desc: "$EFFECT_LIST_BULLET$ Bonus k úbytku [stress|E]\n$EFFECT_LIST_BULLET$ Zvýšené bonusy k [health|E]\n$wedding_good_option_desc$\n$EFFECT_LIST_BULLET$ Zvýšený nárůst [opinion|E] u všech přítomných postav\n\n#weak Stoly se budou prohýbat pod tíhou veškerého jídla!#!"
+ wedding_food_good_desc: "$EFFECT_LIST_BULLET$ Bonus k úbytku [Concept('stress','stresu')|E]\n$EFFECT_LIST_BULLET$ Zvýšené bonusy k [Concept('health','zdraví')|E]\n$wedding_good_option_desc$\n$EFFECT_LIST_BULLET$ Zvýšený nárůst [Concept('opinion','mínění')|E] u všech přítomných postav\n\n#weak Stoly se budou prohýbat pod tíhou veškerého jídla!#!" # todo: CONCEPT CASE
  wedding_option_decoration: "Místo konání svatby"
  wedding_decoration_bad: "Divoké květiny"
- wedding_decoration_bad_desc: "$EFFECT_LIST_BULLET$ [GetTrait('lifestyle_reveler').GetName( GetNullCharacter )] [trait_level_track_xp|E] zisk\n$EFFECT_LIST_BULLET$ Snížený nárůst [opinion|E] u vašich [GetVassalStance( 'courtly' ).GetName] [vassals|E]\n\n#weak Hezká výzdoba z čerstvě natrhaných květin a skromný tým kuchařů a služebnictva.#!"
+ wedding_decoration_bad_desc: "$EFFECT_LIST_BULLET$ [GetTrait('lifestyle_reveler').GetName( GetNullCharacter )] [Concept('trait_level_track_xp','Zkušenosti rysu')|E] zisk\n$EFFECT_LIST_BULLET$ Snížený nárůst [Concept('opinion','mínění')|E] u vašich [GetVassalStance( 'courtly' ).GetName] [Concept('vassals','vazalů')|E]\n\n#weak Hezká výzdoba z čerstvě natrhaných květin a skromný tým kuchařů a služebnictva.#!" # todo: CONCEPT CASE
  wedding_decoration_normal: "Věnce a pochodně"
- wedding_decoration_normal_desc: "$wedding_normal_option_desc$\n$EFFECT_LIST_BULLET$ Průměrný nárůst [opinion|E] u vašich [GetVassalStance( 'courtly' ).GetName] [vassals|E]\n$EFFECT_LIST_BULLET$ Získání [GetModifier( 'gwedding_gracious_host_modifier' ).GetNameWithTooltip|L]\n\n#weak Tradiční výzdoba a dost služebníků, aby žádný pohár nezůstal prázdný.#!"
+ wedding_decoration_normal_desc: "$wedding_normal_option_desc$\n$EFFECT_LIST_BULLET$ Průměrný nárůst [Concept('opinion','mínění')|E] u vašich [GetVassalStance( 'courtly' ).GetName] [Concept('vassals','vazalů')|E]\n$EFFECT_LIST_BULLET$ Získání [GetModifier( 'gwedding_gracious_host_modifier' ).GetNameWithTooltip|L]\n\n#weak Tradiční výzdoba a dost služebníků, aby žádný pohár nezůstal prázdný.#!" # todo: CONCEPT CASE
  wedding_decoration_good: "Stříbro a zlato"
- wedding_decoration_good_desc: "$EFFECT_LIST_BULLET$ Zvýšený nárůst [opinion|E] u vašich [GetVassalStance( 'courtly' ).GetName] [vassals|E]\n$EFFECT_LIST_BULLET$ Zisk [dynasty_prestige|E] a [prestige|E]\n$wedding_good_option_desc$\n$EFFECT_LIST_BULLET$ Získání [GetModifier( 'gwedding_magnificent_host_modifier' ).GetNameWithTooltip|L]\n\n#weak Neomalená ukázka bezbřehého bohatství a dost služebníků, aby měl každý host svého osobního číšníka.#!"
- wedding_good_option_desc: "$EFFECT_LIST_BULLET$ [GetVassalStance( 'glory_hound' ).GetName] a [GetVassalStance( 'courtly' ).GetName] [vassals|E] získají vyšší [opinion|E] k vám"
- wedding_normal_option_desc: "$EFFECT_LIST_BULLET$ [GetVassalStance( 'parochial' ).GetName] a [GetVassalStance( 'zealot' ).GetName] [vassals|E] získají vyšší [opinion|E] k vám"
+ wedding_decoration_good_desc: "$EFFECT_LIST_BULLET$ Zvýšený nárůst [Concept('opinion','mínění')|E] u vašich [GetVassalStance( 'courtly' ).GetName] [Concept('vassals','vazalů')|E]\n$EFFECT_LIST_BULLET$ Zisk [Concept('dynasty_prestige','věhlas')|E] a [Concept('prestige','prestiž')|E]\n$wedding_good_option_desc$\n$EFFECT_LIST_BULLET$ Získání [GetModifier( 'gwedding_magnificent_host_modifier' ).GetNameWithTooltip|L]\n\n#weak Neomalená ukázka bezbřehého bohatství a dost služebníků, aby měl každý host svého osobního číšníka.#!" # todo: CONCEPT CASE
+ wedding_good_option_desc: "$EFFECT_LIST_BULLET$ [GetVassalStance( 'glory_hound' ).GetName] a [GetVassalStance( 'courtly' ).GetName] [Concept('vassals','vazalové')|E] získají vyšší [Concept('opinion','mínění')|E] k vám" # todo: CONCEPT CASE
+ wedding_normal_option_desc: "$EFFECT_LIST_BULLET$ [GetVassalStance( 'parochial' ).GetName] a [GetVassalStance( 'zealot' ).GetName] [Concept('vassals','vazalové')|E] získají vyšší [Concept('opinion','mínění')|E] k vám" # todo: CONCEPT CASE
  diplomatic_intent: "Diplomacie"
  diplomatic_intent_desc: "Získejte spojenectví s vybranou postavou, nebo ji ohromte natolik, že podlehne."
  matchmaking_intent: "Sjednávání sňatků"
  matchmaking_intent_desc: "Najděte vhodného partnera pro vybranou postavu a zprostředkujte zasnoubení"
  banquet_mischief_intent: "Šprýmy"
- banquet_mischief_intent_desc: "Způsobte zmatek a zvyšte svůj úbytek [stress|E] s potenciálně #EMP nešťastnými#! následky."
+ banquet_mischief_intent_desc: "Způsobte zmatek a zvyšte svůj úbytek [Concept('stress','stres')|E] s potenciálně #EMP nešťastnými#! následky." # todo: CONCEPT CASE
  WEDDING_BASE_COST: "Základní cena velkolepé svatby"

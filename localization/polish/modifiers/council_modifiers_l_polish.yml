@@ -6,16 +6,16 @@
  councillor_spymaster_modifier: "Pánův špionmistr"
  councillor_court_chaplain_modifier: "Pánův dvorský kaplan"
  councillor_kurultai_modifier: "Člen pánova kurultaje"
- task_foreign_affairs_prestige_modifier: "[foreign_affairs|E]"
+ task_foreign_affairs_prestige_modifier: "[Concept('foreign_affairs','$task_foreign_affairs$')|E]" # todo: CONCEPT CASE
  task_foreign_affairs_prestige_perk_bonus_modifier: "$adaptive_traditions_perk_name$"
  task_foreign_affairs_prestige_dynasty_perk_bonus_modifier: "$erudition_legacy_5_name$"
- task_foreign_affairs_opinion_modifier: "[foreign_affairs|E]"
- task_domestic_affairs_opinion_modifier: "[domestic_affairs|E]"
- task_domestic_affairs_parochial_opinion_modifier: "[domestic_affairs|E] ([GetVassalStance( 'parochial' ).GetTextIcon][GetVassalStance( 'parochial' ).GetName])"
- court_chaplain_religious_relations_modifier: "[religious_relations|E]"
+ task_foreign_affairs_opinion_modifier: "[Concept('foreign_affairs','$task_foreign_affairs$')|E]" # todo: CONCEPT CASE
+ task_domestic_affairs_opinion_modifier: "[Concept('domestic_affairs','$task_domestic_affairs$')|E]" # todo: CONCEPT CASE
+ task_domestic_affairs_parochial_opinion_modifier: "[Concept('domestic_affairs','$task_domestic_affairs$')|E] ([GetVassalStance( 'parochial' ).GetTextIcon][GetVassalStance( 'parochial' ).GetName])" # todo: CONCEPT CASE
+ court_chaplain_religious_relations_modifier: "[Concept('religious_relations','$task_religious_relations$')|E]" # todo: CONCEPT CASE
  court_chaplain_religious_relations_perk_bonus_modifier: "$clerical_justifications_perk_name$"
  court_chaplain_religious_relations_erudition_legacy_5_bonus_modifier: "$erudition_legacy_5_name$"
- court_chaplain_religious_relations_opinion_modifier: "[religious_relations|E]"
+ court_chaplain_religious_relations_opinion_modifier: "[Concept('religious_relations','$task_religious_relations$')|E]" # todo: CONCEPT CASE
  court_chaplain_religious_relations_no_hof_opinion_modifier: "$court_chaplain_religious_relations_opinion_modifier$"
  accomplished_forger_perk: "[GetPerk( 'accomplished_forger_perk' ).GetName( GetPlayer )]"
  task_collect_taxes_modifier: "Vybírání daní"
@@ -28,7 +28,7 @@
  marshal_task_organized_service_modifier: "Organizovaná služba"
  marshal_task_organized_service_modifier_desc: "Rolníci v tomto hrabství byli organizováni systémem, který maximalizuje efektivitu jejich vojenské a zemědělské služby."
  marshal_task_military_presence_modifier: "Vojenská přítomnost"
- marshal_task_military_presence_modifier_desc: "Dává imunitu vůči [county_corruption|E].\n\nToto hrabství má dobře organizovanou přítomnost vojáků, kteří podle potřeby pomáhají místním vládcům."
+ marshal_task_military_presence_modifier_desc: "Dává imunitu vůči [Concept('county_corruption','korupcím v hrabství')|E].\n\nToto hrabství má dobře organizovanou přítomnost vojáků, kteří podle potřeby pomáhají místním vládcům." # todo: CONCEPT CASE
  marshal_task_increase_control_decreased_opinion_modifier: "Tíživá kontrola"
  marshal_task_increase_control_decreased_opinion_modifier_desc: "Toto hrabství trpí pod tvrdým dohledem maršála říše."
  marshal_task_increase_control_increased_opinion_modifier: "Maršálovo vedení"
@@ -104,14 +104,14 @@
  spouse_increased_defenses_modifier: "Zvýšené obrany"
  spouse_increased_defenses_modifier_desc: "Manžel/manželka vládce tohoto dvora [Select_CString(ROOT.Char.IsFemale,'zajistila','zajistil')] zvýšení jeho obran proti zlověstným intrigám."
  spouse_successful_business_modifier: "Úspěšné obchodní podniky"
- spouse_successful_business_modifier_desc: "Toto [county|E] prožívá období růstu a prosperity po úspěšných obchodních podnicích."
+ spouse_successful_business_modifier_desc: "Toto [Concept('county','hrabství')|E] prožívá období růstu a prosperity po úspěšných obchodních podnicích." # todo: CONCEPT CASE
  spouse_failed_business_modifier: "Neúspěšné obchodní podniky"
- spouse_failed_business_modifier_desc: "Toto [county|E] prochází obdobím nestability po nešťastných obchodních podnicích."
- task_spouse_default_diplomacy_modifier: "Pomoc od [spouse|E]"
- task_spouse_default_martial_modifier: "Pomoc od [spouse|E]"
- task_spouse_default_stewardship_modifier: "Pomoc od [spouse|E]"
- task_spouse_default_intrigue_modifier: "Pomoc od [spouse|E]"
- task_spouse_default_learning_modifier: "Pomoc od [spouse|E]"
+ spouse_failed_business_modifier_desc: "Toto [Concept('county','hrabství')|E] prochází obdobím nestability po nešťastných obchodních podnicích." # todo: CONCEPT CASE
+ task_spouse_default_diplomacy_modifier: "Pomoc od [Concept('spouse','chotě')|E]" # todo: CONCEPT CASE
+ task_spouse_default_martial_modifier: "Pomoc od [Concept('spouse','chotě')|E]" # todo: CONCEPT CASE
+ task_spouse_default_stewardship_modifier: "Pomoc od [Concept('spouse','chotě')|E]" # todo: CONCEPT CASE
+ task_spouse_default_intrigue_modifier: "Pomoc od [Concept('spouse','chotě')|E]" # todo: CONCEPT CASE
+ task_spouse_default_learning_modifier: "Pomoc od [Concept('spouse','chotě')|E]" # todo: CONCEPT CASE
  task_court_politics_modifier: "Manžel/ka — dvorská politika"
  task_chivalry_modifier: "Manžel/ka — rytířství"
  task_court_intrigue_modifier: "Manžel/ka — dvorní intriky"
@@ -122,11 +122,11 @@
  task_vizier_default_stewardship_modifier: "Pomoc od [confidant|E]"
  task_vizier_default_intrigue_modifier: "Pomoc od [confidant|E]"
  task_vizier_default_learning_modifier: "Pomoc od [confidant|E]"
- task_vizier_court_politics_modifier: "[confidant|E] — dvorská politika"
- task_vizier_chivalry_modifier: "[confidant|E] — rytířství"
- task_vizier_court_intrigue_modifier: "[confidant|E] — dvorní intriky"
- task_vizier_manage_domain_modifier: "[confidant|E] — správa domény"
- task_vizier_patronage_modifier: "[confidant|E] — patronát"
+ task_vizier_court_politics_modifier: "[Concept('confidant','$councillor_vizier$')|E] — dvorská politika" # todo: CONCEPT CASE
+ task_vizier_chivalry_modifier: "[Concept('confidant','$councillor_vizier$')|E] — rytířství" # todo: CONCEPT CASE
+ task_vizier_court_intrigue_modifier: "[Concept('confidant','$councillor_vizier$')|E] — dvorní intriky" # todo: CONCEPT CASE
+ task_vizier_manage_domain_modifier: "[Concept('confidant','$councillor_vizier$')|E] — správa domény" # todo: CONCEPT CASE
+ task_vizier_patronage_modifier: "[Concept('confidant','$councillor_vizier$')|E] — patronát" # todo: CONCEPT CASE
  councillor_spouse_health_modifier: "Pečlivá péče"
  councillor_spouse_health_modifier_desc: "Dostává blízkou osobní péči při ranách a nemocech."
  councillor_spouse_mercenary_cost_modifier: "Vyjednané smlouvy s žoldáky"

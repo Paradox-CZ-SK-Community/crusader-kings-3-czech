@@ -43,20 +43,20 @@
  court_servants_some_desc: "Tento dvůr má specializované služebníky, kteří jsou na svou práci pyšní."
  court_servants_many_desc: "Tento dvůr má služebníka pro každý možný účel."
  court_servants_endless_desc: "Tento dvůr má více služebníků, než kdo ví, co s nimi dělat. Vyžaduje to úsilí vykonat i nejjednodušší úkol bez toho, aby se služebníci nepřihlásili, že jej pro vás vykonají."
- court_servants_few_guest_recruitment: "[guest|E] náklady na nábor: #P -20%#!"
- court_servants_some_guest_recruitment: "[guest|E] náklady na nábor: #P -30%#!"
- court_servants_many_guest_recruitment: "[guest|E] náklady na nábor: #P -40%#!"
- court_servants_endless_guest_recruitment: "[guest|E] náklady na nábor: #P -50%#!"
- court_lodgings_small_inspirations: "Dokončená kvalita [inspiration|E] má malou šanci na zlepšení"
- court_lodgings_middling_inspirations: "Dokončená kvalita [inspiration|E] má šanci na zlepšení"
- court_lodgings_spacious_inspirations: "Dokončená kvalita [inspiration|E] má slušnou šanci na zlepšení"
- court_lodgings_grand_inspirations: "Dokončená kvalita [inspiration|E] má dobrou šanci na zlepšení"
- owner_court_lodgings_small: "[guests|E] mohou zůstat déle\n$EFFECT_LIST_BULLET$Ochota [guest|E] připojit se k intrikám na vašem dvoře jako [agent|E]: #P +5#!"
- owner_court_lodgings_middling: "[guests|E] pravděpodobně zůstanou déle\n$EFFECT_LIST_BULLET$Ochota [guest|E] připojit se k intrikám na vašem dvoře jako [agent|E]: #P +10#!"
- owner_court_lodgings_spacious: "[guests|E] mají větší pravděpodobnost zůstat déle\n$EFFECT_LIST_BULLET$Ochota [guest|E] připojit se k intrikám na vašem dvoře jako [agent|E]: #P +15#!"
- owner_court_lodgings_grand: "[guests|E] mají největší pravděpodobnost zůstat déle\n$EFFECT_LIST_BULLET$Ochota [guest|E] připojit se k intrikám na vašem dvoře jako [agent|E]: #P +20#!"
- owner_court_food_quality_meager: "[GetActivityType('activity_feast').GetName] [activity|E] snižuje méně [stress|E]"
- owner_court_food_quality_modest: "[GetActivityType('activity_feast').GetName] [activity|E] snižuje více [stress|E]"
+ court_servants_few_guest_recruitment: "[Concept('guest','Host')|E] náklady na nábor: #P -20%#!" # todo: CONCEPT CASE
+ court_servants_some_guest_recruitment: "[Concept('guest','Host')|E] náklady na nábor: #P -30%#!" # todo: CONCEPT CASE
+ court_servants_many_guest_recruitment: "[Concept('guest','Host')|E] náklady na nábor: #P -40%#!" # todo: CONCEPT CASE
+ court_servants_endless_guest_recruitment: "[Concept('guest','Host')|E] náklady na nábor: #P -50%#!" # todo: CONCEPT CASE
+ court_lodgings_small_inspirations: "Dokončená kvalita [Concept('inspiration','inspirace')|E] má malou šanci na zlepšení" # todo: CONCEPT CASE
+ court_lodgings_middling_inspirations: "Dokončená kvalita [Concept('inspiration','inspirace')|E] má šanci na zlepšení" # todo: CONCEPT CASE
+ court_lodgings_spacious_inspirations: "Dokončená kvalita [Concept('inspiration','inspirace')|E] má slušnou šanci na zlepšení" # todo: CONCEPT CASE
+ court_lodgings_grand_inspirations: "Dokončená kvalita [Concept('inspiration','inspirace')|E] má dobrou šanci na zlepšení" # todo: CONCEPT CASE
+ owner_court_lodgings_small: "[Concept('guests','Hosté')|E] mohou zůstat déle\n$EFFECT_LIST_BULLET$Ochota [Concept('guest','host')|E] připojit se k intrikám na vašem dvoře jako [Concept('agent','spolčenec')|E]: #P +5#!" # todo: CONCEPT CASE
+ owner_court_lodgings_middling: "[Concept('guests','Hosté')|E] pravděpodobně zůstanou déle\n$EFFECT_LIST_BULLET$Ochota [Concept('guest','host')|E] připojit se k intrikám na vašem dvoře jako [Concept('agent','spolčenec')|E]: #P +10#!" # todo: CONCEPT CASE
+ owner_court_lodgings_spacious: "[Concept('guests','Hosté')|E] mají větší pravděpodobnost zůstat déle\n$EFFECT_LIST_BULLET$Ochota [Concept('guest','host')|E] připojit se k intrikám na vašem dvoře jako [Concept('agent','spolčenec')|E]: #P +15#!" # todo: CONCEPT CASE
+ owner_court_lodgings_grand: "[Concept('guests','Hosté')|E] mají největší pravděpodobnost zůstat déle\n$EFFECT_LIST_BULLET$Ochota [Concept('guest','host')|E] připojit se k intrikám na vašem dvoře jako [Concept('agent','spolčenec')|E]: #P +20#!" # todo: CONCEPT CASE
+ owner_court_food_quality_meager: "[GetActivityType('activity_feast').GetName] [Concept('activity','Aktivita')|E] snižuje méně [Concept('stress','stres')|E]" # todo: CONCEPT CASE
+ owner_court_food_quality_modest: "[GetActivityType('activity_feast').GetName] [Concept('activity','Aktivita')|E] snižuje více [Concept('stress','stres')|E]" # todo: CONCEPT CASE
  owner_court_food_quality_decent: "$owner_court_food_quality_modest$"
  owner_court_food_quality_lavish: "$owner_court_food_quality_modest$"
  owner_court_food_quality_exotic: "$owner_court_food_quality_modest$"
@@ -95,18 +95,18 @@
  COURT_AMENITY_COURTIER_GUEST_MODIFIER_HEADER: "#S Dvořané a hosté:#!"
  COURT_AMENITY_SETTING_NO_EFFECT: "#weak Žádný efekt#!"
  COURT_AMENITY_CATEGORY_ON_COOLDOWN: "@warning_icon! #X Nedávno změněno $CATEGORY_NAME$, můžete je změnit znovu za [DATE.GetTimeToDate] ([DATE.GetStringLong])#!"
- COURT_AMENITIES_EXPENSES: "[court_amenities|E]"
+ COURT_AMENITIES_EXPENSES: "[Concept('court_amenities','Dvorský komfort')|E]" # todo: CONCEPT CASE
  COURT_AMENITIES_EXPENSES_FOR: "$COURT_AMENITY$"
  COURT_AMENITIES_EXPENSES_MONTHLY_COST: "[CourtAmenitiesWindow.GetMonthlyCost]"
  COURT_AMENITIES_EXPENSES_NEW_MONTHLY_COST: "Nové náklady: [CourtAmenitiesWindow.GetNewMonthlyCost]"
  COURT_AMENITIES_APPLY_WARNING: "Po potvrzení budou upravená vybavení #X uzamčena na 12 měsíců#!"
  COURT_AMENITIES_CONFIRM_TITLE: "Změnit úrovně vybavení"
- COURT_AMENITIES_CONFIRM_DESC: "Pokud změníte [court_amenities|E] ve svém královském dvoře, nemůžete tuto kategorii znovu změnit po dobu [DATE.GetTimeToDate] ([DATE.GetStringLong]).\nNová sada vybavení bude stát $COST$."
+ COURT_AMENITIES_CONFIRM_DESC: "Pokud změníte [Concept('court_amenities','dvorský komfort')|E] ve svém královském dvoře, nemůžete tuto kategorii znovu změnit po dobu [DATE.GetTimeToDate] ([DATE.GetStringLong]).\nNová sada vybavení bude stát $COST$." # todo: CONCEPT CASE
  COURT_AMENITIES_CONFIRM_ACCEPT: "Změnit"
  COURT_AMENITIES_COOLTIP_ABOVE_DESCRIPTION: "Údržba: [CourtAmenitiesSetting.GetCostDescription( GetPlayer )]\n[CourtAmenitiesSetting.GetEffectDescription]"
  COURT_AMENITIES_NEED_CHANGE: "@warning_icon! #X Nebylo změněno žádné vybavení#!"
- AMENITIES_APPLY_TOOLTIP: "#T Použít nové vybavení#!\n[AddTextIf( Not( CourtAmenitiesWindow.HasChangedAnyAmenity ), '$COURT_AMENITIES_NEED_CHANGE|q$\n' )]Použijte vybrané změny. Nové [amenities|El] bude stát [CourtAmenitiesWindow.GetNewMonthlyCost]"
+ AMENITIES_APPLY_TOOLTIP: "#T Použít nové vybavení#!\n[AddTextIf( Not( CourtAmenitiesWindow.HasChangedAnyAmenity ), '$COURT_AMENITIES_NEED_CHANGE|q$\n' )]Použijte vybrané změny. Nové [Concept('amenities','komfort')|El] bude stát [CourtAmenitiesWindow.GetNewMonthlyCost]" # todo: CONCEPT CASE
  AMENITIES_RESET_TOOLTIP: "#T Resetovat vybavení#!\n[AddTextIf( Not( CourtAmenitiesWindow.HasChangedAnyAmenity ), '$COURT_AMENITIES_NEED_CHANGE|q$\n' )]Zrušit vybrané změny"
- COURT_AMENITIES_CHANGED_NOTIFICATION_HEADER: "Změnili jste své [court_amenities|E]"
- COURT_AMENITIES_BLOCKER_NOT_YOUR_COURT: "@warning_icon! #X Toto není váš [royal_court|E]#!"
+ COURT_AMENITIES_CHANGED_NOTIFICATION_HEADER: "Změnili jste své [Concept('court_amenities','dvorský komfort')|E]" # todo: CONCEPT CASE
+ COURT_AMENITIES_BLOCKER_NOT_YOUR_COURT: "@warning_icon! #X Toto není váš [Concept('royal_court','královský dvůr')|E]#!" # todo: CONCEPT CASE
  BONUS_TO_AGENT_RECRUITMENT_FROM_AMENITIES: "$court_lodging_standards$: $VALUE|=+0$"

@@ -90,12 +90,12 @@
  court.8050.t: "Malý ptáček"
  court.8050.desc: "Nejdříve jsem si myslel, že jsou to jen zvláštnosti, ale je jasné, že jeden z mnoha služebníků na dvoře mi tajně dává znamení.\n\nPřiblížím se k [servant.GetHerHim] se svými strážemi v tichém okamžiku a [servant.GetSheHe] tajně zašeptá: „Velký [ROOT.Char.GetTitleAsNameNoTooltip], jmenuji se [servant.GetFirstName]. Při obsluze vašich hostů zaslechneme mnoho; sotva si nás všimnou...“ \n\nPodívám se na [servant.GetHerHim] pochybovačně, přemýšlejíc, zda opravdu chci slyšet, co [servant.GetSheHe] řekne dál. [servant.GetSheHe|U] mi vrátí pohled, zjevně si není [Select_CString(ROOT.Char.IsFemale,'jistá','jistý')], jestli nedělá chybu. \n\nKonečně [servant.GetSheHe] polkne, „[ROOT.Char.Custom('FormOfAddressForLiege')|U], [vassal.GetTitledFirstName], váš [servant.Custom2('DescriptorNegative', SCOPE.sC('vassal'))] [ROOT.Char.Custom2('RelationToMeShort', SCOPE.sC('vassal'))], [vassal_secret.Custom('SecretDescriptionThirdPerson')] za zavřenými dveřmi vašeho [ROOT.Char.Custom('FortifiedBuilding')] — přísahám to jménem [servant.GetFaith.HighGodName]!"
  court.8050.a: "Děkuji za tvou službu."
- court.8050.a.tt: "[servant.GetFirstNameNoTooltip] se připojí k vašemu [court|E]"
+ court.8050.a.tt: "[servant.GetFirstNameNoTooltip] se připojí k vašemu [Concept('court','dvoru')|E]" # todo: CONCEPT CASE
  court.8050.b: "Co dalšího jsi slyšel?"
  court.8050.b.tt: "Dozvíte se tajemství někoho jiného na dvoře"
  court.8050.b.tt_secret: "[vassal_2.GetTitledFirstNamePossessive] tajemství"
  court.8050.c: "Vezmi si to — budeš hlásit jen mně."
- court.8050.c.tt: "Váš [spymaster|E] bude mít větší šanci narušit spiknutí, dokud bude tento modifikátor aktivní"
+ court.8050.c.tt: "Váš [Concept('spymaster','špehmistr')|E] bude mít větší šanci narušit spiknutí, dokud bude tento modifikátor aktivní" # todo: CONCEPT CASE
  court.8050.d: "Zatkněte toho skrývajícího se parchanta!"
  court.8050.d.tt_imprison: "[servant.GetFirstNameNoTooltip] je vhozen do kobek"
  servant_informants_modifier: "Služební informátoři"
@@ -125,7 +125,7 @@
  court.8070.t: "Cítit se užitečně"
  court.8070.desc: "Můj [ROOT.Char.Custom2('DescriptorPositive', SCOPE.sC('parent'))] [parent.GetMotherFather] se každý den bezcílně potlouká po dvoře a jasně dává najevo své toužení po účelu, který jsem příliš zaneprázdněn poskytnout. \n\nDnes mě [parent.GetSheHe] konečně přistaví: „Ah, tady jsi, [ROOT.Char.GetFirstNameNoTooltip], pro mě jsi pořád mé malé [ROOT.Char.Custom('GirlBoy')], víš? Nech mě ubrat část tíhy z tvých ramen — je toho tolik, co tě ještě mohu naučit.“ \n\nMůj doprovod se snaží najít něco jiného, na co by se dívali, ale jen to zhoršuje mé zahanbení. \n\n„[ROOT.Char.Custom('GetDaughterSon')|U], co se děje? Nedbáš na svého drahého starého [parent.Custom('GetMaPa')]? Po všem, co jsem pro tebe udělal?“"
  court.8070.a: "Najdu ti něco na práci, [parent.Custom('GetMamaPapa')]."
- court.8070.a.tt: "[parent.GetFirstNameNoTooltip] bude očekávat [court_position|E] v průběhu příštích několika měsíců"
+ court.8070.a.tt: "[parent.GetFirstNameNoTooltip] bude očekávat [Concept('court_position','dvorský úřad')|E] v průběhu příštích několika měsíců" # todo: CONCEPT CASE
  court.8070.b: "Uvažoval jsi o tom, že bys svůj život zasvětil [ROOT.Char.GetFaith.HighGodName]?"
  court.8070.c: "Prostě si vezmi jakoukoli práci..."
  court.8070.d: "Jsem #EMP velmi#! zaneprázdněný, [parent.GetMotherFather]."
@@ -142,7 +142,7 @@
  court.8080.desc.outro: "Copak ti nezáleží na tom, co si o tobě lidé myslí?!\n\nTohle není způsob, jak by se [Select_CString(ROOT.Char.IsFemale,'měla','měl')] [ROOT.Char.GetTitleAsNameNoTooltip] prezentovat; tímto tempem se staneš posměchem [ROOT.Char.GetPrimaryTitle.GetNameNoTierNoTooltip] — ne, dokonce — všech [ROOT.Char.GetCulture.GetCollectiveNounNoTooltip]!"
  court.8080.a: "Ano [parent.Custom('GetMamaPapa')], opravím to..."
  court.8080.b: "Ach, takže si myslíš, že jsi lepší než moji dvořané?"
- court.8080.b.tt: "Každý [courtier|E]"
+ court.8080.b.tt: "Každý [Concept('courtier','dvořan')|E]" # todo: CONCEPT CASE
  court.8080.c.nun: "Možná bys raději nosila hábit [ROOT.Char.GetFaith.DevoteeFemale]?"
  court.8080.c.monk: "Možná bys raději nosil roucho [ROOT.Char.GetFaith.DevoteeMale]?"
  court.8080.c.fallback: "Uvažoval jsi o zasvěcení se [ROOT.Char.GetFaith.HighGodName]?"
@@ -216,7 +216,7 @@
  court.8120.a.refuter: "[refuter.GetSheHe|U] má ale pravdu, [accuser.GetFirstNameNoTooltip].„"
  court.8120.c: "Přátelé, existuje mnoho způsobů, jak ctít Stvořitele."
  court.8120.d: "Podívejte, toto jsou [ROOT.Char.GetFaith.GetAdjectiveNoTooltip] pravdy!"
- court.8120.d.tt: "Každý horlivý [THIS.Char.GetFaith.GetAdjectiveNoTooltip] [vassal|E], [courtier|E] a [guest|E]"
+ court.8120.d.tt: "Každý horlivý [THIS.Char.GetFaith.GetAdjectiveNoTooltip] [Concept('vassal','vazal')|E], [Concept('courtier','dvořan')|E] a [Concept('guest','host')|E]" # todo: CONCEPT CASE
  court.8120.e: "Už nechci slyšet taková slova, [accuser.GetFirstNameNoTooltip]."
  court.8120.f: "Není naším úkolem debatovat o božském."
  my_holy_book: "[ROOT.Char.GetTitledFirstNamePossessiveNoTooltip] [ROOT.Char.GetFaith.ReligiousText|U]"
@@ -230,12 +230,12 @@
  court.8130.a: "[champion.GetFirstNameNoTooltip] bude hájit mou čest."
  court.8130.a.tt_champion: "[champion.GetTitledFirstNameNoTooltip] vyhrává duel"
  court.8130.a.tt_vassal: "[vassal.GetTitledFirstNameNoTooltip] vyhrává duel"
- court.8130.a.tt: "[champion.GetTitledFirstName] a [vassal.GetTitledFirstName] se utkají v [single_combat_duel|E]"
+ court.8130.a.tt: "[champion.GetTitledFirstName] a [vassal.GetTitledFirstName] se utkají v [Concept('single_combat_duel','duelu')|E]" # todo: CONCEPT CASE
  court.8130.b: "Nedorozumění; [vassal.GetFirstNameNoTooltip] je loajální vazal."
  court.8130.b.tt_me: "Vyhrávám duel"
  court.8130.c: "Potřebuji rozvážnější zástupce."
  court.8130.d: "[vassal.GetSheHe|U] řekl #EMP co?!#! Přineste mou [ROOT.Char.Custom('signature_weapon')]!"
- court.8130.d.tt: "[vassal.GetTitledFirstName] a já se utkáváme v [single_combat_duel|E]"
+ court.8130.d.tt: "[vassal.GetTitledFirstName] a já se utkáváme v [Concept('single_combat_duel','duelu')|E]" # todo: CONCEPT CASE
  court.8130.e: "Uklidněte se, nedojde k žádnému souboji."
  court.8140.t: "Královské pochybení"
  court.8140.desc: "Panování dvora pokračuje den za dnem, od úsvitu do soumraku. [vassal_2.GetTitledFirstName] improvizuje o mé velikosti, chrlí fráze a chválu. Nedaleko se [vassal_1.GetTitledFirstName] přidává, hraje pro dav, hloupě se usmívá a očekává znamení mé přízně za své výstupy. Jediná kapka potu nekonečně stéká po mém čele... \n\n[vassal_2.GetFirstNameNoTooltip] postřehne moji odtažitost a zeptá se: „Jste v pořádku, [ROOT.Char.Custom('FormOfAddressForLiege')]?“ s téměř upřímnou starostí.\n\n„Potřebuji pauzu."
@@ -270,27 +270,27 @@
  court.8150.b: "Jen to nejlepší pro #EMP můj#! dvůr."
  court.8150.c: "Tento přepych už šel příliš daleko!"
  court.8150.d: "Copak už nikdy nebudete spokojeni?"
- court.8150.a.tt: "Zkouška ohněm tisíců pokrmů prověřila statečnost [food_taster.GetTitledFirstNamePossessiveNoTooltip] a [food_taster.GetSheHe] z ní vyšel vítězně a silnější: [aptitude|E] Zvýšeno."
+ court.8150.a.tt: "Zkouška ohněm tisíců pokrmů prověřila statečnost [food_taster.GetTitledFirstNamePossessiveNoTooltip] a [food_taster.GetSheHe] z ní vyšel vítězně a silnější: [Concept('aptitude','způsobilost')|E] Zvýšeno." # todo: CONCEPT CASE
  food_taster_mettle_tested_desc: "Odolnost prověřena"
- court.8150.b.tt: "Poté, co dvůr přestal přejídat, má [high_almoner.GetTitledFirstNameNoTooltip] téměř nekonečné zásoby jídla k rozdávání chudým: [aptitude|E] Zvýšeno."
+ court.8150.b.tt: "Poté, co dvůr přestal přejídat, má [high_almoner.GetTitledFirstNameNoTooltip] téměř nekonečné zásoby jídla k rozdávání chudým: [Concept('aptitude','způsobilosti')|E] Zvýšeno." # todo: CONCEPT CASE
  plenty_to_donate_almoner_desc: "Dostatek k rozdávání"
  court.8160.t: "Přední [ROOT.Char.Custom('MountedWarriorTerm')|U]"
  court.8160.desc.intro: "Zdravé soupeření mezi odvážnými bojovníky je očekávané, ale rostoucí nesoulad mezi [knight_1.GetFirstName] a [knight_2.GetFirstName] kazí náladu na dvoře. \n\n[knight_1.GetTitledFirstNameNoTooltip] je obecně považován za zdatnějšího, ale [knight_2.GetTitledFirstNameNoTooltip] s tímto tvrzením zjevně nesouhlasí. \n\nUprostřed audiencie druhý vběhne do mého trůnního sálu a, přidržujíc se za rukojeť meče, vykřikne: „[knight_1.GetFirstNameNoTooltip]! Jen jeden z nás se může nazvat [ROOT.Char.GetTitleAsNamePossessiveNoTooltip] nejzručnějším [ROOT.Char.Custom('MountedWarriorTerm')], vyjdi se mnou ven a já tu otázku vyřeším!“\n\n[knight_1.GetTitledFirstNameNoTooltip] odpoví [knight_2.Custom('quirk_neg_adverb')], „Roztrhám tě na kusy, kde stojíš, kdyby tu nebyl přítomný můj [ROOT.Char.GetTitleAsNameNoTooltip], ty [knight_2.Custom('quirk_neg_adjective')] [knight_2.Custom2('InsultNoun', SCOPE.sC('knight_1'))]! Omluv se a možná ti ušetřím život!“ \n\nRaději bych [Select_CString(ROOT.Char.IsFemale,'měla','měl')] rychle zasáhnout, pokud má být toto vyostření zastaveno..."
  court.8160.a: "Oba mi budete sloužit přímo."
- court.8160.a.tt: "Rivalita mezi [knight_1.GetFirstNameNoTooltip] a [knight_2.GetFirstNamePossessiveNoTooltip] zajišťuje, že dokud budou oba zaměstnáni, budou ve svých funkcích podávat maximum: [aptitude|E] Zvýšeno."
+ court.8160.a.tt: "Rivalita mezi [knight_1.GetFirstNameNoTooltip] a [knight_2.GetFirstNamePossessiveNoTooltip] zajišťuje, že dokud budou oba zaměstnáni, budou ve svých funkcích podávat maximum: [Concept('aptitude','způsobilost')|E] Zvýšeno." # todo: CONCEPT CASE
  competing_knight_position_desc: "Soutěžící rytíři"
  court.8160.a.tt_knight_1: "[knight_1.GetTitledFirstNameNoTooltip] vyhrává duel"
  court.8160.a.tt_knight_2: "[knight_2.GetTitledFirstNameNoTooltip] vyhrává duel"
  court.8160.b: "Seberte jim meče! Dejte jim cvičné meče."
  court.8160.c: "Ponížím vás oba!"
- court.8160.c.tt: "Budete bojovat v souboji jeden na jednoho s [knight|E] s vyšší [prowess|E] ([knight_1.GetTitledFirstName])"
+ court.8160.c.tt: "Budete bojovat v souboji jeden na jednoho s [Concept('knight','rytířem')|E] s vyšší [Concept('prowess','udatností')|E] ([knight_1.GetTitledFirstName])" # todo: CONCEPT CASE
  court.8160.c.tt_win: "Jste vítězem"
  court.8160.c.tt_lose: "Jste poraženi"
  court.8160.d: "Prokažte mi to na bitevním poli, ne na dvoře!"
  court.8163.t: "Vyhráváte duel"
  court_humiliation_modifier: "Dvorní ponížení"
  court_humiliation_modifier_desc: "Tato postava byla ponížena před celým dvorem."
- court.8162.tt: "Poté, co [Select_CString(sc_victor.IsFemale,'její','jeho')] prokázal svou převahu v poctivém duelu, je [sc_victor.GetFirstNameNoTooltip] uznán jako lepší [ROOT.Char.Custom('MountedWarriorTerm')] a nejvhodnější pro funkci $bodyguard_court_position$ nebo $champion_court_position$: [aptitude|E] Zvýšeno."
+ court.8162.tt: "Poté, co [Select_CString(sc_victor.IsFemale,'její','jeho')] prokázal svou převahu v poctivém duelu, je [sc_victor.GetFirstNameNoTooltip] uznán jako lepší [ROOT.Char.Custom('MountedWarriorTerm')] a nejvhodnější pro funkci $bodyguard_court_position$ nebo $champion_court_position$: [Concept('aptitude','způsobilost')|E] Zvýšeno." # todo: CONCEPT CASE
  best_knight_position_desc: "Nejlepší z rytířů"
  fostering_competitiveness_modifier: "Podpora soutěživosti"
  fostering_competitiveness_modifier_desc: "Tato postava podporuje soutěživost mezi svými vojsky na bitevním poli."

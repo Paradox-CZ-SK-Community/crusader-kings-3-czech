@@ -15,14 +15,14 @@
  TRAVEL_NAME_FOR_activity_roaming: "$TRAVEL_NAME_FOR_activity_tournament$"
  TRAVEL_NAME_FOR_activity_journey: "$TRAVEL_NAME_FOR_activity_tournament$"
  TRAVEL_NAME_FOR_activity_survey: "$TRAVEL_NAME_FOR_activity_tournament$"
- TRAVEL_NAME_FOR_activity_imperial_examination: "[Character.GetFirstNamePossessiveNoTooltip] výprava na [imperial_examinations|E]" # todo: NEW TRANSLATION
- TRAVEL_NAME_FOR_activity_local_examination: "[Character.GetFirstNamePossessiveNoTooltip] výprava na [imperial_examinations|E]" # todo: NEW TRANSLATION
+ TRAVEL_NAME_FOR_activity_imperial_examination: "[Character.GetFirstNamePossessiveNoTooltip] výprava na [Concept('imperial_examinations','úřednické zkoušky')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRAVEL_NAME_FOR_activity_local_examination: "[Character.GetFirstNamePossessiveNoTooltip] výprava na [Concept('imperial_examinations','úřednické zkoušky')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  TRAVEL_NAME_FOR_activity_debate: "$TRAVEL_NAME_FOR_activity_tournament$" # todo: NEW TRANSLATION
  TRAVEL_NAME_FOR_activity_coronation: "$TRAVEL_NAME_FOR_activity_tournament$"
  TRAVEL_NAME_FOR_activity_festival: "$TRAVEL_NAME_FOR_activity_tournament$" # todo: NEW TRANSLATION
- TRAVEL_SPEED: "[travel_speed|E]"
- TRAVEL_SAFETY: "[travel_safety|E]"
- TRAVEL_PLAN_TOOLTIP_DESC: "Cesta do [TravelPlan.GetData.GetNextDestination.GetProvince.GetName] [SelectLocalization( TravelPlan.GetData.GetActivity.IsValid , 'TRAVEL_PLAN_TOOLTIP_ACTIVITY_DESC', '' )]\n$BULLET_WITH_TAB$Aktuální poloha: [TravelPlan.GetData.GetCurrentLocation.GetName]\n$BULLET_WITH_TAB$Odhadovaný příjezd: [TravelPlan.GetData.GetNextDestination.GetEstimatedArrivalDate.GetTimeDiffFromNow]\n\n[SelectLocalization( TravelPlan.GetData.GetTravelLeader.IsValid, 'TRAVEL_PLAN_TOOLTIP_LEADER_DESC', '')]@travel_speed_icon! [TravelPlan.GetData.GetSpeedMultiplierAsPercentage]% [travel_speed|E]\n@travel_safety_icon! [TravelPlan.GetData.GetSafetyValue|0] [travel_safety|E]"
+ TRAVEL_SPEED: "[Concept('travel_speed','Rychlost')|E]" # todo: CONCEPT CASE
+ TRAVEL_SAFETY: "[Concept('travel_safety','Bezpečnost')|E]" # todo: CONCEPT CASE
+ TRAVEL_PLAN_TOOLTIP_DESC: "Cesta do [TravelPlan.GetData.GetNextDestination.GetProvince.GetName] [SelectLocalization( TravelPlan.GetData.GetActivity.IsValid , 'TRAVEL_PLAN_TOOLTIP_ACTIVITY_DESC', '' )]\n$BULLET_WITH_TAB$Aktuální poloha: [TravelPlan.GetData.GetCurrentLocation.GetName]\n$BULLET_WITH_TAB$Odhadovaný příjezd: [TravelPlan.GetData.GetNextDestination.GetEstimatedArrivalDate.GetTimeDiffFromNow]\n\n[SelectLocalization( TravelPlan.GetData.GetTravelLeader.IsValid, 'TRAVEL_PLAN_TOOLTIP_LEADER_DESC', '')]@travel_speed_icon! [TravelPlan.GetData.GetSpeedMultiplierAsPercentage]% [Concept('travel_speed','rychlost')|E]\n@travel_safety_icon! [TravelPlan.GetData.GetSafetyValue|0] [Concept('travel_safety','Bezpečnost')|E]" # todo: CONCEPT CASE
  TRAVEL_PLAN_TOOLTIP_ACTIVITY_DESC: "na [TravelPlan.GetData.GetActivity.GetName()]"
  TRAVEL_PLAN_TOOLTIP_LEADER_DESC: "[GetCourtPositionType('travel_leader_court_position').GetNameNoTooltip()]: [TravelPlan.GetData.GetTravelLeader.GetName()]\n"
  TRAVEL_BASE_SPEED: "Základní rychlost"
@@ -33,43 +33,43 @@
  TRAVEL_DANGER_CRITICAL_HEADER: "Zbývající nebezpečí na trase:"
  TRAVEL_DANGER_ROUTE_SUMMARY_ICON_TT: "#T [CriticalDanger.GetDangerType.GetName]\n#![CriticalDanger.GetProvince.GetName]"
  TRAVEL_DANGER_CHANCE_OF_EVENT: "Pravděpodobnost nebezpečí"
- PROVINCE_TERRAIN_TRAVEL_DANGER: "Nebezpečí z [terrain|E]"
- PROVINCE_OWNER_OPINION: "[holder_possessive|E] [opinion|E] o vás"
- TRAVEL_DANGER_LOW_COUNTY_CONTROL: "Nebezpečí kvůli nízkému [control|E]"
- TRAVEL_DANGER_LOW_DEVELOPMENT: "Nebezpečí kvůli nízkému [development|E]"
+ PROVINCE_TERRAIN_TRAVEL_DANGER: "Nebezpečí z [Concept('terrain','terénu')|E]" # todo: CONCEPT CASE
+ PROVINCE_OWNER_OPINION: "[Concept('holder_possessive','Držitelův')|E] [Concept('opinion','Mínění')|E] o vás" # todo: CONCEPT CASE
+ TRAVEL_DANGER_LOW_COUNTY_CONTROL: "Nebezpečí kvůli nízkému [Concept('control','kontrole')|E]" # todo: CONCEPT CASE
+ TRAVEL_DANGER_LOW_DEVELOPMENT: "Nebezpečí kvůli nízkému [Concept('development','rozvoji')|E]" # todo: CONCEPT CASE
  TRAVEL_DANGER_SEA_PROVINCE: "Nebezpečí z moře"
- TRAVEL_DANGER_LOW_COUNTY_OPINION: "Nebezpečí kvůli nízkému [county_opinion|E]"
- TRAVEL_DANGER_RIVAL: "Tato území ovládá váš [rival|E]"
- TRAVEL_DANGER_NEMESIS: "Tato území ovládá váš [nemesis|E]"
- TRAVEL_DANGER_FRIEND: "Tato území ovládá váš [friend|E]"
- TRAVEL_DANGER_BEST_FRIEND: "Tato území ovládá váš [best_friend|E]"
- TRAVEL_DANGER_ARMY: "Nebezpečí z [armies|E]"
- TRAVEL_DANGER_ARMY_BATTLE: "Nebezpečí z [battles|E]"
- TRAVEL_DANGER_ARMY_SIEGE: "Nebezpečí z [sieges|E]"
- TRAVEL_DANGER_OCCUPIED_TERRITORY: "Nebezpečí z [occupations|E]"
- TRAVEL_DANGER_OWN_REALM: "Vlastní [realm|E]"
- TRAVEL_DANGER_OWN_DOMAIN: "Vlastní [domain|E]"
- TRAVEL_DANGER_LIEGE_REALM: "[liege_possessive|E] [realm|E]"
+ TRAVEL_DANGER_LOW_COUNTY_OPINION: "Nebezpečí kvůli nízkému [Concept('county_opinion','lidovému mínění')|E]" # todo: CONCEPT CASE
+ TRAVEL_DANGER_RIVAL: "Tato území ovládá váš [Concept('rival','sok')|E]" # todo: CONCEPT CASE
+ TRAVEL_DANGER_NEMESIS: "Tato území ovládá váš [Concept('nemesis','úhlavní nepřítel')|E]" # todo: CONCEPT CASE
+ TRAVEL_DANGER_FRIEND: "Tato území ovládá váš [Concept('friend','přítel')|E]" # todo: CONCEPT CASE
+ TRAVEL_DANGER_BEST_FRIEND: "Tato území ovládá váš [Concept('best_friend','nejlepší přítel')|E]" # todo: CONCEPT CASE
+ TRAVEL_DANGER_ARMY: "Nebezpečí z [Concept('armies','armád')|E]" # todo: CONCEPT CASE
+ TRAVEL_DANGER_ARMY_BATTLE: "Nebezpečí z [Concept('battles','bitev')|E]" # todo: CONCEPT CASE
+ TRAVEL_DANGER_ARMY_SIEGE: "Nebezpečí z [Concept('sieges','obléhání')|E]" # todo: CONCEPT CASE
+ TRAVEL_DANGER_OCCUPIED_TERRITORY: "Nebezpečí z [Concept('occupations','obsazení')|E]" # todo: CONCEPT CASE
+ TRAVEL_DANGER_OWN_REALM: "Vlastní [Concept('realm','panství')|E]" # todo: CONCEPT CASE
+ TRAVEL_DANGER_OWN_DOMAIN: "Vlastní [Concept('domain','doménu')|E]" # todo: CONCEPT CASE
+ TRAVEL_DANGER_LIEGE_REALM: "[Concept('liege_possessive','Lenního pána')|E] [Concept('realm','Panství')|E]" # todo: CONCEPT CASE
  travel_danger_type_default: "Lupiči"
  travel_danger_type_default_desc: "Je zde vysoké riziko setkání s lupiči."
  travel_danger_type_county_control: "Nízká kontrola"
- travel_danger_type_county_control_desc: "Lidé v tomto [county|E] jsou neukáznění a svobodní."
+ travel_danger_type_county_control_desc: "Lidé v tomto [Concept('county','hrabství')|E] jsou neukáznění a svobodní." # todo: CONCEPT CASE
  travel_danger_type_county_opinion: "Nízké mínění hrabství"
- travel_danger_type_county_opinion_desc: "Toto [county|E] má o vás nízký [county_opinion|E]."
+ travel_danger_type_county_opinion_desc: "Toto [Concept('county','hrabství')|E] má o vás nízký [Concept('county_opinion','lidové mínění')|E]." # todo: CONCEPT CASE
  travel_danger_type_owner_opinion: "Nízké mínění vlastníka provincie"
- travel_danger_type_owner_opinion_desc: "Vlastník této [barony|E] si o vás myslí špatně."
+ travel_danger_type_owner_opinion_desc: "Vlastník této [Concept('barony','baronství')|E] si o vás myslí špatně." # todo: CONCEPT CASE
  travel_danger_type_army: "Pochodující armáda"
- travel_danger_type_army_desc: "Armáda právě prochází tímto [barony|E]."
+ travel_danger_type_army_desc: "Armáda právě prochází tímto [Concept('barony','baronstvím')|E]." # todo: CONCEPT CASE
  travel_danger_type_battle: "Bojiště"
- travel_danger_type_battle_desc: "V tomto [barony|E] se vede bitva."
+ travel_danger_type_battle_desc: "V tomto [Concept('barony','baronství')|E] se vede bitva." # todo: CONCEPT CASE
  travel_danger_type_siege: "Obléháno"
- travel_danger_type_siege_desc: "Toto [holding|E] je obléháno."
+ travel_danger_type_siege_desc: "Toto [Concept('holding','država')|E] je obléháno." # todo: CONCEPT CASE
  travel_danger_type_raid: "Přepadáno"
- travel_danger_type_raid_desc: "Toto [holding|E] je právě přepadáváno."
+ travel_danger_type_raid_desc: "Toto [Concept('holding','država')|E] je právě přepadáváno." # todo: CONCEPT CASE
  travel_danger_type_occupation: "Obsazeno"
- travel_danger_type_occupation_desc: "Toto [barony|E] nedávno zasáhla válka."
+ travel_danger_type_occupation_desc: "Toto [Concept('barony','baronství')|E] nedávno zasáhla válka." # todo: CONCEPT CASE
  travel_danger_type_epidemic: "Mor"
- travel_danger_type_epidemic_desc: "Toto [barony|E] je nakaženo [epidemic|E]."
+ travel_danger_type_epidemic_desc: "Toto [Concept('barony','baronství')|E] je nakaženo [epidemic|E]." # todo: CONCEPT CASE
  travel_danger_type_mountains: "Hory"
  travel_danger_type_mountains_desc: "Tyto hory vypadají velmi zrádně."
  travel_danger_type_desert: "Poušť"
@@ -89,7 +89,7 @@
  travel_danger_type_taiga: "Taiga"
  travel_danger_type_taiga_desc: "$travel_danger_type_forest_desc$"
  travel_danger_type_floodplains: "Záplavové pláně"
- travel_danger_type_floodplains_desc: "Toto [barony|E] je náchylné k záplavám."
+ travel_danger_type_floodplains_desc: "Toto [Concept('barony','baronství')|E] je náchylné k záplavám." # todo: CONCEPT CASE
  travel_danger_type_steppe: "Step"
  travel_danger_type_steppe_desc: "$travel_danger_type_desert_desc$"
  travel_danger_type_sea: "Moře"
@@ -102,10 +102,10 @@
  travel_danger_type_oasis_desc: "Oáza, nebo jen lákavá fata morgána?"
  travel_danger_type_terraced_hills: "Terasovité kopce" # todo: NEW TRANSLATION
  travel_danger_type_terraced_hills_desc: "$travel_danger_type_hills_desc$" # todo: NEW TRANSLATION
- PROVINCE_DANGER_COUNTY_CONTROL: "[county_control|E]"
- PROVINCE_DANGER_COUNTY_OPINION: "[county_opinion|E]"
- PROVINCE_DANGER_OWNER_OPINION: "[holder_possessive|E] [opinion|E]"
- PROVINCE_DANGER_MIGRATION: "[migration|E]"
+ PROVINCE_DANGER_COUNTY_CONTROL: "[Concept('county_control','Kontrola hrabství')|E]" # todo: CONCEPT CASE
+ PROVINCE_DANGER_COUNTY_OPINION: "[Concept('county_opinion','Lidové mínění')|E]" # todo: CONCEPT CASE
+ PROVINCE_DANGER_OWNER_OPINION: "[Concept('holder_possessive','Držitelův')|E] [Concept('opinion','Mínění')|E]" # todo: CONCEPT CASE
+ PROVINCE_DANGER_MIGRATION: "[Concept('migration','Migrace')|E]" # todo: CONCEPT CASE
  TRAVEL_OPTION_TT_OWNER_MODIFIER_HEADER: "#S Modifikátor na vás#!"
  TRAVEL_OPTION_TT_TRAVEL_MODIFIER_HEADER: "#S Modifikátor na vaši cestu#!"
  TRAVEL_OPTION_TT_ON_APPLIED_EFFECT_HEADER: "#S Když cesta začne#!"
@@ -123,8 +123,8 @@
  trait_track_travel_desc: "Poznáváním mnoha lidí, míst a situací se člověk stává světáckým."
  trait_track_danger: "Zkušený"
  trait_track_danger_desc: "Na otevřené cestě čeká neznalé a nepřipravené cestovatele mnoho nebezpečí."
- travel_progress_towards_trait_0_tt: "[THIS.Char.GetShortUINameNoFormat|U] může získat [GetTrait('lifestyle_traveler').GetName( GetNullCharacter )] [lifestyle_trait|E]"
- travel_progress_towards_trait_1_tt: "Lehce zvyšuje [THIS.Char.GetShortUINamePossessive] [GetTrait('lifestyle_traveler').GetName( GetNullCharacter )] [trait|E] zisk XP"
- travel_progress_towards_trait_2_tt: "Zvyšuje [THIS.Char.GetShortUINamePossessive] [GetTrait('lifestyle_traveler').GetName( GetNullCharacter )] [trait|E] zisk XP"
- travel_progress_towards_trait_3_tt: "Výrazně zvyšuje [THIS.Char.GetShortUINamePossessive] [GetTrait('lifestyle_traveler').GetName( GetNullCharacter )] [trait|E] zisk XP"
+ travel_progress_towards_trait_0_tt: "[THIS.Char.GetShortUINameNoFormat|U] může získat [GetTrait('lifestyle_traveler').GetName( GetNullCharacter )] [Concept('lifestyle_trait','rys životního stylu')|E]" # todo: CONCEPT CASE
+ travel_progress_towards_trait_1_tt: "Lehce zvyšuje [THIS.Char.GetShortUINamePossessive] [GetTrait('lifestyle_traveler').GetName( GetNullCharacter )] [Concept('trait','rys')|E] zisk XP" # todo: CONCEPT CASE
+ travel_progress_towards_trait_2_tt: "Zvyšuje [THIS.Char.GetShortUINamePossessive] [GetTrait('lifestyle_traveler').GetName( GetNullCharacter )] [Concept('trait','rys')|E] zisk XP" # todo: CONCEPT CASE
+ travel_progress_towards_trait_3_tt: "Výrazně zvyšuje [THIS.Char.GetShortUINamePossessive] [GetTrait('lifestyle_traveler').GetName( GetNullCharacter )] [Concept('trait','rys')|E] zisk XP" # todo: CONCEPT CASE
  travel_xp_gain_message: "[GetTrait('lifestyle_traveler').GetName( GetNullCharacter )] zkušenosti"

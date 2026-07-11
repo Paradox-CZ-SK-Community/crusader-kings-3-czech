@@ -1,21 +1,21 @@
 ﻿l_polish:
  COMBAT_NAME: "Bitva u [PROVINCE.GetNameNoTooltip]"
  TOTAL_DEAD_AND_INITIAL_MEN: "$DEAD$"
- TOTAL_DEAD_AND_INITIAL_MEN_TOOLTIP: "Ztráty: $DEAD|V$\nPočáteční [soldiers|E]: $INITIAL|V$"
- TOTAL_INITIAL_MEN: "Počáteční [soldiers|E]"
- TOTAL_MEN_ALIVE: "Živí [soldiers|E]"
+ TOTAL_DEAD_AND_INITIAL_MEN_TOOLTIP: "Ztráty: $DEAD|V$\nPočáteční [Concept('soldiers','vojáci')|E]: $INITIAL|V$" # todo: CONCEPT CASE
+ TOTAL_INITIAL_MEN: "Počáteční [Concept('soldiers','vojáci')|E]" # todo: CONCEPT CASE
+ TOTAL_MEN_ALIVE: "Živí [Concept('soldiers','vojáci')|E]" # todo: CONCEPT CASE
  TOTAL_MEN_DEAD: "Ztráty"
  COMBAT_BALANCE_ATTACKER_WINNING: "Útočník má momentálně převahu"
  COMBAT_BALANCE_DEFENDER_WINNING: "Obránce má momentálně převahu"
- COMBAT_BALANCE_UNDECIDED: "[battle|E] je momentálně nerozhodná"
- COMBAT_CURRENT_PHASE: "Aktuální [combat_phase|E]: [ConceptByKey('$PHASE|Vq$')]"
- COMBAT_CURRENT_PHASE_DAYS_LEFT: "Zbývající dny v aktuální fázi [combat_phase|E]: $VALUE|V$"
- COMBAT_TOTAL_DAYS: "Celková délka [battle|E]: $DAYS|V$"
+ COMBAT_BALANCE_UNDECIDED: "[Concept('battle','Bitva')|E] je momentálně nerozhodná" # todo: CONCEPT CASE
+ COMBAT_CURRENT_PHASE: "Aktuální [Concept('combat_phase','fáze bitvy')|E]: [ConceptByKey('$PHASE|Vq$')]" # todo: CONCEPT CASE
+ COMBAT_CURRENT_PHASE_DAYS_LEFT: "Zbývající dny v aktuální fázi [Concept('combat_phase','fázi bitvy')|E]: $VALUE|V$" # todo: CONCEPT CASE
+ COMBAT_TOTAL_DAYS: "Celková délka [Concept('battle','bitva')|E]: $DAYS|V$" # todo: CONCEPT CASE
  ATTACKER: "Útočník"
  DEFENDER: "Obránce"
  ARMY: "Armáda"
  COMBAT_MODIFIER_HEADER: "$TYPE$: $VALUE|2+=%$"
- END_OF_COMBAT: "[battle|E] skončila"
+ END_OF_COMBAT: "[Concept('battle','Bitva')|E] skončila" # todo: CONCEPT CASE
  DEPLOYED: "Nasazeno: "
  DIED: "Padlí: "
  default_maneuver: "Bojové formace"
@@ -48,17 +48,17 @@
  default_maneuver_desc: "Uspořádání sil na bojišti do přehledných formací."
  VICTORY_LABEL: "#P Vítězství#!"
  LOSS_LABEL: "#N Porážka#!"
- SIEGE_NAME: "[siege|E] u $NAME|V$"
- RAID_NAME: "[raid|E] u [PROVINCE.GetNameNoTooltip|V]"
- BARTER_NAME: "[barter|E] Mise v [PROVINCE.GetNameNoTooltip|V]" # todo: NEW TRANSLATION
+ SIEGE_NAME: "[Concept('siege','Obléhání')|E] u $NAME|V$" # todo: CONCEPT CASE
+ RAID_NAME: "[Concept('raid','Nájezd')|E] u [PROVINCE.GetNameNoTooltip|V]" # todo: CONCEPT CASE
+ BARTER_NAME: "[Concept('barter','Směna')|E] Mise v [PROVINCE.GetNameNoTooltip|V]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  combat_action_0: "Žádné hvězdy"
  combat_action_1: "1/5 hvězdy"
  combat_action_2: "2/5 hvězd"
  combat_action_3: "3/5 hvězd"
  combat_action_4: "4/5 hvězd"
  combat_action_5: "5/5 hvězd"
- BALANCED_ADVANTAGE: "#T [advantage|E]: Žádná strana nemá převahu#!"
- HAVE_ADVANTAGE: "#T [advantage|E]: $ADVANTAGE$ $COMBAT_RELATION_FAVOR$#!\nPoškození $COMBAT_RELATION_POSSESIVE|U$ je zvýšeno o $ADVANTAGE_DAMAGE_FACTOR|V0%$"
+ BALANCED_ADVANTAGE: "#T [Concept('advantage','Výhoda')|E]: Žádná strana nemá převahu#!" # todo: CONCEPT CASE
+ HAVE_ADVANTAGE: "#T [Concept('advantage','Výhoda')|E]: $ADVANTAGE$ $COMBAT_RELATION_FAVOR$#!\nPoškození $COMBAT_RELATION_POSSESIVE|U$ je zvýšeno o $ADVANTAGE_DAMAGE_FACTOR|V0%$" # todo: CONCEPT CASE
  ADVANTAGE_POSITIVE: "$VALUE|0P$"
  ADVANTAGE_NEGATIVE: "$VALUE|0N$"
  defender_river: "Bránění přechodu přes řeku"
@@ -75,28 +75,28 @@
  combat_phase_maneuver: "Manévr"
  combat_phase_main: "Hlavní"
  combat_phase_pursuit: "Pronásledování"
- tooltip_combat_phase_maneuver: "#T Aktuální [combat_phase|E]: [maneuver|E]#!"
- tooltip_combat_phase_main: "#T Aktuální [combat_phase|E]: [main_phase|E]#!"
- tooltip_combat_phase_pursuit: "#T Aktuální [combat_phase|E]: [aftermath|E]#!"
- COMBAT_WIDTH_BREAKDOWN_HEADER: "[combat_width|E]: $VALUE|V$"
+ tooltip_combat_phase_maneuver: "#T Aktuální [Concept('combat_phase','fáze bitvy')|E]: [Concept('maneuver','manévr')|E]#!" # todo: CONCEPT CASE
+ tooltip_combat_phase_main: "#T Aktuální [Concept('combat_phase','fáze bitvy')|E]: [Concept('main_phase','hlavní fáze')|E]#!" # todo: CONCEPT CASE
+ tooltip_combat_phase_pursuit: "#T Aktuální [Concept('combat_phase','fáze bitvy')|E]: [Concept('aftermath','dohra')|E]#!" # todo: CONCEPT CASE
+ COMBAT_WIDTH_BREAKDOWN_HEADER: "[Concept('combat_width','Šířka boje')|E]: $VALUE|V$" # todo: CONCEPT CASE
  MEN_AT_ARMS_DESC: "$MEN_AT_ARMS_TYPE|V$: $VALUE|0$"
  COUNTERED: "zablokováno"
  PURSUING: "Pronásledující"
  RETREATING: "Ustupující"
- COMBAT_WIDTH_BASE_DESCRIPTION: "$BASE_COLON$ #weak (Polovina celkového počtu všech [soldiers|E] na začátku bitvy)#!"
+ COMBAT_WIDTH_BASE_DESCRIPTION: "$BASE_COLON$ #weak (Polovina celkového počtu všech [Concept('soldiers','vojáků')|E] na začátku bitvy)#!" # todo: CONCEPT CASE
  COMBAT_PREDICTION_LEVEL_0: "Zcela prohrajete"
  COMBAT_PREDICTION_LEVEL_1: "Pravděpodobně prohrajete"
  COMBAT_PREDICTION_LEVEL_2: "Šance jsou vyrovnané"
  COMBAT_PREDICTION_LEVEL_3: "Pravděpodobně zvítězíte"
  COMBAT_PREDICTION_LEVEL_4: "Rozhodně zvítězíte"
- COMBAT_PREDICTION_EDGE_BETTER_COMMANDER: "Lepší [army_commander|E]"
- COMBAT_PREDICTION_EDGE_COMMANDER_TRAITS: "Více [commander_traits|E]"
+ COMBAT_PREDICTION_EDGE_BETTER_COMMANDER: "Lepší [Concept('army_commander','velitel armády')|E]" # todo: CONCEPT CASE
+ COMBAT_PREDICTION_EDGE_COMMANDER_TRAITS: "Více [Concept('commander_traits','velitelské rysy')|E]" # todo: CONCEPT CASE
  COMBAT_PREDICTION_COMBAT_HEADER: "Možná bitva (za $DURATION$)"
- COMBAT_PREDICTION_EDGE_SOLDIERS_COUNT: "Více [soldiers|E]"
- COMBAT_PREDICTION_EDGE_QUALITY_COUNT: "Vyšší [troop_quality|E]"
- COMBAT_PREDICTION_EDGE_MAA_COUNTER: "Více [men_at_arms_counter|E]"
+ COMBAT_PREDICTION_EDGE_SOLDIERS_COUNT: "Více [Concept('soldiers','vojáci')|E]" # todo: CONCEPT CASE
+ COMBAT_PREDICTION_EDGE_QUALITY_COUNT: "Vyšší [Concept('troop_quality','kvalita')|E]" # todo: CONCEPT CASE
+ COMBAT_PREDICTION_EDGE_MAA_COUNTER: "Více [Concept('men_at_arms_counter','kontra ozbrojenců')|E]" # todo: CONCEPT CASE
  COMBAT_PREDICTION_DEBUG_SCORE: "#D (DEBUG SKÓRE: $VALUE$)#!"
  MAA_COUNTERED_IN_COMBAT: "$NAME$: $EFFECTIVENESS|%V0$"
- MAAS_COUNTERED_IN_COMBAT: "[men_at_arms|E] bojující se sníženou efektivitou kvůli [men_at_arms_counter|E]:"
- COMBAT_ON_MAP_TOOLTIP: "#T [Combat.GetName]#!\n[soldiers|E]: [Combat.GetLeftSide.GetCurrentFightingMen|0] vs [Combat.GetRightSide.GetCurrentFightingMen|0]\n#I Klikněte pro zobrazení#!"
- COMMANDER_ADVANTAGE_DESC: "#T Velitelova [advantage|E]: $ADVANTAGE$#!\nVálečná dovednost: $SKILL|+=$\n$MODIFIERS$"
+ MAAS_COUNTERED_IN_COMBAT: "[Concept('men_at_arms','Ozbrojenci')|E] bojující se sníženou efektivitou kvůli [Concept('men_at_arms_counter','kontra ozbrojencům')|E]:" # todo: CONCEPT CASE
+ COMBAT_ON_MAP_TOOLTIP: "#T [Combat.GetName]#!\n[Concept('soldiers','Vojáci')|E]: [Combat.GetLeftSide.GetCurrentFightingMen|0] vs [Combat.GetRightSide.GetCurrentFightingMen|0]\n#I Klikněte pro zobrazení#!" # todo: CONCEPT CASE
+ COMMANDER_ADVANTAGE_DESC: "#T Velitelova [Concept('advantage','výhoda')|E]: $ADVANTAGE$#!\nVálečná dovednost: $SKILL|+=$\n$MODIFIERS$" # todo: CONCEPT CASE

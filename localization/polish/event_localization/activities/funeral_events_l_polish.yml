@@ -1,9 +1,9 @@
 ﻿l_polish:
  activity_funeral: "Pohřeb"
  activity_funeral_desc: "Svolejte oplakávající království pro $activity_funeral$, příležitost důstojně uctít váženého člena šlechty."
- activity_funeral_province_desc: "Pořádáte pohřeb v [ROOT.Province.GetName]\nProvincie s vysokým skóre poskytují zvýšený [piety_i][piety|E], [stress_loss_i][stress|E] úbytek a [legitimacy|E]\n"
- activity_funeral_guest_help_text: "Každý pozvaný [guests|E] bude mít příležitost zvýšit svůj [opinion|E] vůči vám.\nPohřby jsou také příležitostí ulevit si od emočních břemen, snížit [stress|E] a získat [piety|E]."
- activity_funeral_selection_tooltip: "Uspořádejte pohřeb, aby bylo zemřelému příhodně uloženo tělo\n\nOčekávané odměny:\n$BULLET_WITH_TAB$[opinion_i] [opinion|E]\n$BULLET_WITH_TAB$[legitimacy_i] [legitimacy|E] Zisk\n$BULLET_WITH_TAB$[stress_loss_i] [stress|E] Ztráta\n$BULLET_WITH_TAB$[piety_i] [piety|E] Zisk"
+ activity_funeral_province_desc: "Pořádáte pohřeb v [ROOT.Province.GetName]\nProvincie s vysokým skóre poskytují zvýšený [piety_i][Concept('piety','zbožnost')|E], [stress_loss_i][Concept('stress','stres')|E] úbytek a [Concept('legitimacy','legitimita')|E]\n" # todo: CONCEPT CASE
+ activity_funeral_guest_help_text: "Každý pozvaný [Concept('guests','hosté')|E] bude mít příležitost zvýšit svůj [Concept('opinion','mínění')|E] vůči vám.\nPohřby jsou také příležitostí ulevit si od emočních břemen, snížit [Concept('stress','stres')|E] a získat [Concept('piety','zbožnost')|E]." # todo: CONCEPT CASE
+ activity_funeral_selection_tooltip: "Uspořádejte pohřeb, aby bylo zemřelému příhodně uloženo tělo\n\nOčekávané odměny:\n$BULLET_WITH_TAB$[opinion_i] [Concept('opinion','Mínění')|E]\n$BULLET_WITH_TAB$[legitimacy_i] [Concept('legitimacy','Legitimita')|E] Zisk\n$BULLET_WITH_TAB$[stress_loss_i] [Concept('stress','Stres')|E] Ztráta\n$BULLET_WITH_TAB$[piety_i] [Concept('piety','Zbožnost')|E] Zisk" # todo: CONCEPT CASE
  activity_funeral_destination_selection: "Tělo musí být pohřbeno někde ve vašem vlastním království. Svatá místa a náboženské budovy zlepší kvalitu obřadu."
  activity_funeral_major_religious_building: "#P +++ Hlavní náboženská stavba#!\n"
  activity_funeral_tos: "#P ++ $building_type_tower_of_silence_01$#!\n"
@@ -19,8 +19,8 @@
  body_to_bury_desc_for_host: "Tělo, které bude odevzdáno do posmrtného života"
  body_to_bury_desc_for_host_required_tt: "#T Požadovaný zvláštní host\n#!@warning_icon! #X Tato aktivita potřebuje $body_to_bury_for_host$ k pohřbení#!"
  body_to_bury_selection_info: "Vyberte nedávno zemřelého, který bude odevzdán do posmrtného života"
- activity_funeral_host_desc: "$BULLET_WITH_TAB$[opinion_i] [opinion|E]\n$BULLET_WITH_TAB$[stress_loss_i] [stress|E] Ztráta\n$BULLET_WITH_TAB$[piety_i] [piety|E] Zisk\n$BULLET_WITH_TAB$[legitimacy_i] [legitimacy|E] Zisk"
- activity_funeral_guest_desc: "$BULLET_WITH_TAB$ Přítomné postavy mohou získat [opinion|E]\n$BULLET_WITH_TAB$ Přítomné postavy mohou ztratit [stress_loss_i][stress|E]"
+ activity_funeral_host_desc: "$BULLET_WITH_TAB$[opinion_i] [Concept('opinion','Mínění')|E]\n$BULLET_WITH_TAB$[stress_loss_i] [Concept('stress','Stres')|E] Ztráta\n$BULLET_WITH_TAB$[piety_i] [Concept('piety','Zbožnost')|E] Zisk\n$BULLET_WITH_TAB$[legitimacy_i] [Concept('legitimacy','Legitimita')|E] Zisk" # todo: CONCEPT CASE
+ activity_funeral_guest_desc: "$BULLET_WITH_TAB$ Přítomné postavy mohou získat [Concept('opinion','mínění')|E]\n$BULLET_WITH_TAB$ Přítomné postavy mohou ztratit [stress_loss_i][Concept('stress','stres')|E]" # todo: CONCEPT CASE
  activity_funeral_conclusion_desc: "Aktivita [GetActivityType( 'activity_funeral' ).GetName] byla ukončena"
  funeral_phase_wake: "[GetPlayer.Custom('WakeName')]"
  funeral_phase_wake_desc: "[GetPlayer.Custom('WakeDesc')]"
@@ -28,13 +28,13 @@
  funeral_phase_ceremony_desc: "[GetPlayer.Custom('CeremonyDesc')]"
  funeral_option_ceremony: "Obřady"
  funeral_ceremony_bad: "Skromné obřady"
- funeral_ceremony_bad_desc: "$EFFECT_LIST_BULLET$ Malý zisk [piety|E]\n$EFFECT_LIST_BULLET$ Malý zisk [legitimacy|E]\n$EFFECT_LIST_BULLET$ Malý úbytek [stress|E]\n\n#weak Smrt není čas pro okázalost a pompéznost, je to čas se shromáždit a vzdát naše skromné pocty.#!"
+ funeral_ceremony_bad_desc: "$EFFECT_LIST_BULLET$ Malý zisk [Concept('piety','zbožnost')|E]\n$EFFECT_LIST_BULLET$ Malý zisk [Concept('legitimacy','legitimita')|E]\n$EFFECT_LIST_BULLET$ Malý úbytek [Concept('stress','stres')|E]\n\n#weak Smrt není čas pro okázalost a pompéznost, je to čas se shromáždit a vzdát naše skromné pocty.#!" # todo: CONCEPT CASE
  funeral_ceremony_normal: "Důstojné obřady"
- funeral_ceremony_normal_desc: "$EFFECT_LIST_BULLET$ Zisk [piety|E]\n$EFFECT_LIST_BULLET$ Zisk [legitimacy|E]\n$EFFECT_LIST_BULLET$ Úbytek [stress|E]\n\n#weak Smrt přišla do království, a nyní je čas uspořádat vynikající obřad pro zemřelého.#!"
+ funeral_ceremony_normal_desc: "$EFFECT_LIST_BULLET$ Zisk [Concept('piety','zbožnost')|E]\n$EFFECT_LIST_BULLET$ Zisk [Concept('legitimacy','legitimita')|E]\n$EFFECT_LIST_BULLET$ Úbytek [Concept('stress','stres')|E]\n\n#weak Smrt přišla do království, a nyní je čas uspořádat vynikající obřad pro zemřelého.#!" # todo: CONCEPT CASE
  funeral_ceremony_good: "Okázalé obřady"
- funeral_ceremony_good_desc: "$EFFECT_LIST_BULLET$ Velký zisk [piety|E]\n$EFFECT_LIST_BULLET$ Velký zisk [legitimacy|E]\n$EFFECT_LIST_BULLET$ Velký úbytek [stress|E]\n\n#weak Smrt zasáhla významnou osobu v království, nezaslouží si vše, co jí můžeme nabídnout? Na obřad nebude šetřeno a všichni poznají velikou tragédii, která království postihla.#!"
+ funeral_ceremony_good_desc: "$EFFECT_LIST_BULLET$ Velký zisk [Concept('piety','zbožnost')|E]\n$EFFECT_LIST_BULLET$ Velký zisk [Concept('legitimacy','legitimita')|E]\n$EFFECT_LIST_BULLET$ Velký úbytek [Concept('stress','stres')|E]\n\n#weak Smrt zasáhla významnou osobu v království, nezaslouží si vše, co jí můžeme nabídnout? Na obřad nebude šetřeno a všichni poznají velikou tragédii, která království postihla.#!" # todo: CONCEPT CASE
  mourn_intent: "Truchlit"
- mourn_intent_desc: "Je to čas pro oplakávání mrtvých, rozhodující okamžik k projevení [piety|E]."
+ mourn_intent_desc: "Je to čas pro oplakávání mrtvých, rozhodující okamžik k projevení [Concept('piety','zbožnosti')|E]." # todo: CONCEPT CASE
  wakename_offering_of_libations: "Oběť nápojů"
  wakedesc_offering_of_libations: "Nastal čas nabídnout mrtvým naše jídlo a vodu. Tělo bude očištěno posvátnými osobami a balzamováno pro smuteční hosty v následujících dnech."
  wakename_sky_burial: "Uctít mrtvé"
@@ -56,14 +56,14 @@
  ceremonyname_mummification: "Uložení do hrobky"
  ceremonydesc_mummification: "Mumifikované tělo je umístěno do hrobky, kde může odpočívat"
  ceremonyname_ceremony: "Obřad"
- ceremonydesc_ceremony: "Tělo bude odevzdáno do posmrtného života při tradičním a [pious|E] obřadu."
- activity_funeral_predicted_cost: "Náklady na pohřeb jsou ovlivněny [activity_options|E], které zvolíte, a funerálními zvyky [doctrine|E] vaší [faith|E]."
+ ceremonydesc_ceremony: "Tělo bude odevzdáno do posmrtného života při tradičním a [Concept('pious','zbožného')|E] obřadu." # todo: CONCEPT CASE
+ activity_funeral_predicted_cost: "Náklady na pohřeb jsou ovlivněny [Concept('activity_options','možnosti aktivity')|E], které zvolíte, a funerálními zvyky [Concept('doctrine','doktrína')|E] vaší [Concept('faith','víru')|E]." # todo: CONCEPT CASE
  funeral_cost_increase_great_temple: "Zde se nachází Velký chrám"
  funeral_cost_increase_mummification: "Mumifikace"
  funeral_cost_discount_cremation: "Kremace"
  funeral_activity_cost_desc: "Základní náklady"
- building_funeral_effect_desc: "$unlocks_building_desc$Zvyšuje zisk [legitimacy|E] a zisk [piety|E] pro [GetActivityType('activity_funeral').GetTextIcon][GetActivityType('activity_funeral').GetName] [activities|E] pořádané v tomto [holding|E]"
- building_funeral_wavel_effect_desc: "$unlocks_building_desc$Výrazně zvyšuje zisk [legitimacy|E] a zisk [piety|E] pro [GetActivityType('activity_funeral').GetTextIcon][GetActivityType('activity_funeral').GetName] [activities|E] pořádané v tomto [holding|E]"
+ building_funeral_effect_desc: "$unlocks_building_desc$Zvyšuje zisk [Concept('legitimacy','legitimita')|E] a zisk [Concept('piety','zbožnost')|E] pro [GetActivityType('activity_funeral').GetTextIcon][GetActivityType('activity_funeral').GetName] [Concept('activities','aktivity')|E] pořádané v tomto [Concept('holding','državě')|E]" # todo: CONCEPT CASE
+ building_funeral_wavel_effect_desc: "$unlocks_building_desc$Výrazně zvyšuje zisk [Concept('legitimacy','legitimita')|E] a zisk [Concept('piety','zbožnost')|E] pro [GetActivityType('activity_funeral').GetTextIcon][GetActivityType('activity_funeral').GetName] [Concept('activities','aktivity')|E] pořádané v tomto [Concept('holding','državě')|E]" # todo: CONCEPT CASE
  funeral.0001.t: "Smrt při pohřbu"
  funeral.0001.desc: "Dnes nás opět postihla ztráta, neboť náš host [host.GetName] vystoupal do [host.GetFaith.PositiveAfterLife].\n\nAčkoliv to přeruší současné obřady, naznačuje to také, že další pohřby mohou přijít dříve, než se očekávalo."
  funeral.0001.a: "To je nešťastné."

@@ -29,8 +29,8 @@
  artifact.1001.desc.weapon: "\n\n„Pane, když jsem čistil zbrojnici, všiml jsem si, že tento zde [SCOPE.Custom('ThisArtifactType')] zrezivěl téměř na nic. Co s ním máme dělat?“\n\nProhlédnu si [SCOPE.Custom('ThisArtifactType')]. Ačkoliv žádné přetavení by z něj už nikdy neudělalo kus schopný boje, bylo by možné jej očistit a zachovat pro vystavení za jen zanedbatelné náklady."
  artifact.1001.desc.other: "\n\n„Pane, když jsem uklízel ve skladišti, všiml jsem si, že tento [SCOPE.Custom('ThisArtifactType')] je tak starý, že se prakticky rozpadá! Co s ním máme dělat?“\n\nProhlédnu si [SCOPE.Custom('ThisArtifactType')]. Ačkoliv žádné opravy z něj už nikdy neudělají opět nositelný kus, bylo by možné jej očistit a zachovat pro vystavení za jen zanedbatelné náklady."
  artifact.1001.a: "Stojí za to."
- artifact.1001.a.tt.free: "#instruction Tento [artifact|E] lze převést zdarma!#!"
- artifact.1001.a.tt: "[this_artifact.GetName] je přeměněn na [court_artifact|E], který dává pouze [grandeur|E] a [prestige|E]"
+ artifact.1001.a.tt.free: "#instruction Tento [Concept('artifact','artefakt')|E] lze převést zdarma!#!" # todo: CONCEPT CASE
+ artifact.1001.a.tt: "[this_artifact.GetName] je přeměněn na [Concept('court_artifact','dvorský artefakt')|E], který dává pouze [Concept('grandeur','velkolepost')|E] a [Concept('prestige','prestiž')|E]" # todo: CONCEPT CASE
  artifact.1001.b: "Ne, je to příliš drahé."
  manhunter: "#EMP „Lovec lidí“#!"
  heartseeker: "#EMP „Hledač srdcí“#!"
@@ -82,7 +82,7 @@
  artifact.3040.b: "Považujme to tedy za vyrovnané."
  artifact.3040.c: "Vaši pomoc nepotřebuji."
  artifact.3050.t: "Zchátralý artefakt!"
- artifact.3050.desc: "Vysoce kvalitní artefakt ve vašem držení – [this_artifact.GetName] – se blíží k #N 0#! [durability|E] a může být zničen!"
+ artifact.3050.desc: "Vysoce kvalitní artefakt ve vašem držení – [this_artifact.GetName] – se blíží k #N 0#! [Concept('durability','trvanlivosti')|E] a může být zničen!" # todo: CONCEPT CASE
  artifact.4000.t: "Pověsti o kletbě"
  artifact.4000.desc.antiquarian_intro: "Můj $antiquarian_court_position$ [antiquarian.GetTitledFirstName] vypadal několik dní znepokojeně, až mě [antiquarian.GetSheHe] konečně osloví.\n\n„[ROOT.Char.Custom('FormOfAddressForLiege')|U], mám znepokojující zprávy o jednom z vašich cenných předmětů, vašem [this_artifact.GetName]. Chodby šumí pověstmi o tom předmětu a hosté i dvorníci se na něj dívají se strachem a podezřením... Věří, že je #EMP prokletý!#! Jak pověsti praví,"
  artifact.4000.desc.servant_intro: "V posledních dnech jsem si nemohl nepovšimnout, že o mém sídle se šíří více pomluv než obvykle, i když všechny hlasy zmlknou, když vstoupím do místnosti.\n\nKdyž se mi konečně podaří chytit služebníka, abych se zeptal na vysvětlení, [Select_CString(dummy_servant_gender.IsFemale,'její','jeho')] odpověď je: „[ROOT.Char.Custom('FormOfAddressForLiege')|U], nevíte? To je vaše [this_artifact.GetName]! Všichni vědí, že je #EMP prokletý!#! Je jasné, že"
@@ -177,7 +177,7 @@
  artifact.6001.a: "Bude to skvělý přírůstek do mé sbírky!"
  artifact.6001.b: "Dejte ho na ohniště oslav. Ten zbytečný symbol nepotřebujeme."
  artifact.6001.toast: "Prapor ztracen u [combat_location.GetNameNoTooltip]"
- artifact.7000.a.boil_skull: "[skull_boiler.GetFirstName] vaří lebku [skull_to_boil.GetFirstNamePossessive] a proměňuje ji na [court_artifact|E]"
+ artifact.7000.a.boil_skull: "[skull_boiler.GetFirstName] vaří lebku [skull_to_boil.GetFirstNamePossessive] a proměňuje ji na [Concept('court_artifact','dvorský artefakt')|E]" # todo: CONCEPT CASE
  artifact_rival_skull: "Lebka [skull_to_boil.GetTitledFirstName], popraveného rivala [ROOT.Char.GetTitledFirstName]. Uvařena a očištěna [skull_boiler.GetFirstName]. Na jejím čele jsou vyryta slova: „[skull_to_boil.Custom2('InsultAdjective', ROOT.Char)|U] [skull_to_boil.Custom2('InsultNoun', ROOT.Char)]“."
  artifact.7000.t: "Rival navždy"
  artifact.7000.desc: "Ach, díky [ROOT.Char.GetFaith.HighGodName], že [skull_to_boil.GetFirstName] je mrtev, a navíc popraven na #EMP moje#! rozkazy!\n\nMusím přiznat, že mi bude chybět poslouchat [Select_CString(skull_to_boil.IsFemale,'její','jeho')] ubohé kňučení v mé kobce... Možná bych si měl ponechat část [skull_to_boil.GetHerHim], abych měl něco, čemu bych mohl nadávat, zatímco odpočívám na svém trůnu?\n\nVždyť [skull_boiler.GetFirstName] stejně nic důležitého nedělá..."

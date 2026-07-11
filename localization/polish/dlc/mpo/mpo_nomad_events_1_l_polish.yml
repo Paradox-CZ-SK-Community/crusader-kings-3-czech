@@ -16,19 +16,19 @@
  mpo_warriors_grave_modifier_desc: "Useknutá v bitvě hlava, zkreslená válečnými výkřiky, je pohřbená v této zemi. Tento hrob často navštěvují rodiny, jejichž milí odjeli do války."
  mpo_noble_warriors_grave_modifier: "Hrob useknutého šlechtice"
  mpo_noble_warriors_grave_modifier_desc: "Useknutá v bitvě hlava vysoce váženého bojovníka je pohřbena v této zemi. Jeho hrob je posvátné místo, známé a často navštěvované."
- custom.every_beheaded_family: "Každý [close_family_member|E] z [beheaded_warrior.GetShortUIName]"
+ custom.every_beheaded_family: "Každý [Concept('close_family_member','člen blízké rodiny')|E] z [beheaded_warrior.GetShortUIName]" # todo: CONCEPT CASE
  warriors_head_artifact: "[beheaded_warrior.GetTitledFirstNamePossessiveNoTooltip|U] Uctívaná hlava"
  kin_head_artifact_desc: "Zhnilá, nepoznatelná tvář [beheaded_warrior.GetFirstName], milovaný potomek rodu [beheaded_warrior.GetHouse.GetName], který byl [Select_CString(beheaded_warrior.GetHouse.IsFemale,'zabita','zabit')] silami [beheaded_warrior_foe.GetNamePossessive] v [beheaded_warrior_location.GetName]."
  accolade_head_artifact_desc: "Hrůzné pozůstatky [beheaded_warrior.GetFirstName], proslulého [ROOT.Char.Custom('KnightCultureNoTooltip')|l] známého jako '[beheaded_warrior_accolade.GetName].' Válečníci [beheaded_warrior_foe.GetNamePossessive|U] se hlásí k poctě, že [beheaded_warrior.GetHerHim] srazili na bojišti u [beheaded_warrior_location.GetName]."
  warriors_head_artifact_desc: "Useknutá hlava statečného [ROOT.Char.Custom('KnightCultureNoTooltip')|l] [beheaded_warrior.GetFirstName], který padl v boji proti kmenům [beheaded_warrior_foe.GetNamePossessive] v [beheaded_warrior_location.GetName]. Navzdory pách vůně ji spolubojovníci uctívají."
  keep_warrior_head_tt: "Uchováte [head_artifact.GetName]"
- gain_illustrious_victim_head_artifact_tt: "Můžete uchovat [victim.GetFirstNamePossessive] hlavu jako $illustrious$ [inventory_artifact|E]"
- gain_famed_victim_head_artifact_tt: "Můžete uchovat [victim.GetFirstNamePossessive] hlavu jako $famed$ [inventory_artifact|E]"
- send_head_for_warscore_tt: "Odeslání [victim.GetFirstNamePossessive] hlavy [victim.GetHerHis] [heir|E] může zvýšit jejich [peace|E] Přijetí vůči #high vám#!"
- send_head_for_vassalization_tt: "Odeslání [victim.GetFirstNamePossessive] hlavy [victim.GetHerHis] [heir|E] může zvýšit přijetí [vassalization|E]"
- send_head_for_hook_tt: "Odeslání [victim.GetFirstNamePossessive] hlavy [victim.GetHerHis] [heir|E] může poskytnout [weak_hook|E]"
- send_head_for_prestige_tt: "Může získat [prestige|E] odesláním [victim.GetFirstNamePossessive] hlavy [victim.GetHerHis] [heir|E]"
- send_head_for_obedience_tt: "Odeslání [victim.GetFirstNamePossessive] hlavy [victim.GetHerHis] [heir|E] může je učinit [obedient|E]"
+ gain_illustrious_victim_head_artifact_tt: "Můžete uchovat [victim.GetFirstNamePossessive] hlavu jako $illustrious$ [Concept('inventory_artifact','osobní artefakt')|E]" # todo: CONCEPT CASE
+ gain_famed_victim_head_artifact_tt: "Můžete uchovat [victim.GetFirstNamePossessive] hlavu jako $famed$ [Concept('inventory_artifact','osobní artefakt')|E]" # todo: CONCEPT CASE
+ send_head_for_warscore_tt: "Odeslání [victim.GetFirstNamePossessive] hlavy [victim.GetHerHis] [Concept('heir','dědic')|E] může zvýšit jejich [Concept('peace','mír')|E] Přijetí vůči #high vám#!" # todo: CONCEPT CASE
+ send_head_for_vassalization_tt: "Odeslání [victim.GetFirstNamePossessive] hlavy [victim.GetHerHis] [Concept('heir','dědic')|E] může zvýšit přijetí [Concept('vassalization','vazalizace')|E]" # todo: CONCEPT CASE
+ send_head_for_hook_tt: "Odeslání [victim.GetFirstNamePossessive] hlavy [victim.GetHerHis] [Concept('heir','dědic')|E] může poskytnout [Concept('weak_hook','slabá páka')|E]" # todo: CONCEPT CASE
+ send_head_for_prestige_tt: "Může získat [Concept('prestige','prestiž')|E] odesláním [victim.GetFirstNamePossessive] hlavy [victim.GetHerHis] [Concept('heir','dědic')|E]" # todo: CONCEPT CASE
+ send_head_for_obedience_tt: "Odeslání [victim.GetFirstNamePossessive] hlavy [victim.GetHerHis] [Concept('heir','dědic')|E] může je učinit [Concept('obedient','poslušný')|E]" # todo: CONCEPT CASE
  headless_heir_rises_to_challenge_tt: "#N Pokud příjemce odvážně přísahá pomstu:#!"
  mpo_nomad_events.1011.t: "Stětí"
  mpo_nomad_events.1011.desc_execution_spite: "[victim.GetName] plivne nadávky a i když čepel bere [Select_CString(victim.IsFemale,'její','jeho')] hlavu, zírá na mě."
@@ -55,11 +55,11 @@
  mpo_nomad_events.1012.b: "#EMP Tato urážka bude pomstěna!#!"
  mpo_nomad_events.1012.b_flavor: "Byla mi poslána krvavá tvář války. Smrtící hlas [victim.GetFirstName] volá po krvi [executioner.GetTitledFirstNamePossessive]!"
  mpo_nomad_events.1012.c: "Musím ustoupit, nebo čelit tomuto osudu..."
- peace_acceptance_head_scare_tt: "[headless_heir.GetShortUINamePossessive] [peace|E] Přijetí vůči #high vám#!: #P +30#! po #high 20 let#!"
+ peace_acceptance_head_scare_tt: "[headless_heir.GetShortUINamePossessive] [Concept('peace','Mír')|E] Přijetí vůči #high vám#!: #P +30#! po #high 20 let#!" # todo: CONCEPT CASE
  COWED_BY_SEVERED_HEAD_MODIFIER: "Zastrašen stětím předchůdce: $VALUE|+=0$"
  severed_head_revenge_modifier: "Hledá pomstu za useknutí předchůdce: $VALUE|+=0$"
- severed_head_cb_revenge_tt: "[casus_belli|E] náklady proti #high [executioner.GetShortUIName]#!: #P -75%#!"
- severed_head_vassalization_tt: "[headless_heir.GetShortUINamePossessive|U] [offer_vassalization|E] $ep3_laamps.0010.connector$ #high $demand_tributary_interaction$#! Přijetí vůči [executioner.GetShortUIName]: #P +200#! po #high 20 let#!"
+ severed_head_cb_revenge_tt: "[Concept('casus_belli','Casus belli')|E] náklady proti #high [executioner.GetShortUIName]#!: #P -75%#!" # todo: CONCEPT CASE
+ severed_head_vassalization_tt: "[headless_heir.GetShortUINamePossessive|U] [Concept('offer_vassalization','Nabídnout vazalizaci')|E] $ep3_laamps.0010.connector$ #high $demand_tributary_interaction$#! Přijetí vůči [executioner.GetShortUIName]: #P +200#! po #high 20 let#!" # todo: CONCEPT CASE
  mpo_nomad_events.1013: "Vrah [victim.GetTitledFirstNameNoTooltip],"
  mpo_nomad_events.1013.desc_takes_it_sedentary: "Sakrální hrozba hyzdí můj [headless_heir.Custom('ResidenceBuilding')|l] — utržená hlava ušlechtilého magnáta, mého vlastního předka.\n\nProsím, pán koní! V [headless_heir.GetPrimaryTitle.GetNameNoTier] se s takovými hrůzami málokdy setkáváme a nemáme pro ně velký vkus. Raději s vámi budu jednat smířlivě, než být tak krutě ponižen."
  mpo_nomad_events.1013.desc_takes_it: "[victim.GetHerHis|U] [victim.GetCulture.GetCollectiveNoun] doufal, že [victim.GetHerHim] ještě jednou spatří. Nyní [Select_CString(victim.IsFemale,'její','jeho')] hlava sedí v krvi a jejich srdce jsou zčernalá z toho nepřirozeného pohledu.\n\nProsím, dopřejte [victim.GetFirstName] mír v [headless_heir.GetFaith.PositiveAfterLife]. Ušetřete nás své hrozné zuřivosti!"
@@ -73,12 +73,12 @@
  nomad_defector_wont_come_back_tt: "Nemůžete použít #high Pozvat na dvůr#! na [rowdy_boy.GetShortUIName] po #high 5 let#!"
  nomad_defector_family_tt: "Členové rodiny [rowdy_boy.GetShortUINamePossessive] opouštějí váš dvůr"
  nomad_defector_family_wont_come_back_tt: "Nemůžete použít #high Pozvat na dvůr#! na tyto vyhnance po #high 5 let#!"
- nomad_defector_gain_all_courtiers_tt: "Získá některé z vašich nezaměstnaných [courtiers|E]"
+ nomad_defector_gain_all_courtiers_tt: "Získá některé z vašich nezaměstnaných [Concept('courtiers','dvořanů')|E]" # todo: CONCEPT CASE
  mpo_nomad_events.1020.t: "Nejhladovější z potomků"
  mpo_nomad_events.1020.desc: "Můj [ROOT.Char.Custom2('RelationToMeShort', SCOPE.sC('rowdy_boy'))] [rowdy_boy.GetFirstName] byl v poslední době neklidný.\n\n„Žrát kosti svého jídla! Sát kyselé tvarohy ve stínu své jurty! Je to #EMP můj#! život?“ [rowdy_boy.GetSheHe] plivne. „Jsem připraven vést, [rowdy_boy.Custom2('RelationToMeShort', SCOPE.sC('root_scope'))]! A jsou tací v tvém [ROOT.Char.GetDomicile.GetCulture.GetName] vojsku, kteří by mě následovali.“\n\nTento hrdý válečník [rowdy_boy.GetHouse.GetName], kterého mám jako bezmocného mazlíčka... bared [Select_CString(rowdy_boy.IsFemale,'její','jeho')] zuby."
  mpo_nomad_events.1020.a: "„Mlč, [ROOT.Char.Custom2('RelationToMeShort', SCOPE.sC('rowdy_boy'))]. Znáš své místo.“"
  mpo_nomad_events.1020.b: "„Nikdo mi nesmí vzdorovat a #EMP přežít!#!“"
- mpo_nomad_events.1020_duel_tt: "#V Duel#! [rowdy_boy.GetFirstName].\n@death_icon! #X Tento duel je na život a na smrt!#!\nPokud vyhrajete, získáte @skill_prowess_icon![prowess|E], @dread_icon![dread|E], @prestige_icon![prestige|E] a @stress_icon![stress|E]. Pokud prohrajete, [rowdy_boy.GetShortUIName] převezme vaše [titles|E] jako [primary_heir|E].\n\nVáš [prowess|E]: [prowess_i]#V [root_scope.GetProwess]#!\n[rowdy_boy.GetFirstNamePossessive] [prowess|E]: [prowess_i]#V [rowdy_boy.GetProwess]#!"
+ mpo_nomad_events.1020_duel_tt: "#V Duel#! [rowdy_boy.GetFirstName].\n@death_icon! #X Tento duel je na život a na smrt!#!\nPokud vyhrajete, získáte @skill_prowess_icon![Concept('prowess','udatnost')|E], @dread_icon![Concept('dread','hrůza')|E], @prestige_icon![Concept('prestige','prestiž')|E] a @stress_icon![Concept('stress','stres')|E]. Pokud prohrajete, [rowdy_boy.GetShortUIName] převezme vaše [Concept('titles','tituly')|E] jako [Concept('primary_heir','hlavní dědic')|E].\n\nVáš [Concept('prowess','udatnost')|E]: [prowess_i]#V [root_scope.GetProwess]#!\n[rowdy_boy.GetFirstNamePossessive] [Concept('prowess','Udatnost')|E]: [prowess_i]#V [rowdy_boy.GetProwess]#!" # todo: CONCEPT CASE
  mpo_nomad_events.1020.c: "„Mám přebytek pastvin.“"
  mpo_nomad_events.1020.c.flavor: "Ať si nástupník ponechá své vlastní stáda... pod mou nadvládou."
  mpo_nomad_events.1020.d: "„Jezdi daleko a dělej čest svému jménu!“"
@@ -108,11 +108,11 @@
  mpo_nomad_events.1030.c.flavor: "Sysel je mnohem mazanější než kterýkoli z našich střeleckých terčů... ale aspoň je to větší cíl."
  mpo_nomad_events.1030.d: "Získej důvěru koně, [child.Custom('GirlBoy')]."
  mpo_nomad_events.1030.d.flavor: "A na svém poslušném koni můžeš vyrazit a přidat se do dlouhých závodů."
- is_nomadic_tt: "Máte [nomadic_government|E]"
- capital_county_not_in_steppe_tt: "Váš [capital|E] není na [the_great_steppe|E]"
- higher_prestige_cost_because_pagan_tt: "@warning_icon! #X Cena @prestige_icon![prestige|E] je čtyřnásobná protože vaše [faith|E] je [GetFaithDoctrine('unreformed_faith_doctrine').GetBaseName]"
- nomad_domicile_buildings_converted: "[former_nomad.GetShortUINamePossessive|U] [domicile|E] [buildings|E] jsou vyměněny za [gold_i][gold|E]"
- nomad_settling_gain_kingdom_counties_tt: "Je [revoked|E], pokud jej drží [vassal|E] jiné [culture|E]"
+ is_nomadic_tt: "Máte [Concept('nomadic_government','kočovná vláda')|E]" # todo: CONCEPT CASE
+ capital_county_not_in_steppe_tt: "Váš [Concept('capital','hlavní sídlo')|E] není na [Concept('the_great_steppe','velkou step')|E]" # todo: CONCEPT CASE
+ higher_prestige_cost_because_pagan_tt: "@warning_icon! #X Cena @prestige_icon![Concept('prestige','prestiž')|E] je čtyřnásobná protože vaše [Concept('faith','víra')|E] je [GetFaithDoctrine('unreformed_faith_doctrine').GetBaseName]" # todo: CONCEPT CASE
+ nomad_domicile_buildings_converted: "[former_nomad.GetShortUINamePossessive|U] [Concept('domicile','Domicil')|E] [Concept('buildings','Budovy')|E] jsou vyměněny za [gold_i][Concept('gold','zlato')|E]" # todo: CONCEPT CASE
+ nomad_settling_gain_kingdom_counties_tt: "Je [Concept('revoked','odebraný')|E], pokud jej drží [Concept('vassal','vazal')|E] jiné [Concept('culture','kultura')|E]" # todo: CONCEPT CASE
  mpo_nomad_events.1040.t: "Domov za stepí"
  mpo_nomad_events.1040.desc_duchy: "#EMP Out, [defender.GetTitledFirstName]!#! Pryč se zbabělcem, pryč s poraženou [defender.Custom('MistressMaster')] tohoto místa! Nyní vládne nový [ROOT.Char.GetTitleAsName] nad [defender.GetHerHis] jemnými [expelled_culture.GetCollectiveNoun]. Naučí se uspokojovat [ROOT.Char.GetHerHim], nebo zjistí, že to je teprve úsvit jejich podrobení!\n\n[target.GetBaseNameNoTier] bude skvělým domovem pro můj lid. Už nejsme rozháněni jako prach po pláních! Zde jsou naše usedlé životy a práce místních slouží našemu pohodlí.\n\nV [ROOT.Char.GetCapitalLocation.GetName], v okázalém [ROOT.Char.Custom('ResidenceBuilding')], které vládne nad svým [ROOT.Char.GetCapitalLocation.GetTerrain.GetNameNoTooltip|l], mé válečné tělo odpočine... zatímco má mysl začíná rozjímat" # todo: NEW TRANSLATION
  mpo_nomad_events.1040.desc: "#EMP Pryč, [defender.GetTitledFirstName]! Pryč, [expelled_culture.GetCollectiveNoun]!#! S vašimi tlustými dětmi na ramenou, se svým bohatstvím rozházeným za vámi, utíkejte před [ROOT.Char.GetCulture.GetName] jezdcem a [Select_CString(dummy_soldier.IsFemale,'její','jeho')] šípy!\n\n[target.GetBaseNameNoTierNoTooltip] zůstává mému lidu. Už nejsme rozháněni jako prach po pláních! Zde jsou naše usedlé životy: práce zbylých místních a našich vlastních rolníků slouží našemu pohodlí.\n\nV [ROOT.Char.GetCapitalLocation.GetName], v okázalém [ROOT.Char.Custom('ResidenceBuilding')], které vládne svou [ROOT.Char.GetCapitalLocation.GetTerrain.GetNameNoTooltip|l], mé válečné tělo spočine... zatímco moje mysl začne uvažovat"
@@ -120,36 +120,36 @@
  mpo_nomad_events.1040.desc_clan: "o [ROOT.Char.GetTitleAsNamePossessiveNoTooltip] šlechtické klan, a [Select_CString(ROOT.Char.IsFemale,'jejích','jeho')] mnoho daní."
  mpo_nomad_events.1040.desc_feudal: "o zákony feudálního [ROOT.Char.GetTitleAsNameNoTooltip]."
  mpo_nomad_events.1040.a: "Zde končí putování mého lidu."
- overrunning_set_primary_title_tt: "[primary_title.GetBaseName] se stal vaším [primary_title|E]"
- overrunning_set_capital_tt: "[capital_county.GetName] se stal vaším [capital|E] [county|E]"
+ overrunning_set_primary_title_tt: "[primary_title.GetBaseName] se stal vaším [Concept('primary_title','hlavním titulem')|E]" # todo: CONCEPT CASE
+ overrunning_set_capital_tt: "[capital_county.GetName] se stal vaším [Concept('capital','hlavním sídlem')|E] [Concept('county','hrabstvím')|E]" # todo: CONCEPT CASE
  overrunning_vassal_1_tt: "[vassal_1.GetTitledFirstName] získal [vassal_1_title.GetName]"
  overrunning_vassal_2_tt: "[vassal_2.GetTitledFirstName] získal [vassal_2_title.GetName]"
  overrunning_vassal_3_tt: "[vassal_3.GetTitledFirstName] získal [vassal_3_title.GetName]"
  overrunning_vassal_4_tt: "[vassal_4.GetTitledFirstName] získal [vassal_4_title.GetName]"
  overrunning_vassal_5_tt: "[vassal_5.GetTitledFirstName] získal [vassal_5_title.GetName]"
- overrunning_move_capital_tt: "Ubrané [county|E] se stane vaším [capital|E]"
- overrunning_vassals_gain_titles_tt: "[counties|E] a [duchies|E] jsou rozděleny mezi [vassals|E], kteří jsou [obedient|E], stejné-[culture|E] nebo schvalují [attacker.GetShortUIName]"
- overrunning_convert_capital_duchy_tt: "[attacker.GetShortUINamePossessive|U] [capital|E] je převedeno na [attacker.GetShortUINamePossessive] [culture|E] a [faith|E]"
- overrunning_convert_dukes_capitals_tt: "Kapacity [dukes|E] jsou převedeny na jejich [culture|E] a [faith|E]"
- overrunning_convert_tribal_counties_tt: "Další [tribal|E] [counties|E] se převádějí na [culture|E] a [faith|E] jejich nového [holder|E]"
+ overrunning_move_capital_tt: "Ubrané [Concept('county','hrabství')|E] se stane vaším [Concept('capital','hlavním sídlem')|E]" # todo: CONCEPT CASE
+ overrunning_vassals_gain_titles_tt: "[Concept('counties','Hrabství')|E] a [Concept('duchies','vévodství')|E] jsou rozděleny mezi [Concept('vassals','vazaly')|E], kteří jsou [Concept('obedient','poslušným')|E], stejné-[Concept('culture','kulturou')|E] nebo schvalují [attacker.GetShortUIName]" # todo: CONCEPT CASE
+ overrunning_convert_capital_duchy_tt: "[attacker.GetShortUINamePossessive|U] [Concept('capital','Hlavní sídlo')|E] je převedeno na [attacker.GetShortUINamePossessive] [Concept('culture','kulturu')|E] a [Concept('faith','víra')|E]" # todo: CONCEPT CASE
+ overrunning_convert_dukes_capitals_tt: "Kapacity [Concept('dukes','vévodové')|E] jsou převedeny na jejich [Concept('culture','kultura')|E] a [Concept('faith','víra')|E]" # todo: CONCEPT CASE
+ overrunning_convert_tribal_counties_tt: "Další [Concept('tribal','kmenový')|E] [Concept('counties','hrabství')|E] se převádějí na [Concept('culture','kulturu')|E] a [Concept('faith','víra')|E] jejich nové [Concept('holder','držitele')|E]" # todo: CONCEPT CASE
  FORMER_NOMAD_KINGDOM_NAME: "[attacker.GetCulture.GetNameNoTooltip] [target.GetBaseNameNoTierNoTooltip]"
  FORMER_NOMAD_KINGDOM_NAME_ADJ: "[attacker.GetCulture.GetNameNoTooltip]"
  former_nomad_army_name: "Loajální [army_getter.GetCulture.GetNameNoTooltip] Polonomádové"
- gold_army_for_herd_tt: "[former_nomad.GetShortUINamePossessive|U] [herd_i][herd|E] a [horde|E] jsou vyměněny za @gold_icon![gold|E] a [special_troops|E]"
- attackers_counties_lose_development: "Ubraná [counties|E] ztrácejí @development_icon![development|E]"
- overrunning_gain_titular_kingdom_tt: "Získáte [kingdom|E]-[title_tier|E] [titular_title|E]"
+ gold_army_for_herd_tt: "[former_nomad.GetShortUINamePossessive|U] [herd_i][Concept('herd','Stádo')|E] a [Concept('horde','nomádská horda')|E] jsou vyměněny za @gold_icon![Concept('gold','zlato')|E] a [Concept('special_troops','vojsko z událostí')|E]" # todo: CONCEPT CASE
+ attackers_counties_lose_development: "Ubraná [Concept('counties','hrabství')|E] ztrácejí @development_icon![Concept('development','rozvoj')|E]" # todo: CONCEPT CASE
+ overrunning_gain_titular_kingdom_tt: "Získáte [Concept('kingdom','království')|E]-[Concept('title_tier','úroveň')|E] [Concept('titular_title','titulární titul')|E]" # todo: CONCEPT CASE
  FORMER_NOMAD_DUCHY_NAME: "[attacker.GetCulture.GetNameNoTooltip] [target.GetBaseNameNoTierNoTooltip]" # todo: NEW TRANSLATION
  FORMER_NOMAD_DUCHY_NAME_ADJ: "[attacker.GetCulture.GetNameNoTooltip]" # todo: NEW TRANSLATION
- overrunning_gain_titular_duchy_tt: "Získáte [duchy|E]-[title_tier|E] [titular_title|E]" # todo: NEW TRANSLATION
- overrunning_vassals_gain_titles_duchy_tt: "[counties|E] jsou rozděleny mezi [vassals|E], kteří jsou [obedient|E], se stejnou [culture|E] nebo schvalují [attacker.GetShortUIName]" # todo: NEW TRANSLATION
- overrunning_war_white_peace_desc_attacker: "Ztrácíte část [GetLocalPlayerLegitimacyTextIcon][legitimacy|E] a @dread_icon![dread|E]."
- overrunning_war_white_peace_desc: "[attacker.GetShortUIName|U] ztrácí část [attacker.GetLegitimacyType.GetTextIcon][legitimacy|E] a @dread_icon![dread|E]."
- overrunning_war_surrender_desc_attacker: "Ztrácíte významnou část [GetLocalPlayerLegitimacyTextIcon][legitimacy|E] a @dread_icon![dread|E]."
- overrunning_war_surrender_desc: "[attacker.GetShortUIName|U] ztrácí významnou část [attacker.GetLegitimacyType.GetTextIcon][legitimacy|E] a @dread_icon![dread|E]."
- herder_county_loses_fertility_tt: "[herder.GetShortUINamePossessive] [capital|E] ztrácí [EmptyScope.ScriptValue('medium_county_fertility_loss')|N0] [county_fertility|E]"
+ overrunning_gain_titular_duchy_tt: "Získáte [Concept('duchy','vévodství')|E]-[Concept('title_tier','úroveň')|E] [Concept('titular_title','titulární titul')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ overrunning_vassals_gain_titles_duchy_tt: "[Concept('counties','Hrabství')|E] jsou rozděleny mezi [Concept('vassals','vazaly')|E], kteří jsou [Concept('obedient','poslušným')|E], se stejnou [Concept('culture','kulturou')|E] nebo schvalují [attacker.GetShortUIName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ overrunning_war_white_peace_desc_attacker: "Ztrácíte část [GetLocalPlayerLegitimacyTextIcon][Concept('legitimacy','legitimity')|E] a @dread_icon![Concept('dread','hrůza')|E]." # todo: CONCEPT CASE
+ overrunning_war_white_peace_desc: "[attacker.GetShortUIName|U] ztrácí část [attacker.GetLegitimacyType.GetTextIcon][Concept('legitimacy','legitimity')|E] a @dread_icon![Concept('dread','hrůza')|E]." # todo: CONCEPT CASE
+ overrunning_war_surrender_desc_attacker: "Ztrácíte významnou část [GetLocalPlayerLegitimacyTextIcon][Concept('legitimacy','legitimity')|E] a @dread_icon![Concept('dread','hrůza')|E]." # todo: CONCEPT CASE
+ overrunning_war_surrender_desc: "[attacker.GetShortUIName|U] ztrácí významnou část [attacker.GetLegitimacyType.GetTextIcon][Concept('legitimacy','legitimity')|E] a @dread_icon![Concept('dread','hrůza')|E]." # todo: CONCEPT CASE
+ herder_county_loses_fertility_tt: "[herder.GetShortUINamePossessive] [Concept('capital','Hlavní sídlo')|E] ztrácí [EmptyScope.ScriptValue('medium_county_fertility_loss')|N0] [Concept('county_fertility','úrodnost hrabství')|E]" # todo: CONCEPT CASE
  neighbor_herders_lose_fertility_tt: ""
- custom.every_neighboring_herder: "Každý [herder|E] [county|E] sousedící s vaším [domain|E]"
- capital_county_loses_fertility_tt: "Ztrácí [EmptyScope.ScriptValue('medium_county_fertility_loss')|N0] [county_fertility|E]"
+ custom.every_neighboring_herder: "Každý [Concept('herder','pastevec')|E] [Concept('county','hrabství')|E] sousedící s vaším [Concept('domain','doménou')|E]" # todo: CONCEPT CASE
+ capital_county_loses_fertility_tt: "Ztrácí [EmptyScope.ScriptValue('medium_county_fertility_loss')|N0] [Concept('county_fertility','úrodnost hrabství')|E]" # todo: CONCEPT CASE
  mpo_nomad_events.1050.t: "Širší pastviny"
  mpo_nomad_events.1050.desc: "[herder.GetTitledFirstName], ošuntělý [herder.GetWomanMan] vonící kozím močí, tvrdí, že je správcem [herder_county.GetNameNoTierPossessive] nedalekého [herder.GetCapitalLocation.GetTerrain.GetNameNoTooltip|l].\n\n„Tvůj [ROOT.Char.GetPrimaryTitle.GetAdjective] pastevci ignorují tradiční hranice!“ říká [herder.GetSheHe]. „Přesunuji své stádo na novou půdu a půda je vyčerpaná! Vítr nese smích tvých jezdců a zvuky jejich tučných koní!“\n\n„Nemůžeme čestně sdílet zemi, [ROOT.Char.GetTitleAsName]?“"
  mpo_nomad_events.1050.a: "Pro mě tradiční hranice znamenají #EMP nic#."

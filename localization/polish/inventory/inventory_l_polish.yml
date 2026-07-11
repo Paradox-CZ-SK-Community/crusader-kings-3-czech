@@ -1,5 +1,5 @@
 ﻿l_polish:
- MOD_ARTIFACT_DECAY_REDUCTION_ADD: "[artifact|E] Snížení rozpadu"
+ MOD_ARTIFACT_DECAY_REDUCTION_ADD: "[Concept('artifact','Artefakt')|E] Snížení rozpadu" # todo: CONCEPT CASE
  MOD_ARTIFACT_DECAY_REDUCTION_MULT: "$MOD_ARTIFACT_DECAY_REDUCTION_ADD$"
  artifact_history_created_title: "[HISTORY_ENTRY.GetDate.GetString]"
  artifact_history_created_desc: "Vytvořeno [SelectLocalization( HISTORY_ENTRY.HasActor, HISTORY_ENTRY.GetActor.GetNameNoTooltip, 'UNKNOWN_BENEFACTOR' )] pro [HISTORY_ENTRY.GetRecipient.GetTitledFirstNameNicknamedNoTooltipRegnal] v [HISTORY_ENTRY.GetLocation.GetNameNoTooltip]"
@@ -20,15 +20,15 @@
  artifact_history_discovered_title: "[HISTORY_ENTRY.GetDate.GetString]"
  artifact_history_discovered_desc: "Objeveno [HISTORY_ENTRY.GetActor.GetTitledFirstNameNicknamedNoTooltipRegnal] pro [HISTORY_ENTRY.GetRecipient.GetTitledFirstNameNicknamedNoTooltipRegnal] v [HISTORY_ENTRY.GetLocation.GetNameNoTooltip]"
  artifact_history_claimed_by_house_title: "[HISTORY_ENTRY.GetDate.GetString]"
- artifact_history_claimed_by_house_desc: "Nárokováno [house|E] [HISTORY_ENTRY.GetActor.GetHouse.GetNameNoTooltip]"
+ artifact_history_claimed_by_house_desc: "Nárokováno [Concept('house','rod')|E] [HISTORY_ENTRY.GetActor.GetHouse.GetNameNoTooltip]" # todo: CONCEPT CASE
  artifact_history_won_in_duel_title: "[HISTORY_ENTRY.GetDate.GetString]"
  artifact_history_won_in_duel_desc: "Vyhráno v duelu [HISTORY_ENTRY.GetRecipient.GetTitledFirstNameNicknamedNoTooltipRegnal]"
  artifact_history_taken_in_battle_title: "[HISTORY_ENTRY.GetDate.GetString]"
  artifact_history_taken_in_battle_desc: "Zabráno [HISTORY_ENTRY.GetRecipient.GetTitledFirstNameNicknamedNoTooltipRegnal] v bitvě u [HISTORY_ENTRY.GetLocation.GetNameNoTooltip]"
  artifact_history_prize_created_title: "[HISTORY_ENTRY.GetDate.GetString]"
- artifact_history_prize_created_desc: "Nabídnuto [HISTORY_ENTRY.GetRecipient.GetTitledFirstNameNicknamedNoTooltipRegnal] jako [GetActivityType( 'activity_tournament' ).GetName] [prize|E]"
+ artifact_history_prize_created_desc: "Nabídnuto [HISTORY_ENTRY.GetRecipient.GetTitledFirstNameNicknamedNoTooltipRegnal] jako [GetActivityType( 'activity_tournament' ).GetName] [Concept('prize','cena')|E]" # todo: CONCEPT CASE
  artifact_history_prize_awarded_title: "[HISTORY_ENTRY.GetDate.GetString]"
- artifact_history_prize_awarded_desc: "Oceněno [HISTORY_ENTRY.GetRecipient.GetTitledFirstNameNicknamedNoTooltipRegnal] jako [contest|E] [prize|E]"
+ artifact_history_prize_awarded_desc: "Oceněno [HISTORY_ENTRY.GetRecipient.GetTitledFirstNameNicknamedNoTooltipRegnal] jako [Concept('contest','soutěž')|E] [Concept('prize','cena')|E]" # todo: CONCEPT CASE
  artifact_history_creator_discovered_title: "[HISTORY_ENTRY.GetDate.GetString]"
  artifact_history_creator_discovered_desc: "Zjistěno, že původně vytvořil [HISTORY_ENTRY.GetRecipient.GetTitledFirstNameNicknamedNoTooltipRegnal]"
  artifact_history_purchased_title: "[HISTORY_ENTRY.GetDate.GetString]"
@@ -149,12 +149,12 @@
  ARTIFACT_CHANGES_TEMPLATE: "[ARTIFACT.GetName] bude $NEW_TEMPLATE$"
  ARTIFACT_CHANGES_DURABILITY: "[ARTIFACT.GetName] změní odolnost na $NEW_DURABILITY$ / $MAX_DURABILITY$"
  ARTIFACT_FULLY_REPAIRED: "[ARTIFACT.GetName] bude plně opraven a obnoven"
- NEW_ARTIFACT_TOOLTIP: "Toto je nově získaný [artifact|e]"
+ NEW_ARTIFACT_TOOLTIP: "Toto je nově získaný [Concept('artifact','artefakt')|e]" # todo: CONCEPT CASE
  ARTIFACT_RARITY_AND_TYPE: "[ARTIFACT.GetRarity] [ARTIFACT.GetType]"
  ARTIFACT_TYPE_ONLY: "[ARTIFACT.GetType]"
  ARTIFACT_RARITY_AND_SLOT_TYPE: "[ARTIFACT.GetRarity] [ARTIFACT.GetSlotType]"
  ARTIFACT_SLOT_TYPE_ONLY: "[ARTIFACT.GetSlotType]"
- INVENTORY_ARTIFACTS_SINGLE: "[inventory_artifact|E]"
+ INVENTORY_ARTIFACTS_SINGLE: "[Concept('inventory_artifact','Osobní artefakt')|E]" # todo: CONCEPT CASE
  RENAME_ARTIFACT: "#T Přejmenovat artefakt#!"
  RENAME_ARTIFACT_TITLE: "Přejmenovat [ARTIFACT.GetNameNoTooltip]"
  RENAME_ARTIFACT_DESC: "Změnit jméno [ARTIFACT.GetNameNoTooltip]"
@@ -164,9 +164,9 @@
  DETAILS_TAB_HISTORY: "Historie"
  DETAILS_TAB_CLAIMS: "Nárokovatelé"
  DETAILS_TAB_CLAIM_INTERACTIONS: "Máte nárok"
- DETAILS_TAB_NO_CLAIMANTS: "Na tento [artifact|E] nikdo nemá [artifact_claim|E]"
- CHARACTER_HAS_NO_ARTIFACTS: "Žádné [artifacts|E]"
- CHARACTER_HAS_NO_CLAIMED_ARTIFACTS: "Žádné [artifact_claims|E]"
+ DETAILS_TAB_NO_CLAIMANTS: "Na tento [Concept('artifact','artefakt')|E] nikdo nemá [Concept('artifact_claim','nárok na artefakt')|E]" # todo: CONCEPT CASE
+ CHARACTER_HAS_NO_ARTIFACTS: "Žádné [Concept('artifacts','artefakty')|E]" # todo: CONCEPT CASE
+ CHARACTER_HAS_NO_CLAIMED_ARTIFACTS: "Žádné [Concept('artifact_claims','nároky na artefakt')|E]" # todo: CONCEPT CASE
  ARTIFACT_DETAILS_TITLE: "Podrobnosti artefaktu"
  ARTIFACT_DETAILS: "#T $ARTIFACT_DETAILS_TITLE$#!"
  ARTIFACT_SORTING_ALL_BUTTON: "Vše"
@@ -185,8 +185,8 @@
  tournament_prize_won: "Vyhráno v soutěži"
  CLAIMANT_ENTRY_HOUSE_HEAD: "Hlava rodu: [ClaimantEntry.GetHouse.GetHeadOfHouse.GetName]"
  ARTIFACT_YEARS_UNTIL_DECAY: "[Artifact.GetYearsUntilDecay] let"
- ARTIFACT_DURABILITY_TOOLTIP: "#T Odolnost#!\n#V $DURABILITY|1$ / $MAX_DURABILITY|1$#!\nPři současné rychlosti úbytku tento [artifact|e] vydrží [ARTIFACT.GetYearsUntilDecay] let, než mu dojde [durability|E] a rozpadne se."
- ARTIFACT_DURABILITY_NO_DECAY_TOOLTIP: "#T Odolnost#!\n#V $DURABILITY|1$ / $MAX_DURABILITY|1$#!\nTento [artifact|e] se momentálně nerozpadá a vydrží navždy, pokud nedojde ke ztrátě [durability|E]."
+ ARTIFACT_DURABILITY_TOOLTIP: "#T Odolnost#!\n#V $DURABILITY|1$ / $MAX_DURABILITY|1$#!\nPři současné rychlosti úbytku tento [Concept('artifact','artefakt')|e] vydrží [ARTIFACT.GetYearsUntilDecay] let, než mu dojde [Concept('durability','trvanlivost')|E] a rozpadne se." # todo: CONCEPT CASE
+ ARTIFACT_DURABILITY_NO_DECAY_TOOLTIP: "#T Odolnost#!\n#V $DURABILITY|1$ / $MAX_DURABILITY|1$#!\nTento [Concept('artifact','artefakt')|e] se momentálně nerozpadá a vydrží navždy, pokud nedojde ke ztrátě [Concept('durability','trvanlivosti')|E]." # todo: CONCEPT CASE
  DECAY_TOTAL: "Roční úbytek"
  DECAY_BASE: "Základní úbytek"
  CHARACTER_HAS_NO_VALID_SLOT: "@warning_icon! #X Žádné dostupné místo, které by pojalo [ARTIFACT.GetName]#!"
@@ -199,14 +199,14 @@
  INVENTORY_SLOT_TT: "#T [InventorySlot.GetName] pozice\n#![SelectLocalization( InventoryView.IsSelectedSlot( InventorySlot.Self ), 'SELECT_ARTIFACT_FOR_SLOT', 'SELECT_INVENTORY_SLOT' )]"
  SELECT_INVENTORY_SLOT: "#I Kliknutím zobrazíte artefakty [InventorySlot.GetName]#!"
  SELECT_ARTIFACT_FOR_SLOT: "#I Kliknutím zrušíte výběr#!"
- CHARACTER_CANNOT_DECLARE_WAR: "[Character.GetShortUINameNoTooltip|U] momentálně nemůže vyhlásit válku kvůli tomuto [artifact|e]"
+ CHARACTER_CANNOT_DECLARE_WAR: "[Character.GetShortUINameNoTooltip|U] momentálně nemůže vyhlásit válku kvůli tomuto [Concept('artifact','artefaktu')|e]" # todo: CONCEPT CASE
  CHARACTER_CANNOT_DECLARE_WAR_SHORT: "Nelze vyhlásit válku"
- CHARACTER_CAN_DECLARE_WAR: "[Character.GetShortUINameNoTooltip|U] může vyhlásit válku kvůli tomuto [artifact|e]"
+ CHARACTER_CAN_DECLARE_WAR: "[Character.GetShortUINameNoTooltip|U] může vyhlásit válku kvůli tomuto [Concept('artifact','artefaktu')|e]" # todo: CONCEPT CASE
  DUEL_FOR_ARTIFACT_TOOLTIP: "#T Souboj o artefakt#!"
  ARTIFACT_SORT_ORDER_TOOLTIP: "#T Změnit řazení artefaktů#!"
- ARTIFACT_CLAIM_SORT_ORDER_TOOLTIP: "#T Změnit řazení [artifact_claim|e]#!"
- ARTIFACT_SORTING_TAB_TOOLTIP: "[InventorySlotType.GetName] [artifacts|e]"
- ARTIFACT_SORTING_TAB_ALL_TOOLTIP: "Všechny [artifacts|e]"
+ ARTIFACT_CLAIM_SORT_ORDER_TOOLTIP: "#T Změnit řazení [Concept('artifact_claim','nárok na artefakt')|e]#!" # todo: CONCEPT CASE
+ ARTIFACT_SORTING_TAB_TOOLTIP: "[InventorySlotType.GetName] [Concept('artifacts','Artefakty')|e]" # todo: CONCEPT CASE
+ ARTIFACT_SORTING_TAB_ALL_TOOLTIP: "Všechny [Concept('artifacts','artefakty')|e]" # todo: CONCEPT CASE
  acquisition_date: "Datum získání"
  creation_date: "Datum vzniku"
  type: "Typ"
@@ -216,7 +216,7 @@
  artifact_type: "Typ artefaktu"
  claim_type: "Typ nároku"
  UNEQUIP_ARTIFACT: "\n#I Kliknutím jej sejměte#!"
- ARTIFACT_EQUIPPED_TOOLTIP: "#T [artifact|e] je vybavený#!"
+ ARTIFACT_EQUIPPED_TOOLTIP: "#T [Concept('artifact','Artefakt')|e] je vybavený#!" # todo: CONCEPT CASE
  ARTIFACT_AT_MAX_DURABILITY: "@warning_icon! #X [ARTIFACT.GetNameNoTooltip] je již na maximální odolnosti#!"
  IMMINENT_HOUSE_CLAIMANT: "[Artifact.GetOwner.GetHouse.GetName] #low ( [Artifact.GetYearsUntilHouseClaim( Artifact.GetOwner.Self )] let )#!"
  HOUSE_CLAIMS: "#help Nároky rodu:#!"
@@ -227,22 +227,22 @@
  PUT_COURT_ARTIFACT_ON_DISPLAY: "#I \nKliknutím zde vystavíte#!"
  REMOVE_COURT_ARTIFACT_FROM_DISPLAY: "#I \nKliknutím uložíte#!"
  MOVE_COURT_ARTIFACT_TO_DISPLAY: "#I \nKliknutím sem přesunete#!"
- COURT_ARTIFACT_ON_DISPLAY: "#T [court_artifact|e] je vystavený#!"
+ COURT_ARTIFACT_ON_DISPLAY: "#T [Concept('court_artifact','Dvorský artefakt')|e] je vystavený#!" # todo: CONCEPT CASE
  ROYAL_COURT: "Královský dvůr"
  ARTIFACT_STORAGE: "Všechny dvorní artefakty"
  ARTIFACT_CLAIMS: "Nároky na artefakty"
  NEW_ARTIFACT: "#V Nové#!"
  EQUIPPED_ARTIFACT: "[Select_CString( Artifact.IsCourtArtifact, 'Displayed', 'Equipped' )] [Inventory.GetEquippedSlotOfMaxSlotText( Artifact.Self )]"
  GIFT_EQUIPPED_ARTIFACT: "[Select_CString( Artifact.IsCourtArtifact, 'Displayed', 'Equipped' )]"
- CHARACTER_WITHOUT_ROYAL_COURT_COURT_ARTIFACT_TAB: "Jelikož [Character.GetShortUIName] [Character.LocalPlayerString( 'have', 'has' )] žádný [royal_court|e], [Character.GetShortUIName] [Character.LocalPlayerString( 'have', 'has' )] nemá kde vystavit tyto [court_artifacts|e]."
+ CHARACTER_WITHOUT_ROYAL_COURT_COURT_ARTIFACT_TAB: "Jelikož [Character.GetShortUIName] [Character.LocalPlayerString( 'have', 'has' )] žádný [Concept('royal_court','královský dvůr')|e], [Character.GetShortUIName] [Character.LocalPlayerString( 'have', 'has' )] nemá kde vystavit tyto [Concept('court_artifacts','dvorské artefakty')|e]." # todo: CONCEPT CASE
  ARTIFACT_TITLE_ASSOCIATION: "Zděděno společně s [Artifact.GetAssociatedTitle.GetNameWithUnderlying]"
- EMPTY_INVENTORY_TOOLTIP: "@warning_icon! #X Nelze zobrazit inventář – nejsou zde žádné [artifacts|e] ani [artifact_claims|e] k zobrazení#!"
+ EMPTY_INVENTORY_TOOLTIP: "@warning_icon! #X Nelze zobrazit inventář – nejsou zde žádné [Concept('artifacts','artefakty')|e] ani [Concept('artifact_claims','nároky na artefakt')|e] k zobrazení#!" # todo: CONCEPT CASE
  ARTIFACT_PERSONAL_CLAIM: "Osobní nárok"
  ARTIFACT_HOUSE_CLAIM: "Rodový nárok"
  REFORGE_ARTIFACT_COMPLETELY: "Přetvořit [ARTIFACT.GetNameNoTooltip] na $NEW_TYPE$"
  REFORGE_COST: "Cena přetvoření: $COST$"
  REPAIR_COST: "Cena opravy: $COST$"
- CANNOT_REFORGE_WITHOUT_ANTIQUARIAN: "@warning_icon! #X Nelze přetvořit [artifacts|e] bez $antiquarian_court_position$#!"
+ CANNOT_REFORGE_WITHOUT_ANTIQUARIAN: "@warning_icon! #X Nelze přetvořit [Concept('artifacts','artefakty')|e] bez $antiquarian_court_position$#!" # todo: CONCEPT CASE
  ARTIFACT_FALLBACK_EFFECT: "#S Pokud nesplníte požadavky:#!\n[Artifact.GetFallbackEffects]"
  ARTIFACT_EFFECT: "[SelectLocalization( Artifact.HasCanBenefit, 'ARTIFACT_EFFECT_HAS_CAN_BENEFIT', '' )][Artifact.GetModifierEffects]"
  ARTIFACT_EFFECT_HAS_CAN_BENEFIT: "#S Pokud splníte #TOOLTIP:ARTIFACT_EFFECT_REQUIREMENT_TT #L Požadavky#!#!:#!\n"

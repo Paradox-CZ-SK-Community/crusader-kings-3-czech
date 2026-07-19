@@ -1,521 +1,521 @@
 ﻿l_polish:
  WAR_ORDER_NUMBER: "$NUM|O$"
- WAR_SCORE_BATTLES_GAIN: "[Concept('battles','Bitvy')|E] Vyhráno" # todo: CONCEPT CASE
- WAR_SCORE_OCCUPATION_GAIN: "#S Obsazená hrabství#!"
- WAR_SCORE_OCCUPATION_GAIN_POST_FIX: " #S (Cap: $CAP|=+0%/$)#!"
- WAR_SCORE_CAPITAL_GAIN: "Obsazeno nepřátelské hlavní město"
- WAR_SCORE_BATTLES_LOSS: "[Concept('battles','Bitvy')|E] Prohráno" # todo: CONCEPT CASE
- WAR_SCORE_BATTLES_CAPPED: "Skóre nemůže přesáhnout"
- WAR_SCORE_OCCUPATION_LOSS: "#S Obsazená hrabství#!"
- WAR_SCORE_OCCUPATION_LOSS_POST_FIX: " #S (Cap: $CAP|=+0%/$)#!"
- WAR_SCORE_CAPITAL_LOSS: "Přátelské hlavní město obsazeno"
- WAR_SCORE_ATTACKER_TICKING: "Útočník kontroluje válečný cíl"
- WAR_SCORE_DEFENDER_TICKING: "Obránce kontroluje válečný cíl"
- WAR_SCORE_LANDLESS_ARMIES_LOST: "Útočník bez země nemá žádné armády"
+ WAR_SCORE_BATTLES_GAIN: "Vyhrané [Concept('battles','bitvy')|El]"
+ WAR_SCORE_OCCUPATION_GAIN: "#S Okupovaná hrabství#!"
+ WAR_SCORE_OCCUPATION_GAIN_POST_FIX: " #S (Maximum: $CAP|=+0%/$)#!"
+ WAR_SCORE_CAPITAL_GAIN: "Okupace nepřátelského hlavního sídla"
+ WAR_SCORE_BATTLES_LOSS: "Prohrané [Concept('battles','bitvy')|El]"
+ WAR_SCORE_BATTLES_CAPPED: "Skóre nemůže překročit"
+ WAR_SCORE_OCCUPATION_LOSS: "#S Okupovaná vlastní hrabství#!"
+ WAR_SCORE_OCCUPATION_LOSS_POST_FIX: " #S (Maximum: $CAP|=+0%/$)#!"
+ WAR_SCORE_CAPITAL_LOSS: "Vlastní hlavní sídlo je okupováno"
+ WAR_SCORE_ATTACKER_TICKING: "Útočník ovládá válečný cíl"
+ WAR_SCORE_DEFENDER_TICKING: "Obránce ovládá válečný cíl"
+ WAR_SCORE_LANDLESS_ARMIES_LOST: "Bezzemskému útočníkovi nezbyly žádné armády"
  WAR_SCORE_OCCUPATION_COUNTY: "[TITLE.GetNameNoTier]"
  WAR_SCORE_OCCUPATION_COUNTY_PARTIAL: "[TITLE.GetNameNoTier] (Částečně)"
- WAR_SCORE_FULL_OCCUPATION: "Úplné obsazení"
- RELIGIOUS_WAR_NAME: "[Concept('holy_war','Svatá válka')|E] za [TITLE.GetBaseName]" # todo: CONCEPT CASE
- HOLY_WAR_COUNTY_NAME: "[Concept('holy_war','Svatá válka')|E] za [Concept('county','hrabství')|E]" # todo: CONCEPT CASE
- HOLY_WAR_DUCHY_NAME: "[Concept('holy_war','Svatá válka')|E] za [Concept('duchy','vévodství')|E]" # todo: CONCEPT CASE
- HOLY_WAR_KINGDOM_NAME: "[Concept('holy_war','Svatá válka')|E] za [Concept('kingdom','království')|E]" # todo: CONCEPT CASE
- declared_major_religious_war_flag_tt: "Můžete se pokusit pouze o jednu velkou náboženskou válku za život"
- great_holy_war_cooldown: "Vaše [Concept('faith','víra')|E] už v posledních 30 letech vedla [Concept('great_holy_war','velká svatá válka')|E]" # todo: CONCEPT CASE
- DEBUG_WAR_NAME: "#D (LADÍCÍ)#! [ATTACKER.GetPrimaryTitle.GetPrefix]-[DEFENDER.GetPrimaryTitle.GetAdjective] Ladicí válka o [TITLE.GetBaseName]" # todo: RETRANSLATED ENGLISH
- debug_war_invalidated_desc: "#D (DEBUG)#! Debug War zrušena"
- DEBUG_WAR_NAME_FALLBACK: "#D (DEBUG)#! Debug War"
- WAR_BREAKING_HOSTAGE: "@warning_icon! #X Vyhlášení války ovlivní [Concept('hostages','rukojmí')|E]!#!" # todo: CONCEPT CASE
- WAR_BREAKING_TRUCE: "@warning_icon! #X Vyhlášení války poruší [Concept('truce','příměří')|E]!#! #weak ([DATE.GetTimeDiffFromNow] zbývá)#!" # todo: CONCEPT CASE
- WAR_BREAKING_ALLIANCE: "@warning_icon! #X Vyhlášení války poruší [Concept('alliance','aliance')|E]!#!" # todo: CONCEPT CASE
- WAR_ATTACKER_FAITH_MIGHT_JOIN: "Další [GetPlayer.GetFaith.GetAdherentNamePlural] se mohou přidat na naši stranu"
- WAR_DEFENDER_FAITH_MIGHT_JOIN: "@warning_icon! #X Jiní [Character.GetFaith.GetAdherentNamePlural] se mohou přidat na stranu [Character.GetUINamePossessive]#!"
- CB_NEEDS_SELECTED_TITLE: "@warning_icon! #X Musí být vybrán alespoň jeden nárok na titul!#!"
- CB_NEEDS_LAND_IN_TITLE: "@warning_icon! #X Nárokující bez země musí označit alespoň jeden nárok, v němž má obránce pozemky!#!"
- WAR_ATTACKING_NON_INDEPENDENT_OUTSIDE: "@warning_icon! #X [recipient.GetShortUIName] není nezávislý#!"
- WAR_ATTACKING_OWN_VASSAL: "@warning_icon! #X Nemůžete vyhlásit válku svým vlastním vazalům#!"
- WAR_ATTACKING_SUB_VASSAL_IN_SAME_REALM: "@warning_icon! #X [recipient.GetShortUIName] nemá téhož lenníka jako vy#!"
- WAR_SCORE_THEIR_LEADER_CAPTURED: "Nepřátelský [Concept('war_leader','vůdce války')|E] [Select_CString(ROOT.Char.IsFemale,'zajata','zajat')]:" # todo: CONCEPT CASE
- WAR_SCORE_MY_LEADER_CAPTURED: "[Concept('war_leader','Vůdce války')|E] [Select_CString(ROOT.Char.IsFemale,'zajata','zajat')]" # todo: CONCEPT CASE
- WAR_SCORE_WE_CAPTURED_SPOUSE: "Zajatý manžel(ka)"
- WAR_SCORE_THEY_CAPTURED_SPOUSE: "Manžel(ka) [Select_CString(ROOT.Char.IsFemale,'zajata','zajat')]"
- WAR_SCORE_WE_CAPTURED_VASSAL: "[Select_CString(ROOT.Char.IsFemale,'Zajata','Zajat')] přímý vazal nepřítele"
- WAR_SCORE_THEY_CAPTURED_VASSAL: "Přímý vazal [Select_CString(ROOT.Char.IsFemale,'zajata','zajat')]"
+ WAR_SCORE_FULL_OCCUPATION: "Úplná okupace"
+ RELIGIOUS_WAR_NAME: "[Concept('holy_war','Svatá válka')|El] o titul [TITLE.GetBaseName]"
+ HOLY_WAR_COUNTY_NAME: "[Concept('holy_war','Svatá válka')|El] o [Concept('county','hrabství')|El]"
+ HOLY_WAR_DUCHY_NAME: "[Concept('holy_war','Svatá válka')|El] o [Concept('duchy','vévodství')|El]"
+ HOLY_WAR_KINGDOM_NAME: "[Concept('holy_war','Svatá válka')|El] o [Concept('kingdom','království')|El]"
+ declared_major_religious_war_flag_tt: "Za jeden život se můžeš pokusit pouze o jednu velkou náboženskou válku"
+ great_holy_war_cooldown: "Tvá [Concept('faith','víra')|El] vedla během posledních 30 let [Concept('great_holy_war','velkou svatou válku')|El]"
+ DEBUG_WAR_NAME: "#D (LADĚNÍ)#! [ATTACKER.GetPrimaryTitle.GetPrefix]-[DEFENDER.GetPrimaryTitle.GetAdjective] ladicí válka o titul [TITLE.GetBaseName]"
+ debug_war_invalidated_desc: "#D (LADĚNÍ)#! Ladicí válka byla zneplatněna"
+ DEBUG_WAR_NAME_FALLBACK: "#D (LADĚNÍ)#! Ladicí válka"
+ WAR_BREAKING_HOSTAGE: "@warning_icon! #X Vyhlášení války ovlivní [Concept('hostages','rukojmí')|El]!#!"
+ WAR_BREAKING_TRUCE: "@warning_icon! #X Vyhlášením války porušíš [Concept('truce','příměří')|El]!#! #weak (Zbývá [DATE.GetTimeDiffFromNow])#!"
+ WAR_BREAKING_ALLIANCE: "@warning_icon! #X Vyhlášením války porušíš [Concept('alliance','alianci')|El]!#!"
+ WAR_ATTACKER_FAITH_MIGHT_JOIN: "Další [GetPlayer.GetFaith.GetAdherentNamePlural] se mohou připojit k válce na naší straně"
+ WAR_DEFENDER_FAITH_MIGHT_JOIN: "@warning_icon! #X Další [Character.GetFaith.GetAdherentNamePlural] se mohou připojit k válce na straně postavy [Character.GetUIName]#!"
+ CB_NEEDS_SELECTED_TITLE: "@warning_icon! #X Je nutné vybrat alespoň jeden nárok na titul!#!"
+ CB_NEEDS_LAND_IN_TITLE: "@warning_icon! #X Bezzemský pretendent musí uplatnit alespoň jeden nárok na titul, na jehož území obránce vlastní državy!#!"
+ WAR_ATTACKING_NON_INDEPENDENT_OUTSIDE: "@warning_icon! #X [recipient.GetShortUIName] není nezávisl[Select_CString( recipient.IsFemale, 'á', 'ý' )]#!"
+ WAR_ATTACKING_OWN_VASSAL: "@warning_icon! #X Nemůžeš vyhlásit válku vlastním vazalům#!"
+ WAR_ATTACKING_SUB_VASSAL_IN_SAME_REALM: "@warning_icon! #X [recipient.GetShortUIName] nemá stejného lenního pána jako ty#!"
+ WAR_SCORE_THEIR_LEADER_CAPTURED: "Zajat nepřátelský [Concept('war_leader','vůdce války')|El]:"
+ WAR_SCORE_MY_LEADER_CAPTURED: "[Concept('war_leader','Vůdce války')|El] zajat"
+ WAR_SCORE_WE_CAPTURED_SPOUSE: "Zajat manžel či manželka"
+ WAR_SCORE_THEY_CAPTURED_SPOUSE: "Manžel či manželka zajati"
+ WAR_SCORE_WE_CAPTURED_VASSAL: "Zajat přímý vazal nepřítele"
+ WAR_SCORE_THEY_CAPTURED_VASSAL: "Přímý vazal zajat"
  WAR_SCORE_WE_CAPTURED_VASSALS: "Zajato $COUNT$ přímých vazalů nepřítele"
- WAR_SCORE_THEY_CAPTURED_VASSALS: "$COUNT$ přímých vazalů zajato"
- WAR_SCORE_WE_CAPTURED_HEIR: "[Select_CString(ROOT.Char.IsFemale,'Zajata','Zajat')] dědic"
- WAR_SCORE_THEY_CAPTURED_HEIR: "Dědic [Select_CString(ROOT.Char.IsFemale,'zajata','zajat')]"
- WHITE_PEACE_DISABLED: "Nelze uzavřít bílý mír"
- RELIGIOUS_CB_TITLE: "[attacker.GetShortUIName|U] obsadí všechna území v [defender.GetShortUINamePossessive] [Concept('realm','panství')|E], která patří k [THIS.GetLandedTitle.GetBaseName]" # todo: CONCEPT CASE
- INVASION_CB_TITLE: "Obsadíte a podrobíte veškeré území v [defender.GetShortUINamePossessive] [Concept('realm','panství')|E], které jste [Concept('occupied','obsazeno')|E] nebo které patří k [THIS.GetLandedTitle.GetBaseName]" # todo: CONCEPT CASE
- MONGOL_INVASION_CB_TITLE: "Obsadíte a podrobíte veškeré území v [defender.GetShortUINamePossessive] [Concept('realm','panství')|E], které patří k [THIS.GetLandedTitle.GetBaseName]" # todo: CONCEPT CASE
- DEJURE_CB_NAME: "Zabrat všechna [Concept('de_jure','de iure')|E] území" # todo: CONCEPT CASE
- DEJURE_CB_WAR_NAME: "[ConcatIfNeitherEmpty('$ORDER|q$', ' ')][ATTACKER.GetPrimaryTitle.GetAdjective] De jure válka"
+ WAR_SCORE_THEY_CAPTURED_VASSALS: "Zajato $COUNT$ přímých vazalů"
+ WAR_SCORE_WE_CAPTURED_HEIR: "Zajat dědic"
+ WAR_SCORE_THEY_CAPTURED_HEIR: "Dědic zajat"
+ WHITE_PEACE_DISABLED: "Bílý mír není možný"
+ RELIGIOUS_CB_TITLE: "[attacker.GetShortUIName|U] se zmocní veškerého území v rámci [Concept('realm','panství')|El] postavy [defender.GetShortUIName], které je součástí titulu [THIS.GetLandedTitle.GetBaseName]"
+ INVASION_CB_TITLE: "Zmocníš se veškerého území v rámci [Concept('realm','panství')|El] postavy [defender.GetShortUIName], které jsi [Concept('occupied','okupoval')|El] nebo které je součástí titulu [THIS.GetLandedTitle.GetBaseName], a podrobíš si je"
+ MONGOL_INVASION_CB_TITLE: "Zmocníš se veškerého území v rámci [Concept('realm','panství')|El] postavy [defender.GetShortUIName], které je součástí titulu [THIS.GetLandedTitle.GetBaseName], a podrobíš si je"
+ DEJURE_CB_NAME: "Zmocnit se všech [Concept('de_jure','de iure')|El] zemí"
+ DEJURE_CB_WAR_NAME: "[ConcatIfNeitherEmpty('$ORDER|q$', ' ')][ATTACKER.GetPrimaryTitle.GetAdjective] de iure válka"
  DEJURE_CB_WAR_NAME_BASE: "[ATTACKER.GetPrimaryTitle.GetAdjective][DEFENDER.GetPrimaryTitle.GetName]"
- DEJURE_CB_DUCHY_NAME: "Zabrat [TITLE.GetBaseName] #weak ([Concept('de_jure','de iure')|E])#!" # todo: CONCEPT CASE
- DEJURE_CB_DUCHY_NAME_GENERIC: "Zabrat [Concept('de_jure','de iure')|E] [Concept('duchy','vévodství')|E]" # todo: CONCEPT CASE
- DEJURE_CB_COUNTY_NAME: "Zabrat [TITLE.GetBaseName] #weak ([Concept('de_jure','de iure')|E])#!" # todo: CONCEPT CASE
- DEJURE_CB_COUNTY_NAME_GENERIC: "Zabrat [Concept('de_jure','de iure')|E] [Concept('county','hrabství')|E]" # todo: CONCEPT CASE
- DEJURE_CB_WAR_SPECIFIC_NAME: "[ConcatIfNeitherEmpty('$ORDER|q$', ' ')][ATTACKER.GetPrimaryTitle.GetAdjective] De jure válka o [TITLE.GetBaseName]"
+ DEJURE_CB_DUCHY_NAME: "Zmocnit se titulu [TITLE.GetBaseName] #weak ([Concept('de_jure','de iure')|El])#!"
+ DEJURE_CB_DUCHY_NAME_GENERIC: "Zmocnit se [Concept('de_jure','de iure')|El] [Concept('duchy','vévodství')|El]"
+ DEJURE_CB_COUNTY_NAME: "Zmocnit se titulu [TITLE.GetBaseName] #weak ([Concept('de_jure','de iure')|El])#!"
+ DEJURE_CB_COUNTY_NAME_GENERIC: "Zmocnit se [Concept('de_jure','de iure')|El] [Concept('county','hrabství')|El]"
+ DEJURE_CB_WAR_SPECIFIC_NAME: "[ConcatIfNeitherEmpty('$ORDER|q$', ' ')][ATTACKER.GetPrimaryTitle.GetAdjective] válka de iure o titul [TITLE.GetBaseName]"
  DEJURE_CB_WAR_SPECIFIC_NAME_BASE: "[ATTACKER.GetPrimaryTitle.GetAdjective][DEFENDER.GetPrimaryTitle.GetName]"
- CLAIM_WAR_NAME: "[ConcatIfNeitherEmpty('$ORDER|q$', ' ')][ATTACKER.GetPrimaryTitle.GetAdjective] Válka o nárok [CLAIMANT.GetShortUINamePossessive] na [TITLE.GetBaseName]"
- CLAIM_CB_NAME: "[CLAIMANT.GetShortUINamePossessive|U] [Concept('claims','Nároky')|E]" # todo: CONCEPT CASE
+ CLAIM_WAR_NAME: "[ConcatIfNeitherEmpty('$ORDER|q$', ' ')][ATTACKER.GetPrimaryTitle.GetAdjective] válka za nárok postavy [CLAIMANT.GetShortUIName] na titul [TITLE.GetBaseName]"
+ CLAIM_CB_NAME: "[Concept('claims','Nároky')|El] postavy [CLAIMANT.GetShortUIName]"
  CLAIM_WAR_NAME_BASE: "[ATTACKER.GetPrimaryTitle.GetAdjective][CLAIMANT.GetShortUINameNotMe][TITLE.GetName]"
- CLAIM_WAR_NAME_MY: "[ConcatIfNeitherEmpty('$ORDER|q$', ' ')][ATTACKER.GetPrimaryTitle.GetAdjective] Nárok na [TITLE.GetBaseName]"
+ CLAIM_WAR_NAME_MY: "[ConcatIfNeitherEmpty('$ORDER|q$', ' ')][ATTACKER.GetPrimaryTitle.GetAdjective] válka za nárok na titul [TITLE.GetBaseName]"
  WAR_DECLARED: "Vyhlášena válka"
  INDEPENDENCE_WAR_NAME: "Válka za nezávislost"
  independence_war: "$INDEPENDENCE_WAR_NAME$"
  LIBERTY_WAR_NAME: "Válka za svobodu"
- PEASANT_WAR_NAME: "Povstání rolníků"
- peasant_war_victory_desc: "Všechna povstalecká [Concept('counties','hrabství')|E] ztrácejí [SCOPE.ScriptValue('peasant_war_victory_county_control_loss')|N0] [Concept('control','kontrola')|E]." # todo: CONCEPT CASE
- peasant_war_white_peace_desc: "[Concept('peasant_faction','$peasant_faction$')|E] je rozpuštěna." # todo: CONCEPT CASE
- peasant_war_defeat_desc: "[Concept('peasant_faction','$peasant_faction$')|E] je rozpuštěna a [attacker.GetShortUIName] je uvězněn. Všechna povstalecká [Concept('counties','hrabství')|E] mají násilně zvýšený [Concept('county_opinion','lidové mínění')|E]." # todo: CONCEPT CASE
- nomads_take_everything_tt: "[tooltip_leader.GetShortUIName] a další [tooltip_leader.Custom('GetGovernmentIcon')] [tooltip_leader.GetGovernment.GetName] [Concept('rulers','vládci')|E]:" # todo: CONCEPT CASE
- NOMADIC_WAR_NAME: "[ATTACKER.GetCulture.GetNameNoTooltip] [ATTACKER.GetFaith.GetAdjectiveNoTooltip] nomádské povstání"
+ PEASANT_WAR_NAME: "Selské povstání"
+ peasant_war_victory_desc: "Všechna vzbouřená [Concept('counties','hrabství')|El] ztratí [SCOPE.ScriptValue('peasant_war_victory_county_control_loss')|N0] [Concept('control','kontroly')|El]."
+ peasant_war_white_peace_desc: "[Concept('peasant_faction','Selská frakce')|El] bude rozpuštěna."
+ peasant_war_defeat_desc: "[Concept('peasant_faction','Selská frakce')|El] bude rozpuštěna a [attacker.GetShortUIName] bude uvězněn[Select_CString( attacker.IsFemale, 'a', '' )]. Ve všech vzbouřených [Concept('counties','hrabstvích')|El] bude nuceně zvýšen [Concept('county_opinion','názor hrabství')|El]."
+ nomads_take_everything_tt: "[tooltip_leader.GetShortUIName] a ostatní [tooltip_leader.Custom('GetGovernmentIcon')] [Concept('rulers','vládci')|El] s formou vlády [tooltip_leader.GetGovernment.GetName]:"
+ NOMADIC_WAR_NAME: "[ATTACKER.GetCulture.GetNameNoTooltip] [ATTACKER.GetFaith.GetAdjectiveNoTooltip] kočovné povstání"
  POPULIST_WAR_NAME: "[ATTACKER.GetCulture.GetNameNoTooltip] [ATTACKER.GetFaith.GetAdjectiveNoTooltip] povstání"
- CLAIMANT_WAR_NAME: "Válka o nárok [CLAIMANT.GetTitledFirstNamePossessive] na [TITLE.GetBaseName]"
- depose_war: "Sesadit"
+ CLAIMANT_WAR_NAME: "Válka za nárok postavy [CLAIMANT.GetTitledFirstName] na titul [TITLE.GetBaseName]"
+ depose_war: "Sesazení"
  claim_cb: "Nárok"
- claim_cb_victory_desc_attacker_claimant: "Získáte sporný [Concept('title','titul')|E]." # todo: CONCEPT CASE
- claim_cb_victory_desc_attacker: "[claimant.GetShortUIName|U] získává sporný [Concept('title','titul')|E]." # todo: CONCEPT CASE
- claim_cb_victory_desc: "[claimant.GetShortUIName|U] získává sporný [Concept('title','titul')|E]." # todo: CONCEPT CASE
- claim_cb_white_peace_desc_defender: "Udržíte sporný [Concept('title','titul')|E]." # todo: CONCEPT CASE
- claim_cb_white_peace_desc: "[defender.GetShortUIName|U] udrží sporný [Concept('title','titul')|E]." # todo: CONCEPT CASE
- claim_cb_defeat_desc_defender: "Udržíte sporný [Concept('title','titul')|E]. [claimant.GetShortUIName|U] ztrácí [attacker.GetHerHis] [Concept('claim','nárok')|E]." # todo: CONCEPT CASE
- claim_cb_defeat_desc_attacker_claimant: "[defender.GetShortUIName|U] udrží sporný [Concept('title','titul')|E]. Ztrácíte svůj [Concept('claim','nárok')|E]." # todo: CONCEPT CASE
- claim_cb_defeat_desc_attacker: "[defender.GetShortUIName|U] udrží sporný [Concept('title','titul')|E]. [claimant.GetShortUIName|U] ztrácí [claimant.GetHerHis] [Concept('claim','nárok')|E]." # todo: CONCEPT CASE
- claim_cb_defeat_desc: "[defender.GetShortUIName|U] udrží sporný [Concept('title','titul')|E]. [attacker.GetShortUIName|U] ztrácí [attacker.GetHerHis] [Concept('claim','nárok')|E]." # todo: CONCEPT CASE
+ claim_cb_victory_desc_attacker_claimant: "Získáš sporný [Concept('title','titul')|El]."
+ claim_cb_victory_desc_attacker: "[claimant.GetShortUIName|U] získá sporný [Concept('title','titul')|El]."
+ claim_cb_victory_desc: "[claimant.GetShortUIName|U] získá sporný [Concept('title','titul')|El]."
+ claim_cb_white_peace_desc_defender: "Sporný [Concept('title','titul')|El] si ponecháš."
+ claim_cb_white_peace_desc: "[defender.GetShortUIName|U] si ponechá sporný [Concept('title','titul')|El]."
+ claim_cb_defeat_desc_defender: "Sporný [Concept('title','titul')|El] si ponecháš. [claimant.GetShortUIName|U] ztratí svůj [Concept('claim','nárok')|El]."
+ claim_cb_defeat_desc_attacker_claimant: "[defender.GetShortUIName|U] si ponechá sporný [Concept('title','titul')|El]. Ty ztratíš svůj [Concept('claim','nárok')|El]."
+ claim_cb_defeat_desc_attacker: "[defender.GetShortUIName|U] si ponechá sporný [Concept('title','titul')|El]. [claimant.GetShortUIName|U] ztratí svůj [Concept('claim','nárok')|El]."
+ claim_cb_defeat_desc: "[defender.GetShortUIName|U] si ponechá sporný [Concept('title','titul')|El]. [attacker.GetShortUIName|U] ztratí svůj [Concept('claim','nárok')|El]."
  CB_CLAIM_COST_TARGET_TITLES: "Nárokované tituly"
- CB_CLAIM_COST_TARGET_TITLES_FOREIGN: "Nárokované ne-[Concept('de_jure','de iure')|E] tituly" # todo: CONCEPT CASE
- CB_CLAIM_COST_GENDER_PREFERENCES: "Preference pohlaví"
- CB_CLAIM_COST_CLAIMANT_DIFFERENT_DYNASTY: "Nárokující jiné dynastie"
- CB_CLAIM_COST_CLAIMANT_DIFFERENT_HOUSE: "Nárokující jiného rodu"
- CB_CLAIM_COST_CLAIMANT_DIFFERENT_RELIGION: "Nárokující jiné [Concept('religion','náboženství')|E]" # todo: CONCEPT CASE
+ CB_CLAIM_COST_TARGET_TITLES_FOREIGN: "Nárokované tituly mimo de iure území"
+ CB_CLAIM_COST_GENDER_PREFERENCES: "Rodové preference"
+ CB_CLAIM_COST_CLAIMANT_DIFFERENT_DYNASTY: "Pretendent z jiné dynastie"
+ CB_CLAIM_COST_CLAIMANT_DIFFERENT_HOUSE: "Pretendent z jiného rodu"
+ CB_CLAIM_COST_CLAIMANT_DIFFERENT_RELIGION: "Pretendent jiného [Concept('religion','náboženství')|El]"
  CB_COST_DEFENDER_IS_CHILD: "Obránce je dítě"
- CB_COST_ATTACKER_IS_CHILD: "Jste dítě"
- CB_COST_SAME_DYNASTY: "Obránce stejné dynastie"
- CB_COST_DIFFERENT_FAITH: "Základ #weak (jiné [Concept('faiths','víry')|E])" # todo: CONCEPT CASE
- CB_DEFNDER_LOWER_TIER: "Obránce nižší úrovně"
- CB_ATTACKER_INNOVATIONS: "Vaše inovace"
- CB_ATTACKER_HOF: "Váš [Concept('head_of_faith','hlava víry')|E]" # todo: CONCEPT CASE
- CB_ATTACKER_THEOCRACY: "Stejná-[Concept('faith','víra')|E] [Concept('theocracy','teokracie')|E]" # todo: CONCEPT CASE
+ CB_COST_ATTACKER_IS_CHILD: "Jsi dítě"
+ CB_COST_SAME_DYNASTY: "Obránce ze stejné dynastie"
+ CB_COST_DIFFERENT_FAITH: "Základ #weak (Odlišné [Concept('faiths','víry')|El])"
+ CB_DEFNDER_LOWER_TIER: "Obránce má nižší úroveň titulu"
+ CB_ATTACKER_INNOVATIONS: "Tvé inovace"
+ CB_ATTACKER_HOF: "Tvá [Concept('head_of_faith','hlava víry')|El]"
+ CB_ATTACKER_THEOCRACY: "[Concept('theocracy','Teokracie')|El] stejné [Concept('faith','víry')|El]"
  CB_ATTACKER_BELLUM_JUSTUM: "[GetPerk( 'bellum_justum_perk' ).GetName( GetPlayer )]"
  CB_ATTACKER_DYNASTY_WARFARE: "[GetDynastyPerk( 'warfare_legacy_2' ).GetName]"
  CB_ATTACKER_VASSAL_CONTRACT: "$war_declaration_rights_allowed$"
- CB_ATTACKER_HOF_HUMSACD: "[Select_CString(ROOT.Char.IsFemale,'Obětovala','Obětoval')] jste svého [Concept('head_of_faith','hlavy víry')|E]" # todo: CONCEPT CASE
+ CB_ATTACKER_HOF_HUMSACD: "Obětoval jsi svou [Concept('head_of_faith','hlavu víry')|El]"
  CB_GAME_RULE_NO_COST: "Pravidlo hry — bez nákladů"
  CB_BASE_COST: "Základ"
- CB_REALM_SIZE_COST: "Z velikosti vašeho [Concept('realm','panství')|E]" # todo: CONCEPT CASE
- CB_SAME_FAITH_COST: "Základ #weak (Obránce je vaší [Concept('faith','víru')|E])#!" # todo: CONCEPT CASE
- CB_TRIBAL_COST: "Jste kmenový"
+ CB_REALM_SIZE_COST: "Podle velikosti tvého [Concept('realm','panství')|El]"
+ CB_SAME_FAITH_COST: "Základ #weak (Obránce je tvé [Concept('faith','víry')|El])#!"
+ CB_TRIBAL_COST: "Jsi kmenový vládce"
  CB_RECONQUISTA_COST: "Kultura — $innovation_reconquista$"
- CB_GENGHIS_KHAN_COST: "Genghis Khan"
- CB_MONGOL_INVASIONS_COST: "Mongolská tažení"
- CB_DIVINE_DESTINY_COST: "[Concept('faith','Víra')|E] — $divine_destiny_name$" # todo: CONCEPT CASE
- CB_REDUCED_HOLY_WAR_COST: "[Concept('faith','Víra')|E] — Snížené náklady na svaté války" # todo: CONCEPT CASE
+ CB_GENGHIS_KHAN_COST: "Čingischán"
+ CB_MONGOL_INVASIONS_COST: "Mongolské invaze"
+ CB_DIVINE_DESTINY_COST: "[Concept('faith','Víra')|El] — $divine_destiny_name$"
+ CB_REDUCED_HOLY_WAR_COST: "[Concept('faith','Víra')|El] — snížené náklady na svatou válku"
  CB_COST_RULES_KINGDOM: "Vládne království"
- CB_COST_RULES_EMPIRE: "Vládne císařství"
- CB_SIZE_OF_TARGET_REALM_COST: "Velikost cílového království"
+ CB_COST_RULES_EMPIRE: "Vládne říši"
+ CB_SIZE_OF_TARGET_REALM_COST: "Velikost cílového panství"
  CB_VASSALIZING_KING: "Vazalizace království"
- CB_VASSALIZING_EMPEROR: "Podřízení císařství" # todo: NEW TRANSLATION
- CB_ATTACKER_CULTURE: "[Concept('culture','Kultura')|E]" # todo: CONCEPT CASE
- CB_STRUGGLE_PHASE_DISCOUNT: "[Concept('struggle_phase','Fáze sváru')|E]" # todo: CONCEPT CASE
- CB_STRUGGLE_PHASE_SURCHARGE: "[Concept('struggle_phase','Fáze sváru')|E]" # todo: CONCEPT CASE
- CB_GENERIC_PHASE_BONUS: "Aktuální [Concept('struggle_phase','fáze sváru')|E]" # todo: CONCEPT CASE
- CB_STRUGGLE_CONCESSION_ENDING: "Trvalý dopad $persian_struggle$"
- CB_STEPPE_SEASON_DISCOUNT: "[Concept('steppe_season','Stepní období')|E]" # todo: CONCEPT CASE
+ CB_VASSALIZING_EMPEROR: "Vazalizace říše"
+ CB_ATTACKER_CULTURE: "[Concept('culture','Kultura')|El]"
+ CB_STRUGGLE_PHASE_DISCOUNT: "[Concept('struggle_phase','Fáze sváru')|El]"
+ CB_STRUGGLE_PHASE_SURCHARGE: "[Concept('struggle_phase','Fáze sváru')|El]"
+ CB_GENERIC_PHASE_BONUS: "Aktuální [Concept('struggle_phase','fáze sváru')|El]"
+ CB_STRUGGLE_CONCESSION_ENDING: "Trvalý dopad události $persian_struggle$"
+ CB_STEPPE_SEASON_DISCOUNT: "[Concept('steppe_season','Stepní období')|El]"
  independence_faction_war: "Frakce za nezávislost"
- independence_war_victory_desc_local_player_attacker_alone: "[attacker.GetShortUIName|U] získává nezávislost od [defender.GetShortUIName]."
- independence_war_victory_desc_local_player_defender_attacker_alone: "[attacker.GetShortUIName|U] získává nezávislost od [defender.GetShortUIName]."
- player_independence_war_victory_desc_local_player_defender_attacker_alone: "[attacker.GetShortUIName|U] získává nezávislost od vás."
- independence_war_victory_desc_local_player_attacker: "[attacker.GetShortUIName|U] a všichni povstalečtí vazalové [defender.GetShortUIName] se stávají nezávislými."
- independence_war_victory_desc_local_player_defender: "Všichni vaši povstalečtí vazalové získají nezávislost."
- independence_war_victory_desc: "Všichni povstalečtí vazalové [defender.GetShortUIName] získají nezávislost."
- player_independence_war_white_peace_defender_desc: "[attacker.GetShortUIName|U] zůstává vaším vazalem."
- player_independence_war_white_peace_attacker_desc: "Zůstáváte vazalem [defender.GetShortUIName]."
- player_independence_war_white_peace_desc: "[attacker.GetShortUIName|U] zůstává vazalem [defender.GetShortUIName]."
- independence_war_white_peace_defender_desc: "Všichni povstalci zůstávají vašimi vazaly."
- independence_war_white_peace_attacker_desc: "Vy a všichni ostatní povstalci zůstáváte vazaly [defender.GetShortUIName]."
- independence_war_white_peace_desc: "Všichni povstalci zůstávají vazaly [defender.GetShortUIName]."
- independence_war_white_peace_end_desc: "[Concept('independence_faction','Frakce za nezávislost')|E] je rozpuštěna a její členové se nemohou přidávat do frakcí po dobu [SCOPE.ScriptValue('faction_war_white_peace_cooldown')|0] let." # todo: CONCEPT CASE
- player_independence_defeat_defender_desc: "Vy [Concept('imprison','uvěznit')|E] [attacker.GetShortUIName|U] a získáte [Concept('revoke_title_reason','důvod k odebrání titulu')|E]." # todo: CONCEPT CASE
- player_independence_defeat_attacker_desc: "[defender.GetShortUIName|U] vás [Concept('imprisons','vězní')|E] a získá [Concept('revoke_title_reason','důvod k odebrání titulu')|E]." # todo: CONCEPT CASE
- player_independence_war_defeat_desc: "[defender.GetShortUIName|U] [Concept('imprisons','Vězní')|E] [attacker.GetShortUIName|U] a získá [Concept('revoke_title_reason','důvod k odebrání titulu')|E]." # todo: CONCEPT CASE
- independence_defeat_defender_desc: "[defender.GetShortUIName|U] uvězní všechny povstalecké vazaly a získá [Concept('revoke_title_reason','důvod k odebrání titulu')|E] proti každému z nich." # todo: CONCEPT CASE
- independence_defeat_attacker_desc: "[defender.GetShortUIName|U] uvězní vás a všechny povstalecké vazaly a získá [Concept('revoke_title_reason','důvod k odebrání titulu')|E] proti každému z rebelů." # todo: CONCEPT CASE
- independence_defeat_end_desc: "[Concept('independence_faction','Frakce za nezávislost')|E] je rozpuštěna a její členové se nemohou přidávat do frakcí po dobu [SCOPE.ScriptValue('faction_war_defeat_cooldown')|0] let." # todo: CONCEPT CASE
- tributary_independence_war: "Nezávislost (tributární)"
- tributary_independence_war_victory_desc_attacker: "Jste osvobozeni od svých [tributary|E] povinností vůči [defender.GetShortUIName]."
- tributary_independence_war_victory_desc_defender: "[attacker.GetShortUIName|U] je osvobozen od [attacker.GetHerHis] [tributary|E] povinností vůči vám."
- tributary_independence_war_victory_desc: "[attacker.GetShortUIName|U] je osvobozen od [attacker.GetHerHis] [tributary|E] povinností vůči [defender.GetShortUIName]."
- tributary_independence_war_white_peace_attacker_desc: "Znovu platíte [Concept('tributary','tribute')|E] [defender.GetShortUIName], ale s menšími povinnostmi."
- tributary_independence_war_white_peace_defender_desc: "[attacker.GetShortUIName|U] znovu platí [Concept('tributary','tribute')|E], ale s menšími povinnostmi."
- tributary_independence_war_white_peace_desc: "[attacker.GetShortUIName|U] zůstává [Concept('tributary','tributář')|E] [defender.GetShortUIName]." # todo: CONCEPT CASE
- tributary_independence_war_defeat_attacker_desc: "Znovu platíte [Concept('tributary','tribute')|E] [defender.GetShortUIName]."
- tributary_independence_war_defeat_defender_desc: "[attacker.GetShortUIName|U] znovu platí [Concept('tributary','tribute')|E] vám."
- tributary_independence_war_defeat_desc: "[attacker.GetShortUIName|U] zůstává [Concept('tributary','tributář')|E] [defender.GetShortUIName]." # todo: CONCEPT CASE
+ independence_war_victory_desc_local_player_attacker_alone: "[attacker.GetShortUIName|U] získá nezávislost na postavě [defender.GetShortUIName]."
+ independence_war_victory_desc_local_player_defender_attacker_alone: "[attacker.GetShortUIName|U] získá nezávislost na postavě [defender.GetShortUIName]."
+ player_independence_war_victory_desc_local_player_defender_attacker_alone: "[attacker.GetShortUIName|U] získá nezávislost na tobě."
+ independence_war_victory_desc_local_player_attacker: "[attacker.GetShortUIName|U] a všichni vzbouření vazalové postavy [defender.GetShortUIName] se osamostatní."
+ independence_war_victory_desc_local_player_defender: "Všichni tví vzbouření vazalové se osamostatní."
+ independence_war_victory_desc: "Všichni vzbouření vazalové postavy [defender.GetShortUIName] se osamostatní."
+ player_independence_war_white_peace_defender_desc: "[attacker.GetShortUIName|U] zůstane tvým vazalem."
+ player_independence_war_white_peace_attacker_desc: "Zůstaneš vazalem postavy [defender.GetShortUIName]."
+ player_independence_war_white_peace_desc: "[attacker.GetShortUIName|U] zůstane vazalem postavy [defender.GetShortUIName]."
+ independence_war_white_peace_defender_desc: "Všichni povstalci zůstanou tvými vazaly."
+ independence_war_white_peace_attacker_desc: "Ty i všichni ostatní povstalci zůstanete vazaly postavy [defender.GetShortUIName]."
+ independence_war_white_peace_desc: "Všichni povstalci zůstanou vazaly postavy [defender.GetShortUIName]."
+ independence_war_white_peace_end_desc: "[Concept('independence_faction','Frakce za nezávislost')|El] bude rozpuštěna a její členové se po dobu [SCOPE.ScriptValue('faction_war_white_peace_cooldown')|0] let nebudou moci připojit k žádné frakci."
+ player_independence_defeat_defender_desc: "[Concept('imprison','Uvězníš')|El] postavu [attacker.GetShortUIName|U] a získáš [Concept('revoke_title_reason','důvod k odnětí titulu')|El]."
+ player_independence_defeat_attacker_desc: "[defender.GetShortUIName|U] tě [Concept('imprisons','uvězní')|El] a získá [Concept('revoke_title_reason','důvod k odnětí titulu')|El]."
+ player_independence_war_defeat_desc: "[defender.GetShortUIName|U] [Concept('imprisons','uvězní')|El] postavu [attacker.GetShortUIName|U] a získá [Concept('revoke_title_reason','důvod k odnětí titulu')|El]."
+ independence_defeat_defender_desc: "[defender.GetShortUIName|U] uvězní všechny vzbouřené vazaly a proti každému z nich získá [Concept('revoke_title_reason','důvod k odnětí titulu')|El]."
+ independence_defeat_attacker_desc: "[defender.GetShortUIName|U] uvězní tebe i všechny vzbouřené vazaly a proti každému povstalci získá [Concept('revoke_title_reason','důvod k odnětí titulu')|El]."
+ independence_defeat_end_desc: "[Concept('independence_faction','Frakce za nezávislost')|El] bude rozpuštěna a její členové se po dobu [SCOPE.ScriptValue('faction_war_defeat_cooldown')|0] let nebudou moci připojit k žádné frakci."
+ tributary_independence_war: "Nezávislost"
+ tributary_independence_war_victory_desc_attacker: "Budeš zproštěn svých povinností [Concept('tributary','tributáře')|El] vůči postavě [defender.GetShortUIName]."
+ tributary_independence_war_victory_desc_defender: "[attacker.GetShortUIName|U] bude zproštěn[Select_CString( attacker.IsFemale, 'a', '' )] svých povinností [Concept('tributary','tributáře')|El] vůči tobě."
+ tributary_independence_war_victory_desc: "[attacker.GetShortUIName|U] bude zproštěn[Select_CString( attacker.IsFemale, 'a', '' )] svých povinností [Concept('tributary','tributáře')|El] vůči postavě [defender.GetShortUIName]."
+ tributary_independence_war_white_peace_attacker_desc: "Obnovíš odvádění [Concept('tributary','tributu')|El] postavě [defender.GetShortUIName], avšak s nižšími povinnostmi."
+ tributary_independence_war_white_peace_defender_desc: "[attacker.GetShortUIName|U] obnoví odvádění [Concept('tributary','tributu')|El], avšak s nižšími povinnostmi."
+ tributary_independence_war_white_peace_desc: "[attacker.GetShortUIName|U] zůstane [Concept('tributary','tributářem')|El] postavy [defender.GetShortUIName]."
+ tributary_independence_war_defeat_attacker_desc: "Obnovíš odvádění [Concept('tributary','tributu')|El] postavě [defender.GetShortUIName]."
+ tributary_independence_war_defeat_defender_desc: "[attacker.GetShortUIName|U] obnoví odvádění [Concept('tributary','tributu')|El] tobě."
+ tributary_independence_war_defeat_desc: "[attacker.GetShortUIName|U] zůstane [Concept('tributary','tributářem')|El] postavy [defender.GetShortUIName]."
  liberty_faction_war: "Frakce za svobodu"
- liberty_war_victory_defender_desc: "Vaše [Concept('crown_authority','korunní autorita')|E] se sníží o jeden stupeň a budete dlužit každému členu [liberty_faction|E] [Concept('favor','laskavosti')|E]." # todo: CONCEPT CASE
- liberty_war_victory_desc: "[Concept('crown_authority','Korunní autorita')|E] [defender.GetPrimaryTitle.GetName] se sníží o jeden stupeň a [defender.GetShortUIName] bude dlužit každému členu [liberty_faction|E] [Concept('favor','laskavosti')|E]." # todo: CONCEPT CASE
- liberty_war_victory_end_desc: "[Concept('liberty_faction','$liberty_faction$')|E] je rozpuštěna, její členové se nemohou přidávat do frakcí po dobu [SCOPE.ScriptValue('liberty_war_victory_cooldown')|0] let." # todo: CONCEPT CASE
- liberty_war_victory_defender_desc_admin: "Vaše [Concept('imperial_bureaucracy','imperiální byrokracie')|E] se sníží o jeden stupeň a budete dlužit každému členu [liberty_faction|E] [Concept('favor','laskavosti')|E]." # todo: CONCEPT CASE
- liberty_war_victory_desc_admin: "[Concept('imperial_bureaucracy','Imperiální byrokracie')|E] [defender.GetPrimaryTitle.GetName] se sníží o jeden stupeň a [defender.GetShortUIName] bude dlužit každému členu [liberty_faction|E] [Concept('favor','laskavosti')|E]." # todo: CONCEPT CASE
- liberty_war_victory_defender_desc_tribal: "Vaše [Concept('tribal_authority','kmenová autorita')|E] se sníží o jeden stupeň a budete dlužit každému členu [liberty_faction|E] [Concept('favor','laskavosti')|E]." # todo: CONCEPT CASE
- liberty_war_victory_desc_tribal: "[Concept('tribal_authority','Kmenová autorita')|E] [defender.GetPrimaryTitle.GetName] se sníží o jeden stupeň a [defender.GetShortUIName] bude dlužit každému členu [liberty_faction|E] [Concept('favor','laskavosti')|E]." # todo: CONCEPT CASE
- liberty_war_white_peace_defender_desc: "Získáte příměří a [Concept('revoke_title_reason','důvod k odebrání titulu')|E] proti všem povstaleckým vazalům." # todo: CONCEPT CASE
- liberty_war_white_peace_attacker_desc: "[defender.GetShortUIName|U] získá příměří a [Concept('revoke_title_reason','důvod k odebrání titulu')|E] proti vám a všem povstaleckým vazalům." # todo: CONCEPT CASE
- liberty_war_white_peace_desc: "[defender.GetShortUIName|U] získá příměří a [Concept('revoke_title_reason','důvod k odebrání titulu')|E] proti všem povstaleckým vazalům." # todo: CONCEPT CASE
- liberty_war_white_peace_end_desc: "[Concept('liberty_faction','$liberty_faction$')|E] je rozpuštěna, její členové se nemohou přidávat do frakcí po dobu [SCOPE.ScriptValue('faction_war_white_peace_cooldown')|0] let." # todo: CONCEPT CASE
- liberty_war_defeat_defender_desc: "Získáte [Concept('dread','hrůza')|E], uvězníte každého povstaleckého vazala a získáte [Concept('revoke_title_reason','důvod k odebrání titulu')|E] proti každému z nich." # todo: CONCEPT CASE
- liberty_war_defeat_attacker_desc: "[defender.GetShortUIName|U] uvězní vás a každého povstaleckého vazala a získá [Concept('revoke_title_reason','důvod k odebrání titulu')|E] proti každému z vás." # todo: CONCEPT CASE
- liberty_war_defeat_desc: "[defender.GetShortUIName|U] uvězní každého povstaleckého vazala a získá [Concept('revoke_title_reason','důvod k odebrání titulu')|E] proti každému z nich." # todo: CONCEPT CASE
- liberty_war_defeat_end_desc: "[Concept('liberty_faction','$liberty_faction$')|E] je rozpuštěna, její členové se nemohou přidávat do frakcí po dobu [SCOPE.ScriptValue('faction_war_defeat_cooldown')|0] let." # todo: CONCEPT CASE
- peasant_war: "Povstání rolníků"
- claimant_faction_war: "Frakce nárokující"
- de_jure_cb: "De Jure"
- de_jure_cb_victory_desc_attacker: "Získáte sporné tituly."
- de_jure_cb_victory_desc: "[attacker.GetShortUIName|U] získává sporné tituly."
- de_jure_cb_white_peace_desc_defender: "Udržíte sporné tituly."
- de_jure_cb_white_peace_desc: "[defender.GetShortUIName|U] udrží sporné tituly."
- de_jure_cb_defeat_desc_defender: "Udržíte sporné tituly. [attacker.GetShortUIName|U] vám musí zaplatit válečné reparace."
- de_jure_cb_defeat_desc_attacker: "[defender.GetShortUIName|U] udrží sporné tituly. Musíte mu zaplatit válečné reparace."
- de_jure_cb_defeat_desc: "[defender.GetShortUIName|U] udrží sporné tituly a [attacker.GetShortUIName] mu musí zaplatit válečné reparace."
- individual_county_de_jure_cb_victory_desc_attacker: "Získáte sporné [Concept('county','hrabství')|E]." # todo: CONCEPT CASE
- individual_county_de_jure_cb_victory_desc: "[attacker.GetShortUIName|U] získává sporné [Concept('county','hrabství')|E]." # todo: CONCEPT CASE
- individual_county_de_jure_cb_white_peace_desc_defender: "Udržíte sporné [Concept('county','hrabství')|E]." # todo: CONCEPT CASE
- individual_county_de_jure_cb_white_peace_desc: "[defender.GetShortUIName|U] udrží sporné [Concept('county','hrabství')|E]." # todo: CONCEPT CASE
- individual_county_de_jure_cb_defeat_desc_defender: "Udržíte sporné [Concept('county','hrabství')|E]. [attacker.GetShortUIName|U] vám musí zaplatit válečné reparace." # todo: CONCEPT CASE
- individual_county_de_jure_cb_defeat_desc_attacker: "[defender.GetShortUIName|U] udrží sporné [Concept('county','hrabství')|E]. Musíte mu zaplatit válečné reparace." # todo: CONCEPT CASE
- individual_county_de_jure_cb_defeat_desc: "[defender.GetShortUIName|U] udrží sporné [Concept('county','hrabství')|E] a [attacker.GetShortUIName] mu musí zaplatit válečné reparace." # todo: CONCEPT CASE
- minor_religious_war: "Menší [Concept('holy_war_holy','svatá')|E]" # todo: CONCEPT CASE
- religious_war: "[Concept('holy_war_holy','Svatá')|E]" # todo: CONCEPT CASE
- major_religious_war: "Hlavní [Concept('holy_war_holy','svatá')|E]" # todo: CONCEPT CASE
+ liberty_war_victory_defender_desc: "Tvá [Concept('crown_authority','korunní autorita')|El] se sníží o jeden stupeň a každému členovi [Concept('liberty_faction','frakce za svobodu')|El] budeš dlužit [Concept('favor','laskavost')|El]."
+ liberty_war_victory_desc: "[Concept('crown_authority','Korunní autorita')|El] titulu [defender.GetPrimaryTitle.GetName] se sníží o jeden stupeň a [defender.GetShortUIName] bude každému členovi [Concept('liberty_faction','frakce za svobodu')|El] dlužit [Concept('favor','laskavost')|El]."
+ liberty_war_victory_end_desc: "[Concept('liberty_faction','Frakce za svobodu')|El] bude rozpuštěna a její členové se po dobu [SCOPE.ScriptValue('liberty_war_victory_cooldown')|0] let nebudou moci připojit k frakcím."
+ liberty_war_victory_defender_desc_admin: "Tvá [Concept('imperial_bureaucracy','císařská byrokracie')|El] se sníží o jeden stupeň a každému členovi [Concept('liberty_faction','frakce za svobodu')|El] budeš dlužit [Concept('favor','laskavost')|El]."
+ liberty_war_victory_desc_admin: "[Concept('imperial_bureaucracy','Císařská byrokracie')|El] titulu [defender.GetPrimaryTitle.GetName] se sníží o jeden stupeň a [defender.GetShortUIName] bude každému členovi [Concept('liberty_faction','frakce za svobodu')|El] dlužit [Concept('favor','laskavost')|El]."
+ liberty_war_victory_defender_desc_tribal: "Tvá [Concept('tribal_authority','kmenová autorita')|El] se sníží o jeden stupeň a každému členovi [Concept('liberty_faction','frakce za svobodu')|El] budeš dlužit [Concept('favor','laskavost')|El]."
+ liberty_war_victory_desc_tribal: "[Concept('tribal_authority','Kmenová autorita')|El] titulu [defender.GetPrimaryTitle.GetName] se sníží o jeden stupeň a [defender.GetShortUIName] bude každému členovi [Concept('liberty_faction','frakce za svobodu')|El] dlužit [Concept('favor','laskavost')|El]."
+ liberty_war_white_peace_defender_desc: "Uzavřeš příměří se všemi vzbouřenými vazaly a proti každému z nich získáš [Concept('revoke_title_reason','důvod k odebrání titulu')|El]."
+ liberty_war_white_peace_attacker_desc: "[defender.GetShortUIName|U] uzavře příměří s tebou i se všemi vzbouřenými vazaly a proti každému z vás získá [Concept('revoke_title_reason','důvod k odebrání titulu')|El]."
+ liberty_war_white_peace_desc: "[defender.GetShortUIName|U] uzavře příměří se všemi vzbouřenými vazaly a proti každému z nich získá [Concept('revoke_title_reason','důvod k odebrání titulu')|El]."
+ liberty_war_white_peace_end_desc: "[Concept('liberty_faction','Frakce za svobodu')|El] bude rozpuštěna a její členové se po dobu [SCOPE.ScriptValue('faction_war_white_peace_cooldown')|0] let nebudou moci připojit k frakcím."
+ liberty_war_defeat_defender_desc: "Získáš [Concept('dread','hrůzu')|El], uvězníš všechny vzbouřené vazaly a proti každému z nich získáš [Concept('revoke_title_reason','důvod k odebrání titulu')|El]."
+ liberty_war_defeat_attacker_desc: "[defender.GetShortUIName|U] uvězní tebe i všechny vzbouřené vazaly a proti každému z vás získá [Concept('revoke_title_reason','důvod k odebrání titulu')|El]."
+ liberty_war_defeat_desc: "[defender.GetShortUIName|U] uvězní všechny vzbouřené vazaly a proti každému z nich získá [Concept('revoke_title_reason','důvod k odebrání titulu')|El]."
+ liberty_war_defeat_end_desc: "[Concept('liberty_faction','Frakce za svobodu')|El] bude rozpuštěna a její členové se po dobu [SCOPE.ScriptValue('faction_war_defeat_cooldown')|0] let nebudou moci připojit k frakcím."
+ peasant_war: "Selská válka"
+ claimant_faction_war: "Frakce pretendenta"
+ de_jure_cb: "De iure"
+ de_jure_cb_victory_desc_attacker: "Získáš sporné tituly."
+ de_jure_cb_victory_desc: "[attacker.GetShortUIName|U] získá sporné tituly."
+ de_jure_cb_white_peace_desc_defender: "Sporné tituly si ponecháš."
+ de_jure_cb_white_peace_desc: "[defender.GetShortUIName|U] si ponechá sporné tituly."
+ de_jure_cb_defeat_desc_defender: "Sporné tituly si ponecháš. [attacker.GetShortUIName|U] ti musí zaplatit válečné reparace."
+ de_jure_cb_defeat_desc_attacker: "[defender.GetShortUIName|U] si ponechá sporné tituly. Musíš [defender.GetHerHim] zaplatit válečné reparace."
+ de_jure_cb_defeat_desc: "[defender.GetShortUIName|U] si ponechá sporné tituly a [attacker.GetShortUIName] [Select_CString( defender.IsFemale, 'jí', 'mu' )] musí zaplatit válečné reparace."
+ individual_county_de_jure_cb_victory_desc_attacker: "Získáš sporné [Concept('county','hrabství')|El]."
+ individual_county_de_jure_cb_victory_desc: "[attacker.GetShortUIName|U] získá sporné [Concept('county','hrabství')|El]."
+ individual_county_de_jure_cb_white_peace_desc_defender: "Sporné [Concept('county','hrabství')|El] si ponecháš."
+ individual_county_de_jure_cb_white_peace_desc: "[defender.GetShortUIName|U] si ponechá sporné [Concept('county','hrabství')|El]."
+ individual_county_de_jure_cb_defeat_desc_defender: "Sporné [Concept('county','hrabství')|El] si ponecháš. [attacker.GetShortUIName|U] ti musí zaplatit válečné reparace."
+ individual_county_de_jure_cb_defeat_desc_attacker: "[defender.GetShortUIName|U] si ponechá sporné [Concept('county','hrabství')|El]. Musíš [Select_CString( defender.IsFemale, 'jí', 'mu' )] zaplatit válečné reparace."
+ individual_county_de_jure_cb_defeat_desc: "[defender.GetShortUIName|U] si ponechá sporné [Concept('county','hrabství')|El] a [attacker.GetShortUIName] musí [Select_CString( defender.IsFemale, 'jí', 'mu' )] zaplatit válečné reparace."
+ minor_religious_war: "Menší [Concept('holy_war_holy','svatá válka')|El]"
+ religious_war: "[Concept('holy_war_holy','Svatá válka')|El]"
+ major_religious_war: "Velká [Concept('holy_war_holy','svatá válka')|El]"
  excommunication_war: "Exkomunikace"
- refused_liege_demand_war: "Vzpoura"
+ refused_liege_demand_war: "Povstání"
  DEPOSE_WAR_NAME: "Válka proti tyranii [DEFENDER.GetShortUINameNotMe]"
- EXCOMMUNICATION_WAR_NAME: "Válka exkomunikace proti [DEFENDER.GetShortUINameNotMe]"
- GREAT_HOLY_WAR_WAR_NAME: "[ATTACKER.GetFaith.Custom('GHWName')] za [TITLE.GetName]"
- GREAT_HOLY_WAR_WAR_CB_NAME: "[ATTACKER.GetFaith.Custom('GHWName')] za [Concept('kingdom','království')|E]" # todo: CONCEPT CASE
- nomadic_war: "Nomádské povstání"
- nomadic_war_victory_desc: "Povstalecká [Concept('counties','hrabství')|E] se stanou nezávislými [GetGovernment( 'nomad_government' ).GetName] [Concept('realms','panstvím')|E]." # todo: CONCEPT CASE
- nomadic_war_white_peace_desc: "Povstalecká [Concept('counties','hrabství')|E] a [Concept('vassals','vazalové')|E] zůstanou součástí říše." # todo: CONCEPT CASE
- nomadic_war_defeat_desc: "Povstalecká [Concept('counties','hrabství')|E] a [Concept('vassals','vazalové')|E] zůstanou součástí říše. [attacker.GetShortUIName] je uvězněn. Všechna povstalecká [Concept('counties','hrabství')|E] mají násilně zvýšený [Concept('county_opinion','lidové mínění')|E]." # todo: CONCEPT CASE
- populist_war: "Vzpoura"
- populist_war_victory_desc: "Povstalecká [Concept('counties','hrabství')|E] se stanou nezávislým královstvím s [attacker.GetShortUIName] jako vládcem." # todo: CONCEPT CASE
- populist_war_white_peace_desc: "Povstalecká [Concept('counties','hrabství')|E] a [Concept('vassals','vazalové')|E] zůstanou součástí říše." # todo: CONCEPT CASE
- populist_war_defeat_desc: "Povstalecká [Concept('counties','hrabství')|E] a [Concept('vassals','vazalové')|E] zůstanou součástí říše. Všichni povstalečtí $game_concept_vassals$ jsou [Concept('imprisoned','uvězněný')|E] [defender.GetShortUIName]." # todo: CONCEPT CASE
- claimant_faction_war_victory_desc: "[Concept('claimant','Pretendent')|E] převezme kontrolu nad sporným [Concept('title','titulem')|E]." # todo: CONCEPT CASE
- claimant_faction_war_white_peace_desc: "Spor o [Concept('title','titul')|E] zůstává u [defender.GetShortUIName]. Každému povstalému vazalovi je udělen [Concept('revoke_title_reason','důvod k odebrání titulu')|E]." # todo: CONCEPT CASE
- claimant_faction_war_defeat_desc: "Spor o [Concept('title','titul')|E] zůstává u [defender.GetShortUIName]. Všichni povstalečtí [Concept('vassals','vazalové')|E] jsou [Concept('imprisoned','uvězněný')|E]." # todo: CONCEPT CASE
- depose_war_victory_desc_defender: "Jste [Concept('deposed','sesazený')|E]." # todo: CONCEPT CASE
- depose_war_victory_desc: "[defender.GetShortUIName|U] je [Concept('deposed','sesazený')|E]." # todo: CONCEPT CASE
- depose_war_white_peace_desc_defender: "Udržíte své [Concept('titles','tituly')|E] a získáte [Concept('revoke_title_reason','důvod k odebrání titulu')|E] proti každému povstalému [Concept('vassal','vazalovi')|E]." # todo: CONCEPT CASE
- depose_war_white_peace_desc: "[defender.GetShortUIName|U] si udrží své [Concept('titles','tituly')|E]. Každému povstalému [Concept('vassal','vazalovi')|E] je udělen [Concept('revoke_title_reason','důvod k odebrání titulu')|E]." # todo: CONCEPT CASE
- depose_war_defeat_desc_defender: "Udržíte své [Concept('titles','tituly')|E] a uvězníte všechny povstalecké [Concept('vassals','vazalové')|E]." # todo: CONCEPT CASE
- depose_war_defeat_desc: "[defender.GetShortUIName|U] si udrží své [Concept('titles','tituly')|E] a uvězní všechny povstalecké [Concept('vassals','vazalové')|E]." # todo: CONCEPT CASE
- mandala_depose_war_victory_desc_defender: "Vaše [Concept('radiance','záře')|E] je vážně pošramocena." # todo: NEW TRANSLATION # todo: CONCEPT CASE
- mandala_depose_war_victory_desc: "[defender.GetShortUINamePossessive|U] [Concept('radiance','Záře')|E] je vážně pošramocena." # todo: NEW TRANSLATION # todo: CONCEPT CASE
- mandala_depose_war_leaving_tributaries.tt: "[defender.GetShortUIName|U] [defender.LocalPlayerString( 'lose', 'loses' )] všechny [tributaries|E]" # todo: NEW TRANSLATION
- refused_liege_demand_war_victory_desc_defender: "Jste [Concept('deposed','sesazený')|E]." # todo: CONCEPT CASE
- refused_liege_demand_war_victory_desc: "[defender.GetShortUIName|U] je [Concept('deposed','sesazený')|E]." # todo: CONCEPT CASE
- refused_liege_demand_war_white_peace_desc_defender: "Navážete příměří s [attacker.GetShortUIName] a získáte [Concept('revoke_title_reason','důvod k odebrání titulu')|E] proti němu." # todo: CONCEPT CASE
- refused_liege_demand_war_white_peace_desc: "[attacker.GetShortUIName|U] a [defender.GetShortUIName] uzavřou příměří. [defender.GetShortUIName|U] získá [Concept('revoke_title_reason','důvod k odebrání titulu')|E] proti [attacker.GetShortUIName]." # todo: CONCEPT CASE
- refused_liege_demand_war_defeat_desc_defender: "Vy [Concept('imprison','uvěznit')|E] [attacker.GetShortUIName]." # todo: CONCEPT CASE
- refused_liege_demand_war_defeat_desc: "[defender.GetShortUIName|U] [Concept('imprisons','Vězní')|E] [attacker.GetShortUIName]." # todo: CONCEPT CASE
- populist_war_victory_desc_admin: "Povstalecká [Concept('counties','hrabství')|E] odlišné [Concept('culture','kultura')|E] se stanou nezávislým [Concept('realm','panstvím')|E] s [attacker.GetShortUIName] jako [Concept('ruler','vládce')|E]." # todo: CONCEPT CASE
- populist_war_white_peace_desc_admin: "Povstalecká [Concept('counties','hrabství')|E] a [Concept('vassals','vazalové')|E] zůstanou součástí [Concept('realm','panstvím')|E]. [Concept('state_faith','Státní víra')|E] zůstane nezměněna." # todo: CONCEPT CASE
- populist_war_defeat_desc_admin: "Povstalecká [Concept('counties','hrabství')|E] a [Concept('vassals','vazalové')|E] zůstanou součástí [Concept('realm','panstvím')|E]. [Concept('state_faith','Státní víra')|E] zůstane nezměněna. Všichni povstalečtí $game_concept_vassals$ jsou [Concept('imprisoned','uvězněný')|E] [defender.GetShortUIName]." # todo: CONCEPT CASE
+ EXCOMMUNICATION_WAR_NAME: "Exkomunikační válka proti postavě [DEFENDER.GetShortUINameNotMe]"
+ GREAT_HOLY_WAR_WAR_NAME: "[ATTACKER.GetFaith.GHWName] o titul [TITLE.GetName]"
+ GREAT_HOLY_WAR_WAR_CB_NAME: "[ATTACKER.GetFaith.GHWName] o [Concept('kingdom','království')|El]"
+ nomadic_war: "Povstání nomádů"
+ nomadic_war_victory_desc: "Vzbouřená [Concept('counties','hrabství')|El] se stanou nezávislými [Concept('realms','panstvími')|El] s formou vlády [GetGovernment( 'nomad_government' ).GetName]."
+ nomadic_war_white_peace_desc: "Vzbouřená [Concept('counties','hrabství')|El] a [Concept('vassals','vazalové')|El] zůstanou součástí panství."
+ nomadic_war_defeat_desc: "Vzbouřená [Concept('counties','hrabství')|El] a [Concept('vassals','vazalové')|El] zůstanou součástí panství. Postava [attacker.GetShortUIName] bude uvězněna. Ve všech vzbouřených [Concept('counties','hrabstvích')|El] bude nuceně zvýšeno [Concept('county_opinion','lidové mínění')|El]."
+ populist_war: "Povstání"
+ populist_war_victory_desc: "Vzbouřená [Concept('counties','hrabství')|El] získají [Concept('de_jure','de iure')|El] [Concept('duchies','vévodství')|El] a stanou se nezávislými panstvími, přičemž každému bude vládnout jeden z útočníků."
+ populist_war_white_peace_desc: "Vzbouřená [Concept('counties','hrabství')|El] a [Concept('vassals','vazalové')|El] zůstanou součástí panství."
+ populist_war_defeat_desc: "Vzbouřená [Concept('counties','hrabství')|El] a [Concept('vassals','vazalové')|El] zůstanou součástí panství. Všichni vzbouření $game_concept_vassals$ budou [Concept('imprisoned','uvězněni')|El] postavou [defender.GetShortUIName]."
+ claimant_faction_war_victory_desc: "[Concept('claimant','Pretendent')|El] získá sporný [Concept('title','titul')|El]."
+ claimant_faction_war_white_peace_desc: "Sporný [Concept('title','titul')|El] zůstane postavě [defender.GetShortUIName]. Proti každému vzbouřenému vazalovi vznikne [Concept('revoke_title_reason','důvod k odebrání titulu')|El]."
+ claimant_faction_war_defeat_desc: "Sporný [Concept('title','titul')|El] zůstane postavě [defender.GetShortUIName]. Všichni vzbouření [Concept('vassals','vazalové')|El] budou [Concept('imprisoned','uvězněni')|El]."
+ depose_war_victory_desc_defender: "Dojde k tvému [Concept('deposed','sesazení')|El]."
+ depose_war_victory_desc: "Dojde k [Concept('deposed','sesazení')|El] postavy [defender.GetShortUIName|U]."
+ depose_war_white_peace_desc_defender: "Ponecháš si své [Concept('titles','tituly')|El] a proti každému vzbouřenému [Concept('vassal','vazalovi')|El] získáš [Concept('revoke_title_reason','důvod k odebrání titulu')|El]."
+ depose_war_white_peace_desc: "[defender.GetShortUIName|U] si ponechá [defender.GetHerHis] [Concept('titles','tituly')|El]. Proti každému vzbouřenému [Concept('vassal','vazalovi')|El] vznikne [Concept('revoke_title_reason','důvod k odebrání titulu')|El]."
+ depose_war_defeat_desc_defender: "Ponecháš si své [Concept('titles','tituly')|El] a uvězníš všechny vzbouřené [Concept('vassals','vazaly')|El]."
+ depose_war_defeat_desc: "[defender.GetShortUIName|U] si ponechá [defender.GetHerHis] [Concept('titles','tituly')|El] a uvězní všechny vzbouřené [Concept('vassals','vazaly')|El]."
+ mandala_depose_war_victory_desc_defender: "Tvá [Concept('radiance','záře')|El] bude vážně pošramocena."
+ mandala_depose_war_victory_desc: "[defender.GetShortUINamePossessive|U] [Concept('radiance','záře')|El] bude vážně pošramocena."
+ mandala_depose_war_leaving_tributaries.tt: "[defender.GetShortUIName|U] [defender.LocalPlayerString( 'ztratíš', 'ztratí' )] všechny [Concept('tributaries','tributáře')|El]"
+ refused_liege_demand_war_victory_desc_defender: "Dojde k tvému [Concept('deposed','sesazení')|El]."
+ refused_liege_demand_war_victory_desc: "Dojde k [Concept('deposed','sesazení')|El] postavy [defender.GetShortUIName|U]."
+ refused_liege_demand_war_white_peace_desc_defender: "Uzavřeš příměří s postavou [attacker.GetShortUIName] a získáš proti ní [Concept('revoke_title_reason','důvod k odebrání titulu')|El]."
+ refused_liege_demand_war_white_peace_desc: "[attacker.GetShortUIName|U] a [defender.GetShortUIName] uzavřou příměří. [defender.GetShortUIName|U] získá proti postavě [attacker.GetShortUIName] [Concept('revoke_title_reason','důvod k odebrání titulu')|El]."
+ refused_liege_demand_war_defeat_desc_defender: "[Concept('imprison','Uvězníš')|El] postavu [attacker.GetShortUIName]."
+ refused_liege_demand_war_defeat_desc: "[defender.GetShortUIName|U] [Concept('imprisons','uvězní')|El] postavu [attacker.GetShortUIName]."
+ populist_war_victory_desc_admin: "Vzbouřená [Concept('counties','hrabství')|El] odlišné [Concept('culture','kultury')|El] se stanou nezávislým [Concept('realm','panstvím')|El], jehož [Concept('ruler','vládcem')|El] bude [attacker.GetShortUIName]."
+ populist_war_white_peace_desc_admin: "Vzbouřená [Concept('counties','hrabství')|El] a [Concept('vassals','vazalové')|El] zůstanou součástí [Concept('realm','panství')|El]. [Concept('state_faith','Státní víra')|El] zůstane beze změny."
+ populist_war_defeat_desc_admin: "Vzbouřená [Concept('counties','hrabství')|El] a [Concept('vassals','vazalové')|El] zůstanou součástí [Concept('realm','panství')|El]. [Concept('state_faith','Státní víra')|El] zůstane beze změny. Všichni vzbouření $game_concept_vassals$ budou [Concept('imprisoned','uvězněni')|El] postavou [defender.GetShortUIName]."
  imperial_reconquest_cb: "Císařské znovudobytí"
- IMPERIAL_RECONQUEST_NAME: "Zabrat všechny císařské provincie"
- IMPERIAL_RECONQUEST_WAR_NAME: "[ConcatIfNeitherEmpty('$ORDER|q$', ' ')][ATTACKER.GetPrimaryTitle.GetPrefix]-[DEFENDER.GetPrimaryTitle.GetAdjective] Císařské znovudobytí"
+ IMPERIAL_RECONQUEST_NAME: "Zmocnit se všech císařských provincií"
+ IMPERIAL_RECONQUEST_WAR_NAME: "[ConcatIfNeitherEmpty('$ORDER|q$', ' ')][ATTACKER.GetPrimaryTitle.GetPrefix]-[DEFENDER.GetPrimaryTitle.GetAdjective] císařské znovudobytí"
  IMPERIAL_RECONQUEST_WAR_NAME_BASE: "[ATTACKER.GetPrimaryTitle.GetAdjective][DEFENDER.GetPrimaryTitle.GetName]"
  IMPERIAL_RECONQUEST_SPECIFIC_NAME: "Obnovit císařskou provincii [TITLE.GetNameNoTier]"
- IMPERIAL_RECONQUEST_WAR_SPECIFIC_NAME: "[ConcatIfNeitherEmpty('$ORDER|q$', ' ')][ATTACKER.GetPrimaryTitle.GetPrefix]-[DEFENDER.GetPrimaryTitle.GetAdjective] Císařské znovudobytí"
+ IMPERIAL_RECONQUEST_WAR_SPECIFIC_NAME: "[ConcatIfNeitherEmpty('$ORDER|q$', ' ')][ATTACKER.GetPrimaryTitle.GetPrefix]-[DEFENDER.GetPrimaryTitle.GetAdjective] císařské znovudobytí"
  IMPERIAL_RECONQUEST_WAR_SPECIFIC_NAME_BASE: "[ATTACKER.GetPrimaryTitle.GetAdjective][DEFENDER.GetPrimaryTitle.GetName]"
- dismantle_holy_pretender_cb: "Rozmontovat pretendentství"
- DISMANTLE_EMPIRE_NAME: "Posunout všechna [Concept('de_jure','de iure')|E]" # todo: CONCEPT CASE
- DISMANTLE_EMPIRE_WAR_NAME: "[ConcatIfNeitherEmpty('$ORDER|q$', ' ')][ATTACKER.GetPrimaryTitle.GetPrefix]-[DEFENDER.GetPrimaryTitle.GetAdjective] Císařská válka o legitimitu"
+ dismantle_holy_pretender_cb: "Rozložit samozvaneckou říši"
+ DISMANTLE_EMPIRE_NAME: "Přesunout veškeré [Concept('de_jure','de iure území')|El]"
+ DISMANTLE_EMPIRE_WAR_NAME: "[ConcatIfNeitherEmpty('$ORDER|q$', ' ')][ATTACKER.GetPrimaryTitle.GetPrefix]-[DEFENDER.GetPrimaryTitle.GetAdjective] císařská válka o legitimitu"
  DISMANTLE_EMPIRE_WAR_NAME_BASE: "[ATTACKER.GetPrimaryTitle.GetAdjective][DEFENDER.GetPrimaryTitle.GetName]"
- DISMANTLE_EMPIRE_SPECIFIC_BASE: "Rozmontovat [TITLE.GetNameNoTier]"
- DISMANTLE_EMPIRE_SPECIFIC_NAME: "Rozmontovat [TITLE.GetNameNoTier]"
- DISMANTLE_EMPIRE_WAR_SPECIFIC_NAME: "[ConcatIfNeitherEmpty('$ORDER|q$', ' ')][ATTACKER.GetPrimaryTitle.GetPrefix]-[DEFENDER.GetPrimaryTitle.GetAdjective] Císařská válka o legitimitu"
+ DISMANTLE_EMPIRE_SPECIFIC_BASE: "Rozložit [TITLE.GetNameNoTier]"
+ DISMANTLE_EMPIRE_SPECIFIC_NAME: "Rozložit [TITLE.GetNameNoTier]"
+ DISMANTLE_EMPIRE_WAR_SPECIFIC_NAME: "[ConcatIfNeitherEmpty('$ORDER|q$', ' ')][ATTACKER.GetPrimaryTitle.GetPrefix]-[DEFENDER.GetPrimaryTitle.GetAdjective] císařská válka o legitimitu"
  DISMANTLE_EMPIRE_WAR_SPECIFIC_NAME_BASE: "[ATTACKER.GetPrimaryTitle.GetAdjective][DEFENDER.GetPrimaryTitle.GetName]"
- dismantle_holy_pretender_cb_victory_desc: "$e_hre$ je zničena. Všechny [Concept('de_jure','de iure')|E] $e_hre_adj$ vazalské tituly se místo toho stanou de jure součástí $h_roman_empire_article$$h_roman_empire$." # todo: RETRANSLATED ENGLISH # todo: CONCEPT CASE
- dismantle_holy_pretender_cb_defeat_desc: "$e_hre$ zůstává nedotčené. $h_roman_empire$ musí zaplatit válečné reparace."
- dismantle_byz_pretender_cb: "Rozmontovat pretendentství"
- dismantle_byz_pretender_cb_victory_desc: "$e_byzantium$ je zničena. Všechny [Concept('de_jure','de iure')|E] $e_byzantium_adj$ vazalské tituly se místo toho stanou de jure součástí $h_roman_empire_article$$h_roman_empire$." # todo: RETRANSLATED ENGLISH # todo: CONCEPT CASE
- dismantle_byz_pretender_cb_defeat_desc: "$e_byzantium$ zůstává nedotčené. $h_roman_empire$ musí zaplatit válečné reparace."
- all_vassals_of_defender: "Všichni vazalové [defender.GetShortUIName]"
+ dismantle_holy_pretender_cb_victory_desc: "Titul $e_hre$ bude zničen. Všechny [Concept('de_jure','de iure')|El] $e_hre_adj$ vazalské tituly se místo toho stanou de iure součástí $h_roman_empire_article$$h_roman_empire$."
+ dismantle_holy_pretender_cb_defeat_desc: "Titul $e_hre$ zůstane nedotčen. Titul $h_roman_empire$ musí zaplatit válečné reparace."
+ dismantle_byz_pretender_cb: "Rozložit samozvaneckou říši"
+ dismantle_byz_pretender_cb_victory_desc: "Titul $e_byzantium$ bude zničen. Všechny [Concept('de_jure','de iure')|El] $e_byzantium_adj$ vazalské tituly se místo toho stanou de iure součástí $h_roman_empire_article$$h_roman_empire$."
+ dismantle_byz_pretender_cb_defeat_desc: "Titul $e_byzantium$ zůstane nedotčen. Titul $h_roman_empire$ musí zaplatit válečné reparace."
+ all_vassals_of_defender: "Všichni vazalové postavy [defender.GetShortUIName]"
  vassalization_cb: "Vazalizace"
- VASSALIZATION_CB_NAME: "[Concept('vassalization_casus_belli','Nucená vazalizace')|E] proti [DEFENDER.GetShortUIName]" # todo: CONCEPT CASE
- VASSALIZATION_CB_SPECIFIC_NAME: "Podrobit [DEFENDER.GetShortUIName] vazalovi"
- VASSALIZATION_WAR_NAME: "[ConcatIfNeitherEmpty('$ORDER|q$', ' ')][ATTACKER.GetPrimaryTitle.GetPrefix]-[DEFENDER.GetPrimaryTitle.GetAdjective] Válka o vazalizaci"
+ VASSALIZATION_CB_NAME: "[Concept('vassalization_casus_belli','Vazalizační casus belli')|El] proti postavě [DEFENDER.GetShortUIName]"
+ VASSALIZATION_CB_SPECIFIC_NAME: "Vazalizovat postavu [DEFENDER.GetShortUIName]"
+ VASSALIZATION_WAR_NAME: "[ConcatIfNeitherEmpty('$ORDER|q$', ' ')][ATTACKER.GetPrimaryTitle.GetPrefix]-[DEFENDER.GetPrimaryTitle.GetAdjective] vazalizační válka"
  VASSALIZATION_WAR_NAME_BASE: "[ATTACKER.GetPrimaryTitle.GetAdjective][DEFENDER.GetPrimaryTitle.GetName]"
- vassalization_cb_victory_desc_attacker: "[defender.GetShortUIName|U] se stává vaším [Concept('vassal','vazalem')|E]." # todo: CONCEPT CASE
- vassalization_cb_victory_desc_defender: "Stáváte se [attacker.GetShortUINamePossessive] [Concept('vassal','vazalem')|E]." # todo: CONCEPT CASE
- vassalization_cb_victory_desc: "[defender.GetShortUIName|U] se stává [attacker.GetShortUINamePossessive] [Concept('vassal','vazalem')|E]." # todo: CONCEPT CASE
- vassalization_cb_white_peace_desc_defender: "Zůstáváte nezávislí."
- vassalization_cb_white_peace_desc: "[defender.GetShortUIName|U] zůstává nezávislý."
- vassalization_cb_defeat_desc_attacker: "[defender.GetShortUIName|U] zůstává nezávislý. Všechny [Concept('factions','frakce')|E] proti vám zvýší svůj [Concept('discontent','nespokojenost')|E]." # todo: CONCEPT CASE
- make_tributary_cb: "Podrobit tributárnímu stavu"
- MAKE_TRIBUTARY_CB_NAME: "Přivést [DEFENDER.GetPrimaryTitle.GetNameNoTier] pod [Concept('tributary','tribute')|E]"
- MAKE_TRIBUTARY_WAR_NAME: "[ConcatIfNeitherEmpty('$ORDER|q$', ' ')][ATTACKER.GetPrimaryTitle.GetPrefix]-[DEFENDER.GetPrimaryTitle.GetAdjective] Tributární válka"
+ vassalization_cb_victory_desc_attacker: "[defender.GetShortUIName|U] se stane tvým [Concept('vassal','vazalem')|El]."
+ vassalization_cb_victory_desc_defender: "Staneš se [Concept('vassal','vazalem')|El] postavy [attacker.GetShortUIName]."
+ vassalization_cb_victory_desc: "[defender.GetShortUIName|U] se stane [Concept('vassal','vazalem')|El] postavy [attacker.GetShortUIName]."
+ vassalization_cb_white_peace_desc_defender: "Zůstaneš nezávislý."
+ vassalization_cb_white_peace_desc: "[defender.GetShortUIName|U] zůstane nezávislý."
+ vassalization_cb_defeat_desc_attacker: "[defender.GetShortUIName|U] zůstane nezávislý. Všem [Concept('factions','frakcím')|El] namířeným proti tobě vzroste [Concept('discontent','nespokojenost')|El]."
+ make_tributary_cb: "Podrobení tributu"
+ MAKE_TRIBUTARY_CB_NAME: "Podrobit titul [DEFENDER.GetPrimaryTitle.GetNameNoTier] placení [Concept('tributary','tributu')|El]"
+ MAKE_TRIBUTARY_WAR_NAME: "[ConcatIfNeitherEmpty('$ORDER|q$', ' ')][ATTACKER.GetPrimaryTitle.GetPrefix]-[DEFENDER.GetPrimaryTitle.GetAdjective] tributární válka"
  MAKE_TRIBUTARY_WAR_NAME_BASE: "[ATTACKER.GetPrimaryTitle.GetAdjective][DEFENDER.GetPrimaryTitle.GetName]"
- make_tributary_cb_victory_desc_attacker_mandala_tribal: "[defender.GetShortUIName|U] se stává vaším [GetSubjectContractGroup( 'tributary_mandala_tribal' ).GetName]." # todo: NEW TRANSLATION
- make_tributary_cb_victory_desc_attacker_mandala: "[defender.GetShortUIName|U] se stává vaším [GetSubjectContractGroup( 'tributary_mandala' ).GetName]." # todo: NEW TRANSLATION
- make_tributary_cb_victory_desc_attacker_mandala_subjugated: "[defender.GetShortUIName|U] se stává vaším [GetSubjectContractGroup( 'tributary_subjugated' ).GetName]." # todo: NEW TRANSLATION
- make_tributary_cb_victory_desc_attacker: "[defender.GetShortUIName|U] se stává vaším [tributary|E]."
- make_tributary_cb_victory_desc_defender: "Stáváte se [attacker.GetShortUINamePossessive] [tributary|E]."
- make_tributary_cb_victory_desc: "[defender.GetShortUIName|U] se stává [attacker.GetShortUINamePossessive] [tributary|E]."
- make_tributary_cb_white_peace_desc_defender: "Zůstáváte nezávislí."
- make_tributary_cb_white_peace_desc: "[defender.GetShortUIName|U] zůstává nezávislý."
- make_tributary_cb_defeat_desc_attacker: "[defender.GetShortUIName|U] zůstává nezávislý. Všechny [Concept('factions','frakce')|E] proti vám zvýší své [Concept('discontent','nespokojenost')|E]." # todo: CONCEPT CASE
- make_tributary_temp_protection_tooltip: "[attacker.GetShortUINamePossessive|U] [Concept('tributaries','Tributáři')|E] budou méně pravděpodobně přestávat platit tribut po dobu #V [SCOPE.ScriptValue('temp_tributary_protection_value')|0]#! let" # todo: CONCEPT CASE
- temp_tributary_protection_reason: "[Concept('tributaries','Tributáři')|E] zastrašení [recipient.Custom('GetCowedVassalVarLoc')]: $VALUE|0+=$" # todo: CONCEPT CASE
+ make_tributary_cb_victory_desc_attacker_mandala_tribal: "[defender.GetShortUIName|U] se stane tvým [GetSubjectContractGroup( 'tributary_mandala_tribal' ).GetName]."
+ make_tributary_cb_victory_desc_attacker_mandala: "[defender.GetShortUIName|U] se stane tvým [GetSubjectContractGroup( 'tributary_mandala' ).GetName]."
+ make_tributary_cb_victory_desc_attacker_mandala_subjugated: "[defender.GetShortUIName|U] se stane tvým [GetSubjectContractGroup( 'tributary_subjugated' ).GetName]."
+ make_tributary_cb_victory_desc_attacker: "[defender.GetShortUIName|U] se stane tvým [Concept('tributary','tributářem')|El]."
+ make_tributary_cb_victory_desc_defender: "Staneš se [Concept('tributary','tributářem')|El] postavy [attacker.GetShortUIName]."
+ make_tributary_cb_victory_desc: "[defender.GetShortUIName|U] se stane [Concept('tributary','tributářem')|El] postavy [attacker.GetShortUIName]."
+ make_tributary_cb_white_peace_desc_defender: "Zůstaneš nezávislý."
+ make_tributary_cb_white_peace_desc: "[defender.GetShortUIName|U] zůstane nezávislý."
+ make_tributary_cb_defeat_desc_attacker: "[defender.GetShortUIName|U] zůstane nezávislý. Všem [Concept('factions','frakcím')|El] namířeným proti tobě vzroste [Concept('discontent','nespokojenost')|El]."
+ make_tributary_temp_protection_tooltip: "[Concept('tributaries','Tributáři')|El] postavy [attacker.GetShortUIName|U] budou po dobu #V [SCOPE.ScriptValue('temp_tributary_protection_value')|0]#! let méně náchylní přestat odvádět tribut"
+ temp_tributary_protection_reason: "[Concept('tributaries','Tributáři')|El] zastrašeni [recipient.Custom('GetCowedVassalVarLoc')]: $VALUE|0+=$"
  temp_tributary_protection_reason_var: "#weak (do [GetCurrentDateWithDiff( GetVarTimeRemaining( ROOT.Char.MakeScope, 'temp_tributary_protection') )])#!"
  temp_tributary_protection_reason_no_var: ""
- cease_tribute_disconnected_suzerain: "Odpojeno od [suzerain_possessive|E] [Concept('realm','panství')|E]: $VALUE|0+=$" # todo: CONCEPT CASE
- cease_tribute_landless_suzerain: "[Concept('suzerain','Suzerén')|E] [Concept('unlanded','Bezzemek')|E]: $VALUE|0+=$" # todo: CONCEPT CASE
- must_neighbor_or_neighbor_tributary_tt: "Ne #bold nesousedí#! s vaším [Concept('realm','panstvím')|E] ani s [Concept('realm','panstvím')|E] vašich [tributaries|E]" # todo: CONCEPT CASE
- tribals_can_only_tributarize_other_tribals_tt: "[Concept('tribal','Kmenový')|E] [Concept('rulers','Vládci')|E] mohou podřídit pouze jiné kmenové vládce [Concept('tributary','tribute')|U]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- mandala_tributaries_must_be_destruction: "Vyžaduje úroveň #V 3#! [Concept('aspect_of_destruction','aspekt zkázy')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- no_fighting_other_mandala_tribs: "Máte stejného [Concept('mandala','mandaly')|E] [suzerain|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- diarch_vassalisation_cb: "[Concept('diarch','Diarcha')|E] Obsazení" # todo: CONCEPT CASE
- DIARCH_VASSALIZATION_CB_NAME: "[Concept('diarch','Diarcha')|E] obsazení [DEFENDER.GetShortUINamePossessive] území" # todo: CONCEPT CASE
- DIARCH_VASSALIZATION_CB_SPECIFIC_NAME: "Obsazení [DEFENDER.GetShortUINamePossessive] území"
- DIARCH_VASSALIZATION_WAR_NAME: "[ConcatIfNeitherEmpty('$ORDER|q$', ' ')][ATTACKER.GetPrimaryTitle.GetPrefix]-[DEFENDER.GetPrimaryTitle.GetAdjective] De jure zabavení území"
+ cease_tribute_disconnected_suzerain: "Odpojení od [Concept('realm','panství')|El] [Concept('suzerain_possessive','suzeréna')|El]: $VALUE|0+=$"
+ cease_tribute_landless_suzerain: "[Concept('suzerain','Suzerén')|El] je [Concept('unlanded','bezzemek')|El]: $VALUE|0+=$"
+ must_neighbor_or_neighbor_tributary_tt: "Jejich území #bold nesousedí#! s tvým [Concept('realm','panstvím')|El] ani s panstvím tvých [Concept('tributaries','tributářů')|El]"
+ tribals_can_only_tributarize_other_tribals_tt: "[Concept('tribal','Kmenoví')|El] [Concept('rulers','vládci')|El] mohou podrobit placení [Concept('tributary','tributu')|El] pouze jiné kmenové vládce"
+ mandala_tributaries_must_be_destruction: "Vyžaduje #V 3.#! úroveň [Concept('aspect_of_destruction','aspektu zkázy')|El]"
+ no_fighting_other_mandala_tribs: "Máte stejného [Concept('mandala','mandalového')|El] [Concept('suzerain','suzeréna')|El]"
+ diarch_vassalisation_cb: "[Concept('diarch','Diarchův')|El] zábor"
+ DIARCH_VASSALIZATION_CB_NAME: "[Concept('diarch','Diarchův')|El] zábor [DEFENDER.GetShortUINamePossessive] zemí"
+ DIARCH_VASSALIZATION_CB_SPECIFIC_NAME: "Zábor [DEFENDER.GetShortUINamePossessive] zemí"
+ DIARCH_VASSALIZATION_WAR_NAME: "[ConcatIfNeitherEmpty('$ORDER|q$', ' ')][ATTACKER.GetPrimaryTitle.GetPrefix]-[DEFENDER.GetPrimaryTitle.GetAdjective] zábor de iure území"
  DIARCH_VASSALIZATION_WAR_NAME_BASE: "[ATTACKER.GetPrimaryTitle.GetAdjective][DEFENDER.GetPrimaryTitle.GetName]"
- diarch_vassalization_cb_victory_desc_attacker: "[defender.GetShortUIName|U] se vzdává #EMP všech#! [Concept('titles','titulů')|E] a [Concept('vassals','vazalové')|E], které [Concept('de_jure','de iure')|E] patří vám" # todo: CONCEPT CASE
- diarch_vassalization_cb_victory_desc_defender: "Vzdáváte se #EMP všech#! [Concept('titles','titulů')|E] a [Concept('vassals','vazalové')|E], které [Concept('de_jure','de iure')|E] náleží [attacker.GetShortUIName]" # todo: CONCEPT CASE
- diarch_vassalization_cb_victory_desc: "[defender.GetShortUIName|U] se vzdává #EMP všech#! [Concept('titles','titulů')|E] a [Concept('vassals','vazalové')|E], které [Concept('de_jure','de iure')|E] náleží [attacker.GetShortUIName]" # todo: CONCEPT CASE
- diarch_vassalization_cb_white_peace_desc_defender: "Nepřijdete o nic ve prospěch [attacker.GetShortUIName]."
- diarch_vassalization_cb_white_peace_desc: "[defender.GetShortUIName|U] o nic nepřichází ve prospěch [attacker.GetShortUIName]."
- diarch_vassalization_cb_defeat_desc_attacker: "[defender.GetShortUIName|U] vám nic nepřenechá."
- CONQUEST_CB_TITLE: "Obsadíte všechna území v [defender.GetShortUINamePossessive] [Concept('realm','panství')|E], která jsou součástí [THIS.GetLandedTitle.GetBaseName]" # todo: CONCEPT CASE
- duchy_conquest_cb: "Vévodské dobytí"
+ diarch_vassalization_cb_victory_desc_attacker: "[defender.GetShortUIName|U] ti postoupí #EMP všechny#! [Concept('titles','tituly')|El] a [Concept('vassals','vazaly')|El], které ti náleží [Concept('de_jure','de iure')|El]"
+ diarch_vassalization_cb_victory_desc_defender: "Postoupíš #EMP všechny#! [Concept('titles','tituly')|El] a [Concept('vassals','vazaly')|El], které [Concept('de_jure','de iure')|El] náleží postavě [attacker.GetShortUIName]"
+ diarch_vassalization_cb_victory_desc: "[defender.GetShortUIName|U] postoupí #EMP všechny#! [Concept('titles','tituly')|El] a [Concept('vassals','vazaly')|El], které [Concept('de_jure','de iure')|El] náleží postavě [attacker.GetShortUIName]"
+ diarch_vassalization_cb_white_peace_desc_defender: "Ve prospěch postavy [attacker.GetShortUIName] nic neztratíš."
+ diarch_vassalization_cb_white_peace_desc: "[defender.GetShortUIName|U] ve prospěch postavy [attacker.GetShortUIName] nic neztratí."
+ diarch_vassalization_cb_defeat_desc_attacker: "[defender.GetShortUIName|U] ve tvůj prospěch nic neztratí."
+ CONQUEST_CB_TITLE: "Zmocníš se veškerého území v rámci [defender.GetShortUINamePossessive] [Concept('realm','panství')|El], které je součástí titulu [THIS.GetLandedTitle.GetBaseName]"
+ duchy_conquest_cb: "Dobytí vévodství"
  county_conquest_cb: "Dobytí hrabství"
- county_conquest_cb_victory_desc_attacker: "Získáte sporné [Concept('titles','tituly')|E]." # todo: CONCEPT CASE
- county_conquest_cb_victory_desc: "[attacker.GetShortUIName|U] získává sporný [Concept('title','titul')|E]." # todo: CONCEPT CASE
- county_conquest_cb_victory_desc_remain_laamp: "Náhodný člen [Concept('peasant_faction','$peasant_faction$')|E] získá sporné [Concept('titles','tituly')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- taken_county_remain_laamp: "Předáte [Concept('title','titul')|E] [peasant_leader.GetShortUIName] jako jeho nového právoplatného [Concept('ruler','vládce')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- county_conquest_cb_white_peace_desc_defender: "Udržíte si sporný [Concept('title','titul')|E]." # todo: CONCEPT CASE
- county_conquest_cb_white_peace_desc: "[defender.GetShortUIName|U] si udrží sporný [Concept('title','titul')|E]." # todo: CONCEPT CASE
- county_conquest_cb_defeat_desc_defender: "Udržíte si sporný [Concept('title','titul')|E]." # todo: CONCEPT CASE
- county_conquest_cb_defeat_desc_attacker: "[defender.GetShortUIName|U] si udrží sporný [Concept('title','titul')|E]. Všechny [Concept('factions','frakce')|E] proti vám zvýší své [Concept('discontent','nespokojenost')|E]." # todo: CONCEPT CASE
- county_conquest_cb_defeat_desc: "[defender.GetShortUIName|U] si udrží sporný [Concept('title','titul')|E]." # todo: CONCEPT CASE
- ducal_conquest_cb_victory_desc_attacker: "Získáte sporné [Concept('titles','tituly')|E]." # todo: CONCEPT CASE
- ducal_conquest_cb_victory_desc: "[attacker.GetShortUIName|U] získává sporné [Concept('titles','tituly')|E]." # todo: CONCEPT CASE
- ducal_conquest_cb_white_peace_desc_defender: "Udržíte si sporné [Concept('titles','tituly')|E]." # todo: CONCEPT CASE
- ducal_conquest_cb_white_peace_desc: "[defender.GetShortUIName|U] si udrží sporné [Concept('titles','tituly')|E]." # todo: CONCEPT CASE
- ducal_conquest_cb_defeat_desc_defender: "Udržíte si sporné [Concept('titles','tituly')|E]." # todo: CONCEPT CASE
- ducal_conquest_cb_defeat_desc_attacker: "[defender.GetShortUIName|U] si udrží sporný titul. Všechny [Concept('factions','frakce')|E] proti vám zvýší své [Concept('discontent','nespokojenost')|E]." # todo: CONCEPT CASE
- ducal_conquest_cb_defeat_desc: "[defender.GetShortUIName|U] si udrží sporné [Concept('titles','tituly')|E]." # todo: CONCEPT CASE
- BARBARIAN_ADMIN_CONQUEST_DUCHY_CB_NAME: "Zabrat okrajová [Concept('duchy','vévodství')|E]" # todo: CONCEPT CASE
+ county_conquest_cb_victory_desc_attacker: "Získáš sporné [Concept('titles','tituly')|El]."
+ county_conquest_cb_victory_desc: "[attacker.GetShortUIName|U] získá sporný [Concept('title','titul')|El]."
+ county_conquest_cb_victory_desc_remain_laamp: "Náhodný člen [Concept('peasant_faction','selské frakce')|El] získá sporné [Concept('titles','tituly')|El]"
+ taken_county_remain_laamp: "Předáš [Concept('title','titul')|El] postavě [peasant_leader.GetShortUIName] jako jeho novému právoplatnému [Concept('ruler','vládci')|El]"
+ county_conquest_cb_white_peace_desc_defender: "Sporný [Concept('title','titul')|El] si ponecháš."
+ county_conquest_cb_white_peace_desc: "[defender.GetShortUIName|U] si ponechá sporný [Concept('title','titul')|El]."
+ county_conquest_cb_defeat_desc_defender: "Sporný [Concept('title','titul')|El] si ponecháš."
+ county_conquest_cb_defeat_desc_attacker: "[defender.GetShortUIName|U] si ponechá sporný [Concept('title','titul')|El]. Všem [Concept('factions','frakcím')|El] namířeným proti tobě vzroste [Concept('discontent','nespokojenost')|El]."
+ county_conquest_cb_defeat_desc: "[defender.GetShortUIName|U] si ponechá sporný [Concept('title','titul')|El]."
+ ducal_conquest_cb_victory_desc_attacker: "Získáš sporné [Concept('titles','tituly')|El]."
+ ducal_conquest_cb_victory_desc: "[attacker.GetShortUIName|U] získá sporné [Concept('titles','tituly')|El]."
+ ducal_conquest_cb_white_peace_desc_defender: "Sporné [Concept('titles','tituly')|El] si ponecháš."
+ ducal_conquest_cb_white_peace_desc: "[defender.GetShortUIName|U] si ponechá sporné [Concept('titles','tituly')|El]."
+ ducal_conquest_cb_defeat_desc_defender: "Sporné [Concept('titles','tituly')|El] si ponecháš."
+ ducal_conquest_cb_defeat_desc_attacker: "[defender.GetShortUIName|U] si ponechá sporný titul. Všem [Concept('factions','frakcím')|El] namířeným proti tobě vzroste [Concept('discontent','nespokojenost')|El]."
+ ducal_conquest_cb_defeat_desc: "[defender.GetShortUIName|U] si ponechá sporné [Concept('titles','tituly')|El]."
+ BARBARIAN_ADMIN_CONQUEST_DUCHY_CB_NAME: "[Concept('seize_peripheral_duchy','Zabrat okrajové vévodství')|El]"
  admin_barbarian_conquest_cb: "$BARBARIAN_ADMIN_CONQUEST_DUCHY_CB_NAME$"
- CONQUEST_COUNTY_CB_NAME: "Dobýt [Concept('county','hrabství')|E]" # todo: CONCEPT CASE
- CONQUEST_DUCHY_CB_NAME: "Dobýt [Concept('duchy','vévodství')|E]" # todo: CONCEPT CASE
- CONQUEST_CB_SPECIFIC_NAME: "Dobýt [TITLE.GetBaseName]"
- CONQUEST_CB_NAME: "Dobýt [TITLE.GetBaseName]"
- CONQUEST_WAR_NAME: "[ConcatIfNeitherEmpty('$ORDER|q$', ' ')][ATTACKER.GetPrimaryTitle.GetAdjective] Dobytí [TITLE.GetBaseName]"
+ CONQUEST_COUNTY_CB_NAME: "Dobýt [Concept('county','hrabství')|El]"
+ CONQUEST_DUCHY_CB_NAME: "Dobýt [Concept('duchy','vévodství')|El]"
+ CONQUEST_CB_SPECIFIC_NAME: "Dobýt titul [TITLE.GetBaseName]"
+ CONQUEST_CB_NAME: "Dobýt titul [TITLE.GetBaseName]"
+ CONQUEST_WAR_NAME: "[ConcatIfNeitherEmpty('$ORDER|q$', ' ')][ATTACKER.GetPrimaryTitle.GetAdjective] dobytí titulu [TITLE.GetBaseName]"
  CONQUEST_WAR_NAME_BASE: "[ATTACKER.GetPrimaryTitle.GetAdjective][DEFENDER.GetPrimaryTitle.GetName]"
  ducal_conquest_cb: "Vévodské dobytí"
- DUCAL_CONQUEST_CB_NAME: "[Concept('ducal_conquest','Vévodské dobytí')|E] z [Concept('county','hrabství')|E]" # todo: CONCEPT CASE
- DUCAL_CONQUEST_CB_SPECIFIC_NAME: "Vévodské dobytí [TITLE.GetBaseName]"
- DUCAL_CONQUEST_WAR_NAME: "[ConcatIfNeitherEmpty('$ORDER|q$', ' ')][ATTACKER.GetPrimaryTitle.GetAdjectiveNoTooltip] Vévodské dobytí [TITLE.GetBaseNameNoTooltip]"
+ DUCAL_CONQUEST_CB_NAME: "[Concept('ducal_conquest','Vévodské dobytí')|El] [Concept('county','hrabství')|El]"
+ DUCAL_CONQUEST_CB_SPECIFIC_NAME: "Vévodské dobytí titulu [TITLE.GetBaseName]"
+ DUCAL_CONQUEST_WAR_NAME: "[ConcatIfNeitherEmpty('$ORDER|q$', ' ')][ATTACKER.GetPrimaryTitle.GetAdjectiveNoTooltip] vévodské dobytí titulu [TITLE.GetBaseNameNoTooltip]"
  DUCAL_CONQUEST_WAR_NAME_BASE: "[ATTACKER.GetPrimaryTitle.GetAdjective][DEFENDER.GetPrimaryTitle.GetName]"
  tribal_subjugation_cb: "Podrobení"
- SUBJUGATION_CB_NAME: "Podrobit [DEFENDER.GetShortUIName]"
- SUBJUGATION_CB_SPECIFIC_NAME: "Podrobit [DEFENDER.GetShortUIName]"
- SUBJUGATION_WAR_NAME: "[ConcatIfNeitherEmpty('$ORDER|q$', ' ')][ATTACKER.GetPrimaryTitle.GetPrefix]-[DEFENDER.GetPrimaryTitle.GetAdjective] Válka o podrobení"
+ SUBJUGATION_CB_NAME: "Podrobit postavu [DEFENDER.GetShortUIName]"
+ SUBJUGATION_CB_SPECIFIC_NAME: "Podrobit postavu [DEFENDER.GetShortUIName]"
+ SUBJUGATION_WAR_NAME: "[ConcatIfNeitherEmpty('$ORDER|q$', ' ')][ATTACKER.GetPrimaryTitle.GetPrefix]-[DEFENDER.GetPrimaryTitle.GetAdjective] válka za podrobení"
  SUBJUGATION_WAR_NAME_BASE: "[ATTACKER.GetPrimaryTitle.GetAdjective][DEFENDER.GetPrimaryTitle.GetName]"
- tribal_subjugation_cb_victory_desc_equal_tier_attacker: "Vezmete [defender.GetShortUINamePossessive] [Concept('primary_title','hlavní titul')|E] a učiníte z [defender.GetHerHim] svého [Concept('vassal','vazala')|E]." # todo: CONCEPT CASE
- tribal_subjugation_cb_victory_desc_equal_tier_defender: "[attacker.GetShortUIName|U] vezme váš [Concept('primary_title','hlavní titul')|E] a učiní z vás [Concept('vassal','vazala')|E]." # todo: CONCEPT CASE
- tribal_subjugation_cb_victory_desc_equal_tier: "[attacker.GetShortUIName|U] vezme [defender.GetShortUINamePossessive] [Concept('primary_title','hlavní titul')|E] a učiní z [defender.GetShortUIName] [Concept('vassal','vazala')|E]." # todo: CONCEPT CASE
- tribal_subjugation_cb_white_peace_desc_defender: "Udržíte si všechny své [Concept('titles','tituly')|E] a zůstáváte nezávislí." # todo: CONCEPT CASE
- tribal_subjugation_cb_white_peace_desc: "[defender.GetShortUIName|U] si udrží všechny [Select_CString(defender.IsFemale,'její','jeho')] tituly a zůstává nezávislý."
- tribal_subjugation_cb_defeat_desc_attacker: "[defender.GetShortUIName|U] zůstává nezávislý. Všechny [Concept('factions','frakce')|E] proti vám zvýší své [Concept('discontent','nespokojenost')|E]." # todo: CONCEPT CASE
- ireland_laudabiliter_conquest_cb: "Laudabiliterovo dobytí"
- LAUDABILITER_CONQUEST_CB_NAME: "Dobýt [Concept('county','hrabství')|E] (Laudabiliter)" # todo: CONCEPT CASE
- LAUDABILITER_CONQUEST_CB_SPECIFIC_NAME: "Dobýt [TITLE.GetBaseName]"
- LAUDABILITER_CONQUEST_WAR_NAME: "[ConcatIfNeitherEmpty('$ORDER|q$', ' ')]dobytí [TITLE.GetBaseName] podle Laudabiliteru"
+ tribal_subjugation_cb_victory_desc_equal_tier_attacker: "Získáš [Concept('primary_title','hlavní titul')|El] postavy [defender.GetShortUIName] a učiníš z ní svého [Concept('vassal','vazala')|El]."
+ tribal_subjugation_cb_victory_desc_equal_tier_defender: "[attacker.GetShortUIName|U] získá tvůj [Concept('primary_title','hlavní titul')|El] a ty se staneš [Concept('vassal','vazalem')|El]."
+ tribal_subjugation_cb_victory_desc_equal_tier: "[attacker.GetShortUIName|U] získá [Concept('primary_title','hlavní titul')|El] postavy [defender.GetShortUIName] a učiní z ní [Concept('vassal','vazala')|El]."
+ tribal_subjugation_cb_white_peace_desc_defender: "Ponecháš si všechny své [Concept('titles','tituly')|El] a zachováš si nezávislost."
+ tribal_subjugation_cb_white_peace_desc: "[defender.GetShortUIName|U] si ponechá všechny své tituly a zachová si nezávislost."
+ tribal_subjugation_cb_defeat_desc_attacker: "[defender.GetShortUIName|U] si zachová nezávislost. Všem [Concept('factions','frakcím')|El] namířeným proti tobě vzroste [Concept('discontent','nespokojenost')|El]."
+ ireland_laudabiliter_conquest_cb: "Dobytí podle buly Laudabiliter"
+ LAUDABILITER_CONQUEST_CB_NAME: "Dobýt [Concept('county','hrabství')|El] na základě buly Laudabiliter"
+ LAUDABILITER_CONQUEST_CB_SPECIFIC_NAME: "Dobýt titul [TITLE.GetBaseName]"
+ LAUDABILITER_CONQUEST_WAR_NAME: "[ConcatIfNeitherEmpty('$ORDER|q$', ' ')]dobytí titulu [TITLE.GetBaseName] na základě buly Laudabiliter"
  LAUDABILITER_CONQUEST_WAR_NAME_BASE: "[ATTACKER.GetPrimaryTitle.GetAdjective][DEFENDER.GetPrimaryTitle.GetName]"
- ireland_laudabiliter_conquest_cb_victory_desc_attacker: "Vezmete všechny tituly, které [defender.GetShortUIName] drží v Irsku."
- ireland_laudabiliter_conquest_cb_victory_desc_defender: "[attacker.GetShortUIName|U] vezme všechny tituly, které držíte v Irsku."
- ireland_laudabiliter_conquest_cb_victory_desc: "[attacker.GetShortUIName|U] vezme všechny tituly, které [defender.GetShortUIName] drží v Irsku."
- ireland_laudabiliter_conquest_cb_white_peace_desc_defender: "Udržíte si všechny sporné tituly."
- ireland_laudabiliter_conquest_cb_white_peace_desc: "[defender.GetShortUIName|U] si udrží všechny sporné tituly."
- ireland_laudabiliter_conquest_cb_defeat_desc_defender: "Udržíte si všechny sporné tituly."
- ireland_laudabiliter_conquest_cb_defeat_desc_attacker: "[defender.GetShortUIName|U] si udrží všechny sporné tituly. Všechny [Concept('factions','frakce')|E] proti vám zvýší své [Concept('discontent','nespokojenost')|E]." # todo: CONCEPT CASE
- ireland_laudabiliter_conquest_cb_defeat_desc: "[defender.GetShortUIName|U] si udrží všechny sporné tituly."
+ ireland_laudabiliter_conquest_cb_victory_desc_attacker: "Získáš všechny tituly, které [defender.GetShortUIName] drží v Irsku."
+ ireland_laudabiliter_conquest_cb_victory_desc_defender: "[attacker.GetShortUIName|U] získá všechny tituly, které držíš v Irsku."
+ ireland_laudabiliter_conquest_cb_victory_desc: "[attacker.GetShortUIName|U] získá všechny tituly, které [defender.GetShortUIName] drží v Irsku."
+ ireland_laudabiliter_conquest_cb_white_peace_desc_defender: "Ponecháš si všechny sporné tituly."
+ ireland_laudabiliter_conquest_cb_white_peace_desc: "[defender.GetShortUIName|U] si ponechá všechny sporné tituly."
+ ireland_laudabiliter_conquest_cb_defeat_desc_defender: "Ponecháš si všechny sporné tituly."
+ ireland_laudabiliter_conquest_cb_defeat_desc_attacker: "[defender.GetShortUIName|U] si ponechá všechny sporné tituly. Všem [Concept('factions','frakcím')|El] namířeným proti tobě vzroste [Concept('discontent','nespokojenost')|El]."
+ ireland_laudabiliter_conquest_cb_defeat_desc: "[defender.GetShortUIName|U] si ponechá všechny sporné tituly."
  invasion_war: "Invaze"
  clan_invasion_war: "Klanová invaze"
- INVASION_CB_NAME: "Vtrhnout do [Concept('kingdom','království')|E]" # todo: CONCEPT CASE
- INVASION_CB_SPECIFIC_NAME: "Invaze do [TITLE.GetBaseName]"
- INVASION_WAR_NAME: "[ConcatIfNeitherEmpty('$ORDER|q$', ' ')][ATTACKER.GetPrimaryTitle.GetAdjective] Invaze do [TITLE.GetBaseName]"
+ INVASION_CB_NAME: "Napadnout [Concept('kingdom','království')|El]"
+ INVASION_CB_SPECIFIC_NAME: "Invaze do titulu [TITLE.GetBaseName]"
+ INVASION_WAR_NAME: "[ConcatIfNeitherEmpty('$ORDER|q$', ' ')][ATTACKER.GetPrimaryTitle.GetAdjective] invaze do titulu [TITLE.GetBaseName]"
  INVASION_WAR_NAME_BASE: "[ATTACKER.GetPrimaryTitle.GetAdjective][DEFENDER.GetPrimaryTitle.GetName]"
  mongol_invasion_war: "Mongolská invaze"
- mongol_realm_invasion_war: "Mongolská invaze do říše"
- MONGOL_INVASION_WAR_NAME: "Mongolská invaze do [TITLE.GetNameNoTier]"
- MONGOL_INVASION_KINGDOM_CB_NAME: "Mongolská invaze do [Concept('kingdom','království')|E]" # todo: CONCEPT CASE
- MONGOL_INVASION_EMPIRE_CB_NAME: "Mongolská invaze do [Concept('empire','říše')|E]" # todo: CONCEPT CASE
- mongol_invasion_war_victory_desc_attacker: "Zabíráte všechny tituly v [defender.GetShortUINamePossessive] [Concept('realm','panství')|E], které [Concept('de_jure','de iure')|E] náleží cílovému titulu." # todo: CONCEPT CASE
- invasion_war_victory_desc_attacker: "Zabíráte všechny tituly v [defender.GetShortUINamePossessive] [Concept('realm','panství')|E], které [Concept('de_jure','de iure')|E] náleží cílovému titulu, a všechny obsazené hrabství mimo něj." # todo: CONCEPT CASE
- mongol_invasion_war_victory_desc: "[attacker.GetShortUIName|U] zabírá všechny tituly v [defender.GetShortUINamePossessive] [Concept('realm','panství')|E], které [Concept('de_jure','de iure')|E] náleží cílovému titulu." # todo: CONCEPT CASE
- invasion_war_victory_desc: "[attacker.GetShortUIName|U] zabírá všechny tituly v [defender.GetShortUINamePossessive] [Concept('realm','panství')|E], které [Concept('de_jure','de iure')|E] náleží cílovému titulu, a všechna obsazená hrabství mimo něj." # todo: CONCEPT CASE
- invasion_war_white_peace_desc_defender: "Udržíte si své tituly."
- invasion_war_white_peace_desc: "[defender.GetShortUIName|U] si udrží [Select_CString(defender.IsFemale,'její','jeho')] tituly."
- CLAN_INVASION_CB_NAME: "Podrobit [Concept('kingdom','království')|E]" # todo: CONCEPT CASE
- clan_invasion_war_victory_desc_attacker: "Vaselizujete všechny tituly v [defender.GetShortUINamePossessive] [Concept('realm','panství')|E], které [Concept('de_jure','de iure')|E] náleží cílovému titulu." # todo: CONCEPT CASE
- clan_invasion_war_victory_desc: "[attacker.GetShortUIName|U] vaselizuje všechny tituly v [defender.GetShortUINamePossessive] [Concept('realm','panství')|E], které [Concept('de_jure','de iure')|E] náleží cílovému titulu." # todo: CONCEPT CASE
- invasion_war_warning_desc: "\n\n#X Můžete během života podniknout pouze jednu invazi [Concept('war','válku')|E] proti [Concept('kingdom','království')|E]-úrovňovému [Concept('title','titulu')|E]#!" # todo: CONCEPT CASE
- hungarian_invasion_war_victory_desc_attacker: "Zabíráte všechny tituly v [defender.GetShortUINamePossessive] [Concept('realm','panství')|E] v Panonské pánvi. Všechna území mimo ni budou opuštěna." # todo: CONCEPT CASE
- hungarian_invasion_war_victory_desc: "Zabírá všechny tituly v [defender.GetShortUINamePossessive] [Concept('realm','panství')|E] v Panonské pánvi. Všechna území mimo ni budou opuštěna." # todo: CONCEPT CASE
- hungarian_invasion_war_warning_desc: "\n\n#X Migraci lze v jedné kampani provést jen jednou, kýmkoli.#!"
+ mongol_realm_invasion_war: "Mongolská invaze do panství"
+ MONGOL_INVASION_WAR_NAME: "Mongolská invaze do titulu [TITLE.GetNameNoTier]"
+ MONGOL_INVASION_KINGDOM_CB_NAME: "Mongolská invaze do [Concept('kingdom','království')|El]"
+ MONGOL_INVASION_EMPIRE_CB_NAME: "Mongolská invaze do [Concept('empire','říše')|El]"
+ mongol_invasion_war_victory_desc_attacker: "Zmocníš se všech titulů v panství postavy [defender.GetShortUIName], které [Concept('de_jure','de iure')|El] náleží k cílovému titulu."
+ invasion_war_victory_desc_attacker: "Zmocníš se všech titulů v panství postavy [defender.GetShortUIName], které [Concept('de_jure','de iure')|El] náleží k cílovému titulu, a všech okupovaných hrabství mimo něj."
+ mongol_invasion_war_victory_desc: "[attacker.GetShortUIName|U] se zmocní všech titulů v panství postavy [defender.GetShortUIName], které [Concept('de_jure','de iure')|El] náleží k cílovému titulu."
+ invasion_war_victory_desc: "[attacker.GetShortUIName|U] se zmocní všech titulů v panství postavy [defender.GetShortUIName], které [Concept('de_jure','de iure')|El] náleží k cílovému titulu, a všech okupovaných hrabství mimo něj."
+ invasion_war_white_peace_desc_defender: "Ponecháš si své tituly."
+ invasion_war_white_peace_desc: "[defender.GetShortUIName|U] si ponechá své tituly."
+ CLAN_INVASION_CB_NAME: "Podrobit [Concept('kingdom','království')|El]"
+ clan_invasion_war_victory_desc_attacker: "Vazalizuješ všechny tituly v panství postavy [defender.GetShortUIName], které [Concept('de_jure','de iure')|El] náleží k cílovému titulu."
+ clan_invasion_war_victory_desc: "[attacker.GetShortUIName|U] vazalizuje všechny tituly v panství postavy [defender.GetShortUIName], které [Concept('de_jure','de iure')|El] náleží k cílovému titulu."
+ invasion_war_warning_desc: "\n\n#X Za jeden život se můžeš pokusit pouze o jednu invazní [Concept('war','válku')|El] proti [Concept('title','titulu')|El] úrovně [Concept('kingdom','království')|El]#!"
+ hungarian_invasion_war_victory_desc_attacker: "Zmocníš se všech titulů v panství postavy [defender.GetShortUIName], které leží v Panonské pánvi. Všechna území mimo ni budou opuštěna."
+ hungarian_invasion_war_victory_desc: "Zmocní se všech titulů v panství postavy [defender.GetShortUIName], které leží v Panonské pánvi. Všechna území mimo ni budou opuštěna."
+ hungarian_invasion_war_warning_desc: "\n\n#X O migraci se může během jedné kampaně pokusit pouze jediná postava.#!"
  HUNGARIAN_INVASION_WAR_NAME: "$mogyer$ migrace do [TITLE.GetBaseName]"
  HUNGARIAN_INVASION_WAR_NAME_BASE: ""
- HUNGARIAN_INVASION_CB_NAME: "Migrace do Panonie"
- launch_hungarian_migration_scripted_effect.tt.pannonia_renamed: "$KINGDOM_PANNONIA$ se stává $k_hungary$"
- launch_hungarian_migration_scripted_effect.tt.pannonia_renamed_and_usurped: "$KINGDOM_PANNONIA$ vytvořeno a přejmenováno na $k_hungary$"
- launch_hungarian_migration_scripted_effect.tt.destroy_other_kingdoms: "Všechna [Concept('kingdoms','království')|E] držená mimo $k_hungary$ jsou zničena" # todo: CONCEPT CASE
- launch_hungarian_migration_scripted_effect.tt.mogyers_move_to_pannonia: "$mogyer_collective_noun$ se nastěhují do většiny $avar$ [Concept('counties','hrabství')|E] v rámci $k_hungary$" # todo: CONCEPT CASE
- launch_hungarian_migration_scripted_effect.tt.mogyers_outside_pannonia: "$pecheneg_collective_noun$ se nastěhují do všech $mogyer$ [Concept('counties','hrabství')|E] ve vašem [Concept('realm','panství')|E] mimo $k_hungary$" # todo: CONCEPT CASE
- launch_hungarian_migration_scripted_effect.tt.territory_outside_pannonia.non_mogyer_vassals: "Ne-$mogyer$ [Concept('vassals','vazalové')|E] mimo $k_hungary$ se stanou [Concept('independent','nezávislým')|E]" # todo: CONCEPT CASE
- launch_hungarian_migration_scripted_effect.tt.territory_outside_pannonia.mogyer_vassals: "$mogyer$ [Concept('vassals','Vazalové')|E] mimo $k_hungary$ jsou přiřazeni [Concept('titles','tituly')|E] z vašich volných dobytých titulů v $k_hungary$" # todo: CONCEPT CASE
- launch_hungarian_migration_scripted_effect.tt.territory_outside_pannonia.former_territories: "Země řízené $mogyer$ [Concept('vassals','vazalové')|E] mimo $k_hungary$ jsou postoupeny místním válečníkům" # todo: CONCEPT CASE
+ HUNGARIAN_INVASION_CB_NAME: "Přesídlit do Panonie"
+ launch_hungarian_migration_scripted_effect.tt.pannonia_renamed: "$KINGDOM_PANNONIA$ se změní na $k_hungary$"
+ launch_hungarian_migration_scripted_effect.tt.pannonia_renamed_and_usurped: "Vznikne $KINGDOM_PANNONIA$, které bude přejmenováno na $k_hungary$"
+ launch_hungarian_migration_scripted_effect.tt.destroy_other_kingdoms: "Všechna [Concept('kingdoms','království')|El] držená mimo $k_hungary$ budou zničena"
+ launch_hungarian_migration_scripted_effect.tt.mogyers_move_to_pannonia: "$mogyer_collective_noun$ se usadí ve většině $avar$ [Concept('counties','hrabství')|El] v rámci $k_hungary$"
+ launch_hungarian_migration_scripted_effect.tt.mogyers_outside_pannonia: "$pecheneg_collective_noun$ se usadí ve všech $mogyer$ [Concept('counties','hrabstvích')|El] tvého [Concept('realm','panství')|El] mimo $k_hungary$"
+ launch_hungarian_migration_scripted_effect.tt.territory_outside_pannonia.non_mogyer_vassals: "Vazalové mimo $k_hungary$, kteří nejsou $mogyer$, se stanou [Concept('independent','nezávislými')|El]"
+ launch_hungarian_migration_scripted_effect.tt.territory_outside_pannonia.mogyer_vassals: "$mogyer$ [Concept('vassals','vazalům')|El] mimo $k_hungary$ budou přiděleny [Concept('titles','tituly')|El] z tvých zbývajících dobytých $game_concept_titles$ v rámci $k_hungary$"
+ launch_hungarian_migration_scripted_effect.tt.territory_outside_pannonia.former_territories: "Země ovládané $mogyer$ [Concept('vassals','vazaly')|El] mimo $k_hungary$ připadnou místním vojevůdcům"
  pax_romana_invasion_war: "Pax Romana"
  PAX_ROMANA_INVASION_WAR_NAME: "Římská invaze do [Title.GetNameNoTier]"
- PAX_ROMANA_INVASION_EMPIRE_CB_NAME: "Římská invaze do [Concept('empire','říše')|E]" # todo: CONCEPT CASE
- pax_romana_invasion_war_victory_desc_attacker: "$invasion_war_victory_desc_attacker$ [Glossary( 'Pax Romana', 'PAX_ROMANA_GLOSS' )] roste."
- pax_romana_invasion_war_victory_desc: "[attacker.GetShortUIName|U] zabírá všechny tituly v [defender.GetShortUINamePossessive] [Concept('realm','panství')|E], které [Concept('de_jure','de iure')|E] náleží cílovému titulu." # todo: CONCEPT CASE
- msg_pax_romana_invasion_war_invalidated_message: "$PAX_ROMANA_INVASION_WAR_NAME$ zrušeno!"
- PAX_ROMANA_GLOSS: "Termín #bold Pax Romana#! — latinská fráze znamenající „Římský mír“ — byl historicky používán k popisu období „míru“, zahájeného Augustusovým vítězstvím u Aktia. Tento výraz neznamená nepřítomnost válek, ale spíše to, že všichni soupeři Říma byli podrobeni."
+ PAX_ROMANA_INVASION_EMPIRE_CB_NAME: "Římská invaze do [Concept('empire','říše')|El]"
+ pax_romana_invasion_war_victory_desc_attacker: "$invasion_war_victory_desc_attacker$ [Glossary( 'Pax Romana', 'PAX_ROMANA_GLOSS' )] se rozšiřuje."
+ pax_romana_invasion_war_victory_desc: "[attacker.GetShortUIName|U] se zmocní všech titulů v panství postavy [defender.GetShortUIName], které [Concept('de_jure','de iure')|El] náleží k cílovému titulu."
+ msg_pax_romana_invasion_war_invalidated_message: "$PAX_ROMANA_INVASION_WAR_NAME$ byla zneplatněna!"
+ PAX_ROMANA_GLOSS: "#bold Pax Romana#! – latinské slovní spojení znamenající „římský mír“ – se historicky používá k označení období „míru“, které započalo Augustovým vítězstvím u Actia. Neoznačuje nepřítomnost válek, nýbrž skutečnost, že všichni nepřátelé Říma byli podrobeni."
  tribal_raid_cb: "Nájezd"
- TRIBAL_RAID_CB_NAME: "Nájezd na [DEFENDER.GetPrimaryTitle.GetNameNoTier]"
- TRIBAL_RAID_CB_SPECIFIC_NAME: "Nájezd na [DEFENDER.GetPrimaryTitle.GetNameNoTier]"
- TRIBAL_RAID_WAR_NAME: "[ConcatIfNeitherEmpty('$ORDER|q$', ' ')][ATTACKER.GetPrimaryTitle.GetAdjective] Nájezd na [DEFENDER.GetPrimaryTitle.GetNameNoTier]"
+ TRIBAL_RAID_CB_NAME: "Podniknout nájezd na [DEFENDER.GetPrimaryTitle.GetNameNoTier]"
+ TRIBAL_RAID_CB_SPECIFIC_NAME: "Podniknout nájezd na [DEFENDER.GetPrimaryTitle.GetNameNoTier]"
+ TRIBAL_RAID_WAR_NAME: "[ConcatIfNeitherEmpty('$ORDER|q$', ' ')][ATTACKER.GetPrimaryTitle.GetAdjective] nájezd na [DEFENDER.GetPrimaryTitle.GetNameNoTier]"
  TRIBAL_RAID_WAR_NAME_BASE: "[ATTACKER.GetPrimaryTitle.GetAdjective][DEFENDER.GetPrimaryTitle.GetName]"
- flowery_war_cb: "Nájezd pro zajatce"
- FLOWERY_WAR_CB_NAME: "[Concept('flowery_war','Nájezd za zajatci')|E] proti [DEFENDER.GetPrimaryTitle.GetNameNoTier]" # todo: CONCEPT CASE
- FLOWERY_WAR_CB_SPECIFIC_NAME: "Nájezd pro zajatce proti [DEFENDER.GetPrimaryTitle.GetBaseNameNoTier]"
- FLOWERY_WAR_WAR_NAME: "[ConcatIfNeitherEmpty('$ORDER|q$', ' ')][ATTACKER.GetPrimaryTitle.GetAdjective] Nájezd za zajatci proti [DEFENDER.GetPrimaryTitle.GetNameNoTier]"
+ flowery_war_cb: "Nájezd za zajatci"
+ FLOWERY_WAR_CB_NAME: "[Concept('flowery_war','Nájezd za zajatci')|El] proti [DEFENDER.GetPrimaryTitle.GetNameNoTier]"
+ FLOWERY_WAR_CB_SPECIFIC_NAME: "Nájezd za zajatci proti [DEFENDER.GetPrimaryTitle.GetBaseNameNoTier]"
+ FLOWERY_WAR_WAR_NAME: "[ConcatIfNeitherEmpty('$ORDER|q$', ' ')][ATTACKER.GetPrimaryTitle.GetAdjective] nájezd za zajatci proti [DEFENDER.GetPrimaryTitle.GetNameNoTier]"
  FLOWERY_WAR_WAR_NAME_BASE: "[ATTACKER.GetPrimaryTitle.GetAdjective][DEFENDER.GetPrimaryTitle.GetName]"
- flowery_war_cb_prisoners.tt_attacker: "Bude zajato tři až pět [defender.GetShortUINamePossessive] [Concept('courtiers','dvořané')|E], v závislosti na [Select_CString(defender.IsFemale,'jejímu','jeho')] stupni." # todo: CONCEPT CASE
- flowery_war_cb_prisoners.tt_defender: "Bude zajato tři až pět [attacker.GetShortUINamePossessive] [Concept('courtiers','dvořané')|E], v závislosti na [Select_CString(attacker.IsFemale,'jejímu','jeho')] stupni." # todo: CONCEPT CASE
- CASUS_BELLI_CLAIM_NO_CLAIMS_TO_PUSH: "Žádné [Concept('claims','nároky')|E] k uplatnění" # todo: CONCEPT CASE
+ flowery_war_cb_prisoners.tt_attacker: "V závislosti na úrovni titulu postavy [defender.GetShortUIName] budou zajati tři až pět jejích [Concept('courtiers','dvořanů')|El]."
+ flowery_war_cb_prisoners.tt_defender: "V závislosti na úrovni titulu postavy [attacker.GetShortUIName] budou zajati tři až pět jejích [Concept('courtiers','dvořanů')|El]."
+ CASUS_BELLI_CLAIM_NO_CLAIMS_TO_PUSH: "Žádné [Concept('claims','nároky')|El] k uplatnění"
  CASUS_BELLI_CLAIM_NO_VALID_TITLE_TARGETS: "Žádné platné cílové tituly"
- tst_generic_war_lost_message.t: "Prohráli jste válku"
- tst_generic_war_lost_message.tt: "[attacker.GetShortUINameNoTooltip] vás porazil v [current_war.GetName]."
+ tst_generic_war_lost_message.t: "Válka skončila tvou porážkou"
+ tst_generic_war_lost_message.tt: "Ve válce [current_war.GetName] tě porazila postava [attacker.GetShortUINameNoTooltip]."
  norman_conquest_cb: "Invaze"
- norman_conquest_cb_defeat_desc: "[defender.GetShortUIName|U] si udrží Království Anglie. [attacker.GetShortUIName|U] ztrácí svůj [attacker.GetHerHis] [Concept('claim','nárok')|E] na něj." # todo: CONCEPT CASE
- norman_conquest_cb_defeat_desc_defender: "Udržíte si Království Anglie. [attacker.GetShortUIName|U] ztrácí svůj [attacker.GetHerHis] [Concept('claim','nárok')|E] na něj." # todo: CONCEPT CASE
- norman_conquest_cb_defeat_desc_attacker: "[defender.GetShortUIName|U] si udrží Království Anglie. Vy ztrácíte svůj [Concept('claim','nárok')|E] na něj." # todo: CONCEPT CASE
- norman_conquest_cb_white_peace_desc_defender: "Udržíte si Království Anglie. [attacker.GetShortUINamePossessive] [Concept('claims','Nároky')|E] se stanou [Concept('pressed','uplatněným')|E]." # todo: CONCEPT CASE
- norman_conquest_cb_white_peace_desc_attacker: "[defender.GetShortUIName|U] si udrží Království Anglie. Vaše [Concept('claims','nároky')|E] na ně se stanou [Concept('pressed','uplatněným')|E]." # todo: CONCEPT CASE
- norman_conquest_cb_white_peace_desc: "[defender.GetShortUIName|U] si udrží Království Anglie. [attacker.GetShortUINamePossessive] [Concept('claims','Nároky')|E] se stanou [Concept('pressed','uplatněným')|E]." # todo: CONCEPT CASE
- norman_conquest_cb_victory_desc_defender: "[attacker.GetShortUIName|U] obsadí Království Anglie, všechny tituly, které držíte, a všechny vazalské tituly v jižní Anglii."
- norman_conquest_cb_victory_desc_attacker: "Zabíráte Království Anglie a osobně si berete všechny tituly v jižní Anglii."
- norman_conquest_cb_victory_desc: "[attacker.GetShortUIName|U] obsadí Království Anglie a osobně získá všechny tituly v jižní Anglii."
+ norman_conquest_cb_defeat_desc: "[defender.GetShortUIName|U] si ponechá Království Anglie. [attacker.GetShortUIName|U] ztratí svůj [Concept('claim','nárok')|El] na něj."
+ norman_conquest_cb_defeat_desc_defender: "Ponecháš si Království Anglie. [attacker.GetShortUIName|U] ztratí svůj [Concept('claim','nárok')|El] na něj."
+ norman_conquest_cb_defeat_desc_attacker: "[defender.GetShortUIName|U] si ponechá Království Anglie. Ztratíš svůj [Concept('claim','nárok')|El] na něj."
+ norman_conquest_cb_white_peace_desc_defender: "Ponecháš si Království Anglie. [Concept('claims','Nároky')|El] postavy [attacker.GetShortUIName] se stanou [Concept('pressed','uplatněnými')|El]."
+ norman_conquest_cb_white_peace_desc_attacker: "[defender.GetShortUIName|U] si ponechá Království Anglie. Tvé [Concept('claims','nároky')|El] na něj se stanou [Concept('pressed','uplatněnými')|El]."
+ norman_conquest_cb_white_peace_desc: "[defender.GetShortUIName|U] si ponechá Království Anglie. [Concept('claims','Nároky')|El] postavy [attacker.GetShortUIName] se stanou [Concept('pressed','uplatněnými')|El]."
+ norman_conquest_cb_victory_desc_defender: "[attacker.GetShortUIName|U] získá Království Anglie, všechny tituly, které držíš, a všechny vazalské tituly v jižní Anglii."
+ norman_conquest_cb_victory_desc_attacker: "Získáš Království Anglie a osobně převezmeš všechny tituly v jižní Anglii."
+ norman_conquest_cb_victory_desc: "[attacker.GetShortUIName|U] získá Království Anglie a osobně převezme všechny tituly v jižní Anglii."
  norwegian_invasion_cb: "Invaze"
- norwegian_invasion_cb_defeat_desc: "[defender.GetShortUIName|U] si udrží Království Anglie. [attacker.GetShortUIName|U] ztrácí svůj [attacker.GetHerHis] [Concept('claim','nárok')|E] na něj." # todo: CONCEPT CASE
- norwegian_invasion_cb_defeat_desc_defender: "Udržíte si Království Anglie. [attacker.GetShortUIName|U] ztrácí svůj [attacker.GetHerHis] [Concept('claim','nárok')|E] na něj." # todo: CONCEPT CASE
- norwegian_invasion_cb_defeat_desc_attacker: "[defender.GetShortUIName|U] si udrží Království Anglie. Ztrácíte svůj [Concept('claim','nárok')|E] na něj." # todo: CONCEPT CASE
- norwegian_invasion_cb_white_peace_desc_defender: "Udržíte si Království Anglie. [attacker.GetShortUINamePossessive] [Concept('claims','Nároky')|E] se stanou [Concept('pressed','uplatněným')|E]." # todo: CONCEPT CASE
- norwegian_invasion_cb_white_peace_desc_attacker: "[defender.GetShortUIName|U] si udrží Království Anglie. Vaše [Concept('claims','nároky')|E] na ně se stanou [Concept('pressed','uplatněným')|E]." # todo: CONCEPT CASE
- norwegian_invasion_cb_white_peace_desc: "[defender.GetShortUIName|U] si udrží Království Anglie. [attacker.GetShortUINamePossessive] [Concept('claims','Nároky')|E] se stanou [Concept('pressed','uplatněným')|E]." # todo: CONCEPT CASE
- norwegian_invasion_cb_victory_desc_defender: "[attacker.GetShortUIName|U] obsadí Království Anglie, všechny tituly, které držíte, a všechny vazalské tituly v severní Anglii."
- norwegian_invasion_cb_victory_desc_attacker: "Zabíráte Království Anglie a osobně získáváte všechny tituly v severní Anglii."
- norwegian_invasion_cb_victory_desc: "[attacker.GetShortUIName|U] obsadí Království Anglie a osobně získá všechny tituly v severní Anglii."
- norwegian_invasion_cb_victory_with_tostig_desc: "Pokud je naživu a je na dvoře [attacker.GetShortUINamePossessive], bude [tostig.GetShortUIName] obdarován [northumberland.GetName], [york.GetName] a [lancaster.GetName] výměnou za [Concept('strong_hook','silnou páku')|E]." # todo: CONCEPT CASE
+ norwegian_invasion_cb_defeat_desc: "[defender.GetShortUIName|U] si ponechá Království Anglie. [attacker.GetShortUIName|U] ztratí svůj [Concept('claim','nárok')|El] na něj."
+ norwegian_invasion_cb_defeat_desc_defender: "Ponecháš si Království Anglie. [attacker.GetShortUIName|U] ztratí svůj [Concept('claim','nárok')|El] na něj."
+ norwegian_invasion_cb_defeat_desc_attacker: "[defender.GetShortUIName|U] si ponechá Království Anglie. Ztratíš svůj [Concept('claim','nárok')|El] na něj."
+ norwegian_invasion_cb_white_peace_desc_defender: "Ponecháš si Království Anglie. [Concept('claims','Nároky')|El] postavy [attacker.GetShortUIName] se stanou [Concept('pressed','uplatněnými')|El]."
+ norwegian_invasion_cb_white_peace_desc_attacker: "[defender.GetShortUIName|U] si ponechá Království Anglie. Tvé [Concept('claims','nároky')|El] na něj se stanou [Concept('pressed','uplatněnými')|El]."
+ norwegian_invasion_cb_white_peace_desc: "[defender.GetShortUIName|U] si ponechá Království Anglie. [Concept('claims','Nároky')|El] postavy [attacker.GetShortUIName] se stanou [Concept('pressed','uplatněnými')|El]."
+ norwegian_invasion_cb_victory_desc_defender: "[attacker.GetShortUIName|U] získá Království Anglie, všechny tituly, které držíš, a všechny vazalské tituly v severní Anglii."
+ norwegian_invasion_cb_victory_desc_attacker: "Získáš Království Anglie a osobně převezmeš všechny tituly v severní Anglii."
+ norwegian_invasion_cb_victory_desc: "[attacker.GetShortUIName|U] získá Království Anglie a osobně převezme všechny tituly v severní Anglii."
+ norwegian_invasion_cb_victory_with_tostig_desc: "Pokud bude [tostig.GetShortUIName] naživu a bude se nacházet na dvoře postavy [attacker.GetShortUIName], získá [northumberland.GetName], [york.GetName] a [lancaster.GetName] výměnou za [Concept('strong_hook','silnou páku')|El]."
  sons_of_lothbrok_invasion_cb: "Invaze"
- sons_of_lothbrok_invasion_cb_victory_desc_attacker: "Zabíráte všechny tituly [defender.GetShortUINamePossessive] v cílovém království."
- sons_of_lothbrok_invasion_cb_victory_desc_defender: "[attacker.GetShortUIName|U] zabírá všechny vaše tituly v cílovém království."
- sons_of_lothbrok_invasion_cb_victory_desc: "[attacker.GetShortUIName|U] zabírá všechny tituly [defender.GetShortUINamePossessive] v cílovém království."
- sons_of_lothbrok_invasion_cb_white_peace_desc_attacker: "[defender.GetShortUIName|U] si udrží [Select_CString(defender.IsFemale,'její','jeho')] tituly. Ztrácíte [Concept('prestige','prestiž')|E]." # todo: CONCEPT CASE
- sons_of_lothbrok_invasion_cb_white_peace_desc_defender: "Udržíte si své tituly. [attacker.GetShortUIName|U] ztrácí [Concept('prestige','prestiž')|E]." # todo: CONCEPT CASE
- sons_of_lothbrok_invasion_cb_white_peace_desc: "[defender.GetShortUIName|U] si udrží [Select_CString(defender.IsFemale,'její','jeho')] tituly. [attacker.GetShortUIName|U] ztrácí [Concept('prestige','prestiž')|E]." # todo: CONCEPT CASE
- sons_of_lothbrok_invasion_cb_defeat_desc_attacker: "[defender.GetShortUIName|U] si udrží [Select_CString(defender.IsFemale,'její','jeho')] tituly. Ztrácíte [Concept('prestige','prestiž')|E] a platíte reparace [defender.GetShortUIName|U]." # todo: CONCEPT CASE
- sons_of_lothbrok_invasion_cb_defeat_desc_defender: "Udržíte si své tituly. [attacker.GetShortUIName|U] ztrácí [Concept('prestige','prestiž')|E] a platí vám reparace." # todo: CONCEPT CASE
- sons_of_lothbrok_invasion_cb_defeat_desc: "[defender.GetShortUIName|U] si udrží [Select_CString(defender.IsFemale,'její','jeho')] tituly. [attacker.GetShortUIName|U] ztrácí [Concept('prestige','prestiž')|E] a platí reparace [defender.GetShortUIName|U]." # todo: CONCEPT CASE
- religious_war_victory_desc: "V rámci cílového [Concept('title','titulu')|E] jsou všechny tituly držené panovníky vyznávajícími [defender.GetFaith.GetAdjective] zabrány a všichni vládci [attacker.GetFaith.GetAdjective] se stanou vazaly [attacker.GetShortUIName]." # todo: CONCEPT CASE
- religious_war_white_peace_desc: "Žádné [Concept('titles','tituly')|E] se nepředávají." # todo: CONCEPT CASE
- religious_war_defeat_desc: "Žádné [Concept('titles','tituly')|E] se nepředávají." # todo: CONCEPT CASE
- major_religious_war_warning_desc: "\n\n#X Můžete během života podniknout pouze jednu [Concept('holy_war','svatou válku')|E] proti [Concept('kingdom','království')|E]-úrovňovému [Concept('title','titulu')|E]#!" # todo: CONCEPT CASE
- excommunication_war_victory_desc_defender: "Jste [Concept('deposed','sesazený')|E]." # todo: CONCEPT CASE
- excommunication_war_victory_desc: "[defender.GetShortUIName|U] je [Concept('deposed','sesazený')|E]." # todo: CONCEPT CASE
- excommunication_war_white_peace_desc: "[defender.GetShortUIName|U] si udrží [Select_CString(defender.IsFemale,'její','jeho')] tituly."
- excommunication_war_white_peace_desc_defender: "Udržíte si své tituly."
- excommunication_war_defeat_desc_attacker: "[defender.GetShortUIName|U] si udrží [Select_CString(defender.IsFemale,'její','jeho')] tituly. Ztrácíte [Concept('piety','zbožnost')|E] a oblibu u vašeho [Concept('head_of_faith','hlavy víry')|E]." # todo: CONCEPT CASE
- excommunication_war_defeat_desc_defender: "Udržíte si tituly a získáte [Concept('piety','zbožnost')|E]." # todo: CONCEPT CASE
- excommunication_war_defeat_desc: "[defender.GetShortUIName|U] si udrží [Select_CString(defender.IsFemale,'její','jeho')] tituly a získá [Concept('piety','zbožnost')|E]." # todo: CONCEPT CASE
- flowery_war_cb_victory_desc: "Osoby a obyvatelé hrabství z [defender.GetShortUINamePossessive] [Concept('realm','panství')|E] jsou obětováni [attacker.GetShortUIName]." # todo: CONCEPT CASE
- flowery_war_cb_white_peace_desc: "Žádná oběť není vykonána."
- flowery_war_cb_defeat_desc: "Žádná oběť není vykonána."
- directed_great_holy_war: "Velká svatá válka"
- undirected_great_holy_war: "Velká svatá válka"
- great_holy_war_directed_victory_desc: "Hlavní přispěvatel získá cílové království. [Concept('titles','Tituly')|E] v cílovém království jsou rozděleny mezi příjemce" # todo: CONCEPT CASE
- great_holy_war_victory_desc: "[Concept('titles','Tituly')|E] v cílovém království jsou rozdány příjemcům. [Concept('gold','Zlato')|E] a [Concept('piety','zbožnost')|E] jsou rozděleny mezi všechny účastníky." # todo: CONCEPT CASE
- great_holy_war_defeat_desc: "Žádné tituly se nepředají. Obránci si rozdělí získané [Concept('piety','zbožnost')|E]." # todo: CONCEPT CASE
+ sons_of_lothbrok_invasion_cb_victory_desc_attacker: "Zmocníš se všech titulů postavy [defender.GetShortUIName] v cílovém království."
+ sons_of_lothbrok_invasion_cb_victory_desc_defender: "[attacker.GetShortUIName|U] se zmocní všech tvých titulů v cílovém království."
+ sons_of_lothbrok_invasion_cb_victory_desc: "[attacker.GetShortUIName|U] se zmocní všech titulů postavy [defender.GetShortUIName] v cílovém království."
+ sons_of_lothbrok_invasion_cb_white_peace_desc_attacker: "[defender.GetShortUIName|U] si ponechá své tituly. Ztratíš [Concept('prestige','prestiž')|El]."
+ sons_of_lothbrok_invasion_cb_white_peace_desc_defender: "Ponecháš si své tituly. [attacker.GetShortUIName|U] ztratí [Concept('prestige','prestiž')|El]."
+ sons_of_lothbrok_invasion_cb_white_peace_desc: "[defender.GetShortUIName|U] si ponechá své tituly. [attacker.GetShortUIName|U] ztratí [Concept('prestige','prestiž')|El]."
+ sons_of_lothbrok_invasion_cb_defeat_desc_attacker: "[defender.GetShortUIName|U] si ponechá své tituly. Ztratíš [Concept('prestige','prestiž')|El] a zaplatíš postavě [defender.GetShortUIName|U] válečné reparace."
+ sons_of_lothbrok_invasion_cb_defeat_desc_defender: "Ponecháš si své tituly. [attacker.GetShortUIName|U] ztratí [Concept('prestige','prestiž')|El] a zaplatí ti válečné reparace."
+ sons_of_lothbrok_invasion_cb_defeat_desc: "[defender.GetShortUIName|U] si ponechá své tituly. [attacker.GetShortUIName|U] ztratí [Concept('prestige','prestiž')|El] a zaplatí postavě [defender.GetShortUIName|U] válečné reparace."
+ religious_war_victory_desc: "V cílovém [Concept('title','titulu')|El] budou zabrány všechny tituly držené [defender.GetFaith.GetAdjective] vládci a všichni [attacker.GetFaith.GetAdjective] vládci se stanou vazaly postavy [attacker.GetShortUIName]."
+ religious_war_white_peace_desc: "[Concept('titles','Žádné tituly')|El] nezmění držitele."
+ religious_war_defeat_desc: "[Concept('titles','Žádné tituly')|El] nezmění držitele."
+ major_religious_war_warning_desc: "\n\n#X Za jeden život se můžeš pokusit pouze o jednu [Concept('holy_war','svatou válku')|El] proti [Concept('title','titulu')|El] úrovně [Concept('kingdom','království')|El]#!"
+ excommunication_war_victory_desc_defender: "Dojde k tvému [Concept('deposed','sesazení')|El]."
+ excommunication_war_victory_desc: "Dojde k [Concept('deposed','sesazení')|El] postavy [defender.GetShortUIName|U]."
+ excommunication_war_white_peace_desc: "[defender.GetShortUIName|U] si ponechá své tituly."
+ excommunication_war_white_peace_desc_defender: "Ponecháš si své tituly."
+ excommunication_war_defeat_desc_attacker: "[defender.GetShortUIName|U] si ponechá své tituly. Ztratíš [Concept('piety','zbožnost')|El] a zhorší se názor tvé [Concept('head_of_faith','hlavy víry')|El] na tebe."
+ excommunication_war_defeat_desc_defender: "Ponecháš si své tituly a získáš [Concept('piety','zbožnost')|El]."
+ excommunication_war_defeat_desc: "[defender.GetShortUIName|U] si ponechá své tituly a získá [Concept('piety','zbožnost')|El]."
+ flowery_war_cb_victory_desc: "[attacker.GetShortUIName] obětuje postavy a obyvatele hrabství z panství postavy [defender.GetShortUIName]."
+ flowery_war_cb_white_peace_desc: "Nebude vykonána žádná oběť."
+ flowery_war_cb_defeat_desc: "Nebude vykonána žádná oběť."
+ directed_great_holy_war: "Směrovaná velká svatá válka"
+ undirected_great_holy_war: "Nesměrovaná velká svatá válka"
+ great_holy_war_directed_victory_desc: "Hlavní přispěvatel získá cílové království. [Concept('titles','Tituly')|El] v cílovém království budou rozděleny mezi příjemce"
+ great_holy_war_victory_desc: "[Concept('titles','Tituly')|El] v cílovém království budou rozděleny mezi příjemce. [Concept('gold','Zlato')|El] a [Concept('piety','zbožnost')|El] budou rozděleny mezi všechny účastníky."
+ great_holy_war_defeat_desc: "Žádné tituly nezmění držitele. Obránci si rozdělí získanou [Concept('piety','zbožnost')|El]."
  debug_war_victory_desc: "Útočník získá cílové tituly."
- debug_war_white_peace_desc: "Obránce si udrží cílové tituly."
+ debug_war_white_peace_desc: "Obránce si ponechá cílové tituly."
  hungarian_migration_cb: "$HUNGARIAN_INVASION_CB_NAME$"
- religious_war_victory_desc_doctrine_pluralism: "V rámci cílového [Concept('title','titulu')|E] jsou všechny tituly držené vládci vaselizovány [attacker.GetShortUIName]." # todo: CONCEPT CASE
+ religious_war_victory_desc_doctrine_pluralism: "V rámci cílového [Concept('title','titulu')|El] budou všichni vládci držící tituly vazalizováni postavou [attacker.GetShortUIName]."
  enemy_gained_new_ally: "Nepřítel uzavřel alianci: [other_character.GetShortUINameNoTooltip]"
- enemy_gained_new_ally_tt: "[this_character.GetShortUINamePossessive] nový spojenec, [other_character.GetShortUIName], se může přidat k [this_war.GetName|V] jako váš nepřítel"
- PREVIOUS_VARANGIAN_ADVENTURES_COST: "Předchozí dobrodružství"
+ enemy_gained_new_ally_tt: "Nový spojenec postavy [this_character.GetShortUIName], [other_character.GetShortUIName], se může připojit k válce [this_war.GetName|V] jako tvůj nepřítel"
+ PREVIOUS_VARANGIAN_ADVENTURES_COST: "Předchozí varjažská dobrodružství"
  debug_artifact_war_victory_desc: "Útočník získá všechny artefakty patřící obránci."
- debug_artifact_war_white_peace_desc: "Útočník nezíská nic."
+ debug_artifact_war_white_peace_desc: "Útočník nic nezíská."
  debug_artifact_war_defeat_desc: "$debug_artifact_war_white_peace_desc$"
- debug_artifact_war_invalidated_desc: "$DEBUG_ARTIFACT_WAR_NAME$ zrušeno!"
- DEBUG_ARTIFACT_WAR_NAME: "#D (DEBUG)#! Ladicí válka o artefakty"
+ debug_artifact_war_invalidated_desc: "$DEBUG_ARTIFACT_WAR_NAME$ byla zneplatněna!"
+ DEBUG_ARTIFACT_WAR_NAME: "#D (LADĚNÍ)#! Ladicí válka o artefakty"
  DEBUG_ARTIFACT_WAR_NAME_FALLBACK: "$DEBUG_ARTIFACT_WAR_NAME$"
- artifact_war_victory_desc: "Získáváte vlastnictví všech [Concept('artifacts','artefaktů')|e], na které máte nárok a které patří [defender.GetShortUIName|U] a jejich [Concept('vassals','vazalové')|e]." # todo: CONCEPT CASE
- artifact_war_victory_desc_defender: "[attacker.GetShortUIName|U] získává vlastnictví všech [Concept('artifacts','artefaktů')|e], na které má nárok a které patří vám a vašim [Concept('vassals','vazalům')|e]." # todo: CONCEPT CASE
- artifact_war_white_peace_desc: "Žádné [Concept('artifacts','artefakty')|e] nejsou předány." # todo: CONCEPT CASE
+ artifact_war_victory_desc: "Převezmeš všechny [Concept('artifacts','artefakty')|El] postavy [defender.GetShortUIName|U] a jejích [Concept('vassals','vazalů')|El], na něž máš nárok."
+ artifact_war_victory_desc_defender: "[attacker.GetShortUIName|U] převezme všechny [Concept('artifacts','artefakty')|El] patřící tobě a tvým [Concept('vassals','vazalům')|El], na něž má nárok."
+ artifact_war_white_peace_desc: "Žádné [Concept('artifacts','artefakty')|El] nezmění majitele."
  artifact_war_defeat_desc: "$artifact_war_white_peace_desc$"
- artifact_war_invalidated_desc: "$ARTIFACT_WAR_NAME$ zrušeno!"
- artifact_war: "[Concept('artifact','Artefakt')|E]" # todo: CONCEPT CASE
- ARTIFACT_WAR_NAME: "Válka o nároky na artefakty"
+ artifact_war_invalidated_desc: "$ARTIFACT_WAR_NAME$ byla zneplatněna!"
+ artifact_war: "[Concept('artifact','Artefakt')|El]"
+ ARTIFACT_WAR_NAME: "Válka za nárok na artefakt"
  ARTIFACT_WAR_NAME_FALLBACK: "$ARTIFACT_WAR_NAME$"
- conquest_title_not_transferred_tt: "@warning_icon! #X [defender.GetFirstName] si po válce ponechá [de_jure_target.GetName], protože [defender.GetSheHe] má jiné [Concept('holdings','držav')|E].#!" # todo: CONCEPT CASE
- conquest_title_destroyed_tt: "@warning_icon! #X [de_jure_target.GetName] bude po válce zničen.#!"
- conquest_title_usurp_tt: "@warning_icon! #X [de_jure_target.GetHolder.GetTitledFirstName], současný držitel, si po válce ponechá [de_jure_target.GetName].#!"
- conquest_title_create_tt: "@warning_icon! #X [de_jure_target.GetName] nebude touto válkou vytvořen.#!"
- reclaim_relic_artifact_war_victory_desc: "Získáváte vlastnictví všech [attacker.GetFaith.GetReligion.GetAdjective] [Concept('artifacts','artefaktů')|e], které vlastní [defender.GetShortUIName|U] a jejich ne-[attacker.GetFaith.GetReligion.GetAdjective] [Concept('vassals','vazalové')|e]." # todo: CONCEPT CASE
- reclaim_relic_artifact_war_victory_desc_defender: "[attacker.GetShortUIName|U] získává vlastnictví všech [attacker.GetFaith.GetReligion.GetAdjective] [Concept('artifacts','artefaktů')|e] držených vámi a vašimi ne-[attacker.GetFaith.GetReligion.GetAdjective] [Concept('vassals','vazalové')|e]." # todo: CONCEPT CASE
+ conquest_title_not_transferred_tt: "@warning_icon! #X [defender.GetFirstName] si po válce ponechá titul [de_jure_target.GetName], protože vlastní další [Concept('holdings','državy')|El].#!"
+ conquest_title_destroyed_tt: "@warning_icon! #X Po válce dojde ke zničení titulu [de_jure_target.GetName].#!"
+ conquest_title_usurp_tt: "@warning_icon! #X Současný držitel [de_jure_target.GetHolder.GetTitledFirstName] si po válce ponechá titul [de_jure_target.GetName].#!"
+ conquest_title_create_tt: "@warning_icon! #X V této válce nedojde k vytvoření titulu [de_jure_target.GetName].#!"
+ reclaim_relic_artifact_war_victory_desc: "Převezmeš všechny [attacker.GetFaith.GetReligion.GetAdjective] [Concept('artifacts','artefakty')|El], které drží [defender.GetShortUIName|U] a jeho [Concept('vassals','vazalové')|El] jiného náboženství."
+ reclaim_relic_artifact_war_victory_desc_defender: "[attacker.GetShortUIName|U] převezme všechny [attacker.GetFaith.GetReligion.GetAdjective] [Concept('artifacts','artefakty')|El], které držíš ty a tvoji [Concept('vassals','vazalové')|El] jiného náboženství."
  reclaim_relic_artifact_war_white_peace_desc: "$artifact_war_white_peace_desc$"
  reclaim_relic_artifact_war_defeat_desc: "$artifact_war_white_peace_desc$"
- reclaim_relic_artifact_war_invalidated_desc: "$reclaim_relic_artifact_war_NAME$ zrušeno!"
- reclaim_relic_artifact_war: "Reklamace relikvií [Concept('artifact','artefaktem')|E]" # todo: CONCEPT CASE
- reclaim_relic_artifact_war_NAME: "Válka o navrácení relikvií"
+ reclaim_relic_artifact_war_invalidated_desc: "$reclaim_relic_artifact_war_NAME$ byla zneplatněna!"
+ reclaim_relic_artifact_war: "Znovuzískání relikviářového [Concept('artifact','artefaktu')|El]"
+ reclaim_relic_artifact_war_NAME: "Válka za znovuzískání relikvií"
  reclaim_relic_artifact_war_NAME_FALLBACK: "$reclaim_relic_artifact_war_NAME$"
- NATION_FRACTURING_WAR_NAME: "Válka o rozpuštění"
- nation_fracturing_faction_war: "Frakce rozpuštění"
- nation_fracturing_faction_war_victory_desc_local_player_attacker_alone: "[defender.GetPrimaryTitle.GetBaseName] je zničen a [defender.GetShortUINamePossessive|U] [Concept('vassals','vazalové')|E] se stanou [Concept('independent','nezávislým')|E]." # todo: CONCEPT CASE
- nation_fracturing_faction_war_victory_desc_local_player_defender_attacker_alone: "[defender.GetPrimaryTitle.GetBaseName] je zničen a [defender.GetShortUINamePossessive|U] [Concept('vassals','vazalové')|E] se stanou [Concept('independent','nezávislým')|E]." # todo: CONCEPT CASE
- player_nation_fracturing_faction_war_victory_desc_local_player_defender_attacker_alone: "[defender.GetPrimaryTitle.GetBaseName|U] je zničen a vaši [Concept('vassals','vazaly')|E] se stanou [Concept('independent','nezávislým')|E]." # todo: CONCEPT CASE
- nation_fracturing_war_victory_desc_local_player_attacker: "[defender.GetPrimaryTitle.GetBaseName|U] je zničen a [defender.GetShortUINamePossessive|U] [Concept('vassals','vazalové')|E] se stanou [Concept('independent','nezávislým')|E]." # todo: CONCEPT CASE
- nation_fracturing_war_victory_desc_local_player_defender: "[defender.GetPrimaryTitle.GetBaseName|U] je zničen a vaši [Concept('vassals','vazaly')|E] se stanou [Concept('independent','nezávislým')|E]." # todo: CONCEPT CASE
- nation_fracturing_war_victory_desc: "[defender.GetPrimaryTitle.GetBaseName|U] je zničeno a [defender.GetShortUINamePossessive|U] [Concept('vassals','vazalové')|E] se stanou [Concept('independent','nezávislým')|E]." # todo: CONCEPT CASE
- player_nation_fracturing_faction_war_white_peace_defender_desc: "[attacker.GetShortUIName|U] zůstává vaším [Concept('vassal','vazalem')|E]." # todo: CONCEPT CASE
- player_nation_fracturing_faction_war_white_peace_attacker_desc: "Stále jste [Concept('vassal','vazal')|E] [defender.GetShortUIName]." # todo: CONCEPT CASE
- player_nation_fracturing_faction_war_white_peace_desc: "[attacker.GetShortUIName|U] zůstávají [Concept('vassal','vazal')|E] [defender.GetShortUIName]." # todo: CONCEPT CASE
- nation_fracturing_faction_war_white_peace_defender_desc: "Všichni vzbouřenci zůstávají vašimi [Concept('vassals','vazaly')|E]." # todo: CONCEPT CASE
- nation_fracturing_faction_war_white_peace_attacker_desc: "Vy a všichni ostatní vzbouřenci zůstáváte [Concept('vassals','vazalové')|E] [defender.GetShortUIName]." # todo: CONCEPT CASE
- nation_fracturing_faction_war_white_peace_desc: "Všichni vzbouřenci zůstávají [Concept('vassals','vazalové')|E] [defender.GetShortUIName]." # todo: CONCEPT CASE
- nation_fracturing_faction_war_white_peace_end_desc: "[nation_fracturing_faction|E] se rozpadá a její členové se nemohou přidat k [Concept('factions','frakcím')|E] po dobu [SCOPE.ScriptValue('faction_war_white_peace_cooldown')|0] let." # todo: CONCEPT CASE
- player_nation_fracturing_defeat_defender_desc: "Vy [Concept('imprison','uvěznit')|E] [attacker.GetShortUIName|U] a získáte [Concept('revoke_title_reason','důvod k odebrání titulu')|E]." # todo: CONCEPT CASE
- player_nation_fracturing_defeat_attacker_desc: "[defender.GetShortUIName|U] vás [Concept('imprisons','vězní')|E] a získá [Concept('revoke_title_reason','důvod k odebrání titulu')|E]." # todo: CONCEPT CASE
- player_nation_fracturing_faction_war_defeat_desc: "[defender.GetShortUIName|U] [Concept('imprisons','Vězní')|E] [attacker.GetShortUIName|U] a získá [Concept('revoke_title_reason','důvod k odebrání titulu')|E]." # todo: CONCEPT CASE
- nation_fracturing_faction_war_defeat_defender_desc: "[defender.GetShortUIName|U] uvězní všechny vzbouřené [Concept('vassals','vazalové')|E] a získá [Concept('revoke_title_reason','důvod k odebrání titulu')|E] proti každému z nich." # todo: CONCEPT CASE
- nation_fracturing_defeat_attacker_desc: "[defender.GetShortUIName|U] uvězní vás a všechny vzbouřené [Concept('vassals','vazalové')|E] a získá [Concept('revoke_title_reason','důvod k odebrání titulu')|E] proti každému rebelovi." # todo: CONCEPT CASE
- nation_fracturing_defeat_end_desc: "[nation_fracturing_faction|E] se rozpadá a její členové se nemohou přidat k [Concept('factions','frakcím')|E] po dobu [SCOPE.ScriptValue('faction_war_defeat_cooldown')|0] let." # todo: CONCEPT CASE
- MEDI_CONQUEST_CB_NAME: "Středomořské dobytí [Concept('county','hrabství')|E]" # todo: CONCEPT CASE
+ NATION_FRACTURING_WAR_NAME: "Válka za rozpad"
+ nation_fracturing_faction_war: "Frakce za rozpad"
+ nation_fracturing_faction_war_victory_desc_local_player_attacker_alone: "Titul [defender.GetPrimaryTitle.GetBaseName] bude zničen a [defender.GetShortUINamePossessive|U] [Concept('vassals','vazalové')|El] se stanou [Concept('independent','nezávislými')|El]."
+ nation_fracturing_faction_war_victory_desc_local_player_defender_attacker_alone: "Titul [defender.GetPrimaryTitle.GetBaseName] bude zničen a [defender.GetShortUINamePossessive|U] [Concept('vassals','vazalové')|El] se stanou [Concept('independent','nezávislými')|El]."
+ player_nation_fracturing_faction_war_victory_desc_local_player_defender_attacker_alone: "Titul [defender.GetPrimaryTitle.GetBaseName|U] bude zničen a tvoji [Concept('vassals','vazalové')|El] se stanou [Concept('independent','nezávislými')|El]."
+ nation_fracturing_war_victory_desc_local_player_attacker: "Titul [defender.GetPrimaryTitle.GetBaseName|U] bude zničen a [defender.GetShortUINamePossessive|U] [Concept('vassals','vazalové')|El] se stanou [Concept('independent','nezávislými')|El]."
+ nation_fracturing_war_victory_desc_local_player_defender: "Titul [defender.GetPrimaryTitle.GetBaseName|U] bude zničen a tvoji [Concept('vassals','vazalové')|El] se stanou [Concept('independent','nezávislými')|El]."
+ nation_fracturing_war_victory_desc: "Titul [defender.GetPrimaryTitle.GetBaseName|U] bude zničen a [defender.GetShortUINamePossessive|U] [Concept('vassals','vazalové')|El] se stanou [Concept('independent','nezávislými')|El]."
+ player_nation_fracturing_faction_war_white_peace_defender_desc: "[attacker.GetShortUIName|U] zůstane tvým [Concept('vassal','vazalem')|El]."
+ player_nation_fracturing_faction_war_white_peace_attacker_desc: "Zůstaneš [Concept('vassal','vazalem')|El] postavy [defender.GetShortUIName]."
+ player_nation_fracturing_faction_war_white_peace_desc: "[attacker.GetShortUIName|U] zůstane [Concept('vassal','vazalem')|El] postavy [defender.GetShortUIName]."
+ nation_fracturing_faction_war_white_peace_defender_desc: "Všichni povstalci zůstanou tvými [Concept('vassals','vazaly')|El]."
+ nation_fracturing_faction_war_white_peace_attacker_desc: "Ty i všichni ostatní povstalci zůstanete [Concept('vassals','vazaly')|El] postavy [defender.GetShortUIName]."
+ nation_fracturing_faction_war_white_peace_desc: "Všichni povstalci zůstanou [Concept('vassals','vazaly')|El] postavy [defender.GetShortUIName]."
+ nation_fracturing_faction_war_white_peace_end_desc: "[Concept('dissolution_faction','Frakce za rozpad')|El] bude rozpuštěna a její členové se po dobu [SCOPE.ScriptValue('faction_war_white_peace_cooldown')|0] let nebudou moci připojit k [Concept('factions','frakcím')|El]."
+ player_nation_fracturing_defeat_defender_desc: "[Concept('imprison','Uvězníš')|El] postavu [attacker.GetShortUIName|U] a získáš [Concept('revoke_title_reason','důvod k odebrání titulu')|El]."
+ player_nation_fracturing_defeat_attacker_desc: "[defender.GetShortUIName|U] tě [Concept('imprisons','uvězní')|El] a získá [Concept('revoke_title_reason','důvod k odebrání titulu')|El]."
+ player_nation_fracturing_faction_war_defeat_desc: "[defender.GetShortUIName|U] [Concept('imprisons','uvězní')|El] postavu [attacker.GetShortUIName|U] a získá [Concept('revoke_title_reason','důvod k odebrání titulu')|El]."
+ nation_fracturing_faction_war_defeat_defender_desc: "[defender.GetShortUIName|U] uvězní všechny vzbouřené [Concept('vassals','vazaly')|El] a proti každému z nich získá [Concept('revoke_title_reason','důvod k odebrání titulu')|El]."
+ nation_fracturing_defeat_attacker_desc: "[defender.GetShortUIName|U] uvězní tebe i všechny vzbouřené [Concept('vassals','vazaly')|El] a proti každému povstalci získá [Concept('revoke_title_reason','důvod k odebrání titulu')|El]."
+ nation_fracturing_defeat_end_desc: "[Concept('dissolution_faction','Frakce za rozpad')|El] bude rozpuštěna a její členové se po dobu [SCOPE.ScriptValue('faction_war_defeat_cooldown')|0] let nebudou moci připojit k [Concept('factions','frakcím')|El]."
+ MEDI_CONQUEST_CB_NAME: "Středomořské dobytí [Concept('county','hrabství')|El]"
  fp2_mediterranean_conquest_cb: "Středomořské dobytí"
- STRUGGLE_WAR_NAME: "[ConcatIfNeitherEmpty('$ORDER|q$', ' ')][ATTACKER.GetPrimaryTitle.GetAdjective] [Concept('struggle_conquest_conquest','Střet')|E] proti [DEFENDER.GetPrimaryTitle.GetName]" # todo: CONCEPT CASE
+ STRUGGLE_WAR_NAME: "[ConcatIfNeitherEmpty('$ORDER|q$', ' ')][ATTACKER.GetPrimaryTitle.GetAdjective] [Concept('struggle_conquest_conquest','střet')|El] s [DEFENDER.GetPrimaryTitle.GetName]"
  STRUGGLE_WAR_NAME_BASE: "[ATTACKER.GetPrimaryTitle.GetAdjective][DEFENDER.GetPrimaryTitle.GetName]"
- STRUGGLE_COUNTY_CB_NAME: "[Concept('struggle_conquest','Střet ve sváru')|E]" # todo: CONCEPT CASE
- county_struggle_cb: "[Concept('struggle_conquest','Střet ve sváru')|E]" # todo: CONCEPT CASE
- county_struggle_cb_victory_desc_opm_attacker: "Vy [Concept('vassalize','vazalizovat')|E] sporný [Concept('title','titul')|E], při čemž zničíte všechny [Concept('titles','tituly')|E], které má držitel stejného nebo vyššího [Concept('title_tier','úrovně')|E] než vy." # todo: CONCEPT CASE
- county_struggle_cb_victory_desc_opm: "Držitel sporného [Concept('titlepossessive','titulu')|E] [Concept('holder','držitele')|E] je [vassalized|E] [attacker.GetShortUIName]" # todo: CONCEPT CASE
+ STRUGGLE_COUNTY_CB_NAME: "[Concept('struggle_conquest','Střet ve sváru')|El]"
+ county_struggle_cb: "[Concept('struggle_conquest','Střet ve sváru')|El]"
+ county_struggle_cb_victory_desc_opm_attacker: "[Concept('vassalize','Vazalizuješ')|El] sporný [Concept('title','titul')|El] a zničíš všechny [Concept('titles','tituly')|El] jeho držitele, které mají stejnou nebo vyšší [Concept('title_tier','úroveň titulu')|El] než tvůj vlastní."
+ county_struggle_cb_victory_desc_opm: "[Concept('holder','Držitel')|El] sporného [Concept('titlepossessive','titulu')|El] bude vazalizován postavou [attacker.GetShortUIName]"
  county_struggle_cb_victory_desc_attacker: "$county_conquest_cb_victory_desc_attacker$"
  county_struggle_cb_victory_desc: "$county_conquest_cb_victory_desc$"
  county_struggle_cb_white_peace_desc_defender: "$county_conquest_cb_white_peace_desc_defender$"
@@ -523,255 +523,255 @@
  county_struggle_cb_defeat_desc_defender: "$county_conquest_cb_defeat_desc_defender$"
  county_struggle_cb_defeat_desc_attacker: "$county_conquest_cb_defeat_desc_attacker$"
  county_struggle_cb_defeat_desc: "$county_conquest_cb_defeat_desc$"
- struggle_involvement_cb_check_failure: "[Concept('struggle','Svár')|E] blokuje tento [Concept('casus_belli','casus belli')|E] proti [defender.GetTitledFirstName] v aktuální [Concept('struggle_phase','fázi sváru')|E]" # todo: CONCEPT CASE
- CB_COST_STRUGGLE_PHASE_OPPORTUNITY: "[Concept('struggle_phase_iberia_opportunity','Fáze příležitosti')|E]" # todo: CONCEPT CASE
- CB_COST_STRUGGLE_PHASE_HOSTILITY: "[Concept('struggle_phase_iberia_hostility','Fáze nepřátelství')|E]" # todo: CONCEPT CASE
- CB_COST_STRUGGLE_PHASE_COMPROMISE: "[Concept('struggle_phase_iberia_compromise','Fáze kompromisu')|E]" # todo: CONCEPT CASE
- CB_COST_STRUGGLE_PHASE_CONCILIATION: "[Concept('struggle_phase_iberia_conciliation','Fáze usmíření')|E]" # todo: CONCEPT CASE
- REMOVE_REGENT_WAR_NAME: "[ConcatIfNeitherEmpty('$ORDER|q$', ' ')]Válka za odstranění [DEFENDER.GetShortUIName] z pozice [Concept('regent','regent')|E]" # todo: CONCEPT CASE
- remove_regent_cb: "Odvolat regenta"
- remove_regent_cb_victory_desc_attacker: "[defender.GetShortUIName|U] jsou odvoláni z funkce [Concept('regent','regent')|E]" # todo: CONCEPT CASE
- remove_regent_cb_victory_desc: "[defender.GetShortUIName|U] je odvolán z funkce [Concept('regent','regent')|E]" # todo: CONCEPT CASE
- remove_regent_cb_white_peace_desc_defender: "[defender.GetShortUIName|U] zůstávají jako [Concept('regent','regent')|E]" # todo: CONCEPT CASE
- remove_regent_cb_white_peace_desc: "[defender.GetShortUIName|U] zůstává jako [Concept('regent','regent')|E]" # todo: CONCEPT CASE
- remove_regent_cb_defeat_desc_defender: "[attacker.GetShortUIName|U] jsou [Concept('imprisoned','uvězněný')|E] a pokutováni" # todo: CONCEPT CASE
- remove_regent_cb_defeat_desc: "[attacker.GetShortUIName|U] je [Concept('imprisoned','uvězněný')|E] a pokutován" # todo: CONCEPT CASE
- remove_regent_cb_temporary_fort: "[defender.GetPrimaryTitle.GetBaseName] ztrácí [GetModifier( 'temporary_fort_province_modifier' ).GetNameWithTooltip]"
+ struggle_involvement_cb_check_failure: "[Concept('struggle','Svár')|El] v aktuální [Concept('struggle_phase','fázi')|El] blokuje tento [Concept('casus_belli','casus belli')|El] proti postavě [defender.GetTitledFirstName]"
+ CB_COST_STRUGGLE_PHASE_OPPORTUNITY: "[Concept('struggle_phase_iberia_opportunity','Fáze příležitosti')|El]"
+ CB_COST_STRUGGLE_PHASE_HOSTILITY: "[Concept('struggle_phase_iberia_hostility','Fáze nepřátelství')|El]"
+ CB_COST_STRUGGLE_PHASE_COMPROMISE: "[Concept('struggle_phase_iberia_compromise','Fáze kompromisu')|El]"
+ CB_COST_STRUGGLE_PHASE_CONCILIATION: "[Concept('struggle_phase_iberia_conciliation','Fáze usmíření')|El]"
+ REMOVE_REGENT_WAR_NAME: "[ConcatIfNeitherEmpty('$ORDER|q$', ' ')]Válka za sesazení postavy [DEFENDER.GetShortUIName] z úřadu [Concept('regent','regenta')|El]"
+ remove_regent_cb: "Sesadit regenta"
+ remove_regent_cb_victory_desc_attacker: "Postava [defender.GetShortUIName|U] bude zbavena úřadu [Concept('regent','regenta')|El]"
+ remove_regent_cb_victory_desc: "Postava [defender.GetShortUIName|U] bude zbavena úřadu [Concept('regent','regenta')|El]"
+ remove_regent_cb_white_peace_desc_defender: "Postava [defender.GetShortUIName|U] zůstane [Concept('regent','regentem')|El]"
+ remove_regent_cb_white_peace_desc: "Postava [defender.GetShortUIName|U] zůstane [Concept('regent','regentem')|El]"
+ remove_regent_cb_defeat_desc_defender: "Postava [attacker.GetShortUIName|U] bude [Concept('imprisoned','uvězněna')|El] a bude jí uložena pokuta"
+ remove_regent_cb_defeat_desc: "Postava [attacker.GetShortUIName|U] bude [Concept('imprisoned','uvězněna')|El] a bude jí uložena pokuta"
+ remove_regent_cb_temporary_fort: "Titul [defender.GetPrimaryTitle.GetBaseName] ztratí [GetModifier( 'temporary_fort_province_modifier' ).GetNameWithTooltip]"
  zealous_personality: "Horlivost"
  bold_personality: "Smělost"
- high_fervor: "[Concept('fervor','Horlivost')|E] obranné [Concept('faith','víra')|E]" # todo: CONCEPT CASE
- you_are_rivals: "Jste [Concept('rivals','sokové')|E]" # todo: CONCEPT CASE
- friends_with_defender: "Jsou [Concept('friends','přátelé')|E] s obráncem" # todo: CONCEPT CASE
+ high_fervor: "[Concept('fervor','Horlivost')|El] bránící se [Concept('faith','víry')|El]"
+ you_are_rivals: "Jste [Concept('rivals','rivalové')|El]"
+ friends_with_defender: "S obráncem je pojí [Concept('friends','přátelství')|El]"
  dislikes_defender: "Nemají rádi obránce"
- strongly_dislikes_defender: "Velmi nesnášejí obránce"
- subjugation_war_warning_desc: "\n\n#X Můžete se pokusit o jednu subjugaci [Concept('war','válka')|E] za život#!" # todo: CONCEPT CASE
- fp3_install_loyalist_cb: "Dosadit loajalistu"
- fp3_install_loyalist_cb_cooldown_trigger: "Tento [Concept('casus_belli','casus belli')|E] můžete použít jen jednou za rok!" # todo: CONCEPT CASE
- fp3_install_loyalist_cb_victory_desc: "Vládce [defender.GetPrimaryTitle.GetBaseName|U] je sesazen a nahrazen [GetTrait('fp3_struggle_supporter').GetName( GetNullCharacter )] chalífou."
- fp3_install_loyalist_cb_defeat_desc: "[defender.GetPrimaryTitle.GetName|U] zůstává pod nestrannou vládou [defender.GetShortUIName|U]."
- cb_rejected_caliph_discount: "Odmítnutí autority chalífy"
+ strongly_dislikes_defender: "Silně nesnášejí obránce"
+ subjugation_war_warning_desc: "\n\n#X Za jeden život se můžeš pokusit pouze o jednu [Concept('war','válku')|El] za podrobení#!"
+ fp3_install_loyalist_cb: "Dosadit podporovatele"
+ fp3_install_loyalist_cb_cooldown_trigger: "Tento [Concept('casus_belli','casus belli')|El] můžeš použít pouze jednou ročně!"
+ fp3_install_loyalist_cb_victory_desc: "[Concept('ruler','Vládce')|El] titulu [defender.GetPrimaryTitle.GetBaseName|U] bude sesazen a jeho místo zaujme [GetTrait('fp3_struggle_supporter').GetName( GetNullCharacter )] chalífy."
+ fp3_install_loyalist_cb_defeat_desc: "Titul [defender.GetPrimaryTitle.GetName|U] zůstane pod nestrannou vládou postavy [defender.GetShortUIName|U]."
+ cb_rejected_caliph_discount: "Odmítnutí chalífovy autority"
  INSTALL_LOYALIST_PUPPET_WAR_NAME: "$fp3_install_loyalist_cb$ v [DEFENDER.GetPrimaryTitle.GetBaseNameNoTier]"
  INSTALL_LOYALIST_PUPPET_CB_NAME: "$fp3_install_loyalist_cb$"
- fp3_install_loyalist_cb.tt.loyalist_stooge: "[defender.GetTitledFirstName] musí mít alespoň jednoho [Concept('vassal','vazala')|E] [GetTrait('fp3_struggle_supporter').GetName( GetNullCharacter )], se kterým není [Concept('friends','přáteli')|E] ani na kterého nemá [Concept('hook','páku')|E]." # todo: CONCEPT CASE
+ fp3_install_loyalist_cb.tt.loyalist_stooge: "Postava [defender.GetTitledFirstName] musí mít alespoň jednoho [Concept('vassal','vazala')|El] s rysem [GetTrait('fp3_struggle_supporter').GetName( GetNullCharacter )]; nesmí však mezi nimi panovat [Concept('friends','přátelství')|El] a tato postava na něj nesmí mít [Concept('hook','páku')|El]"
  fp3_turkic_invasion_cb: "$fp3_turkic_invasion_cb_name$"
  fp3_turkic_invasion_cb_name: "Sponzorované dobytí"
  fp3_turkic_invasion_cb_war_name: "Sponzorované dobytí [TITLE.GetBaseNameNoTier]"
- fp3_turkic_invasion_title: "[invasion_beneficiary.GetShortUIName] zabere veškeré území v rámci [defender.GetShortUINamePossessive] [Concept('realm','panství')|E], které je součástí [THIS.GetLandedTitle.GetBaseName]" # todo: CONCEPT CASE
- fp3_turkic_invasion_cb_victory_desc: "Příjemce získá sporné [Concept('titles','tituly')|E]." # todo: CONCEPT CASE
+ fp3_turkic_invasion_title: "Postava [invasion_beneficiary.GetShortUIName] se zmocní veškerého území v [Concept('realm','panství')|El] postavy [defender.GetShortUIName], které je součástí [THIS.GetLandedTitle.GetBaseName]"
+ fp3_turkic_invasion_cb_victory_desc: "Příjemce získá sporné [Concept('titles','tituly')|El]."
  fp3_turkic_invasion_beneficiary: "Příjemce"
- custom.attacker_every_active_accolade: "Vzhledem k vysokému [Concept('rank','hodnosti')|E] [defender.GetShortUINamePossessive] každý z [attacker.GetShortUINamePossessive] [Concept('acclaimed_knights','uznávaných rytířů')|E]" # todo: CONCEPT CASE
- custom.defender_every_active_accolade: "Vzhledem k vysokému [Concept('rank','hodnosti')|E] [attacker.GetShortUINamePossessive] každý z [defender.GetShortUINamePossessive] [Concept('acclaimed_knights','uznávaných rytířů')|E]" # todo: CONCEPT CASE
- mongol_invasion_vassal_disapproves_defeat: "Všichni [attacker.GetShortUINamePossessive] [Concept('vassals','vazalové')|E] ztratí #N 20#! [Concept('opinion','mínění')|E] vůči [attacker.GetHerHim] na #V 5 let#! #weak ($liege_lost_mongol_invasion_war$)#!" # todo: CONCEPT CASE
- mongol_invasion_loot_county_tt: "Každý [Concept('de_jure','de iure')|E] [Concept('county','hrabství')|E] z cílových titulů" # todo: CONCEPT CASE
- mongol_invasion_loot_gold_tt: "[attacker.GetShortUIName|U] získá @gold_icon! [Concept('gold','zlato')|E] rovné #V 5#! násobku [Concept('development','rozvoji')|E]" # todo: CONCEPT CASE
- mongol_invasion_loot_development_tt: "[Concept('development','Rozvoj')|E] [Concept('county','Hrabství')|E] bude #N sníženo na polovinu#!" # todo: CONCEPT CASE
- mongol_invasion_loot_dread_tt: "[attacker.GetShortUIName|U] získá 2 [Concept('dread','hrůza')|E]" # todo: CONCEPT CASE
- invasion_vassal_transfer_tt: "Každý [Concept('de_jure','de iure')|E] [Concept('vassal','vazal')|E] z cílových titulů" # todo: CONCEPT CASE
- invasion_title_transfer_tt: "Každý [Concept('de_jure','de iure')|E] [Concept('county','hrabství')|E] je převeden na [attacker.GetShortUIName]" # todo: CONCEPT CASE
- overrunning_title_transfer_tt: "Každý [Concept('de_jure','de iure')|E] [Concept('county','hrabství')|E] patřící [defender.GetShortUIName] bude převeden na [attacker.GetShortUIName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- invasion_title_tributary_tt: "Každý [Concept('de_jure','de iure')|E] [Concept('vassal','vazal')|E] cílových titulů platí tribut [hegemon.GetName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- invasion_title_transfer_2_tt: "Každý [Concept('occupied','obsazeno')|E] [Concept('county','hrabství')|E] mimo cílový titul je převeden na [attacker.GetShortUIName]" # todo: CONCEPT CASE
+ custom.attacker_every_active_accolade: "Kvůli vysoké [Concept('rank','hodnosti')|El] postavy [defender.GetShortUIName] každý z [Concept('acclaimed_knights','uznávaných rytířů')|El] postavy [attacker.GetShortUIName]"
+ custom.defender_every_active_accolade: "Kvůli vysoké [Concept('rank','hodnosti')|El] postavy [attacker.GetShortUIName] každý z [Concept('acclaimed_knights','uznávaných rytířů')|El] postavy [defender.GetShortUIName]"
+ mongol_invasion_vassal_disapproves_defeat: "Všichni [Concept('vassals','vazalové')|El] postavy [attacker.GetShortUIName] ztratí na #V 5 let#! #N 20#! bodů [Concept('opinion','názoru')|El] na tuto postavu #weak ($liege_lost_mongol_invasion_war$)#!"
+ mongol_invasion_loot_county_tt: "Každé [Concept('de_jure','de iure')|El] [Concept('county','hrabství')|El] cílových titulů"
+ mongol_invasion_loot_gold_tt: "[attacker.GetShortUIName|U] získá @gold_icon! [Concept('gold','zlato')|El] v hodnotě #V pětinásobku#! [Concept('development','rozvoje')|El]"
+ mongol_invasion_loot_development_tt: "[Concept('development','Rozvoj')|El] [Concept('county','hrabství')|El] bude #N snížen na polovinu#!"
+ mongol_invasion_loot_dread_tt: "[attacker.GetShortUIName|U] získá 2 body [Concept('dread','hrůzy')|El]"
+ invasion_vassal_transfer_tt: "Každý [Concept('de_jure','de iure')|El] [Concept('vassal','vazal')|El] cílových titulů"
+ invasion_title_transfer_tt: "Každé [Concept('de_jure','de iure')|El] [Concept('county','hrabství')|El] bude převedeno na postavu [attacker.GetShortUIName]"
+ overrunning_title_transfer_tt: "Každé [Concept('de_jure','de iure')|El] [Concept('county','hrabství')|El] pod vládou postavy [defender.GetShortUIName] bude převedeno na postavu [attacker.GetShortUIName]"
+ invasion_title_tributary_tt: "Každý [Concept('de_jure','de iure')|El] [Concept('vassal','vazal')|El] cílových titulů bude odvádět tribut postavě [hegemon.GetName]"
+ invasion_title_transfer_2_tt: "Každé [Concept('occupied','okupované')|El] [Concept('county','hrabství')|El] mimo cílový titul bude převedeno na postavu [attacker.GetShortUIName]"
  invasion_titles_destroyed_tt: "Každý cílový titul"
  fp3_free_house_member_cb: "$fp3_free_house_member_cb_name$"
- fp3_free_house_member_cb_name: "Zachránit členy rodu"
- fp3_free_house_member_war_name: "[ATTACKER.GetPrimaryTitle.GetAdjective] válka za záchranu členů rodu [ATTACKER.GetHouse.GetBaseNameNoTooltip]"
- fp3_free_house_member_cb_victory_desc: "Každý člen rodu [attacker.GetHouse.GetBaseNameNoTooltip] [Concept('imprisoned','uvězněnému')|E] držený [defender.GetShortUIName] je propuštěn." # todo: CONCEPT CASE
- fp3_free_house_member_cb_victory_desc_defender: "Propustíte všechny [Concept('imprisoned','uvězněné')|E] členy rodu [attacker.GetHouse.GetBaseNameNoTooltip]." # todo: CONCEPT CASE
- fp3_free_house_member_cb_defeat_desc: "Členové rodu [attacker.GetShortUINamePossessive|U] zůstávají [Concept('imprisoned','uvězněný')|E] u [defender.GetShortUIName]." # todo: CONCEPT CASE
- fp3_free_house_member_cb_defeat_desc_defender: "Členové rodu [attacker.GetHouse.GetBaseNameNoTooltip] zůstávají u vás [Concept('imprisoned','uvězněného')|E]." # todo: CONCEPT CASE
- fp3_free_house_member_cb_every_house_member_released: "Všichni vězni rodu [Concept('house','rodu')|E] [attacker.GetHouse.GetBaseName] držené [defender.GetShortUIName] jsou propuštěni." # todo: CONCEPT CASE
+ fp3_free_house_member_cb_name: "Osvobodit členy rodu"
+ fp3_free_house_member_war_name: "[ATTACKER.GetPrimaryTitle.GetAdjective] válka za osvobození členů [Concept('house','rodu')|El] [ATTACKER.GetHouse.GetBaseNameNoTooltip]"
+ fp3_free_house_member_cb_victory_desc: "Všichni členové [Concept('house','rodu')|El] [attacker.GetHouse.GetBaseNameNoTooltip], které vězní [defender.GetShortUIName], budou propuštěni."
+ fp3_free_house_member_cb_victory_desc_defender: "Propustíš všechny [Concept('imprisoned','uvězněné')|El] členy [Concept('house','rodu')|El] [attacker.GetHouse.GetBaseNameNoTooltip]."
+ fp3_free_house_member_cb_defeat_desc: "Členové [Concept('house','rodu')|El] postavy [attacker.GetShortUIName|U] zůstanou [Concept('imprisoned','uvězněni')|El] postavou [defender.GetShortUIName]."
+ fp3_free_house_member_cb_defeat_desc_defender: "Členové [Concept('house','rodu')|El] [attacker.GetHouse.GetBaseNameNoTooltip] zůstanou tebou [Concept('imprisoned','uvězněni')|El]."
+ fp3_free_house_member_cb_every_house_member_released: "Všichni vězni z [Concept('house','rodu')|El] [attacker.GetHouse.GetBaseName], které drží [defender.GetShortUIName], budou propuštěni."
  fp3_unify_house_cb: "$fp3_unify_house_cb_name$"
  fp3_unify_house_cb_name: "Sjednotit rod"
- fp3_unify_house_war_name: "[ATTACKER.GetPrimaryTitle.GetAdjective] válka za sjednocení rodu [ATTACKER.GetHouse.GetBaseNameNoTooltip]"
- fp3_unify_house_cb_victory_desc: "Všichni [Concept('vassals','vazalové')|E] [defender.GetShortUINamePossessive] pod rodem [attacker.GetHouse.GetBaseNameNoTooltip] se stanou [Concept('vassals','vazaly')|E] [attacker.GetShortUINamePossessive]." # todo: CONCEPT CASE
- fp3_unify_house_cb_victory_desc_attacker: "Všichni [Concept('vassals','vazalové')|E] [defender.GetShortUINamePossessive] pod rodem [attacker.GetHouse.GetBaseName] se stanou vašimi [Concept('vassals','vazaly')|E]." # todo: CONCEPT CASE
- fp3_unify_house_cb_victory_desc_defender: "Všichni vaši [Concept('vassals','vazaly')|E] rodu [attacker.GetHouse.GetBaseNameNoTooltip] se stanou [Concept('vassals','vazaly')|E] [attacker.GetShortUINamePossessive]." # todo: CONCEPT CASE
- fp3_unify_house_cb_defeat_desc: "Jakékoli [Concept('vassals','vazalové')|E] rodu [attacker.GetHouse.GetBaseNameNoTooltip] zůstanou pod vládou [defender.GetShortUINamePossessive]." # todo: CONCEPT CASE
- fp3_unify_house_cb_defeat_desc_defender: "Jakékoli [Concept('vassals','vazalové')|E] rodu [attacker.GetHouse.GetBaseNameNoTooltip] zůstávají pod vaší vládou." # todo: CONCEPT CASE
- fp3_seljuk_horde_title_title: "Seljukští nomádi"
- fp3_seljuk_horde_title_adj: "Seljukští"
- fp3_seljuk_horde_army_title: "Skupina nomádských osadníků"
+ fp3_unify_house_war_name: "[ATTACKER.GetPrimaryTitle.GetAdjective] válka za sjednocení [Concept('house','rodu')|El] [ATTACKER.GetHouse.GetBaseNameNoTooltip]"
+ fp3_unify_house_cb_victory_desc: "Všichni [Concept('vassals','vazalové')|El] postavy [defender.GetShortUIName], kteří patří k [Concept('house','rodu')|El] [attacker.GetHouse.GetBaseNameNoTooltip], se stanou [Concept('vassals','vazaly')|El] postavy [attacker.GetShortUIName]."
+ fp3_unify_house_cb_victory_desc_attacker: "Všichni [Concept('vassals','vazalové')|El] postavy [defender.GetShortUIName], kteří patří k [Concept('house','rodu')|El] [attacker.GetHouse.GetBaseName], se stanou tvými [Concept('vassals','vazaly')|El]."
+ fp3_unify_house_cb_victory_desc_defender: "Všichni tvoji [Concept('vassals','vazalové')|El] z [Concept('house','rodu')|El] [attacker.GetHouse.GetBaseNameNoTooltip] se stanou [Concept('vassals','vazaly')|El] postavy [attacker.GetShortUIName]."
+ fp3_unify_house_cb_defeat_desc: "Všichni [Concept('vassals','vazalové')|El] z [Concept('house','rodu')|El] [attacker.GetHouse.GetBaseNameNoTooltip] zůstanou pod vládou postavy [defender.GetShortUIName]."
+ fp3_unify_house_cb_defeat_desc_defender: "Všichni [Concept('vassals','vazalové')|El] z [Concept('house','rodu')|El] [attacker.GetHouse.GetBaseNameNoTooltip] zůstanou pod tvou vládou."
+ fp3_seljuk_horde_title_title: "Seldžučtí kočovníci"
+ fp3_seljuk_horde_title_adj: "Seldžucký"
+ fp3_seljuk_horde_army_title: "Skupina kočovných osadníků"
  fp3_seljuk_invasion_cb: "$fp3_seljuk_invasion_cb_name$"
- fp3_seljuk_invasion_cb_name: "Nomádská invaze"
- fp3_seljuk_invasion_war_name: "Seljukská $fp3_seljuk_invasion_cb_name$ [TITLE.GetNameNoTier]"
- fp3_seljuk_invasion_cb_victory_desc: "$fp3_seljuk_horde_title_title$ získají sporné [Concept('titles','tituly')|E] násilím." # todo: CONCEPT CASE
- fp3_seljuk_invasion_cb_victory_desc_attacker: "Vy získáte sporné [Concept('titles','tituly')|E] násilím." # todo: CONCEPT CASE
- fp3_seljuk_invasion_cb_defeat_desc: "$fp3_seljuk_horde_title_title$ jsou poraženi a nuceni opustit vaše země."
- fp3_seljuk_invasion_cb_defeat_desc_attacker: "Jste nuceni se přesídlit jinam."
- fp3_seljuk_invasion_cb_white_peace_desc: "$fp3_seljuk_horde_title_title$ obdrží území jako ocenění jejich zdatnosti."
- fp3_seljuk_invasion_cb_white_peace_desc_attacker: "Získáte nějaká území k usazení."
- fp3_seljuk_invasion_call_to_war_defender.notification: "Seljukská nomádská invaze "
+ fp3_seljuk_invasion_cb_name: "Kočovná invaze"
+ fp3_seljuk_invasion_war_name: "Seldžucká $fp3_seljuk_invasion_cb_name$ do [TITLE.GetNameNoTier]"
+ fp3_seljuk_invasion_cb_victory_desc: "$fp3_seljuk_horde_title_title$ se násilím zmocní sporných [Concept('titles','titulů')|El]."
+ fp3_seljuk_invasion_cb_victory_desc_attacker: "Násilím se zmocníš sporných [Concept('titles','titulů')|El]."
+ fp3_seljuk_invasion_cb_defeat_desc: "$fp3_seljuk_horde_title_title$ budou poraženi a donuceni opustit tvé země."
+ fp3_seljuk_invasion_cb_defeat_desc_attacker: "Budeš donucen přesídlit jinam."
+ fp3_seljuk_invasion_cb_white_peace_desc: "$fp3_seljuk_horde_title_title$ získají za svou udatnost země k osídlení."
+ fp3_seljuk_invasion_cb_white_peace_desc_attacker: "Získáš část země k osídlení."
+ fp3_seljuk_invasion_call_to_war_defender.notification: "Seldžucká kočovná invaze "
  azariqa_rebellion_cb: "$war_Azariqa_Rebellion$"
- fp3_zanj_rebellion_war: "Zanjské povstání"
- fp3_zanj_rebel_army_title: "Zanjští povstalci"
- fp3_zanj_rebellion_name: "Zanjské povstání"
- fp3_zanj_rebellion_name_adj: "Zanj"
- fp3_zanj_rebellion_cb_victory_desc: "$fp3_zanj_Rebel_army_title$ se stanou nezávislými a ovládnou Basru."
- fp3_zanj_rebellion_cb_defeat_desc: "$fp3_zanj_Rebel_army_title$ jsou poraženi a donuceni k podrobení."
- ANCESTOR_WAR_NAME: "[ConcatIfNeitherEmpty('$ORDER|q$', ' ')][ATTACKER.GetPrimaryTitle.GetAdjective] Předkův nárok na [TITLE.GetBaseName]"
+ fp3_zanj_rebellion_war: "Povstání Zandžů"
+ fp3_zanj_rebel_army_title: "Zandžští povstalci"
+ fp3_zanj_rebellion_name: "Povstání Zandžů"
+ fp3_zanj_rebellion_name_adj: "Zandžské"
+ fp3_zanj_rebellion_cb_victory_desc: "$fp3_zanj_Rebel_army_title$ se osamostatní a převezmou vládu nad Basrou."
+ fp3_zanj_rebellion_cb_defeat_desc: "$fp3_zanj_Rebel_army_title$ budou poraženi a znovu podrobeni."
+ ANCESTOR_WAR_NAME: "[ConcatIfNeitherEmpty('$ORDER|q$', ' ')][ATTACKER.GetPrimaryTitle.GetAdjective] válka za rodový nárok na [TITLE.GetBaseName]"
  ANCESTOR_WAR_NAME_BASE: "[ATTACKER.GetPrimaryTitle.GetAdjective][DEFENDER.GetPrimaryTitle.GetName]"
- ANCESTOR_CB_NAME: "Nárok předků"
- EXPANSION_WAR_NAME: "[ConcatIfNeitherEmpty('$ORDER|q$', ' ')][ATTACKER.GetPrimaryTitle.GetAdjective] Expanze [TITLE.GetBaseName]"
+ ANCESTOR_CB_NAME: "Rodový nárok"
+ EXPANSION_WAR_NAME: "[ConcatIfNeitherEmpty('$ORDER|q$', ' ')][ATTACKER.GetPrimaryTitle.GetAdjective] rozšíření o [TITLE.GetBaseName]"
  EXPANSION_WAR_NAME_BASE: "[ATTACKER.GetPrimaryTitle.GetAdjective][DEFENDER.GetPrimaryTitle.GetName]"
  expansion_cb: "$EXPANSION_COUNTY_CB_NAME$"
  duchy_expansion_cb: "$EXPANSION_DUCHY_CB_NAME$"
- EXPANSION_COUNTY_CB_NAME: "Expanze [Concept('county','hrabství')|E]" # todo: CONCEPT CASE
- EXPANSION_DUCHY_CB_NAME: "Expanze [Concept('duchy','vévodství')|E]" # todo: CONCEPT CASE
+ EXPANSION_COUNTY_CB_NAME: "Rozšíření o [Concept('county','hrabství')|El]"
+ EXPANSION_DUCHY_CB_NAME: "Rozšíření o [Concept('duchy','vévodství')|El]"
  naval_expansion_cb: "$NAVAL_EXPANSION_COUNTY_CB_NAME$"
  naval_duchy_expansion_cb: "$NAVAL_EXPANSION_DUCHY_CB_NAME$"
- NAVAL_EXPANSION_COUNTY_CB_NAME: "Námořní expanze [Concept('county','hrabství')|E]" # todo: CONCEPT CASE
- NAVAL_EXPANSION_DUCHY_CB_NAME: "Námořní expanze [Concept('duchy','vévodství')|E]" # todo: CONCEPT CASE
- expansion_take_target_title_tt: "Získáte [de_jure_target.GetName]"
- expansion_create_target_title_tt: "[de_jure_target.GetName] bude vytvořen a udělen vám"
+ NAVAL_EXPANSION_COUNTY_CB_NAME: "Námořní rozšíření o [Concept('county','hrabství')|El]"
+ NAVAL_EXPANSION_DUCHY_CB_NAME: "Námořní rozšíření o [Concept('duchy','vévodství')|El]"
+ expansion_take_target_title_tt: "Získáš [de_jure_target.GetName]"
+ expansion_create_target_title_tt: "Titul [de_jure_target.GetName] bude vytvořen a udělen tobě"
  influence_war_cb: "$INFLUENCE_WAR_CB_NAME$"
- INFLUENCE_WAR_NAME: "[ConcatIfNeitherEmpty('$ORDER|q$', ' ')][ATTACKER.GetTopLiege.GetPrimaryTitle.GetAdjective] Expanze [TITLE.GetBaseName]"
- INFLUENCE_WAR_NAME_BASE: "[ATTACKER.GetPrimaryTitle.GetAdjective][DEFENDER.GetPrimaryTitle.GetName]"
- INFLUENCE_WAR_CB_NAME: "Sponzorovaná administrativní válka"
- influence_war_top_liege_gains_title_desc: "[attacker.GetTopLiege.GetShortUIName|U] získá sporný [Concept('title','titul')|E]." # todo: CONCEPT CASE
- INFLUENCE_WAR_CB_TITLE: "[attacker.GetTopLiege.GetShortUIName|U] zabere veškeré území v rámci [defender.GetShortUINamePossessive] [Concept('realm','panství')|E], které je součástí [THIS.GetLandedTitle.GetBaseName]" # todo: CONCEPT CASE
+ INFLUENCE_WAR_NAME: "[ConcatIfNeitherEmpty('$ORDER|q$', ' ')][ATTACKER.GetTopLiege.GetPrimaryTitle.GetAdjective] rozšíření o [TITLE.GetBaseName]"
+ INFLUENCE_WAR_NAME_BASE: "[ATTACKER.GetTopLiege.GetPrimaryTitle.GetAdjective][DEFENDER.GetPrimaryTitle.GetName]"
+ INFLUENCE_WAR_CB_NAME: "Sponzorovaná správní válka"
+ influence_war_top_liege_gains_title_desc: "[attacker.GetTopLiege.GetShortUIName|U] získá sporný [Concept('title','titul')|El]."
+ INFLUENCE_WAR_CB_TITLE: "[attacker.GetTopLiege.GetShortUIName|U] se zmocní veškerého území v [Concept('realm','panství')|El] postavy [defender.GetShortUIName], které náleží k [THIS.GetLandedTitle.GetBaseName]"
  influence_war_take_target_title_tt: "[attacker.GetTopLiege.GetShortUIName] získá [de_jure_target.GetName]"
  influence_war_instigator_notification: "Sponzorovaná válka vyhrána"
- camp_located_in_defender_realm.tt: "Váš [Concept('camp','tábor')|E] se nachází v [recipient.GetTitledFirstNamePossessive] [Concept('realm','panství')|E]" # todo: CONCEPT CASE
+ camp_located_in_defender_realm.tt: "Tvůj [Concept('camp','tábor')|El] se nachází v [Concept('realm','panství')|El] postavy [recipient.GetTitledFirstName]"
  migration_cb: "$MIGRATION_WAR_CB_NAME$"
- migration_cb_victory_desc_attacker: "Přesídlíte do sporného [Concept('title','titulu')|E]." # todo: CONCEPT CASE
- migration_cb_victory_desc: "[attacker.GetShortUIName|U] se přestěhuje do sporného [Concept('title','titulu')|E]." # todo: CONCEPT CASE
- MIGRATION_WAR_NAME: "[ConcatIfNeitherEmpty('$ORDER|q$', ' ')][ATTACKER.GetTopLiege.GetPrimaryTitle.GetAdjective] Migrace do [TITLE.GetBaseName]"
+ migration_cb_victory_desc_attacker: "Přesídlíš na území sporného [Concept('title','titulu')|El]."
+ migration_cb_victory_desc: "[attacker.GetShortUIName|U] přesídlí na území sporného [Concept('title','titulu')|El]."
+ MIGRATION_WAR_NAME: "[ConcatIfNeitherEmpty('$ORDER|q$', ' ')][ATTACKER.GetTopLiege.GetPrimaryTitle.GetAdjective] migrace do [TITLE.GetBaseName]"
  MIGRATION_WAR_NAME_BASE: "[ATTACKER.GetTopLiege.GetPrimaryTitle.GetAdjective][DEFENDER.GetPrimaryTitle.GetName]"
  MIGRATION_WAR_CB_NAME: "Migrační válka"
- MIGRATION_CB_TITLE: "Zabereš veškeré území v rámci [defender.GetShortUINamePossessive] [Concept('realm','panství')|E], které je součástí [THIS.GetLandedTitle.GetBaseName]" # todo: CONCEPT CASE
- migration_cb_white_peace_desc_defender: "Zůstáváte ve sporném [Concept('title','titulu')|E]." # todo: CONCEPT CASE
- migration_cb_white_peace_desc: "[defender.GetShortUIName] zůstává ve sporném [Concept('title','titulu')|E]" # todo: CONCEPT CASE
- migration_cb_defeat_desc_defender: "Zůstáváte ve sporném [Concept('title','titulu')|E]." # todo: CONCEPT CASE
- migration_cb_defeat_desc: "[defender.GetShortUIName] zůstává ve sporném [Concept('title','titulu')|E]" # todo: CONCEPT CASE
+ MIGRATION_CB_TITLE: "Zmocníš se veškerého území v [Concept('realm','panství')|El] postavy [defender.GetShortUIName], které náleží k [THIS.GetLandedTitle.GetBaseName]"
+ migration_cb_white_peace_desc_defender: "Zůstaneš na území sporného [Concept('title','titulu')|El]."
+ migration_cb_white_peace_desc: "[defender.GetShortUIName] zůstane na území sporného [Concept('title','titulu')|El]"
+ migration_cb_defeat_desc_defender: "Zůstaneš na území sporného [Concept('title','titulu')|El]."
+ migration_cb_defeat_desc: "[defender.GetShortUIName] zůstane na území sporného [Concept('title','titulu')|El]"
  mpo_nomad_invasion_cb: "$MPO_NOMAD_INVASION_CB_NAME$"
- MPO_NOMAD_INVASION_CB_NAME: "Převálcovat [Concept('kingdom','království')|E]" # todo: CONCEPT CASE
- MPO_NOMAD_INVASION_CB_SPECIFIC_NAME: "Převálcování [TITLE.GetBaseName]"
- MPO_NOMAD_INVASION_WAR_NAME: "[ConcatIfNeitherEmpty('$ORDER|q$', ' ')][ATTACKER.GetPrimaryTitle.GetAdjective] Převálcování [TITLE.GetBaseName]"
+ MPO_NOMAD_INVASION_CB_NAME: "Převálcovat [Concept('kingdom','království')|El]"
+ MPO_NOMAD_INVASION_CB_SPECIFIC_NAME: "Převálcovat [TITLE.GetBaseName]"
+ MPO_NOMAD_INVASION_WAR_NAME: "[ConcatIfNeitherEmpty('$ORDER|q$', ' ')][ATTACKER.GetPrimaryTitle.GetAdjective] převálcování [TITLE.GetBaseName]"
  MPO_NOMAD_INVASION_WAR_NAME_BASE: "[ATTACKER.GetPrimaryTitle.GetAdjective] [DEFENDER.GetPrimaryTitle.GetName]"
- mpo_nomad_invasion_cb_tt: "Potřebujete [GetLaw('nomadic_authority_3').GetName], [GetLaw('nomadic_authority_4').GetName] #EMP nebo#! [GetLaw('nomadic_authority_5').GetName]"
- mpo_nomad_duchy_invasion_cb: "$MPO_NOMAD_INVASION_CB_NAME$" # todo: NEW TRANSLATION
- MPO_NOMAD_DUCHY_INVASION_CB_NAME: "Obsazení [Concept('duchy','vévodství')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- MPO_NOMAD_DUCHY_INVASION_CB_SPECIFIC_NAME: "Obsazení [TITLE.GetBaseName]" # todo: NEW TRANSLATION
- MPO_NOMAD_DUCHY_INVASION_WAR_NAME: "[ConcatIfNeitherEmpty('$ORDER|q$', ' ')][ATTACKER.GetPrimaryTitle.GetAdjective] Obsazení [TITLE.GetBaseName]" # todo: NEW TRANSLATION
- MPO_NOMAD_DUCHY_INVASION_WAR_NAME_BASE: "[ATTACKER.GetPrimaryTitle.GetAdjective] [DEFENDER.GetPrimaryTitle.GetName]" # todo: NEW TRANSLATION
- mpo_nomad_invasion_duchy_cb_tt: "Potřebujete [GetLaw('nomadic_authority_2').GetName], [GetLaw('nomadic_authority_3').GetName] nebo [GetLaw('nomadic_authority_4').GetName]" # todo: NEW TRANSLATION
- custom.every_no_longer_neighbor_tributary: "Každý [Concept('tributary','tributář')|E], který už není sousedem" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- mpo_nomad_invasion_war_tribal_conversion_desc: "\n\n@alert_icon! #alert_trial Vaše [Concept('government','vláda')|E] se změní na [Concept('tribal','kmenový')|E], vaše [Concept('capital','hlavní sídlo')|E] se přesune a některé dobytá [Concept('counties','hrabství')|E] se převedou na vaši [Concept('culture','kulturu')|E] a [Concept('faith','víra')|E].#!" # todo: CONCEPT CASE
- mpo_nomad_invasion_war_clan_conversion_desc: "\n\n@alert_icon! #alert_trial Vaše [Concept('government','vláda')|E] se změní na [Concept('clan','klan')|E], vaše [Concept('capital','hlavní sídlo')|E] se přesune, a některé dobytá [Concept('counties','hrabství')|E] se převedou na vaši [Concept('culture','kulturu')|E] a [Concept('faith','víra')|E].#!" # todo: CONCEPT CASE
- mpo_nomad_invasion_war_conversion_desc: "\n\n@alert_icon! #alert_trial Vaše [Concept('government','vláda')|E] se změní na [Concept('feudal','feudálního')|E], vaše [Concept('capital','hlavní sídlo')|E] se přesune, a některé dobytá [Concept('counties','hrabství')|E] se převedou na vaši [Concept('culture','kulturu')|E] a [Concept('faith','víra')|E].#!" # todo: CONCEPT CASE
- NOMAD_CB_UNREFORMED_COST: "Vaše [Concept('faith','víra')|E] je [GetFaithDoctrine('west_african_unreformed_faith_doctrine').GetBaseName]" # todo: CONCEPT CASE
- overrunning_war_victory_desc_attacker: "Zabíráte všechny tituly v rámci [defender.GetShortUINamePossessive] říše, které patří [Concept('de_jure','de iure')|E] cílovému titulu. Jeden z nich se stane vaším [Concept('capital','hlavním sídlem')|E], několik se převede na vaši [Concept('culture','kulturu')|E] a [Concept('faith','víra')|E], a vy se stanete" # todo: CONCEPT CASE
- overrunning_war_victory_desc: "[attacker.GetShortUIName|U] zabírá všechny tituly v rámci [defender.GetShortUINamePossessive] říše, které patří [Concept('de_jure','de iure')|E] cílovému titulu. Jeden [Concept('county','hrabství')|E] se stane [attacker.GetHerHis] [Concept('capital','hlavní sídlo')|E], několik se převede na [attacker.GetHerHis] [Concept('culture','kulturu')|E] a [Concept('faith','víra')|E], a [attacker.GetSheHe] se stane" # todo: CONCEPT CASE
- overrunning_war_victory_desc_tribal: "[Concept('tribal','Kmenový')|E]." # todo: CONCEPT CASE
- overrunning_war_victory_desc_clan: "[Concept('clan','Klan')|E]." # todo: CONCEPT CASE
- overrunning_war_victory_desc_feudal: "[Concept('feudal','Feudální')|E]." # todo: CONCEPT CASE
- overrunning_war_victory_warning_desc_attacker: "\n\n@alert_icon! #alert_trial Ztratíte všechny [GetGovernment( 'nomad_government' ).GetName] tituly. Vaši [GetGovernment( 'nomad_government' ).GetName] [Concept('vassals','vazaly')|E] buď získají dobytá území, nebo se stanou [Concept('independent','nezávislým')|E].#!" # todo: CONCEPT CASE
- overrunning_war_victory_warning_desc: "\n\n@alert_icon! #alert_trial [attacker.GetShortUIName|U] ztratí všechny [GetGovernment( 'nomad_government' ).GetName] tituly. [attacker.GetShortUINamePossessive|U] [GetGovernment( 'nomad_government' ).GetName] [Concept('vassals','Vazalové')|E] buď získají dobytá území, nebo se stanou [Concept('independent','nezávislým')|E].#!" # todo: CONCEPT CASE
- overrunning_defender_lose_vassals_tt: "@alert_icon! #alert_trial Po ztrátě [Concept('primary_title','hlavnímu titulu')|E] všichni [Concept('vassals','vazalové')|E] stejného nebo vyššího [Concept('title_tier','úrovně')|E] se stanou [Concept('independent','nezávislým')|E]#!" # todo: CONCEPT CASE
- overrunning_duchy_war_victory_desc_attacker: "Ovládnete všechny tituly v říši [defender.GetShortUINamePossessive], které [Concept('de_jure','de iure')|E] patří k cílovému titulu. Jeden z nich se stane vaším [Concept('capital','hlavním sídlem')|E], a vy se stanete" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- overrunning_duchy_war_victory_desc: "[attacker.GetShortUIName|U] získá všechny tituly v říši [defender.GetShortUINamePossessive], které [Concept('de_jure','de iure')|E] patří k cílovému titulu. Jeden [Concept('county','hrabství')|E] se stane [attacker.GetHerHis] [Concept('capital','hlavní sídlo')|E] a [attacker.GetSheHe] se stane" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ mpo_nomad_invasion_cb_tt: "Potřebuješ [GetLaw('nomadic_authority_3').GetName], [GetLaw('nomadic_authority_4').GetName] #EMP nebo#! [GetLaw('nomadic_authority_5').GetName]"
+ mpo_nomad_duchy_invasion_cb: "$MPO_NOMAD_INVASION_CB_NAME$"
+ MPO_NOMAD_DUCHY_INVASION_CB_NAME: "Převálcovat [Concept('duchy','vévodství')|El]"
+ MPO_NOMAD_DUCHY_INVASION_CB_SPECIFIC_NAME: "Převálcovat [TITLE.GetBaseName]"
+ MPO_NOMAD_DUCHY_INVASION_WAR_NAME: "[ConcatIfNeitherEmpty('$ORDER|q$', ' ')][ATTACKER.GetPrimaryTitle.GetAdjective] převálcování [TITLE.GetBaseName]"
+ MPO_NOMAD_DUCHY_INVASION_WAR_NAME_BASE: "[ATTACKER.GetPrimaryTitle.GetAdjective] [DEFENDER.GetPrimaryTitle.GetName]"
+ mpo_nomad_invasion_duchy_cb_tt: "Potřebuješ [GetLaw('nomadic_authority_2').GetName], [GetLaw('nomadic_authority_3').GetName] nebo [GetLaw('nomadic_authority_4').GetName]"
+ custom.every_no_longer_neighbor_tributary: "Každý již nesousedící [Concept('tributary','tributář')|El]"
+ mpo_nomad_invasion_war_tribal_conversion_desc: "\n\n@alert_icon! #alert_trial Tvá [Concept('government','vláda')|El] se změní na [Concept('tribal','kmenovou')|El], tvé [Concept('capital','hlavní sídlo')|El] se přesune a některá dobytá [Concept('counties','hrabství')|El] přijmou tvou [Concept('culture','kulturu')|El] a [Concept('faith','víru')|El].#!"
+ mpo_nomad_invasion_war_clan_conversion_desc: "\n\n@alert_icon! #alert_trial Tvá [Concept('government','vláda')|El] se změní na [Concept('clan','klanovou')|El], tvé [Concept('capital','hlavní sídlo')|El] se přesune a některá dobytá [Concept('counties','hrabství')|El] přijmou tvou [Concept('culture','kulturu')|El] a [Concept('faith','víru')|El].#!"
+ mpo_nomad_invasion_war_conversion_desc: "\n\n@alert_icon! #alert_trial Tvá [Concept('government','vláda')|El] se změní na [Concept('feudal','feudální')|El], tvé [Concept('capital','hlavní sídlo')|El] se přesune a některá dobytá [Concept('counties','hrabství')|El] přijmou tvou [Concept('culture','kulturu')|El] a [Concept('faith','víru')|El].#!"
+ NOMAD_CB_UNREFORMED_COST: "Tvá [Concept('faith','víra')|El] je [GetFaithDoctrine('west_african_unreformed_faith_doctrine').GetBaseName]"
+ overrunning_war_victory_desc_attacker: "Zmocníš se všech titulů v [Concept('realm','panství')|El] postavy [defender.GetShortUIName], které [Concept('de_jure','de iure')|El] náleží k cílovému titulu. Jeden z nich se stane tvým [Concept('capital','hlavním sídlem')|El], několik jich přijme tvou [Concept('culture','kulturu')|El] a [Concept('faith','víru')|El] a tvá vláda se změní na"
+ overrunning_war_victory_desc: "[attacker.GetShortUIName|U] se zmocní všech titulů v [Concept('realm','panství')|El] postavy [defender.GetShortUIName], které [Concept('de_jure','de iure')|El] náleží k cílovému titulu. Jedno [Concept('county','hrabství')|El] se stane [Concept('capital','hlavním sídlem')|El] postavy [attacker.GetShortUIName], několik jich přijme její [Concept('culture','kulturu')|El] a [Concept('faith','víru')|El] a její vláda se změní na"
+ overrunning_war_victory_desc_tribal: "[Concept('tribal','kmenovou')|El]."
+ overrunning_war_victory_desc_clan: "[Concept('clan','klanovou')|El]."
+ overrunning_war_victory_desc_feudal: "[Concept('feudal','feudální')|El]."
+ overrunning_war_victory_warning_desc_attacker: "\n\n@alert_icon! #alert_trial Přijdeš o všechny tituly s formou vlády [GetGovernment( 'nomad_government' ).GetName]. Tví [Concept('vassals','vazalové')|El] s formou vlády [GetGovernment( 'nomad_government' ).GetName] buď získají dobyté tituly, nebo se stanou [Concept('independent','nezávislými')|El].#!"
+ overrunning_war_victory_warning_desc: "\n\n@alert_icon! #alert_trial [attacker.GetShortUIName|U] přijde o všechny tituly s formou vlády [GetGovernment( 'nomad_government' ).GetName]. Její [Concept('vassals','vazalové')|El] s formou vlády [GetGovernment( 'nomad_government' ).GetName] buď získají dobyté tituly, nebo se stanou [Concept('independent','nezávislými')|El].#!"
+ overrunning_defender_lose_vassals_tt: "@alert_icon! #alert_trial Po ztrátě [Concept('primary_title','hlavního titulu')|El] se všichni [Concept('vassals','vazalové')|El] se stejnou nebo vyšší [Concept('title_tier','úrovní titulu')|El] stanou [Concept('independent','nezávislými')|El]#!"
+ overrunning_duchy_war_victory_desc_attacker: "Zmocníš se všech titulů v [Concept('realm','panství')|El] postavy [defender.GetShortUIName], které [Concept('de_jure','de iure')|El] náleží k cílovému titulu. Jeden z nich se stane tvým [Concept('capital','hlavním sídlem')|El] a tvá vláda se změní na"
+ overrunning_duchy_war_victory_desc: "[attacker.GetShortUIName|U] se zmocní všech titulů v [Concept('realm','panství')|El] postavy [defender.GetShortUIName], které [Concept('de_jure','de iure')|El] náleží k cílovému titulu. Jedno [Concept('county','hrabství')|El] se stane [Concept('capital','hlavním sídlem')|El] postavy [attacker.GetShortUIName] a její vláda se změní na"
  attacker_offensive: "Vyvážený útok"
- attacker_offensive_desc: "Tato strana se přizpůsobí aktuálním okolnostem války a nebude preferovat žádný konkrétní útočný přístup."
+ attacker_offensive_desc: "Tato strana se přizpůsobí aktuálním okolnostem války a nebude upřednostňovat žádný konkrétní útočný postup."
  attacker_defensive: "$attacker_offensive$"
  attacker_defensive_desc: "$attacker_offensive_desc$"
  defender_offensive: "Vyvážená obrana"
- defender_offensive_desc: "Tato strana se přizpůsobí aktuálním okolnostem války a nebude preferovat žádný konkrétní obranný přístup."
+ defender_offensive_desc: "Tato strana se přizpůsobí aktuálním okolnostem války a nebude upřednostňovat žádný konkrétní obranný postup."
  defender_defensive: "$defender_offensive$"
  defender_defensive_desc: "$defender_offensive_desc$"
  defender_desperate: "Zoufalá obrana"
- defender_desperate_desc: "Tato strana je zoufalá a bude více bezohledná v posledním pokusu vyhrát válku. Pravděpodobně se pokusí najít místo pro hrdinský poslední odpor, pokud to bude možné."
- great_holy_war_attacker: "Útočná strategie Velké svaté války"
- great_holy_war_attacker_desc: "Tato strana je neorganizovaná a snaží se získat válečný cíl bezohledně."
- great_holy_war_defender: "Obrana ve Velké svaté válce"
- great_holy_war_defender_desc: "Tato strana je neorganizovaná a snaží se udržet válečný cíl bezohledně."
- attacker_offensive_unit_hunter: "Útočný režim hledající bitvy"
- attacker_offensive_unit_hunter_desc: "Tato strana bude aktivně a bez rozlišování pronásledovat nepřátelské [Concept('armies','armády')|E], pokud z [Concept('battles','bitev')|E] může získat [Concept('war_score','válečné skóre')|E]." # todo: CONCEPT CASE
+ defender_desperate_desc: "Tato strana je zoufalá a při posledním pokusu o vítězství ve válce bude jednat bezohledněji. Pokud to bude možné, pravděpodobně se pokusí najít místo pro hrdinný poslední odpor."
+ great_holy_war_attacker: "Útok ve velké svaté válce"
+ great_holy_war_attacker_desc: "Tato strana je neorganizovaná a bezohledně se snaží dobýt válečný cíl."
+ great_holy_war_defender: "Obrana ve velké svaté válce"
+ great_holy_war_defender_desc: "Tato strana je neorganizovaná a bezohledně se snaží udržet válečný cíl."
+ attacker_offensive_unit_hunter: "Útok zaměřený na bitvy"
+ attacker_offensive_unit_hunter_desc: "Tato strana bude aktivně a bez rozdílu pronásledovat nepřátelské [Concept('armies','armády')|El], dokud bude moci získávat [Concept('war_score','válečné skóre')|El] z [Concept('battles','bitev')|El]."
  attacker_defensive_unit_hunter: "$attacker_offensive_unit_hunter$"
  attacker_defensive_unit_hunter_desc: "$attacker_offensive_unit_hunter_desc$"
- attacker_offensive_indiscriminate_war_goal: "Útočný režim zaměřený na cíl"
- attacker_offensive_indiscriminate_war_goal_desc: "Tato strana bude bez rozlišování usilovat o [Concept('war_target','válečný cíl')|E], často přitom nechá své vlastní země nechráněné." # todo: CONCEPT CASE
- attacker_offensive_cautious_advancer: "Opatrný útok"
- attacker_offensive_cautious_advancer_desc: "Tato strana zajistí bezpečnost svých vlastních zemí před postupem k [Concept('war_target','válečnému cíli')|E]." # todo: CONCEPT CASE
+ attacker_offensive_indiscriminate_war_goal: "Útok zaměřený na cíl"
+ attacker_offensive_indiscriminate_war_goal_desc: "Tato strana bude bezohledně usilovat o [Concept('war_target','válečný cíl')|El] a často přitom ponechá vlastní země bez obrany."
+ attacker_offensive_cautious_advancer: "Obezřetný útok"
+ attacker_offensive_cautious_advancer_desc: "Tato strana nejprve zajistí bezpečnost vlastních zemí a teprve poté postoupí k [Concept('war_target','válečnému cíli')|El]."
  attacker_offensive_siege_attacker: "Útok zaměřený na obléhání"
- attacker_offensive_siege_attacker_desc: "Tato strana bude obléhat cestou k [Concept('war_target','válečnému cíli')|E] a bude ignorovat [Concept('battles','bitvy')|E], pokud to nebude nezbytné." # todo: CONCEPT CASE
- defender_offensive_counter_attacker: "Obrana hledající bitvy"
- defender_offensive_counter_attacker_desc: "Tato strana bude aktivně vyhledávat [Concept('armies','armády')|E], zejména v rámci [Concept('war_target','válečného cíle')|E] a přátelských území." # todo: CONCEPT CASE
+ attacker_offensive_siege_attacker_desc: "Tato strana se bude k [Concept('war_target','válečnému cíli')|El] propracovávat pomocí [Concept('siege','obléhání')|El] a [Concept('battles','bitvy')|El] bude ignorovat, pokud nebudou nezbytné."
+ defender_offensive_counter_attacker: "Obrana zaměřená na bitvy"
+ defender_offensive_counter_attacker_desc: "Tato strana bude aktivně vyhledávat nepřátelské [Concept('armies','armády')|El], zejména v oblasti [Concept('war_target','válečného cíle')|El] a na přátelském území."
  defender_defensive_counter_attacker: "$defender_offensive_counter_attacker$"
  defender_defensive_counter_attacker_desc: "$defender_offensive_counter_attacker_desc$"
- defender_turtle: "Důsledná obrana"
- defender_turtle_desc: "Tato strana bude důkladně bránit své vlastní území a [Concept('war_target','válečný cíl')|E]. Zřídka, pokud vůbec, bude [Concept('siege','obléhání')|E] nebo útočit na [Concept('armies','armády')|E] v nepřátelských zemích." # todo: CONCEPT CASE
- defender_offensive_counter_sieger: "Obrana proti obléhání"
- defender_offensive_counter_sieger_desc: "Pokud je [Concept('war_target','válečný cíl')|E] zajištěn, tato strana bude hledat příležitosti k [Concept('siege','obléhání')|E] nepřátelských území." # todo: CONCEPT CASE
- defender_opportunistic: "Opportunistická obrana"
- defender_opportunistic_desc: "Když má protistrana nasazeno velmi málo jednotek, tato strana agresivně [Concept('siege','obléhání')|E] nepřátelská území." # todo: CONCEPT CASE
- nomadic_conquest_cb: "Nomádský spor o hrabství"
- nomadic_conquest_duchy_cb: "Nomádský spor o vévodství"
- NOMADIC_CONQUEST_COUNTY_CB_NAME: "Nomádský spor o [Concept('county','hrabství')|E]" # todo: CONCEPT CASE
- NOMADIC_CONQUEST_DUCHY_CB_NAME: "Nomádský spor o [Concept('duchy','vévodství')|E]" # todo: CONCEPT CASE
+ defender_turtle: "Odhodlaná obrana"
+ defender_turtle_desc: "Tato strana bude urputně bránit vlastní území a [Concept('war_target','válečný cíl')|El]. Na nepřátelském území bude jen zřídka, pokud vůbec, provádět [Concept('siege','obléhání')|El] nebo napadat [Concept('armies','armády')|El]."
+ defender_offensive_counter_sieger: "Obrana obléháním"
+ defender_offensive_counter_sieger_desc: "Pokud bude [Concept('war_target','válečný cíl')|El] v bezpečí, tato strana bude vyhledávat příležitosti k [Concept('siege','obléhání')|El] nepřátelských zemí."
+ defender_opportunistic: "Příležitostná obrana"
+ defender_opportunistic_desc: "Pokud bude mít protivník shromážděno jen velmi málo vojáků, tato strana začne agresivně [Concept('siege','obléhat')|El] nepřátelské země."
+ nomadic_conquest_cb: "Kočovný spor o hrabství"
+ nomadic_conquest_duchy_cb: "Kočovný spor o vévodství"
+ NOMADIC_CONQUEST_COUNTY_CB_NAME: "Kočovný spor o [Concept('county','hrabství')|El]"
+ NOMADIC_CONQUEST_DUCHY_CB_NAME: "Kočovný spor o [Concept('duchy','vévodství')|El]"
  NOMADIC_CONQUEST_CB_SPECIFIC_NAME: "Dobýt [TITLE.GetBaseName]"
  NOMADIC_CONQUEST_CB_NAME: "Dobýt [TITLE.GetBaseName]"
- NOMADIC_CONQUEST_WAR_NAME: "[ConcatIfNeitherEmpty('$ORDER|q$', ' ')][ATTACKER.GetPrimaryTitle.GetAdjective] Dobytí [TITLE.GetBaseName]"
+ NOMADIC_CONQUEST_WAR_NAME: "[ConcatIfNeitherEmpty('$ORDER|q$', ' ')][ATTACKER.GetPrimaryTitle.GetAdjective] dobytí [TITLE.GetBaseName]"
  NOMADIC_CONQUEST_WAR_NAME_BASE: "[ATTACKER.GetPrimaryTitle.GetAdjective][DEFENDER.GetPrimaryTitle.GetName]"
- nomadic_authority_4_or_5_tt: "Vaše [Concept('nomadic_authority','dominance')|E] musí být buď $nomadic_authority_4$ nebo vyšší" # todo: CONCEPT CASE
- humiliation_cb: "Válka ponížení"
+ nomadic_authority_4_or_5_tt: "Tvá [Concept('nomadic_authority','dominance')|El] musí být na úrovni $nomadic_authority_4$ nebo vyšší"
+ humiliation_cb: "Válka za ponížení"
  HUMILIATION_WAR_CB_NAME: "$humiliation_cb$"
  HUMILIATION_WAR_CB_NAME_BASE: "$humiliation_cb$"
- humiliation_cb_victory_desc_attacker: "Ponížíte [defender.GetShortUIName]."
- humiliation_cb_victory_desc: "[attacker.GetShortUIName|U] poníží [defender.GetShortUIName]."
- msg_remove_humiliation_cb_invalidated_message: "$humiliation_cb$ zrušeno!"
- humiliation_cb_not_obedient_tt: "Někteří z jejich [Concept('obedient','poslušný')|E] [Concept('vassals','vazalové')|E] mohou ztratit poslušnost" # todo: CONCEPT CASE
- humiliation_cb_release_herder_land_tt: "Hraniční hrabství [Concept('realm','panství')|E], která nejsou hlavním hrabstvím, jsou předána [Concept('herders','pastevci')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- humiliation_cb_white_peace_desc_defender: "Nejste poníženi."
- humiliation_cb_white_peace_desc: "[defender.GetShortUIName] nebyl ponížen."
+ humiliation_cb_victory_desc_attacker: "Ponížíš postavu [defender.GetShortUIName]."
+ humiliation_cb_victory_desc: "[attacker.GetShortUIName|U] poníží postavu [defender.GetShortUIName]."
+ msg_remove_humiliation_cb_invalidated_message: "$humiliation_cb$ byla zneplatněna!"
+ humiliation_cb_not_obedient_tt: "Někteří [Concept('obedient','poslušní')|El] [Concept('vassals','vazalové')|El] se mohou vzdát své poslušnosti"
+ humiliation_cb_release_herder_land_tt: "Pohraniční hrabství [Concept('realm','panství')|El], která nejsou hlavním sídlem, budou přenechána [Concept('herders','pastevcům')|El]"
+ humiliation_cb_white_peace_desc_defender: "Nebudeš ponížen."
+ humiliation_cb_white_peace_desc: "Postava [defender.GetShortUIName] nebude ponížena."
  humiliation_cb_defeat_desc_defender: "$humiliation_cb_white_peace_desc_defender$"
  humiliation_cb_defeat_desc: "$humiliation_cb_white_peace_desc$"
- retaliation_cb: "Válka odplaty"
+ retaliation_cb: "Odvetná válka"
  RETALIATION_WAR_CB_NAME: "$retaliation_cb$"
  RETALIATION_WAR_CB_NAME_BASE: "$retaliation_cb$"
- retaliation_cb_victory_desc_attacker: "Uděláte z [defender.GetShortUIName] svého tributáře."
- retaliation_cb_victory_desc: "[attacker.GetShortUIName|U] udělá z [defender.GetShortUIName] [Select_CString(attacker.IsFemale,'její','jeho')] tributáře."
- msg_remove_retaliation_cb_invalidated_message: "$retaliation_cb$ zrušeno!"
- retaliation_cb_white_peace_desc_defender: "Nestanete se [attacker.GetShortUINamePossessive] tributářem."
- retaliation_cb_white_peace_desc: "[defender.GetShortUIName] se nestane [attacker.GetShortUINamePossessive] tributářem."
+ retaliation_cb_victory_desc_attacker: "Učiníš z postavy [defender.GetShortUIName] svého [Concept('tributary','tributáře')|El]."
+ retaliation_cb_victory_desc: "[attacker.GetShortUIName|U] učiní z postavy [defender.GetShortUIName] svého [Concept('tributary','tributáře')|El]."
+ msg_remove_retaliation_cb_invalidated_message: "$retaliation_cb$ byla zneplatněna!"
+ retaliation_cb_white_peace_desc_defender: "Nestaneš se [Concept('tributary','tributářem')|El] postavy [attacker.GetShortUIName]."
+ retaliation_cb_white_peace_desc: "[defender.GetShortUIName] se nestane [Concept('tributary','tributářem')|El] postavy [attacker.GetShortUIName]."
  retaliation_cb_defeat_desc_defender: "$retaliation_cb_white_peace_desc_defender$"
  retaliation_cb_defeat_desc: "$retaliation_cb_white_peace_desc$"
- domination_cb: "Válka nadvlády"
- domination_war_cb: "Válka nadvlády"
+ domination_cb: "Válka o dominanci"
+ domination_war_cb: "Válka o dominanci"
  DOMINATION_WAR_SPECIFIC_NAME: "Ovládnout [TITLE.GetBaseName]"
  DOMINATION_WAR_CB_NAME: "Ovládnout [TITLE.GetBaseName]"
- DOMINATION_WAR_WAR_NAME: "[ConcatIfNeitherEmpty('$ORDER|q$', ' ')][ATTACKER.GetPrimaryTitle.GetAdjective] Dominace nad [TITLE.GetBaseName]"
+ DOMINATION_WAR_WAR_NAME: "[ConcatIfNeitherEmpty('$ORDER|q$', ' ')][ATTACKER.GetPrimaryTitle.GetAdjective] ovládnutí [TITLE.GetBaseName]"
  DOMINATION_WAR_WAR_NAME_BASE: "[ATTACKER.GetPrimaryTitle.GetAdjective][DEFENDER.GetPrimaryTitle.GetName]"
- de_jure_cb_nomadic: "[Concept('expand_dominance','Rozšířit dominanci')|E]" # todo: CONCEPT CASE
- NOMAD_DEJURE_CB_NAME: "[Concept('expand_dominance','Rozšířit dominanci')|E] nad [TITLE.GetBaseName]" # todo: CONCEPT CASE
- NOMAD_DEJURE_CB_WAR_NAME: "[ConcatIfNeitherEmpty('$ORDER|q$', ' ')][ATTACKER.GetPrimaryTitle.GetAdjective] [Concept('dominance_expansion','Rozšíření dominance')|E] nad [TITLE.GetBaseName]" # todo: CONCEPT CASE
+ de_jure_cb_nomadic: "[Concept('expand_dominance','Rozšířit dominanci')|El]"
+ NOMAD_DEJURE_CB_NAME: "[Concept('expand_dominance','Rozšířit dominanci')|El] nad [TITLE.GetBaseName]"
+ NOMAD_DEJURE_CB_WAR_NAME: "[ConcatIfNeitherEmpty('$ORDER|q$', ' ')][ATTACKER.GetPrimaryTitle.GetAdjective] [Concept('dominance_expansion','rozšíření dominance')|El] nad [TITLE.GetBaseName]"
  NOMAD_DEJURE_CB_WAR_NAME_BASE: "[ATTACKER.GetPrimaryTitle.GetAdjective][DEFENDER.GetPrimaryTitle.GetName]"
  NOMAD_DEJURE_CB_NAME_GENERIC: "$de_jure_cb_nomadic$"
- NOMAD_DEJURE_CB_WAR_SPECIFIC_NAME: "[ConcatIfNeitherEmpty('$ORDER|q$', ' ')][ATTACKER.GetPrimaryTitle.GetAdjective] [Concept('dominance_expansion','Rozšíření dominance')|E] nad [TITLE.GetBaseName]" # todo: CONCEPT CASE
+ NOMAD_DEJURE_CB_WAR_SPECIFIC_NAME: "[ConcatIfNeitherEmpty('$ORDER|q$', ' ')][ATTACKER.GetPrimaryTitle.GetAdjective] [Concept('dominance_expansion','rozšíření dominance')|El] nad [TITLE.GetBaseName]"
  NOMAD_DEJURE_CB_WAR_SPECIFIC_NAME_BASE: "[ATTACKER.GetPrimaryTitle.GetAdjective][DEFENDER.GetPrimaryTitle.GetName]"
  sovereignty_cb: "Válka o svrchovanost"
  sovereignty_war_cb: "$sovereignty_cb$"
  SOVEREIGNTY_WAR_CB_NAME: "$sovereignty_cb$"
- SOVEREIGNTY_WAR_WAR_NAME: "[ConcatIfNeitherEmpty('$ORDER|q$', ' ')][ATTACKER.GetPrimaryTitle.GetAdjective] Válka o svrchovanost s [TITLE.GetBaseName]"
+ SOVEREIGNTY_WAR_WAR_NAME: "[ConcatIfNeitherEmpty('$ORDER|q$', ' ')][ATTACKER.GetPrimaryTitle.GetAdjective] válka o svrchovanost s [TITLE.GetBaseName]"
  SOVEREIGNTY_WAR_WAR_NAME_BASE: "[ATTACKER.GetPrimaryTitle.GetAdjective][DEFENDER.GetPrimaryTitle.GetName]"
- sovereignty_cb_victory_desc_attacker: "Získáte sporné tributáře."
- sovereignty_cb_victory_desc: "[attacker.GetShortUIName|U] získá sporné tributáře."
- sovereignty_cb_white_peace_desc_defender: "Udržíte sporné tributáře."
- sovereignty_cb_white_peace_desc: "[defender.GetShortUIName|U] udrží sporné tributáře."
- sovereignty_cb_defeat_desc_defender: "Udržíte sporné tributáře. [attacker.GetShortUIName|U] vám musí zaplatit válečné reparace."
- sovereignty_cb_defeat_desc_attacker: "[defender.GetShortUIName|U] udrží sporné tributáře. Musíte [defender.GetHerHim] zaplatit válečné reparace."
- sovereignty_cb_defeat_desc: "[defender.GetShortUIName|U] udrží sporné tributáře a [attacker.GetShortUIName] musí [defender.GetHerHim] zaplatit válečné reparace."
- sovereignty_war_tributary_switch: "[Concept('tributaries','Tributáři')|E] [defender.GetShortUIName], které mohou vytvořit souvislé [Concept('realm','panství')|E], budou platit tribut [attacker.GetShortUIName]" # todo: CONCEPT CASE
- at_least_one_non_nomad_county_tt: "Cíl musí mít alespoň jednu ne-[Concept('nomadic','kočovný')|E] [Concept('county','hrabství')|E]" # todo: CONCEPT CASE
- defender_relation_to_suzerain: "[CHARACTER.GetShortUINameNoTooltip] je [Concept('tributary','tributář')|E] [TITLE.GetName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- defender_relation_to_top_liege: "[CHARACTER.GetShortUINameNoTooltip] je [Concept('vassal','vazal')|E] [TITLE.GetName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- liege_will_join_war_message: "#color_red [Character.GetShortUIName] #bold se přidá k válce#! ([DeclareWarInteractionWindow.GetProtectVassalInteractionValue|-]) #!" # todo: NEW TRANSLATION
- liege_will_not_join_war_message: "#color_green [Character.GetShortUIName] #bold se nepřidá k válce#! ([DeclareWarInteractionWindow.GetProtectVassalInteractionValue|-]) #!" # todo: NEW TRANSLATION
- war_aid_vassal_only_one_title: "Útočník cílí pouze na jeden [Concept('duchy','vévodství')|E] nebo [Concept('county','hrabství')|E] [Concept('title','titul')|E]: $VALUE|0=-$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- war_aid_vassal_below_kingdom_title: "Útočník cílí na [Concept('title','titul')|E] pod úrovní [Concept('kingdom','královstvím')|E] [Concept('title_tier','úrovní')|E]: $VALUE|0=-$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- war_aid_vassal_can_fend_the_attacker_alone: "Obránce je dostatečně silný, aby se ubránil sám: $VALUE|0=-$" # todo: NEW TRANSLATION
- war_aid_liege_is_bankrupt: "[Concept('overlord','Vrchní pán')|E] je ve [Concept('debt','dluhu')|E] a nemůže si dovolit zasáhnout: $VALUE|0=-$" # todo: RETRANSLATED ENGLISH # todo: CONCEPT CASE
- war_aid_liege_is_at_war: "The [Concept('overlord','vrchní pán')|E] is already at [Concept('war','válka')|E]: $VALUE|0=-$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- war_aid_liege_cooldown_tt: "[Concept('war','Válka')|E] probíhá méně než #V [EmptyScope.ScriptValue('border_war_grace_period_years')]#! let" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- war_aid_liege_not_my_liege_tt: "[Concept('war','Válka')|E] probíhá mezi vašimi vlastními [Concept('vassals','vazaly')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- war_aid_liege_relevant_titles_tt: "[Concept('war','Válka')|E] necílí na [Concept('titles','tituly')|E] ve vašem [Concept('realm','panství')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- war_aid_liege_is_player: "$DYNASTIC_CYCLE_WINDOW_HEGEMON_STABILITY_PICK_PLAYER_OTHER$" # todo: NEW TRANSLATION
+ sovereignty_cb_victory_desc_attacker: "Získáš sporné [Concept('tributaries','tributáře')|El]."
+ sovereignty_cb_victory_desc: "[attacker.GetShortUIName|U] získá sporné [Concept('tributaries','tributáře')|El]."
+ sovereignty_cb_white_peace_desc_defender: "Ponecháš si sporné [Concept('tributaries','tributáře')|El]."
+ sovereignty_cb_white_peace_desc: "[defender.GetShortUIName|U] si ponechá sporné [Concept('tributaries','tributáře')|El]."
+ sovereignty_cb_defeat_desc_defender: "Ponecháš si sporné [Concept('tributaries','tributáře')|El]. [attacker.GetShortUIName|U] ti musí zaplatit válečné reparace."
+ sovereignty_cb_defeat_desc_attacker: "[defender.GetShortUIName|U] si ponechá sporné [Concept('tributaries','tributáře')|El]. Postavě [defender.GetShortUIName] musíš zaplatit válečné reparace."
+ sovereignty_cb_defeat_desc: "[defender.GetShortUIName|U] si ponechá sporné [Concept('tributaries','tributáře')|El] a [attacker.GetShortUIName] musí postavě [defender.GetShortUIName] zaplatit válečné reparace."
+ sovereignty_war_tributary_switch: "[Concept('tributaries','Tributáři')|El] postavy [defender.GetShortUIName], kteří mohou vytvořit souvislé [Concept('realm','panství')|El], budou odvádět tribut postavě [attacker.GetShortUIName]"
+ at_least_one_non_nomad_county_tt: "Cíl musí mít alespoň jedno [Concept('county','hrabství')|El] bez [Concept('nomadic','kočovné')|El] vlády"
+ defender_relation_to_suzerain: "[CHARACTER.GetShortUINameNoTooltip] je [Concept('tributary','tributářem')|El] titulu [TITLE.GetName]"
+ defender_relation_to_top_liege: "[CHARACTER.GetShortUINameNoTooltip] je [Concept('vassal','vazalem')|El] titulu [TITLE.GetName]"
+ liege_will_join_war_message: "#color_red [Character.GetShortUIName] se #bold připojí#! k válce ([DeclareWarInteractionWindow.GetProtectVassalInteractionValue|-]) #!"
+ liege_will_not_join_war_message: "#color_green [Character.GetShortUIName] se #bold nepřipojí#! k válce ([DeclareWarInteractionWindow.GetProtectVassalInteractionValue|-]) #!"
+ war_aid_vassal_only_one_title: "Útočník usiluje pouze o jediný [Concept('title','titul')|El] úrovně [Concept('duchy','vévodství')|El] nebo [Concept('county','hrabství')|El]: $VALUE|0=-$"
+ war_aid_vassal_below_kingdom_title: "Útočník usiluje o [Concept('title','titul')|El] nižší [Concept('title_tier','úrovně titulu')|El] než [Concept('kingdom','království')|El]: $VALUE|0=-$"
+ war_aid_vassal_can_fend_the_attacker_alone: "Obránce je dostatečně silný, aby se ubránil sám: $VALUE|0=-$"
+ war_aid_liege_is_bankrupt: "[Concept('overlord','Vrchní pán')|El] je [Concept('debt','zadlužený')|El] a nemůže si dovolit zasáhnout: $VALUE|0=-$"
+ war_aid_liege_is_at_war: "[Concept('overlord','Vrchní pán')|El] již vede [Concept('war','válku')|El]: $VALUE|0=-$"
+ war_aid_liege_cooldown_tt: "[Concept('war','Válka')|El] probíhá méně než #V [EmptyScope.ScriptValue('border_war_grace_period_years')]#! let"
+ war_aid_liege_not_my_liege_tt: "[Concept('war','Válka')|El] probíhá mezi tvými vlastními [Concept('vassals','vazaly')|El]"
+ war_aid_liege_relevant_titles_tt: "[Concept('war','Válka')|El] není vedena o [Concept('titles','tituly')|El] ve tvém [Concept('realm','panství')|El]"
+ war_aid_liege_is_player: "$DYNASTIC_CYCLE_WINDOW_HEGEMON_STABILITY_PICK_PLAYER_OTHER$"

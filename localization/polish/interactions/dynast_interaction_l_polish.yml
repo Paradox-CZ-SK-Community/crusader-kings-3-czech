@@ -1,36 +1,36 @@
 ﻿l_polish:
- dynasty_interaction_header: "[Concept('dynast_interaction','Interakce hlavy dynastie')|E]\n" # todo: CONCEPT CASE
- disinherit_interaction: "Vyloučit z následnictví"
- disinherit_interaction_desc: "$dynasty_interaction_header$Odstranit [recipient.GetShortUINameNoTooltip] z [Concept('line_of_succession','linií následnictví')|E]" # todo: CONCEPT CASE
- disinherit_interaction_notification: "Vyloučený člen dynastie"
- courtly_vassal_disapproves_disinheriting: "Každý [GetVassalStance( 'courtly' ).GetTextIcon][GetVassalStance( 'courtly' ).GetName] [Concept('vassal','vazal')|E] ([actor.MakeScope.ScriptValue('number_of_courtly_vassals')|V0]) ztrácí #N 20#! [Concept('opinion','mínění')|E] vůči [actor.GetShortUIName] na #V 10 let#! #weak (Nesouhlasí s vyloučením nediskutovaného dědice)#!" # todo: CONCEPT CASE
- restore_inheritance_interaction: "Obnovit následnictví"
- restore_inheritance_interaction_desc: "$dynasty_interaction_header$Obnovit [recipient.GetShortUINameNoTooltip] do přirozené [Concept('line_of_succession','linií následnictví')|E]\n\n#weak Tato možnost je dostupná, protože [recipient.GetSheHe] je [Concept('disinherited','vyděděný')|E]#!" # todo: CONCEPT CASE
- restore_inheritance_interaction_notification: "Nástupnictví obnoveno"
- denounce_interaction: "Odsoudit"
- denounce_interaction_desc: "$dynasty_interaction_header$[Concept('denounce','Zavrhnout')|E] [recipient.GetShortUINameNoTooltip]\n\n#weak Toto dá všem členům naší [Concept('dynasty','dynastie')|E] [Concept('imprisonment_reason','důvodu k uvěznění')|E] vůči [recipient.GetHerHim]#!" # todo: CONCEPT CASE
- denounce_interaction_notification: "Odsouzený člen dynastie"
+ dynasty_interaction_header: "[dynast_interaction|E]\n"
+ disinherit_interaction: "Vydědit"
+ disinherit_interaction_desc: "$dynasty_interaction_header$Vyřaď [recipient.GetShortUINameNoTooltip] z [Concept('line_of_succession','linie následnictví')|El]"
+ disinherit_interaction_notification: "Člen dynastie vyděděn"
+ courtly_vassal_disapproves_disinheriting: "Každý [Concept('vassal','vazal')|E] s postojem [GetVassalStance( 'courtly' ).GetTextIcon][GetVassalStance( 'courtly' ).GetName] ([actor.MakeScope.ScriptValue('number_of_courtly_vassals')|V0]) ztratí vůči [actor.GetShortUIName] #N 20#! bodů [Concept('opinion','mínění')|El] na #V 10 let#! #weak (Nesouhlasí s vyděděním nezpochybněného dědice)#!"
+ restore_inheritance_interaction: "Obnovit dědické právo"
+ restore_inheritance_interaction_desc: "$dynasty_interaction_header$Vrať [recipient.GetShortUINameNoTooltip] do přirozené [Concept('line_of_succession','linie následnictví')|El]\n\n#weak Tato možnost je dostupná, protože [recipient.GetShortUINameNoTooltip] byl[Select_CString( recipient.IsFemale, 'a', '' )] [Concept('disinherited','vyděděn')|E]#!"
+ restore_inheritance_interaction_notification: "Dědické právo obnoveno"
+ denounce_interaction: "Zavrhnout"
+ denounce_interaction_desc: "$dynasty_interaction_header$[Concept('denounce','Zavrhni')|E] [recipient.GetShortUINameNoTooltip]\n\n#weak Všichni členové naší [Concept('dynasty','dynastie')|El] tím získají vůči [recipient.GetShortUINameNoTooltip] [Concept('imprisonment_reason','důvod k uvěznění')|E]#!"
+ denounce_interaction_notification: "Člen dynastie zavržen"
  forgive_interaction: "Odpustit"
- denounced_change_to_forgiven: "Názor #V $denounced_opinion$#! #weak (-50)#! se změní na #V $forgave_denounced_opinion$#! #weak (-25)#! (#P +25#! [Concept('opinion','mínění')|E])" # todo: CONCEPT CASE
- forgiven_changed_to_denounced: "Názor #V $forgave_denounced_opinion$#! #weak (-25)#! se změní na #V $denounced_opinion$#! #weak (-50)#! (#N -25#! [Concept('opinion','mínění')|E])" # todo: CONCEPT CASE
- forgive_interaction_desc: "$dynasty_interaction_header$Odvolat [Concept('denouncement','zavržení')|E] vůči [recipient.GetShortUINameNoTooltip]" # todo: CONCEPT CASE
- forgive_interaction_notification: "Odpustili členu dynastie"
+ denounced_change_to_forgiven: "#V $denounced_opinion$ mínění#! #weak (-50)#! se změní na #V $forgave_denounced_opinion$#! #weak (-25)#! (#P +25#! [Concept('opinion','mínění')|El])"
+ forgiven_changed_to_denounced: "#V $forgave_denounced_opinion$ mínění#! #weak (-25)#! se změní na #V $denounced_opinion$#! #weak (-50)#! (#N -25#! [Concept('opinion','mínění')|El])"
+ forgive_interaction_desc: "$dynasty_interaction_header$Odvolej [Concept('denouncement','zavržení')|E] [recipient.GetShortUINameNoTooltip]"
+ forgive_interaction_notification: "Členu dynastie odpuštěno"
  call_dynasty_member_to_war_interaction: "Povolat člena dynastie do války"
- call_dynasty_member_to_war_interaction_desc: "Povolat [recipient.GetShortUINameNoTooltip] k službě [recipient.GetHerHis] [Concept('dynasty','dynastii')|E] ve válce" # todo: CONCEPT CASE
+ call_dynasty_member_to_war_interaction_desc: "Povolat [recipient.GetShortUINameNoTooltip] do války, aby sloužil[Select_CString( recipient.IsFemale, 'a', '' )] své [Concept('dynasty','dynastii')|El]"
  call_dynasty_member_to_war_interaction_extra_icon: "$hook_extra_icon$"
- dynast_legitimize_bastard_interaction: "Zlegalizovat nemanželského potomka #weak (Dynastie)#!"
- dynast_legitimize_bastard_interaction_desc: "$dynasty_interaction_header$Prohlásit [recipient.GetShortUINameNoTooltip] za legitimizovaného bastarda\n\n#weak Tato možnost je dostupná, protože [recipient.GetSheHe] je [Concept('bastard','bastard')|E] mé [Concept('dynasty','dynastie')|E]#!" # todo: CONCEPT CASE
- dynast_legitimize_bastard_interaction_notification: "Zlegalizovaný nemanželský potomek"
- dynast_claim_title_interaction: "Uplatnit nárok na titul"
- dynast_claim_title_interaction_desc: "$dynasty_interaction_header$[Concept('claim','Nárok')|EU] titul, který drží [recipient.GetShortUINameNoTooltip], pro sebe" # todo: CONCEPT CASE
- dynast_claim_title_interaction_notification: "Nárok na titul uplatněn"
- ALREADY_HAVE_CLAIM_ON_THIS_TITLE: "Již máte nárok na tento titul"
- ALREADY_HAVE_CLAIMS_ON_ALL_TITLES: "Již máte nároky na všechny tituly [TARGET_CHARACTER.GetShortUINamePossessive]"
+ dynast_legitimize_bastard_interaction: "Legitimizovat levobočka #weak (dynastie)#!"
+ dynast_legitimize_bastard_interaction_desc: "$dynasty_interaction_header$Prohlaš [recipient.GetShortUINameNoTooltip] za $game_concept_legitimized_bastard$\n\n#weak Tato možnost je dostupná, protože [recipient.GetShortUINameNoTooltip] je [Concept('bastard','nemanželským dítětem')|El] mé [Concept('dynasty','dynastie')|El]#!"
+ dynast_legitimize_bastard_interaction_notification: "Levoboček legitimizován"
+ dynast_claim_title_interaction: "Vznést nárok na titul"
+ dynast_claim_title_interaction_desc: "$dynasty_interaction_header$[Concept('claim','Uplatni nárok')|E] na [Concept('title','titul')|E], který drží [recipient.GetShortUINameNoTooltip]"
+ dynast_claim_title_interaction_notification: "Vznesen nárok na titul"
+ ALREADY_HAVE_CLAIM_ON_THIS_TITLE: "Na tento titul už máš nárok"
+ ALREADY_HAVE_CLAIMS_ON_ALL_TITLES: "Už máš nárok na všechny tituly, které drží [TARGET_CHARACTER.GetShortUIName]"
  dynast_end_dynasty_wars_interaction: "Ukončit dynastické války"
- dynast_end_dynasty_wars_interaction_desc: "$dynasty_interaction_header$Požadovat, aby [recipient.GetShortUINameNoTooltip] okamžitě [Select_CString(recipient.IsFemale,'ukončila','ukončil')] všechny své útočné války proti jakémukoli jinému členu naší [Concept('dynasty','dynastie')|E]" # todo: CONCEPT CASE
- dynast_end_dynasty_wars_interaction_notification: "Ukončena dynastická válka"
- recipient_secondary_legitimize_bastard_interaction: "Nemanželský potomek"
- send_to_varangian_guard_interaction: "Poslat do Varjažské gardy #weak (Dynastie)#!"
- send_to_varangian_guard_interaction_desc: "$dynasty_interaction_header$Poslat [recipient.GetShortUINameNoTooltip] pryč, aby [Select_CString(recipient.IsFemale,'získala','získal')] slávu a bohatství ve Varjažské gardě. Kdo ví — třeba to dokonce pomůže formovat jeho/její charakter!"
- send_to_varangian_guard_interaction_toast: "[recipient.GetShortUIName] [Select_CString(recipient.IsFemale,'vyrazila','vyrazil')] do Varjažské gardy"
- send_to_varangian_guard_interaction_toast_desc: "Čest a sláva čekají!"
+ dynast_end_dynasty_wars_interaction_desc: "$dynasty_interaction_header$Požaduj po [recipient.GetShortUINameNoTooltip] okamžité ukončení všech útočných válek proti ostatním členům naší [Concept('dynasty','dynastie')|El]"
+ dynast_end_dynasty_wars_interaction_notification: "Dynastická válka ukončena"
+ recipient_secondary_legitimize_bastard_interaction: "Levoboček"
+ send_to_varangian_guard_interaction: "Poslat do Varjažské gardy #weak (dynastie)#!"
+ send_to_varangian_guard_interaction_desc: "$dynasty_interaction_header$Pošli [recipient.GetShortUINameNoTooltip] pryč, aby získal[Select_CString( recipient.IsFemale, 'a', '' )] slávu a bohatství ve Varjažské gardě. Kdo ví, možná to dokonce pomůže utužit [recipient.GetHerHis] charakter!"
+ send_to_varangian_guard_interaction_toast: "[recipient.GetShortUIName] odchází do Varjažské gardy"
+ send_to_varangian_guard_interaction_toast_desc: "Čeká sláva a věhlas!"

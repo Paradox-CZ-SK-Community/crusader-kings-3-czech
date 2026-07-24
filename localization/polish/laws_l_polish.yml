@@ -9,423 +9,423 @@
  LAW_TOOLTIP_TITLE: "[Law.GetNameNoTooltip]"
  LAW_TOOLTIP_SUBTITLE: "#weak [Law.GetSubName]#!"
  ADD_LAW_CONFIRMATION_TEXT: "$EFFECTS$"
- ADD_LAW_CONFIRMATION_COST: "Náklady: $COST$"
- LAW_ENACT_EFFECT_HEADER: "#S Když je tento zákon přijat:#!"
+ ADD_LAW_CONFIRMATION_COST: "Cena: $COST$"
+ LAW_ENACT_EFFECT_HEADER: "#S Po přijetí tohoto zákona:#!"
  LAW_PROVIDES_EFFECTS: ""
  LAW_PROVIDES_PREVIOUS_EFFECTS: "#S Z předchozích úrovní#!"
- ALREADY_HAS_THIS_LAW: "#high Aktuální zákon#!"
- CLICK_TO_PASS_LAW: "\n#I Klikněte pro [SelectLocalization( IsLandlessAdventurer( GetPlayer ), 'become', 'pass' )] [Law.GetNameNoTooltip|V]#!"
- LAW_COST: "\n#S Náklady:#! [GuiLaw.GetShortCostString|L]"
- LAW_TITLE_ALLEGIANCE_OPINION: "$EFFECT_LIST_BULLET$Názor vazalů skládajících [Concept('title_allegiance','věrnosti titulu')|E]: $VALUE|+=$" # todo: CONCEPT CASE
- LAW_CANT_BE_ON_ANY_TITLE: "[Law.GetName] nelze uplatnit na tituly[Select_CString( InDebugMode, '#D (no trigger)#!', '')]" # todo: NEW TRANSLATION
- LAW_CANT_BE_ON_SPECIFIC_TITLE: "[Title.GetName] nemůže mít [Law.GetName]" # todo: NEW TRANSLATION
- crown_authority: "[Concept('crown_authority','Korunní autorita')|E]" # todo: CONCEPT CASE
+ ALREADY_HAS_THIS_LAW: "#high Současný zákon#!"
+ CLICK_TO_PASS_LAW: "\n#I Klikni a [SelectLocalization( IsLandlessAdventurer( GetPlayer ), 'staň se', 'přijmi' )] [Law.GetNameNoTooltip|V]#!"
+ LAW_COST: "\n#S Cena:#! [GuiLaw.GetShortCostString|L]"
+ LAW_TITLE_ALLEGIANCE_OPINION: "$EFFECT_LIST_BULLET$[Concept('opinion','Mínění')|E] [Concept('vassals','vazalů')|E] přísahajících [Concept('title_allegiance','věrnost titulu')|E]: $VALUE|+=$"
+ LAW_CANT_BE_ON_ANY_TITLE: "[Law.GetName] nelze uplatnit na žádný titul[Select_CString( InDebugMode, '#D (bez spouštěče)#!', '')]"
+ LAW_CANT_BE_ON_SPECIFIC_TITLE: "[Title.GetName] nemůže mít [Law.GetName]"
+ crown_authority: "[Concept('crown_authority','Korunní autorita')|E]"
  crown_authority_0: "Autonomní vazalové"
- crown_authority_0_effects_not_in_prev: "#weak Vazalové poskytují [Concept('levies','odvedenci')|E] a [Concept('taxes','daně')|E], ale jsou jinak volní dělat, co chtějí#!" # todo: CONCEPT CASE
- crown_authority_1: "Omezená královská moc"
- crown_authority_1_effects: "$EFFECT_LIST_BULLET$#indent_newline:3 Může zřizovat [Concept('tributaries','tributáři')|E]#!\n$EFFECT_LIST_BULLET$#indent_newline:3 Vládci mohou přecházet mezi dostupnými dělícími [Concept('succession_laws','zákony nástupnictví')|E]#!\n$EFFECT_LIST_BULLET$[Concept('titles','Tituly')|E] lze odejmout\n$EFFECT_LIST_BULLET$[Concept('vassals','Vazalové')|E] lze odvolat" # todo: CONCEPT CASE
- crown_authority_2: "Vysoká královská moc"
- crown_authority_2_effects: "$EFFECT_LIST_BULLET$#indent_newline:3 Vládci mohou přecházet mezi všemi dostupnými [Concept('succession_laws','zákony nástupnictví')|E]#!\n$EFFECT_LIST_BULLET$#indent_newline:3 [Concept('vassals','vazalové')|E] nemohou vést [Concept('war','válka')|E] proti jiným vazalům, pokud nepoužijí [Concept('hook','páka')|E] na svého [Concept('liege','lenního pána')|E]#!\n$EFFECT_LIST_BULLET$#indent_newline:3 [Concept('titles','tituly')|E] vazalů nemohou být děděny postavami mimo [Concept('realm','panství')|E]#!\n$EFFECT_LIST_BULLET$#indent_newline:3 Všichni vazalové, kteří odmítnou odejmutí titulu nebo odvolání vazala, jsou považováni za [Concept('criminals','zločince')|E]#!" # todo: CONCEPT CASE
- crown_authority_3: "Absolutní královská moc"
- crown_authority_3_effects: "$EFFECT_LIST_BULLET$#indent_newline:3 [Concept('vassals','vazalové')|E] nemohou vyhlásit žádný [Concept('war','válka')|E], pokud nepoužijí [Concept('hook','páka')|E] na svého [Concept('liege','lenního pána')|E]#!\n$EFFECT_LIST_BULLET$Vládci mohou určit svého [Concept('heir','dědice')|E]" # todo: CONCEPT CASE
- I_LACK_LAW_ALLOWING_TITLE_REVOCATION_TRIBAL: "Nemáte [GetLaw('tribal_authority_2').GetName] [Concept('tribal_authority','kmenová autorita')|E] nebo lepší" # todo: CONCEPT CASE
- I_LACK_LAW_ALLOWING_VASSAL_RETRACTION_TRIBAL: "Nemáte [GetLaw('tribal_authority_2').GetName] [Concept('tribal_authority','kmenová autorita')|E] nebo lepší" # todo: CONCEPT CASE
- I_LACK_LAW_ALLOWING_TITLE_REVOCATION_CROWN: "Nemáte [GetLaw('crown_authority_1').GetName] [Concept('crown_authority','korunní autorita')|E] nebo lepší" # todo: CONCEPT CASE
- I_LACK_LAW_ALLOWING_TITLE_REVOCATION_SORYO: "Nemáte [GetLaw('japanese_bureaucracy_1').GetName] [Concept('crown_authority','korunní autorita')|E] nebo lepší" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- I_LACK_LAW_ALLOWING_VASSAL_RETRACTION_CROWN: "Nemáte [GetLaw('crown_authority_1').GetName] [Concept('crown_authority','korunní autorita')|E] nebo lepší" # todo: CONCEPT CASE
- I_LACK_LAW_ALLOWING_TITLE_REVOCATION_ADMIN: "Nemáte [GetLaw('imperial_bureaucracy_1').GetName] [Concept('imperial_bureaucracy','imperiální byrokracie')|E] nebo lepší" # todo: CONCEPT CASE
- I_LACK_LAW_ALLOWING_VASSAL_RETRACTION_ADMIN: "Nemáte [GetLaw('imperial_bureaucracy_1').GetName] [Concept('imperial_bureaucracy','imperiální byrokracie')|E] nebo lepší" # todo: CONCEPT CASE
+ crown_authority_0_effects_not_in_prev: "#weak [Concept('vassals','Vazalové')|E] poskytují [Concept('levies','odvedence')|E] a [Concept('taxes','daně')|E], jinak si však mohou dělat, co chtějí#!"
+ crown_authority_1: "Omezená korunní autorita"
+ crown_authority_1_effects: "$EFFECT_LIST_BULLET$#indent_newline:3 Lze zřizovat [Concept('tributaries','tributáře')|E]#!\n$EFFECT_LIST_BULLET$#indent_newline:3 Vládci mohou přecházet mezi dostupnými [Concept('succession_laws','zákony nástupnictví')|E] typu rozdělení#!\n$EFFECT_LIST_BULLET$[Concept('titles','Tituly')|E] lze odejmout\n$EFFECT_LIST_BULLET$[Concept('vassals','Vazaly')|E] lze odebrat"
+ crown_authority_2: "Vysoká korunní autorita"
+ crown_authority_2_effects: "$EFFECT_LIST_BULLET$#indent_newline:3 Vládci mohou přecházet mezi všemi dostupnými [Concept('succession_laws','zákony nástupnictví')|E]#!\n$EFFECT_LIST_BULLET$#indent_newline:3 [Concept('vassals','Vazalové')|E] nemohou vést [Concept('war','válku')|E] proti jiným vazalům, pokud proti svému [Concept('liege','lennímu pánovi')|E] nepoužijí [Concept('hook','páku')|E]#!\n$EFFECT_LIST_BULLET$#indent_newline:3 [Concept('titles','Tituly')|E] [Concept('vassals','vazalů')|E] nemohou zdědit [Concept('characters','postavy')|E] mimo [Concept('realm','panství')|E]#!\n$EFFECT_LIST_BULLET$#indent_newline:3 Všichni [Concept('vassals','vazalové')|E], kteří odmítnou odejmutí titulu nebo odebrání vazala, jsou považováni za [Concept('criminals','zločince')|E]#!"
+ crown_authority_3: "Absolutní korunní autorita"
+ crown_authority_3_effects: "$EFFECT_LIST_BULLET$#indent_newline:3 [Concept('vassals','Vazalové')|E] nemohou vést žádnou [Concept('war','válku')|E], pokud proti svému [Concept('liege','lennímu pánovi')|E] nepoužijí [Concept('hook','páku')|E]#!\n$EFFECT_LIST_BULLET$Vládci mohou určit svého [Concept('heir','dědice')|E]"
+ I_LACK_LAW_ALLOWING_TITLE_REVOCATION_TRIBAL: "Úroveň tvé [Concept('tribal_authority','kmenové autority')|E] je nižší než [GetLaw('tribal_authority_2').GetName]"
+ I_LACK_LAW_ALLOWING_VASSAL_RETRACTION_TRIBAL: "Úroveň tvé [Concept('tribal_authority','kmenové autority')|E] je nižší než [GetLaw('tribal_authority_2').GetName]"
+ I_LACK_LAW_ALLOWING_TITLE_REVOCATION_CROWN: "Úroveň tvé [Concept('crown_authority','korunní autority')|E] je nižší než [GetLaw('crown_authority_1').GetName]"
+ I_LACK_LAW_ALLOWING_TITLE_REVOCATION_SORYO: "Úroveň tvé [Concept('crown_authority','korunní autority')|E] je nižší než [GetLaw('japanese_bureaucracy_1').GetName]"
+ I_LACK_LAW_ALLOWING_VASSAL_RETRACTION_CROWN: "Úroveň tvé [Concept('crown_authority','korunní autority')|E] je nižší než [GetLaw('crown_authority_1').GetName]"
+ I_LACK_LAW_ALLOWING_TITLE_REVOCATION_ADMIN: "Úroveň tvé [Concept('imperial_bureaucracy','imperiální byrokracie')|E] je nižší než [GetLaw('imperial_bureaucracy_1').GetName]"
+ I_LACK_LAW_ALLOWING_VASSAL_RETRACTION_ADMIN: "Úroveň tvé [Concept('imperial_bureaucracy','imperiální byrokracie')|E] je nižší než [GetLaw('imperial_bureaucracy_1').GetName]"
  I_LACK_LAW_ALLOWING_SUCCESSION_LAW_CHANGE: "[SelectLocalization( GetPlayer.GetGovernment.HasGovernmentFlag( 'government_is_japan_feudal' ), 'I_LACK_LAW_ALLOWING_SUCCESSION_LAW_CHANGE_JAPANESE_FEUDAL', 'I_LACK_LAW_ALLOWING_SUCCESSION_LAW_CHANGE_FEUDAL' )]"
- I_LACK_TRIBAL_LAW_ALLOWING_SUCCESSION_LAW_CHANGE: "Nemáte [GetLaw('tribal_authority_1').GetName] [Concept('tribal_authority','kmenová autorita')|E]" # todo: CONCEPT CASE
- I_LACK_ADMIN_LAW_ALLOWING_SUCCESSION_LAW_CHANGE: "Nemáte [GetLaw('imperial_bureaucracy_2').GetName] [Concept('imperial_bureaucracy','imperiální byrokracie')|E] nebo lepší" # todo: CONCEPT CASE
+ I_LACK_TRIBAL_LAW_ALLOWING_SUCCESSION_LAW_CHANGE: "Úroveň tvé [Concept('tribal_authority','kmenové autority')|E] je nižší než [GetLaw('tribal_authority_1').GetName]"
+ I_LACK_ADMIN_LAW_ALLOWING_SUCCESSION_LAW_CHANGE: "Úroveň tvé [Concept('imperial_bureaucracy','imperiální byrokracie')|E] je nižší než [GetLaw('imperial_bureaucracy_2').GetName]"
  I_LACK_LAW_ALLOWING_PARTITION_SUCCESSION_LAW_CHANGE: "[SelectLocalization( GetPlayer.GetGovernment.HasGovernmentFlag( 'government_is_japan_feudal' ), 'I_LACK_LAW_ALLOWING_SUCCESSION_LAW_CHANGE_JAPANESE_FEUDAL', 'I_LACK_LAW_ALLOWING_SUCCESSION_LAW_CHANGE_FEUDAL' )]"
- I_LACK_LAW_ALLOWING_SUCCESSION_LAW_CHANGE_FEUDAL: "Nemáte [GetLaw('crown_authority_2').GetName] [Concept('crown_authority','korunní autorita')|E] nebo vyšší" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- I_LACK_LAW_ALLOWING_SUCCESSION_LAW_CHANGE_JAPANESE_FEUDAL: "Nemáte [GetLaw('japanese_bureaucracy_2').GetName] [Concept('crown_authority','korunní autorita')|E] nebo vyšší" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- I_LACK_ADMIN_ALLOWING_DESIGNATE_HEIR: "Nemáte [Concept('noble_family','šlechtická rodina')|E] [Concept('title','titul')|e]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- I_LACK_CROWN_AUTHORITY_DESIGNATE_HEIR: "Nemáte [GetLaw( 'crown_authority_3' ).GetName] [Concept('crown_authority','korunní autorita')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- I_LACK_LAW_ALLOWING_DESIGNATE_HEIR: "Nemáte zákon, který by vám umožňoval určit dědice"
- MY_DYNASTY_MEMBER_LEADS_THE_ELECTION: "Člen vaší [Concept('dynasty','dynastii')|E] ([CHARACTER.GetPrimaryTitle.GetHeir.GetShortUIName|V]) vede volby o váš [Concept('primary_title','hlavní titul')|E]" # todo: CONCEPT CASE
- I_HAVE_POWERFUL_VASSAL_WITH_NEGATIVE_OPINION: "Máte jednoho nebo více [Concept('powerful_vassals','mocní vazalové')|E], kteří mají na vás negativní názor a blokují všechny změny [Concept('succession_law','zákon nástupnictví')|E]" # todo: CONCEPT CASE
- designate_heir: "Určit dědice"
- CROWN_AUTHORITY_IS_ON_COOLDOWN: "Nedávno jste změnili královskou moc.\n    @alert_icon! #alert_trial Lze změnit znovu po [GetCurrentDateWithDiff( GetVarTimeRemaining( CHARACTER.MakeScope, 'crown_authority_cooldown') )]#!"
- TRIBAL_AUTHORITY_IS_ON_COOLDOWN: "Nedávno jste změnili kmenovou autoritu\n    @alert_icon! #alert_trial Lze změnit znovu po [GetCurrentDateWithDiff( GetVarTimeRemaining( CHARACTER.MakeScope, 'tribal_authority_cooldown') )]#!"
- tribal_authority: "[Concept('tribal_authority','Kmenová autorita')|E]" # todo: CONCEPT CASE
- tribal_authority_0: "Roztříštěné kmeny"
- tribal_authority_0_effects_not_in_prev: "$EFFECT_LIST_BULLET$#indent_newline:3 [Concept('characters','postavy')|E] #N nelze#! být [Concept('imprisoned','uvěznění')|E]#!\n\n#weak Vazalové poskytují [Concept('levies','odvedenci')|E] a [Concept('taxes','daně')|E], ale jsou jinak volní dělat, co chtějí.#!" # todo: CONCEPT CASE
+ I_LACK_LAW_ALLOWING_SUCCESSION_LAW_CHANGE_FEUDAL: "Úroveň tvé [Concept('crown_authority','korunní autority')|E] je nižší než [GetLaw('crown_authority_2').GetName]"
+ I_LACK_LAW_ALLOWING_SUCCESSION_LAW_CHANGE_JAPANESE_FEUDAL: "Úroveň tvé [Concept('crown_authority','korunní autority')|E] je nižší než [GetLaw('japanese_bureaucracy_2').GetName]"
+ I_LACK_ADMIN_ALLOWING_DESIGNATE_HEIR: "Nevlastníš [Concept('title','titul')|E] [Concept('noble_family','šlechtické rodiny')|E]"
+ I_LACK_CROWN_AUTHORITY_DESIGNATE_HEIR: "Úroveň tvé [Concept('crown_authority','korunní autority')|E] je nižší než [GetLaw( 'crown_authority_3' ).GetName]"
+ I_LACK_LAW_ALLOWING_DESIGNATE_HEIR: "Nemáš zákon, který by ti umožňoval určit dědice"
+ MY_DYNASTY_MEMBER_LEADS_THE_ELECTION: "Člen tvé [Concept('dynasty','dynastie')|E] ([CHARACTER.GetPrimaryTitle.GetHeir.GetShortUIName|V]) vede ve volbě o tvůj [Concept('primary_title','hlavní titul')|E]"
+ I_HAVE_POWERFUL_VASSAL_WITH_NEGATIVE_OPINION: "Máš jednoho či více [Concept('powerful_vassals','mocných vazalů')|E], kteří o tobě mají záporné [Concept('opinion','mínění')|E] a blokují všechny změny [Concept('succession_law','zákona nástupnictví')|E]"
+ designate_heir: "Určit jako dědice"
+ CROWN_AUTHORITY_IS_ON_COOLDOWN: "Korunní autorita byla nedávno změněna.\n    @alert_icon! #alert_trial Znovu ji lze změnit po [GetCurrentDateWithDiff( GetVarTimeRemaining( CHARACTER.MakeScope, 'crown_authority_cooldown') )]#!"
+ TRIBAL_AUTHORITY_IS_ON_COOLDOWN: "Kmenová autorita byla nedávno změněna.\n    @alert_icon! #alert_trial Znovu ji lze změnit po [GetCurrentDateWithDiff( GetVarTimeRemaining( CHARACTER.MakeScope, 'tribal_authority_cooldown') )]#!"
+ tribal_authority: "[Concept('tribal_authority','Kmenová autorita')|E]"
+ tribal_authority_0: "Nesourodé kmeny"
+ tribal_authority_0_effects_not_in_prev: "$EFFECT_LIST_BULLET$#indent_newline:3 [Concept('characters','Postavy')|E] #N nelze#! [Concept('imprisoned','uvěznit')|E]#!\n\n#weak [Concept('vassals','Vazalové')|E] poskytují [Concept('levies','odvedence')|E] a [Concept('taxes','daně')|E], jinak si však mohou dělat, co chtějí.#!"
  tribal_authority_1: "Omezená kmenová autorita"
- tribal_authority_1_effects: "$EFFECT_LIST_BULLET$ Může zřizovat [Concept('tributaries','tributáři')|E]\n$EFFECT_LIST_BULLET$ [Concept('characters','Postavy')|E] mohou být [Concept('imprisoned','uvěznění')|E]\n$EFFECT_LIST_BULLET$#indent_newline:3 [Concept('tribal','kmenoví')|E] vládci s ne-$game_concept_tribal$ [Concept('liege','Lieges')|E] se mohou usadit, čímž se stanou [Concept('feudal','feudálním')|E] nebo [Concept('clan','klan')|E]#!" # todo: CONCEPT CASE
+ tribal_authority_1_effects: "$EFFECT_LIST_BULLET$ Lze zřizovat [Concept('tributaries','tributáře')|E]\n$EFFECT_LIST_BULLET$ [Concept('characters','Postavy')|E] lze [Concept('imprisoned','uvěznit')|E]\n$EFFECT_LIST_BULLET$#indent_newline:3 [Concept('tribal','Kmenoví')|E] vládci, jejichž [Concept('liege','lenní pán')|E] není $game_concept_tribal$, se mohou usadit a přijmout [Concept('feudal','feudální zřízení')|E] nebo [Concept('clan','klanové zřízení')|E]#!"
  tribal_authority_2: "Vysoká kmenová autorita"
- tribal_authority_2_effects: "$EFFECT_LIST_BULLET$[Concept('titles','Tituly')|E] lze odejmout\n$EFFECT_LIST_BULLET$[Concept('vassals','Vazalové')|E] lze odvolat" # todo: CONCEPT CASE
+ tribal_authority_2_effects: "$EFFECT_LIST_BULLET$[Concept('titles','Tituly')|E] lze odejmout\n$EFFECT_LIST_BULLET$[Concept('vassals','Vazaly')|E] lze odebrat"
  tribal_authority_3: "Absolutní kmenová autorita"
- tribal_authority_3_effects: "$EFFECT_LIST_BULLET$#indent_newline:3 [Concept('independent','nezávislí')|E] [Concept('tribal','kmenoví')|E] vládci se mohou usadit a stát se [Concept('feudal','feudálním')|E] nebo [Concept('clan','klan')|E]#!" # todo: CONCEPT CASE
+ tribal_authority_3_effects: "$EFFECT_LIST_BULLET$#indent_newline:3 [Concept('independent','Nezávislí')|E] [Concept('tribal','kmenoví')|E] vládci se mohou usadit a přijmout [Concept('feudal','feudální zřízení')|E] nebo [Concept('clan','klanové zřízení')|E]#!"
  camp_purpose: "Účel tábora"
- camp_purpose_pass_phrase: "Staňte se [Law.GetNameNoTooltip]"
+ camp_purpose_pass_phrase: "Stát se: [Law.GetNameNoTooltip]"
  camp_purpose_confirmation_button_text: "Změnit účel"
  camp_purpose_mercenaries: "Žoldnéři"
- camp_purpose_mercenaries_effects: "$EFFECT_LIST_BULLET$Najde více [Concept('mercenary_task_contracts','žoldnéřské zakázky')|E]\n$EFFECT_LIST_BULLET$Najde více [Concept('prowess','udatnost')|E] a [Concept('martial','válečnictví')|E] [Concept('task_contracts','zakázky')|E]\n$EFFECT_LIST_BULLET$Odemkne [Concept('camp_buildings','vylepšení tábora')|E]:\n$BULLET_WITH_TAB$#high [GetDomicileBuilding('baggage_train_siege_engineers').GetName]#!\n$BULLET_WITH_TAB$#high [GetDomicileBuilding('proving_grounds_lockwagon').GetName]#!\n$BULLET_WITH_TAB$#high [GetDomicileBuilding('camp_perimeter_palisade').GetName]#!\n$BULLET_WITH_TAB$#high [GetDomicileBuilding('camp_perimeter_ditch').GetName]#!\n$EFFECT_LIST_BULLET$Může získat přístup k některým speciálními [Concept('officers','důstojníkům')|E]:\n$BULLET_WITH_TAB$[GetCourtPositionType('chief_engineer_camp_officer').GetName()] #weak (Odemčeno pomocí $baggage_train_siege_engineers_domicile_building$)#!\n$BULLET_WITH_TAB$[GetCourtPositionType('master_of_spoils_camp_officer').GetName()] #weak (Odemčeno pomocí $proving_grounds_lockwagon_domicile_building$)#!\n\n#WEAK Žoldnéři si vydělávají své peníze především mečem. Obvykle legálně, ale když jsou časy těžké a jediné, co máte, je sekera...#!" # todo: CONCEPT CASE
- camp_purpose_wanderers: "Tuláci"
- camp_purpose_wanderers_effects: "$EFFECT_LIST_BULLET$Stejná šance najít [Concept('task_contracts','zakázky')|E] jakéhokoli typu\n$EFFECT_LIST_BULLET$Může se změnit na jakýkoli jiný $camp_purpose$ bez placení vysokého [Concept('prestige','prestiže')|E]\n\n#WEAK Otevřená cesta nabízí svobodu jako žádná jiná: proč ji znečišťovat zbytečnou specializací?#!" # todo: CONCEPT CASE
+ camp_purpose_mercenaries_effects: "$EFFECT_LIST_BULLET$Nalézá více [Concept('mercenary_task_contracts','žoldnéřských zakázek')|E]\n$EFFECT_LIST_BULLET$Nalézá více [Concept('task_contracts','zakázek')|E] zaměřených na [Concept('prowess','zdatnost')|E] a [Concept('martial','vojenství')|E]\n$EFFECT_LIST_BULLET$Odemkne [Concept('camp_buildings','vylepšení tábora')|E]:\n$BULLET_WITH_TAB$#high [GetDomicileBuilding('baggage_train_siege_engineers').GetName]#!\n$BULLET_WITH_TAB$#high [GetDomicileBuilding('proving_grounds_lockwagon').GetName]#!\n$BULLET_WITH_TAB$#high [GetDomicileBuilding('camp_perimeter_palisade').GetName]#!\n$BULLET_WITH_TAB$#high [GetDomicileBuilding('camp_perimeter_ditch').GetName]#!\n$EFFECT_LIST_BULLET$Zpřístupňuje některé zvláštní [Concept('officers','důstojníky')|E]:\n$BULLET_WITH_TAB$[GetCourtPositionType('chief_engineer_camp_officer').GetName()] #weak (Odemkne se díky $baggage_train_siege_engineers_domicile_building$)#!\n$BULLET_WITH_TAB$[GetCourtPositionType('master_of_spoils_camp_officer').GetName()] #weak (Odemkne se díky $proving_grounds_lockwagon_domicile_building$)#!\n\n#WEAK Žoldnéři si vydělávají především ostřím svých zbraní. Obvykle v souladu se zákonem, ale když jsou časy zlé a jediné, co máš, je sekera...#!"
+ camp_purpose_wanderers: "Pocestní"
+ camp_purpose_wanderers_effects: "$EFFECT_LIST_BULLET$Stejná šance nalézt [Concept('task_contracts','zakázky')|E] libovolného typu\n$EFFECT_LIST_BULLET$Lze přejít na jakýkoli jiný $camp_purpose$ bez zaplacení vysoké [Concept('prestige','prestiže')|E]\n\n#WEAK Otevřená cesta nabízí svobodu, jakou jinde nenajdeš: proč ji kazit zbytečnou specializací?#!"
  camp_purpose_scholars: "Učenci"
- camp_purpose_scholars_effects: "$EFFECT_LIST_BULLET$Najde více [Concept('learning','učenost')|E] a [Concept('stewardship','správcovství')|E] [Concept('task_contracts','zakázky')|E]\n$EFFECT_LIST_BULLET$Najde o něco více [Concept('diplomacy','diplomacie')|E] [Concept('task_contracts','zakázky')|E]\n$EFFECT_LIST_BULLET$Odemkne [Concept('camp_buildings','vylepšení tábora')|E]:\n$BULLET_WITH_TAB$#high [GetDomicileBuilding('barber_tent_reference_corpus').GetName]#!\n$BULLET_WITH_TAB$#high [GetDomicileBuilding('barber_tent_morticians_tools').GetName]#!\n$BULLET_WITH_TAB$#high [GetDomicileBuilding('baggage_train_siege_engineers').GetName]#!\n$BULLET_WITH_TAB$#high [GetDomicileBuilding('baggage_train_scribes').GetName]#!\n$BULLET_WITH_TAB$#high [GetDomicileBuilding('baggage_train_ascetics').GetName]#!\n$BULLET_WITH_TAB$#high [GetDomicileBuilding('camp_fire_nightly_debates').GetName]#!\n$BULLET_WITH_TAB$#high [GetDomicileBuilding('proving_grounds_martial_study').GetName]#!\n$EFFECT_LIST_BULLET$Může získat přístup k některým speciálními [Concept('officers','důstojníkům')|E]:\n$BULLET_WITH_TAB$[GetCourtPositionType('chief_engineer_camp_officer').GetName()] #weak (Odemčeno pomocí $baggage_train_siege_engineers_domicile_building$)#!\n\n#WEAK Kniha uložená v jedné knihovně je neklidná, myšlenka držená v jediné hlavě je promarněna.#!" # todo: CONCEPT CASE
+ camp_purpose_scholars_effects: "$EFFECT_LIST_BULLET$Nalézá více [Concept('task_contracts','zakázek')|E] zaměřených na [Concept('learning','učenost')|E] a [Concept('stewardship','správu')|E]\n$EFFECT_LIST_BULLET$Nalézá o něco více [Concept('task_contracts','zakázek')|E] zaměřených na [Concept('diplomacy','diplomacii')|E]\n$EFFECT_LIST_BULLET$Odemkne [Concept('camp_buildings','vylepšení tábora')|E]:\n$BULLET_WITH_TAB$#high [GetDomicileBuilding('barber_tent_reference_corpus').GetName]#!\n$BULLET_WITH_TAB$#high [GetDomicileBuilding('barber_tent_morticians_tools').GetName]#!\n$BULLET_WITH_TAB$#high [GetDomicileBuilding('baggage_train_siege_engineers').GetName]#!\n$BULLET_WITH_TAB$#high [GetDomicileBuilding('baggage_train_scribes').GetName]#!\n$BULLET_WITH_TAB$#high [GetDomicileBuilding('baggage_train_ascetics').GetName]#!\n$BULLET_WITH_TAB$#high [GetDomicileBuilding('camp_fire_nightly_debates').GetName]#!\n$BULLET_WITH_TAB$#high [GetDomicileBuilding('proving_grounds_martial_study').GetName]#!\n$EFFECT_LIST_BULLET$Zpřístupňuje některé zvláštní [Concept('officers','důstojníky')|E]:\n$BULLET_WITH_TAB$[GetCourtPositionType('chief_engineer_camp_officer').GetName()] #weak (Odemkne se díky $baggage_train_siege_engineers_domicile_building$)#!\n\n#WEAK Kniha, která zůstává v jediné knihovně, nemá klidu; myšlenka ukrytá v jediné mysli přichází vniveč.#!"
  camp_purpose_explorers: "Průzkumníci"
- camp_purpose_explorers_effects: "$EFFECT_LIST_BULLET$Najde více [Concept('transport_task_contracts','přepravní zakázky')|E]\n$EFFECT_LIST_BULLET$Najde více [Concept('diplomacy','diplomacie')|E] a [Concept('intrigue','pletichářství')|E] [Concept('task_contracts','zakázky')|E]\n$EFFECT_LIST_BULLET$Najde o něco více [Concept('martial','válečnictví')|E] [Concept('task_contracts','zakázky')|E]\n$EFFECT_LIST_BULLET$Odemkne [Concept('camp_buildings','vylepšení tábora')|E]:\n$BULLET_WITH_TAB$#high [GetDomicileBuilding('supply_tent_reserve_provisions').GetName]#!\n$BULLET_WITH_TAB$#high [GetDomicileBuilding('supply_tent_reserve_water').GetName]#!\n$BULLET_WITH_TAB$#high [GetDomicileBuilding('supply_tent_climbing_gear').GetName]#!\n$BULLET_WITH_TAB$#high [GetDomicileBuilding('camp_fire_local_hangers_on').GetName]#!\n$BULLET_WITH_TAB$#high [GetDomicileBuilding('camp_perimeter_extra_watch').GetName]#!\n\n#WEAK Vždy je další kopec, další hora, další kultura, další jazyk, čekající jen za tím obzorem...#!" # todo: CONCEPT CASE
- camp_purpose_brigands: "Plenitelé"
- camp_purpose_brigands_effects: "$EFFECT_LIST_BULLET$Najde více [Concept('criminal_task_contracts','zločinné zakázky')|E] všech druhů\n$EFFECT_LIST_BULLET$Najde více [Concept('prowess','udatnost')|E] a [Concept('intrigue','pletichářství')|E] [Concept('task_contracts','zakázky')|E]\n$EFFECT_LIST_BULLET$Odemkne [Concept('camp_buildings','vylepšení tábora')|E]:\n$BULLET_WITH_TAB$#high [GetDomicileBuilding('supply_tent_subdued_gear').GetName]#!\n$BULLET_WITH_TAB$#high [GetDomicileBuilding('barber_tent_morticians_tools').GetName]#!\n$BULLET_WITH_TAB$#high [GetDomicileBuilding('baggage_train_ransom_cages').GetName]#!\n$BULLET_WITH_TAB$#high [GetDomicileBuilding('baggage_train_negotiators').GetName]#!\n$BULLET_WITH_TAB$#high [GetDomicileBuilding('camp_fire_juicy_rumors').GetName]#!\n$BULLET_WITH_TAB$#high [GetDomicileBuilding('proving_grounds_lockwagon').GetName]#!\n$BULLET_WITH_TAB$#high [GetDomicileBuilding('proving_grounds_the_stick_game').GetName]#!\n$EFFECT_LIST_BULLET$Může získat přístup k některým speciálními [Concept('officers','důstojníkům')|E]:\n$BULLET_WITH_TAB$[GetCourtPositionType('master_thief_camp_officer').GetName()] #weak (Odemčeno pomocí $supply_tent_subdued_gear_domicile_building$)#!\n$BULLET_WITH_TAB$[GetCourtPositionType('person_haggler_camp_officer').GetName()] #weak (Odemčeno pomocí $baggage_train_ransom_cages_domicile_building$)#!\n$BULLET_WITH_TAB$[GetCourtPositionType('master_of_spoils_camp_officer').GetName()] #weak (Odemčeno pomocí $proving_grounds_lockwagon_domicile_building$)#!\n\n#WEAK „Plenitel“ je tak ošklivý termín — není nic špatného na tom být rozhodný a praktický, zvláště když si zároveň můžete udělat slušný zisk.#!" # todo: CONCEPT CASE
+ camp_purpose_explorers_effects: "$EFFECT_LIST_BULLET$Nalézá více [Concept('transport_task_contracts','přepravních zakázek')|E]\n$EFFECT_LIST_BULLET$Nalézá více [Concept('task_contracts','zakázek')|E] zaměřených na [Concept('diplomacy','diplomacii')|E] a [Concept('intrigue','pletichaření')|E]\n$EFFECT_LIST_BULLET$Nalézá o něco více [Concept('task_contracts','zakázek')|E] zaměřených na [Concept('martial','vojenství')|E]\n$EFFECT_LIST_BULLET$Odemkne [Concept('camp_buildings','vylepšení tábora')|E]:\n$BULLET_WITH_TAB$#high [GetDomicileBuilding('supply_tent_reserve_provisions').GetName]#!\n$BULLET_WITH_TAB$#high [GetDomicileBuilding('supply_tent_reserve_water').GetName]#!\n$BULLET_WITH_TAB$#high [GetDomicileBuilding('supply_tent_climbing_gear').GetName]#!\n$BULLET_WITH_TAB$#high [GetDomicileBuilding('camp_fire_local_hangers_on').GetName]#!\n$BULLET_WITH_TAB$#high [GetDomicileBuilding('camp_perimeter_extra_watch').GetName]#!\n\n#WEAK Za obzorem vždy čeká další pahorek, další hora, další kultura a další jazyk...#!"
+ camp_purpose_brigands: "Lapkové"
+ camp_purpose_brigands_effects: "$EFFECT_LIST_BULLET$Nalézá více [Concept('criminal_task_contracts','zločineckých zakázek')|E] všech druhů\n$EFFECT_LIST_BULLET$Nalézá více [Concept('task_contracts','zakázek')|E] zaměřených na [Concept('prowess','zdatnost')|E] a [Concept('intrigue','pletichaření')|E]\n$EFFECT_LIST_BULLET$Odemkne [Concept('camp_buildings','vylepšení tábora')|E]:\n$BULLET_WITH_TAB$#high [GetDomicileBuilding('supply_tent_subdued_gear').GetName]#!\n$BULLET_WITH_TAB$#high [GetDomicileBuilding('barber_tent_morticians_tools').GetName]#!\n$BULLET_WITH_TAB$#high [GetDomicileBuilding('baggage_train_ransom_cages').GetName]#!\n$BULLET_WITH_TAB$#high [GetDomicileBuilding('baggage_train_negotiators').GetName]#!\n$BULLET_WITH_TAB$#high [GetDomicileBuilding('camp_fire_juicy_rumors').GetName]#!\n$BULLET_WITH_TAB$#high [GetDomicileBuilding('proving_grounds_lockwagon').GetName]#!\n$BULLET_WITH_TAB$#high [GetDomicileBuilding('proving_grounds_the_stick_game').GetName]#!\n$EFFECT_LIST_BULLET$Zpřístupňuje některé zvláštní [Concept('officers','důstojníky')|E]:\n$BULLET_WITH_TAB$[GetCourtPositionType('master_thief_camp_officer').GetName()] #weak (Odemkne se díky $supply_tent_subdued_gear_domicile_building$)#!\n$BULLET_WITH_TAB$[GetCourtPositionType('person_haggler_camp_officer').GetName()] #weak (Odemkne se díky $baggage_train_ransom_cages_domicile_building$)#!\n$BULLET_WITH_TAB$[GetCourtPositionType('master_of_spoils_camp_officer').GetName()] #weak (Odemkne se díky $proving_grounds_lockwagon_domicile_building$)#!\n\n#WEAK „Lapka“ je tak ošklivé slovo — není přece nic špatného na rozhodnosti a praktičnosti, zvláště když při tom můžeš dosáhnout slušného zisku.#!"
  camp_purpose_legitimists: "Legitimisté"
- camp_purpose_legitimists_effects: "$EFFECT_LIST_BULLET$Stejná šance najít [Concept('task_contracts','zakázky')|E] jakéhokoli typu\n$EFFECT_LIST_BULLET$Může použít $request_laamp_legitimist_support$ Interakci na krále a císaře\n$EFFECT_LIST_BULLET$Může použít $claim_cb$ [Concept('casus_belli','casus belli')|E]\n$EFFECT_LIST_BULLET$Najde unikátní $laamp_legitimist_support_contract$ [Concept('task_contract','zakázka')|E]\n$EFFECT_LIST_BULLET$Odemkne [Concept('camp_buildings','vylepšení tábora')|E]:\n$BULLET_WITH_TAB$#high [GetDomicileBuilding('camp_fire_future_dreams').GetName]#!\n$BULLET_WITH_TAB$#high [GetDomicileBuilding('proving_grounds_bodyguard_drills').GetName]#!\n$BULLET_WITH_TAB$#high [GetDomicileBuilding('proving_grounds_martial_study').GetName]#!\n$BULLET_WITH_TAB$#high [GetDomicileBuilding('proving_grounds_lockwagon').GetName]#!\n$BULLET_WITH_TAB$#high [GetDomicileBuilding('baggage_train_scribes').GetName]#!\n$BULLET_WITH_TAB$#high [GetDomicileBuilding('baggage_train_proof_of_claims').GetName]#!\n$BULLET_WITH_TAB$#high [GetDomicileBuilding('baggage_train_ransom_cages').GetName]#!\n$EFFECT_LIST_BULLET$Může získat přístup k některým speciálními [Concept('officers','důstojníkům')|E]:\n$BULLET_WITH_TAB$[GetCourtPositionType('witness_camp_officer').GetName()] #weak (Odemčeno pomocí $baggage_train_proof_of_claims_domicile_building$)#!\n$BULLET_WITH_TAB$[GetCourtPositionType('master_of_spoils_camp_officer').GetName()] #weak (Odemčeno pomocí $proving_grounds_lockwagon_domicile_building$)#!\n\n#WEAK Nárok, říkají tomu. Pouhý nárok. Není to jen nárok, je to výzva k dluhu, prohlášení úmyslu a jistý ukazatel budoucí obnovy.#!" # todo: CONCEPT CASE
- ep3_can_have_legitimists_camp_purpose_trigger.tt.explanation: "Musíte mít [Concept('pressed_claim','uplatněný nárok')|E] na nejméně jeden [Concept('kingdom','království')|E]-[Concept('title_tier','úroveň')|E] [Concept('title','titul')|E]" # todo: CONCEPT CASE
- imperial_bureaucracy: "[Concept('imperial_bureaucracy','Imperiální byrokracie')|E]" # todo: CONCEPT CASE
+ camp_purpose_legitimists_effects: "$EFFECT_LIST_BULLET$Stejná šance nalézt [Concept('task_contracts','zakázky')|E] libovolného typu\n$EFFECT_LIST_BULLET$Lze použít interakci $request_laamp_legitimist_support$ na krále a císaře\n$EFFECT_LIST_BULLET$Lze použít $claim_cb$ [Concept('casus_belli','casus belli')|E]\n$EFFECT_LIST_BULLET$Nalézá jedinečnou [Concept('task_contract','zakázku')|E] $laamp_legitimist_support_contract$\n$EFFECT_LIST_BULLET$Odemkne [Concept('camp_buildings','vylepšení tábora')|E]:\n$BULLET_WITH_TAB$#high [GetDomicileBuilding('camp_fire_future_dreams').GetName]#!\n$BULLET_WITH_TAB$#high [GetDomicileBuilding('proving_grounds_bodyguard_drills').GetName]#!\n$BULLET_WITH_TAB$#high [GetDomicileBuilding('proving_grounds_martial_study').GetName]#!\n$BULLET_WITH_TAB$#high [GetDomicileBuilding('proving_grounds_lockwagon').GetName]#!\n$BULLET_WITH_TAB$#high [GetDomicileBuilding('baggage_train_scribes').GetName]#!\n$BULLET_WITH_TAB$#high [GetDomicileBuilding('baggage_train_proof_of_claims').GetName]#!\n$BULLET_WITH_TAB$#high [GetDomicileBuilding('baggage_train_ransom_cages').GetName]#!\n$EFFECT_LIST_BULLET$Zpřístupňuje některé zvláštní [Concept('officers','důstojníky')|E]:\n$BULLET_WITH_TAB$[GetCourtPositionType('witness_camp_officer').GetName()] #weak (Odemkne se díky $baggage_train_proof_of_claims_domicile_building$)#!\n$BULLET_WITH_TAB$[GetCourtPositionType('master_of_spoils_camp_officer').GetName()] #weak (Odemkne se díky $proving_grounds_lockwagon_domicile_building$)#!\n\n#WEAK Říkají tomu nárok. Pouhý nárok. Není to jen nárok, nýbrž dlužní úpis, prohlášení záměru a jisté znamení budoucího znovunabytí.#!"
+ ep3_can_have_legitimists_camp_purpose_trigger.tt.explanation: "Musíš mít [Concept('pressed_claim','uplatnitelný nárok')|E] alespoň na jeden [Concept('title','titul')|E] [Concept('title_tier','úrovně')|E] [Concept('kingdom','království')|E]"
+ imperial_bureaucracy: "[Concept('imperial_bureaucracy','Imperiální byrokracie')|E]"
  imperial_bureaucracy_0: "Decentralizované panství"
- imperial_bureaucracy_0_effects: "$EFFECT_LIST_BULLET$#indent_newline:3 [Concept('titles','tituly')|E] vazalů nemohou být děděny postavami mimo [Concept('realm','panství')|E]#!" # todo: CONCEPT CASE
- imperial_bureaucracy_1: "Omezená administrativa"
- imperial_bureaucracy_1_effects: "$EFFECT_LIST_BULLET$#indent_newline:3 Může zřizovat [Concept('tributaries','tributáři')|E]#!\n$EFFECT_LIST_BULLET$#indent_newline:3 Vládci mohou přecházet mezi dostupnými dělícími [Concept('succession_laws','zákony nástupnictví')|E]#!\n$EFFECT_LIST_BULLET$[Concept('titles','Tituly')|E] lze odejmout\n$EFFECT_LIST_BULLET$[Concept('vassals','Vazalové')|E] lze odvolat" # todo: CONCEPT CASE
- imperial_bureaucracy_1_effects_not_in_prev: "$EFFECT_LIST_BULLET$#indent_newline:3 Ne-[Concept('administrative','administrativní')|E] [Concept('vassals','vazalové')|E] nemohou vést [Concept('war','válka')|E] proti jiným vazalům, pokud nepoužijí [Concept('hook','páka')|E] na svého [Concept('liege','lenního pána')|E]#!" # todo: CONCEPT CASE
+ imperial_bureaucracy_0_effects: "$EFFECT_LIST_BULLET$#indent_newline:3 [Concept('titles','Tituly')|E] [Concept('vassals','vazalů')|E] nemohou zdědit [Concept('characters','postavy')|E] mimo [Concept('realm','panství')|E]#!"
+ imperial_bureaucracy_1: "Omezená správa"
+ imperial_bureaucracy_1_effects: "$EFFECT_LIST_BULLET$#indent_newline:3 Lze zřizovat [Concept('tributaries','tributáře')|E]#!\n$EFFECT_LIST_BULLET$#indent_newline:3 Vládci mohou přecházet mezi dostupnými [Concept('succession_laws','zákony nástupnictví')|E] typu rozdělení#!\n$EFFECT_LIST_BULLET$[Concept('titles','Tituly')|E] lze odejmout\n$EFFECT_LIST_BULLET$[Concept('vassals','Vazaly')|E] lze odebrat"
+ imperial_bureaucracy_1_effects_not_in_prev: "$EFFECT_LIST_BULLET$#indent_newline:3 [Concept('vassals','Vazalové')|E], kteří nejsou [Concept('governor','guvernéry')|E], nemohou vést [Concept('war','válku')|E] proti jiným vazalům, pokud proti svému [Concept('liege','lennímu pánovi')|E] nepoužijí [Concept('hook','páku')|E]#!"
  imperial_bureaucracy_2: "Centralizovaná byrokracie"
- imperial_bureaucracy_2_effects: "$EFFECT_LIST_BULLET$#indent_newline:3 Vládci mohou přecházet mezi všemi dostupnými [Concept('succession_laws','zákony nástupnictví')|E]#!\n$EFFECT_LIST_BULLET$#indent_newline:3 Všichni vazalové, kteří odmítnou odejmutí titulu nebo odvolání vazala, jsou považováni za [Concept('criminals','zločince')|E]#!\n$EFFECT_LIST_BULLET$#high $demand_admin_interaction$#! náklady jsou sníženy" # todo: CONCEPT CASE
- imperial_bureaucracy_2_effects_not_in_prev: "$EFFECT_LIST_BULLET$#indent_newline:3 Náklady pro [Concept('liege','lenního pána')|E] na svolání [Concept('provincial_armies','provinční armády')|E]: [influence_i|E]#P -[EmptyScope.ScriptValue('admin_law_cost_reduction_value')|+0%]#!#!\n$EFFECT_LIST_BULLET$#indent_newline:3 Ne-[Concept('administrative','administrativní')|E] [Concept('vassals','vazalové')|E] nemohou vyhlásit žádný [Concept('war','válka')|E], pokud nepoužijí [Concept('hook','páka')|E] na svého [Concept('liege','lenního pána')|E]#!" # todo: CONCEPT CASE
+ imperial_bureaucracy_2_effects: "$EFFECT_LIST_BULLET$#indent_newline:3 Vládci mohou přecházet mezi všemi dostupnými [Concept('succession_laws','zákony nástupnictví')|E]#!\n$EFFECT_LIST_BULLET$#indent_newline:3 Všichni [Concept('vassals','vazalové')|E], kteří odmítnou odejmutí titulu nebo odebrání vazala, jsou považováni za [Concept('criminals','zločince')|E]#!\n$EFFECT_LIST_BULLET$Cena #high $demand_admin_interaction$#! je snížena"
+ imperial_bureaucracy_2_effects_not_in_prev: "$EFFECT_LIST_BULLET$#indent_newline:3 Náklady [Concept('liege','lenního pána')|E] na povolání [Concept('provincial_armies','provinčních armád')|E]: [influence_i|E]#P -[EmptyScope.ScriptValue('admin_law_cost_reduction_value')|+0%]#!#!\n$EFFECT_LIST_BULLET$#indent_newline:3 [Concept('vassals','Vazalové')|E], kteří nejsou [Concept('governor','guvernéry')|E], nemohou vést žádnou [Concept('war','válku')|E], pokud proti svému [Concept('liege','lennímu pánovi')|E] nepoužijí [Concept('hook','páku')|E]#!"
  imperial_bureaucracy_3: "Absolutní autokracie"
- imperial_bureaucracy_3_effects: "$EFFECT_LIST_BULLET$#indent_newline:3 Náklady pro [Concept('liege','lenního pána')|E] na svolání [Concept('provincial_armies','provinční armády')|E]: [influence_i|E]#P -[EmptyScope.ScriptValue('admin_law_cost_reduction_high_value')|+0%]#!#!" # todo: CONCEPT CASE
- imperial_bureaucracy_3_effects_not_in_prev: "$EFFECT_LIST_BULLET$#indent_newline:3 Ne-[Concept('administrative','administrativní')|E] [Concept('vassals','vazalové')|E] nikdy nemohou vyhlásit [Concept('war','válka')|E]#!" # todo: CONCEPT CASE
- IMPERIAL_BUREAUCRACY_IS_ON_COOLDOWN: "Nedávno jste změnili [Concept('imperial_bureaucracy','imperiální byrokracie')|E]\n    @alert_icon! #alert_trial Lze změnit znovu po [GetCurrentDateWithDiff( GetVarTimeRemaining( CHARACTER.MakeScope, 'imperial_bureaucracy_cooldown') )]#!" # todo: CONCEPT CASE
- imperial_bureaucracy_pending_law_change: "#alert_trial Váš [Concept('liege','lenní pán')|E] nedávno přijal tento [Concept('law','zákon')|E] a brzy jej automaticky přijmete#!" # todo: CONCEPT CASE
- admin_all_vassal_wars_banned: "Zákony vašeho [Concept('liege','lenního pána')|E] vám brání vyhlásit [Concept('war','válka')|E]" # todo: CONCEPT CASE
- province_war_law: "[Concept('provincial','Provinční')|E] vyhlášení [Concept('war','válka')|E]" # todo: CONCEPT CASE
+ imperial_bureaucracy_3_effects: "$EFFECT_LIST_BULLET$#indent_newline:3 Náklady [Concept('liege','lenního pána')|E] na povolání [Concept('provincial_armies','provinčních armád')|E]: [influence_i|E]#P -[EmptyScope.ScriptValue('admin_law_cost_reduction_high_value')|+0%]#!#!"
+ imperial_bureaucracy_3_effects_not_in_prev: "$EFFECT_LIST_BULLET$#indent_newline:3 [Concept('vassals','Vazalové')|E], kteří nejsou [Concept('governor','guvernéry')|E], nikdy nemohou vyhlásit [Concept('war','válku')|E]#!"
+ IMPERIAL_BUREAUCRACY_IS_ON_COOLDOWN: "Nedávno jsi změnil [Concept('imperial_bureaucracy','imperiální byrokracii')|E]\n    @alert_icon! #alert_trial Znovu ji lze změnit po [GetCurrentDateWithDiff( GetVarTimeRemaining( CHARACTER.MakeScope, 'imperial_bureaucracy_cooldown') )]#!"
+ imperial_bureaucracy_pending_law_change: "#alert_trial Tvůj [Concept('liege','lenní pán')|E] nedávno přijal tento [Concept('law','zákon')|E] a ty jej brzy přijmeš automaticky#!"
+ admin_all_vassal_wars_banned: "[Concept('laws','Zákony')|E] tvého [Concept('liege','lenního pána')|E] ti brání vyhlásit [Concept('war','válku')|E]"
+ province_war_law: "Vyhlašování [Concept('provincial','provinčních')|E] [Concept('war','válek')|E]"
  province_war_law_singular: "$province_war_law$"
  province_war_law_0: "Vyhlašování válek povoleno"
- province_war_law_0_effects_not_in_prev: "$EFFECT_LIST_BULLET$#indent_newline:3 [Concept('governors','guvernéři')|E] mohou vést externí [Concept('wars','války')|E]#!" # todo: CONCEPT CASE
+ province_war_law_0_effects_not_in_prev: "$EFFECT_LIST_BULLET$#indent_newline:3 [Concept('governors','Guvernéři')|E] mohou vést vnější [Concept('wars','války')|E]#!"
  province_war_law_1: "Vyhlašování válek omezeno"
- province_war_law_1_effects_not_in_prev: "$EFFECT_LIST_BULLET$#indent_newline:3 Pouze [Concept('governors','guvernéři')|E] s [GetSubjectContractType( 'administrative_themes' ).GetObligationNameShort( 'admin_theme_frontier' )] a [GetSubjectContractType( 'administrative_themes' ).GetObligationNameShort( 'admin_theme_naval' )] [Concept('province_administration','správa provincie')|E] mohou vést externí [Concept('wars','války')|E]#!" # todo: CONCEPT CASE
- province_war_law_2: "Vyhlašování válek – schválení"
- province_war_law_2_effects_not_in_prev: "$EFFECT_LIST_BULLET$#indent_newline:3 Pouze [Concept('governors','guvernéři')|E] s [GetSubjectContractType( 'administrative_themes' ).GetObligationNameShort( 'admin_theme_frontier' )] a [GetSubjectContractType( 'administrative_themes' ).GetObligationNameShort( 'admin_theme_naval' )] [Concept('province_administration','správa provincie')|E] mohou vést externí [Concept('wars','války')|E], ale musí požádat o povolení#!" # todo: CONCEPT CASE
+ province_war_law_1_effects_not_in_prev: "$EFFECT_LIST_BULLET$#indent_newline:3 Pouze [Concept('governors','guvernéři')|E] s [GetSubjectContractType( 'administrative_themes' ).GetObligationNameShort( 'admin_theme_frontier' )] nebo [GetSubjectContractType( 'administrative_themes' ).GetObligationNameShort( 'admin_theme_naval' )] [Concept('province_administration','správou provincie')|E] mohou vést vnější [Concept('wars','války')|E]#!"
+ province_war_law_2: "Vyhlašování válek po schválení"
+ province_war_law_2_effects_not_in_prev: "$EFFECT_LIST_BULLET$#indent_newline:3 Pouze [Concept('governors','guvernéři')|E] s [GetSubjectContractType( 'administrative_themes' ).GetObligationNameShort( 'admin_theme_frontier' )] nebo [GetSubjectContractType( 'administrative_themes' ).GetObligationNameShort( 'admin_theme_naval' )] [Concept('province_administration','správou provincie')|E] mohou vést vnější [Concept('wars','války')|E], musí však nejprve požádat o svolení#!"
  province_war_law_3: "Vyhlašování válek zakázáno"
- province_war_law_3_effects_not_in_prev: "$EFFECT_LIST_BULLET$#indent_newline:3 [Concept('governors','guvernéři')|E] #bold nemohou#! vést externí [Concept('wars','války')|E]#!" # todo: CONCEPT CASE
- province_border_law: "[Concept('provincial','Provinční')|E] hraniční politika" # todo: CONCEPT CASE
+ province_war_law_3_effects_not_in_prev: "$EFFECT_LIST_BULLET$#indent_newline:3 [Concept('governors','Guvernéři')|E] #bold nemohou#! vést vnější [Concept('wars','války')|E]#!"
+ province_border_law: "Politika [Concept('provincial','provinčních')|E] hranic"
  province_border_law_singular: "$province_border_law$"
- province_border_law_0: "Předběžná hraniční politika"
- province_border_law_0_effects_not_in_prev: "$EFFECT_LIST_BULLET$#indent_newline:3 [Concept('governors','guvernéři')|E] mohou volně používat [GetScheme('dispute_border').GetTypeName] a [GetScheme('subsume_province').GetTypeName] [Concept('schemes','intriky')|E]#!" # todo: CONCEPT CASE
- province_border_law_1: "Omezená hraniční politika"
- province_border_law_1_effects_not_in_prev: "$EFFECT_LIST_BULLET$#indent_newline:3 [Concept('governors','guvernéři')|E] mohou používat [GetScheme('dispute_border').GetTypeName] a [GetScheme('subsume_province').GetTypeName] [Concept('schemes','intriky')|E] pouze pokud patří do [Concept('powerful','mocného')|E] nebo [Concept('dominant_family','dominantní rodina')|E]#!" # todo: CONCEPT CASE
- province_border_law_2: "Pevná hraniční politika"
- province_border_law_2_effects_not_in_prev: "$EFFECT_LIST_BULLET$#indent_newline:3 [Concept('governors','guvernéři')|E] #bold nemohou#! používat [GetScheme('dispute_border').GetTypeName] a [GetScheme('subsume_province').GetTypeName] [Concept('schemes','intriky')|E]#!" # todo: CONCEPT CASE
- have_bureaucracy_1_or_higher: "Vaše [Concept('imperial_bureaucracy','imperiální byrokracie')|E] #bold není#! na úrovni #high [GetLaw('imperial_bureaucracy_1').GetName]#! nebo vyšší" # todo: CONCEPT CASE
- have_bureaucracy_2_or_higher: "Vaše [Concept('imperial_bureaucracy','imperiální byrokracie')|E] #bold není#! na úrovni #high [GetLaw('imperial_bureaucracy_2').GetName]#! nebo vyšší" # todo: CONCEPT CASE
- have_bureaucracy_3: "Vaše [Concept('imperial_bureaucracy','imperiální byrokracie')|E] #bold není#! na úrovni #high [GetLaw('imperial_bureaucracy_3').GetName]#!" # todo: CONCEPT CASE
- admin_law_cooldown_desc: "Nedávno byl změněn [Concept('law','zákon')|E] - [laws] lze změnit znovu po [GetCurrentDateWithDiff( GetVarTimeRemaining( GetPlayer.MakeScope, 'admin_law_cooldown') )]" # todo: CONCEPT CASE
- admin_vassal_wars_permission_only_desc: "Musíte požádat svého [Concept('liege','lenního pána')|E] o povolení vyhlásit [Concept('war','válka')|E]" # todo: CONCEPT CASE
- admin_vassal_border_limit_desc: "Zákony vašeho [Concept('liege','lenního pána')|E] vám brání použít tento [Concept('scheme','intrika')|E]" # todo: CONCEPT CASE
- nomadic_authority: "[Concept('nomadic_authority','Dominance')|E]" # todo: CONCEPT CASE
- nomadic_authority_1: "Neposlušní nomádi"
- nomadic_authority_1_pass_phrase: "Změnit své [dominance|E] na slabé"
+ province_border_law_0: "Volná politika hranic"
+ province_border_law_0_effects_not_in_prev: "$EFFECT_LIST_BULLET$#indent_newline:3 [Concept('governors','Guvernéři')|E] mohou bez omezení používat [Concept('schemes','intriky')|E] [GetScheme('dispute_border').GetTypeName] a [GetScheme('subsume_province').GetTypeName]#!"
+ province_border_law_1: "Omezená politika hranic"
+ province_border_law_1_effects_not_in_prev: "$EFFECT_LIST_BULLET$#indent_newline:3 [Concept('governors','Guvernéři')|E] mohou používat [Concept('schemes','intriky')|E] [GetScheme('dispute_border').GetTypeName] a [GetScheme('subsume_province').GetTypeName] pouze tehdy, pokud patří k [Concept('powerful','mocné rodině')|E] nebo [Concept('dominant_family','dominantní rodině')|E]#!"
+ province_border_law_2: "Pevná politika hranic"
+ province_border_law_2_effects_not_in_prev: "$EFFECT_LIST_BULLET$#indent_newline:3 [Concept('governors','Guvernéři')|E] #bold nemohou#! používat [Concept('schemes','intriky')|E] [GetScheme('dispute_border').GetTypeName] a [GetScheme('subsume_province').GetTypeName]#!"
+ have_bureaucracy_1_or_higher: "Úroveň tvé [Concept('imperial_bureaucracy','imperiální byrokracie')|E] je #bold nižší#! než #high [GetLaw('imperial_bureaucracy_1').GetName]#!"
+ have_bureaucracy_2_or_higher: "Úroveň tvé [Concept('imperial_bureaucracy','imperiální byrokracie')|E] je #bold nižší#! než #high [GetLaw('imperial_bureaucracy_2').GetName]#!"
+ have_bureaucracy_3: "Tvá [Concept('imperial_bureaucracy','imperiální byrokracie')|E] #bold nemá#! úroveň #high [GetLaw('imperial_bureaucracy_3').GetName]#!"
+ admin_law_cooldown_desc: "Nedávno byl změněn [Concept('law','zákon')|E] – [Concept('laws','zákony')|E] lze znovu změnit po [GetCurrentDateWithDiff( GetVarTimeRemaining( GetPlayer.MakeScope, 'admin_law_cooldown') )]"
+ admin_vassal_wars_permission_only_desc: "Před vyhlášením [Concept('war','války')|E] musíš požádat svého [Concept('liege','lenního pána')|E] o svolení"
+ admin_vassal_border_limit_desc: "[Concept('laws','Zákony')|E] tvého [Concept('liege','lenního pána')|E] ti brání použít tuto [Concept('scheme','intriku')|E]"
+ nomadic_authority: "[Concept('nomadic_authority','Dominance')|E]"
+ nomadic_authority_1: "Neukáznění nomádi"
+ nomadic_authority_1_pass_phrase: "Změnit svou [Concept('dominance','dominanci')|E] na slabou"
  nomadic_authority_confirmation_button_text: "Změnit dominanci"
- nomadic_authority_1_effects_not_in_prev: "$EFFECT_LIST_BULLET$[Concept('characters','Postavy')|E] #N nelze#! být [Concept('imprisoned','uvězněný')|E]#!\n$EFFECT_LIST_BULLET$[Concept('titles','Tituly')|E] lze odejmout\n$EFFECT_LIST_BULLET$Může zřizovat [Concept('tributaries','tributáři')|E]\n$EFFECT_LIST_BULLET$[Concept('migration','Migrace')|E] může cílit pouze na [Concept('de_jure','de iure')|E] [Concept('county','hrabství')|E] [Concept('titles','tituly')|E]" # todo: CONCEPT CASE
- nomadic_authority_2: "Omezená nadvláda"
- nomadic_authority_2_pass_phrase: "Změnit své [dominance|E] na omezené"
- nomadic_authority_2_effects: "$EFFECT_LIST_BULLET$[Concept('characters','Postavy')|E] mohou být [Concept('imprisoned','uvězněný')|E]\n$EFFECT_LIST_BULLET$[Concept('migration','Migrace')|E] může cílit na [Concept('de_jure','de iure')|E] [Concept('duchy','vévodství')|E] [Concept('titles','tituly')|E]\n$EFFECT_LIST_BULLET$Může použít #V $step_away_from_the_steppe_decision$#! [Concept('decision','rozhodnutím')|E]\n$EFFECT_LIST_BULLET$Může najmout [GetMaA('nomad_lancers').GetName] jako [Concept('men_at_arms','ozbrojenci')|E]\n$EFFECT_LIST_BULLET$Může najmout [GetMaA('cataphract_archers').GetName] jako [Concept('men_at_arms','ozbrojenci')|E], pokud vaše [Concept('culture','kultura')|E] má #high $tradition_mpo_iron_cavalry_name$#! [Concept('tradition','tradice')|E]\n$EFFECT_LIST_BULLET$Může postavit [GetDomicileBuilding('yurt_main_03').GetName] [Concept('yurt_building','budova jurty')|E]" # todo: CONCEPT CASE
- nomadic_authority_3: "Vysoká nadvláda"
- nomadic_authority_3_pass_phrase: "Změnit své [dominance|E] na vysoké"
- nomadic_authority_3_effects: "$EFFECT_LIST_BULLET$[Concept('vassals','Vazalové')|E] lze odvolat\n$EFFECT_LIST_BULLET$[Concept('migration','Migrace')|E] může cílit na [Concept('de_jure','de iure')|E] [Concept('kingdom','království')|E] [Concept('titles','tituly')|E]\n$EFFECT_LIST_BULLET$Může postavit [GetDomicileBuilding('yurt_main_04').GetName] [Concept('yurt_building','budova jurty')|E]\n$EFFECT_LIST_BULLET$Může použít #V $settle_people_decision$#! [Concept('decision','rozhodnutí')|E]\n$EFFECT_LIST_BULLET$Může použít #V $settle_the_steppe_decision$#! [Concept('decision','rozhodnutí')|E] pro [GetGovernment( 'tribal_government' ).GetName]\n$EFFECT_LIST_BULLET$[Concept('independent','Nezávislí')|E] [GetGovernment( 'nomad_government' ).GetName] vládci získají přístup k #high $MPO_NOMAD_INVASION_CB_NAME$#! [Concept('casus_belli','casus belli')|E]" # todo: CONCEPT CASE
- nomadic_authority_4: "Absolutní nadvláda"
- nomadic_authority_4_pass_phrase: "Změnit své [dominance|E] na absolutní"
- nomadic_authority_4_effects: "$EFFECT_LIST_BULLET$[Concept('migration','Migrace')|E] může cílit na [Concept('de_jure','de iure')|E] [Concept('empire','říši')|E] [Concept('titles','tituly')|E]\n$EFFECT_LIST_BULLET$Může použít #high $mpo_establish_paiza_system_decision$#! [Concept('decision','rozhodnutí')|E]\n$EFFECT_LIST_BULLET$Může použít #V $settle_the_steppe_decision$#! [Concept('decision','rozhodnutí')|E] pro [GetGovernment( 'feudal_government' ).GetName] nebo [GetGovernment( 'clan_government' ).GetName]\n$EFFECT_LIST_BULLET$Může postavit [GetDomicileBuilding('yurt_main_05').GetName] [Concept('yurt_building','budova jurty')|E]" # todo: CONCEPT CASE
- nomadic_authority_5: "Neomezená nadvláda"
- nomadic_authority_5_pass_phrase: "Změnit své [dominance|E] na neomezené"
- nomadic_authority_5_effects: "$EFFECT_LIST_BULLET$Může použít #high $mpo_become_greatest_of_khans_decision$#! [Concept('decision','rozhodnutí')|E], čímž odemkne [GetTrait('greatest_of_khans').GetName( GetNullCharacter )] [Concept('trait','rys')|E] a prostředky k dobytí světa!\n$EFFECT_LIST_BULLET$[GetTrait('greatest_of_khans').GetName( GetNullCharacter )] může změnit typ [Concept('government','vláda')|E] pomocí #high $mpo_gok_world_conquest_decision$#! [Concept('decision','rozhodnutí')|E]" # todo: CONCEPT CASE
- NOMADIC_AUTHORITY_IS_ON_COOLDOWN: "Nedávno jste změnili [Concept('nomadic_authority','dominance')|E]\n    @alert_icon! #alert_trial Lze změnit znovu po [GetCurrentDateWithDiff( GetVarTimeRemaining( CHARACTER.MakeScope, 'nomadic_authority_cooldown') )]#!" # todo: CONCEPT CASE
- NOMADIC_AUTHORITY_5_GREATEST_KHAN_REQUIREMENT: "Již existuje [GetGovernment( 'nomad_government' ).GetName] [Concept('ruler','vládce')|E] s [Concept('unrestricted_nomadic','neomezenou')|E] [Concept('nomadic_authority','dominancemi')|E]: [CHARACTER.GetName]" # todo: CONCEPT CASE
+ nomadic_authority_1_effects_not_in_prev: "$EFFECT_LIST_BULLET$[Concept('characters','Postavy')|E] #N nelze#! [Concept('imprisoned','uvěznit')|E]#!\n$EFFECT_LIST_BULLET$[Concept('titles','Tituly')|E] lze odejmout\n$EFFECT_LIST_BULLET$Lze zřizovat [Concept('tributaries','tributáře')|E]\n$EFFECT_LIST_BULLET$Cílem [Concept('migration','migrace')|E] mohou být pouze [Concept('de_jure','de iure')|E] [Concept('titles','tituly')|E] [Concept('county','úrovně hrabství')|E]"
+ nomadic_authority_2: "Omezená dominance"
+ nomadic_authority_2_pass_phrase: "Změnit svou [Concept('dominance','dominanci')|E] na omezenou"
+ nomadic_authority_2_effects: "$EFFECT_LIST_BULLET$[Concept('characters','Postavy')|E] lze [Concept('imprisoned','uvěznit')|E]\n$EFFECT_LIST_BULLET$Cílem [Concept('migration','migrace')|E] mohou být [Concept('de_jure','de iure')|E] [Concept('titles','tituly')|E] [Concept('duchy','úrovně vévodství')|E]\n$EFFECT_LIST_BULLET$Lze použít #V $step_away_from_the_steppe_decision$#! [Concept('decision','rozhodnutí')|E]\n$EFFECT_LIST_BULLET$Lze verbovat [GetMaA('nomad_lancers').GetName] jako [Concept('men_at_arms','ozbrojence')|E]\n$EFFECT_LIST_BULLET$Lze verbovat [GetMaA('cataphract_archers').GetName] jako [Concept('men_at_arms','ozbrojence')|E], pokud má tvá [Concept('culture','kultura')|E] #high $tradition_mpo_iron_cavalry_name$#! [Concept('tradition','tradici')|E]\n$EFFECT_LIST_BULLET$Lze postavit [Concept('yurt_building','budovu jurty')|E] [GetDomicileBuilding('yurt_main_03').GetName]"
+ nomadic_authority_3: "Vysoká dominance"
+ nomadic_authority_3_pass_phrase: "Změnit svou [Concept('dominance','dominanci')|E] na vysokou"
+ nomadic_authority_3_effects: "$EFFECT_LIST_BULLET$[Concept('vassals','Vazaly')|E] lze odebrat\n$EFFECT_LIST_BULLET$Cílem [Concept('migration','migrace')|E] mohou být [Concept('de_jure','de iure')|E] [Concept('titles','tituly')|E] [Concept('kingdom','úrovně království')|E]\n$EFFECT_LIST_BULLET$Lze postavit [Concept('yurt_building','budovu jurty')|E] [GetDomicileBuilding('yurt_main_04').GetName]\n$EFFECT_LIST_BULLET$Lze použít #V $settle_people_decision$#! [Concept('decision','rozhodnutí')|E]\n$EFFECT_LIST_BULLET$Lze použít #V $settle_the_steppe_decision$#! [Concept('decision','rozhodnutí')|E] pro [GetGovernment( 'tribal_government' ).GetName]\n$EFFECT_LIST_BULLET$[Concept('independent','Nezávislí')|E] [GetGovernment( 'nomad_government' ).GetName] vládci získají přístup k #high $MPO_NOMAD_INVASION_CB_NAME$#! [Concept('casus_belli','casus belli')|E]"
+ nomadic_authority_4: "Absolutní dominance"
+ nomadic_authority_4_pass_phrase: "Změnit svou [Concept('dominance','dominanci')|E] na absolutní"
+ nomadic_authority_4_effects: "$EFFECT_LIST_BULLET$Cílem [Concept('migration','migrace')|E] mohou být [Concept('de_jure','de iure')|E] [Concept('titles','tituly')|E] [Concept('empire','úrovně říše')|E]\n$EFFECT_LIST_BULLET$Lze použít #high $mpo_establish_paiza_system_decision$#! [Concept('decision','rozhodnutí')|E]\n$EFFECT_LIST_BULLET$Lze použít #V $settle_the_steppe_decision$#! [Concept('decision','rozhodnutí')|E] pro [GetGovernment( 'feudal_government' ).GetName] nebo [GetGovernment( 'clan_government' ).GetName]\n$EFFECT_LIST_BULLET$Lze postavit [Concept('yurt_building','budovu jurty')|E] [GetDomicileBuilding('yurt_main_05').GetName]"
+ nomadic_authority_5: "Neomezená dominance"
+ nomadic_authority_5_pass_phrase: "Změnit svou [Concept('dominance','dominanci')|E] na neomezenou"
+ nomadic_authority_5_effects: "$EFFECT_LIST_BULLET$Lze použít #high $mpo_become_greatest_of_khans_decision$#! [Concept('decision','rozhodnutí')|E], které odemkne [Concept('trait','rys')|E] [GetTrait('greatest_of_khans').GetName( GetNullCharacter )] a prostředky k dobytí světa!\n$EFFECT_LIST_BULLET$Postava s rysem [GetTrait('greatest_of_khans').GetName( GetNullCharacter )] může změnit typ [Concept('government','vlády')|E] pomocí #high $mpo_gok_world_conquest_decision$#! [Concept('decision','rozhodnutí')|E]"
+ NOMADIC_AUTHORITY_IS_ON_COOLDOWN: "Tvá [Concept('nomadic_authority','dominance')|E] byla nedávno změněna\n    @alert_icon! #alert_trial Znovu ji lze změnit po [GetCurrentDateWithDiff( GetVarTimeRemaining( CHARACTER.MakeScope, 'nomadic_authority_cooldown') )]#!"
+ NOMADIC_AUTHORITY_5_GREATEST_KHAN_REQUIREMENT: "Již existuje [GetGovernment( 'nomad_government' ).GetName] [Concept('ruler','vládce')|E] s [Concept('unrestricted_nomadic','neomezenou')|E] [Concept('nomadic_authority','dominancí')|E]: [CHARACTER.GetName]"
  nomadic_authority_5_greatest_khan: "$NOMADIC_AUTHORITY_5_GREATEST_KHAN_REQUIREMENT$"
  nomadic_authority_5_gurkhan: "$NOMADIC_AUTHORITY_5_GURKHAN_REQUIREMENT$"
- NOMADIC_AUTHORITY_5_GURKHAN_REQUIREMENT: "Vy #bold nejste#! [Concept('gurkhan','gürkhan')|E]" # todo: CONCEPT CASE
- NOMADIC_AUTHORITY_LEVEL_4: "Nemáte zákony [GetLaw('nomadic_authority_3').GetName] nebo [GetLaw('nomadic_authority_5').GetName]"
+ NOMADIC_AUTHORITY_5_GURKHAN_REQUIREMENT: "#bold Nejsi#! [Concept('gurkhan','Gürkhanem')|E]"
+ NOMADIC_AUTHORITY_LEVEL_4: "#bold NEMÁŠ#! zákon [GetLaw('nomadic_authority_3').GetName] ani [GetLaw('nomadic_authority_5').GetName]"
  nomadic_authority_4_level_requirement: "$NOMADIC_AUTHORITY_LEVEL_4$"
- NOMADIC_AUTHORITY_LEVEL_2: "Nemáte zákony [GetLaw('nomadic_authority_1').GetName] nebo [GetLaw('nomadic_authority_3').GetName]"
+ NOMADIC_AUTHORITY_LEVEL_2: "#bold NEMÁŠ#! zákon [GetLaw('nomadic_authority_1').GetName] ani [GetLaw('nomadic_authority_3').GetName]"
  nomadic_authority_2_level_requirement: "$NOMADIC_AUTHORITY_LEVEL_2$"
- NOMADIC_AUTHORITY_LEVEL_3: "Nemáte zákony [GetLaw('nomadic_authority_2').GetName] nebo [GetLaw('nomadic_authority_4').GetName]"
+ NOMADIC_AUTHORITY_LEVEL_3: "#bold NEMÁŠ#! zákon [GetLaw('nomadic_authority_2').GetName] ani [GetLaw('nomadic_authority_4').GetName]"
  nomadic_authority_3_level_requirement: "$NOMADIC_AUTHORITY_LEVEL_3$"
- mandala_decree: "Dekret Devaraja" # todo: NEW TRANSLATION
- mandala_rule_effects: "#S Vždy aktivní:#!\n$EFFECT_LIST_BULLET$[Concept('titles','Tituly')|E] lze odejmout\n$EFFECT_LIST_BULLET$[Concept('vassals','Vazalové')|E] lze odvolat\n$EFFECT_LIST_BULLET$#indent_newline:3 Všichni vazalové, kteří odmítnou odejmutí titulu nebo odvolání vazala, jsou považováni za [Concept('criminals','zločince')|E]#!\n$EFFECT_LIST_BULLET$Vládci mohou určit svého [Concept('heir','dědice')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- mandala_decree_none: "Žádný dekret" # todo: NEW TRANSLATION
- mandala_decree_none_effects: "#weak $NO_EFFECTS$...#!\n\n$mandala_rule_effects$\n\n#WEAK Prohlašuji...#!" # todo: NEW TRANSLATION
- devaraja_aspect_does_not_allow_this_decree: "#alert_trial Váš současný [Concept('mandala_aspect','aspekt mandaly')|E] neumožňuje tento dekret#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- mandala_decree_prosperity: "Dekret prosperity" # todo: NEW TRANSLATION
- mandala_decree_prosperity_effects: "$EFFECT_LIST_BULLET$$mandala_decree_flag_more_prone_to_accept_exact_tribute$\n$EFFECT_LIST_BULLET$$mandala_decree_flag_gain_devotion_when_winning_defensive_wars$\n$EFFECT_LIST_BULLET$$mandala_decree_flag_lose_devotion_when_losing_wars$\n$EFFECT_LIST_BULLET$$mandala_decree_flag_can_use_piety_to_reassert_tributary$\n$EFFECT_LIST_BULLET$$mandala_decree_flag_tributaries_less_likely_to_break_free$\n$EFFECT_LIST_BULLET$$mandala_decree_flag_subjects_appear_more_economical$\n\n$mandala_rule_effects$\n\n#WEAK Prosperující říše je silná říše.#!" # todo: NEW TRANSLATION
- mandala_decree_expansion: "Dekret expanze" # todo: NEW TRANSLATION
- mandala_decree_expansion_effects: "$EFFECT_LIST_BULLET$$mandala_decree_flag_gain_piety_when_winning_offensive_wars$\n$EFFECT_LIST_BULLET$$mandala_decree_flag_lose_devotion_when_losing_wars$\n$EFFECT_LIST_BULLET$$mandala_decree_flag_can_call_tributaries_for_piety$\n$EFFECT_LIST_BULLET$$mandala_decree_flag_piety_for_sieging_temple_complexes$\n$EFFECT_LIST_BULLET$$mandala_decree_flag_subjects_appear_more_warlike$\n\n$mandala_rule_effects$\n\n#WEAK Více je vždy více.#!" # todo: NEW TRANSLATION
- mandala_decree_reverence: "Dekret úcty" # todo: NEW TRANSLATION
- mandala_decree_reverence_effects: "$EFFECT_LIST_BULLET$$mandala_decree_flag_cheaper_pilgrimages$\n$EFFECT_LIST_BULLET$$mandala_decree_flag_piety_from_converting_subjects$\n$EFFECT_LIST_BULLET$$mandala_decree_flag_vassals_more_inclined_to_convert$\n$EFFECT_LIST_BULLET$$mandala_decree_flag_easier_to_mandalize_vassals$\n$EFFECT_LIST_BULLET$$mandala_decree_flag_can_mandalize_tributaries$\n$EFFECT_LIST_BULLET$$mandala_decree_flag_tributaries_more_likely_to_contribute$\n\n$mandala_rule_effects$\n\n#WEAK Pohleďme k nebesům.#!" # todo: NEW TRANSLATION
- mandala_decree_flag_tributaries_more_likely_to_contribute: "[Concept('vassals','Vazalové')|E] a [Concept('tributaries','tributáři')|E] jsou nakloněnější pomoci financovat $building_type_mandala_capital_01$ [Concept('great_projects','velké projekty')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- mandala_decree_flag_easier_to_mandalize_vassals: "[Concept('vassals','Vazalové')|E] jsou více ochotni přijmout [Concept('mandala','mandala')|E] vládu" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- mandala_decree_flag_can_mandalize_tributaries: "[Concept('tributaries','Tributáři')|E] mohou být pozváni, aby přijali [Concept('mandala','mandala')|E] vládu" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- mandala_decree_flag_piety_for_sieging_temple_complexes: "Obležení $building_type_mandala_capital_01$ přináší [Concept('piety','zbožnost')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- mandala_decree_flag_can_call_tributaries_for_piety: "Může svolat [Concept('tributaries','tributáři')|E] do válek za cenu [Concept('piety','zbožnost')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- mandala_decree_flag_can_use_piety_to_reassert_tributary: "Může utratit [Concept('piety','zbožnost')|E] na #high $reassert_tributary_interaction$#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- mandala_decree_flag_tributaries_less_likely_to_break_free: "[Concept('tributaries','Tributáři')|E] jsou loajálnější" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- mandala_decree_flag_more_prone_to_accept_exact_tribute: "[Concept('tributaries','Tributáři')|E] jsou vstřícnější k #high $exact_tribute_interaction$#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- mandala_decree_flag_increased_tributarization_acceptance: "$increased_tributarization_acceptance$" # todo: NEW TRANSLATION
- mandala_decree_flag_slightly_reduced_tributarization_acceptance: "$slightly_reduced_tributarization_acceptance$" # todo: NEW TRANSLATION
- mandala_decree_flag_increased_vassalization_acceptance: "$increased_vassalization_acceptance$" # todo: NEW TRANSLATION
- mandala_decree_flag_reduced_vassalization_acceptance: "$reduced_vassalization_acceptance$" # todo: NEW TRANSLATION
- mandala_decree_flag_gain_piety_when_winning_offensive_wars: "Úspěšné útočné [Concept('wars','války')|E] přinášejí [Concept('piety','zbožnost')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- mandala_decree_flag_lose_devotion_when_losing_wars: "Prohra ve [Concept('wars','válkách')|E] stojí [Concept('piety_experience','oddanosti')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- mandala_decree_flag_gain_devotion_when_winning_defensive_wars: "Úspěšné obranné [Concept('wars','války')|E] generují [Concept('piety_experience','oddanost')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- mandala_decree_flag_cheaper_pilgrimages: "Cesta na [Concept('pilgrimages','poutě')|E] stojí méně" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- mandala_decree_flag_cheaper_pilgrimages_desc: "Mandala – dekret úcty" # todo: NEW TRANSLATION
- mandala_decree_flag_piety_from_converting_subjects: "[Concept('converting','Konverze')|E] [Concept('subjects','Subjekti')|E] přinášejí [Concept('piety','zbožnost')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- mandala_decree_flag_vassals_more_inclined_to_convert: "[Concept('vassals','Vazalové')|E] mají větší sklony k [Concept('convert','konvertovat')|E] na vaši [Concept('faith','víru')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- mandala_decree_flag_subjects_appear_more_warlike: "[Concept('subjects','Subjekti')|E] jsou více nakloněni k [warlike_i] [Concept('ai_warlike_personality','bojovným')|E] akcím" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- mandala_decree_flag_subjects_appear_more_economical: "[Concept('subjects','Subjekti')|E] jsou více nakloněni k [builder_i] [Concept('ai_economical_boom_personality','staviteli')|E] akcím" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- mandala_decree_flag_subjects_appear_more_pious: "[Concept('subjects','Subjekti')|E] jsou více nakloněni k [pious_builder_i] [Concept('ai_pious_builder_personality','zbožnému staviteli')|E] akcím" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- celestial_bureaucracy: "[Concept('celestial_bureaucracy','Nebeská byrokracie')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- celestial_bureaucracy_0: "Autonomní provincie" # todo: NEW TRANSLATION
- celestial_bureaucracy_0_effects: "$EFFECT_LIST_BULLET$#indent_newline:3 Tituly [Concept('vassals','vazalové')|E] nemohou být zděděny postavami mimo [Concept('realm','panství')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- celestial_bureaucracy_1: "Omezená státní správa" # todo: NEW TRANSLATION
- celestial_bureaucracy_1_effects: "$EFFECT_LIST_BULLET$[Concept('titles','Tituly')|E] lze odejmout\n$EFFECT_LIST_BULLET$[Concept('vassals','Vazalové')|E] lze odvolat" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- celestial_bureaucracy_1_effects_not_in_prev: "$EFFECT_LIST_BULLET$#indent_newline:3 Ne-[Concept('administrative','administrativní')|E] [Concept('vassals','vazalové')|E] nemohou vyhlásit [Concept('war','válka')|E] proti jiným vazalům, pokud nepoužijí [Concept('hook','páka')|E] na svého [Concept('liege','lenního pána')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- celestial_bureaucracy_2: "Centralizovaná ministerstva" # todo: NEW TRANSLATION
- celestial_bureaucracy_2_effects: "$EFFECT_LIST_BULLET$#indent_newline:3 Vládci mohou měnit mezi všemi dostupnými [Concept('succession_laws','zákony nástupnictví')|E]#!\n$EFFECT_LIST_BULLET$#indent_newline:3 Všichni vazalové, kteří odmítnou odejmutí titulu nebo odvolání vazala, jsou považováni za [Concept('criminals','zločince')|E]#!\n$EFFECT_LIST_BULLET$#high $demand_admin_interaction$#! náklady jsou sníženy" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- celestial_bureaucracy_2_effects_not_in_prev: "$EFFECT_LIST_BULLET$#indent_newline:3 Ne-[Concept('administrative','administrativní')|E] [Concept('vassals','vazalové')|E] nemohou vést žádné [Concept('war','válka')|E], pokud nepoužijí [Concept('hook','páka')|E] na svého [Concept('liege','lenního pána')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- celestial_bureaucracy_3: "Božský mandát" # todo: NEW TRANSLATION
- celestial_bureaucracy_3_effects: "$EFFECT_LIST_BULLET$#indent_newline:3 Ne-[Concept('administrative','administrativní')|E] [Concept('vassals','vazalové')|E] nikdy nemohou vyhlásit [Concept('war','válka')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- CELESTIAL_BUREAUCRACY_IS_ON_COOLDOWN: "Nedávno jste změnili [Concept('celestial_bureaucracy','nebeská byrokracie')|E]. Lze změnit znovu po [GetCurrentDateWithDiff( GetVarTimeRemaining( CHARACTER.MakeScope, 'imperial_bureaucracy_cooldown') )]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- have_celestial_bureaucracy_1_or_higher: "Vaše [Concept('celestial_bureaucracy','nebeská byrokracie')|E] #bold není#! na #high [GetLaw('celestial_bureaucracy_1').GetName]#! nebo vyšší" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- have_celestial_bureaucracy_2_or_higher: "Vaše [Concept('celestial_bureaucracy','nebeská byrokracie')|E] #bold není#! na #high [GetLaw('celestial_bureaucracy_2').GetName]#! nebo vyšší" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- have_celestial_bureaucracy_3: "Vaše [Concept('celestial_bureaucracy','nebeská byrokracie')|E] #bold není#! na #high [GetLaw('celestial_bureaucracy_3').GetName]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- celestial_army_liege_law: "[Concept('army','Armáda')|E] struktura velení" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- celestial_army_liege_law_singular: "$celestial_army_liege_law$" # todo: NEW TRANSLATION
- celestial_army_liege_law_0: "Autonomní velení" # todo: NEW TRANSLATION
- celestial_army_liege_law_0_subname: "Všichni guvernéři mají osobní vojenskou autoritu" # todo: NEW TRANSLATION
- celestial_army_liege_law_0_effects_not_in_prev: "$EFFECT_LIST_BULLET$#indent_newline:3 [Concept('governors','guvernéři')|E] si mohou ponechat osobní [Concept('men_at_arms','ozbrojenci')|E]#!\n$EFFECT_LIST_BULLET$#indent_newline:3 Vojenské [Concept('governors','guvernéři')|E] si mohou ponechat pouze omezený počet [Concept('title_men_at_arms','tituloví ozbrojenci')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- celestial_army_liege_law_1: "Regionální velení" # todo: NEW TRANSLATION
- celestial_army_liege_law_1_subname: "Vojenské záležitosti řeší regionální armády" # todo: NEW TRANSLATION
- celestial_army_liege_law_1_effects_not_in_prev: "$EFFECT_LIST_BULLET$#indent_newline:3 Náklady pro [Concept('liege','lenního pána')|E] na svolání [Concept('provincial_armies','provinční armády')|E]: [influence_i|E]#P -[EmptyScope.ScriptValue('admin_law_cost_reduction_value')|+0%]#!#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- celestial_army_liege_law_1_effects: "$EFFECT_LIST_BULLET$#indent_newline:3 [Concept('governors','guvernéři')|E] si mohou ponechat méně osobních [Concept('men_at_arms','ozbrojenců')|E] a #bold o něco více#! [Concept('title_men_at_arms','tituloví ozbrojenci')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- celestial_army_liege_law_2: "Císařské velení" # todo: NEW TRANSLATION
- celestial_army_liege_law_2_subname: "Vojenské velení je centralizované a regulované" # todo: NEW TRANSLATION
- celestial_army_liege_law_2_effects: "$EFFECT_LIST_BULLET$#indent_newline:3 [Concept('governors','guvernéři')|E] si nemohou ponechat žádné osobní [Concept('men_at_arms','ozbrojenci')|E] a více [Concept('title_men_at_arms','tituloví ozbrojenci')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- celestial_army_liege_law_2_effects_not_in_prev: "$EFFECT_LIST_BULLET$#indent_newline:3 Náklady pro [Concept('liege','lenního pána')|E] na svolání [Concept('provincial_armies','provinční armády')|E]: [influence_i|E]#P -[EmptyScope.ScriptValue('admin_law_cost_reduction_high_value')|+0%]#!#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- celestial_army_liege_law_3: "Velké expanzionistické velení" # todo: NEW TRANSLATION
- celestial_army_liege_law_3_subname: "Vojenské velení je vysoce upřednostněné a centralizované" # todo: NEW TRANSLATION
- celestial_army_liege_law_3_effects: "$EFFECT_LIST_BULLET$#indent_newline:3 [Concept('governors','guvernéři')|E] si nemohou ponechat žádné osobní [Concept('men_at_arms','ozbrojenci')|E] a #bold výrazně více#! [Concept('title_men_at_arms','tituloví ozbrojenci')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- celestial_army_liege_law_3_effects_not_in_prev: "$EFFECT_LIST_BULLET$#indent_newline:3 Náklady pro [Concept('liege','lenního pána')|E] na svolání [Concept('provincial_armies','provinční armády')|E]: [influence_i|E]#P -[EmptyScope.ScriptValue('admin_law_cost_reduction_very_high_value')|+0%]#!#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- celestial_army_vassal_law: "$celestial_army_liege_law$" # todo: NEW TRANSLATION
- celestial_army_vassal_law_singular: "$celestial_army_liege_law$" # todo: NEW TRANSLATION
- celestial_army_vassal_law_0: "$celestial_army_liege_law_0$" # todo: NEW TRANSLATION
- celestial_army_vassal_law_0_subname: "$celestial_army_liege_law_0_subname$" # todo: NEW TRANSLATION
- celestial_army_vassal_law_0_effects_not_in_prev: "$celestial_army_liege_law_0_effects_not_in_prev$" # todo: NEW TRANSLATION
- celestial_army_vassal_law_1: "$celestial_army_liege_law_1$" # todo: NEW TRANSLATION
- celestial_army_vassal_law_1_subname: "$celestial_army_liege_law_1_subname$" # todo: NEW TRANSLATION
- celestial_army_vassal_law_1_effects_not_in_prev: "$celestial_army_liege_law_1_effects_not_in_prev$" # todo: NEW TRANSLATION
- celestial_army_vassal_law_2: "$celestial_army_liege_law_2$" # todo: NEW TRANSLATION
- celestial_army_vassal_law_2_subname: "$celestial_army_liege_law_2_subname$" # todo: NEW TRANSLATION
- celestial_army_vassal_law_2_effects_not_in_prev: "$celestial_army_liege_law_2_effects_not_in_prev$" # todo: NEW TRANSLATION
- celestial_army_vassal_law_3: "$celestial_army_liege_law_3$" # todo: NEW TRANSLATION
- celestial_army_vassal_law_3_subname: "$celestial_army_liege_law_3_subname$" # todo: NEW TRANSLATION
- celestial_army_vassal_law_3_effects_not_in_prev: "$celestial_army_liege_law_3_effects_not_in_prev$" # todo: NEW TRANSLATION
- celestial_retirement_law: "Věk odchodu do důchodu" # todo: NEW TRANSLATION
- celestial_retirement_law_singular: "$celestial_retirement_law$" # todo: NEW TRANSLATION
- celestial_retirement_law_5: "Bez stanoveného věku odchodu do důchodu" # todo: NEW TRANSLATION
- celestial_retirement_law_5_effects_not_in_prev: "$EFFECT_LIST_BULLET$Neexistuje oficiální věk odchodu do důchodu" # todo: NEW TRANSLATION
- celestial_retirement_law_0: "Velmi brzký odchod do důchodu" # todo: NEW TRANSLATION
- celestial_retirement_law_0_effects_not_in_prev: "$EFFECT_LIST_BULLET$Oficiální věk odchodu do důchodu je [EmptyScope.ScriptValue('retirement_age_0_value')|V0]\n$celestial_retirement_effect_desc$" # todo: NEW TRANSLATION
- celestial_retirement_law_1: "Brzký odchod do důchodu" # todo: NEW TRANSLATION
- celestial_retirement_law_1_effects_not_in_prev: "$EFFECT_LIST_BULLET$Oficiální věk odchodu do důchodu je [EmptyScope.ScriptValue('retirement_age_1_value')|V0]\n$celestial_retirement_effect_desc$" # todo: NEW TRANSLATION
- celestial_retirement_law_2: "Standardní odchod do důchodu" # todo: NEW TRANSLATION
- celestial_retirement_law_2_effects_not_in_prev: "$EFFECT_LIST_BULLET$Oficiální věk odchodu do důchodu je [EmptyScope.ScriptValue('retirement_age_2_value')|V0]\n$celestial_retirement_effect_desc$" # todo: NEW TRANSLATION
- celestial_retirement_law_3: "Pozdní odchod do důchodu" # todo: NEW TRANSLATION
- celestial_retirement_law_3_effects_not_in_prev: "$EFFECT_LIST_BULLET$Oficiální věk odchodu do důchodu je [EmptyScope.ScriptValue('retirement_age_3_value')|V0]\n$celestial_retirement_effect_desc$" # todo: NEW TRANSLATION
- celestial_retirement_law_4: "Velmi pozdní odchod do důchodu" # todo: NEW TRANSLATION
- celestial_retirement_law_4_effects_not_in_prev: "$EFFECT_LIST_BULLET$Oficiální věk odchodu do důchodu je [EmptyScope.ScriptValue('retirement_age_4_value')|V0]\n$celestial_retirement_effect_desc$" # todo: NEW TRANSLATION
- celestial_retirement_effect_desc: "\nEfekty na [Concept('governors','guvernéry')|E], když překročí věk odchodu do důchodu:\n$EFFECT_LIST_BULLET$#indent_newline:3 Odchod [Concept('governors','guvernéři')|E] do důchodu stojí méně [Concept('influence_i','@influence_icon!')|E][Concept('influence','vliv')|E]#!\n$EFFECT_LIST_BULLET$#indent_newline:3 Odchod [Concept('governors','guvernéři')|E] do důchodu stojí [treasury_i][Concept('treasury','pokladnice')|E]#!\n$EFFECT_LIST_BULLET$#indent_newline:3 [Concept('candidate_score','skóre kandidáta')|E] je sníženo#!\n$EFFECT_LIST_BULLET$Získáte přístup k [GetDecisionWithKey('renounce_noble_family_title_decision').GetName] [Concept('decision','rozhodnutí')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- celestial_salary_law: "Sazba vládních platů" # todo: NEW TRANSLATION
- budget_allocation_salary_law: "Přidělení rozpočtu na platy" # todo: NEW TRANSLATION
- budget_allocation_salary_law_singular: "$budget_allocation_salary_law$" # todo: NEW TRANSLATION
- budget_allocation_salary_0: "$budget_allocation_salary_law$ 0%" # todo: NEW TRANSLATION
- budget_allocation_salary_5: "$budget_allocation_salary_law$ 5%" # todo: NEW TRANSLATION
- budget_allocation_salary_10: "$budget_allocation_salary_law$ 10%" # todo: NEW TRANSLATION
- budget_allocation_salary_15: "$budget_allocation_salary_law$ 15%" # todo: NEW TRANSLATION
- budget_allocation_salary_20: "$budget_allocation_salary_law$ 20%" # todo: NEW TRANSLATION
- budget_allocation_salary_25: "$budget_allocation_salary_law$ 25%" # todo: NEW TRANSLATION
- budget_allocation_salary_30: "$budget_allocation_salary_law$ 30%" # todo: NEW TRANSLATION
- budget_allocation_salary_35: "$budget_allocation_salary_law$ 35%" # todo: NEW TRANSLATION
- budget_allocation_salary_40: "$budget_allocation_salary_law$ 40%" # todo: NEW TRANSLATION
- budget_allocation_salary_45: "$budget_allocation_salary_law$ 45%" # todo: NEW TRANSLATION
- budget_allocation_salary_50: "$budget_allocation_salary_law$ 50%" # todo: NEW TRANSLATION
- budget_allocation_salary_55: "$budget_allocation_salary_law$ 55%" # todo: NEW TRANSLATION
- budget_allocation_salary_60: "$budget_allocation_salary_law$ 60%" # todo: NEW TRANSLATION
- budget_allocation_salary_65: "$budget_allocation_salary_law$ 65%" # todo: NEW TRANSLATION
- budget_allocation_salary_70: "$budget_allocation_salary_law$ 70%" # todo: NEW TRANSLATION
- budget_allocation_salary_75: "$budget_allocation_salary_law$ 75%" # todo: NEW TRANSLATION
- budget_allocation_salary_80: "$budget_allocation_salary_law$ 80%" # todo: NEW TRANSLATION
- budget_allocation_salary_85: "$budget_allocation_salary_law$ 85%" # todo: NEW TRANSLATION
- budget_allocation_salary_90: "$budget_allocation_salary_law$ 90%" # todo: NEW TRANSLATION
- budget_allocation_salary_95: "$budget_allocation_salary_law$ 95%" # todo: NEW TRANSLATION
- budget_allocation_salary_100: "$budget_allocation_salary_law$ 100%" # todo: NEW TRANSLATION
- budget_allocation_salary_0_short: "0%" # todo: NEW TRANSLATION
- budget_allocation_salary_5_short: "5%" # todo: NEW TRANSLATION
- budget_allocation_salary_10_short: "10%" # todo: NEW TRANSLATION
- budget_allocation_salary_15_short: "15%" # todo: NEW TRANSLATION
- budget_allocation_salary_20_short: "20%" # todo: NEW TRANSLATION
- budget_allocation_salary_25_short: "25%" # todo: NEW TRANSLATION
- budget_allocation_salary_30_short: "30%" # todo: NEW TRANSLATION
- budget_allocation_salary_35_short: "35%" # todo: NEW TRANSLATION
- budget_allocation_salary_40_short: "40%" # todo: NEW TRANSLATION
- budget_allocation_salary_45_short: "45%" # todo: NEW TRANSLATION
- budget_allocation_salary_50_short: "50%" # todo: NEW TRANSLATION
- budget_allocation_salary_55_short: "55%" # todo: NEW TRANSLATION
- budget_allocation_salary_60_short: "60%" # todo: NEW TRANSLATION
- budget_allocation_salary_65_short: "65%" # todo: NEW TRANSLATION
- budget_allocation_salary_70_short: "70%" # todo: NEW TRANSLATION
- budget_allocation_salary_75_short: "75%" # todo: NEW TRANSLATION
- budget_allocation_salary_80_short: "80%" # todo: NEW TRANSLATION
- budget_allocation_salary_85_short: "85%" # todo: NEW TRANSLATION
- budget_allocation_salary_90_short: "90%" # todo: NEW TRANSLATION
- budget_allocation_salary_95_short: "95%" # todo: NEW TRANSLATION
- budget_allocation_salary_100_short: "100%" # todo: NEW TRANSLATION
- budget_allocation_ministry_law: "Přidělení rozpočtu ministerstvům" # todo: NEW TRANSLATION
- budget_allocation_ministry_law_singular: "$budget_allocation_ministry_law$" # todo: NEW TRANSLATION
- budget_allocation_ministry_0: "$budget_allocation_ministry_law$ 0%" # todo: NEW TRANSLATION
- budget_allocation_ministry_5: "$budget_allocation_ministry_law$ 5%" # todo: NEW TRANSLATION
- budget_allocation_ministry_10: "$budget_allocation_ministry_law$ 10%" # todo: NEW TRANSLATION
- budget_allocation_ministry_15: "$budget_allocation_ministry_law$ 15%" # todo: NEW TRANSLATION
- budget_allocation_ministry_20: "$budget_allocation_ministry_law$ 20%" # todo: NEW TRANSLATION
- budget_allocation_ministry_25: "$budget_allocation_ministry_law$ 25%" # todo: NEW TRANSLATION
- budget_allocation_ministry_30: "$budget_allocation_ministry_law$ 30%" # todo: NEW TRANSLATION
- budget_allocation_ministry_35: "$budget_allocation_ministry_law$ 35%" # todo: NEW TRANSLATION
- budget_allocation_ministry_40: "$budget_allocation_ministry_law$ 40%" # todo: NEW TRANSLATION
- budget_allocation_ministry_45: "$budget_allocation_ministry_law$ 45%" # todo: NEW TRANSLATION
- budget_allocation_ministry_50: "$budget_allocation_ministry_law$ 50%" # todo: NEW TRANSLATION
- budget_allocation_ministry_55: "$budget_allocation_ministry_law$ 55%" # todo: NEW TRANSLATION
- budget_allocation_ministry_60: "$budget_allocation_ministry_law$ 60%" # todo: NEW TRANSLATION
- budget_allocation_ministry_65: "$budget_allocation_ministry_law$ 65%" # todo: NEW TRANSLATION
- budget_allocation_ministry_70: "$budget_allocation_ministry_law$ 70%" # todo: NEW TRANSLATION
- budget_allocation_ministry_75: "$budget_allocation_ministry_law$ 75%" # todo: NEW TRANSLATION
- budget_allocation_ministry_80: "$budget_allocation_ministry_law$ 80%" # todo: NEW TRANSLATION
- budget_allocation_ministry_85: "$budget_allocation_ministry_law$ 85%" # todo: NEW TRANSLATION
- budget_allocation_ministry_90: "$budget_allocation_ministry_law$ 90%" # todo: NEW TRANSLATION
- budget_allocation_ministry_95: "$budget_allocation_ministry_law$ 95%" # todo: NEW TRANSLATION
- budget_allocation_ministry_100: "$budget_allocation_ministry_law$ 100%" # todo: NEW TRANSLATION
- budget_allocation_ministry_0_short: "0%" # todo: NEW TRANSLATION
- budget_allocation_ministry_5_short: "5%" # todo: NEW TRANSLATION
- budget_allocation_ministry_10_short: "10%" # todo: NEW TRANSLATION
- budget_allocation_ministry_15_short: "15%" # todo: NEW TRANSLATION
- budget_allocation_ministry_20_short: "20%" # todo: NEW TRANSLATION
- budget_allocation_ministry_25_short: "25%" # todo: NEW TRANSLATION
- budget_allocation_ministry_30_short: "30%" # todo: NEW TRANSLATION
- budget_allocation_ministry_35_short: "35%" # todo: NEW TRANSLATION
- budget_allocation_ministry_40_short: "40%" # todo: NEW TRANSLATION
- budget_allocation_ministry_45_short: "45%" # todo: NEW TRANSLATION
- budget_allocation_ministry_50_short: "50%" # todo: NEW TRANSLATION
- budget_allocation_ministry_55_short: "55%" # todo: NEW TRANSLATION
- budget_allocation_ministry_60_short: "60%" # todo: NEW TRANSLATION
- budget_allocation_ministry_65_short: "65%" # todo: NEW TRANSLATION
- budget_allocation_ministry_70_short: "70%" # todo: NEW TRANSLATION
- budget_allocation_ministry_75_short: "75%" # todo: NEW TRANSLATION
- budget_allocation_ministry_80_short: "80%" # todo: NEW TRANSLATION
- budget_allocation_ministry_85_short: "85%" # todo: NEW TRANSLATION
- budget_allocation_ministry_90_short: "90%" # todo: NEW TRANSLATION
- budget_allocation_ministry_95_short: "95%" # todo: NEW TRANSLATION
- budget_allocation_ministry_100_short: "100%" # todo: NEW TRANSLATION
- budget_allocation_military_law: "Přidělení vojenského rozpočtu" # todo: NEW TRANSLATION
- budget_allocation_military_law_singular: "$budget_allocation_military_law$" # todo: NEW TRANSLATION
- budget_allocation_military_0: "$budget_allocation_military_law$ 0%" # todo: NEW TRANSLATION
- budget_allocation_military_5: "$budget_allocation_military_law$ 5%" # todo: NEW TRANSLATION
- budget_allocation_military_10: "$budget_allocation_military_law$ 10%" # todo: NEW TRANSLATION
- budget_allocation_military_15: "$budget_allocation_military_law$ 15%" # todo: NEW TRANSLATION
- budget_allocation_military_20: "$budget_allocation_military_law$ 20%" # todo: NEW TRANSLATION
- budget_allocation_military_25: "$budget_allocation_military_law$ 25%" # todo: NEW TRANSLATION
- budget_allocation_military_30: "$budget_allocation_military_law$ 30%" # todo: NEW TRANSLATION
- budget_allocation_military_35: "$budget_allocation_military_law$ 35%" # todo: NEW TRANSLATION
- budget_allocation_military_40: "$budget_allocation_military_law$ 40%" # todo: NEW TRANSLATION
- budget_allocation_military_45: "$budget_allocation_military_law$ 45%" # todo: NEW TRANSLATION
- budget_allocation_military_50: "$budget_allocation_military_law$ 50%" # todo: NEW TRANSLATION
- budget_allocation_military_55: "$budget_allocation_military_law$ 55%" # todo: NEW TRANSLATION
- budget_allocation_military_60: "$budget_allocation_military_law$ 60%" # todo: NEW TRANSLATION
- budget_allocation_military_65: "$budget_allocation_military_law$ 65%" # todo: NEW TRANSLATION
- budget_allocation_military_70: "$budget_allocation_military_law$ 70%" # todo: NEW TRANSLATION
- budget_allocation_military_75: "$budget_allocation_military_law$ 75%" # todo: NEW TRANSLATION
- budget_allocation_military_80: "$budget_allocation_military_law$ 80%" # todo: NEW TRANSLATION
- budget_allocation_military_85: "$budget_allocation_military_law$ 85%" # todo: NEW TRANSLATION
- budget_allocation_military_90: "$budget_allocation_military_law$ 90%" # todo: NEW TRANSLATION
- budget_allocation_military_95: "$budget_allocation_military_law$ 95%" # todo: NEW TRANSLATION
- budget_allocation_military_100: "$budget_allocation_military_law$ 100%" # todo: NEW TRANSLATION
- budget_allocation_military_0_short: "0%" # todo: NEW TRANSLATION
- budget_allocation_military_5_short: "5%" # todo: NEW TRANSLATION
- budget_allocation_military_10_short: "10%" # todo: NEW TRANSLATION
- budget_allocation_military_15_short: "15%" # todo: NEW TRANSLATION
- budget_allocation_military_20_short: "20%" # todo: NEW TRANSLATION
- budget_allocation_military_25_short: "25%" # todo: NEW TRANSLATION
- budget_allocation_military_30_short: "30%" # todo: NEW TRANSLATION
- budget_allocation_military_35_short: "35%" # todo: NEW TRANSLATION
- budget_allocation_military_40_short: "40%" # todo: NEW TRANSLATION
- budget_allocation_military_45_short: "45%" # todo: NEW TRANSLATION
- budget_allocation_military_50_short: "50%" # todo: NEW TRANSLATION
- budget_allocation_military_55_short: "55%" # todo: NEW TRANSLATION
- budget_allocation_military_60_short: "60%" # todo: NEW TRANSLATION
- budget_allocation_military_65_short: "65%" # todo: NEW TRANSLATION
- budget_allocation_military_70_short: "70%" # todo: NEW TRANSLATION
- budget_allocation_military_75_short: "75%" # todo: NEW TRANSLATION
- budget_allocation_military_80_short: "80%" # todo: NEW TRANSLATION
- budget_allocation_military_85_short: "85%" # todo: NEW TRANSLATION
- budget_allocation_military_90_short: "90%" # todo: NEW TRANSLATION
- budget_allocation_military_95_short: "95%" # todo: NEW TRANSLATION
- budget_allocation_military_100_short: "100%" # todo: NEW TRANSLATION
- meritocratic_bureaucracy: "[Concept('celestial_bureaucracy','Nebeská byrokracie')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- meritocratic_bureaucracy_0: "Autonomní provincie" # todo: NEW TRANSLATION
- meritocratic_bureaucracy_0_effects: "$EFFECT_LIST_BULLET$#indent_newline:3 Tituly [Concept('vassals','vazalové')|E] nemohou být zděděny postavami mimo [Concept('realm','panství')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- meritocratic_bureaucracy_1: "Omezená státní správa" # todo: NEW TRANSLATION
- meritocratic_bureaucracy_1_effects: "$EFFECT_LIST_BULLET$[Concept('titles','Tituly')|E] lze odejmout\n$EFFECT_LIST_BULLET$[Concept('vassals','Vazalové')|E] lze odvolat" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- meritocratic_bureaucracy_1_effects_not_in_prev: "$EFFECT_LIST_BULLET$#indent_newline:3 Ne-[Concept('administrative','administrativní')|E] [Concept('vassals','vazalové')|E] nemohou vyhlásit [Concept('war','válka')|E] proti jiným vazalům, pokud nepoužijí [Concept('hook','páka')|E] na svého [Concept('liege','lenního pána')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- meritocratic_bureaucracy_2: "Centralizovaná ministerstva" # todo: NEW TRANSLATION
- meritocratic_bureaucracy_2_effects: "$EFFECT_LIST_BULLET$#indent_newline:3 Vládci mohou měnit mezi všemi dostupnými [Concept('succession_laws','zákony nástupnictví')|E]#!\n$EFFECT_LIST_BULLET$#indent_newline:3 Všichni vazalové, kteří odmítnou odejmutí titulu nebo odvolání vazala, jsou považováni za [Concept('criminals','zločince')|E]#!\n$EFFECT_LIST_BULLET$#high $demand_admin_interaction$#! náklady jsou sníženy" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- meritocratic_bureaucracy_2_effects_not_in_prev: "$EFFECT_LIST_BULLET$#indent_newline:3 Ne-[Concept('administrative','administrativní')|E] [Concept('vassals','vazalové')|E] nemohou vést žádné [Concept('war','válka')|E], pokud nepoužijí [Concept('hook','páka')|E] na svého [Concept('liege','lenního pána')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- meritocratic_bureaucracy_3: "Božský mandát" # todo: NEW TRANSLATION
- meritocratic_bureaucracy_3_effects: "$EFFECT_LIST_BULLET$#indent_newline:3 Ne-[Concept('administrative','administrativní')|E] [Concept('vassals','vazalové')|E] nikdy nemohou vyhlásit [Concept('war','válka')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- CONFUCIAN_BUREAUCRACY_IS_ON_COOLDOWN: "Nedávno jste změnili [Concept('meritocratic_bureaucracy','meritokratická byrokracie')|E]. Lze změnit znovu po [GetCurrentDateWithDiff( GetVarTimeRemaining( CHARACTER.MakeScope, 'imperia l_bureaucracy_cooldown') )]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- japanese_bureaucracy: "[Concept('japanese_bureaucracy','Japonská byrokracie')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- japanese_bureaucracy_0: "Autonomní guvernéři" # todo: NEW TRANSLATION
- japanese_bureaucracy_0_effects: "$EFFECT_LIST_BULLET$#indent_newline:3 Tituly vazalů [Concept('titles','titulů')|E] nemohou být děděny postavami mimo [Concept('realm','panství')|E]#!\n$EFFECT_LIST_BULLET$Vládcové mohou určit svého [Concept('heir','dědice')|E]" # todo: CONCEPT CASE
- japanese_bureaucracy_1: "Omezený dohled" # todo: NEW TRANSLATION
- japanese_bureaucracy_1_effects: "$EFFECT_LIST_BULLET$[Concept('titles','Tituly')|E] lze odejmout\n$EFFECT_LIST_BULLET$[Concept('vassals','Vazalové')|E] lze odvolat" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- japanese_bureaucracy_2: "Výkonná ministerstva" # todo: NEW TRANSLATION
- japanese_bureaucracy_2_effects: "$EFFECT_LIST_BULLET$#indent_newline:3 Vládci mohou měnit mezi všemi dostupnými [Concept('succession_laws','zákony nástupnictví')|E]#!\n$EFFECT_LIST_BULLET$#indent_newline:3 Všichni vazalové, kteří odmítnou odejmutí titulu nebo odvolání vazala, jsou považováni za [Concept('criminals','zločince')|E]#!\n$EFFECT_LIST_BULLET$#high $demand_admin_interaction$#! náklady jsou sníženy" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- japanese_bureaucracy_2_effects_not_in_prev: "$EFFECT_LIST_BULLET$#indent_newline:3 Ne-[Concept('administrative','administrativní')|E] [Concept('vassals','vazalové')|E] nemohou vést žádné [Concept('war','válka')|E], pokud nepoužijí [Concept('hook','páka')|E] na svého [Concept('liege','lenního pána')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- japanese_bureaucracy_3: "Centralizované řízení" # todo: NEW TRANSLATION
- japanese_bureaucracy_3_effects: "$EFFECT_LIST_BULLET$#indent_newline:3 Ne-[Concept('administrative','administrativní')|E] [Concept('vassals','vazalové')|E] nikdy nemohou vyhlásit [Concept('war','válka')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- JAPANESE_BUREAUCRACY_IS_ON_COOLDOWN: "Nedávno jste změnili [Concept('japanese_bureaucracy','japonská byrokracie')|E]. Lze změnit znovu po [GetCurrentDateWithDiff( GetVarTimeRemaining( CHARACTER.MakeScope, 'imperial_bureaucracy_cooldown') )]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- border_wars_laws: "Politika hraničních válek" # todo: NEW TRANSLATION
- border_wars_laws_singular: "$border_wars_laws$" # todo: NEW TRANSLATION
- top_liege_redirected_to_border_wars_law: "Zaručená ochrana" # todo: NEW TRANSLATION
- top_liege_redirected_to_border_wars_law_effects: "$EFFECT_LIST_BULLET$#indent_newline:3 [Concept('top_liege','nejvyšší lenní pán')|E] bude vždy obranným [Concept('war_leader','vůdcem války')|E] v [Concept('wars','válkách')|E] o jakýkoli [Concept('title','titul')|E] ve svém [Concept('realm','panství')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- top_liege_not_redirected_to_border_wars_law: "Podmíněné připojení" # todo: NEW TRANSLATION
- top_liege_not_redirected_to_border_wars_law_effects: "$EFFECT_LIST_BULLET$#indent_newline:3 Všichni držitelé [Concept('title','titul')|E] v rámci [Concept('realm','panství')|E] mohou být cílem [Concept('wars','válkami')|E] vyhlášených jinými [Concept('rulers','vládci')|E]#!\n$EFFECT_LIST_BULLET$#indent_newline:3 [Concept('top_liege','nejvyšší lenní pán')|E] se #N #bold nebude#!#! zapojovat do těchto válek při vyhlášení#!\n$EFFECT_LIST_BULLET$#indent_newline:3 [Concept('top_liege','nejvyšším lenním pánovi')|E] se může i tak připojit do války jako spojenec pomocí #V $join_vassal_war_interaction$#! [Concept('interaction','interakci')|E]\n\n#weak Vrchní pán se s větší pravděpodobností připojí:\n$EFFECT_LIST_BULLET$#indent_newline:3 Sporné tituly jsou království nebo vyšší úrovně#!\n$EFFECT_LIST_BULLET$#indent_newline:3 Válka cílí na více titulů#!\n$EFFECT_LIST_BULLET$#indent_newline:3 Válka trvá déle než 5 let#!\n$EFFECT_LIST_BULLET$#indent_newline:3 Pokud je obránce slabší než útočník#!\nVrchní pán se #bold nebude#! připojovat:\n$EFFECT_LIST_BULLET$#indent_newline:3 Během 1. roku války#!\n$EFFECT_LIST_BULLET$#indent_newline:3 Když je již ve válce#!\n$EFFECT_LIST_BULLET$#indent_newline:3 Když je v dluhu#!\n$EFFECT_LIST_BULLET$#indent_newline:3 Pokud je obránce silnější než útočník#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- top_liege_not_redirected_to_border_wars_law_effects_not_in_prev: "\n\n@alert_icon! Tento zákon je přijat automaticky, pokud je [Concept('top_liege_possessive','nejvyššího lenního pána')|E]:\n$EFFECT_LIST_BULLET$#indent_newline:3 $border_wars_laws_hegemony$#!\n$EFFECT_LIST_BULLET$#indent_newline:3 $border_wars_laws_realm_size_tt$#!\n$EFFECT_LIST_BULLET$#indent_newline:3 $border_wars_laws_antagonistic_house$#!\n$EFFECT_LIST_BULLET$#indent_newline:3 $border_wars_laws_defender_in_civil_war$#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- border_wars_laws_triggers: "Alespoň jedna z následujících:\n$EFFECT_LIST_BULLET$#indent_newline:3 $border_wars_laws_hegemony$#!\n$EFFECT_LIST_BULLET$#indent_newline:3 $border_wars_laws_realm_size$#!\n$EFFECT_LIST_BULLET$#indent_newline:3 $border_wars_laws_antagonistic_house$#!\n$EFFECT_LIST_BULLET$#indent_newline:3 $border_wars_laws_defender_in_civil_war$#!" # todo: NEW TRANSLATION
- border_wars_laws_hegemony: "Nejvyšší držený titul je [Concept('hegemony','hegemonie')|E] [Concept('rank','hodnost')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- border_wars_laws_realm_size_tt: "[Concept('realm_size','Velikost panství')|E] je [EmptyScope.ScriptValue('border_war_sized_realm_value')|V0] nebo více" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- border_wars_laws_realm_size: "$border_wars_laws_realm_size_tt$ #weak ($VALUE|V0$)#!" # todo: NEW TRANSLATION
- border_wars_laws_antagonistic_house: "[Concept('house_unity','Jednota rodu')|E] je @dynasty_house_unity_antagonistic! $antagonistic$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- border_wars_laws_defender_in_civil_war: "Bránící [Concept('war_leader','vůdce války')|E] v [Concept('civil_war','občanské válce')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- grand_secretariat_laws: "Kontrola Velkého sekretariátu" # todo: NEW TRANSLATION
- grand_secretariat_laws_singular: "$grand_secretariat_laws$" # todo: NEW TRANSLATION
- grand_chancellor_law: "$councillor_chancellor_celestial_government_imperial$" # todo: NEW TRANSLATION
- grand_chancellor_law_effects: "$EFFECT_LIST_BULLET$ Nastaví [SelectLocalization( GetPlayer.IsValid, 'grand_chancellor_law_title_name', '$e_minister_chancellor|q$' )] [Concept('title_succession','nástupnictví titulu')|E] jako [Concept('grand_secretariat','velký sekretariát')|E] [Concept('succession','nástupnictví')|E]\n$EFFECT_LIST_BULLET$ Určí [SelectLocalization( GetPlayer.IsValid, 'grand_chancellor_law_title_name_holder', '$councillor_chancellor_celestial_government_imperial|q$' )] jako [Concept('grand_secretariat_director','ředitel sekretariátu')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- grand_marshal_law: "$minister_grand_marshal$" # todo: NEW TRANSLATION
- grand_marshal_law_effects: "$EFFECT_LIST_BULLET$ Nastaví [SelectLocalization( GetPlayer.IsValid, 'grand_marshal_law_title_name', '$e_minister_grand_marshal|q$' )] [Concept('title_succession','nástupnictví titulu')|E] jako [Concept('grand_secretariat','velký sekretariát')|E] [Concept('succession','nástupnictví')|E]\n$EFFECT_LIST_BULLET$ Určí [SelectLocalization( GetPlayer.IsValid, 'grand_marshal_law_title_name', '$minister_grand_marshal|q$' )] jako [Concept('grand_secretariat_director','ředitel sekretariátu')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- grand_chancellor_law_title_name: "[GetTitleByKey('e_minister_chancellor').GetName]" # todo: NEW TRANSLATION
- grand_chancellor_law_title_name_holder: "[GetTitleByKey('e_minister_chancellor').GetHolder.GetShortUIName]" # todo: NEW TRANSLATION
- grand_marshal_law_title_name: "[GetTitleByKey('e_minister_grand_marshal').GetName]" # todo: NEW TRANSLATION
- grand_marshal_law_title_name_holder: "[GetTitleByKey('e_minister_grand_marshal').GetHolder.GetShortUIName]" # todo: NEW TRANSLATION
- grand_censor_law: "$councillor_spymaster_celestial_government_imperial$" # todo: NEW TRANSLATION
- grand_censor_law_effects: "$EFFECT_LIST_BULLET$ Nastaví [SelectLocalization( GetPlayer.IsValid, 'grand_censor_law_title_name', '$e_minister_censor|q$' )] [Concept('title_succession','nástupnictví titulu')|E] jako [Concept('grand_secretariat','velký sekretariát')|E] [Concept('succession','nástupnictví')|E]\n$EFFECT_LIST_BULLET$ Určí [SelectLocalization( GetPlayer.IsValid, 'grand_censor_law_title_name_holder', '$councillor_spymaster_celestial_government_imperial|q$' )] jako [Concept('grand_secretariat_director','ředitel sekretariátu')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- grand_censor_law_title_name: "[GetTitleByKey('e_minister_censor').GetName]" # todo: NEW TRANSLATION
- grand_censor_law_title_name_holder: "[GetTitleByKey('e_minister_censor').GetHolder.GetShortUIName]" # todo: NEW TRANSLATION
- candidate_score_laws: "Zaměření skóre kandidátů" # todo: NEW TRANSLATION
- candidate_score_laws_singular: "$candidate_score_laws$" # todo: NEW TRANSLATION
- candidate_score_merit_law: "Zásluhy" # todo: NEW TRANSLATION
- candidate_score_merit_law_effects: "$EFFECT_LIST_BULLET$ [Concept('prestige_level','Úroveň slávy')|E] a [Concept('dynasty_prestige_level','úroveň věhlasu')|E] nemají #bold žádný#! vliv na [Concept('candidate_score','skóre kandidáta')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- candidate_score_prestige_law: "Rodina" # todo: NEW TRANSLATION
- candidate_score_prestige_law_effects: "$EFFECT_LIST_BULLET$ [Concept('prestige_level','Úroveň slávy')|E] a [Concept('dynasty_prestige_level','úroveň věhlasu')|E] mají značný dopad na [Concept('candidate_score','skóre kandidáta')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- conservative_powerful_families_tt: "[Concept('house_heads','Hlavy rodu')|E] nejméně [CHARACTER.MakeScope.ScriptValue('needed_conservative_powerful_families_value')] [Concept('powerful_families','mocné rodiny')|E] musí být členy [GetSituation('dynastic_cycle').GetTopParticipantGroupByKey('conservative_movement').GetName] #weak (aktuálně: $VALUE|0$)#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- conservative_ministers_tt: "Nejméně [CHARACTER.MakeScope.ScriptValue('needed_conservative_ministers_value')] [Concept('ministers','ministři')|E] musí být členy [GetSituation('dynastic_cycle').GetTopParticipantGroupByKey('conservative_movement').GetName] #weak (aktuálně: $VALUE|0$)#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- not_conservative_powerful_families_tt: "[Concept('house_heads','Hlavy rodu')|E] nejméně [CHARACTER.MakeScope.ScriptValue('needed_conservative_powerful_families_value')] [Concept('powerful_families','mocné rodiny')|E] #bold nesmí#! být členy [GetSituation('dynastic_cycle').GetTopParticipantGroupByKey('conservative_movement').GetName] #weak (aktuálně: $VALUE|0$)#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- not_conservative_ministers_tt: "Nejméně [CHARACTER.MakeScope.ScriptValue('needed_conservative_ministers_value')] [Concept('ministers','ministři')|E] #bold nesmí#! být členy [GetSituation('dynastic_cycle').GetTopParticipantGroupByKey('conservative_movement').GetName] #weak (aktuálně: $VALUE|0$)#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- can_have_single_heir_succession_law_trigger_merit_or_japan_tt: "Jedno z následujících:\n$BULLET_WITH_TAB$Vaše [Concept('culture','kultura')|E] má $innovation_primogeniture$ [Concept('innovation','inovace')|E]\n$BULLET_WITH_TAB$Jste [Concept('independent','nezávislý')|E] [Concept('ruler','vládce')|E]\n$BULLET_WITH_TAB$Jste [Concept('ceremonial_liege','obřadní panovník')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ mandala_decree: "Nařízení dévarádži"
+ mandala_rule_effects: "#S Vždy aktivní:#!\n$EFFECT_LIST_BULLET$[Concept('titles','Tituly')|E] lze odejmout\n$EFFECT_LIST_BULLET$[Concept('vassals','Vazaly')|E] lze odebrat\n$EFFECT_LIST_BULLET$#indent_newline:3 Všichni [Concept('vassals','vazalové')|E], kteří odmítnou odejmutí titulu nebo odebrání vazala, jsou považováni za [Concept('criminals','zločince')|E]#!\n$EFFECT_LIST_BULLET$Vládci mohou určit svého [Concept('heir','dědice')|E]"
+ mandala_decree_none: "Žádné nařízení"
+ mandala_decree_none_effects: "#weak $NO_EFFECTS$...#!\n\n$mandala_rule_effects$\n\n#WEAK Nařizuji...#!"
+ devaraja_aspect_does_not_allow_this_decree: "#alert_trial Tvůj současný [Concept('mandala_aspect','aspekt mandaly')|E] toto nařízení neumožňuje#!"
+ mandala_decree_prosperity: "Nařízení prosperity"
+ mandala_decree_prosperity_effects: "$EFFECT_LIST_BULLET$$mandala_decree_flag_more_prone_to_accept_exact_tribute$\n$EFFECT_LIST_BULLET$$mandala_decree_flag_gain_devotion_when_winning_defensive_wars$\n$EFFECT_LIST_BULLET$$mandala_decree_flag_lose_devotion_when_losing_wars$\n$EFFECT_LIST_BULLET$$mandala_decree_flag_can_use_piety_to_reassert_tributary$\n$EFFECT_LIST_BULLET$$mandala_decree_flag_tributaries_less_likely_to_break_free$\n$EFFECT_LIST_BULLET$$mandala_decree_flag_subjects_appear_more_economical$\n\n$mandala_rule_effects$\n\n#WEAK Prosperující panství je silné panství.#!"
+ mandala_decree_expansion: "Nařízení expanze"
+ mandala_decree_expansion_effects: "$EFFECT_LIST_BULLET$$mandala_decree_flag_gain_piety_when_winning_offensive_wars$\n$EFFECT_LIST_BULLET$$mandala_decree_flag_lose_devotion_when_losing_wars$\n$EFFECT_LIST_BULLET$$mandala_decree_flag_can_call_tributaries_for_piety$\n$EFFECT_LIST_BULLET$$mandala_decree_flag_piety_for_sieging_temple_complexes$\n$EFFECT_LIST_BULLET$$mandala_decree_flag_subjects_appear_more_warlike$\n\n$mandala_rule_effects$\n\n#WEAK Více je vždy více.#!"
+ mandala_decree_reverence: "Nařízení úcty"
+ mandala_decree_reverence_effects: "$EFFECT_LIST_BULLET$$mandala_decree_flag_cheaper_pilgrimages$\n$EFFECT_LIST_BULLET$$mandala_decree_flag_piety_from_converting_subjects$\n$EFFECT_LIST_BULLET$$mandala_decree_flag_vassals_more_inclined_to_convert$\n$EFFECT_LIST_BULLET$$mandala_decree_flag_easier_to_mandalize_vassals$\n$EFFECT_LIST_BULLET$$mandala_decree_flag_can_mandalize_tributaries$\n$EFFECT_LIST_BULLET$$mandala_decree_flag_tributaries_more_likely_to_contribute$\n\n$mandala_rule_effects$\n\n#WEAK Vzhlédněme k nebesům.#!"
+ mandala_decree_flag_tributaries_more_likely_to_contribute: "[Concept('vassals','Vazalové')|E] a [Concept('tributaries','tributáři')|E] jsou ochotnější pomáhat financovat [Concept('great_projects','velké projekty')|E] typu $building_type_mandala_capital_01$"
+ mandala_decree_flag_easier_to_mandalize_vassals: "[Concept('vassals','Vazalové')|E] s větší pravděpodobností přijmou [Concept('mandala','vládu mandaly')|E]"
+ mandala_decree_flag_can_mandalize_tributaries: "[Concept('tributaries','Tributáře')|E] lze vyzvat k přijetí [Concept('mandala','vlády mandaly')|E]"
+ mandala_decree_flag_piety_for_sieging_temple_complexes: "Obléhání $building_type_mandala_capital_01$ přináší [Concept('piety','zbožnost')|E]"
+ mandala_decree_flag_can_call_tributaries_for_piety: "Lze povolat [Concept('tributaries','tributáře')|E] do válek za cenu [Concept('piety','zbožnosti')|E]"
+ mandala_decree_flag_can_use_piety_to_reassert_tributary: "Lze utratit [Concept('piety','zbožnost')|E] za použití #high $reassert_tributary_interaction$#!"
+ mandala_decree_flag_tributaries_less_likely_to_break_free: "[Concept('tributaries','Tributáři')|E] jsou loajálnější"
+ mandala_decree_flag_more_prone_to_accept_exact_tribute: "[Concept('tributaries','Tributáři')|E] ochotněji přijímají #high $exact_tribute_interaction$#!"
+ mandala_decree_flag_increased_tributarization_acceptance: "$increased_tributarization_acceptance$"
+ mandala_decree_flag_slightly_reduced_tributarization_acceptance: "$slightly_reduced_tributarization_acceptance$"
+ mandala_decree_flag_increased_vassalization_acceptance: "$increased_vassalization_acceptance$"
+ mandala_decree_flag_reduced_vassalization_acceptance: "$reduced_vassalization_acceptance$"
+ mandala_decree_flag_gain_piety_when_winning_offensive_wars: "Vítězné útočné [Concept('wars','války')|E] přinášejí [Concept('piety','zbožnost')|E]"
+ mandala_decree_flag_lose_devotion_when_losing_wars: "Prohrané [Concept('wars','války')|E] snižují [Concept('piety_experience','oddanost')|E]"
+ mandala_decree_flag_gain_devotion_when_winning_defensive_wars: "Vítězné obranné [Concept('wars','války')|E] přinášejí [Concept('piety_experience','oddanost')|E]"
+ mandala_decree_flag_cheaper_pilgrimages: "[Concept('pilgrimages','Poutě')|E] stojí méně"
+ mandala_decree_flag_cheaper_pilgrimages_desc: "Nařízení úcty"
+ mandala_decree_flag_piety_from_converting_subjects: "[Concept('converting','Konverze')|E] [Concept('subjects','poddaných')|E] přináší [Concept('piety','zbožnost')|E]"
+ mandala_decree_flag_vassals_more_inclined_to_convert: "[Concept('vassals','Vazalové')|E] jsou ochotnější [Concept('convert','konvertovat')|E] na tvou [Concept('faith','víru')|E]"
+ mandala_decree_flag_subjects_appear_more_warlike: "[Concept('subjects','Poddaní')|E] mají větší sklon k akcím [warlike_i] [Concept('ai_warlike_personality','bojovné osobnosti')|E]"
+ mandala_decree_flag_subjects_appear_more_economical: "[Concept('subjects','Poddaní')|E] mají větší sklon k akcím [builder_i] [Concept('ai_economical_boom_personality','stavitele')|E]"
+ mandala_decree_flag_subjects_appear_more_pious: "[Concept('subjects','Poddaní')|E] mají větší sklon k akcím [pious_builder_i] [Concept('ai_pious_builder_personality','zbožného stavitele')|E]"
+ celestial_bureaucracy: "[Concept('celestial_bureaucracy','Nebeská byrokracie')|E]"
+ celestial_bureaucracy_0: "Autonomní provincie"
+ celestial_bureaucracy_0_effects: "$EFFECT_LIST_BULLET$#indent_newline:3 [Concept('titles','Tituly')|E] [Concept('vassals','vazalů')|E] nemohou zdědit [Concept('characters','postavy')|E] mimo [Concept('realm','panství')|E]#!"
+ celestial_bureaucracy_1: "Omezená státní služba"
+ celestial_bureaucracy_1_effects: "$EFFECT_LIST_BULLET$[Concept('titles','Tituly')|E] lze odejmout\n$EFFECT_LIST_BULLET$[Concept('vassals','Vazaly')|E] lze odebrat"
+ celestial_bureaucracy_1_effects_not_in_prev: "$EFFECT_LIST_BULLET$#indent_newline:3 [Concept('vassals','Vazalové')|E], kteří nejsou [Concept('governor','guvernéry')|E], nemohou vést [Concept('war','válku')|E] proti jiným vazalům, pokud proti svému [Concept('liege','lennímu pánovi')|E] nepoužijí [Concept('hook','páku')|E]#!"
+ celestial_bureaucracy_2: "Centralizovaná ministerstva"
+ celestial_bureaucracy_2_effects: "$EFFECT_LIST_BULLET$#indent_newline:3 Vládci mohou přecházet mezi všemi dostupnými [Concept('succession_laws','zákony nástupnictví')|E]#!\n$EFFECT_LIST_BULLET$#indent_newline:3 Všichni [Concept('vassals','vazalové')|E], kteří odmítnou odejmutí titulu nebo odebrání vazala, jsou považováni za [Concept('criminals','zločince')|E]#!\n$EFFECT_LIST_BULLET$Cena #high $demand_admin_interaction$#! je snížena"
+ celestial_bureaucracy_2_effects_not_in_prev: "$EFFECT_LIST_BULLET$#indent_newline:3 [Concept('vassals','Vazalové')|E], kteří nejsou [Concept('governor','guvernéry')|E], nemohou vést žádnou [Concept('war','válku')|E], pokud proti svému [Concept('liege','lennímu pánovi')|E] nepoužijí [Concept('hook','páku')|E]#!"
+ celestial_bureaucracy_3: "Božský mandát"
+ celestial_bureaucracy_3_effects: "$EFFECT_LIST_BULLET$#indent_newline:3 [Concept('vassals','Vazalové')|E], kteří nejsou [Concept('governor','guvernéry')|E], nikdy nemohou vyhlásit [Concept('war','válku')|E]#!"
+ CELESTIAL_BUREAUCRACY_IS_ON_COOLDOWN: "Nedávno jsi změnil [Concept('celestial_bureaucracy','nebeskou byrokracii')|E]. Znovu ji lze změnit po [GetCurrentDateWithDiff( GetVarTimeRemaining( CHARACTER.MakeScope, 'imperial_bureaucracy_cooldown') )]"
+ have_celestial_bureaucracy_1_or_higher: "Úroveň tvé [Concept('celestial_bureaucracy','nebeské byrokracie')|E] je #bold nižší#! než #high [GetLaw('celestial_bureaucracy_1').GetName]#!"
+ have_celestial_bureaucracy_2_or_higher: "Úroveň tvé [Concept('celestial_bureaucracy','nebeské byrokracie')|E] je #bold nižší#! než #high [GetLaw('celestial_bureaucracy_2').GetName]#!"
+ have_celestial_bureaucracy_3: "Tvá [Concept('celestial_bureaucracy','nebeská byrokracie')|E] #bold nemá#! úroveň #high [GetLaw('celestial_bureaucracy_3').GetName]#!"
+ celestial_army_liege_law: "Struktura [Concept('army','armádního')|E] velení"
+ celestial_army_liege_law_singular: "$celestial_army_liege_law$"
+ celestial_army_liege_law_0: "Autonomní velení"
+ celestial_army_liege_law_0_subname: "Všichni guvernéři mají vlastní vojenskou pravomoc"
+ celestial_army_liege_law_0_effects_not_in_prev: "$EFFECT_LIST_BULLET$#indent_newline:3 [Concept('governors','Guvernéři')|E] si mohou ponechat vlastní [Concept('men_at_arms','ozbrojence')|E]#!\n$EFFECT_LIST_BULLET$#indent_newline:3 Vojenští [Concept('governors','guvernéři')|E] si mohou ponechat pouze omezený počet [Concept('title_men_at_arms','titulových ozbrojenců')|E]#!"
+ celestial_army_liege_law_1: "Oblastní velení"
+ celestial_army_liege_law_1_subname: "Vojenské záležitosti spravují oblastní armády"
+ celestial_army_liege_law_1_effects_not_in_prev: "$EFFECT_LIST_BULLET$#indent_newline:3 Náklady [Concept('liege','lenního pána')|E] na povolání [Concept('provincial_armies','provinčních armád')|E]: [influence_i|E]#P -[EmptyScope.ScriptValue('admin_law_cost_reduction_value')|+0%]#!#!"
+ celestial_army_liege_law_1_effects: "$EFFECT_LIST_BULLET$#indent_newline:3 [Concept('governors','Guvernéři')|E] si mohou ponechat méně vlastních [Concept('men_at_arms','ozbrojenců')|E] a #bold o něco#! více [Concept('title_men_at_arms','titulových ozbrojenců')|E]#!"
+ celestial_army_liege_law_2: "Císařské velení"
+ celestial_army_liege_law_2_subname: "Vojenské velení je centralizované a regulované"
+ celestial_army_liege_law_2_effects: "$EFFECT_LIST_BULLET$#indent_newline:3 [Concept('governors','Guvernéři')|E] si nemohou ponechat žádné vlastní [Concept('men_at_arms','ozbrojence')|E], ale mohou mít více [Concept('title_men_at_arms','titulových ozbrojenců')|E]#!"
+ celestial_army_liege_law_2_effects_not_in_prev: "$EFFECT_LIST_BULLET$#indent_newline:3 Náklady [Concept('liege','lenního pána')|E] na povolání [Concept('provincial_armies','provinčních armád')|E]: [influence_i|E]#P -[EmptyScope.ScriptValue('admin_law_cost_reduction_high_value')|+0%]#!#!"
+ celestial_army_liege_law_3: "Velení velkých výbojů"
+ celestial_army_liege_law_3_subname: "Vojenské velení má vysokou prioritu a je centralizované"
+ celestial_army_liege_law_3_effects: "$EFFECT_LIST_BULLET$#indent_newline:3 [Concept('governors','Guvernéři')|E] si nemohou ponechat žádné vlastní [Concept('men_at_arms','ozbrojence')|E], ale mohou mít #bold výrazně#! více [Concept('title_men_at_arms','titulových ozbrojenců')|E]#!"
+ celestial_army_liege_law_3_effects_not_in_prev: "$EFFECT_LIST_BULLET$#indent_newline:3 Náklady [Concept('liege','lenního pána')|E] na povolání [Concept('provincial_armies','provinčních armád')|E]: [influence_i|E]#P -[EmptyScope.ScriptValue('admin_law_cost_reduction_very_high_value')|+0%]#!#!"
+ celestial_army_vassal_law: "$celestial_army_liege_law$"
+ celestial_army_vassal_law_singular: "$celestial_army_liege_law$"
+ celestial_army_vassal_law_0: "$celestial_army_liege_law_0$"
+ celestial_army_vassal_law_0_subname: "$celestial_army_liege_law_0_subname$"
+ celestial_army_vassal_law_0_effects_not_in_prev: "$celestial_army_liege_law_0_effects_not_in_prev$"
+ celestial_army_vassal_law_1: "$celestial_army_liege_law_1$"
+ celestial_army_vassal_law_1_subname: "$celestial_army_liege_law_1_subname$"
+ celestial_army_vassal_law_1_effects_not_in_prev: "$celestial_army_liege_law_1_effects_not_in_prev$"
+ celestial_army_vassal_law_2: "$celestial_army_liege_law_2$"
+ celestial_army_vassal_law_2_subname: "$celestial_army_liege_law_2_subname$"
+ celestial_army_vassal_law_2_effects_not_in_prev: "$celestial_army_liege_law_2_effects_not_in_prev$"
+ celestial_army_vassal_law_3: "$celestial_army_liege_law_3$"
+ celestial_army_vassal_law_3_subname: "$celestial_army_liege_law_3_subname$"
+ celestial_army_vassal_law_3_effects_not_in_prev: "$celestial_army_liege_law_3_effects_not_in_prev$"
+ celestial_retirement_law: "Věk odchodu do výslužby"
+ celestial_retirement_law_singular: "$celestial_retirement_law$"
+ celestial_retirement_law_5: "Bez věku výslužby"
+ celestial_retirement_law_5_effects_not_in_prev: "$EFFECT_LIST_BULLET$Oficiální věk odchodu do výslužby není stanoven"
+ celestial_retirement_law_0: "Velmi časná výslužba"
+ celestial_retirement_law_0_effects_not_in_prev: "$EFFECT_LIST_BULLET$Oficiální věk odchodu do výslužby je [EmptyScope.ScriptValue('retirement_age_0_value')|V0]\n$celestial_retirement_effect_desc$"
+ celestial_retirement_law_1: "Časná výslužba"
+ celestial_retirement_law_1_effects_not_in_prev: "$EFFECT_LIST_BULLET$Oficiální věk odchodu do výslužby je [EmptyScope.ScriptValue('retirement_age_1_value')|V0]\n$celestial_retirement_effect_desc$"
+ celestial_retirement_law_2: "Standardní výslužba"
+ celestial_retirement_law_2_effects_not_in_prev: "$EFFECT_LIST_BULLET$Oficiální věk odchodu do výslužby je [EmptyScope.ScriptValue('retirement_age_2_value')|V0]\n$celestial_retirement_effect_desc$"
+ celestial_retirement_law_3: "Pozdní výslužba"
+ celestial_retirement_law_3_effects_not_in_prev: "$EFFECT_LIST_BULLET$Oficiální věk odchodu do výslužby je [EmptyScope.ScriptValue('retirement_age_3_value')|V0]\n$celestial_retirement_effect_desc$"
+ celestial_retirement_law_4: "Opožděná výslužba"
+ celestial_retirement_law_4_effects_not_in_prev: "$EFFECT_LIST_BULLET$Oficiální věk odchodu do výslužby je [EmptyScope.ScriptValue('retirement_age_4_value')|V0]\n$celestial_retirement_effect_desc$"
+ celestial_retirement_effect_desc: "\nÚčinky na [Concept('governors','guvernéry')|E] po překročení věku odchodu do výslužby:\n$EFFECT_LIST_BULLET$#indent_newline:3 Odchod [Concept('governors','guvernérů')|E] do výslužby stojí méně [influence_i|E][Concept('influence','vlivu')|E]#!\n$EFFECT_LIST_BULLET$#indent_newline:3 Odchod [Concept('governors','guvernérů')|E] do výslužby stojí [treasury_i][Concept('treasury','prostředky z pokladnice')|E]#!\n$EFFECT_LIST_BULLET$[Concept('candidate_score','Skóre kandidáta')|E] je sníženo#!\n$EFFECT_LIST_BULLET$Zpřístupní [GetDecisionWithKey('renounce_noble_family_title_decision').GetName] [Concept('decision','rozhodnutí')|E]"
+ celestial_salary_law: "Sazba státních platů"
+ budget_allocation_salary_law: "Přidělení rozpočtu na platy"
+ budget_allocation_salary_law_singular: "$budget_allocation_salary_law$"
+ budget_allocation_salary_0: "$budget_allocation_salary_law$ 0%"
+ budget_allocation_salary_5: "$budget_allocation_salary_law$ 5%"
+ budget_allocation_salary_10: "$budget_allocation_salary_law$ 10%"
+ budget_allocation_salary_15: "$budget_allocation_salary_law$ 15%"
+ budget_allocation_salary_20: "$budget_allocation_salary_law$ 20%"
+ budget_allocation_salary_25: "$budget_allocation_salary_law$ 25%"
+ budget_allocation_salary_30: "$budget_allocation_salary_law$ 30%"
+ budget_allocation_salary_35: "$budget_allocation_salary_law$ 35%"
+ budget_allocation_salary_40: "$budget_allocation_salary_law$ 40%"
+ budget_allocation_salary_45: "$budget_allocation_salary_law$ 45%"
+ budget_allocation_salary_50: "$budget_allocation_salary_law$ 50%"
+ budget_allocation_salary_55: "$budget_allocation_salary_law$ 55%"
+ budget_allocation_salary_60: "$budget_allocation_salary_law$ 60%"
+ budget_allocation_salary_65: "$budget_allocation_salary_law$ 65%"
+ budget_allocation_salary_70: "$budget_allocation_salary_law$ 70%"
+ budget_allocation_salary_75: "$budget_allocation_salary_law$ 75%"
+ budget_allocation_salary_80: "$budget_allocation_salary_law$ 80%"
+ budget_allocation_salary_85: "$budget_allocation_salary_law$ 85%"
+ budget_allocation_salary_90: "$budget_allocation_salary_law$ 90%"
+ budget_allocation_salary_95: "$budget_allocation_salary_law$ 95%"
+ budget_allocation_salary_100: "$budget_allocation_salary_law$ 100%"
+ budget_allocation_salary_0_short: "0%"
+ budget_allocation_salary_5_short: "5%"
+ budget_allocation_salary_10_short: "10%"
+ budget_allocation_salary_15_short: "15%"
+ budget_allocation_salary_20_short: "20%"
+ budget_allocation_salary_25_short: "25%"
+ budget_allocation_salary_30_short: "30%"
+ budget_allocation_salary_35_short: "35%"
+ budget_allocation_salary_40_short: "40%"
+ budget_allocation_salary_45_short: "45%"
+ budget_allocation_salary_50_short: "50%"
+ budget_allocation_salary_55_short: "55%"
+ budget_allocation_salary_60_short: "60%"
+ budget_allocation_salary_65_short: "65%"
+ budget_allocation_salary_70_short: "70%"
+ budget_allocation_salary_75_short: "75%"
+ budget_allocation_salary_80_short: "80%"
+ budget_allocation_salary_85_short: "85%"
+ budget_allocation_salary_90_short: "90%"
+ budget_allocation_salary_95_short: "95%"
+ budget_allocation_salary_100_short: "100%"
+ budget_allocation_ministry_law: "Příděl rozpočtu ministerstvům"
+ budget_allocation_ministry_law_singular: "$budget_allocation_ministry_law$"
+ budget_allocation_ministry_0: "$budget_allocation_ministry_law$ 0%"
+ budget_allocation_ministry_5: "$budget_allocation_ministry_law$ 5%"
+ budget_allocation_ministry_10: "$budget_allocation_ministry_law$ 10%"
+ budget_allocation_ministry_15: "$budget_allocation_ministry_law$ 15%"
+ budget_allocation_ministry_20: "$budget_allocation_ministry_law$ 20%"
+ budget_allocation_ministry_25: "$budget_allocation_ministry_law$ 25%"
+ budget_allocation_ministry_30: "$budget_allocation_ministry_law$ 30%"
+ budget_allocation_ministry_35: "$budget_allocation_ministry_law$ 35%"
+ budget_allocation_ministry_40: "$budget_allocation_ministry_law$ 40%"
+ budget_allocation_ministry_45: "$budget_allocation_ministry_law$ 45%"
+ budget_allocation_ministry_50: "$budget_allocation_ministry_law$ 50%"
+ budget_allocation_ministry_55: "$budget_allocation_ministry_law$ 55%"
+ budget_allocation_ministry_60: "$budget_allocation_ministry_law$ 60%"
+ budget_allocation_ministry_65: "$budget_allocation_ministry_law$ 65%"
+ budget_allocation_ministry_70: "$budget_allocation_ministry_law$ 70%"
+ budget_allocation_ministry_75: "$budget_allocation_ministry_law$ 75%"
+ budget_allocation_ministry_80: "$budget_allocation_ministry_law$ 80%"
+ budget_allocation_ministry_85: "$budget_allocation_ministry_law$ 85%"
+ budget_allocation_ministry_90: "$budget_allocation_ministry_law$ 90%"
+ budget_allocation_ministry_95: "$budget_allocation_ministry_law$ 95%"
+ budget_allocation_ministry_100: "$budget_allocation_ministry_law$ 100%"
+ budget_allocation_ministry_0_short: "0%"
+ budget_allocation_ministry_5_short: "5%"
+ budget_allocation_ministry_10_short: "10%"
+ budget_allocation_ministry_15_short: "15%"
+ budget_allocation_ministry_20_short: "20%"
+ budget_allocation_ministry_25_short: "25%"
+ budget_allocation_ministry_30_short: "30%"
+ budget_allocation_ministry_35_short: "35%"
+ budget_allocation_ministry_40_short: "40%"
+ budget_allocation_ministry_45_short: "45%"
+ budget_allocation_ministry_50_short: "50%"
+ budget_allocation_ministry_55_short: "55%"
+ budget_allocation_ministry_60_short: "60%"
+ budget_allocation_ministry_65_short: "65%"
+ budget_allocation_ministry_70_short: "70%"
+ budget_allocation_ministry_75_short: "75%"
+ budget_allocation_ministry_80_short: "80%"
+ budget_allocation_ministry_85_short: "85%"
+ budget_allocation_ministry_90_short: "90%"
+ budget_allocation_ministry_95_short: "95%"
+ budget_allocation_ministry_100_short: "100%"
+ budget_allocation_military_law: "Příděl rozpočtu vojsku"
+ budget_allocation_military_law_singular: "$budget_allocation_military_law$"
+ budget_allocation_military_0: "$budget_allocation_military_law$ 0%"
+ budget_allocation_military_5: "$budget_allocation_military_law$ 5%"
+ budget_allocation_military_10: "$budget_allocation_military_law$ 10%"
+ budget_allocation_military_15: "$budget_allocation_military_law$ 15%"
+ budget_allocation_military_20: "$budget_allocation_military_law$ 20%"
+ budget_allocation_military_25: "$budget_allocation_military_law$ 25%"
+ budget_allocation_military_30: "$budget_allocation_military_law$ 30%"
+ budget_allocation_military_35: "$budget_allocation_military_law$ 35%"
+ budget_allocation_military_40: "$budget_allocation_military_law$ 40%"
+ budget_allocation_military_45: "$budget_allocation_military_law$ 45%"
+ budget_allocation_military_50: "$budget_allocation_military_law$ 50%"
+ budget_allocation_military_55: "$budget_allocation_military_law$ 55%"
+ budget_allocation_military_60: "$budget_allocation_military_law$ 60%"
+ budget_allocation_military_65: "$budget_allocation_military_law$ 65%"
+ budget_allocation_military_70: "$budget_allocation_military_law$ 70%"
+ budget_allocation_military_75: "$budget_allocation_military_law$ 75%"
+ budget_allocation_military_80: "$budget_allocation_military_law$ 80%"
+ budget_allocation_military_85: "$budget_allocation_military_law$ 85%"
+ budget_allocation_military_90: "$budget_allocation_military_law$ 90%"
+ budget_allocation_military_95: "$budget_allocation_military_law$ 95%"
+ budget_allocation_military_100: "$budget_allocation_military_law$ 100%"
+ budget_allocation_military_0_short: "0%"
+ budget_allocation_military_5_short: "5%"
+ budget_allocation_military_10_short: "10%"
+ budget_allocation_military_15_short: "15%"
+ budget_allocation_military_20_short: "20%"
+ budget_allocation_military_25_short: "25%"
+ budget_allocation_military_30_short: "30%"
+ budget_allocation_military_35_short: "35%"
+ budget_allocation_military_40_short: "40%"
+ budget_allocation_military_45_short: "45%"
+ budget_allocation_military_50_short: "50%"
+ budget_allocation_military_55_short: "55%"
+ budget_allocation_military_60_short: "60%"
+ budget_allocation_military_65_short: "65%"
+ budget_allocation_military_70_short: "70%"
+ budget_allocation_military_75_short: "75%"
+ budget_allocation_military_80_short: "80%"
+ budget_allocation_military_85_short: "85%"
+ budget_allocation_military_90_short: "90%"
+ budget_allocation_military_95_short: "95%"
+ budget_allocation_military_100_short: "100%"
+ meritocratic_bureaucracy: "[Concept('celestial_bureaucracy','Nebeská byrokracie')|E]"
+ meritocratic_bureaucracy_0: "Autonomní provincie"
+ meritocratic_bureaucracy_0_effects: "$EFFECT_LIST_BULLET$#indent_newline:3 [Concept('titles','Tituly')|E] [Concept('vassals','vazalů')|E] nemohou zdědit [Concept('characters','postavy')|E] mimo [Concept('realm','panství')|E]#!"
+ meritocratic_bureaucracy_1: "Omezená státní služba"
+ meritocratic_bureaucracy_1_effects: "$EFFECT_LIST_BULLET$[Concept('titles','Tituly')|E] lze odejmout\n$EFFECT_LIST_BULLET$[Concept('vassals','Vazaly')|E] lze odebrat"
+ meritocratic_bureaucracy_1_effects_not_in_prev: "$EFFECT_LIST_BULLET$#indent_newline:3 [Concept('vassals','Vazalové')|E], kteří nejsou [Concept('governor','guvernéry')|E], nemohou vést [Concept('war','válku')|E] proti jiným vazalům, pokud proti svému [Concept('liege','lennímu pánovi')|E] nepoužijí [Concept('hook','páku')|E]#!"
+ meritocratic_bureaucracy_2: "Centralizovaná ministerstva"
+ meritocratic_bureaucracy_2_effects: "$EFFECT_LIST_BULLET$#indent_newline:3 Vládci mohou přecházet mezi všemi dostupnými [Concept('succession_laws','zákony nástupnictví')|E]#!\n$EFFECT_LIST_BULLET$#indent_newline:3 Všichni [Concept('vassals','vazalové')|E], kteří odmítnou odejmutí titulu nebo odebrání vazala, jsou považováni za [Concept('criminals','zločince')|E]#!\n$EFFECT_LIST_BULLET$Cena #high $demand_admin_interaction$#! je snížena"
+ meritocratic_bureaucracy_2_effects_not_in_prev: "$EFFECT_LIST_BULLET$#indent_newline:3 [Concept('vassals','Vazalové')|E], kteří nejsou [Concept('governor','guvernéry')|E], nemohou vést žádnou [Concept('war','válku')|E], pokud proti svému [Concept('liege','lennímu pánovi')|E] nepoužijí [Concept('hook','páku')|E]#!"
+ meritocratic_bureaucracy_3: "Božský mandát"
+ meritocratic_bureaucracy_3_effects: "$EFFECT_LIST_BULLET$#indent_newline:3 [Concept('vassals','Vazalové')|E], kteří nejsou [Concept('governor','guvernéry')|E], nikdy nemohou vyhlásit [Concept('war','válku')|E]#!"
+ CONFUCIAN_BUREAUCRACY_IS_ON_COOLDOWN: "Nedávno jsi změnil [Concept('meritocratic_bureaucracy','konfuciánskou byrokracii')|E]. Znovu ji lze změnit po [GetCurrentDateWithDiff( GetVarTimeRemaining( CHARACTER.MakeScope, 'imperial_bureaucracy_cooldown') )]"
+ japanese_bureaucracy: "[Concept('japanese_bureaucracy','Japonská byrokracie')|E]"
+ japanese_bureaucracy_0: "Autonomní guvernéři"
+ japanese_bureaucracy_0_effects: "$EFFECT_LIST_BULLET$#indent_newline:3 [Concept('titles','Tituly')|E] [Concept('vassals','vazalů')|E] nemohou zdědit [Concept('characters','postavy')|E] mimo [Concept('realm','panství')|E]#!\n$EFFECT_LIST_BULLET$Vládci mohou určit svého [Concept('heir','dědice')|E]"
+ japanese_bureaucracy_1: "Omezený dohled"
+ japanese_bureaucracy_1_effects: "$EFFECT_LIST_BULLET$[Concept('titles','Tituly')|E] lze odejmout\n$EFFECT_LIST_BULLET$[Concept('vassals','Vazaly')|E] lze odebrat"
+ japanese_bureaucracy_2: "Mocná ministerstva"
+ japanese_bureaucracy_2_effects: "$EFFECT_LIST_BULLET$#indent_newline:3 Vládci mohou přecházet mezi všemi dostupnými [Concept('succession_laws','zákony nástupnictví')|E]#!\n$EFFECT_LIST_BULLET$#indent_newline:3 Všichni [Concept('vassals','vazalové')|E], kteří odmítnou odejmutí titulu nebo odebrání vazala, jsou považováni za [Concept('criminals','zločince')|E]#!\n$EFFECT_LIST_BULLET$Cena #high $demand_admin_interaction$#! je snížena"
+ japanese_bureaucracy_2_effects_not_in_prev: "$EFFECT_LIST_BULLET$#indent_newline:3 [Concept('vassals','Vazalové')|E], kteří nejsou [Concept('governor','guvernéry')|E], nemohou vést [Concept('war','válku')|E] proti jiným vazalům, pokud proti svému [Concept('liege','lennímu pánovi')|E] nepoužijí [Concept('hook','páku')|E]#!"
+ japanese_bureaucracy_3: "Centralizovaná správa"
+ japanese_bureaucracy_3_effects: "$EFFECT_LIST_BULLET$#indent_newline:3 [Concept('vassals','Vazalové')|E], kteří nejsou [Concept('governor','guvernéry')|E], nikdy nemohou vyhlásit [Concept('war','válku')|E]#!"
+ JAPANESE_BUREAUCRACY_IS_ON_COOLDOWN: "Nedávno jsi změnil [Concept('japanese_bureaucracy','japonskou byrokracii')|E]. Znovu ji lze změnit po [GetCurrentDateWithDiff( GetVarTimeRemaining( CHARACTER.MakeScope, 'imperial_bureaucracy_cooldown') )]"
+ border_wars_laws: "Politika pohraničních válek"
+ border_wars_laws_singular: "$border_wars_laws$"
+ top_liege_redirected_to_border_wars_law: "Zaručená ochrana"
+ top_liege_redirected_to_border_wars_law_effects: "$EFFECT_LIST_BULLET$#indent_newline:3 [Concept('top_liege','Nejvyšší lenní pán')|E] bude vždy bránícím [Concept('war_leader','vůdcem války')|E] ve [Concept('wars','válkách')|E] o jakýkoli [Concept('title','titul')|E] ve svém [Concept('realm','panství')|E]#!"
+ top_liege_not_redirected_to_border_wars_law: "Podmíněné zapojení"
+ top_liege_not_redirected_to_border_wars_law_effects: "$EFFECT_LIST_BULLET$#indent_newline:3 Všichni [Concept('holders','držitelé')|E] [Concept('title','titulů')|E] v [Concept('realm','panství')|E] mohou být cílem [Concept('wars','válek')|E] vyhlášených jinými [Concept('rulers','vládci')|E]#!\n$EFFECT_LIST_BULLET$#indent_newline:3 [Concept('top_liege','Nejvyšší lenní pán')|E] se při vyhlášení těchto válek #N #bold nezapojí#!#!#!\n$EFFECT_LIST_BULLET$#indent_newline:3 [Concept('top_liege','Nejvyšší lenní pán')|E] se stále může připojit k válce jako spojenec pomocí #V $join_vassal_war_interaction$#! [Concept('interaction','interakce')|E]\n\n#weak [Concept('top_liege','Nejvyšší lenní pán')|E] se s větší pravděpodobností připojí, pokud:\n$EFFECT_LIST_BULLET$#indent_newline:3 Sporné tituly mají úroveň království nebo vyšší#!\n$EFFECT_LIST_BULLET$#indent_newline:3 Cílem války je více titulů#!\n$EFFECT_LIST_BULLET$#indent_newline:3 Válka trvá déle než 5 let#!\n$EFFECT_LIST_BULLET$#indent_newline:3 Obránce je slabší než útočník#!\n[Concept('top_liege','Nejvyšší lenní pán')|E] se #bold nepřipojí#!, pokud:\n$EFFECT_LIST_BULLET$#indent_newline:3 Probíhá první rok války#!\n$EFFECT_LIST_BULLET$#indent_newline:3 Již vede jinou válku#!\n$EFFECT_LIST_BULLET$#indent_newline:3 Je zadlužený#!\n$EFFECT_LIST_BULLET$#indent_newline:3 Obránce je silnější než útočník#!"
+ top_liege_not_redirected_to_border_wars_law_effects_not_in_prev: "\n\n@alert_icon! Tento zákon se přijme automaticky, pokud [Concept('top_liege_possessive','nejvyšší lenní pán')|E] splňuje některou z následujících podmínek:\n$EFFECT_LIST_BULLET$#indent_newline:3 $border_wars_laws_hegemony$#!\n$EFFECT_LIST_BULLET$#indent_newline:3 $border_wars_laws_realm_size_tt$#!\n$EFFECT_LIST_BULLET$#indent_newline:3 $border_wars_laws_antagonistic_house$#!\n$EFFECT_LIST_BULLET$#indent_newline:3 $border_wars_laws_defender_in_civil_war$#!"
+ border_wars_laws_triggers: "Alespoň jedna z následujících podmínek:\n$EFFECT_LIST_BULLET$#indent_newline:3 $border_wars_laws_hegemony$#!\n$EFFECT_LIST_BULLET$#indent_newline:3 $border_wars_laws_realm_size$#!\n$EFFECT_LIST_BULLET$#indent_newline:3 $border_wars_laws_antagonistic_house$#!\n$EFFECT_LIST_BULLET$#indent_newline:3 $border_wars_laws_defender_in_civil_war$#!"
+ border_wars_laws_hegemony: "Nejvyšší držený [Concept('title','titul')|E] má [Concept('rank','hodnost')|E] [Concept('hegemony','hegemonie')|E]"
+ border_wars_laws_realm_size_tt: "[Concept('realm_size','Velikost panství')|E] je [EmptyScope.ScriptValue('border_war_sized_realm_value')|V0] nebo vyšší"
+ border_wars_laws_realm_size: "$border_wars_laws_realm_size_tt$ #weak ($VALUE|V0$)#!"
+ border_wars_laws_antagonistic_house: "[Concept('house_unity','Jednota rodu')|E] je @dynasty_house_unity_antagonistic! $antagonistic$"
+ border_wars_laws_defender_in_civil_war: "Bránící [Concept('war_leader','vůdce války')|E] v [Concept('civil_war','občanské válce')|E]"
+ grand_secretariat_laws: "Řízení Velkého sekretariátu"
+ grand_secretariat_laws_singular: "$grand_secretariat_laws$"
+ grand_chancellor_law: "$councillor_chancellor_celestial_government_imperial$"
+ grand_chancellor_law_effects: "$EFFECT_LIST_BULLET$ Stanoví [Concept('title_succession','nástupnictví titulu')|E] [SelectLocalization( GetPlayer.IsValid, 'grand_chancellor_law_title_name', '$e_minister_chancellor|q$' )] jako [Concept('succession','nástupnictví')|E] [Concept('grand_secretariat','Velkého sekretariátu')|E]\n$EFFECT_LIST_BULLET$ Pověří [SelectLocalization( GetPlayer.IsValid, 'grand_chancellor_law_title_name_holder', '$councillor_chancellor_celestial_government_imperial|q$' )] [Concept('grand_secretariat_director','řízením sekretariátu')|E]"
+ grand_marshal_law: "$minister_grand_marshal$"
+ grand_marshal_law_effects: "$EFFECT_LIST_BULLET$ Stanoví [Concept('title_succession','nástupnictví titulu')|E] [SelectLocalization( GetPlayer.IsValid, 'grand_marshal_law_title_name', '$e_minister_grand_marshal|q$' )] jako [Concept('succession','nástupnictví')|E] [Concept('grand_secretariat','Velkého sekretariátu')|E]\n$EFFECT_LIST_BULLET$ Pověří [SelectLocalization( GetPlayer.IsValid, 'grand_marshal_law_title_name', '$minister_grand_marshal|q$' )] [Concept('grand_secretariat_director','řízením sekretariátu')|E]"
+ grand_chancellor_law_title_name: "[GetTitleByKey('e_minister_chancellor').GetName]"
+ grand_chancellor_law_title_name_holder: "[GetTitleByKey('e_minister_chancellor').GetHolder.GetShortUIName]"
+ grand_marshal_law_title_name: "[GetTitleByKey('e_minister_grand_marshal').GetName]"
+ grand_marshal_law_title_name_holder: "[GetTitleByKey('e_minister_grand_marshal').GetHolder.GetShortUIName]"
+ grand_censor_law: "$councillor_spymaster_celestial_government_imperial$"
+ grand_censor_law_effects: "$EFFECT_LIST_BULLET$ Stanoví [Concept('title_succession','nástupnictví titulu')|E] [SelectLocalization( GetPlayer.IsValid, 'grand_censor_law_title_name', '$e_minister_censor|q$' )] jako [Concept('succession','nástupnictví')|E] [Concept('grand_secretariat','Velkého sekretariátu')|E]\n$EFFECT_LIST_BULLET$ Pověří [SelectLocalization( GetPlayer.IsValid, 'grand_censor_law_title_name_holder', '$councillor_spymaster_celestial_government_imperial|q$' )] [Concept('grand_secretariat_director','řízením sekretariátu')|E]"
+ grand_censor_law_title_name: "[GetTitleByKey('e_minister_censor').GetName]"
+ grand_censor_law_title_name_holder: "[GetTitleByKey('e_minister_censor').GetHolder.GetShortUIName]"
+ candidate_score_laws: "Zaměření skóre kandidáta"
+ candidate_score_laws_singular: "$candidate_score_laws$"
+ candidate_score_merit_law: "Zásluhy"
+ candidate_score_merit_law_effects: "$EFFECT_LIST_BULLET$ [Concept('prestige_level','Úroveň slávy')|E] a [Concept('dynasty_prestige_level','úroveň věhlasu')|E] nemají na [Concept('candidate_score','skóre kandidáta')|E] #bold žádný#! vliv"
+ candidate_score_prestige_law: "Rodina"
+ candidate_score_prestige_law_effects: "$EFFECT_LIST_BULLET$ [Concept('prestige_level','Úroveň slávy')|E] a [Concept('dynasty_prestige_level','úroveň věhlasu')|E] mají na [Concept('candidate_score','skóre kandidáta')|E] zásadní vliv"
+ conservative_powerful_families_tt: "[Concept('house_heads','Hlavy rodů')|E] alespoň [CHARACTER.MakeScope.ScriptValue('needed_conservative_powerful_families_value')] [Concept('powerful_families','mocných rodin')|E] musí být členy [GetSituation('dynastic_cycle').GetTopParticipantGroupByKey('conservative_movement').GetName] #weak (nyní: $VALUE|0$)#!"
+ conservative_ministers_tt: "Alespoň [CHARACTER.MakeScope.ScriptValue('needed_conservative_ministers_value')] [Concept('ministers','ministrů')|E] musí být členy [GetSituation('dynastic_cycle').GetTopParticipantGroupByKey('conservative_movement').GetName] #weak (nyní: $VALUE|0$)#!"
+ not_conservative_powerful_families_tt: "[Concept('house_heads','Hlavy rodů')|E] alespoň [CHARACTER.MakeScope.ScriptValue('needed_conservative_powerful_families_value')] [Concept('powerful_families','mocných rodin')|E] #bold nesmějí#! být členy [GetSituation('dynastic_cycle').GetTopParticipantGroupByKey('conservative_movement').GetName] #weak (nyní: $VALUE|0$)#!"
+ not_conservative_ministers_tt: "Alespoň [CHARACTER.MakeScope.ScriptValue('needed_conservative_ministers_value')] [Concept('ministers','ministrů')|E] #bold nesmí#! být členy [GetSituation('dynastic_cycle').GetTopParticipantGroupByKey('conservative_movement').GetName] #weak (nyní: $VALUE|0$)#!"
+ can_have_single_heir_succession_law_trigger_merit_or_japan_tt: "Jedna z následujících podmínek:\n$BULLET_WITH_TAB$Tvá [Concept('culture','kultura')|E] má $innovation_primogeniture$ [Concept('innovation','inovaci')|E]\n$BULLET_WITH_TAB$Jsi [Concept('independent','nezávislým')|E] [Concept('ruler','vládcem')|E]\n$BULLET_WITH_TAB$Jsi [Concept('ceremonial_liege','obřadním panovníkem')|E]"

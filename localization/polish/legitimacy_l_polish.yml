@@ -1,46 +1,46 @@
 ﻿l_polish:
- default_legitimacy_level_0: "[Concept( 'legitimacy', 'Illegitimate' )|E] vláda"
- default_legitimacy_level_1: "[Concept('legitimacy','Legitimita')|E] $LEVEL|V:roman$" # todo: CONCEPT CASE
- default_legitimacy_level_2: "[Concept('legitimacy','Legitimita')|E] $LEVEL|V:roman$" # todo: CONCEPT CASE
- default_legitimacy_level_3: "[Concept('legitimacy','Legitimita')|E] $LEVEL|V:roman$" # todo: CONCEPT CASE
- default_legitimacy_level_4: "[Concept('legitimacy','Legitimita')|E] $LEVEL|V:roman$" # todo: CONCEPT CASE
- default_legitimacy_level_5: "[Concept('legitimacy','Legitimita')|E] $LEVEL|V:roman$" # todo: CONCEPT CASE
- default_legitimacy_level_6: "[Concept('legitimacy','Legitimita')|E] $LEVEL|V:roman$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- default_legitimacy_level_7: "[Concept('legitimacy','Legitimita')|E] $LEVEL|V:roman$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- default_legitimacy_level_8: "[Concept('legitimacy','Legitimita')|E] $LEVEL|V:roman$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ default_legitimacy_level_0: "[Concept('legitimacy','Nelegitimní')|E] vláda"
+ default_legitimacy_level_1: "[Concept('legitimacy','Legitimita')|E] $LEVEL|V:roman$"
+ default_legitimacy_level_2: "[Concept('legitimacy','Legitimita')|E] $LEVEL|V:roman$"
+ default_legitimacy_level_3: "[Concept('legitimacy','Legitimita')|E] $LEVEL|V:roman$"
+ default_legitimacy_level_4: "[Concept('legitimacy','Legitimita')|E] $LEVEL|V:roman$"
+ default_legitimacy_level_5: "[Concept('legitimacy','Legitimita')|E] $LEVEL|V:roman$"
+ default_legitimacy_level_6: "[Concept('legitimacy','Legitimita')|E] $LEVEL|V:roman$"
+ default_legitimacy_level_7: "[Concept('legitimacy','Legitimita')|E] $LEVEL|V:roman$"
+ default_legitimacy_level_8: "[Concept('legitimacy','Legitimita')|E] $LEVEL|V:roman$"
  default_legitimacy_level_0_flavor: "Nelegitimní"
- default_legitimacy_level_1_flavor: "Ambiciózní"
- default_legitimacy_level_2_flavor: "Uznaný"
+ default_legitimacy_level_1_flavor: "Ctižádostivý"
+ default_legitimacy_level_2_flavor: "Uznávaný"
  default_legitimacy_level_3_flavor: "Právoplatný"
  default_legitimacy_level_4_flavor: "Pravý"
  default_legitimacy_level_5_flavor: "Posvěcený"
- default_legitimacy_level_6_flavor: "Předurčený" # todo: NEW TRANSLATION
- default_legitimacy_level_7_flavor: "Kosmický" # todo: NEW TRANSLATION
- default_legitimacy_level_8_flavor: "Věčný" # todo: NEW TRANSLATION
- mandate_legitimacy_level_7_flavor: "Nebeský" # todo: NEW TRANSLATION
- count_legitimacy_type_name: "[Concept('count','Hrabě')|E] [Concept('rank','Hodnost')|E]" # todo: CONCEPT CASE
- duke_legitimacy_type_name: "[Concept('duke','Vévoda')|E] [Concept('rank','Hodnost')|E]" # todo: CONCEPT CASE
- king_legitimacy_type_name: "[Concept('kingdom','Království')|E] [Concept('rank','Hodnost')|E]" # todo: CONCEPT CASE
- emperor_legitimacy_type_name: "[Concept('emperor','Císař')|e] [Concept('rank','Hodnost')|E]" # todo: CONCEPT CASE
- hegemon_legitimacy_type_name: "[Concept('hegemon','Hegemon')|E] [Concept('rank','Hodnost')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- nomadic_legitimacy_type_name: "[GetGovernment( 'nomad_government' ).GetName] [Concept('ruler','Vládce')|E]" # todo: CONCEPT CASE
- mandate_legitimacy_type_name: "[Concept('mandate_of_heaven','Mandát Nebes')|E] [Concept('rank','Hodnost')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- mandala_legitimacy_type_name: "[GetGovernment( 'mandala_government' ).GetName] [Concept('ruler','Vládce')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- LEGITIMACY_CHANGED_EFFECTS: "\n[LegitimacyLevel.GetOnLevelEnteredDesc( Character.Self )]" # todo: NEW TRANSLATION
+ default_legitimacy_level_6_flavor: "Předurčený"
+ default_legitimacy_level_7_flavor: "Kosmický"
+ default_legitimacy_level_8_flavor: "Věčný"
+ mandate_legitimacy_level_7_flavor: "Nebeský"
+ count_legitimacy_type_name: "[Concept('count','Hraběcí')|E] [Concept('rank','hodnost')|E]"
+ duke_legitimacy_type_name: "[Concept('duke','Vévodská')|E] [Concept('rank','hodnost')|E]"
+ king_legitimacy_type_name: "[Concept('kingdom','Královská')|E] [Concept('rank','hodnost')|E]"
+ emperor_legitimacy_type_name: "[Concept('emperor','Císařská')|e] [Concept('rank','hodnost')|E]"
+ hegemon_legitimacy_type_name: "[Concept('hegemon','Hegemonská')|E] [Concept('rank','hodnost')|E]"
+ nomadic_legitimacy_type_name: "[Concept('ruler','Vládce')|E] s vládou typu [GetGovernment( 'nomad_government' ).GetName]"
+ mandate_legitimacy_type_name: "[Concept('rank','Hodnost')|E] [Concept('mandate_of_heaven','Mandátu Nebes')|E]"
+ mandala_legitimacy_type_name: "[Concept('ruler','Vládce')|E] s vládou typu [GetGovernment( 'mandala_government' ).GetName]"
+ LEGITIMACY_CHANGED_EFFECTS: "\n[LegitimacyLevel.GetOnLevelEnteredDesc( Character.Self )]"
  LEGITIMACY_EFFECTS: "$LEGITIMACY_CHANGED_EFFECTS$#S Účinky:#!\n[LegitimacyLevel.GetModifierDesc]"
- LEGITIMACY_AVERAGE_EXPECTATIONS: "#S [Character.GetShortUINamePossessive|U] průměrné [Concept('expected_legitimacy','očekávaná legitimita')|E]:#!\n$BULLET$[Concept('powerful_vassals','Mocní vazalové')|E]: [LegitimacyType.GetFlavorName( Character.GetAveragePowerfulVassalLegitimacyExpectation )|V] #weak ([Character.GetAveragePowerfulVassalLegitimacyExpectation.GetIndex]/[Subtract_int32( GetDataModelSize( LegitimacyType.GetLevels ), '(int32)1' )])#!\n$BULLET$[Concept('vassals','Vazalové')|E]: [LegitimacyType.GetFlavorName( Character.GetAverageVassalLegitimacyExpectation )|V] #weak ([Character.GetAverageVassalLegitimacyExpectation.GetIndex]/[Subtract_int32( GetDataModelSize( LegitimacyType.GetLevels ), '(int32)1' )])#!" # todo: CONCEPT CASE
- LEGITIMACY_AVERAGE_EXPECTATIONS_NO_POWERFUL_VASSALS: "#S [Character.GetShortUINamePossessive|U] průměrné [Concept('expected_legitimacy','očekávaná legitimita')|E]:#!\n$BULLET$[Concept('vassals','Vazalové')|E]: [LegitimacyType.GetFlavorName( Character.GetAverageVassalLegitimacyExpectation )|V] #weak ([Character.GetAverageVassalLegitimacyExpectation.GetIndex]/[Subtract_int32( GetDataModelSize( LegitimacyType.GetLevels ), '(int32)1' )])#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- LEGITIMACY_BELOW_AVERAGE_EXPECTATIONS: "@warning_icon! #X Nižší než očekávaná legitimita všech vazalů#!"
- VASSAL_BELOW_EXPECTED_LEGITIMACY_TT: "\n@warning_icon! #X [Concept('legitimacy_levels','Úrovně legitimity')|E] pod očekáváním [Character.GetHerHis]: [Subtract_int32( Character.GetLegitimacyExpectationsOfLiege, GetPlayer.GetLegitimacyLevel.GetIndex )|V]#!" # todo: CONCEPT CASE
- VASSAL_EXPECTED_LEGITIMACY_TT: "#T [Concept('expected_legitimacy','Očekávaná legitimita')|E]: [Character.GetLegitimacyExpectationsOfLiege]#![AddLocalizationIf( GreaterThan_int32( Character.GetLegitimacyExpectationsOfLiege, GetPlayer.GetLegitimacyLevel.GetIndex ), 'VASSAL_BELOW_EXPECTED_LEGITIMACY_TT' )]" # todo: CONCEPT CASE
- legitimacy_swing_scales_cheaper_tt: "#weak Náklady sníženy kvůli nízké [Concept('legitimacy','legitimitě')|E] [recipient.GetShortUINamePossessive] ([recipient.GetLegitimacyLevel.GetIndex|V])#!" # todo: CONCEPT CASE
- legitimacy_swing_scales_dearer_tt: "#weak Náklady zvýšeny kvůli vysoké [Concept('legitimacy','legitimitě')|E] [recipient.GetShortUINamePossessive] ([recipient.GetLegitimacyLevel.GetIndex|V])#!" # todo: CONCEPT CASE
- legitimacy_hud_tt: "[LegitimacyType.GetFlavorName( LegitimacyLevel.Self )] vládce [LegitimacyLevel.GetIndex|V]/[Subtract_int32( GetDataModelSize( LegitimacyType.GetLevels ), '(int32)1' )]"
- legitimacy_hud_tt_subheading: "[Concept('legitimacy_level','Úroveň legitimity')|E] pro [LegitimacyType.GetName]" # todo: CONCEPT CASE
+ LEGITIMACY_AVERAGE_EXPECTATIONS: "#S [Character.GetShortUINamePossessive|U] průměrná [Concept('expected_legitimacy','očekávaná legitimita')|E]:#!\n$BULLET$[Concept('powerful_vassals','Mocní vazalové')|E]: [LegitimacyType.GetFlavorName( Character.GetAveragePowerfulVassalLegitimacyExpectation )|V] #weak ([Character.GetAveragePowerfulVassalLegitimacyExpectation.GetIndex]/[Subtract_int32( GetDataModelSize( LegitimacyType.GetLevels ), '(int32)1' )])#!\n$BULLET$[Concept('vassals','Vazalové')|E]: [LegitimacyType.GetFlavorName( Character.GetAverageVassalLegitimacyExpectation )|V] #weak ([Character.GetAverageVassalLegitimacyExpectation.GetIndex]/[Subtract_int32( GetDataModelSize( LegitimacyType.GetLevels ), '(int32)1' )])#!"
+ LEGITIMACY_AVERAGE_EXPECTATIONS_NO_POWERFUL_VASSALS: "#S [Character.GetShortUINamePossessive|U] průměrná [Concept('expected_legitimacy','očekávaná legitimita')|E]:#!\n$BULLET$[Concept('vassals','Vazalové')|E]: [LegitimacyType.GetFlavorName( Character.GetAverageVassalLegitimacyExpectation )|V] #weak ([Character.GetAverageVassalLegitimacyExpectation.GetIndex]/[Subtract_int32( GetDataModelSize( LegitimacyType.GetLevels ), '(int32)1' )])#!"
+ LEGITIMACY_BELOW_AVERAGE_EXPECTATIONS: "@warning_icon! #X Pod [Concept('expected_legitimacy','očekávanou legitimitou')|E] všech [Concept('vassals','vazalů')|E]#!"
+ VASSAL_BELOW_EXPECTED_LEGITIMACY_TT: "\n@warning_icon! #X [Concept('legitimacy_levels','Úrovně legitimity')|E] pod očekáváním: [Subtract_int32( Character.GetLegitimacyExpectationsOfLiege, GetPlayer.GetLegitimacyLevel.GetIndex )|V]#!"
+ VASSAL_EXPECTED_LEGITIMACY_TT: "#T [Concept('expected_legitimacy','Očekávaná legitimita')|E]: [Character.GetLegitimacyExpectationsOfLiege]#![AddLocalizationIf( GreaterThan_int32( Character.GetLegitimacyExpectationsOfLiege, GetPlayer.GetLegitimacyLevel.GetIndex ), 'VASSAL_BELOW_EXPECTED_LEGITIMACY_TT' )]"
+ legitimacy_swing_scales_cheaper_tt: "#weak Cena snížena, protože [recipient.GetShortUINamePossessive] [Concept('legitimacy','legitimita')|E] je nízká ([recipient.GetLegitimacyLevel.GetIndex|V])#!"
+ legitimacy_swing_scales_dearer_tt: "#weak Cena zvýšena, protože [recipient.GetShortUINamePossessive] [Concept('legitimacy','legitimita')|E] je vysoká ([recipient.GetLegitimacyLevel.GetIndex|V])#!"
+ legitimacy_hud_tt: "[LegitimacyType.GetFlavorName( LegitimacyLevel.Self )] [Concept('ruler','vládce')|E] [LegitimacyLevel.GetIndex|V]/[Subtract_int32( GetDataModelSize( LegitimacyType.GetLevels ), '(int32)1' )]"
+ legitimacy_hud_tt_subheading: "[LegitimacyType.GetName]: [Concept('legitimacy_level','úroveň legitimity')|E]"
  legitmacy_flavor_and_level: "[LegitimacyType.GetFlavorName( LegitimacyLevel.Self )|V] #weak ([LegitimacyLevel.GetIndex]/[Subtract_int32( GetDataModelSize( LegitimacyType.GetLevels ), '(int32)1' )])#!"
- LEGITIMACY_TRACK_TITLE: "Legitimita [Character.GetLegitimacy|V^0]/[LegitimacyType.GetMaxLegitimacy( Character.Self )|V^0]"
- LEGITIMACY_TRACK_TOOLTIP: "#T [LegitimacyType.GetFlavorName( LegitimacyLevel.Self )]#!\nVyžaduje alespoň [LegitimacyLevel.GetThreshold( Character.Self )|V^] legitimity\n\n$LEGITIMACY_EFFECTS$"
- legitimacy_high_modifier_tt: "Vysoká [Concept('legitimacy','legitimita')|E]" # todo: CONCEPT CASE
- legitimacy_low_modifier_tt: "Nízká [Concept('legitimacy','legitimita')|E]" # todo: CONCEPT CASE
- legitimacy_on_level_entered: "#S Při změně úrovně:#!\n" # todo: NEW TRANSLATION
- legitimacy_on_entered_lost_mandate: "$legitimacy_on_level_entered$@warning_icon! #X Aktivuje „$catalyst_hegemon_lost_mandate_of_heaven$“, která přesune [Concept('dynastic_cycle','dynastický cyklus')|E] do [GetSituationType('dynastic_cycle').GetPhaseType('situation_dynastic_cycle_phase_chaos').GetName] [Concept('situation_dynastic_cycle_phase','éry dynastického cyklu')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ LEGITIMACY_TRACK_TITLE: "[Concept('legitimacy','Legitimita')|E] [Character.GetLegitimacy|V^0]/[LegitimacyType.GetMaxLegitimacy( Character.Self )|V^0]"
+ LEGITIMACY_TRACK_TOOLTIP: "#T [LegitimacyType.GetFlavorName( LegitimacyLevel.Self )]#!\nVyžaduje alespoň [LegitimacyLevel.GetThreshold( Character.Self )|V^] bodů [Concept('legitimacy','legitimity')|E]\n\n$LEGITIMACY_EFFECTS$"
+ legitimacy_high_modifier_tt: "Vysoká [Concept('legitimacy','legitimita')|E]"
+ legitimacy_low_modifier_tt: "Nízká [Concept('legitimacy','legitimita')|E]"
+ legitimacy_on_level_entered: "#S Při změně úrovně:#!\n"
+ legitimacy_on_entered_lost_mandate: "$legitimacy_on_level_entered$@warning_icon! #X Aktivuje „$catalyst_hegemon_lost_mandate_of_heaven$“, což přesune [Concept('dynastic_cycle','dynastický cyklus')|E] do [Concept('situation_dynastic_cycle_phase','éry dynastického cyklu')|E] s názvem [GetSituationType('dynastic_cycle').GetPhaseType('situation_dynastic_cycle_phase_chaos').GetName]#!\n"

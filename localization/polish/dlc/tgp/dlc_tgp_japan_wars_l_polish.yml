@@ -21,7 +21,7 @@
  JAPAN_INSTALL_BLOC_MEMBER_WAR_NAME_BASE: "[ATTACKER.GetPrimaryTitle.GetAdjective][DEFENDER.GetPrimaryTitle.GetName]" # todo: NEW TRANSLATION
  japan_install_bloc_member_cb_victory_desc: "[attacker.GetShortUIName|U] získá sporné [Concept('titles','tituly')|E] pro [attacker.GetConfederation.GetName] a rozhodne o jejich rozdělení." # todo: NEW TRANSLATION # todo: CONCEPT CASE
  japan_install_bloc_member_cb_white_peace_desc: "[defender.GetShortUIName|U] bude bránit [Select_CString(defender.IsFemale,'její','jeho')] území." # todo: NEW TRANSLATION
- japan_install_bloc_member_cb_defeat_desc: "[attacker.GetShortUIName|U] [CharAreIs(attacker)] ponížen." # todo: NEW TRANSLATION
+ japan_install_bloc_member_cb_defeat_desc: "[attacker.GetShortUIName|U] [Select_CString( attacker.IsLocalPlayer, 'jsi', 'je' )] [Select_CString( attacker.IsFemale, 'ponížena', 'ponížen' )]." # todo: NEW TRANSLATION
  japan_install_bloc_member_cb_ended_invalid.desc: "$japan_install_bloc_member_cb$ bylo zneplatněno" # todo: NEW TRANSLATION
  japan_soryo_conquest_cb: "$JAPAN_SORYO_CONQUEST_CB_NAME_GENERIC$" # todo: NEW TRANSLATION
  JAPAN_SORYO_CONQUEST_DUCHY_CB_NAME: "$japan_feudal_government$ [Concept('duchy','Vévodství')|E] dobytí [TITLE.GetBaseNameNoTier]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
@@ -48,7 +48,7 @@
  japan_demand_administrative_cb_victory_desc: "Veškerá území [defender.GetShortUINamePossessive|U] budou zkonfiskována a vrácena [attacker.GetTopLiege.GetTitleAsNameNoTooltip]." # todo: NEW TRANSLATION
  japan_demand_administrative_cb_victory_vassal_desc: "Vaše služba u [attacker.GetTopLiege.GetPrimaryTitle.GetDefinitiveNameNoTooltip] bude uznána." # todo: NEW TRANSLATION
  japan_demand_administrative_cb_white_peace_desc: "[defender.GetShortUIName|U] zůstane [Concept('soryo','$japan_feudal_government$')|E] [Concept('vassal','vazal')|E]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
- japan_demand_administrative_cb_defeat_desc: "Jelikož [attacker.GetShortUIName] [CharAreIs(attacker)] není [attacker.GetTopLiege.GetTitleAsNameNoTooltip], [defender.GetShortUIName] zůstane [Concept('soryo','$japan_feudal_government$')|E] [Concept('vassal','vazal')|E]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ japan_demand_administrative_cb_defeat_desc: "Jelikož [attacker.GetShortUIName] [Select_CString( attacker.IsLocalPlayer, 'nejsi', 'není' )] [attacker.GetTopLiege.GetTitleAsNameNoTooltip], [defender.GetShortUIName] zůstane [Concept('soryo','$japan_feudal_government$')|E] [Concept('vassal','vazal')|E]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
  japan_demand_administrative_cb_defeat_desc_independence: "Jelikož [attacker.GetShortUIName|U] je [attacker.GetTopLiege.GetTitleAsNameNoTooltip], [defender.GetShortUIName] a any [Concept('allies','spojenci')|E] se stanou [Concept('independent','nezávislým')|E] [soryo|E] [Concept('realms','panstvím')|E]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
  japan_demand_administrative_cb_ended_invalid.desc.attacker: "Válka [war.GetName] skončila: [attacker.GetShortUIName] není [Concept('ritsuryo','$japan_administrative_government$')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  japan_demand_administrative_cb_ended_invalid.desc: "Válka [war.GetName] skončila: [defender.GetShortUIName] není [Concept('soryo','$japan_feudal_government$')|E] nebo opustil [Concept('realm','panství')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
@@ -60,7 +60,7 @@
  JAPAN_IMPERIAL_EXPANSION_WAR_NAME_BASE: "[ATTACKER.GetPrimaryTitle.GetAdjective][DEFENDER.GetPrimaryTitle.GetName]" # todo: NEW TRANSLATION
  japan_imperial_expansion_cb_victory_desc_attacker: "Sporný [Concept('title','titul')|E] získáte." # todo: NEW TRANSLATION # todo: CONCEPT CASE
  japan_imperial_expansion_cb_victory_desc: "Sporný [Concept('title','titul')|E] bude zabran [attacker.GetTopLiege.GetTitleAsNameNoTooltip]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
- japan_imperial_expansion_cb_ended_invalid.desc.attacker: "Válka [war.GetName] skončila: [attacker.GetShortUIName] [CharAreIs(attacker)] není [Concept('ritsuryo','$japan_administrative_government$')|E] nebo [Concept('soryo','$japan_feudal_government$')|E], nebo neexistuje [Concept('ceremonial_liege','obřadní panovník')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ japan_imperial_expansion_cb_ended_invalid.desc.attacker: "Válka [war.GetName] skončila: [attacker.GetShortUIName] [Select_CString( attacker.IsLocalPlayer, 'nejsi', 'není' )] [Concept('ritsuryo','$japan_administrative_government$')|E] nebo [Concept('soryo','$japan_feudal_government$')|E], nebo neexistuje [Concept('ceremonial_liege','obřadní panovník')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  japan_imperial_expansion_cb_ended_invalid.desc: "Válka [war.GetName] skončila: [defender.GetShortUIName] vstoupil do [Concept('realm','panství')|E], nebo nedrží žádný platný cílový [Concept('county','hrabství')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  japan_imperial_expansion_cb_warning_japan_tt: "@warning_icon! #X Pokud prohrajete [Concept('war','válka')|E], [recipient.GetShortUIName] a [recipient.GetHerHis] [Concept('allies','spojenci')|E] se stanou [Concept('independent','nezávislým')|E] [soryo|E] [Concept('realms','panstvím')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  japan_imperial_expansion_cb_neighbour_tt: "[defender.GetShortUIName|U] nedrží [Concept('county','hrabství')|E], který sousedí s [attacker.GetTopLiege.GetPrimaryTitle.GetName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
@@ -72,7 +72,7 @@
  JAPAN_IMPERIAL_RECONQUEST_WAR_NAME: "[ConcatIfNeitherEmpty('$ORDER|q$', ' ')]Císařské znovudobytí Japonska" # todo: NEW TRANSLATION
  JAPAN_IMPERIAL_RECONQUEST_WAR_NAME_BASE: "[ATTACKER.GetPrimaryTitle.GetAdjective][DEFENDER.GetPrimaryTitle.GetName]" # todo: NEW TRANSLATION
  japan_imperial_reconquest_cb_victory_desc: "[attacker.GetTopLiege.GetShortUIName] zabere sporné [Concept('titles','tituly')|E]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
- japan_imperial_reconquest_cb_ended_invalid.desc.attacker: "Válka [war.GetName] skončila: [attacker.GetShortUIName] [CharAreIs(attacker)] není [Concept('ritsuryo','$japan_administrative_government$')|E] nebo [Concept('soryo','$japan_feudal_government$')|E], nebo neexistuje [Concept('ceremonial_liege','obřadní panovník')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ japan_imperial_reconquest_cb_ended_invalid.desc.attacker: "Válka [war.GetName] skončila: [attacker.GetShortUIName] [Select_CString( attacker.IsLocalPlayer, 'nejsi', 'není' )] [Concept('ritsuryo','$japan_administrative_government$')|E] nebo [Concept('soryo','$japan_feudal_government$')|E], nebo neexistuje [Concept('ceremonial_liege','obřadní panovník')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  japan_imperial_reconquest_cb_ended_invalid.desc: "Válka [war.GetName] skončila: [defender.GetShortUIName] vstoupil do [Concept('realm','panství')|E], nebo nedrží žádný platný cílový [Concept('county','hrabství')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  japan_imperial_reconquest_cb_warning_japan_tt: "@warning_icon! #X Pokud prohrajete [Concept('war','válka')|E], [recipient.GetShortUIName] a [recipient.GetHerHis] [Concept('allies','spojenci')|E] se stanou [Concept('independent','nezávislým')|E] [soryo|E] [Concept('realms','panstvím')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  japan_imperial_reconquest_cb_neighbour_tt: "[defender.GetShortUIName|U] nedrží sousední [Concept('county','hrabství')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
@@ -112,9 +112,9 @@
  JAPAN_BLOC_WAR_CB_NAME: "[ATTACKER.GetConfederation.GetLeadingHouse.GetNameNoTooltip]-[DEFENDER.GetConfederation.GetLeadingHouse.GetNameNoTooltip] [Concept('bloc_supremacy_war','válka o nadvládu bloku')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  JAPAN_BLOC_WAR_NAME: "[ConcatIfNeitherEmpty('$ORDER|q$', ' ')][ATTACKER.GetConfederation.GetLeadingHouse.GetName]-[DEFENDER.GetConfederation.GetLeadingHouse.GetName] Válka o nadvládu bloku" # todo: NEW TRANSLATION
  JAPAN_BLOC_WAR_NAME_BASE: "[ATTACKER.GetPrimaryTitle.GetAdjective][DEFENDER.GetPrimaryTitle.GetName]" # todo: NEW TRANSLATION
- japan_bloc_war_cb_victory_desc: "[defender.GetShortUIName|U] [CharAreIs(defender)] bude donucen uznat nadřazenost [attacker.GetConfederation.GetName]." # todo: NEW TRANSLATION
+ japan_bloc_war_cb_victory_desc: "[defender.GetShortUIName|U][Select_CString( defender.IsLocalPlayer, ' budeš', ' bude' )] [Select_CString( defender.IsFemale, 'donucena', 'donucen' )] uznat nadřazenost [attacker.GetConfederation.GetName]." # todo: NEW TRANSLATION
  japan_bloc_war_cb_white_peace_desc: "[defender.GetShortUIName|U] si zachová čest [defender.GetConfederation.GetName]." # todo: NEW TRANSLATION
- japan_bloc_war_cb_defeat_desc: "[attacker.GetShortUIName|U] [CharAreIs(attacker)] bude donucen uznat nadřazenost [defender.GetConfederation.GetName]." # todo: NEW TRANSLATION
+ japan_bloc_war_cb_defeat_desc: "[attacker.GetShortUIName|U][Select_CString( attacker.IsLocalPlayer, ' budeš', ' bude' )] [Select_CString( attacker.IsFemale, 'donucena', 'donucen' )] uznat nadřazenost [defender.GetConfederation.GetName]." # todo: NEW TRANSLATION
  japan_bloc_war_cb_ended_invalid.desc: "$JAPAN_BLOC_WAR_CB_NAME$ bylo zneplatněno" # todo: NEW TRANSLATION
  tgp_bloc_war_defeat_member_description: "[member_houses|E] poraženého [bloc|E], kteří uznají vítěznou [Concept('supremacy','nadvládu')|E]:" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  tgp_bloc_war_defeat_member_house_description: "$BULLET_WITH_TAB$[CHARACTER.GetHouse.GetBaseName]" # todo: NEW TRANSLATION

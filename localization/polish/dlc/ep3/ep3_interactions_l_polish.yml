@@ -25,7 +25,7 @@
  harmed_candidacy_toast: "[target.GetAdjectiveNoTooltip|V] kandidatura poškozena"
  promote_candidate_toast_tt: "[actor.GetShortUIName|U] podporuje kandidaturu [secondary_recipient.GetShortUINamePossessive] pro [target.GetName] - skóre zvýšeno o [promote_candidate_score|0+]"
  PROMOTE_CANDIDATE_HEADER: "Podpořit kandidáta"
- promote_candidate_interaction_existing_holder_tt: "[THIS.Char.GetShortUIName|U] již [CharHaveHas(THIS.Char)] [target.GetName]"
+ promote_candidate_interaction_existing_holder_tt: "[THIS.Char.GetShortUIName|U] již [Select_CString( THIS.Char.IsLocalPlayer, 'máš', 'má' )] [target.GetName]"
  request_appointment_support: "Požádat o ovlivnění kandidatury"
  request_appointment_support_desc: "Zaplaťte [recipient.GetShortUINameNoTooltip], aby utratil své [Concept('influence','vliv')|E] na zvýšení [Concept('character_possessive','postavy')|E] [Concept('candidate_score','skóre kandidáta')|E] pro [recipient.GetTopLiege.Custom('GetGovernorConcept')] nebo [actor.GetTopLiege.GetTitleAsNameNoTooltip|V]" # todo: CONCEPT CASE
  request_appointment_support_extra_icon: "$hook_extra_icon$"
@@ -322,7 +322,7 @@
  request_contract: "Za @task_contract_icon! [Concept('task_contract','zakázku')|E]" # todo: CONCEPT CASE
  request_feast: "Za [GetActivityType('activity_feast').GetTextIcon][GetActivityType('activity_feast').GetName]"
  request_tournament: "Za [GetActivityType('activity_tournament').GetTextIcon][GetActivityType('activity_tournament').GetName]"
- contact_list_request_interaction.request_maa: "Najmete náhodný [Concept('men_at_arms','ozbrojenci')|E] [Concept('regiment','pluk')|E] (#EMP Velikost #V 1#!#!)\n#weak Typ může být jakýkoli, ke kterému má [recipient.GetShortUIName] [CharHaveHas(recipient)] přístup#!" # todo: CONCEPT CASE
+ contact_list_request_interaction.request_maa: "Najmete náhodný [Concept('men_at_arms','ozbrojenci')|E] [Concept('regiment','pluk')|E] (#EMP Velikost #V 1#!#!)\n#weak Typ může být jakýkoli, ke kterému [recipient.GetShortUIName] [Select_CString( recipient.IsLocalPlayer, 'máš', 'má' )] přístup#!" # todo: CONCEPT CASE
  contact_list_request_interaction.request_knights: "[recipient.GetName] vám předloží až #V 3#! [Concept('knights','rytíři')|E], z nichž si můžete vybrat jednoho k pronájmu na #V 5 let#!" # todo: CONCEPT CASE
  contact_list_request_interaction.request_marriage: "Umožní [actor.GetShortUIName] uspořádat [Concept('marriage','sňatek')|E] mezi [actor.GetShortUINamePossessive] [Concept('camp','táborem')|E] a [recipient.GetNamePossessive] [Concept('court','dvůr')|E]" # todo: CONCEPT CASE
  contact_list_request_interaction.request_marriage.marriagable_women: "#WEAK [recipient.GetFirstNamePossessive] [Concept('court','Dvůr')|E] má [recipient.MakeScope.ScriptValue('laamp_marriable_women_realistic_value')|P+0] sňatelných nevýznamných žen ([recipient.MakeScope.ScriptValue('laamp_marriable_women_realistic_value')|V0] celkem)#!" # todo: CONCEPT CASE
@@ -414,7 +414,7 @@
  ep3_interactions_events.0031_callous: "Potomek, kterému je oběť lhostejná. Ať zmizí!"
  ep3_interactions_events.0031_kind: "Možná jsem ho špatně posoudil..."
  MALUS_TO_RECRUITMENT_FOR_IMPERIAL_EUNUCHS: "[recipient.GetSheHe|U] je císařský eunuch: $VALUE|=+0$"
- support_candidacy_can_appoint_for_title_tt: "[THIS.Char.GetShortUIName|U] [CharAreIs(THIS.Char)] není platným kandidátem pro žádný [THIS.Char.GetTopLiege.GetPrimaryTitle.GetAdjective] [Concept('titles','tituly')|E]" # todo: CONCEPT CASE
+ support_candidacy_can_appoint_for_title_tt: "[THIS.Char.GetShortUIName|U] #bold [Select_CString( THIS.Char.IsLocalPlayer, 'nejsi', 'není' )]#! platným kandidátem pro žádný [THIS.Char.GetTopLiege.GetPrimaryTitle.GetAdjective] [Concept('titles','tituly')|E]" # todo: CONCEPT CASE
  any_valid_candidacy_tt: "[THIS.Char.GetShortUIName|U] musí být kandidátem pro jakýkoli [THIS.Char.GetTopLiege.GetPrimaryTitle.GetAdjective] [Concept('title','titul')|E]" # todo: CONCEPT CASE
  is_candidate_for_title_tt: "[THIS.Char.GetShortUIName|U] musí být kandidátem na tento [Concept('title','titul')|E]" # todo: CONCEPT CASE
  can_be_appointed_interaction_tt: "[THIS.Char.GetWomenMen|U] musí být Dominantní, Rovné nebo Klerikální pohlaví ve vaší [Concept('faith','víře')|E] ([THIS.Char.GetFaith.GetName])" # todo: CONCEPT CASE
@@ -803,7 +803,7 @@
  valid_co_emperor_candidate_liege_trigger: "Musí být ve stejném [Concept('realm','panství')|E]" # todo: CONCEPT CASE
  valid_co_emperor_candidate_family_trigger: "Pouze [Concept('top_liege_possessive','nejvyššího lenního pána')|E] [Concept('close_family','blízká rodina')|E] a [Concept('house_heads','hlavy rodu')|E] z [Concept('powerful_families','mocných rodin')|E] mohou být [Concept('co_emperors','spolucísaři')|E]" # todo: CONCEPT CASE
  declare_me_co_emperor_interaction.tt.effect: "[recipient.GetShortUIName|U] vstoupí do [Concept('duumvirate','duumvirát')|E] s [actor.GetShortUIName] jako [recipient.GetHerHis] [Concept('co_emperor','spolucísař')|E]" # todo: CONCEPT CASE
- YOU_ARE_MY_DESIGNATED_HEIR: "[actor.GetShortUIName|U] [CharAreIs(actor)] můj [Concept('designated_heir','určený dědic')|E]: $VALUE|=+0$" # todo: CONCEPT CASE
+ YOU_ARE_MY_DESIGNATED_HEIR: "[actor.GetShortUIName|U] [Select_CString( actor.IsLocalPlayer, 'jsi', 'je' )] můj [Concept('designated_heir','určený dědic')|E]: $VALUE|=+0$" # todo: CONCEPT CASE
  support_candidate_friend_progress_toast: "Vaše podpora je velmi ceněna"
  harm_candidate_rival_progress_toast: "Váš odpor vyvolává hněv"
  support_candidacy_success_reward_tt: "Pokud [secondary_recipient.GetSheHe] získá [target.GetNameNoTier], [secondary_recipient.GetShortUIName] může odměnit svého nejlepšího ne-[Concept('house','rod')|E] podporovatele [secondary_recipient.GetHerHis]" # todo: CONCEPT CASE

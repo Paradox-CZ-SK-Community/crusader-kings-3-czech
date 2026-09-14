@@ -39,7 +39,7 @@
  promote_desc_general: "V plánu Prosadit [Concept('scheme','intrika')|E] se snažíte zvýšit [Concept('candidate_score','skóre kandidáta')|E] postavy." # todo: CONCEPT CASE
  PROMOTE_SUCCESS_DESC: "Zvýšíte [SCHEME.GetTargetCharacter.GetShortUINamePossessive] [Concept('candidate_score','skóre kandidáta')|E]" # todo: CONCEPT CASE
  promote_invalidated_title: "@scheme_icon! Prosazení končí"
- is_in_line_of_succession: "[recipient.GetShortUIName|U] [CharAreIs(recipient)] #bold není#! v linii nástupnictví stát se [actor.GetTopLiege.GetTitleAsName] nebo zdědit jakékoli [actor.Custom( 'GetProvincePluralConcept' )]"
+ is_in_line_of_succession: "[recipient.GetShortUIName|U] #bold [Select_CString( recipient.IsLocalPlayer, 'nejsi', 'není' )]#! v linii nástupnictví stát se [actor.GetTopLiege.GetTitleAsName] nebo zdědit jakékoli [actor.Custom( 'GetProvincePluralConcept' )]"
  scheme_critical_moments.1142.t: "$scheme_critical_moments.1132.t$"
  scheme_critical_moments.1142.desc_self: "Veškeré úsilí vložené do mé kampaně sebeprezentace se vyplatilo.\n\nMé postavení mezi vrstevníky se zlepšilo, noví stoupenci se hrnou ke mým kandidaturám a můj cíl je blíž než kdy dříve!"
  scheme_critical_moments.1142.desc_other: "Tolika času a zdrojů vložených do propagace kandidatur [target.GetTitledFirstNamePossessive] přineslo ovoce.\n\n[Select_CString(target.IsFemale,'Její','Jeho')] postavení mezi vrstevníky se zlepšilo, noví stoupenci jsou nyní přesvědčeni o [Select_CString(target.IsFemale,'její','jeho')] hodnotě a [Select_CString(target.IsFemale,'její','jeho')] jmenování je nyní o krok blíž!"
@@ -476,10 +476,10 @@
  ingratiate_family_opinion: "Získaná přízeň rodu"
  ingratiating_family_opinion: "Usilující o přízeň rodu"
  ingratiate_family_living_quarters_building_tt: "Vyžaduje [GetDomicileBuilding('living_quarters_01').GetName] [Concept('domicile_building','budova domicilu')|E]" # todo: CONCEPT CASE
- admin_emperor_scheme_modifier_tt: "Váš [Concept('scheme','intrika')|E] získává [GetModifier('admin_emperor_scheme_modifier').GetNameWithTooltip], protože [actor.GetShortUINameNoTooltip] [CharAreIs(actor)] [actor.GetTitleAsNameNoTooltip]" # todo: CONCEPT CASE
+ admin_emperor_scheme_modifier_tt: "Váš [Concept('scheme','intrika')|E] získává [GetModifier('admin_emperor_scheme_modifier').GetNameWithTooltip], protože [actor.GetShortUINameNoTooltip] [Select_CString( actor.IsLocalPlayer, 'jsi', 'je' )] [actor.GetTitleAsNameNoTooltip]" # todo: CONCEPT CASE
  admin_dominant_family_scheme_modifier_tt: "Váš [Concept('scheme','intrika')|E] získává [GetModifier('admin_dominant_family_scheme_modifier').GetNameWithTooltip], protože [Concept('house','rod')|E] [actor.GetHouse.GetName] je [Concept('dominant_family','dominantní rodina')|E]" # todo: CONCEPT CASE
  admin_powerful_family_scheme_modifier_tt: "Váš [Concept('scheme','intrika')|E] získává [GetModifier('admin_powerful_family_scheme_modifier').GetNameWithTooltip], protože [Concept('house','rod')|E] [actor.GetHouse.GetName] je [Concept('powerful_family','mocná rodina')|E]" # todo: CONCEPT CASE
- admin_target_emperor_scheme_modifier_tt: "Váš [Concept('scheme','intrika')|E] získává [GetModifier('admin_target_emperor_scheme_modifier').GetNameWithTooltip], protože [recipient.GetShortUINameNoTooltip] [CharAreIs(recipient)] [recipient.GetTitleAsNameNoTooltip]" # todo: CONCEPT CASE
+ admin_target_emperor_scheme_modifier_tt: "Váš [Concept('scheme','intrika')|E] získává [GetModifier('admin_target_emperor_scheme_modifier').GetNameWithTooltip], protože [recipient.GetShortUINameNoTooltip] [Select_CString( recipient.IsLocalPlayer, 'jsi', 'je' )] [recipient.GetTitleAsNameNoTooltip]" # todo: CONCEPT CASE
  admin_target_dominant_family_scheme_modifier_tt: "Váš [Concept('scheme','intrika')|E] získává [GetModifier('admin_target_dominant_family_scheme_modifier').GetNameWithTooltip], protože [Concept('house','rod')|E] [recipient.GetHouse.GetName] je [Concept('dominant_family','dominantní rodina')|E]" # todo: CONCEPT CASE
  admin_target_powerful_family_scheme_modifier_tt: "Váš [Concept('scheme','intrika')|E] získává [GetModifier('admin_target_powerful_family_scheme_modifier').GetNameWithTooltip], protože [Concept('house','rod')|E] [recipient.GetHouse.GetName] je [Concept('powerful_family','mocná rodina')|E]" # todo: CONCEPT CASE
  teach_governor: "Mentor v řízení"

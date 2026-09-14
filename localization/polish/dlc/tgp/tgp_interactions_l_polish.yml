@@ -107,7 +107,7 @@
  celestial_request_commander_interaction_desc: "Formálně požádejte [recipient.GetShortUIName], aby poslal schopného [Concept('commander','velitele')|E] na váš [Concept('court','dvůr')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  recipient_secondary_celestial_request_commander_interaction: "[Concept('commander','Velitel')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  celestial_request_commander_interaction_extra_icon: "$hook_extra_icon$" # todo: NEW TRANSLATION
- recipient_no_commanders_available_desc: "[recipient.GetShortUIName|U] [CharHaveHas( recipient )] nemá žádné dostupné [Concept('commanders','velitelé')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ recipient_no_commanders_available_desc: "[recipient.GetShortUIName|U] [Select_CString( recipient.IsLocalPlayer, 'nemáš', 'nemá' )] žádné dostupné [Concept('commanders','velitele')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  recipient_support_hegemon_or_favors_same_era_desc: "[recipient.GetShortUIName|U] je v [GetSituation('dynastic_cycle').GetTopParticipantGroupByKey( 'pro_hegemon_movement' ).GetName] nebo podporuje vaše [Concept('favored_era','upřednostněná éra')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  secondary_recipient_martial_skill_desc: "[secondary_recipient.GetShortUINamePossessive|U] [Concept('martial_skill','Válečnická dovednost')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  secondary_recipient_num_commander_traits_desc: "[secondary_recipient.GetShortUINamePossessive|U] [Concept('commander_traits','Velitelské rysy')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
@@ -115,7 +115,7 @@
  celestial_request_commander_interaction_declined_t: "Žádost o [Concept('commander','velitele')|E] zamítnuta" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  actor_use_hook_desc: "[actor.GetShortUIName|U] [Select_CString( actor.IsLocalPlayer, 'use', 'uses' )] a [hook_i][Concept('hook','páka')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  AI_SECONDARY_RECIPIENT_MARTIAL_SKILL: "[secondary_recipient.GetShortUINamePossessive|U] [Concept('martial_skill','Válečnická dovednost')|E]: $VALUE|=+0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- AI_ACTOR_IS_CIVILIAN_GOVERNOR: "[actor.GetShortUIName|U] [CharAreIs(actor)] civilní [Concept('governor','guvernér')|E]: $VALUE|=+0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ AI_ACTOR_IS_CIVILIAN_GOVERNOR: "[actor.GetShortUIName|U] [Select_CString( actor.IsLocalPlayer, 'jsi', 'je' )] civilní [Concept('governor','guvernér')|E]: $VALUE|=+0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  celestial_request_examination_support_interaction: "Požádat o podporu zkoušek" # todo: NEW TRANSLATION
  celestial_request_examination_support_interaction_desc: "Požádejte [recipient.GetShortUIName], aby [Select_CString(recipient.IsFemale,'pomohla','pomohl')] zorganizovat a zaplatit pořádání [GetActivityType('activity_local_examination').GetTextIcon][GetActivityType( 'activity_local_examination').GetName] [Concept('activity','aktivita')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  celestial_request_examination_support_interaction_extra_icon: "$hook_extra_icon$" # todo: NEW TRANSLATION
@@ -134,7 +134,7 @@
  old_age_desc: "Věk #weak ([Select_CString(ROOT.Char.IsFemale,'stará','starý')] a zkušený)#!" # todo: NEW TRANSLATION
  young_age_desc: "Věk #weak (mladý a nezkušený)#!" # todo: NEW TRANSLATION
  influence_meritorious_career_interaction: "Ovlivnit kariéru" # todo: NEW TRANSLATION
- influence_meritorious_career_interaction_desc: "Utratit [Concept('influence','vliv')|E], aby se dočasně zvýšil [recipient.GetShortUINamePossessive] [Concept('candidate_score','skóre kandidáta')|E] a ovlivnila pravděpodobnost, že [CharYouHerHim( recipient )] bude [Select_CString(recipient.IsFemale,'jmenována','jmenován')] do [Concept('title','titulu')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ influence_meritorious_career_interaction_desc: "Utratit [Concept('influence','vliv')|E], aby se dočasně zvýšilo [recipient.GetShortUINamePossessive] [Concept('candidate_score','skóre kandidáta')|E] a tím i pravděpodobnost, že [recipient.GetShortUIName][Select_CString( recipient.IsLocalPlayer, ' budeš', ' bude' )] [Select_CString( recipient.IsFemale, 'jmenována', 'jmenován' )] do [Concept('title','titulu')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  influence_meritorious_career_effect_desc: "[recipient.GetShortUINamePossessive|U] [Concept('candidate_score','Skóre kandidáta')|E] se změní o [increased_career_score|=+0]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  influence_meritorious_career_effect_civilian_desc: "[recipient.GetShortUINamePossessive|U] [Concept('candidate_score','Skóre kandidáta')|E] pro civilní [Concept('appointment_succession','nástupnictví jmenováním')|E] se zvýší o [increased_career_score|=+0]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  influence_meritorious_career_effect_military_desc: "[recipient.GetShortUINamePossessive|U] [Concept('candidate_score','Skóre kandidáta')|E] pro vojenské [Concept('appointment_succession','nástupnictví jmenováním')|E] se zvýší o [increased_career_score|=+0]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
@@ -270,10 +270,10 @@
  assume_house_bloc_leadership_vassal_tt: "[Concept('vassals','Vazalové')|E] nemohou vzít [house_bloc_leadership|E] od svého [Concept('liege','lenního pána')|E] nebo vyšší" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  ASSUME_HOUSE_BLOC_LEADERSHIP_NOTIFICATION: "Je zřejmé, že je zapotřebí vedení domu vyšší důstojnosti, pokud mají naše zájmy ustát hněv našich nepřátel." # todo: NEW TRANSLATION
  assume_house_bloc_recent_leader_change_tt: "[leading_house|E] tohoto [bloc|E] se změnil v posledních #V 5 letech#!, znovu dostupné dne [GetCurrentDateWithDiff( GetVarTimeRemaining( THIS.Char.GetHouse.GetConfederation.MakeScope, 'recent_leader_change') )]" # todo: NEW TRANSLATION
- assume_house_bloc_leadership_interaction_requirement_tt: "[Concept('house_head','Hlava rodu')|E] je [Concept('allied','spojenecký')|E] s, [Concept('cowed','vyděšeným')|E] z, [Concept('friends','přátel')|E] s, [Concept('lover','milencem')|E] [actor], [Concept('vassal','vazalem')|E] nebo nižší vůči němu, má lepší [Concept('house_relations','vztahů rodů')|E] s, nebo je [Concept('hooked','zavázaný')|E] [actor.GetShortUIName], nebo dluží věrnost [CharYouHerHim(actor)] jako jejich [Concept('dynast','hlava dynastie')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- assume_house_bloc_leadership_interaction_tier_tt: "[actor.GetShortUIName|U] [CharAreIs(actor)] vyššího [Concept('rank','hodnosti')|E] než [leader_temp.GetShortUIName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- assume_house_bloc_leadership_interaction_prestige_tt: "[actor.GetShortUIName|U] [CharAreIs(actor)] alespoň #V 2#! [Concept('prestige_levels','úrovně slávy')|E] více než [leader_temp.GetShortUIName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- assume_house_bloc_leadership_interaction_land_tt: "[actor.GetShortUIName|U] [CharAreIs(actor)] [Concept('landed','Zeměpán')|E] a [leader_temp.GetShortUIName] není" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ assume_house_bloc_leadership_interaction_requirement_tt: "[Concept('house_head','Hlava rodu')|E] je [Concept('allied','spojenecký')|E] s, [Concept('cowed','vyděšeným')|E] z, [Concept('friends','přátel')|E] s, [Concept('lover','milencem')|E] [actor], [Concept('vassal','vazalem')|E] nebo nižší vůči němu, má lepší [Concept('house_relations','vztahů rodů')|E] s, nebo je [Concept('hooked','zavázaný')|E] [actor.GetShortUIName], případně dluží věrnost [Concept('dynast','hlavě dynastie')|E], kterou [actor.GetShortUIName] [Select_CString( actor.IsLocalPlayer, 'představuješ', 'představuje' )]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ assume_house_bloc_leadership_interaction_tier_tt: "[actor.GetShortUIName|U] [Select_CString( actor.IsLocalPlayer, 'máš', 'má' )] vyšší [Concept('rank','hodnost')|E] než [leader_temp.GetShortUIName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ assume_house_bloc_leadership_interaction_prestige_tt: "[actor.GetShortUIName|U] [Select_CString( actor.IsLocalPlayer, 'máš', 'má' )] alespoň o #V 2#! [Concept('prestige_levels','úrovně slávy')|E] více než [leader_temp.GetShortUIName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ assume_house_bloc_leadership_interaction_land_tt: "[actor.GetShortUIName|U] [Select_CString( actor.IsLocalPlayer, 'jsi', 'je' )] [Concept('landed','Zeměpán')|E] a [leader_temp.GetShortUIName] není" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  assume_house_bloc_leadership_interaction_aspiration_tt: "[Concept('house','Rod')|E] [actor.GetHouse.GetBaseName] má [leader_temp.GetHouse.GetHouseAspiration.GetName|V] [Concept('aspiration','aspirace')|E] vyšší úrovně než [recipient.GetHouse.GetBaseName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  no_target_selected_tt: "Není vybrán žádný cíl" # todo: NEW TRANSLATION
  grant_house_bloc_leadership_interaction: "Uznat vedení bloku" # todo: NEW TRANSLATION
@@ -347,7 +347,7 @@
  CONTRIBUTOR_MAY_ACCEPT_DESC: "#T Lze přesvědčit, aby přispěl#!" # todo: NEW TRANSLATION
  OFFER_INFLUENCE: "[influence_i] Nabídnout [Concept('influence','vliv')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  recipient_not_same_aspect: "[recipient.GetFirstName|U] nemá stejný [Concept('aspect','aspekt')|E] jako vy: $VALUE|+=0$" # todo: RETRANSLATED ENGLISH # todo: CONCEPT CASE
- recipient_has_low_funds: "[recipient.GetShortUIName] [CharAreIs(recipient)] má málo prostředků: $VALUE|+=0$" # todo: NEW TRANSLATION
+ recipient_has_low_funds: "[recipient.GetShortUIName] [Select_CString( recipient.IsLocalPlayer, 'máš', 'má' )] málo prostředků: $VALUE|+=0$" # todo: NEW TRANSLATION
  recipient_is_competing_mandala: "[recipient.GetShortUIName] je konkurenční [Concept('mandala','mandala')|E]: $VALUE|+=0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  tgp_sea_legacy_tributaries_likely_to_contribute: "[GetDynastyPerk('tgp_sea_legacy_3').GetName]: $VALUE|+=0$" # todo: NEW TRANSLATION
  ACTOR_MERIT_MARRIAGE_REASON: "[actor.GetShortUINamePossessive|U] [Concept('merit','Zásluhy')|E]: $VALUE|=+0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
@@ -386,7 +386,7 @@
  diarch_train_knight_interaction: "$task_contract_train_knight_interaction$" # todo: NEW TRANSLATION
  diarch_train_knight_interaction_desc: "$task_contract_train_knight_interaction_desc$" # todo: NEW TRANSLATION
  recipient_secondary_diarch_train_knight_interaction: "$recipient_secondary_task_contract_train_knight_interaction$" # todo: NEW TRANSLATION
- diarch_train_knight_interaction.no_knights: "[recipient.GetShortUIName|U] [CharHaveHas(recipient)] žádné [Concept('knights','rytíři')|E], které by potřebovaly výcvik" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ diarch_train_knight_interaction.no_knights: "[recipient.GetShortUIName|U] [Select_CString( recipient.IsLocalPlayer, 'nemáš', 'nemá' )] žádné [Concept('knights','rytíře')|E], kteří by potřebovali výcvik" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  tgp_dynasty_legacy_movement_accept: "[GetDynastyPerk( 'tgp_chinese_legacy_4' ).GetName]: $VALUE|=+0$" # todo: NEW TRANSLATION
  tgp_cranial_trophy_artifact: "[dead_one.GetTitledFirstNamePossessiveNoTooltip|U] lebková trofej" # todo: NEW TRANSLATION
  tgp_cranial_trophy_artifact_desc: "Odseknutá hlava [dead_one.GetTitledFirstName]. Pečlivě uchovaná zůstává v tomto světě jako trvalé svědectví o převaze [the_killer.GetTitledFirstName]." # todo: NEW TRANSLATION
@@ -414,7 +414,7 @@
  scheme_critical_moments.8071.b: "Ať [criminal.GetHerHim] hnije v [criminal.GetLiege.GetTitledFirstNamePossessiveNoTooltip] žaláři!" # todo: NEW TRANSLATION
  scheme_critical_moments.8071.c: "To není zločin, udělte milost [criminal.GetHerHim]!" # todo: NEW TRANSLATION
  scheme_critical_moments.8071.d: "Přivřu oči." # todo: NEW TRANSLATION
- target_is_not_war_leader: "[TARGET_CHARACTER.GetShortUIName|U] [CharAreIs( TARGET_CHARACTER )] #bold není#! [Concept('war_leader','vůdce války')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ target_is_not_war_leader: "[TARGET_CHARACTER.GetShortUIName|U] #bold [Select_CString( TARGET_CHARACTER.IsLocalPlayer, 'nejsi', 'není' )]#! [Concept('war_leader','vůdce války')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  candidate_succession_score_option_desc: "Zvýšit [Concept('candidate_score','skóre kandidáta')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  merit_bestowal_option_desc: "Udělte [Concept('merit','zásluhy')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  examination_bypass_option_desc: "Udělit výjimku z [Concept('examination','zkoušky')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE

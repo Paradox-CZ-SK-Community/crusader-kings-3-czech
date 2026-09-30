@@ -5,7 +5,7 @@
  actor_secondary_grant_vassal_interaction: "[Concept('vassal','Vazal')|E]"
  GRANT_VASSAL_SELECT_VASSAL_TO_TRANSFER: "Vyber [Concept('vassal','vazala')|E] k převedení"
  retract_vassal_interaction: "Odebrat vazala"
- retract_vassal_interaction_desc: "Převezmi jednoho z [Concept('vassals','vazalů')|E] [recipient.GetShortUINameNoTooltip], aby se místo toho stal tvým [Concept('direct_vassal','přímým vazalem')|E]"
+ retract_vassal_interaction_desc: "Převezmi jednoho z [Concept('vassals','vazalů')|E] [recipient.GetShortUINameNoTooltip], aby se místo toho stal [puppet_or_actor.GetShortUINamePossessive] [Concept('direct_vassal','přímým vazalem')|E]" # todo: CHANGED (predtym: Převezmi jednoho z [Concept('vassals','vazalů')|E] [recipient.GetShortUINameNoTooltip], aby se místo toho stal tvým [Con)
  retract_vassal_interaction_extra_icon: "$hook_extra_icon$"
  recipient_secondary_retract_vassal_interaction: "[Concept('vassal','Vazal')|E]"
  RETRACT_VASSAL_SELECT_VASSAL_TO_RETRACT: "Vyber [Concept('vassal','vazala')|E] k odebrání"
@@ -52,7 +52,7 @@
  ask_for_pardon_interaction_decline_toast: "Milost odmítnuta"
  ask_for_pardon_interaction_accept_decline: "[recipient.GetShortUIName|U] odmítá tvou žádost o milost"
  vassal_claim_liege_title_interaction: "Vznést nárok na titul lenního pána"
- vassal_claim_liege_title_interaction_desc: "Pokud ovládáš požadovaný podíl [Concept('counties','hrabství')|E], která [Concept('de_jure','de iure')|E] náleží k jednomu z [Concept('titles','titulů')|E] tvého [Concept('lieges','lenního pána')|E], můžeš utratit [Concept('prestige','prestiž')|E] a získat na něj [Concept('unpressed_claim','neuplatněný nárok')|E]!"
+ vassal_claim_liege_title_interaction_desc: "Pokud [puppet_or_actor.GetShortUIName] ovládá požadovaný podíl [Concept('counties','hrabství')|E], která [Concept('de_jure','de iure')|E] náleží k jednomu z [Concept('titles','titulů')|E] [puppet_or_actor.GetShortUINamePossessive] [Concept('lieges','lenního pána')|E], [puppet_or_actor.GetShortUIName] může utratit [Concept('prestige','prestiž')|E] a získat na něj [Concept('unpressed_claim','neuplatněný nárok')|E]!" # todo: CHANGED (predtym: Pokud ovládáš požadovaný podíl [Concept('counties','hrabství')|E], která [Concept('de_jure','de iure')|E] náleží k jedno)
  NOT_FAMILY_OR_ADVENTURER_TITLE: "Nemůžeš vznést nárok na [Concept('title','titul')|E] [Concept('noble_family','urozeného rodu')|E] ani [Concept('adventurer','dobrodruha')|E]!"
  HAS_51_PERCENT_OF_A_DE_JURE_TITLE: "Pokud ovládáš alespoň #weak (51 %)#! jednoho z [Concept('titles','titulů')|E] svého [Concept('lieges','lenního pána')|E], můžeš utratit [Concept('prestige','prestiž')|E] a získat na něj [Concept('unpressed_claim','neuplatněný nárok')|E]!"
  NOT_HAS_51_PERCENT_OF_A_DE_JURE_TITLE: "NEOVLÁDÁŠ alespoň #V 51 %#! #weak ([Concept('legitimacy','legitimita')|E] úrovně 1 nebo 0)#! [Concept('counties','hrabství')|E], která tvoří [Concept('de_jure','de iure území')|E] tohoto [Concept('title','titulu')|E]"
@@ -70,7 +70,7 @@
  give_vassal_directive_interaction_desc: "Protože je [recipient.GetFullName] tvým [Concept('vassal','vazalem')|E], můžeš mu vydat [Concept('directive','směrnici')|E], aby se zaměřil na konkrétní úkol"
  subrealm_has_county_of_other_culture: "[recipient.GetFullName] #bold nemá#! žádné [Concept('county','hrabství')|E] s jinou [Concept('culture','kulturou')|E]"
  subrealm_has_county_of_other_faith: "[recipient.GetFullName] #bold nemá#! žádné [Concept('county','hrabství')|E] s jinou [Concept('faith','vírou')|E]"
- has_admin_gov: "[recipient.GetShortUIName] má [Concept('administrative_government','administrativní vládu')|E]"
+ has_admin_gov: "[recipient.GetShortUIName] má [Concept('government_bureaucratic_type','byrokratickou vládu')|E]" # todo: CHANGED (predtym: [recipient.GetShortUIName] má [Concept('administrative_government','administrativní vládu')|E])
  improve_development: "@task_develop_county! Zlepšit [Concept('development','rozvoj')|E]"
  train_commanders: "@task_train_commanders! Posílit [Concept('men_at_arms','ozbrojence')|E]"
  build_maa: "@directive_maa! Naverbovat [Concept('men_at_arms','ozbrojence')|E]"
@@ -156,6 +156,7 @@
  appoint_podesta_interaction_notification: "Republikánský správce jmenován"
  request_court_position: "Požádat o dvorský úřad"
  request_court_position_desc: "Požádej [recipient.GetShortUINameNoTooltip] o dvorský úřad"
+ request_court_position_notification: "Mé schopnosti leží ladem, a to neprospívá ani jednomu z nás. Udělte mi místo u svého dvora a já vám tuto poctu oplatím věrnou službou." # todo: NEW TRANSLATION
  grant_court_position: "Udělit dvorský úřad"
  grant_court_position_desc: "Udělit [recipient.GetShortUINameNoTooltip] [Concept('court_position','dvorský úřad')|E]"
  request_court_position_extra_icon: "$hook_extra_icon$"

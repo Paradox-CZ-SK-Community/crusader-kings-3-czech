@@ -30,15 +30,20 @@
  NOT_THEY_HAVE_SAME_RELIGION: "[CHARACTER.GetShortUIName|U] nevyznává stejné [Concept('religion','náboženství')|E] jako [TARGET_CHARACTER.GetShortUIName]"
  IT_HAS_DOMINANT_RULING_GENDER_TRIGGER: "Doktríny víry [FAITH.GetName] umožňují, aby [CHARACTER.GetWomenMen] [Select_CString( CHARACTER.IsFemale, 'mohly', 'mohli' )] získávat tituly od vládců"
  NOT_IT_HAS_DOMINANT_RULING_GENDER_TRIGGER: "Doktríny víry [FAITH.GetName] #bold neumožňují#!, aby [TARGET_CHARACTER.GetWomenMen] [Select_CString( TARGET_CHARACTER.IsFemale, 'mohly', 'mohli' )] získávat tituly od vládců"
- I_HOLD_AT_LEAST_COUNT_HOLY_SITES_OF_FAITH: "Tvé [Concept('realm','panství')|E] obsahuje alespoň $VALUE|0V$ [Concept('holy_sites','svatých míst')|E] víry [FAITH.GetName] a jejich [Concept('holders','držitelé')|E] jsou [FAITH.GetAdjectiveNoTooltip]"
- I_DO_NOT_HOLD_AT_LEAST_COUNT_HOLY_SITES_OF_FAITH: "Tvé [Concept('realm','panství')|E] ani [Concept('confederation','konfederace')|E] #bold neobsahují#! alespoň $VALUE|0V$ [Concept('holy_sites','svatých míst')|E] víry [FAITH.GetName], jejichž [Concept('holders','držitelé')|E] jsou [FAITH.GetAdjectiveNoTooltip] #weak (Nyní: [GetPlayer.MakeScope.ScriptValue('holy_site_reform_tracker_value')|V0])#!"
- I_HOLD_AT_LEAST_COUNT_HOLY_SITES_OF_FAITH_DIRECTLY: "Tvé [Concept('realm','panství')|E] obsahuje alespoň $VALUE|0V$ [Concept('holy_site','svaté místo')|E] víry [FAITH.GetName] a jeho [Concept('holders','držitelé')|E] jsou [FAITH.GetAdjectiveNoTooltip]"
- I_DO_NOT_HOLD_AT_LEAST_COUNT_HOLY_SITES_OF_FAITH_DIRECTLY: "Tvé [Concept('realm','panství')|E] #bold neobsahuje#! alespoň $VALUE|0V$ [Concept('holy_site','svaté místo')|E] víry [FAITH.GetName], jehož [Concept('holders','držitelé')|E] jsou [FAITH.GetAdjectiveNoTooltip]"
+ I_HOLD_AT_LEAST_COUNT_HOLY_SITES_OF_FAITH: "Tvé [Concept('realm','panství')|E] obsahuje [Concept('holy_sites','svatých míst')|E] víry [FAITH.GetName] a jejich [Concept('holders','držitelé')|E] jsou [FAITH.GetAdjectiveNoTooltip] (alespoň $VALUE|0V$)" # todo: CHANGED (predtym: Tvé [Concept('realm','panství')|E] obsahuje alespoň $VALUE|0V$ [Concept('holy_sites','svatých míst')|E] víry [FAITH.GetN)
+ I_DO_NOT_HOLD_AT_LEAST_COUNT_HOLY_SITES_OF_FAITH: "Tvé [Concept('realm','panství')|E] ani [Concept('confederation','konfederace')|E] #bold neobsahují#! [Concept('holy_sites','svatých míst')|E] víry [FAITH.GetName], jejichž [Concept('holders','držitelé')|E] jsou [FAITH.GetAdjectiveNoTooltip] (alespoň $VALUE|0V$) #weak (Nyní: [GetPlayer.MakeScope.ScriptValue('holy_site_reform_tracker_value')|V0])#!" # todo: CHANGED (predtym: Tvé [Concept('realm','panství')|E] ani [Concept('confederation','konfederace')|E] bold neobsahují ! alespoň $VALUE|0V$ [)
+ I_HOLD_AT_LEAST_COUNT_HOLY_SITES_OF_FAITH_DIRECTLY: "Tvé [Concept('realm','panství')|E] obsahuje alespoň $VALUE|0V$ [Concept('holy_site','svaté místo')|E] víry [FAITH.GetName] s [FAITH.GetAdjectiveNoTooltip] [Concept('holder','držitelem')|E]" # todo: CHANGED (predtym: Tvé [Concept('realm','panství')|E] obsahuje alespoň $VALUE|0V$ [Concept('holy_site','svaté místo')|E] víry [FAITH.GetNam)
+ I_DO_NOT_HOLD_AT_LEAST_COUNT_HOLY_SITES_OF_FAITH_DIRECTLY: "Tvé [Concept('realm','panství')|E] #bold neobsahuje#! alespoň $VALUE|0V$ [Concept('holy_site','svaté místo')|E] víry [FAITH.GetName] s [FAITH.GetAdjectiveNoTooltip] [Concept('holder','držitelem')|E]" # todo: CHANGED (predtym: Tvé [Concept('realm','panství')|E] bold neobsahuje ! alespoň $VALUE|0V$ [Concept('holy_site','svaté místo')|E] víry [FAI)
+ number_realm_holy_sites_held_by_faithful: "[realm|E] obsahuje alespoň $VALUE|0V$ [holy_sites|E] [faith|E] držených věřícími [holders|E]" # todo: NEW TRANSLATION
+ direct_realm_holy_sites_held_by_faithful: "[confederation|E] obsahuje alespoň $VALUE|0V$ [holy_sites|E] [faith|E] s věrnými [holders|E]" # todo: NEW TRANSLATION
+ can_create_spiritual_hof_title_trigger_is_hof_tt: "Jste [head_of_faith|E]" # todo: NEW TRANSLATION
  NOT_RELIGION_TAG_TRIGGER: "Tvá [faith|l] #bold není#! součástí $RELIGION|V$"
  CAN_LEGITIMIZE_BASTARDS_IN_FAITH: "[CHARACTER.GetFaith.GetName] umožňuje [Concept('bastards','levobočkům')|E], aby byli [Concept('legitimized','legitimizováni')|E]"
  CANNOT_LEGITIMIZE_BASTARDS_IN_FAITH: "[CHARACTER.GetFaith.GetName] #EMP neumožňuje#! [Concept('bastards','levobočkům')|E], aby byli [Concept('legitimized','legitimizováni')|E]"
  CANNOT_CREATE_HOF_TITLE_AT_OR_ABOVE_LIEGE_TIER: "Nemůžeš se stát [Concept('head_of_faith','hlavou víry')|E], pokud by ses tím dostal na stejnou nebo vyšší [Concept('title_rank','hodnost')|E], než má tvůj [Concept('liege','lenní pán')|E]"
  CHAR_CAN_ONLY_CREATE_ONE_FAITH: "Za tuto postavu již byla reformována nebo vytvořena nová [Concept('faith','víra')|E]!"
+ CHAR_CAN_ONLY_CREATE_ONE_RITE: "Jako tato postava jste již reformovali nebo vytvořili nový [rite|E]!" # todo: NEW TRANSLATION
+ CHAR_CAN_ONLY_EDIT_ONE_RITE: "Jako tato postava jste již upravili [rite|E]!" # todo: NEW TRANSLATION
  has_forced_defender: "Musíš bojovat na straně obránců"
  has_pledged_attacker: "Máš přislíbenou účast na straně útočníků"
  they_have_pledged_as_attacker: "Mají přislíbenou účast na straně útočníků ve [GREAT_HOLY_WAR.GetName] tvé víry"
@@ -50,9 +55,21 @@
  not_has_holy_site_parameter_third: "$TITLE$ #bold neobsahuje#! [Concept('holy_site','svaté místo')|E] s parametrem $PARAMETER_NAME$"
  has_holy_site_parameter_global: "$TITLE$ obsahuje [Concept('holy_site','svaté místo')|E] s parametrem $PARAMETER_NAME$"
  not_has_holy_site_parameter_global: "$TITLE$ #bold neobsahuje#! [Concept('holy_site','svaté místo')|E] s parametrem $PARAMETER_NAME$"
- controls_holy_site_with_parameter_first: "Tvá víra $FAITH$ ovládá [Concept('holy_site','svaté místo')|E] s parametrem $PARAMETER_NAME$"
- not_controls_holy_site_with_parameter_first: "Tvá víra $FAITH$ #bold neovládá#! [Concept('holy_site','svaté místo')|E] s parametrem $PARAMETER_NAME$"
- controls_holy_site_with_parameter_third: "Víra $FAITH$ ovládá [Concept('holy_site','svaté místo')|E] s parametrem $PARAMETER_NAME$"
- not_controls_holy_site_with_parameter_third: "Víra $FAITH$ #bold neovládá#! [Concept('holy_site','svaté místo')|E] s parametrem $PARAMETER_NAME$"
- controls_holy_site_with_parameter_global: "Víra $FAITH$ ovládá [Concept('holy_site','svaté místo')|E] s parametrem $PARAMETER_NAME$"
- not_controls_holy_site_with_parameter_global: "Víra $FAITH$ #bold neovládá#! [Concept('holy_site','svaté místo')|E] s parametrem $PARAMETER_NAME$"
+ controls_holy_site_with_parameter_first: "Tvá víra $FAITH$ ovládá aktivní [Concept('holy_site','svaté místo')|E] s parametrem $PARAMETER_NAME$" # todo: CHANGED (predtym: Tvá víra $FAITH$ ovládá [Concept('holy_site','svaté místo')|E] s parametrem $PARAMETER_NAME$)
+ not_controls_holy_site_with_parameter_first: "Tvá víra $FAITH$ #bold neovládá#! aktivní [Concept('holy_site','svaté místo')|E] s parametrem $PARAMETER_NAME$" # todo: CHANGED (predtym: Tvá víra $FAITH$ bold neovládá ! [Concept('holy_site','svaté místo')|E] s parametrem $PARAMETER_NAME$)
+ controls_holy_site_with_parameter_third: "Víra $FAITH$ ovládá aktivní [Concept('holy_site','svaté místo')|E] s parametrem $PARAMETER_NAME$" # todo: CHANGED (predtym: Víra $FAITH$ ovládá [Concept('holy_site','svaté místo')|E] s parametrem $PARAMETER_NAME$)
+ not_controls_holy_site_with_parameter_third: "Víra $FAITH$ #bold neovládá#! aktivní [Concept('holy_site','svaté místo')|E] s parametrem $PARAMETER_NAME$" # todo: CHANGED (predtym: Víra $FAITH$ bold neovládá ! [Concept('holy_site','svaté místo')|E] s parametrem $PARAMETER_NAME$)
+ controls_holy_site_with_parameter_global: "Víra $FAITH$ ovládá aktivní [Concept('holy_site','svaté místo')|E] s parametrem $PARAMETER_NAME$" # todo: CHANGED (predtym: Víra $FAITH$ ovládá [Concept('holy_site','svaté místo')|E] s parametrem $PARAMETER_NAME$)
+ not_controls_holy_site_with_parameter_global: "Víra $FAITH$ #bold neovládá#! aktivní [Concept('holy_site','svaté místo')|E] s parametrem $PARAMETER_NAME$" # todo: CHANGED (predtym: Víra $FAITH$ bold neovládá ! [Concept('holy_site','svaté místo')|E] s parametrem $PARAMETER_NAME$)
+ is_faith_eminent_holy_site_first: "[HolySite.GetName] je [eminent_holy_site|E] vaší [faith|E]" # todo: NEW TRANSLATION
+ not_is_faith_eminent_holy_site_first: "[HolySite.GetName] #bold není#! [eminent_holy_site|E] vaší [faith|E]" # todo: NEW TRANSLATION
+ is_faith_eminent_holy_site_global: "[HolySite.GetName] je [eminent_holy_site|E] [FAITH.GetName]" # todo: NEW TRANSLATION
+ not_is_faith_eminent_holy_site_global: "[HolySite.GetName] #bold není#! [eminent_holy_site|E] [FAITH.GetName]" # todo: NEW TRANSLATION
+ is_faith_eminent_holy_site_third: "$is_faith_eminent_holy_site_global$" # todo: NEW TRANSLATION
+ not_is_faith_eminent_holy_site_third: "$not_is_faith_eminent_holy_site_global$" # todo: NEW TRANSLATION
+ is_faith_holy_site_first: "[HolySite.GetName] je [holy_site|E] vaší [faith|E]" # todo: NEW TRANSLATION
+ not_is_faith_holy_site_first: "[HolySite.GetName] #bold není#! [holy_site|E] vaší [faith|E]" # todo: NEW TRANSLATION
+ is_faith_holy_site_global: "[HolySite.GetName] je [holy_site|E] [FAITH.GetName]" # todo: NEW TRANSLATION
+ not_is_faith_holy_site_global: "[HolySite.GetName] #bold není#! [holy_site|E] [FAITH.GetName]" # todo: NEW TRANSLATION
+ is_faith_holy_site_third: "$is_faith_holy_site_global$" # todo: NEW TRANSLATION
+ not_is_faith_holy_site_third: "$not_is_faith_holy_site_global$" # todo: NEW TRANSLATION

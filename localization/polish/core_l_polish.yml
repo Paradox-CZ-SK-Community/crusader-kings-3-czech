@@ -15,9 +15,11 @@
  LOAD_GAME: "Načíst hru"
  SAVE_GAME: "Uložit hru"
  DELETE_GAME: "Smazat hru"
+ DELETE_ALL: "#X Smazat vše#!" # todo: NEW TRANSLATION
  SAVE: "Uložit"
  DELETE: "Smazat"
  DELETE_CONFIRMATION_DESC: "Uložená hra $NAME|V$ bude smazána. Opravdu?"
+ DELETE_ALL_CONFIRMATION_DESC: "#X Všechny#! uložené hry včetně těch uložených v cloudu budou smazány. Tuto akci nelze vrátit zpět. Jste si jisti?" # todo: NEW TRANSLATION
  OLD_SAVE: "Starší uložená hra"
  OLD_SAVE_CONFIRMATION_DESC_INTRO: "@warning_icon! #X Tato uložená hra pochází ze starší verze hry (verze $OLD_SAVE_VERSION$).#!\n\n#alert_bold Hra nemusí fungovat podle očekávání#!."
  OLD_SAVE_CONFIRMATION_DESC: "$OLD_SAVE_CONFIRMATION_DESC_INTRO$\n\nOpravdu chceš tuto uloženou hru načíst?"
@@ -120,6 +122,7 @@
  CHARACTER_DEAD_TOOLTIP_HIDE_KILLER: "[Character.GetDeathReasonHideKiller|U] dne $CHARACTER_DEAD_TOOLTIP_DATE_INFO$"
  CHARACTER_HOSTAGE_TOOLTIP: "#T [Concept('hostage','Rukojmí')|E]#!\n[Character.GetUINameNotMe] je nyní [Concept('hostage','rukojmí')|E]; [Concept('warden','strážce')|E]: [TARGET_CHARACTER.GetShortUIName], [Concept('home_court','domovský dvůr')|E]: [TARGET_CHARACTER_2.GetShortUIName]"
  CHARACTER_INCAPABLE_TOOLTIP: "#T Neschopnost#!\n[Character.GetUINameNotMe] má vlastnost [GetTrait('incapable').GetName( Character.Self )] a nemůže jednat samostatně"
+ CHARACTER_PUPPET_TOOLTIP: "#T Loutka#!\n[Character.GetUINameNotMe] je vaše [puppet|E]" # todo: NEW TRANSLATION
  CHARACTER_TRAVELING_TOOLTIP: "#T Na cestě#!\n[traveling|E] směrem k [Character.GetTravelPlan.GetData.GetNextDestination.GetProvince.GetName] [SelectLocalization(Character.GetTravelPlan.GetData.GetActivity.IsValid, 'CHARACTER_TRAVELING_ACTIVITY_TOOLTIP_ADDITION', '')]"
  CHARACTER_AWAY_TOOLTIP: "#T Mimo domov#!\n[SelectLocalization( Or( Character.IsCommandingArmy, Character.IsKnightInArmy ), 'CHARACTER_AWAY_DETAIL_ARMY_TOOLTIP', 'CHARACTER_AWAY_DETAIL_GENERIC_TOOLTIP' )]"
  CHARACTER_AWAY_DETAIL_ARMY_TOOLTIP: "[SelectLocalization( Character.IsCommandingArmy, 'CHARACTER_AWAY_DETAIL_COMMANDING_ARMY', 'CHARACTER_AWAY_DETAIL_KNIGHT_IN_ARMY' )]; poloha: [SelectLocalization( Character.IsCommandingArmy, Character.GetCommandingArmy.GetLocation.GetName, Character.GetKnightArmy.GetLocation.GetName )]"
@@ -181,6 +184,7 @@
  AI_VALUE_MODIFIER_SHYNESS: "Plachost: $VALUE|=+0$"
  AI_VALUE_MODIFIER_DREAD_MODIFIED_BOLDNESS: "Troufalost a hrůza: $VALUE|=+0$"
  AI_VALUE_MODIFIER_DREAD_MODIFIED_COWARDICE: "Zbabělost a hrůza: $VALUE|=+0$"
+ your: "váš" # todo: NEW TRANSLATION
  CHARACTER_SHEHE_SHE: "ona"
  CHARACTER_SHEHE_HE: "on"
  CHARACTER_SHEHE_IT: "ono"
@@ -278,7 +282,7 @@
  RAISE_HIRED_TROOP: "Svolat"
  DISBAND_ALL: "Rozpustit všechny"
  MERCENARIES: "Žoldnéři"
- HOLY_ORDERS: "Svaté řády"
+ HOLY_ORDERS: "Vojenské řády" # todo: CHANGED (predtym: Svaté řády)
  SORT_RANK: "Hodnost"
  SORT_NAME: "Jméno"
  SORT_OPINION: "Mínění o tobě"
@@ -435,6 +439,7 @@
  NEUTRAL_COLOR: "$KEY|Z$"
  GOTO_PROVINCE: "Přejít na místo"
  GOTO_PROVINCE_TT: "#T $GOTO_PROVINCE$#!"
+ GOTO_OPEN_PROVINCE: "$GOTO_PROVINCE_TT$\n#i Kliknutím pravým tlačítkem zobrazíte hrabství#!" # todo: NEW TRANSLATION
  DYNASTY: "Dynastie"
  DYNASTY_HOUSE: "Rod"
  MENU: "Nabídka"
@@ -492,6 +497,7 @@
  ERROR_HOOF_5: "Jsem Smug Kid. Občas jsem tu místo Errorhoofa. Dívám se na tvou chybu a tvářím se u toho samolibě. Mimochodem, ve hře jsou chyby. Počet chyb: $ERRORS$. $ERROR_ACTION$"
  ERROR_HOOF_6: "Jsem Cool Guy. Občas jsem tu místo Errorhoofa. Já jsem velký frajer, ale chyby ve tvé hře ne. Počet chyb: $ERRORS$. $ERROR_ACTION$"
  ERROR_HOOF_7: "Jsem Angelhoof Milosrdný. Odpouštím mnohé, ale chyby ve tvé hře mezi ně nepatří. Počet chyb: $ERRORS$. $ERROR_ACTION$"
+ ERROR_HOOF_8: "Jsem křeček Konrád. Někdy jsem tu místo Errorhoofa. Jsem moc roztomilý, ale $ERRORS$ chyb ve vaší hře roztomilých není. $ERROR_ACTION$" # todo: NEW TRANSLATION
  ENABLED_MODS: "Povolené mody:"
  RALLY_POINT_NAME: "Shromaždiště v [PROVINCE.GetNameNoTooltip]"
  CONFIRM: "Potvrdit"
@@ -782,6 +788,7 @@
  BULLET_WITH_TAB: "    • "
  BULLET: "$EFFECT_LIST_BULLET$"
  MODIFIER_BULLET: "$EFFECT_LIST_BULLET$"
+ BULLET_ENTRY: "#indent_newline:3 $EFFECT_LIST_BULLET$$ITEM$#!" # todo: NEW TRANSLATION
  TAB: "    "
  SHORT_TAB: "   "
  HOUSE_CADET_BRANCH_NAME_FORMAT: "$DYNASTY$-$TITLE$"
@@ -868,8 +875,8 @@
  CHARACTER_INTERACTION_BLACKMAIL_ALREADY_STRONG_HOOK: "[CHARACTER.GetShortUIName|U] již má [Concept('strong_hook','silnou páku')|E]; cíl: [TARGET_CHARACTER.GetShortUIName|U]"
  RESET_DISMISSED_BUTTON_TEXT: "Obnovit"
  RESET_DISMISSED_TOOLTIP: "#T Obnovit#!\nVrátí $CURRENT_SITUATION_TIPS$ a upozornění, která jsi skryl.\n\n#I Kliknutím obnovíš seznam#!"
- CHARACTER_INTERACTION_SAME_REALM_AS: "Musí být součástí tvého [Concept('realm','panství')|E]"
- NOT_CHARACTER_INTERACTION_SAME_REALM_AS: "Nesmí být součástí tvého [Concept('realm','panství')|E]"
+ CHARACTER_INTERACTION_SAME_REALM_AS: "Musí být součástí [CHARACTER.GetShortUINamePossessive] [Concept('realm','panství')|E]" # todo: CHANGED (predtym: Musí být součástí tvého [Concept('realm','panství')|E])
+ NOT_CHARACTER_INTERACTION_SAME_REALM_AS: "Nesmí být součástí [CHARACTER.GetShortUINamePossessive] [Concept('realm','panství')|E]" # todo: CHANGED (predtym: Nesmí být součástí tvého [Concept('realm','panství')|E])
  CHARACTER_INTERACTION_NOT_ALLOWED_IN_VARANGIAN_GUARD: "V cílovém [Concept('court','dvoře')|E] nesmí sloužit jako [Concept('knight','rytíř')|E]"
  SET_CHARACTER_CONTROLLER_TITLE: "$TITLE$"
  SET_CHARACTER_CONTROLLER_TEXT: "$TEXT$"
@@ -925,6 +932,10 @@
  compare_date_trigger_operator_less_or_equal: "nejpozději"
  compare_date_trigger_operator_equal: "právě"
  compare_date_trigger_operator_not_equal: "jindy než"
+ character_rite_equal: "[CHARACTER.GetNamePossessiveOrMy|U] [rite|E] je [RITE.GetName]" # todo: NEW TRANSLATION
+ character_rite_not_equal: "[CHARACTER.GetNamePossessiveOrMy|U] [rite|E] #bold není#! [RITE.GetName]" # todo: NEW TRANSLATION
+ head_of_rite_equal: "[CHARACTER.GetNamePossessiveOrMy|U] je [head_of_rite|E]" # todo: NEW TRANSLATION
+ head_of_rite_not_equal: "[CHARACTER.GetNamePossessiveOrMy|U] #bold není#! [head_of_rite|E]" # todo: NEW TRANSLATION
  COURT_CONCEPT: "[Concept('court','Dvůr')|E]"
  CAMP: "[Concept('camp','Tábor')|E]"
  CAMP_BUILDINGS: "[Concept('camp_buildings','Vylepšení tábora')|E]"
@@ -966,6 +977,7 @@
  secrecy.scheme_owner.prowess: "Tvoje [Concept('prowess','udatnost')|E]"
  realm_chart_perk_same_realm_secrecy: "$realm_charts_perk_name$"
  secrecy.scheme_owner.spymaster.disrupt_schemes: "[Concept('spymaster','Špehmistr')|E]: [disrupt_schemes|E]"
+ secrecy.own_court: "[scheme_target|E] u vašeho [owner.Custom('GetCourtConcept')]" # todo: NEW TRANSLATION
  tooltipped_camp_purpose_wanderers: "[GetLaw('camp_purpose_wanderers').GetName]"
  tooltipped_camp_purpose_mercenaries: "[GetLaw('camp_purpose_mercenaries').GetName]"
  tooltipped_camp_purpose_scholars: "[GetLaw('camp_purpose_scholars').GetName]"
@@ -1012,6 +1024,10 @@
  BREAKDOWN_ENTRY_TREASURY_MILITARY_BUDGET_BASE: "[Concept('treasury_budget_base_rate_short','Základní sazba')|E]"
  BREAKDOWN_ENTRY_TREASURY_MILITARY_BUDGET_MULT: "Násobitel rozpočtu"
  BREAKDOWN_ENTRY_TREASURY_MILITARY_BUDGET_VASSAL: "[CHARACTER.GetPrimaryTitle.GetName]"
+ BREAKDOWN_ENTRY_TREASURY_CARDINAL_BUDGET: "[treasury_cardinal_budget|E]" # todo: NEW TRANSLATION
+ BREAKDOWN_ENTRY_TREASURY_CARDINAL_BUDGET_BASE: "[treasury_budget_base_rate_short|E]" # todo: NEW TRANSLATION
+ BREAKDOWN_ENTRY_TREASURY_CARDINAL_BUDGET_MULT: "Násobitel rozpočtu" # todo: NEW TRANSLATION
+ BREAKDOWN_ENTRY_TREASURY_CARDINAL_BUDGET_VASSAL: "[CHARACTER.GetName]" # todo: NEW TRANSLATION
  CANT_TICK_UNPAUSED: "Toto nemůžeš provést, když hra není pozastavena."
  CANT_TICK_OTHER_PLAYER_PAUSED: "Hru pozastavil jiný hráč."
  CANT_TICK_TEMPORARILY_PAUSED: "Hra je dočasně pozastavena, například kvůli události."
@@ -1019,3 +1035,7 @@
  confucian_education_modifier: "[GetTrait('confucian_education').GetName( GetNullCharacter )]"
  tutor_modifier: "Zaměstnává: [GetCourtPositionType('court_tutor_court_position').GetName()]"
  mourned_parent_modifier: "Zkušenosti úcty k rodičům #weak (ztráta rodiče)#!"
+ MODEL_LIST_SEPARATOR_AND: "[SelectLocalization( '(int_bool)$IS_LAST_ITEM|q$', 'AND', 'COMMA' )]" # todo: NEW TRANSLATION
+ MODEL_LIST_SEPARATOR_OR: " [SelectLocalization( '(int_bool)$IS_LAST_ITEM|q$', 'OR', 'COMMA' )]" # todo: NEW TRANSLATION
+ MODEL_LIST_SEPARATOR_AND_LIST: "[SelectLocalization( '(int_bool)$IS_LAST_ITEM|q$', 'AND_LIST', 'COMMA' )]" # todo: NEW TRANSLATION
+ MODEL_LIST_SEPARATOR_OR_LIST: "[SelectLocalization( '(int_bool)$IS_LAST_ITEM|q$', 'OR_LIST', 'COMMA' )]" # todo: NEW TRANSLATION

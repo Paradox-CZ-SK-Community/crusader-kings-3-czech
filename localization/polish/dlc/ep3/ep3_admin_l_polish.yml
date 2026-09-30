@@ -99,7 +99,7 @@
  house_aspiration_parameter_candidate_score_per_piety_level_1: "[Concept('candidate_score','Skóre kandidáta')|E] za [Concept('piety_level','úroveň oddanosti')|E] pro členy [Concept('house','rod')|E]: @appointment_score![EmptyScope.ScriptValue('candidate_score_per_piety_level_1_value')|=+0]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  house_aspiration_parameter_candidate_score_per_piety_level_2: "[Concept('candidate_score','Skóre kandidáta')|E] za [Concept('piety_level','úroveň oddanosti')|E] pro členy [Concept('house','rod')|E]: @appointment_score![EmptyScope.ScriptValue('candidate_score_per_piety_level_2_value')|=+0]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  house_aspiration_parameter_candidate_score_per_piety_level_3: "[Concept('candidate_score','Skóre kandidáta')|E] za [Concept('piety_level','úroveň oddanosti')|E] pro členy [Concept('house','rod')|E]: @appointment_score![EmptyScope.ScriptValue('candidate_score_per_piety_level_3_value')|=+0]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- members_in_realm_desc: "Žijící členové [Concept('house','rod')|E] v [Concept('realm','panství')|E]" # todo: CONCEPT CASE
+ members_in_realm_desc: "Žijící členové [Concept('house','rod')|E]" # todo: CHANGED (predtym: Žijící členové [Concept('house','rod')|E] v [Concept('realm','panství')|E])
  house_head_influence_level_desc: "[Concept('house_heads_possessive','Hlavy rodu')|E] [Concept('influence_level','Úroveň vlivu')|E]" # todo: CONCEPT CASE
  house_members_on_council_desc: "Členové [Concept('house','rod')|E] na [Concept('council','radu')|E] [Concept('top_liege','nejvyššího lenního pána')|E]" # todo: CONCEPT CASE
  estate_buildings_desc: "[Concept('estate_buildings','Budovy statků')|E]" # todo: CONCEPT CASE
@@ -108,7 +108,7 @@
  house_title_holders_desc: "[Concept('house','Rod')|E] členové s [Concept('landed','zeměpánem')|E]" # todo: CONCEPT CASE
  imperial_theme_type_desc: "[GetSubjectContractType( 'administrative_themes' ).GetObligationName( 'admin_theme_imperial' )]"
  house_power_ep3_administrative_legacy_3: "[GetDynastyPerk('ep3_administrative_legacy_3').GetName]" # todo: NEW TRANSLATION
- house_head_different_faith_powerful_family_rating: "[Concept('house_head','Hlava rodu')|E] nevyznává [Concept('state_faith','státní víra')|E]" # todo: CONCEPT CASE
+ house_head_different_faith_powerful_family_rating: "[Concept('house_head','Hlava rodu')|E] nevyznává [Concept('state_rite','státní ritus')|E]" # todo: CHANGED (predtym: [Concept('house_head','Hlava rodu')|E] nevyznává [Concept('state_faith','státní víra')|E])
  imperial_house_desc: "Je to císařský [Concept('house','rod')|E]" # todo: CONCEPT CASE
  tgp_ceremonial_house_desc: "Je [Concept('ceremonial_house','obřadní rod')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  house_is_lowborn_desc: "Je [Concept('lowborn','neurozený')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
@@ -133,10 +133,10 @@
  republican_knowledge_3_desc: "[GetTrait('education_republican_knowledge_3').GetName( ROOT.Char )] [Concept('trait','Rys')|E]" # todo: CONCEPT CASE
  republican_knowledge_4_desc: "[GetTrait('education_republican_knowledge_4').GetName( ROOT.Char )] [Concept('trait','Rys')|E]" # todo: CONCEPT CASE
  admin_contract_cooldown_desc: "[recipient.Custom('GetProvinceAdministrationConcept')] lze změnit pouze jednou za [EmptyScope.ScriptValue('admin_contract_cooldown_value')|V0] let - Změnit znovu lze po [GetCurrentDateWithDiff( GetVarTimeRemaining( recipient.MakeScope, 'admin_contract_cooldown') )|V]"
- admin_contract_cooldown_desc_vassal: "[actor.Custom('GetProvinceAdministrationConcept')] lze změnit pouze jednou za [EmptyScope.ScriptValue('admin_contract_cooldown_value')|V0] let - Změnit znovu lze po [GetCurrentDateWithDiff( GetVarTimeRemaining( actor.MakeScope, 'admin_contract_cooldown') )|V]"
- admin_contract_request_cooldown_desc: "Můžete #bold ne#! podat další žádost do [GetCurrentDateWithDiff( GetVarTimeRemaining( actor.MakeScope, 'admin_contract_request_cooldown') )|V]"
+ admin_contract_cooldown_desc_vassal: "[puppet_or_actor.Custom('GetProvinceAdministrationConcept')] lze změnit pouze jednou za [EmptyScope.ScriptValue('admin_contract_cooldown_value')|V0] let - Změnit znovu lze po [GetCurrentDateWithDiff( GetVarTimeRemaining( puppet_or_actor.MakeScope, 'admin_contract_cooldown') )|V]" # todo: CHANGED (predtym: [actor.Custom('GetProvinceAdministrationConcept')] lze změnit pouze jednou za [EmptyScope.ScriptValue('admin_contract_co)
+ admin_contract_request_cooldown_desc: "[puppet_or_actor.GetShortUIName|U] #bold nemůže#! podat další žádost do [GetCurrentDateWithDiff( GetVarTimeRemaining( puppet_or_actor.MakeScope, 'admin_contract_request_cooldown') )|V]" # todo: CHANGED (predtym: Můžete bold ne ! podat další žádost do [GetCurrentDateWithDiff( GetVarTimeRemaining( actor.MakeScope, 'admin_contract_re)
  admin_vassal_force_obligation_change_desc: "[recipient.GetShortUIName] je nucen přijmout"
- admin_vassal_not_holding_a_theme_desc: "Neovládáte [GetPlayer.Custom('GetProvinceConcept')]."
+ admin_vassal_not_holding_a_theme_desc: "[puppet_or_actor.GetShortUIName|U] [CharDoDoes(puppet_or_actor)] #bold nedrží#! [GetPlayer.Custom('GetProvinceConcept')]." # todo: CHANGED (predtym: Neovládáte [GetPlayer.Custom('GetProvinceConcept')].)
  msg_governor_duties_t: "Povinnosti [GetPlayer.Custom('GetGovernorConceptNoTooltip')]"
  admin_construction_completed_desc: "Stavba dokončena"
  admin_investment_breakdown_investments: "Investice"
@@ -170,7 +170,7 @@
  chancellor_integrate_title_admin_target_bonus_desc: "Administrativní rozdrobení"
  de_jure_governor_desc: "[Concept('counties','Hrabství')|E], které nejsou [Concept('de_jure','de iure')|E] [Concept('top_liege_possessive','nejvyššího lenního pána')|E] [Concept('primary_title','hlavní titul')|E]" # todo: CONCEPT CASE
  adopt_admin_government_tt: "Můžete přijmout [GetGovernment('administrative_government').GetName] [Concept('government','vláda')|E]" # todo: CONCEPT CASE
- has_admin_government: "Máte [GetGovernment('administrative_government').GetName] [Concept('government','vlády')|E]" # todo: CONCEPT CASE
+ has_admin_government: "Máte [government_bureaucratic_gov|E]" # todo: CHANGED (predtym: Máte [GetGovernment('administrative_government').GetName] [Concept('government','vlády')|E])
  admin_renounce_throne_desc: "[secondary_recipient.GetShortUIName|U], nebo [Concept('house_head','hlava rodu')|E] rodu [Concept('house','rodu')|E] [secondary_recipient.GetHouse.GetName], se zřekli nároků na trůn a nelze je podpořit" # todo: CONCEPT CASE
  ep3_admin_events.0001.t: "Změna směru"
  ep3_admin_events.0001.intro: "Přišla zpráva od [liege.GetTitledFirstName] prostřednictvím jednoho z [Select_CString(liege.IsFemale,'jejích','jeho')] písařů — je čas na změnu.\n\n[scribe.GetWomanMan] [scribe.Custom('quirk_pos_present')] před přečtením ediktu:\n\n"
@@ -218,4 +218,4 @@
  ep3_admin_events.0005.desc_still_admin: "Naše kdysi velká říše už neexistuje, ocitl jsem se mimo vliv [gov_liege.GetFirstNamePossessive]. To mě ponechává v čele [ROOT.Char.GetPrimaryTitle.GetNameNoTier]. Kromě mé nezávislosti a volné vlády se příliš nezmění. Byrokracie je zakořeněná v našem způsobu života a zůstane tak."
  ep3_admin_events.0005.desc_lost_admin: "Jak už to tak bývá, naše velká říše byla ztracena. A spolu s ní byla byrokracie, která řídila náš způsob života, zredukována na popel. Mám málo možností kromě přizpůsobit svou vládu této nové realitě."
  ep3_admin_events.0005.a: "Nechme minulost za námi a hleďme do budoucnosti!"
- demand_admin_tribal: "[recipient.GetShortUIName|U] [Select_CString( recipient.IsLocalPlayer, 'jsi', 'je' )] [Concept('tribal','Kmenový')|E] - Pouze usazené [Concept('governments','vlády')|E] se mohou stát [Concept('administrative','administrativní')|E]" # todo: CONCEPT CASE
+ demand_admin_tribal: "[recipient.GetShortUIName|U] [Select_CString( recipient.IsLocalPlayer, 'jsi', 'je' )] [Concept('tribal','Kmenový')|E] - Pouze usazené [Concept('governments','vlády')|E] se mohou stát [Concept('government_bureaucratic_type','byrokratickými')|E]" # todo: CHANGED, CHECK FORMAT (predtym: [recipient.GetShortUIName|U] [Select_CString( recipient.IsLocalPlayer, 'jsi', 'je' )] [Concept('tribal','Kmenový')|E] - )

@@ -5,10 +5,15 @@
  FAITH_VIEW_REFORMED_SUBHEADING: "[Concept('organized','Organizovaná')|E] [Faith.GetReligion.GetAdjective] [Concept('faith','víra')|E]"
  FAITH_VIEW_OUR_VIEW: "Pro nás je jejich víra [GetPlayer.GetFaith.GetRelationNameTo( Faith.Self )|V]"
  FAITH_VIEW_THEIR_VIEW: "Pro ně je naše víra [Faith.GetRelationNameTo( GetPlayer.GetFaith )|V]"
+ RITE_VIEW_OUR_VIEW: "Považujeme tento [rite|E] za #medium [GetPlayer.GetRite.GetRelationNameTo( Rite.Self )]#!" # todo: NEW TRANSLATION
+ RITE_VIEW_THEIR_VIEW: "Považují nás za #medium [Rite.GetRelationNameTo( GetPlayer.GetRite )]#!" # todo: NEW TRANSLATION
+ RITE_VIEW_OUR_AND_THEIR_VIEW: "$RITE_VIEW_OUR_VIEW$\n$RITE_VIEW_THEIR_VIEW$" # todo: NEW TRANSLATION
+ RITE_VIEW_OUR_AND_THEIR_VIEW_ONE_LiNE: "$FAITH_VIEW_OUR_VIEW$, $FAITH_VIEW_THEIR_VIEW$" # todo: NEW TRANSLATION
  FAITH_VIEW_YOUR_FAITH: "Tvá [Concept('faith','víra')|E]"
  FAITH_COOLTIP_GETNAME: "[Faith.GetNameNoTooltip]"
  PATTERNITEM_GETFAITH: "[PatternItem.GetFaith.GetNameNoTooltip]"
  WINDOW_COUNTY_FAITH_NAME: "[Faith.GetNameNoTooltip]"
+ WINDOW_COUNTY_RITE_NAME: "[Rite.GetNameNoTooltip]" # todo: NEW TRANSLATION
  RULER_DESIGNER_GETFAITH: "[Faith.GetNameNoTooltip]"
  RULER_DESIGNER_LOAD_GETFAITH: "[Faith.GetNameNoTooltip]"
  CULTURE_AESTHETICS_DIVERGE_CULTURE: "[CultureAesthetics.GetName]"
@@ -18,96 +23,49 @@
  HUD_GETCULTURE: "[Culture.GetNameNoTooltip] kultura"
  RULER_DESIGNER_CULTURE_PILLAR_NAME: "[CulturePillar.GetNameNoTooltip]"
  RULER_DESIGNER_CULTURE_TEMPLATE_NAME: "[CultureTemplate.GetName]"
- RULER_DESIGNER_FAITH_RELIGION_NAME: "[Faith.GetReligion.GetNameNoTooltip]"
+ RULER_DESIGNER_RITE_NAME: "[Rite.GetNameNoTooltip]" # todo: NEW TRANSLATION
  RULER_DESIGNER_LOAD_FAITH_RELIGION_NAME: "[Faith.GetReligion.GetNameNoTooltip]"
  RULER_DESIGNER_RELIGION: "[Religion.GetNameNoTooltip]"
  STRUGGLE_CULTURE_CHARACTER_NAME: "[Character.GetCulture.GetName]"
  SITUATION_CULTURE_CHARACTER_NAME: "[Character.GetCulture.GetName]"
- TOGGLE_RELIGION_VIEW: "Ostatní víry"
  RELIGION_WINDOW_TITLE: "Ostatní víry"
+ TENETS_WINDOW_TITLE: "[Rite.GetName] [tenet_status|E]" # todo: NEW TRANSLATION
+ TOGGLE_TENETS_WINDOW_TT: "#T Zobrazit [tenet_status|E] [Rite.GetName] u každé [core_tenet|E]#!" # todo: NEW TRANSLATION
  FAITH_ITEM_TOOLTIP: "#I Kliknutím zobrazíš#!"
+ RITE_ITEM_TOOLTIP: "#I Kliknutím zobrazíte [Rite.GetNameNoTooltip]#!" # todo: NEW TRANSLATION
  FAITH_TOOLTIP_HEAD_OF_FAITH: "[Concept('head_of_faith','Hlava víry')|E]: [Faith.GetReligiousHead.GetUIName|U]"
- TOGGLE_RELIGION_VIEW_TOOLTIP: "#I Kliknutím zobrazíš ostatní [Concept('faiths','víry')|E]#!"
+ TOGGLE_FAITH_VIEW_TT: "#T Ostatní víry#!\n\n#I Kliknutím zobrazíte ostatní [faiths|E]#!" # todo: NEW TRANSLATION
+ FAITH_VIEW_COMPACT_TENETS_TT: "#T Přepnout přehled [core_tenet|E]#!" # todo: NEW TRANSLATION
+ FAITH_VIEW_EXPAND_DOCTRINES: "[Select_CString( GetVariableSystem.Exists( 'compact_faith_window' ), 'Rozbaleno', 'Rozbalit' )]" # todo: NEW TRANSLATION
+ FAITH_VIEW_EXPAND_DOCTRINES_TT: "#T [Select_CString( GetVariableSystem.Exists( 'compact_faith_window' ), 'Sbalit', 'Rozbalit' )] seznam [doctrines|E]#!" # todo: NEW TRANSLATION
  FAITH_WINDOW_FERVOR: "[Concept('fervor','Horlivost')|E]: [Faith.GetFervor|0]%"
+ FAITH_WINDOW_FERVOR_SHORT: "[Faith.GetFervor|0]%" # todo: NEW TRANSLATION
  FAITH_WINDOW_VIRTUES: "[Concept('virtues','Ctnosti')|E]"
  FAITH_WINDOW_SINS: "[Concept('sins','Hříchy')|E]"
- FAITH_WINDOW_DOCTRINE_TOOLTIP: "#T [FaithDoctrine.GetNameNoTooltip( DoctrineItem.GetFaith )]#!\n[FaithDoctrine.GetEffectsDescription( DoctrineItem.GetFaith )]\n\n[FaithDoctrine.GetDescription( DoctrineItem.GetFaith )|F]"
- FAITH_WINDOW_DOCTRINE_TOOLTIP_WITH_FAITH: "#T [FaithDoctrine.GetNameNoTooltip( Faith.Self )]#!\n[FaithDoctrine.GetEffectsDescription( Faith.Self )]\n\n[FaithDoctrine.GetDescription( Faith.Self )|F]"
  FAITH_TOOLTIP_DOCTRINE_HEAD_OF_FAITH: "[Concept('head_of_faith','Hlava víry')|E]: [Faith.GetReligiousHead.GetShortUIName|U]"
  FAITH_TOOLTIP_DOCTRINE_NO_HEAD_OF_FAITH: "Žádná [Concept('head_of_faith','hlava víry')|E]"
  FAITH_TOOLTIP_DOCTRINE_VACANT_HEAD_OF_FAITH: "[Concept('head_of_faith','Hlava víry')|E]: neobsazena"
- FAITH_WINDOW_DOCTRINE_SELECT_TOOLTIP: "$FAITH_WINDOW_DOCTRINE_TOOLTIP$\n\n[FaithCreationDoctrineItem.GetBlockers]#I Kliknutím vybereš [FaithDoctrine.GetName( DoctrineItem.GetFaith )]#!"
- FAITH_WINDOW_DOCTRINE_CHANGE_TOOLTIP: "$FAITH_WINDOW_DOCTRINE_TOOLTIP$\n\n[FaithCreationDoctrineItem.GetBlockers]Cena: [piety_i][FaithDoctrine.CalcPietyCost( DoctrineItem.GetFaith )|0]\n#I Kliknutím změníš#!"
- DOCTRINE_BLOCKS_FAITH_CREATION: "@warning_icon! #X [FAITH_DOCTRINE.GetName( GetPlayer.GetFaith )] není povoleno#!"
- CANNOT_CREATE_FAITH_IN_OBSERVE_MODE: "@warning_icon! #X Musíš hrát za postavu#!"
- FAITH_CREATION_BUTTON_TOOLTIP: "#T Vytvořit víru#!\n[Select_CString( FaithCreationWindow.CanCreateFaith, '#I Kliknutím vytvoříš víru#!', FaithCreationWindow.GetCreationBlockers )]"
- FAITH_REFORM_BUTTON_TOOLTIP: "#T Reformovat víru#!\n[FaithCreationWindow.GetCreationBlockers]\n\n#I Kliknutím reformuješ víru#!"
- FAITH_CONVERSION_BUTTON_TOOLTIP: "#T Konvertovat k víře#!\n[FaithConversionWindow.GetConversionBlockers]#I Kliknutím konvertuješ k víře#![AddLocalizationIf( And( Not( Faith.HasDoctrine( GetFaithDoctrine( 'doctrine_polytheist' ) ) ), GetPlayer.GetGovernment.HasGovernmentFlag( 'government_is_mandala' ) ), 'mandala_monotheist_warning')]"
- FAITH_CONVERSION_SAME_FAITH: "Již následuji víru [FAITH.GetName]"
- CREATE_REFORM_FAITH_TEXT: "[SelectLocalization( GetPlayer.GetFaith.IsUnreformed, 'REFORM_FAITH_WINDOW_TITLE', 'CREATE_FAITH_WINDOW_TITLE' )]"
- CREATE_REFORM_FAITH_TOOLTIP: "[SelectLocalization( GetPlayer.GetFaith.IsUnreformed, 'REFORM_FAITH_WINDOW_TITLE_TOOLTIP', 'CREATE_FAITH_WINDOW_TITLE_TOOLTIP' )]"
- CREATE_FAITH_WINDOW_TITLE: "Vytvořit novou [GetPlayer.GetFaith.GetReligion.GetAdjectiveNoTooltip] víru"
- REFORM_FAITH_WINDOW_TITLE: "Reformovat víru [GetPlayer.GetFaith.GetNameNoTooltip]"
- CREATE_FAITH_WINDOW_TITLE_TOOLTIP: "#T $CREATE_FAITH_WINDOW_TITLE$#!\nVytvořit novou [Concept('faith','víru')|E] výběrem [Concept('core_tenets','zásad')|E] a [Concept('doctrines','doktrín')|E]"
- REFORM_FAITH_WINDOW_TITLE_TOOLTIP: "#T $REFORM_FAITH_WINDOW_TITLE$#!\nReformovat [Concept('faith','víru')|E] [GetPlayer.GetFaith.GetNameNoTooltip] výběrem [Concept('core_tenets','zásad')|E] a [Concept('doctrines','doktrín')|E]"
- CONVERT_FAITH_WINDOW_TITLE_UI: "Konvertovat k víře [Faith.GetNameNoTooltip]"
- CONVERT_FAITH_WINDOW_TITLE: "Konvertovat k víře [FAITH.GetNameNoTooltip]"
- FAITH_CREATION_DOCTRINES_PIETY_COST: "Cena doktrín bez slevy: [piety_i]$VALUE|V$"
- FAITH_CONVERSION_DISCOUNT: "Sleva na konverzi: [piety_i]$VALUE|P%0$"
- FAITH_CREATION_COST_TOOLTIP: "#T Cena vytvoření: [piety_i][FaithCreationWindow.CalcPietyCost]#!\n[FaithCreationWindow.GetPietyCostDesc]"
- FAITH_CONVERSION_COST_TOOLTIP: "#T Cena konverze: [piety_i][FaithConversionWindow.CalcPietyCost]#!\n[FaithConversionWindow.GetPietyCostDesc]"
- FAITH_NAME_ALREADY_IN_USE: "@warning_icon! #X Název již používá [FAITH.GetName]#!"
- FAITH_MUST_BE_UNIQUE: "@warning_icon! #X Víra musí být v rámci svého náboženství jedinečná. Momentálně má přesně stejné doktríny jako [FAITH.GetName]#!"
- MUST_SELECT_FAITH_ICON: "@warning_icon! #X Musíš vybrat ikonu nové víry#!"
- SELECT_FAITH_ICON: "Vybrat ikonu víry"
- CHANGE_FAITH_ICON: "#T Změnit ikonu víry#!\n#I Kliknutím přepneš ikonu víry#!"
- SELECT_FAITH_ICON_TOOLTIP: "#T Vybrat ikonu víry#!\n#I Kliknutím vybereš tuto ikonu víry#!"
- VASSAL_WILL_CONVERT: "#P Konvertuje ($VALUE|0$)#!"
- VASSAL_MIGHT_CONVERT: "#V Může konvertovat ($VALUE|0$)#!"
- VASSAL_WILL_NOT_CONVERT: "#N Nebude konvertovat ($VALUE|0$)#!"
- VASSAL_CONVERSION_HEADER: "Vazalové, kteří konvertují"
- VASSAL_CONVERSION_TOOLTIP: "#T $VASSAL_CONVERSION_TEXT$#!"
- FAITH_CREATION_ADOPTION: "Přijetí v panství"
- FAITH_CREATION_ADOPTION_TEXT: "Má [Concept('close_family','blízká rodina')|E] konvertuje\n[VassalConversionWindow.GetNumberOfVassalsToConvert] z [VassalConversionWindow.GetNumberOfVassals] [Concept('vassals','vazalů')|E] konvertuje také"
- FAITH_CREATION_TOLERANCE: "Tolerance staré víry"
- FAITH_CREATION_TOLERANCE_TEXT: "Pro tvou starou víru bude tvá víra [GetHostilityLevelName( FaithCreationWindow.GetHostilityLevel )|l]"
- FAITH_CONVERSION_TOLERANCE_TEXT: "Pro tvou starou víru bude tvá víra [GetHostilityLevelName( FaithConversionWindow.GetHostilityLevel )|l]"
- FAITH_CREATION_OPEN_VASSAL_LIST: "Zobrazit vazaly"
- FAITH_CREATION_PAGAN_REFORM: "Reforma pohanské víry"
- FAITH_CREATION_PAGAN_REFORM_TEXT: "Reforma #high [GetPlayer.GetFaith.GetName]#! z ní učiní [Concept('organized','organizovanou')|E] [Concept('faith','víru')|E]. Organizované víry mají přístup ke [Concept('holy_wars','svatým válkám')|E] a jejich [Concept('court_chaplains','dvorní kaplani')|E] jsou lepší v konvertování [Concept('counties','hrabství')|E]."
- FAITH_CREATION_ADDS_CHURCH_PROPERTY_TEXT: "Zavést [Concept('church_property','církevní državy')|E]\nTvůj [Concept('court_chaplain','dvorní kaplan')|E] získá kontrolu nad chrámy ve tvé [Concept('domain','doméně')|E]"
- FAITH_CREATION_ADDS_LAY_CLERGY_TEXT: "Zrušit [Concept('church_property','církevní državy')|E]\nZískáš přímou kontrolu nad svými [GetPlayer.GetFaith.Custom('HouseOfWorshipPlural')|U] a budou se započítávat do tvého [Concept('domain_limit','limitu domény')|E]"
- FAITH_CREATION_COOLDOWN: "#weak Každý vládce může víru vytvořit nebo reformovat pouze jednou!#!"
- FAITH_CREATION_CREATE: "Vytvořit víru"
- FAITH_CREATION_REFORM: "Reformovat víru"
- FAITH_CONVERSION_CONVERT: "Konvertovat k víře"
- FAITH_MUST_BE_DIFFERENT_FROM_OLD: "@warning_icon! #X Nová [Concept('faith','víra')|E] a tvá stará [Concept('faith','víra')|E] nemohou mít totožné [Concept('core_tenets','zásady')|E] a [Concept('doctrines','doktríny')|E]#!"
- FAITH_MANDALA_MONOTHEIST_WARNING: "@alert_icon! #alert_trial Konverze k $doctrine_monotheist_name$ [Concept('faith','víře')|E] tě donutí opustit formu [Concept('mandala_government','vlády mandaly')|E]#!"
- FAITH_CREATION_TOTAL_COST: "Cena: [GetLocalPlayerPietyTextIcon][FaithCreationWindow.CalcPietyCost]"
- FAITH_CONVERSION_TOTAL_COST: "Celková cena: [GetLocalPlayerPietyTextIcon][FaithConversionWindow.CalcPietyCost]"
- FAITH_CONVERSION_COST_MISSING: "#X Chybí: [GetLocalPlayerPietyTextIcon][FaithConversionWindow.CalcPietyMissing]#!"
- FAITH_CREATION_COST_MISSING: "#X Chybí: [GetLocalPlayerPietyTextIcon][FaithCreationWindow.CalcPietyMissing]#!"
- FAITH_CREATION_NAMING_NAME_BASE: "Název #weak (např. Katolicismus)#!"
- FAITH_CREATION_NAMING_ADJECTIVE_BASE: "Přídavné jméno #weak (např. Katolický)#!"
- FAITH_CREATION_NAMING_FOLLOWER_BASE: "Jeden následovník #weak (např. Katolík)#!"
- FAITH_CREATION_NAMING_FOLLOWERS_BASE: "Více následovníků #weak (např. Katolíci)#!"
- FAITH_CREATION_NAMING_NAME: "$FAITH_CREATION_NAMING_NAME_BASE$:"
- FAITH_CREATION_NAMING_ADJECTIVE: "$FAITH_CREATION_NAMING_ADJECTIVE_BASE$:"
- FAITH_CREATION_NAMING_FOLLOWER: "$FAITH_CREATION_NAMING_FOLLOWER_BASE$:"
- FAITH_CREATION_NAMING_FOLLOWERS: "$FAITH_CREATION_NAMING_FOLLOWERS_BASE$:"
- FAITH_CREATION_NEEDS_ICON: "#X Musíš vybrat ikonu#!"
- FAITH_CREATION_NAMING_DESC: "Popis:"
- FAITH_CREATION_NAMING_HEADER: "Zvol názvy..."
- FAITH_WINDOW_FAITH_NAME: "[Select_CString( StringIsEmpty( FaithCreationWindow.GetNewFaithName ), 'Zvol název', '' )] [FaithCreationWindow.GetNewFaithName]"
- FAITH_WINDOW_FAITH_NAME_TOOLTIP: "Zadej název své nové [Concept('faith','víry')|E] a jejích následovníků"
+ FAITH_VIEW_CHALLENGER_TITLE: "[Character.GetRite.GetTextIcon] [Concept( 'challenger_hof', Character.GetTitleAsNameNoTooltip )|E]" # todo: NEW TRANSLATION
+ FAITH_VIEW_NUMBER_OF_CHALLENGERS: "[GetDataModelSize( Faith.GetChallengers )] [Concept( 'challenger_hof', 'Pretendenti' )|E]" # todo: NEW TRANSLATION
+ challengers_window_title: "Pretendenti" # todo: NEW TRANSLATION
+ toggle_challengers_view_tt: "#T Pretendenti#!\n\n#I Kliknutím zobrazíte pretendenty této víry#!" # todo: NEW TRANSLATION
+ CHALLENGER_TITLE_SPONSORSHIP: "Podporuje:" # todo: NEW TRANSLATION
+ CHALLENGER_SELF_SPONSORED: "Bez podporovatele" # todo: NEW TRANSLATION
+ FAITH_WINDOW_TENET_TOOLTIP: "#T [TenetType.GetNameNoTooltip( Rite.Self )]#!\n[TenetType.GetEffectsDescription( Rite.Self )]\n\n[TenetType.GetDescription( Rite.Self )|F]" # todo: NEW TRANSLATION
+ FAITH_WINDOW_DOCTRINE_TOOLTIP: "#T [FaithDoctrine.GetNameNoTooltip( DoctrineItem.GetFaith )]#!\n[FaithDoctrine.GetEffectsDescription( DoctrineItem.GetFaith )]\n\n[FaithDoctrine.GetDescription( DoctrineItem.GetFaith )|F]"
+ FAITH_WINDOW_DOCTRINE_TOOLTIP_WITH_FAITH: "#T [FaithDoctrine.GetNameNoTooltip( Faith.Self )]#!\n[FaithDoctrine.GetEffectsDescription( Faith.Self )]\n\n[FaithDoctrine.GetDescription( Faith.Self )|F]"
+ ECUMENICAL_COUNCIL_PLANNER_DOCTRINE_SELECT_NAME: "[DoctrineType.GetGroup.GetName( Faith.Self )] #weak ([DoctrineType.GetNameNoTooltip( Faith.Self )])#!" # todo: NEW TRANSLATION
+ ECUMENICAL_COUNCIL_PLANNER_DOCTRINE_SELECT_TOOLTIP: "$FAITH_WINDOW_DOCTRINE_TOOLTIP_WITH_FAITH$\n\n#I Kliknutím projednáte změny: $ECUMENICAL_COUNCIL_PLANNER_DOCTRINE_SELECT_NAME$#!" # todo: NEW TRANSLATION
+ ECUMENICAL_COUNCIL_PLANNER_TENET_SELECT_TOOLTIP: "#I Kliknutím projednáte změny: [TenetType.GetNameNoTooltip( Rite.Self )]#!" # todo: NEW TRANSLATION
+ ECUMENICAL_COUNCIL_PLANNER_TENET_DISABLED_TOOLTIP: "@warning_icon! [TenetType.GetNameNoTooltip( Rite.Self )] je již zásadou se statusem [core_tenet_status|E]\n#I Jako náhrada za ni může být navržena kterákoli zásada bez statusu [core_tenet_status|E]#!" # todo: NEW TRANSLATION
+ ECUMENICAL_COUNCIL_PLANNER_ALERT_PROHIBITED_TT: "@alert_icon! #alert_trial Projednávání [core_tenet|E] se statusem [prohibited_tenet_status|E] bude obtížné. Nezbývá vám než se modlit.#!" # todo: NEW TRANSLATION
  FERVOR_YEARLY_CHANGE: "Roční změna [Concept('fervor','horlivosti')|E]"
  FERVOR_TT: "#T Horlivost: [Faith.GetFervor|2]%\n#!#weak Skutečné účinky [Concept('faithpossessive','horlivosti víry')|E] jsou vždy relativní vůči horlivosti protější víry. Například při úkolu [Concept('convert_county','konvertovat hrabství')|E].#!\n\n[Faith.GetYearlyFervorChangeDesc]\n\n[Faith.GetFervorChangelog]"
  FAITH_NAME_TOOLTIPPED: "[Faith.GetName]"
- FAITH_DOCTRINES_IMPORTANT: "Hlavní [Concept('doctrines','doktríny')|E]"
- FAITH_DOCTRINES_MARRIAGE: "Manželské doktríny"
- FAITH_DOCTRINES_CRIMES: "Doktríny zločinů"
- FAITH_DOCTRINES_CLERGY: "Doktríny duchovenstva"
  FAITH_DOCTRINES_SPECIAL: "Zvláštní doktríny"
+ FAITH_VIEW_DOCTRINE_CATEGORY_TITLE: "[DoctrineCategoryType.GetName]" # todo: NEW TRANSLATION
+ FAITH_VIEW_DOCTRINE_GROUP_NAME: "#weak [DoctrineGroupItem.GetGroupType.GetName( Faith.Self )]#!" # todo: NEW TRANSLATION
+ FAITH_VIEW_DOCTRINE_SELECTED_NAME: "[DoctrineType.GetNameNoTooltip( Faith.Self )]" # todo: NEW TRANSLATION
  RELIGIOUS_HEAD: "Současná [Concept('head_of_faith','hlava víry')|E]"
  RELIGIOUS_HEAD_WITH_NAME: "[Faith.GetReligiousHead.GetUINameNoTooltip|U]"
  RELIGIOUS_HEAD_EMPTY_DESC: "Nikdo nezastává úřad hlavy víry [Faith.GetAdjectiveNoTooltip]"
@@ -116,38 +74,85 @@
  CALL_CRUSADE: "#D Vyhlásit křížovou výpravu#!"
  CREATE_ANTIPOPE: "#D Vytvořit vzdoropapeže#!"
  RELIGION_FAMILY_TOOLTIP: "[ReligionFamily.GetReligiousFamilyHostilityDescription]\n\n#bold Následující náboženství jsou [ReligionFamily.GetNameNoTooltip]:#!\n[ReligionFamily.GetReligions]\n"
- CREATE_FAITH_CONFIRM_TITLE: "[Select_CString( GetPlayer.GetFaith.IsUnreformed, 'Reformovat', 'Vytvořit' )] $NAME$"
- CREATE_FAITH_CONFIRM_DESC: "Celková cena: [GetLocalPlayerPietyTextIcon]$COST$\nPřesvědčení víry $NAME$ už nikdy nepůjde změnit, jakmile bude [Select_CString( GetPlayer.GetFaith.IsUnreformed, 'reformována', 'vytvořena' )]"
- CREATE_FAITH_CONFIRM_ACCEPT: "Vytvořit"
  RELIGIOUS_HEAD_NO_HEAD: "Žádná [Concept('head_of_faith','hlava víry')|E]"
  RELIGIOUS_HEAD_SPIRITUAL_HEAD: "[Concept('head_of_faith_spiritual','Duchovní')|E] [Concept('head_of_faith','hlava víry')|E]#E :#!"
  RELIGIOUS_HEAD_TEMPORAL_HEAD: "[Concept('head_of_faith_temporal','Světská')|E] [Concept('head_of_faith','hlava víry')|E]#E :#!"
+ FAITH_VIEW_YOUR_ARCHBISHOP: "Váš [archbishop|E]" # todo: NEW TRANSLATION
+ FAITH_VIEW_YOUR_SUPERIOR: "Váš [superior|E]" # todo: NEW TRANSLATION
+ FAITH_VIEW_NUM_FAITH_POSITIONS: "(+[Subtract_int32( PdxGuiWidget.AccessParent.FindChild( 'positions' ).CountVisibleChildren, '(int32)1' )])" # todo: NEW TRANSLATION
+ FAITH_VIEW_SITE_NAME: "[Select_CString( HolySiteItem.IsHeldByFaith, '#high ', '#medium ' )][HolySite.GetNameNoTooltip]" # todo: NEW TRANSLATION
  FAITH_BELIEFS: "Přesvědčení"
+ FAITH_HOLY_ORDERS: "Řády" # todo: NEW TRANSLATION
  FAITH_HOLY_SITES: "Svatá místa"
- FAITH_HOLY_SITE_EXPLANATION: "Každé svaté místo, které drží [Faith.GetAdjectiveNoTooltip] [Concept('ruler','vládce')|E], poskytuje bonus pro celý [Faith.GetNameNoTooltip]"
+ FAITH_SAINTS: "Svatí" # todo: NEW TRANSLATION
+ FAITH_MONASTIC_HOLY_ORDERS_HEADER: "[monastic_holy_orders|E]" # todo: NEW TRANSLATION
+ FAITH_MILITARY_HOLY_ORDERS_HEADER: "[military_holy_orders|E]" # todo: NEW TRANSLATION
+ FAITH_RITE_HOLY_SITES_NONE: "[Rite.GetAdherentNamePluralNoTooltip] neovládají žádná [holy_sites|E] [Faith.GetAdjectiveNoTooltip]" # todo: NEW TRANSLATION
+ FAITH_RITE_HOLY_SITES_HEADER: "[holy_sites|e] [Rite.GetFaith.GetAdjectiveNoTooltip], která ovládají [Rite.GetAdherentNamePluralNoTooltip]" # todo: NEW TRANSLATION
+ FAITH_OTHER_RITES_HOLY_SITES_HEADER: "$game_concept_holy_sites$ ovládaná jinými [Faith.GetAdjectiveNoTooltip] $game_concept_rites$" # todo: NEW TRANSLATION
+ FAITH_OTHER_FAITHS_HOLY_SITES_HEADER: "$game_concept_holy_sites$ ovládaná jinými $game_concept_faiths$" # todo: NEW TRANSLATION
+ FAITH_HOLY_SITE_TIER: "[SelectLocalization( Faith.IsEminentHolySite( HolySite.Self ), 'FAITH_HOLY_SITE_TIER_EMINENT', 'FAITH_HOLY_SITE_TIER_REGULAR' )]" # todo: NEW TRANSLATION
+ FAITH_HOLY_SITE_TIER_EMINENT: "[eminent_holy_site|E]" # todo: NEW TRANSLATION
+ FAITH_HOLY_SITE_TIER_REGULAR: "[holy_site|E]" # todo: NEW TRANSLATION
+ FAITH_CREATE_HOLY_SITE_BUTTON: "Vytvořit $game_concept_holy_site$" # todo: NEW TRANSLATION
+ HOLY_SITE_CREATION_WINDOW_HEADER: "Vytvořit posvátné místo" # todo: NEW TRANSLATION
+ HOLY_SITE_CREATION_ACTION_BUTTON_CLEAR: "Odstranit artefakt" # todo: NEW TRANSLATION
+ HOLY_SITE_CREATION_ACTION_BUTTON_CREATE: "Vytvořit" # todo: NEW TRANSLATION
+ HOLY_SITE_CREATION_ARTIFACT_TT: "Kliknutím vyberete [Artifact.GetName], který bude uložen v novém [holy_site|E]" # todo: NEW TRANSLATION
+ HOLY_SITE_CREATION_CLEAR_ARTIFACT_TT: "Kliknutím odstraníte právě vybraný artefakt" # todo: NEW TRANSLATION
+ HOLY_SITE_CREATION_ARTIFACT_REPLACES_TT: "#X Všechny sloty pro [holy_site|E] jsou obsazené – toto nahradí [ARTIFACT.GetName]#!" # todo: NEW TRANSLATION
+ HOLY_SITE_CREATION_CANNOT_CLEAR_ARTIFACT_TT: "@warning_icon! #X Již uložený artefakt nelze odstranit (lze jej odstranit v přehledu posvátného místa).#!" # todo: NEW TRANSLATION
+ HOLY_SITE_CREATION_TYPE_PICKER_HEADER: "Vyberte typ posvátného místa" # todo: NEW TRANSLATION
+ HOLY_SITE_CREATION_NO_AVAILABLE_TYPES: "Nejsou definovány žádné typy [holy_site|E] bez pevně daného umístění." # todo: NEW TRANSLATION
+ HOLY_SITE_CREATION_TYPE_ALREADY_TAKEN: "#warning @warning_icon! [Faith.GetNameNoTooltip] již má [holy_site|E] tohoto typu.#!" # todo: NEW TRANSLATION
+ HOLY_SITE_CREATION_SELECT_TYPE_AND_ARTIFACT: "#weak Vyberte typ posvátného místa a artefakt(y), které chcete [enshrine|E]#!" # todo: NEW TRANSLATION
  FAITH_HOLY_SITE_HOLDER_TOOLTIP: "#T [Character.GetPrimaryTitle.GetNameNoTooltip]\n#![Concept('ruler','Vládce')|E]: [Character.GetUIName]\n[Concept('faith','Víra')|E]: [Character.GetFaith.GetName]\n\n[Select_CString( HolySiteItem.IsHeldByFaith, '#same ', '#weak ' )]Protože vládce [HolySite.GetName] je [Character.GetFaith.GetAdjectiveNoTooltip], [Select_CString( HolySiteItem.IsHeldByFaith, '', 'ne' )]poskytne [Select_CString( HolySiteItem.IsHeldByFaith, '', 'žádné ' )]výhody všem [Faith.GetAdjectiveNoTooltip] postavám#!\n\n#I Kliknutím zobrazíš#!"
+ HOLY_SITE_UNDER_CONTROL_UI: "Ovládá [Rite.GetName]" # todo: NEW TRANSLATION
+ HOLY_SITE_NOT_UNDER_CONTROL_UI: "@warning_icon! Ovládá [Rite.GetName]" # todo: NEW TRANSLATION
  FAITH_DOCTRINES_HEADING: "#E [Concept('doctrines','Doktríny')|E]#!"
  FAITH_CORE_TENETS_HEADING: "#E [Concept('core_tenets','Zásady')|E]#!"
+ tenet_popularity_icon_very_popular: "@tenet_popularity:4!" # todo: NEW TRANSLATION
+ tenet_popularity_icon_popular: "@tenet_popularity:3!" # todo: NEW TRANSLATION
+ tenet_popularity_icon_neutral: "@tenet_popularity:2!" # todo: NEW TRANSLATION
+ tenet_popularity_icon_unpopular: "@tenet_popularity:1!" # todo: NEW TRANSLATION
+ tenet_popularity_tier_very_popular: "#high Velmi oblíbená#!" # todo: NEW TRANSLATION
+ tenet_popularity_tier_popular: "#aptitude_good Oblíbená#!" # todo: NEW TRANSLATION
+ tenet_popularity_tier_neutral: "#aptitude_average Neutrální#!" # todo: NEW TRANSLATION
+ tenet_popularity_tier_unpopular: "#aptitude_poor Neoblíbená#!" # todo: NEW TRANSLATION
+ tenet_popularity_tier_name: "[AddLocalizationIf( TenetPopularityIsVeryPopular( TenetType, Faith ), 'tenet_popularity_tier_very_popular')][AddLocalizationIf( TenetPopularityIsPopular( TenetType, Faith ), 'tenet_popularity_tier_popular')][AddLocalizationIf( TenetPopularityIsNeutral( TenetType, Faith ), 'tenet_popularity_tier_neutral')][AddLocalizationIf( TenetPopularityIsUnpopular( TenetType, Faith ), 'tenet_popularity_tier_unpopular')]" # todo: NEW TRANSLATION
+ FAITH_TENET_ITEM_POPULARITY: "[AddLocalizationIf( TenetPopularityIsVeryPopular( TenetType, Faith ), 'tenet_popularity_icon_very_popular')][AddLocalizationIf( TenetPopularityIsPopular( TenetType, Faith ), 'tenet_popularity_icon_popular')][AddLocalizationIf( TenetPopularityIsNeutral( TenetType, Faith ), 'tenet_popularity_icon_neutral')][AddLocalizationIf( TenetPopularityIsUnpopular( TenetType, Faith ), 'tenet_popularity_icon_unpopular')]" # todo: NEW TRANSLATION
+ FAITH_TENET_ITEM_POPULARITY_TT: "#T [tenet_popularity|E]: $FAITH_TENET_ITEM_POPULARITY$$tenet_popularity_tier_name$ (#high [Faith.GetTenetPopularityScore( TenetType.Self )]#!)#!\n\n#weak $game_concept_tenet_popularity_desc$#!" # todo: NEW TRANSLATION
+ FAITH_TENET_ITEM_POPULARITY_SHORT: "[tenet_popularity|E]: $FAITH_TENET_ITEM_POPULARITY$$tenet_popularity_tier_name$ (#high [Faith.GetTenetPopularityScore( TenetType.Self )]#!)" # todo: NEW TRANSLATION
+ FAITH_TENET_ITEM_DIVERGENT: "@divergence_icon! Nevyznává [mainline_rite|E] ([Concept( 'divergence', 'Odlišná')|E])" # todo: NEW TRANSLATION
  FAITH_SHOW_ALL: "Zobrazit všechny doktríny"
  FAITH_HIDE: "Skrýt"
  base_fervor_increase: "Základ"
- TEMP_RELIGION_INFO: "#D Oddělilo se od pravoslaví roku 605 po Kr.\nZakladatel: Pierre XIV de Castelnau#!"
  FAITH_FLAVOR_DESC: "$DESC|F$"
  FAITH_CREATION_BASIC_UI_DESC: "#weak Mám jedinečnou příležitost navždy přetvořit naši víru. Musím vše pečlivě naplánovat, protože nové dogma bude po ustavení odolné vůči změnám.\n\nKněží a učenci přicestovali k mému dvoru, aby probírali všechny možné teologické otázky a pokusili se kodifikovat úplný a pevný nový výklad našich starých ústních tradic, ale jsem to já, kdo tuto reformaci umožnil.#!\n\nMám poslední slovo ohledně [Concept('core_tenets','zásad')|E] a [Concept('doctrines','doktrín')|E] naší nové [Concept('faith','víry')|E]."
  RELIGION_SHOW_ONLY: "Pouze [Religion.GetAdjectiveNoTooltip] [Concept('faiths','víry')|E]"
  RELIGION_SHOW_ALL_FAITHS_TT: "Zobrazit všechny [Concept('faiths','víry')|E]"
  RELIGION_SHOW_RELIGION_FAITH_TT: "Zobrazit pouze [RELIGION.GetAdjectiveNoTooltip] [Concept('faiths','víry')|E]"
  FAITH_WINDOW_COUNTIES: "[Faith.GetNumberOfCountiesOfFaith] [Concept('counties','hrabství')|E] následuje tuto víru"
+ FAITH_WINDOW_FOLLOWERS: "[Faith.GetNumberOfFollowers|*] stoupenců" # todo: NEW TRANSLATION
+ FAITH_WINDOW_RITE_COUNTIES: "[Rite.GetNumberOfCountiesOfRite] [counties|E]" # todo: NEW TRANSLATION
+ FAITH_WINDOW_RITE_ADHERENTS: "[Rite.GetNumberOfFollowers] stoupenců" # todo: NEW TRANSLATION
  FAITH_RELIGION: "[Faith.GetReligion.GetAdjectiveNoTooltip] víra"
  ORDER_FAITH_BY_COUNTIES: "Hrabství"
  ORDER_FAITH_BY_FERVOR: "Horlivost"
  ORDER_FAITH_BY_RELIGION: "Náboženství"
  ORDER_FAITH_BY_NAME: "Název"
- FAITH_CREATION_THEOCRACY_INFO: "Teokracie"
- FAITH_CREATION_HEAD_OF_FAITH_INFO: "Hlava víry"
+ ORDER_RITE_BY_FOLLOWERS: "Stoupenci" # todo: NEW TRANSLATION
+ ORDER_RITE_BY_DIVERGENCE: "Odlišnost" # todo: NEW TRANSLATION
+ ORDER_RITE_BY_FAITH: "Víra" # todo: NEW TRANSLATION
+ ORDER_RITE_BY_NAME: "Název" # todo: NEW TRANSLATION
+ ORDER_TENET_BY_NAME: "Název" # todo: NEW TRANSLATION
+ ORDER_TENET_BY_POPULARITY: "Oblíbenost" # todo: NEW TRANSLATION
+ ORDER_TENET_BY_SPIRITUAL_FULFILLMENT: "Duchovní naplnění" # todo: NEW TRANSLATION
+ FAITH_SORT_ORDER: "#T Řazení: [Select_CString( ReligionWindow.GetSortOrder, 'Vzestupně', 'Sestupně' )]\n#!#I Kliknutím přepnete#!" # todo: NEW TRANSLATION
+ RITE_SORT_ORDER: "#T Řazení: [Select_CString( RiteWindow.GetSortOrder, 'Vzestupně', 'Sestupně' )]\n#!#I Kliknutím přepnete#!" # todo: NEW TRANSLATION
+ TENET_SORT_ORDER: "#T Řazení: [Select_CString( TenetSortController.GetSortOrder, 'Vzestupně', 'Sestupně' )]#!\n#I Kliknutím přepnete#!" # todo: NEW TRANSLATION
  SPIRITUAL_HEAD_CREATED: "$doctrine_parameter_spiritual_head_of_faith$"
  SPIRITUAL_HEAD_NOT_CREATED: "Titul [Concept('head_of_faith','hlavy víry')|E] nebude vytvořen.\nLze jej vytvořit později, jakmile budeš mít [EmptyScope.ScriptValue( 'holy_sites_to_create_spiritual_head_of_faith' )|0V] [Concept('holy_sites','svatých míst')|E]."
- FAITH_CREATION_ADDS_SPIRITUAL_HEAD_TEXT: "Zavést [Concept('spiritual_head_of_faith','duchovní hlavu víry')|E]\n[SelectLocalization( GreaterThanOrEqualTo_int32( GetPlayer.GetNumberOfControlledHolySites, FixedPointToInt( EmptyScope.ScriptValue( 'holy_sites_to_create_spiritual_head_of_faith' ) ) ), 'SPIRITUAL_HEAD_CREATED', 'SPIRITUAL_HEAD_NOT_CREATED' )]"
  TEMPORAL_HEAD_CREATED: "Získáš titul [Concept('head_of_faith','hlavy víry')|E]."
  TEMPORAL_HEAD_NOT_CREATED: "Titul [Concept('head_of_faith','hlavy víry')|E] nebude vytvořen.\nLze jej vytvořit později, jakmile budeš mít [EmptyScope.ScriptValue( 'holy_sites_to_create_temporal_head_of_faith' )|0V] [Concept('holy_sites','svatých míst')|E]."
  FAITH_CREATION_ADDS_TEMPORAL_HEAD_TEXT: "Zavést [Concept('temporal_head_of_faith','světskou hlavu víry')|E]\n[SelectLocalization( GreaterThanOrEqualTo_int32( GetPlayer.GetNumberOfControlledHolySites, FixedPointToInt( EmptyScope.ScriptValue( 'holy_sites_to_create_temporal_head_of_faith' ) ) ), 'TEMPORAL_HEAD_CREATED', 'TEMPORAL_HEAD_NOT_CREATED' )]"
@@ -155,6 +160,139 @@
  RECREATE_TEMPORAL_HEAD_OF_FAITH_TITLE: "Znovu vytvořit titul hlavy víry"
  FERVOR_CHANGELOG_ENTRY: "[DATE.GetStringShort]: $DESC$: $VALUE|0+=$"
  FERVOR_CHANGELOG_HEADER: "#S Nedávné změny:#!"
- NO_CONVERSION_VASSALS_TO_DISPLAY: "Nemáš žádné [Concept('vassals','vazaly')|E], kteří by mohli konvertovat"
- FAITH_CREATION_BLOCKERS_HEADER: "Nelze vytvořit víru"
- CREATE_FAITH_SELECT_COLOR: "Vyber barvu své nové [Concept('faith','víry')|E]"
+ FAITH_SPIRITUAL_FULFILLMENT_INACTIVE_TENET_ENTRY: "$BULLET$ #low [Trait.GetName( GetPlayer.Self )]: $VALUE|+0$ ([TenetType.GetName( GetPlayer.GetRite )])#!" # todo: NEW TRANSLATION
+ FAITH_SPIRITUAL_FULFILLMENT_TENET_ENTRY: "$BULLET$ [Trait.GetName( GetPlayer.Self )]: $VALUE|+0$ ([TenetType.GetName( GetPlayer.GetRite )])" # todo: NEW TRANSLATION
+ faith_window_known_tenet_tt: "#T Máte [tenet_knowledge|E] o této [core_tenet|E]#!" # todo: NEW TRANSLATION
+ faith_window_known_doctrine_tt: "#T Máte [doctrine_knowledge|E] o této [doctrine|E]#!" # todo: NEW TRANSLATION
+ faith_tenet_status_core: "[tenet_status|E] pro [Rite.GetName]: [core_tenet_status|E]" # todo: NEW TRANSLATION
+ faith_tenet_status_unknown: "[tenet_status|E] pro [Rite.GetName]: [unknown_tenet_status|E]" # todo: NEW TRANSLATION
+ faith_tenet_status_known: "[tenet_status|E] pro [Rite.GetName]: [known_tenet_status|E]" # todo: NEW TRANSLATION
+ faith_tenet_status_permitted: "[tenet_status|E] pro [Rite.GetName]: [permitted_tenet_status|E]" # todo: NEW TRANSLATION
+ faith_tenet_status_prohibited: "[tenet_status|E] pro [Rite.GetName]: [prohibited_tenet_status|E]" # todo: NEW TRANSLATION
+ faith_choose_personal_tenet_tt: "#T Vybrat [TenetType.GetName( GetPlayer.GetRite )] jako [personal_tenet|E]#![AddLocalizationIf( PersonalFaithWindow.GetTenetBeingSwapped.IsValid, 'faith_replacing_personal_tenet' )]\n\n#I Kliknutím vyberete#!" # todo: NEW TRANSLATION
+ faith_replacing_personal_tenet: "\nTím nahradíte svou [personal_tenet|E] [PersonalFaithWindow.GetTenetBeingSwapped.GetName( GetPlayer.GetRite )]" # todo: NEW TRANSLATION
+ faith_tenets_change_status_title: "#T Změnit [tenet_status|E]#!" # todo: NEW TRANSLATION
+ FAITH_VIEW_HEAD_OF_RITE: "Hlava [rite|E]:" # todo: NEW TRANSLATION
+ FAITH_VIEW_HEAD_OF_RITE_NAME: "[Rite.GetHeadOfRite.GetShortUINameNoTooltip]" # todo: NEW TRANSLATION
+ FAITH_VIEW_HEAD_OF_RITE_NONE: "Žádná" # todo: NEW TRANSLATION
+ FAITH_VIEW_OTHER_RITES_TITLE: "Ostatní víry a rity" # todo: NEW TRANSLATION
+ FAITH_VIEW_OTHER_RITES_TT: "#T Jiné víry a rity#!\n\n#I Kliknutím zobrazíte jiné [faiths|E] a [rites|E]#!" # todo: NEW TRANSLATION
+ FAITH_VIEW_PART_OF_FAITH: "[Faith.GetAdjective] [faith|E]" # todo: NEW TRANSLATION
+ FAITH_VIEW_HOSTILITY: "[GetPlayer.GetFaith.GetRelationNameTo( Faith.Self )]" # todo: NEW TRANSLATION
+ FAITH_VIEW_FAITH_DETAILS: "Podrobnosti o víře" # todo: NEW TRANSLATION
+ FAITH_VIEW_FAITH_DETAILS_TT: "#T Porovnat víry#!\n\n#I Kliknutím zobrazíte jiné [faiths|e] a [rites|E], [known_tenet_status|E] [core_tenets|E], [doctrines|E] a [canonized|E]#!" # todo: NEW TRANSLATION
+ FAITH_VIEW_RITE_HEAD_EMPTY: "Nikdo nezastává úřad hlavy ritu [Rite.GetNameNoTooltip]" # todo: NEW TRANSLATION
+ FAITH_VIEW_RITE_RELIGION_MAIN: "Hlavní [rite|E] víry [Faith.GetAdjective]" # todo: NEW TRANSLATION
+ FAITH_VIEW_RITE_RELIGION_BRANCH: "Odštěpený [rite|E] víry [Faith.GetAdjective]" # todo: NEW TRANSLATION
+ FAITH_VIEW_RITE_FAITH_STATUS_MAIN: "Hlavní [rite|E] víry [Faith.GetAdjective]" # todo: NEW TRANSLATION
+ FAITH_VIEW_RITE_FAITH_STATUS_BRANCH: "Odštěpený [rite|E] víry [Faith.GetAdjective]" # todo: NEW TRANSLATION
+ FAITH_VIEW_RITE_STATUS_MAIN: "[mainline_rite|E]" # todo: NEW TRANSLATION
+ FAITH_VIEW_RITE_STATUS_BRANCH: "Odštěpený [rite|E]" # todo: NEW TRANSLATION
+ FAITH_VIEW_RITE_STATUS: "[SelectLocalization( Rite.IsMain, 'FAITH_VIEW_RITE_STATUS_MAIN', 'FAITH_VIEW_RITE_STATUS_BRANCH' )]" # todo: NEW TRANSLATION
+ FAITH_VIEW_NUMBER_OF_RITES: "[Subtract_int32( GetDataModelSize( Faith.GetRites ), '(int32)1' )] odštěpené [rites|E]" # todo: NEW TRANSLATION
+ FAITH_VIEW_NO_OTHER_RITES: "Žádné odštěpené [rites|E]" # todo: NEW TRANSLATION
+ FAITH_VIEW_RITE_LIST_NUMBER_OF_RITES: "[GetDataModelSize( FaithItem.GetRites )] [rites|E]" # todo: NEW TRANSLATION
+ FAITH_VIEW_RITE_SHOW_ONLY_SAME_RELIGION: "Pouze [faiths|E] náboženství [Religion.GetAdjectiveNoTooltip]" # todo: NEW TRANSLATION
+ FAITH_VIEW_RITE_SHOW_ALL_FAITHS_TT: "Zobrazit všechny [faiths|E]" # todo: NEW TRANSLATION
+ FAITH_VIEW_RITE_SHOW_ALL_RELIGIONS_TT: "Zobrazit všechny [faiths|E]" # todo: NEW TRANSLATION
+ FAITH_VIEW_RITE_SHOW_RELIGION_FAITHS_TT: "Zobrazit pouze [faiths|E] náboženství [Religion.GetAdjectiveNoTooltip]" # todo: NEW TRANSLATION
+ FAITH_VIEW_RITE_FAITH: "[Rite.GetFaith.GetAdjectiveNoTooltip]" # todo: NEW TRANSLATION
+ FAITH_VIEW_RITE_COOLTIP_GETNAME: "[Rite.GetNameNoTooltip]" # todo: NEW TRANSLATION
+ FAITH_VIEW_DIVERGENCE_LABEL: "[rite_divergence|E]:" # todo: NEW TRANSLATION
+ FAITH_VIEW_DIVERGENCE_VALUE: "[CalcDivergencePercent( Rite.Self )|%0]" # todo: NEW TRANSLATION
+ FAITH_VIEW_RITE_ITEM_DIVERGENCE_VALUE: "[RiteItem.GetDivergencePercent|%0]" # todo: NEW TRANSLATION
+ FAITH_VIEW_OTHER_RITE_DIVERGENCE: "[rite_divergence|E]: [CalcDivergenceScore( Rite.Self )]" # todo: NEW TRANSLATION
+ FAITH_VIEW_MAINLINE_DOCTRINE: "[mainline_rite|E]: [DoctrineType.GetName( Faith.Self )]" # todo: NEW TRANSLATION
+ FAITH_VIEW_HEAD_OF_FAITH_DOCTRINE_NOTE: "@alert_icon!#alert_trial Nebude platit, dokud se [Rite.GetName] neodchýlí od [Rite.GetFaith.GetName] a nevytvoří vlastní [faith|E], v níž bude [mainline_rite|E]#!" # todo: NEW TRANSLATION
+ faith_rite_item_fulfillment_delta: "Zisk [spiritual_fulfillment|E]: [RiteItem.GetBaseFulfillmentDelta|+]" # todo: NEW TRANSLATION
+ FAITH_VIEW_RITE_HERESY: "[heretical|E] [rite|E]" # todo: NEW TRANSLATION
+ OPEN_HOLY_SITE_WINDOW: "Zobrazit $game_concept_holy_site$" # todo: NEW TRANSLATION
+ OPEN_HOLY_SITE_COUNTY: "Zobrazit $game_concept_county$" # todo: NEW TRANSLATION
+ DIVERGENCE_BREAKDOWN_HEADER: "[rite|E] [rite_divergence|E]" # todo: NEW TRANSLATION
+ DIVERGENCE_HERETICAL_WARNING: "@warning_icon! #X [rite_divergence] dosahuje nebo překračuje hodnotu [Faith.GetHeresyThreshold|V1] – kacířský ritus#!" # todo: NEW TRANSLATION
+ DIVERGENCE_HERETICAL_THRESHOLD: "#low Hranice kacířství: #![Faith.GetHeresyThreshold|1]" # todo: NEW TRANSLATION
+ DIVERGENCE_IS_MAIN_RITE: "#i $FAITH_VIEW_RITE_FAITH_STATUS_MAIN$#!" # todo: NEW TRANSLATION
+ FAITH_VIEW_FOLLOWING: "Následujete [Rite.GetName]" # todo: NEW TRANSLATION
+ FAITH_VIEW_FULFILLMENT_METER_LEVEL: "[spiritual_fulfillment|E]: #underline [Character.GetSpiritualFulfillmentLevel.GetName]#!" # todo: NEW TRANSLATION
+ DIVERGENCE_SECTION_MORE_DIVERGENT: "[doctrines|E]: Přísnější" # todo: NEW TRANSLATION
+ DIVERGENCE_SECTION_LESS_DIVERGENT: "[doctrines|E]: Mírnější" # todo: NEW TRANSLATION
+ DIVERGENCE_SECTION_DIFFERENT: "[doctrines|E]: Odlišné" # todo: NEW TRANSLATION
+ DIVERGENCE_SECTION_PROHIBITED: "[core_tenets|E]: Zakázané" # todo: NEW TRANSLATION
+ DIVERGENCE_SECTION_KNOWN: "[core_tenets|E]: Známé" # todo: NEW TRANSLATION
+ DIVERGENCE_SECTION_UNKNOWN: "[core_tenets|E]: Neznámé" # todo: NEW TRANSLATION
+ DIVERGENCE_SECTION_PERMITTED: "[core_tenets|E]: Povolené" # todo: NEW TRANSLATION
+ DIVERGENCE_SECTION_CORE: "[core_tenets|E]: Sdílené" # todo: NEW TRANSLATION
+ DIVERGENCE_TENET_BREAKDOWN_GROUPED: "[TenetType.GetName( GetPlayer.GetRite )]" # todo: NEW TRANSLATION
+ DIVERGENCE_DOCTRINE_BREAKDOWN_UNKNOWN: "[DoctrineGroupType.GetName( GetPlayer.GetFaith )] – [DOCTRINE_TYPE.GetName( GetPlayer.GetFaith )]" # todo: NEW TRANSLATION
+ DIVERGENCE_DOCTRINE_BREAKDOWN_RELATIVE: "[DoctrineGroupType.GetName( GetPlayer.GetFaith )] – [OTHER_DOCTRINE_TYPE.GetName( GetPlayer.GetFaith )] oproti [DOCTRINE_TYPE.GetName( GetPlayer.GetFaith )]" # todo: NEW TRANSLATION
+ DIVERGENCE_COMPARISON: "[Rite.GetName] oproti [Rite.GetFaith.GetMainRite.GetName]" # todo: NEW TRANSLATION
+ RITE_COOLTIP_GETNAME: "[Rite.GetNameNoTooltip]" # todo: NEW TRANSLATION
+ RITE_COOLTIP_YOUR_RITE: "Váš [rite|e]" # todo: NEW TRANSLATION
+ RITE_COOLTIP_IS_NOT_MAINLINE: "[Rite.GetFaith.GetTextIcon][Rite.GetFaith.GetAdjective] [rite|E]" # todo: NEW TRANSLATION
+ RITE_COOLTIP_IS_NOT_MAINLINE_YOUR_FAITH: "[Rite.GetFaith.GetTextIcon][Rite.GetFaith.GetAdjective] [rite|E]" # todo: NEW TRANSLATION
+ RITE_COOLTIP_IS_MAINLINE_YOUR_FAITH: "[Rite.GetFaith.GetTextIcon][Rite.GetFaith.GetAdjective] [mainline_rite|E]" # todo: NEW TRANSLATION
+ RITE_COOLTIP_IS_MAINLINE: "[Rite.GetFaith.GetTextIcon][Rite.GetFaith.GetAdjective] [mainline_rite|E]" # todo: NEW TRANSLATION
+ RITE_COOLTIP_DIVERGENCE: "@divergence_icon![rite_divergence|E]: [CalcDivergenceScore( Rite.Self )|V]" # todo: NEW TRANSLATION
+ RITE_COOLTIP_HEAD: "[head_of_rite|E]: [Character.GetUIName]" # todo: NEW TRANSLATION
+ RITE_COOLTIP_NO_HEAD: "[head_of_rite|E]: Nikdo" # todo: NEW TRANSLATION
+ FAITH_TRAIT_WEIGHT_SIN: "Tato [trait|E] je považována za [sinful|E] a ovlivňuje [spiritual_fulfillment|E] o $VALUE|0+$." # todo: NEW TRANSLATION
+ FAITH_TRAIT_WEIGHT_VIRTUE: "Tato [trait|E] je považována za [virtuous|E] a ovlivňuje [spiritual_fulfillment|E] o $VALUE|0+$." # todo: NEW TRANSLATION
+ FERVOR_ENTRY_HERETICAL_RITES_TT: "Kacířské rity" # todo: NEW TRANSLATION
+ FERVOR_ENTRY_DIVERGENT_RITES_TT: "Odlišné rity" # todo: NEW TRANSLATION
+ FERVOR_ENTRY_DIVERGENT_RITE: "[Rite.GetName] ($DIVERGENCE|-$)" # todo: NEW TRANSLATION
+ FERVOR_RITE_NUMBER_BALANCE: "Požadovaný počet ritů podle velikosti víry" # todo: NEW TRANSLATION
+ FERVOR_BONUS_RITES_NEGATION: "Za nadbytečné rity ($BONUS_RITES$)" # todo: NEW TRANSLATION
+ FERVOR_HERESY_COUNT: "Kacířství" # todo: NEW TRANSLATION
+ FERVOR_APPLICABLE_HERESY_COUNT: "Uplatňovaná kacířství" # todo: NEW TRANSLATION
+ FERVOR_HERESY_NEGATION: "Potlačená kacířství" # todo: NEW TRANSLATION
+ FERVOR_HERESY_NEGATION_MODIFIER: "Bonus k ignorovaným kacířstvím" # todo: NEW TRANSLATION
+ FERVOR_ENTRY_DIVERGENT_RITES_PROTECTION: "Ignorované postihy za odlišné rity" # todo: NEW TRANSLATION
+ FERVOR_HERESY_THRESHOLD: "Hranice [rite_divergence|E] pro [heresies|E]" # todo: NEW TRANSLATION
+ FAITH_VIEW_COLLEGE_OF_CARDINALS: "#T [college_of_cardinals|E]#!\n\n#I Kliknutím zobrazíte#!" # todo: NEW TRANSLATION
+ FAITH_VIEW_HOLY_ORDER_DIVERGENCE: "@divergence_icon! [HolyOrder.GetDivergence|V0]" # todo: NEW TRANSLATION
+ FAITH_VIEW_HOLY_ORDER_HOLDINGS: "#underline;high [GetDataModelSize( HolyOrder.GetLeasedTitles )]#! držav" # todo: NEW TRANSLATION
+ FAITH_VIEW_HOLY_ORDER_INTERACTIONS_BUTTON_TT: "#T Zobrazit interakce se svatým řádem#!" # todo: NEW TRANSLATION
+ holy_order_filter_tag_desc: "Interakce se [holy_order|E]" # todo: NEW TRANSLATION
+ FAITH_VIEW_HOLY_ORDER_DETAILS_TITLE: "[HolyOrder.GetNameNoTooltip]" # todo: NEW TRANSLATION
+ FAITH_VIEW_HOLY_ORDER_DETAILS_SUB_TITLE: "[HolyOrder.GetFaith.GetAdjective] [SelectLocalization( HolyOrder.IsMilitary, 'FAITH_VIEW_HOLY_ORDER_DETAILS_SUB_TITLE_MILITARY', 'FAITH_VIEW_HOLY_ORDER_DETAILS_SUB_TITLE_MONASTIC' )]" # todo: NEW TRANSLATION
+ FAITH_VIEW_HOLY_ORDER_DETAILS_SUB_TITLE_MILITARY: "[military_holy_order|E]" # todo: NEW TRANSLATION
+ FAITH_VIEW_HOLY_ORDER_DETAILS_SUB_TITLE_MONASTIC: "[monastic_holy_order|E]" # todo: NEW TRANSLATION
+ FAITH_VIEW_HOLY_ORDER_DETAILS_LOCATION_TT: "#T Poloha#!\n[HolyOrder.GetName] sídlí v [HolyOrder.GetCapital.GetName].\n\n#I $GO_TO_CLICK$#!" # todo: NEW TRANSLATION
+ FAITH_VIEW_HOLY_ORDER_DETAILS_MAA: "[men_at_arms|E]:" # todo: NEW TRANSLATION
+ FAITH_VIEW_HOLY_ORDER_DETAILS_LEASED_TITLES: "Pronajatá území:" # todo: NEW TRANSLATION
+ FAITH_VIEW_HOLY_ORDER_DETAILS_LEADER: "Současný vůdce" # todo: NEW TRANSLATION
+ FAITH_VIEW_HOLY_ORDER_DETAILS_PATRON: "Patron" # todo: NEW TRANSLATION
+ FAITH_VIEW_HOLY_ORDER_DETAILS_LINE_OF_SUCCESSION: "Následnická linie" # todo: NEW TRANSLATION
+ FAITH_VIEW_HOLY_ORDERS_IN_YOUR_REALM: "Svaté řády víry [Faith.GetAdjectiveNoTooltip] ve vaší $game_concept_realm$" # todo: NEW TRANSLATION
+ FAITH_VIEW_HOLY_ORDERS_OUTSIDE_YOUR_REALM: "Svaté řády víry [Faith.GetAdjectiveNoTooltip] mimo vaši $game_concept_realm$" # todo: NEW TRANSLATION
+ FAITH_VIEW_SUB_WINDOW_TENETS_HEADER: "[tenet_status|E] ritu [Rite.GetName]" # todo: NEW TRANSLATION
+ FAITH_VIEW_SUB_WINDOW_DOCTRINES_HEADER: "[doctrines|E] ritu [Rite.GetName]" # todo: NEW TRANSLATION
+ FAITH_VIEW_SUB_WINDOW_SAINTS_HEADER: "[canonized|E] víry [Faith.GetName]" # todo: NEW TRANSLATION
+ FAITH_VIEW_YOUR_KNOWLEDGE: "Vaše [tenet_knowledge|E]" # todo: NEW TRANSLATION
+ FAITH_VIEW_SAINTS_IN_YOUR_REALM: "$game_concept_canonized$ ve vaší $game_concept_realm$" # todo: NEW TRANSLATION
+ FAITH_VIEW_SAINTS_OUTSIDE_YOUR_REALM: "$game_concept_canonized$ mimo vaši $game_concept_realm$" # todo: NEW TRANSLATION
+ FAITH_VIEW_SUB_WINDOW_TENETS_BUTTON_TT: "#T Zobrazit všechny zásady#!\n\n#I Kliknutím zobrazíte [core_tenets|E] seřazené podle jejich [tenet_status|E]#!" # todo: NEW TRANSLATION
+ FAITH_VIEW_SUB_WINDOW_DOCTRINES_BUTTON_TT: "#T Zobrazit všechny nauky#!\n\n#I Kliknutím zobrazíte všechny známé [doctrines|E]#!" # todo: NEW TRANSLATION
+ FAITH_VIEW_SUB_WINDOW_TENETS_TITLE: "#T [Faith.GetName]#!" # todo: NEW TRANSLATION
+ FAITH_VIEW_HOF_ESTABLISH_TT: "#T Hlava víry#!\n[head_of_faith|E]: Neobsazeno\n\n#I Kliknutím ustanovíte hlavu víry pro [faith|E] víry [Faith.GetAdjective]#!" # todo: NEW TRANSLATION
+ FAITH_VIEW_HOF_NOT_YET_CREATED: "Dosud nebyla ustanovena" # todo: NEW TRANSLATION
+ FAITH_VIEW_HOF_NOT_YET_CREATED_TT: "#T Hlava víry#!\n[head_of_faith|E]: Neobsazeno\n\n[Faith.GetAdjective] [faith|E] dosud nezřídila hlavu víry#!" # todo: NEW TRANSLATION
+ FAITH_VIEW_HOF_NOT_YET_CREATED_BLOCKERS_TT: "#T Hlava víry#!\n[head_of_faith|E]: Neobsazeno\n\n[Faith.GetAdjective] [faith|E] dosud nezřídila hlavu víry#!\n\n@warning_icon! #X Může ji zřídit pouze [head_of_rite|E]#!" # todo: NEW TRANSLATION
+ FAITH_VIEW_HOF_NONE: "Žádný" # todo: NEW TRANSLATION
+ FAITH_VIEW_HOF_NONE_TT: "#T Hlava víry#!\n[head_of_faith|E]: Žádná\n\n[Faith.GetAdjective] [faith|E] nemá hlavu víry#!" # todo: NEW TRANSLATION
+ FAITH_VIEW_HOR_NONE: "Žádný" # todo: NEW TRANSLATION
+ FAITH_VIEW_HOR_NONE_TT: "#T Hlava obřadu#!\n[head_of_rite|E]: Žádná\n\n[rite|E] [Rite.GetAdjective] nemá hlavu obřadu" # todo: NEW TRANSLATION
+ faith_find_adherent: "Najít stoupence" # todo: NEW TRANSLATION
+ faith_find_adherent_tt: "#T Zahájit intriku k nalezení [Faith.GetAdherentNameNoTooltip].#!\n\n#I Kliknutím zahájíte intriku.#!" # todo: NEW TRANSLATION
+ belief_tab_rites: "$game_concept_rites$" # todo: NEW TRANSLATION
+ belief_tab_tenets: "$game_concept_core_tenets$" # todo: NEW TRANSLATION
+ belief_tab_doctrines: "$game_concept_doctrines$" # todo: NEW TRANSLATION
+ belief_tab_saints: "$game_concept_canonized$" # todo: NEW TRANSLATION
+ belief_saint_location: "[Select_CString( SaintItem.GetSaint.IsAlive, 'From', 'Buried in')] [SaintItem.GetLocation.GetName]" # todo: NEW TRANSLATION
+ belief_saint_remaining_relics: "Lze získat ještě [SaintItem.GetAvailableRelics|V] [holy_relics|E]" # todo: NEW TRANSLATION
+ extract_relic_button_tt: "#T Vytěžit relikvii#!\n#I Kliknutím otevřete rozhodnutí#!" # todo: NEW TRANSLATION
+ doctrine_status_mainline: "Hlavní nauka" # todo: NEW TRANSLATION
+ doctrine_status_rite: "Nauka obřadu" # todo: NEW TRANSLATION
+ doctrine_status_rite_mainline: "Hlavní nauka" # todo: NEW TRANSLATION
+ doctrine_status_known: "Známé" # todo: NEW TRANSLATION
+ doctrine_status_unknown: "Neznámé" # todo: NEW TRANSLATION

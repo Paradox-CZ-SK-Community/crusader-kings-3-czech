@@ -7,6 +7,7 @@
  activity_education_out_of_range: "Toto místo je prostě příliš daleko."
  adult_education_has_university_desc: "\n#P +++ Univerzita#!"
  adult_education_has_religious_center_desc: "\n#P +++ Velké náboženské centrum#!"
+ adult_education_has_domicile_building_is_university_desc: "\n#P +++ Katedrální škola#!" # todo: NEW TRANSLATION
  adult_education_has_hostile_faith_desc: "\n#N -- Místní víra je vůči té vaší nepřátelská#!\n#weak To přidá [piety_i] [Concept('piety','zbožnost')|E].#!" # todo: CONCEPT CASE
  adult_education_has_pandidakterion_desc: "\n#P +++ Pandidakterion#!"
  adult_education_has_confucian_scholars_desc: "\n#P + Centrum konfuciánského vzdělání#!\n#weak To poskytne [Concept('trait_level_track_xp','zkušenosti rysu')|E] v [GetTrait('confucian_education').GetName( GetNullCharacter )] [Concept('trait','ryse')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
@@ -34,10 +35,12 @@
  adult_education_studies_completed_log: "[CHARACTER.GetShortUIName|U] [Select_CString(CHARACTER.IsFemale,'dokončila','dokončil')] své [CHARACTER.GetHerHis] [GetActivityType('activity_adult_education').GetName] v [PROVINCE.GetBaronyNameExplicitly]"
  adult_education_studies_completed_log_title: "[GetActivityType('activity_adult_education').GetName] dokončeno"
  activity_education_no_culture_center: "Zde není žádné centrum vyššího vzdělávání!"
+ activity_education_no_cathedral_school: "Tady není žádná katedrální škola!" # todo: NEW TRANSLATION
  adult_education_tt_positive_massive: "Vaše [GetActivityType('activity_adult_education').GetName] studia jsou #P mimořádně úspěšná#!"
  adult_education_tt_positive_major: "Vaše [GetActivityType('activity_adult_education').GetName] studia jsou #P velmi úspěšná#!"
  adult_education_tt_positive_medium: "Vaše [GetActivityType('activity_adult_education').GetName] studia jsou #P úspěšnější#!"
  adult_education_tt_positive_tiny: "Vaše [GetActivityType('activity_adult_education').GetName] studia jsou #P mírně úspěšnější#!"
+ adult_education_apa_tt_positive_tiny: "Vaše $activity_adult_education_success$ #P se mírně zvýší#!" # todo: NEW TRANSLATION
  adult_education_tt_negative: "Vaše [GetActivityType('activity_adult_education').GetName] studia jsou #N méně úspěšná#!"
  adult_education_books_good_reward: "Do nákupu vzácných a cenných knih bylo investováno mnoho zlata"
  activity_adult_education_special_type_bar_segment_tt_0: "#t Slušné studium (Úroveň 1)#!\nZískáte [Concept('lifestyle_experience','zkušenosti životního stylu')|E]\nNízká šance na vylepšení vašeho [Concept('education_trait','rys vzdělání')|E]" # todo: CONCEPT CASE
@@ -228,19 +231,19 @@
  bp2_adult_education.1090.b: "Učiteli, nechte mě se postarat o to zvíře..."
  bp2_adult_education.1090.b.tt: "Rychle mu strhneš kuklu a pustíš ho do třídy, abys prozkoumal následný chaos!"
  bp2_adult_education.1090.c: "Velmi zajímavé."
- apa_leveraging_language_skills_title: "[first.GetShortUINamePossessive|U] interpretace rukopisů v [second.Custom('GetFaithSacredLanguage')] byla vychválena"
+ apa_leveraging_language_skills_title: "[first.GetShortUIName|U] [CharWereWas(first)] pochválen/a za interpretaci rukopisů v [second.Custom('GetFaithSacredLanguage')]" # todo: CHANGED (predtym: [first.GetShortUINamePossessive|U] interpretace rukopisů v [second.Custom('GetFaithSacredLanguage')] byla vychválena)
  apa_bonded_during_studies_title: "[first.GetShortUIName|U] a [second.GetShortUIName] se sblížili během studia"
  apa_procrastination_title: "[first.GetShortUIName|U] se nepřipravil na důležitou zkoušku"
  apa_university_discussions_title: "[first.GetShortUIName|U] [Select_CString(first.IsFemale,'vedla','vedl')] diskusi o [second.Custom('education_conversation_subject')] s [second.GetShortUIName]"
  apa_night_on_books_title: "[first.GetShortUIName|U] strávil noc ponořený v knihách"
  apa_student_disagreement_title: "[first.GetShortUIName|U] a [second.GetShortUIName] se neshodli ohledně [second.Custom('education_conversation_subject')]"
- apa_rowdy_student_title: "[first.GetShortUIName|U] vtrhl opilý do hodiny [second.GetShortUINamePossessive]"
+ apa_rowdy_student_title: "[first.GetShortUIName|U] vtrhl do hodiny [second.GetShortUINamePossessive], když byl opilý" # todo: CHANGED (predtym: [first.GetShortUIName|U] vtrhl opilý do hodiny [second.GetShortUINamePossessive])
  apa_impromptu_poetry_title: "Improvizovaná poezie [first.GetShortUINamePossessive|U] byla dobře přijata"
  apa_impressed_teacher_title: "Znalosti [first.GetShortUINamePossessive|U] zapůsobily na [second.GetShortUIName]"
- apa_revelry_hangover_title: "Po noci zábavy měl [first.GetShortUIName] silnou kocovinu"
- apa_local_food_title: "[first.GetShortUIName|U] podělil se se všemi o delikatesu z domoviny"
+ apa_revelry_hangover_title: "Po noci zábavy měl [first.GetShortUIName] hroznou kocovinu" # todo: CHANGED (predtym: Po noci zábavy měl [first.GetShortUIName] silnou kocovinu)
+ apa_local_food_title: "[first.GetShortUIName|U] podělil se se všemi o delikatesu z [Select_CString(first.IsLocalPlayer, 'your', first.GetHerHis)] domoviny" # todo: CHANGED (predtym: [first.GetShortUIName|U] podělil se se všemi o delikatesu z domoviny)
  apa_aced_homework_title: "[first.GetShortUIName|U] úspěšně vypracoval úkol"
- apa_pangur_ban_title: "[first.GetShortUIName|U] [Select_CString(first.IsFemale,'napsala','napsal')] krátkou báseň: kočka loví myši, [first.GetShortUIName] hledá poznání"
+ apa_pangur_ban_title: "[first.GetShortUIName|U] [Select_CString(first.IsFemale,'napsala','napsal')] krátkou báseň: kočka loví myši, [first.GetShortUIName] [Select_CString(first.IsLocalPlayer, 'hunt', 'hunts')] poznání" # todo: CHANGED, CHECK FORMAT (predtym: [first.GetShortUIName|U] [Select_CString(first.IsFemale,'napsala','napsal')] krátkou báseň: kočka loví myši, [first.GetS)
  apa_studied_confucian_classics_title: "[first.GetShortUIName|U]: studium konfuciánských klasik" # todo: NEW TRANSLATION
  bp2_adult_education.9000.t: "Hostující řečník"
  bp2_adult_education.9000.desc: "„Studenti, dnes k nám přichází vážený řečník!“ vykřikne můj učitel [teacher.GetFirstName]. „Přivítejme [guest_speaker.GetFullName] — nejvyšší autoritu v [guest_speaker.GetFaith.GetAdjective] doktríně v [location.GetName].“\n\n„Pozdravy.“ začíná [guest_speaker.GetFirstNameNoTooltip] vážně, zatímco [guest_speaker.Custom('quirk_pos_pp')]. „Dnes budeme zkoumat [guest_speaker.Custom('education_conversation_subject')], a jak se to spojuje s podstatou [guest_speaker.GetFaith.HighGodName].“\n\nOstatní studenti napřímí záda a vytáhnou svá brkna. Tohle bude trvat dlouho."

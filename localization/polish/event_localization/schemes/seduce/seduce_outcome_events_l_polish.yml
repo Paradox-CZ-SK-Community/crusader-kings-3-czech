@@ -3,8 +3,11 @@
  seduce_outcome.cooldown: "[owner.GetTitledFirstName] se mě nějakou dobu znovu nepokusí svést"
  seduce_outcome.0001.t: "Teď, nebo nikdy"
  seduce_outcome.0001.desc: "[target.GetTitledFirstName] mi svými reakcemi na mé pokusy o svedení prozrazuje vše, co potřebuji vědět. Nastal čas uvést můj plán do pohybu.\n\n"
- seduce_outcome.0001.positive.desc: "Myslím, že mé vyhlídky jsou dobré, ale nesmím zapomínat, že [discoverer.Custom2('NamePossessiveCharacterIntroduction', target)|l] mě neustále sleduje..."
- seduce_outcome.0001.negative.desc: "Přesto se obávám následků. [discoverer.Custom2('NamePossessiveCharacterIntroduction', target)|U] může mít své lidi v každém stínu a nastražené uši za každou zdí..."
+ seduce_outcome.0001.positive.desc: "Myslím, že mé vyhlídky jsou dobré, ale nesmím zapomínat, že " # todo: CHANGED (predtym: Myslím, že mé vyhlídky jsou dobré, ale nesmím zapomínat, že [discoverer.Custom2('NamePossessiveCharacterIntroduction', t)
+ seduce_outcome.0001.negative.desc: "Přesto se obávám následků. " # todo: CHANGED (predtym: Přesto se obávám následků. [discoverer.Custom2('NamePossessiveCharacterIntroduction', target)|U] může mít své lidi v kaž)
+ seduce_outcome.0001.positive.consequence.desc: "[discoverer.Custom2('NamePossessiveCharacterIntroduction', target)] neustále pozoruje..." # todo: NEW TRANSLATION
+ seduce_outcome.0001.negative.consequence.desc: "[discoverer.Custom2('NamePossessiveCharacterIntroduction', target)|U] a [discoverer.GetHerHis] agenti mohou číhat v každém stínu a naslouchat za každou zdí..." # todo: NEW TRANSLATION
+ seduce_outcome.0001.no_discoverer.consequence.desc: "$seduce_outcome.0001.negative.desc$" # todo: NEW TRANSLATION
  seduce_outcome.0001.a: "[target.GetFirstNameNoTooltip] mi podlehne!"
  seduce_outcome.0001.a.tt: "[target.GetTitledFirstName] zůstává cílem tvého pokusu o svedení"
  seduce_outcome.0001.b: "Nemohu riskovat odhalení."
@@ -45,7 +48,7 @@
  seduce_outcome.2030.a: "Kéž takových chvil zažijeme ještě mnoho!"
  seduce_outcome.2030.b: "To byla hostina!"
  seduce_outcome.2040.t: "Do průlomu"
- seduce_outcome.2040.desc: "Jak se stíny prodlužují, ve tmě pod zdí, za níž stojí [owner.Custom('ResidenceBuilding')|l], na mě čeká [target.GetTitledFirstName].\n\nNejprve ke mně přichází váhavě, pak stále dychtivěji. Když [Select_CString(target.IsFemale, 'ji', 'ho')] přitáhnu k sobě, slyším, jak se [Select_CString(target.IsFemale, 'jí', 'mu')] zrychluje dech. Ve stínu zdi se oddáme jeden druhému, zatímco hlídkující stráže nemají o naší vášni ani tušení..."
+ seduce_outcome.2040.desc: "Jak se stíny prodlužují, ve tmě pod zdí, za níž stojí [owner.Custom('ResidenceBuilding')|l], na mě čeká [target.GetTitledFirstName].\n\nNejprve ke mně přichází váhavě, pak stále dychtivěji. Když [Select_CString(target.IsFemale, 'ji', 'ho')] přitáhnu k sobě, slyším, jak se [Select_CString(target.IsFemale, 'jí', 'mu')] zrychluje dech. Ve stínu zdi se oddáme jeden druhému, zatímco hlídkující stráže nemají o naší vášni ani tušení..." # todo: CHANGED MINOR
  seduce_outcome.2040.a: "Ještě jednou!"
  seduce_outcome.2040.b: "Jakmile padne [owner.Custom('ResidenceBuilding')|l], stahuji se."
  seduce_outcome.2050.t: "Tajné sliby"
@@ -104,6 +107,7 @@
  seduce_outcome.2900.a: "Co s námi teď bude?"
  seduce_outcome.3901.t: "Had u dvora"
  seduce_outcome.3901.desc: "Ten úzkostný výraz poznávám. [Select_CString(dummy_servant_gender.IsFemale, 'Má služebná', 'Můj služebník')] mi přináší špatné zprávy.\n\n„[ROOT.Char.Custom('FormOfAddressForLiege')|U], pojďte rychle! [owner.Custom2('YourCharacterIntroduction', ROOT.Char)|U] právě [Select_CString(owner.IsFemale, 'vyšla', 'vyšel')] z komnat, kde pobývá [target.Custom2('YourCharacterIntroductionNoComma', ROOT.Char)]!“"
+ seduce_outcome.3902.desc: ""[ROOT.Char.Custom('FormOfAddressForLiege')|U], mám špatné zprávy! [owner.Custom2('YourCharacterIntroduction', ROOT.Char)|U] byl právě spatřen při odchodu z komnat [target.Custom2('YourCharacterIntroductionNoComma', ROOT.Char)]!"" # todo: NEW TRANSLATION
  seduce_outcome.3900.a: "To může znamenat jediné!"
  seduce_outcome.3000.desc: "Když se nejvyšší pontifik a já tajně setkáme, naplňuje mě bázeň a touha mnohem tělesnější než duchovní. Jistě přede mnou ještě nikdo nepřijal požehnání [Select_CString(owner.IsFemale, 'Její Svatosti', 'Jeho Svatosti')] právě takovým způsobem.\n\nKdyž ke mně [owner.GetTitledFirstName] natáhne ruku, zavřu oči a pokleknu..."
  seduce_outcome.3000.a: "[owner.GetTitledFirstName] drží klíč k mému království."
@@ -117,7 +121,7 @@
  seduce_outcome.3301.t: "V mých komnatách"
  seduce_outcome.3301.desc: "Po zádech mi přeběhne chvění plné očekávání, když ticho mých komnat přeruší zaklepání. [Select_CString(owner.IsFemale, 'Že by to byla #EMP ona#!?', 'Že by to byl #EMP on#!?')]\n\nVe dveřích mě přivítá [owner.GetTitledFirstName] s [owner.Custom('quirk_pos_adverb')] úsměvem a chtíčem vepsaným ve tváři. Konečně! Jakmile mě obejme, oheň v mé hrudi vzplane naplno a zbytek noci se rozplyne v horkém, spalujícím opojení."
  seduce_outcome.3301.a: "Ach, [owner.GetFirstNameNoTooltip], [owner.Custom('LoverPetName')|l], setkejme se znovu!"
- seduce_outcome.3301.a.tt: "#F A znovu a znovu a znovu...!#!"
+ seduce_outcome.3301.a.tt: "#F A znovu a znovu a znovu...!#!" # todo: CHANGED MINOR
  seduce_outcome.3301.b: "Je vidět, že [owner.GetTitleTierName] rozhodně ví, jak [Select_CString(ROOT.Char.IsFemale, 'potěšit ženu', 'potěšit muže')]."
  seduce_outcome.3302.desc_opening: "Při procházce zahradami mě náhle přivítá pohled sladší než kterýkoli květ: [owner.GetTitledFirstName] v oděvu služebnictva a na tváři [owner.Custom('quirk_pos_adjective')] úsměv.\n\n"
  seduce_outcome.3302.desc_court_owner: "„Nic by mě od tebe neodradilo, [ROOT.Char.Custom('LoverPetName')|l] – už vůbec ne vzdálenost!“"

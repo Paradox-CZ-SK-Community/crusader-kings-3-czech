@@ -114,6 +114,7 @@
  CB_REDUCED_HOLY_WAR_COST: "[Concept('faith','Víra')|El] — snížené náklady na svatou válku"
  CB_COST_RULES_KINGDOM: "Vládne království"
  CB_COST_RULES_EMPIRE: "Vládne říši"
+ CB_COST_RULES_HEGEMONY: "Vládne hegemonii" # todo: NEW TRANSLATION
  CB_SIZE_OF_TARGET_REALM_COST: "Velikost cílového panství"
  CB_VASSALIZING_KING: "Vazalizace království"
  CB_VASSALIZING_EMPEROR: "Vazalizace říše"
@@ -123,6 +124,14 @@
  CB_GENERIC_PHASE_BONUS: "Aktuální [Concept('struggle_phase','fáze sváru')|El]"
  CB_STRUGGLE_CONCESSION_ENDING: "Trvalý dopad události $persian_struggle$"
  CB_STEPPE_SEASON_DISCOUNT: "[Concept('steppe_season','Stepní období')|El]"
+ CB_CHRISTIAN_CHURCH_DISCOUNT: "[GetSituationType('the_christian_church').GetName]" # todo: NEW TRANSLATION
+ CB_SPIRITUAL_FULFILLMENT_TIER_0: "[Concept('spiritual_fulfillment','$christian_fulfillment_level_0|q$')|E]" # todo: NEW TRANSLATION
+ CB_SPIRITUAL_FULFILLMENT_TIER_1: "[Concept('spiritual_fulfillment','$christian_fulfillment_level_1|q$')|E]" # todo: NEW TRANSLATION
+ CB_SPIRITUAL_FULFILLMENT_TIER_2: "[Concept('spiritual_fulfillment','$christian_fulfillment_level_2|q$')|E]" # todo: NEW TRANSLATION
+ CB_SPIRITUAL_FULFILLMENT_TIER_3: "[Concept('spiritual_fulfillment','$christian_fulfillment_level_3|q$')|E]" # todo: NEW TRANSLATION
+ CB_SPIRITUAL_FULFILLMENT_TIER_4: "[Concept('spiritual_fulfillment','$christian_fulfillment_level_4|q$')|E]" # todo: NEW TRANSLATION
+ CB_SPIRITUAL_FULFILLMENT_TIER_5: "[Concept('spiritual_fulfillment','$christian_fulfillment_level_5|q$')|E]" # todo: NEW TRANSLATION
+ CB_SPIRITUAL_FULFILLMENT_TIER_6: "[Concept('spiritual_fulfillment','$christian_fulfillment_level_6|q$')|E]" # todo: NEW TRANSLATION
  independence_faction_war: "Frakce za nezávislost"
  independence_war_victory_desc_local_player_attacker_alone: "[attacker.GetShortUIName|U] získá nezávislost na postavě [defender.GetShortUIName]."
  independence_war_victory_desc_local_player_defender_attacker_alone: "[attacker.GetShortUIName|U] získá nezávislost na postavě [defender.GetShortUIName]."
@@ -157,10 +166,6 @@
  liberty_war_victory_defender_desc: "Tvá [Concept('crown_authority','korunní autorita')|El] se sníží o jeden stupeň a každému členovi [Concept('liberty_faction','frakce za svobodu')|El] budeš dlužit [Concept('favor','laskavost')|El]."
  liberty_war_victory_desc: "[Concept('crown_authority','Korunní autorita')|El] titulu [defender.GetPrimaryTitle.GetName] se sníží o jeden stupeň a [defender.GetShortUIName] bude každému členovi [Concept('liberty_faction','frakce za svobodu')|El] dlužit [Concept('favor','laskavost')|El]."
  liberty_war_victory_end_desc: "[Concept('liberty_faction','Frakce za svobodu')|El] bude rozpuštěna a její členové se po dobu [SCOPE.ScriptValue('liberty_war_victory_cooldown')|0] let nebudou moci připojit k frakcím."
- liberty_war_victory_defender_desc_admin: "Tvá [Concept('imperial_bureaucracy','císařská byrokracie')|El] se sníží o jeden stupeň a každému členovi [Concept('liberty_faction','frakce za svobodu')|El] budeš dlužit [Concept('favor','laskavost')|El]."
- liberty_war_victory_desc_admin: "[Concept('imperial_bureaucracy','Císařská byrokracie')|El] titulu [defender.GetPrimaryTitle.GetName] se sníží o jeden stupeň a [defender.GetShortUIName] bude každému členovi [Concept('liberty_faction','frakce za svobodu')|El] dlužit [Concept('favor','laskavost')|El]."
- liberty_war_victory_defender_desc_tribal: "Tvá [Concept('tribal_authority','kmenová autorita')|El] se sníží o jeden stupeň a každému členovi [Concept('liberty_faction','frakce za svobodu')|El] budeš dlužit [Concept('favor','laskavost')|El]."
- liberty_war_victory_desc_tribal: "[Concept('tribal_authority','Kmenová autorita')|El] titulu [defender.GetPrimaryTitle.GetName] se sníží o jeden stupeň a [defender.GetShortUIName] bude každému členovi [Concept('liberty_faction','frakce za svobodu')|El] dlužit [Concept('favor','laskavost')|El]."
  liberty_war_white_peace_defender_desc: "Uzavřeš příměří se všemi vzbouřenými vazaly a proti každému z nich získáš [Concept('revoke_title_reason','důvod k odebrání titulu')|El]."
  liberty_war_white_peace_attacker_desc: "[defender.GetShortUIName|U] uzavře příměří s tebou i se všemi vzbouřenými vazaly a proti každému z vás získá [Concept('revoke_title_reason','důvod k odebrání titulu')|El]."
  liberty_war_white_peace_desc: "[defender.GetShortUIName|U] uzavře příměří se všemi vzbouřenými vazaly a proti každému z nich získá [Concept('revoke_title_reason','důvod k odebrání titulu')|El]."
@@ -541,6 +546,8 @@
  bold_personality: "Smělost"
  high_fervor: "[Concept('fervor','Horlivost')|El] bránící se [Concept('faith','víry')|El]"
  you_are_rivals: "Jste [Concept('rivals','rivalové')|El]"
+ same_faith_theocracy: "Obránce je [theocracy|E] stejné [faith|E]" # todo: NEW TRANSLATION
+ same_faith_clergy_dispute: "Spor mezi [clergy|E] náležejícími k vlastní [faith|E]" # todo: NEW TRANSLATION
  friends_with_defender: "S obráncem je pojí [Concept('friends','přátelství')|El]"
  dislikes_defender: "Nemají rádi obránce"
  strongly_dislikes_defender: "Silně nesnášejí obránce"
@@ -725,6 +732,7 @@
  humiliation_cb_white_peace_desc: "Postava [defender.GetShortUIName] nebude ponížena."
  humiliation_cb_defeat_desc_defender: "$humiliation_cb_white_peace_desc_defender$"
  humiliation_cb_defeat_desc: "$humiliation_cb_white_peace_desc$"
+ pam_humiliation_cb: "$humiliation_cb$" # todo: NEW TRANSLATION
  retaliation_cb: "Odvetná válka"
  RETALIATION_WAR_CB_NAME: "$retaliation_cb$"
  RETALIATION_WAR_CB_NAME_BASE: "$retaliation_cb$"

@@ -1,41 +1,145 @@
 ﻿l_polish:
  greeting_lover_object: "[second.GetTitledFirstName|U], [ROOT.Char.Custom2('LoverSeductionObject', SCOPE.sC('second'))],"
- greeting_lover_fallback: "[second.GetTitledFirstName|U], [Select_CString( second.IsFemale, 'má drahá', 'můj drahý' )] [second.Custom('LoverPetName')],"
+ greeting_lover_fallback: "[ROOT.Char.Custom2('GreetingLoverFallbackFlavor', second)]" # todo: CHANGED (predtym: [second.GetTitledFirstName|U], [Select_CString( second.IsFemale, 'má drahá', 'můj drahý' )] [second.Custom('LoverPetName)
+ greeting_lover_fallback_plain: "[second.GetTitledFirstName|U], má drahá [second.Custom('LoverPetName')]," # todo: NEW TRANSLATION
+ greeting_lover_fallback_assalam: "Pokoj s tebou, [second.GetTitledFirstName|U], má drahá [second.Custom('LoverPetName')]," # todo: NEW TRANSLATION
  greeting_liege_positive: "[ROOT.Char.Custom2('GreetingToLiegePositive', second)]"
  greeting_liege_negative: "[ROOT.Char.Custom2('GreetingToLiegeNegative', second)]"
- greeting_liege_liked: "[Select_CString( second.IsFemale, 'Buď pozdravena, má', 'Buď pozdraven, můj' )] [second.Custom('ComplimentAdjective')] [Select_CString( second.IsFemale, 'lenní paní', 'lenní pane' )],"
- greeting_liege_liked_regent: "[Select_CString( second.IsFemale, 'Buď pozdravena', 'Buď pozdraven' )], [second.Custom('ComplimentAdjective')] [ROOT.Char.GetTopLiege.GetTitleAsNameNoTooltip],"
+ greeting_liege_liked: "[ROOT.Char.Custom2('GreetingLiegeLikedFlavor', second)]" # todo: CHANGED (predtym: [Select_CString( second.IsFemale, 'Buď pozdravena, má', 'Buď pozdraven, můj' )] [second.Custom('ComplimentAdjective')] [)
+ greeting_liege_liked_plain: "Zdravím vás, můj [second.Custom('ComplimentAdjective')] pane," # todo: NEW TRANSLATION
+ greeting_liege_liked_assalam: "Pokoj s tebou, můj [second.Custom('ComplimentAdjective')] pane," # todo: NEW TRANSLATION
+ greeting_liege_liked_regent: "[ROOT.Char.Custom2('GreetingLiegeLikedRegentFlavor', second)]" # todo: CHANGED (predtym: [Select_CString( second.IsFemale, 'Buď pozdravena', 'Buď pozdraven' )], [second.Custom('ComplimentAdjective')] [ROOT.Cha)
+ greeting_liege_liked_regent_plain: "Zdravím vás, [second.Custom('ComplimentAdjective')] [ROOT.Char.GetTopLiege.GetTitleAsNameNoTooltip]," # todo: NEW TRANSLATION
+ greeting_liege_liked_regent_assalam: "Pokoj s tebou, [second.Custom('ComplimentAdjective')] [ROOT.Char.GetTopLiege.GetTitleAsNameNoTooltip]," # todo: NEW TRANSLATION
  greeting_liege_dislike: "[Select_CString( second.IsFemale, 'Mé lenní paní', 'Mému lennímu pánovi' )],"
  greeting_liege_dislike_regent: "[Select_CString( second.IsFemale, 'Buď pozdravena', 'Buď pozdraven' )], [second.Custom('ComplimentAdjective')] [ROOT.Char.GetTopLiege.GetTitleAsNameNoTooltip],"
  greeting_liege_fallback: "[ROOT.Char.Custom2('GreetingToLiegeNeutral', second)],"
- greeting_liege_neutral: "[Select_CString( second.IsFemale, 'Buď pozdravena, má lenní paní', 'Buď pozdraven, můj lenní pane' )],"
- greeting_liege_neutral_regent: "[Select_CString( second.IsFemale, 'Buď pozdravena', 'Buď pozdraven' )], [ROOT.Char.GetTopLiege.GetTitleAsNameNoTooltip],"
- greeting_ceremonial_regent_liked: "[Select_CString( second.IsFemale, 'Buď pozdravena', 'Buď pozdraven' )], nanejvýš [second.Custom('ComplimentAdjective')] [second.GetTitledFirstNameNoTooltip],"
+ greeting_liege_neutral: "[ROOT.Char.Custom2('GreetingLiegeNeutralFlavor', second)]" # todo: CHANGED (predtym: [Select_CString( second.IsFemale, 'Buď pozdravena, má lenní paní', 'Buď pozdraven, můj lenní pane' )],)
+ greeting_liege_neutral_plain: "Zdravím vás, můj pane," # todo: NEW TRANSLATION
+ greeting_liege_neutral_assalam: "Pokoj s tebou, můj pane," # todo: NEW TRANSLATION
+ greeting_liege_neutral_god_keep: "Bůh vás ochraňuj, můj pane," # todo: NEW TRANSLATION
+ greeting_liege_neutral_hail: "Sláva vám, můj pane," # todo: NEW TRANSLATION
+ greeting_liege_neutral_heavens: "Kéž vám nebesa přejí, můj pane," # todo: NEW TRANSLATION
+ greeting_liege_neutral_regent: "[ROOT.Char.Custom2('GreetingLiegeNeutralRegentFlavor', second)]" # todo: CHANGED (predtym: [Select_CString( second.IsFemale, 'Buď pozdravena', 'Buď pozdraven' )], [ROOT.Char.GetTopLiege.GetTitleAsNameNoTooltip],)
+ greeting_liege_neutral_regent_plain: "Zdravím vás, [ROOT.Char.GetTopLiege.GetTitleAsNameNoTooltip]," # todo: NEW TRANSLATION
+ greeting_liege_neutral_regent_assalam: "Pokoj s tebou, [ROOT.Char.GetTopLiege.GetTitleAsNameNoTooltip]," # todo: NEW TRANSLATION
+ greeting_parent_liked: "[ROOT.Char.Custom2('GreetingParentLikedFlavor', second)]" # todo: NEW TRANSLATION
+ greeting_parent_liked_plain: "Zdravím vás, drahý [second.GetMotherFather]," # todo: NEW TRANSLATION
+ greeting_parent_liked_assalam: "Pokoj s tebou, drahý [second.GetMotherFather]," # todo: NEW TRANSLATION
+ greeting_parent_neutral: "[ROOT.Char.Custom2('GreetingParentNeutralFlavor', second)]" # todo: NEW TRANSLATION
+ greeting_parent_neutral_plain: "Zdravím vás, [second.GetMotherFather]," # todo: NEW TRANSLATION
+ greeting_parent_neutral_assalam: "Pokoj s tebou, [second.GetMotherFather]," # todo: NEW TRANSLATION
+ greeting_child_liked: "[ROOT.Char.Custom2('GreetingChildLikedFlavor', second)]" # todo: NEW TRANSLATION
+ greeting_child_liked_plain: "Zdravím tě, můj drahý [second.Custom('GetDaughterSon')]," # todo: NEW TRANSLATION
+ greeting_child_liked_assalam: "Pokoj s tebou, můj drahý [second.Custom('GetDaughterSon')]," # todo: NEW TRANSLATION
+ greeting_child_neutral: "[ROOT.Char.Custom2('GreetingChildNeutralFlavor', second)]" # todo: NEW TRANSLATION
+ greeting_child_neutral_plain: "Zdravím tě, [second.Custom('GetDaughterSon')]," # todo: NEW TRANSLATION
+ greeting_child_neutral_assalam: "Pokoj s tebou, [second.Custom('GetDaughterSon')]," # todo: NEW TRANSLATION
+ greeting_sibling_liked: "[ROOT.Char.Custom2('GreetingSiblingLikedFlavor', second)]" # todo: NEW TRANSLATION
+ greeting_sibling_liked_plain: "Zdravím tě, můj drahý [second.Custom('SisterBrother')]," # todo: NEW TRANSLATION
+ greeting_sibling_liked_assalam: "Pokoj s tebou, můj drahý [second.Custom('SisterBrother')]," # todo: NEW TRANSLATION
+ greeting_sibling_neutral: "[ROOT.Char.Custom2('GreetingSiblingNeutralFlavor', second)]" # todo: NEW TRANSLATION
+ greeting_sibling_neutral_plain: "Zdravím tě, [second.Custom('SisterBrother')]," # todo: NEW TRANSLATION
+ greeting_sibling_neutral_assalam: "Pokoj s tebou, [second.Custom('SisterBrother')]," # todo: NEW TRANSLATION
+ greeting_spouse_liked: "[ROOT.Char.Custom2('GreetingSpouseLikedFlavor', second)]" # todo: NEW TRANSLATION
+ greeting_spouse_liked_plain: "Zdravím tě, můj milovaný [second.GetWifeHusband]," # todo: NEW TRANSLATION
+ greeting_spouse_liked_assalam: "Pokoj s tebou, můj milovaný [second.GetWifeHusband]," # todo: NEW TRANSLATION
+ greeting_spouse_neutral: "[ROOT.Char.Custom2('GreetingSpouseNeutralFlavor', second)]" # todo: NEW TRANSLATION
+ greeting_spouse_neutral_plain: "Zdravím tě, můj [second.GetWifeHusband]," # todo: NEW TRANSLATION
+ greeting_spouse_neutral_assalam: "Pokoj s tebou, můj [second.GetWifeHusband]," # todo: NEW TRANSLATION
+ greeting_ceremonial_regent_liked: "[ROOT.Char.Custom2('GreetingCeremonialRegentLikedFlavor', second)]" # todo: CHANGED (predtym: [Select_CString( second.IsFemale, 'Buď pozdravena', 'Buď pozdraven' )], nanejvýš [second.Custom('ComplimentAdjective')] )
+ greeting_ceremonial_regent_liked_plain: "Zdravím vás, nejvíce [second.Custom('ComplimentAdjective')] [second.GetTitledFirstNameNoTooltip]," # todo: NEW TRANSLATION
+ greeting_ceremonial_regent_liked_assalam: "Pokoj s tebou, nejvíce [second.Custom('ComplimentAdjective')] [second.GetTitledFirstNameNoTooltip]," # todo: NEW TRANSLATION
  greeting_ceremonial_regent_dislike: "[second.GetTitleAsNameNoTooltip],"
- greeting_ceremonial_liege_fallback: "[Select_CString( second.IsFemale, 'Buď pozdravena', 'Buď pozdraven' )], [second.GetTitledFirstNameNoTooltip],"
+ greeting_ceremonial_liege_fallback: "[ROOT.Char.Custom2('GreetingCeremonialLiegeFallbackFlavor', second)]" # todo: CHANGED (predtym: [Select_CString( second.IsFemale, 'Buď pozdravena', 'Buď pozdraven' )], [second.GetTitledFirstNameNoTooltip],)
+ greeting_ceremonial_liege_fallback_plain: "Zdravím vás, [second.GetTitledFirstNameNoTooltip]," # todo: NEW TRANSLATION
+ greeting_ceremonial_liege_fallback_assalam: "Pokoj s tebou, [second.GetTitledFirstNameNoTooltip]," # todo: NEW TRANSLATION
  greeting_vassal_positive: "[ROOT.Char.Custom2('GreetingToVassalPositive', second)]"
  greeting_vassal_negative: "[ROOT.Char.Custom2('GreetingToVassalNegative', second)]"
  greeting_vassal_relative_liked: "[ROOT.Char.Custom2('GreetingToFamily', second)]"
- greeting_vassal_liked: "[Select_CString( second.IsFemale, 'Buď pozdravena, má', 'Buď pozdraven, můj' )] [second.Custom('ComplimentAdjective')] [Select_CString( second.IsFemale, 'vazalko', 'vazale' )],"
- greeting_vassal_liked_regent: "[Select_CString( second.IsFemale, 'Buď pozdravena', 'Buď pozdraven' )], [second.Custom('ComplimentAdjective')] [Select_CString( second.IsFemale, 'poddaná', 'poddaný' )] panovníka [ROOT.Char.Custom('GetCeremonialLiegeOrLiegeTitle')],"
- greeting_vassal_liked_ceremonial_liege: "[Select_CString( second.IsFemale, 'Má', 'Můj' )] [second.Custom2('ComplimentAdjective', ROOT.Char)|U] [ROOT.Char.Custom('GetCeremonialLiegeOrLiegeTitle')],"
+ greeting_vassal_liked: "[ROOT.Char.Custom2('GreetingVassalLikedFlavor', second)]" # todo: CHANGED (predtym: [Select_CString( second.IsFemale, 'Buď pozdravena, má', 'Buď pozdraven, můj' )] [second.Custom('ComplimentAdjective')] [)
+ greeting_vassal_liked_plain: "Zdravím vás, můj [second.Custom('ComplimentAdjective')] vazale," # todo: NEW TRANSLATION
+ greeting_vassal_liked_assalam: "Pokoj s tebou, můj [second.Custom('ComplimentAdjective')] vazale," # todo: NEW TRANSLATION
+ greeting_vassal_liked_regent: "[ROOT.Char.Custom2('GreetingVassalLikedRegentFlavor', second)]" # todo: CHANGED (predtym: [Select_CString( second.IsFemale, 'Buď pozdravena', 'Buď pozdraven' )], [second.Custom('ComplimentAdjective')] [Select_C)
+ greeting_vassal_liked_regent_plain: "Zdravím vás, [second.Custom('ComplimentAdjective')] poddaný [ROOT.Char.Custom('GetCeremonialLiegeOrLiegeTitle')]," # todo: NEW TRANSLATION
+ greeting_vassal_liked_regent_assalam: "Pokoj s tebou, [second.Custom('ComplimentAdjective')] poddaný [ROOT.Char.Custom('GetCeremonialLiegeOrLiegeTitle')]," # todo: NEW TRANSLATION
+ greeting_vassal_liked_ceremonial_liege: "[ROOT.Char.Custom2('GreetingVassalLikedCeremonialLiegeFlavor', second)]" # todo: CHANGED (predtym: [Select_CString( second.IsFemale, 'Má', 'Můj' )] [second.Custom2('ComplimentAdjective', ROOT.Char)|U] [ROOT.Char.Custom()
+ greeting_vassal_liked_ceremonial_liege_plain: "Můj [second.Custom2('ComplimentAdjective', ROOT.Char)|U] [ROOT.Char.Custom('GetCeremonialLiegeOrLiegeTitle')]," # todo: NEW TRANSLATION
+ greeting_vassal_liked_ceremonial_liege_assalam: "Pokoj s tebou, můj [second.Custom2('ComplimentAdjective', ROOT.Char)|U] [ROOT.Char.Custom('GetCeremonialLiegeOrLiegeTitle')]," # todo: NEW TRANSLATION
  greeting_vassal_dislike: "[Select_CString( second.IsFemale, 'Ty má', 'Ty můj' )] [second.Custom2('InsultAdjective', ROOT.Char)] [Select_CString( second.IsFemale, 'vazalko', 'vazale' )],"
  greeting_vassal_dislike_regent: "[second.Custom2('InsultAdjective', ROOT.Char)|U] [Select_CString( second.IsFemale, 'poddaná', 'poddaný' )] panovníka [ROOT.Char.Custom('GetCeremonialLiegeOrLiegeTitle')],"
  greeting_vassal_dislike_ceremonial_liege: "[Select_CString( second.IsFemale, 'Má', 'Můj' )] [second.Custom2('InsultAdjective', ROOT.Char)|U] [ROOT.Char.Custom('GetCeremonialLiegeOrLiegeTitle')],"
  greeting_vassal_fallback: "[ROOT.Char.Custom2('GreetingToVassalNeutral', second)]"
- greeting_vassal_neutral: "[Select_CString( second.IsFemale, 'Má vazalko', 'Můj vazale' )],"
- greeting_vassal_neutral_regent: "[Select_CString( second.IsFemale, 'Poddané', 'Poddanému' )] panovníka [ROOT.Char.Custom('GetCeremonialLiegeOrLiegeTitlePossessive')],"
- greeting_vassal_neutral_ceremonial_liege: "[Select_CString( second.IsFemale, 'Má', 'Můj' )] [ROOT.Char.GetTitleAsNameNoTooltip],"
+ greeting_vassal_neutral: "[ROOT.Char.Custom2('GreetingVassalNeutralFlavor', second)]" # todo: CHANGED (predtym: [Select_CString( second.IsFemale, 'Má vazalko', 'Můj vazale' )],)
+ greeting_vassal_neutral_plain: "Mému vazalovi," # todo: NEW TRANSLATION
+ greeting_vassal_neutral_assalam: "Pokoj s tebou, můj vazale," # todo: NEW TRANSLATION
+ greeting_vassal_neutral_regent: "[ROOT.Char.Custom2('GreetingVassalNeutralRegentFlavor', second)]" # todo: CHANGED (predtym: [Select_CString( second.IsFemale, 'Poddané', 'Poddanému' )] panovníka [ROOT.Char.Custom('GetCeremonialLiegeOrLiegeTitleP)
+ greeting_vassal_neutral_regent_plain: "Poddanému [ROOT.Char.Custom('GetCeremonialLiegeOrLiegeTitlePossessive')]," # todo: NEW TRANSLATION
+ greeting_vassal_neutral_regent_assalam: "Pokoj s tebou, poddaný [ROOT.Char.Custom('GetCeremonialLiegeOrLiegeTitlePossessive')]," # todo: NEW TRANSLATION
+ greeting_vassal_neutral_ceremonial_liege: "[ROOT.Char.Custom2('GreetingVassalNeutralCeremonialLiegeFlavor', second)]" # todo: CHANGED (predtym: [Select_CString( second.IsFemale, 'Má', 'Můj' )] [ROOT.Char.GetTitleAsNameNoTooltip],)
+ greeting_vassal_neutral_ceremonial_liege_plain: "Můj [ROOT.Char.GetTitleAsNameNoTooltip]," # todo: NEW TRANSLATION
+ greeting_vassal_neutral_ceremonial_liege_assalam: "Pokoj s tebou, můj [ROOT.Char.GetTitleAsNameNoTooltip]," # todo: NEW TRANSLATION
  greeting_family_positive: "[ROOT.Char.Custom2('GreetingToFamilyPositive', second)]"
  greeting_family_negative: "[ROOT.Char.Custom2('GreetingToFamilyNegative', second)]"
- greeting_family_liked: "Vroucně tě zdravím, [ROOT.Char.Custom2('RelationToMeShort', second)],"
- greeting_family_fallback: "Zdravím tě, [ROOT.Char.Custom2('RelationToMeShort', second)],"
- greeting_foreign_ruler: "Zdravím tě, [second.GetNameNoTooltip],"
+ greeting_family_liked: "[ROOT.Char.Custom2('GreetingFamilyLikedFlavor', second)]" # todo: CHANGED (predtym: Vroucně tě zdravím, [ROOT.Char.Custom2('RelationToMeShort', second)],)
+ greeting_family_liked_plain: "Můj drahý [ROOT.Char.Custom2('RelationToMeShort', second)]," # todo: NEW TRANSLATION
+ greeting_family_liked_assalam: "Pokoj s tebou, můj drahý [ROOT.Char.Custom2('RelationToMeShort', second)]," # todo: NEW TRANSLATION
+ greeting_family_fallback: "[ROOT.Char.Custom2('GreetingFamilyFallbackFlavor', second)]" # todo: CHANGED (predtym: Zdravím tě, [ROOT.Char.Custom2('RelationToMeShort', second)],)
+ greeting_family_fallback_plain: "Zdravím vás, [ROOT.Char.Custom2('RelationToMeShort', second)]," # todo: NEW TRANSLATION
+ greeting_family_fallback_assalam: "Pokoj s tebou, [ROOT.Char.Custom2('RelationToMeShort', second)]," # todo: NEW TRANSLATION
+ greeting_foreign_ruler: "[ROOT.Char.Custom2('GreetingForeignNeutralFlavor', second)]" # todo: CHANGED (predtym: Zdravím tě, [second.GetNameNoTooltip],)
+ greeting_foreign_plain: "Zdravím vás, [second.GetNameNoTooltip]," # todo: NEW TRANSLATION
+ greeting_foreign_assalam: "Pokoj s tebou, [second.GetNameNoTooltip]," # todo: NEW TRANSLATION
+ greeting_foreign_peace_be: "Pokoj s tebou, [second.GetNameNoTooltip]," # todo: NEW TRANSLATION
+ greeting_foreign_gods_blessing: "Boží požehnání tobě, [second.GetNameNoTooltip]," # todo: NEW TRANSLATION
+ greeting_foreign_god_keep: "Bůh tě ochraňuj, [second.GetNameNoTooltip]," # todo: NEW TRANSLATION
+ greeting_foreign_hail: "Sláva ti, [second.GetNameNoTooltip]," # todo: NEW TRANSLATION
+ greeting_foreign_heavens: "Kéž ti nebesa přejí, [second.GetNameNoTooltip]," # todo: NEW TRANSLATION
  greeting_foreign_ruler_negative: "[second.Custom2('InsultAdjective', ROOT.Char)|U] [second.GetTitledFirstNameNoTooltip],"
  greeting_foreign_ruler_positive: "[second.Custom('ComplimentAdjective')|U] [second.GetNameNoTooltip],"
- greeting_generic: "Zdravím tě, [second.GetNameNoTooltip],"
+ greeting_foreign_ruler_positive_assalam: "Pokoj s tebou, [second.GetNameNoTooltip]," # todo: NEW TRANSLATION
+ greeting_foreign_ruler_positive_gods_blessing: "Boží požehnání tobě, [second.GetNameNoTooltip]," # todo: NEW TRANSLATION
+ greeting_foreign_ruler_positive_hail: "Sláva ti, rád tě vidím, [second.GetNameNoTooltip]," # todo: NEW TRANSLATION
+ greeting_foreign_ruler_positive_heavens: "Kéž ti nebesa přejí, [second.GetNameNoTooltip]," # todo: NEW TRANSLATION
+ greeting_generic: "[ROOT.Char.Custom2('GreetingGenericNeutralFlavor', second)]" # todo: CHANGED (predtym: Zdravím tě, [second.GetNameNoTooltip],)
+ greeting_generic_plain: "Zdravím vás, [second.GetNameNoTooltip]," # todo: NEW TRANSLATION
+ greeting_generic_assalam: "Pokoj s tebou, [second.GetNameNoTooltip]," # todo: NEW TRANSLATION
+ greeting_generic_peace_be: "Pokoj s tebou, [second.GetNameNoTooltip]," # todo: NEW TRANSLATION
+ greeting_generic_gods_blessing: "Boží požehnání tobě, [second.GetNameNoTooltip]," # todo: NEW TRANSLATION
+ greeting_generic_god_keep: "Bůh tě ochraňuj, [second.GetNameNoTooltip]," # todo: NEW TRANSLATION
+ greeting_generic_hail: "Sláva ti, [second.GetNameNoTooltip]," # todo: NEW TRANSLATION
+ greeting_generic_heavens: "Kéž ti nebesa přejí, [second.GetNameNoTooltip]," # todo: NEW TRANSLATION
+ greeting_generic_shalom: "Šalom alejchem, [second.GetNameNoTooltip]," # todo: NEW TRANSLATION
+ greeting_generic_highgod_guide: "Kéž tě [ROOT.Char.GetFaith.HighGodName] vede, [second.GetNameNoTooltip]," # todo: NEW TRANSLATION
+ greeting_generic_gods_protect: "Kéž tě bohové ochraňují, [second.GetNameNoTooltip]," # todo: NEW TRANSLATION
+ greeting_generic_zoroastrian_light: "Kéž tě světlo [ROOT.Char.GetFaith.HighGodName] ochraňuje, [second.GetNameNoTooltip]," # todo: NEW TRANSLATION
+ greeting_generic_dharma: "Kéž se na tebe bohové usmívají, [second.GetNameNoTooltip]," # todo: NEW TRANSLATION
+ greeting_foreign_shalom: "Šalom alejchem, [second.GetNameNoTooltip]," # todo: NEW TRANSLATION
+ greeting_foreign_highgod_guide: "Kéž tě [ROOT.Char.GetFaith.HighGodName] vede, [second.GetNameNoTooltip]," # todo: NEW TRANSLATION
+ greeting_foreign_gods_protect: "Kéž tě bohové ochraňují, [second.GetNameNoTooltip]," # todo: NEW TRANSLATION
+ greeting_foreign_zoroastrian_light: "Kéž tě světlo [ROOT.Char.GetFaith.HighGodName] ochraňuje, [second.GetNameNoTooltip]," # todo: NEW TRANSLATION
+ greeting_foreign_dharma: "Kéž se na tebe bohové usmívají, [second.GetNameNoTooltip]," # todo: NEW TRANSLATION
+ greeting_liege_neutral_shalom: "Šalom alejchem, můj pane," # todo: NEW TRANSLATION
+ greeting_liege_neutral_highgod_guide: "Kéž vás [ROOT.Char.GetFaith.HighGodName] vede, můj pane," # todo: NEW TRANSLATION
+ greeting_liege_neutral_gods_protect: "Kéž vás bohové ochraňují, můj pane," # todo: NEW TRANSLATION
+ greeting_liege_neutral_zoroastrian_light: "Kéž vás světlo [ROOT.Char.GetFaith.HighGodName] ochraňuje, můj pane," # todo: NEW TRANSLATION
+ greeting_liege_neutral_dharma: "Kéž se na vás bohové usmívají, můj pane," # todo: NEW TRANSLATION
+ greeting_generic_positive_shalom: "Šalom alejchem, [second.GetFirstNameNoTooltip]," # todo: NEW TRANSLATION
+ greeting_generic_positive_highgod_guide: "Kéž tě [ROOT.Char.GetFaith.HighGodName] vede, [second.GetFirstNameNoTooltip]," # todo: NEW TRANSLATION
+ greeting_generic_positive_gods_protect: "Kéž tě bohové ochraňují, [second.GetFirstNameNoTooltip]," # todo: NEW TRANSLATION
+ greeting_generic_positive_zoroastrian_light: "Kéž tě světlo [ROOT.Char.GetFaith.HighGodName] ochraňuje, [second.GetFirstNameNoTooltip]," # todo: NEW TRANSLATION
+ greeting_generic_positive_dharma: "Kéž se na tebe bohové usmívají, [second.GetFirstNameNoTooltip]," # todo: NEW TRANSLATION
+ greeting_foreign_ruler_positive_shalom: "Šalom alejchem, [second.GetNameNoTooltip]," # todo: NEW TRANSLATION
+ greeting_foreign_ruler_positive_highgod_guide: "Kéž tě [ROOT.Char.GetFaith.HighGodName] vede, [second.GetNameNoTooltip]," # todo: NEW TRANSLATION
+ greeting_foreign_ruler_positive_gods_protect: "Kéž tě bohové ochraňují, [second.GetNameNoTooltip]," # todo: NEW TRANSLATION
+ greeting_foreign_ruler_positive_zoroastrian_light: "Kéž tě světlo [ROOT.Char.GetFaith.HighGodName] ochraňuje, [second.GetNameNoTooltip]," # todo: NEW TRANSLATION
+ greeting_foreign_ruler_positive_dharma: "Kéž se na tebe bohové usmívají, [second.GetNameNoTooltip]," # todo: NEW TRANSLATION
  greeting_generic_negative: "[second.Custom2('InsultAdjective', ROOT.Char)|U] [second.GetFirstNameNoTooltip],"
  greeting_generic_positive: "[second.Custom('ComplimentAdjective')|U] [second.GetFirstNameNoTooltip],"
+ greeting_generic_positive_assalam: "As-salámu alajkum, [second.GetFirstNameNoTooltip]," # todo: NEW TRANSLATION
+ greeting_generic_positive_gods_blessing: "Boží požehnání s tebou, [second.GetFirstNameNoTooltip]," # todo: NEW TRANSLATION
+ greeting_generic_positive_hail: "Buď zdráv a vítej, [second.GetFirstNameNoTooltip]," # todo: NEW TRANSLATION
+ greeting_generic_positive_heavens: "Kéž ti nebesa přejí, [second.GetFirstNameNoTooltip]," # todo: NEW TRANSLATION
  greeting_appropriate_positive_liege: "[ROOT.Char.Custom2('GreetingToLiegePositive', second)]"
  greeting_appropriate_positive_vassal: "[ROOT.Char.Custom2('GreetingToVassalPositive', second)]"
  greeting_appropriate_positive_family: "[ROOT.Char.Custom2('GreetingToFamilyPositive', second)]"
@@ -64,6 +168,21 @@
  greeting_supplimentary.negative.insult_muslim.2: "Ať tě zaživa zašijí do břicha mrtvého velblouda."
  greeting_supplimentary.negative.insult_muslim.3: "Ať Alláh zahubí celý tvůj rod."
  greeting_supplimentary.negative.insult_muslim.4: "Ty potomku prašivého psa."
+ greeting_supplimentary.negative.insult_muslim.5: "Kéž se šakali přou o tvé nepohřbené kosti." # todo: NEW TRANSLATION
+ greeting_supplimentary.negative.insult_muslim.6: "Kéž se tvé studny naplní pískem a tvé stany štíry." # todo: NEW TRANSLATION
+ greeting_supplimentary.negative.insult_christian.1: "Kéž tě svatí opustí." # todo: NEW TRANSLATION
+ greeting_supplimentary.negative.insult_christian.2: "Tvé jméno bude vymazáno ze všech modliteb." # todo: NEW TRANSLATION
+ greeting_supplimentary.negative.insult_norse.1: "Kéž tví předkové plivou na tvůj stín." # todo: NEW TRANSLATION
+ greeting_supplimentary.negative.insult_norse.2: "Tvé odvahy je méně než zimního ledu." # todo: NEW TRANSLATION
+ greeting_supplimentary.negative.insult_byzantine.1: "I krysy z Konstantinopole prchají před tvým zápachem." # todo: NEW TRANSLATION
+ greeting_supplimentary.negative.insult.4: "Kéž tvá pole leží ladem a tvé studny vyschnou." # todo: NEW TRANSLATION
+ greeting_supplimentary.negative.insult.unreliable_swine: "Ty nespolehlivé prase." # todo: NEW TRANSLATION
+ greeting_supplimentary.negative.insult.oathbreaker: "Jsi lhář a křivopřísežník." # todo: NEW TRANSLATION
+ greeting_supplimentary.negative.insult_jewish.1: "Kéž je tvé jméno vymazáno z knihy živých." # todo: NEW TRANSLATION
+ greeting_supplimentary.negative.insult_zoroastrian.1: "Kéž temnota zadusí oheň, o který se údajně staráš." # todo: NEW TRANSLATION
+ greeting_supplimentary.negative.insult_hindu.1: "Jdeš daleko od cesty spravedlnosti — a já tě od ní zaženu ještě dál." # todo: NEW TRANSLATION
+ greeting_supplimentary.negative.insult_christian.3: "Kéž se peklo široce otevře, aby tě přijalo." # todo: NEW TRANSLATION
+ greeting_supplimentary.negative.insult_norse.3: "Havrani si bohatě pochutnají na tvé mrtvole." # todo: NEW TRANSLATION
  greeting_supplimentary.positive: "[ROOT.Char.Custom2('PositiveSupplimentaryGreeting', second)]"
  greeting_supplimentary.positive.flattery.1: "Požehnání tobě i tvému rodu."
  greeting_supplimentary.positive.flattery.2: "Tvá moudrost a milosrdenství jsou opředeny legendami."
@@ -71,8 +190,24 @@
  greeting_supplimentary.positive.flattery.4: "Kéž žiješ v souladu a spokojenosti."
  greeting_supplimentary.positive.flattery.5: "Tvá bezohlednost je záviděníhodná."
  greeting_supplimentary.positive.flattery.6: "Tvé nezměrné choutky jsou proslulé po celém světě."
+ greeting_supplimentary.positive.flattery.7: "Tvá pověst tě předchází za každou hranici." # todo: NEW TRANSLATION
+ greeting_supplimentary.positive.flattery.8: "Kéž tvůj rod přetrvá tisíc let." # todo: NEW TRANSLATION
+ greeting_supplimentary.positive.flattery.9: "Kéž Bůh posílí tvou mečovou paži." # todo: NEW TRANSLATION
+ greeting_supplimentary.positive.flattery.10: "Pokoj a hojnost tvému domu." # todo: NEW TRANSLATION
+ greeting_supplimentary.positive.flattery.11: "Kéž štěstěna přeje tvým praporům." # todo: NEW TRANSLATION
+ greeting_supplimentary.positive.flattery_chinese.1: "Nebeské požehnání s tebou." # todo: NEW TRANSLATION
+ greeting_supplimentary.positive.flattery_chinese.2: "Kéž tvé země vždy vzkvétají." # todo: NEW TRANSLATION
+ greeting_supplimentary.positive.flattery_chinese.3: "Kéž tvé vládě požehná síla a energie." # todo: NEW TRANSLATION
+ greeting_supplimentary.positive.flattery_norse.1: "Kéž ti bohové dopřejí příznivý vítr a tučný dobytek." # todo: NEW TRANSLATION
+ greeting_supplimentary.positive.flattery_byzantine.1: "Kéž sláva Města září na tvůj dům." # todo: NEW TRANSLATION
+ greeting_supplimentary.positive.flattery_jewish.1: "Kéž Svatý požehná tvému domu pokojem." # todo: NEW TRANSLATION
+ greeting_supplimentary.positive.flattery.12: "Tvá moudrost je světlem pro ty, kdo hledají radu." # todo: NEW TRANSLATION
+ greeting_supplimentary.positive.flattery.13: "Kéž tě Nebesa zahrnují svou přízní." # todo: NEW TRANSLATION
  form_of_address_your_excellency: "Vaše Excelence"
  form_of_address_excellency: "Excelence"
+ form_of_address_your_eminence: "Vaše Eminence" # todo: NEW TRANSLATION
+ form_of_address_blessed_mother_father: "Požehnaný [ROOT.Char.GetMotherFather|U]" # todo: NEW TRANSLATION
+ form_of_address_holy_mother_father: "Svatý [ROOT.Char.GetMotherFather|U]" # todo: NEW TRANSLATION
  form_of_address_my_ladylord: "[Select_CString( ROOT.Char.IsFemale, 'má paní', 'můj pane' )]"
  form_of_address_ladylord_regent: "[Select_CString( ROOT.Char.IsFemale, 'Paní regentko', 'Pane regente' )]"
  form_of_address_your_holiness: "Vaše Svatosti"
@@ -85,6 +220,14 @@
  form_of_address_my_sovereign_ladylord: "[Select_CString( ROOT.Char.IsFemale, 'má svrchovaná paní', 'můj svrchovaný pane' )]"
  form_of_address_son_of_heaven: "Syn nebes"
  form_of_address_your_radiance: "vaše Jasnosti"
+ form_of_address_your_grace: "Vaše Milosti" # todo: NEW TRANSLATION
+ form_of_address_sire: "pane" # todo: NEW TRANSLATION
+ form_of_address_your_basileus: "[Glossary( 'Basileus', 'BASILEUS_GLOSS' )]" # todo: NEW TRANSLATION
+ form_of_address_your_basilissa: "[Glossary( 'Basilissa', 'BASILISSA_GLOSS' )]" # todo: NEW TRANSLATION
+ BASILEUS_GLOSS: "Řecky císař nebo panovník." # todo: NEW TRANSLATION
+ BASILISSA_GLOSS: "Řecky císařovna nebo panovnice." # todo: NEW TRANSLATION
+ form_of_address_most_christian: "Nejkřesťanštější [ROOT.Char.GetTitleAsNameNoTooltip]" # todo: NEW TRANSLATION
+ form_of_address_my_sovereign: "můj pane" # todo: NEW TRANSLATION
  ceremonial_liege_title_from_any_vassal: "[ROOT.Char.GetTopLiege.GetPrimaryTitle.MakeScope.Var('administrative_ui_special_title').Title.GetHolder.GetTitleAsNameNoTooltip]"
  ceremonial_liege_title_from_any_vassal_possessive: "[ROOT.Char.GetTopLiege.GetPrimaryTitle.MakeScope.Var('administrative_ui_special_title').Title.GetHolder.GetTitleAsNamePossessiveNoTooltip]"
  top_liege_title_from_any_vassal: "[ROOT.Char.GetTopLiege.GetPrimaryTitle.MakeScope.Var('administrative_ui_special_title').Title.GetHolder.GetTitleAsNameNoTooltip]"

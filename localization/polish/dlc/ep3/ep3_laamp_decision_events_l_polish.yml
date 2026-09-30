@@ -59,7 +59,7 @@
  ep3_laamp_decision_event.1000.desc_outro_returned_generic_03: "\n\nJe teplo, i když ne takové, jaké by se dalo očekávat v tomto regionu v největším horku. Dělníci i šlechtici si vykonávají své denní povinnosti a užívají si příjemnou teplotu."
  ep3_laamp_decision_event.1000.desc_outro_returned_generic_04: "\n\nStádo [ROOT.Char.Custom('RegionalFarmAnimalPlural')] účinně blokuje cestu putujícímu obchodníkovi, což vyvolává spoustu zármutku a křiku."
  ep3_laamp_decision_event.1000.desc_outro_returned_generic_05: "\n\nNalevo se [ROOT.Char.Custom('SoundingRegionalFarmAnimal')] stěžuje na důkladnou prohlídku od potenciálního kupce. Prodejce [dummy_gender.GetWomanMan] mu jemně hladí hlavu na uklidnění."
- ep3_laamp_decision_event.1000.desc_outro_returned_generic_06: "\n\nNapravo je malý záhon živých [ROOT.Char.Custom('get_region_flower_type_plural')], [Select_CString(ROOT.Char.IsFemale,'která','který')] poskytuje příjemný ostrůvek barev v [ROOT.Char.Custom('GetSquareCommons')]."
+ ep3_laamp_decision_event.1000.desc_outro_returned_generic_06: "\n\nNapravo je malý záhon živých [ROOT.Char.GetCurrentLocation.Custom('get_region_flower_type_plural')], [Select_CString(ROOT.Char.IsFemale,'která','který')] poskytuje příjemný ostrůvek barev v [ROOT.Char.Custom('GetSquareCommons')]." # todo: CHANGED, CHECK FORMAT (predtym: \n\nNapravo je malý záhon živých [ROOT.Char.Custom('get_region_flower_type_plural')], [Select_CString(ROOT.Char.IsFemale)
  ep3_laamp_decision_event.1000.desc_outro_returned_generic_07: "\n\n[ROOT.Char.Custom('GetRandomRegionalBird')] sedí nahoře na [ROOT.Char.GetCurrentLocation.Custom('GetRandomAppropriateTree')] stromě; dívá se dolů na hemžící se [visiting_location.GetCounty.GetCulture.GetCollectiveNounNoTooltip] s bystrýma očima."
  ep3_laamp_decision_event.1000.desc_outro_returned_partner_generic_01: "\n\n[visiting_partner.GetFirstName] mě jemně strčí a ukáže nahoru na blízké [visiting_location.Custom('GetRandomRegionalWood')] — na nejvyšší větvi sedí robustní [ROOT.Char.Custom('GetRandomRegionalBird')], vyhřívá se odpoledním sluncem."
  ep3_laamp_decision_event.1000.desc_outro_returned_partner_generic_02: "\n\n[visiting_partner.GetFirstName] potěšeně cvrliká a ukáže na rozverného [ROOT.Char.Custom('get_region_dog_type')], [Select_CString(visiting_partner.IsFemale,'která','který')] pobíhá a hraje si aport se svým pánem."
@@ -321,7 +321,7 @@
  treasure_map: "Mapa pokladu"
  treasure_map_desc: "Ošuntělá mapa, údajně vedoucí k dávným bohatstvím v [newly_created_map.MakeScope.Var('artifact_treasure_location').GetProvince.GetBaronyNameExplicitlyNoTooltip]. Získána od hlásného v [newly_created_map.MakeScope.Var('picked_up_in_location').GetProvince.GetBaronyNameExplicitlyNoTooltip]."
  artifact_is_related_to_contract_tt: "Tento [Concept('artifact','artefakt')|E] souvisí s [Concept('task_contract','zakázkou')|E] a nelze jej zničit" # todo: CONCEPT CASE
- gallowsbait_thief_blocked_from_contract.tt: "Jste příliš hluboko v [GetTrait('gallowsbait').GetName( GetNullCharacter )] [GetTrait( 'gallowsbait' ).GetTraitTrackByKey( 'thief' ).GetName] [Concept('trait','ryse')|E], než abyste byli důvěryhodní pro tento [Concept('vassal_contract','vazalská smlouva')|E]" # todo: CONCEPT CASE
+ gallowsbait_thief_blocked_from_contract.tt: "Jste příliš hluboko v [GetTrait('gallowsbait').GetName( GetNullCharacter )] [GetTrait( 'gallowsbait' ).GetTraitTrackByKey( 'thief' ).GetName] [Concept('trait','ryse')|E], než abyste byli důvěryhodní pro tuto [Concept('task_contract','zakázku')|E]" # todo: CHANGED (predtym: Jste příliš hluboko v [GetTrait('gallowsbait').GetName( GetNullCharacter )] [GetTrait( 'gallowsbait' ).GetTraitTrackByKe)
  ep3_laamp_decision_event.1030.t: "[visiting_location.GetBaronyNameExplicitlyNoTooltip]: the [ROOT.Char.Custom('GetTavernDwelling')|U]"
  ep3_laamp_decision_event.1030.desc_returned_01: "Znovu vstupuji do taverny a zjišťuji, že se toho mnoho nezměnilo — cestovatelé a tuláci odpočívají, zatímco se jim dostává péče."
  ep3_laamp_decision_event.1030.desc_nomad_returned_01: "Znovu vstupuji do obydlí, znovu mě zasáhne pohostinnost a přátelská atmosféra a dovolím si uvolněné povzdechnutí."
@@ -874,6 +874,7 @@
  laamp_decision_exotic_story_intrigue_gain_modifier_desc: "Tato postava si z exotického příběhu odnesla ponaučení v intrikách."
  laamp_decision_exotic_story_learning_gain_modifier: "Exotické poznatky"
  laamp_decision_exotic_story_learning_gain_modifier_desc: "Tato postava si z exotického příběhu odnesla nové poznatky."
+ modifier_growth_with_lower_skill: "Čím nižší je vaše [skill|E], tím větší užitek z toho máte" # todo: NEW TRANSLATION
  MODIFIER_DEFINITION_VALUE_PER_PHYSICIAN_APTITUDE: " \t#weak Zvýšení za každou úroveň $court_physician_court_position$ [Concept('aptitude','způsobilost')|E]#!" # todo: CONCEPT CASE
  laamp_decision_church_health_modifier: "Osvědčené ošetření"
  laamp_decision_church_health_modifier_desc: "Tato postava byla ošetřena zkušeným lékařem."
@@ -976,6 +977,9 @@
  positive_shallow_adjective_ravishing: "strhující"
  positive_shallow_adjective_seductive: "svůdný"
  positive_shallow_adjective_stunning: "ohromující"
+ positive_shallow_adjective_comely: "půvabný" # todo: NEW TRANSLATION
+ positive_shallow_adjective_winsome: "okouzlující" # todo: NEW TRANSLATION
+ positive_shallow_adjective_beauteous: "spanilý" # todo: NEW TRANSLATION
  positive_shallow_adjective_with_article_attractive: "$positive_shallow_adjective_attractive$"
  positive_shallow_adjective_with_article_beautiful: "$positive_shallow_adjective_beautiful$"
  positive_shallow_adjective_with_article_bewitching: "$positive_shallow_adjective_bewitching$"
@@ -983,9 +987,12 @@
  positive_shallow_adjective_with_article_enthralling: "$positive_shallow_adjective_enthralling$"
  positive_shallow_adjective_with_article_enchanting: "$positive_shallow_adjective_enchanting$"
  positive_shallow_adjective_with_article_fetching: "$positive_shallow_adjective_fetching$"
- positive_shallow_adjective_with_article_gorgeous: "$positive_shallow_adjective_ravishing$"
+ positive_shallow_adjective_with_article_gorgeous: "$positive_shallow_adjective_gorgeous$" # todo: CHANGED (predtym: $positive_shallow_adjective_ravishing$)
  positive_shallow_adjective_with_article_ravishing: "$positive_shallow_adjective_ravishing$"
  positive_shallow_adjective_with_article_seductive: "$positive_shallow_adjective_seductive$"
  positive_shallow_adjective_with_article_stunning: "$positive_shallow_adjective_stunning$"
+ positive_shallow_adjective_with_article_comely: "$positive_shallow_adjective_comely$" # todo: NEW TRANSLATION
+ positive_shallow_adjective_with_article_winsome: "$positive_shallow_adjective_winsome$" # todo: NEW TRANSLATION
+ positive_shallow_adjective_with_article_beauteous: "$positive_shallow_adjective_beauteous$" # todo: NEW TRANSLATION
  NOT_HAVE_MASTER_OF_ARMS_BUILDING: "Potřebujete [GetDomicileBuilding('proving_grounds_01').GetName] k zaměstnání [GetCourtPositionType('master_of_arms_camp_officer').GetName()] [Concept('officer','důstojníkovi')|E]" # todo: CONCEPT CASE
  NOT_HAVE_ARMORER_BUILDING: "Potřebujete [GetDomicileBuilding('supply_tent_smithy').GetName] k zaměstnání [GetCourtPositionType('armorer_camp_officer').GetName()] [Concept('officer','důstojníkovi')|E]" # todo: CONCEPT CASE

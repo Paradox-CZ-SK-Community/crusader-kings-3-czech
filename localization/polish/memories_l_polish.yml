@@ -402,6 +402,14 @@
  married_desc: "[Select_CString(owner.IsFemale, 'Uzavřela', 'Uzavřel')] jsem manželství s [spouse.GetTitledFirstName]"
  married_desc_second_perspective: "[Select_CString(owner.IsFemale, 'uzavřela', 'uzavřel')] jsi manželství s [spouse.GetTitledFirstName]"
  married_desc_third_perspective: "[owner.GetFirstName] [Select_CString(owner.IsFemale, 'uzavřela', 'uzavřel')] manželství s [spouse.GetTitledFirstName]"
+ divorced_actor: "rozvedl/a se" # todo: NEW TRANSLATION
+ divorced_actor_desc: "Rozvedl/a jsem se s [spouse.GetTitledFirstName]" # todo: NEW TRANSLATION
+ divorced_actor_desc_second_perspective: "Rozvedl/a ses s [spouse.GetTitledFirstName]" # todo: NEW TRANSLATION
+ divorced_actor_desc_third_perspective: "[owner.GetFirstName] se rozvedl/a s [spouse.GetTitledFirstName]" # todo: NEW TRANSLATION
+ divorced_recipient: "rozvedl/a se" # todo: NEW TRANSLATION
+ divorced_recipient_desc: "[spouse.GetTitledFirstName] se se mnou rozvedl/a" # todo: NEW TRANSLATION
+ divorced_recipient_desc_second_perspective: "[spouse.GetTitledFirstName] se s tebou rozvedl/a" # todo: NEW TRANSLATION
+ divorced_recipient_desc_third_perspective: "[spouse.GetTitledFirstName] se rozvedl/a s [owner.GetFirstName]" # todo: NEW TRANSLATION
  spouse_died: "Choť umírá"
  spouse_died_desc: "[dead_relation.GetFirstName], [Select_CString(dead_relation.IsFemale, 'má manželka', 'můj manžel')], [dead_relation.GetDeathReasonHideKiller]"
  spouse_died_desc_second_perspective: "[dead_relation.GetFirstName], [Select_CString(dead_relation.IsFemale, 'tvá manželka', 'tvůj manžel')], [dead_relation.GetDeathReasonHideKiller]"
@@ -757,7 +765,6 @@
  twins_born_desc_third_perspective_bastard: "[owner.GetName] [Select_CString(owner.IsFemale, 'měla', 'měl')] dvojčata [child.GetFirstName] a [child_2.GetFirstName], která se narodila mimo manželství; matkou byla [Select_CString(owner.IsFemale, 'její', 'jeho')] [owner.Custom2('RelationToMeShort', SCOPE.sC('child').GetMother)] [child.GetMother.GetFirstName]"
  twins_born_desc_third_perspective_1: "[owner.GetName] [Select_CString(owner.IsFemale, 'měla', 'měl')] dvojčata [child.GetFirstName] a [child_2.GetFirstName]; matkou byla [Select_CString(owner.IsFemale, 'její', 'jeho')] [owner.Custom2('RelationToMeShort', SCOPE.sC('child').GetMother)] [child.GetMother.GetFirstName]"
  child_stillborn: "mrtvě narozené dítě"
- child_premature: "samovolný potrat"
  child_stillborn_desc_1_mother: "Porodila jsem mrtvé dítě"
  child_stillborn_desc_1: "[Select_CString(mother.IsFemale, 'Má', 'Můj')] [owner.Custom2('RelationToMeShort', SCOPE.sC('mother'))] [mother.GetFirstName] porodila mrtvé dítě"
  child_stillborn_desc_second_perspective_1_mother: "porodila jsi mrtvé dítě"
@@ -891,6 +898,7 @@
  house_feud_started_head_rivalry: "se naše soupeření vymklo kontrole"
  house_feud_started_family_rivalry: "[victim.GetFirstName], [Select_CString(victim.IsFemale, 'má', 'můj')] [owner.Custom2('RelationToMeShort', SCOPE.sC('victim'))], [Select_CString(victim.IsFemale, 'vyhrotila', 'vyhrotil')] své soupeření s [attacker.GetFirstName]"
  house_feud_started_head_killed: "[victim.GetFirstName], [Select_CString(victim.IsFemale, 'má', 'můj')] [owner.Custom2('RelationToMeShort', SCOPE.sC('victim'))] a hlava mého rodu, [Select_CString(victim.IsFemale, 'zahynula', 'zahynul')] rukou [attacker.GetFirstName]"
+ house_feud_started_head_skull_sent: "můj [owner.Custom2('RelationToMeShort', SCOPE.sC('victim'))] a hlava rodu [victim.GetFirstName] byli zabiti [attacker.GetFirstName] a [victim.GetHerHis] lebka byla poslána zpět, aby ponížila náš rod" # todo: NEW TRANSLATION
  house_feud_started_family_killed: "[victim.GetFirstName], [Select_CString(victim.IsFemale, 'má', 'můj')] [owner.Custom2('RelationToMeShort', SCOPE.sC('victim'))], [Select_CString(victim.IsFemale, 'zahynula', 'zahynul')] rukou [attacker.GetFirstName]"
  house_feud_started_head_imprisoned: "mě [attacker.GetFirstName] [Select_CString(attacker.IsFemale, 'bezdůvodně držela', 'bezdůvodně držel')] v zajetí"
  house_feud_started_family_imprisoned: "[victim.GetFirstName], [Select_CString(victim.IsFemale, 'má', 'můj')] [owner.Custom2('RelationToMeShort', SCOPE.sC('victim'))], [Select_CString(victim.IsFemale, 'byla bezdůvodně vězněna', 'byl bezdůvodně vězněn')] vinou [attacker.GetFirstName]"
@@ -910,10 +918,12 @@
  house_feud_started_murder_feast: "[victim.GetFirstName], [Select_CString(victim.IsFemale, 'má', 'můj')] [owner.Custom2('RelationToMeShort', SCOPE.sC('victim'))], [Select_CString(victim.IsFemale, 'byla bezostyšně zavražděna', 'byl bezostyšně zavražděn')] na hostině, kterou [attacker.GetFirstName] [Select_CString(attacker.IsFemale, 'pořádala', 'pořádal')]"
  house_feud_started_bloody_wedding: "[victim.GetFirstName], [Select_CString(victim.IsFemale, 'má', 'můj')] [owner.Custom2('RelationToMeShort', SCOPE.sC('victim'))], [Select_CString(victim.IsFemale, 'zůstala', 'zůstal')] během své vlastní svatby bez ochrany, protože [attacker.GetFirstName] [Select_CString(attacker.IsFemale, 'selhala', 'selhal')]"
  house_feud_started_raid_estate: "[attacker.GetFirstName] [Select_CString(attacker.IsFemale, 'vyplenila', 'vyplenil')] můj statek"
+ house_feud_started_divorce: "Hanebně jsem se rozvedl/a s [victim.GetFirstName]" # todo: NEW TRANSLATION
  house_feud_started_memory_desc_second_perspective: "[Select_CString(owner.IsFemale, 'zahájila', 'zahájil')] jsi rodovou mstu s [house_head.GetTitledFirstName] z rodu [house_head.GetHouse.GetBaseName] poté, co"
  house_feud_started_head_rivalry_second_perspective: "se soupeření mezi tebou a [house_head.GetTitledFirstName] vymklo kontrole"
  house_feud_started_family_rivalry_second_perspective: "se vyhrotilo soupeření, které [victim.GetFirstName], [Select_CString(victim.IsFemale, 'tvá', 'tvůj')] [owner.Custom2('RelationToMeShort', SCOPE.sC('victim'))], [Select_CString(victim.IsFemale, 'vedla', 'vedl')] s [attacker.GetFirstName]"
  house_feud_started_head_killed_second_perspective: "[victim.GetFirstName], [Select_CString(victim.IsFemale, 'tvá', 'tvůj')] [owner.Custom2('RelationToMeShort', SCOPE.sC('victim'))] a zároveň hlava tvého rodu, [Select_CString(victim.IsFemale, 'byla zavražděna', 'byl zavražděn')] rukou [attacker.GetFirstName]"
+ house_feud_started_head_skull_sent_second_perspective: "tvůj [owner.Custom2('RelationToMeShort', SCOPE.sC('victim'))] a hlava rodu [victim.GetFirstName] byli zabiti [attacker.GetFirstName] a [victim.GetHerHis] lebka byla poslána zpět, aby ponížila náš rod" # todo: NEW TRANSLATION
  house_feud_started_family_killed_second_perspective: "[victim.GetFirstName], [Select_CString(victim.IsFemale, 'tvá', 'tvůj')] [owner.Custom2('RelationToMeShort', SCOPE.sC('victim'))], [Select_CString(victim.IsFemale, 'byla zavražděna', 'byl zavražděn')] rukou [attacker.GetFirstName]"
  house_feud_started_head_imprisoned_second_perspective: "tě [attacker.GetFirstName] [Select_CString(attacker.IsFemale, 'bezdůvodně držela', 'bezdůvodně držel')] v zajetí"
  house_feud_started_family_imprisoned_second_perspective: "[victim.GetFirstName], [Select_CString(victim.IsFemale, 'tvá', 'tvůj')] [owner.Custom2('RelationToMeShort', SCOPE.sC('victim'))], [Select_CString(victim.IsFemale, 'byla bezdůvodně vězněna', 'byl bezdůvodně vězněn')] vinou [attacker.GetFirstName]"
@@ -932,10 +942,12 @@
  house_feud_started_murder_feast_second_perspective: "[victim.GetFirstName], [Select_CString(victim.IsFemale, 'tvá', 'tvůj')] [owner.Custom2('RelationToMeShort', SCOPE.sC('victim'))], [Select_CString(victim.IsFemale, 'byla bezostyšně zavražděna', 'byl bezostyšně zavražděn')] na hostině, kterou [attacker.GetFirstName] [Select_CString(attacker.IsFemale, 'pořádala', 'pořádal')]"
  house_feud_started_bloody_wedding_second_perspective: "[attacker.GetFirstName] [Select_CString(attacker.IsFemale, 'selhala', 'selhal')] v ochraně [victim.GetFirstName], [Select_CString(victim.IsFemale, 'tvé', 'tvého')] [owner.Custom2('RelationToMeShort', SCOPE.sC('victim'))], během [Select_CString(victim.IsFemale, 'její', 'jeho')] vlastní svatby"
  house_feud_started_raid_estate_second_perspective: "[attacker.GetFirstName] [Select_CString(attacker.IsFemale, 'vyplenila', 'vyplenil')] tvůj statek"
+ house_feud_started_divorce_second_perspective: "Hanebně se s tebou rozvedl/a [attacker.GetFirstName]" # todo: NEW TRANSLATION
  house_feud_started_memory_desc_third_perspective: "[owner.GetTitledFirstName] [Select_CString(owner.IsFemale, 'zahájila', 'zahájil')] rodovou mstu s [house_head.GetTitledFirstName] z rodu [house_head.GetHouse.GetBaseName] poté, co"
  house_feud_started_head_rivalry_third_perspective: "se soupeření mezi [owner.GetTitledFirstName] a [house_head.GetTitledFirstName] vymklo kontrole"
  house_feud_started_family_rivalry_third_perspective: "se vyhrotilo soupeření, které [victim.GetFirstName], [Select_CString(owner.IsFemale, 'její', 'jeho')] [owner.Custom2('RelationToMeShort', SCOPE.sC('victim'))], [Select_CString(victim.IsFemale, 'vedla', 'vedl')] s [attacker.GetFirstName]"
  house_feud_started_head_killed_third_perspective: "[victim.GetFirstName], [Select_CString(owner.IsFemale, 'její', 'jeho')] [owner.Custom2('RelationToMeShort', SCOPE.sC('victim'))] a zároveň hlava rodu, [Select_CString(victim.IsFemale, 'byla zavražděna', 'byl zavražděn')] rukou [attacker.GetFirstName]"
+ house_feud_started_head_skull_sent_third_perspective: "[owner.GetTitledFirstNamePossessive] [owner.Custom2('RelationToMeShort', SCOPE.sC('victim'))] a hlava rodu [victim.GetFirstName] byli zabiti [attacker.GetFirstName] a [victim.GetHerHis] lebka byla poslána zpět, aby ponížila náš rod" # todo: NEW TRANSLATION
  house_feud_started_family_killed_third_perspective: "[victim.GetFirstName], [Select_CString(owner.IsFemale, 'její', 'jeho')] [owner.Custom2('RelationToMeShort', SCOPE.sC('victim'))], [Select_CString(victim.IsFemale, 'byla zavražděna', 'byl zavražděn')] rukou [attacker.GetFirstName]"
  house_feud_started_head_imprisoned_third_perspective: "[owner.GetTitledFirstName] [attacker.GetFirstName] [Select_CString(attacker.IsFemale, 'bezdůvodně držela', 'bezdůvodně držel')] v zajetí"
  house_feud_started_family_imprisoned_third_perspective: "[victim.GetFirstName], [Select_CString(owner.IsFemale, 'její', 'jeho')] [owner.Custom2('RelationToMeShort', SCOPE.sC('victim'))], [Select_CString(victim.IsFemale, 'byla bezdůvodně vězněna', 'byl bezdůvodně vězněn')] vinou [attacker.GetFirstName]"
@@ -954,6 +966,7 @@
  house_feud_started_murder_feast_third_perspective: "na hostině, kterou [attacker.GetFirstName] [Select_CString(attacker.IsFemale, 'pořádala', 'pořádal')], došlo v rodině k bezostyšné vraždě"
  house_feud_started_bloody_wedding_third_perspective: "[attacker.GetFirstName] [Select_CString(attacker.IsFemale, 'selhala', 'selhal')] v ochraně [Select_CString(owner.IsFemale, 'její', 'jeho')] rodiny během svatby jednoho z [Select_CString(owner.IsFemale, 'jejích', 'jeho')] členů"
  house_feud_started_raid_estate_third_perspective: "[attacker.GetFirstName] [Select_CString(attacker.IsFemale, 'vyplenila', 'vyplenil')] statek, který patřil [victim.GetFirstName]"
+ house_feud_started_divorce_third_perspective: "S [victim.GetFirstName] se hanebně rozvedl/a [attacker.GetFirstName]" # todo: NEW TRANSLATION
  house_feud_ended_memory: "Konec rodové msty"
  house_feud_ended_memory_desc: "[Select_CString(owner.IsFemale, 'Ukončila', 'Ukončil')] jsem rodovou mstu své rodiny s rodem [house_head.GetHouse.GetBaseName]"
  house_feud_ended_memory_desc_second_perspective: "[Select_CString(owner.IsFemale, 'ukončila', 'ukončil')] jsi rodovou mstu své rodiny s rodem [house_head.GetHouse.GetBaseName]"
@@ -1163,7 +1176,7 @@
  ancestor_trait_memory_desc_second_perspective: "[Select_CString(owner.IsFemale, 'stala', 'stal')] ses [ROOT.Var('target_trait').Trait.GetNameNoTooltip( GetNullCharacter )|l], stejně jako tvůj předek [ancestor.GetFirstName]"
  ancestor_trait_memory_desc_third_perspective: "[owner.GetFirstName] se [Select_CString(owner.IsFemale, 'stala', 'stal')] [ROOT.Var('target_trait').Trait.GetNameNoTooltip( GetNullCharacter )|l], stejně jako [Select_CString(owner.IsFemale, 'její', 'jeho')] předek [ancestor.GetFirstName]"
  ancestor_opposite_trait_memory: "Opačný rys než předek"
- ancestor_opposite_trait_memory_desc: "[Select_CString(owner.IsFemale, 'Stala', 'Stal')] jsem se [ROOT.Var('target_trait_opposite').Trait.GetNameNoTooltip( GetNullCharacter )( GetNullCharacter )|l], navzdory svému předkovi [ancestor.GetFirstName]"
+ ancestor_opposite_trait_memory_desc: "[Select_CString(owner.IsFemale, 'Stala', 'Stal')] jsem se [ROOT.Var('target_trait_opposite').Trait.GetNameNoTooltip( GetNullCharacter )|l], navzdory svému předkovi [ancestor.GetFirstName]" # todo: CHANGED, CHECK FORMAT (predtym: [Select_CString(owner.IsFemale, 'Stala', 'Stal')] jsem se [ROOT.Var('target_trait_opposite').Trait.GetNameNoTooltip( Get) # todo: FORMAT navyše [Select_CString(owner.IsFemale, '', '')]
  ancestor_opposite_trait_memory_desc_second_perspective: "[Select_CString(owner.IsFemale, 'stala', 'stal')] ses [ROOT.Var('target_trait_opposite').Trait.GetNameNoTooltip( GetNullCharacter )|l], navzdory svému předkovi [ancestor.GetFirstName]"
  ancestor_opposite_trait_memory_desc_third_perspective: "[owner.GetFirstName] se [Select_CString(owner.IsFemale, 'stala', 'stal')] [ROOT.Var('target_trait_opposite').Trait.GetNameNoTooltip( GetNullCharacter )|l], navzdory [Select_CString(owner.IsFemale, 'své', 'svému')] předkovi [ancestor.GetFirstName]"
  escaped_from_prison_memory: "[Select_CString(owner.IsFemale, 'uprchla z vězení', 'uprchl z vězení')]"
@@ -1187,7 +1200,7 @@
  accolade_ranked_up_desc_second_perspective: "tvé válečnické činy [liege.GetTitledFirstName] [Select_CString(liege.IsFemale, 'ocenila', 'ocenil')] větší pravomocí a [liege.Custom('KnightCulturePluralNoTooltip')|l] tak museli uznávat tvou autoritu"
  accolade_ranked_up_desc_third_perspective: "[owner.GetTitledFirstName] se svými válečnickými činy [Select_CString(owner.IsFemale, 'osvědčila', 'osvědčil')] natolik, že [liege.GetTitledFirstName] [Select_CString(liege.IsFemale, 'svěřila', 'svěřil')] [Select_CString(owner.IsFemale, 'její', 'jeho')] větší pravomoc a [liege.Custom('KnightCulturePluralNoTooltip')|l] tak museli uznávat [Select_CString(owner.IsFemale, 'její', 'jeho')] autoritu"
  ward_returned_home_title: "Výchova dokončena"
- ward_returned_home_desc_guardian: "[ward.GetTitledFirstName] se [Select_CString(ward.IsFemale, 'vrátila', 'vrátil')] domů poté, co [guardian.GetTitledFirstName] [Select_CString(guardian.IsFemale, 'dokončila', 'dokončil')] [Select_CString(ward.IsFemale, 'její', 'jeho')] výchovu v [realm.GetNameNoTier]"
+ ward_returned_home_desc_guardian: "[ward.GetTitledFirstName] se [Select_CString(ward.IsFemale, 'vrátila', 'vrátil')] domů poté, co [guardian.GetTitledFirstName] [Select_CString(guardian.IsFemale, 'dokončila', 'dokončil')] [Select_CString(ward.IsFemale, 'její', 'jeho')] výchovu v [realm.GetNameNoTier]" # todo: CHANGED MINOR
  ward_returned_home_desc: "[ward.GetTitledFirstName] se po dokončení výchovy v cizině [Select_CString(ward.IsFemale, 'vrátila', 'vrátil')] domů"
  guardian_returned_home_title: "$ward_returned_home_title$"
  guardian_returned_home_desc_ward: "[guardian.GetTitledFirstName] se [Select_CString(guardian.IsFemale, 'vrací', 'vrací')] domů; v [realm.GetNameNoTier] pod [Select_CString(guardian.IsFemale, 'jejím', 'jeho')] vedením dokončil[Select_CString(ward.IsFemale, 'a', '')] výchovu [ward.GetTitledFirstName]"
@@ -1210,7 +1223,7 @@
  ce1_completed_my_heroic_legend_desc: "[Select_CString(owner.IsFemale, 'Rozšířila', 'Rozšířil')] jsem mezi všechny ochotné naslouchat velké příběhy o hrdinství a rytířské chrabrosti"
  ce1_completed_my_heroic_legend_desc_second_perspective: "[Select_CString(owner.IsFemale, 'rozšířila', 'rozšířil')] jsi mezi všechny ochotné naslouchat velké příběhy o hrdinství a rytířské chrabrosti"
  ce1_completed_my_heroic_legend_desc_third_perspective: "[owner.GetTitledFirstName] [Select_CString(owner.IsFemale, 'rozšířila', 'rozšířil')] mezi všechny ochotné naslouchat velké příběhy o hrdinství a rytířské chrabrosti"
- ce1_completed_my_legitimizing_legend: "[Concept('legend_heroic','Hrdinská legenda')|E]"
+ ce1_completed_my_legitimizing_legend: "[Concept('legend_heroic','Legitimizační legenda')|E]" # todo: CHANGED, CHECK FORMAT (predtym: [Concept('legend_heroic','Hrdinská legenda')|E]) # todo: FORMAT navyše [legend_heroic|E]
  ce1_completed_my_legitimizing_legend_desc: "Svou [Concept('legitimacy','legitimitu')|E] jsem [Select_CString(owner.IsFemale, 'prokázala', 'prokázal')] vyprávěním o svém legendárním spojení s velkými osobnostmi minulosti"
  ce1_completed_my_legitimizing_legend_desc_second_perspective: "svou [Concept('legitimacy','legitimitu')|E] jsi [Select_CString(owner.IsFemale, 'prokázala', 'prokázal')] vyprávěním o svém legendárním spojení s velkými osobnostmi minulosti"
  ce1_completed_my_legitimizing_legend_desc_third_perspective: "[owner.GetTitledFirstName] svou [Concept('legitimacy','legitimitu')|E] [Select_CString(owner.IsFemale, 'prokázala', 'prokázal')] vyprávěním o svém legendárním spojení s velkými osobnostmi minulosti"
@@ -1596,3 +1609,49 @@
  torturer_maim_arm_desc_third_perspective: "Mučení, kterému [owner.GetTitledFirstName] [Select_CString(owner.IsFemale, 'podrobila', 'podrobil')] [victim.GetTitledFirstName], způsobilo, že [victim.GetTitledFirstName] [Select_CString(victim.IsFemale, 'získala', 'získal')] rys [GetTrait('maimed').GetName( GetNullCharacter )]"
  torturer_maim_leg_desc_third_perspective: "Mučení, kterému [owner.GetTitledFirstName] [Select_CString(owner.IsFemale, 'podrobila', 'podrobil')] [victim.GetTitledFirstName], způsobilo, že [victim.GetTitledFirstName] [Select_CString(victim.IsFemale, 'získala', 'získal')] rys [GetTrait('one_legged').GetName( GetNullCharacter )]"
  torturer_desc_third_perspective: "[owner.GetTitledFirstName] [Select_CString(owner.IsFemale, 'mučila', 'mučil')] [victim.GetTitledFirstName]"
+ founded_cathedral_memory: "založil/a katedrálu" # todo: NEW TRANSLATION
+ founded_cathedral_memory_desc: "Založil/a jsem katedrálu víry [ROOT.Var('province').Province.GetCounty.GetFaith.GetName]" # todo: NEW TRANSLATION
+ founded_cathedral_memory_desc_second_perspective: "Založil/a jsi katedrálu víry [ROOT.Var('province').Province.GetCounty.GetFaith.GetName]" # todo: NEW TRANSLATION
+ founded_cathedral_memory_desc_third_perspective: "[owner.GetTitledFirstName] založil/a katedrálu víry [ROOT.Var('province').Province.GetCounty.GetFaith.GetName]" # todo: NEW TRANSLATION
+ built_cathedral_memory: "postavil/a katedrálu" # todo: NEW TRANSLATION
+ built_cathedral_memory_desc: "Dohlédl/a jsem na dlouho očekávané dokončení katedrály víry [ROOT.Var('province').Province.GetCounty.GetFaith.GetName]" # todo: NEW TRANSLATION
+ built_cathedral_memory_desc_second_perspective: "Dohlédl/a jsi na dlouho očekávané dokončení katedrály víry [ROOT.Var('province').Province.GetCounty.GetFaith.GetName]" # todo: NEW TRANSLATION
+ built_cathedral_memory_desc_third_perspective: "[owner.GetTitledFirstName] dohlédl/a na dlouho očekávané dokončení katedrály víry [ROOT.Var('province').Province.GetCounty.GetFaith.GetName]" # todo: NEW TRANSLATION
+ upgraded_cathedral_memory: "rozšířil/a katedrálu" # todo: NEW TRANSLATION
+ upgraded_cathedral_memory_desc: "Dohlédl/a jsem na rozšíření katedrály víry [ROOT.Var('province').Province.GetCounty.GetFaith.GetName] v ještě větší Boží dům" # todo: NEW TRANSLATION
+ upgraded_cathedral_memory_desc_second_perspective: "Dohlédl/a jsi na rozšíření katedrály víry [ROOT.Var('province').Province.GetCounty.GetFaith.GetName] v ještě větší Boží dům" # todo: NEW TRANSLATION
+ upgraded_cathedral_memory_desc_third_perspective: "[owner.GetTitledFirstName] dohlédl/a na rozšíření katedrály víry [ROOT.Var('province').Province.GetCounty.GetFaith.GetName] v ještě větší Boží dům" # todo: NEW TRANSLATION
+ founded_monastic_order_memory: "založil/a mnišský řád" # todo: NEW TRANSLATION
+ founded_monastic_order_memory_desc: "Postavil/a jsem první útočiště pro [order_master.GetPrimaryTitle.GetName] a pomohl/a tak založit jejich řád" # todo: NEW TRANSLATION
+ founded_monastic_order_memory_desc_second_perspective: "Postavil/a jsi první útočiště pro [order_master.GetPrimaryTitle.GetName] a pomohl/a tak založit jejich řád" # todo: NEW TRANSLATION
+ founded_monastic_order_memory_desc_third_perspective: "[owner.GetTitledFirstName] postavil/a první útočiště pro [order_master.GetPrimaryTitle.GetName] a pomohl/a tak založit jejich řád" # todo: NEW TRANSLATION
+ sent_to_join_monastic_order_memory: "poslal/a do mnišského řádu" # todo: NEW TRANSLATION
+ sent_to_join_monastic_order_memory_desc: "Moje [owner.Custom2('RelationToMeShort', SCOPE.sC('liege').GetMother)], [liege.GetTitledFirstName], mě poslal/a vstoupit do [order_leader.GetPrimaryTitle.GetName]" # todo: NEW TRANSLATION
+ sent_to_join_monastic_order_memory_desc_second_perspective: "Tvoje [owner.Custom2('RelationToMeShort', SCOPE.sC('liege').GetMother)], [liege.GetTitledFirstName], tě poslal/a vstoupit do [order_leader.GetPrimaryTitle.GetName]" # todo: NEW TRANSLATION
+ sent_to_join_monastic_order_memory_desc_third_perspective: "[owner.GetTitledFirstNamePossessive] [owner.Custom2('RelationToMeShort', SCOPE.sC('liege').GetMother)], [liege.GetTitledFirstName], poslal/a [owner.GetHerHim] vstoupit do [order_leader.GetPrimaryTitle.GetName]" # todo: NEW TRANSLATION
+ negotiated_for_land_memory: "získal/a půdu pokojným vyjednáváním" # todo: NEW TRANSLATION
+ negotiated_for_land_memory_desc: "Vyjednáváním s [recipient.GetName] jsem získal/a kontrolu nad [ROOT.Var('target_title').Title.GetBaseName] bez krveprolití" # todo: NEW TRANSLATION
+ negotiated_for_land_memory_desc_second_perspective: "Vyjednáváním s [recipient.GetName] jsi získal/a kontrolu nad [ROOT.Var('target_title').Title.GetBaseName] bez krveprolití" # todo: NEW TRANSLATION
+ negotiated_for_land_memory_desc_third_perspective: "Vyjednáváním s [recipient.GetName] získal/a [owner.GetTitledFirstName] kontrolu nad [ROOT.Var('target_title').Title.GetBaseName] bez krveprolití" # todo: NEW TRANSLATION
+ gave_away_land_memory: "vzdal/a se půdy" # todo: NEW TRANSLATION
+ gave_away_land_memory_desc: "Postoupil/a jsem [ROOT.Var('target_title').Title.GetBaseName] [actor.GetName] bez krveprolití" # todo: NEW TRANSLATION
+ gave_away_land_memory_desc_second_perspective: "Postoupil/a jsi [ROOT.Var('target_title').Title.GetBaseName] [actor.GetName] bez krveprolití" # todo: NEW TRANSLATION
+ gave_away_land_memory_desc_third_perspective: "[owner.GetTitledFirstName] postoupil/a [ROOT.Var('target_title').Title.GetBaseName] [actor.GetName] bez krveprolití" # todo: NEW TRANSLATION
+ sanctified_artifact_memory: "nechal/a posvětit artefakt" # todo: NEW TRANSLATION
+ sanctified_artifact_memory_desc: "Nechal/a jsem [ROOT.Var('sanctified_artifact').Artifact.GetName] posvětit [sanctifying_priest.GetTitledFirstName]" # todo: NEW TRANSLATION
+ sanctified_artifact_memory_desc_second_perspective: "Nechal/a jsi [ROOT.Var('sanctified_artifact').Artifact.GetName] posvětit [sanctifying_priest.GetTitledFirstName]" # todo: NEW TRANSLATION
+ sanctified_artifact_memory_desc_third_perspective: "[owner.GetTitledFirstName] nechal/a [owner.GetHerHis] [ROOT.Var('sanctified_artifact').Artifact.GetName] posvětit [sanctifying_priest.GetTitledFirstName]" # todo: NEW TRANSLATION
+ sanctified_artifact_memory_self_desc: "Osobně jsem posvětil/a svůj [ROOT.Var('sanctified_artifact').Artifact.GetName]" # todo: NEW TRANSLATION
+ sanctified_artifact_memory_self_desc_second_perspective: "Osobně jsi posvětil/a svůj [ROOT.Var('sanctified_artifact').Artifact.GetName]" # todo: NEW TRANSLATION
+ sanctified_artifact_memory_self_desc_third_perspective: "[owner.GetTitledFirstName] osobně posvětil/a [owner.GetHerHis] [ROOT.Var('sanctified_artifact').Artifact.GetName]" # todo: NEW TRANSLATION
+ sanctified_artifact_memory_lost_desc: "Nechal/a jsem posvětit jeden ze svých artefaktů" # todo: NEW TRANSLATION
+ sanctified_artifact_memory_lost_desc_second_perspective: "Nechal/a jsi posvětit jeden ze svých artefaktů" # todo: NEW TRANSLATION
+ sanctified_artifact_memory_lost_desc_third_perspective: "[owner.GetTitledFirstName] měl jeden ze [owner.GetHerHis] artefaktů posvěcený" # todo: NEW TRANSLATION
+ converted_faith_memory: "konvertoval/a k [ROOT.Var('new_faith').Faith.GetAdjective] víře" # todo: NEW TRANSLATION
+ converted_faith_memory_desc: "Opustil/a jsem [ROOT.Var('old_faith').Faith.GetAdjective] víru a konvertoval/a k [ROOT.Var('new_rite').Rite.GetName] v rámci [ROOT.Var('new_faith').Faith.GetAdjective] víry" # todo: NEW TRANSLATION
+ converted_faith_memory_desc_second_perspective: "Opustil/a jsi [ROOT.Var('old_faith').Faith.GetAdjective] víru a konvertoval/a k [ROOT.Var('new_rite').Rite.GetName] v rámci [ROOT.Var('new_faith').Faith.GetAdjective] víry" # todo: NEW TRANSLATION
+ converted_faith_memory_desc_third_perspective: "[owner.GetTitledFirstName] opustil/a [ROOT.Var('old_faith').Faith.GetAdjective] víru a konvertoval/a k [ROOT.Var('new_rite').Rite.GetName] v rámci [ROOT.Var('new_faith').Faith.GetAdjective] víry" # todo: NEW TRANSLATION
+ converted_rite_memory: "přijal/a obřad [ROOT.Var('new_rite').Rite.GetName]" # todo: NEW TRANSLATION
+ converted_rite_memory_desc: "Přešel/a jsem od obřadu [ROOT.Var('old_rite').Rite.GetName] k obřadu [ROOT.Var('new_rite').Rite.GetName]" # todo: NEW TRANSLATION
+ converted_rite_memory_desc_second_perspective: "Přešel/a jsi od obřadu [ROOT.Var('old_rite').Rite.GetName] k obřadu [ROOT.Var('new_rite').Rite.GetName]" # todo: NEW TRANSLATION
+ converted_rite_memory_desc_third_perspective: "[owner.GetTitledFirstName] přešel/a od obřadu [ROOT.Var('old_rite').Rite.GetName] k obřadu [ROOT.Var('new_rite').Rite.GetName]" # todo: NEW TRANSLATION

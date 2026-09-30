@@ -225,6 +225,7 @@
  action_no_player_heir_but_replacement_exists_gameover_risk: "Žádný [Concept('player_heir','hráčský dědic')|E] z tvé [Concept('dynasty','dynastie')|E]"
  action_no_player_heir_but_replacement_exists_gameover_risk_label: "$action_no_player_heir_but_replacement_exists_gameover_risk$"
  action_no_player_heir_but_replacement_exists_gameover_risk_desc: "Nemáš žádné hratelné [Concept('titles','tituly')|E], které by po tvé smrti zdědili členové tvé [Concept('dynasty','dynastie')|E]!\n\n#help To znamená, že tvou smrtí hra skončí! Některé tvé $game_concept_titles$ však mají dále v [Concept('line_of_succession','linii následnictví')|E] členy tvé $game_concept_dynasty$. Zajisti, aby jeden z nich zdědil $game_concept_title$ [Concept('title_rank','hodnosti')|E] [Concept('count','hraběte')|E] nebo vyšší, ať už změnou [Concept('succession_laws','zákonů nástupnictví')|E], nebo zosnováním intriky [GetScheme('murder').GetTypeName]...#!"
+ action_no_player_heir_but_replacement_exists_gameover_risk_theocracy_desc: "\n\n#help Použijte [decision|E] #high $pam_establish_theocratic_dynasty_decision$#! k založení [dynasty|E], pokud jste [lowborn|E], a [character_interaction|E] #high $designate_theocratic_heir_interaction$#! k výběru důstojného nástupce ze svého [court|E]#!" # todo: NEW TRANSLATION
  action_no_player_heir_but_replacement_exists_gameover_risk_click: "#I Kliknutím zobrazíš $game_concept_title$#!"
  action_no_heir: "Žádný [Concept('player_heir','hráčský dědic')|E]"
  action_no_heir_label: "Nemáš platného [Concept('player_heir','hráčského dědice')|E]!"
@@ -523,6 +524,7 @@
  action_title_election_combined_group_name: "Probíhající volby lze zobrazit"
  action_title_election_desc: "Pro [landed_title.Custom('GetTierIcon')][landed_title.GetName] probíhá volba. Tomuto [Concept('title','titulu')|E] vládne [landed_title.GetHolder.GetShortUIName]. V současnosti vede [landed_title.GetHeir.GetUIName].\n\n#help Jsi-li [Concept('elector','volitelem')|E], vyplatí se sledovat probíhající volby, i když jsi již odevzdal svůj hlas. Nezapomeň, že jej můžeš kdykoli změnit!\n\nI když nejsi [Concept('elector','volitelem')|E], je dobré volby sledovat. Stát se může cokoli... hlavním kandidátem můžeš být právě #emp ty#!.#!"
  action_title_election_combined_group_description: "V tvém panství probíhají volby.\n\n#help Jsi-li [Concept('elector','volitelem')|E], vyplatí se sledovat probíhající volby, i když jsi již odevzdal své hlasy. Nezapomeň, že je můžeš kdykoli změnit!\n\nI když nejsi [Concept('elector','volitelem')|E], je dobré volby sledovat. Stát se může cokoli... hlavním kandidátem můžeš být právě #emp ty#!.#!"
+ action_title_election_help: "#help Pokud jste $game_concept_elector$, vyplatí se sledovat probíhající $game_concept_elections$, i když jste už hlasovali. Nezapomeňte, že svůj hlas můžete kdykoli změnit!\n\nI když nejste $game_concept_elector$, je dobré sledovat $game_concept_elections$. Koneckonců, stát se může cokoli… třeba budete #emp vy#! tím nejlepším kandidátem!#!" # todo: NEW TRANSLATION
  action_title_election_label: "@law_icon! Probíhající volba pro [landed_title.GetBaseNameNoTooltip]"
  action_title_election_combined_label: "[landed_title.Custom('GetTierIcon')] [landed_title.GetNameNoTooltip|U]"
  action_title_election_click: "#I Kliknutím zobrazíš volbu#!"
@@ -1179,6 +1181,10 @@
  action_opportunity_to_study_classics_label: "@merit_icon!Máš čas studovat konfuciánské klasiky"
  action_opportunity_to_study_classics_desc: "Nejsi [Concept('governor','guvernérem')|E], takže máš čas připravit se na [Concept('imperial_examinations','úřednické zkoušky')|E].\n\n#help Studium zvýší tvůj [Concept('stress','stres')|E], ale zároveň ti přinese řadu výhod pro budoucí kariéru.#!"
  action_opportunity_to_study_classics_click: "#I Kliknutím zahájíš studium#!"
+ action_opportunity_to_study_scripture: "@study_scripture_icon!Můžete studovat [GetPlayer.GetFaith.ReligiousText|U]" # todo: NEW TRANSLATION
+ action_opportunity_to_study_scripture_label: "@study_scripture_icon!Máte čas studovat [GetPlayer.GetFaith.ReligiousText|U]" # todo: NEW TRANSLATION
+ action_opportunity_to_study_scripture_desc: "Vaše mysl je klidná a hodiny mezi [GetPlayer.Custom('StudyOfficesWord')] patří jen vám.\n\nStudium zahájí [personal_scheme|E] [GetScheme('study_scripture').GetTypeName], který vám přináší odměny, dokud se mu věnujete:\n$EFFECT_LIST_BULLET$ [piety_i][piety|E]\n$EFFECT_LIST_BULLET$ [learning_i][stewardship_i][diplomacy_i] [skill|E]\n$EFFECT_LIST_BULLET$ [trait|E] [GetTrait('lifestyle_scholar').GetName( GetNullCharacter )] / [trait_level_track_xp|E]\n$EFFECT_LIST_BULLET$ Příležitosti mezi [clergy|E]\n\n#help Studium vás může stát [stress_i][stress|E] a po dobu jeho trvání získáváte méně [prestige_i][prestige|E].#!" # todo: NEW TRANSLATION
+ action_opportunity_to_study_scripture_click: "#I Kliknutím zahájíte studium#!" # todo: NEW TRANSLATION
  action_unaligned_join_movement: "@unaligned_movement!$game_concept_dynastic_cycle$: patříš do skupiny $dynastic_cycle_participant_group_undecided_movement$"
  action_unaligned_join_movement_label: "$action_unaligned_join_movement$"
  action_unaligned_join_movement_desc: "Nehlásíš se k žádnému [Concept('movement','hnutí')|E] v [Concept('dynastic_cycle','dynastickém cyklu')|E].\n\n#help Setrvání ve skupině $dynastic_cycle_participant_group_undecided_movement$ znamená, že nezískáš žádné výhody plynoucí z členství v $game_concept_movement$.#!"
@@ -1219,3 +1225,110 @@
  action_minister_can_pay_treasury_debt: "@minister![recipient.GetShortUIName] může splatit tvůj dluh pokladnice"
  action_minister_can_pay_treasury_debt_desc: "Můžeš obdržet [treasury_i][Concept('treasury','prostředky z pokladnice')|E] od [Concept('minister_of_revenue','ministra příjmů')|E] [recipient.GetShortUIName] nebo od [Concept('son_of_heaven','Syna Nebes')|E], a vyrovnat tak své účty."
  action_minister_can_pay_treasury_debt_click: "#I Kliknutím otevřeš interakci $action_pay_governors_treasury_debt$#!"
+ action_can_select_personal_tenet_label: "Můžete si zvolit novou [personal_tenet|E]" # todo: NEW TRANSLATION
+ action_can_select_personal_tenet: "$action_can_select_personal_tenet_label$" # todo: NEW TRANSLATION
+ action_can_select_personal_tenet_desc: "Dodržování nové [personal_tenet|E] vám může přinést užitečné výhody." # todo: NEW TRANSLATION
+ action_can_select_personal_tenet_click: "#I Kliknutím zobrazíte své [personal_tenets|E] a vyberete si jednu#!" # todo: NEW TRANSLATION
+ action_excommunicated_recovery_label: "@warning_icon! [GetTrait('excommunicated').GetName( GetPlayer )]" # todo: NEW TRANSLATION
+ action_excommunicated_recovery: "$action_excommunicated_recovery_label$" # todo: NEW TRANSLATION
+ action_excommunicated_recovery_desc: "Jste [excommunicated|E]. [modifier|E] [GetModifier('recent_excommunication').GetNameWithTooltip] znemožňuje rozhřešení po dobu jednoho roku od exkomunikace.\n\n$EFFECT_LIST_BULLET$Vévodové a niže postavení (místní exkomunikace): použijte #high Prohlásit pokání#! u způsobilého duchovního #weak (u své [head_of_faith|E], pokud vás žádný níže postavený duchovní nepřevyšuje)#!\n$EFFECT_LIST_BULLET$Všichni [rulers|E] exkomunikovaní vaší [head_of_faith|E] nebo vládnoucí království či říši: osobně požádejte o #high Zrušit exkomunikaci#![AddLocalizationIf( GetPlayer.IsIndependentRuler, 'action_excommunicated_recovery_independent_help' )]\n\nPodrobnosti najdete v části [Concept( 'excommunicated_recovery', 'možnosti nápravy' )|E]." # todo: NEW TRANSLATION
+ action_excommunicated_recovery_independent_help: "\n$EFFECT_LIST_BULLET$@warning_icon! Jako [independent|E] [ruler|E] můžete čelit [excommunication_war|E] od sousedních [rulers|E] své [faith|E]" # todo: NEW TRANSLATION
+ action_excommunicated_recovery_click: "#I Kliknutím požádáte o rozhřešení nebo zobrazíte pokyny k nápravě#!" # todo: NEW TRANSLATION
+ action_excommunicated_recovery_penance_toast: "Je třeba pokání" # todo: NEW TRANSLATION
+ action_excommunicated_recovery_penance_toast_desc: "Váš status [excommunicated|E] lze napravit, jakmile vykonáte roční pokání. Dokud trvá [GetModifier('recent_excommunication').GetNameWithTooltip], nelze požádat o rozhřešení." # todo: NEW TRANSLATION
+ action_excommunicated_recovery_no_cleric_toast: "Žádný způsobilý duchovní" # todo: NEW TRANSLATION
+ action_excommunicated_recovery_no_cleric_toast_desc: "Žádný dostupný duchovní nyní nemůže vyslechnout vaše prohlášení o pokání. Pokud vás exkomunikovala vaše [head_of_faith|E] nebo vládnete království či říši, požádejte raději osobně." # todo: NEW TRANSLATION
+ action_excommunication_at_risk: "@warning_icon! Hrozí exkomunikace" # todo: NEW TRANSLATION
+ action_excommunication_at_risk_label: "$action_excommunication_at_risk$" # todo: NEW TRANSLATION
+ action_excommunication_at_risk_desc: "Brzy můžete být exkomunikováni.\n\n$EFFECT_LIST_BULLET$Vaše [head_of_faith|E], [secondary_recipient.GetShortUIName], vás může exkomunikovat, pokud jste [rivals|E], [nemeses|E] nebo jste s [secondary_recipient.GetHerHim] ve [war|E]\n$EFFECT_LIST_BULLET$Nepřátelský sousední [ruler|E] s dostatkem [piety|E] může požádat o vaši exkomunikaci, pokud vás [secondary_recipient.GetSheHe] nemá rád\n\n#help Zlepšete si [opinion|E] u [secondary_recipient.GetHerHis], omezte [sinful|E] [traits|E] a podrobnosti najdete v části [Concept( 'excommunicated_recovery', 'možnosti nápravy' )|E].[AddLocalizationIf( GetPlayer.IsIndependentRuler, 'action_excommunicated_recovery_independent_help' )]#!" # todo: NEW TRANSLATION
+ action_excommunication_at_risk_click: "#I Kliknutím zobrazíte svou [head_of_faith|E]#!" # todo: NEW TRANSLATION
+ action_excommunication_at_risk_combined_label: "[recipient.GetPrimaryTitle.Custom('GetTierIcon')] [recipient.GetShortUINameNoTooltip]" # todo: NEW TRANSLATION
+ action_excommunication_at_risk_combined_group_name: "@warning_icon! Hrozí exkomunikace" # todo: NEW TRANSLATION
+ action_excommunication_at_risk_combined_group_label: "@warning_icon! Nepřátelští [rulers|E] mohou usilovat o vaši exkomunikaci" # todo: NEW TRANSLATION
+ action_excommunication_at_risk_combined_group_description: "[recipient.GetShortUIName|U] může požádat [secondary_recipient.GetShortUIName], vaši [head_of_faith|E], o vaši exkomunikaci.\n\n#help Zlepšete si [opinion|E] u [secondary_recipient.GetHerHis], omezte [sinful|E] [traits|E] a podrobnosti najdete v části [Concept( 'excommunicated_recovery', 'možnosti nápravy' )|E].[AddLocalizationIf( GetPlayer.IsIndependentRuler, 'action_excommunicated_recovery_independent_help' )]#!" # todo: NEW TRANSLATION
+ action_losing_realm_to_clerical_region: "@warning_icon! Při nástupnictví přijdete o území" # todo: NEW TRANSLATION
+ action_losing_realm_to_clerical_region_label: "$action_losing_realm_to_clerical_region$" # todo: NEW TRANSLATION
+ action_losing_realm_to_clerical_region_desc: "Jste další v pořadí na [title|E] [clerical_region|E], který neobsahuje žádný [county|E] ve vašem [realm|E]. Při [succession|E] přijdete o své území a stanete se [archbishop|E]." # todo: NEW TRANSLATION
+ action_losing_realm_to_clerical_region_click: "#I Kliknutím zobrazíte [clerical_region|E]#!" # todo: NEW TRANSLATION
+ action_in_line_for_local_clerical_region: "@religious_icon! V pořadí na místní arcidiecézi" # todo: NEW TRANSLATION
+ action_in_line_for_local_clerical_region_label: "@religious_icon! Jste na #high [actor.GetPlaceInSuccession(landed_title)|O]#! místě v pořadí na [landed_title.GetNameNoTooltip]" # todo: NEW TRANSLATION
+ action_in_line_for_local_clerical_region_desc: "Jste na [actor.GetPlaceInSuccession(landed_title)|O] místě v [line_of_succession|E] na [landed_title.GetName], [archdiocese|E] spravující vaše [realm_capital|E]. Pokud zdědíte tento [title|E] [clerical_region|E], stanete se jeho [archbishop|E]." # todo: NEW TRANSLATION
+ action_in_line_for_local_clerical_region_click: "#I Kliknutím zobrazíte [clerical_region|E]#!" # todo: NEW TRANSLATION
+ action_can_request_new_clerical_region: "@religious_icon! Požádat o novou arcidiecézi" # todo: NEW TRANSLATION
+ action_can_request_new_clerical_region_label: "$action_can_request_new_clerical_region$" # todo: NEW TRANSLATION
+ action_can_request_new_clerical_region_desc: "Můžete požádat [recipient.GetShortUIName], aby zřídil novou [clerical_region|E] se sídlem v [target_title.GetName]. Jako její pozemský žadatel se stanete novým [archbishop|E]." # todo: NEW TRANSLATION
+ action_can_request_new_clerical_region_click: "#I Kliknutím zahájíte $request_ecclesiastical_title_creation_interaction$#!" # todo: NEW TRANSLATION
+ action_can_request_clerical_region_expansion: "@religious_icon! Požádat o rozšíření arcidiecéze" # todo: NEW TRANSLATION
+ action_can_request_clerical_region_expansion_label: "@religious_icon! Rozšířit svou arcidiecézi do [target_title.GetNameNoTooltip]" # todo: NEW TRANSLATION
+ action_can_request_clerical_region_expansion_desc: "Můžete požádat [recipient.GetShortUIName], aby rozšířil vaši [clerical_region|E] do [target_title.GetName]." # todo: NEW TRANSLATION
+ action_can_request_clerical_region_expansion_click: "#I Kliknutím zahájíte $request_ecclesiastical_title_expansion_interaction$#!" # todo: NEW TRANSLATION
+ action_can_request_enforce_succession: "@religious_icon! Požádat o vynucení nástupnictví" # todo: NEW TRANSLATION
+ action_can_request_enforce_succession_label: "@religious_icon! Požádat o vynucení nástupnictví pro [landed_title.GetNameNoTooltip]" # todo: NEW TRANSLATION
+ action_can_request_enforce_succession_desc: "Můžete požádat [recipient.GetShortUIName], aby přiměl [landed_title.GetHolder.GetShortUIName] přenechat [landed_title.GetName] jeho právoplatnému [heir|E]. O tuto žádost můžete požádat, protože máte [claim|E] na tento [title|E]." # todo: NEW TRANSLATION
+ action_can_request_enforce_succession_click: "#I Kliknutím zahájíte $request_enforce_succession_interaction$#!" # todo: NEW TRANSLATION
+ action_can_request_enforce_succession_combined_label: "[landed_title.Custom('GetTierIcon')] [landed_title.GetNameNoTooltip]" # todo: NEW TRANSLATION
+ action_can_request_enforce_succession_combined_group_label: "@religious_icon! Požádat o vynucení nástupnictví" # todo: NEW TRANSLATION
+ action_can_request_enforce_succession_combined_group_name: "$action_can_request_enforce_succession_combined_group_label$" # todo: NEW TRANSLATION
+ action_can_request_enforce_succession_combined_group_description: "Můžete požádat svého [archbishop|E], aby vynutil nástupnictví u více [titles|E], na které máte [claims|E]." # todo: NEW TRANSLATION
+ action_can_demand_church_succession: "@religious_icon! Požadovat církevní nástupnictví" # todo: NEW TRANSLATION
+ action_can_demand_church_succession_label: "@religious_icon! Požadovat církevní nástupnictví od [recipient.GetShortUINameNoTooltip]" # todo: NEW TRANSLATION
+ action_can_demand_church_succession_desc: "[recipient.GetShortUIName] je v pokročilém věku a nemá žádné žijící [children|E]. Můžete požadovat, aby v případě, že [recipient.GetSheHe] zemře bez právoplatného [heir|E], přešla [recipient.GetHerHis] [realm|E] na držitele vašeho [primary_title|E] jako na [fallback_heir|E]." # todo: NEW TRANSLATION
+ action_can_demand_church_succession_click: "#I Kliknutím zahájíte $demand_church_succession_interaction$#!" # todo: NEW TRANSLATION
+ action_can_demand_church_succession_combined_label: "[recipient.GetPrimaryTitle.Custom('GetTierIcon')] [recipient.GetShortUINameNoTooltip]" # todo: NEW TRANSLATION
+ action_can_demand_church_succession_combined_group_label: "@religious_icon! Požadovat církevní nástupnictví" # todo: NEW TRANSLATION
+ action_can_demand_church_succession_combined_group_name: "$action_can_demand_church_succession_combined_group_label$" # todo: NEW TRANSLATION
+ action_can_demand_church_succession_combined_group_description: "Starší bezdětní [rulers|E] v okolí mohou být zavázáni k tomu, aby jejich [realms|E] připadly vašemu [title|E], pokud jejich rod vymře." # todo: NEW TRANSLATION
+ action_pam_decision_confession_label: "Dostupné rozhodnutí: $pam_decision_confession_name$" # todo: NEW TRANSLATION
+ action_pam_decision_confession: "$action_pam_decision_confession_label$" # todo: NEW TRANSLATION
+ action_pam_decision_confession_desc: "Vaše [spiritual_fulfillment|E] je nízké. [decision|E] [GetDecisionWithKey('pam_decision_confession').GetName] může obnovit vaši duši a zmírnit váš [stress|E]." # todo: NEW TRANSLATION
+ action_pam_decision_confession_click: "#I Kliknutím otevřete $pam_decision_confession_name_low$#!" # todo: NEW TRANSLATION
+ action_can_request_preach_legitimacy: "@legitimacy_icon! Hlásat legitimitu" # todo: NEW TRANSLATION
+ action_can_request_preach_legitimacy_combined_group_label: "@legitimacy_icon! Hlásat legitimitu" # todo: NEW TRANSLATION
+ action_can_request_preach_legitimacy_combined_group_name: "$action_can_request_preach_legitimacy_combined_group_label$" # todo: NEW TRANSLATION
+ action_can_request_preach_legitimacy_desc: "Jeden či více [ecclesiastical|E] vládců vaší [faith|E] může být ochotno podpořit vaši [legitimacy|E] výměnou za [piety|E] a další možné ústupky.$action_can_request_preach_legitimacy_help_desc$" # todo: NEW TRANSLATION
+ action_can_request_preach_legitimacy_combined_group_description: "[ecclesiastical|E] [rulers|E] vám mohou pomoci prostřednictvím $request_legitimacy_interaction$.$action_can_request_preach_legitimacy_help_desc$" # todo: NEW TRANSLATION
+ action_can_request_preach_legitimacy_label: "@legitimacy_icon!Vaši legitimitu může podpořit [recipient.GetPrimaryTitle.Custom('GetTierIcon')][recipient.GetShortUINameNoTooltip]" # todo: NEW TRANSLATION
+ action_can_request_preach_legitimacy_combined_label: "[recipient.GetPrimaryTitle.Custom('GetTierIcon')] [recipient.GetUINameNoTooltip]" # todo: NEW TRANSLATION
+ action_can_request_preach_legitimacy_click: "#I Kliknutím zahájíte $request_legitimacy_interaction$#!" # todo: NEW TRANSLATION
+ action_can_request_preach_legitimacy_help_desc: "\n\n#help [legitimacy|E] [rulers|E] závisí na souhlasu [actor.GetFaith.HighGodNamePossessive] a tento souhlas lze poznat pouze prostřednictvím duchovenstva.#!" # todo: NEW TRANSLATION, CHECK FORMAT # todo: FORMAT chýba [actor.GetFaith.HighGodNamePossessive]
+ action_can_appoint_cardinals: "@religious_icon! Můžete jmenovat kardinály" # todo: NEW TRANSLATION
+ action_can_appoint_cardinals_combined_group_label: "@religious_icon! Můžete jmenovat kardinály" # todo: NEW TRANSLATION
+ action_can_appoint_cardinals_combined_group_name: "$action_can_appoint_cardinals$" # todo: NEW TRANSLATION
+ action_can_appoint_cardinals_desc: "Můžete jmenovat [recipient.GetShortUIName] [cardinal|E].$action_can_appoint_cardinals_help_desc$" # todo: NEW TRANSLATION
+ action_can_appoint_cardinals_combined_group_description: "Vaše [faith|E] má méně než #V 10#! [cardinals|E]. Jmenujte důstojné [archbishops|E] do [college_of_cardinals|E].$action_can_appoint_cardinals_help_desc$" # todo: NEW TRANSLATION
+ action_can_appoint_cardinals_label: "@religious_icon! Můžete jmenovat [recipient.GetShortUINameNoTooltip] [cardinal|E]" # todo: NEW TRANSLATION
+ action_can_appoint_cardinals_combined_label: "[recipient.GetPrimaryTitle.Custom('GetTierIcon')] [recipient.GetShortUINameNoTooltip] z [recipient.GetPrimaryTitle.GetNameNoTierNoTooltip]" # todo: NEW TRANSLATION
+ action_can_appoint_cardinals_click: "#I Kliknutím zahájíte $appoint_cardinal_interaction$#!" # todo: NEW TRANSLATION
+ action_can_appoint_cardinals_help_desc: "\n\n#help Zobrazení kandidáti jsou pěti [archbishops|E] s nejvyšší [piety|E], které lze právě jmenovat.#!" # todo: NEW TRANSLATION
+ action_can_make_clerical_puppet: "@theological_agent_puppet_icon! Dvorního kaplana lze ovládnout jako loutku" # todo: NEW TRANSLATION
+ action_can_make_clerical_puppet_label: "@theological_agent_puppet_icon! [actor.GetCouncillorPosition( 'councillor_court_chaplain' ).GetPositionName|U] lze ovládnout jako loutku" # todo: NEW TRANSLATION
+ action_can_make_clerical_puppet_desc: "Váš [court_chaplain|E], [recipient.GetShortUIName], by souhlasil s tím, že se stane vaší [clerical_puppet|E].\n\n#help Zřízení [puppet|E] vám umožní provádět [schemes|E] a využívat [interactions|E] jako tato [character|E].\n\n#help Pomocí [interaction|E] $make_clerical_puppet_interaction$ můžete prostřednictvím své [puppet|E] provádět [interactions|E], které jsou jinak dostupné pouze [clergy|E]. Vaše [clerical_puppet|E] také pasivně zvyšuje ochotu ostatních církevních [rulers|E] přijímat vaše žádosti.#!" # todo: NEW TRANSLATION
+ action_can_make_clerical_puppet_click: "#I Kliknutím zahájíte $make_clerical_puppet_interaction$#!" # todo: NEW TRANSLATION
+ action_can_make_external_clerical_puppet: "@external_theological_agent_puppet_icon! Církevního vládce lze ovládnout jako loutku" # todo: NEW TRANSLATION
+ action_can_make_external_clerical_puppet_label: "@external_theological_agent_puppet_icon! [recipient.GetShortUINameNoTooltip] lze ovládnout jako loutku" # todo: NEW TRANSLATION
+ action_can_make_external_clerical_puppet_desc: "Jako [ecclesiastical|E] nebo [theocratic|E] [ruler|E] vaší [faith|E] by [recipient.GetShortUIName] souhlasil s tím, že se stane vaší [external_clerical_puppet|E].\n\n#help Pomocí [interaction|E] $make_external_clerical_puppet_interaction$ získáte přístup k mocným akcím dostupným pouze [clergy|E].\n\nJste-li [christian|E], může to zahrnovat možnost ovlivňovat [ecumenical_councils|E] a rozdělování [clerical_titles|E].#!" # todo: NEW TRANSLATION
+ action_can_make_external_clerical_puppet_click: "#I Kliknutím zahájíte $make_external_clerical_puppet_interaction$#!" # todo: NEW TRANSLATION
+ action_can_make_external_clerical_puppet_combined_group_label: "@external_theological_agent_puppet_icon! Církevní vládce lze ovládnout jako loutku" # todo: NEW TRANSLATION
+ action_can_make_external_clerical_puppet_combined_group_name: "$action_can_make_external_clerical_puppet_combined_group_label$" # todo: NEW TRANSLATION
+ action_can_make_external_clerical_puppet_combined_group_description: "[ecclesiastical|E] nebo [theocratic|E] [rulers|E] vaší [faith|E] by souhlasili s tím, že se stanou vaší [external_clerical_puppet|E]\n\n#help Pomocí [interaction|E] $make_external_clerical_puppet_interaction$ můžete prostřednictvím své [puppet|E] provádět mocné [interactions|E], které jsou jinak dostupné pouze [clergy|E]. Jste-li [christian|E], může to zahrnovat možnost ovlivňovat [ecumenical_councils|E] a rozdělování [clerical_titles|E].#!" # todo: NEW TRANSLATION
+ action_can_make_external_clerical_puppet_combined_label: "[recipient.GetPrimaryTitle.Custom('GetTierIcon')] [recipient.GetUINameNoTooltip]" # todo: NEW TRANSLATION
+ action_can_make_external_ruler_puppet: "@external_ruler_puppet_icon! Světského vládce lze ovládnout jako loutku" # todo: NEW TRANSLATION
+ action_can_make_external_ruler_puppet_label: "@external_ruler_puppet_icon! [recipient.GetShortUINameNoTooltip] lze ovládnout jako loutku" # todo: NEW TRANSLATION
+ action_can_make_external_ruler_puppet_desc: "Jako ne-[clerical|E] [ruler|E] by [recipient.GetShortUIName] souhlasil s tím, že se stane vaší [external_ruler_puppet|E].\n\n#help Pomocí [interaction|E] $make_external_ruler_puppet_interaction$ můžete provádět [interactions|E] jako vaše [puppet|E].\n\nSvětské [rulers|E] mají přístup k některým pravomocím, které církev nemá. Když budete řídit jejich činy, můžete ovlivnit budoucnost své [faith|E] a [rite|E].#!" # todo: NEW TRANSLATION
+ action_can_make_external_ruler_puppet_click: "#I Kliknutím zahájíte $make_external_ruler_puppet_interaction$#!" # todo: NEW TRANSLATION
+ action_can_make_external_ruler_puppet_combined_group_label: "@external_ruler_puppet_icon! Světské vládce lze ovládnout jako loutky" # todo: NEW TRANSLATION
+ action_can_make_external_ruler_puppet_combined_group_name: "$action_can_make_external_ruler_puppet_combined_group_label$" # todo: NEW TRANSLATION
+ action_can_make_external_ruler_puppet_combined_group_description: "[rulers|E], kteří nejsou členy kléru, by souhlasili s tím, že se stanou vaší [external_ruler_puppet|E].\n\n#help Pomocí [interaction|E] $make_external_ruler_puppet_interaction$ můžete jako svou [puppet|E] zahajovat [interactions|E].\n\nSvětští [rulers|E] mají přístup k některým pravomocem, které jsou církvi odepřeny. Když budete řídit jejich činy, můžete ovlivňovat budoucnost své [faith|E] a [rite|E].#!" # todo: NEW TRANSLATION, CHECK FORMAT # todo: FORMAT chýba [clerical|E]
+ action_can_make_external_ruler_puppet_combined_label: "[recipient.GetPrimaryTitle.Custom('GetTierIcon')] [recipient.GetUINameNoTooltip]" # todo: NEW TRANSLATION
+ action_can_upgrade_great_cathedral: "$action_can_upgrade_great_cathedral_label$" # todo: NEW TRANSLATION
+ action_can_upgrade_great_cathedral_label: "@great_project_icon!Můžete postavit nebo rozšířit svou $building_type_great_project_cathedral_01$" # todo: NEW TRANSLATION
+ action_can_upgrade_great_cathedral_desc: "Můžete naplánovat [great_project|e] na výstavbu [GetBuilding('great_project_cathedral_01').GetName|V] nebo rozšíření stávající katedrály!\n\n#help Raná [GetBuilding('great_project_cathedral_01').GetName|V] poskytuje sídlo biskupovi a přitahuje poutníky. Pozdější projekty ji přestaví na [GetBuilding('great_project_cathedral_02').GetName|V] a následně na [GetBuilding('great_project_cathedral_03').GetName|V]. Každý z nich rozšíří váš [cathedral_complex|e] a zpřístupní další [domicile_buildings|e].#!" # todo: NEW TRANSLATION
+ action_can_upgrade_great_cathedral_click: "#I Kliknutím zobrazíte $game_concept_great_projects$#!" # todo: NEW TRANSLATION
+ action_can_plan_mass_conversion: "$action_can_plan_mass_conversion_label$" # todo: NEW TRANSLATION
+ action_can_plan_mass_conversion_label: "@great_project_icon!Můžete zahájit projekt $great_project_type_pam_mass_rite_conversion$" # todo: NEW TRANSLATION
+ action_can_plan_mass_conversion_desc: "Můžete začít plánovat [great_project|e] $great_project_type_pam_mass_rite_conversion$!\n\n#help Jde o $game_concept_great_project$ dostupný [clergy|e], který převede pohanské [faiths|e] v sousedním [duchy|e] na váš [rite|e].#!" # todo: NEW TRANSLATION
+ action_can_plan_mass_conversion_click: "#I Kliknutím zobrazíte $game_concept_great_projects$#!" # todo: NEW TRANSLATION
+ action_can_found_holy_site_in_capital: "@religious_icon! Můžete založit $game_concept_holy_site$" # todo: NEW TRANSLATION
+ action_can_found_holy_site_in_capital_label: "@religious_icon! Můžete založit [holy_site|E] v držení [landed_title.GetNameNoTooltip]" # todo: NEW TRANSLATION
+ action_can_found_holy_site_in_capital_desc: "[landed_title.GetName] lze prohlásit za [holy_site|E] víry [actor.GetFaith.GetName].\n\n#help Založením [holy_site|E] můžete [enshrine|E] své [holy_relics|E] a rozšířit jejich výhody na celou svou [faith|E].#!" # todo: NEW TRANSLATION
+ action_can_found_holy_site_in_capital_click: "#I Kliknutím zobrazíte $game_concept_holy_site$#!" # todo: NEW TRANSLATION

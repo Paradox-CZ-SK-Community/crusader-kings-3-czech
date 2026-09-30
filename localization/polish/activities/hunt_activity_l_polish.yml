@@ -31,6 +31,7 @@
  activity_hunt_province_desc_chocolate_hills_major: "#P +++ $building_type_chocolate_hills_01$#! ([Concept('building','budova')|E])\n"
  activity_hunt_province_desc_visegrad_castle_01_major: "#P +++ $building_type_visegrad_castle_01$#! ([Concept('building','budova')|E])\n"
  activity_hunt_province_desc_legendary_hunting_lodge: "#P +++ $building_legendary_hunting_lodge$ ([Concept('building','budova')|E])#!\n"
+ activity_hunt_province_desc_legendary_sighting: "#P +++ Legendární [ROOT.Province.GetTitle.GetDeJureLiege.Custom('GetLegendaryColor')|UV] [ROOT.Province.GetTitle.GetDeJureLiege.Custom('GetAnimalType')|UV] spatření#!\n" # todo: NEW TRANSLATION
  activity_hunt_province_desc_logging_camps_minor: "#N - $building_type_logging_camps_01$#! ([Concept('building','budova')|E])\n"
  activity_hunt_province_desc_logging_camps_medium: "#N -- $building_type_logging_camps_01$#! ([Concept('building','budova')|E])\n"
  activity_hunt_province_desc_logging_camps_major: "#N --- $building_type_logging_camps_01$#! ([Concept('building','budova')|E])\n"
@@ -188,11 +189,11 @@
  hunt_every_hunter_tt: "Každý účastník"
  hunt_every_slay_beast_hunter_tt: "Každý účastník se [Concept('intent','záměrem')|E] $slay_beast_intent$"
  hunt_every_other_hunter_tt: "Každý zúčastněný host"
- hunt_progress_towards_trait_0_tt: "[THIS.Char.GetShortUINameNoFormat|U] může získat [Concept('lifestyle_trait','životní rys')|E] [GetTrait('lifestyle_hunter').GetName( GetNullCharacter )]"
- hunt_progress_towards_trait_1_tt: "Mírně zvýší [Concept('trait_level_track_xp','zkušenosti rysu')|E] [GetTrait('lifestyle_hunter').GetName( GetNullCharacter )]"
- hunt_progress_towards_trait_2_tt: "Zvýší [Concept('trait_level_track_xp','zkušenosti rysu')|E] [GetTrait('lifestyle_hunter').GetName( GetNullCharacter )]"
- hunt_progress_towards_trait_3_tt: "Výrazně zvýší [Concept('trait_level_track_xp','zkušenosti rysu')|E] [GetTrait('lifestyle_hunter').GetName( GetNullCharacter )]"
- every_non_cynical_dharmic_attendee_tt: "Účastníci bez rysu [GetTrait('cynical').GetName( GetNullCharacter )], jejichž [Concept('faith','víra')|E] má zásadu [GetFaithDoctrine('tenet_dharmic_pacifism').GetBaseName]"
+ hunt_progress_towards_trait_0_tt: "[THIS.Char.GetShortUINameNoFormat|U] může získat [Concept('lifestyle_trait','životní rys')|E] [GetTrait('lifestyle_hunter').GetName( THIS.Char )]" # todo: CHANGED (predtym: [THIS.Char.GetShortUINameNoFormat|U] může získat [Concept('lifestyle_trait','životní rys')|E] [GetTrait('lifestyle_hunte)
+ hunt_progress_towards_trait_1_tt: "Mírně zvýší [Concept('trait_level_track_xp','zkušenosti rysu')|E] [GetTrait('lifestyle_hunter').GetName( THIS.Char )]" # todo: CHANGED (predtym: Mírně zvýší [Concept('trait_level_track_xp','zkušenosti rysu')|E] [GetTrait('lifestyle_hunter').GetName( GetNullCharacte)
+ hunt_progress_towards_trait_2_tt: "Zvýší [Concept('trait_level_track_xp','zkušenosti rysu')|E] [GetTrait('lifestyle_hunter').GetName( THIS.Char )]" # todo: CHANGED (predtym: Zvýší [Concept('trait_level_track_xp','zkušenosti rysu')|E] [GetTrait('lifestyle_hunter').GetName( GetNullCharacter )])
+ hunt_progress_towards_trait_3_tt: "Výrazně zvýší [Concept('trait_level_track_xp','zkušenosti rysu')|E] [GetTrait('lifestyle_hunter').GetName( THIS.Char )]" # todo: CHANGED (predtym: Výrazně zvýší [Concept('trait_level_track_xp','zkušenosti rysu')|E] [GetTrait('lifestyle_hunter').GetName( GetNullCharac)
+ every_non_cynical_dharmic_attendee_tt: "Účastníci bez rysu [GetTrait('cynical').GetName( GetNullCharacter )], jejichž [Concept('faith','víra')|E] má zásadu [GetTenetType('tenet_dharmic_pacifism').GetBaseName]" # todo: CHANGED (predtym: Účastníci bez rysu [GetTrait('cynical').GetName( GetNullCharacter )], jejichž [Concept('faith','víra')|E] má zásadu [Get)
  every_non_cynical_dharmic_attendee_reverse_tt: "Ostatní účastníci"
  hunter_xp_gain_message: "[GetTrait('lifestyle_hunter').GetNameNoTooltip( GetNullCharacter )] – zkušenosti rysu"
  hunter_prestige_gain_message: "Ulovená kořist: [activity.Custom('GetAnimalType')|U]"
@@ -272,7 +273,7 @@
  hunt_rampage_befriend_log: "[CHARACTER.GetShortUIName|U] si získá běsnící [CHARACTER.GetInvolvedActivity.Custom('GetAnimalType')]"
  hunt_rampage_befriend_fail_log_title: "$hunt_rampage_wound_log_title$"
  hunt_rampage_befriend_fail_log: "[CHARACTER.GetShortUIName|U] se pokusí získat si běsnící [CHARACTER.GetInvolvedActivity.Custom('GetAnimalType')], ale neuspěje"
- hunt_rampage_bodyguardlog_title: "$hunt_rampage_wound_log_title$"
+ hunt_rampage_bodyguard_log_title: "$hunt_rampage_wound_log_title$" # todo: NEW TRANSLATION
  hunt_rampage_bodyguard_log: "[TARGET_CHARACTER.GetShortUIName|U] zasáhne jako tělesný strážce a zachrání postavu [CHARACTER.GetShortUIName] před běsnící [CHARACTER.GetInvolvedActivity.Custom('GetAnimalType')]"
  hunt_melee_log_title: "[CHARACTER.Custom('GetAnimalTypeKill')|U] skolena"
  hunt_melee_log: "[CHARACTER.GetShortUIName|U] skolí [CHARACTER.Custom('GetAnimalType')]"

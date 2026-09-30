@@ -9,6 +9,7 @@
  activity_pilgrimage_owner: "Poutník"
  activity_pilgrimage_name: "Pouť"
  activity_pilgrimage_province_unvisited_desc: "\n#positive_value + Nenavštívené svaté místo#!"
+ activity_pilgrimage_eminent_holy_site_desc: "\n#positive_value + [eminent_holy_site] pro [GetPlayer.GetFaith.GetName]#!" # todo: NEW TRANSLATION
  activity_pilgrimage_province_unique_desc: "\n#positive_value + Unikátní svaté místo ([GetPlayer.GetFaith.GetReligion.GetAdjectiveNoTooltip])#!"
  activity_pilgrimage_province_desc_inspection_modifier: "\n#positive_value ++ Chráněné svaté místo #!"
  activity_pilgrimage_province_desc: "Zahájíš pouť, jejímž cílem je [ROOT.Province.GetName]\nVzdálenost ovlivňuje náklady a odměny"
@@ -33,49 +34,50 @@
  pilgrimage_worldly_type_tt_positive: "Tvá [GetActivityType('activity_pilgrimage').GetName] se stává #P světštější#!"
  pilgrimage_worldly_type_tt_very_positive: "Tvá [GetActivityType('activity_pilgrimage').GetName] se stává #P mnohem světštější#!"
  pilgrimage_cultural_acceptance_all_encountered.tt: "Každá [Concept('culture','kultura')|E], se kterou se setkáš"
- pilgrimage_because_global_have_armed_pilgrimages: "Protože [CHARACTER.GetShortUINamePossessive] [Concept('faith','víra')|E] má [Concept('core_tenet','základní zásadu')|E] [GetFaithDoctrine('tenet_armed_pilgrimages').GetBaseName]:"
- pilgrimage_because_global_had_armed_pilgrimages: "Protože [CHARACTER.GetShortUINamePossessive] [Concept('faith','víra')|E] měla [Concept('core_tenet','základní zásadu')|E] [GetFaithDoctrine('tenet_armed_pilgrimages').GetBaseName]:"
+ pilgrimage_because_global_have_armed_pilgrimages: "Protože [CHARACTER.GetShortUINamePossessive] [Concept('faith','víra')|E] má [Concept('core_tenet','základní zásadu')|E] [GetTenetType('tenet_armed_pilgrimages').GetBaseName]:" # todo: CHANGED (predtym: Protože [CHARACTER.GetShortUINamePossessive] [Concept('faith','víra')|E] má [Concept('core_tenet','základní zásadu')|E] )
+ pilgrimage_because_global_had_armed_pilgrimages: "Protože [CHARACTER.GetShortUINamePossessive] [Concept('faith','víra')|E] měla [Concept('core_tenet','základní zásadu')|E] [GetTenetType('tenet_armed_pilgrimages').GetBaseName]:" # todo: CHANGED (predtym: Protože [CHARACTER.GetShortUINamePossessive] [Concept('faith','víra')|E] měla [Concept('core_tenet','základní zásadu')|E)
  pilgrimage_because_they_have_armed_pilgrimages: "$pilgrimage_because_global_have_armed_pilgrimages$"
  pilgrimage_because_they_had_armed_pilgrimages: "$pilgrimage_because_global_had_armed_pilgrimages$"
- pilgrimage_because_i_have_armed_pilgrimages: "Protože tvá [Concept('faith','víra')|E] má [Concept('core_tenet','základní zásadu')|E] [GetFaithDoctrine('tenet_armed_pilgrimages').GetBaseName]:"
- pilgrimage_because_i_had_armed_pilgrimages: "Protože tvá [Concept('faith','víra')|E] měla [Concept('core_tenet','základní zásadu')|E] [GetFaithDoctrine('tenet_armed_pilgrimages').GetBaseName]:"
- pilgrimage_because_global_have_tenet_mendicant_preachers: "Protože [CHARACTER.GetShortUINamePossessive] [Concept('faith','víra')|E] má [Concept('core_tenet','základní zásadu')|E] [GetFaithDoctrine('tenet_mendicant_preachers').GetBaseName]:"
- pilgrimage_because_global_had_tenet_mendicant_preachers: "Protože [CHARACTER.GetShortUINamePossessive] [Concept('faith','víra')|E] měla [Concept('core_tenet','základní zásadu')|E] [GetFaithDoctrine('tenet_mendicant_preachers').GetBaseName]:"
+ pilgrimage_because_i_have_armed_pilgrimages: "Protože tvůj [Concept('rite','obřad')|E] má [Concept('core_tenet','základní zásadu')|E] [GetTenetType('tenet_armed_pilgrimages').GetBaseName]:" # todo: CHANGED (predtym: Protože tvá [Concept('faith','víra')|E] má [Concept('core_tenet','základní zásadu')|E] [GetFaithDoctrine('tenet_armed_pi)
+ pilgrimage_because_i_had_armed_pilgrimages: "Protože tvůj [Concept('rite','obřad')|E] měl [Concept('core_tenet','základní zásadu')|E] [GetTenetType('tenet_armed_pilgrimages').GetBaseName]:" # todo: CHANGED (predtym: Protože tvá [Concept('faith','víra')|E] měla [Concept('core_tenet','základní zásadu')|E] [GetFaithDoctrine('tenet_armed_)
+ pilgrimage_because_global_have_tenet_mendicant_preachers: "Protože [CHARACTER.GetShortUINamePossessive] [Concept('faith','víra')|E] má [Concept('core_tenet','základní zásadu')|E] [GetTenetType('tenet_mendicant_preachers').GetBaseName]:" # todo: CHANGED (predtym: Protože [CHARACTER.GetShortUINamePossessive] [Concept('faith','víra')|E] má [Concept('core_tenet','základní zásadu')|E] )
+ pilgrimage_because_global_had_tenet_mendicant_preachers: "Protože [CHARACTER.GetShortUINamePossessive] [Concept('faith','víra')|E] měla [Concept('core_tenet','základní zásadu')|E] [GetTenetType('tenet_mendicant_preachers').GetBaseName]:" # todo: CHANGED (predtym: Protože [CHARACTER.GetShortUINamePossessive] [Concept('faith','víra')|E] měla [Concept('core_tenet','základní zásadu')|E)
  pilgrimage_because_they_have_tenet_mendicant_preachers: "$pilgrimage_because_global_have_tenet_mendicant_preachers$"
  pilgrimage_because_they_had_tenet_mendicant_preachers: "$pilgrimage_because_global_had_tenet_mendicant_preachers$"
- pilgrimage_because_i_have_tenet_mendicant_preachers: "Protože tvá [Concept('faith','víra')|E] má [Concept('core_tenet','základní zásadu')|E] [GetFaithDoctrine('tenet_mendicant_preachers').GetBaseName]:"
- pilgrimage_because_i_had_tenet_mendicant_preachers: "Protože tvá [Concept('faith','víra')|E] měla [Concept('core_tenet','základní zásadu')|E] [GetFaithDoctrine('tenet_mendicant_preachers').GetBaseName]:"
- pilgrimage_because_global_have_tenet_pentarchy: "Protože [CHARACTER.GetShortUINamePossessive] [Concept('faith','víra')|E] má [Concept('core_tenet','základní zásadu')|E] [GetFaithDoctrine('tenet_pentarchy').GetBaseName]:"
- pilgrimage_because_global_had_tenet_pentarchy: "Protože [CHARACTER.GetShortUINamePossessive] [Concept('faith','víra')|E] měla [Concept('core_tenet','základní zásadu')|E] [GetFaithDoctrine('tenet_pentarchy').GetBaseName]:"
+ pilgrimage_because_i_have_tenet_mendicant_preachers: "Protože tvůj [Concept('rite','obřad')|E] má [Concept('core_tenet','základní zásadu')|E] [GetTenetType('tenet_mendicant_preachers').GetBaseName]:" # todo: CHANGED (predtym: Protože tvá [Concept('faith','víra')|E] má [Concept('core_tenet','základní zásadu')|E] [GetFaithDoctrine('tenet_mendican)
+ pilgrimage_because_i_had_tenet_mendicant_preachers: "Protože tvůj [Concept('rite','obřad')|E] měl [Concept('core_tenet','základní zásadu')|E] [GetTenetType('tenet_mendicant_preachers').GetBaseName]:" # todo: CHANGED (predtym: Protože tvá [Concept('faith','víra')|E] měla [Concept('core_tenet','základní zásadu')|E] [GetFaithDoctrine('tenet_mendic)
+ pilgrimage_because_global_have_tenet_pentarchy: "Protože [CHARACTER.GetShortUINamePossessive] [Concept('faith','víra')|E] má [Concept('core_tenet','základní zásadu')|E] [GetTenetType('tenet_pentarchy').GetBaseName]:" # todo: CHANGED (predtym: Protože [CHARACTER.GetShortUINamePossessive] [Concept('faith','víra')|E] má [Concept('core_tenet','základní zásadu')|E] )
+ pilgrimage_because_global_had_tenet_pentarchy: "Protože [CHARACTER.GetShortUINamePossessive] [Concept('faith','víra')|E] měla [Concept('core_tenet','základní zásadu')|E] [GetTenetType('tenet_pentarchy').GetBaseName]:" # todo: CHANGED (predtym: Protože [CHARACTER.GetShortUINamePossessive] [Concept('faith','víra')|E] měla [Concept('core_tenet','základní zásadu')|E)
  pilgrimage_because_they_have_tenet_pentarchy: "$pilgrimage_because_global_have_tenet_pentarchy$"
  pilgrimage_because_they_had_tenet_pentarchy: "$pilgrimage_because_global_had_tenet_pentarchy$"
- pilgrimage_because_i_have_tenet_pentarchy: "Protože tvá [Concept('faith','víra')|E] má [Concept('core_tenet','základní zásadu')|E] [GetFaithDoctrine('tenet_pentarchy').GetBaseName]:"
- pilgrimage_because_i_had_tenet_pentarchy: "Protože tvá [Concept('faith','víra')|E] měla [Concept('core_tenet','základní zásadu')|E] [GetFaithDoctrine('tenet_pentarchy').GetBaseName]:"
- pilgrimage_because_global_have_tenet_esotericism: "Protože [CHARACTER.GetShortUINamePossessive] [Concept('faith','víra')|E] má [Concept('core_tenet','základní zásadu')|E] [GetFaithDoctrine('tenet_esotericism').GetBaseName]:"
- pilgrimage_because_global_had_tenet_esotericism: "Protože [CHARACTER.GetShortUINamePossessive] [Concept('faith','víra')|E] měla [Concept('core_tenet','základní zásadu')|E] [GetFaithDoctrine('tenet_esotericism').GetBaseName]:"
+ pilgrimage_because_i_have_tenet_pentarchy: "Protože tvůj [Concept('rite','obřad')|E] má [Concept('core_tenet','základní zásadu')|E] [GetTenetType('tenet_pentarchy').GetBaseName]:" # todo: CHANGED (predtym: Protože tvá [Concept('faith','víra')|E] má [Concept('core_tenet','základní zásadu')|E] [GetFaithDoctrine('tenet_pentarch)
+ pilgrimage_because_i_had_tenet_pentarchy: "Protože tvůj [Concept('rite','obřad')|E] měl [Concept('core_tenet','základní zásadu')|E] [GetTenetType('tenet_pentarchy').GetBaseName]:" # todo: CHANGED (predtym: Protože tvá [Concept('faith','víra')|E] měla [Concept('core_tenet','základní zásadu')|E] [GetFaithDoctrine('tenet_pentar)
+ pilgrimage_because_global_have_tenet_esotericism: "Protože [CHARACTER.GetShortUINamePossessive] [Concept('faith','víra')|E] má [Concept('core_tenet','základní zásadu')|E] [GetTenetType('tenet_esotericism').GetBaseName]:" # todo: CHANGED (predtym: Protože [CHARACTER.GetShortUINamePossessive] [Concept('faith','víra')|E] má [Concept('core_tenet','základní zásadu')|E] )
+ pilgrimage_because_global_had_tenet_esotericism: "Protože [CHARACTER.GetShortUINamePossessive] [Concept('faith','víra')|E] měla [Concept('core_tenet','základní zásadu')|E] [GetTenetType('tenet_esotericism').GetBaseName]:" # todo: CHANGED (predtym: Protože [CHARACTER.GetShortUINamePossessive] [Concept('faith','víra')|E] měla [Concept('core_tenet','základní zásadu')|E)
  pilgrimage_because_they_have_tenet_esotericism: "$pilgrimage_because_global_have_tenet_esotericism$"
  pilgrimage_because_they_had_tenet_esotericism: "$pilgrimage_because_global_had_tenet_esotericism$"
- pilgrimage_because_i_have_tenet_esotericism: "Protože tvá [Concept('faith','víra')|E] má [Concept('core_tenet','základní zásadu')|E] [GetFaithDoctrine('tenet_esotericism').GetBaseName]:"
- pilgrimage_because_i_had_tenet_esotericism: "Protože tvá [Concept('faith','víra')|E] měla [Concept('core_tenet','základní zásadu')|E] [GetFaithDoctrine('tenet_esotericism').GetBaseName]:"
- pilgrimage_because_global_have_tenet_struggle_submission: "Protože [CHARACTER.GetShortUINamePossessive] [Concept('faith','víra')|E] má [Concept('core_tenet','základní zásadu')|E] [GetFaithDoctrine('tenet_struggle_submission').GetBaseName]:"
- pilgrimage_because_global_had_tenet_struggle_submission: "Protože [CHARACTER.GetShortUINamePossessive] [Concept('faith','víra')|E] měla [Concept('core_tenet','základní zásadu')|E] [GetFaithDoctrine('tenet_struggle_submission').GetBaseName]:"
+ pilgrimage_because_i_have_tenet_esotericism: "Protože tvůj [Concept('rite','obřad')|E] má [Concept('core_tenet','základní zásadu')|E] [GetTenetType('tenet_esotericism').GetBaseName]:" # todo: CHANGED (predtym: Protože tvá [Concept('faith','víra')|E] má [Concept('core_tenet','základní zásadu')|E] [GetFaithDoctrine('tenet_esoteric)
+ pilgrimage_because_i_had_tenet_esotericism: "Protože tvůj [Concept('rite','obřad')|E] měl [Concept('core_tenet','základní zásadu')|E] [GetTenetType('tenet_esotericism').GetBaseName]:" # todo: CHANGED (predtym: Protože tvá [Concept('faith','víra')|E] měla [Concept('core_tenet','základní zásadu')|E] [GetFaithDoctrine('tenet_esoter)
+ pilgrimage_because_global_have_tenet_struggle_submission: "Protože [CHARACTER.GetShortUINamePossessive] [Concept('faith','víra')|E] má [Concept('core_tenet','základní zásadu')|E] [GetTenetType('tenet_struggle_submission').GetBaseName]:" # todo: CHANGED (predtym: Protože [CHARACTER.GetShortUINamePossessive] [Concept('faith','víra')|E] má [Concept('core_tenet','základní zásadu')|E] )
+ pilgrimage_because_global_had_tenet_struggle_submission: "Protože [CHARACTER.GetShortUINamePossessive] [Concept('faith','víra')|E] měla [Concept('core_tenet','základní zásadu')|E] [GetTenetType('tenet_struggle_submission').GetBaseName]:" # todo: CHANGED (predtym: Protože [CHARACTER.GetShortUINamePossessive] [Concept('faith','víra')|E] měla [Concept('core_tenet','základní zásadu')|E)
  pilgrimage_because_they_have_tenet_struggle_submission: "$pilgrimage_because_global_have_tenet_struggle_submission$"
  pilgrimage_because_they_had_tenet_struggle_submission: "$pilgrimage_because_global_had_tenet_struggle_submission$"
- pilgrimage_because_i_have_tenet_struggle_submission: "Protože tvá [Concept('faith','víra')|E] má [Concept('core_tenet','základní zásadu')|E] [GetFaithDoctrine('tenet_struggle_submission').GetBaseName]:"
- pilgrimage_because_i_had_tenet_struggle_submission: "Protože tvá [Concept('faith','víra')|E] měla [Concept('core_tenet','základní zásadu')|E] [GetFaithDoctrine('tenet_struggle_submission').GetBaseName]:"
- pilgrimage_because_global_have_tenet_ancestor_worship: "Protože [CHARACTER.GetShortUINamePossessive] [Concept('faith','víra')|E] má [Concept('core_tenet','základní zásadu')|E] [GetFaithDoctrine('tenet_ancestor_worship').GetBaseName]:"
- pilgrimage_because_global_had_tenet_ancestor_worship: "Protože [CHARACTER.GetShortUINamePossessive] [Concept('faith','víra')|E] měla [Concept('core_tenet','základní zásadu')|E] [GetFaithDoctrine('tenet_ancestor_worship').GetBaseName]:"
+ pilgrimage_because_i_have_tenet_struggle_submission: "Protože tvůj [Concept('rite','obřad')|E] má [Concept('core_tenet','základní zásadu')|E] [GetTenetType('tenet_struggle_submission').GetBaseName]:" # todo: CHANGED (predtym: Protože tvá [Concept('faith','víra')|E] má [Concept('core_tenet','základní zásadu')|E] [GetFaithDoctrine('tenet_struggle)
+ pilgrimage_because_i_had_tenet_struggle_submission: "Protože tvůj [Concept('rite','obřad')|E] měl [Concept('core_tenet','základní zásadu')|E] [GetTenetType('tenet_struggle_submission').GetBaseName]:" # todo: CHANGED (predtym: Protože tvá [Concept('faith','víra')|E] měla [Concept('core_tenet','základní zásadu')|E] [GetFaithDoctrine('tenet_strugg)
+ pilgrimage_because_global_have_tenet_ancestor_worship: "Protože [CHARACTER.GetShortUINamePossessive] [Concept('faith','víra')|E] má [Concept('core_tenet','základní zásadu')|E] [GetTenetType('tenet_ancestor_worship').GetBaseName]:" # todo: CHANGED (predtym: Protože [CHARACTER.GetShortUINamePossessive] [Concept('faith','víra')|E] má [Concept('core_tenet','základní zásadu')|E] )
+ pilgrimage_because_global_had_tenet_ancestor_worship: "Protože [CHARACTER.GetShortUINamePossessive] [Concept('faith','víra')|E] měla [Concept('core_tenet','základní zásadu')|E] [GetTenetType('tenet_ancestor_worship').GetBaseName]:" # todo: CHANGED (predtym: Protože [CHARACTER.GetShortUINamePossessive] [Concept('faith','víra')|E] měla [Concept('core_tenet','základní zásadu')|E)
  pilgrimage_because_they_have_tenet_ancestor_worship: "$pilgrimage_because_global_have_tenet_ancestor_worship$"
  pilgrimage_because_they_had_tenet_ancestor_worship: "$pilgrimage_because_global_had_tenet_ancestor_worship$"
- pilgrimage_because_i_have_tenet_ancestor_worship: "Protože tvá [Concept('faith','víra')|E] má [Concept('core_tenet','základní zásadu')|E] [GetFaithDoctrine('tenet_ancestor_worship').GetBaseName]:"
- pilgrimage_because_i_had_tenet_ancestor_worship: "Protože tvá [Concept('faith','víra')|E] měla [Concept('core_tenet','základní zásadu')|E] [GetFaithDoctrine('tenet_ancestor_worship').GetBaseName]:"
+ pilgrimage_because_i_have_tenet_ancestor_worship: "Protože tvůj [Concept('rite','obřad')|E] má [Concept('core_tenet','základní zásadu')|E] [GetTenetType('tenet_ancestor_worship').GetBaseName]:" # todo: CHANGED (predtym: Protože tvá [Concept('faith','víra')|E] má [Concept('core_tenet','základní zásadu')|E] [GetFaithDoctrine('tenet_ancestor)
+ pilgrimage_because_i_had_tenet_ancestor_worship: "Protože tvůj [Concept('rite','obřad')|E] měl [Concept('core_tenet','základní zásadu')|E] [GetTenetType('tenet_ancestor_worship').GetBaseName]:" # todo: CHANGED (predtym: Protože tvá [Concept('faith','víra')|E] měla [Concept('core_tenet','základní zásadu')|E] [GetFaithDoctrine('tenet_ancest)
  pilgrimage_learn_from_the_bishops: "Pokus se porozumět svatým učitelům"
  pilgrimage_learn_from_the_bishops_success: "Pochopíš jejich učení"
  pilgrimage_learn_from_the_bishops_failure: "Poznání ti stále uniká"
- pilgrimage_piousness_because_i_have_tenet_armed_pilgrimages: "Protože tvá [Concept('faith','víra')|E] má [Concept('core_tenet','základní zásadu')|E] [GetFaithDoctrine('tenet_armed_pilgrimages').GetBaseName]:\n$EFFECT_LIST_BULLET$$pilgrimage_pious_type_tt_positive$\n"
- pilgrimage_piousness_because_i_have_tenet_struggle_submission: "Protože tvá [Concept('faith','víra')|E] má [Concept('core_tenet','základní zásadu')|E] [GetFaithDoctrine('tenet_struggle_submission').GetBaseName]:\n$EFFECT_LIST_BULLET$$pilgrimage_pious_type_tt_positive$\n"
- pilgrimage_piousness_because_i_have_tenet_warmonger: "Protože tvá [Concept('faith','víra')|E] má [Concept('core_tenet','základní zásadu')|E] [GetFaithDoctrine('tenet_warmonger').GetBaseName]:\n$EFFECT_LIST_BULLET$$pilgrimage_pious_type_tt_positive$\n"
+ pilgrimage_piousness_because_i_have_tenet_armed_pilgrimages: "Protože tvůj [Concept('rite','obřad')|E] má [Concept('core_tenet','základní zásadu')|E] [GetTenetType('tenet_armed_pilgrimages').GetBaseName]:\n$EFFECT_LIST_BULLET$$pilgrimage_pious_type_tt_positive$\n" # todo: CHANGED (predtym: Protože tvá [Concept('faith','víra')|E] má [Concept('core_tenet','základní zásadu')|E] [GetFaithDoctrine('tenet_armed_pi)
+ pilgrimage_piousness_because_i_have_tenet_struggle_submission: "Protože tvůj [Concept('rite','obřad')|E] má [Concept('core_tenet','základní zásadu')|E] [GetTenetType('tenet_struggle_submission').GetBaseName]:\n$EFFECT_LIST_BULLET$$pilgrimage_pious_type_tt_positive$\n" # todo: CHANGED (predtym: Protože tvá [Concept('faith','víra')|E] má [Concept('core_tenet','základní zásadu')|E] [GetFaithDoctrine('tenet_struggle)
+ pilgrimage_piousness_because_i_have_tenet_warmonger: "Protože tvůj [Concept('rite','obřad')|E] má [Concept('core_tenet','základní zásadu')|E] [GetTenetType('tenet_warmonger').GetBaseName]:\n$EFFECT_LIST_BULLET$$pilgrimage_pious_type_tt_positive$\n" # todo: CHANGED (predtym: Protože tvá [Concept('faith','víra')|E] má [Concept('core_tenet','základní zásadu')|E] [GetFaithDoctrine('tenet_warmonge)
  pilgrimage_base_cost: "Základní náklady"
+ pilgrimage_cost_triggered_by_badge_urge: "Zájem o odznak" # todo: NEW TRANSLATION
  pilgrimage_cost_triggered_by_ghosts: "Vliv duchů"
  pilgrimage_cost_triggered_by_dead_hajj_relative: "Slíbená hadždž"
  pilgrimage_cost_triggered_by_dead_pilgrimage_relative: "Slíbená pouť"
@@ -159,6 +161,8 @@
  pilgrimage_inherited_pilgrimage_log: "[CHARACTER.GetShortUIName|U] se [Select_CString(CHARACTER.IsFemale,'rozhodla','rozhodl')] pokračovat v pouti do [PROVINCE.GetNameNoTooltip]"
  pilgrimage_burial_log_title: "Uložení k odpočinku"
  pilgrimage_burial_log: "[CHARACTER.GetShortUIName|U] [Select_CString(CHARACTER.IsFemale,'uložila','uložil')] ostatky svého předchůdce [TARGET_CHARACTER.GetShortUIName] k odpočinku na svatém místě [PROVINCE.GetNameNoTooltip]"
+ pilgrimage_badge_log_title: "Získán poutnický odznak" # todo: NEW TRANSLATION
+ pilgrimage_badge_log: "[CHARACTER.GetShortUIName|U] získal poutnický odznak na památku [CHARACTER.GetHerHis] cesty do [PROVINCE.GetNameNoTooltip]" # todo: NEW TRANSLATION
  pilgrimage.0040.t: "$pilgrimage_header$ Konec cesty"
  pilgrimage.0040.desc: "A tak má duchovní cesta náhle končí. Stejně jako list unášený rozbouřenou řekou však nezbývá než sledovat, kam mě nové okolnosti zanesou."
  pilgrimage.0040.desc_moved_capital: "Když je teď mým hlavním městem právě nádherné místo [ROOT.Char.GetCapitalLocation.GetTitle.GetNameNoTierNoTooltip], aktivita [GetActivityType('activity_pilgrimage').GetNameNoTooltip] už pro mě nemá příliš smysl.\n\n[Select_CString(ROOT.Char.IsFemale,'Měla bych','Měl bych')] svou cestu zde ukončit a zkusit štěstí u jiného svatého místa."
@@ -485,11 +489,12 @@
  pilgrimage.3003.a.flavor: "Podáš [naked_preacher.GetFirstNameNoTooltip] nějaké oblečení."
  pilgrimage.3003.b: "Jdi a šiř #EMP správné#! učení."
  pilgrimage.3004.t: "$pilgrimage_header$ Konec se blíží"
- pilgrimage.3004.desc: "Když můj doprovod prochází malým městem, všimnu si davu lidí zaplňujícího tržiště. Uprostřed stojí na převráceném vozíku s rybami [Select_CString(doomsayer.IsFemale,'jakási žena','jakýsi muž')] a zběsile křičí na každého, kdo je ochoten naslouchat.\n\n„Soudný den se blíží! Čiňte pokání! Čiňte pokání, říkám, jinak budete navěky zatraceni!“\n\nZnepokojení měšťané si mezi sebou nervózně šeptají, vyděšení slovy tohoto proroka zkázy."
- pilgrimage.3004.a: "„De die autem illa et hora nemo scit!“"
- pilgrimage.3004.a.flavor: "Bible hovoří jasně: nikdo neví, kdy ten den přijde!"
- pilgrimage.3004.b: "Ještě že je součástí této pouti i odpustek!"
+ pilgrimage.3004.desc: "Když můj doprovod prochází malým městem, všimnu si davu lidí zaplňujícího jeho tržiště. Tam stojí na převráceném vozíku s rybami [Select_CString(doomsayer.IsFemale,'jakási žena','jakýsi muž')] a zběsile křičí na každého, kdo je ochoten naslouchat.\n\n„Soudný den se blíží! Čiňte pokání! Čiňte pokání, říkám, jinak budete navěky zatraceni!“\n\nMěšťané si mezi sebou nervózně šeptají, vyděšení slovy tohoto proroka zkázy." # todo: CHANGED, CHECK FORMAT (predtym: Když můj doprovod prochází malým městem, všimnu si davu lidí zaplňujícího tržiště. Uprostřed stojí na převráceném vozíku) # todo: FORMAT chýba [doomsayer.GetWomanMan]; navyše [Select_CString(doomsayer.IsFemale,'','')]
+ pilgrimage.3004.a: "„#EMP De die autem illa et hora nemo scit!#!“" # todo: CHANGED (predtym: „De die autem illa et hora nemo scit!“)
+ pilgrimage.3004.a.flavor: "Bible hovoří jasně: [Glossary( 'no man knows when the Day shall be', 'MATHEW_24_36_GLOSS' )]!" # todo: CHANGED (predtym: Bible hovoří jasně: nikdo neví, kdy ten den přijde!)
+ pilgrimage.3004.b: "Naštěstí je součástí této pouti odpustek." # todo: CHANGED (predtym: Ještě že je součástí této pouti i odpustek!)
  pilgrimage.3004.c: "[doomsayer.GetFirstNameNoTooltip] #EMP není#! žádný kněz! Strhněte [Select_CString(doomsayer.IsFemale,'ji','ho')] dolů!"
+ MATHEW_24_36_GLOSS: "O onom dni a hodině však neví nikdo, ani nebeští andělé, ani Syn, jenom Otec. Matouš 24:36 NRSVUE" # todo: NEW TRANSLATION
  pilgrimage.3102.t: "$pilgrimage_header$ Zijára"
  pilgrimage.3102.desc: "Zatímco hadždž je povinností každého muslima, poutě na jiná místa jsou mnohem méně obvyklé. Islámská nauka tyto zijáry nevyžaduje, a muslimové, kteří se pro ně rozhodnou, tak mohou činit z nejrůznějších důvodů.\n\nKdyž putujeme po cestě do [ROOT.Char.GetTravelPlan.GetData.GetNextDestination.GetProvince.GetNameNoTooltip], přistihnu se při úvahách nad tím, co mě vlastně přimělo vydat se právě na tuto cestu..."
  pilgrimage.3102.a: "Chci spatřit celé nádherné Alláhovo stvoření."
@@ -563,6 +568,10 @@
  pilgrimage.4020.desc.neutral: "Průvod je klidný a důstojný a místní [ROOT.Char.GetFaith.AltPriestTermPlural] mě ujišťují, že [old_pilgrimage_host.GetFirstName] je nyní na lepším místě, když [Select_CString(old_pilgrimage_host.IsFemale,'byla uložena','byl uložen')] k odpočinku zde v [ROOT.Char.GetCurrentLocation.GetNameNoTooltip]. [ROOT.Char.GetFaith.HighGodName] je nyní blíž."
  pilgrimage.4020.a: "Bylo to správné rozhodnutí."
  pilgrimage.4020.a.flavor: "Ať nyní [old_pilgrimage_host.GetFirstName] odpočívá v pokoji."
+ pilgrimage.4100.t: "Odznak" # todo: NEW TRANSLATION
+ pilgrimage.4100.desc: "Přidávám se k zástupu poutníků, kteří procházejí pamětihodnostmi [ROOT.Char.GetCurrentLocation.GetNameNoTooltip], až nakonec dorazím ke stánkům, kde se vystavují odznaky požehnané místními duchovními.\n\nO kousek dál na ulici si všimnu několika zkušených poutníků, kteří si porovnávají, kolik odznaků na svých cestách nasbírali." # todo: NEW TRANSLATION
+ pilgrimage.4100.a: ""Jeden odznak, prosím!"" # todo: NEW TRANSLATION
+ pilgrimage.4100.b: "Se svým zlatem mám lepší plány." # todo: NEW TRANSLATION
  pilgrimage.5001.t: "Všechny cesty vedou do Říma"
  pilgrimage.5001.desc: "Do Říma proudí poutníci z celého křesťanského světa. Někteří následují Via Francigena, jiní se vydávají méně známými cestami. Nakonec se však všichni setkáváme zde, v bazilice svatého Petra, kde byl tento velký muž sám uložen k odpočinku.\n\nKdyž tu stojím mezi ostatními poutníky, cítím slavnostní jednotu a sounáležitost všech shromážděných, kteří během své cesty překonali nejrůznější zkoušky a strasti."
  pilgrimage.5011.t: "Ó Jeruzaléme, Jeruzaléme!"
@@ -752,6 +761,7 @@
  pilgrimage.6800.d: "„Zůstat tady? Abys proti mně mohl[Select_CString(called_member.IsFemale,'a kout pikle',' kout pikle')]? Ani náhodou!“"
  pilgrimage.6800.e: "„Výborně! Také přispěji darem!“"
  pilgrimage.6800.e.tt: "Místní duchovenstvo toto gesto velmi ocení"
+ pilgrimage.6800.monk_joins_court_toast: "[called_member.GetShortUIName|U] vyslyšel [called_member.GetHerHis] povolání a stal se [GetTrait('devoted').GetName( called_member )]" # todo: NEW TRANSLATION
  pilgrimage.6810.t: "Odpustky"
  pilgrimage.6810.desc: "„...teď můžeš jít, dítě.“ Když vstoupím do [ROOT.Char.GetFaith.HouseOfWorship], zaslechnu [bishop_pilgrim.GetTitledFirstName] tiše pronést tato slova. Poutník se před odchodem ukloní a v ruce [bishop_pilgrim.GetFirstNameNoTooltip] zahlédnu lesk zlata.\n\n„Ach, drahý [ROOT.Char.GetTitleAsNameNoTooltip], chceš snad také dosáhnout odpuštění svých hříchů? [religious_head_scope.GetTitledFirstName] nařídil udělovat odpustky všem poutníkům, kteří navštíví [ROOT.Char.GetCurrentLocation.GetNameNoTooltip]... samozřejmě za patřičnou cenu.“"
  pilgrimage.6810.a: "„Prosím, přimluv se za mě. [ROOT.Char.GetFaith.HighGodName] snad vyslyší tvou prosbu.“"
@@ -946,3 +956,20 @@
  PAWANG_GLOSS: "Ritualista, o němž se věří, že dokáže ovládat počasí, divoká zvířata a duchy. Lidé se ho obávají a zároveň si ho váží."
  good_weather_modifier: "Dobré počasí"
  good_weather_modifier_desc: "Tento doprovod provází příznivé počasí."
+ pilgrimage.2060.t: "$pilgrimage_header$ Příběhy z [ROOT.Char.GetCurrentLocation.GetNameNoTooltip]" # todo: NEW TRANSLATION
+ pilgrimage.2060.desc.intro: "Obklopený cestovateli můj [ROOT.Char.Custom2('RelationToMe', SCOPE.sC('pilgrim'))], [pilgrim.GetFirstName], odstrčí [pilgrim.GetHerHis] [pilgrim.Custom('GetLocalStreetFood')] stranou a promluví:\n\n„Zdá se mi, že není lepší chvíle k vyprávění příběhu než večer v hostinci.“" # todo: NEW TRANSLATION
+ pilgrimage.2060.desc.memory: "Není to tak dávno, co [memory.GetDescription]..."" # todo: NEW TRANSLATION
+ pilgrimage.2060.desc.fallback: "Před dávnými časy bylo v těchto krajích často vídáno [ROOT.Char.Custom('RegionalMythicalCreature')]..."" # todo: NEW TRANSLATION
+ pilgrimage.2060.a: "Konečně nějaká zábava." # todo: NEW TRANSLATION
+ pilgrimage.2060.b: ""Vyměňte příběhy za modlitby."" # todo: NEW TRANSLATION
+ pilgrimage.2060.b.catholic: ""Nechte příběhů a pomodlete se Zdrávas Maria."" # todo: NEW TRANSLATION
+ pilgrimage.2060.c: "Záležitosti prostého lidu mě nezajímají." # todo: NEW TRANSLATION
+ pilgrimage.2070.t: "$pilgrimage_header$ Duch [ROOT.Char.GetCurrentLocation.GetNameNoTooltip]" # todo: NEW TRANSLATION
+ pilgrimage.2070.desc: "„[ROOT.Char.Custom('FormOfAddressForLiege')|U]!“ zavolá na mě můj [ROOT.Char.Custom2('RelationToMe', SCOPE.sC('pilgrim'))] [pilgrim.GetFirstName] s tvářemi zrůžovělými studem.\n\n„Je známo, že se v těchto [ROOT.Char.GetCurrentLocation.Custom('GetTerrainTypePlural')] skrývá [ROOT.Char.GetCurrentLocation.Custom('GetProvinceTricksterSpirit')]. Než budeme pokračovat, musíme se pomodlit, abychom naši družinu ochránili před jeho zlovolnými úmysly!“" # todo: NEW TRANSLATION
+ pilgrimage.2070.a: ""Vaše pověry jsou urážkou [ROOT.Char.GetFaith.HighGodName]."" # todo: NEW TRANSLATION
+ pilgrimage.2070.b: ""Dobrá tedy."" # todo: NEW TRANSLATION
+ pilgrimage.2070.c: ""Musíme si pospíšit."" # todo: NEW TRANSLATION
+ pilgrimage_make_haste_modifier: "Nevšímání si duchů" # todo: NEW TRANSLATION
+ pilgrimage_make_haste_modifier_desc: "Tato postava se rozhodla ignorovat varování před místními duchy." # todo: NEW TRANSLATION
+ friend_prayed_against_trickster_spirits: "[CHARACTER.GetShortUIName|U] se na doporučení [TARGET_CHARACTER.GetShortUINamePossessive] zastavil, aby pronesl ochrannou modlitbu proti rošťáckému duchovi." # todo: NEW TRANSLATION
+ friend_prayed_against_trickster_spirits_corresponding: "[TARGET_CHARACTER.GetShortUIName|U] se na doporučení [CHARACTER.GetShortUINamePossessive] zastavil, aby pronesl ochrannou modlitbu proti rošťáckému duchovi." # todo: NEW TRANSLATION

@@ -2,7 +2,7 @@
  great_project_type_great_wall: "Vylepšit Velkou zeď"
  great_project_type_great_wall_desc: "Velká zeď je svědectvím stavitelského umu a vynalézavosti našich předků, kteří ji vybudovali na obranu před případnými nájezdníky. Čas se však podepsal i na ní a zeď nyní naléhavě potřebuje vylepšit."
  great_project_type_great_wall_province_has_great_wall: "[province.GetNameNoTooltip] obsahuje úsek stavby [GetBuilding('the_great_wall_01').GetName]"
- great_project_type_great_wall_province_gains_great_wall: "[Concept('provinces','Provincie')|E] s financovanými [Concept('great_project_contributions','příspěvky k velkému projektu')|E] získají vylepšení svých úseků [Concept('building','stavby')|E] [GetBuilding('the_great_wall_04').GetName]"
+ great_project_type_great_wall_province_gains_great_wall: "[Concept('holdings','Držby')|E] s financovanými [Concept('great_project_contributions','příspěvky k velkému projektu')|E] získají vylepšení svých úseků [Concept('building','stavby')|E] [GetBuilding('the_great_wall_04').GetName]" # todo: CHANGED (predtym: [Concept('provinces','Provincie')|E] s financovanými [Concept('great_project_contributions','příspěvky k velkému projekt)
  great_project_type_great_wall_possessive: "Velké zdi"
  great_project_type_great_wall_contribution_master_builder: "Najmout mistra stavitele a zahájit výstavbu"
  great_project_type_great_wall_contribution_master_builder_desc: "Opevnění je třeba brát vážně! Dohledem nad tímto [Concept('great_project','velkým projektem')|e] musí být pověřeni ti nejschopnější odborníci, aby byly použity nejlepší materiály, najati nejodolnější dělníci a vybudovány co nejpevnější hradby."
@@ -76,7 +76,7 @@
  great_project_type_great_wall_contribution_walls_34_desc: "Ochrana panství vyžaduje řádné opevnění každé hranice. Proto je třeba prohlédnout a opravit hradby [GetTitleByKey('b_rouxuan').GetNameNoTier]."
  great_project_type_great_wall_contribution_walls_35: "Vylepšit hradby [GetTitleByKey('b_cirlxj_yangcheng').GetNameNoTier]"
  great_project_type_great_wall_contribution_walls_35_desc: "Ochrana panství vyžaduje řádné opevnění každé hranice. Proto je třeba prohlédnout a opravit hradby [GetTitleByKey('b_cirlxj_yangcheng').GetNameNoTier]."
- great_project_contribution_master_builder_must_have_funded_province: "Alespoň 1 [Concept('province','provincie')|E] musí mít financované vylepšení"
+ great_project_contribution_master_builder_must_have_funded_province: "Alespoň 1 [Concept('holding','držba')|E] musí mít financované vylepšení" # todo: CHANGED (predtym: Alespoň 1 [Concept('province','provincie')|E] musí mít financované vylepšení)
  great_project_walls_extend_materials_generic: "Stavební materiál"
  great_project_walls_extend_materials_generic_desc: "Každá zeď vyžaduje velké množství stavebního materiálu. Zeď takových rozměrů ho však potřebuje skutečně obrovské množství."
  great_project_type_great_wall_extend_to_shanhai_pass: "Prodloužit Velkou zeď k průsmyku Šan-chaj-kuan"
@@ -130,14 +130,14 @@
  great_project_type_construct_great_barracks_does_not_already_have_barracks: "Dosud zde nestojí [Concept('building','budova')|E] [GetBuilding('celestial_great_barracks_01').GetName]"
  great_project_type_construct_great_barracks_do_not_override_player_building: "Není v držení jiného hráče, který již má [Concept('duchy_building','vévodskou budovu')|E]"
  great_project_type_construct_great_barracks_possessive: "Vybudovat Velkou kasárnu"
- great_project_type_construct_great_barracks_province_gains_great_barracks_fallback: "[Concept('province','Vybraná provincie')|E]"
+ great_project_type_construct_great_barracks_province_gains_great_barracks_fallback: "[Concept('holding','Vybraná držba')|E]" # todo: CHANGED (predtym: [Concept('province','Vybraná provincie')|E])
  great_project_type_construct_great_barracks_province_gains_great_barracks: "[SelectLocalization(province.IsValid,province.GetName,'great_project_type_construct_great_barracks_province_gains_great_barracks_fallback')] získá [Concept('building','budovu')|E] [GetBuilding('celestial_great_barracks_01').GetName]"
  project_great_barracks_replace_tt: "@alert_icon! #alert_trial Tím nahradíš stávající [Concept('duchy_building','vévodskou budovu')|E]#!"
  great_project_type_construct_great_barracks_contribution_base_materials: "Stavební materiál"
  great_project_type_construct_great_barracks_contribution_fort_material: "Materiál na opevnění"
  great_project_type_construct_great_barracks_contribution_work_force: "Pracovní síla"
  great_project_type_construct_great_barracks_contribution_soldiers: "Vojáci"
- great_project_contribution_must_be_province_owner_or_above: "Vlastní [Concept('province','provincii')|E], kde se [Concept('great_project','velký projekt')|E] staví, nebo má vůči vlastníkovi provincie postavení [Concept('liege','lenního pána')|E] či vyšší"
+ great_project_contribution_must_be_province_owner_or_above: "Je držitelem nebo nadřízeným držitelem [Concept('holding','držby')|E], kde se [Concept('great_project','velký projekt')|E] staví" # todo: CHANGED (predtym: Vlastní [Concept('province','provincii')|E], kde se [Concept('great_project','velký projekt')|E] staví, nebo má vůči vla)
  great_project_type_strengthen_capital: "Posílit hlavní město"
  great_project_type_strengthen_capital_desc: "Hlavní město není jen sídlem mé vlády. Je samotným srdcem panství a mělo by být majestátním symbolem mého panování. Obnovou celého města, zvelebením ulic, financováním univerzity a vztyčením soch i dalších monumentů se toto nádherné město stane odrazem mé dynastie."
  great_project_type_strengthen_capital_possessive: "$great_project_type_strengthen_capital$"
@@ -171,6 +171,7 @@
  great_project_type_mandala_capital_01_contribution_family_shrine: "Rodová svatyně"
  great_project_type_mandala_capital_01_contribution_family_shrine_desc: "Bude vztyčena zvláštní svatyně zasvěcená potomstvu našich velkých vládců."
  great_project_mandala_capital_pick_aspect_tt: "Máš [Concept('mandala_aspect','aspekt mandaly')|E]"
+ great_wall_contributor_realm_tt: "Jste součástí [owner.GetShortUINamePossessive] [realm|E] nebo jedním z [owner.GetHerHis] [tributaries|E]" # todo: NEW TRANSLATION
  great_project_mandala_capital_has_creation_aspect_tt: "Máš [Concept('aspect_of_creation','aspekt stvoření')|E]"
  great_project_mandala_capital_has_serenity_aspect_tt: "Máš [Concept('aspect_of_serenity','aspekt klidu')|E]"
  great_project_mandala_capital_has_destruction_aspect_tt: "Máš [Concept('aspect_of_destruction','aspekt zkázy')|E]"
@@ -257,6 +258,7 @@
  great_project_type_mandala_capital_05_contribution_dynastic_temple_complex_desc: "Část chrámového komplexu hlavního města našeho dévarádži bude zasvěcena uctívání našeho rodu a jeho potomků."
  great_project_error_plan_mandala_capital: "Nesplňuješ požadavky pro plánování rozšíření hlavního města mandaly"
  only_single_great_project_type_allowed: "[Concept('great_project','Velký projekt')|E] tohoto typu se již neplánuje ani neprobíhá"
+ not_planning_great_project_type: "[great_project|E] tohoto typu se #bold již#! neplánuje" # todo: NEW TRANSLATION
  you_are_owner_of_the_project: "Jsi vlastníkem tohoto [Concept('great_project','velkého projektu')|E]"
  great_project_type_minister_project_culture: "Asimilovat oblast"
  minister_project_culture_name_chinese: "Počínštit oblast"
@@ -351,6 +353,13 @@
  action_targeted_by_grand_campaign_click: "#I [SelectLocalization( ObjectsEqual('defender.GetName','actor.GetName'), 'action_targeted_by_grand_campaign_click_to_see', 'action_targeted_by_grand_campaign_click_to_join' )]#!"
  action_targeted_by_grand_campaign_click_to_see: "Kliknutím zobrazíš Velký projekt"
  action_targeted_by_grand_campaign_click_to_join: "Kliknutím se připojíš na stranu obránců"
+ action_targeted_by_mass_rite_conversion: "Cíl [great_project.GetName]" # todo: NEW TRANSLATION
+ action_targeted_by_mass_rite_conversion_desc: "Vaše území se stalo cílem projektu [great_project.GetName]. [SelectLocalization( ObjectsEqual('defender.GetName','actor.GetName'), 'action_targeted_by_mass_rite_conversion_desc_no_war_yet', 'action_targeted_by_mass_rite_conversion_desc_join_war')]" # todo: NEW TRANSLATION
+ action_targeted_by_mass_rite_conversion_desc_no_war_yet: "Přispěvatelé do tohoto [great_project|E] proti vám mohou použít [casus_belli|E] [holy_war|E]!" # todo: NEW TRANSLATION
+ action_targeted_by_mass_rite_conversion_desc_join_war: "Probíhá [holy_war|E], jejímž cílem jsou vaše [titles|E]." # todo: NEW TRANSLATION
+ action_targeted_by_mass_rite_conversion_click: "#I [SelectLocalization( ObjectsEqual('defender.GetName','actor.GetName'), 'action_targeted_by_mass_rite_conversion_click_to_see', 'action_targeted_by_mass_rite_conversion_click_to_join')]#!" # todo: NEW TRANSLATION
+ action_targeted_by_mass_rite_conversion_click_to_see: "Kliknutím zobrazíte Velký projekt" # todo: NEW TRANSLATION
+ action_targeted_by_mass_rite_conversion_click_to_join: "Kliknutím se přidáte na stranu obránců" # todo: NEW TRANSLATION
  grand_campaign_main_target_tt: "Povinný příspěvek je financován"
  grand_campaign_target_border_tt_global: "[TARGET_CHARACTER.GetPrimaryTitle.GetName] sousedí s [Concept('realm','panstvím')|E] [GetTitleByKey('h_china').GetName] nebo s jeho [Concept('tributaries','tributáři')|E]"
  movement_power_increased_grand_campaign_name: "Vítězství ve Velkém tažení"
@@ -406,11 +415,11 @@
  great_project_type_minister_project_train_troops_contribution_equipment_check: "Kontrola výzbroje"
  great_project_type_minister_project_train_troops_contribution_siege_exercise: "Obléhací cvičení"
  great_project_type_minister_project_train_troops_contribution_natural_disaster_test: "Nácvik reakce na přírodní pohromu"
- minister_project_train_troops_modifier_tt: "Každá [Concept('province','provincie')|E] v cílovém [Concept('duchy','vévodství')|E] a v [Concept('capital','hlavním sídle')|E] [Concept('great_project_contributor_possessive','přispěvatele')|E], ve které jsou [Concept('stationed','umístěni')|E] [Concept('men_at_arms','ozbrojenci')|E], získá [GetModifier('tgp_minister_project_train_troops_modifier').GetNameWithTooltip]"
+ minister_project_train_troops_modifier_tt: "Každá [Concept('holding','držba')|E] v cílovém [Concept('duchy','vévodství')|E] a v [Concept('capital','hlavním sídle')|E] [Concept('great_project_contributor_possessive','přispěvatele')|E], ve které jsou [Concept('stationed','umístěni')|E] [Concept('men_at_arms','ozbrojenci')|E], získá [GetModifier('tgp_minister_project_train_troops_modifier').GetNameWithTooltip]" # todo: CHANGED (predtym: Každá [Concept('province','provincie')|E] v cílovém [Concept('duchy','vévodství')|E] a v [Concept('capital','hlavním síd)
  minister_project_train_troops_artifact_tt: "#indent_newline:4 Každý [Concept('holder','držitel')|E] [Concept('county','hrabství')|E] v cílovém [Concept('duchy','vévodství')|E] a [Concept('great_project_contributor','přispěvatel')|E]:\n$BULLET$Náhodný [Concept('artifact','artefakt')|E] typu pokrývka hlavy, zbraň nebo zbroj s maximální [Concept('durability','trvanlivostí')|E] získá nový [Concept('modifier','modifikátor')|E]\n$BULLET$Každý [Concept('artifact','artefakt')|E] typu pokrývka hlavy, zbraň nebo zbroj s nižší než maximální [Concept('durability','trvanlivostí')|E] bude zcela [Concept('repair','opraven')|E]#!"
  minister_project_train_troops_military_academy_modifier_tt: "#indent_newline:4 Každý [Concept('holder','držitel')|E] [Concept('county','hrabství')|E] v cílovém [Concept('duchy','vévodství')|E] a [Concept('great_project_contributor','přispěvatel')|E]:\n$BULLET$Každý [Concept('knight','rytíř')|E] s [Concept('commander_trait','velitelským rysem')|E] získá #P [minister_exp_boost_value]#! [Concept('trait_level_track_xp','zkušeností úrovně rysu')|E] #weak (hodnota závisí na [Concept('martial_skill','válečnické dovednosti')|E] a [Concept('prowess_skill','dovednosti udatnosti')|E] [Concept('minister_of_war','ministra války')|E])#!#!"
  minister_project_train_troops_military_academy_help_tt: ""
- minister_project_train_troops_siege_exercise_modifier_tt: "Každá [Concept('province','provincie')|E] v cílovém [Concept('duchy','vévodství')|E] a v [Concept('capital','hlavním sídle')|E] [Concept('great_project_contributor_possessive','přispěvatele')|E], ve které jsou [Concept('stationed','umístěny')|E] [Concept('siege_weapons','obléhací zbraně')|E], získá [GetModifier('tgp_minister_project_train_troops_siege_exercise_modifier').GetNameWithTooltip]"
+ minister_project_train_troops_siege_exercise_modifier_tt: "Každá [Concept('holding','držba')|E] v cílovém [Concept('duchy','vévodství')|E] a v [Concept('capital','hlavním sídle')|E] [Concept('great_project_contributor_possessive','přispěvatele')|E], ve které jsou [Concept('stationed','umístěny')|E] [Concept('siege_weapons','obléhací zbraně')|E], získá [GetModifier('tgp_minister_project_train_troops_siege_exercise_modifier').GetNameWithTooltip]" # todo: CHANGED (predtym: Každá [Concept('province','provincie')|E] v cílovém [Concept('duchy','vévodství')|E] a v [Concept('capital','hlavním síd)
  minister_project_train_troops_natural_disaster_test_modifier_tt: "Každé [Concept('county','hrabství')|E] v cílovém [Concept('duchy','vévodství')|E] a v [Concept('capital','hlavním sídle')|E] [Concept('great_project_contributor_possessive','přispěvatele')|E] získá [GetModifier('tgp_minister_project_train_troops_natural_disaster_test_modifier').GetNameWithTooltip]\n$BULLET$[Concept('great_project_contributions','Příspěvky')|E] na projekty obnovy po [Concept('disaster','pohromách')|E] v těchto [Concept('counties','hrabstvích')|E] budou stát #v o 20 % méně#!"
  minister_project_train_troops_levy_bootcamp_modifier_tt: "Každé [Concept('county','hrabství')|E] v cílovém [Concept('duchy','vévodství')|E] a v [Concept('capital','hlavním sídle')|E] [Concept('great_project_contributor_possessive','přispěvatele')|E] získá [GetModifier('tgp_minister_project_train_troops_levy_bootcamp_modifier').GetNameWithTooltip]"
  holder_has_military_appointment_tt: "[THIS.Char.GetShortUINamePossessive] [THIS.Char.Custom('GetProvinceAdministrationConcept')]: #bold nejde#! o vojenské [Concept('governorship','guvernérství')|E]"

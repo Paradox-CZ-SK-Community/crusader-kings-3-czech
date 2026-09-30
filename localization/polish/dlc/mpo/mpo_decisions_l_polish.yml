@@ -361,9 +361,9 @@
  dlc_mpo_steppe_hexi_tarim_expansion_tooltip: "$dlc_mpo_steppe_hexi_tarim_expansion$" # todo: NEW TRANSLATION
  dlc_mpo_steppe_north_china_expansion_tooltip: "$dlc_mpo_steppe_north_china_expansion$" # todo: NEW TRANSLATION
  dlc_mpo_steppe_central_china_expansion_tooltip: "$dlc_mpo_steppe_central_china_expansion$" # todo: NEW TRANSLATION
+ dlc_mpo_steppe_north_east_asia_expansion_tooltip: "$dlc_mpo_steppe_north_east_asia_expansion$" # todo: NEW TRANSLATION
  world_asia_korea_tooltip: "$world_asia_korea$" # todo: NEW TRANSLATION
  world_asia_japan_tooltip: "$world_asia_japan$" # todo: NEW TRANSLATION
- dlc_mpo_steppe_e_amur_expansion_tooltip: "$dlc_mpo_steppe_e_amur_expansion$" # todo: NEW TRANSLATION
  world_transoxiana_tooltip: "Transoxiana"
  world_khorasan_tooltip: "Khorasán"
  world_steppe_tarim_tooltip: "Tarimská pánev"
@@ -384,9 +384,9 @@
  custom_tarim_expand_steppe_tt: "Žádné [Concept('realm','panství')|E] území v [GetGeographicalRegion('world_steppe_tarim').GetName]" # todo: CONCEPT CASE
  custom_north_china_expand_steppe_tt: "Žádná území [Concept('realm','panství')|E] v [GetGeographicalRegion('dlc_mpo_steppe_north_china_expansion').GetName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  custom_central_china_expand_steppe_tt: "Žádná území [Concept('realm','panství')|E] v [GetGeographicalRegion('dlc_mpo_steppe_central_china_expansion').GetName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ custom_north_east_asia_expand_steppe_tt: "Žádná území [realm|E] se nenacházejí v oblasti [GetGeographicalRegion('dlc_mpo_steppe_north_east_asia_expansion').GetName]" # todo: NEW TRANSLATION
  custom_korea_expand_steppe_tt: "Žádná území [Concept('realm','panství')|E] v [GetGeographicalRegion('world_asia_korea').GetName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  custom_japan_expand_steppe_tt: "Žádná území [Concept('realm','panství')|E] v [GetGeographicalRegion('world_asia_japan').GetName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- custom_e_amur_expand_steppe_tt: "Žádná území [Concept('realm','panství')|E] v [GetGeographicalRegion('dlc_mpo_steppe_e_amur_expansion').GetName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  develop_fertility_decision: "Spravovat pastviny"
  develop_fertility_decision_desc: "Žádný [ROOT.Char.GetTitleAsNameNoTooltip] nemůže vládnout bez své hordy. Musím dohlížet na pohyb svých pastevních zvířat, aby se stádo [ROOT.Char.GetCapitalLocation.GetTitle.GetNameNoTierNoTooltip] nezačalo zmenšovat.\n\nSvolej pastýře a jejich stáda, přesuňme se na zelenější pastviny. Stanu po jejich boku, neboť tvrdé práce se nevyhnu."
  develop_fertility_decision_tooltip: "Zvyšte [Concept('county_fertility','úrodnost hrabství')|E] svého hlavního města" # todo: CONCEPT CASE
@@ -449,8 +449,8 @@
  recruit_shepherds_decision_tooltip: "Naverbujte tři [GetPlayer.Custom('GetCourtiersTypeConcept')|U] s [GetTrait('lifestyle_seasoned_pastor').GetName( GetNullCharacter )] [Concept('trait','rysem')|E]" # todo: CONCEPT CASE
  recruit_commanders_decision_tooltip: "Naverbovat tři postavy s náhodnými [Concept('commander_traits','velitelskými rysy')|E]" # todo: CONCEPT CASE
  recruit_knights_decision_tooltip: "Naverbovat tři postavy s dobrou [Concept('prowess','udatností')|E]" # todo: CONCEPT CASE
- faith_dominant_gender_male_or_equal_tt: "Vaše [Concept('faith','víra')|E] není [GetFaithDoctrine('doctrine_gender_male_dominated').GetBaseName] ani [GetFaithDoctrine('doctrine_gender_equal').GetBaseName]" # todo: CONCEPT CASE
- faith_dominant_gender_female_or_equal_tt: "Vaše [Concept('faith','víra')|E] není [GetFaithDoctrine('doctrine_gender_female_dominated').GetBaseName] ani [GetFaithDoctrine('doctrine_gender_equal').GetBaseName]" # todo: CONCEPT CASE
+ faith_dominant_gender_male_or_equal_tt: "Vaše [Concept('faith','víra')|E] není [GetDoctrineType('doctrine_gender_male_dominated').GetBaseName] ani [GetDoctrineType('doctrine_gender_equal').GetBaseName]" # todo: CHANGED (predtym: Vaše [Concept('faith','víra')|E] není [GetFaithDoctrine('doctrine_gender_male_dominated').GetBaseName] ani [GetFaithDoct)
+ faith_dominant_gender_female_or_equal_tt: "Vaše [Concept('faith','víra')|E] není [GetDoctrineType('doctrine_gender_female_dominated').GetBaseName] ani [GetDoctrineType('doctrine_gender_equal').GetBaseName]" # todo: CHANGED (predtym: Vaše [Concept('faith','víra')|E] není [GetFaithDoctrine('doctrine_gender_female_dominated').GetBaseName] ani [GetFaithDo)
  nomad_character_recruited.t: "Naverbován #V [new_commander.GetFirstNameNicknamedNoTooltip]#!"
  summon_fair_courtiers_decision: "Přivolat krásné dvořany"
  summon_fair_courtiers_decision_desc: "Můj pavilon rozkoše je příliš chladný a prázdný, stěny pláčou z osamění. Pošlu své poslovy po zemi, aby hledali hodné hosty!"
@@ -602,7 +602,7 @@
  gok_enable_offer_submission_or_ruin_tt: "Můžete použít #high $mpo_offer_submission_or_ruin$#! [Concept('interaction','interakci')|E]" # todo: CONCEPT CASE
  gok_title_trigger: "Máte [Concept('title','titul')|E] vytvořený [GetTrait('greatest_of_khans').GetName( GetNullCharacter )]" # todo: CONCEPT CASE
  gok_world_conquest_tributary_req: "Vaše [Concept('realm_size','velikost panství')|E] (včetně všech [tributaries|E]) je #high [EmptyScope.ScriptValue('mpo_gok_world_conquest_target_counties_tributaries')]#! nebo více #italic (#high [temp_gok_tributaries]#!)#!" # todo: CONCEPT CASE
- gok_choose_government_switch_tt: "Můžete přijmout [Concept('feudal','feudální')|E], [Concept('clan','klan')|E] nebo [Concept('administrative','administrativní')|E] [Concept('government','vláda')|E]" # todo: CONCEPT CASE
+ gok_choose_government_switch_tt: "Můžete přijmout [Concept('feudal','feudální')|E], [Concept('clan','klan')|E] nebo [Concept('government_bureaucratic_type','byrokratickou')|E] [Concept('government','vláda')|E]" # todo: CHANGED (predtym: Můžete přijmout [Concept('feudal','feudální')|E], [Concept('clan','klan')|E] nebo [Concept('administrative','administrat)
  gok_choose_government_switch_no_admin_tt: "Můžete přijmout [Concept('feudal','feudální')|E] nebo [Concept('clan','klan')|E] [Concept('government','vláda')|E]" # todo: CONCEPT CASE
  gok_remain_nomadic_tt: "Můžete zůstat [Concept('nomadic','kočovný')|E], rozšířit [Concept('nomadic','kočovný')|E] [Concept('government','vláda')|E] ve vašem [Concept('realm','panství')|E] a #X očistit#! ne-[Concept('nomadic','kočovný')|E] [Concept('counties','hrabství')|E]" # todo: CONCEPT CASE
  gain_5th_lvl_education_martial_tt: "Získáte #high [GetTrait('education_martial_5').GetName( GetNullCharacter )]#!"

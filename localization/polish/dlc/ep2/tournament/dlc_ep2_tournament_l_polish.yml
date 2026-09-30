@@ -141,6 +141,8 @@
  locale_window_status_spectating: "sledujete"
  locale_window_status_participating: "soutěžíte v"
  locale_window_status_knocked_out: "byl vyřazen z"
+ locale_window_status_resign: "odstoupil z" # todo: NEW TRANSLATION
+ locale_window_status_discalified: "byl diskvalifikován z" # todo: NEW TRANSLATION
  locale_window_status_not_qualify: "se nekvalifikoval do"
  locale_window_your_participation: "Vaše účast"
  locale_window_your_participation_status_selection: "[SelectLocalization(PlannedActivityPhase.IsCharacterInGuestSubset(GetPlayer, 'contestant'), 'locale_window_your_participation_status_yes', 'locale_window_your_participation_status_no')]"
@@ -234,8 +236,8 @@
  HORSE_EXPERIENCE_GREATER_TOOLTIP: "$tournament_contest_most_favoured_skill_tooltip$ $tourney_participant_horse$"
  BOW_EXPERIENCE_REGULAR_TOOLTIP: "$tournament_contest_favoured_skill_tooltip$ $tourney_participant_bow$"
  BOW_EXPERIENCE_GREATER_TOOLTIP: "$tournament_contest_most_favoured_skill_tooltip$ $tourney_participant_bow$"
- contest_planner_contest_tooltip: "#T [ActivityPhase.GetName]#![AddLine( ActivityPhase.CanPickDescriptionBlockers( GetPlayer, ActivityPlanner.GetSingleLocationPhase.GetLocation, ActivityPlanner.GetSelectedSpecialOption ) )][AddTextIf( Not( ActivityPlanner.CanPlanMorePhasesOfType( ActivityPhase.Self ) ), AddLine( '$ACTIVITY_PLANNER_CANNOT_PICK_MORE_OF_PHASE|q$' ) )][AddLine( ActivityPhase.GetDescription )]"
- contest_planner_contest_selected_tooltip: "#T [ActivityPhase.GetName]#![AddLine( ActivityPhase.CanPickDescriptionBlockers( GetPlayer, ActivityPlanner.GetSingleLocationPhase.GetLocation, ActivityPlanner.GetSelectedSpecialOption ) )][AddLine( ActivityPhase.GetDescription )]"
+ contest_planner_contest_tooltip: "#T [ActivityPhase.GetName]#![AddLine( ActivityPhase.CanPickDescriptionBlockers( GetPlayer, ActivityPlanner.GetSingleLocationPhase.GetLocation, ActivityPlanner.GetSelectedSpecialOption ) )][AddTextIf( Not( ActivityPlanner.CanPlanMorePhasesOfType( ActivityPhase.Self ) ), AddLine( '$ACTIVITY_PLANNER_CANNOT_PICK_MORE_OF_PHASE|q$' ) )][AddLine( ActivityPhase.GetDescription( Activity.Self ) )]" # todo: CHANGED (predtym: T [ActivityPhase.GetName] ![AddLine( ActivityPhase.CanPickDescriptionBlockers( GetPlayer, ActivityPlanner.GetSingleLocat)
+ contest_planner_contest_selected_tooltip: "#T [ActivityPhase.GetName]#![AddLine( ActivityPhase.CanPickDescriptionBlockers( GetPlayer, ActivityPlanner.GetSingleLocationPhase.GetLocation, ActivityPlanner.GetSelectedSpecialOption ) )][AddLine( ActivityPhase.GetDescription( Activity.Self ) )]" # todo: CHANGED (predtym: T [ActivityPhase.GetName] ![AddLine( ActivityPhase.CanPickDescriptionBlockers( GetPlayer, ActivityPlanner.GetSingleLocat)
  contest_planner_remove_contest_tooltip: "#T Odebrat [ActivityPhase.GetName]#!"
  contest_planner_add_contest_tooltip: "#T $contest_planner_empty_slot$#!"
  tournament_contest_favoured_skill_tooltip: "Tato [Concept('contest','soutěž')|E] zvyšuje" # todo: CONCEPT CASE

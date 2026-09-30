@@ -1,6 +1,6 @@
-version="29"
+version="30"
 tags={
 	"Translation"
 }
 name="Čeština od komunity Paradox CZ/SK"
-supported_version="1.19.*"
+supported_version="1.20.*"

@@ -1,6 +1,8 @@
 ﻿l_polish:
  DECISION_ON_COOLDOWN: "@warning_icon! #X $DECISION_NAME$ nebude dostupné do [DATE.GetStringLong]#!"
  ALREADY_PLANNING_ACTIVITY: "Již plánuješ jinou [Concept('activity','aktivitu')|E]"
+ NOT_ALREADY_PLANNING_ACTIVITY: "Právě neplánujete žádnou další [activity|E]" # todo: NEW TRANSLATION
+ ALREADY_IN_ACTIVITY_GLOBAL: "Právě se účastníte [activity|E]" # todo: NEW TRANSLATION
  ALREADY_IN_ACTIVITY_FIRST_NOT: "Právě se věnuješ [CHARACTER.Custom('GetActivityName')]"
  ALREADY_IN_ACTIVITY_THIRD_NOT: "[CHARACTER.GetTitledFirstName] se právě věnuje [CHARACTER.Custom('GetActivityName')]"
  unavailable_activity: "účasti na aktivitě [ROOT.Char.GetInvolvedActivity.GetName]"
@@ -77,6 +79,7 @@
  stop_lose_weight_decision_confirm: "Přestat hubnout"
  commit_suicide_decision: "Pokusit se o sebevraždu"
  commit_suicide_decision_desc: "Existuje jen temnota a bolest. Lidé mi tvrdí, že se to zlepší, ale jak to mohou vědět? A jak mi to pomůže právě teď? Nastal čas odvrhnout okovy tohoto smrtelného světa."
+ commit_suicide_decision_desc_doomed: "Ve mně už nezbylo žádné světlo. Bůh mlčí a já už nehodlám čekat na Jeho hlas. Je čas odložit vše, co mě poutá k tomuto smrtelnému světu." # todo: NEW TRANSLATION
  commit_suicide_decision_desc_depressed: "$commit_suicide_decision_desc$"
  commit_suicide_decision_desc_incapable: "Přežívám, ale doopravdy nežiji. Můj současný stav mě nutí spoléhat se na ostatní i při těch nejprostších úkonech. Toto jsem si nevybral[Select_CString( ROOT.Char.IsFemale, 'a', '' )] a možná by bylo snazší všechno ukončit..."
  commit_suicide_decision_desc_cancer: "Cítím, jak se ve mně nemoc šíří. To, co začalo jako drobná obtíž, se změnilo v každodenní zápas. Smrt je nevyhnutelná. Chci jen, aby bolest ustala."
@@ -142,6 +145,10 @@
  renounce_vow_of_poverty_decision_tooltip: "Přestaneš věnovat část svých příjmů"
  renounce_vow_of_poverty_decision_desc: "Nelze přehlížet skutečnost, že k účinné správě svého panství potřebuji větší rozpočet. Pragmatismus si žádá odvolání mého slibu chudoby."
  renounce_vow_of_poverty_decision_confirm: "Zříci se slibu chudoby"
+ renounce_clerical_vows_decision: "Zříci se slibů" # todo: NEW TRANSLATION
+ renounce_clerical_vows_decision_tooltip: "Vzdejte se [GetTrait('devoted').GetName( ROOT.Char )] [trait|E], abyste se mohli [marry|E]" # todo: NEW TRANSLATION
+ renounce_clerical_vows_decision_desc: "Své sliby jsem složil v jiné životní etapě a věřící nepovažují manželský život duchovních za nic špatného. Proč bych tedy měl být právě já jediný, komu je odepřen vlastní domov?\n\nOdložím své sliby stranou. Tím má služba nekončí." # todo: NEW TRANSLATION
+ renounce_clerical_vows_decision_confirm: "Zříci se svých slibů" # todo: NEW TRANSLATION
  initiate_consolamentum_decision: "Consolamentum: zahájit enduru"
  initiate_consolamentum_decision_alternate: "Vykonat rituální sebevraždu"
  initiate_consolamentum_decision_tooltip: "Nastal čas připravit se na konec tohoto života"
@@ -155,6 +162,14 @@
  seek_aid_of_the_spirits_decision_desc_landed: "\n\nMohu požádat postavu s titulem [ROOT.Char.Custom('MyPriestTitle')], aby je přivolala na pomoc mému úsilí, ale výsledek nelze předvídat...#!"
  seek_aid_of_the_spirits_decision_effect.tt: "Obrátíš se s prosbou k neviděným silám..."
  seek_aid_of_the_spirits_decision_confirm: "Požádat duchy o pomoc"
+ preserve_wilderness_decision: "Zachovat divočinu" # todo: NEW TRANSLATION
+ preserve_wilderness_decision_tooltip: "Chraňte neosídlenou divočinu své říše" # todo: NEW TRANSLATION
+ preserve_wilderness_decision_desc: "#F Prázdné kraje nemusí být zanedbanými kraji. Vyhradíme-li je jako posvátnou divočinu, můžeme chránit její přirozené stezky a vést po nich cestovatele, aniž bychom narušili božský řád.#!" # todo: NEW TRANSLATION
+ preserve_wilderness_decision_confirm: "Posvětit divočinu" # todo: NEW TRANSLATION
+ preserve_wilderness_decision_valid_province: "Vaše [realm|E] zahrnuje prázdnou provincii, která ještě nebyla zachována" # todo: NEW TRANSLATION
+ preserve_wilderness_decision_effect: "Každá způsobilá prázdná provincie ve vaší [realm|E] získá [GetModifier('preserved_wilderness_modifier').GetNameWithTooltip] [modifier|E], dokud v ní nebude postavena [holding|E]" # todo: NEW TRANSLATION
+ preserve_wilderness_decision_toast: "Zachovali jste divočinu" # todo: NEW TRANSLATION
+ preserve_wilderness_decision_toast_desc: "Každou způsobilou prázdnou provincii ve své [realm|E] jste ochránili jako posvátnou divočinu." # todo: NEW TRANSLATION
  select_personal_deity_hinduism_decision: "Určit bhakti"
  select_personal_deity_hinduism_decision_tooltip: "Rozjímej o [ROOT.Char.GetFaith.PantheonTerm]"
  select_personal_deity_hinduism_decision_desc: "#F Každý zbožný [ROOT.Char.GetFaith.GetAdherentNameNoTooltip] by měl mít bhakti neboli oddanost konkrétnímu božstvu, které s jeho duší souzní nejsilněji.\n\n[Select_CString( ROOT.Char.IsFemale, 'Měla bych', 'Měl bych' )] rozjímat o různých božských bytostech a rozhodnout se, která mě oslovuje nejvíce.#!"
@@ -175,6 +190,20 @@
  meditate_in_seclusion_decision_desc: "Pouze skrze meditaci můžeme pochopit pravou podstatu vesmíru.\n\nAčkoli tím zanedbám své ostatní povinnosti, mohu se uchýlit do ústraní a při meditaci poznat více o sobě i vesmíru, který obývám."
  meditate_in_seclusion_decision_confirm: "Meditovat v ústraní"
  meditate_in_seclusion_tooltip: "Můžeš snížit [Concept('stress','stres')|El], získat [Concept('traits','rysy')|El], nebo si dokonce zvýšit [Concept('learning','učenost')|El]"
+ promote_naturism_decision: "Přijmout přirozenou svobodu" # todo: NEW TRANSLATION
+ promote_naturism_decision_tooltip: "Veďte svůj dvůr k otevřenému naturistickému životu" # todo: NEW TRANSLATION
+ promote_naturism_decision_desc: "#F Sklání se zajíc před hedvábím? Měří jelen své postavení podle obřadů? Veškeré tvorstvo žije tak, jak [ROOT.Char.GetFaith.PantheonTerm] zamýšlel, a přesto dvorský život svazuje i prostou pravdu zákony, okázalostí a studem.\n\nMůj dvůr se bude otevřeně řídit mým příkladem a odloží tyto marnosti ve prospěch divoké svobody, kterou dostala každá živá bytost.#!" # todo: NEW TRANSLATION
+ promote_naturism_decision_confirm: "Ať je dvůr svobodný" # todo: NEW TRANSLATION
+ promote_naturism_decision_court_effect_tt: "Vy a vaši dospělí dvořané, kteří přijmou váš naturistický dvůr, získáte [GetModifier('natural_primitivism_court_naturism_modifier').GetNameWithTooltip] a ztratíte [stress|E]" # todo: NEW TRANSLATION
+ promote_naturism_decision_fulfillment_effect_tt: "Postavy, které se hlásí k [core_tenet|E] [GetTenetType('tenet_natural_primitivism').GetName( GetPlayer.GetRite )], získají #P 10#! [spiritual_fulfillment|E]" # todo: NEW TRANSLATION
+ promote_naturism_decision_county_effect_tt: "Vaše [county|E], v níž se nachází [capital|E], získá [GetModifier('natural_primitivism_unbound_court_county_modifier').GetNameWithTooltip] na #V 5 let#!" # todo: NEW TRANSLATION
+ renounce_court_naturism_decision: "Návrat k dvorskému pořádku" # todo: NEW TRANSLATION
+ renounce_court_naturism_decision_tooltip: "Zrušte naturistickou disciplínu svého dvora a obnovte dvorské obřady" # todo: NEW TRANSLATION
+ renounce_court_naturism_decision_desc: "#F Svůj dvůr jsem zavázal k veřejné disciplíně přirozené prostoty a na čas kvůli ní ustoupily staré obřady postavení a okázalosti.\n\nNyní se však tento výnos stal sám o sobě břemenem. Zprostím dvůr povinnosti řídit se mým příkladem a nechám dvorský pořádek znovu zavládnout.#!" # todo: NEW TRANSLATION
+ renounce_court_naturism_decision_confirm: "Obnovit řád" # todo: NEW TRANSLATION
+ renounce_court_naturism_decision_court_effect_tt: "Vy a vaši současní dospělí dvořané ztratíte [GetModifier('natural_primitivism_court_naturism_modifier').GetNameWithTooltip]" # todo: NEW TRANSLATION
+ renounce_court_naturism_decision_county_effect_tt: "Vaše [county|E], v níž se nachází [capital|E], ztratí [GetModifier('natural_primitivism_unbound_court_county_modifier').GetNameWithTooltip]" # todo: NEW TRANSLATION
+ renounce_court_naturism_decision_self_conscious_effect_tt: "Získáte [GetModifier('natural_primitivism_court_naturism_self_conscious_modifier').GetNameWithTooltip] na #V 5 let#!" # todo: NEW TRANSLATION
  give_sky_burial_decision: "Vystroj nebeský pohřeb – [ROOT.Char.Custom2('RelationToMe', ROOT.Var('ancestor_to_bury').Char)|U]"
  give_sky_burial_decision_tooltip: "Dopřej svému předkovi klid a získej [Concept('piety','zbožnost')|El] a [Concept('opinion','mínění')|El] [Concept('vassal','vazalů')|El]"
  give_sky_burial_decision_desc: "#F [ROOT.Var('ancestor_to_bury').Char.Custom2('MyCharacterIntroduction', ROOT.Char)|U] [Select_CString( ROOT.Var('ancestor_to_bury').Char.IsFemale, 'skonala', 'skonal' )]. Tradice velí vystrojit [Select_CString( ROOT.Var('ancestor_to_bury').Char.IsFemale, 'jí', 'mu' )] nebeský pohřeb a ponechat [Select_CString( ROOT.Var('ancestor_to_bury').Char.IsFemale, 'její', 'jeho' )] ostatky napospas mrchožroutům, aby [Select_CString( ROOT.Var('ancestor_to_bury').Char.IsFemale, 'nasytila', 'nasytil' )] svět, který [Select_CString( ROOT.Var('ancestor_to_bury').Char.IsFemale, 'ji', 'jej' )] kdysi živil.#!"
@@ -194,6 +223,40 @@
  divine_the_starts_effect: "V blízké budoucnosti získáš kosmické poznání"
  divine_the_stars_trigger: "Již věštíš z hvězd"
  divine_the_stars_modifier: "Nemáš žádný astrologický modifikátor"
+ seek_spiritual_mysteries_decision: "Ponořit se do duchovních tajemství" # todo: NEW TRANSLATION
+ seek_spiritual_mysteries_decision_tooltip: "Uzavřete se se skrytými naukami a zjistěte, co vám odhalí" # todo: NEW TRANSLATION
+ seek_spiritual_mysteries_decision_desc: "#F Doslovné čtení Písma je dveřmi, nikoli místností. Za nimi leží skutečná tajemství — jména, čísla a souvislosti, do nichž je pro nezasvěcené nejlepší se nepouštět.\n\nJá se do nich pustím.#!" # todo: NEW TRANSLATION
+ seek_spiritual_mysteries_decision_confirm: "Studovat skryté" # todo: NEW TRANSLATION
+ seek_spiritual_mysteries_decision_effect_tt: "Získáte [trait_level_track_xp|E] k [GetTrait('lifestyle_mystic').GetName( GetNullCharacter )]. O tom, co dalšího vám tajemství přinesou, nerozhodujete vy" # todo: NEW TRANSLATION
+ pure_land_shed_sin_decision: "Zbavit se hříchu" # todo: NEW TRANSLATION
+ pure_land_shed_sin_decision_tooltip: "Nahraďte jeden [sinful|E] [trait|E] [virtuous|E] [trait|E]" # todo: NEW TRANSLATION
+ pure_land_shed_sin_decision_desc: "#F Tíha mých selhání nemusí určovat život, který mám ještě před sebou. Vyvrhnu ze své duše jeden hřích a vydám se těžší cestou k znovuzrození.#!" # todo: NEW TRANSLATION
+ pure_land_shed_sin_decision_confirm: "Zbavit se jednoho hříchu" # todo: NEW TRANSLATION
+ pure_land_shed_sin_decision_effect: "Jeden [sinful|E] [trait|E] bude nahrazen [virtuous|E] [trait|E]" # todo: NEW TRANSLATION
+ seek_ancestral_guidance_decision: "Vyhledat radu předků" # todo: NEW TRANSLATION
+ seek_ancestral_guidance_decision_tooltip: "Svěřte své starosti mrtvým a naslouchejte jejich odpovědi" # todo: NEW TRANSLATION
+ seek_ancestral_guidance_decision_desc: "#F Mrtví z mého rodu nejsou pryč, jen mlčí. Také vládli zemím, čelili strašlivým nepřátelům a činili stejně těžká rozhodnutí, která mě pronásledují v noci.\n\nPokleknu mezi nimi a budu naslouchat jejich šeptání.#!" # todo: NEW TRANSLATION
+ seek_ancestral_guidance_decision_confirm: "Poradit se s duchem zesnulého" # todo: NEW TRANSLATION
+ seek_ancestral_guidance_decision_effect_tt: "Ztratíte [stress|E] a získáte [spiritual_fulfillment|E]" # todo: NEW TRANSLATION
+ seek_ancestral_guidance_decision_choice_tt: "Můžete si zvolit, zda vyhledáte radu předků pro [experience|E] v [learning_lifestyle|E], nebo zda získáte větší úlevu od [stress|E] a více [spiritual_fulfillment|E]" # todo: NEW TRANSLATION
+ inherit_ancestral_trait_decision: "Vzpomenout si na minulý život" # todo: NEW TRANSLATION
+ inherit_ancestral_trait_decision_tooltip: "Utraťte velké množství [piety|E] a osvojte si osobnostní [trait|E], který měl váš zesnulý rodič nebo prarodič" # todo: NEW TRANSLATION
+ inherit_ancestral_trait_decision_desc: "#F Už jsem žil dříve. Toto tělo je jen nejnovějším příbytkem zapůjčeným mé duši a můj rodič či prarodič obýval ten předchozí.\n\nNěco z nich ve mně stále dřímá — povaha či touha, které mě nikdo neučil. S dostatkem zbožnosti si na ně mohu vzpomenout a znovu si je osvojit.#!" # todo: NEW TRANSLATION
+ inherit_ancestral_trait_decision_confirm: "Takové bylo mé jméno, taková má povaha" # todo: NEW TRANSLATION
+ inherit_ancestral_trait_decision_effect_tt: "Získáte osobnostní [personality_trait|E] zesnulého rodiče nebo prarodiče a ztratíte [personality_trait|E], který je s ním v rozporu, případně ten, který vám přináší nejméně [spiritual_fulfillment|E], pokud mu žádný neodporuje" # todo: NEW TRANSLATION
+ inherit_ancestral_trait_decision_forebear_tt: "Váš zesnulý rodič nebo prarodič má osobnostní [trait|E], který vy nemáte" # todo: NEW TRANSLATION
+ pursue_conquerors_mantle_decision: "Přijmout plášť dobyvatele" # todo: NEW TRANSLATION
+ pursue_conquerors_mantle_decision_tooltip: "Prohlaste se za mocného dobyvatele" # todo: NEW TRANSLATION
+ pursue_conquerors_mantle_decision_desc: "#F Moc není darována, nýbrž je třeba si ji #EMP vzít#!. Připadne [ROOT.Char.GetSheHe], kdo je dost silný, aby se jí zmocnil a srazil všechny ostatní, kteří by o ni soupeřili, na kolena nebo do předčasného hrobu.\n\nSvět uslyší mé jméno a pozná svého [ROOT.Char.Custom('MistressMaster')].#!" # todo: NEW TRANSLATION
+ pursue_conquerors_mantle_decision_confirm: "Chvalte mé jméno, nebo poklekněte v řetězech" # todo: NEW TRANSLATION
+ redistribute_realm_wealth_decision: "Přerozdělit bohatství říše" # todo: NEW TRANSLATION
+ redistribute_realm_wealth_decision_tooltip: "Otevřete svou pokladnici i pokladnice svých [vassals|E] lidem, kteří je naplnili" # todo: NEW TRANSLATION
+ redistribute_realm_wealth_decision_desc: "#F [ROOT.Char.GetFaith.HighGodName] rozdělil dost pro všechny a neurčil žádného [ROOT.Char.GetWomanMan], aby si [ROOT.Char.GetFaith.HighGodHerHis] bohatství přivlastnil. Každá pokladnice a zamčená truhla v této zemi, včetně té mé, obsahuje něco, co náleží někomu jinému. To nelze dál trpět.\n\nZlomte pečeti, otevřete brány a rozdělte každému jeho spravedlivý podíl. Mocní mnou mohou pohrdat, ale opovržení pijavic a vlků je pro spravedlivé čestí.#!" # todo: NEW TRANSLATION
+ redistribute_realm_wealth_decision_confirm: "Otevřít truhlice" # todo: NEW TRANSLATION
+ redistribute_realm_wealth_every_county_tt: "Každý [county|E], který držíte" # todo: NEW TRANSLATION
+ redistribute_realm_wealth_disapproving_vassal_tt: "Každý [vassal|E] ve vaší [realm|E], který nesouhlasí s tímto [core_tenet|E]" # todo: NEW TRANSLATION
+ redistribute_realm_wealth_decision_vassal_gold_tt: "Každý pozemkový [vassal|E] ve vaší [realm|E] bude nucen odevzdat polovinu svého [gold|E][gold_i]" # todo: NEW TRANSLATION
+ redistribute_realm_wealth_decision_choice_tt: "Můžete si zvolit, zda vaši pozemkoví [vassals|E] odevzdají také polovinu svého [gold|E][gold_i], nebo zda rozdělíte pouze své vlastní bohatství" # todo: NEW TRANSLATION
  create_holy_order_decision: "Založit svatý řád"
  create_holy_order_decision_tooltip: "Založ [Concept('holy_order','svatý řád')|El] a staň se jeho [Concept('holy_order_patron','patronem')|El]"
  create_holy_order_decision_desc: "#F Pravou víru nemůže bránit nikdy příliš mnoho bojovníků. Uctím [ROOT.Char.GetFaith.WarGodName] tím, že těm, kdo chtějí sloužit, poskytnu domov a zbraně!#!"
@@ -204,6 +267,8 @@
  I_AM_NOT_KING_OR_EMPEROR: "Musíš držet [Concept('kingdom','království')|El] nebo [Concept('empire','říši')|El]"
  I_HAVE_TWO_CASTLE_COUNTY: "Máš [Concept('barony','baronství')|El] s [Concept('city','městem')|El] nebo [Concept('castle','hradem')|El], které lze pronajmout jako sídlo svatého řádu"
  NOT_I_HAVE_HOLY_ORDER_BARONY_SELECTED: "Nemáš #bold vybrané#! žádné baronství"
+ NOT_I_HAVE_HOLY_ORDER_COUNTY_SELECTED: "#bold Nemáte#! vybraný hrabství" # todo: NEW TRANSLATION
+ NOT_I_HAVE_KINGDOM_TITLE_SELECTED: "#bold Nemáte#! vybrané království" # todo: NEW TRANSLATION
  cancel_holy_order_lease_decision: "Zrušit pronájem svatého řádu"
  cancel_holy_order_lease_decision_tooltip: "Zruš pronájem [Concept('holy_order','svatému řádu')|El]"
  cancel_holy_order_lease_decision_desc: "#F [barony.GetName] hostí svatý řád, který odvedl dobrou práci, ale tato država je nyní zapotřebí k jiným účelům.#!"
@@ -219,6 +284,8 @@
  COMMISSION_ARTIFACT_DECISION_NEXT_STEP_BUTTON: "Vybrat artefakt"
  COMMISSION_ARTIFACT_DECISION_SELECT_ARTIFACT_TITLE: "Vyber typ [Concept('artifact','artefaktu')|El]"
  commission_artifact_decision.nomad_requirements: "Jako [Concept('nomad','nomád')|El] nemáš přístup k surovinám potřebným k tvorbě artefaktů"
+ commission_artifact_decision.religious_requirements: "Vaše [piety_level|E] musí být alespoň [GetModifier( 'piety_level_3' ).GetNameWithTooltip|L], případně musí být členem [clergy|E] váš $court_position_antiquarian$" # todo: NEW TRANSLATION
+ commission_artifact_decision.religious_court_requirements: "Ve své [realm|E] musíte mít [royal_court|E] nebo [holy_site|E] své [faith|E]" # todo: NEW TRANSLATION
  commission_legend_artifact_decision: "Objednat artefakt k legendě"
  commission_legend_artifact_decision_effect: "Tvůj $court_position_antiquarian$ nebo $court_position_chronicler$ vytvoří knihu, která připomene tvou [Concept('legend','legendu')|El]"
  commission_legend_artifact_decision_tooltip: "Objednej knižní [Concept('artifact','artefakt')|El], který připomene tvou [Concept('legend','legendu')|El]"
@@ -244,28 +311,34 @@
  commission_artifact_decision_option_armor: "Zbroj\n#low Vlastníš: [ROOT.Char.GetInventory.GetNumberOfArtifactsForSlotTypeString( 'armor' )]#!"
  commission_artifact_decision_option_crown: "Koruna\n#low Vlastníš: [ROOT.Char.GetInventory.GetNumberOfArtifactsForSlotTypeString( 'helmet' )]#!"
  commission_artifact_decision_option_regalia: "Regálie\n#low Vlastníš: [ROOT.Char.GetInventory.GetNumberOfArtifactsForSlotTypeString( 'regalia' )]#!"
+ commission_artifact_decision_option_religious: "Náboženský\n#low Vlastníte: [ROOT.Char.GetInventory.GetNumberOfArtifactsForSlotTypeString( 'pedestal' )]#!" # todo: NEW TRANSLATION
  commission_artifact_decision_option_brooch: "Brož\n#low Vlastníš: [ROOT.Char.GetInventory.GetNumberOfArtifactsForSlotTypeString( 'miscellaneous' )]#!"
  commission_artifact_decision_option_tapestry: "Nástěnný závěs\n#low Vlastníš: [ROOT.Char.GetInventory.GetNumberOfArtifactsForSlotTypeString( 'wall_big' )]#!"
  commission_artifact_decision_option_furniture: "Nábytek\n#low Vlastníš: [Add_int32( ROOT.Char.GetInventory.GetNumberOfArtifactsForSlotTypeString( 'sculpture' ), Add_int32( ROOT.Char.GetInventory.GetNumberOfArtifactsForSlotTypeString( 'pedestal' ), ROOT.Char.GetInventory.GetNumberOfArtifactsForSlotTypeString( 'throne' ) ) )]#!"
  commission_artifact_decision_option_book: "Kniha\n#low Vlastníš: [ROOT.Char.GetInventory.GetNumberOfArtifactsForSlotTypeString( 'book' )]#!"
+ commission_artifact_decision_option_phallus: "Rozmařilý\n#low Vlastníte: [ROOT.Char.GetInventory.GetNumberOfArtifactsForSlotTypeString( 'miscellaneous' )]#!" # todo: NEW TRANSLATION
  commission_artifact_decision_option_weapon_desc: "[AddTextIf( Not( ROOT.Char.GetInventory.GetSlot( 'weapon' ).IsEmpty ), Concatenate( 'Právě vybaveno:\n', ROOT.Char.GetInventory.GetEquippedArtifactsInSlotTypeString( 'primary_armament', 'NEWLINE', 'NEWLINE', 'NEWLINE' ) ) )]"
  commission_artifact_decision_option_kris_desc: "[AddTextIf( Not( ROOT.Char.GetInventory.GetSlot( 'weapon' ).IsEmpty ), Concatenate( 'Právě vybaveno:\n', ROOT.Char.GetInventory.GetEquippedArtifactsInSlotTypeString( 'primary_armament', 'NEWLINE', 'NEWLINE', 'NEWLINE' ) ) )]"
  commission_artifact_decision_option_armor_desc: "[AddTextIf( Not( ROOT.Char.GetInventory.GetSlot( 'armor' ).IsEmpty ), Concatenate( 'Právě vybaveno:\n', ROOT.Char.GetInventory.GetEquippedArtifactsInSlotTypeString( 'armor', 'NEWLINE', 'NEWLINE', 'NEWLINE' ) ) )]"
  commission_artifact_decision_option_crown_desc: "[AddTextIf( Not( ROOT.Char.GetInventory.GetSlot( 'helmet' ).IsEmpty ), Concatenate( 'Právě vybaveno:\n', ROOT.Char.GetInventory.GetEquippedArtifactsInSlotTypeString( 'helmet', 'NEWLINE', 'NEWLINE', 'NEWLINE' ) ) )]"
  commission_artifact_decision_option_regalia_desc: "[AddTextIf( Not( ROOT.Char.GetInventory.GetSlot( 'regalia' ).IsEmpty ), Concatenate( 'Právě vybaveno:\n', ROOT.Char.GetInventory.GetEquippedArtifactsInSlotTypeString( 'regalia', 'NEWLINE', 'NEWLINE', 'NEWLINE' ) ) )]"
+ commission_artifact_decision_option_religious_desc: "[AddTextIf( ROOT.Char.GetInventory.HasEquippedArtifactsInSlotType( 'pedestal' ), Concatenate( 'Právě vystaveno:\n', ROOT.Char.GetInventory.GetEquippedArtifactsInSlotTypeString( 'pedestal', 'NEWLINE', 'NEWLINE', 'NEWLINE' ) ) )]" # todo: NEW TRANSLATION
  commission_artifact_decision_option_brooch_desc: "[AddTextIf( ROOT.Char.GetInventory.HasEquippedArtifactsInSlotType( 'miscellaneous' ), Concatenate( 'Právě vybaveno:\n', ROOT.Char.GetInventory.GetEquippedArtifactsInSlotTypeString( 'miscellaneous', 'NEWLINE', 'NEWLINE', 'NEWLINE' ) ) )]"
  commission_artifact_decision_option_tapestry_desc: "[AddTextIf( ROOT.Char.GetInventory.HasEquippedArtifactsInSlotType( 'wall_big' ), Concatenate( 'Právě vystaveno:\n', ROOT.Char.GetInventory.GetEquippedArtifactsInSlotTypeString( 'wall_big', 'NEWLINE', 'NEWLINE', 'NEWLINE' ) ) )]"
  commission_artifact_decision_option_furniture_desc: "[AddTextIf( Or(ROOT.Char.GetInventory.HasEquippedArtifactsInSlotType( 'sculpture' ), Or( ROOT.Char.GetInventory.HasEquippedArtifactsInSlotType( 'pedestal' ), ROOT.Char.GetInventory.HasEquippedArtifactsInSlotType( 'throne' ) ) ), 'Právě vystaveno:\n' )][AddTextIf(ROOT.Char.GetInventory.HasEquippedArtifactsInSlotType( 'sculpture' ), Concatenate( ROOT.Char.GetInventory.GetEquippedArtifactsInSlotTypeString( 'sculpture', 'NEWLINE', 'NEWLINE', 'NEWLINE' ), '\n') )][AddTextIf(ROOT.Char.GetInventory.HasEquippedArtifactsInSlotType( 'pedestal' ), Concatenate( ROOT.Char.GetInventory.GetEquippedArtifactsInSlotTypeString( 'pedestal', 'NEWLINE', 'NEWLINE', 'NEWLINE' ), '\n') )][AddTextIf(ROOT.Char.GetInventory.HasEquippedArtifactsInSlotType( 'throne' ), Concatenate( ROOT.Char.GetInventory.GetEquippedArtifactsInSlotTypeString( 'throne', 'NEWLINE', 'NEWLINE', 'NEWLINE' ), '\n') )]"
  commission_artifact_decision_option_book_desc: "[AddTextIf( ROOT.Char.GetInventory.HasEquippedArtifactsInSlotType( 'book' ), Concatenate( '\nPrávě vystaveno:\n', ROOT.Char.GetInventory.GetEquippedArtifactsInSlotTypeString( 'book', 'NEWLINE', 'NEWLINE', 'NEWLINE' ) ) )]"
+ commission_artifact_decision_option_phallus_desc: "[AddTextIf( ROOT.Char.GetInventory.HasEquippedArtifactsInSlotType( 'miscellaneous' ), Concatenate( 'Právě vybaveno:\n', ROOT.Char.GetInventory.GetEquippedArtifactsInSlotTypeString( 'miscellaneous', 'NEWLINE', 'NEWLINE', 'NEWLINE' ) ) )]" # todo: NEW TRANSLATION
  commission_weapon_tooltip: "#T Zbraň#! \n$DESC$"
  commission_kris_tooltip: "#T Dýka#! \n$DESC$"
  commission_armor_tooltip: "#T Zbroj#! \n$DESC$"
  commission_crown_tooltip: "#T Koruna#! \n$DESC$"
  commission_regalia_tooltip: "#T Regálie#! \n$DESC$"
+ commission_religious_tooltip: "#T Náboženský#! \n$DESC$" # todo: NEW TRANSLATION
  commission_brooch_tooltip: "#T Brož#! \n$DESC$"
  commission_tapestry_tooltip: "#T Nástěnný závěs#! \n$DESC$"
  commission_furniture_tooltip: "#T Nábytek#! \n$DESC$"
  commission_book_tooltip: "#T Kniha#! \n$DESC$"
+ commission_phallus_tooltip: "#T Rozmařilý#! \n$DESC$" # todo: NEW TRANSLATION
  go_on_pilgrimage_decision: "Vydat se na pouť"
  go_on_pilgrimage_decision_tooltip: "Vydej se na [Concept('pilgrimage','pouť')|El] a prokaž svou oddanost – [ROOT.Char.GetFaith.PantheonTerm]"
  go_on_pilgrimage_decision_desc: "#F Svatá místa jsou v našem světě nejblíže božstvu – [ROOT.Char.GetFaith.PantheonTerm]. Spatřit je na vlastní oči znamená prokázat svou oddanost coby [ROOT.Char.GetFaith.GetAdherentNameNoTooltip].#!"
@@ -347,7 +420,6 @@
  mend_the_great_schism_decision_confirm: "Jeden Bůh, jedna církev!"
  mend_the_great_schism_decision_desc: "Velké schizma rozdělilo křesťanskou církev. Pokud by však bylo všech pět biskupských stolců pentarchie obnoveno pod vládou jediné říše a osvíceným vedením svatého vládce, mohla by se naskytnout příležitost k opětovnému sjednocení křesťanstva."
  mend_the_great_schism_decision_tooltip: "Znovu sjednotím křesťanstvo"
- mend_the_great_schism_decision_effect_tooltip: "[THIS.Char.GetFaith.GetAdjective] církev zacelí schizma a ustanoví se jedinou legitimní větví křesťanství."
  every_ecumenical_christian_faith.tt: "$EFFECT_LIST_BULLET$ Každá křesťanská [Concept('faith','víra')|El] s doktrínou [GetFaithDoctrine('special_doctrine_ecumenical_christian').GetBaseName]"
  set_capital_constantinople_decision: "Znovuzískat Konstantinopol"
  set_capital_constantinople_decision_confirm: "Navrátit říši její pravé hlavní město!"
@@ -789,11 +861,21 @@
  restore_holy_roman_empire_decision_confirm: "Renovatio Romani Imperii!"
  restore_holy_roman_empire_decision_tooltip: "Obnov Římskou říši na Západě"
  decision_refound_hre_control_the_electors.tt: "Musíš ovládat nebo držet tradiční volitelské tituly: vévodství $d_ostmark$, $d_ostfalen$, $d_east_franconia$ a $d_bohemia$ a hrabství $c_trier$, $c_mainz$ a $c_cologne$"
+ decision_refound_hre_kingdom_list.tt: "Vy nebo [direct_vassal|E] musíte držet [GetTitleByKey('k_east_francia').GetNameNoTier], [GetTitleByKey('k_bavaria').GetNameNoTier], [GetTitleByKey('k_france').GetNameNoTier], [GetTitleByKey('k_italy').GetNameNoTier] nebo [GetTitleByKey('k_lotharingia').GetNameNoTier]" # todo: NEW TRANSLATION
  decision_refound_hre_own_three_kingdoms.tt: "Musíš ovládat alespoň tři královské tituly"
+ restore_hre_mainline_rite_requirement_tt: "Musíte následovat [mainline_rite|E] své [faithpossessive|E]" # todo: NEW TRANSLATION
+ restore_hre_with_blessing_tt: "[hre_blessing_authority.GetTitledFirstName] požehná obnovení [GetTitleByKey('e_hre').GetDefinitiveName]" # todo: NEW TRANSLATION
+ restore_hre_without_blessing_tt: "[GetTitleByKey('e_hre').GetDefinitiveName] bude obnovena bez požehnání nejvyšší autority církve" # todo: NEW TRANSLATION
  restore_holy_roman_empire_decision_effects_de_jure.tt: "Všechna zcela ovládaná království mimo $e_italy$ se stanou de iure součástí $e_hre$"
+ restore_holy_roman_empire_decision_effects_de_jure_no_italia.tt: "Všechna plně ovládaná [kingdoms|E] se stanou [de_jure|E] součástí [GetTitleByKey('e_hre').GetDefinitiveName]" # todo: NEW TRANSLATION
+ restore_holy_roman_empire_decision_effects_destroy_other_kingdom_plus_titles.tt: "Všechny držené [titles|E] hodnosti [title_tier|E] [kingdom|E] nebo vyšší budou zničeny" # todo: NEW TRANSLATION
+ restore_holy_roman_empire_decision_effects_kingdoms_dissolve.tt: "Všechna [kingdoms|E] držená [vassals|E] budou rozpuštěna" # todo: NEW TRANSLATION
  restore_holy_roman_empire_decision_effects_vassal_opinion.tt: "Všichni přímí vazalové"
  reformed_holy_roman_empire_opinion: "Obnovení titulu $e_hre$"
+ restore_holy_roman_empire_decision_trigger_de_jure_vassals.tt: "Alespoň #V 7#! [landed|E] [direct_vassals|E] vaší [faith|E], kteří jsou [de_jure|E] vazaly držených [kingdoms|E] nebo [empires|E], musí být [dukes|E] nebo [clergy|E] držící [county|E] #weak ([THIS.Char.MakeScope.ScriptValue('hre_potential_prince_electors_value')|0V])#!" # todo: NEW TRANSLATION
  hre_elector_list_creation_tt: "Z řad významných [Concept('de_jure','de iure')|El] biskupů, vévodů a králů Svaté říše římské bude vybráno 7 knížecích [Concept('electors','volitelů')|El]"
+ hre_elector_list_created_tt: "Preferovanými [prince_electors|E] je #V 7#!: [GetTitleByKey('e_hre').MakeScope.Var('hre_elector_1').GetLandedTitle.GetNameNoTier], [GetTitleByKey('e_hre').MakeScope.Var('hre_elector_2').GetLandedTitle.GetNameNoTier], [GetTitleByKey('e_hre').MakeScope.Var('hre_elector_3').GetLandedTitle.GetNameNoTier], [GetTitleByKey('e_hre').MakeScope.Var('hre_elector_4').GetLandedTitle.GetNameNoTier], [GetTitleByKey('e_hre').MakeScope.Var('hre_elector_5').GetLandedTitle.GetNameNoTier], [GetTitleByKey('e_hre').MakeScope.Var('hre_elector_6').GetLandedTitle.GetNameNoTier] a [GetTitleByKey('e_hre').MakeScope.Var('hre_elector_7').GetLandedTitle.GetNameNoTier]" # todo: NEW TRANSLATION
+ custom_every_rightful_vassal: "Každý [direct_vassal|E], jehož jste [rightful_liege|E]" # todo: NEW TRANSLATION
  adopt_special_succession_decision: "Přijmout zvláštní typ nástupnictví"
  adopt_special_succession_decision_desc: "Dělené nástupnictví nás oslabuje a rozděluje. Možná by velmoži panství přijali některou z historických alternativ..."
  adopt_special_succession_decision_confirm: "Promyslet záležitost"
@@ -870,6 +952,8 @@
  stress_loss_flagellant_exaltation_decision_desc: "Nic neočistí mysl tak jako katarze bolesti. A že se přitom cítím blíže k [ROOT.Char.GetFaith.HighGodName], je... #EMP božská#! shoda okolností."
  stress_loss_exaltation_decision_desc: "Tělo je pouhou nádobou určenou ke spojení s [ROOT.Char.GetFaith.HighGodName]. Nechť je zlomím, aby mohla vzniknout taková harmonie."
  stress_loss_flagellant_decision_desc: "Nic neočistí mysl tak jako katarze bolesti. Budu bičovat vlastní záda, dokud se má mysl nepročistí."
+ stress_loss_mortification_decision_desc: "Tělo je zvíře a zvíře je třeba zkrotit, než vás dovede tam, kam stojí za to dojít. Bičování je každodenní úkol při jeho krocení.\n\nPro ty, kdo svá slova myslí vážně, existují i starší oběti než bič." # todo: NEW TRANSLATION
+ stress_loss_mortification_decision_effect_tt: "Zvolíte si, jak budete trýznit své tělo — od bičování až po oběti, které nelze vzít zpět" # todo: NEW TRANSLATION
  stress_loss_flaggelant_decision_effect_tooltip: "Ztratíš stres"
  stress_loss_flagellant_decision_tooltip: "Očisti svou mysl bolestí"
  stress_loss_flagellant_decision_confirm: "Ugh–!"
@@ -919,6 +1003,10 @@
  accuse_krstjani_of_heresy_flavour_effect.tt: "Pošleš dopis hlavě víry – [GetPlayer.GetFaith.ReligiousHeadName] – s naléhavou žádostí o prošetření záležitosti $bosnian_church$..."
  accuse_krstjani_of_heresy_decision_confirm: "Nejprve pero, potom meč!"
  cannot_be_atoned_krstjani_leader_flag: "Jako $bosnian_church_adherent$ nesmíš mít již odčiněné hříchy!"
+ found_kingdom_of_albania_decision: "Založit Albánské království" # todo: NEW TRANSLATION
+ found_kingdom_of_albania_decision_desc: "Vzdálení páni ovládají naše přístavy. Válečníci tlačí ze severu. Bohatství našeho lidu odplouvá od našich břehů, jako by naše země byla jen tržním stánkem. Vyhnali jsme tyto cizince z albánských hor a v horách i přístavech se rodí nová budoucnost..." # todo: NEW TRANSLATION
+ found_kingdom_of_albania_decision_tooltip: "Albánie se stane [de_jure|E] [kingdom|E]" # todo: NEW TRANSLATION
+ found_kingdom_of_albania_decision_confirm: "[ROOT.Char.GetLadyLord|U] celé Albánie!" # todo: NEW TRANSLATION
  launch_hungarian_migration_decision: "Připravit se na překročení Karpat"
  launch_hungarian_migration_decision_desc: "Soupeřící kmeny ve stepi, zejména plenící pečeněžské válečné družiny rozeseté po našem území, nám stále více ztěžují život. Za Karpaty však leží úrodná, lesnatá údolí a zvlněné pláně slabé Panonie..."
  launch_hungarian_migration_decision_tooltip: "Uprchni ze stepi a usaď se v Panonii"
@@ -1046,9 +1134,9 @@
  appoint_a_righteous_caliph_decision.control_two_holy_sites: "Ovládáš alespoň 2 [Concept('holy_sites','svatá místa')|El]"
  appoint_a_righteous_caliph_decision.caliph_has_x_or_more_traits_sinful_to_your_faith: "Tvá [Concept('head_of_faith','hlava víry')|El] má alespoň [EmptyScope.ScriptValue('appoint_a_righteous_caliph_decision_hof_min_sins')|0] [Concept('traits','rysů')|El], které jsou pro tvou víru [Concept('sinful','hříšné')|El]"
  appoint_a_righteous_caliph_decision.has_wishes_to_schism_caliphate_flag: "Při založení své [Concept('faith','víry')|El] jsi plánoval další odštěpení"
- appoint_a_righteous_caliph_decision_mutazila_variant: "Obnovit mu'tazilu"
+ appoint_a_righteous_caliph_decision_maliki_variant: "Obnovit málikovskou školu" # todo: NEW TRANSLATION
  appoint_a_righteous_caliph_decision_general_iranian_variant: "Rozejít se s chalífátem"
- appoint_a_righteous_caliph_decision_mutazila_variant_desc: "Od skončení mihny byli zastánci stvořenosti Koránu pronásledováni nebo přehlíženi samozvanými chalífy. Vezmu na sebe pomstu za křivdy, které jsme utrpěli, a znovu vynesu mu'tazilskou nauku do popředí islámského myšlení."
+ appoint_a_righteous_caliph_decision_maliki_variant_desc: "Učenci málikovské školy jsou již dlouho strážci tradice a hájí zvyklosti obyvatel Medíny jako nejpravdivější cestu. Ti, kdo se ucházejí o titul chalífy, však naše způsoby zanedbali. Vezmu na sebe úkol vrátit málikovskou právní vědu na její právoplatné místo v samém srdci islámského myšlení." # todo: NEW TRANSLATION
  appoint_a_righteous_caliph_decision_general_iranian_variant_desc: "Přestože byl islám do Persie přinesen násilím, nikdo dnes nemůže popřít naši víru v jedinost božstva [ROOT.Char.GetFaith.HighGodNameAlternate]. Naše a arabské způsoby se však rozešly a musíme se jednou provždy odtrhnout od [ROOT.Char.GetFaith.GetReligiousHead.GetTitledFirstName]. Od nynějška povedu [ROOT.Char.GetFaith.GetAdjective] víru osobně."
  mozarabic_bind_the_faith_to_rome_decision: "Připoutat víru k Římu"
  mozarabic_bind_the_faith_to_rome_decision_desc: "Ačkoli [ROOT.Char.GetFaith.GetReligiousHead.GetTitledFirstName] stále zůstává naším jediným pravým papežem, odloučení od vůle Kristova náměstka nás svedlo na podivné cesty. Pryč jsou časy, kdy síněmi Toleda kráčela velká shromáždění evropského duchovenstva.\n\nNemusí však zůstat minulostí... Jestliže naše víra zbloudila, nemohl by ji silný pastýř přivést zpět ke stádu?"
@@ -1074,6 +1162,7 @@
  favour_the_countryside_basques_decision_confirm: "Možná existuje jiná cesta?"
  favour_the_countryside_basques_decision.have_sinful_piety_level: "Tvá [Concept('piety_level','úroveň oddanosti')|El] není vyšší než [GetModifier( 'piety_level_0' ).GetNameWithTooltip|L]"
  favour_the_countryside_basques_decision.you_have_x_or_more_traits_virtuous_to_basque_paganism: "Máš [EmptyScope.ScriptValue('favour_the_countryside_basques_decision_basque_pagan_virtues_tally_value')|0] [Concept('traits','rysů')|El], které jsou ve [GetFaithByKey('basque_pagan').GetName] [Concept('faith','víře')|El] považovány za [Concept('virtuous','ctnostné')|El]"
+ favour_the_countryside_basques_decision.rival_of_your_head_of_faith: "Jste [rival|E] svého [head_of_faith|E]" # todo: NEW TRANSLATION
  favour_the_countryside_basques_decision.completely_control_X_counties_from_old_vasconia: "Musíš [Concept('completely_control','zcela ovládat')|El] alespoň [EmptyScope.ScriptValue('favour_the_countryside_basques_decision_counties_to_control_value')|0] [Concept('counties','hrabství')|El] z regionu [GetGeographicalRegion('dlc_fp2_old_vasconia').GetName]"
  favour_the_countryside_basques_decision.before_last_date: "Datum je 1. 1. 1200 nebo dřívější"
  favour_the_countryside_basques_decision.path_default: "Pokud ponecháš [Concept('faith','víru')|El] beze změny"
@@ -1108,8 +1197,12 @@
  build_holy_pilgrim_roads_decision_hardcoded_trigger_text.a: "Ve tvém [Concept('realm','panství')|El] se nachází [Concept('holy_site','svaté místo')|El] bez [Concept('modifier','modifikátoru')|El] poutních cest"
  build_holy_pilgrim_roads_decision_construction_notif.t: "Vybudování poutních cest: [chosen_location_for_pilgrim_roads.GetNameNoTierNoTooltip]"
  build_holy_pilgrim_roads_decision_construction_notif.desc: "Na celém území [chosen_location_for_pilgrim_roads.GetName] byly vybudovány cesty vedoucí do oblasti [chosen_holy_site_for_pilgrim_roads.GetNameNoTier], kde na budoucí poutníky čeká [ROOT.Char.GetFaith.GetAdjective] [Concept('holy_site','svaté místo')|El]."
- not_can_execute_decision: "Toto [Concept('decision','rozhodnutí')|El] nyní nemůžeš učinit"
- can_execute_decision: "Toto [Concept('decision','rozhodnutí')|El] nyní můžeš učinit"
+ not_can_execute_decision_third: "[CHARACTER.GetShortUIName|U] právě nemůže přijmout rozhodnutí [Decision.GetName]" # todo: NEW TRANSLATION
+ can_execute_decision_third: "[CHARACTER.GetShortUIName|U] právě může přijmout toto [Decision.GetName]" # todo: NEW TRANSLATION
+ not_can_execute_decision_first: "[CHARACTER.GetShortUIName|U] právě nemůže přijmout rozhodnutí [Decision.GetName]" # todo: NEW TRANSLATION
+ can_execute_decision_first: "[CHARACTER.GetShortUIName|U] právě může přijmout toto [Decision.GetName]" # todo: NEW TRANSLATION
+ not_can_execute_decision_global: "Rozhodnutí [Decision.GetName] nyní nelze přijmout" # todo: NEW TRANSLATION
+ can_execute_decision_global: "Toto [Decision.GetName] lze nyní přijmout" # todo: NEW TRANSLATION
  NO_DECISION_OPTIONS_SELECTED: "@warning_icon! #X Vyber možnost#!"
  revive_taltoism_decision_before_last_date: "Datum je 1. 1. 1100 nebo dřívější"
  I_CREATE_CADET_BRANCH_DECISION_IN_ANOTHER_REALM: "Se [Concept('house_head','hlavou svého rodu')|El] #bold nejsi#! ve stejném [Concept('realm','panství')|El]"
@@ -1201,6 +1294,14 @@
  isolating_modifier_desc: "Tato postava se uchýlila do ústraní, čímž znemožnila většinu způsobů komunikace s okolním světem a připravila se o moc a vliv.\n\n[Concept('infection_chance','Pravděpodobnost nákazy')|El]: #P -75%#!\nRiziko úmrtí při [Concept('disasters','pohromách')|El]: #P -75%#!"
  epidemic_events.0100.t: "Izolace"
  epidemic_events.0100.desc: "Pozdě v noci jsme se s rodinou nechali odvézt daleko od puchu srdce hlavního sídla. Nyní můžeme zůstat stranou od lidu panství, dokud nenastane správný čas znovu vyjít ven.\n\nKomunikace bude omezená a má nepřítomnost citelná, ale za našimi čtyřmi skromnými zdmi bychom měli zůstat v bezpečí před okolní smrtí a rozkladem."
+ epidemic_events.0100.desc_amidst_plague: "Má družina nasedá na koně a do vozů a mí [ROOT.Char.Custom('GetFighterTermPlural')] zahánějí blížící se dav se zašedlými tvářemi: #EMP „Zpátky! Uvolněte cestu [ROOT.Char.GetTitleAsName]!“#!\n\nOdjíždíme z [ROOT.Char.GetCapitalLocation.GetTitle.GetNameNoTier] stejně jako bychom kráčeli cestou do [ROOT.Char.GetFaith.NegativeAfterLife]. Žebráci leží mrtví v jeho stokách. Ubožáci poznamenaní nákazou [plague.GetName] se potácejí z temnoty.\n\n„[ROOT.Char.GetFaith.HighGodName], smiluj se nad námi všemi!“ volají mí blízcí, zatímco míříme do relativního bezpečí — a ústraní — našeho venkovského sídla." # todo: NEW TRANSLATION
+ plots_conceived_in_seclusion_modifier: "Spřádání intrik v ústraní" # todo: NEW TRANSLATION
+ plots_conceived_in_seclusion_modifier_desc: "V ústraní je méně uší za dveřmi, méně dýk v místnosti a méně kuchařů, kteří by otrávili jídlo." # todo: NEW TRANSLATION
+ epidemic_events.0100.aa: ""Nedůvěřuj [ROOT.Char.GetFaith.HighGodName]. Důvěřuj své vůli přežít."" # todo: NEW TRANSLATION
+ epidemic_events.0100.b: "Takové zoufalství může utišit jedině láska." # todo: NEW TRANSLATION
+ epidemic_events.0100.c: "Tady je jen málo zvědavých uší..." # todo: NEW TRANSLATION
+ epidemic_events.0100.d: "Klidný venkov — tam duše vzkvétá!" # todo: NEW TRANSLATION
+ epidemic_events.0100.a_plague: "Až toto utrpení skončí, vrátíme se." # todo: NEW TRANSLATION
  epidemic_events.0100.a: "Zamknout dveře."
  epidemic_events.0101.t: "Ven z klece"
  epidemic_events.0101.desc: "Slunce na mé kůži působí cize a nepřátelsky, vítr je chladný a dotěrný.\n\nKdy jsem naposledy [Select_CString( ROOT.Char.IsFemale, 'vdechla', 'vdechl' )] vzduch takový, jaký jej stvořil [ROOT.Char.GetFaith.HighGodName|U]?"
@@ -1277,6 +1378,7 @@
  roman_restoration.1211.a: "Se svými severními bratry jsme spojeni navěky."
  roman_restoration.1211.b: "Osud Sicílie leží, jako vždy, za mořem."
  roman_restoration.1211.c: "Přece k titulu [ROOT.Char.GetPrimaryTitle.GetBaseNameNoTierNoTooltip]!"
+ roman_restoration.1211.c.tt: "Musíte mít primární [title|E] úrovně [empire|E], který není [GetTitleByKey('e_italy').GetNameNoTier] ani [GetTitleByKey('e_maghreb').GetNameNoTier]." # todo: NEW TRANSLATION
  roman_restoration.1212.t: "$roman_restoration.1211.t$"
  roman_restoration.1212.desc.intro: "Po staletích houževnatého a odhodlaného odporu proti nejrůznějším barbarským hordám, které plenily poslední zbytky naší dávné vlasti, se [taker.GetTitledFirstName] konečně podařilo to, v čem tolik jiných selhalo.\n\nTen prašivý pes odstranil poslední zbytky římské moci na západním poloostrově,"
  roman_restoration.1212.desc.new_empire.italia: " a místo toho území pevně přičlenil k titulu [GetTitleByKey('e_italy').GetNameNoTier]."
@@ -1460,9 +1562,11 @@
  invite_all_exiles: "Přivítat všechny"
  invite_same_religion_exiles: "Přivítat vyznavače stejného náboženství"
  invite_same_faith_exiles: "Přivítat vyznavače stejné víry"
+ invite_same_rite_exiles: "Přivítat stoupence stejného ritu" # todo: NEW TRANSLATION
  invite_all_exiles_tooltip: "Pozvi vyhnance jakékoli [Concept('faith','víry')|El]\n\n$invite_religious_exiles_decision_effect$"
  invite_same_religion_exiles_tooltip: "Pozvi vyhnance svého [Concept('religion','náboženství')|El]\n\n$invite_religious_exiles_decision_effect$"
  invite_same_faith_exiles_tooltip: "Pozvi vyhnance své [Concept('faith','víry')|El]\n\nOsloví tě skupina vyhnanců, která tě požádá o možnost usadit se ve tvých [Concept('counties','hrabstvích')|El] a zvýšit jejich [Concept('development','rozvoj')|El]."
+ invite_same_rite_exiles_tooltip: "Pozvat vyhnance vašeho [rite|E]\n\nOsloví vás skupina vyhnanců vašeho konkrétního ritu a požádá o usazení ve vašich [counties|E], čímž zvýší [development|E]." # todo: NEW TRANSLATION
  invite_exiles_req: "V dosahu nejsou žádní vyhnanci tohoto typu, které bys mohl pozvat"
  invite_religious_exiles_decision_effect: "Osloví tě skupina vyhnanců, která tě požádá o možnost usadit se ve tvých [Concept('counties','hrabstvích')|El], zvýšit jejich [Concept('development','rozvoj')|El], ale změnit jejich [Concept('faith','víru')|El]."
  invite_exiles_anyone_req: "V dosahu nejsou žádní vyhnanci, které bys mohl pozvat"
@@ -1578,13 +1682,49 @@
  ASK_FOR_CONVERSION_ACTOR_DAR_AL_ISLAM: "[actor.GetShortUIName|U] [Select_CString( actor.IsLocalPlayer, 'máš', 'má' )] [Concept('title','titul')|El] [GetTitleByKey('h_dar_al_islam').GetNameNoTier] a [recipient.GetShortUIName|U] je [GetReligionByKey('islam_religion').GetAdherentName]: $VALUE|=+0$"
  restore_carthage_decision: "Obnovit Kartágo"
  restore_carthage_decision_desc: "Dávná Kartáginská říše se mohla měřit i s nejmocnějšími silami Středomoří. Rozlehlá a bohatá říše, která zanikla příliš brzy. Někdo by měl dobýt tyto země a navrátit jim někdejší slávu..."
+ restore_carthage_decision_tooltip: "Obnov slávu Kartáginské říše"
+ restore_carthage_decision_confirm: "Sláva Kartáginské říši!"
  custom_carthaginian_empire_development_growth: "$MOD_MONTHLY_DEVELOPMENT_GROWTH_FACTOR$ v [Concept('region','regionu')|El] [GetGeographicalRegion('custom_carthaginian_empire').GetName]"
  restore_carthage_house_modifier: "Kartáginští vládci"
  restore_carthage_house_modifier_desc: "Vládci říše navrácené k někdejší slávě, s nimiž bude tento region opět vzkvétat."
- restore_carthage_decision_tooltip: "Obnov slávu Kartáginské říše"
- restore_carthage_decision_confirm: "Sláva Kartáginské říši!"
  create_cossack_kingdom_decision: "Založit Kozácké království"
  create_cossack_kingdom_decision_desc: "Spoj Kazaky a příslušníky [ROOT.Char.GetCulture.GetName] kultury v novou [Concept('culture','kulturu')|El] a nové [Concept('kingdom','království')|El]"
  create_cossack_kingdom_decision_tooltip: "Vytvoř kozáckou [Concept('culture','kulturu')|El] a [Concept('kingdom','království')|El]"
  create_cossack_kingdom_decision_confirm: "Shromáždit všechny svobodné muže!"
  create_cossack_tribal_tooltip: "Všechny [Concept('nomadic_holdings','kočovné državy')|El] v [Concept('realm','panství')|El] se stanou [Concept('tribal_holdings','kmenovými državami')|El]"
+ create_holy_order_monastic_decision: "Založit klášterní řád" # todo: NEW TRANSLATION
+ create_holy_order_monastic_decision_desc: "Společenství zbožných založené daleko od ruchu světských starostí může lépe hledat moudrost [ROOT.Char.GetFaith.HighGodNamePossessive] a díky boží přízni dosáhnout prosperity.\n\n[ROOT.Char.GetFaith.HighGodName|U] i věřící si jistě povšimnou také patrona, který mnichům poskytne úrodnou půdu k obdělávání." # todo: NEW TRANSLATION
+ create_holy_order_monastic_decision_tooltip: "Postavíte [temple_holding|E], které po dokončení poskytne zázemí novému [monastic_holy_order|E]" # todo: NEW TRANSLATION
+ create_holy_order_monastic_decision_confirm: "Postavit řádu domov" # todo: NEW TRANSLATION
+ has_temple_for_monastic_tt: "Držíte [county|E] s prázdnou [barony|E], kde lze postavit [temple_holding|E]" # todo: NEW TRANSLATION
+ create_monastic_order_decision_effect_message_tenet: "Zvolíte [core_tenet|E] jako zaměření svého [monastic_holy_order|E]" # todo: NEW TRANSLATION
+ create_monastic_order_decision_effect_message: "V prázdné [barony|E] ve vybraném [county|E] začne výstavba [temple_holding|E], a až bude dokončena:\n$EFFECT_LIST_BULLET$$monastic_order_creation_breakdown_tooltip$" # todo: NEW TRANSLATION
+ create_monastic_order_gain_hook: "Díky své [church_authority|E] získáte @weak_hook_icon![hook|E] na [archabbot|E] svého řádu" # todo: NEW TRANSLATION
+ create_monastic_order_decision_effect_message_warning: "#alert_trial @alert_icon! Vybraný [county|E] musí až do dokončení stavby [temple_holding|E] držet [ruler|E] s přívlastkem [root_scope.GetFaith.GetAdjective]#!" # todo: NEW TRANSLATION
+ pam_monastic_order_new_movement_decision: "Podpořit klášterní hnutí" # todo: NEW TRANSLATION
+ pam_monastic_order_new_movement_decision_desc: "Všechny řády bohatnou na svém majetku a s věkem upadají. Členové bez citu opakují slova své řehole a [ROOT.Char.GetFaith.HighGodName] jejich modlitby nevyslyší.\n\nMezi mnichy proto nevyhnutelně vznikají nová hnutí. Hlásají nové zásady a starou přísnost — jsou to jen učené malichernosti... dokud nenajdou vůdce a domov." # todo: NEW TRANSLATION
+ pam_monastic_order_new_movement_decision_tooltip: "Okamžitě založíte nový [monastic_holy_order|E] a převedete na něj [leases|E] jiného řádu ve svém [domain|E]" # todo: NEW TRANSLATION
+ pam_monastic_order_new_movement_decision_confirm: "#EMP Reforma! Reforma! Reforma!#!" # todo: NEW TRANSLATION
+ pam_monastic_order_new_movement_decision_select_barony_tt: "Musíte vybrat [domain|E] [barony|E] pronajatou [monastic_holy_order|E], kterou nepodporujete" # todo: NEW TRANSLATION
+ has_monastic_movement_lease_tt: "Máte [lease|E] pronajatý [monastic_holy_order|E] stejné [faith|E], ale nejste jeho [holy_order_patron|E]" # todo: NEW TRANSLATION
+ has_theological_agent_puppet_tt: "Máte [clerical_puppet|E]" # todo: NEW TRANSLATION
+ has_external_theological_agent_puppet_tt: "Máte [external_clerical_puppet|E]" # todo: NEW TRANSLATION
+ house_member_potential_leader: "Kterýkoli člen vašeho [house|E]:\n$EFFECT_LIST_BULLET$Je fyzicky zdatný dospělý [GetTrait('devoted').GetName(GetNullCharacter)]\n$EFFECT_LIST_BULLET$Není [ruler|E]\n$EFFECT_LIST_BULLET$Je v [diplomatic_range|E]\n$EFFECT_LIST_BULLET$Buď k vám má [opinion|E] #P +100#!, nebo na něj máte @weak_hook_icon![hook|E]" # todo: NEW TRANSLATION
+ domain_order_is_large_tt: "Kterýkoli platný [monastic_holy_order|E] ve vašem [domain|E] má #high 10+#! [leases|E]" # todo: NEW TRANSLATION
+ has_cloister_building_tt: "Vaše [ecclesiastical_domicile|E] má [domicile_building|E] [GetDomicileBuilding('cloister_01').GetName]" # todo: NEW TRANSLATION
+ monastic_movement_order_too_small_tt: "[monastic_holy_order|E], který si [leasing|E] toto [holding|E], musí mít alespoň #high 10#! [leases|E] (nebo musí být splněna jiná podmínka)" # todo: NEW TRANSLATION
+ monastic_order_creation_breakdown_tooltip: "Bude založen [monastic_holy_order|E] náležející k vašemu [rite|E]\n$EFFECT_LIST_BULLET$Stanete se [monastic_order_patron|E] řádu\n$EFFECT_LIST_BULLET$Můžete zvolit [core_tenet|E], který bude řád prosazovat\n$EFFECT_LIST_BULLET$Můžete vybrat [GetTrait('devoted').GetName(GetNullCharacter)] [courtier|E] nebo člena [dynasty|E], který se stane [archabbot|E] řádu" # todo: NEW TRANSLATION
+ movement_order_gains_target_monasteries_tt: "Váš nový řád získá [leases|E] odňaté řádu [target_order.GetName]" # todo: NEW TRANSLATION
+ movement_order_has_monaster_gaining_bonus_tt: "Váš nový řád bude snadněji přebírat [leases|E] s přívlastkem [target_lessee.GetPrimaryTitle.GetAdjective]" # todo: NEW TRANSLATION
+ movement_order_tenet_popularity_tt: "[core_tenet|E] vašeho nového řádu získá @tenet_popularity:4![tenet_popularity|E]" # todo: NEW TRANSLATION
+ monastic_tenet_pick_unformed_order_tt: "[tenet_pick.GetBaseName] se stane [core_tenet|E] řádu" # todo: NEW TRANSLATION
+ pick_becomes_unformed_monastic_order_leader_tt: "[chosen_leader.GetShortUIName] se stane [ruler|E] nového řádu" # todo: NEW TRANSLATION
+ launch_undirected_great_holy_war_decision: "Vyhlásit [ROOT.Char.GetFaith.GHWName]" # todo: NEW TRANSLATION
+ launch_undirected_great_holy_war_decision_desc: "Nevěřící drží zemi, která by měla náležet věřícím. Jako hlava víry musím svolat všechny spravedlivé bojovníky a dobýt království zpět ve jménu [ROOT.Char.GetFaith.HighGodName]." # todo: NEW TRANSLATION
+ launch_undirected_great_holy_war_decision_tooltip: "Zahájíte [preparation_phase|E] [undirected_great_holy_war|E] proti vybranému [kingdom|E]" # todo: NEW TRANSLATION
+ launch_undirected_great_holy_war_decision_confirm: "Povolat věřící do války" # todo: NEW TRANSLATION
+ launch_undirected_great_holy_war_decision_age_of_crusades_tt: "Pro vaše [religion|E] musí začít věk křížových výprav" # todo: NEW TRANSLATION
+ launch_undirected_great_holy_war_decision_ghw_doctrines_tt: "Vaše [faith|E] musí mít [core_tenet|E], který umožňuje [great_holy_wars|E]" # todo: NEW TRANSLATION
+ launch_undirected_great_holy_war_decision_existing_ghw_tt: "Vaše [faith|E] již nesmí vést aktivní [great_holy_war|E]" # todo: NEW TRANSLATION
+ launch_undirected_great_holy_war_decision_valid_target_tt: "Musí existovat platné nepřátelské [kingdom|E], které lze zvolit za cíl" # todo: NEW TRANSLATION
+ launch_undirected_great_holy_war_decision_effect_tt: "[undirected_great_holy_war|E] proti vybranému [kingdom|E] zahájí svou [preparation_phase|E]" # todo: NEW TRANSLATION

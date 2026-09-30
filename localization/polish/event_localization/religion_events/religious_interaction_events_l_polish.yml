@@ -7,9 +7,22 @@
  religious_interaction.1.different_faith: "a to proto, že druhá strana nevyznává pravou víru."
  religious_interaction.1.eunuch: "a to proto, že druhá strana není náležitě vybavena."
  religious_interaction.1.a: "Je mi líto, že [secondary_recipient.GetFirstNameNoTooltip] tím musí projít."
+ religious_interaction.1.price_feud: "\n\nAle to vás přece jen stěží rozdělí, že? Proto jsem jménem tvým rozeslal všem členům rodu [secondary_recipient.GetHouse.GetName] hanebná obvinění proti [secondary_recipient.GetFirstName].\n\nZdá se, že rodina tvého [actor.Custom2('RelationToMePossessive', SCOPE.sC('secondary_recipient'))] teď stojí o... #EMP trvalé#! odloučení." # todo: NEW TRANSLATION
+ religious_interaction.1.price_lease: "\n\nToto falešné prohlášení má svou cenu: propachtování [barony_to_lease.GetName] řádu [lease_order.GetName]. A pokud tyto služebníky víry zavrhneš, stejně jako svého [actor.Custom2('RelationToMeShort', SCOPE.sC('secondary_recipient'))]... poskvrníš svou duši dvojnásob." # todo: NEW TRANSLATION
+ religious_interaction.1.price_hook: "\n\nPomysli na laskavost, kterou ti tvůj [recipient.GetTitleAsName] prokázal tímto pochybným prohlášením. A pomysli také na to, že je stejně dobré dávat jako přijímat." # todo: NEW TRANSLATION
+ religious_interaction.1.price_vows: "\n\nTohle jsou vratké důvody... a proto jsem předložil důkazy, že ještě předtím, než se [secondary_recipient.GetSheHe] stal/a vaším [actor.Custom2('RelationToMeShort', SCOPE.sC('secondary_recipient'))], [secondary_recipient.GetFirstNameNoTooltip] složil/a sliby [joining_order_title.GetAdjective] [secondary_recipient.Custom('SisterBrother')].\n\nOsobně dohlédnu na to, aby [secondary_recipient.GetHerHis] oddanost trvala až do smrti." # todo: NEW TRANSLATION
+ religious_interaction.1.price_none: "\n\nTohle je samozřejmě fraška. Hanebný obchod, který poskvrnil mou duši. Ale nemohu s čistým svědomím dál nutit vás sdílet manželské lože s [secondary_recipient.GetFirstNameNoTooltip]." # todo: NEW TRANSLATION
+ religious_interaction.1.a_feud: "Ty zlovolný [recipient.GetFaith.PriestNeuter]! Cos to provedl?!?" # todo: NEW TRANSLATION
+ religious_interaction.1.a_hook: "Zbavit se [actor.Custom2('RelationToMeShort', SCOPE.sC('secondary_recipient'))]... a dostat na krk [recipient.GetTitleAsNameNoTooltip]." # todo: NEW TRANSLATION
+ religious_interaction.6.price_feud: "\n\nAle to ty dva přece jen stěží rozdělí, že? Proto jsem jménem [actor.GetFirstNamePossessiveNoTooltip] rozeslal všem členům rodu [secondary_recipient.GetHouse.GetName] hanebná obvinění proti [secondary_recipient.GetFirstName].\n\nZdá se, že [actor.GetHerHis|U] rodina [actor.Custom2('RelationToMePossessive', SCOPE.sC('secondary_recipient'))] teď stojí o... #EMP trvalé#! odloučení." # todo: NEW TRANSLATION
+ religious_interaction.6.price_lease: "\n\nToto falešné prohlášení má svou cenu: propachtování [barony_to_lease.GetName] řádu [lease_order.GetName]. A pokud [secondary_recipient.GetFirstNameNoTooltip] zavrhne tyto služebníky víry, stejně jako ty [actor.GetHerHis] [actor.Custom2('RelationToMeShort', SCOPE.sC('secondary_recipient'))]... poskvrní [actor.GetHerHis] duši dvojnásob." # todo: NEW TRANSLATION
+ religious_interaction.6.price_hook: "\n\nPomysli na laskavost, kterou ti tvůj [recipient.GetTitleAsName] prokázal tímto pochybným prohlášením. A pomysli také na to, že je stejně dobré dávat jako přijímat." # todo: NEW TRANSLATION
+ religious_interaction.6.price_vows: "\n\nTohle jsou vratké důvody... a proto jsem předložil důkazy, že ještě předtím, než se [secondary_recipient.GetSheHe] stal/a [actor.GetFirstNamePossessiveNoTooltip] [actor.Custom2('RelationToMeShort', SCOPE.sC('secondary_recipient'))], [secondary_recipient.GetFirstNameNoTooltip] složil/a sliby [joining_order_title.GetAdjective] [secondary_recipient.Custom('SisterBrother')].\n\nOsobně dohlédnu na to, aby [secondary_recipient.GetHerHis] oddanost trvala až do smrti." # todo: NEW TRANSLATION
+ religious_interaction.6.price_none: "\n\nTohle je samozřejmě fraška. Hanebný obchod, který poskvrnil mou duši. Ale nemohu s čistým svědomím dál nutit [actor.GetFirstNameNoTooltip] sdílet manželské lože s [secondary_recipient.GetFirstNameNoTooltip]." # todo: NEW TRANSLATION
  religious_interaction.2.desc: "Po dlouhém zvažování považuji za nejlepší pro náš rod vyhovět tvé žádosti o rozvod. [secondary_recipient.GetFirstNameNoTooltip] už nebude [Select_CString(secondary_recipient.IsFemale, 'tvou manželkou', 'tvým manželem')],"
  religious_interaction.2.infertility: "a to kvůli odmítání naplnit manželství."
  religious_interaction.2.adultery: "a to proto, že druhá strana porušila posvátnost manželství tím, že měla pohlavní styk s někým jiným."
+ religious_interaction.3.desc_subordinate: "Jménem všech [actor.GetFaith.HighGodNamePossessive] zástupců na Zemi vyhovuji tvé žádosti." # todo: NEW TRANSLATION
  religious_interaction.3.desc: "Po zvážení tvé situace tvé žádosti vyhovuji."
  religious_interaction.3.defensive_war: "Ať ti tyto prostředky pomohou ubránit víru před vpádem! [war_target.GetFaith.GetAdjective] svět proti tobě vysílá hordy a v jejich čele stojí [war_target.GetTitledFirstName]!"
  religious_interaction.2.offensive_war: "Ať ti tyto prostředky přinesou vítězství! Proti tobě stojí [war_target.GetTitledFirstName]."
@@ -49,36 +62,72 @@
  religious_interaction.1001.desc: "Můj [ROOT.Char.Custom2('RelationToMe', SCOPE.sC('actor'))], [actor.GetTitledFirstName], [Select_CString(actor.IsFemale, 'zařídila', 'zařídil')], aby [actor.GetFaith.PriestNeuterPlural|L] vydali spis, v němž jsem [Select_CString(ROOT.Char.IsFemale, 'odsouzena jako hříšnice', 'odsouzen jako hříšník')]!\n\nTento spis může posloužit jako právní základ, na němž [recipient.GetFaith.GetAdjective] svět zpochybní mou způsobilost k vládě."
  religious_interaction.1001.a: "[Select_CString(actor.IsFemale, 'Kdyby nebyla mou lenní paní,', 'Kdyby nebyl mým lenním pánem,')] já bych..."
  religious_interaction.1001.a.revoke_tt: "[actor.GetTitledFirstName] může [Concept('revoke','odebrat')|E] jeden z mých titulů"
+ religious_interaction.1010_subordinate: "Jako váš prostředník u těch nejsvatějších [actor.GetFaith.GetAdjective] uší a nejposvátnějších [actor.GetFaith.GetAdjective] srdcí vám uděluji odpuštění břemene vašich hříchů.\n\nVaše štědrý dar vám vynesl odpuštění." # todo: NEW TRANSLATION
  religious_interaction.1010: "Je chvályhodné, že se snažíš odčinit své hříchy. Přijímám tvůj štědrý dar a na oplátku ti uděluji své požehnání."
  religious_interaction.1011: "Tvé prohřešky jsou příliš závažné na to, aby je vykoupilo pouhé zlato. Pokud chceš své hříchy skutečně odčinit, musíš změnit své chování a dokázat mi, že opravdu usiluješ o odpuštění. Teprve potom přijmu tvůj dar."
+ religious_interaction.excommunication.opening: "[excommunication_issuer.Custom2('AppropriateGreeting', ROOT.Char)]" # todo: NEW TRANSLATION
  religious_interaction.1020: "Donesly se ke mně znepokojivé zprávy o tvých prohřešcích. Přináší je [actor.GetTitledFirstName]."
- religious_interaction.1021: "Můžeš si říkat [actor.GetFaith.GetAdherentName|L], ale tvé činy dokazují, že se ve skutečnosti neřídíš cestou, kterou ukazuje [actor.GetFaith.HighGodName]. Nemohu dovolit, aby se tvé hanebné chování skrývalo za maskou [actor.GetFaith.GetAdjective|L] spravedlnosti, a proto mi nezbývá než tě z víry exkomunikovat. Ať se nad tvou duší [actor.GetFaith.HighGodName] smiluje."
+ religious_interaction.1020.requested: "Od [actor.GetTitledFirstName] jsem vyslechl znepokojivé zprávy o tvých prohřešcích. Na [actor.GetHerHis] naléhání jsem tě vyloučil z [recipient.GetFaith.GetAdjective] víry.\n\nKéž se [recipient.GetFaith.HighGodName] smiluje nad tvou duší." # todo: NEW TRANSLATION
+ religious_interaction.1020.sin: "Znepokojivé zprávy od [actor.GetTitledFirstName] svědčí o tvé [my_sinful_trait.GetName( ROOT.Char )] povaze. Na [actor.GetHerHis] naléhání jsem tě vyloučil z [recipient.GetFaith.GetAdjective] víry.\n\nKéž se [recipient.GetFaith.HighGodName] smiluje nad tvou duší." # todo: NEW TRANSLATION
+ religious_interaction.1020.empire: "Tvůj nárok na císařství rozdělil [recipient.GetFaith.GetAdjective] víru. Na [actor.GetTitledFirstNamePossessive] naléhání jsem tě vyloučil." # todo: NEW TRANSLATION
+ religious_interaction.1020.a.tt_petition: "#help Získáš [piety|E]. Po jednom roce osobně požádej svého [head_of_faith|E] a zvol možnost #high $petition_head_of_faith_decision_option_repentance$#!. Viz [Concept( 'excommunicated_recovery', 'možnosti nápravy' )|E].#!" # todo: NEW TRANSLATION
+ religious_interaction.1020.a.tt_declaration: "#help Získáš [piety|E]. Po jednom roce použij možnost #high $declaration_of_repentance_interaction$#! u způsobilého duchovního. Viz [Concept( 'excommunicated_recovery', 'možnosti nápravy' )|E].#!" # todo: NEW TRANSLATION
+ religious_interaction.1020.a: "Přijmu své pokání a budu hledat rozhřešení" # todo: NEW TRANSLATION
+ religious_interaction.1020.b: "Ať [actor.GetFirstNameNoTooltip] stihne kletba!" # todo: NEW TRANSLATION
+ religious_interaction.1020.b.tt: "#help Ztratíš [stress|E]. Pokrok směrem k [rivalry|E] s [actor.GetShortUIName].#!" # todo: NEW TRANSLATION
+ religious_interaction.1020.c: "Ať stihne kletba [recipient.GetTitleAsNameNoTooltip], že [actor.GetHerHim] naslouchá!" # todo: NEW TRANSLATION
+ religious_interaction.1020.c.tt: "#help Ztratíš [stress|E]. Pokrok směrem k [rivalry|E] s [recipient.GetShortUIName]. [GetTrait('cynical').GetName( GetNullCharacter )], [GetTrait('wrathful').GetName( GetNullCharacter )] a [GetTrait('arbitrary').GetName( GetNullCharacter )] [courtiers|E] to schvalují.#!" # todo: NEW TRANSLATION
+ religious_interaction.1021.generic: "Všichni můžeme chybovat, neboť jsme se narodili v hříchu. Bohužel však u tebe nevidím ani snahu kráčet po Kristově cestě." # todo: NEW TRANSLATION
+ religious_interaction.1021.empire: "V těchto posledních dnech jste upřednostnili své ambice před potřebami křesťanstva. Váš nárok na císařství je vředem na těle církve!" # todo: NEW TRANSLATION
+ religious_interaction.1021.clergy_hostility: "Naše nepřátelství není žádným tajemstvím. Vyvrhuji tě však kvůli tvé lásce k hříchu a zatvrzelosti." # todo: NEW TRANSLATION
+ religious_interaction.1021.sin: "Tvá [my_sinful_trait.GetName( ROOT.Char )] povaha je všem známá. Nemohu dopustit, aby tvůj příklad svedl stádo na scestí." # todo: NEW TRANSLATION
+ religious_interaction.1021.conclusion: "\n\nJste exkomunikováni z víry [actor.GetFaith.GetAdjective]. Kéž [actor.GetFaith.HighGodName] smiluje nad vaší duší." # todo: NEW TRANSLATION
+ religious_interaction.1021.a: "Podřizuji se soudu církve." # todo: NEW TRANSLATION
+ religious_interaction.1021.b: "Moje koruna pochází od [recipient.GetFaith.HighGodName], nikoli od [actor.GetTitleAsNameNoTooltip]!" # todo: NEW TRANSLATION
+ religious_interaction.1021.b.tt: "#help Ztratíš [stress|E]. Pokrok směrem k [rivalry|E] s [actor.GetShortUIName]. [GetTrait('cynical').GetName( GetNullCharacter )], [GetTrait('wrathful').GetName( GetNullCharacter )] a [GetTrait('arbitrary').GetName( GetNullCharacter )] [courtiers|E] to schvalují.#!" # todo: NEW TRANSLATION
  religious_interaction.1022: "To, co mi vyprávíš, mě velmi znepokojuje. [secondary_recipient.GetTitledFirstName] se podle tvých slov dopouští závažných prohřešků. Bolí mě to, ale souhlasím, že pro dobro [actor.GetFaith.GetAdjective] víry musí být [Select_CString(secondary_recipient.IsFemale, 'exkomunikována', 'exkomunikován')]."
+ religious_interaction.1022.toast_puppeteer: "[recipient.GetShortUIName] vyhověl/a žádosti [puppet_or_actor.GetShortUINamePossessive] o exkomunikaci" # todo: NEW TRANSLATION
  religious_interaction.1023: "Co tě to napadlo pokoušet se o exkomunikaci někoho, kdo stejně jako ty vyznává [actor.GetFaith.GetName]? [actor.GetFaith.GetAdjective] víra není nástrojem k získávání politických výhod! Můžeš mluvit o štěstí, že za takovou žádost neexkomunikuji i tebe."
+ religious_interaction.1023.toast_puppeteer: "[recipient.GetShortUIName] odmítl/a žádost [puppet_or_actor.GetShortUINamePossessive] o exkomunikaci" # todo: NEW TRANSLATION
  religious_interaction.1024: "Vidím, že svých hříchů skutečně lituješ a vynaložil jsi velké úsilí na své vykoupení. Tvé prohřešky proti [actor.GetFaith.GetAdjective] víře byly sice velmi závažné, ale tvé nedávné činy mě přesvědčily, že si zasloužíš další šanci.\n\nProto tímto ruším tvou exkomunikaci a vítám tě zpět mezi věřící [actor.GetFaith.GetName]."
+ religious_interaction.1024.toast_puppeteer: "[recipient.GetShortUIName] zrušil/a exkomunikaci [puppet_or_actor.GetShortUINamePossessive]" # todo: NEW TRANSLATION
  religious_interaction.1025: "Myslíš si snad, že lidi exkomunikuji lehkovážně? Že k nápravě stačí vlažná omluva? Pros, jak chceš, ale zpět mezi své souvěrce tě přijmu teprve tehdy, až dokážeš, že ses svého hanebného chování opravdu vzdal."
+ religious_interaction.1025.toast_puppeteer: "[recipient.GetShortUIName] odmítl/a zrušit exkomunikaci [puppet_or_actor.GetShortUINamePossessive]" # todo: NEW TRANSLATION
  religious_interaction.1030: "Po dlouhém rozjímání jsem dospěl k závěru, že tvá slova byla pravdivá a moudrá. Vstoupím do mnišského řádu a začnu nový život zasvěcený jedině službě, kterou ode mě žádá [actor.GetFaith.HighGodName]."
  religious_interaction.1031: "Tvůj návrh, abych od základu změnil celý svůj život a utekl do nějakého odlehlého kláštera, je směšný. Jsem spokojený tam, kde jsem, a nemám v úmyslu na tom cokoli měnit."
+ religious_interaction.1031.toast_puppeteer: "[recipient.GetShortUIName] odmítl/a žádost [puppet_or_actor.GetShortUINamePossessive] o složení slibů" # todo: NEW TRANSLATION
  religious_interaction.1000.positive: "Jsem rád, že [recipient.GetFirstNameNoTooltip] pochopil smysl mé žádosti."
  religious_interaction.1000.negative: "Velká škoda..."
  religious_interaction.1000.strong_negative: "K čertu!"
  religious_interaction.1024.positive: "Jsem rád, že [recipient.GetFirstNameNoTooltip] pochopil smysl tohoto kroku."
  religious_interaction.2002.desc: "Rozhodl jsem se následovat tě do světla. Mým novým vyznáním bude [ROOT.Char.GetFaith.GetName]!"
+ religious_interaction.2002.toast_puppeteer: "[recipient.GetShortUIName] přijal/a požadavek [puppet_or_actor.GetShortUINamePossessive] na konverzi" # todo: NEW TRANSLATION
  religious_interaction.2002.a: "Požehnán buď [ROOT.Char.GetFaith.HighGodName]!"
  religious_interaction.2003.desc: "Má víra je příliš pevná, než aby ji zviklala tvá světská slova. Raději si počkám na odměnu, kterou mi přinese [recipient.GetFaith.DivineRealm]."
+ religious_interaction.2003.toast_puppeteer: "[recipient.GetShortUIName] odmítl/a požadavek [puppet_or_actor.GetShortUINamePossessive] na konverzi" # todo: NEW TRANSLATION
  religious_interaction.2003.hooking_out: "\n\nTaké ti připomínám, že mi něco dlužíš, a proto bys mě neměl pronásledovat jen za to, že jsem skutečný věřící."
  religious_interaction.2003.a: "Přál jsem si jen tvou spásu."
  religious_interaction.2003.b: "Dobrá, pak za to zaplatíš na tomto světě!"
  religious_interaction.2003.c: "Nemysli si, že ti tohle jen tak projde!"
  religious_interaction.2003.d: "Ale ano, ty budeš věřit přesně tomu, čemu ti řeknu."
  religious_interaction.2011.desc: "Rád bych se k tvému nadšení přidal, ale jen samotná obnova [recipient.GetFaith.HouseOfWorshipPlural] a obracení mých rolníků by stály celé jmění...\n\nPokud bys mi pomohl tyto výdaje uhradit, velmi rád se budu modlit tak, jak si přeje [ROOT.Char.GetFaith.HighGodName]."
+ religious_interaction.2011.toast_puppeteer: "[recipient.GetShortUIName] odmítl/a požadavek [puppet_or_actor.GetShortUINamePossessive], pokud nedostane zlato" # todo: NEW TRANSLATION
  religious_interaction.2011.a: "Pro víru cokoli."
  religious_interaction.2011.b: "Za tvou věčnou spásu platit nebudu!"
  religious_interaction.2011.c: "Uděláš to za něco mnohem cennějšího než zlato."
  religious_interaction.2012.desc: "Vidím moudrost tvé víry, ale snad chápeš, jak dlouhá a klikatá je cesta z temnoty do světla.\n\nKdybys mi slíbil podporu ve všem, co budu potřebovat, možná by ta cesta byla snazší."
+ religious_interaction.2012.toast_puppeteer: "[recipient.GetShortUIName] odmítl/a požadavek [puppet_or_actor.GetShortUINamePossessive], pokud mu/jí nebude udělena přízeň" # todo: NEW TRANSLATION
  religious_interaction.2012.a: "Souhlasím, pro dobro věřících všude na světě."
  religious_interaction.2012.b: "O tvou duši smlouvat nebudu!"
  religious_interaction.2012.c: "Nejdřív mi musíš splatit jiné dluhy."
+ religious_interaction.2015.desc: "[actor.GetRite.GetName] vám očividně přinesl sílu. Rád/a bych lépe porozuměl/a moci, kterou čerpáte od [actor.GetFaith.HighGodName]." # todo: NEW TRANSLATION
+ religious_interaction.2015.toast_puppeteer: "[recipient.GetShortUIName] požádal/a [puppet_or_actor.GetShortUIName], aby počkal/a, než prostuduje víru" # todo: NEW TRANSLATION
+ religious_interaction.2015.a: "Naučím tě cestám [actor.GetFaith.GoodGodNames]." # todo: NEW TRANSLATION
+ religious_interaction.2015.b: "Dnes se pokloníš [actor.GetFaith.GoodGodNames]!" # todo: NEW TRANSLATION
+ religious_interaction.2015.c: "Možná se nejlépe poučíš vlastní zkušeností." # todo: NEW TRANSLATION
+ religious_interaction.2016.desc: "Jak jste žádal/a, můžete pod mým bedlivým dohledem studovat učení [actor.GetFaith.GoodGodNames]." # todo: NEW TRANSLATION
+ religious_interaction.2016.a: "Začněme." # todo: NEW TRANSLATION
+ religious_interaction.2016.a.tt: "Zahájíš [GetScheme('study_faith').GetTypeName] na [actor.GetShortUINameNoTooltip]." # todo: NEW TRANSLATION
  religious_interaction.2021.opening: "[actor.Custom2('AppropriateGreeting', ROOT.Char)]"
  religious_interaction.2021.desc: "[actor.Custom2('AppropriateGreeting', ROOT.Char)]\nNastal čas, abys mě následoval do světla. Vzhledem ke všemu, co mi dlužíš, požaduji, aby ses obrátil. Tvým novým vyznáním bude [actor.GetFaith.GetName]!"
  religious_interaction.2021.a: "Já... Dobrá, [ROOT.Char.Custom2('RelationToMe', SCOPE.sC('actor'))]."
@@ -133,6 +182,7 @@
  religious_interaction.2400.b: "Tahle fraška nestojí za to. [recipient.GetFaith.HighGodName] do ní nepatří."
  religious_interaction.2400.b.tt: "[actor.GetShortUINameNoTooltip] dostane zprávu"
  religious_interaction.2400.b_turned_down: "[recipient.GetShortUIName|U] mou výzvu k disputaci odmítá"
+ religious_interaction.2400.b_turned_down_puppeteer: "[recipient.GetShortUIName|U] odmítl/a výzvu [puppet_or_actor.GetShortUINamePossessive] k debatě" # todo: NEW TRANSLATION
  used_literalist_debate_modifier: "Nedávná disputace"
  used_literalist_debate_modifier_desc: "Nedávno tato postava zahájila disputaci o základních zásadách své víry."
  literally_debated_modifier: "Nedávná disputace"
@@ -154,12 +204,83 @@
  religious_interaction.2403.a: "„Jsi... jsi v pořádku?“"
  religious_interaction.2403.a.tt: "[victim.GetShortUIName] utrpí srdeční záchvat a [character_death_dies|El]"
  religious_interaction.2500.desc: "To, že ti konečně došlo, jak se věci mají... To musí být znamení! [ROOT.Char.GetFaith.HighGodNameAlternate] tě očividně vede správným směrem. Dveře k pravé víře jsou ti otevřené."
+ religious_interaction.2500.toast_puppeteer: "[recipient.GetShortUIName] přijal/a nabídku [puppet_or_actor.GetShortUINamePossessive] ke konverzi během války" # todo: NEW TRANSLATION
  religious_interaction.2500.a: "Sláva! [ROOT.Char.GetFaith.HighGodName] si zaslouží veškerou chválu!"
  religious_interaction.2501.desc: "Snad žertuješ? [recipient.GetFaith.HighGodName] se tvými průhlednými pokusy o politický únik nenechá obměkčit!"
+ religious_interaction.2501.toast_puppeteer: "[recipient.GetShortUIName] odmítl/a nabídku [puppet_or_actor.GetShortUINamePossessive] ke konverzi během války" # todo: NEW TRANSLATION
  religious_interaction.2600.t: "Lekce milosti"
  religious_interaction.2600.desc.recipient: "[actor.GetTitledFirstName|U] mě jemně vezme za ruku a vede mě k pestré sbírce ostrých i tupých předmětů, které budeme při dnešním sezení používat. Jedna z čepelí zachytí světlo a zaplaví mě pocit klidu.\n\nS nástrojem v ruce dávám znamení k otočení. [actor.GetTitledFirstName] si vyhrne košili a odhalí nedotčenou kůži na zádech. Dávám se do práce a tiché sténání a skřeky se brzy promění v hluboké broukání vycházející z hrdla.\n\nUž vím, kterým nástrojem zušlechtím vlastní milost."
  religious_interaction.2600.desc.actor: "[recipient.GetTitledFirstName|U] si pozorně prohlíží nástroje povznesení a očekáváním se sotva znatelně chvěje.\n\nChytím natažené zápěstí, vložím do dlaně ostrou čepel a jemně ji přitisknu ke své hrudi. „Jen zlehka, ano? Ruku pevně. Pohybujeme se tu na tenké hranici.“\n\n[recipient.GetFirstNameNoTooltip] se mi podívá do očí a přikývne, pak si začne rozepínat vlastní košili a odhalí kousek čisté kůže bez jediné jizvy, na niž brzy sestoupí milost, kterou uděluje [recipient.GetFaith.HighGodName]."
  religious_interaction.2600.a: "„Povznesme se společně.“"
  religious_interaction.2610.desc: "Bohužel se tentokrát musím věnovat několika důležitým záležitostem... příště však budeme uctívat s ještě větším zápalem!"
  religious_interaction.2610.a: "Jaká škoda."
+ religious_interaction.2620.t: "Uštědřit bolest" # todo: NEW TRANSLATION
+ religious_interaction.2620.desc.actor: "[recipient.GetTitledFirstName] přede mnou klečí, zatímco zvedám bič. Bolest je milost a skrze [recipient.GetHerHis] utrpení se přibližuji k [actor.GetFaith.HighGodName]." # todo: NEW TRANSLATION
+ religious_interaction.2620.desc.recipient: "Klečím před [actor.GetTitledFirstName], zatímco [actor.GetSheHe] zvedá bič. Bolest je milost a skrze mé utrpení se [actor.GetSheHe] přibližuje k [actor.GetFaith.HighGodName]." # todo: NEW TRANSLATION
+ religious_interaction.2620.a: "Ať nás bolest sblíží." # todo: NEW TRANSLATION
  attempted_transcendence_together_opinion: "Společný pokus o povznesení"
+ monastic_donation_interaction: "Darovat klášternímu řádu" # todo: NEW TRANSLATION
+ monastic_donation_interaction_desc: "Výmenou za [gold|E] se mniši [recipient.GetShortUINamePossessive] budou modlit za tvou spásu a [spiritual_fulfillment|E]." # todo: NEW TRANSLATION
+ INTERACTION_CEREMONIAL_HUMBLING: "Pokorně a zoufale prosit o zvláštní přímluvu" # todo: NEW TRANSLATION
+ INTERACTION_HUGE_DONATION: "Věnovat štědrý dar" # todo: NEW TRANSLATION
+ monastics_praying_for_grievous_sins_modifier: "Klášterní přímluva" # todo: NEW TRANSLATION
+ monastics_praying_for_grievous_sins_modifier_desc: "Prosba o klášterní pomoc přinesla této postavě velkou hanbu, nyní jí však svaté modlitby přinášejí útěchu." # todo: NEW TRANSLATION
+ low_piety_or_spiritual_fulfillment_tt: "Musíš mít [piety_level|E] [GetModifier( 'piety_level_0' ).GetNameWithTooltip|L], nebo být na úrovni $christian_fulfillment_level_1$ či $christian_fulfillment_level_0$ ([spiritual_fulfillment|E])" # todo: NEW TRANSLATION
+ INTERACTION_AI_ZEAL: "Zbožnost postavy [puppet_or_actor.GetShortUINamePossessive|U]: $VALUE|=+0$" # todo: NEW TRANSLATION
+ INTERACTION_RECIPIENT_AI_GREED_HIGH: "Chamtivost postavy [recipient.GetShortUINamePossessive]: $VALUE|=+0$" # todo: NEW TRANSLATION
+ monastic_huge_donation_acceptance: "Štědrý dar: $VALUE|=+0$" # todo: NEW TRANSLATION
+ monastic_humbling_acceptance: "Tvé zoufalé prosby: $VALUE|=+0$" # todo: NEW TRANSLATION
+ MONASTIC_DONATION_ORDER_TENET_PROHIBITED: "[puppet_or_actor.GetShortUINamePossessive|U] [rite|E] zakazuje [tenet|E] řádu: $VALUE|=+0$" # todo: NEW TRANSLATION
+ INTERACTION_LEASES_HOLDINGS: "[recipient.GetShortUIName] je nájemcem [puppet_or_actor.GetShortUINamePossessive]: $VALUE|=+0$" # todo: NEW TRANSLATION
+ TITLE_TIER_REASON: "[puppet_or_actor.GetShortUINamePossessive|U] [title_tier|E]: $VALUE|=+0$" # todo: NEW TRANSLATION
+ RELATIVE_TITLE_TIER_REASON: "Rozdíl v [title_tier|E]: $VALUE|=+0$" # todo: NEW TRANSLATION
+ VERY_PIOUS_TRAITS_REASON: "[puppet_or_actor.GetShortUIName|U] [CharHaveHas(puppet_or_actor)] jednu či více mimořádně zbožných [traits|E]: $VALUE|=+0$" # todo: NEW TRANSLATION
+ PIOUS_TRAITS_REASON: "[puppet_or_actor.GetShortUIName|U] [CharHaveHas(puppet_or_actor)] jednu či více zbožných [traits|E]: $VALUE|=+0$" # todo: NEW TRANSLATION
+ SINFUL_TRAITS_REASON: "[puppet_or_actor.GetShortUIName|U] [CharHaveHas(puppet_or_actor)] jednu či více hříšných [traits|E]: $VALUE|=+0$" # todo: NEW TRANSLATION
+ VERY_SINFUL_TRAITS_REASON: "[puppet_or_actor.GetShortUIName|U] [CharHaveHas(puppet_or_actor)] jednu či více mimořádně hříšných [traits|E]: $VALUE|=+0$" # todo: NEW TRANSLATION
+ MONASTIC_SAME_RITE_REASON: "[puppet_or_actor.GetShortUIName|U] vyznává stejný [rite|E]: $VALUE|=+0$" # todo: NEW TRANSLATION
+ MONASTIC_HERETICAL_RITE_REASON: "[puppet_or_actor.GetShortUIName|U] vyznává heretický [rite|E]: $VALUE|=+0$" # todo: NEW TRANSLATION
+ MONASTIC_ORDER_TENET_REASON: "[puppet_or_actor.GetShortUIName|U] osobně zastává [tenet|E] řádu: $VALUE|=+0$" # todo: NEW TRANSLATION
+ EXCOMMUNICATED_REASON: "[puppet_or_actor.GetShortUIName|U] [CharAreIs(puppet_or_actor)] [GetTrait('excommunicated').GetName( actor.Self )]: $VALUE|=+0$" # todo: NEW TRANSLATION
+ MONASTIC_DONATION_NOTIFICATION_TEXT: "Přijměte, prosím, můj skromný dar vašemu řádu s prostou žádostí, abyste se za mě pomodlili." # todo: NEW TRANSLATION
+ MONASTIC_ORDER_LEASE_NOTIFICATION_TEXT: "Svatá [actor.GetPrimaryTitle.GetAdjective] půda může být ještě svatější díky přítomnosti vašeho řádu. Pokorně vám nabízím tato panství jako projev úcty před [actor.GetFaith.HighGodName]." # todo: NEW TRANSLATION
+ monastic_holdings_in_hostile_realms_tt: "[recipient.GetPrimaryTitle.GetName] musí mít alespoň jeden pronajatý [temple_holding|E] mimo [realms|E], s nimiž jsi ve [war|E]" # todo: NEW TRANSLATION
+ monastic_holdings_too_distant_tt: "[monastic_holy_order|E] postavy [recipient.GetShortUINamePossessive] nemá žádný [leased|E] [temple_holding|E] v dosahu [holy_order_vicinity|E]" # todo: NEW TRANSLATION
+ SMALL_ORDER_REASON: "[monastic_holy_order|E] má jen málo [leases|E]: $VALUE|=+0$" # todo: NEW TRANSLATION
+ female_monastic_order_not_female_tt: "[secondary_recipient.GetPrimaryTitle.GetName] přijímá pouze ženy" # todo: NEW TRANSLATION
+ male_monastic_order_not_male_tt: "[secondary_recipient.GetPrimaryTitle.GetName] přijímá pouze muže" # todo: NEW TRANSLATION
+ military_order_wrong_culture_tt: "@alert_icon! #alert_trial [recipient.GetShortUIName] se nemůže stát [ruler|E] titulu [grandmaster.GetPrimaryTitle.GetName], protože kultura [recipient.GetCulture.GetName] nemá [heritage|E] [grandmaster.GetCulture.GetHeritage.GetName]#!" # todo: NEW TRANSLATION
+ new_monastic_county_modifier: "Začleňování mnichů" # todo: NEW TRANSLATION
+ new_monastic_county_modifier_desc: "Nově příchozí řád se snaží založit prosperující klášter a získat přízeň místních." # todo: NEW TRANSLATION
+ new_monastic_county_modifier_tt: "[target.GetName] získá [GetModifier('new_monastic_county_modifier').GetNameWithTooltip] na dobu #high 5 let#!" # todo: NEW TRANSLATION
+ msg_order_espousing_beliefs_title: "Klášterní řád šíří své učení" # todo: NEW TRANSLATION
+ msg_order_espousing_beliefs_title_tenet: "Šíří se zásada [holy_order_leader.GetPrimaryTitle.GetAdjectiveNoTooltip]" # todo: NEW TRANSLATION
+ msg_order_espousing_beliefs_title_rite: "[holy_order_leader.GetPrimaryTitle.GetNameNoTooltip] káže: [order_rite.GetNameNoTooltip]" # todo: NEW TRANSLATION
+ msg_order_took_over_monastery_title: "Řád převzal klášter" # todo: NEW TRANSLATION
+ order_spreading_tenet_tt: "#high [TopScope.GetValue('order_tenet_accepted_count')|0]#! [rulers|E], včetně [tenet_change_1.GetShortUIName] a [tenet_change_2.GetShortUIName], přijali [order_tenet.GetName( order_rite )] jako svou [personal_tenet|E]" # todo: NEW TRANSLATION
+ order_spreading_tenet_tt_char_1: "[tenet_change_1.GetShortUIName] přijímá [order_tenet.GetName( order_rite )] jako [personal_tenet|E]" # todo: NEW TRANSLATION
+ order_spreading_tenet_tt_char_2: "[tenet_change_2.GetShortUIName] přijímá [order_tenet.GetName( order_rite )] jako [personal_tenet|E]" # todo: NEW TRANSLATION
+ YOU_ARE_PATRON: "Jsi [holy_order_patron|E] postavy [recipient.GetShortUINamePossessive]: $VALUE|=+0$" # todo: NEW TRANSLATION
+ YOU_ARE_LEASE_HOLDER: "[holdings|E] pronajatá postavě [recipient.GetShortUIName]: $VALUE|=+0$" # todo: NEW TRANSLATION
+ RECENTLY_LEASED_TO_ORDER: "Nedávno jste pronajali [title|E] postavě [recipient.GetShortUIName]: $VALUE|=+0$" # todo: NEW TRANSLATION
+ RECENTLY_DONATED_TO_ORDER: "Nedávno jste darovali [gold|E] postavě [recipient.GetShortUIName]: $VALUE|=+0$" # todo: NEW TRANSLATION
+ easier_to_puppet_monk_tt: "Po dobu #high 5 let#! je ochotnější stát se vaším [external_clerical_puppet|E]" # todo: NEW TRANSLATION
+ monk_can_use_money_for_actions_tt: "#weak #EMP [recipient.GetPrimaryTitle.GetName] může využít [gold|E] ke stavbě [buildings|E] ve svých [leases|E], šíření své [core_tenet|E] a [rite|E], zvýšení [development|E] a získání nových [leases|E]#!#!" # todo: NEW TRANSLATION
+ monk_can_use_lease_for_actions_tt: "#weak #EMP [recipient.GetPrimaryTitle.GetName] se bude snažit stavět [buildings|E] v [target.GetNameNoTier]#!#!" # todo: NEW TRANSLATION
+ monk_can_use_lease_region_for_actions_tt: "#weak #EMP V [target_county.GetNameNoTier] a okolních [counties|E] se [recipient.GetPrimaryTitle.GetName] bude snažit zlepšovat [development|E], šířit svůj [rite|E] a hlásat svou [core_tenet|E] místním [rulers|E]#!#!" # todo: NEW TRANSLATION
+ espoused_order_beliefs_recently: "[recipient.GetShortUIName] šířil(a) přesvědčení [recipient.GetPrimaryTitle.GetAdjective] během posledních #high 5 let#!" # todo: NEW TRANSLATION
+ order_espousing_targets_exist_tt: "Některé [leases|E] [recipient.GetPrimaryTitle.GetAdjective] se nacházejí poblíž [rulers|E], kterým lze změnit [personal_tenet|E] na [core_tenet|E] [monastic_holy_order|E]" # todo: NEW TRANSLATION
+ monastic_espouse_beliefs_interaction: "Šířit učení řádu" # todo: NEW TRANSLATION
+ monastic_espouse_beliefs_interaction_desc: "Požadujte, aby váš [external_clerical_puppet|E], [recipient.GetShortUINameNoTooltip], podnítil vlnu teologického zájmu o [core_tenet|E] [monastic_holy_order|E] [recipient.GetHerHis]" # todo: NEW TRANSLATION
+ monastic_tenet_espousing_info_tt: "#EMP #weak Poznámka: i když k tomu [recipient.GetShortUIName] nebude donucen/a prostřednictvím této [interaction|E], může stále šířit [recipient.GetPrimaryTitle.GetAdjective] víru, dokud má alespoň @gold_icon!#high [recipient.MakeScope.ScriptValue('monastic_tenet_espousing_value')|0]#!" # todo: NEW TRANSLATION, CHECK FORMAT # todo: FORMAT chýba [recipient.GetSheHe]
+ custom.every_order_tenet_accepted: "#high [TopScope.GetValue('order_tenet_accepted_count')|0]#! " # todo: NEW TRANSLATION
+ order_tenet_accepted_list_tt: "Někteří [rulers|E] v blízkosti klášterů [holy_order_leader.GetPrimaryTitle.GetAdjective] přijímají [order_tenet.GetName( order_rite )] jako [personal_tenet|E]" # todo: NEW TRANSLATION
+ espouse_beliefs_monks_piety_tt: "[recipient.GetShortUIName] a [recipient.GetHerHis] [courtiers|E] s vlastností [GetTrait('devoted').GetName( recipient )] získávají @piety_icon![piety|E]" # todo: NEW TRANSLATION
+ recipient_clerical_puppet_req_tt: "[recipient.GetShortUIName] musí být vaším [external_clerical_puppet|E]" # todo: NEW TRANSLATION
+ ORDER_SIZE_REASON: "[leases|E] [recipient.GetPrimaryTitle.GetAdjective] mimo vaši [realm|E]: $VALUE|=+0$" # todo: NEW TRANSLATION
+ msg_order_took_over_monastery.t: "Klášter [holy_order_leader.GetPrimaryTitle.GetAdjectiveNoTooltip] začleněn" # todo: NEW TRANSLATION
+ order_took_over_monastery_tt: "[holy_order.GetName] převzal [lease|E] [taken_monastery.GetNameNoTier] od [target_order.GetName]" # todo: NEW TRANSLATION
+ msg_order_took_over_other_order.t: "[target_order.GetNameNoTooltip] pohlcen" # todo: NEW TRANSLATION
+ order_took_over_capital_monastery_tt: "[holy_order.GetName] převzal [lease|E] [taken_monastery.GetNameNoTier] a pohltil tak poslední državu [target_order.GetName]" # todo: NEW TRANSLATION
+ monastic_spreading_rite_tt: "Tento [target_rite.GetAdjective] klášter nyní patří [order_rite.GetName]" # todo: NEW TRANSLATION
+ monastic_spreading_instigated_tt: "Převod byl způsoben vlivem postavy [instigator.GetShortUINamePossessive|U]" # todo: NEW TRANSLATION

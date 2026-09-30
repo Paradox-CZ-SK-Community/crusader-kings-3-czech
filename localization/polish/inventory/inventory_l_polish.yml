@@ -35,6 +35,10 @@
  artifact_history_purchased_desc: "[HISTORY_ENTRY.GetRecipient.GetTitledFirstNameNicknamedNoTooltipRegnal] artefakt [Select_CString(HISTORY_ENTRY.GetRecipient.IsFemale,'zakoupila','zakoupil')]"
  artifact_history_ransomed_title: "[HISTORY_ENTRY.GetDate.GetString]"
  artifact_history_ransomed_desc: "[HISTORY_ENTRY.GetRecipient.GetTitledFirstNameNicknamedNoTooltipRegnal] artefakt [Select_CString(HISTORY_ENTRY.GetRecipient.IsFemale,'vykoupila','vykoupil')]"
+ artifact_history_enshrined_title: "[HISTORY_ENTRY.GetDate.GetString]" # todo: NEW TRANSLATION
+ artifact_history_enshrined_desc: "Uloženo ve svatyni [holy_site|E] [HISTORY_ENTRY.GetRecipientHolySite.GetName]" # todo: NEW TRANSLATION
+ artifact_history_removed_from_holy_site_title: "[HISTORY_ENTRY.GetDate.GetString]" # todo: NEW TRANSLATION
+ artifact_history_removed_from_holy_site_desc: "Odstraněno ze svatyně [holy_site|E] [HISTORY_ENTRY.GetRecipientHolySite.GetName]" # todo: NEW TRANSLATION
  UNKNOWN_BENEFACTOR: "neznámý dobrodinec"
  ARTIFACT_DURABILITY: "Trvanlivost: $CURRENT|1$ / $MAX|1$"
  ARTIFACT_HISTORY: "Historie artefaktu"
@@ -51,7 +55,11 @@
  trinket_1: "$trinket$"
  trinket_2: "$trinket$"
  trinket_3: "$trinket$"
- trinket_4: "$trinket$"
+ brooch: "Spona" # todo: NEW TRANSLATION
+ badge: "Odznak" # todo: NEW TRANSLATION
+ holy_relic_1: "Svatá relikvie" # todo: NEW TRANSLATION
+ holy_relic_2: "$holy_relic_1$" # todo: NEW TRANSLATION
+ holy_relic_3: "$holy_relic_1$" # todo: NEW TRANSLATION
  artifact_slot_pedestal: "Předmět na podstavci"
  artifact_slot_helmet: "Pokrývka hlavy"
  artifact_slot_miscellaneous: "Cetka"
@@ -65,6 +73,9 @@
  artifact_slot_wall_small: "Malá nástěnná ozdoba"
  artifact_slot_book: "Kniha"
  artifact_slot_journal: "Deník"
+ artifact_slot_badge: "$badge$" # todo: NEW TRANSLATION
+ artifact_slot_brooch: "Spona" # todo: NEW TRANSLATION
+ artifact_slot_holy_relic: "Svatá relikvie" # todo: NEW TRANSLATION
  artifact_crown: "Koruna"
  artifact_helmet: "Pokrývka hlavy"
  artifact_helmet_simple: "$artifact_helmet$"
@@ -75,6 +86,7 @@
  artifact_regalia_simple: "$regalia$"
  artifact_armor: "Zbroj"
  artifact_trinket: "Cetka"
+ artifact_badge: "$badge$" # todo: NEW TRANSLATION
  artifact_pedestal: "Předmět na podstavci"
  artifact_wall_big: "Velká nástěnná ozdoba"
  artifact_tapestry: "Tapiserie"
@@ -104,6 +116,7 @@
  artifact_armor_lamellar: "$armor$"
  artifact_armor_laminar: "$armor$"
  artifact_armor_brigandine: "$armor$"
+ artifact_holy_relic: "Svatá relikvie" # todo: NEW TRANSLATION
  pedestal: "Podstavec"
  wall_big: "Velká nástěnná ozdoba"
  wall_small: "Malá nástěnná ozdoba"
@@ -160,9 +173,10 @@
  RENAME_ARTIFACT_DESC: "Změnit název [ARTIFACT.GetNameNoTooltip]"
  RENAME_ARTIFACT_ACCEPT: "Přijmout"
  ARTIFACT_CURRENT_HOLDER: "Současný držitel: [Artifact.GetOwner.GetName]"
+ ARTIFACT_CURRENT_HOLY_SITE_OWNER: "[enshrined|E] ve [holy_site|E]: [Artifact.GetHolySiteOwner.GetName]" # todo: NEW TRANSLATION
  ARTIFACT_CREATOR: "Tvůrce: [Artifact.GetCreator.GetName]"
  DETAILS_TAB_HISTORY: "Historie"
- DETAILS_TAB_CLAIMS: "Nárokovatelé"
+ DETAILS_TAB_CLAIMS: "Nárokovatelé #weak ([GetDataModelSize( ArtifactDetailsView.GetClaimants )])#!" # todo: CHANGED (predtym: Nárokovatelé)
  DETAILS_TAB_CLAIM_INTERACTIONS: "Máš nárok"
  DETAILS_TAB_NO_CLAIMANTS: "Na tento [Concept('artifact','artefakt')|E] nemá nikdo [Concept('artifact_claim','nárok')|E]"
  CHARACTER_HAS_NO_ARTIFACTS: "Žádné [Concept('artifacts','artefakty')|E]"
@@ -223,6 +237,7 @@
  DECAY_ARTIFACT_EQUIPPED: "Ve výbavě"
  DECAY_ARTIFACT_DISPlAY: "Vystaveno"
  DECAY_ARTIFACT_UNEQUIPPED: "V úschově"
+ DECAY_ARTIFACT_ENSHRINED: "Uloženo" # todo: NEW TRANSLATION
  DISPLAY_ARTIFACT: "#I \nKliknutím vystavíš#!"
  PUT_COURT_ARTIFACT_ON_DISPLAY: "#I \nKliknutím zde vystavíš#!"
  REMOVE_COURT_ARTIFACT_FROM_DISPLAY: "#I \nKliknutím uložíš#!"
@@ -251,3 +266,16 @@
  artifact_plate: "Talíř"
  artifact_urn: "Urna"
  artifact_tun_barrel: "Sud na víno"
+ rarity_trigger: "Úroveň [rarity|E] je $RARITY$" # todo: NEW TRANSLATION
+ rarity_trigger_greater_or_equal: "Úroveň [rarity|E] je $RARITY$ nebo vyšší" # todo: NEW TRANSLATION
+ rarity_trigger_greater_than: "Úroveň [rarity|E] je vyšší než $RARITY$" # todo: NEW TRANSLATION
+ rarity_trigger_less_or_equal: "Úroveň [rarity|E] je $RARITY$ nebo nižší" # todo: NEW TRANSLATION
+ rarity_trigger_less_than: "Úroveň [rarity|E] je nižší než $RARITY$" # todo: NEW TRANSLATION
+ rarity_trigger_not_equal: "Úroveň [rarity|E] není $RARITY$" # todo: NEW TRANSLATION
+ is_sanctified_for_faith_global: "Je posvěcena jako [holy_relic|E] pro [faith|E] víry [FAITH.GetName]" # todo: NEW TRANSLATION
+ is_sanctified_for_faith_third: "[ARTIFACT.GetName] je posvěcena jako [holy_relic|E] pro [faith|E] víry [FAITH.GetName]" # todo: NEW TRANSLATION
+ not_is_sanctified_for_faith_global: "Není #bold posvěcena#! jako [holy_relic|E] pro [faith|E] víry [FAITH.GetName]" # todo: NEW TRANSLATION
+ not_is_sanctified_for_faith_third: "[ARTIFACT.GetName] není #bold posvěcena#! jako [holy_relic|E] pro [faith|E] víry [FAITH.GetName]" # todo: NEW TRANSLATION
+ ARTIFACT_IS_HOLY_RELIC: "Je [holy_relic|E] #underline #TOOLTIP:ARTIFACT_IS_HOLY_RELIC_BREAKDOWN [Select_CString( Artifact.IsHolyRelicFor( Faith.Self ), 'for', 'but #n not#! for')]#!#! [Faith.GetName]" # todo: NEW TRANSLATION
+ ARTIFACT_IS_HOLY_RELIC_BREAKDOWN: "#T Požadavky na [holy_relic|E]#!\n [Artifact.GetIsHolyRelicForDesc( GetPlayer.GetFaith.Self )]" # todo: NEW TRANSLATION
+ HOLY_SITE_HAS_NO_VALID_SLOT: "@warning_icon! #X Žádné dostupné místo, kam lze umístit [ARTIFACT.GetName]#!" # todo: NEW TRANSLATION

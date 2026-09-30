@@ -16,6 +16,12 @@
  game_concept_rulerpossessive: "Vládcův"
  game_concept_ruler_desc: "Vládce je [Concept('character','postava')|El], která drží alespoň jeden [Concept('title','titul')|El]."
  game_concept_title: "Titul"
+ game_concept_secular_ruler: "Světský vládce" # todo: NEW TRANSLATION
+ game_concept_secular_ruler_desc: "$game_concept_secular_ruler$ je [ruler|E], který není součástí náboženské [government_form|E]." # todo: NEW TRANSLATION
+ game_concept_secular: "Světský" # todo: NEW TRANSLATION
+ game_concept_secular_desc: "$game_concept_secular_ruler_desc$" # todo: NEW TRANSLATION
+ game_concept_secular_rulers: "Světští vládci" # todo: NEW TRANSLATION
+ game_concept_secular_rulers_desc: "$game_concept_secular_ruler_desc$" # todo: NEW TRANSLATION
  game_concept_title_i: "@titles_icon!"
  game_concept_titles: "Tituly"
  game_concept_titlepossessive: "Titulu"
@@ -25,6 +31,7 @@
  game_concept_holder_possessive: "Držitelův"
  game_concept_holders_possessive: "Držitelů"
  game_concept_hold: "Držet"
+ game_concept_held: "Držený" # todo: NEW TRANSLATION
  game_concept_holder_desc: "Držitel [Concept('title','titulu')|El] je postava, která daný titul vlastní. Tituly [Concept('barony','baronství')|El] a [Concept('county','hrabství')|El] budou po osídlení vždy mít [Concept('holders','držitele')|El], zatímco tituly [Concept('duchy','vévodství')|El], [Concept('kingdom','království')|El] a [Concept('empire','říše')|El] ještě nemusely být vytvořeny. Další výhradou je, že $game_concept_holder$ titulu vysoké úrovně nemusí ve skutečnosti ovládat žádné území v [Concept('de_jure','de iure')|El] oblasti daného titulu.\n\nDržení titulů vyšší úrovně ti umožňuje mít [Concept('vassals','vazaly')|El] vyšší úrovně. Například vévodové mohou mít za vazaly hrabata a králové mohou mít vévody."
  game_concept_de_jure: "De iure"
  game_concept_de_jure_desc: "Většina [Concept('titles','titulů')|El] je považována za součást titulu vyšší úrovně de iure („podle práva“).\n\nNapříklad [Concept('ruler','vládce')|El] může být [Concept('king','králem')|El] Anglie, ale jeho [Concept('realm','panství')|El] ještě nemusí obsahovat všechny země, které jsou právně považovány za součást Anglie.\n\n[Concept('holder','Držitel')|E] [Concept('duchy','vévodství')|El], [Concept('kingdom','království')|El] nebo [Concept('empire','říše')|El] má vždy [Concept('casus_belli','casus belli')|El] k uchvácení kontroly nad jeho de iure dílčími tituly.\n\n[Concept('vassals','Vazalové')|E] se také rozhodují, kdo je jejich [Concept('rightful_liege','právoplatným lenním pánem')|El], podle toho, jakého titulu je jejich [Concept('primary_title','hlavní titul')|El] de iure součástí."
@@ -51,8 +58,12 @@
  game_concept_obligation: "Povinnost"
  game_concept_vassal_obligations_desc: "Vazalské povinnosti určují, kolik [Concept('tax','daní')|El] a kolik [Concept('levies','odvedenců')|El] poskytuje [Concept('vassal','vazal')|El] svému [Concept('liege','lennímu pánovi')|El]. [Concept('government_form','Forma vlády')|E] vazala určuje, jak se jeho povinnosti upravují.\n\n#weak Například $game_concept_obligations$ [Concept('vassals','vazalů')|El] s vládou [GetGovernment('feudal_government').GetName] a [GetGovernment('clan_government').GetName] závisí na jejich [Concept('vassal_contract','vazalské smlouvě')|El], zatímco povinnosti vazala s vládou [GetGovernment('administrative_government').GetName] závisí na jeho [Concept('province_administration','správě provincie')|El]."
  game_concept_contract: "Smlouva"
+ game_concept_government_authority: "Autorita vlády" # todo: NEW TRANSLATION
+ game_concept_government_authority_desc: "$game_concept_government_authority$ představuje obecnou moc, kterou [ruler|E] uplatňuje vůči svým [vassals|E].\n\nRůzné [governments|E] mají různé podoby $game_concept_government_authority$. Například [feudal|E] [realms|E] používají [crown_authority|E], [clans|E] používají [tribal_authority|E] a [administrative|E] používají [imperial_bureaucracy|E]. Zvýšení $game_concept_government_authority$ stojí určité množství [prestige|E] v závislosti na úrovni a [learning_skill|E] vládce.\n\n#weak Vazalům se vyšší úrovně $game_concept_government_authority$ nelíbí a jejím snížením se primárně zabývají [Concept( 'liberty_faction', 'Liberty Factions' )|E].#!\n\nNe všechny [governments|E] mají $game_concept_government_authority$." # todo: NEW TRANSLATION
  game_concept_crown_authority: "Korunní autorita"
  game_concept_crown_authority_desc: "Korunní autorita představuje obecnou moc, kterou [Concept('ruler','vládce')|El] uplatňuje nad svými [Concept('vassals','vazaly')|El].\n\nExistují čtyři úrovně korunní autority: [Concept('autonomous_vassals','autonomní vazalové')|El], [Concept('limited','omezená')|El], [Concept('high','vysoká')|El] a [Concept('absolute','absolutní')|El]. $game_concept_crown_authority$ lze zvýšit za určité množství [Concept('prestige','prestiže')|El] podle úrovně a [Concept('learning_skill','učenosti')|El] vládce.\n\n#weak Vazalové nemají rádi vyšší úrovně korunní autority a její snížení je hlavním cílem [Concept( 'liberty_faction', 'frakcí za svobodu' )|El].#!"
+ game_concept_church_authority: "Autorita církve" # todo: NEW TRANSLATION
+ game_concept_church_authority_desc: "$game_concept_church_authority$ představuje moc, kterou [theocratic|E] [ruler|E] uplatňuje vůči svému [clergy|E] a [vassals|E].\n\nExistují čtyři úrovně $game_concept_church_authority$: $church_authority_0$, $church_authority_1$, $church_authority_2$ a $church_authority_3$. Zvýšení $game_concept_church_authority$ stojí určité množství [piety|E] a [prestige|E] v závislosti na úrovni a [learning_skill|E] vládce.\n\n#weak Vazalům se vyšší úrovně $game_concept_church_authority$ nelíbí a jejím snížením se primárně zabývají [Concept( 'liberty_faction', 'Liberty Factions' )|E].#!" # todo: NEW TRANSLATION
  game_concept_autonomous_vassals: "Autonomní vazalové"
  game_concept_autonomous_vassals_crown_authority: "Korunní autorita autonomních vazalů"
  game_concept_autonomous_vassals_crown_authority_desc: "„$game_concept_autonomous_vassals$“ je nejnižší úroveň [Concept('crown_authority','korunní autority')|El]. Na této úrovni nemají [Concept('vassals','vazalové')|El] vůči svému [Concept('liege','lennímu pánovi')|El] žádný postih k [Concept('opinion','mínění')|El] a lenní pán nad nimi má pouze základní moc."
@@ -149,6 +160,8 @@
  game_concept_spymaster_desc: "Špehmistr je tvůj [Concept('councillor','rádce')|El] odpovědný za záležitosti intrik a zpravodajství. Dávej si pozor na neloajálního špehmistra, protože může snadno utajit [GetScheme('murder').GetTypeName] proti tobě a tvé blízké rodině a sám se na ní podílet!"
  game_concept_court_chaplain: "Dvorní kaplan"
  game_concept_court_chaplains: "Dvorní kaplani"
+ game_concept_court_chaplain_possessive: "Kaplan dvora" # todo: NEW TRANSLATION
+ game_concept_court_chaplains_possessive: "Kaplani dvora" # todo: NEW TRANSLATION
  game_concept_court_chaplain_desc: "Dvorní kaplan je [Concept('councillor','rádce')|El] odpovědný za náboženské a duchovní záležitosti ve [Concept('faiths','vírách')|El] s [Concept('doctrine','doktrínou')|El] [GetFaithDoctrine('doctrine_theocracy_lay_clergy').GetBaseName].\n\nVíry s doktrínou [GetFaithDoctrine('doctrine_theocracy_temporal').GetBaseName] mají namísto dvorního kaplana mnohem mocnějšího (a problematičtějšího) [Concept('realm_priest','vrchního duchovního')|El]."
  game_concept_realm_priest: "Vrchní duchovní"
  game_concept_realm_priests: "Vrchní duchovní"
@@ -290,6 +303,7 @@
  game_concept_religion_desc: "Náboženství se může skládat z mnoha různých vyznání, zvaných [Concept('faiths','víry')|El]. Náboženství pak náležejí k jedné ze čtyř větších [Concept('religious_families','náboženských rodin')|El]: [GetReligionFamily('rf_abrahamic').GetName], [GetReligionFamily('rf_eastern').GetName], [GetReligionFamily('rf_sinitic').GetName] nebo [GetReligionFamily('rf_pagan').GetName]."
  game_concept_heresy: "Kacířství"
  game_concept_heresies: "Kacířství"
+ game_concept_heretical: "Kacířský" # todo: NEW TRANSLATION
  game_concept_heresy_desc: "Když je [Concept('fervor','horlivost')|El] [Concept('faith','víry')|El] nízká, může dojít k vypuknutí kacířství. Když se to stane, [Concept('ruler','vládce')|El] víry s nízkou horlivostí konvertuje k jiné víře a stane se [GetTrait('heresiarch').GetName( GetNullCharacter )]. Poté rozšíří svou novou víru do svých [Concept('counties','hrabství')|El] a mezi své [Concept('vassals','vazaly')|El].\n\nPokud je vypuknutí menšího rozsahu, tím to skončí. Pokud jde o velké vypuknutí, konvertuje více vládců ve stejné oblasti. Pokud se v této oblasti nacházíš, dostaneš také možnost konvertovat, budeš-li chtít."
  game_concept_faith: "Víra"
  game_concept_faiths: "Víry"
@@ -299,6 +313,7 @@
  game_concept_tolerate: "Tolerovat"
  game_concept_tolerates: "Toleruje"
  game_concept_fervor: "Horlivost"
+ game_concept_fervor_i: "@fervor_icon!" # todo: NEW TRANSLATION
  game_concept_fervor_desc: "Horlivost [Concept('faith','víry')|El] se pohybuje od #V 0#! do #V 100 %#!. Nízká horlivost usnadňuje [Concept('rulers','vládcům')|El] vytváření vlastních nových věr a zvyšuje pravděpodobnost, že [Concept('counties','hrabství')|El] a postavy konvertují k jiným vírám, včetně [Concept('heresies','kacířství')|El]. Vysoká $game_concept_fervor$ zvyšuje rychlost konverze hrabství.\n\nHorlivost se přirozeně mění v čase. Menší víry mívají vyšší horlivost. Větší víry mívají nízkou horlivost.\n\nVedení velkých svatých válek a úspěšných svatých válek snižuje $game_concept_fervor$. Být jejich cílem horlivost zvyšuje. Vypuknutí [Concept('heresy','kacířství')|El] $game_concept_fervor$ výrazně zvýší."
  game_concept_doctrine: "Doktrína"
  game_concept_doctrines: "Doktríny"
@@ -660,8 +675,12 @@
  game_concept_holy_order: "Svatý řád"
  game_concept_holy_orders: "Svaté řády"
  game_concept_holy_order_i: "@government_type_holy_order!"
+ game_concept_holy_order_possessive: "Řád" # todo: NEW TRANSLATION
+ game_concept_holy_orders_possessive: "Řády" # todo: NEW TRANSLATION
  game_concept_holy_order_desc: "Svaté řády jsou nezávislé vojenské organizace, které usilují o obranu a rozšíření vlivu své [Concept('faith','víry')|El].\n\nVládci jejich víry si je mohou najmout, pokud jsou ve [Concept('war','válce')|El] s [Concept('faith_hostile','nepřátelskou')|L] nebo [Concept('faith_evil','ďábelskou')|L] [Concept('faith','vírou')|El], za cenu [Concept('piety','zbožnosti')|El]. Jakmile tato válka skončí, přestanou za daného vládce bojovat.\n\nSvatý řád může mít [Concept('holy_order_patron','patrona svatého řádu')|El], který za využití jeho služeb nemusí platit."
  game_concept_holy_order_patron: "Patron svatého řádu"
+ game_concept_holy_order_patronage: "Patronát svatého řádu" # todo: NEW TRANSLATION
+ game_concept_holy_order_patronize: "Podpořit" # todo: NEW TRANSLATION
  game_concept_holy_order_patron_desc: "Patron svatého řádu [Concept('holy_order','svatého řádu')|El] je král nebo císař, který sdílí jeho [Concept('faith','víru')|El] a jehož [Concept('realm','panství')|El] obsahuje jeho hlavní sídlo.\n\nPatron svatého řádu může zdarma povolat podporu svatého řádu proti náboženským nepřátelům, místo aby platil [Concept('piety','zbožností')|El].\n\nNe všechny svaté řády mají [Concept('holy_order_patron','patrona svatého řádu')|El]."
  game_concept_mercenary_company: "Žoldnéřská družina"
  game_concept_mercenaries: "Žoldnéři"
@@ -920,6 +939,7 @@
  game_concept_landed_desc: "Zeměpán je [Concept('ruler','vládce')|El], který vlastní [Concept('holdings','državy')|El]. S výjimkou [Concept('theocracies','teokracií')|El] a [Concept('republics','republik')|El] se [Concept('commoners','poddaní')|El] automaticky stávají [Concept('nobles','urozenými')|El], když získají pozemek, a zakládají novou [Concept('dynasty','dynastii')|El]."
  game_concept_head_of_faith: "Hlava víry"
  game_concept_heads_of_faith: "Hlavy víry"
+ game_concept_head_of_faith_possessive: "Hlava víry" # todo: NEW TRANSLATION
  game_concept_head_of_faith_desc: "Hlava víry je formální vůdce [Concept('faith','víry')|El]. Pravomoci a povaha [Concept('head_of_faith','hlavy víry')|El] závisí na [Concept('doctrines','doktrínách')|El] dané víry.\n\nNěkteré víry mají [Concept('spiritual_head_of_faith','duchovní hlavu víry')|El] #weak (např. papeže)#!, některé [Concept('temporal_head_of_faith','světskou hlavu víry')|El] #weak (např. chalífu)#! a některé nemají [Concept('head_of_faith','hlavu víry')|El] vůbec."
  game_concept_spiritual_head_of_faith: "Duchovní hlava víry"
  game_concept_head_of_faith_spiritual: "Duchovní"
@@ -1232,6 +1252,10 @@
  game_concept_virtues: "Ctnosti"
  game_concept_virtuous: "Ctnostný"
  game_concept_virtue_desc: "Každá [Concept('faith','víra')|El] považuje určité [Concept('traits','rysy')|El] za ctnostné. Postavy s těmito rysy získávají bonusy k [Concept('opinion','mínění')|El] od všech postav, které tyto rysy považují za ctnostné, i když nesdílejí stejnou víru. Postavy, které mají rysy považované jejich vlastní vírou za ctnostné, navíc každý měsíc získávají bonusovou [Concept('piety','zbožnost')|El].\n\nTo, které rysy jsou považovány za ctnosti, se liší víru od víry, ale obvykle to určuje kombinace [Concept('core_tenets','základních zásad')|El] dané víry a [Concept('religion','náboženství')|El], k němuž víra náleží."
+ game_concept_virtue_weight: "Váha ctnosti" # todo: NEW TRANSLATION
+ game_concept_virtue_weight_desc: "Vlastnosti mohou mít přidruženou [sin|E] nebo [virtue|E] váhu, kterou určují [core_tenets|E] a [doctrines|E] [rite|E] a [religion|E], ke kterému náleží.\n\nVlastnosti s nejvyšší váhou hříchu nebo ctnosti v rámci ritu se stávají jeho [sins|E] a [virtues|E]." # todo: NEW TRANSLATION
+ game_concept_sin_weight: "Váha hříchu" # todo: NEW TRANSLATION
+ game_concept_sin_weight_desc: "$game_concept_virtue_weight_desc$" # todo: NEW TRANSLATION
  game_concept_sin: "Hřích"
  game_concept_sins: "Hříchy"
  game_concept_sinful: "Hříšný"
@@ -1271,6 +1295,10 @@
  game_concept_holy_site: "Svaté místo"
  game_concept_holy_sites: "Svatá místa"
  game_concept_holy_site_desc: "Svaté místo je [Concept('county','hrabství')|El], které obsahuje místo náboženského významu pro určitou [Concept('faith','víru')|El]. Svatá místa držená postavou správné víry poskytnou účinek každému, kdo tuto víru vyznává, a mohou také umožnit vytvoření [Concept('special_buildings','zvláštních budov')|El] nebo [Concept('holy_orders','svatých řádů')|El]. Každá víra má odlišnou sadu svatých míst."
+ game_concept_eminent_holy_site: "Významné posvátné místo" # todo: NEW TRANSLATION
+ game_concept_eminent_holy_sites: "Významná posvátná místa" # todo: NEW TRANSLATION
+ game_concept_eminent_holy_site_short: "Významné" # todo: NEW TRANSLATION
+ game_concept_eminent_holy_site_desc: "$game_concept_eminent_holy_site$ je [holy_site|E] s velkým významem pro [faith|E]. Každá víra může označit jako významných jen několik svých $game_concept_holy_sites$.\n\nPouze významná posvátná místa poskytují modifikátory, které ovlivňují všechny následovníky víry." # todo: NEW TRANSLATION
  game_concept_cultural_acceptance_i: "@cultural_acceptance_icon!"
  game_concept_cultural_acceptance: "Kulturní přijetí"
  game_concept_cultural_acceptance_desc: "Kulturní přijetí měří, nakolik se dvě [Concept('cultures','kultury')|El] navzájem přijímají.\n\nPředevším ovlivňuje, o kolik se snižuje [Concept('opinion','mínění')|El] mezi postavami různých kultur. Ovlivňuje také [Concept('county_opinion','mínění hrabství')|El] a cenu vytvoření [Concept('hybrid_culture','hybridní kultury')|El].\n\nKulturní přijetí se může měnit mnoha akcemi, zejména [Concept('wars','válkami')|El], udělováním a odebíráním [Concept('titles','titulů')|El] a [Concept('councillor_task','úkolem rádce')|El] [Concept('accept_culture','přijmout kulturu')|El].\n\nČasem se přijetí vrátí k [Concept('cultural_acceptance_baseline','základní hodnotě kulturního přijetí')|El], pokud ji převyšuje."
@@ -1310,9 +1338,12 @@
  game_concept_culture_head_desc_NO_REFORM_DLC: "Hlava kultury může také zavádět nové [Concept('traditions','tradice')|El] pro svou kulturu."
  game_concept_county_opinion: "Lidové mínění"
  game_concept_county_opinion_desc: "Běžné obyvatelstvo každého [Concept('county','hrabství')|El] má [Concept('opinion','mínění')|El] o [Concept('character','postavě')|El], která drží jejich $game_concept_county$. Pokud je obyvatelstvo nespokojené, může založit nebo se připojit k [Concept('peasant_faction','selské frakci')|El] či [Concept('popular_faction','lidové frakci')|El], z nichž kterákoli se může brzy rozšířit po celém [Concept('realm','panství')|El].\n\nNejjednodušším způsobem, jak držet $game_concept_county_opinion$ pod kontrolou, je zajistit, aby [Concept('holder','držitel')|El] $game_concept_county$ měl stejnou [Concept('culture','kulturu')|El] a [Concept('faith','víru')|El] jako obyvatelstvo.\n\nLidové mínění z odlišné [Concept('faith','víry')|El] se upravuje podle [Concept('faith_hostility','nepřátelství víry')|El] hrabství i jeho [Concept('fervor','horlivosti')|El], přičemž se lineárně škáluje mezi 0 a 100 body [Concept('fervor','horlivosti')|El]."
+ game_concept_tenet: "Zásada" # todo: NEW TRANSLATION
+ game_concept_tenet_desc: "Zatímco [doctrines|E] představují otázky, k nimž musí [rite|E] zaujmout stanovisko, $game_concept_tenets$ představují jedinečné zvláštnosti a zvyklosti ritu." # todo: NEW TRANSLATION
+ game_concept_tenets: "Zásady" # todo: NEW TRANSLATION
  game_concept_core_tenet: "Zásada"
- game_concept_core_tenet_desc: "Zatímco [Concept('doctrines','doktríny')|El] představují otázky, k nimž musí [Concept('faith','víra')|El] zaujmout postoj, $game_concept_core_tenets$ představují jedinečné zvláštnosti a obřady dané víry."
  game_concept_core_tenets: "Zásady"
+ game_concept_core: "Základní" # todo: NEW TRANSLATION
  game_concept_holy_war: "Svatá válka"
  game_concept_holy_wars: "Svaté války"
  game_concept_holy_war_holy: "Svatá"
@@ -1345,6 +1376,7 @@
  game_concept_title_tier_desc: "Územní protějšek [Concept('rank','hodnosti')|El] titulu, tedy úroveň, určuje postavení [Concept('title','titulu')|El] v hierarchii hry.\n\nVšechny tituly mají úroveň, která určuje nejvyšší možnou úroveň [Concept('vassals','vazalů')|El], které může [Concept('holder','držitel')|El] mít.\n\n[Concept('hegemony','Hegemonie')|E] > [Concept('empire','říše')|E] > [Concept('kingdom','království')|E] > [Concept('duchy','vévodství')|E] > [Concept('county','hrabství')|E] > [Concept('barony','baronství')|E]."
  game_concept_title_rank_desc: "Osobní protějšek [Concept('title_tier','úrovně titulu')|El], $game_concept_title_rank$, určuje postavení [Concept('ruler','vládce')|El] v hierarchii hry.\n\nVšechny úrovně titulů mají přidruženou hodnost, která určuje nejvyšší možnou hodnost [Concept('vassals','vazalů')|El], které může [Concept('holder','držitel')|El] mít.\n\n[Concept('hegemon','Hegemon')|E] > [Concept('emperor','císař')|E] > [Concept('king','král')|E] > [Concept('duke','vévoda')|E] > [Concept('count','hrabě')|E] > [Concept('baron','baron')|E]."
  game_concept_clergy: "Duchovenstvo"
+ game_concept_clerical: "Duchovní" # todo: NEW TRANSLATION
  game_concept_clergy_desc: "[Concept('court_chaplains','Dvorní kaplani')|E], [Concept('realm_priests','vrchní duchovní')|El], [Concept('theocratic','teokratičtí')|El] vládci a kdokoli s rysem [GetTrait('devoted').GetName( GetNullCharacter )] jsou považováni za členy duchovenstva.\n\n[Concept('doctrines','Doktríny')|E] [Concept('faith','víry')|El] určují, kdo může být členem duchovenstva a zda se členové duchovenstva mohou ženit, dědit půdu atd."
  game_concept_church_property: "Církevní državy"
  game_concept_church_holdings: "Církevní državy"
@@ -1495,6 +1527,9 @@
  game_concept_nominate_desc: "Pod volitelnými [Concept('succession_laws','zákony nástupnictví')|El] může každý [Concept('elector','volitel')|El] nominovat svého upřednostňovaného [Concept('title_heir','dědice titulu')|El]. Platní kandidáti a hlasovací preference volitelů se liší podle konkrétního zákona."
  game_concept_elector: "Volitel"
  game_concept_electors: "Volitelé"
+ game_concept_elector_i: "@election_icon!" # todo: NEW TRANSLATION
+ game_concept_election: "Volba" # todo: NEW TRANSLATION
+ game_concept_elections: "Volby" # todo: NEW TRANSLATION
  game_concept_elector_desc: "Volitelé jsou postavy, které mohou podle volitelných [Concept('succession_laws','zákonů nástupnictví')|El] hlasovat pro svého upřednostňovaného [Concept('title_heir','dědice titulu')|El]. Konkrétní zákon určuje, kdo je považován za volitele."
  game_concept_attraction: "Přitažlivost"
  game_concept_attracted: "Přitahován"
@@ -1517,6 +1552,10 @@
  game_concept_title_succession: "Nástupnictví titulu"
  game_concept_title_specific_succession: "Specifické pro titul"
  game_concept_title_succession_desc: "[Concept('title','Titul')|E] může mít vlastní [Concept('succession_law','zákon nástupnictví')|El], který se liší od zákona [Concept('realm','panství')|El] jeho [Concept('holder','držitele')|El].\n\n[Concept('kingdoms','Království')|E] a [Concept('empires','říše')|El] mají tradiční nástupnictví titulu nejčastěji.\n\nDržitel [Concept('title','titulu')|El] může přidávat nebo odstraňovat zákony nástupnictví specifické pro titul, obvykle za cenu [Concept('prestige','prestiže')|El].\n\n[Concept('domiciles','Domicily')|E] mají také vlastní nástupnictví titulu, které nelze odstranit."
+ game_concept_elective_succession: "Volená posloupnost" # todo: NEW TRANSLATION
+ game_concept_elective_succession_desc: "Při $game_concept_elective_succession$ hlasují [electors|E] o výběru příštího [holder|E] [title|E], namísto aby titul přešel na dědice běžným děděním." # todo: NEW TRANSLATION
+ game_concept_advanced_succession: "Pokročilá posloupnost" # todo: NEW TRANSLATION
+ game_concept_advanced_succession_desc: "$game_concept_advanced_succession$ nahrazuje běžné dědění zvláštním způsobem výběru příštího [holder|E], například určením jediného [heir|E], aklamací nebo jmenováním." # todo: NEW TRANSLATION
  game_concept_designated_heir: "Určený dědic"
  game_concept_designated_heir_desc: "Určený dědic má přednost při rozhodování o tom, kdo se stane [Concept('realm_heir','dědicem panství')|El]."
  game_concept_incest: "Krvesmilstvo"
@@ -1603,6 +1642,7 @@
  game_concept_crush_desc: "První láska je jiné [Concept('child','dítě')|El], k němuž toto $game_concept_child$ začíná chovat své první (poněkud bolestně rozpačité) city. Po dosažení [Concept('adulthood','dospělosti')|El] může, pokud je $game_concept_crush$ vzájemná, vést k tomu, že se z nich stanou [Concept('lovers','milenci')|El], nebo se [Concept('character','postava')|El] může v životě pohnout dál."
  game_concept_blood_brother: "Pokrevní bratr"
  game_concept_blood_brothers: "Pokrevní bratři"
+ game_concept_blood_brotherhood: "Pokrevní bratrstvo" # todo: NEW TRANSLATION
  game_concept_blood_brother_possessive: "Pokrevního bratra"
  game_concept_blood_brothers_possessive: "Pokrevních bratrů"
  game_concept_blood_brother_desc: "Pokrevní bratr je zvláštní forma [Concept('friend','přítele')|El] a [Concept('ally','spojence')|El]. [Concept('characters','Postavy')|E] mohou mít pouze jednoho pokrevního bratra: tento $game_concept_blood_brother$ se stává symbolickým členem jejich rodiny (a proto už nesmí být [Concept('family','členem rodiny')|El]). Pokud $game_concept_blood_brother$ zavolá do [Concept('war','války')|El] a jeho volání je odmítnuto, [Concept('relation','zvláštní vztah')|El] se přeruší a oba se stanou [Concept('rivals','soky')|El].\n\nPokrevní bratři, jejich [Concept('children','děti')|El] a jejich hlavní choti mají navzájem zvýšené [Concept('opinion','mínění')|El] a mohou spolu vyjednávat [Concept('alliances','aliance')|El].\n\nPokrevní bratrství je dostupné prostřednictvím [Concept('nomadic_government','kočovné vlády')|El], [Concept('trait','rysu')|El] [GetTrait('nomadic_philosophy').GetName( GetNullCharacter )] nebo prostřednictvím [Concept('tradition','tradice')|El]."
@@ -1846,6 +1886,7 @@
  game_concept_unreformed_pagan_combat_bonus_desc: "[GetFaithDoctrine('unreformed_faith_doctrine').GetBaseName] [Concept('faiths','víry')|El] skupiny [GetReligionFamily('rf_pagan').GetName] získávají [Concept('advantage','výhodu')|El] v [Concept('battle','bitvě')|El] v [Concept('counties','hrabství')|El] své víry."
  game_concept_personality: "Osobnost"
  game_concept_character_personality: "Osobnost postavy"
+ game_concept_behave: "Chovej se" # todo: NEW TRANSLATION
  game_concept_personalities: "Osobnosti"
  game_concept_personality_desc: "Postavy se k tobě i k ostatním budou chovat podle své osobnosti, která je určena především jejich [Concept('personality_traits','osobnostními rysy')|El]."
  game_concept_economical_archetype: "Hospodářský archetyp"
@@ -1923,6 +1964,10 @@
  game_concept_force_duel_anyone_interaction_desc: "[Concept('interaction','Interakce')|E], která ti umožňuje vyzvat kohokoli na [Concept('single_combat_duel','duel')|El], když jsi [Concept('stressed','ve stresu')|El]."
  game_concept_artifact_rarity: "Vzácnost artefaktu"
  game_concept_rarity: "Vzácnost"
+ game_concept_common: "$artifacts_rarity_common$" # todo: NEW TRANSLATION
+ game_concept_masterwork: "$artifacts_rarity_masterwork$" # todo: NEW TRANSLATION
+ game_concept_famed: "$artifacts_rarity_famed$" # todo: NEW TRANSLATION
+ game_concept_illustrious: "$artifacts_rarity_illustrious$" # todo: NEW TRANSLATION
  game_concept_artifact_rarity_desc: "Některé [Concept('artifacts','artefakty')|El] jsou vzácnější než jiné, což se odráží v jejich vzácnosti.\n\nÚrovně od nejnižší po nejvyšší jsou:\n$BULLET_WITH_TAB$Běžná (nikdy se nezobrazuje, protože jde o výchozí stav)\n$BULLET_WITH_TAB$$masterwork$\n$BULLET_WITH_TAB$$famed$\n$BULLET_WITH_TAB$$illustrious$"
  game_concept_promote_other_culture_development_decision: "Rozhodnutí $promote_other_culture_development_decision_name$"
  game_concept_promote_other_culture_development_decision_desc: "[Concept('decision','Rozhodnutí')|E], které ti umožňuje zlepšit [Concept('development','rozvoj')|El], [Concept('control','kontrolu')|El], náklady na [Concept('building','budovu')|El] a obrannou [Concept('advantage','výhodu')|El] v [Concept('counties','hrabstvích')|El] odlišných [Concept('cultures','kultur')|El] s [Concept('cultural_acceptance','kulturním přijetím')|El] #V 75 %#! nebo vyšším.\n\nPřijetí tohoto rozhodnutí také zvýší tvou [Concept('prestige','prestiž')|El] [prestige_i] a [Concept('levies','odvedence')|El].\n\nOvlivněna jsou všechna hrabství v [Concept('realm','panství')|El]. Cena ve [Concept('gold','zlatě')|El] se škáluje podle počtu ovlivněných hrabství."
@@ -2367,8 +2412,9 @@
  game_concept_influence_ward_personality_desc: "[Concept('interaction','Interakce')|E], při níž se lze pokusit ovlivnit [Concept('ward','svěřence')|El], aby přijal [Concept('personality_trait','osobnostní rys')|El] podobný vlastnímu."
  game_concept_faction_commitment: "Frakční odhodlání"
  game_concept_faction_commitment_desc: "Pravděpodobnost, že [Concept('character','postava')|El] podpoří [Concept('faction','frakci')|El] proti svému [Concept('liege','lennímu pánovi')|El].\n\nMůže ji ovlivnit mnoho důvodů, nejčastěji [Concept('personality','osobnost')|El], [Concept('opinion','mínění')|El] a [Concept('culture','kultura')|El]."
+ game_concept_state_rite: "Státní ritus" # todo: NEW TRANSLATION
  game_concept_state_faith: "Státní víra"
- game_concept_state_faith_desc: "Státní víra je [Concept('faith','víra')|El] podporovaná a schvalovaná [Concept('administrative_government','administrativní vládou')|El]. Tato víra je vázána na [Concept('title','titul')|El], nikoli k žádné konkrétní [Concept('character','postavě')|El]. Konvertovat postavy v [Concept('realm','panství')|El] ke státní víře je snazší a odvrátit je od ní je velmi obtížné.\n\nStátní víru může změnit pouze [Concept('ruler','vládce')|El] administrativního panství, ale [Concept('governors','guvernéři')|El] k ní mohou svobodně konvertovat."
+ game_concept_state_rite_desc: "$game_concept_state_rite$ je [rite|E] podporovaný a schválený [administrative_government|E]. Tento ritus je spojen s [title|E], nikoli s konkrétní [character|E]. Převést postavy v [realm|E] ke státnímu ritu je snazší a od něj je naopak velmi obtížné je odvrátit.\n\nStátní ritus může změnit pouze [ruler|E] administrativní říše, ale [governors|E] k němu mohou kdykoli přestoupit." # todo: NEW TRANSLATION
  game_concept_story_cycle: "Příběh"
  game_concept_story_cycles: "Příběhy"
  game_concept_story_cycle_desc: "Příběh je osobní situace spojená s [Concept('ruler','vládcem')|El].\n\nExistuje mnoho druhů příběhů — od vlastnictví [GetModifier('dog_story_modifier').GetNameWithTooltip] až po to stát se #V [GetTrait('conqueror').GetName( GetNullCharacter )]#!. Každý je vystavěn z různých prvků, obvykle zahrnujících klíčové [Concept('characters','postavy')|El], [Concept('titles','tituly')|El] nebo [Concept('decisions','rozhodnutí')|El]."
@@ -2440,3 +2486,13 @@
  game_concept_bloc_expansion_war_desc: "Válka o rozšíření bloku je zvláštní typ [Concept('war','války')|El] vedené členem [Concept('bloc','bloku')|El].\n\nV případě vítězství může vítěz jmenovat [Concept('ruler','vládce')|El] pro sporné [Concept('titles','tituly')|El], nebo si je ponechat pro sebe.\n\nJmenování [Concept('ruler','vládce')|El] tímto způsobem dá příjemci [Concept('hook','páku')|El], připojí jej k vítězovu [Concept('bloc','bloku')|El] a založí nový [Concept('house','rod')|El], pokud příjemce není [Concept('house_head','hlavou rodu')|El]."
  game_concept_retirement_age: "$celestial_retirement_law$"
  game_concept_retirement_age_desc: "[Concept('law','Zákon')|E] „$celestial_retirement_law$“ určuje věk stanovený [Concept('top_liege','nejvyšším lenním pánem')|El] [Concept('realm','panství')|El], po jehož dosažení se [Concept('governors','guvernéři')|El] a [Concept('ministers','ministři')|El] mohou rozhodnout odejít na odpočinek prostřednictvím [Concept('decision','rozhodnutí')|El], nebo k tomu být donuceni [Concept('character_interaction','interakcí s postavou')|El] z důvodu hrozící sešlosti a snížené schopnosti sloužit."
+ game_concept_holy_order_vicinity: "Blízkost řádu" # todo: NEW TRANSLATION
+ game_concept_holy_order_vicinity_desc: "Maximální vzdálenost, na kterou je [monastic_holy_order|E] nebo [military_holy_order|E] dostupný [ruler|E].\n\nAby byla splněna podmínka blízkosti řádu, musí mít řád [leased|E] [holding|E] ve vaší podřízené [realm|E] nebo v sousedním [county|E].\n\nVojenské řády musí být v dosahu, aby je bylo možné najmout do [wars|E]. Stejně tak většina [interactions|E] s mnišskými řády není dostupná, pokud je [monastic_holy_order|E] příliš daleko." # todo: NEW TRANSLATION
+ game_concept_fallback_heir: "Náhradní dědic" # todo: NEW TRANSLATION
+ game_concept_fallback_heir_desc: "$game_concept_fallback_heir$ se stane [realm_heir|E] cílového [title|E], když se vyprázdní běžná linie [succession|E]." # todo: NEW TRANSLATION
+ game_concept_fallback_heir_title: "Titul náhradního dědice" # todo: NEW TRANSLATION
+ game_concept_fallback_heir_title_desc: "[holder|E] $game_concept_fallback_heir_title$ se stane [realm_heir|E] cílového [title|E], když se vyprázdní běžná linie [succession|E]." # todo: NEW TRANSLATION
+ game_concept_prince_elector: "Kníže-kurfiřt" # todo: NEW TRANSLATION
+ game_concept_prince_electors: "Knížata-kurfiřti" # todo: NEW TRANSLATION
+ game_concept_prince_elector_desc: "$game_concept_prince_electors$ jsou #V 7#! [electors|E], kteří spolu s císařem vybírají [title_heir|E] podle [succession_law|E] [GetLaw('princely_elective_succession_law').GetName], kterou používá [SelectLocalization( GetPlayer.IsValid, 'game_concept_prince_elector_desc_ingame', 'e_hre' )].\n\nPřednost mezi $game_concept_prince_electors$ mají [holders|E] #V 7#! upřednostňovaných [titles|E]. Tyto tituly se vybírají při založení císařství.\n\nPokud je titul $game_concept_prince_elector$ zničen, nedrží jej [de_jure|E] císařský [vassal|E], drží jej jiný $game_concept_prince_elector$ nebo se [religion|E] jeho držitele liší od císařovy, vybere se jiný de iure titul držený přímým císařským vazalem nebo [independent_ruler|E] podle těchto kritérií:\n$EFFECT_LIST_BULLET$Přednost mají [rulers|E] císařovy [faith|E] a [culture|E]\n$EFFECT_LIST_BULLET$Přednost mají [theocratic|E] a [feudal|E] vládci\n\n#help Upřednostňované tituly jsou uvedeny v přehledu voleb#!" # todo: NEW TRANSLATION
+ game_concept_prince_elector_desc_ingame: "[GetTitleByKey('e_hre').GetDefinitiveName]" # todo: NEW TRANSLATION

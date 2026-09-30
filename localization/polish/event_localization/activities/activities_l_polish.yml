@@ -32,8 +32,8 @@
  debug_gui.activity_weight.modifier.losing_weight: "Snažím se zhubnout: $VALUE|+0$"
  debug_gui.activity_weight.modifier.gaining_weight: "Snažím se přibrat: $VALUE|+0$"
  debug_gui.activity_weight.stress.more_than_low: "Jsem [Concept('stressed','ve stresu')|E]: $VALUE|+0$"
- debug_gui.activity_weight.faith.tenet_ritual_celebrations: "Má [Concept('faith','víra')|E] má [GetFaithDoctrine('tenet_ritual_celebrations').GetBaseName]: $VALUE|+0$"
- debug_gui.activity_weight.faith.tenet_hedonistic: "Má [Concept('faith','víra')|E] má [GetFaithDoctrine('tenet_hedonistic').GetBaseName]: $VALUE|+0$"
+ debug_gui.activity_weight.faith.tenet_ritual_celebrations: "Má [Concept('faith','víra')|E] má [GetTenetType('tenet_ritual_celebrations').GetBaseName]: $VALUE|+0$" # todo: CHANGED (predtym: Má [Concept('faith','víra')|E] má [GetFaithDoctrine('tenet_ritual_celebrations').GetBaseName]: $VALUE|+0$)
+ debug_gui.activity_weight.faith.tenet_hedonistic: "Má [Concept('faith','víra')|E] má [GetTenetType('tenet_hedonistic').GetBaseName]: $VALUE|+0$" # todo: CHANGED (predtym: Má [Concept('faith','víra')|E] má [GetFaithDoctrine('tenet_hedonistic').GetBaseName]: $VALUE|+0$)
  debug_gui.activity_weight.gold.prefers_cheapness: "Nemám nazbyt mnoho [Concept('gold','zlata')|E]: $VALUE|+0$"
  debug_gui.activity_weight.gold.prefers_middling: "Mám dost [Concept('gold','zlata')|E] na něco slušného: $VALUE|+0$"
  debug_gui.activity_weight.gold.prefers_expense: "Mám nazbyt spoustu [Concept('gold','zlata')|E]: $VALUE|+0$"
@@ -41,7 +41,7 @@
  debug_gui.activity_weight.struggle.wants_to_deescalate: "Chci zmírnit svůj [Concept('struggle','svár')|E]: $VALUE|+0$"
  activity_feast: "Hostina"
  feast_activity_cost_desc: "Základní cena"
- activity_feast_name: "[ACTIVITY.GetOwner.GetNamePossessiveOrMy|U] hostina"
+ activity_feast_name: "[ACTIVITY.GetHost.GetNamePossessiveOrMy|U] hostina" # todo: CHANGED (predtym: [ACTIVITY.GetOwner.GetNamePossessiveOrMy|U] hostina)
  murder_feast_activity_cost_desc: "$feast_type_murder$"
  bloody_wedding_activity_cost_desc: "$wedding_type_bloody$"
  activity_feast_desc: "Upevni pouta věrnosti tím, že pozveš vazaly a sousedy do svých síní, aby jedli, pili a veselili se!\n\nHostiny pořádané ve správnou chvíli pomohou udržet tvé panství stabilní, uklidní poddané a otevřou cestu k novým přátelstvím."
@@ -88,6 +88,7 @@
  feast_cost_discount_citadel_of_aleppo: "Místo má $building_citadel_of_aleppo_02$"
  feast_cost_discount_theodosian_walls: "Místo má $building_theodosian_walls_01$"
  feast_cost_discount_hall_of_heroes: "Místo má $building_type_hall_of_heroes_01$"
+ feast_cost_discount_transubstantiation: "[personal_tenet|E]: $tenet_transubstantiation_default_name$" # todo: NEW TRANSLATION
  activity_feast_province_desc_theodosian_walls: "#P +++ $building_type_theodosian_walls_01$#!\n"
  activity_feast_province_desc_hall_of_heroes: "#P +++ $building_type_hall_of_heroes_01$#!\n"
  activity_feast_province_desc_citadel_of_aleppo: "#P +++ $building_type_citadel_of_aleppo_01$#!\n"
@@ -118,6 +119,8 @@
  food_good_reward_tt: "Složitost pokrmů na hosty udělala velký dojem"
  food_bad_reward_tt_title: "$final_reward_tt$"
  food_bad_reward_tt: "Složitost pokrmů hosty zklamala"
+ court_musician_increased_opinion_tt_title: "$court_musician_increased_opinion_tt$" # todo: NEW TRANSLATION
+ court_musician_increased_opinion_tt: "[first.GetShortUINameNoTooltip] hraje na hudební nástroje a baví hosty." # todo: NEW TRANSLATION
  not_poor_health_tt: "[Concept('health','Zdraví')|E] je #V Špatné#! nebo horší"
  activity_feast_guest_help_text: "Všichni pozvaní [Concept('activity_guests','hosté aktivity')|E] budou mít příležitost zapojit se do dění s ostatními účastníky a zlepšit si jejich [Concept('opinion','mínění')|E].\n\nHostiny jsou také ideální příležitostí jednoduše si odpočinout a zbavit se části [Concept('stress','stresu')|E]."
  murder_feast_failed_tt_title: "Neúspěšná vražda"
@@ -135,25 +138,25 @@
  activity_feast_province_desc: "Hostinu pořádáš v [ROOT.Province.GetName]\nProvincie s vhodnými budovami poskytují slevu na [gold_i][Concept('gold','zlato')|E]\n"
  activity_hunt: "Lov"
  hunt_phase_desc: "Pronásleduj kořist a rozhodni, jak ji skolíš"
- activity_hunt_name: "[ACTIVITY.GetOwner.GetNamePossessiveOrMy|U] lov"
+ activity_hunt_name: "[ACTIVITY.GetHost.GetNamePossessiveOrMy|U] lov" # todo: CHANGED (predtym: [ACTIVITY.GetOwner.GetNamePossessiveOrMy|U] lov)
  activity_hunt_desc: "[GetPlayer.Custom('GetHuntDesc')|U]"
  activity_hunt_desc_regular: "Štvanice přináší vzrušení i nebezpečí v hojné míře a zároveň je skvělou průpravou v jízdě na koni a lukostřelbě.\n\nNa lovy dohlíží [GetCourtPositionType('master_of_hunt_court_position').GetName()] a hlásí [Concept('hunt_sightings_no_prefix','zpozorování')|E] běžné, vzácné i nebezpečné zvěře."
  activity_hunt_desc_adventurer: "Štvanice přináší vzrušení i nebezpečí v hojné míře a zároveň je skvělou průpravou v jízdě na koni a lukostřelbě.\n\nPokud máš formu vlády [GetGovernment('landless_adventurer_government').GetName], lov ti přináší méně [prestige_i][Concept('prestige','prestiže')|E], zato poskytuje [provisions_i][Concept('provisions','proviant')|E]. Na lovy dohlíží [GetCourtPositionType('huntperson_camp_officer').GetName()].\n\nNa začátku lovu dostaneš možnost zakoupit si lovecké právo za [gold_i][Concept('gold','zlato')|E]. Pokud tak neučiníš, získáš [Concept('trait_level_track_xp','zkušenosti rysu')|E] pro cestu [GetTrait( 'gallowsbait' ).GetTraitTrackByKey( 'poacher' ).GetName] v rámci rysu [GetTrait('gallowsbait').GetName( GetNullCharacter )]."
  activity_hunt_owner: "Lovec"
  activity_meditation: "Meditace v ústraní"
- activity_meditation_name: "[ACTIVITY.GetOwner.GetNamePossessiveOrMy|U] meditace v ústraní"
- activity_meditation_desc: "[ACTIVITY.GetOwner.GetTitledFirstName] [Select_CString(ACTIVITY.GetOwner.IsFemale,'se uchýlila','se uchýlil')] do ústraní, aby [Select_CString(ACTIVITY.GetOwner.IsFemale,'mohla','mohl')] v klidu meditovat."
+ activity_meditation_name: "[ACTIVITY.GetHost.GetNamePossessiveOrMy|U] meditace v ústraní" # todo: CHANGED (predtym: [ACTIVITY.GetOwner.GetNamePossessiveOrMy|U] meditace v ústraní)
+ activity_meditation_desc: "[ACTIVITY.GetHost.GetTitledFirstName] [Select_CString(ACTIVITY.GetHost.IsFemale,'se uchýlila','se uchýlil')] do ústraní, aby [Select_CString(ACTIVITY.GetHost.IsFemale,'mohla','mohl')] v klidu meditovat." # todo: CHANGED, CHECK FORMAT (predtym: [ACTIVITY.GetOwner.GetTitledFirstName] [Select_CString(ACTIVITY.GetOwner.IsFemale,'se uchýlila','se uchýlil')] do ústran) # todo: FORMAT navyše [Select_CString(ACTIVITY.GetHost.IsFemale,'','')], [Select_CString(ACTIVITY.GetHost.IsFemale,'','')]
  activity_meditation_owner: "Meditující"
  activity_hold_court: "Pořádání audience"
- activity_hold_court_name: "[ACTIVITY.GetOwner.GetNamePossessiveOrMy|U] dvorská audience"
- activity_hold_court_desc: "[ACTIVITY.GetOwner.GetTitledFirstName] [Select_CString(ACTIVITY.GetOwner.IsFemale,'pozvala všechny své poddané, aby před ni přednesli','pozval všechny své poddané, aby před něj přednesli')] veškeré záležitosti, které vyžadují pozornost."
+ activity_hold_court_name: "[ACTIVITY.GetHost.GetNamePossessiveOrMy|U] dvorská audience" # todo: CHANGED (predtym: [ACTIVITY.GetOwner.GetNamePossessiveOrMy|U] dvorská audience)
+ activity_hold_court_desc: "[ACTIVITY.GetHost.GetTitledFirstName] [Select_CString(ACTIVITY.GetHost.IsFemale,'pozvala všechny své poddané, aby před ni přednesli','pozval všechny své poddané, aby před něj přednesli')] veškeré záležitosti, které vyžadují pozornost." # todo: CHANGED, CHECK FORMAT (predtym: [ACTIVITY.GetOwner.GetTitledFirstName] [Select_CString(ACTIVITY.GetOwner.IsFemale,'pozvala všechny své poddané, aby před) # todo: FORMAT chýba [ACTIVITY.GetHost.GetHerHim], [ACTIVITY.GetHost.GetHerHis]; navyše [Select_CString(ACTIVITY.GetHost.IsFemale,'',''
  activity_petition_liege: "Požádat lenního pána"
- activity_petition_liege_name: "[ACTIVITY.GetOwner.GetNamePossessiveOrMy|U] žádost"
- activity_petition_liege_desc: "[ACTIVITY.GetOwner.GetTitledFirstName] se [Select_CString(ACTIVITY.GetOwner.IsFemale,'obrátila','obrátil')] na svou vrchnost [ACTIVITY.GetOwner.GetLiege.GetTitledFirstName] s žádostí o pomoc v určitých záležitostech."
+ activity_petition_liege_name: "[ACTIVITY.GetHost.GetNamePossessiveOrMy|U] žádost" # todo: CHANGED (predtym: [ACTIVITY.GetOwner.GetNamePossessiveOrMy|U] žádost)
+ activity_petition_liege_desc: "[ACTIVITY.GetHost.GetTitledFirstName] se [Select_CString(ACTIVITY.GetHost.IsFemale,'obrátila','obrátil')] na svou vrchnost [ACTIVITY.GetHost.GetLiege.GetTitledFirstName] s žádostí o pomoc v určitých záležitostech." # todo: CHANGED, CHECK FORMAT (predtym: [ACTIVITY.GetOwner.GetTitledFirstName] se [Select_CString(ACTIVITY.GetOwner.IsFemale,'obrátila','obrátil')] na svou vrch) # todo: FORMAT chýba [ACTIVITY.GetHost.GetHerHis]; navyše [Select_CString(ACTIVITY.GetHost.IsFemale,'','')]
  visit_seer: "Navštívit věštce"
  visit_seer_desc: "Možná bude mít pár dobrých tipů a triků, jak přežít ve středověku."
  activity_adventure_name: "Dobrodružství"
- activity_adventure_desc: "[ACTIVITY.GetOwner.GetTitledFirstName] podniká dobrodružnou výpravu v této oblasti."
+ activity_adventure_desc: "[ACTIVITY.GetHost.GetTitledFirstName] podniká dobrodružnou výpravu v této oblasti." # todo: CHANGED (predtym: [ACTIVITY.GetOwner.GetTitledFirstName] podniká dobrodružnou výpravu v této oblasti.)
  activity_adventure_owner: "Dobrodruh"
  activity_gruesome_festival: "$tenet_gruesome_festivals_blot_name$"
  activity_gruesome_festival_selection_tooltip: "Pozvi své poddané k účasti na posvátném a nákladném obřadu"
@@ -171,8 +174,8 @@
  GOTO_ACTIVITY: "#I Kliknutím vycentruješ na mapě#!"
  GOTO_PLAYER_ACTIVITY: "#T [GetPlayer.GetCurrentActivity.GetType.GetName] v [GetPlayer.GetCurrentActivity.GetLocation.GetName]#! \n#I Kliknutím vybereš#!"
  activity_pay_homage: "Složení holdu"
- activity_pay_homage_name: "[ACTIVITY.GetOwner.GetNamePossessiveOrMy|U] složení holdu"
- activity_pay_homage_desc: "[ACTIVITY.GetOwner.GetTitledFirstName] si přeje slavnostně složit hold své vrchnosti [ACTIVITY.GetOwner.GetLiege.GetTitledFirstName]."
+ activity_pay_homage_name: "[ACTIVITY.GetHost.GetNamePossessiveOrMy|U] složení holdu" # todo: CHANGED (predtym: [ACTIVITY.GetOwner.GetNamePossessiveOrMy|U] složení holdu)
+ activity_pay_homage_desc: "[ACTIVITY.GetHost.GetTitledFirstName] si přeje slavnostně složit hold své vrchnosti [ACTIVITY.GetHost.GetLiege.GetTitledFirstName]." # todo: CHANGED, CHECK FORMAT (predtym: [ACTIVITY.GetOwner.GetTitledFirstName] si přeje slavnostně složit hold své vrchnosti [ACTIVITY.GetOwner.GetLiege.GetTitl) # todo: FORMAT chýba [ACTIVITY.GetHost.GetHerHis]
  activity_invite_rule_friends: "Přátelé"
  activity_invite_rule_potential_friends: "Možní přátelé"
  activity_invite_rule_potential_lovers: "Možní milenci"
@@ -214,21 +217,22 @@
  activity_invite_spouses_extended_family: "Širší rodina manžela či manželky"
  activity_invite_mp: "Ostatní hráči"
  activity_invite_rule_councillors: "Radní"
+ activity_invite_rule_clergy: "Duchovenstvo" # todo: NEW TRANSLATION
  activity_pilgrimage.is_location_valid.hajj_mecca: "Hadždž může vést pouze do Mekky"
- activity_pilgrimage.is_location_valid.recently_visited: "Toto [Concept('holy_site','posvátné místo')|E] jsi nedávno navštívil"
+ activity_pilgrimage.is_location_valid.recently_visited: "Toto [Concept('holy_site','posvátné místo')|E] jsi nedávno navštívil" # todo: CHANGED MINOR
+ pilgrimage_holy_site_cooldown_until_tt: "#warning Toto [holy_site|E] můžete znovu navštívit dne [GetCurrentDateWithDiff( GetVarTimeRemaining( pilgrimage_holy_site_cooldown_memory.MakeScope, 'pilgrimage_holy_site_cooldown') )].#!" # todo: NEW TRANSLATION
  activity_pilgrimage.serving_diarch: "Jsi oficiální [Concept('diarch','diarcha')|E] a očekává se, že zůstaneš v rámci [Concept('realm','panství')|E]"
  activity_pilgrimage.is_activity_available.all_holy_sites_on_cooldown: "Všechna dostupná [Concept('holy_site','posvátná místa')|E] jsou momentálně v době obnovy"
- activity_pilgrimage.is_valid.islam.must_complete_hajj_first: "Jako muslim s poutní [Concept('doctrine','doktrínou')|E] [GetFaithDoctrine('doctrine_pilgrimage_mandatory_hajj').GetBaseName] musíš před jakýmkoli jiným druhem pouti nejprve vykonat hadždž"
+ activity_pilgrimage.is_valid.islam.must_complete_hajj_first: "Jako muslim s poutní [Concept('doctrine','doktrínou')|E] [GetDoctrineType('doctrine_pilgrimage_mandatory_hajj').GetBaseName] musíš před jakýmkoli jiným druhem pouti nejprve vykonat hadždž" # todo: CHANGED (predtym: Jako muslim s poutní [Concept('doctrine','doktrínou')|E] [GetFaithDoctrine('doctrine_pilgrimage_mandatory_hajj').GetBase)
  activity_pilgrimage.is_location_valid.capital_is_holy_site: "Toto je tvé hlavní město, a proto není platným [Concept('holy_site','posvátným místem')|E] pro pouť"
  activity_pilgrimage.is_location_valid.capital_is_mecca: "Nemůžeš vykonat hadždž, protože tvým hlavním městem je Mekka"
- activity_pilgrimage.is_valid.islam.mandatory_or_impatient: "Alespoň jedna z těchto podmínek:\n$EFFECT_LIST_BULLET$ Tvá [Concept('faith','víra')|E] má poutní [Concept('doctrine','doktrínu')|E] [GetFaithDoctrine('doctrine_pilgrimage_mandatory_hajj').GetBaseName]\n$EFFECT_LIST_BULLET$ Máš rys [GetTrait('impatient').GetName(GetNullCharacter)]"
- activity_pilgrimage.is_valid.other.mandatory_or_impatient: "Alespoň jedna z těchto podmínek:\n$EFFECT_LIST_BULLET$ Tvá [Concept('faith','víra')|E] má poutní [Concept('doctrine','doktrínu')|E] [GetFaithDoctrine('doctrine_pilgrimage_mandatory').GetBaseName]\n$EFFECT_LIST_BULLET$ Máš rys [GetTrait('impatient').GetName(GetNullCharacter)]"
+ activity_pilgrimage.is_valid.islam.mandatory_or_impatient: "Alespoň jedna z těchto podmínek:\n$EFFECT_LIST_BULLET$ Tvá [Concept('faith','víra')|E] má poutní [Concept('doctrine','doktrínu')|E] [GetDoctrineType('doctrine_pilgrimage_mandatory_hajj').GetBaseName]\n$EFFECT_LIST_BULLET$ Máš rys [GetTrait('impatient').GetName(GetNullCharacter)]" # todo: CHANGED (predtym: Alespoň jedna z těchto podmínek:\n$EFFECT_LIST_BULLET$ Tvá [Concept('faith','víra')|E] má poutní [Concept('doctrine','do)
+ activity_pilgrimage.is_valid.other.mandatory_or_impatient: "Alespoň jedna z těchto podmínek:\n$EFFECT_LIST_BULLET$ Tvá [Concept('faith','víra')|E] má poutní [Concept('doctrine','doktrínu')|E] [GetDoctrineType('doctrine_pilgrimage_mandatory').GetBaseName]\n$EFFECT_LIST_BULLET$ Máš rys [GetTrait('impatient').GetName(GetNullCharacter)]" # todo: CHANGED (predtym: Alespoň jedna z těchto podmínek:\n$EFFECT_LIST_BULLET$ Tvá [Concept('faith','víra')|E] má poutní [Concept('doctrine','do)
  activity_pilgrimage.is_valid.pilgrim_or_patient: "Alespoň jedna z těchto podmínek:\n$EFFECT_LIST_BULLET$ Máš rys [GetTrait('patient').GetName(GetNullCharacter)]\n$EFFECT_LIST_BULLET$ Máš [GetTrait('pilgrim').GetName(GetNullCharacter)] [Concept('trait','rys')|E]\n$EFFECT_LIST_BULLET$ Máš [GetTrait('hajjaj').GetName(GetNullCharacter)] [Concept('trait','rys')|E]"
  activity_pilgrimage.is_valid.hajjed_recently: "Na hadždž se můžeš vydat pouze jednou za [EmptyScope.ScriptValue('hajj_cooldown_value')|0] let"
  ACTIVITY_TYPE_ON_COOLDOWN: "@warning_icon! #X Tuto aktivitu nelze pořádat po dobu [DATE.GetTimeToDate()]#!"
  is_activity_type_on_cooldown: "Tuto aktivitu nelze pořádat po dobu [DATE.GetTimeToDate()]"
  is_healthy_tt: "Zdraví je v pořádku"
- hunt_rampage_bodyguard_log_title: "#D TODO_CD: hunt_rampage_bodyguard_log_title#!"
  level_5_reward_tt_title: "Konec turné"
  level_4_reward_tt_title: "$level_5_reward_tt_title$"
  level_3_reward_tt_title: "$level_5_reward_tt_title$"

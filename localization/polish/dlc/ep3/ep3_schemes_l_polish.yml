@@ -5,8 +5,8 @@
  slander_desc_general: "V Pomluvě [Concept('scheme','intrika')|E] se snažíte poškodit [Concept('influence','vliv')|E] a [Concept('candidate_score','skóre kandidáta')|E] jiného charakteru." # todo: CONCEPT CASE
  SLANDER_SUCCESS_DESC: "Snížíte [SCHEME.GetTargetCharacter.GetShortUINamePossessive] [Concept('influence','vliv')|E] a [Concept('candidate_score','skóre kandidáta')|E]." # todo: CONCEPT CASE
  slander_invalidated_title: "@scheme_icon! Pomluva končí"
- scheme_target_not_admin: "[SCHEME.GetTargetCharacter.GetShortUIName|U] nemá žádnou [Concept('administrative','administrativního')|E] [Concept('government','vládu')|E]" # todo: CONCEPT CASE
- scheme_owner_not_admin: "Nemáte [Concept('administrative','administrativní')|E] [Concept('government','vláda')|E]" # todo: CONCEPT CASE
+ scheme_target_not_admin: "[SCHEME.GetTargetCharacter.GetShortUIName|U] nemá žádnou [Concept('government_bureaucratic_type','byrokratického')|E] [Concept('government','vládu')|E]" # todo: CHANGED (predtym: [SCHEME.GetTargetCharacter.GetShortUIName|U] nemá žádnou [Concept('administrative','administrativního')|E] [Concept('gov)
+ scheme_owner_not_admin: "Nemáte [Concept('government_bureaucratic_type','byrokratickou')|E] [Concept('government','vláda')|E]" # todo: CHANGED (predtym: Nemáte [Concept('administrative','administrativní')|E] [Concept('government','vláda')|E])
  start_slander_interaction: "Pomluva #weak (Plán)#!"
  scheme_interaction_tt_slander_approved: "Pokus poškodit [recipient.GetShortUINamePossessiveNoTooltip] [Concept('influence','vliv')|E] a výrazně snížit [recipient.GetHerHis] [Concept('candidate_score','skóre kandidáta')|E] pro všechny [Concept('titles','tituly')|E]" # todo: CONCEPT CASE
  start_slander_notification: "Pomluva"
@@ -51,7 +51,7 @@
  scheme_critical_moments.1143.desc_other: "Navzdory mému nejlepšímu úsilí nebylo možné učinit z [target.GetTitledFirstName] přijatelnějšího kandidáta...\n\nAsi budu muset vymyslet něco jiného, abych zajistil [target.GetHerHim] dobré místo."
  scheme_critical_moments.1143.a: "Promarněná příležitost."
  start_promote_interaction: "Prosadit #weak (Plán)#!"
- scheme_interaction_tt_promote_approved: "Pokus prosadit kandidaturu [recipient.GetShortUINamePossessiveNoTooltip] na [Concept('administrative','administrativní')|E] pozice" # todo: CONCEPT CASE
+ scheme_interaction_tt_promote_approved: "Pokus prosadit kandidaturu [recipient.GetShortUINamePossessiveNoTooltip] na [Concept('government_bureaucratic_type','byrokratické')|E] pozice" # todo: CHANGED (predtym: Pokus prosadit kandidaturu [recipient.GetShortUINamePossessiveNoTooltip] na [Concept('administrative','administrativní'))
  start_promote_notification: "Prosadit"
  promote_scheme_success_tt: "Pokud úspěšné:\n$EFFECT_LIST_BULLET$ Získá [Concept('opinion','mínění')|E] od [actor.GetShortUIName]\n$EFFECT_LIST_BULLET$ Získá [GetModifier('scheme_promoted_modifier').GetNameWithTooltip], který zvyšuje [Concept('candidate_score','skóre kandidáta')|E] pro všechny [Concept('titles','tituly')|E] s [GetLaw('appointment_succession_law').GetName] nebo [GetLaw('acclamation_succession_law').GetName]" # todo: CONCEPT CASE
  promote_scheme_success_self_tt: "Pokud bude úspěšné, [recipient.GetShortUIName|U] získá [GetModifier('scheme_promoted_modifier').GetNameWithTooltip], což poskytne zvýšený [Concept('candidate_score','skóre kandidáta')|E] pro všechna [Concept('titles','tituly')|E] s [GetLaw('appointment_succession_law').GetName] nebo [GetLaw('acclamation_succession_law').GetName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
@@ -123,8 +123,9 @@
  status_challenged_success_tt: "[Concept('powerful_family_rating','Hodnocení mocné rodiny')|E] domu [Concept('house','rod')|E] [recipient.GetHouse.GetName] sníženo o #N 5%#!" # todo: CONCEPT CASE
  expand_power_base: "Rozšířit mocenskou základnu"
  expand_power_base_action: "Rozšířit mocenskou základnu"
- expand_power_base_desc: "Pokusím se rozšířit rozsah a dosah svého vlivu, abych zvýšil svůj [Concept('investment_cap','investiční kapacitu')|E]." # todo: CONCEPT CASE
- expand_power_base_desc_general: "V rámci $expand_power_base$ [Concept('scheme','intriku')|E] trávíte čas pěstováním svých vlivných kontaktů, abyste zvýšili svůj [Concept('investment_cap','investiční kapacitu')|E]." # todo: CONCEPT CASE
+ expand_power_base_desc: "Pokusím se rozšířit rozsah a dosah svého vlivu, abych zvýšil svůj [Concept('investment_cap','investiční kapacitu')|E] a @appointment_score![candidate_score|E]." # todo: CHANGED (predtym: Pokusím se rozšířit rozsah a dosah svého vlivu, abych zvýšil svůj [Concept('investment_cap','investiční kapacitu')|E].)
+ expand_power_base_desc_general: "V rámci $expand_power_base$ [Concept('scheme','intriku')|E] trávíte čas pěstováním svých vlivných kontaktů, abyste zvýšili svůj [Concept('investment_cap','investiční kapacitu')|E] a @appointment_score![candidate_score|E]." # todo: CHANGED (predtym: V rámci $expand_power_base$ [Concept('scheme','intriku')|E] trávíte čas pěstováním svých vlivných kontaktů, abyste zvýši)
+ EXPAND_POWER_BASE_SUCCESS_DESC: "Vaše [investment_cap|E] a @appointment_score![candidate_score|E] se zvýší" # todo: NEW TRANSLATION
  expand_power_base_invalidated_title: "@scheme_icon! Rozšíření mocenské základny končí"
  scheme_critical_moments.1182.t: "$scheme_critical_moments.1132.t$"
  scheme_critical_moments.1182.desc: "Úspěch! Jméno rodu [ROOT.Char.GetHouse.GetName] nyní nese větší váhu v [ROOT.Char.GetTopLiege.GetPrimaryTitle.GetBaseName] — alespoň pro mě.\n\nÚplatky, laskavosti, dary, umisťování správných lidí na správná místa: žádný nástroj nezůstal nevyužit. Moje zásoby vlivu se prohlubují spolu s mými politickými schopnostmi."
@@ -133,9 +134,9 @@
  scheme_critical_moments.1183.desc: "Lidé mě prostě neocení.\n\nÚplatky, laskavosti, dary, zastrašování — #EMP nic#! nezabralo na zvýšení mého vlivu!\n\nAsi budu muset obrátit pozornost jinam..."
  scheme_critical_moments.1183.a: "Jedny dveře se zavřely..."
  start_expand_power_base_interaction: "Rozšířit mocenskou základnu #weak (Plán)#!"
- scheme_interaction_tt_expand_power_base_approved: "Pokus zvýšit váš [Concept('investment_cap','investiční kapacita')|E]" # todo: CONCEPT CASE
+ scheme_interaction_tt_expand_power_base_approved: "Pokus zvýšit váš [Concept('investment_cap','investiční kapacita')|E] a @appointment_score![candidate_score|E]" # todo: CHANGED (predtym: Pokus zvýšit váš [Concept('investment_cap','investiční kapacita')|E])
  start_expand_power_base_notification: "Rozšířit mocenskou základnu"
- expand_power_base_effect_tt: "Pokud úspěšné, zvýší [Concept('investment_cap','investiční kapacita')|E] na základě [stewardship_i][Concept('stewardship','správcovství')|E] a [intrigue_i][Concept('intrigue','pletichářství')|E] [Concept('skills','dovednosti')|E]" # todo: CONCEPT CASE
+ expand_power_base_effect_tt: "Pokud úspěšné, zvýší [Concept('investment_cap','investiční kapacita')|E] a @appointment_score![candidate_score|E] na základě [stewardship_i][Concept('stewardship','správcovství')|E] a [intrigue_i][Concept('intrigue','pletichářství')|E] [Concept('skills','dovednosti')|E]" # todo: CHANGED (predtym: Pokud úspěšné, zvýší [Concept('investment_cap','investiční kapacita')|E] na základě [stewardship_i][Concept('stewardship)
  CONTRACTED_THIEF_DESC: "Nepravděpodobný podezřelý: $VALUE|+0=$"
  depose: "Sesadit"
  depose_action: "Sesadit"
@@ -189,7 +190,7 @@
  damage_legitimacy_positive_outcome_tt: "Pokud úspěšné:\n$EFFECT_LIST_BULLET$ Ztratí #N [EmptyScope.ScriptValue('minor_legitimacy_gain')]#! [legitimacy_i][Concept('legitimacy','legitimita')|E]\n$EFFECT_LIST_BULLET$ Ztratí [Concept('opinion','mínění')|E] k [actor.GetShortUIName]" # todo: CONCEPT CASE
  damage_legitimacy_negative_outcome_tt: "Pokud neúspěšné, utratí #N [EmptyScope.ScriptValue('medium_influence_gain')] [influence_i][Concept('influence','vliv')|E]#!" # todo: CONCEPT CASE
  scheme_critical_moments.4011.t: "$damage_legitimacy_scheme$: Úspěch!"
- scheme_critical_moments.4011.desc: "Podívám se na dopis, který právě položil jeden z mých služebníků. Pergamen je bohatý, dokonce provoněný. Dopis z hlavního města, bezpochyby.\n\n„[target.GetTitleAsNameNoTooltip], [Select_CString(ROOT.Char.IsFemale,'její','jeho')] pán, prožívá velice nepříjemnou situaci...“\n\nÚsměv mi přejede po tváři. Nemusím číst dál. [Select_CString(target.IsFemale,'její','jeho')] legitimita byla poškozena — dokonalá příležitost k útoku."
+ scheme_critical_moments.4011.desc: "Podívám se na dopis, který právě položil jeden z mých služebníků. Pergamen je bohatý, dokonce provoněný. Dopis z hlavního města, bezpochyby.\n\n„[target.GetTitleAsNameNoTooltip], [Select_CString(ROOT.Char.IsFemale,'její','jeho')] pán, prožívá velice nepříjemnou situaci...“\n\nÚsměv mi přejede po tváři. Nemusím číst dál. [Select_CString(target.IsFemale,'Její','Jeho')] legitimita byla poškozena — dokonalá příležitost k útoku." # todo: CHANGED, CHECK FORMAT (predtym: Podívám se na dopis, který právě položil jeden z mých služebníků. Pergamen je bohatý, dokonce provoněný. Dopis z hlavníh) # todo: FORMAT chýba [ROOT.Char.GetHerHis], [target.GetHerHis|U]; navyše [Select_CString(ROOT.Char.IsFemale,'','')], [Select_CString(ta
  scheme_critical_moments.4011.a: "Přineste inkoust."
  scheme_critical_moments.4011.tt: "Legitimita poškozena!"
  damage_legitimacy_scheme_toast_desc: "Váš [target.Custom2('RelationToMeShort', SCOPE.sC('owner'))], [owner.GetShortUINameNoTooltip|U], poškodil vaši [Concept('legitimacy','legitimitu')|E]" # todo: CONCEPT CASE
@@ -319,7 +320,7 @@
  scheme_target_another_holder: "[target.GetName] už existuje"
  scheme_target_no_counties_within: "V [target.GetName] nedržíte žádná hrabství"
  scheme_critical_moments.8022.t: "[scheme.GetNameNoTooltip]: Úspěch"
- scheme_critical_moments.8022.desc: "Debaty v [owner.GetTopLiege.GetCapitalLocation.GetName] byly dlouhé a únavné, ale byrokrati nevyhnutelně podlehli moudrosti mých návrhů. [destroyed_title.GetNameNoTier] je zrušen, jeho stará území jsou jen kouskem nového [target_title.GetTierAsNameNoTooltip] [target_title.GetNameNoTier], a #EMP já jsem#! jeho [owner.GetTitleAsNameNoTooltip].\n\nVelká změna je blízko — pro mou administraci; pro [owner.GetTopLiege.GetPrimaryTitle.GetNameNoTooltip]; pro postavení rodu [owner.GetHouse.GetBaseName]!"
+ scheme_critical_moments.8022.desc: "Debaty v [owner.GetTopLiege.GetCapitalLocation.GetName] byly dlouhé a únavné, ale byrokrati nevyhnutelně podlehli moudrosti mých návrhů. Území [destroyed_title.GetNameNoTier] nyní patří novému [target_title.GetTierAsNameNoTooltip] [target_title.GetNameNoTier], a #EMP já jsem#! jeho [owner.GetTitleAsNameNoTooltip].\n\nVelká změna je blízko — pro mou administraci; pro [owner.GetTopLiege.GetPrimaryTitle.GetNameNoTooltip]; pro postavení rodu [owner.GetHouse.GetBaseName]!" # todo: CHANGED (predtym: Debaty v [owner.GetTopLiege.GetCapitalLocation.GetName] byly dlouhé a únavné, ale byrokrati nevyhnutelně podlehli moudro)
  scheme_critical_moments.8022.a: "[owner.GetTitleAsNameNoTooltip]... to zní dobře."
  scheme_critical_moments.8023.t: "[scheme.GetNameNoTooltip]: Neúspěch"
  scheme_critical_moments.8023.desc: "Moje pečlivě orchestrální představení v [owner.GetTopLiege.GetCapitalLocation.GetNameNoTooltip] — měsíce pečlivého plánování a jemné diplomacie — vyšly naprázdno.\n\nByrokrati odmítli uznat moudrost mých návrhů. Zjednodušení správy regionu pod širokopůsobícím [target_title.GetAdjective] úřadem bylo odmítnuto jako „nepotřebné“ a „nepraktické“..."
@@ -345,7 +346,7 @@
  raid_manor: "Přepadnout sídlo" # todo: NEW TRANSLATION
  raid_estate_action: "Přepadnout"
  raid_estate_desc: "Rod [SCHEME.GetTargetTitle.GetHolder.GetHouse.GetBaseName] získává příliš velké sebevědomí — přepad by postavil [SCHEME.GetTargetTitle.GetHolder.GetTitledFirstName] na místo."
- raid_estate_desc_general: "$raid_estate$ je [Concept('hostile_scheme','nepřátelská intrika')|E], jehož cílem je přepadnout [Concept('estate','statek')|E] jiného [Concept('house','rodu')|E]. Je založen na [Concept('intrigue','pletichářství')|E], [Concept('domicile','domicil')|E] a postavení [Concept('house','rod')|E], a může rekrutovat [Concept('agents','spolčenci')|E].\n\nÚspěšný $raid_estate$ může vést ke krádeži cílového [Concept('gold','zlata')|E], poškození jejich [Concept('estate','statek')|E] a dokonce k smrti členů jejich [Concept('house','rod')|E]." # todo: CONCEPT CASE
+ raid_estate_desc_general: "$raid_estate$ je [Concept('political_scheme','politická intrika')|E], jehož cílem je přepadnout [Concept('estate','statek')|E] jiného [Concept('house','rodu')|E]. Je založen na [Concept('intrigue','pletichářství')|E], [Concept('domicile','domicil')|E] a postavení [Concept('house','rod')|E], a může rekrutovat [Concept('agents','spolčenci')|E].\n\nÚspěšný $raid_estate$ může vést ke krádeži cílového [Concept('gold','zlata')|E], poškození jejich [Concept('estate','statek')|E] a dokonce k smrti členů jejich [Concept('house','rod')|E]." # todo: CHANGED, CHECK FORMAT (predtym: $raid_estate$ je [Concept('hostile_scheme','nepřátelská intrika')|E], jehož cílem je přepadnout [Concept('estate','state) # todo: FORMAT chýba [domicile|E], [domicile|E]; navyše [estate|E], [estate|E]
  RAID_ESTATE_SUCCESS_DESC: "[TARGET_CHARACTER.GetDomicile.GetName] je přepaden"
  RAID_ESTATE_DISCOVERY_DESC: "Nejste odhaleni za [Concept('crime','zločin')|E] přepadu" # todo: CONCEPT CASE
  raid_estate_invalidated_title: "@scheme_icon! Schéma přepadu panství končí"
@@ -449,7 +450,7 @@
  ingratiate_family: "Získat přízeň rodu"
  ingratiate_family_action: "Získat přízeň"
  ingratiate_family_desc: "Ani ten nejsilnější rod nemůže stát osamoceně - rod [SCHEME.GetTargetTitle.GetHolder.GetHouse.GetBaseName] může být užitečným spojencem nebo pěšákem..."
- ingratiate_family_desc_general: "$ingratiate_family$ je [Concept('personal_scheme','osobní intrika')|E], jehož cílem je získat přízeň [Concept('house','rod')|E]. Závisí na [Concept('diplomacy','diplomacii')|E] a postavení [Concept('house','rod')|E].\n\nÚspěšné $ingratiate_family$ udělí [Concept('opinion','mínění')|E], [Concept('friendship','přátelství')|E] a [Concept('influence','vliv')|E]." # todo: CONCEPT CASE
+ ingratiate_family_desc_general: "$ingratiate_family$ je [Concept('political_scheme','politická intrika')|E], jehož cílem je získat přízeň [Concept('house','rod')|E]. Závisí na [Concept('diplomacy','diplomacii')|E] a postavení [Concept('house','rod')|E].\n\nÚspěšné $ingratiate_family$ udělí [Concept('opinion','mínění')|E], [Concept('friendship','přátelství')|E] a [Concept('influence','vliv')|E]." # todo: CHANGED (predtym: $ingratiate_family$ je [Concept('personal_scheme','osobní intrika')|E], jehož cílem je získat přízeň [Concept('house','r)
  ingratiate_family_invalidated_title: "@scheme_icon! $ingratiate_family$ Plán končí"
  ingratiate_family_invalidated_dead: "[target.GetShortUIName|U] [Select_CString(target.IsFemale,'zemřela','zemřel')]."
  ingratiate_family_invalidated_war: "Jste ve válce s [target.GetShortUIName]"

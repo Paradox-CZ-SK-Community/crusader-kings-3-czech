@@ -6,10 +6,10 @@
  holy_order.destroyed_message: "[title.GetName] byl zničen"
  holy_order_expanded: "Svatý řád se rozrůstá"
  holy_order.new_lease: "[holy_order.GetName] si nyní pronajímá [barony.GetName] od [former_holder.GetTitledFirstName]"
- monastic_holy_order_expanded: "Řeholní řád se rozrůstá" # todo: NEW TRANSLATION
+ monastic_holy_order_expanded: "Mnišský řád se rozrůstá"
  holy_order.0001.t: "Svatý řád"
  holy_order.0001.desc_opening: "[recipient.Custom2('MyCharacterIntroductionNoComma', ROOT.Char)|U] stojí venku a čeká na mě, zavazadla i doprovod jsou připravené k odjezdu.\n\n"
- holy_order.0001.desc_demand: ""Předpokládám, že na tom něco čestného je..." [recipient.GetSheHe] zabručí, "umřít při dobývání nějaké cizí pohanské země. Myslel jsem, že padnu v boji za [actor.GetPrimaryTitle.GetNameNoTier]..."\n\n[recipient.GetSheHe|U] nasedne na [recipient.GetHerHis] koně a zeptá se: "Kam mám jít?"" # todo: NEW TRANSLATION
+ holy_order.0001.desc_demand: "„Snad je v tom nějaká čest...“ bručí [Select_CString(recipient.IsFemale,'ona','on')], „zemřít při dobývání jakési cizí pohanské země. [Select_CString(recipient.IsFemale,'Myslela jsem, že zemřu','Myslel jsem, že zemřu')] v boji za panství [actor.GetPrimaryTitle.GetNameNoTier]...“\n\n[Select_CString(recipient.IsFemale,'ona','on')|U] nasedá na svého koně a ptá se: „Kam mám jet?“"
  holy_order.0001.desc: "„Tak tedy, [Select_CString(root.IsFemale, 'má paní', 'můj pane')], kam mě tato cesta zavede?“"
  holy_order.0001.desc_relation: "„Tak tedy, [recipient.Custom2('RelationToMeShort', ROOT.Char)], kam mě tato cesta zavede?“"
  holy_order.0001.a: "Půjdeš k [holy_order_1.GetName]."
@@ -17,12 +17,12 @@
  holy_order.0001.c: "Daleko odsud. Ať už tě nevidím!"
  holy_order.0001.d: "Teď už jsi problémem pro [holy_order_4.GetName]."
  holy_order.0001.e: "Udělal jsem chybu... Patříš sem!"
- holy_order.0001.toast_puppeteer: "[recipient.GetShortUIName] přijal[a] [puppet_or_actor.GetShortUINamePossessive] povolání do vojenského řádu" # todo: NEW TRANSLATION, CHECK FORMAT # todo: FORMAT navyše [a]
- holy_order.0002.desc_angry: "Vyslovil jsem posvátná slova a stejně jako mě spoutala tvá vůle, jsem nyní spoután [ROOT.Char.GetFaith.HighGodName]." # todo: NEW TRANSLATION
+ holy_order.0001.toast_puppeteer: "[recipient.GetShortUIName] [Select_CString(recipient.IsLocalPlayer,Concatenate('jsi ',Select_CString(recipient.IsFemale,'přijala','přijal')),Select_CString(recipient.IsFemale,'přijala','přijal'))] výzvu [puppet_or_actor.Custom('CZ_ShortUIName_G')] ke vstupu do vojenského řádu"
+ holy_order.0002.desc_angry: "Pronesením posvátných slov mě zavázala tvá vůle a nyní mě zavazuje také [ROOT.Char.GetFaith.HighGodName]."
  holy_order.0002.desc: "Vyslyším volání vyšší moci a děkuji ti, že jsi mě [Select_CString(ROOT.Char.IsFemale, 'nasměrovala', 'nasměroval')] na tuto cestu spravedlnosti."
- holy_order.0002.a_demand: "Dobře. Nyní jdi v tichosti očekávat [ROOT.Char.GetFaith.PositiveAfterLife]." # todo: NEW TRANSLATION
+ holy_order.0002.a_demand: "Dobrá. Nyní jdi a v tichosti čekej na posmrtný úděl [ROOT.Char.GetFaith.PositiveAfterLife]."
  holy_order.0002.a: "Jsem si jist, že [ROOT.Char.GetFaith.HighGodName] bude s tvou službou [Select_CString(ROOT.Char.IsFemale, 'spokojena', 'spokojen')]!"
- holy_order.0002.toast_puppeteer: "[recipient.GetShortUIName] složil sliby na [puppet_or_actor.GetShortUINamePossessive] žádost" # todo: NEW TRANSLATION
+ holy_order.0002.toast_puppeteer: "[recipient.GetShortUIName] [Select_CString(recipient.IsLocalPlayer,Concatenate('jsi ',Select_CString(recipient.IsFemale,'složila','složil')),Select_CString(recipient.IsFemale,'složila','složil'))] sliby na žádost [puppet_or_actor.Custom('CZ_ShortUIName_G')]"
  char_interaction.0001.opening_low_piety: "Že se někdo tak [ROOT.GetCharacter.Custom('GetSinfulShameful')] jako ty připlazí ke svatému řádu, který slouží [ROOT.Char.GetFaith.HighGodName]... Než se začneš starat o světské bohatství, měl by ses soustředit na vykoupení své duše."
  holy_order.0200.desc_opening: "[recipient.Custom2('AppropriateGreetingPositive', ROOT.Char )]"
  holy_order.0200.desc: "Vyslyšel jsem tvou prosbu o zlato a [order.GetName] odpoví na tvé volání."
@@ -54,11 +54,11 @@
  holy_order.1001.a: "Tvé žádosti vyhovuji. Za [ROOT.Char.GetFaith.HighGodName]!"
  holy_order.1001.b: "Neposloužil by vám stejně dobře [alternative_barony.GetNameNoTierNoTooltip]?"
  holy_order.1001.c: "Ne, tuto zemi vám nedám."
- holy_order.1011.intro: "V [target_barony.GetName] je dobrá půda k obdělávání a krásný [grandmaster.GetFaith.HouseOfWorship], kterému by prospěla klášterní komunita mých [grandmaster.Custom('SistersBrothers')]." # todo: NEW TRANSLATION
- holy_order.1011.end: "\n\nZprostředkujete nám to, aby tam [holy_order.GetName] mohl založit klášter?" # todo: NEW TRANSLATION
- holy_order.1011.a: "Řád si může pronajmout [target_barony.GetNameNoTierNoTooltip]." # todo: NEW TRANSLATION
- holy_order.1011.b: "V [alternative_barony.GetNameNoTierNoTooltip] panuje klid?" # todo: NEW TRANSLATION
- holy_order.1011.c: "Obávám se, že své [grandmaster.Custom('SistersBrothers')] budete muset poslat jinam." # todo: NEW TRANSLATION
+ holy_order.1011.intro: "Na území baronství [target_barony.GetName] je dobrá půda k obdělávání i důstojné místo bohoslužeb, [grandmaster.GetFaith.HouseOfWorship]. Klášter mých [grandmaster.Custom('SistersBrothers')] by zdejším místům jen prospěl."
+ holy_order.1011.end: "\n\nZprostředkuješ dohodu, aby řád [holy_order.GetName] mohl na tomto místě založit klášter?"
+ holy_order.1011.a: "Řád si smí pronajmout baronství [target_barony.GetNameNoTierNoTooltip]."
+ holy_order.1011.b: "Je v baronství [alternative_barony.GetNameNoTierNoTooltip] dost klidu?"
+ holy_order.1011.c: "Obávám se, že tví [grandmaster.Custom('SistersBrothers')] musejí jinam."
  holy_order.2001.t: "Božské poslání"
  holy_order.2001.desc: "Když za mnou přijde můj [ROOT.Char.Custom2('RelationToMeShort', SCOPE.sC('child'))], [child.GetFirstName], rychle pochopím, že chce probrat něco velmi vážného.\n\n„[ROOT.Char.Custom('MotherFather')|U], můj život tady bude navždy probíhat ve stínu ostatních. Dovol mi raději vstoupit do [holy_order.GetName] a sloužit [child.GetFaith.HighGodName]. Dlouho jsem o tom [Select_CString(child.IsFemale, 'přemýšlela', 'přemýšlel')] a právě to chci udělat.“"
  holy_order.2001.a: "[child.GetFaith.HighGodNameAlternate] tě povede, můj [child.Custom('DaughterSon')]."
@@ -81,78 +81,78 @@
  holy_order.2005.desc: "[child.GetTitledFirstNamePossessive] návštěva trvala déle než obvykle. Teprve když se můj [child.Custom('DaughterSon')] zabydlel v mém [ROOT.Char.Custom('GetCourt')] — cpal se mým jídlem a obtěžoval mé služebnictvo — začal jsem mluvit o návratu do [holy_order.GetName]. Odpověď byla bohužel nadšená.\n\n„Copak jsi neslyšel, [ROOT.Char.Custom('MotherFather')]? [grandmaster.GetTitledFirstName] byl tak štědrý, že mě zbavil povinností vůči [child.GetFaith.GetName]! Konečně jsem doma se svou rodinou.“"
  holy_order.2005.a: "Ach, takže ty... tu zůstaneš?"
  holy_order.destroyed_title: "Svatý řád rozpuštěn"
- holy_order.2010.t: "Nový řeholní řád" # todo: NEW TRANSLATION
- holy_order.2010.desc: "Poustevníci, mystici a nespokojení učedníci ze starších řádů se shromáždili v [barony.GetNameNoTier] a léta pracovali na vybudování svého nového domova v divočině. [leader.GetWomanMan] jménem [leader.Custom('SisterBrother')|U] [leader.GetFirstName] se přirozeně stal[a] vůdcem tohoto rozrůstajícího se řádu, „[leader.GetPrimaryTitle.GetName]“... ale #EMP můj#! vznešený hlas se k této záležitosti dosud nevyjádřil. Také jsem ještě nenavrhl žádné svaté přikázání, které by se stalo srdcem životního řádu této komunity.\n\nO čem bude tento sbor čistých oddaných zpívat v [barony.GetNameNoTierNoTooltip]? Čemu se budou plně oddávat, o čem přemýšlet a psát? A kdo je v tom povede?" # todo: NEW TRANSLATION, CHECK FORMAT # todo: FORMAT navyše [a]
- holy_order.2010.4: "[tenet_4.GetName( order_rite )] a [monk_tenet_1.Custom('SisterBrother')|U] [monk_tenet_1.GetFirstNameNoTooltip]." # todo: NEW TRANSLATION
- holy_order.2010.5: "[tenet_5.GetName( order_rite )] a [monk_tenet_2.Custom('SisterBrother')|U] [monk_tenet_2.GetFirstNameNoTooltip]." # todo: NEW TRANSLATION
- holy_order.2010.6: "[tenet_6.GetName( order_rite )] a [monk_tenet_3.Custom('SisterBrother')|U] [monk_tenet_3.GetFirstNameNoTooltip]." # todo: NEW TRANSLATION
- holy_order.2010.d: "[tenet_1.GetName( order_rite )] a [monk_tenet_1.Custom('SisterBrother')|U] [monk_tenet_1.GetFirstNameNoTooltip]." # todo: NEW TRANSLATION
- holy_order.2010.e: "[tenet_2.GetName( order_rite )] a [monk_tenet_2.Custom('SisterBrother')|U] [monk_tenet_2.GetFirstNameNoTooltip]." # todo: NEW TRANSLATION
- holy_order.2010.f: "[tenet_3.GetName( order_rite )] a [monk_tenet_3.Custom('SisterBrother')|U] [monk_tenet_3.GetFirstNameNoTooltip]." # todo: NEW TRANSLATION
- monastic_tenet_pick_tt: "[tenet_pick.GetName( order_rite )] se stane [core_tenet|E], který bude [monastic_order.GetName] prosazovat" # todo: NEW TRANSLATION
- monastic_order_tenet_advocated_tt: "[monastic_order.GetName] prosazuje [tenet_pick.GetName( order_rite )]" # todo: NEW TRANSLATION
- founded_monastic_order_modifier: "Založen řeholní řád" # todo: NEW TRANSLATION
- founded_monastic_order_modifier_desc: "Tento moudrý vládce pomohl vymyslet a založit nový řeholní řád, a tím zahájil novou cestu k božství." # todo: NEW TRANSLATION
- pick_becomes_monastic_order_leader_tt: "[chosen_leader.GetShortUIName] se stane [ruler|E] řádu [monastic_order.GetName]" # todo: NEW TRANSLATION
- pick_remains_monastic_order_leader_tt: "[chosen_leader.GetShortUIName] zůstane [ruler|E] řádu [monastic_order.GetName]" # todo: NEW TRANSLATION
- holy_order.2009.t: "Výstavba kláštera" # todo: NEW TRANSLATION
- holy_order.2009.desc: "Uprostřed klidné krajiny [province.GetTerrain.GetNameNoTooltip|l], na místě milovaném [province.GetCulture.GetCollectiveNoun], pokládám první kámen, na němž jednoho dne bude stát klášter v [province.GetName].\n\nMoji dělníci společně s prostými obláty zvedají ze země zdi a ze svých pilných těl vydávají zbožné chorály. První ctihodní řeholníci — jako [potential_leader.Custom('SisterBrother')|U] [potential_leader.GetName] — sem také přicházejí, aby toto místo obývali a připravili plány kaplí a refektářů.\n\nZa několik let se zde zrodí nový řád. A vedle kamene a [ROOT.Char.Custom('GetWritingMaterial')] bude tento řád potřebovat také další členy, kteří mu přísahají věrnost." # todo: NEW TRANSLATION
- holy_order.2009.a: "Tento nový řád musí vést ti, které podporuji." # todo: NEW TRANSLATION
- holy_order.2009.b: "Mnozí řeholníci jsou nespokojeni se svým současným řádem..." # todo: NEW TRANSLATION
- holy_order.2009.b.tt: "...a opustili by své představené kvůli vedení tohoto nového řádu a svobodě sepsat novou řeholi." # todo: NEW TRANSLATION
- holy_order.2009.c: "Shromážděte divoké askety a horlivé mladíky." # todo: NEW TRANSLATION
- monastic_order_creation_increased_spiritual_fulfillment: "[interactions|E] s [monastic_holy_order|E] budou po dobu #high 50 let#! přinášet více [spiritual_fulfillment|E]" # todo: NEW TRANSLATION
- monastic_founder_become_saint_tt: "[chosen_leader.GetShortUIName] se po [chosen_leader.GetHerHis] smrti stane [GetTrait('saint').GetName( chosen_leader.Self )], pokud bude mít [chosen_leader.GetSheHe] #high 65+#! [trait_level_track_xp|E] vlastnosti [GetTrait('devoted').GetName( chosen_leader.Self )] nebo alespoň [piety_level|E] @piety_level_4_icon_christian! [GetModifier( 'piety_level_4' ).GetNameWithTooltip|L]" # todo: NEW TRANSLATION
- holy_order.2020.t: "Řeholní sliby" # todo: NEW TRANSLATION
- holy_order.2020.desc: "Na mé naléhání se [recipient.GetFirstNamePossessive] v novém řeholním oděvu obrací zády k mému [ROOT.Char.Custom('ResidenceBuilding')], [ROOT.Char.Custom('KnightCulturePluralNoTooltip')|l] i šlechtě světského světa. [recipient.GetSheHe|U] vstupuje do [archabbot.GetPrimaryTitle.GetName].\n\nStejně jako ostatní [recipient.Custom('SistersBrothers')] ze svého řádu přísahá [recipient.GetFirstNameNoTooltip] věrnost a oddanost svému svatému společenství. [recipient.GetSheHe|U] zasvěcuje své tělo [recipient.GetFaith.HighGodName] a svou mysl úctě k [recipient.GetFaith.PositiveAfterLife].\n\n[recipient.GetFirstNameNoTooltip] bude žít v [archabbot.GetCapitalLocation.GetName] nebo v jiné svatyni řádu a tam započne svůj život studia a rozjímání." # todo: NEW TRANSLATION, CHECK FORMAT # todo: FORMAT chýba [recipient.GetHerHis], [recipient.GetHerHis], [recipient.GetHerHis], [recipient.GetHerHis], [recipient.GetHerHis]
- holy_order.2020.aa: "Řád získal pilnou mysl." # todo: NEW TRANSLATION
- holy_order.2020.aa.tt: "[recipient.GetFirstNamePossessiveNoTooltip] schopnosti ve správě budou řádu dobře sloužit při jeho neustálé práci." # todo: NEW TRANSLATION
- holy_order.2020.a: "Řád získal moudrého učedníka." # todo: NEW TRANSLATION
- holy_order.2020.a.tt: "Pro vzdělaného [recipient.GetFirstNameNoTooltip] nemůže být na tomto smrtelném světě vhodnější místo." # todo: NEW TRANSLATION
- holy_order.2020.b: "[ROOT.Char.Custom2('RelationToMeShort', SCOPE.sC('recipient'))] jejich patrona přece není žádný služebný [recipient.Custom('GirlBoy')]..." # todo: NEW TRANSLATION
- holy_order.2020.c: "„Dar“ zajistí, že se bude mít [recipient.GetFirstNameNoTooltip] jako v bavlnce." # todo: NEW TRANSLATION
- holy_order.2020.d: "[recipient.GetHerHis|U] život nyní patří řádu." # todo: NEW TRANSLATION
- holy_order.2020.toast_puppeteer: "[recipient.GetShortUIName] vstoupil[a] na žádost [puppet_or_actor.GetShortUINamePossessive] do mnišského řádu" # todo: NEW TRANSLATION, CHECK FORMAT # todo: FORMAT navyše [a]
- take_vows_improve_education_learning_tt: "Výsledek [education|E] v oblasti @skill_learning_icon![learning|E] se zlepší" # todo: NEW TRANSLATION
- take_vows_improve_education_stewardship_tt: "Výsledek [education|E] v oblasti @skill_stewardship_icon![stewardship|E] se zlepší" # todo: NEW TRANSLATION
- recently_joined_holy_order_desc: "[recipient.GetShortUIName] vstoupil[a] do svého řádu během posledních 5 let" # todo: NEW TRANSLATION, CHECK FORMAT # todo: FORMAT chýba [recipient.GetHerHis]; navyše [a]
- child_in_holy_order_desc: "[recipient.GetShortUIName] je dítě zaslíbené [recipient.GetHerHis] řádu" # todo: NEW TRANSLATION
- custom.every_domain_monastic_order: "Každý [monastic_holy_order|E] ve vaší [domain|E]" # todo: NEW TRANSLATION
- order_gains_minor_tenet_popularity_tt: "Jejich [core_tenet|E] získá #P [EmptyScope.ScriptValue('minor_tenet_popularity_value')|0]#! [tenet_popularity|E]" # todo: NEW TRANSLATION
- new_order_gains_minor_tenet_popularity_tt: "Váš nový [monastic_holy_order|E] přidá svému [core_tenet|E] dalších #P [EmptyScope.ScriptValue('minor_tenet_popularity_value')|0]#! [tenet_popularity|E]" # todo: NEW TRANSLATION
- holy_order.2030.t: "Dar: [recipient.GetPrimaryTitle.GetNameNoTooltip]" # todo: NEW TRANSLATION
- holy_order.2030.desc: "Mé bohatství putuje do pokladnic klášterů [recipient.GetTitledFirstNamePossessive]. Dar, který bude financovat zbožnou péči o půdu, opisování svatých textů a světské cíle [recipient.GetPrimaryTitle.GetName]...\n\n...a tisíce modliteb za spásu mé nesmrtelné duše. Řeholníci žijí, aby se modlili, a jejich neochvějná, spravedlivá oddanost — jak se říká — přiměje [ROOT.Char.GetFaith.random_GoodGodNames|U], aby jejich modlitbám věnoval zvláštní pozornost.\n\n#EMP [actor.GetFaith.HighGodName|U], slyšíš, jak vyslovují mé jméno?#!" # todo: NEW TRANSLATION
- holy_order.2030.desc_desperate_plea: "#EMP Víš, jak jsem se plazil a žebral — jako ubožák — o tvé milosrdenství?#!" # todo: NEW TRANSLATION
- holy_order.2030.desc_huge_donation: "#EMP Víš, jakého jmění jsem se vzdal...?#!" # todo: NEW TRANSLATION
- holy_order.2030.a: "Noví zastánci mé spásy." # todo: NEW TRANSLATION
- holy_order.2030.toast_puppeteer: "[recipient.GetShortUIName] přijal[a] [puppet_or_actor.GetShortUINamePossessive] dar pro klášter" # todo: NEW TRANSLATION, CHECK FORMAT # todo: FORMAT navyše [a]
- holy_order.2031.opening: "[actor.GetCustom('SisterBrother')|U]," # todo: NEW TRANSLATION
- holy_order.2031.desc: "Přemýšlel jsem a modlil se za vaši žádost a obávám se, že žádný dar nepřiměje mé mnichy, aby se za vás přimlouvali u [recipient.GetFaith.HighGodName]. Vaše spása se zdá být mimo naše možnosti." # todo: NEW TRANSLATION
- holy_order.2031.a: "Bah! Alespoň mi zůstaly peníze." # todo: NEW TRANSLATION
- holy_order.2031.toast_puppeteer: "[recipient.GetShortUIName] odmítl[a] [puppet_or_actor.GetShortUINamePossessive] dar pro klášter" # todo: NEW TRANSLATION, CHECK FORMAT # todo: FORMAT navyše [a]
- already_has_monastic_lease_tt: "[target.GetNameNoTier] je již [leased|E] [monastic_holy_order|E]" # todo: NEW TRANSLATION
- lease_title_to_existing_monastic_order_interaction: "Darovat klášter" # todo: NEW TRANSLATION
- lease_title_to_existing_monastic_order_interaction_desc: "[lease|E] [temple_holding|E] řádu [recipient.GetPrimaryTitle.GetName] a získat [spiritual_fulfillment|E], [piety|E] a lepší přístup k řádu" # todo: NEW TRANSLATION
- INTERACTION_LEASE_DONATION: "Koupit přilehlé pozemky" # todo: NEW TRANSLATION
- no_valid_temple_holdings_to_lease_tt: "Ve vaší [domain|E] nejsou žádné [temple_holdings|E] dostupné k [lease|E]" # todo: NEW TRANSLATION
- monastic_onslaught_modifier_tt: "[target_county.GetName] získá [GetModifier('monastic_onslaught_modifier').GetNameWithTooltip] na #high 20 let#!" # todo: NEW TRANSLATION
- holy_order.2040.opening: "[actor.GetFirstName] z [actor.GetPrimaryTitle.GetNameNoTier], dobrodinče," # todo: NEW TRANSLATION
- holy_order.2040.desc: "Je hotovo. Pobočka řádu [recipient.GetPrimaryTitle.GetNameNoTier] bude přiléhat k [actor.GetFaith.HouseOfWorship] v [target.GetNameNoTier] a tam, v srdci [target.GetDeJureLiegeOfTier( 'duchy' ).GetNameNoTier], uložíme starobylé texty z knihoven v [recipient.GetCapitalLocation.GetName].\n\n" # todo: NEW TRANSLATION
- holy_order.2040.desc_nuns: "A tam budou naše [recipient.GetFaith.DevoteeFemalePlural] zpívat modlitby k [actor.GetFaith.HighGodName] za vás." # todo: NEW TRANSLATION
- holy_order.2040.desc_monks: "A tam budou naši [recipient.GetFaith.DevoteeMalePlural] zpívat modlitby k [actor.GetFaith.HighGodName] za vás." # todo: NEW TRANSLATION
- holy_order.2040.desc_huge_donation: "Takto vám řád projevuje vděčnost za vaši zbožnou štědrost." # todo: NEW TRANSLATION
- holy_order.2040.desc_rite: "\n\nVězte, že pobočka bude dodržovat obřady [recipient.GetRite.GetName], stejně jako každý dům našeho řádu." # todo: NEW TRANSLATION
- holy_order.2040.a: "Ať váš řád vzkvétá!" # todo: NEW TRANSLATION
- holy_order.2040.toast_puppeteer: "[recipient.GetShortUIName] přijal[a] [puppet_or_actor.GetShortUINamePossessive] nabídku pronájmu baronie" # todo: NEW TRANSLATION, CHECK FORMAT # todo: FORMAT navyše [a]
- holy_order.2041.opening: "[actor.GetFirstName] z [actor.GetPrimaryTitle.GetNameNoTier]," # todo: NEW TRANSLATION
- holy_order.2041.desc: "My, nejčistší oddaní [recipient.GetFaith.HighGodNamePossessive], kteří přinášíme na tuto ubohou Zemi naprostou svatost [recipient.GetFaith.PositiveAfterLife]... se obáváme, že nad říší [actor.GetPrimaryTitle.GetNameNoTier] leží kletba, kterou nedokážou zaplašit ani naše modlitby.\n\nDuše vaší říše je tak žalostně odtržena od [recipient.GetFaith.HighGodName], že [recipient.GetPrimaryTitle.GetName] nemůže přijít do [target.GetNameNoTier]." # todo: NEW TRANSLATION
- holy_order.2041.a: "Jejich „čistota“ — nesmysl!" # todo: NEW TRANSLATION
- holy_order.2041.toast_puppeteer: "[recipient.GetShortUIName] odmítl[a] [puppet_or_actor.GetShortUINamePossessive] nabídku pronájmu baronie" # todo: NEW TRANSLATION, CHECK FORMAT # todo: FORMAT navyše [a]
- monastic_order_entering_interaction_range_tt: "@alert_icon! #alert_trial [monastic_order.GetName] vstoupí do [holy_order_vicinity|E], čímž zpřístupní své [interactions|E]#!" # todo: NEW TRANSLATION
- holy_order.2050.t: "V [barony.GetNameNoTierNoTooltip] sílí hnutí" # todo: NEW TRANSLATION
- holy_order.2050.desc: ""„Stále [target_order.GetName] trpí... jako poustevníci na poušti?“ — tak začínají všechna ohnivá psaní [clerical_helper.GetNamePossessive].\n\n„Odívá se [target_lessee.GetTitledFirstName] do zlata?“ — ptají se reformátoři ve svých kázáních v [barony.GetNameNoTier] a uzavírají je slovy: #EMP „Nový způsob! Nová řehole!“#!\n\nKlášter se rychle stává semeništěm zbožných reforem a nesouhlasu. Jeho obyvatelé už sotva jsou [target_lessee.GetPrimaryTitle.GetAdjectiveNoTooltip] a sotva se spokojí s omšelými řečmi o [target_order_tenet.GetName( founder.GetRite )]. Jejich reformní zápal je však stále třeba nasměrovat k jediné nové zásadě a jediné mysli." # todo: NEW TRANSLATION, CHECK FORMAT # todo: FORMAT chýba [target_lessee.GetHerselfHimself]; nepárny počet úvodzoviek
- msg_order_movement_took_monastery.t: "Hnutí [chosen_leader.GetPrimaryTitle.GetAdjectiveNoTooltip]" # todo: NEW TRANSLATION
- movement_took_monastery_notification_3_tt: "[new_holy_order.GetName] převzal [barony.GetNameNoTier] a další [leases|E] od [target_order.GetName]" # todo: NEW TRANSLATION
- movement_took_monastery_notification_2_tt: "[new_holy_order.GetName] převzal [barony.GetNameNoTier] a [lease_2.GetNameNoTier] od [target_order.GetName]" # todo: NEW TRANSLATION
- movement_took_monastery_notification_tt: "[new_holy_order.GetName] převzal [lease|E] [barony.GetNameNoTier] od [target_order.GetName]" # todo: NEW TRANSLATION
- movement_took_monastery_patron_notification_tt: "[founder.GetShortUIName] schválil toto reformní [monastic_holy_order|E]" # todo: NEW TRANSLATION
+ holy_order.2010.t: "Nový mnišský řád"
+ holy_order.2010.desc: "V baronství [barony.GetNameNoTier] se shromáždili poustevníci, mystici a nespokojení učedníci starších řádů a celé roky se lopotili, aby v divočině vybudovali nový domov. Do čela tohoto rostoucího řádu, „[leader.GetPrimaryTitle.GetName]“, přirozeně [Select_CString(leader.IsFemale,'stanula žena','stanul muž')] — [leader.Custom('SisterBrother')|U] [leader.GetFirstName]... jenže #EMP můj#! vznešený hlas v této věci ještě nezazněl. Také teprve musím navrhnout posvátnou zásadu, která se stane srdcem života tohoto řádu.\n\nO čem má tento sbor čistých oddaných zpívat v baronství [barony.GetNameNoTierNoTooltip]? Co se mají snažit žít naplno, o čem mají přemýšlet a psát? A kdo je při tom povede?"
+ holy_order.2010.4: "[tenet_4.GetName( order_rite )] a [monk_tenet_1.Custom('SisterBrother')|U] [monk_tenet_1.GetFirstNameNoTooltip]."
+ holy_order.2010.5: "[tenet_5.GetName( order_rite )] a [monk_tenet_2.Custom('SisterBrother')|U] [monk_tenet_2.GetFirstNameNoTooltip]."
+ holy_order.2010.6: "[tenet_6.GetName( order_rite )] a [monk_tenet_3.Custom('SisterBrother')|U] [monk_tenet_3.GetFirstNameNoTooltip]."
+ holy_order.2010.d: "[tenet_1.GetName( order_rite )] a [monk_tenet_1.Custom('SisterBrother')|U] [monk_tenet_1.GetFirstNameNoTooltip]."
+ holy_order.2010.e: "[tenet_2.GetName( order_rite )] a [monk_tenet_2.Custom('SisterBrother')|U] [monk_tenet_2.GetFirstNameNoTooltip]."
+ holy_order.2010.f: "[tenet_3.GetName( order_rite )] a [monk_tenet_3.Custom('SisterBrother')|U] [monk_tenet_3.GetFirstNameNoTooltip]."
+ monastic_tenet_pick_tt: "Řád [monastic_order.GetName] bude prosazovat [Concept('core_tenet','zásadu')|E] [tenet_pick.GetName( order_rite )]"
+ monastic_order_tenet_advocated_tt: "Řád [monastic_order.GetName] prosazuje zásadu [tenet_pick.GetName( order_rite )]"
+ founded_monastic_order_modifier: "Založení mnišského řádu"
+ founded_monastic_order_modifier_desc: "Tento moudrý vladař pomohl s přípravou a založením nového mnišského řádu, a otevřel tak novou cestu přímo k božství."
+ pick_becomes_monastic_order_leader_tt: "[chosen_leader.GetShortUIName] se [Select_CString(chosen_leader.IsLocalPlayer,'stáváš','stává')] [Concept('ruler',Select_CString(chosen_leader.IsFemale,'vládkyní','vládcem'))|E] řádu [monastic_order.GetName]"
+ pick_remains_monastic_order_leader_tt: "[chosen_leader.GetShortUIName] [Select_CString(chosen_leader.IsLocalPlayer,'zůstáváš','zůstává')] [Concept('ruler',Select_CString(chosen_leader.IsFemale,'vládkyní','vládcem'))|E] řádu [monastic_order.GetName]"
+ holy_order.2009.t: "Stavba kláštera"
+ holy_order.2009.desc: "Na klidném území typu [province.GetTerrain.GetNameNoTooltip|l], v místě milovaném [province.GetCulture.Custom('CZ_Adjective_yymi')] lidmi, pokládám první kámen budoucího kláštera v provincii [province.GetName].\n\nMoji dělníci se spojují s prostými obláty, aby pozvedli zdi ze země a nechali ze svých pilných těl znít zbožné hymny. Přicházejí sem i první vážení členové kláštera — mezi nimi [potential_leader.Custom('SisterBrother')|U] [potential_leader.GetName] — a připravují plány kaplí a refektářů.\n\nZa několik let se zde zrodí nový řád. Vedle kamene a psacího materiálu [ROOT.Char.Custom('GetWritingMaterial')] bude potřebovat také další členy vázané slibem."
+ holy_order.2009.a: "Tento nový řád musejí vést ti, které podporuji."
+ holy_order.2009.b: "Mnozí členové klášterů jsou ve svém současném řádu nespokojení..."
+ holy_order.2009.b.tt: "...a opustili by své představené, aby vedli tento nový řád a získali svobodu sepsat novou řeholi."
+ holy_order.2009.c: "Shromážděte divoké askety a horlivé mladé lidi."
+ monastic_order_creation_increased_spiritual_fulfillment: "[Concept('interactions','Interakce')|E] s [Concept('monastic_holy_order','mnišským řádem')|E] budou poskytovat vyšší [Concept('spiritual_fulfillment','duchovní naplnění')|E] po dobu #high 50 let#!"
+ monastic_founder_become_saint_tt: "[chosen_leader.GetShortUIName] po smrti [Select_CString(chosen_leader.IsLocalPlayer,'získáš','získá')] rys [GetTrait('saint').GetName( chosen_leader.Self )], pokud [Select_CString(chosen_leader.IsLocalPlayer,'máš','má')] alespoň #high 65#! [Concept('trait_level_track_xp','zkušeností rysu')|E] [GetTrait('devoted').GetName( chosen_leader.Self )] nebo [Concept('piety_level','úroveň oddanosti')|E] nejméně @piety_level_4_icon_christian! [GetModifier( 'piety_level_4' ).GetNameWithTooltip|L]"
+ holy_order.2020.t: "Mnišské sliby"
+ holy_order.2020.desc: "Na mé naléhání se [Select_CString(recipient.IsFemale,'ona','on')] v novém hábitu obrací zády k mému obydlí [ROOT.Char.Custom('ResidenceBuilding')], k válečníkům označovaným jako [ROOT.Char.Custom('KnightCulturePluralNoTooltip')|l] i ke šlechtě světského života. Vstupuje do řádu [archabbot.GetPrimaryTitle.GetName].\n\nStejně jako ostatní [recipient.Custom('SistersBrothers')] tohoto řádu přísahá [recipient.GetFirstNameNoTooltip] povinnost a věrnost posvátnému společenství. Své tělo zasvěcuje božstvu [recipient.GetFaith.HighGodName] a svou mysl úctě k posmrtnému údělu [recipient.GetFaith.PositiveAfterLife].\n\n[recipient.GetFirstNameNoTooltip] bude žít v klášteře [archabbot.GetCapitalLocation.GetName] nebo v jiné svatyni řádu a tam započne život studia a rozjímání."
+ holy_order.2020.aa: "Řád získal pilnou mysl."
+ holy_order.2020.aa.tt: "Správcovské schopnosti [recipient.Custom('CZ_FirstNameNoTooltip_G')] dobře poslouží jejich neúnavné práci."
+ holy_order.2020.a: "Řád získal [Select_CString(recipient.IsFemale,'moudrou učednici','moudrého učedníka')]."
+ holy_order.2020.a.tt: "Pro učenou mysl [recipient.Custom('CZ_FirstNameNoTooltip_G')] není v tomto smrtelném světě vhodnějšího místa."
+ holy_order.2020.b: "[ROOT.Char.Custom2('RelationToMeShort', SCOPE.sC('recipient'))] [Select_CString(ROOT.Char.IsFemale,'patronky','patrona')] přece není [Select_CString(recipient.IsFemale,'kuchyňská služka','kuchyňský pomocník')]..."
+ holy_order.2020.c: "„Dar“ zajistí, že [recipient.GetFirstNameNoTooltip] bude mít veškeré pohodlí."
+ holy_order.2020.d: "[Select_CString(recipient.IsFemale,'Její','Jeho')] život nyní patří řádu."
+ holy_order.2020.toast_puppeteer: "[recipient.GetShortUIName] [Select_CString(recipient.IsLocalPlayer,Concatenate('jsi ',Select_CString(recipient.IsFemale,'vstoupila','vstoupil')),Select_CString(recipient.IsFemale,'vstoupila','vstoupil'))] do mnišského řádu na žádost [puppet_or_actor.Custom('CZ_ShortUIName_G')]"
+ take_vows_improve_education_learning_tt: "Zlepší se výsledek [Concept('education','vzdělání')|E] v oboru @skill_learning_icon![Concept('learning','učenosti')|E]"
+ take_vows_improve_education_stewardship_tt: "Zlepší se výsledek [Concept('education','vzdělání')|E] v oboru @skill_stewardship_icon![Concept('stewardship','správcovství')|E]"
+ recently_joined_holy_order_desc: "[recipient.GetShortUIName] [Select_CString(recipient.IsLocalPlayer,Concatenate('jsi ',Select_CString(recipient.IsFemale,'vstoupila','vstoupil')),Select_CString(recipient.IsFemale,'vstoupila','vstoupil'))] do svého řádu během posledních 5 let"
+ child_in_holy_order_desc: "[recipient.GetShortUIName] [Select_CString(recipient.IsLocalPlayer,'jsi','je')] dítě přislíbené svému řádu"
+ custom.every_domain_monastic_order: "Každý [Concept('monastic_holy_order','mnišský řád')|E] ve tvé [Concept('domain','doméně')|E]"
+ order_gains_minor_tenet_popularity_tt: "Jejich [Concept('core_tenet','zásada')|E] získá #P [EmptyScope.ScriptValue('minor_tenet_popularity_value')|0]#! [Concept('tenet_popularity','rozšířenosti zásady')|E]"
+ new_order_gains_minor_tenet_popularity_tt: "Tvůj nový [Concept('monastic_holy_order','mnišský řád')|E] poskytne své [Concept('core_tenet','zásadě')|E] dalších #P [EmptyScope.ScriptValue('minor_tenet_popularity_value')|0]#! [Concept('tenet_popularity','rozšířenosti zásady')|E]"
+ holy_order.2030.t: "Dar řádu [recipient.GetPrimaryTitle.GetNameNoTooltip]"
+ holy_order.2030.desc: "Mé bohatství putuje do sklepení klášterů [recipient.Custom('CZ_TitledFirstName_G')]. Dar, který zaplatí zbožné obdělávání půdy, opisování svatých textů i pozemské cíle řádu [recipient.GetPrimaryTitle.GetName]...\n\n...a tisíc modliteb věnovaných spáse mé nesmrtelné duše. Členové klášterů totiž žijí pro modlitbu a díky jejich jedinečné, spravedlivé oddanosti prý [ROOT.Char.GetFaith.random_GoodGodNames|U] naslouchá jejich modlitbám obzvláště pozorně.\n\n#EMP Slyší [actor.GetFaith.HighGodName], jak vyslovují mé jméno?#!"
+ holy_order.2030.desc_desperate_plea: "#EMP Víš, jak [Select_CString(ROOT.Char.IsFemale,'jsem se plazila a žadonila','jsem se plazil a žadonil')] — jako [Select_CString(ROOT.Char.IsFemale,'největší ubožačka','největší ubožák')] — o tvé milosrdenství?#!"
+ holy_order.2030.desc_huge_donation: "#EMP Víš, jakého bohatství [Select_CString(ROOT.Char.IsFemale,'jsem se vzdala','jsem se vzdal')]...?#!"
+ holy_order.2030.a: "Noví přímluvci za mou spásu."
+ holy_order.2030.toast_puppeteer: "[recipient.GetShortUIName] [Select_CString(recipient.IsLocalPlayer,Concatenate('jsi ',Select_CString(recipient.IsFemale,'přijala','přijal')),Select_CString(recipient.IsFemale,'přijala','přijal'))] dar klášteru od [puppet_or_actor.Custom('CZ_ShortUIName_G')]"
+ holy_order.2031.opening: "[Select_CString(actor.IsFemale,'Sestro','Bratře')],"
+ holy_order.2031.desc: "O tvé žádosti [Select_CString(recipient.IsFemale,'jsem přemýšlela a modlila se','jsem přemýšlel a modlil se')], ale obávám se, že žádný dar mé mnichy nepřiměje prosit za tebe božstvo [recipient.GetFaith.HighGodName]. Tvá spása je zřejmě mimo dosah i pro nás."
+ holy_order.2031.a: "Pche! Alespoň mi zůstaly peníze."
+ holy_order.2031.toast_puppeteer: "[recipient.GetShortUIName] [Select_CString(recipient.IsLocalPlayer,Concatenate('jsi ',Select_CString(recipient.IsFemale,'odmítla','odmítl')),Select_CString(recipient.IsFemale,'odmítla','odmítl'))] dar klášteru od [puppet_or_actor.Custom('CZ_ShortUIName_G')]"
+ already_has_monastic_lease_tt: "Baronství [target.GetNameNoTier] je již [Concept('leased','pronajato')|E] [Concept('monastic_holy_order','mnišskému řádu')|E]"
+ lease_title_to_existing_monastic_order_interaction: "Poskytnout klášter"
+ lease_title_to_existing_monastic_order_interaction_desc: "[Concept('lease','Pronajmout')|E] řádu [recipient.GetPrimaryTitle.GetName] [Concept('temple_holding','chrámovou državu')|E] a získat [Concept('spiritual_fulfillment','duchovní naplnění')|E], [Concept('piety','zbožnost')|E] a snazší přístup k řádu"
+ INTERACTION_LEASE_DONATION: "Koupit přidružené pozemky"
+ no_valid_temple_holdings_to_lease_tt: "Ve tvé [Concept('domain','doméně')|E] nejsou žádné [Concept('temple_holdings','chrámové državy')|E] dostupné k [Concept('lease','pronájmu')|E]"
+ monastic_onslaught_modifier_tt: "Hrabství [target_county.GetName] získá [GetModifier('monastic_onslaught_modifier').GetNameWithTooltip] na #high 20 let#!"
+ holy_order.2040.opening: "[actor.Custom('CZ_FirstName_V')], [Select_CString(actor.IsFemale,'dobrodinko','dobrodinče')] z panství [actor.GetPrimaryTitle.GetNameNoTier],"
+ holy_order.2040.desc: "Je hotovo. V baronství [target.GetNameNoTier] zřídíme novou komunitu řádu [recipient.GetPrimaryTitle.GetNameNoTier] při zdejším místě bohoslužeb, [actor.GetFaith.HouseOfWorship]. Zde, v srdci vévodství [target.GetDeJureLiegeOfTier( 'duchy' ).GetNameNoTier], uložíme starobylé texty z knihoven v sídle [recipient.GetCapitalLocation.GetName].\n\n"
+ holy_order.2040.desc_nuns: "A naše [recipient.GetFaith.DevoteeFemalePlural] zde budou zpěvem prosit božstvo [actor.GetFaith.HighGodName] ve tvůj prospěch."
+ holy_order.2040.desc_monks: "A naši [recipient.GetFaith.DevoteeMalePlural] zde budou zpěvem prosit božstvo [actor.GetFaith.HighGodName] ve tvůj prospěch."
+ holy_order.2040.desc_huge_donation: "Tak řád vyjadřuje vděčnost za tvou svatou dobročinnost."
+ holy_order.2040.desc_rite: "\n\nVěz, že komunita bude dodržovat zvyklosti ritu [recipient.GetRite.GetName], stejně jako každý dům našeho řádu."
+ holy_order.2040.a: "Kéž váš řád prospívá!"
+ holy_order.2040.toast_puppeteer: "[recipient.GetShortUIName] [Select_CString(recipient.IsLocalPlayer,Concatenate('jsi ',Select_CString(recipient.IsFemale,'přijala','přijal')),Select_CString(recipient.IsFemale,'přijala','přijal'))] nabídku [puppet_or_actor.Custom('CZ_ShortUIName_G')] na pronájem baronství"
+ holy_order.2041.opening: "[actor.Custom('CZ_FirstName_V')] z panství [actor.GetPrimaryTitle.GetNameNoTier],"
+ holy_order.2041.desc: "My, ti nejčistší ze stoupenců božstva [recipient.GetFaith.HighGodName], kteří na tuto bídnou zemi přinášíme naprostou svatost posmrtného údělu [recipient.GetFaith.PositiveAfterLife]... se obáváme, že panství [actor.GetPrimaryTitle.GetNameNoTier] zachvátila pohroma, již nemohou rozptýlit ani naše modlitby.\n\nDokud je duše tvého panství hanebně odtržena od božstva [recipient.GetFaith.HighGodName], řád [recipient.GetPrimaryTitle.GetName] se nemůže vydat do baronství [target.GetNameNoTier]."
+ holy_order.2041.a: "Jejich „čistota“ — pošetilost!"
+ holy_order.2041.toast_puppeteer: "[recipient.GetShortUIName] [Select_CString(recipient.IsLocalPlayer,Concatenate('jsi ',Select_CString(recipient.IsFemale,'odmítla','odmítl')),Select_CString(recipient.IsFemale,'odmítla','odmítl'))] nabídku [puppet_or_actor.Custom('CZ_ShortUIName_G')] na pronájem baronství"
+ monastic_order_entering_interaction_range_tt: "@alert_icon! #alert_trial Řád [monastic_order.GetName] vstoupí do [Concept('holy_order_vicinity','blízkosti řádu')|E] a zpřístupní své [Concept('interactions','interakce')|E]#!"
+ holy_order.2050.t: "V baronství [barony.GetNameNoTierNoTooltip] vzniká hnutí"
+ holy_order.2050.desc: "„Trpí členové řádu [target_order.GetName] ještě... jako poustevníci na poušti?“ — tak začínají všechny plamenné listy [clerical_helper.Custom('CZ_FirstName_G')].\n\n„Halí se [target_lessee.GetTitledFirstName] do zlata?“ — ptají se kázání reformátorů v baronství [barony.GetNameNoTier] a končí slovy: #EMP „Nová cesta! Nová řehole!“#!\n\nKlášter se rychle mění v ohnisko zbožné reformy a vzdoru. Jeho obyvatelé se už sotva hlásí k [target_lessee.GetPrimaryTitle.Custom('CZ_Adjective_eemu')] řádu a sotva je uspokojí zatuchlé řeči o zásadě [target_order_tenet.GetName( founder.GetRite )]. Jejich reformní duch však stále potřebuje jednu novou zásadu a jednu mysl, která jej povede."
+ msg_order_movement_took_monastery.t: "[chosen_leader.GetPrimaryTitle.Custom('CZ_Adjective_ee')|U] hnutí"
+ movement_took_monastery_notification_3_tt: "Řád [new_holy_order.GetName] převzal od řádu [target_order.GetName] baronství [barony.GetNameNoTier] i další [Concept('leases','pronájmy')|E]"
+ movement_took_monastery_notification_2_tt: "Řád [new_holy_order.GetName] převzal od řádu [target_order.GetName] baronství [barony.GetNameNoTier] a [lease_2.GetNameNoTier]"
+ movement_took_monastery_notification_tt: "Řád [new_holy_order.GetName] převzal od řádu [target_order.GetName] [Concept('lease','pronájem')|E] baronství [barony.GetNameNoTier]"
+ movement_took_monastery_patron_notification_tt: "[founder.GetShortUIName] [Select_CString(founder.IsLocalPlayer,Concatenate('jsi ',Select_CString(founder.IsFemale,'schválila','schválil')),Select_CString(founder.IsFemale,'schválila','schválil'))] tento reformní [Concept('monastic_holy_order','mnišský řád')|E]"

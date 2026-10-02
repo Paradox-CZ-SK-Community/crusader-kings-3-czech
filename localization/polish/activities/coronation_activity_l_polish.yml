@@ -19,7 +19,7 @@
  coronation_location_owned: "Mimo [Concept('realm','panství')|E]"
  coronation_location_hof_owned: "[THIS.Province.GetName] #bol není#! [Concept('holy_site','svatým místem')|E] v [Concept('realm','panství')|E] tvé [Concept('head_of_faith','hlavy víry')|E]"
  coronation_location_holy_site_host: "[THIS.Province.GetName] #bol není#! [Concept('holy_site','svatým místem')|E] ve tvém [Concept('realm','panství')|E] (tvá [Concept('head_of_faith','hlava víry')|E] nevlastní žádné [Concept('holy_site','svaté místo')|E])"
- coronation_location_authority_capital: "[THIS.Province.GetName] #bol není#! místem [GetPlayer.Custom('pam_anointment_authority_name_loc')]" # todo: NEW TRANSLATION
+ coronation_location_authority_capital: "[THIS.Province.GetName] #bol není#! sídlem autority, kterou je [GetPlayer.Custom('pam_anointment_authority_name_loc')]"
  coronation_location_neither_capital_nor_holy_site: "[THIS.Province.GetName] #bol není#! [Concept('county_capital','hlavním sídlem hrabství')|E] ani [Concept('holy_site','svatým místem')|E]"
  coronation_phase_preparations: "Předehra"
  coronation_phase_preparations_desc: ""
@@ -61,13 +61,13 @@
  coronation_hof_guest_desc: "$coronation_hof_guest_desc_for_host$"
  coronation_hof_guest_for_host: "Hlava víry"
  coronation_hof_guest_desc_for_host: "Při [Concept('anointment','pomazání')|E] musí být [Concept('head_of_faith','hlava víry')|E] [Concept('activity_guest','hostem aktivity')|E], aby bylo pomazání považováno za [Concept('legitimate','legitimní')|E].\n\nZajisti si podporu hlavy víry pomocí [Concept('interaction','interakce')|E] [Concept('anointment_request','Žádost o pomazání')|E]."
- pam_anointment_authority_name_challenger: "[ROOT.Char.GetReligiousHeadOrChallenger.GetTitledFirstName]" # todo: NEW TRANSLATION
- pam_anointment_authority_name_hof: "[ROOT.Char.GetFaith.GetReligiousHead.GetTitledFirstName]" # todo: NEW TRANSLATION
- pam_anointment_authority_name_hor: "[ROOT.Char.GetRite.GetHeadOfRite.GetTitledFirstName]" # todo: NEW TRANSLATION
- pam_anointment_authority_title_challenger: "[challenger_hof|E]" # todo: NEW TRANSLATION
- pam_anointment_authority_title_hof: "[ROOT.Char.GetFaith.ReligiousHeadTitleName]" # todo: NEW TRANSLATION
- pam_anointment_authority_title_hor: "Hlava obřadu" # todo: NEW TRANSLATION
- pam_anointment_authority_fallback: "Náboženská autorita" # todo: NEW TRANSLATION
+ pam_anointment_authority_name_challenger: "[ROOT.Char.GetReligiousHeadOrChallenger.GetTitledFirstName]"
+ pam_anointment_authority_name_hof: "[ROOT.Char.GetFaith.GetReligiousHead.GetTitledFirstName]"
+ pam_anointment_authority_name_hor: "[ROOT.Char.GetRite.GetHeadOfRite.GetTitledFirstName]"
+ pam_anointment_authority_title_challenger: "[Concept('challenger_hof','Konkurenční hlava víry')|E]"
+ pam_anointment_authority_title_hof: "[ROOT.Char.GetFaith.ReligiousHeadTitleName]"
+ pam_anointment_authority_title_hor: "Hlava ritu"
+ pam_anointment_authority_fallback: "Náboženská autorita"
  doctrine_coronation_name: "Tradice korunovace"
  doctrine_no_anointment_name: "Bez pomazání"
  doctrine_no_anointment_desc: "V této víře se čela vládců nedotýká žádný posvátný olej — jejich cesta k moci se obejde bez pomazání i božského obřadu."
@@ -758,8 +758,8 @@
  TRADE_LAND_ACCEPTANCE_SEND_OPTION: "Vrácení [Concept('de_jure','de iure')|E] [Concept('land','pozemku')|E]: $VALUE|=+0$"
  CORONATION_ANOINTMENT_REQUEST_INTERACTION_NOTIFICATION: "S nejhlubší úctou žádám o tvé požehnání a podporu pro svůj právoplatný a příznivými znameními provázený nástup na trůn."
  anointment_request_already_supported: "[recipient.GetTitledFirstName] již podporuje tvé [Concept('anointment','pomazání')|E]"
- anointment_request_no_holy_site: "Pro [anointment|E] není k dispozici žádné [holy_site|E]" # todo: NEW TRANSLATION
- activity_coronation_hof_no_anointment_situation: "[GetPlayer.Custom('pam_anointment_authority_name_loc')] nebude pořádat [coronation_anointment|E] ani jej podporovat, dokud se [GetSituation('the_christian_church').GetName] nachází v této fázi [situation_phase|E]" # todo: NEW TRANSLATION
+ anointment_request_no_holy_site: "Pro [Concept('anointment','pomazání')|E] není k dispozici žádné [Concept('holy_site','svaté místo')|E]"
+ activity_coronation_hof_no_anointment_situation: "[GetPlayer.Custom('pam_anointment_authority_name_loc')|U] neuspořádá ani nepodpoří [Concept('coronation_anointment','pomazání')|E], dokud se [GetSituation('the_christian_church').GetName] nachází v této [Concept('situation_phase','fázi situace')|E]"
  coronation_realm_size_desc: "$CB_REALM_SIZE_COST$"
  coronation_empire_req: "[Concept('title_tier','Úroveň')|E] [Concept('empire','říše')|E] nebo vyšší"
  activity_coronation_predicted_cost: "Náklady na [GetActivityType( 'activity_coronation' ).GetNameNoTooltip] ovlivňuje především [Concept('activity_type','typ aktivity')|E] a zvolené [Concept('activity_options','možnosti aktivity')|E]."

@@ -1,6 +1,6 @@
 ﻿l_polish:
  bm_1066_rags_to_riches: "Z nuzáka boháčem"
- bm_1066_rags_to_riches_desc: "#V #font:TitleFont #size:20 @legends_of_ck_icon! Legendy Crusader Kings III#!#!#!\n\nPo celé Evropě soupeří šlechtické rody o moc. Jejich vůdci svádějí slavné bitvy a kují temné pikle: riskují vše, aby si přivlastnili země a dědická práva ostatních.\n\n#bold Staří králové upadají do zkázy, zatímco nově příchozí se derou ke korunám... kým budeš ty?#!" # todo: CHANGED (predtym: V font:TitleFont size:20 @legends_of_ck_icon! Legendy Crusader Kings III ! ! !\n\nPo celé Evropě rody bojují a intrikují)
+ bm_1066_rags_to_riches_desc: "#V #font:TitleFont #size:20 @legends_of_ck_icon! Legendy Crusader Kings III#!#!#!\n\nPo celé Evropě soupeří šlechtické rody o moc. Jejich představitelé svádějí slavné bitvy a spřádají temné intriky. Riskují vše, aby se zmocnili cizích zemí i dědičných práv.\n\n#bold Když dávní králové míří k záhubě a noví uchazeči se drápou po korunách... kým budeš ty?#!"
  bookmark_rags_to_riches_petty_king_murchad: "Místní král Murchad"
  bookmark_rags_to_riches_petty_king_murchad_subheading: "$BOOKMARK_SUBHEADING_DEFAULT$"
  bookmark_rags_to_riches_petty_king_murchad_desc: "[diplomacy_lifestyle_i] #V #font:TitleFont #size:15 Legenda Crusader Kings III#!#!#!\nNa počátku 11. století velekrálovský titul v Irsku střídavě přecházel do rukou rodu Briain a unikal mu, zatímco irské šlechtické rody válčily o území mezi sebou i proti vikinským osadníkům. Ačkoli Murchad pochází z linie mužů považovaných za předurčené ke kralování, o jeho krátké vládě nad menším územím Munsteru se mnoho neví.\n\n#bold S tvou pomocí by snad mohl některý člen rodu Briain znovu usednout na irský trůn?#!"
@@ -36,7 +36,7 @@
  bookmark.1066.c_flavor: "Zatažením za správné nitky mohu učinit náš [Concept('matrilineal','matrilineární')|E] [Concept('marriage','sňatek')|E], čímž zajistím, že naše děti budou patřit k mému [Concept('house','rodu')|E] a [Concept('dynasty','dynastii')|E]."
  abandoned_marriage_modifier: "Opuštěné manželství"
  abandoned_marriage_modifier_desc: "Tato postava opustila svého manželského partnera, s nímž je formálně stále sezdaná...\nPřijetí [Concept('marriage','sňatku')|E]: #N -150#!"
- ABANDONED_SPOUSE_MODIFIER: "[puppet_or_actor.GetShortUIName|U] [CharHaveHas(puppet_or_actor)] [GetModifier('abandoned_marriage_modifier').GetNameWithTooltip]: $VALUE|=+0$" # todo: CHANGED (predtym: Máš [GetModifier('abandoned_marriage_modifier').GetNameWithTooltip]: $VALUE|=+0$)
+ ABANDONED_SPOUSE_MODIFIER: "[puppet_or_actor.GetShortUIName|U] [Select_CString(puppet_or_actor.IsLocalPlayer,'máš','má')] [GetModifier('abandoned_marriage_modifier').GetNameWithTooltip]: $VALUE|=+0$"
  bookmark.1067.t: "Šeptanda o čarodějnictví"
  bookmark.1067.desc: "Oheň praská a mihotá se, zatímco [witch.GetFirstName] vytahuje ze své brašny svazek. Noční vzduch prostupuje vůně sladkých sušených bylin.\n\n„Svá tajemství obvykle nesděluji zadarmo.“ Upře na mě pohled. „Jako mladá vládkyně a žena máš všechno proti sobě. Toto mé nejcennější vědění ti pomůže obstát ve světě, který by jinak raději viděl tvůj pád.“\n\nTajemná žena se zdá být odhodlaná podělit se o svou moudrost... právě před tím mě však kněží varovali."
  bookmark.1067.a: "Nauč mě všechno, [ROOT.Char.GetFaith.PriestMalePlural] ať se propadnou!"
@@ -44,7 +44,7 @@
  bookmark.1067.b: "Ne, tohle je kacířství."
  bookmark.1067.b_flavor: "Stačí mi víra v [ROOT.Char.GetFaith.HighGodName]."
  bookmark.1068.t: "Slovanské marky"
- bookmark.1068.desc: "[GetTitleByKey('d_meissen').GetNameNoTier] a [GetTitleByKey('d_lausitz').GetNameNoTier], jak jen toužím po těch úrodných a prosperujících zemích!\n\nMůj lenní pán [emperor.GetTitledFirstNameNicknamed] mi je přislíbil výměnou za mou věrnost. Vím však, že jsou to jen prázdná slova. [emperor.GetSheHe|U] mi je nebude moci udělit.\n\nMohu buď přijmout [emperor.GetTitleAsNamePossessiveNoTooltip] slova taková, jaká jsou – jako chválu mého ušlechtilého charakteru a nic víc – nebo mohu vzít věci do vlastních rukou." # todo: CHANGED (predtym: [GetTitleByKey('d_meissen').GetNameNoTier] a [GetTitleByKey('d_lausitz').GetNameNoTier], jak jen toužím po těch úrodných)
+ bookmark.1068.desc: "[GetTitleByKey('d_meissen').GetNameNoTier] a [GetTitleByKey('d_lausitz').GetNameNoTier], jak jen toužím po těch úrodných a vzkvétajících zemích!\n\n[emperor.GetTitledFirstNameNicknamed], [Select_CString(emperor.IsFemale,'moje lenní paní, mi je slíbila','můj lenní pán, mi je slíbil')] výměnou za věrnost. Vím však, že jsou to jen prázdná slova. [Select_CString(emperor.IsFemale,'Ona','On')] mi je nebude moci udělit.\n\nMohu buď přijmout slova [emperor.Custom('CZ_TitleAsNameNoTooltip_G')] taková, jaká jsou, jako chválu mého vznešeného charakteru a nic víc, nebo vzít věci do vlastních rukou."
  bookmark.1068.a: "Ty země budou mé – silou!"
  bookmark.1068.a_flavor: "Chceš-li připojit [Concept('titles','tituly')|E] ke svému [Concept('realm','panství')|E], budeš pravděpodobně muset zahájit [Concept('war','válku')|E] pomocí [Concept('casus_belli','casus belli')|E] za [Concept('claim','nárok')|E]."
  bookmark.1068.b: "Budu se těšit [emperor.GetTitleAsNamePossessiveNoTooltip] přízni."

@@ -303,118 +303,56 @@
 
  # =========================================================
  # ADJECTIVE DECLENSION
- # Supported scopes: Culture, Faith, Religion, Landed Title.
- # Plain API uses NoTooltip getters.
- # Rich API declines native getters directly and restores universal #!#! closers.
+ # Public Custom() API: Culture + Landed Title only.
+ # Faith / Religion use direct rich macros and are intentionally excluded
+ # from this generic CustomLoc family.
+ #
+ # Culture and Title share the same native rich-text closer depth, so one
+ # type=all CustomLoc can safely select between their native rich getters.
  # =========================================================
 
+ CZ_Adjective: "[Select_CString(ROOT.Culture.IsValid,ROOT.Culture.GetName,ROOT.GetLandedTitle.GetAdjective)]"
+ CZ_Adjective_yy: "[TrimBackChars(TrimBackChars(Select_CString(ROOT.Culture.IsValid,ROOT.Culture.GetName,ROOT.GetLandedTitle.GetAdjective),'#!'),'ýá')]ý#!#!"
+ CZ_Adjective_yych: "[TrimBackChars(TrimBackChars(Select_CString(ROOT.Culture.IsValid,ROOT.Culture.GetName,ROOT.GetLandedTitle.GetAdjective),'#!'),'ýá')]ých#!#!"
+ CZ_Adjective_eeho: "[TrimBackChars(TrimBackChars(Select_CString(ROOT.Culture.IsValid,ROOT.Culture.GetName,ROOT.GetLandedTitle.GetAdjective),'#!'),'ýá')]ého#!#!"
+ CZ_Adjective_eemu: "[TrimBackChars(TrimBackChars(Select_CString(ROOT.Culture.IsValid,ROOT.Culture.GetName,ROOT.GetLandedTitle.GetAdjective),'#!'),'ýá')]ému#!#!"
+ CZ_Adjective_eem: "[TrimBackChars(TrimBackChars(Select_CString(ROOT.Culture.IsValid,ROOT.Culture.GetName,ROOT.GetLandedTitle.GetAdjective),'#!'),'ýá')]ém#!#!"
+ CZ_Adjective_yym: "[TrimBackChars(TrimBackChars(Select_CString(ROOT.Culture.IsValid,ROOT.Culture.GetName,ROOT.GetLandedTitle.GetAdjective),'#!'),'ýá')]ým#!#!"
+ CZ_Adjective_yymi: "[TrimBackChars(TrimBackChars(Select_CString(ROOT.Culture.IsValid,ROOT.Culture.GetName,ROOT.GetLandedTitle.GetAdjective),'#!'),'ýá')]ými#!#!"
+ CZ_Adjective_aa: "[TrimBackChars(TrimBackChars(Select_CString(ROOT.Culture.IsValid,ROOT.Culture.GetName,ROOT.GetLandedTitle.GetAdjective),'#!'),'ýá')]á#!#!"
+ CZ_Adjective_ou: "[TrimBackChars(TrimBackChars(Select_CString(ROOT.Culture.IsValid,ROOT.Culture.GetName,ROOT.GetLandedTitle.GetAdjective),'#!'),'ýá')]ou#!#!"
+ CZ_Adjective_sti: "[Select_CString(Not(EqualTo_string(TrimBackChars(Select_CString(ROOT.Culture.IsValid,ROOT.Culture.GetNameNoTooltip,ROOT.GetLandedTitle.GetAdjectiveNoTooltip),'ýák'),TrimBackChars(Select_CString(ROOT.Culture.IsValid,ROOT.Culture.GetNameNoTooltip,ROOT.GetLandedTitle.GetAdjectiveNoTooltip),'ýáks'))),Concatenate(TrimBackChars(TrimBackChars(Select_CString(ROOT.Culture.IsValid,ROOT.Culture.GetName,ROOT.GetLandedTitle.GetAdjective),'#!'),'ýáks'),'ští'),Select_CString(Not(EqualTo_string(TrimBackChars(Select_CString(ROOT.Culture.IsValid,ROOT.Culture.GetNameNoTooltip,ROOT.GetLandedTitle.GetAdjectiveNoTooltip),'ýák'),TrimBackChars(Select_CString(ROOT.Culture.IsValid,ROOT.Culture.GetNameNoTooltip,ROOT.GetLandedTitle.GetAdjectiveNoTooltip),'ýákc'))),Concatenate(TrimBackChars(TrimBackChars(Select_CString(ROOT.Culture.IsValid,ROOT.Culture.GetName,ROOT.GetLandedTitle.GetAdjective),'#!'),'ýákc'),'čtí'),Concatenate(TrimBackChars(TrimBackChars(Select_CString(ROOT.Culture.IsValid,ROOT.Culture.GetName,ROOT.GetLandedTitle.GetAdjective),'#!'),'ýá'),'í')))]#!#!"
+ CZ_Adjective_o: "[TrimBackChars(TrimBackChars(Select_CString(ROOT.Culture.IsValid,ROOT.Culture.GetName,ROOT.GetLandedTitle.GetAdjective),'#!'),'ýá')]o#!#!"
+ CZ_Adjective_u: "[TrimBackChars(TrimBackChars(Select_CString(ROOT.Culture.IsValid,ROOT.Culture.GetName,ROOT.GetLandedTitle.GetAdjective),'#!'),'ýá')]u#!#!"
+ CZ_Adjective_ee: "[TrimBackChars(TrimBackChars(Select_CString(ROOT.Culture.IsValid,ROOT.Culture.GetName,ROOT.GetLandedTitle.GetAdjective),'#!'),'ýá')]é#!#!"
+
+
+ # =========================================================
+ # ADJECTIVE DECLENSION - NO TOOLTIP
+ # Public Custom() API for Culture + Faith + Religion + Landed Title.
+ # This is the proven generic plain-string path and intentionally does not
+ # use any rich tooltip/click reconstruction.
+ # =========================================================
+
+ CZ_AdjectiveNoTooltip: "[Select_CString(ROOT.Culture.IsValid,ROOT.Culture.GetNameNoTooltip,Select_CString(ROOT.Faith.IsValid,ROOT.Faith.GetAdjectiveNoTooltip,Select_CString(ROOT.GetLandedTitle.IsValid,ROOT.GetLandedTitle.GetAdjectiveNoTooltip,ROOT.Religion.GetAdjectiveNoTooltip)))]"
+ CZ_AdjectiveNoTooltip_yy: "[Select_CString(ROOT.Culture.IsValid,CZAdjectiveDecline(ROOT.Culture.GetNameNoTooltip,'ý'),Select_CString(ROOT.Faith.IsValid,CZAdjectiveDecline(ROOT.Faith.GetAdjectiveNoTooltip,'ý'),Select_CString(ROOT.GetLandedTitle.IsValid,CZAdjectiveDecline(ROOT.GetLandedTitle.GetAdjectiveNoTooltip,'ý'),CZAdjectiveDecline(ROOT.Religion.GetAdjectiveNoTooltip,'ý'))))]"
+ CZ_AdjectiveNoTooltip_yych: "[Select_CString(ROOT.Culture.IsValid,CZAdjectiveDecline(ROOT.Culture.GetNameNoTooltip,'ých'),Select_CString(ROOT.Faith.IsValid,CZAdjectiveDecline(ROOT.Faith.GetAdjectiveNoTooltip,'ých'),Select_CString(ROOT.GetLandedTitle.IsValid,CZAdjectiveDecline(ROOT.GetLandedTitle.GetAdjectiveNoTooltip,'ých'),CZAdjectiveDecline(ROOT.Religion.GetAdjectiveNoTooltip,'ých'))))]"
+ CZ_AdjectiveNoTooltip_eeho: "[Select_CString(ROOT.Culture.IsValid,CZAdjectiveDecline(ROOT.Culture.GetNameNoTooltip,'ého'),Select_CString(ROOT.Faith.IsValid,CZAdjectiveDecline(ROOT.Faith.GetAdjectiveNoTooltip,'ého'),Select_CString(ROOT.GetLandedTitle.IsValid,CZAdjectiveDecline(ROOT.GetLandedTitle.GetAdjectiveNoTooltip,'ého'),CZAdjectiveDecline(ROOT.Religion.GetAdjectiveNoTooltip,'ého'))))]"
+ CZ_AdjectiveNoTooltip_eemu: "[Select_CString(ROOT.Culture.IsValid,CZAdjectiveDecline(ROOT.Culture.GetNameNoTooltip,'ému'),Select_CString(ROOT.Faith.IsValid,CZAdjectiveDecline(ROOT.Faith.GetAdjectiveNoTooltip,'ému'),Select_CString(ROOT.GetLandedTitle.IsValid,CZAdjectiveDecline(ROOT.GetLandedTitle.GetAdjectiveNoTooltip,'ému'),CZAdjectiveDecline(ROOT.Religion.GetAdjectiveNoTooltip,'ému'))))]"
+ CZ_AdjectiveNoTooltip_eem: "[Select_CString(ROOT.Culture.IsValid,CZAdjectiveDecline(ROOT.Culture.GetNameNoTooltip,'ém'),Select_CString(ROOT.Faith.IsValid,CZAdjectiveDecline(ROOT.Faith.GetAdjectiveNoTooltip,'ém'),Select_CString(ROOT.GetLandedTitle.IsValid,CZAdjectiveDecline(ROOT.GetLandedTitle.GetAdjectiveNoTooltip,'ém'),CZAdjectiveDecline(ROOT.Religion.GetAdjectiveNoTooltip,'ém'))))]"
+ CZ_AdjectiveNoTooltip_yym: "[Select_CString(ROOT.Culture.IsValid,CZAdjectiveDecline(ROOT.Culture.GetNameNoTooltip,'ým'),Select_CString(ROOT.Faith.IsValid,CZAdjectiveDecline(ROOT.Faith.GetAdjectiveNoTooltip,'ým'),Select_CString(ROOT.GetLandedTitle.IsValid,CZAdjectiveDecline(ROOT.GetLandedTitle.GetAdjectiveNoTooltip,'ým'),CZAdjectiveDecline(ROOT.Religion.GetAdjectiveNoTooltip,'ým'))))]"
+ CZ_AdjectiveNoTooltip_yymi: "[Select_CString(ROOT.Culture.IsValid,CZAdjectiveDecline(ROOT.Culture.GetNameNoTooltip,'ými'),Select_CString(ROOT.Faith.IsValid,CZAdjectiveDecline(ROOT.Faith.GetAdjectiveNoTooltip,'ými'),Select_CString(ROOT.GetLandedTitle.IsValid,CZAdjectiveDecline(ROOT.GetLandedTitle.GetAdjectiveNoTooltip,'ými'),CZAdjectiveDecline(ROOT.Religion.GetAdjectiveNoTooltip,'ými'))))]"
+ CZ_AdjectiveNoTooltip_aa: "[Select_CString(ROOT.Culture.IsValid,CZAdjectiveDecline(ROOT.Culture.GetNameNoTooltip,'á'),Select_CString(ROOT.Faith.IsValid,CZAdjectiveDecline(ROOT.Faith.GetAdjectiveNoTooltip,'á'),Select_CString(ROOT.GetLandedTitle.IsValid,CZAdjectiveDecline(ROOT.GetLandedTitle.GetAdjectiveNoTooltip,'á'),CZAdjectiveDecline(ROOT.Religion.GetAdjectiveNoTooltip,'á'))))]"
+ CZ_AdjectiveNoTooltip_ou: "[Select_CString(ROOT.Culture.IsValid,CZAdjectiveDecline(ROOT.Culture.GetNameNoTooltip,'ou'),Select_CString(ROOT.Faith.IsValid,CZAdjectiveDecline(ROOT.Faith.GetAdjectiveNoTooltip,'ou'),Select_CString(ROOT.GetLandedTitle.IsValid,CZAdjectiveDecline(ROOT.GetLandedTitle.GetAdjectiveNoTooltip,'ou'),CZAdjectiveDecline(ROOT.Religion.GetAdjectiveNoTooltip,'ou'))))]"
+ CZ_AdjectiveNoTooltip_sti: "[Select_CString(ROOT.Culture.IsValid,CZAdjectiveSti(ROOT.Culture.GetNameNoTooltip),Select_CString(ROOT.Faith.IsValid,CZAdjectiveSti(ROOT.Faith.GetAdjectiveNoTooltip),Select_CString(ROOT.GetLandedTitle.IsValid,CZAdjectiveSti(ROOT.GetLandedTitle.GetAdjectiveNoTooltip),CZAdjectiveSti(ROOT.Religion.GetAdjectiveNoTooltip))))]"
+ CZ_AdjectiveNoTooltip_o: "[Select_CString(ROOT.Culture.IsValid,CZAdjectiveDecline(ROOT.Culture.GetNameNoTooltip,'o'),Select_CString(ROOT.Faith.IsValid,CZAdjectiveDecline(ROOT.Faith.GetAdjectiveNoTooltip,'o'),Select_CString(ROOT.GetLandedTitle.IsValid,CZAdjectiveDecline(ROOT.GetLandedTitle.GetAdjectiveNoTooltip,'o'),CZAdjectiveDecline(ROOT.Religion.GetAdjectiveNoTooltip,'o'))))]"
+ CZ_AdjectiveNoTooltip_u: "[Select_CString(ROOT.Culture.IsValid,CZAdjectiveDecline(ROOT.Culture.GetNameNoTooltip,'u'),Select_CString(ROOT.Faith.IsValid,CZAdjectiveDecline(ROOT.Faith.GetAdjectiveNoTooltip,'u'),Select_CString(ROOT.GetLandedTitle.IsValid,CZAdjectiveDecline(ROOT.GetLandedTitle.GetAdjectiveNoTooltip,'u'),CZAdjectiveDecline(ROOT.Religion.GetAdjectiveNoTooltip,'u'))))]"
+ CZ_AdjectiveNoTooltip_ee: "[Select_CString(ROOT.Culture.IsValid,CZAdjectiveDecline(ROOT.Culture.GetNameNoTooltip,'é'),Select_CString(ROOT.Faith.IsValid,CZAdjectiveDecline(ROOT.Faith.GetAdjectiveNoTooltip,'é'),Select_CString(ROOT.GetLandedTitle.IsValid,CZAdjectiveDecline(ROOT.GetLandedTitle.GetAdjectiveNoTooltip,'é'),CZAdjectiveDecline(ROOT.Religion.GetAdjectiveNoTooltip,'é'))))]"
 
  # ---------------------------------------------------------
- # PLAIN / LEGACY + NO TOOLTIP BACKING
+ # RICH ADJECTIVE FORMAT CONSTANTS - FAITH / RELIGION
  # ---------------------------------------------------------
-
- CZ_Adjective: "[Select_CString(ROOT.Culture.IsValid,ROOT.Culture.GetNameNoTooltip,Select_CString(ROOT.Faith.IsValid,ROOT.Faith.GetAdjectiveNoTooltip,Select_CString(ROOT.GetLandedTitle.IsValid,ROOT.GetLandedTitle.GetAdjectiveNoTooltip,ROOT.Religion.GetAdjectiveNoTooltip)))]"
- CZ_Adjective_yy: "[Select_CString(ROOT.Culture.IsValid,CZAdjectiveDecline(ROOT.Culture.GetNameNoTooltip,'ý'),Select_CString(ROOT.Faith.IsValid,CZAdjectiveDecline(ROOT.Faith.GetAdjectiveNoTooltip,'ý'),Select_CString(ROOT.GetLandedTitle.IsValid,CZAdjectiveDecline(ROOT.GetLandedTitle.GetAdjectiveNoTooltip,'ý'),CZAdjectiveDecline(ROOT.Religion.GetAdjectiveNoTooltip,'ý'))))]"
- CZ_Adjective_yych: "[Select_CString(ROOT.Culture.IsValid,CZAdjectiveDecline(ROOT.Culture.GetNameNoTooltip,'ých'),Select_CString(ROOT.Faith.IsValid,CZAdjectiveDecline(ROOT.Faith.GetAdjectiveNoTooltip,'ých'),Select_CString(ROOT.GetLandedTitle.IsValid,CZAdjectiveDecline(ROOT.GetLandedTitle.GetAdjectiveNoTooltip,'ých'),CZAdjectiveDecline(ROOT.Religion.GetAdjectiveNoTooltip,'ých'))))]"
- CZ_Adjective_eeho: "[Select_CString(ROOT.Culture.IsValid,CZAdjectiveDecline(ROOT.Culture.GetNameNoTooltip,'ého'),Select_CString(ROOT.Faith.IsValid,CZAdjectiveDecline(ROOT.Faith.GetAdjectiveNoTooltip,'ého'),Select_CString(ROOT.GetLandedTitle.IsValid,CZAdjectiveDecline(ROOT.GetLandedTitle.GetAdjectiveNoTooltip,'ého'),CZAdjectiveDecline(ROOT.Religion.GetAdjectiveNoTooltip,'ého'))))]"
- CZ_Adjective_eemu: "[Select_CString(ROOT.Culture.IsValid,CZAdjectiveDecline(ROOT.Culture.GetNameNoTooltip,'ému'),Select_CString(ROOT.Faith.IsValid,CZAdjectiveDecline(ROOT.Faith.GetAdjectiveNoTooltip,'ému'),Select_CString(ROOT.GetLandedTitle.IsValid,CZAdjectiveDecline(ROOT.GetLandedTitle.GetAdjectiveNoTooltip,'ému'),CZAdjectiveDecline(ROOT.Religion.GetAdjectiveNoTooltip,'ému'))))]"
- CZ_Adjective_eem: "[Select_CString(ROOT.Culture.IsValid,CZAdjectiveDecline(ROOT.Culture.GetNameNoTooltip,'ém'),Select_CString(ROOT.Faith.IsValid,CZAdjectiveDecline(ROOT.Faith.GetAdjectiveNoTooltip,'ém'),Select_CString(ROOT.GetLandedTitle.IsValid,CZAdjectiveDecline(ROOT.GetLandedTitle.GetAdjectiveNoTooltip,'ém'),CZAdjectiveDecline(ROOT.Religion.GetAdjectiveNoTooltip,'ém'))))]"
- CZ_Adjective_yym: "[Select_CString(ROOT.Culture.IsValid,CZAdjectiveDecline(ROOT.Culture.GetNameNoTooltip,'ým'),Select_CString(ROOT.Faith.IsValid,CZAdjectiveDecline(ROOT.Faith.GetAdjectiveNoTooltip,'ým'),Select_CString(ROOT.GetLandedTitle.IsValid,CZAdjectiveDecline(ROOT.GetLandedTitle.GetAdjectiveNoTooltip,'ým'),CZAdjectiveDecline(ROOT.Religion.GetAdjectiveNoTooltip,'ým'))))]"
- CZ_Adjective_yymi: "[Select_CString(ROOT.Culture.IsValid,CZAdjectiveDecline(ROOT.Culture.GetNameNoTooltip,'ými'),Select_CString(ROOT.Faith.IsValid,CZAdjectiveDecline(ROOT.Faith.GetAdjectiveNoTooltip,'ými'),Select_CString(ROOT.GetLandedTitle.IsValid,CZAdjectiveDecline(ROOT.GetLandedTitle.GetAdjectiveNoTooltip,'ými'),CZAdjectiveDecline(ROOT.Religion.GetAdjectiveNoTooltip,'ými'))))]"
- CZ_Adjective_aa: "[Select_CString(ROOT.Culture.IsValid,CZAdjectiveDecline(ROOT.Culture.GetNameNoTooltip,'á'),Select_CString(ROOT.Faith.IsValid,CZAdjectiveDecline(ROOT.Faith.GetAdjectiveNoTooltip,'á'),Select_CString(ROOT.GetLandedTitle.IsValid,CZAdjectiveDecline(ROOT.GetLandedTitle.GetAdjectiveNoTooltip,'á'),CZAdjectiveDecline(ROOT.Religion.GetAdjectiveNoTooltip,'á'))))]"
- CZ_Adjective_ou: "[Select_CString(ROOT.Culture.IsValid,CZAdjectiveDecline(ROOT.Culture.GetNameNoTooltip,'ou'),Select_CString(ROOT.Faith.IsValid,CZAdjectiveDecline(ROOT.Faith.GetAdjectiveNoTooltip,'ou'),Select_CString(ROOT.GetLandedTitle.IsValid,CZAdjectiveDecline(ROOT.GetLandedTitle.GetAdjectiveNoTooltip,'ou'),CZAdjectiveDecline(ROOT.Religion.GetAdjectiveNoTooltip,'ou'))))]"
- CZ_Adjective_sti: "[Select_CString(ROOT.Culture.IsValid,CZAdjectiveSti(ROOT.Culture.GetNameNoTooltip),Select_CString(ROOT.Faith.IsValid,CZAdjectiveSti(ROOT.Faith.GetAdjectiveNoTooltip),Select_CString(ROOT.GetLandedTitle.IsValid,CZAdjectiveSti(ROOT.GetLandedTitle.GetAdjectiveNoTooltip),CZAdjectiveSti(ROOT.Religion.GetAdjectiveNoTooltip))))]"
- CZ_Adjective_o: "[Select_CString(ROOT.Culture.IsValid,CZAdjectiveDecline(ROOT.Culture.GetNameNoTooltip,'o'),Select_CString(ROOT.Faith.IsValid,CZAdjectiveDecline(ROOT.Faith.GetAdjectiveNoTooltip,'o'),Select_CString(ROOT.GetLandedTitle.IsValid,CZAdjectiveDecline(ROOT.GetLandedTitle.GetAdjectiveNoTooltip,'o'),CZAdjectiveDecline(ROOT.Religion.GetAdjectiveNoTooltip,'o'))))]"
- CZ_Adjective_u: "[Select_CString(ROOT.Culture.IsValid,CZAdjectiveDecline(ROOT.Culture.GetNameNoTooltip,'u'),Select_CString(ROOT.Faith.IsValid,CZAdjectiveDecline(ROOT.Faith.GetAdjectiveNoTooltip,'u'),Select_CString(ROOT.GetLandedTitle.IsValid,CZAdjectiveDecline(ROOT.GetLandedTitle.GetAdjectiveNoTooltip,'u'),CZAdjectiveDecline(ROOT.Religion.GetAdjectiveNoTooltip,'u'))))]"
- CZ_Adjective_ee: "[Select_CString(ROOT.Culture.IsValid,CZAdjectiveDecline(ROOT.Culture.GetNameNoTooltip,'é'),Select_CString(ROOT.Faith.IsValid,CZAdjectiveDecline(ROOT.Faith.GetAdjectiveNoTooltip,'é'),Select_CString(ROOT.GetLandedTitle.IsValid,CZAdjectiveDecline(ROOT.GetLandedTitle.GetAdjectiveNoTooltip,'é'),CZAdjectiveDecline(ROOT.Religion.GetAdjectiveNoTooltip,'é'))))]"
-
- # ---------------------------------------------------------
- # TOOLTIP / RICH
- #
- # Culture / Faith / Title use two rich-text closers.
- # Religion uses one closer only.
- # ---------------------------------------------------------
-
- CZ_AdjectiveTooltip_yy: "[TrimBackChars(TrimBackChars(Select_CString(ROOT.Culture.IsValid,ROOT.Culture.GetName,Select_CString(ROOT.Faith.IsValid,ROOT.Faith.GetAdjective,Select_CString(ROOT.GetLandedTitle.IsValid,ROOT.GetLandedTitle.GetAdjective,ROOT.Religion.GetAdjective))),'#!'),'ýá')]ý[Select_CString(And(Not(ROOT.Culture.IsValid),And(Not(ROOT.Faith.IsValid),Not(ROOT.GetLandedTitle.IsValid))),'#!','#!#!')]"
-
- CZ_AdjectiveTooltip_yych: "[TrimBackChars(TrimBackChars(Select_CString(ROOT.Culture.IsValid,ROOT.Culture.GetName,Select_CString(ROOT.Faith.IsValid,ROOT.Faith.GetAdjective,Select_CString(ROOT.GetLandedTitle.IsValid,ROOT.GetLandedTitle.GetAdjective,ROOT.Religion.GetAdjective))),'#!'),'ýá')]ých[Select_CString(And(Not(ROOT.Culture.IsValid),And(Not(ROOT.Faith.IsValid),Not(ROOT.GetLandedTitle.IsValid))),'#!','#!#!')]"
-
- CZ_AdjectiveTooltip_eeho: "[TrimBackChars(TrimBackChars(Select_CString(ROOT.Culture.IsValid,ROOT.Culture.GetName,Select_CString(ROOT.Faith.IsValid,ROOT.Faith.GetAdjective,Select_CString(ROOT.GetLandedTitle.IsValid,ROOT.GetLandedTitle.GetAdjective,ROOT.Religion.GetAdjective))),'#!'),'ýá')]ého[Select_CString(And(Not(ROOT.Culture.IsValid),And(Not(ROOT.Faith.IsValid),Not(ROOT.GetLandedTitle.IsValid))),'#!','#!#!')]"
-
- CZ_AdjectiveTooltip_eemu: "[TrimBackChars(TrimBackChars(Select_CString(ROOT.Culture.IsValid,ROOT.Culture.GetName,Select_CString(ROOT.Faith.IsValid,ROOT.Faith.GetAdjective,Select_CString(ROOT.GetLandedTitle.IsValid,ROOT.GetLandedTitle.GetAdjective,ROOT.Religion.GetAdjective))),'#!'),'ýá')]ému[Select_CString(And(Not(ROOT.Culture.IsValid),And(Not(ROOT.Faith.IsValid),Not(ROOT.GetLandedTitle.IsValid))),'#!','#!#!')]"
-
- CZ_AdjectiveTooltip_eem: "[TrimBackChars(TrimBackChars(Select_CString(ROOT.Culture.IsValid,ROOT.Culture.GetName,Select_CString(ROOT.Faith.IsValid,ROOT.Faith.GetAdjective,Select_CString(ROOT.GetLandedTitle.IsValid,ROOT.GetLandedTitle.GetAdjective,ROOT.Religion.GetAdjective))),'#!'),'ýá')]ém[Select_CString(And(Not(ROOT.Culture.IsValid),And(Not(ROOT.Faith.IsValid),Not(ROOT.GetLandedTitle.IsValid))),'#!','#!#!')]"
-
- CZ_AdjectiveTooltip_yym: "[TrimBackChars(TrimBackChars(Select_CString(ROOT.Culture.IsValid,ROOT.Culture.GetName,Select_CString(ROOT.Faith.IsValid,ROOT.Faith.GetAdjective,Select_CString(ROOT.GetLandedTitle.IsValid,ROOT.GetLandedTitle.GetAdjective,ROOT.Religion.GetAdjective))),'#!'),'ýá')]ým[Select_CString(And(Not(ROOT.Culture.IsValid),And(Not(ROOT.Faith.IsValid),Not(ROOT.GetLandedTitle.IsValid))),'#!','#!#!')]"
-
- CZ_AdjectiveTooltip_yymi: "[TrimBackChars(TrimBackChars(Select_CString(ROOT.Culture.IsValid,ROOT.Culture.GetName,Select_CString(ROOT.Faith.IsValid,ROOT.Faith.GetAdjective,Select_CString(ROOT.GetLandedTitle.IsValid,ROOT.GetLandedTitle.GetAdjective,ROOT.Religion.GetAdjective))),'#!'),'ýá')]ými[Select_CString(And(Not(ROOT.Culture.IsValid),And(Not(ROOT.Faith.IsValid),Not(ROOT.GetLandedTitle.IsValid))),'#!','#!#!')]"
-
- CZ_AdjectiveTooltip_aa: "[TrimBackChars(TrimBackChars(Select_CString(ROOT.Culture.IsValid,ROOT.Culture.GetName,Select_CString(ROOT.Faith.IsValid,ROOT.Faith.GetAdjective,Select_CString(ROOT.GetLandedTitle.IsValid,ROOT.GetLandedTitle.GetAdjective,ROOT.Religion.GetAdjective))),'#!'),'ýá')]á[Select_CString(And(Not(ROOT.Culture.IsValid),And(Not(ROOT.Faith.IsValid),Not(ROOT.GetLandedTitle.IsValid))),'#!','#!#!')]"
-
- CZ_AdjectiveTooltip_ou: "[TrimBackChars(TrimBackChars(Select_CString(ROOT.Culture.IsValid,ROOT.Culture.GetName,Select_CString(ROOT.Faith.IsValid,ROOT.Faith.GetAdjective,Select_CString(ROOT.GetLandedTitle.IsValid,ROOT.GetLandedTitle.GetAdjective,ROOT.Religion.GetAdjective))),'#!'),'ýá')]ou[Select_CString(And(Not(ROOT.Culture.IsValid),And(Not(ROOT.Faith.IsValid),Not(ROOT.GetLandedTitle.IsValid))),'#!','#!#!')]"
-
- CZ_AdjectiveTooltip_sti: "[Select_CString(Not(EqualTo_string(TrimBackChars(Select_CString(ROOT.Culture.IsValid,ROOT.Culture.GetNameNoTooltip,Select_CString(ROOT.Faith.IsValid,ROOT.Faith.GetAdjectiveNoTooltip,Select_CString(ROOT.GetLandedTitle.IsValid,ROOT.GetLandedTitle.GetAdjectiveNoTooltip,ROOT.Religion.GetAdjectiveNoTooltip))),'ýák'),TrimBackChars(Select_CString(ROOT.Culture.IsValid,ROOT.Culture.GetNameNoTooltip,Select_CString(ROOT.Faith.IsValid,ROOT.Faith.GetAdjectiveNoTooltip,Select_CString(ROOT.GetLandedTitle.IsValid,ROOT.GetLandedTitle.GetAdjectiveNoTooltip,ROOT.Religion.GetAdjectiveNoTooltip))),'ýáks'))),Concatenate(TrimBackChars(TrimBackChars(Select_CString(ROOT.Culture.IsValid,ROOT.Culture.GetName,Select_CString(ROOT.Faith.IsValid,ROOT.Faith.GetAdjective,Select_CString(ROOT.GetLandedTitle.IsValid,ROOT.GetLandedTitle.GetAdjective,ROOT.Religion.GetAdjective))),'#!'),'ýáks'),'ští'),Select_CString(Not(EqualTo_string(TrimBackChars(Select_CString(ROOT.Culture.IsValid,ROOT.Culture.GetNameNoTooltip,Select_CString(ROOT.Faith.IsValid,ROOT.Faith.GetAdjectiveNoTooltip,Select_CString(ROOT.GetLandedTitle.IsValid,ROOT.GetLandedTitle.GetAdjectiveNoTooltip,ROOT.Religion.GetAdjectiveNoTooltip))),'ýák'),TrimBackChars(Select_CString(ROOT.Culture.IsValid,ROOT.Culture.GetNameNoTooltip,Select_CString(ROOT.Faith.IsValid,ROOT.Faith.GetAdjectiveNoTooltip,Select_CString(ROOT.GetLandedTitle.IsValid,ROOT.GetLandedTitle.GetAdjectiveNoTooltip,ROOT.Religion.GetAdjectiveNoTooltip))),'ýákc'))),Concatenate(TrimBackChars(TrimBackChars(Select_CString(ROOT.Culture.IsValid,ROOT.Culture.GetName,Select_CString(ROOT.Faith.IsValid,ROOT.Faith.GetAdjective,Select_CString(ROOT.GetLandedTitle.IsValid,ROOT.GetLandedTitle.GetAdjective,ROOT.Religion.GetAdjective))),'#!'),'ýákc'),'čtí'),Concatenate(TrimBackChars(TrimBackChars(Select_CString(ROOT.Culture.IsValid,ROOT.Culture.GetName,Select_CString(ROOT.Faith.IsValid,ROOT.Faith.GetAdjective,Select_CString(ROOT.GetLandedTitle.IsValid,ROOT.GetLandedTitle.GetAdjective,ROOT.Religion.GetAdjective))),'#!'),'ýá'),'í')))][Select_CString(And(Not(ROOT.Culture.IsValid),And(Not(ROOT.Faith.IsValid),Not(ROOT.GetLandedTitle.IsValid))),'#!','#!#!')]"
-
- CZ_AdjectiveTooltip_o: "[TrimBackChars(TrimBackChars(Select_CString(ROOT.Culture.IsValid,ROOT.Culture.GetName,Select_CString(ROOT.Faith.IsValid,ROOT.Faith.GetAdjective,Select_CString(ROOT.GetLandedTitle.IsValid,ROOT.GetLandedTitle.GetAdjective,ROOT.Religion.GetAdjective))),'#!'),'ýá')]o[Select_CString(And(Not(ROOT.Culture.IsValid),And(Not(ROOT.Faith.IsValid),Not(ROOT.GetLandedTitle.IsValid))),'#!','#!#!')]"
-
- CZ_AdjectiveTooltip_u: "[TrimBackChars(TrimBackChars(Select_CString(ROOT.Culture.IsValid,ROOT.Culture.GetName,Select_CString(ROOT.Faith.IsValid,ROOT.Faith.GetAdjective,Select_CString(ROOT.GetLandedTitle.IsValid,ROOT.GetLandedTitle.GetAdjective,ROOT.Religion.GetAdjective))),'#!'),'ýá')]u[Select_CString(And(Not(ROOT.Culture.IsValid),And(Not(ROOT.Faith.IsValid),Not(ROOT.GetLandedTitle.IsValid))),'#!','#!#!')]"
-
- CZ_AdjectiveTooltip_ee_culture: "DISPATCH_CULTURE"
- CZ_AdjectiveTooltip_ee_faith: "DISPATCH_FAITH"
- CZ_AdjectiveTooltip_ee_religion: "DISPATCH_RELIGION"
- CZ_AdjectiveTooltip_ee_title: "DISPATCH_TITLE"
-
-
-## TEST
- CZ_TEST_AdjectiveTooltip_Faith: "[TrimBackChars(TrimBackChars(ROOT.Faith.GetAdjective,'#!'),'ýá')]é#!#!"
- CZ_TEST_AdjectiveTooltip_Title: "[TrimBackChars(TrimBackChars(ROOT.GetLandedTitle.GetAdjective,'#!'),'ýá')]é#!#!"
- CZ_TEST_AdjectiveTooltip_Religion: "[TrimBackChars(TrimBackChars(ROOT.Religion.GetAdjective,'#!'),'ýá')]é#!"
- CZ_TEST_AdjectiveTooltip_ReligionRaw: "[ROOT.Religion.GetAdjective]"
- CZ_TEST_AdjectiveTooltip_Culture: "[TrimBackChars(TrimBackChars(ROOT.Culture.GetName,'#!'),'ýá')]é#!#!"
-
- CZ_CultureAdjectiveTooltip_ee: "[TrimBackChars(TrimBackChars(ROOT.Culture.GetName,'#!'),'ýá')]é#!#!"
-
- CZ_TEST_GuiScopeDispatch_Culture: "DISPATCH_CULTURE"
- CZ_TEST_GuiScopeDispatch_Faith: "DISPATCH_FAITH"
- CZ_TEST_GuiScopeDispatch_Religion: "DISPATCH_RELIGION"
- CZ_TEST_GuiScopeDispatch_Title: "DISPATCH_TITLE"
-
- CZ_TEST_GuiScopeAdjective_loc: "[Select_CString(ROOT.Culture.IsValid,ROOT.Culture.GetName,Select_CString(ROOT.Faith.IsValid,ROOT.Faith.GetAdjective,Select_CString(ROOT.GetLandedTitle.IsValid,ROOT.GetLandedTitle.GetAdjective,ROOT.Religion.GetAdjective)))]"
-
-
- CZ_TEST_GuiScopeTitleTransform_loc: "RAW: >[ROOT.GetLandedTitle.GetAdjective]<\nTRIM1: >[TrimBackChars(ROOT.GetLandedTitle.GetAdjective,'#!')]<\nSTEM: >[TrimBackChars(TrimBackChars(ROOT.GetLandedTitle.GetAdjective,'#!'),'ýá')]<\nREBUILT2: >[TrimBackChars(TrimBackChars(ROOT.GetLandedTitle.GetAdjective,'#!'),'ýá')]é#!#!<\nREBUILT3: >[TrimBackChars(TrimBackChars(ROOT.GetLandedTitle.GetAdjective,'#!'),'ýá')]é#!#!#!<"
-
- CZ_TEST_GuiScopeAdjective_ee_loc: "[TrimBackChars(TrimBackChars(Select_CString(ROOT.Culture.IsValid,ROOT.Culture.GetName,Select_CString(ROOT.Faith.IsValid,ROOT.Faith.GetAdjective,Select_CString(ROOT.GetLandedTitle.IsValid,ROOT.GetLandedTitle.GetAdjective,ROOT.Religion.GetAdjective))),'#!'),'ýá')]é#!#!"
-
- CZ_TEST_GuiScopeAdjective_ee_normal: "[TrimBackChars(TrimBackChars(Select_CString(ROOT.Culture.IsValid,ROOT.Culture.GetName,Select_CString(ROOT.Faith.IsValid,ROOT.Faith.GetAdjective,ROOT.GetLandedTitle.GetAdjective)),'#!'),'ýá')]é#!#!"
-
- CZ_TEST_GuiScopeAdjective_ee_religion_wrapper: "[ROOT.Religion.Custom('CZ_TEST_AdjectiveTooltip_Religion')]"
-
- CZ_TEST_SCOPE_dispatch: "[SelectLocalization(ROOT.Culture.IsValid,'CZ_TEST_SCOPE_Culture',SelectLocalization(ROOT.Faith.IsValid,'CZ_TEST_SCOPE_Faith',SelectLocalization(ROOT.GetLandedTitle.IsValid,'CZ_TEST_SCOPE_Title','CZ_TEST_SCOPE_Religion')))]"
-
- CZ_TEST_SCOPE_Culture: "SCOPE=[SCOPE.Culture.GetNameNoTooltip]"
- CZ_TEST_SCOPE_Faith: "SCOPE=[SCOPE.Faith.GetAdjectiveNoTooltip]"
- CZ_TEST_SCOPE_Religion: "SCOPE=[SCOPE.Religion.GetAdjectiveNoTooltip]"
- CZ_TEST_SCOPE_Title: "SCOPE=[SCOPE.Title.GetAdjectiveNoTooltip]"
-
- CZ_TEST_TitleManualRich_ee: "#ONCLICK:TITLE,[ROOT.GetLandedTitle.GetID] #TOOLTIP:LANDED_TITLE,[ROOT.GetLandedTitle.GetID] #L [CZAdjectiveDecline(ROOT.GetLandedTitle.GetAdjectiveNoTooltip,'é')]#!#!#!"
-
- CZ_TEST_CultureAdjectiveRich_ee: "#ONCLICK:CULTURE,[ROOT.Culture.GetID] #TOOLTIP:CULTURE,[ROOT.Culture.GetID] #L [CZAdjectiveDecline(ROOT.Culture.GetNameNoTooltip,'é')]#!#!#!"
-
- CZ_TEST_FaithAdjectiveRich_ee: "[CZFaithAdjDecline(ROOT.Faith,'é')]"
-
- CZ_TEST_PlainTooltip_DYNAMIC: "#T [Faith.GetNameNoTooltip]#!"
-
- CZ_TEST_FaithTooltip: "#T [ROOT.Faith.GetNameNoTooltip]#!"
-
- CZ_TEST_ReligionAdjectiveRich_ee: "#TOOLTIP:CZ_TEST_ReligionTooltip_02 #L [CZAdjectiveDecline(ROOT.Religion.GetAdjectiveNoTooltip,'é')]#!#!"
-
- CZ_TEST_ReligionTooltip_02: "#T [Faith.GetReligion.GetNameNoTooltip]#!"
-
- CZ_TEST_TitleAdjectiveRich_ee: "#ONCLICK:TITLE,[ROOT.GetLandedTitle.GetID] #TOOLTIP:LANDED_TITLE,[ROOT.GetLandedTitle.GetID] #L [CZAdjectiveDecline(ROOT.GetLandedTitle.GetAdjectiveNoTooltip,'é')]#!#!#!"
-
- CZ_TEST_ReligionAdjectiveRich_CLEAN01: "[CZReligionAdjDecline(ROOT.Religion,'é')]"
-
+ CZ_FMT_CLOSE_CHARS: "#!"
  CZ_FMT_TRIM: "ýá#!"
  CZ_FMT_CLOSE2: "#!#!"
  CZ_FMT_CLOSE3: "#!#!#!"

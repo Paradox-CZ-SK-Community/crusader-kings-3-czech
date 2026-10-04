@@ -550,10 +550,15 @@ macro = {
 ##################################################
 # ADJECTIVE DECLENSION
 ##################################################
-# Base Czech adjective morphology for Culture / Faith / Religion / Title.
-# The source adjective is expected to end in -ý or -á.
-# Native rich-text adjective reconstruction stays in localization,
-# because CK3 parses #! closer syntax before macro string arguments.
+# Plain morphology is shared by Culture / Faith / Religion / Title.
+#
+# Rich/native presentation is intentionally asymmetric:
+# - Culture and Landed Title keep explicit CustomLoc wrappers in
+#   00_cz_custom_loc_l_polish.yml + 99_cz_custom_loc.txt.
+# - Faith and Religion must be declined directly from their native rich
+#   GetAdjective CString because their tooltip metadata cannot be rebuilt
+#   reliably from CustomLoc scope data.
+##################################################
 
 # ------------------------------------------------
 # PLAIN ADJECTIVE
@@ -577,21 +582,46 @@ macro = {
 	replace_with = "Select_CString(Not(EqualTo_string(TrimBackChars(ADJECTIVE,'ýák'),TrimBackChars(ADJECTIVE,'ýáks'))),Concatenate(TrimBackChars(ADJECTIVE,'ýáks'),'ští'),Select_CString(Not(EqualTo_string(TrimBackChars(ADJECTIVE,'ýák'),TrimBackChars(ADJECTIVE,'ýákc'))),Concatenate(TrimBackChars(ADJECTIVE,'ýákc'),'čtí'),Concatenate(TrimBackChars(ADJECTIVE,'ýá'),'í')))"
 }
 
+# ------------------------------------------------
+# RICH ADJECTIVE - FAITH / RELIGION ONLY
+# ------------------------------------------------
+# The native getter already contains the correct object tooltip/click metadata.
+# CZ_FMT_TRIM removes the adjective ending together with trailing rich-text
+# closers; the wrapper then appends the requested ending and restores exactly
+# the number of closers used by that native getter.
+
 macro = {
-	description = "Czech declension of adjective with native tooltip - generic"
+	description = "Decline a native rich adjective CString and restore its closers"
 	definition = "CZAdjectiveDeclineRich(ADJECTIVE,ENDING,CLOSE)"
 	replace_with = "Concatenate(Concatenate(TrimBackChars(ADJECTIVE,Localize('CZ_FMT_TRIM')),ENDING),Localize(CLOSE))"
 }
 
 macro = {
-	description = "Czech declension of Faith adjective with tooltip and onclick"
+	description = "Czech Faith adjective with native tooltip and onclick"
 	definition = "CZFaithAdjDecline(FAITH,ENDING)"
 	replace_with = "CZAdjectiveDeclineRich(FAITH.GetAdjective,ENDING,'CZ_FMT_CLOSE3')"
 }
 
 macro = {
-	description = "Czech declension of Religion adjective with tooltip"
+	description = "Czech Religion adjective with native tooltip"
 	definition = "CZReligionAdjDecline(RELIGION,ENDING)"
 	replace_with = "CZAdjectiveDeclineRich(RELIGION.GetAdjective,ENDING,'CZ_FMT_CLOSE2')"
 }
 
+macro = {
+	description = "Convert a native rich adjective CString to Czech animate plural and restore its closers"
+	definition = "CZAdjectiveStiRich(ADJECTIVE,CLOSE)"
+	replace_with = "Concatenate(CZAdjectiveSti(TrimBackChars(ADJECTIVE,Localize('CZ_FMT_CLOSE_CHARS'))),Localize(CLOSE))"
+}
+
+macro = {
+	description = "Czech Faith animate-plural adjective with native tooltip and onclick"
+	definition = "CZFaithAdjSti(FAITH)"
+	replace_with = "CZAdjectiveStiRich(FAITH.GetAdjective,'CZ_FMT_CLOSE3')"
+}
+
+macro = {
+	description = "Czech Religion animate-plural adjective with native tooltip"
+	definition = "CZReligionAdjSti(RELIGION)"
+	replace_with = "CZAdjectiveStiRich(RELIGION.GetAdjective,'CZ_FMT_CLOSE2')"
+}

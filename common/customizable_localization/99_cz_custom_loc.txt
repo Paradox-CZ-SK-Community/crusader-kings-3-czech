@@ -1768,8 +1768,9 @@ CZ_TitleAsNameNoTooltipRegnal_I = {
 ## ADJECTIVE DECLENSION ###########
 ###################################
 
-## Czech adjective declension
-## Supported scopes: Culture, Faith, Religion, Landed Title
+## Canonical replacement family for GetAdjective.
+## Supported Custom() scopes: Culture and Landed Title only.
+## Faith and Religion intentionally use CZFaithAdjDecline / CZReligionAdjDecline.
 ##
 ## _yy   = -ý
 ## _yych = -ých
@@ -1863,411 +1864,91 @@ CZ_Adjective_ee = {
 	suffix = "_ee"
 }
 
-#########################################
-## ADJECTIVE - NO TOOLTIP ALIASES #######
-#########################################
 
-## Explicit NoTooltip API for the existing Czech adjective engine.
-## Morphology remains implemented by the existing CZ_Adjective*
-## localization keys.
+###########################################
+## ADJECTIVE DECLENSION - NO TOOLTIP ######
+###########################################
+
+## Canonical replacement family for GetAdjectiveNoTooltip.
+## Supported Custom() scopes: Culture, Faith, Religion and Landed Title.
+## This intentionally keeps the original generic plain-string dispatch,
+## because NoTooltip adjectives do not carry scope-specific rich-text wrappers.
 
 CZ_AdjectiveNoTooltip = {
 	type = all
 
 	text = {
-		localization_key = CZ_Adjective
+		localization_key = CZ_AdjectiveNoTooltip
 		fallback = yes
 	}
 }
 
 CZ_AdjectiveNoTooltip_yy = {
-	type = all
-
-	text = {
-		localization_key = CZ_Adjective_yy
-		fallback = yes
-	}
+	parent = CZ_AdjectiveNoTooltip
+	suffix = "_yy"
 }
 
 CZ_AdjectiveNoTooltip_yych = {
-	type = all
-
-	text = {
-		localization_key = CZ_Adjective_yych
-		fallback = yes
-	}
+	parent = CZ_AdjectiveNoTooltip
+	suffix = "_yych"
 }
 
 CZ_AdjectiveNoTooltip_eeho = {
-	type = all
-
-	text = {
-		localization_key = CZ_Adjective_eeho
-		fallback = yes
-	}
+	parent = CZ_AdjectiveNoTooltip
+	suffix = "_eeho"
 }
 
 CZ_AdjectiveNoTooltip_eemu = {
-	type = all
-
-	text = {
-		localization_key = CZ_Adjective_eemu
-		fallback = yes
-	}
+	parent = CZ_AdjectiveNoTooltip
+	suffix = "_eemu"
 }
 
 CZ_AdjectiveNoTooltip_eem = {
-	type = all
-
-	text = {
-		localization_key = CZ_Adjective_eem
-		fallback = yes
-	}
+	parent = CZ_AdjectiveNoTooltip
+	suffix = "_eem"
 }
 
 CZ_AdjectiveNoTooltip_yym = {
-	type = all
-
-	text = {
-		localization_key = CZ_Adjective_yym
-		fallback = yes
-	}
+	parent = CZ_AdjectiveNoTooltip
+	suffix = "_yym"
 }
 
 CZ_AdjectiveNoTooltip_yymi = {
-	type = all
-
-	text = {
-		localization_key = CZ_Adjective_yymi
-		fallback = yes
-	}
+	parent = CZ_AdjectiveNoTooltip
+	suffix = "_yymi"
 }
 
 CZ_AdjectiveNoTooltip_aa = {
-	type = all
-
-	text = {
-		localization_key = CZ_Adjective_aa
-		fallback = yes
-	}
+	parent = CZ_AdjectiveNoTooltip
+	suffix = "_aa"
 }
 
 CZ_AdjectiveNoTooltip_ou = {
-	type = all
-
-	text = {
-		localization_key = CZ_Adjective_ou
-		fallback = yes
-	}
+	parent = CZ_AdjectiveNoTooltip
+	suffix = "_ou"
 }
 
 CZ_AdjectiveNoTooltip_sti = {
 	type = all
 
 	text = {
-		localization_key = CZ_Adjective_sti
+		localization_key = CZ_AdjectiveNoTooltip_sti
 		fallback = yes
 	}
 }
 
 CZ_AdjectiveNoTooltip_o = {
-	type = all
-
-	text = {
-		localization_key = CZ_Adjective_o
-		fallback = yes
-	}
+	parent = CZ_AdjectiveNoTooltip
+	suffix = "_o"
 }
 
 CZ_AdjectiveNoTooltip_u = {
-	type = all
-
-	text = {
-		localization_key = CZ_Adjective_u
-		fallback = yes
-	}
+	parent = CZ_AdjectiveNoTooltip
+	suffix = "_u"
 }
 
 CZ_AdjectiveNoTooltip_ee = {
-	type = all
-
-	text = {
-		localization_key = CZ_Adjective_ee
-		fallback = yes
-	}
+	parent = CZ_AdjectiveNoTooltip
+	suffix = "_ee"
 }
 
-#########################################
-## ADJECTIVE - TOOLTIP ##################
-#########################################
-
-CZ_AdjectiveTooltip_yy = {
-	type = all
-
-	text = {
-		localization_key = CZ_AdjectiveTooltip_yy
-		fallback = yes
-	}
-}
-
-CZ_AdjectiveTooltip_yych = {
-	type = all
-
-	text = {
-		localization_key = CZ_AdjectiveTooltip_yych
-		fallback = yes
-	}
-}
-
-CZ_AdjectiveTooltip_eeho = {
-	type = all
-
-	text = {
-		localization_key = CZ_AdjectiveTooltip_eeho
-		fallback = yes
-	}
-}
-
-CZ_AdjectiveTooltip_eemu = {
-	type = all
-
-	text = {
-		localization_key = CZ_AdjectiveTooltip_eemu
-		fallback = yes
-	}
-}
-
-CZ_AdjectiveTooltip_eem = {
-	type = all
-
-	text = {
-		localization_key = CZ_AdjectiveTooltip_eem
-		fallback = yes
-	}
-}
-
-CZ_AdjectiveTooltip_yym = {
-	type = all
-
-	text = {
-		localization_key = CZ_AdjectiveTooltip_yym
-		fallback = yes
-	}
-}
-
-CZ_AdjectiveTooltip_yymi = {
-	type = all
-
-	text = {
-		localization_key = CZ_AdjectiveTooltip_yymi
-		fallback = yes
-	}
-}
-
-CZ_AdjectiveTooltip_aa = {
-	type = all
-
-	text = {
-		localization_key = CZ_AdjectiveTooltip_aa
-		fallback = yes
-	}
-}
-
-CZ_AdjectiveTooltip_ou = {
-	type = all
-
-	text = {
-		localization_key = CZ_AdjectiveTooltip_ou
-		fallback = yes
-	}
-}
-
-CZ_AdjectiveTooltip_sti = {
-	type = all
-
-	text = {
-		localization_key = CZ_AdjectiveTooltip_sti
-		fallback = yes
-	}
-}
-
-CZ_AdjectiveTooltip_o = {
-	type = all
-
-	text = {
-		localization_key = CZ_AdjectiveTooltip_o
-		fallback = yes
-	}
-}
-
-CZ_AdjectiveTooltip_u = {
-	type = all
-
-	text = {
-		localization_key = CZ_AdjectiveTooltip_u
-		fallback = yes
-	}
-}
-
-CZ_AdjectiveTooltip_ee = {
-	type = culture
-
-	text = {
-		localization_key = CZ_CultureAdjectiveTooltip_ee
-		fallback = yes
-	}
-}
-
-CZ_AdjectiveTooltip_ee = {
-	type = faith
-
-	text = {
-		localization_key = CZ_FaithAdjectiveTooltip_ee
-		fallback = yes
-	}
-}
-
-CZ_AdjectiveTooltip_ee = {
-	type = religion
-
-	text = {
-		localization_key = CZ_ReligionAdjectiveTooltip_ee
-		fallback = yes
-	}
-}
-
-CZ_AdjectiveTooltip_ee = {
-	type = landed_title
-
-	text = {
-		localization_key = CZ_TitleAdjectiveTooltip_ee
-		fallback = yes
-	}
-}
-
-## TEST
-
-CZ_TEST_GuiScopeAdjective = {
-	type = all
-
-	text = {
-		localization_key = CZ_TEST_GuiScopeAdjective_loc
-		fallback = yes
-	}
-}
-
-CZ_TEST_GuiScopeAdjective_ee = {
-	type = all
-
-	text = {
-		localization_key = CZ_TEST_GuiScopeAdjective_ee_loc
-		fallback = yes
-	}
-}
-
-CZ_TEST_GuiScopeTitleTransform = {
-	type = all
-
-	text = {
-		localization_key = CZ_TEST_GuiScopeTitleTransform_loc
-		fallback = yes
-	}
-}
-
-CZ_TEST_AdjectiveTooltip_Culture = {
-	type = culture
-
-	text = {
-		localization_key = CZ_TEST_AdjectiveTooltip_Culture
-		fallback = yes
-	}
-}
-
-CZ_TEST_AdjectiveTooltip_Faith = {
-	type = faith
-
-	text = {
-		localization_key = CZ_TEST_AdjectiveTooltip_Faith
-		fallback = yes
-	}
-}
-
-CZ_TEST_AdjectiveTooltip_Title = {
-	type = landed_title
-
-	text = {
-		localization_key = CZ_TEST_AdjectiveTooltip_Title
-		fallback = yes
-	}
-}
-
-CZ_TEST_AdjectiveTooltip_Religion = {
-	type = religion
-
-	text = {
-		localization_key = CZ_TEST_AdjectiveTooltip_Religion
-		fallback = yes
-	}
-}
-
-CZ_TEST_AdjectiveTooltip_Religion = {
-    type = religion
-
-    text = {
-        localization_key = CZ_TEST_AdjectiveTooltip_Religion
-        fallback = yes
-    }
-}
-
-CZ_TEST_TitleManualRich_ee = {
-	type = landed_title
-
-	text = {
-		localization_key = CZ_TEST_TitleManualRich_ee
-		fallback = yes
-	}
-}
-
-CZ_TEST_CultureAdjectiveRich_ee = {
-	type = culture
-
-	text = {
-		localization_key = CZ_TEST_CultureAdjectiveRich_ee
-		fallback = yes
-	}
-}
-
-CZ_TEST_FaithAdjectiveRich_ee = {
-	type = faith
-
-	text = {
-		localization_key = CZ_TEST_FaithAdjectiveRich_ee
-		fallback = yes
-	}
-}
-
-CZ_TEST_ReligionAdjectiveRich_ee = {
-	type = religion
-
-	text = {
-		localization_key = CZ_TEST_ReligionAdjectiveRich_ee
-		fallback = yes
-	}
-}
-
-CZ_TEST_TitleAdjectiveRich_ee = {
-	type = landed_title
-
-	text = {
-		localization_key = CZ_TEST_TitleAdjectiveRich_ee
-		fallback = yes
-	}
-}
-
-CZ_TEST_ReligionAdjectiveRich_CLEAN01 = {
-    type = religion
-    text = {
-        localization_key = CZ_TEST_ReligionAdjectiveRich_CLEAN01
-        fallback = yes
-    }
-}

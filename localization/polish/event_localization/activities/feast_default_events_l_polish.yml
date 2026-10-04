@@ -56,7 +56,7 @@
  feast_default.1011.a: "[Select_CString(guest_to_murder.IsFemale,'Sama naběhla','Sám naběhl')] na můj nůž! Přísahám!"
  feast_default.1011.a.success: "Lidé uvěří, že šlo o nehodu"
  feast_default.1011.a.failure: "Lidé tvé lži neuvěří"
- feast_default.1011.b: "Já... já musím očistit čepel...!" # todo: CHANGED MINOR
+ feast_default.1011.b: "Já– já musím očistit čepel!"
  feast_default.1011.b.success: "Vražda zůstane záhadou"
  feast_default.1011.b.failure: "[Select_CString(ROOT.Char.IsFemale,'Jsi odhalena jako vražedkyně','Jsi odhalen jako vrah')]"
  feast_default.1011.c: "[disliked_guest.GetTitledFirstNameNoTooltip], jak jsi [Select_CString(disliked_guest.IsFemale,'mohla','mohl')]?!"
@@ -82,7 +82,7 @@
  feast_default.1016.desc_intro: "Rozhlédnu se po živém sále. Ohně plápolají, pití proudí proudem. Do každé volné ruky se tlačí lahodné pochoutky a nálada je výborná.\n\nV temném koutě zachytí mihotavé světlo [trinket_to_steal.GetName]. Leží opuštěně na jednom z postranních stolků a přímo mě volá."
  feast_default.1016.desc_greedy: "\n\nByl by skoro zločin #EMP nezbavit#! tu cetku její samoty! Rychle se rozhlédnu po sále, zda mě nikdo nesleduje."
  feast_default.1016.desc_hesitant: "\n\nPevně sevřu pěst a snažím se ovládnout své nutkání v naději, že si toho nikdo nevšimne."
- feast_default.1016.desc_default: "\n\n[activity.GetHost.GetTitledFirstNameNoTooltip] se očividně má dobře. Taková drobná cetka přece nemůže chybět..." # todo: CHANGED, CHECK FORMAT (predtym: \n\n[activity.GetOwner.GetTitledFirstNameNoTooltip] se očividně má dobře. Taková drobná cetka přece nemůže chybět...) # todo: FORMAT chýba [activity.GetHost.GetSheHe]
+ feast_default.1016.desc_default: "\n\n[activity.GetHost.GetTitledFirstNameNoTooltip] se rozhodně zdá být při penězích. Taková nepatrná cetka přece [Select_CString(activity.GetHost.IsFemale,'jí','mu')] chybět nebude..."
  feast_default.1016.a_greedy: "Tak když nabízíš..."
  feast_default.1016.a_hesitant: "Nemohu si pomoct..."
  feast_default.1016.a: "Tohle je #EMP opravdu#! pěkná cetka."
@@ -374,7 +374,7 @@
  feast_default.6251.desc: "Hostina se pomalu chýlí ke konci a já se zabírám do hovoru s [guest.GetTitledFirstName].\n\n[guest.GetTitledFirstNameNoTooltip] se mě zeptá na můj názor na [guest.Custom('subject_of_interest')] – téma, které [Select_CString(guest.IsFemale,'ji hluboce zajímá','ho hluboce zajímá')]."
  feast_default.6251.a: "Tohle téma mě také fascinuje!"
  feast_default.6251.b: "Nemůže mi to být lhostejnější."
- feast_default.6251.c: "Mnohem víc mě zajímáš #EMP ty#!...!" # todo: CHANGED MINOR
+ feast_default.6251.c: "Mě zajímáš spíš #EMP ty#!..."
  feast_default.6261.t: "Jak podávat člověka"
  feast_default.6261.desc_lunatic: "„Osobně jsem přiložil[Select_CString(ROOT.Char.IsFemale,'a','')] ruku k přípravě tohoto jídla a doufám, že výsledek potěší!“"
  feast_default.6261.desc_not_lunatic: "„Kuchařův pomocník dal do přípravy tohoto jídla tělo i duši a doufám, že výsledek potěší!“"
@@ -426,22 +426,22 @@
  feast_default.6351.e: "To se stává. Stejně to nebyl můj oblíbený kus."
  feast_default.6351.e_wrathful: "#EMP Máte štěstí, vy tupci#!, že jsem ten kus stejně nikdy [Select_CString(ROOT.Char.IsFemale,'neměla ráda','neměl rád')]..."
  feast_default.6351.e.tt: "Ušetřete je."
- feast_default.6400.t: "Odznak s výhledem" # todo: NEW TRANSLATION
- feast_default.6400.desc: "Rozhlížím se po slavnosti, když ucítím zatažení za zápěstí: "Ó! Ukaž mi ho!" Můj [ROOT.Char.Custom2('RelationToMe', SCOPE.sC('guest'))], [guest.GetTitledFirstName], se nakloní, aby si mě lépe prohlédl.\n\n[guest.GetSheHe|U] si brouká a přikyvuje: "Ten [admired_badge.GetName]... je #EMP nádherný#!."\n\nV [guest.GetFirstNamePossessiveNoTooltip] pohledu se objeví zasněný výraz: "[badge_holy_site.GetName] je nádherná podívaná, že?"" # todo: NEW TRANSLATION
- feast_default.6400.a: ""To tedy je!"" # todo: NEW TRANSLATION
- feast_default.6400.b: ""Příště byste se měl přidat!"" # todo: NEW TRANSLATION
- feast_default.6405.t: "Taková sbírka" # todo: NEW TRANSLATION
- feast_default.6405.desc: "Nemůžu si nevšimnout, jak na mě můj [ROOT.Char.Custom2('RelationToMe', SCOPE.sC('guest'))], [guest.GetTitledFirstName], civí, ačkoli se snaží být nenápadný. Přesněji řečeno, civí na řadu poutních odznaků na mém oděvu.\n\nDrobné přívěsky zachytávají světlo a lákavě se třpytí: "To je krásná sbírka odznaků," říká [guest.GetFirstNameNoTooltip], zatímco se zastavují další lidé, aby si je prohlédli.\n\n"Kéž bych měl čas je sbírat..."" # todo: NEW TRANSLATION
- feast_default.6405.a: ""Já vím, viďte?"" # todo: NEW TRANSLATION
- feast_default.6405.a.tt: "Získejte [prestige_i] #V [THIS.Char.MakeScope.ScriptValue('num_badge_collection_prestige_single')]#! za každý @badge_icon! odznak [artifact|E] #weak (aktuálně [prestige_i] #V [THIS.Char.MakeScope.ScriptValue('num_badge_collection_prestige_payout')]#!)" # todo: NEW TRANSLATION
- feast_default.6405.b: ""Nechtěl(a) byste si nechat [gifting_badge.GetNameNoTooltip]?"" # todo: NEW TRANSLATION
- feast_default.6410.t: "Nechcete obchodovat?" # todo: NEW TRANSLATION
- feast_default.6410.desc: "Můj [ROOT.Char.Custom2('RelationToMe', SCOPE.sC('guest'))], [guest.GetTitledFirstName], ke mně opatrně přistoupí:" # todo: NEW TRANSLATION
- feast_default.6410.segway.close: ""[guest.Custom2('RelationToMe', ROOT.Char )|U], " # todo: NEW TRANSLATION
- feast_default.6410.segway: ""[ROOT.Char.GetTitledFirstName], " # todo: NEW TRANSLATION
- feast_default.6410.desc.outro: "Už nějakou dobu obdivuji váš [my_badge.GetName] a napadlo mě, jestli byste náhodou nechtěl(a) obchodovat..."\n\n[guest.GetSheHe|U] nesměle vytáhne [guest.GetHerHis] [their_badge.GetName] a pomalu jím pohybuje, aby zachytil všechno jeho nádherné třpytivé světlo.\n\n"Co vy na to?" usměje se na mě [guest.GetFirstNameNoTooltip] a přikývne." # todo: NEW TRANSLATION
- feast_default.6410.a: ""To mi připadá fér!"" # todo: NEW TRANSLATION
- feast_default.6410.b: ""Hmm, raději ne."" # todo: NEW TRANSLATION
+ feast_default.6400.t: "Odznak s výhledem"
+ feast_default.6400.desc: "Rozhlížím se po slavících hostech, když ucítím zatažení za zápěstí: „Ó! Ukaž!“ [Select_CString(guest.IsFemale,'Má','Můj')] [ROOT.Char.Custom2('RelationToMe', SCOPE.sC('guest'))] [guest.GetTitledFirstName] se naklání blíž, aby si mě lépe [Select_CString(guest.IsFemale,'prohlédla','prohlédl')].\n\nPobrukuje si a přikyvuje: „Ten odznak [admired_badge.GetName]... je #EMP úžasný#!.“\n\nV očích [guest.Custom('CZ_FirstNameNoTooltip_G')] se objeví zasněný výraz: „[badge_holy_site.GetName] je nádherná podívaná, že?“"
+ feast_default.6400.a: "„To tedy je!“"
+ feast_default.6400.b: "„Příště pojď se mnou!“"
+ feast_default.6405.t: "Pozoruhodná sbírka"
+ feast_default.6405.desc: "Nemohu si nevšimnout, jak mě [Select_CString(guest.IsFemale,'má','můj')] [ROOT.Char.Custom2('RelationToMe', SCOPE.sC('guest'))] [guest.GetTitledFirstName] okázale pozoruje, ačkoli se snaží být [Select_CString(guest.IsFemale,'nenápadná','nenápadný')]. Vlastně si prohlíží řadu poutních odznaků na mém oděvu.\n\nDrobné ozdoby zachycují světlo a lákavě se třpytí. „Taková krásná sbírka odznaků,“ říká [guest.GetFirstNameNoTooltip], zatímco se další lidé zastavují, aby ji obdivovali.\n\n„Kéž bych na takové sbírání [Select_CString(guest.IsFemale,'měla','měl')] čas...“"
+ feast_default.6405.a: "„Že ano?“"
+ feast_default.6405.a.tt: "Získáš [prestige_i] #V [THIS.Char.MakeScope.ScriptValue('num_badge_collection_prestige_single')]#! za každý @badge_icon! odznak coby [Concept('artifact','artefakt')|E] #weak (Nyní [prestige_i] #V [THIS.Char.MakeScope.ScriptValue('num_badge_collection_prestige_payout')]#!)"
+ feast_default.6405.b: "„Postaráš se mi o odznak [gifting_badge.GetNameNoTooltip]?“"
+ feast_default.6410.t: "Vyměníme si je?"
+ feast_default.6410.desc: "[Select_CString(guest.IsFemale,'Má','Můj')] [ROOT.Char.Custom2('RelationToMe', SCOPE.sC('guest'))] [guest.GetTitledFirstName] ke mně opatrně přistupuje:"
+ feast_default.6410.segway.close: "„Ty jsi [Select_CString(ROOT.Char.IsFemale,'má','můj')] [guest.Custom2('RelationToMe', ROOT.Char )|U] a "
+ feast_default.6410.segway: "„[ROOT.Char.Custom('CZ_TitledFirstName_V')], "
+ feast_default.6410.desc.outro: "už nějakou dobu obdivuji tvůj odznak [my_badge.GetName] a říkám si, zda bys ho náhodou [Select_CString(ROOT.Char.IsFemale,'nechtěla','nechtěl')] vyměnit...“\n\nStydlivě vytahuje svůj odznak [their_badge.GetName] a pomalu s ním pohybuje, aby zachytil světlo v celé své nádheře.\n\n„Co říkáš?“ [guest.GetFirstNameNoTooltip] se na mě usmívá a přikyvuje."
+ feast_default.6410.a: "„To zní spravedlivě!“"
+ feast_default.6410.b: "„Hmm, raději ne.“"
  feast_default.6501.t: "Dvojsmysl"
  feast_default.6501.desc.opening: "„[Select_CString(innocent_guest.IsFemale,'Vím, co jsem řekla','Vím, co jsem řekl')], jen nechápu, proč ti to připadá tak vtipné?“\n\n[innocent_guest.GetTitledFirstName] nakloní hlavu na stranu, zatímco já potlačuji smích. Ještě jsem neprozradil[Select_CString(ROOT.Char.IsFemale,'a','')], že to, co [innocent_guest.GetTitledFirstNameNoTooltip] řekl[Select_CString(innocent_guest.IsFemale,'a','')], lze vyložit poněkud oplzle.\n\n"
  feast_default.6501.joke_a: "„Když zmáčkneš hlavičku, vyteče z ní hustá tekutina!“"
@@ -539,7 +539,7 @@
  feast_default.9002.desc_ending: "\n\nTeď je čas smýt ze sebe stopy pití a veselí a znovu se vrátit ke svým povinnostem..."
  feast_default.9002.a: "Sbohem, [host.GetFirstNameNoTooltip]!"
  feast_default.5010.t: "Legendární ticho"
- feast_default.5010.desc: "Uprostřed všech oslav a veselí náhle utichne rozhovor mezi téměř všemi přítomnými. Jedině [rando_guest.GetName|U] a já ještě pokračujeme v hovoru, ale jak se ke mně začínají obracet pohledy, i já mimoděk zmlknu.\n\nMožná je tahle tichá chvíle mou příležitostí promluvit o [ROOT.Char.GetPromotedLegend.GetName]." # todo: CHANGED (predtym: Uprostřed všech oslav a veselí náhle utichne rozhovor mezi téměř všemi přítomnými. Jedině [rando_guest.GetName|U] ještě )
+ feast_default.5010.desc: "Uprostřed oslav a veselí hovory mezi hosty na chvíli utichají. Jen [rando_guest.GetName|U] a já si dál povídáme, ale jak se ke mně začnou obracet pohledy ostatních, cítím potřebu zmlknout.\n\nMožná je tento tichý okamžik mou příležitostí promluvit o legendě [ROOT.Char.GetPromotedLegend.GetName]."
  feast_default.5010.a: "[rando_guest.GetFirstName|U], povím ti jeden příběh."
  feast_default.5010.a.success: "[rando_guest.GetFirstName|U] příběh ocení"
  feast_default.5010.a.failure: "[rando_guest.GetFirstName|U] se nudí"

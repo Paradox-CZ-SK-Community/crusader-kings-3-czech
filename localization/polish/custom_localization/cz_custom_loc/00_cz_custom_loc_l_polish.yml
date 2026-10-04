@@ -1,6 +1,16 @@
 ﻿l_polish:
- CZ_TitleTokenChars: "-'aAáÁābBcCčČdDðeEéěėfFgGhHiIíìîıjJkKlLmMnNňŇoOóōpPqrRřsSšŠtTuUúùůūvVwWxyYýzžŽÞ"
 
+ # =========================================================
+ # CZECH GRAMMAR ENGINE - LOCALIZATION
+ # By Crafter and Phantomiux
+ # =========================================================
+ #
+ # Runtime localization layer for the Czech Grammar Engine.
+ # Reusable morphology lives in 00_cz_grammar_macros.txt.
+ # Custom() API dispatch lives in 99_cz_custom_loc.txt.
+ #
+
+ CZ_TitleTokenChars: "-'aAáÁābBcCčČdDðeEéěėfFgGhHiIíìîıjJkKlLmMnNňŇoOóōpPqrRřsSšŠtTuUúùůūvVwWxyYýzžŽÞ"
 
  # =========================================================
  # FIRST NAME DECLENSION
@@ -8,292 +18,341 @@
 
 
  # ---------------------------------------------------------
- # FEMALE STEMS
- # ---------------------------------------------------------
-
- CZ_FirstNameStem_female_ia: "[TrimBackChars(TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'a'),'ií')]"
-
- CZ_FirstNameStem_female_a: "[TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'a')]"
-
- CZ_FirstNameStem_female_e: "[TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'e')]"
-
-
- # ---------------------------------------------------------
- # MALE STEMS
- # ---------------------------------------------------------
-
- CZ_FirstNameStem_male_a: "[TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'a')]"
-
- CZ_FirstNameStem_male_o: "[TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'o')]"
-
-
- # ---------------------------------------------------------
- # GENITIVE
+ # STANDARD
  # ---------------------------------------------------------
 
  CZ_FirstName_G_tooltip: "#ONCLICK:CHARACTER,[ROOT.GetCharacter.GetID] #TOOLTIP:CHARACTER,[ROOT.GetCharacter.GetID] #L [ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltip_G')]#!#!#!"
-
- CZ_FirstNameNoTooltip_G_male: "[Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'a'))),Concatenate(ROOT.GetCharacter.Custom('CZ_FirstNameStem_male_a'),'y'),Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'o'))),Concatenate(ROOT.GetCharacter.Custom('CZ_FirstNameStem_male_o'),'a'),Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'iíyé'))),Concatenate(ROOT.GetCharacter.GetFirstNameNoTooltip,'ho'),Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'bcčdďfghjklmnňpqrřsštťvwxzž'))),Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'cčďjňřsšťxzž'))),Concatenate(ROOT.GetCharacter.GetFirstNameNoTooltip,'e'),Concatenate(ROOT.GetCharacter.GetFirstNameNoTooltip,'a')),ROOT.GetCharacter.GetFirstNameNoTooltip))))]"
-
- CZ_FirstNameNoTooltip_G_female: "[Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'a'))),Select_CString(Not(EqualTo_string(TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'a'),TrimBackChars(TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'a'),'ií'))),Concatenate(ROOT.GetCharacter.Custom('CZ_FirstNameStem_female_ia'),'ie'),Concatenate(ROOT.GetCharacter.Custom('CZ_FirstNameStem_female_a'),'y')),Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'e'))),Concatenate(ROOT.GetCharacter.Custom('CZ_FirstNameStem_female_e'),'e'),ROOT.GetCharacter.GetFirstNameNoTooltip))]"
-
- CZ_FirstNameRegnal_G_tooltip: "#ONCLICK:CHARACTER,[ROOT.GetCharacter.GetID] #TOOLTIP:CHARACTER,[ROOT.GetCharacter.GetID] #L [ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltipRegnal_G')]#!#!#!"
-
- CZ_FirstNameNoTooltipRegnal_G_default: "[Concatenate(ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltip_G'),TrimFrontChars(ROOT.GetCharacter.GetFirstNameNoTooltipRegnal,ROOT.GetCharacter.GetFirstNameNoTooltip))]"
-
-
- # ---------------------------------------------------------
- # DATIVE
- # ---------------------------------------------------------
-
+ CZ_FirstNameNoTooltip_G_female: "[CZFirstName_G_F(ROOT.GetCharacter.GetFirstNameNoTooltip)]"
+ CZ_FirstNameNoTooltip_G_male: "[CZFirstName_G_M(ROOT.GetCharacter.GetFirstNameNoTooltip)]"
  CZ_FirstName_D_tooltip: "#ONCLICK:CHARACTER,[ROOT.GetCharacter.GetID] #TOOLTIP:CHARACTER,[ROOT.GetCharacter.GetID] #L [ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltip_D')]#!#!#!"
-
- CZ_FirstNameNoTooltip_D_male: "[Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'a'))),Concatenate(ROOT.GetCharacter.Custom('CZ_FirstNameStem_male_a'),'ovi'),Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'o'))),Concatenate(ROOT.GetCharacter.Custom('CZ_FirstNameStem_male_o'),'ovi'),Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'iíyé'))),Concatenate(ROOT.GetCharacter.GetFirstNameNoTooltip,'mu'),Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'bcčdďfghjklmnňpqrřsštťvwxzž'))),Concatenate(ROOT.GetCharacter.GetFirstNameNoTooltip,'ovi'),ROOT.GetCharacter.GetFirstNameNoTooltip))))]"
-
- CZ_FirstNameNoTooltip_D_female: "[Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'a'))),Select_CString(Not(EqualTo_string(TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'a'),TrimBackChars(TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'a'),'ií'))),Concatenate(ROOT.GetCharacter.Custom('CZ_FirstNameStem_female_ia'),'i'),Concatenate(ROOT.GetCharacter.Custom('CZ_FirstNameStem_female_a'),'ě')),Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'e'))),Concatenate(ROOT.GetCharacter.Custom('CZ_FirstNameStem_female_e'),'i'),ROOT.GetCharacter.GetFirstNameNoTooltip))]"
-
- CZ_FirstNameRegnal_D_tooltip: "#ONCLICK:CHARACTER,[ROOT.GetCharacter.GetID] #TOOLTIP:CHARACTER,[ROOT.GetCharacter.GetID] #L [ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltipRegnal_D')]#!#!#!"
-
- CZ_FirstNameNoTooltipRegnal_D_default: "[Concatenate(ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltip_D'),TrimFrontChars(ROOT.GetCharacter.GetFirstNameNoTooltipRegnal,ROOT.GetCharacter.GetFirstNameNoTooltip))]"
-
-
- # ---------------------------------------------------------
- # ACCUSATIVE
- # ---------------------------------------------------------
-
+ CZ_FirstNameNoTooltip_D_female: "[CZFirstName_D_F(ROOT.GetCharacter.GetFirstNameNoTooltip)]"
+ CZ_FirstNameNoTooltip_D_male: "[CZFirstName_D_M(ROOT.GetCharacter.GetFirstNameNoTooltip)]"
  CZ_FirstName_A_tooltip: "#ONCLICK:CHARACTER,[ROOT.GetCharacter.GetID] #TOOLTIP:CHARACTER,[ROOT.GetCharacter.GetID] #L [ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltip_A')]#!#!#!"
-
- CZ_FirstNameNoTooltip_A_male: "[Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'a'))),Concatenate(ROOT.GetCharacter.Custom('CZ_FirstNameStem_male_a'),'u'),Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'o'))),Concatenate(ROOT.GetCharacter.Custom('CZ_FirstNameStem_male_o'),'a'),Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'iíyé'))),Concatenate(ROOT.GetCharacter.GetFirstNameNoTooltip,'ho'),Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'bcčdďfghjklmnňpqrřsštťvwxzž'))),Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'cčďjňřsšťxzž'))),Concatenate(ROOT.GetCharacter.GetFirstNameNoTooltip,'e'),Concatenate(ROOT.GetCharacter.GetFirstNameNoTooltip,'a')),ROOT.GetCharacter.GetFirstNameNoTooltip))))]"
-
- CZ_FirstNameNoTooltip_A_female: "[Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'a'))),Select_CString(Not(EqualTo_string(TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'a'),TrimBackChars(TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'a'),'ií'))),Concatenate(ROOT.GetCharacter.Custom('CZ_FirstNameStem_female_ia'),'i'),Concatenate(ROOT.GetCharacter.Custom('CZ_FirstNameStem_female_a'),'u')),Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'e'))),Concatenate(ROOT.GetCharacter.Custom('CZ_FirstNameStem_female_e'),'i'),ROOT.GetCharacter.GetFirstNameNoTooltip))]"
-
- CZ_FirstNameRegnal_A_tooltip: "#ONCLICK:CHARACTER,[ROOT.GetCharacter.GetID] #TOOLTIP:CHARACTER,[ROOT.GetCharacter.GetID] #L [ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltipRegnal_A')]#!#!#!"
-
- CZ_FirstNameNoTooltipRegnal_A_default: "[Concatenate(ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltip_A'),TrimFrontChars(ROOT.GetCharacter.GetFirstNameNoTooltipRegnal,ROOT.GetCharacter.GetFirstNameNoTooltip))]"
-
-
- # ---------------------------------------------------------
- # VOCATIVE
- # ---------------------------------------------------------
-
+ CZ_FirstNameNoTooltip_A_female: "[CZFirstName_A_F(ROOT.GetCharacter.GetFirstNameNoTooltip)]"
+ CZ_FirstNameNoTooltip_A_male: "[CZFirstName_A_M(ROOT.GetCharacter.GetFirstNameNoTooltip)]"
  CZ_FirstName_V_tooltip: "#ONCLICK:CHARACTER,[ROOT.GetCharacter.GetID] #TOOLTIP:CHARACTER,[ROOT.GetCharacter.GetID] #L [ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltip_V')]#!#!#!"
-
- CZ_FirstNameNoTooltip_V_male: "[Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'a'))),Concatenate(ROOT.GetCharacter.Custom('CZ_FirstNameStem_male_a'),'o'),Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'bcčdďfghjklmnňpqrřsštťvwxzž'))),Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'kgh'))),Concatenate(ROOT.GetCharacter.GetFirstNameNoTooltip,'u'),Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'cčďjňřšťž'))),Concatenate(ROOT.GetCharacter.GetFirstNameNoTooltip,'i'),Concatenate(ROOT.GetCharacter.GetFirstNameNoTooltip,'e'))),ROOT.GetCharacter.GetFirstNameNoTooltip))]"
-
- CZ_FirstNameNoTooltip_V_female: "[Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'a'))),Select_CString(Not(EqualTo_string(TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'a'),TrimBackChars(TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'a'),'ií'))),Concatenate(ROOT.GetCharacter.Custom('CZ_FirstNameStem_female_ia'),'o'),Concatenate(ROOT.GetCharacter.Custom('CZ_FirstNameStem_female_a'),'o')),Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'e'))),ROOT.GetCharacter.GetFirstNameNoTooltip,ROOT.GetCharacter.GetFirstNameNoTooltip))]"
-
- CZ_FirstNameRegnal_V_tooltip: "#ONCLICK:CHARACTER,[ROOT.GetCharacter.GetID] #TOOLTIP:CHARACTER,[ROOT.GetCharacter.GetID] #L [ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltipRegnal_V')]#!#!#!"
-
- CZ_FirstNameNoTooltipRegnal_V_default: "[Concatenate(ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltip_V'),TrimFrontChars(ROOT.GetCharacter.GetFirstNameNoTooltipRegnal,ROOT.GetCharacter.GetFirstNameNoTooltip))]"
-
-
- # ---------------------------------------------------------
- # LOCATIVE
- # ---------------------------------------------------------
-
+ CZ_FirstNameNoTooltip_V_female: "[CZFirstName_V_F(ROOT.GetCharacter.GetFirstNameNoTooltip)]"
+ CZ_FirstNameNoTooltip_V_male: "[CZFirstName_V_M(ROOT.GetCharacter.GetFirstNameNoTooltip)]"
  CZ_FirstName_L_tooltip: "#ONCLICK:CHARACTER,[ROOT.GetCharacter.GetID] #TOOLTIP:CHARACTER,[ROOT.GetCharacter.GetID] #L [ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltip_L')]#!#!#!"
-
- CZ_FirstNameNoTooltip_L_male: "[Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'a'))),Concatenate(ROOT.GetCharacter.Custom('CZ_FirstNameStem_male_a'),'ovi'),Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'o'))),Concatenate(ROOT.GetCharacter.Custom('CZ_FirstNameStem_male_o'),'ovi'),Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'iíyé'))),Concatenate(ROOT.GetCharacter.GetFirstNameNoTooltip,'m'),Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'bcčdďfghjklmnňpqrřsštťvwxzž'))),Concatenate(ROOT.GetCharacter.GetFirstNameNoTooltip,'ovi'),ROOT.GetCharacter.GetFirstNameNoTooltip))))]"
-
- CZ_FirstNameNoTooltip_L_female: "[Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'a'))),Select_CString(Not(EqualTo_string(TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'a'),TrimBackChars(TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'a'),'ií'))),Concatenate(ROOT.GetCharacter.Custom('CZ_FirstNameStem_female_ia'),'i'),Concatenate(ROOT.GetCharacter.Custom('CZ_FirstNameStem_female_a'),'ě')),Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'e'))),Concatenate(ROOT.GetCharacter.Custom('CZ_FirstNameStem_female_e'),'i'),ROOT.GetCharacter.GetFirstNameNoTooltip))]"
-
- CZ_FirstNameRegnal_L_tooltip: "#ONCLICK:CHARACTER,[ROOT.GetCharacter.GetID] #TOOLTIP:CHARACTER,[ROOT.GetCharacter.GetID] #L [ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltipRegnal_L')]#!#!#!"
-
- CZ_FirstNameNoTooltipRegnal_L_default: "[Concatenate(ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltip_L'),TrimFrontChars(ROOT.GetCharacter.GetFirstNameNoTooltipRegnal,ROOT.GetCharacter.GetFirstNameNoTooltip))]"
-
-
- # ---------------------------------------------------------
- # INSTRUMENTAL
- # ---------------------------------------------------------
-
+ CZ_FirstNameNoTooltip_L_female: "[CZFirstName_L_F(ROOT.GetCharacter.GetFirstNameNoTooltip)]"
+ CZ_FirstNameNoTooltip_L_male: "[CZFirstName_L_M(ROOT.GetCharacter.GetFirstNameNoTooltip)]"
  CZ_FirstName_I_tooltip: "#ONCLICK:CHARACTER,[ROOT.GetCharacter.GetID] #TOOLTIP:CHARACTER,[ROOT.GetCharacter.GetID] #L [ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltip_I')]#!#!#!"
-
- CZ_FirstNameNoTooltip_I_male: "[Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'a'))),Concatenate(ROOT.GetCharacter.Custom('CZ_FirstNameStem_male_a'),'ou'),Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'o'))),Concatenate(ROOT.GetCharacter.Custom('CZ_FirstNameStem_male_o'),'em'),Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'iíyé'))),Concatenate(ROOT.GetCharacter.GetFirstNameNoTooltip,'m'),Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'bcčdďfghjklmnňpqrřsštťvwxzž'))),Concatenate(ROOT.GetCharacter.GetFirstNameNoTooltip,'em'),ROOT.GetCharacter.GetFirstNameNoTooltip))))]"
-
- CZ_FirstNameNoTooltip_I_female: "[Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'a'))),Select_CString(Not(EqualTo_string(TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'a'),TrimBackChars(TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'a'),'ií'))),Concatenate(ROOT.GetCharacter.Custom('CZ_FirstNameStem_female_ia'),'í'),Concatenate(ROOT.GetCharacter.Custom('CZ_FirstNameStem_female_a'),'ou')),Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'e'))),Concatenate(ROOT.GetCharacter.Custom('CZ_FirstNameStem_female_e'),'í'),ROOT.GetCharacter.GetFirstNameNoTooltip))]"
-
- CZ_FirstNameRegnal_I_tooltip: "#ONCLICK:CHARACTER,[ROOT.GetCharacter.GetID] #TOOLTIP:CHARACTER,[ROOT.GetCharacter.GetID] #L [ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltipRegnal_I')]#!#!#!"
-
- CZ_FirstNameNoTooltipRegnal_I_default: "[Concatenate(ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltip_I'),TrimFrontChars(ROOT.GetCharacter.GetFirstNameNoTooltipRegnal,ROOT.GetCharacter.GetFirstNameNoTooltip))]"
-
-
- # =========================================================
- # FIRST NAME POSSESSIVE
- # M/F/N = grammatical gender of the possessed noun
- # male/female = gender of the character
- # =========================================================
-
-
- # ---------------------------------------------------------
- # NON-REGNAL
- # ---------------------------------------------------------
-
- CZ_FirstNamePossessiveNoTooltip_M_male: "[Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'a'))),Concatenate(ROOT.GetCharacter.Custom('CZ_FirstNameStem_male_a'),'ův'),Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'o'))),Concatenate(ROOT.GetCharacter.Custom('CZ_FirstNameStem_male_o'),'ův'),Select_CString(And(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'e'))),Not(EqualTo_string(TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'e'),TrimBackChars(TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'e'),'i')))),Concatenate(ROOT.GetCharacter.GetFirstNameNoTooltip,'ho'),Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'iíyé'))),Concatenate(ROOT.GetCharacter.GetFirstNameNoTooltip,'ho'),Concatenate(ROOT.GetCharacter.GetFirstNameNoTooltip,'ův')))))]"
-
- CZ_FirstNamePossessiveNoTooltip_F_male: "[Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'a'))),Concatenate(ROOT.GetCharacter.Custom('CZ_FirstNameStem_male_a'),'ova'),Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'o'))),Concatenate(ROOT.GetCharacter.Custom('CZ_FirstNameStem_male_o'),'ova'),Select_CString(And(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'e'))),Not(EqualTo_string(TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'e'),TrimBackChars(TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'e'),'i')))),Concatenate(ROOT.GetCharacter.GetFirstNameNoTooltip,'ho'),Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'iíyé'))),Concatenate(ROOT.GetCharacter.GetFirstNameNoTooltip,'ho'),Concatenate(ROOT.GetCharacter.GetFirstNameNoTooltip,'ova')))))]"
-
- CZ_FirstNamePossessiveNoTooltip_N_male: "[Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'a'))),Concatenate(ROOT.GetCharacter.Custom('CZ_FirstNameStem_male_a'),'ovo'),Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'o'))),Concatenate(ROOT.GetCharacter.Custom('CZ_FirstNameStem_male_o'),'ovo'),Select_CString(And(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'e'))),Not(EqualTo_string(TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'e'),TrimBackChars(TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'e'),'i')))),Concatenate(ROOT.GetCharacter.GetFirstNameNoTooltip,'ho'),Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'iíyé'))),Concatenate(ROOT.GetCharacter.GetFirstNameNoTooltip,'ho'),Concatenate(ROOT.GetCharacter.GetFirstNameNoTooltip,'ovo')))))]"
-
- CZ_FirstNamePossessiveNoTooltip_M_female: "[Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'a'))),Concatenate(TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'a'),'in'),Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'e'))),Concatenate(TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'e'),'in'),Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'ií'))),Concatenate(TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'ií'),'in'),Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'o'))),Concatenate(TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'o'),'in'),Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'uú'))),Concatenate(TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'uú'),'in'),Concatenate(ROOT.GetCharacter.GetFirstNameNoTooltip,'in'))))))]"
-
- CZ_FirstNamePossessiveNoTooltip_F_female: "[Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'a'))),Concatenate(TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'a'),'ina'),Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'e'))),Concatenate(TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'e'),'ina'),Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'ií'))),Concatenate(TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'ií'),'ina'),Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'o'))),Concatenate(TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'o'),'ina'),Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'uú'))),Concatenate(TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'uú'),'ina'),Concatenate(ROOT.GetCharacter.GetFirstNameNoTooltip,'ina'))))))]"
-
- CZ_FirstNamePossessiveNoTooltip_N_female: "[Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'a'))),Concatenate(TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'a'),'ino'),Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'e'))),Concatenate(TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'e'),'ino'),Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'ií'))),Concatenate(TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'ií'),'ino'),Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'o'))),Concatenate(TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'o'),'ino'),Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'uú'))),Concatenate(TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'uú'),'ino'),Concatenate(ROOT.GetCharacter.GetFirstNameNoTooltip,'ino'))))))]"
-
- CZ_FirstNamePossessive_M_tooltip: "#ONCLICK:CHARACTER,[ROOT.GetCharacter.GetID] #TOOLTIP:CHARACTER,[ROOT.GetCharacter.GetID] #L [ROOT.GetCharacter.Custom('CZ_FirstNamePossessiveNoTooltip_M')]#!#!#!"
-
- CZ_FirstNamePossessive_F_tooltip: "#ONCLICK:CHARACTER,[ROOT.GetCharacter.GetID] #TOOLTIP:CHARACTER,[ROOT.GetCharacter.GetID] #L [ROOT.GetCharacter.Custom('CZ_FirstNamePossessiveNoTooltip_F')]#!#!#!"
-
- CZ_FirstNamePossessive_N_tooltip: "#ONCLICK:CHARACTER,[ROOT.GetCharacter.GetID] #TOOLTIP:CHARACTER,[ROOT.GetCharacter.GetID] #L [ROOT.GetCharacter.Custom('CZ_FirstNamePossessiveNoTooltip_N')]#!#!#!"
-
+ CZ_FirstNameNoTooltip_I_female: "[CZFirstName_I_F(ROOT.GetCharacter.GetFirstNameNoTooltip)]"
+ CZ_FirstNameNoTooltip_I_male: "[CZFirstName_I_M(ROOT.GetCharacter.GetFirstNameNoTooltip)]"
 
  # ---------------------------------------------------------
  # REGNAL
- # Placeholder: vanilla fallback
  # ---------------------------------------------------------
 
- CZ_FirstNamePossessiveNoTooltipRegnal_M_male: "[Concatenate(ROOT.GetCharacter.Custom('CZ_FirstNamePossessiveNoTooltip_M'),TrimFrontChars(ROOT.GetCharacter.GetFirstNameNoTooltipRegnal,ROOT.GetCharacter.GetFirstNameNoTooltip))]"
+ CZ_FirstNameRegnal_G_tooltip: "#ONCLICK:CHARACTER,[ROOT.GetCharacter.GetID] #TOOLTIP:CHARACTER,[ROOT.GetCharacter.GetID] #L [ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltipRegnal_G')]#!#!#!"
+ CZ_FirstNameNoTooltipRegnal_G_default: "[CZFirstNameRegnal_G(ROOT.GetCharacter.GetFirstNameNoTooltipRegnal,ROOT.GetCharacter.GetFirstNameNoTooltip,ROOT.GetCharacter.IsFemale)]"
+ CZ_FirstNameRegnal_D_tooltip: "#ONCLICK:CHARACTER,[ROOT.GetCharacter.GetID] #TOOLTIP:CHARACTER,[ROOT.GetCharacter.GetID] #L [ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltipRegnal_D')]#!#!#!"
+ CZ_FirstNameNoTooltipRegnal_D_default: "[CZFirstNameRegnal_D(ROOT.GetCharacter.GetFirstNameNoTooltipRegnal,ROOT.GetCharacter.GetFirstNameNoTooltip,ROOT.GetCharacter.IsFemale)]"
+ CZ_FirstNameRegnal_A_tooltip: "#ONCLICK:CHARACTER,[ROOT.GetCharacter.GetID] #TOOLTIP:CHARACTER,[ROOT.GetCharacter.GetID] #L [ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltipRegnal_A')]#!#!#!"
+ CZ_FirstNameNoTooltipRegnal_A_default: "[CZFirstNameRegnal_A(ROOT.GetCharacter.GetFirstNameNoTooltipRegnal,ROOT.GetCharacter.GetFirstNameNoTooltip,ROOT.GetCharacter.IsFemale)]"
+ CZ_FirstNameRegnal_V_tooltip: "#ONCLICK:CHARACTER,[ROOT.GetCharacter.GetID] #TOOLTIP:CHARACTER,[ROOT.GetCharacter.GetID] #L [ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltipRegnal_V')]#!#!#!"
+ CZ_FirstNameNoTooltipRegnal_V_default: "[CZFirstNameRegnal_V(ROOT.GetCharacter.GetFirstNameNoTooltipRegnal,ROOT.GetCharacter.GetFirstNameNoTooltip,ROOT.GetCharacter.IsFemale)]"
+ CZ_FirstNameRegnal_L_tooltip: "#ONCLICK:CHARACTER,[ROOT.GetCharacter.GetID] #TOOLTIP:CHARACTER,[ROOT.GetCharacter.GetID] #L [ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltipRegnal_L')]#!#!#!"
+ CZ_FirstNameNoTooltipRegnal_L_default: "[CZFirstNameRegnal_L(ROOT.GetCharacter.GetFirstNameNoTooltipRegnal,ROOT.GetCharacter.GetFirstNameNoTooltip,ROOT.GetCharacter.IsFemale)]"
+ CZ_FirstNameRegnal_I_tooltip: "#ONCLICK:CHARACTER,[ROOT.GetCharacter.GetID] #TOOLTIP:CHARACTER,[ROOT.GetCharacter.GetID] #L [ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltipRegnal_I')]#!#!#!"
+ CZ_FirstNameNoTooltipRegnal_I_default: "[CZFirstNameRegnal_I(ROOT.GetCharacter.GetFirstNameNoTooltipRegnal,ROOT.GetCharacter.GetFirstNameNoTooltip,ROOT.GetCharacter.IsFemale)]"
 
- CZ_FirstNamePossessiveNoTooltipRegnal_M_female: "[Concatenate(ROOT.GetCharacter.Custom('CZ_FirstNamePossessiveNoTooltip_M'),TrimFrontChars(ROOT.GetCharacter.GetFirstNameNoTooltipRegnal,ROOT.GetCharacter.GetFirstNameNoTooltip))]"
+ # =========================================================
+ # FIRST NAME POSSESSIVE
+ # M / F / N = grammatical gender of the possessed noun.
+ # =========================================================
 
- CZ_FirstNamePossessiveNoTooltipRegnal_F_male: "[Concatenate(ROOT.GetCharacter.Custom('CZ_FirstNamePossessiveNoTooltip_F'),TrimFrontChars(ROOT.GetCharacter.GetFirstNameNoTooltipRegnal,ROOT.GetCharacter.GetFirstNameNoTooltip))]"
 
- CZ_FirstNamePossessiveNoTooltipRegnal_F_female: "[Concatenate(ROOT.GetCharacter.Custom('CZ_FirstNamePossessiveNoTooltip_F'),TrimFrontChars(ROOT.GetCharacter.GetFirstNameNoTooltipRegnal,ROOT.GetCharacter.GetFirstNameNoTooltip))]"
+ # ---------------------------------------------------------
+ # STANDARD
+ # ---------------------------------------------------------
 
- CZ_FirstNamePossessiveNoTooltipRegnal_N_male: "[Concatenate(ROOT.GetCharacter.Custom('CZ_FirstNamePossessiveNoTooltip_N'),TrimFrontChars(ROOT.GetCharacter.GetFirstNameNoTooltipRegnal,ROOT.GetCharacter.GetFirstNameNoTooltip))]"
+ CZ_FirstNamePossessive_M_tooltip: "#ONCLICK:CHARACTER,[ROOT.GetCharacter.GetID] #TOOLTIP:CHARACTER,[ROOT.GetCharacter.GetID] #L [ROOT.GetCharacter.Custom('CZ_FirstNamePossessiveNoTooltip_M')]#!#!#!"
+ CZ_FirstNamePossessiveNoTooltip_M_female: "[Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'a'))),Concatenate(TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'a'),'in'),Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'e'))),Concatenate(TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'e'),'in'),Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'ií'))),Concatenate(TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'ií'),'in'),Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'o'))),Concatenate(TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'o'),'in'),Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'uú'))),Concatenate(TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'uú'),'in'),Concatenate(ROOT.GetCharacter.GetFirstNameNoTooltip,'in'))))))]"
+ CZ_FirstNamePossessiveNoTooltip_M_male: "[Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'a'))),Concatenate(CZFirstNameStem_M_A(ROOT.GetCharacter.GetFirstNameNoTooltip),'ův'),Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'o'))),Concatenate(CZFirstNameStem_M_O(ROOT.GetCharacter.GetFirstNameNoTooltip),'ův'),Select_CString(And(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'e'))),Not(EqualTo_string(TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'e'),TrimBackChars(TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'e'),'i')))),Concatenate(ROOT.GetCharacter.GetFirstNameNoTooltip,'ho'),Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'iíyé'))),Concatenate(ROOT.GetCharacter.GetFirstNameNoTooltip,'ho'),Concatenate(ROOT.GetCharacter.GetFirstNameNoTooltip,'ův')))))]"
+ CZ_FirstNamePossessive_F_tooltip: "#ONCLICK:CHARACTER,[ROOT.GetCharacter.GetID] #TOOLTIP:CHARACTER,[ROOT.GetCharacter.GetID] #L [ROOT.GetCharacter.Custom('CZ_FirstNamePossessiveNoTooltip_F')]#!#!#!"
+ CZ_FirstNamePossessiveNoTooltip_F_female: "[Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'a'))),Concatenate(TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'a'),'ina'),Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'e'))),Concatenate(TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'e'),'ina'),Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'ií'))),Concatenate(TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'ií'),'ina'),Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'o'))),Concatenate(TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'o'),'ina'),Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'uú'))),Concatenate(TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'uú'),'ina'),Concatenate(ROOT.GetCharacter.GetFirstNameNoTooltip,'ina'))))))]"
+ CZ_FirstNamePossessiveNoTooltip_F_male: "[Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'a'))),Concatenate(CZFirstNameStem_M_A(ROOT.GetCharacter.GetFirstNameNoTooltip),'ova'),Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'o'))),Concatenate(CZFirstNameStem_M_O(ROOT.GetCharacter.GetFirstNameNoTooltip),'ova'),Select_CString(And(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'e'))),Not(EqualTo_string(TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'e'),TrimBackChars(TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'e'),'i')))),Concatenate(ROOT.GetCharacter.GetFirstNameNoTooltip,'ho'),Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'iíyé'))),Concatenate(ROOT.GetCharacter.GetFirstNameNoTooltip,'ho'),Concatenate(ROOT.GetCharacter.GetFirstNameNoTooltip,'ova')))))]"
+ CZ_FirstNamePossessive_N_tooltip: "#ONCLICK:CHARACTER,[ROOT.GetCharacter.GetID] #TOOLTIP:CHARACTER,[ROOT.GetCharacter.GetID] #L [ROOT.GetCharacter.Custom('CZ_FirstNamePossessiveNoTooltip_N')]#!#!#!"
+ CZ_FirstNamePossessiveNoTooltip_N_female: "[Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'a'))),Concatenate(TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'a'),'ino'),Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'e'))),Concatenate(TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'e'),'ino'),Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'ií'))),Concatenate(TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'ií'),'ino'),Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'o'))),Concatenate(TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'o'),'ino'),Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'uú'))),Concatenate(TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'uú'),'ino'),Concatenate(ROOT.GetCharacter.GetFirstNameNoTooltip,'ino'))))))]"
+ CZ_FirstNamePossessiveNoTooltip_N_male: "[Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'a'))),Concatenate(CZFirstNameStem_M_A(ROOT.GetCharacter.GetFirstNameNoTooltip),'ovo'),Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'o'))),Concatenate(CZFirstNameStem_M_O(ROOT.GetCharacter.GetFirstNameNoTooltip),'ovo'),Select_CString(And(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'e'))),Not(EqualTo_string(TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'e'),TrimBackChars(TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'e'),'i')))),Concatenate(ROOT.GetCharacter.GetFirstNameNoTooltip,'ho'),Select_CString(Not(EqualTo_string(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimBackChars(ROOT.GetCharacter.GetFirstNameNoTooltip,'iíyé'))),Concatenate(ROOT.GetCharacter.GetFirstNameNoTooltip,'ho'),Concatenate(ROOT.GetCharacter.GetFirstNameNoTooltip,'ovo')))))]"
 
- CZ_FirstNamePossessiveNoTooltipRegnal_N_female: "[Concatenate(ROOT.GetCharacter.Custom('CZ_FirstNamePossessiveNoTooltip_N'),TrimFrontChars(ROOT.GetCharacter.GetFirstNameNoTooltipRegnal,ROOT.GetCharacter.GetFirstNameNoTooltip))]"
+ # ---------------------------------------------------------
+ # REGNAL
+ # ---------------------------------------------------------
 
  CZ_FirstNamePossessiveRegnal_M_tooltip: "#ONCLICK:CHARACTER,[ROOT.GetCharacter.GetID] #TOOLTIP:CHARACTER,[ROOT.GetCharacter.GetID] #L [ROOT.GetCharacter.Custom('CZ_FirstNamePossessiveNoTooltipRegnal_M')]#!#!#!"
-
+ CZ_FirstNamePossessiveNoTooltipRegnal_M_female: "[Concatenate(ROOT.GetCharacter.Custom('CZ_FirstNamePossessiveNoTooltip_M'),TrimFrontChars(ROOT.GetCharacter.GetFirstNameNoTooltipRegnal,ROOT.GetCharacter.GetFirstNameNoTooltip))]"
+ CZ_FirstNamePossessiveNoTooltipRegnal_M_male: "[Concatenate(ROOT.GetCharacter.Custom('CZ_FirstNamePossessiveNoTooltip_M'),TrimFrontChars(ROOT.GetCharacter.GetFirstNameNoTooltipRegnal,ROOT.GetCharacter.GetFirstNameNoTooltip))]"
  CZ_FirstNamePossessiveRegnal_F_tooltip: "#ONCLICK:CHARACTER,[ROOT.GetCharacter.GetID] #TOOLTIP:CHARACTER,[ROOT.GetCharacter.GetID] #L [ROOT.GetCharacter.Custom('CZ_FirstNamePossessiveNoTooltipRegnal_F')]#!#!#!"
-
+ CZ_FirstNamePossessiveNoTooltipRegnal_F_female: "[Concatenate(ROOT.GetCharacter.Custom('CZ_FirstNamePossessiveNoTooltip_F'),TrimFrontChars(ROOT.GetCharacter.GetFirstNameNoTooltipRegnal,ROOT.GetCharacter.GetFirstNameNoTooltip))]"
+ CZ_FirstNamePossessiveNoTooltipRegnal_F_male: "[Concatenate(ROOT.GetCharacter.Custom('CZ_FirstNamePossessiveNoTooltip_F'),TrimFrontChars(ROOT.GetCharacter.GetFirstNameNoTooltipRegnal,ROOT.GetCharacter.GetFirstNameNoTooltip))]"
  CZ_FirstNamePossessiveRegnal_N_tooltip: "#ONCLICK:CHARACTER,[ROOT.GetCharacter.GetID] #TOOLTIP:CHARACTER,[ROOT.GetCharacter.GetID] #L [ROOT.GetCharacter.Custom('CZ_FirstNamePossessiveNoTooltipRegnal_N')]#!#!#!"
-
-
- # =========================================================
- # SHORT UI NAME POSSESSIVE
- # =========================================================
-
- CZ_ShortUINamePossessive_player: "tvůj"
-
- CZ_ShortUINamePossessiveNoTooltip_player: "tvůj"
-
- CZ_ShortUINamePossessive_character: "#ONCLICK:CHARACTER,[ROOT.GetCharacter.GetID] #TOOLTIP:CHARACTER,[ROOT.GetCharacter.GetID] #L [ROOT.GetCharacter.Custom('CZ_ShortUINamePossessiveNoTooltip')]#!#!#!"
-
- CZ_ShortUINamePossessiveNoTooltip_character: "[ROOT.GetCharacter.Custom('CZ_TitleAsNameNoTooltip_G')] [ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltipRegnal_G')]"
-
+ CZ_FirstNamePossessiveNoTooltipRegnal_N_female: "[Concatenate(ROOT.GetCharacter.Custom('CZ_FirstNamePossessiveNoTooltip_N'),TrimFrontChars(ROOT.GetCharacter.GetFirstNameNoTooltipRegnal,ROOT.GetCharacter.GetFirstNameNoTooltip))]"
+ CZ_FirstNamePossessiveNoTooltipRegnal_N_male: "[Concatenate(ROOT.GetCharacter.Custom('CZ_FirstNamePossessiveNoTooltip_N'),TrimFrontChars(ROOT.GetCharacter.GetFirstNameNoTooltipRegnal,ROOT.GetCharacter.GetFirstNameNoTooltip))]"
 
  # =========================================================
- # TITLE AS NAME DECLENSION
+ # TITLE-AS-NAME DECLENSION
  # =========================================================
+
+
+ # ---------------------------------------------------------
+ # STANDARD
+ # ---------------------------------------------------------
 
  CZ_TitleAsName_G_tooltip: "#ONCLICK:CHARACTER,[ROOT.GetCharacter.GetID] #TOOLTIP:CHARACTER,[ROOT.GetCharacter.GetID] #L [ROOT.GetCharacter.Custom('CZ_TitleAsNameNoTooltip_G')]#!#!#!"
-
- CZ_TitleAsNameNoTooltip_G_male: "[CZTitleCase_G_M(ROOT.GetCharacter.GetTitleAsNameNoTooltip)|l]"
-
  CZ_TitleAsNameNoTooltip_G_female: "[CZTitleCase_G_F(ROOT.GetCharacter.GetTitleAsNameNoTooltip)|l]"
-
- CZ_TitleAsNameRegnal_G_tooltip: "#ONCLICK:CHARACTER,[ROOT.GetCharacter.GetID] #TOOLTIP:CHARACTER,[ROOT.GetCharacter.GetID] #L [ROOT.GetCharacter.Custom('CZ_TitleAsNameNoTooltipRegnal_G')]#!#!#!"
-
- CZ_TitleAsNameNoTooltipRegnal_G_male: "[CZTitleCase_G_M(ROOT.GetCharacter.GetTitleAsNameNoTooltipRegnal)|l]"
-
- CZ_TitleAsNameNoTooltipRegnal_G_female: "[CZTitleCase_G_F(ROOT.GetCharacter.GetTitleAsNameNoTooltipRegnal)|l]"
-
-
+ CZ_TitleAsNameNoTooltip_G_male: "[CZTitleCase_G_M(ROOT.GetCharacter.GetTitleAsNameNoTooltip)|l]"
  CZ_TitleAsName_D_tooltip: "#ONCLICK:CHARACTER,[ROOT.GetCharacter.GetID] #TOOLTIP:CHARACTER,[ROOT.GetCharacter.GetID] #L [ROOT.GetCharacter.Custom('CZ_TitleAsNameNoTooltip_D')]#!#!#!"
-
- CZ_TitleAsNameNoTooltip_D_male: "[CZTitleCase_D_M(ROOT.GetCharacter.GetTitleAsNameNoTooltip)|l]"
-
  CZ_TitleAsNameNoTooltip_D_female: "[CZTitleCase_D_F(ROOT.GetCharacter.GetTitleAsNameNoTooltip)|l]"
-
- CZ_TitleAsNameRegnal_D_tooltip: "#ONCLICK:CHARACTER,[ROOT.GetCharacter.GetID] #TOOLTIP:CHARACTER,[ROOT.GetCharacter.GetID] #L [ROOT.GetCharacter.Custom('CZ_TitleAsNameNoTooltipRegnal_D')]#!#!#!"
-
- CZ_TitleAsNameNoTooltipRegnal_D_male: "[CZTitleCase_D_M(ROOT.GetCharacter.GetTitleAsNameNoTooltipRegnal)|l]"
-
- CZ_TitleAsNameNoTooltipRegnal_D_female: "[CZTitleCase_D_F(ROOT.GetCharacter.GetTitleAsNameNoTooltipRegnal)|l]"
-
-
+ CZ_TitleAsNameNoTooltip_D_male: "[CZTitleCase_D_M(ROOT.GetCharacter.GetTitleAsNameNoTooltip)|l]"
  CZ_TitleAsName_A_tooltip: "#ONCLICK:CHARACTER,[ROOT.GetCharacter.GetID] #TOOLTIP:CHARACTER,[ROOT.GetCharacter.GetID] #L [ROOT.GetCharacter.Custom('CZ_TitleAsNameNoTooltip_A')]#!#!#!"
-
- CZ_TitleAsNameNoTooltip_A_male: "[CZTitleCase_A_M(ROOT.GetCharacter.GetTitleAsNameNoTooltip)|l]"
-
  CZ_TitleAsNameNoTooltip_A_female: "[CZTitleCase_A_F(ROOT.GetCharacter.GetTitleAsNameNoTooltip)|l]"
-
- CZ_TitleAsNameRegnal_A_tooltip: "#ONCLICK:CHARACTER,[ROOT.GetCharacter.GetID] #TOOLTIP:CHARACTER,[ROOT.GetCharacter.GetID] #L [ROOT.GetCharacter.Custom('CZ_TitleAsNameNoTooltipRegnal_A')]#!#!#!"
-
- CZ_TitleAsNameNoTooltipRegnal_A_male: "[CZTitleCase_A_M(ROOT.GetCharacter.GetTitleAsNameNoTooltipRegnal)|l]"
-
- CZ_TitleAsNameNoTooltipRegnal_A_female: "[CZTitleCase_A_F(ROOT.GetCharacter.GetTitleAsNameNoTooltipRegnal)|l]"
-
-
+ CZ_TitleAsNameNoTooltip_A_male: "[CZTitleCase_A_M(ROOT.GetCharacter.GetTitleAsNameNoTooltip)|l]"
  CZ_TitleAsName_V_tooltip: "#ONCLICK:CHARACTER,[ROOT.GetCharacter.GetID] #TOOLTIP:CHARACTER,[ROOT.GetCharacter.GetID] #L [ROOT.GetCharacter.Custom('CZ_TitleAsNameNoTooltip_V')]#!#!#!"
-
- CZ_TitleAsNameNoTooltip_V_male: "[CZTitleCase_V_M(ROOT.GetCharacter.GetTitleAsNameNoTooltip)|l]"
-
  CZ_TitleAsNameNoTooltip_V_female: "[CZTitleCase_V_F(ROOT.GetCharacter.GetTitleAsNameNoTooltip)|l]"
-
- CZ_TitleAsNameRegnal_V_tooltip: "#ONCLICK:CHARACTER,[ROOT.GetCharacter.GetID] #TOOLTIP:CHARACTER,[ROOT.GetCharacter.GetID] #L [ROOT.GetCharacter.Custom('CZ_TitleAsNameNoTooltipRegnal_V')]#!#!#!"
-
- CZ_TitleAsNameNoTooltipRegnal_V_male: "[CZTitleCase_V_M(ROOT.GetCharacter.GetTitleAsNameNoTooltipRegnal)|l]"
-
- CZ_TitleAsNameNoTooltipRegnal_V_female: "[CZTitleCase_V_F(ROOT.GetCharacter.GetTitleAsNameNoTooltipRegnal)|l]"
-
-
+ CZ_TitleAsNameNoTooltip_V_male: "[CZTitleCase_V_M(ROOT.GetCharacter.GetTitleAsNameNoTooltip)|l]"
  CZ_TitleAsName_L_tooltip: "#ONCLICK:CHARACTER,[ROOT.GetCharacter.GetID] #TOOLTIP:CHARACTER,[ROOT.GetCharacter.GetID] #L [ROOT.GetCharacter.Custom('CZ_TitleAsNameNoTooltip_L')]#!#!#!"
-
- CZ_TitleAsNameNoTooltip_L_male: "[CZTitleCase_L_M(ROOT.GetCharacter.GetTitleAsNameNoTooltip)|l]"
-
  CZ_TitleAsNameNoTooltip_L_female: "[CZTitleCase_L_F(ROOT.GetCharacter.GetTitleAsNameNoTooltip)|l]"
-
- CZ_TitleAsNameRegnal_L_tooltip: "#ONCLICK:CHARACTER,[ROOT.GetCharacter.GetID] #TOOLTIP:CHARACTER,[ROOT.GetCharacter.GetID] #L [ROOT.GetCharacter.Custom('CZ_TitleAsNameNoTooltipRegnal_L')]#!#!#!"
-
- CZ_TitleAsNameNoTooltipRegnal_L_male: "[CZTitleCase_L_M(ROOT.GetCharacter.GetTitleAsNameNoTooltipRegnal)|l]"
-
- CZ_TitleAsNameNoTooltipRegnal_L_female: "[CZTitleCase_L_F(ROOT.GetCharacter.GetTitleAsNameNoTooltipRegnal)|l]"
-
-
+ CZ_TitleAsNameNoTooltip_L_male: "[CZTitleCase_L_M(ROOT.GetCharacter.GetTitleAsNameNoTooltip)|l]"
  CZ_TitleAsName_I_tooltip: "#ONCLICK:CHARACTER,[ROOT.GetCharacter.GetID] #TOOLTIP:CHARACTER,[ROOT.GetCharacter.GetID] #L [ROOT.GetCharacter.Custom('CZ_TitleAsNameNoTooltip_I')]#!#!#!"
-
+ CZ_TitleAsNameNoTooltip_I_female: "[CZTitleCase_I_F(ROOT.GetCharacter.GetTitleAsNameNoTooltip)|l]"
  CZ_TitleAsNameNoTooltip_I_male: "[CZTitleCase_I_M(ROOT.GetCharacter.GetTitleAsNameNoTooltip)|l]"
 
- CZ_TitleAsNameNoTooltip_I_female: "[CZTitleCase_I_F(ROOT.GetCharacter.GetTitleAsNameNoTooltip)|l]"
+ # ---------------------------------------------------------
+ # REGNAL
+ # ---------------------------------------------------------
 
+ CZ_TitleAsNameRegnal_G_tooltip: "#ONCLICK:CHARACTER,[ROOT.GetCharacter.GetID] #TOOLTIP:CHARACTER,[ROOT.GetCharacter.GetID] #L [ROOT.GetCharacter.Custom('CZ_TitleAsNameNoTooltipRegnal_G')]#!#!#!"
+ CZ_TitleAsNameNoTooltipRegnal_G_female: "[CZTitleCase_G_F(ROOT.GetCharacter.GetTitleAsNameNoTooltipRegnal)|l]"
+ CZ_TitleAsNameNoTooltipRegnal_G_male: "[CZTitleCase_G_M(ROOT.GetCharacter.GetTitleAsNameNoTooltipRegnal)|l]"
+ CZ_TitleAsNameRegnal_D_tooltip: "#ONCLICK:CHARACTER,[ROOT.GetCharacter.GetID] #TOOLTIP:CHARACTER,[ROOT.GetCharacter.GetID] #L [ROOT.GetCharacter.Custom('CZ_TitleAsNameNoTooltipRegnal_D')]#!#!#!"
+ CZ_TitleAsNameNoTooltipRegnal_D_female: "[CZTitleCase_D_F(ROOT.GetCharacter.GetTitleAsNameNoTooltipRegnal)|l]"
+ CZ_TitleAsNameNoTooltipRegnal_D_male: "[CZTitleCase_D_M(ROOT.GetCharacter.GetTitleAsNameNoTooltipRegnal)|l]"
+ CZ_TitleAsNameRegnal_A_tooltip: "#ONCLICK:CHARACTER,[ROOT.GetCharacter.GetID] #TOOLTIP:CHARACTER,[ROOT.GetCharacter.GetID] #L [ROOT.GetCharacter.Custom('CZ_TitleAsNameNoTooltipRegnal_A')]#!#!#!"
+ CZ_TitleAsNameNoTooltipRegnal_A_female: "[CZTitleCase_A_F(ROOT.GetCharacter.GetTitleAsNameNoTooltipRegnal)|l]"
+ CZ_TitleAsNameNoTooltipRegnal_A_male: "[CZTitleCase_A_M(ROOT.GetCharacter.GetTitleAsNameNoTooltipRegnal)|l]"
+ CZ_TitleAsNameRegnal_V_tooltip: "#ONCLICK:CHARACTER,[ROOT.GetCharacter.GetID] #TOOLTIP:CHARACTER,[ROOT.GetCharacter.GetID] #L [ROOT.GetCharacter.Custom('CZ_TitleAsNameNoTooltipRegnal_V')]#!#!#!"
+ CZ_TitleAsNameNoTooltipRegnal_V_female: "[CZTitleCase_V_F(ROOT.GetCharacter.GetTitleAsNameNoTooltipRegnal)|l]"
+ CZ_TitleAsNameNoTooltipRegnal_V_male: "[CZTitleCase_V_M(ROOT.GetCharacter.GetTitleAsNameNoTooltipRegnal)|l]"
+ CZ_TitleAsNameRegnal_L_tooltip: "#ONCLICK:CHARACTER,[ROOT.GetCharacter.GetID] #TOOLTIP:CHARACTER,[ROOT.GetCharacter.GetID] #L [ROOT.GetCharacter.Custom('CZ_TitleAsNameNoTooltipRegnal_L')]#!#!#!"
+ CZ_TitleAsNameNoTooltipRegnal_L_female: "[CZTitleCase_L_F(ROOT.GetCharacter.GetTitleAsNameNoTooltipRegnal)|l]"
+ CZ_TitleAsNameNoTooltipRegnal_L_male: "[CZTitleCase_L_M(ROOT.GetCharacter.GetTitleAsNameNoTooltipRegnal)|l]"
  CZ_TitleAsNameRegnal_I_tooltip: "#ONCLICK:CHARACTER,[ROOT.GetCharacter.GetID] #TOOLTIP:CHARACTER,[ROOT.GetCharacter.GetID] #L [ROOT.GetCharacter.Custom('CZ_TitleAsNameNoTooltipRegnal_I')]#!#!#!"
-
+ CZ_TitleAsNameNoTooltipRegnal_I_female: "[CZTitleCase_I_F(ROOT.GetCharacter.GetTitleAsNameNoTooltipRegnal)|l]"
  CZ_TitleAsNameNoTooltipRegnal_I_male: "[CZTitleCase_I_M(ROOT.GetCharacter.GetTitleAsNameNoTooltipRegnal)|l]"
 
- CZ_TitleAsNameNoTooltipRegnal_I_female: "[CZTitleCase_I_F(ROOT.GetCharacter.GetTitleAsNameNoTooltipRegnal)|l]"
+ # =========================================================
+ # TITLED FIRST NAME DECLENSION
+ # =========================================================
+
+
+ # ---------------------------------------------------------
+ # STANDARD
+ # ---------------------------------------------------------
+
+ CZ_TitledFirstName_G_character: "#ONCLICK:CHARACTER,[ROOT.GetCharacter.GetID] #TOOLTIP:CHARACTER,[ROOT.GetCharacter.GetID] #L [ROOT.GetCharacter.Custom('CZ_TitleAsNameNoTooltip_G')] [ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltip_G')]#!#!#!"
+ CZ_TitledFirstNameNoTooltip_G_character: "[ROOT.GetCharacter.Custom('CZ_TitleAsNameNoTooltip_G')] [ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltip_G')]"
+ CZ_TitledFirstName_D_character: "#ONCLICK:CHARACTER,[ROOT.GetCharacter.GetID] #TOOLTIP:CHARACTER,[ROOT.GetCharacter.GetID] #L [ROOT.GetCharacter.Custom('CZ_TitleAsNameNoTooltip_D')] [ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltip_D')]#!#!#!"
+ CZ_TitledFirstNameNoTooltip_D_character: "[ROOT.GetCharacter.Custom('CZ_TitleAsNameNoTooltip_D')] [ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltip_D')]"
+ CZ_TitledFirstName_A_character: "#ONCLICK:CHARACTER,[ROOT.GetCharacter.GetID] #TOOLTIP:CHARACTER,[ROOT.GetCharacter.GetID] #L [ROOT.GetCharacter.Custom('CZ_TitleAsNameNoTooltip_A')] [ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltip_A')]#!#!#!"
+ CZ_TitledFirstNameNoTooltip_A_character: "[ROOT.GetCharacter.Custom('CZ_TitleAsNameNoTooltip_A')] [ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltip_A')]"
+ CZ_TitledFirstName_V_character: "#ONCLICK:CHARACTER,[ROOT.GetCharacter.GetID] #TOOLTIP:CHARACTER,[ROOT.GetCharacter.GetID] #L [ROOT.GetCharacter.Custom('CZ_TitleAsNameNoTooltip_V')] [ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltip_V')]#!#!#!"
+ CZ_TitledFirstNameNoTooltip_V_character: "[ROOT.GetCharacter.Custom('CZ_TitleAsNameNoTooltip_V')] [ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltip_V')]"
+ CZ_TitledFirstName_L_character: "#ONCLICK:CHARACTER,[ROOT.GetCharacter.GetID] #TOOLTIP:CHARACTER,[ROOT.GetCharacter.GetID] #L [ROOT.GetCharacter.Custom('CZ_TitleAsNameNoTooltip_L')] [ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltip_L')]#!#!#!"
+ CZ_TitledFirstNameNoTooltip_L_character: "[ROOT.GetCharacter.Custom('CZ_TitleAsNameNoTooltip_L')] [ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltip_L')]"
+ CZ_TitledFirstName_I_character: "#ONCLICK:CHARACTER,[ROOT.GetCharacter.GetID] #TOOLTIP:CHARACTER,[ROOT.GetCharacter.GetID] #L [ROOT.GetCharacter.Custom('CZ_TitleAsNameNoTooltip_I')] [ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltip_I')]#!#!#!"
+ CZ_TitledFirstNameNoTooltip_I_character: "[ROOT.GetCharacter.Custom('CZ_TitleAsNameNoTooltip_I')] [ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltip_I')]"
+
+ # ---------------------------------------------------------
+ # REGNAL
+ # ---------------------------------------------------------
+
+ CZ_TitledFirstNameRegnal_G_tooltip: "#ONCLICK:CHARACTER,[ROOT.GetCharacter.GetID] #TOOLTIP:CHARACTER,[ROOT.GetCharacter.GetID] #L [ROOT.GetCharacter.Custom('CZ_TitledFirstNameNoTooltipRegnal_G')]#!#!#!"
+ CZ_TitledFirstNameNoTooltipRegnal_G_character: "[ROOT.GetCharacter.Custom('CZ_TitleAsNameNoTooltip_G')] [ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltipRegnal_G')]"
+ CZ_TitledFirstNameRegnal_D_tooltip: "#ONCLICK:CHARACTER,[ROOT.GetCharacter.GetID] #TOOLTIP:CHARACTER,[ROOT.GetCharacter.GetID] #L [ROOT.GetCharacter.Custom('CZ_TitledFirstNameNoTooltipRegnal_D')]#!#!#!"
+ CZ_TitledFirstNameNoTooltipRegnal_D_character: "[ROOT.GetCharacter.Custom('CZ_TitleAsNameNoTooltip_D')] [ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltipRegnal_D')]"
+ CZ_TitledFirstNameRegnal_A_tooltip: "#ONCLICK:CHARACTER,[ROOT.GetCharacter.GetID] #TOOLTIP:CHARACTER,[ROOT.GetCharacter.GetID] #L [ROOT.GetCharacter.Custom('CZ_TitledFirstNameNoTooltipRegnal_A')]#!#!#!"
+ CZ_TitledFirstNameNoTooltipRegnal_A_character: "[ROOT.GetCharacter.Custom('CZ_TitleAsNameNoTooltip_A')] [ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltipRegnal_A')]"
+ CZ_TitledFirstNameRegnal_V_tooltip: "#ONCLICK:CHARACTER,[ROOT.GetCharacter.GetID] #TOOLTIP:CHARACTER,[ROOT.GetCharacter.GetID] #L [ROOT.GetCharacter.Custom('CZ_TitledFirstNameNoTooltipRegnal_V')]#!#!#!"
+ CZ_TitledFirstNameNoTooltipRegnal_V_character: "[ROOT.GetCharacter.Custom('CZ_TitleAsNameNoTooltip_V')] [ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltipRegnal_V')]"
+ CZ_TitledFirstNameRegnal_L_tooltip: "#ONCLICK:CHARACTER,[ROOT.GetCharacter.GetID] #TOOLTIP:CHARACTER,[ROOT.GetCharacter.GetID] #L [ROOT.GetCharacter.Custom('CZ_TitledFirstNameNoTooltipRegnal_L')]#!#!#!"
+ CZ_TitledFirstNameNoTooltipRegnal_L_character: "[ROOT.GetCharacter.Custom('CZ_TitleAsNameNoTooltip_L')] [ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltipRegnal_L')]"
+ CZ_TitledFirstNameRegnal_I_tooltip: "#ONCLICK:CHARACTER,[ROOT.GetCharacter.GetID] #TOOLTIP:CHARACTER,[ROOT.GetCharacter.GetID] #L [ROOT.GetCharacter.Custom('CZ_TitledFirstNameNoTooltipRegnal_I')]#!#!#!"
+ CZ_TitledFirstNameNoTooltipRegnal_I_character: "[ROOT.GetCharacter.Custom('CZ_TitleAsNameNoTooltip_I')] [ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltipRegnal_I')]"
+
+ # =========================================================
+ # SHORT UI NAME
+ # =========================================================
+
+
+ # ---------------------------------------------------------
+ # POSSESSIVE
+ # ---------------------------------------------------------
+
+ CZ_ShortUINamePossessive_player: "tvůj"
+ CZ_ShortUINamePossessive_character: "#ONCLICK:CHARACTER,[ROOT.GetCharacter.GetID] #TOOLTIP:CHARACTER,[ROOT.GetCharacter.GetID] #L [ROOT.GetCharacter.Custom('CZ_ShortUINamePossessiveNoTooltip')]#!#!#!"
+ CZ_ShortUINamePossessiveNoTooltip_player: "tvůj"
+ CZ_ShortUINamePossessiveNoTooltip_character: "[ROOT.GetCharacter.Custom('CZ_TitleAsNameNoTooltip_G')] [ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltipRegnal_G')]"
+
+ # ---------------------------------------------------------
+ # STANDARD
+ # ---------------------------------------------------------
+
+ CZ_ShortUIName_G_player: "tebe"
+ CZ_ShortUIName_G_character: "#ONCLICK:CHARACTER,[ROOT.GetCharacter.GetID] #TOOLTIP:CHARACTER,[ROOT.GetCharacter.GetID] #L [ROOT.GetCharacter.Custom('CZ_TitleAsNameNoTooltip_G')] [ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltipRegnal_G')]#!#!#!"
+ CZ_ShortUIName_D_player: "tobě"
+ CZ_ShortUIName_D_character: "#ONCLICK:CHARACTER,[ROOT.GetCharacter.GetID] #TOOLTIP:CHARACTER,[ROOT.GetCharacter.GetID] #L [ROOT.GetCharacter.Custom('CZ_TitleAsNameNoTooltip_D')] [ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltipRegnal_D')]#!#!#!"
+ CZ_ShortUIName_A_player: "tebe"
+ CZ_ShortUIName_A_character: "#ONCLICK:CHARACTER,[ROOT.GetCharacter.GetID] #TOOLTIP:CHARACTER,[ROOT.GetCharacter.GetID] #L [ROOT.GetCharacter.Custom('CZ_TitleAsNameNoTooltip_A')] [ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltipRegnal_A')]#!#!#!"
+ CZ_ShortUIName_V_player: "ty"
+ CZ_ShortUIName_V_character: "#ONCLICK:CHARACTER,[ROOT.GetCharacter.GetID] #TOOLTIP:CHARACTER,[ROOT.GetCharacter.GetID] #L [ROOT.GetCharacter.Custom('CZ_TitleAsNameNoTooltip_V')] [ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltipRegnal_V')]#!#!#!"
+ CZ_ShortUIName_L_player: "tobě"
+ CZ_ShortUIName_L_character: "#ONCLICK:CHARACTER,[ROOT.GetCharacter.GetID] #TOOLTIP:CHARACTER,[ROOT.GetCharacter.GetID] #L [ROOT.GetCharacter.Custom('CZ_TitleAsNameNoTooltip_L')] [ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltipRegnal_L')]#!#!#!"
+ CZ_ShortUIName_I_player: "tebou"
+ CZ_ShortUIName_I_character: "#ONCLICK:CHARACTER,[ROOT.GetCharacter.GetID] #TOOLTIP:CHARACTER,[ROOT.GetCharacter.GetID] #L [ROOT.GetCharacter.Custom('CZ_TitleAsNameNoTooltip_I')] [ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltipRegnal_I')]#!#!#!"
+
+ # ---------------------------------------------------------
+ # NO TOOLTIP
+ # ---------------------------------------------------------
+
+ CZ_ShortUINameNoTooltip_G_player: "tebe"
+ CZ_ShortUINameNoTooltip_G_character: "[ROOT.GetCharacter.Custom('CZ_TitleAsNameNoTooltip_G')] [ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltipRegnal_G')]"
+ CZ_ShortUINameNoTooltip_D_player: "tobě"
+ CZ_ShortUINameNoTooltip_D_character: "[ROOT.GetCharacter.Custom('CZ_TitleAsNameNoTooltip_D')] [ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltipRegnal_D')]"
+ CZ_ShortUINameNoTooltip_A_player: "tebe"
+ CZ_ShortUINameNoTooltip_A_character: "[ROOT.GetCharacter.Custom('CZ_TitleAsNameNoTooltip_A')] [ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltipRegnal_A')]"
+ CZ_ShortUINameNoTooltip_V_player: "ty"
+ CZ_ShortUINameNoTooltip_V_character: "[ROOT.GetCharacter.Custom('CZ_TitleAsNameNoTooltip_V')] [ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltipRegnal_V')]"
+ CZ_ShortUINameNoTooltip_L_player: "tobě"
+ CZ_ShortUINameNoTooltip_L_character: "[ROOT.GetCharacter.Custom('CZ_TitleAsNameNoTooltip_L')] [ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltipRegnal_L')]"
+ CZ_ShortUINameNoTooltip_I_player: "tebou"
+ CZ_ShortUINameNoTooltip_I_character: "[ROOT.GetCharacter.Custom('CZ_TitleAsNameNoTooltip_I')] [ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltipRegnal_I')]"
+
+ # ---------------------------------------------------------
+ # NOT ME
+ # ---------------------------------------------------------
+
+ CZ_ShortUINameNotMe_G_character: "#ONCLICK:CHARACTER,[ROOT.GetCharacter.GetID] #TOOLTIP:CHARACTER,[ROOT.GetCharacter.GetID] #L [ROOT.GetCharacter.Custom('CZ_TitleAsNameNoTooltip_G')] [ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltipRegnal_G')]#!#!#!"
+ CZ_ShortUINameNotMe_D_character: "#ONCLICK:CHARACTER,[ROOT.GetCharacter.GetID] #TOOLTIP:CHARACTER,[ROOT.GetCharacter.GetID] #L [ROOT.GetCharacter.Custom('CZ_TitleAsNameNoTooltip_D')] [ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltipRegnal_D')]#!#!#!"
+ CZ_ShortUINameNotMe_A_character: "#ONCLICK:CHARACTER,[ROOT.GetCharacter.GetID] #TOOLTIP:CHARACTER,[ROOT.GetCharacter.GetID] #L [ROOT.GetCharacter.Custom('CZ_TitleAsNameNoTooltip_A')] [ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltipRegnal_A')]#!#!#!"
+ CZ_ShortUINameNotMe_V_character: "#ONCLICK:CHARACTER,[ROOT.GetCharacter.GetID] #TOOLTIP:CHARACTER,[ROOT.GetCharacter.GetID] #L [ROOT.GetCharacter.Custom('CZ_TitleAsNameNoTooltip_V')] [ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltipRegnal_V')]#!#!#!"
+ CZ_ShortUINameNotMe_L_character: "#ONCLICK:CHARACTER,[ROOT.GetCharacter.GetID] #TOOLTIP:CHARACTER,[ROOT.GetCharacter.GetID] #L [ROOT.GetCharacter.Custom('CZ_TitleAsNameNoTooltip_L')] [ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltipRegnal_L')]#!#!#!"
+ CZ_ShortUINameNotMe_I_character: "#ONCLICK:CHARACTER,[ROOT.GetCharacter.GetID] #TOOLTIP:CHARACTER,[ROOT.GetCharacter.GetID] #L [ROOT.GetCharacter.Custom('CZ_TitleAsNameNoTooltip_I')] [ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltipRegnal_I')]#!#!#!"
+
+ # ---------------------------------------------------------
+ # NOT ME - NO TOOLTIP
+ # ---------------------------------------------------------
+
+ CZ_ShortUINameNotMeNoTooltip_G_character: "[ROOT.GetCharacter.Custom('CZ_TitleAsNameNoTooltip_G')] [ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltipRegnal_G')]"
+ CZ_ShortUINameNotMeNoTooltip_D_character: "[ROOT.GetCharacter.Custom('CZ_TitleAsNameNoTooltip_D')] [ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltipRegnal_D')]"
+ CZ_ShortUINameNotMeNoTooltip_A_character: "[ROOT.GetCharacter.Custom('CZ_TitleAsNameNoTooltip_A')] [ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltipRegnal_A')]"
+ CZ_ShortUINameNotMeNoTooltip_V_character: "[ROOT.GetCharacter.Custom('CZ_TitleAsNameNoTooltip_V')] [ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltipRegnal_V')]"
+ CZ_ShortUINameNotMeNoTooltip_L_character: "[ROOT.GetCharacter.Custom('CZ_TitleAsNameNoTooltip_L')] [ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltipRegnal_L')]"
+ CZ_ShortUINameNotMeNoTooltip_I_character: "[ROOT.GetCharacter.Custom('CZ_TitleAsNameNoTooltip_I')] [ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltipRegnal_I')]"
+
+ # =========================================================
+ # FULL NAME DECLENSION
+ # =========================================================
+
+ CZ_FullName_G_tooltip: "#ONCLICK:CHARACTER,[ROOT.GetCharacter.GetID] #TOOLTIP:CHARACTER,[ROOT.GetCharacter.GetID] #L [ROOT.GetCharacter.Custom('CZ_FullNameNoTooltip_G')]#!#!#!"
+ CZ_FullNameNoTooltip_G_character: "[Select_CString(CZHasNamePrefix(ROOT.GetCharacter.GetFullNameNoTooltip,ROOT.GetCharacter.GetTitledFirstNameNoTooltipRegnal),CZReplaceNamePrefix(ROOT.GetCharacter.GetFullNameNoTooltip,ROOT.GetCharacter.GetTitledFirstNameNoTooltipRegnal,ROOT.GetCharacter.Custom('CZ_TitledFirstNameNoTooltipRegnal_G')),Select_CString(CZHasNamePrefix(ROOT.GetCharacter.GetFullNameNoTooltip,ROOT.GetCharacter.GetTitledFirstNameNoTooltip),CZReplaceNamePrefix(ROOT.GetCharacter.GetFullNameNoTooltip,ROOT.GetCharacter.GetTitledFirstNameNoTooltip,ROOT.GetCharacter.Custom('CZ_TitledFirstNameNoTooltip_G')),Select_CString(CZHasNamePrefix(ROOT.GetCharacter.GetFullNameNoTooltip,ROOT.GetCharacter.GetFirstNameNoTooltipRegnal),CZReplaceNamePrefix(ROOT.GetCharacter.GetFullNameNoTooltip,ROOT.GetCharacter.GetFirstNameNoTooltipRegnal,ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltipRegnal_G')),CZReplaceNamePrefix(ROOT.GetCharacter.GetFullNameNoTooltip,ROOT.GetCharacter.GetFirstNameNoTooltip,ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltip_G')))))]"
+ CZ_FullName_D_tooltip: "#ONCLICK:CHARACTER,[ROOT.GetCharacter.GetID] #TOOLTIP:CHARACTER,[ROOT.GetCharacter.GetID] #L [ROOT.GetCharacter.Custom('CZ_FullNameNoTooltip_D')]#!#!#!"
+ CZ_FullNameNoTooltip_D_character: "[Select_CString(CZHasNamePrefix(ROOT.GetCharacter.GetFullNameNoTooltip,ROOT.GetCharacter.GetTitledFirstNameNoTooltipRegnal),CZReplaceNamePrefix(ROOT.GetCharacter.GetFullNameNoTooltip,ROOT.GetCharacter.GetTitledFirstNameNoTooltipRegnal,ROOT.GetCharacter.Custom('CZ_TitledFirstNameNoTooltipRegnal_D')),Select_CString(CZHasNamePrefix(ROOT.GetCharacter.GetFullNameNoTooltip,ROOT.GetCharacter.GetTitledFirstNameNoTooltip),CZReplaceNamePrefix(ROOT.GetCharacter.GetFullNameNoTooltip,ROOT.GetCharacter.GetTitledFirstNameNoTooltip,ROOT.GetCharacter.Custom('CZ_TitledFirstNameNoTooltip_D')),Select_CString(CZHasNamePrefix(ROOT.GetCharacter.GetFullNameNoTooltip,ROOT.GetCharacter.GetFirstNameNoTooltipRegnal),CZReplaceNamePrefix(ROOT.GetCharacter.GetFullNameNoTooltip,ROOT.GetCharacter.GetFirstNameNoTooltipRegnal,ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltipRegnal_D')),CZReplaceNamePrefix(ROOT.GetCharacter.GetFullNameNoTooltip,ROOT.GetCharacter.GetFirstNameNoTooltip,ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltip_D')))))]"
+ CZ_FullName_A_tooltip: "#ONCLICK:CHARACTER,[ROOT.GetCharacter.GetID] #TOOLTIP:CHARACTER,[ROOT.GetCharacter.GetID] #L [ROOT.GetCharacter.Custom('CZ_FullNameNoTooltip_A')]#!#!#!"
+ CZ_FullNameNoTooltip_A_character: "[Select_CString(CZHasNamePrefix(ROOT.GetCharacter.GetFullNameNoTooltip,ROOT.GetCharacter.GetTitledFirstNameNoTooltipRegnal),CZReplaceNamePrefix(ROOT.GetCharacter.GetFullNameNoTooltip,ROOT.GetCharacter.GetTitledFirstNameNoTooltipRegnal,ROOT.GetCharacter.Custom('CZ_TitledFirstNameNoTooltipRegnal_A')),Select_CString(CZHasNamePrefix(ROOT.GetCharacter.GetFullNameNoTooltip,ROOT.GetCharacter.GetTitledFirstNameNoTooltip),CZReplaceNamePrefix(ROOT.GetCharacter.GetFullNameNoTooltip,ROOT.GetCharacter.GetTitledFirstNameNoTooltip,ROOT.GetCharacter.Custom('CZ_TitledFirstNameNoTooltip_A')),Select_CString(CZHasNamePrefix(ROOT.GetCharacter.GetFullNameNoTooltip,ROOT.GetCharacter.GetFirstNameNoTooltipRegnal),CZReplaceNamePrefix(ROOT.GetCharacter.GetFullNameNoTooltip,ROOT.GetCharacter.GetFirstNameNoTooltipRegnal,ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltipRegnal_A')),CZReplaceNamePrefix(ROOT.GetCharacter.GetFullNameNoTooltip,ROOT.GetCharacter.GetFirstNameNoTooltip,ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltip_A')))))]"
+ CZ_FullName_V_tooltip: "#ONCLICK:CHARACTER,[ROOT.GetCharacter.GetID] #TOOLTIP:CHARACTER,[ROOT.GetCharacter.GetID] #L [ROOT.GetCharacter.Custom('CZ_FullNameNoTooltip_V')]#!#!#!"
+ CZ_FullNameNoTooltip_V_character: "[Select_CString(CZHasNamePrefix(ROOT.GetCharacter.GetFullNameNoTooltip,ROOT.GetCharacter.GetTitledFirstNameNoTooltipRegnal),CZReplaceNamePrefix(ROOT.GetCharacter.GetFullNameNoTooltip,ROOT.GetCharacter.GetTitledFirstNameNoTooltipRegnal,ROOT.GetCharacter.Custom('CZ_TitledFirstNameNoTooltipRegnal_V')),Select_CString(CZHasNamePrefix(ROOT.GetCharacter.GetFullNameNoTooltip,ROOT.GetCharacter.GetTitledFirstNameNoTooltip),CZReplaceNamePrefix(ROOT.GetCharacter.GetFullNameNoTooltip,ROOT.GetCharacter.GetTitledFirstNameNoTooltip,ROOT.GetCharacter.Custom('CZ_TitledFirstNameNoTooltip_V')),Select_CString(CZHasNamePrefix(ROOT.GetCharacter.GetFullNameNoTooltip,ROOT.GetCharacter.GetFirstNameNoTooltipRegnal),CZReplaceNamePrefix(ROOT.GetCharacter.GetFullNameNoTooltip,ROOT.GetCharacter.GetFirstNameNoTooltipRegnal,ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltipRegnal_V')),CZReplaceNamePrefix(ROOT.GetCharacter.GetFullNameNoTooltip,ROOT.GetCharacter.GetFirstNameNoTooltip,ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltip_V')))))]"
+ CZ_FullName_L_tooltip: "#ONCLICK:CHARACTER,[ROOT.GetCharacter.GetID] #TOOLTIP:CHARACTER,[ROOT.GetCharacter.GetID] #L [ROOT.GetCharacter.Custom('CZ_FullNameNoTooltip_L')]#!#!#!"
+ CZ_FullNameNoTooltip_L_character: "[Select_CString(CZHasNamePrefix(ROOT.GetCharacter.GetFullNameNoTooltip,ROOT.GetCharacter.GetTitledFirstNameNoTooltipRegnal),CZReplaceNamePrefix(ROOT.GetCharacter.GetFullNameNoTooltip,ROOT.GetCharacter.GetTitledFirstNameNoTooltipRegnal,ROOT.GetCharacter.Custom('CZ_TitledFirstNameNoTooltipRegnal_L')),Select_CString(CZHasNamePrefix(ROOT.GetCharacter.GetFullNameNoTooltip,ROOT.GetCharacter.GetTitledFirstNameNoTooltip),CZReplaceNamePrefix(ROOT.GetCharacter.GetFullNameNoTooltip,ROOT.GetCharacter.GetTitledFirstNameNoTooltip,ROOT.GetCharacter.Custom('CZ_TitledFirstNameNoTooltip_L')),Select_CString(CZHasNamePrefix(ROOT.GetCharacter.GetFullNameNoTooltip,ROOT.GetCharacter.GetFirstNameNoTooltipRegnal),CZReplaceNamePrefix(ROOT.GetCharacter.GetFullNameNoTooltip,ROOT.GetCharacter.GetFirstNameNoTooltipRegnal,ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltipRegnal_L')),CZReplaceNamePrefix(ROOT.GetCharacter.GetFullNameNoTooltip,ROOT.GetCharacter.GetFirstNameNoTooltip,ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltip_L')))))]"
+ CZ_FullName_I_tooltip: "#ONCLICK:CHARACTER,[ROOT.GetCharacter.GetID] #TOOLTIP:CHARACTER,[ROOT.GetCharacter.GetID] #L [ROOT.GetCharacter.Custom('CZ_FullNameNoTooltip_I')]#!#!#!"
+ CZ_FullNameNoTooltip_I_character: "[Select_CString(CZHasNamePrefix(ROOT.GetCharacter.GetFullNameNoTooltip,ROOT.GetCharacter.GetTitledFirstNameNoTooltipRegnal),CZReplaceNamePrefix(ROOT.GetCharacter.GetFullNameNoTooltip,ROOT.GetCharacter.GetTitledFirstNameNoTooltipRegnal,ROOT.GetCharacter.Custom('CZ_TitledFirstNameNoTooltipRegnal_I')),Select_CString(CZHasNamePrefix(ROOT.GetCharacter.GetFullNameNoTooltip,ROOT.GetCharacter.GetTitledFirstNameNoTooltip),CZReplaceNamePrefix(ROOT.GetCharacter.GetFullNameNoTooltip,ROOT.GetCharacter.GetTitledFirstNameNoTooltip,ROOT.GetCharacter.Custom('CZ_TitledFirstNameNoTooltip_I')),Select_CString(CZHasNamePrefix(ROOT.GetCharacter.GetFullNameNoTooltip,ROOT.GetCharacter.GetFirstNameNoTooltipRegnal),CZReplaceNamePrefix(ROOT.GetCharacter.GetFullNameNoTooltip,ROOT.GetCharacter.GetFirstNameNoTooltipRegnal,ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltipRegnal_I')),CZReplaceNamePrefix(ROOT.GetCharacter.GetFullNameNoTooltip,ROOT.GetCharacter.GetFirstNameNoTooltip,ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltip_I')))))]"
+
+ # =========================================================
+ # UI NAME DECLENSION
+ # =========================================================
+
+
+ # ---------------------------------------------------------
+ # STANDARD
+ # ---------------------------------------------------------
+
+ CZ_UIName_G_player: "[ROOT.GetCharacter.GetUIName]"
+ CZ_UIName_G_character: "#ONCLICK:CHARACTER,[ROOT.GetCharacter.GetID] #TOOLTIP:CHARACTER,[ROOT.GetCharacter.GetID] #L [Select_CString(And(Not(StringIsEmpty(Concatenate(ROOT.GetCharacter.GetTitleAsNameNoTooltip,Concatenate(' ',ROOT.GetCharacter.GetFirstNameNoTooltipRegnal)))),EqualTo_string(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,Concatenate(Concatenate(ROOT.GetCharacter.GetTitleAsNameNoTooltip,Concatenate(' ',ROOT.GetCharacter.GetFirstNameNoTooltipRegnal)),Select_CString(EqualTo_string(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,Concatenate(ROOT.GetCharacter.GetTitleAsNameNoTooltip,Concatenate(' ',ROOT.GetCharacter.GetFirstNameNoTooltipRegnal))),'',Concatenate(' ',TrimFrontChars(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,Concatenate(ROOT.GetCharacter.GetTitleAsNameNoTooltip,Concatenate(' ',ROOT.GetCharacter.GetFirstNameNoTooltipRegnal)))))))),Concatenate(Concatenate(ROOT.GetCharacter.Custom('CZ_TitleAsNameNoTooltip_G'),Concatenate(' ',ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltipRegnal_G'))),Select_CString(EqualTo_string(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,Concatenate(ROOT.GetCharacter.GetTitleAsNameNoTooltip,Concatenate(' ',ROOT.GetCharacter.GetFirstNameNoTooltipRegnal))),'',Concatenate(' ',TrimFrontChars(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,Concatenate(ROOT.GetCharacter.GetTitleAsNameNoTooltip,Concatenate(' ',ROOT.GetCharacter.GetFirstNameNoTooltipRegnal)))))),Select_CString(And(Not(StringIsEmpty(Concatenate(ROOT.GetCharacter.GetTitleAsNameNoTooltip,Concatenate(' ',ROOT.GetCharacter.GetFirstNameNoTooltip)))),EqualTo_string(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,Concatenate(Concatenate(ROOT.GetCharacter.GetTitleAsNameNoTooltip,Concatenate(' ',ROOT.GetCharacter.GetFirstNameNoTooltip)),Select_CString(EqualTo_string(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,Concatenate(ROOT.GetCharacter.GetTitleAsNameNoTooltip,Concatenate(' ',ROOT.GetCharacter.GetFirstNameNoTooltip))),'',Concatenate(' ',TrimFrontChars(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,Concatenate(ROOT.GetCharacter.GetTitleAsNameNoTooltip,Concatenate(' ',ROOT.GetCharacter.GetFirstNameNoTooltip)))))))),Concatenate(Concatenate(ROOT.GetCharacter.Custom('CZ_TitleAsNameNoTooltip_G'),Concatenate(' ',ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltip_G'))),Select_CString(EqualTo_string(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,Concatenate(ROOT.GetCharacter.GetTitleAsNameNoTooltip,Concatenate(' ',ROOT.GetCharacter.GetFirstNameNoTooltip))),'',Concatenate(' ',TrimFrontChars(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,Concatenate(ROOT.GetCharacter.GetTitleAsNameNoTooltip,Concatenate(' ',ROOT.GetCharacter.GetFirstNameNoTooltip)))))),Select_CString(And(Not(StringIsEmpty(ROOT.GetCharacter.GetFirstNameNoTooltipRegnal)),EqualTo_string(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,Concatenate(ROOT.GetCharacter.GetFirstNameNoTooltipRegnal,TrimFrontChars(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,ROOT.GetCharacter.GetFirstNameNoTooltipRegnal)))),Concatenate(ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltipRegnal_G'),TrimFrontChars(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,ROOT.GetCharacter.GetFirstNameNoTooltipRegnal)),Select_CString(And(Not(StringIsEmpty(ROOT.GetCharacter.GetFirstNameNoTooltip)),EqualTo_string(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,Concatenate(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimFrontChars(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,ROOT.GetCharacter.GetFirstNameNoTooltip)))),Concatenate(ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltip_G'),TrimFrontChars(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,ROOT.GetCharacter.GetFirstNameNoTooltip)),ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat))))]#!#!#!"
+ CZ_UIName_D_player: "[ROOT.GetCharacter.GetUIName]"
+ CZ_UIName_D_character: "#ONCLICK:CHARACTER,[ROOT.GetCharacter.GetID] #TOOLTIP:CHARACTER,[ROOT.GetCharacter.GetID] #L [Select_CString(And(Not(StringIsEmpty(Concatenate(ROOT.GetCharacter.GetTitleAsNameNoTooltip,Concatenate(' ',ROOT.GetCharacter.GetFirstNameNoTooltipRegnal)))),EqualTo_string(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,Concatenate(Concatenate(ROOT.GetCharacter.GetTitleAsNameNoTooltip,Concatenate(' ',ROOT.GetCharacter.GetFirstNameNoTooltipRegnal)),Select_CString(EqualTo_string(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,Concatenate(ROOT.GetCharacter.GetTitleAsNameNoTooltip,Concatenate(' ',ROOT.GetCharacter.GetFirstNameNoTooltipRegnal))),'',Concatenate(' ',TrimFrontChars(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,Concatenate(ROOT.GetCharacter.GetTitleAsNameNoTooltip,Concatenate(' ',ROOT.GetCharacter.GetFirstNameNoTooltipRegnal)))))))),Concatenate(Concatenate(ROOT.GetCharacter.Custom('CZ_TitleAsNameNoTooltip_D'),Concatenate(' ',ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltipRegnal_D'))),Select_CString(EqualTo_string(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,Concatenate(ROOT.GetCharacter.GetTitleAsNameNoTooltip,Concatenate(' ',ROOT.GetCharacter.GetFirstNameNoTooltipRegnal))),'',Concatenate(' ',TrimFrontChars(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,Concatenate(ROOT.GetCharacter.GetTitleAsNameNoTooltip,Concatenate(' ',ROOT.GetCharacter.GetFirstNameNoTooltipRegnal)))))),Select_CString(And(Not(StringIsEmpty(Concatenate(ROOT.GetCharacter.GetTitleAsNameNoTooltip,Concatenate(' ',ROOT.GetCharacter.GetFirstNameNoTooltip)))),EqualTo_string(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,Concatenate(Concatenate(ROOT.GetCharacter.GetTitleAsNameNoTooltip,Concatenate(' ',ROOT.GetCharacter.GetFirstNameNoTooltip)),Select_CString(EqualTo_string(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,Concatenate(ROOT.GetCharacter.GetTitleAsNameNoTooltip,Concatenate(' ',ROOT.GetCharacter.GetFirstNameNoTooltip))),'',Concatenate(' ',TrimFrontChars(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,Concatenate(ROOT.GetCharacter.GetTitleAsNameNoTooltip,Concatenate(' ',ROOT.GetCharacter.GetFirstNameNoTooltip)))))))),Concatenate(Concatenate(ROOT.GetCharacter.Custom('CZ_TitleAsNameNoTooltip_D'),Concatenate(' ',ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltip_D'))),Select_CString(EqualTo_string(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,Concatenate(ROOT.GetCharacter.GetTitleAsNameNoTooltip,Concatenate(' ',ROOT.GetCharacter.GetFirstNameNoTooltip))),'',Concatenate(' ',TrimFrontChars(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,Concatenate(ROOT.GetCharacter.GetTitleAsNameNoTooltip,Concatenate(' ',ROOT.GetCharacter.GetFirstNameNoTooltip)))))),Select_CString(And(Not(StringIsEmpty(ROOT.GetCharacter.GetFirstNameNoTooltipRegnal)),EqualTo_string(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,Concatenate(ROOT.GetCharacter.GetFirstNameNoTooltipRegnal,TrimFrontChars(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,ROOT.GetCharacter.GetFirstNameNoTooltipRegnal)))),Concatenate(ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltipRegnal_D'),TrimFrontChars(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,ROOT.GetCharacter.GetFirstNameNoTooltipRegnal)),Select_CString(And(Not(StringIsEmpty(ROOT.GetCharacter.GetFirstNameNoTooltip)),EqualTo_string(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,Concatenate(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimFrontChars(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,ROOT.GetCharacter.GetFirstNameNoTooltip)))),Concatenate(ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltip_D'),TrimFrontChars(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,ROOT.GetCharacter.GetFirstNameNoTooltip)),ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat))))]#!#!#!"
+ CZ_UIName_A_player: "[ROOT.GetCharacter.GetUIName]"
+ CZ_UIName_A_character: "#ONCLICK:CHARACTER,[ROOT.GetCharacter.GetID] #TOOLTIP:CHARACTER,[ROOT.GetCharacter.GetID] #L [Select_CString(And(Not(StringIsEmpty(Concatenate(ROOT.GetCharacter.GetTitleAsNameNoTooltip,Concatenate(' ',ROOT.GetCharacter.GetFirstNameNoTooltipRegnal)))),EqualTo_string(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,Concatenate(Concatenate(ROOT.GetCharacter.GetTitleAsNameNoTooltip,Concatenate(' ',ROOT.GetCharacter.GetFirstNameNoTooltipRegnal)),Select_CString(EqualTo_string(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,Concatenate(ROOT.GetCharacter.GetTitleAsNameNoTooltip,Concatenate(' ',ROOT.GetCharacter.GetFirstNameNoTooltipRegnal))),'',Concatenate(' ',TrimFrontChars(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,Concatenate(ROOT.GetCharacter.GetTitleAsNameNoTooltip,Concatenate(' ',ROOT.GetCharacter.GetFirstNameNoTooltipRegnal)))))))),Concatenate(Concatenate(ROOT.GetCharacter.Custom('CZ_TitleAsNameNoTooltip_A'),Concatenate(' ',ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltipRegnal_A'))),Select_CString(EqualTo_string(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,Concatenate(ROOT.GetCharacter.GetTitleAsNameNoTooltip,Concatenate(' ',ROOT.GetCharacter.GetFirstNameNoTooltipRegnal))),'',Concatenate(' ',TrimFrontChars(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,Concatenate(ROOT.GetCharacter.GetTitleAsNameNoTooltip,Concatenate(' ',ROOT.GetCharacter.GetFirstNameNoTooltipRegnal)))))),Select_CString(And(Not(StringIsEmpty(Concatenate(ROOT.GetCharacter.GetTitleAsNameNoTooltip,Concatenate(' ',ROOT.GetCharacter.GetFirstNameNoTooltip)))),EqualTo_string(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,Concatenate(Concatenate(ROOT.GetCharacter.GetTitleAsNameNoTooltip,Concatenate(' ',ROOT.GetCharacter.GetFirstNameNoTooltip)),Select_CString(EqualTo_string(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,Concatenate(ROOT.GetCharacter.GetTitleAsNameNoTooltip,Concatenate(' ',ROOT.GetCharacter.GetFirstNameNoTooltip))),'',Concatenate(' ',TrimFrontChars(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,Concatenate(ROOT.GetCharacter.GetTitleAsNameNoTooltip,Concatenate(' ',ROOT.GetCharacter.GetFirstNameNoTooltip)))))))),Concatenate(Concatenate(ROOT.GetCharacter.Custom('CZ_TitleAsNameNoTooltip_A'),Concatenate(' ',ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltip_A'))),Select_CString(EqualTo_string(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,Concatenate(ROOT.GetCharacter.GetTitleAsNameNoTooltip,Concatenate(' ',ROOT.GetCharacter.GetFirstNameNoTooltip))),'',Concatenate(' ',TrimFrontChars(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,Concatenate(ROOT.GetCharacter.GetTitleAsNameNoTooltip,Concatenate(' ',ROOT.GetCharacter.GetFirstNameNoTooltip)))))),Select_CString(And(Not(StringIsEmpty(ROOT.GetCharacter.GetFirstNameNoTooltipRegnal)),EqualTo_string(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,Concatenate(ROOT.GetCharacter.GetFirstNameNoTooltipRegnal,TrimFrontChars(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,ROOT.GetCharacter.GetFirstNameNoTooltipRegnal)))),Concatenate(ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltipRegnal_A'),TrimFrontChars(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,ROOT.GetCharacter.GetFirstNameNoTooltipRegnal)),Select_CString(And(Not(StringIsEmpty(ROOT.GetCharacter.GetFirstNameNoTooltip)),EqualTo_string(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,Concatenate(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimFrontChars(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,ROOT.GetCharacter.GetFirstNameNoTooltip)))),Concatenate(ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltip_A'),TrimFrontChars(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,ROOT.GetCharacter.GetFirstNameNoTooltip)),ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat))))]#!#!#!"
+ CZ_UIName_V_player: "[ROOT.GetCharacter.GetUIName]"
+ CZ_UIName_V_character: "#ONCLICK:CHARACTER,[ROOT.GetCharacter.GetID] #TOOLTIP:CHARACTER,[ROOT.GetCharacter.GetID] #L [Select_CString(And(Not(StringIsEmpty(Concatenate(ROOT.GetCharacter.GetTitleAsNameNoTooltip,Concatenate(' ',ROOT.GetCharacter.GetFirstNameNoTooltipRegnal)))),EqualTo_string(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,Concatenate(Concatenate(ROOT.GetCharacter.GetTitleAsNameNoTooltip,Concatenate(' ',ROOT.GetCharacter.GetFirstNameNoTooltipRegnal)),Select_CString(EqualTo_string(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,Concatenate(ROOT.GetCharacter.GetTitleAsNameNoTooltip,Concatenate(' ',ROOT.GetCharacter.GetFirstNameNoTooltipRegnal))),'',Concatenate(' ',TrimFrontChars(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,Concatenate(ROOT.GetCharacter.GetTitleAsNameNoTooltip,Concatenate(' ',ROOT.GetCharacter.GetFirstNameNoTooltipRegnal)))))))),Concatenate(Concatenate(ROOT.GetCharacter.Custom('CZ_TitleAsNameNoTooltip_V'),Concatenate(' ',ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltipRegnal_V'))),Select_CString(EqualTo_string(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,Concatenate(ROOT.GetCharacter.GetTitleAsNameNoTooltip,Concatenate(' ',ROOT.GetCharacter.GetFirstNameNoTooltipRegnal))),'',Concatenate(' ',TrimFrontChars(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,Concatenate(ROOT.GetCharacter.GetTitleAsNameNoTooltip,Concatenate(' ',ROOT.GetCharacter.GetFirstNameNoTooltipRegnal)))))),Select_CString(And(Not(StringIsEmpty(Concatenate(ROOT.GetCharacter.GetTitleAsNameNoTooltip,Concatenate(' ',ROOT.GetCharacter.GetFirstNameNoTooltip)))),EqualTo_string(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,Concatenate(Concatenate(ROOT.GetCharacter.GetTitleAsNameNoTooltip,Concatenate(' ',ROOT.GetCharacter.GetFirstNameNoTooltip)),Select_CString(EqualTo_string(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,Concatenate(ROOT.GetCharacter.GetTitleAsNameNoTooltip,Concatenate(' ',ROOT.GetCharacter.GetFirstNameNoTooltip))),'',Concatenate(' ',TrimFrontChars(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,Concatenate(ROOT.GetCharacter.GetTitleAsNameNoTooltip,Concatenate(' ',ROOT.GetCharacter.GetFirstNameNoTooltip)))))))),Concatenate(Concatenate(ROOT.GetCharacter.Custom('CZ_TitleAsNameNoTooltip_V'),Concatenate(' ',ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltip_V'))),Select_CString(EqualTo_string(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,Concatenate(ROOT.GetCharacter.GetTitleAsNameNoTooltip,Concatenate(' ',ROOT.GetCharacter.GetFirstNameNoTooltip))),'',Concatenate(' ',TrimFrontChars(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,Concatenate(ROOT.GetCharacter.GetTitleAsNameNoTooltip,Concatenate(' ',ROOT.GetCharacter.GetFirstNameNoTooltip)))))),Select_CString(And(Not(StringIsEmpty(ROOT.GetCharacter.GetFirstNameNoTooltipRegnal)),EqualTo_string(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,Concatenate(ROOT.GetCharacter.GetFirstNameNoTooltipRegnal,TrimFrontChars(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,ROOT.GetCharacter.GetFirstNameNoTooltipRegnal)))),Concatenate(ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltipRegnal_V'),TrimFrontChars(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,ROOT.GetCharacter.GetFirstNameNoTooltipRegnal)),Select_CString(And(Not(StringIsEmpty(ROOT.GetCharacter.GetFirstNameNoTooltip)),EqualTo_string(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,Concatenate(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimFrontChars(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,ROOT.GetCharacter.GetFirstNameNoTooltip)))),Concatenate(ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltip_V'),TrimFrontChars(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,ROOT.GetCharacter.GetFirstNameNoTooltip)),ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat))))]#!#!#!"
+ CZ_UIName_L_player: "[ROOT.GetCharacter.GetUIName]"
+ CZ_UIName_L_character: "#ONCLICK:CHARACTER,[ROOT.GetCharacter.GetID] #TOOLTIP:CHARACTER,[ROOT.GetCharacter.GetID] #L [Select_CString(And(Not(StringIsEmpty(Concatenate(ROOT.GetCharacter.GetTitleAsNameNoTooltip,Concatenate(' ',ROOT.GetCharacter.GetFirstNameNoTooltipRegnal)))),EqualTo_string(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,Concatenate(Concatenate(ROOT.GetCharacter.GetTitleAsNameNoTooltip,Concatenate(' ',ROOT.GetCharacter.GetFirstNameNoTooltipRegnal)),Select_CString(EqualTo_string(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,Concatenate(ROOT.GetCharacter.GetTitleAsNameNoTooltip,Concatenate(' ',ROOT.GetCharacter.GetFirstNameNoTooltipRegnal))),'',Concatenate(' ',TrimFrontChars(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,Concatenate(ROOT.GetCharacter.GetTitleAsNameNoTooltip,Concatenate(' ',ROOT.GetCharacter.GetFirstNameNoTooltipRegnal)))))))),Concatenate(Concatenate(ROOT.GetCharacter.Custom('CZ_TitleAsNameNoTooltip_L'),Concatenate(' ',ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltipRegnal_L'))),Select_CString(EqualTo_string(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,Concatenate(ROOT.GetCharacter.GetTitleAsNameNoTooltip,Concatenate(' ',ROOT.GetCharacter.GetFirstNameNoTooltipRegnal))),'',Concatenate(' ',TrimFrontChars(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,Concatenate(ROOT.GetCharacter.GetTitleAsNameNoTooltip,Concatenate(' ',ROOT.GetCharacter.GetFirstNameNoTooltipRegnal)))))),Select_CString(And(Not(StringIsEmpty(Concatenate(ROOT.GetCharacter.GetTitleAsNameNoTooltip,Concatenate(' ',ROOT.GetCharacter.GetFirstNameNoTooltip)))),EqualTo_string(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,Concatenate(Concatenate(ROOT.GetCharacter.GetTitleAsNameNoTooltip,Concatenate(' ',ROOT.GetCharacter.GetFirstNameNoTooltip)),Select_CString(EqualTo_string(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,Concatenate(ROOT.GetCharacter.GetTitleAsNameNoTooltip,Concatenate(' ',ROOT.GetCharacter.GetFirstNameNoTooltip))),'',Concatenate(' ',TrimFrontChars(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,Concatenate(ROOT.GetCharacter.GetTitleAsNameNoTooltip,Concatenate(' ',ROOT.GetCharacter.GetFirstNameNoTooltip)))))))),Concatenate(Concatenate(ROOT.GetCharacter.Custom('CZ_TitleAsNameNoTooltip_L'),Concatenate(' ',ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltip_L'))),Select_CString(EqualTo_string(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,Concatenate(ROOT.GetCharacter.GetTitleAsNameNoTooltip,Concatenate(' ',ROOT.GetCharacter.GetFirstNameNoTooltip))),'',Concatenate(' ',TrimFrontChars(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,Concatenate(ROOT.GetCharacter.GetTitleAsNameNoTooltip,Concatenate(' ',ROOT.GetCharacter.GetFirstNameNoTooltip)))))),Select_CString(And(Not(StringIsEmpty(ROOT.GetCharacter.GetFirstNameNoTooltipRegnal)),EqualTo_string(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,Concatenate(ROOT.GetCharacter.GetFirstNameNoTooltipRegnal,TrimFrontChars(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,ROOT.GetCharacter.GetFirstNameNoTooltipRegnal)))),Concatenate(ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltipRegnal_L'),TrimFrontChars(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,ROOT.GetCharacter.GetFirstNameNoTooltipRegnal)),Select_CString(And(Not(StringIsEmpty(ROOT.GetCharacter.GetFirstNameNoTooltip)),EqualTo_string(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,Concatenate(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimFrontChars(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,ROOT.GetCharacter.GetFirstNameNoTooltip)))),Concatenate(ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltip_L'),TrimFrontChars(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,ROOT.GetCharacter.GetFirstNameNoTooltip)),ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat))))]#!#!#!"
+ CZ_UIName_I_player: "[ROOT.GetCharacter.GetUIName]"
+ CZ_UIName_I_character: "#ONCLICK:CHARACTER,[ROOT.GetCharacter.GetID] #TOOLTIP:CHARACTER,[ROOT.GetCharacter.GetID] #L [Select_CString(And(Not(StringIsEmpty(Concatenate(ROOT.GetCharacter.GetTitleAsNameNoTooltip,Concatenate(' ',ROOT.GetCharacter.GetFirstNameNoTooltipRegnal)))),EqualTo_string(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,Concatenate(Concatenate(ROOT.GetCharacter.GetTitleAsNameNoTooltip,Concatenate(' ',ROOT.GetCharacter.GetFirstNameNoTooltipRegnal)),Select_CString(EqualTo_string(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,Concatenate(ROOT.GetCharacter.GetTitleAsNameNoTooltip,Concatenate(' ',ROOT.GetCharacter.GetFirstNameNoTooltipRegnal))),'',Concatenate(' ',TrimFrontChars(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,Concatenate(ROOT.GetCharacter.GetTitleAsNameNoTooltip,Concatenate(' ',ROOT.GetCharacter.GetFirstNameNoTooltipRegnal)))))))),Concatenate(Concatenate(ROOT.GetCharacter.Custom('CZ_TitleAsNameNoTooltip_I'),Concatenate(' ',ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltipRegnal_I'))),Select_CString(EqualTo_string(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,Concatenate(ROOT.GetCharacter.GetTitleAsNameNoTooltip,Concatenate(' ',ROOT.GetCharacter.GetFirstNameNoTooltipRegnal))),'',Concatenate(' ',TrimFrontChars(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,Concatenate(ROOT.GetCharacter.GetTitleAsNameNoTooltip,Concatenate(' ',ROOT.GetCharacter.GetFirstNameNoTooltipRegnal)))))),Select_CString(And(Not(StringIsEmpty(Concatenate(ROOT.GetCharacter.GetTitleAsNameNoTooltip,Concatenate(' ',ROOT.GetCharacter.GetFirstNameNoTooltip)))),EqualTo_string(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,Concatenate(Concatenate(ROOT.GetCharacter.GetTitleAsNameNoTooltip,Concatenate(' ',ROOT.GetCharacter.GetFirstNameNoTooltip)),Select_CString(EqualTo_string(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,Concatenate(ROOT.GetCharacter.GetTitleAsNameNoTooltip,Concatenate(' ',ROOT.GetCharacter.GetFirstNameNoTooltip))),'',Concatenate(' ',TrimFrontChars(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,Concatenate(ROOT.GetCharacter.GetTitleAsNameNoTooltip,Concatenate(' ',ROOT.GetCharacter.GetFirstNameNoTooltip)))))))),Concatenate(Concatenate(ROOT.GetCharacter.Custom('CZ_TitleAsNameNoTooltip_I'),Concatenate(' ',ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltip_I'))),Select_CString(EqualTo_string(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,Concatenate(ROOT.GetCharacter.GetTitleAsNameNoTooltip,Concatenate(' ',ROOT.GetCharacter.GetFirstNameNoTooltip))),'',Concatenate(' ',TrimFrontChars(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,Concatenate(ROOT.GetCharacter.GetTitleAsNameNoTooltip,Concatenate(' ',ROOT.GetCharacter.GetFirstNameNoTooltip)))))),Select_CString(And(Not(StringIsEmpty(ROOT.GetCharacter.GetFirstNameNoTooltipRegnal)),EqualTo_string(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,Concatenate(ROOT.GetCharacter.GetFirstNameNoTooltipRegnal,TrimFrontChars(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,ROOT.GetCharacter.GetFirstNameNoTooltipRegnal)))),Concatenate(ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltipRegnal_I'),TrimFrontChars(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,ROOT.GetCharacter.GetFirstNameNoTooltipRegnal)),Select_CString(And(Not(StringIsEmpty(ROOT.GetCharacter.GetFirstNameNoTooltip)),EqualTo_string(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,Concatenate(ROOT.GetCharacter.GetFirstNameNoTooltip,TrimFrontChars(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,ROOT.GetCharacter.GetFirstNameNoTooltip)))),Concatenate(ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltip_I'),TrimFrontChars(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,ROOT.GetCharacter.GetFirstNameNoTooltip)),ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat))))]#!#!#!"
+
+ # ---------------------------------------------------------
+ # NOT ME - NO TOOLTIP
+ # ---------------------------------------------------------
+
+ CZ_UINameNotMeNoTooltip_G_character: "[Select_CString(CZHasNamePrefix(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,ROOT.GetCharacter.GetTitledFirstNameNoTooltipRegnal),CZReplaceNamePrefix(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,ROOT.GetCharacter.GetTitledFirstNameNoTooltipRegnal,ROOT.GetCharacter.Custom('CZ_TitledFirstNameNoTooltipRegnal_G')),Select_CString(CZHasNamePrefix(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,ROOT.GetCharacter.GetTitledFirstNameNoTooltip),CZReplaceNamePrefix(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,ROOT.GetCharacter.GetTitledFirstNameNoTooltip,ROOT.GetCharacter.Custom('CZ_TitledFirstNameNoTooltip_G')),Select_CString(CZHasNamePrefix(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,ROOT.GetCharacter.GetFirstNameNoTooltipRegnal),CZReplaceNamePrefix(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,ROOT.GetCharacter.GetFirstNameNoTooltipRegnal,ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltipRegnal_G')),CZReplaceNamePrefix(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,ROOT.GetCharacter.GetFirstNameNoTooltip,ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltip_G')))))]"
+ CZ_UINameNotMeNoTooltip_D_character: "[Select_CString(CZHasNamePrefix(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,ROOT.GetCharacter.GetTitledFirstNameNoTooltipRegnal),CZReplaceNamePrefix(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,ROOT.GetCharacter.GetTitledFirstNameNoTooltipRegnal,ROOT.GetCharacter.Custom('CZ_TitledFirstNameNoTooltipRegnal_D')),Select_CString(CZHasNamePrefix(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,ROOT.GetCharacter.GetTitledFirstNameNoTooltip),CZReplaceNamePrefix(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,ROOT.GetCharacter.GetTitledFirstNameNoTooltip,ROOT.GetCharacter.Custom('CZ_TitledFirstNameNoTooltip_D')),Select_CString(CZHasNamePrefix(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,ROOT.GetCharacter.GetFirstNameNoTooltipRegnal),CZReplaceNamePrefix(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,ROOT.GetCharacter.GetFirstNameNoTooltipRegnal,ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltipRegnal_D')),CZReplaceNamePrefix(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,ROOT.GetCharacter.GetFirstNameNoTooltip,ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltip_D')))))]"
+ CZ_UINameNotMeNoTooltip_A_character: "[Select_CString(CZHasNamePrefix(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,ROOT.GetCharacter.GetTitledFirstNameNoTooltipRegnal),CZReplaceNamePrefix(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,ROOT.GetCharacter.GetTitledFirstNameNoTooltipRegnal,ROOT.GetCharacter.Custom('CZ_TitledFirstNameNoTooltipRegnal_A')),Select_CString(CZHasNamePrefix(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,ROOT.GetCharacter.GetTitledFirstNameNoTooltip),CZReplaceNamePrefix(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,ROOT.GetCharacter.GetTitledFirstNameNoTooltip,ROOT.GetCharacter.Custom('CZ_TitledFirstNameNoTooltip_A')),Select_CString(CZHasNamePrefix(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,ROOT.GetCharacter.GetFirstNameNoTooltipRegnal),CZReplaceNamePrefix(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,ROOT.GetCharacter.GetFirstNameNoTooltipRegnal,ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltipRegnal_A')),CZReplaceNamePrefix(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,ROOT.GetCharacter.GetFirstNameNoTooltip,ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltip_A')))))]"
+ CZ_UINameNotMeNoTooltip_V_character: "[Select_CString(CZHasNamePrefix(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,ROOT.GetCharacter.GetTitledFirstNameNoTooltipRegnal),CZReplaceNamePrefix(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,ROOT.GetCharacter.GetTitledFirstNameNoTooltipRegnal,ROOT.GetCharacter.Custom('CZ_TitledFirstNameNoTooltipRegnal_V')),Select_CString(CZHasNamePrefix(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,ROOT.GetCharacter.GetTitledFirstNameNoTooltip),CZReplaceNamePrefix(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,ROOT.GetCharacter.GetTitledFirstNameNoTooltip,ROOT.GetCharacter.Custom('CZ_TitledFirstNameNoTooltip_V')),Select_CString(CZHasNamePrefix(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,ROOT.GetCharacter.GetFirstNameNoTooltipRegnal),CZReplaceNamePrefix(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,ROOT.GetCharacter.GetFirstNameNoTooltipRegnal,ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltipRegnal_V')),CZReplaceNamePrefix(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,ROOT.GetCharacter.GetFirstNameNoTooltip,ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltip_V')))))]"
+ CZ_UINameNotMeNoTooltip_L_character: "[Select_CString(CZHasNamePrefix(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,ROOT.GetCharacter.GetTitledFirstNameNoTooltipRegnal),CZReplaceNamePrefix(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,ROOT.GetCharacter.GetTitledFirstNameNoTooltipRegnal,ROOT.GetCharacter.Custom('CZ_TitledFirstNameNoTooltipRegnal_L')),Select_CString(CZHasNamePrefix(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,ROOT.GetCharacter.GetTitledFirstNameNoTooltip),CZReplaceNamePrefix(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,ROOT.GetCharacter.GetTitledFirstNameNoTooltip,ROOT.GetCharacter.Custom('CZ_TitledFirstNameNoTooltip_L')),Select_CString(CZHasNamePrefix(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,ROOT.GetCharacter.GetFirstNameNoTooltipRegnal),CZReplaceNamePrefix(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,ROOT.GetCharacter.GetFirstNameNoTooltipRegnal,ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltipRegnal_L')),CZReplaceNamePrefix(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,ROOT.GetCharacter.GetFirstNameNoTooltip,ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltip_L')))))]"
+ CZ_UINameNotMeNoTooltip_I_character: "[Select_CString(CZHasNamePrefix(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,ROOT.GetCharacter.GetTitledFirstNameNoTooltipRegnal),CZReplaceNamePrefix(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,ROOT.GetCharacter.GetTitledFirstNameNoTooltipRegnal,ROOT.GetCharacter.Custom('CZ_TitledFirstNameNoTooltipRegnal_I')),Select_CString(CZHasNamePrefix(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,ROOT.GetCharacter.GetTitledFirstNameNoTooltip),CZReplaceNamePrefix(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,ROOT.GetCharacter.GetTitledFirstNameNoTooltip,ROOT.GetCharacter.Custom('CZ_TitledFirstNameNoTooltip_I')),Select_CString(CZHasNamePrefix(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,ROOT.GetCharacter.GetFirstNameNoTooltipRegnal),CZReplaceNamePrefix(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,ROOT.GetCharacter.GetFirstNameNoTooltipRegnal,ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltipRegnal_I')),CZReplaceNamePrefix(ROOT.GetCharacter.GetUINameNotMeNoTooltipNoFormat,ROOT.GetCharacter.GetFirstNameNoTooltip,ROOT.GetCharacter.Custom('CZ_FirstNameNoTooltip_I')))))]"
 
  # =========================================================
  # ADJECTIVE DECLENSION
- # Supported scopes: Culture, Faith, Landed Title
+ # Public Custom() API: Culture + Landed Title only.
+ # Faith / Religion use direct rich macros and are intentionally excluded
+ # from this generic CustomLoc family.
+ #
+ # Culture and Title share the same native rich-text closer depth, so one
+ # type=all CustomLoc can safely select between their native rich getters.
  # =========================================================
 
- CZ_AdjectiveStem: "[TrimBackChars(Select_CString(ROOT.Culture.IsValid,ROOT.Culture.GetNameNoTooltip,Select_CString(ROOT.Faith.IsValid,ROOT.Faith.GetAdjectiveNoTooltip,ROOT.GetLandedTitle.GetAdjectiveNoTooltip)),'ýá')]"
+ CZ_Adjective: "[Select_CString(ROOT.Culture.IsValid,ROOT.Culture.GetName,ROOT.GetLandedTitle.GetAdjective)]"
+ CZ_Adjective_yy: "[TrimBackChars(TrimBackChars(Select_CString(ROOT.Culture.IsValid,ROOT.Culture.GetName,ROOT.GetLandedTitle.GetAdjective),'#!'),'ýá')]ý#!#!"
+ CZ_Adjective_yych: "[TrimBackChars(TrimBackChars(Select_CString(ROOT.Culture.IsValid,ROOT.Culture.GetName,ROOT.GetLandedTitle.GetAdjective),'#!'),'ýá')]ých#!#!"
+ CZ_Adjective_eeho: "[TrimBackChars(TrimBackChars(Select_CString(ROOT.Culture.IsValid,ROOT.Culture.GetName,ROOT.GetLandedTitle.GetAdjective),'#!'),'ýá')]ého#!#!"
+ CZ_Adjective_eemu: "[TrimBackChars(TrimBackChars(Select_CString(ROOT.Culture.IsValid,ROOT.Culture.GetName,ROOT.GetLandedTitle.GetAdjective),'#!'),'ýá')]ému#!#!"
+ CZ_Adjective_eem: "[TrimBackChars(TrimBackChars(Select_CString(ROOT.Culture.IsValid,ROOT.Culture.GetName,ROOT.GetLandedTitle.GetAdjective),'#!'),'ýá')]ém#!#!"
+ CZ_Adjective_yym: "[TrimBackChars(TrimBackChars(Select_CString(ROOT.Culture.IsValid,ROOT.Culture.GetName,ROOT.GetLandedTitle.GetAdjective),'#!'),'ýá')]ým#!#!"
+ CZ_Adjective_yymi: "[TrimBackChars(TrimBackChars(Select_CString(ROOT.Culture.IsValid,ROOT.Culture.GetName,ROOT.GetLandedTitle.GetAdjective),'#!'),'ýá')]ými#!#!"
+ CZ_Adjective_aa: "[TrimBackChars(TrimBackChars(Select_CString(ROOT.Culture.IsValid,ROOT.Culture.GetName,ROOT.GetLandedTitle.GetAdjective),'#!'),'ýá')]á#!#!"
+ CZ_Adjective_ou: "[TrimBackChars(TrimBackChars(Select_CString(ROOT.Culture.IsValid,ROOT.Culture.GetName,ROOT.GetLandedTitle.GetAdjective),'#!'),'ýá')]ou#!#!"
+ CZ_Adjective_sti: "[Select_CString(Not(EqualTo_string(TrimBackChars(Select_CString(ROOT.Culture.IsValid,ROOT.Culture.GetNameNoTooltip,ROOT.GetLandedTitle.GetAdjectiveNoTooltip),'ýák'),TrimBackChars(Select_CString(ROOT.Culture.IsValid,ROOT.Culture.GetNameNoTooltip,ROOT.GetLandedTitle.GetAdjectiveNoTooltip),'ýáks'))),Concatenate(TrimBackChars(TrimBackChars(Select_CString(ROOT.Culture.IsValid,ROOT.Culture.GetName,ROOT.GetLandedTitle.GetAdjective),'#!'),'ýáks'),'ští'),Select_CString(Not(EqualTo_string(TrimBackChars(Select_CString(ROOT.Culture.IsValid,ROOT.Culture.GetNameNoTooltip,ROOT.GetLandedTitle.GetAdjectiveNoTooltip),'ýák'),TrimBackChars(Select_CString(ROOT.Culture.IsValid,ROOT.Culture.GetNameNoTooltip,ROOT.GetLandedTitle.GetAdjectiveNoTooltip),'ýákc'))),Concatenate(TrimBackChars(TrimBackChars(Select_CString(ROOT.Culture.IsValid,ROOT.Culture.GetName,ROOT.GetLandedTitle.GetAdjective),'#!'),'ýákc'),'čtí'),Concatenate(TrimBackChars(TrimBackChars(Select_CString(ROOT.Culture.IsValid,ROOT.Culture.GetName,ROOT.GetLandedTitle.GetAdjective),'#!'),'ýá'),'í')))]#!#!"
+ CZ_Adjective_o: "[TrimBackChars(TrimBackChars(Select_CString(ROOT.Culture.IsValid,ROOT.Culture.GetName,ROOT.GetLandedTitle.GetAdjective),'#!'),'ýá')]o#!#!"
+ CZ_Adjective_u: "[TrimBackChars(TrimBackChars(Select_CString(ROOT.Culture.IsValid,ROOT.Culture.GetName,ROOT.GetLandedTitle.GetAdjective),'#!'),'ýá')]u#!#!"
+ CZ_Adjective_ee: "[TrimBackChars(TrimBackChars(Select_CString(ROOT.Culture.IsValid,ROOT.Culture.GetName,ROOT.GetLandedTitle.GetAdjective),'#!'),'ýá')]é#!#!"
 
- CZ_Adjective_yy: "$CZ_AdjectiveStem$ý"
 
- CZ_Adjective_yych: "$CZ_AdjectiveStem$ých"
+ # =========================================================
+ # ADJECTIVE DECLENSION - NO TOOLTIP
+ # Public Custom() API for Culture + Faith + Religion + Landed Title.
+ # This is the proven generic plain-string path and intentionally does not
+ # use any rich tooltip/click reconstruction.
+ # =========================================================
 
- CZ_Adjective_eeho: "$CZ_AdjectiveStem$ého"
+ CZ_AdjectiveNoTooltip: "[Select_CString(ROOT.Culture.IsValid,ROOT.Culture.GetNameNoTooltip,Select_CString(ROOT.Faith.IsValid,ROOT.Faith.GetAdjectiveNoTooltip,Select_CString(ROOT.GetLandedTitle.IsValid,ROOT.GetLandedTitle.GetAdjectiveNoTooltip,ROOT.Religion.GetAdjectiveNoTooltip)))]"
+ CZ_AdjectiveNoTooltip_yy: "[Select_CString(ROOT.Culture.IsValid,CZAdjectiveDecline(ROOT.Culture.GetNameNoTooltip,'ý'),Select_CString(ROOT.Faith.IsValid,CZAdjectiveDecline(ROOT.Faith.GetAdjectiveNoTooltip,'ý'),Select_CString(ROOT.GetLandedTitle.IsValid,CZAdjectiveDecline(ROOT.GetLandedTitle.GetAdjectiveNoTooltip,'ý'),CZAdjectiveDecline(ROOT.Religion.GetAdjectiveNoTooltip,'ý'))))]"
+ CZ_AdjectiveNoTooltip_yych: "[Select_CString(ROOT.Culture.IsValid,CZAdjectiveDecline(ROOT.Culture.GetNameNoTooltip,'ých'),Select_CString(ROOT.Faith.IsValid,CZAdjectiveDecline(ROOT.Faith.GetAdjectiveNoTooltip,'ých'),Select_CString(ROOT.GetLandedTitle.IsValid,CZAdjectiveDecline(ROOT.GetLandedTitle.GetAdjectiveNoTooltip,'ých'),CZAdjectiveDecline(ROOT.Religion.GetAdjectiveNoTooltip,'ých'))))]"
+ CZ_AdjectiveNoTooltip_eeho: "[Select_CString(ROOT.Culture.IsValid,CZAdjectiveDecline(ROOT.Culture.GetNameNoTooltip,'ého'),Select_CString(ROOT.Faith.IsValid,CZAdjectiveDecline(ROOT.Faith.GetAdjectiveNoTooltip,'ého'),Select_CString(ROOT.GetLandedTitle.IsValid,CZAdjectiveDecline(ROOT.GetLandedTitle.GetAdjectiveNoTooltip,'ého'),CZAdjectiveDecline(ROOT.Religion.GetAdjectiveNoTooltip,'ého'))))]"
+ CZ_AdjectiveNoTooltip_eemu: "[Select_CString(ROOT.Culture.IsValid,CZAdjectiveDecline(ROOT.Culture.GetNameNoTooltip,'ému'),Select_CString(ROOT.Faith.IsValid,CZAdjectiveDecline(ROOT.Faith.GetAdjectiveNoTooltip,'ému'),Select_CString(ROOT.GetLandedTitle.IsValid,CZAdjectiveDecline(ROOT.GetLandedTitle.GetAdjectiveNoTooltip,'ému'),CZAdjectiveDecline(ROOT.Religion.GetAdjectiveNoTooltip,'ému'))))]"
+ CZ_AdjectiveNoTooltip_eem: "[Select_CString(ROOT.Culture.IsValid,CZAdjectiveDecline(ROOT.Culture.GetNameNoTooltip,'ém'),Select_CString(ROOT.Faith.IsValid,CZAdjectiveDecline(ROOT.Faith.GetAdjectiveNoTooltip,'ém'),Select_CString(ROOT.GetLandedTitle.IsValid,CZAdjectiveDecline(ROOT.GetLandedTitle.GetAdjectiveNoTooltip,'ém'),CZAdjectiveDecline(ROOT.Religion.GetAdjectiveNoTooltip,'ém'))))]"
+ CZ_AdjectiveNoTooltip_yym: "[Select_CString(ROOT.Culture.IsValid,CZAdjectiveDecline(ROOT.Culture.GetNameNoTooltip,'ým'),Select_CString(ROOT.Faith.IsValid,CZAdjectiveDecline(ROOT.Faith.GetAdjectiveNoTooltip,'ým'),Select_CString(ROOT.GetLandedTitle.IsValid,CZAdjectiveDecline(ROOT.GetLandedTitle.GetAdjectiveNoTooltip,'ým'),CZAdjectiveDecline(ROOT.Religion.GetAdjectiveNoTooltip,'ým'))))]"
+ CZ_AdjectiveNoTooltip_yymi: "[Select_CString(ROOT.Culture.IsValid,CZAdjectiveDecline(ROOT.Culture.GetNameNoTooltip,'ými'),Select_CString(ROOT.Faith.IsValid,CZAdjectiveDecline(ROOT.Faith.GetAdjectiveNoTooltip,'ými'),Select_CString(ROOT.GetLandedTitle.IsValid,CZAdjectiveDecline(ROOT.GetLandedTitle.GetAdjectiveNoTooltip,'ými'),CZAdjectiveDecline(ROOT.Religion.GetAdjectiveNoTooltip,'ými'))))]"
+ CZ_AdjectiveNoTooltip_aa: "[Select_CString(ROOT.Culture.IsValid,CZAdjectiveDecline(ROOT.Culture.GetNameNoTooltip,'á'),Select_CString(ROOT.Faith.IsValid,CZAdjectiveDecline(ROOT.Faith.GetAdjectiveNoTooltip,'á'),Select_CString(ROOT.GetLandedTitle.IsValid,CZAdjectiveDecline(ROOT.GetLandedTitle.GetAdjectiveNoTooltip,'á'),CZAdjectiveDecline(ROOT.Religion.GetAdjectiveNoTooltip,'á'))))]"
+ CZ_AdjectiveNoTooltip_ou: "[Select_CString(ROOT.Culture.IsValid,CZAdjectiveDecline(ROOT.Culture.GetNameNoTooltip,'ou'),Select_CString(ROOT.Faith.IsValid,CZAdjectiveDecline(ROOT.Faith.GetAdjectiveNoTooltip,'ou'),Select_CString(ROOT.GetLandedTitle.IsValid,CZAdjectiveDecline(ROOT.GetLandedTitle.GetAdjectiveNoTooltip,'ou'),CZAdjectiveDecline(ROOT.Religion.GetAdjectiveNoTooltip,'ou'))))]"
+ CZ_AdjectiveNoTooltip_sti: "[Select_CString(ROOT.Culture.IsValid,CZAdjectiveSti(ROOT.Culture.GetNameNoTooltip),Select_CString(ROOT.Faith.IsValid,CZAdjectiveSti(ROOT.Faith.GetAdjectiveNoTooltip),Select_CString(ROOT.GetLandedTitle.IsValid,CZAdjectiveSti(ROOT.GetLandedTitle.GetAdjectiveNoTooltip),CZAdjectiveSti(ROOT.Religion.GetAdjectiveNoTooltip))))]"
+ CZ_AdjectiveNoTooltip_o: "[Select_CString(ROOT.Culture.IsValid,CZAdjectiveDecline(ROOT.Culture.GetNameNoTooltip,'o'),Select_CString(ROOT.Faith.IsValid,CZAdjectiveDecline(ROOT.Faith.GetAdjectiveNoTooltip,'o'),Select_CString(ROOT.GetLandedTitle.IsValid,CZAdjectiveDecline(ROOT.GetLandedTitle.GetAdjectiveNoTooltip,'o'),CZAdjectiveDecline(ROOT.Religion.GetAdjectiveNoTooltip,'o'))))]"
+ CZ_AdjectiveNoTooltip_u: "[Select_CString(ROOT.Culture.IsValid,CZAdjectiveDecline(ROOT.Culture.GetNameNoTooltip,'u'),Select_CString(ROOT.Faith.IsValid,CZAdjectiveDecline(ROOT.Faith.GetAdjectiveNoTooltip,'u'),Select_CString(ROOT.GetLandedTitle.IsValid,CZAdjectiveDecline(ROOT.GetLandedTitle.GetAdjectiveNoTooltip,'u'),CZAdjectiveDecline(ROOT.Religion.GetAdjectiveNoTooltip,'u'))))]"
+ CZ_AdjectiveNoTooltip_ee: "[Select_CString(ROOT.Culture.IsValid,CZAdjectiveDecline(ROOT.Culture.GetNameNoTooltip,'é'),Select_CString(ROOT.Faith.IsValid,CZAdjectiveDecline(ROOT.Faith.GetAdjectiveNoTooltip,'é'),Select_CString(ROOT.GetLandedTitle.IsValid,CZAdjectiveDecline(ROOT.GetLandedTitle.GetAdjectiveNoTooltip,'é'),CZAdjectiveDecline(ROOT.Religion.GetAdjectiveNoTooltip,'é'))))]"
 
- CZ_Adjective_eemu: "$CZ_AdjectiveStem$ému"
-
- CZ_Adjective_eem: "$CZ_AdjectiveStem$ém"
-
- CZ_Adjective_yym: "$CZ_AdjectiveStem$ým"
-
- CZ_Adjective_yymi: "$CZ_AdjectiveStem$ými"
-
- CZ_Adjective_aa: "$CZ_AdjectiveStem$á"
-
- CZ_Adjective_ou: "$CZ_AdjectiveStem$ou"
-
- CZ_Adjective_sti: "[Select_CString(Not(EqualTo_string(TrimBackChars(Select_CString(ROOT.Culture.IsValid,ROOT.Culture.GetNameNoTooltip,Select_CString(ROOT.Faith.IsValid,ROOT.Faith.GetAdjectiveNoTooltip,ROOT.GetLandedTitle.GetAdjectiveNoTooltip)),'ýák'),TrimBackChars(Select_CString(ROOT.Culture.IsValid,ROOT.Culture.GetNameNoTooltip,Select_CString(ROOT.Faith.IsValid,ROOT.Faith.GetAdjectiveNoTooltip,ROOT.GetLandedTitle.GetAdjectiveNoTooltip)),'ýáks'))),Concatenate(TrimBackChars(Select_CString(ROOT.Culture.IsValid,ROOT.Culture.GetNameNoTooltip,Select_CString(ROOT.Faith.IsValid,ROOT.Faith.GetAdjectiveNoTooltip,ROOT.GetLandedTitle.GetAdjectiveNoTooltip)),'ýáks'),'ští'),Select_CString(Not(EqualTo_string(TrimBackChars(Select_CString(ROOT.Culture.IsValid,ROOT.Culture.GetNameNoTooltip,Select_CString(ROOT.Faith.IsValid,ROOT.Faith.GetAdjectiveNoTooltip,ROOT.GetLandedTitle.GetAdjectiveNoTooltip)),'ýák'),TrimBackChars(Select_CString(ROOT.Culture.IsValid,ROOT.Culture.GetNameNoTooltip,Select_CString(ROOT.Faith.IsValid,ROOT.Faith.GetAdjectiveNoTooltip,ROOT.GetLandedTitle.GetAdjectiveNoTooltip)),'ýákc'))),Concatenate(TrimBackChars(Select_CString(ROOT.Culture.IsValid,ROOT.Culture.GetNameNoTooltip,Select_CString(ROOT.Faith.IsValid,ROOT.Faith.GetAdjectiveNoTooltip,ROOT.GetLandedTitle.GetAdjectiveNoTooltip)),'ýákc'),'čtí'),Concatenate(TrimBackChars(Select_CString(ROOT.Culture.IsValid,ROOT.Culture.GetNameNoTooltip,Select_CString(ROOT.Faith.IsValid,ROOT.Faith.GetAdjectiveNoTooltip,ROOT.GetLandedTitle.GetAdjectiveNoTooltip)),'ýá'),'í')))]"
-
- CZ_Adjective_o: "$CZ_AdjectiveStem$o"
-
- CZ_Adjective_u: "$CZ_AdjectiveStem$u"
-
- CZ_Adjective_ee: "$CZ_AdjectiveStem$é"
+ # ---------------------------------------------------------
+ # RICH ADJECTIVE FORMAT CONSTANTS - FAITH / RELIGION
+ # ---------------------------------------------------------
+ CZ_FMT_CLOSE_CHARS: "#!"
+ CZ_FMT_TRIM: "ýá#!"
+ CZ_FMT_CLOSE2: "#!#!"
+ CZ_FMT_CLOSE3: "#!#!#!"

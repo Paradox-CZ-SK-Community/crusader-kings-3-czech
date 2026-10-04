@@ -67,11 +67,11 @@
  activity_system.0320.t: "Nečekaný konec"
  activity_system.0320.desc: "[Select_CString(host.IsFemale,'Naše hostitelka','Náš hostitel')] [host.GetName] [Select_CString(host.IsFemale,'přišla','přišel')] o veškeré pozemkové državy a [activity_type.GetNameNoTooltip()] proto končí předčasně.\n\nPo všech těch pozvánkách, přípravách a fanfárách jsem si konec rozhodně [Select_CString(ROOT.Char.IsFemale,'nepředstavovala','nepředstavoval')] takhle. Nezbývá než se s doprovodem vrátit domů do [ROOT.Char.GetCapitalLocation.GetNameNoTooltip]..."
  activity_system.0320.a: "Co se stalo, stalo se."
- activity_system.0321.t: "$activity_system.0320.t$" # todo: NEW TRANSLATION
- activity_system.0321.desc.intro: "Náš host [host.GetName]" # todo: NEW TRANSLATION
- activity_system.0321.desc.no_christian: "prohlásil(a), že [host.GetSheHe] už nevěří ve [ROOT.Char.GetFaith.GetName]. Místo toho [host.GetSheHe] šokujícím způsobem odhalil(a) [host.GetHerHis] vášeň pro víru [host.GetFaith.GetName]." # todo: NEW TRANSLATION
- activity_system.0321.desc.no_hof: "už není hlavou církve [ROOT.Char.GetFaith.GetName].\n\nKdyž se tato šokující zpráva donesla k hostům, nezbývá nám než vydat se zpátky domů." # todo: NEW TRANSLATION
- activity_system.0321.a: "Tomu nemohu uvěřit." # todo: NEW TRANSLATION
+ activity_system.0321.t: "$activity_system.0320.t$"
+ activity_system.0321.desc.intro: "[Select_CString(host.IsFemale,'Naše hostitelka','Náš hostitel')] [host.GetName]"
+ activity_system.0321.desc.no_christian: "[Select_CString(host.IsFemale,'prohlásila','prohlásil')], že [ROOT.Char.GetFaith.Custom('CZ_Adjective_eeho')] vyznání už se nedrží. Místo toho s šokující otevřeností [Select_CString(host.IsFemale,'odhalila','odhalil')], jak vřele [host.GetFaith.Custom('CZ_Adjective_eeho')] vyznání přijímá."
+ activity_system.0321.desc.no_hof: "už nestojí v čele [ROOT.Char.GetFaith.Custom('CZ_Adjective_eeho')] církve.\n\nKdyž se hosté vzpamatují z tohoto šokujícího odhalení, vyzývají nás k návratu domů."
+ activity_system.0321.a: "Tomu nemohu uvěřit."
  activity_system.0330.t: "Neschopnost"
  activity_system.0330.desc.intro: "[Select_CString(ROOT.Char.IsFemale,'Byla jsem prohlášena za neschopnou a naprosto nezpůsobilou','Byl jsem prohlášen za neschopného a naprosto nezpůsobilého')] spravovat vlastní záležitosti. A [activity_type.GetNameNoTooltip()] je teď rovněž nad mé síly!\n\n"
  activity_system.0330.desc.memory: "Běda, [incapable_memory.GetDescription].\n\n"
@@ -80,10 +80,10 @@
  activity_system.0331.t: "Neschopnost"
  activity_system.0331.desc: "[Select_CString(host.IsFemale,'Naše hostitelka','Náš hostitel')] [host.GetName] [Select_CString(host.IsFemale,'byla lidmi kolem sebe prohlášena za neschopnou a naprosto nezpůsobilou','byl lidmi kolem sebe prohlášen za neschopného a naprosto nezpůsobilého')] spravovat vlastní záležitosti. [activity_type.GetNameNoTooltip()] tak nemůže pokračovat!\n\nBěda, všichni se musíme vrátit domů s prázdnou. "
  activity_system.0331.a: "Jaká škoda."
- activity_system.0340.t: "$isolating_modifier$" # todo: NEW TRANSLATION
- activity_system.0340.desc.host: "Kvůli nečekanému důvodu [host.Custom('GetIsolationReason')] už není [activity_type.GetNameNoTooltip()] v [location.GetName] bezpečná. V zájmu účastníků musím svou [activity_type.GetNameNoTooltip()] zrušit." # todo: NEW TRANSLATION
- activity_system.0340.desc.guest: "Kvůli nečekanému důvodu [host.Custom('GetIsolationReason')] už není [activity_type.GetNameNoTooltip()] v [location.GetName] bezpečná. V zájmu účastníků [host.GetTitledFirstName] zrušil [host.GetHerHis] [activity_type.GetNameNoTooltip()]." # todo: NEW TRANSLATION
- activity_system.0340.a: "Jděte někam do bezpečí!" # todo: NEW TRANSLATION
+ activity_system.0340.t: "$isolating_modifier$"
+ activity_system.0340.desc.host: "Naše bezpečí nečekaně ohrožuje [host.Custom('GetIsolationReason')]. Pokračovat v aktivitě [activity_type.GetNameNoTooltip()] na místě [location.GetName] už není bezpečné. Kvůli účastníkům musím svou aktivitu [activity_type.GetNameNoTooltip()] zrušit."
+ activity_system.0340.desc.guest: "Naše bezpečí nečekaně ohrožuje [host.Custom('GetIsolationReason')]. Pokračovat v aktivitě [activity_type.GetNameNoTooltip()] na místě [location.GetName] už není bezpečné. Kvůli účastníkům [host.GetTitledFirstName] [Select_CString(host.IsFemale,'zrušila','zrušil')] svou aktivitu [activity_type.GetNameNoTooltip()]."
+ activity_system.0340.a: "Do bezpečí!"
  activity_system.0400.t: "Máme zpoždění"
  activity_system.0400.desc_leader: "Ke mně přichází [travel_leader.Custom2('MyCharacterIntroduction', ROOT.Char)] a ve tváři se zračí směs studu a obav. Hned je mi jasné, že zprávy nebudou dobré.\n\n„Musím vám bohužel oznámit, že máme zpoždění asi [GetTimeBetweenDates(ROOT.Char.GetInvolvedActivity.GetActiveStartDate.Self, ROOT.Char.GetTravelPlan.GetData.GetNextDestination.GetEstimatedArrivalDate)], můj [ROOT.Char.GetTitleAsNameNoTooltip], a možná nedorazíme do cíle včas.“"
  activity_system.0400.desc_no_leader: "Znovu a znovu zkoumám oblohu i všechny mapy, které mám k dispozici, ale počty zkrátka nevycházejí.\n\nMáme zpoždění asi [GetTimeBetweenDates(ROOT.Char.GetInvolvedActivity.GetActiveStartDate.Self, ROOT.Char.GetTravelPlan.GetData.GetNextDestination.GetEstimatedArrivalDate)] a pokud budeme pokračovat stejným tempem po současné trase, do cíle včas nedorazíme."
@@ -130,9 +130,9 @@
  activity_system.0554.opening: "[host.Custom2('AppropriateGreeting', ROOT.Char)]"
  activity_system.0554.a: "Tuto výzvu musím přijmout."
  activity_system.0554.b: "Vymyslím si nějakou vhodnou výmluvu."
- has_activity_intent_global: "[CHARACTER.GetShortUIName|U] musí mít [intent|E] [ACTIVITY_INTENT.GetName]" # todo: NEW TRANSLATION
- has_activity_intent_global_not: "[CHARACTER.GetShortUIName|U] nesmí mít [intent|E] [ACTIVITY_INTENT.GetName]" # todo: NEW TRANSLATION
- has_activity_intent_first: "$has_activity_intent_global$" # todo: NEW TRANSLATION
- has_activity_intent_first_not: "$has_activity_intent_global_not$" # todo: NEW TRANSLATION
- has_activity_intent_third: "$has_activity_intent_global$" # todo: NEW TRANSLATION
- has_activity_intent_third_not: "$has_activity_intent_global_not$" # todo: NEW TRANSLATION
+ has_activity_intent_global: "[CHARACTER.GetShortUIName|U] [Select_CString(CHARACTER.IsLocalPlayer,'musíš','musí')] mít [Concept('intent','záměr')|E] [ACTIVITY_INTENT.GetName]"
+ has_activity_intent_global_not: "[CHARACTER.GetShortUIName|U] [Select_CString(CHARACTER.IsLocalPlayer,'nesmíš','nesmí')] mít [Concept('intent','záměr')|E] [ACTIVITY_INTENT.GetName]"
+ has_activity_intent_first: "$has_activity_intent_global$"
+ has_activity_intent_first_not: "$has_activity_intent_global_not$"
+ has_activity_intent_third: "$has_activity_intent_global$"
+ has_activity_intent_third_not: "$has_activity_intent_global_not$"

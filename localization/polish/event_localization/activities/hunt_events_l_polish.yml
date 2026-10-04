@@ -758,8 +758,8 @@
  hunt.4014.f.flavor: "#EMP Rychle! Mého koně!#!"
  hunt.4014.g: "V-vezměte mě zpátky do tábora..."
  hunt.4014.g.flavor: "#EMP Musím si lehnout...#!"
- hunt.4014.h.physician: "#weak Kde je [physician.GetFirstNameNoTooltip]... P-pomoc...!#!" # todo: CHANGED MINOR
- hunt.4014.h: "#weak T-t-t... [activity.Custom('GetAnimalType')]...!#!" # todo: CHANGED MINOR
+ hunt.4014.h.physician: "#weak [physician.Custom('CZ_FirstNameNoTooltip_V')]... P-přines...#!"
+ hunt.4014.h: "#weak Ten... [activity.Custom('GetAnimalType')]...#!"
  hunt.4015.t: "Milenci"
  hunt.4015.desc: "Sledujeme kořist do [host.GetCurrentLocation.Custom('GetTerrainType')] a pomalu, ale jistě doháníme [activity.Custom('GetAnimalAdjective')] [activity.Custom('GetAnimalType')].\n\nNáhle se poleká a [activity.Custom('GetAnimalChargeParticiple')] jiným směrem. Když se vydám zjistit, co ji vyplašilo, sotva věřím vlastním očím – [lover_participant.GetTitledFirstName] a [second_lover_participant.GetTitledFirstName] leží propleteni na zemi ve vášnivém objetí!"
  hunt.4015.a: "Pomalu ustoupím... Nic jsem neviděl[Select_CString(ROOT.Char.IsFemale,'a','')]."
@@ -794,19 +794,19 @@
  hunt.4019.a: "...ano, dobrý postřeh."
  hunt.4019.a.tt: "Bude muset stačit... #EMP prozatím#!."
  hunt.4019.b: "Vypadá snad podle tebe #EMP [activity.Custom('GetLegendaryColor')]#!?!"
- hunt.4500.t: "Odznak ochrany" # todo: NEW TRANSLATION
- hunt.4500.desc.no_badge: "[badge_bragger.GetTitledFirstName] pořád dokola žvaní o [badge_bragger.GetHerHis] [badge_of_protection.GetName]. #EMP Nepřestává s tím#!, až se začínám bát, že [badge_bragger.GetSheHe] plaší zvěř.\n\n„Chrání mě před zlými duchy, čaroději, démony…“ trvá na svém [badge_bragger.GetSheHe].\n\nOdfrknu si, ale pak se mi vynoří matná vzpomínka na příběh, který se kdysi přihodil mému praprarodiči [ROOT.Char.GetMotherFather]. To jistě nic není. Jen cetka. Že?" # todo: NEW TRANSLATION
- hunt.4500.desc: "Narazím na svého [ROOT.Char.Custom2('RelationToMe', SCOPE.sC('badge_bragger'))], [badge_bragger.GetTitledFirstName], a dalšího člena lovecké družiny, kteří jsou hluboce zabráni do obdivování [badge_bragger.GetFirstNamePossessiveNoTooltip] [badge_of_protection.GetName].\n\n„Chrání mě od chvíle, kdy jsem navštívil(a) [protection_badge_holy_site.GetName]… jistě je se mnou svatý duch.“\n\nRuka mi instinktivně sklouzne k [my_badge.GetName], bezpečně ukrytému v podšívce mého roucha." # todo: NEW TRANSLATION
- hunt.4500.a: "„Můj [my_badge.GetNameNoTooltip] mě vždycky také chránil!“" # todo: NEW TRANSLATION
- hunt.4500.a.flavor: "To jsou moji lidé!" # todo: NEW TRANSLATION
- hunt.4500.b: "#EMP Ochrana?#! To se ještě uvidí…" # todo: NEW TRANSLATION
- hunt.4500.b.flavor: "Ten odznak přede #EMP mnou#! neochrání vůbec nic!" # todo: NEW TRANSLATION
- hunt.4500.b.tt: "[badge_bragger.GetShortUIName] tě podezírá z krádeže [badge_bragger.GetHerHis] [badge_of_protection.GetName]" # todo: NEW TRANSLATION
- hunt.4500.c: "Možná bych si měl(a) pořídit vlastní odznak." # todo: NEW TRANSLATION
- hunt.4500.c.tt: "Tvoje příští [GetActivityType('activity_pilgrimage').GetTextIcon][GetActivityType('activity_pilgrimage').GetName] [activity|E] bude na následujících #V 5#! let o něco levnější" # todo: NEW TRANSLATION
- hunt.4500.d: "„To je hezké.“" # todo: NEW TRANSLATION
- hunt_urge_for_pilgrim_badges_modifier: "Touha po poutnických odznacích" # todo: NEW TRANSLATION
- hunt_urge_for_pilgrim_badges_modifier_desc: "Tato postava nedávno projevila touhu začít sbírat poutnické odznaky." # todo: NEW TRANSLATION
+ hunt.4500.t: "Ochranný odznak"
+ hunt.4500.desc.no_badge: "[badge_bragger.GetTitledFirstName] pořád žvaní o svém odznaku [badge_of_protection.GetName]. #EMP Bez ustání#!, až se začínám obávat, že plaší všechnu zvěř.\n\n„Chrání mě před zlými duchy, kouzelníky, démony...“ trvá na svém.\n\nOdfrknu si, ale pak mi na mysl vypluje matná vzpomínka na příběh, který se kdysi přihodil [Select_CString(ROOT.Char.IsFemale,'mé prababičce','mému pradědovi')]. Jistě to nic není. Jen cetka. Že ano?"
+ hunt.4500.desc: "Vidím, jak [Select_CString(badge_bragger.IsFemale,'má','můj')] [ROOT.Char.Custom2('RelationToMe', SCOPE.sC('badge_bragger'))] [badge_bragger.GetTitledFirstName] spolu s dalším členem lovecké družiny zaujatě obdivují odznak [badge_of_protection.GetName] patřící [badge_bragger.Custom('CZ_FirstNameNoTooltip_D')].\n\n„Chrání mě už od návštěvy místa [protection_badge_holy_site.GetName]... jistě je se mnou svatý duch.“\n\nRuka mi instinktivně zajede k mému odznaku [my_badge.GetName], bezpečně ukrytému v lemu roucha."
+ hunt.4500.a: "„Můj odznak [my_badge.GetNameNoTooltip] mě také vždycky chránil!“"
+ hunt.4500.a.flavor: "Moji lidé!"
+ hunt.4500.b: "#EMP Ochrana?#! To se ještě uvidí..."
+ hunt.4500.b.flavor: "Před #EMP mnou#! ten odznak nic neochrání!"
+ hunt.4500.b.tt: "[badge_bragger.GetShortUIName] tě podezírá z krádeže [Select_CString(badge_bragger.IsFemale,'jejího','jeho')] odznaku [badge_of_protection.GetName]"
+ hunt.4500.c: "Možná si mám pořídit vlastní odznak."
+ hunt.4500.c.tt: "Tvá příští [Concept('activity','aktivita')|E] [GetActivityType('activity_pilgrimage').GetTextIcon][GetActivityType('activity_pilgrimage').GetName] bude po následujících #V 5#! let o něco levnější"
+ hunt.4500.d: "„To je pěkné.“"
+ hunt_urge_for_pilgrim_badges_modifier: "Touha po poutních odznacích"
+ hunt_urge_for_pilgrim_badges_modifier_desc: "Tato postava nedávno projevila touhu začít sbírat poutní odznaky."
  hunt.5001.t: "Divoké květiny"
  hunt.5001.desc: "Je nádherný den na lov, a tedy i na pobyt venku. Když se zhluboka nadechnu čerstvého vzduchu divočiny, "
  hunt.5001.desc.witch: "zahlédnu hotový poklad darů matky přírody."
@@ -1183,7 +1183,7 @@
  hunt.9001.murder_fail: "Je rozhodně škoda, že [ROOT.Char.GetIntentTarget.GetFirstName] stále žije...\n\n"
  hunt.9001.woo_soulmate: "Mezi mnou a [ROOT.Char.GetIntentTarget.GetFirstName] vzniklo zvláštní pouto, jehož síla překvapila i mě...\n\n"
  hunt.9001.woo_lover: "[ROOT.Char.GetIntentTarget.GetFirstName] neměl[Select_CString(ROOT.Char.GetIntentTarget.IsFemale,'proti mému svádění žádnou šanci','proti mému svádění žádnou šanci')]...\n\n"
- hunt.9001.woo_potential: "Podařilo se mi získat pozornost [ROOT.Char.GetIntentTarget.GetFirstName], ale jestli si chci získat [ROOT.Char.GetIntentTarget.GetHerHis] srdce, čeká mě ještě hodně práce...\n\n" # todo: CHANGED (predtym: Podařilo se mi získat pozornost [ROOT.Char.GetIntentTarget.GetFirstName], ale jestli si chci získat srdce [woo_target.Ge)
+ hunt.9001.woo_potential: "[Select_CString(ROOT.Char.IsFemale,'Upoutala','Upoutal')] jsem pozornost [ROOT.Char.GetIntentTarget.Custom('CZ_FirstName_G')], ale k získání [Select_CString(ROOT.Char.GetIntentTarget.IsFemale,'jejího','jeho')] srdce mě ještě čeká práce...\n\n"
  hunt.9001.woo_fail: "Mé pokusy na [ROOT.Char.GetIntentTarget.GetFirstName] nezapůsobily... Budu muset zkusit jiný přístup...\n\n"
  hunt.9001.befriend_best: "S [ROOT.Char.GetIntentTarget.GetFirstName] jsme se rychle stali pevnými přáteli, což předčilo všechna má očekávání...\n\n"
  hunt.9001.befriend_friend: "[ROOT.Char.GetIntentTarget.GetFirstName] mou společnost přijímal[Select_CString(ROOT.Char.GetIntentTarget.IsFemale,'velmi přívětivě','velmi přívětivě')]. Myslím, že se na [befriend_target.GetFirstNameNoTooltip] mohu spolehnout...\n\n"

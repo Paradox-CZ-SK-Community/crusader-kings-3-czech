@@ -576,3 +576,22 @@ macro = {
 	definition = "CZAdjectiveSti(ADJECTIVE)"
 	replace_with = "Select_CString(Not(EqualTo_string(TrimBackChars(ADJECTIVE,'ýák'),TrimBackChars(ADJECTIVE,'ýáks'))),Concatenate(TrimBackChars(ADJECTIVE,'ýáks'),'ští'),Select_CString(Not(EqualTo_string(TrimBackChars(ADJECTIVE,'ýák'),TrimBackChars(ADJECTIVE,'ýákc'))),Concatenate(TrimBackChars(ADJECTIVE,'ýákc'),'čtí'),Concatenate(TrimBackChars(ADJECTIVE,'ýá'),'í')))"
 }
+
+macro = {
+	description = "Czech declension of adjective with native tooltip - generic"
+	definition = "CZAdjectiveDeclineRich(ADJECTIVE,ENDING,CLOSE)"
+	replace_with = "Concatenate(Concatenate(TrimBackChars(ADJECTIVE,Localize('CZ_FMT_TRIM')),ENDING),Localize(CLOSE))"
+}
+
+macro = {
+	description = "Czech declension of Faith adjective with tooltip and onclick"
+	definition = "CZFaithAdjDecline(FAITH,ENDING)"
+	replace_with = "CZAdjectiveDeclineRich(FAITH.GetAdjective,ENDING,'CZ_FMT_CLOSE3')"
+}
+
+macro = {
+	description = "Czech declension of Religion adjective with tooltip"
+	definition = "CZReligionAdjDecline(RELIGION,ENDING)"
+	replace_with = "CZAdjectiveDeclineRich(RELIGION.GetAdjective,ENDING,'CZ_FMT_CLOSE2')"
+}
+

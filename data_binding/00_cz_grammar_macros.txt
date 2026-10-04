@@ -1,19 +1,61 @@
 ﻿##################################################
-# CZECH GRAMMAR MACROS
+# CZECH GRAMMAR ENGINE - MACROS
+# By Crafter and Phantomiux
 ##################################################
+#
+# Production macro layer for Czech localization.
+# Keep entity/scope dispatch in custom localization;
+# keep reusable string and morphology logic here.
+#
+# Naming:
+#   G = Genitive, D = Dative, A = Accusative
+#   V = Vocative, L = Locative, I = Instrumental
+#   M = Male, F = Female
+##################################################
+
+##################################################
+# GENERIC STRING PRIMITIVES
+##################################################
+
+# ------------------------------------------------
+# JOIN
+# ------------------------------------------------
+
+macro = {
+	description = "Join two non-empty strings with one space"
+	definition = "CZJoin(A,B)"
+	replace_with = "Select_CString(StringIsEmpty(A),B,Select_CString(StringIsEmpty(B),A,Concatenate(A,Concatenate(' ',B))))"
+}
+
+# ------------------------------------------------
+# CHARACTER NAME PREFIX
+# ------------------------------------------------
+
+# Exact reconstruction is intentional: CK3 character names may
+# contain NBSP, e.g. "Král Sancho II.". The helper must not
+# tokenize that prefix by ordinary spaces.
+
+macro = {
+	description = "True if PREFIX is an exact CK3 character-name prefix of TEXT"
+	definition = "CZHasNamePrefix(TEXT,PREFIX)"
+	replace_with = "And(Not(StringIsEmpty(PREFIX)),EqualTo_string(TEXT,Concatenate(PREFIX,Select_CString(EqualTo_string(TEXT,PREFIX),'',Concatenate(' ',TrimFrontChars(TEXT,PREFIX))))))"
+}
+
+macro = {
+	description = "Replace an exact CK3 character-name prefix while preserving the remaining suffix"
+	definition = "CZReplaceNamePrefix(TEXT,PREFIX,REPLACEMENT)"
+	replace_with = "Select_CString(CZHasNamePrefix(TEXT,PREFIX),CZJoin(REPLACEMENT,TrimFrontChars(TEXT,PREFIX)),TEXT)"
+}
+
 
 ##################################################
 # TITLE TOKENIZER
-#
-# CZ_TitleTokenChars is defined in:
-# localization/polish/00_cz_custom_loc_l_polish.yml
-#
-# Space is intentionally NOT included in the
-# character set and therefore works as separator.
-#
-# Current supported title length: 1-3 words.
 ##################################################
-
+# CZ_TitleTokenChars is defined in:
+# localization/polish/custom_localization/cz_custom_loc/00_cz_custom_loc_l_polish.yml
+#
+# Space is intentionally NOT included in CZ_TitleTokenChars and therefore
+# acts as the separator. Current supported title length: 1-3 words.
 
 # ------------------------------------------------
 # DETECTION
@@ -31,26 +73,8 @@ macro = {
 	replace_with = "Not(StringIsEmpty(TrimFront(TrimFrontChars(TrimFront(TrimFrontChars(TITLE, Localize('CZ_TitleTokenChars'))), Localize('CZ_TitleTokenChars')))))"
 }
 
-
 # ------------------------------------------------
-# BASIC STRING HELPERS
-# ------------------------------------------------
-
-macro = {
-	description = "Remove the first word from TITLE"
-	definition = "CZTitleDropFirst(TITLE)"
-	replace_with = "TrimFront(TrimFrontChars(TITLE, Localize('CZ_TitleTokenChars')))"
-}
-
-macro = {
-	description = "Remove the last word from TITLE"
-	definition = "CZTitleDropLast(TITLE)"
-	replace_with = "TrimBack(TrimBackChars(TITLE, Localize('CZ_TitleTokenChars')))"
-}
-
-
-# ------------------------------------------------
-# WORD 1
+# WORD EXTRACTION
 # ------------------------------------------------
 
 macro = {
@@ -59,21 +83,11 @@ macro = {
 	replace_with = "Select_CString(StringIsEmpty(TrimFront(TrimFrontChars(TITLE, Localize('CZ_TitleTokenChars')))), TITLE, Select_CString(StringIsEmpty(TrimFront(TrimFrontChars(TrimFront(TrimFrontChars(TITLE, Localize('CZ_TitleTokenChars'))), Localize('CZ_TitleTokenChars')))), TrimBack(TrimBackChars(TITLE, Localize('CZ_TitleTokenChars'))), TrimBack(TrimBackChars(TrimBack(TrimBackChars(TITLE, Localize('CZ_TitleTokenChars'))), Localize('CZ_TitleTokenChars')))))"
 }
 
-
-# ------------------------------------------------
-# WORD 2
-# ------------------------------------------------
-
 macro = {
 	description = "Return second word of a one-to-three-word TITLE"
 	definition = "CZTitleWord2(TITLE)"
 	replace_with = "Select_CString(StringIsEmpty(TrimFront(TrimFrontChars(TITLE, Localize('CZ_TitleTokenChars')))), '', Select_CString(StringIsEmpty(TrimFront(TrimFrontChars(TrimFront(TrimFrontChars(TITLE, Localize('CZ_TitleTokenChars'))), Localize('CZ_TitleTokenChars')))), TrimFront(TrimFrontChars(TITLE, Localize('CZ_TitleTokenChars'))), TrimBack(TrimBackChars(TrimFront(TrimFrontChars(TITLE, Localize('CZ_TitleTokenChars'))), Localize('CZ_TitleTokenChars')))))"
 }
-
-
-# ------------------------------------------------
-# WORD 3
-# ------------------------------------------------
 
 macro = {
 	description = "Return third word of a one-to-three-word TITLE"
@@ -81,18 +95,13 @@ macro = {
 	replace_with = "Select_CString(StringIsEmpty(TrimFront(TrimFrontChars(TrimFront(TrimFrontChars(TITLE, Localize('CZ_TitleTokenChars'))), Localize('CZ_TitleTokenChars')))), '', TrimFront(TrimFrontChars(TrimFront(TrimFrontChars(TITLE, Localize('CZ_TitleTokenChars'))), Localize('CZ_TitleTokenChars'))))"
 }
 
-
 ##################################################
-# CZECH TITLE DECLENSION
-# Requires tokenizer macros:
-#   CZTitleHasSecond(TITLE)
-#   CZTitleHasThird(TITLE)
-#   CZTitleWord1(TITLE)
-#   CZTitleWord2(TITLE)
-#   CZTitleWord3(TITLE)
+# TITLE DECLENSION - WORD MORPHOLOGY
 ##################################################
 
+# ------------------------------------------------
 # GENITIVE
+# ------------------------------------------------
 
 macro = {
 	description = "Czech title word genitive (male)"
@@ -106,7 +115,9 @@ macro = {
 	replace_with = "Select_CString(Not(EqualTo_string(WORD,TrimBackChars(WORD,'ý'))),Concatenate(TrimBackChars(WORD,'ý'),'ého'),Select_CString(Not(EqualTo_string(WORD,TrimBackChars(WORD,'á'))),Concatenate(TrimBackChars(WORD,'á'),'é'),Select_CString(Not(EqualTo_string(WORD,TrimBackChars(WORD,'í'))),WORD,Select_CString(Not(EqualTo_string(WORD,TrimBackChars(WORD,'a'))),Concatenate(TrimBackChars(WORD,'a'),'y'),WORD))))"
 }
 
+# ------------------------------------------------
 # DATIVE
+# ------------------------------------------------
 
 macro = {
 	description = "Czech title word dative (male)"
@@ -120,7 +131,9 @@ macro = {
 	replace_with = "Select_CString(Not(EqualTo_string(WORD,TrimBackChars(WORD,'ý'))),Concatenate(TrimBackChars(WORD,'ý'),'ému'),Select_CString(Not(EqualTo_string(WORD,TrimBackChars(WORD,'á'))),Concatenate(TrimBackChars(WORD,'á'),'é'),Select_CString(Not(EqualTo_string(WORD,TrimBackChars(WORD,'í'))),WORD,Select_CString(Not(EqualTo_string(WORD,TrimBackChars(WORD,'a'))),Select_CString(And(Not(EqualTo_string(WORD,TrimBackChars(WORD,'a'))),Not(EqualTo_string(TrimBackChars(WORD,'a'),TrimBackChars(TrimBackChars(WORD,'a'),'k')))),Concatenate(TrimBackChars(TrimBackChars(WORD,'a'),'k'),'ce'),Concatenate(TrimBackChars(WORD,'a'),'ě')),Select_CString(Not(EqualTo_string(WORD,TrimBackChars(WORD,'eě'))),Concatenate(TrimBackChars(WORD,'eě'),'i'),WORD)))))"
 }
 
+# ------------------------------------------------
 # ACCUSATIVE
+# ------------------------------------------------
 
 macro = {
 	description = "Czech title word accusative (male)"
@@ -134,7 +147,9 @@ macro = {
 	replace_with = "Select_CString(Not(EqualTo_string(WORD,TrimBackChars(WORD,'ý'))),Concatenate(TrimBackChars(WORD,'ý'),'ého'),Select_CString(Not(EqualTo_string(WORD,TrimBackChars(WORD,'á'))),Concatenate(TrimBackChars(WORD,'á'),'ou'),Select_CString(Not(EqualTo_string(WORD,TrimBackChars(WORD,'í'))),WORD,Select_CString(Not(EqualTo_string(WORD,TrimBackChars(WORD,'a'))),Concatenate(TrimBackChars(WORD,'a'),'u'),Select_CString(Not(EqualTo_string(WORD,TrimBackChars(WORD,'eě'))),Concatenate(TrimBackChars(WORD,'eě'),'i'),WORD)))))"
 }
 
+# ------------------------------------------------
 # VOCATIVE
+# ------------------------------------------------
 
 macro = {
 	description = "Czech title word vocative (male)"
@@ -148,7 +163,9 @@ macro = {
 	replace_with = "Select_CString(Not(EqualTo_string(WORD,TrimBackChars(WORD,'ý'))),WORD,Select_CString(Not(EqualTo_string(WORD,TrimBackChars(WORD,'á'))),WORD,Select_CString(Not(EqualTo_string(WORD,TrimBackChars(WORD,'í'))),WORD,Select_CString(Not(EqualTo_string(WORD,TrimBackChars(WORD,'a'))),Concatenate(TrimBackChars(WORD,'a'),'o'),WORD))))"
 }
 
+# ------------------------------------------------
 # LOCATIVE
+# ------------------------------------------------
 
 macro = {
 	description = "Czech title word locative (male)"
@@ -162,7 +179,9 @@ macro = {
 	replace_with = "Select_CString(Not(EqualTo_string(WORD,TrimBackChars(WORD,'ý'))),Concatenate(TrimBackChars(WORD,'ý'),'ém'),Select_CString(Not(EqualTo_string(WORD,TrimBackChars(WORD,'á'))),Concatenate(TrimBackChars(WORD,'á'),'é'),Select_CString(Not(EqualTo_string(WORD,TrimBackChars(WORD,'í'))),WORD,Select_CString(Not(EqualTo_string(WORD,TrimBackChars(WORD,'a'))),Select_CString(And(Not(EqualTo_string(WORD,TrimBackChars(WORD,'a'))),Not(EqualTo_string(TrimBackChars(WORD,'a'),TrimBackChars(TrimBackChars(WORD,'a'),'k')))),Concatenate(TrimBackChars(TrimBackChars(WORD,'a'),'k'),'ce'),Concatenate(TrimBackChars(WORD,'a'),'ě')),Select_CString(Not(EqualTo_string(WORD,TrimBackChars(WORD,'eě'))),Concatenate(TrimBackChars(WORD,'eě'),'i'),WORD)))))"
 }
 
+# ------------------------------------------------
 # INSTRUMENTAL
+# ------------------------------------------------
 
 macro = {
 	description = "Czech title word instrumental (male)"
@@ -177,8 +196,12 @@ macro = {
 }
 
 ##################################################
-# 1-3 WORD COMPOSERS
+# TITLE DECLENSION - 1-3 WORD COMPOSERS
 ##################################################
+
+# ------------------------------------------------
+# GENITIVE
+# ------------------------------------------------
 
 macro = {
 	description = "Czech 1-3 word title genitive (male)"
@@ -192,6 +215,10 @@ macro = {
 	replace_with = "Select_CString(CZTitleHasThird(TITLE),Concatenate(CZTitleWord_G_F(CZTitleWord1(TITLE)),Concatenate(' ',Concatenate(CZTitleWord_G_F(CZTitleWord2(TITLE)),Concatenate(' ',CZTitleWord_G_F(CZTitleWord3(TITLE)))))),Select_CString(CZTitleHasSecond(TITLE),Concatenate(CZTitleWord_G_F(CZTitleWord1(TITLE)),Concatenate(' ',CZTitleWord_G_F(CZTitleWord2(TITLE)))),CZTitleWord_G_F(CZTitleWord1(TITLE))))"
 }
 
+# ------------------------------------------------
+# DATIVE
+# ------------------------------------------------
+
 macro = {
 	description = "Czech 1-3 word title dative (male)"
 	definition = "CZTitleCase_D_M(TITLE)"
@@ -203,6 +230,10 @@ macro = {
 	definition = "CZTitleCase_D_F(TITLE)"
 	replace_with = "Select_CString(CZTitleHasThird(TITLE),Concatenate(CZTitleWord_D_F(CZTitleWord1(TITLE)),Concatenate(' ',Concatenate(CZTitleWord_D_F(CZTitleWord2(TITLE)),Concatenate(' ',CZTitleWord_D_F(CZTitleWord3(TITLE)))))),Select_CString(CZTitleHasSecond(TITLE),Concatenate(CZTitleWord_D_F(CZTitleWord1(TITLE)),Concatenate(' ',CZTitleWord_D_F(CZTitleWord2(TITLE)))),CZTitleWord_D_F(CZTitleWord1(TITLE))))"
 }
+
+# ------------------------------------------------
+# ACCUSATIVE
+# ------------------------------------------------
 
 macro = {
 	description = "Czech 1-3 word title accusative (male)"
@@ -216,6 +247,10 @@ macro = {
 	replace_with = "Select_CString(CZTitleHasThird(TITLE),Concatenate(CZTitleWord_A_F(CZTitleWord1(TITLE)),Concatenate(' ',Concatenate(CZTitleWord_A_F(CZTitleWord2(TITLE)),Concatenate(' ',CZTitleWord_A_F(CZTitleWord3(TITLE)))))),Select_CString(CZTitleHasSecond(TITLE),Concatenate(CZTitleWord_A_F(CZTitleWord1(TITLE)),Concatenate(' ',CZTitleWord_A_F(CZTitleWord2(TITLE)))),CZTitleWord_A_F(CZTitleWord1(TITLE))))"
 }
 
+# ------------------------------------------------
+# VOCATIVE
+# ------------------------------------------------
+
 macro = {
 	description = "Czech 1-3 word title vocative (male)"
 	definition = "CZTitleCase_V_M(TITLE)"
@@ -227,6 +262,10 @@ macro = {
 	definition = "CZTitleCase_V_F(TITLE)"
 	replace_with = "Select_CString(CZTitleHasThird(TITLE),Concatenate(CZTitleWord_V_F(CZTitleWord1(TITLE)),Concatenate(' ',Concatenate(CZTitleWord_V_F(CZTitleWord2(TITLE)),Concatenate(' ',CZTitleWord_V_F(CZTitleWord3(TITLE)))))),Select_CString(CZTitleHasSecond(TITLE),Concatenate(CZTitleWord_V_F(CZTitleWord1(TITLE)),Concatenate(' ',CZTitleWord_V_F(CZTitleWord2(TITLE)))),CZTitleWord_V_F(CZTitleWord1(TITLE))))"
 }
+
+# ------------------------------------------------
+# LOCATIVE
+# ------------------------------------------------
 
 macro = {
 	description = "Czech 1-3 word title locative (male)"
@@ -240,6 +279,10 @@ macro = {
 	replace_with = "Select_CString(CZTitleHasThird(TITLE),Concatenate(CZTitleWord_L_F(CZTitleWord1(TITLE)),Concatenate(' ',Concatenate(CZTitleWord_L_F(CZTitleWord2(TITLE)),Concatenate(' ',CZTitleWord_L_F(CZTitleWord3(TITLE)))))),Select_CString(CZTitleHasSecond(TITLE),Concatenate(CZTitleWord_L_F(CZTitleWord1(TITLE)),Concatenate(' ',CZTitleWord_L_F(CZTitleWord2(TITLE)))),CZTitleWord_L_F(CZTitleWord1(TITLE))))"
 }
 
+# ------------------------------------------------
+# INSTRUMENTAL
+# ------------------------------------------------
+
 macro = {
 	description = "Czech 1-3 word title instrumental (male)"
 	definition = "CZTitleCase_I_M(TITLE)"
@@ -250,4 +293,286 @@ macro = {
 	description = "Czech 1-3 word title instrumental (female)"
 	definition = "CZTitleCase_I_F(TITLE)"
 	replace_with = "Select_CString(CZTitleHasThird(TITLE),Concatenate(CZTitleWord_I_F(CZTitleWord1(TITLE)),Concatenate(' ',Concatenate(CZTitleWord_I_F(CZTitleWord2(TITLE)),Concatenate(' ',CZTitleWord_I_F(CZTitleWord3(TITLE)))))),Select_CString(CZTitleHasSecond(TITLE),Concatenate(CZTitleWord_I_F(CZTitleWord1(TITLE)),Concatenate(' ',CZTitleWord_I_F(CZTitleWord2(TITLE)))),CZTitleWord_I_F(CZTitleWord1(TITLE))))"
+}
+
+##################################################
+# TITLE DECLENSION - GENDER DISPATCH
+##################################################
+
+macro = {
+	description = "Czech title genitive selected by character gender"
+	definition = "CZTitleCase_G(TITLE,IS_FEMALE)"
+	replace_with = "Select_CString(IS_FEMALE,CZTitleCase_G_F(TITLE),CZTitleCase_G_M(TITLE))"
+}
+
+macro = {
+	description = "Czech title dative selected by character gender"
+	definition = "CZTitleCase_D(TITLE,IS_FEMALE)"
+	replace_with = "Select_CString(IS_FEMALE,CZTitleCase_D_F(TITLE),CZTitleCase_D_M(TITLE))"
+}
+
+macro = {
+	description = "Czech title accusative selected by character gender"
+	definition = "CZTitleCase_A(TITLE,IS_FEMALE)"
+	replace_with = "Select_CString(IS_FEMALE,CZTitleCase_A_F(TITLE),CZTitleCase_A_M(TITLE))"
+}
+
+macro = {
+	description = "Czech title vocative selected by character gender"
+	definition = "CZTitleCase_V(TITLE,IS_FEMALE)"
+	replace_with = "Select_CString(IS_FEMALE,CZTitleCase_V_F(TITLE),CZTitleCase_V_M(TITLE))"
+}
+
+macro = {
+	description = "Czech title locative selected by character gender"
+	definition = "CZTitleCase_L(TITLE,IS_FEMALE)"
+	replace_with = "Select_CString(IS_FEMALE,CZTitleCase_L_F(TITLE),CZTitleCase_L_M(TITLE))"
+}
+
+macro = {
+	description = "Czech title instrumental selected by character gender"
+	definition = "CZTitleCase_I(TITLE,IS_FEMALE)"
+	replace_with = "Select_CString(IS_FEMALE,CZTitleCase_I_F(TITLE),CZTitleCase_I_M(TITLE))"
+}
+
+##################################################
+# FIRST NAME STEM PRIMITIVES
+##################################################
+
+macro = {
+	description = "Female first-name stem for -ia endings"
+	definition = "CZFirstNameStem_F_IA(NAME)"
+	replace_with = "TrimBackChars(TrimBackChars(NAME,'a'),'ií')"
+}
+
+macro = {
+	description = "Female first-name stem for -a endings"
+	definition = "CZFirstNameStem_F_A(NAME)"
+	replace_with = "TrimBackChars(NAME,'a')"
+}
+
+macro = {
+	description = "Female first-name stem for -e endings"
+	definition = "CZFirstNameStem_F_E(NAME)"
+	replace_with = "TrimBackChars(NAME,'e')"
+}
+
+macro = {
+	description = "Male first-name stem for -a endings"
+	definition = "CZFirstNameStem_M_A(NAME)"
+	replace_with = "TrimBackChars(NAME,'a')"
+}
+
+macro = {
+	description = "Male first-name stem for -o endings"
+	definition = "CZFirstNameStem_M_O(NAME)"
+	replace_with = "TrimBackChars(NAME,'o')"
+}
+
+##################################################
+# FIRST NAME DECLENSION
+##################################################
+
+# ------------------------------------------------
+# GENITIVE
+# ------------------------------------------------
+
+macro = {
+	description = "Czech first name genitive (male)"
+	definition = "CZFirstName_G_M(NAME)"
+	replace_with = "Select_CString(Not(EqualTo_string(NAME,TrimBackChars(NAME,'a'))),Concatenate(CZFirstNameStem_M_A(NAME),'y'),Select_CString(Not(EqualTo_string(NAME,TrimBackChars(NAME,'o'))),Concatenate(CZFirstNameStem_M_O(NAME),'a'),Select_CString(Not(EqualTo_string(NAME,TrimBackChars(NAME,'iíyé'))),Concatenate(NAME,'ho'),Select_CString(Not(EqualTo_string(NAME,TrimBackChars(NAME,'bcčdďfghjklmnňpqrřsštťvwxzž'))),Select_CString(Not(EqualTo_string(NAME,TrimBackChars(NAME,'cčďjňřsšťxzž'))),Concatenate(NAME,'e'),Concatenate(NAME,'a')),NAME))))"
+}
+
+macro = {
+	description = "Czech first name genitive (female)"
+	definition = "CZFirstName_G_F(NAME)"
+	replace_with = "Select_CString(Not(EqualTo_string(NAME,TrimBackChars(NAME,'a'))),Select_CString(Not(EqualTo_string(TrimBackChars(NAME,'a'),TrimBackChars(TrimBackChars(NAME,'a'),'ií'))),Concatenate(CZFirstNameStem_F_IA(NAME),'ie'),Concatenate(CZFirstNameStem_F_A(NAME),'y')),Select_CString(Not(EqualTo_string(NAME,TrimBackChars(NAME,'e'))),Concatenate(CZFirstNameStem_F_E(NAME),'e'),NAME))"
+}
+
+macro = {
+	description = "Czech first name genitive selected by character gender"
+	definition = "CZFirstName_G(NAME,IS_FEMALE)"
+	replace_with = "Select_CString(IS_FEMALE,CZFirstName_G_F(NAME),CZFirstName_G_M(NAME))"
+}
+
+# ------------------------------------------------
+# DATIVE
+# ------------------------------------------------
+
+macro = {
+	description = "Czech first name dative (male)"
+	definition = "CZFirstName_D_M(NAME)"
+	replace_with = "Select_CString(Not(EqualTo_string(NAME,TrimBackChars(NAME,'a'))),Concatenate(CZFirstNameStem_M_A(NAME),'ovi'),Select_CString(Not(EqualTo_string(NAME,TrimBackChars(NAME,'o'))),Concatenate(CZFirstNameStem_M_O(NAME),'ovi'),Select_CString(Not(EqualTo_string(NAME,TrimBackChars(NAME,'iíyé'))),Concatenate(NAME,'mu'),Select_CString(Not(EqualTo_string(NAME,TrimBackChars(NAME,'bcčdďfghjklmnňpqrřsštťvwxzž'))),Concatenate(NAME,'ovi'),NAME))))"
+}
+
+macro = {
+	description = "Czech first name dative (female)"
+	definition = "CZFirstName_D_F(NAME)"
+	replace_with = "Select_CString(Not(EqualTo_string(NAME,TrimBackChars(NAME,'a'))),Select_CString(Not(EqualTo_string(TrimBackChars(NAME,'a'),TrimBackChars(TrimBackChars(NAME,'a'),'ií'))),Concatenate(CZFirstNameStem_F_IA(NAME),'i'),Concatenate(CZFirstNameStem_F_A(NAME),'ě')),Select_CString(Not(EqualTo_string(NAME,TrimBackChars(NAME,'e'))),Concatenate(CZFirstNameStem_F_E(NAME),'i'),NAME))"
+}
+
+macro = {
+	description = "Czech first name dative selected by character gender"
+	definition = "CZFirstName_D(NAME,IS_FEMALE)"
+	replace_with = "Select_CString(IS_FEMALE,CZFirstName_D_F(NAME),CZFirstName_D_M(NAME))"
+}
+
+# ------------------------------------------------
+# ACCUSATIVE
+# ------------------------------------------------
+
+macro = {
+	description = "Czech first name accusative (male)"
+	definition = "CZFirstName_A_M(NAME)"
+	replace_with = "Select_CString(Not(EqualTo_string(NAME,TrimBackChars(NAME,'a'))),Concatenate(CZFirstNameStem_M_A(NAME),'u'),Select_CString(Not(EqualTo_string(NAME,TrimBackChars(NAME,'o'))),Concatenate(CZFirstNameStem_M_O(NAME),'a'),Select_CString(Not(EqualTo_string(NAME,TrimBackChars(NAME,'iíyé'))),Concatenate(NAME,'ho'),Select_CString(Not(EqualTo_string(NAME,TrimBackChars(NAME,'bcčdďfghjklmnňpqrřsštťvwxzž'))),Select_CString(Not(EqualTo_string(NAME,TrimBackChars(NAME,'cčďjňřsšťxzž'))),Concatenate(NAME,'e'),Concatenate(NAME,'a')),NAME))))"
+}
+
+macro = {
+	description = "Czech first name accusative (female)"
+	definition = "CZFirstName_A_F(NAME)"
+	replace_with = "Select_CString(Not(EqualTo_string(NAME,TrimBackChars(NAME,'a'))),Select_CString(Not(EqualTo_string(TrimBackChars(NAME,'a'),TrimBackChars(TrimBackChars(NAME,'a'),'ií'))),Concatenate(CZFirstNameStem_F_IA(NAME),'i'),Concatenate(CZFirstNameStem_F_A(NAME),'u')),Select_CString(Not(EqualTo_string(NAME,TrimBackChars(NAME,'e'))),Concatenate(CZFirstNameStem_F_E(NAME),'i'),NAME))"
+}
+
+macro = {
+	description = "Czech first name accusative selected by character gender"
+	definition = "CZFirstName_A(NAME,IS_FEMALE)"
+	replace_with = "Select_CString(IS_FEMALE,CZFirstName_A_F(NAME),CZFirstName_A_M(NAME))"
+}
+
+# ------------------------------------------------
+# VOCATIVE
+# ------------------------------------------------
+
+macro = {
+	description = "Czech first name vocative (male)"
+	definition = "CZFirstName_V_M(NAME)"
+	replace_with = "Select_CString(Not(EqualTo_string(NAME,TrimBackChars(NAME,'a'))),Concatenate(CZFirstNameStem_M_A(NAME),'o'),Select_CString(Not(EqualTo_string(NAME,TrimBackChars(NAME,'bcčdďfghjklmnňpqrřsštťvwxzž'))),Select_CString(Not(EqualTo_string(NAME,TrimBackChars(NAME,'kgh'))),Concatenate(NAME,'u'),Select_CString(Not(EqualTo_string(NAME,TrimBackChars(NAME,'cčďjňřšťž'))),Concatenate(NAME,'i'),Concatenate(NAME,'e'))),NAME))"
+}
+
+macro = {
+	description = "Czech first name vocative (female)"
+	definition = "CZFirstName_V_F(NAME)"
+	replace_with = "Select_CString(Not(EqualTo_string(NAME,TrimBackChars(NAME,'a'))),Select_CString(Not(EqualTo_string(TrimBackChars(NAME,'a'),TrimBackChars(TrimBackChars(NAME,'a'),'ií'))),Concatenate(CZFirstNameStem_F_IA(NAME),'o'),Concatenate(CZFirstNameStem_F_A(NAME),'o')),NAME)"
+}
+
+macro = {
+	description = "Czech first name vocative selected by character gender"
+	definition = "CZFirstName_V(NAME,IS_FEMALE)"
+	replace_with = "Select_CString(IS_FEMALE,CZFirstName_V_F(NAME),CZFirstName_V_M(NAME))"
+}
+
+# ------------------------------------------------
+# LOCATIVE
+# ------------------------------------------------
+
+macro = {
+	description = "Czech first name locative (male)"
+	definition = "CZFirstName_L_M(NAME)"
+	replace_with = "Select_CString(Not(EqualTo_string(NAME,TrimBackChars(NAME,'a'))),Concatenate(CZFirstNameStem_M_A(NAME),'ovi'),Select_CString(Not(EqualTo_string(NAME,TrimBackChars(NAME,'o'))),Concatenate(CZFirstNameStem_M_O(NAME),'ovi'),Select_CString(Not(EqualTo_string(NAME,TrimBackChars(NAME,'iíyé'))),Concatenate(NAME,'m'),Select_CString(Not(EqualTo_string(NAME,TrimBackChars(NAME,'bcčdďfghjklmnňpqrřsštťvwxzž'))),Concatenate(NAME,'ovi'),NAME))))"
+}
+
+macro = {
+	description = "Czech first name locative (female)"
+	definition = "CZFirstName_L_F(NAME)"
+	replace_with = "Select_CString(Not(EqualTo_string(NAME,TrimBackChars(NAME,'a'))),Select_CString(Not(EqualTo_string(TrimBackChars(NAME,'a'),TrimBackChars(TrimBackChars(NAME,'a'),'ií'))),Concatenate(CZFirstNameStem_F_IA(NAME),'i'),Concatenate(CZFirstNameStem_F_A(NAME),'ě')),Select_CString(Not(EqualTo_string(NAME,TrimBackChars(NAME,'e'))),Concatenate(CZFirstNameStem_F_E(NAME),'i'),NAME))"
+}
+
+macro = {
+	description = "Czech first name locative selected by character gender"
+	definition = "CZFirstName_L(NAME,IS_FEMALE)"
+	replace_with = "Select_CString(IS_FEMALE,CZFirstName_L_F(NAME),CZFirstName_L_M(NAME))"
+}
+
+# ------------------------------------------------
+# INSTRUMENTAL
+# ------------------------------------------------
+
+macro = {
+	description = "Czech first name instrumental (male)"
+	definition = "CZFirstName_I_M(NAME)"
+	replace_with = "Select_CString(Not(EqualTo_string(NAME,TrimBackChars(NAME,'a'))),Concatenate(CZFirstNameStem_M_A(NAME),'ou'),Select_CString(Not(EqualTo_string(NAME,TrimBackChars(NAME,'o'))),Concatenate(CZFirstNameStem_M_O(NAME),'em'),Select_CString(Not(EqualTo_string(NAME,TrimBackChars(NAME,'iíyé'))),Concatenate(NAME,'m'),Select_CString(Not(EqualTo_string(NAME,TrimBackChars(NAME,'bcčdďfghjklmnňpqrřsštťvwxzž'))),Concatenate(NAME,'em'),NAME))))"
+}
+
+macro = {
+	description = "Czech first name instrumental (female)"
+	definition = "CZFirstName_I_F(NAME)"
+	replace_with = "Select_CString(Not(EqualTo_string(NAME,TrimBackChars(NAME,'a'))),Select_CString(Not(EqualTo_string(TrimBackChars(NAME,'a'),TrimBackChars(TrimBackChars(NAME,'a'),'ií'))),Concatenate(CZFirstNameStem_F_IA(NAME),'í'),Concatenate(CZFirstNameStem_F_A(NAME),'ou')),Select_CString(Not(EqualTo_string(NAME,TrimBackChars(NAME,'e'))),Concatenate(CZFirstNameStem_F_E(NAME),'í'),NAME))"
+}
+
+macro = {
+	description = "Czech first name instrumental selected by character gender"
+	definition = "CZFirstName_I(NAME,IS_FEMALE)"
+	replace_with = "Select_CString(IS_FEMALE,CZFirstName_I_F(NAME),CZFirstName_I_M(NAME))"
+}
+
+##################################################
+# REGNAL FIRST NAME DECLENSION
+##################################################
+# CK3 uses a non-breaking space between first name and regnal number,
+# e.g. "Sancho II.". Preserve the complete vanilla suffix byte-for-byte.
+
+macro = {
+	description = "Czech regnal first name genitive"
+	definition = "CZFirstNameRegnal_G(REGNAL_NAME,FIRST_NAME,IS_FEMALE)"
+	replace_with = "Concatenate(CZFirstName_G(FIRST_NAME,IS_FEMALE),TrimFrontChars(REGNAL_NAME,FIRST_NAME))"
+}
+
+macro = {
+	description = "Czech regnal first name dative"
+	definition = "CZFirstNameRegnal_D(REGNAL_NAME,FIRST_NAME,IS_FEMALE)"
+	replace_with = "Concatenate(CZFirstName_D(FIRST_NAME,IS_FEMALE),TrimFrontChars(REGNAL_NAME,FIRST_NAME))"
+}
+
+macro = {
+	description = "Czech regnal first name accusative"
+	definition = "CZFirstNameRegnal_A(REGNAL_NAME,FIRST_NAME,IS_FEMALE)"
+	replace_with = "Concatenate(CZFirstName_A(FIRST_NAME,IS_FEMALE),TrimFrontChars(REGNAL_NAME,FIRST_NAME))"
+}
+
+macro = {
+	description = "Czech regnal first name vocative"
+	definition = "CZFirstNameRegnal_V(REGNAL_NAME,FIRST_NAME,IS_FEMALE)"
+	replace_with = "Concatenate(CZFirstName_V(FIRST_NAME,IS_FEMALE),TrimFrontChars(REGNAL_NAME,FIRST_NAME))"
+}
+
+macro = {
+	description = "Czech regnal first name locative"
+	definition = "CZFirstNameRegnal_L(REGNAL_NAME,FIRST_NAME,IS_FEMALE)"
+	replace_with = "Concatenate(CZFirstName_L(FIRST_NAME,IS_FEMALE),TrimFrontChars(REGNAL_NAME,FIRST_NAME))"
+}
+
+macro = {
+	description = "Czech regnal first name instrumental"
+	definition = "CZFirstNameRegnal_I(REGNAL_NAME,FIRST_NAME,IS_FEMALE)"
+	replace_with = "Concatenate(CZFirstName_I(FIRST_NAME,IS_FEMALE),TrimFrontChars(REGNAL_NAME,FIRST_NAME))"
+}
+
+##################################################
+# ADJECTIVE DECLENSION
+##################################################
+# Base Czech adjective morphology for Culture / Faith / Religion / Title.
+# The source adjective is expected to end in -ý or -á.
+# Native rich-text adjective reconstruction stays in localization,
+# because CK3 parses #! closer syntax before macro string arguments.
+
+# ------------------------------------------------
+# PLAIN ADJECTIVE
+# ------------------------------------------------
+
+macro = {
+	description = "Return Czech adjective stem by removing final -ý / -á"
+	definition = "CZAdjectiveStem(ADJECTIVE)"
+	replace_with = "TrimBackChars(ADJECTIVE,'ýá')"
+}
+
+macro = {
+	description = "Replace final Czech adjective -ý / -á with ENDING"
+	definition = "CZAdjectiveDecline(ADJECTIVE,ENDING)"
+	replace_with = "Concatenate(CZAdjectiveStem(ADJECTIVE),ENDING)"
+}
+
+macro = {
+	description = "Czech adjective animate plural: -ští / -čtí / -í"
+	definition = "CZAdjectiveSti(ADJECTIVE)"
+	replace_with = "Select_CString(Not(EqualTo_string(TrimBackChars(ADJECTIVE,'ýák'),TrimBackChars(ADJECTIVE,'ýáks'))),Concatenate(TrimBackChars(ADJECTIVE,'ýáks'),'ští'),Select_CString(Not(EqualTo_string(TrimBackChars(ADJECTIVE,'ýák'),TrimBackChars(ADJECTIVE,'ýákc'))),Concatenate(TrimBackChars(ADJECTIVE,'ýákc'),'čtí'),Concatenate(TrimBackChars(ADJECTIVE,'ýá'),'í')))"
 }

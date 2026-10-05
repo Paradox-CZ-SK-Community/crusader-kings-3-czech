@@ -625,3 +625,30 @@ macro = {
 	definition = "CZReligionAdjSti(RELIGION)"
 	replace_with = "CZAdjectiveStiRich(RELIGION.GetAdjective,'CZ_FMT_CLOSE2')"
 }
+
+
+
+##################################################
+# ISSUE 364 - COMPATIBLE PREFIX RECONSTRUCTION
+##################################################
+# Keep CZHasNamePrefix/CZReplaceNamePrefix unchanged for existing callers.
+# TrimFrontChars is a character-set operation. For a single-word prefix it
+# can leave the separator at the start of the suffix; a multiword prefix
+# can consume that space. Exact reconstruction checks support both paths.
+# Raw remainder is accepted only at a whitespace boundary or at end of TEXT.
+# This rejects substring collisions (e.g. Ann vs Anna) and preserves the
+# accepted raw suffix, including its separator, byte-for-byte.
+# The old helpers handle the path with one consumed ordinary separator.
+# If neither path reconstructs TEXT exactly, return TEXT unchanged.
+
+macro = {
+    description = "Exact character-name prefix, also accepting an unconsumed suffix separator"
+    definition = "CZHasNamePrefixPreservingSpace(TEXT,PREFIX)"
+    replace_with = "Or(CZHasNamePrefix(TEXT,PREFIX),And(Not(StringIsEmpty(PREFIX)),And(EqualTo_string(TEXT,Concatenate(PREFIX,TrimFrontChars(TEXT,PREFIX))),Or(EqualTo_string(TEXT,PREFIX),Not(EqualTo_string(TrimFrontChars(TEXT,PREFIX),TrimFront(TrimFrontChars(TEXT,PREFIX))))))))"
+}
+
+macro = {
+    description = "Replace an exact name prefix while retaining the accepted suffix separator"
+    definition = "CZReplaceNamePrefixPreservingSpace(TEXT,PREFIX,REPLACEMENT)"
+    replace_with = "Select_CString(CZHasNamePrefix(TEXT,PREFIX),CZReplaceNamePrefix(TEXT,PREFIX,REPLACEMENT),Select_CString(CZHasNamePrefixPreservingSpace(TEXT,PREFIX),Concatenate(REPLACEMENT,TrimFrontChars(TEXT,PREFIX)),TEXT))"
+}

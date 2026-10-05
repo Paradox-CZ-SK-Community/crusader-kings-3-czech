@@ -535,11 +535,14 @@ CZ_FirstNamePossessiveNoTooltipRegnal_N = {
 ###################################
 
 ## Replacement for GetShortUINamePossessive
+## INTENTIONAL UI EXCEPTION: player tvuj before noun; character genitive after noun.
+## Caller must branch phrase/order; do not replace this with personal-name M/F/N morphology.
 
 CZ_ShortUINamePossessive = {
 	type = character
 
 	text = {
+		# PLAYER: intentionally distinct native/pronoun branch; check sentence person and word order.
 		trigger = {
 			is_local_player = yes
 		}
@@ -553,11 +556,13 @@ CZ_ShortUINamePossessive = {
 }
 
 ## Replacement for GetShortUINamePossessiveNoTooltip
+## Same intentional player/character word-order exception as the rich variant.
 
 CZ_ShortUINamePossessiveNoTooltip = {
 	type = character
 
 	text = {
+		# PLAYER: intentionally distinct native/pronoun branch; check sentence person and word order.
 		trigger = {
 			is_local_player = yes
 		}
@@ -589,6 +594,7 @@ CZ_ShortUIName_G = {
 	type = character
 
 	text = {
+		# PLAYER: intentionally distinct native/pronoun branch; check sentence person and word order.
 		trigger = {
 			is_local_player = yes
 		}
@@ -606,6 +612,7 @@ CZ_ShortUIName_D = {
 	type = character
 
 	text = {
+		# PLAYER: intentionally distinct native/pronoun branch; check sentence person and word order.
 		trigger = {
 			is_local_player = yes
 		}
@@ -623,6 +630,7 @@ CZ_ShortUIName_A = {
 	type = character
 
 	text = {
+		# PLAYER: intentionally distinct native/pronoun branch; check sentence person and word order.
 		trigger = {
 			is_local_player = yes
 		}
@@ -640,6 +648,7 @@ CZ_ShortUIName_V = {
 	type = character
 
 	text = {
+		# PLAYER: intentionally distinct native/pronoun branch; check sentence person and word order.
 		trigger = {
 			is_local_player = yes
 		}
@@ -657,6 +666,7 @@ CZ_ShortUIName_L = {
 	type = character
 
 	text = {
+		# PLAYER: intentionally distinct native/pronoun branch; check sentence person and word order.
 		trigger = {
 			is_local_player = yes
 		}
@@ -674,6 +684,7 @@ CZ_ShortUIName_I = {
 	type = character
 
 	text = {
+		# PLAYER: intentionally distinct native/pronoun branch; check sentence person and word order.
 		trigger = {
 			is_local_player = yes
 		}
@@ -693,6 +704,7 @@ CZ_ShortUINameNoTooltip_G = {
 	type = character
 
 	text = {
+		# PLAYER: intentionally distinct native/pronoun branch; check sentence person and word order.
 		trigger = {
 			is_local_player = yes
 		}
@@ -710,6 +722,7 @@ CZ_ShortUINameNoTooltip_D = {
 	type = character
 
 	text = {
+		# PLAYER: intentionally distinct native/pronoun branch; check sentence person and word order.
 		trigger = {
 			is_local_player = yes
 		}
@@ -727,6 +740,7 @@ CZ_ShortUINameNoTooltip_A = {
 	type = character
 
 	text = {
+		# PLAYER: intentionally distinct native/pronoun branch; check sentence person and word order.
 		trigger = {
 			is_local_player = yes
 		}
@@ -744,6 +758,7 @@ CZ_ShortUINameNoTooltip_V = {
 	type = character
 
 	text = {
+		# PLAYER: intentionally distinct native/pronoun branch; check sentence person and word order.
 		trigger = {
 			is_local_player = yes
 		}
@@ -761,6 +776,7 @@ CZ_ShortUINameNoTooltip_L = {
 	type = character
 
 	text = {
+		# PLAYER: intentionally distinct native/pronoun branch; check sentence person and word order.
 		trigger = {
 			is_local_player = yes
 		}
@@ -778,6 +794,7 @@ CZ_ShortUINameNoTooltip_I = {
 	type = character
 
 	text = {
+		# PLAYER: intentionally distinct native/pronoun branch; check sentence person and word order.
 		trigger = {
 			is_local_player = yes
 		}
@@ -1288,6 +1305,7 @@ CZ_UIName_G = {
 	type = character
 
 	text = {
+		# PLAYER: intentionally distinct native/pronoun branch; check sentence person and word order.
 		trigger = {
 			is_local_player = yes
 		}
@@ -1305,6 +1323,7 @@ CZ_UIName_D = {
 	type = character
 
 	text = {
+		# PLAYER: intentionally distinct native/pronoun branch; check sentence person and word order.
 		trigger = {
 			is_local_player = yes
 		}
@@ -1322,6 +1341,7 @@ CZ_UIName_A = {
 	type = character
 
 	text = {
+		# PLAYER: intentionally distinct native/pronoun branch; check sentence person and word order.
 		trigger = {
 			is_local_player = yes
 		}
@@ -1339,6 +1359,7 @@ CZ_UIName_V = {
 	type = character
 
 	text = {
+		# PLAYER: intentionally distinct native/pronoun branch; check sentence person and word order.
 		trigger = {
 			is_local_player = yes
 		}
@@ -1356,6 +1377,7 @@ CZ_UIName_L = {
 	type = character
 
 	text = {
+		# PLAYER: intentionally distinct native/pronoun branch; check sentence person and word order.
 		trigger = {
 			is_local_player = yes
 		}
@@ -1373,6 +1395,7 @@ CZ_UIName_I = {
 	type = character
 
 	text = {
+		# PLAYER: intentionally distinct native/pronoun branch; check sentence person and word order.
 		trigger = {
 			is_local_player = yes
 		}
@@ -1952,3 +1975,2586 @@ CZ_AdjectiveNoTooltip_ee = {
 	suffix = "_ee"
 }
 
+
+
+
+###################################
+## ISSUE 364 - ADDITIVE EXTENSION ##
+###################################
+# Base: master 5455ea9bb159ab661648c2b4159ab680726fad30
+# Existing morphology/macros and outputs are unchanged.
+# New prefix helpers extend the existing helpers to preserve a leading suffix space.
+# IMPLEMENTED = reuse/equivalent reconstruction; guard failure keeps native output.
+# PLACEHOLDER = native passthrough only, NOT a supported Czech grammar replacement.
+# Personal-name possessives retain 2 x 3 owner/noun-gender logic.
+# Legacy UI possessives intentionally keep their player/character word-order asymmetry.
+
+###################################
+## FirstNameNicknamed
+###################################
+# Source: GetFirstNameNicknamed
+# STATUS: IMPLEMENTED (guarded reconstruction)
+# Reuse existing FirstName cases; preserve nickname and regnal suffix through exact prefix reconstruction. Unmatched output returns this native getter.
+
+CZ_FirstNameNicknamed_G = {
+	type = character
+
+	text = {
+		localization_key = CZ_FirstNameNicknamed_G_character
+		fallback = yes
+	}
+}
+
+CZ_FirstNameNicknamed_D = {
+	type = character
+
+	text = {
+		localization_key = CZ_FirstNameNicknamed_D_character
+		fallback = yes
+	}
+}
+
+CZ_FirstNameNicknamed_A = {
+	type = character
+
+	text = {
+		localization_key = CZ_FirstNameNicknamed_A_character
+		fallback = yes
+	}
+}
+
+CZ_FirstNameNicknamed_V = {
+	type = character
+
+	text = {
+		localization_key = CZ_FirstNameNicknamed_V_character
+		fallback = yes
+	}
+}
+
+CZ_FirstNameNicknamed_L = {
+	type = character
+
+	text = {
+		localization_key = CZ_FirstNameNicknamed_L_character
+		fallback = yes
+	}
+}
+
+CZ_FirstNameNicknamed_I = {
+	type = character
+
+	text = {
+		localization_key = CZ_FirstNameNicknamed_I_character
+		fallback = yes
+	}
+}
+
+
+###################################
+## FirstNameNicknamedNoTooltip
+###################################
+# Source: GetFirstNameNicknamedNoTooltip
+# STATUS: IMPLEMENTED (guarded reconstruction)
+# Reuse existing FirstName cases; preserve nickname and regnal suffix through exact prefix reconstruction. Unmatched output returns this native getter.
+
+CZ_FirstNameNicknamedNoTooltip_G = {
+	type = character
+
+	text = {
+		localization_key = CZ_FirstNameNicknamedNoTooltip_G_character
+		fallback = yes
+	}
+}
+
+CZ_FirstNameNicknamedNoTooltip_D = {
+	type = character
+
+	text = {
+		localization_key = CZ_FirstNameNicknamedNoTooltip_D_character
+		fallback = yes
+	}
+}
+
+CZ_FirstNameNicknamedNoTooltip_A = {
+	type = character
+
+	text = {
+		localization_key = CZ_FirstNameNicknamedNoTooltip_A_character
+		fallback = yes
+	}
+}
+
+CZ_FirstNameNicknamedNoTooltip_V = {
+	type = character
+
+	text = {
+		localization_key = CZ_FirstNameNicknamedNoTooltip_V_character
+		fallback = yes
+	}
+}
+
+CZ_FirstNameNicknamedNoTooltip_L = {
+	type = character
+
+	text = {
+		localization_key = CZ_FirstNameNicknamedNoTooltip_L_character
+		fallback = yes
+	}
+}
+
+CZ_FirstNameNicknamedNoTooltip_I = {
+	type = character
+
+	text = {
+		localization_key = CZ_FirstNameNicknamedNoTooltip_I_character
+		fallback = yes
+	}
+}
+
+
+###################################
+## FirstNameNicknamedPossessiveNoTooltip
+###################################
+# Source: GetFirstNameNicknamedPossessiveNoTooltip
+# STATUS: IMPLEMENTED (guarded reconstruction)
+# Reuse the existing six FirstNamePossessiveNoTooltip branches: male/female owner x M/F/N possessed noun. Preserve nickname suffix; do not replace possessive morphology with genitive. Unmatched prefix returns original possessive getter.
+
+CZ_FirstNameNicknamedPossessiveNoTooltip_M = {
+	type = character
+
+	text = {
+		trigger = {
+			is_female = yes
+		}
+		localization_key = CZ_FirstNameNicknamedPossessiveNoTooltip_M_character_female
+	}
+
+	text = {
+		localization_key = CZ_FirstNameNicknamedPossessiveNoTooltip_M_character_male
+		fallback = yes
+	}
+}
+
+CZ_FirstNameNicknamedPossessiveNoTooltip_F = {
+	type = character
+
+	text = {
+		trigger = {
+			is_female = yes
+		}
+		localization_key = CZ_FirstNameNicknamedPossessiveNoTooltip_F_character_female
+	}
+
+	text = {
+		localization_key = CZ_FirstNameNicknamedPossessiveNoTooltip_F_character_male
+		fallback = yes
+	}
+}
+
+CZ_FirstNameNicknamedPossessiveNoTooltip_N = {
+	type = character
+
+	text = {
+		trigger = {
+			is_female = yes
+		}
+		localization_key = CZ_FirstNameNicknamedPossessiveNoTooltip_N_character_female
+	}
+
+	text = {
+		localization_key = CZ_FirstNameNicknamedPossessiveNoTooltip_N_character_male
+		fallback = yes
+	}
+}
+
+
+###################################
+## FirstNameOrMeRegnal
+###################################
+# Source: GetFirstNameOrMeRegnal
+# STATUS: IMPLEMENTED
+# Non-player branch delegates to existing FirstNameRegnal cases.
+# PLAYER: retain native me-aware output; its person/case may differ from a character name. Adapt surrounding sentence, never force NotMe.
+
+CZ_FirstNameOrMeRegnal_G = {
+	type = character
+
+	# PLAYER: native pronoun/possessive is intentional; check sentence person and word order.
+	text = {
+		trigger = {
+			is_local_player = yes
+		}
+		localization_key = CZ_FirstNameOrMeRegnal_G_player
+	}
+
+	text = {
+		localization_key = CZ_FirstNameOrMeRegnal_G_character
+		fallback = yes
+	}
+}
+
+CZ_FirstNameOrMeRegnal_D = {
+	type = character
+
+	# PLAYER: native pronoun/possessive is intentional; check sentence person and word order.
+	text = {
+		trigger = {
+			is_local_player = yes
+		}
+		localization_key = CZ_FirstNameOrMeRegnal_D_player
+	}
+
+	text = {
+		localization_key = CZ_FirstNameOrMeRegnal_D_character
+		fallback = yes
+	}
+}
+
+CZ_FirstNameOrMeRegnal_A = {
+	type = character
+
+	# PLAYER: native pronoun/possessive is intentional; check sentence person and word order.
+	text = {
+		trigger = {
+			is_local_player = yes
+		}
+		localization_key = CZ_FirstNameOrMeRegnal_A_player
+	}
+
+	text = {
+		localization_key = CZ_FirstNameOrMeRegnal_A_character
+		fallback = yes
+	}
+}
+
+CZ_FirstNameOrMeRegnal_V = {
+	type = character
+
+	# PLAYER: native pronoun/possessive is intentional; check sentence person and word order.
+	text = {
+		trigger = {
+			is_local_player = yes
+		}
+		localization_key = CZ_FirstNameOrMeRegnal_V_player
+	}
+
+	text = {
+		localization_key = CZ_FirstNameOrMeRegnal_V_character
+		fallback = yes
+	}
+}
+
+CZ_FirstNameOrMeRegnal_L = {
+	type = character
+
+	# PLAYER: native pronoun/possessive is intentional; check sentence person and word order.
+	text = {
+		trigger = {
+			is_local_player = yes
+		}
+		localization_key = CZ_FirstNameOrMeRegnal_L_player
+	}
+
+	text = {
+		localization_key = CZ_FirstNameOrMeRegnal_L_character
+		fallback = yes
+	}
+}
+
+CZ_FirstNameOrMeRegnal_I = {
+	type = character
+
+	# PLAYER: native pronoun/possessive is intentional; check sentence person and word order.
+	text = {
+		trigger = {
+			is_local_player = yes
+		}
+		localization_key = CZ_FirstNameOrMeRegnal_I_player
+	}
+
+	text = {
+		localization_key = CZ_FirstNameOrMeRegnal_I_character
+		fallback = yes
+	}
+}
+
+
+###################################
+## Name
+###################################
+# Source: GetName
+# STATUS: PLACEHOLDER
+# PLACEHOLDER ONLY: suffix reserves a future contract; NO Czech transformation is implemented. Every output returns its exact original getter. Do not use as a supported translation/QA replacement.
+# Character scope only. Native GetName structure has not been verified across character states; do not alias to FirstName/TitledFirstName/FullName or apply to other entity types.
+
+CZ_Name_G = {
+	type = character
+
+	text = {
+		localization_key = CZ_Name_G_native
+		fallback = yes
+	}
+}
+
+CZ_Name_D = {
+	type = character
+
+	text = {
+		localization_key = CZ_Name_D_native
+		fallback = yes
+	}
+}
+
+CZ_Name_A = {
+	type = character
+
+	text = {
+		localization_key = CZ_Name_A_native
+		fallback = yes
+	}
+}
+
+CZ_Name_V = {
+	type = character
+
+	text = {
+		localization_key = CZ_Name_V_native
+		fallback = yes
+	}
+}
+
+CZ_Name_L = {
+	type = character
+
+	text = {
+		localization_key = CZ_Name_L_native
+		fallback = yes
+	}
+}
+
+CZ_Name_I = {
+	type = character
+
+	text = {
+		localization_key = CZ_Name_I_native
+		fallback = yes
+	}
+}
+
+
+###################################
+## NameNoTooltip
+###################################
+# Source: GetNameNoTooltip
+# STATUS: PLACEHOLDER
+# PLACEHOLDER ONLY: suffix reserves a future contract; NO Czech transformation is implemented. Every output returns its exact original getter. Do not use as a supported translation/QA replacement.
+# Character scope only. Native GetName structure has not been verified across character states; do not alias to FirstName/TitledFirstName/FullName or apply to other entity types.
+
+CZ_NameNoTooltip_G = {
+	type = character
+
+	text = {
+		localization_key = CZ_NameNoTooltip_G_native
+		fallback = yes
+	}
+}
+
+CZ_NameNoTooltip_D = {
+	type = character
+
+	text = {
+		localization_key = CZ_NameNoTooltip_D_native
+		fallback = yes
+	}
+}
+
+CZ_NameNoTooltip_A = {
+	type = character
+
+	text = {
+		localization_key = CZ_NameNoTooltip_A_native
+		fallback = yes
+	}
+}
+
+CZ_NameNoTooltip_V = {
+	type = character
+
+	text = {
+		localization_key = CZ_NameNoTooltip_V_native
+		fallback = yes
+	}
+}
+
+CZ_NameNoTooltip_L = {
+	type = character
+
+	text = {
+		localization_key = CZ_NameNoTooltip_L_native
+		fallback = yes
+	}
+}
+
+CZ_NameNoTooltip_I = {
+	type = character
+
+	text = {
+		localization_key = CZ_NameNoTooltip_I_native
+		fallback = yes
+	}
+}
+
+
+###################################
+## NameRegnal
+###################################
+# Source: GetNameRegnal
+# STATUS: PLACEHOLDER
+# PLACEHOLDER ONLY: suffix reserves a future contract; NO Czech transformation is implemented. Every output returns its exact original getter. Do not use as a supported translation/QA replacement.
+# Character scope only. Native GetName structure has not been verified across character states; do not alias to FirstName/TitledFirstName/FullName or apply to other entity types.
+
+CZ_NameRegnal_G = {
+	type = character
+
+	text = {
+		localization_key = CZ_NameRegnal_G_native
+		fallback = yes
+	}
+}
+
+CZ_NameRegnal_D = {
+	type = character
+
+	text = {
+		localization_key = CZ_NameRegnal_D_native
+		fallback = yes
+	}
+}
+
+CZ_NameRegnal_A = {
+	type = character
+
+	text = {
+		localization_key = CZ_NameRegnal_A_native
+		fallback = yes
+	}
+}
+
+CZ_NameRegnal_V = {
+	type = character
+
+	text = {
+		localization_key = CZ_NameRegnal_V_native
+		fallback = yes
+	}
+}
+
+CZ_NameRegnal_L = {
+	type = character
+
+	text = {
+		localization_key = CZ_NameRegnal_L_native
+		fallback = yes
+	}
+}
+
+CZ_NameRegnal_I = {
+	type = character
+
+	text = {
+		localization_key = CZ_NameRegnal_I_native
+		fallback = yes
+	}
+}
+
+
+###################################
+## NameNoTooltipRegnal
+###################################
+# Source: GetNameNoTooltipRegnal
+# STATUS: PLACEHOLDER
+# PLACEHOLDER ONLY: suffix reserves a future contract; NO Czech transformation is implemented. Every output returns its exact original getter. Do not use as a supported translation/QA replacement.
+# Character scope only. Native GetName structure has not been verified across character states; do not alias to FirstName/TitledFirstName/FullName or apply to other entity types.
+
+CZ_NameNoTooltipRegnal_G = {
+	type = character
+
+	text = {
+		localization_key = CZ_NameNoTooltipRegnal_G_native
+		fallback = yes
+	}
+}
+
+CZ_NameNoTooltipRegnal_D = {
+	type = character
+
+	text = {
+		localization_key = CZ_NameNoTooltipRegnal_D_native
+		fallback = yes
+	}
+}
+
+CZ_NameNoTooltipRegnal_A = {
+	type = character
+
+	text = {
+		localization_key = CZ_NameNoTooltipRegnal_A_native
+		fallback = yes
+	}
+}
+
+CZ_NameNoTooltipRegnal_V = {
+	type = character
+
+	text = {
+		localization_key = CZ_NameNoTooltipRegnal_V_native
+		fallback = yes
+	}
+}
+
+CZ_NameNoTooltipRegnal_L = {
+	type = character
+
+	text = {
+		localization_key = CZ_NameNoTooltipRegnal_L_native
+		fallback = yes
+	}
+}
+
+CZ_NameNoTooltipRegnal_I = {
+	type = character
+
+	text = {
+		localization_key = CZ_NameNoTooltipRegnal_I_native
+		fallback = yes
+	}
+}
+
+
+###################################
+## NamePossessive
+###################################
+# Source: GetNamePossessive
+# STATUS: PLACEHOLDER
+# PLACEHOLDER ONLY: suffix reserves a future contract; NO Czech transformation is implemented. Every output returns its exact original getter. Do not use as a supported translation/QA replacement.
+# Character scope only. Native GetName structure has not been verified across character states; do not alias to FirstName/TitledFirstName/FullName or apply to other entity types.
+# M/F/N reserve the possessed noun gender. Future support must also dispatch male/female owner (2 x 3); no genitive alias.
+
+CZ_NamePossessive_M = {
+	type = character
+
+	text = {
+		trigger = {
+			is_female = yes
+		}
+		localization_key = CZ_NamePossessive_M_native_female
+	}
+
+	text = {
+		localization_key = CZ_NamePossessive_M_native_male
+		fallback = yes
+	}
+}
+
+CZ_NamePossessive_F = {
+	type = character
+
+	text = {
+		trigger = {
+			is_female = yes
+		}
+		localization_key = CZ_NamePossessive_F_native_female
+	}
+
+	text = {
+		localization_key = CZ_NamePossessive_F_native_male
+		fallback = yes
+	}
+}
+
+CZ_NamePossessive_N = {
+	type = character
+
+	text = {
+		trigger = {
+			is_female = yes
+		}
+		localization_key = CZ_NamePossessive_N_native_female
+	}
+
+	text = {
+		localization_key = CZ_NamePossessive_N_native_male
+		fallback = yes
+	}
+}
+
+
+###################################
+## NamePossessiveNoTooltip
+###################################
+# Source: GetNamePossessiveNoTooltip
+# STATUS: PLACEHOLDER
+# PLACEHOLDER ONLY: suffix reserves a future contract; NO Czech transformation is implemented. Every output returns its exact original getter. Do not use as a supported translation/QA replacement.
+# Character scope only. Native GetName structure has not been verified across character states; do not alias to FirstName/TitledFirstName/FullName or apply to other entity types.
+# M/F/N reserve the possessed noun gender. Future support must also dispatch male/female owner (2 x 3); no genitive alias.
+
+CZ_NamePossessiveNoTooltip_M = {
+	type = character
+
+	text = {
+		trigger = {
+			is_female = yes
+		}
+		localization_key = CZ_NamePossessiveNoTooltip_M_native_female
+	}
+
+	text = {
+		localization_key = CZ_NamePossessiveNoTooltip_M_native_male
+		fallback = yes
+	}
+}
+
+CZ_NamePossessiveNoTooltip_F = {
+	type = character
+
+	text = {
+		trigger = {
+			is_female = yes
+		}
+		localization_key = CZ_NamePossessiveNoTooltip_F_native_female
+	}
+
+	text = {
+		localization_key = CZ_NamePossessiveNoTooltip_F_native_male
+		fallback = yes
+	}
+}
+
+CZ_NamePossessiveNoTooltip_N = {
+	type = character
+
+	text = {
+		trigger = {
+			is_female = yes
+		}
+		localization_key = CZ_NamePossessiveNoTooltip_N_native_female
+	}
+
+	text = {
+		localization_key = CZ_NamePossessiveNoTooltip_N_native_male
+		fallback = yes
+	}
+}
+
+
+###################################
+## NameNicknamed
+###################################
+# Source: GetNameNicknamed
+# STATUS: PLACEHOLDER
+# PLACEHOLDER ONLY: suffix reserves a future contract; NO Czech transformation is implemented. Every output returns its exact original getter. Do not use as a supported translation/QA replacement.
+# Character scope only. Native GetName structure has not been verified across character states; do not alias to FirstName/TitledFirstName/FullName or apply to other entity types.
+
+CZ_NameNicknamed_G = {
+	type = character
+
+	text = {
+		localization_key = CZ_NameNicknamed_G_native
+		fallback = yes
+	}
+}
+
+CZ_NameNicknamed_D = {
+	type = character
+
+	text = {
+		localization_key = CZ_NameNicknamed_D_native
+		fallback = yes
+	}
+}
+
+CZ_NameNicknamed_A = {
+	type = character
+
+	text = {
+		localization_key = CZ_NameNicknamed_A_native
+		fallback = yes
+	}
+}
+
+CZ_NameNicknamed_V = {
+	type = character
+
+	text = {
+		localization_key = CZ_NameNicknamed_V_native
+		fallback = yes
+	}
+}
+
+CZ_NameNicknamed_L = {
+	type = character
+
+	text = {
+		localization_key = CZ_NameNicknamed_L_native
+		fallback = yes
+	}
+}
+
+CZ_NameNicknamed_I = {
+	type = character
+
+	text = {
+		localization_key = CZ_NameNicknamed_I_native
+		fallback = yes
+	}
+}
+
+
+###################################
+## TitleAsNamePossessive
+###################################
+# Source: GetTitleAsNamePossessive
+# STATUS: PLACEHOLDER
+# PLACEHOLDER ONLY: suffix reserves a future contract; NO Czech transformation is implemented. Every output returns its exact original getter. Do not use as a supported translation/QA replacement.
+# Existing title macros implement cases, not possessive adjective morphology. A single-word/multiword title possessive composer has no established equivalent. Do not silently substitute TitleAsName_G.
+# M/F/N reserve the possessed noun gender. Future support must also dispatch male/female owner (2 x 3); no genitive alias.
+
+CZ_TitleAsNamePossessive_M = {
+	type = character
+
+	text = {
+		trigger = {
+			is_female = yes
+		}
+		localization_key = CZ_TitleAsNamePossessive_M_native_female
+	}
+
+	text = {
+		localization_key = CZ_TitleAsNamePossessive_M_native_male
+		fallback = yes
+	}
+}
+
+CZ_TitleAsNamePossessive_F = {
+	type = character
+
+	text = {
+		trigger = {
+			is_female = yes
+		}
+		localization_key = CZ_TitleAsNamePossessive_F_native_female
+	}
+
+	text = {
+		localization_key = CZ_TitleAsNamePossessive_F_native_male
+		fallback = yes
+	}
+}
+
+CZ_TitleAsNamePossessive_N = {
+	type = character
+
+	text = {
+		trigger = {
+			is_female = yes
+		}
+		localization_key = CZ_TitleAsNamePossessive_N_native_female
+	}
+
+	text = {
+		localization_key = CZ_TitleAsNamePossessive_N_native_male
+		fallback = yes
+	}
+}
+
+
+###################################
+## TitleAsNamePossessiveNoTooltip
+###################################
+# Source: GetTitleAsNamePossessiveNoTooltip
+# STATUS: PLACEHOLDER
+# PLACEHOLDER ONLY: suffix reserves a future contract; NO Czech transformation is implemented. Every output returns its exact original getter. Do not use as a supported translation/QA replacement.
+# Existing title macros implement cases, not possessive adjective morphology. A single-word/multiword title possessive composer has no established equivalent. Do not silently substitute TitleAsName_G.
+# M/F/N reserve the possessed noun gender. Future support must also dispatch male/female owner (2 x 3); no genitive alias.
+
+CZ_TitleAsNamePossessiveNoTooltip_M = {
+	type = character
+
+	text = {
+		trigger = {
+			is_female = yes
+		}
+		localization_key = CZ_TitleAsNamePossessiveNoTooltip_M_native_female
+	}
+
+	text = {
+		localization_key = CZ_TitleAsNamePossessiveNoTooltip_M_native_male
+		fallback = yes
+	}
+}
+
+CZ_TitleAsNamePossessiveNoTooltip_F = {
+	type = character
+
+	text = {
+		trigger = {
+			is_female = yes
+		}
+		localization_key = CZ_TitleAsNamePossessiveNoTooltip_F_native_female
+	}
+
+	text = {
+		localization_key = CZ_TitleAsNamePossessiveNoTooltip_F_native_male
+		fallback = yes
+	}
+}
+
+CZ_TitleAsNamePossessiveNoTooltip_N = {
+	type = character
+
+	text = {
+		trigger = {
+			is_female = yes
+		}
+		localization_key = CZ_TitleAsNamePossessiveNoTooltip_N_native_female
+	}
+
+	text = {
+		localization_key = CZ_TitleAsNamePossessiveNoTooltip_N_native_male
+		fallback = yes
+	}
+}
+
+
+###################################
+## TitledFirstNamePossessive
+###################################
+# Source: GetTitledFirstNamePossessive
+# STATUS: PLACEHOLDER
+# PLACEHOLDER ONLY: suffix reserves a future contract; NO Czech transformation is implemented. Every output returns its exact original getter. Do not use as a supported translation/QA replacement.
+# FirstName possessive alone would discard the title. Joining title nominative to Karluv/Karlova/Karlovo is not an established Czech possessive phrase. No verified 2 x 3 composer preserves the complete titled name; do not alias to genitive or ShortUINamePossessive.
+# M/F/N reserve the possessed noun gender. Future support must also dispatch male/female owner (2 x 3); no genitive alias.
+
+CZ_TitledFirstNamePossessive_M = {
+	type = character
+
+	text = {
+		trigger = {
+			is_female = yes
+		}
+		localization_key = CZ_TitledFirstNamePossessive_M_native_female
+	}
+
+	text = {
+		localization_key = CZ_TitledFirstNamePossessive_M_native_male
+		fallback = yes
+	}
+}
+
+CZ_TitledFirstNamePossessive_F = {
+	type = character
+
+	text = {
+		trigger = {
+			is_female = yes
+		}
+		localization_key = CZ_TitledFirstNamePossessive_F_native_female
+	}
+
+	text = {
+		localization_key = CZ_TitledFirstNamePossessive_F_native_male
+		fallback = yes
+	}
+}
+
+CZ_TitledFirstNamePossessive_N = {
+	type = character
+
+	text = {
+		trigger = {
+			is_female = yes
+		}
+		localization_key = CZ_TitledFirstNamePossessive_N_native_female
+	}
+
+	text = {
+		localization_key = CZ_TitledFirstNamePossessive_N_native_male
+		fallback = yes
+	}
+}
+
+
+###################################
+## TitledFirstNamePossessiveNoTooltip
+###################################
+# Source: GetTitledFirstNamePossessiveNoTooltip
+# STATUS: PLACEHOLDER
+# PLACEHOLDER ONLY: suffix reserves a future contract; NO Czech transformation is implemented. Every output returns its exact original getter. Do not use as a supported translation/QA replacement.
+# FirstName possessive alone would discard the title. Joining title nominative to Karluv/Karlova/Karlovo is not an established Czech possessive phrase. No verified 2 x 3 composer preserves the complete titled name; do not alias to genitive or ShortUINamePossessive.
+# M/F/N reserve the possessed noun gender. Future support must also dispatch male/female owner (2 x 3); no genitive alias.
+
+CZ_TitledFirstNamePossessiveNoTooltip_M = {
+	type = character
+
+	text = {
+		trigger = {
+			is_female = yes
+		}
+		localization_key = CZ_TitledFirstNamePossessiveNoTooltip_M_native_female
+	}
+
+	text = {
+		localization_key = CZ_TitledFirstNamePossessiveNoTooltip_M_native_male
+		fallback = yes
+	}
+}
+
+CZ_TitledFirstNamePossessiveNoTooltip_F = {
+	type = character
+
+	text = {
+		trigger = {
+			is_female = yes
+		}
+		localization_key = CZ_TitledFirstNamePossessiveNoTooltip_F_native_female
+	}
+
+	text = {
+		localization_key = CZ_TitledFirstNamePossessiveNoTooltip_F_native_male
+		fallback = yes
+	}
+}
+
+CZ_TitledFirstNamePossessiveNoTooltip_N = {
+	type = character
+
+	text = {
+		trigger = {
+			is_female = yes
+		}
+		localization_key = CZ_TitledFirstNamePossessiveNoTooltip_N_native_female
+	}
+
+	text = {
+		localization_key = CZ_TitledFirstNamePossessiveNoTooltip_N_native_male
+		fallback = yes
+	}
+}
+
+
+###################################
+## TitledFirstNamePossessiveRegnal
+###################################
+# Source: GetTitledFirstNamePossessiveRegnal
+# STATUS: PLACEHOLDER
+# PLACEHOLDER ONLY: suffix reserves a future contract; NO Czech transformation is implemented. Every output returns its exact original getter. Do not use as a supported translation/QA replacement.
+# FirstName possessive alone would discard the title. Joining title nominative to Karluv/Karlova/Karlovo is not an established Czech possessive phrase. No verified 2 x 3 composer preserves the complete titled name; do not alias to genitive or ShortUINamePossessive.
+# M/F/N reserve the possessed noun gender. Future support must also dispatch male/female owner (2 x 3); no genitive alias.
+
+CZ_TitledFirstNamePossessiveRegnal_M = {
+	type = character
+
+	text = {
+		trigger = {
+			is_female = yes
+		}
+		localization_key = CZ_TitledFirstNamePossessiveRegnal_M_native_female
+	}
+
+	text = {
+		localization_key = CZ_TitledFirstNamePossessiveRegnal_M_native_male
+		fallback = yes
+	}
+}
+
+CZ_TitledFirstNamePossessiveRegnal_F = {
+	type = character
+
+	text = {
+		trigger = {
+			is_female = yes
+		}
+		localization_key = CZ_TitledFirstNamePossessiveRegnal_F_native_female
+	}
+
+	text = {
+		localization_key = CZ_TitledFirstNamePossessiveRegnal_F_native_male
+		fallback = yes
+	}
+}
+
+CZ_TitledFirstNamePossessiveRegnal_N = {
+	type = character
+
+	text = {
+		trigger = {
+			is_female = yes
+		}
+		localization_key = CZ_TitledFirstNamePossessiveRegnal_N_native_female
+	}
+
+	text = {
+		localization_key = CZ_TitledFirstNamePossessiveRegnal_N_native_male
+		fallback = yes
+	}
+}
+
+
+###################################
+## TitledFirstNameNicknamed
+###################################
+# Source: GetTitledFirstNameNicknamed
+# STATUS: IMPLEMENTED (guarded reconstruction)
+# Reuse existing FirstName/TitleAsName cases and exact prefix reconstruction. Preserve nickname/dynasty/territory suffix unchanged. Unmatched output returns this native getter.
+
+CZ_TitledFirstNameNicknamed_G = {
+	type = character
+
+	text = {
+		localization_key = CZ_TitledFirstNameNicknamed_G_character
+		fallback = yes
+	}
+}
+
+CZ_TitledFirstNameNicknamed_D = {
+	type = character
+
+	text = {
+		localization_key = CZ_TitledFirstNameNicknamed_D_character
+		fallback = yes
+	}
+}
+
+CZ_TitledFirstNameNicknamed_A = {
+	type = character
+
+	text = {
+		localization_key = CZ_TitledFirstNameNicknamed_A_character
+		fallback = yes
+	}
+}
+
+CZ_TitledFirstNameNicknamed_V = {
+	type = character
+
+	text = {
+		localization_key = CZ_TitledFirstNameNicknamed_V_character
+		fallback = yes
+	}
+}
+
+CZ_TitledFirstNameNicknamed_L = {
+	type = character
+
+	text = {
+		localization_key = CZ_TitledFirstNameNicknamed_L_character
+		fallback = yes
+	}
+}
+
+CZ_TitledFirstNameNicknamed_I = {
+	type = character
+
+	text = {
+		localization_key = CZ_TitledFirstNameNicknamed_I_character
+		fallback = yes
+	}
+}
+
+
+###################################
+## TitledFirstNameNicknamedNoTooltip
+###################################
+# Source: GetTitledFirstNameNicknamedNoTooltip
+# STATUS: IMPLEMENTED (guarded reconstruction)
+# Reuse existing FirstName/TitleAsName cases and exact prefix reconstruction. Preserve nickname/dynasty/territory suffix unchanged. Unmatched output returns this native getter.
+
+CZ_TitledFirstNameNicknamedNoTooltip_G = {
+	type = character
+
+	text = {
+		localization_key = CZ_TitledFirstNameNicknamedNoTooltip_G_character
+		fallback = yes
+	}
+}
+
+CZ_TitledFirstNameNicknamedNoTooltip_D = {
+	type = character
+
+	text = {
+		localization_key = CZ_TitledFirstNameNicknamedNoTooltip_D_character
+		fallback = yes
+	}
+}
+
+CZ_TitledFirstNameNicknamedNoTooltip_A = {
+	type = character
+
+	text = {
+		localization_key = CZ_TitledFirstNameNicknamedNoTooltip_A_character
+		fallback = yes
+	}
+}
+
+CZ_TitledFirstNameNicknamedNoTooltip_V = {
+	type = character
+
+	text = {
+		localization_key = CZ_TitledFirstNameNicknamedNoTooltip_V_character
+		fallback = yes
+	}
+}
+
+CZ_TitledFirstNameNicknamedNoTooltip_L = {
+	type = character
+
+	text = {
+		localization_key = CZ_TitledFirstNameNicknamedNoTooltip_L_character
+		fallback = yes
+	}
+}
+
+CZ_TitledFirstNameNicknamedNoTooltip_I = {
+	type = character
+
+	text = {
+		localization_key = CZ_TitledFirstNameNicknamedNoTooltip_I_character
+		fallback = yes
+	}
+}
+
+
+###################################
+## TitledFirstNameNicknamedRegnal
+###################################
+# Source: GetTitledFirstNameNicknamedRegnal
+# STATUS: IMPLEMENTED (guarded reconstruction)
+# Reuse existing FirstName/TitleAsName cases and exact prefix reconstruction. Preserve nickname/dynasty/territory suffix unchanged. Unmatched output returns this native getter.
+
+CZ_TitledFirstNameNicknamedRegnal_G = {
+	type = character
+
+	text = {
+		localization_key = CZ_TitledFirstNameNicknamedRegnal_G_character
+		fallback = yes
+	}
+}
+
+CZ_TitledFirstNameNicknamedRegnal_D = {
+	type = character
+
+	text = {
+		localization_key = CZ_TitledFirstNameNicknamedRegnal_D_character
+		fallback = yes
+	}
+}
+
+CZ_TitledFirstNameNicknamedRegnal_A = {
+	type = character
+
+	text = {
+		localization_key = CZ_TitledFirstNameNicknamedRegnal_A_character
+		fallback = yes
+	}
+}
+
+CZ_TitledFirstNameNicknamedRegnal_V = {
+	type = character
+
+	text = {
+		localization_key = CZ_TitledFirstNameNicknamedRegnal_V_character
+		fallback = yes
+	}
+}
+
+CZ_TitledFirstNameNicknamedRegnal_L = {
+	type = character
+
+	text = {
+		localization_key = CZ_TitledFirstNameNicknamedRegnal_L_character
+		fallback = yes
+	}
+}
+
+CZ_TitledFirstNameNicknamedRegnal_I = {
+	type = character
+
+	text = {
+		localization_key = CZ_TitledFirstNameNicknamedRegnal_I_character
+		fallback = yes
+	}
+}
+
+
+###################################
+## TitledFirstNameNicknamedNoTooltipRegnal
+###################################
+# Source: GetTitledFirstNameNicknamedNoTooltipRegnal
+# STATUS: IMPLEMENTED (guarded reconstruction)
+# Reuse existing FirstName/TitleAsName cases and exact prefix reconstruction. Preserve nickname/dynasty/territory suffix unchanged. Unmatched output returns this native getter.
+
+CZ_TitledFirstNameNicknamedNoTooltipRegnal_G = {
+	type = character
+
+	text = {
+		localization_key = CZ_TitledFirstNameNicknamedNoTooltipRegnal_G_character
+		fallback = yes
+	}
+}
+
+CZ_TitledFirstNameNicknamedNoTooltipRegnal_D = {
+	type = character
+
+	text = {
+		localization_key = CZ_TitledFirstNameNicknamedNoTooltipRegnal_D_character
+		fallback = yes
+	}
+}
+
+CZ_TitledFirstNameNicknamedNoTooltipRegnal_A = {
+	type = character
+
+	text = {
+		localization_key = CZ_TitledFirstNameNicknamedNoTooltipRegnal_A_character
+		fallback = yes
+	}
+}
+
+CZ_TitledFirstNameNicknamedNoTooltipRegnal_V = {
+	type = character
+
+	text = {
+		localization_key = CZ_TitledFirstNameNicknamedNoTooltipRegnal_V_character
+		fallback = yes
+	}
+}
+
+CZ_TitledFirstNameNicknamedNoTooltipRegnal_L = {
+	type = character
+
+	text = {
+		localization_key = CZ_TitledFirstNameNicknamedNoTooltipRegnal_L_character
+		fallback = yes
+	}
+}
+
+CZ_TitledFirstNameNicknamedNoTooltipRegnal_I = {
+	type = character
+
+	text = {
+		localization_key = CZ_TitledFirstNameNicknamedNoTooltipRegnal_I_character
+		fallback = yes
+	}
+}
+
+
+###################################
+## TitledFirstNameNicknamedPossessive
+###################################
+# Source: GetTitledFirstNameNicknamedPossessive
+# STATUS: PLACEHOLDER
+# PLACEHOLDER ONLY: suffix reserves a future contract; NO Czech transformation is implemented. Every output returns its exact original getter. Do not use as a supported translation/QA replacement.
+# No verified possessive composer for title + personal name + nickname. Preserve all native information until that contract is implemented.
+# M/F/N reserve the possessed noun gender. Future support must also dispatch male/female owner (2 x 3); no genitive alias.
+
+CZ_TitledFirstNameNicknamedPossessive_M = {
+	type = character
+
+	text = {
+		trigger = {
+			is_female = yes
+		}
+		localization_key = CZ_TitledFirstNameNicknamedPossessive_M_native_female
+	}
+
+	text = {
+		localization_key = CZ_TitledFirstNameNicknamedPossessive_M_native_male
+		fallback = yes
+	}
+}
+
+CZ_TitledFirstNameNicknamedPossessive_F = {
+	type = character
+
+	text = {
+		trigger = {
+			is_female = yes
+		}
+		localization_key = CZ_TitledFirstNameNicknamedPossessive_F_native_female
+	}
+
+	text = {
+		localization_key = CZ_TitledFirstNameNicknamedPossessive_F_native_male
+		fallback = yes
+	}
+}
+
+CZ_TitledFirstNameNicknamedPossessive_N = {
+	type = character
+
+	text = {
+		trigger = {
+			is_female = yes
+		}
+		localization_key = CZ_TitledFirstNameNicknamedPossessive_N_native_female
+	}
+
+	text = {
+		localization_key = CZ_TitledFirstNameNicknamedPossessive_N_native_male
+		fallback = yes
+	}
+}
+
+
+###################################
+## FullNameRegnal
+###################################
+# Source: GetFullNameRegnal
+# STATUS: IMPLEMENTED (guarded reconstruction)
+# Reuse existing FirstName/TitleAsName cases and exact prefix reconstruction. Preserve nickname/dynasty/territory suffix unchanged. Unmatched output returns this native getter.
+
+CZ_FullNameRegnal_G = {
+	type = character
+
+	text = {
+		localization_key = CZ_FullNameRegnal_G_character
+		fallback = yes
+	}
+}
+
+CZ_FullNameRegnal_D = {
+	type = character
+
+	text = {
+		localization_key = CZ_FullNameRegnal_D_character
+		fallback = yes
+	}
+}
+
+CZ_FullNameRegnal_A = {
+	type = character
+
+	text = {
+		localization_key = CZ_FullNameRegnal_A_character
+		fallback = yes
+	}
+}
+
+CZ_FullNameRegnal_V = {
+	type = character
+
+	text = {
+		localization_key = CZ_FullNameRegnal_V_character
+		fallback = yes
+	}
+}
+
+CZ_FullNameRegnal_L = {
+	type = character
+
+	text = {
+		localization_key = CZ_FullNameRegnal_L_character
+		fallback = yes
+	}
+}
+
+CZ_FullNameRegnal_I = {
+	type = character
+
+	text = {
+		localization_key = CZ_FullNameRegnal_I_character
+		fallback = yes
+	}
+}
+
+
+###################################
+## FullNameNoTooltipRegnal
+###################################
+# Source: GetFullNameNoTooltipRegnal
+# STATUS: IMPLEMENTED (guarded reconstruction)
+# Reuse existing FirstName/TitleAsName cases and exact prefix reconstruction. Preserve nickname/dynasty/territory suffix unchanged. Unmatched output returns this native getter.
+
+CZ_FullNameNoTooltipRegnal_G = {
+	type = character
+
+	text = {
+		localization_key = CZ_FullNameNoTooltipRegnal_G_character
+		fallback = yes
+	}
+}
+
+CZ_FullNameNoTooltipRegnal_D = {
+	type = character
+
+	text = {
+		localization_key = CZ_FullNameNoTooltipRegnal_D_character
+		fallback = yes
+	}
+}
+
+CZ_FullNameNoTooltipRegnal_A = {
+	type = character
+
+	text = {
+		localization_key = CZ_FullNameNoTooltipRegnal_A_character
+		fallback = yes
+	}
+}
+
+CZ_FullNameNoTooltipRegnal_V = {
+	type = character
+
+	text = {
+		localization_key = CZ_FullNameNoTooltipRegnal_V_character
+		fallback = yes
+	}
+}
+
+CZ_FullNameNoTooltipRegnal_L = {
+	type = character
+
+	text = {
+		localization_key = CZ_FullNameNoTooltipRegnal_L_character
+		fallback = yes
+	}
+}
+
+CZ_FullNameNoTooltipRegnal_I = {
+	type = character
+
+	text = {
+		localization_key = CZ_FullNameNoTooltipRegnal_I_character
+		fallback = yes
+	}
+}
+
+
+###################################
+## FullNameNicknamed
+###################################
+# Source: GetFullNameNicknamed
+# STATUS: IMPLEMENTED (guarded reconstruction)
+# Reuse existing FirstName/TitleAsName cases and exact prefix reconstruction. Preserve nickname/dynasty/territory suffix unchanged. Unmatched output returns this native getter.
+
+CZ_FullNameNicknamed_G = {
+	type = character
+
+	text = {
+		localization_key = CZ_FullNameNicknamed_G_character
+		fallback = yes
+	}
+}
+
+CZ_FullNameNicknamed_D = {
+	type = character
+
+	text = {
+		localization_key = CZ_FullNameNicknamed_D_character
+		fallback = yes
+	}
+}
+
+CZ_FullNameNicknamed_A = {
+	type = character
+
+	text = {
+		localization_key = CZ_FullNameNicknamed_A_character
+		fallback = yes
+	}
+}
+
+CZ_FullNameNicknamed_V = {
+	type = character
+
+	text = {
+		localization_key = CZ_FullNameNicknamed_V_character
+		fallback = yes
+	}
+}
+
+CZ_FullNameNicknamed_L = {
+	type = character
+
+	text = {
+		localization_key = CZ_FullNameNicknamed_L_character
+		fallback = yes
+	}
+}
+
+CZ_FullNameNicknamed_I = {
+	type = character
+
+	text = {
+		localization_key = CZ_FullNameNicknamed_I_character
+		fallback = yes
+	}
+}
+
+
+###################################
+## FullNameNicknamedNoTooltip
+###################################
+# Source: GetFullNameNicknamedNoTooltip
+# STATUS: IMPLEMENTED (guarded reconstruction)
+# Reuse existing FirstName/TitleAsName cases and exact prefix reconstruction. Preserve nickname/dynasty/territory suffix unchanged. Unmatched output returns this native getter.
+
+CZ_FullNameNicknamedNoTooltip_G = {
+	type = character
+
+	text = {
+		localization_key = CZ_FullNameNicknamedNoTooltip_G_character
+		fallback = yes
+	}
+}
+
+CZ_FullNameNicknamedNoTooltip_D = {
+	type = character
+
+	text = {
+		localization_key = CZ_FullNameNicknamedNoTooltip_D_character
+		fallback = yes
+	}
+}
+
+CZ_FullNameNicknamedNoTooltip_A = {
+	type = character
+
+	text = {
+		localization_key = CZ_FullNameNicknamedNoTooltip_A_character
+		fallback = yes
+	}
+}
+
+CZ_FullNameNicknamedNoTooltip_V = {
+	type = character
+
+	text = {
+		localization_key = CZ_FullNameNicknamedNoTooltip_V_character
+		fallback = yes
+	}
+}
+
+CZ_FullNameNicknamedNoTooltip_L = {
+	type = character
+
+	text = {
+		localization_key = CZ_FullNameNicknamedNoTooltip_L_character
+		fallback = yes
+	}
+}
+
+CZ_FullNameNicknamedNoTooltip_I = {
+	type = character
+
+	text = {
+		localization_key = CZ_FullNameNicknamedNoTooltip_I_character
+		fallback = yes
+	}
+}
+
+
+###################################
+## FullNameNicknamedNoTooltipRegnal
+###################################
+# Source: GetFullNameNicknamedNoTooltipRegnal
+# STATUS: IMPLEMENTED (guarded reconstruction)
+# Reuse existing FirstName/TitleAsName cases and exact prefix reconstruction. Preserve nickname/dynasty/territory suffix unchanged. Unmatched output returns this native getter.
+
+CZ_FullNameNicknamedNoTooltipRegnal_G = {
+	type = character
+
+	text = {
+		localization_key = CZ_FullNameNicknamedNoTooltipRegnal_G_character
+		fallback = yes
+	}
+}
+
+CZ_FullNameNicknamedNoTooltipRegnal_D = {
+	type = character
+
+	text = {
+		localization_key = CZ_FullNameNicknamedNoTooltipRegnal_D_character
+		fallback = yes
+	}
+}
+
+CZ_FullNameNicknamedNoTooltipRegnal_A = {
+	type = character
+
+	text = {
+		localization_key = CZ_FullNameNicknamedNoTooltipRegnal_A_character
+		fallback = yes
+	}
+}
+
+CZ_FullNameNicknamedNoTooltipRegnal_V = {
+	type = character
+
+	text = {
+		localization_key = CZ_FullNameNicknamedNoTooltipRegnal_V_character
+		fallback = yes
+	}
+}
+
+CZ_FullNameNicknamedNoTooltipRegnal_L = {
+	type = character
+
+	text = {
+		localization_key = CZ_FullNameNicknamedNoTooltipRegnal_L_character
+		fallback = yes
+	}
+}
+
+CZ_FullNameNicknamedNoTooltipRegnal_I = {
+	type = character
+
+	text = {
+		localization_key = CZ_FullNameNicknamedNoTooltipRegnal_I_character
+		fallback = yes
+	}
+}
+
+
+###################################
+## FullNamePossessive
+###################################
+# Source: GetFullNamePossessive
+# STATUS: PLACEHOLDER
+# PLACEHOLDER ONLY: suffix reserves a future contract; NO Czech transformation is implemented. Every output returns its exact original getter. Do not use as a supported translation/QA replacement.
+# FirstName possessive cannot safely compose the title/dynasty/nickname remainder into a complete 2 x 3 possessive phrase. Do not drop the remainder or reuse FullName_G as a possessive adjective.
+# M/F/N reserve the possessed noun gender. Future support must also dispatch male/female owner (2 x 3); no genitive alias.
+
+CZ_FullNamePossessive_M = {
+	type = character
+
+	text = {
+		trigger = {
+			is_female = yes
+		}
+		localization_key = CZ_FullNamePossessive_M_native_female
+	}
+
+	text = {
+		localization_key = CZ_FullNamePossessive_M_native_male
+		fallback = yes
+	}
+}
+
+CZ_FullNamePossessive_F = {
+	type = character
+
+	text = {
+		trigger = {
+			is_female = yes
+		}
+		localization_key = CZ_FullNamePossessive_F_native_female
+	}
+
+	text = {
+		localization_key = CZ_FullNamePossessive_F_native_male
+		fallback = yes
+	}
+}
+
+CZ_FullNamePossessive_N = {
+	type = character
+
+	text = {
+		trigger = {
+			is_female = yes
+		}
+		localization_key = CZ_FullNamePossessive_N_native_female
+	}
+
+	text = {
+		localization_key = CZ_FullNamePossessive_N_native_male
+		fallback = yes
+	}
+}
+
+
+###################################
+## FullNameNicknamedPossessive
+###################################
+# Source: GetFullNameNicknamedPossessive
+# STATUS: PLACEHOLDER
+# PLACEHOLDER ONLY: suffix reserves a future contract; NO Czech transformation is implemented. Every output returns its exact original getter. Do not use as a supported translation/QA replacement.
+# FirstName possessive cannot safely compose the title/dynasty/nickname remainder into a complete 2 x 3 possessive phrase. Do not drop the remainder or reuse FullName_G as a possessive adjective.
+# M/F/N reserve the possessed noun gender. Future support must also dispatch male/female owner (2 x 3); no genitive alias.
+
+CZ_FullNameNicknamedPossessive_M = {
+	type = character
+
+	text = {
+		trigger = {
+			is_female = yes
+		}
+		localization_key = CZ_FullNameNicknamedPossessive_M_native_female
+	}
+
+	text = {
+		localization_key = CZ_FullNameNicknamedPossessive_M_native_male
+		fallback = yes
+	}
+}
+
+CZ_FullNameNicknamedPossessive_F = {
+	type = character
+
+	text = {
+		trigger = {
+			is_female = yes
+		}
+		localization_key = CZ_FullNameNicknamedPossessive_F_native_female
+	}
+
+	text = {
+		localization_key = CZ_FullNameNicknamedPossessive_F_native_male
+		fallback = yes
+	}
+}
+
+CZ_FullNameNicknamedPossessive_N = {
+	type = character
+
+	text = {
+		trigger = {
+			is_female = yes
+		}
+		localization_key = CZ_FullNameNicknamedPossessive_N_native_female
+	}
+
+	text = {
+		localization_key = CZ_FullNameNicknamedPossessive_N_native_male
+		fallback = yes
+	}
+}
+
+
+###################################
+## ShortUINameNoTooltipNoFormat
+###################################
+# Source: GetShortUINameNoTooltipNoFormat
+# STATUS: IMPLEMENTED (guarded reconstruction)
+# Reuse existing FirstName/TitleAsName cases and exact prefix reconstruction. Preserve nickname/dynasty/territory suffix unchanged. Unmatched output returns this native getter.
+# NOFORMAT: raw/plain output; never add rich formatting or tooltip wrappers.
+# PLAYER: original native getter retained. It may be a pronoun, so the surrounding verb/person and word order must follow the player branch.
+
+CZ_ShortUINameNoTooltipNoFormat_G = {
+	type = character
+
+	# PLAYER: native pronoun/possessive is intentional; check sentence person and word order.
+	text = {
+		trigger = {
+			is_local_player = yes
+		}
+		localization_key = CZ_ShortUINameNoTooltipNoFormat_G_player
+	}
+
+	text = {
+		localization_key = CZ_ShortUINameNoTooltipNoFormat_G_character
+		fallback = yes
+	}
+}
+
+CZ_ShortUINameNoTooltipNoFormat_D = {
+	type = character
+
+	# PLAYER: native pronoun/possessive is intentional; check sentence person and word order.
+	text = {
+		trigger = {
+			is_local_player = yes
+		}
+		localization_key = CZ_ShortUINameNoTooltipNoFormat_D_player
+	}
+
+	text = {
+		localization_key = CZ_ShortUINameNoTooltipNoFormat_D_character
+		fallback = yes
+	}
+}
+
+CZ_ShortUINameNoTooltipNoFormat_A = {
+	type = character
+
+	# PLAYER: native pronoun/possessive is intentional; check sentence person and word order.
+	text = {
+		trigger = {
+			is_local_player = yes
+		}
+		localization_key = CZ_ShortUINameNoTooltipNoFormat_A_player
+	}
+
+	text = {
+		localization_key = CZ_ShortUINameNoTooltipNoFormat_A_character
+		fallback = yes
+	}
+}
+
+CZ_ShortUINameNoTooltipNoFormat_V = {
+	type = character
+
+	# PLAYER: native pronoun/possessive is intentional; check sentence person and word order.
+	text = {
+		trigger = {
+			is_local_player = yes
+		}
+		localization_key = CZ_ShortUINameNoTooltipNoFormat_V_player
+	}
+
+	text = {
+		localization_key = CZ_ShortUINameNoTooltipNoFormat_V_character
+		fallback = yes
+	}
+}
+
+CZ_ShortUINameNoTooltipNoFormat_L = {
+	type = character
+
+	# PLAYER: native pronoun/possessive is intentional; check sentence person and word order.
+	text = {
+		trigger = {
+			is_local_player = yes
+		}
+		localization_key = CZ_ShortUINameNoTooltipNoFormat_L_player
+	}
+
+	text = {
+		localization_key = CZ_ShortUINameNoTooltipNoFormat_L_character
+		fallback = yes
+	}
+}
+
+CZ_ShortUINameNoTooltipNoFormat_I = {
+	type = character
+
+	# PLAYER: native pronoun/possessive is intentional; check sentence person and word order.
+	text = {
+		trigger = {
+			is_local_player = yes
+		}
+		localization_key = CZ_ShortUINameNoTooltipNoFormat_I_player
+	}
+
+	text = {
+		localization_key = CZ_ShortUINameNoTooltipNoFormat_I_character
+		fallback = yes
+	}
+}
+
+
+###################################
+## ShortUINamePossessiveNoTooltipNoFormat
+###################################
+# Source: GetShortUINamePossessiveNoTooltipNoFormat
+# STATUS: IMPLEMENTED (legacy ShortUI possessive contract; guarded)
+# Equivalent of existing ShortUINamePossessiveNoTooltip composition without rich formatting; CZJoin handles an empty title.
+# PLAYER: keep exact native possessive output. Legacy contract intentionally differs: player possessive precedes the noun (tvuj mec), non-player genitive follows it (mec krale Artuse). Caller must branch the whole phrase/order. This is not the 2 x 3 personal-name possessive family. Unmatched ordinary name structure returns the original possessive getter.
+
+CZ_ShortUINamePossessiveNoTooltipNoFormat = {
+	type = character
+
+	# PLAYER: native pronoun/possessive is intentional; check sentence person and word order.
+	text = {
+		trigger = {
+			is_local_player = yes
+		}
+		localization_key = CZ_ShortUINamePossessiveNoTooltipNoFormat_player
+	}
+
+	text = {
+		localization_key = CZ_ShortUINamePossessiveNoTooltipNoFormat_character
+		fallback = yes
+	}
+}
+
+
+###################################
+## UINameNoTooltip
+###################################
+# Source: GetUINameNoTooltip
+# STATUS: IMPLEMENTED (guarded reconstruction)
+# Reuse existing FirstName/TitleAsName cases and exact prefix reconstruction. Preserve nickname/dynasty/territory suffix unchanged. Unmatched output returns this native getter.
+# PLAYER: original native getter retained. It may be a pronoun, so the surrounding verb/person and word order must follow the player branch.
+
+CZ_UINameNoTooltip_G = {
+	type = character
+
+	# PLAYER: native pronoun/possessive is intentional; check sentence person and word order.
+	text = {
+		trigger = {
+			is_local_player = yes
+		}
+		localization_key = CZ_UINameNoTooltip_G_player
+	}
+
+	text = {
+		localization_key = CZ_UINameNoTooltip_G_character
+		fallback = yes
+	}
+}
+
+CZ_UINameNoTooltip_D = {
+	type = character
+
+	# PLAYER: native pronoun/possessive is intentional; check sentence person and word order.
+	text = {
+		trigger = {
+			is_local_player = yes
+		}
+		localization_key = CZ_UINameNoTooltip_D_player
+	}
+
+	text = {
+		localization_key = CZ_UINameNoTooltip_D_character
+		fallback = yes
+	}
+}
+
+CZ_UINameNoTooltip_A = {
+	type = character
+
+	# PLAYER: native pronoun/possessive is intentional; check sentence person and word order.
+	text = {
+		trigger = {
+			is_local_player = yes
+		}
+		localization_key = CZ_UINameNoTooltip_A_player
+	}
+
+	text = {
+		localization_key = CZ_UINameNoTooltip_A_character
+		fallback = yes
+	}
+}
+
+CZ_UINameNoTooltip_V = {
+	type = character
+
+	# PLAYER: native pronoun/possessive is intentional; check sentence person and word order.
+	text = {
+		trigger = {
+			is_local_player = yes
+		}
+		localization_key = CZ_UINameNoTooltip_V_player
+	}
+
+	text = {
+		localization_key = CZ_UINameNoTooltip_V_character
+		fallback = yes
+	}
+}
+
+CZ_UINameNoTooltip_L = {
+	type = character
+
+	# PLAYER: native pronoun/possessive is intentional; check sentence person and word order.
+	text = {
+		trigger = {
+			is_local_player = yes
+		}
+		localization_key = CZ_UINameNoTooltip_L_player
+	}
+
+	text = {
+		localization_key = CZ_UINameNoTooltip_L_character
+		fallback = yes
+	}
+}
+
+CZ_UINameNoTooltip_I = {
+	type = character
+
+	# PLAYER: native pronoun/possessive is intentional; check sentence person and word order.
+	text = {
+		trigger = {
+			is_local_player = yes
+		}
+		localization_key = CZ_UINameNoTooltip_I_player
+	}
+
+	text = {
+		localization_key = CZ_UINameNoTooltip_I_character
+		fallback = yes
+	}
+}
+
+
+###################################
+## UINameNotMe
+###################################
+# Source: GetUINameNotMe
+# STATUS: IMPLEMENTED (guarded reconstruction)
+# Reuse existing FirstName/TitleAsName cases and exact prefix reconstruction. Preserve nickname/dynasty/territory suffix unchanged. Unmatched output returns this native getter.
+# NOTME: always a character name, including the local player; do not introduce a player-pronoun branch.
+
+CZ_UINameNotMe_G = {
+	type = character
+
+	text = {
+		localization_key = CZ_UINameNotMe_G_character
+		fallback = yes
+	}
+}
+
+CZ_UINameNotMe_D = {
+	type = character
+
+	text = {
+		localization_key = CZ_UINameNotMe_D_character
+		fallback = yes
+	}
+}
+
+CZ_UINameNotMe_A = {
+	type = character
+
+	text = {
+		localization_key = CZ_UINameNotMe_A_character
+		fallback = yes
+	}
+}
+
+CZ_UINameNotMe_V = {
+	type = character
+
+	text = {
+		localization_key = CZ_UINameNotMe_V_character
+		fallback = yes
+	}
+}
+
+CZ_UINameNotMe_L = {
+	type = character
+
+	text = {
+		localization_key = CZ_UINameNotMe_L_character
+		fallback = yes
+	}
+}
+
+CZ_UINameNotMe_I = {
+	type = character
+
+	text = {
+		localization_key = CZ_UINameNotMe_I_character
+		fallback = yes
+	}
+}
+
+
+###################################
+## UINamePossessive
+###################################
+# Source: GetUINamePossessive
+# STATUS: IMPLEMENTED (legacy UI possessive contract; guarded)
+# Equivalent of existing ShortUI possessive contract for the full UI name: character genitive uses the same prefix reconstruction as UINameNotMeNoTooltip_G, retaining dynasty/nickname/territory suffix. Empty titles use the FirstName path directly.
+# PLAYER: keep native possessive output. Player possessive precedes noun; character genitive follows noun. Caller must branch phrase/order. This intentional UI exception is not a 2 x 3 personal-name possessive adjective. No matching prefix: preserve exact original possessive getter.
+
+CZ_UINamePossessive = {
+	type = character
+
+	# PLAYER: native pronoun/possessive is intentional; check sentence person and word order.
+	text = {
+		trigger = {
+			is_local_player = yes
+		}
+		localization_key = CZ_UINamePossessive_player
+	}
+
+	text = {
+		localization_key = CZ_UINamePossessive_character
+		fallback = yes
+	}
+}
+
+
+###################################
+## UINamePossessiveNoTooltip
+###################################
+# Source: GetUINamePossessiveNoTooltip
+# STATUS: IMPLEMENTED (legacy UI possessive contract; guarded)
+# Equivalent of existing ShortUI possessive contract for the full UI name: character genitive uses the same prefix reconstruction as UINameNotMeNoTooltip_G, retaining dynasty/nickname/territory suffix. Empty titles use the FirstName path directly.
+# PLAYER: keep native possessive output. Player possessive precedes noun; character genitive follows noun. Caller must branch phrase/order. This intentional UI exception is not a 2 x 3 personal-name possessive adjective. No matching prefix: preserve exact original possessive getter.
+
+CZ_UINamePossessiveNoTooltip = {
+	type = character
+
+	# PLAYER: native pronoun/possessive is intentional; check sentence person and word order.
+	text = {
+		trigger = {
+			is_local_player = yes
+		}
+		localization_key = CZ_UINamePossessiveNoTooltip_player
+	}
+
+	text = {
+		localization_key = CZ_UINamePossessiveNoTooltip_character
+		fallback = yes
+	}
+}
+
+
+###################################
+## UINameNotMeNoTooltipNoFormat
+###################################
+# Source: GetUINameNotMeNoTooltipNoFormat
+# STATUS: IMPLEMENTED (guarded reconstruction)
+# Reuse existing FirstName/TitleAsName cases and exact prefix reconstruction. Preserve nickname/dynasty/territory suffix unchanged. Unmatched output returns this native getter.
+# NOFORMAT: raw/plain output; never add rich formatting or tooltip wrappers.
+# NOTME: always a character name, including the local player; do not introduce a player-pronoun branch.
+
+CZ_UINameNotMeNoTooltipNoFormat_G = {
+	type = character
+
+	text = {
+		localization_key = CZ_UINameNotMeNoTooltipNoFormat_G_character
+		fallback = yes
+	}
+}
+
+CZ_UINameNotMeNoTooltipNoFormat_D = {
+	type = character
+
+	text = {
+		localization_key = CZ_UINameNotMeNoTooltipNoFormat_D_character
+		fallback = yes
+	}
+}
+
+CZ_UINameNotMeNoTooltipNoFormat_A = {
+	type = character
+
+	text = {
+		localization_key = CZ_UINameNotMeNoTooltipNoFormat_A_character
+		fallback = yes
+	}
+}
+
+CZ_UINameNotMeNoTooltipNoFormat_V = {
+	type = character
+
+	text = {
+		localization_key = CZ_UINameNotMeNoTooltipNoFormat_V_character
+		fallback = yes
+	}
+}
+
+CZ_UINameNotMeNoTooltipNoFormat_L = {
+	type = character
+
+	text = {
+		localization_key = CZ_UINameNotMeNoTooltipNoFormat_L_character
+		fallback = yes
+	}
+}
+
+CZ_UINameNotMeNoTooltipNoFormat_I = {
+	type = character
+
+	text = {
+		localization_key = CZ_UINameNotMeNoTooltipNoFormat_I_character
+		fallback = yes
+	}
+}
+
+
+###################################
+## UIFirstName
+###################################
+# Source: GetUIFirstName
+# STATUS: PLACEHOLDER
+# PLACEHOLDER ONLY: suffix reserves a future contract; NO Czech transformation is implemented. Every output returns its exact original getter. Do not use as a supported translation/QA replacement.
+# Special GUI/multiplayer contract has no verified equivalent in this engine. Preserve raw/name/user identity semantics, including the native player result. NoFormat/NotMe stays raw and never adds pronouns or rich wrappers.
+# PLAYER: preserve the native player branch, including an empty result if native returns one. Do not replace it with a character name. Check sentence person and word order.
+
+CZ_UIFirstName_G = {
+	type = character
+
+	# PLAYER: native pronoun/possessive is intentional; check sentence person and word order.
+	text = {
+		trigger = {
+			is_local_player = yes
+		}
+		localization_key = CZ_UIFirstName_G_player
+	}
+
+	text = {
+		localization_key = CZ_UIFirstName_G_native
+		fallback = yes
+	}
+}
+
+CZ_UIFirstName_D = {
+	type = character
+
+	# PLAYER: native pronoun/possessive is intentional; check sentence person and word order.
+	text = {
+		trigger = {
+			is_local_player = yes
+		}
+		localization_key = CZ_UIFirstName_D_player
+	}
+
+	text = {
+		localization_key = CZ_UIFirstName_D_native
+		fallback = yes
+	}
+}
+
+CZ_UIFirstName_A = {
+	type = character
+
+	# PLAYER: native pronoun/possessive is intentional; check sentence person and word order.
+	text = {
+		trigger = {
+			is_local_player = yes
+		}
+		localization_key = CZ_UIFirstName_A_player
+	}
+
+	text = {
+		localization_key = CZ_UIFirstName_A_native
+		fallback = yes
+	}
+}
+
+CZ_UIFirstName_V = {
+	type = character
+
+	# PLAYER: native pronoun/possessive is intentional; check sentence person and word order.
+	text = {
+		trigger = {
+			is_local_player = yes
+		}
+		localization_key = CZ_UIFirstName_V_player
+	}
+
+	text = {
+		localization_key = CZ_UIFirstName_V_native
+		fallback = yes
+	}
+}
+
+CZ_UIFirstName_L = {
+	type = character
+
+	# PLAYER: native pronoun/possessive is intentional; check sentence person and word order.
+	text = {
+		trigger = {
+			is_local_player = yes
+		}
+		localization_key = CZ_UIFirstName_L_player
+	}
+
+	text = {
+		localization_key = CZ_UIFirstName_L_native
+		fallback = yes
+	}
+}
+
+CZ_UIFirstName_I = {
+	type = character
+
+	# PLAYER: native pronoun/possessive is intentional; check sentence person and word order.
+	text = {
+		trigger = {
+			is_local_player = yes
+		}
+		localization_key = CZ_UIFirstName_I_player
+	}
+
+	text = {
+		localization_key = CZ_UIFirstName_I_native
+		fallback = yes
+	}
+}
+
+
+###################################
+## UIFirstNameOnlyNotMeNoTooltipNoFormat
+###################################
+# Source: GetUIFirstNameOnlyNotMeNoTooltipNoFormat
+# STATUS: PLACEHOLDER
+# PLACEHOLDER ONLY: suffix reserves a future contract; NO Czech transformation is implemented. Every output returns its exact original getter. Do not use as a supported translation/QA replacement.
+# Special GUI/multiplayer contract has no verified equivalent in this engine. Preserve raw/name/user identity semantics, including the native player result. NoFormat/NotMe stays raw and never adds pronouns or rich wrappers.
+
+CZ_UIFirstNameOnlyNotMeNoTooltipNoFormat_G = {
+	type = character
+
+	text = {
+		localization_key = CZ_UIFirstNameOnlyNotMeNoTooltipNoFormat_G_native
+		fallback = yes
+	}
+}
+
+CZ_UIFirstNameOnlyNotMeNoTooltipNoFormat_D = {
+	type = character
+
+	text = {
+		localization_key = CZ_UIFirstNameOnlyNotMeNoTooltipNoFormat_D_native
+		fallback = yes
+	}
+}
+
+CZ_UIFirstNameOnlyNotMeNoTooltipNoFormat_A = {
+	type = character
+
+	text = {
+		localization_key = CZ_UIFirstNameOnlyNotMeNoTooltipNoFormat_A_native
+		fallback = yes
+	}
+}
+
+CZ_UIFirstNameOnlyNotMeNoTooltipNoFormat_V = {
+	type = character
+
+	text = {
+		localization_key = CZ_UIFirstNameOnlyNotMeNoTooltipNoFormat_V_native
+		fallback = yes
+	}
+}
+
+CZ_UIFirstNameOnlyNotMeNoTooltipNoFormat_L = {
+	type = character
+
+	text = {
+		localization_key = CZ_UIFirstNameOnlyNotMeNoTooltipNoFormat_L_native
+		fallback = yes
+	}
+}
+
+CZ_UIFirstNameOnlyNotMeNoTooltipNoFormat_I = {
+	type = character
+
+	text = {
+		localization_key = CZ_UIFirstNameOnlyNotMeNoTooltipNoFormat_I_native
+		fallback = yes
+	}
+}
+
+
+###################################
+## HumanName
+###################################
+# Source: GetHumanName
+# STATUS: PLACEHOLDER
+# PLACEHOLDER ONLY: suffix reserves a future contract; NO Czech transformation is implemented. Every output returns its exact original getter. Do not use as a supported translation/QA replacement.
+# Special GUI/multiplayer contract has no verified equivalent in this engine. Preserve raw/name/user identity semantics, including the native player result. NoFormat/NotMe stays raw and never adds pronouns or rich wrappers.
+# PLAYER: preserve the native player branch, including an empty result if native returns one. Do not replace it with a character name. Check sentence person and word order.
+
+CZ_HumanName_G = {
+	type = character
+
+	# PLAYER: native pronoun/possessive is intentional; check sentence person and word order.
+	text = {
+		trigger = {
+			is_local_player = yes
+		}
+		localization_key = CZ_HumanName_G_player
+	}
+
+	text = {
+		localization_key = CZ_HumanName_G_native
+		fallback = yes
+	}
+}
+
+CZ_HumanName_D = {
+	type = character
+
+	# PLAYER: native pronoun/possessive is intentional; check sentence person and word order.
+	text = {
+		trigger = {
+			is_local_player = yes
+		}
+		localization_key = CZ_HumanName_D_player
+	}
+
+	text = {
+		localization_key = CZ_HumanName_D_native
+		fallback = yes
+	}
+}
+
+CZ_HumanName_A = {
+	type = character
+
+	# PLAYER: native pronoun/possessive is intentional; check sentence person and word order.
+	text = {
+		trigger = {
+			is_local_player = yes
+		}
+		localization_key = CZ_HumanName_A_player
+	}
+
+	text = {
+		localization_key = CZ_HumanName_A_native
+		fallback = yes
+	}
+}
+
+CZ_HumanName_V = {
+	type = character
+
+	# PLAYER: native pronoun/possessive is intentional; check sentence person and word order.
+	text = {
+		trigger = {
+			is_local_player = yes
+		}
+		localization_key = CZ_HumanName_V_player
+	}
+
+	text = {
+		localization_key = CZ_HumanName_V_native
+		fallback = yes
+	}
+}
+
+CZ_HumanName_L = {
+	type = character
+
+	# PLAYER: native pronoun/possessive is intentional; check sentence person and word order.
+	text = {
+		trigger = {
+			is_local_player = yes
+		}
+		localization_key = CZ_HumanName_L_player
+	}
+
+	text = {
+		localization_key = CZ_HumanName_L_native
+		fallback = yes
+	}
+}
+
+CZ_HumanName_I = {
+	type = character
+
+	# PLAYER: native pronoun/possessive is intentional; check sentence person and word order.
+	text = {
+		trigger = {
+			is_local_player = yes
+		}
+		localization_key = CZ_HumanName_I_player
+	}
+
+	text = {
+		localization_key = CZ_HumanName_I_native
+		fallback = yes
+	}
+}
+
+
+###################################
+## HumanNameIfNotLocalPlayer
+###################################
+# Source: GetHumanNameIfNotLocalPlayer
+# STATUS: PLACEHOLDER
+# PLACEHOLDER ONLY: suffix reserves a future contract; NO Czech transformation is implemented. Every output returns its exact original getter. Do not use as a supported translation/QA replacement.
+# Special GUI/multiplayer contract has no verified equivalent in this engine. Preserve raw/name/user identity semantics, including the native player result. NoFormat/NotMe stays raw and never adds pronouns or rich wrappers.
+# PLAYER: preserve the native player branch, including an empty result if native returns one. Do not replace it with a character name. Check sentence person and word order.
+
+CZ_HumanNameIfNotLocalPlayer_G = {
+	type = character
+
+	# PLAYER: native pronoun/possessive is intentional; check sentence person and word order.
+	text = {
+		trigger = {
+			is_local_player = yes
+		}
+		localization_key = CZ_HumanNameIfNotLocalPlayer_G_player
+	}
+
+	text = {
+		localization_key = CZ_HumanNameIfNotLocalPlayer_G_native
+		fallback = yes
+	}
+}
+
+CZ_HumanNameIfNotLocalPlayer_D = {
+	type = character
+
+	# PLAYER: native pronoun/possessive is intentional; check sentence person and word order.
+	text = {
+		trigger = {
+			is_local_player = yes
+		}
+		localization_key = CZ_HumanNameIfNotLocalPlayer_D_player
+	}
+
+	text = {
+		localization_key = CZ_HumanNameIfNotLocalPlayer_D_native
+		fallback = yes
+	}
+}
+
+CZ_HumanNameIfNotLocalPlayer_A = {
+	type = character
+
+	# PLAYER: native pronoun/possessive is intentional; check sentence person and word order.
+	text = {
+		trigger = {
+			is_local_player = yes
+		}
+		localization_key = CZ_HumanNameIfNotLocalPlayer_A_player
+	}
+
+	text = {
+		localization_key = CZ_HumanNameIfNotLocalPlayer_A_native
+		fallback = yes
+	}
+}
+
+CZ_HumanNameIfNotLocalPlayer_V = {
+	type = character
+
+	# PLAYER: native pronoun/possessive is intentional; check sentence person and word order.
+	text = {
+		trigger = {
+			is_local_player = yes
+		}
+		localization_key = CZ_HumanNameIfNotLocalPlayer_V_player
+	}
+
+	text = {
+		localization_key = CZ_HumanNameIfNotLocalPlayer_V_native
+		fallback = yes
+	}
+}
+
+CZ_HumanNameIfNotLocalPlayer_L = {
+	type = character
+
+	# PLAYER: native pronoun/possessive is intentional; check sentence person and word order.
+	text = {
+		trigger = {
+			is_local_player = yes
+		}
+		localization_key = CZ_HumanNameIfNotLocalPlayer_L_player
+	}
+
+	text = {
+		localization_key = CZ_HumanNameIfNotLocalPlayer_L_native
+		fallback = yes
+	}
+}
+
+CZ_HumanNameIfNotLocalPlayer_I = {
+	type = character
+
+	# PLAYER: native pronoun/possessive is intentional; check sentence person and word order.
+	text = {
+		trigger = {
+			is_local_player = yes
+		}
+		localization_key = CZ_HumanNameIfNotLocalPlayer_I_player
+	}
+
+	text = {
+		localization_key = CZ_HumanNameIfNotLocalPlayer_I_native
+		fallback = yes
+	}
+}

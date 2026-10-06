@@ -629,26 +629,76 @@ macro = {
 
 
 ##################################################
-# ISSUE 364 - COMPATIBLE PREFIX RECONSTRUCTION
+# CHARACTER GETTER ADAPTERS - ADDITIVE EXTENSION
 ##################################################
-# Keep CZHasNamePrefix/CZReplaceNamePrefix unchanged for existing callers.
-# TrimFrontChars is a character-set operation. For a single-word prefix it
-# can leave the separator at the start of the suffix; a multiword prefix
-# can consume that space. Exact reconstruction checks support both paths.
-# Raw remainder is accepted only at a whitespace boundary or at end of TEXT.
-# This rejects substring collisions (e.g. Ann vs Anna) and preserves the
-# accepted raw suffix, including its separator, byte-for-byte.
-# The old helpers handle the path with one consumed ordinary separator.
-# If neither path reconstructs TEXT exactly, return TEXT unchanged.
-
+# TrimFrontChars is a character-set operation, never substring deletion.
+# Validate exact reconstruction before replacing. Keep older helpers intact.
 macro = {
-    description = "Exact character-name prefix, also accepting an unconsumed suffix separator"
+    description = "Exact prefix accepting either consumed or retained suffix whitespace"
     definition = "CZHasNamePrefixPreservingSpace(TEXT,PREFIX)"
     replace_with = "Or(CZHasNamePrefix(TEXT,PREFIX),And(Not(StringIsEmpty(PREFIX)),And(EqualTo_string(TEXT,Concatenate(PREFIX,TrimFrontChars(TEXT,PREFIX))),Or(EqualTo_string(TEXT,PREFIX),Not(EqualTo_string(TrimFrontChars(TEXT,PREFIX),TrimFront(TrimFrontChars(TEXT,PREFIX))))))))"
 }
-
 macro = {
-    description = "Replace an exact name prefix while retaining the accepted suffix separator"
+    description = "Replace a verified name prefix retaining its suffix separator"
     definition = "CZReplaceNamePrefixPreservingSpace(TEXT,PREFIX,REPLACEMENT)"
     replace_with = "Select_CString(CZHasNamePrefix(TEXT,PREFIX),CZReplaceNamePrefix(TEXT,PREFIX,REPLACEMENT),Select_CString(CZHasNamePrefixPreservingSpace(TEXT,PREFIX),Concatenate(REPLACEMENT,TrimFrontChars(TEXT,PREFIX)),TEXT))"
+}
+macro = {
+    description = "Non-empty single name token; alphabet is additive and does not change the old title tokenizer"
+    definition = "CZNameIsSingleToken(NAME)"
+    replace_with = "And(Not(StringIsEmpty(NAME)),StringIsEmpty(TrimFrontChars(NAME,Localize('CZ_AdapterNameTokenChars'))))"
+}
+
+macro = {
+	description = "Existing possessive rules, noun M, owner female, explicit name input"
+	definition = "CZNamePossessive_M_F(NAME)"
+	replace_with = "Select_CString(Not(EqualTo_string(NAME,TrimBackChars(NAME,'a'))),Concatenate(TrimBackChars(NAME,'a'),'in'),Select_CString(Not(EqualTo_string(NAME,TrimBackChars(NAME,'e'))),Concatenate(TrimBackChars(NAME,'e'),'in'),Select_CString(Not(EqualTo_string(NAME,TrimBackChars(NAME,'ií'))),Concatenate(TrimBackChars(NAME,'ií'),'in'),Select_CString(Not(EqualTo_string(NAME,TrimBackChars(NAME,'o'))),Concatenate(TrimBackChars(NAME,'o'),'in'),Select_CString(Not(EqualTo_string(NAME,TrimBackChars(NAME,'uú'))),Concatenate(TrimBackChars(NAME,'uú'),'in'),Concatenate(NAME,'in'))))))"
+}
+
+macro = {
+	description = "Existing possessive rules, noun M, owner male, explicit name input"
+	definition = "CZNamePossessive_M_M(NAME)"
+	replace_with = "Select_CString(Not(EqualTo_string(NAME,TrimBackChars(NAME,'a'))),Concatenate(CZFirstNameStem_M_A(NAME),'ův'),Select_CString(Not(EqualTo_string(NAME,TrimBackChars(NAME,'o'))),Concatenate(CZFirstNameStem_M_O(NAME),'ův'),Select_CString(And(Not(EqualTo_string(NAME,TrimBackChars(NAME,'e'))),Not(EqualTo_string(TrimBackChars(NAME,'e'),TrimBackChars(TrimBackChars(NAME,'e'),'i')))),Concatenate(NAME,'ho'),Select_CString(Not(EqualTo_string(NAME,TrimBackChars(NAME,'iíyé'))),Concatenate(NAME,'ho'),Concatenate(NAME,'ův')))))"
+}
+
+macro = {
+	description = "Existing possessive rules, noun M, owner gender dispatch"
+	definition = "CZNamePossessive_M(NAME,IS_FEMALE)"
+	replace_with = "Select_CString(IS_FEMALE,CZNamePossessive_M_F(NAME),CZNamePossessive_M_M(NAME))"
+}
+
+macro = {
+	description = "Existing possessive rules, noun F, owner female, explicit name input"
+	definition = "CZNamePossessive_F_F(NAME)"
+	replace_with = "Select_CString(Not(EqualTo_string(NAME,TrimBackChars(NAME,'a'))),Concatenate(TrimBackChars(NAME,'a'),'ina'),Select_CString(Not(EqualTo_string(NAME,TrimBackChars(NAME,'e'))),Concatenate(TrimBackChars(NAME,'e'),'ina'),Select_CString(Not(EqualTo_string(NAME,TrimBackChars(NAME,'ií'))),Concatenate(TrimBackChars(NAME,'ií'),'ina'),Select_CString(Not(EqualTo_string(NAME,TrimBackChars(NAME,'o'))),Concatenate(TrimBackChars(NAME,'o'),'ina'),Select_CString(Not(EqualTo_string(NAME,TrimBackChars(NAME,'uú'))),Concatenate(TrimBackChars(NAME,'uú'),'ina'),Concatenate(NAME,'ina'))))))"
+}
+
+macro = {
+	description = "Existing possessive rules, noun F, owner male, explicit name input"
+	definition = "CZNamePossessive_F_M(NAME)"
+	replace_with = "Select_CString(Not(EqualTo_string(NAME,TrimBackChars(NAME,'a'))),Concatenate(CZFirstNameStem_M_A(NAME),'ova'),Select_CString(Not(EqualTo_string(NAME,TrimBackChars(NAME,'o'))),Concatenate(CZFirstNameStem_M_O(NAME),'ova'),Select_CString(And(Not(EqualTo_string(NAME,TrimBackChars(NAME,'e'))),Not(EqualTo_string(TrimBackChars(NAME,'e'),TrimBackChars(TrimBackChars(NAME,'e'),'i')))),Concatenate(NAME,'ho'),Select_CString(Not(EqualTo_string(NAME,TrimBackChars(NAME,'iíyé'))),Concatenate(NAME,'ho'),Concatenate(NAME,'ova')))))"
+}
+
+macro = {
+	description = "Existing possessive rules, noun F, owner gender dispatch"
+	definition = "CZNamePossessive_F(NAME,IS_FEMALE)"
+	replace_with = "Select_CString(IS_FEMALE,CZNamePossessive_F_F(NAME),CZNamePossessive_F_M(NAME))"
+}
+
+macro = {
+	description = "Existing possessive rules, noun N, owner female, explicit name input"
+	definition = "CZNamePossessive_N_F(NAME)"
+	replace_with = "Select_CString(Not(EqualTo_string(NAME,TrimBackChars(NAME,'a'))),Concatenate(TrimBackChars(NAME,'a'),'ino'),Select_CString(Not(EqualTo_string(NAME,TrimBackChars(NAME,'e'))),Concatenate(TrimBackChars(NAME,'e'),'ino'),Select_CString(Not(EqualTo_string(NAME,TrimBackChars(NAME,'ií'))),Concatenate(TrimBackChars(NAME,'ií'),'ino'),Select_CString(Not(EqualTo_string(NAME,TrimBackChars(NAME,'o'))),Concatenate(TrimBackChars(NAME,'o'),'ino'),Select_CString(Not(EqualTo_string(NAME,TrimBackChars(NAME,'uú'))),Concatenate(TrimBackChars(NAME,'uú'),'ino'),Concatenate(NAME,'ino'))))))"
+}
+
+macro = {
+	description = "Existing possessive rules, noun N, owner male, explicit name input"
+	definition = "CZNamePossessive_N_M(NAME)"
+	replace_with = "Select_CString(Not(EqualTo_string(NAME,TrimBackChars(NAME,'a'))),Concatenate(CZFirstNameStem_M_A(NAME),'ovo'),Select_CString(Not(EqualTo_string(NAME,TrimBackChars(NAME,'o'))),Concatenate(CZFirstNameStem_M_O(NAME),'ovo'),Select_CString(And(Not(EqualTo_string(NAME,TrimBackChars(NAME,'e'))),Not(EqualTo_string(TrimBackChars(NAME,'e'),TrimBackChars(TrimBackChars(NAME,'e'),'i')))),Concatenate(NAME,'ho'),Select_CString(Not(EqualTo_string(NAME,TrimBackChars(NAME,'iíyé'))),Concatenate(NAME,'ho'),Concatenate(NAME,'ovo')))))"
+}
+
+macro = {
+	description = "Existing possessive rules, noun N, owner gender dispatch"
+	definition = "CZNamePossessive_N(NAME,IS_FEMALE)"
+	replace_with = "Select_CString(IS_FEMALE,CZNamePossessive_N_F(NAME),CZNamePossessive_N_M(NAME))"
 }

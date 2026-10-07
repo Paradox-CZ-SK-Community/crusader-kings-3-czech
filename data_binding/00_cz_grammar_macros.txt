@@ -625,3 +625,717 @@ macro = {
 	definition = "CZReligionAdjSti(RELIGION)"
 	replace_with = "CZAdjectiveStiRich(RELIGION.GetAdjective,'CZ_FMT_CLOSE2')"
 }
+
+
+##################################################
+# LANDED TITLE DECLENSION (PROTOTYPE)
+##################################################
+# Declension of landed title names (Čechy, Království Čechy, Svatá říše římská).
+#
+# Layers:
+# 1. CZLandWord_*    - inanimate word morphology (nouns + adjectives).
+#                      Intentionally separate from CZTitleWord_* which is
+#                      animate (Král -> Krále) and would produce
+#                      "Království -> Královstvího".
+# 2. CZLandCase1/2/3_* - fixed-length composers (1, 2, 3 words).
+#    CZLandCase_*    - generic 1-3 word composer for literal strings
+#                      (debug); slower, evaluates every length.
+# 3. Dispatch        - CZLand*Key macros pick ONE CustomLoc key
+#                      (table / composer by length / unchanged / tier part),
+#                      evaluated lazily via Custom(<key>). Select_CString
+#                      itself is eager, so this keeps unused branches out.
+#                      Table: CZ_LT_<title key>_<case> in
+#                      00_cz_landed_title_cases_l_polish.yml, used only
+#                      while the title carries its default name.
+#                      Tiered names ("Království Čechy"): only the tier
+#                      phrase is declined ("s Královstvím Čechy").
+# 4. CZLandRich      - puts the declined text into the native rich getter
+#                      (tooltip + onclick).
+#
+# Vocative is intentionally not provided for landed titles.
+##################################################
+
+# ------------------------------------------------
+# HELPERS
+# ------------------------------------------------
+
+macro = {
+	description = "True if XW ends with any of the characters in XC"
+	definition = "CZEnds(XW,XC)"
+	replace_with = "Not(EqualTo_string(XW,TrimBackChars(XW,XC)))"
+}
+
+macro = {
+	description = "True if XW ends with a character from XC preceded by a character from XP"
+	definition = "CZEnds2(XW,XC,XP)"
+	replace_with = "And(CZEnds(XW,XC),CZEnds(TrimBackChars(XW,XC),XP))"
+}
+
+macro = {
+	description = "True if TITLE contains at least four words"
+	definition = "CZTitleHasFourth(TITLE)"
+	replace_with = "Not(StringIsEmpty(TrimFront(TrimFrontChars(TrimFront(TrimFrontChars(TrimFront(TrimFrontChars(TITLE, Localize('CZ_TitleTokenChars'))), Localize('CZ_TitleTokenChars'))), Localize('CZ_TitleTokenChars')))))"
+}
+macro = {
+	description = "Dative/locative of a feminine -a stem with consonant alternation: Prah -> Praze, Litv -> Litvě, Mekk -> Mekce; soft or vowel stem -i: Akaš -> Akaši, Capu -> Capui, Turň -> Turni, Brodnic -> Brodnici (other -c stays -ce: Huesc -> Huesce)"
+	definition = "CZLandSoftA(XS)"
+	replace_with = "Select_CString(CZEnds2(XS,'h','c'),Concatenate(TrimBackChars(TrimBackChars(XS,'h'),'c'),'še'),Select_CString(CZEnds(XS,'hg'),Concatenate(TrimBackChars(XS,'hg'),'ze'),Select_CString(CZEnds(XS,'k'),Concatenate(Concatenate(TrimBackChars(XS,'k'),Select_CString(Not(EqualTo_string(Concatenate(TrimBackChars(XS,'k'),'k'),XS)),'k','')),'ce'),Select_CString(CZEnds(XS,'r'),Concatenate(TrimBackChars(XS,'r'),'ře'),Select_CString(CZEnds(XS,'dtnbpvfm'),Concatenate(XS,'ě'),Select_CString(CZEnds(XS,'ň'),Concatenate(TrimBackChars(XS,'ň'),'ni'),Select_CString(CZEnds(XS,'ť'),Concatenate(TrimBackChars(XS,'ť'),'ti'),Select_CString(CZEnds(XS,'ď'),Concatenate(TrimBackChars(XS,'ď'),'di'),Select_CString(Or(CZEnds(XS,'žšřčjaeiouyáéíóúůý'),CZEnds2(XS,'c','iy')),Concatenate(XS,'i'),Concatenate(XS,'e'))))))))))"
+}
+macro = {
+	description = "True if XW ends with a doubled vowel -aa / -oo / -ee (Harjumaa, Espoo, Dundee): left unchanged, TrimBackChars would strip both"
+	definition = "CZLandDblVowel(XW)"
+	replace_with = "Or(And(Not(EqualTo_string(XW,TrimBackChars(XW,'a'))),Not(EqualTo_string(XW,Concatenate(TrimBackChars(XW,'a'),'a')))),Or(And(Not(EqualTo_string(XW,TrimBackChars(XW,'o'))),Not(EqualTo_string(XW,Concatenate(TrimBackChars(XW,'o'),'o')))),And(Not(EqualTo_string(XW,TrimBackChars(XW,'e'))),Not(EqualTo_string(XW,Concatenate(TrimBackChars(XW,'e'),'e'))))))"
+}
+
+macro = {
+	description = "True if XW starts with a lowercase Arabic article: al- el- an- as- ad- ar- at- az- aš- (al-Jamaní)"
+	definition = "CZLandIsArticle(XW)"
+	replace_with = "Or(EqualTo_string(Concatenate('al-',TrimFrontChars(XW,'al-')),XW),Or(EqualTo_string(Concatenate('el-',TrimFrontChars(XW,'el-')),XW),Or(EqualTo_string(Concatenate('an-',TrimFrontChars(XW,'an-')),XW),Or(EqualTo_string(Concatenate('as-',TrimFrontChars(XW,'as-')),XW),Or(EqualTo_string(Concatenate('ad-',TrimFrontChars(XW,'ad-')),XW),Or(EqualTo_string(Concatenate('ar-',TrimFrontChars(XW,'ar-')),XW),Or(EqualTo_string(Concatenate('at-',TrimFrontChars(XW,'at-')),XW),Or(EqualTo_string(Concatenate('az-',TrimFrontChars(XW,'az-')),XW),EqualTo_string(Concatenate('aš-',TrimFrontChars(XW,'aš-')),XW)))))))))"
+}
+
+# ------------------------------------------------
+# WORD MORPHOLOGY
+# ------------------------------------------------
+# Doubled final vowel (-aa / -oo / -ee): unchanged.
+# Grouped by final letter, first match wins inside a group:
+#   ends in a vowel ('áýéíeěao'):
+#     - fem. adj -á
+#     - masc./neut. adj -ý/-é
+#     - neut. noun -ví (království, knížectví)
+#     - soft adj -ní/-ší/-cí/-tí (vrchní; unchanged with a feminine noun: nejjasnější republika)
+#     - other -í (údolí, Dillí): unchanged
+#     - neut. noun -iště (tábořiště)
+#     - fem. noun -e/-ě (říše, Francie)
+#     - fem. noun -ea (Galilea, Chaldea, Nicea)
+#     - fem. noun -ia (Brescia, Cumbria)
+#     - fem. noun -a (Praha, Litva)
+#     - neut. noun -o (Polsko)
+#   ends in a soft consonant ('cňťžšřčj'):
+#     - masc. -ec with mobile e (Hradec, Žatec)
+#     - fem. -eň with mobile e (Plzeň, Vídeň)
+#     - fem. -ň (Poznaň, Bretaň, Soluň)
+#     - fem. -ť (Pešť)
+#     - masc. soft consonant (stroj)
+#   otherwise:
+#     - fem. noun -ost, only in a feminine phrase (Svatá svornost); one-word -ost is masc. (Bost -> Bostu)
+#     - fem. noun -kev (církev)
+#     - latin -ium/-tum/-num/-trum (Imperium, Latium, Regnum, Castrum); other -um is masc. hrad (Aksum, Erzurum)
+#     - masc. -ov/-ev/-ín/-ýn (Janov, Kyjev, Berlín): gen. -a, loc. -ě
+#     - masc. hard consonant (hrad)
+#   no match: unchanged (-y plurals such as Čechy/Benátky, -u, -i, -ó ...)
+macro = {
+	description = "Czech landed title word genitive; XF = phrase noun is feminine"
+	definition = "CZLandWord_G(XW,XF)"
+	replace_with = "Select_CString(CZLandDblVowel(XW),XW,Select_CString(CZEnds(XW,'áýéíeěao'),Select_CString(CZEnds(XW,'á'),Concatenate(TrimBackChars(XW,'á'),'é'),Select_CString(CZEnds(XW,'ýé'),Concatenate(TrimBackChars(XW,'ýé'),'ého'),Select_CString(CZEnds2(XW,'í','v'),XW,Select_CString(CZEnds2(XW,'í','nšct'),Select_CString(XF,XW,Concatenate(TrimBackChars(XW,'í'),'ího')),Select_CString(CZEnds(XW,'í'),XW,Select_CString(And(CZEnds2(XW,'ě','t'),CZEnds(TrimBackChars(TrimBackChars(XW,'ě'),'t'),'š')),XW,Select_CString(CZEnds(XW,'eě'),XW,Select_CString(CZEnds2(XW,'a','e'),Concatenate(TrimBackChars(XW,'a'),'je'),Select_CString(CZEnds2(XW,'a','i'),Concatenate(TrimBackChars(XW,'a'),'e'),Select_CString(CZEnds(XW,'a'),Concatenate(TrimBackChars(XW,'a'),Select_CString(CZEnds(TrimBackChars(XW,'a'),'žšřčcj'),'e','y')),Select_CString(CZEnds(XW,'o'),Concatenate(TrimBackChars(XW,'o'),'a'),XW))))))))))),Select_CString(CZEnds(XW,'cňťžšřčj'),Select_CString(CZEnds2(XW,'c','e'),Concatenate(TrimBackChars(TrimBackChars(XW,'c'),'e'),'ce'),Select_CString(CZEnds2(XW,'ň','e'),Concatenate(TrimBackChars(TrimBackChars(XW,'ň'),'e'),'ně'),Select_CString(CZEnds(XW,'ň'),Concatenate(TrimBackChars(XW,'ň'),'ně'),Select_CString(CZEnds(XW,'ť'),Concatenate(TrimBackChars(XW,'ť'),'ti'),Select_CString(CZEnds(XW,'žšřčcj'),Concatenate(XW,'e'),XW))))),Select_CString(And(XF,And(CZEnds2(XW,'t','s'),CZEnds(TrimBackChars(TrimBackChars(XW,'t'),'s'),'o'))),Concatenate(XW,'i'),Select_CString(And(CZEnds2(XW,'v','e'),CZEnds(TrimBackChars(TrimBackChars(XW,'v'),'e'),'k')),Concatenate(TrimBackChars(TrimBackChars(XW,'v'),'e'),'ve'),Select_CString(And(CZEnds2(XW,'m','u'),Or(CZEnds(TrimBackChars(TrimBackChars(XW,'m'),'u'),'itn'),And(CZEnds(TrimBackChars(TrimBackChars(XW,'m'),'u'),'r'),CZEnds(TrimBackChars(TrimBackChars(TrimBackChars(XW,'m'),'u'),'r'),'t')))),Concatenate(TrimBackChars(TrimBackChars(XW,'m'),'u'),'a'),Select_CString(Or(CZEnds2(XW,'v','oe'),CZEnds2(XW,'n','íý')),Concatenate(XW,'a'),Select_CString(CZEnds(XW,'bdfghklmnpqrstvwxz'),Concatenate(XW,'u'),XW))))))))"
+}
+macro = {
+	description = "Czech landed title word dative; XF = phrase noun is feminine"
+	definition = "CZLandWord_D(XW,XF)"
+	replace_with = "Select_CString(CZLandDblVowel(XW),XW,Select_CString(CZEnds(XW,'áýéíeěao'),Select_CString(CZEnds(XW,'á'),Concatenate(TrimBackChars(XW,'á'),'é'),Select_CString(CZEnds(XW,'ýé'),Concatenate(TrimBackChars(XW,'ýé'),'ému'),Select_CString(CZEnds2(XW,'í','v'),XW,Select_CString(CZEnds2(XW,'í','nšct'),Select_CString(XF,XW,Concatenate(TrimBackChars(XW,'í'),'ímu')),Select_CString(CZEnds(XW,'í'),XW,Select_CString(And(CZEnds2(XW,'ě','t'),CZEnds(TrimBackChars(TrimBackChars(XW,'ě'),'t'),'š')),Concatenate(TrimBackChars(XW,'eě'),'i'),Select_CString(CZEnds(XW,'eě'),Concatenate(TrimBackChars(XW,'eě'),'i'),Select_CString(CZEnds2(XW,'a','e'),Concatenate(TrimBackChars(XW,'a'),'ji'),Select_CString(CZEnds2(XW,'a','i'),Concatenate(TrimBackChars(XW,'a'),'i'),Select_CString(CZEnds(XW,'a'),CZLandSoftA(TrimBackChars(XW,'a')),Select_CString(CZEnds(XW,'o'),Concatenate(TrimBackChars(XW,'o'),'u'),XW))))))))))),Select_CString(CZEnds(XW,'cňťžšřčj'),Select_CString(CZEnds2(XW,'c','e'),Concatenate(TrimBackChars(TrimBackChars(XW,'c'),'e'),'ci'),Select_CString(CZEnds2(XW,'ň','e'),Concatenate(TrimBackChars(TrimBackChars(XW,'ň'),'e'),'ni'),Select_CString(CZEnds(XW,'ň'),Concatenate(TrimBackChars(XW,'ň'),'ni'),Select_CString(CZEnds(XW,'ť'),Concatenate(TrimBackChars(XW,'ť'),'ti'),Select_CString(CZEnds(XW,'žšřčcj'),Concatenate(XW,'i'),XW))))),Select_CString(And(XF,And(CZEnds2(XW,'t','s'),CZEnds(TrimBackChars(TrimBackChars(XW,'t'),'s'),'o'))),Concatenate(XW,'i'),Select_CString(And(CZEnds2(XW,'v','e'),CZEnds(TrimBackChars(TrimBackChars(XW,'v'),'e'),'k')),Concatenate(TrimBackChars(TrimBackChars(XW,'v'),'e'),'vi'),Select_CString(And(CZEnds2(XW,'m','u'),Or(CZEnds(TrimBackChars(TrimBackChars(XW,'m'),'u'),'itn'),And(CZEnds(TrimBackChars(TrimBackChars(XW,'m'),'u'),'r'),CZEnds(TrimBackChars(TrimBackChars(TrimBackChars(XW,'m'),'u'),'r'),'t')))),Concatenate(TrimBackChars(TrimBackChars(XW,'m'),'u'),'u'),Select_CString(Or(CZEnds2(XW,'v','oe'),CZEnds2(XW,'n','íý')),Concatenate(XW,'u'),Select_CString(CZEnds(XW,'bdfghklmnpqrstvwxz'),Concatenate(XW,'u'),XW))))))))"
+}
+macro = {
+	description = "Czech landed title word accusative; XF = phrase noun is feminine"
+	definition = "CZLandWord_A(XW,XF)"
+	replace_with = "Select_CString(CZLandDblVowel(XW),XW,Select_CString(CZEnds(XW,'áýéíeěao'),Select_CString(CZEnds(XW,'á'),Concatenate(TrimBackChars(XW,'á'),'ou'),Select_CString(CZEnds(XW,'ýé'),XW,Select_CString(CZEnds2(XW,'í','v'),XW,Select_CString(CZEnds2(XW,'í','nšct'),XW,Select_CString(CZEnds(XW,'í'),XW,Select_CString(And(CZEnds2(XW,'ě','t'),CZEnds(TrimBackChars(TrimBackChars(XW,'ě'),'t'),'š')),XW,Select_CString(CZEnds(XW,'eě'),Concatenate(TrimBackChars(XW,'eě'),'i'),Select_CString(CZEnds2(XW,'a','e'),Concatenate(TrimBackChars(XW,'a'),'u'),Select_CString(CZEnds2(XW,'a','i'),Concatenate(TrimBackChars(XW,'a'),'i'),Select_CString(CZEnds(XW,'a'),Concatenate(TrimBackChars(XW,'a'),'u'),XW)))))))))),Select_CString(CZEnds(XW,'cňťžšřčj'),XW,XW)))"
+}
+macro = {
+	description = "Czech landed title word locative; XF = phrase noun is feminine"
+	definition = "CZLandWord_L(XW,XF)"
+	replace_with = "Select_CString(CZLandDblVowel(XW),XW,Select_CString(CZEnds(XW,'áýéíeěao'),Select_CString(CZEnds(XW,'á'),Concatenate(TrimBackChars(XW,'á'),'é'),Select_CString(CZEnds(XW,'ýé'),Concatenate(TrimBackChars(XW,'ýé'),'ém'),Select_CString(CZEnds2(XW,'í','v'),XW,Select_CString(CZEnds2(XW,'í','nšct'),Select_CString(XF,XW,Concatenate(TrimBackChars(XW,'í'),'ím')),Select_CString(CZEnds(XW,'í'),XW,Select_CString(And(CZEnds2(XW,'ě','t'),CZEnds(TrimBackChars(TrimBackChars(XW,'ě'),'t'),'š')),Concatenate(TrimBackChars(XW,'eě'),'i'),Select_CString(CZEnds(XW,'eě'),Concatenate(TrimBackChars(XW,'eě'),'i'),Select_CString(CZEnds2(XW,'a','e'),Concatenate(TrimBackChars(XW,'a'),'ji'),Select_CString(CZEnds2(XW,'a','i'),Concatenate(TrimBackChars(XW,'a'),'i'),Select_CString(CZEnds(XW,'a'),CZLandSoftA(TrimBackChars(XW,'a')),Select_CString(CZEnds(XW,'o'),Concatenate(TrimBackChars(XW,'o'),'u'),XW))))))))))),Select_CString(CZEnds(XW,'cňťžšřčj'),Select_CString(CZEnds2(XW,'c','e'),Concatenate(TrimBackChars(TrimBackChars(XW,'c'),'e'),'ci'),Select_CString(CZEnds2(XW,'ň','e'),Concatenate(TrimBackChars(TrimBackChars(XW,'ň'),'e'),'ni'),Select_CString(CZEnds(XW,'ň'),Concatenate(TrimBackChars(XW,'ň'),'ni'),Select_CString(CZEnds(XW,'ť'),Concatenate(TrimBackChars(XW,'ť'),'ti'),Select_CString(CZEnds(XW,'žšřčcj'),Concatenate(XW,'i'),XW))))),Select_CString(And(XF,And(CZEnds2(XW,'t','s'),CZEnds(TrimBackChars(TrimBackChars(XW,'t'),'s'),'o'))),Concatenate(XW,'i'),Select_CString(And(CZEnds2(XW,'v','e'),CZEnds(TrimBackChars(TrimBackChars(XW,'v'),'e'),'k')),Concatenate(TrimBackChars(TrimBackChars(XW,'v'),'e'),'vi'),Select_CString(And(CZEnds2(XW,'m','u'),Or(CZEnds(TrimBackChars(TrimBackChars(XW,'m'),'u'),'itn'),And(CZEnds(TrimBackChars(TrimBackChars(XW,'m'),'u'),'r'),CZEnds(TrimBackChars(TrimBackChars(TrimBackChars(XW,'m'),'u'),'r'),'t')))),Concatenate(TrimBackChars(TrimBackChars(XW,'m'),'u'),'u'),Select_CString(Or(CZEnds2(XW,'v','oe'),CZEnds2(XW,'n','íý')),Concatenate(XW,'ě'),Select_CString(CZEnds(XW,'bdfghklmnpqrstvwxz'),Concatenate(XW,'u'),XW))))))))"
+}
+macro = {
+	description = "Czech landed title word instrumental; XF = phrase noun is feminine"
+	definition = "CZLandWord_I(XW,XF)"
+	replace_with = "Select_CString(CZLandDblVowel(XW),XW,Select_CString(CZEnds(XW,'áýéíeěao'),Select_CString(CZEnds(XW,'á'),Concatenate(TrimBackChars(XW,'á'),'ou'),Select_CString(CZEnds(XW,'ýé'),Concatenate(TrimBackChars(XW,'ýé'),'ým'),Select_CString(CZEnds2(XW,'í','v'),Concatenate(XW,'m'),Select_CString(CZEnds2(XW,'í','nšct'),Select_CString(XF,XW,Concatenate(TrimBackChars(XW,'í'),'ím')),Select_CString(CZEnds(XW,'í'),XW,Select_CString(And(CZEnds2(XW,'ě','t'),CZEnds(TrimBackChars(TrimBackChars(XW,'ě'),'t'),'š')),Concatenate(XW,'m'),Select_CString(CZEnds(XW,'eě'),Concatenate(TrimBackChars(XW,'eě'),'í'),Select_CString(CZEnds2(XW,'a','e'),Concatenate(TrimBackChars(XW,'a'),'ou'),Select_CString(CZEnds2(XW,'a','i'),Concatenate(TrimBackChars(XW,'a'),'í'),Select_CString(CZEnds(XW,'a'),Concatenate(TrimBackChars(XW,'a'),'ou'),Select_CString(CZEnds(XW,'o'),Concatenate(TrimBackChars(XW,'o'),'em'),XW))))))))))),Select_CString(CZEnds(XW,'cňťžšřčj'),Select_CString(CZEnds2(XW,'c','e'),Concatenate(TrimBackChars(TrimBackChars(XW,'c'),'e'),'cem'),Select_CString(CZEnds2(XW,'ň','e'),Concatenate(TrimBackChars(TrimBackChars(XW,'ň'),'e'),'ní'),Select_CString(CZEnds(XW,'ň'),Concatenate(TrimBackChars(XW,'ň'),'ní'),Select_CString(CZEnds(XW,'ť'),Concatenate(TrimBackChars(XW,'ť'),'tí'),Select_CString(CZEnds(XW,'žšřčcj'),Concatenate(XW,'em'),XW))))),Select_CString(And(XF,And(CZEnds2(XW,'t','s'),CZEnds(TrimBackChars(TrimBackChars(XW,'t'),'s'),'o'))),Concatenate(XW,'í'),Select_CString(And(CZEnds2(XW,'v','e'),CZEnds(TrimBackChars(TrimBackChars(XW,'v'),'e'),'k')),Concatenate(TrimBackChars(TrimBackChars(XW,'v'),'e'),'ví'),Select_CString(And(CZEnds2(XW,'m','u'),Or(CZEnds(TrimBackChars(TrimBackChars(XW,'m'),'u'),'itn'),And(CZEnds(TrimBackChars(TrimBackChars(XW,'m'),'u'),'r'),CZEnds(TrimBackChars(TrimBackChars(TrimBackChars(XW,'m'),'u'),'r'),'t')))),Concatenate(TrimBackChars(TrimBackChars(XW,'m'),'u'),'em'),Select_CString(Or(CZEnds2(XW,'v','oe'),CZEnds2(XW,'n','íý')),Concatenate(XW,'em'),Select_CString(CZEnds(XW,'bdfghklmnpqrstvwxz'),Concatenate(XW,'em'),XW))))))))"
+}
+# ------------------------------------------------
+# 1-3 WORD COMPOSERS
+# ------------------------------------------------
+# Safety guard: a name is declined only if it has exactly one noun and all
+# other words are adjectives (Svatá říše římská, Kyjevská Rus, Velký chrám).
+# Anything else (Kara Dala, Páni nebes, Lužičtí Srbové, plurals such as
+# Kanárské ostrovy) stays in nominative; plurals go to the table.
+
+macro = {
+	description = "True if XW looks like an adjective: -á / -ý / -é, or soft -ní / -ší / -cí / -tí; not -telé plurals (Obdivovatelé) and not article words (al-Jamaní)"
+	definition = "CZLandIsAdj(XW)"
+	replace_with = "And(Not(CZLandIsArticle(XW)),Or(And(CZEnds(XW,'áýé'),Not(And(CZEnds2(XW,'é','l'),CZEnds2(TrimBackChars(TrimBackChars(XW,'é'),'l'),'e','t')))),CZEnds2(XW,'í','nšct')))"
+}
+
+macro = {
+	description = "True if XW looks like an animate plural adjective: -í except -ví nouns"
+	definition = "CZLandIsAdjPl(XW)"
+	replace_with = "And(CZEnds(XW,'í'),Not(CZEnds2(XW,'í','v')))"
+}
+
+macro = {
+	description = "True if XW is a feminine noun: not an adjective and ending in -a / -e / -ě / -ň / -ť"
+	definition = "CZLandIsFemNoun(XW)"
+	replace_with = "And(Not(CZLandIsAdj(XW)),CZEnds(XW,'aeěňť'))"
+}
+
+macro = {
+	description = "True if XW makes a phrase feminine: a feminine noun or a feminine adjective -á (Svatá svornost)"
+	definition = "CZLandIsFemWord(XW)"
+	replace_with = "Or(CZLandIsFemNoun(XW),CZEnds(XW,'á'))"
+}
+
+macro = {
+	description = "True if any word of a 1-3 word TITLE is a feminine noun (drives soft adjective agreement)"
+	definition = "CZLandIsFemPhrase(TITLE)"
+	replace_with = "Or(CZLandIsFemWord(CZTitleWord1(TITLE)),Or(CZLandIsFemWord(CZTitleWord2(TITLE)),CZLandIsFemWord(CZTitleWord3(TITLE))))"
+}
+
+macro = {
+	description = "True if XW is a non-empty non-adjective word"
+	definition = "CZLandIsNoun(XW)"
+	replace_with = "And(Not(StringIsEmpty(XW)),Not(CZLandIsAdj(XW)))"
+}
+
+macro = {
+	description = "True if exactly one of the (possibly empty) words XA, XB, XC is a noun and no word ends in -y / -i (plurals: Kanárské ostrovy, Vnitřní Hebridy; indeclinables) and -é is not combined with plural -í (Bílí Chorvaté)"
+	definition = "CZLandOneNoun(XA,XB,XC)"
+	replace_with = "EqualTo_string(Concatenate(Concatenate(Concatenate(Concatenate(Select_CString(CZLandIsNoun(XA),'n',''),Select_CString(CZLandIsNoun(XB),'n','')),Select_CString(CZLandIsNoun(XC),'n','')),Select_CString(Or(CZEnds(XA,'yi'),Or(CZEnds(XB,'yi'),CZEnds(XC,'yi'))),'x','')),Select_CString(And(Or(CZEnds(XA,'é'),Or(CZEnds(XB,'é'),CZEnds(XC,'é'))),Or(CZLandIsAdjPl(XA),Or(CZLandIsAdjPl(XB),CZLandIsAdjPl(XC)))),'x','')),'n')"
+}
+macro = {
+	description = "Czech 1-3 word landed title name genitive (XFEM = feminine phrase flag)"
+	definition = "CZLandCaseF_G(TITLE,XFEM)"
+	replace_with = "TrimBack(Concatenate(Concatenate(Concatenate(CZLandWord_G(CZTitleWord1(TITLE),XFEM),' '),CZLandWord_G(CZTitleWord2(TITLE),XFEM)),Concatenate(' ',CZLandWord_G(CZTitleWord3(TITLE),XFEM))))"
+}
+
+macro = {
+	description = "Czech 1-3 word landed title name genitive"
+	definition = "CZLandCase_G(TITLE)"
+	replace_with = "Select_CString(And(Not(CZTitleHasFourth(TITLE)),CZLandOneNoun(CZTitleWord1(TITLE),CZTitleWord2(TITLE),CZTitleWord3(TITLE))),CZLandCaseF_G(TITLE,CZLandIsFemPhrase(TITLE)),TITLE)"
+}
+macro = {
+	description = "Czech 1-3 word landed title name dative (XFEM = feminine phrase flag)"
+	definition = "CZLandCaseF_D(TITLE,XFEM)"
+	replace_with = "TrimBack(Concatenate(Concatenate(Concatenate(CZLandWord_D(CZTitleWord1(TITLE),XFEM),' '),CZLandWord_D(CZTitleWord2(TITLE),XFEM)),Concatenate(' ',CZLandWord_D(CZTitleWord3(TITLE),XFEM))))"
+}
+
+macro = {
+	description = "Czech 1-3 word landed title name dative"
+	definition = "CZLandCase_D(TITLE)"
+	replace_with = "Select_CString(And(Not(CZTitleHasFourth(TITLE)),CZLandOneNoun(CZTitleWord1(TITLE),CZTitleWord2(TITLE),CZTitleWord3(TITLE))),CZLandCaseF_D(TITLE,CZLandIsFemPhrase(TITLE)),TITLE)"
+}
+macro = {
+	description = "Czech 1-3 word landed title name accusative (XFEM = feminine phrase flag)"
+	definition = "CZLandCaseF_A(TITLE,XFEM)"
+	replace_with = "TrimBack(Concatenate(Concatenate(Concatenate(CZLandWord_A(CZTitleWord1(TITLE),XFEM),' '),CZLandWord_A(CZTitleWord2(TITLE),XFEM)),Concatenate(' ',CZLandWord_A(CZTitleWord3(TITLE),XFEM))))"
+}
+
+macro = {
+	description = "Czech 1-3 word landed title name accusative"
+	definition = "CZLandCase_A(TITLE)"
+	replace_with = "Select_CString(And(Not(CZTitleHasFourth(TITLE)),CZLandOneNoun(CZTitleWord1(TITLE),CZTitleWord2(TITLE),CZTitleWord3(TITLE))),CZLandCaseF_A(TITLE,CZLandIsFemPhrase(TITLE)),TITLE)"
+}
+macro = {
+	description = "Czech 1-3 word landed title name locative (XFEM = feminine phrase flag)"
+	definition = "CZLandCaseF_L(TITLE,XFEM)"
+	replace_with = "TrimBack(Concatenate(Concatenate(Concatenate(CZLandWord_L(CZTitleWord1(TITLE),XFEM),' '),CZLandWord_L(CZTitleWord2(TITLE),XFEM)),Concatenate(' ',CZLandWord_L(CZTitleWord3(TITLE),XFEM))))"
+}
+
+macro = {
+	description = "Czech 1-3 word landed title name locative"
+	definition = "CZLandCase_L(TITLE)"
+	replace_with = "Select_CString(And(Not(CZTitleHasFourth(TITLE)),CZLandOneNoun(CZTitleWord1(TITLE),CZTitleWord2(TITLE),CZTitleWord3(TITLE))),CZLandCaseF_L(TITLE,CZLandIsFemPhrase(TITLE)),TITLE)"
+}
+macro = {
+	description = "Czech 1-3 word landed title name instrumental (XFEM = feminine phrase flag)"
+	definition = "CZLandCaseF_I(TITLE,XFEM)"
+	replace_with = "TrimBack(Concatenate(Concatenate(Concatenate(CZLandWord_I(CZTitleWord1(TITLE),XFEM),' '),CZLandWord_I(CZTitleWord2(TITLE),XFEM)),Concatenate(' ',CZLandWord_I(CZTitleWord3(TITLE),XFEM))))"
+}
+
+macro = {
+	description = "Czech 1-3 word landed title name instrumental"
+	definition = "CZLandCase_I(TITLE)"
+	replace_with = "Select_CString(And(Not(CZTitleHasFourth(TITLE)),CZLandOneNoun(CZTitleWord1(TITLE),CZTitleWord2(TITLE),CZTitleWord3(TITLE))),CZLandCaseF_I(TITLE,CZLandIsFemPhrase(TITLE)),TITLE)"
+}
+# ------------------------------------------------
+# FIXED-LENGTH WORD EXTRACTION
+# ------------------------------------------------
+# Cheaper than CZTitleWord1-3 when the word count is already known
+# (used inside the 2- and 3-word dispatch branches).
+
+macro = {
+	description = "First word of an exactly two-word N"
+	definition = "CZLandW2a(N)"
+	replace_with = "TrimBack(TrimBackChars(N,Localize('CZ_TitleTokenChars')))"
+}
+
+macro = {
+	description = "Second word of an exactly two-word N"
+	definition = "CZLandW2b(N)"
+	replace_with = "TrimFront(TrimFrontChars(N,Localize('CZ_TitleTokenChars')))"
+}
+
+macro = {
+	description = "First word of an exactly three-word N"
+	definition = "CZLandW3a(N)"
+	replace_with = "TrimBack(TrimBackChars(TrimBack(TrimBackChars(N,Localize('CZ_TitleTokenChars'))),Localize('CZ_TitleTokenChars')))"
+}
+
+macro = {
+	description = "Second word of an exactly three-word N"
+	definition = "CZLandW3b(N)"
+	replace_with = "TrimBack(TrimBackChars(TrimFront(TrimFrontChars(N,Localize('CZ_TitleTokenChars'))),Localize('CZ_TitleTokenChars')))"
+}
+
+macro = {
+	description = "Third word of an exactly three-word N"
+	definition = "CZLandW3c(N)"
+	replace_with = "TrimFront(TrimFrontChars(TrimFront(TrimFrontChars(N,Localize('CZ_TitleTokenChars'))),Localize('CZ_TitleTokenChars')))"
+}
+
+# ------------------------------------------------
+# ANIMATE PLURALS (one-word tribal names)
+# ------------------------------------------------
+# Tribal / nomadic titles are often named after a people:
+# Oghuzové, Pečeněhové, Polané, Kozáci, Estonci, Kumáni. Handled only for one-word
+# names: in phrases -ové is usually an adjective (Kmenové království).
+
+macro = {
+	description = "True if XW is a one-word animate plural: -ové, -ané, -ci, long vowel + -ni (Kumáni; not Trapani)"
+	definition = "CZLandIsAnimPl(XW)"
+	replace_with = "Or(And(CZEnds2(XW,'é','v'),CZEnds(TrimBackChars(TrimBackChars(XW,'é'),'v'),'o')),Or(And(CZEnds2(XW,'é','n'),CZEnds(TrimBackChars(TrimBackChars(XW,'é'),'n'),'a')),Or(CZEnds2(XW,'i','c'),And(CZEnds2(XW,'i','n'),CZEnds(TrimBackChars(TrimBackChars(XW,'i'),'n'),'áéíóúý')))))"
+}
+
+macro = {
+	description = "Stem of an -ové plural: Oghuzové -> Oghuz"
+	definition = "CZLandStemOve(XW)"
+	replace_with = "TrimBackChars(TrimBackChars(TrimBackChars(XW,'é'),'v'),'o')"
+}
+
+macro = {
+	description = "Stem of a -ci plural with k-alternation (Kozáci, Turci -> Kozák, Turk); otherwise the -c stem (Estonci -> Estonc)"
+	definition = "CZLandStemCi(XW)"
+	replace_with = "Select_CString(CZEnds(TrimBackChars(TrimBackChars(XW,'i'),'c'),'aár'),Concatenate(TrimBackChars(TrimBackChars(XW,'i'),'c'),'k'),TrimBackChars(XW,'i'))"
+}
+
+macro = {
+	description = "Locative plural ending after an -ové stem: Kipčak -> Kipčacích, Pečeněh -> Pečenězích, Vlach -> Vlaších, Oghuz -> Oghuzech"
+	definition = "CZLandLocOve(XS)"
+	replace_with = "Select_CString(CZEnds2(XS,'h','c'),Concatenate(TrimBackChars(TrimBackChars(XS,'h'),'c'),'ších'),Select_CString(CZEnds(XS,'hg'),Concatenate(TrimBackChars(XS,'hg'),'zích'),Select_CString(CZEnds(XS,'k'),Concatenate(TrimBackChars(XS,'k'),'cích'),Concatenate(XS,'ech'))))"
+}
+macro = {
+	description = "Animate plural genitive: Oghuzové, Polané, Kozáci, Estonci; other -é only after a plural adjective (Bílí Chorvaté)"
+	definition = "CZLandAnimPl_G(XW)"
+	replace_with = "Select_CString(CZEnds2(XW,'é','v'),Concatenate(CZLandStemOve(XW),'ů'),Select_CString(And(CZEnds2(XW,'é','n'),CZEnds(TrimBackChars(TrimBackChars(XW,'é'),'n'),'a')),TrimBackChars(XW,'é'),Select_CString(CZEnds2(XW,'i','c'),Concatenate(CZLandStemCi(XW),'ů'),Select_CString(CZEnds2(XW,'i','n'),Concatenate(TrimBackChars(XW,'i'),'ů'),Concatenate(TrimBackChars(XW,'é'),'ů')))))"
+}
+macro = {
+	description = "Animate plural dative: Oghuzové, Polané, Kozáci, Estonci; other -é only after a plural adjective (Bílí Chorvaté)"
+	definition = "CZLandAnimPl_D(XW)"
+	replace_with = "Select_CString(CZEnds2(XW,'é','v'),Concatenate(CZLandStemOve(XW),'ům'),Select_CString(And(CZEnds2(XW,'é','n'),CZEnds(TrimBackChars(TrimBackChars(XW,'é'),'n'),'a')),Concatenate(TrimBackChars(XW,'é'),'ům'),Select_CString(CZEnds2(XW,'i','c'),Concatenate(CZLandStemCi(XW),'ům'),Select_CString(CZEnds2(XW,'i','n'),Concatenate(TrimBackChars(XW,'i'),'ům'),Concatenate(TrimBackChars(XW,'é'),'ům')))))"
+}
+macro = {
+	description = "Animate plural accusative: Oghuzové, Polané, Kozáci, Estonci; other -é only after a plural adjective (Bílí Chorvaté)"
+	definition = "CZLandAnimPl_A(XW)"
+	replace_with = "Select_CString(CZEnds2(XW,'é','v'),Concatenate(CZLandStemOve(XW),Select_CString(CZEnds(CZLandStemOve(XW),'jžšřčcď'),'e','y')),Select_CString(And(CZEnds2(XW,'é','n'),CZEnds(TrimBackChars(TrimBackChars(XW,'é'),'n'),'a')),Concatenate(TrimBackChars(XW,'é'),'y'),Select_CString(CZEnds2(XW,'i','c'),Concatenate(CZLandStemCi(XW),Select_CString(CZEnds(CZLandStemCi(XW),'k'),'y','e')),Select_CString(CZEnds2(XW,'i','n'),Concatenate(TrimBackChars(XW,'i'),'y'),Concatenate(TrimBackChars(XW,'é'),'y')))))"
+}
+macro = {
+	description = "Animate plural locative: Oghuzové, Polané, Kozáci, Estonci; other -é only after a plural adjective (Bílí Chorvaté)"
+	definition = "CZLandAnimPl_L(XW)"
+	replace_with = "Select_CString(CZEnds2(XW,'é','v'),CZLandLocOve(CZLandStemOve(XW)),Select_CString(And(CZEnds2(XW,'é','n'),CZEnds(TrimBackChars(TrimBackChars(XW,'é'),'n'),'a')),Concatenate(TrimBackChars(XW,'é'),'ech'),Select_CString(CZEnds2(XW,'i','c'),Concatenate(TrimBackChars(XW,'i'),'ích'),Select_CString(CZEnds2(XW,'i','n'),Concatenate(TrimBackChars(XW,'i'),'ech'),CZLandLocOve(TrimBackChars(XW,'é'))))))"
+}
+macro = {
+	description = "Animate plural instrumental: Oghuzové, Polané, Kozáci, Estonci; other -é only after a plural adjective (Bílí Chorvaté)"
+	definition = "CZLandAnimPl_I(XW)"
+	replace_with = "Select_CString(CZEnds2(XW,'é','v'),Concatenate(CZLandStemOve(XW),Select_CString(CZEnds(CZLandStemOve(XW),'jžšřčcď'),'i','y')),Select_CString(And(CZEnds2(XW,'é','n'),CZEnds(TrimBackChars(TrimBackChars(XW,'é'),'n'),'a')),Concatenate(TrimBackChars(XW,'é'),'y'),Select_CString(CZEnds2(XW,'i','c'),Concatenate(CZLandStemCi(XW),Select_CString(CZEnds(CZLandStemCi(XW),'k'),'y','i')),Select_CString(CZEnds2(XW,'i','n'),Concatenate(TrimBackChars(XW,'i'),'y'),Concatenate(TrimBackChars(XW,'é'),'y')))))"
+}
+# Two-word peoples: animate plural adjective + people
+# (Bordžiginští Mongolové, Osmanští Turci, Lužičtí Srbové).
+
+macro = {
+	description = "True if two-word N is animate plural adjective + people (Bordžiginští Mongolové, Bílí Chorvaté)"
+	definition = "CZLandIsAnimPl2(N)"
+	replace_with = "And(CZLandIsAdjPl(CZLandW2a(N)),Or(CZLandIsAnimPl(CZLandW2b(N)),CZEnds(CZLandW2b(N),'é')))"
+}
+
+macro = {
+	description = "Hard stem of an animate plural adjective: -ští -> -sk, -čtí -> -ck, else drop -í (Bílí -> Bíl)"
+	definition = "CZLandAdjPlStem(XW)"
+	replace_with = "Select_CString(And(CZEnds2(XW,'í','t'),CZEnds(TrimBackChars(TrimBackChars(XW,'í'),'t'),'š')),Concatenate(TrimBackChars(TrimBackChars(TrimBackChars(XW,'í'),'t'),'š'),'sk'),Select_CString(And(CZEnds2(XW,'í','t'),CZEnds(TrimBackChars(TrimBackChars(XW,'í'),'t'),'č')),Concatenate(TrimBackChars(TrimBackChars(TrimBackChars(XW,'í'),'t'),'č'),'ck'),TrimBackChars(XW,'í')))"
+}
+macro = {
+	description = "Animate plural adjective genitive: Bordžiginští -> Bordžiginských, Západní -> Západních (soft -ní/-ší/-cí/-jí), Černí -> Černých (hard exception)"
+	definition = "CZLandAdjPl_G(XW)"
+	replace_with = "Select_CString(And(CZEnds2(XW,'í','nšcj'),Not(Or(EqualTo_string(XW,'Černí'),EqualTo_string(XW,'černí')))),Concatenate(TrimBackChars(XW,'í'),'ích'),Concatenate(CZLandAdjPlStem(XW),'ých'))"
+}
+macro = {
+	description = "Animate plural adjective dative: Bordžiginští -> Bordžiginských, Západní -> Západních (soft -ní/-ší/-cí/-jí), Černí -> Černých (hard exception)"
+	definition = "CZLandAdjPl_D(XW)"
+	replace_with = "Select_CString(And(CZEnds2(XW,'í','nšcj'),Not(Or(EqualTo_string(XW,'Černí'),EqualTo_string(XW,'černí')))),Concatenate(TrimBackChars(XW,'í'),'ím'),Concatenate(CZLandAdjPlStem(XW),'ým'))"
+}
+macro = {
+	description = "Animate plural adjective accusative: Bordžiginští -> Bordžiginských, Západní -> Západních (soft -ní/-ší/-cí/-jí), Černí -> Černých (hard exception)"
+	definition = "CZLandAdjPl_A(XW)"
+	replace_with = "Select_CString(And(CZEnds2(XW,'í','nšcj'),Not(Or(EqualTo_string(XW,'Černí'),EqualTo_string(XW,'černí')))),Concatenate(TrimBackChars(XW,'í'),'í'),Concatenate(CZLandAdjPlStem(XW),'é'))"
+}
+macro = {
+	description = "Animate plural adjective locative: Bordžiginští -> Bordžiginských, Západní -> Západních (soft -ní/-ší/-cí/-jí), Černí -> Černých (hard exception)"
+	definition = "CZLandAdjPl_L(XW)"
+	replace_with = "Select_CString(And(CZEnds2(XW,'í','nšcj'),Not(Or(EqualTo_string(XW,'Černí'),EqualTo_string(XW,'černí')))),Concatenate(TrimBackChars(XW,'í'),'ích'),Concatenate(CZLandAdjPlStem(XW),'ých'))"
+}
+macro = {
+	description = "Animate plural adjective instrumental: Bordžiginští -> Bordžiginských, Západní -> Západních (soft -ní/-ší/-cí/-jí), Černí -> Černých (hard exception)"
+	definition = "CZLandAdjPl_I(XW)"
+	replace_with = "Select_CString(And(CZEnds2(XW,'í','nšcj'),Not(Or(EqualTo_string(XW,'Černí'),EqualTo_string(XW,'černí')))),Concatenate(TrimBackChars(XW,'í'),'ími'),Concatenate(CZLandAdjPlStem(XW),'ými'))"
+}
+# ------------------------------------------------
+# FIXED-LENGTH COMPOSERS (dispatch targets)
+# ------------------------------------------------
+macro = {
+	description = "Czech one-word landed title name genitive"
+	definition = "CZLandCase1_G(N)"
+	replace_with = "Select_CString(CZLandIsAnimPl(N),CZLandAnimPl_G(N),CZLandWord_G(N,CZLandIsFemNoun(N)))"
+}
+
+macro = {
+	description = "Czech two-word landed title name genitive"
+	definition = "CZLandCase2_G(N)"
+	replace_with = "Select_CString(CZLandIsAnimPl2(N),Concatenate(Concatenate(CZLandAdjPl_G(CZLandW2a(N)),' '),CZLandAnimPl_G(CZLandW2b(N))),Concatenate(Concatenate(CZLandWord_G(CZLandW2a(N),Or(CZLandIsFemWord(CZLandW2a(N)),CZLandIsFemWord(CZLandW2b(N)))),' '),CZLandWord_G(CZLandW2b(N),Or(CZLandIsFemWord(CZLandW2a(N)),CZLandIsFemWord(CZLandW2b(N))))))"
+}
+
+macro = {
+	description = "Czech three-word landed title name genitive"
+	definition = "CZLandCase3_G(N)"
+	replace_with = "Concatenate(Concatenate(Concatenate(Concatenate(CZLandWord_G(CZLandW3a(N),Or(CZLandIsFemWord(CZLandW3a(N)),Or(CZLandIsFemWord(CZLandW3b(N)),CZLandIsFemWord(CZLandW3c(N))))),' '),CZLandWord_G(CZLandW3b(N),Or(CZLandIsFemWord(CZLandW3a(N)),Or(CZLandIsFemWord(CZLandW3b(N)),CZLandIsFemWord(CZLandW3c(N)))))),' '),CZLandWord_G(CZLandW3c(N),Or(CZLandIsFemWord(CZLandW3a(N)),Or(CZLandIsFemWord(CZLandW3b(N)),CZLandIsFemWord(CZLandW3c(N))))))"
+}
+macro = {
+	description = "Czech one-word landed title name dative"
+	definition = "CZLandCase1_D(N)"
+	replace_with = "Select_CString(CZLandIsAnimPl(N),CZLandAnimPl_D(N),CZLandWord_D(N,CZLandIsFemNoun(N)))"
+}
+
+macro = {
+	description = "Czech two-word landed title name dative"
+	definition = "CZLandCase2_D(N)"
+	replace_with = "Select_CString(CZLandIsAnimPl2(N),Concatenate(Concatenate(CZLandAdjPl_D(CZLandW2a(N)),' '),CZLandAnimPl_D(CZLandW2b(N))),Concatenate(Concatenate(CZLandWord_D(CZLandW2a(N),Or(CZLandIsFemWord(CZLandW2a(N)),CZLandIsFemWord(CZLandW2b(N)))),' '),CZLandWord_D(CZLandW2b(N),Or(CZLandIsFemWord(CZLandW2a(N)),CZLandIsFemWord(CZLandW2b(N))))))"
+}
+
+macro = {
+	description = "Czech three-word landed title name dative"
+	definition = "CZLandCase3_D(N)"
+	replace_with = "Concatenate(Concatenate(Concatenate(Concatenate(CZLandWord_D(CZLandW3a(N),Or(CZLandIsFemWord(CZLandW3a(N)),Or(CZLandIsFemWord(CZLandW3b(N)),CZLandIsFemWord(CZLandW3c(N))))),' '),CZLandWord_D(CZLandW3b(N),Or(CZLandIsFemWord(CZLandW3a(N)),Or(CZLandIsFemWord(CZLandW3b(N)),CZLandIsFemWord(CZLandW3c(N)))))),' '),CZLandWord_D(CZLandW3c(N),Or(CZLandIsFemWord(CZLandW3a(N)),Or(CZLandIsFemWord(CZLandW3b(N)),CZLandIsFemWord(CZLandW3c(N))))))"
+}
+macro = {
+	description = "Czech one-word landed title name accusative"
+	definition = "CZLandCase1_A(N)"
+	replace_with = "Select_CString(CZLandIsAnimPl(N),CZLandAnimPl_A(N),CZLandWord_A(N,CZLandIsFemNoun(N)))"
+}
+
+macro = {
+	description = "Czech two-word landed title name accusative"
+	definition = "CZLandCase2_A(N)"
+	replace_with = "Select_CString(CZLandIsAnimPl2(N),Concatenate(Concatenate(CZLandAdjPl_A(CZLandW2a(N)),' '),CZLandAnimPl_A(CZLandW2b(N))),Concatenate(Concatenate(CZLandWord_A(CZLandW2a(N),Or(CZLandIsFemWord(CZLandW2a(N)),CZLandIsFemWord(CZLandW2b(N)))),' '),CZLandWord_A(CZLandW2b(N),Or(CZLandIsFemWord(CZLandW2a(N)),CZLandIsFemWord(CZLandW2b(N))))))"
+}
+
+macro = {
+	description = "Czech three-word landed title name accusative"
+	definition = "CZLandCase3_A(N)"
+	replace_with = "Concatenate(Concatenate(Concatenate(Concatenate(CZLandWord_A(CZLandW3a(N),Or(CZLandIsFemWord(CZLandW3a(N)),Or(CZLandIsFemWord(CZLandW3b(N)),CZLandIsFemWord(CZLandW3c(N))))),' '),CZLandWord_A(CZLandW3b(N),Or(CZLandIsFemWord(CZLandW3a(N)),Or(CZLandIsFemWord(CZLandW3b(N)),CZLandIsFemWord(CZLandW3c(N)))))),' '),CZLandWord_A(CZLandW3c(N),Or(CZLandIsFemWord(CZLandW3a(N)),Or(CZLandIsFemWord(CZLandW3b(N)),CZLandIsFemWord(CZLandW3c(N))))))"
+}
+macro = {
+	description = "Czech one-word landed title name locative"
+	definition = "CZLandCase1_L(N)"
+	replace_with = "Select_CString(CZLandIsAnimPl(N),CZLandAnimPl_L(N),CZLandWord_L(N,CZLandIsFemNoun(N)))"
+}
+
+macro = {
+	description = "Czech two-word landed title name locative"
+	definition = "CZLandCase2_L(N)"
+	replace_with = "Select_CString(CZLandIsAnimPl2(N),Concatenate(Concatenate(CZLandAdjPl_L(CZLandW2a(N)),' '),CZLandAnimPl_L(CZLandW2b(N))),Concatenate(Concatenate(CZLandWord_L(CZLandW2a(N),Or(CZLandIsFemWord(CZLandW2a(N)),CZLandIsFemWord(CZLandW2b(N)))),' '),CZLandWord_L(CZLandW2b(N),Or(CZLandIsFemWord(CZLandW2a(N)),CZLandIsFemWord(CZLandW2b(N))))))"
+}
+
+macro = {
+	description = "Czech three-word landed title name locative"
+	definition = "CZLandCase3_L(N)"
+	replace_with = "Concatenate(Concatenate(Concatenate(Concatenate(CZLandWord_L(CZLandW3a(N),Or(CZLandIsFemWord(CZLandW3a(N)),Or(CZLandIsFemWord(CZLandW3b(N)),CZLandIsFemWord(CZLandW3c(N))))),' '),CZLandWord_L(CZLandW3b(N),Or(CZLandIsFemWord(CZLandW3a(N)),Or(CZLandIsFemWord(CZLandW3b(N)),CZLandIsFemWord(CZLandW3c(N)))))),' '),CZLandWord_L(CZLandW3c(N),Or(CZLandIsFemWord(CZLandW3a(N)),Or(CZLandIsFemWord(CZLandW3b(N)),CZLandIsFemWord(CZLandW3c(N))))))"
+}
+macro = {
+	description = "Czech one-word landed title name instrumental"
+	definition = "CZLandCase1_I(N)"
+	replace_with = "Select_CString(CZLandIsAnimPl(N),CZLandAnimPl_I(N),CZLandWord_I(N,CZLandIsFemNoun(N)))"
+}
+
+macro = {
+	description = "Czech two-word landed title name instrumental"
+	definition = "CZLandCase2_I(N)"
+	replace_with = "Select_CString(CZLandIsAnimPl2(N),Concatenate(Concatenate(CZLandAdjPl_I(CZLandW2a(N)),' '),CZLandAnimPl_I(CZLandW2b(N))),Concatenate(Concatenate(CZLandWord_I(CZLandW2a(N),Or(CZLandIsFemWord(CZLandW2a(N)),CZLandIsFemWord(CZLandW2b(N)))),' '),CZLandWord_I(CZLandW2b(N),Or(CZLandIsFemWord(CZLandW2a(N)),CZLandIsFemWord(CZLandW2b(N))))))"
+}
+
+macro = {
+	description = "Czech three-word landed title name instrumental"
+	definition = "CZLandCase3_I(N)"
+	replace_with = "Concatenate(Concatenate(Concatenate(Concatenate(CZLandWord_I(CZLandW3a(N),Or(CZLandIsFemWord(CZLandW3a(N)),Or(CZLandIsFemWord(CZLandW3b(N)),CZLandIsFemWord(CZLandW3c(N))))),' '),CZLandWord_I(CZLandW3b(N),Or(CZLandIsFemWord(CZLandW3a(N)),Or(CZLandIsFemWord(CZLandW3b(N)),CZLandIsFemWord(CZLandW3c(N)))))),' '),CZLandWord_I(CZLandW3c(N),Or(CZLandIsFemWord(CZLandW3a(N)),Or(CZLandIsFemWord(CZLandW3b(N)),CZLandIsFemWord(CZLandW3c(N))))))"
+}
+# ------------------------------------------------
+# DISPATCH (CustomLoc key selection)
+# ------------------------------------------------
+# Select_CString evaluates both branches, so every branch below is a
+# separate CustomLoc key and only the key returned here is evaluated
+# through ROOT.GetLandedTitle.Custom(<key>). Keys: 99_cz_custom_loc.txt.
+
+macro = {
+	description = "Table key CZ_LT_<title key>_<case>"
+	definition = "CZLandKey(XT,XCASE)"
+	replace_with = "Concatenate(Concatenate(Concatenate('CZ_LT_',XT.GetKey),'_'),XCASE)"
+}
+
+macro = {
+	description = "True if the title still has its default name and the table has an entry for XCASE (Localize of a missing key returns the key)"
+	definition = "CZLandHasEntry(XT,XCASE)"
+	replace_with = "And(EqualTo_string(XT.GetNameNoTierNoTooltip,Localize(XT.GetKey)),And(Not(StringIsEmpty(Localize(CZLandKey(XT,XCASE)))),Not(EqualTo_string(Localize(CZLandKey(XT,XCASE)),CZLandKey(XT,XCASE)))))"
+}
+
+macro = {
+	description = "True if the title name has the form '<Tier> <Name>'"
+	definition = "CZLandIsTiered(XT)"
+	replace_with = "EqualTo_string(XT.GetNameNoTooltip,CZJoin(XT.GetTierAsNameNoTooltip,XT.GetNameNoTierNoTooltip))"
+}
+
+macro = {
+	description = "Composer key PFX<1|2|3>_<case> by word count of N"
+	definition = "CZLandLenKey(N,PFX,XCASE)"
+	replace_with = "Concatenate(Concatenate(PFX,Select_CString(CZTitleHasThird(N),'3_',Select_CString(CZTitleHasSecond(N),'2_','1_'))),XCASE)"
+}
+
+macro = {
+	description = "N without its first word: Rod Li -> Li"
+	definition = "CZLandRest(N)"
+	replace_with = "TrimFront(TrimFrontChars(N,Localize('CZ_TitleTokenChars')))"
+}
+
+macro = {
+	description = "True if N is 'Rod <name>': only Rod is declined, the name stays (z Rodu Li)"
+	definition = "CZLandIsRod(N)"
+	replace_with = "And(CZTitleHasSecond(N),EqualTo_string(Concatenate('Rod ',CZLandRest(N)),N))"
+}
+
+macro = {
+	description = "Key for the name without tier: table, Rod <name>, rule composer, or unchanged"
+	definition = "CZLandNoTierKey(XT,XCASE)"
+	replace_with = "Select_CString(CZLandHasEntry(XT,XCASE),Concatenate('CZ_LandTable_',XCASE),Select_CString(CZLandIsRod(XT.GetNameNoTierNoTooltip),Concatenate('CZ_LandRod_',XCASE),Select_CString(Or(And(Not(CZTitleHasSecond(XT.GetNameNoTierNoTooltip)),CZLandIsAnimPl(XT.GetNameNoTierNoTooltip)),Or(And(CZTitleHasSecond(XT.GetNameNoTierNoTooltip),And(Not(CZTitleHasThird(XT.GetNameNoTierNoTooltip)),CZLandIsAnimPl2(XT.GetNameNoTierNoTooltip))),And(Not(CZTitleHasFourth(XT.GetNameNoTierNoTooltip)),CZLandOneNoun(CZTitleWord1(XT.GetNameNoTierNoTooltip),CZTitleWord2(XT.GetNameNoTierNoTooltip),CZTitleWord3(XT.GetNameNoTierNoTooltip))))),CZLandLenKey(XT.GetNameNoTierNoTooltip,'CZ_LandNoTier',XCASE),'CZ_LandRawNoTier')))"
+}
+
+macro = {
+	description = "Key for the full name: declined tier + name, untiered name, or unchanged"
+	definition = "CZLandFullKey(XT,XCASE)"
+	replace_with = "Select_CString(CZLandIsTiered(XT),Concatenate('CZ_LandTierPart_',XCASE),Select_CString(EqualTo_string(XT.GetNameNoTooltip,XT.GetNameNoTierNoTooltip),Concatenate('CZ_LandedNameNoTierNoTooltip_',XCASE),'CZ_LandRawName'))"
+}
+
+# Same idea as CZAdjectiveDeclineRich (Faith / Religion): keep the native
+# rich getter, which carries a working tooltip/onclick, and only replace its
+# visible tail. The plain name XP has 1-6 words, so exactly that many
+# words are cut from the end of the native string (after its closers).
+# The result is verified: prefix + XP + closers must equal the native
+# string, otherwise the declined plain text is returned without tooltip.
+
+macro = {
+	description = "Native rich title string without its trailing closers"
+	definition = "CZLandRichBody(XR)"
+	replace_with = "TrimBackChars(XR,Localize('CZ_FMT_CLOSE_CHARS'))"
+}
+
+macro = {
+	description = "Rich prefix (formatting before the visible name) of native string XR whose plain text is XP"
+	definition = "CZLandRichPrefix(XR,XP)"
+	replace_with = "Select_CString(Not(StringIsEmpty(TrimFront(TrimFrontChars(TrimFront(TrimFrontChars(TrimFront(TrimFrontChars(TrimFront(TrimFrontChars(TrimFront(TrimFrontChars(XP, Localize('CZ_TitleTokenChars'))), Localize('CZ_TitleTokenChars'))), Localize('CZ_TitleTokenChars'))), Localize('CZ_TitleTokenChars'))), Localize('CZ_TitleTokenChars'))))),TrimBackChars(TrimBack(TrimBackChars(TrimBack(TrimBackChars(TrimBack(TrimBackChars(TrimBack(TrimBackChars(TrimBack(TrimBackChars(CZLandRichBody(XR), Localize('CZ_TitleTokenChars'))), Localize('CZ_TitleTokenChars'))), Localize('CZ_TitleTokenChars'))), Localize('CZ_TitleTokenChars'))), Localize('CZ_TitleTokenChars'))), Localize('CZ_TitleTokenChars')),Select_CString(Not(StringIsEmpty(TrimFront(TrimFrontChars(TrimFront(TrimFrontChars(TrimFront(TrimFrontChars(TrimFront(TrimFrontChars(XP, Localize('CZ_TitleTokenChars'))), Localize('CZ_TitleTokenChars'))), Localize('CZ_TitleTokenChars'))), Localize('CZ_TitleTokenChars'))))),TrimBackChars(TrimBack(TrimBackChars(TrimBack(TrimBackChars(TrimBack(TrimBackChars(TrimBack(TrimBackChars(CZLandRichBody(XR), Localize('CZ_TitleTokenChars'))), Localize('CZ_TitleTokenChars'))), Localize('CZ_TitleTokenChars'))), Localize('CZ_TitleTokenChars'))), Localize('CZ_TitleTokenChars')),Select_CString(Not(StringIsEmpty(TrimFront(TrimFrontChars(TrimFront(TrimFrontChars(TrimFront(TrimFrontChars(XP, Localize('CZ_TitleTokenChars'))), Localize('CZ_TitleTokenChars'))), Localize('CZ_TitleTokenChars'))))),TrimBackChars(TrimBack(TrimBackChars(TrimBack(TrimBackChars(TrimBack(TrimBackChars(CZLandRichBody(XR), Localize('CZ_TitleTokenChars'))), Localize('CZ_TitleTokenChars'))), Localize('CZ_TitleTokenChars'))), Localize('CZ_TitleTokenChars')),Select_CString(Not(StringIsEmpty(TrimFront(TrimFrontChars(TrimFront(TrimFrontChars(XP, Localize('CZ_TitleTokenChars'))), Localize('CZ_TitleTokenChars'))))),TrimBackChars(TrimBack(TrimBackChars(TrimBack(TrimBackChars(CZLandRichBody(XR), Localize('CZ_TitleTokenChars'))), Localize('CZ_TitleTokenChars'))), Localize('CZ_TitleTokenChars')),Select_CString(Not(StringIsEmpty(TrimFront(TrimFrontChars(XP, Localize('CZ_TitleTokenChars'))))),TrimBackChars(TrimBack(TrimBackChars(CZLandRichBody(XR), Localize('CZ_TitleTokenChars'))), Localize('CZ_TitleTokenChars')),TrimBackChars(CZLandRichBody(XR), Localize('CZ_TitleTokenChars')))))))"
+}
+
+macro = {
+	description = "Closers of native rich string XR (2 or 3 levels), or empty if XR is not prefix + XP + closers"
+	definition = "CZLandRichClose(XR,XP)"
+	replace_with = "Select_CString(EqualTo_string(XR,Concatenate(Concatenate(CZLandRichPrefix(XR,XP),XP),Localize('CZ_FMT_CLOSE2'))),Localize('CZ_FMT_CLOSE2'),Select_CString(EqualTo_string(XR,Concatenate(Concatenate(CZLandRichPrefix(XR,XP),XP),Localize('CZ_FMT_CLOSE3'))),Localize('CZ_FMT_CLOSE3'),''))"
+}
+
+macro = {
+	description = "True if native rich string XR could be decomposed"
+	definition = "CZLandRichOK(XR,XP)"
+	replace_with = "Not(StringIsEmpty(CZLandRichClose(XR,XP)))"
+}
+
+macro = {
+	description = "Put declined text XD into the native rich string XR (plain text XP); plain XD if XR cannot be decomposed"
+	definition = "CZLandRich(XR,XP,XD)"
+	replace_with = "Concatenate(Concatenate(Select_CString(CZLandRichOK(XR,XP),CZLandRichPrefix(XR,XP),''),XD),CZLandRichClose(XR,XP))"
+}
+
+# Choose the vocalized form of a preposition for the following word.
+# XTXT must be plain text (NoTooltip getter); declension does not change
+# the first letters, so the nominative can be passed:
+#   [CZPrepV(TITLE.GetNameNoTierNoTooltip)] [TITLE.Custom('CZ_LandedNameNoTier_L')]
+# Use |U for sentence start: [CZPrepZ(...)|U]
+
+macro = {
+	description = "True if XTXT starts with any of the characters in XC"
+	definition = "CZStartsWith(XTXT,XC)"
+	replace_with = "Not(EqualTo_string(XTXT,TrimFrontChars(XTXT,XC)))"
+}
+
+macro = {
+	description = "Preposition z/ze: ze before s/z/š/ž: ze Švédska, z Polska"
+	definition = "CZPrepZ(XTXT)"
+	replace_with = "Select_CString(CZStartsWith(XTXT,'sSzZšŠžŽ'),'ze','z')"
+}
+
+macro = {
+	description = "Preposition s/se: se before s/z/š/ž: se Saskem, s Polskem"
+	definition = "CZPrepS(XTXT)"
+	replace_with = "Select_CString(CZStartsWith(XTXT,'sSzZšŠžŽ'),'se','s')"
+}
+
+macro = {
+	description = "Preposition k/ke: ke before k/g and s/z/š/ž + consonant: ke Kastilii, ke Skotsku, k Polsku"
+	definition = "CZPrepK(XTXT)"
+	replace_with = "Select_CString(Or(CZStartsWith(XTXT,'kKgG'),And(CZStartsWith(XTXT,'sSzZšŠžŽ'),CZStartsWith(TrimFrontChars(XTXT,'sSzZšŠžŽ'),'bBcCčČdDďĎfFgGhHjJkKlLmMnNňŇpPqQrRřŘsSšŠtTťŤvVwWxXzZžŽ'))),'ke','k')"
+}
+
+macro = {
+	description = "Preposition v/ve: ve before v/f/w and s/z/š/ž/č/ř + consonant: ve Francii, ve Švédsku, v Čechách"
+	definition = "CZPrepV(XTXT)"
+	replace_with = "Select_CString(Or(CZStartsWith(XTXT,'vVfFwW'),And(CZStartsWith(XTXT,'sSzZšŠžŽčČřŘ'),CZStartsWith(TrimFrontChars(XTXT,'sSzZšŠžŽčČřŘ'),'bBcCčČdDďĎfFgGhHjJkKlLmMnNňŇpPqQrRřŘsSšŠtTťŤvVwWxXzZžŽ'))),'ve','v')"
+}
+
+# ------------------------------------------------
+# TEXT-ONLY GENITIVE (character names "z <title>")
+# ------------------------------------------------
+# The CHARACTER_NAME / CHARACTER_FULL_NAME family only gets $TITLE$ as text
+# (no CHARACTER or title scope there), so the genitive is built from text:
+#   "$TIER$ $NAME$ [CZPrepZ('$TITLE|q$')] [CZLandTextG('$TITLE|q$')]"
+# 1. text table: genitives of CZ_LT_*_G entries, matched by nominative text
+#    (generated from 00_cz_landed_title_cases_l_polish.yml, chunks of 10
+#    to stay under the nesting limit)
+# 2. otherwise the same rules as for titles (guard + 1-3 word composers)
+
+macro = {
+	description = "Text table genitive, part 1 (empty if no match): Antverpy, Athény, Atény, Baleáry, Benátky, Bruggy, Brémy, Cáchy, Damašek, Domažlice"
+	definition = "CZLandTextTable0(XTTL)"
+	replace_with = "Select_CString(EqualTo_string(XTTL,'Antverpy'),'Antverp',Select_CString(EqualTo_string(XTTL,'Athény'),'Athén',Select_CString(EqualTo_string(XTTL,'Atény'),'Atén',Select_CString(EqualTo_string(XTTL,'Baleáry'),'Baleár',Select_CString(EqualTo_string(XTTL,'Benátky'),'Benátek',Select_CString(EqualTo_string(XTTL,'Bruggy'),'Brugg',Select_CString(EqualTo_string(XTTL,'Brémy'),'Brém',Select_CString(EqualTo_string(XTTL,'Cáchy'),'Cách',Select_CString(EqualTo_string(XTTL,'Damašek'),'Damašku',Select_CString(EqualTo_string(XTTL,'Domažlice'),'Domažlic',''))))))))))"
+}
+
+macro = {
+	description = "Text table genitive, part 2 (empty if no match): Doudleby, Drážďany, Egejské ostrovy, Faerské ostrovy, Flandry, Franky, Hebridy, Jasy, Jeruzalém, Kanárské ostrovy"
+	definition = "CZLandTextTable1(XTTL)"
+	replace_with = "Select_CString(EqualTo_string(XTTL,'Doudleby'),'Doudleb',Select_CString(EqualTo_string(XTTL,'Drážďany'),'Drážďan',Select_CString(EqualTo_string(XTTL,'Egejské ostrovy'),'Egejských ostrovů',Select_CString(EqualTo_string(XTTL,'Faerské ostrovy'),'Faerských ostrovů',Select_CString(EqualTo_string(XTTL,'Flandry'),'Flander',Select_CString(EqualTo_string(XTTL,'Franky'),'Frank',Select_CString(EqualTo_string(XTTL,'Hebridy'),'Hebrid',Select_CString(EqualTo_string(XTTL,'Jasy'),'Jas',Select_CString(EqualTo_string(XTTL,'Jeruzalém'),'Jeruzaléma',Select_CString(EqualTo_string(XTTL,'Kanárské ostrovy'),'Kanárských ostrovů',''))))))))))"
+}
+
+macro = {
+	description = "Text table genitive, part 3 (empty if no match): Korutany, Kyjevská Rus, Litoměřice, Lofoty, Maledivy, Mazury, Moluky, Mugodžarské hory, Novogrudek, Rodopy"
+	definition = "CZLandTextTable2(XTTL)"
+	replace_with = "Select_CString(EqualTo_string(XTTL,'Korutany'),'Korutan',Select_CString(EqualTo_string(XTTL,'Kyjevská Rus'),'Kyjevské Rusi',Select_CString(EqualTo_string(XTTL,'Litoměřice'),'Litoměřic',Select_CString(EqualTo_string(XTTL,'Lofoty'),'Lofot',Select_CString(EqualTo_string(XTTL,'Maledivy'),'Malediv',Select_CString(EqualTo_string(XTTL,'Mazury'),'Mazur',Select_CString(EqualTo_string(XTTL,'Moluky'),'Moluk',Select_CString(EqualTo_string(XTTL,'Mugodžarské hory'),'Mugodžarských hor',Select_CString(EqualTo_string(XTTL,'Novogrudek'),'Novogrudku',Select_CString(EqualTo_string(XTTL,'Rodopy'),'Rodop',''))))))))))"
+}
+
+macro = {
+	description = "Text table genitive, part 4 (empty if no match): Severní ostrovy, Shetlandy, Syrakusy, Súsy, Transylvánské Alpy, Vasjuganské bažiny, Vnitřní Hebridy, Vnější Hebridy, Východní Franky, Západní Franky"
+	definition = "CZLandTextTable3(XTTL)"
+	replace_with = "Select_CString(EqualTo_string(XTTL,'Severní ostrovy'),'Severních ostrovů',Select_CString(EqualTo_string(XTTL,'Shetlandy'),'Shetland',Select_CString(EqualTo_string(XTTL,'Syrakusy'),'Syrakus',Select_CString(EqualTo_string(XTTL,'Súsy'),'Sús',Select_CString(EqualTo_string(XTTL,'Transylvánské Alpy'),'Transylvánských Alp',Select_CString(EqualTo_string(XTTL,'Vasjuganské bažiny'),'Vasjuganských bažin',Select_CString(EqualTo_string(XTTL,'Vnitřní Hebridy'),'Vnitřních Hebrid',Select_CString(EqualTo_string(XTTL,'Vnější Hebridy'),'Vnějších Hebrid',Select_CString(EqualTo_string(XTTL,'Východní Franky'),'Východních Frank',Select_CString(EqualTo_string(XTTL,'Západní Franky'),'Západních Frank',''))))))))))"
+}
+
+macro = {
+	description = "Text table genitive, part 5 (empty if no match): Ålandy, Čechy, Čerkasy, Hradec Králové"
+	definition = "CZLandTextTable4(XTTL)"
+	replace_with = "Select_CString(EqualTo_string(XTTL,'Ålandy'),'Åland',Select_CString(EqualTo_string(XTTL,'Čechy'),'Čech',Select_CString(EqualTo_string(XTTL,'Čerkasy'),'Čerkas',Select_CString(EqualTo_string(XTTL,'Hradec Králové'),'Hradce Králové',''))))"
+}
+
+# Kept flat on purpose: the game aborts with "Macro argument replacement
+# exceeded depth 20" when macros are chained too deeply (a chain of table
+# macros ending in the rules failed). Table parts are siblings joined by
+# Concatenate and the rules are inlined here.
+
+macro = {
+	description = "Genitive of a plain title name text: Rod <name>, text table, then rules"
+	definition = "CZLandTextG(XTTL)"
+	replace_with = "Select_CString(CZLandIsRod(XTTL),Concatenate('Rodu ',CZLandRest(XTTL)),Select_CString(StringIsEmpty(Concatenate(Concatenate(Concatenate(Concatenate(CZLandTextTable0(XTTL),CZLandTextTable1(XTTL)),CZLandTextTable2(XTTL)),CZLandTextTable3(XTTL)),CZLandTextTable4(XTTL))),Select_CString(Or(And(Not(CZTitleHasSecond(XTTL)),CZLandIsAnimPl(XTTL)),Or(And(CZTitleHasSecond(XTTL),And(Not(CZTitleHasThird(XTTL)),CZLandIsAnimPl2(XTTL))),And(Not(CZTitleHasFourth(XTTL)),CZLandOneNoun(CZTitleWord1(XTTL),CZTitleWord2(XTTL),CZTitleWord3(XTTL))))),Select_CString(CZTitleHasThird(XTTL),CZLandCase3_G(XTTL),Select_CString(CZTitleHasSecond(XTTL),CZLandCase2_G(XTTL),CZLandCase1_G(XTTL))),XTTL),Concatenate(Concatenate(Concatenate(Concatenate(CZLandTextTable0(XTTL),CZLandTextTable1(XTTL)),CZLandTextTable2(XTTL)),CZLandTextTable3(XTTL)),CZLandTextTable4(XTTL))))"
+}
+
+
+
+# ------------------------------------------------
+# TIER EXCEPTIONS
+# ------------------------------------------------
+# One-word tier names the rules get wrong. Empty string = no exception.
+
+macro = {
+	description = "Irregular one-word tier name, case G (Klášter, Kmen, Městys, Osady); empty if none"
+	definition = "CZLandTierExc_G(XTIER)"
+	replace_with = "Select_CString(EqualTo_string(XTIER,'Klášter'),'Kláštera',Select_CString(EqualTo_string(XTIER,'Kmen'),'Kmene',Select_CString(EqualTo_string(XTIER,'Městys'),'Městyse',Select_CString(EqualTo_string(XTIER,'Osady'),'Osad',''))))"
+}
+
+macro = {
+	description = "Irregular one-word tier name, case D (Klášter, Kmen, Městys, Osady); empty if none"
+	definition = "CZLandTierExc_D(XTIER)"
+	replace_with = "Select_CString(EqualTo_string(XTIER,'Klášter'),'Klášteru',Select_CString(EqualTo_string(XTIER,'Kmen'),'Kmeni',Select_CString(EqualTo_string(XTIER,'Městys'),'Městysi',Select_CString(EqualTo_string(XTIER,'Osady'),'Osadám',''))))"
+}
+
+macro = {
+	description = "Irregular one-word tier name, case A (Klášter, Kmen, Městys, Osady); empty if none"
+	definition = "CZLandTierExc_A(XTIER)"
+	replace_with = "Select_CString(EqualTo_string(XTIER,'Klášter'),'Klášter',Select_CString(EqualTo_string(XTIER,'Kmen'),'Kmen',Select_CString(EqualTo_string(XTIER,'Městys'),'Městys',Select_CString(EqualTo_string(XTIER,'Osady'),'Osady',''))))"
+}
+
+macro = {
+	description = "Irregular one-word tier name, case L (Klášter, Kmen, Městys, Osady); empty if none"
+	definition = "CZLandTierExc_L(XTIER)"
+	replace_with = "Select_CString(EqualTo_string(XTIER,'Klášter'),'Klášteře',Select_CString(EqualTo_string(XTIER,'Kmen'),'Kmeni',Select_CString(EqualTo_string(XTIER,'Městys'),'Městysi',Select_CString(EqualTo_string(XTIER,'Osady'),'Osadách',''))))"
+}
+
+macro = {
+	description = "Irregular one-word tier name, case I (Klášter, Kmen, Městys, Osady); empty if none"
+	definition = "CZLandTierExc_I(XTIER)"
+	replace_with = "Select_CString(EqualTo_string(XTIER,'Klášter'),'Klášterem',Select_CString(EqualTo_string(XTIER,'Kmen'),'Kmenem',Select_CString(EqualTo_string(XTIER,'Městys'),'Městysem',Select_CString(EqualTo_string(XTIER,'Osady'),'Osadami',''))))"
+}
+
+# ------------------------------------------------
+# PROVINCES
+# ------------------------------------------------
+# A province has no Custom() of its own; its name is the name of its
+# barony, so the barony title is declined. The rich variant keeps the
+# native province string (province tooltip + onclick).
+#   v [PROVINCE.GetName] -> [CZPrepV(PROVINCE.GetNameNoTooltip)] [CZProvName(PROVINCE,'L')]
+
+macro = {
+	description = "Declined province name with the native tooltip (XCASE = 'G' 'D' 'A' 'L' 'I')"
+	definition = "CZProvName(P,XCASE)"
+	replace_with = "CZLandRich(P.GetName,P.GetNameNoTooltip,P.GetTitle.Custom(Concatenate('CZ_LandedNameNoTierNoTooltip_',XCASE)))"
+}
+
+macro = {
+	description = "Declined province name, plain text (XCASE = 'G' 'D' 'A' 'L' 'I')"
+	definition = "CZProvNameNoTooltip(P,XCASE)"
+	replace_with = "P.GetTitle.Custom(Concatenate('CZ_LandedNameNoTierNoTooltip_',XCASE))"
+}
+
+# ------------------------------------------------
+# TERRAIN
+# ------------------------------------------------
+# Terrain has no Custom() of its own; it is dispatched on the province's
+# barony title (CZ_Terrain_* in 99_cz_custom_loc.txt). Plain text only,
+# replaces P.GetTerrain.GetNameNoTooltip. Capitalized like the native
+# name, so keep |l where the original had it. CZTerrainIn already
+# includes the preposition and is lowercase.
+#   v [PROVINCE.GetTerrain.GetNameNoTooltip|l] -> [CZTerrainIn(PROVINCE)]
+
+macro = {
+	description = "Declined terrain name of a province, plain text (XCASE = 'G' 'D' 'A' 'L' 'I')"
+	definition = "CZTerrain(P,XCASE)"
+	replace_with = "P.GetTitle.Custom(Concatenate('CZ_Terrain_',XCASE))"
+}
+
+macro = {
+	description = "Terrain of a province in locative with its preposition (na pláních, v horách, ve stepi)"
+	definition = "CZTerrainIn(P)"
+	replace_with = "P.GetTitle.Custom('CZ_TerrainIn')"
+}
+
+# Variant for a bare Terrain object with no province behind it
+# (RegimentTerrainModifier.GetTerrain). Matches the Czech nominative from
+# terrains_l_polish.yml, so it must be kept in sync with that file and
+# with CZ_TerrainIn_*. Prefer CZTerrainIn(P) whenever a province exists.
+
+macro = {
+	description = "Locative with preposition for a Terrain object, by name match (v horách, na pláních)"
+	definition = "CZTerrainObjIn(T)"
+	replace_with = "Select_CString(EqualTo_string(T.GetNameNoTooltip,'Pláně'),'na pláních',Select_CString(EqualTo_string(T.GetNameNoTooltip,'Obdělávaná půda'),'na obdělávané půdě',Select_CString(EqualTo_string(T.GetNameNoTooltip,'Kopce'),'v kopcích',Select_CString(EqualTo_string(T.GetNameNoTooltip,'Hory'),'v horách',Select_CString(EqualTo_string(T.GetNameNoTooltip,'Poušť'),'v poušti',Select_CString(EqualTo_string(T.GetNameNoTooltip,'Pouštní hory'),'v pouštních horách',Select_CString(EqualTo_string(T.GetNameNoTooltip,'Oáza'),'v oáze',Select_CString(EqualTo_string(T.GetNameNoTooltip,'Džungle'),'v džungli',Select_CString(EqualTo_string(T.GetNameNoTooltip,'Les'),'v lese',Select_CString(EqualTo_string(T.GetNameNoTooltip,'Tajga'),'v tajze',Select_CString(EqualTo_string(T.GetNameNoTooltip,'Mokřady'),'v mokřadech',Select_CString(EqualTo_string(T.GetNameNoTooltip,'Step'),'ve stepi',Select_CString(EqualTo_string(T.GetNameNoTooltip,'Záplavové nížiny'),'v záplavových nížinách',Select_CString(EqualTo_string(T.GetNameNoTooltip,'Suchá krajina'),'v suché krajině',Select_CString(EqualTo_string(T.GetNameNoTooltip,'Terasovité kopce'),'v terasovitých kopcích',Concatenate('v ',T.GetNameNoTooltip))))))))))))))))"
+}

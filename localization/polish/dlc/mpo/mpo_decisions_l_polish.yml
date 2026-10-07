@@ -27,7 +27,7 @@
  confederation_threat_tt: "Jakýkoli sousední [Concept('ruler','vládce')|E], suzerén sousedního [Concept('ruler','vládce')|E] nebo [Concept('ruler','vládce')|E] ve stejném [Concept('de_jure','de iure')|E] [Concept('kingdom','království')|E] jako vaše [Concept('capital','hlavní sídlo')|E]:\n$EFFECT_LIST_BULLET$$superior_max_military_strength_tt$\n$EFFECT_LIST_BULLET$Není #bold#! [Concept('allied','spojenecký')|E] s #high vámi#!\n$EFFECT_LIST_BULLET$Alespoň jedno z následujícího:\n  $EFFECT_LIST_BULLET$Nejvyšší držený titul je větší nebo roven královskému [Concept('rank','hodnosti')|E]\n  $EFFECT_LIST_BULLET$$considers_faith_evil_tt$\n  $EFFECT_LIST_BULLET$Má vlastnost: [GetTrait('conqueror').GetName( GetNullCharacter )]\n  $EFFECT_LIST_BULLET$Má vlastnost: [GetTrait('greatest_of_khans').GetName( GetNullCharacter )]" # todo: CONCEPT CASE
  considers_faith_evil_tt: "Považuje vaši [Concept('faith','víru')|E] za [Concept('faith_evil','zavrženíhodnou')|E]" # todo: CONCEPT CASE
  mpo_decisions_events.0001.t: "Svolání kmenů"
- mpo_decisions_events.0001.desc: "Na rozmar [ROOT.Char.GetFaith.HighGodName] může být můj [ROOT.Char.GetPrimaryTitle.GetTierAsName] zničen jako dřík jediné šípu! Neboť můj skromný kmen sdílí zemi [home_kingdom.GetNameNoTier] s takovými válečnými družinami, jakými je [threat.GetTitledFirstNamePossessive] děsivý [threat.GetCulture.GetCollectiveNoun].\n\nAle — kdyby byly šípy mého lidu sepjaty se šípy přátel a příbuzných? [Select_CString(ROOT.Char.IsFemale,'Mohla','Mohl')] by nás nepřítel tak snadno rozdrtit?\n\n#EMP Bratři, sestry — nevolejte pána, ale hlas pro kmeny! Hlas, který pohrdne [threat.GetTitledFirstNameNoTooltip], a celým světem!#!"
+ mpo_decisions_events.0001.desc: "Na rozmar [ROOT.Char.GetFaith.HighGodName] může být můj [ROOT.Char.GetPrimaryTitle.GetTierAsName] zničen jako dřík jediné šípu! Neboť můj skromný kmen sdílí [home_kingdom.Custom('CZ_LandedNameNoTier_A')] s takovými válečnými družinami, jakými je [threat.GetTitledFirstNamePossessive] děsivý [threat.GetCulture.GetCollectiveNoun].\n\nAle — kdyby byly šípy mého lidu sepjaty se šípy přátel a příbuzných? [Select_CString(ROOT.Char.IsFemale,'Mohla','Mohl')] by nás nepřítel tak snadno rozdrtit?\n\n#EMP Bratři, sestry — nevolejte pána, ale hlas pro kmeny! Hlas, který pohrdne [threat.GetTitledFirstNameNoTooltip], a celým světem!#!"
  mpo_decisions_events.0001.a: "Musím hledat ochotné."
  mpo_decisions_events.0001.b: "#EMP Bah! Zbabelost!#!"
  every_confederation_member: "Každý spolukonfederační [Concept('confederate','konfederát')|E]" # todo: CONCEPT CASE
@@ -47,7 +47,7 @@
  mpo_decisions_events.0002.desc_confederation_done: "S pouhým [other_confederate.GetTitledFirstName] stále lpícím na přísahách... konfederace už neexistuje. Mír? Blahobyt? Teď patří jen silným."
  mpo_decisions_events.0002.a: "Jsem vše, co můj lid potřebuje."
  mpo_decisions_events.0003.t: "Ztráta konfederace"
- mpo_decisions_events.0003.desc: "Těžké předtuchy padly na můj lid, neboť [leaver.GetTitledFirstName] [Select_CString(leaver.IsFemale,'zradila','zradil')] svůj slib stát při nás. [Select_CString(leaver.IsFemale,'Opustila','Opustil')] naši konfederaci. Už nepojedeme s [leaver.GetPrimaryTitle.GetNameNoTier] proti velkým a mocným.\n\n"
+ mpo_decisions_events.0003.desc: "Těžké předtuchy padly na můj lid, neboť [leaver.GetTitledFirstName] [Select_CString(leaver.IsFemale,'zradila','zradil')] svůj slib stát při nás. [Select_CString(leaver.IsFemale,'Opustila','Opustil')] naši konfederaci. Už nepojedeme [CZPrepS(leaver.GetPrimaryTitle.GetNameNoTierNoTooltip)] [leaver.GetPrimaryTitle.Custom('CZ_LandedNameNoTier_I')] proti velkým a mocným.\n\n"
  mpo_decisions_events.0003.desc_confederation_survives: "[confederation.GetName] je touto událostí oslabená. Ale stále stojíme."
  mpo_decisions_events.0003.desc_confederation_done: "Jak #EMP sám/sama#! zůstávám věrný svým přísahám, má konfederace už nemá smysl. Už neexistuje."
  mpo_decisions_events.0003.a: "Zrádce!"
@@ -73,11 +73,11 @@
  mpo_decisions_events.0020.desc: "Krev mé krve, můj [ROOT.Char.Custom2('RelationToMeShort', loc_heir)] [heir.GetFirstName], musí jednoho dne požadovat loajalitu celého [ROOT.Char.GetHouse.GetName] a mnoha dalších národů. Bez silných přátel, kteří by [heir.GetHerHim] podpořili, může hlas mého dědice zůstat nevyslyšen.\n\nKdyž nasedáme na koně, počítám ty, kdo jsou mi věrní."
  mpo_decisions_events.0020.desc_multiple: "[target_1.Custom('ComplimentAdjective')] [target_1.GetTitledFirstName] jistě dá [heir.GetFirstNameNoTooltip] místo u svého ohně, ale koho musí [heir.GetSheHe] #EMP nejvíce#! ohromit...?"
  mpo_decisions_events.0020.desc_one: "Jsou jich málo a je jen jeden, kterému skutečně věřím..."
- mpo_decisions_events.0020.a: "Můj [ROOT.Char.Custom2('RelationToMeShort', target_1)], [target_1.GetFirstNameNoTooltip] z [target_1.GetPrimaryTitle.GetNameNoTierNoTooltip]."
- mpo_decisions_events.0020.b: "Můj [ROOT.Char.Custom2('RelationToMeShort', target_2)], [target_2.GetFirstNameNoTooltip] z [target_2.GetPrimaryTitle.GetNameNoTierNoTooltip]."
- mpo_decisions_events.0020.c: "Můj [ROOT.Char.Custom2('RelationToMeShort', target_3)], [target_3.GetFirstNameNoTooltip] z [target_3.GetPrimaryTitle.GetNameNoTierNoTooltip]."
- mpo_decisions_events.0020.d: "Můj [ROOT.Char.Custom2('RelationToMeShort', target_4)], [target_4.GetFirstNameNoTooltip] z [target_4.GetPrimaryTitle.GetNameNoTierNoTooltip]."
- mpo_decisions_events.0020.e: "Můj [ROOT.Char.Custom2('RelationToMeShort', target_5)], [target_5.GetFirstNameNoTooltip] z [target_5.GetPrimaryTitle.GetNameNoTierNoTooltip]."
+ mpo_decisions_events.0020.a: "Můj [ROOT.Char.Custom2('RelationToMeShort', target_1)], [target_1.GetFirstNameNoTooltip] [CZPrepZ(target_1.GetPrimaryTitle.GetNameNoTierNoTooltip)] [target_1.GetPrimaryTitle.Custom('CZ_LandedNameNoTierNoTooltip_G')]."
+ mpo_decisions_events.0020.b: "Můj [ROOT.Char.Custom2('RelationToMeShort', target_2)], [target_2.GetFirstNameNoTooltip] [CZPrepZ(target_2.GetPrimaryTitle.GetNameNoTierNoTooltip)] [target_2.GetPrimaryTitle.Custom('CZ_LandedNameNoTierNoTooltip_G')]."
+ mpo_decisions_events.0020.c: "Můj [ROOT.Char.Custom2('RelationToMeShort', target_3)], [target_3.GetFirstNameNoTooltip] [CZPrepZ(target_3.GetPrimaryTitle.GetNameNoTierNoTooltip)] [target_3.GetPrimaryTitle.Custom('CZ_LandedNameNoTierNoTooltip_G')]."
+ mpo_decisions_events.0020.d: "Můj [ROOT.Char.Custom2('RelationToMeShort', target_4)], [target_4.GetFirstNameNoTooltip] [CZPrepZ(target_4.GetPrimaryTitle.GetNameNoTierNoTooltip)] [target_4.GetPrimaryTitle.Custom('CZ_LandedNameNoTierNoTooltip_G')]."
+ mpo_decisions_events.0020.e: "Můj [ROOT.Char.Custom2('RelationToMeShort', target_5)], [target_5.GetFirstNameNoTooltip] [CZPrepZ(target_5.GetPrimaryTitle.GetNameNoTierNoTooltip)] [target_5.GetPrimaryTitle.Custom('CZ_LandedNameNoTierNoTooltip_G')]."
  mpo_decisions_events.0020.f: "Bah, zapomeň na to."
  heir_friend_1_common_trait_tt: "#P Sdílí 1 [Concept('trait','rys')|E] s [heir.GetFirstName]#!" # todo: CONCEPT CASE
  heir_friend_2_common_trait_tt: "#P Sdílí 2 [Concept('traits','rysy')|E] s [heir.GetFirstName]#!" # todo: CONCEPT CASE
@@ -136,8 +136,8 @@
  heir_friend_will_not_become_friends_tt: "[heir.GetFirstNameNoTooltip] a [friendship_target.GetFirstNameNoTooltip] se nestali [Concept('friends','přátelé')|E]" # todo: CONCEPT CASE
  mpo_heir_friend_if_accept_tt: "Pokud [friendship_target.GetShortUIName] přijme:"
  mpo_heir_friend_if_do_not_accept_tt: "„Pokud [friendship_target.GetShortUIName] nepřijme:“"
- mpo_decisions_events.0022.t: "Návštěvníci z [root_scope.GetCapitalLocation.GetNameNoTooltip]"
- mpo_decisions_events.0022.desc_intro: "Můj [ROOT.Char.Custom2('RelationToMeShort', root_scope)], [root_scope.GetName], přijel do [ROOT.Char.GetCapitalLocation.GetName]. [heir.GetFirstName], [root_scope.GetHerHis] [heir.Custom('ComplimentAdjective')] dědic, mě obejme.\n\nKdyž omotávám beraní kůži [Glossary( 'khatag', 'KHATAG_GLOSS' )] kolem prstenu a nabízím její konec na pozdrav,"
+ mpo_decisions_events.0022.t: "Návštěvníci [CZPrepZ(root_scope.GetCapitalLocation.GetNameNoTooltip)] [CZProvNameNoTooltip(root_scope.GetCapitalLocation,'G')]"
+ mpo_decisions_events.0022.desc_intro: "Můj [ROOT.Char.Custom2('RelationToMeShort', root_scope)], [root_scope.GetName], přijel do [CZProvName(ROOT.Char.GetCapitalLocation,'G')]. [heir.GetFirstName], [root_scope.GetHerHis] [heir.Custom('ComplimentAdjective')] dědic, mě obejme.\n\nKdyž omotávám beraní kůži [Glossary( 'khatag', 'KHATAG_GLOSS' )] kolem prstenu a nabízím její konec na pozdrav,"
  KHATAG_GLOSS: "Ceremoniální šála z hedvábí nebo beraní kůže, která vyjadřuje úctu, používá se jako dar, symbol přivítání a oběť na posvátných místech. #G khatag#! pochází z Tibetu, ale byla přijata jak buddhisty, tak praktikujícími tengrismu v eurasijské stepi."
  mpo_decisions_events.0022.desc_personal_charm: "[root_scope.GetFirstNameNoTooltip] hovoří ušlechtile o svém [root_scope.Custom2('RelationToMe', loc_heir)]: „“Pravý [heir.GetCulture.GetName]! [heir.GetWomanMan] označený osudem! Řekl jsem [heir.GetFirstNameNoTooltip] o vašem [friendship_target.Custom('ComplimentAdjective')] panství. [heir.GetSheHe|U] si přeje poznat vás ještě lépe, než já.„“"
  mpo_decisions_events.0022.desc_lifestyle: "[heir.GetFirstNameNoTooltip] říká: „“Jeden [lifestyle_trait.GetNameNoTooltip( loc_heir )|l] zdraví druhého! Společně budeme mluvit o moci a příbuzenství — a dělat to, co skutečně milujeme.„“"
@@ -160,7 +160,7 @@
  mpo_decisions_events.0023.a_fail: "Zklamání, ale přesto je noc veselá."
  EVENT_WINDOW_OPTION_AVAILABLE_HASTILUDER: "Tato možnost je dostupná díky zkušenostem [GetTrait('tourney_participant').GetName( GetNullCharacter )]"
  study_commander_trait_decision: "Ovládnout umění velení"
- study_commander_trait_decision_desc: "Lidé z [ROOT.Char.GetPrimaryTitle.GetNameNoTier] jsou odrazem svého vůdce. Nemohu nečinně přihlížet, jak moji obyvatelé umírají za mou zemi a moji velitelé se nepoučí ze svých chyb. Musím vzít otěže a vést je ke slávě."
+ study_commander_trait_decision_desc: "Lidé [CZPrepZ(ROOT.Char.GetPrimaryTitle.GetNameNoTierNoTooltip)] [ROOT.Char.GetPrimaryTitle.Custom('CZ_LandedNameNoTier_G')] jsou odrazem svého vůdce. Nemohu nečinně přihlížet, jak moji obyvatelé umírají za mou zemi a moji velitelé se nepoučí ze svých chyb. Musím vzít otěže a vést je ke slávě."
  study_commander_trait_decision_tooltip: "Získat [Concept('stress','stres')|E] výměnou za šanci získat [Concept('commander_trait','velitelský rys')|E]" # todo: CONCEPT CASE
  study_commander_trait_decision_confirm: "Ke vítězství!"
  study_commander_trait_decision_effect: "Vydáte se na [Concept('stress','stressful')|E] cestu za šancí získat [Concept('commander_trait','velitelský rys')|E]" # todo: CONCEPT CASE
@@ -276,7 +276,7 @@
  mpo_decisions_events.0203.b: "Abych se [Select_CString(ROOT.Char.IsFemale,'mohla','mohl')] vrátit ke své [ROOT.Char.Custom2('RelationToMeShort', love_person)], [love_person.GetFirstName]."
  mpo_decisions_events.0203.c: "Zabít své nepřátele."
  mpo_decisions_events.0203.c_rival: "Sebe — abych žil a [Select_CString(ROOT.Char.IsFemale,'mohla','mohl')] se radovat z [hate_person.GetNamePossessive] smrti."
- mpo_decisions_events.0203.d: "Pro slávu [ROOT.Char.GetPrimaryTitle.GetNameNoTier]!"
+ mpo_decisions_events.0203.d: "Pro slávu [ROOT.Char.GetPrimaryTitle.Custom('CZ_LandedNameNoTier_G')]!"
  mpo_decisions_events.0203.d_landless: "Pro lidi, které vedu."
  mpo_decisions_events.0203.e: "Na počest [ROOT.Char.GetFaith.HighGodName]!"
  mpo_decisions_events.0203.sentiment: "Protože [target_person.GetFirstName] opětuje tento cit:"
@@ -318,7 +318,7 @@
  terrain_desert_mountains: "pouštní hory"
  mpo_decisions_events.0300.t: "Rituál země"
  mpo_decisions_events.0300.desc: "[shaman.GetTitledFirstName] hledí ke nebi a zpívá verše popisující [Select_CString(shaman.IsFemale,'její','jeho')] oddanost [shaman.GetFaith.FertilityGodName].\n\n„Vzpomínejme nyní, jak ti, kteří tu byli před námi, pečovali o tuto zemi,“ říká [shaman.GetSheHe], a vyzývá ostatní, aby sdíleli rady.\n\n„Co se naši dědové naučili o novorozeném jehně? Co naše pratety říkaly o půdě?“"
- mpo_decisions_events.0300.tt: "Shromáždění v [fertility_county.GetName] začalo."
+ mpo_decisions_events.0300.tt: "Shromáždění [CZPrepV(fertility_county.GetNameNoTooltip)] [fertility_county.Custom('CZ_LandedName_L')] začalo."
  mpo_decisions_events.0300.a: "[shaman.GetFaith.FertilityGodName], pomoz nám si pamatovat."
  mpo_decisions_events.0300.b: "Připojím se k [shaman.GetNameNoTooltip] v [Select_CString(shaman.IsFemale,'jejích','jeho')] úvahách."
  mpo_decisions_events.0300.b_tt: "Výsledky shromáždění budou #V efektivnější#!"
@@ -508,7 +508,7 @@
  invite_a_foreign_emissary_decision_tooltip: "Vaši služebníci navrhnou několik vhodných kandidátů na pozici [GetCourtPositionType('foreign_emissary_court_position').GetName()]"
  invite_a_foreign_emissary_decision_desc: "Potřebuji někoho, kdo zabaví můj dvůr exotickými pověstmi a příběhy."
  mpo_decisions_events.0090.t: "Příběh nebo tři"
- mpo_decisions_events.0090.desc: "Uklidím se v křesle a pocítím, jak mě přepadá ospalost, když slyším [courtier.GetFirstName] vyprávět tentýž příběh patnáctkrát. Potřebuji někoho, #emp kohokoli#!, kdo mi poví něco nového.\n\nPo odeslání zpráv skrze projíždějící obchodníky se do [ROOT.Char.GetCapitalLocation.GetName] konečně dostaví dva jedinci. Oba vyprávějí příběhy o exotických zemích, vznešených horách a nekonečných pustinách."
+ mpo_decisions_events.0090.desc: "Uklidím se v křesle a pocítím, jak mě přepadá ospalost, když slyším [courtier.GetFirstName] vyprávět tentýž příběh patnáctkrát. Potřebuji někoho, #emp kohokoli#!, kdo mi poví něco nového.\n\nPo odeslání zpráv skrze projíždějící obchodníky se do [CZProvName(ROOT.Char.GetCapitalLocation,'G')] konečně dostaví dva jedinci. Oba vyprávějí příběhy o exotických zemích, vznešených horách a nekonečných pustinách."
  mpo_decisions_events.0090.a: "[great_foreign_emissary_option.GetFirstNameNoTooltip] má spoustu příběhů k vyprávění."
  mpo_decisions_events.0090.b: "[good_foreign_emissary_option.GetFirstNameNoTooltip] se zdá sympatický."
  mpo_decisions_events.0090.c: "Oba jsou nedostateční."
@@ -523,8 +523,8 @@
  TITLE_VIEW_CREATE_TITLE_NOMAD: "Ovládnout titul"
  nomad_higher_tier_title_decision_custom_tooltip: "Získat vyšší [Concept('title_tier','úroveň')|E] [Concept('title','titul')|E]" # todo: CONCEPT CASE
  nomad_higher_tier_title_tooltip_desc: "#T Ovládnout [Title.GetNameNoTooltip]#!\nK vytvoření vyššího [Concept('title_tier','úrovni')|E] [Concept('title','titulu')|E] musí [nomads|E] použít [Concept('dominate_title','ovládnout titul')|E] [Concept('decision','rozhodnutí')|E]" # todo: CONCEPT CASE
- domination_war_holder_custom_tooltip: "Vyhlásit [Concept('domination_war','válka o dominanci')|E] proti [main_defender.GetShortUIName] o [title_scope.GetName]#weak (@soldier_icon![main_defender.MakeScope.ScriptValue('dominate_title_current_ally_strength')|N0])#!" # todo: CONCEPT CASE
- domination_war_no_holder_custom_tooltip: "Vyhlásit [Concept('domination_war','válka o dominanci')|E] proti [main_defender.GetShortUIName] o [title_scope.GetName]\n\t$BULLET$Každý ne-[Concept('tributary','tributář')|E] a ne-[Concept('ally','spojenec')|E] [Concept('de_jure','de iure')|E] [Concept('county','hrabství')|E] [Concept('holder','držitel')|E] [title_scope.GetName] se připojí k [main_defender.GetShortUIName] jako obránce #weak (@soldier_icon![root_scope.MakeScope.ScriptValue('dominate_title_current_enemy_strength')|N0])#!" # todo: CONCEPT CASE
+ domination_war_holder_custom_tooltip: "Vyhlásit [Concept('domination_war','válka o dominanci')|E] proti [main_defender.GetShortUIName] o [title_scope.Custom('CZ_LandedName_A')]#weak (@soldier_icon![main_defender.MakeScope.ScriptValue('dominate_title_current_ally_strength')|N0])#!" # todo: CONCEPT CASE
+ domination_war_no_holder_custom_tooltip: "Vyhlásit [Concept('domination_war','válka o dominanci')|E] proti [main_defender.GetShortUIName] o [title_scope.Custom('CZ_LandedName_A')]\n\t$BULLET$Každý ne-[Concept('tributary','tributář')|E] a ne-[Concept('ally','spojenec')|E] [Concept('de_jure','de iure')|E] [Concept('county','hrabství')|E] [Concept('holder','držitel')|E] [title_scope.GetName] se připojí k [main_defender.GetShortUIName] jako obránce #weak (@soldier_icon![root_scope.MakeScope.ScriptValue('dominate_title_current_enemy_strength')|N0])#!" # todo: CONCEPT CASE
  every_defender: "Všichni obránci"
  crushed_opponent_opinion: "Silný nepřítel"
  dominate_title_trigger_dominance_4: "Potřebujete alespoň [Concept('dominance','$game_concept_nomadic_authority$')|E] [GetLaw('nomadic_authority_4').GetName]" # todo: CONCEPT CASE

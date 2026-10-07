@@ -24,7 +24,7 @@
  estate_unlock_granary_decision_control_tt: "#weak [domicile_owner.GetDomicile.GetLocation.GetCounty.GetName] trpí sníženou úrovní [Concept('county_control','kontrolou hrabství')|E]#!" # todo: CONCEPT CASE
  estate_unlock_granary_decision_development_1_tt: "#weak [domicile_owner.GetDomicile.GetLocation.GetCounty.GetName] má alespoň [EmptyScope.ScriptValue('estate_granary_development_bonus_1_value')|V0] [Concept('development','rozvoj')|E]#!" # todo: CONCEPT CASE
  estate_unlock_granary_decision_development_2_tt: "#weak [domicile_owner.GetDomicile.GetLocation.GetCounty.GetName] má alespoň [EmptyScope.ScriptValue('estate_granary_development_bonus_2_value')|V0] [Concept('development','rozvoj')|E]#!" # todo: CONCEPT CASE
- estate_unlock_granary_decision_epidemic_tt: "#weak V [domicile_owner.GetDomicile.GetLocation.GetName] je [epidemic|E], což nutí místní obyvatele platit za vaše obilí ještě více#!"
+ estate_unlock_granary_decision_epidemic_tt: "#weak [CZPrepV(domicile_owner.GetDomicile.GetLocation.GetNameNoTooltip)|U] [CZProvName(domicile_owner.GetDomicile.GetLocation,'L')] je [epidemic|E], což nutí místní obyvatele platit za vaše obilí ještě více#!"
  hold_triumph_decision: "Uspořádat triumf"
  hold_triumph_decision_desc: "Triumfy patří mezi nejstarší a nejuctívanější římské tradice. V dávných dobách vítězný generál přicházel do Říma za jásajícím davem a největšími poctami — na jeden den byl téměř roven bohu. Dnes budou lidé slavit mé největší úspěchy a prosperitu, kterou jsem jim přinesl!$ep3_triumph_influence_cost_desc$"
  hold_triumph_decision_tooltip: "Uspořádejte majestátní průvod na oslavu vašich úspěchů a posílení veřejného obrazu"
@@ -37,7 +37,7 @@
  ep3_decisions_event.0001.desc_const: "\n\nJako moji nejváženější předchůdci přede mnou vstupuji do posvátného města [ROOT.Char.GetCurrentLocation.GetBaronyNameExplicitly] od [Glossary( 'Golden Gate', 'GOLDEN_GATE_GLOSS' )], procházím centrem města mezi starobylými sochami a památníky dávných sláv a zastavuji se u [Glossary( 'Milion', 'MILION_GLOSS' )], kde začínají všechna měření v říši."
  GOLDEN_GATE_GLOSS: "Ta #bold Zlatá brána#! je součástí Teodosiovských hradeb obkružujících Konstantinopol a značí začátek hlavní ulice hlavního města, Mese."
  MILION_GLOSS: "Ten #bold milion#! označuje střed [GetTitleByKey('e_byzantium').GetBaseName] a je výchozím bodem, od kterého se měří všechny vzdálenosti k městům říše."
- ep3_decisions_event.0001.desc_other: "\n\nPo vstupu do [t_location.GetNameNoTier] hlavní bránou pokračujeme hlavní ulicí přímo do tepajícího srdce města."
+ ep3_decisions_event.0001.desc_other: "\n\nPo vstupu do [t_location.Custom('CZ_LandedNameNoTier_G')] hlavní bránou pokračujeme hlavní ulicí přímo do tepajícího srdce města."
  ep3_decisions_event.0001.desc: "Moji vojáci mě hrdě následují, sdílejí slávu vítězství nad [triumph_enemy_defeated.GetTitledFirstName], zatímco občané bučí na zajatce a obdivují válečnou kořist."
  ep3_decisions_event.0001.desc_no_war: "Vojáci, služebnictvo nesoucí bohatství, a vysoké úřední osoby v oficiálních róbách mě hrdě následují, stojící jako živoucí důkaz moci a majestátu mé vlády."
  ep3_decisions_event.0001.desc_end: "\n\nAle kde by měl triumfální průvod skončit?"
@@ -108,7 +108,7 @@
  cultural_acceptance_triumph_peace: "Přísahnutá olivová ratolest"
  fervor_gain_triumph_of_god: "Náboženský triumf"
  ep3_decisions_event.0006.t: "$ep3_decisions_event_triumph$ Dodržení slibu"
- ep3_decisions_event.0006.desc: "Můj poslední triumf se konal před lety a sliby, které jsem tehdy pronesl, už dnes nejsou v popředí mé paměti. Obyvatelé [t_location.GetName] si to však nezapomněli, jak mi připomíná [talker.Custom2('MyCharacterIntroduction', ROOT.Char)].\n\n„Lidé šuškají, můj [ROOT.Char.GetTitleAsNameNoTooltip|U].“"
+ ep3_decisions_event.0006.desc: "Můj poslední triumf se konal před lety a sliby, které jsem tehdy pronesl, už dnes nejsou v popředí mé paměti. Obyvatelé [CZProvName(t_location,'G')] si to však nezapomněli, jak mi připomíná [talker.Custom2('MyCharacterIntroduction', ROOT.Char)].\n\n„Lidé šuškají, můj [ROOT.Char.GetTitleAsNameNoTooltip|U].“"
  ep3_decisions_event.0006.desc_victory: "Vzpomínáte si, že jste jim sliboval velká vojenská vítězství?"
  ep3_decisions_event.0006.desc_stability: "Vzpomínáte si, že jste jim sliboval stabilitu a mír v říši?"
  ep3_decisions_event.0006.desc_prosperity: "Vzpomínáte si, že jste jim sliboval prosperující a úspěšnou říši?"
@@ -154,7 +154,7 @@
  admin_confirmation_decision.tt.if_accepted: "Pokud [CHARACTER.GetLiege.GetTitledFirstName] přijme vaši audienci:"
  admin_confirmation_event_header: "Potvrzení:"
  ep3_decisions_event.2001.opening: "Zdravím, slavný [ROOT.Char.GetTitleAsNameNoTooltip],"
- ep3_decisions_event.2001.desc: "Přijel jsem do [confirmation_liege.GetCapitalLocation.GetTitle.GetNameNoTierNoTooltip], abych žádal o potvrzení svého setrvání v úřadu [confirmation_vassal.GetTitleAsNameNoTooltip] [confirmation_vassal.GetPrimaryTitle.GetName].\n\nSamozřejmě čekám na první možné setkání."
+ ep3_decisions_event.2001.desc: "Přijel jsem do [confirmation_liege.GetCapitalLocation.GetTitle.Custom('CZ_LandedNameNoTierNoTooltip_G')], abych žádal o potvrzení svého setrvání v úřadu [confirmation_vassal.GetTitleAsNameNoTooltip] [confirmation_vassal.GetPrimaryTitle.GetName].\n\nSamozřejmě čekám na první možné setkání."
  ep3_decisions_event.2001.a: "Zorganizujte ceremonii okamžitě."
  ep3_decisions_event.2001.a.tt.court: "Přijímáte [confirmation_vassal.GetTitledFirstName] ve svém [Concept('royal_court','královském dvoře')|E]" # todo: CONCEPT CASE
  ep3_decisions_event.2001.a.tt: "Přijímáte [confirmation_vassal.GetTitledFirstName]"
@@ -164,7 +164,7 @@
  ep3_decisions_event.2002.desc: "Obávám se, že jsem příliš zaneprázdněn, abych v tuto chvíli [Select_CString(ROOT.Char.IsFemale,'mohla','mohl')] konat potvrzovací ceremonii. Mnoho povinností soupeří o můj čas, jak jistě chápete.\n\nŠťastnou cestu zpět do [confirmation_vassal.GetCapitalLocation.GetBaronyNameExplicitlyNoTooltip]."
  ep3_decisions_event.2002.a: "#EMP Cože?!#!"
  ep3_decisions_event.2010.t: "$admin_confirmation_event_header$ Služebník říše"
- ep3_decisions_event.2010.desc: "Mí palácní úředníci se valí do [ROOT.Char.Custom('GetThroneRoom')], kde nekonečná řada císařských jmenovaných čeká.\n\nNejpozoruhodnějším z nich je [confirmation_vassal.GetTitledFirstName] [confirmation_vassal.GetDynastyHouseName], který sem přicestoval z [confirmation_vassal.GetCapitalLocation.GetNameNoTooltip]. Můj [ROOT.Char.Custom2('RelationToMeShort', confirmation_vassal)] spravuje [confirmation_vassal.GetPrimaryTitle.GetName]:"
+ ep3_decisions_event.2010.desc: "Mí palácní úředníci se valí do [ROOT.Char.Custom('GetThroneRoom')], kde nekonečná řada císařských jmenovaných čeká.\n\nNejpozoruhodnějším z nich je [confirmation_vassal.GetTitledFirstName] [confirmation_vassal.GetDynastyHouseName], který sem přicestoval [CZPrepZ(confirmation_vassal.GetCapitalLocation.GetNameNoTooltip)] [CZProvNameNoTooltip(confirmation_vassal.GetCapitalLocation,'G')]. Můj [ROOT.Char.Custom2('RelationToMeShort', confirmation_vassal)] spravuje [confirmation_vassal.GetPrimaryTitle.GetName]:"
  ep3_decisions_event.2010.desc_theme_civilian: "rušné centrum výroby a obchodu,"
  ep3_decisions_event.2010.desc_theme_military: "oblast ovládaná hlučnými ubytovnami a cvičícími jednotkami,"
  ep3_decisions_event.2010.desc_theme_frontier: "drsná pohraniční oblast a jedna z velkých opor říše,"
@@ -199,10 +199,10 @@
  ep3_decisions_event.2011.desc_hate: "[confirmation_liege.GetTitleAsNameNoTooltip] ke mně promlouvá [second.Custom('quirk_neg_adverb')]; [confirmation_liege.GetSheHe] nalévá opovržení na mou skloněnou hlavu, zatímco mé insignie jsou houpány nade mnou.\n\n"
  ep3_decisions_event.2011.desc_love: "Přesto hlas [confirmation_liege.GetTitleAsNamePossessiveNoTooltip] zní vřele a [second.Custom('quirk_pos_adjective')], když ke mně promlouvá a předává mi insignie.\n\n"
  ep3_decisions_event.2011.desc_meh: "[confirmation_liege.GetTitleAsNameNoTooltip] osloví jednotlivé jmenované postupně, udělujíc jim insignie a přijímajíc přísahy, až se dostane i ke mně.\n\n"
- ep3_decisions_event.2011.desc_theme_civilian: "„Mír [confirmation_liege.GetFaith.PositiveAfterLife] možná ještě přetrvá v [confirmation_vassal.GetPrimaryTitle.GetNameNoTier],“ říká [confirmation_liege.GetSheHe], „je to zahrada, o kterou je třeba pečovat s laskavostí.“"
+ ep3_decisions_event.2011.desc_theme_civilian: "„Mír [confirmation_liege.GetFaith.PositiveAfterLife] možná ještě přetrvá [CZPrepV(confirmation_vassal.GetPrimaryTitle.GetNameNoTierNoTooltip)] [confirmation_vassal.GetPrimaryTitle.Custom('CZ_LandedNameNoTier_L')],“ říká [confirmation_liege.GetSheHe], „je to zahrada, o kterou je třeba pečovat s laskavostí.“"
  ep3_decisions_event.2011.desc_theme_military: "„Máš nabrousit meč [confirmation_vassal.GetPrimaryTitle.GetNameNoTier],“ říká [confirmation_liege.GetSheHe], „a má být užíván pouze spravedlivými.“"
  ep3_decisions_event.2011.desc_theme_frontier: "„Spěte málo,“ rozkazuje [confirmation_liege.GetSheHe], „držte pozici. [confirmation_vassal.GetPrimaryTitle.GetNameNoTier] je místo, kde vše, co je [confirmation_liege.GetPrimaryTitle.GetAdjective], buď žije, nebo umírá.“"
- ep3_decisions_event.2011.desc_theme_imperial: "„V [confirmation_vassal.GetPrimaryTitle.GetNameNoTier],“ říká [confirmation_liege.GetSheHe], „máš být obrazem samotného [confirmation_liege.GetPrimaryTitle.GetTierAsNameNoTooltip]. Jen málokdo, kromě zločinců, si může dovolit takové svobody.“"
+ ep3_decisions_event.2011.desc_theme_imperial: "„[CZPrepV(confirmation_vassal.GetPrimaryTitle.GetNameNoTierNoTooltip)|U] [confirmation_vassal.GetPrimaryTitle.Custom('CZ_LandedNameNoTier_L')],“ říká [confirmation_liege.GetSheHe], „máš být obrazem samotného [confirmation_liege.GetPrimaryTitle.GetTierAsNameNoTooltip]. Jen málokdo, kromě zločinců, si může dovolit takové svobody.“"
  ep3_decisions_event.2011.desc_theme_naval: "„Na slaných březích [confirmation_vassal.GetPrimaryTitle.GetNameNoTierPossessive],“ říká [confirmation_liege.GetSheHe], „cítíš krev tohoto [confirmation_liege.GetPrimaryTitle.GetTierAsNameNoTooltip]; vidíš slzy jejích vdov.“"
  ep3_decisions_event.2011.desc_theme_small: "„Skromná jurisdikce, [confirmation_vassal.GetPrimaryTitle.GetNameNoTier],“ říká [confirmation_liege.GetSheHe], „ale hodná.“"
  ep3_decisions_event.2011.desc_theme_big: "„Rozsáhlá doména jako [confirmation_vassal.GetPrimaryTitle.GetNameNoTier],“ říká [confirmation_liege.GetSheHe], mezi formálnostmi, „mocné zvíře, které může zkrotit jen správný pán...“"
@@ -292,7 +292,7 @@
  treasure_map_contract_decision_confirm: "Uvidíme, co najdeme!"
  DECISION_ALREADY_EXCAVATING_TREASURE: "Už vykopáváte poklad"
  restore_backwater_counties_decision: "Obnovit [ROOT.Char.GetPrimaryTitle.GetNameNoTierNoTooltip]"
- restore_backwater_counties_decision_desc: "V průběhu staletí upadlo [ROOT.Char.GetPrimaryTitle.GetNameNoTier] do hanby a představuje hanebný stín své kdysi významné minulosti.\n\nAle pracovali jsme neúnavně na rozvoji našich předků zemi k jejím bývalým výšinám. Sláva [ROOT.Char.GetPrimaryTitle.GetNameNoTierNoTooltip] bude obnovena!"
+ restore_backwater_counties_decision_desc: "V průběhu staletí upadlo [ROOT.Char.GetPrimaryTitle.GetNameNoTier] do hanby a představuje hanebný stín své kdysi významné minulosti.\n\nAle pracovali jsme neúnavně na rozvoji našich předků zemi k jejím bývalým výšinám. Sláva [ROOT.Char.GetPrimaryTitle.Custom('CZ_LandedNameNoTierNoTooltip_G')] bude obnovena!"
  restore_backwater_counties_decision_tooltip: "Odstraňte [GetModifier('backwater_county_modifier').GetNameWithTooltip] [Concept('county_modifier','modifikátor hrabství')|E] ze všech [Concept('counties','hrabství')|E] s #V 50#! nebo více [Concept('development','rozvoj')|E]" # todo: CONCEPT CASE
  restore_backwater_counties_decision_confirm: "Potvrdit"
  greek_backwater_modifier_removal_tt: "Každý [Concept('county','hrabství')|E] s [GetModifier('backwater_county_modifier').GetNameWithTooltip] a s více než #HIGH 50#! [Concept('development','rozvoj')|E] ztratí [Concept('county_modifier','modifikátor hrabství')|E]" # todo: CONCEPT CASE
@@ -302,14 +302,14 @@
  restored_greek_theme_modifier: "Obnovené Téma"
  restored_greek_theme_modifier_desc: "Tato postava obnovila Téma, aby překonala zlaté dny minulosti.\n[Concept('governor_efficiency','Efektivita guvernéra')|E]: @governor_efficiency!#P +10%#!" # todo: CONCEPT CASE
  ep3_theme_not_backwater.t: "[target_theme.GetNameNoTierNoTooltip] – obnoveno"
- ep3_theme_not_backwater.desc: "Každý [Concept('county','hrabství')|E] v [target_theme.GetNameNoTierNoTooltip] ztratil [GetModifier('backwater_county_modifier').GetName] [Concept('county_modifier','modifikátor hrabství')|E]" # todo: CONCEPT CASE
+ ep3_theme_not_backwater.desc: "Každý [Concept('county','hrabství')|E] [CZPrepV(target_theme.GetNameNoTierNoTooltip)] [target_theme.Custom('CZ_LandedNameNoTierNoTooltip_L')] ztratil [GetModifier('backwater_county_modifier').GetName] [Concept('county_modifier','modifikátor hrabství')|E]" # todo: CONCEPT CASE
  ep3_decisions_event.3001.opening: "[ROOT.Char.GetTopLiege.Custom2('AppropriateGreeting', ROOT.Char)]"
  ep3_decisions_event.3000.desc: "Vynikající práce při obnově zemí [ROOT.Char.GetPrimaryTitle.GetNameNoTier] do jejich dávné slávy! Jsem náležitě ohromen.\n\n[ROOT.Char.GetPrimaryTitle.GetNameNoTooltip] již nebude pošpinit pověst impéria."
- ep3_decisions_event.3000.a: "Sláva [ROOT.Char.GetPrimaryTitle.GetNameNoTierNoTooltip]!"
+ ep3_decisions_event.3000.a: "Sláva [ROOT.Char.GetPrimaryTitle.Custom('CZ_LandedNameNoTierNoTooltip_G')]!"
  restored_greek_theme_gov_efficiency_tt: "Vaše efektivita guvernéra se zvyšuje o #P 10%#!"
  ep3_decisions_event.3001.t: "Řecko – obnoveno"
- ep3_decisions_event.3001.desc: "Zatímco můj sněm a někteří vybraní strategoi podávají zprávy o říši, můj [ROOT.Char.Custom2('RelationToMeShort', interlocutor)] [interlocutor.GetFirstName] promluví.\n\n„Byl bych nedbalý, kdybych nepoznamenal, můj [interlocutor.Custom2('RelationToMeShort', ROOT.Char)], že úsilí impéria obnovit řecké země do jejich historického postavení jako bašt civilizace bylo úspěšné.“\n\n„Strategoi se neúnavně snažili rozvíjet své země a tak zvýšit slávu [ROOT.Char.GetPrimaryTitle.GetNameNoTierNoTooltip|l]!“"
- ep3_decisions_event.3001.not_admin_desc: "Když nejvěrnější poddaní podávají zprávy o říši, můj [ROOT.Char.Custom2('RelationToMeShort', interlocutor)] [interlocutor.GetFirstName] se ujme slova.\n\n„Bylo by ode mě nedbalé nezmínit, můj [interlocutor.Custom2('RelationToMeShort', ROOT.Char)], že naše snaha pozvednout zapomenuté řecké země na úroveň odpovídající naší slávě přinesla ovoce.“\n\n„Naši nejzdatnější služebníci neúnavně pracovali na rozvoji těchto zemí a na tom, aby byly užitečné pro [ROOT.Char.GetPrimaryTitle.GetNameNoTierNoTooltip]!“\n\nUsměji se. Daleko od slávy a břemen minulosti se píše nová kapitola." # todo: NEW TRANSLATION
+ ep3_decisions_event.3001.desc: "Zatímco můj sněm a někteří vybraní strategoi podávají zprávy o říši, můj [ROOT.Char.Custom2('RelationToMeShort', interlocutor)] [interlocutor.GetFirstName] promluví.\n\n„Byl bych nedbalý, kdybych nepoznamenal, můj [interlocutor.Custom2('RelationToMeShort', ROOT.Char)], že úsilí impéria obnovit řecké země do jejich historického postavení jako bašt civilizace bylo úspěšné.“\n\n„Strategoi se neúnavně snažili rozvíjet své země a tak zvýšit slávu [ROOT.Char.GetPrimaryTitle.Custom('CZ_LandedNameNoTierNoTooltip_G')|l]!“"
+ ep3_decisions_event.3001.not_admin_desc: "Když nejvěrnější poddaní podávají zprávy o říši, můj [ROOT.Char.Custom2('RelationToMeShort', interlocutor)] [interlocutor.GetFirstName] se ujme slova.\n\n„Bylo by ode mě nedbalé nezmínit, můj [interlocutor.Custom2('RelationToMeShort', ROOT.Char)], že naše snaha pozvednout zapomenuté řecké země na úroveň odpovídající naší slávě přinesla ovoce.“\n\n„Naši nejzdatnější služebníci neúnavně pracovali na rozvoji těchto zemí a na tom, aby byly užitečné pro [ROOT.Char.GetPrimaryTitle.Custom('CZ_LandedNameNoTierNoTooltip_A')]!“\n\nUsměji se. Daleko od slávy a břemen minulosti se píše nová kapitola." # todo: NEW TRANSLATION
  ep3_decisions_event.3001.a: "Nechť je sláva našeho království známa!"
  every_county_in_greece_tt: "Každý [Concept('county','hrabství')|E] v Řecku" # todo: CONCEPT CASE
  adopt_a_kennel_dog: "Adoptovat psa z kotce"
@@ -325,11 +325,11 @@
  prepare_greek_fire_dromons_no_modifier_tt: "[Concept('capital','Hlavní sídlo')|E] ještě nemá [GetModifier('defensive_fire_dromons_modifier').GetNameWithTooltip]" # todo: CONCEPT CASE
  defensive_fire_dromons_3_years_tooltip: "Pokud dokončíte [GetScheme('prepare_fire_dromons_scheme').GetTypeName] [Concept('scheme','intrika')|E], [GetTitleByKey('c_byzantion').GetNameNoTier] získá [GetModifier('defensive_fire_dromons_modifier').GetNameWithTooltip] na #high 30 let#!" # todo: CONCEPT CASE
  defensive_fire_dromons_success_tooltip: "Po úspěchu [GetTitleByKey('c_byzantion').GetNameNoTier] získá [GetModifier('defensive_fire_dromons_modifier').GetNameWithTooltip] na #high 30 let#!"
- defensive_fire_dromons_custom_desc: "Dokud [GetModifier('defensive_fire_dromons_modifier').GetNameWithTooltip] trvá, nepřátelské [Concept('embarked','naloděno')|E] [Concept('armies','armády')|E] poblíž [GetTitleByKey('c_byzantion').GetNameNoTier] mohou být poškozeny" # todo: CONCEPT CASE
- defensive_fire_dromons_buildings_desc: "#weak Postavení linií budov [GetBuilding('common_tradeport_01').GetName] a [GetBuilding('curtain_walls_01').GetName] v [GetTitleByKey('b_constantinople').GetNameNoTier] zlepší tento efekt#!"
+ defensive_fire_dromons_custom_desc: "Dokud [GetModifier('defensive_fire_dromons_modifier').GetNameWithTooltip] trvá, nepřátelské [Concept('embarked','naloděno')|E] [Concept('armies','armády')|E] poblíž [GetTitleByKey('c_byzantion').Custom('CZ_LandedNameNoTier_G')] mohou být poškozeny" # todo: CONCEPT CASE
+ defensive_fire_dromons_buildings_desc: "#weak Postavení linií budov [GetBuilding('common_tradeport_01').GetName] a [GetBuilding('curtain_walls_01').GetName] [CZPrepV(GetTitleByKey('b_constantinople').GetNameNoTierNoTooltip)] [GetTitleByKey('b_constantinople').Custom('CZ_LandedNameNoTier_L')] zlepší tento efekt#!"
  defensive_fire_dromons_modifier: "Obranné dromóny s řeckým ohněm"
  defensive_fire_dromons_modifier_desc: "Flotila lodí vybavených obrovskými sifony řeckého ohně je založena a udržována v tomto přístavu."
- defensive_fire_dromons_modifier_custom_desc: "@alert_icon! #alert_trial Nepřátelské [Concept('embarked','naloděno')|E] [Concept('armies','armády')|E] poblíž [GetTitleByKey('c_byzantion').GetNameNoTier] mohou být poškozeny.#!" # todo: CONCEPT CASE
+ defensive_fire_dromons_modifier_custom_desc: "@alert_icon! #alert_trial Nepřátelské [Concept('embarked','naloděno')|E] [Concept('armies','armády')|E] poblíž [GetTitleByKey('c_byzantion').Custom('CZ_LandedNameNoTier_G')] mohou být poškozeny.#!" # todo: CONCEPT CASE
  ep3_decisions_event.3100.t: "Nafta, pálené vápno... a drzost"
  ep3_decisions_event.3100.desc: "Jako [ROOT.Char.GetTitleAsName] musím být nepochybným pánem svých domácích vod. Je to právo udělené [ROOT.Char.GetFaith.HighGodName] a chráněné obléháním a útokem prostřednictvím využívání plamenů od [ROOT.Char.GetFaith.PositiveAfterLife], našeho ovládání tekutého ohně.\n\nPokud má být Konstantinopol ochráněna, naše doky musí pojmout víc než bezbranné obchodní lodě!\n\nKde jsou mé rychlé [Glossary( 'dromons', 'DROMONS_GLOSS' )]? Kde jsou šikovní řemeslníci jako [Glossary( 'Kallinikos of Heliopolis', 'KALLINIKOS_GLOSS' )], kteří vyrobí velké plamenné projektily, jež budou chrlit jiskry nad příďmi mých plavidel?"
  DROMONS_GLOSS: "Byzantské galeje, poháněné vesly i plachtami, vhodné pro válčení na Středomoří."
@@ -405,7 +405,7 @@
  ep3_decisions_event.4020.desc: "Království nebes patří věřícím, ale náš soused, [pagan.GetTitledFirstName], je blaženě nevědomý a setrvává ve víře ve své pověry a falešné bohy.\n\nZachránit duši [Select_CString(pagan.IsFemale,'její','jeho')] a duše [Select_CString(pagan.IsFemale,'jejímu','jeho')] lidu je samo o sobě ušlechtilé poslání, ale jejich obrácení přináší i #EMP pozemské#! výhody — například snížení jejich nepřátelství vůči nám a začlenění do naší sféry vlivu.\n\nMůj vybraný misionář, [evangelizer.GetFirstName], je připraven vyrazit."
  ep3_decisions_event.4020.a: "Kéž vás vede [ROOT.Char.GetFaith.HighGodName]!"
  ep3_decisions_event.4020.a.tt: "[evangelizer.GetFirstNameNoTooltip] odjíždí do hlavního města [pagan.GetTitledFirstNamePossessiveNoTooltip]."
- ep3_decisions_event.4022.desc: "Vyslanci našich sousedů chodí tak často, že se mi všichni splétají v paměti. Avšak dnešní posel z [GetTitleByKey('e_byzantium').GetName] vyčnívá jako žádný jiný.\n\n[evangelizer.GetSheHe|U] se zdá být jakýmsi svatým [evangelizer.GetWomanMan], a místo politických požadavků tento [evangelizer.GetFirstName] káže o všemohoucím Bohu, uctívaném v chrámech ze zlata a stříbra, které vždy voní po kadidle."
+ ep3_decisions_event.4022.desc: "Vyslanci našich sousedů chodí tak často, že se mi všichni splétají v paměti. Avšak dnešní posel [CZPrepZ(GetTitleByKey('e_byzantium').GetNameNoTooltip)] [GetTitleByKey('e_byzantium').Custom('CZ_LandedName_G')] vyčnívá jako žádný jiný.\n\n[evangelizer.GetSheHe|U] se zdá být jakýmsi svatým [evangelizer.GetWomanMan], a místo politických požadavků tento [evangelizer.GetFirstName] káže o všemohoucím Bohu, uctívaném v chrámech ze zlata a stříbra, které vždy voní po kadidle."
  ep3_decisions_event.4022.a: "Prosím, povězte mi více."
  ep3_decisions_event.4022.a.tt: "Vytvoříte [Concept('alliance','aliance')|E] s pánem [evangelizer.GetTitledFirstNamePossessiveNoTooltip], [sender.GetTitledFirstName]" # todo: CONCEPT CASE
  ep3_decisions_event.4022.b: "Nové bohy nepotřebujeme."
@@ -439,7 +439,7 @@
  found_varangian_guard_decision_desc: "Po léta se v Konstantinopoli scházejí válečníci z nejvzdálenějších severních krajů, přitahovaní naším bohatstvím. Nabízejí své služby jako žoldnéři, v čemž vynikají, a nemají věrnost kromě mince a vlastní pýchy. Kdybychom dokázali jejich přítomnost organizovat kolem císaře, získali bychom neporazitelnou vojenskou sílu ve své osobní službě!"
  found_varangian_guard_decision_tooltip: "$found_varangian_guard_decision$"
  found_varangian_guard_decision_confirm: "Začít nábor"
- unlocked_varangian_guard_desc: "Odemkne [Concept('court_position','dvorský úřad')|E] $akolouthos_court_position$ a [GetMaA('varangian_guards').GetName] [Concept('men_at_arms','ozbrojenci')|E] pro [GetTitleByKey('e_byzantium').GetName]." # todo: CONCEPT CASE
+ unlocked_varangian_guard_desc: "Odemkne [Concept('court_position','dvorský úřad')|E] $akolouthos_court_position$ a [GetMaA('varangian_guards').GetName] [Concept('men_at_arms','ozbrojenci')|E] pro [GetTitleByKey('e_byzantium').Custom('CZ_LandedName_A')]." # todo: CONCEPT CASE
  unlocked_varangian_guard_desc_tt: "Založení Varjažské gardy"
  has_5_norse_courtiers: "Máte alespoň 5 [courtiers|E] se severskou kulturou" # todo: NEW TRANSLATION
  reinstitute_grain_dole_decision: "Obnovit obilné dávky"
@@ -453,10 +453,10 @@
  grain_dole_already_active: "Obilné dávky jsou již aktivní!"
  unlocked_grain_dole: "Obnovení obilných dávek je levnější"
  ep3_decisions_event.4040.t: "Obilné dávky"
- ep3_decisions_event.4040.desc: "Lid má důvod slavit, neboť starodávná a milovaná tradice obilných dávek se vrací do [ROOT.Char.GetCapitalLocation.GetTitle.GetNameNoTierNoTooltip]!\n\nOpět, díky #EMP mým #! snahám je hlavní město světa [ROOT.Char.GetCapitalLocation.GetTitle.GetNameNoTierNoTooltip] zásobováno stálým přísunem levného obilí z Egypta, jako tomu bylo před staletími.\n\nA jak pravil starý básník, vše, co potřebujeme, abychom udrželi lid šťastný, je chléb a hry!"
+ ep3_decisions_event.4040.desc: "Lid má důvod slavit, neboť starodávná a milovaná tradice obilných dávek se vrací do [ROOT.Char.GetCapitalLocation.GetTitle.Custom('CZ_LandedNameNoTierNoTooltip_G')]!\n\nOpět, díky #EMP mým #! snahám je hlavní město světa [ROOT.Char.GetCapitalLocation.GetTitle.GetNameNoTierNoTooltip] zásobováno stálým přísunem levného obilí z Egypta, jako tomu bylo před staletími.\n\nA jak pravil starý básník, vše, co potřebujeme, abychom udrželi lid šťastný, je chléb a hry!"
  ep3_decisions_event.4040.a: "Dejme jim chleba!"
  reconfirm_grain_dole_decision: "Znovu potvrdit obilné dávky"
- reconfirm_grain_dole_decision_desc: "Po formálním znovuzavedení si obyvatelé [ROOT.Char.GetCapitalLocation.GetTitle.GetNameNoTierNoTooltip] zvykli na výsady, které poskytují obilné dávky — pravidelné rozdělování bezplatného nebo regulovaného chleba. Je to mocný nástroj v rukou každého císaře pro zajištění produktivity lidu a vlastní popularity."
+ reconfirm_grain_dole_decision_desc: "Po formálním znovuzavedení si obyvatelé [ROOT.Char.GetCapitalLocation.GetTitle.Custom('CZ_LandedNameNoTierNoTooltip_G')] zvykli na výsady, které poskytují obilné dávky — pravidelné rozdělování bezplatného nebo regulovaného chleba. Je to mocný nástroj v rukou každého císaře pro zajištění produktivity lidu a vlastní popularity."
  reconfirm_grain_dole_decision_tooltip: "Znovu potvrdit rozdělování chleba obyvatelům hlavního města"
  reconfirm_grain_dole_decision_confirm: "$reinstitute_grain_dole_decision_confirm$"
  reconfirm_grain_dole_decision_tt: "Obilné dávky znovu potvrzeny"
@@ -496,7 +496,7 @@
  ep3_decisions_event.4080.desc.intro: "Je téměř hotovo. Přede mnou se staví trvalé místo, kde se básníci budou scházet, setkávat a vychovávat novou generaci.\n\n"
  ep3_decisions_event.4080.wallada: "Můj sen,"
  ep3_decisions_event.4080.heir: "Sen mého mentora,"
- ep3_decisions_event.4080.desc.outro: "prosperující a rušné centrum umění zde v [location.GetName] konečně přichází na svět.\n\nKdyž poslední prkna podlahy zapadají na místo, vůně čerstvě natřeného zdiva se nese po nádvoří. Zhlaví diváků vybuchne potleskem, když do učeben uvádím místní sirotky, aby začali své lekce.\n\nVše, co si přeji, je, aby zde stály generace."
+ ep3_decisions_event.4080.desc.outro: "prosperující a rušné centrum umění zde [CZPrepV(location.GetNameNoTooltip)] [CZProvName(location,'L')] konečně přichází na svět.\n\nKdyž poslední prkna podlahy zapadají na místo, vůně čerstvě natřeného zdiva se nese po nádvoří. Zhlaví diváků vybuchne potleskem, když do učeben uvádím místní sirotky, aby začali své lekce.\n\nVše, co si přeji, je, aby zde stály generace."
  ep3_decisions_event.4080.a: "Vyvrcholení mé práce i práce tolika jiných."
  mass_arrests_decision: "Nařídit hromadné zatýkání"
  mass_arrests_decision_desc: "Když se [Concept('powerful_family','mocnou rodinou')|E] stane trochu #EMP příliš mocnou#!, může být nutné uchýlit se k radikálnějším opatřením. Zajistit, aby proti mně mocný rod [Select_CString(ROOT.Char.IsFemale,'nemohla','nemohl')] zasáhnout, je jemná práce, a existuje jen jeden spolehlivý způsob: #EMP naházet je všechny do okovů.#!" # todo: CONCEPT CASE
@@ -596,7 +596,7 @@
  ep3_decisions_event.4060.a: "Zákon nyní vládne těmto zemím!"
  ep3_decisions_event.4065.opening: "[actor.Custom2('AppropriateGreeting', ROOT.Char)]"
  ep3_decisions_event.4065.desc: "Říše je reorganizována, zásadou je zásluhovost. Už zde není místo pro dědičné držitele půdy.\nOčekávám, že se každý vazal přizpůsobí a připojí se k řadám mých guvernérů."
- ep3_decisions_event.4065.a: "Za [actor.GetPrimaryTitle.GetNameNoTierNoTooltip|l]!"
+ ep3_decisions_event.4065.a: "Za [actor.GetPrimaryTitle.Custom('CZ_LandedNameNoTierNoTooltip_I')|l]!"
  ep3_decisions_event.4065.b: "Nevzdám se svých práv."
  ep3_decisions_event.4065.c: "Zajímavé"
  convert_to_feudalism_from_administrative_decision: "Přijmout [ROOT.Char.Custom('GetTribalReformGovernment')|U] způsoby"
@@ -617,12 +617,12 @@
  gather_provisions_decision_effect_tt: "Vy, váš [GetCourtPositionType('chief_forager_camp_officer').GetName()], nebo váš [GetCourtPositionType('huntperson_camp_officer').GetName()] mohou hledat [Concept('provisions','proviant')|E]" # todo: CONCEPT CASE
  gather_provisions_decision_unlock_tt: "Vyžaduje [GetDomicileBuilding('mess_tent_01').GetName] [Concept('domicile_building','budova domicilu')|E]" # todo: CONCEPT CASE
  ep3_decisions_event.7000.t: "Požehnání [forage_province.GetNameNoTooltip]"
- ep3_decisions_event.7000.desc: "Když vyjdu z tábora, obhlížím okolní [forage_province.Custom('TerrainTypeProvince')], hledajíc známky zvěře nebo krmení.\n\n"
- ep3_decisions_event.7000.winter_forage: "[forage_province.GetName] může v mírných ročních obdobích nabídnout více, ale zimní krutý mráz ztvrdí [forage_province.Custom('GetProvinceGroundDesc')] a pokryje [forage_province.Custom('GetTerrainTypePlural')] námrazou. Tady mnoho nenajdeme..."
- ep3_decisions_event.7000.difficult_forage: "Prohledávání [forage_province.Custom('GetProvinceGroundDesc')] a [forage_province.Custom('GetTerrainTypePlural')] v [forage_province.GetName] nenabízí mnoho naděje: místo je zbaveno čehokoliv, co by nasytilo naše žaludky. Naším nejlepším nadějí je lov."
- ep3_decisions_event.7000.difficult_hunt: "Ačkoli v okolí [forage_province.GetName] je spousta hub, kořenů a bobulí, není to ráj pro lovce. Není tu ani zajíc k vidění."
- ep3_decisions_event.7000.good: "Měli jsme štěstí: klima v [forage_province.GetName] je mírné a bohaté. Kdekoli se podíváte, dary přírody se rozlévají po [forage_province.Custom('GetTerrainTypePlural')]. Zde se nám bude dařit."
- ep3_decisions_event.7000.fallback: "[forage_province.GetName] by se k nám měl chovat dobře. [forage_province.Custom('GetTerrainTypePlural')] jsou plné života a stačí jen věnovat správný čas a péči, abychom tu našli potravu."
+ ep3_decisions_event.7000.desc: "Když vyjdu z tábora, obhlížím okolní [forage_province.Custom('CZ_TerrainTypeProvince_A')], hledajíc známky zvěře nebo krmení.\n\n"
+ ep3_decisions_event.7000.winter_forage: "[forage_province.GetName] může v mírných ročních obdobích nabídnout více, ale zimní krutý mráz ztvrdí [forage_province.Custom('GetProvinceGroundDesc')] a pokryje [forage_province.Custom('CZ_GetTerrainTypePlural_A')] námrazou. Tady mnoho nenajdeme..."
+ ep3_decisions_event.7000.difficult_forage: "Prohledávání [forage_province.Custom('GetProvinceGroundDesc')] a [forage_province.Custom('CZ_GetTerrainTypePlural_G')] [CZPrepV(forage_province.GetNameNoTooltip)] [CZProvName(forage_province,'L')] nenabízí mnoho naděje: místo je zbaveno čehokoliv, co by nasytilo naše žaludky. Naším nejlepším nadějí je lov."
+ ep3_decisions_event.7000.difficult_hunt: "Ačkoli v okolí [CZProvName(forage_province,'G')] je spousta hub, kořenů a bobulí, není to ráj pro lovce. Není tu ani zajíc k vidění."
+ ep3_decisions_event.7000.good: "Měli jsme štěstí: klima [CZPrepV(forage_province.GetNameNoTooltip)] [CZProvName(forage_province,'L')] je mírné a bohaté. Kdekoli se podíváte, dary přírody se rozlévají po [forage_province.Custom('CZ_GetTerrainTypePlural_L')]. Zde se nám bude dařit."
+ ep3_decisions_event.7000.fallback: "[forage_province.GetName] by se k nám měl chovat dobře. [forage_province.Custom('CZ_GetTerrainTypePlural_In')|U] je plno života a stačí jen věnovat správný čas a péči, abychom tu našli potravu."
  ep3_decisions_event.7000.a: "Mohu nám zajistit něco k jídlu."
  ep3_decisions_event.7000.a_foraging: "[SelectLocalization(ObjectsEqual(ROOT.Char.MakeScope.Var('has_golden_aplomb_perk').GetFlagName,'yes'),'ep3_decisions_event.7000.a_flavor_golden_aplomb','ep3_decisions_event.7000.a_flavor')]"
  ep3_decisions_event.7000.a_flavor: "#medium Získávání zásob je ovlivněno [Concept('terrain','terén')|E] a [Concept('winter','tuhost zimy')|E]\n#flavor Velmi účinné v:#!\n     $EFFECT_LIST_BULLET$Orná půda, Lesy, Pahorky, Roviny, Oázy, Záplavové pláně\n#flavor Částečně účinné v:#!\n    $EFFECT_LIST_BULLET$Suché oblasti, Hory, Džungle, Mokřady, Step\n#flavor Neúčinné v:#!\n    $EFFECT_LIST_BULLET$Pouště, Pustinné hory, Tajga#!" # todo: CONCEPT CASE
@@ -683,7 +683,7 @@
  zealous_missionary_prep_decision_reward_desc: "Na příští desetiletí půjdete cestou zbožného [THIS.Char.GetFaith.GetAdherentNameNoTooltip] misionáře:\n#weak Budete schopni přeměnit hrabství, která navštívíte, na [THIS.Char.GetFaith.GetName], buď pravdou ve svých slovech, nebo mocí svého meče.\n#bold Velké nebezpečí#! čeká na ty, kteří selžou na cestě, neboť jen hodní obdrží od [THIS.Char.GetFaith.HighGodHerHis|U] odměnu v [THIS.Char.GetFaith.PositiveAfterLife|U].\n\n$EFFECT_LIST_BULLET$ @alert_icon! $ep3_laamp_decision_event.1103.difficulty.desc$\n$EFFECT_LIST_BULLET$ [learning_i] $ep3_laamp_decision_event.1103.a.desc$\n$EFFECT_LIST_BULLET$ [martial_i] $ep3_laamp_decision_event.1103.b.desc$"
  zealous_missionary_prep_decision_confirm: "[ROOT.Char.GetFaith.HighGodName] je veliký!"
  ep3_laamp_decision_event.1101.t: "$zealous_missionary_prep_decision$"
- ep3_laamp_decision_event.1101.desc: "Jen na málo místech na této Zemi lze svědčit o moci [ROOT.Char.GetFaith.HighGodName] Všemohoucího jako v [holy_site_location.GetNameNoTooltip]. Požehnaní jsou věřící, kteří sem přijdou, aby pocítili [ROOT.Char.GetFaith.HighGodHerHis|U] moc.\n\nPro většinu je toto posvátné místo koncem jejich cesty, nejvyšším vrcholem jejich života. Pro mě je to jen začátek mé cesty.\n\nA pro ty, kterým hodlám přivést [ROOT.Char.GetFaith.HighGodHerHis|U] světlo, je to jejich jediná šance na spásu."
+ ep3_laamp_decision_event.1101.desc: "Jen na málo místech na této Zemi lze svědčit o moci [ROOT.Char.GetFaith.HighGodName] Všemohoucího jako [CZPrepV(holy_site_location.GetNameNoTooltip)] [CZProvNameNoTooltip(holy_site_location,'L')]. Požehnaní jsou věřící, kteří sem přijdou, aby pocítili [ROOT.Char.GetFaith.HighGodHerHis|U] moc.\n\nPro většinu je toto posvátné místo koncem jejich cesty, nejvyšším vrcholem jejich života. Pro mě je to jen začátek mé cesty.\n\nA pro ty, kterým hodlám přivést [ROOT.Char.GetFaith.HighGodHerHis|U] světlo, je to jejich jediná šance na spásu."
  ep3_laamp_decision_event.1101.a: "Koupám se v slávě [ROOT.Char.GetFaith.HighGodName|U]!"
  ep3_laamp_decision_event.1101.a.desc: "$zealous_missionary_prep_decision_reward_desc$\nK pokračování na své zbožné cestě musíte přejít do nevěřících zemí."
  zealous_missionary_start_decision: "Cesta [ROOT.Char.GetFaith.GetAdherentNameNoTooltip] — Předehra"
@@ -699,7 +699,7 @@
  ep3_laamp_decision_event.1102.b: "Ještě potřebuji čas na přípravu."
  ep3_laamp_decision_event.1102.b.desc: "Rozhodnutí odložíte na později"
  ep3_laamp_decision_event.1103.t: "Cesta [ROOT.Char.GetFaith.GetAdherentNameNoTooltip] — Dosáhnutí"
- ep3_laamp_decision_event.1103.desc: "Nejdůležitější okamžik pro [current_location.GetCounty.GetName] nastal s mým příchodem, neboť dnes přináším světlo [ROOT.Char.GetFaith.HighGodName|U], a [ROOT.Char.GetFaith.HighGodNameSheHe|U] vstoupí do jejich srdcí a zůstane tam po mnoho generací.\n\nMístní vyšší šlechtici, [current_location.GetCounty.GetTitle.GetHolder.GetName] a jeho pokřivená družina, jsou příliš tvrdohlaví, příliš zkažení falešnými rituály [current_location.GetCounty.GetFaith.GetName]. Ale duše chudých [current_location.GetCounty.GetCulture.GetCollectiveNoun] ke mně volají, touží po milosti [ROOT.Char.GetFaith.HighGodHerHis|U]. A tu ji dostanou!"
+ ep3_laamp_decision_event.1103.desc: "Nejdůležitější okamžik pro [current_location.GetCounty.Custom('CZ_LandedName_A')] nastal s mým příchodem, neboť dnes přináším světlo [ROOT.Char.GetFaith.HighGodName|U], a [ROOT.Char.GetFaith.HighGodNameSheHe|U] vstoupí do jejich srdcí a zůstane tam po mnoho generací.\n\nMístní vyšší šlechtici, [current_location.GetCounty.GetTitle.GetHolder.GetName] a jeho pokřivená družina, jsou příliš tvrdohlaví, příliš zkažení falešnými rituály [current_location.GetCounty.GetFaith.GetName]. Ale duše chudých [current_location.GetCounty.GetCulture.GetCollectiveNoun] ke mně volají, touží po milosti [ROOT.Char.GetFaith.HighGodHerHis|U]. A tu ji dostanou!"
  ep3_laamp_decision_event.1103.desc.alternative: "Cesta zbožného [ROOT.Char.GetFaith.GetAdherentNameNoTooltip] není jednoduchá, [Select_CString(ROOT.Char.IsFemale,'její','jeho')] útrapy jsou dlouhé a bez pozemské odměny. Jen naděje mě udrží vzpřímeným. Ten, kdo kráčí v čisté víře, odevzdává se do rukou [ROOT.Char.GetFaith.HighGodName|U] jako dítě do náruče své matky.\n\nKraji dál putuji, neboť dílo a sláva [ROOT.Char.GetFaith.HighGodHerHis|U] zůstávají nedokončené, neboť srdce [current_location.GetCounty.GetFaith.GetAdherentNamePlural] zde zůstávají plná lží a falešných pověr.\n\nAle ne na dlouho. Dnes pokračuje má zkouška a začíná ta jejich."
  ep3_laamp_decision_event.1103.difficulty.desc: "#weak Vyšší rozvoj hrabství ztěžuje konverzi."
  ep3_laamp_decision_event.1103.a.desc: "#weak Mluvení místním jazykem zvyšuje šanci na úspěch."
@@ -712,12 +712,12 @@
  ep3_laamp_decision_event.1103.b.desc: "#weak Mít více vojáků a rytířů než místní posádka také zvyšuje šanci na úspěch."
  ep3_laamp_decision_event.1103.b.flavor: "Přeměnit lidi v mrtvoly je snazší než je převést na [ROOT.Char.GetFaith.GetAdherentNamePlural]."
  ep3_laamp_decision_event.1103.c: "Jaké špinavé místo."
- ep3_laamp_decision_event.1103.c.alternative: "Neplýtvejme časem na [current_location.GetCounty.GetName]"
+ ep3_laamp_decision_event.1103.c.alternative: "Neplýtvejme časem na [current_location.GetCounty.Custom('CZ_LandedName_A')]"
  ep3_laamp_decision_event.1103.c.desc: "Nebudete se pokoušet o konverzi místního obyvatelstva."
  ep3_laamp_decision_event.1103.c.flavor: "Kdyby [ROOT.Char.GetFaith.DevilName] stvořil [current_location.GetCounty.GetTitle.GetHolder.GetTopLiege.GetPrimaryTitle.GetNameNoTierNoTooltip], jak někteří tvrdí, tady odpočíval sedmého dne."
  ep3_laamp_decision_event.1104.t: "Cesta [ROOT.Char.GetFaith.GetAdherentNameNoTooltip] — Konec"
- ep3_laamp_decision_event.1104.desc: "Jsem požehnán! Před deseti lety, v [ROOT.Var('holy_site_ascension').Province.GetName], ke mně přišel [ROOT.Char.GetFaith.HighGodName], vstoupil do mého srdce a naplnil ho věčnou radostí a krásou. A od té doby jsem putoval po Zemi [ROOT.Char.GetFaith.HighGodHerHis|U], kázal [ROOT.Char.GetFaith.HighGodHerHis|U] slovo.\n\nKam jsem vkročil, byla se mnou moc [ROOT.Char.GetFaith.HighGodHerHis|U], šířící se po krajích a srdcích lidí.\n\nA dnes končí má cesta misionáře, ve slávě [ROOT.Char.GetFaith.HighGodName], v poznání, že jsem splnil svou část velkého plánu [ROOT.Char.GetFaith.HighGodHerHis|U]."
- ep3_laamp_decision_event.1104.desc.failure: "Byl jsem požehnán! Před deseti lety v [ROOT.Var('holy_site_ascension').Province.GetName] ke mně přišel [ROOT.Char.GetFaith.HighGodName], vstoupil do mého srdce a naplnil ho věčnou radostí a krásou. A jediné, co [ROOT.Char.GetFaith.HighGodNameSheHe|U] za to žádal, bylo vyjít ven a sdílet to až do své poslední chvíle.\n\nPřesto já, jako zavrženíhodná duše nedotčená [ROOT.Char.GetFaith.HighGodHerHis|U], jsem si to nechal pro sebe. Pokusil jsem se to sdílet dostatečně? Byl to ten ubohý [ROOT.Char.GetFaith.DevilName], kdo mě svedl z cesty? Skvrna na mé duši, skvrna selhání a bezbožnosti, zůstane tam po věčnost."
+ ep3_laamp_decision_event.1104.desc: "Jsem požehnán! Před deseti lety, [CZPrepV(ROOT.Var('holy_site_ascension').Province.GetNameNoTooltip)] [CZProvName(ROOT.Var('holy_site_ascension').Province,'L')], ke mně přišel [ROOT.Char.GetFaith.HighGodName], vstoupil do mého srdce a naplnil ho věčnou radostí a krásou. A od té doby jsem putoval po Zemi [ROOT.Char.GetFaith.HighGodHerHis|U], kázal [ROOT.Char.GetFaith.HighGodHerHis|U] slovo.\n\nKam jsem vkročil, byla se mnou moc [ROOT.Char.GetFaith.HighGodHerHis|U], šířící se po krajích a srdcích lidí.\n\nA dnes končí má cesta misionáře, ve slávě [ROOT.Char.GetFaith.HighGodName], v poznání, že jsem splnil svou část velkého plánu [ROOT.Char.GetFaith.HighGodHerHis|U]."
+ ep3_laamp_decision_event.1104.desc.failure: "Byl jsem požehnán! Před deseti lety [CZPrepV(ROOT.Var('holy_site_ascension').Province.GetNameNoTooltip)] [CZProvName(ROOT.Var('holy_site_ascension').Province,'L')] ke mně přišel [ROOT.Char.GetFaith.HighGodName], vstoupil do mého srdce a naplnil ho věčnou radostí a krásou. A jediné, co [ROOT.Char.GetFaith.HighGodNameSheHe|U] za to žádal, bylo vyjít ven a sdílet to až do své poslední chvíle.\n\nPřesto já, jako zavrženíhodná duše nedotčená [ROOT.Char.GetFaith.HighGodHerHis|U], jsem si to nechal pro sebe. Pokusil jsem se to sdílet dostatečně? Byl to ten ubohý [ROOT.Char.GetFaith.DevilName], kdo mě svedl z cesty? Skvrna na mé duši, skvrna selhání a bezbožnosti, zůstane tam po věčnost."
  ep3_laamp_decision_event.1104.a: "[ROOT.Char.GetFaith.HighGodNamePossessive] odměna na mě čeká v [ROOT.Char.GetFaith.PositiveAfterLife|U]."
  ep3_laamp_decision_event.1104.b: "[ROOT.Char.GetFaith.HighGodName], odpusť mi, neboť jsem selhal."
  become_conqueror_decision: "Staň se velkým dobyvatelem"
@@ -780,10 +780,10 @@
  ep3_laamp_decision_event.1130.b: "Rozmyslel jsem si to, omlouvám se."
  ep3_laamp_decision_event.1130.b.desc: "Opouštíte výstavbu. Část utraceného zlata bude vrácena."
  ep3_laamp_decision_event.1131.t: "Město [city_location.GetNameNoTooltip] — Konec"
- ep3_laamp_decision_event.1131.desc: "Před lety jsem stál zde, když to bylo jen místo uprostřed divočiny. Teď je to hrdé město. Jak úžasné! Ale zajímá mě, zda je [city_location.GetCounty.GetTitle.GetHolder.GetName] tím správným, kdo zajistí budoucnost mého nového sídla.\n\nO desetiletí později se budou vyprávět příběhy o tom, jak jsem přišel do [city_location.GetNameNoTooltip], přinesl jeho potenciál a..."
+ ep3_laamp_decision_event.1131.desc: "Před lety jsem stál zde, když to bylo jen místo uprostřed divočiny. Teď je to hrdé město. Jak úžasné! Ale zajímá mě, zda je [city_location.GetCounty.GetTitle.GetHolder.GetName] tím správným, kdo zajistí budoucnost mého nového sídla.\n\nO desetiletí později se budou vyprávět příběhy o tom, jak jsem přišel do [CZProvNameNoTooltip(city_location,'G')], přinesl jeho potenciál a..."
  ep3_laamp_decision_event.1131.a: "...dobyl jsem ho!"
  ep3_laamp_decision_event.1131.b: "...odešel jsem, abych jinde dosáhl víc."
- ep3_laamp_decision_event.1131.b.desc: "Každý rok bude město vyplácet dividendy. Výše závisí na součtu úrovní [Concept('building','budovou')|E] v [city_location.GetName] a na [Concept('development','rozvoj')|E] [city_location.GetCounty.GetName]." # todo: CONCEPT CASE
+ ep3_laamp_decision_event.1131.b.desc: "Každý rok bude město vyplácet dividendy. Výše závisí na součtu úrovní [Concept('building','budovou')|E] [CZPrepV(city_location.GetNameNoTooltip)] [CZProvName(city_location,'L')] a na [Concept('development','rozvoj')|E] [city_location.GetCounty.GetName]." # todo: CONCEPT CASE
  ep3_laamp_decision_event.1133.t: "Město [city_location.GetName] — Síla vody"
  ep3_laamp_decision_event.1133.desc: "Blízko teče líný potok. S náležitou odborností, jako je ta má, a s pořádnou prací mých stoupenců můžeme jeho tok odvést blíže k městu.\n\nPoté bude stavba vodního mlýna snadná. Může to být i větší mlýn, pokud budou volné prostředky."
  ep3_laamp_decision_event.1133.a: "Nádherné!"
@@ -943,7 +943,7 @@
  embrace_heresy_decision_tooltip: "Přijmout herezi a stát se jejím vůdcem"
  heresy_in_empire_or_bordering_tt: "Musí být přítomna [Concept('faith','víra')|E], která je vyznávána v nejméně 3 [Concept('counties','hrabství')|E], patří do stejné [Concept('religion','náboženství')|E] jako [Concept('state_faith','státní víra')|E] ve [Concept('realm','panství')|E] vašeho [Concept('top_liege','nejvyšším lenním pánovi')|E], ale je považována za [Concept('faith_hostile','nepřátelskou')|E], a to ve alespoň 1 hrabství uvnitř [Concept('realm','panství')|E] vašeho [Concept('top_liege','nejvyššího lenního pána')|E] nebo v cizím hraničním hrabství" # todo: CONCEPT CASE
  ep3_decisions_event.5020.t: "Přijetí hereze"
- ep3_decisions_event.5020.desc: "Příležitost je jasná a musím ji jen chopit.\n\nVíra [heresy_1.GetAdjective|U] roste v [ROOT.Char.GetTopLiege.GetPrimaryTitle.GetNameNoTooltip] a potřebuje silného, vlivného vůdce, který ji bude reprezentovat na politické scéně. Samozřejmě vystavit se označení za kacíře je riziko, ale nevyužitý potenciál shromáždit pronásledovanou menšinu pod společnou vlajku je pokušením."
+ ep3_decisions_event.5020.desc: "Příležitost je jasná a musím ji jen chopit.\n\nVíra [heresy_1.GetAdjective|U] roste [CZPrepV(ROOT.Char.GetTopLiege.GetPrimaryTitle.GetNameNoTooltip)] [ROOT.Char.GetTopLiege.GetPrimaryTitle.Custom('CZ_LandedNameNoTooltip_L')] a potřebuje silného, vlivného vůdce, který ji bude reprezentovat na politické scéně. Samozřejmě vystavit se označení za kacíře je riziko, ale nevyužitý potenciál shromáždit pronásledovanou menšinu pod společnou vlajku je pokušením."
  ep3_decisions_event.5020.desc_more: "\n\nNáboženská scéna [ROOT.Char.GetTopLiege.GetPrimaryTitle.GetTierAsNameNoTooltip] je natolik roztříštěná, že se nemusím držet ani svého prvního výběru."
  ep3_decisions_event.5020.a: "[heresy_1.GetNameNoTooltip|U] je cesta."
  ep3_decisions_event.5020.b: "Možná se [heresy_2.GetNameNoTooltip] zdá slibnější?"
@@ -986,12 +986,12 @@
  silk_regalia_name: "Jemné hedvábné regálie"
  silk_regalia_description: "Sada hedvábných rouch hodných císaře, vyrobená některými z nejlepších řemeslníků byzantského stylu v rodovém statku rodu [owner.GetHouse.GetName].\n\nBarvy jsou zářivé a zlatá nit je elegantně propletena celou látkou, aby zvýraznila složité vzory."
  foster_integration_decision: "Podpořit integraci"
- foster_integration_decision_desc: "Můj rodový statek se nachází v poněkud bouřlivé oblasti. To nemusí být nevýhoda, protože mohu pomoci mému vrchnímu pevněji přivést místní obyvatelstvo pod moc [ROOT.Char.GetTopLiege.GetPrimaryTitle.GetNameNoTooltip], a zároveň podpořit své politické a finanční postavení."
+ foster_integration_decision_desc: "Můj rodový statek se nachází v poněkud bouřlivé oblasti. To nemusí být nevýhoda, protože mohu pomoci mému vrchnímu pevněji přivést místní obyvatelstvo pod moc [ROOT.Char.GetTopLiege.GetPrimaryTitle.Custom('CZ_LandedNameNoTooltip_G')], a zároveň podpořit své politické a finanční postavení."
  foster_integration_decision_tooltip: "Podpořit de jure a kulturní integraci [Concept('county','hrabství')|E] vašeho [Concept('estate','statku')|E]" # todo: CONCEPT CASE
  foster_integration_decision_confirm: "Začněme"
  improve_promote_culture_tt: "Váš vrchní dostane bonus k úkolu [promote_culture|E] [Concept('councillor_task','úkolu rádce')|E], když bude cílit na toto hrabství." # todo: CONCEPT CASE
  improve_de_jure_integration_tt: "Váš vrchní dostane bonus k úkolu [integrate_title|E] [Concept('councillor_task','úkolu rádce')|E], když bude cílit na toto hrabství." # todo: CONCEPT CASE
- improve_promote_culture_modifier_tt: "[ROOT.Char.GetTitledFirstName] zahájil podporu kulturní integrace v [target_county.GetName].\nBonus k úkolu [promote_culture|E] [Concept('councillor_task','úkolu rádce')|E] cílícímu na toto hrabství." # todo: CONCEPT CASE
+ improve_promote_culture_modifier_tt: "[ROOT.Char.GetTitledFirstName] zahájil podporu kulturní integrace [CZPrepV(target_county.GetNameNoTooltip)] [target_county.Custom('CZ_LandedName_L')].\nBonus k úkolu [promote_culture|E] [Concept('councillor_task','úkolu rádce')|E] cílícímu na toto hrabství." # todo: CONCEPT CASE
  improve_de_jure_integration_modifier_tt: "[ROOT.Char.GetTitledFirstName] zahájil podporu de jure integrace [target_county.GetName].\nBonus k úkolu [integrate_title|E] [Concept('councillor_task','úkolu rádce')|E] cílícímu na toto hrabství." # todo: CONCEPT CASE
  gather_faction_support_decision: "Shromáždit podporu frakce"
  gather_faction_support_decision_desc: "Můj rodový statek je centrem pořádku a moci, odkud se vliv rodu [ROOT.Char.GetHouse.GetName] šíří do všech stran. Mohu využít této příznivé pozice a shromáždit místní stoupence pro svou frakci."
@@ -1016,7 +1016,7 @@
  separatist_uprising_capital_county_tt: "Váš [Concept('camp','tábor')|E] není umístěn v [Concept('capital','hlavním sídle')|E] [Concept('county','hrabství')|E]" # todo: CONCEPT CASE
  culture_separatists: "[ROOT.Char.GetCulture.GetNameNoTooltip] separatisté"
  ep3_decisions_event.6001.t: "Obhájce [ROOT.Char.GetCulture.GetCollectiveNounNoTooltip]"
- ep3_decisions_event.6001.desc.intro: "Chladný vánek provází výhled z tábora. [county.Custom('TerrainTypeCountyScope')] se zdají nekonečné. Zde patřím, zde patří můj lid. Zhluboka se nadechnu.\n\n"
+ ep3_decisions_event.6001.desc.intro: "Chladný vánek provází výhled z tábora. Okolní krajina – [county.Custom('TerrainTypeCountyScope')] – se zdá nekonečná. Zde patřím, zde patří můj lid. Zhluboka se nadechnu.\n\n"
  ep3_decisions_event.6001.desc.spouse_common: "„To všechno by mohlo být tvoje, víš?“ sladký hlas [spouse.GetFirstName] přeruší mé myšlenky.„"
  ep3_decisions_event.6001.desc.spouse_same_culture: "$ep3_decisions_event.6001.desc.spouse_common$ „Obdivují tě, budou tě následovat až do konce.“"
  ep3_decisions_event.6001.desc.spouse_diff_culture: "„I jako [spouse.GetCulture.GetName] vím, že tě tito lidé obdivují. Vidí v tobě svého hrdinu. Nezklam je.“"
@@ -1047,7 +1047,7 @@
  gain_byz_kingdom_de_jure_tt: "[GetTitleByKey('e_latin_empire').GetName] získává [Concept('de_jure','de iure')|E] vlastnictví [GetTitleByKey('e_byzantium').GetAdjective] [Concept('kingdom','království')|E] uvnitř vašeho [Concept('realm','panství')|E]" # todo: CONCEPT CASE
  legitimize_latin_control_tt: "[Concept('county_control','Kontrola hrabství')|E] se zvýší po celém novém [GetTitleByKey('e_latin_empire').GetAdjective] [Concept('kingdom','království')|E]" # todo: CONCEPT CASE
  legitimize_latin_cultural_acceptance_tt: "[Concept('cultural_acceptance','Kulturní přijetí')|E] se zvýší u všech [Concept('county','hrabství')|E] [Concept('cultures','kultur')|E] nového [GetTitleByKey('e_latin_empire').GetAdjective] [Concept('kingdom','království')|E]" # todo: CONCEPT CASE
- legitimize_latin_dominion_decision_tooltip: "Přidat [Concept('kingdom','království')|E] do [Concept('de_jure','de iure')|E] území [GetTitleByKey('e_latin_empire').GetName]" # todo: CONCEPT CASE
+ legitimize_latin_dominion_decision_tooltip: "Přidat [Concept('kingdom','království')|E] do [Concept('de_jure','de iure')|E] území [GetTitleByKey('e_latin_empire').Custom('CZ_LandedName_G')]" # todo: CONCEPT CASE
  is_greek_tt: "Jste $greek$"
  is_greek_descendent_tt: "Vaše [Concept('culture','kultura')|E] pochází z $greek$" # todo: CONCEPT CASE
  no_byz_emp_exists_tt: "Žádný [Concept('ruler','vládce')|E] nedrží [GetTitleByKey('e_byzantium').GetName]" # todo: CONCEPT CASE

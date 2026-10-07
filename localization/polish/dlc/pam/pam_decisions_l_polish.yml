@@ -263,10 +263,10 @@
  pam_declare_rite_heresy_bull_effect_tt: "$pam_declare_rite_heresy_effect_tt$" # todo: NEW TRANSLATION
  pam_declare_rite_heresy_effect_toast_tt: "Kacířství prohlášeno" # todo: NEW TRANSLATION
  pam_bull_events.desc.intro: "Já, [ROOT.Char.GetTitledFirstNameNoTooltip], služebník služebníků Božích, svým nejmilejším dětem v Kristu:\n\n" # todo: NEW TRANSLATION
- pam_bull_events.desc.outro: "\n\n#EMP Dáno v [ROOT.Char.GetCurrentLocation.GetName] dne [GetCurrentDate.GetStringLong]#!" # todo: NEW TRANSLATION
+ pam_bull_events.desc.outro: "\n\n#EMP Dáno [CZPrepV(ROOT.Char.GetCurrentLocation.GetNameNoTooltip)] [CZProvName(ROOT.Char.GetCurrentLocation,'L')] dne [GetCurrentDate.GetStringLong]#!" # todo: NEW TRANSLATION
  every_theocratic_vassal_tt: "Každý [vassal|E] s [theocracy|E] nebo [ecclesiastical_government|E] ([THIS.ScriptValue('number_of_theocratic_vassals')|V0])" # todo: NEW TRANSLATION
  pam_bull_events.0001.t: "Bula roku [GetCurrentDate.GetYear]" # todo: NEW TRANSLATION
- pam_bull_events.0001.desc: ""Vyzývám vás všechny, abyste se postavili nevěřícím v [title.GetName], osvobodili zemi od jejich tyranie a vyrvali jim z rukou mnoho tisíc vašich zajatých bratrů."\n\n"Ať za vašich dnů vzroste důstojnost křesťanského jména a vaše udatnost, oslavovaná po celém světě, zůstane nedotčená a neochvějná."" # todo: NEW TRANSLATION
+ pam_bull_events.0001.desc: ""Vyzývám vás všechny, abyste se postavili nevěřícím [CZPrepV(title.GetNameNoTooltip)] [title.Custom('CZ_LandedName_L')], osvobodili zemi od jejich tyranie a vyrvali jim z rukou mnoho tisíc vašich zajatých bratrů."\n\n"Ať za vašich dnů vzroste důstojnost křesťanského jména a vaše udatnost, oslavovaná po celém světě, zůstane nedotčená a neochvějná."" # todo: NEW TRANSLATION
  pam_bull_events.0001.a: "#EMP In nomine Domini.#!" # todo: NEW TRANSLATION
  pam_bull_events.0001.a.flavor: "#EMP Ve jménu Páně.#!" # todo: NEW TRANSLATION
  pam_bull_events.0002.t: "$pam_bull_events.0001.t$" # todo: NEW TRANSLATION
@@ -282,7 +282,7 @@
  pam_bull_events.0003.a.flavor: "$pam_bull_events.0001.a.flavor$" # todo: NEW TRANSLATION
  IN_NOMINE_DOMINI_GLOSS: "Ve jménu Páně." # todo: NEW TRANSLATION
  pam_bull_events.0004.opening: "Váženému [ROOT.GetCharacter.GetFaith.GetAdjectiveNoTooltip] [ROOT.GetCharacter.GetTitledFirstNameNoTooltip]," # todo: NEW TRANSLATION
- pam_bull_events.0004.desc.crusade: "Vyzývám vás všechny, abyste se postavili nevěřícím v [title.GetName]." # todo: NEW TRANSLATION
+ pam_bull_events.0004.desc.crusade: "Vyzývám vás všechny, abyste se postavili nevěřícím [CZPrepV(title.GetNameNoTooltip)] [title.Custom('CZ_LandedName_L')]." # todo: NEW TRANSLATION
  pam_bull_events.0004.desc.heresy: "Ať všichni vědí, že [heresy_rite.GetName] je nyní v klatbě a jeho stoupenci jsou kacíři." # todo: NEW TRANSLATION
  pam_bull_events.0004.desc.tenet_permitted: ""Vězte všichni, kdo věříte v [tenet_scope.GetName( ROOT.GetCharacter.GetRite )], že nyní je to se svolením [bull_issuer.GetPrimaryTitle.GetNameNoTierNoTooltip] dovoleno."" # todo: NEW TRANSLATION
  pam_bull_events.0004.desc.tenet_forbidden: ""Učení [tenet_scope.GetName( ROOT.GetCharacter.GetRite )] už od tohoto dne nemá mezi věřícími místo. Kdokoli je praktikuje, uráží posvátnost církve a dopouští se smrtelného hříchu."" # todo: NEW TRANSLATION
@@ -314,7 +314,7 @@
  pick_crusade_target_decision_tooltip: "Vyber protivníka pro svou [great_holy_war|E]" # todo: NEW TRANSLATION
  pick_crusade_target_decision_confirm: "Ve jménu [ROOT.GetCharacter.GetFaith.HighGodName]!" # todo: NEW TRANSLATION
  pick_crusade_target_decision_effect_tt: "Zahájí [great_holy_war|E] proti vybranému [kingdom|E]" # todo: NEW TRANSLATION
- pick_crusade_target_decision_effect_event_tt: "Zahájí [great_holy_war|E] proti [title.GetName]" # todo: NEW TRANSLATION
+ pick_crusade_target_decision_effect_event_tt: "Zahájí [great_holy_war|E] proti [title.Custom('CZ_LandedName_D')]" # todo: NEW TRANSLATION
  enact_a_bull_decision_existing_ghw_trigger_tt: "[THIS.Faith.GetName] #bold nemá#! aktivní [great_holy_war|E]" # todo: NEW TRANSLATION
  enact_a_bull_crusade_cooldown_tt: "$enact_a_bull_decision_option_crusade$ není dostupná do [GetCurrentDateWithDiff( GetVarTimeRemaining( THIS.Char.MakeScope, 'enact_a_bull_crusade_cooldown') )]" # todo: NEW TRANSLATION
  enact_a_bull_rite_heresy_cooldown_tt: "$enact_a_bull_decision_option_rite_heresy$ není dostupná do [GetCurrentDateWithDiff( GetVarTimeRemaining( THIS.Char.MakeScope, 'enact_a_bull_rite_heresy_cooldown') )]" # todo: NEW TRANSLATION
@@ -430,7 +430,7 @@
  pam_kingdom_of_heaven_decision_hegemony_effect_tt: "Stanete se [holder|E] [hegemony|E] [GetTitleByKey('h_kingdom_of_heaven').GetName]" # todo: NEW TRANSLATION
  pam_kingdom_of_heaven_decision_vassals_effect_tt: "Nezávislí [rulers|E] vyznávající stejnou [faith|E] vám mohou přísahat věrnost; jejich rozhodnutí ovlivní jejich [piety_level|E], [opinion|E] o vás a to, zda následují váš [rite|E]" # todo: NEW TRANSLATION
  pam_kingdom_of_heaven_decision_subjugation_effect_tt: "Získáte přístup k [casus_belli|E] #high $tribal_subjugation_cb$#! proti všem [THIS.Char.GetFaith.GetAdherentNamePlural]" # todo: NEW TRANSLATION
- pam_kingdom_of_heaven_decision_de_jure_effect_tt: "[empires|E], které [hold|E] nebo které nemají [holder|E] a jež [completely_control|E], se stanou [de_jure|E] součástí [GetTitleByKey('h_kingdom_of_heaven').GetName]" # todo: NEW TRANSLATION
+ pam_kingdom_of_heaven_decision_de_jure_effect_tt: "[empires|E], které [hold|E] nebo které nemají [holder|E] a jež [completely_control|E], se stanou [de_jure|E] součástí [GetTitleByKey('h_kingdom_of_heaven').Custom('CZ_LandedName_G')]" # todo: NEW TRANSLATION
  pam_kingdom_of_heaven_decision_jerusalem_tt: "[GetTitleByKey('c_jerusalem').GetName] je součástí vašeho [realm|E]" # todo: NEW TRANSLATION
  pam_kingdom_of_heaven_decision_hof_tt: "Jste [head_of_faith|E]" # todo: NEW TRANSLATION
  pam_kingdom_of_heaven.0001.t: "Království nebeské" # todo: NEW TRANSLATION
@@ -438,7 +438,7 @@
  pam_kingdom_of_heaven.0001.a: "Neopustím [previous_capital.GetNameNoTooltip]." # todo: NEW TRANSLATION
  pam_kingdom_of_heaven.0001.b: "Čím je stolec svatého Petra ve srovnání se stolcem Kristovým?" # todo: NEW TRANSLATION
  kingdom_of_heaven_lower_vassals_gained_tt: "[SCOPE.ScriptValue('kingdom_of_heaven_lower_vassals_gained_value')|V0] [dukes|E] a [counts|E] se stali vašimi [vassals|E]" # todo: NEW TRANSLATION
- kingdom_of_heaven_lower_de_jure_gained_tt: "[empires|E], které jste držel(a) nebo které neměly [holder|E] a jež jste [completely_controlled|E], se staly [de_jure|E] součástí [GetTitleByKey('h_kingdom_of_heaven').GetName]" # todo: NEW TRANSLATION
+ kingdom_of_heaven_lower_de_jure_gained_tt: "[empires|E], které jste držel(a) nebo které neměly [holder|E] a jež jste [completely_controlled|E], se staly [de_jure|E] součástí [GetTitleByKey('h_kingdom_of_heaven').Custom('CZ_LandedName_G')]" # todo: NEW TRANSLATION
  pam_kingdom_of_heaven_news_title: "Vyhlášeno Království nebeské" # todo: NEW TRANSLATION
  pam_kingdom_of_heaven_news_tt: "[kingdom_of_heaven_founder.GetTitledFirstName] vyhlásil(a) [GetTitleByKey('h_kingdom_of_heaven').GetName] a nárokuje si mandát nad věřícími" # todo: NEW TRANSLATION
  pam_founded_kingdom_of_heaven_modifier: "Krev Nového Jeruzaléma" # todo: NEW TRANSLATION
@@ -547,7 +547,7 @@
  pam_promulgate_word_of_pious_deeds_decision: "Rozhlásit zprávy o zbožných skutcích" # todo: NEW TRANSLATION
  pam_promulgate_word_of_pious_deeds_decision_desc: "Moje kancelář sepsala chvalozpěv oslavující mé skutky podobné Kristovým. Ačkoli se nesluší vychvalovat vlastní ctnosti, moji blízcí chtějí rozšířit zprávu o mé zbožnosti mezi všechny [ROOT.Char.GetFaith.GetAdherentNamePluralNoTooltip].\n\nKdyž se o tom všichni dozvědí, mohlo by se rozšířit, že právě já jsem [ROOT.Char.GetWomanMan] nejhodnější usednout na trůn svatého Petra... a možná i výš." # todo: NEW TRANSLATION
  pam_promulgate_word_of_pious_deeds_decision_desc_tooltip: "#V Zvýšit volební skóre#! pro [Select_CString(ROOT.Char.GetReligiousSuperior.IsValid, ROOT.Char.GetReligiousSuperior.GetPrimaryTitle.GetName, ROOT.Char.GetPrimaryTitle.GetName)]: #P +30#! nebo zvýšit šanci na [canonization|E]" # todo: NEW TRANSLATION
- pam_promulgate_word_of_pious_deeds_decision_tooltip_effect: "Vyberte si: \n\t$EFFECT_LIST_BULLET$Zaplatit [piety|E] a #V zvýšit volební skóre#! pro [praise_worthy_priest_superior_title.GetName] \n\t$EFFECT_LIST_BULLET$Zvýšit svou šanci na budoucí [canonization|E]" # todo: NEW TRANSLATION
+ pam_promulgate_word_of_pious_deeds_decision_tooltip_effect: "Vyberte si: \n\t$EFFECT_LIST_BULLET$Zaplatit [piety|E] a #V zvýšit volební skóre#! pro [praise_worthy_priest_superior_title.Custom('CZ_LandedName_A')] \n\t$EFFECT_LIST_BULLET$Zvýšit svou šanci na budoucí [canonization|E]" # todo: NEW TRANSLATION
  pam_promulgate_word_of_pious_deeds_decision_confirm: "Dovolím, aby mě chválili!" # todo: NEW TRANSLATION
  cardinal_unlocks_pam_promulgate_word_of_pious_deeds_decision_tooltip: "Jste [cardinal|E]" # todo: NEW TRANSLATION
  domicile_unlocks_pam_promulgate_word_of_pious_deeds_decision_tooltip: "Vaše [domicile|E] musí mít [domicile_building|E] [GetDomicileBuilding('chancery_01').GetName] nebo vyšší" # todo: NEW TRANSLATION
@@ -579,10 +579,10 @@
  pam_decision_events.0015.b.tt: "#V Zvýšit šanci na svatořečení#! po smrti\n#weak K svatořečení je zapotřebí [dynasty|E]#!" # todo: NEW TRANSLATION
  pam_decision_events.0015.c: "Jestli si Pán přeje, abych vedl/a..." # todo: NEW TRANSLATION
  pam_decision_events.0015.c.flavor: "...musím dostát očekáváním" # todo: NEW TRANSLATION
- pam_decision_events.0015.c.tt: "#V Zvýšit volební skóre#! pro [praise_worthy_priest_superior_title.GetName]: #P +30#!" # todo: NEW TRANSLATION
+ pam_decision_events.0015.c.tt: "#V Zvýšit volební skóre#! pro [praise_worthy_priest_superior_title.Custom('CZ_LandedName_A')]: #P +30#!" # todo: NEW TRANSLATION
  pam_decision_events.0015.d: "Ať nezazní žádné jiné jméno." # todo: NEW TRANSLATION
  pam_decision_events.0015.d.flavor: "Vyprázdním pokladnici své zbožnosti; nehodlám skončit druhý/á" # todo: NEW TRANSLATION
- pam_decision_events.0015.d.tt: "#V Zvýšit volební skóre#! pro [praise_worthy_priest_superior_title.GetName]: #P +[praise_worthy_priest.MakeScope.ScriptValue('pam_papabile_place_first_populist_value')|0]#!, což stačí k prvnímu místu jako $theocratic_elective_populist$\nVyžaduje @piety_icon![praise_worthy_priest.MakeScope.ScriptValue('pam_place_first_as_populist_piety_cost_value')|0] [piety|E]" # todo: NEW TRANSLATION
+ pam_decision_events.0015.d.tt: "#V Zvýšit volební skóre#! pro [praise_worthy_priest_superior_title.Custom('CZ_LandedName_A')]: #P +[praise_worthy_priest.MakeScope.ScriptValue('pam_papabile_place_first_populist_value')|0]#!, což stačí k prvnímu místu jako $theocratic_elective_populist$\nVyžaduje @piety_icon![praise_worthy_priest.MakeScope.ScriptValue('pam_place_first_as_populist_piety_cost_value')|0] [piety|E]" # todo: NEW TRANSLATION
  pam_evangelize_personal_tenet_decision: "Šířit osobní zásadu" # todo: NEW TRANSLATION
  pam_evangelize_personal_tenet_decision_desc: "O svém přesvědčení chci povědět všem. Budu šířit slovo v Ježíšově jménu a následovat jeho učení." # todo: NEW TRANSLATION
  pam_evangelize_personal_tenet_decision_tooltip: "Šířit svou [personal_tenet|E] mezi [subjects|E] a [rulers|E] ve své [clerical_region|E] [realm_capital|E], aby ji přijali za svou osobní zásadu" # todo: NEW TRANSLATION
@@ -652,7 +652,7 @@
  pam_raise_khachkar_decision_tooltip: "Nechte v jedné ze svých [counties|E] zhotovit [GetModifier('pam_khachkar_ancestral_county').GetName]." # todo: NEW TRANSLATION
  pam_raise_khachkar_decision_confirm: "Připomenout v kameni" # todo: NEW TRANSLATION
  pam_raise_khachkar_decision_warning: "@warning_icon! #X Chačkar bude zničen, pokud [county|E] připadne někomu mimo vaši [dynasty|E]#!" # todo: NEW TRANSLATION
- pam_khachkar_grant_title_warning: "@warning_icon! #X Chačkar v [target.GetNameNoTier] bude zničen, protože [recipient.GetShortUIName] nepatří k vaší [dynasty|E]!#!" # todo: NEW TRANSLATION
+ pam_khachkar_grant_title_warning: "@warning_icon! #X Chačkar [CZPrepV(target.GetNameNoTierNoTooltip)] [target.Custom('CZ_LandedNameNoTier_L')] bude zničen, protože [recipient.GetShortUIName] nepatří k vaší [dynasty|E]!#!" # todo: NEW TRANSLATION
  pam_raise_khachkar_no_catalysts: "Máte příbuzného, jehož smrt můžete uctít." # todo: NEW TRANSLATION
  pam_raise_khachkar_no_valid_county_in_realm: "Máte vhodné [county|E]." # todo: NEW TRANSLATION
  pam_proclaim_crusade_age_tenet_decision: "Vyhlásit věk křížových výprav" # todo: NEW TRANSLATION
@@ -679,7 +679,7 @@
  pam_decision_events.0018.desc.struggle_submission: "Záležitost jsem stvrdil svou pečetí. Od tohoto dne bude [GetTenetType('tenet_struggle_submission').GetName( hof_scope.GetRite )] jednou ze základních zásad [hof_scope.GetFaith.GetName].\n\nAť všichni vládci víry dbají tohoto varování." # todo: NEW TRANSLATION
  pam_decision_events.0018.a: "Budiž." # todo: NEW TRANSLATION
  pam_decision_events.0017.t: "Vztyčit rodový chačkar" # todo: NEW TRANSLATION
- pam_decision_events.0017.desc: "Pro kamenný kříž jsem vybral vyvýšené místo s výhledem na [khachkar_location.GetNameNoTier].\n\nNechám mistry kameníky vytvořit něco skutečně úctyhodného na památku [khachkar_ancestor.GetTitledFirstNameNicknamed]. Kříž obklopený růžicemi a ornamenty, s nápisem, že [khachkar_ancestor.GetHerHis] [khachkar_ancestor.Custom2('RelationToMeShort', ROOT.Char)] uctil [khachkar_ancestor.GetHerHis] památku.\n\nAť se pod ním modlí místní poutníci a všichni spatří, že nám tato země právem náleží." # todo: NEW TRANSLATION
+ pam_decision_events.0017.desc: "Pro kamenný kříž jsem vybral vyvýšené místo s výhledem na [khachkar_location.Custom('CZ_LandedNameNoTier_A')].\n\nNechám mistry kameníky vytvořit něco skutečně úctyhodného na památku [khachkar_ancestor.GetTitledFirstNameNicknamed]. Kříž obklopený růžicemi a ornamenty, s nápisem, že [khachkar_ancestor.GetHerHis] [khachkar_ancestor.Custom2('RelationToMeShort', ROOT.Char)] uctil [khachkar_ancestor.GetHerHis] památku.\n\nAť se pod ním modlí místní poutníci a všichni spatří, že nám tato země právem náleží." # todo: NEW TRANSLATION
  pam_decision_events.0017.a: "Ať kříž přetrvá věky." # todo: NEW TRANSLATION
  pam_decision_events.0017.b: "Není vhodná chvíle." # todo: NEW TRANSLATION
  declare_antipope_decision: "Vyhlásit $anti_religious_head_name$" # todo: NEW TRANSLATION
@@ -757,7 +757,7 @@
  pam_decision_events.0030.b: "[religious_authority.GetFaith.HighGodName] s tebou takové plány nemá, [king_aspirant.GetFirstNameNoTooltip]..." # todo: NEW TRANSLATION
  pam_decision_events.0031.t: "[ROOT.Char.GetFaith.GetAdjectiveNoTooltip] [ROOT.Char.GetPrimaryTitle.GetTierAsNameNoTooltip]" # todo: NEW TRANSLATION
  pam_decision_events.0031.desc.self_crowning: "Která země je požehnanější než [ROOT.Char.GetPrimaryTitle.GetNameNoTier]? Které léno si více zaslouží královskou ochranu? Nechránil snad [ROOT.Char.GetFaith.WarGodName] jeho lid před neštěstím a neuchoval mé svaté sídlo uvnitř jeho hranic?\n\nVykonavatelem vůle [ROOT.Char.GetFaith.HighGodNamePossessive] jsem posvětil [ROOT.Char.GetPrimaryTitle.GetTierAsNameNoTooltip] [ROOT.Char.GetPrimaryTitle.GetNameNoTierNoTooltip]. Stal jsem se posvátným ochráncem této země a už nikdy nebude má vůle zavržena.\n\nVazalové i věřící — pokloňte se! Dobří [religious_authority.GetFaith.GetReligion.GetAdherentNamePlural] vědí, že mají ctít svého [ROOT.Char.GetTitleAsName]." # todo: NEW TRANSLATION
- pam_decision_events.0031.desc_three_duchies: "Z vůle [religious_authority.GetTitledFirstNamePossessiveRegnal] jsou země mé říše uspořádány jako osudové hvězdy na neustále se otáčející obloze. Z [duchy_1.GetName], [duchy_2.GetName] a [duchy_3.GetName] vzniká požehnané a sjednocené [ROOT.Char.GetPrimaryTitle.GetTierAsNameNoTooltip|l].\n\nA ze spravedlivé a důstojné duše povstává nový [ROOT.Char.GetTitleAsName]! Povýšil mě mandát [religious_authority.GetTitleAsNamePossessiveNoTooltip] a nyní musím vést lid ve jménu [religious_authority.GetHerHis]." # todo: NEW TRANSLATION
+ pam_decision_events.0031.desc_three_duchies: "Z vůle [religious_authority.GetTitledFirstNamePossessiveRegnal] jsou země mé říše uspořádány jako osudové hvězdy na neustále se otáčející obloze. [CZPrepZ(duchy_1.GetNameNoTooltip)|U] [duchy_1.Custom('CZ_LandedName_G')], [duchy_2.Custom('CZ_LandedName_G')] a [duchy_3.Custom('CZ_LandedName_G')] vzniká požehnané a sjednocené [ROOT.Char.GetPrimaryTitle.GetTierAsNameNoTooltip|l].\n\nA ze spravedlivé a důstojné duše povstává nový [ROOT.Char.GetTitleAsName]! Povýšil mě mandát [religious_authority.GetTitleAsNamePossessiveNoTooltip] a nyní musím vést lid ve jménu [religious_authority.GetHerHis]." # todo: NEW TRANSLATION
  pam_decision_events.0031.desc: "Z vůle [religious_authority.GetTitledFirstNamePossessiveRegnal] se do letopisů zapisuje název nového [ROOT.Char.GetPrimaryTitle.GetTierAsNamePossessiveNoTooltip|l]. [ROOT.Char.GetFaith.PriestNeuterPlural] a lid mě s jásotem povyšují! Dokud [ROOT.Char.GetPrimaryTitle.GetNameNoTier] nepadne do rukou pohanů a kacířů, zůstanu jeho právoplatným [ROOT.Char.GetFaith.GetAdjective] [ROOT.Char.GetTitleAsName].\n\n[religious_authority.GetTitleAsNameNoTooltip], můj stvořitel, požehnal této skromné říši... a jistě bude s jistým zájmem sledovat mé královské počínání." # todo: NEW TRANSLATION
  pam_decision_events.0031.a: "Ať [ROOT.Char.GetFaith.HighGodName] navždy miluje mé [ROOT.Char.GetPrimaryTitle.GetTierAsNameNoTooltip]." # todo: NEW TRANSLATION
  any_landed_duchy_title_tt: "Držíte alespoň jeden [duchy|E], který je [landed|E] [title|E] #weak #EMP (nikoli [clerical_region|E] ani [noble_family|E])#!#!" # todo: NEW TRANSLATION

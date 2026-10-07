@@ -199,7 +199,7 @@
  PURCHASE_LAND_DOUBLE_GOLD_REASON: "Nabídli jste dvojnásobek zlata: $VALUE|+=0$"
  PURCHASE_LAND_OFFER_HOOK_REASON: "Nabídli jste na sobě [Concept('hook','páce')|E]: $VALUE|+=0$" # todo: CONCEPT CASE
  PURCHASE_LAND_OBLIGATIONS_REASON: "Nabídli jste zvýšené [Concept('vassal_obligations','vazalské povinnosti')|E]: $VALUE|+=0$" # todo: CONCEPT CASE
- PURCHASE_LAND_RELATIONSHIP_REASON: "Máte pozitivní [Concept('relation','zvláštního vztahu')|E] s [target.GetNameNoTier]: $VALUE|+=0$" # todo: CONCEPT CASE
+ PURCHASE_LAND_RELATIONSHIP_REASON: "Máte pozitivní [Concept('relation','zvláštního vztahu')|E] [CZPrepS(target.GetNameNoTierNoTooltip)] [target.Custom('CZ_LandedNameNoTier_I')]: $VALUE|+=0$" # todo: CONCEPT CASE
  purchase_land_interaction_shortened_effect_duchy_desc: "Získá [target.GetName], jeho de jure [Concept('counties','hrabství')|E] a jeho [Concept('vassals','vazalů')|E]" # todo: CONCEPT CASE
  purchase_land_interaction_shortened_effect_county_desc: "Získá [target.GetName] a jeho [Concept('vassals','vazalů')|E]" # todo: CONCEPT CASE
  PURCHASE_LAND_PROPOSAL_FELLOW_VASSAL: "Nabízím mnoho zlata, pokud mi udělíte [target.GetName], abych vládl jako spolulenník [recipient.GetLiege.GetPrimaryTitle.GetNameNoTooltip]."
@@ -268,8 +268,8 @@
  negotiate_settlement_duchy_tt: "Chcete-li nabídnout [Concept('duchy','vévodství')|E], musíte být držitelem alespoň #V 1#! z jeho [Concept('de_jure','de iure')|E] [Concept('counties','hrabství')|E] " # todo: CONCEPT CASE
  negotiate_settlement_target_tt: "[recipient.GetShortUIName] musí být na protistraně v [Concept('war','válce')|E], kde jste hlavním obráncem, nebo mít aktuálně tábor spolu s vaším [Concept('realm','panstvím')|E]" # todo: CONCEPT CASE
  negotiate_settlement_defensive_wars_tt: "[actor.GetTitledFirstName] nesmí vést žádné obranné [Concept('wars','války')|E], ve kterých [recipient.GetTitledFirstName] není na protistraně" # todo: CONCEPT CASE
- NEGOTIATE_SETTLEMENT_CLAIM_REASON: "[Concept('claims','Nároky')|E] na nebo pod [target.GetNameNoTier]: $VALUE|+=0$" # todo: CONCEPT CASE
- NEGOTIATE_SETTLEMENT_WAR_TARGET_REASON: "[Concept('wars','Války')|E] cílící na [target.GetNameNoTier] nebo níže: $VALUE|+=0$" # todo: CONCEPT CASE
+ NEGOTIATE_SETTLEMENT_CLAIM_REASON: "[Concept('claims','Nároky')|E] na nebo pod [target.Custom('CZ_LandedNameNoTier_A')]: $VALUE|+=0$" # todo: CONCEPT CASE
+ NEGOTIATE_SETTLEMENT_WAR_TARGET_REASON: "[Concept('wars','Války')|E] cílící na [target.Custom('CZ_LandedNameNoTier_A')] nebo níže: $VALUE|+=0$" # todo: CONCEPT CASE
  NEGOTIATE_SETTLEMENT_VALUE_REASON: "[Concept('development','Rozvoj')|E] a [Concept('buildings','budovy')|E] [target.GetNameNoTier]: $VALUE|+=0$" # todo: CONCEPT CASE
  NEGOTIATE_SETTLEMENT_FOREIGN_CULTURE_REASON: "[target.GetNameNoTier] není mojí [Concept('culture','kulturu')|E] ([recipient.GetCulture.GetName]): $VALUE|+=0$" # todo: CONCEPT CASE
  NEGOTIATE_SETTLEMENT_DIFFERENT_FAITH_REASON: "[target.GetNameNoTier] není mojí [Concept('faith','víru')|E] ([recipient.GetFaith.GetName]): $VALUE|+=0$" # todo: CONCEPT CASE
@@ -486,7 +486,7 @@
  ep3_laamps.0402.desc: "Skoro od počátku se mé nejpečlivěji vytvořené plány hrozně zvrtly. Uchvácení koruny je těžší, než jsem si představoval...\n\nStěží jsme se dostali do [target.GetHerHis] [target.Custom('ResidenceBuilding')|l], než nás stráže obklíčily odnikud a naše nepřátelské záměry byly odhaleny."
  ep3_laamps.0402.imprison: "Tvrdě jsme bojovali, ale rychle jsme byli obklíčeni.\n\nSpoután v poutech jsem přiveden před [target.GetTitledFirstName], který zjevně dává najevo [Select_CString(target.IsFemale,'její','jeho')] hněv..."
  ep3_laamps.0402.death: "Tvrdě jsme bojovali, ale rychle jsme byli obklíčeni.\n\nKdyž se otočím k útěku, vidím, že není úniku, a vojáci se po mně ženou, se zvednutými meči!"
- ep3_laamps.0402.outro: "Tvrdě jsme bojovali a měli jsme štěstí, že jsme se odtamtud dostali živí.\n\n[target.GetFirstNameRegnal] je stále [target.GetTitleAsNameNoTooltip] z [target.GetPrimaryTitle.GetNameNoTier], bezpečně ukrytý ve [target.GetHerHis] [target.Custom('ResidenceBuilding')|l], a bezpochyby usiluje o mé rychlé dopadení..."
+ ep3_laamps.0402.outro: "Tvrdě jsme bojovali a měli jsme štěstí, že jsme se odtamtud dostali živí.\n\n[target.GetFirstNameRegnal] je stále [target.GetTitleAsNameNoTooltip] [CZPrepZ(target.GetPrimaryTitle.GetNameNoTierNoTooltip)] [target.GetPrimaryTitle.Custom('CZ_LandedNameNoTier_G')], bezpečně ukrytý ve [target.GetHerHis] [target.Custom('ResidenceBuilding')|l], a bezpochyby usiluje o mé rychlé dopadení..."
  ep3_laamps.0402.a: "Sakra, [Select_CString(ROOT.Char.IsFemale,'byla','byl')] jsem #EMP takhle# blízko!"
  ep3_laamps.0402.b: "Zatracené štěstí..."
  ep3_laamps.0402.c: "Ó, [ROOT.Char.GetFaith.HighGodName]!"
@@ -639,7 +639,7 @@
  ADMIN_PASS_TO_HEIR_REVOKE_VALID_SCOPE_TT: "[landed_title.GetName] [Concept('heir','Dědic')|E] musí být jiná postava" # todo: CONCEPT CASE
  governor_removal_interaction: "Rezignace guvernéra"
  governor_removal_interaction_desc: "Nechte [recipient.GetShortUINameNoTooltip] vzdát se [Select_CString(recipient.IsFemale,'jejích','jeho')] úřadů, přičemž všechny držené [Concept('governorships','guvernérství')|E] přejdou na dalšího kandidáta v [Concept('line','liniích')|E]" # todo: CONCEPT CASE
- GOVERNOR_REMOVAL_NOTIFICATION_TEXT: "Bohužel vaše působení jako [recipient.GetTitleAsNameNoTooltip] z [recipient.GetPrimaryTitle.GetNameNoTier] dospělo ke konci; vaše úřady jsou tímto uvolněny. [actor.GetPrimaryTitle.GetTierAsNameNoTooltip] je vám vděčný za vaši službu."
+ GOVERNOR_REMOVAL_NOTIFICATION_TEXT: "Bohužel vaše působení jako [recipient.GetTitleAsNameNoTooltip] [CZPrepZ(recipient.GetPrimaryTitle.GetNameNoTierNoTooltip)] [recipient.GetPrimaryTitle.Custom('CZ_LandedNameNoTier_G')] dospělo ke konci; vaše úřady jsou tímto uvolněny. [actor.GetPrimaryTitle.GetTierAsNameNoTooltip] je vám vděčný za vaši službu."
  GOVERNOR_RESIGNATION_EFFICIENCY_COST: "[recipient.GetShortUINamePossessiveNoTooltip] [Concept('governor_efficiency','Efektivita guvernéra')|E]" # todo: CONCEPT CASE
  GOVERNOR_RESIGNATION_DUCHY_COST: "[recipient.GetShortUINamePossessiveNoTooltip] [Concept('duchy','Vévodství')|E]-[Concept('rank','hodnost')|E] [Concept('governorships','guvernérství')|E]" # todo: CONCEPT CASE
  GOVERNOR_RESIGNATION_KINGDOM_COST: "[recipient.GetShortUINamePossessiveNoTooltip] [Concept('kingdom','Království')|E]-[Concept('rank','hodnost')|E] [Concept('governorships','guvernérství')|E]" # todo: CONCEPT CASE
@@ -673,8 +673,8 @@
  THEY_ARE_MY_SPOUSE: "[secondary_recipient.GetShortUINameNoTooltip] je [recipient.GetHerHis] [Concept('spouse','choť')|E]: $VALUE|=+0$" # todo: CONCEPT CASE
  THEY_ARE_MY_FRIEND: "[secondary_recipient.GetShortUINameNoTooltip] je [recipient.GetHerHis] [Concept('friend','přítel')|E]: $VALUE|=+0$" # todo: CONCEPT CASE
  THEY_ARE_MY_RIVAL: "[secondary_recipient.GetShortUINameNoTooltip] je [recipient.GetHerHis] [Concept('rival','sok')|E]: $VALUE|=+0$" # todo: CONCEPT CASE
- DEMAND_GOVERNOR_REMOVAL_NOTIFICATION_TEXT: "[secondary_recipient.GetFirstNamePossessive] působení jako [secondary_recipient.GetTitleAsNameNoTooltip] v [secondary_recipient.GetPrimaryTitle.GetNameNoTier] dosloužilo; pro dobro [recipient.GetPrimaryTitle.GetTierAsNameNoTooltip], [secondary_recipient.GetSheHe] #EMP musí#! uvolnit místo lepším [recipient.GetWomenMen]."
- DEMAND_GOVERNOR_REMOVAL_INTERMEDIARY_NOTIFICATION_TEXT: "Mnozí se domnívají, že [secondary_recipient.GetFirstNamePossessive] působení jako [secondary_recipient.GetTitleAsNameNoTooltip] v [secondary_recipient.GetPrimaryTitle.GetNameNoTier] dosloužilo; pro dobro [recipient.GetPrimaryTitle.GetTierAsNameNoTooltip], [secondary_recipient.GetSheHe] #EMP musí#! uvolnit místo lepším [recipient.GetWomenMen]."
+ DEMAND_GOVERNOR_REMOVAL_NOTIFICATION_TEXT: "[secondary_recipient.GetFirstNamePossessive] působení jako [secondary_recipient.GetTitleAsNameNoTooltip] [CZPrepV(secondary_recipient.GetPrimaryTitle.GetNameNoTierNoTooltip)] [secondary_recipient.GetPrimaryTitle.Custom('CZ_LandedNameNoTier_L')] dosloužilo; pro dobro [recipient.GetPrimaryTitle.GetTierAsNameNoTooltip], [secondary_recipient.GetSheHe] #EMP musí#! uvolnit místo lepším [recipient.GetWomenMen]."
+ DEMAND_GOVERNOR_REMOVAL_INTERMEDIARY_NOTIFICATION_TEXT: "Mnozí se domnívají, že [secondary_recipient.GetFirstNamePossessive] působení jako [secondary_recipient.GetTitleAsNameNoTooltip] [CZPrepV(secondary_recipient.GetPrimaryTitle.GetNameNoTierNoTooltip)] [secondary_recipient.GetPrimaryTitle.Custom('CZ_LandedNameNoTier_L')] dosloužilo; pro dobro [recipient.GetPrimaryTitle.GetTierAsNameNoTooltip], [secondary_recipient.GetSheHe] #EMP musí#! uvolnit místo lepším [recipient.GetWomenMen]."
  force_governor_removal_interaction_aibehavior_power_tt: "[Concept('governor','Guvernér')|E] vs. [Concept('liege','Lenní pán')|E] Vojenská síla: $VALUE|=+0$ #weak (max +20)#!" # todo: CONCEPT CASE
  custom.every_house_member_secondary_recipient: "Každý člen [Concept('house','rod')|E] [secondary_recipient.GetHouse.GetBaseName]" # todo: CONCEPT CASE
  custom.every_house_member_recipient: "Každý člen [Concept('house','rod')|E] [recipient.GetHouse.GetBaseName]" # todo: CONCEPT CASE
@@ -723,7 +723,7 @@
  requested_house_heired_governorship_tt: "[opinion_loser.GetTitledFirstName] ztrácí #N -15#! [Concept('opinion','mínění')|E] #weak ($requested_house_heired_governorship$)#!" # todo: CONCEPT CASE
  requested_heired_governorship_tt: "[opinion_loser.GetTitledFirstName] ztrácí #N -15#! [Concept('opinion','mínění')|E] #weak ($requested_heired_governorship$)#!" # todo: CONCEPT CASE
  ep3_interactions_events.0021.opening: "[recipient.Custom2('AppropriateGreetingNegative', actor)]"
- ep3_interactions_events.0021.desc: "S politováním vám musím oznámit, že vaše žádost o správu [target.GetNameNoTier] musí být zamítnuta; jiní kandidáti jsou pro tuto roli lépe vhodní."
+ ep3_interactions_events.0021.desc: "S politováním vám musím oznámit, že vaše žádost o správu [target.Custom('CZ_LandedNameNoTier_G')] musí být zamítnuta; jiní kandidáti jsou pro tuto roli lépe vhodní."
  ep3_interactions_events.0021.a: "Do háje!"
  request_governorship_interaction_toast_granted: "Guvernátorství uděleno"
  request_governorship_interaction_toast_candidacy: "Kandidatura na guvernátorství"
@@ -833,7 +833,7 @@
  support_candidacy_success_reward_tt: "Pokud [secondary_recipient.GetSheHe] získá [target.GetNameNoTier], [secondary_recipient.GetShortUIName] může odměnit svého nejlepšího ne-[Concept('house','rod')|E] podporovatele [secondary_recipient.GetHerHis]" # todo: CONCEPT CASE
  player_supporter_agree_tt: "@alert_icon! #alert_trial [supporter.GetShortUIName] musí souhlasit#!"
  ep3_interactions_events.0600.t: "Můj zastánce čeká"
- ep3_interactions_events.0600.desc: "Můj pokus zajistit mandát nad [ROOT.Char.GetPrimaryTitle.GetNameNoTier] přinesl bohaté plody. Nyní, jako [ROOT.Char.GetTitleAsName], jsem obklopen novými poradci, ministry a dohlížiteli... tvory, kteří mě nutí dobře odměňovat přátele a dobrodince.\n\n[supporter.GetName] — byť není z [ROOT.Char.GetHouse.GetName] — [Select_CString(ROOT.Char.GetHouse.IsFemale,'byla','byl')] hlasitým zastáncem mé kandidatury a je mým hlavním politickým věřitelem. Ignorovat [Select_CString(supporter.IsFemale,'její','jeho')] štědrost by bylo jako urážka."
+ ep3_interactions_events.0600.desc: "Můj pokus zajistit mandát nad [ROOT.Char.GetPrimaryTitle.Custom('CZ_LandedNameNoTier_I')] přinesl bohaté plody. Nyní, jako [ROOT.Char.GetTitleAsName], jsem obklopen novými poradci, ministry a dohlížiteli... tvory, kteří mě nutí dobře odměňovat přátele a dobrodince.\n\n[supporter.GetName] — byť není z [ROOT.Char.GetHouse.GetName] — [Select_CString(ROOT.Char.GetHouse.IsFemale,'byla','byl')] hlasitým zastáncem mé kandidatury a je mým hlavním politickým věřitelem. Ignorovat [Select_CString(supporter.IsFemale,'její','jeho')] štědrost by bylo jako urážka."
  ep3_interactions_events.0600.a: "Musíme se vždy navzájem podporovat."
  ep3_interactions_events.0600.a.success: "Navázán vztah vzájemného prospěchu"
  ep3_interactions_events.0600.a.fail: "Nejsou vám dluženy žádné další přízně"
@@ -845,7 +845,7 @@
  ep3_interactions_events.0600.e: "Pošlete [supporter.GetWomanMan] něco lesklého."
  ep3_interactions_events.0600.f: "Kdo?"
  ep3_interactions_events.0601.opening: "Můj [new_landed_admin.Custom2('RelationToMeShort', SCOPE.sC('supporter'))] a advocate,"
- ep3_interactions_events.0601.desc: "Někteří říkají, že nebýt vaší vroucí podpory, vláda nad [ROOT.Char.GetPrimaryTitle.GetNameNoTier] by se nikdy nestala mou.\n\n"
+ ep3_interactions_events.0601.desc: "Někteří říkají, že nebýt vaší vroucí podpory, vláda nad [ROOT.Char.GetPrimaryTitle.Custom('CZ_LandedNameNoTier_I')] by se nikdy nestala mou.\n\n"
  ep3_interactions_events.0601.desc_repay: "Mluví pravdu."
  ep3_interactions_events.0601.desc_scorn: "Nejsem si jistý."
  ep3_interactions_events.0601.desc_ally: "Tak tedy, ať je vaše zastání prvním činem našeho dlouhého a plodného partnerství! Přejete si vzájemnou podporu, že ano?"
@@ -870,7 +870,7 @@
  PROCURE_ESTATE_LEGITIMISTS_REASON: "$camp_purpose$ je [GetLaw('camp_purpose_legitimists').GetName]: $VALUE|=+0$"
  PROCURE_ESTATE_BRIGANDS_REASON: "$camp_purpose$ je [GetLaw('camp_purpose_brigands').GetName]: $VALUE|=+0$"
  PROCURE_ESTATE_GALLOWSBAIT_REASON: "[GetTrait('gallowsbait').GetName( GetNullCharacter )]: $VALUE|=+0$"
- PROCURE_ESTATE_CLAIMS_REASON: "[actor.GetShortUINamePossessive|U] [Concept('claims','Nároky')|E] v [recipient.GetTopLiege.GetPrimaryTitle.GetNameNoTier]: $VALUE|=+0$" # todo: CONCEPT CASE
+ PROCURE_ESTATE_CLAIMS_REASON: "[actor.GetShortUINamePossessive|U] [Concept('claims','Nároky')|E] [CZPrepV(recipient.GetTopLiege.GetPrimaryTitle.GetNameNoTierNoTooltip)] [recipient.GetTopLiege.GetPrimaryTitle.Custom('CZ_LandedNameNoTier_L')]: $VALUE|=+0$" # todo: CONCEPT CASE
  PROCURE_ESTATE_IMPERIAL_CLAIMS_REASON: "[actor.GetShortUINamePossessive|U] [Concept('claims','Nároky')|E] zpochybňují [recipient.GetTopLiege.GetShortUIName]: $VALUE|=+0$" # todo: CONCEPT CASE
  PROCURE_ESTATE_RIVAL_CLAIMANT_REASON: "[actor.GetShortUINamePossessive|U] [Concept('claims','Nároky')|E] na [recipient.GetShortUINamePossessive] [Concept('titles','tituly')|E]: $VALUE|=+0$" # todo: CONCEPT CASE
  PROCURE_ESTATE_NEEDS_GOLD_REASON: "[recipient.GetShortUIName] potřebuje [Concept('gold','zlato')|E]: $VALUE|=+0$" # todo: CONCEPT CASE
@@ -889,13 +889,13 @@
  ep3_administrative_outsider_modifier: "Administrativní cizinec"
  ep3_administrative_outsider_modifier_desc: "Tato postava se vetřela do administrativních síní moci, kde je k ní přistupováno s nepřátelstvím a podezřením."
  ep3_interactions_events.0611.opening: "Šlechtický tuláku,"
- ep3_interactions_events.0611.desc: "Musím vaši žádost odmítnout. Obávám se, že život v [recipient.GetCapitalLocation.GetTitle.GetNameNoTier] by vám špatně sedl... a jemnosti mé politické scény ještě méně.\n\nZavrhněte myšlenku prašného úřadu v tichém panství, naléhám — važte si prachu na svých botách."
+ ep3_interactions_events.0611.desc: "Musím vaši žádost odmítnout. Obávám se, že život [CZPrepV(recipient.GetCapitalLocation.GetTitle.GetNameNoTierNoTooltip)] [recipient.GetCapitalLocation.GetTitle.Custom('CZ_LandedNameNoTier_L')] by vám špatně sedl... a jemnosti mé politické scény ještě méně.\n\nZavrhněte myšlenku prašného úřadu v tichém panství, naléhám — važte si prachu na svých botách."
  ep3_interactions_events.0611.a: "Užívej si svého pohodlí, ty hade."
  PROCURE_ESTATE_HOOK: "Jako tomu, komu dlužíte,"
  PROCURE_ESTATE_GOLD: "Jako #EMP štědrý#! [actor.GetWomanMan] majetný,"
  PROCURE_ESTATE_PRESTIGE: "Jako šlechtic s významnou pověstí,"
  PROCURE_ESTATE_PIETY: "Jako zbožný cestovatel a velice oddaný ctitel,"
- PROCURE_ESTATE_PROPOSAL_OUTRO: "Žádám vás, abyste mé rodině udělil panství v [recipient.GetCapitalLocation.GetTitle.GetNameNoTier], a mně hlas v [recipient.GetTopLiege.GetPrimaryTitle.GetTierAsName]. Mohl bych se ukázat jako značný přínos."
+ PROCURE_ESTATE_PROPOSAL_OUTRO: "Žádám vás, abyste mé rodině udělil panství [CZPrepV(recipient.GetCapitalLocation.GetTitle.GetNameNoTierNoTooltip)] [recipient.GetCapitalLocation.GetTitle.Custom('CZ_LandedNameNoTier_L')], a mně hlas v [recipient.GetTopLiege.GetPrimaryTitle.GetTierAsName]. Mohl bych se ukázat jako značný přínos."
  procure_estate_message_title: "Dobrodruh se stává hlavou šlechtického rodu"
  procure_estate_message_tt: "[actor.GetShortUIName|U] [Select_CString(actor.IsFemale,'byla','byl')] usazen do panství a získal roli v naší politice od [recipient.GetUIName]"
  house_head_request_interaction: "Požádat hlavu rodu" # todo: RETRANSLATED ENGLISH
@@ -939,7 +939,7 @@
  admin_troops_target_title_has_maa_desc: "[target.GetName] #bold nemá#! žádné [Concept('title_men_at_arms','tituloví ozbrojenci')|E]" # todo: CONCEPT CASE
  admin_troops_target_title_controls_maa_desc: "[target.GetName] #bold nemá#! žádné [Concept('title_men_at_arms','tituloví ozbrojenci')|E] k dispozici, protože je používá někdo jiný" # todo: CONCEPT CASE
  admin_troops_target_title_is_primary_title_tt: "[actor.GetShortUIName|U] nemůže žádat o [Concept('title_men_at_arms','titulové ozbrojence')|E] z [Concept('primary_title','hlavního titulu')|E] [actor.GetShortUINamePossessive] [Concept('top_liege','nejvyššího lenního pána')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
- admin_troops_transfer_troops_back_desc: "Přesunout [target.GetAdjective] armádu zpět do [target.GetNameNoTier]"
+ admin_troops_transfer_troops_back_desc: "Přesunout [target.GetAdjective] armádu zpět do [target.Custom('CZ_LandedNameNoTier_G')]"
  admin_troops_controlled_by_liege_desc: "S [target.GetAdjective] armádou disponuje [actor.GetTopLiege.GetTitleAsName]"
  admin_troops_borrowed_years_desc: "Armáda byla pryč více než [EmptyScope.ScriptValue('admin_troops_reclaim_cost_cooldown_value')|V0] let"
  admin_troops_already_at_home_desc: "Vaše [GetPlayer.Custom('GetProvincialArmiesConcept')] jsou již pod vaším velením"
@@ -976,8 +976,8 @@
  ep3_interactions_events.0621.desc: "Chcete žádat ty, jejichž mysl má být věnována spáse, jejichž prací je pastýřství a vyučování, aby se vměšovali do světských záležitostí za vás?\n\nHanebná drzost!"
  ep3_interactions_events.0621.a: "Bah! Jakoby vaše zbožné ruce byly čisté!"
  depose_governor_lose_titles_tt: "@warning_icon! #X Ztratíte [recipient.GetPrimaryTitle.GetName] a všechny ostatní pozemské [Concept('titles','tituly')|E]#!" # todo: CONCEPT CASE
- ep3_interactions_events.0630.opening: "Můj [recipient.GetTitleAsName] z [recipient.GetPrimaryTitle.GetNameNoTier],"
- ep3_interactions_events.0630.desc_family: "Nařídil jsem vaše odvolání z úřadu. Pro nás sciony rodu [actor.GetHouse.GetName] už není výhodné, abyste spravoval [recipient.GetPrimaryTitle.GetNameNoTooltip].\n\nProsím, pomyslete na svou povinnost vůči rodině a složte svou úřední hůl bez rozhořčení. Vaše rodina vás očekává v [actor.GetCapitalLocation.GetTitle.GetNameNoTier]."
+ ep3_interactions_events.0630.opening: "Můj [recipient.GetTitleAsName] [CZPrepZ(recipient.GetPrimaryTitle.GetNameNoTierNoTooltip)] [recipient.GetPrimaryTitle.Custom('CZ_LandedNameNoTier_G')],"
+ ep3_interactions_events.0630.desc_family: "Nařídil jsem vaše odvolání z úřadu. Pro nás sciony rodu [actor.GetHouse.GetName] už není výhodné, abyste spravoval [recipient.GetPrimaryTitle.GetNameNoTooltip].\n\nProsím, pomyslete na svou povinnost vůči rodině a složte svou úřední hůl bez rozhořčení. Vaše rodina vás očekává [CZPrepV(actor.GetCapitalLocation.GetTitle.GetNameNoTierNoTooltip)] [actor.GetCapitalLocation.GetTitle.Custom('CZ_LandedNameNoTier_L')]."
  ep3_interactions_events.0630.desc_spite: "Podle zákonů našeho velkého [actor.GetPrimaryTitle.GetTierAsName] je vláda udělena mou vůlí a může být odebrána podle mého potěšení.\n\nMusíte — s nejvyšší rychlostí — odstoupit z úřadu [recipient.GetPrimaryTitle.GetNameNoTooltip]. Vzdejte veškerou moc. Zapomeňte, kým jste [Select_CString(ROOT.Char.IsFemale,'byla','byl')].\n\nVáš moudrý a milostivý [actor.GetTitleAsName] to rozkazuje."
  ep3_interactions_events.0630.desc_guilt: "Se slzami v očích vám nařizuji rezignaci z vašeho postu. Službu [actor.GetPrimaryTitle.GetTierAsName] jste vykonával dobře a pilně, ale z centrál [recipient.GetPrimaryTitle.GetTierAsNameNoTooltip] to už nebude možné.\n\nVěřte, že je to vůle [recipient.GetFaith.HighGodName], stejně jako je to rozkaz vašeho [actor.GetTitleAsName]."
  ep3_interactions_events.0630.desc: "Se souhlasem celého paláce tímto ukončuji vaše působení jako [recipient.GetTitleAsNameNoTooltip]. Všechny tituly, které držíte, spolu s příjmy a poctami úřadu, musí být odevzdány.\n\nZa veškeré služby v zájmu [recipient.GetPrimaryTitle.GetTierAsNameNoTooltip] a [actor.GetPrimaryTitle.GetTierAsName] jsou vděčni jak vaši lidé, tak panovník."

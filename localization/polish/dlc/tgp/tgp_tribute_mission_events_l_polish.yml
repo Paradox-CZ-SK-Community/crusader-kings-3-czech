@@ -95,7 +95,7 @@
  tribute_mission.1005.innovation.tt: "Odměníte [tributary_scope.GetShortUINameNoTooltip] některými technologickými pokroky" # todo: NEW TRANSLATION
  tribute_mission.1005.development: "„Zřídíme ve vašem hlavním městě skvělý obchodní přístav.“" # todo: NEW TRANSLATION
  tribute_mission.1005.monk: "„Budeš veden jedním z mých nejmoudřejších mnichů.“" # todo: NEW TRANSLATION
- tribute_mission.1005.legitimacy: "„Tímto vás opět potvrzuji jako pravého vládce [tributary_scope.GetCapitalLocation.GetCounty.GetName].“" # todo: NEW TRANSLATION
+ tribute_mission.1005.legitimacy: "„Tímto vás opět potvrzuji jako pravého vládce [tributary_scope.GetCapitalLocation.GetCounty.Custom('CZ_LandedName_G')].“" # todo: NEW TRANSLATION
  fervor_gain_suzerain_missionaries: "Misionáři suzeréna" # todo: NEW TRANSLATION
  fervor_loss_suzerain_missionaries: "Misionáři odmítnuti" # todo: NEW TRANSLATION
  tribute_mission.1010.t: "$tribute_mission_header$ Odjezd" # todo: NEW TRANSLATION
@@ -114,7 +114,7 @@
  tribute_mission.1010.desc.innovation: "$tribute_mission.1010.segway$ k nám přichází skupina mnichů, podávajících hrst svitků obsahujících nové poznatky a odhalení týkající se jejich inovací." # todo: NEW TRANSLATION
  tribute_mission.1010.desc.development: "$tribute_mission.1010.segway$ ke mně přistoupí vzdělaný služebník a předloží mi smlouvu.\nVe smlouvě je obchodní dohoda o zřízení [overlord_scope.GetCulture.GetCollectiveNounNoTooltip] obchodních stanic v [tributary_scope.GetCapitalLocation.GetTitle.GetBaseNameNoTierNoTooltip], což přispěje k rozvoji a celkovému bohatství regionu." # todo: NEW TRANSLATION
  tribute_mission.1010.desc.monk: "$tribute_mission.1010.segway$ [new_monk.Custom('GetArticledAgeDescriptionGender')] vyjde a představí [new_monk.GetHerselfHimself] jako [new_monk.GetTitledFirstName], [overlord_scope.GetFaith.GetAdjectiveNoTooltip] mnich. [new_monk.GetSheHe|U] živě informuje o svých úmyslech cestovat se mnou do [tributary_scope.GetCapitalLocation.GetTitle.GetBaseNameNoTierNoTooltip], aby [Select_CString(ROOT.Char.IsFemale,'nabídla','nabídl')] [Select_CString(new_monk.IsFemale,'její','jeho')] služby." # todo: NEW TRANSLATION
- tribute_mission.1010.desc.legitimacy: "\n\n[overlord_scope.GetSheHe|U] mě popožene, abych přišel blíž, poté s majestátní grácií pomalu sestoupí před mě na zem. Skláním hlavu, když [overlord_scope.GetTitleAsNameNoTooltip] provádějí obřadní [overlord_scope.GetCulture.GetCollectiveNounNoTooltip] gesty rukou.\n\nKdyž skončí, [overlord_scope.GetSheHe] prohlásí mohutným hlasem: „Tímto tě znovu potvrzuji jako pravého vládce [tributary_scope.GetCapitalLocation.GetCounty.GetName]. Jděte v pokoji.“" # todo: NEW TRANSLATION
+ tribute_mission.1010.desc.legitimacy: "\n\n[overlord_scope.GetSheHe|U] mě popožene, abych přišel blíž, poté s majestátní grácií pomalu sestoupí před mě na zem. Skláním hlavu, když [overlord_scope.GetTitleAsNameNoTooltip] provádějí obřadní [overlord_scope.GetCulture.GetCollectiveNounNoTooltip] gesty rukou.\n\nKdyž skončí, [overlord_scope.GetSheHe] prohlásí mohutným hlasem: „Tímto tě znovu potvrzuji jako pravého vládce [tributary_scope.GetCapitalLocation.GetCounty.Custom('CZ_LandedName_G')]. Jděte v pokoji.“" # todo: NEW TRANSLATION
  tribute_mission.1010.outro: "\n\n„Považuj se za obdařeného milostí [overlord_scope.GetCapitalLocation.GetTitle.GetBaseNameNoTierNoTooltip], můj [tributary_scope.GetTitleAsNameNoTooltip]. Šťastnou cestu.“" # todo: NEW TRANSLATION
  tribute_mission.1010.a: "„Požehnání tobě!“" # todo: NEW TRANSLATION
  tribute_mission.3000.t: "$tribute_mission.1000.t$" # todo: NEW TRANSLATION
@@ -215,7 +215,7 @@
  tribute_mission.1007.a: "To mění všechno." # todo: NEW TRANSLATION
  tribute_mission.1008.t: "$tribute_mission_header$ Průběžný tribut" # todo: NEW TRANSLATION
  tribute_mission.1008.desc: "Když se při obřadu vyměňují dary, cítím na dvoře rostoucí napětí, jako by některá slova zůstala nevyslovena. I když to nikdy není řečeno přímo, očekávání vůči mně se pomalu stává zřejmým.\n\n[receiving_character.GetTitledFirstNameNoTooltip] si přeje, abych slíbil, že budu tyto dary nadále posílat, výměnou za přízeň [receiving_character.GetLiege.GetPrimaryTitle.GetNameNoTierPossessiveNoTooltip].\n\nJe stále čas nabídku čestně odmítnout a přitom si zachovat nezávislost, se vším, co to může přinést."
- tribute_mission.1008.a: "„...a samozřejmě by [ROOT.Char.GetPrimaryTitle.GetNameNoTierNoTooltip] pravidelně nosil dary do [receiving_character.GetLiege.GetCapitalLocation.GetNameNoTooltip].“"
+ tribute_mission.1008.a: "„...a samozřejmě by [ROOT.Char.GetPrimaryTitle.GetNameNoTierNoTooltip] pravidelně nosil dary do [CZProvNameNoTooltip(receiving_character.GetLiege.GetCapitalLocation,'G')].“"
  tribute_mission.1008.b: "[ROOT.Char.GetPrimaryTitle.GetNameNoTierNoTooltip] nebude klanět kolena." # todo: NEW TRANSLATION
  tribute_mission.3006.t: "$tribute_mission.1006.t$" # todo: NEW TRANSLATION
  tribute_mission.3006.desc: "$tribute_mission.1006.desc$" # todo: NEW TRANSLATION
@@ -253,7 +253,7 @@
  tribute_mission.9000.desc: "Bohužel v tuto chvíli nemám prostředky na to, abych složil tribut.\n\nUpřímně doufám, že to můj [actor.GetTitleAsNameNoTooltip] pochopí." # todo: NEW TRANSLATION
  tribute_mission.9000.a: "Je tomu tak." # todo: NEW TRANSLATION
  tribute_mission.9010.opening: "[recipient.Custom2('AppropriateGreeting', ROOT.Char )]" # todo: NEW TRANSLATION
- tribute_mission.9010.desc: "Samozřejmě poskytneme mému [actor.GetTitleAsNameNoTooltip] ten nejúchvatnější tribut!\n\nNaše cesta začíná; naše cíle směřují do [actor.GetCapitalLocation.GetName]." # todo: NEW TRANSLATION
+ tribute_mission.9010.desc: "Samozřejmě poskytneme mému [actor.GetTitleAsNameNoTooltip] ten nejúchvatnější tribut!\n\nNaše cesta začíná; naše cíle směřují do [CZProvName(actor.GetCapitalLocation,'G')]." # todo: NEW TRANSLATION
  tribute_mission.9010.a: "Výborně." # todo: NEW TRANSLATION
  tribute_mission.9500.opening: "[overlord.Custom2('AppropriateGreeting', ROOT.Char )]" # todo: NEW TRANSLATION
  tribute_mission.9500.desc: "Myslel jsem si, že jsi [ROOT.Char.GetWomanMan] slova. Zřejmě tomu tak není, tributáři.\n\nTvoje nedávné selhání splnit tributní misi u mého dvora nezůstalo bez povšimnutí." # todo: NEW TRANSLATION
@@ -279,8 +279,8 @@
  tribute_mission.9800.t: "$tribute_mission_header$ Změna plánů" # todo: NEW TRANSLATION
  tribute_mission.9800.desc.suzerain_turned_liege: "Zdá se, že mé tributní povinnosti se změnily, nyní když jsem skutečně vazalem [ROOT.Char.GetLiege.GetTitledFirstName].\n\nVzhledem k tomu je doma mnoho jiných záležitostí, o které je třeba se postarat, a placení tributu mezi ně už nepatří. To je ale zvrat událostí!" # todo: NEW TRANSLATION
  tribute_mission.9800.desc.no_longer_tributary: "To je ale zvrat událostí! Dostala se ke mně zpráva, že už nejsme v okovech tributu!\n\nDoma je tolik záležitostí a otázek k vyřízení — nejdůležitějším tématem je nyní vypořádání se s touto novou nezávislostí." # todo: NEW TRANSLATION
- tribute_mission.9800.desc.different_end_location: "Se změnou suzeréna se zdá, že [current_overlord.GetTitledFirstName] má své hlavní město jinde.\n\nNaše cesta a tribut byly plánovány pro [old_overlord.GetTitledFirstName], a proto moji rádci trvají na tom, že rozumné bude vrátit se do [ROOT.Char.GetCapitalLocation.GetName] a znovu se seskupit." # todo: NEW TRANSLATION
- tribute_mission.9800.desc.unable_to_accept_tribute: "Šeptání na cestě mi dává najevo, že náš nový suzerén nemá zájem o typ tributu, který hodlám předložit.\n\nNechci riskovat rozhněvání našeho výsostného, takže moudřejší je seskupit se znovu v [ROOT.Char.GetCapitalLocation.GetName]." # todo: NEW TRANSLATION
+ tribute_mission.9800.desc.different_end_location: "Se změnou suzeréna se zdá, že [current_overlord.GetTitledFirstName] má své hlavní město jinde.\n\nNaše cesta a tribut byly plánovány pro [old_overlord.GetTitledFirstName], a proto moji rádci trvají na tom, že rozumné bude vrátit se do [CZProvName(ROOT.Char.GetCapitalLocation,'G')] a znovu se seskupit." # todo: NEW TRANSLATION
+ tribute_mission.9800.desc.unable_to_accept_tribute: "Šeptání na cestě mi dává najevo, že náš nový suzerén nemá zájem o typ tributu, který hodlám předložit.\n\nNechci riskovat rozhněvání našeho výsostného, takže moudřejší je seskupit se znovu [CZPrepV(ROOT.Char.GetCapitalLocation.GetNameNoTooltip)] [CZProvName(ROOT.Char.GetCapitalLocation,'L')]." # todo: NEW TRANSLATION
  tribute_mission.9800.a: "Mezitím se vraťme domů." # todo: NEW TRANSLATION
  tribute_mission_notification.new_overlord.title: "Suzerén tributu se změnil" # todo: NEW TRANSLATION
  tribute_mission_notification.new_overlord.desc: "Váš [Concept('tribute_mission','tributní mise')|E] suzerén se změnil na [new_overlord.GetShortUIName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE

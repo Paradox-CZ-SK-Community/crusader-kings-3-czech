@@ -141,13 +141,13 @@
  celestial_movement_demands_interaction.tt.change_retirement_law: "Požádejte [Concept('son_of_heaven','syn Nebes')|E], aby zvýšil nebo snížil $celestial_retirement_law$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  celestial_movement_demands_interaction.tt.hold_examinations: "Tlačte na [Concept('son_of_heaven','syna Nebes')|E], aby pořádal [GetActivityType('activity_imperial_examination').GetTextIcon][GetActivityType('activity_imperial_examination').GetName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  lower_celestial_army_law: "Snížit $celestial_army_vassal_law$" # todo: NEW TRANSLATION
- change_celestial_bureaucracy_increase_desc: "Zvýšit $celestial_bureaucracy$ [Concept('law','zákon')|E] v [GetTitleByKey('h_china').GetName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ change_celestial_bureaucracy_increase_desc: "Zvýšit $celestial_bureaucracy$ [Concept('law','zákon')|E] [CZPrepV(GetTitleByKey('h_china').GetNameNoTooltip)] [GetTitleByKey('h_china').Custom('CZ_LandedName_L')]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  change_celestial_bureaucracy_increase_name: "Zvýšit $game_concept_celestial_bureaucracy$" # todo: NEW TRANSLATION
- change_celestial_bureaucracy_decrease_desc: "Snížit $celestial_bureaucracy$ [Concept('law','zákon')|E] v [GetTitleByKey('h_china').GetName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ change_celestial_bureaucracy_decrease_desc: "Snížit $celestial_bureaucracy$ [Concept('law','zákon')|E] [CZPrepV(GetTitleByKey('h_china').GetNameNoTooltip)] [GetTitleByKey('h_china').Custom('CZ_LandedName_L')]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  change_celestial_bureaucracy_decrease_name: "Snížit $game_concept_celestial_bureaucracy$" # todo: NEW TRANSLATION
- change_army_laws_increase_desc: "Zvýšit $celestial_army_liege_law$ [Concept('law','zákon')|E] v [GetTitleByKey('h_china').GetName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ change_army_laws_increase_desc: "Zvýšit $celestial_army_liege_law$ [Concept('law','zákon')|E] [CZPrepV(GetTitleByKey('h_china').GetNameNoTooltip)] [GetTitleByKey('h_china').Custom('CZ_LandedName_L')]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  change_army_laws_increase_name: "Zvýšit $celestial_army_liege_law$" # todo: NEW TRANSLATION
- change_army_laws_decrease_desc: "Snížit $celestial_army_liege_law$ [Concept('law','zákon')|E] v [GetTitleByKey('h_china').GetName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ change_army_laws_decrease_desc: "Snížit $celestial_army_liege_law$ [Concept('law','zákon')|E] [CZPrepV(GetTitleByKey('h_china').GetNameNoTooltip)] [GetTitleByKey('h_china').Custom('CZ_LandedName_L')]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  change_army_laws_decrease_name: "Snížit $celestial_army_liege_law$" # todo: NEW TRANSLATION
  celestial_movement_demands_interaction.tt.change_province_type: "$change_province_effect.can_choose$\n[GetSubjectContractType( 'celestial_provinces' ).GetObligationNameShort( 'celestial_province_metropolitan' )], [GetSubjectContractType( 'celestial_provinces' ).GetObligationNameShort( 'celestial_province_industrial' )], [GetSubjectContractType( 'celestial_provinces' ).GetObligationNameShort( 'celestial_province_military' )] nebo [GetSubjectContractType( 'celestial_provinces' ).GetObligationNameShort( 'celestial_province_protectorate' )]" # todo: NEW TRANSLATION
  change_province_military_name: "Změnit na [GetSubjectContractType( 'celestial_provinces' ).GetObligationNameShortNoTooltip( 'celestial_province_military' )]" # todo: NEW TRANSLATION
@@ -226,7 +226,7 @@
  movement_petition_decision.recipient_may_accept: "[petition_recipient.GetShortUIName] #P může přijmout#! tuto petici #weak (Během audiencie lze ovlivnit)#!" # todo: NEW TRANSLATION
  movement_petition_decision.recipient_may_refuse: "[petition_recipient.GetShortUIName] #N může tuto petici odmítnout#! #weak (Během audiencie lze ovlivnit)#!" # todo: NEW TRANSLATION
  movement_petition_decision.recipient_will_refuse: "[petition_recipient.GetShortUIName] je #N velmi pravděpodobné, že tuto petici odmítne#! #weak (Během audiencie lze ovlivnit)#!" # todo: NEW TRANSLATION
- movement_petition_decision.travel: "[petitioner.GetShortUIName|U] [Concept('travel','Cestování')|E] do [petition_recipient.GetCapitalLocation.GetName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ movement_petition_decision.travel: "[petitioner.GetShortUIName|U] [Concept('travel','Cestování')|E] do [CZProvName(petition_recipient.GetCapitalLocation,'G')]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  change_province_type_vassal_contract_blocked_reason: "Nikdo v [Concept('movement','hnutí')|E] nemůže mít upravena [Concept('vassal_obligations','vazalské povinnosti')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  movement_petition_decision.recent_movement_petition_reason: "[petitioning_movement_recent.GetName] nedávno podalo petici #weak (dostupné po [GetCurrentDateWithDiff( GetVarTimeRemaining( petitioning_movement_recent.MakeScope, 'recent_movement_petition') )])#!" # todo: NEW TRANSLATION
  movement_petition_decision.movement_petition_in_progress_reason: "[petitioning_movement_progress.GetName] již poslal entourage s peticí #weak (dostupné po [GetCurrentDateWithDiff( GetVarTimeRemaining( petitioning_movement_progress.MakeScope, 'movement_petition_in_progress') )])#!" # todo: NEW TRANSLATION
@@ -290,7 +290,7 @@
  tgp_decision_events.0101.a_title: "Petice přijata" # todo: NEW TRANSLATION
  tgp_decision_events.0103.t: "$tgp_decision_events.0100.t$" # todo: NEW TRANSLATION
  tgp_decision_events.0103.desc: "Moje odmítnutí způsobuje [petitioner.GetName] zármutek, ale [petitioner.GetSheHe] se rychle vzpamatuje a prosí:\n\n„Omluvte mou drzost, ale tak snadno mě neodmítnete. Tato záležitost je důležitá pro všechny členy [actors_movement.GetName]. Prosím, přehodnoťte to.“ [petitioner.GetSheHe|U] natáhne ruku." # todo: NEW TRANSLATION
- tgp_decision_events.0103.desc_give_influence: "„Jsem respektován mezi svými lidmi a oni mě pověřili, abych byl jejich hlas. Zajímá nás jen blaho [GetTitleByKey('h_china').GetName].“" # todo: NEW TRANSLATION
+ tgp_decision_events.0103.desc_give_influence: "„Jsem respektován mezi svými lidmi a oni mě pověřili, abych byl jejich hlas. Zajímá nás jen blaho [GetTitleByKey('h_china').Custom('CZ_LandedName_G')].“" # todo: NEW TRANSLATION
  tgp_decision_events.0103.desc_give_maa: "„Říše by našla uplatnění pro pluky mých nejlepších vojáků. Souhlaste s námi a budou vám k dispozici k velení.“" # todo: NEW TRANSLATION
  tgp_decision_events.0103.desc_use_hook: "„Známe se už dlouho. Myslím, že mi dlužíte laskavost a rád bych, abyste s námi souhlasil.“" # todo: NEW TRANSLATION
  tgp_decision_events.0103.desc_give_hook: "„Nabízím se jako věrný služebník. Můžete využít mou sílu a dosah, když přijdou temné časy, stejně jako nyní žádám o vaši pomoc.“" # todo: NEW TRANSLATION

@@ -22,8 +22,8 @@
  CHARACTER_AT_ARMY: "Velí [Concept('army','armádě')|E] v provincii [PROVINCE.GetName|V]"
  CHARACTER_TRAVEL_TO_LOCATION: "Cestuje do provincie [PROVINCE.GetName|V]"
  CHARACTER_IMPRISONED_AT: "Vězněn[Select_CString( CHARACTER.IsFemale, 'a', '' )] postavou [CHARACTER.GetUIName|V] v provincii [PROVINCE.GetName|V]"
- CHARACTER_AT_COURT_VISITING: "Host na [CHARACTER.Custom('CZ_GetCourtConcept_L')|l] [Select_CString(CHARACTER.IsLocalPlayer,'u tebe',CHARACTER.Custom('CZ_ShortUINamePossessive'))] v [PROVINCE.GetName|V]" # CHANGES
- CHARACTER_AT_COURT: "Na [CHARACTER.Custom('CZ_GetCourtConcept_L')|l] [Select_CString(CHARACTER.IsLocalPlayer,'u tebe',CHARACTER.Custom('CZ_ShortUINamePossessive'))] v [PROVINCE.GetName|V]" # CHANGES
+ CHARACTER_AT_COURT_VISITING: "Host na [CHARACTER.Custom('CZ_GetCourtConcept_L')|l] [Select_CString(CHARACTER.IsLocalPlayer,'u tebe',CHARACTER.Custom('CZ_ShortUINamePossessive'))] [CZPrepV(PROVINCE.GetNameNoTooltip)] [CZProvName(PROVINCE,'L')|V]" # CHANGES
+ CHARACTER_AT_COURT: "Na [CHARACTER.Custom('CZ_GetCourtConcept_L')|l] [Select_CString(CHARACTER.IsLocalPlayer,'u tebe',CHARACTER.Custom('CZ_ShortUINamePossessive'))] [CZPrepV(PROVINCE.GetNameNoTooltip)] [CZProvName(PROVINCE,'L')|V]" # CHANGES
  CHARACTER_TRAVELING_OWNER: "V provincii [PROVINCE.GetName|V] během cestování"
  CHARACTER_TRAVELING_ENTOURAGE: "V [Concept('entourage','doprovodu')|E] postavy [TRAVEL_PLAN.GetData.GetOwner.GetShortUINamePossessive|V] v provincii [PROVINCE.GetName|V]"
  FORD_TOOLTIP: "Brod mezi $FROM$ a $TO$"
@@ -88,8 +88,8 @@
  SELECT_RAISE_TROOPS_AT_LOCATION: "Svolat dostupné [Concept('armies','armády')|E] na zvoleném místě a přeskočit [Concept('rally_points','shromaždiště')|E]"
  SELECT_RAISE_TROOPS_CHOOSE_LOCATION: "Vyber místo na mapě"
  SELECT_RAISE_TROOPS_MAP_INSTRUCTION: "#I Kliknutím vybereš místo\nCtrl+kliknutím #bold nerozdělíš#! [Concept('armies','armády')|E] podle [Concept( 'supply_limit', 'limitů zásobování')|E]\nKliknutím pravým tlačítkem zrušíš#!"
- DE_JURE_DRIFT_TARGET_DESCRIPTION: "#high De iure posun:#! [TITLE.GetNameNoTooltip] se přibližně za $DURATION$ stane součástí [TARGET_TITLE.GetNameNoTooltip]"
- DE_JURE_DRIFT_PROGRESS_DESCRIPTION: "[TITLE.GetNameNoTooltip] má de iure posun směrem k [TARGET_TITLE.GetNameNoTooltip] v délce $DURATION$"
+ DE_JURE_DRIFT_TARGET_DESCRIPTION: "#high De iure posun:#! [TITLE.GetNameNoTooltip] se přibližně za $DURATION$ stane součástí [TARGET_TITLE.Custom('CZ_LandedNameNoTooltip_G')]"
+ DE_JURE_DRIFT_PROGRESS_DESCRIPTION: "[TITLE.GetNameNoTooltip] má de iure posun směrem [CZPrepK(TARGET_TITLE.GetNameNoTooltip)] [TARGET_TITLE.Custom('CZ_LandedNameNoTooltip_D')] v délce $DURATION$"
  MAP_TOP_REALM_MAIN_TEXT: "Nejvyšší panství: [TITLE.GetDeFactoTopLiege.GetNameNoTooltip|V]"
  MAP_TOP_HOLDER_MAIN_TEXT: "Držitel nejvyššího panství: [TITLE.GetDeFactoTopLiege.GetHolder.GetNameNoTooltip|V]"
  MAP_COUNTY_HOLDER_MAIN_TEXT: "Držitel hrabství: [CHARACTER.GetUINameNoTooltip|UV]"
@@ -115,7 +115,7 @@
  FAITHS_MAP_MODE_TOOLTIP_TOP_LIEGE_RITE: "\nObřad nejvyššího lenního pána: #high [county_top_liege.GetRite.GetNameNoTooltip]#!" # todo: NEW TRANSLATION
  FAITHS_MAP_MODE_TOOLTIP_FAITH_MISMATCH: "\n\n@alert_icon! #alert_trial Držitel vyznává jinou víru#!" # todo: NEW TRANSLATION
  FAITHS_MAP_MODE_TOOLTIP_CLERICAL_REGION_CONVERSION: "\n\n@alert_icon! #alert_trial [Rite.GetNameNoTooltip] se v tomto [county|E] šíří prostřednictvím postavy [Character.GetShortUINameNoTooltip]! Obrácení bude dokončeno přibližně [Date.GetString|V]#!" # todo: NEW TRANSLATION
- FAITHS_MAP_MODE_CONVERSION_WIDGET_TOOLTIP: "#T [ClericalRegionConversionProgressIcon.GetConversionRite.GetNameNoTooltip] se šíří v [ClericalRegionConversionProgressIcon.GetCountyTitle.GetName] prostřednictvím postavy [ClericalRegionConversionProgressIcon.GetClericalRegionTitle.GetHolder.GetShortUIName]#!\n\nObrácení bude dokončeno přibližně [ClericalRegionConversionProgressIcon.GetConversionEndDate.GetString|V]" # todo: NEW TRANSLATION
+ FAITHS_MAP_MODE_CONVERSION_WIDGET_TOOLTIP: "#T [ClericalRegionConversionProgressIcon.GetConversionRite.GetNameNoTooltip] se šíří [CZPrepV(ClericalRegionConversionProgressIcon.GetCountyTitle.GetNameNoTooltip)] [ClericalRegionConversionProgressIcon.GetCountyTitle.Custom('CZ_LandedName_L')] prostřednictvím postavy [ClericalRegionConversionProgressIcon.GetClericalRegionTitle.GetHolder.GetShortUIName]#!\n\nObrácení bude dokončeno přibližně [ClericalRegionConversionProgressIcon.GetConversionEndDate.GetString|V]" # todo: NEW TRANSLATION
  faiths_MAP_MODE_TOOLTIP_CLICK_TO_SELECT: "\n#I Kliknutím vybereš obřad [PROVINCE.GetCounty.GetRite.GetNameNoTooltip]\nCtrl+kliknutím prozkoumáš obřady s vírou\nCtrl+kliknutím pravým tlačítkem zrušíš prozkoumání.#!" # todo: CHANGED (predtym: \n I Kliknutím vybereš víru [PROVINCE.GetCounty.GetFaith.GetNameNoTooltip] !)
  CLERICAL_REGIONS_MAP_MODE_TOOLTIP: "[ROOT.Province.Custom('GetClericalRegionMapModeTooltip')]" # todo: NEW TRANSLATION
  CLERICAL_REGIONS_MAP_MODE_TOOLTIP_HELD: "#T [clerical_region_title.GetNameNoTooltip]#!\nDržitel: [clerical_region_title.GetHolder.GetShortUINameNoTooltip]\nObřad duchovní oblasti: #high [clerical_region_title.GetHolder.GetRite.GetNameNoTooltip]#![ROOT.Province.GetBeingConvertedInClericalRegionText]" # todo: NEW TRANSLATION
@@ -129,10 +129,10 @@
  COURT_LANGUAGES_MAP_MODE_LIEGE: "[ROOT.Province.GetCounty.GetTitle.GetHolder.GetLiege.GetCourtLanguage.GetNameNoTooltip]"
  COURT_LANGUAGES_MAP_MODE_LIEGES_LIEGE: "[ROOT.Province.GetCounty.GetTitle.GetHolder.GetLiege.GetLiege.GetCourtLanguage.GetNameNoTooltip]"
  COURT_LANGUAGES_MAP_MODE_TOP_LIEGE: "[ROOT.Province.GetCounty.GetTitle.GetHolder.GetTopLiege.GetCourtLanguage.GetNameNoTooltip]"
- COURT_LANGUAGES_MAP_MODE_TOOLTIP_COUNTY_HOLDER: "#T $COURT_LANGUAGES_MAP_MODE_COUNTY_HOLDER$#!\nDvorní jazyk držitele titulu [ROOT.Province.GetCounty.GetTitle.GetHolder.GetTitleAsNameNoTooltip] z [ROOT.Province.GetCounty.GetTitle.GetHolder.GetPrimaryTitle.GetNameNoTierNoTooltip]\n"
- COURT_LANGUAGES_MAP_MODE_TOOLTIP_LIEGE: "#T $COURT_LANGUAGES_MAP_MODE_LIEGE$#!\nDvorní jazyk držitele titulu [ROOT.Province.GetCounty.GetTitle.GetHolder.GetLiege.GetTitleAsNameNoTooltip] z [ROOT.Province.GetCounty.GetTitle.GetHolder.GetLiege.GetPrimaryTitle.GetNameNoTierNoTooltip]\n"
- COURT_LANGUAGES_MAP_MODE_TOOLTIP_LIEGES_LIEGE: "#T $COURT_LANGUAGES_MAP_MODE_LIEGES_LIEGE$#!\nDvorní jazyk držitele titulu [ROOT.Province.GetCounty.GetTitle.GetHolder.GetLiege.GetLiege.GetTitleAsNameNoTooltip] z [ROOT.Province.GetCounty.GetTitle.GetHolder.GetLiege.GetLiege.GetPrimaryTitle.GetNameNoTierNoTooltip]\n"
- COURT_LANGUAGES_MAP_MODE_TOOLTIP_TOP_LIEGE: "#T $COURT_LANGUAGES_MAP_MODE_TOP_LIEGE$#!\nDvorní jazyk držitele titulu [ROOT.Province.GetCounty.GetTitle.GetHolder.GetTopLiege.GetTitleAsNameNoTooltip] z [ROOT.Province.GetCounty.GetTitle.GetHolder.GetTopLiege.GetPrimaryTitle.GetNameNoTierNoTooltip]\n"
+ COURT_LANGUAGES_MAP_MODE_TOOLTIP_COUNTY_HOLDER: "#T $COURT_LANGUAGES_MAP_MODE_COUNTY_HOLDER$#!\nDvorní jazyk držitele titulu [ROOT.Province.GetCounty.GetTitle.GetHolder.GetTitleAsNameNoTooltip] [CZPrepZ(ROOT.Province.GetCounty.GetTitle.GetHolder.GetPrimaryTitle.GetNameNoTierNoTooltip)] [ROOT.Province.GetCounty.GetTitle.GetHolder.GetPrimaryTitle.Custom('CZ_LandedNameNoTierNoTooltip_G')]\n"
+ COURT_LANGUAGES_MAP_MODE_TOOLTIP_LIEGE: "#T $COURT_LANGUAGES_MAP_MODE_LIEGE$#!\nDvorní jazyk držitele titulu [ROOT.Province.GetCounty.GetTitle.GetHolder.GetLiege.GetTitleAsNameNoTooltip] [CZPrepZ(ROOT.Province.GetCounty.GetTitle.GetHolder.GetLiege.GetPrimaryTitle.GetNameNoTierNoTooltip)] [ROOT.Province.GetCounty.GetTitle.GetHolder.GetLiege.GetPrimaryTitle.Custom('CZ_LandedNameNoTierNoTooltip_G')]\n"
+ COURT_LANGUAGES_MAP_MODE_TOOLTIP_LIEGES_LIEGE: "#T $COURT_LANGUAGES_MAP_MODE_LIEGES_LIEGE$#!\nDvorní jazyk držitele titulu [ROOT.Province.GetCounty.GetTitle.GetHolder.GetLiege.GetLiege.GetTitleAsNameNoTooltip] [CZPrepZ(ROOT.Province.GetCounty.GetTitle.GetHolder.GetLiege.GetLiege.GetPrimaryTitle.GetNameNoTierNoTooltip)] [ROOT.Province.GetCounty.GetTitle.GetHolder.GetLiege.GetLiege.GetPrimaryTitle.Custom('CZ_LandedNameNoTierNoTooltip_G')]\n"
+ COURT_LANGUAGES_MAP_MODE_TOOLTIP_TOP_LIEGE: "#T $COURT_LANGUAGES_MAP_MODE_TOP_LIEGE$#!\nDvorní jazyk držitele titulu [ROOT.Province.GetCounty.GetTitle.GetHolder.GetTopLiege.GetTitleAsNameNoTooltip] [CZPrepZ(ROOT.Province.GetCounty.GetTitle.GetHolder.GetTopLiege.GetPrimaryTitle.GetNameNoTierNoTooltip)] [ROOT.Province.GetCounty.GetTitle.GetHolder.GetTopLiege.GetPrimaryTitle.Custom('CZ_LandedNameNoTierNoTooltip_G')]\n"
  COURT_LANGUAGES_MAP_MODE_TOOLTIP_FALLBACK: "#T Dvorní jazyk#!: Žádný"
  COURT_LANGUAGES_SELECTION_TOOLTIP_COUNTY_HOLDER: "\n#I Kliknutím vybereš $COURT_LANGUAGES_MAP_MODE_COUNTY_HOLDER$#!"
  COURT_LANGUAGES_SELECTION_TOOLTIP_LIEGE: "\n#I Kliknutím vybereš $COURT_LANGUAGES_MAP_MODE_LIEGE$#!"
@@ -169,15 +169,15 @@
  MAP_MODE: "Režim mapy"
  EPIDEMICS_MAP_MODE_TOOLTIP: "[ROOT.Province.GetEpidemicMapTooltip]"
  EPIDEMIC_PROVINCE_NO_TOOLTIP: "#T [Province.GetNameNoTooltip]#!\nNení nakaženo žádným morem"
- EPIDEMIC_PROVINCE_ALL_INFECTIONS_TOOLTIP: "#T Nákazy v [Province.GetNameNoTooltip]#!\n$EPIDEMIC_NAMES$"
- EPIDEMIC_INFECTED_PROVINCE_TOOLTIP: "#T Nákaza morem [Epidemic.GetNameNoTooltip] v [Province.GetNameNoTooltip]#!\nMíra nákazy: [Epidemic.GetInfectionDataIn( Province.Self ).GetInfectionRate|V%/^]\nZačátek propuknutí: [Epidemic.GetInfectionDataIn( Province.Self ).GetStartDate.GetString]"
+ EPIDEMIC_PROVINCE_ALL_INFECTIONS_TOOLTIP: "#T Nákazy [CZPrepV(Province.GetNameNoTooltip)] [CZProvNameNoTooltip(Province,'L')]#!\n$EPIDEMIC_NAMES$"
+ EPIDEMIC_INFECTED_PROVINCE_TOOLTIP: "#T Nákaza morem [Epidemic.GetNameNoTooltip] [CZPrepV(Province.GetNameNoTooltip)] [CZProvNameNoTooltip(Province,'L')]#!\nMíra nákazy: [Epidemic.GetInfectionDataIn( Province.Self ).GetInfectionRate|V%/^]\nZačátek propuknutí: [Epidemic.GetInfectionDataIn( Province.Self ).GetStartDate.GetString]"
  EPIDEMIC_SAFE_PROVINCE_TOOLTIP: "#T [Province.GetNameNoTooltip]#!\nNehrozí zde nákaza morem [Epidemic.GetNameNoTooltip]"
  EPIDEMIC_RISK_PROVINCE_TOOLTIP: "#T [Province.GetNameNoTooltip]#!\nRiziko nákazy morem [Epidemic.GetNameNoTooltip]: $SPREAD_CHANCE|V%/$"
  epidemics_MAP_MODE_TOOLTIP_CLICK_TO_SELECT: "\n#I Kliknutím vybereš [Province.GetHighestPriorityEpidemic.GetNameNoTooltip]#!"
  LEGENDS_MAP_MODE_TOOLTIP: "[ROOT.Province.GetLegendMapTooltip]"
  LEGEND_PROVINCE_NONE_TOOLTIP: "#T [Province.GetNameNoTooltip]#!\nŽádná legenda se sem nerozšířila"
- LEGEND_PROVINCE_ALL_SPREAD_TOOLTIP: "#T Legendy v [Province.GetNameNoTooltip]#!\n$LEGEND_NAMES$"
- LEGEND_IN_PROVINCE_TOOLTIP: "#T [Legend.GetNameNoTooltip] v [Province.GetNameNoTooltip]#!"
+ LEGEND_PROVINCE_ALL_SPREAD_TOOLTIP: "#T Legendy [CZPrepV(Province.GetNameNoTooltip)] [CZProvNameNoTooltip(Province,'L')]#!\n$LEGEND_NAMES$"
+ LEGEND_IN_PROVINCE_TOOLTIP: "#T [Legend.GetNameNoTooltip] [CZPrepV(Province.GetNameNoTooltip)] [CZProvNameNoTooltip(Province,'L')]#!"
  LEGEND_NO_SPREAD_PROVINCE_TOOLTIP: "#T [Province.GetNameNoTooltip]#!\nNení v dosahu pro přijetí legendy [Legend.GetNameNoTooltip]"
  LEGEND_SPREAD_PROVINCE_TOOLTIP: "#T [Province.GetNameNoTooltip]#!\nŠance na přijetí legendy [Legend.GetNameNoTooltip]: $SPREAD_CHANCE|V%/$"
  legends_MAP_MODE_TOOLTIP_CLICK_TO_SELECT: "\n#I Kliknutím vybereš [Province.GetHighestPriorityLegend.GetNameNoTooltip]#!"
@@ -191,8 +191,8 @@
  ADMIN_VASSAL_TYPES_MAP_MODE_TT_TROOP_ENTRY: "$TAB$[MenAtArmsType.GetBaseTypeName]: $CURRENT$/$MAX$"
  ADMIN_VASSAL_TYPES_MAP_MODE_TT_HELD_BY_TOP_LIEGE: "#X [TITLE.GetName] drží [CHARACTER.GetTitleTierName|V]#!"
  ADMIN_VASSAL_TYPES_MAP_MODE_TT_NOT_HELD_BY_GOVERNOR: "#X [TITLE.GetName] nedrží [Concept('governor','guvernér')|E]#!"
- ADMIN_VASSAL_TYPES_MAP_MODE_TT_NOT_IN_REALM: "#X [TITLE.GetName] není součástí [TARGET_TITLE.GetNameNoTooltip]#!"
- ADMIN_VASSAL_TYPES_MAP_MODE_TT_NOT_ADMIN_VASSAL: "#X [CHARACTER.GetShortUIName] z [TITLE.GetName] není [Concept('government_bureaucratic_type','byrokratickým')|E] [Concept('governor','guvernérem')|E]#!" # todo: CHANGED (predtym: X [CHARACTER.GetShortUIName] z [TITLE.GetName] není [Concept('administrative','administrativním')|E] [Concept('governor')
+ ADMIN_VASSAL_TYPES_MAP_MODE_TT_NOT_IN_REALM: "#X [TITLE.GetName] není součástí [TARGET_TITLE.Custom('CZ_LandedNameNoTooltip_G')]#!"
+ ADMIN_VASSAL_TYPES_MAP_MODE_TT_NOT_ADMIN_VASSAL: "#X [CHARACTER.GetShortUIName] [CZPrepZ(TITLE.GetNameNoTooltip)] [TITLE.Custom('CZ_LandedName_G')] není [Concept('government_bureaucratic_type','byrokratickým')|E] [Concept('governor','guvernérem')|E]#!" # todo: CHANGED (predtym: X [CHARACTER.GetShortUIName] [CZPrepZ(TITLE.GetNameNoTooltip)] [TITLE.Custom('CZ_LandedName_G')] není [Concept('administrative','administrativním')|E] [Concept('governor')
  ADMIN_VASSAL_TYPES_MAP_MODE_TT_NOT_ASSIGNED: "#X [TITLE.GetName|U] není vytvořen#!"
  ADMIN_VASSAL_TYPES_MAP_MODE_TT_TOP_REALM: "Nejvyšší panství: [TITLE.GetName]"
  ADMIN_VASSAL_TYPES_MAP_MODE_TT_LEFT_CLICK: "#I Kliknutím levým tlačítkem otevřeš podrobnosti#!"
@@ -202,9 +202,9 @@
  MIGRATION_KINGDOMS_MAPMODE_TOOLTIP: "#T [ROOT.Province.GetTitle.GetDeJureLiegeOfTier('kingdom').GetNameNoTooltip]#!\n[ROOT.Province.GetTitle.GetDeJureLiegeOfTier('kingdom').GetDeJureDriftTooltip]\nPrůměrná plodnost: [ROOT.Province.GetTitle.GetDeJureLiegeOfTier('kingdom').GetAverageFertility|0]"
  MIGRATION_EMPIRES_MAPMODE_TOOLTIP: "#T [ROOT.Province.GetTitle.GGetDeJureLiegeOfTier('empire').GetNameNoTooltip]#!\n[ROOT.Province.GetTitle.GetDeJureLiegeOfTier('empire').GetDeJureDriftTooltip]\nPrůměrná plodnost: [ROOT.Province.GetTitle.GetDeJureLiegeOfTier('empire').GetAverageFertility|0]"
  MIGRATION_HEGEMONIES_MAPMODE_TOOLTIP: "#T [ROOT.Province.GetTitle.GGetDeJureLiegeOfTier('hegemony').GetNameNoTooltip]#!\n[ROOT.Province.GetTitle.GetDeJureLiegeOfTier('hegemony').GetDeJureDriftTooltip]\nPrůměrná plodnost: [ROOT.Province.GetTitle.GetDeJureLiegeOfTier('hegemony').GetAverageFertility|0]"
- DIPLOMATIC_RELATION_WAR_ENEMY_TOOLTIP: "#T Nepřátelský vůdce války: [TARGET_CHARACTER.GetPrimaryTitle.GetNameNoTooltip]#!\nVládce: [TARGET_CHARACTER.GetUIName]\nJe [Concept('war_leader','vůdcem války')|E] ve [Concept('war','válce')|E] s [CHARACTER.GetPrimaryTitle.GetName].\n\n$DIPLO_INFO$\n#i Kliknutím vybereš a zobrazíš jeho diplomatické vztahy#!"
- DIPLOMATIC_RELATION_WAR_ENEMY_ALLY_TOOLTIP: "#T Nepřátelský válečný spojenec: [TARGET_CHARACTER.GetPrimaryTitle.GetNameNoTooltip]#!\nVládce: [TARGET_CHARACTER.GetUIName]\nJe nepřátelským protivníkem ve [Concept('war','válce')|E] s [CHARACTER.GetPrimaryTitle.GetName].\n\n$DIPLO_INFO$\n#i Kliknutím vybereš a zobrazíš jeho diplomatické vztahy#!"
- DIPLOMATIC_RELATION_WAR_ALLY_TOOLTIP: "#T Válečný spojenec: [TARGET_CHARACTER.GetPrimaryTitle.GetNameNoTooltip]#!\nVládce: [TARGET_CHARACTER.GetUIName]\nJe spojencem ve [Concept('war','válce')|E] s [CHARACTER.GetPrimaryTitle.GetName].\n$DIPLO_INFO$\n#i Kliknutím vybereš a zobrazíš jeho diplomatické vztahy#!"
+ DIPLOMATIC_RELATION_WAR_ENEMY_TOOLTIP: "#T Nepřátelský vůdce války: [TARGET_CHARACTER.GetPrimaryTitle.GetNameNoTooltip]#!\nVládce: [TARGET_CHARACTER.GetUIName]\nJe [Concept('war_leader','vůdcem války')|E] ve [Concept('war','válce')|E] [CZPrepS(CHARACTER.GetPrimaryTitle.GetNameNoTooltip)] [CHARACTER.GetPrimaryTitle.Custom('CZ_LandedName_I')].\n\n$DIPLO_INFO$\n#i Kliknutím vybereš a zobrazíš jeho diplomatické vztahy#!"
+ DIPLOMATIC_RELATION_WAR_ENEMY_ALLY_TOOLTIP: "#T Nepřátelský válečný spojenec: [TARGET_CHARACTER.GetPrimaryTitle.GetNameNoTooltip]#!\nVládce: [TARGET_CHARACTER.GetUIName]\nJe nepřátelským protivníkem ve [Concept('war','válce')|E] [CZPrepS(CHARACTER.GetPrimaryTitle.GetNameNoTooltip)] [CHARACTER.GetPrimaryTitle.Custom('CZ_LandedName_I')].\n\n$DIPLO_INFO$\n#i Kliknutím vybereš a zobrazíš jeho diplomatické vztahy#!"
+ DIPLOMATIC_RELATION_WAR_ALLY_TOOLTIP: "#T Válečný spojenec: [TARGET_CHARACTER.GetPrimaryTitle.GetNameNoTooltip]#!\nVládce: [TARGET_CHARACTER.GetUIName]\nJe spojencem ve [Concept('war','válce')|E] [CZPrepS(CHARACTER.GetPrimaryTitle.GetNameNoTooltip)] [CHARACTER.GetPrimaryTitle.Custom('CZ_LandedName_I')].\n$DIPLO_INFO$\n#i Kliknutím vybereš a zobrazíš jeho diplomatické vztahy#!"
  DIPLOMATIC_RELATION_WAR_ENEMY_ENEMY_TOOLTIP: "#T Nepřítel: [TARGET_CHARACTER.GetPrimaryTitle.GetNameNoTooltip]#!\nVládce: [TARGET_CHARACTER.GetUIName]\nJe ve válce s panstvím, se kterým válčí i [CHARACTER.GetPrimaryTitle.GetName].\n$DIPLO_INFO$\n#i Kliknutím vybereš a zobrazíš jeho diplomatické vztahy#!"
  DIPLOMATIC_RELATION_RAID_ON_ME_TOOLTIP: "#T Plení tě: [TARGET_CHARACTER.GetPrimaryTitle.GetNameNoTooltip]#!\nVládce: [TARGET_CHARACTER.GetUIName]\n$DIPLO_INFO$\n#i Kliknutím vybereš a zobrazíš jeho diplomatické vztahy#!"
  DIPLOMATIC_RELATION_RAID_BY_ME_TOOLTIP: "#T Pleníš: [TARGET_CHARACTER.GetPrimaryTitle.GetNameNoTooltip]#!\nVládce: [TARGET_CHARACTER.GetUIName]\n$DIPLO_INFO$\n#i Kliknutím vybereš a zobrazíš jeho diplomatické vztahy#!"
@@ -222,8 +222,8 @@
  tributary_map_mode_likely_target: "#T [CHARACTER.GetShortUINameNoTooltip] pravděpodobně přijme nabídku tributárního podrobení ($VALUE|0+%$)#!\n$BREAKDOWN$"
  tributary_map_mode_unlikely_target: "#T [CHARACTER.GetShortUINameNoTooltip] pravděpodobně nepřijme nabídku tributárního podrobení ($VALUE|0+%$)#!\n$BREAKDOWN$"
  tributary_map_mode_beyond_your_sphere_of_influence: "[CHARACTER.GetShortUINameNoTooltip] je příliš daleko na to, aby se stal tributářem postavy [TARGET_CHARACTER.GetShortUINameNoTooltip]"
- plan_great_project_map_mode_tooltip_header: "#T Naplánovat projekt v [Title.GetName]#!"
- plan_great_project_map_mode_out_of_area: "[GreatProjectType.GetName] nelze naplánovat v [Title.GetName]"
+ plan_great_project_map_mode_tooltip_header: "#T Naplánovat projekt [CZPrepV(Title.GetNameNoTooltip)] [Title.Custom('CZ_LandedName_L')]#!"
+ plan_great_project_map_mode_out_of_area: "[GreatProjectType.GetName] nelze naplánovat [CZPrepV(Title.GetNameNoTooltip)] [Title.Custom('CZ_LandedName_L')]"
  plan_great_project_map_mode_out_of_area_tooltip_header: "#T $plan_great_project_map_mode_out_of_area$#!"
  CONFEDERATIONS_MAP_MODE_TOOLTIP: "[ROOT.Province.GetTitle.GetDeFactoLiege.GetHolder.GetConfederationTooltip]"
  CONFEDERATION_FOUND: "#T [CONFEDERATION.GetName]#!\n#I Kliknutím vybereš#!"

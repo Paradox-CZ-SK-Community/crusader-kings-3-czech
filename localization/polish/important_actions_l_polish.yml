@@ -249,8 +249,8 @@
  action_title_lost_from_realm_on_foreign_ruler_succession_combined_group_name: "@bad_icon! Panství přijde o území, až vazalové zdědí cizí tituly"
  action_title_lost_from_realm_on_foreign_ruler_succession_combined_group_description: "Někteří z tvých [Concept('vassals','vazalů')|E] jsou [Concept('heirs','dědici')|E] cizích titulů, které mají vyšší [Concept( 'title_tier', 'úroveň' )|E] než jejich současné [Concept('primary_title','hlavní tituly')|E].\n\n$TLFR_FOREIGN_RULER_SUCCESSION_TIPS$"
  TLFR_FOREIGN_RULER_SUCCESSION_TIPS: "#help Pokud vazal získá v cizím panství titul s vyšší [Concept('title_rank','hodností')|E], než má jeho současný [Concept('primary_title','hlavní titul')|E], přestane být tvým vazalem.\n\nOdchodu zemí tvého vazala z tvého panství můžeš zabránit následujícími způsoby:\n$BULLET_WITH_TAB$[Concept( 'revoke', 'Odebráním' )|E] titulů svému vazalovi\n$BULLET_WITH_TAB$Udělením titulu o stejné [Concept('title_tier', 'úrovni')|E], jakou má titul, který zdědí#!"
- action_disabled_building: "@building_icon! Neaktivní budova v [landed_title.GetNameNoTierNoTooltip]"
- action_disabled_building_label: "@building_icon! Neaktivní budova v [landed_title.GetNameNoTooltip]"
+ action_disabled_building: "@building_icon! Neaktivní budova [CZPrepV(landed_title.GetNameNoTierNoTooltip)] [landed_title.Custom('CZ_LandedNameNoTierNoTooltip_L')]"
+ action_disabled_building_label: "@building_icon! Neaktivní budova [CZPrepV(landed_title.GetNameNoTooltip)] [landed_title.Custom('CZ_LandedNameNoTooltip_L')]"
  action_disabled_building_combined_label: "[landed_title.Custom('GetTierIcon')] [landed_title.GetNameNoTooltip]"
  action_disabled_building_desc: "Jedna nebo více tvých [Concept('buildings','budov')|E] v titulu [landed_title.GetName] je neaktivní.$action_disabled_building_HELP$"
  action_disabled_building_click: "#I Kliknutím zobrazíš podrobnosti#!"
@@ -617,7 +617,7 @@
  action_station_men_at_arms_click: "#I Kliknutím zobrazíš podrobnosti#!"
  action_recent_hunt_sighting: "@activity_hunt! Nedávné zpozorování"
  action_recent_hunt_sighting_label: "@activity_hunt! [landed_title.Custom('GetAnimalSightingDescriptionType')]"
- action_recent_hunt_sighting_desc: "Nyní je vhodná doba uspořádat [GetActivityType('activity_hunt').GetName] v [landed_title.GetNameNoTier].$action_recent_hunt_sighting_HELP$"
+ action_recent_hunt_sighting_desc: "Nyní je vhodná doba uspořádat [GetActivityType('activity_hunt').GetName] [CZPrepV(landed_title.GetNameNoTierNoTooltip)] [landed_title.Custom('CZ_LandedNameNoTier_L')].$action_recent_hunt_sighting_HELP$"
  action_recent_hunt_sighting_HELP: "\n\n#weak Uspořádání [GetActivityType('activity_hunt').GetName], který odpovídá zdejšímu typu [Concept('hunt_sighting_no_prefix','zpozorování')|E], v tomto [Concept('county','hrabství')|E] zvýší tvou [Concept('hunt_success_chance_no_prefix','šanci na úspěch')|E] a umožní ti zaměřit se na konkrétní druh zvířete.#!"
  action_recent_hunt_sighting_combined_label: "[landed_title.Custom('GetAnimalSightingDescriptionType')]"
  action_recent_hunt_sighting_combined_group_label: "@activity_hunt! Nedávná zpozorování"
@@ -774,13 +774,13 @@
  action_title_lost_from_realm_by_vassal_war_combined_group_name: "@bad_icon! Panství přijde o území, pokud vazalové vyhrají války"
  action_title_lost_from_realm_by_vassal_war_combined_group_description: "Někteří z tvých [Concept('vassals','vazalů')|E] vedou [Concept('wars','války')|E] o [Concept('titles','tituly')|E] odpovídající tvé [Concept('rank','hodnosti')|E] nebo vyšší.\n\n$action_title_lost_from_realm_by_vassal_war_HELP$"
  action_can_complete_task_contract: "Můžeš cestovat za splněním zakázky"
- action_can_complete_task_contract_label: "Můžeš se vydat do [task_contract.MakeScope.Var('task_contract_destination').GetProvince.GetName] a splnit [recipient.GetFirstNamePossessive] zakázku [task_contract.GetType.GetName]"
- action_can_complete_task_contract_desc: "[recipient.GetName] očekává, že v [task_contract.MakeScope.Var('task_contract_destination').GetProvince.GetName] splníš [Concept('task_contract','zakázku')|E] [task_contract.GetType.GetName]"
+ action_can_complete_task_contract_label: "Můžeš se vydat do [CZProvName(task_contract.MakeScope.Var('task_contract_destination').GetProvince,'G')] a splnit [recipient.GetFirstNamePossessive] zakázku [task_contract.GetType.GetName]"
+ action_can_complete_task_contract_desc: "[recipient.GetName] očekává, že [CZPrepV(task_contract.MakeScope.Var('task_contract_destination').GetProvince.GetNameNoTooltip)] [CZProvName(task_contract.MakeScope.Var('task_contract_destination').GetProvince,'L')] splníš [Concept('task_contract','zakázku')|E] [task_contract.GetType.GetName]"
  action_can_complete_task_contract_click: "#I Kliknutím zobrazíš podrobnosti#!"
  action_can_complete_task_contract_combined_group_name: "Můžeš cestovat za splněním zakázek"
  action_can_complete_task_contract_combined_group_label: "$action_can_complete_task_contract_combined_group_name$"
  action_can_complete_task_contract_combined_group_description: "Očekává se, že se vydáš na cestu a splníš několik [Concept('task_contracts','zakázek')|E]"
- action_can_complete_task_contract_combined_label: "Vydat se do [task_contract.MakeScope.Var('task_contract_destination').GetProvince.GetName] a splnit zakázku [task_contract.GetType.GetName]"
+ action_can_complete_task_contract_combined_label: "Vydat se do [CZProvName(task_contract.MakeScope.Var('task_contract_destination').GetProvince,'G')] a splnit zakázku [task_contract.GetType.GetName]"
  action_can_complete_steal_artifact_contract: "Zahájit intriku Krádež artefaktu"
  action_can_complete_steal_artifact_contract_label: "@steal_artifact_icon! Můžeš zahájit intriku Krádež artefaktu a splnit zakázku"
  action_can_complete_steal_artifact_contract_desc: "Můžeš proti postavě [contract.MakeScope.Var('task_contract_target').Char.GetName] zahájit [Concept('scheme','intriku')|E] Krádež artefaktu, ukrást [task_contract.MakeScope.Var('task_contract_object').Artifact.GetName] a splnit tak [task_contract_employer.GetFirstNamePossessive] [Concept('task_contract','zakázku')|E] [task_contract.GetType.GetName]"
@@ -1251,19 +1251,19 @@
  action_losing_realm_to_clerical_region_desc: "Jste další v pořadí na [title|E] [clerical_region|E], který neobsahuje žádný [county|E] ve vašem [realm|E]. Při [succession|E] přijdete o své území a stanete se [archbishop|E]." # todo: NEW TRANSLATION
  action_losing_realm_to_clerical_region_click: "#I Kliknutím zobrazíte [clerical_region|E]#!" # todo: NEW TRANSLATION
  action_in_line_for_local_clerical_region: "@religious_icon! V pořadí na místní arcidiecézi" # todo: NEW TRANSLATION
- action_in_line_for_local_clerical_region_label: "@religious_icon! Jste na #high [actor.GetPlaceInSuccession(landed_title)|O]#! místě v pořadí na [landed_title.GetNameNoTooltip]" # todo: NEW TRANSLATION
- action_in_line_for_local_clerical_region_desc: "Jste na [actor.GetPlaceInSuccession(landed_title)|O] místě v [line_of_succession|E] na [landed_title.GetName], [archdiocese|E] spravující vaše [realm_capital|E]. Pokud zdědíte tento [title|E] [clerical_region|E], stanete se jeho [archbishop|E]." # todo: NEW TRANSLATION
+ action_in_line_for_local_clerical_region_label: "@religious_icon! Jste na #high [actor.GetPlaceInSuccession(landed_title)|O]#! místě v pořadí na [landed_title.Custom('CZ_LandedNameNoTooltip_A')]" # todo: NEW TRANSLATION
+ action_in_line_for_local_clerical_region_desc: "Jste na [actor.GetPlaceInSuccession(landed_title)|O] místě v [line_of_succession|E] na [landed_title.Custom('CZ_LandedName_A')], [archdiocese|E] spravující vaše [realm_capital|E]. Pokud zdědíte tento [title|E] [clerical_region|E], stanete se jeho [archbishop|E]." # todo: NEW TRANSLATION
  action_in_line_for_local_clerical_region_click: "#I Kliknutím zobrazíte [clerical_region|E]#!" # todo: NEW TRANSLATION
  action_can_request_new_clerical_region: "@religious_icon! Požádat o novou arcidiecézi" # todo: NEW TRANSLATION
  action_can_request_new_clerical_region_label: "$action_can_request_new_clerical_region$" # todo: NEW TRANSLATION
- action_can_request_new_clerical_region_desc: "Můžete požádat [recipient.GetShortUIName], aby zřídil novou [clerical_region|E] se sídlem v [target_title.GetName]. Jako její pozemský žadatel se stanete novým [archbishop|E]." # todo: NEW TRANSLATION
+ action_can_request_new_clerical_region_desc: "Můžete požádat [recipient.GetShortUIName], aby zřídil novou [clerical_region|E] se sídlem [CZPrepV(target_title.GetNameNoTooltip)] [target_title.Custom('CZ_LandedName_L')]. Jako její pozemský žadatel se stanete novým [archbishop|E]." # todo: NEW TRANSLATION
  action_can_request_new_clerical_region_click: "#I Kliknutím zahájíte $request_ecclesiastical_title_creation_interaction$#!" # todo: NEW TRANSLATION
  action_can_request_clerical_region_expansion: "@religious_icon! Požádat o rozšíření arcidiecéze" # todo: NEW TRANSLATION
- action_can_request_clerical_region_expansion_label: "@religious_icon! Rozšířit svou arcidiecézi do [target_title.GetNameNoTooltip]" # todo: NEW TRANSLATION
- action_can_request_clerical_region_expansion_desc: "Můžete požádat [recipient.GetShortUIName], aby rozšířil vaši [clerical_region|E] do [target_title.GetName]." # todo: NEW TRANSLATION
+ action_can_request_clerical_region_expansion_label: "@religious_icon! Rozšířit svou arcidiecézi do [target_title.Custom('CZ_LandedNameNoTooltip_G')]" # todo: NEW TRANSLATION
+ action_can_request_clerical_region_expansion_desc: "Můžete požádat [recipient.GetShortUIName], aby rozšířil vaši [clerical_region|E] do [target_title.Custom('CZ_LandedName_G')]." # todo: NEW TRANSLATION
  action_can_request_clerical_region_expansion_click: "#I Kliknutím zahájíte $request_ecclesiastical_title_expansion_interaction$#!" # todo: NEW TRANSLATION
  action_can_request_enforce_succession: "@religious_icon! Požádat o vynucení nástupnictví" # todo: NEW TRANSLATION
- action_can_request_enforce_succession_label: "@religious_icon! Požádat o vynucení nástupnictví pro [landed_title.GetNameNoTooltip]" # todo: NEW TRANSLATION
+ action_can_request_enforce_succession_label: "@religious_icon! Požádat o vynucení nástupnictví pro [landed_title.Custom('CZ_LandedNameNoTooltip_A')]" # todo: NEW TRANSLATION
  action_can_request_enforce_succession_desc: "Můžete požádat [recipient.GetShortUIName], aby přiměl [landed_title.GetHolder.GetShortUIName] přenechat [landed_title.GetName] jeho právoplatnému [heir|E]. O tuto žádost můžete požádat, protože máte [claim|E] na tento [title|E]." # todo: NEW TRANSLATION
  action_can_request_enforce_succession_click: "#I Kliknutím zahájíte $request_enforce_succession_interaction$#!" # todo: NEW TRANSLATION
  action_can_request_enforce_succession_combined_label: "[landed_title.Custom('GetTierIcon')] [landed_title.GetNameNoTooltip]" # todo: NEW TRANSLATION
@@ -1297,7 +1297,7 @@
  action_can_appoint_cardinals_desc: "Můžete jmenovat [recipient.GetShortUIName] [cardinal|E].$action_can_appoint_cardinals_help_desc$" # todo: NEW TRANSLATION
  action_can_appoint_cardinals_combined_group_description: "Vaše [faith|E] má méně než #V 10#! [cardinals|E]. Jmenujte důstojné [archbishops|E] do [college_of_cardinals|E].$action_can_appoint_cardinals_help_desc$" # todo: NEW TRANSLATION
  action_can_appoint_cardinals_label: "@religious_icon! Můžete jmenovat [recipient.GetShortUINameNoTooltip] [cardinal|E]" # todo: NEW TRANSLATION
- action_can_appoint_cardinals_combined_label: "[recipient.GetPrimaryTitle.Custom('GetTierIcon')] [recipient.GetShortUINameNoTooltip] z [recipient.GetPrimaryTitle.GetNameNoTierNoTooltip]" # todo: NEW TRANSLATION
+ action_can_appoint_cardinals_combined_label: "[recipient.GetPrimaryTitle.Custom('GetTierIcon')] [recipient.GetShortUINameNoTooltip] [CZPrepZ(recipient.GetPrimaryTitle.GetNameNoTierNoTooltip)] [recipient.GetPrimaryTitle.Custom('CZ_LandedNameNoTierNoTooltip_G')]" # todo: NEW TRANSLATION
  action_can_appoint_cardinals_click: "#I Kliknutím zahájíte $appoint_cardinal_interaction$#!" # todo: NEW TRANSLATION
  action_can_appoint_cardinals_help_desc: "\n\n#help Zobrazení kandidáti jsou pěti [archbishops|E] s nejvyšší [piety|E], které lze právě jmenovat.#!" # todo: NEW TRANSLATION
  action_can_make_clerical_puppet: "@theological_agent_puppet_icon! Dvorního kaplana lze ovládnout jako loutku" # todo: NEW TRANSLATION

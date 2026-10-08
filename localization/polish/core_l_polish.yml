@@ -65,10 +65,10 @@
  CURRENT_SPEED_TEXT_3: "Normální"
  CURRENT_SPEED_TEXT_4: "Rychlá"
  CURRENT_SPEED_TEXT_5: "Nejrychlejší"
- PLAYER_SYNC_DATES_HEADER: "#T Aktuální datum: [DATE.GetString]#!"
+ PLAYER_SYNC_DATES_HEADER: "#T Aktuální datum: [DATE.GetStringLong]#!"
  PLAYER_SYNC_DATES: "Data hráčů:"
- PLAYER_DATE: "$NAME$: [DATE.GetString|V]"
- GAME_START_DATE_STRING: "Zahájeno [DATE.GetString]"
+ PLAYER_DATE: "$NAME$: [DATE.GetStringLong|V]"
+ GAME_START_DATE_STRING: "Zahájeno [DATE.GetStringLong]"
  GAME_YEARS_SINCE_START_DATE_STRING: "Let od začátku hry: $YEARS|V$"
  SVN_REVISION: "Toto je revize SVN"
  GREATER_THAN: "větší než"
@@ -122,8 +122,8 @@
  CHARACTER_DEAD_TOOLTIP_HIDE_KILLER: "[Character.GetDeathReasonHideKiller|U] dne $CHARACTER_DEAD_TOOLTIP_DATE_INFO$"
  CHARACTER_HOSTAGE_TOOLTIP: "#T [Concept('hostage','Rukojmí')|E]#!\n[Character.GetUINameNotMe] je nyní [Concept('hostage','rukojmí')|E]; [Concept('warden','strážce')|E]: [TARGET_CHARACTER.GetShortUIName], [Concept('home_court','domovský dvůr')|E]: [TARGET_CHARACTER_2.GetShortUIName]"
  CHARACTER_INCAPABLE_TOOLTIP: "#T Neschopnost#!\n[Character.GetUINameNotMe] má vlastnost [GetTrait('incapable').GetName( Character.Self )] a nemůže jednat samostatně"
- CHARACTER_PUPPET_TOOLTIP: "#T Loutka#!\n[Character.GetUINameNotMe] je vaše [puppet|E]" # todo: NEW TRANSLATION
- CHARACTER_TRAVELING_TOOLTIP: "#T Na cestě#!\n[traveling|E] směrem k [Character.GetTravelPlan.GetData.GetNextDestination.GetProvince.GetName] [SelectLocalization(Character.GetTravelPlan.GetData.GetActivity.IsValid, 'CHARACTER_TRAVELING_ACTIVITY_TOOLTIP_ADDITION', '')]"
+ CHARACTER_PUPPET_TOOLTIP: "#T Loutka#!\n[Character.GetUINameNotMe] je tvoje [Concept('puppet','loutka')|E]"
+ CHARACTER_TRAVELING_TOOLTIP: "#T Na cestě#!\n[traveling|E] směrem [CZPrepK(Character.GetTravelPlan.GetData.GetNextDestination.GetProvince.GetNameNoTooltip)] [CZProvName(Character.GetTravelPlan.GetData.GetNextDestination.GetProvince,'D')] [SelectLocalization(Character.GetTravelPlan.GetData.GetActivity.IsValid, 'CHARACTER_TRAVELING_ACTIVITY_TOOLTIP_ADDITION', '')]"
  CHARACTER_AWAY_TOOLTIP: "#T Mimo domov#!\n[SelectLocalization( Or( Character.IsCommandingArmy, Character.IsKnightInArmy ), 'CHARACTER_AWAY_DETAIL_ARMY_TOOLTIP', 'CHARACTER_AWAY_DETAIL_GENERIC_TOOLTIP' )]"
  CHARACTER_AWAY_DETAIL_ARMY_TOOLTIP: "[SelectLocalization( Character.IsCommandingArmy, 'CHARACTER_AWAY_DETAIL_COMMANDING_ARMY', 'CHARACTER_AWAY_DETAIL_KNIGHT_IN_ARMY' )]; poloha: [SelectLocalization( Character.IsCommandingArmy, Character.GetCommandingArmy.GetLocation.GetName, Character.GetKnightArmy.GetLocation.GetName )]"
  CHARACTER_AWAY_DETAIL_GENERIC_TOOLTIP: "Aktuální poloha: [Character.GetCurrentLocation.GetName]"
@@ -499,7 +499,7 @@
  ERROR_HOOF_7: "Jsem Angelhoof Milosrdný. Odpouštím mnohé, ale chyby ve tvé hře mezi ně nepatří. Počet chyb: $ERRORS$. $ERROR_ACTION$"
  ERROR_HOOF_8: "Jsem křeček Konrád. Někdy jsem tu místo Errorhoofa. Jsem moc roztomilý, ale $ERRORS$ chyb v tvé hře roztomilých není. $ERROR_ACTION$"
  ENABLED_MODS: "Povolené mody:"
- RALLY_POINT_NAME: "Shromaždiště v [PROVINCE.GetNameNoTooltip]"
+ RALLY_POINT_NAME: "Shromaždiště [CZPrepV(PROVINCE.GetNameNoTooltip)] [CZProvNameNoTooltip(PROVINCE,'L')]"
  CONFIRM: "Potvrdit"
  friends: "Přátelé"
  friend_plural: "Přátelé"
@@ -1024,8 +1024,8 @@
  BREAKDOWN_ENTRY_TREASURY_MILITARY_BUDGET_BASE: "[Concept('treasury_budget_base_rate_short','Základní sazba')|E]"
  BREAKDOWN_ENTRY_TREASURY_MILITARY_BUDGET_MULT: "Násobitel rozpočtu"
  BREAKDOWN_ENTRY_TREASURY_MILITARY_BUDGET_VASSAL: "[CHARACTER.GetPrimaryTitle.GetName]"
- BREAKDOWN_ENTRY_TREASURY_CARDINAL_BUDGET: "[treasury_cardinal_budget|E]" # todo: NEW TRANSLATION
- BREAKDOWN_ENTRY_TREASURY_CARDINAL_BUDGET_BASE: "[treasury_budget_base_rate_short|E]" # todo: NEW TRANSLATION
+ BREAKDOWN_ENTRY_TREASURY_CARDINAL_BUDGET: "[Concept('treasury_cardinal_budget','kardinálský rozpočet')|EU]"
+ BREAKDOWN_ENTRY_TREASURY_CARDINAL_BUDGET_BASE: "[Concept('treasury_budget_base_rate_short','základní sazba')|EU]"
  BREAKDOWN_ENTRY_TREASURY_CARDINAL_BUDGET_MULT: "Násobitel rozpočtu"
  BREAKDOWN_ENTRY_TREASURY_CARDINAL_BUDGET_VASSAL: "[CHARACTER.GetName]"
  CANT_TICK_UNPAUSED: "Toto nemůžeš provést, když hra není pozastavena."
@@ -1035,7 +1035,7 @@
  confucian_education_modifier: "[GetTrait('confucian_education').GetName( GetNullCharacter )]"
  tutor_modifier: "Zaměstnává: [GetCourtPositionType('court_tutor_court_position').GetName()]"
  mourned_parent_modifier: "Zkušenosti úcty k rodičům #weak (ztráta rodiče)#!"
- MODEL_LIST_SEPARATOR_AND: "[SelectLocalization( '(int_bool)$IS_LAST_ITEM|q$', 'AND', 'COMMA' )]" # todo: NEW TRANSLATION
- MODEL_LIST_SEPARATOR_OR: " [SelectLocalization( '(int_bool)$IS_LAST_ITEM|q$', 'OR', 'COMMA' )]" # todo: NEW TRANSLATION
- MODEL_LIST_SEPARATOR_AND_LIST: "[SelectLocalization( '(int_bool)$IS_LAST_ITEM|q$', 'AND_LIST', 'COMMA' )]" # todo: NEW TRANSLATION
- MODEL_LIST_SEPARATOR_OR_LIST: "[SelectLocalization( '(int_bool)$IS_LAST_ITEM|q$', 'OR_LIST', 'COMMA' )]" # todo: NEW TRANSLATION
+ MODEL_LIST_SEPARATOR_AND: "[SelectLocalization( '(int_bool)$IS_LAST_ITEM|q$', 'AND', 'COMMA' )]"
+ MODEL_LIST_SEPARATOR_OR: " [SelectLocalization( '(int_bool)$IS_LAST_ITEM|q$', 'OR', 'COMMA' )]"
+ MODEL_LIST_SEPARATOR_AND_LIST: "[SelectLocalization( '(int_bool)$IS_LAST_ITEM|q$', 'AND_LIST', 'COMMA' )]"
+ MODEL_LIST_SEPARATOR_OR_LIST: "[SelectLocalization( '(int_bool)$IS_LAST_ITEM|q$', 'OR_LIST', 'COMMA' )]"

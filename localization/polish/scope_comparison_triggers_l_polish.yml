@@ -1,8 +1,8 @@
 ﻿l_polish:
- PROVINCE_DE_JURE_EQUAL: "[PROVINCE.GetName] je de iure součástí [TARGET_TITLE.GetName]"
- NOT_PROVINCE_DE_JURE_EQUAL: "[PROVINCE.GetName] #bold není#! de iure součástí [TARGET_TITLE.GetName]"
- LANDED_TITLE_DE_JURE_EQUAL: "[TITLE.GetName] je de iure součástí [TARGET_TITLE.GetName]"
- NOT_LANDED_TITLE_DE_JURE_EQUAL: "[TITLE.GetName] #bold není#! de iure součástí [TARGET_TITLE.GetName]"
+ PROVINCE_DE_JURE_EQUAL: "[PROVINCE.GetName] je de iure součástí [TARGET_TITLE.Custom('CZ_LandedName_G')]"
+ NOT_PROVINCE_DE_JURE_EQUAL: "[PROVINCE.GetName] #bold není#! de iure součástí [TARGET_TITLE.Custom('CZ_LandedName_G')]"
+ LANDED_TITLE_DE_JURE_EQUAL: "[TITLE.GetName] je de iure součástí [TARGET_TITLE.Custom('CZ_LandedName_G')]"
+ NOT_LANDED_TITLE_DE_JURE_EQUAL: "[TITLE.GetName] #bold není#! de iure součástí [TARGET_TITLE.Custom('CZ_LandedName_G')]"
  DE_JURE_LIEGE_EQUAL: "Přímým de iure nadřazeným titulem [TITLE.GetName] je [TARGET_TITLE.GetName]"
  NOT_DE_JURE_LIEGE_EQUAL: "Přímým de iure nadřazeným titulem [TITLE.GetName] #bold není#! [TARGET_TITLE.GetName]"
  DE_FACTO_LIEGE_EQUAL: "Současným de facto nadřazeným titulem [TITLE.GetName] je [TARGET_TITLE.GetName]"
@@ -17,20 +17,20 @@
  NOT_LIEGE_EQUAL_THIRD: "[CHARACTER.GetShortUIName|U] #bold nepatří#! mezi [Concept('courtier','dvořany')|E] ani [Concept('vassal','vazaly')|E] [TARGET_CHARACTER.GetShortUINamePossessive]"
  LIEGE_EQUAL_NONE: "Patří mezi tvé [Concept('courtier','dvořany')|E], [Concept('vassal','vazaly')|E] nebo [Concept('follower','družiníky')|E]"
  NOT_LIEGE_EQUAL_NONE: "#bold Nepatří#! mezi tvé [Concept('courtier','dvořany')|E], [Concept('vassal','vazaly')|E] ani [Concept('follower','družiníky')|E]"
- top_liege_equal_first: "Jste [top_liege|E]" # todo: NEW TRANSLATION
- not_top_liege_equal_first: "Jste #bold nikoli#! [top_liege|E]" # todo: NEW TRANSLATION
- top_liege_equal_third: "[CHARACTER.GetShortUIName|U] je [top_liege|E]" # todo: NEW TRANSLATION
- not_top_liege_equal_third: "[CHARACTER.GetShortUIName|U] #bold není#! [top_liege|E]" # todo: NEW TRANSLATION
- top_liege_equal_none: "Je [top_liege|E]" # todo: NEW TRANSLATION
- not_top_liege_equal_none: "#bold Není#! [top_liege|E]" # todo: NEW TRANSLATION
- NOT_top_liege_not_equal: "[CHARACTER.GetShortUIName|U] je [top_liege|E]" # todo: NEW TRANSLATION
- top_liege_not_equal: "[CHARACTER.GetShortUIName|U] #bold není#! [top_liege|E]" # todo: NEW TRANSLATION
- not_top_liege_not_equal_first: "Jste [top_liege|E]" # todo: NEW TRANSLATION
- top_liege_not_equal_first: "Jste #bold nikoli#! [top_liege|E]" # todo: NEW TRANSLATION
- not_top_liege_not_equal_third: "[CHARACTER.GetShortUIName|U] je [top_liege|E]" # todo: NEW TRANSLATION
- top_liege_not_equal_third: "[CHARACTER.GetShortUIName|U] #bold není#! [top_liege|E]" # todo: NEW TRANSLATION
- not_top_liege_not_equal_none: "Je [top_liege|E]" # todo: NEW TRANSLATION
- top_liege_not_equal_none: "#bold Není#! [top_liege|E]" # todo: NEW TRANSLATION
+ top_liege_equal_first: "Jsi [Concept('top_liege','nejvyšším lenním pánem')|E]"
+ not_top_liege_equal_first: "Jsi #bold nikoli#! [Concept('top_liege','nejvyšším lenním pánem')|E]"
+ top_liege_equal_third: "[CHARACTER.GetShortUIName|U] [Select_CString(CHARACTER.IsLocalPlayer,'jsi','je')|l] [Concept('top_liege',Select_CString(CHARACTER.IsFemale,'nejvyšší lenní paní','nejvyšším lenním pánem'))|E]"
+ not_top_liege_equal_third: "[CHARACTER.GetShortUIName|U] #bold [Select_CString(CHARACTER.IsLocalPlayer,'nejsi','není')|l]#! [Concept('top_liege',Select_CString(CHARACTER.IsFemale,'nejvyšší lenní paní','nejvyšším lenním pánem'))|E]"
+ top_liege_equal_none: "Je [Concept('top_liege','nejvyšším lenním pánem')|E]"
+ not_top_liege_equal_none: "#bold Není#! [Concept('top_liege','nejvyšším lenním pánem')|E]"
+ NOT_top_liege_not_equal: "[CHARACTER.GetShortUIName|U] [Select_CString(CHARACTER.IsLocalPlayer,'jsi','je')|l] [Concept('top_liege',Select_CString(CHARACTER.IsFemale,'nejvyšší lenní paní','nejvyšším lenním pánem'))|E]"
+ top_liege_not_equal: "[CHARACTER.GetShortUIName|U] #bold [Select_CString(CHARACTER.IsLocalPlayer,'nejsi','není')|l]#! [Concept('top_liege',Select_CString(CHARACTER.IsFemale,'nejvyšší lenní paní','nejvyšším lenním pánem'))|E]"
+ not_top_liege_not_equal_first: "Jsi [Concept('top_liege','nejvyšším lenním pánem')|E]"
+ top_liege_not_equal_first: "Jsi #bold nikoli#! [Concept('top_liege','nejvyšším lenním pánem')|E]"
+ not_top_liege_not_equal_third: "[CHARACTER.GetShortUIName|U] [Select_CString(CHARACTER.IsLocalPlayer,'jsi','je')|l] [Concept('top_liege',Select_CString(CHARACTER.IsFemale,'nejvyšší lenní paní','nejvyšším lenním pánem'))|E]"
+ top_liege_not_equal_third: "[CHARACTER.GetShortUIName|U] #bold [Select_CString(CHARACTER.IsLocalPlayer,'nejsi','není')|l]#! [Concept('top_liege',Select_CString(CHARACTER.IsFemale,'nejvyšší lenní paní','nejvyšším lenním pánem'))|E]"
+ not_top_liege_not_equal_none: "Je [Concept('top_liege','nejvyšším lenním pánem')|E]"
+ top_liege_not_equal_none: "#bold Není#! [Concept('top_liege','nejvyšším lenním pánem')|E]"
  KILLER_EQUAL_THIRD: "[CHARACTER.GetShortUIName|U] [Select_CString( CHARACTER.IsFemale, 'zemřela', 'zemřel' )] rukou [TARGET_CHARACTER.GetShortUIName]"
  NOT_KILLER_EQUAL_THIRD: "[CHARACTER.GetShortUIName|U] #bold [Select_CString( CHARACTER.IsFemale, 'nezemřela', 'nezemřel' )]#! rukou [TARGET_CHARACTER.GetShortUIName]"
  IMPRISONER_EQUAL_FIRST: "Jsi v zajetí [TARGET_CHARACTER.GetShortUIName]"
@@ -59,12 +59,12 @@
  NOT_REAL_FATHER_EQUAL_THIRD: "[TARGET_CHARACTER.GetShortUIName|U] #bold není#! biologickým otcem [CHARACTER.GetShortUINamePossessive]"
  PLAYER_HEIR_EQUAL_FIRST: "[TARGET_CHARACTER.GetShortUIName|U] je [Concept('player_heir', Select_CString( TARGET_CHARACTER.IsFemale, 'tvou hráčskou dědičkou', 'tvým hráčským dědicem' ))|E]"
  PLAYER_HEIR_EQUAL_THIRD: "[TARGET_CHARACTER.GetShortUIName|U] je [Concept('player_heir', Select_CString( TARGET_CHARACTER.IsFemale, 'hráčskou dědičkou', 'hráčským dědicem' ))|E] [CHARACTER.GetShortUINamePossessive]"
- CHARACTER_RITE_EQUAL_FIRST: "Jste [RITE.GetAdjective]" # todo: NEW TRANSLATION
- NOT_CHARACTER_RITE_EQUAL_FIRST: "Jste #bold nikoli#! [RITE.GetAdjective]" # todo: NEW TRANSLATION
- CHARACTER_RITE_EQUAL_THIRD: "[CHARACTER.GetShortUIName|U] je [RITE.GetAdjective]" # todo: NEW TRANSLATION
- NOT_CHARACTER_RITE_EQUAL_THIRD: "[CHARACTER.GetShortUIName|U] #bold není#! [RITE.GetAdjective]" # todo: NEW TRANSLATION
- CHARACTER_RITE_NONE: "Je vyznavačem stejného [rite|e]" # todo: NEW TRANSLATION
- CHARACTER_RITE_GLOBAL: "$CHARACTER_RITE_NONE$" # todo: NEW TRANSLATION
+ CHARACTER_RITE_EQUAL_FIRST: "Následuješ ritus [RITE.GetName]"
+ NOT_CHARACTER_RITE_EQUAL_FIRST: "#bold Nenásleduješ #! ritus [RITE.GetName]"
+ CHARACTER_RITE_EQUAL_THIRD: "[CHARACTER.GetShortUIName|U] [Select_CString(CHARACTER.IsLocalPlayer,'následuješ','následuje')|l] ritus [RITE.GetName]"
+ NOT_CHARACTER_RITE_EQUAL_THIRD: "[CHARACTER.GetShortUIName|U] #bold [Select_CString(CHARACTER.IsLocalPlayer,'nenásleduješ','nenásleduje')|l]#! ritus [RITE.GetName]"
+ CHARACTER_RITE_NONE: "Je vyznavačem stejného [Concept('rite','ritu')|e]"
+ CHARACTER_RITE_GLOBAL: "$CHARACTER_RITE_NONE$"
  CHARACTER_FAITH_EQUAL_FIRST: "Vyznáváš [FAITH.GetName|l]"
  NOT_CHARACTER_FAITH_EQUAL_FIRST: "#bold Nevyznáváš#! [FAITH.GetName]"
  CHARACTER_FAITH_EQUAL_THIRD: "[CHARACTER.GetShortUIName|U] vyznává [FAITH.GetName]"
@@ -88,10 +88,10 @@
  CHARACTER_DYNASTY_EQUAL_THIRD: "[CHARACTER.GetShortUIName|U] náleží k [Concept('dynasty','dynastii')|E] [DYNASTY.GetName]"
  NOT_CHARACTER_DYNASTY_EQUAL_THIRD: "[CHARACTER.GetShortUIName|U] #bold nenáleží#! k [Concept('dynasty','dynastii')|E] [DYNASTY.GetName]"
  CHARACTER_HOUSE_EQUAL_NONE: "Náleží ke stejnému [Concept('house','rodu')|E]"
- LANDED_TITLE_RITE_EQUAL_THIRD: "[TITLE.GetName] je [RITE.GetAdjective]" # todo: NEW TRANSLATION
- NOT_LANDED_TITLE_RITE_EQUAL_THIRD: "[TITLE.GetName] #bold není#! [RITE.GetAdjective]" # todo: NEW TRANSLATION
- LANDED_TITLE_RITE_EQUAL_GLOBAL: "Je [RITE.GetAdjective]" # todo: NEW TRANSLATION
- NOT_LANDED_TITLE_RITE_EQUAL_GLOBAL: "#bold Není#! [RITE.GetAdjective]" # todo: NEW TRANSLATION
+ LANDED_TITLE_RITE_EQUAL_THIRD: "[TITLE.GetName|U] následuje ritus [RITE.GetName]"
+ NOT_LANDED_TITLE_RITE_EQUAL_THIRD: "[TITLE.GetName|U] #bold nenásleduje#! ritus [RITE.GetName]"
+ LANDED_TITLE_RITE_EQUAL_GLOBAL: "Následuje ritus [RITE.GetName]"
+ NOT_LANDED_TITLE_RITE_EQUAL_GLOBAL: "#bold Nenásleduje#! ritus [RITE.GetName]"
  LANDED_TITLE_FAITH_EQUAL_THIRD: "[TITLE.GetName] náleží k [FAITH.GetAdjective|l] víře"
  NOT_LANDED_TITLE_FAITH_EQUAL_THIRD: "[TITLE.GetName] #bold nenáleží#! k [FAITH.GetAdjective|l] víře"
  LANDED_TITLE_FAITH_EQUAL_GLOBAL: "Náleží k [FAITH.GetAdjective|l] víře"
@@ -104,10 +104,10 @@
  NOT_LANDED_TITLE_CULTURE_EQUAL_THIRD: "[TITLE.GetName] #bold nenáleží#! k [TARGET_CULTURE.GetName] kultuře"
  LANDED_TITLE_CULTURE_EQUAL_GLOBAL: "Náleží k [TARGET_CULTURE.GetName] kultuře"
  NOT_LANDED_TITLE_CULTURE_EQUAL_GLOBAL: "#bold Nenáleží#! k [TARGET_CULTURE.GetName] kultuře"
- PROVINCE_RITE_EQUAL_THIRD: "[PROVINCE.GetName] je [RITE.GetAdjective]" # todo: NEW TRANSLATION
- NOT_PROVINCE_RITE_EQUAL_THIRD: "[PROVINCE.GetName] #bold není#! [RITE.GetAdjective]" # todo: NEW TRANSLATION
- PROVINCE_RITE_EQUAL_GLOBAL: "Je [RITE.GetAdjective]" # todo: NEW TRANSLATION
- NOT_PROVINCE_RITE_EQUAL_GLOBAL: "#bold Není#! [RITE.GetAdjective]" # todo: NEW TRANSLATION
+ PROVINCE_RITE_EQUAL_THIRD: "[PROVINCE.GetName|U] následuje ritus [RITE.GetName]"
+ NOT_PROVINCE_RITE_EQUAL_THIRD: "[PROVINCE.GetName|U] #bold nenásleduje#! ritus [RITE.GetName]"
+ PROVINCE_RITE_EQUAL_GLOBAL: "Následuje ritus [RITE.GetName]"
+ NOT_PROVINCE_RITE_EQUAL_GLOBAL: "#bold Nenásleduje#! ritus [RITE.GetName]"
  PROVINCE_FAITH_EQUAL_THIRD: "[PROVINCE.GetName] náleží k [FAITH.GetAdjective|l] víře"
  NOT_PROVINCE_FAITH_EQUAL_THIRD: "[PROVINCE.GetName] #bold nenáleží#! k [FAITH.GetAdjective|l] víře"
  PROVINCE_FAITH_EQUAL_GLOBAL: "Náleží k [FAITH.GetAdjective|l] víře"

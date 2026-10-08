@@ -2,7 +2,7 @@
  MOD_ARTIFACT_DECAY_REDUCTION_ADD: "[Concept('artifact','Artefakt')|E] – snížení chátrání"
  MOD_ARTIFACT_DECAY_REDUCTION_MULT: "$MOD_ARTIFACT_DECAY_REDUCTION_ADD$"
  artifact_history_created_title: "[HISTORY_ENTRY.GetDate.GetString]"
- artifact_history_created_desc: "Vytvořeno pro [HISTORY_ENTRY.GetRecipient.GetTitledFirstNameNicknamedNoTooltipRegnal] v [HISTORY_ENTRY.GetLocation.GetNameNoTooltip]; tvůrce: [SelectLocalization( HISTORY_ENTRY.HasActor, HISTORY_ENTRY.GetActor.GetNameNoTooltip, 'UNKNOWN_BENEFACTOR' )]"
+ artifact_history_created_desc: "Vytvořeno pro [HISTORY_ENTRY.GetRecipient.GetTitledFirstNameNicknamedNoTooltipRegnal] [CZPrepV(HISTORY_ENTRY.GetLocation.GetNameNoTooltip)] [CZProvNameNoTooltip(HISTORY_ENTRY.GetLocation,'L')]; tvůrce: [SelectLocalization( HISTORY_ENTRY.HasActor, HISTORY_ENTRY.GetActor.GetNameNoTooltip, 'UNKNOWN_BENEFACTOR' )]"
  artifact_history_stolen_title: "[HISTORY_ENTRY.GetDate.GetString]"
  artifact_history_stolen_desc: "[HISTORY_ENTRY.GetRecipient.GetTitledFirstNameNicknamedNoTooltipRegnal] artefakt [Select_CString(HISTORY_ENTRY.GetRecipient.IsFemale,'ukradla','ukradl')]"
  artifact_history_created_before_history_title: "Neznámý původ"
@@ -14,17 +14,17 @@
  artifact_history_conquest_title: "[HISTORY_ENTRY.GetDate.GetString]"
  artifact_history_conquest_desc: "[HISTORY_ENTRY.GetRecipient.GetTitledFirstNameNicknamedNoTooltipRegnal] artefakt [Select_CString(HISTORY_ENTRY.GetRecipient.IsFemale,'získala','získal')] ve válce proti [HISTORY_ENTRY.GetActor.GetTitledFirstNameNicknamedNoTooltipRegnal]"
  artifact_history_taken_in_siege_title: "[HISTORY_ENTRY.GetDate.GetString]"
- artifact_history_taken_in_siege_desc: "[HISTORY_ENTRY.GetRecipient.GetTitledFirstNameNicknamedNoTooltipRegnal] artefakt [Select_CString(HISTORY_ENTRY.GetRecipient.IsFemale,'ukořistila','ukořistil')] po obléhání [HISTORY_ENTRY.GetLocation.GetNameNoTooltip]"
+ artifact_history_taken_in_siege_desc: "[HISTORY_ENTRY.GetRecipient.GetTitledFirstNameNicknamedNoTooltipRegnal] artefakt [Select_CString(HISTORY_ENTRY.GetRecipient.IsFemale,'ukořistila','ukořistil')] po obléhání [CZProvNameNoTooltip(HISTORY_ENTRY.GetLocation,'G')]"
  artifact_history_reforged_title: "[HISTORY_ENTRY.GetDate.GetString]"
- artifact_history_reforged_desc: "[HISTORY_ENTRY.GetRecipient.GetTitledFirstNameNicknamedNoTooltipRegnal] nechal artefakt překovat v [HISTORY_ENTRY.GetLocation.GetNameNoTooltip]"
+ artifact_history_reforged_desc: "[HISTORY_ENTRY.GetRecipient.GetTitledFirstNameNicknamedNoTooltipRegnal] nechal artefakt překovat [CZPrepV(HISTORY_ENTRY.GetLocation.GetNameNoTooltip)] [CZProvNameNoTooltip(HISTORY_ENTRY.GetLocation,'L')]"
  artifact_history_discovered_title: "[HISTORY_ENTRY.GetDate.GetString]"
- artifact_history_discovered_desc: "Objeveno postavou [HISTORY_ENTRY.GetActor.GetTitledFirstNameNicknamedNoTooltipRegnal] pro [HISTORY_ENTRY.GetRecipient.GetTitledFirstNameNicknamedNoTooltipRegnal] v [HISTORY_ENTRY.GetLocation.GetNameNoTooltip]"
+ artifact_history_discovered_desc: "Objeveno postavou [HISTORY_ENTRY.GetActor.GetTitledFirstNameNicknamedNoTooltipRegnal] pro [HISTORY_ENTRY.GetRecipient.GetTitledFirstNameNicknamedNoTooltipRegnal] [CZPrepV(HISTORY_ENTRY.GetLocation.GetNameNoTooltip)] [CZProvNameNoTooltip(HISTORY_ENTRY.GetLocation,'L')]"
  artifact_history_claimed_by_house_title: "[HISTORY_ENTRY.GetDate.GetString]"
  artifact_history_claimed_by_house_desc: "[Concept('house','Rod')|E] [HISTORY_ENTRY.GetActor.GetHouse.GetNameNoTooltip] vznesl na artefakt nárok"
  artifact_history_won_in_duel_title: "[HISTORY_ENTRY.GetDate.GetString]"
  artifact_history_won_in_duel_desc: "[HISTORY_ENTRY.GetRecipient.GetTitledFirstNameNicknamedNoTooltipRegnal] artefakt [Select_CString(HISTORY_ENTRY.GetRecipient.IsFemale,'vyhrála','vyhrál')] v duelu"
  artifact_history_taken_in_battle_title: "[HISTORY_ENTRY.GetDate.GetString]"
- artifact_history_taken_in_battle_desc: "[HISTORY_ENTRY.GetRecipient.GetTitledFirstNameNicknamedNoTooltipRegnal] artefakt [Select_CString(HISTORY_ENTRY.GetRecipient.IsFemale,'ukořistila','ukořistil')] v bitvě u [HISTORY_ENTRY.GetLocation.GetNameNoTooltip]"
+ artifact_history_taken_in_battle_desc: "[HISTORY_ENTRY.GetRecipient.GetTitledFirstNameNicknamedNoTooltipRegnal] artefakt [Select_CString(HISTORY_ENTRY.GetRecipient.IsFemale,'ukořistila','ukořistil')] v bitvě u [CZProvNameNoTooltip(HISTORY_ENTRY.GetLocation,'G')]"
  artifact_history_prize_created_title: "[HISTORY_ENTRY.GetDate.GetString]"
  artifact_history_prize_created_desc: "[HISTORY_ENTRY.GetRecipient.GetTitledFirstNameNicknamedNoTooltipRegnal] artefakt [Select_CString(HISTORY_ENTRY.GetRecipient.IsFemale,'nabídla','nabídl')] jako [Concept('prize','cenu')|E] v rámci [GetActivityType( 'activity_tournament' ).GetName]"
  artifact_history_prize_awarded_title: "[HISTORY_ENTRY.GetDate.GetString]"
@@ -35,10 +35,10 @@
  artifact_history_purchased_desc: "[HISTORY_ENTRY.GetRecipient.GetTitledFirstNameNicknamedNoTooltipRegnal] artefakt [Select_CString(HISTORY_ENTRY.GetRecipient.IsFemale,'zakoupila','zakoupil')]"
  artifact_history_ransomed_title: "[HISTORY_ENTRY.GetDate.GetString]"
  artifact_history_ransomed_desc: "[HISTORY_ENTRY.GetRecipient.GetTitledFirstNameNicknamedNoTooltipRegnal] artefakt [Select_CString(HISTORY_ENTRY.GetRecipient.IsFemale,'vykoupila','vykoupil')]"
- artifact_history_enshrined_title: "[HISTORY_ENTRY.GetDate.GetString]" # todo: NEW TRANSLATION
- artifact_history_enshrined_desc: "Uloženo ve svatyni [holy_site|E] [HISTORY_ENTRY.GetRecipientHolySite.GetName]" # todo: NEW TRANSLATION
- artifact_history_removed_from_holy_site_title: "[HISTORY_ENTRY.GetDate.GetString]" # todo: NEW TRANSLATION
- artifact_history_removed_from_holy_site_desc: "Odstraněno ze svatyně [holy_site|E] [HISTORY_ENTRY.GetRecipientHolySite.GetName]" # todo: NEW TRANSLATION
+ artifact_history_enshrined_title: "[HISTORY_ENTRY.GetDate.GetString]"
+ artifact_history_enshrined_desc: "Uloženo ve svatyni [Concept('holy_site','svatého místa')|E] [HISTORY_ENTRY.GetRecipientHolySite.GetName]"
+ artifact_history_removed_from_holy_site_title: "[HISTORY_ENTRY.GetDate.GetString]"
+ artifact_history_removed_from_holy_site_desc: "Odstraněno ze svatyně [Concept('holy_site','svatého místa')|E] [HISTORY_ENTRY.GetRecipientHolySite.GetName]"
  UNKNOWN_BENEFACTOR: "neznámý dobrodinec"
  ARTIFACT_DURABILITY: "Trvanlivost: $CURRENT|1$ / $MAX|1$"
  ARTIFACT_HISTORY: "Historie artefaktu"
@@ -55,11 +55,11 @@
  trinket_1: "$trinket$"
  trinket_2: "$trinket$"
  trinket_3: "$trinket$"
- brooch: "Spona" # todo: NEW TRANSLATION
- badge: "Odznak" # todo: NEW TRANSLATION
- holy_relic_1: "Svatá relikvie" # todo: NEW TRANSLATION
- holy_relic_2: "$holy_relic_1$" # todo: NEW TRANSLATION
- holy_relic_3: "$holy_relic_1$" # todo: NEW TRANSLATION
+ brooch: "Spona"
+ badge: "Odznak"
+ holy_relic_1: "Svatá relikvie"
+ holy_relic_2: "$holy_relic_1$"
+ holy_relic_3: "$holy_relic_1$"
  artifact_slot_pedestal: "Předmět na podstavci"
  artifact_slot_helmet: "Pokrývka hlavy"
  artifact_slot_miscellaneous: "Cetka"
@@ -73,9 +73,9 @@
  artifact_slot_wall_small: "Malá nástěnná ozdoba"
  artifact_slot_book: "Kniha"
  artifact_slot_journal: "Deník"
- artifact_slot_badge: "$badge$" # todo: NEW TRANSLATION
- artifact_slot_brooch: "Spona" # todo: NEW TRANSLATION
- artifact_slot_holy_relic: "Svatá relikvie" # todo: NEW TRANSLATION
+ artifact_slot_badge: "$badge$"
+ artifact_slot_brooch: "Spona"
+ artifact_slot_holy_relic: "Svatá relikvie"
  artifact_crown: "Koruna"
  artifact_helmet: "Pokrývka hlavy"
  artifact_helmet_simple: "$artifact_helmet$"
@@ -86,7 +86,7 @@
  artifact_regalia_simple: "$regalia$"
  artifact_armor: "Zbroj"
  artifact_trinket: "Cetka"
- artifact_badge: "$badge$" # todo: NEW TRANSLATION
+ artifact_badge: "$badge$"
  artifact_pedestal: "Předmět na podstavci"
  artifact_wall_big: "Velká nástěnná ozdoba"
  artifact_tapestry: "Tapiserie"
@@ -116,7 +116,7 @@
  artifact_armor_lamellar: "$armor$"
  artifact_armor_laminar: "$armor$"
  artifact_armor_brigandine: "$armor$"
- artifact_holy_relic: "Svatá relikvie" # todo: NEW TRANSLATION
+ artifact_holy_relic: "Svatá relikvie"
  pedestal: "Podstavec"
  wall_big: "Velká nástěnná ozdoba"
  wall_small: "Malá nástěnná ozdoba"
@@ -173,10 +173,10 @@
  RENAME_ARTIFACT_DESC: "Změnit název [ARTIFACT.GetNameNoTooltip]"
  RENAME_ARTIFACT_ACCEPT: "Přijmout"
  ARTIFACT_CURRENT_HOLDER: "Současný držitel: [Artifact.GetOwner.GetName]"
- ARTIFACT_CURRENT_HOLY_SITE_OWNER: "[enshrined|E] ve [holy_site|E]: [Artifact.GetHolySiteOwner.GetName]" # todo: NEW TRANSLATION
+ ARTIFACT_CURRENT_HOLY_SITE_OWNER: "[Concept('enshrined','uloženo ve svatyni')|EU] ve [Concept('holy_site','svatém místě')|E]: [Artifact.GetHolySiteOwner.GetName]"
  ARTIFACT_CREATOR: "Tvůrce: [Artifact.GetCreator.GetName]"
  DETAILS_TAB_HISTORY: "Historie"
- DETAILS_TAB_CLAIMS: "Nárokovatelé #weak ([GetDataModelSize( ArtifactDetailsView.GetClaimants )])#!" # todo: CHANGED (predtym: Nárokovatelé)
+ DETAILS_TAB_CLAIMS: "Nárokovatelé #weak ([GetDataModelSize( ArtifactDetailsView.GetClaimants )])#!"
  DETAILS_TAB_CLAIM_INTERACTIONS: "Máš nárok"
  DETAILS_TAB_NO_CLAIMANTS: "Na tento [Concept('artifact','artefakt')|E] nemá nikdo [Concept('artifact_claim','nárok')|E]"
  CHARACTER_HAS_NO_ARTIFACTS: "Žádné [Concept('artifacts','artefakty')|E]"
@@ -237,7 +237,7 @@
  DECAY_ARTIFACT_EQUIPPED: "Ve výbavě"
  DECAY_ARTIFACT_DISPlAY: "Vystaveno"
  DECAY_ARTIFACT_UNEQUIPPED: "V úschově"
- DECAY_ARTIFACT_ENSHRINED: "Uloženo" # todo: NEW TRANSLATION
+ DECAY_ARTIFACT_ENSHRINED: "Uloženo"
  DISPLAY_ARTIFACT: "#I \nKliknutím vystavíš#!"
  PUT_COURT_ARTIFACT_ON_DISPLAY: "#I \nKliknutím zde vystavíš#!"
  REMOVE_COURT_ARTIFACT_FROM_DISPLAY: "#I \nKliknutím uložíš#!"
@@ -266,16 +266,16 @@
  artifact_plate: "Talíř"
  artifact_urn: "Urna"
  artifact_tun_barrel: "Sud na víno"
- rarity_trigger: "Úroveň [rarity|E] je $RARITY$" # todo: NEW TRANSLATION
- rarity_trigger_greater_or_equal: "Úroveň [rarity|E] je $RARITY$ nebo vyšší" # todo: NEW TRANSLATION
- rarity_trigger_greater_than: "Úroveň [rarity|E] je vyšší než $RARITY$" # todo: NEW TRANSLATION
- rarity_trigger_less_or_equal: "Úroveň [rarity|E] je $RARITY$ nebo nižší" # todo: NEW TRANSLATION
- rarity_trigger_less_than: "Úroveň [rarity|E] je nižší než $RARITY$" # todo: NEW TRANSLATION
- rarity_trigger_not_equal: "Úroveň [rarity|E] není $RARITY$" # todo: NEW TRANSLATION
- is_sanctified_for_faith_global: "Je posvěcena jako [holy_relic|E] pro [faith|E] víry [FAITH.GetName]" # todo: NEW TRANSLATION
- is_sanctified_for_faith_third: "[ARTIFACT.GetName] je posvěcena jako [holy_relic|E] pro [faith|E] víry [FAITH.GetName]" # todo: NEW TRANSLATION
- not_is_sanctified_for_faith_global: "Není #bold posvěcena#! jako [holy_relic|E] pro [faith|E] víry [FAITH.GetName]" # todo: NEW TRANSLATION
- not_is_sanctified_for_faith_third: "[ARTIFACT.GetName] není #bold posvěcena#! jako [holy_relic|E] pro [faith|E] víry [FAITH.GetName]" # todo: NEW TRANSLATION
- ARTIFACT_IS_HOLY_RELIC: "Je [holy_relic|E] #underline #TOOLTIP:ARTIFACT_IS_HOLY_RELIC_BREAKDOWN [Select_CString( Artifact.IsHolyRelicFor( Faith.Self ), 'for', 'but #n not#! for')]#!#! [Faith.GetName]" # todo: NEW TRANSLATION
- ARTIFACT_IS_HOLY_RELIC_BREAKDOWN: "#T Požadavky na [holy_relic|E]#!\n [Artifact.GetIsHolyRelicForDesc( GetPlayer.GetFaith.Self )]" # todo: NEW TRANSLATION
- HOLY_SITE_HAS_NO_VALID_SLOT: "@warning_icon! #X Žádné dostupné místo, kam lze umístit [ARTIFACT.GetName]#!" # todo: NEW TRANSLATION
+ rarity_trigger: "Úroveň [Concept('rarity','vzácnosti')|E] je $RARITY$"
+ rarity_trigger_greater_or_equal: "Úroveň [Concept('rarity','vzácnosti')|E] je $RARITY$ nebo vyšší"
+ rarity_trigger_greater_than: "Úroveň [Concept('rarity','vzácnosti')|E] je vyšší než $RARITY$"
+ rarity_trigger_less_or_equal: "Úroveň [Concept('rarity','vzácnosti')|E] je $RARITY$ nebo nižší"
+ rarity_trigger_less_than: "Úroveň [Concept('rarity','vzácnosti')|E] je nižší než $RARITY$"
+ rarity_trigger_not_equal: "Úroveň [Concept('rarity','vzácnosti')|E] není $RARITY$"
+ is_sanctified_for_faith_global: "má posvěcení jako [Concept('holy_relic','svatá relikvie')|E] pro [Concept('faith','víru')|E] [FAITH.GetName]"
+ is_sanctified_for_faith_third: "[ARTIFACT.GetName|U] má posvěcení jako [Concept('holy_relic','svatá relikvie')|E] pro [Concept('faith','víru')|E] [FAITH.GetName]"
+ not_is_sanctified_for_faith_global: "#bold nemá posvěcení#! jako [Concept('holy_relic','svatá relikvie')|E] pro [Concept('faith','víru')|E] [FAITH.GetName]"
+ not_is_sanctified_for_faith_third: "[ARTIFACT.GetName|U] #bold nemá posvěcení#! jako [Concept('holy_relic','svatá relikvie')|E] pro [Concept('faith','víru')|E] [FAITH.GetName]"
+ ARTIFACT_IS_HOLY_RELIC: "Je [Concept('holy_relic','svatou relikvií')|E] #underline #TOOLTIP:ARTIFACT_IS_HOLY_RELIC_BREAKDOWN [Select_CString( Artifact.IsHolyRelicFor( Faith.Self ), 'pro', 'avšak #n nikoli#! pro')|l]#!#! [Faith.GetName]"
+ ARTIFACT_IS_HOLY_RELIC_BREAKDOWN: "#T Požadavky na [Concept('holy_relic','svatou relikvii')|E]#!\n [Artifact.GetIsHolyRelicForDesc( GetPlayer.GetFaith.Self )]"
+ HOLY_SITE_HAS_NO_VALID_SLOT: "@warning_icon! #X Žádné dostupné místo, kam lze umístit [ARTIFACT.GetName]#!"

@@ -2,7 +2,7 @@
  COUNCIL_WINDOW_TITLE: "[CouncilWindow.GetCharacter.Custom( 'GetCouncilWindowTitle' )|U]"
  COUNCIL_WINDOW_TITLE_GENERIC: "rada"
  COUNCIL_WINDOW_TITLE_KURULTAI: "kurultaj"
- COUNCIL_WINDOW_TITLE_CURIA: "kurie" # todo: NEW TRANSLATION
+ COUNCIL_WINDOW_TITLE_CURIA: "kurie"
  COUNCILWINDOW_POWERFUL_VASSAL_INFO: "@warning_icon! #X [CouncilWindow.GetNumberOfPowerfulVassalsNotInCouncil|V] [Concept('powerful_vassals','mocní vazalové')|El] požadují místo v [Concept('council','radě')|El]#!"
  COUNCILWINDOW_TT_REPLACE: "#T Jmenovat na pozici [ACTIVE_COUNCIL_TASK.GetPositionName]#!"
  COUNCILWINDOW_SELECT_COUNCILLOR: "Nebyla vybrána žádná pozice [CouncilPositionType.GetName]"
@@ -43,18 +43,18 @@
  SWAP_COUNCILLOR_CONFIRMATION_ACCEPT: "Prohodit"
  SWAP_COUNCILLOR_CONFIRMATION_DESC: "Prohodit pozice v [Concept('council','radě')|El] mezi [CHARACTER.GetUIName] a [TARGET_CHARACTER.GetUIName]"
  COUNCIL_TASK_CHARACTER_NOR_VALID: "@warning_icon! #X [CHARACTER.GetShortUIName] nemůže tento úkol vykonat:#!"
- CHANGE_TASK_CONFIRMATION_COUNTY_DESC: "Pošli svého [COUNCIL_TASK.GetPositionName], aby provedl úkol [COUNCIL_TASK_TYPE.GetName] v [COUNTY.GetTitle.GetName]."
- CHANGE_TASK_CONFIRMATION_COURT_DESC: "Pošli svého [COUNCIL_TASK.GetPositionName], aby provedl úkol [COUNCIL_TASK_TYPE.GetName] u dvora v [COUNTY.GetTitle.GetName]."
+ CHANGE_TASK_CONFIRMATION_COUNTY_DESC: "Pošli svého [COUNCIL_TASK.GetPositionName], aby provedl úkol [COUNCIL_TASK_TYPE.GetName] [CZPrepV(COUNTY.GetTitle.GetNameNoTooltip)] [COUNTY.GetTitle.Custom('CZ_LandedName_L')]."
+ CHANGE_TASK_CONFIRMATION_COURT_DESC: "Pošli svého [COUNCIL_TASK.GetPositionName], aby provedl úkol [COUNCIL_TASK_TYPE.GetName] u dvora [CZPrepV(COUNTY.GetTitle.GetNameNoTooltip)] [COUNTY.GetTitle.Custom('CZ_LandedName_L')]."
  COUNCIL_TASK_FABRICATE_DOMAIN: "Vytváření [Concept('claims','nároků')|El] uvnitř vlastního panství neposkytuje [Concept('casus_belli','casus belli')|El], ale umožňuje odvolání titulu bez [Concept('tyranny','tyranie')|El]"
  COUNCIL_TASK_FIND_SECRETS_LIEGE: "Tvůj lenní pán @warning_icon! #X postih k postupu#!"
  COUNCIL_TASK_FIND_SECRETS_INDEPENDENT: "Nezávislý vládce"
  COUNCIL_TASK_FIND_SECRETS_VASSAL: "Tvůj vazal"
  COUNCIL_WINDOW_COUNCILOR: "([COUNCIL_TASK.GetPositionName])"
- COUNCIL_WINDOW_VIEW_LIEGE: "Zobrazit [GetPlayer.GetLiege.Custom( 'GetCouncilWindowTitle' )] [Concept('liege','lenního pána')|El]" # todo: CHANGED, CHECK FORMAT (predtym: Zobrazit [CouncilWindow.GetCharacter.GetLiege.Custom( 'GetCouncilWindowTitle' )] [Concept('liege','lenního pána')|El]) # todo: FORMAT chýba [liege|E]; navyše [liege|El]
- COUNCIL_WINDOW_VIEW_MY: "Zobrazit svou [GetPlayer.Custom( 'GetCouncilWindowTitle' )]" # todo: CHANGED (predtym: Zobrazit svou [CouncilWindow.GetCharacter.Custom( 'GetCouncilWindowTitle' )])
- COUNCIL_WINDOW_LIEGE_COUNCIL: "[GetPlayer.GetLiege.Custom( 'GetCouncilWindowTitle' )|U] lenního pána [CouncilWindow.GetPositionAtLiege]" # todo: CHANGED (predtym: [CouncilWindow.GetCharacter.GetLiege.Custom( 'GetCouncilWindowTitle' )|U] lenního pána [CouncilWindow.GetPositionAtLiege)
- COUNCIL_WINDOW_TOP_LIEGE_COUNCIL: "[GetPlayer.GetTopLiege.Custom( 'GetCouncilWindowTitle' )|U] nejvyššího lenního pána [CouncilWindow.GetPositionAtTopLiege]" # todo: CHANGED (predtym: [CouncilWindow.GetCharacter.GetTopLiege.Custom( 'GetCouncilWindowTitle' )|U] nejvyššího lenního pána [CouncilWindow.GetP)
- COUNCIL_WINDOW_PLAYER_COUNCIL: "Tvá [GetPlayer.Custom( 'GetCouncilWindowTitle' )|U]" # todo: CHANGED (predtym: Tvá [CouncilWindow.GetCharacter.Custom( 'GetCouncilWindowTitle' )|U])
+ COUNCIL_WINDOW_VIEW_LIEGE: "Zobrazit [GetPlayer.GetLiege.Custom( 'GetCouncilWindowTitle' )|l] [Concept('liege','lenního pána')|El]"
+ COUNCIL_WINDOW_VIEW_MY: "Zobrazit svou [GetPlayer.Custom( 'GetCouncilWindowTitle' )|l]"
+ COUNCIL_WINDOW_LIEGE_COUNCIL: "[GetPlayer.GetLiege.Custom( 'GetCouncilWindowTitle' )|U] lenního pána [CouncilWindow.GetPositionAtLiege]"
+ COUNCIL_WINDOW_TOP_LIEGE_COUNCIL: "[GetPlayer.GetTopLiege.Custom( 'GetCouncilWindowTitle' )|U] nejvyššího lenního pána [CouncilWindow.GetPositionAtTopLiege]"
+ COUNCIL_WINDOW_PLAYER_COUNCIL: "Tvá [GetPlayer.Custom( 'GetCouncilWindowTitle' )|l]"
  COUNCIL_WINDOW_PLAYER_COURT: "Tvůj dvůr"
  COUNCIL_WINDOW_RETAINERS: "Lékař"
  COUNCIL_WINDOW_MINOR_TITLES: "Vedlejší tituly"
@@ -72,7 +72,7 @@
  COUNCIL_WINDOW_MAP_INSTRUCTION_CANCEL_TT: "#I Kliknutím pravým tlačítkem zrušíš výběr#!"
  COUNCIL_WINDOW_MAP_COUNCILLOR_TYPE: "Tvůj [PotentialTaskLocationWindow.GetActiveTask.GetPositionName]"
  COUNCIL_WINDOW_TOOLIP_CULTURES_IN_COUNTY: "Kultura: [CULTURE.GetName]"
- COUNCIL_WINDOW_TOOLIP_FAITHS_IN_COUNTY: "Víra: [FAITH.GetName]\nObřad: [RITE.GetName]" # todo: CHANGED (predtym: Víra: [FAITH.GetName])
+ COUNCIL_WINDOW_TOOLIP_FAITHS_IN_COUNTY: "Víra: [FAITH.GetName]\nObřad: [RITE.GetName]"
  COUNCIL_WINDOW_CURRENTLY_APPOINTED: "Aktuálně jmenovaný rádce"
  COUNCIL_WINDOW_SKILLS: "Dovednosti"
  COUNCIL_WINDOW_GUESTS_AND_COURTIERS: "[CourtWindow.GetCourtOwner.Custom('GetGuestsOrNot')]"

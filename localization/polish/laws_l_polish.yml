@@ -19,7 +19,7 @@
  LAW_TITLE_ALLEGIANCE_OPINION: "$EFFECT_LIST_BULLET$[Concept('opinion','Mínění')|E] [Concept('vassals','vazalů')|E] přísahajících [Concept('title_allegiance','věrnost titulu')|E]: $VALUE|+=$"
  LAW_CANT_BE_ON_ANY_TITLE: "[Law.GetName] nelze uplatnit na žádný titul[Select_CString( InDebugMode, '#D (bez spouštěče)#!', '')]"
  LAW_CANT_BE_ON_SPECIFIC_TITLE: "[Title.GetName] nemůže mít [Law.GetName]"
- government_authority: "[government_authority|E]" # todo: NEW TRANSLATION
+ government_authority: "[Concept('government_authority','vládní autorita')|EU]"
  crown_authority: "[Concept('crown_authority','Korunní autorita')|E]"
  crown_authority_0: "Autonomní vazalové"
  crown_authority_0_effects_not_in_prev: "#weak [Concept('vassals','Vazalové')|E] poskytují [Concept('levies','odvedence')|E] a [Concept('taxes','daně')|E], jinak si však mohou dělat, co chtějí#!"
@@ -32,10 +32,10 @@
  I_LACK_LAW_ALLOWING_TITLE_REVOCATION_TRIBAL: "Úroveň tvé [Concept('tribal_authority','kmenové autority')|E] je nižší než [GetLaw('tribal_authority_2').GetName]"
  I_LACK_LAW_ALLOWING_VASSAL_RETRACTION_TRIBAL: "Úroveň tvé [Concept('tribal_authority','kmenové autority')|E] je nižší než [GetLaw('tribal_authority_2').GetName]"
  I_LACK_LAW_ALLOWING_TITLE_REVOCATION_CROWN: "Úroveň tvé [Concept('crown_authority','korunní autority')|E] je nižší než [GetLaw('crown_authority_1').GetName]"
- I_LACK_LAW_ALLOWING_TITLE_REVOCATION_CHURCH: "[CHARACTER.GetShortUIName|U] [CharDoDoes(CHARACTER)] nemá [GetLaw('church_authority_1').GetName] [church_authority|E] ani vyšší" # todo: NEW TRANSLATION
+ I_LACK_LAW_ALLOWING_TITLE_REVOCATION_CHURCH: "[CHARACTER.GetShortUIName|U] [Select_CString(CHARACTER.IsLocalPlayer,'nemáš','nemá')|l] [Concept('church_authority','církevní autoritu')|E] [GetLaw('church_authority_1').GetName] ani vyšší"
  I_LACK_LAW_ALLOWING_TITLE_REVOCATION_SORYO: "Úroveň tvé [Concept('crown_authority','korunní autority')|E] je nižší než [GetLaw('japanese_bureaucracy_1').GetName]"
  I_LACK_LAW_ALLOWING_VASSAL_RETRACTION_CROWN: "Úroveň tvé [Concept('crown_authority','korunní autority')|E] je nižší než [GetLaw('crown_authority_1').GetName]"
- I_LACK_LAW_ALLOWING_VASSAL_RETRACTION_CHURCH: "[CHARACTER.GetShortUIName|U] [CharDoDoes(CHARACTER)] nemá [GetLaw('church_authority_1').GetName] [church_authority|E] ani vyšší" # todo: NEW TRANSLATION
+ I_LACK_LAW_ALLOWING_VASSAL_RETRACTION_CHURCH: "[CHARACTER.GetShortUIName|U] [Select_CString(CHARACTER.IsLocalPlayer,'nemáš','nemá')|l] [Concept('church_authority','církevní autoritu')|E] [GetLaw('church_authority_1').GetName] ani vyšší"
  I_LACK_LAW_ALLOWING_TITLE_REVOCATION_ADMIN: "Úroveň tvé [Concept('imperial_bureaucracy','imperiální byrokracie')|E] je nižší než [GetLaw('imperial_bureaucracy_1').GetName]"
  I_LACK_LAW_ALLOWING_VASSAL_RETRACTION_ADMIN: "Úroveň tvé [Concept('imperial_bureaucracy','imperiální byrokracie')|E] je nižší než [GetLaw('imperial_bureaucracy_1').GetName]"
  I_LACK_LAW_ALLOWING_SUCCESSION_LAW_CHANGE: "[SelectLocalization( GetPlayer.GetGovernment.HasGovernmentFlag( 'government_is_japan_feudal' ), 'I_LACK_LAW_ALLOWING_SUCCESSION_LAW_CHANGE_JAPANESE_FEUDAL', 'I_LACK_LAW_ALLOWING_SUCCESSION_LAW_CHANGE_FEUDAL' )]"
@@ -47,7 +47,7 @@
  I_LACK_ADMIN_ALLOWING_DESIGNATE_HEIR: "Nevlastníš [Concept('title','titul')|E] [Concept('noble_family','šlechtické rodiny')|E]"
  I_LACK_CROWN_AUTHORITY_DESIGNATE_HEIR: "Úroveň tvé [Concept('crown_authority','korunní autority')|E] je nižší než [GetLaw( 'crown_authority_3' ).GetName]"
  I_LACK_LAW_ALLOWING_DESIGNATE_HEIR: "Nemáš zákon, který by ti umožňoval určit dědice"
- I_LACK_LAW_ALLOWING_DESIGNATE_HEIR_THEOCRACY: "\nMísto toho použijte [character_interaction|E] #high $designate_theocratic_heir_interaction$#!" # todo: NEW TRANSLATION
+ I_LACK_LAW_ALLOWING_DESIGNATE_HEIR_THEOCRACY: "\nMísto toho použij [Concept('character_interaction','interakci s postavou')|E] #high $designate_theocratic_heir_interaction$#!"
  MY_DYNASTY_MEMBER_LEADS_THE_ELECTION: "Člen tvé [Concept('dynasty','dynastie')|E] ([CHARACTER.GetPrimaryTitle.GetHeir.GetShortUIName|V]) vede ve volbě o tvůj [Concept('primary_title','hlavní titul')|E]"
  I_HAVE_POWERFUL_VASSAL_WITH_NEGATIVE_OPINION: "Máš jednoho či více [Concept('powerful_vassals','mocných vazalů')|E], kteří o tobě mají záporné [Concept('opinion','mínění')|E] a blokují všechny změny [Concept('succession_law','zákona nástupnictví')|E]"
  designate_heir: "Určit jako dědice"
@@ -62,17 +62,17 @@
  tribal_authority_2_effects: "$EFFECT_LIST_BULLET$[Concept('titles','Tituly')|E] lze odejmout\n$EFFECT_LIST_BULLET$[Concept('vassals','Vazaly')|E] lze odebrat"
  tribal_authority_3: "Absolutní kmenová autorita"
  tribal_authority_3_effects: "$EFFECT_LIST_BULLET$#indent_newline:3 [Concept('independent','Nezávislí')|E] [Concept('tribal','kmenoví')|E] vládci se mohou usadit a přijmout [Concept('feudal','feudální zřízení')|E] nebo [Concept('clan','klanové zřízení')|E]#!"
- church_authority: "Církevní autorita" # todo: NEW TRANSLATION
- church_authority_0: "Autonomní duchovenstvo" # todo: NEW TRANSLATION
- church_authority_0_effects_not_in_prev: "#weak Duchovní vazalové poskytují [levies|E] a [taxes|E], ale zachovávají si širokou autonomii.#!" # todo: NEW TRANSLATION
- church_authority_1: "Omezená církevní autorita" # todo: NEW TRANSLATION
- church_authority_1_effects: "$EFFECT_LIST_BULLET$Lze odnímat [titles|E]\n$EFFECT_LIST_BULLET$Lze odebírat [vassals|E]\n$EFFECT_LIST_BULLET$[christian|E] [head_of_faith|E] může použít [decision|E] [GetDecision('enact_a_bull_decision').GetName]\n$EFFECT_LIST_BULLET$[subordinates|E] a světští [rulers|E] se dají o něco snáze [puppet|E]" # todo: NEW TRANSLATION
- church_authority_2: "Vysoká církevní autorita" # todo: NEW TRANSLATION
- church_authority_2_effects: "$EFFECT_LIST_BULLET$Vládci mohou založit teokratickou [dynasty|E]\n$EFFECT_LIST_BULLET$[vassals|E] nemohou vést [war|E] proti jiným vazalům, pokud na svého [liege|E] nepoužijí [hook|E]\n$EFFECT_LIST_BULLET$[titles|E] vazalů nemohou zdědit postavy mimo [realm|E]\n$EFFECT_LIST_BULLET$Všichni vazalové, kteří odmítnou odnětí titulu nebo odebrání vazala, jsou považováni za [criminals|E]\n$EFFECT_LIST_BULLET$[christian|E] [head_of_faith|E] může pomocí [decision|E] [GetDecision('enact_a_bull_decision').GetName] vyhlásit [great_holy_war|E]\n$EFFECT_LIST_BULLET$Lze použít [decision|E] [GetDecision('pam_establish_theocratic_dynasty_decision').GetName]\n$EFFECT_LIST_BULLET$[subordinates|E] a světští [rulers|E] se dají snáze [puppet|E]" # todo: NEW TRANSLATION
- church_authority_3: "Absolutní církevní autorita" # todo: NEW TRANSLATION
- church_authority_3_effects: "$EFFECT_LIST_BULLET$[vassals|E] nemohou vést žádnou [war|E], pokud na svého [liege|E] nepoužijí [hook|E]\n$EFFECT_LIST_BULLET$$clergy_force_land_transfers$\n$EFFECT_LIST_BULLET$[subordinates|E] a světští [rulers|E] se dají výrazně snáze [puppet|E]" # todo: NEW TRANSLATION
- CHURCH_AUTHORITY_IS_ON_COOLDOWN: "Církevní autoritu jste změnili teprve nedávno.\n    @alert_icon! #alert_trial Znovu ji lze změnit za [GetCurrentDateWithDiff( GetVarTimeRemaining( CHARACTER.MakeScope, 'church_authority_cooldown') )]#!" # todo: NEW TRANSLATION
- church_authority_establish_dynasty_requirement: "Máte zákon [GetLaw( 'church_authority_2' ).GetName]" # todo: NEW TRANSLATION
+ church_authority: "Církevní autorita"
+ church_authority_0: "Autonomní duchovenstvo"
+ church_authority_0_effects_not_in_prev: "#weak Duchovní vazalové poskytují [Concept('levies','odvedence')|E] a [Concept('taxes','daně')|E], ale zachovávají si širokou autonomii.#!"
+ church_authority_1: "Omezená církevní autorita"
+ church_authority_1_effects: "$EFFECT_LIST_BULLET$Lze odnímat [Concept('titles','tituly')|E]\n$EFFECT_LIST_BULLET$Lze odebírat [Concept('vassals','vazaly')|E]\n$EFFECT_LIST_BULLET$[Concept('christian','křesťanská')|EU] [Concept('head_of_faith','hlava víry')|E] může použít [Concept('decision','rozhodnutí')|E] [GetDecision('enact_a_bull_decision').GetName]\n$EFFECT_LIST_BULLET$[Concept('subordinates','podřízení')|EU] a světští [Concept('rulers','vládci')|E] se dají o něco snáze [Concept('puppet','ovládnout jako loutky')|E]"
+ church_authority_2: "Vysoká církevní autorita"
+ church_authority_2_effects: "$EFFECT_LIST_BULLET$Vládci mohou založit teokratickou [Concept('dynasty','dynastii')|E]\n$EFFECT_LIST_BULLET$[Concept('vassals','vazalové')|EU] nemohou vést [Concept('war','válku')|E] proti jiným vazalům, pokud na svého [Concept('liege','lenního pána')|E] nepoužijí [Concept('hook','páku')|E]\n$EFFECT_LIST_BULLET$[Concept('titles','tituly')|EU] vazalů nemohou zdědit postavy mimo [Concept('realm','panství')|E]\n$EFFECT_LIST_BULLET$Všichni vazalové, kteří odmítnou odnětí titulu nebo odebrání vazala, jsou považováni za [Concept('criminals','zločince')|E]\n$EFFECT_LIST_BULLET$[Concept('christian','křesťanská')|EU] [Concept('head_of_faith','hlava víry')|E] může pomocí [Concept('decision','rozhodnutí')|E] [GetDecision('enact_a_bull_decision').GetName] vyhlásit [Concept('great_holy_war','velkou svatou válku')|E]\n$EFFECT_LIST_BULLET$Lze použít [Concept('decision','rozhodnutí')|E] [GetDecision('pam_establish_theocratic_dynasty_decision').GetName]\n$EFFECT_LIST_BULLET$[Concept('subordinates','podřízení')|EU] a světští [Concept('rulers','vládci')|E] se dají snáze [Concept('puppet','ovládnout jako loutky')|E]"
+ church_authority_3: "Absolutní církevní autorita"
+ church_authority_3_effects: "$EFFECT_LIST_BULLET$[Concept('vassals','vazalové')|EU] nemohou vést žádnou [Concept('war','válku')|E], pokud na svého [Concept('liege','lenního pána')|E] nepoužijí [Concept('hook','páku')|E]\n$EFFECT_LIST_BULLET$$clergy_force_land_transfers$\n$EFFECT_LIST_BULLET$[Concept('subordinates','podřízení')|EU] a světští [Concept('rulers','vládci')|E] se dají výrazně snáze [Concept('puppet','ovládnout jako loutky')|E]"
+ CHURCH_AUTHORITY_IS_ON_COOLDOWN: "Církevní autoritu jsi [Select_CString(CHARACTER.IsFemale,'změnila','změnil')|l] teprve nedávno.\n    @alert_icon! #alert_trial Znovu ji lze změnit za [GetCurrentDateWithDiff( GetVarTimeRemaining( CHARACTER.MakeScope, 'church_authority_cooldown') )]#!"
+ church_authority_establish_dynasty_requirement: "Máš zákon [GetLaw( 'church_authority_2' ).GetName]"
  camp_purpose: "Účel tábora"
  camp_purpose_pass_phrase: "Stát se: [Law.GetNameNoTooltip]"
  camp_purpose_confirmation_button_text: "Změnit účel"
@@ -444,4 +444,4 @@
  not_conservative_powerful_families_tt: "[Concept('house_heads','Hlavy rodů')|E] alespoň [CHARACTER.MakeScope.ScriptValue('needed_conservative_powerful_families_value')] [Concept('powerful_families','mocných rodin')|E] #bold nesmějí#! být členy [GetSituation('dynastic_cycle').GetTopParticipantGroupByKey('conservative_movement').GetName] #weak (nyní: $VALUE|0$)#!"
  not_conservative_ministers_tt: "Alespoň [CHARACTER.MakeScope.ScriptValue('needed_conservative_ministers_value')] [Concept('ministers','ministrů')|E] #bold nesmí#! být členy [GetSituation('dynastic_cycle').GetTopParticipantGroupByKey('conservative_movement').GetName] #weak (nyní: $VALUE|0$)#!"
  can_have_single_heir_succession_law_trigger_merit_or_japan_tt: "Jedna z následujících podmínek:\n$BULLET_WITH_TAB$Tvá [Concept('culture','kultura')|E] má $innovation_primogeniture$ [Concept('innovation','inovaci')|E]\n$BULLET_WITH_TAB$Jsi [Concept('independent','nezávislým')|E] [Concept('ruler','vládcem')|E]\n$BULLET_WITH_TAB$Jsi [Concept('ceremonial_liege','obřadním panovníkem')|E]"
- clergy_force_land_transfers: "Při udělení souhlasu se světskou [interaction|E] [ecclesiastic_transfer_land_interaction|E] lze vynutit její přijetí" # todo: NEW TRANSLATION
+ clergy_force_land_transfers: "Při udělení souhlasu se světskou [Concept('interaction','interakcí')|E] [Concept('ecclesiastic_transfer_land_interaction','Převést území')|E] lze vynutit její přijetí"

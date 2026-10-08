@@ -35,7 +35,7 @@
  msg_siege_won: "Vítězství v obléhání"
  msg_siege_won_desc: "Nyní ovládáš [PROVINCE.GetName]"
  msg_siege_loot: "Vítězství v obléhání"
- msg_siege_loot_desc: "Nyní ovládáš [PROVINCE.GetName]\nZa obsazení [PROVINCE.GetName] získáváš [gold_i]$VALUE|V0$"
+ msg_siege_loot_desc: "Nyní ovládáš [PROVINCE.GetName]\nZa obsazení [CZProvName(PROVINCE,'G')] získáváš [gold_i]$VALUE|V0$"
  msg_siege_piety: "Dobytí hlavního sídla nepřátelské mandaly"
  msg_scheme_opportunity_threshold_1_desc: "Tvá [Concept('scheme','intrika')|E] [scheme.GetName|V] má [scheme_opportunity_i|E][EmptyScope.ScriptValue('multi_ending_scheme_charge_to_advance_threshold_t1_value')|P0] [Concept('scheme_opportunities','výhod')|E]"
  msg_scheme_opportunity_threshold_2_desc: "Tvá [Concept('scheme','intrika')|E] [scheme.GetName|V] má [scheme_opportunity_i|E][EmptyScope.ScriptValue('multi_ending_scheme_charge_to_advance_threshold_t2_value')|P0] [Concept('scheme_opportunities','výhod')|E]"
@@ -241,26 +241,26 @@
  msg_i_not_head_of_faith_anymore_desc: "V čele [FAITH.GetName] tě jako [FAITH.ReligiousHeadName] nahrazuje [LEFT_CHARACTER.GetShortUIName|U]"
  msg_i_not_head_of_multiple_faiths_anymore: "$msg_i_not_head_of_faith_anymore$"
  msg_i_not_head_of_multiple_faiths_anymore_desc: "V čele [FAITH.GetName] tě jako [FAITH.ReligiousHeadName] nahrazuje [LEFT_CHARACTER.GetShortUIName|U] a totéž platí pro další vyznání ($NUM_OTHER_FAITHS|V$)"
- msg_holy_site_created: "Nové posvátné místo" # todo: NEW TRANSLATION
- msg_holy_site_created_desc: "[changed_holy_site.GetName] bylo vysvěceno jako [holy_site|E] víry [notified_faith.GetName]" # todo: NEW TRANSLATION
- msg_holy_site_created_by_character: "$msg_holy_site_created$" # todo: NEW TRANSLATION
- msg_holy_site_created_by_character_desc: "[holy_site_actor.GetShortUIName|U] [Select_CString( holy_site_actor.IsLocalPlayer, 'have', 'has' )] vysvětil [changed_holy_site.GetName] jako [holy_site|E] víry [notified_faith.GetName]" # todo: NEW TRANSLATION
- msg_holy_site_adopted: "Posvátné místo přijato" # todo: NEW TRANSLATION
- msg_holy_site_adopted_desc: "[changed_holy_site.GetName] bylo přijato jako [holy_site|E] víry [notified_faith.GetName]" # todo: NEW TRANSLATION
- msg_holy_site_adopted_by_character: "$msg_holy_site_adopted$" # todo: NEW TRANSLATION
- msg_holy_site_adopted_by_character_desc: "[holy_site_actor.GetShortUIName|U] [Select_CString( holy_site_actor.IsLocalPlayer, 'have', 'has' )] přijal [changed_holy_site.GetName] jako [holy_site|E] víry [notified_faith.GetName]" # todo: NEW TRANSLATION
- msg_holy_site_elevated: "Posvátné místo povýšeno" # todo: NEW TRANSLATION
- msg_holy_site_elevated_desc: "[changed_holy_site.GetName] bylo povýšeno na [eminent_holy_site|E] víry [notified_faith.GetName]" # todo: NEW TRANSLATION
- msg_holy_site_elevated_by_character: "$msg_holy_site_elevated$" # todo: NEW TRANSLATION
- msg_holy_site_elevated_by_character_desc: "[holy_site_actor.GetShortUIName|U] [Select_CString( holy_site_actor.IsLocalPlayer, 'have', 'has' )] povýšil [changed_holy_site.GetName] na [eminent_holy_site|E] víry [notified_faith.GetName]" # todo: NEW TRANSLATION
- msg_holy_site_demoted: "Posvátné místo degradováno" # todo: NEW TRANSLATION
- msg_holy_site_demoted_desc: "[changed_holy_site.GetName] již není [eminent_holy_site|E] víry [notified_faith.GetName]" # todo: NEW TRANSLATION
- msg_holy_site_demoted_by_character: "$msg_holy_site_demoted$" # todo: NEW TRANSLATION
- msg_holy_site_demoted_by_character_desc: "[holy_site_actor.GetShortUIName|U] [Select_CString( holy_site_actor.IsLocalPlayer, 'have', 'has' )] degradoval [changed_holy_site.GetName]; to již není [eminent_holy_site|E] víry [notified_faith.GetName]" # todo: NEW TRANSLATION
- msg_holy_site_abandoned: "Posvátné místo opuštěno" # todo: NEW TRANSLATION
- msg_holy_site_abandoned_desc: "[changed_holy_site.GetName] již není [holy_site|E] víry [notified_faith.GetName]" # todo: NEW TRANSLATION
- msg_holy_site_abandoned_by_character: "$msg_holy_site_abandoned$" # todo: NEW TRANSLATION
- msg_holy_site_abandoned_by_character_desc: "[holy_site_actor.GetShortUIName|U] [Select_CString( holy_site_actor.IsLocalPlayer, 'have', 'has' )] opustil [changed_holy_site.GetName]; to již není [holy_site|E] víry [notified_faith.GetName]" # todo: NEW TRANSLATION
+ msg_holy_site_created: "Nové posvátné místo"
+ msg_holy_site_created_desc: "[Concept('holy_site','Svaté místo')|EU] [changed_holy_site.GetName] bylo vysvěceno pro víru [notified_faith.GetName]"
+ msg_holy_site_created_by_character: "$msg_holy_site_created$"
+ msg_holy_site_created_by_character_desc: "[holy_site_actor.GetShortUIName|U] [Select_CString(holy_site_actor.IsLocalPlayer,'jsi ','')|l][Select_CString(holy_site_actor.IsFemale,'vysvětila','vysvětil')|l] místo [changed_holy_site.GetName] jako [Concept('holy_site','svaté místo')|E] víry [notified_faith.GetName]"
+ msg_holy_site_adopted: "Posvátné místo přijato"
+ msg_holy_site_adopted_desc: "[Concept('holy_site','Svaté místo')|EU] [changed_holy_site.GetName] bylo přijato pro víru [notified_faith.GetName]"
+ msg_holy_site_adopted_by_character: "$msg_holy_site_adopted$"
+ msg_holy_site_adopted_by_character_desc: "[holy_site_actor.GetShortUIName|U] [Select_CString(holy_site_actor.IsLocalPlayer,'jsi ','')|l][Select_CString(holy_site_actor.IsFemale,'přijala','přijal')|l] místo [changed_holy_site.GetName] jako [Concept('holy_site','svaté místo')|E] víry [notified_faith.GetName]"
+ msg_holy_site_elevated: "Posvátné místo povýšeno"
+ msg_holy_site_elevated_desc: "Místo [changed_holy_site.GetName] bylo povýšeno na [Concept('eminent_holy_site','významné svaté místo')|E] víry [notified_faith.GetName]"
+ msg_holy_site_elevated_by_character: "$msg_holy_site_elevated$"
+ msg_holy_site_elevated_by_character_desc: "[holy_site_actor.GetShortUIName|U] [Select_CString(holy_site_actor.IsLocalPlayer,'jsi ','')|l][Select_CString(holy_site_actor.IsFemale,'povýšila','povýšil')|l] místo [changed_holy_site.GetName] na [Concept('eminent_holy_site','významné svaté místo')|E] víry [notified_faith.GetName]"
+ msg_holy_site_demoted: "Posvátné místo degradováno"
+ msg_holy_site_demoted_desc: "[changed_holy_site.GetName|U] již není [Concept('eminent_holy_site','významným svatým místem')|E] víry [notified_faith.GetName]"
+ msg_holy_site_demoted_by_character: "$msg_holy_site_demoted$"
+ msg_holy_site_demoted_by_character_desc: "[holy_site_actor.GetShortUIName|U] [Select_CString(holy_site_actor.IsLocalPlayer,'jsi ','')|l][Select_CString(holy_site_actor.IsFemale,'snížila','snížil')|l] význam místa [changed_holy_site.GetName]; již není [Concept('eminent_holy_site','významným svatým místem')|E] víry [notified_faith.GetName]"
+ msg_holy_site_abandoned: "Posvátné místo opuštěno"
+ msg_holy_site_abandoned_desc: "[changed_holy_site.GetName|U] již není [Concept('holy_site','svatým místem')|E] víry [notified_faith.GetName]"
+ msg_holy_site_abandoned_by_character: "$msg_holy_site_abandoned$"
+ msg_holy_site_abandoned_by_character_desc: "[holy_site_actor.GetShortUIName|U] [Select_CString(holy_site_actor.IsLocalPlayer,'jsi ','')|l][Select_CString(holy_site_actor.IsFemale,'opustila','opustil')|l] místo [changed_holy_site.GetName]; již není [Concept('holy_site','svatým místem')|E] víry [notified_faith.GetName]"
  msg_new_fascination_selected: "Nové [Concept('cultural_fascination','kulturní zaměření')|E]"
  msg_new_fascination_selected_desc: "Tvá [Concept('culture','kultura')|E] se nyní v rámci svého [Concept('fascination','zaměření')|E] soustředí na [Concept('innovation','inovaci')|E] $NAME|V$"
  msg_innovation_discovered: "Objevena inovace"
@@ -280,10 +280,10 @@
  msg_new_theocracy_lesee_disapprove_desc: "Tvůj [Concept('realm_priest','vrchní duchovní')|E], [LEFT_CHARACTER.GetShortUIName|U], tě nepodporuje #weak ([Concept('church_property','církevní majetek')|E])#!"
  msg_mercenary_company_dismissed: "Propuštění žoldnéřů"
  msg_mercenary_company_dismissed_desc: "Vypršela tvá smlouva s [Concept('mercenary_company','žoldnéřskou družinou')|E] [LEFT_TITLE.GetNameNoTooltip] a její vojáci byli propuštěni"
- msg_holy_order_dismissed: "Ukončení služby vojenského řádu" # todo: CHANGED (predtym: Ukončení služby svatého řádu)
- msg_holy_order_dismissed_desc: "[Concept('military_holy_order','Vojenský svatý řád')|E] [LEFT_TITLE.GetNameNoTooltip] byl propuštěn ze služby" # todo: CHANGED (predtym: [Concept('holy_order','Svatý řád')|E] [LEFT_TITLE.GetNameNoTooltip] byl propuštěn ze služby)
- msg_rite_updated: "Obřad změněn" # todo: NEW TRANSLATION
- msg_rite_updated_desc: "[rite|E] byl změněn" # todo: NEW TRANSLATION
+ msg_holy_order_dismissed: "Ukončení služby vojenského řádu"
+ msg_holy_order_dismissed_desc: "[Concept('military_holy_order','Vojenský svatý řád')|EU] [LEFT_TITLE.GetNameNoTooltip] byl propuštěn ze služby"
+ msg_rite_updated: "Obřad změněn"
+ msg_rite_updated_desc: "[Concept('rite','ritus')|EU] byl změněn"
  msg_fired_from_council: "Odvolání z rady"
  msg_fired_from_council_desc: "[LEFT_CHARACTER.GetShortUIName|U] tě odvolává ze své [Concept('council','rady')|E]"
  msg_council_swap_position: "Nová funkce v radě"
@@ -410,8 +410,8 @@
  msg_concubine_offered_invalidated_betrothed: "[secondary_recipient.GetTitledFirstName] a [spouse.GetShortUIName] jsou spolu [Concept('betrothed','zasnoubeni')|E], a proto se [secondary_recipient.GetTitledFirstName] nemůže stát [Select_CString( secondary_recipient.IsFemale, 'konkubínou', 'konkubínem' )] postavy [recipient.GetShortUIName]"
  msg_concubine_offer_rejected_title: "Odmítnutí konkubinátu"
  msg_concubine_offer_rejected: "[recipient.GetTitledFirstName] [Select_CString( recipient.IsFemale, 'odmítla', 'odmítl' )] přijmout postavu [secondary_recipient.GetTitledFirstName] do konkubinátu"
- msg_close_family_member_taken_as_concubine_title: "[concubine_victim.GetTitledFirstName] [Select_CString( concubine_victim.IsFemale, 'přijata za konkubínu', 'přijat za konkubína' )]" # todo: CHANGED, CHECK FORMAT (predtym: [secondary_recipient.GetTitledFirstName] [Select_CString( secondary_recipient.IsFemale, 'přijata za konkubínu', 'přijat ) # todo: FORMAT navyše [Select_CString( concubine_victim.IsFemale, '', '' )]
- msg_close_family_member_offered_as_concubine_title: "[concubine_victim.GetTitledFirstName] [Select_CString( concubine_victim.IsFemale, 'přijata za konkubínu', 'přijat za konkubína' )]" # todo: CHANGED, CHECK FORMAT (predtym: [secondary_actor.GetTitledFirstName] [Select_CString( secondary_actor.IsFemale, 'přijata za konkubínu', 'přijat za konku) # todo: FORMAT navyše [Select_CString( concubine_victim.IsFemale, '', '' )]
+ msg_close_family_member_taken_as_concubine_title: "[concubine_victim.GetTitledFirstName|U] [Select_CString( concubine_victim.IsFemale, 'přijata za konkubínu', 'přijat za konkubína' )|l]"
+ msg_close_family_member_offered_as_concubine_title: "[concubine_victim.GetTitledFirstName|U] [Select_CString( concubine_victim.IsFemale, 'přijata za konkubínu', 'přijat za konkubína' )|l]"
  msg_move_prisoner_to_dungeon: "Přesun vězně do žaláře"
  msg_move_prisoner_to_house_arrest: "Přesun vězně do domácího vězení"
  msg_execute_prisoner: "Poprava vězně"
@@ -548,16 +548,16 @@
  msg_legend_library_added_desc: "[Legend.GetName] byla přidána do tvé [Concept('legend_library','knihovny legend')|E]."
  message_consolidation_names: "#T Ostatní#!\n[PlayerMessageItem.GetConsolidationNames]"
  message_consolidation_others: "#tooltip:message_consolidation_names #L další ([Subtract_int32( PlayerMessageItem.GetConsolidationCount, '(int32)2' )|V])#!#!"
- msg_raid_completed_title: "Vyplenění území [RIGHT_TITLE.GetNameNoTierNoTooltip]"
- msg_raid_completed_desc: "[Concept('raided','Vyplenil')|E] jsi území [RIGHT_TITLE.GetName] ([RIGHT_TITLE.GetHolder.GetShortUIName])"
- msg_raid_lost_title: "Vyplenění území [RIGHT_TITLE.GetNameNoTierNoTooltip]"
- msg_raid_lost_desc: "[LEFT_CHARACTER.GetUIName] [Concept('raided', Select_CString( LEFT_CHARACTER.IsFemale, 'vyplenila', 'vyplenil' ))|E] území [RIGHT_TITLE.GetName] #weak ([RIGHT_TITLE.GetHolder.GetTitledFirstName])#!"
+ msg_raid_completed_title: "Vyplenění území [RIGHT_TITLE.Custom('CZ_LandedNameNoTierNoTooltip_G')]"
+ msg_raid_completed_desc: "[Concept('raided','Vyplenil')|E] jsi území [RIGHT_TITLE.Custom('CZ_LandedName_G')] ([RIGHT_TITLE.GetHolder.GetShortUIName])"
+ msg_raid_lost_title: "Vyplenění území [RIGHT_TITLE.Custom('CZ_LandedNameNoTierNoTooltip_G')]"
+ msg_raid_lost_desc: "[LEFT_CHARACTER.GetUIName] [Concept('raided', Select_CString( LEFT_CHARACTER.IsFemale, 'vyplenila', 'vyplenil' ))|E] území [RIGHT_TITLE.Custom('CZ_LandedName_G')] #weak ([RIGHT_TITLE.GetHolder.GetTitledFirstName])#!"
  msg_raid_intent_invalidated_title: "Záměr nájezdu [raiding_army.GetRaidIntent.GetName] pozbyl platnosti!"
  msg_raid_intent_invalidated_desc: "Záměr nájezdu [raiding_army.GetRaidIntent.GetName] pozbyl platnosti, protože jej [LEFT_CHARACTER.GetName] již nemůže využít"
- msg_barter_completed_barterer_title: "Směna na území [county.GetNameNoTierNoTooltip]"
- msg_barter_completed_holder_title: "Směna s tebou na území [barterer.GetPrimaryTitle.GetNameNoTierNoTooltip]"
+ msg_barter_completed_barterer_title: "Směna na území [county.Custom('CZ_LandedNameNoTierNoTooltip_G')]"
+ msg_barter_completed_holder_title: "Směna s tebou na území [barterer.GetPrimaryTitle.Custom('CZ_LandedNameNoTierNoTooltip_G')]"
  msg_barter_completed_barterer_desc: "[Concept('bartered','Uskutečnil')|E] jsi směnu s postavou [county.GetHolder.GetShortUIName]"
- msg_barter_completed_holder_desc: "[barterer.GetShortUIName] s tebou [Concept('bartered', Select_CString( barterer.IsFemale, 'uskutečnila', 'uskutečnil' ))|E] směnu na území [barony.GetName]"
+ msg_barter_completed_holder_desc: "[barterer.GetShortUIName] s tebou [Concept('bartered', Select_CString( barterer.IsFemale, 'uskutečnila', 'uskutečnil' ))|E] směnu na území [barony.Custom('CZ_LandedName_G')]"
  msg_barter_loot_delivered_title: "Doručení kořisti"
  msg_barter_loot_delivered_desc: "Tvá [Concept('bartering','směnná')|E] [Concept('army','armáda')|E] se vrátila s [Concept('loot','kořistí')|E]"
  msg_barter_loot_lost_title: "Ztráta kořisti"
@@ -565,15 +565,15 @@
  msg_barter_loot_won_title: "Získání kořisti"
  msg_barter_loot_won_desc: "Tvá [Concept('army','armáda')|E] získala od [Concept('bartering','směnné')|E] armády [Concept('loot','kořist')|E] v hodnotě [loot_i][barter_loot.GetValue]"
  msg_barter_aborted_title: "Přerušená směna"
- msg_barter_aborted_desc: "[Concept('barter','Směna')|E] na území [barony.GetName] byla přerušena kvůli nedostatku [Concept('barter_goods','směnného zboží')|E]"
+ msg_barter_aborted_desc: "[Concept('barter','Směna')|E] na území [barony.Custom('CZ_LandedName_G')] byla přerušena kvůli nedostatku [Concept('barter_goods','směnného zboží')|E]"
  msg_great_project_planned_title: "[GreatProject.GetNameNoTooltip] se plánuje"
- msg_great_project_planned_desc: "[Concept('great_project','Velký projekt')|E] [GreatProject.GetName] se plánuje na území [GreatProject.GetLocation.GetName].\nK zahájení potřebuje [GreatProject.GetRequiredContributionCount|V] [Concept('great_project_contributions','příspěvků')|E]."
+ msg_great_project_planned_desc: "[Concept('great_project','Velký projekt')|E] [GreatProject.GetName] se plánuje na území [CZProvName(GreatProject.GetLocation,'G')].\nK zahájení potřebuje [GreatProject.GetRequiredContributionCount|V] [Concept('great_project_contributions','příspěvků')|E]."
  msg_great_project_started_title: "Zahájen projekt [GreatProject.GetNameNoTooltip]"
  msg_great_project_started_desc: "[Concept('great_project','Velký projekt')|E] [GreatProject.GetName] získal dostatek [Concept('great_project_contributions','příspěvků')|E], aby mohla začít výstavba.\nDokončen bude za [GreatProject.GetConstructionEndDate.GetTimeToDate|V]."
  msg_great_project_aborted_title: "Opuštěn projekt [GreatProject.GetNameNoTooltip]"
- msg_great_project_aborted_desc: "[Concept('great_project','Velký projekt')|E] typu [GreatProject.GetType.GetName] na území [GreatProject.GetLocation.GetName] již nepřijímá příspěvky."
+ msg_great_project_aborted_desc: "[Concept('great_project','Velký projekt')|E] typu [GreatProject.GetType.GetName] na území [CZProvName(GreatProject.GetLocation,'G')] již nepřijímá příspěvky."
  msg_great_project_completed_title: "Dokončen projekt [GreatProject.GetNameNoTooltip]"
- msg_great_project_completed_desc: "[Concept('great_project','Velký projekt')|E] [GreatProject.GetName] byl na území [GreatProject.GetLocation.GetName] úspěšně dokončen"
+ msg_great_project_completed_desc: "[Concept('great_project','Velký projekt')|E] [GreatProject.GetName] byl na území [CZProvName(GreatProject.GetLocation,'G')] úspěšně dokončen"
  msg_known_pregnancy: "[LEFT_CHARACTER.GetTitledFirstNameNoTooltip] otěhotněla"
  msg_government_changed: "Změna způsobu vlády"
  msg_poem_sold_title: "Prodej básně muwaššah"
@@ -597,7 +597,7 @@
  msg_admin_title_lost_foe.tt: "Ztráta jmenování odmítaného držitele"
  msg_admin_title_lost.desc: "[title_loser.GetShortUIName|U] ([GetPlayer.Custom2('RelationToMeShort', SCOPE.sC('title_loser'))]) již nespravuje titul [title.GetName]"
  msg_estate_damaged.title: "$game_concept_estate$ byl poškozen"
- msg_estate_damaged.desc: "Tvůj [Concept('estate','statek')|E] byl poškozen, takže u jedné či více [Concept('estate_buildings','budov statku')|E] došlo ke snížení úrovně nebo k úplnému zničení.\n\n[Concept('estate','Statek')|E] byl přemístěn na nové místo [new_estate_location.GetName]."
+ msg_estate_damaged.desc: "Tvůj [Concept('estate','statek')|E] byl poškozen, takže u jedné či více [Concept('estate_buildings','budov statku')|E] došlo ke snížení úrovně nebo k úplnému zničení.\n\n[Concept('estate','Statek')|E] byl přemístěn do [CZProvName(new_estate_location,'G')]."
  msg_admin_provincial_army_request_accepted.title: "Žádost o vojsko schválena"
  msg_admin_provincial_army_request_denied.title: "Žádost o vojsko zamítnuta"
  msg_admin_provincial_army_request_denied.desc: "[recipient.GetShortUIName|U] [Select_CString( recipient.IsFemale, 'zamítla', 'zamítl' )] tvou žádost o vojsko"
@@ -607,26 +607,26 @@
  msg_child_of_age_title: "Tvé dítě dospělo"
  msg_child_of_age_desc: "[educated_child.GetShortUIName|U] ([relative.Custom2('RelationToMeShort', SCOPE.sC('educated_child'))]) [Select_CString( educated_child.IsFemale, 'dospěla', 'dospěl' )]."
  msg_appointed_to_title: "Jmenování guvernérem"
- msg_appointed_to_title_desc: "Díky prvnímu místu mezi kandidáty jsi [Select_CString( GetPlayer.IsFemale, 'byla jmenována držitelkou', 'byl jmenován držitelem' )] titulu [RIGHT_TITLE.GetDefinitiveName]" # todo: CHANGED, CHECK FORMAT (predtym: Díky prvnímu místu mezi kandidáty jsi [Select_CString( GetPlayer.IsFemale, 'byla jmenována', 'byl jmenován' )] [Concept() # todo: FORMAT navyše [Select_CString( GetPlayer.IsFemale, '', '' )]
+ msg_appointed_to_title_desc: "Díky prvnímu místu mezi kandidáty jsi [Select_CString( GetPlayer.IsFemale, 'byla jmenována držitelkou', 'byl jmenován držitelem' )|l] titulu [RIGHT_TITLE.GetDefinitiveName]"
  msg_tributary_invalidated_title: "Zneplatnění tributární smlouvy"
  msg_tributary_invalidated_desc: "[Concept('tributary_contract','Tributární smlouva')|E] mezi [LEFT_CHARACTER.GetName] a [RIGHT_CHARACTER.GetName] již není platná."
- monastic_founder_beatified_t: "Zakladatel řádu blahořečen" # todo: NEW TRANSLATION
- monastic_founder_beatified_desc: "[ROOT.Char.GetName] zemřel a uznávání [ROOT.Char.GetHerHis] svatosti započalo." # todo: NEW TRANSLATION
- msg_spiritual_fulfillment_changed_title: "Duchovní naplnění se změnilo" # todo: NEW TRANSLATION
- msg_spiritual_fulfillment_changed_desc: "Vaše [spiritual_fulfillment|E] se změnilo o $VALUE|0+$." # todo: NEW TRANSLATION
- msg_spiritual_fulfillment_changed_tenet_added_desc: "Vaše [spiritual_fulfillment|E] se změnilo o $VALUE|0+$ po přijetí [RIGHT_TENET.GetName( GetPlayer.GetRite )] jako [personal_tenet|E]." # todo: NEW TRANSLATION
- msg_spiritual_fulfillment_changed_tenet_removed_desc: "Vaše [spiritual_fulfillment|E] se změnilo o $VALUE|0+$ po zřeknutí se [RIGHT_TENET.GetName( GetPlayer.GetRite )] jako [personal_tenet|E]." # todo: NEW TRANSLATION
- msg_clerical_region_liege_change_title: "Lenní pán [LEFT_CHARACTER.GetTitleAsNameNoTooltip] změněn" # todo: NEW TRANSLATION
- msg_clerical_region_liege_change_desc: "[LEFT_CHARACTER.GetShortUIName], držitel [clerical_title|E] [TITLE.GetDefinitiveName], se stal [vassal|E] postavy [RIGHT_CHARACTER.GetShortUINamePossessive]" # todo: NEW TRANSLATION
- msg_clerical_region_independence_title: "[LEFT_CHARACTER.GetTitleAsNameNoTooltip] získal nezávislost" # todo: NEW TRANSLATION
- msg_clerical_region_independence_desc: "[LEFT_CHARACTER.GetShortUIName], držitel [clerical_title|E] [TITLE.GetDefinitiveName], se stal [independent|E]" # todo: NEW TRANSLATION
- msg_pam_new_archbishop_title: "[RIGHT_TITLE.GetNameNoTooltip] má nového arcibiskupa" # todo: NEW TRANSLATION
- msg_pam_new_archbishop_desc: "[LEFT_CHARACTER.GetShortUIName] nyní drží [RIGHT_TITLE.GetDefinitiveName], [clerical_region|E], jemuž podléhá vaše [realm_capital|E]" # todo: NEW TRANSLATION
- msg_faith_main_rite_changed.title: "Nový $game_concept_mainline_rite$" # todo: NEW TRANSLATION
- msg_faith_main_rite_changed.desc: "[new_main_rite.GetName] se stal [mainline_rite|E] víry [new_main_rite.GetFaith.Name] díky počtu [counties|E] s věřícími a [holy_sites|E] pod kontrolou" # todo: NEW TRANSLATION
- msg_cleric_support_title_gain: "Podpora duchovenstva se potvrdila" # todo: NEW TRANSLATION
- msg_cleric_support_title_gain_desc: "[LEFT_CHARACTER.GetFirstName] z rodu [LEFT_CHARACTER.GetHouse.GetName] získal [RIGHT_TITLE.GetName]" # todo: NEW TRANSLATION
- msg_clerical_region_conversion_started_title: "[RIGHT_TITLE.GetNameNoTooltip] obrací hrabství" # todo: NEW TRANSLATION
- msg_clerical_region_conversion_started_desc: "[LEFT_TITLE.GetDefinitiveName|U] se pod vlivem [RIGHT_TITLE.GetDefinitiveName] obrací na [RITE.GetName]" # todo: NEW TRANSLATION
- msg_clerical_region_conversion_ended_title: "[RIGHT_TITLE.GetNameNoTooltip] obrátil hrabství" # todo: NEW TRANSLATION
- msg_clerical_region_conversion_ended_desc: "[LEFT_TITLE.GetDefinitiveName|U] bylo pod vlivem [RIGHT_TITLE.GetDefinitiveName] obráceno na [RITE.GetName]" # todo: NEW TRANSLATION
+ monastic_founder_beatified_t: "Zakladatel řádu blahořečen"
+ monastic_founder_beatified_desc: "[ROOT.Char.GetName|U] [Select_CString(ROOT.Char.IsFemale,'zemřela','zemřel')|l] a začalo uznávání [Select_CString(ROOT.Char.IsFemale,'její','jeho')|l] svatosti."
+ msg_spiritual_fulfillment_changed_title: "Duchovní naplnění se změnilo"
+ msg_spiritual_fulfillment_changed_desc: "Tvoje [Concept('spiritual_fulfillment','duchovní naplnění')|E] se změnilo o $VALUE|0+$."
+ msg_spiritual_fulfillment_changed_tenet_added_desc: "Tvoje [Concept('spiritual_fulfillment','duchovní naplnění')|E] se změnilo o $VALUE|0+$ po přijetí [RIGHT_TENET.GetName( GetPlayer.GetRite )] jako [Concept('personal_tenet','osobní zásady')|E]."
+ msg_spiritual_fulfillment_changed_tenet_removed_desc: "Tvoje [Concept('spiritual_fulfillment','duchovní naplnění')|E] se změnilo o $VALUE|0+$ po zřeknutí se [RIGHT_TENET.GetName( GetPlayer.GetRite )] jako [Concept('personal_tenet','osobní zásady')|E]."
+ msg_clerical_region_liege_change_title: "Lenní pán [LEFT_CHARACTER.GetTitleAsNameNoTooltip] změněn"
+ msg_clerical_region_liege_change_desc: "[LEFT_CHARACTER.GetShortUIName|U], [Select_CString(LEFT_CHARACTER.IsFemale,'držitelka','držitel')|l] [Concept('clerical_title','duchovního titulu')|E] [TITLE.GetDefinitiveName], [Select_CString(LEFT_CHARACTER.IsLocalPlayer,'ses ','se ')|l][Select_CString(LEFT_CHARACTER.IsFemale,'stala','stal')|l] [Concept('vassal',Select_CString(LEFT_CHARACTER.IsFemale,'vazalkou','vazalem'))|E] [RIGHT_CHARACTER.Custom('CZ_ShortUIName_G')]"
+ msg_clerical_region_independence_title: "[LEFT_CHARACTER.GetTitleAsNameNoTooltip|U] [Select_CString(LEFT_CHARACTER.IsFemale,'získala','získal')|l] nezávislost"
+ msg_clerical_region_independence_desc: "[LEFT_CHARACTER.GetShortUIName|U], [Select_CString(LEFT_CHARACTER.IsFemale,'držitelka','držitel')|l] [Concept('clerical_title','duchovního titulu')|E] [TITLE.GetDefinitiveName], [Select_CString(LEFT_CHARACTER.IsLocalPlayer,'ses ','se ')|l][Select_CString(LEFT_CHARACTER.IsFemale,'stala','stal')|l] [Concept('independent',Select_CString(LEFT_CHARACTER.IsFemale,'nezávislou','nezávislým'))|E]"
+ msg_pam_new_archbishop_title: "[RIGHT_TITLE.GetNameNoTooltip|U] má nového arcibiskupa"
+ msg_pam_new_archbishop_desc: "[LEFT_CHARACTER.GetShortUIName|U] nyní [Select_CString(LEFT_CHARACTER.IsLocalPlayer,'držíš','drží')|l] [RIGHT_TITLE.GetDefinitiveName], [Concept('clerical_region','církevní oblast')|E], jíž podléhá tvé [Concept('realm_capital','hlavní sídlo panství')|E]"
+ msg_faith_main_rite_changed.title: "Nový $game_concept_mainline_rite$"
+ msg_faith_main_rite_changed.desc: "[new_main_rite.GetName|U] se stal [Concept('mainline_rite','hlavním ritem')|E] víry [new_main_rite.GetFaith.Name] díky počtu [Concept('counties','hrabství')|E] s věřícími a [Concept('holy_sites','svatých míst')|E] pod kontrolou"
+ msg_cleric_support_title_gain: "Podpora duchovenstva se potvrdila"
+ msg_cleric_support_title_gain_desc: "[LEFT_CHARACTER.GetFirstName|U] z rodu [LEFT_CHARACTER.GetHouse.GetName] [Select_CString(LEFT_CHARACTER.IsFemale,'získala','získal')|l] [RIGHT_TITLE.Custom('CZ_LandedName_A')]"
+ msg_clerical_region_conversion_started_title: "[RIGHT_TITLE.GetNameNoTooltip|U] obrací hrabství"
+ msg_clerical_region_conversion_started_desc: "[LEFT_TITLE.GetDefinitiveName|U] se pod vlivem [RIGHT_TITLE.GetDefinitiveName] obrací na [RITE.GetName]"
+ msg_clerical_region_conversion_ended_title: "Církevní oblast [RIGHT_TITLE.GetNameNoTooltip] dokončila obrácení hrabství"
+ msg_clerical_region_conversion_ended_desc: "[LEFT_TITLE.GetDefinitiveName|U] bylo pod vlivem [RIGHT_TITLE.GetDefinitiveName] obráceno na [RITE.GetName]"

@@ -95,6 +95,45 @@ macro = {
 	replace_with = "Select_CString(StringIsEmpty(TrimFront(TrimFrontChars(TrimFront(TrimFrontChars(TITLE, Localize('CZ_TitleTokenChars'))), Localize('CZ_TitleTokenChars')))), '', TrimFront(TrimFrontChars(TrimFront(TrimFrontChars(TITLE, Localize('CZ_TitleTokenChars'))), Localize('CZ_TitleTokenChars'))))"
 }
 
+# Exact-count word extraction. Only valid once the word count is known
+# (after CZTitleWordCountKey dispatch); no Select, so cheap to repeat.
+
+macro = {
+	description = "Custom() key BASE1/BASE2/BASE3 by TITLE word count (3 = three or more)"
+	definition = "CZTitleWordCountKey(TITLE,BASE)"
+	replace_with = "Select_CString(CZTitleHasThird(TITLE),Concatenate(BASE,'3'),Select_CString(CZTitleHasSecond(TITLE),Concatenate(BASE,'2'),Concatenate(BASE,'1')))"
+}
+
+macro = {
+	description = "First word of a two-word TITLE"
+	definition = "CZTitleW1of2(TITLE)"
+	replace_with = "TrimBack(TrimBackChars(TITLE, Localize('CZ_TitleTokenChars')))"
+}
+
+macro = {
+	description = "Second word of a two-word TITLE"
+	definition = "CZTitleW2of2(TITLE)"
+	replace_with = "TrimFront(TrimFrontChars(TITLE, Localize('CZ_TitleTokenChars')))"
+}
+
+macro = {
+	description = "First word of a three-word TITLE"
+	definition = "CZTitleW1of3(TITLE)"
+	replace_with = "TrimBack(TrimBackChars(TrimBack(TrimBackChars(TITLE, Localize('CZ_TitleTokenChars'))), Localize('CZ_TitleTokenChars')))"
+}
+
+macro = {
+	description = "Second word of a three-word TITLE"
+	definition = "CZTitleW2of3(TITLE)"
+	replace_with = "TrimBack(TrimBackChars(TrimFront(TrimFrontChars(TITLE, Localize('CZ_TitleTokenChars'))), Localize('CZ_TitleTokenChars')))"
+}
+
+macro = {
+	description = "Third word (rest) of a three-word TITLE"
+	definition = "CZTitleW3of3(TITLE)"
+	replace_with = "TrimFront(TrimFrontChars(TrimFront(TrimFrontChars(TITLE, Localize('CZ_TitleTokenChars'))), Localize('CZ_TitleTokenChars')))"
+}
+
 ##################################################
 # TITLE DECLENSION - WORD MORPHOLOGY
 ##################################################
@@ -1117,6 +1156,34 @@ macro = {
 	description = "Key for the name without tier: table, Rod <name>, rule composer, or unchanged"
 	definition = "CZLandNoTierKey(XT,XCASE)"
 	replace_with = "Select_CString(CZLandHasEntry(XT,XCASE),Concatenate('CZ_LandTable_',XCASE),Select_CString(CZLandIsRod(XT.GetNameNoTierNoTooltip),Concatenate('CZ_LandRod_',XCASE),Select_CString(Or(And(Not(CZTitleHasSecond(XT.GetNameNoTierNoTooltip)),CZLandIsAnimPl(XT.GetNameNoTierNoTooltip)),Or(And(CZTitleHasSecond(XT.GetNameNoTierNoTooltip),And(Not(CZTitleHasThird(XT.GetNameNoTierNoTooltip)),CZLandIsAnimPl2(XT.GetNameNoTierNoTooltip))),And(Not(CZTitleHasFourth(XT.GetNameNoTierNoTooltip)),CZLandOneNoun(CZTitleWord1(XT.GetNameNoTierNoTooltip),CZTitleWord2(XT.GetNameNoTierNoTooltip),CZTitleWord3(XT.GetNameNoTierNoTooltip))))),CZLandLenKey(XT.GetNameNoTierNoTooltip,'CZ_LandNoTier',XCASE),'CZ_LandRawNoTier')))"
+}
+
+# Staged NoTier dispatch. Stage 1 only checks table / Rod and word count, so
+# table hits never pay for the morphology conditions (Select is eager).
+# Stage 2 (CZ_LandNTMorph<n>_<case>) checks morphology for an exact word count.
+
+macro = {
+	description = "Stage 1 NoTier key: table, Rod or CZ_LandNTMorph<n>_<case>"
+	definition = "CZLandNoTierStage1(XT,XCASE)"
+	replace_with = "Select_CString(CZLandHasEntry(XT,XCASE),Concatenate('CZ_LandTable_',XCASE),Select_CString(CZLandIsRod(XT.GetNameNoTierNoTooltip),Concatenate('CZ_LandRod_',XCASE),CZLandLenKey(XT.GetNameNoTierNoTooltip,'CZ_LandNTMorph',XCASE)))"
+}
+
+macro = {
+	description = "Stage 2 NoTier key for a one-word name N"
+	definition = "CZLandNTMorph1Key(N,XCASE)"
+	replace_with = "Select_CString(Or(CZLandIsAnimPl(N),CZLandOneNoun(N,'','')),Concatenate('CZ_LandNoTier1_',XCASE),'CZ_LandRawNoTier')"
+}
+
+macro = {
+	description = "Stage 2 NoTier key for a two-word name N"
+	definition = "CZLandNTMorph2Key(N,XCASE)"
+	replace_with = "Select_CString(Or(CZLandIsAnimPl2(N),CZLandOneNoun(CZLandW2a(N),CZLandW2b(N),'')),Concatenate('CZ_LandNoTier2_',XCASE),'CZ_LandRawNoTier')"
+}
+
+macro = {
+	description = "Stage 2 NoTier key for a name N with three or more words"
+	definition = "CZLandNTMorph3Key(N,XCASE)"
+	replace_with = "Select_CString(And(Not(CZTitleHasFourth(N)),CZLandOneNoun(CZLandW3a(N),CZLandW3b(N),CZLandW3c(N))),Concatenate('CZ_LandNoTier3_',XCASE),'CZ_LandRawNoTier')"
 }
 
 macro = {

@@ -40,7 +40,7 @@
  SCHEME_TIER_INFLUENCE: "Hodnost [CHARACTER.GetShortUINamePossessive|U]"
  SCHEME_SPYMASTER: "Špehmistr [CHARACTER.GetShortUINamePossessive|U]"
  SCHEME_WINDOW_TT_CHARACTER_EXPOSED: "@warning_icon! #X @exposed_icon!Aktuálně odhaleno#!"
- SCHEME_WINDOW_OWNER_PUPPET: "Loutka: [Character.GetShortUIName]" # todo: NEW TRANSLATION
+ SCHEME_WINDOW_OWNER_PUPPET: "Loutka: [Character.GetShortUIName]"
  SCHEME_WINDOW_MEMBER_LIST: "Odhalení [Concept('agents','spolčenci')|E]"
  SCHEME_WINDOW_SCHEME_OWNER: "#T [Concept('scheme_owner','Osnovatel intriky')|E]#!: [CHARACTER.GetUIName|U]"
  SCHEME_WINDOW_SCHEME_MEMBER: "#T Člen intriky#!: [CHARACTER.GetUIName|U]"
@@ -241,7 +241,7 @@
  SCHEME_SEDUCE_TABOO_INCEST: "Incest je tabu: $VALUE|0=-+$"
  SCHEME_SEDUCE_UNWILLING_INCEST: "Jsme [Concept('family','rodina')|E]: $VALUE|0=-+$"
  SCHEME_SEDUCE_UNWILLING_INCEST_TOO_YOUNG: "Jsme [Concept('family','rodina')|E] a [TARGET_CHARACTER.GetShortUIName|U] tě vzhledem ke svému nízkému věku nedokáže vnímat jinak."
- THEY_SCHEME_SEDUCE_UNWILLING_INCEST_TOO_YOUNG: "[CHARACTER.GetShortUIName|U] je [family|E] a [TARGET_CHARACTER.GetShortUIName|U] je příliš mladý na to, aby vnímal [CHARACTER.GetShortUIName] jako něco jiného." # todo: NEW TRANSLATION
+ THEY_SCHEME_SEDUCE_UNWILLING_INCEST_TOO_YOUNG: "[CHARACTER.GetShortUIName|U] patří do [Concept('family','rodiny')|E] a [TARGET_CHARACTER.GetShortUIName] je příliš [Select_CString(TARGET_CHARACTER.IsFemale,'mladá','mladý')|l] na to, aby [CHARACTER.Custom('CZ_ShortUIName_A')] [Select_CString(TARGET_CHARACTER.IsFemale,'vnímala','vnímal')|l] jinak."
  SCHEME_SEDUCE_TABOO_SODOMY: "Homosexualita je tabu: $VALUE|0=-+$"
  SCHEME_CONVINCED_AT_FEAST: "Přesvědčení během hostiny: $VALUE|0=-+$"
  COMPASSIONATE_REASON: "[ROOT.Char.GetAIPersonality] to považuje za nemorální: $VALUE|+0=$"
@@ -264,7 +264,7 @@
  SCHEME_I_MUST_TAKE_VENGEANCE: "Musím se pomstít [target.GetShortUINameNoTooltip]!: $VALUE|+0=$"
  SCHEME_GET_RID_OF_UNRULY_CLAIMANT: "Tím se zbavím nepoddajného [Concept('claimant','pretendenta')|E]: $VALUE|+0=$"
  SCHEME_AGAINST_SPOUSE_POSITIVE: "Má choť si to zaslouží: $VALUE|+0=$"
- SCHEME_AGENT_PUPPET_OF_OWNER: "Můj [puppeteer|E] poroučí, já poslouchám: $VALUE|+0=$" # todo: NEW TRANSLATION
+ SCHEME_AGENT_PUPPET_OF_OWNER: "Můj [Concept('puppeteer','loutkář')|E] poroučí, já poslouchám: $VALUE|+0=$"
  SCHEME_SOCIAL_CLIMBER_RANK_BONUS: "[target.GetShortUIName] v tom vidí příležitost: $VALUE|0=-+$"
  SCHEME_SOCIAL_CLIMBER_RANK_PENALTY: "[target.GetShortUIName] v tom nevidí příležitost: $VALUE|0=-+$"
  SCHEME_NOT_FOLLOWER_OF_WITCHGOD: "Neuctívám [owner.GetFaith.WitchGodName]: $VALUE|0=-+$"
@@ -294,10 +294,10 @@
  SCHEME_PIETY_LEVEL_MODIFIER: "Tvá [Concept('piety_level','úroveň oddanosti')|E]: $VALUE|+0=$"
  SCHEME_SKULDUGGERY_FOCUS: "[GetFocus('intrigue_skulduggery_focus').GetName]: $VALUE|+0=$"
  SCHEME_DUTY_FOCUS: "[target.GetShortUIName] má [GetFocus('stewardship_duty_focus').GetName]: $VALUE|+0=$"
- SCHEME_FOREIGN_AFFAIRS_FOCUS: "[GetFocus('diplomacy_foreign_affairs_focus').GetName]: $VALUE|+0=$" # todo: CHANGED (predtym: [GetFocus('intrigue_foreign_affairs_focus').GetName]: $VALUE|+0=$)
- SCHEME_FAMILY_FOCUS: "[GetFocus('diplomacy_family_focus').GetName]: $VALUE|+0=$" # todo: CHANGED (predtym: [GetFocus('intrigue_family_focus').GetName]: $VALUE|+0=$)
+ SCHEME_FOREIGN_AFFAIRS_FOCUS: "[GetFocus('diplomacy_foreign_affairs_focus').GetName|U]: $VALUE|+0=$"
+ SCHEME_FAMILY_FOCUS: "[GetFocus('diplomacy_family_focus').GetName|U]: $VALUE|+0=$"
  LEARN_LANGUAGE_PEDAGOGY_PERK_DESC: "[GetPerk( 'pedagogy_perk' ).GetName( GetPlayer )]: $VALUE|+0=$"
- STUDY_FAITH_THEOLOGIAN_PERK_DESC: "[GetPerk( 'theologian_perk' ).GetName( GetPlayer )]: $VALUE|+0=$" # todo: NEW TRANSLATION
+ STUDY_FAITH_THEOLOGIAN_PERK_DESC: "[GetPerk( 'theologian_perk' ).GetName( GetPlayer )|U]: $VALUE|+0=$"
  BEFRIEND_THICKER_THAN_WATER_PERK_DESC: "[GetPerk( 'thicker_than_water_perk' ).GetName( GetPlayer )]: $VALUE|+0=$"
  ACCOLADE_COURT_SEDUCTION_VULNERABILITY_DESC: "Podpora promiskuity ze strany [Concept('acclaimed_knight','uznávaného rytíře')|E]: $VALUE|+0=$"
  BEFRIEND_FLATTERER_PERK_DESC: "[GetPerk( 'flatterer_perk' ).GetName( GetPlayer )]: $VALUE|+0=$"
@@ -312,12 +312,12 @@
  SCHEME_LUSTFUL_TRAIT: "[GetTrait('lustful').GetName( owner.Self )]: $VALUE|+0=$"
  SCHEME_CHASTE_TRAIT: "[GetTrait('chaste').GetName( owner.Self )]: $VALUE|+0=$"
  SCHEME_SHY_TRAIT: "[GetTrait('shy').GetName( owner.Self )]: $VALUE|+0=$"
- SCHEME_TARGET_DEVOUT_CLERGY: "[target.GetShortUIName|U] hluboce záleží na [target.GetHerHis] [faith|E]: $VALUE|+0=$" # todo: NEW TRANSLATION
- SCHEME_TARGET_HIGH_CLERICAL_OFFICE: "[target.GetShortUIName|U] zastává vysoký církevní úřad: $VALUE|+0=$" # todo: NEW TRANSLATION
- SCHEME_TARGET_HEAD_OF_FAITH: "[target.GetShortUIName|U] je [head_of_faith|E]: $VALUE|+0=$" # todo: NEW TRANSLATION
- SCHEME_TARGET_RITE_CHASTITY_VIRTUE: "[rite|E] [target.GetShortUINamePossessiveNoTooltip|U] považuje [GetTrait('chaste').GetName( target.Self )] za ctnost: $VALUE|+0=$" # todo: NEW TRANSLATION
- SCHEME_TARGET_RITE_LUST_VIRTUE: "[rite|E] [target.GetShortUINamePossessiveNoTooltip|U] považuje [GetTrait('lustful').GetName( target.Self )] za ctnost: $VALUE|+0=$" # todo: NEW TRANSLATION
- SCHEME_TARGET_RITE_CLERICAL_CELIBACY: "[rite|E] [target.GetShortUINamePossessiveNoTooltip|U] zakazuje [clergy|E] [marrying|E]: $VALUE|+0=$" # todo: NEW TRANSLATION
+ SCHEME_TARGET_DEVOUT_CLERGY: "[target.Custom('CZ_ShortUIName_D')|U] hluboce záleží na své [Concept('faith','víře')|E]: $VALUE|+0=$"
+ SCHEME_TARGET_HIGH_CLERICAL_OFFICE: "[target.GetShortUIName|U] zastává vysoký církevní úřad: $VALUE|+0=$"
+ SCHEME_TARGET_HEAD_OF_FAITH: "[target.GetShortUIName|U] je [Concept('head_of_faith','hlavou víry')|E]: $VALUE|+0=$"
+ SCHEME_TARGET_RITE_CHASTITY_VIRTUE: "[Concept('rite','Ritus')|EU] [target.Custom('CZ_ShortUINameNoTooltip_G')] považuje [GetTrait('chaste').GetName( target.Self )] za ctnost: $VALUE|+0=$"
+ SCHEME_TARGET_RITE_LUST_VIRTUE: "[Concept('rite','Ritus')|EU] [target.Custom('CZ_ShortUINameNoTooltip_G')] považuje [GetTrait('lustful').GetName( target.Self )] za ctnost: $VALUE|+0=$"
+ SCHEME_TARGET_RITE_CLERICAL_CELIBACY: "[Concept('rite','Ritus')|EU] [target.Custom('CZ_ShortUINameNoTooltip_G')] zakazuje [Concept('clergy','duchovenstvu')|E] [Concept('marrying','uzavírat sňatky')|E]: $VALUE|+0=$"
  scheme_beauty_good_1: "[GetTrait('beauty_good_1').GetName( owner.Self )]: $VALUE|+0=$"
  scheme_beauty_good_2: "[GetTrait('beauty_good_2').GetName( owner.Self )]: $VALUE|+0=$"
  scheme_beauty_good_3: "[GetTrait('beauty_good_3').GetName( owner.Self )]: $VALUE|+0=$"
@@ -338,7 +338,7 @@
  SCHEME_TRAIT_DEVOTED: "[GetTrait('devoted').GetName( owner.Self )]: $VALUE|+0=$"
  SCHEME_TRAIT_ORDER_MEMBER: "[GetTrait('order_member').GetName( owner.Self )]: $VALUE|+0=$"
  SCHEME_TRAIT_CRAVEN: "[GetTrait('craven').GetName( owner.Self )]: $VALUE|+0=$"
- SCHEME_TRAIT_BRAVE: "[GetTrait('brave').GetName( owner.Self )]: $VALUE|+0=$" # todo: NEW TRANSLATION
+ SCHEME_TRAIT_BRAVE: "[GetTrait('brave').GetName( owner.Self )|U]: $VALUE|+0=$"
  SCHEME_TRAIT_PARANOID: "[GetTrait('paranoid').GetName( owner.Self )]: $VALUE|+0=$"
  SCHEME_IS_A_SCHEMER: "Pletichaření: $VALUE|+0=$"
  SCHEME_TRAIT_TARGET_SEDUCER: "[GetTrait('seducer').GetName( owner.Self )]: $VALUE|+0=$"
@@ -352,24 +352,24 @@
  SCHEME_TRAIT_STUBBORN: "[GetTrait('stubborn').GetName( owner.Self )]: $VALUE|+0=$"
  SCHEME_TRAIT_FICKLE: "[GetTrait('fickle').GetName( owner.Self )]: $VALUE|+0=$"
  SCHEME_TRAIT_POET: "[GetTrait('lifestyle_poet').GetName( owner.Self )]: $VALUE|+0=$"
- SCHEME_TRAIT_ERUDITE: "[GetTrait('erudite').GetName( owner.Self )]: $VALUE|+0=$" # todo: NEW TRANSLATION
- STUDY_RITE_ADAPTIVE: "[GetTenetType('tenet_adaptive').GetBaseName]: $VALUE|+0=$" # todo: NEW TRANSLATION
- STUDY_RITE_SINITIC_SYNCRETISM: "[GetTenetType('tenet_sinitic_syncretism').GetBaseName]: $VALUE|+0=$" # todo: NEW TRANSLATION
- STUDY_RITE_EASTERN_SYNCRETISM: "[GetTenetType('tenet_eastern_syncretism').GetBaseName]: $VALUE|+0=$" # todo: NEW TRANSLATION
- STUDY_RITE_UNREFORMED_SYNCRETISM: "[GetTenetType('tenet_unreformed_syncretism').GetBaseName]: $VALUE|+0=$" # todo: NEW TRANSLATION
- STUDY_RITE_CHRISTIAN_SYNCRETISM: "[GetTenetType('tenet_christian_syncretism').GetBaseName]: $VALUE|+0=$" # todo: NEW TRANSLATION
- STUDY_RITE_ISLAMIC_SYNCRETISM: "[GetTenetType('tenet_islamic_syncretism').GetBaseName]: $VALUE|+0=$" # todo: NEW TRANSLATION
- STUDY_RITE_JEWISH_SYNCRETISM: "[GetTenetType('tenet_jewish_syncretism').GetBaseName]: $VALUE|+0=$" # todo: NEW TRANSLATION
- SCHEME_TRAIT_SCHOLAR: "[GetTrait('lifestyle_scholar').GetName( owner.Self )]: $VALUE|+0=$" # todo: NEW TRANSLATION
- SCHEME_TRAIT_WITCH: "[GetTrait('witch').GetName( owner.Self )]: $VALUE|+0=$" # todo: NEW TRANSLATION
- SCHEME_TRAIT_MYSTIC: "[GetTrait('mystic').GetName( owner.Self )]: $VALUE|+0=$" # todo: CHANGED (predtym: Mystické sklony: $VALUE|+0=$)
- SCHEME_PERK_OPEN_MINDED: "[GetPerk('open_minded_perk').GetName( owner.Self )]: $VALUE|+0=$" # todo: NEW TRANSLATION
+ SCHEME_TRAIT_ERUDITE: "[GetTrait('erudite').GetName( owner.Self )|U]: $VALUE|+0=$"
+ STUDY_RITE_ADAPTIVE: "[GetTenetType('tenet_adaptive').GetBaseName|U]: $VALUE|+0=$"
+ STUDY_RITE_SINITIC_SYNCRETISM: "[GetTenetType('tenet_sinitic_syncretism').GetBaseName|U]: $VALUE|+0=$"
+ STUDY_RITE_EASTERN_SYNCRETISM: "[GetTenetType('tenet_eastern_syncretism').GetBaseName|U]: $VALUE|+0=$"
+ STUDY_RITE_UNREFORMED_SYNCRETISM: "[GetTenetType('tenet_unreformed_syncretism').GetBaseName|U]: $VALUE|+0=$"
+ STUDY_RITE_CHRISTIAN_SYNCRETISM: "[GetTenetType('tenet_christian_syncretism').GetBaseName|U]: $VALUE|+0=$"
+ STUDY_RITE_ISLAMIC_SYNCRETISM: "[GetTenetType('tenet_islamic_syncretism').GetBaseName|U]: $VALUE|+0=$"
+ STUDY_RITE_JEWISH_SYNCRETISM: "[GetTenetType('tenet_jewish_syncretism').GetBaseName|U]: $VALUE|+0=$"
+ SCHEME_TRAIT_SCHOLAR: "[GetTrait('lifestyle_scholar').GetName( owner.Self )|U]: $VALUE|+0=$"
+ SCHEME_TRAIT_WITCH: "[GetTrait('witch').GetName( owner.Self )|U]: $VALUE|+0=$"
+ SCHEME_TRAIT_MYSTIC: "[GetTrait('mystic').GetName( owner.Self )|U]: $VALUE|+0=$"
+ SCHEME_PERK_OPEN_MINDED: "[GetPerk('open_minded_perk').GetName( owner.Self )|U]: $VALUE|+0=$"
  SCHEME_HERITAGE_MODIFIER: "Společné [Concept('heritage','dědictví')|E]: $VALUE|+0=$"
- SCHEME_DIFFERENT_LANGUAGE_MODIFIER: "Odlišný [language|E]: $VALUE|+0=$" # todo: NEW TRANSLATION
+ SCHEME_DIFFERENT_LANGUAGE_MODIFIER: "Odlišný [Concept('language','jazyk')|E]: $VALUE|+0=$"
  SCHEME_LOYAL_SOLDIERS_MODIFIER: "Z [Concept('traditions','tradic')|E] vůči [Concept('liege','lennímu pánovi')|E]: $VALUE|+0=$"
  SCHEME_YOUTH_MODIFIER: "Mládí a touha učit se: $VALUE|+0=$"
  SCHEME_CHAPLAIN_HELP_LEARNING_MODIFIER: "[Concept( 'realm_priest', GetPlayer.GetCouncillorPosition( 'councillor_court_chaplain' ).GetPositionNamePossesive )|E] – [Concept('learning','učenost')|E]: $VALUE|+0=$"
- LEARN_LANGUAGE_COMMUNAL_IDENTITY_MODIFIER: "[GetTenetType('tenet_communal_identity').GetBaseName]: $VALUE|+0=$" # todo: NEW TRANSLATION
+ LEARN_LANGUAGE_COMMUNAL_IDENTITY_MODIFIER: "[GetTenetType('tenet_communal_identity').GetBaseName|U]: $VALUE|+0=$"
  SCHEME_KNOWN_LANGUAGES_MODIFIER: "Počet již naučených [Concept('languages','jazyků')|E]: $VALUE|+0=$"
  SCHEME_TARGET_FRIEND: "S [target.GetShortUINamePossessive] tě pojí [Concept('friend','přátelství')|E]: $VALUE|+0=$"
  SCHEME_SCHOLAR_OFFICIALS_MODIFIER: "Z [Concept('traditions','tradic')|E] při učení [target.GetCulture.GetLanguage.GetName]: $VALUE|+0=$"
@@ -377,10 +377,10 @@
  scheme_executes_immediately: "[Concept('scheme','Intrika')|E] se provede okamžitě"
  OPEN_SCHEMES_TAB: "Intriky"
  OPEN_HOOKS_AND_SECRETS_TAB: "Páky a tajemství"
- OPEN_PUPPETS_TAB: "Loutky" # todo: NEW TRANSLATION
- OPEN_SCHEMES_BOOKMARK_TT: "#T $OPEN_SCHEMES_TAB$#!\n\nZobrazit [schemes|E], které právě provádíte, a ty, o kterých víte.\n\n#I Kliknutím zobrazíte#!" # todo: NEW TRANSLATION
- OPEN_HOOKS_AND_SECRETS_BOOKMARK_TT: "#T $OPEN_HOOKS_AND_SECRETS_TAB$#!\n\nZobrazit [hooks|E], které máte nebo dlužíte, a [secrets|E], o kterých víte.\n\n#I Kliknutím zobrazíte#!" # todo: NEW TRANSLATION
- OPEN_PUPPETS_BOOKMARK_TT: "#T $OPEN_PUPPETS_TAB$#!\n\nZobrazit své loutky.\n\n#I Kliknutím zobrazíte#!" # todo: NEW TRANSLATION
+ OPEN_PUPPETS_TAB: "Loutky"
+ OPEN_SCHEMES_BOOKMARK_TT: "#T $OPEN_SCHEMES_TAB$#!\n\nZobrazit [Concept('schemes','intriky')|E], které právě provádíš, a ty, o kterých víš.\n\n#I Kliknutím zobrazíš#!"
+ OPEN_HOOKS_AND_SECRETS_BOOKMARK_TT: "#T $OPEN_HOOKS_AND_SECRETS_TAB$#!\n\nZobrazit [Concept('hooks','páky')|E], které máš nebo dlužíš, a [Concept('secrets','tajemství')|E], o kterých víš.\n\n#I Kliknutím zobrazíš#!"
+ OPEN_PUPPETS_BOOKMARK_TT: "#T $OPEN_PUPPETS_TAB$#!\n\nZobrazit své loutky.\n\n#I Kliknutím zobrazíš#!"
  INTRIGUE_WINDOW_MY_HOOKS_TITLE: "Tvé [Concept('hooks','páky')|E]"
  INTRIGUE_WINDOW_HOOKS_ON_ME_TITLE: "[Concept('hooks','Páky')|E] na tebe"
  INTRIGUE_WINDOW_SECRETS_KNOWN_TO_ME_TITLE: "[Concept('secrets','Tajemství')|E], která znáš"
@@ -494,36 +494,36 @@
  ai_acceptance_trait_pilgrim: "Jsem [GetTrait('pilgrim').GetName( GetNullCharacter )]: $VALUE|+0=$"
  ai_acceptance_trait_faith_warrior: "Jsem [GetTrait('faith_warrior').GetName( GetNullCharacter )]: $VALUE|+0=$"
  ai_acceptance_trait_holy_warrior: "Jsem [GetTrait('holy_warrior').GetName( GetNullCharacter )]: $VALUE|+0=$"
- puppet_schemes_title: "#D Loutčí spiknutí#!" # todo: NEW TRANSLATION
- puppet_entry_name: "#D #T [Character.GetShortUINameNoTooltip]#!#!" # todo: NEW TRANSLATION
- puppet_action_disabled_tt: "#T Tuto akci nelze provést:#!\n[PuppetActionItem.GetActionInactiveReason]" # todo: NEW TRANSLATION
- puppet_interaction_container_name: "#D Jako [Character.GetShortUINameNoTooltip] ($PUPPET_TYPE$) ...#!" # todo: NEW TRANSLATION
- puppet_type_relation_desc: "#D Vaše $relation_description$#!" # todo: NEW TRANSLATION
- puppet_entry_title: "#T [PuppetEntry.GetPuppetType.GetNameNoTooltip]#!" # todo: NEW TRANSLATION
- puppet_entry_title_puppet_subheader: "#low;italic [PuppetEntry.GetPuppet.GetShortUINameNoTooltip]#!" # todo: NEW TRANSLATION
- intrigue_window_hook_strength_state: " [Hook.GetHookStrengthState]" # todo: NEW TRANSLATION
- puppet_major_actions_expand: "Hlavní akce" # todo: NEW TRANSLATION
- puppet_other_actions_expand: "Ostatní akce" # todo: NEW TRANSLATION
- puppet_other_actions_interactions_no_puppet_list_head: "[puppeteer|E] může přikázat své [SelectLocalization( Not( Character.IsValid ), 'puppet_type_name_generic', 'puppet_type_name_typed' )]:" # todo: NEW TRANSLATION
- puppet_type_name_typed: "[PuppetType.GetNameNoTooltip|V]" # todo: NEW TRANSLATION
- puppet_type_name_generic: "[puppet|E]" # todo: NEW TRANSLATION
- puppet_other_actions_custom_no_puppet_list_head: "[SelectLocalization( Not( Character.IsValid ), 'puppet_type_name_generic', 'puppet_type_name_typed' )] také umožňuje svému [puppeteer|E]:" # todo: NEW TRANSLATION
- puppet_other_actions_interactions_list_head: "Můžete přikázat [Character.GetShortUINameNoTooltip]:" # todo: NEW TRANSLATION
- puppet_other_actions_custom_list_head: "[Character.GetShortUINameNoTooltip] vám také umožňuje:" # todo: NEW TRANSLATION
- puppet_available_condition_header: "[PuppetType.GetNameNoTooltip|V] bude [rulers|E] k dispozici, pokud:" # todo: NEW TRANSLATION
- puppet_available_unconditionally: "Každý [ruler|E] může manipulovat s [PuppetType.GetNameNoTooltip|V]." # todo: NEW TRANSLATION
- puppets_section_title: "$game_concept_puppets$" # todo: NEW TRANSLATION
- puppet_interaction_category_tt_title: "Interakce: [PuppetInteractionGroup.GetCategory.GetName( GetPlayer )]" # todo: NEW TRANSLATION
- puppet_interaction_category_tt_header: "[PuppetInteractionGroup.GetPuppetType.GetNameNoTooltip] může provést následující speciální interakce v kategorii [PuppetInteractionGroup.GetCategory.GetName( GetPlayer )]:" # todo: NEW TRANSLATION
- puppet_interaction_category_tt_special_content: "[PuppetInteractionGroup.GetSpecialInteractionList]" # todo: NEW TRANSLATION
- puppet_interaction_category_tt_generic_content: "[PuppetInteractionGroup.GetGenericInteractionList]" # todo: NEW TRANSLATION
- puppet_interaction_category_tt_generic_interactions: "#L Obecné interakce#!" # todo: NEW TRANSLATION
- puppet_interaction_category_tt_no_special_interactions: "#weak Nejsou k dispozici žádné speciální interakce#!" # todo: NEW TRANSLATION
- puppet_interaction_no_interactions_available: "Nejsou k dispozici žádné [interactions|E]" # todo: NEW TRANSLATION
- puppet_selection_title: "Vyberte loutku" # todo: NEW TRANSLATION
- puppet_will_not_accept: "#N Nestane se loutkou ($ACCEPTANCE|=0$)#!" # todo: NEW TRANSLATION
- puppet_will_accept: "#P Může se stát loutkou ($ACCEPTANCE|=0$)#!" # todo: NEW TRANSLATION
- puppet_window_choose_puppet_tt: "#T Žádná [PuppetEntry.GetPuppetType.GetNameNoTooltip|V]#!\n\nMůžete hledat [PuppetEntry.GetPuppetType.GetName|V].\n\n#I Kliknutím otevřete zobrazení#!" # todo: NEW TRANSLATION
- puppet_cancel_scheme_tt: "#T Zrušit intriku#!\n\nJste loutkářem [PuppetEntry.GetPuppet.GetShortUINameNoTooltip] a můžete [PuppetEntry.GetPuppet.GetHerHim] přimět k ukončení této intriky typu [Scheme.GetSchemeType.GetTypeNameNoTooltip].\n\n#I Kliknutím intriku zrušíte#!" # todo: NEW TRANSLATION, CHECK FORMAT # todo: FORMAT chýba [puppeteer|E], [scheme|E]
- PUPPET_INTERACTION_LABEL: "[interactions|e]:" # todo: NEW TRANSLATION
- PUPPET_TYPE_DESCRIPTION_TEXT: "[PuppetType.GetDescription]" # todo: NEW TRANSLATION
+ puppet_schemes_title: "#D Loutčí spiknutí#!"
+ puppet_entry_name: "#D #T [Character.GetShortUINameNoTooltip|U]#!#!"
+ puppet_action_disabled_tt: "#T Tuto akci nelze provést:#!\n[PuppetActionItem.GetActionInactiveReason]"
+ puppet_interaction_container_name: "#D Jako [Character.GetShortUINameNoTooltip] ($PUPPET_TYPE$) ...#!"
+ puppet_type_relation_desc: "#D Tvoje $relation_description$#!"
+ puppet_entry_title: "#T [PuppetEntry.GetPuppetType.GetNameNoTooltip|U]#!"
+ puppet_entry_title_puppet_subheader: "#low;italic [PuppetEntry.GetPuppet.GetShortUINameNoTooltip|U]#!"
+ intrigue_window_hook_strength_state: " [Hook.GetHookStrengthState]"
+ puppet_major_actions_expand: "Hlavní akce"
+ puppet_other_actions_expand: "Ostatní akce"
+ puppet_other_actions_interactions_no_puppet_list_head: "[Concept('puppeteer','loutkář')|EU] může přikázat své [SelectLocalization( Not( Character.IsValid ), 'puppet_type_name_generic', 'puppet_type_name_typed' )]:"
+ puppet_type_name_typed: "[PuppetType.GetNameNoTooltip|VU]"
+ puppet_type_name_generic: "[Concept('puppet','loutka')|EU]"
+ puppet_other_actions_custom_no_puppet_list_head: "[SelectLocalization( Not( Character.IsValid ), 'puppet_type_name_generic', 'puppet_type_name_typed' )] také umožňuje svému [Concept('puppeteer','loutkáři')|E]:"
+ puppet_other_actions_interactions_list_head: "Můžeš přikázat [Character.GetShortUINameNoTooltip]:"
+ puppet_other_actions_custom_list_head: "[Character.GetShortUINameNoTooltip|U] ti také umožňuje:"
+ puppet_available_condition_header: "[PuppetType.GetNameNoTooltip|VU] bude [Concept('rulers','vládcům')|E] k dispozici, pokud:"
+ puppet_available_unconditionally: "Každý [Concept('ruler','vládce')|E] může manipulovat s [PuppetType.GetNameNoTooltip|V]."
+ puppets_section_title: "$game_concept_puppets$"
+ puppet_interaction_category_tt_title: "Interakce: [PuppetInteractionGroup.GetCategory.GetName( GetPlayer )]"
+ puppet_interaction_category_tt_header: "[PuppetInteractionGroup.GetPuppetType.GetNameNoTooltip|U] může provést následující speciální interakce v kategorii [PuppetInteractionGroup.GetCategory.GetName( GetPlayer )]:"
+ puppet_interaction_category_tt_special_content: "[PuppetInteractionGroup.GetSpecialInteractionList]"
+ puppet_interaction_category_tt_generic_content: "[PuppetInteractionGroup.GetGenericInteractionList]"
+ puppet_interaction_category_tt_generic_interactions: "#L Obecné interakce#!"
+ puppet_interaction_category_tt_no_special_interactions: "#weak Nejsou k dispozici žádné speciální interakce#!"
+ puppet_interaction_no_interactions_available: "Nejsou k dispozici žádné [Concept('interactions','interakce')|E]"
+ puppet_selection_title: "Vyber loutku"
+ puppet_will_not_accept: "#N Nestane se loutkou ($ACCEPTANCE|=0$)#!"
+ puppet_will_accept: "#P Může se stát loutkou ($ACCEPTANCE|=0$)#!"
+ puppet_window_choose_puppet_tt: "#T Žádná [PuppetEntry.GetPuppetType.GetNameNoTooltip|V]#!\n\nMůžeš hledat [PuppetEntry.GetPuppetType.GetName|V].\n\n#I Kliknutím otevři zobrazení#!"
+ puppet_cancel_scheme_tt: "#T Zrušit intriku#!\n\nJsi [Concept('puppeteer','loutkářem')|E] [PuppetEntry.GetPuppet.Custom('CZ_ShortUINameNoTooltip_G')] a můžeš [PuppetEntry.GetPuppet.Custom('CZ_ShortUIName_A')] přimět k ukončení této [Concept('scheme','intriky')|E] typu [Scheme.GetSchemeType.GetTypeNameNoTooltip|l].\n\n#I Kliknutím intriku zrušíš#!"
+ PUPPET_INTERACTION_LABEL: "[Concept('interactions','interakce')|eU]:"
+ PUPPET_TYPE_DESCRIPTION_TEXT: "[PuppetType.GetDescription|U]"

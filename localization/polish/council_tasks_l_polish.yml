@@ -53,7 +53,7 @@
  task_foreign_affairs_king_effect_desc: "\n\nOstatní králové v panství:"
  task_foreign_affairs_duke_effect_desc: "\n\nOstatní vévodové v panství:"
  task_foreign_affairs_count_effect_desc: "\n\nOstatní hrabata v panství:"
- task_foreign_affairs_fallback_effect_desc: "\n\nMínění ostatních vazalů: #P +[SCOPE.ScriptValue('chancellor_foreign_affairs_realm_opinion_scale')|1]#!" # todo: CHANGED (predtym: \n\nMínění ostatních vazalů:)
+ task_foreign_affairs_fallback_effect_desc: "\n\nMínění ostatních vazalů: #P +[SCOPE.ScriptValue('chancellor_foreign_affairs_realm_opinion_scale')|1]#!"
  task_foreign_affairs_not_independent_effect_desc: "\n$TAB$Zvyšuje se o #P +#![SCOPE.ScriptValue('chancellor_foreign_affairs_monthly_increase')|P]/měsíc až na #P +#![SCOPE.ScriptValue('chancellor_foreign_affairs_opinion_max')|1P]\n$TAB$[councillor.Custom('GetCouncillorKurultaiMemberPossessive')] [diplomacy_skill|E]: #P +[SCOPE.ScriptValue('chancellor_foreign_affairs_opinion_base')]#!"
  task_foreign_affairs_effect_desc_adaptive_traditions_bonus_opinion: "\n$TAB$[GetPerk('adaptive_traditions_perk').GetName(GetPlayer)]: #P +#![SCOPE.ScriptValue('chancellor_foreign_affairs_opinion_max_perk_bonus_modifier')|P]"
  task_foreign_affairs_effect_desc_bureaucrats_bonus_opinion: "\n$TAB$[GetDynastyPerk('erudition_legacy_5').GetName]: #P +#![SCOPE.ScriptValue('chancellor_foreign_affairs_opinion_max_erudition_modifier')|P]"
@@ -182,7 +182,7 @@
  task_manage_guards_knight_wounded: "\n$EFFECT_LIST_BULLET$#N Rytíř je zraněn#!"
  task_manage_guards_disorganized: "\n$EFFECT_LIST_BULLET$#N Dezorganizovaná královská stráž#!"
  task_manage_guards_notification_tooltip: "Z $task_manage_guards$"
- SCALED_COUNCILLOR_MARTIAL_VALUE: "[Concept('martial_skill','Válečnická dovednost')|E]: [councillor.GetCouncilTitle] [councillor.GetShortUINamePossessive]" # todo: CHANGED (predtym: [Concept('martial_skill','Válečnická dovednost')|E]: [councillor.GetCouncilTitle] [councillor.GetShortUIName])
+ SCALED_COUNCILLOR_MARTIAL_VALUE: "[Concept('martial_skill','Válečnická dovednost')|EU] [councillor.Custom('CZ_ShortUIName_G')] ([councillor.GetCouncilTitle|l])"
  INCREASE_CONTROL_BASE: "Základ"
  INCREASE_CONTROL_PERK_BONUS_VALUE: "$strict_organization_perk_name$"
  strict_organization_perk: "$strict_organization_perk_name$"
@@ -233,7 +233,7 @@
  SCALED_COUNCILLOR_INTRIGUE_VALUE: "[councillor.GetShortUINamePossessive] pletichářská dovednost ([councillor.GetCouncilTitle])"
  SPYMASTER_PROGRESS_BASE: "Základ"
  ESPIONAGE_PERK_BONUS_VALUE: "[GetPerk('digging_for_dirt_perk').GetName(GetPlayer)]"
- CONFESSION_TENET_BONUS_VALUE: "[GetTenetType('tenet_confession').GetName( GetPlayer.GetRite )]" # todo: NEW TRANSLATION
+ CONFESSION_TENET_BONUS_VALUE: "[GetTenetType('tenet_confession').GetName( GetPlayer.GetRite )|U]"
  TARGET_SPYMASTER_disrupt_schemes: "Špehmistr cíle maří intriky"
  TARGET_IS_LIEGE_penalty: "Cíl je tvým lenním pánem nebo výše postaveným vládcem"
  task_collect_taxes: "Vybírat daně"
@@ -298,7 +298,7 @@
  STEWARD_PROGRESS_BASE: "Základ"
  DEVELOP_COUNTY_PERK_BONUS_VALUE: "$planned_cultivation_perk_name$"
  STEWARD_PROMOTE_CULTURE_COMMUNAL_IDENTITY_BONUS_MODIFIER: "[councillor_liege.GetFaith.GetName] – Společná identita"
- STEWARD_PROMOTE_CULTURE_EASIER_TO_CONVERT_CULTURE_IN_SAME_FAITH_MOUNTAINS_BONUS: "[councillor_liege.GetFaith.GetName] – [GetTenetType('tenet_cthonic_redoubts').GetBaseName] v horách" # todo: CHANGED (predtym: [councillor_liege.GetFaith.GetName] – [GetFaithDoctrine('tenet_cthonic_redoubts').GetBaseName] v horách)
+ STEWARD_PROMOTE_CULTURE_EASIER_TO_CONVERT_CULTURE_IN_SAME_FAITH_MOUNTAINS_BONUS: "[councillor_liege.GetFaith.GetName|U] – [GetTenetType('tenet_cthonic_redoubts').GetBaseName] v horách"
  STEWARD_PROMOTE_CULTURE_INNOVATION_BONUS_EAST_SETTLING: "[councillor_liege.GetCulture.GetName] – Východní kolonizace"
  STEWARD_PROMOTE_CULTURE_LOCAL_TRADITIONS_RESPECTED: "Respektované místní tradice"
  STEWARD_PROMOTE_CULTURE_SHUUBIYYA: "Šu'úbíja"
@@ -322,39 +322,39 @@
  task_fabricate_claim_notification_tooltip: "Z $task_fabricate_claim$"
  task_fabricate_claim_desc_not_adjacent: "\n$TAB$Násobitel kvůli nesousedícímu hrabství: #N $BREAKDOWN_MULTIPLICATION_PREFIX$#![SCOPE.ScriptValue('court_chaplain_fabricate_claim_not_adjacent_penalty')|-1]"
  task_conversion: "Konvertovat víru v hrabství"
- task_conversion_effect_desc: "#S Při #V 100 %#!#!:\n$TAB$#indent_newline:4 Cílové [Concept('county','hrabství')|E] přijme [Concept('faith','víru')|E] [councillor.GetFaith.GetTextIcon][councillor.GetFaith.GetName] a [rite|E] [councillor.GetRite.GetName]#!" # todo: CHANGED (predtym: S Při V 100 % ! !:\n$TAB$Cílové [Concept('county','hrabství')|E] přijme [Concept('faith','víru')|E] [councillor.GetFaith)
- task_conversion_aligned_chaplain_effect_desc: "#S Při #V 100%#!#!:\n$TAB$#indent_newline:4 [county|E] změní [faith|E] na [councillor.GetFaith.GetTextIcon][councillor.GetFaith.GetName] a [rite|E] na [councillor.GetLiege.GetRite.GetName]#!" # todo: NEW TRANSLATION
- task_conversion_china_effect_desc: "#S Při #V 100 %#!#!:\n$TAB$#indent_newline:4 Cílové [Concept('county','hrabství')|E] přijme [Concept('faith','víru')|E] [councillor.GetLiege.GetFaith.GetTextIcon][councillor.GetLiege.GetFaith.GetName] a [rite|E] [councillor.GetLiege.GetRite.GetName]#!" # todo: CHANGED (predtym: S Při V 100 % ! !:\n$TAB$Cílové [Concept('county','hrabství')|E] přijme [Concept('faith','víru')|E] [councillor.GetLiege)
- task_conversion_rite_only_effect_desc: "#S Při #V 100%#!#!:\n$TAB$[county|E] změní [rite|E] na [councillor.GetRite.GetName]" # todo: NEW TRANSLATION
- task_conversion_china_rite_only_effect_desc: "#S Při #V 100%#!#!:\n$TAB$[county|E] změní [rite|E] na [councillor.GetLiege.GetRite.GetName]" # todo: NEW TRANSLATION
- task_conversion_liege_rite_only_effect_desc: "#S Při #V 100%#!#!:\n$TAB$[county|E] změní [rite|E] na [councillor.GetLiege.GetRite.GetName]" # todo: NEW TRANSLATION
+ task_conversion_effect_desc: "#S Při #V 100 %#!#!:\n$TAB$#indent_newline:4 Cílové [Concept('county','hrabství')|E] přijme [Concept('faith','víru')|E] [councillor.GetFaith.GetTextIcon][councillor.GetFaith.GetName] a [Concept('rite','ritus')|E] [councillor.GetRite.GetName]#!"
+ task_conversion_aligned_chaplain_effect_desc: "#S Při #V 100%#!#!:\n$TAB$#indent_newline:4 [Concept('county','hrabství')|E] změní [Concept('faith','víru')|E] na [councillor.GetFaith.GetTextIcon][councillor.GetFaith.GetName] a [Concept('rite','ritus')|E] na [councillor.GetLiege.GetRite.GetName]#!"
+ task_conversion_china_effect_desc: "#S Při #V 100 %#!#!:\n$TAB$#indent_newline:4 Cílové [Concept('county','hrabství')|E] přijme [Concept('faith','víru')|E] [councillor.GetLiege.GetFaith.GetTextIcon][councillor.GetLiege.GetFaith.GetName] a [Concept('rite','ritus')|E] [councillor.GetLiege.GetRite.GetName]#!"
+ task_conversion_rite_only_effect_desc: "#S Při #V 100%#!#!:\n$TAB$[Concept('county','hrabství')|E] změní [Concept('rite','ritus')|E] na [councillor.GetRite.GetName]"
+ task_conversion_china_rite_only_effect_desc: "#S Při #V 100%#!#!:\n$TAB$[Concept('county','hrabství')|E] změní [Concept('rite','ritus')|E] na [councillor.GetLiege.GetRite.GetName]"
+ task_conversion_liege_rite_only_effect_desc: "#S Při #V 100%#!#!:\n$TAB$[Concept('county','hrabství')|E] změní [Concept('rite','ritus')|E] na [councillor.GetLiege.GetRite.GetName]"
  task_conversion_development_loss_desc: "\n#indent_newline:4 $TAB$Cílové [Concept('county','hrabství')|E] ztratí [development_i]#N 1#! bod [Concept('development','rozvoje')|E] a další [development_i]#N 1#! za každých #V 10#! bodů stávajícího rozvoje#!"
- task_conversion_fervor_effect_desc: "\n#indent_newline:4 $TAB$Nová [faith|E] získá @fervor_icon!#P [EmptyScope.ScriptValue('trivial_fervor_value')|1]#! [fervor|E], stará [faith|E] získá @fervor_icon!#P [EmptyScope.ScriptValue('small_fervor_value')|1]#! [fervor|E]#!" # todo: NEW TRANSLATION
+ task_conversion_fervor_effect_desc: "\n#indent_newline:4 $TAB$Nová [Concept('faith','víra')|E] získá @fervor_icon!#P [EmptyScope.ScriptValue('trivial_fervor_value')|1]#! [Concept('fervor','horlivosti')|E], stará [Concept('faith','víra')|E] získá @fervor_icon!#P [EmptyScope.ScriptValue('small_fervor_value')|1]#! [Concept('fervor','horlivosti')|E]#!"
  task_conversion_opinion_gain: "\n$EFFECT_LIST_BULLET$#P Zvýšení lidového mínění#!"
  task_conversion_development_gain: "\n$EFFECT_LIST_BULLET$#P Zvýšení rozvoje hrabství#!"
  task_conversion_levy_gain: "\n$EFFECT_LIST_BULLET$#P Zvýšení počtu odvedenců z hrabství#!"
  task_conversion_resistance_to_conversion: "\n$EFFECT_LIST_BULLET$#N Odpor proti konverzi#!"
  task_conversion_opinion_loss: "\n$EFFECT_LIST_BULLET$#N Pokles lidového mínění#!"
- task_conversion_act_of_apostles_bonus: "\n$EFFECT_LIST_BULLET$#P $tenet_acts_of_apostles_default_name$: Zvýšení legitimity#!" # todo: NEW TRANSLATION
+ task_conversion_act_of_apostles_bonus: "\n$EFFECT_LIST_BULLET$#P $tenet_acts_of_apostles_default_name$: Zvýšení legitimity#!"
  task_conversion_notification_tooltip: "Z $task_conversion$"
  task_conversion.tt.forbidden.due_to_struggle_phase: "V této [Concept('struggle_phase_phase','fázi')|E] nemůžeš v [Concept('struggle_region_region','oblasti')|E] tohoto [Concept('struggle','sváru')|E] použít [Concept('convert_county','konverzi víry v hrabství')|E]"
- task_conversion.tt.forbidden.theocratic_off_rite_chaplain: "[councillor.GetCouncilTitleFirstName] je [theocratic|E] vládce, jehož [rite|E] se liší od [councillor_liege.GetShortUINamePossessive] a který není [puppet|E] [councillor_liege.GetShortUIName]" # todo: NEW TRANSLATION
- task_conversion.tt.county_rite_already_matches_liege: "[county.GetName] již následuje [rite|E] [councillor_liege.GetShortUINamePossessive] ([councillor_liege.GetRite.GetName])" # todo: NEW TRANSLATION
- task_conversion.tt.county_rite_already_matches_chaplain: "[county.GetName] již následuje [rite|E] [councillor.GetCouncilTitleFirstNamePossessive] ([councillor.GetRite.GetName])" # todo: NEW TRANSLATION
- task_conversion_county_rite_already_same_tt: "Toto [county|E] již následuje stejný [rite|E] jako váš [Concept( 'realm_priest', GetPlayer.GetCouncillorPosition( 'councillor_court_chaplain' ).GetPositionName )|E]" # todo: NEW TRANSLATION
- task_conversion_county_rite_already_same_as_liege_tt: "Toto [county|E] již následuje váš [rite|E]" # todo: NEW TRANSLATION
+ task_conversion.tt.forbidden.theocratic_off_rite_chaplain: "[councillor.GetCouncilTitleFirstName|U] je [Concept('theocratic',Select_CString(councillor.IsFemale,'teokratickou','teokratickým'))|E] [Select_CString(councillor.IsFemale,'vládkyní','vládcem')|l]. [Select_CString(councillor.IsFemale,'Její','Jeho')|U] [Concept('rite','ritus')|E] se liší od ritu [councillor_liege.Custom('CZ_ShortUIName_G')] a není [Concept('puppet','loutkou')|E] [councillor_liege.Custom('CZ_ShortUIName_G')]"
+ task_conversion.tt.county_rite_already_matches_liege: "[county.GetName|U] již následuje [Concept('rite','ritus')|E] [councillor_liege.Custom('CZ_ShortUIName_G')] ([councillor_liege.GetRite.GetName])"
+ task_conversion.tt.county_rite_already_matches_chaplain: "[county.GetName|U] již následuje [Concept('rite','ritus')|E] [councillor.GetRite.GetName], který vyznává [councillor.GetCouncilTitleFirstName]"
+ task_conversion_county_rite_already_same_tt: "Toto [Concept('county','hrabství')|E] již následuje stejný [Concept('rite','ritus')|E] jako tvůj [Concept( 'realm_priest', GetPlayer.GetCouncillorPosition( 'councillor_court_chaplain' ).GetPositionName )|E]"
+ task_conversion_county_rite_already_same_as_liege_tt: "Toto [Concept('county','hrabství')|E] již následuje tvůj [Concept('rite','ritus')|E]"
  task_religious_relations: "Náboženské vztahy"
  task_religious_relations_piety_effect_desc: "[Concept('piety','Zbožnost')|E]: @piety_icon!#P +[SCOPE.ScriptValue('court_chaplain_religious_relations_total_piety_gain')]#!/měsíc\n$TAB$[councillor.GetShortUINamePossessive] [Concept('learning_skill','učenost')|E] ([councillor.GetCouncilTitle]): #P +[SCOPE.ScriptValue('court_chaplain_religious_relations_modifier')]#!"
  task_religious_relations_effect_desc_perk_bonus_piety: "\n$TAB$[GetPerk('clerical_justifications_perk').GetName(GetPlayer)]: #P +[SCOPE.ScriptValue('court_chaplain_religious_relations_perk_bonus_modifier')]#!"
  task_religious_relations_effect_desc_legacy_bonus_piety: "\n$TAB$[GetDynastyPerk('erudition_legacy_5').GetName]: #P +[SCOPE.ScriptValue('court_chaplain_religious_relations_erudition_legacy_5_bonus_modifier')]#!"
  task_religious_relations_effect_desc_family_business_bonus_piety: "\n$TAB$$tradition_family_entrepreneurship_name$: #P +[SCOPE.ScriptValue('court_chaplain_religious_relations_family_business_bonus_modifier')]#!"
  task_religious_relations_effect_desc_consulted_house_bonus_piety: "\n$TAB$$unity_consulted_house_member_desc$: #P +[SCOPE.ScriptValue('court_chaplain_religious_relations_consulted_house_bonus_modifier')|P]%#!"
- task_religious_relations_effect_desc_celestial_hierarchy_bonus_piety: "\n$TAB$[GetTenetType('tenet_celestial_hierarchy').GetName( councillor_liege.GetRite )]: #P +[SCOPE.ScriptValue('court_chaplain_religious_relations_celestial_hierarchy_bonus_modifier')]#!" # todo: NEW TRANSLATION
+ task_religious_relations_effect_desc_celestial_hierarchy_bonus_piety: "\n$TAB$[GetTenetType('tenet_celestial_hierarchy').GetName( councillor_liege.GetRite )|U]: #P +[SCOPE.ScriptValue('court_chaplain_religious_relations_celestial_hierarchy_bonus_modifier')]#!"
  task_religious_relations_effect_desc_perk_bonus_opinion: "\n$TAB$[GetPerk('clerical_justifications_perk').GetName(GetPlayer)]: #P +#![SCOPE.ScriptValue('court_chaplain_religious_relations_opinion_max_perk_modifier')|P]"
  task_religious_relations_effect_desc_legacy_bonus_opinion: "\n$TAB$[GetDynastyPerk('erudition_legacy_5').GetName]: #P +#![SCOPE.ScriptValue('court_chaplain_religious_relations_opinion_max_erudition_modifier')|P]"
  task_religious_relations_effect_desc_family_business_bonus_opinion: "\n$TAB$$tradition_family_entrepreneurship_name$: #P +#![SCOPE.ScriptValue('court_chaplain_religious_relations_opinion_max_family_business_modifier')|P]"
  task_religious_relations_effect_desc_consulted_house_bonus_opinion: "\n$TAB$$unity_consulted_house_member_desc$: #P +#![SCOPE.ScriptValue('court_chaplain_religious_relations_opinion_max_consulted_house_modifier')|P]"
- task_religious_relations_effect_desc_celestial_hierarchy_bonus_opinion: "\n$TAB$[GetTenetType('tenet_celestial_hierarchy').GetName( councillor_liege.GetRite )]: #P +#![SCOPE.ScriptValue('court_chaplain_religious_relations_opinion_max_celestial_hierarchy_modifier')|P]" # todo: NEW TRANSLATION
+ task_religious_relations_effect_desc_celestial_hierarchy_bonus_opinion: "\n$TAB$[GetTenetType('tenet_celestial_hierarchy').GetName( councillor_liege.GetRite )|U]: #P +#![SCOPE.ScriptValue('court_chaplain_religious_relations_opinion_max_celestial_hierarchy_modifier')|P]"
  task_religious_relations_effect_desc_opinion: "\n\nMínění [Concept('theocratic','teokratických')|E] vládců ([councillor.GetFaith.GetAdjective]): #P +[SCOPE.ScriptValue('court_chaplain_religious_relations_opinion_modifier')|1P]#!\n(Zvyšuje se o #P +#![SCOPE.ScriptValue('court_chaplain_religious_relations_monthly_increase')|P]/měsíc až na #P +#![SCOPE.ScriptValue('court_chaplain_religious_relations_opinion_max')|1P])\n$TAB$[councillor.GetShortUINamePossessive] [Concept('learning_skill','učenost')|E] ([councillor.GetCouncilTitle]): #P +#![SCOPE.ScriptValue('court_chaplain_religious_relations_opinion_base')|P]"
  task_religious_relations_effect_no_hof_layman_clergy_desc_opinion: "\n\nMínění souvěrců ([councillor.GetFaith.GetAdjective]): #P +[SCOPE.ScriptValue('court_chaplain_religious_relations_no_hof_opinion_modifier')|1P]#!\n(Zvyšuje se o #P +#![SCOPE.ScriptValue('court_chaplain_religious_relations_no_hof_monthly_increase')|P]/měsíc až na #P +#![SCOPE.ScriptValue('court_chaplain_religious_relations_no_hof_opinion_max')|1P])\n$TAB$[councillor.GetShortUINamePossessive] [Concept('learning_skill','učenost')|E] ([councillor.GetCouncilTitle]): #P +#![SCOPE.ScriptValue('court_chaplain_religious_relations_no_hof_opinion_base')|P]"
  task_religious_relations_opinion_gain: "\n$EFFECT_LIST_BULLET$#P Zvýšení mínění vazalů#!"
@@ -362,10 +362,10 @@
  task_religious_relations_opinion_loss: "\n$EFFECT_LIST_BULLET$#N Snížení mínění vazalů#!"
  court_chaplain_religious_relations_modifier_desc: "Dvorní kaplan této postavy pracuje na zlepšení jejího náboženského postavení"
  task_religious_relations_notification_tooltip: "Z $task_religious_relations$"
- task_religious_relations_effect_moment_of_clarity: "\n$EFFECT_LIST_BULLET$#P Nárůst duchovního naplnění#!" # todo: NEW TRANSLATION
- task_religious_relations_effect_spiritual_bond: "\n$EFFECT_LIST_BULLET$#P Přátelství#!" # todo: NEW TRANSLATION
- task_religious_relations_effect_zeal_resonates: "\n$EFFECT_LIST_BULLET$#P Horlivost#!" # todo: NEW TRANSLATION
- task_religious_relations_effect_doubts_surface: "\n$EFFECT_LIST_BULLET$#N Ztráta duchovního naplnění#!" # todo: NEW TRANSLATION
+ task_religious_relations_effect_moment_of_clarity: "\n$EFFECT_LIST_BULLET$#P Nárůst duchovního naplnění#!"
+ task_religious_relations_effect_spiritual_bond: "\n$EFFECT_LIST_BULLET$#P Přátelství#!"
+ task_religious_relations_effect_zeal_resonates: "\n$EFFECT_LIST_BULLET$#P Horlivost#!"
+ task_religious_relations_effect_doubts_surface: "\n$EFFECT_LIST_BULLET$#N Ztráta duchovního naplnění#!"
  ERUDITION_DYNASTY_PERK_BONUS_VALUE: "[GetDynastyPerk('erudition_legacy_5').GetName]"
  FAMILY_BUSINESS_BONUS_VALUE: "$tradition_family_entrepreneurship_name$"
  CONSULTED_HOUSE_BONUS_VALUE: "$unity_consulted_house_member_desc$"
@@ -379,31 +379,31 @@
  FABRICATE_CLAIM_DYNASTY_PERK_BONUS_VALUE: "[GetDynastyPerk('erudition_legacy_5').GetName]"
  FABRICATE_CLAIM_LANGUAGE_SCHOLARS_BONUS: "Z počtu známých [Concept('languages','jazyků')|E]"
  FABRICATE_CLAIM_ANY_STRUGGLE_BONUS: "Probíhající [Concept('struggle','svár')|E]"
- COURT_CHAPLAIN_CONVERSION_FERVOR_IMPACT: "Horlivost ([councillor.GetFaith.GetName] oproti [county.GetProvince.GetCounty.GetRite.GetName])" # todo: CHANGED (predtym: Horlivost ([councillor.GetFaith.GetName] oproti [county.GetProvince.GetCounty.GetFaith.GetName]))
- COURT_CHAPLAIN_CONVERSION_RITE_FERVOR_IMPACT: "Horlivost (šíření obřadu v rámci [county.GetProvince.GetCounty.GetRite.GetName])" # todo: NEW TRANSLATION
- COURT_CHAPLAIN_CONVERSION_UNREFORMED_FAITH_PENALTY: "[councillor.GetRite.GetName] – [GetDoctrineType('unreformed_faith_doctrine').GetBaseName]" # todo: CHANGED (predtym: [councillor.GetFaith.GetName] – [GetFaithDoctrine('unreformed_faith_doctrine').GetBaseName])
- COURT_CHAPLAIN_CONVERSION_OFF_RITE_CHAPLAIN_PENALTY: "[rite|E] [councillor.GetCouncilTitleFirstNamePossessive] ([councillor.GetRite.GetName]) se liší od [rite|E] [councillor_liege.GetShortUINamePossessive] ([councillor_liege.GetRite.GetName])" # todo: NEW TRANSLATION
- COURT_CHAPLAIN_CONVERSION_FUNDAMENTALIST_FAITH_BONUS: "[councillor.GetRite.GetName] – [GetDoctrineType('doctrine_pluralism_fundamentalist').GetBaseName]" # todo: CHANGED (predtym: [councillor.GetFaith.GetName] – [GetFaithDoctrine('doctrine_pluralism_fundamentalist').GetBaseName])
- COURT_CHAPLAIN_CONVERSION_PLURALISTIC_FAITH_PENALTY: "[councillor.GetRite.GetName] – [GetDoctrineType('doctrine_pluralism_pluralistic').GetBaseName]" # todo: CHANGED (predtym: [councillor.GetFaith.GetName] – [GetFaithDoctrine('doctrine_pluralism_pluralistic').GetBaseName])
- COURT_CHAPLAIN_CONVERSION_FALSE_CONVERSION_MODIFIER: "[county.GetProvince.GetCounty.GetRite.GetName] – [GetTenetType('tenet_false_conversion_sanction').GetBaseName]" # todo: CHANGED (predtym: [county.GetProvince.GetCounty.GetFaith.GetName] – [GetFaithDoctrine('tenet_false_conversion_sanction').GetBaseName])
- COURT_CHAPLAIN_CONVERSION_REINCARNATION_MODIFIER: "[county.GetProvince.GetCounty.GetRite.GetName] – [GetTenetType('tenet_reincarnation').GetBaseName]" # todo: CHANGED (predtym: [county.GetProvince.GetCounty.GetFaith.GetName] – [GetFaithDoctrine('tenet_reincarnation').GetBaseName])
- COURT_CHAPLAIN_CONVERSION_DHARMIC_PACIFISM_MODIFIER: "[county.GetProvince.GetCounty.GetRite.GetName] – [GetTenetType('tenet_dharmic_pacifism').GetBaseName]" # todo: CHANGED (predtym: [county.GetProvince.GetCounty.GetFaith.GetName] – [GetFaithDoctrine('tenet_dharmic_pacifism').GetBaseName])
- COURT_CHAPLAIN_CONVERSION_ADAPTIVE_MODIFIER: "[county.GetProvince.GetCounty.GetRite.GetName] – [GetTenetType('tenet_adaptive').GetBaseName]" # todo: CHANGED (predtym: [county.GetProvince.GetCounty.GetFaith.GetName] – [GetFaithDoctrine('tenet_adaptive').GetBaseName])
- COURT_CHAPLAIN_CONVERSION_PURE_LAND_MODIFIER: "[county.GetProvince.GetCounty.GetRite.GetName] – [GetTenetType('tenet_pure_land').GetBaseName]" # todo: CHANGED (predtym: [county.GetProvince.GetCounty.GetFaith.GetName] – [GetFaithDoctrine('tenet_pure_land').GetBaseName])
- COURT_CHAPLAIN_CONVERSION_PASTORAL_ISOLATION_MODIFIER: "[county.GetProvince.GetCounty.GetRite.GetName] – [GetTenetType('tenet_pastoral_isolation').GetBaseName]" # todo: CHANGED (predtym: [county.GetProvince.GetCounty.GetFaith.GetName] – [GetFaithDoctrine('tenet_pastoral_isolation').GetBaseName])
- COURT_CHAPLAIN_CONVERSION_MENDICANT_PREACHERS_MODIFIER: "[councillor.GetRite.GetName] – [GetTenetType('tenet_mendicant_preachers').GetBaseName]" # todo: CHANGED (predtym: [councillor.GetFaith.GetName] – [GetFaithDoctrine('tenet_mendicant_preachers').GetBaseName])
- COURT_CHAPLAIN_CONVERSION_ALEXANDRIAN_CATECHISM_MODIFIER: "[councillor_liege.GetShortUIName] — [GetTenetType('tenet_alexandrian_catechism').GetName( councillor_liege.GetRite )]" # todo: NEW TRANSLATION
- COURT_CHAPLAIN_CONVERSION_COMMUNAL_IDENTITY_BONUS_MODIFIER: "[councillor.GetRite.GetName] – [GetTenetType('tenet_communal_identity').GetBaseName]" # todo: CHANGED (predtym: [councillor.GetFaith.GetName] – [GetFaithDoctrine('tenet_communal_identity').GetBaseName])
- COURT_CHAPLAIN_CONVERSION_COMMUNAL_IDENTITY_PENALTY_MODIFIER: "[councillor.GetRite.GetName] – [GetTenetType('tenet_communal_identity').GetBaseName]" # todo: CHANGED (predtym: [councillor.GetFaith.GetName] – [GetFaithDoctrine('tenet_communal_identity').GetBaseName])
- COURT_CHAPLAIN_CONVERSION_EASIER_TO_CONVERT_FAITH_IN_MOUNTAINS_BONUS_MODIFIER: "[councillor.GetRite.GetName] – [GetTenetType('tenet_cthonic_redoubts').GetBaseName] v horách" # todo: CHANGED (predtym: [councillor.GetFaith.GetName] – [GetFaithDoctrine('tenet_cthonic_redoubts').GetBaseName] v horách)
- COURT_CHAPLAIN_CONVERSION_HARDER_TO_CONVERT_FAITH_AWAY_IN_MOUNTAINS_MALUS_MODIFIER: "[county.GetProvince.GetCounty.GetRite.GetName] – [GetTenetType('tenet_cthonic_redoubts').GetBaseName] v horách" # todo: CHANGED (predtym: [county.GetProvince.GetCounty.GetFaith.GetName] – [GetFaithDoctrine('tenet_cthonic_redoubts').GetBaseName] v horách)
+ COURT_CHAPLAIN_CONVERSION_FERVOR_IMPACT: "Horlivost ([councillor.GetFaith.GetName] oproti [county.GetProvince.GetCounty.GetRite.GetName])"
+ COURT_CHAPLAIN_CONVERSION_RITE_FERVOR_IMPACT: "Horlivost (šíření ritu [county.GetProvince.GetCounty.GetRite.GetName])"
+ COURT_CHAPLAIN_CONVERSION_UNREFORMED_FAITH_PENALTY: "[councillor.GetRite.GetName|U] – [GetDoctrineType('unreformed_faith_doctrine').GetBaseName]"
+ COURT_CHAPLAIN_CONVERSION_OFF_RITE_CHAPLAIN_PENALTY: "[Concept('rite','Ritus')|EU] [councillor.GetRite.GetName], který vyznává [councillor.GetCouncilTitleFirstName], se liší od [Concept('rite','ritu')|E] [councillor_liege.Custom('CZ_ShortUIName_G')] ([councillor_liege.GetRite.GetName])"
+ COURT_CHAPLAIN_CONVERSION_FUNDAMENTALIST_FAITH_BONUS: "[councillor.GetRite.GetName|U] – [GetDoctrineType('doctrine_pluralism_fundamentalist').GetBaseName]"
+ COURT_CHAPLAIN_CONVERSION_PLURALISTIC_FAITH_PENALTY: "[councillor.GetRite.GetName|U] – [GetDoctrineType('doctrine_pluralism_pluralistic').GetBaseName]"
+ COURT_CHAPLAIN_CONVERSION_FALSE_CONVERSION_MODIFIER: "[county.GetProvince.GetCounty.GetRite.GetName|U] – [GetTenetType('tenet_false_conversion_sanction').GetBaseName]"
+ COURT_CHAPLAIN_CONVERSION_REINCARNATION_MODIFIER: "[county.GetProvince.GetCounty.GetRite.GetName|U] – [GetTenetType('tenet_reincarnation').GetBaseName]"
+ COURT_CHAPLAIN_CONVERSION_DHARMIC_PACIFISM_MODIFIER: "[county.GetProvince.GetCounty.GetRite.GetName|U] – [GetTenetType('tenet_dharmic_pacifism').GetBaseName]"
+ COURT_CHAPLAIN_CONVERSION_ADAPTIVE_MODIFIER: "[county.GetProvince.GetCounty.GetRite.GetName|U] – [GetTenetType('tenet_adaptive').GetBaseName]"
+ COURT_CHAPLAIN_CONVERSION_PURE_LAND_MODIFIER: "[county.GetProvince.GetCounty.GetRite.GetName|U] – [GetTenetType('tenet_pure_land').GetBaseName]"
+ COURT_CHAPLAIN_CONVERSION_PASTORAL_ISOLATION_MODIFIER: "[county.GetProvince.GetCounty.GetRite.GetName|U] – [GetTenetType('tenet_pastoral_isolation').GetBaseName]"
+ COURT_CHAPLAIN_CONVERSION_MENDICANT_PREACHERS_MODIFIER: "[councillor.GetRite.GetName|U] – [GetTenetType('tenet_mendicant_preachers').GetBaseName]"
+ COURT_CHAPLAIN_CONVERSION_ALEXANDRIAN_CATECHISM_MODIFIER: "[councillor_liege.GetShortUIName|U] — [GetTenetType('tenet_alexandrian_catechism').GetName( councillor_liege.GetRite )]"
+ COURT_CHAPLAIN_CONVERSION_COMMUNAL_IDENTITY_BONUS_MODIFIER: "[councillor.GetRite.GetName|U] – [GetTenetType('tenet_communal_identity').GetBaseName]"
+ COURT_CHAPLAIN_CONVERSION_COMMUNAL_IDENTITY_PENALTY_MODIFIER: "[councillor.GetRite.GetName|U] – [GetTenetType('tenet_communal_identity').GetBaseName]"
+ COURT_CHAPLAIN_CONVERSION_EASIER_TO_CONVERT_FAITH_IN_MOUNTAINS_BONUS_MODIFIER: "[councillor.GetRite.GetName|U] – [GetTenetType('tenet_cthonic_redoubts').GetBaseName] v horách"
+ COURT_CHAPLAIN_CONVERSION_HARDER_TO_CONVERT_FAITH_AWAY_IN_MOUNTAINS_MALUS_MODIFIER: "[county.GetProvince.GetCounty.GetRite.GetName|U] – [GetTenetType('tenet_cthonic_redoubts').GetBaseName] v horách"
  COURT_CHAPLAIN_CONVERSION_GHW_TENET_NO_HOF_MODIFIER: "[ROOT.Char.Custom('ghw_from_which_tenet')] – $game_concept_holy_sites$ ovládaná vírou"
  COURT_CHAPLAIN_CONVERSION_SYNCRETIC_WITH_RELIGION_MODIFIER: "Synkretismus s [Concept('faith','vírou')|E]"
  COURT_CHAPLAIN_CONVERSION_LOCAL_COUNTY_MODIFIERS: "[Concept('county_modifiers','Místní modifikátory hrabství')|E]"
  COURT_CHAPLAIN_CONVERSION_LIEGE_IS_DEFIANT_HIGH_MONARCH: "[Concept('liege','Lenní pán')|E] je vzdorovitým velekrálem"
  COUNCILLOR_LIEGE_MODIFIERS_BONUS: "[Concept('modifiers','Modifikátory')|E] [Concept('liege','lenního pána')|E] rádce"
  fp2_lyonese_monk_faith_conversion_task_desc: "[GetFaithByKey('adoptionist').GetAdherentName] konvertuje ostatní $christianity_religion_adherent_plural$"
- ep3_convert_county_to_state_faith: "[councillor.GetTopLiege.GetPrimaryTitle.GetStateRite.GetName] je [Concept('state_rite','státním obřadem')|E]" # todo: CHANGED (predtym: [councillor.GetFaith.GetName] je [Concept('state_faith','státní vírou')|E])
+ ep3_convert_county_to_state_faith: "[councillor.GetTopLiege.GetPrimaryTitle.GetStateRite.GetName|U] je [Concept('state_rite','státním ritem')|E]"
  minimum_conversion: "Minimum #low (0.10)#!"
  COURT_CHAPLAIN_CONVERSION_HOLY_SITE_JERUSALEM: "Svaté místo – Jeruzalém"
  COURT_CHAPLAIN_CONVERSION_HOLY_SITE_KERALA: "Svaté místo – Kérala"
@@ -413,8 +413,8 @@
  COURT_CHAPLAIN_CONVERSION_HOLY_SITE_WADI_EL_MILK: "Nepřátelské svaté místo – Vádí al-Milk"
  COURT_CHAPLAIN_CONVERSION_LIEGE_IS_SAVIOR: "[Concept('liege','Lenní pán')|E] je spasitelem"
  COURT_CHAPLAIN_CONVERSION_LIEGE_IS_DIVINE_BLOOD: "[Concept('liege','Lenní pán')|E] má božskou krev"
- COURT_CHAPLAIN_CONVERSION_LIEGE_IS_LITERALIST_SCHOLAR: "Lenní pán je [GetTrait('lifestyle_scholar').GetName( GetNullCharacter )]" # todo: NEW TRANSLATION
- COURT_CHAPLAIN_CONVERSION_LIEGE_IS_MONOPHYSITE_CONVICTION: "Lenní pán zastává $tenet_monophysitism_name$ jako [personal_tenet|E]" # todo: NEW TRANSLATION
+ COURT_CHAPLAIN_CONVERSION_LIEGE_IS_LITERALIST_SCHOLAR: "Lenní pán je [GetTrait('lifestyle_scholar').GetName( GetNullCharacter )]"
+ COURT_CHAPLAIN_CONVERSION_LIEGE_IS_MONOPHYSITE_CONVICTION: "Lenní pán zastává $tenet_monophysitism_name$ jako [Concept('personal_tenet','osobní zásadu')|E]"
  COURT_CHAPLAIN_CONVERSION_LEARNING_THEOLOGY: "[Concept('liege','Lenní pán')|E] podporuje konverzi"
  COURT_CHAPLAIN_FABRICATE_CLAIM_INNOVATION_BONUS_LAND_GRANTS: "[Concept('culture','Kultura')|E] [Concept('liege','lenního pána')|E] – Udělování půdy"
  COURT_CHAPLAIN_FABRICATE_CLAIM_NOT_ADJACENT: "Konstruování nároku na nesousedící hrabství"
@@ -478,11 +478,11 @@
  task_vizier_patronage: "$task_patronage$"
  task_vizier_patronage_effect_desc: "$task_patronage_effect_desc$"
  liege_converting_county_title: "Lenní pán konvertuje [county.GetNameNoTierNoTooltip|V]"
- liege_converting_county_desc: "[councillor_liege.GetShortUINamePossessive] [councillor.GetCouncilTitle] [Concept('converting','konvertuje')|E] [county.GetName] na [councillor_liege.GetRite.GetName] #weak ([old_rite.GetAdjective])#!" # todo: CHANGED (predtym: [councillor_liege.GetShortUINamePossessive] [councillor.GetCouncilTitle] [Concept('converting','konvertuje')|E] [county.)
+ liege_converting_county_desc: "[councillor.GetCouncilTitle|U] ve službách [councillor_liege.Custom('CZ_ShortUIName_G')] [Concept('converting','konvertuje')|E] [county.Custom('CZ_LandedName_A')] na [councillor_liege.GetRite.GetName] #weak ([old_rite.GetAdjective|l])#!"
  liege_stopped_converting_county_title: "Konverze lenním pánem zastavena"
- liege_stopped_converting_county_desc: "[councillor_liege.GetShortUINamePossessive] [councillor.GetCouncilTitle] již [Concept('converting','nekonvertuje')|E] [county.GetName] na [councillor_liege.GetRite.GetName] #weak ([old_rite.GetAdjective])#!" # todo: CHANGED (predtym: [councillor_liege.GetShortUINamePossessive] [councillor.GetCouncilTitle] již [Concept('converting','nekonvertuje')|E] [c)
+ liege_stopped_converting_county_desc: "[councillor.GetCouncilTitle|U] ve službách [councillor_liege.Custom('CZ_ShortUIName_G')] [Concept('converting','nekonvertuje')|E] [county.Custom('CZ_LandedName_A')] na [councillor_liege.GetRite.GetName] #weak ([old_rite.GetAdjective|l])#!"
  liege_converted_county_title: "Lenní pán konvertoval [county.GetNameNoTierNoTooltip|V]"
- liege_converted_county_desc: "[councillor_liege.GetShortUINamePossessive] [councillor.GetCouncilTitle] [Concept('converted', Select_CString( councillor.IsFemale, 'konvertovala', 'konvertoval' ))|E] [county.GetName] na [councillor_liege.GetRite.GetName] #weak ([old_rite.GetAdjective])#!" # todo: CHANGED (predtym: [councillor_liege.GetShortUINamePossessive] [councillor.GetCouncilTitle] [Concept('converted', Select_CString( councillo)
+ liege_converted_county_desc: "[councillor.GetCouncilTitle|U] ve službách [councillor_liege.Custom('CZ_ShortUIName_G')] [Concept('converted',Select_CString(councillor.IsFemale,'konvertovala','konvertoval'))|E] [county.Custom('CZ_LandedName_A')] na [councillor_liege.GetRite.GetName] #weak ([old_rite.GetAdjective|l])#!"
  task_kurultai_default_1: "Podporovat pastevce"
  task_kurultai_default_2: "$task_kurultai_default_1$"
  task_kurultai_default_3: "$task_kurultai_default_1$"
@@ -566,7 +566,7 @@
  task_kurultai_raiders_only_one_target: "Úkol #color_white $task_kurultai_raider_1$#! může současně plnit pouze jeden člen [Concept('kurultai','kurultaje')|E]"
  task_kurultai_raider_loot_desc: "Maximální [Concept('loot','kořist')|E]: #P [loot_i]+[SCOPE.ScriptValue('kurultai_organize_raiders_loot_final_value')|1]%#!\n$TAB$Základ: #P [loot_i]+[SCOPE.ScriptValue('kurultai_organize_raiders_loot_base_value')|1]%#!\n$TAB$[councillor.Custom('GetCouncillorKurultaiMemberPossessive')] [martial_i][Concept('martial_skill','válečnická dovednost')|E]: #P [loot_i]+[SCOPE.ScriptValue('kurultai_organize_raiders_loot_skill_value')|1]%#!"
  task_kurultai_raider_attrition_desc: "\n[Concept('attrition','Opotřebení')|E] v nepřátelském hrabství při [Concept('raiding','plenění')|E]: #P [attrition_i]-[SCOPE.ScriptValue('kurultai_organize_raiders_loot_final_value')|1]%#!\n$TAB$Základ: #P [attrition_i]-[SCOPE.ScriptValue('kurultai_organize_raiders_loot_base_value')|1]%#!\n$TAB$[councillor.Custom('GetCouncillorKurultaiMemberPossessive')] [martial_i][Concept('martial_skill','válečnická dovednost')|E]: #P [attrition_i]-[SCOPE.ScriptValue('kurultai_organize_raiders_loot_skill_value')|1]%#!"
- task_kurultai_raider_raiding_desc: "\nRychlost [Concept('raid','nájezdu')|E] a rychlost pohybu při [Concept('raiding','plenění')|E]: #P [raid_i]-[SCOPE.ScriptValue('kurultai_organize_raiders_raid_final_value')|1]%#!\n$TAB$Základ: #P [raid_i]-[SCOPE.ScriptValue('kurultai_organize_raiders_raid_base_value')|1]%#!\n$TAB$[councillor.Custom('GetCouncillorKurultaiMemberPossessive')] [martial_i][Concept('martial_skill','válečnická dovednost')|E]: #P [raid_i]-[SCOPE.ScriptValue('kurultai_organize_raiders_raid_skill_value')|1]%#!" # todo: CHANGED MINOR
+ task_kurultai_raider_raiding_desc: "\nRychlost [Concept('raid','nájezdu')|E] a rychlost pohybu při plenění: #P [raid_i][SCOPE.ScriptValue('kurultai_organize_raiders_raid_final_value')|1]%#!\n$TAB$Základ: #P [raid_i][SCOPE.ScriptValue('kurultai_organize_raiders_raid_base_value')|1]%#!\n$TAB$[martial_i][Concept('martial_skill','válečnická dovednost')|E] [councillor.Custom('CZ_ShortUIName_G')]: #P [raid_i][SCOPE.ScriptValue('kurultai_organize_raiders_raid_skill_value')|1]%#!"
  task_kurultai_raiders_gain_prestige: "\n$EFFECT_LIST_BULLET$#P Zisk prestiže#!"
  task_kurultai_raiders_gain_dread: "\n$EFFECT_LIST_BULLET$#P Zisk hrůzy#!"
  task_kurultai_raiders_lose_prestige: "\n$EFFECT_LIST_BULLET$#N Ztráta prestiže#!"

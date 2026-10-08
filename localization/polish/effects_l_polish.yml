@@ -186,12 +186,12 @@
  I_CONVERTED_TO: "Nyní vyznáváš [FAITH.GetTextIcon][FAITH.GetName|V]"
  THEY_CONVERTED_TO: "[CHARACTER.GetShortUIName|U] nyní vyznává [FAITH.GetTextIcon][FAITH.GetName|V]"
  COVERTED_TO: "Nyní vyznává [FAITH.GetTextIcon][FAITH.GetName|V]"
- I_CONVERT_TO_RITE: "Přestupuješ k [RITE.GetName|V]" # todo: NEW TRANSLATION
- THEY_CONVERTS_TO_RITE: "[CHARACTER.GetShortUIName|U] přestupuje k [RITE.GetName|V]" # todo: NEW TRANSLATION
- COVERTS_TO_RITE: "Přestupuje k [RITE.GetName|V]" # todo: NEW TRANSLATION
- I_CONVERTED_TO_RITE: "Přestoupil jsi k [RITE.GetName|V]" # todo: NEW TRANSLATION
- THEY_CONVERTED_TO_RITE: "[CHARACTER.GetShortUIName|U] přestoupil k [RITE.GetName|V]" # todo: NEW TRANSLATION
- COVERTED_TO_RITE: "Přestoupil k [RITE.GetName|V]" # todo: NEW TRANSLATION
+ I_CONVERT_TO_RITE: "Přijímáš ritus [RITE.GetName|V]"
+ THEY_CONVERTS_TO_RITE: "[CHARACTER.GetShortUIName|U] [Select_CString(CHARACTER.IsLocalPlayer,'přijímáš','přijímá')|l] ritus [RITE.GetName|V]"
+ COVERTS_TO_RITE: "Přijímá ritus [RITE.GetName|V]"
+ I_CONVERTED_TO_RITE: "[Select_CString(CHARACTER.IsFemale,'Přijala','Přijal')|U] jsi ritus [RITE.GetName|V]"
+ THEY_CONVERTED_TO_RITE: "[CHARACTER.GetShortUIName|U] [Select_CString(CHARACTER.IsLocalPlayer,'jsi ','')|l][Select_CString(CHARACTER.IsFemale,'přijala','přijal')|l] ritus [RITE.GetName|V]"
+ COVERTED_TO_RITE: "Přijetí ritu [RITE.GetName|V]"
  CONVERTS_TO_DOMICILE: "Víra [Concept('yurt','jurty')|E] se změní na [FAITH.GetName|V]"
  CONVERTED_TO_DOMICILE: "Víra [Concept('yurt','jurty')|E] byla změněna na [FAITH.GetName|V]"
  CULTURE_CONVERTS_TO_DOMICILE: "Kultura [Concept('yurt','jurty')|E] se změní na [TARGET_CULTURE.GetName|V] [Concept('culture','kulturu')|E]"
@@ -1552,26 +1552,26 @@
  ADD_DOCTRINE_GLOBAL_PAST_DESC: "Získal se [FAITH_DOCTRINE.GetGroup.GetName( FAITH.Self )]: [FAITH_DOCTRINE.GetName( FAITH.Self )]"
  ADD_DOCTRINE_THIRD_DESC: "[CZFaithAdjDecline(FAITH,'á')] [Concept('faith','víra')|E] získá [FAITH_DOCTRINE.GetGroup.GetName( FAITH.Self )]: [FAITH_DOCTRINE.GetName( FAITH.Self )]"
  ADD_DOCTRINE_THIRD_PAST_DESC: "[CZFaithAdjDecline(FAITH,'á')] [Concept('faith','víra')|E] získala [FAITH_DOCTRINE.GetGroup.GetName( FAITH.Self )]: [FAITH_DOCTRINE.GetName( FAITH.Self )]"
- change_doctrine_global: "Získává [DOCTRINE_TYPE.GetGroup.GetName( FAITH.Self )]: [DOCTRINE_TYPE.GetName( FAITH.Self )]" # todo: NEW TRANSLATION
- change_doctrine_global_past: "Získal [DOCTRINE_TYPE.GetGroup.GetName( FAITH.Self )]: [DOCTRINE_TYPE.GetName( FAITH.Self )]" # todo: NEW TRANSLATION
- change_doctrine_third: "[CZFaithAdjDecline(FAITH,'á')] [Concept('faith','víra')|E] získává [DOCTRINE_TYPE.GetGroup.GetName( FAITH.Self )]: [DOCTRINE_TYPE.GetName( FAITH.Self )]" # todo: NEW TRANSLATION
- change_doctrine_third_past: "[CZFaithAdjDecline(FAITH,'á')] [Concept('faith','víra')|E] získala [DOCTRINE_TYPE.GetGroup.GetName( FAITH.Self )]: [DOCTRINE_TYPE.GetName( FAITH.Self )]" # todo: NEW TRANSLATION
- change_doctrine_with_other_global: "Nahrazuje [OTHER_DOCTRINE_TYPE.GetDescriptiveName( FAITH.Self )] za [DOCTRINE_TYPE.GetDescriptiveName( FAITH.Self )]" # todo: NEW TRANSLATION
- change_doctrine_with_other_global_past: "Nahradil [OTHER_DOCTRINE_TYPE.GetDescriptiveName( FAITH.Self )] za [DOCTRINE_TYPE.GetDescriptiveName( FAITH.Self )]" # todo: NEW TRANSLATION
- change_doctrine_with_other_third: "[CZFaithAdjDecline(FAITH,'á')] [Concept('faith','víra')|E] nahrazuje [OTHER_DOCTRINE_TYPE.GetDescriptiveName( FAITH.Self )] za [DOCTRINE_TYPE.GetDescriptiveName( FAITH.Self )]" # todo: NEW TRANSLATION
- change_doctrine_with_other_third_past: "[CZFaithAdjDecline(FAITH,'á')] [Concept('faith','víra')|E] nahradila [OTHER_DOCTRINE_TYPE.GetDescriptiveName( FAITH.Self )] za [DOCTRINE_TYPE.GetDescriptiveName( FAITH.Self )]" # todo: NEW TRANSLATION
- ADD_RITE_DOCTRINE_GLOBAL_DESC: "Získává [DOCTRINE_TYPE.GetGroup.GetName( RITE.GetFaith )]: [DOCTRINE_TYPE.GetName( RITE.GetFaith )]" # todo: NEW TRANSLATION
- ADD_RITE_DOCTRINE_GLOBAL_PAST_DESC: "Získal [DOCTRINE_TYPE.GetGroup.GetName( RITE.GetFaith )]: [DOCTRINE_TYPE.GetName( RITE.GetFaith )]" # todo: NEW TRANSLATION
- ADD_RITE_DOCTRINE_THIRD_DESC: "[RITE.GetAdjective] ritus získává [DOCTRINE_TYPE.GetGroup.GetName( RITE.GetFaith )]: [DOCTRINE_TYPE.GetName( RITE.GetFaith )]" # todo: NEW TRANSLATION
- ADD_RITE_DOCTRINE_THIRD_PAST_DESC: "[RITE.GetAdjective] ritus získal [DOCTRINE_TYPE.GetGroup.GetName( RITE.GetFaith )]: [DOCTRINE_TYPE.GetName( RITE.GetFaith )]" # todo: NEW TRANSLATION
- change_rite_doctrine_global: "Přijímá [DOCTRINE_TYPE.GetGroup.GetName( RITE.GetFaith )]: [DOCTRINE_TYPE.GetName( RITE.GetFaith )]" # todo: NEW TRANSLATION
- change_rite_doctrine_global_past: "Přijal [DOCTRINE_TYPE.GetGroup.GetName( RITE.GetFaith )]: [DOCTRINE_TYPE.GetName( RITE.GetFaith )]" # todo: NEW TRANSLATION
- change_rite_doctrine_third: "[RITE.GetAdjective] ritus přijímá [DOCTRINE_TYPE.GetGroup.GetName( RITE.GetFaith )]: [DOCTRINE_TYPE.GetName( RITE.GetFaith )]" # todo: NEW TRANSLATION
- change_rite_doctrine_third_past: "[RITE.GetAdjective] ritus přijal [DOCTRINE_TYPE.GetGroup.GetName( RITE.GetFaith )]: [DOCTRINE_TYPE.GetName( RITE.GetFaith )]" # todo: NEW TRANSLATION
- change_rite_doctrine_with_other_global: "Nahrazuje [OTHER_DOCTRINE_TYPE.GetDescriptiveName( RITE.GetFaith )] za [DOCTRINE_TYPE.GetDescriptiveName( RITE.GetFaith )]" # todo: NEW TRANSLATION
- change_rite_doctrine_with_other_global_past: "Nahradil [OTHER_DOCTRINE_TYPE.GetDescriptiveName( RITE.GetFaith )] za [DOCTRINE_TYPE.GetDescriptiveName( RITE.GetFaith )]" # todo: NEW TRANSLATION
- change_rite_doctrine_with_other_third: "[rite|E] [RITE.GetAdjective] nahrazuje [OTHER_DOCTRINE_TYPE.GetDescriptiveName( RITE.GetFaith )] za [DOCTRINE_TYPE.GetDescriptiveName( RITE.GetFaith )]" # todo: NEW TRANSLATION
- change_rite_doctrine_with_other_third_past: "[rite|E] [RITE.GetAdjective] nahradil [OTHER_DOCTRINE_TYPE.GetDescriptiveName( RITE.GetFaith )] za [DOCTRINE_TYPE.GetDescriptiveName( RITE.GetFaith )]" # todo: NEW TRANSLATION
+ change_doctrine_global: "Získává [DOCTRINE_TYPE.GetGroup.GetName( FAITH.Self )]: [DOCTRINE_TYPE.GetName( FAITH.Self )]"
+ change_doctrine_global_past: "Získal [DOCTRINE_TYPE.GetGroup.GetName( FAITH.Self )]: [DOCTRINE_TYPE.GetName( FAITH.Self )]"
+ change_doctrine_third: "[CZFaithAdjDecline(FAITH,'á')|U] [Concept('faith','víra')|E] získává [DOCTRINE_TYPE.GetGroup.GetName( FAITH.Self )]: [DOCTRINE_TYPE.GetName( FAITH.Self )]"
+ change_doctrine_third_past: "[CZFaithAdjDecline(FAITH,'á')|U] [Concept('faith','víra')|E] získala [DOCTRINE_TYPE.GetGroup.GetName( FAITH.Self )]: [DOCTRINE_TYPE.GetName( FAITH.Self )]"
+ change_doctrine_with_other_global: "Nahrazuje [OTHER_DOCTRINE_TYPE.GetDescriptiveName( FAITH.Self )] za [DOCTRINE_TYPE.GetDescriptiveName( FAITH.Self )]"
+ change_doctrine_with_other_global_past: "Nahradil [OTHER_DOCTRINE_TYPE.GetDescriptiveName( FAITH.Self )] za [DOCTRINE_TYPE.GetDescriptiveName( FAITH.Self )]"
+ change_doctrine_with_other_third: "[CZFaithAdjDecline(FAITH,'á')|U] [Concept('faith','víra')|E] nahrazuje [OTHER_DOCTRINE_TYPE.GetDescriptiveName( FAITH.Self )] za [DOCTRINE_TYPE.GetDescriptiveName( FAITH.Self )]"
+ change_doctrine_with_other_third_past: "[CZFaithAdjDecline(FAITH,'á')|U] [Concept('faith','víra')|E] nahradila [OTHER_DOCTRINE_TYPE.GetDescriptiveName( FAITH.Self )] za [DOCTRINE_TYPE.GetDescriptiveName( FAITH.Self )]"
+ ADD_RITE_DOCTRINE_GLOBAL_DESC: "Získává [DOCTRINE_TYPE.GetGroup.GetName( RITE.GetFaith )]: [DOCTRINE_TYPE.GetName( RITE.GetFaith )]"
+ ADD_RITE_DOCTRINE_GLOBAL_PAST_DESC: "Získal [DOCTRINE_TYPE.GetGroup.GetName( RITE.GetFaith )]: [DOCTRINE_TYPE.GetName( RITE.GetFaith )]"
+ ADD_RITE_DOCTRINE_THIRD_DESC: "[RITE.GetAdjective|U] ritus získává [DOCTRINE_TYPE.GetGroup.GetName( RITE.GetFaith )]: [DOCTRINE_TYPE.GetName( RITE.GetFaith )]"
+ ADD_RITE_DOCTRINE_THIRD_PAST_DESC: "[RITE.GetAdjective|U] ritus získal [DOCTRINE_TYPE.GetGroup.GetName( RITE.GetFaith )]: [DOCTRINE_TYPE.GetName( RITE.GetFaith )]"
+ change_rite_doctrine_global: "Přijímá [DOCTRINE_TYPE.GetGroup.GetName( RITE.GetFaith )]: [DOCTRINE_TYPE.GetName( RITE.GetFaith )]"
+ change_rite_doctrine_global_past: "Přijal [DOCTRINE_TYPE.GetGroup.GetName( RITE.GetFaith )]: [DOCTRINE_TYPE.GetName( RITE.GetFaith )]"
+ change_rite_doctrine_third: "[RITE.GetAdjective|U] ritus přijímá [DOCTRINE_TYPE.GetGroup.GetName( RITE.GetFaith )]: [DOCTRINE_TYPE.GetName( RITE.GetFaith )]"
+ change_rite_doctrine_third_past: "[RITE.GetAdjective|U] ritus přijal [DOCTRINE_TYPE.GetGroup.GetName( RITE.GetFaith )]: [DOCTRINE_TYPE.GetName( RITE.GetFaith )]"
+ change_rite_doctrine_with_other_global: "Nahrazuje [OTHER_DOCTRINE_TYPE.GetDescriptiveName( RITE.GetFaith )] za [DOCTRINE_TYPE.GetDescriptiveName( RITE.GetFaith )]"
+ change_rite_doctrine_with_other_global_past: "Nahradil [OTHER_DOCTRINE_TYPE.GetDescriptiveName( RITE.GetFaith )] za [DOCTRINE_TYPE.GetDescriptiveName( RITE.GetFaith )]"
+ change_rite_doctrine_with_other_third: "[Concept('rite','ritus')|EU] [RITE.GetAdjective|l] nahrazuje [OTHER_DOCTRINE_TYPE.GetDescriptiveName( RITE.GetFaith )] za [DOCTRINE_TYPE.GetDescriptiveName( RITE.GetFaith )]"
+ change_rite_doctrine_with_other_third_past: "[Concept('rite','ritus')|EU] [RITE.GetAdjective|l] nahradil [OTHER_DOCTRINE_TYPE.GetDescriptiveName( RITE.GetFaith )] za [DOCTRINE_TYPE.GetDescriptiveName( RITE.GetFaith )]"
  REMOVE_DOCTRINE_GLOBAL_DESC: "Ztratí [FAITH_DOCTRINE.GetGroup.GetName( FAITH.Self )]: [FAITH_DOCTRINE.GetName( FAITH.Self )]"
  REMOVE_DOCTRINE_GLOBAL_PAST_DESC: "Byl ztracen [FAITH_DOCTRINE.GetGroup.GetName( FAITH.Self )]: [FAITH_DOCTRINE.GetName( FAITH.Self )]"
  REMOVE_DOCTRINE_THIRD_DESC: "[CZFaithAdjDecline(FAITH,'á')] [Concept('faith','víra')|E] ztratí [FAITH_DOCTRINE.GetGroup.GetName( FAITH.Self )]: [FAITH_DOCTRINE.GetName( FAITH.Self )]"
@@ -1889,8 +1889,8 @@
  I_ENABLE_ABDUCTION_SCHEME: "Můžeš používat [Concept( 'scheme', 'intriku' )|E] typu [GetScheme('abduct').GetTypeName]"
  THEY_ENABLE_ABDUCTION_SCHEME: "[CHARACTER.GetShortUIName|U] může používat [Concept( 'scheme', 'intriku' )|E] typu [GetScheme('abduct').GetTypeName]"
  DISRUPT_SCHEMES_COUNCILLOR_TASK_BONUS_25: "Efektivita [Concept( 'disrupt_schemes', 'narušování intrik' )|E]: #P +[EmptyScope.ScriptValue('court_of_shadows_perk_percentage')|0]%#!"
- COURT_OF_SHADOWS_PAPAL_VOTE_ACCEPTANCE: "#high $influence_papal_vote_interaction$#! [character_interaction|E] – přijetí: #P +20#!" # todo: NEW TRANSLATION
- COURT_OF_SHADOWS_PAPABILE_COST: "#high $increase_papabile_score_interaction$#! [piety|E] – náklady: #P -25%#!" # todo: NEW TRANSLATION
+ COURT_OF_SHADOWS_PAPAL_VOTE_ACCEPTANCE: "#high $influence_papal_vote_interaction$#! [Concept('character_interaction','interakce s postavou')|E] – přijetí: #P +20#!"
+ COURT_OF_SHADOWS_PAPABILE_COST: "#high $increase_papabile_score_interaction$#! [Concept('piety','zbožnost')|E] – náklady: #P -25%#!"
  ENEMY_HOSTILE_SCHEME_TARGETING_COURTIER_REDUCTION: "[Concept( 'success_chance', 'Šance na úspěch' )|E] [Concept( 'hostile_scheme', 'nepřátelských intrik' )|E] proti tvým [Concept( 'courtiers', 'dvořanům' )|E]: #P -[EmptyScope.ScriptValue('prepared_for_anything_perk_secondary_percentage')|0]#!"
  SKILL_POINT_FROM_TORTURE_GAIN_CHANCE: "[Concept( 'torturing', 'Mučení' )|E] přináší:\n$TAB$#V [EmptyScope.ScriptValue('dark_insights_stat_increase_chance')|0]%#! šanci získat buď [intrigue_i]#P 1#! bod [Concept( 'intrigue', 'pletichářské dovednosti' )|E], nebo [prowess_i]#P 1#! bod [Concept( 'prowess', 'udatnosti' )|E]"
  SKILL_POINT_FROM_ME_TORTURING_GAIN_CHANCE: "Když někoho [Concept( 'torture', 'mučíš' )|E]:\n$TAB$#V [EmptyScope.ScriptValue('dark_insights_stat_increase_chance')|0]%#! šance získat buď [intrigue_i]#P 1#! bod [Concept( 'intrigue', 'pletichářské dovednosti' )|E], nebo [prowess_i]#P 1#! bod [Concept( 'prowess', 'udatnosti' )|E] #weak (Max. 5 u každé)#!"
@@ -1971,8 +1971,8 @@
  THEY_WILL_RECEIVE_WARNING_OF_NATURAL_DEATH: "Až bude do [Concept( 'character_death_death', 'smrti' )|E] z přirozených příčin zbývat #V 1#! rok, [CHARACTER.GetShortUIName] obdrží varování"
  CONVERT_COUNTY_NO_NEGATIVE_FERVOR_MODIFIERS: "Doba potřebná ke [Concept( 'convert_county', 'konverzi hrabství' )|E] se již neprodlužuje, pokud má jeho [Concept( 'faith', 'víra' )|E] vyšší [Concept( 'fervor', 'horlivost' )|E] než tvá víra"
  RELIGIOUS_ICON_NOMADIC_FAITH_EFFECT: "[Concept( 'characters', 'Postavy' )|E] obrácené prostřednictvím [Concept( 'character_interaction', 'interakce s postavou' )|E] #EMP $inspire_conversion_interaction$#! se stanou [Concept( 'obedient', 'poslušnými' )|E]"
- RELIGIOUS_ICON_CANONIZATION_COST: "#high $pam_canonize_saint_decision$#! [piety|E] – náklady: #P -25%#!" # todo: NEW TRANSLATION
- PROPHET_LIVING_WORD_DECISION: "Zpřístupní [decision|E] #high $pam_proclaim_living_word_decision$#!" # todo: NEW TRANSLATION
+ RELIGIOUS_ICON_CANONIZATION_COST: "#high $pam_canonize_saint_decision$#! [Concept('piety','zbožnost')|E] – náklady: #P -25%#!"
+ PROPHET_LIVING_WORD_DECISION: "Zpřístupní [Concept('decision','rozhodnutí')|E] #high $pam_proclaim_living_word_decision$#!"
  REDUCED_DISEASE_FREQUENCY_AT_COURT: "Nižší pravděpodobnost nákazy [Concept( 'illnesses', 'nemocemi' )|E]\nNižší pravděpodobnost, že se [Concept( 'courtiers', 'dvořané' )|E] nakazí [Concept( 'illnesses', 'nemocemi' )|E]"
  UNLOCKS_COMMISSION_EPIC_DECISION: "Zpřístupňuje [Concept( 'decision', 'rozhodnutí' )|E] [Concept( 'commission_epic', 'Objednat epos' )|E]"
  I_CAN_TAKE_THE_COMMISSION_EPIC_DECISION: "Můžeš přijmout [Concept( 'decision', 'rozhodnutí' )|E] [Concept( 'commission_epic', 'Objednat epos' )|E]"
@@ -2006,13 +2006,13 @@
  NOMADIC_ZEALOUS_PROSELYTIZER_FAITH_EFFECT: "[Concept( 'character_interaction', 'Interakce s postavou' )|E] #EMP $inspire_conversion_interaction$#! má vyšší šanci na přijetí"
  NOMADIC_ZEALOUS_PROSELYTIZER_STARGAZER_EFFECT: "Efektivita [Concept( 'councillor_task', 'úkolu rádce' )|E] #EMP $task_kurultai_court_astrologer_1$#! [Concept( 'kurultai', 'kurultaje' )|E]: #P +[EmptyScope.ScriptValue('zealous_proselytizer_stargazer_percentage')|0]%#!"
  UNLOCK_BUY_CLAIM_INTERACTION: "Zpřístupňuje [Concept( 'buy_claim_interaction', 'interakci $buy_claim_interaction$' )|E]"
- CHEAPER_SELL_CLAIM_INTERACTION: "#high $sell_claim_interaction$#! [piety|E] – náklady: #P -25%#!" # todo: NEW TRANSLATION
- CHIVALRIC_DOMINANCE_INCITE_WAR: "#high $ecclesiastic_incite_holy_war_interaction$#!: [piety|E] – náklady #P -25%#!, přijetí #P +15#! a při přijetí #P +[EmptyScope.ScriptValue('medium_prestige_value')|0]#! [prestige|E]" # todo: NEW TRANSLATION
+ CHEAPER_SELL_CLAIM_INTERACTION: "#high $sell_claim_interaction$#! [Concept('piety','zbožnost')|E] – náklady: #P -25%#!"
+ CHIVALRIC_DOMINANCE_INCITE_WAR: "#high $ecclesiastic_incite_holy_war_interaction$#!: [Concept('piety','zbožnost')|E] – náklady #P -25%#!, přijetí #P +15#! a při přijetí #P +[EmptyScope.ScriptValue('medium_prestige_value')|0]#! [Concept('prestige','prestiže')|E]"
  I_CAN_USE_BUY_CLAIM_INTERACTION: "Můžeš použít [Concept( 'buy_claim_interaction', 'interakci $buy_claim_interaction$' )|E]"
  THEY_CAN_USE_BUY_CLAIM_INTERACTION: "[CHARACTER.GetShortUIName|U] může použít [Concept( 'buy_claim_interaction', 'interakci $buy_claim_interaction$' )|E]"
- IMPROVE_BESEECH_CLAIM_INTERACTION: "[interactions|E] [ecclesiastic_grant_claim_interaction|E] a [strengthen_claim_interaction|E] mají přijetí #P +200#!" # todo: NEW TRANSLATION
- I_CAN_IMPROVE_BESEECH_CLAIM_INTERACTION: "[interactions|E] [ecclesiastic_grant_claim_interaction|E] a [strengthen_claim_interaction|E] mají přijetí #P +200#!" # todo: NEW TRANSLATION
- THEY_CAN_IMPROVE_BESEECH_CLAIM_INTERACTION: "[interactions|E] [ecclesiastic_grant_claim_interaction|E] a [strengthen_claim_interaction|E] mají pro [CHARACTER.Custom('CZ_ShortUIName_A')|U] přijetí #P +200#!" # todo: NEW TRANSLATION
+ IMPROVE_BESEECH_CLAIM_INTERACTION: "[Concept('interactions','interakce')|EU] [Concept('ecclesiastic_grant_claim_interaction','Vyprosit nárok')|E] a [Concept('strengthen_claim_interaction','Posílit nárok')|E] mají přijetí #P +200#!"
+ I_CAN_IMPROVE_BESEECH_CLAIM_INTERACTION: "[Concept('interactions','interakce')|EU] [Concept('ecclesiastic_grant_claim_interaction','Vyprosit nárok')|E] a [Concept('strengthen_claim_interaction','Posílit nárok')|E] mají přijetí #P +200#!"
+ THEY_CAN_IMPROVE_BESEECH_CLAIM_INTERACTION: "[Concept('interactions','interakce')|EU] [Concept('ecclesiastic_grant_claim_interaction','Vyprosit nárok')|E] a [Concept('strengthen_claim_interaction','Posílit nárok')|E] mají pro [CHARACTER.Custom('CZ_ShortUIName_A')|U] přijetí #P +200#!"
  DEVELOP_COUNTY_EFFICIENCY_INCREASE: "Efektivita [Concept( 'develop_county', 'rozvoje hrabství' )|E]: #P +[EmptyScope.ScriptValue('planned_cultivation_percentage')|0]%#!"
  NO_CONTROL_LOSS_ON_OCCUPATION: "Nepřátelská [Concept( 'occupations', 'obsazení' )|E] nesnižují [Concept( 'control', 'kontrolu' )|E]"
  all_family_members_at_court: "Všichni [Select_CString(THIS.GetCharacter.IsLocalPlayer,'tví ','')][Concept( 'family_members', 'členové rodiny' )|E][Select_CString(THIS.GetCharacter.IsLocalPlayer,'',Concatenate(' ',THIS.GetCharacter.Custom('CZ_ShortUINameNotMe_G')))], které zaměstnává"
@@ -3149,8 +3149,8 @@
  set_house_aspiration_with_level_third: "[Concept( 'house_aspiration', 'Ambice rodu' )|E] [DynastyHouse.GetBaseName|V] se mění na #HIGH $TYPE$#! na úrovni $LEVEL|V$"
  set_house_aspiration_with_level_third_past: "[Concept( 'house_aspiration', 'Ambice rodu' )|E] [DynastyHouse.GetBaseName|V] se změnila na #HIGH $TYPE$#! na úrovni $LEVEL|V$"
  set_appointment_timeout_first: "[CHARACTER.GetShortUIName|U] nebude po dobu $DURATION|V$ moci získat [Concept( 'appointments', 'jmenování' )|E] #weak ($REASON$)#!"
- force_next_councillor_global: "[TARGET_CHARACTER.GetName] bude příštím držitelem pozice [COUNCIL_TASK.GetPositionName] u [COUNCIL_TASK.GetCourtOwner.GetName]" # todo: GetName custom
- force_next_councillor_global_past: "[TARGET_CHARACTER.GetName] byl určen jako příští držitel pozice [COUNCIL_TASK.GetPositionName] u [COUNCIL_TASK.GetCourtOwner.GetName]" # todo: GetName custom
+ force_next_councillor_global: "[TARGET_CHARACTER.GetName|U] bude příštím držitelem pozice [COUNCIL_TASK.GetPositionName] u [COUNCIL_TASK.GetCourtOwner.GetName]"
+ force_next_councillor_global_past: "[TARGET_CHARACTER.GetName|U] byl určen jako příští držitel pozice [COUNCIL_TASK.GetPositionName] u [COUNCIL_TASK.GetCourtOwner.GetName]"
  set_fallback_succession_character_global: "[TARGET_CHARACTER.GetShortUIName|U] se stává [Concept('fallback_heir_title','náhradním dědicem')|E]"
  set_fallback_succession_character_first: "[TARGET_CHARACTER.GetShortUIName] bude vaším [Concept('fallback_heir_title','náhradním dědicem')|E]"
  set_fallback_succession_character_first_past: "[TARGET_CHARACTER.GetShortUIName] je váš [fallback_heir|El]"

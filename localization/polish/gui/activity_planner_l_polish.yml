@@ -18,7 +18,7 @@
  INVALID_ACTIVITY_MISSING_FEATURE_FLAG: "@warning_icon! #X Chybí příznak funkce DLC „$FEATURE_FLAG$“#!"
  INVALID_ACTIVITY_NO_INVITED_CHARACTERS: "@warning_icon! #X Žádní pozvaní [Concept('activity_guests','hosté aktivity')|E]#!"
  INVALID_ACTIVITY_NO_ATTENDING_CHARACTERS: "@warning_icon! #X Žádní účastnící se [Concept('activity_guests','hosté aktivity')|E]#!"
- INVALID_ACTIVITY_NO_TENETS_OR_DOCTRINES: "@warning_icon! #X Pro debatu musíte vybrat [core_tenets|E] a [doctrines|E]#!" # todo: NEW TRANSLATION
+ INVALID_ACTIVITY_NO_TENETS_OR_DOCTRINES: "@warning_icon! #X Pro debatu musíš vybrat [Concept('core_tenets','zásady')|E] a [Concept('doctrines','doktríny')|E]#!"
  ACTIVITY_PLANNER_PHASE_PROVINCE_TOOLTIP: "#T [Province.GetBaronyNameExplicitlyNoTooltip]#!\n$ACTIVITY_PROVINCE_DESCRIPTION$\n\n#I Kliknutím vybereš cíl#!"
  ACTIVITY_PLANNER_PHASE_PROVINCE_BLOCKED_TOOLTIP: "#T [Province.GetBaronyNameExplicitlyNoTooltip]#!\nZde #bold nemůžeš#! uspořádat [ActivityType.GetNameNoTooltip], protože:\n$BLOCK_REASON$"
  ACTIVITY_PLANNER_CAN_PROGRESS_ALL_HAVE_LOCATION: "@warning_icon! #X Musíš vybrat cílové místo#!"
@@ -39,7 +39,7 @@
  activity_filter_domicile: "[domicile|E]"
  activity_filter_domicile_domain: "[Concept('domicile','Domicil')|E] [Concept('domain','domény')|E]"
  activity_filter_domicile_realm: "[Concept('domicile','Domicil')|E] [Concept('realm','panství')|E]"
- activity_filter_anointment_candidates: "[holy_sites|E], [realm|E] nebo sídlo [head_of_rite|E]" # todo: NEW TRANSLATION
+ activity_filter_anointment_candidates: "[Concept('holy_sites','svatá místa')|EU], [Concept('realm','panství')|E] nebo sídlo [Concept('head_of_rite','hlavy ritu')|E]"
  GOVERNMENT_ADJECTIVE: "[Character.GetGovernment.GetAdjective]"
  GOVERNMENT_ADJECTIVE_ICON: "[Character.Custom('GetGovernmentIcon')] [Character.GetGovernment.GetAdjective] [Concept('realm','panství')|E]"
  GOVERNMENT_ADJECTIVE_ICON_NOMAD: "[Character.Custom('GetGovernmentIcon')] [Character.GetGovernment.GetAdjective] [Concept('realm','panství')|E] – [Character.GetDomicile.GetFaith.GetAdjective] [Character.GetDomicile.GetCulture.GetCollectiveNoun]"
@@ -55,7 +55,7 @@
  activity_filter_domicile_blocker: "@warning_icon! #X [Province.GetBaronyNameExplicitlyNoTooltip] #bold není#! ve tvém [Concept('domicile','domicilu')|E]#!"
  activity_filter_domicile_domain_blocker: "@warning_icon! #X [Province.GetBaronyNameExplicitlyNoTooltip] #bold není#! ve tvém [Concept('domicile','domicilu')|E] ani ve tvé [Concept('domain','doméně')|E]#!"
  activity_filter_domicile_realm_blocker: "@warning_icon! #X [Province.GetBaronyNameExplicitlyNoTooltip] #bold není#! ve tvém [Concept('domicile','domicilu')|E] ani ve tvém [Concept('realm','panství')|E]#!"
- activity_filter_anointment_candidates_blocker: "@warning_icon! #X [Province.GetBaronyNameExplicitlyNoTooltip] #bold není#! ve vaší [realm|E], na [holy_site|E] ani v sídle [head_of_rite|E]#!" # todo: NEW TRANSLATION
+ activity_filter_anointment_candidates_blocker: "@warning_icon! #X [Province.GetBaronyNameExplicitlyNoTooltip|U] #bold není#! ve tvém [Concept('realm','panství')|E], na [Concept('holy_site','svatém místě')|E] ani v sídle [Concept('head_of_rite','hlavy ritu')|E]#!"
  ACTIVITY_PLANNER_SUMMARY_HEADER: "Souhrn plánování:"
  ACTIVITY_DESTINATION_SELECTION_HEADER: "Výběr cíle"
  ACTIVITY_DESTINATION_SELECTION: "Místa, která můžeš vybrat, jsou zobrazena na mapě.\n[ActivityType.GetLocalizedText( 'destination_selection' )]\n\n#I Vyber místo pro [ActivityType.GetNameNoTooltip]#!"
@@ -85,20 +85,20 @@
  CREATE_ACTIVITY_CONFIRMATION_TITLE: "Zahájit [ActivityType.GetNameNoTooltip]"
  CREATE_ACTIVITY_CONFIRMATION_DESC: "Opravdu chceš zahájit [ActivityType.GetNameNoTooltip]?\n\nNásledující $ACTIVITY_SPECIAL_GUESTS$ se nepřipojí:\n$DECLINING_GUESTS$"
  CREATE_ACTIVITY_CONFIRMATION_CONFIRM: "$START$"
- ACTIVITY_PLANNER_PHASE_REPLACE_TOOLTIP: "#T [ActivityPhase.GetName]#![AddLine( ActivityPhase.CanPickDescriptionBlockers( GetPlayer, PlannedActivityPhase.GetLocation, ActivityPlanner.GetSelectedSpecialOption ) )][AddTextIf( Not( ActivityPlanner.CanPlanMorePhasesOfType( ActivityPhase.Self ) ), AddLine( '$ACTIVITY_PLANNER_CANNOT_PICK_MORE_OF_PHASE|q$' ) )][AddLine( ActivityPhase.GetDescription( Activity.Self ) )]" # todo: CHANGED (predtym: T [ActivityPhase.GetName] ![AddLine( ActivityPhase.CanPickDescriptionBlockers( GetPlayer, PlannedActivityPhase.GetLocati)
- activity_planner_clear_selected_tenet: "#I Kliknutím zrušíte výběr [core_tenet|E]#!" # todo: NEW TRANSLATION
- activity_planner_clear_selected_doctrine: "#I Kliknutím zrušíte výběr [doctrine|E]#!" # todo: NEW TRANSLATION
- activity_planner_tenet_window_title: "Vyberte zásadu" # todo: NEW TRANSLATION
- activity_planner_doctrine_window_title: "Vyberte doktrínu" # todo: NEW TRANSLATION
- activity_planner_tenets_doctrines: "[core_tenets|E] a [doctrines|E]" # todo: NEW TRANSLATION
- ecumenical_council_planner_debate_change: "\n\n#I Kliknutím změníte téma debaty#!" # todo: NEW TRANSLATION
- ecumenical_council_planner_debate_empty_tenet: "#I Kliknutím vyberete téma debaty o [core_tenet|E]#!" # todo: NEW TRANSLATION
- ecumenical_council_planner_debate_empty_doctrine: "#I Kliknutím vyberete téma debaty o [doctrine|E]#!" # todo: NEW TRANSLATION
- ecumenical_council_planner_debate_topic_tenet: "$ORDINAL$ [TenetType.GetName( GetPlayer.GetRite )|V] [core_tenet|E] $ecumenical_council_planner_debate_change$" # todo: NEW TRANSLATION
- ecumenical_council_planner_debate_topic_doctrine: "$ORDINAL$ [DoctrineType.GetGroup.GetName( GetPlayer.GetFaith )|V] [doctrine|E] $ecumenical_council_planner_debate_change$" # todo: NEW TRANSLATION
- ecumenical_council_planner_debate_first: "První debata se bude týkat" # todo: NEW TRANSLATION
- ecumenical_council_planner_debate_second: "Druhá debata se bude týkat" # todo: NEW TRANSLATION
- ecumenical_council_planner_debate_third: "Třetí debata se bude týkat" # todo: NEW TRANSLATION
- ecumenical_council_planner_debate_fourth: "Čtvrtá debata se bude týkat" # todo: NEW TRANSLATION
- ecumenical_council_planner_debate_fifth: "Pátá debata se bude týkat" # todo: NEW TRANSLATION
- ecumenical_council_planner_debate_sixth: "Šestá debata se bude týkat" # todo: NEW TRANSLATION
+ ACTIVITY_PLANNER_PHASE_REPLACE_TOOLTIP: "#T [ActivityPhase.GetName|U]#![AddLine( ActivityPhase.CanPickDescriptionBlockers( GetPlayer, PlannedActivityPhase.GetLocation, ActivityPlanner.GetSelectedSpecialOption ) )][AddTextIf( Not( ActivityPlanner.CanPlanMorePhasesOfType( ActivityPhase.Self ) ), AddLine( '$ACTIVITY_PLANNER_CANNOT_PICK_MORE_OF_PHASE|q$' ) )][AddLine( ActivityPhase.GetDescription( Activity.Self ) )]"
+ activity_planner_clear_selected_tenet: "#I Kliknutím zrušíš výběr [Concept('core_tenet','zásady')|E]#!"
+ activity_planner_clear_selected_doctrine: "#I Kliknutím zrušíš výběr [Concept('doctrine','doktríny')|E]#!"
+ activity_planner_tenet_window_title: "Vyber zásadu"
+ activity_planner_doctrine_window_title: "Vyber doktrínu"
+ activity_planner_tenets_doctrines: "[Concept('core_tenets','zásady')|EU] a [Concept('doctrines','doktríny')|E]"
+ ecumenical_council_planner_debate_change: "\n\n#I Kliknutím změníš téma debaty#!"
+ ecumenical_council_planner_debate_empty_tenet: "#I Kliknutím vybereš téma debaty o [Concept('core_tenet','zásadě')|E]#!"
+ ecumenical_council_planner_debate_empty_doctrine: "#I Kliknutím vybereš téma debaty o [Concept('doctrine','doktríně')|E]#!"
+ ecumenical_council_planner_debate_topic_tenet: "$ORDINAL$ [TenetType.GetName( GetPlayer.GetRite )|V] [Concept('core_tenet','zásada')|E] $ecumenical_council_planner_debate_change$"
+ ecumenical_council_planner_debate_topic_doctrine: "$ORDINAL$ [DoctrineType.GetGroup.GetName( GetPlayer.GetFaith )|V] [Concept('doctrine','doktrína')|E] $ecumenical_council_planner_debate_change$"
+ ecumenical_council_planner_debate_first: "První debata se bude týkat"
+ ecumenical_council_planner_debate_second: "Druhá debata se bude týkat"
+ ecumenical_council_planner_debate_third: "Třetí debata se bude týkat"
+ ecumenical_council_planner_debate_fourth: "Čtvrtá debata se bude týkat"
+ ecumenical_council_planner_debate_fifth: "Pátá debata se bude týkat"
+ ecumenical_council_planner_debate_sixth: "Šestá debata se bude týkat"

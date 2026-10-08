@@ -163,8 +163,8 @@
  trait_torturer_desc: "Působit bolest. Držet něčí život ve svých rukou. To je skutečná moc."
  trait_whole_of_body: "Tělesná celistvost"
  trait_whole_of_body_desc: "Poznej sebe, své meze i plný rozsah svých možností."
- trait_erudite: "Učenec" # todo: NEW TRANSLATION
- trait_erudite_desc: "Filozofie, příroda a vědění. Porozumět světu je jediný způsob, jak mu vládnout." # todo: NEW TRANSLATION
+ trait_erudite: "Učenec"
+ trait_erudite_desc: "Filozofie, příroda a vědění. Porozumět světu je jediný způsob, jak mu vládnout."
  trait_theologian: "Teolog"
  trait_theologian_desc: "Božství skýtá odpověď na každou otázku, od toho, co se skrývá v lidských srdcích, až po tajemství života."
  trait_mystic_female_1: "Moudrá žena"
@@ -462,7 +462,7 @@
  TRAIT_FLAG_DESC_faltering_heart_random_xp_gain: "\n@time_icon!#help Tato [Concept('trait_level_track','cesta rysu')|E] postoupí při každém [Concept('mental_break','duševním zhroucení')|E]#!"
  TRAIT_FLAG_DESC_wounds_twice_as_bad: "#indent_newline:7 @alert_icon! #alert_trial Kdykoli by postava získala rys #V [GetTrait('wounded_1').GetName( GetNullCharacter )]#!, získá namísto něj #V [GetTrait('wounded_2').GetName( GetNullCharacter )]#! nebo #V [GetTrait('wounded_3').GetName( GetNullCharacter )]#!#!#!"
  TRAIT_FLAG_DESC_fragile_bones_random_xp_gain: "\n#indent_newline:6 @time_icon!#help Tato [Concept('trait_level_track','cesta rysu')|E] postupuje každý rok. Její postup lze [Concept( 'fragile_bones_mitigation', 'zmírnit' )|E].#!#!#!"
- TRAIT_FLAG_DESC_excommunicated_recovery_hint: "\n#indent_newline:6 @warning_icon!#help Viz [Concept( 'excommunicated_recovery', 'možnosti nápravy' )|E].#!#!#!" # todo: NEW TRANSLATION
+ TRAIT_FLAG_DESC_excommunicated_recovery_hint: "\n#indent_newline:6 @warning_icon!#help Viz [Concept( 'excommunicated_recovery', 'možnosti nápravy' )|E].#!#!#!"
  your_mind_withers_feed_message_title: "Tvá mysl chřadne..."
  your_mind_withers_slowly_feed_message_title: "Tvá mysl chřadne, ale pomalu!"
  your_bones_weaken_feed_message_title: "Tvé kosti slábnou..."
@@ -480,11 +480,11 @@
  game_concept_infirm_mitigation: "Zmírnění neduživosti"
  game_concept_infirm_mitigation_desc: "Hlavním způsobem, jak oddálit neduživost, je udržovat si dobré zdraví.\n\n[Concept('trait','Rys')|E] [GetTrait('infirm').GetName( GetNullCharacter )] postoupí o celou úroveň při onemocnění [Concept('illness','nemocí')|E] a každý rok postupuje o malou část.\n\nPokud nemoc trvá delší dobu, bude [Concept('trait_level_track','cesta rysu')|E] každý rok postupovat mnohem rychleji. Její postup se výrazně zrychlí také po dosažení věku 65 let."
  game_concept_excommunicated_recovery: "Zrušení exkomunikace"
- game_concept_excommunicated_recovery_desc: "Když je [character|E] [excommunicated|E], utrpí okamžitou újmu a čelí trvajícím omezením až do rozhřešení.\n\nPo exkomunikaci okamžitě utrpí:\n$EFFECT_LIST_BULLET$Velkou ztrátu [legitimacy|E]\n$EFFECT_LIST_BULLET$Ztratí jednu úroveň [piety_level|E]\n$EFFECT_LIST_BULLET$#N -50%#! zisku [piety|E], dokud přetrvává [trait|E]\n[AddLocalizationIf( HasDlcFeature( 'by_god_alone' ), 'game_concept_excommunicated_recovery_spiritual_fulfillment' )]\n\nDokud jsou [excommunicated|E], nesmějí:\n$EFFECT_LIST_BULLET$Pořádat ani se účastnit [coronation|E]\n$EFFECT_LIST_BULLET$Používat [interaction|E] #high $seek_indulgences_interaction$#!\n$EFFECT_LIST_BULLET$Rozvést se [divorce|E] prostřednictvím církve\n$EFFECT_LIST_BULLET$Najmout [holy_orders|E]\n\nMohou jim také hrozit:\n$EFFECT_LIST_BULLET$[modifier|E] [GetModifier('recent_excommunication').GetNameWithTooltip], který na jeden rok znemožňuje rozhřešení\n$EFFECT_LIST_BULLET$[excommunication_war|E] od sousedních [rulers|E] stejné [faith|E], pokud jsou [independent|E] [ruler|E]\n\nO rozhřešení lze požádat těmito způsoby:\n[SelectLocalization( HasDlcFeature( 'by_god_alone' ), 'game_concept_excommunicated_recovery_absolution_PAM', 'game_concept_excommunicated_recovery_absolution_NO_PAM' )][AddLocalizationIf( HasDlcFeature( 'by_god_alone' ), 'game_concept_excommunicated_recovery_antipope' )]" # todo: NEW TRANSLATION
- game_concept_excommunicated_recovery_absolution_PAM: "$EFFECT_LIST_BULLET$Vévodové a vládci nižších hodností (místní exkomunikace): použij #high $declaration_of_repentance_interaction$#! u způsobilého duchovního #weak (u své [Concept('head_of_faith','hlavy víry')|E], pokud tě žádný jiný duchovní hodností nepřevyšuje)#!\n$EFFECT_LIST_BULLET$Všichni [Concept('rulers','vládci')|E] exkomunikovaní tvou [Concept('head_of_faith','hlavou víry')|E] nebo vládnoucí království či říši: osobně požádej svou [Concept('head_of_faith','hlavu víry')|E] a zvol #high $petition_head_of_faith_decision_option_repentance$#!\n$EFFECT_LIST_BULLET$Vyhraj [Concept('excommunication_war','exkomunikační válku')|E] jako obránce\n$EFFECT_LIST_BULLET$Přestup k jiné [Concept('faith','víře')|E]\n\n" # todo: NEW TRANSLATION
- game_concept_excommunicated_recovery_absolution_NO_PAM: "$EFFECT_LIST_BULLET$Použij #high $declaration_of_repentance_interaction$#! u své [Concept('head_of_faith','hlavy víry')|E] nebo způsobilého duchovního\n$EFFECT_LIST_BULLET$Vyhraj [Concept('excommunication_war','exkomunikační válku')|E] jako obránce\n$EFFECT_LIST_BULLET$Přestup k jiné [Concept('faith','víře')|E]\n\n" # todo: NEW TRANSLATION
- game_concept_excommunicated_recovery_antipope: "Po rozhřešení může podpora [Concept('challenger_hof','konkurenční hlavy víry')|E] ochránit [Concept('ruler','vládce')|E] před budoucí [Concept('excommunication','exkomunikací')|E] ze strany [Concept('head_of_faith','hlavy víry')|E] [Concept('mainline_rite','hlavního ritu')|E]." # todo: NEW TRANSLATION
- game_concept_excommunicated_recovery_spiritual_fulfillment: "$EFFECT_LIST_BULLET$Ztráta [Concept('spiritual_fulfillment','duchovního naplnění')|E]\n" # todo: NEW TRANSLATION
+ game_concept_excommunicated_recovery_desc: "Když je [Concept('character','postava')|E] [Concept('excommunicated','exkomunikovaná')|E], utrpí okamžitou újmu a čelí trvajícím omezením až do rozhřešení.\n\nPo exkomunikaci okamžitě utrpí:\n$EFFECT_LIST_BULLET$Velkou ztrátu [Concept('legitimacy','legitimity')|E]\n$EFFECT_LIST_BULLET$Ztratí jednu úroveň [Concept('piety_level','úrovně oddanosti')|E]\n$EFFECT_LIST_BULLET$#N -50%#! zisku [Concept('piety','zbožnosti')|E], dokud přetrvává [Concept('trait','rys')|E]\n[AddLocalizationIf( HasDlcFeature( 'by_god_alone' ), 'game_concept_excommunicated_recovery_spiritual_fulfillment' )]\n\nDokud jsou [Concept('excommunicated','exkomunikované')|E], nesmějí:\n$EFFECT_LIST_BULLET$Pořádat ani se účastnit [Concept('coronation','korunovací')|E]\n$EFFECT_LIST_BULLET$Používat [Concept('interaction','interakci')|E] #high $seek_indulgences_interaction$#!\n$EFFECT_LIST_BULLET$Rozvést se [Concept('divorce','rozvést se')|E] prostřednictvím církve\n$EFFECT_LIST_BULLET$Najmout [Concept('holy_orders','svaté řády')|E]\n\nMohou jim také hrozit:\n$EFFECT_LIST_BULLET$[Concept('modifier','modifikátor')|EU] [GetModifier('recent_excommunication').GetNameWithTooltip], který na jeden rok znemožňuje rozhřešení\n$EFFECT_LIST_BULLET$[Concept('excommunication_war','exkomunikační války')|EU] od sousedních [Concept('rulers','vládců')|E] stejné [Concept('faith','víry')|E], pokud jsou [Concept('independent','nezávislými')|E] [Concept('ruler','vládci')|E]\n\nO rozhřešení lze požádat těmito způsoby:\n[SelectLocalization( HasDlcFeature( 'by_god_alone' ), 'game_concept_excommunicated_recovery_absolution_PAM', 'game_concept_excommunicated_recovery_absolution_NO_PAM' )][AddLocalizationIf( HasDlcFeature( 'by_god_alone' ), 'game_concept_excommunicated_recovery_antipope' )]"
+ game_concept_excommunicated_recovery_absolution_PAM: "$EFFECT_LIST_BULLET$Vévodové a vládci nižších hodností (místní exkomunikace): použij #high $declaration_of_repentance_interaction$#! u způsobilého duchovního #weak (u své [Concept('head_of_faith','hlavy víry')|E], pokud tě žádný jiný duchovní hodností nepřevyšuje)#!\n$EFFECT_LIST_BULLET$Všichni [Concept('rulers','vládci')|E] exkomunikovaní tvou [Concept('head_of_faith','hlavou víry')|E] nebo vládnoucí království či říši: osobně požádej svou [Concept('head_of_faith','hlavu víry')|E] a zvol #high $petition_head_of_faith_decision_option_repentance$#!\n$EFFECT_LIST_BULLET$Vyhraj [Concept('excommunication_war','exkomunikační válku')|E] jako obránce\n$EFFECT_LIST_BULLET$Přestup k jiné [Concept('faith','víře')|E]\n\n"
+ game_concept_excommunicated_recovery_absolution_NO_PAM: "$EFFECT_LIST_BULLET$Použij #high $declaration_of_repentance_interaction$#! u své [Concept('head_of_faith','hlavy víry')|E] nebo způsobilého duchovního\n$EFFECT_LIST_BULLET$Vyhraj [Concept('excommunication_war','exkomunikační válku')|E] jako obránce\n$EFFECT_LIST_BULLET$Přestup k jiné [Concept('faith','víře')|E]\n\n"
+ game_concept_excommunicated_recovery_antipope: "Po rozhřešení může podpora [Concept('challenger_hof','konkurenční hlavy víry')|E] ochránit [Concept('ruler','vládce')|E] před budoucí [Concept('excommunication','exkomunikací')|E] ze strany [Concept('head_of_faith','hlavy víry')|E] [Concept('mainline_rite','hlavního ritu')|E]."
+ game_concept_excommunicated_recovery_spiritual_fulfillment: "$EFFECT_LIST_BULLET$Ztráta [Concept('spiritual_fulfillment','duchovního naplnění')|E]\n"
  game_concept_elder_traits: "Zdravotní rysy stáří"
  game_concept_elder_traits_desc: "Jak [Concept('characters','postavy')|E] stárnou, mohou získávat věkem podmíněné [Concept('traits','rysy')|E], jako jsou [GetTrait('faltering_heart').GetName( GetNullCharacter )] nebo [GetTrait('fragile_bones').GetName( GetNullCharacter )]. Obvykle se objevují kolem #V 50#! let, ale mohou se projevit i dříve.\n\nJejich získání je méně pravděpodobné, pokud máš:\n$BULLET_WITH_TAB$Dobré [Concept('health','zdraví')|E]\n$BULLET_WITH_TAB$[GetTrait('athletic').GetName( GetNullCharacter )], [GetTrait('physique_good_1').GetName( GetNullCharacter )] nebo [GetTrait('whole_of_body').GetName( GetNullCharacter )]\n$BULLET_WITH_TAB$#indent_newline:6 V případě rysu [GetTrait('withering_mind').GetName( GetNullCharacter )]: [GetTrait('family_first').GetName( GetNullCharacter )], [GetTrait('seducer').GetName( GetNullCharacter )], znalost [Concept('languages','jazyků')|E] a mnoho [Concept('friends','přátel')|E] a [Concept('lovers','milenců')|E]#!\n\nJejich získání je pravděpodobnější, pokud máš:\n$BULLET_WITH_TAB$Špatné [Concept('health','zdraví')|E]\n$BULLET_WITH_TAB$[GetTrait('drunkard').GetName( GetNullCharacter )] nebo [GetTrait('reclusive').GetName( GetNullCharacter )]\n$BULLET_WITH_TAB$[GetModifier( 'obese_modifier' ).GetNameWithTooltip] nebo [GetModifier( 'malnourished_modifier' ).GetNameWithTooltip]\n$BULLET_WITH_TAB$Vysokou úroveň [Concept('stress','stresu')|E]\n$BULLET_WITH_TAB$Rodiče či prarodiče s těmito rysy"
  trait_incapable: "Neschopný"
@@ -680,23 +680,23 @@
  trait_devoted_jainism_female: "Áriká"
  trait_devoted_buddhism_japanese_male: "Sō"
  trait_devoted_buddhism_japanese_female: "Ama"
- trait_cleric: "Duchovní" # todo: NEW TRANSLATION
- trait_cleric_deacon: "Jáhen" # todo: NEW TRANSLATION
- trait_cleric_deaconess: "Jáhenka" # todo: NEW TRANSLATION
- trait_cleric_muezzin: "Muezzin" # todo: NEW TRANSLATION
- trait_cleric_hazzan: "Chazan" # todo: NEW TRANSLATION
- trait_cleric_herbad: "Herbad" # todo: NEW TRANSLATION
- trait_cleric_pandit: "Pandit" # todo: NEW TRANSLATION
- trait_cleric_pandita: "Pandita" # todo: NEW TRANSLATION
- trait_cleric_anagarika: "Anagarika" # todo: NEW TRANSLATION
- trait_cleric_desc: "Tato postava byla vysvěcena na duchovního a slouží své víře, aniž by skládala mnišské sliby." # todo: NEW TRANSLATION
- trait_cleric_christian_character_desc: "[ROOT.GetCharacter.GetFirstNameNoTooltip] byl vysvěcen na jáhna: je vázán službou církvi a asistencí při obřadech, ale může žít ve světě a uzavřít sňatek." # todo: NEW TRANSLATION
- trait_cleric_muslim_character_desc: "[ROOT.GetCharacter.GetFirstNameNoTooltip] svolává věřící k modlitbě a slouží mešitě, ale může žít ve světě a uzavřít sňatek." # todo: NEW TRANSLATION
- trait_cleric_jewish_character_desc: "[ROOT.GetCharacter.GetFirstNameNoTooltip] vede shromáždění při modlitbách a zpěvu a slouží synagoze, přitom však žije ve světě." # todo: NEW TRANSLATION
- trait_cleric_zoroastrian_character_desc: "[ROOT.GetCharacter.GetFirstNameNoTooltip] byl zasvěcen do nižšího stupně kněžství, pečuje o posvátný oheň a učí se jeho obřadům." # todo: NEW TRANSLATION
- trait_cleric_pandit_character_desc: "[ROOT.GetCharacter.GetFirstNameNoTooltip] zná posvátné texty a vykládá je u dvora, aniž by se zřekl světa." # todo: NEW TRANSLATION
- trait_cleric_buddhist_character_desc: "[ROOT.GetCharacter.GetFirstNameNoTooltip] kráčí střední cestou mezi světským životem a klášterem; dodržuje předpisy, aniž by přijal plné svěcení." # todo: NEW TRANSLATION
- trait_cleric_character_desc: "[ROOT.GetCharacter.GetFirstNameNoTooltip] vstoupil do duchovního stavu a slouží své víře, aniž by skládal mnišské sliby." # todo: NEW TRANSLATION
+ trait_cleric: "Duchovní"
+ trait_cleric_deacon: "Jáhen"
+ trait_cleric_deaconess: "Jáhenka"
+ trait_cleric_muezzin: "Muezzin"
+ trait_cleric_hazzan: "Chazan"
+ trait_cleric_herbad: "Herbad"
+ trait_cleric_pandit: "Pandit"
+ trait_cleric_pandita: "Pandita"
+ trait_cleric_anagarika: "Anagarika"
+ trait_cleric_desc: "Tato postava byla vysvěcena na duchovního a slouží své víře, aniž by skládala mnišské sliby."
+ trait_cleric_christian_character_desc: "[ROOT.GetCharacter.GetFirstNameNoTooltip|U] byl vysvěcen na jáhna: je vázán službou církvi a asistencí při obřadech, ale může žít ve světě a uzavřít sňatek."
+ trait_cleric_muslim_character_desc: "[ROOT.GetCharacter.GetFirstNameNoTooltip|U] svolává věřící k modlitbě a slouží mešitě, ale může žít ve světě a uzavřít sňatek."
+ trait_cleric_jewish_character_desc: "[ROOT.GetCharacter.GetFirstNameNoTooltip|U] vede shromáždění při modlitbách a zpěvu a slouží synagoze, přitom však žije ve světě."
+ trait_cleric_zoroastrian_character_desc: "[ROOT.GetCharacter.GetFirstNameNoTooltip|U] byl zasvěcen do nižšího stupně kněžství, pečuje o posvátný oheň a učí se jeho obřadům."
+ trait_cleric_pandit_character_desc: "[ROOT.GetCharacter.GetFirstNameNoTooltip|U] zná posvátné texty a vykládá je u dvora, aniž by se zřekl světa."
+ trait_cleric_buddhist_character_desc: "[ROOT.GetCharacter.GetFirstNameNoTooltip|U] kráčí střední cestou mezi světským životem a klášterem; dodržuje předpisy, aniž by přijal plné svěcení."
+ trait_cleric_character_desc: "[ROOT.GetCharacter.GetFirstNameNoTooltip|U] vstoupil do duchovního stavu a slouží své víře, aniž by skládal mnišské sliby."
  trait_mujahid: "Mudžáhid"
  trait_mujahid_character_desc: "[ROOT.GetCharacter.GetFirstNameNoTooltip] splnil[Select_CString( ROOT.GetCharacter.IsFemale, 'a', '' )] svou islámskou povinnost a zúčastnil[Select_CString( ROOT.GetCharacter.IsFemale, 'a', '' )] se džihádu."
  trait_hajji: "Hadždží"
@@ -742,17 +742,17 @@
  trait_faith_warrior_character_desc: "[ROOT.GetCharacter.GetFirstNameNoTooltip] se zúčastnil[Select_CString( ROOT.GetCharacter.IsFemale, 'a', '' )] velké svaté války."
  trait_saint: "Světec"
  trait_venerated_ancestor: "Uctívaný předek"
- trait_wali: "Valí" # todo: NEW TRANSLATION
- trait_waliyya: "Valíja" # todo: NEW TRANSLATION
- trait_divus: "Divus" # todo: NEW TRANSLATION
- trait_diva: "Diva" # todo: NEW TRANSLATION
- trait_siddha: "Siddha" # todo: NEW TRANSLATION
- trait_kami: "Kami" # todo: NEW TRANSLATION
- trait_xianru: "Sien-žu" # todo: NEW TRANSLATION
- trait_arya: "Ārja" # todo: NEW TRANSLATION
- trait_zhenren: "Čen-žen" # todo: NEW TRANSLATION
- trait_tzadik: "Cadik" # todo: NEW TRANSLATION
- trait_tzadeket: "Cadeket" # todo: NEW TRANSLATION
+ trait_wali: "Valí"
+ trait_waliyya: "Valíja"
+ trait_divus: "Divus"
+ trait_diva: "Diva"
+ trait_siddha: "Siddha"
+ trait_kami: "Kami"
+ trait_xianru: "Sien-žu"
+ trait_arya: "Ārja"
+ trait_zhenren: "Čen-žen"
+ trait_tzadik: "Cadik"
+ trait_tzadeket: "Cadeket"
  trait_saint_desc: "Tato postava je mimořádně svatá a je uctívána za své zbožné skutky."
  trait_saint_character_desc: "[ROOT.GetCharacter.GetFirstNameNoTooltip] je mimořádně svat[Select_CString( ROOT.GetCharacter.IsFemale, 'á', 'ý' )] a je uctíván[Select_CString( ROOT.GetCharacter.IsFemale, 'a', '' )] za své zbožné skutky."
  trait_legend: "Žijící legenda"
@@ -1280,34 +1280,34 @@
  trait_confucian_education_4_desc: "[ROOT.GetCharacter.GetFirstNameNoTooltip] žije v souladu s Cestou a je skutečným vzorem pro ostatní."
  trait_confucian_education_5: "Bezúhonný mudrc"
  trait_confucian_education_5_desc: "[ROOT.GetCharacter.GetFirstNameNoTooltip] je v konfuciánských kruzích považován[Select_CString( ROOT.GetCharacter.IsFemale, 'a', '' )] téměř za světce. Konfuciáni z širokého okolí slyšeli o mravní a etické zdatnosti této postavy."
- trait_track_lifestyle_scholar: "Náboženský učenec" # todo: NEW TRANSLATION
- trait_track_lifestyle_scholar_desc: "Božství uděluje vědění všem štědře a bez výčitek.\n\n#weak Tuto [trait|E] lze zvyšovat účastí na aktivitě [GetActivityType( 'activity_ecumenical_council').GetName].\n\nNa úrovni 3 začíná [trait|E] udělovat imunitu vůči [interaction|E] [ecclesiastic_transfer_land_interaction|E].#!" # todo: NEW TRANSLATION
- trait_lifestyle_scholar: "$trait_track_lifestyle_scholar$" # todo: NEW TRANSLATION
- trait_lifestyle_scholar_character_desc: "Tato postava se vydala na cestu za pochopením podstaty náboženství." # todo: NEW TRANSLATION
- trait_lifestyle_scholar_desc: "[ROOT.GetCharacter.GetFirstNameNoTooltip] právě zahájil [ROOT.GetCharacter.GetHerHis] cestu za pochopením podstaty náboženství." # todo: NEW TRANSLATION
- trait_lifestyle_scholar_1: "Novic" # todo: NEW TRANSLATION
- trait_lifestyle_scholar_1_desc: "[ROOT.GetCharacter.GetFirstNameNoTooltip] učinil [ROOT.GetCharacter.GetHerHis] první kroky ve studiu Písma svatého a rozumí jeho slovům více než jeho hloubce." # todo: NEW TRANSLATION
- trait_lifestyle_scholar_2: "Exegeta" # todo: NEW TRANSLATION
- trait_lifestyle_scholar_2_desc: "[ROOT.GetCharacter.GetFirstNameNoTooltip] vykládá Písmo se stále větší dovedností a dokáže objasnit pasáže, které méně bystré mysli matou." # todo: NEW TRANSLATION
- trait_lifestyle_scholar_3: "Doktor Písma" # todo: NEW TRANSLATION
- trait_lifestyle_scholar_3_desc: "[ROOT.GetCharacter.GetFirstNameNoTooltip] je uznáván pro [ROOT.GetCharacter.GetHerHis] pronikavý vhled do biblických textů." # todo: NEW TRANSLATION
- trait_lifestyle_scholar_4: "Vynikající scholastik" # todo: NEW TRANSLATION
- trait_lifestyle_scholar_4_desc: "Pro [ROOT.GetCharacter.GetFirstNameNoTooltip] je debata o doktríně téměř snazší než rozhovor o počasí." # todo: NEW TRANSLATION
- trait_lifestyle_scholar_5: "Božský vykladač" # todo: NEW TRANSLATION
- trait_lifestyle_scholar_5_desc: "[ROOT.GetCharacter.GetFirstNamePossessiveNoTooltip] porozumění Písmu se blíží božské inspiraci." # todo: NEW TRANSLATION
- trait_track_monastic: "Mnišská seniorita" # todo: NEW TRANSLATION
- trait_track_monastic_desc: "Tento oddaný dodržoval řeholi a žil v zbožné komunitě svých druhů; v chráněné hierarchii svého řádu tak postoupil výše. \n\n#weak Tato [trait|E] se zvyšuje během členství v [monastic_holy_order|E] a její úroveň ovlivňují [piety|E], [learning|E] a vlivné vazby na světské [rulers|E] a [clergy|E]" # todo: NEW TRANSLATION
- trait_herald: "Hlasatel" # todo: NEW TRANSLATION
- trait_gaon: "Gaon" # todo: NEW TRANSLATION
- trait_arhat: "Arhat" # todo: NEW TRANSLATION
- trait_sant: "Sant" # todo: NEW TRANSLATION
- trait_zushi: "Zushi" # todo: NEW TRANSLATION
- trait_sage: "Mudrc" # todo: NEW TRANSLATION
- trait_ashavan: "Ašavan" # todo: NEW TRANSLATION
- TRAIT_FLAG_DESC_herald_bonuses_modifier: "Přijetí nabídky $sway_ruler_to_my_rite_interaction$: #P +75#!\nNáklady na [piety_i|E][piety|E] při použití $sway_ruler_to_my_rite_interaction$: #P -50%#!" # todo: NEW TRANSLATION
- trait_herald_desc: "Tato postava je oslavována jako živý hlasatel víry a utváří způsob, jakým stádo uctívá, aniž by se odtrhla od širšího společenství." # todo: NEW TRANSLATION
- trait_herald_character_desc: "[ROOT.GetCharacter.GetFirstNameNoTooltip] je oslavován jako živý hlasatel [ROOT.GetCharacter.GetHerHis] víry a utváří způsob, jakým stádo uctívá, aniž by se odtrhl od širšího společenství." # todo: NEW TRANSLATION
- trait_debug_enable_raiding_without_restrictions: "#D Povolit plenění (bez omezení)#!" # todo: NEW TRANSLATION
- trait_debug_enable_raiding_without_restrictions_desc: "Povolit plenění bez omezení." # todo: NEW TRANSLATION
- trait_debug_enable_raiding_per_standard_restrictions: "#D Povolit plenění#!" # todo: NEW TRANSLATION
- trait_debug_enable_raiding_per_standard_restrictions_desc: "Povolit plenění za běžných omezení." # todo: NEW TRANSLATION
+ trait_track_lifestyle_scholar: "Náboženský učenec"
+ trait_track_lifestyle_scholar_desc: "Božství uděluje vědění všem štědře a bez výčitek.\n\n#weak Tento [Concept('trait','rys')|E] lze zvyšovat účastí na aktivitě [GetActivityType( 'activity_ecumenical_council').GetName].\n\nNa úrovni 3 začíná [Concept('trait','rys')|E] udělovat imunitu vůči [Concept('interaction','interakci')|E] [Concept('ecclesiastic_transfer_land_interaction','Převést území')|E].#!"
+ trait_lifestyle_scholar: "$trait_track_lifestyle_scholar$"
+ trait_lifestyle_scholar_character_desc: "Tato postava se vydala na cestu za pochopením podstaty náboženství."
+ trait_lifestyle_scholar_desc: "[ROOT.GetCharacter.GetFirstNameNoTooltip|U] právě [Select_CString(ROOT.GetCharacter.IsFemale,'zahájila','zahájil')|l] svou cestu za pochopením podstaty náboženství."
+ trait_lifestyle_scholar_1: "Novic"
+ trait_lifestyle_scholar_1_desc: "[ROOT.GetCharacter.GetFirstNameNoTooltip|U] [Select_CString(ROOT.GetCharacter.IsFemale,'učinila','učinil')|l] své první kroky ve studiu Písma svatého a rozumí jeho slovům více než jeho hloubce."
+ trait_lifestyle_scholar_2: "Exegeta"
+ trait_lifestyle_scholar_2_desc: "[ROOT.GetCharacter.GetFirstNameNoTooltip|U] vykládá Písmo se stále větší dovedností a dokáže objasnit pasáže, které méně bystré mysli matou."
+ trait_lifestyle_scholar_3: "Doktor Písma"
+ trait_lifestyle_scholar_3_desc: "[ROOT.GetCharacter.GetFirstNameNoTooltip|U] je [Select_CString(ROOT.GetCharacter.IsFemale,'uznávána','uznáván')|l] pro svůj pronikavý vhled do náboženských textů."
+ trait_lifestyle_scholar_4: "Vynikající scholastik"
+ trait_lifestyle_scholar_4_desc: "Pro [ROOT.GetCharacter.GetFirstNameNoTooltip] je debata o doktríně téměř snazší než rozhovor o počasí."
+ trait_lifestyle_scholar_5: "Božský vykladač"
+ trait_lifestyle_scholar_5_desc: "[ROOT.GetCharacter.GetFirstNamePossessiveNoTooltip|U] porozumění Písmu se blíží božské inspiraci."
+ trait_track_monastic: "Mnišská seniorita"
+ trait_track_monastic_desc: "Tento oddaný dodržoval řeholi a žil v zbožné komunitě svých druhů; v chráněné hierarchii svého řádu tak postoupil výše. \n\n#weak Tato [Concept('trait','rys')|E] se zvyšuje během členství v [Concept('monastic_holy_order','mnišském řádu')|E] a její úroveň ovlivňují [Concept('piety','zbožnost')|E], [Concept('learning','učenost')|E] a vlivné vazby na světské [Concept('rulers','vládce')|E] a [Concept('clergy','duchovenstvo')|E]"
+ trait_herald: "Hlasatel"
+ trait_gaon: "Gaon"
+ trait_arhat: "Arhat"
+ trait_sant: "Sant"
+ trait_zushi: "Zushi"
+ trait_sage: "Mudrc"
+ trait_ashavan: "Ašavan"
+ TRAIT_FLAG_DESC_herald_bonuses_modifier: "Přijetí nabídky $sway_ruler_to_my_rite_interaction$: #P +75#!\nNáklady na [piety_i|E][Concept('piety','zbožnost')|E] při použití $sway_ruler_to_my_rite_interaction$: #P -50%#!"
+ trait_herald_desc: "Tato postava je oslavována jako živý hlasatel víry a utváří způsob, jakým stádo uctívá, aniž by se odtrhla od širšího společenství."
+ trait_herald_character_desc: "[ROOT.GetCharacter.GetFirstNameNoTooltip|U] je [Select_CString(ROOT.GetCharacter.IsFemale,'oslavována','oslavován')|l] jako [Select_CString(ROOT.GetCharacter.IsFemale,'živá hlasatelka','živý hlasatel')|l] své víry a utváří způsob, jakým stádo uctívá, aniž by se [Select_CString(ROOT.GetCharacter.IsFemale,'odtrhla','odtrhl')|l] od širšího společenství."
+ trait_debug_enable_raiding_without_restrictions: "#D Povolit plenění (bez omezení)#!"
+ trait_debug_enable_raiding_without_restrictions_desc: "Povolit plenění bez omezení."
+ trait_debug_enable_raiding_per_standard_restrictions: "#D Povolit plenění#!"
+ trait_debug_enable_raiding_per_standard_restrictions_desc: "Povolit plenění za běžných omezení."

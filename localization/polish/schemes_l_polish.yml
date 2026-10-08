@@ -54,7 +54,7 @@
  SCHEME_PROGRESS_FROZEN_DATE_REASON: "Postup je pozastaven do [DATE.GetString|V], protože $REASON$"
  scheme_setup_heads_up: "Pokusím se dokončit svou intriku."
  SCHEME_FULL_ACTION_NAME: "[SCHEME.GetActionName] [SCHEME.GetTarget.GetNameNoTooltip]"
- SCHEME_NO_LONGER_FULFILL_REQUIREMENT: "Bez řádného přístupu k [scheme|E]: $VALUE|+=0$" # todo: NEW TRANSLATION
+ SCHEME_NO_LONGER_FULFILL_REQUIREMENT: "Bez řádného přístupu k [Concept('scheme','intrice')|E]: $VALUE|+=0$"
  SCHEME_MY_DIPLOMACY: "Má [Concept('diplomacy','diplomacie')|El]: $VALUE|+=0$"
  SCHEME_MY_MARTIAL: "Mé [Concept('martial','vojenství')|El]: $VALUE|+=0$"
  SCHEME_MY_STEWARDSHIP: "Má [Concept('stewardship','správa')|El]: $VALUE|+=0$"
@@ -71,30 +71,30 @@
  scheme_target_died: "[target.GetShortUIName|U] umírá"
  scheme_target_not_in_diplomatic_range: "[target.GetShortUIName|U] již není v [Concept('diplomatic_range','diplomatickém dosahu')|El]"
  scheme_cancelled: "[owner.GetShortUIName|U] upouští od intriky"
- scheme_outcome_murder_success_puppeteer: "[scheme_outcome_puppet.GetShortUIName|U] zavraždil(a) [scheme_outcome_target.GetShortUIName]" # todo: NEW TRANSLATION
- scheme_outcome_murder_failure_puppeteer: "[scheme_outcome_puppet.GetShortUIName|U] nedokázal(a) zavraždit [scheme_outcome_target.GetShortUIName]" # todo: NEW TRANSLATION
- scheme_outcome_abduct_success_puppeteer: "[scheme_outcome_puppet.GetShortUIName|U] unesl(a) [scheme_outcome_target.GetShortUIName]" # todo: NEW TRANSLATION
- scheme_outcome_abduct_failure_puppeteer: "[scheme_outcome_puppet.GetShortUIName|U] nedokázal(a) unést [scheme_outcome_target.GetShortUIName]" # todo: NEW TRANSLATION
- scheme_outcome_generic_success_puppeteer: "[scheme_outcome_puppet.GetShortUIName|U] uspěl(a) ve spiknutí proti [scheme_outcome_target.GetShortUIName]" # todo: NEW TRANSLATION
- scheme_outcome_generic_failure_puppeteer: "Spiknutí [scheme_outcome_puppet.GetShortUIName|U] proti [scheme_outcome_target.GetShortUIName] selhalo" # todo: NEW TRANSLATION
- scheme_outcome_abduct_discovered_puppeteer: "[scheme_outcome_puppet.GetShortUIName|U] byl(a) přistižen(a) při pokusu o únos [scheme_outcome_target.GetShortUIName]" # todo: NEW TRANSLATION
- scheme_outcome_seduce_success_puppeteer: "[scheme_outcome_puppet.GetShortUIName|U] svedl(a) [scheme_outcome_target.GetShortUIName]" # todo: NEW TRANSLATION
- scheme_outcome_seduce_failure_puppeteer: "[scheme_outcome_puppet.GetShortUIName|U] nedokázal(a) svést [scheme_outcome_target.GetShortUIName]" # todo: NEW TRANSLATION
- scheme_outcome_seduce_discovered_puppeteer: "Pokus [scheme_outcome_puppet.GetShortUIName|U] svést [scheme_outcome_target.GetShortUIName] byl odhalen" # todo: NEW TRANSLATION
- scheme_outcome_befriend_success_puppeteer: "[scheme_outcome_puppet.GetShortUIName|U] se spřátelil(a) s [scheme_outcome_target.GetShortUIName]" # todo: NEW TRANSLATION
- scheme_outcome_befriend_failure_puppeteer: "[scheme_outcome_puppet.GetShortUIName|U] se nedokázal(a) spřátelit s [scheme_outcome_target.GetShortUIName]" # todo: NEW TRANSLATION
- scheme_outcome_court_success_puppeteer: "[scheme_outcome_puppet.GetShortUIName|U] úspěšně dvořil(a) [scheme_outcome_target.GetShortUIName]" # todo: NEW TRANSLATION
- scheme_outcome_court_failure_puppeteer: "[scheme_outcome_puppet.GetShortUIName|U] nedokázal(a) dvořit [scheme_outcome_target.GetShortUIName]" # todo: NEW TRANSLATION
- scheme_outcome_fabricate_hook_success_puppeteer: "[scheme_outcome_puppet.GetShortUIName|U] si opatřil(a) kompromitující materiál na [scheme_outcome_target.GetShortUIName]" # todo: NEW TRANSLATION
- scheme_outcome_fabricate_hook_discovered_puppeteer: "[scheme_outcome_puppet.GetShortUIName|U] byl(a) přistižen(a) při pokusu opatřit si kompromitující materiál na [scheme_outcome_target.GetShortUIName]" # todo: NEW TRANSLATION
- scheme_outcome_sway_success_puppeteer: "[scheme_outcome_puppet.GetShortUIName|U] si naklonil(a) [scheme_outcome_target.GetShortUIName]" # todo: NEW TRANSLATION
- scheme_outcome_sway_failure_puppeteer: "[scheme_outcome_puppet.GetShortUIName|U] si nedokázal(a) naklonit [scheme_outcome_target.GetShortUIName]" # todo: NEW TRANSLATION
- scheme_outcome_learn_language_success_puppeteer: "[scheme_outcome_puppet.GetShortUIName|U] se naučil(a) jazyk [scheme_outcome_target.GetShortUIName]" # todo: NEW TRANSLATION
- scheme_outcome_learn_language_failure_puppeteer: "[scheme_outcome_puppet.GetShortUIName|U] se nedokázal(a) naučit jazyk [scheme_outcome_target.GetShortUIName]" # todo: NEW TRANSLATION
- scheme_outcome_steal_back_artifact_success_puppeteer: "[scheme_outcome_puppet.GetShortUIName|U] ukradl(a) [scheme_outcome_target.GetShortUIName] zpět artefakt" # todo: NEW TRANSLATION
- scheme_outcome_steal_back_artifact_failure_puppeteer: "[scheme_outcome_puppet.GetShortUIName|U] nedokázal(a) ukrást [scheme_outcome_target.GetShortUIName] zpět artefakt" # todo: NEW TRANSLATION
- scheme_outcome_study_faith_success_puppeteer: "[scheme_outcome_puppet.GetShortUIName|U] studoval(a) víru [scheme_outcome_target.GetShortUIName]" # todo: NEW TRANSLATION
- scheme_outcome_study_faith_failure_puppeteer: "[scheme_outcome_puppet.GetShortUIName|U] pokročil(a) ve studiu víry [scheme_outcome_target.GetShortUIName]" # todo: NEW TRANSLATION
+ scheme_outcome_murder_success_puppeteer: "[scheme_outcome_puppet.GetShortUIName|U] [Select_CString(scheme_outcome_puppet.IsLocalPlayer,'jsi ','')|l][Select_CString(scheme_outcome_puppet.IsFemale,'zavraždila','zavraždil')|l] [scheme_outcome_target.Custom('CZ_ShortUIName_A')]"
+ scheme_outcome_murder_failure_puppeteer: "[scheme_outcome_puppet.GetShortUIName|U] [Select_CString(scheme_outcome_puppet.IsLocalPlayer,'jsi ','')|l][Select_CString(scheme_outcome_puppet.IsFemale,'nedokázala','nedokázal')|l] zavraždit [scheme_outcome_target.Custom('CZ_ShortUIName_A')]"
+ scheme_outcome_abduct_success_puppeteer: "[scheme_outcome_puppet.GetShortUIName|U] [Select_CString(scheme_outcome_puppet.IsLocalPlayer,'jsi ','')|l][Select_CString(scheme_outcome_puppet.IsFemale,'unesla','unesl')|l] [scheme_outcome_target.Custom('CZ_ShortUIName_A')]"
+ scheme_outcome_abduct_failure_puppeteer: "[scheme_outcome_puppet.GetShortUIName|U] [Select_CString(scheme_outcome_puppet.IsLocalPlayer,'jsi ','')|l][Select_CString(scheme_outcome_puppet.IsFemale,'nedokázala','nedokázal')|l] unést [scheme_outcome_target.Custom('CZ_ShortUIName_A')]"
+ scheme_outcome_generic_success_puppeteer: "[scheme_outcome_puppet.GetShortUIName|U] [Select_CString(scheme_outcome_puppet.IsLocalPlayer,'jsi ','')|l][Select_CString(scheme_outcome_puppet.IsFemale,'uspěla','uspěl')|l] v intrice proti [scheme_outcome_target.Custom('CZ_ShortUIName_D')]"
+ scheme_outcome_generic_failure_puppeteer: "Spiknutí [scheme_outcome_puppet.GetShortUIName|U] proti [scheme_outcome_target.GetShortUIName] selhalo"
+ scheme_outcome_abduct_discovered_puppeteer: "[scheme_outcome_puppet.GetShortUIName|U] [Select_CString(scheme_outcome_puppet.IsLocalPlayer,'jsi ','')|l][Select_CString(scheme_outcome_puppet.IsFemale,'byla','byl')|l] [Select_CString(scheme_outcome_puppet.IsFemale,'přistižena','přistižen')|l] při pokusu o únos [scheme_outcome_target.Custom('CZ_ShortUIName_I')]"
+ scheme_outcome_seduce_success_puppeteer: "[scheme_outcome_puppet.GetShortUIName|U] [Select_CString(scheme_outcome_puppet.IsLocalPlayer,'jsi ','')|l][Select_CString(scheme_outcome_puppet.IsFemale,'svedla','svedl')|l] [scheme_outcome_target.Custom('CZ_ShortUIName_A')]"
+ scheme_outcome_seduce_failure_puppeteer: "[scheme_outcome_puppet.GetShortUIName|U] [Select_CString(scheme_outcome_puppet.IsLocalPlayer,'jsi ','')|l][Select_CString(scheme_outcome_puppet.IsFemale,'nedokázala','nedokázal')|l] svést [scheme_outcome_target.Custom('CZ_ShortUIName_A')]"
+ scheme_outcome_seduce_discovered_puppeteer: "Pokus [scheme_outcome_puppet.GetShortUIName|U] svést [scheme_outcome_target.GetShortUIName] byl odhalen"
+ scheme_outcome_befriend_success_puppeteer: "[scheme_outcome_puppet.GetShortUIName|U] [Select_CString(scheme_outcome_puppet.IsLocalPlayer,'jsi ','')|l]se [Select_CString(scheme_outcome_puppet.IsFemale,'spřátelila','spřátelil')|l] s [scheme_outcome_target.Custom('CZ_ShortUIName_I')]"
+ scheme_outcome_befriend_failure_puppeteer: "[scheme_outcome_puppet.GetShortUIName|U] [Select_CString(scheme_outcome_puppet.IsLocalPlayer,'jsi ','')|l]se [Select_CString(scheme_outcome_puppet.IsFemale,'nedokázala','nedokázal')|l] spřátelit s [scheme_outcome_target.Custom('CZ_ShortUIName_I')]"
+ scheme_outcome_court_success_puppeteer: "[scheme_outcome_puppet.GetShortUIName|U] [Select_CString(scheme_outcome_puppet.IsLocalPlayer,'jsi ','')|l]se [Select_CString(scheme_outcome_puppet.IsFemale,'dvořila','dvořil')|l] úspěšně [scheme_outcome_target.Custom('CZ_ShortUIName_D')]"
+ scheme_outcome_court_failure_puppeteer: "[scheme_outcome_puppet.GetShortUIName|U] [Select_CString(scheme_outcome_puppet.IsLocalPlayer,'jsi ','')|l]se [Select_CString(scheme_outcome_puppet.IsFemale,'nedokázala','nedokázal')|l] dvořit [scheme_outcome_target.Custom('CZ_ShortUIName_D')]"
+ scheme_outcome_fabricate_hook_success_puppeteer: "[scheme_outcome_puppet.GetShortUIName|U] [Select_CString(scheme_outcome_puppet.IsLocalPlayer,'jsi ','')|l]si [Select_CString(scheme_outcome_puppet.IsFemale,'opatřila','opatřil')|l] kompromitující materiál na [scheme_outcome_target.Custom('CZ_ShortUIName_A')]"
+ scheme_outcome_fabricate_hook_discovered_puppeteer: "[scheme_outcome_puppet.GetShortUIName|U] [Select_CString(scheme_outcome_puppet.IsLocalPlayer,'jsi ','')|l][Select_CString(scheme_outcome_puppet.IsFemale,'byla','byl')|l] [Select_CString(scheme_outcome_puppet.IsFemale,'přistižena','přistižen')|l] při pokusu opatřit si kompromitující materiál na [scheme_outcome_target.Custom('CZ_ShortUIName_A')]"
+ scheme_outcome_sway_success_puppeteer: "[scheme_outcome_puppet.GetShortUIName|U] [Select_CString(scheme_outcome_puppet.IsLocalPlayer,'jsi ','')|l]si [Select_CString(scheme_outcome_puppet.IsFemale,'naklonila','naklonil')|l] [scheme_outcome_target.Custom('CZ_ShortUIName_A')]"
+ scheme_outcome_sway_failure_puppeteer: "[scheme_outcome_puppet.GetShortUIName|U] [Select_CString(scheme_outcome_puppet.IsLocalPlayer,'jsi ','')|l]si [Select_CString(scheme_outcome_puppet.IsFemale,'nedokázala','nedokázal')|l] naklonit [scheme_outcome_target.Custom('CZ_ShortUIName_A')]"
+ scheme_outcome_learn_language_success_puppeteer: "[scheme_outcome_puppet.GetShortUIName|U] [Select_CString(scheme_outcome_puppet.IsLocalPlayer,'jsi ','')|l]se [Select_CString(scheme_outcome_puppet.IsFemale,'naučila','naučil')|l] jazyk [scheme_outcome_target.Custom('CZ_ShortUIName_G')]"
+ scheme_outcome_learn_language_failure_puppeteer: "[scheme_outcome_puppet.GetShortUIName|U] [Select_CString(scheme_outcome_puppet.IsLocalPlayer,'jsi ','')|l]se [Select_CString(scheme_outcome_puppet.IsFemale,'nedokázala','nedokázal')|l] naučit jazyk [scheme_outcome_target.Custom('CZ_ShortUIName_G')]"
+ scheme_outcome_steal_back_artifact_success_puppeteer: "[scheme_outcome_puppet.GetShortUIName|U] [Select_CString(scheme_outcome_puppet.IsLocalPlayer,'jsi ','')|l][Select_CString(scheme_outcome_puppet.IsFemale,'ukradla','ukradl')|l] [scheme_outcome_target.Custom('CZ_ShortUIName_D')] zpět artefakt"
+ scheme_outcome_steal_back_artifact_failure_puppeteer: "[scheme_outcome_puppet.GetShortUIName|U] [Select_CString(scheme_outcome_puppet.IsLocalPlayer,'jsi ','')|l][Select_CString(scheme_outcome_puppet.IsFemale,'nedokázala','nedokázal')|l] ukrást [scheme_outcome_target.Custom('CZ_ShortUIName_D')] zpět artefakt"
+ scheme_outcome_study_faith_success_puppeteer: "[scheme_outcome_puppet.GetShortUIName|U] [Select_CString(scheme_outcome_puppet.IsLocalPlayer,'jsi ','')|l][Select_CString(scheme_outcome_puppet.IsFemale,'studovala','studoval')|l] víru [scheme_outcome_target.Custom('CZ_ShortUIName_G')]"
+ scheme_outcome_study_faith_failure_puppeteer: "[scheme_outcome_puppet.GetShortUIName|U] [Select_CString(scheme_outcome_puppet.IsLocalPlayer,'jsi ','')|l][Select_CString(scheme_outcome_puppet.IsFemale,'pokročila','pokročil')|l] ve studiu víry [scheme_outcome_target.Custom('CZ_ShortUIName_A')]"
  restart_scheme_tt: "Intrika začne znovu s nulovým postupem"
  fabricate_hook_failed_reset_message: "Intrika $fabricate_hook$ selhala"
  scheme_remain_secret_roll_tt: "Intrika je odhalena"
@@ -219,64 +219,64 @@
  learn_language_invalidated_title: "Intrika $learn_language$ končí"
  LEARN_LANGUAGE_SUCCESS_DESC: "Naučíš se [TARGET_CHARACTER.GetCulture.GetLanguage.GetName]\n#weak Aktuální [Concept('language_limit','limit jazyků')|El]: [CHARACTER.MakeScope.ScriptValue('current_extra_languages')|V0] z [CHARACTER.MakeScope.ScriptValue('language_soft_cap')|V0]#!"
  scheme_target_same_language_as_existing_scheme: "Již se učíš [TARGET_CHARACTER.GetCulture.GetLanguage.GetName]"
- study_faith: "Studium ritu" # todo: NEW TRANSLATION
- study_faith_action: "Studovat ritus" # todo: NEW TRANSLATION
- study_faith_desc: "Pokusím se dozvědět více o [SCHEME.GetTargetCharacter.GetRite.GetName], [rite|E] [SCHEME.GetTargetCharacter.GetShortUINamePossessiveNoTooltip]." # todo: NEW TRANSLATION
- study_faith_desc_general: "$study_faith$ [scheme|E] je [personal_scheme|E], v němž se snažíte dozvědět více o [rite|E] [scheme_target|E].\n\nKaždá dokončená fáze vás něco naučí. Úspěšná fáze vám v jediném průlomovém okamžiku poskytne [agnostic_knowledge|E] o celém [rite|E]. Méně úspěšná fáze vám místo toho poskytne znalost pouze jednoho upřednostňovaného [core_tenet|E] nebo [doctrine|E]. [scheme|E] automaticky skončí, jakmile už nebude co se učit. $study_faith_desc_general_shared$" # todo: NEW TRANSLATION
- scheme_interaction_tt_study_faith_approved: "Pokusit se dozvědět podrobnosti o [rite|E] [recipient.GetRite.GetName] [recipient.GetShortUINamePossessiveNoTooltip]. Znalost [core_tenets|E] a [doctrines|E] jiného [rite|E] vám může pomoci začlenit je do vlastního, nebo je zakázat." # todo: NEW TRANSLATION
- study_faith_interaction_notification_int: "Mnohé z toho, jak váš lid uctívá, mi zůstává neznámé a nevědomost je špatným rádcem. Dovolte mi otevřeně studovat váš [recipient.GetRite.GetAdjective] ritus a nechť upřímné porozumění nahradí podezření, které mezi námi nyní panuje." # todo: NEW TRANSLATION
- study_faith_ask_directly: "Požádat o osobní pomoc" # todo: NEW TRANSLATION
- study_faith_interaction.tt.ask_directly: "Požádat [recipient.GetShortUIName] o přímou pomoc s porozuměním [recipient.GetHerHis] [rite|E]" # todo: NEW TRANSLATION
- study_faith_ask_for_emissary: "Požádat o pomoc vyslance" # todo: NEW TRANSLATION
- study_faith_interaction.tt.ask_for_emissary: "Požádat [recipient.GetShortUIName] o pomoc jednoho z [recipient.GetHerHis] [recipient.GetRite.GetAdjective] [recipient.GetRite.PriestNeuterPlural]" # todo: NEW TRANSLATION
- study_faith_interaction.ai_accept.ask_for_emissary: "Žádost o pomoc [recipient.GetHerHis] [recipient.GetRite.PriestNeuterPlural]: #v $VALUE|+=0$#!" # todo: NEW TRANSLATION
- study_faith_study_from_afar: "Studovat na dálku" # todo: NEW TRANSLATION
- study_faith_interaction.tt.study_from_afar: "Studovat praktiky [recipient.GetRite.GetAdjective] ritu [recipient.GetShortUINamePossessive] nepřímo, prostřednictvím písemností a pozorování" # todo: NEW TRANSLATION
- can_only_be_learned_in_person_tt: "[rite|E] [recipient.GetRite.GetName] se lze naučit pouze osobně, protože k němu neexistují písemné texty" # todo: NEW TRANSLATION
- study_faith_nothing_left_to_learn_tt: "Už jste se naučili všechna [core_tenet|E] a všechny naučitelné [doctrine|E] [rite|E] [recipient.GetRite.GetName] [recipient.GetShortUINamePossessiveNoTooltip]" # todo: NEW TRANSLATION
- study_faith_interaction.accept.study_faith_ask_directly: "[recipient.GetShortUIName] vám poskytne osobní pomoc" # todo: NEW TRANSLATION
- study_faith_interaction.tt.ask_directly_puppet_self: "[puppet_or_actor.GetShortUIName] vás požádá o přímou pomoc s porozuměním vašemu [rite|E]" # todo: NEW TRANSLATION
- study_faith_interaction.accept.study_faith_ask_directly_puppet_self: "Poskytnete [puppet_or_actor.GetShortUIName] osobní pomoc" # todo: NEW TRANSLATION
- study_faith_interaction.tt.ask_for_emissary_puppet_self: "[puppet_or_actor.GetShortUIName] vás požádá o pomoc jednoho z vašich [recipient.GetRite.GetAdjective] [recipient.GetRite.PriestNeuterPlural]" # todo: NEW TRANSLATION
- study_faith_interaction.accept.study_faith_ask_for_emissary_puppet_self: "Pošlete jednoho ze svých [recipient.GetRite.PriestNeuterPlural], aby pomohl [puppet_or_actor.GetShortUIName] s učením" # todo: NEW TRANSLATION
- study_faith_interaction.tt.study_from_afar_puppet_self: "[puppet_or_actor.GetShortUIName] bude studovat praktiky vašeho [recipient.GetRite.GetAdjective] ritu nepřímo, prostřednictvím písemností a pozorování" # todo: NEW TRANSLATION
- study_faith_interaction.accept.study_faith_study_from_afar_puppet_self: "@warning_icon! #EMP Bez osobního vedení to bude [puppet_or_actor.GetShortUIName] trvat mnohem déle!#!" # todo: NEW TRANSLATION
- scheme_interaction_tt_study_faith_approved_puppet_self: "[puppet_or_actor.GetShortUIName] se pokusí poznat podrobnosti vašeho [rite|E] [recipient.GetRite.GetName]. Znalost [core_tenets|E] a [doctrines|E] jiného [rite|E] může [puppet_or_actor.GetShortUIName] pomoci začlenit je do vlastního [rite|E] nebo je v něm zakázat." # todo: NEW TRANSLATION, CHECK FORMAT # todo: FORMAT chýba [puppet_or_actor.GetHerHis]; navyše [rite|E]
- study_faith_nothing_left_to_learn_tt_puppet_self: "[puppet_or_actor.GetShortUIName] se už naučil(a) všechna [core_tenet|E] a všechny naučitelné [doctrine|E] vašeho [rite|E]" # todo: NEW TRANSLATION
- study_faith_interaction.accept.study_faith_ask_for_emissary: "[recipient.GetShortUIName] vám pošle jednoho z [recipient.GetHerHis] [recipient.GetRite.PriestNeuterPlural], aby vám pomohl s učením" # todo: NEW TRANSLATION
- study_faith_interaction.accept.study_faith_study_from_afar: "@warning_icon! #EMP Bez osobního vedení vám to bude trvat mnohem déle!#!" # todo: NEW TRANSLATION
- study_faith_ask_directly_modifier: "Přímá pomoc" # todo: NEW TRANSLATION
- study_faith_ask_directly_modifier_desc: "Vaše studium přímo vede cílová osoba a poskytuje vám neocenitelnou pomoc s jemnými teologickými otázkami." # todo: NEW TRANSLATION
- study_faith_ask_for_emissary_modifier: "Pomoc vyslance" # todo: NEW TRANSLATION
- study_faith_ask_for_emissary_modifier_desc: "Vaše studium vede vyslanec a pomáhá vám s jemnými teologickými otázkami." # todo: NEW TRANSLATION
- study_faith_study_from_afar_modifier: "Nepřímé studium" # todo: NEW TRANSLATION
- study_faith_study_from_afar_modifier_desc: "Vaše studium se omezuje na nepřímé pozorování a doslechy, a proto je obtížnější rozpoznat skutečné praktiky a důvody, které za nimi stojí." # todo: NEW TRANSLATION
- study_faith_interaction.ai_accept.evil_faith: "[recipient.GetFaith.GetName] považuje [actor.GetFaith.GetName] za #v zlovolnou#!: #v $VALUE|+=0$#!" # todo: NEW TRANSLATION
- study_faith_interaction.ai_accept.hostile_faith: "[recipient.GetFaith.GetName] považuje [actor.GetFaith.GetName] za #v nepřátelskou#!: #v $VALUE|+=0$#!" # todo: NEW TRANSLATION
- study_faith_interaction.ai_accept.astray_faith: "[recipient.GetFaith.GetName] považuje [actor.GetFaith.GetName] za #v odchylnou#!: #v $VALUE|+=0$#!" # todo: NEW TRANSLATION
- study_faith_interaction.ai_accept.accepted_faith: "[recipient.GetFaith.GetName] považuje [actor.GetFaith.GetName] za #v přijatou#!: #v $VALUE|+=0$#!" # todo: NEW TRANSLATION
- study_faith_interaction.ai_accept.theologian_perk: "Máte [perk|E] [GetPerk('theologian_perk').GetName(GetPlayer)]: #v $VALUE|+=0$#!" # todo: NEW TRANSLATION
- study_faith_interaction.ai_accept.curious: "[recipient.GetSheHe|U] je [GetTrait('curious').GetName( GetNullCharacter )]: #v $VALUE|+=0$#!" # todo: NEW TRANSLATION
- study_faith_interaction.ai_accept.close_family_ruler: "[recipient.GetSheHe|U] je vládce a váš [close_family_member|E]: #v $VALUE|+=0$#!" # todo: NEW TRANSLATION
- study_faith_study_faith_success_message: "Dozvěděl(a) jste se o ritu" # todo: NEW TRANSLATION
- study_faith_study_faith_failed_message: "Nepodařilo se dokončit $study_faith$" # todo: NEW TRANSLATION
- scheme_interaction_tt_study_faith_desc: "Budu studovat [rite|E] [recipient.GetShortUINamePossessiveNoTooltip]!" # todo: NEW TRANSLATION
- study_faith_invalidated_cannot_study_faith_desc: "Už nemůžete studovat [rite|E] [target.GetShortUINamePossessive]" # todo: NEW TRANSLATION
- study_faith_invalidated: "$study_faith$ zneplatněno" # todo: NEW TRANSLATION
- study_faith_invalidated_dead_desc: "[target.GetShortUIName|U] zemřel(a). Už na [target.GetHerHim] nemůžete použít $study_faith$." # todo: NEW TRANSLATION
- study_faith_complete: "Dozvěděli jste se o [rite|E] [target.GetRite.GetName] [target.GetShortUINamePossessiveNoTooltip]" # todo: NEW TRANSLATION
- study_faith_invalidated_title: "$study_faith$ končí" # todo: NEW TRANSLATION
- STUDY_FAITH_SUCCESS_DESC: "Dozvíte se o [rite|E] [TARGET_CHARACTER.GetRite.GetName]" # todo: NEW TRANSLATION
- scheme_target_same_faith_scheme: "Už studujete [TARGET_CHARACTER.GetFaith.GetName]" # todo: NEW TRANSLATION
- scheme_target_more_than_one_faith_to_study_scheme: "Nemůžete studovat více než jeden [rite|E] současně" # todo: NEW TRANSLATION
- study_faith_desc_general_shared: "Toto spiknutí závisí především na vašem [learning|E] a druhotně na [piety_level|E].\n\nJeho [success_chance|E] určuje pravděpodobnost, že fáze skončí úspěšným průlomem a úplným poznáním [rite|E]. I při neúspěchu přesto získáte drobný poznatek." # todo: NEW TRANSLATION
+ study_faith: "Studium ritu"
+ study_faith_action: "Studovat ritus"
+ study_faith_desc: "Pokusím se dozvědět více o [Concept('rite','ritu')|E] [SCHEME.GetTargetCharacter.GetRite.GetName], který vyznává [SCHEME.GetTargetCharacter.GetShortUINameNoTooltip]."
+ study_faith_desc_general: "$study_faith$ [Concept('scheme','intrika')|E] je [Concept('personal_scheme','osobní intrikou')|E], v němž se snažíš dozvědět více o [Concept('rite','ritu')|E] [Concept('scheme_target','cíle intriky')|E].\n\nKaždá dokončená fáze tě něco naučí. Úspěšná fáze ti v jediném průlomovém okamžiku poskytne [Concept('agnostic_knowledge','znalosti')|E] o celém [Concept('rite','ritu')|E]. Méně úspěšná fáze ti místo toho poskytne znalost pouze jednoho upřednostňovaného [Concept('core_tenet','zásady')|E] nebo [Concept('doctrine','doktríny')|E]. [Concept('scheme','intrika')|EU] automaticky skončí, jakmile už nebude co se učit. $study_faith_desc_general_shared$"
+ scheme_interaction_tt_study_faith_approved: "Pokusit se dozvědět podrobnosti o [Concept('rite','ritu')|E] [recipient.GetRite.GetName] [recipient.Custom('CZ_ShortUINameNoTooltip_G')]. Znalost [Concept('core_tenets','zásad')|E] a [Concept('doctrines','doktrín')|E] jiného [Concept('rite','ritu')|E] ti může pomoci začlenit je do vlastního, nebo je zakázat."
+ study_faith_interaction_notification_int: "Mnohé z toho, jak tvůj lid uctívá, mi zůstává neznámé a nevědomost je špatným rádcem. Dovol mi otevřeně studovat tvůj [recipient.GetRite.GetAdjective|l] ritus a nechť upřímné porozumění nahradí podezření, které mezi námi nyní panuje."
+ study_faith_ask_directly: "Požádat o osobní pomoc"
+ study_faith_interaction.tt.ask_directly: "Požádat [recipient.Custom('CZ_ShortUIName_A')] o přímou pomoc s porozuměním [Concept('rite','ritu')|E] [recipient.GetRite.GetName]"
+ study_faith_ask_for_emissary: "Požádat o pomoc vyslance"
+ study_faith_interaction.tt.ask_for_emissary: "Požádat [recipient.Custom('CZ_ShortUIName_A')] o pomoc duchovního, který vyznává [recipient.GetRite.GetAdjective|l] ritus. Tito duchovní se označují jako [recipient.GetRite.PriestNeuterPlural]."
+ study_faith_interaction.ai_accept.ask_for_emissary: "Žádost o pomoc duchovních — [recipient.GetRite.PriestNeuterPlural]: #v $VALUE|+=0$#!"
+ study_faith_study_from_afar: "Studovat na dálku"
+ study_faith_interaction.tt.study_from_afar: "Studovat praktiky [recipient.GetRite.GetAdjective|l] ritu [recipient.GetShortUINamePossessive] nepřímo, prostřednictvím písemností a pozorování"
+ can_only_be_learned_in_person_tt: "[Concept('rite','ritu')|EU] [recipient.GetRite.GetName] se lze naučit pouze osobně, protože k němu neexistují písemné texty"
+ study_faith_nothing_left_to_learn_tt: "Už ses [Select_CString(GetPlayer.IsFemale,'naučila','naučil')|l] všechny [Concept('core_tenet','zásady')|E] a všechny dostupné [Concept('doctrine','doktríny')|E] [Concept('rite','ritu')|E] [recipient.GetRite.GetName] [recipient.Custom('CZ_ShortUINameNoTooltip_G')]"
+ study_faith_interaction.accept.study_faith_ask_directly: "[recipient.GetShortUIName|U] ti poskytne osobní pomoc"
+ study_faith_interaction.tt.ask_directly_puppet_self: "[puppet_or_actor.GetShortUIName|U] tě požádá o přímou pomoc s porozuměním tvému [Concept('rite','ritu')|E]"
+ study_faith_interaction.accept.study_faith_ask_directly_puppet_self: "Poskytneš [puppet_or_actor.GetShortUIName] osobní pomoc"
+ study_faith_interaction.tt.ask_for_emissary_puppet_self: "[puppet_or_actor.GetShortUIName|U] tě požádá o pomoc jednoho z tvých [recipient.GetRite.GetAdjective|l] [recipient.GetRite.PriestNeuterPlural]"
+ study_faith_interaction.accept.study_faith_ask_for_emissary_puppet_self: "Pošli jednoho ze svých [recipient.GetRite.PriestNeuterPlural], aby pomohl [puppet_or_actor.GetShortUIName] s učením"
+ study_faith_interaction.tt.study_from_afar_puppet_self: "[puppet_or_actor.GetShortUIName|U] bude studovat praktiky tvého [recipient.GetRite.GetAdjective|l] ritu nepřímo, prostřednictvím písemností a pozorování"
+ study_faith_interaction.accept.study_faith_study_from_afar_puppet_self: "@warning_icon! #EMP Bez osobního vedení to bude [puppet_or_actor.GetShortUIName] trvat mnohem déle!#!"
+ scheme_interaction_tt_study_faith_approved_puppet_self: "[puppet_or_actor.GetShortUIName|U] se pokusí poznat podrobnosti tvého [Concept('rite','ritu')|E] [recipient.GetRite.GetName]. Znalost [Concept('core_tenets','zásad')|E] a [Concept('doctrines','doktrín')|E] jiného [Concept('rite','ritu')|E] může [puppet_or_actor.GetShortUIName] pomoci začlenit je do vlastního [Concept('rite','ritu')|E] nebo je v něm zakázat."
+ study_faith_nothing_left_to_learn_tt_puppet_self: "[puppet_or_actor.GetShortUIName|U] [Select_CString(puppet_or_actor.IsLocalPlayer,'jsi ','')|l]se už [Select_CString(puppet_or_actor.IsFemale,'naučila','naučil')|l] všechny [Concept('core_tenet','zásady')|E] a všechny dostupné [Concept('doctrine','doktríny')|E] tvého [Concept('rite','ritu')|E]"
+ study_faith_interaction.accept.study_faith_ask_for_emissary: "[recipient.GetShortUIName|U] ti pošle jednoho ze svých duchovních — [recipient.GetRite.PriestNeuterPlural] — aby ti pomohl s učením"
+ study_faith_interaction.accept.study_faith_study_from_afar: "@warning_icon! #EMP Bez osobního vedení ti to bude trvat mnohem déle!#!"
+ study_faith_ask_directly_modifier: "Přímá pomoc"
+ study_faith_ask_directly_modifier_desc: "Tvoje studium přímo vede cílová osoba a poskytuje ti neocenitelnou pomoc s jemnými teologickými otázkami."
+ study_faith_ask_for_emissary_modifier: "Pomoc vyslance"
+ study_faith_ask_for_emissary_modifier_desc: "Tvoje studium vede vyslanec a pomáhá ti s jemnými teologickými otázkami."
+ study_faith_study_from_afar_modifier: "Nepřímé studium"
+ study_faith_study_from_afar_modifier_desc: "Tvoje studium se omezuje na nepřímé pozorování a doslechy, a proto je obtížnější rozpoznat skutečné praktiky a důvody, které za nimi stojí."
+ study_faith_interaction.ai_accept.evil_faith: "[recipient.GetFaith.GetName|U] považuje [actor.GetFaith.GetName] za #v zlovolnou#!: #v $VALUE|+=0$#!"
+ study_faith_interaction.ai_accept.hostile_faith: "[recipient.GetFaith.GetName|U] považuje [actor.GetFaith.GetName] za #v nepřátelskou#!: #v $VALUE|+=0$#!"
+ study_faith_interaction.ai_accept.astray_faith: "[recipient.GetFaith.GetName|U] považuje [actor.GetFaith.GetName] za #v odchylnou#!: #v $VALUE|+=0$#!"
+ study_faith_interaction.ai_accept.accepted_faith: "[recipient.GetFaith.GetName|U] považuje [actor.GetFaith.GetName] za #v přijatou#!: #v $VALUE|+=0$#!"
+ study_faith_interaction.ai_accept.theologian_perk: "Máš [Concept('perk','talent')|E] [GetPerk('theologian_perk').GetName(GetPlayer)]: #v $VALUE|+=0$#!"
+ study_faith_interaction.ai_accept.curious: "[Select_CString(recipient.IsFemale,'Je zvídavá','Je zvídavý')|U]: [GetTrait('curious').GetName( GetNullCharacter )]: #v $VALUE|+=0$#!"
+ study_faith_interaction.ai_accept.close_family_ruler: "[Select_CString(recipient.IsFemale,'Je vládkyně','Je vládce')|U] a tvůj [Concept('close_family_member','člen blízké rodiny')|E]: #v $VALUE|+=0$#!"
+ study_faith_study_faith_success_message: "[Select_CString(GetPlayer.IsFemale,'Dozvěděla','Dozvěděl')|U] ses o ritu"
+ study_faith_study_faith_failed_message: "Nepodařilo se dokončit $study_faith$"
+ scheme_interaction_tt_study_faith_desc: "Budu studovat [Concept('rite','ritus')|E] [recipient.Custom('CZ_ShortUINameNoTooltip_G')]!"
+ study_faith_invalidated_cannot_study_faith_desc: "Už nemůžeš studovat [Concept('rite','ritus')|E] [target.Custom('CZ_ShortUIName_G')]"
+ study_faith_invalidated: "$study_faith$ zneplatněno"
+ study_faith_invalidated_dead_desc: "[target.GetShortUIName|U] [Select_CString(target.IsLocalPlayer,'jsi ','')|l][Select_CString(target.IsFemale,'zemřela','zemřel')|l]. Už na [target.Custom('CZ_ShortUIName_A')] nemůžeš použít $study_faith$."
+ study_faith_complete: "[Select_CString(GetPlayer.IsFemale,'Dozvěděla','Dozvěděl')|U] ses o [Concept('rite','ritu')|E] [target.GetRite.GetName] [target.Custom('CZ_ShortUINameNoTooltip_G')]"
+ study_faith_invalidated_title: "$study_faith$ končí"
+ STUDY_FAITH_SUCCESS_DESC: "Dozvíš se o [Concept('rite','ritu')|E] [TARGET_CHARACTER.GetRite.GetName]"
+ scheme_target_same_faith_scheme: "Už studuješ [TARGET_CHARACTER.GetFaith.GetName]"
+ scheme_target_more_than_one_faith_to_study_scheme: "Nemůžeš studovat více než jeden [Concept('rite','ritus')|E] současně"
+ study_faith_desc_general_shared: "Toto spiknutí závisí především na tvém [Concept('learning','učenosti')|E] a druhotně na [Concept('piety_level','úrovni oddanosti')|E].\n\nJeho [Concept('success_chance','šance na úspěch')|E] určuje pravděpodobnost, že fáze skončí úspěšným průlomem a úplným poznáním [Concept('rite','ritu')|E]. I při neúspěchu přesto získáš drobný poznatek."
  abduct: "Unést"
  abduct_action: "Unést"
  abduct_desc: "Unesu postavu [SCHEME.GetTargetCharacter.GetShortUINameNoTooltip] a [Concept('imprison','uvězním')|El] ji!"
  abduct_desc_general: "Intrika $abduct$ je [Concept('hostile_scheme','nepřátelská intrika')|El], jejímž cílem je [Concept('imprison','uvěznit')|El] vybranou postavu. Jde o [Concept('secret_scheme','tajnou intriku')|El] založenou na [Concept('intrigue','pletichaření')|El], do níž lze získat [Concept('agents','spolčence')|El].\n\nÚspěšně unesený [Concept('scheme_target','cíl intriky')|El] bude uvězněn [Concept('scheme_owner','osnovatelem intriky')|El]."
  scheme_interaction_tt_abduct_approved: "Postava [recipient.GetShortUIName] se brzy stane mým vězněm!"
- abduct_successful_roll_tt: "Postava [target.GetShortUINameNoTooltip] se stane [owner.GetShortUINamePossessive] vězněm!" # todo: CHANGED (predtym: Postava [target.GetShortUINameNoTooltip] se stane mým vězněm!)
- abduct_success_discovery_tt: "Úspěšný únos odhalí [owner.GetShortUINamePossessive] totožnost\nV opačném případě:" # todo: CHANGED (predtym: Úspěšný únos odhalí mou totožnost\nV opačném případě:)
+ abduct_successful_roll_tt: "Postava [target.GetShortUINameNoTooltip] se stane [owner.GetShortUINamePossessive] vězněm!"
+ abduct_success_discovery_tt: "Úspěšný únos odhalí [owner.GetShortUINamePossessive] totožnost\nV opačném případě:"
  abduct_become_discovered_roll_tt: "Budu odhalen!"
  abduct_scheme_invalidated_title: "@scheme_icon! Intrika Únos končí"
  abduct_scheme_i_imprisoned_them_message: "Postava [target.GetShortUIName|U] je již v mém vězení"
@@ -288,7 +288,7 @@
  scheme_interaction_tt_befriend_approved: "Získám si přátelství postavy [recipient.GetShortUIName]!"
  befriend_already_friend: "Postava [recipient.GetShortUIName] je již tvým přítelem"
  befriend_already_lover: "Postava [TARGET_CHARACTER.GetShortUIName|U] je do tebe již zamilovaná"
- THEY_ARE_ALREADY_IN_LOVE: "[TARGET_CHARACTER.GetShortUIName|U] už miluje [CHARACTER.GetShortUIName]" # todo: NEW TRANSLATION
+ THEY_ARE_ALREADY_IN_LOVE: "[TARGET_CHARACTER.GetShortUIName|U] už miluje [CHARACTER.GetShortUIName]"
  befriend_invalidated_title: "@personal_scheme_icon! Intrika Spřátelit se končí"
  befriend_invalid: "Přestanu se pokoušet spřátelit s postavou [target.GetShortUIName|U], protože už se nemůžeme stát [Concept('friends','přáteli')|El]"
  seduce: "Svést"
@@ -342,8 +342,8 @@
  fabricate_hook_action: "Vykonstruovat páku na"
  fabricate_hook_interaction_desc: "Pokusit se vykonstruovat [Concept('hook','páku')|El] na postavu [recipient.GetShortUINameNoTooltip]"
  fabricate_hook_scheme_invalidated_title: "Intrika Vykonstruovat páku končí"
- fabricate_hook_target_is_court_chaplain_tt: "[target.GetShortUIName|U] je dvorním kaplanem [owner.GetShortUIName]" # todo: NEW TRANSLATION
- fabricate_hook_target_is_head_of_rite_tt: "[target.GetShortUIName|U] je [head_of_rite|E] [owner.GetShortUINamePossessive] [rite|E]" # todo: NEW TRANSLATION
+ fabricate_hook_target_is_court_chaplain_tt: "[target.GetShortUIName|U] je dvorním kaplanem [owner.GetShortUIName]"
+ fabricate_hook_target_is_head_of_rite_tt: "[target.GetShortUIName|U] [Select_CString(target.IsLocalPlayer,'jsi','je')|l] [Concept('head_of_rite','hlavou ritu')|E] [Concept('rite','ritu')|E] [owner.Custom('CZ_ShortUIName_G')]"
  fabricate_hook_has_gained_hook: "Získal jsi [Concept('hook','páku')|El] na postavu [target.GetShortUIName]"
  fabricate_hook_i_may_not_fabricate_again: "[owner.GetShortUIName|U] se dalších 5 let nebude moci znovu pokusit vykonstruovat páku na dvoře postavy [court_owner.GetShortUIName]"
  fabricate_hook_gained_manipulation_title: "Páka vykonstruována: Manipulace"
@@ -407,7 +407,7 @@
  steal_back_artifact_complete: "Ukradl jsi artefakt [target.GetShortUIName]"
  steal_back_artifact_invalidated_title: "@scheme_icon! Intrika Ukrást artefakt končí"
  start_stealing_back_artifact_notification: "Zahájit krádež artefaktu"
- start_stealing_back_artifact_notification_puppeteer: "[puppet_or_actor.GetShortUIName] zahájil(a) loupež, aby získal(a) zpět [artifact|E] od [recipient.GetShortUIName]" # todo: NEW TRANSLATION
+ start_stealing_back_artifact_notification_puppeteer: "[puppet_or_actor.GetShortUIName|U] [Select_CString(puppet_or_actor.IsLocalPlayer,'jsi ','')|l][Select_CString(puppet_or_actor.IsFemale,'zahájila','zahájil')|l] loupež, aby [Select_CString(puppet_or_actor.IsFemale,'získala','získal')|l] zpět [Concept('artifact','artefakt')|E] od [recipient.Custom('CZ_ShortUIName_G')]"
  they_steal_back_artifact_must_have_claim_blocker: "[CHARACTER.GetShortUIName|U] nevlastní žádný [Concept('artifact','artefakt')|El], na který má [TARGET_CHARACTER.GetShortUIName] [Concept('artifact_claim','nárok na artefakt')|El]"
  i_steal_back_artifact_must_have_claim_blocker: "[TARGET_CHARACTER.GetShortUIName] nevlastní žádný [Concept('artifact','artefakt')|El], na který mám [Concept('artifact_claim','nárok na artefakt')|El]"
  STEAL_BACK_ARTIFACT_SUCCESS_DESC: "Ukradneš [TARGET_CHARACTER.GetShortUIName] [Concept('artifact','artefakt')|El], na který máš [Concept('artifact_claim','nárok')|El]"
@@ -1575,18 +1575,18 @@
  scheme_odds.learning.target: "[target.GetFirstName] – [Concept('learning','učenost')|El]"
  scheme_odds.prowess.owner: "Tvá [Concept('prowess','udatnost')|El]"
  scheme_odds.prowess.target: "[target.GetFirstName] – [Concept('prowess','udatnost')|El]"
- scheme_odds.piety_level.owner: "Vaše [piety_level|E]" # todo: NEW TRANSLATION
- scheme_odds.intellect_good_1.owner: "Jste [GetTrait('intellect_good_1').GetName( owner.Self )]" # todo: NEW TRANSLATION
- scheme_odds.intellect_good_2.owner: "Jste [GetTrait('intellect_good_2').GetName( owner.Self )]" # todo: NEW TRANSLATION
- scheme_odds.intellect_good_3.owner: "Jste [GetTrait('intellect_good_3').GetName( owner.Self )]" # todo: NEW TRANSLATION
- scheme_odds.ambitious.owner: "Jste [GetTrait('ambitious').GetName( owner.Self )]" # todo: NEW TRANSLATION
- scheme_odds.theologian.owner: "Jste [GetTrait('theologian').GetName( owner.Self )]" # todo: NEW TRANSLATION
- scheme_odds.erudite.owner: "Jste [GetTrait('erudite').GetName( owner.Self )]" # todo: NEW TRANSLATION
- scheme_odds.witch.owner: "Jste [GetTrait('witch').GetName( owner.Self )]" # todo: NEW TRANSLATION
- scheme_odds.lifestyle_mystic.owner: "Jste [GetTrait('lifestyle_mystic').GetName( owner.Self )]" # todo: NEW TRANSLATION
- scheme_odds.devoted.owner: "Jste [GetTrait('devoted').GetName( owner.Self )]" # todo: NEW TRANSLATION
- scheme_odds.lifestyle_scholar.owner: "Jste [GetTrait('lifestyle_scholar').GetName( owner.Self )]" # todo: NEW TRANSLATION
- scheme_odds.open_minded_perk.owner: "Máte [GetPerk('open_minded_perk').GetName( owner.Self )]" # todo: NEW TRANSLATION
+ scheme_odds.piety_level.owner: "Tvoje [Concept('piety_level','úroveň oddanosti')|E]"
+ scheme_odds.intellect_good_1.owner: "Jsi [GetTrait('intellect_good_1').GetName( owner.Self )]"
+ scheme_odds.intellect_good_2.owner: "Jsi [GetTrait('intellect_good_2').GetName( owner.Self )]"
+ scheme_odds.intellect_good_3.owner: "Jsi [GetTrait('intellect_good_3').GetName( owner.Self )]"
+ scheme_odds.ambitious.owner: "Jsi [GetTrait('ambitious').GetName( owner.Self )]"
+ scheme_odds.theologian.owner: "Jsi [GetTrait('theologian').GetName( owner.Self )]"
+ scheme_odds.erudite.owner: "Jsi [GetTrait('erudite').GetName( owner.Self )]"
+ scheme_odds.witch.owner: "Jsi [GetTrait('witch').GetName( owner.Self )]"
+ scheme_odds.lifestyle_mystic.owner: "Jsi [GetTrait('lifestyle_mystic').GetName( owner.Self )]"
+ scheme_odds.devoted.owner: "Jsi [GetTrait('devoted').GetName( owner.Self )]"
+ scheme_odds.lifestyle_scholar.owner: "Jsi [GetTrait('lifestyle_scholar').GetName( owner.Self )]"
+ scheme_odds.open_minded_perk.owner: "Máš [GetPerk('open_minded_perk').GetName( owner.Self )]"
  scheme_odds.creation_aspect: "Tvá [Concept('skill','dovednost')|El] v [Concept('aspect','aspektu')|El] #weak ([Concept('stewardship','správa')|El])#!"
  scheme_odds.serenity_aspect: "Tvá [Concept('skill','dovednost')|El] v [Concept('aspect','aspektu')|El] #weak ([Concept('diplomacy','diplomacie')|El])#!"
  scheme_odds.destruction_aspect: "Tvá [Concept('skill','dovednost')|El] v [Concept('aspect','aspektu')|El] #weak ([Concept('martial','vojenství')|El])#!"
@@ -1631,25 +1631,25 @@
  coup_ceremonial_liege_interaction.tt.agent_focus_success: "$schemes.tt.agent_packages.list_boilerplate$\n$EFFECT_LIST_BULLET$[success_chance_max_i] [GetAgentSlotType( 'agent_muscle' ).GetName]\n$EFFECT_LIST_BULLET$[success_chance_max_i] [GetAgentSlotType( 'agent_muscle' ).GetName]\n$EFFECT_LIST_BULLET$[success_chance_max_i] [GetAgentSlotType( 'agent_diplomat' ).GetName]\n$EFFECT_LIST_BULLET$[scheme_speed_i] [GetAgentSlotType( 'agent_infiltrator' ).GetName]\n$EFFECT_LIST_BULLET$[secrecy_i] [GetAgentSlotType( 'agent_lookout' ).GetName]"
  coup_ceremonial_liege_interaction.tt.agent_focus_speed: "$schemes.tt.agent_packages.list_boilerplate$\n$EFFECT_LIST_BULLET$[scheme_speed_i] [GetAgentSlotType( 'agent_infiltrator' ).GetName]\n$EFFECT_LIST_BULLET$[scheme_speed_i] [GetAgentSlotType( 'agent_footpad' ).GetName]\n$EFFECT_LIST_BULLET$[scheme_speed_i] [GetAgentSlotType( 'agent_planner' ).GetName]\n$EFFECT_LIST_BULLET$[success_chance_max_i] [GetAgentSlotType( 'agent_muscle' ).GetName]\n$EFFECT_LIST_BULLET$[secrecy_i] [GetAgentSlotType( 'agent_lookout' ).GetName]"
  coup_ceremonial_liege_interaction.tt.agent_focus_secrecy: "$schemes.tt.agent_packages.list_boilerplate$\n$EFFECT_LIST_BULLET$[secrecy_i] [GetAgentSlotType( 'agent_lookout' ).GetName]\n$EFFECT_LIST_BULLET$[secrecy_i] [GetAgentSlotType( 'agent_decoy' ).GetName]\n$EFFECT_LIST_BULLET$[secrecy_i] [GetAgentSlotType( 'agent_decoy' ).GetName]\n$EFFECT_LIST_BULLET$[success_chance_max_i] [GetAgentSlotType( 'agent_muscle' ).GetName]\n$EFFECT_LIST_BULLET$[scheme_speed_i] [GetAgentSlotType( 'agent_infiltrator' ).GetName]"
- abduct_relationship_progress_tt: "Pokud bude [recipient.GetSheHe] úspěšně unesen, [recipient.GetShortUIName] se přiblíží k tomu, aby se s [actor.GetShortUIName] stal [rivalry|E]" # todo: NEW TRANSLATION
- abduct_rivalry_tt: "Pokud bude [recipient.GetSheHe] úspěšně unesen(a), bude [recipient.GetShortUIName] považovat [actor.GetShortUIName] za svého [rival|E]" # todo: NEW TRANSLATION
- abduct_relationship_progress_parent_tt: "Pokud bude [recipient.GetShortUIName] (jejich dítě) úspěšně unesen, přiblíží se k tomu, aby se s [actor.GetShortUIName] stal [rivalry|E]" # todo: NEW TRANSLATION
- abduct_relationship_progress_child_tt: "Pokud bude [recipient.GetShortUIName] (jejich rodič) úspěšně unesen, přiblíží se k tomu, aby se s [actor.GetShortUIName] stal [rivalry|E]" # todo: NEW TRANSLATION
- abduct_relationship_progress_spouse_tt: "Pokud bude [recipient.GetShortUIName] (jejich manžel či manželka) úspěšně unesen, přiblíží se k tomu, aby se s [actor.GetShortUIName] stal [rivalry|E]" # todo: NEW TRANSLATION
- abduct_relationship_progress_sibling_tt: "Pokud bude [recipient.GetShortUIName] (jejich sourozenec a [ally|E]) úspěšně unesen, přiblíží se k tomu, aby se s [actor.GetShortUIName] stal [rivalry|E]" # todo: NEW TRANSLATION
- find_follower_of_faith: "Najít vyznavače" # todo: NEW TRANSLATION
- find_follower_of_faith_action: "Najít vyznavače víry" # todo: NEW TRANSLATION
- find_follower_of_faith_desc: "Najdu [SCHEME.GetTargetFaith.GetAdherentNameNoTooltip], od kterého se mohu učit." # todo: NEW TRANSLATION
- find_follower_of_faith_desc_general: "Najít přívržence je [personal_scheme|E], které vám umožňuje hledat vyznavače víry s cílem zahájit $study_faith$ [scheme|E]. Toto úsilí závisí především na vašem [learning|E] a [intrigue|E], ale pomoci vám mohou také váš [spymaster|E] a [court_chaplain|E]. Úspěšnost zvyšuje také tolerantní víra nebo příslušnost ke stejné [religious_family|E]. Jelikož nejde o [hostile_scheme|E], není [secret_scheme_single|E] a nevyužívá [agents|E]." # todo: NEW TRANSLATION
- find_follower_of_faith_success_message: "Našel jsi [target.GetAdherentNameNoTooltip]" # todo: NEW TRANSLATION
- find_follower_of_faith_failed_message: "Nenašel jsi [target.GetAdherentNameNoTooltip]" # todo: NEW TRANSLATION
- find_follower_of_faith_continue: "Pokračuješ ve svém úsilí" # todo: NEW TRANSLATION
- find_follower_of_faith_try_again: "Zkusíš to znovu" # todo: NEW TRANSLATION
- find_follower_of_faith_complete: "$find_follower_of_faith_success_message$" # todo: NEW TRANSLATION
- find_follower_of_faith_pluralistic_bonus: "Tvůj [rite|E] je [GetDoctrineType( 'doctrine_pluralism_pluralistic' ).GetBaseName]: $VALUE|+=0$" # todo: NEW TRANSLATION
- find_follower_of_faith_witchcraft_bonus: "Tvůj [rite|E] přijímá praktikování čarodějnictví: $VALUE|+=0$" # todo: NEW TRANSLATION
- find_follower_of_faith_multicultural_court_bonus: "Tvůj [court|E] vítá všechny možné Kultury: $VALUE|+=0$" # todo: NEW TRANSLATION
- find_follower_of_faith_same_religion_bonus: "Tvoje [faith|E] vyznává stejné [religion|E] jako cílová víra: $VALUE|+=0$" # todo: NEW TRANSLATION
- find_follower_of_faith_same_religious_group_bonus: "Tvoje [faith|E] náleží do stejné [religious_family|E] jako cílová víra: $VALUE|+=0$" # todo: NEW TRANSLATION
- find_follower_of_faith_dead_faith: "[target.GetName] se již nevyznává: $VALUE|+=0$" # todo: NEW TRANSLATION
- find_follower_of_faith_in_realm_bonus: "[target.GetName] se vyznává ve tvé říši: $VALUE|+=0$" # todo: NEW TRANSLATION
+ abduct_relationship_progress_tt: "Pokud bude [recipient.GetShortUIName] úspěšně [Select_CString(recipient.IsFemale,'unesena','unesen')|l], přiblíží se vztah s [actor.Custom('CZ_ShortUIName_I')] k [Concept('rivalry','sokovství')|E]"
+ abduct_rivalry_tt: "Pokud bude [recipient.GetShortUIName] úspěšně [Select_CString(recipient.IsFemale,'unesena','unesen')|l], bude [actor.Custom('CZ_ShortUIName_A')] považovat za svého [Concept('rival','soka')|E]"
+ abduct_relationship_progress_parent_tt: "Pokud bude [recipient.GetShortUIName] (jejich dítě) úspěšně [Select_CString(recipient.IsFemale,'unesena','unesen')|l], přiblíží se jejich vztah s [actor.Custom('CZ_ShortUIName_I')] k [Concept('rivalry','sokovství')|E]"
+ abduct_relationship_progress_child_tt: "Pokud bude [recipient.GetShortUIName] (jejich rodič) úspěšně [Select_CString(recipient.IsFemale,'unesena','unesen')|l], přiblíží se jejich vztah s [actor.Custom('CZ_ShortUIName_I')] k [Concept('rivalry','sokovství')|E]"
+ abduct_relationship_progress_spouse_tt: "Pokud bude [recipient.GetShortUIName] (jejich manžel či manželka) úspěšně [Select_CString(recipient.IsFemale,'unesena','unesen')|l], přiblíží se jejich vztah s [actor.Custom('CZ_ShortUIName_I')] k [Concept('rivalry','sokovství')|E]"
+ abduct_relationship_progress_sibling_tt: "Pokud bude [recipient.GetShortUIName] (jejich sourozenec a [Concept('ally','spojenec')|E]) úspěšně [Select_CString(recipient.IsFemale,'unesena','unesen')|l], přiblíží se jejich vztah s [actor.Custom('CZ_ShortUIName_I')] k [Concept('rivalry','sokovství')|E]"
+ find_follower_of_faith: "Najít vyznavače"
+ find_follower_of_faith_action: "Najít vyznavače víry"
+ find_follower_of_faith_desc: "Najdu [SCHEME.GetTargetFaith.GetAdherentNameNoTooltip], od kterého se mohu učit."
+ find_follower_of_faith_desc_general: "Najít přívržence je [Concept('personal_scheme','osobní intrika')|E], která ti umožňuje hledat vyznavače víry s cílem zahájit [Concept('scheme','intriku')|E] $study_faith$. Toto úsilí závisí především na tvé [Concept('learning','učenosti')|E] a tvém [Concept('intrigue','pletichářství')|E], ale pomoci ti mohou také tvůj [Concept('spymaster','špehmistr')|E] a [Concept('court_chaplain','dvorní kaplan')|E]. Úspěšnost zvyšuje také tolerantní víra nebo příslušnost ke stejné [Concept('religious_family','náboženské rodině')|E]. Jelikož nejde o [Concept('hostile_scheme','nepřátelskou intriku')|E], není [Concept('secret_scheme_single','tajná')|E] a nevyužívá [Concept('agents','spolčence')|E]."
+ find_follower_of_faith_success_message: "Našel jsi [target.GetAdherentNameNoTooltip]"
+ find_follower_of_faith_failed_message: "Nenašel jsi [target.GetAdherentNameNoTooltip]"
+ find_follower_of_faith_continue: "Pokračuješ ve svém úsilí"
+ find_follower_of_faith_try_again: "Zkusíš to znovu"
+ find_follower_of_faith_complete: "$find_follower_of_faith_success_message$"
+ find_follower_of_faith_pluralistic_bonus: "Tvůj [Concept('rite','ritus')|E] je [GetDoctrineType( 'doctrine_pluralism_pluralistic' ).GetBaseName]: $VALUE|+=0$"
+ find_follower_of_faith_witchcraft_bonus: "Tvůj [Concept('rite','ritus')|E] přijímá praktikování čarodějnictví: $VALUE|+=0$"
+ find_follower_of_faith_multicultural_court_bonus: "Tvůj [Concept('court','dvůr')|E] vítá všechny možné Kultury: $VALUE|+=0$"
+ find_follower_of_faith_same_religion_bonus: "Tvoje [Concept('faith','víra')|E] vyznává stejné [Concept('religion','náboženství')|E] jako cílová víra: $VALUE|+=0$"
+ find_follower_of_faith_same_religious_group_bonus: "Tvoje [Concept('faith','víra')|E] náleží do stejné [Concept('religious_family','náboženské rodiny')|E] jako cílová víra: $VALUE|+=0$"
+ find_follower_of_faith_dead_faith: "[target.GetName|U] se již nevyznává: $VALUE|+=0$"
+ find_follower_of_faith_in_realm_bonus: "[target.GetName|U] se vyznává ve tvé říši: $VALUE|+=0$"

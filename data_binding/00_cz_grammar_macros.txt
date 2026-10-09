@@ -1168,6 +1168,16 @@ macro = {
 	replace_with = "Select_CString(CZLandHasEntry(XT,XCASE),Concatenate('CZ_LandTable_',XCASE),Select_CString(CZLandIsRod(XT.GetNameNoTierNoTooltip),Concatenate('CZ_LandRod_',XCASE),CZLandLenKey(XT.GetNameNoTierNoTooltip,'CZ_LandNTMorph',XCASE)))"
 }
 
+# Fast table-only form for names rendered many times per frame (mercenary
+# companies, holy orders in the army window): no Custom dispatch, no Rod or
+# morphology; untabled or renamed titles stay in the nominative.
+
+macro = {
+	description = "Table-only NoTier name of title XT in case XCASE, nominative if not in the table"
+	definition = "CZLandFast(XT,XCASE)"
+	replace_with = "Select_CString(CZLandHasEntry(XT,XCASE),Localize(CZLandKey(XT,XCASE)),XT.GetNameNoTierNoTooltip)"
+}
+
 macro = {
 	description = "Stage 2 NoTier key for a one-word name N"
 	definition = "CZLandNTMorph1Key(N,XCASE)"

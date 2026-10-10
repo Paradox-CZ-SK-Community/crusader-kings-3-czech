@@ -1854,3 +1854,16 @@ macro = {
 	definition = "CZProDropSubNoTooltip(WHO)"
 	replace_with = "Select_CString(WHO.IsLocalPlayer,'jsi',WHO.GetShortUINameNoTooltip)"
 }
+
+##################################################
+# ROD (gender agreement by code m/f/n/p)
+##################################################
+# [CZGen4(A.Custom('CZ_ArtifactTypeGender'),'tento','tato','toto','tyto')]
+# GEN = 'm' 'f' 'n' 'p' (plural); anything else -> MASC.
+
+# cost: 13
+macro = {
+	description = "Pick one of four forms by gender code m/f/n/p"
+	definition = "CZGen4(GEN,MASC,FEM,NEUT,PLUR)"
+	replace_with = "Select_CString(EqualTo_string(GEN,'f'),FEM,Select_CString(EqualTo_string(GEN,'n'),NEUT,Select_CString(EqualTo_string(GEN,'p'),PLUR,MASC)))"
+}

@@ -1831,3 +1831,30 @@ cz_grammar_debug.0210 = {
 		name = cz_grammar_debug.adapters.close
 	}
 }
+
+# Artifact type gender (CZ_ArtifactTypeGender / CZ_ArtifactType_A / CZGen4) on up to 3 own artifacts
+cz_grammar_debug.0211 = {
+	orphan = yes
+	type = character_event
+	theme = default
+	title = cz_grammar_debug.0211.t
+	desc = cz_grammar_debug.0211.desc
+	immediate = {
+		random_character_artifact = { save_scope_as = cz_art1 }
+		random_character_artifact = {
+			limit = { NOT = { this = scope:cz_art1 } }
+			save_scope_as = cz_art2
+		}
+		random_character_artifact = {
+			limit = {
+				NOT = { this = scope:cz_art1 }
+				NOT = { this = scope:cz_art2 }
+			}
+			save_scope_as = cz_art3
+		}
+	}
+	left_portrait = root
+	option = {
+		name = cz_grammar_debug.adapters.close
+	}
+}

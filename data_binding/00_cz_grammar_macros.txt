@@ -1596,6 +1596,29 @@ macro = {
 }
 
 # ------------------------------------------------
+# ARTIFACT MATERIALS
+# ------------------------------------------------
+# Hand-written table (gen_material_cases.py): CZMAT_<G|I>_<material>, for
+# GetFeatureText of material feature groups. Unknown texts keep the old
+# periphrasis, so the macro always yields a grammatical phrase:
+#   [CZMatZ(A.GetFeatureText('generic_material_cloth'))]  ze stříbra / z materiálu X
+#   [CZMatI(A.GetFeatureText('generic_material_cloth'))]  stříbrem / materiálem X
+
+# cost: 170
+macro = {
+	description = "Material text XN with preposition z/ze in genitive (ze stříbra), else 'z materiálu XN'"
+	definition = "CZMatZ(XN)"
+	replace_with = "Select_CString(EqualTo_string(Localize(Concatenate('CZMAT_G_',CZUnderscore(XN))),Concatenate('CZMAT_G_',CZUnderscore(XN))),Concatenate('z materiálu ',XN),Concatenate(Concatenate(CZPrepZ(XN),' '),Localize(Concatenate('CZMAT_G_',CZUnderscore(XN)))))"
+}
+
+# cost: 162
+macro = {
+	description = "Material text XN in instrumental (stříbrem), else 'materiálem XN'"
+	definition = "CZMatI(XN)"
+	replace_with = "Select_CString(EqualTo_string(Localize(Concatenate('CZMAT_I_',CZUnderscore(XN))),Concatenate('CZMAT_I_',CZUnderscore(XN))),Concatenate('materiálem ',XN),Localize(Concatenate('CZMAT_I_',CZUnderscore(XN))))"
+}
+
+# ------------------------------------------------
 # TIER EXCEPTIONS
 # ------------------------------------------------
 # One-word tier names the rules get wrong. Empty string = no exception.

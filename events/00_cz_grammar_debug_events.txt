@@ -1768,3 +1768,66 @@ cz_grammar_debug.0200 = {
 		name = cz_grammar_debug.adapters.close
 	}
 }
+
+# Pro-drop (zamlčaný podmět) probe for relationship_reasons: Select/Concatenate with GetShortUIName, |U, real rival reasons
+cz_grammar_debug.0210 = {
+	orphan = yes
+	type = character_event
+	theme = default
+	title = cz_grammar_debug.0210.t
+	desc = cz_grammar_debug.0210.desc
+	immediate = {
+		random_vassal = {
+			save_scope_as = pd_other
+		}
+	}
+	left_portrait = root
+	right_portrait = scope:pd_other
+	option = {
+		name = cz_grammar_debug.0210.a
+		set_relation_rival = { target = scope:pd_other reason = rival_unjustified_imprisonment }
+	}
+	option = {
+		name = cz_grammar_debug.0210.b
+		set_relation_rival = { target = scope:pd_other reason = rival_tortured_me }
+	}
+	option = {
+		name = cz_grammar_debug.0210.c
+		set_relation_rival = { target = scope:pd_other reason = rival_ignored_suffering }
+	}
+	option = {
+		name = cz_grammar_debug.0210.d
+		set_relation_rival = { target = scope:pd_other reason = rival_toy_destruction }
+	}
+	option = {
+		name = cz_grammar_debug.0210.f
+		scope:pd_other = {
+			set_relation_rival = { target = root reason = rival_unjustified_imprisonment }
+		}
+	}
+	option = {
+		name = cz_grammar_debug.0210.g
+		scope:pd_other = {
+			set_relation_rival = { target = root reason = rival_tortured_me }
+		}
+	}
+	option = {
+		name = cz_grammar_debug.0210.h
+		scope:pd_other = {
+			set_relation_rival = { target = root reason = rival_ignored_suffering }
+		}
+	}
+	option = {
+		name = cz_grammar_debug.0210.i
+		scope:pd_other = {
+			set_relation_rival = { target = root reason = rival_toy_destruction }
+		}
+	}
+	option = {
+		name = cz_grammar_debug.0210.e
+		remove_relation_rival = scope:pd_other
+	}
+	option = {
+		name = cz_grammar_debug.adapters.close
+	}
+}

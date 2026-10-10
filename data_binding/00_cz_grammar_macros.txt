@@ -1802,3 +1802,55 @@ macro = {
 	definition = "CZNamePossessive_N(NAME,IS_FEMALE)"
 	replace_with = "Select_CString(IS_FEMALE,CZNamePossessive_N_F(NAME),CZNamePossessive_N_M(NAME))"
 }
+
+##################################################
+# ZAMLČANÝ PODMET (pro-drop) PRE LOKÁLNEHO HRÁČA
+##################################################
+# Namiesto "[X.GetShortUIName|U][Select_CString( X.IsLocalPlayer, ' jsi', '' )] přísahal":
+#   [CZProDrop(X,'přísahala','přísahal')|U]   -> "Přísahal jsi" / "Meno přísahal"
+#   [CZProDropW(X,'veřejně')|U]                -> "Veřejně jsi" / "Meno veřejně"
+#   poté, co [CZProDropSub(X)] zabil           -> "poté, co jsi zabil" / "poté, co Meno zabil"
+# FEM/MASC/ADV = jedno slovo (bez čiarky); zvyšok viacslovného slovesa ide do
+# samostatného Select_CString za makrom. |U patrí na začiatok vety.
+
+# cost: 19
+macro = {
+	description = "Pro-drop, sentence start, verb word"
+	definition = "CZProDrop(WHO,FEM,MASC)"
+	replace_with = "Select_CString(WHO.IsLocalPlayer,Select_CString(WHO.IsFemale,Concatenate(FEM,' jsi'),Concatenate(MASC,' jsi')),Concatenate(Concatenate(WHO.GetShortUIName,' '),Select_CString(WHO.IsFemale,FEM,MASC)))"
+}
+
+# cost: 10
+macro = {
+	description = "Pro-drop, sentence start, adverb word"
+	definition = "CZProDropW(WHO,ADV)"
+	replace_with = "Select_CString(WHO.IsLocalPlayer,Concatenate(ADV,' jsi'),Concatenate(WHO.GetShortUIName,Concatenate(' ',ADV)))"
+}
+
+# cost: 5
+macro = {
+	description = "Pro-drop after conjunction: 'jsi' or the name"
+	definition = "CZProDropSub(WHO)"
+	replace_with = "Select_CString(WHO.IsLocalPlayer,'jsi',WHO.GetShortUIName)"
+}
+
+# cost: 19
+macro = {
+	description = "Pro-drop, sentence start, verb word (no tooltip)"
+	definition = "CZProDropNoTooltip(WHO,FEM,MASC)"
+	replace_with = "Select_CString(WHO.IsLocalPlayer,Select_CString(WHO.IsFemale,Concatenate(FEM,' jsi'),Concatenate(MASC,' jsi')),Concatenate(Concatenate(WHO.GetShortUINameNoTooltip,' '),Select_CString(WHO.IsFemale,FEM,MASC)))"
+}
+
+# cost: 10
+macro = {
+	description = "Pro-drop, sentence start, adverb word (no tooltip)"
+	definition = "CZProDropWNoTooltip(WHO,ADV)"
+	replace_with = "Select_CString(WHO.IsLocalPlayer,Concatenate(ADV,' jsi'),Concatenate(WHO.GetShortUINameNoTooltip,Concatenate(' ',ADV)))"
+}
+
+# cost: 5
+macro = {
+	description = "Pro-drop after conjunction: 'jsi' or the name (no tooltip)"
+	definition = "CZProDropSubNoTooltip(WHO)"
+	replace_with = "Select_CString(WHO.IsLocalPlayer,'jsi',WHO.GetShortUINameNoTooltip)"
+}

@@ -1855,6 +1855,32 @@ macro = {
 	replace_with = "Select_CString(WHO.IsLocalPlayer,'jsi',WHO.GetShortUINameNoTooltip)"
 }
 
+# NoFormat varianty (popisy prezývok a pod.) + zvratné se:
+#   [CZProDropNF(X,'složila','složil')|U]    -> "Složil jsi" / "Meno složil"
+#   [CZProDropSeNF(X,'narodila','narodil')|U] -> "Narodil ses" / "Meno se narodil"
+#   poté, co [CZProDropSubNF(X)] zabil         -> "poté, co jsi zabil" / "poté, co Meno zabil"
+
+# cost: 19
+macro = {
+	description = "Pro-drop, sentence start, verb word (no format)"
+	definition = "CZProDropNF(WHO,FEM,MASC)"
+	replace_with = "Select_CString(WHO.IsLocalPlayer,Select_CString(WHO.IsFemale,Concatenate(FEM,' jsi'),Concatenate(MASC,' jsi')),Concatenate(Concatenate(WHO.GetShortUINameNoTooltipNoFormat,' '),Select_CString(WHO.IsFemale,FEM,MASC)))"
+}
+
+# cost: 19
+macro = {
+	description = "Pro-drop, sentence start, reflexive se + verb word (no format)"
+	definition = "CZProDropSeNF(WHO,FEM,MASC)"
+	replace_with = "Select_CString(WHO.IsLocalPlayer,Select_CString(WHO.IsFemale,Concatenate(FEM,' ses'),Concatenate(MASC,' ses')),Concatenate(Concatenate(WHO.GetShortUINameNoTooltipNoFormat,' se '),Select_CString(WHO.IsFemale,FEM,MASC)))"
+}
+
+# cost: 5
+macro = {
+	description = "Pro-drop after conjunction: 'jsi' or the name (no format)"
+	definition = "CZProDropSubNF(WHO)"
+	replace_with = "Select_CString(WHO.IsLocalPlayer,'jsi',WHO.GetShortUINameNoTooltipNoFormat)"
+}
+
 ##################################################
 # ROD (gender agreement by code m/f/n/p)
 ##################################################

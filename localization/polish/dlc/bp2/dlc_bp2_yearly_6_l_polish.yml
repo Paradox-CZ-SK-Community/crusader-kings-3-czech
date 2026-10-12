@@ -7,8 +7,8 @@
  bp2_yearly.6000.desc.fault.courtly: "\n\n„Dítěti nebylo nikdy vštěpováno nic o zdvořilosti! Musím [Select_CString(hosted_child.IsFemale,'její','jeho')] lebku rapnout, aby se uklonil[a] před tebou, ó [ROOT.Char.GetTitleAsNameNoTooltip]. Umí snad recitovat verše? Mluvit zdvořile k opačnému pohlaví? Ne!“"
  bp2_yearly.6000.desc.fault.egalitarian: "\n\n„[hosted_child.GetSheHe|U] nikdy nebyl[a] naučen[a] úctě k lidem, kteří s námi sdílejí naši zemi. Dítě napodobovalo přízvuk důstojníka [realm_minority.GetNameNoTooltip] bečením jako ovce! To je snad jeho/její vzdělání?!“"
  bp2_yearly.6000.desc.fault.egalitarian_no_culture: "\n\n„[hosted_child.GetSheHe|U] nikdy nebyl[a] naučen[a] úctě k lidem, kteří s námi sdílejí naši zemi. Dítě napodobuje jejich jazyky bečením jako ovce! To je snad jeho/její vzdělání?!“"
- bp2_yearly.6000.desc.fault.spiritual: "\n\n„Zastaví se to dítě někdy, aby projevilo vděčnost za darované jídlo? Vzývá [hosted_child.GetSheHe] božstvo o pomoc? Ne! [hosted_child.GetSheHe|U] [Select_CString(ROOT.Char.IsFemale,'byla','byl')][a] vychován[a] k životu bez úcty.“"
- bp2_yearly.6000.desc.fault.stoic: "\n\n„To dítě ohrnuje nos nad krásou naší vlasti. [hosted_child.GetSheHe|U] pohrdá potřebou stát, bojovat — bránit náš lid! [hosted_child.GetSheHe|U] [Select_CString(ROOT.Char.IsFemale,'byla','byl')][a] naučen[a] jen ubohému sobectví.“"
+ bp2_yearly.6000.desc.fault.spiritual: "\n\n„Zastaví se to dítě někdy, aby projevilo vděčnost za darované jídlo? Vzývá [hosted_child.GetSheHe] božstvo o pomoc? Ne! [hosted_child.GetSheHe|U] [Select_CString(hosted_child.IsFemale,'byla vychována','byl vychován')] k životu bez úcty.“"
+ bp2_yearly.6000.desc.fault.stoic: "\n\n„To dítě ohrnuje nos nad krásou naší vlasti. [hosted_child.GetSheHe|U] pohrdá potřebou stát, bojovat — bránit náš lid! [hosted_child.GetSheHe|U] [Select_CString(hosted_child.IsFemale,'byla naučena','byl naučen')] jen ubohému sobectví.“"
  bp2_yearly.6000.desc.mid: "\n\n[tutor.GetFirstNamePossessiveNoTooltip] hněv je namířen proti [hosted_child.Custom2('RelationToMeShort', SCOPE.sC('childs_home_liege'))] dítěte.\n\n„Je tu nějaká"
  bp2_yearly.6000.desc.value.bellicose: "zápal a vroucnost"
  bp2_yearly.6000.desc.value.bureaucratic: "zdravý rozum"
@@ -132,7 +132,7 @@
  bp2_yearly.6040.a.warning: "@alert_icon! #alert_trial Toto bude náročné a nákladné. Ujistěte se, že jste připraveni.#!"
  bp2_yearly.6040.b: "Proč vůbec #EMP uvažovat#! o zpochybnění našich tradic?"
  bp2_yearly.6040.b.tt: "Přijímám naše vytříbené [ROOT.Char.GetCulture.GetNameNoTooltip] způsoby a odvracím se od všeho ostatního!"
- bp2_yearly.6040.b.promote_culture: "Úkol [Concept('promote_culture','$task_promote_culture$')|E] [Concept('councillor_task','úkol rádce')|E] bude účinnější po #high 25 years#!" # todo: CONCEPT CASE
+ bp2_yearly.6040.b.promote_culture: "Úkol [Concept('promote_culture','$task_promote_culture|q$')|E] [Concept('councillor_task','úkol rádce')|E] bude účinnější po #high 25 years#!" # todo: CONCEPT CASE
  bp2_yearly.6040.b.no_reforms: "Už nebudete tyto reformy zvažovat"
  bp2_yearly.6040.c: "Nyní jednoduše není ten pravý čas."
  bp2_yearly.6040.c.recurring: "Tento impuls k reformě se pravděpodobně znovu objeví"
@@ -172,7 +172,7 @@
  bp2_yearly.6060.a.tt: "Kdo jiný by mohl spojit naše víry? A jaká lepší víra přinese duchovní řád a osvícení [ROOT.Char.GetPrimaryTitle.GetNameNoTierNoTooltip]?"
  bp2_yearly.6060.b: "Víra musí být vybudována, musí být uspořádána."
  bp2_yearly.6060.b.tt: "Budeme napodobovat, jak jsou cizí víry organizovány, jak sahají k nebi a do každého aspektu každodenního života."
- bp2_yearly.6060.b.conversion_bonus: "[Concept('convert_county','$task_conversion$')|E] Rychlost postupu: #P +[EmptyScope.ScriptValue('zealous_proselytizer_percentage')|0]%#!" # todo: CONCEPT CASE
+ bp2_yearly.6060.b.conversion_bonus: "[Concept('convert_county','$task_conversion|q$')|E] Rychlost postupu: #P +[EmptyScope.ScriptValue('zealous_proselytizer_percentage')|0]%#!" # todo: CONCEPT CASE
  bp2_yearly.6060.c: "Učení je pramenem veškeré síly."
  bp2_yearly.6060.c.tt: "A pokud jsem nejvzdělanější a nejmoudřejší ze všech, pokud jsem zcela oddaný, má říše jistě vzkvétá!"
  bp2_yearly.6060.c.nerd: "Snižujete všechny dovednosti kromě [Concept('learning','učenosti')|E] o #negative_value 2#!" # todo: CONCEPT CASE
@@ -338,7 +338,7 @@
  bp2_yearly.6121.f: "Hm. [hostage.GetHerHim] mi nechybí."
  bp2_yearly.6121.f.tt: "Jednou znovu uvidím [hostage.GetHerHim]... a to stačí."
  bp2_yearly.6122.t: "Nezapomenuto"
- bp2_yearly.6122.sneaking: "Když moji agenti rychle odvedli [hostage.GetFirstName] od stráží [warden.GetTitledFirstNamePossessive], využívajíc velkolepé večeře, vplížil jsem se i já na toto rodinné setkání.\n\nNehorázné okolnosti mě sotva zajímají, když mě můj [ROOT.Char.Custom2('RelationToMeShort', SCOPE.sC('hostage'))] objímá, směje se mým vráskám, nadšený.\n\n[hostage.GetSheHe|U] [Select_CString(ROOT.Char.IsFemale,'byla','byl')] dlouho pryč a brzy se musí vrátit ke svému dohledci. Takový je řád věcí, ale nezávidím [hostage.GetHerHim] jeho/jejího přísného pána."
+ bp2_yearly.6122.sneaking: "Když moji agenti rychle odvedli [hostage.GetFirstName] od stráží [warden.GetTitledFirstNamePossessive], využívajíc velkolepé večeře, vplížil jsem se i já na toto rodinné setkání.\n\nNehorázné okolnosti mě sotva zajímají, když mě můj [ROOT.Char.Custom2('RelationToMeShort', SCOPE.sC('hostage'))] objímá, směje se mým vráskám, nadšený.\n\n[hostage.GetSheHe|U] [Select_CString(hostage.IsFemale,'byla','byl')] dlouho pryč a brzy se musí vrátit ke svému dohledci. Takový je řád věcí, ale nezávidím [hostage.GetHerHim] jeho/jejího přísného pána."
  bp2_yearly.6122.rescue: "Jak [warden.GetTitledFirstName] vřel, když jsem ho vykázal ze své přítomnosti, s [Select_CString(warden.IsFemale,'jejím','jeho')] někdejším rukojmím [hostage.GetFirstName] po mém boku.\n\n„Vrátí se [warden.GetSheHe] zpět, [hostage.Custom2('RelationToMeShort', ROOT.Char)]?“ ptá se [hostage.Custom('GirlBoy')]. „[Select_CString(ROOT.Char.IsFemale,'Chtěla','Chtěl')] jsem se vrátit domů, ale... nechci, abys kvůli mně [Select_CString(ROOT.Char.IsFemale,'bojovala','bojoval')] [CZPrepS(warden.GetPrimaryTitle.GetNameNoTierNoTooltip)] [warden.GetPrimaryTitle.Custom('CZ_LandedNameNoTier_I')].“\n\nUjišťuji [hostage.GetFirstNameNoTooltip] o opaku, ale pravda zůstává jasná.\n\nZlomil jsem pakt. K lepšímu nebo horšímu, může se ukázat, že jsem obětoval mír."
  bp2_yearly.6122.c: "„Společně vyčkáme toho, co přijde.“"
  bp2_yearly.6122.c.tt: "Pokud se ukáže, že jde o válku, alespoň [hostage.GetFirstNameNoTooltip] nebude první mezi padlými..."

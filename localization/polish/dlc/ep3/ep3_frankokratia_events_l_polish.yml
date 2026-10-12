@@ -2,7 +2,7 @@
  ep3_frankokratia_events.0001.t: "Nespravedlivé vyvlastnění"
  ep3_frankokratia_events.0001.crusader_intro: "My, ozbrojení poutníci do zámoří, jsme pověřili [financier.GetPrimaryTitle.GetNameNoTier] stavbou našich lodí... velmi nákladné podnikání, věnované nejistému podniku."
  ep3_frankokratia_events.0001.non_crusader_intro: "Doputovaly zprávy o Křížové výpravě. Ti, kdo se zavázali, najali [financier.GetPrimaryTitle.GetNameNoTier] k výstavbě svých lodí... velmi nákladné podnikání, věnované nejistému podniku."
- ep3_frankokratia_events.0001.desc: "\n\n„Jaká hrozná ztráta!“ oplakává [byz_claimant.GetFirstName], můj [ROOT.Char.Custom2('RelationToMeShort', SCOPE.sC('byz_claimant'))]. „Nejodvážnější latinské rytíře, zchudlé — nucené trpět před pohany! Jak by nám [Glossary( 'Romaioi', 'ROMAIOS_GLOSS' )] mohli pomoci...“\n\nJako [byz_emperor.GetPrimaryTitle.GetAdjective] nápadník, [byz_claimant.GetFirstNameNoTooltip] ostře mluví o #EMP Romaioi#!. Možná... kdyby naši křižáci pochodovali ve [Select_CString(byz_claimant.IsFemale,'jejímu','jeho')] jménu, jejich věc by mohla být posílena řeckými vojáky a štědrými císařskými dary? Mohla by taková neortodoxní křížová výprava lépe sloužit misi Krista... a Jeho křesťanským bojovníkům?"
+ ep3_frankokratia_events.0001.desc: "\n\n„Jaká hrozná ztráta!“ oplakává [byz_claimant.GetFirstName], [Select_CString(SCOPE.sC('byz_claimant').IsFemale,'má','můj')] [ROOT.Char.Custom2('RelationToMeShort', SCOPE.sC('byz_claimant'))]. „Nejodvážnější latinské rytíře, zchudlé — nucené trpět před pohany! Jak by nám [Glossary( 'Romaioi', 'ROMAIOS_GLOSS' )] mohli pomoci...“\n\nJako [byz_emperor.GetPrimaryTitle.GetAdjective] nápadník, [byz_claimant.GetFirstNameNoTooltip] ostře mluví o #EMP Romaioi#!. Možná... kdyby naši křižáci pochodovali ve [Select_CString(byz_claimant.IsFemale,'jejímu','jeho')] jménu, jejich věc by mohla být posílena řeckými vojáky a štědrými císařskými dary? Mohla by taková neortodoxní křížová výprava lépe sloužit misi Krista... a Jeho křesťanským bojovníkům?"
  ep3_frankokratia_events.0001.a: "Chytré počínání! Které papež jistě požehná."
  ep3_frankokratia_events.0001.a.flavor: "Tito spolukřesťané vzdorují autoritě Svatého otce! Bylo by tak špatné použít naše poutníky proti nim...?"
  ep3_frankokratia_events.0001.b: "Přiměji křižáky, aby osobně přísahali za tuto věc."
@@ -110,9 +110,9 @@
  ep3_frankokratia_events.0042.b: "[player_1.GetTitledFirstNameNoTooltip] je mezi křižáky respektován."
  ep3_frankokratia_events.0042.c: "Ať si tu čest nárokuje [player_2.GetTitledFirstNameNoTooltip]."
  ep3_frankokratia_events.0042.d: "Tolik dlužíme [financier.GetTitledFirstNameNoTooltip]."
- ep3_frankokratia_events.0042.e: "Můj [ROOT.Char.Custom2('RelationToMeShort', SCOPE.sC('emp_beneficiary_3'))] [emp_beneficiary_3.GetNameNoTooltip] má císařskou milost!"
+ ep3_frankokratia_events.0042.e: "[Select_CString(SCOPE.sC('emp_beneficiary_3').IsFemale,'Má','Můj')] [ROOT.Char.Custom2('RelationToMeShort', SCOPE.sC('emp_beneficiary_3'))] [emp_beneficiary_3.GetNameNoTooltip] má císařskou milost!"
  ep3_frankokratia_events.0042.f: "[emp_beneficiary_2.GetNameNoTooltip]. Vládni moudře, [ROOT.Char.Custom2('RelationToMeShort', SCOPE.sC('emp_beneficiary_2'))]."
- ep3_frankokratia_events.0042.g: "Můj [ROOT.Char.Custom2('RelationToMeShort', SCOPE.sC('emp_beneficiary'))] [emp_beneficiary.GetNameNoTooltip] si zaslouží trůn."
+ ep3_frankokratia_events.0042.g: "[Select_CString(SCOPE.sC('emp_beneficiary').IsFemale,'Má','Můj')] [ROOT.Char.Custom2('RelationToMeShort', SCOPE.sC('emp_beneficiary'))] [emp_beneficiary.GetNameNoTooltip] si zaslouží trůn."
  old_titles_vassals_emp_beneficiary_tooltip: "@warning_icon! #X [emp_beneficiary.GetShortUIName] bude uděleno všechna vaše [Concept('titles','tituly')|E] a [Concept('vassals','vazalové')|E], které jsou mimo království [GetTitleByKey('e_latin_empire').GetNamePossessive]#!" # todo: CONCEPT CASE
  old_titles_vassals_emp_beneficiary_2_kings_tooltip: "@warning_icon! #X [emp_beneficiary.GetShortUIName] bude uděleno všechna vaše [Concept('titles','tituly')|E] a [Concept('vassals','vazalové')|E], které jsou mimo [latin_kingdom_1.Custom('CZ_LandedNameNoTier_A')] a [latin_kingdom_2.Custom('CZ_LandedNameNoTier_A')]#!" # todo: CONCEPT CASE
  old_titles_vassals_emp_beneficiary_1_king_tooltip: "@warning_icon! #X [emp_beneficiary.GetShortUIName] bude uděleno všechna vaše [Concept('titles','tituly')|E] a [Concept('vassals','vazalové')|E], které jsou mimo [latin_kingdom_1.Custom('CZ_LandedNameNoTier_A')]#!" # todo: CONCEPT CASE
@@ -124,8 +124,8 @@
  ep3_frankokratia_events.0044.outro_emperor: "Latinský ponese posvátnou korunu a čest pojmenovat tohoto císaře připadá mně."
  ep3_frankokratia_events.0044.outro_lord: "[latin_emperor.GetName] [Select_CString(latin_emperor.IsFemale,'byla','byl')] korunován pánem Latinů i Řeků a my ostatní poutníci musíme mezi sebe rozdělit [Select_CString(latin_emperor.IsFemale,'její','jeho')] země."
  ep3_frankokratia_events.0044.a: "Zůstanu zde a vychutnám si řecké požitky!"
- ep3_frankokratia_events.0044.b: "[beneficiary_3.GetFirstNameNoTooltip], můj [ROOT.Char.Custom2('RelationToMeShort', SCOPE.sC('beneficiary_3'))]: chraň toto království."
- ep3_frankokratia_events.0044.c: "Můj [ROOT.Char.Custom2('RelationToMeShort', SCOPE.sC('beneficiary_2'))] [beneficiary_2.GetFirstNameNoTooltip] je uchvácen těmito zeměmi."
+ ep3_frankokratia_events.0044.b: "[beneficiary_3.GetFirstNameNoTooltip], [Select_CString(SCOPE.sC('beneficiary_3').IsFemale,'má','můj')] [ROOT.Char.Custom2('RelationToMeShort', SCOPE.sC('beneficiary_3'))]: chraň toto království."
+ ep3_frankokratia_events.0044.c: "[Select_CString(SCOPE.sC('beneficiary_2').IsFemale,'Má','Můj')] [ROOT.Char.Custom2('RelationToMeShort', SCOPE.sC('beneficiary_2'))] [beneficiary_2.GetFirstNameNoTooltip] je uchvácen těmito zeměmi."
  ep3_frankokratia_events.0044.d: "[beneficiary.GetFirstNameNoTooltip]. Vládni těmto cizincům dobře, [ROOT.Char.Custom2('RelationToMeShort', SCOPE.sC('beneficiary'))]."
  ep3_frankokratia_events.0045.t: "Neviděné slávy"
  ep3_frankokratia_events.0045.intro: "S dosaženým vítězstvím a dojednanými podmínkami odchodu my křižáci tiše hledíme na [claimant.GetCapitalLocation.GetTitle.Custom('CZ_LandedNameNoTier_A')],"

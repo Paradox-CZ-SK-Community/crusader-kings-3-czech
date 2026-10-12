@@ -1893,3 +1893,25 @@ macro = {
 	definition = "CZGen4(GEN,MASC,FEM,NEUT,PLUR)"
 	replace_with = "Select_CString(EqualTo_string(GEN,'f'),FEM,Select_CString(EqualTo_string(GEN,'n'),NEUT,Select_CString(EqualTo_string(GEN,'p'),PLUR,MASC)))"
 }
+
+##################################################
+# POČET (plural by number: 1 / 2-4 / 0, 5+)
+##################################################
+# [N|V0] [CZPlural(N,'další dvořan','další dvořané','dalších dvořanů')]
+# Script variables (Var('x').GetValue) are CFixedPoint even when integral;
+# use CZPluralInt for int32 getters (GetDataModelSize, ...).
+# Fractions fall into MANY (1,5 dne -> needs its own form if ever used).
+
+# cost: 12
+macro = {
+	description = "Pick the Czech plural form for a CFixedPoint count: 1 -> ONE, 2-4 -> FEW, otherwise MANY"
+	definition = "CZPlural(N,ONE,FEW,MANY)"
+	replace_with = "Select_CString(EqualTo_CFixedPoint(N,'(CFixedPoint)1'),ONE,Select_CString(And(GreaterThan_CFixedPoint(N,'(CFixedPoint)1'),LessThan_CFixedPoint(N,'(CFixedPoint)5')),FEW,MANY))"
+}
+
+# cost: 12
+macro = {
+	description = "Pick the Czech plural form for an int32 count: 1 -> ONE, 2-4 -> FEW, otherwise MANY"
+	definition = "CZPluralInt(N,ONE,FEW,MANY)"
+	replace_with = "Select_CString(EqualTo_int32(N,'(int32)1'),ONE,Select_CString(And(GreaterThan_int32(N,'(int32)1'),LessThan_int32(N,'(int32)5')),FEW,MANY))"
+}

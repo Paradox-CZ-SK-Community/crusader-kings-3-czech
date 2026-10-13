@@ -13,7 +13,7 @@
  ep3_landless_admin.1010.b: "„Budeme potřebovat nějaké příspěvky...“"
  ep3_landless_admin.1010.c: "„Ujistěte se, že to #EMP všichni#! vědí.“"
  ep3_landless_admin.1010.d: "„Možná byste chtěli zůstat?“"
- MODIFIER_DEFINITION_VALUE_PER_ESTATE_BUILDING: " \t#weak Zvýšení za každou úroveň $estate_main_01_domicile_building$ [Concept('building','budova')|E]#!" # todo: CONCEPT CASE
+ MODIFIER_DEFINITION_VALUE_PER_ESTATE_BUILDING: " \t#weak Zvýšení za každou úroveň $estate_main_01_domicile_building$ [Concept('building','budovy')|E]#!"
  ep3_good_estate_modifier: "V dobrém sídle"
  ep3_good_estate_modifier_desc: "Místní jsou ohromeni údržbou $estate_main_01_domicile_building$ této postavy."
  ep3_extra_security_modifier: "Ještě vyšší zdi!"
@@ -27,7 +27,7 @@
  ep3_landless_admin.1020.desc.barracks: "kasárna"
  ep3_landless_admin.1020.desc.vineyard: "vinici"
  ep3_landless_admin.1020.desc.olive: "olivový háj"
- ep3_landless_admin.1020.desc.tea: "čajová plantáž" # todo: NEW TRANSLATION
+ ep3_landless_admin.1020.desc.tea: "čajová plantáž"
  ep3_landless_admin.1020.desc.outro: "od rána,„ [steward.GetFirstNameNoTooltip] zběžně naznačí směrem k němu.\n\n„Bylo by mi velkým potěšením pomoci vám zajistit, že z něj získáme co nejvíce.“"
  ep3_landless_admin.1020.a: "„Tržiště je srdcem každého města.“"
  ep3_landless_admin.1020.b: "„Dokážu si představit, jak odpočívám v těch zahradách...“"
@@ -38,7 +38,7 @@
  ep3_landless_admin.1020.g: "„Olej je tou nejzákladnější složkou.“"
  ep3_landless_admin.1020.h: "„Potřebujeme #EMP každou#! minci, abychom to tak udrželi.“"
  ep3_landless_admin.1020.h.flavor: "To zlato by u mě bylo mnohem v bezpečí..."
- ep3_landless_admin.1020.j: "„Dobrý čaj je pravým znakem vytříbenosti.“" # todo: NEW TRANSLATION
+ ep3_landless_admin.1020.j: "„Dobrý čaj je pravým znakem vytříbenosti.“"
  ep3_landless_admin.1030.t: "Tajemství za tajemství"
  ep3_landless_admin.1030.desc: "Host přijel přímo z [liege.GetTitledFirstNamePossessive] dvora, nic méně! [courtier.GetWomanMan] stojí přede mnou, [courtier.Custom('quirk_pos_pp')].\n\n„Jedna věc, můj [ROOT.Char.GetLadyLord]. Prý máte zájem o našeho společného pána... Znám [liege.GetHerHim]. Všichni na dvoře znají [liege.GetHerHim]. Tajemství je jen tak silné jako jeho nejslabší článek,“ [courtier.GetSheHe] se ušklíbne.\n\n„Navrhuji tajemství za tajemství.“"
  ep3_landless_admin.1030.a: "„Co tě brání odhalit #EMP má#! tajemství!?“"
@@ -51,10 +51,10 @@
  ep3_no_secrets_modifier: "Žádná tajemství"
  ep3_no_secrets_modifier_desc: "Tato postava je ve věci svých tajemství velmi opatrná."
  ep3_landless_admin.1040.t: "Další v řadě"
- ep3_landless_admin.1040.desc.intro: "Vzduch je naplněn vůní květin a kráčím vedle [spymaster.GetTitledFirstName] kolem malého průzračného potůčku.\n\n„Zvažoval jste to, můj [ROOT.Char.GetLadyLord]? Ten [rival.GetTitledFirstName] je nebezpečně blízko [CZPrepK(my_title.GetNameNoTooltip)] [my_title.Custom('CZ_LandedName_D')]. Někteří říkají, že už plánuje své edikty...“\n\n„Ale nemusí to tak být. Pověsti jsou laciné.“\n\n"
+ ep3_landless_admin.1040.desc.intro: "Vzduch je naplněn vůní květin a kráčím vedle [spymaster.Custom('CZ_TitledFirstName_G')] kolem malého průzračného potůčku.\n\n„[Select_CString(ROOT.Char.IsFemale,'Zvažovala','Zvažoval')] jste to, můj [ROOT.Char.GetLadyLord]? [Select_CString(rival.IsFemale,'Ta','Ten')] [rival.GetTitledFirstName] je nebezpečně blízko [CZPrepK(my_title.GetNameNoTooltip)] [my_title.Custom('CZ_LandedName_D')]. Někteří říkají, že už plánuje své edikty...“\n\n„Ale nemusí to tak být. Pověsti jsou laciné.“\n\n"
  ep3_landless_admin.1040.desc.child: "Mé vlastní dítě... mám odvahu to udělat?"
  ep3_landless_admin.1040.desc.spouse: "[Select_CString(ROOT.Char.IsFemale,'Můj vlastní manžel','Moje vlastní manželka')]... [Select_CString(ROOT.Char.IsFemale,'slíbila','slíbil')] jsem, že budu vždy po tvém boku."
- ep3_landless_admin.1040.desc.family: "Krev z mé krve... neměl bych tě ochránit?"
+ ep3_landless_admin.1040.desc.family: "Krev z mé krve... [Select_CString(ROOT.Char.IsFemale,'neměla','neměl')] bych tě ochránit?"
  ep3_landless_admin.1040.a: "„Pověsti! To je přece to, co dělám nejlépe!“"
  ep3_landless_admin.1040.b: "„To je škoda. Jdu do svých komnat.“"
  ep3_landless_admin.1040.c: "„Stojí to za pokus.“"
@@ -82,7 +82,7 @@
  ep3_landless_admin.1050.e.success: "Vyčistíte trosky z tunelů"
  ep3_landless_admin.1050.f: "Nechte to tak, jak je."
  SCHEME_SECRET_DOMICILE_TUNNEL: "Můžete použít své tajné tunely: $VALUE|+0=$"
- ep3_secret_tunnels_abduct: "Vaše [GetScheme('abduct').GetTypeName] [Concept('schemes','intriky')|E] budou mít vyšší [Concept('success_chance','šance na úspěch')|E]" # todo: CONCEPT CASE
+ ep3_secret_tunnels_abduct: "Vaše [GetScheme('abduct').GetTypeName] [Concept('schemes','intriky')|E] budou mít vyšší [Concept('success_chance','šanci na úspěch')|E]"
  ep3_tunnel_investigation_modifier: "Průzkum tunelů"
  ep3_tunnel_investigation_modifier_desc: "Tato postava objevila pod svým sídlem nějaké tunely a rozhodla se je prozkoumat."
  ep3_tunnel_prison_modifier: "Nikdo neunikne"

@@ -2,7 +2,7 @@
  mpo_nomad_events.1000.t: "Zachráněná hlava"
  mpo_nomad_events.1000.army_camp: "Přeživší krvavého boje u [CZProvName(beheaded_warrior_location,'G')] se přidávají k mému vojsku, bičují své koně až do posledního dechu. Ze sedlových řemínků jednoho visí kropající hlava — nesoucí smrtící tvář"
  mpo_nomad_events.1000.capital: "Přeživší krvavého boje u [CZProvName(beheaded_warrior_location,'G')] posílají zprávu z bojiště, a s tou zvěstí... kropající hlava"
- mpo_nomad_events.1000.family: "[beheaded_warrior.GetFirstName], můj [ROOT.Char.Custom2('RelationToMe', SCOPE.sC('beheaded_warrior'))]."
+ mpo_nomad_events.1000.family: "[beheaded_warrior.GetFirstName], [Select_CString(SCOPE.sC('beheaded_warrior').IsFemale,'má','můj')] [ROOT.Char.Custom2('RelationToMe', SCOPE.sC('beheaded_warrior'))]."
  mpo_nomad_events.1000.vassal: "[beheaded_warrior.GetName], můj kdysi mocný podřízený."
  mpo_nomad_events.1000.councillor: "[beheaded_warrior.GetName], můj důvěryhodný rádce."
  mpo_nomad_events.1000.generic_knight: "[beheaded_warrior.GetName], můj ctěný [ROOT.Char.Custom('KnightCultureNoTooltip')|l]."
@@ -21,7 +21,7 @@
  kin_head_artifact_desc: "Zhnilá, nepoznatelná tvář [beheaded_warrior.GetFirstName], milovaný potomek rodu [beheaded_warrior.GetHouse.GetName], který byl zabit silami [beheaded_warrior_foe.GetNamePossessive] [CZPrepV(beheaded_warrior_location.GetNameNoTooltip)] [CZProvName(beheaded_warrior_location,'L')]."
  accolade_head_artifact_desc: "Hrůzné pozůstatky [beheaded_warrior.GetFirstName], proslulého [ROOT.Char.Custom('KnightCultureNoTooltip')|l] známého jako '[beheaded_warrior_accolade.GetName].' Válečníci [beheaded_warrior_foe.GetNamePossessive|U] se hlásí k poctě, že [beheaded_warrior.GetHerHim] srazili na bojišti u [CZProvName(beheaded_warrior_location,'G')]."
  warriors_head_artifact_desc: "Useknutá hlava statečného [ROOT.Char.Custom('KnightCultureNoTooltip')|l] [beheaded_warrior.GetFirstName], který padl v boji proti kmenům [beheaded_warrior_foe.GetNamePossessive] [CZPrepV(beheaded_warrior_location.GetNameNoTooltip)] [CZProvName(beheaded_warrior_location,'L')]. Navzdory pách vůně ji spolubojovníci uctívají."
- keep_warrior_head_tt: "Uchováte [head_artifact.GetName]"
+ keep_warrior_head_tt: "Uchováte artefakt „[head_artifact.GetName]“"
  gain_illustrious_victim_head_artifact_tt: "Můžete uchovat [victim.GetFirstNamePossessive] hlavu jako $illustrious$ [Concept('inventory_artifact','osobní artefakt')|E]" # todo: CONCEPT CASE
  gain_famed_victim_head_artifact_tt: "Můžete uchovat [victim.GetFirstNamePossessive] hlavu jako $famed$ [Concept('inventory_artifact','osobní artefakt')|E]" # todo: CONCEPT CASE
  send_head_for_warscore_tt: "Odeslání [victim.GetFirstNamePossessive] hlavy [victim.GetHerHis] [Concept('heir','dědic')|E] může zvýšit jejich [Concept('peace','mír')|E] Přijetí vůči #high vám#!" # todo: CONCEPT CASE
@@ -75,7 +75,7 @@
  nomad_defector_family_wont_come_back_tt: "Nemůžete použít #high Pozvat na dvůr#! na tyto vyhnance po #high 5 let#!"
  nomad_defector_gain_all_courtiers_tt: "Získá některé z vašich nezaměstnaných [Concept('courtiers','dvořanů')|E]" # todo: CONCEPT CASE
  mpo_nomad_events.1020.t: "Nejhladovější z potomků"
- mpo_nomad_events.1020.desc: "Můj [ROOT.Char.Custom2('RelationToMeShort', SCOPE.sC('rowdy_boy'))] [rowdy_boy.GetFirstName] byl v poslední době neklidný.\n\n„Žrát kosti svého jídla! Sát kyselé tvarohy ve stínu své jurty! Je to #EMP můj#! život?“ [rowdy_boy.GetSheHe] plivne. „Jsem připraven vést, [rowdy_boy.Custom2('RelationToMeShort', SCOPE.sC('root_scope'))]! A jsou tací v tvém [ROOT.Char.GetDomicile.GetCulture.GetName] vojsku, kteří by mě následovali.“\n\nTento hrdý válečník [rowdy_boy.GetHouse.GetName], kterého mám jako bezmocného mazlíčka... bared [Select_CString(rowdy_boy.IsFemale,'její','jeho')] zuby."
+ mpo_nomad_events.1020.desc: "[Select_CString(SCOPE.sC('rowdy_boy').IsFemale,'Má','Můj')] [ROOT.Char.Custom2('RelationToMeShort', SCOPE.sC('rowdy_boy'))] [rowdy_boy.GetFirstName] byl v poslední době neklidný.\n\n„Žrát kosti svého jídla! Sát kyselé tvarohy ve stínu své jurty! Je to #EMP můj#! život?“ [rowdy_boy.GetSheHe] plivne. „Jsem připraven vést, [rowdy_boy.Custom2('RelationToMeShort', SCOPE.sC('root_scope'))]! A jsou tací v tvém [ROOT.Char.GetDomicile.GetCulture.GetName] vojsku, kteří by mě následovali.“\n\nTento hrdý válečník [rowdy_boy.GetHouse.GetName], kterého mám jako bezmocného mazlíčka... bared [Select_CString(rowdy_boy.IsFemale,'její','jeho')] zuby."
  mpo_nomad_events.1020.a: "„Mlč, [ROOT.Char.Custom2('RelationToMeShort', SCOPE.sC('rowdy_boy'))]. Znáš své místo.“"
  mpo_nomad_events.1020.b: "„Nikdo mi nesmí vzdorovat a #EMP přežít!#!“"
  mpo_nomad_events.1020_duel_tt: "#V Duel#! [rowdy_boy.GetFirstName].\n@death_icon! #X Tento duel je na život a na smrt!#!\nPokud vyhrajete, získáte @skill_prowess_icon![Concept('prowess','udatnost')|E], @dread_icon![Concept('dread','hrůza')|E], @prestige_icon![Concept('prestige','prestiž')|E] a @stress_icon![Concept('stress','stres')|E]. Pokud prohrajete, [rowdy_boy.GetShortUIName] převezme vaše [Concept('titles','tituly')|E] jako [Concept('primary_heir','hlavní dědic')|E].\n\nVáš [Concept('prowess','udatnost')|E]: [prowess_i]#V [root_scope.GetProwess]#!\n[rowdy_boy.GetFirstNamePossessive] [Concept('prowess','Udatnost')|E]: [prowess_i]#V [rowdy_boy.GetProwess]#!" # todo: CONCEPT CASE
@@ -83,7 +83,7 @@
  mpo_nomad_events.1020.c.flavor: "Ať si nástupník ponechá své vlastní stáda... pod mou nadvládou."
  mpo_nomad_events.1020.d: "„Jezdi daleko a dělej čest svému jménu!“"
  mpo_nomad_events.1020.d.flavor: "[rowdy_boy.GetFirstNameNoTooltip] bude mít vše, co [rowdy_boy.GetSheHe] potřebuje, aby se usadil."
- mpo_nomad_events.1020.e: "„Zůstaneš, pokud si to tvůj [rowdy_boy.Custom2('RelationToMeShort', SCOPE.sC('root_scope'))] přeje?“"
+ mpo_nomad_events.1020.e: "„Zůstaneš, pokud si to [Select_CString(SCOPE.sC('root_scope').IsFemale,'tvá','tvůj')] [rowdy_boy.Custom2('RelationToMeShort', SCOPE.sC('root_scope'))] přeje?“"
  mpo_nomad_events.1020.e.success: "[rowdy_boy.GetFirstNameNoTooltip] souhlasí zůstat a sloužit"
  mpo_nomad_events.1020.e.failure: "[rowdy_boy.GetFirstNameNoTooltip] a [Select_CString(rowdy_boy.IsFemale,'její','jeho')] stoupenci se odplíží pryč"
  mpo_nomad_events.1020.f: "„Jsi vyhnán, [ROOT.Char.Custom2('RelationToMeShort', SCOPE.sC('rowdy_boy'))]! Pryč!“"
@@ -95,9 +95,9 @@
  mpo_quelled_family_dissent_modifier: "Zabil rozkolné příbuzné"
  mpo_quelled_family_dissent_modifier_desc: "Člen rodiny, který zpochybnil hrozivou autoritu této postavy... dlouho nepřežil."
  mpo_nomad_events.1030.t: "Výchova ve Třech"
- mpo_nomad_events.1030.desc: "Když zvažuji válečné dovednosti mých [ROOT.Char.Custom('KnightCulturePluralNoTooltip')|l], přivedou mi mého [ROOT.Char.Custom2('RelationToMeShort', SCOPE.sC('child'))] [child.GetFirstName].\n\n„[child.Custom2('RelationToMeShort', SCOPE.sC('root_scope'))|U],“ ptá se dítě, „která je hlavní mezi těmi třemi"
- mpo_nomad_events.1030.desc_mongolic: "[Glossary( 'nadaam', 'NADAAM_GLOSS')]?„\n\nMůj [ROOT.Char.Custom2('RelationToMeShort', SCOPE.sC('child'))] může [child.GetHerselfHimself] přislíbit brutální zkoušce [Glossary( 'bökh', 'BOKH_GLOSS')],"
- mpo_nomad_events.1030.desc_non_mongolic: "velké sporty?„\n\nMůj [ROOT.Char.Custom2('RelationToMeShort', SCOPE.sC('child'))] může [child.GetHerselfHimself] přislíbit brutální zkoušce zápasu,"
+ mpo_nomad_events.1030.desc: "Když zvažuji válečné dovednosti mých [ROOT.Char.Custom('KnightCulturePluralNoTooltip')|l], přivedou mi [Select_CString(SCOPE.sC('child').IsFemale,'mou','mého')] [ROOT.Char.Custom2('CZ_RelationToMeShort_A', SCOPE.sC('child'))] [child.GetFirstName].\n\n„[child.Custom2('RelationToMeShort', SCOPE.sC('root_scope'))|U],“ ptá se dítě, „která je hlavní mezi těmi třemi"
+ mpo_nomad_events.1030.desc_mongolic: "[Glossary( 'nadaam', 'NADAAM_GLOSS')]?„\n\n[Select_CString(SCOPE.sC('child').IsFemale,'Má','Můj')] [ROOT.Char.Custom2('RelationToMeShort', SCOPE.sC('child'))] může [child.GetHerselfHimself] přislíbit brutální zkoušce [Glossary( 'bökh', 'BOKH_GLOSS')],"
+ mpo_nomad_events.1030.desc_non_mongolic: "velké sporty?„\n\n[Select_CString(SCOPE.sC('child').IsFemale,'Má','Můj')] [ROOT.Char.Custom2('RelationToMeShort', SCOPE.sC('child'))] může [child.GetHerselfHimself] přislíbit brutální zkoušce zápasu,"
  mpo_nomad_events.1030.desc.outro: "umění jemného luku... nebo snad by měl [child.GetSheHe] zvládnout jezdecké umění, které vodí naše stáda a přivádí naše nájezdníky rychle domů?„"
  NADAAM_GLOSS: "Naadám, nebo 'tři mužné hry', jsou hlavní sporty praktikované mongolskými národy od neolitu a hlavními atrakcemi festivalů a soutěží. Jsou to: lukostřelba z kompozitního luku, wrestling a dostihy na dlouhé vzdálenosti."
  BOKH_GLOSS: "Starobylý, tradiční způsob mongolického zápasu, kde hlavním cílem je stáhnout horní část těla soupeře na zem. Některé styly dovolují techniky jako chytání a kopání nohou, ale v jádru jde o zkoušku surové síly a nepohnutelnosti, a může trvat i hodiny."

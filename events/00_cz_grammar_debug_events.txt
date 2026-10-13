@@ -1858,3 +1858,100 @@ cz_grammar_debug.0211 = {
 		name = cz_grammar_debug.adapters.close
 	}
 }
+
+# Test: $NUM$ inside data binding (CULTURE_AGE_IS_AT_LEAST, dlc_ep1_royal_court_triggers)
+cz_grammar_debug.0220 = {
+	orphan = yes
+	type = character_event
+	theme = default
+	title = cz_grammar_debug.0220.t
+	desc = cz_grammar_debug.0220.desc
+	immediate = {
+		random_ruler = {
+			limit = { is_male = yes is_adult = yes NOT = { this = root } }
+			save_scope_as = cz_m
+		}
+		random_ruler = {
+			limit = { is_female = yes is_adult = yes NOT = { this = root } }
+			save_scope_as = cz_f
+		}
+	}
+	left_portrait = root
+	center_portrait = scope:cz_m
+	right_portrait = scope:cz_f
+	option = {
+		name = cz_grammar_debug.0220.a
+		trigger = { culture = { culture_age < 1 } }
+		show_as_unavailable = { always = yes }
+	}
+	option = {
+		name = cz_grammar_debug.0220.b
+		trigger = { culture = { culture_age < 3 } }
+		show_as_unavailable = { always = yes }
+	}
+	option = {
+		name = cz_grammar_debug.0220.c
+		trigger = { culture = { culture_age < 5 } }
+		show_as_unavailable = { always = yes }
+	}
+	option = {
+		name = cz_grammar_debug.0220.d
+		trigger = { culture = { culture_age < 100 } }
+		show_as_unavailable = { always = yes }
+	}
+	option = {
+		name = cz_grammar_debug.adapters.close
+	}
+}
+
+# Adherent declension (CZAdherent_* / CZAdherentPl_*)
+cz_grammar_debug.0230 = {
+	orphan = yes
+	type = character_event
+	theme = default
+	title = cz_grammar_debug.0230.t
+	desc = cz_grammar_debug.0230.desc
+	immediate = {
+		random_ruler = {
+			limit = { NOT = { faith = root.faith } }
+			save_scope_as = cz_a
+		}
+		random_ruler = {
+			limit = {
+				NOT = { faith = root.faith }
+				NOT = { faith = scope:cz_a.faith }
+			}
+			save_scope_as = cz_b
+		}
+	}
+	left_portrait = root
+	center_portrait = scope:cz_a
+	right_portrait = scope:cz_b
+	option = {
+		name = cz_grammar_debug.adapters.close
+	}
+}
+
+cz_grammar_debug.0231 = {
+	orphan = yes
+	type = character_event
+	theme = default
+	title = cz_grammar_debug.0231.t
+	desc = cz_grammar_debug.0231.desc
+	immediate = {
+		random_ruler = {
+			limit = { is_female = yes }
+			save_scope_as = cz_a
+		}
+		random_ruler = {
+			limit = { is_female = no }
+			save_scope_as = cz_b
+		}
+	}
+	left_portrait = root
+	center_portrait = scope:cz_a
+	right_portrait = scope:cz_b
+	option = {
+		name = cz_grammar_debug.adapters.close
+	}
+}

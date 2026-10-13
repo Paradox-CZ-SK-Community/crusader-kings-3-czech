@@ -1,13 +1,16 @@
 ﻿l_polish:
- PERSONAL_TENET_COOLTIP_HEADER: "[TenetType.GetNameNoTooltip(Rite.Self)]"
- PERSONAL_TENET_COOLTIP_DESCRIPTION: "$FAITH_TENET_ITEM_POPULARITY_SHORT$\n[TenetType.GetPersonalTenetDescription(Character.Self)]"
+ PERSONAL_TENET_COOLTIP_HEADER: "[TenetType.GetBaseNameNoTooltip]" # todo: CHANGED (predtym: [TenetType.GetNameNoTooltip(Rite.Self)])
+ PERSONAL_TENET_COOLTIP_DESCRIPTION: "[TenetType.GetPersonalTenetDescription( Character.Self )]" # todo: CHANGED (predtym: $FAITH_TENET_ITEM_POPULARITY_SHORT$\n[TenetType.GetPersonalTenetDescription(Character.Self)])
  PERSONAL_TENET_COOLTIP_SF_VALUE_POSITIVE: "Zisk [Concept('spiritual_fulfillment','duchovního naplnění')|E] při přijetí: @spiritual_fulfillment_gain_icon!#P +#!$VALUE|+0$"
  PERSONAL_TENET_COOLTIP_SF_VALUE_NEGATIVE: "Ztráta [Concept('spiritual_fulfillment','duchovního naplnění')|E] při přijetí: @spiritual_fulfillment_loss_icon!$VALUE|+0$"
  PERSONAL_TENET_COOLTIP_SF_VALUE_SWAP_POSITIVE: "Zisk [Concept('spiritual_fulfillment','duchovního naplnění')|E] při výměně: @spiritual_fulfillment_gain_icon!#P +#!$VALUE|+0$"
  PERSONAL_TENET_COOLTIP_SF_VALUE_SWAP_NEGATIVE: "Ztráta [Concept('spiritual_fulfillment','duchovního naplnění')|E] při výměně: @spiritual_fulfillment_loss_icon!$VALUE|+0$"
- PERSONAL_TENET_COOLTIP_EFFECTS: "#S Účinky osobní zásady:#!"
  PERSONAL_TENET_BANNER_FULFILLMENT: "@spiritual_fulfillment_icon![TenetItem.GetSpiritualFulfillmentCurrent]"
- PERSONAL_TENET_COOLTIP_RITE_TENET_EFFECTS: "#L Účinky [TenetType.GetNameNoTooltip(Rite.Self)] jako zásady ritu#!"
+ PERSONAL_TENET_COOLTIP_RITE_TENET_EFFECTS: "#L Účinky jako zásady ritu#!" # todo: CHANGED (predtym: L Účinky [TenetType.GetNameNoTooltip(Rite.Self)] jako zásady ritu !)
+ confirm_add_personal_tenet_title: "Přijmout osobní zásadu" # todo: NEW TRANSLATION
+ confirm_add_personal_tenet_description: "Chystáš se přijmout $NEW_TENET|V$ jako [Concept('personal_tenet','osobní zásadu')|E]." # todo: NEW TRANSLATION
+ confirm_add_personal_tenet_effect_intro: "Přijetí $NEW_TENET|V$ jako [Concept('personal_tenet','osobní zásady')|E] bude mít následující účinek:" # todo: NEW TRANSLATION
+ confirm_add_personal_tenet_accept: "Přijmout" # todo: NEW TRANSLATION
  confirm_remove_personal_tenet_title: "Odebrat osobní zásadu"
  confirm_remove_personal_tenet_description: "Chystáš se přestat následovat $OLD_TENET$ jako svou [Concept('personal_tenet','osobní zásadu')|E]."
  confirm_remove_personal_tenet_effect_intro: "Odebrání $OLD_TENET|V$ jako [Concept('personal_tenet','osobní zásady')|E] bude mít následující účinek:"
@@ -17,13 +20,6 @@
  confirm_swap_personal_tenet_effect_intro: "Výměna $OLD_TENET|V$ za $NEW_TENET|V$ jako [Concept('personal_tenet','osobní zásady')|E] bude mít následující účinek:"
  confirm_swap_personal_tenet_accept: "Vyměnit"
  confirm_personal_tenet_change_cooldown_warning: "@warning_icon! #X Další [Concept('personal_tenet','osobní zásadu')|E] nebudeš moci odebrat ani vyměnit po dobu $COOLDOWN_DAYS$ dní.#!"
- TENET_ITEM_STATUS_PERSONAL: "Tvoje [Concept('personal_tenet','osobní zásada')|E]"
- TENET_ITEM_STATUS_UNKNOWN: "[Concept('unknown_tenet_status','Neznámá')|E] ve víře [Faith.GetNameNoTooltip]"
- TENET_ITEM_STATUS_KNOWN: "[Concept('known_tenet_status','Známá')|E] ve víře [Faith.GetNameNoTooltip]"
- TENET_ITEM_STATUS_PROHIBITED: "[Concept('prohibited_tenet_status','Zakázaná')|E] ve víře [Faith.GetNameNoTooltip]"
- TENET_ITEM_STATUS_PERMITTED: "[Concept('permitted_tenet_status','Povolená')|E] ve víře [Faith.GetNameNoTooltip]"
- TENET_ITEM_STATUS_CORE: "[Concept('core_tenet_status','Základní')|E] ve víře [Faith.GetNameNoTooltip]"
- TENET_ITEM_STATUS_INVALID: "Neplatná zásada"
  TENET_GROUP_ITEM_UNKNOWN: "[Concept('unknown_tenet_status','Neznámé')|E] [Concept('core_tenets','zásady')|E]"
  TENET_GROUP_ITEM_KNOWN: "[Concept('known_tenet_status','Známé')|E] [Concept('core_tenets','zásady')|E]"
  TENET_GROUP_ITEM_KNOWN_BY_YOU: "Pro tebe [Concept('known_tenet_status','známé')|E] [Concept('core_tenets','zásady')|E]"
@@ -73,3 +69,11 @@
  hud_personal_belief_positive_fulfillment_level: "[Concept('spiritual_fulfillment','Duchovní naplnění')|E]: [GetPlayer.GetSpiritualFulfillment|V0] / [GetDefine('NReligion','MAX_SPIRITUAL_FULFILLMENT')|P0]"
  hud_personal_belief_negative_fulfillment_level: "[Concept('spiritual_fulfillment','Duchovní naplnění')|E]: [GetPlayer.GetSpiritualFulfillment|V0] / [GetDefine('NReligion','MIN_SPIRITUAL_FULFILLMENT')|N0]"
  hud_personal_belief_click_to_view: "\n#I Kliknutím zobrazíš své [Concept('personal_tenets','osobní zásady')|e]#!"
+ PERSONAL_TENET_COOLTIP_EFFECTS: "#S Účinky osobní zásady:#!" # todo: NOT IN ENGLISH
+ TENET_ITEM_STATUS_PERSONAL: "Tvoje [Concept('personal_tenet','osobní zásada')|E]" # todo: NOT IN ENGLISH
+ TENET_ITEM_STATUS_UNKNOWN: "[Concept('unknown_tenet_status','Neznámá')|E] ve víře [Faith.GetNameNoTooltip]" # todo: NOT IN ENGLISH
+ TENET_ITEM_STATUS_KNOWN: "[Concept('known_tenet_status','Známá')|E] ve víře [Faith.GetNameNoTooltip]" # todo: NOT IN ENGLISH
+ TENET_ITEM_STATUS_PROHIBITED: "[Concept('prohibited_tenet_status','Zakázaná')|E] ve víře [Faith.GetNameNoTooltip]" # todo: NOT IN ENGLISH
+ TENET_ITEM_STATUS_PERMITTED: "[Concept('permitted_tenet_status','Povolená')|E] ve víře [Faith.GetNameNoTooltip]" # todo: NOT IN ENGLISH
+ TENET_ITEM_STATUS_CORE: "[Concept('core_tenet_status','Základní')|E] ve víře [Faith.GetNameNoTooltip]" # todo: NOT IN ENGLISH
+ TENET_ITEM_STATUS_INVALID: "Neplatná zásada" # todo: NOT IN ENGLISH

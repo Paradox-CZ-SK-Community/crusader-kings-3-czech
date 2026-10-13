@@ -854,6 +854,7 @@
  RELIGIOUS_HEAD_INTERACTION_CONSECRATED_BLOOD: "Máš [GetTrait('consecrated_blood').GetName( GetPlayer )]: $VALUE|=+0$"
  RELIGIOUS_HEAD_INTERACTION_UNPLEDGED_GHW: "Nedodržel[Select_CString( actor.IsFemale, 'a', '' )] jsi svůj slib účasti v [actor.GetFaith.GHWName]: $VALUE|=+0$"
  ASK_FOR_CONVERSION_CORONATION_BONUS: "[actor.GetShortUIName|U] byl[Select_CString( actor.IsFemale, 'a', '' )] pomazán[Select_CString( actor.IsFemale, 'a', '' )] k obracení na víru: $VALUE|=+0$"
+ ASK_FOR_CONVERSION_REALM_REFORMATION_BONUS: "[Concept('faith','Víra')|E] je v celé [Concept('realm','říši')|E] [Concept('organized', 'reformována')|E]: $VALUE|=+0$" # todo: NEW TRANSLATION
  demand_conversion_vassal_ruler_interaction: "Požadovat konverzi"
  demand_conversion_vassal_ruler_does_not_convert: "[recipient.GetShortUIName|U] nekonvertuje"
  might_ask_for_something_in_return_warning: "@warning_icon! #X [recipient.GetShortUIName|U] může na oplátku něco požadovat#!"
@@ -1748,7 +1749,7 @@
  divorce_character_dynast_request_interaction_title: "Rozvod proveden"
  MATCH_OFFER_INBREEDING_WARNING: "@warning_icon! #X [MatchOffer.GetInbreedingDesc]#!"
  MATCH_OFFER_NO_ALLIANCES: "Tento sňatek nepovede k uzavření [Concept('alliance','aliance')|E]"
- FOREIGN_PRISONER_RECOVATION_TT: "[TARGET_CHARACTER.GetShortUIName] odmítl[Select_CString( TARGET_CHARACTER.IsFemale, 'a', '' )] odebrání tvého titulu, zatímco byl[Select_CString( TARGET_CHARACTER.IsFemale, 'a', '' )] uvězněn[Select_CString( TARGET_CHARACTER.IsFemale, 'a', '' )] někým jiným"
+ FOREIGN_PRISONER_RECOVATION_TT: "[TARGET_CHARACTER.GetShortUIName] nemůže odmítnout [Concept('revocation','odebrání')|E], zatímco je [Concept('imprisoned','ve vězení')|E] někoho jiného" # todo: CHANGED (predtym: [TARGET_CHARACTER.GetShortUIName] odmítl[Select_CString( TARGET_CHARACTER.IsFemale, 'a', '' )] odebrání tvého titulu, za)
  BARON_RECOVATION_TT: "[Concept('vassals','Vazalové')|E] na [Concept('title_tier','úrovni')|E] [Concept('barony','baronství')|E] nemohou odmítnout [Concept('revocation','odebrání')|E]"
  PRISONER_RECOVATION_TT: "[Concept('prisoners','Vězni')|E] ve tvém [Concept('dungeon','žaláři')|E] nemohou odmítnout [Concept('revocation','odebrání')|E]"
  not_admin_revoke_primary_tier_only_first: "Odebrat lze pouze [Concept('primary_titles','hlavní tituly')|E] [Concept('governor','guvernéra')|E]"
@@ -2034,14 +2035,15 @@
  not_a_nomad_or_herder_tt: "[recipient.GetShortUIName] nemá [Concept('government','vládu')|E] typu [GetGovernment( 'nomad_government' ).GetName] ani [GetGovernment( 'herder_government' ).GetName]"
  inspire_conversion_interaction: "Podnítit konverzi"
  inspire_conversion_interaction_desc: "Přiměj postavu [recipient.GetShortUIName], aby přijala [actor.GetDomicile.GetFaith.GetName] jako svou [Concept('faith','víru')|E]"
- INSPIRE_CONVERSION_INTERACTION_NOTIFICATION: "Náš rod je vepsán do samotných kostí těchto zemí, nyní však v nás procitá nové volání. Přijmi s námi [actor.GetDomicile.GetFaith.GetName] a spoj moudrost našich předků s příslibem zítřka."
- you_are_not_of_your_domicile_faith_tt: "K podnícení konverze musí být tvá [Concept('faith','víra')|E] totožná s vírou tvého [Concept('yurt','kočovného hlavního sídla')|E] ([actor.GetDomicile.GetFaith.GetName])"
+ INSPIRE_CONVERSION_INTERACTION_NOTIFICATION: "Náš rod je vepsán do samotných kostí těchto zemí, nyní však v nás procitá nové volání. Přijmi s námi [actor.GetDomicile.GetRite.GetName] a spoj moudrost našich předků s příslibem zítřka." # todo: CHANGED (predtym: Náš rod je vepsán do samotných kostí těchto zemí, nyní však v nás procitá nové volání. Přijmi s námi [actor.GetDomicile.)
+ you_are_not_of_your_domicile_faith_tt: "[recipient.GetShortUIName|U] již vyznává [Concept('rite','ritus')|E] [puppet_or_actor.GetRite.GetName]" # todo: CHANGED (predtym: K podnícení konverze musí být tvá [Concept('faith','víra')|E] totožná s vírou tvého [Concept('yurt','kočovného hlavního )
  inspire_conversion_accepted_tt: "[recipient.GetShortUIName] přijímá [actor.GetDomicile.GetFaith.GetName]!"
  inspire_conversion_accepted_tt_puppeteer: "[puppet_or_actor.GetShortUIName|U] [Select_CString(puppet_or_actor.IsLocalPlayer,'jsi ','')|l][Select_CString(puppet_or_actor.IsFemale,'přesvědčila','přesvědčil')|l] [recipient.Custom('CZ_ShortUIName_A')], aby [Select_CString(recipient.IsFemale,'přijala','přijal')|l] [puppet_or_actor.GetRite.GetName]!"
  family_and_lands_inspire_domicile_tt: "[recipient.GetShortUINamePossessive] [Concept('family','rodina')|E], [Concept('counties','hrabství')|E] a [Concept('yurt','kočovné hlavní sídlo')|E] přijmou [actor.GetDomicile.GetFaith.GetName]"
  family_and_lands_inspire_tt: "[recipient.GetShortUINamePossessive] [Concept('family','rodina')|E] a [Concept('counties','hrabství')|E] přijmou [actor.GetDomicile.GetFaith.GetName]"
  nomads_must_inspire_tt: "[Concept('rulers','Vládci')|E] s [Concept('government','vládou')|E] typu [GetGovernment( 'nomad_government' ).GetName] musí k obrácení [Concept('vassals','vazalů')|E] nebo [Concept('tributaries','tributářů')|E] s vládou typu [GetGovernment( 'nomad_government' ).GetName] či [GetGovernment( 'herder_government' ).GetName] použít [Concept('interaction','interakci')|E] #V $inspire_conversion_interaction$#!"
  demand_conversion_nomadic_zealous_tt: "Jako [GetTrait('nomadic_philosophy').GetName( GetNullCharacter )] vyznavač [GetTrait('zealous').GetName( GetNullCharacter )] nemůžeš požadovat konverzi"
+ demand_conversion_clerical_region_capital_faith_tt: "Držitel [Concept('clerical_region','církevní oblasti')|E] nemůže konvertovat k tvé [Concept('faith','víře')|E], dokud její [Concept('capital','hlavní sídlo')|E] již nevyznává tvou [Concept('faith','víru')|E]" # todo: NEW TRANSLATION
  NOMADIC_AUTHORITY_POSITIVE_REASON: "[actor.GetShortUINamePossessive|U] [Concept('nomadic_authority','dominance')|E]: $VALUE|=+0$"
  INSPIRE_UNREFORMED_FAITH: "[actor.GetShortUINamePossessive|U] [Concept('faith','víra')|E] je [GetDoctrineType('unreformed_faith_doctrine').GetBaseName]: $VALUE|=+0$"
  ZEALOUS_PROSELYTIZER_REASON: "[actor.GetShortUINamePossessive|E] [Concept('perk','talent')|E] [GetPerk('zealous_proselytizer_perk').GetName( GetPlayer )]: $VALUE|=+0$"
@@ -2128,7 +2130,7 @@
  TITLE_IS_NOT_CLERICAL_REGION: "[TITLE.GetName|U] #bold nesmí být#! [Concept('clerical_title','duchovním titulem')|E]"
  NOT_TITLE_IS_NOT_CLERICAL_REGION: "$TITLE_IS_NOT_CLERICAL_REGION$"
  TITLE_IS_NOT_CLERICAL_ELECTOR: "[TITLE.GetName|U] #bold nesmí být#! [Concept('cardinalate','kardinálským titulem')|E]"
- NOT_TITLE_IS_NOT_CLERICAL_ELECTOR: "$TITLE_IS_NOT_CLERICAL_REGION$"
+ NOT_TITLE_IS_NOT_CLERICAL_ELECTOR: "$TITLE_IS_NOT_CLERICAL_ELECTOR$" # todo: CHANGED (predtym: $TITLE_IS_NOT_CLERICAL_REGION$)
  TITLE_IS_NOT_ANTIPOPE_OFFICE: "[TITLE.GetName|U] #bold nesmí být#! [Concept('title','titulem')|E] [Concept('challenger_hof','konkurenční hlavy víry')|E]"
  NOT_TITLE_IS_NOT_ANTIPOPE_OFFICE: "$TITLE_IS_NOT_ANTIPOPE_OFFICE$"
  special_title_cannot_be_revoked.tt: "Tento [Concept('title','titul')|E] je zvláštní a nelze jej odebrat"

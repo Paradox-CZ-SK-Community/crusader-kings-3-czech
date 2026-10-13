@@ -42,7 +42,7 @@
  activity_filter_anointment_candidates: "[Concept('holy_sites','svatá místa')|EU], [Concept('realm','panství')|E] nebo sídlo [Concept('head_of_rite','hlavy ritu')|E]"
  GOVERNMENT_ADJECTIVE: "[Character.GetGovernment.GetAdjective]"
  GOVERNMENT_ADJECTIVE_ICON: "[Character.Custom('GetGovernmentIcon')] [Character.GetGovernment.GetAdjective] [Concept('realm','panství')|E]"
- GOVERNMENT_ADJECTIVE_ICON_NOMAD: "[Character.Custom('GetGovernmentIcon')] [Character.GetGovernment.GetAdjective] [Concept('realm','panství')|E] – [Character.GetDomicile.GetFaith.GetAdjective] [Character.GetDomicile.GetCulture.GetCollectiveNoun]"
+ GOVERNMENT_ADJECTIVE_ICON_NOMAD: "[Character.Custom('GetGovernmentIcon')] [Character.GetGovernment.GetAdjective] [Concept('realm','panství')|E] – [Character.GetDomicile.GetRite.GetAdjective] [Character.GetDomicile.GetCulture.GetCollectiveNoun]" # todo: CHANGED (predtym: [Character.Custom('GetGovernmentIcon')] [Character.GetGovernment.GetAdjective] [Concept('realm','panství')|E] – [Charact)
  GOVERNMENT_ADJECTIVE_ICON_ADVENTURER: "[Character.Custom('GetGovernmentIcon')] [Character.GetGovernment.GetAdjective]"
  GOVERNORSHIP_TOOLTIP: "[ROOT.Char.GetVassalContract.GetAdminDivisionTextIcon] [SelectLocalization( ROOT.Char.GetGovernment.IsValid(), 'GOVERNMENT_ADJECTIVE', '' )] [Concept('governorship','guvernérství')|E]"
  VASSAL_TOOLTIP: "[SelectLocalization( ROOT.Char.GetGovernment.IsValid(), 'GOVERNMENT_ADJECTIVE_ICON', '' )] [Concept('vassal','vazal')|E]"
@@ -85,7 +85,7 @@
  CREATE_ACTIVITY_CONFIRMATION_TITLE: "Zahájit [ActivityType.GetNameNoTooltip]"
  CREATE_ACTIVITY_CONFIRMATION_DESC: "Opravdu chceš zahájit [ActivityType.GetNameNoTooltip]?\n\nNásledující $ACTIVITY_SPECIAL_GUESTS$ se nepřipojí:\n$DECLINING_GUESTS$"
  CREATE_ACTIVITY_CONFIRMATION_CONFIRM: "$START$"
- ACTIVITY_PLANNER_PHASE_REPLACE_TOOLTIP: "#T [ActivityPhase.GetName|U]#![AddLine( ActivityPhase.CanPickDescriptionBlockers( GetPlayer, PlannedActivityPhase.GetLocation, ActivityPlanner.GetSelectedSpecialOption ) )][AddTextIf( Not( ActivityPlanner.CanPlanMorePhasesOfType( ActivityPhase.Self ) ), AddLine( '$ACTIVITY_PLANNER_CANNOT_PICK_MORE_OF_PHASE|q$' ) )][AddLine( ActivityPhase.GetDescription( Activity.Self ) )]"
+ ACTIVITY_PLANNER_PHASE_REPLACE_TOOLTIP: "#T [ActivityPhase.GetName|U]#![AddLine( ActivityPhase.CanPickDescriptionBlockers( GetPlayer, PlannedActivityPhase.GetLocation, ActivityPlanner.GetSelectedSpecialOption ) )][AddTextIf( Not( ActivityPlanner.CanPlanMorePhasesOfType( ActivityPhase.Self ) ), AddLine( '$ACTIVITY_PLANNER_CANNOT_PICK_MORE_OF_PHASE|q$' ) )][AddLine( ActivityPhase.GetSimpleDescription )]" # todo: CHANGED (predtym: T [ActivityPhase.GetName|U] ![AddLine( ActivityPhase.CanPickDescriptionBlockers( GetPlayer, PlannedActivityPhase.GetLoca)
  activity_planner_clear_selected_tenet: "#I Kliknutím zrušíš výběr [Concept('core_tenet','zásady')|E]#!"
  activity_planner_clear_selected_doctrine: "#I Kliknutím zrušíš výběr [Concept('doctrine','doktríny')|E]#!"
  activity_planner_tenet_window_title: "Vyber zásadu"

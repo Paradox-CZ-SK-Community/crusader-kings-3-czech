@@ -1,7 +1,7 @@
 ﻿l_polish:
  CARDINALS_VIEW_TITLE: "[Concept('college_of_cardinals','Kardinálské kolegium')|E]"
- CARDINALS_VIEW_HEAD_OF_FAITH: "[Concept('head_of_faith','Hlava víry')|E]: [Character.GetShortUINameNotMeNoTooltip]"
- CARDINALS_VIEW_HEAD_OF_RITE: "[Concept('head_of_rite','Hlava ritu')|E]: [Character.GetShortUINameNotMeNoTooltip]"
+ CARDINALS_VIEW_HEAD_OF_FAITH: "[Concept('head_of_faith','Hlava víry')|E]"
+ CARDINALS_VIEW_HEAD_OF_RITE: "[Concept('head_of_rite','Hlava ritu')|E]"
  CARDINALS_VIEW_HEAD_OF_PAPACY: "[SelectLocalization(Character.GetFaith.GetReligiousHead.IsValid,'CARDINALS_VIEW_HEAD_OF_FAITH','CARDINALS_VIEW_HEAD_OF_RITE')]"
  CARDINALS_VIEW_HEAD_OF_PAPACY_VACANT: "[Title.GetNameNoTooltip]: Neobsazeno"
  CARDINALS_VIEW_TAB_COLLEGE: "Kolegium"
@@ -12,7 +12,6 @@
  CARDINALS_VIEW_POPE_PREDICTION: "Šance stát se příštím papežem: [CardinalItem.GetPrediction|V0%]"
  CARDINALS_VIEW_VOTE_FOR: "Bude hlasovat pro:"
  CARDINALS_VIEW_VOTE_UNDECIDED: "Nerozhodnuto"
- CARDINALS_VIEW_WILL_VOTE_FOR: "[Concept('cardinals','Kardinálové')|E] hlasující pro [Character.Custom('CZ_ShortUINameNoTooltip_A')|l] v papežské volbě"
  CARDINALS_VIEW_WILL_CHANGE_TENET: "Pokud bude [Character.GetShortUINameNoTooltip] [Select_CString(Character.IsFemale,'zvolena','zvolen')] do [Character.GetFaith.GetCollegeElectionTitle.GetNameNoTooltip], vymění [CardinalCandidateItem.GetSwappedOutTenet.GetName(Character.GetRite)] za svou preferovanou [Concept('core_tenet','zásadu')|E] [CardinalCandidateItem.GetPreferredTenet.GetName(Character.GetRite)]"
  CARDINALS_VIEW_YOU_WILL_CHANGE_RITE: "Pokud tě zvolí do [Character.GetFaith.GetCollegeElectionTitle.GetNameNoTooltip], budeš moci upravit [Faith.GetMainRite.GetName] a změnit jeho [Concept('core_tenets','zásady')|E] a [Concept('doctrines','doktríny')|E]"
  CARDINALS_VIEW_SUPPORTED_CANDIDATE_TT: "#bold Podporovaný kandidát #!"
@@ -21,6 +20,19 @@
  cardinals_view_candidate_different_rite: "@warning_icon! Pokud bude [Character.GetShortUIName] [Select_CString(Character.IsFemale,'zvolena','zvolen')], [Character.GetRite.GetName] se stane novým [Concept('mainline_rite','hlavním ritem')|E] víry [Character.GetFaith.GetName]."
  CARDINALS_VIEW_CANDIDATE_ARCHETYPE_TT: "#T [CardinalCandidateItem.GetArchetypeName]#!\n[CardinalCandidateItem.GetArchetypeDescription]\n\n[Character.GetShortUINameNoTooltip|U] následuje [Rite.GetName].\n\n[CardinalCandidateItem.GetScoreBreakdown]"
  CARDINALS_VIEW_SELECTION_REASONS_SUM: "#T [Concept('candidate_score','Skóre kandidáta')|E]: $VALUE|0$#!"
+ CARDINALS_VIEW_CANDIDATE_PAPABILE_SCORE: "@clerical_score![Character.MakeScope.ScriptValue( 'pam_papal_powerful_priority_value' )|V0]"
+ CARDINALS_VIEW_CANDIDATE_PAPABILE_SCORE_POPULIST: "@clerical_score![Character.MakeScope.ScriptValue( 'pam_papal_populist_priority_value' )|V0]"
+ CARDINALS_VIEW_CANDIDATE_PAPABILE_SCORE_PIOUS: "@clerical_score![Character.MakeScope.ScriptValue( 'pam_papal_pious_priority_value' )|V0]"
+ CARDINALS_VIEW_PAPABILE_SCORE_POWERFUL_TT: "[Concept('papabile_score','Skóre papežské kandidatury')|E] pro #L #TOOLTIP:theocratic_elective_powerful_desc $theocratic_elective_powerful$#!#!" # todo: NEW TRANSLATION
+ CARDINALS_VIEW_PAPABILE_SCORE_PIOUS_TT: "[Concept('papabile_score','Skóre papežské kandidatury')|E] pro #L #TOOLTIP:theocratic_elective_pious_desc $theocratic_elective_pious$#!#!" # todo: NEW TRANSLATION
+ CARDINALS_VIEW_PAPABILE_SCORE_POWERFUL_VALUE: "#V [Character.MakeScope.ScriptValue( 'pam_papal_powerful_priority_value' )|0]#!"
+ CARDINALS_VIEW_PAPABILE_SCORE_POPULIST_VALUE: "#V [Character.MakeScope.ScriptValue( 'pam_papal_populist_priority_value' )|0]#!"
+ CARDINALS_VIEW_PAPABILE_SCORE_PIOUS_VALUE: "#V [Character.MakeScope.ScriptValue( 'pam_papal_pious_priority_value' )|0]#!"
+ CARDINALS_VIEW_PAPABILE_SCORE_POPULIST_TT: "[Concept('papabile_score','Skóre papežské kandidatury')|E] pro #L #TOOLTIP:theocratic_elective_populist_desc $theocratic_elective_populist$#!#!" # todo: NEW TRANSLATION
+ CARDINALS_VIEW_PAPABILE_SCORE_POWERFUL_HEADER: "#L #TOOLTIP:theocratic_elective_powerful_desc Mocný#!#!:" # todo: NEW TRANSLATION
+ CARDINALS_VIEW_PAPABILE_SCORE_POPULIST_HEADER: "#L #TOOLTIP:theocratic_elective_populist_desc Oblíbený#!#!:" # todo: NEW TRANSLATION
+ CARDINALS_VIEW_PAPABILE_SCORE_PIOUS_HEADER: "#L #TOOLTIP:theocratic_elective_pious_desc Zbožný#!#!:" # todo: NEW TRANSLATION
+ CARDINALS_VIEW_COLLEGE_DESCRIPTION: "Po smrti papeže usedne na papežský stolec nejoblíbenější, nejzbožnější nebo nejmocnější [Concept('cardinal','kardinál')|e] s největším počtem příznivců." # todo: NEW TRANSLATION
  theocratic_elective_pious: "Zbožný"
  theocratic_elective_pious_desc: "#flavor Kolegium musí předložit jméno, které nikdo nemůže označit za nehodné – kardinála, jehož život už nyní připomíná život světce.#!\n\nChceš-li se stát #EMP $theocratic_elective_pious$#!, musíš ve zbožnosti předčit všechny ostatní [Concept('cardinals','kardinály')|E]. Zdaleka největší váhu má [Concept('piety_level','úroveň oddanosti')|E], poté [Concept('learning','učenost')|E] a postup v rysech: [GetTrait('lifestyle_scholar').GetName(GetPlayer)], [GetTrait('pilgrim').GetName(GetPlayer)] a [GetTrait('lifestyle_mystic').GetName(GetPlayer)]. Jediný [Concept('sin','hřích')|E] tě poškodí více, než ti jedna [Concept('virtue','ctnost')|E] pomůže.[GetPlayer.Custom('GetPamPapabileOwnScorePious')]"
  theocratic_elective_populist: "Oblíbenec lidu"
@@ -32,4 +44,5 @@
  CARDINALS_VIEW_VOTER_MISSING: "Tomuto kandidátovi zatím nedal hlas žádný volitel."
  CARDINALS_VIEW_DEBUG_CANDIDATE: "#T Index záznamu: [CardinalCandidateItem.GetArchetypeName]#!\n\n[CardinalCandidateItem.GetScoreBreakdown]"
  papabile_filter_tag_desc: "Interakce [Concept('cardinal','kardinála')|E]"
- CARDINALS_VIEW_INTERACTIONS_BUTTON_TT: "#T Zobrazit interakce [Concept('cardinal','kardinála')|E]#!"
+ CARDINALS_VIEW_WILL_VOTE_FOR: "[Concept('cardinals','Kardinálové')|E] hlasující pro [Character.Custom('CZ_ShortUINameNoTooltip_A')|l] v papežské volbě" # todo: NOT IN ENGLISH
+ CARDINALS_VIEW_INTERACTIONS_BUTTON_TT: "#T Zobrazit interakce [Concept('cardinal','kardinála')|E]#!" # todo: NOT IN ENGLISH

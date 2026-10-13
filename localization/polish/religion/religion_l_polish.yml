@@ -17,8 +17,6 @@
  COUNTIES_WITH_CORE_TENET_SUBHEADER: "#S [Concept('counties','Hrabství')|E] s touto [Concept('core_tenet','zásadou')|E]:#!"
  CHARACTERS_WITH_PERSONAL_TENET: "#T Pokud jde o [Concept('personal_tenet','osobní zásadu')|E]:#!"
  CHARACTERS_WITH_PERSONAL_TENET_SUBHEADER: "#S Pokud jde o [Concept('personal_tenet','osobní zásadu')|E]:#!"
- CLERGY_OF_FAITH_MODIFIER: "#T Veškeré [FAITH.GetAdjective] [Concept('clergy','duchovenstvo')|E]:#!"
- CLERGY_OF_UNKNOWN_FAITH_MODIFIER: "#T Veškeré duchovenstvo víry:#!"
  CLERGY_OF_FAITH_MODIFIER_SUBHEADER: "#S Veškeré [CZFaithAdjDecline(FAITH,'é')|l] [Concept('clergy','duchovenstvo')|E]:#!"
  CLERGY_OF_UNKNOWN_FAITH_MODIFIER_SUBHEADER: "#S Veškeré [Concept('clergy','duchovenstvo')|E] víry:#!"
  CHARACTERS_OF_FAITH_HOLY_SITE_MODIFIER: "#S Všichni [Faith.GetAdherentNamePlural]#! #weak (jen [Concept('eminent_holy_site','významná svatá místa')|E])#!#bold :#!"
@@ -107,8 +105,10 @@
  fervor_gain_clerical_title_created: "Vytvoření [Concept('clerical_title','duchovního titulu')|E]"
  fervor_gain_clerical_title_expanded: "Rozšíření [Concept('clerical_title','duchovního titulu')|E]"
  fervor_gain_clerical_title_split: "Rozdělení [Concept('clerical_title','duchovního titulu')|E]"
- FAITH_DOCTRINE_GENERAL_TOOLTIP: "[DoctrineType.GetEffectsDescription( GetPlayer.GetRite )]\n\n[DoctrineType.GetDescription( GetPlayer.GetFaith )|F]"
- TENET_TYPE_GENERAL_TOOLTIP: "[TenetType.GetEffectsDescription( Rite.Self )]\n\n[TenetType.GetDescription( Rite.Self )|F]"
+ FAITH_DOCTRINE_GENERAL_TOOLTIP: "[DoctrineType.GetEffectsDescription( GetPlayer.GetRite )]"
+ FAITH_DOCTRINE_GENERAL_TOOLTIP_DESCRIPTION: "[DoctrineType.GetDescription( GetPlayer.GetFaith )|F]"
+ TENET_TYPE_GENERAL_TOOLTIP: "[TenetType.GetFaithEffectsDescription( Rite.Self )]"
+ TENET_TYPE_GENERAL_TOOLTIP_DESCRIPTION: "[TenetType.GetDescription( Rite.Self )|F]"
  FAITH_TENET_ITEM_POPULARITY_TT_NEW_LINE: "\n\n$FAITH_TENET_ITEM_POPULARITY_SHORT$"
  HOLY_SITE_CHARACTER_MODIFIER_NAME: "Za [Concept('holy_site','svaté místo')|E] $NAME$"
  RELIGION_TITLE_TEXT: "[Religion.GetNameNoTooltip] #weak ([Religion.GetFamily.GetName])#!"
@@ -165,7 +165,6 @@
  holy_site_alexandria_name: "Alexandrie"
  holy_site_antioch_name: "Antiochie"
  holy_site_aksum_name: "Aksúm"
- holy_site_napata_name: "Napata"
  holy_site_dwin_name: "Dvin"
  holy_site_koloneia_name: "Koloneia"
  holy_site_beirut_name: "Bejrút"
@@ -175,8 +174,6 @@
  holy_site_kerala_effects: "Rychlost obracení hrabství: #P +50%#!"
  holy_site_suenik_name: "Dvin"
  holy_site_dvin_name: "Dvin"
- holy_site_colonea_name: "Koloneia"
- holy_site_armagh_name: "Armagh"
  holy_site_iona_name: "Iona"
  holy_site_iona_effects: "Rychlost obracení hrabství na Britských ostrovech: #P +30%#!"
  holy_site_visoki_name: "Visoki"
@@ -196,12 +193,10 @@
  holy_site_tinmallal_name: "Tinmallal"
  holy_site_nadjaf_name: "Nadžaf"
  holy_site_damascus_name: "Damašek"
- holy_site_siffa_name: "Siffa"
  holy_site_basra_name: "Basra"
  holy_site_nizwa_name: "Nizvá"
  holy_site_sijilmasa_name: "Sidžilmasa"
  holy_site_bahrein_name: "Bahrajn"
- holy_site_yamama_name: "Jamáma"
  holy_site_sinjar_name: "Sindžár"
  holy_site_baalbek_name: "Baalbek"
  holy_site_lalish_name: "Láliš"
@@ -209,7 +204,6 @@
  holy_site_dashtestan_name: "Daštistán"
  holy_site_zozan_name: "Zozan"
  holy_site_kufa_name: "Kúfa"
- holy_site_qom_name: "Qom"
  holy_site_semien_name: "Semien"
  holy_site_sufed_name: "Safed"
  holy_site_gerizim_name: "Hora Gerizim"
@@ -226,27 +220,17 @@
  holy_site_ahvaz_name: "Ahváz"
  holy_site_samarkand_name: "Samarkand"
  holy_site_bodh_gaya_name: "Bódhgaja"
- holy_site_kusinagara_name: "Lumbiní"
  holy_site_sarnath_name: "Sárnáth"
  holy_site_sanchi_name: "Sánčí"
  holy_site_ajanta_name: "Adžanta"
- holy_site_sagya_name: "Sakja"
  holy_site_dagon_name: "Dagon"
  holy_site_pagan_name: "Pagan"
  holy_site_atamasthana_name: "Atamasthána"
  holy_site_amaravati_name: "Amarávatí"
- holy_site_ava_name: "Ava"
- holy_site_sittaung_name: "Sittaung"
- holy_site_shaolin_name: "Šaolin"
  holy_site_lingyin_name: "Ling-jin"
  holy_site_wutai_name: "Hora Wu-tchaj"
- holy_site_emei_name: "Hora E-mej"
- holy_site_jiuhua_name: "Hora Ťiou-chua"
- holy_site_putuo_name: "Hora Pchu-tchuo"
  holy_site_luoyang_name: "Luo-jang"
- holy_site_bulguksa_name: "Pulguksa"
  holy_site_xi_an_name: "Si-an"
- holy_site_magadha_name: "Magadha"
  holy_site_dali_name: "Ta-li"
  holy_site_mungyeong_name: "Mungyeong"
  holy_site_borobudur_name: "Borobudur"
@@ -263,15 +247,9 @@
  holy_site_dwarka_name: "Dváraka"
  holy_site_angkor_name: "Angkor"
  holy_site_bantey_srei_name: "Banteay Srei"
- holy_site_prambanan_name: "Prambanan"
- holy_site_preah_vihear_name: "Preah Vihear"
  holy_site_my_son_name: "Mỹ Sơn"
- holy_site_bumiayu_name: "Bumiayu"
  holy_site_khao_khlang_nai_name: "Khao Khlang Nai"
  holy_site_konarak_name: "Kónárak"
- holy_site_shringeri_name: "Šringerí"
- holy_site_badrinath_name: "Badrínáth"
- holy_site_puri_name: "Purí"
  holy_site_palitana_name: "Pálitána"
  holy_site_shikharj_name: "Šikhardží"
  holy_site_ranakpur_name: "Ránakpur"
@@ -308,9 +286,7 @@
  holy_site_ani_name: "Ani"
  holy_site_dunhuang_name: "Tun-chuang"
  holy_site_uppsala_name: "Uppsala"
- holy_site_lejre_name: "Lejre"
  holy_site_paderborn_name: "Paderborn"
- holy_site_zeeland_name: "Zeeland"
  holy_site_ranaheim_name: "Ranaheim"
  holy_site_jorvik_name: "Jórvík"
  holy_site_konugardr_name: "$cn_konugardr_NORSE$"
@@ -347,7 +323,6 @@
  holy_site_athens_name: "Athény"
  holy_site_carthage_name: "Kartágo"
  holy_site_olympus_name: "Hora Olymp"
- holy_site_sparta_name: "Sparta"
  holy_site_kabul_name: "Kábul"
  holy_site_multan_name: "Multán"
  holy_site_bost_name: "Bost"
@@ -356,13 +331,11 @@
  holy_site_lhasa_name: "Lhasa"
  holy_site_purang_name: "Purang"
  holy_site_gilgit_name: "Gilgit"
- holy_site_suzhou_name: "Su-čou"
  holy_site_mount_heng_name: "Hora Cheng"
  holy_site_mount_longhu_name: "Hora Lung-chu"
  holy_site_mount_qingcheng_name: "Hora Čching-čcheng"
  holy_site_mount_tai_name: "Hora Tchaj"
  holy_site_mount_mian_name: "Hora Mien"
- holy_site_mount_kunyu_name: "Hora Kchun-jü"
  holy_site_mount_wudang_name: "Hora Wu-tang"
  holy_site_mount_qiyung_name: "Hora Čchi-jün"
  holy_site_luyi_name: "Lu-i"
@@ -406,9 +379,7 @@
  holy_site_banggai_name: "Banggai"
  holy_site_buru-sula_name: "Buru-Sula"
  holy_site_tengchong_name: "Tcheng-čchung"
- holy_site_shicheng_name: "Š’-čcheng"
  holy_site_jinglong_name: "Ťing-lung"
- holy_site_jianchang_name: "Ťien-čchang"
  holy_site_xuhen_name: "Sü-chen"
  holy_site_zhaotong_name: "Čao-tchung"
  holy_site_zuining_name: "Zuining"
@@ -429,7 +400,6 @@
  holy_site_kunasir_name: "Kunasir"
  holy_site_amandee_name: "Amandee"
  holy_site_sefa_utaki_name: "Sefa-utaki"
- holy_site_tate_name: "Tate"
  holy_site_fuzhou_name: "Fu-čou"
  holy_site_iban_name: "Iban"
  holy_site_kudat_name: "Kudat"
@@ -437,8 +407,6 @@
  holy_site_sukadana_name: "Sukadana"
  holy_site_kutai_name: "Kutai"
  holy_site_qufu_name: "Čchü-fu"
- holy_site_quzhou_name: "Čchü-čou"
- holy_site_linzi_name: "Lin-c’"
  holy_site_bianliang_name: "Pien-liang"
  holy_site_nutapkauspe_name: "Nutapkauspe"
  holy_site_makkarinupuri_name: "Makkarinupuri"
@@ -453,15 +421,11 @@
  holy_site_kepala_burung_name: "Kepala Burung"
  holy_site_tidore_name: "Tidore"
  holy_site_gangganegara_name: "Gangganegara"
- holy_site_mogao_name: "Mogao"
  holy_site_sanuki_name: "Sanuki"
  holy_site_isawa_name: "Isawa"
  holy_site_shimotsuke_name: "Šimocuke"
  holy_site_yeongwon_name: "Yeongwon"
  holy_site_sunan_name: "Sunan"
- holy_site_gaeseong_name: "Gaeseong"
- holy_site_goseong_name: "Goseong"
- holy_site_cheongju_name: "Cheongju"
  holy_site_zunyi_name: "Cun-i"
  holy_site_yangtze_name: "Jang-c’-ťiang"
  holy_site_nguu_hong_name: "Nguu Hong"
@@ -471,17 +435,9 @@
  holy_site_sizhou_name: "S’-čou"
  holy_site_muze_name: "Muze"
  holy_site_nanning_name: "Nan-ning"
- holy_site_wehale_name: "Wehale"
- holy_site_dongting_name: "Tung-tching"
- holy_site_zhuolu_name: "Čuo-lu"
- holy_site_turpan_name: "Turfan"
- holy_site_quanzhou_name: "Čchüan-čou"
- holy_site_awa_name: "Awa"
  holy_site_chupka_name: "Chupka"
  holy_site_tochi_ji_name: "Tóčódži"
  holy_site_ivatan_name: "$c_PHI_ivatan$"
- holy_site_hangzhou_name: "$c_hangzhou$"
- holy_site_danai_name: "$b_danai$"
  holy_site_nakkavaram_name: "$c_nakkavaram$"
  holy_site_ar_kol_name: "$biliku_divine_realm$"
  holy_site_site_of_valor_name: "Místo udatnosti"
@@ -613,7 +569,7 @@
  doctrine_no_head_desc: "Je naprostým bláznovstvím domnívat se, že jediný člověk může skutečně pochopit vůli [ROOT.Faith.HighGodName]. Musíme následovat vlastní srdce, abychom odhalili [ROOT.Faith.HighGodHerHis] záměr s námi."
  doctrine_parameter_no_head_of_faith: "Nemá [Concept('head_of_faith','hlavu víry')|E]"
  no_head_of_faith_name: "[Concept('doctrine','Doktrína')|E] bez [Concept('head_of_faith','hlavy víry')|E]"
- doctrine_parameter_minimum_fervor: "[Concept('fervor','Horlivost')|E] nemůže klesnout pod #V $VALUE|0$%#!"
+ doctrine_parameter_minimum_fervor: "[Concept('fervor','Horlivost')|E] nemůže klesnout pod #V $VALUE|0$%#! (pouze z [Concept('mainline_rite','hlavního ritu')|E])"
  doctrine_spiritual_head_name: "Duchovní"
  doctrine_spiritual_head_descriptive_name: "Duchovní vedení"
  doctrine_spiritual_head_desc: "Hmotný a duchovní svět nejsou stejné. Musíme zajistit, aby měl duchovní svět vlastního vůdce, který nás bude vést a chránit naši víru před poskvrněním tělesnými touhami."
@@ -966,10 +922,14 @@
  doctrine_monasticism_forbidden_descriptive_name: "Zákaz mnišství"
  doctrine_monasticism_forbidden_desc: "Tato víra mnišský život výslovně odmítá. Skládání slibů je zakázáno a nositelé mnišského rysu jsou v očích víry zločinci."
  monasticism_group_name: "Mnišství"
- doctrine_christianity_monasticism_latin_desc: "$tenet_monasticism_desc$\n\n$pam_matthew_16_24_latin$\n\n[Glossary('Historické pozadí mnišství','doctrine_monasticism_christianity_historical_desc')]"
- doctrine_christianity_monasticism_greek_desc: "$tenet_monasticism_desc$\n\n$pam_matthew_16_24_greek$\n\n[Glossary('Historické pozadí mnišství','doctrine_monasticism_christianity_historical_desc')]"
- doctrine_christianity_monasticism_default_desc: "$tenet_monasticism_desc$\n\n$pam_matthew_16_24_default$\n\n[Glossary('Historické pozadí mnišství','doctrine_monasticism_christianity_historical_desc')]"
- doctrine_monasticism_general_desc: "$tenet_monasticism_desc$\n\n[Glossary('Historické pozadí mnišství','doctrine_monasticism_general_historical_desc')]"
+ doctrine_christianity_monasticism_latin_desc: "$tenet_monasticism_desc$\n\n$pam_matthew_16_24_latin$"
+ doctrine_christianity_monasticism_latin_historical_glossary: "[Glossary('Mnišství','doctrine_monasticism_christianity_historical_desc')]"
+ doctrine_christianity_monasticism_greek_desc: "$tenet_monasticism_desc$\n\n$pam_matthew_16_24_greek$"
+ doctrine_christianity_monasticism_greek_historical_glossary: "[Glossary('Mnišství','doctrine_monasticism_christianity_historical_desc')]"
+ doctrine_christianity_monasticism_default_desc: "$tenet_monasticism_desc$\n\n$pam_matthew_16_24_default$"
+ doctrine_christianity_monasticism_default_historical_glossary: "[Glossary('Mnišství','doctrine_monasticism_christianity_historical_desc')]"
+ doctrine_monasticism_general_desc: "$tenet_monasticism_desc$"
+ doctrine_monasticism_general_historical_glossary: "[Glossary('Mnišství','doctrine_monasticism_general_historical_desc')]"
  doctrine_monasticism_christianity_historical_desc: "Mnišství se ve středověku rozšířilo po celém katolickém světě a kláštery vznikaly napříč Evropou, severní Afrikou i Blízkým východem. Mniši a jeptišky skládali sliby chudoby, čistoty a poslušnosti a žili buď jako poustevníci v odlehlých celách, nebo ve společných klášterech podle přísných řeholí.\n\nTyto instituce plnily mnoho úloh: uchovávaly rukopisy a antické texty, poskytovaly vzdělání, provozovaly nemocnice a hospice, spravovaly zemědělské statky a nabízely pohostinství cestovatelům. Mnišské řády jako benediktini, cisterciáci a kartuziáni si vytvořily svébytné tradice modlitby, práce a společného života."
  doctrine_monasticism_general_historical_desc: "Mnišská společenství existují v mnoha náboženských tradicích, nejen v křesťanství, ale také v buddhismu, hinduismu a džinismu. Jejich členové se obvykle stahují z běžné společnosti, aby se věnovali náboženskému životu prostřednictvím modlitby, meditace, studia a asketických praktik.\n\nKláštery často slouží jako střediska vzdělanosti, uchovávají posvátné texty a poskytují vzdělání. Mohou být od okolního obyvatelstva zcela odloučeny, nebo s ním naopak udržovat živé styky prostřednictvím dobročinnosti, lékařské péče a zemědělské výroby. Pravidla mnišského života se mezi tradicemi i jednotlivými společenstvími značně liší."
  sacraments_group_name: "Svátosti"
@@ -1131,4 +1091,49 @@
  cannot_convert_rite_same_rite: "[Character.GetShortUIName] již vyznává [Concept('rite','ritus')|E] [Rite.GetNameNoTooltip]"
  holy_site_for_faith_header: "#T [Province.GetName] je [Concept('holy_site','svatým místem')|E] pro následující [Concept('faiths','víry')|E]:#!\n"
  holy_site_for_faith_entry: "$BULLET_WITH_TAB$ [Faith.GetName] [SelectLocalization( Faith.IsEminentHolySite( HolySite.Self ), 'HOLY_SITE_FAITH_EMINENT', 'HOLY_SITE_FAITH_REGULAR' )]"
- image_encouraged_name: "Podporováno" # todo: NEW TRANSLATION # todo: NOT IN ENGLISH
+ CLERGY_OF_FAITH_MODIFIER: "#T Veškeré [FAITH.GetAdjective] [Concept('clergy','duchovenstvo')|E]:#!" # todo: NOT IN ENGLISH
+ CLERGY_OF_UNKNOWN_FAITH_MODIFIER: "#T Veškeré duchovenstvo víry:#!" # todo: NOT IN ENGLISH
+ holy_site_napata_name: "Napata" # todo: NOT IN ENGLISH
+ holy_site_colonea_name: "Koloneia" # todo: NOT IN ENGLISH
+ holy_site_armagh_name: "Armagh" # todo: NOT IN ENGLISH
+ holy_site_siffa_name: "Siffa" # todo: NOT IN ENGLISH
+ holy_site_yamama_name: "Jamáma" # todo: NOT IN ENGLISH
+ holy_site_qom_name: "Qom" # todo: NOT IN ENGLISH
+ holy_site_kusinagara_name: "Lumbiní" # todo: NOT IN ENGLISH
+ holy_site_sagya_name: "Sakja" # todo: NOT IN ENGLISH
+ holy_site_ava_name: "Ava" # todo: NOT IN ENGLISH
+ holy_site_sittaung_name: "Sittaung" # todo: NOT IN ENGLISH
+ holy_site_shaolin_name: "Šaolin" # todo: NOT IN ENGLISH
+ holy_site_emei_name: "Hora E-mej" # todo: NOT IN ENGLISH
+ holy_site_jiuhua_name: "Hora Ťiou-chua" # todo: NOT IN ENGLISH
+ holy_site_putuo_name: "Hora Pchu-tchuo" # todo: NOT IN ENGLISH
+ holy_site_bulguksa_name: "Pulguksa" # todo: NOT IN ENGLISH
+ holy_site_magadha_name: "Magadha" # todo: NOT IN ENGLISH
+ holy_site_prambanan_name: "Prambanan" # todo: NOT IN ENGLISH
+ holy_site_preah_vihear_name: "Preah Vihear" # todo: NOT IN ENGLISH
+ holy_site_bumiayu_name: "Bumiayu" # todo: NOT IN ENGLISH
+ holy_site_shringeri_name: "Šringerí" # todo: NOT IN ENGLISH
+ holy_site_badrinath_name: "Badrínáth" # todo: NOT IN ENGLISH
+ holy_site_puri_name: "Purí" # todo: NOT IN ENGLISH
+ holy_site_lejre_name: "Lejre" # todo: NOT IN ENGLISH
+ holy_site_zeeland_name: "Zeeland" # todo: NOT IN ENGLISH
+ holy_site_sparta_name: "Sparta" # todo: NOT IN ENGLISH
+ holy_site_suzhou_name: "Su-čou" # todo: NOT IN ENGLISH
+ holy_site_mount_kunyu_name: "Hora Kchun-jü" # todo: NOT IN ENGLISH
+ holy_site_shicheng_name: "Š’-čcheng" # todo: NOT IN ENGLISH
+ holy_site_jianchang_name: "Ťien-čchang" # todo: NOT IN ENGLISH
+ holy_site_tate_name: "Tate" # todo: NOT IN ENGLISH
+ holy_site_quzhou_name: "Čchü-čou" # todo: NOT IN ENGLISH
+ holy_site_linzi_name: "Lin-c’" # todo: NOT IN ENGLISH
+ holy_site_mogao_name: "Mogao" # todo: NOT IN ENGLISH
+ holy_site_gaeseong_name: "Gaeseong" # todo: NOT IN ENGLISH
+ holy_site_goseong_name: "Goseong" # todo: NOT IN ENGLISH
+ holy_site_cheongju_name: "Cheongju" # todo: NOT IN ENGLISH
+ holy_site_wehale_name: "Wehale" # todo: NOT IN ENGLISH
+ holy_site_dongting_name: "Tung-tching" # todo: NOT IN ENGLISH
+ holy_site_zhuolu_name: "Čuo-lu" # todo: NOT IN ENGLISH
+ holy_site_turpan_name: "Turfan" # todo: NOT IN ENGLISH
+ holy_site_quanzhou_name: "Čchüan-čou" # todo: NOT IN ENGLISH
+ holy_site_awa_name: "Awa" # todo: NOT IN ENGLISH
+ holy_site_hangzhou_name: "$c_hangzhou$" # todo: NOT IN ENGLISH
+ holy_site_danai_name: "$b_danai$" # todo: NOT IN ENGLISH

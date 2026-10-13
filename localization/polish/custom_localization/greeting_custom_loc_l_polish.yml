@@ -77,8 +77,8 @@
  greeting_vassal_neutral_regent_plain: "[Select_CString(second.IsFemale,'Poddané','Poddanému')] [ROOT.Char.Custom('GetCeremonialLiegeOrLiegeTitlePossessive')],"
  greeting_vassal_neutral_regent_assalam: "As-salámu alejkum, [Select_CString(second.IsFemale,'poddaná','poddaný')] [ROOT.Char.Custom('GetCeremonialLiegeOrLiegeTitlePossessive')],"
  greeting_vassal_neutral_ceremonial_liege: "[ROOT.Char.Custom2('GreetingVassalNeutralCeremonialLiegeFlavor', second)|U]"
- greeting_vassal_neutral_ceremonial_liege_plain: "[Select_CString(second.IsFemale,'Má','Můj')] [ROOT.Char.Custom('CZ_TitleAsNameNoTooltip_V')],"
- greeting_vassal_neutral_ceremonial_liege_assalam: "As-salámu alejkum, [Select_CString(second.IsFemale,'má','můj')] [ROOT.Char.Custom('CZ_TitleAsNameNoTooltip_V')],"
+ greeting_vassal_neutral_ceremonial_liege_plain: "[Select_CString(second.IsFemale,'Má','Můj')] [ROOT.Char.Custom('GetCeremonialLiegeOrLiegeTitle')]," # todo: CHANGED (predtym: [Select_CString(second.IsFemale,'Má','Můj')] [ROOT.Char.Custom('CZ_TitleAsNameNoTooltip_V')],)
+ greeting_vassal_neutral_ceremonial_liege_assalam: "As-salámu alejkum, [Select_CString(second.IsFemale,'má','můj')] [ROOT.Char.Custom('GetCeremonialLiegeOrLiegeTitle')]," # todo: CHANGED (predtym: As-salámu alejkum, [Select_CString(second.IsFemale,'má','můj')] [ROOT.Char.Custom('CZ_TitleAsNameNoTooltip_V')],)
  greeting_family_positive: "[ROOT.Char.Custom2('GreetingToFamilyPositive', second)]"
  greeting_family_negative: "[ROOT.Char.Custom2('GreetingToFamilyNegative', second)]"
  greeting_family_liked: "[ROOT.Char.Custom2('GreetingFamilyLikedFlavor', second)|U]"
@@ -219,7 +219,7 @@
  form_of_address_great_liege_title: "[Select_CString( ROOT.Char.IsFemale, 'Veliká', 'Veliký' )] [ROOT.Char.GetTitleAsNameNoTooltip]"
  form_of_address_my_sovereign_ladylord: "[Select_CString( ROOT.Char.IsFemale, 'má svrchovaná paní', 'můj svrchovaný pane' )]"
  form_of_address_son_of_heaven: "Syn nebes"
- form_of_address_your_radiance: "vaše Jasnosti"
+ form_of_address_your_radiance: "Vaše Jasnosti" # todo: CHANGED (predtym: vaše Jasnosti)
  form_of_address_your_grace: "Vaše Milosti"
  form_of_address_sire: "pane"
  form_of_address_your_basileus: "[Glossary( 'Basilee', 'BASILEUS_GLOSS' )]"
@@ -230,5 +230,5 @@
  form_of_address_my_sovereign: "[Select_CString(ROOT.Char.IsFemale,'má paní','můj pane')]"
  ceremonial_liege_title_from_any_vassal: "[ROOT.Char.GetTopLiege.GetPrimaryTitle.MakeScope.Var('administrative_ui_special_title').Title.GetHolder.GetTitleAsNameNoTooltip]"
  ceremonial_liege_title_from_any_vassal_possessive: "[ROOT.Char.GetTopLiege.GetPrimaryTitle.MakeScope.Var('administrative_ui_special_title').Title.GetHolder.GetTitleAsNamePossessiveNoTooltip]"
- top_liege_title_from_any_vassal: "[ROOT.Char.GetTopLiege.GetPrimaryTitle.MakeScope.Var('administrative_ui_special_title').Title.GetHolder.GetTitleAsNameNoTooltip]"
- top_liege_title_from_any_vassal_possessive: "[ROOT.Char.GetTopLiege.GetPrimaryTitle.MakeScope.Var('administrative_ui_special_title').Title.GetHolder.GetTitleAsNamePossessiveNoTooltip]"
+ top_liege_title_from_any_vassal: "[ROOT.Char.GetTopLiege.GetTitleAsNameNoTooltip]"
+ top_liege_title_from_any_vassal_possessive: "[ROOT.Char.GetTopLiege.GetTitleAsNamePossessiveNoTooltip]"

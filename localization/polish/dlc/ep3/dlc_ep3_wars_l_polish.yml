@@ -10,13 +10,13 @@
  EP3_LAAMP_INVASION_CB_DUCHY_NAME: "Invaze dobrodruhů do [Concept('duchy','vévodství')|E]" # todo: CONCEPT CASE
  EP3_LAAMP_INVASION_CB_KINGDOM_NAME: "Invaze dobrodruhů do [Concept('kingdom','království')|E]" # todo: CONCEPT CASE
  EP3_LAAMP_INVASION_CB_EMPIRE_NAME: "Invaze dobrodruhů do [Concept('empire','říše')|E]" # todo: CONCEPT CASE
- ep3_laamp_sponsor_target_tt: "\n#X $BULLET_WITH_TAB$[defender.GetTitledFirstName] nebyl dohodnutým cílem #weak ([attacker.MakeScope.Var('adventurer_invasion_target').Char.GetTitledFirstName])#!"
+ ep3_laamp_sponsor_target_tt: "\n#X $BULLET_WITH_TAB$[defender.GetTitledFirstName] [Select_CString(defender.IsFemale,'nebyla','nebyl')] dohodnutým cílem #weak ([attacker.MakeScope.Var('adventurer_invasion_target').Char.GetTitledFirstName])#!"
  ep3_laamp_sponsor_defender_tt: "\n#X $BULLET_WITH_TAB$[attacker.MakeScope.Var('adventurer_invasion_supporter').Char.GetSheHe|U] je v cílovém [Concept('realm','panství')|E]\n$ep3_laamp_sponsor_end_tt$#!" # todo: CONCEPT CASE
- ep3_laamp_sponsor_ally_tt: "\n#X $BULLET_WITH_TAB$[attacker.MakeScope.Var('adventurer_invasion_supporter').Char.GetSheHe|U] je [Concept('allied','spojenecký')|E] s [defender.GetTitledFirstName]#!" # todo: CONCEPT CASE
- ep3_laamp_sponsor_spouse_tt: "\n#X $BULLET_WITH_TAB$[attacker.MakeScope.Var('adventurer_invasion_supporter').Char.GetSheHe|U] je [Concept('married','sezdán')|E] s [defender.GetTitledFirstName]#!" # todo: CONCEPT CASE
+ ep3_laamp_sponsor_ally_tt: "\n#X $BULLET_WITH_TAB$[attacker.MakeScope.Var('adventurer_invasion_supporter').Char.GetSheHe|U] je [Concept('allied','spojenecký')|E] s [defender.Custom('CZ_TitledFirstName_I')]#!" # todo: CONCEPT CASE
+ ep3_laamp_sponsor_spouse_tt: "\n#X $BULLET_WITH_TAB$[attacker.MakeScope.Var('adventurer_invasion_supporter').Char.GetSheHe|U] je [Concept('married','sezdán')|E] s [defender.Custom('CZ_TitledFirstName_I')]#!" # todo: CONCEPT CASE
  ep3_laamp_sponsor_family_tt: "\n#X $BULLET_WITH_TAB$[attacker.MakeScope.Var('adventurer_invasion_supporter').Char.GetSheHe|U] je [Concept('close_family','blízká rodina')|E] [defender.GetTitledFirstName], s příliš vysokým [Concept('opinion','mínění')|E] vůči [defender.GetHerHim]#!" # todo: CONCEPT CASE
- ep3_laamp_sponsor_relation_tt: "\n#X $BULLET_WITH_TAB$[attacker.MakeScope.Var('adventurer_invasion_supporter').Char.GetSheHe|U] má blízký [Concept('relation','zvláštní vztah')|E] k [defender.GetTitledFirstName]#!" # todo: CONCEPT CASE
- ep3_laamp_sponsor_attacking_tt: "\n#X $BULLET_WITH_TAB$[attacker.MakeScope.Var('adventurer_invasion_supporter').Char.GetSheHe|U] již útočí na [defender.GetTitledFirstName]#!"
+ ep3_laamp_sponsor_relation_tt: "\n#X $BULLET_WITH_TAB$[attacker.MakeScope.Var('adventurer_invasion_supporter').Char.GetSheHe|U] má blízký [Concept('relation','zvláštní vztah')|E] k [defender.Custom('CZ_TitledFirstName_D')]#!" # todo: CONCEPT CASE
+ ep3_laamp_sponsor_attacking_tt: "\n#X $BULLET_WITH_TAB$[attacker.MakeScope.Var('adventurer_invasion_supporter').Char.GetSheHe|U] již útočí na [defender.Custom('CZ_TitledFirstName_A')]#!"
  ep3_laamp_sponsor_range_tt: "\n#X $BULLET_WITH_TAB$[attacker.MakeScope.Var('adventurer_invasion_supporter').Char.GetSheHe|U] není v [Concept('diplomatic_range','diplomatickém dosahu')|E] dosahu [defender.GetTitledFirstName]#!" # todo: CONCEPT CASE
  ep3_laamp_sponsor_no_support_tt: "\n#X [attacker.MakeScope.Var('adventurer_invasion_supporter').Char.GetTitledFirstName] vás nebude podporovat:#!"
  ep3_laamp_sponsor_support_soldiers_tt: "\n[attacker.MakeScope.Var('adventurer_invasion_supporter').Char.GetTitledFirstName] vás podpoří [Concept('soldiers','vojáci')|E]" # todo: CONCEPT CASE
@@ -70,11 +70,11 @@
  EP3_BORDER_RAID_CB_NAME: "Hraniční nájezd proti Římské říši"
  EP3_LAAMP_APPREHEND_ADVENTURER_CB_NAME: "Odpor [DEFENDER.GetTitledFirstName]"
  EP3_LAAMP_APPREHEND_ADVENTURER_CB_SPECIFIC_NAME: "Odpor [DEFENDER.GetTitledFirstName]"
- EP3_LAAMP_APPREHEND_ADVENTURER_CB_WAR_NAME: "$ORDER$ [ATTACKER.GetTitledFirstNamePossessive] odpor proti [DEFENDER.GetTitledFirstName]"
+ EP3_LAAMP_APPREHEND_ADVENTURER_CB_WAR_NAME: "$ORDER$ [ATTACKER.GetTitledFirstNamePossessive] odpor proti [DEFENDER.Custom('CZ_TitledFirstName_D')]"
  EP3_LAAMP_APPREHEND_ADVENTURER_CB_WAR_NAME_BASE: "[ATTACKER.GetPrimaryTitle.GetAdjective][DEFENDER.GetPrimaryTitle.GetName]"
  ep3_laamp_apprehend_adventurer_cb: "Odpor proti zajetí"
  ep3_laamp_apprehend_adventurer_cb_victory_desc: "[attacker.GetShortUIName|U] sesadí [defender.GetShortUIName]"
- ep3_laamp_apprehend_adventurer_cb_white_peace_desc: "[attacker.GetShortUIName|U] získá příměří s [defender.GetShortUIName]"
+ ep3_laamp_apprehend_adventurer_cb_white_peace_desc: "[attacker.GetShortUIName|U] získá příměří s [defender.Custom('CZ_ShortUIName_I')]"
  ep3_laamp_apprehend_adventurer_cb_defeat_desc: "[defender.GetShortUIName|U] uvězní [attacker.GetShortUIName], zabaví všechny majetky a rozloží [Concept('camp','tábor')|E]" # todo: CONCEPT CASE
  CLAIMED_TITLES_DESC: "[Concept('claimed','Nárokovaný')|E] [Concept('titles','Tituly')|E]" # todo: CONCEPT CASE
  CLAIMED_DE_JURE_TITLES_DESC: "[Concept('claimed','Nárokovaný')|E] [Concept('de_jure','De iure')|E] [Concept('titles','Tituly')|E]" # todo: CONCEPT CASE

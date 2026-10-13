@@ -1,7 +1,7 @@
 ﻿l_polish:
  ep3_governor_yearly.3001.t: "Stavitel, Kupec, Pozemkový pán"
  ep3_governor_yearly.3001.desc_christian: "Kdo si zaslouží odměnu, tomu Bůh dává blahobyt. Lenochova země zarůstá, ale můj statek [CZPrepV(root_domicile_province.GetTitle.GetNameNoTierNoTooltip)] [root_domicile_province.GetTitle.Custom('CZ_LandedNameNoTier_L')] — země, jejíž plody putují do mé spíže, nájmy vyplácené na mé jméno — se nyní táhne až k obzoru."
- ep3_governor_yearly.3001.desc_other: "Jak ta země kvete! Jak se sklady hemží! Kolem mého statku [CZPrepV(root_domicile_province.GetTitle.GetNameNoTierNoTooltip)] [root_domicile_province.GetTitle.Custom('CZ_LandedNameNoTier_L')] jsem vydal značné prostředky do místní produkce a nyní, naštěstí, mnoho pilných rodin platí nájem mně."
+ ep3_governor_yearly.3001.desc_other: "Jak ta země kvete! Jak se sklady hemží! Kolem mého statku [CZPrepV(root_domicile_province.GetTitle.GetNameNoTierNoTooltip)] [root_domicile_province.GetTitle.Custom('CZ_LandedNameNoTier_L')] jsem [Select_CString(ROOT.Char.IsFemale,'vydala','vydal')] značné prostředky do místní produkce a nyní, naštěstí, mnoho pilných rodin platí nájem mně."
  ep3_governor_yearly.3001.desc_mid: "\n\nMezitím místní [governor.GetTitleAsName] vládne mezi trním a zmatekem. [target_theme.GetNameNoTierPossessive]"
  ep3_governor_yearly.3001.desc_greek: "[Glossary( 'choritai', 'CHORITAI_GLOSS' )]"
  ep3_governor_yearly.3001.desc_non_greek: "drobnými držiteli půdy"
@@ -22,9 +22,9 @@
  ep3_governor_yearly.3001.a_failure: "Rychle se topíte ve skandálu"
  ep3_governor_yearly.3001.a_govs_low: "Tato možnost je dostupná díky [governor.GetShortUINamePossessive] velmi nízkému [Concept('governor_efficiency','efektivitě guvernéra')|E]" # todo: CONCEPT CASE
  ep3_governor_yearly.3001.c_gov_gain: "[governor.GetShortUINamePossessive] [Concept('governor_efficiency','Efektivita guvernéra')|E] se zvýší o #P 5#!" # todo: CONCEPT CASE
- ep3_governor_yearly.3001.a: "Bez potíží bych vykoupil polovinu [target_theme.GetTierAsNameNoTooltip]!"
+ ep3_governor_yearly.3001.a: "Bez potíží bych [Select_CString(ROOT.Char.IsFemale,'vykoupila','vykoupil')] polovinu [target_theme.GetTierAsNameNoTooltip]!"
  ep3_governor_yearly.3001.a.flavor: "Tato neschopná správa si mých nových statků nevšimne dříve než při placení daní!"
- ep3_governor_yearly.3001.b: "Lépe, abych trochu prosperoval já, než nějaký blázen [governor.GetTitleAsNameNoTooltip]."
+ ep3_governor_yearly.3001.b: "Lépe, abych trochu [Select_CString(ROOT.Char.IsFemale,'prosperovala','prosperoval')] já, než [Select_CString(governor.IsFemale,'nějaká bláznivá','nějaký blázen')] [governor.GetTitleAsNameNoTooltip]."
  ep3_governor_yearly.3001.b.flavor: "Mám mince k utracení — proč nepořídit více výnosné půdy?"
  ep3_governor_yearly.3001.b_gov_response: "@warning_icon! #X [governor.GetShortUIName] vás může potrestat!#!"
  ep3_governor_yearly.3001.c: "Místo toho... mohu [governor.GetTitleAsNameNoTooltip] nabídnout svou pomoc."
@@ -37,7 +37,7 @@
  productive_lands_modifier: "Mnoho drobných usedlostí"
  productive_lands_modifier_desc: "Hranice majetku této rodiny se rozšířily nátlakem a chytrými nákupy."
  ep3_governor_yearly.3002.t: "Z daňových poplatníků na nájemníky"
- ep3_governor_yearly.3002.desc: "„Podívej — podívej, tam v seznamech!“ štípe [tax_farmer.GetName].\n\n„Ještě jedny daně vesnice jsem vybral, vaším jménem, od doby, co jsem koupil smlouvu! A teď — odkazují daňové vybírače na [landlord.GetName], jejich nového pána! A [landlord.GetSheHe] platí hloupé drobné.“\n\n„To"
+ ep3_governor_yearly.3002.desc: "„Podívej — podívej, tam v seznamech!“ štípe [tax_farmer.GetName].\n\n„Ještě jedny daně vesnice jsem [Select_CString(tax_farmer.IsFemale,'vybrala','vybral')], vaším jménem, od doby, co jsem [Select_CString(tax_farmer.IsFemale,'koupila','koupil')] smlouvu! A teď — odkazují daňové vybírače na [landlord.Custom('CZ_Name_A')], [Select_CString(landlord.IsFemale,'jejich novou paní','jejich nového pána')]! A [landlord.GetSheHe] platí hloupé drobné.“\n\n„To"
  ep3_governor_yearly.3002_insult_greek: "[Glossary( 'metrokoites', 'METROKOITES_GLOSS' )]"
  METROKOITES_GLOSS: "#bold Metrokoites#! je řecké pejorativní označení popisující „toho, kdo spí se svou vlastní matkou.“"
  ep3_governor_yearly.3002_insult_armenian: "[Glossary( 'eshi dzag', 'ESHI_DZAG_GLOSS' )]"
@@ -58,17 +58,17 @@
  ep3_governor_yearly.3002.a_medium_influence_loss: " Utratíte #N 150#! #high Vliv#!"
  ep3_governor_yearly.3002.b_miniscule_influence_gain: " Získáte #P 35#! #high Vliv#!"
  ep3_governor_yearly.3002.b_minor_influence_loss_landlord: "[landlord.GetShortUIName] utratí #N 75#! #high Vliv#!"
- ep3_governor_yearly.3000_major_governance_loss: "Váš [Concept('governor_efficiency','efektivita guvernéra')|E] se sníží o #N 15#! na #high 10 let#!" # todo: CONCEPT CASE
- ep3_governor_yearly.3000_governance_loss: "Váš [Concept('governor_efficiency','efektivita guvernéra')|E] se sníží o #N 10#! na #high 10 let#!" # todo: CONCEPT CASE
- ep3_governor_yearly.3000_miniscule_governance_loss: "Váš [Concept('governor_efficiency','efektivita guvernéra')|E] se sníží o #N 5#! na #high 10 let#!" # todo: CONCEPT CASE
+ ep3_governor_yearly.3000_major_governance_loss: "Vaše [Concept('governor_efficiency','efektivita guvernéra')|E] se sníží o #N 15#! na #high 10 let#!" # todo: CONCEPT CASE
+ ep3_governor_yearly.3000_governance_loss: "Vaše [Concept('governor_efficiency','efektivita guvernéra')|E] se sníží o #N 10#! na #high 10 let#!" # todo: CONCEPT CASE
+ ep3_governor_yearly.3000_miniscule_governance_loss: "Vaše [Concept('governor_efficiency','efektivita guvernéra')|E] se sníží o #N 5#! na #high 10 let#!" # todo: CONCEPT CASE
  some_smallholds_modifier: "Skromný počet drobných usedlostí"
  some_smallholds_modifier_desc: "Navzdory razantnímu zásahu si tito pozemkoví páni stále vybírají nájmy od několika nadprávních nájemníků."
  taxed_and_pressganged_tenants_modifier: "Zdanění a donucení nájemníků do služby"
  taxed_and_pressganged_tenants_modifier_desc: "Místní drobní vlastníci, kteří prodali své pozemky, jsou dvakrát okradeni a, ačkoli je to nezákonné, jsou naverbováni do vojenské služby."
  ep3_governor_yearly.3003.t: "[landlord.GetNameNoTooltip],"
- ep3_governor_yearly.3003.desc_accused_of_crime: "Jsem zděšen zprávami, že terorizujete nevinné drobné vlastníky! Moji #EMP mnozí#! svědci říkají, že vy — mimo jiné zločiny — posílali děti plivat na vdovy? Kradli psy? Lili vodu do komínů? A to vše jen proto, abyste mohl vykoupit nějaké škarpové pastviny!\n\nVaše porušování zákona bylo, bohužel, zaznamenáno a zveřejněno... obávám se, že o tom uslyšíte víc."
+ ep3_governor_yearly.3003.desc_accused_of_crime: "Jsem [Select_CString(ROOT.Char.IsFemale,'zděšena','zděšen')] zprávami, že terorizujete nevinné drobné vlastníky! Moji #EMP mnozí#! svědci říkají, že vy — mimo jiné zločiny — posílali děti plivat na vdovy? Kradli psy? Lili vodu do komínů? A to vše jen proto, abyste [Select_CString(landlord.IsFemale,'mohla','mohl')] vykoupit nějaké škarpové pastviny!\n\nVaše porušování zákona bylo, bohužel, zaznamenáno a zveřejněno... obávám se, že o tom uslyšíte víc."
  ep3_governor_yearly.3003.desc_force_used: "Promluvte se svými novými nájemníky. Řekněte jim, že jejich pozemkové daně stále dluží, jejich služba ve válce je stále povinná. Když přijdou moji vojáci, nestůjte jim v cestě.\n\nZákon prohlašuje, že nyní vlastníte půdu. Lidé jsou však #EMP moji#!."
- ep3_governor_yearly.3003.desc_scandal: "Můžete si myslet, že jsem neschopný, že se sotva starám o blaho [target_theme.Custom('CZ_LandedNameNoTier_G')], ale to jste #EMP vy#!, kdo pohrdá tradicí, aby si tolik z ní přivlastnil — ostuda!\n\nZjistíte, že vaše lakota se stala oblíbeným tématem rozhovorů [CZPrepV(governor.GetCapitalLocation.GetCounty.GetTitle.GetNameNoTierNoTooltip)] [governor.GetCapitalLocation.GetCounty.GetTitle.Custom('CZ_LandedNameNoTier_L')]. Bohužel zcela zaslouženě."
+ ep3_governor_yearly.3003.desc_scandal: "Můžete si myslet, že jsem [Select_CString(ROOT.Char.IsFemale,'neschopná','neschopný')], že se sotva starám o blaho [target_theme.Custom('CZ_LandedNameNoTier_G')], ale to jste #EMP vy#!, kdo pohrdá tradicí, aby si tolik z ní [Select_CString(landlord.IsFemale,'přivlastnila','přivlastnil')] — ostuda!\n\nZjistíte, že vaše lakota se stala oblíbeným tématem rozhovorů [CZPrepV(governor.GetCapitalLocation.GetCounty.GetTitle.GetNameNoTierNoTooltip)] [governor.GetCapitalLocation.GetCounty.GetTitle.Custom('CZ_LandedNameNoTier_L')]. Bohužel zcela zaslouženě."
  ep3_governor_yearly.3003.desc_backs_down: "Gratuluji vám k vašim novým nabytkům! Krásné vesnice se rozumnými lidmi — je to pěkná krajina, kterou vlastníte!\n\nAno, někteří si mohou stěžovat na staré zákony stvořené, aby vás omezily: svíjejí ruce nad budoucností [root_domicile_province.GetTitle.GetNameNoTier]... ale vaše, moudrá a pevná ruka, je nejlepší, která nese prut!"
  ep3_governor_yearly.3003.a_accused_of_crime: "Falešné obvinění! A přece — #EMP přišli pro mé pozemky?!?#!"
  ep3_governor_yearly.3003.a_force_used: "To rozzuří mé nájemníky! Zchudnete je!"
@@ -100,7 +100,7 @@
  decried_weakness_score_desc: "Odsouzená císařská slabost"
  governor_challenges_weakness_candidate_score: "[ROOT.Char.GetShortUINamePossessive] [Concept('candidate_score','Skóre kandidáta')|E] pro [emperor.GetPrimaryTitle.Custom('CZ_LandedName_A')] se zvýší o #P 20#!" # todo: CONCEPT CASE
  ep3_governor_yearly.3011.opening: "Můj suzeréne, nejváženější [emperor.GetTitleAsName],"
- ep3_governor_yearly.3011.desc: "Dlouho vedly naše armády válku s [foe.GetName], a přesto nemáme žádný triumf k ohlášení.\n\nKdybych daroval své domácí vojsko, své osobní prostředky, vaší věci — byla by taková věrná služba náležitě oceněna?"
+ ep3_governor_yearly.3011.desc: "Dlouho vedly naše armády válku s [foe.GetName], a přesto nemáme žádný triumf k ohlášení.\n\nKdybych [Select_CString(ROOT.Char.IsFemale,'darovala','daroval')] své domácí vojsko, své osobní prostředky, vaší věci — byla by taková věrná služba náležitě oceněna?"
  ep3_governor_yearly.3011.a: "Cokoli, jen aby byli moji nepřátelé konečně poraženi!"
  ep3_governor_yearly.3011.b: "[governor.GetTitledFirstNameNoTooltip] sotva stojí za to mít jako spojence..."
  ep3_governor_yearly.3012.opening: "Ó statečný ministře [ROOT.Char.GetPrimaryTitle.GetNameNoTier],"
@@ -108,8 +108,8 @@
  ep3_governor_yearly.3012.desc_success: "Přijímám tvou nabídku. Očekáváme čerstvou sílu tvých vojáků na unaveném bojišti.\n\nPro tvou odvahu, štědrost ducha a vytrvalost, jen málo pozemských odměn se tomu rovná."
  ep3_governor_yearly.3012.kyrie_eleison: "[Glossary( 'Kýrie, eléison!', 'KYRIE_ELEISON_GLOSS' )]"
  ep3_emperor_yearly.3011.a_to_war: "Skvělý [emperor.GetPrimaryTitle.GetAdjectiveNoTooltip] důstojník se přidává do boje!"
- ep3_emperor_yearly.3011.a_no_war: "Chtěl jsem #EMP jen#! sloužit našemu [emperor.GetTitleAsNameNoTooltip]..."
- ep3_governor_yearly.3020.t: "[ROOT.Char.GetFaith.HighGodName] ustanovil... [emperor.GetHerHim|U]?"
+ ep3_emperor_yearly.3011.a_no_war: "[Select_CString(ROOT.Char.IsFemale,'Chtěla','Chtěl')] jsem #EMP jen#! sloužit [Select_CString(emperor.IsFemale,'naší','našemu')] [emperor.Custom('CZ_TitleAsNameNoTooltip_D')]..."
+ ep3_governor_yearly.3020.t: "[ROOT.Char.GetFaith.HighGodName] [Select_CString(EqualTo_string(ROOT.Char.GetFaith.HighGodHerHis,Localize('CHARACTER_HERHIS_HER')),'ustanovila','ustanovil')]... [emperor.GetHerHim|U]?"
  ep3_governor_yearly.3020.desc: "[target_trait.GetNameNoTooltip( GetNullCharacter )|l] [emperor.GetTitleAsName], který nad námi vládne, je často předmětem potichých rozhovorů."
  ep3_governor_yearly.3020.desc_physical: "\n\nMůže naše říše zůstat celistvá, zatímco její zjevení v těle je [emperor.GetHerselfHimself] znetvořené? Bude [emperor.GetTitledFirstNamePossessiveNoTooltip] znetvořený obličej vyražen na nových mincích? A — člověk se bojí to pomyslet — budou [ROOT.Char.GetFaith.HighGodNameAlternatePossessive] vyvolení suzéři od nynějška hrbáči?\n\nNe, tento [target_trait.GetNameNoTooltip( GetNullCharacter )|l] [emperor.GetTitleAsName] si těžko zaslouží purpur..."
  ep3_governor_yearly.3020.desc_crime: "\n\nJsme opravdu nejpožehnanější z říší, vládne nám zhřešenec — hříšník, který pohrdá přikázáními [ROOT.Char.GetFaith.HighGodNameAlternate]? Kolik našich zákonů ještě umažou špinavé ruce?\n\nNáš [target_trait.GetNameNoTooltip( GetNullCharacter )|l] pán sedí na vysokém trůnu — #EMP naprosté ponížení!#! Nižší [emperor.GetWomanMan] by byl dávno potrestán smrtí..."
@@ -118,21 +118,21 @@
  ep3_governor_yearly.3020.a.success: "Pomluvy naslouchají tvému jedovatému výpadu"
  ep3_governor_yearly.3020.a.fail: "Tvůj jed nikoho nezajímá"
  ep3_governor_yearly.3020.b: "Musím napsat dopis odsuzující!"
- ep3_governor_yearly.3020.flavor: "Toto znamení [ROOT.Char.GetFaith.HighGodNameAlternatePossessive] nevraživosti je pohromou nejen pro [emperor.GetTitleAsNameNoTooltip], ale i pro říši!"
+ ep3_governor_yearly.3020.flavor: "Toto znamení [ROOT.Char.GetFaith.HighGodNameAlternatePossessive] nevraživosti je pohromou nejen pro [emperor.Custom('CZ_TitleAsNameNoTooltip_A')], ale i pro říši!"
  ep3_governor_yearly.3020.c: "Pilná práce mě od toho odvrátí."
  governor_insulted_imperial_trait_candidate_score: "[ROOT.Char.GetShortUINamePossessive] [Concept('candidate_score','Skóre kandidáta')|E] pro [emperor.GetPrimaryTitle.Custom('CZ_LandedName_A')] se zvýší o [EmptyScope.ScriptValue('appointment_score_minor_value')|P0]" # todo: CONCEPT CASE
  insulted_trait_score_desc: "Odsouzený nehodný [Concept('trait','rys')|E] [Concept('liege','lenní pán')|E]" # todo: CONCEPT CASE
  msg_unflattering_imperial_trait_gossip.t: "Skandální pomluvy"
  msg_unflattering_imperial_trait_gossip.flavor: "Kolují nebezpečné fámy: vaši ministři pohrdají jejich [target_trait.GetName( GetNullCharacter )] [emperor.GetTitleAsNameNoTooltip]."
  ep3_governor_yearly.3021.opening: "Můj [emperor.GetTitleAsNameNoTooltip],"
- ep3_governor_yearly.3021.desc_physical: "Víte dobře, že my [minister.GetCulture.GetCollectiveNoun] jsme zděšeni, když na trůnu sedí mrzačené tělo dokonalého suzéra [minister.GetFaith.HighGodNamePossessive].\n\nMusím vás naléhat, náš [target_trait.GetNameNoTooltip( GetNullCharacter )|l] [emperor.GetTitleAsNameNoTooltip], abyste hledal ochranu u [minister.GetFaith.HighGodNameAlternate]! Pouze božím milosrdenstvím můžeme přežít tyto nenormální časy."
- ep3_governor_yearly.3021.desc_crime: "Kvůli vaší hříšné přirozenosti se obávám o osud vašeho panství. [target_trait.GetNameNoTooltip( GetNullCharacter )] [emperor.GetTitleAsNameNoTooltip] — naléhám, abyste před celou říší hledal odpuštění u [minister.GetFaith.HighGodNameAlternate].\n\nJak dlouho vydrží duše zkažená hříchem? A jak dlouho vydržíme my vládci bídu z vašich skutků?"
+ ep3_governor_yearly.3021.desc_physical: "Víte dobře, že my [minister.GetCulture.GetCollectiveNoun] jsme zděšeni, když na trůnu sedí mrzačené tělo dokonalého suzéra [minister.GetFaith.HighGodNamePossessive].\n\nMusím vás naléhat, náš [target_trait.GetNameNoTooltip( GetNullCharacter )|l] [emperor.GetTitleAsNameNoTooltip], abyste [Select_CString(emperor.IsFemale,'hledala','hledal')] ochranu u [minister.GetFaith.HighGodNameAlternate]! Pouze božím milosrdenstvím můžeme přežít tyto nenormální časy."
+ ep3_governor_yearly.3021.desc_crime: "Kvůli vaší hříšné přirozenosti se obávám o osud vašeho panství. [target_trait.GetNameNoTooltip( GetNullCharacter )] [emperor.GetTitleAsNameNoTooltip] — naléhám, abyste před celou říší [Select_CString(emperor.IsFemale,'hledala','hledal')] odpuštění u [minister.GetFaith.HighGodNameAlternate].\n\nJak dlouho vydrží duše zkažená hříchem? A jak dlouho vydržíme my vládci bídu z vašich skutků?"
  ep3_governor_yearly.3021.a: "Ač nedokonalý, přísahám, že budu usilovat pro svůj lid."
  ep3_governor_yearly.3021.b: "Bezostyšnost!"
  ep3_governor_yearly.3021.bad_trait: "@warning_icon! #X Toto se stalo kvůli vašemu [target_trait.GetName( GetNullCharacter )] [Concept('trait','rysu')|E]#!" # todo: CONCEPT CASE
  ep3_governor_yearly.3021.a.flavor: "Asi na čas mi zbožní mohou odpustit a nechají to vymizet z myslí..."
  emperor_repented_for_flaws_modifier: "Pokání za císařské vady"
- emperor_repented_for_flaws_modifier_desc: "Ač tato postava není plně hoden vysokého úřadu, veřejně usiloval o smíření a odpuštění."
+ emperor_repented_for_flaws_modifier_desc: "Ač tato postava není plně hodna vysokého úřadu, veřejně usilovala o smíření a odpuštění."
  ep3_governor_yearly.3021.blocker: "Tuto událost nedostanete nejméně #high 10 let#!"
  ep3_governor_yearly.3030.t: "Poklidné časy"
  ep3_governor_yearly.3030.desc_christian: "„Blahoslavení jsou činitelé pokoje!“ napsal sv. Matouš, a v tom jistě předal Pánovu pravdu.\n\nPo léta nyní [emperor.GetPrimaryTitle.GetName] a můj [ROOT.Char.GetPrimaryTitle.GetNameNoTier] zažívají Kristův pokoj."
@@ -164,7 +164,7 @@
  unlocked_via_event: "Odemčeno událostí"
  ep3_governor_yearly.3040.t_greek: "[emperor.GetTitleAsNameNoTooltip] Autokrator!"
  ep3_governor_yearly.3040.t: "Nejdokonalější [emperor.GetTitleAsNameNoTooltip]"
- ep3_governor_yearly.3040.desc: "Začínám si pamatovat s námahou — byl [emperor.GetPrimaryTitle.GetName] opravdu jen temnota a rozklad před tím, než vznešený [emperor.GetTitledFirstName] uchopil žezlo?\n\nSnívali naši společenské kruhy o něčem jiném než o sdílení společnosti [emperor.GetHouse.GetName]? Skandovali naši vojáci jméno nějakého ošklivého, znělého cizince? Naši magnáti — sklonili by se před něčím, co není dokonalé tělo [ROOT.Char.GetFaith.HighGodNamePossessive] [emperor.GetTitleAsNameNoTooltip]?\n\nNemusím si to pamatovat, opravdu. Zpochybňovat neomylnou legitimitu mého vládce by bylo marné."
+ ep3_governor_yearly.3040.desc: "Začínám si pamatovat s námahou — byl [emperor.GetPrimaryTitle.GetName] opravdu jen temnota a rozklad před tím, než [Select_CString(emperor.IsFemale,'vznešená','vznešený')] [emperor.GetTitledFirstName] [Select_CString(emperor.IsFemale,'uchopila','uchopil')] žezlo?\n\nSnívali naši společenské kruhy o něčem jiném než o sdílení společnosti [emperor.GetHouse.GetName]? Skandovali naši vojáci jméno nějakého ošklivého, znělého cizince? Naši magnáti — sklonili by se před něčím, co není dokonalé tělo [ROOT.Char.GetFaith.HighGodNamePossessive] [emperor.GetTitleAsNameNoTooltip]?\n\nNemusím si to pamatovat, opravdu. Zpochybňovat neomylnou legitimitu mého vládce by bylo marné."
  ep3_governor_yearly.3040.a: "Musím propojit svou rodinu s [Select_CString(emperor.IsFemale,'jejím','jeho')] urozeným pokrevním tokem!"
  ep3_governor_yearly.3040.a.flavor: "Taková úcta k předkům nás oba posílí."
  ep3_governor_yearly.3040.b: "Mocný [emperor.GetTitleAsNameNoTooltip] možná mou pomoc nepotřebuje..."
@@ -191,11 +191,11 @@
  ep3_governor_yearly.3050.t: "Jeden z menších démonů [ROOT.Char.GetFaith.NegativeAfterLife|U]"
  ep3_governor_yearly.3050.desc_strange_intro: "O [emperor.FullNameNoTooltip], našem [emperor.GetTitleAsNameNoTooltip] s nepřirozenou myslí a neobvyklými činy, se šíří podivné zvěsti." # todo: NEW TRANSLATION
  ep3_governor_yearly.3050.desc: "Šíří se zvláštní zvěsti o [emperor.FullNameNoTooltip], našem [emperor.GetTitleAsNameNoTooltip], který balancuje na pokraji [Select_CString(emperor.IsFemale,'jejímu','jeho')] trůnu."
- ep3_governor_yearly.3050.mess: "\n\nPřišel prodavač léků a vyprávěl o... pohanských obětech, které mu přikázal palác. Oči humra, dětské nehty, lektvary z mandragory a dehtu — to vše pro [emperor.GetTitleAsNameNoTooltip], aby je vynutil do [emperor.GetHerHis] žvanivých úst! To stvoření bloudí po paláci nahé, pomalované [Select_CString(emperor.IsFemale,'jejími','jeho')] podivnými mastmi a klnouc jméno [emperor.GetFaith.HighGodName]!" # todo: CHANGED, CHECK FORMAT (predtym: \n\nPřišel prodavač léků a vyprávěl o... pohanských obětech, které mu přikázal palác. Oči humra, dětské nehty, lektvary ) # todo: FORMAT chýba [emperor.GetHerHis]; navyše [Select_CString(emperor.IsFemale,'','')]
+ ep3_governor_yearly.3050.mess: "\n\nPřišel prodavač léků a vyprávěl o... pohanských obětech, které mu přikázal palác. Oči humra, dětské nehty, lektvary z mandragory a dehtu — to vše pro [emperor.Custom('CZ_TitleAsNameNoTooltip_A')], aby je vynutil do [emperor.GetHerHis] žvanivých úst! To stvoření bloudí po paláci nahé, pomalované [Select_CString(emperor.IsFemale,'jejími','jeho')] podivnými mastmi a klnouc jméno [emperor.GetFaith.HighGodName]!" # todo: CHANGED, CHECK FORMAT (predtym: \n\nPřišel prodavač léků a vyprávěl o... pohanských obětech, které mu přikázal palác. Oči humra, dětské nehty, lektvary ) # todo: FORMAT chýba [emperor.GetHerHis]; navyše [Select_CString(emperor.IsFemale,'','')]
  ep3_governor_yearly.3050.shiftless: "\n\nTi služebníci, kteří utekli z [Select_CString(emperor.IsFemale,'jejích','jeho')] služeb, popisují tartarské rozvaliny, páchnoucí starým parfémem... [emperor.GetTitleAsNameNoTooltip] leží dlouhé hodiny ve tmě, žadoní pod mumlajícím, štíhlonohým #EMP stvořením#!. Když [Select_CString(emperor.IsFemale,'její','jeho')] ministři volají, [emperor.GetFirstNameNoTooltip] sotva zavrtí... ale když ďábel pohněme svými těžkými rty, [emperor.GetTitleAsNameNoTooltip] vykřikne o úlevu, o víno a koláče."
- ep3_governor_yearly.3050.coward: "\n\n[Select_CString(emperor.IsFemale,'Její','Jeho')] vlastní příbuzní šeptají tento rodinný příběh. V jejich vlasti byla posvátná žena znásilněna a když přišla její zralost, nevyklubal se z ní dítě, ale... #EMP hromada červů.#! Jeden z těchto smradlavých červů byl sežrán potkanem, potkan rackem a rack [emperor.GetFirstNameNoTooltip] sám. Teď se [emperor.GetTitleAsNameNoTooltip] třese a pláče — i při pískání plcha!"
+ ep3_governor_yearly.3050.coward: "\n\n[Select_CString(emperor.IsFemale,'Její','Jeho')] vlastní příbuzní šeptají tento rodinný příběh. V jejich vlasti byla posvátná žena znásilněna a když přišla její zralost, nevyklubalo se z ní dítě, ale... #EMP hromada červů.#! Jeden z těchto smradlavých červů byl sežrán potkanem, potkan rackem a rack [emperor.Custom('CZ_FirstNameNoTooltip_I')] [Select_CString(emperor.IsFemale,'samotnou','samotným')]. Teď se [emperor.GetTitleAsNameNoTooltip] třese a pláče — i při pískání plcha!"
  ep3_governor_yearly.3050.cruel: "\n\nJedna dáma z [Select_CString(emperor.IsFemale,'její','jeho')] domácnosti přísahá, že [emperor.GetHerHim] viděla v zahradách v noci... #EMP pít krev toulavé kočky!#! Pod roztrhanou srstí, která zdobila korunu, [emperor.GetFirstNamePossessiveNoTooltip] krutá tvář zaštěkla a chrlila krev. Pak [Select_CString(emperor.IsFemale,'donutila','donutil')] [emperor.GetHerHis] uprchnout — přenesen přes zahradní zeď dvěma přízraky s netopýřími křídly!"
- ep3_governor_yearly.3050.generic_bad: "\n\nPodkoní a služky šeptají, že [emperor.GetFirstNameNoTooltip] byl ve skutečnosti #EMP porozen z řitě [ROOT.Char.GetFaith.DevilName]#!. [emperor.GetTitleAsNameNoTooltip], rodák z [ROOT.Char.GetFaith.NegativeAfterLife]! Vstoupil ten smradlavý podvodník z prokletých jám do palácových ložnic a tam se vplížil do naší právoplatné [emperor.GetTitleAsNamePossessiveNoTooltip] kůže!"
+ ep3_governor_yearly.3050.generic_bad: "\n\nPodkoní a služky šeptají, že [emperor.GetFirstNameNoTooltip] [Select_CString(emperor.IsFemale,'byla','byl')] ve skutečnosti #EMP [Select_CString(emperor.IsFemale,'porozena','porozen')] z řitě [ROOT.Char.GetFaith.DevilName]#!. [emperor.GetTitleAsNameNoTooltip], [Select_CString(emperor.IsFemale,'rodačka','rodák')] z [ROOT.Char.GetFaith.NegativeAfterLife]! Vstoupil ten smradlavý podvodník z prokletých jám do palácových ložnic a tam se vplížil do naší právoplatné [emperor.GetTitleAsNamePossessiveNoTooltip] kůže!"
  ep3_governor_yearly.3050.outro: "\n\nTakové odporné zprávy vždy prosakují z [emperor.GetFirstNamePossessiveNoTooltip] dvora."
  ep3_governor_yearly.3050.a: "#EMP DÉMON!#!"
  ep3_governor_yearly.3050.b: "Proč odpovídat tomuto ničemovi.. a ne mně?"
@@ -206,7 +206,7 @@
  ep3_governor_yearly.3060.t_regent: "Okázalé potvrzení" # todo: NEW TRANSLATION
  ep3_governor_yearly.3060.intro_regent: "Palácová politika se pohybuje pomalu — většinou. [previous_holder.GetTitledFirstNameRegnal] už není správcem [emperor.GetPrimaryTitle.GetTierAsNameNoTooltip|l]." # todo: NEW TRANSLATION
  ep3_governor_yearly.3060.intro_usurper: "Koruna byla stržena z čela našeho panovníka — [previous_holder.GetTitledFirstNameRegnal] již nad [emperor.GetPrimaryTitle.GetTierAsName] nevládne."
- ep3_governor_yearly.3060.intro_deceased: "Strážce [emperor.GetPrimaryTitle.GetTierAsName], náš pastýř a panovník, opustil tento smrtelný svět. [previous_holder.GetTitledFirstNameRegnal] je mrtev."
+ ep3_governor_yearly.3060.intro_deceased: "[Select_CString(previous_holder.IsFemale,'Strážkyně','Strážce')] [emperor.GetPrimaryTitle.GetTierAsName], [Select_CString(previous_holder.IsFemale,'naše pastýřka a panovnice','náš pastýř a panovník')], [Select_CString(previous_holder.IsFemale,'opustila','opustil')] tento smrtelný svět. [previous_holder.GetTitledFirstNameRegnal] je [Select_CString(previous_holder.IsFemale,'mrtva','mrtev')]."
  ep3_governor_yearly.3060.desc_regent: "\n\nHluboko v síních císařského paláce [CZPrepV(emperor.GetCurrentLocation.GetNameNoTierNoTooltip)] [emperor.GetCurrentLocation.Custom('CZ_LandedNameNoTier_L')] jsou před shromážděnými úředníky potvrzeny nové pravomoci [emperor.GetTitleAsNamePossessiveNoTooltip]." # todo: NEW TRANSLATION
  ep3_governor_yearly.3060.desc_afield: "\n\nTábořící [CZPrepV(emp_location.GetNameNoTooltip)] [CZProvName(emp_location,'L')], mezi jasnými prapory, je nový [emperor.GetTitleAsNameNoTooltip] pozvednut na velkém lesklém štítu."
  ep3_governor_yearly.3060.desc_temple: "\n\nV [emperor.GetCurrentLocation.GetTitle.GetNameNoTierPossessive] nejvyšším [emperor.GetFaith.HouseOfWorship], mezi důstojníky a preláty, je poprvé aklamován nový [emperor.GetTitleAsNameNoTooltip]."
@@ -218,7 +218,7 @@
  ep3_governor_yearly.3060.desc_generic: "\n\n#EMP „Ať žije [emperor.GetFirstName]!“#! volají shromáždění. #EMP „Pod vůlí [emperor.GetFaith.HighGodName], mocný [emperor.GetTitleAsNameNoTooltip] a [emperor.GetMotherFather] [CZPrepZ(emperor.GetPrimaryTitle.GetNameNoTierNoTooltip)] [emperor.GetPrimaryTitle.Custom('CZ_LandedNameNoTierNoTooltip_G')]; [emperor.GetHouse.GetName], nej-[emperor.Custom('FormalComplimentAdjective')]!#!“"
  ep3_governor_yearly.3060.desc_regent_legit: "\n\n[Select_CString(ceremonial_liege.IsFemale,'Její','Jeho')] poddaní se modlí: #EMP „Kéž [emperor.GetTitledFirstName] bdí nad vaším panováním, zachovávaje vládu Vaší Veličenstva navždy, a mír a pořádek [emperor.GetPrimaryTitle.GetTierAsNameNoTooltip|l]!“#!" # todo: NEW TRANSLATION
  ep3_governor_yearly.3060.desc_high_legit: "\n\n[Select_CString(emperor.IsFemale,'Její','Jeho')] poddaní se modlí: #EMP „[ROOT.Char.GetFaith.random_GoodGodNames], ochraňuj vládu Vaší Veličenstva navždy, nyní i na věky! Na věky věků!“#!"
- ep3_governor_yearly.3060.desc_medium_legit: "\n\nTřpytivé mince létají nad slavnostním průvodem! Magistráti se sklánějí před [emperor.GetTitledFirstNameNoTooltip]... zastrašeni, byť ještě ne loajální."
+ ep3_governor_yearly.3060.desc_medium_legit: "\n\nTřpytivé mince létají nad slavnostním průvodem! Magistráti se sklánějí před [emperor.Custom('CZ_TitledFirstNameNoTooltip_I')]... zastrašeni, byť ještě ne loajální."
  ep3_governor_yearly.3060.desc_low_legit: "\n\nKdyž jsou prováděny podlézavé rituály, šeptání obchází říši... jakým právem vládne tento [emperor.Custom('InsultAdjective')] [emperor.GetTitleAsNameNoTooltip]?"
  ep3_governor_yearly.3060.a: "Nyní bude [emperor.GetTitleAsNamePossessiveNoTooltip] [emperor.Custom2('RelationToMeShort', SCOPE.sC('root_scope'))] odměněn!"
  ep3_governor_yearly.3060.b: "Musím tento režim odsoudit!"
@@ -226,7 +226,7 @@
  ep3_governor_yearly.3060.c: "Veřejně podporuji nového [emperor.GetTitleAsNameNoTooltip]."
  ep3_governor_yearly.3060.c.flavor_high_legit: "Kdo by mohl jednat jinak?"
  ep3_governor_yearly.3060.c.flavor_low_legit: "I když mi to přinese jen posměch."
- ep3_governor_yearly.3060.c.flavor_regent: "Kdo jsem já, abych zpochybňoval vůli [ceremonial_liege.GetTitleAsNamePossessiveNoTooltip]?" # todo: NEW TRANSLATION
+ ep3_governor_yearly.3060.c.flavor_regent: "Kdo jsem já, abych [Select_CString(ROOT.Char.IsFemale,'zpochybňovala','zpochybňoval')] vůli [ceremonial_liege.GetTitleAsNamePossessiveNoTooltip]?" # todo: NEW TRANSLATION
  ep3_governor_yearly.3060.c.flavor_med_legit: "Taková věrnost se očekává."
  ep3_governor_yearly.3060.d: "O svém novém pánovi mám jen málo názoru."
  ep3_governor_yearly.3060.d.regent: "Mám jen málo názorů na nového regenta." # todo: NEW TRANSLATION
@@ -241,7 +241,7 @@
  ep3_governor_yearly.3070.unlanded: "rodinné sídlo je docela odlehlé... ale nicméně bezohledný [racer.GetName] nyní"
  ep3_governor_yearly.3070.chariot: "řítí se [Select_CString(racer.IsFemale,'jejím','jeho')] nápadným vozem po [root_capital.GetName]."
  ep3_governor_yearly.3070.horse: "žene svého koně přes [root_capital.GetName]."
- ep3_governor_yearly.3070.desc: "\n\n„Žiješ až #EMP tady?!?#!“ posměšně prohodil [racer.GetSheHe]. „Není divu, že se [liege.GetTitleAsNameNoTooltip] nemůže vzpomenout na tvé jméno... spíš je div, že jakékoli slovo, jakýkoli cestovatel [CZPrepZ(liege.GetCapitalLocation.GetTitle.GetNameNoTierNoTooltip)] [liege.GetCapitalLocation.GetTitle.Custom('CZ_LandedNameNoTier_G')], přežije tu cestu!“"
+ ep3_governor_yearly.3070.desc: "\n\n„Žiješ až #EMP tady?!?#!“ posměšně [Select_CString(racer.IsFemale,'prohodila','prohodil')] [racer.GetSheHe]. „Není divu, že se [liege.GetTitleAsNameNoTooltip] nemůže vzpomenout na tvé jméno... spíš je div, že jakékoli slovo, jakýkoli cestovatel [CZPrepZ(liege.GetCapitalLocation.GetTitle.GetNameNoTierNoTooltip)] [liege.GetCapitalLocation.GetTitle.Custom('CZ_LandedNameNoTier_G')], přežije tu cestu!“"
  ep3_governor_yearly.3070.a: "Jsou tu šance! Nikam se nechystáme."
  ep3_governor_yearly.3070.b: "Zabalte se, příbuzní: stěhujeme se do hlavního města."
  ep3_governor_yearly.3070.c: "„Vidíš můj problém... teď mi pomoz.“"
@@ -266,8 +266,8 @@
  ep3_governor_yearly.3080.t: "Okouzlen [CZTerrain(root_capital,'I')|l]"
  ep3_governor_yearly.3080.t_sea: "Okouzlen mořem"
  ep3_governor_yearly.3080.intro: "Mnoho dní cesty dělí [root_capital.GetName], mé velitelství, od [liege.GetCapitalLocation.GetTitle.Custom('CZ_LandedNameNoTier_G')]."
- ep3_governor_yearly.3080.desc_faction: "Přesto, moje hlášení o shromažďování [rebel_faction.GetName] by mělo dávno dorazit k [liege.GetTitledFirstName]!\n\n„Všechny armády hlavního města a ani jeden volný voják...“ obává se [captain.GetName], můj důstojník. „Ani jeden voják neprojde kolem rebelů živý...“\n\nNa mém vzdáleném stanovišti doutnají ohně neklidu. A bez nových vojsk mohou hořet jen jasněji."
- ep3_governor_yearly.3080.desc: "Dlouho jsem očekával příchod luxusního zboží, platů, potřebných k udržení loajality [ROOT.Char.GetPrimaryTitle.GetAdjective]. Ale od [liege.GetTitledFirstName] nic nepřichází.\n\n„Ztracené někde,“ odhaduje můj důstojník, [captain.GetName]. „Ukradeno lupičům? Uvízlo v nějakém drsném místě? Možná bylo zboží prodáno domorodcům?“\n\nAť už je tomu jakkoli... těžko budu vládnout [liege.GetPrimaryTitle.GetAdjective] velkosti jako nějaký zbídačený vyvrhel v daleké zemi."
+ ep3_governor_yearly.3080.desc_faction: "Přesto, moje hlášení o shromažďování [rebel_faction.GetName] by mělo dávno dorazit k [liege.Custom('CZ_TitledFirstName_D')]!\n\n„Všechny armády hlavního města a ani jeden volný voják...“ obává se [captain.GetName], můj důstojník. „Ani jeden voják neprojde kolem rebelů živý...“\n\nNa mém vzdáleném stanovišti doutnají ohně neklidu. A bez nových vojsk mohou hořet jen jasněji."
+ ep3_governor_yearly.3080.desc: "Dlouho jsem [Select_CString(ROOT.Char.IsFemale,'očekávala','očekával')] příchod luxusního zboží, platů, potřebných k udržení loajality [ROOT.Char.GetPrimaryTitle.GetAdjective]. Ale od [liege.Custom('CZ_TitledFirstName_G')] nic nepřichází.\n\n„Ztracené někde,“ odhaduje můj důstojník, [captain.GetName]. „Ukradeno lupičům? Uvízlo v nějakém drsném místě? Možná bylo zboží prodáno domorodcům?“\n\nAť už je tomu jakkoli... těžko budu vládnout [liege.GetPrimaryTitle.GetAdjective] velkosti jako [Select_CString(ROOT.Char.IsFemale,'nějaká zbídačená vyvrhelka','nějaký zbídačený vyvrhel')] v daleké zemi."
  ep3_governor_yearly.3080.a: "Musíme pomalu vybudovat soběstačnost."
  ep3_governor_yearly.3080.b: "[ROOT.Char.GetFaith.HighGodName], vysvoboď mě z tohoto #EMP prokletého#! jmenování!"
  ep3_governor_yearly.3080.c: "Pojď, [captain.GetFirstNameNoTooltip]: vyřešíme to sami."
@@ -288,7 +288,7 @@
  custom.every_realm_vassal_local_estate: "Každý [Concept('vassal','vazal')|E], jehož [Concept('domicile','domicil')|E] se nachází ve vašem [Concept('domain','doméně')|E]" # todo: CONCEPT CASE
  custom.every_vassal_same_domicile_location: "Každý [Concept('vassal','vazal')|E] sdílející vaši lokaci [Concept('domicile','domicil')|E]" # todo: CONCEPT CASE
  ep3_governor_yearly.3090.t: "Srdce [liege.GetPrimaryTitle.GetNameNoTierNoTooltip]"
- ep3_governor_yearly.3090.desc: "Viděl jsem vojáky táhnout mrzutě k hranicím. Slyšel úředníky, kteří se obávají svých vzdálených vyslání, stěžovat si na hrubé cizí písně a nevkusné, mdlé večeře...\n\nV [root_capital.GetName] není nic z toho mojí starostí. Záležitosti [liege.GetPrimaryTitle.GetTierAsName] samotného procházejí mým "
+ ep3_governor_yearly.3090.desc: "[Select_CString(ROOT.Char.IsFemale,'Viděla','Viděl')] jsem vojáky táhnout mrzutě k hranicím. [Select_CString(ROOT.Char.IsFemale,'Slyšela','Slyšel')] jsem úředníky, kteří se obávají svých vzdálených vyslání, stěžovat si na hrubé cizí písně a nevkusné, mdlé večeře...\n\nV [root_capital.GetName] není nic z toho mojí starostí. Záležitosti [liege.GetPrimaryTitle.GetTierAsName] samotného procházejí mým "
  ep3_governor_yearly.3090.landed: "[ROOT.Char.GetPrimaryTitle.GetTierAsName] — obchodujeme s královským zbožím, udržujeme kontakty v [liege.GetTitleAsNamePossessive] paláci a výrazně se podílíme na politice říše.\n\nJaké je to dobré sloužit v srdci toho velkého, prosperujícího celku."
  ep3_governor_yearly.3090.unlanded: "dveře sídla — vstupujeme, samozřejmě, jen s vytříbenou zdvořilostí. Tímto nejsou mí příbuzní nikdy daleko od záležitostí říše.\n\nJaké je to dobré žít v srdci toho velkého, prosperujícího celku."
  ep3_governor_yearly.3090.a: "Mohl bych zprostředkovat přístup do síní moci..."
@@ -305,7 +305,7 @@
  ep3_governor_yearly.3100.intro_liege: "„[liege.GetSheHe|U] nyní nařizuje #EMP co#!?“ vykoktám. #EMP „Náš pán mi přikazuje co?!?“#!"
  ep3_governor_yearly.3100.intro_governors: "„Ti k ničemu úředníci odmítají #EMP co?#!“ vykoktám. #EMP „Co neudělají pro našeho pána?!?“#!"
  ep3_governor_yearly.3100.desc: "\n\n[messenger.GetFirstName], posel, koktá: „[liege.Custom('FormalComplimentAdjective')] a vytrvalý [liege.GetTitledFirstNameRegnal], s ohledem na zdraví svého [liege.GetPrimaryTitle.GetTierAsName], nařizuje, aby všichni dělníci, všichni sluhové byli zdaněni—“\n\nUž nemohu dál poslouchat."
- ep3_governor_yearly.3100.desc_liege_debt: "Ti [liege.Custom('InsultNoun')] a [liege.GetHerHis] okázale ozdobení, kašmírem odění kumpáni už vyždímali [liege.GetPrimaryTitle.GetNameNoTierNoTooltip] ze všech bohatství! S jejich novými plány budou jedině hladovět a ničit..." # wip: urážka/chvála v nepodporovanom páde alebo pri inom podstatnom mene
+ ep3_governor_yearly.3100.desc_liege_debt: "[Select_CString(liege.IsFemale,'Ta','Ten')] [liege.Custom('InsultNoun')] a [Select_CString(liege.IsFemale,'její','jeho')] okázale ozdobení, kašmírem odění kumpáni už vyždímali [liege.GetPrimaryTitle.GetNameNoTierNoTooltip] ze všech bohatství! S jejich novými plány budou jedině hladovět a ničit..."
  ep3_governor_yearly.3100.desc_liege_skill: "[liege.Custom('quirk_neg_adverb')|U], ten [liege.Custom('InsultNoun')] se obrací na nás ministry, hledajíc to, co [liege.GetSheHe] [liege.GetHerselfHimself] zajistit nemůže — zisky rozumné vlády!\n\n[liege.GetPrimaryTitle.GetNameNoTierNoTooltip] je bez naděje..."
  ep3_governor_yearly.3100.desc_governors: "Takové základní, #EMP základní#! přání! Musí [liege.GetTitleAsNameNoTooltip] prosit své úředníky, aby dělali #EMP cokoli?#! Cokoli, jen ne pošlapat plody říše?\n\n[liege.GetPrimaryTitle.GetNameNoTier] je zamořen hlupáky..."
  ep3_governor_yearly.3100.a: "Zdá se, že musím učit vládnutí."

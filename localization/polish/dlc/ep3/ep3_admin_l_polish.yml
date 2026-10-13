@@ -173,7 +173,7 @@
  has_admin_government: "Máte [government_bureaucratic_gov|E]" # todo: CHANGED (predtym: Máte [GetGovernment('administrative_government').GetName] [Concept('government','vlády')|E])
  admin_renounce_throne_desc: "[secondary_recipient.GetShortUIName|U], nebo [Concept('house_head','hlava rodu')|E] rodu [Concept('house','rodu')|E] [secondary_recipient.GetHouse.GetName], se zřekli nároků na trůn a nelze je podpořit" # todo: CONCEPT CASE
  ep3_admin_events.0001.t: "Změna směru"
- ep3_admin_events.0001.intro: "Přišla zpráva od [liege.GetTitledFirstName] prostřednictvím jednoho z [Select_CString(liege.IsFemale,'jejích','jeho')] písařů — je čas na změnu.\n\n[scribe.GetWomanMan] [scribe.Custom('quirk_pos_present')] před přečtením ediktu:\n\n"
+ ep3_admin_events.0001.intro: "Přišla zpráva od [liege.Custom('CZ_TitledFirstName_G')] prostřednictvím jednoho z [Select_CString(liege.IsFemale,'jejích','jeho')] písařů — je čas na změnu.\n\n[scribe.GetWomanMan] [scribe.Custom('quirk_pos_present')] před přečtením ediktu:\n\n"
  ep3_admin_events.0001.tribal: "„Musíme přijmout kmenové zvyky. Prestiž je nejdůležitějším nástrojem vládce. Drancování, boje, duely. [liege.GetTitleAsNameNoTooltip|U] vyzývá všechny své poddané, aby se snažili stát muži a ženami obdivuhodné cti.“"
  ep3_admin_events.0001.feudal: "„Věrnost mezi lidmi udržuje říše silné, nikoli nějaké roztříštěné papíry. [liege.GetTitleAsNameNoTooltip|U] prosí o vaše přátelství a věrnost, a na oplátku se [liege.GetSheHe] postará o vaši bezpečnost jako [Select_CString(liege.IsFemale,'její','jeho')] vazal.“"
  ep3_admin_events.0001.clan: "„Říše je vládnuta rodinami. Jsme jen tak silní, jako je náš nejslabší článek. Země je odrazem našich rodů: sjednocený rod nás dovede ke slávě.“"
@@ -191,12 +191,12 @@
  ep3_admin_events.0002.house_alive: "Při přeřazení [Select_CString(SCOPE.sC('previous_governor').IsFemale,'mé','mého')] [ROOT.Char.Custom2('CZ_RelationToMeShort_G', SCOPE.sC('previous_governor'))], [previous_governor.GetTitledFirstName], bylo oznámeno, že správa [governor_title.GetAdjective] [governor_title.GetTierAsNameNoTooltip] nyní připadá mně."
  ep3_admin_events.0002.dead: "Po úmrtí [previous_governor.GetTitledFirstName], který [previous_governor.GetDeathReasonHideKiller], bylo oznámeno, že správa [governor_title.GetAdjective] [governor_title.GetTierAsNameNoTooltip] nyní připadá mně."
  ep3_admin_events.0002.alive: "Při přeřazení [previous_governor.GetTitledFirstName] bylo oznámeno, že správa [governor_title.GetAdjective] [governor_title.GetTierAsNameNoTooltip] nyní připadá mně."
- ep3_admin_events.0002.new: "[ROOT.Char.GetLiege.GetTitledFirstName] oznámil, že [ROOT.Char.GetLiege.GetSheHe] mi svěřil správu [governor_title.GetAdjective] [governor_title.GetTierAsNameNoTooltip]."
+ ep3_admin_events.0002.new: "[ROOT.Char.GetLiege.GetTitledFirstName] [Select_CString(ROOT.Char.GetLiege.IsFemale,'oznámila','oznámil')], že [ROOT.Char.GetLiege.GetSheHe] mi [Select_CString(ROOT.Char.GetLiege.IsFemale,'svěřila','svěřil')] správu [governor_title.GetAdjective] [governor_title.GetTierAsNameNoTooltip]."
  ep3_admin_events.0002.house: "Nyní záleží na mně zajistit pokračování vlády rodu [ROOT.Char.GetHouse.GetBaseName] v této provincii."
  ep3_admin_events.0002.appointment_succession: "Dlouhé noci prosazování a shánění přízně se konečně vyplatily. Říkají mi, že můj výběr na nového [ROOT.Char.GetTitleAsNameNoTooltip] byl takřka předem jasný."
- ep3_admin_events.0002.appointment: "[ROOT.Char.GetLiege.GetTitledFirstNameNoTooltip] osobně nařídil mé okamžité jmenování císařským dekretem. Nikdo nemůže zpochybnit legitimitu mého nového postavení v [ROOT.Char.GetTopLiege.GetPrimaryTitle.GetTierAsNameNoTooltip]."
+ ep3_admin_events.0002.appointment: "[ROOT.Char.GetLiege.GetTitledFirstNameNoTooltip] osobně [Select_CString(ROOT.Char.GetLiege.IsFemale,'nařídila','nařídil')] mé okamžité jmenování císařským dekretem. Nikdo nemůže zpochybnit legitimitu mého nového postavení v [ROOT.Char.GetTopLiege.GetPrimaryTitle.GetTierAsNameNoTooltip]."
  ep3_admin_events.0002.conquest: "[previous_governor.GetTitledFirstNamePossessiveNoTooltip] síly nebyly soupeřem mé převahy v zbraních, což dokazuje mou větší legitimitu jako obránce provincie ve jménu [ROOT.Char.GetTopLiege.GetPrimaryTitle.GetTierAsNameNoTooltip]."
- ep3_admin_events.0002.desc: "\n\nPoté, co jsem obdržel insignie a složil přísahy do úřadu, se mohu konečně přesunout do svého provinčního sídla na [ROOT.Char.GetCapitalLocation.GetBaronyNameExplicitly] a zahájit své působení."
+ ep3_admin_events.0002.desc: "\n\nPoté, co jsem [Select_CString(ROOT.Char.IsFemale,'obdržela','obdržel')] insignie a [Select_CString(ROOT.Char.IsFemale,'složila','složil')] přísahy do úřadu, se mohu konečně přesunout do svého provinčního sídla na [ROOT.Char.GetCapitalLocation.GetBaronyNameExplicitly] a zahájit své působení."
  ep3_admin_events.0002.prosperity: "Musím tyto nové země rozvíjet." # todo: NEW TRANSLATION
  ep3_admin_events.0002.inspection: "Musím okamžitě zkontrolovat tato území." # todo: NEW TRANSLATION
  ep3_admin_events.0002.a: "Není čas ztrácet."
@@ -207,7 +207,7 @@
  ep3_admin_events.0002.tt_inspection: "Vaše příští [GetActivityType('activity_survey').GetName] [Concept('activity','aktivitu')|E] bude zdarma" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  inspections_give_merit_tt: "Použití [GetActivityType('activity_survey').GetName] [Concept('activity','aktivita')|E] je dobrý způsob, jak může [Concept('governor','guvernér')|E] zvýšit svůj [merit_i][Concept('merit','zásluhy')|E]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
  ep3_admin_events.0004.t: "Konec administrace"
- ep3_admin_events.0004.desc: "V zvráceném a krutém obratu osudu se ocitám bez práce a bez domova. #EMP Vše, pro co jsem pracoval,#! zmizelo v okamžiku.\n\nBeru, co unesu, a naposledy se rozhlédnu po svém panství."
+ ep3_admin_events.0004.desc: "V zvráceném a krutém obratu osudu se ocitám bez práce a bez domova. #EMP Vše, pro co jsem [Select_CString(ROOT.Char.IsFemale,'pracovala','pracoval')],#! zmizelo v okamžiku.\n\nBeru, co unesu, a naposledy se rozhlédnu po svém panství."
  ep3_admin_events.0004.desc_spouse_upset: "\n\n[Select_CString(SCOPE.sC('reacting_spouse').IsFemale,'Má','Můj')] [ROOT.Char.Custom2('RelationToMeShort', SCOPE.sC('reacting_spouse'))] [reacting_spouse.GetFirstName] mi vrhl znepokojený pohled. „Mám svoje věci. Zdá se, že nemá smysl to protahovat...“"
  ep3_admin_events.0004.desc_spouse_very_upset: "\n\n„Jak... Jak k tomu došlo?!“ [reacting_spouse.GetShortUIName] nahlas vzlyká za mnou. „Ztratili jsme všechno... Co mám dělat...“"
  ep3_admin_events.0004.a: "No tak, [reacting_spouse.GetFirstName]. Všechno bude v pořádku."

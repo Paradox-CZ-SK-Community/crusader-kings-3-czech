@@ -779,6 +779,104 @@ macro = {
 	replace_with = "CZAdjectiveStiRich(RELIGION.GetAdjective,'CZ_FMT_CLOSE2')"
 }
 
+# ------------------------------------------------
+# FAITH ADHERENT NOUN (GetAdherentName)
+# ------------------------------------------------
+# Animate masculine declension of FAITH.GetAdherentNameNoTooltip:
+#   -a (husita), -ec (Chalcedonec), -o (Converso), -ý / -í (Pravoslavný,
+#   Muladí), soft / hard consonant (Vyznavač, Katolík); anything else is
+#   left as is (Ome, Mandé).
+# Phrases: 'Adj Noun' (Apoštolský křesťan, Insulární křesťan) declines both
+# words; 'Vyznavač ...' declines only the first word; other phrases with
+# three or more words stay in nominative.
+# NoTooltip only: the rich GetAdherentName closers are not verified yet.
+# Plural oblique cases (CZAdherentPl_*) are built from the singular name;
+# plural nominative stays native GetAdherentNamePlural.
+
+macro = {
+	description = "Decline one adherent word; endings: -a, -ec, -ý, -í, soft, hard, -o"
+	definition = "CZAdhWord(W,EA,EEC,EY,EI,ES,EH,EO)"
+	replace_with = "Select_CString(CZEnds2(W,'c','e'),Concatenate(Concatenate(TrimBackChars(TrimBackChars(W,'c'),'e'),'c'),EEC),Select_CString(CZEnds(W,'a'),Concatenate(TrimBackChars(W,'a'),EA),Select_CString(CZEnds(W,'o'),Concatenate(TrimBackChars(W,'o'),EO),Select_CString(CZEnds(W,'ý'),Concatenate(TrimBackChars(W,'ý'),EY),Select_CString(CZEnds(W,'í'),Concatenate(W,EI),Select_CString(CZEnds(W,'cčďjňřšťž'),Concatenate(W,ES),Select_CString(CZEnds(W,'bdfghklmnpqrstvwxz'),Concatenate(W,EH),W)))))))"
+}
+
+macro = {
+	description = "Decline an adherent name or phrase (see block comment)"
+	definition = "CZAdhPhrase(N,EA,EEC,EY,EI,ES,EH,EO)"
+	replace_with = "Select_CString(StringIsEmpty(TrimFront(TrimFrontChars(N,Localize('CZ_TitleTokenChars')))),CZAdhWord(N,EA,EEC,EY,EI,ES,EH,EO),Select_CString(EqualTo_string(N,Concatenate('Vyznavač ',TrimFront(TrimFrontChars(N,Localize('CZ_TitleTokenChars'))))),Concatenate(Concatenate('Vyznavač',ES),Concatenate(' ',TrimFront(TrimFrontChars(N,Localize('CZ_TitleTokenChars'))))),Select_CString(CZTitleHasThird(N),N,Select_CString(CZEnds(TrimBack(TrimBackChars(N,Localize('CZ_TitleTokenChars'))),'ý'),Concatenate(Concatenate(TrimBackChars(TrimBack(TrimBackChars(N,Localize('CZ_TitleTokenChars'))),'ý'),EY),Concatenate(' ',CZAdhWord(TrimFront(TrimFrontChars(N,Localize('CZ_TitleTokenChars'))),EA,EEC,EY,EI,ES,EH,EO))),Select_CString(CZEnds(TrimBack(TrimBackChars(N,Localize('CZ_TitleTokenChars'))),'í'),Concatenate(Concatenate(TrimBack(TrimBackChars(N,Localize('CZ_TitleTokenChars'))),EI),Concatenate(' ',CZAdhWord(TrimFront(TrimFrontChars(N,Localize('CZ_TitleTokenChars'))),EA,EEC,EY,EI,ES,EH,EO))),N)))))"
+}
+
+macro = {
+	description = "Faith adherent noun in genitive singular (no tooltip)"
+	definition = "CZAdherent_G(FAITH)"
+	replace_with = "CZAdhPhrase(FAITH.GetAdherentNameNoTooltip,'y','e','ého','ho','e','a','a')"
+}
+
+macro = {
+	description = "Faith adherent noun in dative singular (no tooltip)"
+	definition = "CZAdherent_D(FAITH)"
+	replace_with = "CZAdhPhrase(FAITH.GetAdherentNameNoTooltip,'ovi','i','ému','mu','ovi','ovi','ovi')"
+}
+
+macro = {
+	description = "Faith adherent noun in accusative singular (no tooltip)"
+	definition = "CZAdherent_A(FAITH)"
+	replace_with = "CZAdhPhrase(FAITH.GetAdherentNameNoTooltip,'u','e','ého','ho','e','a','a')"
+}
+
+macro = {
+	description = "Faith adherent noun in instrumental singular (no tooltip)"
+	definition = "CZAdherent_I(FAITH)"
+	replace_with = "CZAdhPhrase(FAITH.GetAdherentNameNoTooltip,'ou','em','ým','m','em','em','em')"
+}
+
+macro = {
+	description = "Faith adherent noun in locative singular (no tooltip)"
+	definition = "CZAdherent_L(FAITH)"
+	replace_with = "CZAdhPhrase(FAITH.GetAdherentNameNoTooltip,'ovi','i','ém','m','ovi','ovi','ovi')"
+}
+
+macro = {
+	description = "Adherent word in locative plural (k -> cích, ch -> ších)"
+	definition = "CZAdhWordPlL(W)"
+	replace_with = "Select_CString(CZEnds(W,'k'),Concatenate(TrimBackChars(W,'k'),'cích'),Select_CString(CZEnds2(W,'h','c'),Concatenate(TrimBackChars(TrimBackChars(W,'h'),'c'),'ších'),CZAdhWord(W,'ech','ích','ých','ch','ích','ech','ech')))"
+}
+
+macro = {
+	description = "Adherent name or phrase in locative plural"
+	definition = "CZAdhPhrasePlL(N,EA,EEC,EY,EI,ES,EH,EO)"
+	replace_with = "Select_CString(StringIsEmpty(TrimFront(TrimFrontChars(N,Localize('CZ_TitleTokenChars')))),CZAdhWordPlL(N),Select_CString(EqualTo_string(N,Concatenate('Vyznavač ',TrimFront(TrimFrontChars(N,Localize('CZ_TitleTokenChars'))))),Concatenate(Concatenate('Vyznavač',ES),Concatenate(' ',TrimFront(TrimFrontChars(N,Localize('CZ_TitleTokenChars'))))),Select_CString(CZTitleHasThird(N),N,Select_CString(CZEnds(TrimBack(TrimBackChars(N,Localize('CZ_TitleTokenChars'))),'ý'),Concatenate(Concatenate(TrimBackChars(TrimBack(TrimBackChars(N,Localize('CZ_TitleTokenChars'))),'ý'),EY),Concatenate(' ',CZAdhWordPlL(TrimFront(TrimFrontChars(N,Localize('CZ_TitleTokenChars')))))),Select_CString(CZEnds(TrimBack(TrimBackChars(N,Localize('CZ_TitleTokenChars'))),'í'),Concatenate(Concatenate(TrimBack(TrimBackChars(N,Localize('CZ_TitleTokenChars'))),EI),Concatenate(' ',CZAdhWordPlL(TrimFront(TrimFrontChars(N,Localize('CZ_TitleTokenChars')))))),N)))))"
+}
+
+macro = {
+	description = "Faith adherent noun in genitive plural (no tooltip)"
+	definition = "CZAdherentPl_G(FAITH)"
+	replace_with = "CZAdhPhrase(FAITH.GetAdherentNameNoTooltip,'ů','ů','ých','ch','ů','ů','ů')"
+}
+
+macro = {
+	description = "Faith adherent noun in dative plural (no tooltip)"
+	definition = "CZAdherentPl_D(FAITH)"
+	replace_with = "CZAdhPhrase(FAITH.GetAdherentNameNoTooltip,'ům','ům','ým','m','ům','ům','ům')"
+}
+
+macro = {
+	description = "Faith adherent noun in accusative plural (no tooltip)"
+	definition = "CZAdherentPl_A(FAITH)"
+	replace_with = "CZAdhPhrase(FAITH.GetAdherentNameNoTooltip,'y','e','é','','e','y','y')"
+}
+
+macro = {
+	description = "Faith adherent noun in instrumental plural (no tooltip)"
+	definition = "CZAdherentPl_I(FAITH)"
+	replace_with = "CZAdhPhrase(FAITH.GetAdherentNameNoTooltip,'y','i','ými','mi','i','y','y')"
+}
+
+macro = {
+	description = "Faith adherent noun in locative plural (no tooltip)"
+	definition = "CZAdherentPl_L(FAITH)"
+	replace_with = "CZAdhPhrasePlL(FAITH.GetAdherentNameNoTooltip,'ech','ích','ých','ch','ích','ech','ech')"
+}
+
 
 ##################################################
 # LANDED TITLE DECLENSION (PROTOTYPE)

@@ -2013,3 +2013,14 @@ macro = {
 	definition = "CZPluralInt(N,ONE,FEW,MANY)"
 	replace_with = "Select_CString(EqualTo_int32(N,'(int32)1'),ONE,Select_CString(And(GreaterThan_int32(N,'(int32)1'),LessThan_int32(N,'(int32)5')),FEW,MANY))"
 }
+
+
+###
+# NOVÉ DYNAMICKY GENEROVANÉ FALLBACK RITY
+###
+
+macro = {
+    description = "Generate a Czech rite adjective from an existing adjective or a bare title name, using faith gender inferred from its final -í"
+    definition = "CZRiteRandomName(TITLE,FAITH)"
+    replace_with = "Select_CString(CZEnds(TITLE,'ýáé'),Concatenate(TrimBackChars(TITLE,'ýáé'),Select_CString(CZEnds(FAITH,'í'),'é','ý')),Select_CString(CZEnds(TITLE,'í'),TITLE,Concatenate(TITLE,Select_CString(CZEnds(FAITH,'í'),'ské','ský'))))"
+}

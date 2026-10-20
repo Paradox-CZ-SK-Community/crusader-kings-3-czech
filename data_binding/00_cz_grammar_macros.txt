@@ -722,11 +722,11 @@ macro = {
 	replace_with = "Concatenate(CZAdjectiveStem(ADJECTIVE),ENDING)"
 }
 
-# cost: 23
+# cost: 27
 macro = {
-	description = "Czech adjective animate plural: -ští / -čtí / -í"
+	description = "Czech adjective animate plural: -ský -> -ští, -cký -> -čtí, else -í. s / c are trimmed in a second step: TrimBackChars is bytewise and a set with both á and s eats half of š (gradišský)."
 	definition = "CZAdjectiveSti(ADJECTIVE)"
-	replace_with = "Select_CString(Not(EqualTo_string(TrimBackChars(ADJECTIVE,'ýák'),TrimBackChars(ADJECTIVE,'ýáks'))),Concatenate(TrimBackChars(ADJECTIVE,'ýáks'),'ští'),Select_CString(Not(EqualTo_string(TrimBackChars(ADJECTIVE,'ýák'),TrimBackChars(ADJECTIVE,'ýákc'))),Concatenate(TrimBackChars(ADJECTIVE,'ýákc'),'čtí'),Concatenate(TrimBackChars(ADJECTIVE,'ýá'),'í')))"
+	replace_with = "Select_CString(Not(EqualTo_string(TrimBackChars(ADJECTIVE,'ýák'),TrimBackChars(TrimBackChars(ADJECTIVE,'ýák'),'s'))),Concatenate(TrimBackChars(TrimBackChars(ADJECTIVE,'ýák'),'s'),'ští'),Select_CString(Not(EqualTo_string(TrimBackChars(ADJECTIVE,'ýák'),TrimBackChars(TrimBackChars(ADJECTIVE,'ýák'),'c'))),Concatenate(TrimBackChars(TrimBackChars(ADJECTIVE,'ýák'),'c'),'čtí'),Concatenate(TrimBackChars(ADJECTIVE,'ýá'),'í')))"
 }
 
 # ------------------------------------------------
@@ -758,21 +758,21 @@ macro = {
 	replace_with = "CZAdjectiveDeclineRich(RELIGION.GetAdjective,ENDING,'CZ_FMT_CLOSE2')"
 }
 
-# cost: 40
+# cost: 44
 macro = {
 	description = "Convert a native rich adjective CString to Czech animate plural and restore its closers"
 	definition = "CZAdjectiveStiRich(ADJECTIVE,CLOSE)"
 	replace_with = "Concatenate(CZAdjectiveSti(TrimBackChars(ADJECTIVE,Localize('CZ_FMT_CLOSE_CHARS'))),Localize(CLOSE))"
 }
 
-# cost: 46
+# cost: 50
 macro = {
 	description = "Czech Faith animate-plural adjective with native tooltip and onclick"
 	definition = "CZFaithAdjSti(FAITH)"
 	replace_with = "CZAdjectiveStiRich(FAITH.GetAdjective,'CZ_FMT_CLOSE3')"
 }
 
-# cost: 46
+# cost: 50
 macro = {
 	description = "Czech Religion animate-plural adjective with native tooltip"
 	definition = "CZReligionAdjSti(RELIGION)"
@@ -793,84 +793,98 @@ macro = {
 # Plural oblique cases (CZAdherentPl_*) are built from the singular name;
 # plural nominative stays native GetAdherentNamePlural.
 
+# cost: 78
 macro = {
 	description = "Decline one adherent word; endings: -a, -ec, -ý, -í, soft, hard, -o"
 	definition = "CZAdhWord(W,EA,EEC,EY,EI,ES,EH,EO)"
 	replace_with = "Select_CString(CZEnds2(W,'c','e'),Concatenate(Concatenate(TrimBackChars(TrimBackChars(W,'c'),'e'),'c'),EEC),Select_CString(CZEnds(W,'a'),Concatenate(TrimBackChars(W,'a'),EA),Select_CString(CZEnds(W,'o'),Concatenate(TrimBackChars(W,'o'),EO),Select_CString(CZEnds(W,'ý'),Concatenate(TrimBackChars(W,'ý'),EY),Select_CString(CZEnds(W,'í'),Concatenate(W,EI),Select_CString(CZEnds(W,'cčďjňřšťž'),Concatenate(W,ES),Select_CString(CZEnds(W,'bdfghklmnpqrstvwxz'),Concatenate(W,EH),W)))))))"
 }
 
+# cost: 453
 macro = {
 	description = "Decline an adherent name or phrase (see block comment)"
 	definition = "CZAdhPhrase(N,EA,EEC,EY,EI,ES,EH,EO)"
 	replace_with = "Select_CString(StringIsEmpty(TrimFront(TrimFrontChars(N,Localize('CZ_TitleTokenChars')))),CZAdhWord(N,EA,EEC,EY,EI,ES,EH,EO),Select_CString(EqualTo_string(N,Concatenate('Vyznavač ',TrimFront(TrimFrontChars(N,Localize('CZ_TitleTokenChars'))))),Concatenate(Concatenate('Vyznavač',ES),Concatenate(' ',TrimFront(TrimFrontChars(N,Localize('CZ_TitleTokenChars'))))),Select_CString(CZTitleHasThird(N),N,Select_CString(CZEnds(TrimBack(TrimBackChars(N,Localize('CZ_TitleTokenChars'))),'ý'),Concatenate(Concatenate(TrimBackChars(TrimBack(TrimBackChars(N,Localize('CZ_TitleTokenChars'))),'ý'),EY),Concatenate(' ',CZAdhWord(TrimFront(TrimFrontChars(N,Localize('CZ_TitleTokenChars'))),EA,EEC,EY,EI,ES,EH,EO))),Select_CString(CZEnds(TrimBack(TrimBackChars(N,Localize('CZ_TitleTokenChars'))),'í'),Concatenate(Concatenate(TrimBack(TrimBackChars(N,Localize('CZ_TitleTokenChars'))),EI),Concatenate(' ',CZAdhWord(TrimFront(TrimFrontChars(N,Localize('CZ_TitleTokenChars'))),EA,EEC,EY,EI,ES,EH,EO))),N)))))"
 }
 
+# cost: 514
 macro = {
 	description = "Faith adherent noun in genitive singular (no tooltip)"
 	definition = "CZAdherent_G(FAITH)"
 	replace_with = "CZAdhPhrase(FAITH.GetAdherentNameNoTooltip,'y','e','ého','ho','e','a','a')"
 }
 
+# cost: 514
 macro = {
 	description = "Faith adherent noun in dative singular (no tooltip)"
 	definition = "CZAdherent_D(FAITH)"
 	replace_with = "CZAdhPhrase(FAITH.GetAdherentNameNoTooltip,'ovi','i','ému','mu','ovi','ovi','ovi')"
 }
 
+# cost: 514
 macro = {
 	description = "Faith adherent noun in accusative singular (no tooltip)"
 	definition = "CZAdherent_A(FAITH)"
 	replace_with = "CZAdhPhrase(FAITH.GetAdherentNameNoTooltip,'u','e','ého','ho','e','a','a')"
 }
 
+# cost: 514
 macro = {
 	description = "Faith adherent noun in instrumental singular (no tooltip)"
 	definition = "CZAdherent_I(FAITH)"
 	replace_with = "CZAdhPhrase(FAITH.GetAdherentNameNoTooltip,'ou','em','ým','m','em','em','em')"
 }
 
+# cost: 514
 macro = {
 	description = "Faith adherent noun in locative singular (no tooltip)"
 	definition = "CZAdherent_L(FAITH)"
 	replace_with = "CZAdhPhrase(FAITH.GetAdherentNameNoTooltip,'ovi','i','ém','m','ovi','ovi','ovi')"
 }
 
+# cost: 98
 macro = {
 	description = "Adherent word in locative plural (k -> cích, ch -> ších)"
 	definition = "CZAdhWordPlL(W)"
 	replace_with = "Select_CString(CZEnds(W,'k'),Concatenate(TrimBackChars(W,'k'),'cích'),Select_CString(CZEnds2(W,'h','c'),Concatenate(TrimBackChars(TrimBackChars(W,'h'),'c'),'ších'),CZAdhWord(W,'ech','ích','ých','ch','ích','ech','ech')))"
 }
 
+# cost: 561
 macro = {
 	description = "Adherent name or phrase in locative plural"
 	definition = "CZAdhPhrasePlL(N,EA,EEC,EY,EI,ES,EH,EO)"
 	replace_with = "Select_CString(StringIsEmpty(TrimFront(TrimFrontChars(N,Localize('CZ_TitleTokenChars')))),CZAdhWordPlL(N),Select_CString(EqualTo_string(N,Concatenate('Vyznavač ',TrimFront(TrimFrontChars(N,Localize('CZ_TitleTokenChars'))))),Concatenate(Concatenate('Vyznavač',ES),Concatenate(' ',TrimFront(TrimFrontChars(N,Localize('CZ_TitleTokenChars'))))),Select_CString(CZTitleHasThird(N),N,Select_CString(CZEnds(TrimBack(TrimBackChars(N,Localize('CZ_TitleTokenChars'))),'ý'),Concatenate(Concatenate(TrimBackChars(TrimBack(TrimBackChars(N,Localize('CZ_TitleTokenChars'))),'ý'),EY),Concatenate(' ',CZAdhWordPlL(TrimFront(TrimFrontChars(N,Localize('CZ_TitleTokenChars')))))),Select_CString(CZEnds(TrimBack(TrimBackChars(N,Localize('CZ_TitleTokenChars'))),'í'),Concatenate(Concatenate(TrimBack(TrimBackChars(N,Localize('CZ_TitleTokenChars'))),EI),Concatenate(' ',CZAdhWordPlL(TrimFront(TrimFrontChars(N,Localize('CZ_TitleTokenChars')))))),N)))))"
 }
 
+# cost: 514
 macro = {
 	description = "Faith adherent noun in genitive plural (no tooltip)"
 	definition = "CZAdherentPl_G(FAITH)"
 	replace_with = "CZAdhPhrase(FAITH.GetAdherentNameNoTooltip,'ů','ů','ých','ch','ů','ů','ů')"
 }
 
+# cost: 514
 macro = {
 	description = "Faith adherent noun in dative plural (no tooltip)"
 	definition = "CZAdherentPl_D(FAITH)"
 	replace_with = "CZAdhPhrase(FAITH.GetAdherentNameNoTooltip,'ům','ům','ým','m','ům','ům','ům')"
 }
 
+# cost: 514
 macro = {
 	description = "Faith adherent noun in accusative plural (no tooltip)"
 	definition = "CZAdherentPl_A(FAITH)"
 	replace_with = "CZAdhPhrase(FAITH.GetAdherentNameNoTooltip,'y','e','é','','e','y','y')"
 }
 
+# cost: 514
 macro = {
 	description = "Faith adherent noun in instrumental plural (no tooltip)"
 	definition = "CZAdherentPl_I(FAITH)"
 	replace_with = "CZAdhPhrase(FAITH.GetAdherentNameNoTooltip,'y','i','ými','mi','i','y','y')"
 }
 
+# cost: 667
 macro = {
 	description = "Faith adherent noun in locative plural (no tooltip)"
 	definition = "CZAdherentPl_L(FAITH)"
@@ -2012,4 +2026,16 @@ macro = {
 	description = "Pick the Czech plural form for an int32 count: 1 -> ONE, 2-4 -> FEW, otherwise MANY"
 	definition = "CZPluralInt(N,ONE,FEW,MANY)"
 	replace_with = "Select_CString(EqualTo_int32(N,'(int32)1'),ONE,Select_CString(And(GreaterThan_int32(N,'(int32)1'),LessThan_int32(N,'(int32)5')),FEW,MANY))"
+}
+
+
+###
+# NOVÉ DYNAMICKY GENEROVANÉ FALLBACK RITY
+###
+
+# cost: 30
+macro = {
+    description = "Generate a Czech rite adjective from an existing adjective or a bare title name, using faith gender inferred from its final -í"
+    definition = "CZRiteRandomName(TITLE,FAITH)"
+    replace_with = "Select_CString(CZEnds(TITLE,'ýáé'),Concatenate(TrimBackChars(TITLE,'ýáé'),Select_CString(CZEnds(FAITH,'í'),'é','ý')),Select_CString(CZEnds(TITLE,'í'),TITLE,Concatenate(TITLE,Select_CString(CZEnds(FAITH,'í'),'ské','ský'))))"
 }

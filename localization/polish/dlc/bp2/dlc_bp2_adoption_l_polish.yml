@@ -1,25 +1,25 @@
 ﻿l_polish:
  adopt_interaction: "Adoptovat"
- adopt_interaction_desc: "Osvojit [recipient.GetTitledFirstNameNoTooltip] jako svého [recipient.Custom('GetDaughterSon')]"
- rival_stole_my_throne: "[TARGET_CHARACTER.GetShortUIName|U] se dostal před [CHARACTER.GetShortUIName] v pořadí nástupnictví"
- rival_stole_my_throne_corresponding: "[CHARACTER.GetShortUIName|U] se dostal před [TARGET_CHARACTER.GetShortUIName] v pořadí nástupnictví"
- rival_adopted_another_heir: "[TARGET_CHARACTER.GetShortUIName|U] přijal do rodiny další dítě"
- rival_adopted_another_heir_corresponding: "[CHARACTER.GetShortUIName|U] přijal do rodiny další dítě"
- parents_are_alive_tt: "Je alespoň jeden z mých rodičů naživu: $VALUE|=+0$"
+ adopt_interaction_desc: "Adoptovat [recipient.Custom('CZ_TitledFirstNameNoTooltip_A')] jako [Select_CString(recipient.IsFemale,'svou dceru','svého syna')]"
+ rival_stole_my_throne: "[CZProDrop(TARGET_CHARACTER,'předběhla','předběhl')|U] [CHARACTER.Custom('CZ_ShortUIName_A')] v pořadí následnictví"
+ rival_stole_my_throne_corresponding: "[CZProDrop(CHARACTER,'předběhla','předběhl')|U] [TARGET_CHARACTER.Custom('CZ_ShortUIName_A')] v pořadí následnictví"
+ rival_adopted_another_heir: "[CZProDrop(TARGET_CHARACTER,'adoptovala','adoptoval')|U] do rodiny další dítě"
+ rival_adopted_another_heir_corresponding: "[CZProDrop(CHARACTER,'adoptovala','adoptoval')|U] do rodiny další dítě"
+ parents_are_alive_tt: "Alespoň jeden z mých rodičů stále žije: $VALUE|=+0$"
  i_hate_my_mother_tt: "Nenávidím svou současnou matku: $VALUE|=+0$"
  i_hate_my_father_tt: "Nenávidím svého současného otce: $VALUE|=+0$"
- i_like_my_mother_tt: "Mám svou současnou matku rád: $VALUE|=+0$"
- i_like_my_father_tt: "Mám svého současného otce rád: $VALUE|=+0$"
- i_like_you_tt: "[Concept('opinion','Mínění')|E] o tobě: $VALUE|=+0$" # todo: CONCEPT CASE
- youre_my_friend_tt: "Jsi můj [Concept('friend','přítel')|E]: $VALUE|=+0$" # todo: CONCEPT CASE
- youre_my_guardian_tt: "Jsi můj [Concept('guardian','poručník')|E]: $VALUE|=+0$" # todo: CONCEPT CASE
+ i_like_my_mother_tt: "Miluji svou současnou matku: $VALUE|=+0$"
+ i_like_my_father_tt: "Miluji svého současného otce: $VALUE|=+0$"
+ i_like_you_tt: "[Concept('opinion','Mínění')|EU] o tobě: $VALUE|=+0$"
+ youre_my_friend_tt: "Patříš mezi mé [Concept('friend','přátele')|E]: $VALUE|=+0$"
+ youre_my_guardian_tt: "Zastáváš úlohu mého [Concept('guardian','poručníka')|E]: $VALUE|=+0$"
  i_want_a_mother_tt: "Nemám matku: $VALUE|=+0$"
  i_want_a_father_tt: "Nemám otce: $VALUE|=+0$"
- i_am_noble_tt: "Patřím ke šlechtě: $VALUE|=+0$"
- we_are_alike_tt: "Máme společné [Concept('traits','rysů')|E]: $VALUE|=+0$" # todo: CONCEPT CASE
- we_are_NOT_alike_tt: "Máme opačné [Concept('traits','rysů')|E]: $VALUE|=+0$" # todo: CONCEPT CASE
- ambition_tt: "Mám ambice na víc: $VALUE|=+0$"
- every_non_content_child: "Každé [Concept('child','dítě')|E], které není [GetTrait('content').GetName( actor )]" # todo: CONCEPT CASE
+ i_am_noble_tt: "Mám urozený původ: $VALUE|=+0$"
+ we_are_alike_tt: "Máme společné [Concept('traits','rysy')|E]: $VALUE|=+0$"
+ we_are_NOT_alike_tt: "Naše [Concept('traits','rysy')|E] jsou protikladné: $VALUE|=+0$"
+ ambition_tt: "Mám vyšší ambice: $VALUE|=+0$"
+ every_non_content_child: "Každé [Concept('child','dítě')|E] bez rysu [GetTrait('content').GetName( actor )]"
  adventurer_adopt_interaction: "Adoptovat jako nástupce"
- adventurer_adopt_interaction_desc: "Jako dobrodruh můžeš [Concept('adopt','adoptovat')|E] [recipient.GetTitledFirstNameNoTooltip] do své [Concept('dynasty','dynastie')|E] a udělat z [recipient.GetHerHim] svého [Concept('designated_heir','určeného dědice')|E]" # todo: CONCEPT CASE
- adventurer_adoption_child_tt: "[recipient.GetShortUIName] se stane součástí tvé [Concept('dynasty','dynastie')|E], ale vytvoří nový [Concept('house','rod')|E]" # todo: CONCEPT CASE
+ adventurer_adopt_interaction_desc: "Jako [Select_CString(actor.IsFemale,'dobrodružka','dobrodruh')] můžeš [Concept('adopt','adoptovat')|E] [recipient.Custom('CZ_TitledFirstNameNoTooltip_A')] do své [Concept('dynasty','dynastie')|E] a přiznat [Select_CString(recipient.IsFemale,'jí','mu')] postavení [Concept('designated_heir','určeného dědice')|E]"
+ adventurer_adoption_child_tt: "[recipient.GetShortUIName|U] se [Select_CString(recipient.IsLocalPlayer,'staneš','stane')] součástí tvé [Concept('dynasty','dynastie')|E], ale založí nový [Concept('house','rod')|E]"

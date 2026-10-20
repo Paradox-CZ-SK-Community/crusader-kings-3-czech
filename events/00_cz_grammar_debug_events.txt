@@ -1955,3 +1955,53 @@ cz_grammar_debug.0231 = {
 		name = cz_grammar_debug.adapters.close
 	}
 }
+
+# Barony adjectives (gen_barony_adj.py): fixed baronies, one per source section,
+# plus three random barony-tier rulers (barons, bishops, mayors) via GetPrimaryTitle.
+cz_grammar_debug.0240 = {
+	orphan = yes
+	type = character_event
+	theme = default
+	title = cz_grammar_debug.0240.t
+	desc = cz_grammar_debug.0240.desc
+	immediate = {
+		title:b_praha = { save_scope_as = cz_b1 }
+		title:b_derry = { save_scope_as = cz_b2 }
+		title:b_riga = { save_scope_as = cz_b3 }
+		title:b_gradiska = { save_scope_as = cz_b4 }
+		title:b_dubno = { save_scope_as = cz_b5 }
+		title:b_bolzano = { save_scope_as = cz_b6 }
+		title:b_bautzen = { save_scope_as = cz_b7 }
+		title:b_rimini = { save_scope_as = cz_b8 }
+		title:b_klodawa = { save_scope_as = cz_b9 }
+		title:b_mingsha = { save_scope_as = cz_b10 }
+		title:b_veliky_ustyug = { save_scope_as = cz_b11 }
+		title:b_medinadelcampo = { save_scope_as = cz_b12 }
+		title:b_tall_afar = { save_scope_as = cz_b13 }
+		random_living_character = {
+			limit = { highest_held_title_tier = tier_barony }
+			save_scope_as = cz_a
+		}
+		random_living_character = {
+			limit = {
+				highest_held_title_tier = tier_barony
+				NOT = { this = scope:cz_a }
+			}
+			save_scope_as = cz_b
+		}
+		random_living_character = {
+			limit = {
+				highest_held_title_tier = tier_barony
+				NOT = { this = scope:cz_a }
+				NOT = { this = scope:cz_b }
+			}
+			save_scope_as = cz_c
+		}
+	}
+	left_portrait = scope:cz_a
+	center_portrait = scope:cz_b
+	right_portrait = scope:cz_c
+	option = {
+		name = cz_grammar_debug.adapters.close
+	}
+}

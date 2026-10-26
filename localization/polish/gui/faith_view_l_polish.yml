@@ -84,7 +84,7 @@
  FAITH_HOLY_ORDERS: "Svaté řády"
  FAITH_HOLY_SITES: "Svatá místa"
  FAITH_SAINTS: "Světci"
- FAITH_NO_HOLY_ORDERS: "Neexistují žádné [Faith.GetAdjective] [Concept('holy_orders','svaté řády')|E]" # todo: NEW TRANSLATION
+ FAITH_NO_HOLY_ORDERS: "Neexistují žádné [CZFaithAdjDecline(Faith,'é')] [Concept('holy_orders','svaté řády')|E]"
  FAITH_MONASTIC_HOLY_ORDERS_HEADER: "[Concept('monastic_holy_orders','Mnišské řády')|E]"
  FAITH_MILITARY_HOLY_ORDERS_HEADER: "[Concept('military_holy_orders','Vojenské řády')|E]"
  FAITH_RITE_HOLY_SITES_NONE: "[Rite.GetAdherentNamePluralNoTooltip] nemají pod kontrolou žádná [CZFaithAdjDecline(Faith,'á')] [Concept('holy_sites','svatá místa')|E]"
@@ -107,7 +107,7 @@
  HOLY_SITE_CREATION_TYPE_ALREADY_TAKEN: "#warning @warning_icon! [Faith.GetNameNoTooltip] už má [Concept('holy_site','svaté místo')|E] tohoto typu.#!"
  HOLY_SITE_CREATION_SELECT_TYPE_AND_ARTIFACT: "#weak Vyber typ svatého místa a artefakty, které chceš [Concept('enshrine','uložit ve svatyni')|E]#!"
  FAITH_HOLY_SITE_HOLDER_TOOLTIP: "#T [Character.GetPrimaryTitle.GetNameNoTooltip]\n#![Concept('ruler','Vládce')|E]: [Character.GetUIName]\n[Concept('faith','Víra')|E]: [Character.GetFaith.GetName]\n\n[Select_CString(HolySiteItem.IsHeldByFaith,'#same ','#warning ')]Protože vládce [HolySite.GetName] je [Character.GetFaith.GetAdherentNameNoTooltip], [HolySite.GetName] [Select_CString(HolySiteItem.IsHeldByFaith,'poskytuje','neposkytuje')] výhody všem [CZFaithAdjDecline(Faith,'ým')] postavám#!\n\n#I Kliknutím zobrazíš#!"
- FAITH_HOLY_SITE_HOLDER_CREATION_TOOLTIP: "#T [Character.GetPrimaryTitle.GetNameNoTooltip]\n#![Concept('ruler','Vládce')|E]: [Character.GetUIName]\n[Concept('faith','Víra')|E]: [Character.GetFaith.GetName]\n\n#same Protože vládce tohoto [Concept('holy_site','svatého místa')|E] vyznává víru [Character.GetFaith.GetAdjectiveNoTooltip], bude toto místo poskytovat výhody všem postavám vyznávajícím víru [Faith.GetAdjectiveNoTooltip]#!\n\n#I Kliknutím zobrazíš#!" # todo: NEW TRANSLATION
+ FAITH_HOLY_SITE_HOLDER_CREATION_TOOLTIP: "#T [Character.GetPrimaryTitle.GetNameNoTooltip|U]\n#![Concept('ruler','Vládce')|EU]: [Character.GetUIName]\n[Concept('faith','Víra')|EU]: [Character.GetFaith.GetName]\n\n#same Protože tomuto [Concept('holy_site','svatému místu')|E] vládne [Character.GetFaith.Custom('CZ_AdjectiveNoTooltip_yy')] panovník, poskytuje výhody všem postavám [Faith.Custom('CZ_AdjectiveNoTooltip_ee')] víry#!\n\n#I Kliknutím zobrazíš#!"
  HOLY_SITE_UNDER_CONTROL_UI: "Ovládá jej [Rite.GetName]"
  HOLY_SITE_NOT_UNDER_CONTROL_UI: "@warning_icon! Ovládá jej [Rite.GetName]"
  FAITH_DOCTRINES_HEADING: "#E [Concept('doctrines','Doktríny')|E]#!"
@@ -130,13 +130,13 @@
  FAITH_HIDE: "Skrýt"
  TENET_TOOLTIP_SINS: "@sin_icon! #E $game_concept_sins$#!"
  TENET_TOOLTIP_VIRTUES: "#E $game_concept_virtues$#! @virtue_icon!"
- TENET_TOOLTIP_NO_SINS: "Tato [Concept('tenet','zásada')|E] nečiní žádné [Concept('traits','rysy')|E] [Concept('sinful','hříšnými')|E]" # todo: NEW TRANSLATION
- TENET_TOOLTIP_NO_VIRTUES: "Tato [Concept('tenet','zásada')|E] nečiní žádné [Concept('traits','rysy')|E] [Concept('virtuous','ctnostnými')|E]" # todo: NEW TRANSLATION
+ TENET_TOOLTIP_NO_SINS: "Tato [Concept('tenet','zásada')|E] nečiní žádné [Concept('traits','rysy')|E] [Concept('sinful','hříšnými')|E]"
+ TENET_TOOLTIP_NO_VIRTUES: "Tato [Concept('tenet','zásada')|E] nečiní žádné [Concept('traits','rysy')|E] [Concept('virtuous','ctnostnými')|E]"
  TENET_TOOLTIP_TRAIT_FULFILLMENT_GAIN: "@spiritual_fulfillment_gain_icon![TenetType.GetTraitFulfillmentValue( Trait.Self, Rite.Self )|0+=]"
  TENET_TOOLTIP_TRAIT_FULFILLMENT_LOSS: "@spiritual_fulfillment_loss_icon![TenetType.GetTraitFulfillmentValue( Trait.Self, Rite.Self )|0+=]"
  TENET_TOOLTIP_TRAIT_DESCRIPTION: "[Trait.GetVirtueOrSinFullDescription( Rite.Self )]"
  RELIGION_TOOLTIP_EFFECTS_HEADER: "#S Účinky:#!"
- TENET_TOOLTIP_PERSONAL_EFFECTS: "#L Účinky jako $game_concept_personal_tenet$#!" # todo: NEW TRANSLATION
+ TENET_TOOLTIP_PERSONAL_EFFECTS: "#L Účinky ($game_concept_personal_tenet$)#!"
  TENET_TOOLTIP_PERSONAL_EFFECTS_TT: "[TenetType.GetPersonalTenetEffectsDescription( Rite.Self )]"
  base_fervor_increase: "Základ"
  FAITH_FLAVOR_DESC: "$DESC|F$"
@@ -302,11 +302,11 @@
  belief_tab_saints: "$game_concept_canonized$"
  belief_saint_location: "[Select_CString(SaintItem.GetSaint.IsAlive,'Původ:','Pohřbení:')] [SaintItem.GetLocation.GetName]"
  belief_saint_remaining_relics: "Další dostupné [Concept('holy_relics','svaté relikvie')|E]: [SaintItem.GetAvailableRelics|V]"
- belief_saint_relics: "Zbývající [Concept('holy_relics','svaté relikvie')|E]:" # todo: NEW TRANSLATION
+ belief_saint_relics: "Zbývající [Concept('holy_relics','svaté relikvie')|E]:"
  extract_relic_button_tt: "#T Získat relikvii#!\n[AddLocalizationIf( Not( SaintItem.IsSaintActive( GetPlayer.Self ) ), 'extract_relic_button_tt_not_venerated' )][AddLocalizationIf( Not( GreaterThan_int32( SaintItem.GetAvailableRelics, '(int32)0' ) ), 'extract_relic_button_tt_no_relics' )][AddLocalizationIf( And( SaintItem.IsSaintActive( GetPlayer.Self ), GreaterThan_int32( SaintItem.GetAvailableRelics, '(int32)0' ) ), 'extract_relic_button_tt_click' )]"
- extract_relic_button_tt_not_venerated: "@warning_icon! #X [SaintItem.GetSaint.GetShortUIName] není [Select_CString(SaintItem.GetSaint.IsFemale,'pohřbena','pohřben')] v [GetPlayer.GetFaith.GetAdjective] [Concept('county','hrabství')|e]#!\n" # todo: NEW TRANSLATION
- extract_relic_button_tt_no_relics: "@warning_icon! #X [SaintItem.GetSaint.GetShortUIName] již nemůže poskytnout žádné další [Concept('holy_relics','svaté relikvie')|e]#!\n" # todo: NEW TRANSLATION
- extract_relic_button_tt_outside_realm: "#T Získat relikvii#!\n@warning_icon! #X [Character.GetShortUIName] není [Select_CString(Character.IsFemale,'pohřbena','pohřben')] ve tvém [Concept('realm','panství')|e]#!" # todo: NEW TRANSLATION
+ extract_relic_button_tt_not_venerated: "@warning_icon! #X [SaintItem.GetSaint.GetShortUIName|U] [Select_CString(SaintItem.GetSaint.IsFemale,'není pohřbena','není pohřben')] v [CZFaithAdjDecline(GetPlayer.GetFaith,'ém')] [Concept('county','hrabství')|e]#!\n"
+ extract_relic_button_tt_no_relics: "@warning_icon! #X Z ostatků [SaintItem.GetSaint.Custom('CZ_ShortUIName_G')] již nelze získat další [Concept('holy_relics','svaté relikvie')|e]#!\n"
+ extract_relic_button_tt_outside_realm: "#T Získat relikvii#!\n@warning_icon! #X [Character.GetShortUIName|U] [Select_CString(Character.IsFemale,'není pohřbena','není pohřben')] ve tvém [Concept('realm','panství')|e]#!"
  extract_relic_button_tt_click: "#I Kliknutím otevřeš rozhodnutí#!"
  doctrine_status_mainline: "Hlavní doktrína"
  doctrine_status_rite: "Doktrína ritu"

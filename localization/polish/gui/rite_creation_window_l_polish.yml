@@ -22,8 +22,8 @@
  RITE_CREATION_VIEW_NAMING_ADJECTIVE: "Přídavné jméno #weak (např. Katolický)#!"
  RITE_CREATION_VIEW_NAMING_FOLLOWER: "Jeden vyznavač #weak (např. Katolík)#!"
  RITE_CREATION_VIEW_NAMING_FOLLOWERS: "Více vyznavačů #weak (např. Katolíci)#!"
- RITE_CREATION_VIEW_NAMING_REROLL_TT: "#T Navrhnout jiné názvy#!\nNahradí název, přídavné jméno a označení vyznavačů jiným návrhem" # todo: NEW TRANSLATION
- RITE_CREATION_VIEW_NAMING_GENERATE_DESC_TT: "#T Vytvořit popis#!\nNahradí popis podle aktuálně vybraných [Concept('core_tenets','zásad')|E]" # todo: NEW TRANSLATION
+ RITE_CREATION_VIEW_NAMING_REROLL_TT: "#T Navrhnout jiné názvy#!\nNahradit název, přídavné jméno a označení vyznavačů jiným návrhem"
+ RITE_CREATION_VIEW_NAMING_GENERATE_DESC_TT: "#T Vygenerovat popis#!\nVytvořit nový popis podle aktuálně vybraných [Concept('core_tenets','zásad')|E]"
  RITE_CREATION_VIEW_NAMING_DESC_SENTENCE_JOIN: "$FIRST$ $SECOND$"
  RITE_CREATION_VIEW_COLOR_HEADER: "Barva ritu na mapě"
  RITE_CREATION_VIEW_COLOR_TT: "Vyber barvu [Concept('rite','ritu')|E] na mapě"
@@ -78,7 +78,7 @@
  RITE_CREATION_TENET_BLOCKER_NOT_KNOWN: "#X Tuto [Concept('core_tenet','zásadu')|E] jsi nepoznal a není známá ani tvé víře.#!"
  RITE_CREATION_VIEW_TENET_CLICK_TO_SELECT: "[AddTextIf( TenetType.IsValid, RiteCreationWindow.GetTenetBlockersAndCost( TenetType.Self ) )]\n#I Kliknutím vybereš [TenetType.GetBaseNameNoTooltip]#!"
  RITE_CREATION_VIEW_TENET_CLICK_TO_CHANGE: "[RiteCreationWindow.GetTenetCostString(TenetType.Self,'(bool)yes')]\n#I Kliknutím změníš#!"
- RITE_CREATION_TENET_BLOCKER_UNPOPULAR: "@warning_icon! #X Aby se mohla stát [Concept('core_tenet','zásadou')|E] [Concept('mainline_rite','hlavního ritu')|E], musí mít [Concept('tenet_popularity','rozšířenost zásady')|E] alespoň $tenet_popularity_icon_very_popular$$tenet_popularity_tier_very_popular$ (#high [EmptyScope.ScriptValue('tenet_popularity_very_popular_threshold')|0]#!)#!\n#weak [Concept('tenet_popularity','Rozšířenost zásady')|E] roste, čím více postav ji vyznává jako [Concept('personal_tenet','osobní zásadu')|E], a když ji tvá [Concept('faith','víra')|E] učiní [Concept('permitted_tenet_status','povolenou')|E]#!" # todo: NEW TRANSLATION
+ RITE_CREATION_TENET_BLOCKER_UNPOPULAR: "@warning_icon! #X Aby se mohla stát [Concept('core_tenet','zásadou')|E] [Concept('mainline_rite','hlavního ritu')|E], musí její [Concept('tenet_popularity','rozšířenost')|E] dosáhnout alespoň $tenet_popularity_icon_very_popular$$tenet_popularity_tier_very_popular$ (#high [EmptyScope.ScriptValue('tenet_popularity_very_popular_threshold')|0]#!)#!\n#weak [Concept('tenet_popularity','Rozšířenost zásady')|EU] roste, když ji přijímá stále více postav jako [Concept('personal_tenet','osobní zásadu')|E] a když ji tvá [Concept('faith','víra')|E] považuje za [Concept('permitted_tenet_status','povolenou')|E]#!"
  RITE_CREATION_VIEW_TENET_BLOCKED_UNPOPULAR: "$RITE_CREATION_TENET_BLOCKER_UNPOPULAR$\n\n[RiteCreationWindow.GetTenetBlockersAndCost( TenetType.Self )]"
  RITE_CREATION_VIEW_BLOCKER_CREATION_DOCTRINE: "@warning_icon! #X [DoctrineType.GetName(GetPlayer.GetFaith)] není povolena#!"
  RITE_CREATION_VIEW_BLOCKER_COOLDOWN: "#weak [Concept('ruler','Vládce')|E] může vytvořit nebo upravit [Concept('rite','ritus')|E] pouze jednou!#!"
@@ -116,7 +116,7 @@
  FAITH_CONVERSION_BUTTON_TOOLTIP_FAITH: "#T Konvertovat k víře#!\n[FaithConversionWindow.GetConversionBlockers]\n#I Kliknutím konvertuješ k víře#![AddLocalizationIf(And(Not(FaithConversionWindow.GetFaith.HasDoctrineByKey('doctrine_polytheist')),GetPlayer.GetGovernment.HasGovernmentFlag('government_is_mandala')),'mandala_monotheist_warning')]"
  FAITH_CONVERSION_BUTTON_TOOLTIP_RITE: "#T Konvertovat k ritu#!\n[FaithConversionWindow.GetConversionBlockers]\n#I Kliknutím konvertuješ k ritu#!"
  FAITH_CONVERSION_SAME_FAITH: "Již následuješ [FAITH.GetName]"
- can_change_faith_holds_church_seat_tt: "Držím sídlo své církve, a proto nemohu změnit svou [Concept('faith','víru')|E]" # todo: NEW TRANSLATION
+ can_change_faith_holds_church_seat_tt: "Zastávám úřad ve své církvi, a proto nemohu změnit svou [Concept('faith','víru')|E]"
  CREATE_REFORM_RITE_BUTTON: "[SelectLocalization(GetPlayer.GetFaith.IsUnreformed,'RITE_CREATION_VIEW_TITLE_REFORM_RITE','CREATE_BRANCHED_RITE_WINDOW_TITLE')]"
  CREATE_REFORM_RITE_BUTTON_TT: "[SelectLocalization(GetPlayer.GetFaith.IsUnreformed,'RITE_CREATION_VIEW_TITLE_REFORM_RITE','CREATE_RITE_WINDOW_TITLE_TT')]"
  CREATE_BRANCHED_RITE_WINDOW_TITLE: "Vytvořit odštěpený [GetPlayer.GetFaith.Custom('CZ_AdjectiveNoTooltip_yy')|l] ritus"

@@ -82,7 +82,7 @@
  hostage_truce_ending_tt: "@warning_icon! #negative_value [actor.GetShortUIName|U] a [recipient.GetShortUIName] na sebe nyní mohou bez omezení útočit#!"
  spared_me_opinion: "Ušetřil mě"
  spared_hostage_opinion: "Ušetřil rukojmí"
- killed_hostage_opinion: "[Select_CString(ROOT.Char.IsFemale,'Zabila','Zabil')] rukojmí"
+ killed_hostage_opinion: "[Select_CString(ROOT.Char.IsFemale,'Zabila','Zabil')] rukojmí" # todo: GENDER FORM ROOT.Char - over, ci ROOT je postava, ktorej sa text tyka
  hostage_died_opinion: "Rukojmí zemřel"
  liege_demanded_hostage_opinion: "Lenní pán požadoval rukojmí"
  vassal_refused_hostage_demand_opinion: "Vazal odmítl vydat rukojmí"
@@ -120,7 +120,7 @@
  HOSTAGE_ALREADY_DEMANDED_REASON: "$already_have_their_hostage_tt$: $VALUE|=+0$"
  HOSTAGE_PREVIOUSLY_DIED_REASON: "Dopustil[Select_CString( recipient.IsFemale, 'a', '' )] smrt [Concept('hostage','rukojmí')|E]:  $VALUE|=+0$"
  HOSTAGE_PREVIOUSLY_DIED_HOME_COURT_REASON: "Dopustil[Select_CString( recipient.IsFemale, 'a', '' )] smrt mého [Concept('hostage','rukojmí')|E]:  $VALUE|=+0$"
- HOSTAGE_KILLED_REASON: "[Select_CString(ROOT.Char.IsFemale,'Zabila','Zabil')][Select_CString( recipient.IsFemale, 'a', '' )] mé [Concept('hostage','rukojmí')|E]: $VALUE|=+0$"
+ HOSTAGE_KILLED_REASON: "[Select_CString(ROOT.Char.IsFemale,'Zabila','Zabil')][Select_CString( recipient.IsFemale, 'a', '' )] mé [Concept('hostage','rukojmí')|E]: $VALUE|=+0$" # todo: GENDER FORM ROOT.Char - over, ci ROOT je postava, ktorej sa text tyka
  HOSTAGE_SICK_REASON: "Zdraví [Concept('hostage','rukojmí')|E]: $VALUE|=+0$"
  HOSTAGE_HEALTHY_REASON: "$HOSTAGE_SICK_REASON$"
  HOSTAGE_REALM_LAW_REASON: "[Concept('crown_authority','Korunní autorita')|E] činí neuposlechnutí [Concept('liege','lenního pána')|E] nečestným: $VALUE|=+0$"
@@ -164,7 +164,7 @@
  char_interaction.0311.desc: "Přestaň se prosím pokoušet sjednat mezi námi příměří. V tuto chvíli nemohu souhlasit s výměnou rukojmích."
  char_interaction.0311.a: "Budiž."
  char_interaction.0320.opening: "[actor.Custom2('AppropriateGreetingPositive', recipient )]"
- char_interaction.0320.desc: "[Select_CString(ROOT.Char.IsFemale,'Nenašla','Nenašel')] se žádný důvod, proč bych měl nadále držet jako [actor.GetPrimaryTitle.GetAdjectiveNoTooltip] rukojmí tuto osobu: [Select_CString(SCOPE.sC('secondary_recipient').IsFemale,'tvá','tvůj')] [recipient.Custom2('RelationToMeShort', SCOPE.sC('secondary_recipient'))], [secondary_recipient.GetFirstName]."
+ char_interaction.0320.desc: "[Select_CString(ROOT.Char.IsFemale,'Nenašla','Nenašel')] se žádný důvod, proč bych měl nadále držet jako [actor.GetPrimaryTitle.GetAdjectiveNoTooltip] rukojmí tuto osobu: [Select_CString(SCOPE.sC('secondary_recipient').IsFemale,'tvá','tvůj')] [recipient.Custom2('RelationToMeShort', SCOPE.sC('secondary_recipient'))], [secondary_recipient.GetFirstName]." # todo: GENDER FORM ROOT.Char - over, ci ROOT je postava, ktorej sa text tyka
  char_interaction.0320.a: "[secondary_recipient.GetSheHe|U] se vrátil[Select_CString( secondary_recipient.IsFemale, 'a', '' )]!"
  char_interaction.0330.desc: "S radostí přijmu jako své rukojmí tuto osobu: [Select_CString(SCOPE.sC('hostage').IsFemale,'tvá','tvůj')] [hostage_sender.Custom2('RelationToMeShort', SCOPE.sC('hostage'))], [hostage.GetFirstName].\n\nTěším se na [Select_CString(hostage.IsFemale,'její','jeho')] příjezd do [CZProvNameNoTooltip(hostage_taker.GetCapitalLocation,'G')]."
  char_interaction.0330.a: "Výborně."

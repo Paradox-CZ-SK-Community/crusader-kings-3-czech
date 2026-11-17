@@ -1,18 +1,28 @@
 ﻿l_polish:
- DEVELOPMENT_LEVEL_TRIGGER: "[Concept('development','Úroveň rozvoje')|E] [CZPrepV(TITLE.GetNameNoTooltip)] [TITLE.Custom('CZ_LandedName_L')] je $COMPARATOR$ $NUM|V$"
- NOT_DEVELOPMENT_LEVEL_TRIGGER: "[Concept('development','Úroveň rozvoje')|E] [CZPrepV(TITLE.GetNameNoTooltip)] [TITLE.Custom('CZ_LandedName_L')] #bold není#! $COMPARATOR$ $NUM|V$"
- ITS_DEVELOPMENT_LEVEL_TRIGGER: "[Concept('development','Úroveň rozvoje')|E] [CZPrepV(TITLE.GetNameNoTooltip)] [TITLE.Custom('CZ_LandedName_L')] je $COMPARATOR$ $NUM|V$"
- NOT_ITS_DEVELOPMENT_LEVEL_TRIGGER: "[Concept('development','Úroveň rozvoje')|E] [CZPrepV(TITLE.GetNameNoTooltip)] [TITLE.Custom('CZ_LandedName_L')] #bold není#! $COMPARATOR$ $NUM|V$"
+ PROSPERITY_LEVEL_TRIGGER: "Úroveň [Concept('prosperity','rozkvět')|E] v [TITLE.Custom('CZ_LandedName_G')] je $COMPARATOR$ $NUM|V$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ NOT_PROSPERITY_LEVEL_TRIGGER: "Úroveň [Concept('prosperity','rozkvět')|E] v [TITLE.Custom('CZ_LandedName_G')] #bold není#! $COMPARATOR$ $NUM|V$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ ITS_PROSPERITY_LEVEL_TRIGGER: "Úroveň [Concept('prosperity','rozkvět')|E] v [TITLE.Custom('CZ_LandedName_G')] je $COMPARATOR$ $NUM|V$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ NOT_ITS_PROSPERITY_LEVEL_TRIGGER: "Úroveň [Concept('prosperity','rozkvět')|E] v [TITLE.Custom('CZ_LandedName_G')] #bold není#! $COMPARATOR$ $NUM|V$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  IS_COUNTY_CAPITAL_TRIGGER: "Toto je [Concept('county_capital','hlavní sídlo hrabství')|E]"
  NOT_IS_COUNTY_CAPITAL_TRIGGER: "Toto #bold není#! [Concept('county_capital','hlavní sídlo hrabství')|E]"
- NOT_POTENTIAL_COUNTY_CONTROL_TASK_TRIGGER: "[TITLE.GetName] již má 100 [Concept('control','kontroly')|E] a není zde žádná [Concept('county_corruption','korupce v hrabství')|E]"
- DEVELOPMENT_RATE_TRIGGER: "Míra rozvoje: $NUM|V0$"
+ NOT_POTENTIAL_COUNTY_CONTROL_TASK_TRIGGER: "[TITLE.GetName] již má základní úroveň kontroly hrabství [TITLE.GetProvince.GetCounty.GetBaseControl|V0] nebo vyšší a není zde žádná [Concept('county_corruption','korupce v hrabství')|E]" # todo: CHANGED (predtym: [TITLE.GetName] již má 100 [Concept('control','kontroly')|E] a není zde žádná [Concept('county_corruption','korupce v hr)
+ PROSPERITY_RATE_TRIGGER: "Míra prosperity: $NUM|V0$" # todo: NEW TRANSLATION
+ province_size_level: "[Concept('settlement_size','Velikost sídla')|E] je $COMPARATOR$ [GetProvinceSizeLevelNameNoTooltip( '(int32)$NUM|0q$' )] #weak ($NUM|0$)#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ not_province_size_level: "[Concept('settlement_size','Velikost sídla')|E] #bold není#! $COMPARATOR$ [GetProvinceSizeLevelNameNoTooltip( '(int32)$NUM|0q$' )] #weak ($NUM|0$)#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ province_size_level_third: "[Concept('settlement_size','Velikost sídla')|E] Velikost osady ([PROVINCE.GetBaronyNameExplicitly]) je $COMPARATOR$ [GetProvinceSizeLevelNameNoTooltip( '(int32)$NUM|0q$' )] #weak ($NUM|0$)#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ not_province_size_level_third: "[Concept('settlement_size','Velikost sídla')|E] Velikost osady ([PROVINCE.GetBaronyNameExplicitly]) #bold není#! $COMPARATOR$ [GetProvinceSizeLevelNameNoTooltip( '(int32)$NUM|0q$' )] #weak ($NUM|0$)#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ province_size_level_greater_or_equal: "Dosahuje úrovně [Concept( 'settlement_size', GetProvinceSizeLevelNameNoTooltip( '(int32)$NUM|0q$' ) )|E] #weak ($NUM|0$)#! nebo vyšší" # todo: NEW TRANSLATION
+ not_province_size_level_greater_or_equal: "#bold Nedosahuje#! úrovně [Concept( 'settlement_size', GetProvinceSizeLevelNameNoTooltip( '(int32)$NUM|0q$' ) )|E] #weak ($NUM|0$)#! ani vyšší" # todo: NEW TRANSLATION
+ province_size_level_greater_or_equal_third: "[PROVINCE.GetBaronyNameExplicitly] dosahuje úrovně [Concept( 'settlement_size', GetProvinceSizeLevelNameNoTooltip( '(int32)$NUM|0q$' ) )|E] #weak ($NUM|0$)#! nebo vyšší" # todo: NEW TRANSLATION
+ not_province_size_level_greater_or_equal_third: "[PROVINCE.GetBaronyNameExplicitly] #bold nedosahuje#! úrovně [Concept( 'settlement_size', GetProvinceSizeLevelNameNoTooltip( '(int32)$NUM|0q$' ) )|E] #weak ($NUM|0$)#! ani vyšší" # todo: NEW TRANSLATION
  HAS_COUNTY_MODIFIER_TRIGGER: "Má modifikátor hrabství: $MODIFIER$"
  NOT_HAS_COUNTY_MODIFIER_TRIGGER: "Nemá modifikátor hrabství: $MODIFIER$"
  IS_COASTAL_TRIGGER: "Leží na pobřeží"
  IS_COASTAL_COUNTY_TRIGGER: "Je pobřežním [Concept('county','hrabstvím')|E]"
  is_lakeside_province_global: "[Concept('barony','Baronství')|E] sousedí s jezerem"
  is_lakeside_county_global: "[Concept('county','Hrabství')|E] sousedí s jezerem"
+ is_riverside_province_global: "[Concept('province','Provincie')|E] sousedí s řekou" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ is_riverside_county_global: "[Concept('county','Hrabství')|E] sousedí s řekou" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  HAS_STATIONED_REGIMENT_TRIGGER: "Má umístěný pluk"
  HAS_STATIONED_REGIMENT_OF_BASE_TYPE: "Má umístěný pluk typu $MEN_AT_ARMS_TYPE$"
  HAS_REALM_LAW_FLAG_TRIGGER: "Současný zákon panství umožňuje: $FLAG|V$"

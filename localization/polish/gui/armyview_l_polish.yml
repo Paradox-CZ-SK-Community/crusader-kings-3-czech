@@ -79,12 +79,12 @@
  SUPPLY_STATE_GATHERING: "[Concept('army','Armáda')|E] nebude spotřebovávat zásoby, dokud se neshromáždí"
  ARMY_NUMBER_OF_MEN: "$MAX_MEN|0$"
  ARMY_NUMBER_OF_MEN_NOT_MAX: "$LIVING|0V$/$MAX_MEN|0V$"
- ARMY_NUMBER_OF_LEVIES: "[levies|E]: $MAX_MEN|0V$"
- ARMY_NUMBER_OF_LEVIES_NOT_MAX: "[levies|E]: $LIVING|0V$/$MAX_MEN|0V$"
- ARMY_NUMBER_OF_LEVIES_TOOLTIP: "#T [levies|E]: $LIVING|0V$/$MAX_MEN|0V$#!"
- ARMY_NUMBER_OF_MAA: "[men_at_arms|E]: $MAX_MEN|0V$"
- ARMY_NUMBER_OF_MAA_NOT_MAX: "[men_at_arms|E]: $LIVING|0V$/$MAX_MEN|0V$"
- ARMY_NUMBER_OF_MAA_TOOLTIP: "#T [men_at_arms|E]: $LIVING|0V$/$MAX_MEN|0V$#!"
+ ARMY_NUMBER_OF_LEVIES: "[Concept('levies','Odvedenci')|E]: $MAX_MEN|0V$" # todo: CONCEPT CASE
+ ARMY_NUMBER_OF_LEVIES_NOT_MAX: "[Concept('levies','Odvedenci')|E]: $LIVING|0V$/$MAX_MEN|0V$" # todo: CONCEPT CASE
+ ARMY_NUMBER_OF_LEVIES_TOOLTIP: "#T [Concept('levies','Odvedenci')|E]: $LIVING|0V$/$MAX_MEN|0V$#!" # todo: CONCEPT CASE
+ ARMY_NUMBER_OF_MAA: "[Concept('men_at_arms','Ozbrojenci')|E]: $MAX_MEN|0V$" # todo: CONCEPT CASE
+ ARMY_NUMBER_OF_MAA_NOT_MAX: "[Concept('men_at_arms','Ozbrojenci')|E]: $LIVING|0V$/$MAX_MEN|0V$" # todo: CONCEPT CASE
+ ARMY_NUMBER_OF_MAA_TOOLTIP: "#T [Concept('men_at_arms','Ozbrojenci')|E]: $LIVING|0V$/$MAX_MEN|0V$#!" # todo: CONCEPT CASE
  ARMY_NUMBER_OF_KNIGHTS: "[knight_i]$knight_culture_player_plural$: $NUM|0V$"
  ARMY_NUMBER_OF_KNIGHTS_TOOLTIP: "#T $knight_culture_player_plural$: [knight_i]$NUM|0V$#!\nÚčinnost: $EFFECTIVENESS|V%0$"
  ARMY_EVENT_TROOPS_ASSOCIATED_WAR: "$COUNT$ [Concept('special_troops','zvláštních vojsk')|E] se rozejde, až skončí válka [WAR.GetName]"
@@ -92,8 +92,8 @@
  ARMY_SUPPLY_COMMANDER_BREAKDOWN: "#indent_newline:3 \n[CHARACTER.GetModifierDescription( 'supply_capacity_mult' )]\n[CHARACTER.GetModifierDescription( 'supply_capacity_add' )]#!"
  ARMY_SUPPLY_CAPACITY_INCREASED_BY_COMMANDER: "[CHARACTER.GetName] zvyšuje kapacitu zásob:$ARMY_SUPPLY_COMMANDER_BREAKDOWN$\n"
  ARMY_SUPPLY_CAPACITY_LOWERED_BY_COMMANDER: "[CHARACTER.GetName] snižuje kapacitu zásob:$ARMY_SUPPLY_COMMANDER_BREAKDOWN$\n"
- FLEET_EMBARKING: "[embarking|E]: hotovo za $TIME_LEFT$"
- FLEET_EMBARKED: "[embarked|E]"
+ FLEET_EMBARKING: "[Concept('embarking','Naloďování')|E]: hotovo za $TIME_LEFT$" # todo: CONCEPT CASE
+ FLEET_EMBARKED: "[Concept('embarked','Naloděno')|E]" # todo: CONCEPT CASE
  SHOW_SIEGE: "Přejít na [Concept('siege','obléhání')|E]"
  SPLIT_ARMY_FOR_SIEGE: "#T Ponechat obléhatele\n#!Ponech v této [Concept('army','armádě')|E] dostatek [Concept('soldiers','vojáků')|E], aby mohlo [Concept('siege','obléhání')|E] pokračovat"
  SPLIT_ARMY_DISABLED: "\n$DESC$"
@@ -104,18 +104,18 @@
  ARMY_COMPOSITION_ENTRY_REINFORCE: "($REINFORCE|0V=$/měsíc)"
  ARMY_COMPOSITION_ENTRY: "$TYPE$: $COUNT|0V$/$MAX|0V$$REINFORCE_INFO$"
  KNIGHT_REGIMENTS: "@knight_icon![CHARACTER.Custom('KnightCulturePlural')]"
- LEVIES_REGIMENTS: "@soldier_icon![levies|e]"
+ LEVIES_REGIMENTS: "@soldier_icon![Concept('levies','Odvedenci')|e]" # todo: CONCEPT CASE
  MAA_REGIMENTS_ICON: "@$ICONKEY$_icon!$NAME$"
  ARMY_TOTAL_SOLDIERS: "#T Celkem vojáků: $CURRENT|0V$/$MAX|0V$#!"
  ARMY_RAISED_SOLDIERS: "#T Povolaní vojáci: $CURRENT|0V$/$MAX|0V$#!"
  ARMY_UNRAISED_SOLDIERS: "#T Nepovolaní vojáci: $CURRENT|0V$/$MAX|0V$#!"
  SPLIT_OFF_HIRED_AND_EVENT_TROOPS: "#T Oddělit [Concept('hired_troops','najatá')|E] a [Concept('special_troops','zvláštní vojska')|E]#!\nOdděl [Concept('army','armádu')|E] obsahující všechna [Concept('hired_troops','najatá')|E] a [Concept('special_troops','zvláštní vojska')|E] této [Concept('army','armády')|E]."
- ARMY_VIEW_ARMY_HAS_EVENT_TROOPS: "#T [special_troops|E]\n#![ArmyWindow.BuildEventTroopList]"
+ ARMY_VIEW_ARMY_HAS_EVENT_TROOPS: "#T [Concept('special_troops','Vojsko z událostí')|E]\n#![ArmyWindow.BuildEventTroopList]" # todo: CONCEPT CASE
  LEVIES_ARMY_REGIMENT_NAME: "Odvedenci"
  TT_REORG_SOLDIERS: "#T Vojáci: [RegimentReorgEntry.GetSoldierCount]#!\nMaximum: [RegimentReorgEntry.GetMaxSoldierCount]"
- TT_REORG_EVENT_TROOPS: "#T [special_troops|E]: [RegimentReorgEntry.GetEventTroopName]#!"
- TT_REORG_LEVIES: "#T [levies|E]\n#![Concept('soldiers','Vojáci')|E]: [soldier_i][RegimentReorgEntry.GetSoldierCount]/[RegimentReorgEntry.GetMaxSoldierCount]\nZ tvé [Concept('domain','domény')|E]\n\n$REORG_INSTRUCTION$"
- TT_REORG_VASSAL_LEVIES: "#T [levies|E]\n#![Concept('soldiers','Vojáci')|E]: [soldier_i][RegimentReorgEntry.GetSoldierCount]/[RegimentReorgEntry.GetMaxSoldierCount]\nOd [Concept('vassal','vazala')|E] [RegimentReorgEntry.GetRegiment.GetFromVassal.GetUIName]\n\n$REORG_INSTRUCTION$"
+ TT_REORG_EVENT_TROOPS: "#T [Concept('special_troops','Vojsko z událostí')|E]: [RegimentReorgEntry.GetEventTroopName]#!" # todo: CONCEPT CASE
+ TT_REORG_LEVIES: "#T [Concept('levies','Odvedenci')|E]\n#![Concept('soldiers','Vojáci')|E]: [soldier_i][RegimentReorgEntry.GetSoldierCount]/[RegimentReorgEntry.GetMaxSoldierCount]\nZ tvé [Concept('domain','domény')|E]\n\n$REORG_INSTRUCTION$" # todo: CONCEPT CASE
+ TT_REORG_VASSAL_LEVIES: "#T [Concept('levies','Odvedenci')|E]\n#![Concept('soldiers','Vojáci')|E]: [soldier_i][RegimentReorgEntry.GetSoldierCount]/[RegimentReorgEntry.GetMaxSoldierCount]\nOd [Concept('vassal','vazala')|E] [RegimentReorgEntry.GetRegiment.GetFromVassal.GetUIName]\n\n$REORG_INSTRUCTION$" # todo: CONCEPT CASE
  REORG_INSTRUCTION: "#I Kliknutím přesuneš do jiné armády#!"
  REORG_EMPTY_LIST: "#weak Přesuň sem pluky a vytvoř novou armádu#!"
  ARMY_REORG_LEFT_MAINTENANCE: "[ArmyReorgWindow.GetLeftMaintenance]/měsíc"
@@ -134,7 +134,7 @@
  START_RAIDING: "#T Zahájit plenění#!\nTato jednotka nyní bude moci provádět akci [Concept('raid','nájezdu')|E] mimo tvé panství"
  END_RAIDING: "#T Přestat být plenící armádou#!\nTato [Concept('army','armáda')|E] přestane být plenící armádou a bude se moci znovu doplňovat"
  START_RAID: "#T Zahájit nájezd#!"
- RAID_ACTION_INFO: "Zabere to přibližně [PROVINCE.GetLootTime( ARMY.Self )|V] dní.\nBude uloupeno [gold_i|E][PROVINCE.GetLoot|0V]."
+ RAID_ACTION_INFO: "Zabere to přibližně [PROVINCE.GetLootTime( ARMY.Self )|V] dní.\nBude uloupeno [Concept('gold_i','@gold_icon!')|E][PROVINCE.GetLoot|0V]." # todo: CONCEPT CASE
  START_RAID_ALREADY_RAIDING: "@warning_icon! #X Tato država je již [Concept('raiding','pleněna')|E]#!"
  START_RAID_NOT_A_RAID_ARMY: "@warning_icon! #X Toto není [Concept('raid','nájezdnická')|E] armáda#!"
  START_RAID_LOOT_CAP: "@warning_icon! #X Nelze nést více kořisti z [Concept('raid','nájezdu')|E]#!"
@@ -143,8 +143,8 @@
  START_RAID_TRUCE: "@warning_icon! #X Nelze [Concept('raid','plenit')|E] [CHARACTER.GetShortUIName]#!, dokud platí příměří"
  START_RAID_IMMUNE: "@warning_icon! #X Nelze plenit někoho, kdo nedávno porazil jeden z tvých [Concept('raids','nájezdů')|E]. Imunita skončí dne [DATE.GetString|V]#!"
  START_RAID_SAME_CONFEDERATION: "@warning_icon! #X Nelze plenit někoho, kdo je také součástí [CONFEDERATION.GetName]#!"
- START_RAID_OWN_TRIBUTARY: "@warning_icon! #X Nelze plenit vlastního [Concept('tributary','tributáře')|E]#!"
- START_RAID_OWN_SUZERAIN: "@warning_icon! #X Nelze plenit vlastního [Concept('suzerain','suzeréna')|E]#!"
+ START_RAID_OWN_TRIBUTARY: "@warning_icon! #X Nelze plenit vlastních [Concept('tributary','tributáře')|E]#!" # todo: CONCEPT CASE
+ START_RAID_OWN_SUZERAIN: "@warning_icon! #X Nelze plenit vlastního [GetSuzerainRelationship(GetPlayer)]#!" # todo: CHANGED (predtym: @warning_icon! X Nelze plenit vlastního [Concept('suzerain','suzeréna')|E] !)
  START_RAID_NO_HOLDING: "@warning_icon! #X Zde není žádná [Concept('holding','država')|E], kterou by šlo [Concept('raid','plenit')|E]#!"
  START_RAID_MOVING: "@warning_icon! #X Nelze [Concept('raid','plenit')|E] během pohybu#!"
  START_RAID_IN_COMBAT: "@warning_icon! #X Nelze [Concept('raid','plenit')|E] během boje#!"
@@ -164,7 +164,7 @@
  START_BARTERING: "#T Zahájit směňování#!\nTato jednotka nyní bude moci provádět akci [Concept('barter','směny')|E] mimo tvé panství"
  END_BARTERING: "#T Přestat být směnnou armádou#!\nTato [Concept('army','armáda')|E] přestane být směnnou armádou a bude se moci znovu doplňovat"
  START_BARTER: "#T Zahájit směnu#!"
- BARTER_ACTION_INFO: "Směňování zabere přibližně [PROVINCE.GetLootTime( ARMY.Self )|V] dní.\nArmáda obdrží [loot_i|E][PROVINCE.GetLoot|0V]."
+ BARTER_ACTION_INFO: "Směňování zabere přibližně [PROVINCE.GetLootTime( ARMY.Self )|V] dní.\nArmáda obdrží [Concept('loot_i','@loot_icon!')|E][PROVINCE.GetLoot|0V]." # todo: CONCEPT CASE
  START_BARTER_INSUFFICIENT_BARTER_GOODS: "@warning_icon! #X Nedostatek [Concept('barter_goods','směnného zboží')|E] k zahájení [Concept('bartering','směňování')|E]#!"
  START_BARTER_ALREADY_BARTERING: "@warning_icon! #X S touto državou již [Concept('bartering','směňuješ')|E]#!"
  START_BARTER_NOT_A_BARTER_ARMY: "@warning_icon! #X Toto není [Concept('barter','směnná')|E] armáda#!"
@@ -193,17 +193,17 @@
  ATTRITION_RAID: "Plenění"
  AV_ALWAYS_RAID: "Vždy plenit"
  ATTRITION_SUPPLY: "Nedostatek zásob"
- ATTRITION_TOTAL: "[attrition|E]"
+ ATTRITION_TOTAL: "[Concept('attrition','Opotřebení')|E]" # todo: CONCEPT CASE
  ARMY_VIEW_TROOP_TT: "[TroopItem.BuildTroopItemTooltip( Army.Self )]"
- TROOP_LEVY: "[levies|E]"
- TROOP_LIST_LEVIES: "#T [levies|E]: $TOTAL$/$MAX$#!"
+ TROOP_LEVY: "[Concept('levies','Odvedenci')|E]" # todo: CONCEPT CASE
+ TROOP_LIST_LEVIES: "#T [Concept('levies','Odvedenci')|E]: $TOTAL$/$MAX$#!" # todo: CONCEPT CASE
  TROOP_KNIGHTS: "#T $knight_culture_player_plural$: $TOTAL$#!"
- TROOP_LIST_KNIGHT: "[CHARACTER.GetShortUIName|U]: [CHARACTER.GetSkill( 'prowess' )] [prowess_i|E]"
+ TROOP_LIST_KNIGHT: "[CHARACTER.GetShortUIName|U]: [CHARACTER.GetSkill( 'prowess' )] [Concept('prowess_i','@skill_prowess_icon!')|E]" # todo: CONCEPT CASE
  TROOP_LIST_MAA_MULTIPLE_PERSONAL: "[CHARACTER.GetShortUINamePossessive|U] [ARMY_REGIMENT.GetRegiment.GetName]: [ARMY_REGIMENT.GetCount]/[ARMY_REGIMENT.GetMax]"
  TROOP_LIST_MAA_MULTIPLE_TITLE: "[ARMY_REGIMENT.GetRegiment.GetName] titulu [TITLE.GetBaseName]: [ARMY_REGIMENT.GetCount]/[ARMY_REGIMENT.GetMax]"
  TROOP_LIST_MAA_MULTIPLE: "[ARMY_REGIMENT.GetRegiment.GetName]: [ARMY_REGIMENT.GetCount]/[ARMY_REGIMENT.GetMax]"
  TROOP_LIST_MAA_HEADER: "#T [MEN_AT_ARMS_TYPE.GetBaseTypeName]: $TOTAL$/$MAX$#!"
- ARMY_TOOLTIP_ATTRITION: "[attrition|E]: [Army.GetArmyAttritionPercentage|%0-]/měsíc"
+ ARMY_TOOLTIP_ATTRITION: "[Concept('attrition','Opotřebení')|E]: [Army.GetArmyAttritionPercentage|%0-]/měsíc" # todo: CONCEPT CASE
  ARMY_TOOLTIP_COMMANDER: "[Concept('commander','Velitel')|E]: [Character.GetShortUIName|U]"
  ARMY_TOOLTIP_COMMANDER_ADVANTAGE: "[Character.GetCommanderAdvantage]"
  ARMY_TOOLTIP_NO_COMMANDER: "Žádný [Concept('commander','velitel')|E]"

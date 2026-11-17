@@ -1,26 +1,30 @@
 ﻿l_polish:
  INVENTORY_TITLE: "Inventář"
- ANTIQUARIAN: "Antikvář"
- PORTRAIT_NO_ANTIQUARIAN: "#T Není zaměstnán žádný $antiquarian_court_position$#!\n#weak $antiquarian_court_position$ zpomalí úbytek [Concept('durability','trvanlivosti')|E] a zpřístupní [Concept('decision','rozhodnutí')|E] #V $commission_artifact_decision$#!.\n\n#I Kliknutím zaměstnáš $antiquarian_court_position$#!"
+ ANTIQUARIAN: "[GetCourtPositionType('antiquarian_court_position').CalcTriggeredNameNoTooltip(GetPlayer.Self)]" # todo: CHANGED (predtym: Antikvář)
+ PORTRAIT_NO_ANTIQUARIAN: "#T Není zaměstnán žádný [GetCourtPositionType('antiquarian_court_position').CalcTriggeredNameNoTooltip(GetPlayer.Self)]#!\n#weak [GetCourtPositionType('antiquarian_court_position').CalcTriggeredNameNoTooltip(GetPlayer.Self)] zpomalí úbytek [Concept('durability','trvanlivosti')|E] a zpřístupní [Concept('decision','rozhodnutí')|E] #V $commission_artifact_decision$#!.\n\n#I Kliknutím zaměstnáš [GetCourtPositionType('antiquarian_court_position').CalcTriggeredNameNoTooltip(GetPlayer.Self)]#!" # todo: CHANGED (predtym: T Není zaměstnán žádný $antiquarian_court_position$ !\n weak $antiquarian_court_position$ zpomalí úbytek [Concept('durab)
+ PORTRAIT_NO_ANTIQUARIAN_REQUIREMENTS: "#T Nelze zaměstnat [GetCourtPositionType('antiquarian_court_position').CalcTriggeredNameNoTooltip(GetPlayer.Self)]#!\n$COURT_POSITIONS_WINDOW_EMPTY_POSITION_YOU_DONT_MEET_REQUIREMENTS$\n\n#T $COURT_POSITION_TOOLTIP_LIEGE_REQUIREMENT$#!\n[GetCourtPositionType('antiquarian_court_position').GetLiegeRequirementDescriptionText]" # todo: NEW TRANSLATION
  OPEN_INVENTORY_TOOLTIP: "#T Inventář#!\n\n#I Kliknutím zobrazíš [Concept('inventory_artifacts','osobní artefakty')|e]"
  REFORGE_OR_REPAIR: "$repair_or_reforge_and_repair$"
- INVENTORY_DESTROY_ARTIFACT: "Zničit"
+ INVENTORY_DESTROY_ARTIFACT: "[Artifact.Custom('DestroyOrSellArtifactLabel')]" # todo: CHANGED (predtym: Zničit)
+ inventory_destroy_artifact_label: "Zničit" # todo: NEW TRANSLATION
+ inventory_sell_creature_artifact: "Prodat" # todo: NEW TRANSLATION
  INVENTORY_REFORGE_OR_REPAIR: "#T $REFORGE_OR_REPAIR$#!"
  INVENTORY_REFORGE: "#T [Concept('reforge','Překování')|E]#!"
  INVENTORY_REPAIR: "#T [Concept('repair','Oprava')|E]#!"
  INVENTORY_EQUIP: "#T Vybavit artefakt#!"
  INVENTORY_UNEQUIP: "#T Odebrat artefakt#!"
  INVENTORY_TAB_ARTIFACTS: "Artefakty"
- INVENTORY_TAB_COURT_ARTIFACTS: "Dvorské artefakty"
+ INVENTORY_TAB_COURT_ARTIFACTS: "[Character.Custom('GetCourtOrDomicileArtifactNoConceptPlural')]" # todo: CHANGED (predtym: Dvorské artefakty)
  INVENTORY_TAB_CLAIMS: "Nároky"
  INVENTORY_TAB_CLAIMS_HIS_HER_MY: "[Character.GetHerHisMy|U] $INVENTORY_TAB_CLAIMS$"
  INVENTORY_TAB_ARTIFACTS_TOOLTIP: "#T $INVENTORY_TAB_ARTIFACTS$#!"
  INVENTORY_TAB_COURT_ARTIFACTS_TOOLTIP: "#T $INVENTORY_TAB_COURT_ARTIFACTS$#!"
  INVENTORY_TAB_CLAIMS_TOOLTIP: "#T $INVENTORY_TAB_CLAIMS$#!"
- NO_COURT_ARTIFACTS: "#X @warning_icon! Žádné [Concept('court_artifacts','dvorské artefakty')|e]#!"
+ NO_COURT_ARTIFACTS: "#X @warning_icon! Žádné [Character.Custom('GetCourtOrDomicileArtifactConceptPlural')]#!" # todo: CHANGED (predtym: X @warning_icon! Žádné [Concept('court_artifacts','dvorské artefakty')|e] !)
  NO_ARTIFACT_CLAIMS: "#X @warning_icon! Žádné [Concept('artifact_claims','nároky na artefakt')|e]#!"
+ NO_COURT_OR_DOMICILE_ARTIFACTS: "#X @warning_icon! Žádné [Concept('court_artifacts','dvorské artefakty')|E] ani [Concept('domicile_artifacts','artefakty domicilu')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  ARTIFACT_CLAIM_PERSONAL: "[Concept('personal_artifact_claim','Osobní nárok na artefakt')|E]"
  ARTIFACT_CLAIM_HOUSE: "[Concept('house_artifact_claim','Rodový nárok na artefakt')|E]"
  INVENTORY_COURT_ARTIFACTS_BUTTON_TOOLTIP: "Přejít na [Concept('court_artifacts','dvorské artefakty')|e] v [Concept('royal_court','královském dvoře')|e] [Character.Custom('CZ_ShortUINameNoTooltipNoFormat_G')]"
- INVENTORY_COURT_ARTIFACTS_BUTTON_NO_ROYAL_COURT_TOOLTIP: "Zobrazit uložené [Concept('court_artifacts','dvorské artefakty')|e]"
+ INVENTORY_COURT_ARTIFACTS_BUTTON_NO_ROYAL_COURT_TOOLTIP: "Zobrazit uložené [Character.Custom('GetCourtOrDomicileArtifactConceptPlural')]" # todo: CHANGED (predtym: Zobrazit uložené [Concept('court_artifacts','dvorské artefakty')|e])
  INVENTORY_EQUIPPED_ARTIFACTS_HEADER: "[Character.LocalPlayerString( 'tvé', Character.GetShortUIName )|U] vybavené [Concept('inventory_artifacts','osobní artefakty')|e]"

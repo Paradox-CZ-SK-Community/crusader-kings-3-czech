@@ -123,6 +123,20 @@
  sculpture: "Nábytek"
  throne: "Trůn"
  book: "Kniha"
+ creatures_slot: "Tvorové" # todo: NEW TRANSLATION
+ creature_slot: "$creature$" # todo: NEW TRANSLATION
+ books_slot: "Knihy" # todo: NEW TRANSLATION
+ library_slot: "$book$" # todo: NEW TRANSLATION
+ curiosities_slot: "Zajímavosti" # todo: NEW TRANSLATION
+ curio_slot: "$curio$" # todo: NEW TRANSLATION
+ curio: "Zajímavost" # todo: NEW TRANSLATION
+ creature: "Tvor" # todo: NEW TRANSLATION
+ artifact_library_item: "$book$" # todo: NEW TRANSLATION
+ artifact_slot_library: "$library_slot$" # todo: NEW TRANSLATION
+ artifact_creature: "$creature$" # todo: NEW TRANSLATION
+ artifact_slot_creature: "$creature$" # todo: NEW TRANSLATION
+ artifact_curio: "$curio$" # todo: NEW TRANSLATION
+ artifact_slot_curio: "$curio_slot$" # todo: NEW TRANSLATION
  wall_big_1: "$wall_big$"
  wall_big_2: "$wall_big$"
  wall_big_3: "$wall_big$"
@@ -138,6 +152,18 @@
  pedestal_2: "$pedestal$"
  pedestal_3: "$pedestal$"
  pedestal_4: "$pedestal$"
+ library_1: "$book$" # todo: NEW TRANSLATION
+ library_2: "$book$" # todo: NEW TRANSLATION
+ library_3: "$book$" # todo: NEW TRANSLATION
+ library_4: "$book$" # todo: NEW TRANSLATION
+ curio_1: "$curio$" # todo: NEW TRANSLATION
+ curio_2: "$curio$" # todo: NEW TRANSLATION
+ curio_3: "$curio$" # todo: NEW TRANSLATION
+ curio_4: "$curio$" # todo: NEW TRANSLATION
+ creature_1: "$creature$" # todo: NEW TRANSLATION
+ creature_2: "$creature$" # todo: NEW TRANSLATION
+ creature_3: "$creature$" # todo: NEW TRANSLATION
+ creature_4: "$creature$" # todo: NEW TRANSLATION
  common: ""
  masterwork: "Mistrovské"
  famed: "Proslulé"
@@ -231,7 +257,7 @@
  claim_type: "Typ nároku"
  UNEQUIP_ARTIFACT: "\n#I Kliknutím odebereš tento artefakt z výbavy#!"
  ARTIFACT_EQUIPPED_TOOLTIP: "#T [Concept('artifact','Artefakt')|e] je ve výbavě#!"
- ARTIFACT_AT_MAX_DURABILITY: "@warning_icon! #X [ARTIFACT.GetNameNoTooltip] již má maximální trvanlivost#!"
+ ARTIFACT_AT_MAX_DURABILITY: "@warning_icon! #X [ARTIFACT.GetNameNoTooltip] již má maximální [Concept('durability','trvanlivosti')|E]#!" # todo: CHANGED (predtym: @warning_icon! X [ARTIFACT.GetNameNoTooltip] již má maximální trvanlivost !) # todo: CONCEPT CASE
  IMMINENT_HOUSE_CLAIMANT: "[Artifact.GetOwner.GetHouse.GetName] #low ( [Artifact.GetYearsUntilHouseClaim( Artifact.GetOwner.Self )] let )#!"
  HOUSE_CLAIMS: "#help Rodové nároky:#!"
  DECAY_ARTIFACT_EQUIPPED: "Ve výbavě"
@@ -242,14 +268,16 @@
  PUT_COURT_ARTIFACT_ON_DISPLAY: "#I \nKliknutím zde vystavíš#!"
  REMOVE_COURT_ARTIFACT_FROM_DISPLAY: "#I \nKliknutím uložíš#!"
  MOVE_COURT_ARTIFACT_TO_DISPLAY: "#I \nKliknutím sem přesuneš#!"
- COURT_ARTIFACT_ON_DISPLAY: "#T [Concept('court_artifact','Dvorský artefakt')|e] je vystaven#!"
+ COURT_ARTIFACT_ON_DISPLAY: "#T [Character.Custom('GetCourtOrDomicileArtifactConcept')] je vystaven#!" # todo: CHANGED (predtym: T [Concept('court_artifact','Dvorský artefakt')|e] je vystaven !)
  ROYAL_COURT: "Královský dvůr"
- ARTIFACT_STORAGE: "Všechny dvorské artefakty"
+ ARTIFACT_STORAGE: "Všechny [Character.Custom('GetCourtOrDomicileArtifactConceptPlural')]" # todo: CHANGED (predtym: Všechny dvorské artefakty)
  ARTIFACT_CLAIMS: "Nároky na artefakty"
  NEW_ARTIFACT: "#V Nové#!"
  EQUIPPED_ARTIFACT: "[Select_CString( Artifact.IsCourtArtifact, 'Vystaveno', 'Ve výbavě' )] [Inventory.GetEquippedSlotOfMaxSlotText( Artifact.Self )]"
  GIFT_EQUIPPED_ARTIFACT: "[Select_CString( Artifact.IsCourtArtifact, 'Vystaveno', 'Ve výbavě' )]"
- CHARACTER_WITHOUT_ROYAL_COURT_COURT_ARTIFACT_TAB: "Protože [Character.GetShortUIName] [Character.LocalPlayerString( 'nemáš', 'nemá' )] žádný [Concept('royal_court','Královský dvůr')|e], [Character.GetShortUIName] [Character.LocalPlayerString( 'nemáš', 'nemá' )] kde tyto [Concept('court_artifacts','dvorské artefakty')|e] vystavit."
+ CHARACTER_WITHOUT_ROYAL_COURT_COURT_ARTIFACT_TAB: "[Character.Custom('GetCourtOrDomicileArtifactNoRoyalCourtTabDesc')]" # todo: CHANGED (predtym: Protože [Character.GetShortUIName] [Character.LocalPlayerString( 'nemáš', 'nemá' )] žádný [Concept('royal_court','Králov)
+ CHARACTER_WITHOUT_ROYAL_COURT_COURT_ARTIFACT_TAB_court: "Protože [Character.GetShortUIName] [Character.LocalPlayerString( 'nemáš', 'nemá' )] žádný [Concept('royal_court','královský dvůr')|e], [Character.GetShortUIName] [Character.LocalPlayerString( 'nemáš', 'nemá' )] kde vystavit tyto [Concept('court_artifacts','dvorské artefakty')|e]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ CHARACTER_WITHOUT_ROYAL_COURT_COURT_ARTIFACT_TAB_merchant: "Tyto [Concept('domicile_artifacts','artefakty domicilu')|E] lze vystavit ve [Character.LocalPlayerString( 'tvé', Character.GetShortUINamePossessiveNoTooltipNoFormat )] [Concept('company','společnosti')|E]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
  ARTIFACT_TITLE_ASSOCIATION: "Zděděno spolu s [Artifact.GetAssociatedTitle.GetNameWithUnderlying]"
  EMPTY_INVENTORY_TOOLTIP: "@warning_icon! #X Inventář nelze zobrazit, protože neobsahuje žádné [Concept('artifacts','artefakty')|e] ani [Concept('artifact_claims','nároky na artefakt')|e]#!"
  ARTIFACT_PERSONAL_CLAIM: "Osobní nárok"
@@ -257,7 +285,7 @@
  REFORGE_ARTIFACT_COMPLETELY: "Překovat artefakt „[ARTIFACT.GetNameNoTooltip]“ na typ $NEW_TYPE$"
  REFORGE_COST: "Cena překování: $COST$"
  REPAIR_COST: "Cena opravy: $COST$"
- CANNOT_REFORGE_WITHOUT_ANTIQUARIAN: "@warning_icon! #X Překování [Concept('artifacts','artefaktů')|e] vyžaduje: $antiquarian_court_position$#!"
+ CANNOT_REFORGE_WITHOUT_ANTIQUARIAN: "@warning_icon! #X K překování [Concept('artifacts','artefaktů')|e] je nutné obsadit [GetPlayer.Custom('GetAntiquarianCourtPositionTitle')|V] [Concept('court_position','dvorský úřad')|E]#!" # todo: CHANGED (predtym: @warning_icon! X Překování [Concept('artifacts','artefaktů')|e] vyžaduje: $antiquarian_court_position$ !) # todo: CONCEPT CASE
  ARTIFACT_FALLBACK_EFFECT: "#S Pokud nesplňuješ požadavky:#!\n[Artifact.GetFallbackEffects]"
  ARTIFACT_EFFECT: "[SelectLocalization( Artifact.HasCanBenefit, 'ARTIFACT_EFFECT_HAS_CAN_BENEFIT', '' )][Artifact.GetModifierEffects]"
  ARTIFACT_EFFECT_HAS_CAN_BENEFIT: "#S Pokud splňuješ #TOOLTIP:ARTIFACT_EFFECT_REQUIREMENT_TT #L požadavky#!#!:#!\n"

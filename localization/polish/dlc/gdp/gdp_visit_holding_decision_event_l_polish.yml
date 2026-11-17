@@ -1,0 +1,368 @@
+﻿l_polish:
+ gdp_visit_holding_decision: "Navštívit državu" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_tooltip: "$visit_local_settlement_decision_tooltip$\n[ROOT.Char.Custom('GetVisitHoldingDecisionAvailableAreasHeader')][ROOT.Char.Custom('GetVisitHoldingDecisionAvailableAreasGuilds')][ROOT.Char.Custom('GetVisitHoldingDecisionAvailableAreasMarket')][ROOT.Char.Custom('GetVisitHoldingDecisionAvailableAreasDocks')][ROOT.Char.Custom('GetVisitHoldingDecisionAvailableAreasPatron')][ROOT.Char.Custom('GetVisitHoldingDecisionAvailableAreasWorship')][ROOT.Char.Custom('GetVisitHoldingDecisionExhaustedAreasHeader')][ROOT.Char.Custom('GetVisitHoldingDecisionExhaustedAreasGuilds')][ROOT.Char.Custom('GetVisitHoldingDecisionExhaustedAreasMarket')][ROOT.Char.Custom('GetVisitHoldingDecisionExhaustedAreasDocks')][ROOT.Char.Custom('GetVisitHoldingDecisionExhaustedAreasPatron')][ROOT.Char.Custom('GetVisitHoldingDecisionExhaustedAreasWorship')]" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_confirm: "Do toho!" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_desc: "Příležitost se naskytne těm, kdo ji hledají. Tato [ROOT.Char.Custom('LocalHoldingTypeConcept')] v [ROOT.Char.GetCurrentLocation.GetBaronyNameExplicitly] je plná nevyužitého potenciálu! Čekají tu na vás noví klienti, zakázky a obchodní příležitosti." # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_effect_intro: "Můžete dostat příležitost:" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_effect_artifact: "\n$EFFECT_LIST_BULLET$ Vylepšit nebo koupit [artifact_i][Concept('artifacts','artefaktů')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gdp_visit_holding_decision_effect_guild: "\n$EFFECT_LIST_BULLET$ Zvýšit [skill_i][Concept('skills','dovedností')|E] sobě nebo někomu z [family_i][Concept('family','rodiny')|E] " # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gdp_visit_holding_decision_effect_competitiveness: "\n$EFFECT_LIST_BULLET$ Zvýšit svou [competitiveness_i][Concept('trade_competitiveness','obchodní konkurenceschopnosti')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gdp_visit_holding_decision_effect_prestige: "\n$EFFECT_LIST_BULLET$ Směnit [gold_i][Concept('gold','zlata')|E] za [prestige_i][Concept('prestige','prestiž')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gdp_visit_holding_decision_effect_recruit: "\n$EFFECT_LIST_BULLET$ Potkat a najmout [associate_i][Concept('associates','společníků')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gdp_visit_holding_decision_effect_contracts: "\n$EFFECT_LIST_BULLET$ Objevit [luxury_contract_i][Concept('luxury_contracts','smluv na luxusní zboží')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gdp_visit_holding_decision_effect_stress_loss: "\n$EFFECT_LIST_BULLET$ Snížit svůj [stress_loss_i][Concept('stress','stresu')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gdp_visit_holding_decision_tt: "$gdp_visit_holding_decision_effect_intro$ $gdp_visit_holding_decision_effect_artifact$ $gdp_visit_holding_decision_effect_guild$ $gdp_visit_holding_decision_effect_competitiveness$ $gdp_visit_holding_decision_effect_prestige$ $gdp_visit_holding_decision_effect_recruit$ $gdp_visit_holding_decision_effect_contracts$ $gdp_visit_holding_decision_effect_stress_loss$" # todo: NEW TRANSLATION
+ VISIT_HOLDING_DECISION_AVAILABLE_AREAS_HEADER: "\n#weak Stále máte příležitosti v těchto oblastech:#!" # todo: NEW TRANSLATION
+ VISIT_HOLDING_DECISION_AVAILABLE_GUILDS: "\n$EFFECT_LIST_BULLET$Cechy" # todo: NEW TRANSLATION
+ VISIT_HOLDING_DECISION_AVAILABLE_MARKET: "\n$EFFECT_LIST_BULLET$Tržiště" # todo: NEW TRANSLATION
+ VISIT_HOLDING_DECISION_AVAILABLE_DOCKS: "\n$EFFECT_LIST_BULLET$Přístaviště" # todo: NEW TRANSLATION
+ VISIT_HOLDING_DECISION_AVAILABLE_PATRON: "\n$EFFECT_LIST_BULLET$Dvůr vašeho [ROOT.Char.GetSuzerain.Custom('CZ_TitledFirstName_G')]" # todo: NEW TRANSLATION
+ VISIT_HOLDING_DECISION_AVAILABLE_WORSHIP: "\n$EFFECT_LIST_BULLET$[ROOT.Char.GetCurrentLocation.GetCounty.GetFaith.HouseOfWorship]" # todo: NEW TRANSLATION
+ VISIT_HOLDING_DECISION_EXHAUSTED_AREAS_HEADER: "\n#weak Tyto oblasti se znovu otevřou po tomto datu:#!" # todo: NEW TRANSLATION
+ VISIT_HOLDING_DECISION_EXHAUSTED_GUILDS: "\n$EFFECT_LIST_BULLET$Cechy — [GetCurrentDateWithDiff( GetVarTimeRemaining( ROOT.Char.MakeScope, 'visit_holding_guilds_area_refresh_tracker') )|V]" # todo: NEW TRANSLATION
+ VISIT_HOLDING_DECISION_EXHAUSTED_MARKET: "\n$EFFECT_LIST_BULLET$Tržiště — [GetCurrentDateWithDiff( GetVarTimeRemaining( ROOT.Char.MakeScope, 'visit_holding_market_dock_area_refresh_tracker') )|V]" # todo: NEW TRANSLATION
+ VISIT_HOLDING_DECISION_EXHAUSTED_DOCKS: "\n$EFFECT_LIST_BULLET$Přístaviště — [GetCurrentDateWithDiff( GetVarTimeRemaining( ROOT.Char.MakeScope, 'visit_holding_market_dock_area_refresh_tracker') )|V]" # todo: NEW TRANSLATION
+ VISIT_HOLDING_DECISION_EXHAUSTED_PATRON: "\n$EFFECT_LIST_BULLET$Dvůr vašeho [ROOT.Char.GetSuzerain.Custom('CZ_TitledFirstName_G')] — [GetCurrentDateWithDiff( GetVarTimeRemaining( ROOT.Char.MakeScope, 'visit_holding_patron_area_refresh_tracker') )|V]" # todo: NEW TRANSLATION
+ VISIT_HOLDING_DECISION_EXHAUSTED_WORSHIP: "\n$EFFECT_LIST_BULLET$[ROOT.Char.GetCurrentLocation.GetCounty.GetFaith.HouseOfWorship] — [GetCurrentDateWithDiff( GetVarTimeRemaining( ROOT.Char.MakeScope, 'visit_holding_worship_area_refresh_tracker') )|V]" # todo: NEW TRANSLATION
+ VISIT_HOLDING_DECISION_ALL_OPTIONS_EXHAUSTED: "Prozkoumali jste všechny příležitosti v této [ROOT.Char.Custom('LocalHoldingTypeConcept')]. Nové možnosti budou dostupné po [GetCurrentDateWithDiff( GetVarTimeRemaining( ROOT.Char.MakeScope, 'visit_holding_all_options_refresh_tracker') )|V]" # todo: NEW TRANSLATION
+ VISIT_HOLDING_DECISION_ALL_OPTIONS_EXHAUSTED_BLOCKER: "[CHARACTER.Custom('GetVisitHoldingDecisionAllOptionsExhaustedTooltip')]" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1000.t: "Návštěva [ROOT.Char.GetCurrentLocation.GetBaronyNameExplicitlyNoTooltip] [ROOT.Char.Custom('LocalHoldingTypeCapitalized')]" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1000.desc: "S východem slunce vstávají i obyvatelé [ROOT.Char.GetCurrentLocation.GetBaronyNameExplicitlyNoTooltip]. Ranní ticho rychle vystřídá živý ruch lidí, kteří se věnují svým každodenním povinnostem. Pozorný pozorovatel najde příležitosti na každém rohu těchto rušných ulic.\n\nKam bych se dnes [Select_CString(ROOT.Char.IsFemale,'měla','měl')] vydat hledat štěstí?" # todo: NEW TRANSLATION # todo: GENDER FORM ROOT.Char - over, ci ROOT je postava, ktorej sa text tyka
+ gdp_visit_holding_decision_event.1000.entrepot_stewardship.toast: "Poučení z entrepôtu" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1000.a: "[Select_CString(ROOT.Char.IsFemale,'Měla','Měl')] bych zamířit do cechů" # todo: NEW TRANSLATION # todo: GENDER FORM ROOT.Char - over, ci ROOT je postava, ktorej sa text tyka
+ gdp_visit_holding_decision_event.1000.a.tt: "Návštěva cechů může nabídnout tyto příležitosti: $gdp_visit_holding_decision_effect_artifact$ $gdp_visit_holding_decision_effect_guild$" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1000.guilds.inaccessible.tt: "Prozkoumali jste vše, co vám cechy mohou nabídnout. Zkuste to znovu po [GetCurrentDateWithDiff( GetVarTimeRemaining( THIS.Char.MakeScope, 'visit_holding_guilds_area_refresh_tracker') )|V]" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1000.market.inaccessible.tt: "Prozkoumali jste vše, co vám tržiště může nabídnout. Zkuste to znovu po [GetCurrentDateWithDiff( GetVarTimeRemaining( THIS.Char.MakeScope, 'visit_holding_market_dock_area_refresh_tracker') )|V]" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1000.docks.inaccessible.tt: "Prozkoumali jste vše, co vám přístaviště může nabídnout. Zkuste to znovu po [GetCurrentDateWithDiff( GetVarTimeRemaining( THIS.Char.MakeScope, 'visit_holding_market_dock_area_refresh_tracker') )|V]" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1000.patron.inaccessible.tt: "Prozatím jste vyčerpali všechny příležitosti na dvoře [THIS.Char.GetSuzerain.Custom('CZ_TitledFirstName_G')]. Zkuste to znovu po [GetCurrentDateWithDiff( GetVarTimeRemaining( THIS.Char.MakeScope, 'visit_holding_patron_area_refresh_tracker') )|V]" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1000.patron.no_patron.tt: "Nemáte žádného patrona, u kterého byste se mohli ucházet o audienci" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1000.worship.inaccessible.tt: "Prozatím jste prozkoumali vše, co vám toto [THIS.Char.GetCurrentLocation.GetCounty.GetFaith.HouseOfWorship] může nabídnout. Zkuste to znovu po [GetCurrentDateWithDiff( GetVarTimeRemaining( THIS.Char.MakeScope, 'visit_holding_worship_area_refresh_tracker') )|V]" # todo: NEW TRANSLATION
+ gdp_visit_holding_caught_stealing.tt: "Nedávno vás přistihli při krádeži v tomto [THIS.Char.Custom('LocalHoldingTypeConcept')] z [THIS.Char.GetCurrentLocation.GetCounty.GetFaith.HouseOfWorship] — jste vykázáni až do [GetCurrentDateWithDiff( GetVarTimeRemaining( THIS.Char.MakeScope, '1500_caught_stealing') )|V]" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1000.b: "[Select_CString(ROOT.Char.IsFemale,'Měla','Měl')] bych se ucházet o audienci u [patron.Custom('CZ_TitledFirstName_G')]." # todo: NEW TRANSLATION # todo: GENDER FORM ROOT.Char - over, ci ROOT je postava, ktorej sa text tyka
+ gdp_visit_holding_decision_event.1000.c: "Ideální den na prohlídku tržiště." # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1000.c.tt: "Návštěva místního tržiště může nabídnout tyto příležitosti: $gdp_visit_holding_decision_effect_recruit$ $gdp_visit_holding_decision_effect_contracts$ $gdp_visit_holding_decision_effect_stress_loss$" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1000.e: "Ideální den na procházku po přístavišti." # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1000.e.tt: "Návštěva přístaviště může nabídnout tyto příležitosti: $gdp_visit_holding_decision_effect_recruit$ $gdp_visit_holding_decision_effect_contracts$ $gdp_visit_holding_decision_effect_stress_loss$" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1000.f: "Pozemky [ROOT.Char.GetCurrentLocation.GetCounty.GetFaith.HouseOfWorship] vypadají zajímavě." # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1000.f.tt: "Návštěva místního svatého místa může nabídnout tyto příležitosti: $gdp_visit_holding_decision_effect_donate$ $gdp_visit_holding_decision_effect_cure$ $gdp_visit_holding_decision_effect_blessing$ $gdp_visit_holding_decision_effect_rob_money$" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_effect_donate: "\n$EFFECT_LIST_BULLET$ Darovat [gold_i][Concept('gold','zlata')|E] a získat [piety_i][Concept('piety','zbožnosti')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gdp_visit_holding_decision_effect_cure: "\n$EFFECT_LIST_BULLET$ Zlepšit své [Concept('health','zdraví')|E] nebo vyléčit [Concept('diseases','nemoci')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gdp_visit_holding_decision_effect_blessing: "\n$EFFECT_LIST_BULLET$ Získat požehnání v podobě [Concept('character_modifier','modifikátoru postavy')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gdp_visit_holding_decision_effect_rob_money: "\n$EFFECT_LIST_BULLET$ Ukrást [gold_i][Concept('gold','zlata')|E] z darů" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gdp_visit_holding_decision_event.1000.d: "Myslím, že dnešní pochůzky mám za sebou." # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1000.d.tt: "Zatím se vrátit domů" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1000.d.changed_mind: "„Vlastně jsem si to rozmyslel.“" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1000.d.changed_mind.tt: "Odejít, aniž byste prozkoumali tuto [ROOT.Char.Custom('LocalHoldingTypeConcept')]" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1000.d.exhausted: "Zdá se, že už tu není co dělat..." # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1000.d.exhausted.tt: "Vrátit se domů. Nové příležitosti budou dostupné po [GetCurrentDateWithDiff( GetVarTimeRemaining( THIS.Char.MakeScope, 'visit_holding_all_options_refresh_tracker') )|V]" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1000.not_in_patron_realm.tt: "Váš [Concept('domicile','domicil')|E] se momentálně nenachází v panství vašeho [Concept('merchant_patrons','patronech')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gdp_visit_holding_decision_event.1110.t: "Návštěva cechů v [ROOT.Char.GetCurrentLocation.GetBaronyNameExplicitlyNoTooltip]" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1110.desc: "Uličkami cechů se rozléhá zvuk kladiva dopadajícího na kov. O kus dál nese mladý učeň nářadí svého mistra do hrnčířské dílny. Cechovní domy po generace vychovávaly tovaryše v zručné mistry svého řemesla.\n\nCechy nabízejí každému obchodníkovi řadu služeb. Kterou z nich bych [Select_CString(ROOT.Char.IsFemale,'měla','měl')] dnes vyhledat?" # todo: NEW TRANSLATION # todo: GENDER FORM ROOT.Char - over, ci ROOT je postava, ktorej sa text tyka
+ gdp_visit_holding_decision_event.1110.a: "Jeden z mých artefaktů by potřeboval trochu vyleštit." # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1110.a.tt: "Návštěva kurátora může nabídnout tuto příležitost:\n$EFFECT_LIST_BULLET$ Vylepšit běžné artefakty a mistrovská díla @artifact_icon![Concept('artifacts','artefakty')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gdp_visit_holding_decision_event.1110.a.cooldown.tt: "Nedávno jste využili služeb kurátora — zkuste to znovu po [GetCurrentDateWithDiff( GetVarTimeRemaining( THIS.Char.MakeScope, '1111_has_improved_artifact_recently') )]" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1110.a.no.arfitfacts.tt: "Nemáte žádné běžné artefakty ani mistrovská díla [Concept('artifacts','artefakty')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gdp_visit_holding_decision_event.1110.b: "Mám chuť pořídit si nové zbraně a zbroj." # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1110.b.tt: "Návštěva kováře může nabídnout tuto příležitost:\n$EFFECT_LIST_BULLET$ Koupit běžné, mistrovské nebo slavné zbraně a zbroj @artifact_icon![Concept('artifacts','artefakty')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gdp_visit_holding_decision_event.1110.b.cooldown.tt: "Nedávno jste si něco koupili od kováře — zkuste to znovu po [GetCurrentDateWithDiff( GetVarTimeRemaining( THIS.Char.MakeScope, '1111_has_bought_artifact_recently') )]" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1110.c: "[Select_CString(ROOT.Char.IsFemale,'Měla','Měl')] bych si domluvit schůzku s cechmistrem." # todo: NEW TRANSLATION # todo: GENDER FORM ROOT.Char - over, ci ROOT je postava, ktorej sa text tyka
+ gdp_visit_holding_decision_event.1110.c.tt: "Setkání s cechmistrem může nabídnout tuto příležitost:$gdp_visit_holding_decision_effect_guild$" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1110.c.cooldown.tt: "Nedávno jste se setkali s cechmistrem — zkuste to znovu po [GetCurrentDateWithDiff( GetVarTimeRemaining( THIS.Char.MakeScope, '1110_visited_guild_master_recently') )]" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1110.d: "Co kdybych se vydal někam jinam?" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1110.d.tt: "Zatím opustit cechy" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1111.t: "$gdp_visit_holding_decision_event.1110.t$: Kurátor" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1111.desc: "Když vstoupím do kurátorovy dílny, obklopí mě fascinující předměty z blízka i z daleka. U pracovního stolu vzadu se [curator.GetWomanMan] sklání nad dýkou a zasazuje do její rukojeti ty nejkrásnější drahokamy. Zatímco si prohlížím jednu z vystavených cetek, [curator.GetSheHe] vytrhne [Select_CString(curator.IsFemale,'její','jeho')] soustředění.\n\n„Ach, potenciální zákazník! Jak mohu dnes [ROOT.Char.GetTitledFirstNameNoTooltip] posloužit?“" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1111.a: "Možná by [artifact_target_1.GetNameNoTooltip] potřeboval trochu vyleštit." # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1111.a.tt: "[artifact_target_1.GetName] získá vylepšení" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1111.b: "Možná by [artifact_target_2.GetNameNoTooltip] potřeboval trochu péče." # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1111.b.tt: "[artifact_target_2.GetName] získá vylepšení" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1111.c: "Myslím, že můj [artifact_target_3.GetNameNoTooltip] by [Select_CString(artifact_target_3.IsFemale,'mohla','mohl')] být lepší." # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1111.c.tt: "[artifact_target_3.GetName] získá vylepšení" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1111.d: "Možná se budu muset vrátit později..." # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1111.d.tt: "Vrátit se do cechů a zjistit, co dalšího [THIS.Char.GetCurrentLocation.GetName] nabízí" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1112.t: "$gdp_visit_holding_decision_event.1110.t$: Kovář" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1112.desc: "Když vstoupím do kovářovy dílny, pocítím téměř nesnesitelné žároviště výhně. Kováře, který právě bušil do širokého meče, můj příchod náhle vyruší. Setře si z [Select_CString(blacksmith.IsFemale,'její','jeho')] čela směs potu a sazí a [blacksmith.GetSheHe] místo práce začne věnovat [Select_CString(blacksmith.IsFemale,'její','jeho')] pozornost mně.\n\n„Tak co tu máme? Má snad můj [ROOT.Char.GetTitleAsNameNoTooltip] zájem pořídit si některou z těchto skvělých zbraní a zbrojí? Lepší v [ROOT.Char.GetCurrentLocation.GetBaronyNameExplicitlyNoTooltip] neseženete.“" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1112.a: "Tento [arms_armor_artifact_1.GetNameNoTooltip] by byl skvělým přírůstkem." # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1112.b: "Možná bych si [Select_CString(ROOT.Char.IsFemale,'měla','měl')] koupit [arms_armor_artifact_2.GetNameNoTooltip]." # todo: NEW TRANSLATION # todo: GENDER FORM ROOT.Char - over, ci ROOT je postava, ktorej sa text tyka
+ gdp_visit_holding_decision_event.1112.c: "Něco jako [arms_armor_artifact_3.GetNameNoTooltip] by se mi hodilo." # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1112.d: "Když o tom tak přemýšlím, dnes raději ne." # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1112.d.tt: "Vrátit se do cechů a zjistit, co dalšího [THIS.Char.GetCurrentLocation.GetName] nabízí" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1113.t: "$gdp_visit_holding_decision_event.1110.t$: Rady cechmistra" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1113.desc: "Schůzka s cechmistrem [guild_master.GetName] se pro společnost rodu [ROOT.Char.GetHouse.GetName] ukázala jako přínosná. V zaprášené kanceláři, mezi hromadami papírů a knih, najednou uběhly celé hodiny.\n\n[guild_master.GetNameNoTooltip] má vskutku jedinečný vhled do [guild_master.Custom('highest_skill_noun')]. [Select_CString(guild_master.IsFemale,'Její','Jeho')] projev mě i [visiting_associate.GetName], [ROOT.Char.Custom2('RelationToMeShort', SCOPE.sC('visiting_associate'))], zcela uchvátil a oba toužíme dozvědět se víc." # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1113.a.success: "Vy i [visiting_associate.GetName] snadno vstřebáte nové poznatky" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1113.a_learning.failure: "Rozluštit starobylé rukopisy není snadné" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1113.a_stewardship.failure: "Rovnice jsou pro vás i [visiting_associate.GetName] příliš složité" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1113.a_diplomacy.failure: "Velké diplomatické půtky jsou příliš složité na pochopení" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1113.a.failure.tt: "Poučení padne na neúrodnou půdu." # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1113.a: "„Možná bychom s [visiting_associate.GetNameNoTooltip] mohli ještě chvíli zůstat?“" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1113.a.child: "Poučení prospěje vzdělání [visiting_associate.GetNamePossessive]" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1113.b: "„[visiting_associate.GetFirstNameNoTooltip] by si [Select_CString(visiting_associate.IsFemale,'mohla','mohl')] poslechnout ještě jednu přednášku na toto téma.“" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1113.b.tt: "[guild_master.GetName] bude [visiting_associate.GetNameNoTooltip] dále učit o tomto tématu:" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1113.c: "„Zajímavé, hned si to musím zapsat!“" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1113.c.tt: "Znalosti [guild_master.GetNamePossessive] se budou společnosti [THIS.Char.GetHouse.GetName] hodit" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1113.d: "Pro dnešek už [guild_master.Custom('highest_skill_noun')] stačilo." # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1113.d.tt: "Vrať se do cechů a podívej se, co dalšího [THIS.Char.GetCurrentLocation.GetName] nabízí" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1300.t: "Návštěva tržiště v [ROOT.Char.GetCurrentLocation.GetBaronyNameExplicitlyNoTooltip]" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1300.asia: "Stejně jako na všech tržištích podél Velké hedvábné stezky se tu hojně vyskytují luxusní zboží, jako je nefrit, hedvábí a čaj.\n\nUprostřed přeplněné ulice muž opatrně vykládá z vozu jemné porcelánové vázy. Vedle něj si cizí obchodník v pestrém oděvu prohlíží stánky a dychtí po nákupu.\n\n" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1300.mena_india: "Barevné látky a zdobená keramika rozjasňují jinak ponurou uličku. Vzduch naplňuje příjemná vůně kadidla a koření.\n\nV tmavém koutě se podomní obchodník zoufale snaží přesvědčit skeptického kolemjdoucího, aby koupil jeho kvalitní měděné talíře. Teď je vhodná chvíle uzavřít obchod.\n\n" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1300.default: "Vůně čerstvých potravin se mísí s pachem houstnoucího davu. Podomní obchodníci na přeplněném náměstí se překřikují.\n\n„[ROOT.Char.Custom('RegionalDrink')|U]! Speciální nabídka, jen dnes!“ „Poslední příležitost koupit ten nejlepší kus [ROOT.Char.Custom('RegionalEdibleMeat')].“\n\n" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.monk_hint: "Muž odchází z nedaleké čajovny se svěšenou hlavou a mumlá cosi o zlých znameních. Zdá se, že uvnitř někdo věští." # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.monk_hint_return: "V čajovně je teď klidněji, ale věštící mnich ještě neodešel." # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.caravaneer_hint: "Ulici zaplňuje průvod karavan ošlehaných počasím a místní stáje mají co dělat, aby zvládly příliv obchodníků." # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.caravaneer_hint_return: "Karavany se ještě nevydaly na cestu. Jejich vozka stále čeká mezi zvířaty." # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.sea_captain_hint: "\n\nŘíká se, že dnes jeden mimořádně zkušený kapitán nabírá na svou loď cestující." # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.sea_captain_hint_return: "\n\nKapitán stále nabírá cestující a dav kolem lodi se nezmenšil." # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.carnival_jester_hint: "Nemohu si nevšimnout, jak si jeden obchodník stěžuje na pouličního umělce, který mu přebírá pozornost obvyklých zákazníků." # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.carnival_jester_hint_return: "Pouliční umělec stále baví dav a okolní obchodníci z toho zrovna nadšení nejsou." # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.cook_hint: "Všímám si, že spousta lidí chodí s [ROOT.Char.Custom('FavoriteTreat')] v rukou. Zaslechnu jednoho z nich, jak říká, že jistý pekař rozdává pečivo zadarmo." # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.cook_hint_return: "Pekař svůj stánek ještě nezavřel." # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1300.desc.fallback: "Mince a zboží si rychle mění majitele. Tržiště přímo překypuje příležitostmi." # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1300.a: "Zajímalo by mě, jaké zprávy přinášejí cizí obchodníci." # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1300.a.tt: "Odposloucháváním obchodníků můžeš získat následující příležitost:$gdp_visit_holding_decision_effect_contracts$ " # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1300.a.cooldown.tt: "Nedávno jsi [Select_CString(ROOT.Char.IsFemale,'vytvořila','vytvořil')] zakázky — zkus to znovu po [GetCurrentDateWithDiff( GetVarTimeRemaining( THIS.Char.MakeScope, '1310_has_created_contract_recently') )]" # todo: NEW TRANSLATION # todo: GENDER FORM ROOT.Char - over, ci ROOT je postava, ktorej sa text tyka
+ gdp_visit_holding_decision_event.1300.b: "[Select_CString(ROOT.Char.IsFemale,'Měla','Měl')] bych se poohlédnout po schopných nových spolupracovnících." # todo: NEW TRANSLATION # todo: GENDER FORM ROOT.Char - over, ci ROOT je postava, ktorej sa text tyka
+ gdp_visit_holding_decision_event.1300.b.cooldown.tt: "Nedávno ses [Select_CString(ROOT.Char.IsFemale,'pokusila','pokusil')] najmout společníky — zkus to znovu po [GetCurrentDateWithDiff( GetVarTimeRemaining( THIS.Char.MakeScope, '1320_has_recruited_recently') )]" # todo: NEW TRANSLATION # todo: GENDER FORM ROOT.Char - over, ci ROOT je postava, ktorej sa text tyka
+ gdp_visit_holding_decision_event.1300.b.tt: "Při průzkumu tržiště můžeš získat následující příležitost:$gdp_visit_holding_decision_effect_recruit$ " # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1300.c: "Možná bych [Select_CString(ROOT.Char.IsFemale,'měla','měl')] jít někam jinam..." # todo: NEW TRANSLATION # todo: GENDER FORM ROOT.Char - over, ci ROOT je postava, ktorej sa text tyka
+ gdp_visit_holding_decision_event.1300.d: "Jaké štěstí mě asi čeká?" # todo: NEW TRANSLATION
+ gdp_visit_holding_rare_spawn_alert.tt: "@alert_icon! #alert_trial Tato postava se objevuje jen vzácně a ukáže se pouze jednou za život!#!" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1300.d.tt: "Promluv si s mnichem\n$gdp_visit_holding_rare_spawn_alert.tt$" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1300.d_second: "Nakonec si [monk.GetFirstNameNoTooltip] přece jen vyslechnu." # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1300.c.tt: "Prozatím opustit tržiště" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1300.g: "[Select_CString(ROOT.Char.IsFemale,'Měla','Měl')] bych se podívat na karavany." # todo: NEW TRANSLATION # todo: GENDER FORM ROOT.Char - over, ci ROOT je postava, ktorej sa text tyka
+ gdp_visit_holding_decision_event.1300.g.tt: "Promluv si s vozkou karavany\n$gdp_visit_holding_rare_spawn_alert.tt$" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1300.g_second: "Ty karavany pořád čekají." # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1300.h: "Ten šašek přitahuje pořádný dav." # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1300.h.tt: "Promluv si se šaškem\n$gdp_visit_holding_rare_spawn_alert.tt$" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1300.h_second: "[Select_CString(ROOT.Char.IsFemale,'Měla','Měl')] bych [carnival_jester.GetFirstNameNoTooltip] zastihnout, než se dav rozejde." # todo: NEW TRANSLATION # todo: GENDER FORM ROOT.Char - over, ci ROOT je postava, ktorej sa text tyka
+ gdp_visit_holding_decision_event.1300.i: "Delikatesy... zadarmo?" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1300.i.tt: "Promluv si s pekařem\n$gdp_visit_holding_rare_spawn_alert.tt$" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1300.i_second: "Ten pekař pořád rozdává pečivo." # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1300.j_tea: "Místní čajovna mě láká..." # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1300.j_hashish: "Myslím, že je čas na trochu hašiše..." # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1300.j_drink: "Místní krčma mě láká..." # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1300.j_food: "Myslím, že je čas na pořádné jídlo..." # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1300.j_bath: "Místní lázně mě lákají." # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1300.j.tt: "Zbavit se části [stress_loss_i][Concept('stress','stresu')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gdp_visit_holding_decision_event.1300.j.associate.tt: "[visiting_associate.GetShortUIName] ztrácí [Concept('stress','stres')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gdp_visit_holding_decision_event.1300.j.cooldown.tt: "Nedávno sis [Select_CString(ROOT.Char.IsFemale,'odpočinula','odpočinul')] — zkus to znovu po [GetCurrentDateWithDiff( GetVarTimeRemaining( THIS.Char.MakeScope, '1320_has_relaxed_recently') )]" # todo: NEW TRANSLATION # todo: GENDER FORM ROOT.Char - over, ci ROOT je postava, ktorej sa text tyka
+ gdp_visit_holding_decision_event.1310.t: "$gdp_visit_holding_decision_event.1300.t$: Hledání příležitostí" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1310.desc: "V poslední době jsem [Select_CString(ROOT.Char.IsFemale,'vyslechla','vyslechl')] mnoho příběhů o cizokrajných zvířatech a pokladech. Dnes prohledám tržiště a zjistím, zda nenajdu někoho, kdo by o těchto zvěstech [Select_CString(ROOT.Char.IsFemale,'mohla','mohl')] vědět víc.\n\nMezi obchodníky si všimnu [foreigner.GetWomanMan] s podivným cizím přízvukem, chlubí se [Select_CString(foreigner.IsFemale,'jejími','jeho')] dobrodružstvími v dalekých krajích zdánlivě nezaujatému místnímu obchodníkovi. [foreigner.GetSheHe|U] může být chvástal, ale možná je na [Select_CString(foreigner.IsFemale,'jejích','jeho')] příbězích i něco pravdy. Třeba by [foreigner.GetHerHim] rozpovídalo trochu zlata..." # todo: NEW TRANSLATION # todo: GENDER FORM ROOT.Char - over, ci ROOT je postava, ktorej sa text tyka
+ spawn_merchant_contract_interaction_duplicate_tt: "Už máš přijatou nebo dostupnou [Concept('task_contract','zakázku')|E] tohoto typu" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ spawn_merchant_contract_interaction_route_tt: "Nemáš přiřazenou žádnou aktivní [Concept('trade_routes','obchodní trasy')|E] s [Concept('trader','obchodníkem')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ spawn_merchant_contract_interaction_cooldown_tt: "Tento typ [Concept('task_contract','zakázka')|E] je momentálně nedostupný" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gdp_visit_holding_decision_event.1310.a: "Chci se dozvědět víc o těch exotických tvorech." # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1310.a.tt: "Vytvoř na mapě zakázku [luxury_contract_i][Concept('luxury_contract','smlouvy na luxusní zboží')|E] na [Concept('menagerie','zvěřinec')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gdp_visit_holding_decision_event.1310.b: "Velmi mě zajímá, jak sehnat ty kuriozity." # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1310.b.tt: "Vytvoř na mapě zakázku [luxury_contract_i][Concept('luxury_contract','smlouvy na luxusní zboží')|E] na [Concept('curio','kuriozitu')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gdp_visit_holding_decision_event.1310.c: "Místo toho bych [Select_CString(ROOT.Char.IsFemale,'měla','měl')] investovat do společnosti [ROOT.Char.GetHouse.GetNameNoTooltip]" # todo: NEW TRANSLATION # todo: GENDER FORM ROOT.Char - over, ci ROOT je postava, ktorej sa text tyka
+ gdp_visit_holding_decision_event.1310.c.tt: "Vytvoř na mapě [trade_opportunity_i][Concept('trade_opportunity','obchodní příležitosti')|E] pro [Concept('company_purpose','zaměření společnosti')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gdp_visit_holding_decision_event.1310.d: "Dnes bych se raději [Select_CString(ROOT.Char.IsFemale,'porozhlédla','porozhlédl')] jinde..." # todo: NEW TRANSLATION # todo: GENDER FORM ROOT.Char - over, ci ROOT je postava, ktorej sa text tyka
+ gdp_visit_holding_decision_event.1320.t_market: "$gdp_visit_holding_decision_event.1300.t$: Hledání nových spolupracovníků" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1320.t_docks: "$gdp_visit_holding_decision_event.1400.t$: Hledání nových spolupracovníků" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1320.desc: "Při pohledu na dav mě zaujmou tři potenciální kandidáti!" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1320.first_character_desc: "[market_first_recruit.Custom('GetVisitHolding1320CharacterDesc')]" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1320.second_character_desc: "[market_second_recruit.Custom('GetVisitHolding1320CharacterDesc')]" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1320.third_character_desc: "[market_third_recruit.Custom('GetVisitHolding1320CharacterDesc')]" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1320.mid.desc: "\n\n" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1320.charlatan.desc: "Dav se shromažďuje, jako očarovaný záblesky stříbra. [ROOT.Char.GetNamePossessive] hbitá manipulace s předměty je staví do řady jako jehňata na porážku." # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1320.hired_muscle.desc: "[Select_CString(ROOT.Char.IsFemale,'Oděna','Oděn')] do obnošené zbroje se [ROOT.Char.GetFirstName] opírá [Select_CString(ROOT.Char.IsFemale,'její','jeho')] mohutnou postavou o zeď a neklidně si přehazuje dýku." # todo: NEW TRANSLATION # todo: GENDER FORM ROOT.Char - over, ci ROOT je postava, ktorej sa text tyka
+ gdp_visit_holding_decision_event.1320.numerate.desc: "[ROOT.Char.GetFirstName] prohlíží jeden stánek za druhým a pečlivě si zapisuje podrobnosti do [Select_CString(ROOT.Char.IsFemale,'jejího','jeho')] malého zápisníku. " # todo: NEW TRANSLATION # todo: GENDER FORM ROOT.Char - over, ci ROOT je postava, ktorej sa text tyka
+ gdp_visit_holding_decision_event.1320.traveler.desc: "[Select_CString(ROOT.Char.IsFemale,'Oděna','Oděn')] v cizokrajném šatu se [ROOT.Char.GetFirstName] pokouší urovnat spor mezi dvěma obchodníky, a to ještě lámanou [ROOT.Char.GetCurrentLocation.GetCounty.GetCulture.GetLanguage.GetName]!" # todo: NEW TRANSLATION # todo: GENDER FORM ROOT.Char - over, ci ROOT je postava, ktorej sa text tyka
+ gdp_visit_holding_decision_event.1320.urchin.desc: "[ROOT.Char.GetFirstName] se krčí ve stínech, v jedné ruce zavinuté nemluvně a [ROOT.Char.GetHerHis] druhou nataženou před sebe, aby [Select_CString(ROOT.Char.IsFemale,'našla','našel')] další nic netušící oběť." # todo: NEW TRANSLATION # todo: GENDER FORM ROOT.Char - over, ci ROOT je postava, ktorej sa text tyka
+ gdp_visit_holding_decision_event.1320.herbalist.desc: "[ROOT.Char.GetFirstName] se sklání nad zraněným vozkou karavany a z blízkého plevele rychle připravuje léčivý obklad." # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1320.a: "[market_first_recruit.GetNameNoTooltip] vypadá zajímavě." # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1320.option.tt: "Možná se ti podaří získat [THIS.Char.GetFirstName] jako [Concept('associate','společník')|E], když uděláš následující:" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gdp_visit_holding_decision_event.1320.no_gold.tt: "" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1320.option.money.tt: "$BULLET$Zaplať @gold_icon![Concept('gold','zlato')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gdp_visit_holding_decision_event.1320.charlatan.tt: "$gdp_visit_holding_decision_event.1320.option.tt$\n$BULLET$Uspěj ve výzvě na @skill_intrigue_icon! [Concept('intrigue','pletichářství')|E] [Concept('skill_challenge_no_prefix','výzvu')|E]\n$gdp_visit_holding_decision_event.1320.option.money.tt$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gdp_visit_holding_decision_event.1320.hired_muscle.tt: "$gdp_visit_holding_decision_event.1320.option.tt$\n$BULLET$Uspěj ve výzvě na @skill_prowess_icon![Concept('prowess','udatnost')|E] a @skill_martial_icon![Concept('martial','válečnictví')|E] [Concept('skill_challenge_no_prefix','výzvu')|E]\n$gdp_visit_holding_decision_event.1320.option.money.tt$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gdp_visit_holding_decision_event.1320.numerate.tt: "$gdp_visit_holding_decision_event.1320.option.tt$\n$BULLET$Uspěj ve výzvě na @skill_stewardship_icon![Concept('stewardship','správcovství')|E] [Concept('skill_challenge_no_prefix','výzvu')|E]\n$gdp_visit_holding_decision_event.1320.option.money.tt$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gdp_visit_holding_decision_event.1320.traveler.tt: "$gdp_visit_holding_decision_event.1320.option.tt$\n$BULLET$Uspěj ve výzvě na @skill_diplomacy_icon![Concept('diplomacy','diplomacii')|E] [Concept('skill_challenge_no_prefix','výzvu')|E]\n$gdp_visit_holding_decision_event.1320.option.money.tt$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gdp_visit_holding_decision_event.1320.urchin.tt: "$gdp_visit_holding_decision_event.1320.option.tt$\n$BULLET$Uspěj ve výzvě na @skill_intrigue_icon![Concept('intrigue','pletichářství')|E] [Concept('skill_challenge_no_prefix','výzvu')|E]\n$gdp_visit_holding_decision_event.1320.option.money.tt$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gdp_visit_holding_decision_event.1320.herbalist.tt: "$gdp_visit_holding_decision_event.1320.option.tt$\n$BULLET$Uspěj ve výzvě na @skill_learning_icon![Concept('learning','učenost')|E] [Concept('skill_challenge_no_prefix','výzvu')|E]\n$gdp_visit_holding_decision_event.1320.option.money.tt$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gdp_visit_holding_decision_event.1320.b: "[market_second_recruit.GetNameNoTooltip] vypadá nadějně." # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1320.c: "[market_third_recruit.GetNameNoTooltip] mě [Select_CString(market_third_recruit.IsFemale,'zaujala','zaujal')]." # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1320.d: "Nikdo mě nezaujal..." # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1320.d.tt: "Vrať se na tržiště a podívej se, co dalšího [THIS.Char.GetCurrentLocation.GetName] nabízí" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1320.e: "Nikdo mě nezaujal..." # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1320.e.tt: "Vrať se do doků a podívej se, co dalšího [THIS.Char.GetCurrentLocation.GetNameNoTooltip] nabízí." # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1320.tt: "Vrať se a zjisti, zda tu nejsou další zajímaví kandidáti" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1321.t_docks: "$gdp_visit_holding_decision_event.1400.t$:" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1321.t_market: "$gdp_visit_holding_decision_event.1300.t$:" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1321.t: "Šarlatán" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1321.desc: "[charlatan_recruit.GetFirstName] mě pokyne, abych [Select_CString(charlatan_recruit.IsFemale,'přišla','přišel')] blíž. Širokým gestem ruky [charlatan_recruit.GetSheHe] prohlásí:\n\n„Nuže... vypadá to, že máme dobrovolníka! Pokud uhodneš, na kterou stranu tato mince dopadne, štědře tě odměním.“\n\n[charlatan_recruit.GetSheHe] švihne zápěstím a mince zmizí. Dav v tichém očekávání vyčkává, jak se zachovám." # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1321.a: "Tu falešnou minci máš #EMP očividně#! schovanou v rukávu." # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1321.a.success: "Prokoukneš jeho bluf" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1321.a.failure: "Nepodaří se ti jeho bluf prokouknout" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1321.b: "Zručný podvod. [Select_CString(ROOT.Char.IsFemale,'Měla','Měl')] bys raději pracovat pro mě." # todo: NEW TRANSLATION # todo: GENDER FORM ROOT.Char - over, ci ROOT je postava, ktorej sa text tyka
+ gdp_visit_holding_decision_event.1321.b.tt: "$gdp_visit_holding_decision_event.1320.no_gold.tt$ K najmutí [charlatan_recruit.GetFirstNameNoTooltip] je potřeba @gold_icon![charlatan_recruit_cost|V0] [Concept('gold','zlata')|E] " # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gdp_visit_holding_decision_event.1321.c: "Nemám čas na takové triky..." # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1322.t_docks: "$gdp_visit_holding_decision_event.1400.t$:" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1322.t_market: "$gdp_visit_holding_decision_event.1300.t$:" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1322.t: "Drsný darebák" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1322.desc: "Když se přiblížím k [hired_muscle_recruit.GetFirstName], cítím, jak si mě [Select_CString(hired_muscle_recruit.IsFemale,'její','jeho')] podezíravýma očima měří.\n\n„Copak nevíš, na koho se díváš? Jsem neporažený šampion [ROOT.Char.GetCurrentLocation.GetBaronyNameExplicitlyNoTooltip]. Máš pěknou drzost myslet si, že [hired_muscle_recruit.Custom2('InsultNoun', ROOT.Char)] jako ty se mi může v boji vůbec postavit.“\n\n[hired_muscle_recruit.GetSheHe|U] proti mně výhrůžně pozvedne [Select_CString(hired_muscle_recruit.IsFemale,'její','jeho')] pěst." # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1322.a: "Donutím [hired_muscle_recruit.GetHerHim], aby [Select_CString(hired_muscle_recruit.IsFemale,'její','jeho')] slova vzal zpět!" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1322.a.success: "Porazíš [hired_muscle_recruit.GetFirstName]" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1322.a.failure: "[hired_muscle_recruit.GetFirstName] tě porazí" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1322.b: "Bojuj raději za mě." # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1322.b.tt: "$gdp_visit_holding_decision_event.1320.no_gold.tt$ K najmutí [hired_muscle_recruit.GetFirstNameNoTooltip] je potřeba @gold_icon![hired_muscle_recruit_cost|V0] [Concept('gold','zlata')|E]. " # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gdp_visit_holding_decision_event.1322.c: "Myslím, že bych [Select_CString(ROOT.Char.IsFemale,'měla','měl')] jít..." # todo: NEW TRANSLATION # todo: GENDER FORM ROOT.Char - over, ci ROOT je postava, ktorej sa text tyka
+ gdp_visit_holding_decision_event.1323.t_docks: "$gdp_visit_holding_decision_event.1400.t$:" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1323.t_market: "$gdp_visit_holding_decision_event.1300.t$:" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1323.t: "Učenec s počty" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1323.desc: "[numerate_recruit.GetFirstName] má [Select_CString(numerate_recruit.IsFemale,'její','jeho')] nos zabořený v knize a sotva si mě všimne, dokud nejsem opravdu blízko. [numerate_recruit.GetSheHe|U] ke mně vzhlédne a zamyšleně se zatváří.\n\n„Vypadáš na schopného [ROOT.Char.GetWomanMan]. Nemohl bys mi pomoct vyřešit jeden drobný problém?“\n\nList, který mi [numerate_recruit.GetSheHe] ukazuje, je pečlivě popsaný čísly a výpočty. Vypadá jako účetní kniha se zisky a výdaji stánků." # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1323.a: "Zkus přesunout tohle číslo sem..." # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1323.a.success: "Vyřešíš rovnici" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1323.a.failure: "Rovnici se ti nepodaří vyřešit" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1323.b: "Co kdybys to dělal pro #EMP mou#! společnost?" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1323.b.tt: "$gdp_visit_holding_decision_event.1320.no_gold.tt$ K najmutí [numerate_recruit.GetFirstNameNoTooltip] je potřeba @gold_icon![numerate_recruit_cost|V0] [Concept('gold','zlata')|E]. " # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gdp_visit_holding_decision_event.1323.c: "Když o tom tak přemýšlím..." # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1324.t_docks: "$gdp_visit_holding_decision_event.1400.t$:" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1324.t_market: "$gdp_visit_holding_decision_event.1300.t$:" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1324.t: "Zkušený cestovatel" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1324.desc: "Napětí mezi oběma obchodníky dosáhlo vrcholu. [traveler_recruit.GetFirstName] se snaží konflikt uklidnit smířlivými gesty. I přes [traveler_recruit.GetHerHis] lámanou [ROOT.Char.GetCurrentLocation.GetCounty.GetCulture.GetLanguage.GetName] je [traveler_recruit.GetSheHe] docela úspěšný. Na někoho, kdo očividně není zvyklý na místní kulturu, je to obdivuhodný výkon.\n\nAni jeden z obchodníků však nedokáže poznat, zda [traveler_recruit.GetSheHe] myslí kvalitu, zboží, nebo něco úplně jiného, a hádka skončí patem." # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1324.a: "„Dovolte, abych se [Select_CString(ROOT.Char.IsFemale,'pokusila','pokusil')] zprostředkovat smír.“" # todo: NEW TRANSLATION # todo: GENDER FORM ROOT.Char - over, ci ROOT je postava, ktorej sa text tyka
+ gdp_visit_holding_decision_event.1324.a.success: "Tvůj výklad je přesvědčivý" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1324.a.failure: "Tvůj zásah není vítán" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1324.b: "Někoho s tvými zkušenostmi bych potřeboval." # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1324.b.tt: "$gdp_visit_holding_decision_event.1320.no_gold.tt$ K najmutí [traveler_recruit.GetFirstNameNoTooltip] je potřeba @gold_icon![traveler_recruit_cost|V0] [Concept('gold','zlata')|E]. " # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gdp_visit_holding_decision_event.1324.c: "Nemám na to čas..." # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1325.t_docks: "$gdp_visit_holding_decision_event.1400.t$:" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1325.t_market: "$gdp_visit_holding_decision_event.1300.t$:" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1325.t: "Uličnice" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1325.desc: "Tuhle scénku jsem už viděl mnohokrát, a tak vím, že k [urchin_recruit.Custom('GirlBoy')] musím přistupovat opatrně. Než stačím promluvit, vrazí mi do rukou chatrná paže ten uzlík.\n\n„Prosím, laskavý [ROOT.Char.GetWomanMan], nemohl byste mně a tomu maličkému dát něco k jídlu?“\n\n[Select_CString(urchin_recruit.IsFemale,'Její','Jeho')] druhá ruka už šmátrá po mém váčku. Uzlík vyklouzne a dopadne na zem; v dece jsou zabalené tři kameny, přesně jak jsem tušil. Očividná lest, ale odvážná." # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1325.a: "Okamžitě vytáhni tu ruku z mého váčku!" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1325.a.success: "Chytíš zloděje" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1325.a.failure: "Jsi příliš pomalý" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1325.b: "Mé společnosti by se šikovné ruce hodily." # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1325.b.tt: "$gdp_visit_holding_decision_event.1320.no_gold.tt$ K najmutí [urchin_recruit.GetFirstNameNoTooltip] je potřeba @gold_icon![urchin_recruit_cost|V0] [Concept('gold','zlata')|E]. " # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gdp_visit_holding_decision_event.1325.c: "Toho už bylo dost!" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1326.t_docks: "$gdp_visit_holding_decision_event.1400.t$:" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1326.t_market: "$gdp_visit_holding_decision_event.1300.t$:" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1326.t: "Bylinkář" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1326.desc: "[herbalist_recruit.GetFirstName] si mě nevšímá, když se přiblížím. [herbalist_recruit.GetSheHe|U] je fascinovaně zaujatý pohyby tlouku, který drtí přísadu na neurčitou směs.\n\n„Trochu [ROOT.Char.Custom('Abortifacient')], možná nějaký [ROOT.Char.GetCurrentLocation.Custom('get_region_flower_type')], a pak bych to [Select_CString(ROOT.Char.IsFemale,'mohla','mohl')] povařit v [ROOT.Char.Custom('RegionalDrink')]. Ano... To by mělo zabrat. Co myslíš?“\n\n[herbalist_recruit.GetSheHe] mě sotva bere na vědomí, otočí se ke mně a přiloží mi hmoždíř k nosu. Udeří mě do něj pronikavý zápach." # todo: NEW TRANSLATION # todo: GENDER FORM ROOT.Char - over, ci ROOT je postava, ktorej sa text tyka
+ gdp_visit_holding_decision_event.1326.a: " #EMP Hm#!, co kdybys přidal víc [ROOT.Char.Custom('Abortifacient')]?" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1326.a.success: "Tvůj návrh pomůže" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1326.a.failure: "Tvůj návrh nepomůže" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1326.b: "Někdo s tvými schopnostmi by se mi opravdu hodil." # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1326.b.tt: "$gdp_visit_holding_decision_event.1320.no_gold.tt$ K najmutí [herbalist_recruit.GetFirstNameNoTooltip] je potřeba @gold_icon![herbalist_recruit_cost|V0] [Concept('gold','zlata')|E]. " # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gdp_visit_holding_decision_event.1326.c: "Nemyslím, že je to pro mě." # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1330.t: "Mnich" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1330.desc: "V tichém koutě místní čajovny najdu mnicha, který hledá význam ve stoncích řebříčku rozložených před [monk.GetHerHim]. Svíčka osvětluje [Select_CString(monk.IsFemale,'její','jeho')] stůl. [monk.GetWomanMan] se na mě podívá a vycítí můj zájem.\n\n„Jsi, příteli, učedníkem věštírny? Máš-li otevřenou a upřímnou mysl, Cesta ti má mnoho co ukázat.“" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1330.desc_returned_01: "Čajovna je prázdnější než předtím. [monk.GetFirstName] stále sedí a před sebou má rozložené stonky řebříčku před [monk.GetHerHim]; svíčka dohořela o něco níže.\n\n[monk.GetSheHe|U] nevzhlédne." # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1330.desc_returned_02: "Když se vrátím, [monk.GetFirstName] právě smetá stonky zpátky do látky. Svíčka zhasíná.\n\n„Vytrvalý,“ pronese [monk.GetSheHe]. „Cestě druhá návštěva nevadí. A tobě?“" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1330.a: "Mé společnosti by se hodil vzdělaný společník." # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1330.a.tt: "K najmutí [monk.GetFirstNameNoTooltip] je potřeba @gold_icon![monk_recruit_cost|V0] [Concept('gold','zlata')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gdp_visit_holding_decision_event.1330.recruit_benefits.tt: "[TARGET_CHARACTER.Custom('GetVisitHoldingRareRecruitAptitudeLine')]" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1330.recruit_benefits.tt_first: "$gdp_visit_holding_decision_event.1330.recruit_benefits.tt$" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1330.recruit_benefits.tt_third: "$gdp_visit_holding_decision_event.1330.recruit_benefits.tt$" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1330.b: "Pověz mi, co studuješ." # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1330.c: "O nebesích něco vím." # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1330.c.success: "[monk.GetFirstNameNoTooltip] uděláš dojem" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1330.c.failure: "[monk.GetFirstName] odejde, aniž bys na něj udělal dojem" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1330.d: "Snad někdy jindy." # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1333.t_market: "$gdp_visit_holding_decision_event.1300.t$:" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1333.t: "Zkušený karavanář" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1333.desc: "Dromedáři se tísní v malém přístřešku svých ohrad. Z jejich houfu se tu a tam ozve zabručení, zadupání kopyta a... #EMP chrápání#!?\n\nPři bližším pohledu spatřím karavanáře spícího opřeného o [Select_CString(caravaneer.IsFemale,'její','jeho')] brašny. [caravaneer.GetSheHe|U] se probudí, když zaslechne, že přicházím, rychle se postaví na [Select_CString(caravaneer.IsFemale,'její','jeho')] nohy a otře si sliny z [Select_CString(caravaneer.IsFemale,'její','jeho')] tváře.\n\nVysvětlí: „Ujišťuji vás, majitel stájí ví, že tu jsem. Nikdy svá zvířata neopouštím, kvůli jejich bezpečí i svému klidu.“" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1333.desc_returned_01: "Dromedáři se stále tísní v ohradě. Tentokrát je [caravaneer.GetFirstName] vzhůru a přejíždí rukou po obvodu sedla.\n\n[caravaneer.GetSheHe|U] se ohlédne přes [Select_CString(caravaneer.IsFemale,'její','jeho')] rameno. „Zase ty.“" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1333.desc_returned_02: "Z ohrady se ozve zabručení a pak [caravaneer.GetFirstNamePossessive] hlas: „Jestli ses [Select_CString(caravaneer.IsFemale,'přišla','přišel')] dívat, za zvířata si připlatíš.“\n\n[caravaneer.GetSheHe|U] teď sedí na brašnách, plně oblečený, a čeká, jestli si chceš promluvit." # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1333.a: "„O tvá zvířata bude postaráno.“" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1333.a.tt: "K najmutí [caravaneer.GetFirstNameNoTooltip] je potřeba @gold_icon![caravaneer_recruit_cost|V0] [Concept('gold','zlata')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gdp_visit_holding_decision_event.1333.recruit_benefits.tt: "[TARGET_CHARACTER.Custom('GetVisitHoldingRareRecruitAptitudeLine')]" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1333.recruit_benefits.tt_first: "$gdp_visit_holding_decision_event.1333.recruit_benefits.tt$" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1333.recruit_benefits.tt_third: "$gdp_visit_holding_decision_event.1333.recruit_benefits.tt$" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1333.b: "„Jaké jsou novinky z cest?“" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1333.b.cooldown.tt: "Na cesty ses vyptával nedávno — zkus to znovu za [GetCurrentDateWithDiff( GetVarTimeRemaining( THIS.Char.MakeScope, '1333_gained_caravaneer_xp_recently') )]" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1333.c: "„O organizaci karavan něco vím...“" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1333.c.success: "[caravaneer.GetFirstNameNoTooltip] uděláš dojem" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1333.c.failure: "[caravaneer.GetFirstName] si vezme [Select_CString(caravaneer.IsFemale,'její','jeho')] zvířata a odejde" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1333.d: "Snad někdy jindy." # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1334.t_docks: "$gdp_visit_holding_decision_event.1400.t$:" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1334.t: "Námořní kapitán" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1334.desc: "Na molu se kolem ostříleného námořníka shromáždil dav žen a mužů, kteří doufají, že si zajistí místo na [Select_CString(sea_captain.IsFemale,'její','jeho')] lodi.\n\nZaslechnu, jak si dva kolemjdoucí šeptají: „Přišli jsme pozdě! [sea_captain.GetTitledFirstName|U] pro nás nebude mít místo.“ Místo aby oslovili jiného námořníka, rozhodnou se počkat na jeho další příjezd.\n\nKdo přesně je tenhle [sea_captain.GetWomanMan], a necinká mu v [Select_CString(sea_captain.IsFemale,'její','jeho')] dřevěné noze #EMP zlato#!?" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1334.desc_returned_01: "Dav kolem [sea_captain.GetFirstName] prořídl. [sea_captain.GetSheHe|U] postupně vhazuje mince do [Select_CString(sea_captain.IsFemale,'její','jeho')] dřevěné nohy, zatímco poslední žadatelé odcházejí.\n\n[sea_captain.GetSheHe|U] se ani neobtěžuje otočit. „Nečekal jsem, že tě ještě uvidím.“" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1334.desc_returned_02: "[sea_captain.Custom('CZ_TitledFirstName_N')|U] ukazuje opozdilci jinou loď. Dřevěná noha klape o prkna, když se [sea_captain.GetSheHe] otočí.\n\n„Už zase. Chceš místo na palubě, nebo jdeš po mně?“" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1334.a: "„Zaplatím dvakrát tolik co kdokoli tady.“" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1334.a.tt: "K najmutí [sea_captain.GetFirstNameNoTooltip] je potřeba @gold_icon![sea_captain_recruit_cost|V0] [Concept('gold','zlata')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gdp_visit_holding_decision_event.1334.recruit_benefits.tt: "[TARGET_CHARACTER.Custom('GetVisitHoldingRareRecruitAptitudeLine')]" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1334.recruit_benefits.tt_first: "$gdp_visit_holding_decision_event.1334.recruit_benefits.tt$" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1334.recruit_benefits.tt_third: "$gdp_visit_holding_decision_event.1334.recruit_benefits.tt$" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1334.b: "„Nechceš se podělit o pár příběhů?“" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1334.b.cooldown.tt: "Nedávno jsi slyšel příběh námořního kapitána — zkus to znovu za [GetCurrentDateWithDiff( GetVarTimeRemaining( THIS.Char.MakeScope, '1334_gained_traveler_xp_recently') )]" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1334.c: "„Obchodování se zbožím je mnohem výnosnější podnik.“" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1334.c.success: "[sea_captain.GetFirstNameNoTooltip] je [Select_CString(sea_captain.IsFemale,'přesvědčena','přesvědčen')]" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1334.c.failure: "[sea_captain.GetFirstName] odrazí od břehu" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1334.d: "Snad někdy jindy." # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1335.t_market: "$gdp_visit_holding_decision_event.1300.t$:" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1335.t: "Karnevalový šašek" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1335.desc: "Uprostřed ulice vystupuje [carnival_jester.GetWomanMan] a kolem něj se shromáždí zaujaté publikum. Přiláká kupce od nedalekých obchodních stánků a zastaví dění na trhu.\n\nÚčinkující rozpřáhne [Select_CString(carnival_jester.IsFemale,'její','jeho')] ruce a prohlásí: „Podívejte se, vy všichni, kteří jste mi říkali, že mé triky fungují jen díky mdlým karnevalovým scénám. Na rozdíl od vás se nemusím skrývat za žádnou maskou.“" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1335.desc_returned_01: "Je to stejný roh ulice, jen dav je menší. [carnival_jester.GetFirstName] dokončí otočku, spatří mě a rozpřáhne [Select_CString(carnival_jester.IsFemale,'její','jeho')] ruce, jako bych byl součástí vystoupení.\n\n„Přídavek?“" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1335.desc_returned_02: "[carnival_jester.GetFirstName] si balí [Select_CString(carnival_jester.IsFemale,'její','jeho')] rekvizity do látky.\n\n„Začínám si myslet, že jdeš po mně.“" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1335.a: "„Moje společnost potřebuje bystrý důvtip, jako je ten váš.“" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1335.a.tt: "@gold_icon![carnival_jester_recruit_cost|V0] [Concept('gold','Zlato')|E] potřebných k naverbování [carnival_jester.GetFirstNameNoTooltip]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gdp_visit_holding_decision_event.1335.recruit_benefits.tt: "[TARGET_CHARACTER.Custom('GetVisitHoldingRareRecruitAptitudeLine')]" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1335.recruit_benefits.tt_first: "$gdp_visit_holding_decision_event.1335.recruit_benefits.tt$" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1335.recruit_benefits.tt_third: "$gdp_visit_holding_decision_event.1335.recruit_benefits.tt$" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1335.b: "„Povězte mi více o těchto karnevalech.“" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1335.b.cooldown.tt: "Na karnevaly jste se [Select_CString(ROOT.Char.IsFemale,'ptala','ptal')] nedávno — zkuste to znovu po [GetCurrentDateWithDiff( GetVarTimeRemaining( THIS.Char.MakeScope, '1335_gained_creditor_xp_recently') )]" # todo: NEW TRANSLATION # todo: GENDER FORM ROOT.Char - over, ci ROOT je postava, ktorej sa text tyka
+ gdp_visit_holding_decision_event.1335.c: "„Copak už tu nemáte co dokazovat?“" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1335.c.success: "[carnival_jester.GetFirstNameNoTooltip] je [Select_CString(carnival_jester.IsFemale,'přesvědčena','přesvědčen')]" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1335.c.failure: "[carnival_jester.GetFirstName] si sbalí věci a odejde" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1335.d: "Snad někdy jindy." # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1336.t_market: "$gdp_visit_holding_decision_event.1300.t$:" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1336.t: "Pekař" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1336.desc_intro: "Z nedalekého stánku na tržišti se line sladká vůně čerstvého [ROOT.Char.Custom('FavoriteTreat')]. Koše s pečivem jsou naskládané na každém volném místě.\n\n[cook.GetWomanMan], který obchod vlastní, stojí opodál a drží se [Select_CString(cook.IsFemale,'její','jeho')] hlavu v [Select_CString(cook.IsFemale,'jejích','jeho')] dlaních. Když mě [cook.GetSheHe] spatří, [cook.GetSheHe] poví," # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1336.desc_named_noble: "„Dříve jsem [Select_CString(ROOT.Char.IsFemale,'pracovala','pracoval')] pro [local_noble.GetTitledFirstNameNoTooltip], ale teď si [local_noble.GetSheHe] ‚hlídá [Select_CString(local_noble.IsFemale,'její','jeho')] postavu‘ a nemá mě zapotřebí.“ [cook.GetSheHe|U] si okusuje [Select_CString(cook.IsFemale,'její','jeho')] rty. „Možná byste s tím [Select_CString(ROOT.Char.IsFemale,'mohla','mohl')] obchodovat vy, jakožto kupec. Já… na to prostě nemám dost času.“" # todo: NEW TRANSLATION # todo: GENDER FORM ROOT.Char - over, ci ROOT je postava, ktorej sa text tyka
+ gdp_visit_holding_decision_event.1336.desc_unknown_noble: "„Z panského sídla si pro mě nikoho neposílají. Mám toho víc, než dokážu prodat!“" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1336.desc_returned_01: "Stánek stále voní po [ROOT.Char.Custom('FavoriteTreat')]. [cook.GetFirstName] balí další balíček pro cizince, který za něj nezaplatil.\n\n[cook.GetSheHe|U] mě spatří a povzdechne si. „Stále si pro mě nikoho neposlali. Nemohu to rozdávat zadarmo.“" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1336.desc_returned_02: "Košů už je méně. [cook.GetFirstName] se opírá o pult, na [Select_CString(cook.IsFemale,'jejích','jeho')] rukávech má mouku a sleduje, jak mizí poslední bochníky.\n\n„Jestli pro pekaře máte nějaké využití,“ řekne [cook.GetSheHe], „řekněte mi to, než bude stánek prázdný.“" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1336.a: "„Moje společnost má spoustu hladových krků.“" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1336.a.tt: "@gold_icon![cook_recruit_cost|V0] [Concept('gold','Zlato')|E] potřebných k naverbování [cook.GetFirstNameNoTooltip]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gdp_visit_holding_decision_event.1336.recruit_benefits.tt: "[TARGET_CHARACTER.Custom('GetVisitHoldingRareRecruitAptitudeLine')]" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1336.recruit_benefits.tt_first: "$gdp_visit_holding_decision_event.1336.recruit_benefits.tt$" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1336.recruit_benefits.tt_third: "$gdp_visit_holding_decision_event.1336.recruit_benefits.tt$" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1336.b: "Ukažte mi, jak uživit celou společnost." # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1336.c: "Uvidíme, kdo se v kuchyni vyzná lépe." # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1336.c.success: "[cook.GetFirstNameNoTooltip] je [Select_CString(cook.IsFemale,'ohromena','ohromen')]" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1336.c.failure: "[cook.GetFirstName] zavře stánek a odejde" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1336.d: "Snad někdy jindy." # todo: NEW TRANSLATION
+ gdp_visit_holding_rare_recruit_duel_loss.tt: "@alert_icon! #alert_trial [SCOPE.sC('visit_holding_rare_recruit').GetFirstNameNoTooltip] odejde a během této návštěvy ho nelze naverbovat#!" # todo: NEW TRANSLATION
+ gdp_visit_holding_skill_level.terrible: "#N $skill_level_terrible$#!" # todo: NEW TRANSLATION
+ gdp_visit_holding_skill_level.poor: "#N $skill_level_poor$#!" # todo: NEW TRANSLATION
+ gdp_visit_holding_skill_level.average: "#M $skill_level_average$#!" # todo: NEW TRANSLATION
+ gdp_visit_holding_skill_level.good: "#P $skill_level_good$#!" # todo: NEW TRANSLATION
+ gdp_visit_holding_skill_level.excellent: "#P $skill_level_excellent$#!" # todo: NEW TRANSLATION
+ gdp_visit_holding_rare_recruit_skill.diplomacy: "[ROOT.Char.GetFirstName] má [ROOT.Char.Custom('GetVisitHoldingColoredDiplomacySkillLevel')] [Concept('diplomacy_skill','diplomatické dovednosti')|E] ([diplomacy_i][ROOT.Char.GetSkill( 'diplomacy' )|V])" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gdp_visit_holding_rare_recruit_skill.martial: "[ROOT.Char.GetFirstName] má [ROOT.Char.Custom('GetVisitHoldingColoredMartialSkillLevel')] [Concept('martial_skill','válečnické dovednosti')|E] ([martial_i][ROOT.Char.GetSkill( 'martial' )|V])" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gdp_visit_holding_rare_recruit_skill.stewardship: "[ROOT.Char.GetFirstName] má [ROOT.Char.Custom('GetVisitHoldingColoredStewardshipSkillLevel')] [Concept('stewardship_skill','správcovské dovednosti')|E] ([stewardship_i][ROOT.Char.GetSkill( 'stewardship' )|V])" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gdp_visit_holding_rare_recruit_skill.intrigue: "[ROOT.Char.GetFirstName] má [ROOT.Char.Custom('GetVisitHoldingColoredIntrigueSkillLevel')] [Concept('intrigue_skill','pletichářské dovednosti')|E] ([intrigue_i][ROOT.Char.GetSkill( 'intrigue' )|V])" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gdp_visit_holding_rare_recruit_skill.learning: "[ROOT.Char.GetFirstName] má [ROOT.Char.Custom('GetVisitHoldingColoredLearningSkillLevel')] [Concept('learning_skill','učenosti')|E] ([learning_i][ROOT.Char.GetSkill( 'learning' )|V])" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gdp_visit_holding_rare_recruit_court_position.partner: "[ROOT.Char.GetFirstNamePossessiveNoTooltip] [Concept('aptitude','Způsobilost')|E] ve vašem úřadu [GetCourtPositionType('partner_court_position').GetName()] je [ROOT.Char.GetCourtPositionAptitude( GetCourtPositionType('partner_court_position') )]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gdp_visit_holding_rare_recruit_court_position.translator: "[ROOT.Char.GetFirstNamePossessiveNoTooltip] [Concept('aptitude','Způsobilost')|E] ve vašem úřadu [GetCourtPositionType('translator_court_position').GetName()] je [ROOT.Char.GetCourtPositionAptitude( GetCourtPositionType('translator_court_position') )]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gdp_visit_holding_rare_recruit_court_position.fixer: "[ROOT.Char.GetFirstNamePossessiveNoTooltip] [Concept('aptitude','Způsobilost')|E] ve vašem úřadu [GetCourtPositionType('fixer_court_position').GetName()] je [ROOT.Char.GetCourtPositionAptitude( GetCourtPositionType('fixer_court_position') )]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gdp_visit_holding_rare_recruit_court_line.empty: "" # todo: NEW TRANSLATION
+ market_recruitment_success.t: "Úspěšný nábor" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1400.t: "Návštěva doků v [ROOT.Char.GetCurrentLocation.GetBaronyNameExplicitlyNoTooltip]" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1400.intro: "V rušném přístavu [ROOT.Char.GetCurrentLocation.GetBaronyNameExplicitly] dělníci pilně vykládají náklad nejrůznějších tvarů a velikostí." # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1400.asia: "Ztvrdlé ruce opatrně přenášejí bedny s hedvábím a pytle s čajovými lístky. Brzy zásobí zázraky zbytek známého světa; džunky je bezpečně převezou přes rozbouřené moře." # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1400.mena_india: "Uprostřed zmatku si kupec prohlíží náklad v několika poškozených bednách. Na druhém konci přístavu pečlivě zapečeťují bedny s kořením, aby přečkaly nebezpečnou cestu přes oceán." # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1400.default: "Pytle s obilím a solí se nakládají na lodě a míří do vzdálených zemí. Právě zakotvila mohutná dubová koga a vystupuje z ní skupina cizích kupců v pestrých oděvech." # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1400.outro: "Plíce mi naplní čerstvý vzduch a těším se, zda mi dnes bude štěstěna přát.\n\n…Kam bych [Select_CString(ROOT.Char.IsFemale,'měla','měl')] zamířit dál?\n\n" # todo: NEW TRANSLATION # todo: GENDER FORM ROOT.Char - over, ci ROOT je postava, ktorej sa text tyka
+ gdp_visit_holding_decision_event.1400.b: "[Select_CString(ROOT.Char.IsFemale,'Měla','Měl')] bych se mít na pozoru před zajímavými lidmi." # todo: NEW TRANSLATION # todo: GENDER FORM ROOT.Char - over, ci ROOT je postava, ktorej sa text tyka
+ gdp_visit_holding_decision_event.1400.b.tt: "Prohlídka doků může přinést následující příležitost:$gdp_visit_holding_decision_effect_recruit$" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1400.d: "[Select_CString(ROOT.Char.IsFemale,'Měla','Měl')] bych si promluvit s tím kapitánem." # todo: NEW TRANSLATION # todo: GENDER FORM ROOT.Char - over, ci ROOT je postava, ktorej sa text tyka
+ gdp_visit_holding_decision_event.1400.d.tt: "Promluvit si s kapitánem\n$gdp_visit_holding_rare_spawn_alert.tt$" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1400.d_second: "[Select_CString(ROOT.Char.IsFemale,'Měla','Měl')] bych si znovu promluvit s [sea_captain.GetFirstNameNoTooltip]." # todo: NEW TRANSLATION # todo: GENDER FORM ROOT.Char - over, ci ROOT je postava, ktorej sa text tyka
+ gdp_visit_holding_decision_event.1400.c.tt: "Zatím opustit doky" # todo: NEW TRANSLATION
+ DECISION_ALREADY_VISITING_HOLDING: "[CHARACTER.Custom('IsAlreadyVisitingHolding')]" # todo: NEW TRANSLATION
+ DECISION_ALREADY_VISITING_HOLDING_TIME: "Tato akce bude znovu dostupná [GetCurrentDateWithDiff( GetVarTimeRemaining( ROOT.Char.MakeScope, 'gdp_visit_holding_is_visiting') )]" # todo: NEW TRANSLATION
+ DECISION_ALREADY_VISITING_HOLDING_NO_TIME: "Již navštěvujete državu" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1340.t: "Oddech v [ROOT.Char.GetCurrentLocation.GetBaronyNameExplicitlyNoTooltip]" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1340.desc: "Obchodní svět dokáže být únavný. Člověk může prohlédnout jen omezené množství nabídek a nasadit jen omezený počet falešných úsměvů, než si potřebuje pořádně odpočinout.\n\n" # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1340.tea: "Tady v čajovně mohu na chvíli nechat starosti společnosti za sebou.\n\nJe úlevné jen tak usrkávat horký čerstvý čaj a prohodit pár slov, novinek a klepů s místními štamgasty." # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1340.hashish: "Tady v hašišovně mohu na chvíli nechat starosti společnosti za sebou.\n\nJe úlevné jen tak posedět v chládku a tichu a prohodit pár slov, novinek a klepů s místními štamgasty." # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1340.drink: "Tady v krčmě mohu na chvíli nechat starosti společnosti za sebou.\n\nJe úlevné jen tak upíjet dobrý [ROOT.Char.Custom('RegionalAlcoholicDrink')] a prohodit pár slov, novinek a klepů s místními štamgasty." # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1340.food: "Tady v hodovní síni mohu na chvíli nechat starosti společnosti za sebou.\n\nJe úlevné jen tak ochutnávat z bohatě prostřeného stolu, uzobávat [ROOT.Char.Custom('FavoriteTreat')] a prohodit pár slov, novinek a klepů s místními štamgasty." # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1340.bath: "Tady v lázních mohu na chvíli nechat starosti společnosti za sebou.\n\nJe úlevné jen tak se ponořit do léčivé vody a prohodit pár slov, novinek a klepů s místními štamgasty." # todo: NEW TRANSLATION
+ gdp_visit_holding_decision_event.1340.a: "[Select_CString(ROOT.Char.IsFemale,'Měla','Měl')] bych to dělat častěji." # todo: NEW TRANSLATION # todo: GENDER FORM ROOT.Char - over, ci ROOT je postava, ktorej sa text tyka

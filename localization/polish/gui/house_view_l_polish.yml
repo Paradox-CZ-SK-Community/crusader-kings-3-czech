@@ -1,15 +1,18 @@
 ﻿l_polish:
- HOUSE_VIEW_FOUNDED: "Založeno Léta Páně [DynastyHouse.GetFoundYear] zakladatelem [DynastyHouse.GetFounder.GetName]"
+ HOUSE_VIEW_FOUNDED: "Založeno Léta Páně [DynastyHouse.GetFoundYear]" # todo: CHANGED (predtym: Založeno Léta Páně [DynastyHouse.GetFoundYear] zakladatelem [DynastyHouse.GetFounder.GetName])
+ HOUSE_VIEW_FOUNDED_TT: "Zakladatel: [DynastyHouse.GetFounder.GetName]" # todo: NEW TRANSLATION
  DYNASTY_VIEW_CONCEPT: "[Concept('dynasty','Dynastie')|E] rodu [DynastyHouse.GetBaseNameNoTooltip]"
  HOUSE_VIEW_CONCEPT: "[SelectLocalization( DynastyHouse.IsPlayerMember, 'HOUSE_VIEW_PLAYER_IS_MEMBER', 'HOUSE_VIEW_NOT_YOUR_HOUSE')]"
- HOUSE_VIEW_NOT_YOUR_HOUSE: "Šlechtický [Concept('house','rod')|E]"
+ HOUSE_VIEW_NOT_YOUR_HOUSE: "[SelectLocalization( DynastyHouse.GetGovernment.HasGovernmentFlag('government_is_merchant'), 'HOUSE_VIEW_MERCHANT_HOUSE', 'HOUSE_VIEW_NOBLE_HOUSE')]" # todo: CHANGED (predtym: Šlechtický [Concept('house','rod')|E])
+ HOUSE_VIEW_MERCHANT_HOUSE: "[Concept('merchant','Kupec')|E] [Concept('house','Rod')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ HOUSE_VIEW_NOBLE_HOUSE: "Šlechtický [Concept('house','rod')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  HOUSE_VIEW_PART_OF: "Součást"
  HOUSE_VIEW_PART_OF_DYNASTY: "Dynastie [Dynasty.GetBaseNameNoTooltip]"
  HOUSE_VIEW_DYNASTY_PRESTIGE: "Další [Concept('dynasty_prestige_level','úroveň věhlasu dynastie')|E]: #high [Dynasty.GetNextPrestigeLevelName] #!"
  HOUSE_HEAD_HEIR: "Dědic hlavy rodu: [Character.GetUIName|U]"
  DYNASTY_VIEW_DYNASTY_PRESTIGE: "[Concept('dynasty_prestige','Věhlas dynastie')|E]: [dynasty_prestige_i][Dynasty.GetPrestige|V0]"
  DYNASTY_VIEW_DYNASTY_PRESTIGE_TOOLTIP: "#T Věhlas#!\n[Concept('dynast','Hlava dynastie')|E] jej může utrácet za různé akce. Získávání věhlasu postupně zvyšuje úroveň nádhery [Concept('dynasty','dynastie')|E]."
- HOUSE_VIEW_HEAD_OF_THE_HOUSE: "[house_head|E]"
+ HOUSE_VIEW_HEAD_OF_THE_HOUSE: "[Concept('house_head','Hlava rodu')|E]" # todo: CONCEPT CASE
  HOUSE_VIEW_HEIR_OF_THE_HOUSE: "Dědic rodu"
  HOUSE_VIEW_SHOW_DYNASTY_TT: "#T Zobrazit [Concept('dynasty_perks','dynastické odkazy')|E]#!"
  HOUSE_VIEW_NO_LEGACIES: "Dynastie [Dynasty.GetBaseNameNoTooltip] zatím neodemkla žádné odkazy"
@@ -17,8 +20,8 @@
  HOUSE_VIEW_DOMICILE_NAME: "[Domicile.GetName|U]"
  HOUSE_VIEW_DOMICILE_LOCATION: "Poloha: [Domicile.GetLocation.GetBaronyNameExplicitly]"
  DYNASTY_VIEW_TITLE: "Dynastie [Dynasty.GetBaseNameNoTooltip]"
- DYNASTY_VIEW_DYNAST: "[dynast|E]"
- DYNASTY_VIEW_DYNAST_AND_HOUSE_HEAD: "[dynast|E] a [house_head|E]"
+ DYNASTY_VIEW_DYNAST: "[Concept('dynast','Hlava dynastie')|E]" # todo: CONCEPT CASE
+ DYNASTY_VIEW_DYNAST_AND_HOUSE_HEAD: "[Concept('dynast','Hlava dynastie')|E] a [Concept('house_head','hlava rodu')|E]" # todo: CONCEPT CASE
  HOUSE_VIEW_DYNASTY_PRESTIGE_INCOME: "[Dynasty.GetPrestigeIncome|0=+]/měsíc"
  HOUSE_VIEW_DYNASTY_PRESTIGE_INCOME_TT_ALIVE_CAPPED: "$NUM|V$ žijících členů #weak (omezeno na 100)#!"
  HOUSE_VIEW_DYNASTY_PRESTIGE_INCOME_TT_ALIVE: "$NUM|V$ žijících členů"
@@ -32,9 +35,10 @@
  HOUSE_VIEW_MOTTO: "„[DynastyHouse.GetMotto]“"
  HOUSE_VIEW_PLAYER_IS_MEMBER: "Tvůj [Concept('house','rod')|E]"
  HOUSE_VIEW_NON_PLAYER_MEMBER: "Rod [Character.Custom('CZ_ShortUIName_G')|U]"
- DYNASTY_HOUSE_TT_HEAD_OF_HOUSE: "[house_head|E]: [DynastyHouse.GetHeadOfHouse.GetShortUIName|U]"
- DYNASTY_HOUSE_TT_DYNASTY: "[dynasty|E]: [DynastyHouse.GetDynasty.GetBaseName]"
- DYNASTY_HOUSE_TT_DYNASTY_LEVEL: "[dynasty_prestige_level|E]: [DynastyHouse.GetDynasty.GetPrestigeLevelName]"
+ DYNASTY_HOUSE_TT_HEAD_OF_HOUSE: "[Concept('house_head','Hlava rodu')|E]: [DynastyHouse.GetHeadOfHouse.GetShortUIName|U]" # todo: CONCEPT CASE
+ DYNASTY_HOUSE_TT_HOUSE_TITLE: "[Concept('title','titul')|e] [Concept('house','rodu')|E]: [DynastyHouse.GetHouseTitle.GetName]" # todo: NEW TRANSLATION
+ DYNASTY_HOUSE_TT_DYNASTY: "[Concept('dynasty','Dynastie')|E]: [DynastyHouse.GetDynasty.GetBaseName]" # todo: CONCEPT CASE
+ DYNASTY_HOUSE_TT_DYNASTY_LEVEL: "[Concept('dynasty_prestige_level','Úroveň věhlasu')|E]: [DynastyHouse.GetDynasty.GetPrestigeLevelName]" # todo: CONCEPT CASE
  DYNASTY_HOUSE_TT_LIVING_MEMBERS: "Žijící členové: [DynastyHouse.GetNumberOfMembers|V]"
  DYNASTY_HOUSE_TT_HOUSE_RELATION: "[Concept('house_relation','Vztah rodů')|E]: [DynastyHouse.GetHouseRelationWith( GetPlayer.GetHouse ).GetLevel.GetName]"
  HOUSE_VIEW_FOUNDING_HOUSE: "Zakladatelský rod"
@@ -67,11 +71,10 @@
  HOUSE_LIST_CADET: "[Concept('cadet_branch','Kadetská větev')|E]"
  HOUSE_LIST_MEMBERS: "Žijící členové: [DynastyHouse.GetNumberOfMembers]"
  HOUSE_LIST_FOUNDATION: "Založeno roku [DynastyHouse.GetFoundYear] po Kr."
- HOUSE_LIST_HEAD: "[house_head|E]: [DynastyHouse.GetHeadOfHouse.GetName]"
+ HOUSE_LIST_HEAD: "[Concept('house_head','Hlava rodu')|E]: [DynastyHouse.GetHeadOfHouse.GetName]" # todo: CONCEPT CASE
  HOUSE_MODIFIERS: "Modifikátory rodu:"
  DYNASTY_MODIFIERS: "Modifikátory dynastie:"
  HOUSE_UNITY_MODIFIERS: "Modifikátory:"
- HOUSE_UNITY_ACTIONS_INSTRUCTIONS: "Prováděj [Concept('house_unity_unifying_actions','sjednocující akce rodu')|E] a [Concept('house_unity_devisive_actions','rozkladné akce rodu')|E], abys ovlivnil [Concept('house_unity','jednotu rodu')|E]"
  HOUSE_VIEW_LEGACY_TOOLTIP_HEADER: "#T $NAME$#!"
  HOUSE_VIEW_LEGACY_TOOLTIP_ITEM: "#T $PERK$#!\n$EFFECT$\n\n"
  HOUSE_VIEW_HOUSE_HEAD_OF: "[Concept('house_head','Hlava rodu')|E] rodu [Character.GetDynastyHouseNameNoTooltip]:"
@@ -94,18 +97,22 @@
  HOUSE_VIEW_MEMBERS_TT: "#T Zobrazit všechny členy rodu [DynastyHouse.GetBaseNameNoTooltip]#!"
  HOUSE_VIEW_MEMBERS: "[DynastyHouse.GetNumberOfMembers|V] žijících členů"
  HOUSE_UNITY_STAGE_TOOLTIP: "[GUIHouseUnityStage.GetModifierDesc]"
- HOUSE_UNITY_EFFECTS_TITLE: "Účinky [Concept('house_unity','jednoty rodu')|E]"
- HOUSE_UNITY_EFFECTS_NOT_APPLIED_TO_YOU: "@alert_icon! Nevztahuje se na tebe, protože nemáš [Concept('clan','klanovou')|E] vládu"
- HOUSE_UNITY_DECISIONS_TITLE: "Rozhodnutí [Concept('house_unity','jednoty rodu')|E]"
- HOUSE_UNITY_RECENT_CHANGES_LABEL: "Nedávné změny jednoty"
+ HOUSE_UNITY_EFFECTS_TITLE: "Účinky [HouseUnityType.GetConcept]" # todo: CHANGED (predtym: Účinky [Concept('house_unity','jednoty rodu')|E])
+ HOUSE_UNITY_EFFECTS_NOT_APPLIED_TO_YOU: "@alert_icon! Nevztahuje se na tebe, protože tvá [Concept('government','vláda')|E] nepoužívá [HouseUnityType.GetConcept]" # todo: CHANGED (predtym: @alert_icon! Nevztahuje se na tebe, protože nemáš [Concept('clan','klanovou')|E] vládu) # todo: CONCEPT CASE
+ HOUSE_UNITY_DECISIONS_TITLE: "Rozhodnutí [HouseUnityType.GetConcept]" # todo: CHANGED (predtym: Rozhodnutí [Concept('house_unity','jednoty rodu')|E])
+ HOUSE_UNITY_RECENT_CHANGES_LABEL: "Nedávné změny [HouseUnityType.GetShortName]" # todo: CHANGED (predtym: Nedávné změny jednoty)
  HOUSE_UNITY_NO_RECENT_CHANGE_LABEL: "#weak V poslední době nedošlo k žádným změnám#!"
  HOUSE_UNITY_STAGE_CHANGE_VALUE_TRIGGER_CHARACTER: "#low [HouseUnityChangelogEntry.GetDate.GetString]:#! [HouseUnityChangelogEntry.GetCharacter.GetName]"
- HOUSE_UNITY_STAGE_CHANGE_VALUE_TRIGGER_CHANGE_STAGE: "#low [HouseUnityChangelogEntry.GetDate.GetString]:#! Jednota rodu se změnila na [HouseUnityChangelogEntry.GetNextHouseUnityStageType.GetName]"
- HOUSE_UNITY_VALUE_TT_TITLE: "[Concept('house_unity','Jednota rodu')|E]:"
- HOUSE_UNITY_AFFECT_UNITY_CURRENT_LEVEL: "Toto je tvá současná [Concept('house_unity_level','úroveň jednoty rodu')|E]"
- HOUSE_UNITY_AFFECT_UNITY_INCREASE_LEVEL: "K dosažení této úrovně prováděj [Concept('house_unity_unifying_actions','sjednocující akce rodu')|E] vůči členům svého [Concept('house','rodu')|E], aby se [Concept('house_unity','jednota rodu')|E] zvýšila"
- HOUSE_UNITY_AFFECT_UNITY_DECREASE_LEVEL: "K dosažení této úrovně prováděj [Concept('house_unity_devisive_actions','rozkladné akce rodu')|E] vůči členům svého [Concept('house','rodu')|E], aby se [Concept('house_unity','jednota rodu')|E] snížila"
- HOUSE_UNITY_AFFECT_UNITY_CHANGE_GOVERNMENT: "K dosažení této úrovně musíš změnit svou vládu"
+ HOUSE_UNITY_STAGE_CHANGE_VALUE_TRIGGER_CHANGE_STAGE: "#low [HouseUnityChangelogEntry.GetDate.GetString]:#! [HouseUnityType.GetConcept] se změnila na [HouseUnityChangelogEntry.GetNextHouseUnityStageType.GetName]" # todo: CHANGED (predtym: low [HouseUnityChangelogEntry.GetDate.GetString]: ! Jednota rodu se změnila na [HouseUnityChangelogEntry.GetNextHouseUni)
+ HOUSE_UNITY_VALUE_TT_TITLE: "[HouseUnityType.GetConcept]:" # todo: CHANGED (predtym: [Concept('house_unity','Jednota rodu')|E]:)
+ HOUSE_UNITY_AFFECT_UNITY_CURRENT_LEVEL: "Toto je tvá současná [HouseUnityType.GetConcept]" # todo: CHANGED (predtym: Toto je tvá současná [Concept('house_unity_level','úroveň jednoty rodu')|E])
+ HOUSE_UNITY_AFFECT_UNITY_INCREASE_LEVEL: "[SelectLocalization( GetPlayer.GetGovernment.HasGovernmentFlag('government_uses_company_sentiment'), 'COMPANY_SENTIMENT_AFFECT_INCREASE_LEVEL', 'HOUSE_UNITY_AFFECT_INCREASE_LEVEL' )]" # todo: CHANGED (predtym: K dosažení této úrovně prováděj [Concept('house_unity_unifying_actions','sjednocující akce rodu')|E] vůči členům svého [)
+ HOUSE_UNITY_AFFECT_INCREASE_LEVEL: "K dosažení této úrovně prováděj [Concept('house_unity_unifying_actions','sjednocující činy')|E] vůči členům svého [Concept('house','rodu')|E] a zvyšuj [Concept('house_unity','jednota rodu')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ COMPANY_SENTIMENT_AFFECT_INCREASE_LEVEL: "K dosažení této úrovně prováděj [Concept('company_sentiment_positive_actions','činy posilující legitimitu')|E] a posouvej [Concept('company_sentiment','směřování společnosti')|E] směrem k [company_sentiment_concerted_i][Concept('company_sentiment_concerted','povýšenému do šlechtickému stavu')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ HOUSE_UNITY_AFFECT_UNITY_DECREASE_LEVEL: "[SelectLocalization( GetPlayer.GetGovernment.HasGovernmentFlag('government_uses_company_sentiment'), 'COMPANY_SENTIMENT_AFFECT_DECREASE_LEVEL', 'HOUSE_UNITY_AFFECT_DECREASE_LEVEL' )]" # todo: CHANGED (predtym: K dosažení této úrovně prováděj [Concept('house_unity_devisive_actions','rozkladné akce rodu')|E] vůči členům svého [Con)
+ HOUSE_UNITY_AFFECT_DECREASE_LEVEL: "K dosažení této úrovně prováděj [Concept('house_unity_devisive_actions','rozdělující činy')|E] vůči členům svého [Concept('house','rodu')|E] a snižuj [Concept('house_unity','jednota rodu')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ COMPANY_SENTIMENT_AFFECT_DECREASE_LEVEL: "K dosažení této úrovně prováděj [Concept('company_sentiment_negative_actions','činy vedené touhou po zisku')|E] a posouvej [Concept('company_sentiment','směřování společnosti')|E] směrem k [company_sentiment_divided_i][Concept('company_sentiment_divided','dravému')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ HOUSE_UNITY_AFFECT_UNITY_CHANGE_GOVERNMENT: "K dosažení této úrovně musíš změnit svou [Concept('government','vládu')|E]" # todo: CHANGED (predtym: K dosažení této úrovně musíš změnit svou vládu) # todo: CONCEPT CASE
  HOUSE_VIEW_POWERLESS_FAMILY: "#X @warning_icon! Není považována za [Concept('powerful_family','mocnou rodinu')|E]#!"
  HOUSE_VIEW_POWER_BONUS: "[SelectLocalization( HouseAspiration.IsValid, HouseAspiration.GetName )]"
  HOUSE_VIEW_HOUSE_POWER_LEVEL_TT: "#T [HouseAspiration.GetName]#!\n[HouseAspiration.GetLevelName( PdxGuiWidget.GetIndexInDataModel )]\n\n[HouseAspiration.GetLevelDesc( DynastyHouse.Self, PdxGuiWidget.GetIndexInDataModel )]"
@@ -129,3 +136,7 @@
  ADMINISTRATIVE_GOVERNMENT_HOUSE_POWERFULNESS_TOOLTIP_HEADING_NOBLE: "[DynastyHouse.GetBaseNameNoTooltip] je [Concept('noble_family','šlechtická rodina')|E]"
  HOUSE_RELATIONS_CURRENT_RELATION: "Současný vztah:"
  HOUSE_VIEW_NO_RELATIONS: "Rod [DynastyHouse.GetBaseNameNoTooltip] nemá žádné [Concept('house_relations','vztahy rodů')|E] s žádným jiným [Concept('house','rodem')|E]"
+ NO_HOUSE_RELATION: "Žádný [Concept('house_relation','vztah rodů')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ COMPANY_DIRECTION_TAB_BUTTON: "Směřování" # todo: NEW TRANSLATION
+ COMPANY_DIRECTION_VALUE_CHANGE_TOWARD_ENNOBLED: "#low [HouseUnityChangelogEntry.GetDate.GetString]:#! [HouseUnityChangelogEntry.GetCharacter.GetName] — [Concept('company_direction','$game_concept_company_sentiment$')|E] [HouseUnityChangelogEntry.GetProgress|M] pokroku směrem k [company_sentiment_concerted_i][Concept('company_sentiment_concerted','povýšenému do šlechtickému stavu')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ COMPANY_DIRECTION_VALUE_CHANGE_TOWARD_RAPACIOUS: "#low [HouseUnityChangelogEntry.GetDate.GetString]:#! [HouseUnityChangelogEntry.GetCharacter.GetName] — [Concept('company_direction','$game_concept_company_sentiment$')|E] [Abs_int32( HouseUnityChangelogEntry.GetProgress )|M] pokroku směrem k [company_sentiment_divided_i][Concept('company_sentiment_divided','dravému')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE

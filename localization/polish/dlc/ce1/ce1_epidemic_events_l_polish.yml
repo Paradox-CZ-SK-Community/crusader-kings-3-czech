@@ -215,7 +215,7 @@
  look_for_physician_epidemic_tt: "Vyhledáš postavu na pozici [GetCourtPositionType('court_physician_court_position').GetName()], která ti pomůže zmírnit dopady [Concept('epidemic','moru')|E]"
  physician_will_help_epidemic_tt: "Díky pozici [GetCourtPositionType('court_physician_court_position').GetName()] získáš řadu možností, jak zmírnit dopady [Concept('epidemic','moru')|E]"
  epidemic_events.1110.t: "Mrtvoly v ulicích"
- epidemic_events.1110.desc: "[chaplain.Custom2('MyCharacterIntroduction', ROOT.Char)|U] přichází s popelavou tváří.\n\n„[Select_CString(ROOT.Char.IsFemale,'Má paní','Můj pane')], mrtví hnijí v ulicích. Nedokážeme je pohřbívat dost rychle - miasma houstne. Musíme zpřístupnit [GetBuilding('burial_site_01').GetName] v hrabství [graveyard_county.GetName].“\n\nNežádá o svolení. Prosí o ně."
+ epidemic_events.1110.desc: "[chaplain.Custom2('MyCharacterIntroduction', ROOT.Char)|U] přichází s popelavou tváří.\n\n„[ROOT.Char.GetLadyLord], mrtví hnijí v ulicích. Nedokážeme je pohřbívat dost rychle - miasma houstne. Musíme zpřístupnit [GetBuildingType('burial_site_01').GetName] v hrabství [graveyard_county.GetName].“\n\n[chaplain.GetSheHe|U] nežádá o svolení. [chaplain.GetSheHe|U] prosí o ně." # todo: CHANGED (predtym: [chaplain.Custom2('MyCharacterIntroduction', ROOT.Char)|U] přichází s popelavou tváří.\n\n„[Select_CString(ROOT.Char.IsF)
  epidemic_events.1110.a: "Budiž."
  epidemic_events.1110.b: "To místo je určeno jen mně a mým blízkým."
  epidemic_events.1120.t: "Hrůzný dar"
@@ -232,7 +232,7 @@
  epidemic_events.1121.b.failure: "Karanténa selže"
  epidemic_events.1121.c: "Hlavně to ode mě držte dál!"
  epidemic_events.1122.t: "Vrácený dar"
- epidemic_events.1122.desc: "Vzduchem se nese tiché hvízdání, když se za hradbami [flung_corpse_location.GetName] cosi objeví. Hvízdání sílí, až předmět náhle s mokrým žuchnutím dopadne doprostřed tábora.\n\nV kráteru leží krev, kosti a zuby, sotva ještě spojené s beztvarou hmotou masa, k níž kdysi patřily. Zdá se, že si náš „dar“ našel cestu zpátky."
+ epidemic_events.1122.desc: "Vzduchem se nese tiché hvízdání, když se za hradbami [flung_corpse_location.GetName] cosi objeví. Hvízdání sílí, až předmět náhle s mokrým žuchnutím dopadne doprostřed tábora.\n\nV kráteru leží krev, kosti a zuby, sotva ještě spojené s beztvarou hmotou masa, k níž kdysi patřily. Zdá se, že si náš „dar“ [Select_CString(ROOT.Char.IsFemale,'našla','našel')] cestu zpátky." # todo: GENDER FORM ROOT.Char - over, ci ROOT je postava, ktorej sa text tyka
  epidemic_events.1122.a: "Teď už je to příliš zohavené na převoz."
  epidemic_events.1122.b: "Posbírejte to a zkuste to znovu!"
  epidemic_events.1122.b.success: "Vymrštíš „tělo“ zpět"
@@ -342,7 +342,7 @@
  epidemic_events.5000.d: "Musíme vybít ovce."
  epidemic_events.5000.e: "Není to nutné."
  epidemic_events.5001.t: "Ponuré zprávy [CZPrepZ(epidemic_county.GetNameNoTierNoTooltip)] [epidemic_county.Custom('CZ_LandedNameNoTierNoTooltip_G')]" # todo: CHANGED (predtym: Zataraste dveře!)
- epidemic_events.5001.desc: "[courtier.Custom2('MyCharacterIntroduction', ROOT.Char)|U] vtrhne dovnitř s vytřeštěnýma očima. Náruč zaplňuje [ROOT.Char.Custom('GetWritingMaterial')].\n\n„[ROOT.Char.Custom('FormOfAddressForLiege')|U], [epidemic_county.GetNameNoTier] se topí v mrtvolách! Ulice jsou ucpané smrtí!“\n\nProbírám se změtí zpráv a snažím se v tom vyznat.\n\nNaposledy, co jsem [Select_CString(ROOT.Char.IsFemale,'slyšela','slyšel')] zprávy, byla [epidemic_scope.GetName] pod kontrolou..." # todo: CHANGED, CHECK FORMAT (predtym: [courtier.Custom2('MyCharacterIntroduction', ROOT.Char)|U] vtrhne dovnitř s vytřeštěnýma očima. Náruč zaplňuje [ROOT.Cha) # todo: FORMAT chýba [ROOT.Char.Custom('')]; navyše [ROOT.Char.Custom('')|U], [Select_CString(ROOT.Char.IsFemale,'','')]
+ epidemic_events.5001.desc: "[courtier.Custom2('MyCharacterIntroduction', ROOT.Char)|U] vtrhne dovnitř s vytřeštěnýma očima. Náruč zaplňuje [ROOT.Char.Custom('GetWritingMaterial')].\n\n„[ROOT.Char.Custom('FormOfAddressForLiege')|U], [epidemic_county.GetNameNoTier] se topí v mrtvolách! Ulice jsou ucpané smrtí!“\n\nProbírám se změtí zpráv a snažím se v tom vyznat.\n\nNaposledy, co jsem [Select_CString(ROOT.Char.IsFemale,'slyšela','slyšel')] zprávy, byla [epidemic_scope.GetName] pod kontrolou..." # todo: CHANGED, CHECK FORMAT (predtym: [courtier.Custom2('MyCharacterIntroduction', ROOT.Char)|U] vtrhne dovnitř s vytřeštěnýma očima. Náruč zaplňuje [ROOT.Cha)
  epidemic_events.5001.a: "„Uzavřete to! Uzavřete #EMP všechno!#!“"
  epidemic_events.5001.b: "Věřím těm, kdo mají [epidemic_county.GetName] na starosti."
  epidemic_events.5001.c: "„Copak nemám dost starostí?! Tohle mi ještě chybělo: [courtier.Custom2('InsultNoun', ROOT.Char)]!“"
@@ -468,7 +468,7 @@
  epidemic_events.5905.t: "Nakažlivá nervozita"
  epidemic_events.5905.desc: "Jakmile opadne počáteční rozruch, který mezi štamgasty vyvolala má přítomnost, ukáže se tahle krčma jako docela příjemné místo k odpočinku. [peasant.GetFirstName], místní [Select_CString(peasant.IsFemale,'hostinská','hostinský')], však působí poněkud nervózně.\n\n„Víte, [ROOT.Char.Custom('FormOfAddressForLiege')], o té velké morové ráně? Slyšeli jste, co to dělá s lidmi? Prý z nich dělá #EMP [ROOT.GetCharacter.Custom('GetPlagueEffect')]!#!“ [peasant.GetFirstNameNoTooltip] zběsile gestikuluje. „To se povídá! Jak tohle vůbec přežijeme?!“\n\nVěčně zaměstnané #EMP „povídá se“#! zase odvádí znamenitou práci..."
  epidemic_events.5905.a: "„Není třeba panikařit. Věřte mi, [Select_CString(ROOT.Char.IsFemale,'jsem lékařka','jsem lékař')].“"
- epidemic_events.5905.a.tt: "Všechna [Concept('baronies','baronství')|E], s kterými sousedí [province.GetName], mají #color_white 50%#! šanci získat stejný [Concept('modifier','modifikátor')|E]"
+ epidemic_events.5905.a.tt: "Všechno [Concept('baronies','baronství')|E], s kterými sousedí [province.GetName], mají #color_white 50%#! šanci získat stejný [Concept('modifier','modifikátor')|E]" # todo: CONCEPT CASE
  epidemic_events.5905.b: "„Připadá vám to vůbec pravděpodobné?“"
  epidemic_events.5905.b.tt.success: "Úspěšně je přesvědčíš"
  epidemic_events.5905.b.tt.failure: "Nevypadají přesvědčeně"

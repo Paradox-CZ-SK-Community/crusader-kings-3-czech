@@ -1,8 +1,8 @@
 ﻿l_polish:
  great_project_type_great_wall: "Vylepšit Velkou zeď"
  great_project_type_great_wall_desc: "Velká zeď je svědectvím stavitelského umu a vynalézavosti našich předků, kteří ji vybudovali na obranu před případnými nájezdníky. Čas se však podepsal i na ní a zeď nyní naléhavě potřebuje vylepšit."
- great_project_type_great_wall_province_has_great_wall: "[province.GetNameNoTooltip] obsahuje úsek stavby [GetBuilding('the_great_wall_01').GetName]"
- great_project_type_great_wall_province_gains_great_wall: "V [Concept('holdings','državách')|E], jejichž [Concept('great_project_contributions','příspěvky')|E] byly financovány, budou vylepšeny úseky [Concept('building','budovy')|E] [GetBuilding('the_great_wall_04').GetName]"
+ great_project_type_great_wall_province_has_great_wall: "[province.GetNameNoTooltip] obsahuje úsek stavby [GetBuildingType('the_great_wall_01').GetName]" # todo: CHANGED (predtym: [province.GetNameNoTooltip] obsahuje úsek stavby [GetBuilding('the_great_wall_01').GetName])
+ great_project_type_great_wall_province_gains_great_wall: "V [Concept('holdings','državách')|E], jejichž [Concept('great_project_contributions','příspěvky')|E] byly financovány, budou vylepšeny úseky [Concept('building','budovy')|E] [GetBuildingType('the_great_wall_04').GetName]" # todo: CHANGED (predtym: V [Concept('holdings','državách')|E], jejichž [Concept('great_project_contributions','příspěvky')|E] byly financovány, b)
  great_project_type_great_wall_possessive: "Velké zdi"
  great_project_type_great_wall_contribution_master_builder: "Najmout mistra stavitele a zahájit výstavbu"
  great_project_type_great_wall_contribution_master_builder_desc: "Opevnění je třeba brát vážně! Dohledem nad tímto [Concept('great_project','velkým projektem')|e] musí být pověřeni ti nejschopnější odborníci, aby byly použity nejlepší materiály, najati nejodolnější dělníci a vybudovány co nejpevnější hradby."
@@ -97,10 +97,10 @@
  great_project_type_great_wall_extend_to_shanhai_pass_contribution_materials_07_desc: "$great_project_walls_extend_materials_generic_desc$"
  great_project_type_great_wall_extend_to_shanhai_pass_contribution_materials_08: "$great_project_walls_extend_materials_generic$"
  great_project_type_great_wall_extend_to_shanhai_pass_contribution_materials_08_desc: "$great_project_walls_extend_materials_generic_desc$"
- add_great_wall_in_shanhai_desc: "Každá [Concept('holding','država')|E] v [GetGeographicalRegion('dlc_tgp_great_wall_shanhai').GetName] získá [Concept('great_building','velkolepou budovu')|E] [GetBuilding('the_great_wall_04').GetName]"
+ add_great_wall_in_shanhai_desc: "Každá [Concept('holding','država')|E] v [GetGeographicalRegion('dlc_tgp_great_wall_shanhai').GetName] získá [Concept('great_district','velkolepou čtvrť')|E] [GetBuildingType('the_great_wall_04').GetName]" # todo: CHANGED (predtym: Každá [Concept('holding','država')|E] v [GetGeographicalRegion('dlc_tgp_great_wall_shanhai').GetName] získá [Concept('gr)
  great_project_type_great_wall_extend_to_liaodong: "Prodloužit Velkou zeď do Liao-tungu"
  great_project_type_great_wall_extend_to_liaodong_desc: "S rozšiřováním našich hranic musí růst i Velká zeď a chránit také pobřeží. Každá část našeho panství, ať už na souši či na moři, musí být zabezpečena."
- add_great_wall_in_liaodong_desc: "Každá [Concept('holding','država')|E] v [GetGeographicalRegion('dlc_tgp_great_wall_liaodong').GetName] získá [Concept('great_building','velkolepou budovu')|E] [GetBuilding('the_great_wall_04').GetName]"
+ add_great_wall_in_liaodong_desc: "Každá [Concept('holding','država')|E] v [GetGeographicalRegion('dlc_tgp_great_wall_liaodong').GetName] získá [Concept('great_district','velkolepou čtvrť')|E] [GetBuildingType('the_great_wall_04').GetName]" # todo: CHANGED (predtym: Každá [Concept('holding','država')|E] v [GetGeographicalRegion('dlc_tgp_great_wall_liaodong').GetName] získá [Concept('g)
  great_project_type_great_wall_extend_to_liaodong_contribution_materials_01: "$great_project_walls_extend_materials_generic$"
  great_project_type_great_wall_extend_to_liaodong_contribution_materials_01_desc: "$great_project_walls_extend_materials_generic_desc$"
  great_project_type_great_wall_extend_to_liaodong_contribution_materials_02: "$great_project_walls_extend_materials_generic$"
@@ -127,12 +127,16 @@
  great_project_type_construct_great_barracks: "Vybudovat Velká kasárna"
  great_project_type_construct_great_barracks_desc: "Naši vojenskou moc můžeme dát na odiv vybudováním mohutné pevnosti schopné pojmout nesčetné množství vojáků. Vojenští velitelé budou moci verbovat více vojska a udržovat početné posádky, což výrazně posílí obranyschopnost celé oblasti."
  great_project_type_construct_great_barracks_military_governor_duchy_capital: "Je [Concept('de_jure','de iure')|E] [Concept('capital','hlavním sídlem')|E] [Concept('duchy','vévodství')|E] pod vojenskou správou ([GetPlayer.Custom('GetGovernorConcept')])"
- great_project_type_construct_great_barracks_does_not_already_have_barracks: "Dosud zde nestojí [Concept('building','budova')|E] [GetBuilding('celestial_great_barracks_01').GetName]"
- great_project_type_construct_great_barracks_do_not_override_player_building: "Není v držení jiného hráče, který již má [Concept('duchy_building','vévodskou budovu')|E]"
+ great_project_type_construct_great_barracks_does_not_already_have_barracks: "Dosud zde nestojí [Concept('building','budova')|E] [GetBuildingType('celestial_great_barracks_01').GetName]" # todo: CHANGED (predtym: Dosud zde nestojí [Concept('building','budova')|E] [GetBuilding('celestial_great_barracks_01').GetName])
+ great_project_type_construct_great_barracks_do_not_override_player_building: "Není v držení jiného hráče, který již má [Concept('duchy_district','vévodskou čtvrť')|E]" # todo: CHANGED (predtym: Není v držení jiného hráče, který již má [Concept('duchy_building','vévodskou budovu')|E])
+ great_project_type_construct_great_barracks_has_governance_district: "Má $governance_district$ s volným slotem pro [Concept('building','budovu')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ great_project_type_construct_great_barracks_reserves_slot: "Žádný [Concept('great_project','velký projekt')|E] [GetGreatProjectType('construct_great_barracks').GetName] zde není plánován ani se na něm nepracuje" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ great_project_type_construct_great_barracks_failed_title: "Velká kasárna nebyla postavena" # todo: NEW TRANSLATION
+ great_project_type_construct_great_barracks_failed_desc: "[province.GetName] už nemá $governance_district$ s volným slotem pro [Concept('building','budovu')|E], takže [GetBuildingType('celestial_great_barracks_01').GetName] nemohla být přidána." # todo: NEW TRANSLATION # todo: CONCEPT CASE
  great_project_type_construct_great_barracks_possessive: "Vybudovat Velká kasárna"
  great_project_type_construct_great_barracks_province_gains_great_barracks_fallback: "Vybraná [Concept('holding','država')|E]"
- great_project_type_construct_great_barracks_province_gains_great_barracks: "[SelectLocalization(province.IsValid,province.GetName,'great_project_type_construct_great_barracks_province_gains_great_barracks_fallback')] získá [Concept('building','budovu')|E] [GetBuilding('celestial_great_barracks_01').GetName]"
- project_great_barracks_replace_tt: "@alert_icon! #alert_trial Tím nahradíš stávající [Concept('duchy_building','vévodskou budovu')|E]#!"
+ great_project_type_construct_great_barracks_province_gains_great_barracks: "[SelectLocalization(province.IsValid,province.GetName,'great_project_type_construct_great_barracks_province_gains_great_barracks_fallback')] získá [Concept('building','budovu')|E] [GetBuildingType('celestial_great_barracks_01').GetName]" # todo: CHANGED (predtym: [SelectLocalization(province.IsValid,province.GetName,'great_project_type_construct_great_barracks_province_gains_great_)
+ project_great_barracks_replace_tt: "@alert_icon! #alert_trial Tím nahradíš stávající [Concept('duchy_district','vévodskou čtvrť')|E] za $governance_district$#!" # todo: CHANGED (predtym: @alert_icon! alert_trial Tím nahradíš stávající [Concept('duchy_building','vévodskou budovu')|E] !)
  great_project_type_construct_great_barracks_contribution_base_materials: "Stavební materiál"
  great_project_type_construct_great_barracks_contribution_fort_material: "Materiál na opevnění"
  great_project_type_construct_great_barracks_contribution_work_force: "Pracovní síla"
@@ -153,7 +157,7 @@
  great_project_type_mandala_capital_01_desc: "Nadešel čas zanechat svou stopu věkům. Vztyčíme mocný chrám na počest našeho dévarádži!"
  great_project_type_mandala_capital_01_possessive: "$building_type_mandala_capital_01$"
  great_project_type_mandala_capital_01_contribution_rite_of_worthiness: "Obřad způsobilosti"
- great_project_type_mandala_capital_01_contribution_rite_of_worthiness_desc: "Prokážeme, že jsme hodni práva vybudovat toto dílo: [GetBuilding('mandala_capital_01').GetTypeName]. Zároveň budeme soupeřit o oddanost obyvatel tohoto [Concept('de_jure','de iure')|E] [Concept('kingdom','království')|E]!"
+ great_project_type_mandala_capital_01_contribution_rite_of_worthiness_desc: "Prokážeme, že jsme hodni práva vybudovat toto dílo: [GetBuildingType('mandala_capital_01').GetTypeName]. Zároveň budeme soupeřit o oddanost obyvatel tohoto [Concept('de_jure','de iure')|E] [Concept('kingdom','království')|E]!" # todo: CHANGED (predtym: Prokážeme, že jsme hodni práva vybudovat toto dílo: [GetBuilding('mandala_capital_01').GetTypeName]. Zároveň budeme soup)
  great_project_type_mandala_capital_01_contribution_slabs_of_sandstone: "Pískovcové desky"
  great_project_type_mandala_capital_01_contribution_slabs_of_sandstone_desc: "Tento chrám bude oslavovat božské, jeho výstavba však má zcela pozemské nároky. Zajištění materiálu potřebného pro tento [Concept('great_project','velký projekt')|E] patří k nejvýznamnějším možným příspěvkům."
  great_project_type_mandala_capital_01_contribution_laterite_blocks: "Lateritové bloky"
@@ -178,17 +182,17 @@
  great_project_mandala_capital_has_trickery_aspect_tt: "Máš [Concept('aspect_of_trickery','aspekt lstivosti')|E]"
  great_project_type_mandala_capital_02: "$building_type_mandala_capital_01$ – vylepšení"
  great_project_type_mandala_capital_02_desc: "Nyní máme možnost rozšířit náš mohutný chrám! Vytvořme div, který přetrvá věky!"
- great_project_type_mandala_capital_02_possessive: "$building_mandala_capital_02$"
+ great_project_type_mandala_capital_02_possessive: "$mandala_capital_02$" # todo: CHANGED (predtym: $building_mandala_capital_02$)
  great_project_type_mandala_capital_02_contribution_rite_of_worthiness: "Obřad způsobilosti"
- great_project_type_mandala_capital_02_contribution_rite_of_worthiness_desc: "Prokážeme, že jsme hodni práva dále rozvíjet [GetBuilding('mandala_capital_01').GetTypeName], a budeme soupeřit o oddanost obyvatel tohoto [Concept('de_jure','de iure')|E] [Concept('kingdom','království')|E]!"
+ great_project_type_mandala_capital_02_contribution_rite_of_worthiness_desc: "Prokážeme, že jsme hodni práva dále rozvíjet [GetBuildingType('mandala_capital_01').GetTypeName], a budeme soupeřit o oddanost obyvatel tohoto [Concept('de_jure','de iure')|E] [Concept('kingdom','království')|E]!" # todo: CHANGED (predtym: Prokážeme, že jsme hodni práva dále rozvíjet [GetBuilding('mandala_capital_01').GetTypeName], a budeme soupeřit o oddano)
  great_project_type_mandala_capital_02_contribution_brick: "Cihly"
- great_project_type_mandala_capital_02_contribution_brick_desc: "Z ničeho nic nevznikne. Tomuto [Concept('great_project','velkému projektu')|E] dodáme všechny cihly potřebné k dokončení prací na stavbě $building_mandala_capital_02$."
+ great_project_type_mandala_capital_02_contribution_brick_desc: "Z ničeho nic nevznikne. Tomuto [Concept('great_project','velkému projektu')|E] dodáme všechny cihly potřebné k dokončení prací na stavbě $mandala_capital_02$." # todo: CHANGED (predtym: Z ničeho nic nevznikne. Tomuto [Concept('great_project','velkému projektu')|E] dodáme všechny cihly potřebné k dokončení)
  great_project_type_mandala_capital_02_contribution_tiles: "Hromady tašek"
  great_project_type_mandala_capital_02_contribution_tiles_desc: "Dobrá střecha musí být pokryta taškami. Tomuto [Concept('great_project','velkému projektu')|E] pošleme ty nejlepší a ochráníme jej před vlhkostí!"
  great_project_type_mandala_capital_02_contribution_shallow_pools: "Mělké nádrže"
  great_project_type_mandala_capital_02_contribution_shallow_pools_desc: "Vodní prvky jsou nezbytné nejen pro ochlazení okolí, ale také pro naše spojení s božskou sférou."
  great_project_type_mandala_capital_02_contribution_work_force: "$great_project_type_mandala_capital_01_contribution_work_force$"
- great_project_type_mandala_capital_02_contribution_work_force_desc: "Velká díla vyžadují velké úsilí! Tomuto [Concept('great_project','velkému projektu')|E] musíme dodat více pracovní síly, aby mohla být dokončena obnova stavby $building_mandala_capital_02$."
+ great_project_type_mandala_capital_02_contribution_work_force_desc: "Velká díla vyžadují velké úsilí! Tomuto [Concept('great_project','velkému projektu')|E] musíme dodat více pracovní síly, aby mohla být dokončena obnova stavby $mandala_capital_02$." # todo: CHANGED (predtym: Velká díla vyžadují velké úsilí! Tomuto [Concept('great_project','velkému projektu')|E] musíme dodat více pracovní síly,)
  great_project_type_mandala_capital_02_contribution_decorative_tiles: "Ozdobné tašky"
  great_project_type_mandala_capital_02_contribution_decorative_tiles_desc: "Dopřejme si trochu okázalosti a přidejme na střechy ozdobné tašky. Zakřivené okraje. Složité řezby. Ještě více nádhery, která potěší oko i božstvo."
  great_project_type_mandala_capital_02_contribution_decorated_domes: "Zdobené kupole"
@@ -197,9 +201,9 @@
  great_project_type_mandala_capital_02_contribution_family_statues_desc: "Posvátné podoby dědiců naší božské linie budou vytesány do kamenných soch, aby jejich památka přetrvala navěky."
  great_project_type_mandala_capital_03: "$great_project_type_mandala_capital_02$"
  great_project_type_mandala_capital_03_desc: "$great_project_type_mandala_capital_02_desc$"
- great_project_type_mandala_capital_03_possessive: "$building_mandala_capital_03$"
+ great_project_type_mandala_capital_03_possessive: "$mandala_capital_03$" # todo: CHANGED (predtym: $building_mandala_capital_03$)
  great_project_type_mandala_capital_03_contribution_rite_of_worthiness: "Obřad způsobilosti"
- great_project_type_mandala_capital_03_contribution_rite_of_worthiness_desc: "Prokážeme, že jsme hodni práva dále rozvíjet [GetBuilding('mandala_capital_01').GetTypeName], a postoupíme tak o další krok do análů dějin!"
+ great_project_type_mandala_capital_03_contribution_rite_of_worthiness_desc: "Prokážeme, že jsme hodni práva dále rozvíjet [GetBuildingType('mandala_capital_01').GetTypeName], a postoupíme tak o další krok do análů dějin!" # todo: CHANGED (predtym: Prokážeme, že jsme hodni práva dále rozvíjet [GetBuilding('mandala_capital_01').GetTypeName], a postoupíme tak o další k)
  great_project_type_mandala_capital_03_contribution_volcanic_stone: "Sopečný kámen"
  great_project_type_mandala_capital_03_contribution_volcanic_stone_desc: "Nejvyšší ambice potřebují nejpevnější základy. Tomuto [Concept('great_project','velkému projektu')|E] dodáme sopečný kámen potřebný k vybudování základů, které přetrvají věky."
  great_project_type_mandala_capital_03_contribution_corbel_gateways: "Konzolové brány"
@@ -207,7 +211,7 @@
  great_project_type_mandala_capital_03_contribution_divine_statues: "Božské sochy"
  great_project_type_mandala_capital_03_contribution_divine_statues_desc: "Tyto obří hlavy mohou působit impozantně, především však posvěcují toto místo a naplňují je důstojností a ctností."
  great_project_type_mandala_capital_03_contribution_work_force: "$great_project_type_mandala_capital_01_contribution_work_force$"
- great_project_type_mandala_capital_03_contribution_work_force_desc: "Chceme-li dosáhnout božského, musíme tvrdě pracovat. Stavba $building_mandala_capital_03$ vyžaduje další pracovní sílu a náš příspěvek bude bohatě odměněn."
+ great_project_type_mandala_capital_03_contribution_work_force_desc: "Chceme-li dosáhnout božského, musíme tvrdě pracovat. Stavba $mandala_capital_03$ vyžaduje další pracovní sílu a náš příspěvek bude bohatě odměněn." # todo: CHANGED (predtym: Chceme-li dosáhnout božského, musíme tvrdě pracovat. Stavba $building_mandala_capital_03$ vyžaduje další pracovní sílu a)
  great_project_type_mandala_capital_03_contribution_creation_aspect: "Sochy stvoření"
  great_project_type_mandala_capital_03_contribution_creation_aspect_desc: "Tyto obří hlavy hledí do dáli, jako by neustále plánovaly a uspořádávaly svět a udržovaly život v této sféře i v té příští. Nápadně se podobají našemu božskému vládci."
  great_project_type_mandala_capital_03_contribution_serenity_aspect: "Sochy klidu"
@@ -217,16 +221,16 @@
  great_project_type_mandala_capital_03_contribution_trickery_aspect: "Sochy lstivosti"
  great_project_type_mandala_capital_03_contribution_trickery_aspect_desc: "Tyto obří hlavy se potutelně usmívají a budí dojem, že člověka vidí skrz naskrz, doslova i obrazně. Nápadně se podobají našemu božskému vládci."
  great_project_type_mandala_capital_03_contribution_gilded_domes: "Pozlacené kupole"
- great_project_type_mandala_capital_03_contribution_gilded_domes_desc: "Mají-li kupole stavby $building_mandala_capital_03$ skutečně zářit v celé své nádheře, musí být pokryty tím nejlepším zlatem, jaké lze získat."
+ great_project_type_mandala_capital_03_contribution_gilded_domes_desc: "Mají-li kupole stavby $mandala_capital_03$ skutečně zářit v celé své nádheře, musí být pokryty tím nejlepším zlatem, jaké lze získat." # todo: CHANGED (predtym: Mají-li kupole stavby $building_mandala_capital_03$ skutečně zářit v celé své nádheře, musí být pokryty tím nejlepším zl)
  great_project_type_mandala_capital_03_contribution_family_temple_compound: "Rodový chrámový komplex"
  great_project_type_mandala_capital_03_contribution_family_temple_compound_desc: "Posvátný chrámový komplex zasvěcený uctívání synů a dcer božského vládce, který tyto velkolepé chrámy vybudoval."
  great_project_type_mandala_capital_04: "$great_project_type_mandala_capital_02$"
  great_project_type_mandala_capital_04_desc: "$great_project_type_mandala_capital_02_desc$"
- great_project_type_mandala_capital_04_possessive: "$building_mandala_capital_04$"
+ great_project_type_mandala_capital_04_possessive: "$mandala_capital_04$" # todo: CHANGED (predtym: $building_mandala_capital_04$)
  great_project_type_mandala_capital_04_contribution_rite_of_worthiness: "Obřad způsobilosti"
- great_project_type_mandala_capital_04_contribution_rite_of_worthiness_desc: "Prokážeme svou nepochybnou způsobilost dále rozvíjet [GetBuilding('mandala_capital_01').GetTypeName] a zanecháme tak svou stopu ve světě!"
+ great_project_type_mandala_capital_04_contribution_rite_of_worthiness_desc: "Prokážeme svou nepochybnou způsobilost dále rozvíjet [GetBuildingType('mandala_capital_01').GetTypeName] a zanecháme tak svou stopu ve světě!" # todo: CHANGED (predtym: Prokážeme svou nepochybnou způsobilost dále rozvíjet [GetBuilding('mandala_capital_01').GetTypeName] a zanecháme tak svo)
  great_project_type_mandala_capital_04_contribution_slabs_of_granite: "Žulové desky"
- great_project_type_mandala_capital_04_contribution_slabs_of_granite_desc: "Jediný skutečně nesmrtelný obraz je ten vytesaný do kamene. Pro stavbu $building_mandala_capital_04$ zajistíme ten nejkvalitnější kámen, aby zde vznikla umělecká díla, která přetrvají věčnost."
+ great_project_type_mandala_capital_04_contribution_slabs_of_granite_desc: "Jediný skutečně nesmrtelný obraz je ten vytesaný do kamene. Pro stavbu $mandala_capital_04$ zajistíme ten nejkvalitnější kámen, aby zde vznikla umělecká díla, která přetrvají věčnost." # todo: CHANGED (predtym: Jediný skutečně nesmrtelný obraz je ten vytesaný do kamene. Pro stavbu $building_mandala_capital_04$ zajistíme ten nejkv)
  great_project_type_mandala_capital_04_contribution_zaungdans: "Zaungdany"
  great_project_type_mandala_capital_04_contribution_zaungdans_desc: "Posvátná schodiště jsou důležitou součástí cesty vzhůru, a tedy i přibližování se božskému. Zároveň jsou skvělým místem pro tržiště a další nezbytnosti."
  great_project_type_mandala_capital_04_contribution_gilded_shrines: "Pozlacené svatyně"
@@ -234,26 +238,26 @@
  great_project_type_mandala_capital_04_contribution_work_force: "$great_project_type_mandala_capital_01_contribution_work_force$"
  great_project_type_mandala_capital_04_contribution_work_force_desc: "Tak velkolepé dílo nevyžaduje jen svaly a pot, ale také bystré oči, jemné nástroje a mysl řemeslného mistra. Pracovní síla, kterou poskytneme, nebude pouze přenášet stavební materiál, ale vytvoří i složitá umělecká díla, která tento [Concept('great_project','velký projekt')|E] tolik potřebuje."
  great_project_type_mandala_capital_04_contribution_bell_stupas: "Zvonovité stúpy"
- great_project_type_mandala_capital_04_contribution_bell_stupas_desc: "Pro stavbu $building_mandala_capital_05$ bude poskytnut ten nejkvalitnější mramor, aby mohla spočívat na těch nejelegantnějších základech."
+ great_project_type_mandala_capital_04_contribution_bell_stupas_desc: "Pro stavbu $mandala_capital_04$ bude poskytnut ten nejkvalitnější mramor, aby mohla spočívat na těch nejkrásnějších základech." # todo: CHANGED (predtym: Pro stavbu $building_mandala_capital_05$ bude poskytnut ten nejkvalitnější mramor, aby mohla spočívat na těch nejelegant)
  great_project_type_mandala_capital_04_contribution_bejeweled_domes: "Kupole zdobené drahokamy"
- great_project_type_mandala_capital_04_contribution_bejeweled_domes_desc: "Nebesa musí nad stavbou $building_mandala_capital_04$ zářit. Tomuto [Concept('great_project','velkému projektu')|E] proto poskytneme drahokamy, díky nimž se bude zdát, jako by mezi sloupy tohoto božského komplexu spočívaly samotné hvězdy."
+ great_project_type_mandala_capital_04_contribution_bejeweled_domes_desc: "Nebesa musí nad stavbou $mandala_capital_04$ zářit. Tomuto [Concept('great_project','velkému projektu')|E] proto poskytneme drahokamy, díky nimž se bude zdát, jako by mezi sloupy tohoto božského komplexu spočívaly samotné hvězdy." # todo: CHANGED (predtym: Nebesa musí nad stavbou $building_mandala_capital_04$ zářit. Tomuto [Concept('great_project','velkému projektu')|E] prot)
  great_project_type_mandala_capital_04_contribution_family_temple_complex: "Rodový chrámový komplex"
  great_project_type_mandala_capital_04_contribution_family_temple_complex_desc: "Potomstvo našeho velkého dévarádži bude poctěno vlastním chrámovým komplexem v královském městě. Zde bude uctíváno dlouho předtím, než samo převezme otěže moci."
  great_project_type_mandala_capital_05: "$great_project_type_mandala_capital_02$"
  great_project_type_mandala_capital_05_desc: "$great_project_type_mandala_capital_02_desc$"
- great_project_type_mandala_capital_05_possessive: "$building_mandala_capital_05$"
+ great_project_type_mandala_capital_05_possessive: "$mandala_capital_05$" # todo: CHANGED (predtym: $building_mandala_capital_05$)
  great_project_type_mandala_capital_05_contribution_rite_of_worthiness: "Obřad způsobilosti"
- great_project_type_mandala_capital_05_contribution_rite_of_worthiness_desc: "Prokážeme svou nepochybnou způsobilost dále rozvíjet [GetBuilding('mandala_capital_01').GetTypeName] a proměníme jej v něco skutečně nadpozemského!"
+ great_project_type_mandala_capital_05_contribution_rite_of_worthiness_desc: "Prokážeme svou nepochybnou způsobilost dále rozvíjet [GetBuildingType('mandala_capital_01').GetTypeName] a proměníme jej v něco skutečně nadpozemského!" # todo: CHANGED (predtym: Prokážeme svou nepochybnou způsobilost dále rozvíjet [GetBuilding('mandala_capital_01').GetTypeName] a proměníme jej v n)
  great_project_type_mandala_capital_05_contribution_marble_foundation: "Mramorové základy"
- great_project_type_mandala_capital_05_contribution_marble_foundation_desc: "Pro stavbu $building_mandala_capital_05$ bude poskytnut ten nejkvalitnější mramor, aby mohla spočívat na těch nejelegantnějších základech."
+ great_project_type_mandala_capital_05_contribution_marble_foundation_desc: "Pro stavbu $mandala_capital_05$ bude poskytnut ten nejkvalitnější mramor, aby mohla spočívat na těch nejkrásnějších základech." # todo: CHANGED (predtym: Pro stavbu $building_mandala_capital_05$ bude poskytnut ten nejkvalitnější mramor, aby mohla spočívat na těch nejelegant)
  great_project_type_mandala_capital_05_contribution_divine_barays: "Božské baraje"
  great_project_type_mandala_capital_05_contribution_divine_barays_desc: "Naše stavba bude obklopena hlubokými vodními nádržemi, které nás budou chránit před nepřáteli a zároveň nás spojovat s duchovní sférou."
  great_project_type_mandala_capital_05_contribution_work_force: "$great_project_type_mandala_capital_01_contribution_work_force$"
- great_project_type_mandala_capital_05_contribution_work_force_desc: "Ze všech koutů panství přivedeme pracovníky všech schopností, od nejprostších rolníků až po nejmoudřejší učence, aby pomohli s výstavbou $building_mandala_capital_05$."
+ great_project_type_mandala_capital_05_contribution_work_force_desc: "Ze všech koutů panství přivedeme pracovníky všech schopností, od nejprostších rolníků až po nejmoudřejší učence, aby pomohli s výstavbou $mandala_capital_05$." # todo: CHANGED (predtym: Ze všech koutů panství přivedeme pracovníky všech schopností, od nejprostších rolníků až po nejmoudřejší učence, aby pom)
  great_project_type_mandala_capital_05_contribution_bejeweled_reliefs: "Reliéfy zdobené drahokamy"
  great_project_type_mandala_capital_05_contribution_bejeweled_reliefs_desc: "Stěny zaplní nebeské tanečnice, jejichž ladné pohyby budou zachyceny spolu s nádhernými oděvy posázenými drahokamy."
  great_project_type_mandala_capital_05_contribution_bunga_mas_forest: "Les Bunga Mas"
- great_project_type_mandala_capital_05_contribution_bunga_mas_forest_desc: "Úcta k tak vznešenému a spravedlivému monumentu si žádá vytříbenější a hlubší dary. Stavbě $building_mandala_capital_05$ věnujeme celé seskupení stromů a květin ze zlata, mistrně zhotovených těmi nejlepšími řemeslníky."
+ great_project_type_mandala_capital_05_contribution_bunga_mas_forest_desc: "Úcta k tak vznešenému a spravedlivému monumentu si žádá vytříbenější a hlubší dary. Stavbě $mandala_capital_05$ věnujeme celé seskupení stromů a květin ze zlata, mistrně zhotovených těmi nejlepšími řemeslníky." # todo: CHANGED (predtym: Úcta k tak vznešenému a spravedlivému monumentu si žádá vytříbenější a hlubší dary. Stavbě $building_mandala_capital_05$)
  great_project_type_mandala_capital_05_contribution_dynastic_temple_complex: "Dynastický chrámový okrsek"
  great_project_type_mandala_capital_05_contribution_dynastic_temple_complex_desc: "Část chrámového komplexu hlavního města našeho dévarádži bude zasvěcena uctívání našeho rodu a jeho potomků."
  great_project_error_plan_mandala_capital: "Nesplňuješ požadavky pro plánování rozšíření hlavního města mandaly"
@@ -369,17 +373,17 @@
  grand_campaign_won_tt: "Pokud přispěvatelé nebo [owner.GetShortUIName] [Concept('completely_control','zcela ovládnou')|E] alespoň #V 50%#! sporných [Concept('titles','titulů')|E]:\n$BULLET_WITH_TAB$Všichni přispěvatelé:\n$TAB$$BULLET_WITH_TAB$Získají [Concept('movement_power','sílu hnutí')|E]: [movement_power_i]#P +100#!\n$BULLET_WITH_TAB$[owner.GetShortUIName|U] získá [legitimacy_i][EmptyScope.ScriptValue('major_legitimacy_gain')|+0]\n$BULLET_WITH_TAB$$great_project_type_grand_campaign_project_contribution_win_tt$\n$BULLET_WITH_TAB$[owner.GetShortUIName|U] spustí „$catalyst_grand_campaign$“"
  grand_campaign_lost_tt: "Jinak:\n$BULLET_WITH_TAB$Všichni přispěvatelé:\n$TAB$$BULLET_WITH_TAB$Ztratí [Concept('movement_power','sílu hnutí')|E]: [movement_power_i]#N -100#!\n$BULLET_WITH_TAB$[owner.GetShortUIName|U] spustí „$catalyst_grand_campaign_lost$“"
  grand_campaign_start_tt: "[Concept('holder',Select_CString(GetTitleByKey('e_minister_grand_marshal').GetHolder.IsFemale,'Držitelka','Držitel'))|E] [Concept('title','titulu')|E] [GetTitleByKey('e_minister_grand_marshal').GetName] zahájí [Concept('war','válku')|E] [GetCasusBelliType('grand_campaign_kingdom_invasion_cb').GetName]"
- great_project_type_minister_project_development: "Rozvíjet komunity"
- great_project_type_minister_project_development_desc: "Kovaný železný řetěz je jen tak silný jako jeho nejslabší článek. Pokud jediný článek selže, celý řetěz je k ničemu. S oblastmi našeho velkého panství je to stejné. Aby naše prosperita přetrvala, musí [GetPlayer.GetPrimaryTitle.GetNameNoTier] vzkvétat od jednoho konce k druhému. Vybudujeme kanály a cesty, zlepšíme přístup k vodě a založíme dobře naplánovaná města. Vybudujeme vše, co bude třeba."
- great_project_type_minister_project_development_possessive: "Rozvoje komunit"
- minister_project_development_effect_desc: "Zvyšuje [development_i|E][Concept('development','rozvoj')|E], přidává nebo vylepšuje [Concept('buildings','budovy')|E] a zvelebuje [Concept('counties','hrabství')|E] v cílovém [Concept('duchy','vévodství')|E]"
- minister_project_development_building_desc: "Každá [Concept('holding','država')|E] přidá nebo vylepší [Concept('building','budovu')|E]"
- minister_project_development_modifier_desc: "Každé [Concept('county','hrabství')|E] získá [GetModifier('tgp_minister_project_development_modifier').GetNameWithTooltip]"
- great_project_type_minister_project_development_contribution_personnel: "Vyslat stavební četu"
- great_project_type_minister_project_development_contribution_engineers: "Poskytnout stavební mistry"
- great_project_type_minister_project_development_contribution_infrastructure: "Rozšířit infrastrukturu"
+ great_project_type_minister_project_prosperity: "Rozvíjet obce" # todo: NEW TRANSLATION
+ great_project_type_minister_project_prosperity_desc: "Železný řetěz je silný jen jako jeho nejslabší článek. Pokud jediný článek selže, řetěz se stane bezcenným. Kraje našeho velkého panství na tom nejsou jinak. Každý kout [GetPlayer.GetPrimaryTitle.GetNameNoTier] musí vzkvétat, aby naše prosperita přetrvala. Budeme stavět kanály a silnice, zlepšovat přístup k vodě a budovat dobře naplánovaná města — zkrátka všechno." # todo: NEW TRANSLATION
+ great_project_type_minister_project_prosperity_possessive: "Rozvoje obcí" # todo: NEW TRANSLATION
+ minister_project_prosperity_effect_desc: "Zvyšuje [Concept('prosperity_i','@prosperity_icon!')|E][Concept('prosperity','rozkvětu')|E], přidává nebo vylepšuje [Concept('buildings','budovy')|E] a zlepšuje [Concept('counties','hrabství')|E] v cílovém [Concept('duchy','vévodství')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ minister_project_prosperity_building_desc: "Každá [Concept('holding','država')|E] přidává nebo vylepšuje [Concept('building','budova')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ minister_project_prosperity_modifier_desc: "Každé [Concept('county','hrabství')|E] získá [GetModifier('tgp_minister_project_prosperity_modifier').GetNameWithTooltip]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ great_project_type_minister_project_prosperity_contribution_personnel: "Vyslat stavební četu" # todo: NEW TRANSLATION
+ great_project_type_minister_project_prosperity_contribution_engineers: "Zajistit inženýry" # todo: NEW TRANSLATION
+ great_project_type_minister_project_prosperity_contribution_infrastructure: "Rozšířit infrastrukturu" # todo: NEW TRANSLATION
  great_project_is_near_capital_desc: "Tvé [Concept('capital','hlavní sídlo')|E] se nachází ve stejném nebo sousedním [Concept('duchy','vévodství')|E] jako místo [Concept('great_project_possessive','velkého projektu')|E]"
- minister_project_development_contribution_dev_desc: "Mírně zvyšuje [Concept('development','rozvoj')|E] v cílové oblasti"
+ minister_project_prosperity_contribution_dev_desc: "Mírně zvyšuje [Concept('prosperity','rozkvět')|E] v cílové oblasti" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  great_project_type_minister_project_establish_control: "Zavést kontrolu"
  great_project_type_minister_project_establish_control_desc: "Začlenění každé provincie a každého města a zavedení vysoké míry kontroly jsou nezbytné, má-li naše byrokracie fungovat co nejefektivněji."
  great_project_type_minister_project_establish_control_possessive: "Zavedení kontroly"
@@ -440,3 +444,175 @@
  great_project_fertility_effort_paid_t: "Zaplacena podpora porodnosti"
  great_project_natural_disaster_insurance_received_t: "Přijato plnění z pojištění proti přírodní pohromě"
  great_project_natural_disaster_insurance_paid_t: "Zaplaceno pojištění proti přírodní pohromě"
+ great_project_type_gdp_republic_civic_works: "Veřejné stavby" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_civic_works_desc: "Hlavní město není jen místem, kde byla založena naše republika. Je měřítkem, podle něhož bude posuzována naše vláda. Vylepšíme-li silnice, rozšíříme trhy a vybudujeme veřejné vybavení, bude toto město odrážet, jaká by republika měla být." # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_civic_works_possessive: "Veřejných staveb" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_civic_works_contribution_labor: "Zorganizovat pracovní sílu" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_civic_works_contribution_labor_desc: "Naverbovat a zorganizovat pracovní sílu potřebnou k provedení stavby." # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_civic_works_contribution_materials: "Zajistit materiál" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_civic_works_contribution_materials_desc: "Obstarat kámen, dřevo a zásoby potřebné pro rozsáhlou výstavbu." # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_civic_works_contribution_civic_amenities: "Financovat veřejné vybavení" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_civic_works_contribution_civic_amenities_desc: "Postavit veřejné lázně, kašny a místa k setkávání, aby se lidem zvedla nálada." # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_civic_works_contribution_market_expansion: "Rozšířit trh" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_civic_works_contribution_market_expansion_desc: "Rozšířit tržní čtvrť a otevřít obchod přímo v srdci města." # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_civic_works_contribution_artisan_guilds: "Podpořit cechy řemeslníků" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_civic_works_contribution_artisan_guilds_desc: "Podpořit městské cechy řemeslníků, urychlit výstavbu a zvýšit kvalitu zdejších staveb." # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_civic_works_contribution_settlement_expansion: "Podpořit rozvoj města" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_civic_works_contribution_settlement_expansion_desc: "Financovat rozšíření zastavěné části hlavního města a vytvořit prostor pro lidi i obchod, které velké město potřebuje." # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_civic_works_contribution_civic_order: "Financovat městskou hlídku" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_civic_works_contribution_civic_order_desc: "Zajistit strážné, soudce a městskou infrastrukturu, aby v ulicích hlavního města zavládl pořádek." # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_civic_works_contribution_support_schools: "Financovat školy" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_civic_works_contribution_support_schools_desc: "Postavit školy, aby každé dítě mělo možnost učit se, rozvíjet se a získat vzdělání." # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_project: "Zřídit Velké náměstí" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_project_desc: "Vybudováním čtvrti soustředěné kolem nádherné radnice a zasvěcené veřejným službám, městské správě a působivým památníkům můžeme zefektivnit vládu a zlepšit život našich občanů." # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_project_possessive: "Velkého náměstí" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_project_contribution_labor: "Zorganizovat pracovní sílu" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_project_contribution_materials: "Zajistit materiál" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_project_contribution_recruit_architects: "Naverbovat architekty" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_project_contribution_manage_paperwork: "Vyřídit administrativu" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_project_contribution_plan_logistics: "Naplánovat logistiku" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_project_contribution_fund_institution: "Financovat projektovou instituci" # todo: NEW TRANSLATION
+ can_start_great_plaza_project_has_law_desc: "Máš zákon [GetLaw('republic_tier_duchy').GetName] [Concept('law','zákon')|E] nebo vyšší" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ great_project_type_gdp_republic_expand_great_plaza_project: "Rozšířit Velké náměstí" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_expand_great_plaza_project_desc: "Velké náměstí je tepajícím srdcem našeho města, kde se setkává obchod, slavnosti a veřejný život. Rozšířením náměstí vytvoříme prostor pro větší veřejné stavby, lepší vybavení a radnici odpovídající našim ambicím." # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_expand_great_plaza_project_possessive: "Velkého náměstí" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_expand_great_plaza_project_contribution_recruit_architects: "Naverbovat architekty" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_expand_great_plaza_project_contribution_manage_paperwork: "Vyřídit administrativu" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_expand_great_plaza_project_contribution_labor: "Zorganizovat pracovní sílu" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_expand_great_plaza_project_contribution_materials: "Zajistit materiál" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_loggia_project: "Velké náměstí: $republic_loggia_01$" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_loggia_project_desc: "$building_type_republic_loggia_01_desc$" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_loggia_project_possessive: "Velké náměstí: $republic_loggia_01$" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_loggia_project_contribution_master_builder: "Naverbovat mistra stavitele" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_loggia_project_contribution_quarry_stone: "Vylámat kámen" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_loggia_project_contribution_levy_guilds: "Uvalit poplatky na cechy" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_loggia_project_contribution_manage_contractors: "Dohlížet na dodavatele" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_loggia_project_contribution_clear_grounds: "Vyklidit pozemek" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_loggia_project_contribution_publish_accounts: "Zveřejnit účetnictví" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_loggia_project_contribution_recompense_citizens: "Odškodnit občany" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_statute_hall_project: "Velké náměstí: $republic_statute_hall_01$" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_statute_hall_project_desc: "$building_type_republic_statute_hall_01_desc$" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_statute_hall_project_possessive: "Velké náměstí: $republic_statute_hall_01$" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_statute_hall_project_contribution_commission_jurists: "Pověřit právníky" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_statute_hall_project_contribution_fit_the_archive: "Vybavit archiv" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_statute_hall_project_contribution_supply_the_inkwells: "Dodat kalamáře" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_statute_hall_project_contribution_robe_the_magistrates: "Obléci soudce" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_statute_hall_project_contribution_victual_the_clerks: "Zásobit úředníky" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_statute_hall_project_contribution_proclaim_the_statutes: "Vyhlásit stanovy" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_statute_hall_project_contribution_strike_the_seals: "Zhotovit městské pečeti" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_council_chamber_project: "Velké náměstí: $republic_council_chamber_01$" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_council_chamber_project_desc: "$building_type_republic_council_chamber_01_desc$" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_council_chamber_project_possessive: "Velké náměstí: $republic_council_chamber_01$" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_council_chamber_project_contribution_cushion_the_benches: "Polstrovat lavice" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_council_chamber_project_contribution_enroll_the_citizens: "Zapsat občany" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_council_chamber_project_contribution_pave_the_chamber: "Vydláždit komnatu" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_council_chamber_project_contribution_provisions: "Zajistit proviant" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_council_chamber_project_contribution_vest_the_officers: "Vybavit úředníky oděvy" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_council_chamber_project_contribution_gild_the_ballot_urns: "Pozlatit volební urny" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_council_chamber_project_contribution_feast_the_new_council: "Uspořádat společné shromáždění" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_debt_office_project: "Velké náměstí: $republic_debt_office_01$" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_debt_office_project_desc: "$building_type_republic_debt_office_01_desc$" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_debt_office_project_possessive: "Velké náměstí: $republic_debt_office_01$" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_debt_office_project_contribution_mint_the_shares: "Razít podíly" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_debt_office_project_contribution_strongbox: "Zajistit trezory" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_debt_office_project_contribution_audit_the_rolls: "Provést audit účetních knih" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_debt_office_project_contribution_pledge_the_collateral: "Zastavit záruky" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_debt_office_project_contribution_pay_the_companies: "Zaplatit společnostem" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_debt_office_project_contribution_underwrite_the_grain_dole: "Zaručit se za příděly obilí" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_debt_office_project_contribution_court_foreign_investors: "Získat zahraniční investory" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_civic_hospital_project: "Velké náměstí: $republic_civic_hospital_01$" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_civic_hospital_project_desc: "$building_type_republic_civic_hospital_01_desc$" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_civic_hospital_project_possessive: "Velké náměstí: $republic_civic_hospital_01$" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_civic_hospital_project_contribution_stock_the_apothecary: "Zásobit lékárnu" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_civic_hospital_project_contribution_expand_the_wards: "Rozšířit nemocniční oddělení" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_civic_hospital_project_contribution_linen: "Zajistit plátno" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_civic_hospital_project_contribution_feed_the_sick: "Zajistit nemocným stravu" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_civic_hospital_project_contribution_scour_the_wards: "Vydrhnout nemocniční oddělení" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_civic_hospital_project_contribution_endow_a_dispensary: "Zřídit lékárnu" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_civic_hospital_project_contribution_copy_the_physicians_texts: "Opsat lékařské spisy" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_weigh_house_project: "Velké náměstí: $republic_weigh_house_01$" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_weigh_house_project_desc: "$building_type_republic_weigh_house_01_desc$" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_weigh_house_project_possessive: "Velké náměstí: $republic_weigh_house_01$" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_weigh_house_project_contribution_cast_the_weights: "Odlít závaží" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_weigh_house_project_contribution_cut_the_standard_stone: "Vytesat etalon" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_weigh_house_project_contribution_stable_the_carters: "Zajistit stáje pro povozníky" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_weigh_house_project_contribution_hire_clerks: "Najmout písaře" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_weigh_house_project_contribution_build_the_weighing_cranes: "Postavit vážicí jeřáby" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_weigh_house_project_contribution_salt_the_customs_stores: "Zásobit celnici solí" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_weigh_house_project_contribution_certify_the_luxury_trade: "Osvědčit obchod s luxusním zbožím" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_clock_tower_project: "Velké náměstí: $republic_clock_tower_01$" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_clock_tower_project_desc: "$building_type_republic_clock_tower_01_desc$" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_clock_tower_project_possessive: "Velké náměstí: $republic_clock_tower_01$" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_clock_tower_project_contribution_forge_the_movement: "Zhotovit hodinový stroj" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_clock_tower_project_contribution_hang_the_bells: "Zavěsit zvony" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_clock_tower_project_contribution_raise_the_tower: "Vztyčit věž" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_clock_tower_project_contribution_carve_the_dial: "Vytesat ciferník" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_clock_tower_project_contribution_time_the_working_day: "Rozvrhnout pracovní den" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_clock_tower_project_contribution_fit_the_astronomical_dial: "Osadit astronomický ciferník" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_clock_tower_project_contribution_welcome_the_visitors: "Přivítat návštěvníky" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_civic_ward_project: "Velké náměstí: $republic_civic_ward_01$" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_civic_ward_project_desc: "$building_type_republic_civic_ward_01_desc$" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_civic_ward_project_possessive: "Velké náměstí: $republic_civic_ward_01$" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_civic_ward_project_contribution_staff_the_permit_office: "Obsadit povolovací úřad" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_civic_ward_project_contribution_stockpile_the_stone: "Shromáždit zásoby kamene" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_civic_ward_project_contribution_contract_the_timber_yards: "Uzavřít smlouvy s dřevařskými sklady" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_civic_ward_project_contribution_tool_the_workshops: "Vybavit dílny nástroji" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_civic_ward_project_contribution_hire_the_haulers: "Najmout přepravce" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_civic_ward_project_contribution_victual_the_worksites: "Zásobit staveniště potravinami" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_civic_ward_project_contribution_clothe_the_laborers: "Ošatit dělníky" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_league_chapter_house_project: "Velké náměstí: $republic_league_chapter_house_01$" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_league_chapter_house_project_desc: "$building_type_republic_league_chapter_house_01_desc$" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_league_chapter_house_project_possessive: "Velké náměstí: $republic_league_chapter_house_01$" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_league_chapter_house_project_contribution_furnish_the_lodgings: "Zařídit ubytování" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_league_chapter_house_project_contribution_stock_the_guest_table: "Zásobit stůl pro hosty" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_league_chapter_house_project_contribution_line_the_strongroom: "Vystlat trezor" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_league_chapter_house_project_contribution_gift_the_delegates: "Obdarovat delegáty" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_league_chapter_house_project_contribution_hang_the_league_banners: "Vyvěsit prapory ligy" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_league_chapter_house_project_contribution_perfume_the_hall: "Provonět sál" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_league_chapter_house_project_contribution_broach_the_league_casks: "Narazit sudy ligy" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_podesta_residence_project: "Velké náměstí: $republic_podesta_residence_01$" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_podesta_residence_project_desc: "$building_type_republic_podesta_residence_01_desc$" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_podesta_residence_project_possessive: "Velké náměstí: $republic_podesta_residence_01$" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_podesta_residence_project_contribution_furnish_the_residence: "Zařídit sídlo" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_podesta_residence_project_contribution_cloth_staff: "Ošatit služebnictvo" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_podesta_residence_project_contribution_stock_the_larder: "Zásobit spíž" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_podesta_residence_project_contribution_pay_the_stipend: "Vyplatit stipendium" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_podesta_residence_project_contribution_appoint_notaries: "Jmenovat notáře" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_podesta_residence_project_contribution_equip_retinue: "Vybavit družinu" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_podesta_residence_project_contribution_host_the_investiture: "Uspořádat investituru" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_fountain_project: "Velké náměstí: $republic_fountain_01$" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_fountain_project_desc: "$building_type_republic_fountain_01_desc$" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_fountain_project_possessive: "Velké náměstí: $republic_fountain_01$" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_fountain_project_contribution_cut_the_basins: "Vytesat nádrže" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_fountain_project_contribution_lay_the_pipes: "Položit potrubí" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_fountain_project_contribution_sweeten_the_water: "Os sladit vodu" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_fountain_project_contribution_set_the_mosaics: "Vytvořit mozaiky" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_fountain_project_contribution_timber_the_aqueduct: "Zajistit dřevo na akvadukt" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_fountain_project_contribution_bless_the_waters: "Požehnat vodám" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_fountain_project_contribution_purify_the_cisterns: "Vyčistit cisterny" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_saint_sanctuary_project: "Velké náměstí: $patron_saint_sanctuary_1$" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_saint_sanctuary_project_desc: "$building_type_patron_saint_sanctuary_1_desc$" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_saint_sanctuary_project_possessive: "Velké náměstí: $patron_saint_sanctuary_1$" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_saint_sanctuary_project_contribution_hire_masons: "Najmout kameníky" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_saint_sanctuary_project_contribution_recruit_carpenters: "Přijmout tesaře" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_saint_sanctuary_project_contribution_commission_altar: "Zadat výrobu oltáře" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_saint_sanctuary_project_contribution_stained_glass: "Zajistit vitráže" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_saint_sanctuary_project_contribution_reliquary_storage: "Zajistit prostor pro relikviář" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_saint_sanctuary_project_contribution_bequeath_assets: "Odkázat majetek" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_saint_sanctuary_project_contribution_fund_family_chapel: "Financovat rodovou kapli" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_basilica_project: "Velké náměstí: $republic_basilica_01$" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_basilica_project_desc: "$building_type_republic_basilica_01_desc$" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_basilica_project_possessive: "Velké náměstí: $republic_basilica_01$" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_basilica_project_contribution_master_builder: "Najmout mistra stavitele" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_basilica_project_contribution_outsource_heavy_work: "Zadat těžké práce externistům" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_basilica_project_contribution_commission_furnishing: "Zadat výrobu vybavení" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_basilica_project_contribution_construct_chapels: "Postavit kaple" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_basilica_project_contribution_fund_metal_work: "Financovat kovotepectví" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_basilica_project_contribution_garden: "Založit zahradu" # todo: NEW TRANSLATION
+ great_project_type_gdp_republic_great_plaza_basilica_project_contribution_secure_burial_rights: "Zajistit práva na pohřbívání" # todo: NEW TRANSLATION
+ great_plaza_reward_scaling_desc_global: "#flavor Odměny za tento [Concept('great_project_contribution','příspěvek')|E] se odvíjejí od úrovně tvé [Concept('trade_expertise','obchodní zkušenost')|E] v kategorii [TRADE_GOOD_CATEGORY_TYPE.GetNameWithIcon]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ great_plaza_reward_scaling_desc_first: "$great_plaza_reward_scaling_desc_global$" # todo: NEW TRANSLATION
+ great_plaza_reward_scaling_desc_third: "$great_plaza_reward_scaling_desc_global$" # todo: NEW TRANSLATION
+ gdp_republic_plaza_has_free_building_slot_desc: "[GetDistrictType('republic_great_plaza_district').GetName] má alespoň #V 1#! volné místo pro budovu" # todo: NEW TRANSLATION
+ gdp_is_planning_great_plaza_project_trigger_desc: "[Concept('great_project','Velký projekt')|E] v oblasti [GetDistrictType('republic_great_plaza_district').GetName] se #bold už#! neplánuje ani neprobíhá" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ great_plaza_contribution_desc: "Příspěvek do oblasti [GetDistrictType('republic_great_plaza_district').GetName]" # todo: NEW TRANSLATION

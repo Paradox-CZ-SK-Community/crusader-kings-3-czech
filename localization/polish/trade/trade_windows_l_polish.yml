@@ -1,0 +1,619 @@
+﻿l_polish:
+ TRAVEL_ROUTE_NO_MARKETS_PLANNED: "#weak Na trasu nebyly přidány žádné [Concept('trade_markets','obchodní trhy')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_ROUTE_CONFIRM_TEXT_EMPTY: "Není k dispozici žádný návrh obchodní trasy" # todo: NEW TRANSLATION
+ TRADE_ROUTE_PLANNER_CONFIRM_TITLE: "#T [TradeRouteDraft.GetName]#!" # todo: NEW TRANSLATION
+ TRADE_ROUTE_MARKETS_HEADER: "[markets]: [GetDataModelSize(TradeRoutePlanner.GetTradeMarketsOnRoute)|V]/[TradeRoutePlanner.GetMaxTradeMarketsOnRoute]" # todo: NEW TRANSLATION
+ TRADE_ROUTE_MARKETS_STOPS_LABEL: "Zastávky na [Concept('market','trh')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_ROUTE_MARKETS_STOPS: "Zastávky na [Concept('market','trh')|E]:" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_ROUTE_PLANNER_MARKETS_CURRENT_VALUE: "[GetDataModelSize(TradeRoutePlanner.GetTradeMarketsOnRoute)|V]" # todo: NEW TRANSLATION
+ TRADE_ROUTE_PLANNER_MARKETS_MAX_VALUE: "/[TradeRoutePlanner.GetMaxTradeMarketsOnRoute]" # todo: NEW TRANSLATION
+ TRADE_ROUTE_PLANNER_MAX_MARKETS_BREAKDOWN_TITLE: "Maximum [Concept('markets','trhy')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_ROUTE_MARKET_STOP_TOOLTIP: "#T [TradeMarket.GetNameNoTooltip|U]#![AddLocalizationIf( Not( TradeRoute.HasAnyTransactionInMarket( TradeMarket.Self ) ), 'TRADE_ROUTE_MARKET_STOP_NO_MATCHING_GOODS' )][AddLocalizationIf( Not( IsDataModelEmpty( TradeMarketItem.GetBlockingMonopolies ) ), 'TRADE_ROUTE_MARKET_STOP_BLOCKING_MONOPOLY' )]\n#I $VIEW_CLICK$#!" # todo: NEW TRANSLATION
+ TRADE_ROUTE_MARKET_STOP_NO_MATCHING_GOODS: "\n#alert_trial @alert_icon! Na tomto trhu se neobchoduje s žádným z vybraných druhů zboží #!" # todo: NEW TRANSLATION
+ TRADE_ROUTE_MARKET_STOP_BLOCKING_MONOPOLY: "\n#alert_trial @trade_monopoly! Na tomto trhu existuje jedna či více [Concept('monopolies','monopoly')|E], které brání této trase v obchodu s některými nebo všemi druhy zboží #!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_ROUTE_MARKET_STOP_TOOLTIP_REMOVABLE: "$TRADE_ROUTE_MARKET_STOP_TOOLTIP$\n#I Kliknutím pravým tlačítkem odeberete#!" # todo: NEW TRANSLATION
+ TRADE_ROUTE_PLANNER_LENGTH_LABEL: "Délka [Concept('trade_route_length','délka obchodní trasy')|E]:" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_ROUTE_PLANNER_LENGTH_CURRENT_VALUE: "[TradeRoutePlanner.GetCurrentRouteLength|V0]" # todo: NEW TRANSLATION
+ TRADE_ROUTE_PLANNER_LENGTH_MAX_VALUE: "/[TradeRoutePlanner.GetMaxTradeRouteLength|V0]" # todo: NEW TRANSLATION
+ TRADE_ROUTE_PLANNER_ROADS_LABEL: "Průměrná [Concept('road_tier','úroveň silnice')|E]: #underline [TradeRoutePlanner.GetAverageRoadTier|V0]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_ROUTE_PLANNER_ROAD_BONUS_NONE: "#weak Tyto cesty neposkytují žádný bonus#!" # todo: NEW TRANSLATION
+ TRADE_ROUTE_PLANNER_MAX_LENGTH_BREAKDOWN_TITLE: "Maximální [Concept('trade_route_length','délka obchodní trasy')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_ROUTE_PLANNER_CURRENT_LENGTH_BREAKDOWN_TITLE: "Aktuální délka obchodní trasy" # todo: NEW TRANSLATION
+ TRADE_ROUTE_PLANNER_LENGTH_ROADS_HEADER: "Použité cesty" # todo: NEW TRANSLATION
+ TRADE_ROUTE_PLANNER_LENGTH_PATH_HEADER: "Provincie na trase" # todo: NEW TRANSLATION
+ TRADE_ROUTE_PLANNER_LENGTH_PATH_BRANCH: "Nová odbočka" # todo: NEW TRANSLATION
+ TRADE_ROUTE_PLANNER_ROADS_TOOLTIP: "#T Průměrná [Concept('road_tier','úroveň silnice')|E]: [TradeRoutePlanner.GetAverageRoadTier|V0]#!\n[TradeRoutePlanner.GetRoadsDescription]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_ROUTE_PLANNER_ROADS_TIER_HEADER: "\n#S Cesty úrovně $TIER|V0$#!" # todo: NEW TRANSLATION
+ ROAD_NAME: "$FromMarket$ až $ToMarket$" # todo: NEW TRANSLATION
+ ROAD_EFFECTS_TRADE_ROUTE: "#S Účinek na [Concept('route','trasu')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_ROUTE_PLANNER_NO_MARKETS_ADDED: "#weak Přidejte obchodní trh a zobrazí se zde informace#!" # todo: NEW TRANSLATION
+ TRADE_ROUTE_PLANNER_MARKET_STOP_HINT: "Kliknutím přidáte trh na trasu jako zastávku nebo jej z ní odeberete\nK zahájení obchodu potřebujete jeden trh s přebytkem a druhý s nedostatkem" # todo: NEW TRANSLATION
+ TRADE_ROUTE_GOODS_HEADER: "Přepravované [Concept('goods','zboží')|E]: [GetDataModelSize(TradeRouteDraft.GetTradeGoods)|V]/[TradeRoutePlanner.GetMaxTradeGoodsOnRoute]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_ROUTE_CAPACITY: "[trade_route_capacity_i][Concept('capacity','Kapacita')|E]: [TradeRouteDraft.GetTotalPurchased|V1^]/[TradeRoutePlanner.GetTradeCapacityOnRoute|V1^]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ CARRIED_GOODS_BAR_SEGMENT_TOOLTIP: "[TradeRouteDraft.GetPurchasedAmountOfGood( TradeGoodType.Self )|V1^] $TRADE_GOODS_UNITS_OF_TYPE$" # todo: NEW TRANSLATION
+ TRADE_ROUTE_PLANNER_EXPECTED_PROFIT_IN_MARKET: "[gold_i][TradeRouteDraft.GetProfitInMarket( TradeMarket.Self )|+=3]" # todo: NEW TRANSLATION
+ TRADE_ROUTE_PLANNER_EXPECTED_PROFIT: "@gold_icon! [TradeRouteDraft.GetTotalExpectedProfit|+=2]" # todo: NEW TRANSLATION
+ TRADE_ROUTE_PLANNER_EXPECTED_PROFIT_LABEL: "Očekávaný zisk" # todo: NEW TRANSLATION
+ TRADE_ROUTE_PLANNER_EXPECTED_PROFIT_BREAKDOWN_TITLE: "Očekávaný zisk" # todo: NEW TRANSLATION
+ TRADE_ROUTE_PLANNER_EXPECTED_PROFIT_BREAKDOWN_MARKET: "[TradeMarket.GetName]" # todo: NEW TRANSLATION
+ TRADE_ROUTE_PLANNER_EXPECTED_PROFIT_BREAKDOWN_SELL: "Prodat $VALUE|V1$ [TradeGoodType.GetName] (nedostatek zboží)" # todo: NEW TRANSLATION
+ TRADE_ROUTE_PLANNER_EXPECTED_PROFIT_BREAKDOWN_SELL_CATEGORY: "Prodat $VALUE|V1$ [TradeGoodType.GetName] (nedostatek kategorie [TradeGoodCategory.GetName])" # todo: NEW TRANSLATION
+ TRADE_ROUTE_PLANNER_EXPECTED_PROFIT_BREAKDOWN_BUY: "Koupit $VALUE|V1$ [TradeGoodType.GetName]" # todo: NEW TRANSLATION
+ TRADE_ROUTE_PLANNER_EXPECTED_PROFIT_BREAKDOWN_LOSS_WAIVED: "Odpouštěné ztráty" # todo: NEW TRANSLATION
+ TRADE_ROUTE_PLANNER_MONTHLY_PROFIT: "@gold_icon! [TradeRoutePlanner.GetCurrentProfit|+=2]" # todo: NEW TRANSLATION
+ TRADE_ROUTE_PLANNER_MONTHLY_PROFIT_LABEL: "Aktuální zisk" # todo: NEW TRANSLATION
+ TRADE_ROUTE_PLANNER_MONTHLY_PROFIT_BREAKDOWN_TITLE: "Aktuální měsíční zisk" # todo: NEW TRANSLATION
+ TRADE_ROUTE_PLANNER_MONTHLY_PROFIT_BREAKDOWN_ENTRY: "Zlato získané minulý měsíc" # todo: NEW TRANSLATION
+ TRADE_ROUTE_ENTRY_ACTUAL_PROFIT: "[gold_i][TradeRoute.GetGoldEarnedLastTick|+=2]/měsíc" # todo: NEW TRANSLATION
+ TRADE_ROUTE_ENTRY_USED_CAPACITY: "[TradeRouteItem.GetTotalPurchased|V1^]/[ValueBreakdown.GetValue]" # todo: NEW TRANSLATION
+ TRADE_ROUTE_ENTRY_USED_CAPACITY_OVER: "#color_yellow [TradeRouteItem.GetTotalPurchased|1^]#!/[ValueBreakdown.GetValue]" # todo: NEW TRANSLATION
+ TRADE_ROUTE_ENTRY_USED_CAPACITY_OVER_TT: "@alert_icon! #alert_trial Tato [Concept('trade_route','obchodní trasa')|E] má nižší maximální [Concept('capacity','kapacita')|E] než minulý měsíc. Nyní přepraví nejvýše [ValueBreakdown.GetFixedPointValue|V1^] [Concept('goods','zboží')|E].#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_ROUTE_ENTRY_CAPACITY: "[TradeRoute.GetCurrentCapacity|V1^]#low /[TradeRoute.GetMaxCapacity|1^]#!" # todo: NEW TRANSLATION
+ TRADE_ROUTE_PLANNER_ROUTE_NEEDS_TITLE: "[Concept('needs','Potřeby')|E] pokryté touto trasou" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_ROUTE_PLANNER_ROUTE_NEEDS_TITLE_TT: "#T $TRADE_ROUTE_PLANNER_ROUTE_NEEDS_TITLE$#!\nCo tato [Concept('distribution_route','zásobovací trasa')|E] dodává do [Concept('holdings','držav')|E] držených vámi nebo [Concept('barons','baroni')|E] přímo podřízenými vám, případně do každé [Concept('holding','državy')|E] na [Concept('market','trh')|E], pokud není zaškrtnuta možnost $MARKET_WINDOW_PLAYER_HOLDINGS$. Červená hodnota značí [Concept('need','potřeba')|E], při níž dojde ke ztrátě zboží, které država dříve dostávala, protože trasa umožňuje, aby si je nejprve vzala [Concept('holding','država')|E] s vyšší prioritou na [Concept('market_priority','prioritu trhu')|E]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_ROUTE_PLANNER_ROUTE_NEEDS_NONE: "#weak Tato trasa nemění [Concept('needs','potřeby')|E] vašich [Concept('holdings','držav')|E] na tomto [Concept('market','trhu')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_ROUTE_PLANNER_ROUTE_NEEDS_NONE_ALL: "#weak Tato trasa nemění žádné [Concept('needs','potřeby')|E] na tomto [Concept('market','trhu')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_ROUTE_PLANNER_ROUTE_NEEDS_YOUR_HOLDINGS_TT: "#T $MARKET_WINDOW_PLAYER_HOLDINGS$#!\n#i Kliknutím zobrazíte pouze [Concept('holdings','državy')|E] držené vámi nebo [Concept('barons','baroni')|E] přímo podřízenými vám#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_ROUTE_PLANNER_ROUTE_NEEDS_GAIN: "[TradeNeedGoodAmount.GetAmount|1^]" # todo: NEW TRANSLATION
+ TRADE_ROUTE_PLANNER_ROUTE_NEEDS_LOSS: "#W [TradeNeedGoodAmount.GetAmount|1^]#!" # todo: NEW TRANSLATION
+ TRADE_ROUTE_PLANNER_ROUTE_NEEDS_ROW_TT: "#T $TRADE_ROUTE_PLANNER_ROUTE_NEEDS_TITLE$#!\nPotřeby: #trade_need [TradeNeedColumn.GetUnmetNeed|1^]#!\nPotřeby pokryté touto trasou: [GetColoredValueString( TradeNeedColumn.GetCoveredByDraft, 'trade', '(int32)1' )]\nNepokryté potřeby: #trade_need [TradeNeedColumn.GetRemainingNeed|1^]#!" # todo: NEW TRANSLATION
+ CREATE_TRADE_ROUTE_CONFIRM_LABEL: "Vytvořit obchodní trasu" # todo: NEW TRANSLATION
+ CREATE_TRADE_ROUTE_CONFIRM_TT: "#T $CREATE_TRADE_ROUTE_CONFIRM_LABEL$#!\nZřídit [TradeRouteDraft.GetName|l]. [ConcatIfNeitherEmpty('\n\n#bold Nastane:\n#!', TradeRoutePlanner.GetConfirmTradeRouteEffects)]" # todo: NEW TRANSLATION
+ EDIT_TRADE_ROUTE_CONFIRM_LABEL: "Potvrdit změny" # todo: NEW TRANSLATION
+ EDIT_TRADE_ROUTE_CONFIRM_TT: "#T $EDIT_TRADE_ROUTE_CONFIRM_LABEL$#!\nPoužít tyto změny na [TradeRouteDraft.GetName|l].[SelectLocalization( TradeRoutePlanner.IsChangingPrimaryGood, 'EDIT_TRADE_ROUTE_PRIMARY_GOOD_CHANGE_WARNING', '' )][ConcatIfNeitherEmpty('\n\n#bold Náklady:#!\n', TradeRoutePlanner.GetEditTradeRouteCostDescription)][ConcatIfNeitherEmpty('\n\n#bold Nastane:\n#!\n', TradeRoutePlanner.GetConfirmTradeRouteEffects)]" # todo: NEW TRANSLATION
+ EDIT_TRADE_ROUTE_PRIMARY_GOOD_CHANGE_WARNING: "\n\n@warning_icon! #warning Změna [Concept('primary_good','hlavní komodita')|E] vynuluje dobu, po kterou je tato [Concept('trade_route','obchodní trasa')|E] v provozu, a odstraní [Concept('modifier','modifikátor')|E] [GetModifier( 'gdp_trade_route_maturity_modifier' ).GetNameWithTooltip]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ edit_trade_route_cost_route_age: "10 prestiže za každý rok, kdy tato obchodní trasa fungovala se současným hlavním druhem zboží" # todo: NEW TRANSLATION
+ EDIT_TRADE_ROUTE_LABEL: "Změnit" # todo: NEW TRANSLATION
+ EDIT_TRADE_ROUTE_TT: "Změnit [Concept('trade_route','obchodní trasa')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_ROUTE_ADD_GOOD_SLOT_TT: "Další [Concept('good','zboží')|E] lze přidat změnou trasy" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_ROUTE_ADD_GOOD_SLOT_CAPACITY_FULL_TT: "#T Žádná volná kapacita#!\n@warning_icon! #X Uvolněte [Concept('capacity','kapacita')|E], než bude možné na této [Concept('trade_route','obchodní trase')|E] přepravovat další [Concept('good','zboží')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_ROUTE_PLANNER_ADD_GOOD_SLOT_TT: "#T Dostupné místo pro zboží#!\nVyberte [Concept('good','zboží')|E], které chcete přidat na tuto [Concept('trade_route','obchodní trasu')|E]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_ROUTE_PLANNER_LOCKED_GOOD_SLOT_TT: "#T Uzamčené místo pro zboží#!\nZvyšte [Concept('max_trade_goods','max. počet obchodních komodit')|E] a odemkněte další místa pro [Concept('good','zboží')|E].\n\n$TRADE_GOODS_ON_PROFIT_ROUTE_MAXIMUM$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_ROUTE_PLANNER_CLEAR_GOODS_TT: "#T Odebrat zboží#!\nOdebere veškeré přepravované [Concept('goods','zboží')|E] z této [Concept('trade_route','obchodní trasy')|E]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_ROUTE_PLANNER_CLEAR_MARKETS_TT: "#T Odebrat trhy#!\nOdebere z této [Concept('trade_route','obchodní trasy')|E] všechny zastávky na [Concept('market','trh')|E]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ DISCARD_TRADE_ROUTE_LABEL: "Zahodit" # todo: NEW TRANSLATION
+ DISCARD_TRADE_ROUTE_TT: "#T $DISCARD_TRADE_ROUTE_LABEL$#!\nZahodit změny v [TradeRouteDraft.GetName|l]." # todo: NEW TRANSLATION
+ TRADE_ROUTE_PLANNER_PRIMARY_GOOD_PROFIT: "@gold_icon![TradeRouteDraft.GetExpectedProfitForGood( TradeGoodType.Self )|+=2]" # todo: NEW TRANSLATION
+ TRADE_ROUTE_PLANNER_GOOD_PROFIT: "@gold_icon![TradeRouteDraft.GetExpectedProfitForGood( TradeGoodType.Self )|+=2]" # todo: NEW TRANSLATION
+ TRADE_ROUTE_PLANNER_PRIMARY_GOOD_ACTIVE: "[TradeGoodType.GetNameNoTooltip] je aktuální [Concept('primary_good','hlavní komodita')|E].\nObchodováním s tímto zbožím získáte #bold [Concept('trade_expertise','obchodní zkušenost')|E]#! v jeho kategorii.\n\n#i Kliknutím odeberete jako $game_concept_primary_good$.#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_ROUTE_PLANNER_PRIMARY_GOOD_SELECT: "Vyberte #bold [TradeGoodType.GetNameNoTooltip]#! jako svůj [Concept('primary_good','hlavní komoditu')|E].\n\n#i Hlavní komodita určuje, která obchodní kategorie získá díky této trase [Concept('trade_expertise','obchodní zkušenosti')|E].#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_ROUTE_PLANNER_NO_VALID_TRADE: "@warning_icon!#X S [TradeGoodType.GetNameNoTooltip] se nebude obchodovat, protože na [Concept('route','trasu')|E] není současně [Concept('surplus','přebytek')|E] i [Concept('need','potřeba')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ CARRIED_GOOD_DETAILS: "Množství: [TradeRouteDraft.GetPurchasedAmountOfGood( TradeGoodType.Self )|V1^]\nZisk: @gold_icon![TradeRouteDraft.GetExpectedProfitForGood( TradeGoodType.Self )|+=2]" # todo: NEW TRANSLATION
+ CARRIED_GOOD_REMOVE: "#I Kliknutím pravým tlačítkem odeberete přepravované [Concept('good','zboží')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ CARRIED_GOOD_OPEN: "#I Kliknutím vyberete#!" # todo: NEW TRANSLATION
+ CARRIED_GOOD_REORDER: "#I Přetažením změníte prioritu a nastavíte [Concept('primary_good','hlavní komodita')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_ROUTE_PLANNER_XP_GAIN: "+[TradeGoodCategory.GetMonthlyXpGain( Character.Self )|+0]/měsíc" # todo: NEW TRANSLATION
+ TRADE_ROUTE_PRIMARY_GOOD: "[Concept('primary_good','Hlavní komodita')|E]: " # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ NO_TRANSACTIONS: "Žádné transakce" # todo: NEW TRANSLATION
+ CLOSE_TRADE_ROUTE_PLANNER_DIALOG_TITLE: "Zahodit změny [Concept('trade_route','obchodní trasa')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ CLOSE_TRADE_ROUTE_PLANNER_DIALOG_DESC: "Opravdu chcete zahodit naplánované změny?" # todo: NEW TRANSLATION
+ CLOSE_TRADE_ROUTE_PLANNER_DIALOG_CONFIRM: "$CONFIRM$" # todo: NEW TRANSLATION
+ CANNOT_CREATE_PROFIT_TRADE_ROUTE_GOVERNMENT: "@warning_icon! #warning Vaše [Concept('government','vláda')|E] nepovoluje [Concept('profit_routes','výnosné trasy')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ CANNOT_CREATE_DISTRIBUTION_TRADE_ROUTE_GOVERNMENT: "@warning_icon! #warning Vaše [Concept('government','vláda')|E] nepovoluje [Concept('distribution_routes','zásobovací trasy')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ CANNOT_CREATE_TRADE_ROUTE_FEW_TRADE_MARKETS: "@warning_icon! #warning Bylo vybráno méně než #V 2#! [Concept('trade_markets','obchodní trhy')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ CANNOT_CREATE_TRADE_ROUTE_NO_TRADE_GOODS: "@warning_icon! #warning Nebylo vybráno žádné [Concept('trade_goods','obchodní zboží')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ CANNOT_CREATE_TRADE_ROUTE_NO_HOME_MARKET: "@warning_icon! #warning Nejprve musíte vybrat [Concept('market','trh')|E], na kterém máte [Concept('title','titul')|E], [Concept('domicile','domicilu')|E] nebo [Concept('trade_post','obchodní stanice')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ CANNOT_CREATE_TRADE_ROUTE_DISTRIBUTION_MARKET_NOT_CONNECTABLE: "@warning_icon! #warning Propojit můžete pouze [Concept('trade_markets','obchodní trhy')|E] vlastněné vámi, vaším [Concept('vassal','vazalem')|E] nebo někým jemu podřízeným#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ CANNOT_CREATE_TRADE_ROUTE_DISTRIBUTION_DUPLICATE: "@warning_icon! #warning Už máte [Concept('distribution_route','zásobovací trasa')|E], která obsluhuje přesně tyto [Concept('trade_markets','obchodní trhy')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ CANNOT_CREATE_TRADE_ROUTE_DISTRIBUTION_NOT_BASIC_GOOD: "@warning_icon! #warning Distribuční trasy mohou přepravovat pouze základní obchodní zboží#!" # todo: NEW TRANSLATION
+ CANNOT_CREATE_TRADE_ROUTE_DISTRIBUTION_TIER_TOO_LOW: "@warning_icon! #warning [Concept('distribution_route','Zásobovací trasa')|E] ve svém [Concept('realm','panství')|E] může vytvořit pouze [Concept('duke','vévoda')|E] nebo někdo s vyšším titulem#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ CANNOT_CREATE_TRADE_ROUTE_DISTRIBUTION_TOO_MANY_MARKETS: "@warning_icon! #warning Distribuční trasa může propojit pouze #V 2#! [Concept('trade_markets','obchodní trhy')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_ROUTE_PLANNER_DISTRIBUTION_GOODS_AUTOMATIC: "@warning_icon! #warning Distribuční trasa přepravuje každé dostupné základní obchodní zboží, jehož výběr probíhá automaticky#!" # todo: NEW TRANSLATION
+ CANNOT_CREATE_TRADE_ROUTE_NO_FOCUS_GOOD: "@warning_icon! #warning Nebylo vybráno žádné zaměření na [Concept('good','zboží')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ CANNOT_CREATE_TRADE_ROUTE_UNPAIRED_GOODS: "@warning_icon! #warning Některé převážené [Concept('goods','zboží')|E] nemají na současné [Concept('route','trasu')|E] platný pár [Concept('surplus','přebytek')|E]–[Concept('need','potřeba')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ CANNOT_CREATE_TRADE_ROUTE_NOTHING_TO_TRADE: "@warning_icon! #warning Na [Concept('route','trasu')|E] by se neobchodovalo s žádným [Concept('goods','zbožím')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ CANNOT_CREATE_TRADE_ROUTE_TOO_LONG: "@warning_icon! #warning [Concept('route','Trasa')|E] je delší než vaše maximální délka trasy#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ CANNOT_CREATE_TRADE_ROUTE_NO_ROAD_CONNECTION: "@warning_icon! #warning Žádná [Concept('road','silnice')|E] nespojuje všechny [Concept('trade_market','obchodní trh')|E] na [Concept('route','trasu')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ CANNOT_CREATE_TRADE_ROUTE_INVALID_MARKET: "@warning_icon! #warning Jeden z vybraných [Concept('trade_markets','obchodních trhů')|E] již není dostupný#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ CREATE_TRADE_ROUTE_CONFIRM_TITLE: "$CREATE_TRADE_ROUTE_CONFIRM_LABEL$" # todo: NEW TRANSLATION
+ CREATE_TRADE_ROUTE_CONFIRM_ACCEPT: "Vytvořit" # todo: NEW TRANSLATION
+ EDIT_TRADE_ROUTE_CONFIRM_TITLE: "$EDIT_TRADE_ROUTE_CONFIRM_LABEL$" # todo: NEW TRANSLATION
+ EDIT_TRADE_ROUTE_CONFIRM_ACCEPT: "Odeslat" # todo: NEW TRANSLATION
+ CANNOT_DESTROY_TRADE_ROUTE: "@warning_icon! #warning Neplatná obchodní trasa#!" # todo: NEW TRANSLATION
+ DESTROY_TRADE_ROUTE_CONFIRMATION_TITLE: "Odstranit obchodní trasu" # todo: NEW TRANSLATION
+ DESTROY_TRADE_ROUTE_CONFIRMATION_TEXT: "Opravdu chcete rozebrat [TRADE_ROUTE.GetName]?\n[SelectLocalization( And( TRADE_ROUTE.IsCommissionRoute, TRADE_ROUTE.GetOwner.IsLocalPlayer ), 'DESTROY_TRADE_ROUTE_COMMISSION_WARNING_TEXT', '')]" # todo: NEW TRANSLATION
+ DESTROY_TRADE_ROUTE_COMMISSION_WARNING_TEXT: "@warning_icon! #X Rozebrání [Concept('commission_route','zakázková trasa')|E] vám přinese [Concept('secret','tajemství')|E] [GetTrait('dealbreaker').GetName( GetNullCharacter )] a donutí vás vrátit část odměny." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ DESTROY_TRADE_ROUTE_CONFIRMATION_ACCEPT: "Odstranit" # todo: NEW TRANSLATION
+ COMPETITIVENESS: "[competitiveness_i][Concept('competitiveness','Konkurenceschopnost')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ COMPETITIVENESS_LABEL: "$COMPETITIVENESS$:" # todo: NEW TRANSLATION
+ MODIFIED_COMPETITIVENESS: "$COMPETITIVENESS$" # todo: NEW TRANSLATION
+ TRADE_CAPACITY_LABEL: "[trade_route_capacity_i][Concept('capacity','Kapacita')|E]:" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ CURRENT_ROUTES_LABEL: "Trasy:" # todo: NEW TRANSLATION
+ MAX_TRADE_GOODS_PER_ROUTE_LABEL: "[trade_goods_i][Concept('max_trade_goods_short','Obchodní komodity')|E]:" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MAX_TRADE_MARKETS_PER_ROUTE_LABEL: "[market_i][Concept('max_trade_markets_short','Obchodní trhy')|E]:" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MAX_TRADE_MARKETS_ON_ROUTE: "Maximum [Concept('markets','trhy')|E]: [ValueBreakdown.GetValue|V]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_ROUTE_PLANNER_VIEW_MARKETS: "Zobrazit" # todo: NEW TRANSLATION
+ TRADE_GOOD_TYPE_NEED_CATEGORY: "[Concept('trade_category','Kategorie zboží')|E]: [TradeGoodType.GetNeedCategory.GetNameWithIcon]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_GOOD_TYPE_IS_BASIC: "Lze přepravovat prostřednictvím [Concept('distribution_routes','zásobovacích tras')|E]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_GOOD_CATEGORY_GOODS_HEADER: "[trade_goods_i][Concept('trade_goods','Obchodní zboží')|E]:" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_GOOD_TYPE_TOOLTIP_CTA_SELECT: "Kliknutím vyberete" # todo: NEW TRANSLATION
+ CREATE_ROUTE_BUTTON_LABEL: "Vytvořit trasu" # todo: NEW TRANSLATION
+ COMMISSION_TRADE_ROUTE_BUTTON_LABEL: "$commission_trade_route_interaction$" # todo: NEW TRANSLATION
+ TRADE_ROUTE_TRANSACTIONS_LABEL: "Transakce" # todo: NEW TRANSLATION
+ ROUTE_ALREADY_CONTAINS_TRADE_GOOD_TYPE: "@warning_icon! #X Trasa již obsahuje tento druh obchodního zboží#!" # todo: NEW TRANSLATION
+ MAX_TRADE_GOODS_ON_ROUTE_REACHED: "@warning_icon! #X Již jste přidali maximální počet druhů obchodního zboží#!" # todo: NEW TRANSLATION
+ TRADE_GOODS_ON_ROUTE_MAXIMUM_MODIFIER: "@warning_icon! Nad maximem" # todo: NEW TRANSLATION
+ TRADE_CAPACITY_MINIMUM: "#weak [Concept('capacity','Kapacita')|E] nemůže klesnout pod#! $VALUE|0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_GOODS_ON_PROFIT_ROUTE_MAXIMUM: "#weak [Concept('profit_routes','Výnosné trasy')|E] nemohou převážet více než #V [GetDefine('NTrade', 'MAX_TRADE_GOODS_ON_ROUTE_CAP')|0]#! [Concept('goods','zboží')|E]#!." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MAX_MARKETS_REACHED: "@warning_icon! #X Již jste přidali maximální počet obchodních trhů#!" # todo: NEW TRANSLATION
+ MAX_TRADE_ROUTES_REACHED: "@warning_icon! #X Dosáhli jste maximálního počtu obchodních tras#!\n#I Najeďte kurzorem na podtržený maximální počet tras v tomto okně a zjistěte, co jej zvyšuje#!" # todo: NEW TRANSLATION
+ TRADE_ROUTE_PLANNER_MARKET_OUT_OF_ROUTE_LENGTH: "@warning_icon! #X Obchodní trh je za hranicí vaší [Concept('route_length','délku trasy')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_ROUTE_PLANNER_MARKET_ALREADY_SELECTED: "@warning_icon! #X Obchodní trh je již vybrán#!" # todo: NEW TRANSLATION
+ TRADE_ROUTE_PLANNER_SELECT_HOME_MARKET_FIRST: "@warning_icon! #X Nejprve musíte vybrat trh, na němž vlastníte [Concept('titles','tituly')|E] nebo kde sídlíte.#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_ROUTE_PLANNER_SELECT_INFLUENCED_MARKET_FIRST: "@warning_icon! #X Nejprve musíte vybrat trh, na němž máte [Concept('domicile','domicil')|E], [Concept('title','titulu')|E] nebo [Concept('trade_post','obchodní stanice')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_ROUTE_PLANNER_CANT_REMOVE_HOME_MARKET: "@warning_icon! #X Nelze odebrat trh, na němž sídlíte.#!" # todo: NEW TRANSLATION
+ trade_markets_MAP_MODE_TOOLTIP_CLICK_TO_SELECT: "\n[PROVINCE.GetTradeMarket.GetMapModeClickTooltip]" # todo: NEW TRANSLATION
+ TRADE_MARKETS_MAPMODE_TT_DEFAULT: "#I Kliknutím vyberete trh#!" # todo: NEW TRANSLATION
+ TRADE_MARKETS_MAPMODE_TT_PLANNER_ADD: "#I Kliknutím levým tlačítkem přidáte tento [Concept('trade_market','obchodní trh')|E] na [Concept('trade_route','obchodní trasu')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_MARKETS_MAPMODE_TT_PLANNER_REMOVE: "#I Kliknutím levým tlačítkem odeberete tento [Concept('trade_market','obchodní trh')|E] z [Concept('trade_route','obchodní trasy')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_MARKETS_MAPMODE_TT_PLANNER_RIGHT_CLICK: "#I Kliknutím pravým tlačítkem otevřete okno [Concept('trade_market','obchodní trh')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ CANNOT_EDIT_CONTRACT_TRADE_ROUTE: "Tato [Concept('trade_route','obchodní trasa')|E] je vázána smlouvou a nelze ji upravovat" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_ROUTE_COMMISSIONED_BY: "[Concept('merchant_patron','Patron')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_ROUTE_COMMISSION_EXPIRES_ON: "Platnost skončí [TradeRoute.GetCommissionExpirationDate.GetStringShort]" # todo: NEW TRANSLATION
+ TRADE_ROUTE_COMMISSION_ENDS_IN: "Skončí za [TradeRoute.GetCommissionTimeRemaining]" # todo: NEW TRANSLATION
+ TRADE_ROUTE_PLANNER_TRANSACTION_PURCHASE_TOOLTIP: "#T Nákup: [TradeGoodType.GetName]#!\nMnožství: [TradeTransaction.GetAmount|V2]\n$TRADE_PRICE_PER_UNIT$: [TradeTransaction.GetPPU|V3]" # todo: NEW TRANSLATION
+ TRADE_ROUTE_PLANNER_TRANSACTION_SELL_TOOLTIP: "#T Prodej: [TradeGoodType.GetName]#!\nMnožství: [TradeRouteDraft.GetSellAmountForGoodInMarket( TradeGoodType.Self, TradeMarket.Self )|V2]\n$TRADE_PRICE_PER_UNIT$: [TradeTransaction.GetPPU|V3]" # todo: NEW TRANSLATION
+ TRADE_PRICE_BREAKDOWN_TITLE_BUY: "[Concept('buy_price','Nákupní cena')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_PRICE_BREAKDOWN_TITLE_SELL: "[Concept('sell_price','Prodejní cena')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_PRICE_PER_UNIT: "Cena za [TradeGoodType.Custom('GetTradeGoodUnit')|U]" # todo: NEW TRANSLATION
+ TRADE_GOODS_UNITS_OF_TYPE: "[TradeGoodType.Custom('GetTradeGoodUnitPlural')|U] zboží [TradeGoodType.GetName]" # todo: NEW TRANSLATION
+ TRADE_TRANSACTION_AMOUNT: "Množství" # todo: NEW TRANSLATION
+ TRADE_PRICE_SOURCE_MARKET: "Trh" # todo: NEW TRANSLATION
+ TRADE_PRICE_SOURCE_ROUTE: "Trasa" # todo: NEW TRANSLATION
+ TRADE_PRICE_SOURCE_CHARACTER: "Postava" # todo: NEW TRANSLATION
+ TRADE_PRICE_PROSPERITY: "Hospodářský rozkvět" # todo: NEW TRANSLATION
+ TRADE_PRICE_PROSPERITY_AVG_MARKET: "[Concept('market_prosperity','Hospodářská prosperita trhu')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_PRICE_PROSPERITY_BASELINE: "Základní hodnota [Concept('prosperity','rozkvět')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_PRICE_PROSPERITY_PER_POINT: "Změna ceny za bod [Concept('prosperity','rozkvět')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_PRICE_PAID_IN_TOLLS: "Uhrazeno na [Concept('market_tolls','tržní cla')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_INCOME_FROM_TOLLS: "Příjmy z [Concept('market_tolls','tržních cel')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TOLL_INCOME_FROM_MARKET: "Z trhu [TradeMarket.GetName]" # todo: NEW TRANSLATION
+ BASE_TOLL_INCOME: "Základní příjem" # todo: NEW TRANSLATION
+ TOLL_INCOME_TAX_MOD: "Z [Concept('modifiers','modifikátorů')|E] [Concept('commerce_tax','obchodní daně')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ ROUTE_OWNER_TOLL: "[TollLevel.GetRouteOwnerTollRate|N%0]" # todo: NEW TRANSLATION
+ MARKET_OWNER_TOLL: "[TollLevel.GetMarketOwnerTollRate|P%0]" # todo: NEW TRANSLATION
+ TOLL_EFFECT_TOLL_EXCEPTION: "#V Vy#! platíte [TollLevel.GetName] ([TollLevel.GetRouteOwnerTollRate|P%0])" # todo: NEW TRANSLATION
+ TOLL_EFFECT_TOLL_EXEMPTION: "#V Vy#! jste #weak osvobozeni#! od placení mýta na tomto trhu." # todo: NEW TRANSLATION
+ TOLL_EFFECT_ROUTE_OWNER: "Majitel [Concept('trade_route','obchodní trasa')|E] platí: [TollLevel.GetRouteOwnerTollRate|N%0]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TOLL_EFFECT_MARKET_OWNER: "[Concept('market_owner','Vlastník trhu')|E] získává: [TollLevel.GetMarketOwnerTollRate|P%0]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TOLL_MARKET_INCOME_MULT: "Z [Concept('trade_market','obchodního trhu')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TOLL_PREDICTED_INCOME: "Očekávaný příjem: @gold_icon![TradeMarketWindow.GetPredictedTollIncome( TollLevel.Self )|P2]" # todo: NEW TRANSLATION
+ TOLL_CURRENT_INCOME: "Příjem z [Concept('toll','cla')|E]: @gold_icon![TradeMarketWindow.GetLastTollIncome|P2]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TOLL_LEVEL_IN_MARKET: "#weak ([TradeMarket.GetTollLevel.GetName])#!" # todo: NEW TRANSLATION
+ TOLL_EXEMPT_FROM_TOLLS: "#weak Osvobozen#!" # todo: NEW TRANSLATION
+ TOLL_EXEMPT_CHARACTER_VASSAL: "Osvobozeno, protože jste [Concept('direct_vassal','přímý vazal')|E] [Concept('market_owner','vlastníka trhu')|E]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TOLL_EXEMPT_CHARACTER_MARKET_OWNER: "Osvobozeno, protože jste [Concept('market_owner','vlastník trhu')|E]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TOLL_EXEMPT_CHARACTER_TRIBUTARY: "Osvobozeno, protože jste [Concept('tributary','tributář')|E] [Concept('market_owner','vlastníka trhu')|E]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TOLL_EXEMPT_CHARACTER_CLIENT: "Osvobozeno, protože jste [Concept('client','klient')|E] [Concept('market_owner','vlastníka trhu')|E]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ CHANGE_TOLL_LEVEL_BUTTON: "Změnit mýtní politiku" # todo: NEW TRANSLATION
+ TOLL_LEVEL_CHANGED_RECENTLY: "#warning Úroveň mýta byla změněna příliš nedávno\nDalší změna bude možná [TradeMarketWindow.GetMarket.GetNextTollChangeDate.GetString|V]#!" # todo: NEW TRANSLATION
+ NOT_MARKET_OWNER: "Nejste vlastníkem trhu" # todo: NEW TRANSLATION
+ CURRENT_TOLL_LEVEL_SELECTED: "Toto je současná úroveň mýta" # todo: NEW TRANSLATION
+ CHANGE_MARKET_TOLL_LEVEL_CONFIRMATION_TITLE: "Změnit úroveň [Concept('market_toll','tržní clo')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ CHANGE_MARKET_TOLL_LEVEL_CONFIRMATION_TEXT: "Změnit [Concept('market_toll','tržní clo')|E] na trhu [TradeMarket.GetName] na úroveň [TollLevel.GetName]?\n\nMajitel [Concept('trade_route','obchodní trasa')|E] platí: [TollLevel.GetRouteOwnerTollRate|N%0]   [Concept('market_owner','vlastník trhu')|E] získává: [TollLevel.GetMarketOwnerTollRate|P%0]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ CHANGE_MARKET_TOLL_LEVEL_CONFIRMATION_ACCEPT: "Změnit politiku" # todo: NEW TRANSLATION
+ TRADE_MARKET_CAPITAL_NO_TRADE_POST: "Žádná obchodní stanice" # todo: NEW TRANSLATION
+ TRADE_MARKET_CAPITAL_CONSTRUCTING_TRADE_POST: "Obchodní stanice se staví" # todo: NEW TRANSLATION
+ TRADE_MARKET_CAPITAL_HAS_CONSTRUCTED_TRADE_POST: "Obchodní stanici postavil [Title.GetHolder.GetName]" # todo: NEW TRANSLATION
+ TRADE_MARKET_CANNOT_HAVE_TRADE_POST_TT: "#T Zde nelze postavit [Concept('trade_post','obchodní stanice')|E]:#!\n[Holding.GetCharacterCannotHaveTradePostReason( GetPlayer )]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_MARKET_OWNER_LABEL: "[Concept('market_owner','Vlastník trhu')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_MARKET_OWNER_NAME: "[Character.GetShortUIName|U]" # todo: NEW TRANSLATION
+ TRADE_MARKET_CAPITAL_LABEL: "[Concept('market_capital','Tržní hlavní sídlo')|E]: [Holding.GetName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MARKET_OWNER_INTERACTIONS_BUTTON_TOOLTIP: "#T Zobrazit interakce s [Concept('market_owner','vlastníkem trhu')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ goods_balance: "Bilance zboží" # todo: NEW TRANSLATION
+ goods_name: "Název" # todo: NEW TRANSLATION
+ trade_volume: "Objem obchodu" # todo: NEW TRANSLATION
+ merchant_name: "Název" # todo: NEW TRANSLATION
+ trade_routes_here: "Obchodní trasy zde" # todo: NEW TRANSLATION
+ competitiveness: "Konkurenceschopnost" # todo: NEW TRANSLATION
+ MERCHANTS_SORT_ORDER_TOOLTIP: "#T Změnit řazení obchodníků#!" # todo: NEW TRANSLATION
+ TRADE_WINDOW_CURRENT_TRADE_ROUTES: "[TradeWindow.GetCharacter.GetCurrentTradeRouteCount]/[TradeWindow.GetCharacter.GetMaxTradeRouteCount]" # todo: NEW TRANSLATION
+ HUD_TRADE_ROUTE_LIMIT_TT: "#T [Concept('trade_routes','Obchodní trasy')|E]: [GetPlayer.GetCurrentTradeRouteCount]/[GetPlayer.GetMaxTradeRouteCount]#![SelectLocalization( GreaterThanOrEqualTo_int32( GetPlayer.GetCurrentTradeRouteCount, GetPlayer.GetMaxTradeRouteCount ), 'HUD_TRADE_ROUTE_LIMIT_AT_MAX', '' )]\n\n$CLICK_TO_VIEW$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ HUD_TRADE_ROUTE_LIMIT_AT_MAX: "\n\n$MAX_TRADE_ROUTES_REACHED$" # todo: NEW TRANSLATION
+ HOME_MARKET: "Domovský trh [Character.Custom('CZ_ShortUIName_G')|U]" # todo: NEW TRANSLATION
+ YOUR_HOME_MARKET: "Tvůj domovský [Concept('market','trh')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ YOUR_DOMAIN_MARKET: "[Concept('market','Trh')|E] v tvé [Concept('domain','doméně')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ YOUR_REALM_MARKET: "[Concept('market','Trh')|E] v tvém [Concept('realm','panství')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ FOREIGN_MARKET: "Cizí [Concept('market','trh')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ THEY_ARE_MARKET_OWNER: "$BULLET$ [Concept('market_owner','Vlastník trhu')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ THEIR_HOME_MARKET: "$BULLET$ Domovský $game_concept_market$ [CharYourHerHis( Character )|U]" # todo: NEW TRANSLATION
+ THEIR_REALM_MARKET: "$BULLET$ Trh v [CharYourHerHis( Character )] panství" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MARKET_PROSPERITY_BREAKDOWN_NAME: "Průměrná [Concept('market_prosperity','hospodářská prosperita trhu')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MARKET_PROSPERITY_COUNTY_ENTRY: "[Title.GetNameNoTooltip]" # todo: NEW TRANSLATION
+ MARKET_PROSPERITY_SELL_PRICE_EFFECT: "[Concept('sell_prices','Prodejní ceny')|E] jsou zde vyšší o $MULT|%+0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MARKET_PROSPERITY_BUY_PRICE_EFFECT: "[Concept('buy_prices','Nákupní ceny')|E] jsou zde nižší o $MULT|%+0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MARKET_PROSPERITY_NO_PRICE_EFFECT: "#weak Bez vlivu na ceny [Concept('goods','zboží')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MARKET_WINDOW_PROFIT_ROUTES: "[TradeMarket.GetProfitRouteCount] Výnosné trasy" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MARKET_WINDOW_PROFIT_ROUTES_TT: "#T $MARKET_WINDOW_PROFIT_ROUTES$#!\n\n#I Kliknutím zobrazíš [Concept('profit_routes','výnosné trasy')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MARKET_WINDOW_DISTRIBUTION_ROUTES: "[TradeMarket.GetDistributionRouteCount] [SelectLocalization( GreaterThan_int32( TradeMarket.GetDistributionRouteCount, '(int32)1'), 'game_concept_distribution_routes', 'game_concept_distribution_route')]" # todo: NEW TRANSLATION
+ MARKET_WINDOW_DISTRIBUTION_ROUTES_TT: "#T $MARKET_WINDOW_DISTRIBUTION_ROUTES$#!\n\n[Concept('distribution_routes','Zásobovací trasy')|E], které aktuálně obchodují s [Concept('trade_goods','obchodním zbožím')|E] v [TradeMarket.GetNameNoTooltip].\n\n#I Kliknutím zobrazíš [Concept('distribution_routes','zásobovací trasy')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MARKET_WINDOW_TRADE_POSTS: "[TradeMarket.GetCurrentTradePostCount]/[TradeMarket.GetMaxTradePostCount] $game_concept_trade_posts$" # todo: NEW TRANSLATION
+ MARKET_WINDOW_TRADE_POSTS_TT: "#T $MARKET_WINDOW_TRADE_POSTS$#!\n\n#I Kliknutím zobrazíš [Concept('trade_posts','obchodní stanice')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MARKET_WINDOW_ALL_MODIFIERS: "Všechny modifikátory [Concept('market','trh')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_WINDOW_SURPLUS_LABEL: "[Concept('surplus','Přebytek')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_WINDOW_DEFICIT_LABEL: "[Concept('deficit','Deficit')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MARKET_WINDOW_SELECT_GOOD: "Vyber [Concept('good','zboží')|E] a zobraz jeho stav na [Concept('market','trh')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_GOOD_NOT_IN_MARKET: "Na tomto [Concept('market','trhu')|E] není po tomto [Concept('trade_good','obchodním zboží')|E] přímá [Concept('need','potřebě')|E] ani [Concept('surplus','přebytku')|E]. Stále jej lze dovážet k pokrytí potřeby v [Concept('trade_category','kategorii zboží')|E]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MARKET_WINDOW_GOOD_BUYERS_TITLE: "Kupuje se" # todo: NEW TRANSLATION
+ MARKET_WINDOW_GOOD_SELLERS_TITLE: "Prodává se" # todo: NEW TRANSLATION
+ MARKET_WINDOW_GOOD_NEEDS_TITLE: "Potřeby" # todo: NEW TRANSLATION
+ MARKET_WINDOW_GOOD_BUYERS_TITLE_OFF: "#weak $MARKET_WINDOW_GOOD_BUYERS_TITLE$#!" # todo: NEW TRANSLATION
+ MARKET_WINDOW_GOOD_SELLERS_TITLE_OFF: "#weak $MARKET_WINDOW_GOOD_SELLERS_TITLE$#!" # todo: NEW TRANSLATION
+ MARKET_WINDOW_GOOD_BUYERS_NONE_TT: "@warning_icon!#X Není k dispozici žádný [TradeGoodType.GetNameNoTooltip] [Concept('surplus','přebytek')|E] ke koupi#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MARKET_WINDOW_GOOD_SELLERS_NONE_TT: "@warning_icon!#X Po [TradeGoodType.GetNameNoTooltip] není žádná [Concept('needs','potřebě')|E], takže jej nelze prodávat#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_MARKET_BALANCE_TT_HEADER: "[SelectLocalization( TradeMarket.HasNetSurplusForGood( TradeGoodType.Self ), 'MARKET_GOOD_BALANCE_HEADER_SURPLUS', 'MARKET_GOOD_BALANCE_HEADER_NEED')]" # todo: NEW TRANSLATION
+ MARKET_GOOD_BALANCE_HEADER_NEED: "[TradeGoodType.GetName] Potřeba: #trade_need [TradeMarket.GetNetBalanceMagnitudeForGood( TradeGoodType.Self )|1^]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MARKET_GOOD_BALANCE_HEADER_SURPLUS: "[TradeGoodType.GetName] Přebytek: #trade_surplus [TradeMarket.GetNetBalanceMagnitudeForGood( TradeGoodType.Self )|1^]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_MARKET_BALANCE_TT_HEADER_MODE: "[SelectLocalization( TradeMarketWindow.HasDisplaySurplusForGood( TradeGoodType.Self ), 'MARKET_GOOD_BALANCE_HEADER_MODE_SURPLUS', 'MARKET_GOOD_BALANCE_HEADER_MODE_NEED')]" # todo: NEW TRANSLATION
+ MARKET_GOOD_BALANCE_HEADER_MODE_NEED: "[TradeGoodType.GetName] Potřeba: #trade_need [TradeMarketWindow.GetDisplayBalanceMagnitudeForGood( TradeGoodType.Self )|1^]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MARKET_GOOD_BALANCE_HEADER_MODE_SURPLUS: "[TradeGoodType.GetName] Přebytek: #trade_surplus [TradeMarketWindow.GetDisplayBalanceMagnitudeForGood( TradeGoodType.Self )|1^]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MARKET_CATEGORY_BALANCE_HEADER_NEED: "[TradeGoodCategory.GetName] Potřeba: #trade_need [TradeMarket.GetUnfulfilledNeedForCategory( TradeGoodCategory.Self )|1^]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MARKET_CATEGORY_NET_BUILDING_NEEDS_VALUE: "-[TradeMarket.GetNeedForCategory( TradeGoodCategory.Self )|1^]" # todo: NEW TRANSLATION
+ MARKET_CATEGORY_NET_IMPORTS_VALUE: "+[TradeMarket.GetImportForCategory( TradeGoodCategory.Self )|1^]" # todo: NEW TRANSLATION
+ MARKET_CATEGORY_NET_PRODUCTION_VALUE: "+[TradeMarket.GetProductionUsedForCategory( TradeGoodCategory.Self )|1^]" # todo: NEW TRANSLATION
+ MARKET_CATEGORY_UNFULFILLED_NEED_VALUE: "-[TradeMarket.GetUnfulfilledNeedForCategory( TradeGoodCategory.Self )|1^]" # todo: NEW TRANSLATION
+ MARKET_CATEGORY_UNFULFILLED_NEED_VALUE_WHOLE: "-[TradeMarket.GetUnfulfilledNeedForCategory( TradeGoodCategory.Self )|0]" # todo: NEW TRANSLATION
+ MARKET_GOOD_BALANCE_LABEL: "Tržní bilance" # todo: NEW TRANSLATION
+ MARKET_BALANCE_MODE_NET_TOOLTIP: "#T Zobrazit $game_concept_market_balance_short$#!\nZobrazuje [Concept('market_balances_short','bilance')|E] pro každé [Concept('good','zboží')|E] po [Concept('trade','obchodě')|E].\n\n[Concept('needs','Potřeby')|E] [Concept('entrepot_district','Čtvrť entrepôtu')|E] nejsou zahrnuty." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MARKET_BALANCE_MODE_TRADABLE_TOOLTIP: "#T Zobrazit obchodovatelné množství#!\nMnožství, které zbývá po uspokojení [Concept('needs','potřebách')|E] z [Concept('distribution_routes','zásobovacích tras')|E] a místních potřeb. O toto množství mohou soupeřit [Concept('profit_routes','výnosné trasy')|E] pomocí své [Concept('competitiveness','konkurenceschopnosti')|E].\n\n[Concept('needs','Potřeby')|E] [Concept('entrepot_district','Čtvrť entrepôtu')|E] jsou zahrnuty." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MARKET_GOOD_BALANCE_DISTRIBUTION_IMPORTS: "Dovozy [Concept('distribution','zásobování')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MARKET_GOOD_BALANCE_DISTRIBUTION_EXPORTS: "Vývozy [Concept('distribution','zásobování')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MARKET_GOOD_BALANCE_DISTRIBUTION_IMPORTS_VALUE: "+[TradeMarketWindow.GetDistributionImportForGood( TradeMarketGood.Self )|1^]" # todo: NEW TRANSLATION
+ MARKET_GOOD_BALANCE_DISTRIBUTION_EXPORTS_VALUE: "-[TradeMarketWindow.GetDistributionExportForGood( TradeMarketGood.Self )|1^]" # todo: NEW TRANSLATION
+ MARKET_GOOD_BALANCE_NET_DISTRIBUTION_IMPORTS_VALUE: "+[TradeMarketGood.GetNetDistributionImport|1^]" # todo: NEW TRANSLATION
+ MARKET_GOOD_BALANCE_NET_DISTRIBUTION_EXPORTS_VALUE: "-[TradeMarketGood.GetNetDistributionExport|1^]" # todo: NEW TRANSLATION
+ MARKET_GOOD_BALANCE_ENTREPOT_NEED: "Potřeba [Concept('entrepot','entrepôt')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MARKET_GOOD_BALANCE_ENTREPOT_NEED_VALUE: "-[TradeMarket.GetTradeBalanceForGood( TradeGoodType.Self ).GetImportOnlyNeed|1^]" # todo: NEW TRANSLATION
+ MARKET_GOOD_BALANCE_ENTREPOT_PRODUCTION: "Produkce [Concept('entrepot','entrepôt')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MARKET_GOOD_BALANCE_ENTREPOT_PRODUCTION_VALUE: "[TradeBalance.GetEntrepotProduction|1^]" # todo: NEW TRANSLATION
+ MARKET_GOOD_BALANCE_ENTREPOT_PRODUCTION_TT: "Část produkce, která zbyla po pokrytí [Concept('needs','potřebách')|E] naplněného [entrepot|E]. Je vyhrazena pro vývoz: místní [Concept('needs','potřeby')|E] ani [Concept('distribution_routes','zásobovací trasy')|E] ji nemohou využít." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MARKET_GOOD_BALANCE_ENTREPOT_EXCLUDED_TT: "@alert_icon! #alert_trial Zboží procházející přes entrepôt nespotřebovává tento [Concept('trade_market','obchodní trh')|E], takže je zobrazeno, ale nezapočítává se do čisté [Concept('market_balance','bilance trhu')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MARKET_GOOD_BALANCE_PRODUCTION: "Produkce" # todo: NEW TRANSLATION
+ MARKET_GOOD_BALANCE_PRODUCTION_VALUE: "+[TradeBalance.GetTotalProduction|1^]" # todo: NEW TRANSLATION
+ MARKET_GOOD_BALANCE_IMPORTS: "Dovozy" # todo: NEW TRANSLATION
+ MARKET_GOOD_BALANCE_IMPORTS_VALUE: "+[TradeBalance.GetImport|1^]" # todo: NEW TRANSLATION
+ MARKET_GOOD_BALANCE_IMPORTS_DISPLAY_VALUE: "+[TradeMarketGood.GetDisplayImport|1^]" # todo: NEW TRANSLATION
+ MARKET_GOOD_BALANCE_EXPORTS: "Vývozy" # todo: NEW TRANSLATION
+ MARKET_GOOD_BALANCE_EXPORTS_VALUE: "-[TradeBalance.GetExport|1^]" # todo: NEW TRANSLATION
+ MARKET_GOOD_BALANCE_EXPORTS_DISPLAY_VALUE: "-[TradeMarketGood.GetDisplayExport|1^]" # todo: NEW TRANSLATION
+ MARKET_GOOD_BALANCE_BUILDING_NEEDS: "Potřeby budov" # todo: NEW TRANSLATION
+ MARKET_GOOD_BALANCE_BUILDING_NEEDS_VALUE: "-[TradeMarketGood.GetBuildingNeeds|1^]" # todo: NEW TRANSLATION
+ MARKET_CATEGORY_BALANCE_BUILDING_NEEDS_VALUE: "-[TradeMarketWindow.GetBuildingNeedsForCategory( TradeGoodCategory.Self )|1^]" # todo: NEW TRANSLATION
+ MARKET_GOOD_BALANCE_CATEGORY_USE: "[TradeGoodType.GetNeedCategory.GetTextIcon] Potřeby: [TradeGoodType.GetNeedCategory.GetName]" # todo: NEW TRANSLATION
+ MARKET_GOOD_BALANCE_CATEGORY_USE_VALUE: "-[TradeMarketWindow.GetCategoryUseForGood( TradeGoodType.Self )|1^]" # todo: NEW TRANSLATION
+ MARKET_GOOD_BALANCE_NET_CATEGORY_USE_VALUE: "-[TradeMarketGood.GetCategoryConsumption|1^]" # todo: NEW TRANSLATION
+ MARKET_GOOD_BALANCE_EXPLOITATIVE_EXPORTS: "Odebráno před uspokojením [Concept('needs','potřebami')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MARKET_GOOD_BALANCE_EXPLOITATIVE_EXPORTS_VALUE: "[TradeBalance.GetExploitativeExports|1^]" # todo: NEW TRANSLATION
+ MARKET_GOOD_BALANCE_EXPLOITATIVE_EXPORTS_TT: "#T [Concept('exploitative_monopoly','Vykořisťovatelský monopol')|E]#!\n[SelectLocalization( TradeMarket.HasExploitingMonopolyForGood( TradeGoodType.Self ), 'MARKET_GOOD_BALANCE_EXPLOITATIVE_EXPORTS_TT_NAMED', 'MARKET_GOOD_BALANCE_EXPLOITATIVE_EXPORTS_TT_UNNAMED' )]\n#weak Toto množství je již započítáno ve výše uvedených vývozech.#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MARKET_GOOD_BALANCE_EXPLOITATIVE_EXPORTS_TT_NAMED: "[TradeMarket.GetExploitingMonopolyForGood( TradeGoodType.Self ).GetName] minulý měsíc odebral [TradeBalance.GetExploitativeExports|1^] [TradeGoodType.GetName] z [Concept('production','produkce')|E] tohoto [Concept('trade_market','obchodního trhu')|E] ještě před uspokojením místních [Concept('need','potřeb')|E]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MARKET_GOOD_BALANCE_EXPLOITATIVE_EXPORTS_TT_UNNAMED: "[Concept('exploitative_monopoly','Vykořisťovatelský monopol')|E] minulý měsíc odebral [TradeBalance.GetExploitativeExports|1^] [TradeGoodType.GetName] z [Concept('production','produkce')|E] tohoto [Concept('trade_market','obchodního trhu')|E] ještě před uspokojením místních [Concept('need','potřeb')|E]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MARKET_CATEGORY_EXPLOITED_LINE: "@trade_monopoly_exploitative!#X [TradeMonopoly.GetName] minulý měsíc odebral [TradeMarket.GetExploitativeExportsForCategory( TradeGoodCategory.Self )|1^] [TradeGoodCategory.GetName] z místní [Concept('production','produkce')|E] ještě před uspokojením těchto [Concept('needs','potřebami')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MARKET_CATEGORY_UNMET_NEEDS_TITLE: "#weak Tvé [Concept('holdings','državy')|E] s neuspokojenými#! [TradeGoodCategory.GetName] #weak [Concept('needs','potřebami')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MARKET_CATEGORY_NEEDS_ALL_MET: "#weak Všechny [Concept('need','potřeby')|E] této [Concept('trade_category','kategorii zboží')|E] jsou nyní pokryty#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MARKET_CATEGORY_SUPPLIED_BY_TITLE: "Dodávané [Concept('goods','zboží')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MARKET_CATEGORY_SUPPLIED_GOOD_LABEL: "[TradeGoodType.GetTextIcon] [TradeGoodType.GetNameNoTooltip]" # todo: NEW TRANSLATION
+ MARKET_GOOD_UNMET_NEEDS_TITLE: "#weak Tvé [Concept('holdings','državy')|E] s neuspokojenými#! [TradeGoodType.GetName] #weak [Concept('needs','potřebami')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ HOLDING_UNMET_NEEDS_BUILDINGS_TITLE: "[Concept('buildings','Budovy')|E] potřebující [TradeGoodType.GetName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ HOLDING_UNMET_NEEDS_BUILDINGS_TITLE_CATEGORY: "[Concept('buildings','Budovy')|E] potřebující [TradeGoodCategory.GetName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ HOLDING_UNMET_NEEDS_EXPLOITED_LINE: "@trade_monopoly_exploitative!#X [TradeMonopoly.GetName] minulý měsíc odebral [TradeMarketUnmetNeed.GetExploitativeExports|1^] z místní [Concept('production','produkce')|E] ještě před uspokojením [Concept('needs','potřebami')|E] této [Concept('holding','državou')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ BUILDING_NEED_PRIORITY_TT: "#T Pořadí uspokojování: [TradeMarketUnmetNeedBuilding.GetFulfillmentOrder|O]#!\n[TradeMarketUnmetNeedBuilding.GetBuildingName] je [Concept('building','budova')|E] v této [Concept('holding','državě')|E] na [TradeMarketUnmetNeedBuilding.GetFulfillmentOrder|O] místě v pořadí uspokojování této [Concept('need','potřebě')|E].\n\n#weak Vše, co [Concept('holding','državu')|E] obdrží, se rozdělí v tomto pořadí, takže dřívější [Concept('buildings','budovy')|E] budou obslouženy jako první.#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MARKET_WINDOW_TRADERS_TAB: "#T Konkurence#!" # todo: NEW TRANSLATION
+ MARKET_WINDOW_HOLDNGS_TAB: "#T Potřeby držav#!" # todo: NEW TRANSLATION
+ MARKET_WINDOW_BUYERS_IN_GOOD: "[GetDataModelSize(TradeMarketWindow.GetActiveSideMerchants)] [SelectLocalization( EqualTo_int32( GetDataModelSize(TradeMarketWindow.GetActiveSideMerchants), '(int32)1'), 'MARKET_WINDOW_TRADERS_IN_GOOD_SINGULAR', 'MARKET_WINDOW_TRADERS_IN_GOOD_PLURAL' )] nakupují [TradeGoodType.GetNameNoTooltip]" # todo: NEW TRANSLATION
+ MARKET_WINDOW_SELLERS_IN_GOOD: "[GetDataModelSize(TradeMarketWindow.GetActiveSideMerchants)] [SelectLocalization( EqualTo_int32( GetDataModelSize(TradeMarketWindow.GetActiveSideMerchants), '(int32)1'), 'MARKET_WINDOW_TRADERS_IN_GOOD_SINGULAR', 'MARKET_WINDOW_TRADERS_IN_GOOD_PLURAL' )] prodávají [TradeGoodType.GetNameNoTooltip]" # todo: NEW TRANSLATION
+ PROFIT_ROUTE_OWNER_TT_HEADER: "@trade_route_icon! Trasy [Character.Custom('CZ_ShortUIName_G')|U]" # todo: NEW TRANSLATION
+ MARKET_WINDOW_TRADERS_IN_GOOD_SINGULAR: "Vlastník [Concept('profit_route','ziskové trasy')|E]" # todo: NEW TRANSLATION
+ MARKET_WINDOW_TRADERS_IN_GOOD_PLURAL: "Vlastníci [Concept('profit_route','ziskových tras')|E]" # todo: NEW TRANSLATION
+ MARKET_WINDOW_ALL_TRADERS: "Všichni" # todo: NEW TRANSLATION
+ MARKET_WINDOW_NO_TRADERS_SELLING: "Nikdo zde neprodává prostřednictvím [Concept('profit_routes','výnosných tras')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MARKET_WINDOW_NO_TRADERS_BUYING: "Nikdo zde nenakupuje prostřednictvím [Concept('profit_routes','výnosných tras')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MARKET_WINDOW_YOUR_MARKET_SHARE: "Tvůj [Concept('market_share','podíl na trhu')|E]" # todo: NEW TRANSLATION
+ MARKET_WINDOW_POTENTIAL_MARKET_SHARE: "Potenciální [Concept('market_share','podíl na trhu')|E]" # todo: NEW TRANSLATION
+ MARKET_WINDOW_DISTRIBUTION_ROUTES_TOOLTIP: "#T Distribuční trasy#!\n[Concept('distribution_routes','Zásobovací trasy')|E] právě obchodují se [Concept('goods','zbožím')|E] na trhu [TradeMarket.GetNameNoTooltip|l]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADER_CHARACTER_LIST_HEADER: "Vyber obchodníka" # todo: NEW TRANSLATION
+ TRADE_WINDOW_REMOVE_TRADER_TT: "#T Odebrat obchodníka#!" # todo: NEW TRANSLATION
+ TRADE_WINDOW_REPLACE_TRADER_TT: "#T Nahradit obchodníka#!\n#i Kliknutím nahradíš\nKliknutím pravým tlačítkem odebereš#!" # todo: NEW TRANSLATION
+ TRADE_ROUTE_PLANNER_CLICK_TO_ASSIGN_TRADER: "Kliknutím přiřadíš [Concept('trader','obchodníka')|E]" # todo: NEW TRANSLATION
+ TRADER_ACTIVE_TASK: "#T [TraderItem.GetSelectedTask.GetName]#!\n[TraderItem.GetModifierDescForTask( TraderItem.GetSelectedTask )]\n\n[TraderItem.GetSelectedTask.GetDescription]" # todo: NEW TRANSLATION
+ TRADER_TASK_ITEM_TOOLTIP: "#T [TraderTaskItem.GetName]#!\n[TraderItem.GetModifierDescForTask( TraderTaskItem.Self )]\n\n[TraderTaskItem.GetDescription]" # todo: NEW TRANSLATION
+ NO_PROFIT_ROUTES: "Žádné ziskové trasy" # todo: NEW TRANSLATION
+ NO_DISTRIBUTION_ROUTES: "Žádné distribuční trasy" # todo: NEW TRANSLATION
+ NO_COMMISSION_ROUTES_MERCHANT_PERSPECTIVE: "Žádné zakázkové trasy" # todo: NEW TRANSLATION
+ NO_COMMISSION_ROUTES_RULER_PERSPECTIVE: "Zadej jednomu ze svých [Concept('client','klientských')|E] [Concept('merchants','kupců')|E] zakázku na [Concept('route','trasu')|E] a zahaj svou první [Concept('commission_route','zakázkovou trasu')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ PROWESS_INVALID_TRADER_SKILL: "@warning_icon! #X [Concept('prowess','Udatnost')|E] není platná dovednost pro [Concept('traders','obchodníky')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ NO_TRADER_ASSIGNED: "@warning_icon! #X Není přiřazen žádný [Concept('trader','obchodník')|E]#!" # todo: NEW TRANSLATION
+ CHARACTER_ALREADY_TRADER: "@warning_icon! #X [Character.GetShortUIName] už je obchodník#!" # todo: NEW TRANSLATION
+ CHARACTER_NOT_ADULT: "@warning_icon! #X [Character.GetShortUIName] je dítě#!" # todo: NEW TRANSLATION
+ CHARACTER_NOT_COURTIER: "@warning_icon! #X [Character.GetShortUIName] není tvůj [Concept('courtier','dvořan')|E]#!" # todo: NEW TRANSLATION
+ manage_competition: "Řídit konkurenci" # todo: NEW TRANSLATION
+ negotiate_deals: "Vyjednávat obchody" # todo: NEW TRANSLATION
+ oversee_caravans: "Dohlížet na karavany" # todo: NEW TRANSLATION
+ manage_competition_gui_name: "$manage_competition$" # todo: NEW TRANSLATION
+ negotiate_deals_gui_name: "$negotiate_deals$" # todo: NEW TRANSLATION
+ oversee_caravans_gui_name: "$oversee_caravans$" # todo: NEW TRANSLATION
+ manage_competition_desc: "@skill_martial_icon![Concept('martial','Válečnictví')|E] a @skill_intrigue_icon![Concept('intrigue','pletichářství')|E] [Concept('skills','dovedností')|E] [Concept('trader','obchodníka')|E] zlepšují tento úkol" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ negotiate_deals_desc: "@skill_diplomacy_icon![Concept('diplomacy','Diplomacie')|E] a @skill_learning_icon![Concept('learning','učenost')|E] [Concept('skills','dovedností')|E] [Concept('trader','obchodníka')|E] zlepšují tento úkol" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ oversee_caravans_desc: "@skill_stewardship_icon![Concept('stewardship','Správcovství')|E] [Concept('skill','dovednost')|E] [Concept('trader','obchodníka')|E] zlepšuje tento úkol" # todo: NEW TRANSLATION
+ TRADE_MARKET_GOOD_BREAKDOWN_TITLE: "Rozpis [Concept('need','potřeb')|E] a [Concept('production','výroby')|E]" # todo: NEW TRANSLATION
+ TRADE_PRODUCTION_SOURCE_ROW: "$PROVINCE$: $SOURCE$" # todo: NEW TRANSLATION
+ TRADE_MARKET_NEED_BREAKDOWN_TITLE: "Potřeby" # todo: NEW TRANSLATION
+ TRADE_MARKET_ENTREPOT_NEED_BREAKDOWN_TITLE: "Potřeby entrepôtu" # todo: NEW TRANSLATION
+ TRADE_MARKET_PRODUCTION_BREAKDOWN_TITLE: "Výroba" # todo: NEW TRANSLATION
+ TRADE_MARKET_IMPORTS_BREAKDOWN_TITLE: "Dovoz" # todo: NEW TRANSLATION
+ TRADE_MARKET_EXPORTS_BREAKDOWN_TITLE: "Vývoz" # todo: NEW TRANSLATION
+ TRADE_MARKET_DISTRIBUTION_IMPORTS_BREAKDOWN_TITLE: "$MARKET_GOOD_BALANCE_DISTRIBUTION_IMPORTS$" # todo: NEW TRANSLATION
+ TRADE_MARKET_DISTRIBUTION_EXPORTS_BREAKDOWN_TITLE: "$MARKET_GOOD_BALANCE_DISTRIBUTION_EXPORTS$" # todo: NEW TRANSLATION
+ TRADE_MONOPOLY_TOOLTIP_OWNER_CHARACTER: "Vlastník: [TradeMonopoly.GetOwningCharacter.GetUIName]" # todo: NEW TRANSLATION
+ TRADE_MONOPOLY_TOOLTIP_OWNER_CONFEDERATION: "Vlastník: [TradeMonopoly.GetOwningConfederation.GetName]" # todo: NEW TRANSLATION
+ TRADE_MONOPOLY_TOOLTIP_OWNER_TITLE: "Vlastník: [TradeMonopoly.GetOwningTitle.Custom('CZ_LandedName_G')]" # todo: NEW TRANSLATION
+ TRADE_MONOPOLY_TOOLTIP_COMPLETE: "[Concept('complete_monopoly','Úplný monopol')|E]" # todo: NEW TRANSLATION
+ TRADE_MONOPOLY_TOOLTIP_SPECIFIC_CATEGORY: "Zahrnuje [TradeMonopoly.GetTradeGoodCategoryType.GetName]" # todo: NEW TRANSLATION
+ TRADE_MONOPOLY_TOOLTIP_EXPLOITATIVE_EXPORTS: "Minulý měsíc odčerpalo z [Concept('production','výroby')|E] [TradeMonopoly.GetExploitativeExports|1^] [Concept('goods','zboží')|E], ještě před uspokojením místních [Concept('needs','potřeb')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_ROUTE_OWNER: "Vlastník: [TradeRoute.GetOwner.GetUIName|U]" # todo: NEW TRANSLATION
+ TRADE_ROUTE_TOOLTIP_TYPE_PROFIT: "[Concept('profit_route','Zisková trasa')|E]" # todo: NEW TRANSLATION
+ TRADE_ROUTE_TOOLTIP_TYPE_DISTRIBUTION: "[Concept('distribution_route','Distribuční trasa')|E]" # todo: NEW TRANSLATION
+ TRADE_ROUTE_TOOLTIP_TYPE_COMMISSION: "[Concept('commission_route','Zakázková trasa')|E]" # todo: NEW TRANSLATION
+ TRADE_ROUTE_TOOLTIP_TRADER: "[Concept('trader','Obchodník')|E]: [TradeRoute.GetTrader.GetUIName|U]" # todo: NEW TRANSLATION
+ TRADE_ROUTE_TOOLTIP_COMMISSIONER: "[Concept('merchant_patron','Zadavatel')|E]: [TradeRoute.GetCommissioner.GetUIName|U]" # todo: NEW TRANSLATION
+ TRADE_ROUTE_TOOLTIP_PRIMARY_GOOD: "[Concept('primary_good','Hlavní zboží')|E]: [TradeRoute.GetPrimaryGood.GetTextIcon][TradeRoute.GetPrimaryGood.GetName|V]" # todo: NEW TRANSLATION
+ TRADE_ROUTE_TOOLTIP_INCOME: "Příjem: $TRADE_ROUTE_ENTRY_ACTUAL_PROFIT$" # todo: NEW TRANSLATION
+ TRADE_ROUTE_TOOLTIP_CAPACITY: "[Concept('capacity','Kapacita')|E]: [trade_route_capacity_i][TradeRoute.GetCurrentCapacity|V1^]/[TradeRoute.GetMaxCapacity|V1^]" # todo: NEW TRANSLATION
+ TRADE_ROUTE_TOOLTIP_SUSPENDED: "@warning_icon! #X Tato trasa je pozastavena, protože [TradeRoute.GetSuspendReasonDesc]#!" # todo: NEW TRANSLATION
+ TRADE_ROUTE_TOOLTIP_GOODS_HEADER: "Přepravované [Concept('goods','zboží')|E]:" # todo: NEW TRANSLATION
+ TRADE_ROUTE_NO_INCOME_TT: "@warning_icon! #X Tato trasa minulý měsíc nevynesla žádný příjem!#!" # todo: NEW TRANSLATION
+ TRADE_MARKET_LIST_ENTRY: "$EFFECT_LIST_BULLET$[TradeMarket.GetShortName]" # todo: NEW TRANSLATION
+ MARKET_MERCHANTS_TOOLTIP: "#T Obchodníci na trhu: [TradeMarketIcon.GetMerchantsInMarketCount]#!\nPočet obchodníků s trasou, která má zastávku na trhu [TradeMarket.GetName]" # todo: NEW TRANSLATION
+ MARKET_WINDOW_SHOW_ALL_GOODS: "Zobrazit vše" # todo: NEW TRANSLATION
+ MARKET_WINDOW_SHOW_ALL_GOODS_TT: "#T Zobrazit všechno [Concept('goods','zboží')|E]#!\n#i Kliknutím skryješ zboží, které na tomto [Concept('market','trhu')|E] není k dispozici#!" # todo: NEW TRANSLATION
+ MARKET_WINDOW_TRADE_BASIC_GOODS: "[SelectLocalization( TradeMarketWindow.IsNetBalanceMode, 'MARKET_WINDOW_TRADE_BASIC_GOODS_NET', 'MARKET_WINDOW_TRADE_BASIC_GOODS_TRADABLE' )]" # todo: NEW TRANSLATION
+ MARKET_WINDOW_TRADE_BASIC_GOODS_NET: "Bilance [Concept('basic_trade_good','základního obchodního zboží')|E]" # todo: NEW TRANSLATION
+ MARKET_WINDOW_TRADE_BASIC_GOODS_TRADABLE: "Množství [Concept('basic_trade_good','základního obchodního zboží')|E] k obchodování" # todo: NEW TRANSLATION
+ MARKET_WINDOW_TRADE_BASIC_GOOD: "[Concept('basic_trade_goods','Základní obchodní zboží')|E]" # todo: NEW TRANSLATION
+ MARKET_WINDOW_TRADE_GOODS: "[SelectLocalization( TradeMarketWindow.IsNetBalanceMode, 'MARKET_WINDOW_TRADE_GOODS_NET', 'MARKET_WINDOW_TRADE_GOODS_TRADABLE' )]" # todo: NEW TRANSLATION
+ MARKET_WINDOW_TRADE_GOODS_NET: "Bilance [Concept('trade_good','obchodního zboží')|E]" # todo: NEW TRANSLATION
+ MARKET_WINDOW_TRADE_GOODS_TRADABLE: "Množství [Concept('trade_good','obchodního zboží')|E] k obchodování" # todo: NEW TRANSLATION
+ MARKET_WINDOW_TRADE_GOOD: "[Concept('trade_goods','Obchodní zboží')|E]" # todo: NEW TRANSLATION
+ TRADE_MARKET_MISC_CATEGORY: "Ostatní" # todo: NEW TRANSLATION
+ TRADE_MARKET_CATEGORY_NEEDS: "Používá se pro potřeby kategorie" # todo: NEW TRANSLATION
+ TRADE_MARKET_CATEGORY_FULFILLED: "Uspokojeno" # todo: NEW TRANSLATION
+ TRADE_MARKET_CATEGORY_NOT_FULFILLED: "Neuspokojeno" # todo: NEW TRANSLATION
+ TRADE_MARKET_CATEGORY_MEMBER_TITLE: "[TradeGoodType.GetTextIcon] [TradeGoodType.GetName]" # todo: NEW TRANSLATION
+ TRADE_MARKET_CATEGORY_MEMBER_NEED: "Potřeba: #trade_need [TradeMarket.GetTradeBalanceForGood( TradeGoodType.Self ).GetNeed|0]#!" # todo: NEW TRANSLATION
+ TRADE_MARKET_CATEGORY_MEMBER_PRODUCTION: "Výroba: [GetColoredValueString( TradeMarket.GetTradeBalanceForGood( TradeGoodType.Self ).GetTotalProduction, 'trade', '(int32)0' )]" # todo: NEW TRANSLATION
+ TRADE_MARKET_CATEGORY_MEMBER_SURPLUS: "Přebytek: [GetColoredValueString( TradeMarket.GetSurplusForGood( TradeGoodType.Self ), 'trade', '(int32)0' )]" # todo: NEW TRANSLATION
+ TRADE_MARKET_CATEGORY_MEMBER_IMPORT: "Dovoz: [GetColoredValueString( TradeMarket.GetImportForGood( TradeGoodType.Self ), 'trade', '(int32)0' )]" # todo: NEW TRANSLATION
+ TRADE_MARKET_CATEGORY_MEMBER_EXPORT: "Vývoz: #trade_need [TradeMarket.GetTradeBalanceForGood( TradeGoodType.Self ).GetExport|0]#!" # todo: NEW TRANSLATION
+ TRADE_MARKET_CATEGORY_MEMBER_FULFILLED: "Uspokojeno: [TradeMarketGood.GetCategoryConsumption|V0]" # todo: NEW TRANSLATION
+ TRADE_MARKET_NEED_STATUS_FULFILLED: "uspokojeno" # todo: NEW TRANSLATION
+ TRADE_MARKET_NEED_STATUS_PARTIAL: "částečně uspokojeno" # todo: NEW TRANSLATION
+ TRADE_MARKET_NEED_STATUS_UNMET: "neuspokojeno" # todo: NEW TRANSLATION
+ TRADE_MARKET_NEED_BUILDING_ENTRY: "$NAME$ ($STATUS$)" # todo: NEW TRANSLATION
+ TRADE_HOLDING_BREAKDOWN_ENTRY: "[PROVINCE.GetTitle.Custom('CZ_LandedNameNoTierNoTooltip_G')]" # todo: NEW TRANSLATION
+ TRADE_MARKET_NEED_BUILDING_DISABLED: "#X (vypnuto, potřeby se nezapočítávají)#!" # todo: NEW TRANSLATION
+ MAP_SUBMODE_HEADER: "Zobrazení" # todo: NEW TRANSLATION
+ TRADE_MAP_SAME_CATEGORY: "Veškeré [Concept('goods','zboží')|E] kategorie [TradeGoodCategory.GetName]" # todo: NEW TRANSLATION
+ RECOMMENDED_TRADE_PROFIT: "@gold_icon![RecommendedGood.GetProfit|2=+]" # todo: NEW TRANSLATION
+ TRADE_ROUTE_PLANNER_ALL_TRADE_GOODS: "Veškeré obchodní [Concept('goods','zboží')|E]" # todo: NEW TRANSLATION
+ TRADE_ROUTE_PLANNER_RECOMMENDED_PROFIT_GOODS: "Doporučené [Concept('goods','zboží')|E]" # todo: NEW TRANSLATION
+ TRADE_ROUTE_PLANNER_RECOMMENDED_NEEDS: "Hlavní [Concept('needs','potřeby')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_ROUTE_PLANNER_RECOMMENDED_PROFIT_GOODS_IN_MARKET: "na trhu [TradeMarket.GetNameNoTooltip|l]" # todo: NEW TRANSLATION
+ TRADE_ROUTE_PLANNER_REALM_NEED_HOLDINGS_HEADER: "#weak [Concept('holdings','državy')|E] ve tvém [Concept('realm','panství')|E], které potřebují#! [TradeGoodType.GetName]" # todo: NEW TRANSLATION
+ TRADE_ROUTE_PLANNER_DISTRIBUTION_CARRIED_GOODS: "Přepravované [Concept('goods','zboží')|E]" # todo: NEW TRANSLATION
+ TRADE_ROUTE_PLANNER_NO_PROFIT_GOODS: "Nenalezeno žádné [Concept('goods','zboží')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_ROUTE_PLANNER_NO_MARKETS_FOR_RECOMMENDATIONS: "Přidej [Concept('market','trh')|E], aby se zobrazila doporučení" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_ROUTE_PLANNER_MORE_TRADABLE_GOODS: "Další [Concept('goods','zboží')|E] obchodovatelné na této [Concept('route','trase')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MORE_TRADABLE_GOODS_TOOLTIP: "#T [TradeGoodType.GetNameNoTooltip]#!\nOčekává se, že obchodování s [RecommendedGood.GetTradeableAmount|V1^] $TRADE_GOODS_UNITS_OF_TYPE$ napříč [Concept('markets','trhy')|E] na této trase vynese @gold_icon![RecommendedGood.GetProfit|2=+]\n\n#I Kliknutím budeš na této trase přepravovat [TradeGoodType.GetNameNoTooltip]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_ROUTE_PLANNER_BEST_TRADES: "@debug_icon! #D Nejvýhodnější obchody v dosahu#!" # todo: NEW TRANSLATION
+ BEST_TRADES_TOOLTIP: "[SelectLocalization( RecommendedGood.HasExtraStopMarket, 'BEST_TRADES_TOOLTIP_EXTRA_STOP', 'BEST_TRADES_TOOLTIP_PAIR' )]" # todo: NEW TRANSLATION
+ BEST_TRADES_TOOLTIP_EXTRA_STOP: "[SelectLocalization( RecommendedGood.IsExtraStopSell, 'BEST_TRADES_TOOLTIP_EXTRA_SELL', 'BEST_TRADES_TOOLTIP_EXTRA_BUY' )]" # todo: NEW TRANSLATION
+ BEST_TRADES_TOOLTIP_PAIR: "#T [RecommendedGood.GetTradeGoodType.GetNameNoTooltip]#!\nNakup [RecommendedGood.GetTradeGoodType.GetNameNoTooltip] v [RecommendedGood.GetBestBuyMarket.GetName] a prodej ho v [RecommendedGood.GetBestSellMarket.GetName]. Očekává se, že tento obchod spolu se zbytkem trasy vynese @gold_icon![RecommendedGood.GetProfit|2=+]\n\n#I Kliknutím přidáš [RecommendedGood.GetTradeGoodType.GetNameNoTooltip] a jeho [Concept('markets','trhů')|E] na tuto trasu#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ BEST_TRADES_TOOLTIP_EXTRA_SELL: "#T [RecommendedGood.GetTradeGoodType.GetNameNoTooltip]#!\nNakup [RecommendedGood.GetTradeGoodType.GetNameNoTooltip] v [RecommendedGood.GetBestBuyMarket.GetName] a prodej ho v [RecommendedGood.GetBestSellMarket.GetName] a [RecommendedGood.GetExtraStopMarket.GetName]. Očekává se, že tento obchod spolu se zbytkem trasy vynese @gold_icon![RecommendedGood.GetProfit|2=+]\n\n#I Kliknutím přidáš [RecommendedGood.GetTradeGoodType.GetNameNoTooltip] a jeho [Concept('markets','trhů')|E] na tuto trasu#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ BEST_TRADES_TOOLTIP_EXTRA_BUY: "#T [RecommendedGood.GetTradeGoodType.GetNameNoTooltip]#!\nNakup [RecommendedGood.GetTradeGoodType.GetNameNoTooltip] v [RecommendedGood.GetBestBuyMarket.GetName] a [RecommendedGood.GetExtraStopMarket.GetName] a prodej ho v [RecommendedGood.GetBestSellMarket.GetName]. Očekává se, že tento obchod spolu se zbytkem trasy vynese @gold_icon![RecommendedGood.GetProfit|2=+]\n\n#I Kliknutím přidáš [RecommendedGood.GetTradeGoodType.GetNameNoTooltip] a jeho [Concept('markets','trhů')|E] na tuto trasu#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ POTENTIAL_TRADE_TOOLTIP: "#T [TradeGoodType.GetNameNoTooltip]#!\n[TradeGoodType.GetName] je jedním z [Concept('trade_goods','obchodního zboží')|E] s nejvyšším potenciálním ziskem v rámci tvé [Concept('trade_route_length','délky obchodní trasy')|E]\n\n$TRADE_GOOD_TYPE_TOOLTIP_CTA_SELECT|I$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_ROUTE_PLANNER_IN_MARKET: "Na trhu [TradeMarket.GetShortNameNoTooltip] [Concept('market','trhu')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_ROUTE_PLANNER_NEEDS_TITLE: "Potřeby" # todo: NEW TRANSLATION
+ TRADE_ROUTE_PLANNER_FOCUSED_GOOD_NEEDS_TITLE: "Potřeba zboží [TradeGoodType.GetNameNoTooltip]" # todo: NEW TRANSLATION
+ TRADE_ROUTE_PLANNER_NO_MARKETS_ON_ROUTE: "#low Přidej na trasu [Concept('market','trh')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_NEEDS_NO_NEED_IN_MARKET: "#weak [TradeNeedsList.GetMarket.GetNameNoTooltip] nemá potřebu zboží [TradeNeedsList.GetGood.GetName]#!" # todo: NEW TRANSLATION
+ TRADE_NEEDS_NO_NEED_FOR_YOU_IN_MARKET: "#weak Žádná z tvých [Concept('holdings','držav')|E] v [TradeNeedsList.GetMarket.GetNameNoTooltip] nepotřebuje zboží [TradeNeedsList.GetGood.GetName]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_ROUTE_PLANNER_PREVIOUS_MARKET: "Předchozí [Concept('market','trh')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_ROUTE_PLANNER_NEXT_MARKET: "Další [Concept('market','trh')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_NEEDS_CELL_MET: "@check_icon!" # todo: NEW TRANSLATION
+ TRADE_NEEDS_CELL_REMAINING: "#trade_need [TradeNeedColumn.GetRemainingNeed|1^]#!" # todo: NEW TRANSLATION
+ TRADE_NEEDS_CELL_NO_NEED: "0" # todo: NEW TRANSLATION
+ TRADE_NEEDS_HOLDING_WITHOUT_NEED: "1 [Concept('holding','država')|E] bez [Concept('need','potřeba')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_NEEDS_HOLDINGS_WITHOUT_NEED: "[TradeNeedsHolding.GetCollapsedBaroniesCount] [Concept('holdings','Državy')|E] bez [Concept('need','potřeba')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_NEEDS_COLLAPSED_HOLDINGS_TOOLTIP_TITLE: "Državy bez potřeby" # todo: NEW TRANSLATION
+ TRADE_NEEDS_TOOLTIP_MET: "@check_icon! Plně uspokojeno" # todo: NEW TRANSLATION
+ TRADE_NEEDS_TOOLTIP_MET_BY_DRAFT: "@check_icon! Uspokojeno tvou trasou" # todo: NEW TRANSLATION
+ TRADE_NEEDS_TOOLTIP_REMAINING: "Zbývá potřeba: #trade_need [TradeNeedColumn.GetRemainingNeed|1^]#!" # todo: NEW TRANSLATION
+ TRADE_NEEDS_TOOLTIP_TOTAL: "Celková potřeba: [TradeNeedColumn.GetGrossNeed|V1^]" # todo: NEW TRANSLATION
+ TRADE_NEEDS_TOOLTIP_ALREADY_MET: "Již uspokojeno: [TradeNeedColumn.GetAlreadyMetNeed|V1^]" # todo: NEW TRANSLATION
+ TRADE_NEEDS_TOOLTIP_COVERED_BY_DRAFT: "Pokryto tvou trasou: [TradeNeedColumn.GetCoveredByDraft|V1^]" # todo: NEW TRANSLATION
+ TRADE_NEEDS_TOOLTIP_SOURCES: "Potřebu mají:" # todo: NEW TRANSLATION
+ TRADE_ROUTE_PLANNER_GOOD_NEED_HEADER: "Celková potřeba zboží [TradeGoodType.GetNameNoTooltip]" # todo: NEW TRANSLATION
+ TRADE_ROUTE_PLANNER_SHOW_ALL_GOODS: "Zobrazit veškeré [Concept('goods','zboží')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_ROUTE_PLANNER_SHOW_RECOMMENDED: "Zobrazit doporučené [Concept('goods','zboží')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_ROUTE_PLANNER_CATEGORY_NEED_HEADER: "Celková potřeba kategorie [TradeGoodCategory.GetNameNoTooltip]" # todo: NEW TRANSLATION
+ ADD_SELECTED_TRADE_GOOD_TT: "#T Přidat k přepravovanému zboží#!\nPokračuj v přepravě zboží [TradeGoodType.GetNameNoTooltip] na své [Concept('trade_route','obchodní trasu')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ ADD_SELECTED_TRADE_GOOD_TT_DISABLED: "#T Přidat k přepravovanému zboží#!\n#I Zboží [TradeGoodType.GetNameNoTooltip] budeš přepravovat, až na [Concept('route','trasu')|E] přidáš [Concept('market','trh')|E] s [Concept('surplus','přebytkem')|E] a jeden s [Concept('need','potřeba')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_GOOD_CATEGORY_LEVEL: "[Concept('expertise_level','Úroveň zkušenosti')|E]: [TradeGoodCategory.GetTradeGoodCategoryLevel( Character.Self )|V0]/[TradeGoodCategory.GetTradeGoodCategoryMaxLevel]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_GOOD_CATEGORY_NAME_AND_LEVEL: "[TradeGoodCategory.GetNameNoTooltip] $TRADE_GOOD_CATEGORY_LEVEL$" # todo: NEW TRANSLATION
+ TRADE_GOOD_CATEGORY_HIGHEST_LEVEL: "Nejvyšší [Concept('expertise_level','úroveň zkušenosti')|E]: [TradeGoodCategory.GetNameNoTooltip]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_GOOD_CATEGORY_HIGHEST_LEVEL_DESC: "Nejvyšší obchodní odbornost [Character.Custom('CZ_ShortUIName_G')|U] se týká kategorie [TradeGoodCategory.GetNameNoTooltip]" # todo: NEW TRANSLATION
+ TRADE_GOOD_CATEGORY_XP: "[Concept('expertise_progress','Postup zkušenosti')|E]: [TradeGoodCategory.GetTradeGoodCategoryXpProgression( Character.Self )|V0]/[GetTradeGoodCategoryXpThreshold]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_GOOD_CATEGORY_XP_MAX: "#weak [Title.GetNameNoTooltip] dosáhl maximální úrovně obchodování s kategorií [TradeGoodCategory.GetNameNoTooltip]#!" # todo: NEW TRANSLATION
+ TRADE_GOOD_CATEGORY_SUMMARY: "[trade_goods_i][Concept('trade_goods','Obchodní zboží')|E]: " # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_GOOD_CATEGORY_LEVEL_BENEFITS: "" # todo: NEW TRANSLATION
+ TRADE_GOOD_CATEGORY_LEVEL_BENEFITS_BRIEF: "" # todo: NEW TRANSLATION
+ TRADE_EXPERIENCE_CATEGORY_EXPLANATION: "[Concept('expertise_progress','Postup zkušenosti')|E] se zvyšuje s každou [Concept('trade_route','obchodní trasou')|E], jejímž hlavním obchodním zbožím [Concept('trade_good','obchodním zbožím')|E] je zboží z kategorie [TradeGoodCategory.GetName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_EXPERTISE_INCREASE_DESC: "[SelectLocalization( TradeGoodCategory.IsActivelyTradedGood( Character.Self ), 'TRADE_EXPERTISE_MONTHLY_INCREASE', 'TRADE_EXPERIENCE_CATEGORY_EXPLANATION' )]" # todo: NEW TRANSLATION
+ TRADE_EXPERTISE_MONTHLY_INCREASE: "[Concept('expertise_progress','Postup zkušenosti')|E] se zvyšuje o [TradeGoodCategory.GetMonthlyXpGain( Character.Self )|+0] měsíčně, dokud se s touto kategorií aktivně obchoduje" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_EXPERTISE_ACTUAL_INCREASE: "Zvyšuje se o [TradeGoodCategory.GetMonthlyXpGain( Character.Self )|+0] měsíčně, protože zboží [TradeGoodType.GetName] je hlavním [Concept('trade_good','obchodním zbožím')|E] na [Concept('trade_route','obchodní trasu')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_EXPERIENCE_NO_EFFECTS: "Na úrovni [TradeGoodCategory.GetTradeGoodCategoryLevel( Character.Self )] žádné účinky" # todo: NEW TRANSLATION
+ TRADE_GOOD_CATEGORY_PER_LEVEL_BENEFITS: "#weak Každá [Concept('expertise_level','úroveň zkušenosti')|E] poskytuje:#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_GOOD_CATEGORY_PER_MILESTONE_BENEFITS: "#weak Každých $MILESTONE|V$ [Concept('expertise_levels','úrovně zkušenosti')|E] poskytuje:#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_WINDOW_TRADE_ROUTES: "Obchodní trasy" # todo: NEW TRANSLATION
+ TRADE_WINDOW_CLIENTS: "Závislí kupci" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_WINDOW_CLIENTS_SORTED_BY_COMPANY_SIZE: "Seřazeno podle [Concept('company_size','velikosti společnosti')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_WINDOW_CLIENTS_EMPTY: "#weak Pozvi [Concept('merchants','kupci')|E], aby se stali tvými [Concept('clients','klienty')|E], pomocí [Concept('decision','rozhodnutí')|E] $invite_merchants_decision|V$#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_WINDOW_CREATE_ROUTE_BUTTON: "Vytvořit trasu" # todo: NEW TRANSLATION
+ TRADE_WINDOW_CREATE_ROUTE_BUTTON_TT: "#T $TRADE_WINDOW_CREATE_ROUTE_BUTTON$#!\nZačni plánovat novou [Concept('trade_route','obchodní trasu')|E]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_WINDOW_TRADE_EXPERIENCE: "Obchodní odbornost" # todo: NEW TRANSLATION
+ TRADE_WINDOW_TRADE_EXPERIENCE_FOR_NEXT_LEVEL: "[SelectLocalization( TradeGoodCategory.IsActivelyTradedGood( Character.Self ), 'TRADE_WINDOW_TRADE_EXPERIENCE_PROGRESS', 'TRADE_WINDOW_TRADE_EXPERIENCE_NO_ROUTE')]" # todo: NEW TRANSLATION
+ TRADE_WINDOW_TRADE_EXPERIENCE_PROGRESS: "[SelectLocalization( TradeGoodCategory.IsMaxLevel( Character.Self ), 'TRADE_WINDOW_TRADE_EXPERIENCE_AT_MAX_LEVEL', 'TRADE_WINDOW_TRADE_EXPERIENCE_MONTHS_REMAINING')]" # todo: NEW TRANSLATION
+ TRADE_WINDOW_TRADE_EXPERIENCE_MONTHS_REMAINING: "#weak Další úrovně dosáhneš za [TradeGoodCategory.GetPredictedTimeForNextLevel( Character.Self )] měsíců#!" # todo: NEW TRANSLATION
+ TRADE_WINDOW_TRADE_EXPERIENCE_AT_MAX_LEVEL: "#weak Maximální odbornost#!" # todo: NEW TRANSLATION
+ TRADE_WINDOW_TRADE_EXPERIENCE_NO_ROUTE: "[TradeGoodCategory.GetTradeGoodCategoryXpDeclineDesc( Character.Self )]" # todo: NEW TRANSLATION
+ TRADE_WINDOW_TRADE_EXPERIENCE_LOSING: "#weak Ztráta odbornosti:#! #N $VALUE$#! měsíčně" # todo: NEW TRANSLATION
+ TRADE_WINDOW_TRADE_EXPERIENCE_EFFECTS_PER_LEVEL: "#L Účinky na každé úrovni#!" # todo: NEW TRANSLATION
+ TRADE_WINDOW_TRADE_GOOD_EXPERIENCE_GAIN_HEADER: "Aktivní [Concept('trade_routes','obchodní trasy')|E] každý měsíc zvyšují [Concept('expertise_progress','postup zkušenosti')|E] a posouvají [Concept('expertise_level','úroveň zkušenosti')|E] u každé obchodované kategorie.\n\nBez aktivního [Concept('trade','obchodu')|E] bude [Concept('expertise_level','úroveň zkušenosti')|E] postupně klesat." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_WINDOW_TRADE_EXPERIENCE_BASE_GAIN: "Základní nárůst" # todo: NEW TRANSLATION
+ TRADE_WINDOW_TRADE_EXPERIENCE_BASE_DECLINE: "Základní pokles" # todo: NEW TRANSLATION
+ TRADE_WINDOW_TRADE_EXPERIENCE_GAIN_MONTHLY_TITLE: "Měsíční nárůst" # todo: NEW TRANSLATION
+ TRADE_WINDOW_TRADE_EXPERIENCE_DECLINE_MONTHLY_TITLE: "Měsíční pokles" # todo: NEW TRANSLATION
+ TRADE_WINDOW_SHOW_TRADE_RECOMMENDATION: "Kliknutím zobrazíš doporučené trhy pro zboží [TradeGoodType.GetName]" # todo: NEW TRANSLATION
+ YOUR_TRADE_MARKETS_TITLE: "Tvé [Concept('trade_markets','obchodní trhy')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_WINDOW_NO_RELEVANT_TRADE_MARKETS: "Žádná z tvých [Concept('holdings','držav')|E] se nenachází na [Concept('trade_market','obchodní trh')|E] v rámci tvého [Concept('realm','panství')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_NEED_SOURCE_FULFILLED_POSTFIX: " #H uspokojeno#!" # todo: NEW TRANSLATION
+ TRADE_NEED_SOURCE_UNFULFILLED_POSTFIX: " #W neuspokojeno#!" # todo: NEW TRANSLATION
+ TRADE_WINDOW_OPEN_COMPETITORS_BUTTON: "Konkurenti" # todo: NEW TRANSLATION
+ TRADE_WINDOW_OPEN_COMPETITORS_BUTTON_TOOLTIP: "Otevři seznam aktivních konkurentů. Jde o postavy, které obchodují se zbožím souvisejícím s tvými aktivními [Concept('trade_routes','obchodními trasami')|E]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_WINDOW_OPEN_COMPETITORS_BUTTON_DISABLED_TOOLTIP: "#weak Na svých současných [Concept('trade_routes','obchodní trasy')|E] nemáš žádné aktivní konkurenty.#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_WINDOW_COMPETITORS_WINDOW_HEADER: "Aktivní konkurenti" # todo: NEW TRANSLATION
+ TRADE_WINDOW_COMPETITORS_WINDOW_DESCRIPTION: "Všechny [Concept('characters','postavy')|E] s [Concept('trade_routes','obchodními trasami')|E], které ve stejných [Concept('trade_markets','obchodních trzích')|E] jako ty soupeří o [Concept('trade_goods','obchodní zboží')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_WINDOW_COMPETITORS_EMPTY: "#weak Na tvých současných obchodních trasách nejsou žádní aktivní konkurenti.#!" # todo: NEW TRANSLATION
+ TRADE_WINDOW_COMPETITORS_SORT_SHARED_MARKETS: "Společné trhy" # todo: NEW TRANSLATION
+ TRADE_WINDOW_COMPETITORS_SORT_SHARED_GOODS: "Soutěžní zboží" # todo: NEW TRANSLATION
+ TRADE_WINDOW_COMPETITORS_SORT_COMPETITIVENESS: "Nejvyšší konkurenceschopnost" # todo: NEW TRANSLATION
+ TRADE_WINDOW_COMPETITORS_COL_SHARED_MARKETS_TOOLTIP: "#T Společné trhy: [CompetitorsLeaderboard.GetSharedMarketCountForItem( CharacterListItem.Self )|V0]#!\n[Concept('trade_markets','Obchodní trhy')|E], na kterých soupeříš s [Character.GetHerHim] o stejné [Concept('trade_goods','obchodní zboží')|E]: [CompetitorsLeaderboard.GetSharedMarketsListForItem( CharacterListItem.Self )]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_WINDOW_COMPETITORS_COL_SHARED_GOODS_TOOLTIP: "#T Soutěžní zboží: [CompetitorsLeaderboard.GetSharedGoodCountForItem( CharacterListItem.Self )|V0]#!\n[Concept('trade_goods','Obchodní zboží')|E], o která soupeříš s [Character.GetHerHim]:[CompetitorsLeaderboard.GetSharedGoodsListForItem( CharacterListItem.Self )]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_WINDOW_COMPETITORS_COL_COMPETITIVENESS_TOOLTIP: "#T Nejvyšší konkurenceschopnost: [CompetitorsLeaderboard.GetAggregateCompetitivenessForItem( CharacterListItem.Self )|V1]#!\nNejvyšší [Concept('trade_competitiveness','obchodní konkurenceschopnost')|E] [Character.GetHerHis|U] na kterémkoli [Concept('trade_market','obchodním trhu')|E], kde soupeříš s [Character.GetHerHim] o stejné [Concept('trade_goods','obchodní zboží')|E]. [CompetitorsLeaderboard.GetPeakCompetitivenessDescForItem( CharacterListItem.Self )]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_WINDOW_COMPETITORS_TOOLTIP_PEAK_DESC: "#weak ($GOOD$ v $MARKET|l$)#!" # todo: NEW TRANSLATION
+ TRADE_GOOD_WINDOW_FOCUSED_GOOD_TRADE: "[TradeGoodType.GetName|V] — [Concept('market_balances','bilance trhů')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_GOOD_WINDOW_FOCUSED_GOOD_PRODUCTION: "[TradeGoodType.GetName|V] — [Concept('production','produkce')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_GOOD_WINDOW_NO_FOCUS_GOOD: "Momentálně není vybráno žádné [Concept('trade_good','obchodní zboží')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_MARKET_TOOLTIP_OWNER: "[Concept('market_owner','Vlastník trhu')|E]: [TradeMarket.GetLocationTitle.GetHolder.GetUIName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_MARKET_TOOLTIP_CAPITAL: "[Concept('market_capital','Tržní hlavní sídlo')|E]: [TradeMarket.GetLocationTitle.GetName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_MARKET_TOOLTIP_PROSPERITY: "Průměrná [Concept('prosperity','rozkvět')|E]: [TradeMarket.GetAvgProsperity|V0]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_MARKET_TOOLTIP_TOLL: "[Concept('market_toll','Tržní clo')|E]: [TradeMarket.GetTollLevel.GetName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_MAP_CARD_BUY: "Koupit" # todo: NEW TRANSLATION
+ TRADE_MAP_CARD_SELL: "Prodat" # todo: NEW TRANSLATION
+ TRADE_MAP_CARD_BUY_AMOUNT: "#trade_surplus [TradeMarketIcon.GetAccessibleSurplusForFocusedGood|1^]#!#low /[TradeMarketIcon.GetMaxBuyForFocusedGood|1^]#!" # todo: NEW TRANSLATION
+ TRADE_MAP_CARD_SELL_AMOUNT: "#trade_need [TradeMarketIcon.GetAccessibleDeficitForFocusedGood|1^]#!#low /[TradeMarketIcon.GetMaxSellForFocusedGood|1^]#!" # todo: NEW TRANSLATION
+ TRADE_MAP_CARD_AT_PRICE: "za" # todo: NEW TRANSLATION
+ TRADE_MAP_CARD_SET_AS_START: "Vybrat jako výchozí trh" # todo: NEW TRANSLATION
+ TRADE_MAP_CARD_DRAFT_ROUTE_BUY_TT: "#T Přebytek na trhu#![SelectLocalization( TradeMarketIcon.IsFocusedGoodBoughtOnOtherPlayerRoute, 'TRADE_MAP_CARD_OTHER_ROUTE_WARNING_ROW', '' )]\n\n[SelectLocalization( TradeMarketIcon.IsPlanningRoute, 'TRADE_MAP_CARD_THIS_ROUTE_BUY', 'TRADE_MAP_CARD_NEW_ROUTE_BUY' )][SelectLocalization( TradeMarketIcon.GetBuyShareForFocusedGood.IsContested, 'TRADE_MAP_CARD_BUY_MARKET_SHARE_ROW', '' )]\n$BULLET$Celkové obchodovatelné množství: [TradeMarketIcon.GetMaxBuyForFocusedGood|V1^][SelectLocalization( TradeMarketIcon.IsBuyLimitedByCapacityForFocusedGood, 'TRADE_MAP_CARD_LIMITED_BY_CAPACITY_ROW', '' )]\n\n$TRADE_PRICE_PER_UNIT$: @gold_icon![TradeMarketIcon.GetBuyPriceForFocusedGood|V3]\nCena za [TradeMarketIcon.GetAccessibleSurplusForFocusedGood|1^] [TradeGoodType.Custom('GetTradeGoodUnitPlural')|U]: @gold_icon![Negate_CFixedPoint( TradeMarketIcon.GetBuyPaymentForFocusedGood )|V2]" # todo: NEW TRANSLATION
+ TRADE_MAP_CARD_DRAFT_ROUTE_SELL_TT: "#T Nedostatek na trhu#![SelectLocalization( TradeMarketIcon.IsFocusedGoodSoldOnOtherPlayerRoute, 'TRADE_MAP_CARD_OTHER_ROUTE_WARNING_ROW', '' )]\n\n[SelectLocalization( TradeMarketIcon.IsPlanningRoute, 'TRADE_MAP_CARD_THIS_ROUTE_SELL', 'TRADE_MAP_CARD_NEW_ROUTE_SELL' )][SelectLocalization( TradeMarketIcon.GetSellShareForFocusedGood.IsContested, 'TRADE_MAP_CARD_SELL_MARKET_SHARE_ROW', '' )]\n$BULLET$Celkové obchodovatelné množství: [TradeMarketIcon.GetMaxSellForFocusedGood|V1^][SelectLocalization( TradeMarketIcon.IsSellLimitedByCapacityForFocusedGood, 'TRADE_MAP_CARD_LIMITED_BY_CAPACITY_ROW', '' )]\n\n$TRADE_PRICE_PER_UNIT$: @gold_icon![TradeMarketIcon.GetSellPriceForFocusedGood|V3]\nCena za [TradeMarketIcon.GetAccessibleDeficitForFocusedGood|1^] [TradeGoodType.Custom('GetTradeGoodUnitPlural')|U]: @gold_icon![TradeMarketIcon.GetSellPaymentForFocusedGood|V2]" # todo: NEW TRANSLATION
+ TRADE_MAP_CARD_THIS_ROUTE_BUY: "Tato trasa by zde mohla nakoupit [TradeMarketIcon.GetAccessibleSurplusForFocusedGood|V1^] [TradeMarketIcon.GetFocusedGood.Custom('GetTradeGoodUnitPlural')|U] [TradeMarketIcon.GetFocusedGood.GetName]:" # todo: NEW TRANSLATION
+ TRADE_MAP_CARD_NEW_ROUTE_BUY: "„#bold Nová#!“ trasa by zde mohla nakoupit [TradeMarketIcon.GetAccessibleSurplusForFocusedGood|V1^] [TradeMarketIcon.GetFocusedGood.Custom('GetTradeGoodUnitPlural')|U] [TradeMarketIcon.GetFocusedGood.GetName]:" # todo: NEW TRANSLATION
+ TRADE_MAP_CARD_THIS_ROUTE_SELL: "Tato trasa by zde mohla prodat [TradeMarketIcon.GetAccessibleDeficitForFocusedGood|V1^] [TradeMarketIcon.GetFocusedGood.Custom('GetTradeGoodUnitPlural')|U] [TradeMarketIcon.GetFocusedGood.GetName]:" # todo: NEW TRANSLATION
+ TRADE_MAP_CARD_NEW_ROUTE_SELL: "„#bold Nová#!“ trasa by zde mohla prodat [TradeMarketIcon.GetAccessibleDeficitForFocusedGood|V1^] [TradeMarketIcon.GetFocusedGood.Custom('GetTradeGoodUnitPlural')|U] [TradeMarketIcon.GetFocusedGood.GetName]:" # todo: NEW TRANSLATION
+ TRADE_MAP_CARD_BUY_MARKET_SHARE_ROW: "\n$BULLET$Tvůj [Concept('market_share','podíl na trhu')|E]: [TradeMarketIcon.GetBuyShareForFocusedGood.GetShare|0%V]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_MAP_CARD_SELL_MARKET_SHARE_ROW: "\n$BULLET$Tvůj [Concept('market_share','podíl na trhu')|E]: [TradeMarketIcon.GetSellShareForFocusedGood.GetShare|0%V]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_MAP_CARD_LIMITED_BY_CAPACITY_ROW: "\n$BULLET$#X Omezeno [Concept('trade_route_capacity_short','obchodní kapacita')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_MAP_CARD_OTHER_ROUTE_WARNING_ROW: "\n$TRADE_MAP_CARD_OTHER_ROUTE_WARNING_TT$" # todo: NEW TRANSLATION
+ TRADE_MAP_TOOLTIP_BUY_HEADER: "#S Přebytek na trhu#!" # todo: NEW TRANSLATION
+ TRADE_MAP_TOOLTIP_SELL_HEADER: "#S Nedostatek na trhu#!" # todo: NEW TRANSLATION
+ TRADE_MAP_TOOLTIP_OTHER_ROUTE_WARNING: "@alert_icon! #alert_trial Jiná z tvých [Concept('routes','tras')|E] už zde obchoduje se zbožím [TradeGoodType.GetName]. Tvoje trasy si mezi sebou rozdělují tvůj [Concept('market_share','podíl na trhu')|E].#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_MAP_TOOLTIP_THIS_ROUTE_BUY: "Tato trasa by zde mohla nakoupit $AMOUNT|V1^$ [TradeGoodType.Custom('GetTradeGoodUnitPlural')|U] zboží [TradeGoodType.GetName]:" # todo: NEW TRANSLATION
+ TRADE_MAP_TOOLTIP_NEW_ROUTE_BUY: "„#bold Nová#!“ trasa by zde mohla nakoupit $AMOUNT|V1^$ [TradeGoodType.Custom('GetTradeGoodUnitPlural')|U] zboží [TradeGoodType.GetName]:" # todo: NEW TRANSLATION
+ TRADE_MAP_TOOLTIP_THIS_ROUTE_SELL: "Tato trasa by zde mohla prodat $AMOUNT|V1^$ [TradeGoodType.Custom('GetTradeGoodUnitPlural')|U] zboží [TradeGoodType.GetName]:" # todo: NEW TRANSLATION
+ TRADE_MAP_TOOLTIP_NEW_ROUTE_SELL: "„#bold Nová#!“ trasa by zde mohla prodat $AMOUNT|V1^$ [TradeGoodType.Custom('GetTradeGoodUnitPlural')|U] zboží [TradeGoodType.GetName]:" # todo: NEW TRANSLATION
+ TRADE_MAP_TOOLTIP_TOTAL_TRADABLE_ROW: "$BULLET$Celkové obchodovatelné množství: $AMOUNT|V1^$" # todo: NEW TRANSLATION
+ TRADE_MAP_TOOLTIP_DISTRIBUTION_SURPLUS: "[TradeGoodType.GetTextIcon][TradeGoodType.GetName] – přebytek: $AMOUNT|V1^$" # todo: NEW TRANSLATION
+ TRADE_MAP_TOOLTIP_DISTRIBUTION_DEFICIT: "[TradeGoodType.GetTextIcon][TradeGoodType.GetName] – nedostatek: $AMOUNT|V1^$" # todo: NEW TRANSLATION
+ TRADE_MAP_TOOLTIP_DISTRIBUTION_CATEGORY_NEED: "[TradeGoodCategory.GetTextIcon][TradeGoodCategory.GetName] – potřeba: $AMOUNT|V1^$" # todo: NEW TRANSLATION
+ TRADE_MAP_ICON_ROUTE_STOP_TT: "Jedna z tvých [Concept('trade_routes','obchodních tras')|E] má zastávku na tomto [Concept('market','trhu')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_MAP_ICON_ROUTE_END_CLICK_TT: "#I Kliknutím zobrazíš své [Concept('trade_routes','obchodní trasy')|E]\nKliknutím pravým tlačítkem upravíš trasu#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_MAP_ICON_ROUTE_END_PROFIT: "[gold_i][TradeRoute.GetGoldEarnedLastTick|+=2]" # todo: NEW TRANSLATION
+ TRADE_MAP_ICON_TRADE_POST_TT: "#T Obchodní stanice#!\nNa tomto [Concept('market','trhu')|E] máš [Concept('trade_post','obchodní stanice')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_MAP_ICON_PLAYER_HOLDING_TT: "Na tomto [Concept('market','trhu')|E] máš [Concept('holding','država')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_MAP_ICON_ENTREPOT_TT: "#T Entrepôt#!\nTento [Concept('market','trh')|E] má [Concept('entrepot','entrepôt')|E], který dováží zboží za účelem jeho opětovného vývozu" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_MAP_CARD_ACCESSIBLE_SURPLUS_TT: "#T Dostupný [Concept('surplus','přebytek')|E]#!\nKolik z [Concept('surplus','přebytku')|E] tohoto [Concept('trade_market','obchodního trhu')|E] můžeš koupit, omezeno tvou [Concept('capacity','kapacitu')|E] a [Concept('competitiveness','konkurenceschopnost')|E]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_MAP_CARD_ACCESSIBLE_DEFICIT_TT: "#T Dostupná [Concept('need','potřeba')|E]#!\nKolik můžeš prodat na tomto [Concept('trade_market','obchodním trhu')|E] v rámci jeho [Concept('need','potřeba')|E], omezeno tvou [Concept('capacity','kapacity')|E] a [Concept('competitiveness','konkurenceschopnosti')|E]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_MAP_CARD_NEEDS_OWN_PRE: "Poptávka po" # todo: NEW TRANSLATION
+ TRADE_MAP_CARD_NEEDS_OWN_NONE_PRE: "Žádná poptávka po" # todo: NEW TRANSLATION
+ TRADE_MAP_CARD_NEEDS_DEFICIT_TT: "#T Neuspokojená [Concept('need','potřeba')|E]#!\nKolik vybraného [Concept('trade_good','obchodního zboží')|E] tento tvůj [Concept('trade_market','obchodní trh')|E] ještě potřebuje. Dovez ho sem a pokryj nedostatek." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_MAP_CARD_NEEDS_SURPLUS_TT: "#T Dostupný [Concept('surplus','přebytek')|E]#!\nKolik vybraného [Concept('trade_good','obchodního zboží')|E] můžeš zde koupit, omezeno tvou [Concept('capacity','kapacitu')|E] a [Concept('competitiveness','konkurenceschopnost')|E]. Dovez ho na své území a uspokoj tamní [Concept('need','potřeba')|E]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_MAP_CARD_MONOPOLY_MARKET_EXPLOITATIVE: "#T Vykořisťovatelský monopol na celém [Concept('trade_market','obchodním trhu')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_MAP_CARD_MONOPOLY_MARKET_NORMAL: "#T Monopol na celém [Concept('trade_market','obchodním trhu')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_MAP_CARD_MONOPOLY_FOCUSED_EXPLOITATIVE: "#T Vykořisťovatelský monopol na vybraném [Concept('trade_good','obchodním zboží')|E] zde#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_MAP_CARD_MONOPOLY_FOCUSED_NORMAL: "#T Monopol na vybraném [Concept('trade_good','obchodním zboží')|E] zde#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_MARKET_SHARE_TT_HEADER: "#T Podíl na trhu: [TradeMarketShare.GetShare|0%V] ([TradeMarketShare.GetAmount|V1^]/[TradeMarketShare.GetPool|V1^])#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_MARKET_SHARE_TT_PART: "[TradeMarketSharePart.GetAmount|V1^] z [TradeMarketSharePart.GetPool|V1^] ([TradeMarketSharePart.GetShare|0%V])" # todo: NEW TRANSLATION
+ TRADE_MARKET_SHARE_TT_GOOD_NEED: "[TradeGoodType.GetTextIcon][TradeGoodType.GetName|V] [Concept('need','Potřeba')|E]: $TRADE_MARKET_SHARE_TT_PART$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_MARKET_SHARE_TT_GOOD_SURPLUS: "[TradeGoodType.GetTextIcon][TradeGoodType.GetName|V] [Concept('surplus','Přebytek')|E]: $TRADE_MARKET_SHARE_TT_PART$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_MARKET_SHARE_TT_CATEGORY_NEED: "[TradeGoodCategory.GetName|V] [Concept('need','Potřeba')|E]: $TRADE_MARKET_SHARE_TT_PART$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_MARKET_SHARE_TT_CATEGORY_COMPETITION: "Každý prodejce zboží kategorie [TradeGoodCategory.GetName|V] soutěží o tuto [Concept('need','potřebu')|E]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_MARKET_SHARE_TT_EXPLANATION: "O zboží [TradeGoodType.GetName] musíš na tomto [Concept('trade_market','obchodním trhu')|E] soupeřit s ostatními [Concept('characters','postavami')|E]. Zvyš svou [Concept('competitiveness','konkurenceschopnost')|E] a získej větší [Concept('market_share','podíl na trhu')|E]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_MARKET_MERCHANT_TRADED_TT_BUYING: "#T Nakupuje [TradeMarketShare.GetAmount|V0] $TRADE_GOODS_UNITS_OF_TYPE$#!" # todo: NEW TRANSLATION
+ TRADE_MARKET_MERCHANT_TRADED_TT_SELLING: "#T Prodává [TradeMarketShare.GetAmount|V0] $TRADE_GOODS_UNITS_OF_TYPE$#!" # todo: NEW TRANSLATION
+ TRADE_MARKET_MERCHANT_TRADED_TT_COMPETITIVENESS: "[Character.Custom('CZ_ShortUIName_G')|U] [Concept('competitiveness','Konkurenceschopnost')|E]: [TradeMarketMerchant.GetCompetitivenessTooltip.GetFixedPointValue|V0]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_MARKET_MERCHANT_TRADED_TT_TOTAL_COMPETITIVENESS: "Celková hodnota $game_concept_competitiveness$ pro zboží [TradeGoodType.GetName]: [TradeMarketWindow.GetActiveSideTotalCompetitiveness|V0]" # todo: NEW TRANSLATION
+ TRADE_MARKET_MERCHANT_TRADED_TT_MARKET_SHARE: "[Concept('market_share','Podíl na trhu')|E]: [TradeMarketShare.GetShare|0%V]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_MARKET_MERCHANT_TRADED_TT_TRADABLE: "Obchodovatelné $TRADE_GOODS_UNITS_OF_TYPE$: [TradeMarketShare.GetPool|V0]" # todo: NEW TRANSLATION
+ TRADE_MAP_CARD_OTHER_ROUTE_WARNING_TT: "@alert_icon! #alert_trial Jiná z tvých [Concept('routes','tras')|E] už zde obchoduje se zbožím [TradeMarketIcon.GetFocusedGood.GetName]. Tvoje trasy si mezi sebou rozdělují tvůj [Concept('market_share','podíl na trhu')|E].#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_MARKET_MAP_ICON_BUY_PER_UNIT_PRICE_TT: "#T Nákupní cena za jednotku#!\n$TRADE_PRICE_PER_UNIT$: @gold_icon![TradeMarketIcon.GetBuyPriceForFocusedGood|V3]" # todo: NEW TRANSLATION
+ TRADE_MARKET_MAP_ICON_SELL_PER_UNIT_PRICE_TT: "#T Prodejní cena za jednotku#!\n$TRADE_PRICE_PER_UNIT$: @gold_icon![TradeMarketIcon.GetSellPriceForFocusedGood|V3]" # todo: NEW TRANSLATION
+ TRADE_MAP_CARD_SURPLUS_ROW_TT: "#T [Concept('surplus','Přebytek')|E]#!\nZákladní [Concept('trade_goods','obchodní zboží')|E], které tomuto [Concept('trade_market','obchodnímu trhu')|E] zbývají po uspokojení jeho vlastních [Concept('needs','potřebách')|E] a obchodování.$TRADE_MAP_CARD_SURPLUS_ROW_BLOCKED_TT$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_MAP_CARD_SURPLUS_ROW_BLOCKED_TT: "[SelectLocalization( TradeMarketIcon.HasUnreachableSurplus, 'TRADE_MAP_CARD_BLOCKED_GOODS', '' )]" # todo: NEW TRANSLATION
+ TRADE_MAP_CARD_BLOCKED_GOODS: "\n#X Zde je $TRADE_MAP_CARD_BLOCKED_GOODS_COUNT$, se kterým ti [Concept('trade_monopoly','obchodní monopol')|E] brání obchodovat.#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_MAP_CARD_BLOCKED_GOODS_COUNT: "[SelectLocalization( GreaterThan_int32( TradeMarketIcon.GetUnreachableSurplusCount, '(int32)1' ), 'TRADE_MAP_CARD_BLOCKED_GOODS_PLURAL', 'TRADE_MAP_CARD_BLOCKED_GOODS_SINGULAR' )]" # todo: NEW TRANSLATION
+ TRADE_MAP_CARD_BLOCKED_GOODS_SINGULAR: "Ještě jedno [Concept('trade_good','obchodní zboží')|E] má [Concept('surplus','přebytek')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_MAP_CARD_BLOCKED_GOODS_PLURAL: "Ještě [TradeMarketIcon.GetUnreachableSurplusCount|=] [Select_CString( GreaterThan_int32( TradeMarketIcon.GetUnreachableSurplusCount, '(int32)4' ), 'dalších [Concept('trade_goods','obchodního zboží')|E] má', 'další trade_goods mají' )] [Concept('surplus','přebytek')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_MAP_CARD_NEEDS_ROW_TT: "#T Neuspokojené [Concept('needs','potřeby')|E]#!\nCo [Concept('holdings','državy')|E] na tomto [Concept('trade_market','obchodním trhu')|E] ještě potřebují po místní [Concept('production','produkci')|E] a obchodování." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_MAP_CARD_PLAYER_ROUTE_BUYS_TT: "#T Nakoupeno tvými [Concept('trade_routes','obchodními trasami')|E]#!\nZákladní [Concept('primary_good','hlavní komodita')|E] každé z tvých [Concept('trade_routes','obchodních tras')|E], které ho minulý měsíc nakoupily na tomto [Concept('trade_market','obchodním trhu')|E]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_MAP_CARD_PLAYER_ROUTE_SELLS_TT: "#T Prodáno tvými [Concept('trade_routes','obchodními trasami')|E]#!\nZákladní [Concept('primary_good','hlavní komodita')|E] každé z tvých [Concept('trade_routes','obchodních tras')|E], které ho minulý měsíc prodaly na tomto [Concept('trade_market','obchodním trhu')|E]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_MAP_CARD_REDUCED_BY_EXISTING_CLAIM: "#X Část tohoto [Concept('surplus','přebytku')|E] si už nárokuje stávající [Concept('distribution_route','zásobovací trasa')|E].#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_MAP_CARD_REDUCED_BY_EXPLOITATIVE_MONOPOLY: "#X [Concept('exploitative_monopoly','Vykořisťovatelský monopol')|E] odebírá část [Concept('production','produkce')|E] tohoto [Concept('trade_market','obchodního trhu')|E], než jsou uspokojeny jeho vlastní [Concept('needs','potřeby')|E].#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_MAP_CARD_CATEGORY_BALANCE_TT_HEADER: "[TradeGoodCategory.GetName] Potřeba: #trade_need [TradeMapIconGood.GetAmount|1^]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_MAP_CARD_CATEGORY_BALANCE_TT_DESC: "Tyto [Concept('needs','potřeby')|E] může uspokojit jakékoli [Concept('trade_good','obchodní zboží')|E] z této [Concept('trade_category','kategorie zboží')|E]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_MAP_CARD_NEED_IN_YOUR_HOLDINGS: "Poptávka ve tvých državách" # todo: NEW TRANSLATION
+ TRADE_MAP_CARD_BUILDING_NEEDS_VALUE: "-[TradeMapIconGood.GetBuildingNeeds|1^]" # todo: NEW TRANSLATION
+ TRADE_MAP_CARD_HIDDEN_SURPLUS_TT: "#T Zde je také přebytek#!" # todo: NEW TRANSLATION
+ TRADE_MAP_CARD_HIDDEN_NEEDS_TT: "#T Zde jsou také neuspokojené potřeby#!" # todo: NEW TRANSLATION
+ TRADE_MAP_CARD_HIDDEN_GOOD_NAME: "[SelectLocalization( TradeMapIconGood.IsCategory, 'TRADE_MAP_CARD_HIDDEN_CATEGORY_LABEL', 'TRADE_MAP_CARD_HIDDEN_TRADE_GOOD_LABEL' )]" # todo: NEW TRANSLATION
+ TRADE_MAP_CARD_HIDDEN_TRADE_GOOD_LABEL: "[TradeMapIconGood.GetTradeGoodType.GetNameWithIconNoTooltip]" # todo: NEW TRANSLATION
+ TRADE_MAP_CARD_HIDDEN_CATEGORY_LABEL: "[TradeMapIconGood.GetCategory.GetNameWithIconNoTooltip]" # todo: NEW TRANSLATION
+ TRADE_MAP_CARD_HIDDEN_SURPLUS: "[TradeMarketIcon.GetHiddenSurplusCount|=]" # todo: NEW TRANSLATION
+ TRADE_MAP_CARD_HIDDEN_NEEDS: "[TradeMarketIcon.GetHiddenUnmetNeedCount|=]" # todo: NEW TRANSLATION
+ TRADE_MAP_CARD_HIDDEN_MODIFIERS_TT: "#T Zde jsou také aktivní#!" # todo: NEW TRANSLATION
+ TRADE_MAP_CARD_HIDDEN_MODIFIER_ROW: "[ModifierItem.GetStaticModifier.GetNameWithTooltip]" # todo: NEW TRANSLATION
+ CLICK_TO_VIEW_MARKET: "#I Kliknutím zobrazíš trh#!" # todo: NEW TRANSLATION
+ REALM_CAPITAL_IN_MARKET_TOOLTIP: "#T Hlavní sídlo panství#!\nTvé [Concept('realm_capital','hlavní sídlo panství')|E] [GetPlayer.GetCapitalLocation.GetBaronyNameExplicitlyNoTooltip] leží na [TradeMarket.GetNameNoTooltip]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ DOMICILE_IN_MARKET_TOOLTIP: "#T Domicil#!\nTvůj [Concept('domicile','domicil')|E] se nachází na [TradeMarket.GetNameNoTooltip]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ PROFIT_ROUTES_TITLE: "Výnosné trasy" # todo: NEW TRANSLATION
+ PROFIT_ROUTES_SUBTITLE: "[Concept('profit_routes','Výnosné trasy')|E] aktivní na [TradeMarket.GetNameNoTooltip]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ PROFIT_ROUTES_ON_COMMISSION: "#T Na [Concept('commission','zakázku')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ DISTRIBUTION_ROUTES_TITLE: "Distribuční trasy" # todo: NEW TRANSLATION
+ DISTRIBUTION_ROUTES_SUBTITLE: "[Concept('distribution_routes','Zásobovací trasy')|E] aktivní na [TradeMarket.GetNameNoTooltip]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_POSTS_TITLE: "Obchodní stanice" # todo: NEW TRANSLATION
+ TRADE_POSTS_SUBTITLE: "[Concept('trade_posts','Obchodní stanice')|E] na [TradeMarket.GetNameNoTooltip]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_POST_OWNER: "Vlastník" # todo: NEW TRANSLATION
+ MARKET_PROFIT_ROUTE_OWNERS_TITLE: "Vlastníci výnosných tras" # todo: NEW TRANSLATION
+ MARKET_PROFIT_ROUTE_BUYERS_SUBTITLE: "Vlastníci [Concept('profit_route','výnosná trasa')|E] nakupující zboží [TradeGoodType.GetNameNoTooltip] na [TradeMarket.GetNameNoTooltip]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MARKET_PROFIT_ROUTE_SELLERS_SUBTITLE: "Vlastníci [Concept('profit_route','výnosná trasa')|E] prodávající zboží [TradeGoodType.GetNameNoTooltip] na [TradeMarket.GetNameNoTooltip]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MARKET_TRADER_ON_COMMISSION: "Zde obchoduje na [Concept('commission','zakázku')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MARKET_TRADER_ROUTE_ON_COMMISSION: " #weak ([Concept('commission','zakázka')|E])#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TOLLS_WINDOW_TITLE: "Změnit mýtnou politiku" # todo: NEW TRANSLATION
+ TOLLS_MARKET_TOLL_LABEL: "[Concept('market_toll','Tržní clo')|E]:" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TOLLS_EFFECTS_LABEL: "Účinky:" # todo: NEW TRANSLATION
+ MARKET_WINDOW_SORTED_BY_PRIORITY: "Seřazeno podle [Concept('market_priority','priority trhu')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ HOLDING_MARKET_BUTTON_TT: "#T [TradeMarket.GetNameNoTooltip]#!\n[Title.GetNameNoTierNoTooltip] je součástí [TradeMarket.GetName]\n\n#S [Concept('market_priority','Priorita trhu')|E]: [TradeMarket.GetFulfillmentPriorityForBarony( Title.Self )|VO]#!\n$HOLDING_MARKET_PRIORITY_EXPLAINED$\n\n#I Kliknutím zobrazíš trh#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ HOLDING_MARKET_PRIORITY_TT: "#T [Concept('market_priority','Priorita trhu')|E]: [TradeMarket.GetFulfillmentPriorityForBarony( Title.Self )|VO]#!\n$HOLDING_MARKET_PRIORITY_EXPLAINED$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ HOLDING_MARKET_PRIORITY_EXPLAINED: "[Title.GetNameNoTierNoTooltip] je [TradeMarket.GetFulfillmentPriorityForBarony( Title.Self )|VO] [Concept('holding','država')|E], jejíž [Concept('needs','potřeby')|E] mají být na trhu [TradeMarket.GetNameNoTooltip] uspokojeny.\n\n#weak [Title.GetDeJureLiege.GetName] je [TradeMarket.GetFulfillmentPriorityForCounty( Title.GetDeJureLiege.Self )|O] [Concept('county','hrabství')|E], který má být obsloužen, a v něm je [Title.GetNameNoTierNoTooltip] [TradeMarket.GetFulfillmentPriorityInCounty( Title.Self )|O] država, která má být obsloužena.#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MARKET_WINDOW_HOLDING_ENTRY: "[Title.GetNameNoTierNoTooltip]" # todo: NEW TRANSLATION
+ MARKET_WINDOW_HOLDING_ENTREPOT_ENTRY: "[Title.GetNameNoTierNoTooltip] #weak ([Concept('entrepot','entrepôt')|E])#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MARKET_WINDOW_PLAYER_HOLDINGS: "Tvé državy" # todo: NEW TRANSLATION
+ MARKET_WINDOW_PLAYER_HOLDINGS_TT: "#T Tvé državy#!\n#i Kliknutím zúžíš seznam na své [Concept('holdings','državy')|E] na tomto [Concept('market','trhu')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MARKET_WINDOW_NO_PROFIT_ROUTES: "[Concept('competitiveness','Konkurenceschopnost')|E] se týká pouze postav s [Concept('profit_routes','výnosnými trasami')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MARKET_WINDOW_AVERAGE_PROSPERITY: "[Concept('market_prosperity','Hospodářská prosperita trhu')|E]: #underline [TradeMarket.GetAvgProsperity|0V]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ YOUR_PROFIT_ROUTES_TITLE: "Tvé [Concept('profit_routes','výnosné trasy')|E] ([TradeWindow.GetCharacter.GetCurrentProfitRouteCount]/#underline [TradeWindow.GetCharacter.GetMaxProfitRouteCount]#!)" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ YOUR_DISTRIBUTION_ROUTES_TITLE: "Tvé [Concept('distribution_routes','zásobovací trasy')|E] ([TradeWindow.GetCharacter.GetCurrentDistributionRouteCount]/#underline [TradeWindow.GetCharacter.GetMaxDistributionRouteCount]#!)" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ YOUR_COMMISSION_ROUTES_TITLE: "Tvé [Concept('commission_routes','zakázkové trasy')|E] ([TradeWindow.GetCharacter.GetCurrentCommissionRouteCount]/[TradeWindow.GetCharacter.GetMaxCommissionRouteCount])" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ YOUR_ISSUED_COMMISSION_ROUTES_TITLE: "Tvé [Concept('commissioned_routes','trasy na zakázku')|E] ([TradeWindow.GetCharacter.GetCurrentIssuedCommissionRouteCount])" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ COMMISSION_ROUTE_TRADE_GOOD_FLAVOR_TEXT: "[TradeRouteItem.GetTotalPurchased|V1^] $TRADE_GOODS_UNITS_OF_TYPE$" # todo: NEW TRANSLATION
+ DELETE_DISTRIBUTION_ROUTE_TEXT: "Odstranit [Concept('distribution_route','zásobovací trasa')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ REMOVE_ROUTE_LABEL: "Odstranit" # todo: NEW TRANSLATION
+ REMOVE_ROUTE_TT: "Odstranit [Concept('trade_route','obchodní trasa')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE

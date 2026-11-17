@@ -1,7 +1,7 @@
 ﻿l_polish:
  activity_roaming: "Túra"
  activity_roaming_desc: "Vydej se na osamělou výpravu do skrytých koutů svého panství. Toto dobrodružství ti umožní na chvíli uniknout tlaku dvorského života, odpočinout si mezi prastarými lesy a mírnými kopci a nechat starosti za sebou."
- activity_roaming_host_desc: "$BULLET_WITH_TAB$[opinion_i|E][Concept('opinion','Mínění')|E]\n$BULLET_WITH_TAB$[stress_loss_i|E][Concept('stress_loss','Úbytek stresu')|E]\n$BULLET_WITH_TAB$[prestige_experience_i|E][Concept('prestige_experience','Proslulost')|E]\n$BULLET_WITH_TAB$Můžeš získat [Concept('trait','rys')|E] [GetTrait('lifestyle_mystic').GetName( GetNullCharacter )] nebo [Concept('trait_level_track_xp','zkušenosti rysu')|E]"
+ activity_roaming_host_desc: "$BULLET_WITH_TAB$[Concept('opinion_i','@opinion_icon!')|E][Concept('opinion','Mínění')|E]\n$BULLET_WITH_TAB$[Concept('stress_loss_i','@stress_loss_icon!')|E][Concept('stress_loss','Úbytek stresu')|E]\n$BULLET_WITH_TAB$[Concept('prestige_experience_i','@prestige_icon!')|E][Concept('prestige_experience','Proslulost')|E]\n$BULLET_WITH_TAB$Můžeš získat [Concept('trait','rys')|E] [GetTrait('lifestyle_mystic').GetName( GetNullCharacter )] nebo [Concept('trait_level_track_xp','zkušenosti rysu')|E]" # todo: CONCEPT CASE
  activity_roaming_guest_desc: ""
  activity_roaming_conclusion_desc: "Túra ti poskytla vítanou příležitost na chvíli odložit břemeno vlády a uniknout tlaku, který s sebou přináší."
  activity_roaming_selection_tooltip: "Vydej se na túru a na chvíli odlož břemeno vlády.\n\nPředpokládané odměny:\n$activity_roaming_host_desc$"
@@ -226,7 +226,7 @@
  bp3_roaming.0150.desc.no_companion: "Usedám k vodě, nechávám odpočinout nohy a zhluboka se nadechuji."
  bp3_roaming.0150.desc.companion: "Usedáme k vodě, necháváme odpočinout nohy a slyším, jak si [special_guest.GetFirstName] těžce povzdechne."
  bp3_roaming.0150.a: "Ach, konečně chvíle odpočinku."
- bp3_roaming.0150.b: "„Odešel[Select_CString(ROOT.Char.IsFemale, 'a', '')] jsem, když se nad vodou rozezněla podmanivá melodie...“"
+ bp3_roaming.0150.b: "„[Select_CString(ROOT.Char.IsFemale,'Odešla','Odešel')][Select_CString(ROOT.Char.IsFemale, 'a', '')] jsem, když se nad vodou rozezněla podmanivá melodie...“" # todo: GENDER FORM ROOT.Char - over, ci ROOT je postava, ktorej sa text tyka
  roaming_quiet_pond_key_title: "Tichý rybník"
  roaming_quiet_pond_key: "[host.GetShortUIName] [Select_CString(host.IsFemale, 'narazila v divočině místa zvaného', 'narazil v divočině místa zvaného')] [activity.GetCurrentPhase.GetLocation.GetNameNoTooltip] na tichý rybník, u kterého si [Select_CString(host.IsFemale, 'odpočinula', 'odpočinul')]."
  roaming_quiet_pond_poet_key_title: "$roaming_quiet_pond_key_title$"

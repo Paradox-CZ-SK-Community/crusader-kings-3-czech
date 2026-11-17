@@ -21,6 +21,8 @@
  HOLY_WAR_KINGDOM_NAME: "[Concept('holy_war','Svatá válka')|E] o [Concept('kingdom','království')|El]"
  declared_major_religious_war_flag_tt: "Za jeden život se můžeš pokusit pouze o jednu velkou náboženskou válku"
  great_holy_war_cooldown: "Tvá [Concept('faith','víra')|El] vedla během posledních 30 let [Concept('great_holy_war','velkou svatou válku')|El]"
+ not_great_holy_war_age_of_crusades_first: "$launch_undirected_great_holy_war_decision_age_of_crusades_tt$" # todo: NEW TRANSLATION
+ not_great_holy_war_age_of_crusades_third: "$launch_undirected_great_holy_war_decision_age_of_crusades_tt$" # todo: NEW TRANSLATION
  DEBUG_WAR_NAME: "#D (LADĚNÍ)#! [ATTACKER.GetPrimaryTitle.GetPrefix]-[DEFENDER.GetPrimaryTitle.GetAdjective] ladicí válka o titul [TITLE.GetBaseName]"
  debug_war_invalidated_desc: "#D (LADĚNÍ)#! Ladicí válka byla zneplatněna"
  DEBUG_WAR_NAME_FALLBACK: "#D (LADĚNÍ)#! Ladicí válka"
@@ -34,7 +36,7 @@
  WAR_ATTACKING_NON_INDEPENDENT_OUTSIDE: "@warning_icon! #X [recipient.GetShortUIName] není nezávisl[Select_CString( recipient.IsFemale, 'á', 'ý' )]#!"
  WAR_ATTACKING_OWN_VASSAL: "@warning_icon! #X Nemůžeš vyhlásit válku vlastním vazalům#!"
  WAR_ATTACKING_SUB_VASSAL_IN_SAME_REALM: "@warning_icon! #X [recipient.GetShortUIName] nemá stejného lenního pána jako ty#!"
- WAR_SCORE_THEIR_LEADER_CAPTURED: "Zajat nepřátelský [Concept('war_leader','vůdce války')|El]:"
+ WAR_SCORE_THEIR_LEADER_CAPTURED: "Zajat nepřátelský [Concept('war_leader','vůdce války')|El]:" # todo: CHANGED MINOR
  WAR_SCORE_MY_LEADER_CAPTURED: "[Concept('war_leader','Vůdce války')|El] zajat"
  WAR_SCORE_WE_CAPTURED_SPOUSE: "Zajat manžel či manželka"
  WAR_SCORE_THEY_CAPTURED_SPOUSE: "Manžel či manželka zajati"
@@ -68,22 +70,22 @@
  PEASANT_WAR_NAME: "Selské povstání"
  peasant_war_victory_desc: "Všechna vzbouřená [Concept('counties','hrabství')|El] ztratí [SCOPE.ScriptValue('peasant_war_victory_county_control_loss')|N0] [Concept('control','kontroly')|El]."
  peasant_war_white_peace_desc: "[Concept('peasant_faction','Selská frakce')|El] bude rozpuštěna."
- peasant_war_defeat_desc: "[Concept('peasant_faction','Selská frakce')|El] bude rozpuštěna a [attacker.GetShortUIName] bude uvězněn[Select_CString( attacker.IsFemale, 'a', '' )]. Ve všech vzbouřených [Concept('counties','hrabstvích')|El] bude nuceně zvýšeno [Concept('county_opinion','lidové mínění')|El]."
+ peasant_war_defeat_desc: "[Concept('peasant_faction','Selská frakce')|El] bude rozpuštěna a [attacker.Custom('CZ_ShortUIName_A')] bude uvězněn[Select_CString( attacker.IsFemale, 'a', '' )]. Ve všech vzbouřených [Concept('counties','hrabstvích')|El] bude nuceně zvýšeno [Concept('popular_opinion','lidové mínění')|El]." # todo: CHANGED (predtym: [Concept('peasant_faction','Selská frakce')|El] bude rozpuštěna a [attacker.GetShortUIName] bude uvězněn[Select_CString()
  nomads_take_everything_tt: "[tooltip_leader.GetShortUIName] a ostatní [tooltip_leader.Custom('GetGovernmentIcon')] [Concept('rulers','vládci')|El] s formou vlády [tooltip_leader.GetGovernment.GetName]:"
  NOMADIC_WAR_NAME: "[ATTACKER.GetCulture.Custom('CZ_Adjective_ee')|U] [CZFaithAdjDecline(ATTACKER.GetFaith,'é')] povstání nomádů"
  POPULIST_WAR_NAME: "[ATTACKER.GetCulture.Custom('CZ_Adjective_ee')|U] [CZFaithAdjDecline(ATTACKER.GetFaith,'é')] povstání"
  CLAIMANT_WAR_NAME: "Válka za nárok [CLAIMANT.Custom('CZ_TitledFirstName_G')] na titul [TITLE.GetBaseName]"
  depose_war: "Sesazení"
  claim_cb: "Nárok"
- claim_cb_victory_desc_attacker_claimant: "Získáš sporný [Concept('title','titul')|El]."
- claim_cb_victory_desc_attacker: "[claimant.GetShortUIName|U] získá sporný [Concept('title','titul')|El]."
- claim_cb_victory_desc: "[claimant.GetShortUIName|U] získá sporný [Concept('title','titul')|El]."
- claim_cb_white_peace_desc_defender: "Sporný [Concept('title','titul')|El] si ponecháš."
- claim_cb_white_peace_desc: "[defender.GetShortUIName|U] si ponechá sporný [Concept('title','titul')|El]."
- claim_cb_defeat_desc_defender: "Sporný [Concept('title','titul')|El] si ponecháš. [claimant.GetShortUIName|U] ztratí svůj [Concept('claim','nárok')|El]."
- claim_cb_defeat_desc_attacker_claimant: "[defender.GetShortUIName|U] si ponechá sporný [Concept('title','titul')|El]. Ty ztratíš svůj [Concept('claim','nárok')|El]."
- claim_cb_defeat_desc_attacker: "[defender.GetShortUIName|U] si ponechá sporný [Concept('title','titul')|El]. [claimant.GetShortUIName|U] ztratí svůj [Concept('claim','nárok')|El]."
- claim_cb_defeat_desc: "[defender.GetShortUIName|U] si ponechá sporný [Concept('title','titul')|El]. [attacker.GetShortUIName|U] ztratí svůj [Concept('claim','nárok')|El]."
+ claim_cb_victory_desc_attacker_claimant: "[claimant.GetShortUIName|U] získá[_s( claimant )] sporný [Concept('title','titul')|El]." # todo: CHANGED (predtym: Získáš sporný [Concept('title','titul')|El].)
+ claim_cb_victory_desc_attacker: "$claim_cb_victory_desc_attacker_claimant$" # todo: CHANGED (predtym: [claimant.GetShortUIName|U] získá sporný [Concept('title','titul')|El].)
+ claim_cb_victory_desc: "$claim_cb_victory_desc_attacker_claimant$" # todo: CHANGED (predtym: [claimant.GetShortUIName|U] získá sporný [Concept('title','titul')|El].)
+ claim_cb_white_peace_desc_defender: "[defender.GetShortUIName|U] si ponechá[_s( defender )] sporný [Concept('title','titul')|El]." # todo: CHANGED (predtym: Sporný [Concept('title','titul')|El] si ponecháš.)
+ claim_cb_white_peace_desc: "$claim_cb_white_peace_desc_defender$" # todo: CHANGED (predtym: [defender.GetShortUIName|U] si ponechá sporný [Concept('title','titul')|El].)
+ claim_cb_defeat_desc_defender: "$claim_cb_white_peace_desc_defender$" # todo: CHANGED (predtym: Sporný [Concept('title','titul')|El] si ponecháš. [claimant.GetShortUIName|U] ztratí svůj [Concept('claim','nárok')|El].)
+ claim_cb_defeat_desc_attacker_claimant: "[defender.GetShortUIName|U] si ponechá[_s( defender )] sporný [Concept('title','titul')|El]. [claimant.GetShortUIName|U] ztratí[_s( claimant )] [claimant.Custom('CZ_ShortUIName_G')] [Concept('claim','nárok')|El]." # todo: CHANGED (predtym: [defender.GetShortUIName|U] si ponechá sporný [Concept('title','titul')|El]. Ty ztratíš svůj [Concept('claim','nárok')|E)
+ claim_cb_defeat_desc_attacker: "$claim_cb_defeat_desc_attacker_claimant$" # todo: CHANGED (predtym: [defender.GetShortUIName|U] si ponechá sporný [Concept('title','titul')|El]. [claimant.GetShortUIName|U] ztratí svůj [Co)
+ claim_cb_defeat_desc: "$claim_cb_defeat_desc_attacker_claimant$" # todo: CHANGED (predtym: [defender.GetShortUIName|U] si ponechá sporný [Concept('title','titul')|El]. [attacker.GetShortUIName|U] ztratí svůj [Co)
  CB_CLAIM_COST_TARGET_TITLES: "Nárokované tituly"
  CB_CLAIM_COST_TARGET_TITLES_FOREIGN: "Nárokované tituly mimo de iure území"
  CB_CLAIM_COST_GENDER_PREFERENCES: "Rodové preference"
@@ -124,6 +126,7 @@
  CB_GENERIC_PHASE_BONUS: "Aktuální [Concept('struggle_phase','fáze sváru')|El]"
  CB_STRUGGLE_CONCESSION_ENDING: "Trvalý dopad události $persian_struggle$"
  CB_STEPPE_SEASON_DISCOUNT: "[Concept('steppe_season','Stepní období')|El]"
+ CB_SITUATION_PHASE_DISCOUNT: "[Concept('situation_phase','Fáze situace')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  CB_CHRISTIAN_CHURCH_DISCOUNT: "[GetSituationType('the_christian_church').GetName|U]"
  CB_SPIRITUAL_FULFILLMENT_TIER_0: "[Concept('spiritual_fulfillment','$christian_fulfillment_level_0|q$')|EU]"
  CB_SPIRITUAL_FULFILLMENT_TIER_1: "[Concept('spiritual_fulfillment','$christian_fulfillment_level_1|q$')|EU]"
@@ -203,7 +206,7 @@
  nomadic_war: "Povstání nomádů"
  nomadic_war_victory_desc: "Vzbouřená [Concept('counties','hrabství')|El] se stanou nezávislými [Concept('realms','panstvími')|El] s formou vlády [GetGovernment( 'nomad_government' ).GetName]."
  nomadic_war_white_peace_desc: "Vzbouřená [Concept('counties','hrabství')|El] a [Concept('vassals','vazalové')|El] zůstanou součástí panství."
- nomadic_war_defeat_desc: "Vzbouřená [Concept('counties','hrabství')|El] a [Concept('vassals','vazalové')|El] zůstanou součástí panství. [attacker.GetShortUIName|U] bude [Select_CString(attacker.IsFemale,'uvězněna','uvězněn')]. Ve všech vzbouřených [Concept('counties','hrabstvích')|El] bude nuceně zvýšeno [Concept('county_opinion','lidové mínění')|El]."
+ nomadic_war_defeat_desc: "Vzbouřená [Concept('counties','hrabství')|El] a [Concept('vassals','vazalové')|El] zůstanou součástí panství. [attacker.GetShortUIName|U] bude [Select_CString(attacker.IsFemale,'uvězněna','uvězněn')]. Ve všech vzbouřených [Concept('counties','hrabstvích')|El] bude nuceně zvýšeno [Concept('popular_opinion','lidové mínění')|El]." # todo: CHANGED (predtym: Vzbouřená [Concept('counties','hrabství')|El] a [Concept('vassals','vazalové')|El] zůstanou součástí panství. [attacker.)
  populist_war: "Povstání"
  populist_war_victory_desc: "Vzbouřená [Concept('counties','hrabství')|El] získají [Concept('de_jure','de iure')|El] [Concept('duchies','vévodství')|El] a stanou se nezávislými panstvími, přičemž každému bude vládnout jeden z útočníků."
  populist_war_white_peace_desc: "Vzbouřená [Concept('counties','hrabství')|El] a [Concept('vassals','vazalové')|El] zůstanou součástí panství."
@@ -279,7 +282,7 @@
  temp_tributary_protection_reason_var: "#weak (do [GetCurrentDateWithDiff( GetVarTimeRemaining( ROOT.Char.MakeScope, 'temp_tributary_protection') )])#!"
  temp_tributary_protection_reason_no_var: ""
  cease_tribute_disconnected_suzerain: "Odpojení od [Concept('realm','panství')|El] [Concept('suzerain_possessive','suzeréna')|El]: $VALUE|0+=$"
- cease_tribute_landless_suzerain: "[Concept('suzerain','Suzerén')|El] je [Concept('unlanded','bezzemek')|El]: $VALUE|0+=$"
+ cease_tribute_landless_suzerain: "[GetSuzerainRelationship(GetPlayer)] je [Concept('unlanded','bezzemek')|El]: $VALUE|0+=$" # todo: CHANGED (predtym: [Concept('suzerain','Suzerén')|El] je [Concept('unlanded','bezzemek')|El]: $VALUE|0+=$)
  must_neighbor_or_neighbor_tributary_tt: "Jejich území #bold nesousedí#! s tvým [Concept('realm','panstvím')|El] ani s panstvím tvých [Concept('tributaries','tributářů')|El]"
  tribals_can_only_tributarize_other_tribals_tt: "[Concept('tribal','Kmenoví')|El] [Concept('rulers','vládci')|El] mohou podrobit placení [Concept('tributary','tributu')|El] pouze jiné kmenové vládce"
  mandala_tributaries_must_be_destruction: "Vyžaduje #V 3.#! úroveň [Concept('aspect_of_destruction','aspektu zkázy')|El]"
@@ -384,7 +387,7 @@
  launch_hungarian_migration_scripted_effect.tt.mogyers_move_to_pannonia: "$mogyer_collective_noun$ se usadí ve většině $avar$ [Concept('counties','hrabství')|El] v rámci $k_hungary$"
  launch_hungarian_migration_scripted_effect.tt.mogyers_outside_pannonia: "$pecheneg_collective_noun$ se usadí ve všech $mogyer$ [Concept('counties','hrabstvích')|El] tvého [Concept('realm','panství')|El] mimo $k_hungary$"
  launch_hungarian_migration_scripted_effect.tt.territory_outside_pannonia.non_mogyer_vassals: "Vazalové mimo $k_hungary$, kteří nejsou $mogyer$, se stanou [Concept('independent','nezávislými')|El]"
- launch_hungarian_migration_scripted_effect.tt.territory_outside_pannonia.mogyer_vassals: "$mogyer$ [Concept('vassals','vazalům')|El] mimo $k_hungary$ budou přiděleny [Concept('titles','tituly')|El] z tvých zbývajících dobytých $game_concept_titles$ v rámci $k_hungary$"
+ launch_hungarian_migration_scripted_effect.tt.territory_outside_pannonia.mogyer_vassals: "$mogyer$ [Concept('vassals','vazalům')|El] mimo $k_hungary$ budou přiděleny [Concept('titles','tituly')|El] z tvých zbývajících dobytých titulů v rámci $k_hungary$" # todo: CONCEPT CASE
  launch_hungarian_migration_scripted_effect.tt.territory_outside_pannonia.former_territories: "Země ovládané $mogyer$ [Concept('vassals','vazaly')|El] mimo $k_hungary$ připadnou místním vojevůdcům"
  pax_romana_invasion_war: "Pax Romana"
  PAX_ROMANA_INVASION_WAR_NAME: "Římská invaze do [Title.Custom('CZ_LandedNameNoTier_G')]"
@@ -570,8 +573,8 @@
  custom.defender_every_active_accolade: "Kvůli vysoké [Concept('rank','hodnosti')|El] [attacker.Custom('CZ_ShortUIName_G')] každý z [Concept('acclaimed_knights','uznávaných rytířů')|El] [defender.Custom('CZ_ShortUIName_G')]"
  mongol_invasion_vassal_disapproves_defeat: "Všichni [Concept('vassals','vazalové')|El] [attacker.Custom('CZ_ShortUIName_G')] ztratí na #V 5 let#! #N 20#! bodů [Concept('opinion','mínění')|El] o této postavě #weak ($liege_lost_mongol_invasion_war$)#!"
  mongol_invasion_loot_county_tt: "Každé [Concept('de_jure','de iure')|El] [Concept('county','hrabství')|El] cílových titulů"
- mongol_invasion_loot_gold_tt: "[attacker.GetShortUIName|U] získá @gold_icon! [Concept('gold','zlato')|El] v hodnotě #V pětinásobku#! [Concept('development','rozvoje')|El]"
- mongol_invasion_loot_development_tt: "[Concept('development','Rozvoj')|El] [Concept('county','hrabství')|El] bude #N snížen na polovinu#!"
+ mongol_invasion_loot_gold_tt: "[attacker.GetShortUIName|U] získá @gold_icon! [Concept('gold','zlato')|El] v hodnotě #V pětinásobku#! [Concept('prosperity','prosperity')|El]" # todo: CHANGED (predtym: [attacker.GetShortUIName|U] získá @gold_icon! [Concept('gold','zlato')|El] v hodnotě V pětinásobku ! [Concept('developme)
+ mongol_invasion_loot_prosperity_tt: "[Concept('prosperity','Rozkvět')|E] [Concept('county','Hrabství')|E] bude #N poloviční#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  mongol_invasion_loot_dread_tt: "[attacker.GetShortUIName|U] získá 2 body [Concept('dread','hrůzy')|El]"
  invasion_vassal_transfer_tt: "Každý [Concept('de_jure','de iure')|El] [Concept('vassal','vazal')|El] cílových titulů"
  invasion_title_transfer_tt: "Každé [Concept('de_jure','de iure')|El] [Concept('county','hrabství')|El] bude převedeno na [attacker.Custom('CZ_ShortUIName_A')]"
@@ -783,3 +786,37 @@
  war_aid_liege_not_my_liege_tt: "[Concept('war','Válka')|El] probíhá mezi tvými vlastními [Concept('vassals','vazaly')|El]"
  war_aid_liege_relevant_titles_tt: "[Concept('war','Válka')|El] není vedena o [Concept('titles','tituly')|El] ve tvém [Concept('realm','panství')|El]"
  war_aid_liege_is_player: "$DYNASTIC_CYCLE_WINDOW_HEGEMON_STABILITY_PICK_PLAYER_OTHER$"
+ not_attack_gg_during_repose_tt: "[Concept('situation_phase','Fáze situace')|E] [GetSituation('guelph_ghibelline').GetName] se nachází ve fázi [GetSituationType('guelph_ghibelline').GetPhaseType('repose').GetName] a nesmíš útočit na příznivce [recipient.Custom('GetGuelphGhibellineConcept')]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ trade_county_conquest_cb: "Dobýt obchodní hrabství" # todo: NEW TRANSLATION
+ TRADE_COUNTY_CONQUEST_WAR_NAME: "[ConcatIfNeitherEmpty('$ORDER|q$', ' ')][ATTACKER.GetPrimaryTitle.GetAdjective] dobytí [TITLE.GetBaseName]" # todo: NEW TRANSLATION
+ TRADE_COUNTY_CONQUEST_WAR_NAME_BASE: "[ATTACKER.GetPrimaryTitle.GetAdjective][DEFENDER.GetPrimaryTitle.GetName]" # todo: NEW TRANSLATION
+ TRADE_COUNTY_CONQUEST_CB_NAME: "Dobýt [Concept('county','hrabství')|E] s [Concept('trade','obchodem')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ trade_league_commune_cb: "Vyhlásit komunu" # todo: NEW TRANSLATION
+ TRADE_LEAGUE_COMMUNE_WAR_NAME: "[ConcatIfNeitherEmpty('$ORDER|q$', ' ')]Válka o komunu v [TITLE.GetBaseName]" # todo: NEW TRANSLATION
+ TRADE_LEAGUE_COMMUNE_WAR_NAME_BASE: "[ATTACKER.GetPrimaryTitle.GetAdjective][DEFENDER.GetPrimaryTitle.GetName]" # todo: NEW TRANSLATION
+ TRADE_LEAGUE_COMMUNE_CB_NAME: "Osvobodit [Concept('county','hrabství')|E] jako [Concept('republic','republika')|E] ve své [Concept('trade_league','obchodní lize')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ trade_league_commune_cb_victory_desc_attacker: "Sporné [Concept('county','hrabství')|E] je vyrváno z rukou [defender.Custom('CZ_ShortUIName_G')] a jeho měšťané vyhlásí komunu pod vedením místního [Concept('patrician','patricijem')|E]. Nová [Concept('republic','republikou')|E] vstoupí do tvé [Concept('trade_league','obchodní ligy')|E]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ trade_league_commune_cb_victory_desc: "[CZProDrop(attacker,'osvobodila','osvobodil')|U] sporné [Concept('county','hrabství')|E], kde místní [Concept('patrician','patricij')|E] vyhlásí komunu. Nová [Concept('republic','republika')|E] se připojí k [Concept('trade_league','obchodní lize')|E] [attacker.Custom('CZ_ShortUIName_G')]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ msg_trade_league_commune_war_invalidated_message: "[war.GetName] skončila: sporné [Concept('county','hrabství')|E] už nedrží [defender.Custom('CZ_ShortUIName_G')], stalo se [Concept('republic','republikou')|E] nebo už v něm není hlavním sídlem [Concept('city','městem')|E] ani [Concept('castle','hrad')|E]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ league_commune_cb_proclaimed_tt: "Měšťané z #bold [commune_county.GetName]#! vyhlásí komunu pod vedením místního [Concept('patrician','patricijem')|E] a založí nezávislou [Concept('republic','republikou')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ league_commune_cb_joins_league_tt: "Nová [Concept('republic','republika')|E] se připojí k tvé [Concept('trade_league','obchodní lize')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ trade_league_monopoly_cb: "Vynutit monopol" # todo: NEW TRANSLATION
+ TRADE_LEAGUE_MONOPOLY_WAR_NAME: "[ConcatIfNeitherEmpty('$ORDER|q$', ' ')]Válka o monopol na trhu v [TITLE.GetBaseName]" # todo: NEW TRANSLATION
+ TRADE_LEAGUE_MONOPOLY_WAR_NAME_BASE: "[ATTACKER.GetPrimaryTitle.GetAdjective][DEFENDER.GetPrimaryTitle.GetName]" # todo: NEW TRANSLATION
+ TRADE_LEAGUE_MONOPOLY_CB_NAME: "Vynutit [Concept('complete_monopoly','úplný monopol')|E] pro svou [Concept('trade_league','obchodní ligu')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ trade_league_monopoly_cb_victory_desc_attacker: "Sporné [Concept('county','hrabství')|E] přenechá tvé [Concept('trade_league','obchodní liga')|E] [Concept('complete_monopoly','úplného monopolu')|E] nad svým [Concept('trade_market','obchodním trhem')|E]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ trade_league_monopoly_cb_victory_desc: "[CZProDrop(attacker,'vynutila','vynutil')|U] [Concept('complete_monopoly','Úplný monopol')|E] nad [Concept('trade_market','obchodním trhem')|E] sporného [Concept('county','hrabstvím')|E] pro [Concept('trade_league','obchodní ligu')|E] [attacker.Custom('CZ_ShortUIName_G')]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ msg_trade_league_monopoly_war_invalidated_message: "[war.GetName] skončila: sporné [Concept('county','hrabství')|E] už není sídlem [Concept('trade_market','obchodním trhem')|E] drženým [defender.Custom('CZ_ShortUIName_G')], trh už má [Concept('complete_monopoly','úplný monopol')|E] nebo [attacker.Custom('CZ_ShortUIName_G')] už není [Concept('trade_league_leader','vůdce obchodní ligy')|E] žádné [Concept('trade_league','obchodní liga')|E]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ trade_league_trade_war_cb: "Obchodní válka" # todo: NEW TRANSLATION
+ TRADE_LEAGUE_TRADE_WAR_WAR_NAME: "[ConcatIfNeitherEmpty('$ORDER|q$', ' ')]Obchodní válka mezi [ATTACKER.GetConfederation.GetName] a [DEFENDER.GetConfederation.GetName]" # todo: NEW TRANSLATION
+ TRADE_LEAGUE_TRADE_WAR_WAR_NAME_BASE: "[DEFENDER.GetConfederation.GetName]" # todo: NEW TRANSLATION
+ TRADE_LEAGUE_TRADE_WAR_CB_NAME: "$trade_league_trade_war_cb$" # todo: NEW TRANSLATION
+ trade_league_trade_war_cb_victory_desc_attacker: "Rivalizující [Concept('trade_league','obchodní liga')|E] se vzdá všech [Concept('trade_post','obchodních stanic')|E] a [Concept('trade_monopoly','obchodní monopol')|E], které drží na [Concept('trade_markets','obchodní trhy')|E] sdílených vámi oběma. Trhy na území jejích vlastních členů jí zůstanou." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ trade_league_trade_war_cb_victory_desc: "[CZProDrop(attacker,'připravila','připravil')|U] [Concept('trade_league','Obchodní liga')|E] [defender.Custom('CZ_ShortUIName_G')] o všechny [Concept('trade_post','obchodní stanice')|E] a [Concept('trade_monopoly','obchodní monopol')|E] na [Concept('trade_markets','obchodní trhy')|E], které obě Ligy sdílejí." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ trade_league_trade_war_cb_white_peace_desc_defender: "Tvé [Concept('trade_league','obchodní liga')|E] zůstanou všechny [Concept('trade_post','obchodní stanice')|E] a [Concept('trade_monopoly','obchodní monopol')|E], které drží na [Concept('trade_markets','obchodní trhy')|E] sdílených oběma Ligami." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ trade_league_trade_war_cb_white_peace_desc: "[Concept('trade_league','Obchodní liga')|E] [defender.Custom('CZ_ShortUIName_G')] si ponechá všechny [Concept('trade_post','obchodní stanice')|E] a [Concept('trade_monopoly','obchodní monopol')|E], které drží na [Concept('trade_markets','obchodní trhy')|E] sdílených oběma Ligami." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ trade_league_trade_war_cb_defeat_desc_defender: "$trade_league_trade_war_cb_white_peace_desc_defender$" # todo: NEW TRANSLATION
+ trade_league_trade_war_cb_defeat_desc: "$trade_league_trade_war_cb_white_peace_desc$" # todo: NEW TRANSLATION
+ msg_trade_league_trade_war_war_invalidated_message: "[war.GetName] skončila: obě [Concept('trade_leagues','obchodní ligy')|E] už nesoupeří o stejné [Concept('trade_markets','obchodní trhy')|E] nebo jedna z nich už nemá [Concept('trade_league_leader','vůdce obchodní ligy')|E]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ league_trade_war_posts_tt: "Každý [Concept('trade_post','obchodní stanice')|E] držený #bold [defeated_league.GetName]#! na [Concept('trade_market','obchodní trh')|E], který sdílí s #bold [victorious_league.GetName]#!, je zrušen" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ league_trade_war_monopolies_tt: "Každý [Concept('trade_monopoly','obchodní monopol')|E] držený #bold [defeated_league.GetName]#! na těchto trzích je zrušen" # todo: NEW TRANSLATION # todo: CONCEPT CASE

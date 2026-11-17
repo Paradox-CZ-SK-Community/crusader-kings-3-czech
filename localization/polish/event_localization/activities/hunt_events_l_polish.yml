@@ -503,8 +503,8 @@
  hunt.2510.desc: "„Od hajných [CZPrepZ(sighting_county.GetNameNoTierNoTooltip)] [sighting_county.Custom('CZ_LandedNameNoTier_G')] ke mně doléhají podivné zprávy. Prý zahlédli [sighting_county.Custom('GetAnimalType')] s"
  hunt.2510.desc.knight_errant: "„Od hajných [CZPrepZ(sighting_county.GetNameNoTooltip)] [sighting_county.Custom('CZ_LandedName_G')] ke mně doléhají podivné zprávy. Prý zahlédli [sighting_county.Custom('GetAnimalType')] s"
  hunt.2510.story: "„Hajní [CZPrepZ(sighting_county.GetNameNoTierNoTooltip)] [sighting_county.Custom('CZ_LandedNameNoTier_G')] poslali přesvědčivé zprávy. Zdá se, že tam byl spatřen váš [sighting_county.Custom('GetAnimalType')], bestie s"
- hunt.2510.black: "černou srstí jako uhel.“"
- hunt.2510.white: "sněhobílou srstí.“"
+ hunt.2510.black: "černou srstí jako uhel.„"
+ hunt.2510.white: "sněhobílou srstí.„"
  hunt.2510.closing: "\n\n„Prý se potuluje po [sighting_province.Custom('CZ_GetTerrainTypePlural_L')], ale nikomu se k ní zatím nepodařilo přiblížit. O takových bestiích skutečně vyprávějí legendy...“"
  hunt.2510.knight_errant_closing: "\n\n„Zkrotit ji může jen tak proslulý $knight_culture_player_no_tooltip$, jako jste vy, [ROOT.Char.Custom('FormOfAddressForLiege')].“"
  hunt.2510.a: "#EMP [sighting_county.Custom('GetLegendaryColor')|U]#!, říkáš?"
@@ -521,8 +521,8 @@
  hunt.2540.desc: "„[ROOT.Char.Custom('FormOfAddressForLiege')|U], vaši správci lovu hlásí, že početní [sighting_county.Custom('GetAnimalPlural')] z [old_sighting_county.GetBaseNameNoTier] zřejmě opustili tamní kraj a přesunuli se do [sighting_county.Custom('CZ_LandedName_G')]!“"
  hunt.2540.legendary: "„[ROOT.Char.Custom('FormOfAddressForLiege')|U], vaši správci lovu hlásí, že [sighting_county.Custom('GetLegendaryColor')] [sighting_county.Custom('GetAnimalType')] z [old_sighting_county.GetBaseNameNoTier] na čas zmizel, než byl spatřen v nedalekém [sighting_county.GetBaseNameNoTier]!"
  hunt.2540.closing: "\n\n„Možná byste měl[Select_CString(ROOT.Char.IsFemale,'a uspořádat',' uspořádat')] lov, než bude příliš pozdě.“"
- hunt.2540.white: "Prý v ranní mlze září jako božské světlo...“"
- hunt.2540.black: "Prý se zjevuje jako posel večera, černá prázdnota v krajině...“"
+ hunt.2540.white: "Prý v ranní mlze září jako božské světlo...„"
+ hunt.2540.black: "Prý se zjevuje jako posel večera, černá prázdnota v krajině...„"
  hunt.2540.a: "Mohou utíkat, ale neschovají se."
  hunt.2540.a.legendary: "Snaží se mě zmást!"
  hunt.2540.b: "Tyhle zprávy už mě unavují, [sighting_character.GetFirstNameNoTooltip]..."
@@ -540,7 +540,7 @@
  hunt.3020.a: "Trpělivost, tohle by mělo jít snadno rozluštit."
  hunt.3020.a.perfect: "Rychle znovu najdeš stopu"
  hunt.3020.a.success: "Brzy znovu najdeš stopu"
- hunt.3020.a.failure: "Myslíš si, že jsi znovu našel stopu"
+ hunt.3020.a.failure: "Myslíš si, že jsi znovu [Select_CString(ROOT.Char.IsFemale,'našla','našel')] stopu" # todo: GENDER FORM ROOT.Char - over, ci ROOT je postava, ktorej sa text tyka
  hunt.3020.b: "Aha, o tomhle úskoku už jsem slyšel[Select_CString(ROOT.Char.IsFemale,'a','')]."
  hunt.3020.b.success: "Tvá rada se vyplatí"
  hunt.3020.b.failure: "Tvá rada je k ničemu"
@@ -682,11 +682,11 @@
  hunt.4009.desc: "#EMP Křup—!#!\nKdyž [activity.Custom('GetAnimalAdjective')] [activity.Custom('GetAnimalType')], ke kterému se právě přibližuji, zmizí [host.GetCurrentLocation.Custom('CZ_GetTerrainType_In')], otočím se za tím zvukem.\n\nZa mnou stojí [schemer.GetTitledFirstName], [ROOT.Char.Custom2('RelationToMeShort', schemer)], s taseným nožem a vražedným odhodláním v očích."
  hunt.4009.a: "Proti mně nemáš šanci!"
  hunt.4009.a.success: "Unikneš [schemer.GetTitledFirstNameNoTooltip]"
- hunt.4009.a.failure: "Jsi zraněn[Select_CString(ROOT.Char.IsFemale,'a','')] a unikneš [schemer.GetTitledFirstNameNoTooltip]"
+ hunt.4009.a.failure: "Jsi [Select_CString(ROOT.Char.IsFemale,'zraněna','zraněn')][Select_CString(ROOT.Char.IsFemale,'a','')] a unikneš [schemer.GetTitledFirstNameNoTooltip]" # todo: GENDER FORM ROOT.Char - over, ci ROOT je postava, ktorej sa text tyka
  hunt.4009.a.critical_failure: "[schemer.GetTitledFirstNameNoTooltip] tě porazí"
  hunt.4009.b: "Pomoc! Pomoc! [saving_participant.GetFirstNameNoTooltip]!"
  hunt.4009.b.critical_success: "[saving_participant.GetTitledFirstNameNoTooltip] zraní [schemer.GetTitledFirstNameNoTooltip] a společně uniknete"
- hunt.4009.b.failure: "[saving_participant.GetTitledFirstNameNoTooltip] je zraněn[Select_CString(saving_participant.IsFemale,'a','')], ale společně uniknete [schemer.GetTitledFirstNameNoTooltip]"
+ hunt.4009.b.failure: "[saving_participant.GetTitledFirstNameNoTooltip] je [Select_CString(saving_participant.IsFemale,'zraněna','zraněn')][Select_CString(saving_participant.IsFemale,'a','')], ale společně uniknete [schemer.GetTitledFirstNameNoTooltip]"
  hunt.4009.b.critial_failure: "[saving_participant.GetTitledFirstNameNoTooltip] tě nedokáže ubránit"
  hunt.4009.c: "Kdybych se tak dokázal[Select_CString(ROOT.Char.IsFemale,'a dostat',' dostat')] zpátky do tábora!"
  hunt.4009.c.failure: "[schemer.GetTitledFirstNameNoTooltip] tě dostihne"
@@ -740,7 +740,7 @@
  hunt.4014.dead_host: "Náraz do země vůbec necítím. Čas jako by se zpomalil. Obloha nade mnou tmavne, kolem se míhají nezřetelné postavy a jejich tlumené výkřiky ke mně doléhají skrz zmatenou mlhu."
  hunt.4014.wounded_host: "\n\nProberu se v [activity.GetCurrentPhase.GetLocation.Custom('GetProvinceGroundDesc')], zhroucený[Select_CString(ROOT.Char.IsFemale,'na zemi',' na zemi')], zatímco mi tělem projíždí bolest."
  hunt.4014.dead_host_courtier: "Přede mnou vidím [hunt_participant.GetTitledFirstName]. Tvář má bílou jako duch a něco na mě bezhlesně volá. Pak si vzpomenu na koně..."
- hunt.4014.wounded_host_courtier: "„[Select_CString(host.IsFemale,'Má','Můj')] [host.GetTitleAsNameNoTooltip]! Jste zraněn[Select_CString(host.IsFemale,'á','')]?!“ vykřikne [hunt_participant.GetTitledFirstName] a seskočí z koně."
+ hunt.4014.wounded_host_courtier: "„[Select_CString(host.IsFemale,'Má','Můj')] [host.GetTitleAsNameNoTooltip]! Jste [Select_CString(ROOT.Char.IsFemale,'zraněna','zraněn')][Select_CString(host.IsFemale,'á','')]?!“ vykřikne [hunt_participant.GetTitledFirstName] a seskočí z koně." # todo: GENDER FORM ROOT.Char - over, ci ROOT je postava, ktorej sa text tyka
  hunt.4014.a: "Postarám se o [hunt_participant.GetFirstNameNoTooltip]."
  hunt.4014.a.physician: "Klid, vyznám se v lékařství!"
  hunt.4014.a.learning: "Vydrž, vím, co dělat!"
@@ -860,7 +860,7 @@
  hunt.5003.a: "Ty se #EMP snažíš#!, aby nás někdo přistihl?!"
  hunt.5003.b: "Budu si toho #EMP vážit#!, drahoušku."
  hunt.5003.b.woo: "Děkuji, je to moc pěkné."
- hunt.5003.b.tt: "Někdo se může dozvědět o vašem [Concept('secret','tajném')|E] vztahu"
+ hunt.5003.b.tt: "Někdo se může dozvědět o vašem [Concept('secret','tajném')|E] vztahu" # todo: TERMINOLOGY secret -> tajemství (Concept 'secret': 'tajném')
  hunt.5003.c: "K ničemu mi to není."
  hunt.5003.d: "Pojď ke mně, má lásko."
  hunt.5003.d.woo: "Pojď sem, jsme tu úplně sami..."
@@ -978,8 +978,8 @@
  hunt.7103.hunter: "$hunt.7103.reply$, oči září nadšením a hlava horlivě přikyvuje."
  hunt.7103.falconer: "$hunt.7103.reply$, skoro jako by si mě najednou [Select_CString(woo_target.IsFemale,'prohlížela novýma očima','prohlížel novýma očima')]."
  hunt.7103.pity: "$hunt.7103.reply$ a lituje násilných kratochvílí naší doby a společenské vrstvy."
- hunt.7103.wastrel: "$hunt.7103.reply$ a očividně jej překvapuje, že našel spřízněnou duši."
- hunt.7103.steward: "$hunt.7103.reply$ a těší jej, že našel někoho, koho podobné věci rovněž naplňují radostí."
+ hunt.7103.wastrel: "$hunt.7103.reply$ a očividně jej překvapuje, že [Select_CString(ROOT.Char.IsFemale,'našla','našel')] spřízněnou duši." # todo: GENDER FORM ROOT.Char - over, ci ROOT je postava, ktorej sa text tyka
+ hunt.7103.steward: "$hunt.7103.reply$ a těší jej, že [Select_CString(ROOT.Char.IsFemale,'našla','našel')] někoho, koho podobné věci rovněž naplňují radostí." # todo: GENDER FORM ROOT.Char - over, ci ROOT je postava, ktorej sa text tyka
  hunt.7103.fallback: "$hunt.7103.reply$ a dlouze mi hledí do očí."
  hunt.7103.desc: "\n\nKdyž [woo_target.GetFirstNameNoTooltip] odchází, napětí je cítit z každé zdvořilostní fráze. [Select_CString(ROOT.Char.IsFemale,'Věděla jsem, že najdu ta správná slova','Věděl jsem, že najdu ta správná slova')], kterými si [woo_target.GetFirstNameNoTooltip] získám!"
  hunt.7103.a: "Myslím, že [woo_target.GetFirstNameNoTooltip] už [Select_CString(woo_target.IsFemale,'zabrala','zabral')]..."
@@ -1125,7 +1125,7 @@
  hunt.8210.b: "Pusť mě! Svou mužnost si musím šetřit na lov!"
  hunt.8210.b.flavor: "Odmítneš múzu."
  hunt.8211.opening: "[shrine_maiden.Custom2('AppropriateGreeting', ROOT.Char)]"
- hunt.8211.desc: "$love_artifact_poetry_name$\n\n#EMP „Přišel jsi za mnou včera v noci ty, nebo jsem já vyhledala tebe?\n\nNevzpomínám si.\n\nNevím ani, zda mě zalévala blaženost náležející pouze říši snů,\n\nnebo zda takové potěšení mohlo být skutečné.“#!"
+ hunt.8211.desc: "$love_artifact_poetry_name$\n\n#EMP „[Select_CString(ROOT.Char.IsFemale,'Přišla','Přišel')] jsi za mnou včera v noci ty, nebo jsem já vyhledala tebe?\n\nNevzpomínám si.\n\nNevím ani, zda mě zalévala blaženost náležející pouze říši snů,\n\nnebo zda takové potěšení mohlo být skutečné.„#!" # todo: GENDER FORM ROOT.Char - over, ci ROOT je postava, ktorej sa text tyka
  hunt.8211.a: "[ROOT.Char.Custom('GetCourt')|U] se dozví o naší společné rozkoši!"
  hunt.8211.b: "Tuto zvěčněnou vzpomínku na naši vášeň si budu opatrovat."
  love_artifact_poetry_name: "Přešel jsem most rozkoše"
@@ -1217,16 +1217,16 @@
  friend_made_me_moh: "[CHARACTER.GetShortUIName|U] si [Select_CString(CHARACTER.IsFemale,'vysloužila','vysloužil')] věčnou vděčnost [TARGET_CHARACTER.GetShortUINamePossessive] udělením pozice $master_of_hunt_court_position$"
  friend_made_me_moh_corresponding: "[TARGET_CHARACTER.GetShortUIName|U] si [Select_CString(TARGET_CHARACTER.IsFemale,'vysloužila','vysloužil')] věčnou vděčnost [CHARACTER.GetShortUINamePossessive] udělením pozice $master_of_hunt_court_position$"
  hunt.0550.t: "Budování tábora"
- hunt.0550.host: "Zatímco čekáme na příjezd ostatních hostů, mí [ROOT.Char.Custom('GetServants')] se pustí do příprav. [ROOT.Char.Custom('GetGameKeepers')|U] každý den prohledávají [activity.GetCurrentPhase.GetLocation.Custom('CZ_GetTerrainLandPlural_A')] a pátrají po známkách zvěře, zatímco blíže k lovišti vzniká tábor.\n\n"
- hunt.0550.guest: "Zatímco čekáme na příjezd ostatních hostů, [host.GetTitledFirstName] už zahájil[Select_CString(host.IsFemale,'zahájila','zahájil')] přípravy. [host.Custom('GetGameKeepers')|U] každý den prohledávají [activity.GetCurrentPhase.GetLocation.Custom('CZ_GetTerrainLandPlural_A')] a pátrají po známkách zvěře, zatímco blíže k lovišti budují tábor.\n\n"
- hunt.0550.nerge.host.desc: "Zatímco čekáme na příjezd ostatních hostů, mí [ROOT.Char.Custom('GetServants')] se pustí do příprav. [ROOT.Char.Custom('GetGameKeepers')|U] vybírají oblast, do níž účastníci při velkém Nerge shromáždí veškerou zvěř. Znalost krajiny je prvním z mnoha kroků k úspěchu.\n\n"
- hunt.0550.nerge.guest.desc: "Zatímco čekáme na příjezd ostatních hostů, [host.GetTitledFirstName] už zahájil[Select_CString(host.IsFemale,'zahájila','zahájil')] přípravy. [host.Custom('GetGameKeepers')|U] vybírají oblast, do níž účastníci při velkém Nerge shromáždí veškerou zvěř. Znalost krajiny je prvním z mnoha kroků k úspěchu.\n\n"
+ hunt.0550.host: "Zatímco čekáme na příjezd hostů, mí [ROOT.Char.Custom('GetServants')] se pustí do příprav. [ROOT.Char.Custom('GetGameKeepers')] každý den prohledávají [activity.GetCurrentPhase.GetLocation.Custom('GetTerrainLandPlural')] a pátrají po známkách zvěře, zatímco blíže k lovišti vzniká tábor.\n\n" # todo: CHANGED (predtym: Zatímco čekáme na příjezd ostatních hostů, mí [ROOT.Char.Custom('GetServants')] se pustí do příprav. [ROOT.Char.Custom(')
+ hunt.0550.guest: "Zatímco čekáme na příjezd hostů, [host.GetTitledFirstName] už zahájil[Select_CString(host.IsFemale,'zahájila','zahájil')] přípravy. [host.GetHerHis|U] [host.Custom('GetGameKeepers')] každý den prohledávají [activity.GetCurrentPhase.GetLocation.Custom('GetTerrainLandPlural')] a pátrají po známkách zvěře, zatímco blíže k lovišti budují tábor.\n\n" # todo: CHANGED (predtym: Zatímco čekáme na příjezd ostatních hostů, [host.GetTitledFirstName] už zahájil[Select_CString(host.IsFemale,'zahájila',)
+ hunt.0550.nerge.host.desc: "Zatímco čekáme na příjezd hostů, mí [ROOT.Char.Custom('GetServants')] se pustí do příprav. [ROOT.Char.Custom('GetGameKeepers')|U] vybírají oblast, do níž účastníci při velkém Nerge shromáždí veškerou zvěř. Znalost krajiny je prvním z mnoha kroků k úspěchu.\n\n" # todo: CHANGED (predtym: Zatímco čekáme na příjezd ostatních hostů, mí [ROOT.Char.Custom('GetServants')] se pustí do příprav. [ROOT.Char.Custom(')
+ hunt.0550.nerge.guest.desc: "Zatímco čekáme na příjezd hostů, [host.GetTitledFirstName] už zahájil[Select_CString(host.IsFemale,'zahájila','zahájil')] přípravy. [host.GetHerHis|U] [host.Custom('GetGameKeepers')] vybírají oblast, do níž účastníci při velkém Nerge shromáždí veškerou zvěř. Znalost krajiny je prvním z mnoha kroků k úspěchu.\n\n" # todo: CHANGED (predtym: Zatímco čekáme na příjezd ostatních hostů, [host.GetTitledFirstName] už zahájil[Select_CString(host.IsFemale,'zahájila',)
  hunt.0550.sighting: "Ti [activity.Custom('GetAnimalPlural')] jsou blízko... Cítím to..."
  hunt.0550.falconry: "Můj pták je z čekání stále neklidnější, jako by věděl, že jej brzy vypustím..."
  hunt.0550.legendary: "Někde tam venku čeká a pozoruje [activity.Custom('GetLegendaryColor')] [activity.Custom('GetAnimalType')]..."
  hunt.0550.nerge: "Můj kůň se na vyhlídky lovu těší stejně jako já. Ví, že nás v příštích dnech čekají velké výzvy."
- hunt.0550.standard: "Výstroj i koně jsem zkontroloval[Select_CString(ROOT.Char.IsFemale,'Výstroj i koně jsem zkontrolovala už mnohokrát','Výstroj i koně jsem zkontroloval už mnohokrát')] už mnohokrát. Už to nebude dlouho trvat..."
- hunt.0550.intent_arrived: "\n\n[ROOT.Char.GetIntentTarget.GetTitledFirstName] stále vůbec netuší, že mám v plánu [ROOT.Char.GetInvolvedActivityIntent.GetName|l] [ROOT.Char.GetIntentTarget.GetFirstNameNoTooltip]."
+ hunt.0550.standard: "Svou výstroj i koně jsem zkontroloval[Select_CString(ROOT.Char.IsFemale,'Svou výstroj i koně jsem zkontrolovala už mnohokrát','Svou výstroj i koně jsem zkontroloval už mnohokrát')] už mnohokrát. Už to nebude dlouho trvat..." # todo: CHANGED (predtym: Výstroj i koně jsem zkontroloval[Select_CString(ROOT.Char.IsFemale,'Výstroj i koně jsem zkontrolovala už mnohokrát','Výs)
+ hunt.0550.intent_arrived: "\n\nKdyž už je [ROOT.Char.GetIntentTarget.GetTitledFirstName] zde, můj plán [ROOT.Char.GetInvolvedActivityIntent.GetName|l] [ROOT.Char.GetIntentTarget.GetHerHim] může brzy pokročit." # todo: CHANGED (predtym: \n\n[ROOT.Char.GetIntentTarget.GetTitledFirstName] stále vůbec netuší, že mám v plánu [ROOT.Char.GetInvolvedActivityInte)
  hunt.0550.intent: "\n\n[ROOT.Char.GetIntentTarget.GetTitledFirstName] ještě [Select_CString(ROOT.Char.GetIntentTarget.IsFemale,'nedorazila','nedorazil')]. Brzy však budu moci uvést svůj plán [ROOT.Char.GetInvolvedActivityIntent.GetName|l] [ROOT.Char.GetIntentTarget.GetFirstNameNoTooltip] do pohybu."
  hunt.0550.a: "Brzy."
  hunt_fish_impress_key_title: "$hunt.8000.t$"
@@ -1417,8 +1417,8 @@
  hunt_chased_legendary_log: "[CHARACTER.GetShortUIName|U] [Select_CString(CHARACTER.IsFemale,'pronásledovala bestii','pronásledoval bestii')] do divočiny"
  hunt_left_legendary_log_title: "$hunt_chased_legendary_log_title$"
  hunt_left_legendary_log: "[CHARACTER.GetShortUIName|U] [Select_CString(CHARACTER.IsFemale,'zavrhla pronásledování bestie','zavrhl pronásledování bestie')] jako marnou honbu"
- hunt_legendary_escaped_log_title: "$hunt_chased_legendary_log_title$"
- hunt_legendary_escaped_log: "[CHARACTER.GetShortUIName|U] [Select_CString(CHARACTER.IsFemale,'nechala bestii uniknout','nechal bestii uniknout')]"
+ hunt_legendary_escaped_log_entry_title: "$hunt_chased_legendary_log_title$" # todo: NEW TRANSLATION
+ hunt_legendary_escaped_log_entry: "[CZProDrop(CHARACTER,'nechala','nechal')|U] šelmu uniknout" # todo: NEW TRANSLATION
  hunt_legendary_lie_log_title: "$hunt_chased_legendary_log_title$"
  hunt_legendary_lie_log: "[CHARACTER.GetShortUIName|U] [Select_CString(CHARACTER.IsFemale,'lhala o pronásledování bájné bestie','lhal o pronásledování bájné bestie')]"
  hunt_legendary_anger_log_title: "$hunt_chased_legendary_log_title$"
@@ -1494,13 +1494,13 @@
  hunt_doe_dismiss_log_title: "$hunt_doe_kill_log_title$"
  hunt_doe_dismiss_log: "[CHARACTER.GetShortUIName|U] [Select_CString(CHARACTER.IsFemale,'nechala laň odejít','nechal laň odejít')] a [Select_CString(CHARACTER.IsFemale,'soustředila se na hledání jelena','soustředil se na hledání jelena')]"
  hunt_snatch_chase_log_title: "$hunt.5050.t$"
- hunt_snatch_chase_log: "[CHARACTER.GetShortUIName|U] [Select_CString(CHARACTER.IsFemale,'se pokusila pronásledovat','se pokusil pronásledovat')] ptáka, který zabil jejího dravce"
+ hunt_snatch_chase_log: "[CHARACTER.GetShortUIName|U] [Select_CString(CHARACTER.IsFemale,'se pokusila pronásledovat','se pokusil pronásledovat')] ptáka, který [Select_CString(CHARACTER.IsFemale,'zabila','zabil')] jejího dravce"
  hunt_snatch_steal_log_title: "$hunt_snatch_chase_log_title$"
  hunt_snatch_steal_log: "[CHARACTER.GetShortUIName|U] po smrti vlastního dravce [Select_CString(CHARACTER.IsFemale,'požadovala','požadoval')] dravce [TARGET_CHARACTER.GetShortUIName]"
  hunt_snatch_feather_log_title: "$hunt_snatch_chase_log_title$"
  hunt_snatch_feather_log: "[CHARACTER.GetShortUIName|U] si [Select_CString(CHARACTER.IsFemale,'ponechala','ponechal')] pero jako památku na svého padlého ptáka"
  hunt_snatch_dismiss_log_title: "$hunt_snatch_chase_log_title$"
- hunt_snatch_dismiss_log: "Dravec [CHARACTER.GetShortUINamePossessive|U] byl zabit větším ptákem"
+ hunt_snatch_dismiss_log: "Dravec [CHARACTER.GetShortUINamePossessive|U] byl [Select_CString(CHARACTER.IsFemale,'zabita','zabit')] větším ptákem"
  hunt_eyas_taken_log_title: "$hunt.5060.t$"
  hunt_eyas_taken_log: "[CHARACTER.GetShortUIName|U] [Select_CString(CHARACTER.IsFemale,'si odnesla mladého dravce, aby jej vychovala a vycvičila','si odnesl mladého dravce, aby jej vychoval a vycvičil')]"
  hunt_eyas_gift_log_title: "$hunt_eyas_taken_log_title$"
@@ -1566,7 +1566,7 @@
  hunt_arrow_arrest_log_title: "$hunt_arrow_dimiss_log_title$"
  hunt_arrow_arrest_log: "[CHARACTER.GetShortUIName|U] [Select_CString(CHARACTER.IsFemale,'uvěznila','uvěznil')] [TARGET_CHARACTER.GetShortUIName] za výstřel šípu, který ji málem zasáhl"
  hunt.1337.t: "Právo lovit"
- hunt.1337.desc: "Nemám právo lovit zde [host.GetCurrentLocation.Custom('CZ_GetTerrainTypePlural_In')], protože tato půda náleží [barony_holder.GetTitledFirstName]. Pokud nechci být [Select_CString(ROOT.Char.IsFemale,'považována za psankyni a pytlačku','považován za psance a pytláka')], musím si toto právo zakoupit.\n\nAni kdybych si však právo [Select_CString(ROOT.Char.IsFemale,'zajistila','zajistil')], [Select_CString(ROOT.Char.IsFemale,'nemohla bych skolit libovolné zvíře','nemohl bych skolit libovolné zvíře')]..."
+ hunt.1337.desc: "Technicky vzato nemám právo lovit zde [host.GetCurrentLocation.Custom('GetTerrainTypePlural')], protože tato půda náleží [barony_holder.GetTitledFirstNamePossessive]. Musím získat povolení, abych [Select_CString(ROOT.Char.IsFemale,'nebyla považována za psankyni a pytlačku','nebyl považován za psance a pytláka')].\n\nAni kdybych si však právo [Select_CString(ROOT.Char.IsFemale,'zajistila','zajistil')], [Select_CString(ROOT.Char.IsFemale,'nemohla bych skolit libovolné zvíře','nemohl bych skolit libovolné zvíře')]..." # todo: CHANGED (predtym: Nemám právo lovit zde [host.GetCurrentLocation.Custom('CZ_GetTerrainTypePlural_In')], protože tato půda náleží [barony_h)
  hunt.1337.a: "[favor_to_call_in.GetTitledFirstNameNoTooltip] mi jistě dovolí lovit!"
  hunt.1337.b: "Kašlu na tahle #EMP „práva“#!, lovím, kde se mi zachce!"
  hunt.1337.c: "Právo si zakoupím."
@@ -1648,7 +1648,7 @@
  hunt_showed_remorse_log_title: "$tgp_hunt.0002.t$"
  hunt_showed_remorse_log: "[CHARACTER.GetShortUIName|U] [Select_CString(CHARACTER.IsFemale,'projevila','projevil')] během lovu lítost"
  tgp_hunt.0003.t: "Nečekaný konec"
- tgp_hunt.0003.desc: "Po návratu do tábora mě zastihne velmi překvapivá zpráva. [host.GetName] zrušil[Select_CString(host.IsFemale,'zrušila lov a nařídila všem, aby se okamžitě rozešli','zrušil lov a nařídil všem, aby se okamžitě rozešli')]!\n\nŘíká se, že poté, co sokol zabil kachnu, pocítil[Select_CString(host.IsFemale,'náhlý příval','náhlý příval')] [GetReligionByKey('buddhism_religion').GetAdjective] soucitu."
+ tgp_hunt.0003.desc: "Po návratu do tábora mě zastihne velmi překvapivá zpráva. [host.GetName] zrušil[Select_CString(host.IsFemale,'zrušila lov a nařídila všem, aby se okamžitě rozešli','zrušil lov a nařídil všem, aby se okamžitě rozešli')]!\n\nŘíká se, že poté, co sokol [Select_CString(ROOT.Char.IsFemale,'zabila','zabil')] kachnu, pocítil[Select_CString(host.IsFemale,'náhlý příval','náhlý příval')] [GetReligionByKey('buddhism_religion').GetAdjective] soucitu." # todo: GENDER FORM ROOT.Char - over, ci ROOT je postava, ktorej sa text tyka
  tgp_hunt.0003.a: "Ale já jsem teprve začínal[Select_CString(ROOT.Char.IsFemale,'Ale já jsem teprve začínala','Ale já jsem teprve začínal')]!"
  tgp_hunt.0003.a.flavor: "Ale... proč?"
  tgp_hunt.0004.t: "[activity.GetCurrentPhase.GetLocation.Custom('GetReligiousFigurineName')|U] na cestě"

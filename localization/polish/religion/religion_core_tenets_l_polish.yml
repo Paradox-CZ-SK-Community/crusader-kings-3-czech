@@ -7,6 +7,7 @@
  tenet_communion_eucharistia_historical_desc: "Křesťanská svátost přijímání posvěceného chleba a vína na památku Ježíše Krista a Poslední večeře."
  doctrine_parameter_tenet_communion_denied_sacrament: "[Concept('excommunicated','Exkomunikované')|E] [Concept('characters','postavy')|E] tohoto [Concept('rite','ritu')|E] mají #N -25%#! k zisku @piety_icon![Concept('piety','zbožnosti')|E] a #N -10#! k [Concept('opinion','mínění')|E] postav stejné víry"
  doctrine_parameter_tenet_communion_shared_table: "Za pořádání aktivity [GetActivityType('activity_feast').GetName] získáš #P +10#! [Concept('opinion','mínění')|E] u každého hosta stejné [Concept('faith','víry')|E]"
+ doctrine_parameter_communion_wine: " [GetDistrictType('temple_district').GetName] a [GetDistrictType('religious_community_district').GetName] získávají [Concept('building_need','potřeba budovy')|E] na [GetTradeGoodType('trade_good_wine').GetNameWithIcon], které při splnění poskytuje @popular_opinion_icon![Concept('popular_opinion','lidové mínění')|E], pokud není [GetTradeGoodCategory('trade_category_alcohol').GetName] zakázáno" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  doctrine_parameter_excommunication_active: "Duchovní [Concept('heads_of_faith','hlavy víry')|E] mohou [Concept('excommunicate','exkomunikovat')|E] jiné postavy své [Concept('faith','víry')|E]"
  tenet_excommunicated: "[GetTrait('excommunicated').GetName( GetNullCharacter )]"
  doctrine_parameter_last_rites_active: "Postavy tohoto [Concept('rite','ritu')|E] mají přístup k [Concept('decision','rozhodnutí')|E] [GetDecisionWithKey('pam_decision_last_rites').GetName]"
@@ -21,7 +22,7 @@
  leasing_to_military_order_give_spiritual_fulfillment_personal_toast: "$tenet_armed_pilgrimages_name$"
  tenet_monasticism_name: "Mnišství"
  tenet_monasticism_desc: "Požitky z vybraného jídla a pití nás pouze odvádějí od služby božství. Nejlepším způsobem, jak se těmto pokušením vyhnout, je uchýlit se do odlehlých klášterů."
- doctrine_parameter_take_vows_active: "[courtiers|E] mohou složit řeholní sliby a stát se [GetTrait('devoted').GetName( GetNullCharacter )]"
+ doctrine_parameter_take_vows_active: "[Concept('courtiers','Dvořané')|E] mohou složit řeholní sliby a stát se [GetTrait('devoted').GetName( GetNullCharacter )]" # todo: CONCEPT CASE
  doctrine_parameter_devoted_trait_criminal: "Rys [GetTrait('devoted').GetName(GetNullCharacter)] je [Concept('criminal','zločinný')|E]"
  doctrine_parameter_cannot_take_the_vows: "Postavy tohoto [Concept('rite','ritu')|E] nemohou použít [Concept('character_interaction','interakci s postavou')|E] #high $take_vows_interaction$#!"
  tenet_divine_marriage_name: "Božský sňatek"
@@ -36,7 +37,7 @@
  doctrine_parameter_holy_wars_forbidden: "Nelze vyhlašovat [Concept('holy_wars','svaté války')|E] ani podnikat [Concept('raid','nájezdy')|E]"
  doctrine_parameter_pacifist_opinion_active: "Mínění pacifistů: $VALUE|+=0$"
  pacifist_opinion_name: "Také pacifista"
- pacifist_county_opinion_name: "Pacifistické hrabství stejné víry"
+ pacifist_popular_opinion_name: "Hrabství souvěrců-pacifistů" # todo: NEW TRANSLATION
  doctrine_parameter_opinion_of_pacifist_opinion_active: "[Concept('opinion','Mínění')|E] o ostatních pacifistech: $VALUE|+=0$"
  doctrine_parameter_piety_from_long_peace: "Měsíční změna @piety_icon![Concept('piety','zbožnosti')|E] [Concept('rulers','vládců')|E], kteří žijí v míru alespoň dva roky: $VALUE|+$"
  PIETY_LONG_PEACE: "Dlouhý mír"
@@ -44,7 +45,9 @@
  tenet_vows_of_poverty_desc: "Peníze kazí lidská srdce a odvádějí je od pravé víry. Chceme-li se soustředit na to, na čem skutečně záleží, musíme se zříci hromadění hmotného bohatství, volit pokorné činnosti a v jejich vykonávání nacházet zbožnost."
  tenet_vows_of_poverty_apostolic_historical_glossary: "[Glossary('Paupertas Apostolica','tenet_vows_of_poverty_apostolic_historical_desc')]"
  tenet_vows_of_poverty_apostolic_historical_desc: "Křesťanský ideál zřeknutí se majetku po vzoru Krista a apoštolů."
- doctrine_parameter_vows_of_poverty_active: "[rulers|E] se mohou [Concept('decide','rozhodnout')|E] složit slib chudoby, čímž sníží měsíční příjem z [Concept('tax','daní')|E], ale zvýší měsíční přírůstek @piety_icon![Concept('piety','zbožnosti')|E]"
+ doctrine_parameter_vows_of_poverty_active: "[Concept('rulers','Vládci')|E] se mohou [Concept('decide','rozhodnout')|E] složit slib chudoby, čímž sníží měsíční příjem z [Concept('tax','daní')|E], ale zvýší měsíční přírůstek @piety_icon![Concept('piety','zbožnosti')|E]" # todo: CONCEPT CASE
+ doctrine_parameter_poverty_luxury_modest: "Náboženské [Concept('buildings','budovy')|E] této [Concept('faith','víře')|E] potřebují jen polovinu množství [GetTradeGoodCategory('trade_category_luxury_items').GetName], [GetTradeGoodCategory('trade_category_luxury_consumption').GetName] a [GetTradeGoodCategory('trade_category_precious_metals').GetName] a získávají z nich menší prospěch" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ doctrine_parameter_tenet_vows_of_poverty_hostelry_charity: "[GetBuildingType('hostelry_1').GetName]: zvýšené [Concept('popular_opinion','lidové mínění')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  tenet_human_sacrifice_name: "Lidské oběti"
  tenet_human_sacrifice_desc: "Nejlepším způsobem, jak prokázat svou oddanost, je přinést oběť. Nejcennější obětí, jakou můžeme nabídnout, je lidský život."
  doctrine_parameter_human_sacrifice_active: "[Concept('executions','Popravy')|E] přinášejí @piety_icon![Concept('piety','zbožnost')|E], místo aby ji stály"
@@ -59,7 +62,9 @@
  tenet_gruesome_festivals_blot_historical_glossary: "[Glossary('Blót','tenet_gruesome_festivals_blot_historical_desc')]"
  tenet_gruesome_festivals_blot_historical_desc: "Obětní obřad praktikovaný staroseverskými pohany, při němž byla bohům obětována zvířata nebo lidé. Často jej doprovázela velká společná hostina."
  gruesome_festivals_active_name: "Možnost pořádat velkolepé oběti"
- doctrine_parameter_gruesome_festivals_active: "Přibližně jednou za desetiletí zpřístupní [Concept('activity','aktivitu')|E] [GetActivityType('activity_gruesome_festival').GetName], která poskytuje @piety_icon![Concept('piety','zbožnost')|E] a zvyšuje mínění poddaných stejné [Concept('faith','víry')|E] i [Concept('county_opinion','lidové mínění')|E]"
+ doctrine_parameter_gruesome_festivals_active: "Přibližně jednou za desetiletí zpřístupní [Concept('activity','aktivitu')|E] [GetActivityType('activity_gruesome_festival').GetName], která poskytuje @piety_icon![Concept('piety','zbožnost')|E] a zvyšuje mínění poddaných stejné [Concept('faith','víry')|E] i [Concept('popular_opinion','lidové mínění')|E]" # todo: CHANGED (predtym: Přibližně jednou za desetiletí zpřístupní [Concept('activity','aktivitu')|E] [GetActivityType('activity_gruesome_festiva)
+ doctrine_parameter_tenet_gruesome_festivals_execution_site_control: "Veřejná popraviště: [Concept('control_baseline','základní úroveň kontroly')|E] za úroveň [Concept('building','budova')|E]: #P +1#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ doctrine_parameter_gruesome_festivals_sacrificial_beasts: "Řada [Concept('building','budova')|E] [GetBuildingType('public_execution_site_1').GetName] získává [Concept('building_need','potřeba budovy')|E] na [GetTradeGoodCategory('trade_category_beasts_of_burden').GetName], které při splnění poskytuje @control_icon![Concept('control_baseline','základní úroveň kontroly')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  tenet_volcanic_veneration_name: "Uctívání sopek"
  tenet_volcanic_veneration_desc: "Sotva může být něco božštějšího než nově zrozená země tryskající z ohnivých hlubin našeho domova. Celý život trávíme na pokraji pohromy, navždy vydáni na milost [ROOT.Rite.GetFaith.PantheonTerm]."
  tenet_cthonic_redoubts_name: "Chtonické bašty"
@@ -84,6 +89,8 @@
  doctrine_parameter_tenet_mendicant_preachers_activity_guest_conversion: "Hosté jiné [Concept('faith','víry')|E] na tvých [Concept('activities','aktivitách')|E] mohou konvertovat k tvé víře"
  doctrine_parameter_tenet_mendicant_preachers_local_conversion: "Zpřístupní #V $attempt_conversion_of_local_ruler_interaction$#! [Concept('interaction','interakci')|E] s [Concept('rulers','vládci')|E] v tvé aktuální [Concept('location','poloze')|E]"
  doctrine_parameter_tenet_mendicant_preachers_proselytize_travel_option: "Zpřístupní [Concept('travel_option','možnost cesty')|E] [GetTravelOption('adventurers_proselytize_zealously_option').GetName] bez [Concept('perk','talentu')|E] [GetPerk('zealous_proselytizer_perk').GetName(GetPlayer)]"
+ doctrine_parameter_mendicant_alms: "Řada [Concept('building','budova')|E] [GetBuildingType('tavern_street_1').GetName] získává [Concept('building_need','potřeba budovy')|E] na [GetTradeGoodCategory('trade_category_comforts').GetName], které při splnění poskytuje @piety_icon![Concept('piety','zbožnost')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ doctrine_parameter_mendicant_seasoned_traveler_trade_capacity: "Každá úroveň ve větvi #V $trait_track_danger$#! rysu [GetTrait('lifestyle_traveler').GetName( GetNullCharacter )] [Concept('trait','rysu')|E] poskytuje dodatečnou [trade_route_capacity_i][Concept('capacity','kapacity')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  apa_pam_mendicant_preachers_conversion_title: "[second.GetShortUINameNoTooltip|U] konvertuje k víře [first.GetFaith.GetName]"
  must_be_in_same_county_tt: "Musíš být ve stejném [Concept('county','hrabství')|E], které drží"
  tenet_communal_identity_name: "Pospolitá identita"
@@ -104,7 +111,7 @@
  doctrine_parameter_reforging_artifacts_costs_piety: "[Concept('rulers','Vládci')|E] tohoto [Concept('rite','ritu')|E] musí vynaložit @piety_icon![Concept('piety','zbožnost')|E], aby mohli [Concept('reforge','překovat')|E] nebo [Concept('repair','opravit')|E] [Concept('artifacts','artefakty')|E]"
  doctrine_parameter_destroying_artifacts_is_pious: "[Concept('rulers','Vládci')|E] tohoto [Concept('rite','ritu')|E] mohou ničit [Concept('artifacts','artefakty')|E] a získávat za ně @piety_icon![Concept('piety','zbožnost')|E]"
  doctrine_parameter_destroying_artifacts_is_pious_personal: "Můžeš ničit [Concept('artifacts','artefakty')|E] a získávat tím @piety_icon![Concept('piety','zbožnost')|E]"
- doctrine_parameter_tenet_aniconism_siege_destruction_bonus: "Obléhání [Concept('rulers','vládců')|E], jejichž [Concept('faith','víra')|E] nemá tuto [Concept('core_tenet','zásadu')|E], více snižuje [Concept('development','rozvoj')|E], častěji poškozuje [Concept('artifacts','artefakty')|E] a přináší @piety_icon![Concept('piety','zbožnost')|E]"
+ doctrine_parameter_tenet_aniconism_siege_destruction_bonus: "Obléhání [Concept('rulers','vládců')|E], jejichž [Concept('faith','víra')|E] nemá tuto [Concept('core_tenet','zásadu')|E], více snižuje [Concept('prosperity','prosperitu')|E], častěji poškozuje [Concept('artifacts','artefakty')|E] a přináší @piety_icon![Concept('piety','zbožnost')|E]" # todo: CHANGED (predtym: Obléhání [Concept('rulers','vládců')|E], jejichž [Concept('faith','víra')|E] nemá tuto [Concept('core_tenet','zásadu')|E)
  tenet_aniconism_siege_destruction_toast: "$tenet_aniconism_name$"
  doctrine_parameter_tenet_aniconism_destruction_fulfillment: "Získáváš @spiritual_fulfillment_icon![Concept('spiritual_fulfillment','duchovní naplnění')|E] za ničení [Concept('artifacts','artefaktů')|E] a za obléhání stoupenců [Concept('faith','víry')|E], která nemá tuto [Concept('core_tenet','zásadu')|E]"
  pam_aniconism_siege_toast: "Díky tvé [Concept('personal_tenet','osobní zásadě')|E] [GetTenetType('tenet_aniconism').GetName( GetPlayer.GetRite )]"
@@ -121,6 +128,7 @@
  doctrine_parameter_tenet_alexandrian_catechism_catechesis_conversion: "Rychlost konverze hrabství: #P +25%#!"
  tenet_hedonistic_name: "Hédonismus"
  tenet_hedonistic_desc: "Božství naplnilo tento svět hojností rozkoší, které si máme dopřávat a užívat – odmítat je znamená pohrdat samotným dílem stvoření."
+ doctrine_parameter_hedonistic_indulgence: "Řada [Concept('building','budova')|E] [GetBuildingType('burgage_plots_1').GetName] získává [Concept('building_need','potřeba budovy')|E] na [GetTradeGoodCategory('trade_category_alcohol').GetName], které při splnění poskytuje @popular_opinion_icon![Concept('popular_opinion','lidové mínění')|E], pokud není zakázáno" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  doctrine_parameter_piety_from_feasts_active: "[GetActivityType('activity_feast').GetName] přináší @piety_icon![Concept('piety','zbožnost')|E]"
  doctrine_parameter_piety_from_festivals_active: "[AddLocalizationIf( HasDlcFeature( 'all_under_heaven' ), 'doctrine_parameter_piety_from_festivals_active_auh')]"
  doctrine_parameter_piety_from_festivals_active_auh: "[GetActivityType('activity_festival').GetName] přináší @piety_icon![Concept('piety','zbožnost')|E]"
@@ -128,10 +136,11 @@
  tenet_carnal_exaltation_desc: "Tělesné rozkoše jsou vznešené způsobem, který přesahuje ostatní pozemské prožitky a přibližuje nás božství. Měli bychom oslavovat své sexuální touhy a vyhledávat příležitosti k jejich naplnění."
  doctrine_parameter_piety_from_seduction_active: "Získáváš @piety_icon![Concept('piety','zbožnost')|E] za úspěšné [Concept('schemes','intriky')|E] [GetScheme('seduce').GetTypeName]"
  doctrine_parameter_tenet_carnal_exaltation_clergy_no_continence: "Od [Concept('clergy','duchovenstva')|E] tohoto [Concept('rite','ritu')|E] se neočekává zdrženlivost v tělesných vztazích"
- doctrine_parameter_tenet_carnal_exaltation_deviancy_virtuous: "Umožňuje [Concept('faith','víře')|E] zvolit [Concept('doctrine','doktrínu')|E] [GetDoctrineType('doctrine_deviancy_virtuous').GetBaseName]"
+ doctrine_parameter_tenet_carnal_exaltation_deviancy_virtuous: "Umožňuje tomuto [Concept('rite','ritu')|E] zvolit [Concept('doctrine','doktrínu')|E] [GetDoctrineType('doctrine_deviancy_virtuous').GetBaseName]" # todo: CHANGED (predtym: Umožňuje [Concept('faith','víře')|E] zvolit [Concept('doctrine','doktrínu')|E] [GetDoctrineType('doctrine_deviancy_virtu)
  doctrine_parameter_tenet_carnal_exaltation_sensual_bonus: "[Concept('characters','Postavy')|E] s rysy [GetTrait('lustful').GetName( GetNullCharacter )], [GetTrait('rakish').GetName( GetNullCharacter )] nebo [GetTrait('deviant').GetName( GetNullCharacter )] získávají za každý z nich #P +2#! k [Concept('intrigue','pletichářství')|E], #P +2#! k [Concept('diplomacy','diplomacii')|E] a #P +25%#! k [Concept('fertility','plodnosti')|E]"
  doctrine_parameter_tenet_carnal_exaltation_sensual_seduction: "[Concept('characters','Postavy')|E] s rysy [GetTrait('lustful').GetName( GetNullCharacter )], [GetTrait('rakish').GetName( GetNullCharacter )] nebo [GetTrait('deviant').GetName( GetNullCharacter )] dokončují [Concept('schemes','intriky')|E] [GetScheme('seduce').GetTypeName] za každý z těchto rysů o #P 20#! dní rychleji"
  doctrine_parameter_tenet_carnal_exaltation_commission_artifacts_debauched: "Pomocí [Concept('decision','rozhodnutí')|E] [GetDecisionWithKey('commission_artifact_decision').GetName] můžeš vytvářet prostopášné artefakty"
+ doctrine_parameter_tenet_carnal_exaltation_brothel_popular_opinion: "Nevěstince: [Concept('popular_opinion','lidové mínění')|E] za úroveň [Concept('building','budova')|E]: #P +1#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  tenet_polyamory_name: "Polyamorie"
  tenet_polyamory_desc: "Naše vzájemná láska by měla být stejně bezpodmínečná jako láska [ROOT.Rite.GetFaith.FertilityGodNamePossessive] k nám. Musíme zavrhnout zastaralou představu, že jeden člověk může vlastnit náklonnost druhého."
  doctrine_parameter_no_unfaithfulness_penalty_active: "Za mimomanželské vztahy nezískávají vyznavači vůči svému manželskému protějšku ani jeho milencům postihy k [Concept('opinion','mínění')|E] či [Concept('imprisonment_reasons','důvody k uvěznění')|E]"
@@ -168,12 +177,13 @@
  tenet_religious_legal_pronouncements_halakha_historical_glossary: "[Glossary('Halacha','tenet_religious_legal_pronouncements_halakha_historical_desc')]"
  tenet_religious_legal_pronouncements_halakha_historical_desc: "Soubor židovských náboženských zákonů vycházejících z posvátných písem, rabínských výkladů a právních rozhodnutí. Jeho účelem je upravovat náboženskou praxi i každodenní život."
  tenet_religious_legal_pronouncements_historical_glossary: "$tenet_religious_legal_pronouncements_hisbah_historical_glossary$ / $tenet_religious_legal_pronouncements_fatwa_historical_glossary$ / $tenet_religious_legal_pronouncements_halakha_historical_glossary$"
- doctrine_parameter_temporal_condemnation_enabled: "Vládci se mohou pokusit odsoudit dospělé přímé [Concept('vassals','vazaly')|E] stejného [Concept('religion','náboženství')|E]. Čím [Concept('sinful','hříšnější')|E] vazal je, tím méně [Concept('learning','učenosti')|E] jeho vládce potřebuje, zatímco [Concept('virtuous','ctnostné')|E] rysy úspěch ztěžují."
+ doctrine_parameter_temporal_condemnation_enabled: "Vládci se mohou pokusit odsoudit dospělé přímé [Concept('vassals','vazaly')|E] stejného [Concept('religion','náboženství')|E]. Čím [Concept('sinful','hříšnější')|E] vazal je, tím méně [Concept('learning','učenosti')|E] jeho vládce potřebuje, zatímco [Concept('virtuous','ctnostné')|E] rysy úspěch ztěžují." # todo: CHANGED MINOR
  doctrine_parameter_temporal_condemnation_criminal: "Úspěšné odsouzení označí vazala za [Concept('criminal','zločinného')|E] a může umožnit odebrání jeho titulů"
  doctrine_parameter_tenet_religious_law_scholar_trait: "Získáváš [Concept('trait','rys')|E] [GetTrait('lifestyle_scholar').GetName( GetNullCharacter )]"
  doctrine_parameter_tenet_religious_law_condemnation_bonus: "[Concept('success_chance','Šance na úspěch')|E] [Concept('interaction','interakce')|E] odsouzení: #P +25#!"
  doctrine_parameter_tenet_religious_law_imprisonment_bonus: "Každý bod tvé [Concept('learning','učenosti')|E] zvyšuje přijetí [Concept('interaction','interakce')|E] při pokusu o oprávněné [Concept('imprisonment','uvěznění')|E] o #P +2#!"
  doctrine_parameter_religious_legal_pronouncements_law_cost_reduction: "Náklady na zákony: #P -10%#!"
+ doctrine_parameter_tenet_religious_legal_pronouncements_paper_output: "[GetBuildingType('scriptorium_1').GetName]: [Concept('production','produkce')|E] [GetTradeGoodType('trade_good_books_paper').GetNameWithIcon]: #P +10#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  tenet_religious_legal_pronouncements_cost_tooltip: "Náboženské právo: #P -10%#!"
  tenet_religious_fatwa_cost_tooltip: "Fatva: #P -10%#!"
  tenet_religious_halakha_cost_tooltip: "Halacha: #P -10%#!"
@@ -208,6 +218,7 @@
  doctrine_parameter_legalism_increased_faction_sins: "[Concept('vassals','Vazalové')|E] a [Concept('counties','hrabství')|E] se s větší pravděpodobností připojí k [Concept('factions','frakcím')|E] proti [Concept('sinful','hříšnému')|E] vládci"
  doctrine_parameter_tenet_legalism_sinful_revocation: "Odebírání titulů [Concept('sinful','hříšným')|E] [Concept('vassals','vazalům')|E] nezpůsobuje [Concept('tyranny','tyranii')|E]"
  doctrine_parameter_tenet_legalism_title_integration: "Rychlost postupu [Concept('councillor_task','úkolu rádce')|E] $task_integrate_title$: #P +100%#!"
+ doctrine_parameter_tenet_legalism_temple_district_control: "[GetDistrictType('temple_district').GetName] získává [Concept('building_need','potřeba budovy')|E] na [GetTradeGoodType('trade_good_books_paper').GetNameWithIcon], které při splnění poskytuje @control_icon![Concept('control_baseline','základní úroveň kontroly')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  doctrine_parameter_tenet_legalism_lawful_authority: "Tvé požadavky [Concept('imprison','uvěznit')|E] [Concept('vassals','vazaly')|E], [Concept('retract','odejmout')|E] jim vazaly nebo jim odebrat [Concept('titles','tituly')|E] mají větší šanci na přijetí"
  LEGALISM_TITLE_INTEGRATION_BONUS: "$tenet_legalism_name$: dvojnásobný postup úkolu $task_integrate_title$"
  LEGALISM_LAWFUL_AUTHORITY_REASON: "$tenet_legalism_name$: $VALUE|=+$"
@@ -266,6 +277,8 @@
  doctrine_parameter_tenet_asceticism_inappetetic_trait: "Získáváš [Concept('trait','rys')|E] [GetTrait('inappetetic').GetName( GetNullCharacter )]"
  doctrine_parameter_tenet_asceticism_inappetetic_bonus: "[Concept('characters','Postavy')|E] s rysem [GetTrait('inappetetic').GetName( GetNullCharacter )] získávají #P +1#! k [Concept('diplomacy','diplomacii')|E], #P +2#! k [Concept('learning','učenosti')|E], #P +10%#! k zisku @spiritual_fulfillment_icon![Concept('spiritual_fulfillment','duchovního naplnění')|E] a #P +10%#! k úbytku [Concept('stress','stresu')|E]"
  doctrine_parameter_tenet_asceticism_comfort_eater_penalty: "[Concept('characters','Postavy')|E] s rysem [GetTrait('comfort_eater').GetName( GetNullCharacter )] ztrácejí měsíčně #N 0.1#! @piety_icon![Concept('piety','zbožnosti')|E] a mají #N 5#! k [Concept('opinion','mínění')|E] stoupenců téže [Concept('faith','víry')|E]"
+ doctrine_parameter_luxury_forbidden: "[Concept('buildings','Budovy')|E] této [Concept('faith','víře')|E] potřebují jen polovinu množství [GetTradeGoodCategory('trade_category_luxury_items').GetName] a [GetTradeGoodCategory('trade_category_luxury_consumption').GetName] a získávají z nich menší prospěch" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ doctrine_parameter_luxury_buildings_modest: "Řady [Concept('building','budova')|E] [GetBuildingType('reception_suites_1').GetName], [GetBuildingType('confectionaries_1').GetName] a [GetBuildingType('fine_tailors_1').GetName] mají slabší účinky" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  tenet_ritual_hospitality_name: "Rituální pohostinnost"
  tenet_ritual_hospitality_alternate_name: "Púdža"
  tenet_ritual_hospitality_desc: "Pohostinnost je jednou z největších ctností, jaké může lidstvo projevovat. S hosty v našich domovech, ať už smrtelnými, či božskými, je třeba vždy zacházet s nejvyšší úctou a respektem."
@@ -279,6 +292,7 @@
  doctrine_parameter_tenet_ritual_hospitality_feast_toast_friendship: "Přípitek na čestného hosta při [Concept('feast','hostině')|E] vždy nabídne možnost spřátelit se s ním"
  tenet_warmonger_name: "Bojechtivost"
  tenet_warmonger_desc: "Víra a válka kráčejí ruku v ruce. Kdo odmítá bojovat ve jménu božství, nemůže být nazýván pravým věřícím."
+ doctrine_parameter_tenet_warmonger_sacred_forge: "Odemkne řadu [Concept('building','budovu')|E] [GetBuildingType('sacred_forge_1').GetName] v [GetDistrictType('temple_district').GetName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  doctrine_parameter_conquest_cb_enabled: "[Concept('rulers','Vládci')|E] mají proti sousedním vládcům dobyvačný [Concept('casus_belli','casus belli')|E]"
  doctrine_parameter_faith_can_raid: "Umožňuje podnikat [Concept('raiding','nájezdy')|E] do cizích [Concept('counties','hrabství')|E] za účelem kořisti"
  doctrine_parameter_invasion_cb_enabled: "Prestižní [Concept('rulers','vládci')|E] mohou jednou za život použít invazní [Concept('casus_belli','casus belli')|E]"
@@ -288,6 +302,7 @@
  tenet_ancestor_worship_desc: "Naši předkové nad námi bdí ze záhrobí, vedou nás a ukazují nám cestu vpřed. Proto jim musíme prokazovat úctu a čest."
  doctrine_parameter_tenet_ancestor_worship_renown_on_death: "[Concept('rulers','Vládci')|E] této [Concept('faith','víry')|E] po smrti přinášejí své [Concept('dynasty','dynastii')|E] [Concept('dynasty_prestige','věhlas')|E] podle své [Concept('prestige_level','úrovně slávy')|E] a [Concept('piety_level','úrovně oddanosti')|E]"
  doctrine_parameter_tenet_ancestor_worship_seek_ancestral_guidance: "Odemyká [Concept('decision','rozhodnutí')|E] $seek_ancestral_guidance_decision$"
+ doctrine_parameter_tenet_ancestor_worship_burial_site_popular_opinion: "Pohřebiště: [Concept('popular_opinion','lidové mínění')|E] v hrabstvích se stejným [Concept('rite','ritem')|E] za úroveň [Concept('building','budova')|E]: #P +1#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  tenet_adorcism_name: "Adorcismus"
  tenet_adorcism_desc: "Duchové tohoto světa mohou konat veliké skutky dobra i zla. Budeme-li je ctít a prokazovat jim úctu, můžeme jen doufat, že nám prospějí svými dobrými skutky a našim nepřátelům uškodí těmi zlými."
  doctrine_parameter_spirit_possession_active: "Zpřístupňuje [Concept('decision','rozhodnutí')|E] „Požádat duchy o pomoc“"
@@ -295,13 +310,14 @@
  doctrine_parameter_tenet_adorcism_seek_war_aid: "Během [Concept('war','války')|E] můžeš použít [Concept('decision','rozhodnutí')|E] $pam_seek_war_aid_decision$"
  tenet_ritual_celebrations_name: "Rituální oslavy"
  tenet_ritual_celebrations_desc: "Uctívání božství je třeba oslavovat a sdílet s naším společenstvím. Pořádání velkolepých slavností na počest a oslavu božství nás všechny stmeluje."
- doctrine_parameter_mandatory_feast_attendance: "[Concept('vassals','Vazalové')|E] se s větší pravděpodobností zúčastní tvých hostin. Ti, kteří přesto odmítnou přijít, za to ztratí @piety_icon![Concept('piety','zbožnost')|E]."
+ doctrine_parameter_mandatory_feast_attendance: "[Concept('vassals','Vazalové')|E] se s větší pravděpodobností zúčastní tvých hostin. Ti, kteří přesto odmítnou přijít, za to ztratí @piety_icon![Concept('piety','zbožnost')|E]." # todo: CHANGED MINOR
+ doctrine_parameter_tenet_ritual_celebrations_banquet_hall_popular_opinion: "Banketní sály: [Concept('popular_opinion','lidové mínění')|E] za úroveň [Concept('building','budova')|E]: #P +1#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  tenet_sky_burials_name: "Nebeské pohřby"
  tenet_sky_burials_desc: "Mrtví by neměli být vězněni pod zemí – je mnohem lepší nechat jejich těla pozřít mrchožravými ptáky, aby svým posledním štědrým skutkem nasytili svět, který živil je."
  doctrine_parameter_sky_burials_active: "[Concept('rulers','Vládci')|E] mohou dopřát svým předkům nebeský pohřeb, čímž získají @piety_icon![Concept('piety','zbožnost')|E] a potěší své [Concept('vassals','vazaly')|E]"
- doctrine_parameter_sky_burials_charnel_grounds: "Umožňuje postavit [Concept('duchy_building','vévodskou budovu')|E] [GetBuilding('charnel_grounds_01').GetName]"
- can_build_towers_of_silence_active_name: "Možnost používat [Concept('duchy_building','vévodskou budovu')|E] [GetBuilding('tower_of_silence_01').GetName]"
- doctrine_parameter_can_build_towers_of_silence_active: "[Concept('vassals','Vazalové')|E] mohou postavit [Concept('duchy_building','vévodskou budovu')|E] [GetBuilding('tower_of_silence_01').GetName], která posílí náboženskou horlivost [Concept('county','hrabství')|E] – #EMP pokud#! [Concept('faith','víra')|E] jejich [Concept('liege','lenního pána')|E] nepraktikuje $tenet_sky_burials_name$"
+ doctrine_parameter_sky_burials_charnel_grounds: "Umožňuje postavit [Concept('duchy_district','vévodský okrsek')|E] [GetBuildingType('charnel_grounds_01').GetName]" # todo: CHANGED (predtym: Umožňuje postavit [Concept('duchy_building','vévodskou budovu')|E] [GetBuilding('charnel_grounds_01').GetName])
+ can_build_towers_of_silence_active_name: "Možnost používat [Concept('building','budovu')|E] [GetBuildingType('tower_of_silence_01').GetName]" # todo: CHANGED (predtym: Možnost používat [Concept('duchy_building','vévodskou budovu')|E] [GetBuilding('tower_of_silence_01').GetName])
+ doctrine_parameter_can_build_towers_of_silence_active: "[Concept('vassals','Vazalové')|E] mohou postavit [Concept('building','budovu')|E] [GetBuildingType('tower_of_silence_01').GetName] v $endowment_district$ [Concept('duchy_district','vévodském okrsku')|E], která posílí náboženskou horlivost [Concept('county','hrabství')|E] – #EMP pokud#! [Concept('faith','víra')|E] jejich [Concept('liege','lenního pána')|E] nepraktikuje $tenet_sky_burials_name$" # todo: CHANGED (predtym: [Concept('vassals','Vazalové')|E] mohou postavit [Concept('duchy_building','vévodskou budovu')|E] [GetBuilding('tower_of)
  tenet_sacred_childbirth_name: "Posvátný porod"
  tenet_sacred_childbirth_alternate_name: "Kūdikis Lemti"
  tenet_sacred_childbirth_desc: "Lázně, v nichž matky rodí, musí být očištěny a připraveny náležitými obřady, aby nám božství při porodu udělilo své požehnání."
@@ -342,6 +358,7 @@
  doctrine_parameter_trial_by_sun_active: "Uvěznění [Concept('criminals','zločinci')|E] mohou být odsouzeni ke zkoušce sluncem"
  doctrine_parameter_tenet_sun_worship_free_hikes: "Tvé [Concept('activities','aktivity')|E] [Concept('hike','túra')|E] nestojí žádné @gold_icon![Concept('gold','zlato')|E]"
  doctrine_parameter_tenet_sun_worship_desert_pilgrim: "Získáváš @piety_icon![Concept('piety','zbožnost')|E] a @spiritual_fulfillment_icon![Concept('spiritual_fulfillment','duchovní naplnění')|E] při cestování terénem [GetTerrain( 'desert' ).GetName|E], [GetTerrain( 'desert_mountains' ).GetName|E] nebo [GetTerrain( 'oasis' ).GetName|E]"
+ doctrine_parameter_sun_disc_gold: "Řada [Concept('building','budova')|E] [GetBuildingType('church_treasury_1').GetName] získává [Concept('building_need','potřeba budovy')|E] na [GetTradeGoodType('trade_good_gold').GetNameWithIcon], které při splnění poskytuje @prestige_icon![Concept('prestige','prestiž')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  sun_worship_desert_travel_toast: "$tenet_sun_worship_name$"
  unreformed_syncretic_actor_name: "$tenet_unreformed_syncretism_name$"
  sinitic_syncretic_actor_name: "$tenet_sinitic_syncretism_name$"
@@ -363,18 +380,18 @@
  eastern_syncretic_actor_opinion_name: "$faith_syncretic_opinion_active_control$"
  sinitic_syncretic_recipient_opinion_name: "$faith_syncretic_opinion_active_control$"
  sinitic_syncretic_actor_opinion_name: "$faith_syncretic_opinion_active_control$"
- unreformed_syncretic_recipient_county_opinion_name: "$faith_syncretic_popular_opinion_active_control$"
- unreformed_syncretic_actor_county_opinion_name: "$faith_syncretic_popular_opinion_active_control$"
- jewish_syncretic_recipient_county_opinion_name: "$faith_syncretic_popular_opinion_active_control$"
- jewish_syncretic_actor_county_opinion_name: "$faith_syncretic_popular_opinion_active_control$"
- christian_syncretic_recipient_county_opinion_name: "$faith_syncretic_popular_opinion_active_control$"
- christian_syncretic_actor_county_opinion_name: "$faith_syncretic_popular_opinion_active_control$"
- islamic_syncretic_recipient_county_opinion_name: "$faith_syncretic_popular_opinion_active_control$"
- islamic_syncretic_actor_county_opinion_name: "$faith_syncretic_popular_opinion_active_control$"
- eastern_syncretic_recipient_county_opinion_name: "$faith_syncretic_popular_opinion_active_control$"
- eastern_syncretic_actor_county_opinion_name: "$faith_syncretic_popular_opinion_active_control$"
- sinitic_syncretic_recipient_county_opinion_name: "$faith_syncretic_popular_opinion_active_control$"
- sinitic_syncretic_actor_county_opinion_name: "$faith_syncretic_popular_opinion_active_control$"
+ unreformed_syncretic_recipient_popular_opinion_name: "$faith_syncretic_popular_opinion_active_control$" # todo: NEW TRANSLATION
+ unreformed_syncretic_actor_popular_opinion_name: "$faith_syncretic_popular_opinion_active_control$" # todo: NEW TRANSLATION
+ jewish_syncretic_recipient_popular_opinion_name: "$faith_syncretic_popular_opinion_active_control$" # todo: NEW TRANSLATION
+ jewish_syncretic_actor_popular_opinion_name: "$faith_syncretic_popular_opinion_active_control$" # todo: NEW TRANSLATION
+ christian_syncretic_recipient_popular_opinion_name: "$faith_syncretic_popular_opinion_active_control$" # todo: NEW TRANSLATION
+ christian_syncretic_actor_popular_opinion_name: "$faith_syncretic_popular_opinion_active_control$" # todo: NEW TRANSLATION
+ islamic_syncretic_recipient_popular_opinion_name: "$faith_syncretic_popular_opinion_active_control$" # todo: NEW TRANSLATION
+ islamic_syncretic_actor_popular_opinion_name: "$faith_syncretic_popular_opinion_active_control$" # todo: NEW TRANSLATION
+ eastern_syncretic_recipient_popular_opinion_name: "$faith_syncretic_popular_opinion_active_control$" # todo: NEW TRANSLATION
+ eastern_syncretic_actor_popular_opinion_name: "$faith_syncretic_popular_opinion_active_control$" # todo: NEW TRANSLATION
+ sinitic_syncretic_recipient_popular_opinion_name: "$faith_syncretic_popular_opinion_active_control$" # todo: NEW TRANSLATION
+ sinitic_syncretic_actor_popular_opinion_name: "$faith_syncretic_popular_opinion_active_control$" # todo: NEW TRANSLATION
  tenet_eastern_syncretism_name: "$rf_eastern$ synkretismus"
  tenet_eastern_syncretism_desc: "Ze způsobu, jakým se různá dharmická náboženství navzájem tolerují, se můžeme mnohému naučit. Možná nenásledují pravou víru, to z nich však nečiní zlo."
  doctrine_parameter_eastern_syncretic_actor_opinion_active: "Vzájemný bonus $VALUE|=+0$ k [Concept('opinion','mínění')|E] s [Concept('faiths','vírami')|E], které mají [Concept('core_tenet','základní zásadu')|E] $tenet_eastern_syncretism_name$"
@@ -446,7 +463,7 @@
  doctrine_parameter_unattractive_for_character_conversions: "[Concept('characters','Postavy')|E] jsou ochotnější od této [Concept('faith','víry')|E] konvertovat"
  tenet_natural_primitivism_name: "Přírodní primitivismus"
  tenet_natural_primitivism_desc: "Civilizace je nepřirozeným, marným a rouhavým pokusem člověka vnutit řád stvoření, které je ze své podstaty neuspořádané. Odhazujeme šat, hodnosti, zákony i dvorskou marnivost a žijeme, jak [ROOT.Rite.GetFaith.PantheonTerm] zamýšleli: divoce, prostě a svobodně."
- doctrine_parameter_naked_adherents_active: "Vyznavači nenosí oděv"
+ doctrine_parameter_naked_adherents_active: "Vyznavači nenosí oděv\n[Concept('buildings','Budovy')|E] v državách této [Concept('faith','víry')|E] nepotřebují [GetTradeGoodCategory('trade_category_clothes').GetName]" # todo: CHANGED (predtym: Vyznavači nenosí oděv)
  doctrine_parameter_natural_primitivism_law_cost_increase: "Náklady na zákony: #N +50%#!"
  doctrine_parameter_tenet_natural_primitivism_promote_naturism_decision: "Odemyká [Concept('decision','rozhodnutí')|E] #V Přijmout přirozenou svobodu#!"
  doctrine_parameter_unlock_jizya_contract: "Zpřístupňuje džizjovú [Concept('vassal_contract','vazalskou smlouvu')|E] a [Concept('tax_decree','daňové nařízení')|E]"
@@ -464,7 +481,7 @@
  tenet_sacrificial_ceremonies_desc: "Dobrovolné i nedobrovolné lidské oběti nás přibližují božství. Dobrovolně se nabídnout jako oběť při obřadu je obvyklé a ctnostné, stejně jako je ctnostné obětovat ty, kdo se dopustili neodpustitelných zločinů proti bohům."
  tenet_megaliths_name: "Megalitické stavby"
  tenet_megaliths_desc: "Uctívání by nemělo probíhat pouze ve zdech chrámu. Tyto primitivní lidské stavby odvádějí pozornost od božského stvoření, které nás obklopuje. Obracíme se ke kameni a otevřenému nebi a uspořádáváme kameny darované stvořitelem tak, abychom se mu zalíbili a přiblížili božství."
- doctrine_parameter_can_build_megaliths: "Umožňuje stavbu megalitů v [Concept('temple','chrámových')|E] državách a velkých megalitů v hlavních sídlech vévodství."
+ doctrine_parameter_can_build_megaliths: "Umožňuje stavbu megalitů v [Concept('temple','chrámových')|E] državách a velkých megalitů v hlavních sídlech vévodství." # todo: CHANGED MINOR
  doctrine_parameter_tenet_megaliths_building_poi_double_rewards: "Dvojnásobná odměna ve zkušenostech za návštěvu [Concept('points_of_interest','zajímavých míst')|E], která jsou [Concept('buildings','budovami')|E]"
  doctrine_parameter_tenet_megaliths_rough_terrain_construction_fulfillment: "Získáváš @spiritual_fulfillment_icon![Concept('spiritual_fulfillment','duchovní naplnění')|E] při dokončení výstavby v terénu [GetTerrain( 'hills' ).GetName], [GetTerrain( 'terraced_hills' ).GetName], [GetTerrain( 'mountains' ).GetName] nebo [GetTerrain( 'desert_mountains' ).GetName]"
  pam_megaliths_rough_terrain_construction_toast: "Díky tvé osobní zásadě [GetTenetType('tenet_megaliths').GetName( GetPlayer.GetRite )]"
@@ -481,9 +498,10 @@
  doctrine_parameter_tenet_fp3_fedayeen_other_faith_kill_fulfillment: "Získáváš @spiritual_fulfillment_icon![Concept('spiritual_fulfillment','duchovní naplnění')|E] za zabíjení [Concept('characters','postav')|E] jiné [Concept('faith','víry')|E]"
  tenet_household_gods_name: "Domácí bohové"
  tenet_household_gods_desc: "Ctíme své #EMP lary#! a #EMP génie#! – ochranné duchy, kteří bdí nad našimi příbytky. Především ctíme svého slavného císaře, jehož duši byla svěřena ochrana celého panství."
+ doctrine_parameter_domestic_incense: "Řada [Concept('building','budova')|E] [GetBuildingType('suburb_1').GetName] získává [Concept('building_need','potřeba budovy')|E] na [GetTradeGoodType('trade_good_incense').GetNameWithIcon], které při splnění poskytuje @popular_opinion_icon![Concept('popular_opinion','lidové mínění')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  tenet_household_gods_historical_glossary: "[Glossary('Domácí bohové','tenet_household_gods_historical_desc')]"
  tenet_household_gods_historical_desc: "Římská domácí svatyně zasvěcená rodinnému kultu, v níž se přinášely obětiny ochranným božstvům."
- doctrine_parameter_allows_brewery: "$allows_brewery$ pro [Concept('temple_holdings','chrámové državy')|E]"
+ doctrine_parameter_ritual_brewing_popular_opinion: "$culture_parameter_brewery_popular_opinion$" # todo: NEW TRANSLATION
  immaterial_harmony_name: "Nehmotná harmonie"
  special_doctrine_immaterial_harmony_name: "Nehmotná harmonie"
  special_doctrine_immaterial_harmony_desc: "Mezi našimi tradicemi a učením Buddhy či mudrců není žádný rozpor. Člověk může následovat kterékoli z nich, nebo dokonce všechna současně, aniž by tím duchovně strádal."
@@ -502,6 +520,7 @@
  tenet_benevolent_governance_historical_desc: "Konfuciánské politické myšlení spojuje oprávněnost vlády s mravným jednáním panovníka a péčí o lid."
  tenet_filial_piety_name: "Synovská úcta"
  tenet_filial_piety_desc: "Synovská úcta a poslušnost vůči starším jsou základem uskutečnění lidského dobra. Dokud naši rodiče žijí, sloužíme jim náležitým způsobem, podporujeme je svými prostředky a učíme se z jejich rad; když zemřou, náležitým způsobem je pohřbíme a poté je náležitým způsobem uctíváme."
+ doctrine_parameter_ancestral_vessels: "Řada [Concept('building','budova')|E] [GetBuildingType('cemeteries_1').GetName] získává [Concept('building_needs','potřeby budovy')|E] na [GetTradeGoodType('trade_good_ceramics').GetNameWithIcon] a [GetTradeGoodCategory('trade_category_base_metals').GetName], které při splnění poskytují @piety_icon![Concept('piety','zbožnosti')|E] a @prestige_icon![Concept('prestige','prestiži')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  tenet_filial_piety_historical_glossary: "[Glossary('Synovská úcta','tenet_filial_piety_historical_desc')]"
  tenet_filial_piety_historical_desc: "Základní konfuciánský princip zahrnující úctu k rodičům, péči o ně, plnění závazků vůči nim a uctívání předků."
  tenet_harmonious_society_name: "Harmonická společnost"
@@ -541,7 +560,7 @@
  tgp_local_shrines_patronized: "Podpora místních svatyní"
  tenet_sacred_destruction_name: "Posvátná zkáza"
  tenet_sacred_destruction_desc: "Bez zkázy nemůže být stvoření. Má-li začít něco nového, musí něco starého skončit."
- doctrine_parameter_successful_sieges_give_piety: "Vítězství při útočném [Concept('siege','obléhání')|E] přináší @piety_icon![Concept('piety','zbožnost')|E] a způsobuje větší ztrátu [Concept('development','rozvoje')|E] [Concept('county','hrabství')|E]"
+ doctrine_parameter_successful_sieges_give_piety: "Vítězství při útočném [Concept('siege','obléhání')|E] přináší @piety_icon![Concept('piety','zbožnost')|E] a způsobuje větší ztrátu [Concept('prosperity','prosperity')|E] [Concept('county','hrabství')|E]" # todo: CHANGED (predtym: Vítězství při útočném [Concept('siege','obléhání')|E] přináší @piety_icon![Concept('piety','zbožnost')|E] a způsobuje vě)
  doctrine_parameter_unlock_destruction_raid_intent: "Odemyká [Concept('raid_intent','záměr nájezdu')|E] $destruction_intent$"
  doctrine_parameter_unlock_destruction_raid_intent_personal: "Umožňuje [Concept('raid','nájezd')|E] a odemyká [Concept('raid_intent','záměr nájezdu')|E] $destruction_intent$"
  successful_sieges_give_piety_toast: "Zásada $tenet_sacred_destruction_name$"
@@ -549,11 +568,10 @@
  tenet_preservation_name: "Zachování"
  tenet_preservation_desc: "Stvoření, ochrana, proměna. Ctnost pramení z výstavby, z vybudování něčeho a sledování, jak to vzkvétá."
  doctrine_parameter_piety_from_sponsoring_inspiration: "Podpora [Concept('inspirations','inspirací')|E] přináší [piety_i][Concept('piety','zbožnost')|E]"
- building_temples_gives_development_toast: "Zásada $tenet_preservation_name$"
- doctrine_parameter_building_temples_gives_development: "Výstavba v [Concept('church_holding','církevní državě')|E] nebo [Concept('temple_citadel_holding','državě chrámové citadely')|E] zvyšuje [Concept('development','rozvoj')|E] [Concept('county','hrabství')|E]"
- spiritual_fulfillment_from_building_personal_toast: "$building_temples_gives_development_toast$"
+ building_temples_gives_prosperity_toast: "Zásada $tenet_preservation_name$" # todo: NEW TRANSLATION
+ doctrine_parameter_building_temples_gives_prosperity: "Výstavba v [Concept('church_holding','církevní državě')|E] nebo [Concept('temple_citadel_holding','državě chrámové citadely')|E] zvyšuje [Concept('prosperity','rozkvět')|E] [Concept('county','hrabství')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ spiritual_fulfillment_from_building_personal_toast: "$building_temples_gives_prosperity_toast$" # todo: CHANGED (predtym: $building_temples_gives_development_toast$)
  doctrine_parameter_spiritual_fulfillment_from_building_personal: "Výstavba [Concept('buildings','budov')|E] přináší @spiritual_fulfillment_icon![Concept('spiritual_fulfillment','duchovní naplnění')|E]"
- doctrine_parameter_monastic_schools_allowed_in_every_holding_type: "Umožňuje ve všech [Concept('holding_types','typech držav')|E] stavět řadu [Concept('buildings','budov')|E] #V $building_type_monastic_schools_01$#!"
  doctrine_parameter_tenet_mountain_worship_trait_bonuses: "Některé [Concept('commander_traits','velitelské rysy')|E] a [Concept('personality_traits','osobnostní rysy')|E] mají dodatečné bonusy v horách"
  desert_mountains_holding_construction_piety_cost: "Náklady na výstavbu [Concept('holding','državy')|E] $CZ_TerrainIn_desert_mountains$"
  mountains_holding_construction_piety_cost: "Náklady na výstavbu [Concept('holding','državy')|E] $CZ_TerrainIn_mountains$"

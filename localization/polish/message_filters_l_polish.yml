@@ -41,7 +41,7 @@
  message_filter_councillor_ongoing: "@council_icon! Vedlejší účinky rádce"
  message_filter_councillor_ongoing_desc: "Účinky [Concept('councillor_task_possible_side_effects','možných vedlejších účinků')|E] činnosti [Concept('councillor','rádce')|E]"
  message_filter_council_task: "@council_icon! Úkoly rádce"
- message_filter_council_task_desc: "Změní se průběh probíhajícího [Concept('councillor_task','úkolu rádce')|E]"
+ message_filter_council_task_desc: "Změní se průběh probíhající [Concept('councillor_task','úkolu rádce')|E]" # todo: CONCEPT CASE
  message_filter_councillor: "@council_icon! Změny rádců"
  message_filter_councillor_desc: "Jeden z tvých [Concept('councillors','rádců')|E] je jmenován nebo odchází"
  message_filter_councillor_liege: "@council_icon! Místo v radě lenního pána"
@@ -92,14 +92,30 @@
  message_filter_house_feud_status_desc: "Zprávy o stavu probíhajících [Concept('house_feuds','rodových mst')|E]"
  message_filter_house_head_change: "@dynasty_icon! Hlava rodu"
  message_filter_house_head_change_desc: "Změní se [Concept('house_head','hlava tvého rodu')|E]"
- message_filter_house_unity_change: "@dynasty_house_unity! Změna jednoty rodu"
- message_filter_house_unity_change_desc: "Tvá [Concept('house_unity','jednota rodu')|E] se zvýší nebo sníží"
- message_filter_house_unity_stage: "@dynasty_house_unity! Úroveň jednoty rodu"
- message_filter_house_unity_stage_desc: "Změní se tvá [Concept('house_unity_level','úroveň jednoty rodu')|E]"
+ message_filter_house_unity_change: "[SelectLocalization( GetPlayer.GetGovernment.HasGovernmentFlag('government_uses_company_sentiment'), 'message_filter_company_sentiment_change', 'message_filter_clan_house_unity_change' )]" # todo: CHANGED (predtym: @dynasty_house_unity! Změna jednoty rodu)
+ message_filter_clan_house_unity_change: "@dynasty_house_unity! Změna jednotnosti rodu" # todo: NEW TRANSLATION
+ message_filter_company_sentiment_change: "@company_sentiment_icon! Změna nálady" # todo: NEW TRANSLATION
+ message_filter_house_unity_change_desc: "[SelectLocalization( GetPlayer.GetGovernment.HasGovernmentFlag('government_uses_company_sentiment'), 'message_filter_company_sentiment_change_desc', 'message_filter_clan_house_unity_change_desc' )]" # todo: CHANGED (predtym: Tvá [Concept('house_unity','jednota rodu')|E] se zvýší nebo sníží)
+ message_filter_clan_house_unity_change_desc: "Vaše [Concept('house_unity','jednota rodu')|E] se zvýší nebo sníží" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ message_filter_company_sentiment_change_desc: "Vaše [Concept('company_sentiment','směřování společnosti')|E] se posune směrem k [company_sentiment_concerted_i][Concept('company_sentiment_concerted','povýšenému do šlechtickému stavu')|E] nebo [company_sentiment_divided_i][Concept('company_sentiment_divided','dravému')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ message_filter_house_unity_stage: "[SelectLocalization( GetPlayer.GetGovernment.HasGovernmentFlag('government_uses_company_sentiment'), 'message_filter_company_sentiment_stage', 'message_filter_clan_house_unity_stage' )]" # todo: CHANGED (predtym: @dynasty_house_unity! Úroveň jednoty rodu)
+ message_filter_clan_house_unity_stage: "@dynasty_house_unity! Úroveň jednotnosti rodu" # todo: NEW TRANSLATION
+ message_filter_company_sentiment_stage: "@company_sentiment_icon! Postoj" # todo: NEW TRANSLATION
+ message_filter_house_unity_stage_desc: "[SelectLocalization( GetPlayer.GetGovernment.HasGovernmentFlag('government_uses_company_sentiment'), 'message_filter_company_sentiment_stage_desc', 'message_filter_clan_house_unity_stage_desc' )]" # todo: CHANGED (predtym: Změní se tvá [Concept('house_unity_level','úroveň jednoty rodu')|E])
+ message_filter_clan_house_unity_stage_desc: "Vaše [Concept('house_unity_level','úroveň jednoty rodu')|E] se změní" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ message_filter_company_sentiment_stage_desc: "Vaše [Concept('company_sentiment_level','postoj společnosti')|E] se změní" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ message_filter_house_unity_effect: "[SelectLocalization( GetPlayer.GetGovernment.HasGovernmentFlag('government_uses_company_sentiment'), 'message_filter_company_sentiment_effect', 'message_filter_clan_house_unity_effect' )]" # todo: NEW TRANSLATION
+ message_filter_clan_house_unity_effect: "@dynasty_house_unity! Účinky jednotnosti rodu" # todo: NEW TRANSLATION
+ message_filter_company_sentiment_effect: "@company_sentiment_icon! Účinky nálady" # todo: NEW TRANSLATION
+ message_filter_house_unity_effect_desc: "[SelectLocalization( GetPlayer.GetGovernment.HasGovernmentFlag('government_uses_company_sentiment'), 'message_filter_company_sentiment_effect_desc', 'message_filter_clan_house_unity_effect_desc' )]" # todo: NEW TRANSLATION
+ message_filter_clan_house_unity_effect_desc: "Vaše [Concept('house_unity_level','úroveň jednoty rodu')|E] má nějaký účinek" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ message_filter_company_sentiment_effect_desc: "Vaše [Concept('company_sentiment_level','postoj společnosti')|E] má nějaký účinek" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  message_filter_dynasty_child_of_age: "@dynasty_icon_alt! Dospělost člena dynastie"
  message_filter_dynasty_child_of_age_desc: "Na tvém [Concept('court','dvoře')|E] dospěje [Concept('child','dítě')|E] z tvé [Concept('dynasty','dynastie')|E]"
  message_filter_child_of_age: "@child_icon! Dospělost tvého dítěte"
  message_filter_child_of_age_desc: "Jedno z tvých [Concept('children','dětí')|E] dospěje"
+ message_filter_house_aspiration_level_change: "@dynasty_icon_alt! Změny vlastností rodu" # todo: NEW TRANSLATION
+ message_filter_house_aspiration_level_change_desc: "Úroveň vaší [Concept('house_attribute','atribut rodu')|E] se zvýšila" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  message_filter_interaction_consequence: "@catch_all_icon! Důsledky interakcí"
  message_filter_interaction_consequence_desc: "Důsledky provedených interakcí"
  message_filter_ransom_result: "@prison_icon! Výsledek výkupného"
@@ -129,7 +145,7 @@
  message_filter_culture_conversion_notable: "@culture_icon! Významná změna kultury"
  message_filter_culture_conversion_notable_desc: "Důležitá nebo pozoruhodná postava změní [Concept('culture','kulturu')|E]"
  message_filter_culture_era: "@culture_icon! Éry"
- message_filter_culture_era_desc: "Tvá [Concept('culture','kultura')|E] vstoupí do nové [Concept('era','éry')|E]"
+ message_filter_culture_era_desc: "Tvá [Concept('culture','kultura')|E] vstoupí do nových [Concept('era','éry')|E]" # todo: CONCEPT CASE
  message_filter_culture_head: "@culture_icon! Nová hlava kultury"
  message_filter_culture_head_desc: "Změní se [Concept('culture_head','hlava tvé kultury')|E]"
  message_filter_culture_innovation: "@culture_icon! Inovace"
@@ -167,9 +183,9 @@
  message_filter_war_participation: "@war_icon! Účast ve válce"
  message_filter_war_participation_desc: "Připojíš se k [Concept('war','válce')|E] nebo ji opustíš"
  message_filter_war_participation_ally: "@war_icon! Účast spojence ve válce"
- message_filter_war_participation_ally_desc: "[Concept('ally','Spojenec')|E] se připojí k probíhající [Concept('war','válce')|E] nebo ji opustí"
+ message_filter_war_participation_ally_desc: "[Concept('ally','Spojenec')|E] se připojí k probíhajícím [Concept('war','válce')|E] nebo ji opustí" # todo: CONCEPT CASE
  message_filter_war_participation_enemy: "@war_icon! Účast nepřítele ve válce"
- message_filter_war_participation_enemy_desc: "Nepřítel se připojí k probíhající [Concept('war','válce')|E] nebo ji opustí"
+ message_filter_war_participation_enemy_desc: "Nepřítel se připojí k probíhajícím [Concept('war','válce')|E] nebo ji opustí" # todo: CONCEPT CASE
  message_filter_war_declared: "@war_icon! Vyhlášení války"
  message_filter_war_declared_desc: "Vyhlásíš [Concept('war','válku')|E]"
  message_filter_war_declared_liege: "@war_icon! Lenní pán vyhlásí válku"
@@ -273,9 +289,7 @@
  message_filter_accolade_succession: "@accolade_icon! Nástupnictví rytíře"
  message_filter_accolade_succession_desc: "Změní se tvůj [Concept('acclaimed_knight','uznávaný rytíř')|E]"
  message_filter_accolade_eligibility: "@accolade_icon! Rytíř způsobilý pro [Concept('accolade_type','atribut vyznamenání')|E]"
- message_filter_accolade_eligibility_desc: "Některému [Concept('knight','rytíři')|E] lze udělit [Concept('accolade','vyznamenání')|E] s novým [Concept('accolade_type','atributem vyznamenání')|E]"
- message_filter_squire_training: "@accolade_icon! [Concept('acclaimed_knight','Uznávaný rytíř')|E] vycvičil panoše"
- message_filter_squire_training_desc: "Dovednosti [Concept('courtier','dvořana')|E] se zlepší díky [Concept('accolade','vyznamenání')|E] [Concept('accolade_squires','panošům')|E]"
+ message_filter_accolade_eligibility_desc: "Některému [Concept('knight','rytíři')|E] lze udělit [Concept('accolade','vyznamenání')|E] s novými [Concept('accolade_type','atributem vyznamenání')|E]" # todo: CONCEPT CASE
  message_filter_accolade_mercenary: "@accolade_icon! Bývalý [Concept('acclaimed_knight','uznávaný rytíř')|E] [Concept('adventurer','dobrodruhem')|E]"
  message_filter_accolade_mercenary_desc: "Tvůj bývalý [Concept('acclaimed_knight','uznávaný rytíř')|E], který se stal žoldnéřským [Concept('adventurer','dobrodruhem')|E], s tebou interaguje"
  message_filter_tournament_arrival: "@tournament_icon! Příchod vládce"
@@ -301,7 +315,7 @@
  message_filter_laamp_nearby: "@government_type_adventurer! Dobrodruzi v okolí"
  message_filter_laamp_nearby_desc: "V okolí se objeví [Concept('adventurer','dobrodruh')|E] nebo se tam některý [Concept('landed','stane zeměpánem')|E]"
  message_filter_laamp_contracts: "@task_contract_icon! Vypsání zakázky"
- message_filter_laamp_contracts_desc: "Objeví se nová [Concept('task_contract','zakázka')|E]"
+ message_filter_laamp_contracts_desc: "Objeví se novou [Concept('task_contract','zakázka')|E]" # todo: CONCEPT CASE
  message_filter_laamp_follower_event: "@followers_icon! Život v táboře"
  message_filter_laamp_follower_event_desc: "Jednomu z tvých [Concept('followers','družiníků')|E] se přihodí něco pozoruhodného."
  message_filter_migration_into_realm: "@government_type_nomad! Migrace do tvého panství"
@@ -321,7 +335,7 @@
  message_filter_war_target_vassal: "@war_icon! Válka proti vazalovi"
  message_filter_war_target_vassal_desc: "Je vyhlášena [Concept('war','válka')|E] proti tvému [Concept('vassal','vazalovi')|E]"
  message_filter_war_target_suzerain: "@tributary_icon! Válka proti suzerénovi"
- message_filter_war_target_suzerain_desc: "Je vyhlášena [Concept('war','válka')|E] proti tvému [Concept('suzerain','suzerénovi')|E]"
+ message_filter_war_target_suzerain_desc: "Je vyhlášena [Concept('war','válka')|E] proti [GetSuzerainRelationship(GetPlayer)]" # todo: CHANGED (predtym: Je vyhlášena [Concept('war','válka')|E] proti tvému [Concept('suzerain','suzerénovi')|E])
  message_filter_tributary_war: "@tributary_icon! Osvobození tributáře kvůli válce"
  message_filter_tributary_war_desc: "Tvůj [Concept('tributary','tributář')|E] se kvůli [Concept('war','válce')|E] osvobodí"
  message_filter_raid_intent_invalidated: "@raid_icon! Zneplatnění záměru nájezdu"
@@ -347,9 +361,9 @@
  message_filter_admin_new_noble_family: "@dynasty_icon! Nová šlechtická rodina"
  message_filter_admin_new_noble_family_desc: "V panství vznikne nová [Concept('noble_family','šlechtická rodina')|E]"
  message_filter_great_steppe: "@county_fertility_icon! Velká step"
- message_filter_great_steppe_desc: "Změny a vývoj související s [Concept('the_great_steppe','Velkou stepí')|E]"
+ message_filter_great_steppe_desc: "Změny a vývoj související s [Concept('the_great_steppe','Velkou stepí')|E]" # todo: TERMINOLOGY development -> rozvoj
  message_filter_silk_road: "@silk_road_icon! Hedvábná stezka"
- message_filter_silk_road_desc: "Změny a vývoj související s [Concept('silk_road','Hedvábnou stezkou')|E]"
+ message_filter_silk_road_desc: "Změny a vývoj související s [Concept('silk_road','Hedvábnou stezkou')|E]" # todo: TERMINOLOGY development -> rozvoj
  message_filter_house_relation_changed: "@dynasty_icon! Změny vztahů rodů"
  message_filter_house_relation_changed_desc: "Vznikne nebo se změní [Concept('house_relation','vztah rodů')|E]"
  message_filter_natural_disaster_started: "@disaster! Začátek přírodní pohromy"
@@ -369,7 +383,7 @@
  message_filter_custom_message: "@secret_icon! Vlastní zpráva"
  message_filter_custom_message_desc: "Zprávy, které si píšeš"
  message_filter_tributary: "@tributary_icon! $CONTRACT_VASSAL_SIGNATURE_TRIBUTARY_TYPE$"
- message_filter_tributary_desc: "Změny a vývoj týkající se tvých [Concept('tributaries','tributářů')|E]"
+ message_filter_tributary_desc: "Změny a vývoj týkající se tvých [Concept('tributaries','tributářů')|E]" # todo: TERMINOLOGY development -> rozvoj
  message_filter_character_becomes_saint: "@religious_icon! Postava byla svatořečena"
  message_filter_character_becomes_saint_desc: "Postava tvé [Concept('faith','víry')|E] byla svatořečena"
  message_filter_spiritual_fulfillment_changed: "@religious_icon! Změna duchovního naplnění"
@@ -380,6 +394,10 @@
  message_filter_clergy_title_transfer_desc: "Tvůj souhlas buď umožnil pokojný převod [Concept('title','titulu')|E] mezi světskými [Concept('rulers','vládci')|E], nebo byl ignorován."
  message_filter_holy_site_changed: "Změna svatého místa"
  message_filter_holy_site_changed_desc: "Tvoje [Concept('faith','víra')|E] získala či ztratila [Concept('holy_site','svaté místo')|E], případně změnila jeho význam"
+ message_liege_ceded_title: "Lenní pán postoupil titul" # todo: NEW TRANSLATION
+ message_liege_ceded_title_desc: "Váš [Concept('liege','lenní pán')|E] nebo někdo výše souhlasil s převodem [Concept('title','titulem')|E] v rámci [Concept('realm','panství')|E] nebo [Concept('vassal','vazala')|E] jinému nezávislému vládci." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ message_clergy_title_transfer: "Převod církevního titulu" # todo: NEW TRANSLATION
+ message_clergy_title_transfer_desc: "Váš souhlas buď umožnil pokojný převod [Concept('title','titul')|E] mezi světskými [Concept('rulers','vládci')|E], nebo nebyl brán v potaz." # todo: NEW TRANSLATION # todo: CONCEPT CASE
  message_filter_clerical_region: "@religious_icon! Změna církevní oblasti"
  message_filter_clerical_region_desc: "Změnil se stav příslušné [Concept('clerical_region','církevní oblasti')|E]"
  message_filter_ecumenical_council_ruling: "@religious_icon! Rozhodnutí ekumenického koncilu"
@@ -388,3 +406,31 @@
  message_filter_great_schism_progress_desc: "Křesťanstvo směřuje k [Concept( 'schism', 'velkému schizmatu')|E]"
  message_filter_order_espousing_beliefs: "@religious_icon! Rozšiřování mnišského řádu"
  message_filter_order_espousing_beliefs_desc: "[Concept('monastic_holy_order','mnišský řád')|EU] zvyšuje [Concept('tenet_popularity','rozšířenost zásady')|E] své [Concept('tenet','zásady')|E], možná šíří [Concept('rite','ritus')|E] ve tvé [Concept('faith','víře')|E] nebo získává [Concept('lease','pronájem')|E] na klášter od jiného řádu."
+ message_filter_merchant_nearby: "@government_type_merchant! Obchodník v okolí" # todo: NEW TRANSLATION
+ message_filter_merchant_nearby_desc: "V okolí se objeví [Concept('merchant','kupcem')|E] nebo se tam usadí [Concept('landed','zeměpán')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ message_filter_trade_contracts: "@government_type_merchant! Objevení obchodní zakázky" # todo: NEW TRANSLATION
+ message_filter_trade_contracts_desc: "Vznikne [Concept('trade_opportunity','obchodní příležitost')|E] nebo [Concept('luxury_contract','smlouva na luxusní zboží')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ message_filter_trade_routes: "@trade_route_icon! Obchodní trasy" # todo: NEW TRANSLATION
+ message_filter_trade_routes_desc: "[Concept('trade_route','Obchodní trasa')|E] je vytvořena nebo upravena" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ message_filter_guelph_ghibelline: "@guelph_ghibelline_icon! Guelfové a ghibellini" # todo: NEW TRANSLATION
+ message_filter_guelph_ghibelline_desc: "Změny a události související se situací [Concept('guelph_ghibelline_situation','guelfy a Ghibellini')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE # todo: TERMINOLOGY development -> rozvoj
+ message_filter_republic_popular_opinion: "@popular_opinion_icon! Lidové mínění v republice" # todo: NEW TRANSLATION
+ message_filter_republic_popular_opinion_desc: "Změny nálady obyvatelstva přinášející výhody nebo postihy vašemu hlavnímu městu" # todo: NEW TRANSLATION
+ message_group_type_republic: "@government_type_republic! Republika" # todo: NEW TRANSLATION
+ message_filter_republic_notification: "@government_type_republic! Oznámení republiky" # todo: NEW TRANSLATION
+ message_filter_republic_notification_desc: "Obecná oznámení související s hraním za [Concept('republic','republiku')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ message_filter_voting_session: "@government_type_republic! Hlasování" # todo: NEW TRANSLATION
+ message_filter_voting_session_desc: "Ve vašem [Concept('realm','panství')|E] skončí [Concept('voting_session','hlasování')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ message_filter_army_affects_trade: "@soldier_icon! Vliv armády na obchod" # todo: NEW TRANSLATION
+ message_filter_army_affects_trade_desc: "Akce [Concept('army','armáda')|E] ovlivní příslušný [Concept('trade_market','obchodní trh')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ message_group_type_merchant: "@government_type_merchant! Obchodník" # todo: NEW TRANSLATION
+ message_filter_trade_route_changes: "@trade_route_icon! Zisk z obchodní trasy" # todo: NEW TRANSLATION
+ message_filter_trade_route_changes_desc: "Změní se zisk z [Concept('trade_route','obchodní trasy')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ message_filter_trade_route_maturity: "@trade_route_icon! Vyspělost obchodní trasy" # todo: NEW TRANSLATION
+ message_filter_trade_route_maturity_desc: "[Concept('profit_route','Výnosná trasa')|E] získá [GetModifier('gdp_trade_route_maturity_modifier').GetNameWithTooltip]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ message_filter_market_toll_changes: "@trade_route_icon! Tržní poplatky" # todo: NEW TRANSLATION
+ message_filter_market_toll_changes_desc: "Změní se [Concept('market_toll','tržním clem')|E] vybírané z vašich [Concept('profit_routes','výnosných tras')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ message_filter_trade_good_category_level_change: "@trade_route_icon! Úrovně obchodní expertizy" # todo: NEW TRANSLATION
+ message_filter_trade_good_category_level_change_desc: "Vaše [Concept('trade_expertise','obchodní zkušenost')|E] v kategorii [Concept('trade_category','kategorii zboží')|E] získá nebo ztratí úroveň" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ message_filter_build_queue: "@domain_icon! Fronta výstavby" # todo: NEW TRANSLATION
+ message_filter_build_queue_desc: "Neočekávaná změna ve frontě výstavby" # todo: NEW TRANSLATION

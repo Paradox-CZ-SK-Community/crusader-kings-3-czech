@@ -39,7 +39,7 @@
  DOPPELGANGER: "Tvůj [Glossary( 'doppelgänger', 'DOPPELGANGER_GLOSS' )]"
  story_doppelganger: "Zrcadlo v blátě"
  DOPPELGANGER_GLOSS: "Doppelgänger je dvojník živého člověka, na kterého lze často narazit pouhou náhodou. V německém folklóru jde o znepokojivé zjevení a zlé znamení - spatření vlastního dvojníka může předznamenávat nemoc či smrt."
- story_doppelganger_desc: "Mezi poddanými se našel někdo, kdo je ti k nerozeznání podobný - skutečný [Glossary( 'doppelgänger', 'DOPPELGANGER_GLOSS' )]..."
+ story_doppelganger_desc: "Mezi poddanými se [Select_CString(ROOT.Char.IsFemale,'našla','našel')] někdo, kdo je ti k nerozeznání podobný - skutečný [Glossary( 'doppelgänger', 'DOPPELGANGER_GLOSS' )]..." # todo: GENDER FORM ROOT.Char - over, ci ROOT je postava, ktorej sa text tyka
  DOPPELGANGER_STORY_PRACTICAL_INFORMATION_STRING: "Někdo z poddaných, kdo vypadá a mluví přesně jako ty, může představovat příležitost... nebo prokletí. Prozatím [Story.MakeScope.Var('doppelganger_character').Char.GetUIName] pobývá na tvém [Concept('court','dvoře')|E]."
  story_cycle_hunt_mystical_animal: "Lov mystického zvířete"
  story_cycle_hunt_mystical_animal_desc: "Během lovu se ti na okamžik zjevilo mystické bílé zvíře. Polapit ho by bylo jako nalézt svatý grál!"
@@ -54,7 +54,7 @@
  story_cycle_pet_rock_desc: "Po tvém boku spočívá kamenný mazlíček, jehož neměnná tvář dokonale odpovídá tvému svéráznému pojetí společnosti."
  PET_ROCK_INFORMATION_STRING: "Tvůj kámen se jmenuje #V [Story.GetOwner.Custom('RockStoryName')].#!\nBarva jeho hrbolatého povrchu: [Story.GetOwner.Custom('RockColor')]."
  story_cycle_admin_eunuch: "Význačný eunuch"
- story_cycle_admin_eunuch_desc: "Na tvůj dvůr si našel cestu mimořádně schopný eunuch. Příležitost, nebo hrozba...?"
+ story_cycle_admin_eunuch_desc: "Na tvůj dvůr si [Select_CString(ROOT.Char.IsFemale,'našla','našel')] cestu mimořádně schopný eunuch. Příležitost, nebo hrozba...?" # todo: GENDER FORM ROOT.Char - over, ci ROOT je postava, ktorej sa text tyka
  EUNUCH_INFORMATION_STRING: "Postupem času dostaneš příležitosti svěřovat [Story.MakeScope.Var('eunuch').Char.GetShortUIName] stále větší moc a vliv. Tím se zvyšuje síla [Concept('modifier','modifikátoru')|E] [GetModifier('admin_eunuch_liege_4_modifier').GetNameWithTooltip].\n\nAle pozor — pokud eunucha odmítneš nebo mu svěříš #EMP příliš#! mnoho moci, aniž si zajistíš jeho loajalitu, následky mohou být vážné...\n\nPočet dosud odmítnutých žádostí: [Story.MakeScope.Var('eunuch_refusals').GetValue|0V]"
  EUNUCH_LABEL: "Eunuch"
  UPSET_COURTIERS: "Poddaní nespokojení s eunuchem"
@@ -65,7 +65,7 @@
  COMPOSER: "Autor tvého eposu"
  story_foreign_raised_reformer: "[Select_CString(Story.GetOwner.IsFemale,'Reformátorka vychovaná','Reformátor vychovaný')] v cizině"
  story_foreign_raised_reformer_desc: "Tvé dětství se odehrálo daleko od země, kterou dnes nazýváš domovem.\nBylo tam všechno tak jiné... ale co kdyby se domov mohl více podobat právě tomu místu?"
- REFORMER_INFORMATION_STRING: "V [Story.MakeScope.Var('advanced_realm').Title.GetBaseName] tě [Select_CString(Story.MakeScope.Var('foreign_educator').Char.IsFemale,'vychovávala','vychovával')] [Story.MakeScope.Var('foreign_educator').Char.GetShortUIName], [Story.MakeScope.Var('advanced_culture').Culture.GetName] kultury a [Story.MakeScope.Var('advanced_culture_faith').Faith.GetAdjective] víry. [Story.MakeScope.Var('advanced_culture').Culture.GetName] [Concept('culture','kultura')|E] na tebe udělala dojem a přeješ si, aby se jí tvůj vlastní lid více podobal.\n\nZačneš dostávat příležitosti získávat body reformy nebo upevnění:\n$BULLET_WITH_TAB$#indent_newline:7 Cestou reformace můžeš získat [Concept('innovations','inovace')|E], [Concept('cultural_acceptance','kulturní přijetí')|E], [Concept('traditions','tradice')|E], nebo možná dokonce [GetBuilding('generic_university').GetName]. Pamatuj, že reformace je dlouhý a nákladný proces.#!\n$BULLET_WITH_TAB$#indent_newline:7 Cestou upevnění můžeš získat [Concept('opinion','mínění')|E] [Concept('vassal','vazalů')|E], [Concept('dynasty_prestige','věhlas')|E] a bonusy pro [Concept('war','válku')|E] v podobě [Concept('casus_bellis','casus belli')|E] a [Concept('special_troops','vojska z událostí')|E].#!"
+ REFORMER_INFORMATION_STRING: "V [Story.MakeScope.Var('advanced_realm').Title.GetBaseName] tě [Select_CString(Story.MakeScope.Var('foreign_educator').Char.IsFemale,'vychovávala','vychovával')] [Story.MakeScope.Var('foreign_educator').Char.GetShortUIName], [Story.MakeScope.Var('advanced_culture').Culture.GetName] kultury a [Story.MakeScope.Var('advanced_culture_faith').Faith.GetAdjective] víry. [Story.MakeScope.Var('advanced_culture').Culture.GetName] [Concept('culture','kultura')|E] na tebe udělala dojem a přeješ si, aby se jí tvůj vlastní lid více podobal.\n\nZačneš dostávat příležitosti získávat body reformy nebo upevnění:\n$BULLET_WITH_TAB$#indent_newline:7 Cestou reformace můžeš získat [Concept('innovations','inovace')|E], [Concept('cultural_acceptance','kulturní přijetí')|E], [Concept('traditions','tradice')|E], nebo možná dokonce [GetBuildingType('generic_university').GetName]. Pamatuj, že reformace je dlouhý a nákladný proces.#!\n$BULLET_WITH_TAB$#indent_newline:7 Cestou upevnění můžeš získat [Concept('opinion','mínění')|E] [Concept('vassal','vazalů')|E], [Concept('dynasty_prestige','věhlas')|E] a bonusy pro [Concept('war','válku')|E] v podobě [Concept('casus_bellis','casus belli')|E] a [Concept('special_troops','vojska z událostí')|E].#!" # todo: CHANGED (predtym: V [Story.MakeScope.Var('advanced_realm').Title.GetBaseName] tě [Select_CString(Story.MakeScope.Var('foreign_educator').C)
  REFORM_LABEL: "Postup reformy tvé [Concept('culture','kultury')|E]"
  REAFFIRMATION_LABEL: "Postup upevnění tvé [Concept('culture','kultury')|E]"
  REFORM_MIN_VALUE_LABEL: ""
@@ -86,3 +86,6 @@
  SLAVIC_RITE_PROGRESS_LABEL: "Postup obracení"
  SLAVIC_RITE_PROGRESS_MIN_LABEL: "Obrácená hrabství"
  SLAVIC_RITE_PROGRESS_MAX_LABEL: "Cílová hrabství"
+ story_cycle_menagerie: "Tvor ze zvěřince" # todo: NEW TRANSLATION
+ story_cycle_menagerie_desc: "#F Divoké zvíře připoutané po tvém boku pro potěšení a pobavení hostů.#!" # todo: NEW TRANSLATION
+ CREATURE_INFORMATION_STRING: "Stáří [Story.MakeScope.Var('artifact_type').Artifact.GetNameNoTooltip] činí [Story.MakeScope.Var('creature_age_variable').GetValue|0] let." # todo: NEW TRANSLATION

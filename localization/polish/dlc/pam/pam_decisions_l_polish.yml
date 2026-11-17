@@ -8,6 +8,26 @@
  SELECT_TENET: "Vybrat zásadu"
  REPLACE_TENET: "Nahradit zásadu"
  SELECT_HOLY_SITE: "Vybrat svaté místo"
+ start_test_select_rite: "#D Test výběru ritu#!" # todo: NEW TRANSLATION
+ start_test_select_rite_tooltip: "#D Test výběru ritu#!" # todo: NEW TRANSLATION
+ start_test_select_rite_desc: "#D Popis testu výběru ritu#!" # todo: NEW TRANSLATION
+ start_test_select_rite_confirm: "#D Potvrdit test výběru ritu#!" # todo: NEW TRANSLATION
+ start_test_select_rite_no_item_selected: "#D Nebyl vybrán žádný ritus#!" # todo: NEW TRANSLATION
+ start_test_select_tenet: "#D Test výběru zásady#!" # todo: NEW TRANSLATION
+ start_test_select_tenet_tooltip: "#D Test výběru zásady#!" # todo: NEW TRANSLATION
+ start_test_select_tenet_desc: "#D Popis testu výběru zásady#!" # todo: NEW TRANSLATION
+ start_test_select_tenet_confirm: "#D Potvrdit test výběru zásady#!" # todo: NEW TRANSLATION
+ start_test_select_tenet_no_item_selected: "#D Nebyla vybrána žádná zásada#!" # todo: NEW TRANSLATION
+ start_test_select_character: "#D Test výběru postavy#!" # todo: NEW TRANSLATION
+ start_test_select_character_tooltip: "#D Test výběru postavy#!" # todo: NEW TRANSLATION
+ start_test_select_character_desc: "#D Popis testu výběru postavy#!" # todo: NEW TRANSLATION
+ start_test_select_character_confirm: "#D Potvrdit test výběru postavy#!" # todo: NEW TRANSLATION
+ start_test_select_character_no_item_selected: "#D Nebyla vybrána žádná postava#!" # todo: NEW TRANSLATION
+ start_test_select_kingdom: "#D Test výběru království#!" # todo: NEW TRANSLATION
+ start_test_select_kingdom_tooltip: "#D Test výběru království#!" # todo: NEW TRANSLATION
+ start_test_select_kingdom_desc: "#D Popis testu výběru království#!" # todo: NEW TRANSLATION
+ start_test_select_kingdom_confirm: "#D Potvrdit test výběru království#!" # todo: NEW TRANSLATION
+ start_test_select_kingdom_no_item_selected: "#D Nebylo vybráno žádné království#!" # todo: NEW TRANSLATION
  puppet_cost_desc: "[Character.GetName|U],"
  pam_decision_confession_name: "Přistoupit ke zpovědi"
  pam_decision_confession_name_low: "Vyznat své hříchy"
@@ -276,11 +296,10 @@
  pam_bull_events.0002.a.flavor: "$pam_bull_events.0001.a.flavor$"
  pam_bull_events.0003.t: "$pam_bull_events.0001.t$"
  pam_bull_events.0003.desc: "„Abych učinil přítrž zlu, které šíří ritus [heresy_rite.GetName], odsuzuji apoštolskou mocí všechny jeho stoupence jako kacíře a uvaluji na ně trvalou klatbu"
- pam_bull_events.0003.desc.heresiarch: ". Jejich vůdce [heresiarch.GetTitledFirstName] navíc ponese označení vůdce kacířů.“"
- pam_bull_events.0003.desc.no_heresiarch: ", která bude platit po všechny budoucí věky.“"
+ pam_bull_events.0003.desc.heresiarch: ". Jejich vůdce [heresiarch.GetTitledFirstName] navíc ponese označení vůdce kacířů.„"
+ pam_bull_events.0003.desc.no_heresiarch: ", která bude platit po všechny budoucí věky.„"
  pam_bull_events.0003.a: "$pam_bull_events.0001.a$"
  pam_bull_events.0003.a.flavor: "$pam_bull_events.0001.a.flavor$"
- IN_NOMINE_DOMINI_GLOSS: "Ve jménu Páně."
  pam_bull_events.0004.opening: "Tobě, [ROOT.GetCharacter.Custom('CZ_TitledFirstNameNoTooltip_D')], věrné duši [ROOT.GetCharacter.GetFaith.Custom('CZ_AdjectiveNoTooltip_ee')|l] víry,"
  pam_bull_events.0004.desc.crusade: "Vyzývám vás všechny, abyste se postavili nevěřícím, kteří ovládají [title.Custom('CZ_LandedName_A')]."
  pam_bull_events.0004.desc.heresy: "Nechť všichni vědí, že ritus [heresy_rite.GetName] byl stižen klatbou a jeho stoupenci jsou nyní považováni za kacíře."
@@ -306,7 +325,7 @@
  bull_option_tenet_stance_permitted_tooltip: "$enact_a_bull_decision_option_tenet_stance_permitted_desc$"
  bull_option_tenet_stance_forbidden_tooltip: "$enact_a_bull_decision_option_tenet_stance_forbidden_desc$"
  CHOOSE_BULL_NEXT_STEP_BUTTON: "Vybrat bulu k vydání"
- enact_a_bull_decision_heresy_trigger_tt: "Musí existovat další [Concept('rite','ritus')|E] téže [Concept('faith','víry')|E], jehož [Concept('rite_divergence','odlišnost')|E] od hlavního ritu ($game_concept_rite$) překračuje [EmptyScope.ScriptValue('faith_heresy_threshold')|0V]. Nesmí jej vyznávat [Concept('challenger_hof','konkurenční hlava víry')|E] ani žádný z jejích podporovatelů"
+ enact_a_bull_decision_heresy_trigger_tt: "Musí existovat další [Concept('rite','ritus')|E] téže [Concept('faith','víry')|E], jehož [Concept('rite_divergence','odlišnost')|E] od hlavního ritu (ritu) překračuje [EmptyScope.ScriptValue('faith_heresy_threshold')|0V]. Nesmí jej vyznávat [Concept('challenger_hof','konkurenční hlava víry')|E] ani žádný z jejích podporovatelů" # todo: CONCEPT CASE
  enact_a_bull_decision_ghw_active_trigger_tt: "[Concept('faith','Víra')|EU] musí mít [Concept('core_tenet','základní zásadu')|E] umožňující [Concept('great_holy_wars','velké svaté války')|E] a $doctrine_spiritual_head_name$ [Concept('head_of_faith','hlavu víry')|E]"
  enact_a_bull_decision_valid_target_trigger_tt: "Musí existovat vhodné [Concept('kingdom','království')|E] nepřátelské [Concept('faith','víry')|E], proti němuž lze válku vyhlásit"
  pick_crusade_target_decision: "Vybrat protivníka"
@@ -344,7 +363,7 @@
  pam_levy_the_tithes_decision_effects_no_vassals_tt: "Každý [Concept('theocracy','teokratický')|E] nebo [Concept('theocracy','teokratický')|E] [Concept('vassal','vazal')|E] zaplatí [SCOPE.ScriptValue('minor_gold_value')|+0] [Concept('gold','zlata')|E]"
  pam_send_legatine_mission_decision: "Vyslat legátské poselstvo"
  pam_send_legatine_mission_decision_desc: "Legát připomene věřícím, že církev bdí nejen nad jejich dušemi, ale i nad zemí, v níž žijí."
- pam_send_legatine_mission_decision_tooltip: "Vynalož prostředky z [Concept('treasury','pokladnice')|E] na zvýšení [Concept('development_growth','růstu rozvoje')|E] a [Concept('control','kontroly')|E] v jednom [Concept('county','hrabství')|E]"
+ pam_send_legatine_mission_decision_tooltip: "Vynalož prostředky z [Concept('treasury','pokladnice')|E] na zvýšení [Concept('prosperity_growth','růstu prosperity')|E] a [Concept('control','kontroly')|E] v jednom [Concept('county','hrabství')|E]" # todo: CHANGED (predtym: Vynalož prostředky z [Concept('treasury','pokladnice')|E] na zvýšení [Concept('development_growth','růstu rozvoje')|E] a)
  pam_send_legatine_mission_decision_confirm: "Vyslat legáty!"
  pam_send_legatine_mission_decision_parameter_tt: "[Concept('the_christian_church','Křesťanská církev')|EU] se nachází v [Concept('the_christian_church_chapter_short','kapitole')|E] #high $reform_phase$#!"
  pam_send_legatine_mission_decision_toast: "Legátské poselstvo vysláno"
@@ -420,9 +439,9 @@
  pam_decision_events.0008.a: "Copak štědrost není ctností?"
  pam_kingdom_of_heaven_decision: "Vyhlásit Království nebeské"
  pam_kingdom_of_heaven_decision_desc: "Naplnil se čas a přiblížilo se království Boží. Čiňte pokání a věřte evangeliu."
- pam_kingdom_of_heaven_decision_tooltip: "Staň se [Concept('holder','držitelem')|E] nového [Concept('title','titulu')|E] na úrovni [Concept('hegemony','hegemonie')|E]"
+ pam_kingdom_of_heaven_decision_tooltip: "Staň se [Concept('holder','držitelem')|E] nový [Concept('title','titulu')|E] na úrovni [Concept('hegemony','hegemonie')|E]" # todo: CONCEPT CASE
  pam_kingdom_of_heaven_decision_confirm: "Království je blízko"
- pam_kingdom_of_heaven_decision_situation_tt: "[Concept('the_christian_church','Křesťanská církev')|EU] se nachází v [Concept('the_christian_church_chapter_short','kapitole')|E] #high $crusade_phase$#!"
+ pam_kingdom_of_heaven_decision_situation_tt: "Tvoje [Concept('faith','víra')|E] je hlavní mocností [Concept('the_christian_church','Křesťanské církve')|E], která se nachází v [Concept('the_christian_church_chapter_short','kapitole')|E] #high $crusade_phase$#!" # todo: CHANGED (predtym: [Concept('the_christian_church','Křesťanská církev')|EU] se nachází v [Concept('the_christian_church_chapter_short','kap)
  pam_kingdom_of_heaven_decision_holy_sites_tt: "Ovládáš alespoň #V 3#! [Concept('holy_sites','svatá místa')|E] své [Concept('faith','víry')|E]"
  pam_kingdom_of_heaven_decision_piety_highest_tt: "Nikdo jiný, kdo vyznává tvou [Concept('faith','víru')|E], nesmí mít vyšší [Concept('piety_level','úroveň oddanosti')|E] než ty"
  pam_kingdom_of_heaven_decision_emperor_hooks_tt: "Buď neexistuje žádný nezávislý [Concept('ruler','vládce')|E] tvé [Concept('faith','víry')|E] s titulem na úrovni [Concept('empire','říše')|E], nebo máš na každého takového vládce [Concept('hook','páku')|E]"
@@ -449,7 +468,7 @@
  pam_proclaim_living_word_decision_sf_tt: "Tvé [Concept('spiritual_fulfillment','duchovní naplnění')|E] dosahuje alespoň #V [EmptyScope.ScriptValue('spiritual_fulfillment_3')|0]#!"
  pam_proclaim_living_word_decision_archbishop_tt: "Jsi [Concept('archbishop','arcibiskupem')|E]"
  pam_proclaim_living_word_decision_puppet_tt: "Jedna z tvých [Concept('puppets','loutek')|E] je [Concept('archbishop','arcibiskupem')|E] nebo zastává vyšší úřad"
- pam_proclaim_living_word_decision_realm_rite_tt: "Všechna [Concept('county','hrabství')|E] ve tvém [Concept('realm','panství')|E] vyznávají tvůj [Concept('rite','ritus')|E] a je jich alespoň #V 5#!"
+ pam_proclaim_living_word_decision_realm_rite_tt: "Všechno [Concept('county','hrabství')|E] ve tvém [Concept('realm','panství')|E] vyznávají tvůj [Concept('rite','ritus')|E] a je jich alespoň #V 5#!" # todo: CONCEPT CASE
  pam_proclaim_living_word_decision_effect_tt: "Budeš si moci vybrat mezi:\n$BULLET_WITH_TAB$ [GetModifier('pam_herald_shepherd_of_the_faithful_modifier').GetNameWithTooltip]\n$BULLET_WITH_TAB$ [GetModifier('pam_herald_fire_and_sword_modifier').GetNameWithTooltip]"
  pam_decision_events.0021.t: "Živé slovo"
  pam_decision_events.0021.desc: "[ROOT.Char.Custom('GetFaithTemple')|U] praská ve švech. Už není ani kde pokleknout. Poutníci se tísní bok po boku s [ROOT.Char.GetFaith.PriestNeuterPlural|l], baroni s žebráky, a přesto se u vchodu shromažďují další a další lidé.\n\nMé skutky byly zkoumány pečlivěji, než by dokázal kterýkoli kronikář. Každá cesta, kterou jsem [Select_CString(ROOT.Char.IsFemale,'prošla','prošel')], každé modlitební bdění i každá mince obětovaná na [ROOT.Char.GetFaith.HighGodNamePossessive] oltář. Jeden z [ROOT.Char.GetFaith.PriestNeuterPlural|l] uchopí mou ruku a přitiskne ji k oltáři: „Mluv a my budeme naslouchat.“\n\nTicho, které následuje, patří jen mně. Čím je naplním, bude znít daleko za těmito zdmi."
@@ -548,6 +567,7 @@
  pam_promulgate_word_of_pious_deeds_decision_desc: "Má kancelář sepsala oslavný spis vyzdvihující mé skutky hodné Kristova příkladu. Ačkoli se nesluší vychvalovat vlastní ctnosti, mí blízcí touží rozšířit zprávy o mé zbožnosti mezi všechny [CZAdherentPl_A(ROOT.Char.GetFaith)|l].\n\nTaková pověst by mohla přesvědčit mnohé, že právě já jsem [Select_CString(ROOT.Char.IsFemale,'tou nejpovolanější ženou','tím nejpovolanějším mužem')], kdo by měl usednout na stolec svatého Petra... a možná dosáhnout ještě výše."
  pam_promulgate_word_of_pious_deeds_decision_desc_tooltip: "#V Zvýšení volebního skóre#! pro [Select_CString(ROOT.Char.GetReligiousSuperior.IsValid,ROOT.Char.GetReligiousSuperior.GetPrimaryTitle.GetName,ROOT.Char.GetPrimaryTitle.GetName)]: #P +30#! nebo zvýšení šance na [Concept('canonization','kanonizaci')|E]"
  pam_promulgate_word_of_pious_deeds_decision_tooltip_effect: "Budeš si moci vybrat mezi:\n\t$EFFECT_LIST_BULLET$Vynalož [Concept('piety','zbožnost')|E] a #V zvyš volební skóre#! pro [praise_worthy_priest_superior_title.GetName]\n\t$EFFECT_LIST_BULLET$Zvyš svou šanci na budoucí [Concept('canonization','kanonizaci')|E]"
+ pam_promulgate_word_of_pious_deeds_decision_tooltip_effect_canonization: "#D TODO_PAM_DESIGN  TIT-68663 #!" # todo: NEW TRANSLATION
  pam_promulgate_word_of_pious_deeds_decision_confirm: "Ať šíří mou slávu!"
  cardinal_unlocks_pam_promulgate_word_of_pious_deeds_decision_tooltip: "Jsi [Concept('cardinal','kardinálem')|E]"
  domicile_unlocks_pam_promulgate_word_of_pious_deeds_decision_tooltip: "Tvůj [Concept('domicile','domicil')|E] musí mít [Concept('domicile_building','budovu domicilu')|E] [GetDomicileBuilding('chancery_01').GetName] nebo budovu vyšší úrovně"
@@ -568,12 +588,14 @@
  pam_decision_events.0015.desc.intro: "oslavný spis sepsaný v [GetDomicileBuilding('chancery_01').GetName]:\n\n„Ctnostné skutky jsou jako semena, která Pán zasévá, aby z nich vzešla bohatá úroda zbožnosti. Všichni by měli znát [praise_worthy_priest.Custom('CZ_Name_A')], neboť tak ušlechtilé činy si zaslouží úctu."
  pam_decision_events.0015.desc.virtuoustrait: " Obdiv si zaslouží také ctnost [my_virtuous_trait.GetName(praise_worthy_priest)]."
  pam_decision_events.0015.desc.mid: " Všechny tyto skutky jsou vedeny"
- pam_decision_events.0015.desc.virtuoustenet: " zásadou [my_virtuous_tenet.GetName(praise_worthy_priest.GetRite)]...“"
- pam_decision_events.0015.desc.novirtuoustenet: " vůlí Boží...“"
+ pam_decision_events.0015.desc.virtuoustenet: " zásadou [my_virtuous_tenet.GetName(praise_worthy_priest.GetRite)]...„"
+ pam_decision_events.0015.desc.novirtuoustenet: " vůlí Boží...„"
  pam_decision_events.0015.desc.bad: "\n\nNavzdory všem těm pochvalným slovům se mé srdce chvěje strachem z pekelného ohně."
  pam_decision_events.0015.desc.good: "\n\nVskutku jsem nástrojem Páně, ztělesněním jeho krásy na zemi."
  pam_decision_events.0015.desc.neutral: "\n\nNavzdory všem těm pochvalným slovům se teprve po smrti dozvím, zda má duše obstojí před Pánem."
  pam_decision_events.0015.desc.outro: "\n\n„...vskutku, právě spravedlnost těchto činů dokazuje, že [praise_worthy_priest.GetName] si zaslouží jednoho dne stanout v čele církve!“"
+ pam_decision_events.0015.a: "„S Bohem není nic nemožné!“" # todo: NEW TRANSLATION
+ pam_decision_events.0015.a.tt: "$pam_decision_events.0015.b.tt$ a $pam_decision_events.0015.c.tt$" # todo: NEW TRANSLATION
  pam_decision_events.0015.b: "„Na svém kontě mám nejeden zázrak.“"
  pam_decision_events.0015.b.flavor: "Proč se spokojit s papežstvím, když můžeš dosáhnout svatořečení?"
  pam_decision_events.0015.b.tt: "#V Zvýšení šance na kanonizaci#! po smrti\n#weak Kanonizace vyžaduje příslušnost k [Concept('dynasty','dynastii')|E]#!"
@@ -677,6 +699,7 @@
  pam_decision_events.0018.opening: "Všichni [ROOT.Char.GetFaith.GetAdherentNamePluralNoTooltip|l] ze všech zemí,"
  pam_decision_events.0018.desc.armed_pilgrimages: "Svou pečetí jsem stvrdil rozhodnutí. Od tohoto dne bude zásada [GetTenetType('tenet_armed_pilgrimages').GetName(hof_scope.GetRite)] patřit mezi základní učení víry [hof_scope.GetFaith.GetName].\n\nNechť si všichni vládci této víry vezmou toto prohlášení k srdci."
  pam_decision_events.0018.desc.struggle_submission: "Svou pečetí jsem stvrdil rozhodnutí. Od tohoto dne bude zásada [GetTenetType('tenet_struggle_submission').GetName(hof_scope.GetRite)] patřit mezi základní učení víry [hof_scope.GetFaith.GetName].\n\nNechť si všichni vládci této víry vezmou toto prohlášení k srdci."
+ pam_decision_events.0018.desc: "Zpečetil jsem tuto záležitost. Od tohoto dne bude [pam_crusade_age_tenet.GetName( hof_scope.GetRite )] patřit mezi základní zásady víry [hof_scope.GetFaith.GetName].\n\nAť tomu věnuje pozornost každý vládce této víry." # todo: NEW TRANSLATION
  pam_decision_events.0018.a: "Budiž."
  pam_decision_events.0017.t: "Vztyčení rodového chačkaru"
  pam_decision_events.0017.desc: "Pro kamenný kříž jsem [Select_CString(ROOT.Char.IsFemale,'vybrala','vybral')] vyvýšené místo s výhledem na [khachkar_location.Custom('CZ_LandedNameNoTier_A')].\n\nNechám zkušené kameníky vytvořit skutečně úchvatný památník na počest [khachkar_ancestor.Custom('CZ_TitledFirstNameNicknamed_G')]. Kříž bude zdoben rozetami, ornamenty a nápisem, který připomene, že [khachkar_ancestor.Custom2('RelationToMeShort', ROOT.Char)] [Select_CString(ROOT.Char.IsFemale,'uctila','uctil')] [Select_CString(khachkar_ancestor.IsFemale,'její','jeho')] památku.\n\nNechť se pod ním modlí místní poutníci a každý v něm spatří důkaz našeho právoplatného panství nad touto zemí."
@@ -768,7 +791,7 @@
  recipient_head_of_rite_is_not_lieges_head_of_rite_tt: "Jsi [Concept('head_of_rite','hlavou ritu')|E], který [recipient.GetShortUIName] [Select_CString(recipient.IsLocalPlayer,'vyznáváš','vyznává')], nikoli však hlavou ritu [Concept('liege','lenního pána')|E] této postavy"
  pam_personal_sacrifice_of_wealth_decision: "Obětovat část bohatství"
  pam_personal_sacrifice_of_wealth_decision_desc: "Obětuji část svého bohatství na důkaz oddanosti víře a podpořím tím rozvoj hrabství pod svou ochranou."
- pam_personal_sacrifice_of_wealth_decision_tooltip: "Vynalož [Concept('gold','zlato')|E] na zvýšení [Concept('development_growth','růstu rozvoje')|E] ve vybraném [Concept('county','hrabství')|E] a získej [Concept('spiritual_fulfillment','duchovní naplnění')|E]"
+ pam_personal_sacrifice_of_wealth_decision_tooltip: "Vynalož [Concept('gold','zlato')|E] na zvýšení [Concept('prosperity_growth','růstu prosperity')|E] ve vybraném [Concept('county','hrabství')|E] a získej [Concept('spiritual_fulfillment','duchovní naplnění')|E]" # todo: CHANGED (predtym: Vynalož [Concept('gold','zlato')|E] na zvýšení [Concept('development_growth','růstu rozvoje')|E] ve vybraném [Concept('c)
  pam_personal_sacrifice_of_wealth_decision_confirm: "Přinést oběť"
  pam_personal_sacrifice_of_wealth_decision_toast: "Zbožná investice uskutečněna"
  pam_develop_clerical_court_decision: "Vzdělávat dvorní duchovenstvo"

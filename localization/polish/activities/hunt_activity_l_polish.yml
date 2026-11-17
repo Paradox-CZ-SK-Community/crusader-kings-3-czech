@@ -30,7 +30,7 @@
  activity_hunt_province_desc_rainbow_mountains_major: "#P +++ $building_type_rainbow_mountains_01$#! ([Concept('building','budova')|E])\n"
  activity_hunt_province_desc_chocolate_hills_major: "#P +++ $building_type_chocolate_hills_01$#! ([Concept('building','budova')|E])\n"
  activity_hunt_province_desc_visegrad_castle_01_major: "#P +++ $building_type_visegrad_castle_01$#! ([Concept('building','budova')|E])\n"
- activity_hunt_province_desc_legendary_hunting_lodge: "#P +++ $building_legendary_hunting_lodge$ ([Concept('building','budova')|E])#!\n"
+ activity_hunt_province_desc_legendary_hunting_lodge: "#P +++ $legendary_hunting_lodge$ ([Concept('building','budova')|E])#!\n" # todo: CHANGED (predtym: P +++ $building_legendary_hunting_lodge$ ([Concept('building','budova')|E]) !\n)
  activity_hunt_province_desc_legendary_sighting: "#P +++ Pozorování legendární zvěře – [ROOT.Province.GetTitle.GetDeJureLiege.Custom('GetLegendaryColor')|UV] [ROOT.Province.GetTitle.GetDeJureLiege.Custom('GetAnimalType')|UV]#!\n"
  activity_hunt_province_desc_logging_camps_minor: "#N - $building_type_logging_camps_01$#! ([Concept('building','budova')|E])\n"
  activity_hunt_province_desc_logging_camps_medium: "#N -- $building_type_logging_camps_01$#! ([Concept('building','budova')|E])\n"
@@ -38,9 +38,10 @@
  activity_hunt_province_desc_royal_forest_minor: "#P + $building_type_royal_forest_01$#! ([Concept('building','budova')|E])\n"
  activity_hunt_province_desc_royal_forest_medium: "#P ++ $building_type_royal_forest_01$#! ([Concept('building','budova')|E])\n"
  activity_hunt_province_desc_royal_forest_major: "#P +++ $building_type_royal_forest_01$#! ([Concept('building','budova')|E])\n"
- activity_hunt_province_desc_development: "#N - Vysoký rozvoj#!\n"
- activity_hunt_province_desc_development_bad: "#N -- Vysoký rozvoj#!\n"
- activity_hunt_province_desc_development_terrible: "#N --- Vysoký rozvoj#!\n"
+ activity_hunt_province_desc_royal_stables: "#P + $building_type_knights_stables_1$#! ([Concept('building','budova')|E])\n" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ activity_hunt_province_desc_prosperity: "#N - Vysoká prosperita#!\n" # todo: NEW TRANSLATION
+ activity_hunt_province_desc_prosperity_bad: "#N -- Vysoká prosperita#!\n" # todo: NEW TRANSLATION
+ activity_hunt_province_desc_prosperity_terrible: "#N --- Vysoká prosperita#!\n" # todo: NEW TRANSLATION
  activity_hunt_province_desc_recent_hunt_major: "#N --- Nedávno pořádané lovy#!\n"
  activity_hunt_province_desc_recent_hunt_medium: "#N -- Nedávno pořádané lovy#!\n"
  activity_hunt_province_desc_recent_hunt_minor: "#N - Nedávno pořádaný lov#!\n"
@@ -50,14 +51,14 @@
  activity_hunt_province_desc_fertility: "#P + Vysoká úrodnost#!\n"
  activity_hunt_province_desc_fertility_good: "#P ++ Vysoká úrodnost#!\n"
  activity_hunt_province_desc_fertility_great: "#P +++ Vysoká úrodnost#!\n"
- activity_hunt_host_desc_piety: "$BULLET_WITH_TAB$Účastníci mohou získat [piety_i|E][Concept('piety','zbožnost')|E]\n$BULLET_WITH_TAB$Účastníkům může ubýt [stress_loss_i][Concept('stress','stres')|E]\n"
- activity_hunt_host_desc_prestige: "$BULLET_WITH_TAB$Účastníci mohou získat [prestige_i|E][Concept('prestige','prestiž')|E]\n$BULLET_WITH_TAB$Účastníci mohou získat [legitimacy_i] [Concept('legitimacy','legitimitu')|E]\n$BULLET_WITH_TAB$Účastníkům může ubýt [stress_loss_i][Concept('stress','stres')|E]\n"
- activity_hunt_host_desc_trait_xp: "$BULLET_WITH_TAB$Účastníci mohou získat [Concept('trait_level_track_xp','zkušenosti rysu')|E]: [GetTrait('lifestyle_hunter').GetName( GetNullCharacter )]\n"
- activity_hunt_host_desc_trait: "$BULLET_WITH_TAB$Účastníci mohou získat [Concept('trait','rys')|E]: [GetTrait('lifestyle_hunter').GetName( GetNullCharacter )]\n"
- activity_hunt_host_desc: "[SelectLocalization(ObjectsEqual(GetPlayer.GetGovernment, GetGovernment('nomad_government')),'activity_hunt_nomad_additions_desc', 'blank_line')]$BULLET_WITH_TAB$Můžeš si zlepšit [Concept('opinion','mínění')|E] [Concept('vassals','vazalů')|E] s postojem [GetVassalStance( 'glory_hound' ).GetTextIcon][GetVassalStance( 'glory_hound' ).GetName]\n$BULLET_WITH_TAB$Můžeš získat trofejní [Concept('artifacts','artefakty')|E]\n"
+ activity_hunt_host_desc_piety: "$BULLET_WITH_TAB$Účastníci mohou získat [Concept('piety_i','[GetLocalPlayerPietyTextIcon]')|E][Concept('piety','zbožnost')|E]\n$BULLET_WITH_TAB$Účastníkům může ubýt [stress_loss_i][Concept('stress','stres')|E]\n" # todo: CONCEPT CASE
+ activity_hunt_host_desc_prestige: "$BULLET_WITH_TAB$Účastníci mohou získat [SelectLocalization( GetPlayer.GetGovernment.HasGovernmentFlag( 'government_is_merchant' ), 'hunt_fame', 'hunt_prestige' )]\n$BULLET_WITH_TAB$Účastníci mohou získat [legitimacy_i] [Concept('legitimacy','legitimitu')|E]\n$BULLET_WITH_TAB$Účastníkům může ubýt [stress_loss_i][Concept('stress','stres')|E]\n" # todo: CHANGED (predtym: $BULLET_WITH_TAB$Účastníci mohou získat [prestige_i|E][Concept('prestige','prestiž')|E]\n$BULLET_WITH_TAB$Účastníci moho)
+ activity_hunt_host_desc_trait: "$BULLET_WITH_TAB$Účastníci mohou získat @hunter_trait_icon! [GetTrait('lifestyle_hunter').GetName( GetNullCharacter )] [Concept('trait','rys')|E] / [Concept('trait_level_track_xp','zkušenosti rysu')|E]\n" # todo: CHANGED (predtym: $BULLET_WITH_TAB$Účastníci mohou získat [Concept('trait','rys')|E]: [GetTrait('lifestyle_hunter').GetName( GetNullCharac)
+ activity_hunt_host_desc: "[SelectLocalization(ObjectsEqual(GetPlayer.GetGovernment, GetGovernment('nomad_government')),'activity_hunt_nomad_additions_desc', 'blank_line')]$BULLET_WITH_TAB$Můžeš si zlepšit [Concept('opinion','mínění')|E] [Concept('vassal','vazalů')|E] s postojem [GetVassalStance( 'glory_hound' ).GetTextIcon][GetVassalStance( 'glory_hound' ).GetName]\n$BULLET_WITH_TAB$Můžeš získat trofejní [Concept('artifacts','artefakty')|E][SelectLocalization( GetPlayer.GetGovernment.HasGovernmentFlag( 'government_is_merchant' ), 'activity_hunt_expertise_desc', '' )]\n" # todo: CHANGED (predtym: [SelectLocalization(ObjectsEqual(GetPlayer.GetGovernment, GetGovernment('nomad_government')),'activity_hunt_nomad_additi)
+ activity_hunt_expertise_desc: "\n$BULLET_WITH_TAB$[GetTradeGoodCategory('trade_category_clothes').GetNameWithIcon] [Concept('trade_expertise','Obchodní zkušenost')|E]\n$BULLET_WITH_TAB$[GetTradeGoodCategory('trade_category_meat').GetNameWithIcon] [Concept('trade_expertise','Obchodní zkušenost')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  activity_legend_seed_tt: "$BULLET_WITH_TAB$Můžeš získat [Concept('legend_seed','zárodek legendy')|E]\n"
  activity_hunt_guest_desc_accolade: "$BULLET_WITH_TAB$Zúčastnění [Concept('acclaimed_knights','uznávaní rytíři')|E] mohou získat [Concept('glory','slávu')|E]\n"
- activity_hunt_host_desc_animal: "\nOdměny podle [Concept('hunt_danger_no_prefix','nebezpečnosti')|E]/vzácnosti kořisti:\n$BULLET_WITH_TAB$[prestige_i|E][Concept('prestige','Prestiž')|E]\n$BULLET_WITH_TAB$Trofejní [Concept('artifacts','artefakty')|E]"
+ activity_hunt_host_desc_animal: "\nOdměny podle [Concept('hunt_danger_no_prefix','nebezpečnosti')|E]/vzácnosti kořisti:\n$BULLET_WITH_TAB$[SelectLocalization( GetPlayer.GetGovernment.HasGovernmentFlag( 'government_is_merchant' ), 'hunt_fame', 'hunt_prestige' )]\n$BULLET_WITH_TAB$Trofejní [Concept('artifacts','artefakty')|E]" # todo: CHANGED (predtym: \nOdměny podle [Concept('hunt_danger_no_prefix','nebezpečnosti')|E]/vzácnosti kořisti:\n$BULLET_WITH_TAB$[prestige_i|E][)
  activity_hunt_host_desc_moh: "\n@warning_icon! #negative_value Nezaměstnáváš postavu na pozici: [GetCourtPositionType('master_of_hunt_court_position').GetName()]"
  activity_hunt_host_desc_huntsperson: "\n@warning_icon! #negative_value Nezaměstnáváš postavu na pozici: [GetCourtPositionType('huntperson_camp_officer').GetName()]"
  activity_hunt_host_desc_recent: "\n@warning_icon! #negative_value Ve všech držených [Concept('counties','hrabstvích')|E] se nedávno konala aktivita [GetActivityType('activity_hunt').GetName]"
@@ -76,11 +77,11 @@
  hunt_type_skill_learning: "$BULLET_WITH_TAB$@skill_learning_icon! Učenost"
  hunt_phase: "Lov"
  hunt_type_standard: "Lov"
- hunt_type_standard_desc: "$EFFECT_LIST_BULLET$ Vyber si kořist z různých místních zvířat\n$EFFECT_LIST_BULLET$ Zvyšuje [Concept('trait_level_track_xp','zkušenosti rysu')|E] na dráze $trait_track_hunter$: [GetTrait('lifestyle_hunter').GetName( GetNullCharacter )]\n$EFFECT_LIST_BULLET$ Vyšší [Concept('hunt_danger_no_prefix','nebezpečnost')|E] přináší více [prestige_i|E][Concept('prestige','prestiže')|E]\n$EFFECT_LIST_BULLET$ Pohlaví, kterým je povolen boj, se mohou aktivně účastnit\n$EFFECT_LIST_BULLET$ Pohlaví, kterým boj povolen není, mohou přihlížet\n#weak Hrdé a prohnané šelmy číhají v divočině. Přelstít a přemoci je prověřuje odvahu a tříbí schopnosti.#!"
+ hunt_type_standard_desc: "$EFFECT_LIST_BULLET$ Vyber si kořist z různých místních zvířat\n$EFFECT_LIST_BULLET$ Zvyšuje [Concept('trait_level_track_xp','zkušenosti rysu')|E] na dráze $trait_track_hunter$: [GetTrait('lifestyle_hunter').GetName( GetNullCharacter )]\n$EFFECT_LIST_BULLET$ Vyšší [Concept('hunt_danger_no_prefix','nebezpečnost')|E] přináší více [SelectLocalization( GetPlayer.GetGovernment.HasGovernmentFlag( 'government_is_merchant' ), 'hunt_fame', 'hunt_prestige' )]\n$EFFECT_LIST_BULLET$ Pohlaví, kterým je povolen boj, se mohou aktivně účastnit\n$EFFECT_LIST_BULLET$ Pohlaví, kterým boj povolen není, mohou přihlížet\n#weak Hrdé a prohnané šelmy číhají v divočině. Přelstít a přemoci je prověřuje odvahu a tříbí schopnosti.#!" # todo: CHANGED (predtym: $EFFECT_LIST_BULLET$ Vyber si kořist z různých místních zvířat\n$EFFECT_LIST_BULLET$ Zvyšuje [Concept('trait_level_track)
  hunt_type_legendary: "Legendární"
- hunt_type_legendary_desc: "$EFFECT_LIST_BULLET$ Vydej se po stopě bájného zvířete zpozorovaného v oblasti\n$EFFECT_LIST_BULLET$ Zvyšuje [Concept('trait_level_track_xp','zkušenosti rysu')|E] na dráze $trait_track_hunter$: [GetTrait('lifestyle_hunter').GetName( GetNullCharacter )]\n$EFFECT_LIST_BULLET$ Vyšší [Concept('hunt_danger_no_prefix','nebezpečnost')|E] přináší více [prestige_i|E][Concept('prestige','prestiže')|E]\n$EFFECT_LIST_BULLET$ Pohlaví, kterým je povolen boj, se mohou účastnit\n$EFFECT_LIST_BULLET$ Pohlaví, kterým boj povolen není, mohou přihlížet\n#weak Učenci často odbývají bájné tvory jako pouhé legendy, lesy však stále mohou skrývat mnohá tajemství.#!"
+ hunt_type_legendary_desc: "$EFFECT_LIST_BULLET$ Vydej se po stopě bájného zvířete zpozorovaného v oblasti\n$EFFECT_LIST_BULLET$ Zvyšuje [Concept('trait_level_track_xp','zkušenosti rysu')|E] na dráze $trait_track_hunter$: [GetTrait('lifestyle_hunter').GetName( GetNullCharacter )]\n$EFFECT_LIST_BULLET$ Vyšší [Concept('hunt_danger_no_prefix','nebezpečnost')|E] přináší více [SelectLocalization( GetPlayer.GetGovernment.HasGovernmentFlag( 'government_is_merchant' ), 'hunt_fame', 'hunt_prestige' )]\n$EFFECT_LIST_BULLET$ Pohlaví, kterým je povolen boj, se mohou účastnit\n$EFFECT_LIST_BULLET$ Pohlaví, kterým boj povolen není, mohou přihlížet\n#weak Učenci často odbývají bájné tvory jako pouhé legendy, lesy však stále mohou skrývat mnohá tajemství.#!" # todo: CHANGED (predtym: $EFFECT_LIST_BULLET$ Vydej se po stopě bájného zvířete zpozorovaného v oblasti\n$EFFECT_LIST_BULLET$ Zvyšuje [Concept('t)
  hunt_type_falconry: "Sokolnictví"
- hunt_type_falconry_desc: "$EFFECT_LIST_BULLET$ Vyber si kořist z různých druhů pernaté zvěře\n$EFFECT_LIST_BULLET$ Zvyšuje [Concept('trait_level_track_xp','zkušenosti rysu')|E] na dráze $trait_track_falconer$: [GetTrait('lifestyle_hunter').GetName( GetNullCharacter )]\n$EFFECT_LIST_BULLET$ Účastnit se mohou obě pohlaví\n#weak Ačkoli jsou lov s dravci a sokolnictví nákladné, mezi urozenými kratochvílemi se jen máloco vyrovná radosti z takového ovládnutí přírody.#!"
+ hunt_type_falconry_desc: "$EFFECT_LIST_BULLET$ Vyber si kořist z různých druhů pernaté zvěře\n$EFFECT_LIST_BULLET$ Zvyšuje [Concept('trait_level_track_xp','zkušenosti rysu')|E] na dráze $trait_track_falconer$: [GetTrait('lifestyle_hunter').GetName( GetNullCharacter )]\n$EFFECT_LIST_BULLET$ Obě pohlaví se mohou aktivně účastnit\n#weak Ačkoli jsou lov s dravci a sokolnictví nákladné, mezi urozenými kratochvílemi se jen máloco vyrovná radosti z takového ovládnutí přírody.#!" # todo: CHANGED (predtym: $EFFECT_LIST_BULLET$ Vyber si kořist z různých druhů pernaté zvěře\n$EFFECT_LIST_BULLET$ Zvyšuje [Concept('trait_level_t)
  hunt_option_attendants: "Doprovod"
  hunt_attendants_few: "Místní hajní"
  hunt_attendants_few_desc: "#weak Malé skupině doprovázejících lovců pomáhají místní hajní.#!"
@@ -92,9 +93,9 @@
  hunt_party_size_few: "Komorní družina"
  hunt_party_size_few_desc: "$BULLET_WITH_TAB$Připojí se [GetPlayer.Custom('GetHuntMasterTooltipDesc')], [GetCourtPositionType('bodyguard_court_position').GetName()], [GetCourtPositionType('court_physician_court_position').GetName()], tvé [Concept('spouses','choti')|E], [Concept('friends','přátelé')|E], [Concept('lovers','milenci')|E] a lovci\n\n#weak Malá skupina důvěrníků a dvořanů.#!"
  hunt_party_size_normal: "Přiměřená družina"
- hunt_party_size_normal_desc: "$BULLET_WITH_TAB$Po skončení získáš více [prestige_i|E][Concept('prestige','prestiže')|E]\n$BULLET_WITH_TAB$Připojí se $knight_culture_player_plural$ z řad bezzemků a také [Concept('courtiers','dvořané')|E] a [Concept('guests','hosté')|E], kteří mají [GetTrait('lazy').GetName( GetNullCharacter )] nebo vojenské vzdělání\n\n#weak Slušně početná skupina významných osobností a dvořanů z panství.#!"
+ hunt_party_size_normal_desc: "$BULLET_WITH_TAB$Po skončení získáš více [SelectLocalization( GetPlayer.GetGovernment.HasGovernmentFlag( 'government_is_merchant' ), 'hunt_fame', 'hunt_prestige' )]\n$BULLET_WITH_TAB$Připojí se $knight_culture_player_plural$ z řad bezzemků a také [Concept('courtiers','dvořané')|E] a [Concept('guests','hosté')|E], kteří mají [GetTrait('lazy').GetName( GetNullCharacter )] nebo vojenské vzdělání\n\n#weak Slušně početná skupina významných osobností a dvořanů z panství.#!" # todo: CHANGED (predtym: $BULLET_WITH_TAB$Po skončení získáš více [prestige_i|E][Concept('prestige','prestiže')|E]\n$BULLET_WITH_TAB$Připojí se $)
  hunt_party_size_many: "Početná družina"
- hunt_party_size_many_desc: "$BULLET_WITH_TAB$Po skončení získáš mnohem více [prestige_i|E][Concept('prestige','prestiže')|E]\n$BULLET_WITH_TAB$Připojí se všichni [Concept('courtiers','dvořané')|E] a [Concept('guests','hosté')|E]\n\n#weak Značná část dvora, panství i jeho okolí.#!"
+ hunt_party_size_many_desc: "$BULLET_WITH_TAB$Po skončení získáš mnohem více [SelectLocalization( GetPlayer.GetGovernment.HasGovernmentFlag( 'government_is_merchant' ), 'hunt_fame', 'hunt_prestige' )]\n$BULLET_WITH_TAB$Připojí se všichni [Concept('courtiers','dvořané')|E] a [Concept('guests','hosté')|E]\n\n#weak Značná část dvora, panství i jeho okolí.#!" # todo: CHANGED (predtym: $BULLET_WITH_TAB$Po skončení získáš mnohem více [prestige_i|E][Concept('prestige','prestiže')|E]\n$BULLET_WITH_TAB$Připo)
  hunt_activity_master_of_hunt_appointed: "Jmenování: $master_of_hunt_court_position$"
  hunt_attendants_roco_tt: "[SelectLocalization( HasDlcFeature( 'royal_court' ), 'hunt_attendants_roco_tt_ROCO_DLC', 'hunt_attendants_roco_tt_NO_ROCO_DLC' )]"
  hunt_attendants_roco_tt_ROCO_DLC: "\n$BULLET_WITH_TAB$Účinek se zvyšuje s úrovní $court_servants$ v rámci [Concept('court_amenities','dvorského komfortu')|E]"
@@ -167,7 +168,7 @@
  hunt_seek_gamebird_falconry_tt: "[host.GetShortUIName|U] se vydá na #V lov s dravcem#! s cílem ulovit [activity.Custom('GetAnimalTypeGamebird')|V]\n[activity.Custom('ActivityAnimalPrestige')]"
  hunt_seek_fox_tt: "Vydáš se hledat #V $animal_type_fox$#!:\n$hunt_animal_safety_safer$\n$hunt_animal_prestige_lowest$"
  hunt_seek_hare_tt: "Vydáš se hledat #V $animal_type_hare$#!:\n$hunt_animal_safety_safest$\n$hunt_animal_prestige_lowest$"
- hunt_seek_buck_tt: "Vydáš se hledat [host.Custom('GetRegionalDeerType')|V]:\n$hunt_animal_safety_middling$\n$hunt_animal_prestige_middling$"
+ hunt_seek_buck_tt: "Vydáš se hledat [host.Custom('GetRegionalDeerTypeArticle')] [host.Custom('GetRegionalDeerType')|V]:\n$hunt_animal_safety_middling$\n$hunt_animal_prestige_middling$" # todo: CHANGED (predtym: Vydáš se hledat [host.Custom('GetRegionalDeerType')|V]:\n$hunt_animal_safety_middling$\n$hunt_animal_prestige_middling$)
  hunt_seek_wolf_tt: "Vydáš se hledat [THIS.Char.Custom('GetRegionalWolfType')|V]:\n$hunt_animal_safety_middling$\n$hunt_animal_prestige_middling$"
  hunt_seek_boar_tt: "Vydáš se hledat #V $animal_type_boar$#!:\n$hunt_animal_safety_dangerous$\n$hunt_animal_prestige_high$"
  hunt_seek_hare_falconry_tt: "Pokusíš se #V lovit s dravcem#! #V zajíce#!:\n$hunt_animal_prestige_middling$"
@@ -177,7 +178,7 @@
  hunt_pelt_damaged_tt: "Trofejní [Concept('artifact','artefakt')|E] z kožešiny #negative_value nebude#! k dispozici"
  hunt_no_antlers_tt: "Trofejní [Concept('artifact','artefakt')|E] z paroží [activity.Custom('GetAnimalType')|U] #negative_value nebude#! k dispozici"
  hunt_skull_damaged_tt: "Trofejní [Concept('court_artifact','dvorský artefakt')|E] z lebky [activity.Custom('GetAnimalType')|U] #negative_value nebude#! k dispozici"
- hunt_female_quarry_tt: "Lov přinese #negative_value polovinu#! [prestige_i|E][Concept('prestige','prestiže')|E]"
+ hunt_female_quarry_tt: "Lov přinese #negative_value polovinu#! [SelectLocalization( GetPlayer.GetGovernment.HasGovernmentFlag( 'government_is_merchant' ), 'hunt_fame', 'hunt_prestige' )]" # todo: CHANGED (predtym: Lov přinese negative_value polovinu ! [prestige_i|E][Concept('prestige','prestiže')|E])
  hunt_female_quarry_piety_tt: "Lov přinese #negative_value polovinu#! [piety_i|E][Concept('piety','zbožnosti')|E]"
  hunt_no_artifact_tt: "Trofeje #negative_value nebudou#! k dispozici"
  hunt_random_attendee_injured_tt: "@death_icon!Náhodně vybraná zúčastněná postava utrpí zranění"
@@ -203,11 +204,13 @@
  hunt_animal_safety_middling: "@death_icon![Concept('hunt_danger_no_prefix','Nebezpečnost')|E]: Střední #weak (3/5)#!"
  hunt_animal_safety_dangerous: "@death_icon![Concept('hunt_danger_no_prefix','Nebezpečnost')|E]: #N Nebezpečná#! #weak (4/5)#!"
  hunt_animal_safety_treacherous: "@death_icon![Concept('hunt_danger_no_prefix','Nebezpečnost')|E]: #N Zrádná#! #weak (5/5)#!"
- hunt_animal_prestige_lowest: "[prestige_i|E][Concept('prestige','Prestiž')|E]: #N Zanedbatelná#! #weak (1/5)#!"
- hunt_animal_prestige_lower: "[prestige_i|E][Concept('prestige','Prestiž')|E]: #N Nevýrazná#! #weak (2/5)#!"
- hunt_animal_prestige_middling: "[prestige_i|E][Concept('prestige','Prestiž')|E]: Střední #weak (3/5)#!"
- hunt_animal_prestige_high: "[prestige_i|E][Concept('prestige','Prestiž')|E]: #P Působivá#! #weak (4/5)#!"
- hunt_animal_prestige_highest: "[prestige_i|E][Concept('prestige','Prestiž')|E]: #P Slavná#! #weak (5/5)#!"
+ hunt_animal_prestige_lowest: "[SelectLocalization( GetPlayer.GetGovernment.HasGovernmentFlag( 'government_is_merchant' ), 'hunt_fame', 'hunt_prestige' )]: #N Zanedbatelná#! #weak (1/5)#!" # todo: CHANGED (predtym: [prestige_i|E][Concept('prestige','Prestiž')|E]: N Zanedbatelná ! weak (1/5) !)
+ hunt_animal_prestige_lower: "[SelectLocalization( GetPlayer.GetGovernment.HasGovernmentFlag( 'government_is_merchant' ), 'hunt_fame', 'hunt_prestige' )]: #N Nevýrazná#! #weak (2/5)#!" # todo: CHANGED (predtym: [prestige_i|E][Concept('prestige','Prestiž')|E]: N Nevýrazná ! weak (2/5) !)
+ hunt_animal_prestige_middling: "[SelectLocalization( GetPlayer.GetGovernment.HasGovernmentFlag( 'government_is_merchant' ), 'hunt_fame', 'hunt_prestige' )]: Střední #weak (3/5)#!" # todo: CHANGED (predtym: [prestige_i|E][Concept('prestige','Prestiž')|E]: Střední weak (3/5) !)
+ hunt_animal_prestige_high: "[SelectLocalization( GetPlayer.GetGovernment.HasGovernmentFlag( 'government_is_merchant' ), 'hunt_fame', 'hunt_prestige' )]: #P Působivá#! #weak (4/5)#!" # todo: CHANGED (predtym: [prestige_i|E][Concept('prestige','Prestiž')|E]: P Působivá ! weak (4/5) !)
+ hunt_animal_prestige_highest: "[SelectLocalization( GetPlayer.GetGovernment.HasGovernmentFlag( 'government_is_merchant' ), 'hunt_fame', 'hunt_prestige' )]: #P Slavná#! #weak (5/5)#!" # todo: CHANGED (predtym: [prestige_i|E][Concept('prestige','Prestiž')|E]: P Slavná ! weak (5/5) !)
+ hunt_prestige: "[Concept('prestige_i','@prestige_icon!')|E][Concept('prestige','Prestiž')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ hunt_fame: "[Concept('prestige_experience_i','@prestige_icon!')|E][Concept('prestige_experience','Proslulost')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  hunt_increases_safety_tt: "Zvyšuje bezpečnost"
  hunt_character_wound_tt: "@warning_icon!Může dojít k vážnému zranění"
  hunt_attempted_accident_murder_tt: "@warning_icon! #X Po poslední „lovecké nehodě“ jsou lidé obezřetnější#!"
@@ -217,7 +220,7 @@
  hunt_every_attempted_murderer_tt: "Proti každému vrahovi:"
  activity_hunt_location_legendary_sighting_tt: "V [Concept('county','hrabství')|E] musí být [GetModifier('hunt_sighting_legendary_modifier').GetNameWithTooltip]"
  activity_hunt_location_any_game_tt: "V lokalitě se musí vyskytovat lovná zvěř"
- activity_hunt_selection_tooltip: "Vydej se se svým dvorem na lov divoké zvěře za zábavou a slávou\n\nPředpokládané odměny:\n$BULLET_WITH_TAB$[prestige_i] [Concept('prestige','Prestiž')|E]\n$BULLET_WITH_TAB$[legitimacy_i] Zisk [Concept('legitimacy','legitimity')|E]\n$BULLET_WITH_TAB$[stress_loss_i] Úbytek [Concept('stress','stresu')|E]"
+ activity_hunt_selection_tooltip: "Vydej se na lov divoké zvěře za zábavou a slávou\n\nPředpokládané odměny:\n$BULLET_WITH_TAB$[prestige_i] [Concept('prestige','Prestiž')|E]\n$BULLET_WITH_TAB$[legitimacy_i] [Concept('legitimacy','legitimita')|E]\n$BULLET_WITH_TAB$[stress_loss_i] [Concept('stress_loss','úbytek stresu')|E]\n$BULLET_WITH_TAB$@hunter_trait_icon! [GetTrait('lifestyle_hunter').GetName( GetNullCharacter )] [Concept('trait','rys')|E][SelectLocalization( GetPlayer.GetGovernment.HasGovernmentFlag( 'government_is_merchant' ), 'activity_hunt_expertise_desc', '' )]" # todo: CHANGED (predtym: Vydej se se svým dvorem na lov divoké zvěře za zábavou a slávou\n\nPředpokládané odměny:\n$BULLET_WITH_TAB$[prestige_i] )
  activity_hunt_nomad_additions_tooltip: "\n$BULLET_WITH_TAB$[GetPlayer.Custom('GetGovernmentIcon')] [GetPlayer.GetGovernment.GetName] [Concept('rulers','vládci')|E]: [GetModifier('mpo_si_slaughtered_animals').GetNameWithTooltip]\n$BULLET_WITH_TAB$[GetPlayer.Custom('GetGovernmentIcon')] [GetPlayer.GetGovernment.GetName] [Concept('rulers','vládci')|E]: [dread_i][Concept('dread','Hrůza')|E] ([GetModifier('hunt_sighting_dangerous_modifier').GetNameWithTooltip])\n$BULLET_WITH_TAB$[GetPlayer.Custom('GetGovernmentIcon')] [GetPlayer.GetGovernment.GetName] [Concept('rulers','vládci')|E]: [prowess_i][Concept('prowess','Udatnost')|E] ([GetModifier('hunt_sighting_dangerous_modifier').GetNameWithTooltip])"
  activity_hunt_nomad_additions_desc: "$BULLET_WITH_TAB$[GetPlayer.Custom('GetGovernmentIcon')] [GetPlayer.GetGovernment.GetName] [Concept('rulers','vládci')|E] mohou získat [GetModifier('mpo_si_slaughtered_animals').GetNameWithTooltip]\n$BULLET_WITH_TAB$[GetPlayer.Custom('GetGovernmentIcon')] [GetPlayer.GetGovernment.GetName] [Concept('rulers','vládci')|E] získají [dread_i][Concept('dread','hrůzu')|E] při odstranění [GetModifier('hunt_sighting_dangerous_modifier').GetNameWithTooltip]\n$BULLET_WITH_TAB$[GetPlayer.Custom('GetGovernmentIcon')] [GetPlayer.GetGovernment.GetName] [Concept('rulers','vládci')|E] získají [prowess_i][Concept('prowess','udatnost')|E] při odstranění [GetModifier('hunt_sighting_dangerous_modifier').GetNameWithTooltip]\n"
  nomad_good_hunt_tt: "Tahle kořist se bude skvěle hodit, až přijde [GetActivityType('activity_feast').GetName]!"
@@ -372,6 +375,43 @@
  animal_type_gorilla_plural: "gorily"
  animal_type_shape: "tvar"
  animal_type_shape_plural: "tvary"
+ animal_type_antelope_possessive: "antilopy" # todo: NEW TRANSLATION
+ animal_type_gazelle_possessive: "gazely" # todo: NEW TRANSLATION
+ animal_type_roe_possessive: "srnce" # todo: NEW TRANSLATION
+ animal_type_saiga_possessive: "sajgy" # todo: NEW TRANSLATION
+ animal_type_reindeer_possessive: "soba" # todo: NEW TRANSLATION
+ animal_type_buck_possessive: "jelena" # todo: NEW TRANSLATION
+ animal_type_elk_possessive: "losa" # todo: NEW TRANSLATION
+ animal_type_hart_possessive: "jelena" # todo: NEW TRANSLATION
+ animal_type_zubr_possessive: "zubra" # todo: NEW TRANSLATION
+ animal_type_wisent_possessive: "zubra" # todo: NEW TRANSLATION
+ animal_type_bison_possessive: "bizona" # todo: NEW TRANSLATION
+ animal_type_aurochs_possessive: "tura" # todo: NEW TRANSLATION
+ animal_type_fox_possessive: "lišky" # todo: NEW TRANSLATION
+ animal_type_hare_possessive: "zajíce" # todo: NEW TRANSLATION
+ animal_type_lion_possessive: "lva" # todo: NEW TRANSLATION
+ animal_type_tiger_possessive: "tygra" # todo: NEW TRANSLATION
+ animal_type_leopard_possessive: "levharta" # todo: NEW TRANSLATION
+ animal_type_boar_possessive: "kance" # todo: NEW TRANSLATION
+ animal_type_hyena_possessive: "hyeny" # todo: NEW TRANSLATION
+ animal_type_wolf_possessive: "vlka" # todo: NEW TRANSLATION
+ animal_type_lynx_possessive: "rysa" # todo: NEW TRANSLATION
+ animal_type_bear_possessive: "medvěda" # todo: NEW TRANSLATION
+ animal_type_unicorn_possessive: "jednorožce" # todo: NEW TRANSLATION
+ animal_type_dragon_possessive: "draka" # todo: NEW TRANSLATION
+ animal_type_stork_possessive: "čápa" # todo: NEW TRANSLATION
+ animal_type_crane_possessive: "jeřába" # todo: NEW TRANSLATION
+ animal_type_heron_possessive: "volavky" # todo: NEW TRANSLATION
+ animal_type_egret_possessive: "volavky" # todo: NEW TRANSLATION
+ animal_type_pelican_possessive: "pelikána" # todo: NEW TRANSLATION
+ animal_type_flamingo_possessive: "plameňáka" # todo: NEW TRANSLATION
+ animal_type_swan_possessive: "labutě" # todo: NEW TRANSLATION
+ animal_type_goose_possessive: "husy" # todo: NEW TRANSLATION
+ animal_type_duck_possessive: "kachny" # todo: NEW TRANSLATION
+ animal_type_pheasant_possessive: "bažanta" # todo: NEW TRANSLATION
+ animal_type_bustard_possessive: "dropa" # todo: NEW TRANSLATION
+ animal_type_grouse_possessive: "tetřeva" # todo: NEW TRANSLATION
+ animal_type_quail_possessive: "křepelky" # todo: NEW TRANSLATION
  hunt_animal_male_stag: "jelen"
  hunt_animal_male_dog: "pes"
  hunt_animal_male_jack: "samec"
@@ -389,13 +429,27 @@
  hunt_animal_female_leopardess: "levhartice"
  hunt_animal_female_fallback: "samice"
  hunt_animal_child_calf: "tele"
+ hunt_animal_child_calf_plural: "telata" # todo: NEW TRANSLATION
  hunt_animal_child_fawn: "kolouch"
+ hunt_animal_child_fawn_plural: "kolouši" # todo: NEW TRANSLATION
  hunt_animal_child_pup: "štěně"
+ hunt_animal_child_pup_plural: "mláďata" # todo: NEW TRANSLATION
  hunt_animal_child_kitten: "kotě"
+ hunt_animal_child_kitten_plural: "koťata" # todo: NEW TRANSLATION
+ hunt_animal_child_kit: "mládě" # todo: NEW TRANSLATION
+ hunt_animal_child_kit_plural: "mláďata" # todo: NEW TRANSLATION
  hunt_animal_child_leveret: "zajíče"
+ hunt_animal_child_leveret_plural: "zaječí mláďata" # todo: NEW TRANSLATION
  hunt_animal_child_piglet: "sele"
+ hunt_animal_child_piglet_plural: "selata" # todo: NEW TRANSLATION
  hunt_animal_child_cub: "mládě"
+ hunt_animal_child_cub_plural: "medvíďata" # todo: NEW TRANSLATION
+ hunt_animal_child_chick: "kuře" # todo: NEW TRANSLATION
+ hunt_animal_child_chick_plural: "kuřata" # todo: NEW TRANSLATION
  hunt_animal_child_fallback: "mládě"
+ hunt_animal_child_fallback_plural: "mláďata" # todo: NEW TRANSLATION
+ hunt_animal_child_infant: "nemluvně" # todo: NEW TRANSLATION
+ hunt_animal_child_infant_plural: "nemluvňata" # todo: NEW TRANSLATION
  hunt_animal_young_brocket: "špičák"
  hunt_animal_young_squeaker: "sele"
  hunt_animal_young_fallback: "mladé zvíře"
@@ -435,6 +489,15 @@
  hunt_animal_sound_honk: "kejhání"
  hunt_animal_sound_honk_present: "kejhá"
  hunt_animal_sound_honk_participle: "kejhající"
+ hunt_animal_sound_trumpet: "zatroubení" # todo: NEW TRANSLATION
+ hunt_animal_sound_trumpet_present: "troubí" # todo: NEW TRANSLATION
+ hunt_animal_sound_trumpet_participle: "troubící" # todo: NEW TRANSLATION
+ hunt_animal_sound_squawk: "krákání" # todo: NEW TRANSLATION
+ hunt_animal_sound_squawk_present: "kráká" # todo: NEW TRANSLATION
+ hunt_animal_sound_squawk_participle: "krákající" # todo: NEW TRANSLATION
+ hunt_animal_sound_whoop: "výsknutí" # todo: NEW TRANSLATION
+ hunt_animal_sound_whoop_present: "výská" # todo: NEW TRANSLATION
+ hunt_animal_sound_whoop_participle: "výskající" # todo: NEW TRANSLATION
  hunt_animal_sound_call: "volání"
  hunt_animal_sound_call_present: "volá"
  hunt_animal_sound_call_participle: "volající"
@@ -445,6 +508,7 @@
  hunt_animal_group_skulk: "smečka"
  hunt_animal_group_husk: "tlupa"
  hunt_animal_group_pride: "smečka"
+ hunt_animal_group_muster: "shromáždění" # todo: NEW TRANSLATION
  hunt_animal_group_mustering: "hejno"
  hunt_animal_group_sedge: "hejno"
  hunt_animal_group_siege: "hejno"
@@ -463,6 +527,7 @@
  hunt_animal_group_skulk_plural: "smečky"
  hunt_animal_group_husk_plural: "tlupy"
  hunt_animal_group_pride_plural: "smečky"
+ hunt_animal_group_muster_plural: "shromáždění" # todo: NEW TRANSLATION
  hunt_animal_group_mustering_plural: "hejna"
  hunt_animal_group_sedge_plural: "hejna"
  hunt_animal_group_siege_plural: "hejna"
@@ -480,6 +545,8 @@
  hunt_animal_danger_claws: "drápy"
  hunt_animal_danger_tusks: "kly"
  hunt_animal_danger_teeth: "zuby"
+ hunt_animal_danger_beak: "zobák" # todo: NEW TRANSLATION
+ hunt_animal_danger_talons: "pařáty" # todo: NEW TRANSLATION
  hunt_animal_strike_kick: "kopnutí"
  hunt_animal_strike_kick_present: "kope"
  hunt_animal_strike_kick_participle: "kopající"
@@ -510,6 +577,7 @@
  hunt_animal_feature_bill: "výrazný zobák"
  hunt_animal_feature_plumage: "kropenaté peří"
  hunt_animal_feature_long_legs: "dlouhé chůdovité nohy"
+ hunt_animal_feature_trunk: "vrásčitý chobot" # todo: NEW TRANSLATION
  hunt_animal_charge_bound: "skok"
  hunt_animal_charge_bound_present: "skáče"
  hunt_animal_charge_bound_participle: "skákající"
@@ -522,6 +590,39 @@
  hunt_animal_charge_hurtle: "výpad"
  hunt_animal_charge_hurtle_present: "řítí se"
  hunt_animal_charge_hurtle_participle: "řítící se"
+ hunt_animal_walk_trot: "klus" # todo: NEW TRANSLATION
+ hunt_animal_walk_trot_present: "kluše" # todo: NEW TRANSLATION
+ hunt_animal_walk_trot_participle: "klusající" # todo: NEW TRANSLATION
+ hunt_animal_walk_hop: "poskok" # todo: NEW TRANSLATION
+ hunt_animal_walk_hop_present: "poskakuje" # todo: NEW TRANSLATION
+ hunt_animal_walk_hop_participle: "poskakující" # todo: NEW TRANSLATION
+ hunt_animal_walk_pad: "plížení" # todo: NEW TRANSLATION
+ hunt_animal_walk_pad_present: "plíží se" # todo: NEW TRANSLATION
+ hunt_animal_walk_pad_participle: "plížící se" # todo: NEW TRANSLATION
+ hunt_animal_walk_strut: "vykračování" # todo: NEW TRANSLATION
+ hunt_animal_walk_strut_present: "vykračuje si" # todo: NEW TRANSLATION
+ hunt_animal_walk_strut_participle: "vykračující si" # todo: NEW TRANSLATION
+ hunt_animal_walk_waddle: "kolébání" # todo: NEW TRANSLATION
+ hunt_animal_walk_waddle_present: "kolébá se" # todo: NEW TRANSLATION
+ hunt_animal_walk_waddle_participle: "kolébající se" # todo: NEW TRANSLATION
+ hunt_animal_walk_walk: "chůze" # todo: NEW TRANSLATION
+ hunt_animal_walk_walk_present: "kráčí" # todo: NEW TRANSLATION
+ hunt_animal_walk_walk_participle: "kráčející" # todo: NEW TRANSLATION
+ terrain_dusty: "prašný" # todo: NEW TRANSLATION
+ terrain_muggy: "dusný" # todo: NEW TRANSLATION
+ terrain_windy: "větrný" # todo: NEW TRANSLATION
+ terrain_chilly: "chladný" # todo: NEW TRANSLATION
+ terrain_frosty: "mrazivý" # todo: NEW TRANSLATION
+ terrain_lush: "bujný" # todo: NEW TRANSLATION
+ terrain_bright: "světlý" # todo: NEW TRANSLATION
+ terrain_busy: "rušný" # todo: NEW TRANSLATION
+ terrain_bleached: "vybělený" # todo: NEW TRANSLATION
+ terrain_verdant: "zelenající se" # todo: NEW TRANSLATION
+ terrain_barren: "neúrodný" # todo: NEW TRANSLATION
+ terrain_damp: "vlhký" # todo: NEW TRANSLATION
+ terrain_dry: "suchý" # todo: NEW TRANSLATION
+ terrain_humid: "vlhký" # todo: NEW TRANSLATION
+ terrain_quiet: "tichý" # todo: NEW TRANSLATION
  foliage_dense_tree: "hustý les"
  foliage_tree_line: "okraj lesa"
  foliage_tree_specific: "stromy druhu [ROOT.Province.Custom('GetRandomRegionalWood')]"
@@ -534,15 +635,38 @@
  foliage_jungle: "lesklé listoví"
  foliage_reeds: "vlnící se rákosí"
  foliage_grass: "vysoká tráva"
+ foliage_dense_tree_adj: "hustě zalesněný" # todo: NEW TRANSLATION
+ foliage_tree_line_adj: "lemovaný stromy" # todo: NEW TRANSLATION
+ foliage_tree_specific_adj: "[ROOT.Province.Custom('GetRandomRegionalWood')]-lemovaný" # todo: NEW TRANSLATION
+ foliage_farm_adj: "lemovaný stromy" # todo: NEW TRANSLATION
+ foliage_pine_adj: "posetý borovicemi" # todo: NEW TRANSLATION
+ foliage_palm_adj: "posetý palmami" # todo: NEW TRANSLATION
+ foliage_bush_adj: "porostlý keři" # todo: NEW TRANSLATION
+ foliage_scrub_adj: "posetý křovinami" # todo: NEW TRANSLATION
+ foliage_undergrowth_adj: "zarostlý" # todo: NEW TRANSLATION
+ foliage_jungle_adj: "bujný" # todo: NEW TRANSLATION
+ foliage_reeds_adj: "zarostlý rákosím" # todo: NEW TRANSLATION
+ foliage_grass_adj: "travnatý" # todo: NEW TRANSLATION
  ground_leaves: "listí"
  ground_roots: "kořeny stromů"
  ground_mud: "bahno"
+ ground_puddle: "kaluže" # todo: NEW TRANSLATION
  ground_gravel: "štěrk"
  ground_sand: "písek"
  ground_rocks: "kamení"
  ground_grass: "tráva"
  ground_scrub: "křoviny"
  ground_dirt: "hlína"
+ ground_leaves_adj: "pokrytý listím" # todo: NEW TRANSLATION
+ ground_roots_adj: "posetý kořeny" # todo: NEW TRANSLATION
+ ground_mud_adj: "blátivý" # todo: NEW TRANSLATION
+ ground_puddle_adj: "rozbahněný" # todo: NEW TRANSLATION
+ ground_gravel_adj: "štěrkovitý" # todo: NEW TRANSLATION
+ ground_sand_adj: "písčitý" # todo: NEW TRANSLATION
+ ground_rocks_adj: "kamenitý" # todo: NEW TRANSLATION
+ ground_grass_adj: "travnatý" # todo: NEW TRANSLATION
+ ground_scrub_adj: "křovinatý" # todo: NEW TRANSLATION
+ ground_dirt_adj: "$ground_mud_adj$" # todo: NEW TRANSLATION
  weather_blizzard: "vánice"
  weather_sandstorm: "písečná bouře"
  weather_storm: "bouře"
@@ -640,12 +764,34 @@
  animal_type_raptor: "dravec"
  animal_type_raptor_plural: "dravci"
  animal_type_raptor_possessive: "dravčí"
+ animal_type_elephant: "slon" # todo: NEW TRANSLATION
+ animal_type_elephant_plural: "sloni" # todo: NEW TRANSLATION
+ animal_type_elephant_possessive: "sloní" # todo: NEW TRANSLATION
+ animal_type_monkey: "opice" # todo: NEW TRANSLATION
+ animal_type_monkey_plural: "opice" # todo: NEW TRANSLATION
+ animal_type_monkey_possessive: "opičí" # todo: NEW TRANSLATION
+ animal_type_parrot: "papoušek" # todo: NEW TRANSLATION
+ animal_type_parrot_plural: "papoušci" # todo: NEW TRANSLATION
+ animal_type_parrot_possessive: "papouščí" # todo: NEW TRANSLATION
+ animal_type_peacock: "páv" # todo: NEW TRANSLATION
+ animal_type_peacock_plural: "pávi" # todo: NEW TRANSLATION
+ animal_type_peacock_possessive: "paví" # todo: NEW TRANSLATION
+ animal_type_cockatoo: "kakadu" # todo: NEW TRANSLATION
+ animal_type_cockatoo_plural: "kakaduové" # todo: NEW TRANSLATION
+ animal_type_cockatoo_possessive: "kakaduí" # todo: NEW TRANSLATION
+ animal_type_caracal: "karakal" # todo: NEW TRANSLATION
+ animal_type_caracal_plural: "karakalové" # todo: NEW TRANSLATION
+ animal_type_caracal_possessive: "karakalí" # todo: NEW TRANSLATION
  hunt_animal_track_hoof: "kopyto"
  hunt_animal_track_hoof_plural: "kopyta"
  hunt_animal_track_trotter: "spár"
  hunt_animal_track_trotter_plural: "spáry"
  hunt_animal_track_paw: "tlapa"
  hunt_animal_track_paw_plural: "tlapy"
+ hunt_animal_track_foot: "stopa" # todo: NEW TRANSLATION
+ hunt_animal_track_foot_plural: "stopy" # todo: NEW TRANSLATION
+ hunt_animal_track_print: "otisk" # todo: NEW TRANSLATION
+ hunt_animal_track_print_plural: "otisky" # todo: NEW TRANSLATION
  hunt_martial_gender_female: "Účastnice"
  hunt_martial_gender_male: "Účastník"
  hunt_martial_gender_equal: "Účastník"
@@ -669,6 +815,7 @@
  activity_huntmaster_tooltip_desc_adventurer: "[GetCourtPositionType('huntperson_camp_officer').GetName()]"
  activity_huntmaster_tooltip_desc_regular: "[GetCourtPositionType('master_of_hunt_court_position').GetName()]"
  followers_adventurer: "táboroví družiníci"
+ associates_company: "společníci družiny" # todo: NEW TRANSLATION
  servants_desc_regular: "služebníci"
  flushers_adventurer: "naháněči"
  gamekeepers_nomadic: "mistři štvanice"

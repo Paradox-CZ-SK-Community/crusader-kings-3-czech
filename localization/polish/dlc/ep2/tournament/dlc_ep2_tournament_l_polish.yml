@@ -21,10 +21,10 @@
  activity_tournament: "Velký turnaj"
  activity_tournament_plural: "Velké turnaje"
  activity_tournament_desc: "Uspořádej velkolepou sérii bojových nebo kulturních [Concept('contests','soutěží')|E], které přilákají soupeře z blízka i daleka. V turnajových kláních pak změří své síly v boji o [Concept('prizes','ceny')|E] a [Concept('prestige','prestiž')|E]."
- activity_tournament_host_desc: "$BULLET_WITH_TAB$[prestige_i|E] [Concept('prestige','Prestiž')|EU]\n$BULLET_WITH_TAB$[legitimacy_i] [Concept('legitimacy','Legitimita')|EU]\n$BULLET_WITH_TAB$[stress_loss_i] [Concept('stress_loss','Úbytek stresu')|EU]\n$BULLET_WITH_TAB$[GetTrait('tourney_participant').GetName( GetNullCharacter )] [Concept('trait_level_track_xp','Zkušenosti rysu')|EU]\n$BULLET_WITH_TAB$[Concept('acclaimed_knights','Uznávaní rytíři')|EU] získávají [Concept('glory','slávu')|E]"
- activity_tournament_selection_tooltip: "Pozvi své poddané a sousedy na velkolepou podívanou plnou soutěží. Zúčastnit se mohou také tvoji $knight_culture_player_plural$.\n\nOčekávané odměny:\n$BULLET_WITH_TAB$[prestige_i] [Concept('prestige','Prestiž')|EU]\n$BULLET_WITH_TAB$[legitimacy_i] Zisk [Concept('legitimacy','legitimity')|E]\n$BULLET_WITH_TAB$[stress_loss_i] Úbytek [Concept('stress','stresu')|E]"
+ activity_tournament_host_desc: "$BULLET_WITH_TAB$[Concept('prestige_i','@prestige_icon!')|E] [Concept('prestige','Prestiž')|EU]\n$BULLET_WITH_TAB$[legitimacy_i] [Concept('legitimacy','Legitimita')|EU]\n$BULLET_WITH_TAB$[stress_loss_i] [Concept('stress_loss','Úbytek stresu')|EU]\n$BULLET_WITH_TAB$[GetTrait('tourney_participant').GetName( GetNullCharacter )] [Concept('trait_level_track_xp','Zkušenosti rysu')|EU]\n$BULLET_WITH_TAB$[Concept('acclaimed_knights','Uznávaní rytíři')|EU] získávají [Concept('glory','slávu')|E]" # todo: CONCEPT CASE
+ activity_tournament_selection_tooltip: "Pozvi své poddané a sousedy na velkolepou podívanou plnou soutěží. Zúčastnit se mohou také tvoji $knight_culture_player_plural$.\n\nOčekávané odměny:\n$BULLET_WITH_TAB$[prestige_i] [Concept('prestige','Prestiž')|EU]\n$BULLET_WITH_TAB$[legitimacy_i] [Concept('legitimacy','legitimity')|E]\n$BULLET_WITH_TAB$[stress_loss_i] Úbytek [Concept('stress_loss','stresu')|E]" # todo: CHANGED (predtym: Pozvi své poddané a sousedy na velkolepou podívanou plnou soutěží. Zúčastnit se mohou také tvoji $knight_culture_player_)
  tournament_contest: "Soutěž"
- progress_to_victory: "$game_concept_progress_to_victory$"
+ progress_to_victory: "Postup k vítězství" # todo: CONCEPT CASE
  progress_to_victory_desc: "$game_concept_progress_to_victory_desc$"
  activity_tournament_destination_selection: ""
  activity_tournament_guest_help_text: "Všichni [Concept('guests','hosté')|E] budou mít možnost pokusit se kvalifikovat do [Concept('contest','soutěže')|E], pokud splňují podmínky účasti, a následně soutěžit na [CZActivity('activity_tournament','L')].\n\nHosté, kteří podmínky nesplňují, mohou navštěvovat [Concept('locales','stanoviště')|E], získávat jedinečné odměny a sledovat průběh jednotlivých soutěží."
@@ -107,7 +107,7 @@
  tournament_knight_qualify_multi_desc: "Do soutěže v disciplíně „[activity.GetCurrentPhase.GetPhase.GetName]“, kterou pořádá [host.GetShortUIName], postupují [knight_1.GetTitledFirstName] a tvoji další $knight_culture_player_plural_no_tooltip$ (počet: [qualification_liege.MakeScope.Var('qualified_knights_count').GetValue|0V])"
  tournament_qualify_fail_title: "Neúspěšná kvalifikace: [activity.GetCurrentPhase.GetPhase.GetName]"
  tournament_qualify_fail_desc: "Kvalifikace do soutěže v disciplíně „[activity.GetCurrentPhase.GetPhase.GetName]“, kterou pořádá [host.GetShortUIName], ti nevyšla"
- tournament_champion_qualify_fail_title: "Šampion neprošel kvalifikací"
+ tournament_champion_qualify_fail_title: "Šampion [Select_CString(ROOT.Char.IsFemale,'neprošla','neprošel')] kvalifikací" # todo: GENDER FORM ROOT.Char - over, ci ROOT je postava, ktorej sa text tyka
  tournament_champion_qualify_fail_desc: "[Select_CString(contest_champion.IsFemale,'Tvé šampionce','Tvému šampionovi')|U] [contest_champion.Custom('CZ_TitledFirstName_D')] se nepodařilo kvalifikovat do soutěže v disciplíně „[activity.GetCurrentPhase.GetPhase.GetName]“, kterou pořádá [host.GetShortUIName]"
  tournament_qualify_race_desc: "Tvůj kůň byl přihlášen do soutěže v disciplíně „[activity.GetCurrentPhase.GetPhase.GetName]“, kterou pořádá [host.GetShortUIName]"
  tournament_qualify_fail_race_desc: "Tvá přihláška do soutěže v disciplíně „[activity.GetCurrentPhase.GetPhase.GetName]“, kterou pořádá [host.GetShortUIName], neprošla kvalifikací"
@@ -132,7 +132,7 @@
  locale_window_widget_progress_to_victory_tooltip_player_ptv: "[GetPlayer.MakeScope.Var( 'progress_to_victory' ).GetValue|0]"
  locale_window_widget_progress_to_victory_tooltip_threshold_ptv: "[Activity.MakeScope.Var( 'progress_to_victory_threshold' ).GetValue|0]"
  locale_window_widget_progress_to_victory_tooltip_above_threshold: "Tvá hodnota [Concept('progress_to_victory','postupu k vítězství')|E] je dostatečná pro kvalifikaci do nadcházející soutěže."
- locale_window_widget_progress_to_victory_tooltip_below_threshold: "Pro kvalifikaci do nadcházející soutěže potřebuješ zvýšit hodnotu [Concept('progress_to_victory','postupu k vítězství')|E] alespoň o #bold [Subtract_CFixedPoint( Activity.MakeScope.Var('progress_to_victory_threshold').GetValue, GetPlayer.MakeScope.Var('progress_to_victory').GetValue )|V0]#!.\n\n$game_concept_progress_to_victory_locale_tt$"
+ locale_window_widget_progress_to_victory_tooltip_below_threshold: "Pro kvalifikaci do nadcházející soutěže potřebuješ zvýšit hodnotu [Concept('progress_to_victory','postupu k vítězství')|E] alespoň o #bold [Subtract_CFixedPoint( Activity.MakeScope.Var('progress_to_victory_threshold').GetValue, GetPlayer.MakeScope.Var('progress_to_victory').GetValue )|V0]#!.\n\nNavštěvuj [Concept('locales','místa')|El], kde se ti naskytnou příležitosti zlepšit své šance nebo sabotovat soupeře." # todo: CONCEPT CASE
  locale_window_status_icon_contestant_tooltip: "Účastníš se nadcházející soutěže v disciplíně „[Activity.GetCurrentPhase.GetPhase.GetName]“."
  locale_window_status_icon_spectator_tooltip: "Budeš sledovat nadcházející soutěž v disciplíně „[Activity.GetCurrentPhase.GetPhase.GetName]“."
  locale_window_contest_information_header: "Informace o soutěži"
@@ -205,7 +205,7 @@
  tournament_locale_tournament_grounds: "Turnajové cvičiště"
  tournament_locale_tournament_grounds_desc: "Cvičiště určené k přípravě na turnaj. Čas strávený zde zvýší tvůj [Concept('progress_to_victory','postup k vítězství')|E]."
  tournament_locale_settlement: "Vesnice"
- tournament_locale_settlement_desc: "Nejbližší osada. Můžeš zde zvýšit [Concept('county_control','kontrolu hrabství')|E], zlepšit [Concept('county_opinion','lidové mínění')|E] a setkávat se s místními obyvateli."
+ tournament_locale_settlement_desc: "Nejbližší osada. Můžeš zde zvýšit [Concept('county_control','kontrolu hrabství')|E], zlepšit [Concept('popular_opinion','lidové mínění')|E] a setkávat se s místními obyvateli." # todo: CHANGED (predtym: Nejbližší osada. Můžeš zde zvýšit [Concept('county_control','kontrolu hrabství')|E], zlepšit [Concept('county_opinion',')
  tournament_locale_visitor_camp: "Tábor návštěvníků"
  tournament_locale_visitor_camp_desc: "Návštěvníci si toto prostranství zabrali pro sebe. Můžeš se zde setkat s ostatními [Concept('contestants','soutěžícími')|E], nebo proti nim podniknout sabotáž."
  tournament_locale_religious_building: "Chrám"
@@ -678,19 +678,19 @@
  activity_tournament_province_royal_armory_01_desc: "#P ++ $building_type_royal_armory_01$#!"
  activity_tournament_province_generic_university_desc: "#P ++ $building_type_generic_university$#!"
  activity_tournament_province_war_camps_01_desc: "#P + $building_type_war_camps_01$#!"
- activity_tournament_province_barracks_01_desc: "#P + $building_type_barracks_01$#!"
- activity_tournament_province_regimental_grounds_01_desc: "#P + $building_type_regimental_grounds_01$#!"
  activity_tournament_province_stables_01_desc: "#P + $building_type_stables_01$#!"
+ activity_tournament_province_knights_hall_desc: "#P + $building_type_royal_knights_hall_1$#!" # todo: NEW TRANSLATION
+ activity_tournament_province_chapter_house_desc: "#P + $building_type_banner_halls_1$#!" # todo: NEW TRANSLATION
  activity_tournament_province_military_camps_01_desc: "#P + $building_type_military_camps_01$#!"
  activity_tournament_province_smiths_01_desc: "#P + $building_type_smiths_01$#!"
  activity_tournament_province_desc_terrain_good: "#P + Vhodný terén#!"
  activity_tournament_province_desc_terrain_bad: "#N - Nevhodný terén#!"
  activity_tournament_province_desc_terrain_verybad: "#N -- Horský terén#!"
  activity_tournament_province_desc_terrain_terrible: "#N --- Podmáčený terén#!"
- activity_tournament_province_desc_development_great: "#P +++ Rozvoj hrabství#!"
- activity_tournament_province_desc_development_good: "#P ++ Rozvoj hrabství#!"
- activity_tournament_province_desc_development_ok: "#P + Rozvoj hrabství#!"
- activity_tournament_province_desc_development_bad: "#N - Rozvoj hrabství#!"
+ activity_tournament_province_desc_prosperity_great: "#P +++ Prosperita hrabství#!" # todo: NEW TRANSLATION
+ activity_tournament_province_desc_prosperity_good: "#P ++ Prosperita hrabství#!" # todo: NEW TRANSLATION
+ activity_tournament_province_desc_prosperity_ok: "#P + Prosperita hrabství#!" # todo: NEW TRANSLATION
+ activity_tournament_province_desc_prosperity_bad: "#N - Prosperita hrabství#!" # todo: NEW TRANSLATION
  tournament_personal_champion_tt: "[tournament_special_guest_champion.GetFirstNameNoTooltip|U] [Select_CString(tournament_special_guest_champion.IsFemale,'byla jmenována tvou šampionkou','byl jmenován tvým šampionem')]"
  locale_window_widget_progress_to_victory_label_idle: "Prozkoumáváš turnajové prostranství"
  locale_window_widget_progress_to_victory_label_passive_not_competing: "Právě #bold nesoutěžíš#!"
@@ -758,6 +758,7 @@
  ACTIVITY_GUEST_KNIGHT_REASON: "Je tvým [Concept('knight','rytířem')|E]: $VALUE|=+0$"
  ACTIVITY_GUEST_COURTIER_REASON: "Je tvým [Concept('courtier','dvořanem')|E]: $VALUE|=+0$"
  ACTIVITY_GUEST_REPUBLIC_THEOCRACY: "Je součástí [Concept('theocracy','teokracie')|E] nebo [Concept('republic','republiky')|E]: $VALUE|=+0$"
+ ACTIVITY_GUEST_MERCHANT: "[ROOT.Char.GetSheHe|U] je [Concept('merchant','kupec')|E]: $VALUE|=+0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  ACTIVITY_GUEST_BARON: "[Concept('baron','Baron')|EU]: $VALUE|=+0$"
  ACTIVITY_GUEST_SICK: "Nemoc: $VALUE|=+0$"
  ACTIVITY_GUEST_PROWESS: "[Concept('prowess','Udatnost')|EU]: $VALUE|=+0$"

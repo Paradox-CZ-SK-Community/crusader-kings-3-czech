@@ -11,6 +11,18 @@
  MAA_SIEGE_TIER_DIFF: "$EFFECT_LIST_BULLET$Úroveň obléhání: $VALUE|0V$"
  MAA_PURSUIT_DIFF: "$EFFECT_LIST_BULLET$[Concept('pursuit','Pronásledování')|E]: $VALUE|0+=$"
  MAA_SCREEN_DIFF: "$EFFECT_LIST_BULLET$[Concept('screen','Krytí')|E]: $VALUE|0+=$"
+ MAA_MAINTENANCE_LOW: "" # todo: NEW TRANSLATION
+ MAA_MAINTENANCE_HIGH: "" # todo: NEW TRANSLATION
+ MAA_REGIMENT_HIGH_MONTHLY_MAINTENANCE_COST_BREAKDOWN: "#T [Concept('full_maintenance','Plné náklady na údržbu')|E]: $COST$#!\n$BREAKDOWN$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MAA_REGIMENT_LOW_MONTHLY_MAINTENANCE_COST_BREAKDOWN: "#T [Concept('reduced_maintenance','Snížené náklady na údržbu')|E]: $COST$#!\n$BREAKDOWN$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MAA_TYPE_HIGH_MONTHLY_MAINTENANCE_COST_BREAKDOWN: "#T [Concept('full_maintenance','Plné náklady na údržbu')|E]: $COST$#!\n$BREAKDOWN$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MAA_TYPE_LOW_MONTHLY_MAINTENANCE_COST_BREAKDOWN: "#T [Concept('reduced_maintenance','Snížené náklady na údržbu')|E]: $COST$#!\n$BREAKDOWN$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MAA_TYPE_BASE_COST: "$great_project_base_contribution_cost_desc$: $COST$" # todo: NEW TRANSLATION
+ MAA_HOLDER_MULTIPLIER: "[Character.GetName]" # todo: NEW TRANSLATION
+ MAA_REGIMENT_RAISED_MULTIPLIER: "Povoláno $BREAKDOWN_MULTIPLICATION_PREFIX$$MULTIPLIER|2$" # todo: NEW TRANSLATION
+ MAA_REGIMENT_UNRAISED_MULTIPLIER: "Nepovoláno $BREAKDOWN_MULTIPLICATION_PREFIX$$MULTIPLIER|2$" # todo: NEW TRANSLATION
+ MAA_CONTROL_VALUE: "$EFFECT_LIST_BULLET$[Concept('control_baseline','Základní úroveň kontroly')|E] v umístěném [Concept('county','hrabství')|E]: $VALUE|1=V$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MAA_REINFORCEMENT_RATE: "$EFFECT_LIST_BULLET$Rychlost doplňování při umístění: $VALUE|1=V$" # todo: NEW TRANSLATION
  MAA_COUNTERS_EFFECT: "$EFFECT_LIST_BULLET$Kontruje $TYPE|V$"
  MAA_COUNTERS_EFFECT_SHORT: "$TYPE|V$"
  MAA_COUNTERS_LABEL: "[MenAtArmsType.GetNameNoTooltip] [Concept('counters','kontrují')|E] tyto typy:\n[MenAtArmsType.GetCountersString]"
@@ -45,16 +57,27 @@
  REGIMENT_SCREEN_TT: "#T [Concept('screen','Krytí')|E]: [MenAtArmsType.GetStat( GetPlayer, Province.Self, Title.Self, 'screen' )|1V]#!\n[MenAtArmsType.GetStatDesc( GetPlayer, Province.Self, Title.Self, 'screen' )]"
  REGIMENT_SIEGE: "#V +[MenAtArmsType.GetStat( GetPlayer, Province.Self, Title.Self, 'siege_value' )|1V]#!/den"
  REGIMENT_SIEGE_TT: "#T [Concept('siege_progress','Postup obléhání')|E]: [MenAtArmsType.GetStat( GetPlayer, Province.Self, Title.Self, 'siege_value' )|1V]/den#!\n[MenAtArmsType.GetStatDesc( GetPlayer, Province.Self, Title.Self, 'siege_value' )]"
+ REGIMENT_MAINTENANCE_LOW_TT: "#T Náklady na [Concept('reduced_maintenance','snížené náklady na údržbu')|E]: [MenAtArmsType.GetStat( GetPlayer, Province.Self, Title.Self, 'maintenance_low' )|1V]#!\n[MenAtArmsType.GetStatDesc( GetPlayer, Province.Self, Title.Self, 'maintenance_low' )]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ REGIMENT_MAINTENANCE_HIGH_TT: "#T Náklady na [Concept('full_maintenance','plné náklady na údržbu')|E]: [MenAtArmsType.GetStat( GetPlayer, Province.Self, Title.Self, 'maintenance_high' )|1V]#!\n[MenAtArmsType.GetStatDesc( GetPlayer, Province.Self, Title.Self, 'maintenance_high' )]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ REGIMENT_CONTROL_VALUE: "#V +[MenAtArmsType.GetStat( GetPlayer, Province.Self, Title.Self, 'control_value' )|1V]#!" # todo: NEW TRANSLATION
+ REGIMENT_CONTROL_VALUE_TT: "#T [Concept('county_control','Kontrola hrabství')|E] v umístěné državě: [MenAtArmsType.GetStat( GetPlayer, Province.Self, Title.Self, 'control_value' )|1V]#!\n[MenAtArmsType.GetStatDesc( GetPlayer, Province.Self, Title.Self, 'control_value' )]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ REGIMENT_REINFORCEMENT_VALUE_TT: "#T Rychlost doplňování při umístění: [MenAtArmsType.GetStat( GetPlayer, Province.Self, Title.Self, 'reinforcement_rate' )|1V]#!\n[MenAtArmsType.GetStatDesc( GetPlayer, Province.Self, Title.Self, 'reinforcement_rate' )]" # todo: NEW TRANSLATION
  REGIMENT_PROVINCE_DAMAGE: "[MenAtArmsType.GetProvinceStat( GetPlayer, Province.Self, Title.Self, 'damage' )|1=+^]"
  REGIMENT_PROVINCE_TOUGHNESS: "[MenAtArmsType.GetProvinceStat( GetPlayer, Province.Self, Title.Self, 'toughness' )|1=+^]"
  REGIMENT_PROVINCE_PURSUIT: "[MenAtArmsType.GetProvinceStat( GetPlayer, Province.Self, Title.Self, 'pursuit' )|1=+^]"
  REGIMENT_PROVINCE_SCREEN: "[MenAtArmsType.GetProvinceStat( GetPlayer, Province.Self, Title.Self, 'screen' )|1=+^]"
  REGIMENT_PROVINCE_SIEGE: "[MenAtArmsType.GetProvinceStat( GetPlayer, Province.Self, Title.Self, 'siege_value' )|2=+^]/den"
+ REGIMENT_PROVINCE_MAINTENANCE_LOW: "[MenAtArmsType.GetProvinceStat( GetPlayer, Province.Self, Title.Self, 'maintenance_low' )|2=-^]" # todo: NEW TRANSLATION
+ REGIMENT_PROVINCE_MAINTENANCE_HIGH: "[MenAtArmsType.GetProvinceStat( GetPlayer, Province.Self, Title.Self, 'maintenance_high' )|2=-^]" # todo: NEW TRANSLATION
+ REGIMENT_PROVINCE_CONTROL_VALUE: "[MenAtArmsType.GetProvinceStat( GetPlayer, Province.Self, Title.Self, 'control_value' )|1=+^]" # todo: NEW TRANSLATION
  REGIMENT_PROVINCE_DAMAGE_TT: "#T Dodatečné [Concept('damage','poškození')|E]: $REGIMENT_PROVINCE_DAMAGE$#!\n[MenAtArmsType.GetProvinceStatDesc( GetPlayer, Province.Self, 'damage' )]"
  REGIMENT_PROVINCE_TOUGHNESS_TT: "#T Dodatečná [Concept('toughness','houževnatost')|E]: $REGIMENT_PROVINCE_TOUGHNESS$#!\n[MenAtArmsType.GetProvinceStatDesc( GetPlayer, Province.Self, 'toughness' )]"
  REGIMENT_PROVINCE_PURSUIT_TT: "#T Dodatečné [Concept('pursuit','pronásledování')|E]: $REGIMENT_PROVINCE_PURSUIT$#!\n[MenAtArmsType.GetProvinceStatDesc( GetPlayer, Province.Self, 'pursuit' )]"
  REGIMENT_PROVINCE_SCREEN_TT: "#T Dodatečné [Concept('screen','krytí')|E]: $REGIMENT_PROVINCE_SCREEN$#!\n[MenAtArmsType.GetProvinceStatDesc( GetPlayer, Province.Self, 'screen' )]"
  REGIMENT_PROVINCE_SIEGE_TT: "#T Dodatečný [Concept('siege_progress','postup obléhání')|E]: $REGIMENT_PROVINCE_SIEGE$#!\n[MenAtArmsType.GetProvinceStatDesc( GetPlayer, Province.Self, 'siege_value' )]"
+ REGIMENT_PROVINCE_CONTROL_TT: "#T Dodatečná [Concept('control','kontrola')|E]: $REGIMENT_PROVINCE_CONTROL_VALUE$#!\n[MenAtArmsType.GetProvinceStatDesc( GetPlayer, Province.Self, 'control_value' )]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ REGIMENT_PROVINCE_MAINTENANCE_LOW_TT: "#T Náklady na [Concept('reduced_maintenance','snížené náklady na údržbu')|E]: $REGIMENT_PROVINCE_MAINTENANCE_LOW$#!\n[MenAtArmsType.GetProvinceStatDesc( GetPlayer, Province.Self, 'maintenance_low' )]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ REGIMENT_PROVINCE_MAINTENANCE_HIGH_TT: "#T Náklady na [Concept('full_maintenance','plné náklady na údržbu')|E]: $REGIMENT_PROVINCE_MAINTENANCE_HIGH$#!\n[MenAtArmsType.GetProvinceStatDesc( GetPlayer, Province.Self, 'maintenance_high' )]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  REGIMENT_ORIGIN_LOCATION: "[Concept('stationed','Umístění')|E]: [Province.GetBaronyNameExplicitly]"
  REGIMENT_NO_ORIGIN_LOCATION: "@warning_icon! #X Pluk není [Concept('stationed','umístěn')|E] v žádné [Concept('holding','državě')|E]#!"
  OPEN_MAA_ORIGIN_SELECT_VIEW: "#T Změnit [Concept('stationed_holding','državu umístění')|E]#!"
@@ -74,7 +97,8 @@
  REPLACE_MAA_ORIGIN_BODY: "Nahradit [Concept('stationed','umístěný')|E] pluk [Province.GetMaaOriginHere.GetName] v [Province.GetBaronyNameExplicitly] plukem [Regiment.GetName]"
  REPLACE_MAA_ORIGIN_ACCEPT: "Nahradit"
  VIEW_MAA_ORIGIN_TT: "#T Zobrazit [Concept('stationed_regiment','umístěný pluk')|E]#!"
- SHOW_MAA_ORIGIN_TT: "#T [Concept('stationed_regiment','Umístěný pluk')|E]#!\n[Province.GetTitle.GetHolder.GetShortUIName|U] [Province.GetTitle.GetHolder.LocalPlayerString( 'máš', 'má' )] v této [Concept('holding','državě')|E] [Concept('stationed','umístěný')|E] [Concept('regiment','pluk')|E] [Province.GetMaaOriginHere.GetName] #weak ([Province.GetMaaOriginHere.GetMAAType.GetBaseTypeName])#!."
+ SHOW_MAA_ORIGIN_TT: "#T [Concept('stationed_regiment','Umístěný pluk')|E]#!\n[Province.GetTitle.GetHolder.GetShortUIName|U] [Province.GetTitle.GetHolder.LocalPlayerString( 'máš', 'má' )] v této [Concept('holding','državě')|E] [Concept('stationed','umístěný')|E] [Concept('regiment','pluk')|E] [Province.GetMaaOriginHere.GetName] #weak ([Province.GetMaaOriginHere.GetMAAType.GetBaseTypeName])#!.[SelectLocalization(GreaterThan_CFixedPoint(Province.GetMaaOriginHere.GetMAAType.GetStat(Province.GetTitle.GetHolder, Province.Self, Province.GetTitle, 'control_value'), '(CFixedPoint)0'), 'SHOW_MAA_ORIGIN_TT_CONTROL_ADD', '')]" # todo: CHANGED (predtym: T [Concept('stationed_regiment','Umístěný pluk')|E] !\n[Province.GetTitle.GetHolder.GetShortUIName|U] [Province.GetTitle)
+ SHOW_MAA_ORIGIN_TT_CONTROL_ADD: "\nPřidává [Province.GetMaaOriginHere.GetMAAType.GetStat( Province.GetTitle.GetHolder, Province.Self, Province.GetTitle, 'control_value' )|1=+^] @control_icon![Concept('control_baseline','základní úroveň kontroly')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  MAA_UNSTATIONED: "Neumístěno"
  REGIMENT_SIEGE_MAX_FORT_LEVEL: "Účinné až do [Concept('fort_level','úrovně opevnění')|E] #high [MenAtArmsType.GetMaxFortLevel]#!"
  REGIMENT_STAT_ENTRY: "$KEY$: $VALUE|+=0$"
@@ -84,7 +108,7 @@
  REGIMENT_WINTER_NORMAL_MODIFIER_TOOLTIP: "#T Za běžné zimy#!\n[MenAtArmsType.GetWinterNormalModifier.GetEffectString]"
  REGIMENT_WINTER_HARSH_MODIFIER_TOOLTIP: "#T Za kruté zimy#!\n[MenAtArmsType.GetWinterHarshModifier.GetEffectString]"
  TRANSFER_TITLE_MAA_NOT_TITLE_MAA: "@warning_icon! Mezi tituly lze převádět pouze titulové pluky [Concept('men_at_arms','ozbrojenců')|E]."
- TRANSFER_TITLE_MAA_NOT_ADMINISTRATIVE: "@warning_icon! Typ vlády titulu [TITLE.GetNameNoTooltip] #bold není#! [GetGovernment( 'administrative_government' ).GetName]."
+ TRANSFER_TITLE_MAA_NOT_SUPPORTED: "@warning_icon! [TITLE.GetNameNoTooltip] #bold není#! pod [Concept('government','vládou')|E], který podporuje [Concept('title','titul')|E] [men_at_maa|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  TRANSFER_TITLE_MAA_ALREADY_CONTROLS_MAA: "@warning_icon! [TITLE.GetName] už ovládá jeden nebo více cílových pluků [Concept('men_at_arms','ozbrojenců')|E]."
  TRANSFER_TITLE_MAA_ALREADY_OWNS_MAA: "@warning_icon! [TITLE.GetName] už ovládá jeden nebo více cílových pluků [Concept('men_at_arms','ozbrojenců')|E]."
  skirmishers: "[Concept('skirmishers','Harcovníci')|E]"
@@ -125,6 +149,7 @@
  gendarme: "Žandarmové"
  chasseur: "Chasseuři"
  picchieri: "Picchieri"
+ condottieri: "Condottieri" # todo: NEW TRANSLATION
  praetorian: "Palatini"
  caballero: "Caballerové"
  cataphract: "Kataphraktoi"
@@ -185,8 +210,8 @@
  pikemen_unit_flavor: "#F Dlouhé píky umožňují těmto plukům vytvořit hradbu hrotů, která dokáže rázem zastavit jezdecký útok.#!"
  armored_horsemen_flavor: "#F Tito těžce vyzbrojení a obrnění jezdci vládnou boji na otevřených pláních.#!"
  crossbowmen_flavor: "#F Ačkoli se kuše pomalu nabíjejí, snadno se používají a jejich šipky dokážou na značnou vzdálenost prorazit většinu zbrojí.#!"
- handgunners_flavor: "#F Tyto primitivní palné zbraně jsou nákladné a výbušné, ale také nesmírně účinné.#!\n#help Zpřístupní [GetBuilding('powder_magazine_01').GetName].#!"
- fire_lancers_flavor: "#F Díky pokusným recepturám dokážou muži vyzbrojení podivnými tyčovými zbraněmi zasypat vyděšené nepřátele ohněm.#!\n#help Zpřístupní [GetBuilding('powder_magazine_01').GetName].#!"
+ handgunners_flavor: "#F Tyto primitivní palné zbraně jsou nákladné a výbušné, ale také nesmírně účinné.#!\n#help Zpřístupní [GetBuildingType('powder_mills_1').GetName].#!" # todo: CHANGED (predtym: F Tyto primitivní palné zbraně jsou nákladné a výbušné, ale také nesmírně účinné. !\n help Zpřístupní [GetBuilding('powd)
+ fire_lancers_flavor: "#F Díky pokusným recepturám dokážou muži vyzbrojení podivnými tyčovými zbraněmi zasypat vyděšené nepřátele ohněm.#!\n#help Zpřístupní [GetBuildingType('powder_mills_1').GetName].#!" # todo: CHANGED (predtym: F Díky pokusným recepturám dokážou muži vyzbrojení podivnými tyčovými zbraněmi zasypat vyděšené nepřátele ohněm. !\n hel)
  gakgung_archers_flavor: "#F Tito lučištníci jsou vybaveni silnými reflexními luky a prsteny na palec, které jim umožňují napínat tětivu větší silou a střílet na neuvěřitelnou vzdálenost.#!"
  pesilat_warriors_flavor: "#F Přestože často bojují #italic krisem#!, #italic golokem#! či nesčetnými dalšími zbraněmi pro boj zblízka, mistři silatu jsou stejně zběhlí i v boji beze zbraně.#!"
  samurai_flavor: "#F Družiníci #italic buši#! slouží šlechtě a nejvyšším vrstvám společnosti, ozbrojeni mečem a chráněni lakovanou koženou či kovovou zbrojí.#!"
@@ -214,6 +239,7 @@
  gendarme_flavor: "#F Francouzští žandarmové představují zářivý vrchol těžké jízdy a budí úžas po celém světě.#!"
  chasseur_flavor: "#F Rytíři z Outremeru ovládají jak evropské jezdecké umění, tak pouštní taktiku Levanty.#!"
  picchieri_flavor: "#F Pohyblivé formace latinských Picchieri z nich činí smrtonosnější vojáky, než jsou tradiční pikenýři.#!"
+ condottieri_flavor: "#F Condottieri jsou najaté jednotky pod vedením kapitánů, kteří vyjednávají o svém žoldu a cílech. Základní jednotkou je kopí, tedy jezdec s doprovodnými muži. Celkově jde o jedny z nejlepších profesionálních bojovníků své doby, ačkoli někteří by mohli říci, že mají přirozeně větší sklon vyhýbat se ztrátám než ostatní vojáci. Žádná práce nestojí za to, aby za ni člověk zemřel.#!" # todo: NEW TRANSLATION
  praetorian_flavor: "#F Palatini jsou ti nejlepší z nejlepších, elitní římští vojáci sloužící přímo císaři.#!"
  caballero_flavor: "#F Na rozdíl od většiny jízdních vojsk se iberští caballerové cítí jako doma jak na rovinatých pláních, tak v členité kopcovité krajině.#!"
  cataphract_flavor: "#F Řečtí kataphraktoi odění v železe dokážou svým útokem prolomit téměř jakoukoli obrannou linii.#!"

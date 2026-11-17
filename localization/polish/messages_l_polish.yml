@@ -8,8 +8,11 @@
  MESSAGE_CLEAR_ALL_TOOLTIP: "#I Kliknutím odstraníš. \nKliknutím pravým tlačítkem odstraníš vše.#!"
  msg_marriage: "Sňatek: #high [LEFT_CHARACTER.GetFirstNameNoTooltip]#! ([GetPlayer.Custom2('RelationToMeShort', LEFT_CHARACTER.Self )]) a #high [RIGHT_CHARACTER.GetFirstNameNoTooltip]#!"
  msg_marriage_desc: "Sňatek spojuje [LEFT_CHARACTER.GetShortUINameNotMe] ([GetPlayer.Custom2('RelationToMeShort', LEFT_CHARACTER.Self )]) a [RIGHT_CHARACTER.GetUINameNotMe] ([GetPlayer.Custom2('RelationToMeShort', RIGHT_CHARACTER.Self )])"
- msg_building_done: "Dokončena výstavba #high [BUILDING.GetNameNoTooltip]#!"
- msg_building_done_desc: "V [PROVINCE.GetBaronyNameExplicitly] byla dokončena [Concept('building','stavba')|E] [BUILDING.GetName]"
+ msg_building_done: "Dokončena výstavba #high [BUILDING_TYPE.GetNameNoTooltip]#!" # todo: CHANGED (predtym: Dokončena výstavba high [BUILDING.GetNameNoTooltip] !)
+ msg_building_done_desc: "V [PROVINCE.GetBaronyNameExplicitly] byla dokončena [Concept('building','stavba')|E] [BUILDING_TYPE.GetName]" # todo: CHANGED (predtym: V [PROVINCE.GetBaronyNameExplicitly] byla dokončena [Concept('building','stavba')|E] [BUILDING.GetName])
+ msg_district_became_inactive: "#high [DISTRICT.GetType.GetNameNoTooltip]#! Se stal neaktivním" # todo: NEW TRANSLATION
+ msg_district_became_inactive_desc: "Vaše [DISTRICT.GetType.GetName] v [PROVINCE.GetBaronyNameExplicitly] se stala neaktivní, protože došlo ke ztrátě slotu pro [Concept('district','čtvrť')|E], a nyní neposkytuje žádné výhody. Změňte pořadí svých [districts|E] a zvolte, který z nich bude neaktivní.$CONSTRUCTION_FROZEN$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MSG_DISTRICT_INACTIVE_CONSTRUCTION_FROZEN: "\nProbíhající stavba v této čtvrti byla pozastavena a bude pokračovat, jakmile bude [Concept('district','čtvrť')|E] opět aktivní." # todo: NEW TRANSLATION # todo: CONCEPT CASE
  msg_new_heir: "Nový dědic"
  msg_new_heir_desc: "Novým [Concept('player_heir','dědicem')|E] se stává [LEFT_CHARACTER.GetShortUIName] ([GetPlayer.Custom2('RelationToMeShort', LEFT_CHARACTER.Self )])"
  msg_new_heir_newborn: "Nový dědic"
@@ -37,17 +40,17 @@
  msg_siege_loot: "Vítězství v obléhání"
  msg_siege_loot_desc: "Nyní ovládáš [PROVINCE.GetName]\nZa obsazení [CZProvName(PROVINCE,'G')] získáváš [gold_i]$VALUE|V0$"
  msg_siege_piety: "Dobytí hlavního sídla nepřátelské mandaly"
- msg_scheme_opportunity_threshold_1_desc: "Tvá [Concept('scheme','intrika')|E] [scheme.GetName|V] má [scheme_opportunity_i|E][EmptyScope.ScriptValue('multi_ending_scheme_charge_to_advance_threshold_t1_value')|P0] [Concept('scheme_opportunities','výhod')|E]"
- msg_scheme_opportunity_threshold_2_desc: "Tvá [Concept('scheme','intrika')|E] [scheme.GetName|V] má [scheme_opportunity_i|E][EmptyScope.ScriptValue('multi_ending_scheme_charge_to_advance_threshold_t2_value')|P0] [Concept('scheme_opportunities','výhod')|E]"
- msg_scheme_opportunity_threshold_3_desc: "Tvá [Concept('scheme','intrika')|E] [scheme.GetName|V] má [scheme_opportunity_i|E][EmptyScope.ScriptValue('multi_ending_scheme_charge_to_advance_threshold_t3_value')|P0] [Concept('scheme_opportunities','výhod')|E]"
- msg_scheme_opportunity_threshold_4_desc: "Tvá [Concept('scheme','intrika')|E] [scheme.GetName|V] má [scheme_opportunity_i|E][EmptyScope.ScriptValue('multi_ending_scheme_charge_to_advance_threshold_t4_value')|P0] [Concept('scheme_opportunities','výhod')|E]"
+ msg_scheme_opportunity_threshold_1_desc: "Tvá [Concept('scheme','intrika')|E] [scheme.GetName|V] má [Concept('scheme_opportunity_i','@scheme_opportunity_icon!')|E][EmptyScope.ScriptValue('multi_ending_scheme_charge_to_advance_threshold_t1_value')|P0] [Concept('scheme_opportunities','výhod')|E]" # todo: CONCEPT CASE
+ msg_scheme_opportunity_threshold_2_desc: "Tvá [Concept('scheme','intrika')|E] [scheme.GetName|V] má [Concept('scheme_opportunity_i','@scheme_opportunity_icon!')|E][EmptyScope.ScriptValue('multi_ending_scheme_charge_to_advance_threshold_t2_value')|P0] [Concept('scheme_opportunities','výhod')|E]" # todo: CONCEPT CASE
+ msg_scheme_opportunity_threshold_3_desc: "Tvá [Concept('scheme','intrika')|E] [scheme.GetName|V] má [Concept('scheme_opportunity_i','@scheme_opportunity_icon!')|E][EmptyScope.ScriptValue('multi_ending_scheme_charge_to_advance_threshold_t3_value')|P0] [Concept('scheme_opportunities','výhod')|E]" # todo: CONCEPT CASE
+ msg_scheme_opportunity_threshold_4_desc: "Tvá [Concept('scheme','intrika')|E] [scheme.GetName|V] má [Concept('scheme_opportunity_i','@scheme_opportunity_icon!')|E][EmptyScope.ScriptValue('multi_ending_scheme_charge_to_advance_threshold_t4_value')|P0] [Concept('scheme_opportunities','výhod')|E]" # todo: CONCEPT CASE
  msg_scheme_abandoned: "Opuštěná intrika"
  msg_scheme_abandoned_desc: "Intrika $SCHEME_NAME|V$, jejímž cílem je [CHARACTER.GetUINameNoTooltip], byla opuštěna"
  msg_agent_joined_my_scheme_1: "Nový spolčenec intriky: [LEFT_CHARACTER.GetShortUINameNoTooltip]"
  msg_agent_joined_my_scheme: "Noví spolčenci intriky"
- msg_agent_joined_my_scheme_desc_1: "Tvá [Concept('scheme','intrika')|E] s cílem [SCHEME.GetFullActionName] získala [LEFT_CHARACTER.GetShortUIName] jako [Concept('agent','spolčence')|E]"
- msg_agent_joined_my_scheme_desc_2: "Tvá [Concept('scheme','intrika')|E] s cílem [SCHEME.GetFullActionName] získala nové [Concept('agents','spolčence')|E] [LEFT_CHARACTER.GetShortUIName] a [RIGHT_CHARACTER.GetShortUIName]"
- msg_agent_joined_my_scheme_desc: "Tvá [Concept('scheme','intrika')|E] s cílem [SCHEME.GetFullActionName] získala nové spolčence: [LEFT_CHARACTER.GetShortUIName], [RIGHT_CHARACTER.GetShortUIName] a $msg_agent_joined_my_scheme_others_desc$"
+ msg_agent_joined_my_scheme_desc_1: "Tvá [Concept('scheme','intrika')|E] s cílem [SCHEME.GetFullActionName|V] získala [LEFT_CHARACTER.GetShortUIName] jako [Concept('agent','spolčence')|E]" # todo: CHANGED (predtym: Tvá [Concept('scheme','intrika')|E] s cílem [SCHEME.GetFullActionName] získala [LEFT_CHARACTER.GetShortUIName] jako [Con)
+ msg_agent_joined_my_scheme_desc_2: "Tvá [Concept('scheme','intrika')|E] s cílem [SCHEME.GetFullActionName|V] získala nové [Concept('agents','spolčence')|E] [LEFT_CHARACTER.GetShortUIName] a [RIGHT_CHARACTER.GetShortUIName]" # todo: CHANGED (predtym: Tvá [Concept('scheme','intrika')|E] s cílem [SCHEME.GetFullActionName] získala nové [Concept('agents','spolčence')|E] [L)
+ msg_agent_joined_my_scheme_desc: "Tvá [Concept('scheme','intrika')|E] s cílem [SCHEME.GetFullActionName|V] získala nové [Concept('agents','spolčence')|E]: [LEFT_CHARACTER.GetShortUIName], [RIGHT_CHARACTER.GetShortUIName] a $msg_agent_joined_my_scheme_others_desc$" # todo: CHANGED (predtym: Tvá [Concept('scheme','intrika')|E] s cílem [SCHEME.GetFullActionName] získala nové spolčence: [LEFT_CHARACTER.GetShortU)
  msg_agent_joined_my_scheme_others_desc: "#tooltip:message_consolidation_names #L další spolčenci#!#!"
  msg_agent_removed_my_scheme: "Odchod spolčence z intriky"
  msg_agent_removed_my_scheme_desc: "[LEFT_CHARACTER.GetUINameNoTooltip] již není [Concept('agent','spolčencem')|E] tvé [Concept('scheme','intriky')|E] s cílem [SCHEME.GetFullActionName]"
@@ -130,9 +133,9 @@
  msg_war_declared_on_vassal: "Válka proti vazalovi!"
  msg_war_declared_on_vassal_desc: "Na tvého [Concept('vassal','vazala')|E], [LEFT_CHARACTER.GetShortUIName|U], útočí [RIGHT_CHARACTER.GetShortUIName]"
  msg_war_declared_on_suzerain: "Válka proti suzerénovi!"
- msg_war_declared_on_suzerain_desc: "Na tvého [Concept('suzerain','suzeréna')|E], [LEFT_CHARACTER.GetShortUIName|U], útočí [RIGHT_CHARACTER.GetShortUIName]"
- msg_domicile_moved.title: "Přesun tábora do [CHARACTER.GetCurrentLocation.GetBaronyNameExplicitlyNoTooltip]"
- msg_domicile_moved.desc: "Tvůj [Concept('camp','tábor')|E] se přesunul do [CHARACTER.GetCurrentLocation.GetBaronyNameExplicitly]"
+ msg_war_declared_on_suzerain_desc: "Na tvého [GetSuzerainRelationship(GetPlayer)], [LEFT_CHARACTER.GetShortUIName|U], útočí [RIGHT_CHARACTER.GetShortUIName]" # todo: CHANGED (predtym: Na tvého [Concept('suzerain','suzeréna')|E], [LEFT_CHARACTER.GetShortUIName|U], útočí [RIGHT_CHARACTER.GetShortUIName])
+ msg_domicile_moved.title: "Přesun [CHARACTER.Custom('GetRealmOrDomicile')|U] do [CHARACTER.GetCurrentLocation.GetBaronyNameExplicitlyNoTooltip]" # todo: CHANGED (predtym: Přesun tábora do [CHARACTER.GetCurrentLocation.GetBaronyNameExplicitlyNoTooltip])
+ msg_domicile_moved.desc: "Tvůj [CHARACTER.Custom('GetRealmOrDomicile')|E] se přesunul do [CHARACTER.GetCurrentLocation.GetBaronyNameExplicitly]" # todo: CHANGED (predtym: Tvůj [Concept('camp','tábor')|E] se přesunul do [CHARACTER.GetCurrentLocation.GetBaronyNameExplicitly])
  msg_domicile_building_started.title: "Zahájena výstavba #high [CHARACTER.GetDomicile.GetBuildingUnderConstruction.GetName]#!"
  msg_domicile_building_started.desc: "[CHARACTER.GetDomicile.GetType.GetTitleText( CHARACTER.Self )]: probíhá výstavba [Concept('domicile_building','budovy domicilu')|E] [CHARACTER.GetDomicile.GetBuildingUnderConstruction.GetName]"
  msg_domicile_building_cancelled.title: "Zrušena výstavba #high [CHARACTER.GetDomicile.GetBuildingUnderConstruction.GetNameNoTooltip]#!"
@@ -172,13 +175,13 @@
  msg_faction_against_liege_or_me_created_desc: "[LEFT_CHARACTER.GetShortUIName] ([GetPlayer.Custom2('RelationToMeShort', LEFT_CHARACTER.Self )]) [Select_CString( LEFT_CHARACTER.IsFemale, 'založila', 'založil' )] [Concept('faction','frakci')|E] [FACTION.GetName]. Jejím cílem [Select_CString( RIGHT_CHARACTER.IsLocalPlayer, 'jsi', 'je' )] [RIGHT_CHARACTER.GetShortUIName]"
  msg_county_faction_against_liege_or_me_created_desc: "Na území s názvem [LEFT_TITLE.GetName] vznikla [Concept('faction','frakce')|E] [FACTION.GetName], jejímž cílem [Select_CString( RIGHT_CHARACTER.IsLocalPlayer, 'jsi', 'je' )] [RIGHT_CHARACTER.GetShortUINameNoTooltip]"
  msg_faction_against_me_disbanded: "Nepřátelská frakce rozpuštěna!"
- msg_faction_against_me_disbanded_desc: "[Concept('faction','Frakce')|E] [FACTION.GetName], jejímž cílem jsi byl ty, se rozpustila"
+ msg_faction_against_me_disbanded_desc: "[Concept('faction','Frakce')|E] [FACTION.GetName], jejímž cílem jsi [Select_CString(ROOT.Char.IsFemale,'byla','byl')] ty, se rozpustila" # todo: GENDER FORM ROOT.Char - over, ci ROOT je postava, ktorej sa text tyka
  msg_my_faction_disbanded: "Rozpuštění frakce"
  msg_my_faction_disbanded_desc: "[Concept('faction','Frakce')|E] [FACTION.GetName] se rozpustila"
- msg_liege_passed_law: "Lenní pán přijal zákon"
- msg_liege_passed_law_desc: "Tvůj [Concept('liege','lenní pán')|E], [GetPlayer.GetLiege.GetShortUIName], přijal [Concept('law','zákon')|E] [LAW.GetName]"
+ msg_liege_passed_law: "Lenní pán [Select_CString(ROOT.Char.IsFemale,'přijala','přijal')] zákon" # todo: GENDER FORM ROOT.Char - over, ci ROOT je postava, ktorej sa text tyka
+ msg_liege_passed_law_desc: "Tvůj [Concept('liege','lenní pán')|E], [GetPlayer.GetLiege.GetShortUIName], [Select_CString(GetPlayer.GetLiege.IsFemale,'přijala','přijal')] [Concept('law','zákon')|E] [LAW.GetName]"
  msg_liege_passed_title_law: "Nový zákon titulu"
- msg_liege_passed_title_law_desc: "Tvůj [Concept('liege','lenní pán')|E], [GetPlayer.GetLiege.GetShortUIName], přijal pro titul [TITLE.GetName] [Concept('title_law','zákon titulu')|E] [LAW.GetName]"
+ msg_liege_passed_title_law_desc: "Tvůj [Concept('liege','lenní pán')|E], [GetPlayer.GetLiege.GetShortUIName], [Select_CString(GetPlayer.GetLiege.IsFemale,'přijala','přijal')] pro titul [TITLE.GetName] [Concept('title_law','zákon titulu')|E] [LAW.GetName]"
  msg_liege_changed_budget_law: "Lenní pán změnil rozdělení rozpočtu"
  msg_liege_changed_budget_law_desc: "Tvůj [Concept('liege','lenní pán')|E], [GetPlayer.GetLiege.GetShortUIName], změnil [Concept('law','zákon')|E] skupiny [LAW.GetLawGroup.GetName] z [OLD_LAW.GetShortName] na [LAW.GetShortName]"
  msg_liege_removed_title_law: "Zrušení zákona titulu"
@@ -261,14 +264,14 @@
  msg_holy_site_abandoned_desc: "[changed_holy_site.GetName|U] již není [Concept('holy_site','svatým místem')|E] víry [notified_faith.GetName]"
  msg_holy_site_abandoned_by_character: "$msg_holy_site_abandoned$"
  msg_holy_site_abandoned_by_character_desc: "[holy_site_actor.GetShortUIName|U] [Select_CString(holy_site_actor.IsLocalPlayer,'jsi ','')|l][Select_CString(holy_site_actor.IsFemale,'opustila','opustil')|l] místo [changed_holy_site.GetName]; již není [Concept('holy_site','svatým místem')|E] víry [notified_faith.GetName]"
- msg_new_fascination_selected: "Nové [Concept('cultural_fascination','kulturní zaměření')|E]"
+ msg_new_fascination_selected: "Nové kulturní zaměření" # todo: CHANGED (predtym: Nové [Concept('cultural_fascination','kulturní zaměření')|E])
  msg_new_fascination_selected_desc: "Tvá [Concept('culture','kultura')|E] se nyní v rámci svého [Concept('fascination','zaměření')|E] soustředí na [Concept('innovation','inovaci')|E] $NAME|V$"
  msg_innovation_discovered: "Objevena inovace"
  msg_innovation_discovered_desc: "Tvá [Concept('culture','kultura')|E] objevila [Concept('innovation','inovaci')|E] $NAME|V$!"
  msg_fascination_discovered: "Dokončeno kulturní zaměření"
  msg_fascination_discovered_desc: "Tvá [Concept('culture','kultura')|E] objevila v rámci svého [Concept('fascination','zaměření')|E] inovaci $NAME|V$!\nLze zvolit novou [Concept('innovation','inovaci')|E]."
  msg_era_discovered: "Nová kulturní éra"
- msg_era_discovered_desc: "Tvá [Concept('culture','kultura')|E] vstoupila do [Concept('era','éry')|E] $NAME|N$.\nK dispozici jsou nové [Concept('innovations','inovace')|E]!"
+ msg_era_discovered_desc: "Tvá [Concept('culture','kultura')|E] vstoupila do [Concept('era','éry')|E] $NAME|N$.\nK dispozici jsou novou [Concept('innovations','inovace')|E]!" # todo: CONCEPT CASE
  msg_first_era_discovered: "Nová kulturní éra"
  msg_first_era_discovered_desc: "[CULTURE.GetName] kultura vstoupila do [Concept('era','éry')|E] $NAME|V$"
  msg_no_longer_culture_head: "Změna hlavy kultury"
@@ -297,8 +300,10 @@
  msg_tributary_contract_broken_due_to_war_text: "Tvá [Concept('tributary_contract','tributární smlouva')|E] kvůli [Concept('war','válce')|E] zanikla"
  msg_claim_war_invalidated_message: "Válka [war.GetName] skončila, protože [defender.GetShortUIName] [Select_CString( defender.IsLocalPlayer, 'již neovládáš', 'již neovládá' )] žádné z nárokovaných hrabství."
  msg_claim_war_invalidated_claimant_unavailable_dead_message: "Válka [war.GetName] skončila, protože [claimant.GetShortUIName] [Select_CString( claimant.IsFemale, 'zemřela', 'zemřel' )], a [attacker.GetShortUIName] proto [Select_CString( attacker.IsLocalPlayer, 'již nemůžeš', 'již nemůže' )] uplatnit nárok této postavy."
+ msg_reinstatement_war_invalidated_gg_unavailable_dead_message: "Válka [war.GetName] skončila: [war.MakeScope.Var('ongoing_gg_reinstatement_war_claimant').Char.GetShortUIName] [Select_CString(war.MakeScope.Var('ongoing_gg_reinstatement_war_claimant').Char.IsFemale,'zemřela','zemřel')], a [attacker.GetShortUIName] tak již nemůže [war.MakeScope.Var('ongoing_gg_reinstatement_war_claimant').Char.GetHerHim] znovu dosadit." # todo: NEW TRANSLATION
  msg_claim_war_invalidated_claimant_unavailable_dead_attacker_message: "Válka [war.GetName] skončila, protože [attacker.GetShortUIName] [Select_CString( attacker.IsFemale, 'zemřela', 'zemřel' )], a proto již nelze uplatnit [Select_CString( attacker.IsFemale, 'její', 'jeho' )] nárok."
  msg_claim_war_invalidated_claimant_unavailable_not_vassal_message: "Válka [war.GetName] skončila, protože [claimant.GetShortUIName] již není vazalem ani dvořanem [attacker.Custom('CZ_ShortUIName_G')], a proto již nelze uplatnit nárok této postavy."
+ msg_reinstatement_war_invalidated_gg_unavailable_not_vassal_message: "Válka [war.GetName] skončila: [war.MakeScope.Var('ongoing_gg_reinstatement_war_claimant').Char.GetShortUIName] není vazalem ani dvořanem [attacker.GetShortUIName], a proto [war.MakeScope.Var('ongoing_gg_reinstatement_war_claimant').Char.GetHerHim] již nemůže být znovu [Select_CString(attacker.IsFemale,'dosazena','dosazen')]." # todo: NEW TRANSLATION
  msg_claim_war_invalidated_claimant_is_now_a_minister_message: "Válka [war.GetName] skončila, protože se [claimant.GetShortUIName] [Select_CString( claimant.IsFemale, 'stala', 'stal' )] [Concept('minister','ministrem')|E] a [Concept('claim','nárok')|E] této postavy již není relevantní."
  msg_de_jure_duchy_war_invalidated_message: "Válka [war.GetName] skončila, protože [defender.GetShortUIName] [Select_CString( defender.IsLocalPlayer, 'již neovládáš', 'již neovládá' )] žádné území v cílovém vévodství."
  msg_de_jure_county_war_invalidated_message: "Válka [war.GetName] skončila, protože [defender.GetShortUIName] [Select_CString( defender.IsLocalPlayer, 'již neovládáš', 'již neovládá' )] cílové hrabství."
@@ -318,7 +323,7 @@
  msg_free_house_member_war_invalidated_message: "Válka [war.GetName] skončila, protože [defender.GetTitledFirstName] [Select_CString( defender.IsLocalPlayer, 'již nevězníš', 'již nevězní' )] žádné členy [Concept('house','rodu')|E] [attacker.GetHouse.GetBaseNameNoTooltip]."
  msg_unify_house_war_invalidated_message: "Válka [war.GetName] skončila, protože [defender.GetTitledFirstName] [Select_CString( defender.IsLocalPlayer, 'již nemáš', 'již nemá' )] mezi svými vazaly žádné členy [Concept('house','rodu')|E] [attacker.GetHouse.GetBaseNameNoTooltip]."
  msg_laamp_raid_contract_war_invalidated_message: "Válka [war.GetName] skončila, protože [attacker.GetShortUIName] již [Select_CString( attacker.IsLocalPlayer, 'nemáš', 'nemá' )] platnou [Concept('task_contract','zakázku')|E] [GetTaskContractType('laamp_raid_contract').GetName]."
- msg_celestial_war_invalidation_no_longer_son_of_heaven: "Válka [war.GetName] skončila, protože [attacker.GetShortUINamePossessive] [Concept('mandate','mandát')|E] pozbyl platnosti"
+ msg_celestial_war_invalidation_no_longer_son_of_heaven: "Válka [war.GetName] skončila, protože [attacker.GetShortUINamePossessive] [Concept('mandate_of_heaven','mandát Nebes')|E] pozbyl platnosti" # todo: CHANGED (predtym: Válka [war.GetName] skončila, protože [attacker.GetShortUINamePossessive] [Concept('mandate','mandát')|E] pozbyl platnos)
  msg_celestial_war_invalidation_chaos: "[Concept('dynastic_cycle','Dynastický cyklus')|E] se nachází v [Concept('situation_dynastic_cycle_phase','éře')|E] [GetSituationType('dynastic_cycle').GetPhaseType('situation_dynastic_cycle_phase_chaos').GetName]"
  msg_my_hook_replaced: "Nahrazení páky"
  msg_my_hook_replaced_desc: "Tvá [Concept('hook','páka')|E] na [LEFT_CHARACTER.GetShortUIName] byla nahrazena pákou [HOOK.GetName]"
@@ -348,7 +353,7 @@
  msg_dynasty_perk_added_desc: "Tvá [Concept('dynasty','dynastie')|E] odemkla [Concept('dynasty_perk','dynastický odkaz')|E] [DYNASTY_PERK.GetName]"
  msg_dynasty_perk_removed: "Ztráta dynastického odkazu"
  msg_dynasty_perk_removed_desc: "Tvá [Concept('dynasty','dynastie')|E] ztratila [Concept('dynasty_perk','dynastický odkaz')|E] [DYNASTY_PERK.GetName]"
- msg_vassal_feudalised: "Vazal přijal feudalismus"
+ msg_vassal_feudalised: "Vazal [Select_CString(ROOT.Char.IsFemale,'přijala','přijal')] feudalismus" # todo: GENDER FORM ROOT.Char - over, ci ROOT je postava, ktorej sa text tyka
  msg_vassal_feudalised_desc: "Tvůj [Concept('vassal','vazal')|E] [ROOT.Char.GetShortUIName] [Select_CString( ROOT.Char.IsFemale, 'opustila své kmenové zvyklosti a přijala feudální zřízení', 'opustil své kmenové zvyklosti a přijal feudální zřízení' )]"
  msg_dynasty_prestige_level_increase: "Zvýšení [Concept('dynasty_prestige_level','úrovně věhlasu')|E]"
  msg_dynasty_prestige_level_increase_desc: "Dynastie [LEFT_CHARACTER.GetDynasty.GetBaseName] je známá široko daleko."
@@ -391,10 +396,13 @@
  msg_vassal_contract_multiple_levels_invalidated: "Zneplatnění povinností"
  msg_vassal_contract_multiple_levels_invalidated_desc: "[RIGHT_CHARACTER.GetUINameNoTooltip] nyní má zneplatněny [Concept('obligations','povinnosti')|E] $OBLIGATION_TYPE_0|V$, $OBLIGATION_TYPE_1|V$ a dalších $COUNT|V$ povinností"
  msg_force_vote_in_succession_election_message: "Po dobu příštích [GetDefine('NCharacter', 'FORCED_SUCCESSION_ELECTION_YEARS')] let bude [recipient.GetTitledFirstName] [Select_CString( recipient.IsFemale, 'nucena', 'nucen' )] hlasovat pro stejného kandidáta jako ty."
+ msg_force_assembly_vote_message: "Přinutíš [recipient.Custom('CZ_TitledFirstName_A')], aby v probíhajícím hlasování [Concept('voting_session','hlasování')|E] [Select_CString(ROOT.Char.IsFemale,'hlasovala','hlasoval')] podle tvého přání" # todo: NEW TRANSLATION # todo: CONCEPT CASE # todo: GENDER FORM ROOT.Char - over, ci ROOT je postava, ktorej sa text tyka
  msg_recruited_guest_to_court_interaction_title: "[actor.Custom('GetCourt')|U]: přijetí hosta"
  msg_recruited_guest_to_court_interaction_message: "[recipient.GetTitledFirstName] je nyní ve tvém [actor.Custom('CZ_GetCourtConcept_L')]."
  msg_kicked_courtier_from_court_interaction_title: "Propuštění dvořana"
  msg_courtier_left_court_interaction_title: "Odchod dvořana"
+ msg_courtier_left_court_interaction_merchant_title: "Talent přetáhnut" # todo: NEW TRANSLATION
+ msg_courtier_left_court_interaction_merchant_message: "[recipient.GetLiege.GetTitledFirstName] [Select_CString(recipient.GetLiege.IsFemale,'přijala','přijal')] [recipient.GetTitledFirstName] do svého [recipient.GetLiege.Custom('GetCourtConcept')]." # todo: NEW TRANSLATION
  msg_hired_court_physician_interaction_title: "Přijetí do úřadu $court_physician_court_position$"
  msg_hired_court_physician_interaction_message: "Úřad [GetCourtPositionType('court_physician_court_position').GetName()] nyní zastává [recipient.GetTitledFirstName]."
  msg_fired_court_physician_interaction_title: "Odvolání z úřadu $court_physician_court_position$"
@@ -489,8 +497,12 @@
  msg_set_relation_disciple_desc: "[GetRelation( 'disciple' ).GetReasonFor( LEFT_CHARACTER.Self, RIGHT_CHARACTER.Self )]"
  msg_set_relation_elder_title: "Přijetí mezi starší"
  msg_set_relation_elder_desc: "Od nynějška se budete navzájem podporovat."
- msg_house_unity_change_stage: "Změna úrovně jednoty rodu"
- msg_house_unity_change_stage_desc: "Tvá [Concept('house_unity','jednota rodu')|E] nyní dosahuje úrovně $HOUSE_UNITY_STAGE_NAME|U$"
+ msg_house_unity_change_stage: "[SelectLocalization( GetPlayer.GetGovernment.HasGovernmentFlag('government_uses_company_sentiment'), 'msg_company_sentiment_change_stage', 'msg_clan_house_unity_change_stage' )]" # todo: CHANGED (predtym: Změna úrovně jednoty rodu)
+ msg_clan_house_unity_change_stage: "Úroveň jednoty rodu se změnila" # todo: NEW TRANSLATION
+ msg_company_sentiment_change_stage: "Úroveň [Concept('company_sentiment_level','postoj společnosti')|E] se změnila" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ msg_house_unity_change_stage_desc: "[SelectLocalization( GetPlayer.GetGovernment.HasGovernmentFlag('government_uses_company_sentiment'), 'msg_company_sentiment_change_stage_desc', 'msg_clan_house_unity_change_stage_desc' )]" # todo: CHANGED (predtym: Tvá [Concept('house_unity','jednota rodu')|E] nyní dosahuje úrovně $HOUSE_UNITY_STAGE_NAME|U$)
+ msg_clan_house_unity_change_stage_desc: "Úroveň [Concept('house_unity_level','úroveň jednoty rodu')|E] se změnila na [GetPlayer.GetHouse.GetCurrentHouseUnityStage.GetName|V]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ msg_company_sentiment_change_stage_desc: "Úroveň [Concept('company_sentiment_level','postoj společnosti')|E] se změnila na [GetPlayer.GetHouse.GetCurrentHouseUnityStage.GetName|V]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  msg_house_unity_change_stage_tt: "$msg_house_unity_change_stage_desc$"
  msg_start_diarchy_title: "[LEFT_CHARACTER.GetDiarchyTypeNameNoTooltip] začíná"
  msg_start_diarchy_effect: "Začínám [Concept('sharing_power','sdílet moc')|E] v rámci [LEFT_CHARACTER.GetDiarchy.GetDiarch.Custom('GetDiarchyArticle')] [LEFT_CHARACTER.GetDiarchyTypeName] s [RIGHT_CHARACTER.Custom('CZ_ShortUIName_I')] ([LEFT_CHARACTER.Custom2('RelationToMeShort', RIGHT_CHARACTER.Self)])"
@@ -502,11 +514,11 @@
  on_entered_diarchy.notification.vassal.desc.outro.incapable: "kvůli neschopnosti vládnout ([GetTrait('incapable').GetName(GetNullCharacter)])"
  on_entered_diarchy.notification.vassal.desc.outro.imprisonment: "protože je v cizině [Concept('imprisoned', Select_CString( ROOT.Char.IsFemale, 'uvězněna', 'uvězněn' ))|E]"
  on_entered_diarchy.notification.vassal.desc.outro.travel: "protože [Concept('traveling','cestuje')|E] v cizině"
- msg_end_diarchy_title: "$game_concept_diarchy$ skončilo"
+ msg_end_diarchy_title: "Sdílení moci skončilo" # todo: CONCEPT CASE
  msg_end_diarchy_effect: "S [RIGHT_CHARACTER.Custom('CZ_ShortUIName_I')] ([LEFT_CHARACTER.Custom2('RelationToMeShort', RIGHT_CHARACTER.Self)]) již [Concept('sharing_power','nesdílím moc')|E]"
  on_left_diarchy.notification.vassal.t: "Končí $game_concept_diarchy$ lenního pána"
  on_left_diarchy.notification.vassal.desc: "[ROOT.Char.GetShortUIName|U] již [Concept('sharing_power','nesdílí moc')|E] s [old_diarch.Custom('CZ_ShortUIName_I')] ([ROOT.Char.Custom2('RelationToMeShort', SCOPE.sC('old_diarch'))])"
- msg_change_diarchy_type_title: "Změna typu $game_concept_diarchy$"
+ msg_change_diarchy_type_title: "Změna typu sdílení moci" # todo: CONCEPT CASE
  msg_change_diarchy_type_effect: "Typ $OLD_TYPE$ se změnil na $NEW_TYPE$"
  on_diarch_change.notification.liege.boilerplate.t: "Na postu [liege.GetDiarchTitle] dochází ke změně"
  on_diarch_change.notification.vassal.boilerplate.t: "Na postu [liege.GetDiarchTitle] tvého lenního pána dochází ke změně"
@@ -529,7 +541,7 @@
  on_diarch_change.notification.liege.fallback.t: "$on_diarch_change.notification.liege.boilerplate.t$"
  on_diarch_change.notification.liege.fallback.desc: "[old_diarch.GetShortUIName|U] končí a jako [Select_CString( diarch.IsFemale, 'tvá nová', 'tvůj nový' )] [liege.GetDiarchTitle] nastupuje [diarch.GetShortUIName]."
  on_diarch_change.notification.vassal.fallback.t: "$on_diarch_change.notification.vassal.boilerplate.t$"
- on_diarch_change.notification.vassal.fallback.desc: "[old_diarch.GetShortUIName|U] končí a jako [Select_CString( diarch.IsFemale, 'nová', 'nový' )] [liege.GetDiarchTitle] tvého lenního pána nastupuje [diarch.GetShortUIName]."
+ on_diarch_change.notification.vassal.fallback.desc: "[old_diarch.GetShortUIName|U] [Select_CString(old_diarch.IsLocalPlayer,'končíš','končí')] a jako [Select_CString( diarch.IsFemale, 'nová', 'nový' )] [liege.GetDiarchTitle] tvého [Concept('liege_possessive','lenního pána')|E] nastupuje [diarch.GetShortUIName]." # todo: CHANGED (predtym: [old_diarch.GetShortUIName|U] končí a jako [Select_CString( diarch.IsFemale, 'nová', 'nový' )] [liege.GetDiarchTitle] tv)
  msg_diarchy_more_power_title: "[LEFT_CHARACTER.GetLiege.GetDiarchTitle] je nyní mocnější"
  msg_diarchy_more_power_effect: "[Concept('scales_of_power','Misky vah moci')|E] se vychýlily na novou úroveň a [LEFT_CHARACTER.GetLiege.GetDiarchTitle] má nyní k dispozici více [Concept('diarch_powers','propůjčených pravomocí')|E]"
  msg_diarchy_less_power_title: "[LEFT_CHARACTER.GetLiege.GetDiarchTitle] má nyní méně moci"
@@ -549,9 +561,9 @@
  message_consolidation_names: "#T Ostatní#!\n[PlayerMessageItem.GetConsolidationNames]"
  message_consolidation_others: "#tooltip:message_consolidation_names #L další ([Subtract_int32( PlayerMessageItem.GetConsolidationCount, '(int32)2' )|V])#!#!"
  msg_raid_completed_title: "Vyplenění území [RIGHT_TITLE.Custom('CZ_LandedNameNoTierNoTooltip_G')]"
- msg_raid_completed_desc: "[Concept('raided','Vyplenil')|E] jsi území [RIGHT_TITLE.Custom('CZ_LandedName_G')] ([RIGHT_TITLE.GetHolder.GetShortUIName])"
+ msg_raid_completed_desc: "[Concept('raided','Vyplenil')|E] jsi území [barony.Custom('CZ_LandedName_G')] ([barony.GetHolder.GetShortUIName])" # todo: CHANGED (predtym: [Concept('raided','Vyplenil')|E] jsi území [RIGHT_TITLE.Custom('CZ_LandedName_G')] ([RIGHT_TITLE.GetHolder.GetShortUINam)
  msg_raid_lost_title: "Vyplenění území [RIGHT_TITLE.Custom('CZ_LandedNameNoTierNoTooltip_G')]"
- msg_raid_lost_desc: "[LEFT_CHARACTER.GetUIName] [Concept('raided', Select_CString( LEFT_CHARACTER.IsFemale, 'vyplenila', 'vyplenil' ))|E] území [RIGHT_TITLE.Custom('CZ_LandedName_G')] #weak ([RIGHT_TITLE.GetHolder.GetTitledFirstName])#!"
+ msg_raid_lost_desc: "[raider.GetUIName] [Concept('raided', Select_CString( LEFT_CHARACTER.IsFemale, 'vyplenila', 'vyplenil' ))|E] území [barony.Custom('CZ_LandedName_G')] #weak ([barony.GetHolder.Custom('CZ_TitledFirstName_G')]#!" # todo: CHANGED (predtym: [LEFT_CHARACTER.GetUIName] [Concept('raided', Select_CString( LEFT_CHARACTER.IsFemale, 'vyplenila', 'vyplenil' ))|E] úze)
  msg_raid_intent_invalidated_title: "Záměr nájezdu [raiding_army.GetRaidIntent.GetName] pozbyl platnosti!"
  msg_raid_intent_invalidated_desc: "Záměr nájezdu [raiding_army.GetRaidIntent.GetName] pozbyl platnosti, protože jej [LEFT_CHARACTER.GetName] již nemůže využít"
  msg_barter_completed_barterer_title: "Směna na území [county.Custom('CZ_LandedNameNoTierNoTooltip_G')]"
@@ -596,7 +608,7 @@
  msg_admin_title_lost_investor.tt: "Ztráta jmenování podporovaného držitele"
  msg_admin_title_lost_foe.tt: "Ztráta jmenování odmítaného držitele"
  msg_admin_title_lost.desc: "[title_loser.GetShortUIName|U] ([GetPlayer.Custom2('RelationToMeShort', SCOPE.sC('title_loser'))]) již nespravuje titul [title.GetName]"
- msg_estate_damaged.title: "$game_concept_estate$ byl poškozen"
+ msg_estate_damaged.title: "Statek byl poškozen" # todo: CONCEPT CASE
  msg_estate_damaged.desc: "Tvůj [Concept('estate','statek')|E] byl poškozen, takže u jedné či více [Concept('estate_buildings','budov statku')|E] došlo ke snížení úrovně nebo k úplnému zničení.\n\n[Concept('estate','Statek')|E] byl přemístěn do [CZProvName(new_estate_location,'G')]."
  msg_admin_provincial_army_request_accepted.title: "Žádost o vojsko schválena"
  msg_admin_provincial_army_request_denied.title: "Žádost o vojsko zamítnuta"
@@ -630,3 +642,7 @@
  msg_clerical_region_conversion_started_desc: "[LEFT_TITLE.GetDefinitiveName|U] se pod vlivem [RIGHT_TITLE.GetDefinitiveName] obrací na [RITE.GetName]"
  msg_clerical_region_conversion_ended_title: "Církevní oblast [RIGHT_TITLE.GetNameNoTooltip] dokončila obrácení hrabství"
  msg_clerical_region_conversion_ended_desc: "[LEFT_TITLE.GetDefinitiveName|U] bylo pod vlivem [RIGHT_TITLE.GetDefinitiveName] obráceno na [RITE.GetName]"
+ msg_build_queue_item_invalidated: "Plánovaná stavba zneplatněna" # todo: NEW TRANSLATION
+ msg_build_queue_item_invalidated_desc: "Plánovaná stavba budovy [BUILDING_TYPE.GetName] v državě [HOLDING.GetName] se stala neplatnou" # todo: NEW TRANSLATION
+ msg_build_queue_item_started: "Plánovaná stavba zahájena" # todo: NEW TRANSLATION
+ msg_build_queue_item_started_desc: "Byla zahájena plánovaná stavba budovy [BUILDING_TYPE.GetName] v državě [HOLDING.GetName]" # todo: NEW TRANSLATION

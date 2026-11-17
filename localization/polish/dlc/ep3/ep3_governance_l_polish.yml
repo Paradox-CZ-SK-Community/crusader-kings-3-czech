@@ -5,7 +5,7 @@
  governor_tax_scheme_action: "Vybírat daně v"
  governor_tax_scheme_invalidated_title: "$governor_tax_scheme$: Intrika zrušena"
  msg_governance_contract_appear.t: "Nový správní problém"
- msg_governance_contract_appear.desc: "Vyskytl se [new_governance_issue.GetType.GetName|V] [Concept('governance_issue','$TASK_CONTRACT_ISSUE|q$')|E] [CZPrepV(target_province.GetNameNoTooltip)] [CZProvName(target_province,'L')], v rámci [target_province.GetCounty.GetTitle.Custom('CZ_LandedName_G')]"
+ msg_governance_contract_appear.desc: "Vyskytl se [new_governance_issue.GetType.GetName|V] [Concept('governance_issue','$TASK_CONTRACT_ISSUE|q$')|E] v [target_province.GetBaronyNameExplicitly], v rámci [target_province.GetCounty.GetTitle.Custom('CZ_LandedName_G')]" # todo: CHANGED (predtym: Vyskytl se [new_governance_issue.GetType.GetName|V] [Concept('governance_issue','$TASK_CONTRACT_ISSUE|q$')|E] [CZPrepV(t)
  task_contract_governance_desc_title: "Je třeba mého úsudku jako [GetPlayer.Custom('GetGovernorConceptNoTooltip')]!"
  overdue_taxes_contract: "Neodvedené daně"
  overdue_taxes_desc: "Ať už spiknutím, nedostatkem či prostou nedbalostí, vesnice v této oblasti neodeslala svůj podíl úrody jako daně."
@@ -274,7 +274,7 @@
  governor_contract_event.2060.f: "[ROOT.Char.GetFaith.HighGodName] působí záhadnými způsoby."
  buried_treasure: "Zakopaný poklad"
  buried_treasure_contract: "$buried_treasure$"
- buried_treasure_desc: "Místní sedlák našel poklad zlata a vznikl spor, komu patří."
+ buried_treasure_desc: "Místní sedlák [Select_CString(ROOT.Char.IsFemale,'našla','našel')] poklad zlata a vznikl spor, komu patří." # todo: GENDER FORM ROOT.Char - over, ci ROOT je postava, ktorej sa text tyka
  buried_treasure_desc_title: "$task_contract_governance_desc_title$"
  governor_contract_event.2070.t: "$buried_treasure$"
  governor_contract_event.2070.desc: "Stařešinové malé obce poblíž [CZProvName(ongoing_destination,'G')] mě kontaktovali, abych rozhodl o vzácné události.\n\nJedna sedlácká rodina odkryla při práci na polích značnou zásobu zlatých mincí! Jejich sousedé se okamžitě rozdělili na frakce: někteří věří, že zlato by mělo patřit nálezcům, zatímco jiní prosazují, aby vítršník byl rozdělen mezi celou vesnici.\n\nRozhodnutí vyšší autority by mohlo uhasit chamtivost těchto prostých lidí a uchránit je před sestupem do malicherného násilí."
@@ -288,7 +288,7 @@
  governor_contract_event.2071.c: "Co se najde na veřejné půdě, patří říši."
  governor_contract_event.2071.d: "Poklad ti podle práva patří, nalož s ním, jak chceš."
  governor_contract_event.2071.e: "Tento poklad patří celé obci."
- AUREUS_GLOSS: "Aureus byla zlatá mince pravidelně ražená od pozdní římské republiky až do počátku 4. století n. l., kdy ji nahradil solidus. Původně měl aureus hodnotu 25 stříbrných denárů, ale kvůli zběsilé inflaci pozdní říše měl nový solidus hodnotu celých 275000 denárů!"
+ AUREUS_GLOSS: "#bold Aureus#! byla zlatá mince pravidelně ražená od pozdní římské republiky až do počátku 4. století, kdy ji nahradil [Glossary('solidus', 'SOLIDUS_GLOSS')].\n\nPůvodně měl aureus hodnotu 25 stříbrných [Glossary('denarii', 'DENARIUS_GLOSS')], ale kvůli zběsilé inflaci pozdní Římské říše měl nový #emp solidus#! hodnotu celých 275000 #emp denarii#!!" # todo: CHANGED (predtym: Aureus byla zlatá mince pravidelně ražená od pozdní římské republiky až do počátku 4. století n. l., kdy ji nahradil sol)
  ep3_treasure_invest_modifier: "Poklad investován"
  ep3_treasure_invest_modifier_desc: "Nález zlata byl přeměněn na místní investice, k prospěchu celého hrabství."
  ep3_treasure_distributed_modifier: "Poklad rozdělen"
@@ -300,7 +300,7 @@
  governor_contract_event.2080.t: "$public_land$"
  governor_contract_event.2080.desc: "Podle zpráv [CZPrepZ(ongoing_destination.GetNameNoTooltip)] [CZProvName(ongoing_destination,'G')] místní magnát [magnate.GetTitledFirstName] používá všechny možné triky, aby [Select_CString(magnate.IsFemale,'zvětšila','zvětšil')] rozsah pozemků, které vlastní přímo.\n\nNení pochyb, že ne všechny takové metody jsou legální, a některé jsou přímo #EMP odporné#!"
  governor_contract_event.2080.a: "Musím zasáhnout."
- governor_contract_event.2081.desc: "Hned po příjezdu do [CZProvName(ongoing_destination,'G')] mě [magnate.GetTitledFirstName] přijme ve svém sídle.\n\n„Nemluvme o hloupostech,“ začnu přísně. „Když se člověk blíže podívá na vaše nedávné nákupy půdy, vyplave spousta nesrovnalostí a nezákonných obchodů.“\n\n[magnate.GetFirstNameNoTooltip|U] vypadá provinile, ale lítost nejeví. „#EMP Můj milý příteli#!, víte, jak to chodí... ta byrokracie, a nevzdělaní sedláci jsou tak nevědomí a pomalu chápou zákony. Člověk by občas rád své záležitosti rychle vyřídil! Můžete mi to vyčítat?“"
+ governor_contract_event.2081.desc: "Hned po příjezdu do [CZProvName(ongoing_destination,'G')] mě [magnate.GetTitledFirstName] přijme v [Select_CString(magnate.IsFemale,'jejím','jeho')] sídle.\n\n„Nemluvme o hloupostech,“ začnu přísně. „Když se člověk blíže podívá na vaše nedávné nákupy půdy, vyplave spousta nesrovnalostí a nezákonných obchodů.“\n\n[magnate.GetFirstNameNoTooltip|U] vypadá provinile, ale lítost nejeví. „#EMP Můj milý příteli#!, víte, jak to chodí... ta byrokracie, a nevzdělaní sedláci jsou tak nevědomí a pomalu chápou zákony. Člověk by občas rád své záležitosti rychle vyřídil! Můžete mi to vyčítat?“" # todo: CHANGED (predtym: Hned po příjezdu do [CZProvName(ongoing_destination,'G')] mě [magnate.GetTitledFirstName] přijme ve svém sídle.\n\n„Neml)
  governor_contract_event.2081.a: "Půda bude rozdělena mezi drobné vlastníky."
  governor_contract_event.2081.b: "$ep3_land_confiscate_modifier_desc$"
  governor_contract_event.2081.c: "Mohl bych na ten incident zapomenout za správný #EMP dar#!..."
@@ -375,7 +375,7 @@
  wartime_measures_desc: "Můj pán je ve válce. Právě ke mně z hlavního města dorazila oficiální žádost: poskytněte veškerou možnou podporu procházejícím vojskům."
  wartime_measures_desc_title: "$task_contract_governance_desc_title$"
  governor_contract_event.2120.t: "$wartime_measures$"
- governor_contract_event.2120.desc: "V pracovně na mě dnes čeká list úředního vzhledu s pečetí samotného [ROOT.Char.GetLiege.Custom('CZ_TitleAsNameNoTooltip_G')]:\n\n„Nepřemožitelná vojska [ROOT.Char.GetLiege.GetPrimaryTitle.Custom('CZ_LandedNameNoTier_G')] táhnou proti zavrženíhodnému nepříteli. Vstoupí-li spřátelená vojska na území, které vám bylo svěřeno do správy, je vaší povinností poskytnout jim veškeré náležité pohodlí a podporu.\n\nV těchto těžkých časech si [ROOT.Char.GetLiege.GetTitleAsNameNoTooltip|l] nanejvýš cení obětí, které přinášejí [Select_CString(ROOT.Char.GetLiege.IsFemale,'její','jeho')] poddaní.“"
+ governor_contract_event.2120.desc: "V pracovně na mě dnes čeká list úředního vzhledu s pečetí samotného [ROOT.Char.GetLiege.Custom('CZ_TitleAsNameNoTooltip_G')]:\n\n„Nepřemožitelná vojska [ROOT.Char.GetLiege.GetPrimaryTitle.Custom('CZ_LandedNameNoTier_G')] táhnou proti zavrženíhodnému nepříteli. Vstoupí-li spřátelená vojska na území, které vám bylo svěřeno do správy, je vaší povinností poskytnout jim veškeré náležité pohodlí a podporu.\n\nV těchto těžkých časech si [ROOT.Char.GetLiege.GetTitleAsNameNoTooltip|l] nanejvýš cení obětí, které přinášejí [Select_CString(ROOT.Char.GetLiege.IsFemale,'její','jeho')] poddaní.„"
  governor_contract_event.2120.a: "Samozřejmě, poskytneme plnou podporu!"
  governor_contract_event.2120.b: "Naše zásoby jsou k službám [ROOT.Char.GetLiege.Custom('CZ_TitleAsNameNoTooltip_G')]."
  governor_contract_event.2120.c: "Zajistíme ubytování pro vojska."
@@ -422,9 +422,9 @@
  SCHEME_TIER_DIFFICULTY: "[Concept('task_contract_tier','Úroveň $TASK_CONTRACT_CONTRACT|q$')|E]: $VALUE|+=0$"
  admin_contract_success_tt_trait: "Můžeš získat [Concept('trait','rys')|E] [GetTrait('governor').GetName( GetNullCharacter )]"
  admin_contract_success_tt_xp: "[Concept('trait_level_track_xp','Zkušenosti rysu')|E] v [GetTrait('governor').GetName( GetNullCharacter )] [Concept('trait','ryse')|E]"
- admin_contract_success_tt_rewards: "Můžeš si vybrat z řady odměn, mimo jiné:#indent_newline:3 \n$EFFECT_LIST_BULLET$$admin_contract_success_tt_xp$\n$EFFECT_LIST_BULLET$[gold_i|E][Concept('gold','zlato')|E]\n$EFFECT_LIST_BULLET$[influence_i|E][Concept('influence','vliv')|E]\n$EFFECT_LIST_BULLET$[prestige_i|E][Concept('prestige','prestiž')|E]\n$EFFECT_LIST_BULLET$[piety_i|E][Concept('piety','zbožnost')|E]\n$EFFECT_LIST_BULLET$Vylepšení tvých [Concept('counties','hrabství')|E] nebo [Concept('holdings','držav')|E][AddLocalizationIf( GetPlayer.GetGovernment.HasGovernmentFlag( 'government_has_merit' ), 'admin_contract_merit_bullet' )]#!"
+ admin_contract_success_tt_rewards: "Můžeš si vybrat z řady odměn, mimo jiné:#indent_newline:3 \n$EFFECT_LIST_BULLET$$admin_contract_success_tt_xp$\n$EFFECT_LIST_BULLET$[Concept('gold_i','@gold_icon!')|E][Concept('gold','zlato')|E]\n$EFFECT_LIST_BULLET$[Concept('influence_i','@influence_icon!')|E][Concept('influence','vliv')|E]\n$EFFECT_LIST_BULLET$[Concept('prestige_i','@prestige_icon!')|E][Concept('prestige','prestiž')|E]\n$EFFECT_LIST_BULLET$[Concept('piety_i','[GetLocalPlayerPietyTextIcon]')|E][Concept('piety','zbožnost')|E]\n$EFFECT_LIST_BULLET$Vylepšení tvých [Concept('counties','hrabství')|E] nebo [Concept('holdings','držav')|E][AddLocalizationIf( GetPlayer.GetGovernment.HasGovernmentFlag( 'government_has_merit' ), 'admin_contract_merit_bullet' )]#!" # todo: CONCEPT CASE
  admin_contract_merit_bullet: "\n$EFFECT_LIST_BULLET$[Concept('merit_i','@merit_icon!')|E][Concept('merit','Zásluhy')|E]"
- admin_contract_failure_tt: "Můžeš utrpět drobné postihy, například ztrátu [prestige_i|E][Concept('prestige','prestiže')|E] nebo [influence_i|E][Concept('influence','vlivu')|E]"
+ admin_contract_failure_tt: "Můžeš utrpět drobné postihy, například ztrátu [prestige_i|E][Concept('prestige','prestiže')|E] nebo [Concept('influence_i','@influence_icon!')|E][Concept('influence','vlivu')|E]" # todo: CONCEPT CASE
  has_active_governance_issue: "Už řešíš probíhající [Concept('governance_issue','správní problém')|E]"
  task_contract_reward_effect_taxes_governor_desc: "Možný výsledek:"
  task_contract_reward_effect_taxes_paid_in_full_desc: "$label_success_standard$"

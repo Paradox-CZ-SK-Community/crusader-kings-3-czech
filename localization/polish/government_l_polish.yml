@@ -76,7 +76,7 @@
  nomad_prestige_normal_short: "Nízký"
  nomad_prestige_high: "Vysoký odvod prestiže"
  nomad_prestige_high_short: "Vysoký"
- special_contract: "#I [Concept( 'vassal_contract', 'Zvláštní smlouva' )|U]#!"
+ special_contract: "Zvláštní smlouva" # todo: CHANGED (predtym: I [Concept( 'vassal_contract', 'Zvláštní smlouva' )|U] !)
  special_contract_none: "Bez zvláštní smlouvy"
  special_contract_scutage: "Smlouva o štítném"
  special_contract_scutage_desc: "#flavor Pokud se na [Concept('vassal','vazala')|E] vztahuje $special_contract_scutage|l$, odvádí o #high [EmptyScope.ScriptValue('scutage_contract_tax_tooltip')|0]%#! více [Concept('tax','daně')|E], než stanovuje jeho [Concept('obligation','povinnost')|E] „$feudal_government_taxes$“, a zároveň poskytuje o #high [EmptyScope.ScriptValue('scutage_contract_levies_tooltip')|0]%#! méně [Concept('levies','odvedenců')|E], než stanovuje jeho [Concept('obligation','povinnost')|E] „$feudal_government_levies$“.#!"
@@ -114,7 +114,7 @@
  coinage_rights_none: "Bez mincovního práva"
  coinage_rights_none_short: "Žádné"
  coinage_rights_granted: "$coinage_rights$ uděleno"
- coinage_rights_granted_desc: "#flavor Vazal získává právo razit a používat nové mince, čímž posiluje svůj [Concept('development','rozvoj')|E] na úkor rozvoje svého lenního pána.#!"
+ coinage_rights_granted_desc: "#flavor [vassal] Vazal získává právo razit a používat nové mince, čímž posiluje svůj [Concept('prosperity','blahobyt')|E] na úkor blahobytu svého [liege] lenního pána.#!" # todo: CHANGED (predtym: flavor Vazal získává právo razit a používat nové mince, čímž posiluje svůj [Concept('development','rozvoj')|E] na úkor r)
  coinage_rights_granted_short: "Uděleno"
  war_declaration_rights: "Vyhlašování válek"
  war_declaration_rights_default: "Výchozí $war_declaration_rights|l$"
@@ -212,6 +212,7 @@
  steppe_admin_government_potential_domicile: "$potential_domicile$\n$potential_domicile_noble_house$"
  japan_feudal_government_potential_domicile: "$potential_domicile$\n$potential_domicile_noble_house$"
  japan_administrative_government_potential_domicile: "$potential_domicile$\n$potential_domicile_noble_house$"
+ republic_government_potential_domicile: "$potential_domicile$\n$potential_domicile_noble_house$" # todo: NEW TRANSLATION
  ecclesiastical_government_potential_domicile: "$potential_domicile$\nPostupuj v církevní hierarchii, staň se [Concept('archbishop','arcibiskupem')|E] a získej vlastní [Concept('domicile','domicil')|E]."
  landless_adventurer_government_potential_domicile: "$potential_domicile$"
  nomad_government_potential_domicile: "$potential_domicile$"
@@ -246,7 +247,7 @@
  government_can_use_subject_men_at_arms: "Může verbovat [Concept('men_at_arms','ozbrojence')|E] od [Concept('vassals','vazalů')|E] a [Concept('tributaries','tributářů')|E]"
  may_elevate_co_monarch: "#indent_newline:3 Umožňuje [Concept('rulers','vládcům')|E] alespoň [Concept('kingdom','královské')|E] [Concept('title_tier','úrovně')|E] povýšit jedno ze svých dospělých [Concept('children','dětí')|E] na [Concept('co_monarch','spolupanovníka')|E]#!"
  government_is_feudal: "Má vládu typu [GetGovernment( 'feudal_government' ).GetName]"
- government_is_republic: "Nelze za ni hrát"
+ government_is_republic: "Je republikánskou [Concept('government','vládou')|E]" # todo: CHANGED (predtym: Nelze za ni hrát)
  government_is_theocracy: "Nelze za ni hrát"
  government_is_ecclesiastical: "Má zřízení [GetGovernment( 'ecclesiastical_government' ).GetName]"
  government_is_clan: "Má vládu typu [GetGovernment( 'clan_government' ).GetName]"
@@ -261,15 +262,14 @@
  government_is_nomadic: "Má vládu typu [GetGovernment( 'nomad_government' ).GetName]"
  government_is_herder: "Nelze za ni hrát"
  government_is_celestial: "Má vládu typu [GetGovernment( 'celestial_government' ).GetName]"
- government_is_mandala: "Používá [Concept('mandala','mandalu')|E] #V [GetBuilding('mandala_capital_01').GetTypeName]#! jako [Concept('great_project','velký projekt')|E] a [Concept('great_building','velkolepou budovu')|E]"
+ government_is_mandala: "Používá [Concept('mandala','mandalu')|E] #V [GetBuildingType('mandala_capital_01').GetTypeName]#! jako [Concept('great_project','velký projekt')|E] a [Concept('great_district','velkolepou čtvrť')|E]" # todo: CHANGED (predtym: Používá [Concept('mandala','mandalu')|E] V [GetBuilding('mandala_capital_01').GetTypeName] ! jako [Concept('great_projec)
  government_is_japan_feudal: "Má vládu typu [GetGovernment( 'japan_feudal_government' ).GetName]"
  government_is_japan_administrative: "Má vládu typu [GetGovernment( 'japan_administrative_government' ).GetName]"
- government_is_meritocratic: "Má vládu typu [GetGovernment( 'meritocratic_government' ).GetName]"
  government_is_steppe_admin: "Má vládu typu [GetGovernment( 'steppe_admin_government' ).GetName]"
- government_has_influence: "Používá [influence_i|E][Concept('influence','vliv')|E]"
- government_has_merit: "Používá [merit_i|E][Concept('merit','zásluhy')|E]"
- government_has_treasury: "Používá [treasury_i|E][Concept('treasury','pokladnici')|E]"
- government_has_herd: "Využívá [herd_i|E][Concept('herd','stádo')|E]"
+ government_has_influence: "Používá [Concept('influence_i','@influence_icon!')|E][Concept('influence','vliv')|E]" # todo: CONCEPT CASE
+ government_has_merit: "Používá [Concept('merit_i','@merit_icon!')|E][Concept('merit','zásluhy')|E]" # todo: CONCEPT CASE
+ government_has_treasury: "Používá [Concept('treasury_i','@treasury_icon!')|E][Concept('treasury','pokladnici')|E]" # todo: CONCEPT CASE
+ government_has_herd: "Využívá [Concept('herd_i','@herd_icon!')|E][Concept('herd','stádo')|E]" # todo: CONCEPT CASE
  government_use_barter_goods: "Umožňuje [barter_goods_i][Concept('bartering','směňování')|E]"
  government_has_title_men_at_arms: "Umožňuje verbovat [Concept('title_men_at_arms','titulové ozbrojence')|E]"
  government_has_powerful_families: "Zpřístupňuje [Concept('noble_families','šlechtické rodiny')|E]"
@@ -287,6 +287,7 @@
  may_appoint_viziers: "Může jmenovat [Concept('viziers','vezíry')|E]"
  government_ignores_rightful_liege_penalties: "Ignoruje postihy za to, že není právoplatným lenním pánem"
  block_same_government_type_vassal_courts: "Vazalové s tímto pravidlem nemohou mít Královský dvůr, pokud toto pravidlo má i jejich vrchní lenní pán"
+ government_uses_ministry_budget: "Má [Concept('ministers','ministři')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  government_is_bureaucratic: "Je [Concept('government_bureaucratic_type','byrokratická')|E]"
  government_uses_crown_authority: "Využívá [Concept('crown_authority','korunní autoritu')|E] jako [Concept('government_authority','vládní autoritu')|E]"
  government_uses_tribal_authority: "Využívá [Concept('tribal_authority','kmenovou autoritu')|E] jako [Concept('government_authority','vládní autoritu')|E]"
@@ -296,6 +297,10 @@
  government_uses_meritocratic_bureaucracy: "Využívá [Concept('meritocratic_bureaucracy','meritokratickou byrokracii')|E] jako [Concept('government_authority','vládní autoritu')|E]"
  government_uses_japanese_bureaucracy: "Využívá [Concept('japanese_bureaucracy','japonskou byrokracii')|E] jako [Concept('government_authority','vládní autoritu')|E]"
  government_is_not_republic_or_admin_desc: "[Concept('government','Vláda')|E] není typu [GetGovernment('republic_government').GetName] ani [GetGovernment('administrative_government').GetName]"
+ government_has_trade_posts: "Může budovat @trade_post_icon![Concept('trade_posts','obchodní stanice')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ government_has_house_ambitions: "Využívá [Concept('house_ambitions','ambice rodů')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ government_has_merchant_company: "Má přístup ke [Concept('company','společnosti')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ government_has_assembly: "Využívá [Concept('assembly','shromáždění')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  CHARACTER_WINDOW_MILITARY_STRENGTH_TOOLTIP: "[CharacterWindow.GetMilitaryStrengthTooltip][AddLocalizationIf(Not(StringIsEmpty(CharacterWindow.GetMenAtArmsSubjectRecruitmentPotentialTooltip)),'MAA_SUBJECT_ACCESS_POTENTIAL')]"
  SUBJECT_MAA_HINT: "Mohl bys verbovat @[MenAtArmsType.GetIconKey]_icon![Nbsp][MenAtArmsType.GetName] z následujících [Concept('realms','panství')|E], pokud by jejich vládci byli tvými [Concept('tributary','tributáři')|E] nebo [Concept('vassal','vazaly')|E]:#indent_newline:2 \n$BREAKDOWN$#!"
  SUBJECT_MAA_HINT_ENTRY: "[CHARACTER.GetPrimaryTitle.GetBaseNameNoTier] ([CHARACTER.GetShortUIName])"
@@ -304,10 +309,10 @@
  SUPPLY_MULT_DIFERENT_GOVERNMENT: "[GOVERNMENT_TYPE.GetAdjective] území"
  CONTRACT_LIEGE_SIGNATURE: "[SelectLocalization( SubjectContract.IsTributary, 'CONTRACT_LIEGE_SIGNATURE_SUZERAIN_TYPE', 'CONTRACT_LIEGE_SIGNATURE_LIEGE_TYPE' )],\n[SubjectContract.GetLiege.GetTitledFirstNameNoTooltip]\nz rodu [SubjectContract.GetLiege.GetHouse.GetBaseNameNoTooltip]"
  CONTRACT_LIEGE_SIGNATURE_LIEGE_TYPE: "Lenní pán"
- CONTRACT_LIEGE_SIGNATURE_SUZERAIN_TYPE: "Suzerén"
+ CONTRACT_LIEGE_SIGNATURE_SUZERAIN_TYPE: "[SelectLocalization( IsLandlessMerchant( GetPlayer ), 'Patron', 'Suzerain' )]" # todo: CHANGED (predtym: Suzerén)
  CONTRACT_VASSAL_SIGNATURE: "[SelectLocalization( SubjectContract.IsTributary, 'CONTRACT_VASSAL_SIGNATURE_TRIBUTARY_TYPE', 'CONTRACT_VASSAL_SIGNATURE_VASSAL_TYPE' )],\n[SubjectContract.GetSubject.GetTitledFirstNameNoTooltip]\nz rodu [SubjectContract.GetSubject.GetHouse.GetBaseNameNoTooltip]"
  CONTRACT_VASSAL_SIGNATURE_VASSAL_TYPE: "Vazal"
- CONTRACT_VASSAL_SIGNATURE_TRIBUTARY_TYPE: "Tributář"
+ CONTRACT_VASSAL_SIGNATURE_TRIBUTARY_TYPE: "[SelectLocalization( IsLandlessMerchant( GetPlayer ), 'Client', 'Tributary' )]" # todo: CHANGED (predtym: Tributář)
  marriage_favor_rights: "Přednost při sňatku"
  marriage_favor_rights_default: "Bez přednosti při sňatku"
  marriage_favor_rights_default_short: "Výchozí"
@@ -315,18 +320,18 @@
  marriage_favor_rights_granted_desc: "#emphasis #bold Výsada [Concept('vassal','vazala')|E]:#!#!\n$EFFECT_LIST_BULLET$ [Concept('liege','Lenní pán')|E] se zavazuje nejprve nabídnout sňatek někoho ze své blízké rodiny k uzavření aliance s vazalem a teprve poté jej provdat či oženit s někým jiným\n\n#flavor [Concept('vassal','Vazal')|E] patří mezi oblíbence [Concept('liege','lenního pána')|E] a měl by mít možnost stvrdit s ním spojenectví sňatkem.#!"
  marriage_favor_rights_granted_short: "Zaručeno"
  antagonistic: "Nevraživý"
- antagonistic_desc: "Jen máloco dokáže lidi popohnat tak jako rivalita či žárlivost. V tomto rodě je lepší hlídat si záda, jinak v nich může snadno skončit něčí nůž."
+ antagonistic_desc: "#weak Jen máloco dokáže lidi popohnat tak jako rivalita či žárlivost. V tomto rodě je lepší hlídat si záda, jinak v nich může snadno skončit něčí nůž.#!" # todo: CHANGED (predtym: Jen máloco dokáže lidi popohnat tak jako rivalita či žárlivost. V tomto rodě je lepší hlídat si záda, jinak v nich může )
  competitive: "Soutěživý"
- competitive_desc: "Soutěživost v rodině může být zdravá. Členy tohoto rodu žene k tomu, aby jeden druhého překonali, ať už na bitevním poli, nebo v boji o trůn..."
+ competitive_desc: "#weak Soutěživost v rodině může být zdravá. Členy tohoto rodu žene k tomu, aby jeden druhého překonali, ať už na bitevním poli, nebo v boji o trůn...#!" # todo: CHANGED (predtym: Soutěživost v rodině může být zdravá. Členy tohoto rodu žene k tomu, aby jeden druhého překonali, ať už na bitevním poli)
  impassive: "Lhostejný"
- impassive_desc: "Proč plýtvat časem a silami starostmi o to, co dělá zbytek rodiny? Členové tohoto rodu hledí především sami na sebe."
+ impassive_desc: "#weak Proč plýtvat časem a silami starostmi o to, co dělá zbytek rodiny? Členové tohoto rodu hledí především sami na sebe.#!" # todo: CHANGED (predtym: Proč plýtvat časem a silami starostmi o to, co dělá zbytek rodiny? Členové tohoto rodu hledí především sami na sebe.)
  friendly: "Přátelský"
- friendly_desc: "Možná se vždy na všem neshodnou, ale členové tohoto rodu spolu přesto udržují přátelské vztahy."
+ friendly_desc: "#weak Možná se vždy na všem neshodnou, ale členové tohoto rodu spolu přesto udržují přátelské vztahy.#!" # todo: CHANGED (predtym: Možná se vždy na všem neshodnou, ale členové tohoto rodu spolu přesto udržují přátelské vztahy.)
  harmonious: "Soudržný"
- harmonious_desc: "Rod žije v dokonalé shodě. Jeho členové dělají vše pro to, aby drželi při sobě a vždy si navzájem pomáhali."
- antagonistic_house_approves_war_victory: "Všichni [Concept('vassals','vazalové')|E] z [Concept('house','rodu')|E] [attacker.Custom('CZ_ShortUIName_G')] získají vůči [Select_CString(attacker.IsFemale,'ní','němu')] #P 10#! [Concept('opinion','mínění')|E] na #V 10 let#! #weak (Ohromeni vítězstvím v útočné válce)#!"
- antagonistic_house_approves_war_victory_defensive: "Všichni [Concept('vassals','vazalové')|E] z [Concept('house','rodu')|E] [defender.Custom('CZ_ShortUIName_G')] získají vůči [Select_CString(defender.IsFemale,'ní','němu')] #P 15#! [Concept('opinion','mínění')|E] na #V 10 let#! #weak (Ohromeni vítězstvím v obranné válce)#!"
- antagonistic_house_disapproves_war_white_peace: "Všichni [Concept('vassals','vazalové')|E] z [Concept('house','rodu')|E] [attacker.Custom('CZ_ShortUIName_G')] ztratí vůči [Select_CString(attacker.IsFemale,'ní','němu')] #N 10#! [Concept('opinion','mínění')|E] na #V 10 let#! #weak (Bílý mír považují za slabost)#!"
+ harmonious_desc: "#weak Rod žije v dokonalé shodě. Jeho členové dělají vše pro to, aby drželi při sobě a vždy si navzájem pomáhali.#!" # todo: CHANGED (predtym: Rod žije v dokonalé shodě. Jeho členové dělají vše pro to, aby drželi při sobě a vždy si navzájem pomáhali.)
+ antagonistic_house_approves_war_victory: "Všichni [Concept('vassals','vazalové')|E] z [Concept('house','rodu')|E] [attacker.Custom('CZ_ShortUIName_G')] získají vůči [attacker.Custom('CZ_ShortUIName_D')] #P 10#! [Concept('opinion','mínění')|E] na #V 10 let#! #weak (Ohromeni vítězstvím v útočné válce)#!" # todo: CHANGED (predtym: Všichni [Concept('vassals','vazalové')|E] z [Concept('house','rodu')|E] [attacker.Custom('CZ_ShortUIName_G')] získají vů)
+ antagonistic_house_approves_war_victory_defensive: "Všichni [Concept('vassals','vazalové')|E] z [Concept('house','rodu')|E] [defender.Custom('CZ_ShortUIName_G')] získají vůči [defender.Custom('CZ_ShortUIName_D')] #P 15#! [Concept('opinion','mínění')|E] na #V 10 let#! #weak (Ohromeni vítězstvím v obranné válce)#!" # todo: CHANGED (predtym: Všichni [Concept('vassals','vazalové')|E] z [Concept('house','rodu')|E] [defender.Custom('CZ_ShortUIName_G')] získají vů)
+ antagonistic_house_disapproves_war_white_peace: "Všichni [Concept('vassals','vazalové')|E] z [Concept('house','rodu')|E] [attacker.Custom('CZ_ShortUIName_G')] ztratí vůči [attacker.Custom('CZ_ShortUIName_D')] #N 10#! [Concept('opinion','mínění')|E] na #V 10 let#! #weak (Bílý mír považují za slabost)#!" # todo: CHANGED (predtym: Všichni [Concept('vassals','vazalové')|E] z [Concept('house','rodu')|E] [attacker.Custom('CZ_ShortUIName_G')] ztratí vůč)
  antagonistic_house_disapproves_war_white_peace_defender: "Všichni [Concept('vassals','vazalové')|E] z [Concept('house','rodu')|E] [defender.Custom('CZ_ShortUIName_G')] ztratí vůči [Select_CString(defender.IsFemale,'ní','němu')] #N 10#! [Concept('opinion','mínění')|E] na #V 10 let#! #weak (Bílý mír považují za slabost)#!"
  antagonistic_house_disapproves_war_defeat: "Všichni [Concept('vassals','vazalové')|E] z [Concept('house','rodu')|E] [attacker.Custom('CZ_ShortUIName_G')] ztratí vůči [Select_CString(attacker.IsFemale,'ní','němu')] #N 20#! [Concept('opinion','mínění')|E] na #V 10 let#! #weak (Zahanbeni porážkou)#!"
  antagonistic_house_disapproves_war_defeat_defender: "Všichni [Concept('vassals','vazalové')|E] z [Concept('house','rodu')|E] [defender.Custom('CZ_ShortUIName_G')] ztratí vůči [Select_CString(defender.IsFemale,'ní','němu')] #N 20#! [Concept('opinion','mínění')|E] na #V 10 let#! #weak (Zahanbeni porážkou)#!"
@@ -348,7 +353,7 @@
  house_unity_parameter_unity_unlock_fabricate_hooks: "Členové [Concept('house','rodu')|E] mohou proti sobě používat [Concept('scheme','intriku')|E] [GetScheme('fabricate_hook').GetTypeName]"
  unity_unlock_fabricate_hooks_name: "$house_unity_parameter_unity_unlock_fabricate_hooks$"
  house_unity_parameter_unity_unlock_befriend_scheme: "Členové [Concept('house','rodu')|E] mohou vůči sobě používat [GetScheme('befriend').GetTypeName]"
- house_unity_parameter_unity_can_challenge_house_head: "Členové [Concept('house','rodu')|E] mohou vyzvat svou [Concept('house_head','hlavu rodu')|E] a zaujmout její místo"
+ house_unity_parameter_unity_can_challenge_house_head: "Členové [Concept('house','rodu')|E] mohou použít #V $fp3_challenge_house_head_interaction$#! [Concept('interaction','interakci')|E] a zaujmout místo své [Concept('house_heads_possessive','hlavy rodu')|E]" # todo: CHANGED (predtym: Členové [Concept('house','rodu')|E] mohou vyzvat svou [Concept('house_head','hlavu rodu')|E] a zaujmout její místo) # todo: CONCEPT CASE
  house_unity_parameter_unity_can_create_cadet_branches: "[Concept('independent','Nezávislí')|E] členové [Concept('house','rodu')|E] mohou zakládat [Concept('cadet_branches','kadetské větve')|E]"
  house_unity_parameter_unity_enable_border_wars: "U [Concept('independent','nezávislých')|E] členů [Concept('house','rodu')|E] je pro #V [GetLawGroup('border_wars_laws').GetName]#! napevno stanoven [Concept('title_law','zákon titulu')|E] [GetLaw('top_liege_not_redirected_to_border_wars_law').GetName]"
  house_unity_can_create_cadet_branches_tt: "[Concept('house_unity','Jednota rodu')|E]: @dynasty_house_unity_antagonistic! $antagonistic$"
@@ -361,26 +366,29 @@
  unity_has_liberate_house_members_cb_name: "[Concept('fp3_free_house_member_cb','Osvobození člena rodu')|E]"
  house_unity_parameter_unity_has_unify_house_cb: "Zpřístupňuje [Concept('fp3_unify_house_cb','Sjednocení rodu')|E] [Concept('casus_belli','casus belli')|E]"
  unity_has_unify_house_cb_name: "[Concept('fp3_unify_house_cb','Sjednocení rodu')|E]"
- HAS_HOUSE_UNITY_STAGE_GLOBAL: "[Concept('house_unity','Jednota rodu')|E]: @dynasty_house_unity_[HouseUnityStage.GetKey]! [HouseUnityStage.GetName|V]"
- I_HAVE_HOUSE_UNITY_STAGE_GLOBAL: "Má [Concept('house_unity','jednota rodu')|E]: @dynasty_house_unity_[HouseUnityStage.GetKey]! [HouseUnityStage.GetName|V]"
- THEY_HAVE_HOUSE_UNITY_STAGE_GLOBAL: "[Concept('house','Rod')|E] [DYNASTY_HOUSE.GetBaseName|V] — [Concept('house_unity','jednota')|E]: @dynasty_house_unity_[HouseUnityStage.GetKey]! [HouseUnityStage.GetName|V]"
- NOT_HAS_HOUSE_UNITY_STAGE_GLOBAL: "[Concept('house_unity','Jednota rodu')|E] #bold není#! @dynasty_house_unity_[HouseUnityStage.GetKey]! [HouseUnityStage.GetName|V]"
- NOT_I_HAVE_HOUSE_UNITY_STAGE_GLOBAL: "Má [Concept('house_unity','jednota rodu')|E] #bold není#! @dynasty_house_unity_[HouseUnityStage.GetKey]! [HouseUnityStage.GetName|V]"
- NOT_THEY_HAVE_HOUSE_UNITY_STAGE_GLOBAL: "[Concept('house','Rod')|E] [DYNASTY_HOUSE.GetBaseName|V] — [Concept('house_unity','jednota')|E] #bold není#! @dynasty_house_unity_[HouseUnityStage.GetKey]! [HouseUnityStage.GetName|V]"
- active_unity_level_description_tt: "#weak Je to dáno tvou aktuální [Concept('house_unity_level','úrovní jednoty rodu')|E]#!"
- ADD_UNITY_VALUE_GLOBAL: "[Concept('house','Rod')|E] [DynastyHouse.GetBaseName|V]: [Concept('house_unity','jednota')|E] se mění o $VALUE|=+0$ @dynasty_house_unity!"
+ HAS_HOUSE_UNITY_STAGE_GLOBAL: "[HOUSE_UNITY_TYPE.GetConcept]: @dynasty_house_unity_[HouseUnityStage.GetKey]! [HouseUnityStage.GetName|V]" # todo: CHANGED (predtym: [Concept('house_unity','Jednota rodu')|E]: @dynasty_house_unity_[HouseUnityStage.GetKey]! [HouseUnityStage.GetName|V])
+ I_HAVE_HOUSE_UNITY_STAGE_GLOBAL: "Má [HOUSE_UNITY_TYPE.GetConcept]: @dynasty_house_unity_[HouseUnityStage.GetKey]! [HouseUnityStage.GetName|V]" # todo: CHANGED (predtym: Má [Concept('house_unity','jednota rodu')|E]: @dynasty_house_unity_[HouseUnityStage.GetKey]! [HouseUnityStage.GetName|V])
+ THEY_HAVE_HOUSE_UNITY_STAGE_GLOBAL: "[Concept('house','Rod')|E] [DYNASTY_HOUSE.GetBaseName|V] — [HOUSE_UNITY_TYPE.GetConcept]: @dynasty_house_unity_[HouseUnityStage.GetKey]! [HouseUnityStage.GetName|V]" # todo: CHANGED (predtym: [Concept('house','Rod')|E] [DYNASTY_HOUSE.GetBaseName|V] — [Concept('house_unity','jednota')|E]: @dynasty_house_unity_[H)
+ NOT_HAS_HOUSE_UNITY_STAGE_GLOBAL: "[HOUSE_UNITY_TYPE.GetConcept] #bold není#! @dynasty_house_unity_[HouseUnityStage.GetKey]! [HouseUnityStage.GetName|V]" # todo: CHANGED (predtym: [Concept('house_unity','Jednota rodu')|E] bold není ! @dynasty_house_unity_[HouseUnityStage.GetKey]! [HouseUnityStage.Ge)
+ NOT_I_HAVE_HOUSE_UNITY_STAGE_GLOBAL: "Má [HOUSE_UNITY_TYPE.GetConcept] #bold není#! @dynasty_house_unity_[HouseUnityStage.GetKey]! [HouseUnityStage.GetName|V]" # todo: CHANGED (predtym: Má [Concept('house_unity','jednota rodu')|E] bold není ! @dynasty_house_unity_[HouseUnityStage.GetKey]! [HouseUnityStage)
+ NOT_THEY_HAVE_HOUSE_UNITY_STAGE_GLOBAL: "[Concept('house','Rod')|E] [DYNASTY_HOUSE.GetBaseName|V] — [HOUSE_UNITY_TYPE.GetConcept] #bold není#! @dynasty_house_unity_[HouseUnityStage.GetKey]! [HouseUnityStage.GetName|V]" # todo: CHANGED (predtym: [Concept('house','Rod')|E] [DYNASTY_HOUSE.GetBaseName|V] — [Concept('house_unity','jednota')|E] bold není ! @dynasty_hou)
+ active_unity_level_description_tt: "#weak Je to dáno tvou aktuální [SelectLocalization( GetPlayer.GetGovernment.HasGovernmentFlag('government_uses_company_sentiment'), 'company_direction_level_concept', 'house_unity_level_concept' )]#!" # todo: CHANGED (predtym: weak Je to dáno tvou aktuální [Concept('house_unity_level','úrovní jednoty rodu')|E] !)
+ ADD_UNITY_VALUE_GLOBAL: "[Concept('house','Rod')|E] [DynastyHouse.GetBaseName|V]: [HOUSE_UNITY_TYPE.GetConcept] se posouvá o [Abs_CFixedPoint( '(CFixedPoint)$VALUE|q$' )|V0] směrem k @dynasty_house_unity_[HOUSE_UNITY_STAGE.GetKey]! [HOUSE_UNITY_STAGE.GetName|V]" # todo: CHANGED (predtym: [Concept('house','Rod')|E] [DynastyHouse.GetBaseName|V]: [Concept('house_unity','jednota')|E] se mění o $VALUE|=+0$ @dyn)
  AI_HOUSE_UNITY: "Tvá [Concept('house_unity','jednota rodu')|E]: $VALUE|=+0$"
+ AI_RECIPIENT_HOUSE_UNITY: "[Concept('liege_possessive','Lenního pána')|E] #N nízká#! [Concept('house_unity','jednota rodu')|E]: $VALUE|=+0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ AI_RECIPIENT_COMPANY_SENTIMENT: "[company_sentiment_divided_i][Concept('company_sentiment_divided','Dravý')|E] [Concept('company_sentiment','Směřování společnosti')|E] [Concept('liege_possessive','Lenního pána')|E]: $VALUE|=+0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ AI_RECIPIENT_COMPANY_SENTIMENT_OPPORTUNISTIC: "[company_sentiment_fractious_i][Concept('company_sentiment_fractious','Příležitostný')|E] [Concept('company_sentiment','Směřování společnosti')|E] [Concept('liege_possessive','Lenního pána')|E]: $VALUE|=+0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  unity_reinforce_army_decision: "Posílit armádu věrnými důstojníky"
  unity_reinforce_army_decision_desc: "Armáda je jen tak silná jako důstojníci, kteří ji vedou. Když požádám členy svého rodu o schopné vojáky, získám zkušené muže, které mohu povýšit do velitelských funkcí a posílit tak bojeschopnost svého vojska. Každý člen přispívá k dobru našeho rodu a prospěch z toho máme všichni!"
- unity_reinforce_army_decision_tooltip: "Požádej členy svého rodu, aby ti poslali schopné důstojníky"
+ unity_reinforce_army_decision_tooltip: "Požádej členy svého [Concept('house','rodu')|E], aby ti poslali schopné důstojníky" # todo: CHANGED (predtym: Požádej členy svého rodu, aby ti poslali schopné důstojníky)
  unity_reinforce_army_decision_confirm: "Rozeslat rozkazy."
  unity_establish_network_decision: "Vybudovat síť intrik"
  unity_establish_network_decision_desc: "Každý člen mého rodu je svým způsobem prohnaný. Pod mým vedením můžeme utkat síť intrik, do které se chytí i ti nejmazanější vetřelci."
- unity_establish_network_decision_tooltip: "Zapoj členy svého rodu do obrany proti nepřátelským intrikám i do jejich uskutečňování"
+ unity_establish_network_decision_tooltip: "Zapoj členy svého [Concept('house','rodu')|E] do obrany proti nepřátelským [Concept('scheme','intrikám')|E] i do jejich uskutečňování" # todo: CHANGED, CHECK FORMAT (predtym: Zapoj členy svého rodu do obrany proti nepřátelským intrikám i do jejich uskutečňování) # todo: FORMAT chýba [schemes|E]; navyše [scheme|E]
  unity_establish_network_decision_confirm: "Rozeslat a spálit výnos"
  unity_improve_taxation_decision: "Zlepšit výběr daní"
  unity_improve_taxation_decision_desc: "V mém rodě je mnoho lidí, kteří se vyznají ve výběru daní a správě panství. Když se podělíme o zkušenosti a schopné lidi, můžeme všichni těžit z vyšších příjmů."
- unity_improve_taxation_decision_tooltip: "Spolupracuj se členy svého rodu na zlepšení výběru daní a zvýšení příjmů panství"
+ unity_improve_taxation_decision_tooltip: "Spolupracuj se členy svého [Concept('house','rodu')|E] na zlepšení výběru daní a zvýšení příjmů [Concept('realm','panství')|E]" # todo: CHANGED (predtym: Spolupracuj se členy svého rodu na zlepšení výběru daní a zvýšení příjmů panství)
  unity_improve_taxation_decision_confirm: "Svolejme poradu"
  unity_search_for_administrators_decision: "Hledat výběrčí daní"
  unity_search_for_administrators_decision_desc: "Daně jsou páteří každého panství. Vyplatí se věnovat čas hledání schopných správců a bývalých vojáků, které lze zaměstnat jako výběrčí daní."
@@ -391,32 +399,32 @@
  unity_search_for_administrators_decision.msg.desc: "K tvému dvoru dorazil nový správce jménem [new_administrator.GetName] a je připraven nastoupit do služby."
  unity_send_bailiffs_decision: "Vyslat rychtáře"
  unity_send_bailiffs_decision_desc: "Mohu využít ochoty členů svého rodu ke spolupráci a vyslat k nim své rychtáře, aby prosadili mé příkazy a pomohli udržet v panství pořádek."
- unity_send_bailiffs_decision_tooltip: "Spolupracuj se členy svého rodu na zvýšení kontroly v panství"
+ unity_send_bailiffs_decision_tooltip: "Spolupracuj se členy svého [Concept('house','rodu')|E] na zvýšení [Concept('control','kontroly')|E] v celém [Concept('realm','panství')|E]" # todo: CHANGED (predtym: Spolupracuj se členy svého rodu na zvýšení kontroly v panství)
  unity_send_bailiffs_decision_confirm: "Vyslat rychtáře"
  unity_placate_vassals_decision: "Uklidnit vazaly"
  unity_placate_vassals_decision_desc: "I soudržný rod prochází těžkými zkouškami. Když využiji svého vlivu jako hlava rodu, mohu zahladit drobné spory dříve, než přerostou v hluboké rozkoly."
- unity_placate_vassals_decision_tooltip: "Připomeň členům svého rodu svou autoritu jejich lenního pána"
+ unity_placate_vassals_decision_tooltip: "Připomeň členům svého [Concept('house','rodu')|E] svou autoritu jejich [Concept('liege','lenního pána')|E]" # todo: CHANGED (predtym: Připomeň členům svého rodu svou autoritu jejich lenního pána)
  unity_placate_vassals_decision_confirm: "Uklidnit vazaly"
  unity_organize_house_for_war_decision: "Připravit rod na válku"
  unity_organize_house_for_war_decision_desc: "Rozvoj panství vyžaduje odhodlání a často také rozsáhlé výboje. Vydáváním konkrétních nařízení a vedením členů našeho rodu je mohu přimět, aby ochotněji vedli války a dobývali nové země."
- unity_organize_house_for_war_decision_tooltip: "Veď členy svého rodu k častějšímu vedení válek"
+ unity_organize_house_for_war_decision_tooltip: "Veď členy svého [Concept('house','rodu')|E] k častějšímu vedení [Concept('war','válek')|E]" # todo: CHANGED (predtym: Veď členy svého rodu k častějšímu vedení válek)
  unity_organize_house_for_war_decision_confirm: "Podpořit válku a výboje!"
  unity_encourage_house_economy_decision: "Podpořit hospodářství rodu"
  unity_encourage_house_economy_decision_desc: "Panství je jen tak silné jako země, na níž stojí. Musím zajistit, aby všichni členové rodu mohli vynakládat potřebné prostředky na budování silnějšího panství."
- unity_encourage_house_economy_decision_tooltip: "Veď členy svého rodu k tomu, aby se zaměřili na hospodářství"
+ unity_encourage_house_economy_decision_tooltip: "Veď členy svého [Concept('house','rodu')|E] k tomu, aby se zaměřili na hospodářství" # todo: CHANGED (predtym: Veď členy svého rodu k tomu, aby se zaměřili na hospodářství)
  unity_encourage_house_economy_decision_confirm: "Podpořit silnější hospodářství!"
- unity_promote_development_decision: "Podpořit rozvoj"
- unity_promote_development_decision_desc: "Naše kultura má dlouhou tradici vynikající správy. V našem rodě působí mnoho schopných správců a dozorců. Můžeme jejich schopností využít a dále rozvíjet panství."
- unity_promote_development_decision_tooltip: "Pobídni členy svého rodu, aby rozvíjeli a zvelebovali panství"
- unity_promote_development_decision_confirm: "Podpořit rozvoj"
+ unity_promote_prosperity_decision: "Podpořit prosperitu" # todo: NEW TRANSLATION
+ unity_promote_prosperity_decision_desc: "Naše kultura má dlouhou tradici vynikajících správních schopností. V našem rodu působí mnoho schopných dozorců a správců. Můžeme toho využít a dále rozvíjet panství." # todo: NEW TRANSLATION
+ unity_promote_prosperity_decision_tooltip: "Povýšit členy svého rodu, aby rozvíjeli a zvelebovali panství" # todo: NEW TRANSLATION
+ unity_promote_prosperity_decision_confirm: "Podpořit prosperitu" # todo: NEW TRANSLATION
  unity_improve_logistics_decision: "Vyžadovat společné zásobování vojska"
  unity_improve_logistics_decision_desc: "O válkách rozhoduje bezpočet různých faktorů. Dobrá logistika a zásobování jsou stejně důležité jako schopní vojáci. Mohu v našem rodě prosadit nová pravidla a požadovat, aby všichni sdíleli zásoby a výstroj, čímž výrazně zvýšíme schopnosti našeho vojska."
- unity_improve_logistics_decision_tooltip: "Požaduj po členech svého rodu, aby sdíleli zásoby a logistické zázemí pro potřeby vojska"
+ unity_improve_logistics_decision_tooltip: "Požaduj po členech svého [Concept('house','rodu')|E], aby sdíleli zásoby a logistické zázemí pro potřeby [Concept('army','armád')|E]" # todo: CHANGED, CHECK FORMAT (predtym: Požaduj po členech svého rodu, aby sdíleli zásoby a logistické zázemí pro potřeby vojska) # todo: FORMAT chýba [armies|E]; navyše [army|E]
  unity_improve_logistics_decision_confirm: "Vyžadovat společné zásobování"
- unity_steer_house_direction_decision: "Usměrnit jednotu rodu"
- unity_steer_house_direction_decision_desc: "Jako hlava rodu mám mezi jeho členy značnou váhu. Pečlivě volenými slovy a činy mohu své příbuzné pobízet k určitému jednání a výrazně tak ovlivnit naši společnou jednotu."
+ unity_steer_house_direction_decision: "Usměrnit [ROOT.Char.Custom('GetHouseUnity')]" # todo: CHANGED (predtym: Usměrnit jednotu rodu)
+ unity_steer_house_direction_decision_desc: "Jako hlava rodu [ROOT.Char.GetHouse.GetNameNoTooltip] mám v rodině značnou váhu. Pečlivě voleným slovem či gestem mohu své příbuzné přimět k chování podle svého přání a výrazně tak ovlivnit naši [ROOT.Char.Custom('GetHouseUnityConcept')]." # todo: CHANGED (predtym: Jako hlava rodu mám mezi jeho členy značnou váhu. Pečlivě volenými slovy a činy mohu své příbuzné pobízet k určitému jed)
  unity_steer_house_direction_decision_confirm: "$unity_steer_house_direction_decision$"
- unity_steer_house_direction_decision_tooltip: "Zvol směr, kterým chceš vést svou [Concept('house_unity','jednotu rodu')|E]"
+ unity_steer_house_direction_decision_tooltip: "Zvol směr, kterým chceš vést svou [ROOT.Char.Custom('GetHouseUnityConcept')]" # todo: CHANGED (predtym: Zvol směr, kterým chceš vést svou [Concept('house_unity','jednotu rodu')|E])
  unity_steer_house_direction_decision_second_tooltip: "$DESC$\n"
  CHOOSE_UNITY_DIRECTION: "Zvolit směr"
  STEER_HOUSE_UNITY_SELECT_DIRECTION_TITLE: "Zvolit směr [Concept('unity','jednoty')|E]"
@@ -431,17 +439,22 @@
  steer_unity_towards_antagonistic_tooltip: "$unity_steer_house_direction_decision_second_tooltip$"
  steer_unity_towards_antagonistic_tt: "#X Tvůj [Concept('house','rod')|E] již má [Concept('house_unity_level','úroveň jednoty rodu')|E] #V $antagonistic|l$#!#!"
  steer_unity_towards_antagonistic_passive_loss_tt: "[Concept('house_unity','Jednota rodu')|E] se bude po následujících #V 10#! let každoročně #N snižovat#!"
- steer_unity_towards_antagonistic_toast: "[ROOT.Char.GetShortUINameNoTooltip|U] vede [Concept('house_unity','jednotu rodu')|E] směrem k úrovni $antagonistic|l$"
- steer_unity_notification_title: "[Concept('house_head','Hlava rodu')|E] změnila směr [Concept('unity','jednoty')|E]"
+ steer_unity_towards_antagonistic_toast: "[ROOT.Char.GetShortUINameNoTooltip|U] vede [Concept('house_unity','jednotu rodu')|E] směrem k #V $antagonistic$#!" # todo: CHANGED (predtym: [ROOT.Char.GetShortUINameNoTooltip|U] vede [Concept('house_unity','jednotu rodu')|E] směrem k úrovni $antagonistic|l$)
+ steer_unity_notification_title: "Hlava rodu usměrňuje jednotu" # todo: CHANGED (predtym: [Concept('house_head','Hlava rodu')|E] změnila směr [Concept('unity','jednoty')|E])
+ steer_unity_towards_ennobled_passive_gain_tt: "[Concept('company_sentiment','Směřování společnosti')|E] se bude každý rok po dobu následujících #V 10#! let posouvat směrem k [company_sentiment_concerted_i][Concept('company_sentiment_concerted','povýšenému do šlechtickému stavu')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ steer_unity_towards_rapacious_passive_loss_tt: "[Concept('company_sentiment','Směřování společnosti')|E] se bude každý rok po dobu následujících #V 10#! let posouvat směrem k [company_sentiment_divided_i][Concept('company_sentiment_divided','dravému')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  unity_consult_house_decision: "Poradit se s členy rodu"
  unity_consult_house_decision_desc: "Jednotná rada dokáže jednat rychle a rozhodně. Stačí několik společných porad a mohu zajistit, aby členové mého rodu plnili své povinnosti rádců účinněji."
+ unity_consult_house_decision_desc_court_position: "Koordinovaná společnost dokáže jednat rychle a bezpečně. Stačí jen trocha domlouvání a mohu zajistit, aby členové mého rodu plnili své úkoly efektivněji." # todo: NEW TRANSLATION
  unity_consult_house_decision.tt_house_council_bonus: "Základní postup a vliv [Concept('skill','dovednosti')|E] na [Concept('councillor_tasks','úkoly rádce')|E] se u členů [Concept('house','rodu')|E] působících v tvé [Concept('council','radě')|E] zvyšují o #P +10%#!"
+ unity_consult_house_decision.tt_house_court_position_bonus: "Základní [Concept('aptitude','způsobilost')|E] [Concept('court_positions','dvorských úřadů')|E] členů [Concept('house','rodu')|E] zaměstnaných u vás se zvýší o #P +[EmptyScope.ScriptValue('court_position_consulted_house_bonus_aptitude_value')|0]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  unity_consult_house_decision.tt_no_unity_change: "Jmenování členů [Concept('house','rodu')|E] do tvé [Concept('council','rady')|E] ani jejich odvolávání už neovlivňuje [Concept('house_unity','jednotu rodu')|E]"
  unity_consult_house_decision.tt_lifetime: "Tento účinek zůstane aktivní až do smrti tvé postavy"
  unity_consult_house_decision.tt_cooldown: "Porada se členy tvého [Concept('house','rodu')|E] již proběhla"
- unity_consult_house_decision_tooltip: "Pomoz členům svého rodu stát se schopnějšími rádci"
+ unity_consult_house_decision_tooltip: "Pomoz členům svého [Concept('house','rodu')|E] stát se schopnějšími [Concept('councillors','rádci')|E]" # todo: CHANGED (predtym: Pomoz členům svého rodu stát se schopnějšími rádci)
+ unity_consult_house_decision_tooltip_court_position: "Veďte členy svého [Concept('house','rodu')|E] k efektivnějšímu výkonu [Concept('court_positions','dvorským úřadům')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  unity_consult_house_decision_confirm: "Poradit se s členy rodu"
- unity_consulted_house_member_desc: "Porada s členem rodu"
+ unity_consulted_house_member_desc: "Porada s členy rodu" # todo: CHANGED (predtym: Porada s členem rodu)
  unity_establish_futuwaa_lodges_decision: "Založit domy futuwwy"
  unity_establish_futuwaa_lodges_decision_desc_intro: "Mládež, konkrétně"
  unity_establish_futuwaa_lodges_decision_desc_outro: ", se bez smysluplné náplně potuluje ulicemi hlavního sídla. [ROOT.Char.GetCapitalLocation.GetTitle.GetNameNoTierNoTooltip] se tak plní provizorními tlupami mladých. Mohu místo toho po hlavním sídle založit domy #italic futuwwy#!, kde by mládež ve volném čase rozvíjela válečnické schopnosti a mravnost."
@@ -478,7 +491,7 @@
  default_tax_collector_desc: "Platí základní [Concept('obligations','povinnosti')|E]; jejich výše se odvíjí od [Concept('aptitude','způsobilosti')|E] osoby pověřené výběrem daní ([Concept('tax_collector','výběrčí daní')|E])"
  default_tax_collector_flavor_desc: "Běžná daň. Poplatníci odvádějí přesně tolik, kolik se od nich očekává."
  jizya_special_rights_tax_collector: "Status džizji"
- jizya_special_rights_tax_collector_desc: "#emphasis #bold Výsady [Concept('vassal','vazala')|E]:#!#!\n$EFFECT_LIST_BULLET$ [Concept('liege','Lenní pán')|E] nemůže po [Concept('vassal','vazalovi')|E] [Concept('demand_conversion','požadovat konverzi')|E]\n[Concept('liege','Lenní pán')|E] nemůže na území [Concept('vassals','vazalů')|E] použít [Concept('convert_county','konverzi hrabství')|E]\n$EFFECT_LIST_BULLET$ [Concept('liege','Lenní pán')|E] nemůže při odebírání titulů použít [Concept('faith','víru')|E] jako důvod k tomu, aby se vyhnul [Concept('tyranny','tyranii')|E]\n$EFFECT_LIST_BULLET$ [Concept('liege','Lenní pán')|E] nemůže odebrat [Concept('vassals_possessive','vazalovy')|E] [Concept('titles','tituly')|E]\n\n#flavor [Concept('vassal','Vazal')|E] má držení svých [Concept('titles','titulů')|E] zaručeno, takže mu je [Concept('liege','lenní pán')|E] nemůže odebrat bez ohledu na to, zda $game_concept_liege|l$ má [Concept('revoke_title_reason','důvod k odebrání titulu')|E], či nikoli.\n\n$game_concept_vassal$ také získává zvláštní chráněné postavení a panství oficiálně uznává jeho právo vyznávat vlastní [Concept('faith','víru')|E].#!"
+ jizya_special_rights_tax_collector_desc: "#emphasis #bold Výsady [Concept('vassal','vazala')|E]:#!#!\n$EFFECT_LIST_BULLET$ [Concept('liege','Lenní pán')|E] nemůže po [Concept('vassal','vazalovi')|E] [Concept('demand_conversion','požadovat konverzi')|E]\n[Concept('liege','Lenní pán')|E] nemůže na území [Concept('vassals','vazalů')|E] použít [Concept('convert_county','konverzi hrabství')|E]\n$EFFECT_LIST_BULLET$ [Concept('liege','Lenní pán')|E] nemůže při odebírání titulů použít [Concept('faith','víru')|E] jako důvod k tomu, aby se vyhnul [Concept('tyranny','tyranii')|E]\n$EFFECT_LIST_BULLET$ [Concept('liege','Lenní pán')|E] nemůže odebrat [Concept('vassals_possessive','vazalovy')|E] [Concept('titles','tituly')|E]\n\n#flavor [Concept('vassal','Vazal')|E] má držení svých [Concept('titles','titulů')|E] zaručeno, takže mu je [Concept('liege','lenní pán')|E] nemůže odebrat bez ohledu na to, zda $game_concept_liege|l$ má [Concept('revoke_title_reason','důvod k odebrání titulu')|E], či nikoli.\n\nVazal také získává zvláštní chráněné postavení a panství oficiálně uznává jeho právo vyznávat vlastní [Concept('faith','víru')|E].#!" # todo: CONCEPT CASE
  jizya_special_rights_tax_collector_flavor_desc: "Džizja je zvláštní daň ukládaná #italic dhimmí#!, tedy náboženským menšinám, výměnou za právo pokojně vyznávat svou pomýlenou víru."
  unlock_jizya_contract_name: "[Concept('core_tenet','Zásada')|E]: [GetTenetType('tenet_tax_nonbelievers').GetBaseName]"
  jizya_special_rights: "$jizya_special_rights_tax_collector$"
@@ -496,9 +509,9 @@
  deqhan_special_rights_tax_collector: "Dehkán"
  deqhan_special_rights_tax_collector_flavor_desc: "Dehkáni jsou perští velmoži působící v prastarém decentralizovaném systému výběru daní. Pečlivě spravují své državy, aby zvýšili jejich výnosnost — a zároveň i vlastní prestiž."
  maguh_special_rights_tax_collector: "Správa maguh"
- maguh_special_rights_tax_collector_flavor_desc: "Maguh je starobylá sásánovská forma okresní správy, která podporuje místní rozvoj výměnou za nižší daně odváděné státu."
+ maguh_special_rights_tax_collector_flavor_desc: "Maguh je starobylá sásánovská forma okresní správy, která podporuje místní blahobyt výměnou za nižší daně odváděné státu." # todo: CHANGED (predtym: Maguh je starobylá sásánovská forma okresní správy, která podporuje místní rozvoj výměnou za nižší daně odváděné státu.)
  muqata_special_rights_tax_collector: "Status mukáty"
- muqata_special_rights_tax_collector_flavor_desc: "Mukáta je daňový systém, v němž vzdálená území získávají větší autonomii a odvádějí nižší daně, aby se podpořila jejich stabilita a dlouhodobý rozvoj."
+ muqata_special_rights_tax_collector_flavor_desc: "Mukáta je daňový systém, v němž vzdálená území získávají větší autonomii a odvádějí nižší daně, aby se podpořila jejich stabilita a dlouhodobý blahobyt." # todo: CHANGED (predtym: Mukáta je daňový systém, v němž vzdálená území získávají větší autonomii a odvádějí nižší daně, aby se podpořila jejich )
  strict_taxation_tax_collector: "Zakát"
  strict_taxation_tax_collector_flavor_desc: "Zakát je majetková daň ukládaná především zámožným, která má přinášet dodatečné prostředky a zároveň pomáhat potřebným."
  clan_tax_slot: "Daňová jurisdikce"
@@ -519,27 +532,26 @@
  admin_theme_military: "@military_administration! Vojenská správa"
  admin_theme_military_short: "@military_administration! Vojenská"
  admin_theme_military_text_icon: "@military_administration!"
- admin_theme_military_benefits: "#emphasis #bold Výhody [Concept('vassal','vazala')|E]:#!#!\n$EFFECT_LIST_BULLET$ Zvyšuje [Concept('governor_efficiency','efektivitu guvernéra')|E] v závislosti na [Concept('martial','válečnictví')|E]#indent_newline:4 \n#weak Za každý bod [Concept('skill','dovednosti')|E] přidává dalších [EmptyScope.ScriptValue('efficiency_skill_increase_value')|+1%/]#!#!"
  admin_theme_military_desc: "#flavor Vojenská správa soustřeďuje veškeré úsilí na nábor a výcvik obávaných vojsk pro císařskou armádu.#!"
  admin_theme_civilian: "@civilian_administration! Civilní správa"
  admin_theme_civilian_short: "@civilian_administration! Civilní"
  admin_theme_civilian_text_icon: "@civilian_administration!"
- admin_theme_civilian_benefits: "#emphasis #bold Výhody [Concept('vassal','vazala')|E]:#!#!\n$EFFECT_LIST_BULLET$ Zvyšuje [Concept('governor_efficiency','efektivitu guvernéra')|E] v závislosti na [Concept('stewardship','správcovství')|E]#indent_newline:4 \n#weak Za každý bod [Concept('skill','dovednosti')|E] přidává dalších [EmptyScope.ScriptValue('efficiency_skill_increase_value')|+1%/]#!#!\nZvyšuje [Concept('influence','vliv')|E] získávaný výstavbou [Concept('buildings','budov')|E] v držených [Concept('counties','hrabstvích')|E]"
+ admin_theme_civilian_benefits: "#emphasis #bold Výhody [Concept('vassal','vazala')|E]:#!#!\nZvyšuje [Concept('influence','vliv')|E] získávaný výstavbou [Concept('buildings','budov')|E] v držených [Concept('counties','hrabstvích')|E]" # todo: CHANGED (predtym: emphasis bold Výhody [Concept('vassal','vazala')|E]: ! !\n$EFFECT_LIST_BULLET$ Zvyšuje [Concept('governor_efficiency','e)
  admin_theme_civilian_desc: "#flavor Civilní správa je osvobozena od vojenské služby a soustřeďuje se na rozvoj hospodářství a blahobyt obyvatel.#!"
  admin_theme_frontier: "@frontier_administration! Pohraniční správa"
  admin_theme_frontier_short: "@frontier_administration! Pohraniční"
  admin_theme_frontier_text_icon: "@frontier_administration!"
- admin_theme_frontier_benefits: "#emphasis #bold Výhody [Concept('liege','lenního pána')|E]:#!#!\n$EFFECT_LIST_BULLET$ Zpřístupňuje [Concept('interaction','interakci')|E] #high $frontier_influence_war_interaction$#!, která lennímu pánovi umožňuje požádat [Concept('vassal','vazala')|E], aby vyhlásil válku o cizí [Concept('title','titul')|E] [Concept('duchy','vévodské')|E] úrovně\n\n#emphasis #bold Výhody [Concept('vassal','vazala')|E]:#!#!\n$EFFECT_LIST_BULLET$ Zvyšuje [Concept('governor_efficiency','efektivitu guvernéra')|E] v závislosti na [Concept('prowess','udatnosti')|E]#indent_newline:4 \n#weak Za každý bod [Concept('skill','dovednosti')|E] přidává dalších [EmptyScope.ScriptValue('efficiency_skill_increase_value')|+1%/]#!#!\n$EFFECT_LIST_BULLET$ Zpřístupňuje [Concept('casus_belli','casus belli')|E] #high $EXPANSION_DUCHY_CB_NAME$#!\n$EFFECT_LIST_BULLET$ Umožňuje [Concept('raiding','plenění')|E]"
+ admin_theme_frontier_benefits: "#emphasis #bold Výhody [Concept('liege','lenního pána')|E]:#!#!\n$EFFECT_LIST_BULLET$ Zpřístupňuje [Concept('interaction','interakci')|E] #high $frontier_influence_war_interaction$#!, která lennímu pánovi umožňuje požádat [Concept('vassal','vazala')|E], aby vyhlásil válku o cizí [Concept('title','titul')|E] [Concept('duchy','vévodské')|E] úrovně\n\n#emphasis #bold Výhody [Concept('vassal','vazala')|E]:#!#!\n$EFFECT_LIST_BULLET$ Zpřístupňuje [Concept('casus_belli','casus belli')|E] #high $EXPANSION_DUCHY_CB_NAME$#!\n$EFFECT_LIST_BULLET$ Umožňuje [Concept('raiding','plenění')|E]" # todo: CHANGED (predtym: emphasis bold Výhody [Concept('liege','lenního pána')|E]: ! !\n$EFFECT_LIST_BULLET$ Zpřístupňuje [Concept('interaction',)
  admin_theme_frontier_desc: "#flavor Hranice nelze ponechat bez obrany. Pohraniční správa zajišťuje obranu panství a je připravena odrazit každého případného nájezdníka.#!"
  admin_theme_imperial: "@imperial_administration! Císařská správa"
  admin_theme_imperial_short: "@imperial_administration! Císařská"
  admin_theme_imperial_text_icon: "@imperial_administration!"
- admin_theme_imperial_benefits: "#emphasis #bold Výhody [Concept('vassal','vazala')|E]:#!#!\n$EFFECT_LIST_BULLET$ Zvyšuje [Concept('governor_efficiency','efektivitu guvernéra')|E] v závislosti na [Concept('prestige_level','úrovni slávy')|E]#indent_newline:4 \n#weak Za každou úroveň přidává dalších [EmptyScope.ScriptValue('efficiency_currency_level_increase_value')|+0%/]#!#!\n$EFFECT_LIST_BULLET$ Zvyšuje hodnocení [Concept('powerful_family','mocné rodiny')|E]\nJmenování nelze odvolat bez [Concept('revoke_title_reason','důvodu k odebrání titulu')|E]"
+ admin_theme_imperial_benefits: "#emphasis #bold Výhody [Concept('vassal','vazala')|E]:#!#!\n$EFFECT_LIST_BULLET$ Zvyšuje hodnocení [Concept('powerful_family','mocné rodiny')|E]\nJmenování nelze odvolat bez [Concept('revoke_title_reason','důvodu k odebrání titulu')|E]" # todo: CHANGED (predtym: emphasis bold Výhody [Concept('vassal','vazala')|E]: ! !\n$EFFECT_LIST_BULLET$ Zvyšuje [Concept('governor_efficiency','e)
  admin_theme_imperial_desc: "#flavor Císařská správa poskytuje značnou míru autonomie a osvobozuje od mnoha běžných povinností. Jde o nejprestižnější typ správy, jakého lze dosáhnout.#!"
  admin_theme_naval: "@naval_administration! Námořní správa"
  admin_theme_naval_short: "@naval_administration! Námořní"
  admin_theme_naval_text_icon: "@naval_administration!"
- admin_theme_naval_benefits: "#emphasis #bold Výhody [Concept('liege','lenního pána')|E]:#!#!\n$EFFECT_LIST_BULLET$ Zpřístupňuje [Concept('interaction','interakci')|E] #high $frontier_influence_war_interaction$#!, která lennímu pánovi umožňuje požádat [Concept('vassal','vazala')|E], aby vyhlásil válku o cizí [Concept('title','titul')|E] [Concept('duchy','vévodské')|E] úrovně\n\n#emphasis #bold Výhody [Concept('vassal','vazala')|E]:#!#!\n$EFFECT_LIST_BULLET$ Zvyšuje [Concept('governor_efficiency','efektivitu guvernéra')|E] za každý ovládaný #high [GetBuilding('common_tradeport_01').GetTypeName]#!#indent_newline:4 \n#weak Za každý [GetBuilding('common_tradeport_01').GetTypeName] přidává dalších [EmptyScope.ScriptValue('efficiency_building_increase_value')|+0%/]#!#!\n$EFFECT_LIST_BULLET$ Zpřístupňuje [Concept('casus_belli','casus belli')|E] #high $NAVAL_EXPANSION_DUCHY_CB_NAME$#!"
+ admin_theme_naval_benefits: "#emphasis #bold Výhody [Concept('liege','lenního pána')|E]:#!#!\n$EFFECT_LIST_BULLET$ Zpřístupňuje [Concept('interaction','interakci')|E] #high $frontier_influence_war_interaction$#!, která lennímu pánovi umožňuje požádat [Concept('vassal','vazala')|E], aby vyhlásil válku o cizí [Concept('title','titul')|E] [Concept('duchy','vévodské')|E] úrovně\n\n#emphasis #bold Výhody [Concept('vassal','vazala')|E]:#!#!\n$EFFECT_LIST_BULLET$ Zpřístupňuje [Concept('casus_belli','casus belli')|E] #high $NAVAL_EXPANSION_DUCHY_CB_NAME$#!" # todo: CHANGED (predtym: emphasis bold Výhody [Concept('liege','lenního pána')|E]: ! !\n$EFFECT_LIST_BULLET$ Zpřístupňuje [Concept('interaction',)
  admin_theme_naval_desc: "#flavor Loďstvo je páteří každého rozlehlého panství. Specializovaná námořní správa výrazně zvyšuje bezpečnost a efektivitu na moři.#!"
  ADMINISTRATIVE_CONTRACT: "Správa: [Character.Custom( 'GetProvinceConceptNoTooltip' )]"
  admin_theme_frontier_valid_desc: "[vassal.Custom( 'GetProvinceConceptNoTooltip' )] musí sousedit s jiným [Concept('realm','panstvím')|E]"
@@ -640,12 +652,12 @@
  liege_war_participation_obligation_forced: "Povinná válečná podpora lenního pána"
  liege_war_participation_obligation_forced_desc: "#emphasis #bold Výsada [Concept('vassal','vazala')|E]:#!#!\n$EFFECT_LIST_BULLET$ [Concept('vassal','Vazal')|E] může na [Concept('liege','lenního pána')|E] použít [Concept('interaction','interakci')|E] $call_ally_interaction$\n\n#flavor Pokud [Concept('liege','lenní pán')|E] odmítne, ztratí [Concept('prestige','prestiž')|E] a [Concept('vassal','vazal')|E] přestane být [Concept('obedient','poslušný')|E], pokud jím dosud byl.#!"
  liege_war_participation_obligation_forced_short: "Povinná"
- suzerain_war_participation_guarantee: "Záruka suzeréna"
+ suzerain_war_participation_guarantee: "[SelectLocalization( IsLandlessMerchant( GetPlayer ), 'Patron', 'Suzerain' )] Záruka" # todo: CHANGED (predtym: Záruka suzeréna)
  suzerain_war_participation_guarantee_none: "Bez záruky suzeréna"
- suzerain_war_participation_guarantee_none_desc: "#flavor [Concept('suzerain','Suzeréna')|E] nelze povolat do obranných válek [Concept('tributary','tributáře')|E], může se však stále nabídnout, že se připojí.#!"
+ suzerain_war_participation_guarantee_none_desc: "#flavor [GetSuzerainRelationship(GetPlayer)] nelze povolat do obranných válek [Concept('tributary','tributáře')|E], může se však stále nabídnout, že se připojí.#!" # todo: CHANGED (predtym: flavor [Concept('suzerain','Suzeréna')|E] nelze povolat do obranných válek [Concept('tributary','tributáře')|E], může se)
  suzerain_war_participation_guarantee_none_short: "Žádná"
  suzerain_war_participation_guarantee_available: "Záruka suzeréna"
- suzerain_war_participation_guarantee_available_desc: "#emphasis #bold Výsada [Concept('tributary','tributáře')|E]:#!#!\n$EFFECT_LIST_BULLET$ Pokud je [Concept('tributary','tributář')|E] napaden, může na [Concept('suzerain','suzeréna')|E] použít [Concept('interaction','interakci')|E] $call_ally_interaction$.\n\n#flavor Pokud [Concept('suzerain','suzerén')|E] odmítne, ztratí [Concept('prestige','prestiž')|E] a [Concept('tributary','tributář')|E] bude propuštěn ze svého podřízeného postavení.#!"
+ suzerain_war_participation_guarantee_available_desc: "#emphasis #bold Výsada [Concept('tributary','tributáře')|E]:#!#!\n$EFFECT_LIST_BULLET$ Pokud je [Concept('tributary','tributář')|E] napaden, může na [GetSuzerainRelationship(GetPlayer)] použít [Concept('interaction','interakci')|E] $call_ally_interaction$.\n\n#flavor Pokud [SelectLocalization( IsLandlessMerchant( GetPlayer ), 'patron', 'suzerain' )] odmítne, ztratí [Concept('prestige','prestiž')|E] a [Concept('tributary','tributář')|E] bude propuštěn ze svého podřízeného postavení.#!" # todo: CHANGED (predtym: emphasis bold Výsada [Concept('tributary','tributáře')|E]: ! !\n$EFFECT_LIST_BULLET$ Pokud je [Concept('tributary','trib)
  suzerain_war_participation_guarantee_available_short: "Zaručeno"
  suzerain_war_participation_guarantee_tt: "[recipient.GetShortUIName] #bold nemá#! výsadu [Concept('tributary_contract','tributární smlouvy')|E] „[GetSubjectContractType( 'suzerain_war_participation_guarantee' ).GetObligationName( 'suzerain_war_participation_guarantee_available' )]“"
  mandala_suzerain_war_participation_guarantee: "$suzerain_war_participation_guarantee$"
@@ -657,10 +669,10 @@
  mandala_suzerain_war_participation_guarantee_available_short: "$suzerain_war_participation_guarantee_available_short$"
  tributary_war_participation_obligation: "Válečná podpora tributáře"
  tributary_war_participation_obligation_none: "Bez válečné podpory tributáře"
- tributary_war_participation_obligation_none_desc: "#flavor [Concept('tributary','Tributář')|E] se nebude automaticky účastnit válek [Concept('suzerain','suzeréna')|E], může se však stále nabídnout, že se připojí.#!"
+ tributary_war_participation_obligation_none_desc: "#flavor [Concept('tributary','Tributář')|E] se nebude automaticky účastnit válek [GetSuzerainRelationship(GetPlayer)], může se však stále nabídnout, že se připojí.#!" # todo: CHANGED (predtym: flavor [Concept('tributary','Tributář')|E] se nebude automaticky účastnit válek [Concept('suzerain','suzeréna')|E], může)
  tributary_war_participation_obligation_none_short: "Žádná"
  tributary_war_participation_obligation_forced: "Povinná válečná podpora tributáře"
- tributary_war_participation_obligation_forced_desc: "#emphasis #bold Výsada [Concept('suzerain','suzeréna')|E]:#!#!\n[Concept('tributary','Tributář')|E] bude automaticky povolán do válek [Concept('suzerain','suzeréna')|E]."
+ tributary_war_participation_obligation_forced_desc: "#emphasis #bold Výsada [GetSuzerainRelationship(GetPlayer)]:#!#!\n[Concept('tributary','Tributář')|E] bude automaticky povolán do válek [SelectLocalization( IsLandlessMerchant( GetPlayer ), 'patron', 'suzerain' )]." # todo: CHANGED (predtym: emphasis bold Výsada [Concept('suzerain','suzeréna')|E]: ! !\n[Concept('tributary','Tributář')|E] bude automaticky povol)
  tributary_war_participation_obligation_forced_short: "Povinná"
  raiding_rights: "Právo na plenění"
  raiding_rights_none: "Bez práva na plenění"
@@ -669,7 +681,7 @@
  raiding_rights_granted: "Udělené právo na plenění"
  raiding_rights_granted_desc: "#emphasis #bold Výsada [Concept('vassal','vazala')|E]:#!#!\n$EFFECT_LIST_BULLET$ [Concept('vassal','Vazal')|E] smí plenit ostatní vazaly\n\n#flavor Omezení plenění ostatních [Concept('vassals','vazalů')|E] jsou zrušena a vazal může podnikat nájezdy proti kterémukoli jinému vazalovi téhož postavení.#!"
  raiding_rights_granted_short: "Uděleno"
- CB_CONFEDERATION_VASSALS: "Útok na jiného člena [Concept('confederation','konfederace')|E]"
+ CB_CONFEDERATION_VASSALS: "Útok na jiného člena [Concept('nomadic_confederation','kočovné konfederace')|E]" # todo: CHANGED (predtym: Útok na jiného člena [Concept('confederation','konfederace')|E])
  herder_government: "Pastevecká"
  herder_government_with_icon: "@government_type_herder! $herder_government$"
  herder_government_adjective: "Pastevecká"
@@ -707,12 +719,12 @@
  celestial_province_industrial_short: "Hospodářská"
  celestial_province_industrial_text_icon: "@celestial_industrial_administration!"
  celestial_province_industrial_benefits: "#emphasis #bold Výhody [Concept('vassal','vazala')|E]:#!#!\nPoužívá [GetLaw('celestial_appointment_succession_law').GetName]\n\n#alert_trial @alert_icon! Limit: [EmptyScope.ScriptValue('celestial_province_industrial_max_value')|V0]#!"
- celestial_province_industrial_desc: "#low Civilní správa zaměřená na zvyšování výnosnosti oblasti a její dlouhodobý rozvoj.#!"
+ celestial_province_industrial_desc: "#low Civilní správa zaměřená na zvyšování výnosnosti oblasti a její dlouhodobý blahobyt.#!" # todo: CHANGED (predtym: low Civilní správa zaměřená na zvyšování výnosnosti oblasti a její dlouhodobý rozvoj. !)
  celestial_province_industrial_amount_desc: "Dosažen limit pro typ „$celestial_province_industrial_short$“"
  celestial_province_metropolitan: "@celestial_metropolitan_administration! Metropolitní správa"
  celestial_province_metropolitan_short: "Metropolitní"
  celestial_province_metropolitan_text_icon: "@celestial_metropolitan_administration!"
- celestial_province_metropolitan_benefits: "#emphasis #bold Výhody [Concept('vassal','vazala')|E]:#!#!\n$EFFECT_LIST_BULLET$ Zvyšuje [Concept('governor_efficiency','efektivitu guvernéra')|E] v závislosti na [Concept('diplomacy','diplomacii')|E]#indent_newline:4 \n#weak Za každý bod [Concept('skill','dovednosti')|E] přidává dalších [EmptyScope.ScriptValue('efficiency_skill_increase_value')|+1%/]#!#!\n$EFFECT_LIST_BULLET$ Používá [GetLaw('celestial_appointment_succession_law').GetName]\n\n#alert_trial @alert_icon! Limit: [EmptyScope.ScriptValue('celestial_province_metropolitan_max_value')|V0]#!"
+ celestial_province_metropolitan_benefits: "#emphasis #bold Výhody [Concept('vassal','vazala')|E]:#!#!\n$EFFECT_LIST_BULLET$ Používá [GetLaw('celestial_appointment_succession_law').GetName]\n\n#alert_trial @alert_icon! Limit: [EmptyScope.ScriptValue('celestial_province_metropolitan_max_value')|V0]#!" # todo: CHANGED (predtym: emphasis bold Výhody [Concept('vassal','vazala')|E]: ! !\n$EFFECT_LIST_BULLET$ Zvyšuje [Concept('governor_efficiency','e)
  celestial_province_metropolitan_desc: "#low Efektivní civilní správa určená pro rozsáhlé městské oblasti. Klade velký důraz na účelné využívání daní a prosperitu měst.#!"
  celestial_province_metropolitan_amount_desc: "Dosažen limit pro typ „$celestial_province_metropolitan_short$“"
  celestial_province_military: "@celestial_military_administration! Vojenská správa"
@@ -724,7 +736,7 @@
  celestial_province_protectorate: "@celestial_protectorate_administration! Správa protektorátu"
  celestial_province_protectorate_short: "Protektorát"
  celestial_province_protectorate_text_icon: "@celestial_protectorate_administration!"
- celestial_province_protectorate_benefits: "#emphasis #bold Výhody [Concept('liege','lenního pána')|E]:#!#!\n$EFFECT_LIST_BULLET$ Zpřístupňuje [Concept('interaction','interakci')|E] #high $frontier_influence_war_interaction$#!, která lennímu pánovi umožňuje požádat [Concept('vassal','vazala')|E], aby vyhlásil válku o cizí [Concept('title','titul')|E] [Concept('duchy','vévodské')|E] úrovně\n\n#emphasis #bold Výhody [Concept('vassal','vazala')|E]:#!#!\n$EFFECT_LIST_BULLET$ Zvyšuje [Concept('governor_efficiency','efektivitu guvernéra')|E] v závislosti na [Concept('martial','válečnictví')|E]#indent_newline:4 \n#weak Za každý bod [Concept('skill','dovednosti')|E] přidává dalších [EmptyScope.ScriptValue('efficiency_skill_increase_value')|+1%/]#!#!\n$EFFECT_LIST_BULLET$ Může verbovat [GetMaA('zhanmadao_infantry').GetName]\n$EFFECT_LIST_BULLET$ Používá [GetLaw('celestial_military_appointment_succession_law').GetName]\n\n#alert_trial @alert_icon! Limit: [EmptyScope.ScriptValue('celestial_province_protectorate_max_value')|V0]#!"
+ celestial_province_protectorate_benefits: "#emphasis #bold Výhody [Concept('liege','lenního pána')|E]:#!#!\n$EFFECT_LIST_BULLET$ Zpřístupňuje [Concept('interaction','interakci')|E] #high $frontier_influence_war_interaction$#!, která lennímu pánovi umožňuje požádat [Concept('vassal','vazala')|E], aby vyhlásil válku o cizí [Concept('title','titul')|E] [Concept('duchy','vévodské')|E] úrovně\n\n#emphasis #bold Výhody [Concept('vassal','vazala')|E]:#!#!\n$EFFECT_LIST_BULLET$ Může verbovat [GetMaA('zhanmadao_infantry').GetName]\n$EFFECT_LIST_BULLET$ Používá [GetLaw('celestial_military_appointment_succession_law').GetName]\n\n#alert_trial @alert_icon! Limit: [EmptyScope.ScriptValue('celestial_province_protectorate_max_value')|V0]#!" # todo: CHANGED (predtym: emphasis bold Výhody [Concept('liege','lenního pána')|E]: ! !\n$EFFECT_LIST_BULLET$ Zpřístupňuje [Concept('interaction',)
  celestial_province_protectorate_desc: "#low Výrazně posílená vojenská správa. Protektorát podstatně zvýší naši vojenskou sílu!#!"
  celestial_province_protectorate_amount_desc: "Dosažen limit pro typ „$celestial_province_protectorate_short$“"
  celestial_province_de_jure_desc: "Nejde o [Concept('de_jure','de iure')|E] [Concept('title','titul')|E]"
@@ -755,16 +767,16 @@
  government_enables_trade_ports: "#indent_newline:3 Umožňuje stavět řadu budov #V $building_type_common_tradeport_01$#! v pobřežních [Concept('holdings','državách')|E] typu [Concept('wanua','wanua')|E]#!"
  government_enables_river_travel: "#indent_newline:3 $unlocks_sailable_major_rivers$#!"
  government_enables_naval_raiding: "#indent_newline:3 $unlocks_naval_raiding$#!"
- celestial_treasury: "[Concept('treasury_vassal_development','Rozvoj vazalů')|E]"
- celestial_treasury_very_low: "Velmi nízký rozvoj vazalů"
+ celestial_treasury: "[Concept('treasury_vassal_prosperity','Blahobyt vazalů')|E]" # todo: CHANGED (predtym: [Concept('treasury_vassal_development','Rozvoj vazalů')|E])
+ celestial_treasury_very_low: "Velmi nízký $game_concept_treasury_vassal_prosperity$" # todo: CHANGED (predtym: Velmi nízký rozvoj vazalů)
  celestial_treasury_very_low_short: "Velmi nízký"
- celestial_treasury_low: "Nízký rozvoj vazalů"
+ celestial_treasury_low: "Nízký $game_concept_treasury_vassal_prosperity$" # todo: CHANGED (predtym: Nízký rozvoj vazalů)
  celestial_treasury_low_short: "Nízký"
- celestial_treasury_medium: "Střední rozvoj vazalů"
+ celestial_treasury_medium: "Střední $game_concept_treasury_vassal_prosperity$" # todo: CHANGED (predtym: Střední rozvoj vazalů)
  celestial_treasury_medium_short: "Střední"
- celestial_treasury_high: "Vysoký rozvoj vazalů"
+ celestial_treasury_high: "Vysoký $game_concept_treasury_vassal_prosperity$" # todo: CHANGED (predtym: Vysoký rozvoj vazalů)
  celestial_treasury_high_short: "Vysoký"
- celestial_treasury_very_high: "Velmi vysoký rozvoj vazalů"
+ celestial_treasury_very_high: "Velmi vysoký $game_concept_treasury_vassal_prosperity$" # todo: CHANGED (predtym: Velmi vysoký rozvoj vazalů)
  celestial_treasury_very_high_short: "Velmi vysoký"
  celestial_salary: "[Concept('governor_salary','Plat guvernéra')|E]"
  celestial_salary_very_low: "Nuzný plat"
@@ -872,10 +884,10 @@
  celestial_tributary_investiture_privilege_trade: "Obchodní výsady"
  investiture_trade_yes_short: "Přístup na trhy"
  investiture_trade_yes: "Přístup na císařské trhy"
- investiture_trade_yes_desc: "#emphasis #bold Výsady [Concept('tributary','tributáře')|E]:#!#!\n$EFFECT_LIST_BULLET$ Každoroční [Concept('development_growth','růst rozvoje')|E] (až [EmptyScope.ScriptValue('celestial_investiture_trade_bonus_max')|v0]) v [Concept('holding','državě')|E] [Concept('capital','hlavního sídla')|E] [Concept('tributary_possessive','tributáře')|E]\n\n#flavor Přístup k rušným trhům [GetTitleByKey('h_china').GetDefinitiveNamePossessive] prospívá blahobytu privilegovaných [Concept('tributaries','tributářů')|E]. Účinek roste s rozdílem v [Concept('development','rozvoji')|E] mezi $game_concept_capitals|l$ a s množstvím [Concept('imperial_grace','císařské přízně')|E], které privilegovaný $game_concept_tributary|l$ nashromáždil.#!"
+ investiture_trade_yes_desc: "#emphasis #bold Výsady [Concept('tributary','tributáře')|E]:#!#!\n$EFFECT_LIST_BULLET$ Každoroční [Concept('prosperity_growth','růst blahobytu')|E] (až [EmptyScope.ScriptValue('celestial_investiture_trade_bonus_max')|v0]) v [Concept('holding','državě')|E] [Concept('capital','hlavního sídla')|E] [Concept('tributary_possessive','tributáře')|E]\n\n#flavor Přístup k rušným trhům [GetTitleByKey('h_china').GetDefinitiveNamePossessive] prospívá blahobytu privilegovaných [Concept('tributaries','tributářů')|E]. Účinek roste s rozdílem v [Concept('prosperity','blahobytu')|E] mezi hlavními sídly a s množstvím [Concept('imperial_grace','císařské přízně')|E], které privilegovaný $game_concept_tributary$ nashromáždil.#!" # todo: CHANGED (predtym: emphasis bold Výsady [Concept('tributary','tributáře')|E]: ! !\n$EFFECT_LIST_BULLET$ Každoroční [Concept('development_gr) # todo: CONCEPT CASE
  investiture_trade_no: "Bez přístupu na císařské trhy"
- msg_tributary_capital_province_development_growth_title: "Úspěšná obchodní mise"
- msg_tributary_capital_province_development_growth_desc: "Čilý obchod s císařskými trhy v [GetTitleByKey('h_china').GetDefinitiveName] zvýšil [Concept('development','rozvoj')|E] [CZPrepV(ROOT.Char.GetCapitalLocation.GetNameNoTooltip)] [CZProvName(ROOT.Char.GetCapitalLocation,'L')]."
+ msg_tributary_capital_province_prosperity_growth_title: "Úspěšná obchodní mise" # todo: NEW TRANSLATION
+ msg_tributary_capital_province_prosperity_growth_desc: "Rušný obchod s císařskými trhy v [GetTitleByKey('h_china').GetDefinitiveName] zvýšil [Concept('prosperity','rozkvět')|E] v [ROOT.Char.GetCapitalLocation.GetName]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
  celestial_tributary_investiture_privilege_marriage: "Rodinné výsady"
  investiture_marriage_yes_short: "Přístup k císařské rodině"
  investiture_marriage_yes: "Přijetí do císařské rodiny"
@@ -887,7 +899,7 @@
  investiture_politics_yes: "Přístup do císařského paláce"
  investiture_politics_yes_desc: "#emphasis #bold Výsady [Concept('tributary','tributáře')|E]:#!#!\n$EFFECT_LIST_BULLET$ Stává se aktivním účastníkem [Concept('dynastic_cycle','dynastického cyklu')|E]\n$EFFECT_LIST_BULLET$ Získává [Concept('movement_power','sílu hnutí')|E] úměrnou [Concept('imperial_grace','císařské přízni')|E]\n\n#flavor Od většiny [Concept('tributaries','tributářů')|E] [GetTitleByKey('h_china').GetDefinitiveNamePossessive] se očekává pouze respektování nebeského řádu, ale několika málo vyvoleným může být dovoleno promlouvat do jeho běhu. Přístup do císařského paláce zapojuje privilegovaného $game_concept_tributary|l$ do $game_concept_dynastic_cycle|l$, takže se může připojit k [Concept('movement','hnutí')|E] a ovlivňovat jeho [Concept('situation_dynastic_cycle_phase','éru dynastického cyklu')|E].#!"
  investiture_politics_no: "Bez přístupu do císařského paláce"
- TRIBUTARY_GAIN_LEGITIMACY: "Tributář získává @legitimacy_icon! podle [Concept('radiance','záře')|e] [Concept('suzerain','suzeréna')|E] [CHARACTER.GetRadianceValueNoTooltip|V0]/[GetDefine( 'NMandala', 'MAX_RADIANCE' )|V0]"
+ TRIBUTARY_GAIN_LEGITIMACY: "Tributář získává @legitimacy_icon! podle [Concept('radiance','záře')|e] [GetSuzerainRelationship(GetPlayer)] [CHARACTER.GetRadianceValueNoTooltip|V0]/[GetDefine( 'NMandala', 'MAX_RADIANCE' )|V0]" # todo: CHANGED (predtym: Tributář získává @legitimacy_icon! podle [Concept('radiance','záře')|e] [Concept('suzerain','suzeréna')|E] [CHARACTER.Ge)
  wanua_obligations: "$tribal_government_obligations$"
  barter_goods_obligations: "[Concept('barter_goods','Směnné zboží')|E]"
  barter_goods_low: "Nízký odvod [Concept('barter_goods','směnného zboží')|E]"
@@ -919,6 +931,24 @@
  appointment_title_value.diarch: "[Concept('grand_secretariat_director','Ředitel sekretariátu')|E]"
  appointment_title_value.minister: "[Concept('title','Titul')|E] [Concept('minister','ministra')|E]"
  appointment_title_value.distance_to_capital: "Vzdálenost od [Concept('capital','hlavního sídla')|E]"
+ government_uses_house_unity: "Využívá [Concept('house_unity','jednota rodu')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ government_uses_company_sentiment: "Využívá [Concept('company_sentiment','směřování společnosti')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  change_to_administrative_holding_tt: "[Concept('holding','Država')|E] tvořící [Concept('capital','hlavní sídlo')|E] ([THIS.Char.GetCapitalLocation.GetTitle.GetBaseNameNoTier]) se změní na [Concept('holding','državu')|E] typu [Concept('castle','hrad')|E]"
  change_to_administrative_permafrost_tt: "V [Concept('county','hrabství')|E] [THIS.Char.GetCapitalLocation.GetTitle.GetDeJureLiege.GetBaseNameNoTier] přestane působit [Concept('modifier','modifikátor')|E] [GetModifier('mpo_siberian_permafrost_modifier').GetNameWithTooltip]"
  change_to_administrative_permafrost_bad_tt: "V [Concept('county','hrabství')|E] [THIS.Char.GetCapitalLocation.GetTitle.GetDeJureLiege.GetBaseNameNoTier] přestane působit [Concept('modifier','modifikátor')|E] [GetModifier('mpo_siberian_permafrost_modifier_bad').GetNameWithTooltip]"
+ government_is_meritocratic: "Má vládu typu [GetGovernment( 'meritocratic_government' ).GetName]"
+ AI_COMPANY_DIRECTION: "Vaše [Concept('company_sentiment','směřování společnosti')|E]: $VALUE|=+0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ house_unity_concept: "[Concept('house_unity','Jednota rodu')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ company_direction_concept: "[Concept('company_sentiment','Směřování společnosti')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ house_unity_level_concept: "[Concept('house_unity_level','Úroveň jednoty rodu')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ company_direction_level_concept: "[Concept('company_sentiment_level','Postoj společnosti')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ house_unity_icon: "@dynasty_house_unity!" # todo: NEW TRANSLATION
+ company_direction_icon: "@company_sentiment_icon!" # todo: NEW TRANSLATION
+ clan_house_unity_concept: "[Concept('house_unity','Jednota rodu')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ clan_house_unity_short_name: "Jednota" # todo: NEW TRANSLATION
+ clan_house_unity_level_concept: "[Concept('house_unity_level','Úroveň jednoty rodu')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ clan_house_unity_button_label: "$HOUSE_UNITY_TAB_BUTTON$" # todo: NEW TRANSLATION
+ merchant_house_unity_concept: "[Concept('company_sentiment','Směřování společnosti')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_house_unity_short_name: "Směřování" # todo: NEW TRANSLATION
+ merchant_house_unity_level_concept: "[Concept('company_sentiment_level','Postoj společnosti')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_house_unity_button_label: "$COMPANY_DIRECTION_TAB_BUTTON$" # todo: NEW TRANSLATION

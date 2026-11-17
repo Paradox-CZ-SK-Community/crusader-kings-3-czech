@@ -86,8 +86,11 @@
  medium_candidacy_loss_option_desc: "Střední snížení (#N $MEDIUM_CANDIDACY_LOSS_OPTION|0$#!)"
  major_candidacy_loss_option_desc: "Velké snížení (#N $MAJOR_CANDIDACY_LOSS_OPTION|0$#!)"
  influence_clerical_candidacy_interaction_already_holds_title_tt: "[secondary_recipient.GetShortUIName|U] [Select_CString(secondary_recipient.IsLocalPlayer,'už držíš','už drží')|l] tento [Concept('title','titul')|E]"
+ influence_clerical_candidacy_interaction_same_rite_actor_tt: "[secondary_recipient.GetShortUIName|U] nenásleduje stejný [Concept('rite','ritus')|E] jako ty" # todo: NEW TRANSLATION
+ influence_clerical_candidacy_interaction_same_rite_target_tt: "[secondary_recipient.GetShortUIName|U] nenásleduje stejný [Concept('rite','ritus')|E] jako [Concept('holder','držitel')|E] tohoto [Concept('title','titulu')|E]" # todo: NEW TRANSLATION
  influence_clerical_candidacy_not_head_of_rite_tt: "[secondary_recipient.GetShortUIName|U] [Select_CString(secondary_recipient.IsLocalPlayer,'jsi','je')|l] [Concept('head_of_faith','hlavou víry')|E]"
  pam_clerical_self_candidacy_restriction_tt: "Již držíš [Concept('clerical_region','církevní oblast')|E], takže můžeš postupovat pouze vzhůru v organizaci"
+ pam_clerical_region_holder_recipient_tt: "[secondary_recipient.GetShortUIName|U] už drží [Concept('clerical_region','církevní oblast')|E], a proto ho nelze podpořit v získání další" # todo: NEW TRANSLATION
  influence_clerical_candidacy_outside_realm_tt: "Tento [Concept('clerical_title','duchovní titul')|E] musí ležet v tvém [Concept('realm','panství')|E]"
  influence_clerical_candidacy_no_valid_title_tt: "Musí existovat [Concept('clerical_title','duchovní titul')|E] obsazovaný prostřednictvím [Concept('appointment','jmenování')|E], jehož obsazení můžeš ovlivnit"
  influence_clerical_candidacy_no_valid_title_in_realm_tt: "Musí existovat [Concept('clerical_title','duchovní titul')|E] obsazovaný prostřednictvím [Concept('appointment','jmenování')|E], který drží některý z tvých [Concept('vassals','vazalů')|E]"
@@ -128,7 +131,7 @@
  sway_ruler_to_my_rite_interaction_prelate_reach_tt: "Ty i [recipient.GetShortUIName] držíte [Concept('clerical_region','církevní oblast')|E] a máš [Concept('piety_level','úroveň oddanosti')|E] [GetPietyLevelName('(int32)3')] nebo vyšší"
  sway_ruler_to_my_rite_interaction_liege_reach_tt: "[recipient.GetShortUIName|U] [Select_CString(recipient.IsLocalPlayer,'jsi','je')|l] tvým [Concept('liege','lenním pánem')|E] či vyšším vládcem a máš [Concept('piety_level','úroveň oddanosti')|E] [GetPietyLevelName('(int32)4')] nebo vyšší"
  PAM_SWAY_TO_RITE_ENDOWMENT_OPTION: "Zaplatit z [treasury_i][Concept('treasury','pokladnice')|E]"
- PAM_SWAY_TO_RITE_DISPUTATION_OPTION: "Vynaložit další [piety_i|E][Concept('piety','zbožnost')|E]"
+ PAM_SWAY_TO_RITE_DISPUTATION_OPTION: "Vynaložit další [Concept('piety_i','[GetLocalPlayerPietyTextIcon]')|E][Concept('piety','zbožnost')|E]" # todo: CONCEPT CASE
  PAM_SWAY_TO_RITE_DISPUTATION_REQUIRES_SCHOLAR: "Vyžaduje [Concept('trait','rys')|E] [GetTrait('lifestyle_scholar').GetName( GetPlayer )] na úrovni $trait_lifestyle_scholar_3$ nebo vyšší"
  PAM_SWAY_TO_RITE_PLEDGE_FAVOR_OPTION: "Nabídnout @hook_on_me_icon![Concept('hook','páku')|E]"
  action_can_sway_ruler_to_rite: "@sway_to_rite_icon!Můžeš přesvědčit vládce k přijetí svého ritu"
@@ -167,7 +170,7 @@
  action_can_sway_prelate_to_rite_desc: "[recipient.GetShortUIName|U] [Select_CString(recipient.IsLocalPlayer,'spravuješ','spravuje')|l] [Concept('clerical_region','církevní oblast')|E] sousedící s tvou, ale [Select_CString(recipient.IsLocalPlayer,'vyznáváš','vyznává')|l] ritus [recipient.GetRite.GetNameNoTooltip]. Můžeš požádat o přijetí ritu [actor.GetRite.GetNameNoTooltip].$action_can_sway_prelate_to_rite_help_desc$\n\n[recipient.GetPlayerInteractionTooltip('sway_ruler_to_my_rite_interaction')]"
  action_can_sway_prelate_to_rite_combined_group_description: "Ostatní [Concept('archbishops','arcibiskupové')|E], jejichž [Concept('clerical_region','církevní oblast')|E] sousedí s tvou, vyznávají jiný [Concept('rite','ritus')|E] a můžeš je požádat o přijetí svého.$action_can_sway_prelate_to_rite_help_desc$"
  action_can_sway_prelate_to_rite_click: "#I Kliknutím použij $sway_ruler_to_my_rite_interaction$#!"
- action_can_sway_prelate_to_rite_help_desc: "\n\n#help Jiný [Concept('archbishop','arcibiskup')|E], který přijme tvůj [Concept('rite','ritus')|E], jej pak může šířit ve vlastní [Concept('clerical_region','církevní oblasti')|E].#!"
+ action_can_sway_prelate_to_rite_help_desc: "\n\n#help Jiný [Concept('archbishop','arcibiskup')|E], který přijme tvůj [Concept('rite','ritus')|E], jej pak může šířit ve vlastních [Concept('clerical_region','církevní oblasti')|E].#!" # todo: CONCEPT CASE
  action_sway_prelate_to_rite_unlikely: "@sway_to_rite_icon!Arcibiskupové, které zatím nemůžeš požádat"
  action_sway_prelate_to_rite_unlikely_combined_group_label: "@sway_to_rite_icon!Arcibiskupy zatím nelze požádat"
  action_sway_prelate_to_rite_unlikely_combined_group_name: "$action_sway_prelate_to_rite_unlikely$"
@@ -251,8 +254,8 @@
  pam_cardinal_diverted_benefices_modifier_desc: "Část financování tohoto [Concept('cardinal','kardinála')|E] je přesměrována po dobu plnění příkazu od [Concept('head_of_faith','hlavy víry')|E]."
  cardinal_order_every_county: "Každé [Concept('county','hrabství')|e] v [THIS.Title.Custom('CZ_LandedName_L')], které ovládá [CZFaithAdjDecline(recipient.GetFaith,'ý')|l] [Concept('ruler','vládce')|e]"
  cardinal_order_every_ruler: "Každý [CZFaithAdjDecline(recipient.GetFaith,'ý')|l] [Concept('ruler','vládce')|e] v [THIS.Title.Custom('CZ_LandedName_L')]"
- cardinal_improve_development: "@task_develop_county! Zlepšit [Concept('development','rozvoj')|E]"
- cardinal_order_improve_development: "$cardinal_order_every_county$"
+ cardinal_improve_prosperity: "@task_develop_county! Zlepšit [Concept('prosperity','prosperitu')|E]" # todo: NEW TRANSLATION
+ cardinal_order_improve_prosperity: "$cardinal_order_every_county$" # todo: NEW TRANSLATION
  archdiocese_has_no_county_of_other_faith: "[THIS.Title.GetName|U] #bold nemá#! žádné [Concept('county','hrabství')|E] jiné [Concept('faith','víry')|E]"
  cardinal_convert_faith: "@task_conversion! Obrátit [Concept('faith','víru')|E]"
  cardinal_order_convert_faith: "$cardinal_order_every_county$"
@@ -269,7 +272,7 @@
  cardinal_order_undermine_legitimacy: "$cardinal_order_every_ruler$"
  cardinal_order_improve_development_tt: "[THIS.Title.GetName|U] nemá žádné [CZFaithAdjDecline(recipient.GetFaith,'é')|l] [Concept('county','hrabství')|E]"
  cardinal_order_convert_faith_tt: "Žádné [Concept('county','hrabství')|E] jiné [Concept('faith','víry')|E] ovládané [CZFaithAdjDecline(recipient.GetFaith,'ým')|l] [Concept('ruler','vládcem')|E] uvnitř [THIS.Title.Custom('CZ_LandedName_G')] nebo na jeho hranici"
- cardinal_order_increase_control_tt: "[THIS.Title.GetName|U] nemá žádné [CZFaithAdjDecline(recipient.GetFaith,'é')|l] [Concept('county','hrabství')|E] s [Concept('county_control','kontrolou hrabství')|E] pod #V 100#! %"
+ cardinal_order_increase_control_tt: "[THIS.Title.GetName|U] nemá žádné [CZFaithAdjDecline(recipient.GetFaith,'é')|l] [Concept('county','hrabství')|E] s [Concept('county_control','kontrolou hrabství')|E] nižší než [Concept('control_baseline','základní hodnotou kontroly')|E]" # todo: CHANGED (predtym: [THIS.Title.GetName|U] nemá žádné [CZFaithAdjDecline(recipient.GetFaith,'é')|l] [Concept('county','hrabství')|E] s [Conc)
  cardinal_order_accelerate_cultural_fascination_tt: "Tvá [Concept('culture_head','hlava kultury')|E] již plní příkaz k urychlení [Concept('cultural_fascination','kulturní fascinace')|E]"
  cardinal_order_improve_epidemic_resistance_tt: "[THIS.Title.GetName|U] nemá žádné [CZFaithAdjDecline(recipient.GetFaith,'é')|l] [Concept('county','hrabství')|E] způsobilé ke zvýšení [Concept('epidemic_resistance','odolnosti vůči moru')|E]"
  cardinal_order_improve_legitimacy_tt: "[THIS.Title.GetName|U] nemá žádného [CZFaithAdjDecline(recipient.GetFaith,'ého')|l] [Concept('ruler','vládce')|E] s [Concept('legitimacy','legitimitou')|E] způsobilou pro tento příkaz"
@@ -290,8 +293,8 @@
  seek_indulgences_recipient_realm_priest_tt: "[recipient.GetShortUIName|U] [Select_CString(recipient.IsLocalPlayer,'musíš','musí')|l] být tvým [Concept('court_chaplain','dvorním kaplanem')|E]"
  RAISE_A_TITHE_INTERACTION_OPTION: "Na oplátku vybrat desátek"
  RAISE_A_TITHE_INTERACTION_OPTION_REASON: "$RAISE_A_TITHE_INTERACTION_OPTION$: $VALUE|=+0$"
- tithable_counties_tt: "Některé [Concept('county','hrabství')|E] v tvé [Concept('domain','doméně')|E] má [Concept('development','rozvoj')|E] alespoň #high 1#! a není [Concept('occupied','obsazeno')|E]"
- custom.every_domain_county_1_plus_development: "Každé [Concept('county','hrabství')|E] v [Concept('domain','doméně')|E] s [Concept('development','rozvojem')|E] alespoň #high 1#!"
+ tithable_counties_tt: "Některé [Concept('county','hrabství')|E] v tvé [Concept('domain','doméně')|E] má [Concept('prosperity','prosperitou')|E] alespoň #high 1#! a není [Concept('occupied','obsazeno')|E]" # todo: CHANGED (predtym: Některé [Concept('county','hrabství')|E] v tvé [Concept('domain','doméně')|E] má [Concept('development','rozvoj')|E] ale)
+ custom.every_domain_county_1_plus_prosperity: "Každé [Concept('county','hrabství')|E] v [Concept('domain','doméně')|E] s #high 1#! nebo vyšší [Concept('prosperity','prosperitou')|E]" # todo: NEW TRANSLATION
  tithe_takes_baron_gold_tt: "[Concept('vassals','Vazalové')|EU] [Concept('baron','baronské')|E] [Concept('title_tier','úrovně')|E] přijdou o část @gold_icon![Concept('gold','zlata')|E]"
  custom.every_barons_and_minor_landholders_vassal: "Každý [Concept('vassal','vazal')|E] se stanoviskem [GetVassalStance( 'barons_and_minor_landholders' ).GetTextIcon][GetVassalStance( 'barons_and_minor_landholders' ).GetName]"
  IS_YOUR_PUPPET: "Je tvým [Concept('clerical_puppet','loutkovým zemským knězem')|E]: $VALUE|=+0$"
@@ -521,13 +524,13 @@
  expand_ecclesiastical_title_interaction_desc: "Rozšiř [Concept('clerical_region','církevní oblast')|E] [Concept('capital_possessive','hlavního sídla')|E] [recipient.Custom('CZ_TitledFirstNameOrMe_G')] do sousedního [Concept('de_jure','de iure')|E] [Concept('duchy','vévodství')|E] ovládaného [CZFaithAdjDecline(actor.GetFaith,'ými')|l] [Concept('rulers','vládci')|E]"
  expand_ecclesiastical_title_toast: "Duchovní titul rozšířen"
  expand_ecclesiastical_title_effect_tt: "[Concept('clerical_region','Církevní oblast')|EU] [clerical_region_title.GetName] se rozšiřuje na území [target.GetDefinitiveName]"
- expand_ecclesiastical_title_no_eligible_target_tt: "Žádná [Concept('de_jure','de iure')|E] [Concept('duchies','vévodství')|E] bez [Concept('clerical_region','církevní oblasti')|E], ovládaná [CZFaithAdjDecline(actor.GetFaith,'ými')|l] [Concept('rulers','vládci')|E], nesousedí s oblastí $game_concept_clerical_region$ kolem [Concept('capital','hlavního sídla')|E] [THIS.Char.Custom('CZ_TitledFirstName_G')]"
+ expand_ecclesiastical_title_no_eligible_target_tt: "Žádná [Concept('de_jure','de iure')|E] [Concept('duchies','vévodství')|E] bez [Concept('clerical_region','církevní oblasti')|E], ovládaná [CZFaithAdjDecline(actor.GetFaith,'ými')|l] [Concept('rulers','vládci')|E], nesousedí s oblastí církevní oblastí kolem [Concept('capital','hlavního sídla')|E] [THIS.Char.Custom('CZ_TitledFirstName_G')]" # todo: CONCEPT CASE
  split_ecclesiastical_title_interaction: "Rozdělit duchovní titul"
  split_ecclesiastical_title_interaction_desc: "Odděl část [Concept('clerical_region','církevní oblasti')|E] [Concept('capital_possessive','hlavního sídla')|E] [recipient.Custom('CZ_TitledFirstNameOrMe_G')], která leží v [Concept('realm','panství')|E] vybraného světského [Concept('ruler','vládce')|E], vytvoř z ní nový [Concept('clerical_title','duchovní titul')|E] se sídlem v jeho [Concept('capital','hlavním sídle')|E] a uděl jej vybranému členovi [Concept('clergy','duchovenstva')|E]\n\n#weak Rozdělení kopíruje hranice světského [Concept('rulerpossessive','vládcova')|E] panství: nový [Concept('clerical_title','duchovní titul')|E] zahrne pouze [Concept('counties','hrabství')|E], která drží v této [Concept('clerical_region','církevní oblasti')|E], takže větší [Concept('realm','panství')|E] oddělí více#!"
  actor_secondary_split_ecclesiastical_title_interaction: "Světský vládce"
  recipient_secondary_split_ecclesiastical_title_interaction: "Držitel"
  split_ecclesiastical_title_no_eligible_secular_ruler_tt: "Z této [Concept('clerical_region','církevní oblasti')|E] nelze oddělit žádného způsobilého světského [Concept('ruler','vládce')|E] [Concept('duke','vévodské')|E] nebo vyšší [Concept('title_tier','úrovně')|E]"
- split_ecclesiastical_title_no_eligible_holder_tt: "Žádný způsobilý člen [Concept('clergy','duchovenstva')|E] pro držení nového [Concept('clerical_title','duchovního titulu')|E]"
+ split_ecclesiastical_title_no_eligible_holder_tt: "Žádný způsobilý člen [Concept('clergy','duchovenstva')|E] pro držení nový [Concept('clerical_title','duchovního titulu')|E]" # todo: CONCEPT CASE
  split_ecclesiastical_title_toast: "Duchovní titul rozdělen"
  split_ecclesiastical_title_effect_tt: "Nový [Concept('clerical_title','duchovní titul')|E] zahrnující [Concept('realm','panství')|E] [secular_ruler.Custom('CZ_TitledFirstName_G')] uvnitř oblasti [clerical_region_title.GetName] je oddělen a udělen [new_ecclesiastical_holder.Custom('CZ_ShortUIName_D')]"
  pam_valid_expand_ecclesiastical_title_adjacent_to_clerical_region_trigger: "Musí sousedit se stávající [Concept('clerical_region','církevní oblastí')|E], kterou drží [THIS.Char.GetTitledFirstName]"
@@ -592,8 +595,9 @@
  make_clerical_puppet_interaction: "Udělat ze zemského kněze loutku"
  make_clerical_puppet_interaction_extra_icon: "$hook_extra_icon$"
  make_clerical_puppet_interaction_desc: "Přiměj svého [Concept('court_chaplain','dvorního kaplana')|E] k přijetí role [Concept('clerical_puppet','loutkového zemského kněze')|E], což ti umožní provádět [Concept('interactions','interakce')|E] prostřednictvím [recipient.Custom('CZ_ShortUIName_G')]"
- make_clerical_puppet_interaction_notification: "[recipient.GetShortUINameNoTooltip|U] se [Select_CString(recipient.IsLocalPlayer,'stáváš','stává')|l] tvou loutkou"
+ make_clerical_puppet_interaction_toast: "[recipient.GetShortUINameNoTooltip] se stává tvou loutkou" # todo: NEW TRANSLATION
  make_clerical_puppet_on_action_notification: "Nový $game_concept_clerical_puppet$"
+ make_clerical_puppet_interaction_notification: "Od této chvíle jsi mým nástrojem. Má slova budou vycházet z tvých úst. Tvé ruce jsou mými rukama. Má vůle je tvým rozkazem." # todo: CHANGED (predtym: [recipient.GetShortUINameNoTooltip|U] se [Select_CString(recipient.IsLocalPlayer,'stáváš','stává')|l] tvou loutkou)
  pam_already_have_clerical_puppet_tt: "Už máš [Concept('clerical_puppet','loutkového zemského kněze')|E]"
  pam_already_have_external_clerical_puppet_tt: "Už máš [Concept('external_clerical_puppet','loutkového duchovního vládce')|E]"
  pam_already_have_external_ruler_puppet_tt: "Už máš [Concept('external_ruler_puppet','loutkového světského vládce')|E]"
@@ -606,7 +610,8 @@
  make_external_ruler_puppet_interaction_extra_icon: "$hook_extra_icon$"
  make_external_ruler_puppet_interaction_desc: "Získat kontrolu nad [recipient.Custom('CZ_ShortUIName_I')]: jako tvůj [Concept('external_ruler_puppet','loutkový světský vládce')|E] bude prostřednictvím [Concept('interactions','interakcí')|E] plnit tvé příkazy"
  make_external_ruler_puppet_interaction_notification: "[recipient.GetShortUINameNoTooltip|U] se [Select_CString(recipient.IsLocalPlayer,'stáváš','stává')|l] tvou loutkou"
- make_external_ruler_puppet_tt: "Alespoň jedna z těchto podmínek:\n$BULLET_WITH_TAB$#indent_newline:6 $make_external_ruler_puppet_as_clergy_vassal_tt$#!\n$BULLET_WITH_TAB$#indent_newline:6 $make_external_ruler_puppet_as_seducer_tt$#!\n$BULLET_WITH_TAB$#indent_newline:6 $make_external_ruler_puppet_as_torturer_tt$#!\n$BULLET_WITH_TAB$#indent_newline:6 $make_external_ruler_puppet_as_family_first_tt$#!\n$BULLET_WITH_TAB$#indent_newline:6 $make_external_ruler_puppet_as_diplomat_tt$#!\n$BULLET_WITH_TAB$#indent_newline:6 $make_external_ruler_puppet_as_schemer_tt$#!\n$BULLET_WITH_TAB$#indent_newline:6 $make_external_ruler_puppet_as_gallant_tt$#!\n$BULLET_WITH_TAB$#indent_newline:6 $make_external_ruler_puppet_as_diarch_tt$#!\n$BULLET_WITH_TAB$#indent_newline:6 $make_external_ruler_puppet_as_hof_tt$#!"
+ make_external_ruler_puppet_interaction_greetings: "Myslím, že budeš souhlasit, že odteď bys měl ve všem naslouchat mým radám a upřednostňovat mou vůli před svou vlastní." # todo: NEW TRANSLATION
+ make_external_ruler_puppet_tt: "Alespoň jedna z těchto podmínek:\n$BULLET_WITH_TAB$#indent_newline:6 $make_external_ruler_puppet_as_clergy_vassal_tt$#!\n$BULLET_WITH_TAB$#indent_newline:6 $make_external_ruler_puppet_as_seducer_tt$#!\n$BULLET_WITH_TAB$#indent_newline:6 $make_external_ruler_puppet_as_torturer_tt$#!\n$BULLET_WITH_TAB$#indent_newline:6 $make_external_ruler_puppet_as_family_first_tt$#!\n$BULLET_WITH_TAB$#indent_newline:6 $make_external_ruler_puppet_as_diplomat_tt$#!\n$BULLET_WITH_TAB$#indent_newline:6 $make_external_ruler_puppet_as_schemer_tt$#!\n$BULLET_WITH_TAB$#indent_newline:6 $make_external_ruler_puppet_as_gallant_tt$#!\n$BULLET_WITH_TAB$#indent_newline:6 $make_external_ruler_puppet_as_diarch_tt$#!\n$BULLET_WITH_TAB$#indent_newline:6 $make_external_ruler_puppet_as_hof_tt$#!\n$BULLET_WITH_TAB$#indent_newline:6 $make_external_ruler_puppet_as_gg_leader_tt$#!\n$BULLET_WITH_TAB$#indent_newline:6 $make_external_ruler_puppet_as_merchant_creditor_tt$#!" # todo: CHANGED (predtym: Alespoň jedna z těchto podmínek:\n$BULLET_WITH_TAB$ indent_newline:6 $make_external_ruler_puppet_as_clergy_vassal_tt$ !\)
  make_external_ruler_puppet_as_clergy_vassal_tt: "Jsi [Concept('clerical','duchovním')|E] [Concept('vassal','vazalem')|E] pro [recipient.Custom('CZ_ShortUIName_A')]"
  make_external_ruler_puppet_as_seducer_tt: "Máš rys [GetTrait('seducer').GetName( GetNullCharacter )] a s [recipient.Custom('CZ_ShortUIName_I')] tě pojí vztah [Concept('lover','milenců')|E], nebo vztah [Concept('soulmate','spřízněných duší')|E], pokud má alespoň hodnost [Concept('king','krále')|E]"
  make_external_ruler_puppet_as_torturer_tt: "Máš rys [GetTrait('torturer').GetName( GetNullCharacter )] a držíš [recipient.Custom('CZ_ShortUIName_A')] ve svém [Concept('dungeon','žaláři')|E]"
@@ -616,6 +621,8 @@
  make_external_ruler_puppet_as_gallant_tt: "Máš rys [GetTrait('gallant').GetName( GetNullCharacter )] a [recipient.GetShortUIName] [Select_CString(recipient.IsLocalPlayer,'jsi','je')|l] [Select_CString(recipient.IsFemale,'tvá','tvůj')|l] [Concept('spouse','choť')|E]"
  make_external_ruler_puppet_as_diarch_tt: "Jsi [Concept('diarch','diarchou')|E] pro [recipient.Custom('CZ_ShortUIName_A')] v [Concept('entrenched_regency','zakotveném regentství')|E]"
  make_external_ruler_puppet_as_hof_tt: "Jsi [Concept('head_of_faith','hlavou víry')|E], [Concept('challenger_hof','konkurenční hlavou víry')|E] nebo [Concept('head_of_rite','hlavou ritu')|E] pro [recipient.Custom('CZ_ShortUIName_A')]"
+ make_external_ruler_puppet_as_gg_leader_tt: "Vedeš stranu [Concept('guelph','guelfů')|E] nebo [Concept('ghibelline','ghibellinů')|E], ke které [recipient.GetShortUIName] patří" # todo: NEW TRANSLATION
+ make_external_ruler_puppet_as_merchant_creditor_tt: "Jsi [Concept('merchant','obchodníkem')|E] s [Concept('company_purpose','účelem společnosti')|E] [GetLaw('company_purpose_creditor').GetName] a máš na [recipient.GetShortUIName] [Concept('hooked','zavázaného')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  fire_puppet_interaction: "Propustit loutku"
  fire_puppet_interaction_desc: "Ukončit vztah [Concept('puppet','loutky')|E] s [recipient.Custom('CZ_ShortUIName_I')]"
  fire_puppet_interaction_notification: "[recipient.GetShortUINameNoTooltip|U] už [Select_CString(recipient.IsLocalPlayer,'nejsi','není')|l] tvou [Concept('puppet','loutkou')|E]"
@@ -795,9 +802,9 @@
  pam_interactions_events.0036.desc_legitimacy: "„Pronášej své jedovaté lži. Obrať obyvatele [target.Custom('CZ_LandedNameNoTier_G')] i všechny ostatní národy proti nám oběma."
  pam_interactions_events.0036.desc_gold: "„Myslíš, že si [target.Custom('CZ_LandedNameNoTier_A')] koupíš za zlato a stříbro? Na tak vznešené území s hodností [target.GetTierAsNameNoTooltip] příliš prostý obchod."
  pam_interactions_events.0036.desc_fallback: "„Může [actor.GetTitleAsName|l] a [secondary_recipient.GetTitleAsNameNoTooltip|l] získat [target.Custom('CZ_LandedNameNoTier_A')] několika prostými slovy...? Ne."
- pam_interactions_events.0036.desc_afraid: "Ať [recipient.GetFaith.PriestNeuterPlural] přijdou a já je přivítám. Pošli vyslance a já s nimi budu jednat...“\n\n„Ale takto se svého území s hodností [target.GetTierAsNameNoTooltip] vzdát nemohu.“"
- pam_interactions_events.0036.desc_pious: "Ať přijdou další [recipient.GetFaith.PriestNeuterPlural], ať z nich čiší zkaženost! Pošli ďábelská ozbrojená vojska do [target_capital.GetTitle.Custom('CZ_LandedNameNoTier_G')]...“\n\n„Nevzdám se území s hodností [target.GetTierAsNameNoTooltip], které mi udělil [recipient.GetFaith.HighGodName].“"
- pam_interactions_events.0036.desc: "Ať přijdou další [recipient.GetFaith.PriestNeuterPlural] a dál vřískají! Ať [actor.Custom('GetFighterTermPlural')] v plné zbroji přitáhnou do [target_capital.GetTitle.Custom('CZ_LandedNameNoTier_G')]...“\n\n„Svého území s hodností [target.GetTierAsNameNoTooltip] se tak snadno nevzdám.“"
+ pam_interactions_events.0036.desc_afraid: "Ať [recipient.GetFaith.PriestNeuterPlural] přijdou a já je přivítám. Pošli vyslance a já s nimi budu jednat...„\n\n„Ale takto se svého území s hodností [target.GetTierAsNameNoTooltip] vzdát nemohu.“"
+ pam_interactions_events.0036.desc_pious: "Ať přijdou další [recipient.GetFaith.PriestNeuterPlural], ať z nich čiší zkaženost! Pošli ďábelská ozbrojená vojska do [target_capital.GetTitle.Custom('CZ_LandedNameNoTier_G')]...„\n\n„Nevzdám se území s hodností [target.GetTierAsNameNoTooltip], které mi udělil [recipient.GetFaith.HighGodName].“"
+ pam_interactions_events.0036.desc: "Ať přijdou další [recipient.GetFaith.PriestNeuterPlural] a dál vřískají! Ať [actor.Custom('GetFighterTermPlural')] v plné zbroji přitáhnou do [target_capital.GetTitle.Custom('CZ_LandedNameNoTier_G')]...„\n\n„Svého území s hodností [target.GetTierAsNameNoTooltip] se tak snadno nevzdám.“"
  pam_interactions_events.0036.a_relation: "Jak mě jen může odmítnout?!?"
  pam_interactions_events.0036.a: "Vzepřít se vůli [secondary_recipient.Custom('CZ_TitleAsNameNoTooltip_G')|l]? Hanba..."
  clergy_land_transfer_refusal_tt: "Odmítnuté odstoupení [target.Custom('CZ_LandedName_G')] [actor.Custom('CZ_ShortUIName_D')]"
@@ -878,6 +885,7 @@
  demand_child_as_monk_ai_non_distant_child: "[secondary_recipient.GetTitledFirstNameNoTooltip|U] má jiné poslání: $VALUE|=+0$"
  demand_child_as_monk_ai_non_heir: "[secondary_recipient.GetTitledFirstNameNoTooltip|U] není mým [Concept('heir','dědicem')|E]: $VALUE|=+0$"
  demand_child_as_monk_ai_primary_heir: "[secondary_recipient.GetTitledFirstNameNoTooltip|U] je mým [Concept('primary_heir','hlavním dědicem')|E]: $VALUE|=+0$"
+ demand_child_as_monk_ai_eldest_child_too_young_for_appointment: "[secondary_recipient.GetTitledFirstNameNoTooltip] je mé nejstarší dítě ([secondary_recipient.Custom('GetDaughterSon')]): $VALUE|=+0$" # todo: NEW TRANSLATION
  demand_child_as_monk_ai_parent_zealous: "Mám rys [GetTrait('zealous').GetName( GetNullCharacter )]: $VALUE|=+0$"
  demand_child_as_monk_ai_parent_cynical: "Mám rys [GetTrait('cynical').GetName( GetNullCharacter )]: $VALUE|=+0$"
  demand_child_as_monk_ai_parent_humble: "Mám rys [GetTrait('humble').GetName( GetNullCharacter )]: $VALUE|=+0$"
@@ -957,7 +965,7 @@
  refused_transfer_reason: "Odmítáš převod pod vládu [recipient.Custom('CZ_ShortUIName_G')]: $VALUE|=+0$"
  refused_transfer_liege_reason: "[recipient.GetShortUIName|U] se [Select_CString(recipient.IsLocalPlayer,'vzdáváš','vzdává')|l] nadvlády nad tebou: $VALUE|=+0$"
  EXCOMMUNICATED_BY_HOF: "[recipient.GetShortUIName|U] se [Select_CString(recipient.IsLocalPlayer,'bojíš','bojí')|l] zrušit [Concept('excommunication','exkomunikaci')|E] uloženou tvou [Concept('head_of_faith','hlavou víry')|E]: $VALUE|=+0$"
- non_hof_excom_lifting_punishment_tt: "#weak #EMP Jen [Concept('head_of_faith','hlava víry')|E] může zrušit [Concept('excommunication','exkomunikaci')|E] pro [recipient.Custom('CZ_ShortUIName_A')] bez trestu#!#!"
+ non_hof_excom_lifting_punishment_tt: "#weak #EMP Jen [Concept('head_of_faith','hlava víry')|E] může zrušit [Concept('excommunication','exkomunikaci')|E] pro [target_character.Custom('CZ_ShortUIName_A')] bez trestu#!#!" # todo: CHANGED (predtym: weak EMP Jen [Concept('head_of_faith','hlava víry')|E] může zrušit [Concept('excommunication','exkomunikaci')|E] pro [re)
  recipient_not_hof_for_emperor_tt: "Jako [puppet_or_actor.Custom('CZ_TitleAsNameNoTooltip_D')|l] může [puppet_or_actor.Custom('CZ_ShortUIName_D')] zrušit [Concept('excommunication','exkomunikaci')|E] pouze tvá [Concept('head_of_faith','hlava víry')|E]"
  AI_GREED_REASON: "Chamtivost [recipient.Custom('CZ_ShortUIName_G')]: $VALUE|=+0$"
  AI_BRIBE_REASON: "Tvůj úplatek: $VALUE|=+0$"
@@ -1107,17 +1115,17 @@
  sponsored_claim_war_someone_must_have_claim_tt: "Způsobilý [Concept('claimant','pretendent')|E] musí mít [Concept('claim','nárok')|E] na [target.Custom('CZ_LandedName_A')]"
  sponsored_claim_war_target_must_be_held_by_recipient_tt: "[target.GetName|U] musí být pod vládou [recipient.Custom('CZ_ShortUIName_G')] nebo [Select_CString(recipient.IsLocalPlayer,'tvých',Select_CString(recipient.IsFemale,'jejích','jeho'))|l] [Concept('vassals','vazalů')|E]"
  incite_claim_war_use_on_liege_tt: "[recipient.GetShortUIName|U] [Select_CString(recipient.IsLocalPlayer,'nejsi','není')] [Concept('independent','nezávislým vládcem')|E]. Použij tuto [Concept('interaction','interakci')|E] na [Concept('liege','lenního pána')|E] této postavy: [recipient.GetLiege.Custom('CZ_ShortUIName_A')]"
- incite_claim_war_attacker_must_share_faith_tt: "Musí vyznávat stejnou [Concept('faith','víru')|E] jako [actor.GetShortUIName]"
+ incite_claim_war_attacker_must_share_faith_tt: "Musí vyznávat stejnou [Concept('faith','víru')|E] jako [TARGET_CHARACTER.GetShortUIName]" # todo: CHANGED (predtym: Musí vyznávat stejnou [Concept('faith','víru')|E] jako [actor.GetShortUIName])
  incite_claim_war_attacker_must_be_landed_count_tt: "Musí být [Concept('ruler','vládcem')|E] s půdou alespoň na úrovni [Concept('county','hrabství')|E]"
  incite_claim_war_attacker_must_not_be_at_war_tt: "Nesmí vést [Concept('war','válku')|E]"
  not_incite_claim_war_attacker_must_not_be_at_war_tt_third: "[CHARACTER.GetShortUIName|U] [Select_CString(CHARACTER.IsLocalPlayer,'vedeš','vede')] [Concept('war','válku')|E]"
  incite_claim_war_attacker_must_not_be_in_debt_tt: "Nesmí být v [Concept('debt','dluhu')|E]"
- incite_claim_war_attacker_must_be_strong_enough_tt: "Musí mít alespoň desetinu vojenské síly [recipient.Custom('CZ_ShortUIName_G')]"
+ incite_claim_war_attacker_must_be_strong_enough_tt: "Musí mít alespoň desetinu vojenské síly [TARGET_CHARACTER.Custom('CZ_ShortUIName_G')]" # todo: CHANGED (predtym: Musí mít alespoň desetinu vojenské síly [recipient.Custom('CZ_ShortUIName_G')])
  incite_claim_war_attacker_must_be_secular_tt: "Nesmí mít [Concept('nomadic','kočovnou')|E], [Concept('celestial','nebeskou')|E], [Concept('theocratic','teokratickou')|E] ani [Concept('ecclesiastical','církevní')|E] vládu a nesmí být [Concept('landless_adventurer','dobrodruhem bez půdy')|E]"
- incite_claim_war_attacker_must_not_be_blocked_diplomacy_tt: "Nesmí mít [Concept('allied','spojenecký')|E] vztah ani [Concept('truce','příměří')|E] s [recipient.Custom('CZ_ShortUIName_I')], být [Select_CString(recipient.IsLocalPlayer,'tvým',Select_CString(recipient.IsFemale,'jejím','jeho'))|l] [Concept('tributary','tributářem')|E] nebo [Concept('vassal','vazalem')|E] ani sdílet stejné [Concept('realm','panství')|E]"
- incite_claim_war_attacker_liege_not_at_war_tt: "Nesmí mít [Concept('liege','lenního pána')|E], který vede [Concept('war','válku')|E] s [recipient.Custom('CZ_ShortUIName_I')]"
- incite_claim_war_attacker_must_have_claim_on_recipient_tt: "Musí mít [Concept('claim','nárok')|E] na [Concept('title','titul')|E] pod vládou [recipient.Custom('CZ_ShortUIName_G')] nebo [Select_CString(recipient.IsLocalPlayer,'tvých',Select_CString(recipient.IsFemale,'jejích','jeho'))|l] [Concept('vassals','vazalů')|E]"
- incite_claim_war_attacker_must_have_claim_on_target_tt: "Musí mít [Concept('claim','nárok')|E] na [target.Custom('CZ_LandedName_A')]"
+ incite_claim_war_attacker_must_not_be_blocked_diplomacy_tt: "Nesmí mít [Concept('allied','spojenecký')|E] vztah ani [Concept('truce','příměří')|E] s [TARGET_CHARACTER.Custom('CZ_ShortUIName_I')], být [Select_CString(recipient.IsLocalPlayer,'tvým',Select_CString(recipient.IsFemale,'jejím','jeho'))|l] [Concept('tributary','tributářem')|E] nebo [Concept('vassal','vazalem')|E] ani sdílet stejné [Concept('realm','panství')|E]" # todo: CHANGED (predtym: Nesmí mít [Concept('allied','spojenecký')|E] vztah ani [Concept('truce','příměří')|E] s [recipient.Custom('CZ_ShortUINam)
+ incite_claim_war_attacker_liege_not_at_war_tt: "Nesmí mít [Concept('liege','lenního pána')|E], který vede [Concept('war','válku')|E] s [TARGET_CHARACTER.Custom('CZ_ShortUIName_I')]" # todo: CHANGED (predtym: Nesmí mít [Concept('liege','lenního pána')|E], který vede [Concept('war','válku')|E] s [recipient.Custom('CZ_ShortUIName)
+ incite_claim_war_attacker_must_have_claim_on_recipient_tt: "Musí mít [Concept('claim','nárok')|E] na [Concept('title','titul')|E] pod vládou [TARGET_CHARACTER.Custom('CZ_ShortUIName_G')] nebo [TARGET_CHARACTER.GetHerHis] [Select_CString(recipient.IsLocalPlayer,'tvých',Select_CString(recipient.IsFemale,'jejích','jeho'))|l] [Concept('vassals','vazalů')|E]" # todo: CHANGED (predtym: Musí mít [Concept('claim','nárok')|E] na [Concept('title','titul')|E] pod vládou [recipient.Custom('CZ_ShortUIName_G')] )
+ incite_claim_war_attacker_must_have_claim_on_target_tt: "Musí mít [Concept('claim','nárok')|E] na [TARGET_TITLE.Custom('CZ_LandedName_A')]" # todo: CHANGED (predtym: Musí mít [Concept('claim','nárok')|E] na [target.Custom('CZ_LandedName_A')])
  interaction_claim_war_attacked_tt: "Čelí útoku od [secondary_recipient.Custom('CZ_ShortUIName_G')] ve [Concept('war','válce')|E] o [Select_CString(secondary_recipient.IsLocalPlayer,'tvůj',Select_CString(secondary_recipient.IsFemale,'její','jeho'))|l] [Concept('claim','nárok')|E] na [target.Custom('CZ_LandedName_A')]"
  interaction_claim_war_attacker_tt: "[secondary_recipient.GetShortUIName|U] [Select_CString(secondary_recipient.IsLocalPlayer,'zaútočíš','zaútočí')] na [recipient.Custom('CZ_ShortUIName_A')] s cílem prosadit [Concept('claim','nárok')|E] na [target.Custom('CZ_LandedName_A')]"
  claim_war_interaction_join_war_tt: "Přidáš se do [Concept('war','války')|E] na straně [secondary_recipient.Custom('CZ_ShortUIName_G')]"
@@ -1127,7 +1135,7 @@
  pam_instigated_claim_war_lost.t: "Podnícená válka o nárok prohrána"
  pam_instigated_claim_war_won_tt: "[CZProDrop(attacker,'získala','získal')|U] [target.Custom('CZ_LandedNameNoTier_A')]"
  pam_instigated_claim_war_draw_tt: "[CZProDrop(attacker,'nedokázala','nedokázal')|U] získat [target.Custom('CZ_LandedNameNoTier_A')]"
- pam_instigated_claim_war_lost_tt: "[attacker.GetShortUIName|U] [Select_CString(attacker.IsLocalPlayer,Select_CString(attacker.IsFemale,'jsi byla poražena','jsi byl poražen'),Select_CString(attacker.IsFemale,'byla poražena','byl poražen'))] [defender.Custom('CZ_ShortUIName_I')]"
+ pam_instigated_claim_war_lost_tt: "[attacker.GetShortUIName|U] [Select_CString(attacker.IsLocalPlayer,Select_CString(attacker.IsFemale,'jsi byla poražena','jsi [Select_CString(ROOT.Char.IsFemale,'byla poražena','byl poražen')]'),Select_CString(attacker.IsFemale,'byla poražena','byl poražen'))] [defender.Custom('CZ_ShortUIName_I')]" # todo: GENDER FORM ROOT.Char - over, ci ROOT je postava, ktorej sa text tyka
  refused_incite_claim_war.t: "[secondary_recipient.GetTitledFirstName|U] odmítá válku o nárok"
  incite_claim_war_past_tense_tt: "[CZProDrop(puppet_or_actor,'přiměla','přiměl')|U] [secondary_recipient.Custom('CZ_ShortUIName_A')] k vyhlášení [Concept('war','války')|E] o vlastní [Concept('claim','nárok')|E] na [target.Custom('CZ_LandedName_A')]"
  incite_claim_war_joined_tt: "[CZProDrop(puppet_or_actor,'vstoupila','vstoupil')|U] do [Concept('war','války')|E] proti [recipient.Custom('CZ_ShortUIName_D')]"
@@ -1157,7 +1165,7 @@
  pam_instigated_holy_war_lost.t: "Podnícená svatá válka prohrána"
  pam_instigated_holy_war_won_tt: "[CZProDrop(attacker,'dobyla','dobyl')|U] [target.Custom('CZ_LandedNameNoTier_A')]"
  pam_instigated_holy_war_draw_tt: "[CZProDrop(attacker,'nedokázala','nedokázal')|U] dobýt [target.Custom('CZ_LandedNameNoTier_A')]"
- pam_instigated_holy_war_lost_tt: "[attacker.GetShortUIName|U] [Select_CString(attacker.IsLocalPlayer,Select_CString(attacker.IsFemale,'jsi byla poražena','jsi byl poražen'),Select_CString(attacker.IsFemale,'byla poražena','byl poražen'))] [defender.Custom('CZ_ShortUIName_I')]"
+ pam_instigated_holy_war_lost_tt: "[attacker.GetShortUIName|U] [Select_CString(attacker.IsLocalPlayer,Select_CString(attacker.IsFemale,'jsi byla poražena','jsi [Select_CString(ROOT.Char.IsFemale,'byla poražena','byl poražen')]'),Select_CString(attacker.IsFemale,'byla poražena','byl poražen'))] [defender.Custom('CZ_ShortUIName_I')]" # todo: GENDER FORM ROOT.Char - over, ci ROOT je postava, ktorej sa text tyka
  holy_war_cleric_loss_penalty_tt: "@alert_icon! #alert_trial Pokud válka skončí porážkou, ztratíš @prestige_level_0_icon! #high 2#! [Concept('prestige_levels','úrovně slávy')|E]#!"
  SECONDARY_RECIPIENT_BOLDNESS_REASON: "Odvaha [secondary_recipient.Custom('CZ_ShortUIName_G')]: $VALUE|=+0$"
  SECONDARY_RECIPIENT_COMPASSION_REASON: "Zájem [secondary_recipient.Custom('CZ_ShortUIName_G')] o násilí: $VALUE|=+0$"
@@ -1182,7 +1190,7 @@
  pam_interactions_events.0070.desc_intro_heretic: "„Kacířům zvaným [recipient.GetFaith.GetAdherentNamePlural] z [target.Custom('CZ_LandedNameNoTier_G')]"
  pam_interactions_events.0070.desc_intro_infidel: "„Nevěřícím, jejichž [CZReligionAdjDecline(recipient.GetFaith.GetReligion,'á')|l] víra sídlí v [target.Custom('CZ_LandedNameNoTier_L')]"
  pam_interactions_events.0070.desc_intro_heathen: "„Pohanům zvaným [recipient.GetFaith.GetReligion.GetAdherentNamePlural] z [target.Custom('CZ_LandedNameNoTier_G')]"
- pam_interactions_events.0070.desc: "#EMP zatracení, zkázu — smrt mečem!#!“ volá [puppet_or_actor.GetTitledFirstNameRegnal] a zpráva se nese k neklidným masám [secondary_recipient.GetPrimaryTitle.Custom('CZ_LandedNameNoTier_G')].\n\n„[ROOT.Char.GetFaith.random_GoodGodNames|U] je na naší straně; vztyč svatý prapor, [ROOT.Char.Custom('CZ_TitledFirstName_V')]! Vyzývám tě, abys [Select_CString(ROOT.Char.IsFemale,'vyhnala','vyhnal')|l] [recipient.Custom('CZ_TitledFirstName_A')] ze země [target.Custom('CZ_LandedNameNoTierNoTooltip_G')]! Abys [Select_CString(ROOT.Char.IsFemale,'uvrhla','uvrhl')|l] nevěřící zvané [recipient.Custom2('GetUnbelieverTermPlural', puppet_or_actor)|l], kteří obývají [recipient.GetPrimaryTitle.Custom('CZ_Adjective_ou')|l] zemi, do plamenů místa zvaného [ROOT.Char.GetFaith.NegativeAfterLife]!“\n\n"
+ pam_interactions_events.0070.desc: "#EMP zatracení, zkázu — smrt mečem!#!„ volá [puppet_or_actor.GetTitledFirstNameRegnal] a zpráva se nese k neklidným masám [secondary_recipient.GetPrimaryTitle.Custom('CZ_LandedNameNoTier_G')].\n\n„[ROOT.Char.GetFaith.random_GoodGodNames|U] je na naší straně; vztyč svatý prapor, [ROOT.Char.Custom('CZ_TitledFirstName_V')]! Vyzývám tě, abys [Select_CString(ROOT.Char.IsFemale,'vyhnala','vyhnal')|l] [recipient.Custom('CZ_TitledFirstName_A')] ze země [target.Custom('CZ_LandedNameNoTierNoTooltip_G')]! Abys [Select_CString(ROOT.Char.IsFemale,'uvrhla','uvrhl')|l] nevěřící zvané [recipient.Custom2('GetUnbelieverTermPlural', puppet_or_actor)|l], kteří obývají [recipient.GetPrimaryTitle.Custom('CZ_Adjective_ou')|l] zemi, do plamenů místa zvaného [ROOT.Char.GetFaith.NegativeAfterLife]!“\n\n"
  pam_interactions_events.0070.desc_outro_joining_war: "Držitel titulu [puppet_or_actor.GetTitleAsNameNoTooltip|l] opravdu touží šířit [puppet_or_actor.GetFaith.HighGodNamePossessive] vliv! Slibuje osobně vyjet do války a dát mi svá vojska k dispozici."
  pam_interactions_events.0070.desc_outro_funding_war: "Tyto požadavky jsou podloženy mincemi: [puppet_or_actor.GetTitleAsNameNoTooltip|l] slibuje válečnou pokladnu plnou prostředků, aby mé bojovníky zvané [ROOT.Char.Custom('KnightCulturePluralNoTooltip')|l] z vlastní [ROOT.Char.GetPrimaryTitle.Custom('CZ_AdjectiveNoTooltip_ee')|l] země pohánělo i něco víc než samotná víra."
  pam_interactions_events.0070.a: "„[ROOT.Char.GetFaith.WarGodName|U] je s námi! #EMP Do války!#!“"
@@ -1229,8 +1237,8 @@
  pam_reaffirm_doctrine_interaction: "Znovu potvrdit doktrínu"
  pam_reaffirm_doctrine_interaction_extra_icon: "$hook_extra_icon$"
  pam_reaffirm_doctrine_interaction_desc: "Znovu potvrdit [Concept('doctrine','doktrínu')|E] svého [Concept('rite','ritu')|E] před [recipient.Custom('CZ_ShortUIName_I')] a vyzvat k jejímu přijetí v ritu [recipient.GetRite.GetName]"
- pam_reaffirm_doctrine_interaction_toast: "$game_concept_doctrine$: přijata"
- pam_reaffirm_doctrine_interaction_toast_declined: "$game_concept_doctrine$: odmítnuta"
+ pam_reaffirm_doctrine_interaction_toast: "Doktrína: přijata" # todo: CONCEPT CASE
+ pam_reaffirm_doctrine_interaction_toast_declined: "Doktrína: odmítnuta" # todo: CONCEPT CASE
  pam_reaffirm_doctrine_interaction_tooltip: "Přijme jednu [Concept('doctrine','doktrínu')|E], kterou hlásá [actor.GetRite.GetAdjective|l] [Concept('rite','ritus')|E]"
  pam_reaffirm_doctrine_interaction_notification: "Ritus [recipient.GetRite.GetName|U] se odchyluje od vzácné pravověrnosti, kterou hlásá [actor.GetRite.GetAdjective|l] doktrína. Tvůj [actor.GetTitleAsName|l] vás všechny vyzývá k pokání! [recipient.GetFaith.HighGodName] žádá službu: kaž věřícím zvaným [recipient.GetRite.GetAdherentNamePluralNoTooltip] o doktríně [pam_reaffirm_doctrine.GetDescriptiveName( recipient.GetFaith )]."
  pam_reaffirm_doctrine_one_doctrine_tt: "Pokaždé můžeš vybrat #EMP jednu#! [Concept('doctrine','doktrínu')|E]"
@@ -1238,8 +1246,8 @@
  pam_reaffirm_doctrine_recipient_desire_reason: "[recipient.GetShortUIName|U] tuto [Concept('doctrine','doktrínu')|E] [Select_CString(recipient.IsLocalPlayer,'máš','má')|l] v oblibě: $VALUE|=+0$"
  pam_evangelize_personal_tenet_interaction: "Šířit osobní zásadu"
  pam_evangelize_personal_tenet_interaction_desc: "Šířit svou [Concept('personal_tenet','osobní zásadu')|E] mezi [recipient.Custom('CZ_ShortUIName_I')] a vyzvat k jejímu přijetí za vlastní"
- pam_evangelize_personal_tenet_interaction_toast: "$game_concept_personal_tenet$: přijata"
- pam_evangelize_personal_tenet_interaction_toast_declined: "$game_concept_personal_tenet$: odmítnuta"
+ pam_evangelize_personal_tenet_interaction_toast: "Osobní zásada: přijata" # todo: CONCEPT CASE
+ pam_evangelize_personal_tenet_interaction_toast_declined: "Osobní zásada: odmítnuta" # todo: CONCEPT CASE
  pam_evangelize_only_one_personal_tenet_tt: "Najednou lze vybrat pouze jednu [Concept('personal_tenet','osobní zásadu')|E]"
  pam_evangelize_select_personal_tenet_tt: "Vyber [Concept('personal_tenet','osobní zásadu')|E], kterou chceš šířit"
  pam_evangelize_recipient_undesired_selected_tenet_reason: "[recipient.GetShortUIName|U] po této [Concept('personal_tenet','osobní zásadě')|E] [Select_CString(recipient.IsLocalPlayer,'netoužíš','netouží')|l]: $VALUE|=+0$"
@@ -1397,7 +1405,7 @@
  pam_interactions_events.0090.a: "[actor.GetFaith.HighGodName|U] nám udělil nového panovníka s titulem [recipient.GetTitleAsNameNoTooltip|l]."
  pam_interactions_events.0090.a.flavor: "A ve své moudrosti... učinil [recipient.Custom('CZ_FirstNameNoTooltip_A')] [recipient.Custom('CZ_TitleAsNameNoTooltip_I')|l] s velkým dluhem vůči mně."
  has_valid_exclave_duchy_tt: "[Concept('duchies','Vévodství')|EU], která budou přidána ke [Concept('kingdom','království')|E] pod vládou [recipient.Custom('CZ_ShortUIName_G')], musejí sousedit s každým vévodstvím, které se jeho vytvořením stane exklávou [Concept('de_jure','de iure')|E]: vévodstvím bez hlavního sídla, které už nebude sousedit s ostatními vévodstvími svého království."
- create_custom_kingdom_de_jure_changes_interaction: "Všechna [Concept('held','držená')|E] nebo [Concept('completely_controlled','zcela ovládaná')|E] [Concept('duchies','vévodství')|E] tvoří území [Concept('de_jure','de iure')|E] nového [Concept('kingdom','království')|E]"
+ create_custom_kingdom_de_jure_changes_interaction: "Všechna [Concept('held','držená')|E] nebo [Concept('completely_controlled','zcela ovládaná')|E] [Concept('duchies','vévodství')|E] tvoří území [Concept('de_jure','de iure')|E] nové [Concept('kingdom','království')|E]" # todo: CONCEPT CASE
  RECIPIENT_CLAIMS_TARGET: "[recipient.GetShortUIName|U] [Select_CString(recipient.IsLocalPlayer,'máš','má')|l] nárok na [target.Custom('CZ_LandedName_A')]: $VALUE|=+0$"
  recipient_liege_is_emperor_or_none_tt: "[recipient.GetShortUIName|U] [Select_CString(recipient.IsLocalPlayer,'musíš','musí')|l] být nezávislým vládcem nebo být pod [Concept('liege','lenním pánem')|E] alespoň na [Concept('title_tier','úrovni titulu')|E] [Concept('emperor','císaře')|E]"
  recipient_liege_is_two_tiers_higher_or_none_tt: "[recipient.GetShortUIName|U] [Select_CString(recipient.IsLocalPlayer,'musíš','musí')|l] být nezávislým vládcem nebo alespoň o dvě [Concept('ranks','hodnosti')|E] níže než [recipient.GetLiege.GetName]"
@@ -1413,7 +1421,7 @@
  ecclesiastical_bestow_title_interaction_toast: "[target.GetNameNoTierNoTooltip|U]: uděleno"
  ecclesiastical_bestow_title_interaction_effect_tt: "[target.GetName|U] se vytvoří a udělí [recipient.Custom('CZ_ShortUIName_D')]"
  ECCLESIASTICAL_BESTOW_TITLE_NOTIFICATION: "Všichni věřící tvého panství, kteří hlásají [CZReligionAdjDecline(recipient.GetFaith.GetReligion,'ou')|l] víru, zasluhují mír a prosperitu, kterými [recipient.GetFaith.HighGodName] žehná území s hodností [target.GetTierAsNameNoTooltip] hlásajícímu tutéž víru. Proto chci vyhlásit [target.Custom('CZ_LandedName_A')] a svěřit ti jeho správu."
- ecclesiastical_bestow_title_asks_nothing_tt: "[recipient.GetShortUIName|U] [Select_CString(recipient.IsLocalPlayer,'nemůžeš','nemůže')|l] odmítnout [Concept('title','titul')|E] udělený bez podmínek"
+ ecclesiastical_bestow_title_asks_nothing_tt: "[TARGET_CHARACTER.GetShortUIName|U] [Select_CString(recipient.IsLocalPlayer,'nemůžeš','nemůže')|l] odmítnout [Concept('title','titul')|E] udělený bez podmínek" # todo: CHANGED (predtym: [recipient.GetShortUIName|U] [Select_CString(recipient.IsLocalPlayer,'nemůžeš','nemůže')|l] odmítnout [Concept('title',')
  target_has_holder_tt: "[target.GetName|U] už má [Concept('holder','držitele')|E]"
  no_bestowing_hegemony_tt: "Touto [Concept('interaction','interakcí')|E] nelze udělovat [Concept('titles','tituly')|E] na [Concept('title_tier','úrovni titulu')|E] [Concept('hegemony','hegemonie')|E]"
  must_be_same_tier_or_one_higher_tt: "Můžeš udělit pouze [Concept('titles','tituly')|E] na [Concept('title_tier','úrovni titulu')|E] [recipient.Custom('CZ_ShortUIName_G')] nebo o jednu úroveň výše"
@@ -1542,7 +1550,7 @@
  pam_interactions_events.0096.a: "Kéž se toto skutečně ukáže být souladným svazkem."
  any_available_title_same_tier_or_higher_tt: "Některý [Concept('titles','titul')|E] pod vládou [recipient.Custom('CZ_ShortUIName_G')] má titul [Concept('liege','lenního pána')|E] [Concept('de_jure','de iure')|E] bez [Concept('holder','držitele')|E] a nižší než [Concept('title_tier','úroveň titulu')|E] [Concept('hegemony','hegemonie')|E]"
  pam_clergy_legitimize_bastard_interaction: "Legitimizovat levobočka #weak (Duchovenstvo)#!"
- pam_clergy_legitimize_bastard_interaction_desc: "Prohlásit [recipient.Custom('CZ_ShortUINameNoTooltip_A')] za legitimního levobočka ($game_concept_legitimized_bastard$), jak si přeje [recipient.GetFaith.HighGodName]\n\n#weak Je to dostupné, protože patříš mezi [Concept('clergy','duchovenstvo')|E] a jde o [Concept('bastard','levobočka')|E] tvé [Concept('faith','víry')|E]#!"
+ pam_clergy_legitimize_bastard_interaction_desc: "Prohlásit [recipient.Custom('CZ_ShortUINameNoTooltip_A')] za legitimního levobočka (legitimizovaného levobočka), jak si přeje [recipient.GetFaith.HighGodName]\n\n#weak Je to dostupné, protože patříš mezi [Concept('clergy','duchovenstvo')|E] a jde o [Concept('bastard','levobočka')|E] tvé [Concept('faith','víry')|E]#!" # todo: CONCEPT CASE
  pam_clergy_legitimize_bastard_interaction_notification: "Levoboček legitimizován"
  pam_clergy_legitimize_bastard_archbishop_range_tt: "[recipient.GetShortUIName|U] [Select_CString(recipient.IsLocalPlayer,'musíš','musí')|l] být ve stejném [Concept('realm','panství')|E] jako ty nebo sídlit v tvé [Concept('clerical_region','církevní oblasti')|E]"
  pam_clergy_legitimize_bastard_realm_range_tt: "[recipient.GetShortUIName|U] [Select_CString(recipient.IsLocalPlayer,'musíš','musí')|l] být ve stejném [Concept('realm','panství')|E] jako ty"
@@ -1654,7 +1662,7 @@
  pam_reform_order_is_valid_showing_failures_only_tt: "Musíš mít alespoň jednu [Concept('personal_tenet','osobní zásadu')|E], kterou lze prosadit, nebo vyznávat jiný [Concept('rite','ritus')|E] než tento [Concept('monastic_holy_order','mnišský řád')|E]"
  pam_reform_order_only_one_tenet_tt: "Můžeš prosadit pouze jednu [Concept('core_tenet','zásadu')|E]"
  pam_reform_order_cooldown_tt: "Tento řád nesmí být reformován v posledních #V 10#! letech"
- pam_reform_order_puppet_acceptance_reason: "[recipient.GetShortUIName|U] [Select_CString(recipient.IsLocalPlayer,'jsi','je')|l] tvou loutkou a [Select_CString(recipient.IsLocalPlayer,'nemůžeš','nemůže')|l] odmítnout"
+ pam_reform_order_puppet_acceptance_reason: "[TARGET_CHARACTER.GetShortUIName|U] [Select_CString(recipient.IsLocalPlayer,'jsi','je')|l] tvou loutkou a [Select_CString(recipient.IsLocalPlayer,'nemůžeš','nemůže')|l] odmítnout" # todo: CHANGED (predtym: [recipient.GetShortUIName|U] [Select_CString(recipient.IsLocalPlayer,'jsi','je')|l] tvou loutkou a [Select_CString(recip)
  pam_reform_order_humble_reason: "[recipient.GetShortUIName|U] [Select_CString(recipient.IsLocalPlayer,'máš','má')|l] rys [GetTrait('humble').GetName( recipient.Self )]: $VALUE|=+0$"
  pam_reform_order_ambitious_reason: "[recipient.GetShortUIName|U] [Select_CString(recipient.IsLocalPlayer,'máš','má')|l] rys [GetTrait('ambitious').GetName( recipient.Self )]: $VALUE|=+0$"
  pam_reform_order_stubborn_reason: "[recipient.GetShortUIName|U] [Select_CString(recipient.IsLocalPlayer,'máš','má')|l] rys [GetTrait('stubborn').GetName( recipient.Self )]: $VALUE|=+0$"

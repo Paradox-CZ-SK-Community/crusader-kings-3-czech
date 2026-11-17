@@ -10,7 +10,7 @@
  DISBAND_ALL_CONFIRM_TITLE: "Rozpustit všechny armády"
  DISBAND_ALL_CONFIRM: "Všechny svolané a shromažďující se [Concept('armies','armády')|E] budou rozpuštěny."
  DISBAND_ALL_CONFIRM_ACCEPT: "Rozpustit vše"
- LEVIES_LABEL: "[levies|E]"
+ LEVIES_LABEL: "[Concept('levies','Odvedenci')|E]" # todo: CONCEPT CASE
  LEVIES_MAX: "$RAISE_MAX|V$"
  LEVIES_NOT_MAX: "$CURRENT|V$/$RAISE_MAX|V$"
  LEVIES_TOOLTIP: "#T Nesvolaní [Concept('levies','odvedenci')|E]: $CURRENT|0V$/$RAISE_MAX|0V$#!"
@@ -19,7 +19,7 @@
  FROM_DOMAIN: "Z [Concept('domain','domény')|E]"
  FROM_VASSALS: "Od [Concept('vassals','vazalů')|E]"
  FROM_BISHOPS: "Od [Concept('realm_priest','vrchního duchovního')|E]"
- BANNER_MEN_AT_ARMS_LABEL: "[men_at_arms|E]:"
+ BANNER_MEN_AT_ARMS_LABEL: "[Concept('men_at_arms','Ozbrojenci')|E]:" # todo: CONCEPT CASE
  ADVENTURER_CAP_HINT: "Vylepši svůj [Concept('camp','tábor')|E], abys zvýšil limit"
  BANNER_MEN_AT_ARMS: "$UNRAISED|0V$"
  BANNER_MEN_AT_ARMS_NOT_MAX: "$UNRAISED|0$/$RAISE_MAX|0$"
@@ -35,8 +35,8 @@
  CREATE_MAA_BUTTON_COST: "Vytvořit ($COST$)"
  CREATE_MAA_COST: "Cena vytvoření: $COST$"
  NAMED_MAINTENANCE_MAA: "$NAME$: $COST$"
- MAINTENANCE_MAA: "$MAA_UNRAISED_MAINTENANCE_TEXT$: $VALUE$/měsíc"
- REINFORCEMENT_MAA: "$MAA_FULL_MAINTENANCE_TEXT$: $VALUE$/měsíc"
+ MAINTENANCE_MAA: "$MAA_UNRAISED_MAINTENANCE_TEXT$: #underline $VALUE$/měsíc#!" # todo: CHANGED (predtym: $MAA_UNRAISED_MAINTENANCE_TEXT$: $VALUE$/měsíc)
+ REINFORCEMENT_MAA: "$MAA_FULL_MAINTENANCE_TEXT$: #underline $VALUE$/měsíc#!" # todo: CHANGED (predtym: $MAA_FULL_MAINTENANCE_TEXT$: $VALUE$/měsíc)
  STACK_SIZE_MAA: "Velikost pluku: $VALUE|V$"
  ADVENTURER_MAINTENANCE_INFO: "[SelectLocalization( GetPlayer.GetGovernment.HasGovernmentFlag( 'government_is_nomadic' ), 'ADVENTURER_MAINTENANCE_INFO_NOMADIC', 'ADVENTURER_MAINTENANCE_INFO_ADVENTURER' )]"
  ADVENTURER_MAINTENANCE_INFO_ADVENTURER: "[Concept('adventurers','Dobrodruzi')|E] mohou doplňovat [Concept('men_at_arms','ozbrojence')|E] pouze pomocí #V $refill_maa_interaction$#!, #V $reinforce_soldiers_interaction$#! nebo prostřednictvím [Concept('adventurer_siege_replenishment','doplňování dobrodruhů při obléhání')|E] během [Concept('war','války')|E]"
@@ -62,7 +62,7 @@
  TT_IMPERIAL_ARMIES: "#T Armáda titulu [Title.GetNameNoTierNoTooltip] #!\n#I Kliknutím zobrazíš podrobnosti#!"
  TT_MAINTENANCE_TITLE: "#T Údržba: $VALUE$/měsíc#!"
  TT_MAINTENANCE_RAISED_ARMIES: "Svolané armády: @gold_icon!$VALUE|1$/měsíc"
- TT_MAINTENANCE_MAA: "[men_at_arms|E]: $VALUE$/měsíc"
+ TT_MAINTENANCE_MAA: "[Concept('men_at_arms','Ozbrojenci')|E]: $VALUE$/měsíc" # todo: CONCEPT CASE
  TT_MAINTENANCE_NO: "#weak Žádné náklady na údržbu#!"
  TT_REINFORCING_MAA_YES_TITLE: "#T Doplňování [Concept('men_at_arms','ozbrojenců')|E]#!"
  TT_REINFORCING_MAA_FULL_STRENGTH: "[Concept('men_at_arms','Ozbrojenci')|E] v plném stavu"
@@ -70,7 +70,6 @@
  TT_REINFORCING_MAA_NOT_TITLE: "#T [Concept('men_at_arms','Ozbrojenci')|E] se nedoplňují#!"
  TT_REINFORCING_MAA_CLICK_STOP: "\n#I Kliknutím zastavíš doplňování#!"
  TT_REINFORCING_MAA_CLICK_START: "\n#I Kliknutím zahájíš doplňování#!"
- MAINTENANCE_COST_PART: "Údržba: $VALUE$/měsíc"
  REINFORCEMENT_COST_PART: "Doplňování: $VALUE$/měsíc"
  TOTAL_MAA_COST: "[Regiment.GetTotalCostString]"
  TOTAL_MAA_COST_TOOLTIP: "#T Údržba: [Regiment.GetTotalCostString]/měsíc#!"
@@ -151,15 +150,21 @@
  MV_KNIGHTS_TT: "#T $knight_culture_player_plural$\n#!#I Kliknutím [Select_CString( MilitaryView.AreKnightsShown, 'skryješ seznam', 'zobrazíš seznam' )] svých dostupných $knight_culture_player_plural$#!"
  MV_LEVY_TT: "#T [Concept('levies','Odvedenci')|E]\n#!#I Kliknutím [Select_CString( MilitaryView.AreLeviesShown, 'skryješ', 'zobrazíš' )] podrobnosti o svých odvedencích#!"
  STRENGTH_COMPARISON_TOTAL_STRENGTH: "@soldier_icon! [GuiMilitaryStrength.GetTargetTotal|0]"
- STRENGTH_COMPARISON_ALLIES: "[ally_i|E] [GuiMilitaryStrength.GetTargetAlliesCount]"
+ STRENGTH_COMPARISON_ALLIES: "[Concept('ally_i','@alliance_icon!')|E] [GuiMilitaryStrength.GetTargetAlliesCount]" # todo: CONCEPT CASE
  MV_ARMIES_SELECTION_PERSONAL: "Tvé armády"
  MV_ARMIES_SELECTION_IMPERIAL: "[GetPlayer.Custom('GetProvincialArmiesConceptNoTooltip')]"
- MV_MERCENARIES_SELECTION_MERCENARIES: "Žoldnéři"
- MV_MERCENARIES_SELECTION_HIREABLE_RULERS: "Zvláštní žoldnéři"
+ MV_MERCENARIES_SELECTION_MERCENARIES: "Žoldnéřské kompanie" # todo: CHANGED (predtym: Žoldnéři)
+ MV_MERCENARIES_HIRED_COUNT: "[Concept('mercenary_limit','limit žoldnéřů')|E]: [GetPlayer.GetTotalMercenaryCount]/[GetPlayer.GetMercenaryLimit]" # todo: NEW TRANSLATION
+ MV_MERCENARIES_SELECTION_HIREABLE_RULERS: "Dobrodruzi" # todo: CHANGED (predtym: Zvláštní žoldnéři) # todo: CONCEPT CASE
  MV_MERCENARIES_NO_HIREABLE_RULERS_IN_RANGE: "Ve tvém [Concept('realm','panství')|E] nejsou žádní [Concept('adventurers','dobrodruzi')|E] (ani jim podobní), které lze najmout"
  MV_MERCENARIES_HIREABLE_RULER_STATUS: "[HiredTroopItem.GetHirableRulerStatus]"
  MV_MERCENARIES_STATUS_AVAILABLE: "#I Dostupné#!"
  MV_MERCENARIES_STATUS_COMMANDED: "#I Velíš jim#!"
+ MV_MERCENARY_HIRED_COUNT: "#T  Najatí [Concept('mercenaries','žoldnéři')|E]: $VALUE|V0$/$LIMIT|V0$#!" # todo: NEW TRANSLATION
+ MV_MERCENARY_COMPANY_COUNT: "Žoldnéřské roty: $VALUE|V0$" # todo: NEW TRANSLATION
+ MV_MERCENARY_HIREABLE_RULER_COUNT: "Zvláštní žoldnéři: $VALUE|V0$" # todo: NEW TRANSLATION
+ MV_MERCENARY_COMPANY_LIMIT: "#T  Limit žoldnéřských rot: $VALUE|V0$#!" # todo: NEW TRANSLATION
+ MV_MERCENARY_COMPANY_LIMIT_BASE: "Základ: #P $VALUE$#!" # todo: NEW TRANSLATION
  MV_RETURN_CONTROLLED: "Vrátit ovládané oddíly"
  MV_RETURN_CONTROLLED_TT: "#T $MV_RETURN_CONTROLLED$#![AddLocalizationIf( Not( MilitaryView.CanReturnControlledMaA ), 'MV_RETURN_CONTROLLED_TT_NO_TROOPS' )]"
  MV_RETURN_CONTROLLED_TT_NO_TROOPS: "\n@warning_icon! #X Nevelíš žádným dalším [GetPlayer.Custom('GetProvincialArmiesConcept')]#!"
@@ -174,7 +179,7 @@
  MV_ADMIN_ARMY_ARMIES_NAME: "[Title.GetNameNoTooltip]"
  MV_ADMIN_ARMY_ARMIES_LOANED_LABEL: "#high Zapůjčeno: #!"
  MV_ADMIN_ARMY_HIRE_DIRECTLY: "Armády, které můžeš najmout přímo"
- MV_ADMIN_ARMY_ASK_EMPEROR: "Požádat svého [Concept('top_liege','nejvyššího lenního pána')|E] o další #HIGH $game_concept_men_at_arms$#!"
+ MV_ADMIN_ARMY_ASK_EMPEROR: "Požádat svého [Concept('top_liege','nejvyššího lenního pána')|E] o další #HIGH ozbrojence#!" # todo: CONCEPT CASE
  MV_ADMIN_ARMY_NO_CONTROLLED_TITLES: "Nevelíš žádným dalším [GetPlayer.Custom('GetProvincialArmiesConcept')]"
  MV_ADMIN_ARMY_NO_UNCONTROLLED_TITLES: "Nejsou dostupní žádní [Concept('title_men_at_arms','tituloví ozbrojenci')|E], kterým bys mohl velet"
  MV_NO_MAA_FOR_TITLE: "Pro tento #HIGH titul#! nejsou žádní [Concept('title_men_at_arms','tituloví ozbrojenci')|E]"

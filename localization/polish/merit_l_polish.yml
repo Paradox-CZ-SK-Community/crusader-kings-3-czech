@@ -1,7 +1,7 @@
 ﻿l_polish:
  TOTAL_MERIT: "Celkové [Concept('merit','zásluhy')|E]: $VALUE|V0$"
  MERIT_EFFECTS_BREAKDOWN: "#S Účinky:#![AddTextIf( Not( StringIsEmpty(GetMeritLevelEffects( Character.GetMeritLevel )) ), '\n' )][GetMeritLevelEffects( Character.GetMeritLevel )]"
- MERIT_PROGRESSBAR_MARKER_TOOLTIP: "#T [GetMeritLevelNameNoTooltip( ComplexBarItem.GetIndex )]#!\n$game_concept_merit$: alespoň [GetMeritLevelThreshold( ComplexBarItem.GetIndex )|V^]\n\n[GetMeritModifierByLevel( ComplexBarItem.GetIndex ).GetDescWithBulletPointEffects][AddTextIf( GreaterThan_int32( ComplexBarItem.GetIndex, '(int32)1' ), '\n' )]$BULLET$[Concept('movement_power','Síla hnutí')|E]: [movement_power_i] [Multiply_int32( ComplexBarItem.GetIndex, '(int32)10' )|+=0]\n[GetMaxAppointmentRankDescription( 'merit', ComplexBarItem.GetIndex )][Character.GetMeritLevelDescription( ComplexBarItem.GetIndex )]"
+ MERIT_PROGRESSBAR_MARKER_TOOLTIP: "#T [GetMeritLevelNameNoTooltip( ComplexBarItem.GetIndex )]#!\nZásluhy: alespoň [GetMeritLevelThreshold( ComplexBarItem.GetIndex )|V^]\n\n[GetMeritModifierByLevel( ComplexBarItem.GetIndex ).GetDescWithBulletPointEffects][AddTextIf( GreaterThan_int32( ComplexBarItem.GetIndex, '(int32)1' ), '\n' )]$BULLET$[Concept('movement_power','Síla hnutí')|E]: [movement_power_i] [Multiply_int32( ComplexBarItem.GetIndex, '(int32)10' )|+=0]\n[GetMaxAppointmentRankDescription( 'merit', ComplexBarItem.GetIndex )][Character.GetMeritLevelDescription( ComplexBarItem.GetIndex )]" # todo: CONCEPT CASE
  MERIT_TOOLTIP_COMPLETED_EXAMINATIONS: "Absolvované [Concept('imperial_examinations','úřednické zkoušky')|E]"
  MERIT_TOOLTIP_EXAMINATION_DISCLAIMER: "[Concept('governors','Guvernéři')|E] musí odejít do výslužby, aby mohli absolvovat další zkoušky"
  MERIT_TOOLTIP_EXAMINATION_PASSED_CHILD_EXAM: "@child_exam_icon! #T Dětská zkouška#!\n$CHILDRENS_EXAMINATION_PASSED_FAIL$\n\nLze absolvovat prostřednictvím [Concept('decision','rozhodnutí')|E] $tgp_china_attend_child_exam_decision$"
@@ -19,7 +19,7 @@
  MERIT_GOVERNOR_APPOINTMENT_SCORE_POSITIVE: "$BULLET$[Concept('candidate_score','Skóre kandidáta')|E]: @appointment_score!#P +[Character.GetGovernorAppointmentScoreByMerit]#!"
  MERIT_GOVERNOR_APPOINTMENT_SCORE_NEGATIVE: "$BULLET$[Concept('candidate_score','Skóre kandidáta')|E]: @appointment_score!#N [Character.GetGovernorAppointmentScoreByMerit]#!"
  MERIT_MOVEMENT_POWER: "$BULLET$[Concept('movement_power','Síla hnutí')|E]: [movement_power_i] [Character.GetMovementPowerByMerit|+=0]"
- MERIT_PROGRESS_HEADING: "$game_concept_merit_level$: postup k další úrovni"
+ MERIT_PROGRESS_HEADING: "Hodnost zásluh: postup k další úrovni" # todo: CONCEPT CASE
  MAX_MERIT_RANK_BREAKDOWN_TOOLTIP: "#T Maximální [Concept('merit_level','hodnost zásluh')|E]#!\n[PlayerValueItem.GetMaxLevelBreakdown( Character.Self )]"
  MERIT_CAP_OVERFLOW_WILL_COUNT: "#weak Zásluhy získané po dosažení limitu zásluh se po složení zkoušek započítají do vyšších hodností.#!"
  MERIT_RANK_CAP_TT: "#T Dosažen limit zásluh#!\n[SelectLocalization( Character.GetGovernment.IsType( 'celestial_government' ), 'MERIT_RANK_CAP_CELESTIAL_TT', 'MERIT_RANK_CAP_MERITOCRATIC_TT' )]"
@@ -50,4 +50,4 @@
  celestial_government_merit_level_7_description: "\n\n[GetGovernment('celestial_government').GetName] [Concept('government','vláda')|E]: Od úředníků této hodnosti se očekává absolvování [Concept('palace_examination','palácové zkoušky')|E]. Další hodnost: [GetModifier( 'merit_level_8' ).GetNameWithTooltip|L]."
  celestial_government_merit_level_8_description: "\n\n[GetGovernment('celestial_government').GetName] [Concept('government','vláda')|E]: Od úředníků této hodnosti se očekává absolvování [Concept('palace_examination','palácové zkoušky')|E]. Další hodnost: [GetModifier( 'merit_level_9' ).GetNameWithTooltip|L]."
  celestial_government_merit_level_9_description: "\n\n[GetGovernment('celestial_government').GetName] [Concept('government','vláda')|E]: Od úředníků této hodnosti se očekává absolvování [Concept('palace_examination','palácové zkoušky')|E]."
- SORT_MERIT: "$game_concept_merit$"
+ SORT_MERIT: "Zásluhy" # todo: CONCEPT CASE

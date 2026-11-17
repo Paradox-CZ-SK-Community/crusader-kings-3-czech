@@ -1,56 +1,100 @@
 ﻿l_polish:
  HOLDING_TAX: "[Concept('tax','Daň')|E]:"
- HOLDING_TAX_VALUE: "@gold_icon! [Holding.GetIncome|2=]"
+ HOLDING_TAX_VALUE: "[Holding.GetIncome|1=]" # todo: CHANGED (predtym: @gold_icon! [Holding.GetIncome|2=])
+ HOLDING_TAX_VALUE_WITH_ICON: "@gold_icon!$HOLDING_TAX_VALUE$" # todo: NEW TRANSLATION
  HOLDING_BARTER_GOODS: "[Concept('barter_goods','Směnné zboží')|E]:"
- HOLDING_BARTER_GOODS_VALUE: "@barter_goods_icon! [HoldingView.GetHolding.GetBarterGoodsIncome|1=]"
+ HOLDING_BARTER_GOODS_VALUE: "[HoldingView.GetHolding.GetBarterGoodsIncome|1=]" # todo: CHANGED (predtym: @barter_goods_icon! [HoldingView.GetHolding.GetBarterGoodsIncome|1=])
  HOLDING_LOOT: "[Concept('loot','Kořist')|E]"
- HOLDING_LOOT_VALUE: "@loot_icon! [Holding.GetProvince.GetLoot|0V]"
+ HOLDING_LOOT_VALUE: "[Holding.GetProvince.GetLoot|0V]" # todo: CHANGED (predtym: @loot_icon! [Holding.GetProvince.GetLoot|0V])
  HOLDING_FORT_LEVEL: "[Concept('fort_level','Úroveň opevnění')|E]"
+ HOLDING_FORT_LEVEL_VALUE: "[HoldingView.GetProvince.GetFortLevel]" # todo: NEW TRANSLATION
  HOLDING_GARRISON: "[Concept('garrison','Posádka')|E]:"
+ HOLDING_GARRISON_VALUE: "[HoldingView.GetCurrentGarrisonSize]" # todo: NEW TRANSLATION
  HOLDING_EMPTY: "Žádná [Concept('holding','država')|E]"
  HOLDING_CONSTRUCTING: "Staví se [HOLDING_TYPE.GetName] [Concept('holding','država')|E]"
  COUNTY_OCCUPANT: "Okupant hrabství"
  CONSTRUCT: "Postavit"
  CONSTRUCT_COST: "Cena stavby"
  UPGRADE: "Vylepšit"
+ QUEUE_UPGRADE: "Zařadit vylepšení do fronty" # todo: NEW TRANSLATION
  UPGRADE_DOMICILE: "Vylepšit na úroveň [DomicileBuilding.GetTierNumber]"
  UPGRADE_COST: "Cena vylepšení"
+ UPGRADE_HOLDING: "Vylepšit na úroveň [GUITrackItem.GetSelectedBuilding.GetLevel]" # todo: NEW TRANSLATION
  CURRENT_BUILDING: "Současná budova"
- CV_BUILDING_LEVEL_AND_NAME: "Úroveň I: #high [Building.GetNameNoTooltip]#!"
- BUILDING_TYPE_REGULAR: "[building|E]"
- BUILDING_TYPE_SPECIAL: "[special_building|E]"
- BUILDING_TYPE_GREAT: "[great_building|E]"
- BUILDING_TYPE_DUCHY: "[duchy_building|E]"
+ CV_BUILDING_LEVEL_AND_NAME: "Úroveň I: #high [BuildingType.GetNameNoTooltip]#!" # todo: CHANGED (predtym: Úroveň I: high [Building.GetNameNoTooltip] !)
+ CV_DISTRICT_LEVEL_AND_NAME: "#high [DistrictType.GetNameNoTooltip]#!" # todo: NEW TRANSLATION
+ DISTRICT_TYPE_REGULAR: "[Concept('standard_district','Běžná čtvrť')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ CANCEL_CONSTRUCTION_BUILDING_TYPE: "[Concept('building','Budova')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ DISTRICT_TYPE_SPECIAL: "[Concept('special_district','Zvláštní čtvrť')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ DISTRICT_TYPE_GREAT: "[Concept('great_district','Velkolepá čtvrť')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ DISTRICT_TYPE_DUCHY: "[Concept('duchy_district','Vévodská čtvrť')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ DISTRICT_TYPE_HOLDING: "[Concept('holding_district','Čtvrť državy')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ DISTRICT_TYPE_RESOURCE: "[Concept('resource_district','Zdrojová čtvrť')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ DISTRICT_TYPE_TRADE_POST: "[Concept('trade_post_district','Čtvrť obchodní stanice')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ DISTRICT_TYPE_ENTREPOT: "[Concept('entrepot_district','Čtvrť entrepôtu')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ DISTRICT_OWNED_BY_TITLE: "Vlastní [Title.GetHolder.GetShortUIName] ([Title.GetName])" # todo: NEW TRANSLATION
  CONSTRUCT_HOLDING_TITLE: "#T Postavit [Concept('holding','državu')|E]#!"
  CANT_CONSTRUCT_HOLDING_NO_AVAILABLE: "#X @warning_icon! Nejsou dostupné žádné [Concept('holdings','državy')|E] ke stavbě#!"
- CONSTRUCT_BUILDING: "Postavit novou $TYPE$"
- CONSTRUCT_BUILDING_TITLE: "#T Postavit novou $TYPE$#!"
- CONSTRUCT_HOLDING_TYPE_TITLE: "#T Postavit #V $NAME$#!#!"
- CONSTRUCT_BUILDING_TYPE_TITLE: "#T Postavit #V $NAME$#!#!"
+ CONSTRUCT_BUILDING: "Postavit novou [Concept('building','budovu')|E]" # todo: CHANGED (predtym: Postavit novou $TYPE$)
+ CONSTRUCT_BUILDING_TITLE: "#T Postavit novou [Concept('building','budovu')|E]#!" # todo: CHANGED (predtym: T Postavit novou $TYPE$ !)
+ CONSTRUCT_DISTRICT: "Postavit nový $TYPE$" # todo: NEW TRANSLATION
+ CONSTRUCT_DISTRICT_TITLE: "#T Postavit nový $TYPE$#!" # todo: NEW TRANSLATION
+ REPLACE_DISTRICT: "Nahradit $TYPE$" # todo: NEW TRANSLATION
+ REPLACE_DISTRICT_TOOLTIP: "#T Nahradit $game_concept_district$#!" # todo: NEW TRANSLATION
+ CONSTRUCT_HOLDING_TYPE_TITLE: "#T Postavit $NAME|V$#!" # todo: CHANGED (predtym: T Postavit V $NAME$ ! !)
+ CONSTRUCT_BUILDING_TYPE_TITLE: "#T Postavit $NAME|V$#!" # todo: CHANGED (predtym: T Postavit V $NAME$ ! !)
+ HOLDING_VIEW_CONSTRUCT_NEXT_BUILDING_TOOLTIP: "[GUITrackItem.GetNextBuildingTooltip( GetPlayer.Self )]\n\n[GUITrackItem.GetNextBuilding.GetEffectDescriptionAtProvinceWithoutNeeds( GetPlayer.Self, HoldingView.GetProvince )]" # todo: NEW TRANSLATION
+ CONSTRUCTION_IN_QUEUE: "#T Výstavba [BUILDING_TYPE.GetName] #V byla zařazena do fronty#!#!" # todo: NEW TRANSLATION
+ CONSTRUCT_DISTRICT_TYPE_TITLE: "#T Postavit #V $NAME$#!#!" # todo: NEW TRANSLATION
  REPLACE_BUILDING_TYPE_TITLE: "#T Nahrazení #V $CURRENT_NAME$#! za #V $REPLACEMENT_NAME$#!#!"
+ REPLACE_DISTRICT_TYPE_TITLE: "#T Nahradit #V $CURRENT_NAME$#! objektem #V $REPLACEMENT_NAME$#! a zničit všechny neslučitelné budovy#!" # todo: NEW TRANSLATION
  CONSTRUCT_BUILDING_INFO_TITLE: "#T $NAME$#!"
+ CONSTRUCT_DISTRICT_INFO_TITLE: "#T $NAME$#!" # todo: NEW TRANSLATION
  CONSTRUCT_BUILDINGS_DETAILS: "Náhled"
- CONSTRUCT_BUILDINGS_DETAILS_TT: "#T Náhled budovy\n#!Zobrazit účinky a náklady vylepšení této [Concept('building','budovy')|E]"
- UPGRADE_BUILDING: "Vylepšit $TYPE$"
- CANCEL_CONSTRUCTION: "Zrušit stavbu $TYPE$"
+ CONSTRUCT_BUILDING_UPGRADE_LEVELS_TITLE: "#T Úrovně budovy#!" # todo: NEW TRANSLATION
+ CONSTRUCT_BUILDING_UPGRADE_LEVEL_ENTRY: "$EFFECT_LIST_BULLET$#underline [GUIPotentialItem.GetBuilding.CalcTriggeredNameNoTooltip( HoldingView.GetProvince )]#!" # todo: NEW TRANSLATION
+ CONSTRUCT_BUILDING_UPGRADE_LEVEL_COST: "#S Cena:#!" # todo: NEW TRANSLATION
+ CONSTRUCT_DISTRICTS_DETAILS: "Náhled" # todo: NEW TRANSLATION
+ CONSTRUCT_DISTRICTS_DETAILS_TT: "#T Náhled okrsku\n#!Zobrazit účinky a náklady tohoto [Concept('district','čtvrtě')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ CONSTRUCT_DISTRICTS_MAIN_BUILDING: "Hlavní budova" # todo: NEW TRANSLATION
+ CONSTRUCT_DISTRICT_PRIMARY_BUILDING_PREVIEW: "#I Stavíte [Concept('district','čtvrť')|E]. Toto je jeho hlavní [Concept('building','budova')|E], která se postaví jako součást [Concept('district','čtvrť')|E]. #!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ CONSTRUCT_DISTRICTS_POTENTIAL_BUILDINGS: "Možné budovy" # todo: NEW TRANSLATION
+ UPGRADE_BUILDING: "Vylepšit [Concept('building','budovu')|E]" # todo: CHANGED (predtym: Vylepšit $TYPE$)
+ CANCEL_CONSTRUCTION: "#T Zrušit stavbu#!" # todo: CHANGED (predtym: Zrušit stavbu $TYPE$)
+ RIGHT_CLICK_TO_CANCEL_CONSTRUCTION: "#I Kliknutím pravým tlačítkem zrušíte výstavbu#!" # todo: NEW TRANSLATION
+ RIGHT_CLICK_TO_DEQUEUE_CONSTRUCTION: "$RIGHT_CLICK_TO_CANCEL_CONSTRUCTION$" # todo: NEW TRANSLATION
  UPGRADE_HOLDING_TITLE: "Vylepšit [Concept('holding','državu')|E]"
- CONSTRUCT_BUILDING_ALREADY_CONSTRUCTING: "@warning_icon! #X V této [Concept('holding','državě')|E] se již staví jiná [Concept('building','budova')|E]#!"
+ CONSTRUCT_BUILDING_ALREADY_CONSTRUCTING: "@warning_icon! #X V tomto [Concept('district','okrsku')|E] se již staví jiná [Concept('building','budova')|E]#!" # todo: CHANGED (predtym: @warning_icon! X V této [Concept('holding','državě')|E] se již staví jiná [Concept('building','budova')|E] !)
  CONSTRUCT_BUILDING_INVALID_SLOT: "@warning_icon! #X Toto není platný slot pro novou [Concept('building','budovu')|E]#!"
  CONSTRUCT_BUILDING_NONE_POTENTIAL: "@warning_icon! #X Pro tento slot nemáš dostupné žádné [Concept('buildings','budovy')|E]#!"
- BUILDING_DEFAULT_TITLE_PREFIX_ALSO_CONSTRUCTING: "\n\n#T Současná budova:\n[BUILDING.GetNameNoTooltip]\n#!"
- BUILDING_DEFAULT_TITLE: "#T [BUILDING.GetNameNoTooltip]#! #weak ([BUILDING.GetTypeName])#!\n$TYPE$\n\n"
- BUILDING_EFFECT_AND_DESC_TOOLTIP: "[BUILDING.GetEffectDescriptionAtProvince( CHARACTER.Self, PROVINCE.Self )]\n\n[BUILDING.GetDescription]"
- BUILDING_EFFECT_AND_DESC_DISABLED_TOOLTIP: "[BUILDING.GetEffectDescriptionAtProvince( CHARACTER.Self, PROVINCE.Self )]\n\n$DISABLED$\n\n[BUILDING.GetDescription]"
- CONSTRUCTING_BUILDING_DESC: "[BUILDING.GetEffectDescriptionAtProvince( CHARACTER.Self, PROVINCE.Self )]\n\n$TIME$\n\n[BUILDING.GetDescription]"
- CONSTRUCTING_BUILDING_TIME_LEFT: "Dokončení za $DAYS$"
+ CONSTRUCT_DISTRICT_ALREADY_CONSTRUCTING: "@warning_icon! #X V tomto [Concept('holding','državě')|E] se již staví jiný [Concept('district','čtvrť')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ CONSTRUCT_DISTRICT_INVALID_SLOT: "@warning_icon! #X Toto není platné místo pro novou [Concept('district','čtvrť')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ CONSTRUCT_DISTRICT_NONE_POTENTIAL: "@warning_icon! #X Pro toto místo nemáte k dispozici žádné [Concept('districts','čtvrti')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ CONSTRUCT_DISTRICT_THIS_ALREADY_CONSTRUCTING: "@warning_icon! #X V tomto [Concept('holding','državě')|E] se již staví $DISTRICT_TYPE$#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ CONSTRUCT_DISTRICT_THIS_ALREADY_QUEUED: "@warning_icon! #X Výstavba $DISTRICT_TYPE$#! v tomto [Concept('holding','državě')|E] je již zařazena do fronty" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ CONSTRUCT_ALREADY_MAX_QUEUED: "Vylepšení této [Concept('building','budově')|e] na maximální úroveň je již zařazeno do fronty." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ BUILDING_DEFAULT_TITLE_PREFIX_ALSO_CONSTRUCTING: "\n\n#T Současná budova:\n[BUILDING_TYPE.CalcTriggeredNameNoTooltip(PROVINCE.Self)]\n#!" # todo: CHANGED (predtym: \n\n T Současná budova:\n[BUILDING.GetNameNoTooltip]\n !)
+ BUILDING_DEFAULT_TITLE: "#T [BUILDING_TYPE.CalcTriggeredNameNoTooltip(PROVINCE.Self)]#! #weak ([BUILDING_TYPE.GetTypeName])#!\n\n" # todo: CHANGED (predtym: T [BUILDING.GetNameNoTooltip] ! weak ([BUILDING.GetTypeName]) !\n$TYPE$\n\n)
+ DISTRICT_DEFAULT_TITLE: "#T [DISTRICT_TYPE.GetName]#!\n$TYPE$\n\n" # todo: NEW TRANSLATION
+ BUILDING_EFFECT_AND_DESC_TOOLTIP: "[BUILDING_TYPE.GetEffectDescriptionAtProvince( CHARACTER.Self, PROVINCE.Self )]\n\n[BUILDING_TYPE.GetDescription]" # todo: CHANGED (predtym: [BUILDING.GetEffectDescriptionAtProvince( CHARACTER.Self, PROVINCE.Self )]\n\n[BUILDING.GetDescription])
+ BUILDING_EFFECT_AND_DESC_DISABLED_TOOLTIP: "[BUILDING_TYPE.GetEffectDescriptionAtProvince( CHARACTER.Self, PROVINCE.Self )]\n\n$DISABLED$\n\n[BUILDING_TYPE.GetDescription]" # todo: CHANGED (predtym: [BUILDING.GetEffectDescriptionAtProvince( CHARACTER.Self, PROVINCE.Self )]\n\n$DISABLED$\n\n[BUILDING.GetDescription])
+ CONSTRUCTING_BUILDING_DESC: "$TIME$" # todo: CHANGED (predtym: [BUILDING.GetEffectDescriptionAtProvince( CHARACTER.Self, PROVINCE.Self )]\n\n$TIME$\n\n[BUILDING.GetDescription])
+ CONSTRUCTING_BUILDING_TIME_LEFT: "Dokončení za $DAYS|V$" # todo: CHANGED (predtym: Dokončení za $DAYS$)
+ CONSTRUCTING_DISTRICT_TIME_LEFT: "Zbývá $DAYS$" # todo: NEW TRANSLATION
  CONSTRUCT_HOLDING_PRIMARY: "První stupeň této [Concept('holding','državy')|E] je $NAME|V$"
  HOLDING_NOT_THE_COUNTY_HOLDER: "@warning_icon! #X Novou [Concept('holding','državu')|E] může postavit pouze [Concept('holder','držitel')|E] tohoto [Concept('county','hrabství')|E] nebo jeho [Concept('liege','lenní pán')|E]#!"
+ DISTRICT_CONTROLLED_BY_SOMEONE_ELSE: "@warning_icon! #X Tento [Concept('district','čtvrť')|E] již ovládá [Character.GetShortUIName]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ DISTRICT_EXPECT_TRADE_POST_MERCHANT_FAMILY_TITLE_HOLDER: "@warning_icon! #X [Concept('trade_post_district','Čtvrť obchodní stanice')|E] může postavit pouze [Concept('patrician','patricij')|E] v [Concept('republic','republice')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  BUILDING_NOT_THE_BARONY_HOLDER: "@warning_icon! #X Novou [Concept('building','budovu')|E] může postavit pouze [Concept('holder','držitel')|E] této [Concept('holding','državy')|E] nebo jeho [Concept('liege','lenní pán')|E]#!"
  BUILDING_NOT_THE_DIRECT_BARONY_HOLDER_CANCEL: "@warning_icon! #X [Concept('buildings','Budovy')|E] může rušit pouze [Concept('holder','držitel')|E] této [Concept('holding','državy')|E]#!"
  BUILDING_NOT_THE_DIRECT_BARONY_HOLDER_OR_LIEGE_REPLACE: "@warning_icon! #X [Concept('buildings','Budovy')|E] může nahrazovat pouze [Concept('holder','držitel')|E] nebo de facto [Concept('liege','lenní pán')|E] této [Concept('holding','državy')|E]#!"
+ BUILDING_NOT_THE_CONSTRUCTION_OWNER: "@warning_icon! #X Zrušit výstavbu této [Concept('building','budově')|E] může pouze její vlastník#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  BUILDING_NOT_THE_BARONY_LESSEE: "@warning_icon! #X Novou [Concept('building','budovu')|E] může postavit pouze [Concept('lessee','nájemce')|E] nebo de facto [Concept('liege','lenní pán')|E] této [Concept('holding','državy')|E]#!"
  HOLDING_VIEW_ALREADY_HAS_PRIMARY: "@warning_icon! #X Toto baronství již obsahuje [Concept('holding','državu')|E]#!"
  HOLDING_VIEW_MISSING_PRIMARY: "@warning_icon! #X Toto baronství zatím nemá [Concept('holding','državu')|E]#!"
+ HOLDING_VIEW_ALREADY_HAS_DISTRICT_IN_SLOT: "@warning_icon! #X Toto místo již obsahuje $DISTRICT_TYPE$#!" # todo: NEW TRANSLATION
+ HOLDING_VIEW_CANT_REPLACE_DISTRICT_WITH_UNLOCK: "@warning_icon! #X $DISTRICT_TYPE$ nelze nahradit tímto [Concept('district','čtvrtí')|E], který odemyká.#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ HOLDING_VIEW_MISSING_UNLOCK: "@warning_icon! #X Chybí $DISTRICT_TYPE$ potřebný k odemčení.#!" # todo: NEW TRANSLATION
  HOLDING_VIEW_MUST_BUILD_OTHER_HOLDING_FIRST: "@warning_icon! #X V tomto [Concept('county','hrabství')|E] musí být nejprve postavena $MISSING_HOLDING|V$#!"
  HAS_BUILDING_TYPE: "@warning_icon! #X Tato [Concept('holding','država')|E] již obsahuje $TYPE$#!"
  ALREADY_CONSTRUCTED: "@warning_icon! #X $NAME$ již bylo postaveno#!"
@@ -69,12 +113,21 @@
  HOLDING_IN_DOMAIN_LIMIT_GRACE_PERIOD_TOOLTIP: "@warning_icon! #X Kvůli překročení tvého [Concept('domain_limit','limitu domény')|E] nebude tato [Concept('recently_acquired_holding','nedávno získaná država')|E] poskytovat žádné [Concept('taxes','daně')|E] ani [Concept('levies','odvedence')|E]#!"
  HOLDING_OCCUPIED: "[Concept('occupied','Obsazeno')|E] [CHARACTER.Custom('CZ_ShortUIName_I')]"
  INVALID_CONSTRUCTION: "@warning_icon! #X Neplatná stavba#!"
- DISABLED_BUILDING: "@warning_icon! #X Budova deaktivována, protože:#!\n$DESC$"
+ DISABLED_BUILDING: "@warning_icon! #X Budova deaktivována:#! $DESC$" # todo: CHANGED (predtym: @warning_icon! X Budova deaktivována, protože: !\n$DESC$)
+ DISTRICT_INACTIVE_DESC: "@warning_icon! #X Tento [Concept('district','čtvrť')|E] je neaktivní, protože došlo ke ztrátě místa pro čtvrť. Nepřináší žádné výhody a nelze v něm stavět. Změňte pořadí svých $game_concept_districts$ a zvolte, který z nich bude neaktivní.#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ CANNOT_BUILD_IN_INACTIVE_DISTRICT: "@warning_icon! #X V neaktivním [Concept('district','čtvrti')|E] nelze stavět#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ CANNOT_BUILD_IN_INCOMPATIBLE_DISTRICT: "@warning_icon! #X $NAME$ nelze postavit v tomto [Concept('district','čtvrti')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  BUILDING_WILL_REENABLE: "@warning_icon! Budova je momentálně deaktivována, ale příští měsíc se znovu aktivuje"
- BUILDING_DISABLED_BY_GRACE_PERIOD: "@warning_icon! Država deaktivována, aby se zabránilo postihům za překročení [Concept('domain_limit','limitu domény')|E]. Znovu se aktivuje za [DATE.GetTimeDiffFromNowNoDays] nebo jakmile již limit domény nebude překročen"
+ BUILDING_DISABLED_WRONG_HOLDER_TYPE: "@warning_icon! #X Zakázáno, protože [Concept('holding','država')|E] je pro [Character.GetUIName] nesprávného typu#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ BUILDING_DISABLED_BY_GRACE_PERIOD: "#X Država deaktivována, aby se zabránilo postihům za překročení [Concept('domain_limit','limitu domény')|E]. Znovu se aktivuje za [DATE.GetTimeDiffFromNowNoDays] nebo jakmile již limit domény nebude překročen" # todo: CHANGED (predtym: @warning_icon! Država deaktivována, aby se zabránilo postihům za překročení [Concept('domain_limit','limitu domény')|E].)
  ABORT_CONSTRUCTION: "#T Přerušit stavbu#!"
  CANT_BE_CONSTRUCTED: "@warning_icon! #X Nelze postavit#!"
- SUPPLY_LIMIT: "[Concept('supply_limit','Limit zásobování')|E]:"
+ CONSTRUCTION_WILL_BE_QUEUED: "\nVýstavba bude zařazena do fronty a začne, jakmile budou splněny všechny požadavky" # todo: NEW TRANSLATION
+ CONSTRUCTION_CANT_QUEUE_REPLACE_BUILDING: "\n@warning_icon! #X Nahrazení budov nelze zařadit do fronty#!" # todo: NEW TRANSLATION
+ CONSTRUCTION_CANT_QUEUE_REPLACE_DISTRICT: "\n@warning_icon! #X Nahrazení okrsků nelze zařadit do fronty#!" # todo: NEW TRANSLATION
+ QUEUE_BLOCKED_NO_BUILDING_SLOT: "@warning_icon! V [Concept('district','čtvrti')|E] není žádné volné místo pro budovu" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ QUEUE_BLOCKED_NO_DISTRICT_SLOT: "@warning_icon! V [Concept('holding','državě')|E] není žádné volné místo pro okrsek" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ SUPPLY_LIMIT: "[Concept('supply_limit_short','Limit zásobování')|E]:" # todo: CHANGED (predtym: [Concept('supply_limit','Limit zásobování')|E]:)
  TOP_LIEGE: "Nejvyšší lenní pán"
  CREATE_NEW_HOLDING_BUTTON: "Postavit novou državu"
  CREATE_NEW_HOLDING_HEADING: "Postavit novou [Concept('holding','državu')|E]"
@@ -82,25 +135,32 @@
  BUILDING_PIETY_COST: "[piety_i] $VALUE|0$"
  BUILDING_PRESTIGE_COST: "[prestige_i] $VALUE|0$"
  BUILDING_TIME: "Čas"
+ BUILDING_COST_BREAKDOWN_HEADER: "Cena: $VALUE$" # todo: NEW TRANSLATION
+ BUILDING_TIME_BREAKDOWN_HEADER: "Doba: $VALUE$" # todo: NEW TRANSLATION
  BUILDING_LEVIES: "[Concept('levies','Odvedenci')|E]: @soldier_icon!$VALUE|+=$"
  BUILDING_GARRISON: "[Concept('garrison','Posádka')|E]: @garrison_icon!$VALUE|+=$"
  BUILDING_GARRISON_REINFORCEMENT_FACTOR: "[Concept('garrison_reinforcement','Doplňování posádky')|E]: @garrison_icon!$VALUE|+=0%$"
- ALREADY_CONSTRUCTING: "@warning_icon! #X V tomto baronství již probíhá stavba#!"
+ ALREADY_CONSTRUCTING: "@alert_icon! #alert_trial Každá [Concept('holding','država')|E] může v jednu chvíli stavět pouze jednu [Concept('building','budovu')|E] nebo [Concept('district','okrsek')|E]#!" # todo: CHANGED (predtym: @warning_icon! X V tomto baronství již probíhá stavba !)
  ABORT_BUILDING_CONFIRM_TITLE: "Přerušit stavbu"
  ABORT_BUILDING_CONFIRM: "Přerušení této stavby vrátí náklady a umožní zde postavit jinou budovu."
  ABORT_BUILDING_CONFIRM_ACCEPT: "Přerušit"
  ABORT_HOLDING_CONFIRM: "Přerušení této stavby vrátí náklady a umožní zde postavit jinou državu."
  CANCEL_HOLDING_CONSTRUCTION: "Přerušit stavbu [HoldingView.GetHolding.GetConstructingHoldingType.GetName]"
  CANCEL_HOLDING_CONSTRUCTION_TOOLTIP: "Zrušit stavbu [HoldingView.GetHolding.GetConstructingHoldingType.GetName] [CZPrepV(HoldingView.GetProvince.GetTitle.GetNameNoTierNoTooltip)] [HoldingView.GetProvince.GetTitle.Custom('CZ_LandedNameNoTierNoTooltip_L')] a vrátit náklady."
- REPLACE_BUILDING: "Nahradit $TYPE$"
+ REPLACE_BUILDING: "#T Nahradit [building]#!" # todo: CHANGED (predtym: Nahradit $TYPE$)
  REPLACE_BUILDING_BUTTON: "Nahradit"
- REPLACE_BUILDING_PROMPT: "#X Nahrazení této budovy zničí stávající budovu. Náklady na budovu nebudou vráceny.#!"
- NO_POTENTIAL_BUILDINGS_WARNING: "#X V tomto slotu momentálně nejsou dostupné žádné budovy ke stavbě#!"
+ REPLACE_BUILDING_PROMPT: "#X @warning_icon! Nahrazení této budovy zničí stávající budovu. Náklady na budovu nebudou vráceny.#!" # todo: CHANGED (predtym: X Nahrazení této budovy zničí stávající budovu. Náklady na budovu nebudou vráceny. !)
+ REPLACE_DISTRICT_PROMPT: "#X @warning_icon! Stávající okrsek i všechny budovy v něm budou zničeny bez jakékoli náhrady#!" # todo: NEW TRANSLATION
+ NO_POTENTIAL_BUILDINGS_WARNING: "#X @warning_icon! V tomto slotu momentálně nejsou dostupné žádné budovy ke stavbě#!" # todo: CHANGED (predtym: X V tomto slotu momentálně nejsou dostupné žádné budovy ke stavbě !)
+ NO_POTENTIAL_DISTRICTS_WARNING: "#X @warning_icon! V tuto chvíli v tomto místě nelze postavit žádné dostupné okrsky#!" # todo: NEW TRANSLATION
+ DISTRICT_TOO_LOW_LEVEL: "#X @warning_icon!Hlavní [Concept('building','budova')|E] musí být alespoň na úrovni $REQUIRED_LEVEL|V$#! #weak (Současná úroveň: $DISTRICT_LEVEL$)#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ BUILDING_DISTRICT_LEVEL_REQUIREMENT: "@warning_icon!Hlavní [Concept('building','budova')|E] musí být na úrovni [GUIPotentialBuildingItem.GetDistrictLevelRequirement|V]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ FUTURE_POSSIBLE_BUILDINGS: "Budoucí možné budovy" # todo: NEW TRANSLATION
  SET_COUNTY_CAPITAL_CONFIRM_TITLE: "Přesunout [Concept('county_capital','hlavní sídlo hrabství')|E]"
- SET_COUNTY_CAPITAL_CONFIRM: "[TITLE.GetName] bude nové $game_concept_county_capital$.\n\nNěkteré budovy [CZPrepV(TITLE_2.GetNameNoTooltip)] [TITLE_2.Custom('CZ_LandedName_L')] se mohou stát neaktivními."
+ SET_COUNTY_CAPITAL_CONFIRM: "[TITLE.GetName] bude nové hlavní sídlo hrabství.\n\nNěkteré budovy [CZPrepV(TITLE_2.GetNameNoTooltip)] [TITLE_2.Custom('CZ_LandedName_L')] se mohou stát neaktivními." # todo: CONCEPT CASE
  SET_REALM_CAPITAL_CONFIRM_TITLE: "Přesunout [Concept('realm_capital','hlavní sídlo panství')|E]"
- SET_REALM_CAPITAL_CONFIRM: "[TITLE.GetName] bude nové $game_concept_realm_capital$.\n\nNěkteré budovy [CZPrepV(TITLE_2.GetNameNoTooltip)] [TITLE_2.Custom('CZ_LandedName_L')] se mohou stát neaktivními."
- SET_COUNTY_AND_REALM_CAPITAL_CONFIRM: "[TITLE.GetName] bude nové $game_concept_county_capital$ a [Concept('realm_capital','hlavní sídlo panství')|E].\n\nNěkteré budovy [CZPrepV(TITLE_2.GetNameNoTooltip)] [TITLE_2.Custom('CZ_LandedName_L')] se mohou stát neaktivními."
+ SET_REALM_CAPITAL_CONFIRM: "[TITLE.GetName] bude nové hlavní sídlo panství.\n\nNěkteré budovy [CZPrepV(TITLE_2.GetNameNoTooltip)] [TITLE_2.Custom('CZ_LandedName_L')] se mohou stát neaktivními." # todo: CONCEPT CASE
+ SET_COUNTY_AND_REALM_CAPITAL_CONFIRM: "[TITLE.GetName] bude nové hlavní sídlo hrabství a [Concept('realm_capital','hlavní sídlo panství')|E].\n\nNěkteré budovy [CZPrepV(TITLE_2.GetNameNoTooltip)] [TITLE_2.Custom('CZ_LandedName_L')] se mohou stát neaktivními." # todo: CONCEPT CASE
  SET_CAPITAL_CONFIRM_ACCEPT: "Přesunout"
  BUILDING_PROVINCE_MODIFIER: "#T Država:#!"
  BUILDING_COUNTY_MODIFIER: "#T Hrabství:#!"
@@ -112,32 +172,80 @@
  NOT_MY_HOLDING_TEXT: "[HOLDING.GetType.GetConceptName] [Concept('holding','država')|E]"
  ABSOLUTE_COUNTY_CONTROL: "Absolutní"
  COUNTY_CONTROL_VALUE_DISPLAY: "$VALUE|0$"
- COUNTY_CONTROL_OUT_OF_MAX: "$VALUE|0$/$MAX|0$"
- COUNTY_CONTROL_OUT_OF_MAX_ABSOLUTE: "[absolute_control_short|E]"
- COUNTY_CONTROL_TOOLTIP_HEADER: "Kontrola hrabství: [County.GetControlLevelOutOfMax]"
- COUNTY_CONTROL_NO_EFFECTS: "Žádné současné účinky, ale pokud kontrola klesne pod 100, [Concept('levies','odvedenci')|E] a [Concept('taxes','daně')|E] v hrabství budou sníženy"
- COUNTY_CONTROL_NO_EFFECTS_HERD: "Žádné současné účinky, ale pokud kontrola klesne pod 100, měsíční přírůstek [Concept('herd','stáda')|E] v hrabství bude snížen"
- COUNTY_CONTROL_LEVIES_MULT: "@soldier_icon! [Concept('levies','Odvedenci')|E] v hrabství se mění o $MULT|%+0=$"
- COUNTY_CONTROL_TAX_MULT: "@gold_icon! [Concept('taxes','Daně')|E] v hrabství se mění o $MULT|%+0=$"
- COUNTY_CONTROL_HERD_MULT: "[herd_i]Měsíční přírůstek [Concept('herd','stáda')|E] se mění o $MULT|%+0=$"
- COUNTY_CONTROL_FERTILITY_MULT: "[county_fertility_i]Měsíční [Concept('county_fertility','úrodnost hrabství')|E] se mění o $MULT|%+0=$"
+ COUNTY_CONTROL_OUT_OF_MAX: "$VALUE|V0$/$MAX|0$" # todo: CHANGED (predtym: $VALUE|0$/$MAX|0$)
+ COUNTY_CONTROL_OUT_OF_MAX_ABSOLUTE: "[Concept('absolute_control_short','Absolutní')|E]" # todo: CONCEPT CASE
+ COUNTY_ALL_MODIFIERS: "Všechny modifikátory hrabství" # todo: NEW TRANSLATION
+ HOLDING_ALL_MODIFIERS: "Všechny modifikátory državy" # todo: NEW TRANSLATION
+ TRADE_POST_INTERACTIONS_BUTTON_TOOLTIP: "#T Zobrazit [Concept('interactions','interakce')|E] vlastníka [Concept('trade_post','obchodní stanice')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ COUNTY_CONTROL_MARKER_TOOLTIP: "#T [GetCountyControlLevelNameNoTooltip( ComplexBarItem.GetIndex )]#!\nPři [SelectLocalization( EqualTo_CFixedPoint( ComplexBarItem.GetRangeMin, ComplexBarItem.GetRangeMax ), 'COUNTY_CONTROL_RANGE_SINGLE', 'COUNTY_CONTROL_RANGE' )] [Concept('control','kontrole')|E]\n[GetCountyControlModifierByLevel( ComplexBarItem.GetIndex ).GetDescWithBulletPointEffects][SelectLocalization( And( And( County.UsesCountyFertility, Not( IsHerder( County.GetCount ) ) ), LessThan_CFixedPoint( ComplexBarItem.GetRangeMin, '(CFixedPoint)100' ) ), 'COUNTY_CONTROL_MARKER_FERTILITY_EFFECT', '' )]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ COUNTY_CONTROL_RANGE_SINGLE: "[ComplexBarItem.GetRangeMin|V0]" # todo: NEW TRANSLATION
+ COUNTY_CONTROL_RANGE: "[ComplexBarItem.GetRangeMin|V0] až [ComplexBarItem.GetRangeMax|V0]" # todo: NEW TRANSLATION
+ COUNTY_CONTROL_MARKER_FERTILITY_EFFECT: "\n$EFFECT_LIST_BULLET$Měsíční změna [Concept('county_fertility','úrodnost hrabství')|E]: [county_fertility_i][Subtract_CFixedPoint( Divide_CFixedPoint( ComplexBarItem.GetRangeMin, '(CFixedPoint)100' ), '(CFixedPoint)1' )|=+0%] až [Subtract_CFixedPoint( Divide_CFixedPoint( ComplexBarItem.GetRangeMax, '(CFixedPoint)100' ), '(CFixedPoint)1' )|=+0%]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ COUNTY_CONTROL_BASELINE_TOOLTIP: "#T [GetCountyControlLevelNameNoTooltip( County.GetCountyControlBaselineLevel )]#!\nPři [SelectLocalization( EqualTo_CFixedPoint( ComplexBar.GetItemAtLevel( County.GetCountyControlBaselineLevel ).GetRangeMin, ComplexBar.GetItemAtLevel( County.GetCountyControlBaselineLevel ).GetRangeMax ), 'COUNTY_CONTROL_BASELINE_RANGE_SINGLE', 'COUNTY_CONTROL_BASELINE_RANGE' )] [Concept('control','kontrole')|E]\n[GetCountyControlModifierByLevel( County.GetCountyControlBaselineLevel ).GetDescWithBulletPointEffects][SelectLocalization( And( And( County.UsesCountyFertility, Not( IsHerder( County.GetCount ) ) ), LessThan_CFixedPoint( ComplexBar.GetItemAtLevel( County.GetCountyControlBaselineLevel ).GetRangeMin, '(CFixedPoint)100' ) ), 'COUNTY_CONTROL_BASELINE_FERTILITY_EFFECT', '' )]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ COUNTY_CONTROL_BASELINE_RANGE_SINGLE: "[ComplexBar.GetItemAtLevel( County.GetCountyControlBaselineLevel ).GetRangeMin|V0]" # todo: NEW TRANSLATION
+ COUNTY_CONTROL_BASELINE_RANGE: "[ComplexBar.GetItemAtLevel( County.GetCountyControlBaselineLevel ).GetRangeMin|V0] až [ComplexBar.GetItemAtLevel( County.GetCountyControlBaselineLevel ).GetRangeMax|V0]" # todo: NEW TRANSLATION
+ COUNTY_CONTROL_BASELINE_FERTILITY_EFFECT: "\n$EFFECT_LIST_BULLET$Měsíční změna [Concept('county_fertility','úrodnost hrabství')|E]: [county_fertility_i][Subtract_CFixedPoint( Divide_CFixedPoint( ComplexBar.GetItemAtLevel( County.GetCountyControlBaselineLevel ).GetRangeMin, '(CFixedPoint)100' ), '(CFixedPoint)1' )|=+0%] až [Subtract_CFixedPoint( Divide_CFixedPoint( ComplexBar.GetItemAtLevel( County.GetCountyControlBaselineLevel ).GetRangeMax, '(CFixedPoint)100' ), '(CFixedPoint)1' )|=+0%]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ COUNTY_CONTROL_BASELINE_INDICATOR_TOOLTIP: "#T Základní hodnota: #high $COUNTY_CONTROL_BASELINE_LEVEL$#! $COUNTY_LEVEL_VALUE$#!\nSměřuje k [Concept('control_baseline','základní úrovni kontroly')|E] rychlostí [CountyDataBreakdowns.AccessControl( County.Self ).GetValue]/měsíc" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ COUNTY_VALUE_LEVELS: "Úrovně" # todo: NEW TRANSLATION
+ COUNTY_VALUE_BASELINE: "Základní hodnota:" # todo: NEW TRANSLATION
+ COUNTY_VALUE_TREND: "[ValueBreakdown.GetValue|L]/měsíc" # todo: NEW TRANSLATION
+ COUNTY_LEVEL_VALUE: "([ValueBreakdown.GetIntegerValue|v0])" # todo: NEW TRANSLATION
+ COUNTY_LEVEL_VALUE_LINK: "([ValueBreakdown.GetIntegerValue|VL0])" # todo: NEW TRANSLATION
+ COUNTY_CONTROL_BASELINE_LEVEL: "[GetCountyControlLevelNameNoTooltip( County.GetCountyControlBaselineLevel )]" # todo: NEW TRANSLATION
+ COUNTY_CONTROL_CURRENT_LEVEL: "[GetCountyControlLevelNameNoTooltip( County.GetCountyControlLevel)|V] ([County.GetControlLevelOutOfMax])" # todo: NEW TRANSLATION
+ COUNTY_CONTROL_CONCEPT: "[Concept('county_control','Kontrola hrabství')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ COUNTY_CONTROL_BASELINE_HEADER: "Směřuje k: [ValueBreakdown.GetValue|L]" # todo: NEW TRANSLATION
+ COUNTY_MONTHLY_CONTROL_HEADER: "Měsíční trend: [ValueBreakdown.GetValue|L]" # todo: NEW TRANSLATION
+ COUNTY_CONTROL_TOOLTIP_HEADER: "Kontrola hrabství" # todo: CHANGED (predtym: Kontrola hrabství: [County.GetControlLevelOutOfMax])
+ COUNTY_CONTROL_TOOLTIP_VALUE: "Současná [Concept('control','kontrola')|E]: [County.GetControlLevelOutOfMax]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ COUNTY_CONTROL_CURRENT_EFFECTS: "[GetCountyControlModifierByLevel( County.GetCountyControlLevel ).GetDescWithBulletPointEffects]" # todo: NEW TRANSLATION
+ COUNTY_CONTROL_FERTILITY_EFFECT: "$EFFECT_LIST_BULLET$Měsíční změna [Concept('county_fertility','úrodnost hrabství')|E]: [county_fertility_i][Subtract_CFixedPoint( Divide_CFixedPoint( County.GetControl, '(CFixedPoint)100' ), '(CFixedPoint)1' )|=+0%]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  COUNTY_CONTROL_CHANGE_MONTHLY: "([ValueBreakdown.GetValue])"
- COUNTY_DEVELOPMENT_TOOLTIP_HEADER: "Rozvoj: [County.GetDevelopmentLevel]/100"
+ COUNTY_CONTROL_BASELINE_MAA: "Umístění [Concept('men_at_arms','ozbrojenci')|E] [CZPrepV(Province.GetNameNoTooltip)] [CZProvName(Province,'L')]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ COUNTY_MONTHLY_BASE_CONTROL_CHANGE: "Základní měsíční trend" # todo: NEW TRANSLATION
+ COUNTY_CONTROL_BASELINE_BASE: "Základ" # todo: NEW TRANSLATION
+ COUNTY_CONTROL_BASELINE: "[Concept('control_baseline','Základní úroveň kontroly')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ COUNTY_PROSPERITY_TOOLTIP_HEADER: "Prosperita" # todo: NEW TRANSLATION
+ COUNTY_PROSPERITY_TOOLTIP_VALUE: "Současná [Concept('prosperity','rozkvět')|E]: #high [County.GetProsperityLevel]/100#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  COUNTY_DEVELOPMENT_LEVIES_MULT: "[Concept('levies','Odvedenci')|E] zvýšeni o $MULT|%+1$"
- COUNTY_DEVELOPMENT_TAX_MULT: "[Concept('taxes','Daně')|E] zvýšeny o $MULT|%+0$"
- COUNTY_DEVELOPMENT_SUPPLY_BONUS: "[Concept('supply_limit','Limit zásobování')|E] zvýšen o $VALUE|=+0$ "
- COUNTY_DEVELOPMENT_IGNORED_DESC: "[Concept('development','Rozvoj')|E] je ignorován (kromě jeho účinku na [Concept('supply_limit','limit zásobování')|E]), protože vlastník [Concept('county','hrabství')|E] má vládu [GovernmentType.GetNameWithIcon|V]"
- COUNTY_DEVELOPMENT_NO_EFFECTS: "#weak Žádné účinky#!"
- COUNTY_DEVELOPMENT_PROGRESS_MONTHLY_TOOLTIP_HEADER: "[County.GetDevelopmentProgressOutOfMax]"
+ COUNTY_PROSPERITY_TAX_MULT: "[Concept('taxes','Daně')|E] zvýšeny o $MULT|%+0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ COUNTY_PROSPERITY_SUPPLY_BONUS: "[Concept('supply_limit','Limit zásobování')|E] zvýšen o $VALUE|=+0$ " # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ COUNTY_PROSPERITY_IGNORED_DESC: "[Concept('prosperity','Rozkvět')|E] se nezohledňuje (kromě jejího vlivu na [Concept('supply_limit','limit zásobování')|E] a [Concept('market_prosperity','hospodářskou prosperitu trhu')|E]), protože vlastník [Concept('county','hrabství')|E] má vládu typu [GovernmentType.GetNameWithIcon|V]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ COUNTY_PROSPERITY_NO_EFFECTS: "#weak Žádné účinky#!" # todo: NEW TRANSLATION
+ COUNTY_PROSPERITY_PROGRESS_MONTHLY_TOOLTIP_HEADER: "[County.GetProsperityProgressOutOfMax]" # todo: NEW TRANSLATION
  COUNTY_CULTURE_ACCEPTANCE_DIFF_CULTURE: "([Culture.GetAcceptance( GetPlayer.GetCulture )|%/0])"
- COUNTY_OPINION_TOOLTIP: "Lidové mínění o [County.GetCount.GetUIName]"
+ POPULAR_OPINION_HEADER: "Lidové mínění" # todo: NEW TRANSLATION
+ POPULAR_OPINION_TOOLTIP: "$POPULAR_OPINION_HEADER$" # todo: NEW TRANSLATION
+ POPULAR_OPINION_VALUES: "@popular_opinion_icon![County.GetCurrentOpinion|+=] ([ValueBreakdown.GetValue])" # todo: NEW TRANSLATION
+ POPULAR_OPINION_MARKER_TOOLTIP: "#T [GetPopularOpinionLevelNameNoTooltip( ComplexBarItem.GetIndex )]#!\nPři #high [SelectLocalization( EqualTo_CFixedPoint( ComplexBarItem.GetRangeMin, ComplexBarItem.GetRangeMax ), 'POPULAR_OPINION_RANGE_SINGLE', 'POPULAR_OPINION_RANGE' )]#! [Concept('popular_opinion','lidovém mínění')|E]\n[GetPopularOpinionModifierByLevel( ComplexBarItem.GetIndex ).GetDescWithBulletPointEffects]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ POPULAR_OPINION_RANGE_SINGLE: "[ComplexBarItem.GetRangeMin|+=0]" # todo: NEW TRANSLATION
+ POPULAR_OPINION_RANGE: "[ComplexBarItem.GetRangeMin|+=0] až [ComplexBarItem.GetRangeMax|+=0]" # todo: NEW TRANSLATION
+ COUNTY_CURRENT_OPINION_HEADER: "Aktuální [Concept('popular_opinion','lidové mínění')|E]: [County.GetCurrentOpinion|+=]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ COUNTY_CURRENT_OPINION_VALUE: "[County.GetCurrentOpinion|+]" # todo: NEW TRANSLATION
+ COUNTY_MONTHLY_OPINION_HEADER: "Měsíční trend: [ValueBreakdown.GetValue|L]" # todo: NEW TRANSLATION
+ COUNTY_TREND_OPINION_HEADER: "Směřuje k: [ValueBreakdown.GetValue|L]" # todo: NEW TRANSLATION
+ COUNTY_MONTHLY_CHANGE_HEADER: "Měsíční změna: [ValueBreakdown.GetValue]" # todo: NEW TRANSLATION
+ POPULAR_OPINION_MONTHLY_CHANGE: "Měsíční změna" # todo: NEW TRANSLATION
+ COUNTY_MONTHLY_BASE_OPINION_CHANGE: "Základní měsíční trend" # todo: NEW TRANSLATION
+ COUNTY_MONTHLY_CHANGE_LIMITED: "Minimální trend" # todo: NEW TRANSLATION
+ COUNTY_POPULAR_OPINION_CURRENT_EFFECTS: "[GetPopularOpinionModifierByLevel( County.GetOpinionLevel ).GetDescWithBulletPointEffects]" # todo: NEW TRANSLATION
+ COUNTY_POPULAR_OPINION_MANDATE_HINT: "[County.GetCount.Custom('GdpPopularMandateUnlockHint')]" # todo: NEW TRANSLATION
+ COUNTY_POPULAR_OPINION_TOOLTIP_VALUE: "Aktuální [Concept('popular_opinion','lidové mínění')|E]: [County.GetCurrentOpinion|=+0]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ COUNTY_POPULAR_OPINION_BASELINE_INDICATOR_TOOLTIP: "#T Základní hodnota: #high $COUNTY_POPULAR_OPINION_BASELINE_LEVEL$#! $COUNTY_LEVEL_VALUE$#!\nSměřuje k základní hodnotě rychlostí [CountyDataBreakdowns.AccessOpinion( County.Self ).GetValue]/měsíc" # todo: NEW TRANSLATION
+ COUNTY_POPULAR_OPINION_CONCEPT: "[Concept('popular_opinion','Lidové mínění')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ COUNTY_POPULAR_OPINION_BASELINE_LEVEL: "[GetPopularOpinionLevelNameNoTooltip( County.GetBaseOpinionLevel )]" # todo: NEW TRANSLATION
+ COUNTY_POPULAR_OPINION_BASELINE_TOOLTIP: "#T [GetPopularOpinionLevelNameNoTooltip( County.GetBaseOpinionLevel )]#!\nPři #high [SelectLocalization( EqualTo_CFixedPoint( ComplexBar.GetItemAtLevel( County.GetBaseOpinionLevel ).GetRangeMin, ComplexBar.GetItemAtLevel( County.GetBaseOpinionLevel ).GetRangeMax ), 'COUNTY_POPULAR_OPINION_BASELINE_RANGE_SINGLE', 'COUNTY_POPULAR_OPINION_BASELINE_RANGE' )]#! [Concept('popular_opinion','lidovém mínění')|E]\n[GetPopularOpinionModifierByLevel( County.GetBaseOpinionLevel ).GetDescWithBulletPointEffects]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ COUNTY_POPULAR_OPINION_BASELINE_RANGE_SINGLE: "[ComplexBar.GetItemAtLevel( County.GetBaseOpinionLevel ).GetRangeMin|+=0]" # todo: NEW TRANSLATION
+ COUNTY_POPULAR_OPINION_BASELINE_RANGE: "[ComplexBar.GetItemAtLevel( County.GetBaseOpinionLevel ).GetRangeMin|+=0] až [ComplexBar.GetItemAtLevel( County.GetBaseOpinionLevel ).GetRangeMax|+=0]" # todo: NEW TRANSLATION
+ COUNTY_POPULAR_OPINION_BASELINE_VALUE: "([ValueBreakdown.GetIntegerValue|+=0])" # todo: NEW TRANSLATION
+ COUNTY_POPULAR_OPINION_CURRENT_LEVEL: "[GetPopularOpinionLevelNameNoTooltip( County.GetOpinionLevel)|V] ([County.GetCurrentOpinion|=+0])" # todo: NEW TRANSLATION
  COUNTY_FERTILITY_TOOLTIP_HEADER: "[Concept('county_fertility','Úrodnost hrabství')|E]: [County.GetCountyFertility|V1]/#V 100#!"
  COUNTY_FERTILITY_DESC: "$game_concept_county_fertility_desc$"
  BASE_COUNTY_FERTILITY: "Počáteční úrodnost hrabství: [County.GetBaseCountyFertility|V0]"
  BASE_COUNTY_FERTILITY_TOOLTIP: "$BASE_COUNTY_FERTILITY$"
  BASE_COUNTY_FERTILITY_TOOLTIP_DESC: "Základní [Concept('county_fertility','úrodnost hrabství')|E] se vypočítává z průměrné úrodnosti jeho jednotlivých [Concept('baronies','baronství')|E]."
  BASE_COUNTY_FERTILITY_PROVINCE_ENTRY: "@county_fertility_icon![Province.GetTerrain.GetCountyFertilityValue|V0] [Province.GetNameNoTooltip] #WEAK ([Province.GetTerrain.GetNameNoTooltip])#!"
- PROJECTED_COUNTY_FERTILITY_EQUILIBRIUM: "[Concept('fertility_equilibrium','Rovnováha úrodnosti')|E]: [County.CalcProjectedFertilityEquilibrium|V0]"
+ PROJECTED_COUNTY_FERTILITY_EQUILIBRIUM: "[Concept('fertility_baseline','Základní úrodnost')|E]: [County.CalcProjectedFertilityEquilibrium|V0]" # todo: CHANGED (predtym: [Concept('fertility_equilibrium','Rovnováha úrodnosti')|E]: [County.CalcProjectedFertilityEquilibrium|V0])
  COUNTY_FERTILITY_PROGRESS: "Měsíční změna"
  MONTHLY_COUNTY_FERTILITY_GROWTH: "Růst"
  MONTHLY_COUNTY_FERTILITY_DECLINE: "Spotřeba"
@@ -153,16 +261,16 @@
  CURRENT_COUNTY_FERTILITY_CHANGE: "[ValueBreakdown.GetValue|L]/měsíc"
  DOMAIN_FERTILITY_TOOLTIP_UNLANDED: "@warning_icon! #X Nemáš [Concept('domain_fertility','úrodnost domény')|E], dokud jsi [Concept('unlanded','bezzemek')|E]#!\n#I [Concept('migrate','Migruj')|E], aby tvé [Concept('herd','stádo')|E] mohlo dále růst#!"
  DOMAIN_FERTILITY_TOOLTIP: "#T [Concept('domain_fertility','Úrodnost domény')|E]: $CURRENT|V0$/$MAX|0$#!"
- COUNTY_FERTILITY_TOOLTIP_ENTRY: "[COUNTY.GetName]: $CURRENT|V0$/$MAX|0$ [Concept('equilibrium','rovnováha')|E]: [COUNTY.CalcProjectedFertilityEquilibrium|0]"
+ COUNTY_FERTILITY_TOOLTIP_ENTRY: "[COUNTY.GetName]: $CURRENT|V0$/$MAX|0$ [Concept('fertility_baseline','základní úrodnost')|E]: [COUNTY.CalcProjectedFertilityEquilibrium|0]" # todo: CHANGED (predtym: [COUNTY.GetName]: $CURRENT|V0$/$MAX|0$ [Concept('equilibrium','rovnováha')|E]: [COUNTY.CalcProjectedFertilityEquilibrium)
  COUNTY_NOT_YOUR_CULTURE: "@warning_icon! #X Hrabství není tvé [Concept('culture','kultury')|E] #!"
  COUNTY_NOT_YOUR_FAITH: "@warning_icon! #X Hrabství není tvé [Concept('faith','víry')|E] #!"
  COUNTY_IN_FACTION_TOOLTIP: "#T Ve frakci [HoldingView.GetAllFactionNames|V] proti mně!#!\n#I Kliknutím zobrazíš [Concept('factions','frakce')|E]#! "
- COUNTY_CAPITAL_TOOLTIP: "#T $game_concept_county_capital$#!\n$game_concept_county_capital_desc$"
- SET_COUNTY_CAPITAL_TOOLTIP: "#T Přesunout [Concept('county_capital','hlavní sídlo hrabství')|E] sem#!\nUčinit [CZPrepZ(HoldingView.GetProvince.GetTitle.GetNameNoTierNoTooltip)] [HoldingView.GetProvince.GetTitle.Custom('CZ_LandedNameNoTierNoTooltip_G')|V] nové $game_concept_county_capital$"
+ COUNTY_CAPITAL_TOOLTIP: "#T Hlavní sídlo hrabství#!\n$game_concept_county_capital_desc$" # todo: CONCEPT CASE
+ SET_COUNTY_CAPITAL_TOOLTIP: "#T Přesunout [Concept('county_capital','hlavní sídlo hrabství')|E] sem#!\nUčinit [CZPrepZ(HoldingView.GetProvince.GetTitle.GetNameNoTierNoTooltip)] [HoldingView.GetProvince.GetTitle.Custom('CZ_LandedNameNoTierNoTooltip_G')|V] nové hlavní sídlo hrabství" # todo: CONCEPT CASE
  SET_REALM_CAPITAL_TOOLTIP_TITLE: "#T Přesunout [Concept('realm_capital','hlavní sídlo panství')|E] sem#!"
- SET_REALM_CAPITAL_TOOLTIP_DESC: "Učinit [CZPrepZ(TITLE.GetNameNoTierNoTooltip)] [TITLE.Custom('CZ_LandedNameNoTierNoTooltip_G')|V] nové $game_concept_realm_capital$"
+ SET_REALM_CAPITAL_TOOLTIP_DESC: "Učinit [CZPrepZ(TITLE.GetNameNoTierNoTooltip)] [TITLE.Custom('CZ_LandedNameNoTierNoTooltip_G')|V] nové hlavní sídlo panství" # todo: CONCEPT CASE
  SET_REALM_CAPITAL_PREFERRED_CAPITAL: "Je to [de_jure] hlavní sídlo titulu [TITLE.GetNameNoTierNoTooltip|V], takže tento přesun je povolen, i když již bylo hlavní sídlo dříve přesunuto"
- REALM_CAPITAL_TOOLTIP: "#T $game_concept_realm_capital$#!\n$game_concept_realm_capital_desc$"
+ REALM_CAPITAL_TOOLTIP: "#T Hlavní sídlo panství#!\n$game_concept_realm_capital_desc$" # todo: CONCEPT CASE
  CANT_SET_REALM_CAPITAL_COUNTY_CAPITAL: "#X Pouze [Concept('county_capital','hlavní sídlo hrabství')|E] se může stát [Concept('realm_capital','hlavním sídlem panství')|E]#!"
  CANT_SET_REALM_CAPITAL_HOLDER: "#X Nejsem držitelem této země#!"
  CANT_SET_REALM_CAPITAL_ALREADY: "#X Toto již je tvé [Concept('realm_capital','hlavní sídlo panství')|E]#!"
@@ -180,8 +288,9 @@
  HOLDING_VIEW_ENEMY_OR_HOSTILE_UNITS: "@warning_icon! #X V državě se nacházejí nepřátelská nebo znepřátelená vojska.#!"
  HOLDING_VIEW_UNDER_SIEGE: "@warning_icon! #X Država v [Concept('siege','obléhání')|E]#!"
  HOLDING_VIEW_NOMAD_HERDER_GOVERNMENT: "@warning_icon! #X Postavy s vládou [CHARACTER.GetGovernment.GetName] nemohou stavět nové [Concept('holdings','državy')|E] ani [Concept('buildings','budovy')|E].#!"
- CONSTRUCTING_BUILDING_TITLE: "#T #high Staví se:#! [BUILDING.GetNameNoTooltip]#! #weak ([BUILDING.GetTypeName])#!\n\n"
- HOLDING_LEVY_SIZE: "@soldier_icon! [Holding.GetMaxLevySize|0]"
+ CONSTRUCTING_BUILDING_TITLE: "#T #high Staví se:#! [BUILDING_TYPE.CalcTriggeredNameNoTooltip(PROVINCE.Self)]#! #weak ([BUILDING_TYPE.GetTypeName])#!\n\n" # todo: CHANGED (predtym: T high Staví se: ! [BUILDING.GetNameNoTooltip] ! weak ([BUILDING.GetTypeName]) !\n\n)
+ HOLDING_LEVY_SIZE: "[Holding.GetMaxLevySize|0]" # todo: CHANGED (predtym: @soldier_icon! [Holding.GetMaxLevySize|0])
+ HOLDING_LEVY_SIZE_WITH_ICON: "@soldier_icon!$HOLDING_LEVY_SIZE$" # todo: NEW TRANSLATION
  HOLDING_VIEW_NEXT: "Další država"
  HOLDING_VIEW_PREVIOUS: "Předchozí država"
  HOLDING_VIEW_CONSTRUCT_OR_UPGRADE: "[Select_CString(EqualTo_int32(GUITrackItem.GetNextBuilding.GetLevel,'(int32)1'), 'Postavit', 'Vylepšit na')] [GUITrackItem.GetNextBuilding.GetNameNoTooltip]"
@@ -190,26 +299,29 @@
  HOLDING_TAB_CAPITAL_TOOLTIP: "Toto je [Concept('county_capital','hlavní sídlo hrabství')|E]\n"
  HOLDING_TAB_TOOLTIP: "#T [GUICountyHolding.GetHolding.GetNameNoTooltip]\n#![SelectLocalization( GUICountyHolding.GetHolding.GetProvince.GetTitle.IsCountyCapital, 'HOLDING_TAB_CAPITAL_TOOLTIP' , '' )|E]#I Kliknutím vybereš#!"
  COUNCIL_TASKS: "Úkoly rady"
- HOLDING_VIEW_HOLDER: "Držitel:"
- HOLDING_VIEW_COUNTY_HOLDER: "Držitel [Concept('county','hrabství')|E]:"
+ HOLDING_VIEW_HOLDER: "[Concept('holder','Držitel')|E]" # todo: CHANGED (predtym: Držitel:) # todo: CONCEPT CASE
+ HOLDING_VIEW_COUNTY_HOLDER: "Držitel [Concept('county','hrabství')|E]:" # todo: CHANGED MINOR
  HOLDING_VIEW_LESSEE: "[Concept('lessee','nájemce')|EU]:"
  HOLDING_VIEW_NO_COUNTY_MODIFIERS: "Žádné modifikátory hrabství"
  BUILDING_EFFECT_PROVINCE_HEADER: "#low Tato država:#!"
  BUILDING_EFFECT_COUNTY_HEADER: "#low Toto hrabství:#!"
- BUILDING_EFFECT_CHARACTER_HEADER: "#low Držitel této državy:#!"
+ BUILDING_EFFECT_CHARACTER_HEADER: "#low Vlastník této [Concept('building','budovy')|E]:#!" # todo: CHANGED (predtym: low Držitel této državy: !)
  BUILDING_EFFECT_COUNTY_HOLDER_CHARACTER_HEADER: "#low Držitel tohoto hrabství:#!"
  BUILDING_EFFECT_DUCHY_CAPITAL_HEADER: "#low Všechny državy v tomto vévodství:#!"
+ BUILDING_EFFECT_MARKET_HEADER: "#low [Concept('profit_routes','Výnosné trasy')|E] tohoto trhu:#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  BUILDING_CONSTRUCTION_COMPLETE_EFFECT_HEADER: "#low Po dokončení stavby:#!\n"
  BUILDING_UPGRADE_VIA_GREAT_PROJECT: "#v To ti umožní naplánovat [Concept('great_project','velký projekt')|E] „$ProjectName$“#!"
  CONSTRUCT_BUILDING_PLAN_EXPANSION: "Naplánovat rozšíření"
  CONSTRUCT_BUILDING_SEE_UPGRADE_PROJECT: "Zobrazit velký projekt"
  REBUILD_GREAT_BUILDING_BUTTON: "Přestavět"
+ CONSTRUCT_HOLDING_NAME: "#T [HoldingTypeItem.GetHoldingType.GetName] #!" # todo: NEW TRANSLATION
+ CONSTRUCT_HOLDING_SHORT_DESC: "[HoldingTypeItem.GetDistrictType.GetPrimaryBuildingType.GetTypeDescription]" # todo: NEW TRANSLATION
  RAID_TT_NO_LOOT_RAIDED: "@warning_icon! #X Kvůli nedávnému vyrabování není dostupná žádná kořist#!"
  BARTER_TT_NO_LOOT_RAIDED: "@warning_icon! #X Kvůli nedávné směně není dostupná žádná kořist#!"
  HOLDING_VIEW_YOUR_COUNTY: "Tvé [Concept('county','hrabství')|E]"
  HOLDING_VIEW_TOP_REALM_COUNTY: "[Concept('county','Hrabství')|E] ve stejném [Concept('realm','panství')|E] jako ty"
  HOLDING_VIEW_FOREIGN_COUNTY: "[Concept('county','Hrabství')|E] [CZPrepV(Character.GetTopLiege.GetPrimaryTitle.GetNameNoTooltip)] [Character.GetTopLiege.GetPrimaryTitle.Custom('CZ_LandedNameNoTooltip_L')]"
- COUNTY_OCCUPIER_TOOLTIP: "#T [Concept('occupied','Obsazeno')|E] [Character.Custom('CZ_ShortUIName_I')]\n#!Během okupace:\n$BULLET_WITH_TAB$[Concept('levies','odvedence')|E] nelze povolat ani doplňovat\n$BULLET_WITH_TAB$[Concept('taxes','daně')|E] nelze vybírat\n$BULLET_WITH_TAB$[Concept('development','rozvoj')|E] a [Concept('control','kontrola')|E] se nezvyšují\n\n$COA_REALM_TOOLTIP_GUI_CLICK_INFO$"
+ COUNTY_OCCUPIER_TOOLTIP: "#T [Concept('occupied','Obsazeno')|E] [Character.Custom('CZ_ShortUIName_I')]\n#!Během okupace:\n$BULLET_WITH_TAB$[Concept('levies','odvedence')|E] nelze povolat ani doplňovat\n$BULLET_WITH_TAB$[Concept('taxes','daně')|E] nelze vybírat\n$BULLET_WITH_TAB$[Concept('prosperity','prosperita')|E] a [Concept('control','kontrola')|E] se nezvyšují\n\n$COA_REALM_TOOLTIP_GUI_CLICK_INFO$" # todo: CHANGED (predtym: T [Concept('occupied','Obsazeno')|E] [Character.Custom('CZ_ShortUIName_I')]\n !Během okupace:\n$BULLET_WITH_TAB$[Concept)
  VASSAL_POSSESSIVE: "vazalův"
  HOLDING_VIEW_BUILDING_IN_VASSAL: "Stavba v [Concept('holding','državě')|E] tvého vazala"
  CULTURE_COUNTY_WINDOW: "[Culture.GetCollectiveNounNoTooltip]"
@@ -223,22 +335,48 @@
  BUILDNING_MODIFIER_FROM_CULTURE: "$BUILDING_NAME$ #weak (z kultury)#!"
  CLICK_TO_VIEW_HOLDING: "#I Kliknutím zobrazíš [Concept('holding','državu')|E]#!"
  DISABLED_LEGEND_PROVINCE_MODIFIERS: "@alert_icon! Modifikátory [Concept('barony','baronství')|E] a [Concept('county','hrabství')|E] jsou deaktivovány. [Concept('barony','Baronství')|E] musí být uvnitř panství šiřitele nebo vlastníka [Concept('legend','legendy')|E]"
+ HOLDING_VIEW_EPIDEMIC_RESISTANCE_HEADER: "[epidemic_resistance|E]: [Province.GetEpidemicResistance|v0]" # todo: NEW TRANSLATION
  HOLDING_VIEW_EPIDEMIC_RESISTANCE: "[Concept('epidemic_res','Odolnost vůči moru')|E]:"
- HOLDING_VIEW_EPIDEMIC_RESISTANCE_VALUE: "@epidemic_icon! [Province.GetEpidemicResistance]"
+ HOLDING_VIEW_EPIDEMIC_RESISTANCE_VALUE: "[Province.GetEpidemicResistance]" # todo: CHANGED (predtym: @epidemic_icon! [Province.GetEpidemicResistance])
  HOLDING_VIEW_COUNTY_FERTILITY_LABEL: "[Concept('county_fertility','Úrodnost hrabství')|E]: @county_fertility_icon!"
- HOLDING_VIEW_COUNTY_FERTILITY_VALUE: "[County.GetCountyFertility|1]"
+ HOLDING_VIEW_COUNTY_FERTILITY_VALUE: "[County.GetCountyFertility|1]" # todo: CHANGED NUMBER
  HOLDING_VIEW_HERD_FROM_COUNTY_LABEL: "Měsíční [Concept('herd','stádo')|E]: @herd_icon!"
  HOLDING_VIEW_HERD_FROM_COUNTY_VALUE: "[County.GetHerdFromCounty|=+0]"
+ HOLDING_VIEW_HERD_FROM_COUNTY_TOOLTIP: "#T Měsíční [Concept('herd','stádo')|E]#!\n[County.GetHerdFromCountyTooltip]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  DOMAIN_SUB_ENTRY_FERTILITY: "Základ ([county_fertility_i][Concept('county_fertility','úrodnost hrabství')|E])"
  DOMAIN_SUB_ENTRY_CONTROL_MULT: "[control_i][Concept('county_control','kontrola hrabství')|E]"
  DOMAIN_SUB_ENTRY_NON_NOMAD_HOLDING_MALUS: "[Concept('holding','Država')|E] není kočovná ani pastevecká"
  HOLDING_VIEW_STEPPE_SEASON_LABEL: "[Concept('steppe_season','Stepní období')|E]:"
  HOLDING_VIEW_CONTROL_LABEL: "[Concept('control','Kontrola')|E]:"
- HOLDING_VIEW_DEVELOPMENT_LABEL: "[Concept('development','Rozvoj')|E]:"
- HOLDING_VIEW_COUNTY_OPINION_LABEL: "[Concept('county_opinion','Lidové mínění')|E]:"
+ HOLDING_VIEW_CONTROL_VALUE: "@control_icon![County.GetControlLevel]" # todo: NEW TRANSLATION
+ HOLDING_VIEW_PROSPERITY_LABEL: "[Concept('prosperity','Rozkvět')|E]:" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ HOLDING_VIEW_PROSPERITY_VALUE: "@prosperity_icon![County.GetProsperityLevel]" # todo: NEW TRANSLATION
+ PROVINCE_SIZE_CURRENT_LEVEL: "[GetProvinceSizeLevelNameNoTooltip( Province.GetProvinceSizeLevel )] ([Province.GetProvinceSizeLevel]/[Province.GetProvinceSizeLevelMax])" # todo: NEW TRANSLATION
+ PROVINCE_SIZE_CURRENT_EFFECTS: "[GetProvinceSizeModifierByLevel( Province.GetProvinceSizeLevel ).GetDescWithBulletPointEffects]" # todo: NEW TRANSLATION
+ HOLDING_VIEW_PROVINCE_SIZE_LABEL: "[Concept('size','Velikost')|E]:" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ HOLDING_VIEW_PROVINCE_SIZE_VALUE: "[Province.GetProvinceSizeLevel]" # todo: NEW TRANSLATION
+ PROVINCE_SIZE_CONCEPT: "[Concept('settlement_size','Velikost sídla')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ PROVINCE_SIZE_MARKER_TOOLTIP: "#T [GetProvinceSizeLevelNameNoTooltip( ComplexBarItem.GetIndex )]#!\nPři #high [SelectLocalization( EqualTo_CFixedPoint( ComplexBarItem.GetRangeMin, ComplexBarItem.GetRangeMax ), 'PROVINCE_SIZE_RANGE_SINGLE', 'PROVINCE_SIZE_RANGE' )]#! [Concept('size','velikosti')|E]\n[GetProvinceSizeModifierByLevel( ComplexBarItem.GetIndex ).GetDescWithBulletPointEffects]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ PROVINCE_SIZE_RANGE_SINGLE: "[ComplexBarItem.GetRangeMin]" # todo: NEW TRANSLATION
+ PROVINCE_SIZE_RANGE: "[ComplexBarItem.GetRangeMin] až [ComplexBarItem.GetRangeMax]" # todo: NEW TRANSLATION
+ PROVINCE_SIZE_BASELINE_TOOLTIP: "#T [GetProvinceSizeLevelNameNoTooltip( Province.GetProvinceSizeBaselineLevel )]#!\nPři #high [SelectLocalization( EqualTo_CFixedPoint( ComplexBar.GetItemAtLevel( Province.GetProvinceSizeBaselineLevel ).GetRangeMin, ComplexBar.GetItemAtLevel( Province.GetProvinceSizeBaselineLevel ).GetRangeMax ), 'PROVINCE_SIZE_BASELINE_RANGE_SINGLE', 'PROVINCE_SIZE_BASELINE_RANGE' )]#! [Concept('size','velikosti')|E]\n[GetProvinceSizeModifierByLevel( Province.GetProvinceSizeBaselineLevel ).GetDescWithBulletPointEffects]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ PROVINCE_SIZE_BASELINE_RANGE_SINGLE: "[ComplexBar.GetItemAtLevel( Province.GetProvinceSizeBaselineLevel ).GetRangeMin]" # todo: NEW TRANSLATION
+ PROVINCE_SIZE_BASELINE_RANGE: "[ComplexBar.GetItemAtLevel( Province.GetProvinceSizeBaselineLevel ).GetRangeMin] až [ComplexBar.GetItemAtLevel( Province.GetProvinceSizeBaselineLevel ).GetRangeMax]" # todo: NEW TRANSLATION
+ PROVINCE_SIZE_BASELINE_INDICATOR_TOOLTIP: "#T Základní hodnota: #high $PROVINCE_SIZE_BASELINE_LEVEL$#! $COUNTY_LEVEL_VALUE$#!\nSměřuje k základní hodnotě rychlostí [CountyDataBreakdowns.AccessProvinceSizeChange( Province.Self ).GetValue]/měsíc" # todo: NEW TRANSLATION
+ PROVINCE_SIZE_BASELINE_LEVEL: "[GetProvinceSizeLevelNameNoTooltip( Province.GetProvinceSizeBaselineLevel )]" # todo: NEW TRANSLATION
+ HOLDING_VIEW_POPULAR_OPINION_LABEL: "[Concept('popular_opinion','Lidové mínění')|E]:" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  HOLDING_VIEW_CULTURE_LABEL: "[Concept('culture','Kultura')|E]:"
  HOLDING_VIEW_FAITH_LABEL: "[Concept('faith','Víra')|E]:"
  HOLDING_VIEW_RITE_LABEL: "[Concept('rite','ritus')|EU]:"
+ HOLDING_VIEW_SUPPLY_VALUE: "[HoldingView.GetSupplyLimit|k]" # todo: NEW TRANSLATION
+ HOLDING_VIEW_CURRENT_FOOD_SUPPLY: "[SelectLocalization( GreaterThan_int32( Holding.GetFoodRequirement, '(int32)0' ), 'HOLDING_VIEW_CURRENT_FOOD_SUPPLY_ACTIVE', 'HOLDING_VIEW_CURRENT_FOOD_SUPPLY_EMPTY' )]" # todo: NEW TRANSLATION
+ HOLDING_VIEW_FOOD_SUPPLY_BELOW_MAX: "@alert_icon!#alert_trial Chybí $game_concept_food_supply$!#!\n#weak Základní hodnota $game_concept_settlement_size$ se snižuje#!" # todo: NEW TRANSLATION
+ HOLDING_VIEW_CURRENT_FOOD_SUPPLY_ACTIVE: "Zásoby potravin: [Holding.GetFoodSupply|V]/[Holding.GetFoodRequirement]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ HOLDING_VIEW_CURRENT_FOOD_SUPPLY_EMPTY: "Zásoby potravin: 0/0" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ HOLDING_VIEW_FOOD_SUPPLY_HEADER: "Zásoby potravin v državě" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ HOLDING_VIEW_FOOD_SUPPLY: "#S Celkový $game_concept_food_supply$#!" # todo: NEW TRANSLATION
+ HOLDING_VIEW_FOOD_REQUIREMENT: "#S Celková potřeba jídla#!" # todo: NEW TRANSLATION
+ HOLDING_VIEW_BASE_FOOD_REQUIREMENT: "Základní potřeba jídla" # todo: NEW TRANSLATION
  ABANDON_LANDS_TITLE: "Opustit"
  ABANDON_LANDS_BUTTON_HOLDING_VIEW_TOOLTIP: "#T Opustit#!\nOpustit tuto [Concept('holding','državu')|E] ve prospěch [Concept('herder','pastevce')|E]."
  CREATE_HERDER_CONFIRMATION_TITLE: "Opustit země"
@@ -247,29 +385,108 @@
  ABANDON_LANDS_NOT_HOLDER: "@warning_icon!#X [CHARACTER.GetShortUIName] není [Concept('holder','držitelem')|E] provincie [PROVINCE.GetName]#!"
  ABANDON_LANDS_NOT_NOMAD_HOLDING: "@warning_icon!#X [PROVINCE.GetName] není [Concept('nomadic_holding','kočovná država')|E]#!"
  ABANDON_LANDS_DOES_NOT_CONTROL_PROVINCE: "@warning_icon!#X [CHARACTER.GetShortUIName] plně nekontroluje [PROVINCE.GetName]#!"
- RAZE_HOLDING_TOOLTIP: "#T Srovnat [Province.GetNameNoTooltip] se zemí#!\nSrovnat se zemí [Concept('holding','državu')|E] a [Concept('buildings','budovy')|E] [CZPrepV(Province.GetNameNoTooltip)] [CZProvName(Province,'L')]. [buildings] budou snižovány vždy o jednu úroveň, dokud nebudou zničeny. [holding] se poté změní na primární typ pro tvou [Concept('government','vládu')|E]."
+ RAZE_HOLDING_TOOLTIP: "#T Srovnat [Province.GetNameNoTooltip] se zemí#!\nSrovnat se zemí [Concept('holding','državu')|E], [Concept('districts','okrsky')|E] a [Concept('buildings','budovy')|E] [CZPrepV(Province.GetNameNoTooltip)] [CZProvName(Province,'L')]. [buildings] budou snižovány vždy o jednu úroveň, dokud nebudou zničeny. [holding] se poté změní na primární typ pro tvou [Concept('government','vládu')|E]." # todo: CHANGED (predtym: T Srovnat [Province.GetNameNoTooltip] se zemí !\nSrovnat se zemí [Concept('holding','državu')|E] a [Concept('buildings',)
  RAZE_HOLDING_CONFIRMATION_TITLE: "Srovnat [Province.GetNameNoTooltip] se zemí"
- RAZE_HOLDING_CONFIRMATION_TEXT: "@alert_icon! #alert_trial Srovnání [Concept('holding','državy')|E] se zemí zničí [Concept('buildings','budovy')|E]. Jakmile nezůstanou žádné budovy, država bude přeměněna na [Concept('nomadic_holding','kočovnou državu')|E]#!\n\n"
+ RAZE_HOLDING_CONFIRMATION_TEXT: "@alert_icon! #alert_trial Srovnání [Concept('holding','državy')|E] se zemí zničí [Concept('buildings','budovy')|E] a [Concept('districts','okrsky')|E]. Jakmile v okrsku nezůstanou žádné budovy, okrsek bude zničen. Jakmile v državě nezůstanou žádné okrsky, država bude přeměněna na [Concept('nomadic_holding','kočovnou državu')|E]#!\n\n" # todo: CHANGED (predtym: @alert_icon! alert_trial Srovnání [Concept('holding','državy')|E] se zemí zničí [Concept('buildings','budovy')|E]. Jakmi)
  RAZE_HOLDING_CONFIRMATION_ACCEPT: "Srovnat se zemí"
  RAZE_HOLDING_NEW_HOLDING_TYPE: "$EFFECT_LIST_BULLET$[Concept('holding','Država')|E] [CZPrepV(Province.GetNameNoTooltip)] [CZProvName(Province,'L')] se změní z #HIGH [HOLDING_TYPE.GetName]#! na #HIGH [TARGET_HOLDING_TYPE.GetName]#!"
  RAZE_HOLDING_DESTROY_HOLDING: "$EFFECT_LIST_BULLET$[HOLDING_TYPE.GetName] [Concept('holding','država')|E] [CZPrepV(Province.GetNameNoTooltip)] [CZProvName(Province,'L')] je zničena"
- RAZE_HOLDING_DOWNGRADE_BUILDING: "$EFFECT_LIST_BULLET$[BUILDING.GetName] je snížena na [TARGET_BUILDING.GetName]"
- RAZE_HOLDING_DESTROY_BUILDING: "$EFFECT_LIST_BULLET$[BUILDING.GetName] je zničena"
+ RAZE_HOLDING_DOWNGRADE_BUILDING: "$EFFECT_LIST_BULLET$[BUILDING_TYPE.GetName] je snížena na [TARGET_BUILDING.GetName]" # todo: CHANGED (predtym: $EFFECT_LIST_BULLET$[BUILDING.GetName] je snížena na [TARGET_BUILDING.GetName])
+ RAZE_HOLDING_DESTROY_BUILDING: "$EFFECT_LIST_BULLET$[BUILDING_TYPE.GetName] je zničena" # todo: CHANGED (predtym: $EFFECT_LIST_BULLET$[BUILDING.GetName] je zničena)
+ RAZE_HOLDING_DESTROY_DISTRICT: "$EFFECT_LIST_BULLET$[DISTRICT.GetName] bude zničena" # todo: NEW TRANSLATION
  RAZE_HOLDING_NO_PRIMARY_BUILDING: "@warning_icon! #X [Province.GetName] nemá žádné [Concept('buildings','budovy')|E]#!"
  RAZE_HOLDING_HOLDING_OF_CORRECT_TYPE: "@warning_icon! #X [Concept('holding','Država')|E] je správného typu pro tvou [Concept('government','vládu')|E]#!"
  RAZE_HOLDING_COOLDOWN: "@warning_icon! #X Srovnání [Province.GetName] se zemí je nedostupné až do [Date.GetString]"
  RAZE_HOLDING_DOES_NOT_CONTROL_HOLDING: "@warning_icon! #X Plně nekontroluješ [Province.GetName]"
+ ALREADY_CONSTRUCTING_IN_HOLDING: "@warning_icon! #X V [Concept('holding','državě')|E] již probíhá výstavba#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  province_razed_toast_title: "[province.GetNameNoTooltip] srovnána se zemí"
- REBUILDING_BUILDING_TITLE: "#T #high Přestavuje se:#! [Building.GetNameNoTooltip]#! #weak ([Building.GetTypeName])#!\n\n"
- RUINED_BUILDING_TITLE: "#T #high V ruinách:#! [Building.GetNameNoTooltip]#! #weak ([Building.GetTypeName])#!\n\n"
- BUILDING_EFFECT_AND_DESC_RUINED_TOOLTIP: "[Building.GetEffectDescriptionAtProvince( Character.Self, Province.Self )]\n\n$RUINED$\n\n[Building.GetDescription]"
- RUINED_BUILDING: "@warning_icon! #X Budova leží v ruinách a musí být [Concept('rebuilt','přestavěna')|El]#!\nCena přestavby: [Building.GetRebuildCostDescription( Character.Self )]"
- REBUILD_GREAT_BUILDING_TIME: "$MOD_TIME_PREFIX$$DAYS$"
- GREAT_BUILDING_RUINED: "@warning_icon! #X $TYPE$ je [Concept('ruined','v ruinách')|El]#!"
- REBUILD_GREAT_BUILDING_TOOLTIP: "#T Přestavět [Building.GetNameNoTooltip]#!\nPřestavět [Concept('great_building','velkou budovu')|E] [Building.GetName] [CZPrepV(Province.GetNameNoTooltip)] [CZProvName(Province,'L')].\n\n"
- REBUILD_GREAT_BUILDING_CONFIRMATION_TITLE: "Přestavět [great_building]"
- REBUILD_GREAT_BUILDING_CONFIRMATION_TEXT: "Vynaložit zdroje na přestavbu [Concept('great_building','velké budovy')|E] a navrátit jí slávu.\n\n"
- REBUILD_GREAT_BUILDING_EFFECT: "$EFFECT_LIST_BULLET$[BUILDING.GetName] je přestavěna [CZPrepV(PROVINCE.GetNameNoTooltip)] [CZProvName(PROVINCE,'L')]"
- REBUILD_GREAT_BUILDING_CONFIRMATION_ACCEPT: "Přestavět"
- REBUILD_GREAT_BUILDING_CANNOT_AFFORD: "@warning_icon! #X Nelze si dovolit: #! $COST$"
+ trade_post_razed_message_title: "Obchodní stanice zbořena" # todo: NEW TRANSLATION
+ trade_post_razed_message_desc: "[trade_post_razer.GetShortUIName|U] zpustošil [province.GetName] a zničil tamní [Concept('trade_post','obchodní stanice')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ DISTRICT_EFFECT_AND_DESC_RUINED_TOOLTIP: "[District.GetEffectDescriptionAtProvince( Character.Self, Province.Self )]\n\n$RUINED$\n\n[District.GetDescription]" # todo: NEW TRANSLATION
+ RUINED_DISTRICT: "@warning_icon! #X Okrsek je [Concept('ruined','zničená')|E], ale lze jej [Concept('rebuilt','obnovené')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ REBUILD_GREAT_DISTRICT_TIME: "$MOD_TIME_PREFIX$$DAYS$" # todo: NEW TRANSLATION
+ GREAT_DISTRICT_RUINED: "@warning_icon! #X $DISTRICT_TYPE$ je [Concept('ruined','zničená')|El]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ REBUILD_GREAT_DISTRICT_TOOLTIP: "#T Obnovit okrsek#!\nObnovit [Concept('great_district','velkolepá čtvrť')|E] v [Province.GetName].\nCena: [DistrictType.GetRebuildCostDescription( Character.Self )]\n\n" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ REBUILD_GREAT_DISTRICT_CONFIRMATION_TITLE: "Obnovit [great_district]" # todo: NEW TRANSLATION
+ REBUILD_GREAT_DISTRICT_CONFIRMATION_TEXT: "Vynalož prostředky na obnovu [Concept('great_district','velkolepou čtvrť')|E] a navrať mu jeho někdejší slávu.\n\n" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ REBUILD_GREAT_DISTRICT_EFFECT: "Cena: [DISTRICT_TYPE.GetRebuildCostDescription( GetPlayer )]\n\n$EFFECT_LIST_BULLET$Okrsek bude obnoven v [PROVINCE.GetName]" # todo: NEW TRANSLATION
+ REBUILD_GREAT_DISTRICT_CONFIRMATION_ACCEPT: "Obnovit" # todo: NEW TRANSLATION
+ REBUILD_GREAT_DISTRICT_CANNOT_AFFORD: "@warning_icon! #X Nedostatek prostředků: #! $COST$" # todo: NEW TRANSLATION
  YOUR_NEXT_HOLDING: "#T Přejít na tvou další [Concept('holding','državu')|e]#!"
+ COUNTY_PRODUCTION_TOOLTIP_HEADER: "[Concept('production','Produkce')|E] v hrabství [County.GetName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ COUNTY_POTENTIAL_TRADE_GOODS_HEADER: "[Concept('potential_production','Potenciální produkce')|E] v hrabství [County.GetName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ COUNTY_MARKET_NEEDS_TOOLTIP_HEADER: "Neuspokojené [Concept('needs','potřeby')|E] ve tvých [Concept('holdings','državách')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MARKET_NEED_HOLDINGS_TOOLTIP_HEADER: "#weak Tvé [Concept('holdings','državy')|E], které potřebují#! [TradeGoodType.GetName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MARKET_NEED_HOLDINGS_TOOLTIP_HEADER_CATEGORY: "#weak Tvé [Concept('holdings','državy')|E], které potřebují#! [TradeGoodCategory.GetName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MARKET_NEED_HOLDINGS_HIDDEN: "...a dalších [TradeMarketRealmNeed.GetHiddenHoldingCount]" # todo: NEW TRANSLATION
+ COUNTY_MARKET_NEEDS_HIDDEN: "...a dalších [TradeMarket.GetHiddenRealmNeedCount]" # todo: NEW TRANSLATION
+ COUNTY_MARKET_NEEDS_HIDDEN_TT: "#T Další neuspokojené [Concept('needs','potřeby')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MARKET_NEED_EXPLOITED_MARKER: "@trade_monopoly_exploitative!" # todo: NEW TRANSLATION
+ MARKET_NEED_EXPLOITED_LINE: "#X [TradeMonopoly.GetName] minulý měsíc odebral [TradeMarketRealmNeed.GetExploitativeExports|1^] z místní [Concept('production','produkce')|E], než byly tyto [Concept('needs','potřeby')|E] uspokojeny#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ COUNTY_PRODUCTION_MARKET_BALANCE: "([Concept('market_balance','bilance trhu')|E]: [GetColoredValueString( TradeMarket.GetBalanceForGood( TradeGoodType.Self ), 'trade', '(int32)1' )])" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ COUNTY_PRODUCTION_EXPLOITATIVE_ACCESS: "@trade_monopoly_exploitative!#H [TradeMarket.GetTradeBalanceForGood( TradeGoodType.Self ).GetTotalProduction|1^]#! #weak k dispozici k odebrání#!" # todo: NEW TRANSLATION
+ COUNTY_PRODUCTION_EXPLOITATIVE_ACCESS_TT: "#T [Concept('exploitative_monopoly','Vykořisťovatelský monopol')|E]#!\nTvůj [Concept('monopoly','monopol')|E] umožňuje tvým [Concept('trade_routes','obchodními trasami')|E] nakupovat [Concept('production','produkce')|E] zboží [TradeGoodType.GetName] v [TradeMarket.GetNameNoTooltip] dříve, než je uspokojena jakákoli místní [Concept('need','potřeba')|E]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ COUNTY_PRODUCTION_BREAKDOWN_TITLE: "[Concept('production','Produkce')|E] zboží [TradeGoodType.GetNameNoTooltip] v hrabství [County.GetName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ DISTRICT_NEEDS_TOOLTIP_HEADER: "Potřeby budovu" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ DISTRICT_PRODUCTION_TOOLTIP_HEADER: "Produkce $game_concept_trade_good$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ DISTRICT_PRODUCTION_BREAKDOWN_TITLE: "[Concept('production','Produkce')|E] zboží [TradeGoodType.GetNameNoTooltip] v okrsku [District.GetType.GetNameNoTooltip]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ HOLDING_VIEW_PRODUCTION_AMOUNT: "[GUIProductionItem.GetAmount|-+0]" # todo: NEW TRANSLATION
+ HOLDING_VIEW_DISTRICT_EFFECTS: "Všechny aktivní účinky:" # todo: NEW TRANSLATION
+ BUILDING_SLOTS: "Stavební sloty: $VALUE|V$\n" # todo: NEW TRANSLATION
+ BUILDING_SLOTS_FROM_PROVINCE: "Z provincie" # todo: NEW TRANSLATION
+ BUILDING_SLOTS_FROM_PRIMARY_BUILDING: "Z hlavní budovy" # todo: NEW TRANSLATION
+ BUILDING_NEED_AMOUNT: "[GUIBuildingNeedItem.GetCurrentlyConsumedAmount|V1^]/[GUIBuildingNeedItem.GetMaxNeededAmount|1^]" # todo: NEW TRANSLATION
+ BUILDING_NEED_AMOUNT_AVAILABLE: "[GUIBuildingNeedItem.GetAvailableAmount|V1^]/[GUIBuildingNeedItem.GetMaxNeededAmount|1^]" # todo: NEW TRANSLATION
+ BUILDING_NEED_AMOUNT_MAX_ONLY: "[GUIBuildingNeedItem.GetMaxNeededAmount|V1^]" # todo: NEW TRANSLATION
+ BUILDING_NEED_AMOUNT_TOOLTIP: "[SelectLocalization( GUIBuildingNeedItem.HasFulfillment, 'BUILDING_NEED_AMOUNT', 'BUILDING_NEED_AMOUNT_MAX_ONLY' )]" # todo: NEW TRANSLATION
+ SINGLE_TRADE_NEED_TOOLTIP_TITLE: "[SelectLocalization( GUIBuildingNeedItem.IsCategoryNeed, 'SINGLE_TRADE_NEED_TOOLTIP_TITLE_CATEGORY', 'SINGLE_TRADE_NEED_TOOLTIP_TITLE_GOOD' )]: [SelectLocalization( GUIBuildingNeedItem.IsCompletelyFilled, 'SINGLE_TRADE_NEED_TOOLTIP_TITLE_FULLY_MET', 'SINGLE_TRADE_NEED_TOOLTIP_TITLE_NOT_FULLY_MET' )]" # todo: NEW TRANSLATION
+ SINGLE_TRADE_NEED_TOOLTIP_TITLE_GOOD: "[GUIBuildingNeedItem.GetTradeGoodType.GetNameNoTooltip]" # todo: NEW TRANSLATION
+ SINGLE_TRADE_NEED_TOOLTIP_TITLE_CATEGORY: "[GUIBuildingNeedItem.GetTradeGoodCategory.GetNameNoTooltip]" # todo: NEW TRANSLATION
+ SINGLE_TRADE_NEED_TOOLTIP_TITLE_FULLY_MET: "#P Plně splněna#!" # todo: NEW TRANSLATION
+ SINGLE_TRADE_NEED_TOOLTIP_TITLE_NOT_FULLY_MET: "#V Není plně splněna#!" # todo: NEW TRANSLATION
+ BUILDING_NEED_REPEATING_PER_LEVEL: "[SelectLocalization( GUIBuildingNeedItem.IsCategoryNeed, 'BUILDING_NEED_REPEATING_PER_LEVEL_CATEGORY', 'BUILDING_NEED_REPEATING_PER_LEVEL_GOOD' )][AddLocalizationIf( GUIBuildingNeedItem.IsSkippingInternalFulfillment, 'BUILDING_NEED_IMPORTS_ONLY' )]" # todo: NEW TRANSLATION
+ BUILDING_NEED_IMPORTS_ONLY: " (pouze dovoz)" # todo: NEW TRANSLATION
+ BUILDING_NEED_REPEATING_PER_LEVEL_GOOD: "Za každých [GUIBuildingNeedItem.GetNeededAmount|V1^] [GUIBuildingNeedItem.GetTradeGoodType.Custom('GetTradeGoodUnitPlural')|U] [GUIBuildingNeedItem.GetTradeGoodType.GetName]" # todo: NEW TRANSLATION
+ BUILDING_NEED_REPEATING_PER_LEVEL_CATEGORY: "Za každých [GUIBuildingNeedItem.GetNeededAmount|1^] [GUIBuildingNeedItem.GetTradeGoodCategory.GetName]" # todo: NEW TRANSLATION
+ BUILDING_NEED_TOOLTIP_HEADER: "[SelectLocalization( GUIBuildingNeedItem.IsCategoryNeed, 'BUILDING_NEED_TOOLTIP_HEADER_CATEGORY', 'BUILDING_NEED_TOOLTIP_HEADER_GOOD' )]" # todo: NEW TRANSLATION
+ BUILDING_NEED_TOOLTIP_HEADER_GOOD: "Potřeba [GUIBuildingNeedItem.GetTradeGoodType.GetName]: [GUIBuildingNeedItem.GetCurrentlyConsumedAmount|V1^]/[GUIBuildingNeedItem.GetMaxNeededAmount|1^]" # todo: NEW TRANSLATION
+ BUILDING_NEED_TOOLTIP_HEADER_CATEGORY: "Potřeba [GUIBuildingNeedItem.GetTradeGoodCategory.GetName]: [GUIBuildingNeedItem.GetCurrentlyConsumedAmount|1^]/[GUIBuildingNeedItem.GetMaxNeededAmount|1^]" # todo: NEW TRANSLATION
+ BUILDING_NEED_TOOLTIP_HEADER_MAX_ONLY: "[SelectLocalization( GUIBuildingNeedItem.IsCategoryNeed, 'BUILDING_NEED_TOOLTIP_HEADER_CATEGORY_MAX_ONLY', 'BUILDING_NEED_TOOLTIP_HEADER_GOOD_MAX_ONLY' )]" # todo: NEW TRANSLATION
+ BUILDING_NEED_TOOLTIP_HEADER_GOOD_MAX_ONLY: "Potřeba [GUIBuildingNeedItem.GetTradeGoodType.GetName]: [GUIBuildingNeedItem.GetMaxNeededAmount|V1^]" # todo: NEW TRANSLATION
+ BUILDING_NEED_TOOLTIP_HEADER_CATEGORY_MAX_ONLY: "Potřeba [GUIBuildingNeedItem.GetTradeGoodCategory.GetName]: [GUIBuildingNeedItem.GetMaxNeededAmount|V1^]" # todo: NEW TRANSLATION
+ BUILDING_NEED_TOOLTIP_CONSUMPTION: "[SelectLocalization( GUIBuildingNeedItem.IsRepeating, 'BUILDING_NEED_TOOLTIP_REPEATING_CONSUMPTION', 'BUILDING_NEED_TOOLTIP_SINGLE_CONSUMPTION' )]" # todo: NEW TRANSLATION
+ BUILDING_NEED_TOOLTIP_REPEATING_CONSUMPTION: "Splněno [GUIBuildingNeedItem.GetCurrentlyConsumedCount|V]/[GUIBuildingNeedItem.GetMaxNeededCount]krát; pokaždé se tím zvýší přínosy [Concept('building','budova')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ BUILDING_NEED_TOOLTIP_SINGLE_CONSUMPTION: "[SelectLocalization(GUIBuildingNeedItem.IsCompletelyFilled, 'BUILDING_NEED_TOOLTIP_CONSUMPTION_MET', 'BUILDING_NEED_TOOLTIP_CONSUMPTION_UNMET')]" # todo: NEW TRANSLATION
+ BUILDING_NEED_TOOLTIP_CONSUMPTION_MET: "#P Plně splněna#!" # todo: NEW TRANSLATION
+ BUILDING_NEED_TOOLTIP_CONSUMPTION_UNMET: "#N Nesplněna#!" # todo: NEW TRANSLATION
+ BUILDING_NEED_TOOLTIP_MARKET_LABEL: "Zůstatky na trhu [TradeMarket.GetName]" # todo: NEW TRANSLATION
+ BUILDING_NEED_SOURCE_LINE: "[GUIBuildingNeedItem.CalcSourceDescription]" # todo: NEW TRANSLATION
+ BUILDING_NEED_SOURCE_PILLAR: "Zdroj: $NAME$ [Concept('culture_pillar','kulturní pilíř')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ BUILDING_NEED_SOURCE_TRADITION: "Zdroj: $NAME$ [Concept('culture_tradition','kulturní tradice')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ BUILDING_NEED_SOURCE_INNOVATION: "Zdroj: $NAME$ [Concept('innovation','inovace')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ BUILDING_NEED_SOURCE_TENET: "Zdroj: $NAME$ [Concept('tenet','zásada')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ BUILDING_NEED_SOURCE_DOCTRINE: "Zdroj: $NAME$ [Concept('doctrine','doktrína')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ BUILDING_NEED_SOURCE_REQUIRED_BY: "Vyžadují: $SOURCES$" # todo: NEW TRANSLATION
+ BUILDING_NEED_SOURCE_GOVERNMENT: "Zdroj: $GOVERNMENT$ [Concept('government','vláda')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ BUILDING_NEED_SOURCE_DYNASTY_PERK: "Zdroj: $PERK$ [Concept('dynasty_perk','dynastický odkaz')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ BUILDING_NEED_SOURCE_SITUATION: "Zdroj: $SITUATION$ [Concept('situation','situace')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ BUILDING_NEED_SOURCE_PROVINCE_SIZE: "Zvyšuje se s [Concept('settlement_size','velikostí sídla')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ BUILDING_NEED_SOURCE_TERRAIN: "Potřebné v terénu: $TERRAIN$ [Concept('terrain','terénu')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ BUILDING_NEED_SOURCE_COASTAL: "Potřebné na pobřeží" # todo: NEW TRANSLATION
+ BUILDING_NEED_SOURCE_NOT_COASTAL: "Potřebné mimo pobřeží" # todo: NEW TRANSLATION
+ BUILDING_NEED_SOURCE_RIVERSIDE: "Potřebné u řeky" # todo: NEW TRANSLATION
+ BUILDING_NEED_SOURCE_NOT_RIVERSIDE: "Potřebné mimo říční oblasti" # todo: NEW TRANSLATION
+ BUILDING_NEED_SOURCE_POTENTIAL_TRADE_GOOD: "Zdroj: $TRADE_GOOD$ jako [Concept('potential_production','potenciální produkce')|E] v hrabství" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ NEEDS_BOXES_PREVIEW_TOOLTIP: "#T Předpokládaná [Concept('need','potřeba')|E]#!\nJak často by byla tato [Concept('need','potřeba')|E] splněna, kdyby byla [Concept('building','budova')|E] dokončena právě teď; závisí na přebytku na [Concept('market','trh')|E] a na tom, kolik nyní spotřebovává nahrazovaná [Concept('building','budova')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ NO_TRADE_BALANCE: "-" # todo: NEW TRANSLATION
+ DISTRICT_TT_TITLE: "[Select_CString( GUIDistrictItem.IsEmptySlot, 'Prázdné místo pro obvod', GUIDistrictItem.GetCurrentOrConstrucingDistrict.CalcTriggeredNameNoTooltip( HoldingView.GetProvince ) )]" # todo: NEW TRANSLATION
+ DISTRICT_TT_CONSTRUCTING: "Ve výstavbě: [GUIDistrictItem.GetRemainingConstructionTime]" # todo: NEW TRANSLATION
+ DISTRICT_TT_QUEUED: "Ve frontě: [GUIDistrictItem.GetRemainingConstructionTime]" # todo: NEW TRANSLATION
+ DISTRICT_TT_REBUILDING: "Tento [Concept('ruined','zničená')|E] [Concept('district','čtvrtě')|E] se obnovuje" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ DISTRICT_TT_EMPTY_EXPLANATION: "V tomto místě zatím není žádný [Concept('district','čtvrť')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ DISTRICT_TT_CLICK_TO_CONSTRUCT: "Kliknutím postavíte nová [Concept('district','čtvrť')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ DISTRICT_TT_CLICK_TO_SELECT: "Kliknutím vyberete" # todo: NEW TRANSLATION
+ DISTRICT_TT_CLICK_AND_DRAG_PRIORITY: "Kliknutím a tažením změníte prioritu" # todo: NEW TRANSLATION
+ HOLDING_BUILDING_CAN_UPGRADE_NOW: "#T Lze nyní vylepšit#!" # todo: NEW TRANSLATION
+ HOLDING_DISTRICT_CAN_CONSTRUCT_BUILDING_NOW: "#I V tomto obvodu lze postavit novou budovu#!" # todo: NEW TRANSLATION
+ HOLDING_DISTRICT_CAN_UPGRADE_BUILDING_NOW: "#I V tomto obvodu lze vylepšit budovu#!" # todo: NEW TRANSLATION

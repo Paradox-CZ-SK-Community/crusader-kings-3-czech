@@ -1,7 +1,7 @@
 ﻿l_polish:
  british_isles.0001.t: "[reclaimer.GetCulture.GetNameNoTooltip|U] Británie"
  british_isles.0001.desc: "Příliš dlouho byl náš velký ostrov pod cizí nadvládou. Konečně se vrátil do keltských rukou! Hledím přes pole a připadá mi, jako by slunce poprvé po letech znovu zazářilo. Jako by se před námi znovu otevřel Tír na nÓg, země hojnosti a zdraví, a vítal nás doma. [ROOT.Char.GetCulture] kultura znovu zapouští kořeny v kopcích a údolích našich předků."
- british_isles.0001.custom: "Všechna [Concept('counties','hrabství')|E] v Británii"
+ british_isles.0001.custom: "Všechno [Concept('counties','hrabství')|E] v Británii" # todo: CONCEPT CASE
  british_isles.0001.a: "Chvála našim předkům!"
  british_isles.0002.desc: "[ROOT.Char.Custom2('RelationDescriptor', SCOPE.sC('reclaimer'))] [reclaimer.GetName] oficiálně ohlašuje znovuzrození keltské Británie.\n\nPo staletích cizí nadvlády se Britské ostrovy znovu ocitly v rukou svých původních obyvatel."
  british_isles.0002.a: "[reclaimer.GetCulture.GetNameNoTooltip] pohroma těchto zemí..."
@@ -22,7 +22,7 @@
  british_isles.2002.a: "Byla to jen otázka času."
  british_isles.2002.b: "Zrádci!"
  british_isles.3001.t: "Chvályhodně prohlašujeme"
- british_isles.3001.desc: "Tvá touha rozšířit posvátnou vládu všeobecné církve mezi barbarské kmeny Irska je zbožným a spravedlivým záměrem. Svatá římská církev ti proto přikazuje, abys tento ostrov vzal do svého držení a naplnil na něm Boží vůli.\n\nPokud by tě před završením tohoto svatého tažení stihlo neštěstí a odešel bys z tohoto světa, přechází toto posvátné pověření na tvé právoplatné nástupce. Ať rod [scoped_ruler.GetHouse.GetBaseNameNoTooltip] nese tento svatý úkol z pokolení na pokolení, dokud nebude naplněna Boží vůle a v celém sjednoceném Irsku nezavládne [scoped_ruler.GetCulture.GetNameNoTooltip] kultura."
+ british_isles.3001.desc: "Tvá touha rozšířit posvátnou vládu všeobecné církve mezi barbarské kmeny Irska je zbožným a spravedlivým záměrem. Svatá římská církev ti proto přikazuje, abys tento ostrov vzal do svého držení a naplnil na něm Boží vůli.\n\nPokud by tě před završením tohoto svatého tažení stihlo neštěstí a [Select_CString(ROOT.Char.IsFemale,'odešla','odešel')] bys z tohoto světa, přechází toto posvátné pověření na tvé právoplatné nástupce. Ať rod [scoped_ruler.GetHouse.GetBaseNameNoTooltip] nese tento svatý úkol z pokolení na pokolení, dokud nebude naplněna Boží vůle a v celém sjednoceném Irsku nezavládne [scoped_ruler.GetCulture.GetNameNoTooltip] kultura." # todo: GENDER FORM ROOT.Char - over, ci ROOT je postava, ktorej sa text tyka
  british_isles.3001.a: "Připravte naše loďstvo!"
  british_isles.3002.t: "Nárok na Irsko"
  british_isles.3002.desc.irish: "[scoped_pope.GetFirstName], Jeho Svatost, náměstek Kristův a dědic trůnu svatého Petra, tímto prohlašuje, že [scoped_ruler.GetFullName] má právo z Boží vůle vládnout nad Éire a všemi tamními kmeny.\n\nKaždý irský pán, který neuposlechne papežský výnos a odmítne se podrobit, pozná hněv všemohoucího Boha. [scoped_ruler.GetTitledFirstName] proti němu vytáhne v čele vojska svého lidu."
@@ -80,7 +80,7 @@
  british_isles.1022.t: "$british_isles.1011.t$"
  british_isles.1022.desc: "Zdá se, že [ntd_actor.GetTitledFirstName] a [ntd_recipient.GetTitledFirstName] ve snaze upevnit vlastní moc uzavřeli ďábelskou smlouvu a rozdělili si mezi sebou $k_england$!\n\nÚzemí, která jsou nyní pod severskou nadvládou, budou od této chvíle náležet $k_danelaw_article$$k_danelaw$, zatímco zbývající domorodá panství budou uznána za $k_england_adj$ území."
  british_isles.1022.a: "Co je to za nestoudnou zradu vlastní země?"
- british_isles.1022.a.tt: "$k_england$ a $k_danelaw_article$$k_danelaw$ jsou [Concept('de_jure_partitioned','de iure rozděleny')|E]"
+ british_isles.1022.a.tt: "$k_england$ a $k_danelaw_article$$k_danelaw$ budou [Concept('de_jure_partitioned','de iure rozděleny')|E]" # todo: CHANGED (predtym: $k_england$ a $k_danelaw_article$$k_danelaw$ jsou [Concept('de_jure_partitioned','de iure rozděleny')|E])
  british_isles.1051.t: "Sjednocené [partition_winner.GetTierAsNameNoTooltip]"
  british_isles.1051.desc: "Konečně už nikdo nemůže zpochybnit mou vládu. [england.GetNameNoTierNoTooltip] ve mně má svého [Select_CString(victor.IsFemale, '#EMP skutečného vládce#!', '#EMP skutečného vládce#!')] a stát samozvanců je minulostí. Má konečná nadvláda nad celou Británií je nyní téměř jistá."
  british_isles.1051.a: "Jedno panství, [Select_CString(victor.IsFemale, 'jedna', 'jeden')] [victor.GetTitleAsNameNoTooltip]!"
@@ -94,7 +94,7 @@
  british_isles.1053.a: "Dočká se $k_england$ konečně stability?"
  british_isles.1053.a.tt: "$british_isles.1051.a.tt$"
  british_isles.1061.t: "Zákon země"
- british_isles.1061.desc: "Od chvíle, kdy Skandinávci poprvé připluli k těmto úrodným břehům, uplynula dlouhá léta. Léta krveprolití, násilí a svárů, ale také vzájemného obohacování, rozvoje a splývání.\n\nPotomci prvních osadníků už nejsou skutečnými Seveřany a ani místní už nejsou týmiž $anglo_saxon_collective_noun$, jakými byli při příchodu Skandinávců.\n\nKdo jsme dnes, snad ani nelze snadno říci.\n\nJisté je pouze to, že v sobě neseme všechny, kdo tu byli před námi, dobré i zlé, a naše dějiny budou od nynějška $k_daneland_adj$."
+ british_isles.1061.desc: "Od chvíle, kdy Skandinávci poprvé připluli k těmto úrodným břehům, uplynula dlouhá léta. Léta krveprolití, násilí a svárů, ale také vzájemného obohacování, blahobytu a splývání.\n\nPotomci prvních osadníků už nejsou skutečnými Seveřany a ani místní už nejsou týmiž $anglo_saxon_collective_noun$, jakými byli při příchodu Skandinávců.\n\nKdo jsme dnes, snad ani nelze snadno říci.\n\nJisté je pouze to, že v sobě neseme všechny, kdo tu byli před námi, dobré i zlé, a naše dějiny budou od nynějška $k_daneland_adj$." # todo: CHANGED (predtym: Od chvíle, kdy Skandinávci poprvé připluli k těmto úrodným břehům, uplynula dlouhá léta. Léta krveprolití, násilí a svár)
  british_isles.1061.a: "Napíšeme je společně."
  british_isles.1062.t: "$british_isles.1061.t$"
  british_isles.1062.desc: "Ten ničema! Ten bídák! Ten [founder.Custom2('InsultAdjective', ROOT.Char)], [founder.Custom2('InsultAdjective', ROOT.Char)] #EMP [founder.Custom2('InsultNoun', ROOT.Char)]!#!\n\n$k_england$ a $k_danelaw_article$$k_danelaw$ jsou rozděleny už příliš dlouho, ale #EMP každý#! věděl, že jednoho dne budou znovu sjednoceny.\n\nAž do dneška.\n\n[founder.GetTitledFirstName] totiž ve velkolepém a nabubřelém prohlášení [Select_CString(founder.IsFemale, 'slavnostně oznámila', 'slavnostně oznámil')], že se vzdává jakéhokoli nároku na vládu nad $k_england$. Tím mi téměř vzala veškerou naději, že jednou snadno znovu spojím své panství se zeměmi $k_danelaw_article$$k_danelaw$!"

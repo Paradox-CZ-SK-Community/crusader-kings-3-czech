@@ -82,12 +82,13 @@
  RIGHT_CLICK_DISMISS: "#I Kliknutím pravým tlačítkem skryješ#!"
  REALM_TOOLTIP_HOLDER: "[Concept('ruler','Vládce')|E]: [TITLE.GetHolder.GetName]\nAktuální [Concept('line_of_succession','linie následnictví')|E]:\n[TITLE.GetLineOfSuccessionDesc]\n"
  COA_REALM_SIZE_TOOLTIP: "Velikost panství: [Character.RealmSize|V] [Concept('counties','hrabství')|E]"
- COA_REALM_SUZERAIN_INFO: "\n\n[SelectLocalization(Or(IsNomad( Character ), IsHerder( Character )), 'COA_REALM_SUZERAIN_INFO_NOMADIC', 'COA_REALM_SUZERAIN_INFO_SETTLED')]\n[Concept('suzerain','Suzerén')|E]: [Character.GetSuzerain.GetUIName]\n"
- COA_REALM_SUZERAIN_INFO_NOMADIC: "@tributary_nomadic!Nomádský [Concept('tributary','tributář')|E]"
- COA_REALM_SUZERAIN_INFO_SETTLED: "@tributary_settled![tributary|E]"
+ COA_REALM_SUZERAIN_INFO: "\n\n[Character.Custom('SuzerainTypeCOA')][Character.GetSuzerain.GetUIName]\n" # todo: CHANGED (predtym: \n\n[SelectLocalization(Or(IsNomad( Character ), IsHerder( Character )), 'COA_REALM_SUZERAIN_INFO_NOMADIC', 'COA_REALM_S)
+ COA_REALM_SUZERAIN_INFO_NOMADIC: "@tributary_nomadic!Nomádský [Concept('tributary','tributář')|E]\n[Concept('suzerain','suzerén')|E]:" # todo: CHANGED (predtym: @tributary_nomadic!Nomádský [Concept('tributary','tributář')|E])
+ COA_REALM_SUZERAIN_INFO_SETTLED: "@tributary_settled![Concept('tributary','Tributář')|E]\n[Concept('suzerain','Suzerén')|E]:" # todo: CHANGED (predtym: @tributary_settled![tributary|E]) # todo: CONCEPT CASE
  COA_REALM_TOOLTIP_SUCCESSION_NONE: "Bez nástupnictví"
  COA_REALM_TOOLTIP_CHARACTER_ALIVE_SUCCESSION: "Zákon nástupnictví: $SUCCESSION_FORM_NAME$\n\n[Concept('line_of_succession','linie následnictví')|EU]:\n[Character.GetPrimaryTitle.GetLineOfSuccessionDesc]"
- COA_REALM_TOOLTIP_CHARACTER_ALIVE: "#T [Character.GetPrimaryTitle.GetNameWithUnderlyingNoTooltip|U]#!\n[Character.Custom('GetRealmOrDomicileTooltip')|l]\n[Concept('holder','Držitel')|E]: [Character.GetUIName|U]\nVojenská síla: [Character.GetMilitaryStrengthText|V] [Concept('soldiers','vojáků')|E]\n[SelectLocalization( GreaterThan_int32( Character.RealmSize, '(int32)0' ), 'COA_REALM_SIZE_TOOLTIP', 'CV_UNLANDED')][SelectLocalization(Character.HasSuzerain, 'COA_REALM_SUZERAIN_INFO', '')][AddLine( AddTextIf( Not( IsLandlessAdventurer( Character ) ), SelectLocalization( Character.HasRealmLaw('top_liege_not_redirected_to_border_wars_law'), 'TITLE_TOOLTIP_DISABLED_BORDER_WARS' , 'TITLE_TOOLTIP_ENABLED_BORDER_WARS' )))]\n\n#S Následnictví#!\n[SelectLocalization(Character.AreAllTitlesDestroyedOnSuccession, 'COA_REALM_TOOLTIP_SUCCESSION_NONE', 'COA_REALM_TOOLTIP_CHARACTER_ALIVE_SUCCESSION')]"
+ COA_REALM_SUZERAIN_INFO_MERCHANT: "@tributary_merchant![Concept('client','Klient')|E]\n[Concept('merchant_patron','Patron')|E]: " # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ COA_REALM_TOOLTIP_CHARACTER_ALIVE: "#T [Character.GetPrimaryTitle.GetNameWithUnderlyingNoTooltip|U]#!\n[Character.Custom('GetRealmOrDomicileTooltip')|l]\n[Concept('holder','Držitel')|E]: [Character.GetUIName|U]\nVojenská síla: [Character.GetMilitaryStrengthText|V] [Concept('soldiers','vojáků')|E]\n[SelectLocalization( GreaterThan_int32( Character.RealmSize, '(int32)0' ), 'COA_REALM_SIZE_TOOLTIP', 'CV_UNLANDED')][SelectLocalization(Character.HasSuzerain, 'COA_REALM_SUZERAIN_INFO', '')][AddLine( AddTextIf( And(Not( IsLandlessAdventurer( Character )), Not( IsLandlessMerchant( Character )) ), SelectLocalization( Character.HasRealmLaw('top_liege_not_redirected_to_border_wars_law'), 'TITLE_TOOLTIP_DISABLED_BORDER_WARS' , 'TITLE_TOOLTIP_ENABLED_BORDER_WARS' )))]\n\n#S Následnictví#!\n[SelectLocalization(Character.AreAllTitlesDestroyedOnSuccession, 'COA_REALM_TOOLTIP_SUCCESSION_NONE', 'COA_REALM_TOOLTIP_CHARACTER_ALIVE_SUCCESSION')][SelectLocalization( And( Character.GetConfederation.IsValid, And( ObjectsEqual( Character.GetConfederation, GetPlayer.GetConfederation ), Not( Character.IsLocalPlayer ) ) ), 'REALM_FLAG_SHARED_MEMBERSHIP', '' )]" # todo: CHANGED (predtym: T [Character.GetPrimaryTitle.GetNameWithUnderlyingNoTooltip|U] !\n[Character.Custom('GetRealmOrDomicileTooltip')|l]\n[Co)
  COA_REALM_TOOLTIP_CHARACTER_DEAD: "#T [Character.GetPrimaryTitle.GetNameAtDateNoTooltip( Character.GetDeathDate )|U]#!\n[Character.Custom('GetRealmOrDomicileTooltip')]"
  COA_REALM_TOOLTIP_CHARACTER: "[SelectLocalization( Character.IsAlive, 'COA_REALM_TOOLTIP_CHARACTER_ALIVE', 'COA_REALM_TOOLTIP_CHARACTER_DEAD' )]"
  CHARACTER_WINDOW_REALM_TOOLTIP: "[Character.GetDefaultRealmFlagTooltipNoClickInfo]\n\n[Title.GetClickInfo]"
@@ -117,5 +118,9 @@
  SORT_BY: "Řadit podle: "
  FILTER_BY: "Filtrovat podle: "
  DEBUG_TITLE_ID: "ID titulu: #high $ID$#!"
+ DEBUG_TITLE_TYPE: "Druh titulu: [TitleType.GetName]" # todo: NEW TRANSLATION
+ DEBUG_TITLE_TREASURY: "Pokladnice: $VALUE$" # todo: NEW TRANSLATION
+ DEBUG_TITLE_TREASURY_BUDGET: "Rozpočty pokladnice" # todo: NEW TRANSLATION
  DEBUG_TITLE_KEYS: "Klíč titulu a de jure lenní páni:"
  DEBUG_REGION_KEYS: "Geografické regiony:"
+ DEBUG_POTENTIAL_TRADE_GOOD_KEYS: "Potenciální obchodní zboží:" # todo: NEW TRANSLATION

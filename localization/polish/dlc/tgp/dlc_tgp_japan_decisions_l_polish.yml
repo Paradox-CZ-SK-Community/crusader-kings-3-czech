@@ -33,14 +33,14 @@
  tgp_japan_become_shogun_decision_hoken_county_trigger: "Žádné z [Concept('counties','hrabství')|E], která [Concept('de_jure','de iure')|E] náleží k území [GetTitleByKey('e_japan').GetBaseNameNoTier], nesmí být drženo [Concept('vassals','vazaly')|E] se systémem [Concept('government','vlády')|E] [GetGovernment('japan_administrative_government').GetName] #weak (Aktuálně: [SCOPE.ScriptValue('tgp_japan_shogunate_ritsuryo_county_current_value')|0V])#!"
  tgp_japan_become_shogun_decision_centralization_trigger: "Musíš mít alespoň [Concept('law','zákon')|E] [GetLaw('japanese_bureaucracy_2').GetName]"
  tgp_japan_become_shogun_decision_top_liege_trigger: "Musíš být [Concept('ceremonial_regent','vládnoucím regentem')|E] území [GetTitleByKey('e_japan').GetBaseNameNoTier]"
- tgp_japan_become_shogun_decision_land_trigger: "Všechna [Concept('duchies','vévodství')|E] – [GetTitleByKey('d_kinai').GetBaseNameNoTier], [GetTitleByKey('d_nankaido').GetBaseNameNoTier], [GetTitleByKey('d_hokurikudo').GetBaseNameNoTier], [GetTitleByKey('d_west_bando').GetBaseNameNoTier] a [GetTitleByKey('d_north_saikaido').GetBaseNameNoTier] – musí celá ležet v [Concept('realm','panství')|E] [GetTitleByKey('e_japan').GetBaseNameNoTier]"
+ tgp_japan_become_shogun_decision_land_trigger: "Všechno [Concept('duchies','vévodství')|E] – [GetTitleByKey('d_kinai').GetBaseNameNoTier], [GetTitleByKey('d_nankaido').GetBaseNameNoTier], [GetTitleByKey('d_hokurikudo').GetBaseNameNoTier], [GetTitleByKey('d_west_bando').GetBaseNameNoTier] a [GetTitleByKey('d_north_saikaido').GetBaseNameNoTier] – musí celá ležet v [Concept('realm','panství')|E] [GetTitleByKey('e_japan').GetBaseNameNoTier]" # todo: CONCEPT CASE
  tgp_japan_become_shogun_decision_vassal_revocation_effect: "Všechny [Concept('titles','tituly')|E] držené [Concept('vassals','vazaly')|E] se systémem [Concept('government','vlády')|E] [GetGovernment('japan_administrative_government').GetName] budou odebrány"
  tgp_japan_become_shogun_decision_dynasty_split_effect: "Všechny [Concept('dynasties','dynastie')|E], které mají více než jeden žijící [Concept('house','rod')|E], se rozdělí"
  unlocks_bushido_tradition_tooltip: "Zpřístupňuje [Concept('tradition','tradici')|E] [GetCultureTradition('tradition_tgp_bushido').GetName]"
  tradition_tgp_bushido_tt: "[Concept('tradition','Tradice')|EU] [GetCultureTradition('tradition_tgp_imperial_peace').GetName] [Concept('culture_possessive','kultury')|E] [THIS.Culture.GetName] bude nahrazena tradicí [GetCultureTradition('tradition_tgp_bushido').GetName]"
  tgp_japan_emperor_restoration_decision: "Obnovit přímou císařskou vládu"
  tgp_japan_emperor_restoration_decision_desc: "Už příliš dlouho jsem zpoza palácových zdí [Select_CString(ROOT.Char.IsFemale,'sledovala','sledoval')], jak si mou právoplatnou moc přivlastňují váleční štváči. Dost! Nastal čas zaujmout své místo nebeského panovníka, obnovit božskou důstojnost císařského úřadu a navrátit panství stabilitu."
- tgp_japan_emperor_restoration_decision_tooltip: "Obnov starobylou vládu $game_concept_tenno$"
+ tgp_japan_emperor_restoration_decision_tooltip: "Obnov starobylou vládu tennó" # todo: CONCEPT CASE
  tgp_japan_emperor_restoration_decision_confirm: "Nikoli jako symbol, ale jako skutečný panovník"
  tgp_japan_emperor_restoration_decision_faction_effect: "#X [Concept('vassals','Vazalové')|EU] se s větší pravděpodobností připojí k [Concept('faction','frakci')|E] #V $replace_ceremonial_regent_faction_name$#!#!"
  disable_soryo_decision: "#X Trvale znepřístupní [Concept('decision','rozhodnutí')|E] [GetDecisionWithKey('tgp_japan_establish_soryo_administration_decision').GetName]#!"
@@ -118,8 +118,8 @@
  tgp_establish_soryo_administration_other_joiners_tt: "Počet [Concept('vassals','vazalů')|E], kteří nejsou členy [Concept('bloc','bloku')|E] a připojili se do [Concept('war','války')|E] proti tobě: [THIS.Char.MakeScope.Var('other_joiners_count').GetValue|0]"
  japanese_establish_soryo_administration_vassal_government_tt: "Všichni členové [Concept('bloc','bloku')|E] přijmou [Concept('government','vládu')|E] [GetGovernment( 'japan_feudal_government' ).GetName]"
  japanese_establish_soryo_administration_war_start_tt: "@warning_icon! #N Vypukne [Concept('war','válka')|E] proti nespokojeným [Concept('vassals','vazalům')|E]#!"
- house_head_create_faction_cohesion_hard_tt: "[Concept('bloc','Blok')|EU] musí mít [Concept('cohesion','soudržnost')|E] alespoň #V 75#!"
- house_head_create_faction_cohesion_tt: "[Concept('bloc','Blok')|EU] musí mít [Concept('cohesion','soudržnost')|E] alespoň #V 50#!"
+ house_head_create_faction_cohesion_hard_tt: "[Concept('bloc','Blok')|EU] musí mít [Concept('bloc_cohesion','soudržnost bloku')|E] alespoň #V 75#!" # todo: CHANGED (predtym: [Concept('bloc','Blok')|EU] musí mít [Concept('cohesion','soudržnost')|E] alespoň V 75 !)
+ house_head_create_faction_cohesion_tt: "[Concept('bloc','Blok')|EU] musí mít [Concept('bloc_cohesion','soudržnost bloku')|E] alespoň #V 50#!" # todo: CHANGED (predtym: [Concept('bloc','Blok')|EU] musí mít [Concept('cohesion','soudržnost')|E] alespoň V 50 !)
  house_head_adopt_soryo_regency_tt: "[Concept('house','Rod')|EU] musí mít [Concept('house_aspiration','aspiraci rodu')|E] [GetHouseAspiration( 'strength' ).GetName|V]"
  japanese_establish_soryo_administration_imprison_tt: "Všichni povstalci budou [Concept('imprisoned','uvězněni')|E]"
  if_you_win_cd: "Pokud zvítězíš ve [Concept('war','válce')|E]:"

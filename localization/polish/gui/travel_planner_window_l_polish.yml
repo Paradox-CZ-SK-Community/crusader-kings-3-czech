@@ -33,8 +33,8 @@
  TRAVEL_LEADER_SPEED_APTITUDE: "Způsobilost pro rychlost cestování"
  TRAVEL_LEADER_SAFETY_APTITUDE: "Způsobilost pro bezpečnost cestování"
  TRAVEL_TOTAL_COST: "Náklady: [TravelPlanData.GetTotalCost]"
- TRAVEL_LEADER_COST_IN_BREAKDOWN: "Vůdce karavany: [gold_i|E] $VALUE$"
- TRAVEL_OPTION_COST_IN_BREAKDOWN: "$OPTION_NAME$: [gold_i|E] $VALUE$"
+ TRAVEL_LEADER_COST_IN_BREAKDOWN: "Vůdce karavany: [Concept('gold_i','@gold_icon!')|E] $VALUE$" # todo: CONCEPT CASE
+ TRAVEL_OPTION_COST_IN_BREAKDOWN: "$OPTION_NAME$: [Concept('gold_i','@gold_icon!')|E] $VALUE$" # todo: CONCEPT CASE
  TRAVEL_TIME_MULTI_DESTINATION: "@time_icon! [ActivityPlanner.GetTravelDaysForPhase(PlannedActivityPhase.Self)] dní"
  TRAVEL_TIME_MULTI_DESTINATION_TT: "#T Doba cesty: [ActivityPlanner.GetTravelDaysForPhase(PlannedActivityPhase.Self)] dní#!"
  TRAVEL_MULTI_DESTINATION_SUMMARY: "Souhrn: @time_icon! [ActivityPlanner.GetAsTravelPlanner.GetTravelPlanData.GetFinalDestination.GetEstimatedArrivalDate.GetTimeDiffFromNow]"
@@ -103,7 +103,7 @@
  TRAVEL_PLANNER_INVITED_WILL_NOT_ARRIVE_IN_TIME: "@warning_icon! #X Na aktivitu [Activity.GetShortNameNoTooltip] nedorazíš včas#!"
  TRAVEL_POINT_OF_INTEREST_TT_ON_VISIT_EFFECT_HEADER: "#S Při návštěvě#!"
  TRAVEL_POINT_OF_INTEREST_TT_ON_VISIT_EFFECT_VISITED_HEADER: "#S Při návštěvě#! #I (již navštíveno)#!"
- TRAVEL_POINT_OF_INTEREST_TT_poi_special_buildings: "[Province.GetHolding.GetCurrentSpecialBuildingType.GetName]"
+ TRAVEL_POINT_OF_INTEREST_TT_poi_special_buildings: "[Province.GetHolding.GetSpecialDistrictType.GetPrimaryBuildingType.CalcTriggeredName(Province.Self)]" # todo: CHANGED (predtym: [Province.GetHolding.GetCurrentSpecialBuildingType.GetName])
  TRAVEL_POINT_OF_INTEREST_TT_poi_special_buildings_martial: "$TRAVEL_POINT_OF_INTEREST_TT_poi_special_buildings$"
  TRAVEL_POINT_OF_INTEREST_TT_poi_special_buildings_religious: "$TRAVEL_POINT_OF_INTEREST_TT_poi_special_buildings$"
  TRAVEL_POINT_OF_INTEREST_TT_poi_standalone_holy_site: "[ConceptByKey( Select_CString( Province.MakeScope.Var('poi_standalone_holy_site_faith').Faith.IsEminentHolySite( Province.MakeScope.Var('poi_standalone_holy_site').HolySite.Self ), 'eminent_holy_site', 'holy_site' ) )|E] víry [Province.MakeScope.Var('poi_standalone_holy_site_faith').Faith.GetName]: [Province.MakeScope.Var('poi_standalone_holy_site').HolySite.GetName]"
@@ -120,7 +120,7 @@
  poi_grand_city_visit_event_tt: "Spustí událost prohlídky pamětihodností"
  TRAVEL_POINT_OF_INTEREST_TT_poi_legend_capitals: "Místo zrodu legendy [Province.GetTitle.GetHolder.GetPromotedLegend.GetName]"
  TRAVEL_POINT_OF_INTEREST_TT_poi_special_buildings_stress_relief: "$TRAVEL_POINT_OF_INTEREST_TT_poi_special_buildings$"
- TRAVEL_POINT_OF_INTEREST_TT_poi_silk_road_node: "[Province.GetHolding.GetCurrentSpecialBuildingType.GetName]"
- TRAVEL_POINT_OF_INTEREST_TT_poi_mandala_capital: "[GetBuilding('mandala_capital_01').GetName]"
+ TRAVEL_POINT_OF_INTEREST_TT_poi_silk_road_node: "$TRAVEL_POINT_OF_INTEREST_TT_poi_special_buildings$" # todo: CHANGED (predtym: [Province.GetHolding.GetCurrentSpecialBuildingType.GetName])
+ TRAVEL_POINT_OF_INTEREST_TT_poi_mandala_capital: "[GetBuildingType('mandala_capital_01').GetName]" # todo: CHANGED (predtym: [GetBuilding('mandala_capital_01').GetName])
  TRAVEL_POINT_OF_INTEREST_TT_poi_grand_cathedral: "$building_type_great_project_cathedral_01$"
  TRAVEL_POINT_OF_INTEREST_TT_poi_buried_saint: "Posvěcený světec"

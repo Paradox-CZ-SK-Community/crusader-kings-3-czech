@@ -1,14 +1,14 @@
 ﻿l_polish:
  ATTRITION_ICON_TITLE: "#T Armáda utrpí [Concept('attrition','opotřebení')|E]#!"
- ARMY_EMBARKED_PENALTY: "[embarked|E]: @advantage_icon!$EFFECT|0+=$ ($DAYS_LEFT$ dní)"
- ARMY_RECENTLY_DISEMBARKED_PENALTY: "[recently_disembarked|E]: @advantage_icon!$EFFECT|0+=$ ($DAYS_LEFT$ dní)"
+ ARMY_EMBARKED_PENALTY: "[Concept('embarked','Naloděno')|E]: @advantage_icon!$EFFECT|0+=$ ($DAYS_LEFT$ dní)" # todo: CONCEPT CASE
+ ARMY_RECENTLY_DISEMBARKED_PENALTY: "[Concept('recently_disembarked','Nedávno vyloděno')|E]: @advantage_icon!$EFFECT|0+=$ ($DAYS_LEFT$ dní)" # todo: CONCEPT CASE
  MAP_ICON_RECENTLY_DISEMBARKED_TOOLTIP: "#T Nedávno vyloděno#!\nBude považováno za [Concept('recently_disembarked','nedávno vyloděné')|E] ještě [UnitItem.GetArmy.GetDisembarkPenaltyDays] dní"
  COMMANDER_IS_LEADER: "#underline #TOOLTIP:COMMANDER_IS_LEADER_TOOLTIP Velí vládce#!#!"
  COMMANDER_IS_LEADER_TOOLTIP: "#T Velí vládce#!\nTéto armádě velí [Character.GetName], což jí dává následující bonusy:\n[GetLeadingTroopsBonus]"
  POTENTIAL_COMMANDER_IS_LEADER_TOOLTIP: "#T Vládce#!\nVelení vlastní [Concept('army','armádě')|E] by přineslo:\n[GetLeadingTroopsBonus]"
  RP_TOOLTIP_CLICK: "#T [RallyPoint.GetName]#!\n$CLICK_TO_VIEW$"
  ARMY_TOOLTIP_IS_GATHERING: "Shromažďování ([Army.GetGatheringDaysLeft] dní)"
- ARMY_TOOLTIP_IS_MOVEMENT_LOCKED: "[movement_locked|E]"
+ ARMY_TOOLTIP_IS_MOVEMENT_LOCKED: "[Concept('movement_locked','Pohyb uzamčen')|E]" # todo: CONCEPT CASE
  UNIT_ITEMS: "([UnitMapIcon.GetShownCount])"
  RAID_ARMY_TOOLTIP: "#T Nájezdník#!\nTato armáda je na [Concept('raid','nájezdu')|E].\nNese [loot_i][Army.GetRaidLoot|V0]."
  ARMY_AT_LOOT_CAP: "Nelze nést více [Concept('loot','kořisti')|E]"
@@ -23,13 +23,13 @@
  MAP_BARTER_TOOLTIP: "#T Probíhající směnná výprava#!\nOdhadované dokončení: [BarterMission.GetEta.GetString].\nVýsledná [Concept('loot','kořist')|E]: [loot_i][BarterMission.GetProvince.GetLoot|0V].\n\n#I Kliknutím zobrazíš směnu.#!"
  BARTER_ARMY_TOOLTIP: "#T Směnná výprava#!\nTato armáda je na výpravě za [Concept('barter','směnou')|E].\nNese [loot_i][Army.GetBarterLoot|V0] [Concept('loot','kořisti')|E]."
  RECENTLY_BARTERED_TOOLTIP: "#T Nedávno směněno#!\nS touto državou se nedávno směňovalo a nelze s ní znovu směňovat do [Province.GetEndOfRecentlyLooted.GetString]"
- ARMY_LOOT_INFO: "[loot|E]: [loot_i][Army.GetRaidLoot|V0]/[Army.GetLootCap|0]"
+ ARMY_LOOT_INFO: "[Concept('loot','Kořist')|E]: [loot_i][Army.GetRaidLoot|V0]/[Army.GetLootCap|0]" # todo: CONCEPT CASE
  MAP_ICON_EMBARK_COST: "[GetPlayer.GetTreasuryOrGoldPrefix][FleetPredictionMapIcon.GetEmbarkCost|V0][Select_CString(FleetPredictionMapIcon.IsCostOverOwned, '@warning_icon!', '')]"
- MAP_ICON_UNIQUE_BUILDING_CAN_BUILD: "#I Tuto budovu můžeš postavit#!\n\n"
- MAP_ICON_UNIQUE_BUILDING_CANT_BUILD: "#X @warning_icon! Tuto budovu nemůžeš postavit#!\n\n"
- MAP_ICON_UNIQUE_BUILDING_CANT_USE: "#X @warning_icon! Tuto budovu nemůžeš používat#!\n\n"
- MAP_ICON_UNIQUE_BUILDING: "#T [UniqueBuildingIcon.GetBuildingType.GetNameNoTooltip]#!\n[UniqueBuildingIcon.GetBuildingType.GetDescription]\n\n[SelectLocalization( And( Not( UniqueBuildingIcon.IsBuilt ), UniqueBuildingIcon.CanConstruct ), 'MAP_ICON_UNIQUE_BUILDING_CAN_BUILD', '' )][SelectLocalization( And( Not( UniqueBuildingIcon.IsBuilt), Not( UniqueBuildingIcon.CanConstruct ) ), 'MAP_ICON_UNIQUE_BUILDING_CANT_BUILD', '' )][SelectLocalization( And( UniqueBuildingIcon.IsBuilt, Not( UniqueBuildingIcon.IsEnabled ) ), 'MAP_ICON_UNIQUE_BUILDING_CANT_USE', '' )]#T Účinek:#!\n[UniqueBuildingIcon.GetEffect]"
- MAP_ICON_GREAT_BUILDING: "#T [Building.GetNameNoTooltip]#!\n[Building.GetDescription]\n\n[SelectLocalization( And( Not( GreatBuildingIcon.IsBuilt ), GreatBuildingIcon.CanConstruct ), 'MAP_ICON_UNIQUE_BUILDING_CAN_BUILD', '' )][SelectLocalization( And( Not( GreatBuildingIcon.IsBuilt), Not( GreatBuildingIcon.CanConstruct ) ), 'MAP_ICON_UNIQUE_BUILDING_CANT_BUILD', '' )][SelectLocalization( And( GreatBuildingIcon.IsBuilt, Not( GreatBuildingIcon.IsEnabled ) ), 'MAP_ICON_UNIQUE_BUILDING_CANT_USE', '' )]\n[GreatBuildingIcon.GetEffect]"
+ MAP_ICON_UNIQUE_DISTRICT_CAN_BUILD: "#I Můžete postavit tuto čtvrť#!\n\n" # todo: NEW TRANSLATION
+ MAP_ICON_UNIQUE_DISTRICT_CANT_BUILD: "#X @warning_icon! Tuto čtvrť nemůžete postavit#!\n\n" # todo: NEW TRANSLATION
+ MAP_ICON_UNIQUE_DISTRICT_CANT_USE: "#X @warning_icon! Tuto čtvrť nemůžete používat#!\n\n" # todo: NEW TRANSLATION
+ MAP_ICON_UNIQUE_DISTRICT: "#T [UniqueDistrictIcon.GetDistrictType.GetPrimaryBuildingType.GetNameNoTooltip]#!\n[UniqueDistrictIcon.GetDistrictType.GetPrimaryBuildingType.GetDescription]\n\n[SelectLocalization( And( Not( UniqueDistrictIcon.IsBuilt ), UniqueDistrictIcon.CanConstruct ), 'MAP_ICON_UNIQUE_DISTRICT_CAN_BUILD', '' )][SelectLocalization( And( Not( UniqueDistrictIcon.IsBuilt), Not( UniqueDistrictIcon.CanConstruct ) ), 'MAP_ICON_UNIQUE_DISTRICT_CANT_BUILD', '' )][SelectLocalization( And( UniqueDistrictIcon.IsBuilt, Not( UniqueDistrictIcon.IsEnabled ) ), 'MAP_ICON_UNIQUE_DISTRICT_CANT_USE', '' )]#T Efekt:#!\n[UniqueDistrictIcon.GetEffect]" # todo: NEW TRANSLATION
+ MAP_ICON_GREAT_DISTRICT: "#T [DistrictType.GetPrimaryBuildingType.GetNameNoTooltip]#!\n[DistrictType.GetPrimaryBuildingType.GetDescription]\n\n[SelectLocalization( And( Not( GreatDistrictIcon.IsBuilt ), GreatDistrictIcon.CanConstruct ), 'MAP_ICON_UNIQUE_DISTRICT_CAN_BUILD', '' )][SelectLocalization( And( Not( GreatDistrictIcon.IsBuilt), Not( GreatDistrictIcon.CanConstruct ) ), 'MAP_ICON_UNIQUE_DISTRICT_CANT_BUILD', '' )][SelectLocalization( And( GreatDistrictIcon.IsBuilt, Not( GreatDistrictIcon.IsEnabled ) ), 'MAP_ICON_UNIQUE_DISTRICT_CANT_USE', '' )]\n[GreatDistrictIcon.GetEffect]" # todo: NEW TRANSLATION
  MAP_ICON_PROVISIONS_LOW_TT: "#X Za tímto bodem začne docházet [Concept('provisions','proviant')|E] — nastanou události [Concept('privation','strádání')|E]!#!"
  MAP_ICON_PROVISIONS_CRITICAL_TT: "#XB Za tímto bodem dojde [Concept('provisions','proviant')|E] — nastanou extrémní události [Concept('privation','strádání')|E]!#!"
  MAP_ICON_LANDLESS_RULERS_COUNT: "+[Subtract_int32( LandlessRulersMapIcon.GetValidDomicilesCount, '(int32)1')]"
@@ -46,3 +46,8 @@
  MAP_ICON_DETAILED_BARTER_LOOT_ONGOING_TT: "#T Probíhající směnná výprava#!\nOdhadované dokončení: [DetailedBarterIcon.GetBarter.GetEta.GetString]\nVýsledná [Concept('loot','kořist')|E]: [loot_i][DetailedBarterIcon.GetProvince.GetLoot|0V]\nPotřebné [Concept('barter_goods','směnné zboží')|E]: [barter_goods_i][DetailedBarterIcon.GetProvince.GetBarterGoodsNeeded|0V]\n$MAP_ICON_BARTER_WARNING$\n#I Kliknutím zobrazíš [Concept('barter','směnu')|E].#!\n$MAP_ICON_DETAILED_BARTER_LOOT_HOLD_ALT_TT$"
  MAP_ICON_DETAILED_BARTER_LOOT_HOLD_ALT_TT: "#I Podržením Alt zobrazíš všechny državy s kořistí, ve kterých můžeš provést [Concept('barter','směnu')|E].#!"
  MAP_ICON_ACTIVITY_DISABLED: "[Activity.GetInvolvementText( Character.Self, 'hud' )]\n\n#X @warning_icon! Aktivita už začala, nedorazíš včas nebo jsi nebyl pozván#!"
+ MAP_ICON_TRADE_POST_TT: "#T Obchodní stanice#!\nNachází se [CZPrepV(Province.GetNameNoTooltip)] [CZProvName(Province,'L')]\nVlastní ji [Title.Custom('CZ_LandedName_G')]\n\n#I;P Kliknutím zobrazíte#!" # todo: NEW TRANSLATION
+ MAP_ICON_TRADE_MARKET_TRADE_POSTS: "Obchodní stanice na trhu: [TradeMarketIcon.GetCurrentTradePostCount] / [TradeMarketIcon.GetMaximumTradePostCount]" # todo: NEW TRANSLATION
+ REALM_FLAG_SAME_BLOC: "#T Stejný blok#!\n[Character.GetConfederation.GetName]" # todo: NEW TRANSLATION
+ REALM_FLAG_SAME_CONFEDERATION: "#T Stejná konfederace#!\n[Character.GetConfederation.GetName]" # todo: NEW TRANSLATION
+ REALM_FLAG_SHARED_MEMBERSHIP: "\n[SelectLocalization( Character.GetConfederation.IsHouseBasedConfederation, 'REALM_FLAG_SAME_BLOC', 'REALM_FLAG_SAME_CONFEDERATION' )]" # todo: NEW TRANSLATION

@@ -1,8 +1,8 @@
 ﻿l_polish:
  ecclesiastical_domicile_domicile_title: "Církevní statek [CHARACTER.GetPrimaryTitle.Custom('CZ_LandedNameNoTierNoTooltip_G')]"
- ecclesiastical_domicile_type: "$game_concept_ecclesiastical_domicile$"
+ ecclesiastical_domicile_type: "$game_concept_ecclesiastical_estate$" # todo: CONCEPT CASE
  ecclesiastical_domicile_type_tooltip: "$ECCLESIASTICAL_DOMICILE_CONCEPT$"
- ecclesiastical_domicile_domicile_type: "$game_concept_ecclesiastical_domicile$"
+ ecclesiastical_domicile_domicile_type: "$game_concept_ecclesiastical_estate$" # todo: CONCEPT CASE
  ecclesiastical_domicile_domicile_type_possessive: "Církevního statku"
  ecclesiastical_domicile_domicile_type_tooltip: "$ECCLESIASTICAL_DOMICILE$"
  ECCLESIASTICAL_DOMICILE: "[Concept('ecclesiastical_domicile','církevní statek')|E]"
@@ -84,9 +84,9 @@
  estate_cloister_take_vows_reason: "[Concept('ecclesiastical_domicile_building','Budova církevního statku')|EU] [GetDomicileBuilding('cloister_01').GetName] přidává: $VALUE|+0=$"
  domicile_building_parameter_estate_cloister_monastic_movement: "[Concept('decision','Rozhodnutí')|EU] [GetDecision('pam_monastic_order_new_movement_decision').GetName] má nižší náklady a mírnější požadavky"
  cloister_build_existing_order_options_invalid: "#warning V [Concept('archdiocese','arcidiecézi')|E], v níž se nachází tvůj [Concept('domicile','domicil')|E], #bold není#! žádná držba [Concept('lease','pronajatá')|E] [Concept('holy_order','svatému řádu')|E]#X"
- great_project_grand_cathedral_required: "Dokonči [Concept('great_project','velký projekt')|E] [GetBuilding('great_project_cathedral_01').GetName|V] v místě svého [Concept('domicile','domicilu')|E], aby se automaticky postavila budova [GetDomicileBuilding('ecclesiastical_domicile_main_02').GetName]"
- great_project_grand_cathedral_02_required: "Dokonči [Concept('great_project','velký projekt')|E] [GetBuilding('great_project_cathedral_02').GetName|V] v místě svého [Concept('domicile','domicilu')|E], aby se automaticky postavila budova [GetDomicileBuilding('ecclesiastical_domicile_main_03').GetName]"
- great_project_grand_cathedral_03_required: "Dokonči [Concept('great_project','velký projekt')|E] [GetBuilding('great_project_cathedral_03').GetName|V] v místě svého [Concept('domicile','domicilu')|E], aby se automaticky postavila budova [GetDomicileBuilding('ecclesiastical_domicile_main_04').GetName]"
+ great_project_grand_cathedral_required: "Dokonči [Concept('great_project','velký projekt')|E] [GetBuildingType('great_project_cathedral_01').GetName|V] [Concept('building','budova')|E] v místě svého [Concept('domicile','domicilu')|E], aby se automaticky postavila budova [GetDomicileBuilding('ecclesiastical_domicile_main_02').GetName]" # todo: CHANGED (predtym: Dokonči [Concept('great_project','velký projekt')|E] [GetBuilding('great_project_cathedral_01').GetName|V] v místě svého) # todo: CONCEPT CASE
+ great_project_grand_cathedral_02_required: "Dokonči [Concept('great_project','velký projekt')|E] [GetBuildingType('great_project_cathedral_02').GetName|V] [Concept('building','budova')|E] v místě svého [Concept('domicile','domicilu')|E], aby se automaticky postavila budova [GetDomicileBuilding('ecclesiastical_domicile_main_03').GetName]" # todo: CHANGED (predtym: Dokonči [Concept('great_project','velký projekt')|E] [GetBuilding('great_project_cathedral_02').GetName|V] v místě svého) # todo: CONCEPT CASE
+ great_project_grand_cathedral_03_required: "Dokonči [Concept('great_project','velký projekt')|E] [GetBuildingType('great_project_cathedral_03').GetName|V] [Concept('building','budova')|E] v místě svého [Concept('domicile','domicilu')|E], aby se automaticky postavila budova [GetDomicileBuilding('ecclesiastical_domicile_main_04').GetName]" # todo: CHANGED (predtym: Dokonči [Concept('great_project','velký projekt')|E] [GetBuilding('great_project_cathedral_03').GetName|V] v místě svého) # todo: CONCEPT CASE
  estate_increase_chronicler_aptitude_desc: "[Concept('domicile','Domicil')|EU]"
  domicile_building_parameter_estate_increase_chronicler_aptitude_1: "[Concept('aptitude','Způsobilost')|EU] pro pozici [GetCourtPositionType('chronicler_court_position').GetName()]: #P +[EmptyScope.ScriptValue('ecclesiastical_domicile_chronicler_aptitude_value_1')|0]#!"
  domicile_building_parameter_estate_increase_chronicler_aptitude_2: "[Concept('aptitude','Způsobilost')|EU] pro pozici [GetCourtPositionType('chronicler_court_position').GetName()]: #P +[EmptyScope.ScriptValue('ecclesiastical_domicile_chronicler_aptitude_value_2')|0]#!"
@@ -462,4 +462,4 @@
  ESTATE_PAPAL_VOTE_REASON: "[GetDomicileBuilding('chancery_legation_01').GetName|U] ([Concept('ecclesiastical_domicile_building','budova církevního statku')|E]): $VALUE|=+0$"
  ESTATE_CATHEDRAL_AWE_REASON: "Vznešenost budovy [GetDomicileBuilding('ecclesiastical_domicile_main_02').GetName]: $VALUE|=+0$"
  STUDY_SCRIPTURE_ESTATE_SCHOOL: "[GetDomicileBuilding('church_school_01').GetName|U] ([Concept('ecclesiastical_domicile_building','budova církevního statku')|E]):
- STUDY_SCRIPTURE_ESTATE_CELLS: "[GetDomicileBuilding('cloister_study_cells_01').GetName] [ecclesiastical_domicile_building|E]: $VALUE|+0=$"
+ STUDY_SCRIPTURE_ESTATE_CELLS: "[GetDomicileBuilding('cloister_study_cells_01').GetName] [Concept('ecclesiastical_domicile_building','$game_concept_ecclesiastical_estate_building$')|E]: $VALUE|+0=$" # todo: CONCEPT CASE

@@ -1,0 +1,734 @@
+﻿l_polish:
+ merchant_patron_request_interaction: "Vznést žádost" # todo: NEW TRANSLATION
+ merchant_patron_request_interaction_desc: "Využij svého vlivu jako [Concept('merchant_patron','patron')|E] [recipient.GetShortUIName] a požádej [Select_CString(recipient.IsFemale,'její','jeho')] o laskavost" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ must_be_your_merchant_tributary_tt: "[actor.GetShortUIName|U] musí být [Concept('merchant_patron','patron')|E] [recipient.Custom('CZ_ShortUIName_G')|U]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ must_be_your_merchant_patron_tt: "[recipient.GetShortUIName|U] musí být [Concept('merchant_patron','patron')|E] [actor.Custom('CZ_ShortUIName_G')|U]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_patron_request_interaction_request_gold: "Požádat o [gold_i|E][Concept('gold','zlato')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_patron_request_interaction_request_gold_desc: "Požádej [recipient.GetShortUIName] o půjčku [gold_i|E][Concept('gold','zlata')|E] výměnou za [hook_i|E][Concept('hook','páku')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_patron_request_interaction_fund_maa: "Požádat o sponzorování [men_at_arms_i|E][Concept('men_at_arms','ozbrojence')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_patron_request_interaction_fund_maa_desc: "Požádej [recipient.GetShortUIName], aby uhradil náklady na pluk [Concept('men_at_arms_i','@house_guard_icon!')|E][Concept('men_at_arms','ozbrojenců')|E] [Concept('regiment','pluku')|E] výměnou za [hook_i|E][Concept('hook','páku')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_patron_request_interaction_fund_mercenaries: "Požádat o sponzorování [mercenary_i|E][Concept('mercenary','žoldnéře')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_patron_request_interaction_fund_maa_mercenaries_desc: "Požádej [recipient.GetShortUIName|U], aby dotoval tvé výdaje za [mercenary_i|E][Concept('mercenary','žoldnéře')|E] výměnou za [hook_i|E][Concept('hook','páku')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_patron_request_interaction.request_gold_recipient_not_enough_gold: "[recipient.GetShortUIName|U] [CharHaveHas(recipient)] nemá dostatek [Concept('gold','zlato')|E], aby se mohl podělit #weak ([recipient.GetGold|0]/[actor.MakeScope.ScriptValue('major_gold_value')|0])#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_patron_request_interaction.fund_maa_recipient_not_enough_gold: "[actor.GetShortUIName|U] [CharHaveHas(actor)] nemá dostatek [Concept('gold_i','@gold_icon!')|E][Concept('gold','zlata')|E] na sponzorování #weak ([actor.GetGold|0]/[actor.MakeScope.ScriptValue('sponsor_war_value')|0])#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_patron_request_interaction.desires_hook: "[recipient.GetShortUIName|U] požaduje [Concept('hook_i','@cs_weak_hook_icon!')|E][Concept('hook','páky')|E]: $VALUE|+=0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_patron_request_interaction_extra_icon: "$hook_extra_icon$" # todo: NEW TRANSLATION
+ MERCHANT_PATRON_REQUEST_GOLD_NOTIFICATION: "Musím požádat o skromnou půjčku, kterou splatím, jakmile mi to okolnosti dovolí. $MERCHANT_PATRON_REQUEST_NOTIFICATION$" # todo: NEW TRANSLATION
+ MERCHANT_PATRON_REQUEST_MERCENARIES_NOTIFICATION: "Jsem nucen požádat tě o pomoc s náborem žoldnéřů. $MERCHANT_PATRON_REQUEST_NOTIFICATION$" # todo: NEW TRANSLATION
+ MERCHANT_PATRON_REQUEST_MAA_NOTIFICATION: "Nezbývá mi než tě požádat o pomoc s vybavením ozbrojenců. $MERCHANT_PATRON_REQUEST_NOTIFICATION$" # todo: NEW TRANSLATION
+ MERCHANT_PATRON_REQUEST_NOTIFICATION: "Panství nezapomene na tvou podporu v této záležitosti." # todo: NEW TRANSLATION
+ merchant_patron_request_interaction.fund_maa: "Najmeš náhodný pluk [Concept('men_at_arms','ozbrojenci')|E] [Concept('regiment','pluku')|E] (#EMP Velikost #V 1#!#!)\n#weak Typ může být libovolný, k němuž má [actor.GetShortUIName] [CharHaveHas(actor)] přístup#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_patron_request_interaction.fund_maa_tt: "Ozbrojenci sponzorováni" # todo: NEW TRANSLATION
+ merchant_patron_made_request_opinion: "Využil mě kvůli laskavostem" # todo: NEW TRANSLATION
+ merchant_patron_fund_mercenaries_modifier: "Sponzor žoldnéřů" # todo: NEW TRANSLATION
+ merchant_patron_fund_mercenaries_modifier_desc: "Tato postava dostává sponzorský příspěvek na žoldnéře jako patron obchodníka." # todo: NEW TRANSLATION
+ merchant_patron_request_interaction.fund_mercenaries_tt: "Žoldnéři sponzorováni" # todo: NEW TRANSLATION
+ merchant_patron_request_interaction_fund_buildings: "Požádat o [building_i][Concept('building','budovu')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_patron_request_interaction_fund_buildings_desc: "Požádej [recipient.GetShortUIName], aby v jedné z tvých [Concept('holdings','držav')|E] vylepšil [Concept('building','budova')|E] pomocí [Concept('character_interaction','interakce s postavou')|E] $merchant_sponsor_construction_interaction$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_patron_request_interaction.fund_buildings_recipient_cannot_sponsor: "[recipient.GetShortUIName|U] nemůže použít $merchant_sponsor_construction_interaction$" # todo: NEW TRANSLATION
+ merchant_patron_request_interaction.fund_buildings_patron_not_landed: "Abys mohl požádat o [Concept('building','budovu')|E], musíš držet [Concept('land','pozemek')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_patron_request_interaction.fund_buildings_promise_active: "[recipient.GetShortUIName|U] už má nesplněný příslib výstavby" # todo: NEW TRANSLATION
+ MERCHANT_PATRON_REQUEST_FUND_BUILDINGS_NOTIFICATION: "Musím tě požádat, abys dostál naší dohodě a sponzoroval vylepšení mých držav. $MERCHANT_PATRON_REQUEST_NOTIFICATION$" # todo: NEW TRANSLATION
+ merchant_patron_request_interaction.fund_buildings: "[recipient.GetShortUIName|U] musí do #V 5#! let vylepšit [Concept('building','budova')|E] v jedné z tvých [Concept('holding','državy')|E] pomocí [Concept('character_interaction','interakce s postavou')|E] $merchant_sponsor_construction_interaction$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_patron_request_interaction.fund_buildings_patron_toast: "Výstavba přislíbena" # todo: NEW TRANSLATION
+ merchant_patron_request_interaction.fund_buildings_patron_tt: "[recipient.GetShortUIName|U] slibuje, že do #V 5#! let vylepší [Concept('building','budova')|E] v jedné z tvých [Concept('holdings','držav')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_patron_request_interaction.fund_buildings_merchant_toast: "Výstavba dlužná" # todo: NEW TRANSLATION
+ merchant_patron_request_interaction.fund_buildings_merchant_tt: "Pokud slib nesplní, ztratí [Concept('prestige_i','@prestige_icon!')|E] [EmptyScope.ScriptValue('medium_prestige_loss')|N0-]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_patron_request_interaction.fund_buildings.stewardship_focus: "[recipient.GetShortUIName|U] se zaměřuje na správcovství: $VALUE|+=0$" # todo: NEW TRANSLATION
+ merchant_patron_request_interaction.fund_buildings.recipient_poor: "[recipient.GetShortUIName|U] nemá na výstavbu dost zlata: $VALUE|+=0$" # todo: NEW TRANSLATION
+ gdp_merchant_patron_fund_buildings_promise_fulfilled_toast: "Příslib výstavby splněn" # todo: NEW TRANSLATION
+ gdp_merchant_patron_fund_buildings_promise_fulfilled_tt: "[merchant_temp.GetShortUIName|U] splnil [merchant_temp.GetHerHisYour] slib sponzorovat výstavbu v zemích [recipient.Custom('CZ_ShortUIName_G')]" # todo: NEW TRANSLATION
+ gdp_merchant_patron_fund_buildings_promise_unfulfilled_toast: "Příslib výstavby porušen" # todo: NEW TRANSLATION
+ action_merchant_patron_fund_buildings_promise: "Nesplněný příslib výstavby" # todo: NEW TRANSLATION
+ action_merchant_patron_fund_buildings_promise_label: "@building_icon! Sponzorovat državy [patron.Custom('CZ_ShortUIName_G')|V]" # todo: NEW TRANSLATION
+ action_merchant_patron_fund_buildings_promise_desc: "Souhlasil jsi s vylepšením [Concept('building','budovou')|E] v [Concept('holdings','državách')|E] [patron.Custom('CZ_ShortUIName_G')] pomocí [Concept('character_interaction','interakce s postavou')|E] $merchant_sponsor_construction_interaction$. Zbývá ti [RemainingTime('merchant_patron_fund_buildings_promise')]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ action_merchant_patron_fund_buildings_promise_click: "#I Kliknutím otevřeš jejich hlavní državu#" # todo: NEW TRANSLATION
+ put_on_notice_interaction: "Upozornit" # todo: NEW TRANSLATION
+ put_on_notice_interaction_desc: "Utrať [competitive_pressure_i][Concept('competitive_pressure','konkurenčního tlaku')|E] a zahaj proti [recipient.GetShortUIName] [Concept('trade_opportunity','obchodní příležitosti')|E] namířenou proti soupeři" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ put_on_notice_interaction_challenge_competitor: "$challenge_competitor_contract$" # todo: NEW TRANSLATION
+ put_on_notice_interaction_challenge_competitor_desc: "Zahaj proti [recipient.GetShortUIName] [Concept('trade_opportunity','obchodní příležitosti')|E] $challenge_competitor_contract$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ put_on_notice_interaction_sabotage_competition: "$sabotage_competition_contract$" # todo: NEW TRANSLATION
+ put_on_notice_interaction_sabotage_competition_desc: "Zahaj proti [recipient.GetShortUIName] [Concept('trade_opportunity','obchodní příležitosti')|E] $sabotage_competition_contract$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ put_on_notice_interaction_disrupt_charter: "$disrupt_charter_contract$" # todo: NEW TRANSLATION
+ put_on_notice_interaction_disrupt_charter_desc: "Zahaj proti [recipient.GetShortUIName] [Concept('trade_opportunity','obchodní příležitosti')|E] $disrupt_charter_contract$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_competitive_pressure_put_on_notice_spend_tt: "Utratíš [competitive_pressure_i]#N [EmptyScope.ScriptValue('merchant_competitive_pressure_put_on_notice_cost_value')|0]#! [Concept('competitive_pressure','konkurenční tlak')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_competitive_pressure_put_on_notice_spend_cost_tt: "Máš alespoň [competitive_pressure_i]#V [EmptyScope.ScriptValue('merchant_competitive_pressure_put_on_notice_cost_value')|0]#! [Concept('competitive_pressure','konkurenční tlak')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ put_on_notice_target_market_tt: "[recipient.GetShortUIName|U] musí působit na jednom z tvých [Concept('trade_markets','obchodních trhů')|E] na [Concept('trade_route','obchodní trasu')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ put_on_notice_challenge_competitor_target_tt: "[recipient.GetShortUIName|U] musí působit na jednom z tvých [Concept('trade_markets','obchodních trhů')|E] na [Concept('trade_route','obchodní trasu')|E], kde tvá [Concept('competitiveness','konkurenceschopnost')|E] už není ovlivněna smlouvou $challenge_competitor_contract$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ put_on_notice_disrupt_charter_target_tt: "[recipient.GetShortUIName|U] musí držet [Concept('charter','listina')|E] od [Concept('merchant_patron','patrona')|E] [recipient.GetHerHis]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ put_on_notice_no_existing_rival_trade_opportunity_tt: "Už nemáš [Concept('trade_opportunity','obchodní příležitost')|E] namířenou proti soupeři" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merge_company_interaction: "Sloučit společnost" # todo: NEW TRANSLATION
+ merge_company_interaction_desc: "Navrhni pohlcení [recipient.GetPrimaryTitle.GetDefinitiveName] do [actor.GetPrimaryTitle.GetDefinitiveName|l], rozpuštění její sítě a posílení tvé [Concept('trade_competitiveness','obchodní konkurenceschopnost')|E] na jejích bývalých [Concept('trade_markets','obchodních trhů')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merge_company_interaction_notification: "Vzdej se [recipient.GetPrimaryTitle.GetDefinitiveNameNoTooltip], jejích listin a obchodních tras a staň se součástí [actor.GetPrimaryTitle.GetDefinitiveNameNoTooltip]." # todo: NEW TRANSLATION
+ merge_company_interaction_extra_icon: "$strong_hook_extra_icon$" # todo: NEW TRANSLATION
+ merge_company_interaction_recipient_has_routes_tt: "[recipient.GetShortUIName|U] musí provozovat alespoň jednu [Concept('trade_route','obchodní trasu')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merge_company_absorb_house_courtiers_tt: "[Concept('merchant_family','Kupecká rodina')|E] [recipient.GetPrimaryTitle.GetName] se připojí k tvé [Concept('company','společnosti')|E] jako [Concept('associates','společníci')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merge_company_competitive_pressure_send_option: "Vynaložit [competitive_pressure_i][Concept('competitive_pressure','konkurenčního tlaku')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_competitive_pressure_merge_company_spend_tt: "Utratíš [competitive_pressure_i]#N [EmptyScope.ScriptValue('merchant_competitive_pressure_merge_company_cost_value')|0]#! [Concept('competitive_pressure','konkurenční tlak')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_competitive_pressure_merge_company_spend_cost_tt: "Máš alespoň [competitive_pressure_i]#V [EmptyScope.ScriptValue('merchant_competitive_pressure_merge_company_cost_value')|0]#! [Concept('competitive_pressure','konkurenční tlak')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merge_company_larger_company_ai_acceptance: "Poměrná [Concept('company_size','velikost společnosti')|E]: $VALUE|=+0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merge_company_competitive_pressure_ai_acceptance: "Vynaložená [competitive_pressure_i][Concept('competitive_pressure','konkurenčního tlaku')|E]: $VALUE|=+0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MERGE_COMPANY_IN_WED_FROM_RECIPIENT_HOUSE_REASON: "[recipient.GetHouse.GetBaseName] uzavřel sňatek s [actor.GetHouse.GetBaseName]: $VALUE|=+0$" # todo: NEW TRANSLATION
+ MERGE_COMPANY_CLOSE_BUT_NO_HEIR_REASON: "[recipient.GetShortUIName|U] nemá dědice a je blízký [actor.GetShortUIName]: $VALUE|=+0$" # todo: NEW TRANSLATION
+ MERGE_COMPANY_ACTOR_LARGER_COMPANY_REASON: "[Concept('company','Společnost')|E] [actor.Custom('CZ_ShortUIName_G')] je větší než tvoje: $VALUE|=+0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MERGE_COMPANY_RECIPIENT_HAS_CHARTER_REASON: "[recipient.GetShortUIName|U] drží [Concept('charter','listina')|E]: $VALUE|=+0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MERGE_COMPANY_RECIPIENT_HAS_MONOPOLY_REASON: "[recipient.GetShortUIName|U] drží [Concept('trade_monopoly','obchodní monopol')|E]: $VALUE|=+0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MERGE_COMPANY_RECIPIENT_OWN_HEIR_REASON: "[recipient.GetShortUIName|U] má rodinného [Concept('heir','dědice')|E]: $VALUE|=+0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MERGE_COMPANY_GREEDY_GOLD_REASON: "[recipient.GetShortUIName|U] láká [gold_i][Concept('gold','zlata')|E]: $VALUE|=+0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merge_company_larger_company_tt: "Důvodem je menší [Concept('company_size','velikost společnosti')|E]:" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_unity_merger_gain: "sloučil se s jinou [Concept('company','společností')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_invite_associate_loss: "byl přijat jako [Concept('associate','společník')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merge_company_client_title: "Klientská společnost sloučena" # todo: NEW TRANSLATION
+ drive_them_hard_interaction: "Nemilosrdný dohled" # todo: NEW TRANSLATION
+ drive_them_hard_interaction_desc: "Zlepši [Concept('aptitude','způsobilost')|E] [Concept('court_position','dvorského úřadu')|E] [Select_CString(recipient.IsFemale,'její','jeho')] za cenu [Concept('opinion','mínění')|E] a [Concept('dread','hrůza')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ drive_them_hard_actor_dread_tt: "Máš alespoň [dread_i]#V [EmptyScope.ScriptValue('merchant_drive_them_hard_dread_required_value')|0]#! [Concept('dread','hrůza')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ drive_them_hard_court_position_holder_tt: "[recipient.GetShortUIName|U] zastává jeden z tvých [Concept('court_position','dvorského úřadu')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ drive_them_hard_already_driven_tt: "[recipient.GetShortUIName|U] už nepodléhá tvému nemilosrdnému dohledu" # todo: NEW TRANSLATION
+ drive_them_hard_aptitude_tt: "[Concept('aptitude','Způsobilost')|E] [Concept('court_position','Dvorský úřad')|E] [recipient.Custom('CZ_ShortUIName_G')]: [aptitude_i]#P +[EmptyScope.ScriptValue('merchant_drive_them_hard_court_position_aptitude_value')|0]#! na #V 5 let#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ drive_them_hard_unity_loss_desc: "$drive_them_hard_interaction$" # todo: NEW TRANSLATION
+ merchant_driven_hard_opinion: "Pod nemilosrdným dohledem" # todo: NEW TRANSLATION
+ merchant_driven_hard_opinion_desc: "[ROOT.Char.GetShortUIName|U] mě nemilosrdně nutil k práci." # todo: NEW TRANSLATION
+ merge_company_hostile_opinion: "Pohltil mou společnost" # todo: NEW TRANSLATION
+ merge_company_hostile_opinion_desc: "[ROOT.Char.GetShortUIName|U] rozložil mé [Concept('trade_routes','obchodní trasy')|E], aby posílil [ROOT.Char.GetHerHis] vlastní [Concept('company','společnost')|E]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_polished_introductions_opinion: "Vytříbené představení" # todo: NEW TRANSLATION
+ merchant_polished_introductions_opinion_desc: "[ROOT.Char.GetShortUIName|U] na tržišti udělal skvělý dojem." # todo: NEW TRANSLATION
+ trader_assigned_opinion: "Obchodník" # todo: NEW TRANSLATION
+ merchant_patron_request_interaction.request_gold.creditor: "[recipient.GetShortUIName|U] má [Concept('company_purpose','zaměření společnosti')|E] [GetLaw('company_purpose_creditor').GetName]: $VALUE|+=0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_purchase_land_interaction: "Koupit půdu" # todo: NEW TRANSLATION
+ merchant_purchase_land_interaction_desc: "Vyměň své [gold_i|E][Concept('gold','zlata')|E] za [Concept('title','titul')|E] a staň se [Concept('landed','zeměpánem')|E] [Concept('ruler','vládcem')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ PURCHASE_LAND_PROPOSAL_MERCHANT_REPUBLIC: "Navrhuji, abyste přenechali [target.Custom('CZ_LandedName_G')] [actor.Custom('GetRegionalUrbanEliteTermPlural')], aby mohli spravovat [target.GetCountyData.GetCapital.GetBaronyNameExplicitlyNoTooltip] jako svobodnou republiku, a to výměnou za zlato." # todo: NEW TRANSLATION
+ PURCHASE_LAND_PROPOSAL_MERCHANT_REPUBLIC_VASSAL: "Navrhuji, abyste přenechali [target.Custom('CZ_LandedName_G')] [actor.Custom('GetRegionalUrbanEliteTermPlural')], aby mohli spravovat [target.GetCountyData.GetCapital.GetBaronyNameExplicitlyNoTooltip] jako podřízenou republiku, a to výměnou za zlato." # todo: NEW TRANSLATION
+ merchant_purchase_land_interaction_noble_standing: "Usilovat o šlechtické postavení" # todo: NEW TRANSLATION
+ merchant_purchase_land_interaction_noble_standing_desc: "Požádat [recipient.Custom('CZ_ShortUIName_A')], aby ti pod vládou [recipient.GetHerHis] [Concept('government_form','formou vlády')|E] udělil půdu jako [Concept('noble','urozené')|E] [Concept('vassal','vazala')|E] místo [republic_i|E][Concept('republican','republikánské')|E] listiny" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_purchase_land_interaction_independent: "Získat [Concept('independent','nezávislý')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_purchase_land_interaction_independent_desc: "Požádat [recipient.Custom('CZ_ShortUIName_A')], aby tvé nové [republic_i|E][Concept('republic','republik')|E] udělil [Concept('independence','nezávislost')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_purchase_land_interaction_forgive_loan_desc: "Nabídnout, že [recipient.Custom('CZ_ShortUIName_G')] [Concept('loan','půjčka')|E] od tebe odpustíš" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ PURCHASE_LAND_REPUBLIC_REASON: "Požadavek na [republic_i|E][Concept('republican','republikánskou')|E] listinu: $VALUE|+=0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ PURCHASE_LAND_REPUBLIC_WILLING_REASON: "[recipient.Custom('CZ_ShortUIName_G')|U] [Concept('culture','Kultura')|E] #weak ([recipient.GetCulture.GetName])#! respektuje [Concept('republic_i','@government_type_republic!')|E][Concept('republics','republik')|E]: $VALUE|+=0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ PURCHASE_LAND_INDEPENDENT_REASON: "Požadavek na [Concept('independence','nezávislost')|E]: $VALUE|+=0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ PURCHASE_LAND_REPUBLIC_IN_DUCHY_REASON: "Jiná [Concept('republic_i','@government_type_republic!')|E][Concept('republic','republiky')|E] už drží půdu v [Concept('de_jure','de iure')|E] [Concept('duchy','vévodství')|E] [target.GetDeJureLiege.Custom('CZ_LandedNameNoTier_G')]: $VALUE|+=0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ purchase_land_vassal_obligation_republic_tt: "Při žádosti o [republic_i|E][Concept('republican','republikánskou')|E] listinu nelze nabídnout [Concept('vassal_obligations','povinnosti subjektů')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ purchase_land_independent_republic_tt: "O [Concept('independence','nezávislost')|E] lze požádat pouze při žádosti o [republic_i|E][Concept('republican','republikánskou')|E] listinu" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ purchase_land_independent_top_liege_tt: "O [Concept('independence','nezávislost')|E] lze požádat pouze [Concept('top_liege','nejvyšší lenní pán')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ PURCHASE_LAND_MUST_BE_COUNTY_TT: "Při žádosti o [republic_i|E][Concept('republican','republikánskou')|E] listinu lze koupit pouze [Concept('counties','hrabství')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ PURCHASE_LAND_REPUBLIC_KING_VASSAL_TT: "O [Concept('independence','nezávislost')|E] lze požádat pouze tehdy, pokud je [TARGET_CHARACTER.GetShortUIName] alespoň [Concept('king','král')|E]-[Concept('title_tier','úroveň')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ PURCHASE_LAND_REPUBLIC_HOLDING_TT: "Aby bylo možné vydat [Concept('republic_i','@government_type_republic!')|E][Concept('republic','republiky')|E] listinu, musí mít kupované [Concept('county','hrabství')|E] [Concept('castle','hradů')|E], [Concept('city','město')|E] nebo [Concept('tribal','kmenový')|E] [Concept('holding','držav')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ purchase_land_capital_becomes_city_tt: "Hlavní sídlo kupovaného [Concept('county','hrabství')|E] se stane [Concept('city_holding','městská država')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ purchase_land_tribal_holdings_become_castles_tt: "[Concept('tribal_holdings','Kmenové državy')|E] na kupované půdě se změní na [Concept('castle_holdings','hradní državy')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ purchase_land_other_tribal_holdings_become_castles_tt: "Všechna ostatní [Concept('tribal_holdings','kmenové državy')|E] na kupované půdě se změní na [Concept('castle_holdings','hradní državy')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_purchase_land_interaction_patron_tt: "Půdu lze koupit pouze od [Concept('ruler','vládce')|E], který drží půdu na tvém [Concept('market','trhu')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ new_republic_population_effect_tt: "[THIS.Char.GetName|U] se připojil k [Concept('republic','republice')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_join_republic_interaction: "Připojit se k republice" # todo: NEW TRANSLATION
+ merchant_join_republic_interaction_desc: "Požádat [recipient.Custom('CZ_ShortUIName_A')], aby přijal tvůj [Concept('merchant_family','kupecká rodina')|E] mezi [patricians|E] [recipient.GetHerHis] [Concept('republic','republikou')|E], přičemž si ponecháš svou [Concept('company','společnost')|E], její [Concept('trade_routes','obchodní trasy')|E] i [Concept('trade_monopolies','obchodní monopoly')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_join_republic_interaction_extra_icon: "$hook_extra_icon$" # todo: NEW TRANSLATION
+ MERCHANT_JOIN_REPUBLIC_PROPOSAL: "Dost dlouho jsme obchodovali pod tvou ochranou, abychom byli považováni za víc než jen hosty. Přijmi nás mezi [recipient.Custom('GetRegionalUrbanEliteTermPlural')] a to, co vydělají mé účetní knihy, vydělá s námi i tvá republika." # todo: NEW TRANSLATION
+ merchant_join_republic_hook_auto_accept_tt: "[TARGET_CHARACTER.GetShortUIName|U] nemůže odmítnout, dokud na něj máš [Concept('hook_i','@cs_weak_hook_icon!')|E][Concept('hook','páky')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_join_republic_interaction_offer_gold: "Zdvojnásobit vstupní vklad" # todo: NEW TRANSLATION
+ merchant_join_republic_interaction_offer_gold_desc: "Zaplatit dvojnásobek [Concept('gold_i','@gold_icon!')|E][Concept('gold','zlata')|E], aby bylo shromáždění svolnější [Concept('assembly','shromáždění')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_join_republic_forgive_debt_tt: "Odpustíš [CHARACTER.Custom('CZ_ShortUIName_G')] [Concept('loan','půjčka')|E] ve výši [gold_i|E]$VALUE|0V$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_join_republic_interaction_patron_tt: "[recipient.GetShortUIName|U] musí být tvůj [Concept('merchant_patron','patron')|E] #weak (v současnosti [THIS.Char.GetSuzerain.GetShortUIName|U])#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_join_republic_no_assembly_tt: "[recipient.GetShortUIName|U] musí náležet k [Concept('republic','republice')|E] s [Concept('assembly','shromážděním')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_join_republic_house_seated_tt: "Žádný jiný člen [actor.GetHouse.GetName] nesmí v daném [Concept('realm','panství')|E] již držet rodinný [Concept('title','titul')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_join_republic_patrician_tt: "Připojíš se k [Concept('assembly','shromáždění')|E] jako [Concept('patrician','patricij')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_join_republic_company_kept_tt: "Tvá [Concept('company','společnost')|E] si ponechá své [Concept('trade_routes','obchodní trasy')|E] a [Concept('trade_monopolies','obchodní monopoly')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_patron_arrangement_ends_tt: "Tvé uspořádání s [Concept('merchant_patron','patronem')|E] skončí" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_debtors_forgiven_tt: "Odpustíš všechny [Concept('loan','půjčky')|E], které ti ještě dluží" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_join_republic_charter_lost_tt: "Vzdáš se své [Concept('charter','listinou')|E], která v [Concept('republic','republice')|E] nemá žádnou platnost" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MERCHANT_JOIN_REPUBLIC_COMPETITIVENESS_REASON: "[actor.Custom('CZ_ShortUIName_G')|U] [Concept('trade_competitiveness','Obchodní konkurenceschopnost')|E]: $VALUE|+=0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MERCHANT_JOIN_REPUBLIC_CHARTER_REASON: "[actor.GetShortUIName|U] [CharHaveHas(actor)] [Concept('charter','Listina')|E], kterou stojí za to převzít: $VALUE|+=0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MERCHANT_JOIN_REPUBLIC_CULTURE_REASON: "[actor.GetShortUIName|U] [CharAreIs(actor)] příslušníkem cizí [Concept('culture','kultura')|E] #weak ([actor.GetCulture.GetName])#!: $VALUE|+=0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MERCHANT_JOIN_REPUBLIC_FAITH_REASON: "[actor.GetShortUIName|U] [CharAreIs(actor)] vyznavačem cizí [Concept('faith','víra')|E] #weak ([actor.GetFaith.GetName])#!: $VALUE|+=0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MERCHANT_JOIN_REPUBLIC_CROWDED_REASON: "[Concept('assembly','Shromáždění')|E] je už přeplněné [Concept('patricians','patricijové')|E]: $VALUE|+=0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MERCHANT_JOIN_REPUBLIC_DYNASTY_REASON: "Postavení [actor.Custom('CZ_ShortUIName_G')|U] [Concept('dynasty','dynastie')|E]: $VALUE|+=0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MERCHANT_JOIN_REPUBLIC_RELATIONSHIP_REASON: "[actor.GetShortUIName|U] a [recipient.GetShortUIName] spolu dobře vycházejí: $VALUE|+=0$" # todo: NEW TRANSLATION
+ MERCHANT_JOIN_REPUBLIC_FORGIVE_DEBT_REASON: "Odpustíš [recipient.Custom('CZ_ShortUIName_G')] [Concept('loan','půjčka')|E]: $VALUE|+=0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_procure_estate_interaction: "Získat panství" # todo: NEW TRANSLATION
+ merchant_procure_estate_interaction_desc: "Rozpustit svou [Concept('company','společnost')|E] a získat [Concept('estate','statek')|E] a [Concept('title','titul')|E] [Concept('noble_family','šlechtické rodiny')|E], čímž se staneš [Concept('unlanded','bezzemek')|E] [Concept('vassal','vazala')|E] [recipient.Custom('CZ_ShortUIName_G')]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_procure_estate_interaction_extra_icon: "$hook_extra_icon$" # todo: NEW TRANSLATION
+ MERCHANT_PROCURE_ESTATE_PROPOSAL: "Celý život jsem počítal cizí peníze. Dovol mi vyměnit účetní knihu za jméno a můj rod bude stejně věrně sloužit tvé správě, jako kdysi sloužil trhům." # todo: NEW TRANSLATION
+ merchant_procure_estate_hook_auto_accept_tt: "[TARGET_CHARACTER.GetShortUIName|U] nemůže odmítnout, dokud na něj máš [Concept('hook_i','@cs_weak_hook_icon!')|E][Concept('hook','páky')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_procure_estate_interaction_offer_gold: "Zdvojnásobit vstupní vklad" # todo: NEW TRANSLATION
+ merchant_procure_estate_interaction_offer_gold_desc: "Zaplatit dvojnásobek [Concept('gold_i','@gold_icon!')|E][Concept('gold','zlata')|E], aby byla dohoda lákavější" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_procure_estate_interaction_patron_tt: "Žádat lze pouze [Concept('independent','nezávislý')|E] [Concept('merchant_patron','patrona')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_procure_estate_company_size_tt: "Tvoje [Concept('company_size','velikost společnosti')|E] musí být alespoň [GetLaw('company_size_medium').GetName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_procure_estate_noble_family_tt: "Staneš se [Concept('unlanded','bezzemkem')|E] [Concept('noble_family','šlechtickou rodinou')|E] v [recipient.Custom('CZ_ShortUIName_G')] [Concept('realm','panství')|E] a získáš [Concept('estate','statek')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_procure_estate_company_lost_tt: "Tvoje [Concept('company','společnost')|E] bude rozpuštěna, a s ní i její [Concept('trade_routes','obchodními trasami')|E] a [Concept('trade_monopolies','obchodní monopoly')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_procure_estate_charter_lost_tt: "Vzdáš se své [Concept('charter','listinou')|E], která bez [Concept('company','společnosti')|E] nemá žádnou platnost" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MERCHANT_PROCURE_ESTATE_OUTSIDER_REASON: "[actor.GetShortUIName|U] [CharHaveHas(actor)] žádné rodinné vazby na [recipient.Custom('CZ_ShortUIName_A')]: $VALUE|+=0$" # todo: NEW TRANSLATION
+ MERCHANT_PROCURE_ESTATE_STATE_FAITH_REASON: "[actor.Custom('CZ_ShortUIName_G')|U] [Concept('faith','Víra')|E] se liší od [Concept('state_faith','státní víry')|E]: $VALUE|+=0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MERCHANT_PROCURE_ESTATE_LOCAL_CULTURE_REASON: "[actor.GetShortUIName|U] [CharAreIs(actor)] místním podle [Concept('culture','kultury')|E]: $VALUE|+=0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MERCHANT_PROCURE_ESTATE_DYNASTY_REASON: "Postavení [actor.Custom('CZ_ShortUIName_G')|U] [Concept('dynasty','dynastie')|E]: $VALUE|+=0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MERCHANT_PROCURE_ESTATE_COMPANY_REASON: "[actor.Custom('CZ_ShortUIName_G')|U] [Concept('company_size','Velikost společnosti')|E]: $VALUE|+=0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MERCHANT_PROCURE_ESTATE_RELATIONSHIP_REASON: "[actor.GetShortUIName|U] a [recipient.GetShortUIName] spolu dobře vycházejí: $VALUE|+=0$" # todo: NEW TRANSLATION
+ gdp_ennobled_merchant_modifier_tt_3: "Získáš [GetModifier('gdp_ennobled_merchant_modifier_3').GetNameWithTooltip] na #V 30 let#! $ep3_ennobled_adventurer_modifier_reason_3$\n$gdp_ennobled_merchant_modifier_rules$" # todo: NEW TRANSLATION
+ gdp_ennobled_merchant_modifier_tt_2: "Získáš [GetModifier('gdp_ennobled_merchant_modifier_2').GetNameWithTooltip] na #V 20 let#! $ep3_ennobled_adventurer_modifier_reason_2$\n$gdp_ennobled_merchant_modifier_rules$" # todo: NEW TRANSLATION
+ gdp_ennobled_merchant_modifier_tt_1: "Získáš [GetModifier('gdp_ennobled_merchant_modifier_1').GetNameWithTooltip] na #V 10 let#! $ep3_ennobled_adventurer_modifier_reason_1$\n$gdp_ennobled_merchant_modifier_rules$" # todo: NEW TRANSLATION
+ gdp_ennobled_merchant_modifier_rules: "$ep3_ennobled_adventurer_modifier_rules$" # todo: NEW TRANSLATION
+ gdp_ennobled_merchant_modifier_1: "Povýšený obchodník" # todo: NEW TRANSLATION
+ gdp_ennobled_merchant_modifier_1_desc: "$ep3_ennobled_adventurer_modifier_1_desc$" # todo: NEW TRANSLATION
+ gdp_ennobled_merchant_modifier_2: "$gdp_ennobled_merchant_modifier_1$" # todo: NEW TRANSLATION
+ gdp_ennobled_merchant_modifier_2_desc: "$gdp_ennobled_merchant_modifier_1_desc$" # todo: NEW TRANSLATION
+ gdp_ennobled_merchant_modifier_3: "$gdp_ennobled_merchant_modifier_1$" # todo: NEW TRANSLATION
+ gdp_ennobled_merchant_modifier_3_desc: "$gdp_ennobled_merchant_modifier_1_desc$" # todo: NEW TRANSLATION
+ loan_money_interaction: "Půjčit zlato" # todo: NEW TRANSLATION
+ loan_money_interaction_desc: "Nabídnout [recipient.Custom('CZ_ShortUIName_D')] [Concept('loan','půjčka')|E] ve výši [gold_i|E][Concept('gold','zlata')|E] výměnou za [strong_hook_i|E][Concept('strong_hook','silnou páku')|E], nebo [weak_hook_i|E][Concept('weak_hook','slabou páku')|E], pokud [Concept('loan','půjčka')|E] nesplatí [recipient.GetHerHis] [Concept('debt','dluh')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ loan_money_interaction_repudiator_warning_desc: "\n@warning_icon! #X [recipient.GetShortUIName|U] nedávno odmítl splatit dluh a označil jej za [Concept('usury','lichvu')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ LEND_MONEY_IS_IN_DEBT_REASON_1: "[recipient.GetSheHe|U] má menší [Concept('debt','dluhu')|E]: $VALUE|+=0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ LEND_MONEY_IS_IN_DEBT_REASON_2: "[recipient.GetSheHe|U] je v [Concept('debt','dluhu')|E] #V 1#! rok: $VALUE|+=0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ LEND_MONEY_IS_IN_DEBT_REASON_3: "[recipient.GetSheHe|U] je v [Concept('debt','dluhu')|E] #V 2#! roky: $VALUE|+=0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ LEND_MONEY_IS_IN_DEBT_REASON_4: "[recipient.GetSheHe|U] je v [Concept('debt','dluhu')|E] #V 3#! roky: $VALUE|+=0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ LEND_MONEY_IS_IN_DEBT_REASON_5: "[recipient.GetSheHe|U] je v [Concept('debt','dluhu')|E] #V 4#! roky: $VALUE|+=0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ LEND_MONEY_IS_IN_DEBT_REASON_6: "[recipient.GetSheHe|U] je v [Concept('debt','dluhu')|E] déle než #V 5#! let: $VALUE|+=0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ LEND_MONEY_ACCRUED_DEBT: "Celkový [Concept('debt','dluh')|E] [recipient.GetHerHis|U]: $VALUE|+=0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ loan_money_interaction_gold_trigger_tt: "[recipient.GetShortUIName] musí mít méně než [Concept('gold_i','@gold_icon!')|E]#V [EmptyScope.ScriptValue('gdp_loan_money_debt_threshold_value')|0]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ LEND_MONEY_USURY_SIN_REASON: "[recipient.GetSheHe|U] by se podílel na [Concept('sinful','hříšného')|E] [Concept('usury','lichvu')|E]: $VALUE|+=0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gdp_usury_forbidden_loan_tt: "@alert_icon! #M Tvůj [Concept('rite','ritus')|E] odsuzuje [Concept('usury','lichva')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gdp_usury_discouraged_loan_tt: "@alert_icon! #M Tvůj [Concept('rite','ritus')|E] se staví proti [Concept('usury','lichvě')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ loan_money_interaction_already_loaned_tt: "[recipient.GetShortUIName|U] ti už dluží [Concept('loan','půjčka')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ LEND_MONEY_HAS_LOANS_REASON: "[recipient.GetShortUIName|U] už má jiné [Concept('loans','půjček')|E]: $VALUE|+=0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ LEND_MONEY_HAS_LOANS_FROM_ACTOR_REASON: "[recipient.GetShortUIName|U] ti už dluží [Concept('loan','půjčka')|E]: $VALUE|+=0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ LOAN_MONEY_INTERACTION_NOTIFICATION: "Zpráva o tvých finančních potížích dorazila k mé společnosti." # todo: NEW TRANSLATION
+ LOAN_MONEY_INTERACTION_OPEN_NOTIFICATION: "$LOAN_MONEY_INTERACTION_NOTIFICATION$ Mohli bychom tvému panství pomoci překonat toto těžké období, ale samozřejmě očekáváme, že nám toto riziko splatíš." # todo: NEW TRANSLATION
+ LOAN_MONEY_INTERACTION_DISGUISED_NOTIFICATION: "$LOAN_MONEY_INTERACTION_NOTIFICATION$ Rádi bychom tvému panství pomohli překonat toto smutné a těžké období." # todo: NEW TRANSLATION
+ LOAN_MONEY_INTERACTION_FREE_NOTIFICATION: "$LOAN_MONEY_INTERACTION_NOTIFICATION$ Můžeme tvému panství pomoci překonat toto těžké období a neočekáváme žádný zisk nad rámec splacení půjčky." # todo: NEW TRANSLATION
+ demand_repayment_interaction: "Požadovat splacení" # todo: NEW TRANSLATION
+ demand_repayment_interaction_desc: "Vyzvat [recipient.Custom('CZ_ShortUIName_A')], aby splatil nesplacený [Concept('loan','půjčka')|E] ve výši [gold_i|E][Concept('gold','zlata')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ demand_repayment_interaction_afford_tt: "[recipient.GetShortUIName|U] si nemůže dovolit splatit žádné [Concept('loans','půjčky')|E] [actor.GetShortUIName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ demand_repayment_interaction_loan_exists_tt: "Musíš [recipient.GetShortUIName] půjčit [Concept('loan','půjčka')|E] před více než #V 2#! lety" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ demand_repayment_interaction_duration_tt: "Splacení [Concept('loan','půjčka')|E] nemůžeš požadovat, dokud neuplynou alespoň #V 2#! roky #weak ([GetCurrentDateWithDiff( GetVarTimeRemaining( loan_temp.MakeScope, 'demand_cooldown') )])#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ demand_repayment_refusal_warning_tt: "@warning_icon! #X Každé další odmítnutí splatit půjčku dále sníží [Concept('prestige_i','@prestige_icon!')|E][Concept('prestige','prestiže')|E] a [Concept('opinion','mínění')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ DEMAND_REPAYMENT_INHERITED_DEBT_NOTIFICATION: "Kdysi jsem půjčil tvému zesnulému předchůdci určitou sumu zlata.\n\nJako jeho nástupce nyní neseš povinnost tuto půjčku splatit." # todo: NEW TRANSLATION
+ DEMAND_REPAYMENT_INHERITED_LOAN_NOTIFICATION: "Můj předchůdce ti kdysi poskytl půjčku.\n\nJako jeho nástupce tě nyní žádám o její splacení." # todo: NEW TRANSLATION
+ DEMAND_REPAYMENT_ALL_NEW_CHAR_NOTIFICATION: "Můj předchůdce kdysi půjčil tvému předchůdci určitou sumu zlata.\n\n„Jako jeho nástupce máš nyní povinnost tento dluh splatit ty.“" # todo: NEW TRANSLATION
+ DEMAND_REPAYMENT_FIRST_TIME_NOTIFICATION: "Věřím, že ti půjčka přišla vhod?„\n\n[lender.GetTitledFirstName] si [Select_CString(lender.IsFemale,'přišla','přišel')] pro zlato, které mi [lender.GetSheHe] půjčil. Žádá o jeho splacení." # todo: NEW TRANSLATION
+ DEMAND_REPAYMENT_SECOND_TIME_NOTIFICATION: "Tahle hra mě nebaví. Dlužíš mi a věřím, že tvůj slib splatit dluh nebyl lží.„\n\n[lender.GetTitledFirstName] [lender.Custom('quirk_neg_present')], když přede mnou stojí už podruhé." # todo: NEW TRANSLATION
+ DEMAND_REPAYMENT_THIRD_TIME_NOTIFICATION: "Začíná mě to unavovat, [actor.Char.Custom('FormOfAddressForLiege')]! Tohle je naposledy, co tě žádám slušně; kde jsou peníze, které mi dlužíš?" # todo: NEW TRANSLATION
+ DEMAND_REPAYMENT_FOURTH_TIME_NOTIFICATION: "Kdybych věděl, že jsi takový [actor.Char.Custom2('InsultAdjectiveArticle', SCOPE.sC('recipient'))], nečestný [actor.Char.Custom2('InsultNoun', SCOPE.sC('recipient'))], nikdy bych ti takovou laskavost neprokázal." # todo: NEW TRANSLATION
+ gdp_usury_discouraged_modifier: "Penězoměnec" # todo: NEW TRANSLATION
+ gdp_usury_discouraged_modifier_desc: "Tato postava si půjčováním [Concept('gold','zlatem')|E] na [Concept('interest','úrok')|E] vydělává na živobytí, a její [Concept('rite','ritus')|E] se na [Concept('usury','lichvu')|E] mračí." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gdp_usury_outsider_lending_modifier: "Věřitel cizincům" # todo: NEW TRANSLATION
+ gdp_usury_outsider_lending_modifier_desc: "Tato postava půjčuje [Concept('gold','zlato')|E] na [Concept('interest','úrok')|E] těm, kdo nevyznávají její [Concept('religion','náboženství')|E]. Její [Concept('rite','ritus')|E] takové obchody dovoluje, ale neuctívá." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gdp_usury_condemned_modifier: "Lichvář" # todo: NEW TRANSLATION
+ gdp_usury_condemned_modifier_desc: "Tato postava si půjčováním [Concept('gold','zlatem')|E] na [Concept('interest','úrok')|E] vydělává na živobytí, a její [Concept('rite','ritus')|E] považuje [Concept('usury','lichva')|E] za hřích." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ loan_money_interaction_open_interest: "Půjčit na otevřený úrok" # todo: NEW TRANSLATION
+ loan_money_interaction_open_interest_desc: "Půjčit [recipient.Custom('CZ_ShortUIName_A')] [Concept('gold_i','@gold_icon!')|E][Concept('gold','zlata')|E] na předem oznámený [Concept('interest','úrok')|E]. Dlužník tak bude dlužit o #V 25 %#! více, než dostane." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ loan_money_interaction_open_interest_sin_desc: "Půjčit [Concept('loan','půjčka')|E] [recipient.Custom('CZ_ShortUIName_A')] [Concept('gold_i','@gold_icon!')|E][Concept('gold','zlata')|E] na předem oznámený [Concept('interest','úrok')|E]. Dlužník tak bude dlužit o #V 25 %#! více, než dostane, ale přijdeš o [piety_i|E][Concept('piety','zbožnost')|E] a @spiritual_fulfillment_icon![Concept('spiritual_fulfillment','duchovní naplnění')|E], protože tvůj [Concept('rite','ritus')|E] odsuzuje [Concept('usury','lichva')|E]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ loan_money_interaction_disguised_interest: "Zastřít úrok" # todo: NEW TRANSLATION
+ loan_money_interaction_disguised_interest_sin_desc: "Půjčit [recipient.Custom('CZ_ShortUIName_A')] [Concept('gold_i','@gold_icon!')|E][Concept('gold','zlata')|E] na [Concept('interest','úrok')|E] skrytý v poplatcích a darech. Dlužník tak bude dlužit o #V 15 %#! více, než dostane. Získáš [Concept('secret','tajemství')|E] $secret_disguised_usury$. Tvé [Concept('clergy','duchovenstvo')|E] v tom žádné [Concept('usury','lichvách')|E] nespatřuje, dokud toto [Concept('secret','tajemství')|E] nevyjde najevo." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ loan_money_interaction_interest_free: "Půjčit bez úroku" # todo: NEW TRANSLATION
+ loan_money_interaction_interest_free_desc: "Půjčit [Concept('loan','půjčka')|E] [recipient.Custom('CZ_ShortUIName_A')] [Concept('gold_i','@gold_icon!')|E][Concept('gold','zlata')|E] zcela bez [Concept('interest','úroku')|E], čímž získáš od dlužníka [Concept('opinion','mínění')|E] #P +[actor.MakeScope.ScriptValue('gdp_interest_free_loan_opinion_value')|0]#!." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ loan_money_interaction_interest_free_pious_desc: "Půjčit [Concept('loan','půjčka')|E] [recipient.Custom('CZ_ShortUIName_A')] [Concept('gold_i','@gold_icon!')|E][Concept('gold','zlata')|E] zcela bez [Concept('interest','úroku')|E], čímž získáš [Concept('opinion','mínění')|E] #P +[actor.MakeScope.ScriptValue('gdp_interest_free_loan_opinion_value')|0]#! a [Concept('piety_i','[GetLocalPlayerPietyTextIcon]')|E][Concept('piety','zbožnosti')|E], protože tvůj [Concept('rite','ritus')|E] považuje takovou zdrženlivost za dobročinnost." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ loan_money_interaction_income_risk_tt: "@alert_icon! #M Dlužníkův [Concept('income','příjem')|E] je nízký#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ loan_money_interaction_personality_risk_tt: "@alert_icon! #M Dlužník má nespolehlivou [Concept('personality','osobnosti')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ loan_money_interaction_big_debt_risk_tt: "@alert_icon! #M Dlužník je v [Concept('debt','dluhu')|E] už #V 3#! roky nebo déle#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ loan_money_interaction_enmity_risk_tt: "@alert_icon! #M Dlužník tě nebo tvůj [Concept('house','rod')|E] nenávidí#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ loan_money_interaction_other_loans_risk_tt: "@alert_icon! #M Dlužník má nesplacené [Concept('loans','půjček')|E] od jiných [Concept('merchants','kupců')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ loan_money_interaction_depose_risk_tt: "@alert_icon! #M Dlužník vede [Concept('war','válka')|E] nebo čelí [Concept('faction','frakce')|E], která [recipient.GetHerHim] může sesadit#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ loan_money_interaction_dissolution_risk_tt: "@alert_icon! #M Dlužník vede [Concept('war','válka')|E] nebo čelí [Concept('faction','frakce')|E], která může rozdrobit či výrazně zmenšit [recipient.GetHerHis] [Concept('realm','panství')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ loan_money_interaction_faith_astray_risk_tt: "@alert_icon! #M Dlužník považuje tvou [Concept('faith','víru')|E] za [Concept('faith_astray','zbloudilého')|E]#! #weak ([actor.GetFaith.GetName])#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ loan_money_interaction_faith_hostile_risk_tt: "@alert_icon! #M Dlužník považuje tvou [Concept('faith','víru')|E] za [Concept('faith_hostile','nepřátelský')|E]#! #weak ([actor.GetFaith.GetName])#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ loan_money_interaction_faith_evil_risk_tt: "@alert_icon! #M Dlužník považuje tvou [Concept('faith','víru')|E] za [Concept('faith_evil','zavrženíhodného')|E]#! #weak ([actor.GetFaith.GetName])#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ LEND_MONEY_INTEREST_FREE_REASON: "[Concept('loan','Půjčka')|E] je bez [Concept('interest','úroku')|E]: $VALUE|+=0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ LEND_MONEY_OPEN_INTEREST_REASON: "[Concept('loan','Půjčka')|E] je na [Concept('interest','úrok')|E]: $VALUE|+=0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gdp_loan_gold_tt_first: "Půjčit [Concept('loan','půjčka')|E] [gold_i|E]$VALUE|0V$ [TARGET_CHARACTER.Custom('CZ_ShortUIName_D')]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gdp_loan_gold_tt_first_past: "Půjčil [Concept('loaned','půjčený')|E] [gold_i|E]$VALUE|0V$ [TARGET_CHARACTER.Custom('CZ_ShortUIName_D')]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gdp_loan_gold_tt_third: "[CHARACTER.GetShortUIName|U] půjčí [Concept('loan','půjčka')|E] [gold_i|E]$VALUE|0V$ [TARGET_CHARACTER.Custom('CZ_ShortUIName_D')]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gdp_loan_gold_tt_third_past: "[CHARACTER.GetShortUIName|U] půjčil [Concept('loaned','půjčený')|E] [gold_i|E]$VALUE|0V$ [TARGET_CHARACTER.Custom('CZ_ShortUIName_D')]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gdp_loan_owed_open_interest_tt: "[CHARACTER.GetShortUIName|U] bude dlužit [TARGET_CHARACTER.Custom('CZ_ShortUIName_D')] [Concept('gold_i','@gold_icon!')|E]$VALUE|V0$ #weak (otevřený úrok)#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gdp_loan_owed_open_interest_tt_past: "[CHARACTER.GetShortUIName|U] bude dlužit [TARGET_CHARACTER.Custom('CZ_ShortUIName_D')] [Concept('gold_i','@gold_icon!')|E]$VALUE|V0$ #weak (otevřený úrok)#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ loan_money_interaction_voidable_warning_tt: "@warning_icon! #X [recipient.GetFaith.GetName] [Concept('faith','Víra')|E] odsuzuje [Concept('usury','lichva')|E] a [recipient.GetSheHe] může takové [Concept('loans','půjčky')|E] z náboženských důvodů odmítnout splatit#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gdp_loan_owed_disguised_interest_tt: "[CHARACTER.GetShortUIName|U] bude dlužit [TARGET_CHARACTER.Custom('CZ_ShortUIName_D')] [Concept('gold_i','@gold_icon!')|E]$VALUE|V0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gdp_loan_owed_disguised_interest_tt_past: "[CHARACTER.GetShortUIName|U] bude dlužit [TARGET_CHARACTER.Custom('CZ_ShortUIName_D')] [Concept('gold_i','@gold_icon!')|E]$VALUE|V0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gdp_loan_owed_interest_free_tt: "[CHARACTER.GetShortUIName|U] bude dlužit [TARGET_CHARACTER.Custom('CZ_ShortUIName_D')] [Concept('gold_i','@gold_icon!')|E]$VALUE|V0$ #weak (bez úroku)#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gdp_loan_owed_interest_free_tt_past: "[CHARACTER.GetShortUIName|U] bude dlužit [TARGET_CHARACTER.Custom('CZ_ShortUIName_D')] [Concept('gold_i','@gold_icon!')|E]$VALUE|V0$#weak (bez úroku)#!" # todo: NEW TRANSLATION, CHECK FORMAT # todo: CONCEPT CASE # todo: FORMAT navyše weak
+ gdp_usury_disguised_loan_tt: "[Concept('interest','Úrok')|E] je skrytý v podmínkách půjčky, takže tvůj [Concept('rite','ritus')|E] proti ní nic nenamítá, dokud [Concept('secret','tajemství')|E] nevyjde najevo." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gdp_usury_disguised_secret_gain_tt: "Získáš [Concept('secret','tajemství')|E] $secret_disguised_usury$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ secret_disguised_usury: "Zastřená lichva" # todo: NEW TRANSLATION
+ secret_disguised_usury_type_desc: "Tato postava půjčila [Concept('gold','zlato')|E] na [Concept('interest','úrok')|E] skrytý v poplatcích a darech, což její [Concept('rite','ritus')|E] odsuzuje jako [Concept('usury','lichva')|E]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ secret_disguised_usury_desc: "Půjčil [Concept('gold','zlato')|E] [TARGET_CHARACTER.Custom('CZ_ShortUIName_D')] na skrytý [Concept('interest','úrok')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ secret_disguised_usury_tooltip_desc: "Tato postava půjčila [Concept('gold','zlato')|E] [TARGET_CHARACTER.Custom('CZ_ShortUIName_D')] na [Concept('interest','úrok')|E] skrytý v poplatcích a darech, což [CHARACTER.GetHerHis] [Concept('rite','ritus')|E] odsuzuje jako [Concept('usury','lichva')|E]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gdp_usury_secret_exposed_toast: "Tvůj skrytý [Concept('interest','úrok')|E] z [Concept('loan','půjčky')|E] [secret_target.Custom('CZ_ShortUIName_D')] vyšel najevo jako [Concept('usury','lichva')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gdp_usury_charitable_loan_tt: "Půjčovat bez [Concept('interest','úroku')|E] je podle tvého [Concept('rite','ritu')|E] dobročinný čin." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ forgive_loan_tt: "[CHARACTER.GetShortUIName|U] odpustí [TARGET_CHARACTER.Custom('CZ_ShortUIName_G')] [Concept('loan','půjčka')|E] #weak ([Concept('gold_i','@gold_icon!')|E]$VALUE|0V$)#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gdp_usury_loan_repudiated_notification: "Půjčka prohlášena za lichvu" # todo: NEW TRANSLATION
+ sponsor_war_interaction: "Sponzorovat válku" # todo: NEW TRANSLATION
+ sponsor_war_interaction_desc: "Podpořit válečné úsilí [recipient.Custom('CZ_ShortUIName_G')] výměnou za [hook_i|E][Concept('hook','páku')|E] a trochu [Concept('prestige_i','@prestige_icon!')|E][Concept('prestige','prestiže')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_fund_mercenaries_modifier: "Sponzor žoldnéřů" # todo: NEW TRANSLATION
+ merchant_fund_mercenaries_modifier_desc: "Tato postava získává sponzorskou podporu žoldnéřů od obchodníka." # todo: NEW TRANSLATION
+ sponsor_war_interaction.fund_maa: "[recipient.GetShortUIName|U] naverbuje náhodný [Concept('regiment','pluk')|E] [Concept('men_at_arms','ozbrojenců')|E] (#EMP velikost #V 1#!#!)\n#weak Typ může být libovolný, k němuž má [recipient.GetShortUIName] [CharHaveHas(recipient)] přístup#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MERCHANT_SPONSOR_WAR_NOTIFICATION: "Má obchodní společnost vám naléhavě chce pomoci ve vašich spravedlivých konfliktech." # todo: NEW TRANSLATION
+ MERCHANT_SPONSOR_WAR_MERCENARIES_NOTIFICATION: "$MERCHANT_SPONSOR_WAR_NOTIFICATION$ Bylo by nám ctí sponzorovat shromáždění a nábor žoldnéřů, kteří posílí vaše vojsko." # todo: NEW TRANSLATION
+ MERCHANT_SPONSOR_WAR_MAA_NOTIFICATION: "$MERCHANT_SPONSOR_WAR_NOTIFICATION$ Bylo by nám ctí sponzorovat nový pluk vycvičených bojovníků, kteří posílí vaše vojsko." # todo: NEW TRANSLATION
+ unlock_military_merchant_patron_requests_tt: "Nemáš [Concept('company_purpose','zaměření společnosti')|E] [GetLaw('company_purpose_creditor').GetName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ patron_request_interaction.request_marriage: "Umožní [actor.GetShortUIName] sjednat [Concept('marriage','sňatek')|E] mezi [actor.GetShortUINamePossessive] [Concept('domicile','domicilem')|E] a [recipient.GetNamePossessive] [Concept('court','dvorem')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ patron_request_interaction.request_marriage.no_match: "Na [recipient.Custom('CZ_ShortUIName_G')] [Concept('court','dvůr')|E] není nikdo, kdo by si mohl vzít tebe nebo některého z tvých [actor.Custom('GetCourtierPlural')]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ patron_request_interaction: "Vznést žádost" # todo: NEW TRANSLATION
+ patron_request_interaction_desc: "Využít svého vlivu jako [Concept('client','klient')|E] [recipient.GetShortUIName] a požádat [Select_CString(recipient.IsFemale,'její','jeho')] o laskavost" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ patron_request_interaction.no_requests_available: "Nemáš žádnou oprávněnou žádost pro [recipient.GetShortUIName]" # todo: NEW TRANSLATION
+ exclusive_contracts_perk_acceptance: "[actor.GetShortUIName|U] [actor.LocalPlayerString( 'have', 'has' )] [GetPerk('forced_vassalage_perk').GetName(GetPlayer)]: $VALUE|+=0$" # todo: NEW TRANSLATION
+ master_of_seals_perk_acceptance: "[actor.GetShortUIName|U] [actor.LocalPlayerString( 'have', 'has' )] [GetPerk('accomplished_forger_perk').GetName(GetPlayer)]: $VALUE|+=0$" # todo: NEW TRANSLATION
+ patron_request_interaction_extra_icon: "$hook_extra_icon$" # todo: NEW TRANSLATION
+ request_competitiveness: "Pro zvýšení [competitiveness_i][Concept('trade_competitiveness','obchodní konkurenceschopnost')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ contact_list_request_interaction.request_competitiveness_tt: "Obchodní privilegia udělena" # todo: NEW TRANSLATION
+ request_merchant_hunt: "Pro povolení pořádat [GetActivityType('activity_hunt').GetTextIcon][GetActivityType('activity_hunt').GetName]" # todo: NEW TRANSLATION
+ hunt_permission_message: "Povolení k lovu uděleno" # todo: NEW TRANSLATION
+ contact_list_request_interaction.request_merchant_hunt: "[recipient.GetShortUIName|U] udělí [actor.GetShortUIName] povolení pořádat [GetActivityType('activity_hunt').GetTextIcon][GetActivityType('activity_hunt').GetName]" # todo: NEW TRANSLATION
+ merchant_hunt_need_permission: "O povolení musíš požádat svého [Concept('merchant_patron','patrona')|E] prostřednictvím [Concept('interaction','interakce')|E] #V $patron_request_interaction$#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ marriage_permission_message: "Povolení k sňatku uděleno" # todo: NEW TRANSLATION
+ merchant_marriage_need_request: "Chceš-li uzavřít sňatek mimo obchodnické [Concept('merchant','kupce')|E] rody, musíš nejprve požádat svého [Concept('merchant_patron','patrona')|E] o [Concept('marriage','sňatek')|E] prostřednictvím [Concept('interaction','interakce')|E] #V $patron_request_interaction$#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ patron_request.cooldown.tt: "Nedávno jsi požádal [recipient.GetShortUIName] o laskavost" # todo: NEW TRANSLATION
+ patron_request.already_have_permission.tt: "Toto povolení od [recipient.GetShortUIName] už máš" # todo: NEW TRANSLATION
+ PATRON_REQUEST_COMPETITIVENESS_NOTIFICATION: "Pokorně žádám o další obchodní privilegia. $PATRON_REQUEST_NOTIFICATION$" # todo: NEW TRANSLATION
+ PATRON_REQUEST_MARRIAGE_NOTIFICATION: "Pokorně žádám o souhlas se sňatkem mezi našimi rody. $PATRON_REQUEST_NOTIFICATION$" # todo: NEW TRANSLATION
+ PATRON_REQUEST_HUNT_NOTIFICATION: "Pokorně žádám o povolení pořádat lov. $PATRON_REQUEST_NOTIFICATION$" # todo: NEW TRANSLATION
+ PATRON_REQUEST_NOTIFICATION: "Má obchodní společnost na vaši štědrost jen tak nezapomene." # todo: NEW TRANSLATION
+ patron_request_interaction_decline_toast: "Patron žádost odmítl" # todo: NEW TRANSLATION
+ action_can_make_patron_request_interaction: "$patron_request_interaction$ od tvého patrona" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ action_can_make_patron_request_interaction_label: "@befriend_icon! Můžeš vznést žádost ($patron_request_interaction$) u svého patrona" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ action_can_make_patron_request_interaction_desc: "Využít svého vlivu jako [Concept('client','klient')|E] a získat prostředky od svého [Concept('merchant_patron','patrona')|E], [recipient.GetShortUIName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ action_can_make_patron_request_interaction_unimportant: "@alert_icon! #alert_trial [recipient.GetShortUIName] nevyhoví žádné z tvých žádostí#!" # todo: NEW TRANSLATION
+ action_can_make_patron_request_interaction_click: "#I Kliknutím vznes žádost#!" # todo: NEW TRANSLATION
+ action_can_make_loan_money_interaction: "Můžeš $loan_money_interaction$ [recipient.GetShortUINameNoTooltip]" # todo: NEW TRANSLATION
+ action_can_make_loan_money_interaction_label: "@gold_icon! $action_can_make_loan_money_interaction$" # todo: NEW TRANSLATION
+ action_can_make_loan_money_interaction_desc: "$loan_money_interaction_desc$" # todo: NEW TRANSLATION
+ action_can_make_loan_money_interaction_unimportant: "@alert_icon! #alert_trial [recipient.GetShortUIName] má nízký [Concept('income','příjem')|E], nespolehlivou [Concept('personality','osobnost')|E], nepřátelství vůči tobě nebo tvému [Concept('house','rodu')|E], jiné nesplacené [Concept('loans','půjčky')|E], čelí riskantní [Concept('war','válka')|E] či [Concept('faction','frakce')|E], považuje tvou [Concept('faith','víru')|E] za [Concept('faith_hostile','nepřátelský')|E], nebo tvou nabídku momentálně nepřijme#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ action_can_make_loan_money_interaction_click: "#I Kliknutím předlož nabídku#!" # todo: NEW TRANSLATION
+ action_can_make_loan_money_interaction_combined_group_label: "@gold_icon! Můžeš $loan_money_interaction$ vládcům" # todo: NEW TRANSLATION
+ action_can_make_loan_money_interaction_combined_label: "[recipient.GetUINameNoTooltip]" # todo: NEW TRANSLATION
+ action_can_make_loan_money_interaction_combined_group_name: "Můžeš $loan_money_interaction$ několika vládcům" # todo: NEW TRANSLATION
+ action_can_make_loan_money_interaction_combined_group_description: "Můžeš půjčit [Concept('gold_i','@gold_icon!')|E][Concept('gold','zlata')|E] [Concept('ruler','vládce')|E] výměnou za [strong_hook_i|E][Concept('strong_hook','silnou páku')|E], nebo za [weak_hook_i|E][Concept('weak_hook','slabou páku')|E], pokud půjčka [Concept('loan','půjčka')|E] nesplatí jeho [Concept('debt','dluhu')|E]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ action_can_make_loan_money_interaction_combined_unimportant: "@alert_icon! #alert_trial Všichni možní dlužníci mají nízký [Concept('income','příjem')|E], nespolehlivou [Concept('personalities','osobnost')|E], nepřátelství vůči tobě nebo tvému [Concept('house','rodu')|E], jiné nesplacené [Concept('loans','půjčky')|E], čelí riskantním [Concept('wars','válkami')|E] či [Concept('factions','frakce')|E], považují tvou [Concept('faith','víru')|E] za [Concept('faith_hostile','nepřátelský')|E], nebo tvou nabídku momentálně nepřijmou#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ action_can_compel_seize_realm_debtor_to_war: "@alliance_icon! Můžeš $gdp_merchant_seize_realm_call_debtor_interaction$" # todo: NEW TRANSLATION
+ action_can_compel_seize_realm_debtor_to_war_label: "$action_can_compel_seize_realm_debtor_to_war$ — [recipient.GetShortUINameNoTooltip]" # todo: NEW TRANSLATION
+ action_can_compel_seize_realm_debtor_to_war_desc: "$gdp_merchant_seize_realm_call_debtor_interaction_desc$" # todo: NEW TRANSLATION
+ action_can_compel_seize_realm_debtor_to_war_unimportant: "@alert_icon! #alert_trial [recipient.GetShortUIName] nyní nelze přimět k účasti#!" # todo: NEW TRANSLATION
+ action_can_compel_seize_realm_debtor_to_war_click: "#I Klikni a přiměj dlužníka#!" # todo: NEW TRANSLATION
+ action_can_compel_seize_realm_debtor_to_war_combined_group_label: "@alliance_icon! $action_can_compel_seize_realm_debtor_to_war$" # todo: NEW TRANSLATION
+ action_can_compel_seize_realm_debtor_to_war_combined_label: "[recipient.GetShortUINameNoTooltip]" # todo: NEW TRANSLATION
+ action_can_compel_seize_realm_debtor_to_war_combined_group_name: "$action_can_compel_seize_realm_debtor_to_war$" # todo: NEW TRANSLATION
+ action_can_compel_seize_realm_debtor_to_war_combined_group_description: "Během tvé [seize_realm_cb|E] [Concept('war','války')|E] můžeš utratit @unspent_strong_hook_icon! [Concept('strong_hook','silná páka')|E] a přivést zadlužené [Concept('rulers','vládci')|E] jako [Concept('allies','spojenci')|E]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ action_can_compel_seize_realm_debtor_to_war_combined_unimportant: "@warning_icon! #X Žádného z těchto vládců nyní nelze přimět k účasti#!" # todo: NEW TRANSLATION
+ action_can_make_sponsor_war_interaction: "Sponzorovat válku tvého patrony" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ action_can_make_sponsor_war_interaction_label: "@war_icon! Můžeš sponzorovat válku svého patrona" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ action_can_make_sponsor_war_interaction_desc: "$sponsor_war_interaction_desc$" # todo: NEW TRANSLATION
+ action_can_make_sponsor_war_interaction_unimportant: "@alert_icon! #alert_trial [recipient.GetShortUIName] tvou nabídku nepřijme#!" # todo: NEW TRANSLATION
+ action_can_make_sponsor_war_interaction_click: "#I Klikni a předlož nabídku#!" # todo: NEW TRANSLATION
+ action_can_make_sponsor_war_interaction_combined_group_label: "Můžeš sponzorovat války" # todo: NEW TRANSLATION
+ action_can_make_sponsor_war_interaction_combined_label: "$action_can_make_sponsor_war_interaction$ — [recipient.GetShortUIName]" # todo: NEW TRANSLATION
+ action_can_make_sponsor_war_interaction_combined_group_name: "$action_can_make_sponsor_war_interaction$" # todo: NEW TRANSLATION
+ action_can_make_sponsor_war_interaction_combined_group_description: "Sponzoruj válečné úsilí [Concept('ruler','vládce')|E] výměnou za [Concept('hook','páku')|E] a trochu [Concept('renown','věhlas')|E]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ action_can_make_sponsor_war_interaction_combined_unimportant: "@warning_icon! #X Žádná z nabídek nebude přijata#!" # todo: NEW TRANSLATION
+ house_has_feud_relation_with_trigger.tt: "Tvůj [Concept('house_relation','vztah rodů')|E] je [house_feuding|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gdp_trade_privileges_modifier: "Získaná obchodní privilegia" # todo: NEW TRANSLATION
+ gdp_trade_privileges_modifier_desc: "Této postavě její patron udělil určitá obchodní privilegia." # todo: NEW TRANSLATION
+ gdp_trade_privileges_hook_modifier: "Získaná obchodní privilegia" # todo: NEW TRANSLATION
+ gdp_trade_privileges_hook_modifier_desc: "Této postavě byla výměnou za páku udělena určitá obchodní privilegia." # todo: NEW TRANSLATION
+ gdp_trade_privileges_hook_double_modifier: "$gdp_trade_privileges_hook_modifier$" # todo: NEW TRANSLATION
+ gdp_trade_privileges_hook_double_modifier_desc: "$gdp_trade_privileges_hook_modifier_desc$" # todo: NEW TRANSLATION
+ request_trade_monopoly_for_character_interaction: "Získat monopol na obchod" # todo: NEW TRANSLATION
+ request_trade_monopoly_for_character_interaction_desc: "Vyjednej [Concept('gold_i','@gold_icon!')|E][Concept('gold','zlata')|E] výměnou za [Concept('trade_monopoly','obchodní monopol')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ request_trade_monopoly_for_character_interaction_click: "Požádat o monopol" # todo: NEW TRANSLATION
+ request_trade_monopoly_for_character_interaction_extra_icon: "$strong_hook_extra_icon$" # todo: NEW TRANSLATION
+ request_trade_monopoly_for_character_interaction_market_owner_tt: "[recipient.GetShortUIName|U] musí být [Concept('market_owner','vlastník trhu')|E] oblasti [trade_market.GetName] nebo její [Concept('liege','lenní pán')|E] či vyšší lenní pán" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ request_monopoly_category_already_monopolized_tt: "[trade_market.GetName] již #bold nesmí#! mít [Concept('monopoly','monopol')|E] pokrývající [trade_good_category_type.GetName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ request_trade_monopoly_cost_payment_desc: "Platba poskytovateli" # todo: NEW TRANSLATION
+ request_trade_monopoly_cost_fee_desc: "Poplatek za [Concept('trade_monopoly','obchodní monopol')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ REQUEST_MONOPOLY_NO_CATEGORY_SELECTED: "$no_target_selected_tt$" # todo: NEW TRANSLATION
+ REQUEST_MONOPOLY_NO_MARKET_SELECTED: "$no_target_selected_tt$" # todo: NEW TRANSLATION
+ REQUEST_MONOPOLY_EXPLOITATIVE_LABEL: "[exploitative_monopoly_i][Concept('exploitative_monopoly_short','Vykořisťovatelský')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ REQUEST_MONOPOLY_COMPLETE_LABEL: "[complete_monopoly_i][Concept('complete_monopoly_short','Úplný')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ REQUEST_TRADE_MONOPOLY_PROPOSAL: "Má společnost si chce zajistit své zájmy v oblasti [trade_market.GetName] a žádá o přednostní práva při obchodování s [trade_good_category_type.GetName]." # todo: NEW TRANSLATION
+ REQUEST_TRADE_MONOPOLY_COMPLETE_PROPOSAL: "Má společnost si chce zajistit své zájmy v oblasti [trade_market.GetName] a žádá o kontrolu nad všemi oblastmi jejího obchodu." # todo: NEW TRANSLATION
+ request_monopoly.tt.specific_normal: "[actor.GetPrimaryTitle.GetDefinitiveName|U] získává [Concept('monopoly','monopol')|E] na [trade_good_category_type.GetNameWithIcon] v oblasti [trade_market.GetName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ request_monopoly.tt.specific_exploitative: "[actor.GetPrimaryTitle.GetDefinitiveName|U] získává [Concept('exploitative_monopoly_short','vykořisťovatelský')|E] [Concept('monopoly','monopolu')|E] na [trade_good_category_type.GetNameWithIcon] v oblasti [trade_market.GetName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ request_monopoly.tt.complete_normal: "[actor.GetPrimaryTitle.GetDefinitiveName|U] získává [Concept('complete_monopoly_short','úplný')|E] [Concept('monopoly','monopolu')|E] na veškeré obchodní zboží v oblasti [trade_market.GetName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ request_monopoly.tt.complete_exploitative: "[actor.GetPrimaryTitle.GetDefinitiveName|U] získává [Concept('complete_monopoly_short','úplný')|E] [Concept('exploitative_monopoly_short','vykořisťovatelského')|E] [Concept('monopoly','monopolu')|E] na veškeré [Concept('goods','zboží')|E] v oblasti [trade_market.GetName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ monopoly_granted_toast: "Monopol udělen" # todo: NEW TRANSLATION
+ new_good_character_monopoly_name: "Monopol na [new_monopoly_scope.GetTradeGoodCategoryType.GetNameNoTooltip] rodu [new_monopoly_scope.GetOwningCharacter.GetDynastyHouseNameNoTooltip]" # todo: NEW TRANSLATION
+ REQUEST_TOLL_EXCEPTION_NO_MARKET_SELECTED: "$no_target_selected_tt$" # todo: NEW TRANSLATION
+ REQUEST_TOLL_EXCEPTION_SAME_TOLL_RATE: "Toto je tvá současná celní politika na trhu" # todo: NEW TRANSLATION
+ TOLL_EXCEPTION_INVALID_TOLL_RATE: "Neplatná výše cla" # todo: NEW TRANSLATION
+ REVOKE_TOLL_EXCEPTION_NO_MARKET_SELECTED: "$no_target_selected_tt$" # todo: NEW TRANSLATION
+ GRANT_TOLL_EXCEPTION_NO_MARKET_SELECTED: "$no_target_selected_tt$" # todo: NEW TRANSLATION
+ GRANT_TOLL_EXCEPTION_SAME_TOLL_RATE: "Toto je současná celní politika [Character.GetNamePossessive] na trhu" # todo: NEW TRANSLATION
+ monopolize_wood: "Získat monopol na [GetTradeGoodType('trade_good_wood').GetName]" # todo: NEW TRANSLATION
+ monopolize_stone: "Získat monopol na [GetTradeGoodType('trade_good_stone').GetName]" # todo: NEW TRANSLATION
+ monopolize_wool: "Získat monopol na [GetTradeGoodType('trade_good_wool').GetName]" # todo: NEW TRANSLATION
+ monopolize_cotton: "Získat monopol na [GetTradeGoodType('trade_good_cotton').GetName]" # todo: NEW TRANSLATION
+ monopolize_leather: "Získat monopol na [GetTradeGoodType('trade_good_leather').GetName]" # todo: NEW TRANSLATION
+ monopolize_flax: "Získat monopol na [GetTradeGoodType('trade_good_flax').GetName]" # todo: NEW TRANSLATION
+ monopolize_hemp: "Získat monopol na [GetTradeGoodType('trade_good_hemp').GetName]" # todo: NEW TRANSLATION
+ monopolize_salt: "Získat monopol na [GetTradeGoodType('trade_good_salt').GetName]" # todo: NEW TRANSLATION
+ monopolize_grain: "Získat monopol na [GetTradeGoodType('trade_good_grain').GetName]" # todo: NEW TRANSLATION
+ monopolize_fruit: "Získat monopol na [GetTradeGoodType('trade_good_fruit').GetName]" # todo: NEW TRANSLATION
+ monopolize_meat: "Získat monopol na [GetTradeGoodType('trade_good_meat').GetName]" # todo: NEW TRANSLATION
+ monopolize_fish: "Získat monopol na [GetTradeGoodType('trade_good_fish').GetName]" # todo: NEW TRANSLATION
+ monopolize_cattle: "Získat monopol na [GetTradeGoodType('trade_good_cattle').GetName]" # todo: NEW TRANSLATION
+ monopolize_horses: "Získat monopol na [GetTradeGoodType('trade_good_horses').GetName]" # todo: NEW TRANSLATION
+ monopolize_cheese: "Získat monopol na [GetTradeGoodType('trade_good_cheese').GetName]" # todo: NEW TRANSLATION
+ monopolize_beer: "Získat monopol na [GetTradeGoodType('trade_good_beer').GetName]" # todo: NEW TRANSLATION
+ monopolize_wine: "Získat monopol na [GetTradeGoodType('trade_good_wine').GetName]" # todo: NEW TRANSLATION
+ monopolize_oil: "Získat monopol na [GetTradeGoodType('trade_good_oil').GetName]" # todo: NEW TRANSLATION
+ monopolize_honey: "Získat monopol na [GetTradeGoodType('trade_good_honey').GetName]" # todo: NEW TRANSLATION
+ monopolize_rice: "Získat monopol na [GetTradeGoodType('trade_good_rice').GetName]" # todo: NEW TRANSLATION
+ monopolize_millet: "Získat monopol na [GetTradeGoodType('trade_good_millet').GetName]" # todo: NEW TRANSLATION
+ monopolize_iron: "Získat monopol na [GetTradeGoodType('trade_good_iron').GetName]" # todo: NEW TRANSLATION
+ monopolize_alum: "Získat monopol na [GetTradeGoodType('trade_good_alum').GetName]" # todo: NEW TRANSLATION
+ monopolize_jade: "Získat monopol na [GetTradeGoodType('trade_good_jade').GetName]" # todo: NEW TRANSLATION
+ monopolize_gold: "Získat monopol na [GetTradeGoodType('trade_good_gold').GetName]" # todo: NEW TRANSLATION
+ monopolize_silver: "Získat monopol na [GetTradeGoodType('trade_good_silver').GetName]" # todo: NEW TRANSLATION
+ monopolize_amber: "Získat monopol na [GetTradeGoodType('trade_good_amber').GetName]" # todo: NEW TRANSLATION
+ monopolize_copper: "Získat monopol na [GetTradeGoodType('trade_good_copper').GetName]" # todo: NEW TRANSLATION
+ monopolize_gems: "Získat monopol na [GetTradeGoodType('trade_good_gems').GetName]" # todo: NEW TRANSLATION
+ monopolize_silk: "Získat monopol na [GetTradeGoodType('trade_good_silk').GetName]" # todo: NEW TRANSLATION
+ monopolize_textiles: "Získat monopol na [GetTradeGoodType('trade_good_textiles').GetName]" # todo: NEW TRANSLATION
+ monopolize_furs: "Získat monopol na [GetTradeGoodType('trade_good_furs').GetName]" # todo: NEW TRANSLATION
+ monopolize_books_paper: "Získat monopol na [GetTradeGoodType('trade_good_books_paper').GetName]" # todo: NEW TRANSLATION
+ monopolize_spices: "Získat monopol na [GetTradeGoodType('trade_good_spices').GetName]" # todo: NEW TRANSLATION
+ monopolize_dyes: "Získat monopol na [GetTradeGoodType('trade_good_dyes').GetName]" # todo: NEW TRANSLATION
+ monopolize_jewelry: "Získat monopol na [GetTradeGoodType('trade_good_jewelry').GetName]" # todo: NEW TRANSLATION
+ monopolize_ivory: "Získat monopol na [GetTradeGoodType('trade_good_ivory').GetName]" # todo: NEW TRANSLATION
+ monopolize_glass: "Získat monopol na [GetTradeGoodType('trade_good_glass').GetName]" # todo: NEW TRANSLATION
+ monopolize_sugar: "Získat monopol na [GetTradeGoodType('trade_good_sugar').GetName]" # todo: NEW TRANSLATION
+ monopolize_incense: "Získat monopol na [GetTradeGoodType('trade_good_incense').GetName]" # todo: NEW TRANSLATION
+ monopolize_ceramics: "Získat monopol na [GetTradeGoodType('trade_good_ceramics').GetName]" # todo: NEW TRANSLATION
+ monopolize_lacquerware: "Získat monopol na [GetTradeGoodType('trade_good_lacquerware').GetName]" # todo: NEW TRANSLATION
+ monopolize_medicaments: "Získat monopol na [GetTradeGoodType('trade_good_medicaments').GetName]" # todo: NEW TRANSLATION
+ move_company_interaction.low_competitiveness: "Ve srovnání s ostatními [Concept('merchant_families','kupeckými rodinami')|E] na tomto [Concept('market','trhu')|E] máš nízkou [Concept('trade_competitiveness','obchodní konkurenceschopnosti')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ move_company_interaction.route_alert: "@alert_icon! #alert_trial Přijdeš o všechny současné [Concept('trade_routes','obchodní trasy')|E] a související [Concept('modifiers','modifikátory')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ move_company_interaction.opportunity_alert: "@alert_icon! #alert_trial Všechny současné [Concept('trade_contracts','obchodní smlouvy')|E] pozbudou platnosti#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ move_company_interaction.patron_alert: "@alert_icon! #alert_trial [Concept('ruler','Vládce')|E] v cílové oblasti se stane tvým novým [Concept('merchant_patron','patronovi')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ move_company_interaction.size_alert: "@alert_icon! #alert_trial Nová [Concept('company_size','velikost společnosti')|E] bude vysoká vzhledem k [Concept('rank','hodnosti')|E] tohoto [Concept('merchant_patron_possessive','patroně')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ action_merchant_company_in_debt: "$company_in_debt_title$" # todo: NEW TRANSLATION
+ action_merchant_company_in_debt_label: "@debt_icon! Vaše společnost je zadlužená" # todo: NEW TRANSLATION
+ action_merchant_company_in_debt_desc: "Máte méně než [Concept('gold_i','@gold_icon!')|E]#V [EmptyScope.ScriptValue('company_debt_gold_threshold_value')|0]#! [Concept('gold','zlato')|E], a vaše [Concept('company','společnost')|E] se tak ocitla v [Concept('debt','dluhu')|E]!\n\nDokud bude společnost zadlužená:\n$BULLET_WITH_TAB$Pokrok [Concept('company_direction','$game_concept_company_sentiment$')|E] směrem k [company_sentiment_divided_i][Concept('company_sentiment_divided','dravému')|E] se každých [EmptyScope.ScriptValue('company_debt_direction_interval_months_value')|V0] měsíců posune o [EmptyScope.ScriptValue('company_debt_direction_shift_value')|V0]\n$BULLET_WITH_TAB$Nelze vyhlásit [Concept('war','válka')|E]\n\nČím hlubší váš dluh bude, tím přísnější budou jeho následky. Vaše současná výše dluhu má tyto další dopady:\n\n[GetPlayer.GetDebtModifierDescription]\n\n#help Zadlužení již stálo vaši společnost [trade_acumen_i][Concept('acumen','důvtipu')|E] a zastavilo růst její [Concept('company_size','velikost společnosti')|E]. Splaťte dluh, abyste zabránili dalšímu poklesu [Concept('company_sentiment','směřování společnosti')|E].#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ action_merchant_company_in_debt_click: "#I Kliknutím zkontrolujete své obchodní trasy#!" # todo: NEW TRANSLATION
+ action_patrician_in_debt: "Zadlužen" # todo: NEW TRANSLATION
+ action_patrician_in_debt_label: "@debt_icon! Jste zadluženi" # todo: NEW TRANSLATION
+ action_patrician_in_debt_desc: "$action_in_debt_desc$" # todo: NEW TRANSLATION
+ action_patrician_in_debt_click: "#I Kliknutím zkontrolujete své obchodní trasy#!" # todo: NEW TRANSLATION
+ action_elevate_republic_tier: "Povýšit svou [Concept('republic','republiku')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ action_elevate_republic_tier_desc: "Svou [Concept('republic','republiku')|E] můžete povýšit na vyšší [Concept('title_tier','úroveň')|E].\n\n#help Vyšší úroveň odemkne vaší republice nové možnosti.#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ action_elevate_republic_tier_click: "#I Kliknutím povýšíte svou republiku#!" # todo: NEW TRANSLATION
+ action_merchant_company_purpose: "Dostupný účel [Concept('company_purpose','zaměření společnosti')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ action_merchant_company_purpose_click: "#I Kliknutím vyberete $game_concept_company_purpose$#!" # todo: NEW TRANSLATION
+ action_merchant_company_purpose_desc: "Pro svou [Concept('company','společnost')|E] můžete zvolit [Concept('company_purpose','zaměření společnosti')|E].\n\n#help Přechod na jiný [Concept('company_purpose','zaměření společnosti')|E] specializuje vaši [Concept('company','společnost')|E] a odemkne jedinečné [Concept('interactions','interakce')|E], [Concept('deputies','zástupci')|E] a bonusy k [Concept('trade','obchodu')|E].#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ action_increase_company_size: "Zvětšit svou [Concept('company_size','velikost společnosti')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ action_increase_company_size_desc: "Můžete zvětšit svou [Concept('company_size','velikost společnosti')|E].\n\n#help Větší [Concept('company','společnost')|E] je silnější v [Concept('trade','obchodě')|E] a přitažlivější pro mocné [Concept('merchant_patrons','patrony')|E].#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ action_increase_company_size_click: "#I Kliknutím zvětšíte svou velikost společnosti#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ action_create_trade_route: "@trade_route_icon! Nevyužité [Concept('trade_routes','obchodní trasy')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ action_create_trade_route_label: "$action_create_trade_route$" # todo: NEW TRANSLATION
+ action_create_trade_route_desc: "Nepřekročili jste limit [Concept('trade_route','obchodní trasa')|E] #high ([actor.MakeScope.ScriptValue('merchant_current_trade_routes_value')]/[actor.MakeScope.ScriptValue('merchant_max_trade_routes_value')])#!\n\n#HELP Vytvářením [route_i|E][Concept('trade_routes','obchodních tras')|E] můžete získávat [Concept('gold_i','@gold_icon!')|E][Concept('gold','zlata')|E] a přepravovat [Concept('trade_goods_i','@trade_goods_icon!')|E][Concept('goods','zboží')|E] z [market_i|E][Concept('markets','trhů')|E] s [Concept('surplus','přebytkem')|E] na ty s [Concept('deficit','deficitem')|E].#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ action_create_trade_route_click: "#I Kliknutím vytvoříte obchodní trasu#!" # todo: NEW TRANSLATION
+ action_distribution_route_fulfills_no_needs: "@distribution_route_icon! Zásobovací trasa neuspokojuje žádné [Concept('needs','potřeby')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ action_distribution_route_fulfills_no_needs_label: "@distribution_route_icon! [route.GetNameNoTooltip|V] neuspokojuje žádné [Concept('needs','potřeby')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ action_distribution_route_fulfills_no_needs_desc: "[route.GetName] už neuspokojuje žádné [Concept('needs','potřeby')|E].\n\n$action_distribution_route_fulfills_no_needs_help$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ action_distribution_route_fulfills_no_needs_help: "#help [Concept('distribution_route','Zásobovací trasa')|E] přepravuje [Concept('good','zboží')|E] pouze tehdy, když má některý z jeho [Concept('markets','trhů')|E] jeho [Concept('surplus','přebytku')|E] a jiný neuspokojenou [Concept('need','potřebu')|E].#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ action_distribution_route_fulfills_no_needs_click: "#I Kliknutím provedete kontrolu#!" # todo: NEW TRANSLATION
+ action_distribution_route_fulfills_no_needs_combined_label: "[route.GetNameNoTooltip|V]" # todo: NEW TRANSLATION
+ action_distribution_route_fulfills_no_needs_combined_group_label: "@distribution_route_icon!Několik zásobovacích tras neuspokojuje žádné [Concept('needs','potřeby')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ action_distribution_route_fulfills_no_needs_combined_group_name: "$action_distribution_route_fulfills_no_needs$" # todo: NEW TRANSLATION
+ action_distribution_route_fulfills_no_needs_combined_group_description: "Několik vašich [Concept('distribution_routes','zásobovacích tras')|E] minulý měsíc nic nedoručilo.\n\n$action_distribution_route_fulfills_no_needs_help$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ action_entice_merchants: "@tributary_merchant! Měli byste $invite_merchants_decision$" # todo: NEW TRANSLATION
+ action_entice_merchants_label: "@tributary_merchant! Nemáte žádné $game_concept_clients$" # todo: NEW TRANSLATION
+ action_entice_merchants_desc: "Nemáte žádné [Concept('clients','klienti')|E].\n\nPoužijte [Concept('decision','rozhodnutí')|E] [GetDecisionWithKey('invite_merchants_decision').GetName], abyste přilákali [Concept('merchants','kupci')|E], kteří se mohou usadit ve vašem [Concept('capital','hlavním sídle')|E] a zakládat [Concept('trade_routes','obchodní trasy')|E]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ action_entice_merchants_click: "#I Kliknutím otevřete rozhodnutí#!" # todo: NEW TRANSLATION
+ action_commission_merchant: "$action_commission_merchant_combined_group_name$" # todo: NEW TRANSLATION
+ action_commission_merchant_label: "@commission_trade_route_icon! Můžete zadat zakázku na obchodní trasu [recipient.GetShortUINameNoTooltip]" # todo: NEW TRANSLATION
+ action_commission_merchant_desc: "Nemáte žádné aktivní [Concept('commission_routes','zakázkové trasy')|E].\n\nSvému [Concept('merchant','kupci')|E] [Concept('client','klienta')|E], [recipient.Custom('CZ_ShortUIName_A')], můžete zadat zakázku na dopravu konkrétního [Concept('trade_good','obchodního zboží')|E] na některý ze svých [Concept('trade_markets','obchodních trhů')|E]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ action_commission_merchant_click: "#I Kliknutím otevřete interakci#!" # todo: NEW TRANSLATION
+ action_commission_merchant_unimportant: "@alert_icon! #alert_trial Momentálně si nemůžete dovolit zadat zakázku [recipient.Custom('CZ_ShortUIName_D')]#!" # todo: NEW TRANSLATION
+ action_commission_merchant_combined_group_label: "@trade_route_icon! Měli byste $commission_trade_route_interaction$" # todo: NEW TRANSLATION
+ action_commission_merchant_combined_label: "[recipient.GetUINameNoTooltip]" # todo: NEW TRANSLATION
+ action_commission_merchant_combined_group_name: "Zadat zakázku obchodníkovi" # todo: NEW TRANSLATION
+ action_commission_merchant_combined_group_description: "Nemáte žádné aktivní [Concept('commission_routes','zakázkové trasy')|E].\n\nZadejte [Concept('merchant','kupec')|E] zakázku na dopravu potřebného [Concept('trade_good','obchodního zboží')|E] na některý ze svých [Concept('trade_markets','obchodních trhů')|E]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ action_commission_merchant_combined_unimportant: "@alert_icon! #alert_trial Momentálně si nemůžete dovolit zadat žádnou z těchto zakázek#!" # todo: NEW TRANSLATION
+ action_trade_opportunities_available: "@trade_market_icon! Dostupná obchodní příležitost" # todo: NEW TRANSLATION
+ action_trade_opportunities_available_label: "$action_trade_opportunities_available$" # todo: NEW TRANSLATION
+ action_trade_opportunities_available_desc: "V [contract.GetLocation.GetTitle.GetTradeMarket.GetName] můžete využít [Concept('trade_opportunity','obchodní příležitost')|E] a zlepšit tak výsledky svého obchodování." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ action_trade_opportunities_available_click: "#I Kliknutím zobrazíte zakázku#!" # todo: NEW TRANSLATION
+ action_trade_opportunities_available_combined_group_label: "@trade_market_icon! Dostupné obchodní příležitosti" # todo: NEW TRANSLATION
+ action_trade_opportunities_available_combined_label: "[contract.GetType.GetName] #weak ([contract.GetLocation.GetTitle.GetDeJureLiege.GetDeJureLiege.GetNameNoTierNoTooltip])#! " # todo: NEW TRANSLATION
+ action_trade_opportunities_available_combined_group_name: "$action_trade_opportunities_available_combined_group_label$" # todo: NEW TRANSLATION
+ action_trade_opportunities_available_combined_group_description: "Máte k dispozici několik [Concept('trade_opportunities','obchodních příležitostí')|E]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ action_luxury_contracts_available: "@luxury_contract! Dostupná luxusní zakázka" # todo: NEW TRANSLATION
+ action_luxury_contracts_available_label: "$action_luxury_contracts_available$" # todo: NEW TRANSLATION
+ action_luxury_contracts_available_desc: "Máte dosud neprozkoumanou [Concept('luxury_contract','smlouvu na luxusní zboží')|E]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ action_luxury_contracts_available_click: "#I Kliknutím zobrazíte zakázku#!" # todo: NEW TRANSLATION
+ action_luxury_contracts_available_combined_group_label: "@luxury_contract! Dostupné luxusní zakázky" # todo: NEW TRANSLATION
+ action_luxury_contracts_available_combined_label: "[contract.GetType.GetName]" # todo: NEW TRANSLATION
+ action_luxury_contracts_available_combined_group_name: "$action_luxury_contracts_available$" # todo: NEW TRANSLATION
+ action_luxury_contracts_available_combined_group_description: "Několik [Concept('luxury_contracts','smluv na luxusní zboží')|E] dosud nebylo prozkoumáno." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ action_unity_contracts_available: "@unity_contract! Dostupná $game_concept_unity_contract$" # todo: NEW TRANSLATION
+ action_unity_contracts_available_label: "$action_unity_contracts_available$" # todo: NEW TRANSLATION
+ action_unity_contracts_available_desc: "Máte nevyřízenou [Concept('unity_contract','zakázky na sjednocení')|E]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ action_unity_contracts_available_click: "#I Kliknutím zobrazíte zakázku#!" # todo: NEW TRANSLATION
+ action_unity_contracts_available_combined_group_label: "@unity_contract! Dostupné $game_concept_unity_contracts$" # todo: NEW TRANSLATION
+ action_unity_contracts_available_combined_label: "[contract.GetType.GetName]" # todo: NEW TRANSLATION
+ action_unity_contracts_available_combined_group_name: "$action_unity_contracts_available$" # todo: NEW TRANSLATION
+ action_unity_contracts_available_combined_group_description: "Je třeba vyřídit několik [Concept('unity_contracts','zakázek na sjednocení')|E]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ action_assign_trader: "@trade_route_icon! Lze přidělit obchodníka" # todo: NEW TRANSLATION
+ action_assign_trader_label: "@trade_route_icon! K [route.GetNameNoTooltip|V] není přidělen žádný $game_concept_trader$" # todo: NEW TRANSLATION
+ action_assign_trader_desc: "K [route.GetName] není přidělen žádný [Concept('trader','obchodník')|E]. Měli byste nějakého určit.\n\n$action_assign_trader_help$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ action_assign_trader_help: "#help Přidělením [Concept('trader','obchodníkem')|E] k [Concept('trade_route','obchodní trase')|E] zvýšíte $game_concept_route_possessive$ efektivitu a umožníte si získávat [Concept('trade_opportunities','obchodní příležitosti')|E].#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ action_assign_trader_unimportant: "@warning_icon! #X Nemáte žádné vhodné [Concept('associates','společníci')|E], které byste mohli určit jako [Concept('traders','obchodníci')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ action_assign_trader_click: "#I Kliknutím otevřete obchodní okno#!" # todo: NEW TRANSLATION
+ action_assign_trader_combined_group_label: "@trade_route_icon! K vašim obchodním trasám lze přidělit $game_concept_traders$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ action_assign_trader_combined_label: "[route.GetNameNoTooltip|V]" # todo: NEW TRANSLATION
+ action_assign_trader_combined_group_name: "$action_assign_trader$" # todo: NEW TRANSLATION
+ action_assign_trader_combined_group_description: "K několika [Concept('trade_routes','obchodními trasami')|E] nejsou přiděleni žádní [Concept('traders','obchodníci')|E]. Měli byste je určit.\n\n$action_assign_trader_help$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ action_assign_trader_combined_unimportant: "@warning_icon! #X Nemáte žádné vhodné [Concept('associates','společníci')|E], které byste mohli určit jako [Concept('traders','obchodníci')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ grant_merchant_charter_interaction: "Udělit obchodní listinu" # todo: NEW TRANSLATION
+ grant_merchant_charter_interaction_desc: "Udělit [recipient.Custom('CZ_ShortUIName_D')] [Concept('charter','listina')|E] pro [actor.GetPrimaryTitle.GetDefinitiveName|l]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ grant_merchant_charter_interaction_notification: "Počínání vaší společnosti je chloubou a službou pro [actor.GetPrimaryTitle.GetTierAsNameNoTooltip]. Přijměte tuto listinu jako důkaz mé úcty, kterou si zasloužíte." # todo: NEW TRANSLATION
+ request_merchant_charter_interaction: "Požádat o obchodní listinu" # todo: NEW TRANSLATION
+ request_merchant_charter_interaction_desc: "Požádat [recipient.Custom('CZ_ShortUIName_A')], aby udělil [Concept('charter','listina')|E] pro [actor.GetPrimaryTitle.GetDefinitiveName|l]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ request_merchant_charter_interaction_notification: "Má společnost věrně slouží vám i poddaným [actor.GetPrimaryTitle.GetTierAsNameNoTooltip]. Pokorně žádáme o listinu, která by uznala naše služby a úsilí." # todo: NEW TRANSLATION
+ request_merchant_charter_interaction_extra_icon: "$hook_extra_icon$" # todo: NEW TRANSLATION
+ request_merchant_charter_patron_requirement_tt: "O listinu lze požádat pouze svého [Concept('merchant_patron','patrona')|E] #weak ([actor.GetSuzerain.GetShortUIName])#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ ACTOR_PRESTIGE_LEVEL_REASON: "[actor.Custom('CZ_ShortUIName_G')|U] [Concept('prestige_level','Úroveň slávy')|E]: $VALUE|=+0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ COMPANY_TOO_SMALL_FOR_TIER_REASON: "[Concept('company_size','Velikost společnosti')|E] vzhledem k [Concept('rank','hodnosti')|E] [Concept('merchant_patron','patronovi')|E]: $VALUE|=+0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ COMPANY_LARGE_FOR_TIER_REASON: "$COMPANY_TOO_SMALL_FOR_TIER_REASON$" # todo: NEW TRANSLATION
+ POSITIVE_RELATIONSHIP_RECIPIENT_REASON: "Kladné [Concept('relation','zvláštní vztah')|E] s [recipient.Custom('CZ_ShortUIName_I')]: $VALUE|+=0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ NEGATIVE_RELATIONSHIP_RECIPIENT_REASON: "Záporné [Concept('relation','zvláštní vztah')|E] s [recipient.Custom('CZ_ShortUIName_I')]: $VALUE|+=0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_charter_company_size_requirement_empire_tt: "K držení [Concept('charter','listině')|E] od [Concept('rulers','vládců')|E] s [Concept('rank','hodností')|E] [Concept('emperor','císařem')|E] či vyšší je zapotřebí [GetLaw('company_size_huge').GetName|V]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_charter_company_size_requirement_kingdom_tt: "K držení [Concept('charter','listině')|E] od [Concept('rulers','vládců')|E] s [Concept('rank','hodností')|E] [Concept('king','králem')|E] či vyšší je zapotřebí [GetLaw('company_size_large').GetName|V]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_charter_company_size_requirement_duchy_tt: "K držení [Concept('charter','listině')|E] od [Concept('rulers','vládců')|E] s [Concept('rank','hodností')|E] [Concept('duke','vévodou')|E] či vyšší je zapotřebí [GetLaw('company_size_medium').GetName|V]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_charter_request_single_charter_tt: "[recipient.GetShortUIName] již udělil [Concept('charter','listina')|E] jinému [Concept('client','klientovi')|E], který svou pravomoc nezneužil" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_charter_request_single_charter_same_tt: "[recipient.GetShortUIName] již udělil [Concept('charter','listina')|E] [actor.GetShortUIName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_charter_grant_single_charter_tt: "Již jste udělili [Concept('charter','listina')|E] [charter_holder_temp.GetShortUIName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_charter_grant_single_charter_same_tt: "Již jste udělili [Concept('charter','listina')|E] [recipient.GetShortUIName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ will_abuse_charter_reason: "Plánuje zneužít [Concept('charter','listina')|E]: $VALUE|=+0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ CHARTER_HOLDER_ABUSED_CHARTER_REASON: "Současný držitel [Concept('charter','listiny')|E] zneužil svou pravomoc: $VALUE|=+0$" # todo: NEW TRANSLATION
+ merchant_charter_unlocks_tt: "@alert_icon! Postavy s [Concept('charters','listinami')|E] získají přístup k:\n$EFFECT_LIST_BULLET$#EMP #V $abuse_charter_authority_decision$#!#! [Concept('decision','rozhodnutí')|E]\n$EFFECT_LIST_BULLET$#EMP #V $benevolent_charter_authority_decision$#!#! [Concept('decision','rozhodnutí')|E]\n$EFFECT_LIST_BULLET$#EMP #V $leverage_charter_authority_interaction$#!#! [Concept('interaction','interakce')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_charter_no_more_abuse: "Tvůj [Concept('merchant_patron','patron')|E] zareagoval na tvé činy" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_charter_of_patron_or_liege: "Jakýkoli držený [Concept('charter','listina')|E] [Concept('artifact','artefaktu')|E]:" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_charter_of_patron_or_liege_equipped: "$EFFECT_LIST_BULLET$Je právě vybaven" # todo: NEW TRANSLATION
+ merchant_charter_of_patron_or_liege_forgery: "$EFFECT_LIST_BULLET$Není padělek" # todo: NEW TRANSLATION
+ merchant_charter_of_patron_or_liege_var: "[artifact.MakeScope.Var('charter_patron').Char.GetShortUIName|U] je tvůj [Concept('merchant_patron','patron')|E], jeho [Concept('liege','lenního pána')|E] nebo někdo nad ním" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_charter_patron_or_liege_or_above: "$EFFECT_LIST_BULLET$Udělující je tvůj [Concept('merchant_patron','patron')|E], jeho [Concept('liege','lenního pána')|E] nebo někdo nad ním" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_has_charter_from: "Udělující jakéhokoli [Concept('charter','listiny')|E] [Concept('artifact','artefaktu')|E] je [patron_temp.Custom('CZ_ShortUIName_G')]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_charter_patron_tier_var: "[artifact.MakeScope.Var('charter_patron').Char.GetShortUIName|U] je [Concept('ruler','vládce')|E] s [Concept('rank','hodností')|E] [Concept('duke','vévody')|E] nebo vyšším" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_charter_of_house_var: "Jsi členem [Concept('house','rodu')|E] [artifact.MakeScope.Var('charter_house').House.GetBaseName]" # todo: NEW TRANSLATION
+ merchant_charter_no_longer_patron_or_liege: "Udělující vybaveného [Concept('charter','listiny')|E] [Concept('artifact','artefaktu')|E] musí být tvůj [Concept('merchant_patron','patron')|E], jeho [Concept('liege','lenního pána')|E] nebo někdo nad ním" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_charter_duke_or_higher: "$EFFECT_LIST_BULLET$Udělující je [Concept('ruler','vládce')|E] s [Concept('rank','hodností')|E] [Concept('duke','vévody')|E] nebo vyšším" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_charter_nothing_to_abuse: "V [Concept('realm','panství')|E] tvého [Concept('merchant_patron_possessive','patronovi')|E] nejsou žádné [Concept('trade_markets','obchodních trzích')|E] vhodné ke zneužití" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_charter_nothing_to_benefit: "V [Concept('realm','panství')|E] tvého [Concept('merchant_patron_possessive','patronovi')|E] nejsou žádné [Concept('trade_markets','obchodních trzích')|E] vyžadující zásah" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_charter_only_same_or_above_patron: "Tvůj [Concept('merchant_patron','patron')|E] musí být na stejné úrovni jako [THIS.Char.GetTitledFirstNamePossessiveNoTooltip], nebo jeho [Concept('liege','lenního pána')|E] či někdo nad ním #weak ([THIS.Char.GetSuzerain.GetShortUIName])#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_charter_domicile_location_peace: "Držitel [THIS.Char.GetDomicile.GetLocation.GetName] není ve [Concept('war','válce')|E]" # todo: NEW TRANSLATION
+ merchant_charter_already_received: "Od [recipient.Custom('CZ_ShortUIName_G')] už [Concept('charter','listinu')|E] obdržel" # todo: NEW TRANSLATION
+ merchant_charter_abuse_counter_random: "Činy tvého [Concept('merchant_patron_possessive','patrony')|E] jsou nahodilé, jak jen lidské činy mohou být" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_charter_abuse_counter_indifferent: "Tvůj [Concept('merchant_patron','patron')|E] je lhostejný a nijak nezakročí" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_charter_abuse_counter_reaction_action: "@warning_icon! #X Tvůj [Concept('merchant_patron','patron')|E] zareaguje #EMP rázně#!#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_charter_abuse_counter_reaction_indifferent: "@alert_icon! Tvůj [Concept('merchant_patron','patron')|E] bude lhostejný a nijak nezakročí" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_charter_abuse_counter_reaction_angry: "@alert_icon!Tvůj [Concept('merchant_patron','patron')|E] bude #EMP rozzuřený#!, ale nijak nezakročí" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_charter_abuse_counter_reaction_annoyed: "@alert_icon!Tvůj [Concept('merchant_patron','patron')|E] bude #EMP podrážděný#!, ale nijak nezakročí" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_charter_abuse_counter_reaction_pleased: "@alert_icon!Tvůj [Concept('merchant_patron','patron')|E] bude #EMP potěšený#! a nijak nezakročí" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_charter_benefit_counter_indifferent: "Tvůj [Concept('merchant_patron','patron')|E] je lhostejný a nijak nezakročí" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_charter_benefit_counter_reaction_action: "@alert_icon! Tvůj [Concept('merchant_patron','patron')|E] zareaguje #EMP kladně#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_charter_benefit_counter_reaction_indifferent: "$merchant_charter_abuse_counter_reaction_indifferent$" # todo: NEW TRANSLATION
+ merchant_charter_benefit_counter_reaction_grateful: "@alert_icon!Tvůj [Concept('merchant_patron','patron')|E] bude #EMP vděčný#! a nijak nezakročí" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_charter_benefit_counter_reaction_pleased: "$merchant_charter_abuse_counter_reaction_pleased$" # todo: NEW TRANSLATION
+ merchant_charter_benefit_counter_reaction_annoyed: "$merchant_charter_abuse_counter_reaction_annoyed$" # todo: NEW TRANSLATION
+ merchant_charter_abuse_stance_grateful: "#weak Tvůj patron je #EMP vděčný#! za to, jak jsi naložil s pravomocemi, které mu náleží podle [Select_CString(ROOT.Artifact.MakeScope.Var('charter_patron').Char.IsFemale,'její','jeho')] listiny.#!" # todo: NEW TRANSLATION
+ merchant_charter_abuse_stance_pleased: "#weak Tvůj patron je #EMP potěšený#! tím, jak jsi naložil s pravomocemi, které mu náleží podle [Select_CString(ROOT.Artifact.MakeScope.Var('charter_patron').Char.IsFemale,'její','jeho')] listiny.#!" # todo: NEW TRANSLATION
+ merchant_charter_abuse_stance_indifferent: "#weak Tvého patrona nezajímá, jak jsi naložil s pravomocemi, které mu náleží podle [Select_CString(ROOT.Artifact.MakeScope.Var('charter_patron').Char.IsFemale,'její','jeho')] listiny.#!" # todo: NEW TRANSLATION
+ merchant_charter_abuse_stance_annoyed: "#weak Tvůj patron je #EMP podrážděný#! tím, jak jsi naložil s pravomocemi, které mu náleží podle [Select_CString(ROOT.Artifact.MakeScope.Var('charter_patron').Char.IsFemale,'její','jeho')] listiny.#!" # todo: NEW TRANSLATION
+ merchant_charter_abuse_stance_angry: "#weak Tvůj patron je #EMP rozzuřený#! tím, jak jsi naložil s pravomocemi, které mu náleží podle [Select_CString(ROOT.Artifact.MakeScope.Var('charter_patron').Char.IsFemale,'její','jeho')] listiny.#!" # todo: NEW TRANSLATION
+ merchant_charter_artifact_title: "Zakládací listina společnosti [merchant.GetHouse.GetBaseNameNoTooltip]" # todo: NEW TRANSLATION
+ merchant_charter_artifact_title_royal: "Královská listina společnosti [merchant.GetHouse.GetBaseNameNoTooltip]" # todo: NEW TRANSLATION
+ merchant_charter_artifact_title_imperial: "Císařská listina společnosti [merchant.GetHouse.GetBaseNameNoTooltip]" # todo: NEW TRANSLATION
+ merchant_charter_artifact_desc: "Dokument nesoucí pečeť [patron.GetNameRegnal], který potvrzuje zvláštní výsady a ochranu, jež musí být náležitě poskytovány váženým obchodníkům z [merchant.GetPrimaryTitle.GetDefinitiveName|l]." # todo: NEW TRANSLATION
+ abused_charter_authority: "Zneužití pravomocí" # todo: NEW TRANSLATION
+ gravely_abused_charter_authority: "Hrubé zneužití pravomocí" # todo: NEW TRANSLATION
+ abused_charter_authority_family: "Rodinné zneužití pravomocí" # todo: NEW TRANSLATION
+ leverage_charter_authority_interaction: "Využít pravomoc patrona" # todo: NEW TRANSLATION
+ leverage_charter_authority_interaction_desc: "Snížit [Concept('trade_competitiveness','obchodní konkurenceschopnost')|E] [recipient.GetUINamePossessive]\n@alert_icon! Tvůj [Concept('merchant_patron','patron')|E] může na toto zneužití pravomocí zareagovat" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ leverage_charter_authority_their_charter_tt: "[recipient.GetShortUIName] nesmí mít platnou [Concept('charter','listinu')|E] od stejného [Concept('merchant_patron','patrona')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_charter_granted_title: "Listina udělena" # todo: NEW TRANSLATION
+ abused_charter_authority_opinion: "Zneužití pravomocí z listiny" # todo: NEW TRANSLATION
+ abused_charter_authority_patron_opinion: "$abused_charter_authority_opinion$" # todo: NEW TRANSLATION
+ gravely_abused_charter_authority_opinion: "Hrubé zneužití pravomocí z listiny" # todo: NEW TRANSLATION
+ abused_charter_authority_family_opinion: "$abused_charter_authority_opinion$" # todo: NEW TRANSLATION
+ charitable_charter_authority_opinion: "Prospěšné zmocnění listinou" # todo: NEW TRANSLATION
+ refused_charter_revocation_opinion: "Odmítnutí odvolání listiny" # todo: NEW TRANSLATION
+ revoked_my_charter_opinion: "Odvolání mé listiny" # todo: NEW TRANSLATION
+ forged_charter_opinion: "Padělání listiny" # todo: NEW TRANSLATION
+ granted_charter_opinion: "Udělení listiny" # todo: NEW TRANSLATION
+ action_request_charter: "Můžeš $request_merchant_charter_interaction$" # todo: NEW TRANSLATION
+ action_request_charter_label: "@charter_icon! Můžeš požádat svého patrona o listinu" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ action_request_charter_desc: "Tvůj [Concept('merchant_patron','patron')|E], [actor.GetSuzerain.GetShortUIName], neudělil tvé [Concept('company','společnost')|E] [Concept('charter','listiny')|E]. Můžeš o ni požádat.\n\n#help [Concept('charter_i','@charter_icon!')|E] [Concept('charter','Listina')|E] [Concept('artifact','Artefakt')|E] od tvého [Concept('merchant_patron','patrona')|E] ti umožní zasahovat do panství ve prospěch tvé [Concept('company','společnost')|E] a čelit konkurentům.#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ action_request_charter_unimportant: "@warning_icon! #X [actor.GetSuzerain.GetShortUIName] tvé žádosti nevyhoví#!" # todo: NEW TRANSLATION
+ action_request_charter_click: "#I Kliknutím otevřeš interakci#!" # todo: NEW TRANSLATION
+ action_leverage_charter: "@charter_icon! Listina lze využít" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ action_leverage_charter_label: "@charter_icon! Listina lze využít proti [Concept('company','společnosti')|E] [recipient.GetShortUINamePossessive|V]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ action_leverage_charter_desc: "Svou [Concept('charter','listinu')|E] můžeš využít proti [recipient.GetPrimaryTitle.GetDefinitiveName|l], kterému vládne [recipient.GetShortUIName].\n\n$action_leverage_charter_help$" # todo: NEW TRANSLATION
+ action_leverage_charter_click: "#I Kliknutím otevřeš interakci#!" # todo: NEW TRANSLATION
+ action_leverage_charter_help: "#help Využitím své [Concept('charter','listiny')|E] proti konkurenční [Concept('company','společnosti')|E] z ní můžeš vymámit [Concept('gold_i','@gold_icon!')|E][Concept('gold','zlata')|E] a snížit její [Concept('competitiveness','konkurenceschopnost')|E].#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ action_leverage_charter_unimportant: "@alert_icon! #alert_trial [Concept('company','Společnost')|E] [recipient.GetShortUINamePossessive] nepůsobí na žádném z tvých [Concept('markets','trhů')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ action_leverage_charter_combined_group_label: "@charter_icon! Listina lze využít" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ action_leverage_charter_combined_label: "#V [recipient.GetTitledFirstNameNoTooltip] z [recipient.GetPrimaryTitle.GetDefinitiveNameNoTooltip|l]#!" # todo: NEW TRANSLATION
+ action_leverage_charter_combined_group_name: "$action_leverage_charter$" # todo: NEW TRANSLATION
+ action_leverage_charter_combined_group_description: "Svou [Concept('charter','listinu')|E] můžeš využít proti několika konkurenčním [Concept('companies','společnostmi')|E].\n\n$action_leverage_charter_help$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ action_leverage_charter_combined_unimportant: "@alert_icon! #alert_trial Na tvých [Concept('markets','trhy')|E] nepůsobí žádní platní příjemci#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ charter_destroyed_title: "Listina zničena" # todo: NEW TRANSLATION
+ revoke_merchant_charter_interaction: "Odvolat obchodní listinu" # todo: NEW TRANSLATION
+ revoke_merchant_charter_interaction_desc: "Zrušit [Concept('charter','listinu')|E] [recipient.GetShortUINamePossessive] pro [recipient.GetPrimaryTitle.GetDefinitiveName|l]" # todo: NEW TRANSLATION
+ revoke_merchant_charter_interaction_notification: "Už nesloužíte panství tak jako dříve. Musím požadovat, abyste vrátili listinu udělenou vaší společnosti." # todo: NEW TRANSLATION
+ charter_revocation_refused: "Odvolání listiny odmítnuto" # todo: NEW TRANSLATION
+ charter_destroyed_upon_imprisonment_tt: "[Concept('charter','Listina')|E] bude zničena při [Concept('imprisonment','uvěznění')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ granted_charter_reason: "Platná [Concept('charter','listina')|E] [actor.GetShortUINamePossessive|U]: $VALUE|+=0$" # todo: NEW TRANSLATION
+ merchant_charter_abuse_forgery_detected: "@warning_icon! #X Tvůj padělek byl odhalen#!" # todo: NEW TRANSLATION
+ forgery_detected_title: "Padělek odhalen" # todo: NEW TRANSLATION
+ merchant_charter_forgeries_destroyed_tt: "Všechny padělané [Concept('charter','listina')|E] [Concept('artifacts','artefaktů')|E] od tohoto [Concept('merchant_patron','patrona')|E] jsou zničeny" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ evict_merchant_interaction: "Vyhostit obchodníka" # todo: NEW TRANSLATION
+ evict_merchant_interaction_desc: "Donutit [recipient.GetShortUIName] a [recipient.GetHerHis] [Concept('company','společnost')|E], aby opustili tvé [Concept('realm','panství')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ evict_merchant_commission_invalidated_tt: "@alert_icon! #alert_trial Všechny [Concept('commission_routes','zakázkové trasy')|E] skončí a [Concept('merchant_patron','patron')|E] bude vyrozuměn#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ evict_merchant_own_commission_tt: "[recipient.GetShortUIName|U] od tebe drží [Concept('commission_route','zakázková trasa')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ evict_merchant_indebted_hook_tt: "[recipient.GetShortUIName|U] na tebe drží [Concept('hook','páka')|E] #weak ($indebted_hook$)#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ evict_merchant_interaction_toast.t: "Obchodník vyhoštěn" # todo: NEW TRANSLATION
+ evict_merchant_interaction_toast.desc: "[merchant.GetTitledFirstName] dostal příkaz opustit tvé [Concept('realm','panství')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ commission_trade_route_merchant_active_tt: "[recipient.GetShortUIName|U] už působí na jednom či více tebou držených [Concept('trade_markets','obchodních trhů')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ commission_trade_route_merchant_already_commissioned_tt: "[recipient.GetShortUIName|U] už pro tebe provozuje [Concept('commission_route','zakázková trasa')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ commission_trade_route_merchant_max_commissions_tt: "[recipient.GetShortUIName|U] už má příliš mnoho [Concept('commission_routes','zakázkových tras')|E] #weak ([recipient.GetCurrentCommissionRouteCount]/[recipient.GetMaxCommissionRouteCount])#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ commission_trade_route_merchant_recent_request_tt: "[recipient.GetShortUIName|U] nedávno obdržel žádost o [Concept('commission','zakázku')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ commission_trade_route_interaction: "Zadat obchodní trasu" # todo: NEW TRANSLATION
+ commission_trade_route_interaction_desc: "Udělit [recipient.GetShortUINameNoTooltip] [Concept('commission','zakázka')|E] k dopravě konkrétního [Concept('trade_good','obchodního zboží')|E] na [Concept('market','trh')|E] v tvém [Concept('capital','hlavním sídle')|E] #weak ([actor.GetCapitalLocation.GetTitle.GetTradeMarket.GetNameNoTooltip|V])#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ commission_trade_route_interaction_extra_icon: "$strong_hook_extra_icon$" # todo: NEW TRANSLATION
+ commission_trade_route_interaction_notification: "[actor.GetTitledFirstName] navrhuje obchodní zakázku." # todo: NEW TRANSLATION
+ commission_trade_route_interaction_notification_message: "Potřebuji zboží pro své panství a říkají, že právě [recipient.GetWomanMan] se na tuto práci hodí. Udělej to pro mě a dostaneš odměnu." # todo: NEW TRANSLATION
+ commission_merchant_interaction_tt: "[commissioned_merchant.GetShortUIName|U] vytvoří [Concept('commission_route','zakázková trasa')|E], která bude po dobu #V 10 let#! přivážet [target.GetNameWithIcon] do [trade_market.GetName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ commission_merchant_cancel_warning_tt: "@alert_icon! #M Pokud bude [Concept('route','trasa')|E] zrušena, [merchant.GetShortUIName] získá [Concept('secret','tajemství')|E] [GetTrait('dealbreaker').GetName( GetNullCharacter )]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ commission_merchant_interaction_recipient_not_contracted_tt: "[recipient.GetTitledFirstName] již od [actor.GetTitledFirstName] nedrží [Concept('commission_route','zakázkové trasy')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ msg_commission_merchant_signed.t: "Obchodní zakázka podepsána" # todo: NEW TRANSLATION
+ msg_commission_merchant_signed.desc: "[merchant.GetTitledFirstName] bude po následujících #V 10 let#! dodávat do [commissioner.GetCapitalLocation.GetName] dohodnuté zboží" # todo: NEW TRANSLATION
+ gdp_commission_merchant_route_modifier: "Obchodní trasa ze zakázky" # todo: NEW TRANSLATION
+ gdp_commission_merchant_route_modifier_desc: "Obchodní trasa financovaná patronem. Po dobu její aktivity se zvýší její konkurenceschopnost, obchodník nemůže přesunout svůj domicil a trasu nelze upravovat." # todo: NEW TRANSLATION
+ request_toll_exception_interaction: "Požádat o výjimku z mýta" # todo: NEW TRANSLATION
+ request_toll_exception_interaction_desc: "Požádejte [recipient.Custom('CZ_ShortUIName_A')], aby snížil [Concept('market_toll','tržní clo')|E] na jednom z [recipient.GetHerHis] [Concept('markets','trhů')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ request_toll_exception_interaction_extra_icon: "$strong_hook_extra_icon$" # todo: NEW TRANSLATION
+ REQUEST_TOLL_EXCEPTION_PROPOSAL: "Naše společnost obchoduje ve [trade_market.GetName] ve značném rozsahu a [Concept('market_tolls','tržní cla')|E], které se tam vybírají, zatěžují naše účetní knihy. Žádáme vás o dočasné osvobození od těchto poplatků, než budeme nuceni hledat vstřícnější trhy pro naše zboží." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ request_toll_exception_already_exempt_tt: "Od [Concept('market_tolls','tržních cel')|E] ve [trade_market.GetName] již nesmíte být osvobozeni" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ request_toll_exception_not_cheaper_tt: "Požadovaný [Concept('market_toll','tržní clo')|E] musí být nižší než ten, který v [trade_market.GetName] platíte nyní" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ request_toll_exception_own_vassal_reason: "[actor.GetShortUIName|U] je [recipient.GetHerHis] [Concept('vassal','vazal')|E]: $VALUE|=+0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ request_toll_exception_tier_cut_reason: "Velikost snížení [Concept('market_toll','tržní clo')|E]: $VALUE|=+0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ request_toll_exception_lost_income_reason: "Podíl [recipient.GetHerHis] [Concept('income','příjem')|E] ztracený kvůli snížení: $VALUE|=+0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ request_toll_exception_recipient_in_debt_reason: "[recipient.GetShortUIName|U] je v [Concept('debt','dluhu')|E]: $VALUE|=+0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ grant_toll_exception_interaction: "Udělit výjimku z mýta" # todo: NEW TRANSLATION
+ grant_toll_exception_interaction_desc: "Nastavte pro [recipient.Custom('CZ_ShortUIName_A')] nižší [Concept('market_toll','tržní clo')|E] na jednom ze svých [Concept('markets','trhů')|E] po dobu #V 10 let#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ GRANT_TOLL_EXCEPTION_NOTIFICATION: "Obchodování vaší společnosti ve [trade_market.GetName] se ukázalo být pro můj lid přínosem. Jako projev své přízně vám na nějaký čas odpustím tamní mýto." # todo: NEW TRANSLATION
+ grant_toll_exception_no_tolls_to_lower_tt: "Na některém z vašich [Concept('markets','trhů')|E] musí [recipient.GetShortUIName] platit [Concept('market_tolls','tržní cla')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ grant_toll_exception_not_cheaper_tt: "[Concept('market_toll','Tržní clo')|E] musí být nižší než ten, který [recipient.GetShortUIName] nyní platí ve [trade_market.GetName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ revoke_toll_exception_interaction: "Odvolat výjimku z mýta" # todo: NEW TRANSLATION
+ revoke_toll_exception_interaction_desc: "Zrušte výjimku [recipient.Custom('CZ_ShortUIName_G')] z [Concept('market_toll','tržního cla')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ toll_exception_own_market_tt: "Musíte být [Concept('market_owner','vlastník trhu')|E] ve [trade_market.GetName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ toll_exception_market_owner_tt: "[recipient.GetShortUIName|U] musí být [Concept('market_owner','vlastník trhu')|E] ve [trade_market.GetName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ granted_toll_exception_opinion: "Udělená výjimka z mýta" # todo: NEW TRANSLATION
+ revoked_my_toll_exception_opinion: "Odvolaná výjimka z mého mýta" # todo: NEW TRANSLATION
+ commission_merchant_good_merchant_insufficient_supply_tt: "[recipient.GetTitledFirstName] nemá přístup k [Concept('trade_market','obchodnímu trhu')|E] s [Concept('surplus','přebytkem')|E] zboží [THIS.TradeGoodType.GetName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ CHARACTER_INTERACTION_SELECT_TRADE_MARKET_LABEL: "Vyberte obchodní trh" # todo: NEW TRANSLATION
+ CHARACTER_INTERACTION_SELECT_TRADE_GOOD_INFO: "Vyberte [Concept('trade_good','obchodní zboží')|E], jehož účinky se mají zobrazit" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ CHARACTER_INTERACTION_SELECT_TRADE_CATEGORY_INFO: "Vyberte [Concept('trade_category','kategorie zboží')|E], jehož účinky se mají zobrazit" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ CHARACTER_INTERACTION_NO_TRADE_MARKETS: "Žádné vhodné obchodní trhy" # todo: NEW TRANSLATION
+ REQUEST_MONOPOLY_COMPLETE_MARKET_WIDE_INFO: "[Concept('complete_monopoly','Úplný monopol')|E] pokrývá všechny [Concept('trade_category','kategorii zboží')|E] na [Concept('trade_market','obchodní trh')|E], takže není možné vybrat žádnou kategorii" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ REQUEST_MONOPOLY_COMPLETE_TOGGLE_TOOLTIP: "Požádejte o [Concept('complete_monopoly','úplný monopol')|E] zahrnující všechny [Concept('trade_category','kategorii zboží')|E] na trhu namísto jediné kategorie." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ REQUEST_MONOPOLY_EXPLOITATIVE_TOGGLE_TOOLTIP: "Požádejte o [Concept('exploitative_monopoly','vykořisťovatelský monopol')|E] s méně výhodnými podmínkami." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ COMMISSION_MERCHANT_NO_MARKET_SELECTED: "$no_target_selected_tt$" # todo: NEW TRANSLATION
+ COMMISSION_MERCHANT_NO_TRADE_GOOD_SELECTED: "$no_target_selected_tt$" # todo: NEW TRANSLATION
+ action_move_company_size: "$action_move_company_size_combined_group_name$" # todo: NEW TRANSLATION
+ action_move_company_size_label: "@tributary_merchant! Můžete přesunout společnost a stát se klientem [recipient.GetPrimaryTitle.Custom('GetTierIcon')][recipient.Custom('CZ_ShortUIName_G')]" # todo: NEW TRANSLATION
+ action_move_company_size_desc: "Vaše [Concept('company_size','velikost společnosti')|E] je vzhledem k aktuální [Concept('rank','hodnosti')|E] vašeho [Concept('merchant_patron_possessive','patroně')|E] ([actor.GetSuzerain.GetPrimaryTitle.Custom('GetTierIcon')][actor.GetSuzerain.GetName]) vysoká.\n\nMůžete přesunout svou [Concept('company','společnost')|E] do [recipient.GetPrimaryTitle.Custom('GetTierIcon')][recipient.Custom('CZ_ShortUIName_G')] [Concept('realm','panství')|E] a stát se [recipient.GetHerHis] [Concept('client','klientem')|E].\n\n$action_move_company_size_help$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ action_move_company_size_click: "#I Kliknutím přesunete svou společnost#!" # todo: NEW TRANSLATION
+ action_move_company_size_unimportant: "@alert_icon! #alert_trial [recipient.GetShortUIName] nepřijme#!" # todo: NEW TRANSLATION
+ action_move_company_size_combined_group_label: "@tributary_merchant! Můžete přejít k patronovi s vyšší hodností" # todo: NEW TRANSLATION
+ action_move_company_size_combined_label: "[recipient.GetPrimaryTitle.Custom('GetTierIcon')][recipient.GetUINameNoTooltip]" # todo: NEW TRANSLATION
+ action_move_company_size_combined_group_name: "Přesunout společnost" # todo: NEW TRANSLATION
+ action_move_company_size_combined_group_description: "Vaše [Concept('company_size','velikost společnosti')|E] je vzhledem k aktuální [Concept('rank','hodnosti')|E] vašeho [Concept('merchant_patron_possessive','patroně')|E] ([actor.GetSuzerain.GetPrimaryTitle.Custom('GetTierIcon')][actor.GetSuzerain.GetName]) vysoká.\n\nMůžete přesunout svou [Concept('company','společnost')|E] k [Concept('ruler','vládci')|E] s vyšší hodností a stát se jeho [Concept('client','klientem')|E].\n\n$action_move_company_size_help$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ action_move_company_size_combined_unimportant: "@alert_icon! #alert_trial Žádný potenciální $game_concept_merchant_patrons$ s vyšší hodností by vás nepřijal#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ action_move_company_size_help: "#help [Concept('merchant_patrons','Patroni')|E] s vyšší [Concept('rank','hodností')|E] bývají zpravidla bohatší a mohou svým [Concept('clients','klienty')|E] nabídnout lepší podmínky i [Concept('merchant_charters','obchodní listiny')|E] s [charter_i|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ action_move_company_nearby_market: "$action_move_company_nearby_market_combined_group_name$" # todo: NEW TRANSLATION
+ action_move_company_nearby_market_label: "@prosperity_icon! Můžete se přesunout na trh v [county.GetDeJureLiege.GetAdjectiveNoTooltip|V] oblasti, [Concept('market_prosperity_i','@prosperity_icon!')|E][market.GetAvgProsperity|V1] ([actor.GetCapitalLocation.GetTitle.GetTradeMarket.GetAvgProsperity|1])" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ action_move_company_nearby_market_desc: "[Concept('market_prosperity_i','@prosperity_icon!')|E][Concept('market_prosperity','Hospodářská prosperita trhu')|E] na trhu [market.GetName|l] ([market.GetAvgProsperity|V0]) je vyšší než na vašem současném [Concept('market_possessive','trhu')|E] ([actor.GetCapitalLocation.GetTitle.GetTradeMarket.GetAvgProsperity|V0]) \n\nMůžete přesunout svou [Concept('company','společnost')|E] do [county.GetNameNoTier] na trhu [market.GetName|l], kde se [recipient.GetShortUIName] stane vaším [Concept('merchant_patron','patronem')|E].\n\n$action_move_company_nearby_market_help$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ action_move_company_nearby_market_click: "#I Kliknutím přesunete svou společnost#!" # todo: NEW TRANSLATION
+ action_move_company_nearby_market_unimportant: "@alert_icon! #alert_trial [recipient.GetShortUIName] nepřijme#!" # todo: NEW TRANSLATION
+ action_move_company_nearby_market_combined_group_label: "@prosperity_icon! Můžete se přesunout na prosperující trhy" # todo: NEW TRANSLATION
+ action_move_company_nearby_market_combined_label: "Trh v [county.GetDeJureLiege.GetAdjectiveNoTooltip|V] oblasti, [Concept('market_prosperity_i','@prosperity_icon!')|E][market.GetAvgProsperity|V1] ([actor.GetCapitalLocation.GetTitle.GetTradeMarket.GetAvgProsperity|1])" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ action_move_company_nearby_market_combined_group_name: "Přesunout společnost" # todo: NEW TRANSLATION
+ action_move_company_nearby_market_combined_group_description: "Blízké [Concept('trade_markets','obchodní trhy')|E] mají vyšší [market_prosperity_i|E] [Concept('market_prosperity','hospodářské prosperity trhu')|E] než trh, na němž sídlí vaše [Concept('company','společnost')|E].\n\nMůžete přesunout svou společnost na jiný $game_concept_market$ a stát se [Concept('client','klientem')|E] místního [Concept('rulerpossessive','vládcovým')|E].\n\n$action_move_company_nearby_market_help$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ action_move_company_nearby_market_combined_unimportant: "$action_move_company_size_combined_unimportant$" # todo: NEW TRANSLATION
+ action_move_company_nearby_market_help: "#help [Concept('sell_price_i','@gold_icon!')|E][Concept('sell_price','Prodejní cena')|E] [Concept('goods','Zboží')|E] [Concept('trade_goods_i','@trade_goods_icon!')|E], a tedy i ziskovost [Concept('trade_routes','obchodní trasy')|E] [route_i|E], roste na [Concept('markets','trhy')|E] [market_i|E] s vyšší [market_prosperity_i|E] [Concept('market_prosperity','hospodářskou prosperitou trhu')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ company_commission_inspiration_interaction: "Podpořit inspiraci spolupracovníka" # todo: NEW TRANSLATION
+ company_commission_inspiration_interaction_desc: "[Concept('sponsor','Mecenáš')|E] [recipient.GetTitledFirstName] při [Select_CString(recipient.IsFemale,'její','jeho')] hledání [Concept('inspiration','inspiraci')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ company_commission_inspiration_interaction_tt: "[recipient.GetShortUIName|U] získá náhodnou [Concept('inspiration','inspiraci')|E] a vy ji budete [Concept('sponsor','mecenáš')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ character_already_inspired_tt: "[THIS.Char.GetShortUIName|U] už má [Concept('inspiration','inspirace')|E] #weak ([THIS.Char.GetCurrentInspiration.GetName])#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ start_hostile_takeover_interaction: "Pokusit se o nepřátelské převzetí" # todo: NEW TRANSLATION
+ start_hostile_takeover_interaction_desc: "Pokuste se zabrat majetek [recipient.GetPrimaryTitle.GetName|l], rozbít jeho síť a posílit svou [Concept('trade_competitiveness','obchodní konkurenceschopnost')|E] na jejich bývalých [Concept('trade_markets','obchodních trhů')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ hostile_takeover_company_size_trigger: "Vaše [Concept('company_size','velikost společnosti')|E] #weak ([actor.MakeScope.ScriptValue('company_size_value')|V0])#! nesmí být menší než [recipient.Custom('CZ_ShortUIName_G')] #weak ([recipient.MakeScope.ScriptValue('company_size_value')|V0])#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ hostile_takeover_hook_trigger: "Musíte mít [Concept('strong_hook_i','@unspent_strong_hook_icon!')|E][Concept('strong_hook','silné páky')|E] na [recipient.Custom('CZ_ShortUIName_A')], nebo [hook_i|E][Concept('hook','páku')|E] alespoň na #V 1#! z [recipient.GetHerHis] [Concept('associates','společníků')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ hostile_takeover_patron_trigger: "Musíte být [Concept('friends','přátelé')|E], [Concept('lover','milenec')|E], [Concept('married','sezdán')|E] s [Concept('merchant_patron','patronem')|E] [recipient.GetHerHis] nebo na něj mít [Concept('hook_i','@cs_weak_hook_icon!')|E][Concept('hook','páky')|E] #weak ([recipient.GetSuzerain.GetShortUIName])#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ hostile_takeover_minimum_company_size_trigger: "Vaše [Concept('company_size','velikost společnosti')|E] musí být alespoň [GetLaw('company_size_medium').GetName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ purchase_land_no_land_tt: "[recipient.GetShortUIName|U] nemá žádné [Concept('titles','tituly')|E], které byste mohli koupit" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ share_market_insights_interaction: "Sdílet znalosti o zboží" # todo: NEW TRANSLATION
+ share_market_insights_interaction_desc: "Nabídněte jiné [Concept('company','společnost')|E] výměnu [Concept('trade_expertise','obchodní zkušenost')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ share_market_insights_interaction_toast: "Znalosti sdíleny" # todo: NEW TRANSLATION
+ gdp_same_trade_league_or_positive_house_relation_tt: "Musíte být ve stejné [Concept('trade_league','obchodní lize')|E], nebo musí být [Concept('house_relation','vztah rodů')|E] mezi #V [actor.GetHouse.GetName] a [recipient.GetHouse.GetName]#! srdečný či lepší" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ SHARE_MARKET_INSIGHTS_NOTIFICATION: "Naše dvě společnosti se mohou mnohému naučit jedna od druhé. Sdílejme své znalosti ku prospěchu nás obou." # todo: NEW TRANSLATION
+ actor_trade_better_trade_expertise_categories: "Získané relevantní [Concept('expertise','zkušenost')|E]: $VALUE|=+0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ recipient_trade_better_trade_expertise_categories: "Sdílené [Concept('expertise','zkušenost')|E]: $VALUE|=+0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gdp_share_market_insights_valid_category_tt: "Jedna [Concept('company','společnost')|E] musí mít v některé [Concept('trade_category','kategorii zboží')|E] vyšší [Concept('trade_expertise','obchodní zkušenosti')|E] než druhá" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ share_market_insights_interaction_decline_toast: "Sdílení znalostí odmítnuto" # todo: NEW TRANSLATION
+ gdp_increase_expertise_lower_than_target_effect_tt: "[CHARACTER.GetShortUINamePossessive|U] [Concept('company','Společnost')|E] získá #V 5#! [Concept('expertise_levels','úrovně zkušenosti')|E] v každé [Concept('trade_category_short','kategorii')|E], v níž má nižší úroveň než [TARGET_CHARACTER.GetShortUINamePossessive] $game_concept_company$:" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gdp_increase_expertise_lower_than_target_category_tt: "[category.GetName]" # todo: NEW TRANSLATION
+ steal_market_insights_interaction: "Ukrást znalosti o zboží" # todo: NEW TRANSLATION
+ steal_market_insights_interaction_desc: "Pokuste se ukrást [Concept('trade_expertise','obchodní zkušenost')|E] jiné [Concept('company','společnost')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gdp_steal_market_insights_scheme_target_valid_category_tt: "[THIS.Char.GetShortUINamePossessive|U] [Concept('company','Společnost')|E] #bold nemá#! [Concept('trade_category','kategorie zboží')|E] s vyšší [Concept('trade_expertise','obchodní zkušeností')|E] než vy" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_ransom_interaction: "Zaplatit výkupné za vládce" # todo: NEW TRANSLATION
+ merchant_ransom_interaction_desc: "Nabídněte se zaplatit výkupné za [Concept('imprisoned','uvězněného')|E] [Concept('ruler','vládce')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_ransom_interaction_extra_icon: "$hook_extra_icon$" # todo: NEW TRANSLATION
+ MERCHANT_RANSOM_PROPOSAL: "Pokorně vyjednávám jménem [secondary_recipient.GetShortUIName]. Propustíte [secondary_recipient.GetHerHim] za těchto podmínek?" # todo: NEW TRANSLATION
+ recipient_secondary_merchant_ransom_interaction: "[Concept('prisoner','Vězeň')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ RANSOM_HALF_GOLD_PAY_OPTION: "Zaplatit [gold_i]$HALF_RANSOM_COST|0$ #weak (druhou polovinu zaplatí $game_concept_prisoner$)#!" # todo: NEW TRANSLATION
+ RANSOM_EXTORTIONATE_HALF_GOLD_IMPRISONED_PERSPECTIVE_OPTION: "Za [gold_i]$HALF_EXTORTIONATE_RANSOM_COST|0$ #weak (druhou polovinu zaplatí $game_concept_prisoner$)#!" # todo: NEW TRANSLATION
+ merchant_ransom_opinion: "Zaplatil mé výkupné" # todo: NEW TRANSLATION
+ ransomed_by_merchant: "Vykoupeno obchodníkem" # todo: NEW TRANSLATION
+ ransomed_by_merchant_desc: "[payer.GetShortUIName] vás vykoupil z kobek [imprisoner.GetShortUIName]!" # todo: NEW TRANSLATION
+ action_can_merchant_ransom: "@prison_icon! Vykoupit vládce za páku" # todo: NEW TRANSLATION
+ action_can_merchant_ransom_combined_group_label: "@prison_icon! Vykoupit vládce za páky" # todo: NEW TRANSLATION
+ action_can_merchant_ransom_combined_group_name: "$action_can_merchant_ransom_combined_group_label$" # todo: NEW TRANSLATION
+ action_can_merchant_ransom_desc: "[secondary_recipient.Custom('GetPrimaryTitleTierIcon')][secondary_recipient.GetUIName], blízký [Concept('ruler','vládce')|E], byl uvězněn [Concept('imprisoned','uvězněný')|E] [recipient.GetUIName].\n\nMůžete zaplatit výkupné a získat [Concept('hook_i','@cs_weak_hook_icon!')|E][Concept('hook','páky')|E], [Concept('prestige_i','@prestige_icon!')|E][Concept('prestige','prestiže')|E] a [Concept('opinion_i','@opinion_icon!')|E][Concept('opinion','mínění')|E].\n\nVýkupné [secondary_recipient.GetHerHis] činí @gold_icon!#V [secondary_recipient.MakeScope.ScriptValue('ransom_cost_value')|0]#! [Concept('gold','zlato')|E]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ action_can_merchant_ransom_combined_group_description: "V okolí jsou [Concept('rulers','vládcích')|E] [Concept('imprisoned','uvězněném')|E]. Jejich výkupným můžete získat [Concept('hook_i','@cs_weak_hook_icon!')|E][Concept('hooks','pák')|E], [Concept('prestige_i','@prestige_icon!')|E][Concept('prestige','prestiže')|E] a [Concept('opinion_i','@opinion_icon!')|E][Concept('opinion','mínění')|E]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ action_can_merchant_ransom_label: "@prison_icon! Vykoupit [secondary_recipient.Custom('GetPrimaryTitleTierIcon')][secondary_recipient.GetShortUINameNoTooltip] za páku, @gold_icon!#V [secondary_recipient.MakeScope.ScriptValue('ransom_cost_value')|0]#!" # todo: NEW TRANSLATION
+ action_can_merchant_ransom_combined_label: "[secondary_recipient.Custom('GetPrimaryTitleTierIcon')][secondary_recipient.GetUINameNoTooltip], @gold_icon!#V [secondary_recipient.MakeScope.ScriptValue('ransom_cost_value')|0]#!" # todo: NEW TRANSLATION
+ action_can_merchant_ransom_combined_unimportant: "@alert_icon! #alert_trial Nemůžeš si dovolit výkupné žádného vládce#!" # todo: NEW TRANSLATION
+ action_can_merchant_ransom_unimportant: "@alert_icon! #alert_trial Nemůžeš si dovolit výkupné za [secondary_recipient.Custom('CZ_TitledFirstName_G')], nebo by ho [recipient.Custom('CZ_TitledFirstName_G')] nyní nepřijal#!" # todo: NEW TRANSLATION
+ action_can_merchant_ransom_click: "#I Kliknutím otevřeš interakci#!" # todo: NEW TRANSLATION
+ loan_repaid_toast_title: "Půjčka splacena" # todo: NEW TRANSLATION
+ loan_instrument_disguised: "Skrytý úrok" # todo: NEW TRANSLATION
+ loan_instrument_free: "Bezúročná" # todo: NEW TRANSLATION
+ loan_instrument_open: "Otevřený úrok" # todo: NEW TRANSLATION
+ merchant_trade_hook_interaction: "Vyměnit páku" # todo: NEW TRANSLATION
+ merchant_trade_hook_interaction_desc: "Uplatni svou [Concept('hook','páku')|E] na [recipient.GetShortUINameNoTooltip] a požádej [Select_CString(recipient.IsFemale,'její','jeho')] o laskavost" # todo: NEW TRANSLATION
+ merchant_trade_hook_interaction_extra_icon: "$strong_hook_extra_icon$" # todo: NEW TRANSLATION
+ TRADE_HOOK_GOLD_NOTIFICATION: "$TRADE_HOOK_NOTIFICATION$ Považovali bychom záležitost za vyřízenou výměnou za slušnou částku." # todo: NEW TRANSLATION
+ TRADE_HOOK_PRESTIGE_NOTIFICATION: "$TRADE_HOOK_NOTIFICATION$ Považovali bychom záležitost za vyřízenou výměnou za tvoje dobré slovo." # todo: NEW TRANSLATION
+ TRADE_HOOK_COMPETITIVENESS_NOTIFICATION: "$TRADE_HOOK_NOTIFICATION$ Považovali bychom záležitost za vyřízenou výměnou za určitá privilegia." # todo: NEW TRANSLATION
+ TRADE_HOOK_NOTIFICATION: "Naše společnost nezapomněla, že nám vděčíš za dřívější služby." # todo: NEW TRANSLATION
+ request_prestige: "Za [prestige_i|E][Concept('prestige','prestiž')|E]" # todo: NEW TRANSLATION
+ merchant_trade_hook_competitiveness_suzerain_tt: "[recipient.GetShortUIName] je tvůj [Concept('merchant_patron','patron')|E]\n#help Místo toho použij [Concept('interaction','interakce')|E] #V $patron_request_interaction$#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ contact_list_request_interaction.request_prestige_tt: "Vyžádaná prestiž" # todo: NEW TRANSLATION
+ share_market_competitiveness_interaction: "Sdílet konkurenceschopnost na trhu" # todo: NEW TRANSLATION
+ share_market_competitiveness_interaction_desc: "Nabídni jinému [Concept('merchant','obchodníkovi')|E] výměnu znalostí a oprávnění na domácích [Concept('trade_markets','obchodních trhů')|E] toho druhého" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ SHARE_MARKET_COMPETITIVENESS_NOTIFICATION: "Naše společnosti spolu dobře spolupracují. Rozšiřme tuto spolupráci i na naše domácí trhy, abychom oba mohli těžit tam, kde ostatní selhávají." # todo: NEW TRANSLATION
+ share_market_competitiveness_interaction_toast: "Konkurenceschopnost sdílena" # todo: NEW TRANSLATION
+ share_market_competitiveness_interaction_decline_toast: "Sdílení konkurenceschopnosti odmítnuto" # todo: NEW TRANSLATION
+ gdp_share_market_competitiveness_different_market_tt: "Tvůj [Concept('domicile','domicil')|E] musí ležet v jiném [Concept('trade_market','obchodním trhu')|E] než [recipient.Custom('CZ_ShortUIName_G')] [Concept('domicile','domicil')|E]" # todo: NEW TRANSLATION
+ gdp_share_trade_competitiveness_modifier: "Sdílená konkurenceschopnost na trhu" # todo: NEW TRANSLATION
+ gdp_share_trade_competitiveness_modifier_desc: "Tato postava si s jinou společností vyměnila znalosti o domácích trzích a oprávnění na nich." # todo: NEW TRANSLATION
+ GENERIC_FORGIVE_LOAN: "Odpustit [Concept('loan','půjčku')|E]" # todo: NEW TRANSLATION
+ FORGIVE_LOAN_GOLD_REASON: "Velikost odpuštěné [Concept('loan','půjčky')|E]: $VALUE|+=0$" # todo: NEW TRANSLATION
+ FORGIVE_LOAN_HOOK_REASON: "Odpuštění [Concept('loan','půjčky')|E] pomocí [strong_hook_i|E][Concept('strong_hook','silné páky')|E]: $VALUE|+=0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ recipient_loan_from_actor_tt: "[recipient.GetShortUIName|U] nemá [Concept('loan','půjčku')|E] od [actor.Custom('CZ_ShortUIName_G')]" # todo: NEW TRANSLATION
+ patron_has_previously_been_impressed: "Už dříve jsi [recipient.GetShortUIName] ohromil svými znalostmi obchodu: $VALUE|+=0$" # todo: NEW TRANSLATION
+ patron_has_previously_been_slightly_impressed: "Už dříve jsi [recipient.GetShortUIName] mírně ohromil svými obchodními znalostmi: $VALUE|+=0$" # todo: NEW TRANSLATION
+ merchant_purchase_land_interaction_offer_gold_exclusive_tt: "Nemůžeš použít zároveň [Concept('hook_i','@cs_weak_hook_icon!')|E][Concept('hook','páku')|E] i [Concept('gold_i','@gold_icon!')|E][Concept('gold','zlato')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_purchase_land_interaction_forgive_loan_exclusive_tt: "Nemůžeš zároveň použít [Concept('hook_i','@cs_weak_hook_icon!')|E][Concept('hook','páku')|E] a odpustit [Concept('loan','půjčku')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE

@@ -1,0 +1,362 @@
+﻿l_polish:
+ TRADE: "Obchod" # todo: NEW TRANSLATION
+ DISTRIBUTION_TRADE_ROUTE_NAME: "[AddLocalizationIf( GreaterThan_int32( TradeRoute.GetNameNumber, '(int32)1' ), 'TRADE_ROUTE_NAME_ORDINAL' )]trasa [START_TRADE_MARKET.GetShortNameNoTooltip]–[END_TRADE_MARKET.GetShortNameNoTooltip]" # todo: NEW TRANSLATION
+ PROFIT_TRADE_ROUTE_NAME: "[AddLocalizationIf( GreaterThan_int32( TradeRoute.GetNameNumber, '(int32)1' ), 'TRADE_ROUTE_NAME_ORDINAL' )][TradeRoute.GetOwner.GetPrimaryTitle.GetAdjectiveNoTooltip]á trasa pro [TradeGoodType.GetNameNoTooltip]" # todo: NEW TRANSLATION
+ COMMISSION_TRADE_ROUTE_NAME: "[AddLocalizationIf( GreaterThan_int32( TradeRoute.GetNameNumber, '(int32)1' ), 'TRADE_ROUTE_NAME_ORDINAL' )][TradeRoute.GetCommissioner.GetPrimaryTitle.GetAdjectiveNoTooltip]á trasa pro [TradeGoodType.GetNameNoTooltip]" # todo: NEW TRANSLATION
+ DRAFT_DISTRIBUTION_TRADE_ROUTE_NAME: "Trasa [START_TRADE_MARKET.GetShortNameNoTooltip]–[END_TRADE_MARKET.GetShortNameNoTooltip]" # todo: NEW TRANSLATION
+ DRAFT_PROFIT_TRADE_ROUTE_NAME: "[Character.GetPrimaryTitle.GetAdjectiveNoTooltip]á trasa pro [TradeGoodType.GetNameNoTooltip]" # todo: NEW TRANSLATION
+ DRAFT_TRADE_ROUTE_NAME: "Trasa [TradeMarket.GetShortNameNoTooltip] pro [TradeGoodType.GetNameNoTooltip]" # todo: NEW TRANSLATION
+ DRAFT_TRADE_ROUTE_NAME_BASIC: "Nová trasa [Character.GetFirstNamePossessiveNoTooltip|U]" # todo: NEW TRANSLATION
+ DRAFT_TRADE_ROUTE_NAME_ONLY_GOODS: "Trasa pro [TradeGoodType.GetNameNoTooltip]" # todo: NEW TRANSLATION
+ TRADE_ROUTE_NAME_INVALID: "Obchodní trasa" # todo: NEW TRANSLATION
+ TRADE_ROUTE_NAME_ORDINAL: "[TradeRoute.GetNameNumber|O] " # todo: NEW TRANSLATION
+ TRADE_MARKET_NAME: "Tržiště [TITLE.GetAdjectiveNoTooltip]" # todo: NEW TRANSLATION
+ TRADE_MARKET_SHORT_NAME: "[TITLE.GetBaseNameNoTierNoTooltip]" # todo: NEW TRANSLATION
+ TRADE_GOOD_NAME: "[TradeGoodType.GetName]" # todo: NEW TRANSLATION
+ TRADE_GOOD_LABEL: "[TradeGoodType.GetTextIcon] [TradeGoodType.GetName]" # todo: NEW TRANSLATION
+ msg_trade_route_income_increased.t: "Příjmy z obchodní trasy vzrostly" # todo: NEW TRANSLATION
+ msg_trade_route_income_decreased.t: "Příjmy z obchodní trasy klesly" # todo: NEW TRANSLATION
+ msg_trade_route_income_changed.desc: "Příjmy z [trade_route.GetName|lV] $INCOME_CHANGE$$CAUSES$" # todo: NEW TRANSLATION
+ MSG_TRADE_ROUTE_INCOME_UP: "vzrostly o @gold_icon!#P $DELTA|3$#!" # todo: NEW TRANSLATION
+ MSG_TRADE_ROUTE_INCOME_DOWN: "klesly o @gold_icon!#N $DELTA|3$#!" # todo: NEW TRANSLATION
+ MSG_TRADE_ROUTE_CAUSE_ENTRY: "#indent_newline:4 $EFFECT_LIST_BULLET$$LINE$#!" # todo: NEW TRANSLATION
+ MSG_TRADE_ROUTE_CAUSE_SHARE: "$DELTA|+=%1$ podíl na obchodu s [TradeGoodType.GetTextIcon][TradeGoodType.GetName|V] na tržišti [TradeMarket.GetShortName|V]" # todo: NEW TRANSLATION
+ MSG_TRADE_ROUTE_CAUSE_PRICE_SELL: "@gold_icon!$DELTA|+=3$ k [Concept('sell_price','prodejní ceně')|E] za [TradeGoodType.GetTextIcon][TradeGoodType.GetName|V] na tržišti [TradeMarket.GetShortName|V]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MSG_TRADE_ROUTE_CAUSE_PRICE_BUY: "@gold_icon!$DELTA|-=3$ k [Concept('buy_price','nákupní ceně')|E] za [TradeGoodType.GetTextIcon][TradeGoodType.GetName|V] na tržišti [TradeMarket.GetShortName|V]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MSG_TRADE_ROUTE_CAUSE_POOL_DEMAND: "$DELTA|+=1^$ [TradeGoodType.Custom('GetTradeGoodUnitPlural')] neuspokojené poptávky po [TradeGoodType.GetTextIcon][TradeGoodType.GetName|V] na tržišti [TradeMarket.GetShortName|V]" # todo: NEW TRANSLATION
+ MSG_TRADE_ROUTE_CAUSE_POOL_CATEGORY: "$DELTA|+=1^$ neuspokojené poptávky po kategorii [TradeGoodCategory.GetName|V] na tržišti [TradeMarket.GetShortName|V]" # todo: NEW TRANSLATION
+ MSG_TRADE_ROUTE_CAUSE_VOLUME: "$DELTA|+=1$ [TradeGoodType.Custom('GetTradeGoodUnitPlural')] [TradeGoodType.GetTextIcon][TradeGoodType.GetName|V] zobchodovaných na tržišti [TradeMarket.GetShortName|V]" # todo: NEW TRANSLATION
+ MSG_TRADE_ROUTE_CAUSE_VOLUME_UNCAPPED: "Konkurence už neomezuje tvůj obchod s [TradeGoodType.GetTextIcon][TradeGoodType.GetName|V] na tržišti [TradeMarket.GetShortName|V]" # todo: NEW TRANSLATION
+ MSG_TRADE_ROUTE_CAUSE_VOLUME_CAPPED: "Konkurence nyní omezuje tvůj obchod s [TradeGoodType.GetTextIcon][TradeGoodType.GetName|V] na tržišti [TradeMarket.GetShortName|V]" # todo: NEW TRANSLATION
+ MSG_TRADE_ROUTE_CAUSE_CAPACITY: "$DELTA|+=0$ k [Concept('trade_route_capacity','kapacitě obchodní trasy')|E] této trasy" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MSG_TRADE_ROUTE_CAUSE_CAPACITY_OWNER: "$DELTA|+=0$ k [Concept('trade_route_capacity','kapacitě obchodní trasy')|E] této trasy díky tvým vlastním modifikátorům" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MSG_TRADE_ROUTE_CAUSE_CAPACITY_ROUTE: "$DELTA|+=0$ k [Concept('trade_route_capacity','kapacitě obchodní trasy')|E] této trasy díky jejím [Concept('roads','silnicím')|E], [Concept('trader','obchodníkovi')|E] nebo dočasným modifikátorům" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MSG_TRADE_ROUTE_CAUSE_CAPACITY_MARKETS: "$DELTA|+=0$ k [Concept('trade_route_capacity','kapacitě obchodní trasy')|E] této trasy díky jejím [Concept('trade_markets','obchodním trhům')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MSG_TRADE_ROUTE_CAUSE_NO_BASELINE: "Minulý měsíc se neuskutečnil žádný obchod, se kterým by se dalo srovnávat" # todo: NEW TRANSLATION
+ MSG_TRADE_ROUTE_CAUSE_GENERAL: "Změny cen, poptávky a zobchodovaného množství na [Concept('trade_markets','obchodní trhy')|E] této trasy" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MSG_TRADE_ROUTE_CAUSE_RIVAL: "[Character.GetName] otevřel konkurenční trasu pro [TradeGoodType.GetTextIcon][TradeGoodType.GetName|V] na tržišti [TradeMarket.GetShortName|V]" # todo: NEW TRANSLATION
+ MSG_TRADE_ROUTE_CAUSE_MONOPOLY_EXCLUDES_COMPLETE: "Kvůli [Concept('complete_monopoly','úplnému monopolu')|E] nemáš přístup na tržiště [TradeMarket.GetShortName|V]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MSG_TRADE_ROUTE_CAUSE_MONOPOLY_EXCLUDES_CATEGORY: "Kvůli [Concept('monopoly','monopolu')|E] nemáš přístup ke kategorii [TradeGoodCategory.GetName|V] na tržišti [TradeMarket.GetShortName|V]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MSG_TRADE_ROUTE_CAUSE_MONOPOLY_FAVORS_COMPLETE: "[Concept('complete_monopoly','Úplný monopol')|E] na tržišti [TradeMarket.GetShortName|V] nyní odřízlo tvé konkurenty" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MSG_TRADE_ROUTE_CAUSE_MONOPOLY_FAVORS_CATEGORY: "[Concept('monopoly','Monopol')|E] na kategorii [TradeGoodCategory.GetName|V] na tržišti [TradeMarket.GetShortName|V] nyní odřízlo tvé konkurenty" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MSG_TRADE_ROUTE_CAUSE_MONOPOLY_ENDED: "[Concept('monopoly','Monopol')|E] na tržišti [TradeMarket.GetShortName|V] skončilo" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ msg_trade_route_owner_cannot_trade.t: "Obchodní trasa zrušena" # todo: NEW TRANSLATION
+ msg_trade_route_owner_cannot_trade.desc: "$TRADE_ROUTE_NAME$ byla zrušena, protože $REASON$" # todo: NEW TRANSLATION
+ MSG_TRADE_ROUTE_OWNER_CANNOT_TRADE_TITLE_TIER: "tvá hodnost není dostatečně vysoká" # todo: NEW TRANSLATION
+ MSG_TRADE_ROUTE_OWNER_CANNOT_TRADE_GOVERNMENT: "tvá vláda už tento druh obchodu nepovoluje" # todo: NEW TRANSLATION
+ MSG_TRADE_ROUTE_OWNER_CANNOT_TRADE_NOT_LANDED: "už nedržíš žádnou půdu" # todo: NEW TRANSLATION
+ msg_trade_route_suspended.t: "Obchodní trasa pozastavena" # todo: NEW TRANSLATION
+ msg_trade_route_suspended.desc: "[trade_route.GetName|V] přestala obchodovat, protože $REASON$" # todo: NEW TRANSLATION
+ msg_trade_route_resumed.t: "Obchodní trasa obnovena" # todo: NEW TRANSLATION
+ msg_trade_route_resumed.desc: "[trade_route.GetName|V] může znovu obchodovat" # todo: NEW TRANSLATION
+ TRADE_ROUTE_SUSPENDED_NO_HOME_MARKET: "už nevede přes tržiště, na kterém držíš titul, domicil nebo obchodní stanici" # todo: NEW TRANSLATION
+ TRADE_ROUTE_SUSPENDED_TOO_LONG: "je delší než maximální délka tvé trasy" # todo: NEW TRANSLATION
+ TRADE_ROUTE_SUSPENDED_ROADS_DISCONNECTED: "její cesty už nespojují všechna tržiště na trase. Uprav trasu a znovu je propojíš" # todo: NEW TRANSLATION
+ msg_trade_route_stopped_trading.t: "Obchodní trasa přestala obchodovat" # todo: NEW TRANSLATION
+ msg_trade_route_stopped_trading.desc: "[trade_route.GetName|V] tento měsíc neuskutečnila žádný obchod$CAUSES$" # todo: NEW TRANSLATION
+ msg_trade_route_trading_again.t: "Obchodní trasa znovu obchoduje" # todo: NEW TRANSLATION
+ msg_trade_route_trading_again.desc: "[trade_route.GetName|V] znovu obchoduje$CAUSES$" # todo: NEW TRANSLATION
+ trade_category_non_construction: "Ne-stavební zboží" # todo: NEW TRANSLATION
+ trade_category_non_construction_desc: "Veškeré obchodní zboží kromě stavebních materiálů; nezahrnuje dřevo, konopí ani kámen." # todo: NEW TRANSLATION
+ trade_category_non_food: "Nepotravinářské zboží" # todo: NEW TRANSLATION
+ trade_category_non_food_desc: "Veškeré obchodní zboží kromě základních potravin; nezahrnuje obilí, proso, rýži, ovoce, maso, ryby ani sýr." # todo: NEW TRANSLATION
+ trade_category_non_medicinal: "Ne-léčivé zboží" # todo: NEW TRANSLATION
+ trade_category_non_medicinal_desc: "Veškeré obchodní zboží kromě léčiv." # todo: NEW TRANSLATION
+ trade_category_non_luxury: "Ne-luxusní zboží" # todo: NEW TRANSLATION
+ trade_category_non_luxury_desc: "Veškeré obchodní zboží kromě luxusního zboží a pochutin, jako je hedvábí, koření, šperky, sýr, ovoce, olej, med a čaj." # todo: NEW TRANSLATION
+ trade_category_food: "Základní potraviny" # todo: NEW TRANSLATION
+ trade_category_food_desc: "Základní potraviny, které živí obyvatelstvo, včetně obilí, prosa, rýže, ovoce, masa, ryb a sýra. Stálé zásobování je prvním předpokladem každého sídla, vojska i domácnosti." # todo: NEW TRANSLATION
+ trade_category_beasts_of_burden: "Tažná zvířata" # todo: NEW TRANSLATION
+ trade_category_beasts_of_burden_desc: "Hospodářská zvířata nezbytná pro zemědělství a dopravu, včetně koní a skotu. Pohánějí práci na polích, převážejí zboží a udržují venkovské hospodářství každého panství." # todo: NEW TRANSLATION
+ trade_category_minerals: "Nerosty" # todo: NEW TRANSLATION
+ trade_category_minerals_desc: "Zboží získávané těžbou a dobýváním, včetně kovů, drahokamů, soli a kamence. Zásobuje kovárny, mincovny a řemeslné dílny, na nichž závisí veškerá výroba." # todo: NEW TRANSLATION
+ trade_category_luxury: "Luxusní zboží" # todo: NEW TRANSLATION
+ trade_category_luxury_desc: "Vzácné a nákladné zboží, po němž touží bohatí a mocní, od hedvábí a koření až po slonovinu a šperky. Dodává prestiž a vytříbenost a mohou si je dovolit jen nejbohatší dvory." # todo: NEW TRANSLATION
+ trade_category_refined_goods: "Zpracované zboží" # todo: NEW TRANSLATION
+ trade_category_alcohol: "Alkohol" # todo: NEW TRANSLATION
+ trade_category_alcohol_desc: "Pivo a víno jsou mnohem víc než pouhé požitky. Slouží jako bezpečná náhrada znečištěné vody, náboženské svátosti i společenská nezbytnost v krčmách a na dvoře." # todo: NEW TRANSLATION
+ trade_category_liqour_raw_materials: "Suroviny k destilaci" # todo: NEW TRANSLATION
+ trade_category_precious_metals: "Drahé kovy" # todo: NEW TRANSLATION
+ trade_category_precious_metals_desc: "Stříbro a zlato jsou životní mízou mincoven a pokladnic. Kromě peněžního využití jsou drahé kovy nezbytné pro jemné řemeslné zpracování a okázalé předvádění společenského postavení." # todo: NEW TRANSLATION
+ trade_category_jewelry_materials: "Drahé kameny" # todo: NEW TRANSLATION
+ trade_category_jewelry_materials_desc: "Vzácné a exotické suroviny ceněné pro svou krásu, včetně drahokamů, jantaru, slonoviny a jadeitu. Dosahují vysokých cen a jsou nezbytné pro výrobu luxusního zboží i náboženských ozdob." # todo: NEW TRANSLATION
+ trade_category_crops: "Plodiny" # todo: NEW TRANSLATION
+ trade_category_crops_desc: "Pěstované polní plodiny, včetně obilovin, cukrové třtiny, bavlny a lnu. Pěstují se na obdělávaných polích zavlažovaných umělými kanály a tvoří přirozené bohatství, na němž stojí zemědělské obce." # todo: NEW TRANSLATION
+ trade_category_base_metals: "Obecné kovy" # todo: NEW TRANSLATION
+ trade_category_base_metals_desc: "Železo a měď jsou praktické kovy, na nichž stojí průmysl i válčení. Ze železa se vyrábějí zbraně, nástroje a zbroj; měď je nezbytná pro výrobu slitin a každodenní kovodělné řemeslo." # todo: NEW TRANSLATION
+ trade_category_cereals: "Obiloviny" # todo: NEW TRANSLATION
+ trade_category_cereals_desc: "Základní plodiny včetně obilí, prosa a rýže. Obiloviny tvoří základ jídelníčku a patří k nejčastěji obchodovanému zboží; jsou nezbytné pro výživu měst i vojsk." # todo: NEW TRANSLATION
+ trade_category_meat: "Maso" # todo: NEW TRANSLATION
+ trade_category_meat_desc: "Konzervované a uzené maso a ryby. Tyto zásoby bohaté na bílkoviny živí domácnosti, posádky i účastníky dlouhých cest daleko od čerstvých potravin." # todo: NEW TRANSLATION
+ trade_category_comforts: "Pochutiny" # todo: NEW TRANSLATION
+ trade_category_comforts_desc: "Běžné potraviny, které rozšiřují základní jídelníček, například sýr, ovoce, olivový olej, med a čaj. Zvyšují životní úroveň a těší se stálé poptávce ve všech usedlých obcích." # todo: NEW TRANSLATION
+ trade_category_clothes: "Oděvy" # todo: NEW TRANSLATION
+ trade_category_clothes_desc: "Hotové oděvy a materiály na oblečení, včetně textilií, kožešin a kůže. Od hrubého pracovního oděvu po jemné šaty jsou oděvy základní potřebou každého člověka v panství." # todo: NEW TRANSLATION
+ trade_category_luxury_consumption: "Luxusní spotřební zboží" # todo: NEW TRANSLATION
+ trade_category_luxury_consumption_desc: "Nákladné a žádané zboží z dalekých zemí, včetně cukru a koření. Vylepšuje pokrmy, využívá se v lékařství a mohou si je dovolit jen privilegovaní." # todo: NEW TRANSLATION
+ trade_category_luxury_items: "Luxusní předměty" # todo: NEW TRANSLATION
+ trade_category_luxury_items_desc: "Vytříbené předměty vyjadřující společenské postavení a kulturu, jako je keramika, sklo, šperky, lakované výrobky a hedvábí. Jsou znakem bohatého a kultivovaného dvora." # todo: NEW TRANSLATION
+ trade_category_construction_materials: "Stavební materiály" # todo: NEW TRANSLATION
+ trade_category_mandala_arms: "Jednoduché zbraně" # todo: NEW TRANSLATION
+ trade_category_mandala_arms_desc: "Jednoduché materiály pro vyzbrojení vojska, především měď a dřevo. Vyrábějí se z nich kopí, štíty a základní válečná výstroj pro panství, která nemají přístup k odolnějším kovovým zbraním." # todo: NEW TRANSLATION
+ trade_category_carpentry_supplies: "Tesařské zboží" # todo: NEW TRANSLATION
+ trade_category_carpentry_supplies_desc: "Dřevo a konopí, základní suroviny pro stavbu a námořní plavbu. Dřevo se používá na stavbu budov i lodí, zatímco z konopí se vyrábějí lana a takeláž nezbytné pro námořní obchod." # todo: NEW TRANSLATION
+ trade_category_rural_goods: "Venkovské zboží" # todo: NEW TRANSLATION
+ trade_category_rural_goods_desc: "Surové bohatství venkova zahrnující plodiny, dobytek, dřevo i cenné rudy dobývané ze země. Toto zboží proudí z venkova do městeček a měst, kde se dále zpracovává." # todo: NEW TRANSLATION
+ trade_category_agricultural_goods: "Zemědělské zboží" # todo: NEW TRANSLATION
+ trade_category_agricultural_goods_desc: "Veškerá úroda z polí a statků, od obilovin a vláken až po víno, med a dobytek. Toto zboží představuje širokou produkci usedlého zemědělského hospodářství." # todo: NEW TRANSLATION
+ trade_category_bast_fibres: "Lýková vlákna" # todo: NEW TRANSLATION
+ trade_category_fabrics: "Tkaniny" # todo: NEW TRANSLATION
+ trade_category_fabrics_desc: "Surová textilní vlákna, mezi něž patří vlna, bavlna a len. Jde o meziprodukty mezi zemědělskou surovinou a hotovou látkou, které zásobují tkalcovské stavy tkalců po celém panství." # todo: NEW TRANSLATION
+ trade_category_guild_goods: "Cechovní zboží" # todo: NEW TRANSLATION
+ trade_category_guild_goods_desc: "Zpracované a pečlivě vyrobené zboží z dílen městských cechů, například pivo, textilie, sklo a šperky. Jde o hotové výrobky zručných řemeslníků." # todo: NEW TRANSLATION
+ trade_category_cheap_common: "Běžné zboží" # todo: NEW TRANSLATION
+ trade_category_cheap_common_desc: "Levné a široce dostupné zboží, které lze najít téměř na každém trhu, od obilí a ryb až po dřevo a kámen. Díky nízké hodnotě a hojnosti tvoří každodenní základ místního obchodu." # todo: NEW TRANSLATION
+ trade_category_fine_goods: "Luxusní zboží" # todo: NEW TRANSLATION
+ trade_category_fine_goods_desc: "Zboží vysoké hodnoty, které proudí velkými tržišti světa. Je symbolem bohatství, společenského postavení a civilizovaného života." # todo: NEW TRANSLATION
+ trade_category_staple_goods: "Základní zboží" # todo: NEW TRANSLATION
+ trade_category_staple_goods_desc: "Základní suroviny, které živí města a armády. Kdekoli žije větší množství lidí, musí toto zboží proudit." # todo: NEW TRANSLATION
+ trade_category_stone: "Kámen" # todo: NEW TRANSLATION
+ trade_category_stone_desc: "Stavební kámen z lomů se používá na opevnění, kostely a občanskou infrastrukturu. Tam, kde jsou místní ložiska vzácná, je třeba jej dovážet pro jakýkoli větší stavební projekt." # todo: NEW TRANSLATION
+ trade_category_salt: "Sůl" # todo: NEW TRANSLATION
+ trade_category_salt_desc: "Nezbytná minerální konzervační látka a součást stravy. Sůl umožňuje konzervovat maso a ryby i činit kůže, a už od starověku je hnací silou dálkového obchodu." # todo: NEW TRANSLATION
+ trade_category_alum: "Kamenec" # todo: NEW TRANSLATION
+ trade_category_alum_desc: "Všestranná minerální sůl, která se používá především jako mořidlo k ustálení barviv na textiliích. Využívá se také při činění kůží a v lékařství; její vzácnost z ní činí strategicky cennou komoditu." # todo: NEW TRANSLATION
+ trade_category_dyes: "Barviva" # todo: NEW TRANSLATION
+ trade_category_dyes_desc: "Sytá barviva získávaná z rostlin, minerálů a hmyzu. Používají se v mnoha řemeslech: k barvení látek, glazování keramiky i zdobení rukopisů zářivými inkousty." # todo: NEW TRANSLATION
+ trade_category_books: "Knihy" # todo: NEW TRANSLATION
+ trade_category_books_desc: "Rukopisy a papír či pergamen, na který se píší. Knihy jsou zásadní pro vzdělávání, správu i předávání vědomostí a poptávka po nich roste všude, kde se rozšiřuje gramotnost." # todo: NEW TRANSLATION
+ trade_category_incense: "Kadidlo" # todo: NEW TRANSLATION
+ trade_category_incense_desc: "Vonné pryskyřice a směsi, které se pálí při náboženských obřadech po celém světě. Jejich stálý přísun je nezbytný pro kostely, chrámy a svatyně v každé zbožné komunitě." # todo: NEW TRANSLATION
+ trade_category_medicaments: "Léčiva" # todo: NEW TRANSLATION
+ trade_category_medicaments_desc: "Léky, byliny a léčivé směsi používané lékaři a léčiteli. Dostupnost léčiv zmírňuje následky nemocí a zranění a je zásadní pro každou rozrůstající se osadu." # todo: NEW TRANSLATION
+ trade_good_wood: "Dřevo" # todo: NEW TRANSLATION
+ trade_good_wood_desc: "Dřevo je nezbytným stavebním materiálem na domy, lodě a nábytek. Kvalitní tvrdé dřevo nebývá vždy dostupné v okolí a může být třeba je dovážet z lesnatých oblastí." # todo: NEW TRANSLATION
+ trade_good_stone: "Kámen" # todo: NEW TRANSLATION
+ trade_good_stone_desc: "Stavební kámen těžený z ložisek vápence, pískovce či mramoru je nezbytný pro větší stavby. Je těžký a nákladný na přepravu, proto bývá daleko od přirozených výchozů vzácný." # todo: NEW TRANSLATION
+ trade_good_wool: "Vlna" # todo: NEW TRANSLATION
+ trade_good_wool_desc: "Vlna se získává stříháním ovcí a následně se čistí. Ve středověké Evropě jde o nejdůležitější textilní vlákno. Spřádá se do příze a tká na látku, čímž poskytuje surovinu pro rozsáhlý tkalcovský průmysl." # todo: NEW TRANSLATION
+ trade_good_cotton: "Bavlna" # todo: NEW TRANSLATION
+ trade_good_cotton_desc: "Bavlna se pěstuje v teplých oblastech od Indie po Egypt a její vlákno je lehčí a prodyšnější než vlna. Spřádá se a tká a tvoří základ značné části obchodu s textilem v islámském světě i za jeho hranicemi." # todo: NEW TRANSLATION
+ trade_good_leather: "Kůže" # todo: NEW TRANSLATION
+ trade_good_leather_desc: "Vydělané zvířecí kůže se mění v odolný a dobře zpracovatelný materiál. Kůže se používá na boty, opasky, sedla, zbroj i knižní vazby a je tak základní řemeslnou surovinou ve všech kulturách." # todo: NEW TRANSLATION
+ trade_good_flax: "Len" # todo: NEW TRANSLATION
+ trade_good_flax_desc: "Len se pěstuje pro lněná vlákna i lněný olej, který lze získat z jeho semen, a patří k nejstarším pěstovaným plodinám. Jeho sklizeň může být pracná, ale len není tak náročný jako jiné vláknité plodiny a lze ho pěstovat téměř kdekoli." # todo: NEW TRANSLATION
+ trade_good_hemp: "Konopí" # todo: NEW TRANSLATION
+ trade_good_hemp_desc: "Všestranná rostlina pěstovaná pro svá pevná vlákna, z nichž se stáčejí lana, tká plachtovina nebo vyrábí těsnicí materiál. Konopí je nezbytné pro každé námořní hospodářství i pro stavebnictví po celém světě." # todo: NEW TRANSLATION
+ trade_good_salt: "Sůl" # todo: NEW TRANSLATION
+ trade_good_salt_desc: "Sůl se získává odpařováním mořské vody v solných pánvích, těžbou kamenné soli nebo z pramenů solanky. Je nepostradatelným konzervantem a minerální součástí stravy. Díky schopnosti bránit kažení potravin patří k nejstáleji obchodovaným komoditám v dějinách." # todo: NEW TRANSLATION
+ trade_good_grain: "Obilí" # todo: NEW TRANSLATION
+ trade_good_grain_desc: "Obilí se mele na mouku na chléb či kaši a je nejdůležitější plodinou středověkého světa. Od pšenice na západě po žito na severu živí sedláky i šlechtu." # todo: NEW TRANSLATION
+ trade_good_fruit: "Ovoce" # todo: NEW TRANSLATION
+ trade_good_fruit_desc: "Čerstvé i sušené ovoce přináší do středověkého jídelníčku sladkost a pestrost. Ovoce ze sadů, například jablka, hrušky a fíky, se dováží z teplejších oblastí, aby uspokojilo poptávku na severu." # todo: NEW TRANSLATION
+ trade_good_meat: "Uzené maso" # todo: NEW TRANSLATION
+ trade_good_meat_desc: "Maso naložené do soli, uzené či sušené, aby se nezkazilo, je nezbytným zdrojem bílkovin. Živí armády na taženích i rodiny během hubených zimních měsíců." # todo: NEW TRANSLATION
+ trade_good_fish: "Ryby" # todo: NEW TRANSLATION
+ trade_good_fish_desc: "Sušené, solené či uzené ryby lze přepravovat na velké vzdálenosti, aniž by se zkazily, a jsou tak důležitým zdrojem bílkovin daleko od pobřeží či řek. Zejména sleď a treska podnítily dálkový námořní obchod." # todo: NEW TRANSLATION
+ trade_good_cattle: "Skot" # todo: NEW TRANSLATION
+ trade_good_cattle_desc: "Skot poskytuje tažnou sílu k orání polí i mléko, maso a kůže. Jde o nejvšestrannější hospodářská zvířata a přístup ke kvalitnímu plemennému skotu prospívá každému zemědělskému hospodářství." # todo: NEW TRANSLATION
+ trade_good_horses: "Koně" # todo: NEW TRANSLATION
+ trade_good_horses_desc: "Koně jsou hlavními tažnými a jezdeckými zvířaty středověkého světa a jsou nezbytní pro zemědělství, dopravu i válčení. Ušlechtilá plemena ze stepí a Iberského poloostrova jsou obzvláště ceněná." # todo: NEW TRANSLATION
+ trade_good_cheese: "Sýr" # todo: NEW TRANSLATION
+ trade_good_cheese_desc: "Trvanlivý mléčný výrobek vznikající srážením a zráním mléka. Sýr vydrží mnohem déle než čerstvé mléko a po celý rok je spolehlivým zdrojem tuků a bílkovin." # todo: NEW TRANSLATION
+ trade_good_beer: "Pivo" # todo: NEW TRANSLATION
+ trade_good_beer_desc: "Pivo se vaří z kvašeného obilí a v severní Evropě je každodenním nápojem. Má nízký obsah alkoholu, ale je výživné, v mnoha městech se pije bezpečněji než voda a konzumují ho lidé ze všech společenských vrstev." # todo: NEW TRANSLATION
+ trade_good_wine: "Víno" # todo: NEW TRANSLATION
+ trade_good_wine_desc: "Víno se vyrábí kvašením hroznů a ve středověké kultuře zaujímá výsadní postavení jako nápoj církve, šlechty a bohatých. Ve velkém se obchoduje s vínem z vinic ve Středomoří a údolí Rýna." # todo: NEW TRANSLATION
+ trade_good_oil: "Olivový olej" # todo: NEW TRANSLATION
+ trade_good_oil_desc: "Olej lisovaný z oliv slouží ve středomořském světě jako tuk na vaření, palivo do lamp i základ na výrobu mýdla. Dál na severu jeho význam klesá, protože ho nahrazují živočišné tuky a máslo." # todo: NEW TRANSLATION
+ trade_good_honey: "Med" # todo: NEW TRANSLATION
+ trade_good_honey_desc: "Med je hlavním sladidlem středověkého světa a používá se také do medoviny, v lékařství i ke konzervaci potravin. Včely se chovají po celém světě, ale kvalitní med se prodává za vysokou cenu." # todo: NEW TRANSLATION
+ trade_good_rice: "Rýže" # todo: NEW TRANSLATION
+ trade_good_rice_desc: "Rýže je hlavní obilovinou jižní a východní Asie. Vyžaduje zaplavená pole a teplé podnebí, ale přináší bohatou úrodu. Tvoří základ jídelníčku obrovského množství lidí." # todo: NEW TRANSLATION
+ trade_good_millet: "Jáhly" # todo: NEW TRANSLATION
+ trade_good_millet_desc: "Odolná obilovina, které se daří v chudé půdě a suchém podnebí, kde jiné obilniny selhávají. Jáhly jsou základní potravinou ve velké části Afriky, střední Asie a sušších oblastí Indie." # todo: NEW TRANSLATION
+ trade_good_iron: "Železo" # todo: NEW TRANSLATION
+ trade_good_iron_desc: "Železo je základním kovem středověkého světa. Taví se z rudy a vyrábějí se z něj nástroje, zbraně, podkovy i hřebíky. Bez stálých dodávek pro řemeslníky a vojáky se žádná osada nemůže rozvíjet." # todo: NEW TRANSLATION
+ trade_good_alum: "Kamenec" # todo: NEW TRANSLATION
+ trade_good_alum_desc: "Kamenec je vzácná sůl, která mimo jiné pomáhá zastavovat krvácení a používá se při zušlechťování skla či činění kůží. Nejčastěji slouží jako mořidlo, které látky zároveň bělí a umožňuje, aby na nich barviva mnohem lépe držela.\n\nKamenec se v přírodní podobě vyskytuje v teplých oblastech, například na Blízkém východě, ale lze jej získávat také z alunitových hornin v jiných částech světa." # todo: NEW TRANSLATION
+ trade_good_jade: "Nefrit" # todo: NEW TRANSLATION
+ trade_good_jade_desc: "Tvrdý a krásný kámen s velkým kulturním významem ve východní Asii. Nefrit se opracovává na nástroje, ozdoby a rituální předměty. Na čínských dvorech se prodává za nesmírné ceny a je symbolem ctnosti i postavení." # todo: NEW TRANSLATION
+ trade_good_gold: "Zlato" # todo: NEW TRANSLATION
+ trade_good_gold_desc: "Zlato, nejcennější z kovů, je základem královských pokladnic a nejhodnotnějších mincí. Díky své vzácnosti a lesku se z něj nejčastěji vyrábějí koruny, relikvie a okázalé předměty." # todo: NEW TRANSLATION
+ trade_good_silver: "Stříbro" # todo: NEW TRANSLATION
+ trade_good_silver_desc: "Stříbro je nejběžnějším mincovním kovem a razí se z něj mince obíhající po celém známém světě. Kromě mincí se zpracovává na šperky, stolní nádobí a překrásné náboženské předměty." # todo: NEW TRANSLATION
+ trade_good_amber: "Jantar" # todo: NEW TRANSLATION
+ trade_good_amber_desc: "Jantar je zkamenělá pryskyřice ze stromů, která se nachází především na pobřeží Baltu a obchoduje se s ní už od starověku. Díky teplé zlatavé barvě a snadnému opracování je ceněný při výrobě korálků, přívěsků a ozdobných předmětů." # todo: NEW TRANSLATION
+ trade_good_copper: "Měď" # todo: NEW TRANSLATION
+ trade_good_copper_desc: "Měď je měkký a dobře zpracovatelný kov používaný na nádoby na vaření, kostelní zvony i slitiny, jako jsou bronz a mosaz. Její teplá barva je oblíbená také u ozdobných kovových výrobků." # todo: NEW TRANSLATION
+ trade_good_gems: "Drahokamy" # todo: NEW TRANSLATION
+ trade_good_gems_desc: "Drahé kameny, mezi něž patří rubíny, safíry a smaragdy, patří k nejcennějšímu zboží na každé obchodní cestě. Po vybroušení a vyleštění zdobí koruny, relikviáře i šperky mocných." # todo: NEW TRANSLATION
+ trade_good_silk: "Hedvábí" # todo: NEW TRANSLATION
+ trade_good_silk_desc: "Hedvábí je nejjemnější ze všech textilních vláken. Získává se z kokonů bource morušového a tká se z něj látka mimořádné jemnosti a lesku. Pochází z Číny a patří k nejcennějšímu obchodnímu zboží na světě." # todo: NEW TRANSLATION
+ trade_good_textiles: "Textilie" # todo: NEW TRANSLATION
+ trade_good_textiles_desc: "Tkaná látka z vlny, bavlny, lnu či směsi vláken. Jemné textilie patří k nejčastěji obchodovanému zboží středověkého světa; proslulé dílny se nacházejí ve Flandrech, Itálii a na Blízkém východě." # todo: NEW TRANSLATION
+ trade_good_furs: "Kožešiny" # todo: NEW TRANSLATION
+ trade_good_furs_desc: "Kožešiny lišek, hranostajů, sobolů, bobrů a dalších zvířat lovených v severních lesích. Kožešinové oděvy jsou známkou bohatství a postavení a poptávka šlechtických dvorů pohání výnosný obchod." # todo: NEW TRANSLATION
+ trade_good_books_paper: "Knihy a papír" # todo: NEW TRANSLATION
+ trade_good_books_paper_desc: "Ručně psané rukopisy a pergamen či papír, na který se zapisují. Knihy uchovávají zákoníky, náboženské texty a nashromážděné vědomosti. Poptávka po nich roste všude, kde vzkvétá správa a učenost." # todo: NEW TRANSLATION
+ trade_good_spices: "Koření" # todo: NEW TRANSLATION
+ trade_good_spices_desc: "Pepř, skořice, hřebíček, muškátový oříšek a další aromatické látky z jižní a jihovýchodní Asie patří k nejcennějšímu zboží na světě. Konzervují a ochucují jídlo a dávají najevo bohatství." # todo: NEW TRANSLATION
+ trade_good_tea: "Čaj" # todo: NEW TRANSLATION
+ trade_good_tea_desc: "Čaj, připravovaný ze sušených a zpracovaných listů čajovníku, je typickým nápojem Dálného východu. Po Hedvábné stezce se rozšířil na západ a postupně nabyl na významu jako samostatná obchodní komodita." # todo: NEW TRANSLATION
+ trade_good_dyes: "Barviva" # todo: NEW TRANSLATION
+ trade_good_dyes_desc: "Barviva získávaná z rostlin, jako je boryt a mořena, z hmyzu, například červce kermesového, i z minerálů. Dodávají látkám, keramice a iluminovaným rukopisům jejich syté barvy a jsou nezbytná pro řemeslná odvětví, která je využívají." # todo: NEW TRANSLATION
+ trade_good_jewelry: "Šperky" # todo: NEW TRANSLATION
+ trade_good_jewelry_desc: "Hotové výrobky spojující drahé kovy s drahokamy, smaltem či sklem. Šperky jsou ve středověkém světě nejviditelnějším znakem osobního bohatství a vyměňují se jako dary i diplomatické pozornosti." # todo: NEW TRANSLATION
+ trade_good_ivory: "Slonovina" # todo: NEW TRANSLATION
+ trade_good_ivory_desc: "Slonovina, získávaná ze sloních klů, je materiálem prestiže a zbožnosti. Vyrábějí se z ní ozdobné řezby, šachové figurky, schránky na relikvie i ty nejhonosnější dekorativní předměty." # todo: NEW TRANSLATION
+ trade_good_glass: "Sklo" # todo: NEW TRANSLATION
+ trade_good_glass_desc: "Foukané a tvarované skleněné nádoby, okenní tabulky a ozdobné předměty. Kvalitní sklářské výrobky z Benátek a islámského světa dosahují vysokých cen, zatímco jednodušší sklo se stále častěji používá v kostelech a bohatých domácnostech." # todo: NEW TRANSLATION
+ trade_good_sugar: "Cukr" # todo: NEW TRANSLATION
+ trade_good_sugar_desc: "Cukr, vyráběný z cukrové třtiny pěstované v teplých jižních krajích, je vzácným a nákladným luxusem. Bohatí jej používají jako sladidlo, lék i prestižní přísadu do jídel." # todo: NEW TRANSLATION
+ trade_good_incense: "Kadidlo" # todo: NEW TRANSLATION
+ trade_good_incense_desc: "Vonné pryskyřice, jako je kadidlovník a myrha, se spalují při náboženských obřadech všech vyznání. K jejich výrobě je zapotřebí teplé podnebí a zvláštní druhy stromů; vyvážejí se z Arábie, Etiopie a Indie." # todo: NEW TRANSLATION
+ trade_good_ceramics: "Keramika" # todo: NEW TRANSLATION
+ trade_good_ceramics_desc: "Kvalitní keramika a porcelán vyráběné s velkým řemeslným umem a uměleckým citem. Kvalitní keramické výrobky z Číny a islámského světa jsou vyhledávaným luxusním zbožím i ozdobnými předměty." # todo: NEW TRANSLATION
+ trade_good_lacquerware: "Lakované výrobky" # todo: NEW TRANSLATION
+ trade_good_lacquerware_desc: "Předměty pokryté několika vrstvami lakové pryskyřice, ceněné ve východní Asii pro svou odolnost a lesklý povrch. Lakované skříňky, podnosy a nábytek patří k luxusnímu vývoznímu zboží, které putuje daleko po Hedvábných stezkách." # todo: NEW TRANSLATION
+ trade_good_medicaments: "Léčiva" # todo: NEW TRANSLATION
+ trade_good_medicaments_desc: "Široká škála sušených bylin, minerálních směsí a zpracovaných léčiv, které používají lékaři a lékárníci. Přístup k léčivům je zásadní pro ošetřování ran, zvládání nemocí a udržování zdravé populace." # todo: NEW TRANSLATION
+ msg_trade_good_category_level_up.t: "Obchodní odbornost se zvýšila" # todo: NEW TRANSLATION
+ msg_trade_good_category_level_up.desc: "Vaše [trade_good_category_type.GetNameWithIcon] [Concept('trade_expertise','obchodní zkušenost')|E] dosáhla úrovně [Concept('expertise_level','úrovně zkušenosti')|E] [trade_good_category_type.GetTradeGoodCategoryLevel( company_owner.Self )|V0]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ msg_trade_good_category_level_down.t: "Obchodní odbornost se snížila" # todo: NEW TRANSLATION
+ msg_trade_good_category_level_down.desc: "Vaše [trade_good_category_type.GetNameWithIcon] [Concept('trade_expertise','obchodní zkušenost')|E] klesla na úroveň [Concept('expertise_level','úroveň zkušenosti')|E] [trade_good_category_type.GetTradeGoodCategoryLevel( company_owner.Self )|V0]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ trade_route_created_toast_title: "Obchodní cesta vytvořena" # todo: NEW TRANSLATION
+ trade_route_created_toast_desc: "Byla vytvořena obchodní cesta [trade_route.GetName] [Concept('trade_route','obchodní trasa')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ trade_route_created_toast_desc_trader: "Byla vytvořena obchodní cesta [trade_route.GetName] [Concept('trade_route','obchodní trasa')|E] a jejím [Concept('trader','obchodníkem')|E] se stal [trader.GetShortUIName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ trade_route_edited_toast_title: "Obchodní cesta změněna" # todo: NEW TRANSLATION
+ trade_route_edited_toast_desc: "Obchodní cesta [trade_route.GetName] [Concept('trade_route','obchodní trasa')|E] byla změněna" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ monopoly_invalidated_toast_title: "Obchodní monopol zneplatněn" # todo: NEW TRANSLATION
+ monopoly_invalidated_toast_desc: "[new_monopoly_owner.Custom('CZ_ShortUIName_I')] převzal [Concept('trade_monopoly','obchodní monopol')|E] na [trade_monopoly.GetTradeGoodCategoryType.GetName] v [trade_monopoly.GetTradeMarket.GetName]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ trade_monopoly_created_against_you_toast_title: "Obchodní monopol zaveden" # todo: NEW TRANSLATION
+ trade_monopoly_created_against_you_complete_toast_desc: "[monopoly_creator.GetShortUIName] zavedl úplný [Concept('trade_monopoly','obchodní monopol')|E] nad trhem [monopolized_market.GetName]. Vaše obchodní cesty tam už nemohou obchodovat." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ trade_monopoly_created_against_you_category_toast_desc: "[monopoly_creator.GetShortUIName] zavedl [Concept('trade_monopoly','obchodní monopol')|E] na [monopolized_category.GetName] na trhu [monopolized_market.GetName]. Vaše obchodní cesty tam už s tímto zbožím nemohou obchodovat." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ trade_good_alum_name: "kamenec" # todo: NEW TRANSLATION
+ trade_good_amber_name: "jantar" # todo: NEW TRANSLATION
+ trade_good_beer_name: "pivo" # todo: NEW TRANSLATION
+ trade_good_books_paper_name: "knihy a papír" # todo: NEW TRANSLATION
+ trade_good_cattle_name: "dobytek" # todo: NEW TRANSLATION
+ trade_good_ceramics_name: "keramika" # todo: NEW TRANSLATION
+ trade_good_cheese_name: "sýr" # todo: NEW TRANSLATION
+ trade_good_copper_name: "měď" # todo: NEW TRANSLATION
+ trade_good_cotton_name: "bavlna" # todo: NEW TRANSLATION
+ trade_good_dyes_name: "barviva" # todo: NEW TRANSLATION
+ trade_good_fish_name: "ryby" # todo: NEW TRANSLATION
+ trade_good_flax_name: "len" # todo: NEW TRANSLATION
+ trade_good_fruit_name: "ovoce" # todo: NEW TRANSLATION
+ trade_good_furs_name: "kožešiny" # todo: NEW TRANSLATION
+ trade_good_gems_name: "drahokamy" # todo: NEW TRANSLATION
+ trade_good_glass_name: "sklo" # todo: NEW TRANSLATION
+ trade_good_gold_name: "zlato" # todo: NEW TRANSLATION
+ trade_good_grain_name: "obilí" # todo: NEW TRANSLATION
+ trade_good_hemp_name: "konopí" # todo: NEW TRANSLATION
+ trade_good_honey_name: "med" # todo: NEW TRANSLATION
+ trade_good_horses_name: "koně" # todo: NEW TRANSLATION
+ trade_good_incense_name: "kadidlo" # todo: NEW TRANSLATION
+ trade_good_iron_name: "železo" # todo: NEW TRANSLATION
+ trade_good_ivory_name: "slonovina" # todo: NEW TRANSLATION
+ trade_good_jade_name: "jadeit" # todo: NEW TRANSLATION
+ trade_good_jewelry_name: "šperky" # todo: NEW TRANSLATION
+ trade_good_lacquerware_name: "lakované výrobky" # todo: NEW TRANSLATION
+ trade_good_leather_name: "kůže" # todo: NEW TRANSLATION
+ trade_good_meat_name: "sušené maso" # todo: NEW TRANSLATION
+ trade_good_medicaments_name: "léčiva" # todo: NEW TRANSLATION
+ trade_good_millet_name: "proso" # todo: NEW TRANSLATION
+ trade_good_oil_name: "olivový olej" # todo: NEW TRANSLATION
+ trade_good_rice_name: "rýže" # todo: NEW TRANSLATION
+ trade_good_salt_name: "sůl" # todo: NEW TRANSLATION
+ trade_good_silk_name: "hedvábí" # todo: NEW TRANSLATION
+ trade_good_silver_name: "stříbro" # todo: NEW TRANSLATION
+ trade_good_spices_name: "koření" # todo: NEW TRANSLATION
+ trade_good_stone_name: "kámen" # todo: NEW TRANSLATION
+ trade_good_sugar_name: "cukr" # todo: NEW TRANSLATION
+ trade_good_tea_name: "čaj" # todo: NEW TRANSLATION
+ trade_good_textiles_name: "textilie" # todo: NEW TRANSLATION
+ trade_good_wine_name: "víno" # todo: NEW TRANSLATION
+ trade_good_wood_name: "dřevo" # todo: NEW TRANSLATION
+ trade_good_wool_name: "vlna" # todo: NEW TRANSLATION
+ trade_category_food_name: "základní potraviny" # todo: NEW TRANSLATION
+ trade_category_beasts_of_burden_name: "tažná zvířata" # todo: NEW TRANSLATION
+ trade_category_minerals_name: "minerály" # todo: NEW TRANSLATION
+ trade_category_luxury_name: "luxusní zboží" # todo: NEW TRANSLATION
+ trade_category_refined_goods_name: "zpracované zboží" # todo: NEW TRANSLATION
+ trade_category_alcohol_name: "alkohol" # todo: NEW TRANSLATION
+ trade_category_liqour_raw_materials_name: "suroviny k destilaci" # todo: NEW TRANSLATION
+ trade_category_precious_metals_name: "drahé kovy" # todo: NEW TRANSLATION
+ trade_category_jewelry_materials_name: "drahé kameny" # todo: NEW TRANSLATION
+ trade_category_crops_name: "plodiny" # todo: NEW TRANSLATION
+ trade_category_base_metals_name: "obecné kovy" # todo: NEW TRANSLATION
+ trade_category_cereals_name: "obiloviny" # todo: NEW TRANSLATION
+ trade_category_meat_name: "maso" # todo: NEW TRANSLATION
+ trade_category_comforts_name: "pohodlí" # todo: NEW TRANSLATION
+ trade_category_clothes_name: "oděvy" # todo: NEW TRANSLATION
+ trade_category_luxury_consumption_name: "luxusní spotřební zboží" # todo: NEW TRANSLATION
+ trade_category_luxury_items_name: "luxusní předměty" # todo: NEW TRANSLATION
+ trade_category_construction_materials_name: "stavební materiály" # todo: NEW TRANSLATION
+ trade_category_mandala_arms_name: "jednoduché zbraně" # todo: NEW TRANSLATION
+ trade_category_carpentry_supplies_name: "truhlářské potřeby" # todo: NEW TRANSLATION
+ trade_category_rural_goods_name: "venkovské zboží" # todo: NEW TRANSLATION
+ trade_category_agricultural_goods_name: "zemědělské produkty" # todo: NEW TRANSLATION
+ trade_category_bast_fibres_name: "lýková vlákna" # todo: NEW TRANSLATION
+ trade_category_fabrics_name: "látky" # todo: NEW TRANSLATION
+ trade_category_guild_goods_name: "zboží cechů" # todo: NEW TRANSLATION
+ trade_category_cheap_common_name: "běžné zboží" # todo: NEW TRANSLATION
+ trade_category_fine_goods_name: "kvalitní zboží" # todo: NEW TRANSLATION
+ trade_category_staple_goods_name: "základní zboží" # todo: NEW TRANSLATION
+ trade_category_stone_name: "kámen" # todo: NEW TRANSLATION
+ trade_category_salt_name: "sůl" # todo: NEW TRANSLATION
+ trade_category_alum_name: "kamenec" # todo: NEW TRANSLATION
+ trade_category_dyes_name: "barviva" # todo: NEW TRANSLATION
+ trade_category_books_name: "knihy" # todo: NEW TRANSLATION
+ trade_category_incense_name: "kadidlo" # todo: NEW TRANSLATION
+ trade_category_medicaments_name: "léčiva" # todo: NEW TRANSLATION
+ trade_good_unit_bag: "pytel" # todo: NEW TRANSLATION
+ trade_good_unit_bale: "balík" # todo: NEW TRANSLATION
+ trade_good_unit_barrel: "sud" # todo: NEW TRANSLATION
+ trade_good_unit_block: "blok" # todo: NEW TRANSLATION
+ trade_good_unit_bundle: "svazek" # todo: NEW TRANSLATION
+ trade_good_unit_crate: "bedna" # todo: NEW TRANSLATION
+ trade_good_unit_head: "kus" # todo: NEW TRANSLATION
+ trade_good_unit_ingot: "slitek" # todo: NEW TRANSLATION
+ trade_good_unit_pile: "hromada" # todo: NEW TRANSLATION
+ trade_good_unit_sack: "pytel" # todo: NEW TRANSLATION
+ trade_good_unit_vessel: "nádoba" # todo: NEW TRANSLATION
+ trade_good_unit_wheel: "kolo" # todo: NEW TRANSLATION
+ trade_good_unit_bag_plural: "pytle" # todo: NEW TRANSLATION
+ trade_good_unit_bale_plural: "balíky" # todo: NEW TRANSLATION
+ trade_good_unit_barrel_plural: "sudy" # todo: NEW TRANSLATION
+ trade_good_unit_block_plural: "bloky" # todo: NEW TRANSLATION
+ trade_good_unit_bundle_plural: "svazky" # todo: NEW TRANSLATION
+ trade_good_unit_crate_plural: "bedny" # todo: NEW TRANSLATION
+ trade_good_unit_head_plural: "kusů" # todo: NEW TRANSLATION
+ trade_good_unit_ingot_plural: "slitky" # todo: NEW TRANSLATION
+ trade_good_unit_pile_plural: "hromady" # todo: NEW TRANSLATION
+ trade_good_unit_sack_plural: "pytle" # todo: NEW TRANSLATION
+ trade_good_unit_vessel_plural: "nádoby" # todo: NEW TRANSLATION
+ trade_good_unit_wheel_plural: "kola" # todo: NEW TRANSLATION
+ toll_level_no_tolls: "#E Žádné#!" # todo: NEW TRANSLATION
+ toll_level_minimal_tolls: "#E Minimální#!" # todo: NEW TRANSLATION
+ toll_level_low_tolls: "Nízké" # todo: NEW TRANSLATION
+ toll_level_medium_tolls: "Střední" # todo: NEW TRANSLATION
+ toll_level_high_tolls: "#M Vysoké#!" # todo: NEW TRANSLATION
+ toll_level_very_high_tolls: "#N Velmi vysoké#!" # todo: NEW TRANSLATION
+ TOLL_LEVEL_MARKET_TOLL: "[Concept('market_toll','Tržní clo')|E]:" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ trade_category_farmed_goods: "Zemědělské suroviny" # todo: NEW TRANSLATION
+ trade_category_farmed_goods_desc: "Zboží vypěstované nebo chované v místním zemědělství před vývozem.\n\n[Concept('resource_districts','Zdrojové čtvrti')|E], které toto zboží produkují:\n$BULLET_WITH_TAB$[GetDistrictType('grain_district').GetName]\n$BULLET_WITH_TAB$[GetDistrictType('rice_district').GetName]\n$BULLET_WITH_TAB$[GetDistrictType('millet_district').GetName]\n$BULLET_WITH_TAB$[GetDistrictType('cattle_district').GetName]\n$BULLET_WITH_TAB$[GetDistrictType('horses_district').GetName]\n$BULLET_WITH_TAB$[GetDistrictType('wool_district').GetName]\n$BULLET_WITH_TAB$[GetDistrictType('cotton_district').GetName]\n$BULLET_WITH_TAB$[GetDistrictType('flax_district').GetName]\n$BULLET_WITH_TAB$[GetDistrictType('hemp_district').GetName]\n$BULLET_WITH_TAB$[GetDistrictType('fruit_district').GetName]\n$BULLET_WITH_TAB$[GetDistrictType('sugar_district').GetName]\n$BULLET_WITH_TAB$[GetDistrictType('wine_district').GetName]\n$BULLET_WITH_TAB$[GetDistrictType('oil_district').GetName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ trade_category_farmed_goods_name: "zemědělské suroviny" # todo: NEW TRANSLATION
+ trade_category_cultivated_luxuries: "Exotické suroviny" # todo: NEW TRANSLATION
+ trade_category_cultivated_luxuries_desc: "Zboží pěstované na plantážích spíše než na rozlehlých polích.\n\n[Concept('resource_districts','Zdrojové čtvrti')|E], které toto zboží produkují:\n$BULLET_WITH_TAB$[GetDistrictType('silk_district').GetName]\n$BULLET_WITH_TAB$[GetDistrictType('spices_district').GetName]\n$BULLET_WITH_TAB$[GetDistrictType('tea_district').GetName]\n$BULLET_WITH_TAB$[GetDistrictType('incense_district').GetName]\n$BULLET_WITH_TAB$[GetDistrictType('medicaments_district').GetName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ trade_category_cultivated_luxuries_name: "exotické suroviny" # todo: NEW TRANSLATION
+ trade_category_artisanal_goods: "Řemeslně zpracované suroviny" # todo: NEW TRANSLATION
+ trade_category_artisanal_goods_desc: "Toto zboží se před vývozem v místní komunitě zpracovává více než většina ostatního.\n\n[Concept('resource_districts','Zdrojové čtvrti')|E], které toto zboží produkují:\n$BULLET_WITH_TAB$[GetDistrictType('dyes_district').GetName]\n$BULLET_WITH_TAB$[GetDistrictType('ceramics_district').GetName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ trade_category_artisanal_goods_name: "řemeslně zpracované suroviny" # todo: NEW TRANSLATION
+ trade_category_forest_goods: "Lesní suroviny" # todo: NEW TRANSLATION
+ trade_category_forest_goods_desc: "Zboží získávané v odlehlých oblastech panství lovem do pastí, kácením či sběrem.\n\n[Concept('resource_districts','Zdrojové čtvrti')|E], které toto zboží produkují:\n$BULLET_WITH_TAB$[GetDistrictType('forestry_district').GetName]\n$BULLET_WITH_TAB$[GetDistrictType('furs_district').GetName]\n$BULLET_WITH_TAB$[GetDistrictType('honey_district').GetName]\n$BULLET_WITH_TAB$[GetDistrictType('ivory_district').GetName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ trade_category_forest_goods_name: "lesní suroviny" # todo: NEW TRANSLATION
+ msg_market_toll_changed.t: "Změna tržního mýta" # todo: NEW TRANSLATION
+ msg_market_toll_changed.desc: "[market_owner.GetShortUIName] [Select_CString(market_owner.IsFemale,'změnila','změnil')] [Concept('market_toll','tržní clo')|E] v [trade_market.GetName] z úrovně [old_toll_level.GetName] ([old_toll_level.GetRouteOwnerTollRate|%0]) na úroveň [new_toll_level.GetName] ([new_toll_level.GetRouteOwnerTollRate|%0])" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ msg_toll_exception_changed.t: "Změna výjimky z mýta" # todo: NEW TRANSLATION
+ msg_toll_exception_changed.desc: "[market_owner.GetShortUIName] [Select_CString(market_owner.IsFemale,'změnila','změnil')] vaši výjimku z [Concept('market_toll','tržního cla')|E] v [trade_market.GetName] z úrovně [old_toll_level.GetName] ([old_toll_level.GetRouteOwnerTollRate|%0]) na úroveň [new_toll_level.GetName] ([new_toll_level.GetRouteOwnerTollRate|%0])" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ msg_toll_exception_ended.t: "Výjimka z mýta skončila" # todo: NEW TRANSLATION
+ msg_toll_exception_ended.desc: "Vaše výjimka z [Concept('market_toll','tržního cla')|E] na úrovni [old_toll_level.GetName] ([old_toll_level.GetRouteOwnerTollRate|%0]) v [trade_market.GetName] skončila. Nyní platíte úroveň [new_toll_level.GetName] ([new_toll_level.GetRouteOwnerTollRate|%0])" # todo: NEW TRANSLATION # todo: CONCEPT CASE

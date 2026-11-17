@@ -1,0 +1,377 @@
+﻿l_polish:
+ guelph_ghibelline: "[SelectLocalization( GetSituation( 'guelph_ghibelline' ).GetTopCurrentPhase.GetType.HasParameter( 'gg_precursor_phase' ), 'game_concept_guelph_ghibelline_precursor_situation', 'game_concept_guelph_ghibelline_situation' )]" # todo: NEW TRANSLATION
+ guelph: "Guelf" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ guelph_possessive: "guelfův" # todo: NEW TRANSLATION
+ guelphs: "Guelfové" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ guelph_concept: "[Concept('guelph','Guelf')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ guelphs_concept: "[Concept('guelphs','Guelfové')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ guelph_leader_participant_group: "[GetSituation('guelph_ghibelline').GetTopParticipantGroupByKey( 'guelph_leader' ).GetName]" # todo: NEW TRANSLATION
+ guelph_member_participant_group: "[GetSituation('guelph_ghibelline').GetTopParticipantGroupByKey( 'guelph_member' ).GetName]" # todo: NEW TRANSLATION
+ ghibelline: "Ghibellin" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ ghibelline_possessive: "ghibellinský" # todo: NEW TRANSLATION
+ ghibellines: "Ghibellini" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ ghibelline_concept: "[Concept('ghibelline','Ghibellin')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ ghibellines_concept: "[Concept('ghibellines','Ghibellini')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ ghibelline_leader_participant_group: "[GetSituation('guelph_ghibelline').GetTopParticipantGroupByKey( 'ghibelline_leader' ).GetName]" # todo: NEW TRANSLATION
+ ghibelline_member_participant_group: "[GetSituation('guelph_ghibelline').GetTopParticipantGroupByKey( 'ghibelline_member' ).GetName]" # todo: NEW TRANSLATION
+ situation_guelph_ghibelline: "$guelph_ghibelline$" # todo: NEW TRANSLATION
+ situation_guelph_ghibelline_desc: "[SelectLocalization( GetSituation( 'guelph_ghibelline' ).GetTopCurrentPhase.GetType.HasParameter( 'gg_precursor_phase' ), 'game_concept_guelph_ghibelline_precursor_situation_desc', 'game_concept_guelph_ghibelline_situation_desc' )]" # todo: NEW TRANSLATION
+ SITUATION_GUELPH_GHIBELLINE_DEFINITE: "$guelph_ghibelline$" # todo: NEW TRANSLATION
+ GUELPH_SUPPORTER_NUMBERS: "#T Guelfští přívrženci: [GetDataModelSize( GetSituation('guelph_ghibelline').GetTopParticipantGroupByKey('guelph_member').GetCharacters )|V]#!\n#I Kliknutím zobrazíš všechny přívržence#!" # todo: NEW TRANSLATION
+ GHIBELLINE_SUPPORTER_NUMBERS: "#T Ghibellinští přívrženci: [GetDataModelSize( GetSituation('guelph_ghibelline').GetTopParticipantGroupByKey('ghibelline_member').GetCharacters )|V]#!\n#I Kliknutím zobrazíš všechny přívržence#!" # todo: NEW TRANSLATION
+ temp_guelph_ghibelline_values: "#D Guelfské skóre #V [EmptyScope.ScriptValue('situation_guelph_group_score')]#! / #V [EmptyScope.ScriptValue('situation_ghibelline_group_score')]#! Ghibellinské skóre\n[EmptyScope.ScriptValue('situation_guelph_score_percentage')|0%] / [EmptyScope.ScriptValue('situation_ghibelline_score_percentage')|0%]#!" # todo: NEW TRANSLATION
+ GG_SITUATION_START_EVENT_DESC: "#high Tvá [Concept('situation_participant_group','skupina účastníků')|E] je [Situation.GetParticipantGroupByCharacter( Character.Self ).GetName] v situaci [Situation.GetName]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ GG_SITUATION_START_EVENT_DETAIL_TITLE: "Podrobnosti o [Concept('situation','situaci')|E] zobrazíš prohlédnutím ikony [Concept('situation_phase','fáze situace')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ GG_INFO_WINDOW_CURRENT_PHASE: "#high Fáze [SituationPhase.GetName] [Concept('situation_phase_phase','fáze')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ GG_INFO_EVENT_CURRENT_PHASE: "Aktuální [Concept('situation_phase_phase','fáze')|E] ([SituationPhase.GetName])" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ GG_INVOLVEMENT: "Tvé [Concept('gg_involvement','zapojení')|E]: #V [GetPlayer.MakeScope.Var('gg_involvement').GetValue]#! [gg_involvement_i]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ GG_RANK: "Pořadí #V [FixedPointToInt(GetPlayer.MakeScope.ScriptValue('gg_involvement_position'))|O]#!" # todo: NEW TRANSLATION
+ guelph_ghibelline_need_agitation_tt: "Situace může přejít do fáze [SituationPhaseType.GetName] pouze během [Concept('situation_phase_phase','fáze')|E] [GetSituationType('guelph_ghibelline').GetPhaseType('agitation').GetName]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ guelph_ghibelline_return_agitation_tt: "Dosáhne-li moc 60 %, situace přejde do [Concept('situation_phase_phase','fáze')|E] [GetSituationType('guelph_ghibelline').GetPhaseType('agitation').GetName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ guelph_ghibelline_agitation_catalysts_button: "Spouštěče rozjitření" # todo: NEW TRANSLATION
+ guelph_ghibelline_catalysts_button: "Spouštěče fáze" # todo: NEW TRANSLATION
+ gg_tt_peace_privilege_disabled: "Během [Concept('situation_phase_phase','fáze')|E] [GetSituationType('guelph_ghibelline').GetPhaseType('agitation').GetName] nebo [GetSituationType('guelph_ghibelline').GetPhaseType('ghibelline_advantage').GetName] může rozhodnutí [Concept('decision','rozhodnutí')|E] #V $guelph_ghibelline_peace_decision$#!, které převede [Concept('situation','situace')|E] do fáze [GetSituationType('guelph_ghibelline').GetPhaseType('repose').GetName], přijmout pouze [GetSituation('guelph_ghibelline').GetTopParticipantGroupByKey( 'ghibelline_leader' ).GetName]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gg_tt_catalysts_disabled: "[Concept('situation_catalysts','Spouštěče situace')|E] [GetSituationType('guelph_ghibelline').GetPhaseType('agitation').GetNameNoTooltip] lze spustit pouze během [Concept('situation_phase_phase','fáze')|E] [GetSituationType('guelph_ghibelline').GetPhaseType('repose').GetName]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gg_dominance_transition: "#low Pokud má jedna skupina během [Concept('situation_phase_phase','fáze')|E] [GetSituationType('guelph_ghibelline').GetPhaseType('agitation').GetName] více než 70 % moci, situace přejde do jedné z následujících fází:" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gg_tt_agitation_progressbar_disabled: "Během [Concept('situation_phase_phase','fáze')|E] [GetSituationType('guelph_ghibelline').GetPhaseType('agitation').GetName] se nezískávají žádné [Concept('situation_catalyst_catalysts','katalyzátory')|E] a [Concept('situation_phase_phase','fázemi')|E] může přejít do fáze [GetSituationType('guelph_ghibelline').GetPhaseType('repose').GetName] pouze prostřednictvím rozhodnutí #V $guelph_ghibelline_peace_decision$#! [Concept('decision','rozhodnutí')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gg_see_endings_button: "#clickable Zobrazit konce situace#!" # todo: NEW TRANSLATION
+ gg_see_phases_button: "#clickable Zobrazit možné fáze#!" # todo: NEW TRANSLATION
+ gg_progressbar_catalyst_count: "[FutureSituationPhase.GetProgress] / [FutureSituationPhase.GetTakeoverPoints] spouštěčů" # todo: NEW TRANSLATION
+ guelph_ghibelline_sub_region_core: "Císařské země" # todo: NEW TRANSLATION
+ guelph_ghibelline_sub_region_core_desc: "Všechno [Concept('counties','hrabství')|E] v italských a německých [Concept('kingdoms','královstvích')|E] [GetTitleByKey('e_hre').GetDefinitiveName|l], kde soupeří [Concept('guelphs','guelfové')|E] a [Concept('ghibellines','ghibellini')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gg_leader_group_help: "#help \n\nNepřítomnost vůdce na kterékoli straně ukončí situaci ve prospěch opačné strany.#!" # todo: NEW TRANSLATION
+ guelph_ghibelline_participant_group_guelph_leader: "$guelph$ Vůdce guelfů" # todo: NEW TRANSLATION
+ guelph_ghibelline_participant_group_guelph_leader_desc: "[SelectLocalization( GetSituation( 'guelph_ghibelline' ).GetTopCurrentPhase.GetType.HasParameter( 'gg_precursor_phase' ), 'guelph_ghibelline_participant_group_guelph_leader_desc_prelude', 'guelph_ghibelline_participant_group_guelph_leader_desc_main' )]" # todo: NEW TRANSLATION
+ guelph_ghibelline_participant_group_guelph_leader_desc_prelude: "Vůdce [Concept('guelphs','guelfové')|E] v rámci [Concept('situation','situace')|E] [GetSituation('guelph_ghibelline').GetName].\n\nBěhem [Concept('situation_phase','fáze situace')|E] přípravného období [GetSituationType('guelph_ghibelline').GetPhaseType('in_nomine_domini').GetName] a [GetSituationType('guelph_ghibelline').GetPhaseType('dictatus_papae').GetName] vede [Concept('guelphs','guelfů')|E] $religiousheadname_pope$ a konflikt se vyvíjí podle historických událostí. Vlastní [Concept('decisions','rozhodnutí')|E] vůdce budou k dispozici, až přípravné období přejde v otevřený konflikt.$gg_leader_group_help$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ guelph_ghibelline_participant_group_guelph_leader_desc_main: "Vůdce [Concept('guelphs','guelfové')|E] v rámci [Concept('situation','situace')|E] [GetSituation('guelph_ghibelline').GetName].\n\nTento vůdce může konflikt ovlivňovat jedinečnými [Concept('decisions','rozhodnutí')|E]:\n$BULLET_WITH_TAB$#V $guelph_ghibelline_peace_decision$#! a #V $guelph_ghibelline_conflict_decision$#! přesouvají [Concept('situation','situace')|E] mezi klidnějšími a konfliktnějšími [Concept('situation_phase','fáze situace')|E]\n$BULLET_WITH_TAB$#V $guelph_victory_decision$#! ukončí situaci ve prospěch [Concept('guelphs','guelfů')|E], pokud mají převahu\n$BULLET_WITH_TAB$Rozhodnutí odstoupit a předat vedení vhodnému přívrženci$gg_leader_group_help$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ guelph_ghibelline_participant_group_ghibelline_leader: "$ghibelline$ Vůdce ghibellinů" # todo: NEW TRANSLATION
+ guelph_ghibelline_participant_group_ghibelline_leader_desc: "[SelectLocalization( GetSituation( 'guelph_ghibelline' ).GetTopCurrentPhase.GetType.HasParameter( 'gg_precursor_phase' ), 'guelph_ghibelline_participant_group_ghibelline_leader_desc_prelude', 'guelph_ghibelline_participant_group_ghibelline_leader_desc_main' )]" # todo: NEW TRANSLATION
+ guelph_ghibelline_participant_group_ghibelline_leader_desc_prelude: "Vůdce [Concept('ghibellines','ghibellini')|E] v rámci [Concept('situation','situace')|E] [GetSituation('guelph_ghibelline').GetName].\n\nBěhem [Concept('situation_phase','fáze situace')|E] přípravného období [GetSituationType('guelph_ghibelline').GetPhaseType('in_nomine_domini').GetName] a [GetSituationType('guelph_ghibelline').GetPhaseType('dictatus_papae').GetName] vede [ghibellines|E] vládce [GetTitleByKey('e_hre').GetName] a konflikt se vyvíjí podle historických událostí. Vlastní [Concept('decisions','rozhodnutí')|E] vůdce budou k dispozici, až přípravné období přejde v otevřený konflikt.$gg_leader_group_help$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ guelph_ghibelline_participant_group_ghibelline_leader_desc_main: "Vůdce [Concept('ghibellines','ghibellini')|E] v rámci [Concept('situation','situace')|E] [GetSituation('guelph_ghibelline').GetName].\n\nTento vůdce může konflikt ovlivňovat jedinečnými [Concept('decisions','rozhodnutí')|E]:\n$BULLET_WITH_TAB$#V $guelph_ghibelline_peace_decision$#! a #V $guelph_ghibelline_conflict_decision$#! přesouvají [Concept('situation','situace')|E] mezi klidnějšími a konfliktnějšími [Concept('situation_phase','fáze situace')|E]\n$BULLET_WITH_TAB$#V $ghibelline_victory_decision$#! ukončí situaci ve prospěch [ghibellines|E], pokud mají převahu\n$BULLET_WITH_TAB$Rozhodnutí odstoupit a předat vedení vhodnému přívrženci$gg_leader_group_help$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ guelph_ghibelline_participant_group_guelph_member: "$guelph$ Guelfský přívrženec" # todo: NEW TRANSLATION
+ guelph_ghibelline_participant_group_guelph_member_desc: "Přívrženec [Concept('guelph','guelf')|E] guelfské strany v rámci [Concept('situation','situace')|E] [GetSituation('guelph_ghibelline').GetName]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ guelph_ghibelline_participant_group_ghibelline_member: "$ghibelline$ Ghibellinský přívrženec" # todo: NEW TRANSLATION
+ guelph_ghibelline_participant_group_ghibelline_member_desc: "Přívrženec [Concept('ghibelline','ghibellin')|E] ghibellinské strany v rámci [Concept('situation','situace')|E] [GetSituation('guelph_ghibelline').GetName]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ guelph_ghibelline_participant_group_undecided: "Nerozhodnutí" # todo: NEW TRANSLATION
+ guelph_ghibelline_participant_group_undecided_desc: "Nerozhodnutá strana v rámci [GetSituation('guelph_ghibelline').GetName] [Concept('situation','situace')|E]. Za správných okolností by se ji možná podařilo přesvědčit, aby se přidala k jedné ze stran.\n\nNemůže #BOL spouštět#! [Concept('situation_catalysts','spouštěčů situace')|E] a méně pravděpodobně získá [Concept('gg_involvement','zapojení')|E]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ guelph_ghibelline_participant_group_outsider: "Cizinec" # todo: NEW TRANSLATION
+ guelph_ghibelline_participant_group_outsider_desc: "Cizinec v rámci [GetSituation('guelph_ghibelline').GetName] [Concept('situation','situace')|E]. Obvykle se jedná o bezzemné dobrodruhy a jiné žoldnéře.\n\nNemůže #BOL spouštět#! [Concept('situation_catalysts','spouštěčů situace')|E] #BOL ani#! získávat [Concept('gg_involvement','zapojení')|E]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ guelph_ghibelline_all: "Aktuální [Concept('situation_phase_phase','fáze')|E] [Concept('guelph_ghibelline_situation','guelfů a Ghibellini')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ guelph_ghibelline_guelph_leader: "[Concept('situation_phase_phase','Fáze')|E] [Concept('guelph_ghibelline_situation','Guelfové a Ghibellini')|E] #weak ($PARTICIPANT_GROUP$)#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ guelph_ghibelline_guelph_member: "[Concept('situation_phase_phase','Fáze')|E] [Concept('guelph_ghibelline_situation','Guelfové a Ghibellini')|E] #weak ($PARTICIPANT_GROUP$)#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ guelph_ghibelline_ghibelline_leader: "[Concept('situation_phase_phase','Fáze')|E] [Concept('guelph_ghibelline_situation','Guelfové a Ghibellini')|E] #weak ($PARTICIPANT_GROUP$)#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ guelph_ghibelline_ghibelline_member: "[Concept('situation_phase_phase','Fáze')|E] [Concept('guelph_ghibelline_situation','Guelfové a Ghibellini')|E] #weak ($PARTICIPANT_GROUP$)#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ guelph_ghibelline_in_nomine_domini_situation_phase: "$situation_guelph_ghibelline_phase_in_nomine_domini$" # todo: NEW TRANSLATION
+ guelph_ghibelline_dictatus_papae_situation_phase: "$situation_guelph_ghibelline_phase_dictatus_papae$" # todo: NEW TRANSLATION
+ guelph_ghibelline_agitation_situation_phase: "$situation_guelph_ghibelline_phase_agitation$" # todo: NEW TRANSLATION
+ guelph_ghibelline_guelph_advantage_situation_phase: "$situation_guelph_ghibelline_phase_guelph_advantage$" # todo: NEW TRANSLATION
+ guelph_ghibelline_ghibelline_advantage_situation_phase: "$situation_guelph_ghibelline_phase_ghibelline_advantage$" # todo: NEW TRANSLATION
+ guelph_ghibelline_repose_situation_phase: "$situation_guelph_ghibelline_phase_repose$" # todo: NEW TRANSLATION
+ in_nomine_domini: "$situation_guelph_ghibelline_phase_in_nomine_domini$" # todo: NEW TRANSLATION
+ in_nomine_domini_desc: "$situation_guelph_ghibelline_phase_in_nomine_domini_desc_short$" # todo: NEW TRANSLATION
+ precursor_situation_leader_help: "#help V této [Concept('situation_phase_phase','fázi')|E] musí být vládce [GetTitleByKey('e_hre').GetDefinitiveName|l] [GetSituation('guelph_ghibelline').GetTopParticipantGroupByKey( 'ghibelline_leader' ).GetName] a $religiousheadname_pope$ musí být [GetSituation('guelph_ghibelline').GetTopParticipantGroupByKey( 'guelph_leader' ).GetName].#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ situation_guelph_ghibelline_phase_in_nomine_domini: "Papežské obrození" # todo: NEW TRANSLATION
+ situation_guelph_ghibelline_phase_in_nomine_domini_desc_short: "Tato [Concept('situation_phase','fáze situace')|E] situace [GetSituation('guelph_ghibelline').GetName] je poměrně klidným obdobím s jen několika bezprostředními důsledky.\n\n$precursor_situation_leader_help$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gg_nomine_domini_transition: "Přibližně za [Select_CFixedPoint( GreaterThanOrEqualTo_CFixedPoint( EmptyScope.ScriptValue('gg_months_until_dictatus_papae'), '(CFixedPoint)12' ), EmptyScope.ScriptValue('gg_years_until_dictatus_papae'), EmptyScope.ScriptValue('gg_months_until_dictatus_papae') )|0V] [Select_CString( GreaterThanOrEqualTo_CFixedPoint( EmptyScope.ScriptValue('gg_months_until_dictatus_papae'), '(CFixedPoint)12' ), Select_CString( EqualTo_CFixedPoint( EmptyScope.ScriptValue('gg_years_until_dictatus_papae'), '(CFixedPoint)1' ), 'rok', 'let' ), Select_CString( EqualTo_CFixedPoint( EmptyScope.ScriptValue('gg_months_until_dictatus_papae'), '(CFixedPoint)1' ), 'měsíc', 'měsíců' ) )] situace vygraduje a přejde do [Concept('situation_phase_phase','fáze')|E] [GetSituationType('guelph_ghibelline').GetPhaseType('dictatus_papae').GetName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gg_nomine_domini_transition_desc: "Ačkoli většina zásad Dictatus Papae (...)" # todo: NEW TRANSLATION
+ dictatus_papae: "$situation_guelph_ghibelline_phase_dictatus_papae$" # todo: NEW TRANSLATION
+ dictatus_papae_desc: "$situation_guelph_ghibelline_phase_dictatus_papae_desc_short$" # todo: NEW TRANSLATION
+ situation_guelph_ghibelline_phase_dictatus_papae: "Dictatus Papae" # todo: NEW TRANSLATION
+ situation_guelph_ghibelline_phase_dictatus_papae_desc_short: "Tato [Concept('situation_phase','fáze situace')|E] situace [GetSituation('guelph_ghibelline').GetName] představuje vyhrocení předchozí fáze [GetSituationType('guelph_ghibelline').GetPhaseType('in_nomine_domini').GetName].\n\nVztahy mezi panovníky a jejich církevními vazaly se nyní vyostřují, protože vazalové jsou rozpolceni mezi $religiousheadname_pope$, který si činí nárok na univerzální moc, a svými lenními pány, kteří chtějí zachovat svou svrchovanost.\n\n$precursor_situation_leader_help$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gg_dictatus_papae_transition: "Přibližně za [Select_CFixedPoint( GreaterThanOrEqualTo_CFixedPoint( EmptyScope.ScriptValue('gg_months_until_concordat_of_worms'), '(CFixedPoint)12' ), EmptyScope.ScriptValue('gg_years_until_concordat_of_worms'), EmptyScope.ScriptValue('gg_months_until_concordat_of_worms') )|0V] [Select_CString( GreaterThanOrEqualTo_CFixedPoint( EmptyScope.ScriptValue('gg_months_until_concordat_of_worms'), '(CFixedPoint)12' ), Select_CString( EqualTo_CFixedPoint( EmptyScope.ScriptValue('gg_years_until_concordat_of_worms'), '(CFixedPoint)1' ), 'rok', 'let' ), Select_CString( EqualTo_CFixedPoint( EmptyScope.ScriptValue('gg_months_until_concordat_of_worms'), '(CFixedPoint)1' ), 'měsíc', 'měsíců' ) )] situace vygraduje a přejde do [Concept('situation_phase_phase','fáze')|E] [GetSituationType('guelph_ghibelline').GetPhaseType('repose').GetName] nebo [GetSituationType('guelph_ghibelline').GetPhaseType('agitation').GetName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gg_dictatus_papae_transition_desc: "Ačkoli většina zásad Dictatus Papae (...)" # todo: NEW TRANSLATION
+ ad_interim: "$situation_guelph_ghibelline_phase_ad_interim$" # todo: NEW TRANSLATION
+ ad_interim_desc: "$situation_guelph_ghibelline_phase_ad_interim_desc_short$" # todo: NEW TRANSLATION
+ situation_guelph_ghibelline_phase_ad_interim: "Wormský konkordát" # todo: NEW TRANSLATION
+ situation_guelph_ghibelline_phase_ad_interim_desc_short: "Tato [Concept('situation_phase','fáze situace')|E] situace [GetSituation('guelph_ghibelline').GetName] je přelomovým okamžikem, kdy se [GetSituation('guelph_ghibelline').GetTopParticipantGroupByKey( 'guelph_leader' ).GetName] a [GetSituation('guelph_ghibelline').GetTopParticipantGroupByKey( 'ghibelline_leader' ).GetName] rozhodují, zda bude další fází [GetSituationType('guelph_ghibelline').GetPhaseType('repose').GetName], nebo [GetSituationType('guelph_ghibelline').GetPhaseType('agitation').GetName]...\n\n$precursor_situation_leader_help$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ agitation: "$situation_guelph_ghibelline_phase_agitation$" # todo: NEW TRANSLATION
+ agitation_desc: "$situation_guelph_ghibelline_phase_agitation_desc_short$" # todo: NEW TRANSLATION
+ situation_guelph_ghibelline_phase_agitation: "Rozjitření" # todo: NEW TRANSLATION
+ situation_guelph_ghibelline_phase_agitation_desc_short: "Tuto [Concept('situation_phase','fázi situace')|E] situace [GetSituation('guelph_ghibelline').GetName] charakterizují četnější a vyhrocenější konflikty, v nichž se vedou bitvy a války o zvýšení moci vítězné strany.\n\nPokud kterákoli strana konfliktu dosáhne alespoň 70 % moci, fáze přejde přímo do jedné z následujících fází:\n$EFFECT_LIST_BULLET$[GetSituationType('guelph_ghibelline').GetPhaseType('guelph_advantage').GetName]\n$EFFECT_LIST_BULLET$[GetSituationType('guelph_ghibelline').GetPhaseType('ghibelline_advantage').GetName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ guelph_advantage: "$situation_guelph_ghibelline_phase_guelph_advantage$" # todo: NEW TRANSLATION
+ guelph_advantage_desc: "$situation_guelph_ghibelline_phase_guelph_advantage_desc_short$" # todo: NEW TRANSLATION
+ situation_guelph_ghibelline_phase_guelph_advantage: "Převaha guelfů" # todo: NEW TRANSLATION
+ situation_guelph_ghibelline_phase_guelph_advantage_desc_short: "Tato [Concept('situation_phase','fáze situace')|E] situace [GetSituation('guelph_ghibelline').GetName] značí, že [Concept('guelphs','guelfové')|E] mají v této konfliktní [Concept('situation_phase_phase','fázi')|E] navrch.\n\n$guelphs$ díky tomu získávají dodatečné bonusy, jejich značná moc však může být čas od času také podrobena zkoušce..." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ ghibelline_advantage: "$situation_guelph_ghibelline_phase_ghibelline_advantage$" # todo: NEW TRANSLATION
+ ghibelline_advantage_desc: "$situation_guelph_ghibelline_phase_ghibelline_advantage_desc_short$" # todo: NEW TRANSLATION
+ situation_guelph_ghibelline_phase_ghibelline_advantage: "Převaha ghibellinů" # todo: NEW TRANSLATION
+ situation_guelph_ghibelline_phase_ghibelline_advantage_desc_short: "Tato [Concept('situation_phase','fáze situace')|E] situace [GetSituation('guelph_ghibelline').GetName] značí, že [Concept('ghibellines','ghibellini')|E] mají v této konfliktní [Concept('situation_phase_phase','fázi')|E] navrch.\n\n$ghibellines$ díky tomu získávají dodatečné bonusy, jejich značná moc však může být čas od času také podrobena zkoušce..." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ repose: "$situation_guelph_ghibelline_phase_repose$" # todo: NEW TRANSLATION
+ repose_desc: "$situation_guelph_ghibelline_phase_repose_desc_short$" # todo: NEW TRANSLATION
+ situation_guelph_ghibelline_phase_repose: "Klid" # todo: NEW TRANSLATION
+ situation_guelph_ghibelline_phase_repose_desc_short: "Tato [Concept('situation_phase','fáze situace')|E] [GetSituation('guelph_ghibelline').GetName] umožňuje regionu zakusit mír a obnovu, byť jen na krátkou dobu.\n\nPodněcování potyček a válek je obtížné a setkává se s nesouhlasem." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ in_nomine_domini_effects: "$situation_guelph_ghibelline_phase_in_nomine_domini$ – účinky" # todo: NEW TRANSLATION
+ in_nomine_domini_effects_concept: "[Concept('guelph_ghibelline_situation','Guelfové a Ghibellini')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ dictatus_papae_effects: "$situation_guelph_ghibelline_phase_dictatus_papae$ – účinky" # todo: NEW TRANSLATION
+ dictatus_papae_effects_concept: "[Concept('guelph_ghibelline_situation','Guelfové a Ghibellini')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ agitation_effects: "$situation_guelph_ghibelline_phase_agitation$ – účinky" # todo: NEW TRANSLATION
+ agitation_effects_concept: "[Concept('guelph_ghibelline_situation','Guelfové a Ghibellini')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ repose_effects: "$situation_guelph_ghibelline_phase_repose$ – účinky" # todo: NEW TRANSLATION
+ repose_effects_concept: "[Concept('guelph_ghibelline_situation','Guelfové a Ghibellini')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ guelph_advantage_effects: "$situation_guelph_ghibelline_phase_guelph_advantage$ – účinky" # todo: NEW TRANSLATION
+ guelph_advantage_effects_concept: "[Concept('guelph_ghibelline_situation','Guelfové a Ghibellini')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ ghibelline_advantage_effects: "$situation_guelph_ghibelline_phase_ghibelline_advantage$ – účinky" # todo: NEW TRANSLATION
+ ghibelline_advantage_effects_concept: "[Concept('guelph_ghibelline_situation','Guelfové a Ghibellini')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ guelph_ghibelline_military_effects: "$situation_steppe_military_effects$" # todo: NEW TRANSLATION
+ guelph_ghibelline_military_effects_concept: "[Concept('war','Válka')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ guelph_ghibelline_character_effects: "$situation_steppe_personal_effects$" # todo: NEW TRANSLATION
+ guelph_ghibelline_character_effects_concept: "[Concept('character','Postava')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ situation_parameter_gg_excommunicating_leader_is_negative: "Vůdce [Concept('guelph','guelf')|E] nebo [Concept('ghibelline','ghibellin')|E] s [Concept('excommunicated','exkomunikovaným')|E] má negativní vliv na hodnocení moci své strany" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ situation_parameter_gg_hre_infringed_north_italian_liege_rights: "Svatý římský [GetTitleByKey('e_hre').GetHolder.Custom('my_title')|U] si při správě [Concept('vassals','vazalům')|E] v [Concept('region','regionu')|E] [GetGeographicalRegion('gdp_guelph_ghibelline_northern_italy_region').GetName] přivodí větší [Concept('tyranny','tyranii')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ situation_parameter_gg_hre_may_not_create_north_italian_titles: "Svatý římský [GetTitleByKey('e_hre').GetHolder.Custom('my_title')|U] nesmí vytvářet tituly v [Concept('region','regionu')|E] [GetGeographicalRegion('gdp_guelph_ghibelline_northern_italy_region').GetName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gg_hre_may_not_create_north_italian_titles_tt: "Svatý římský [GetTitleByKey('e_hre').GetHolder.Custom('my_title')|U] nesmí vytvářet tituly v [Concept('region','regionu')|E] [GetGeographicalRegion('gdp_guelph_ghibelline_northern_italy_region').GetName], dokud je [Concept('situation','situace')|E] [GetSituation('guelph_ghibelline').GetName] aktivní" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ situation_parameter_gg_may_not_gain_involvement: "#BOL Žádný#! zisk [gg_involvement_i] [Concept('gg_involvement','zapojení')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ situation_parameter_gg_involvement_gain_is_half: "Zisk [gg_involvement_i] [Concept('gg_involvement','zapojení')|E]: @gg_involvement_icon! #V x0.5#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ situation_parameter_gg_involvement_gain: "Lze získat [gg_involvement_i] [Concept('gg_involvement','zapojení')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ situation_parameter_gg_involvement_gain_is_double: "Zisk [Concept('gg_involvement','zapojení')|E]: [gg_involvement_i] #V x2#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ situation_parameter_guelph_ghibelline_no_wars_against_opposite_party: "[Concept('guelphs','Guelfové')|E] nesmějí vyhlašovat [Concept('wars','války')|E] [ghibellines|E] a naopak" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ situation_parameter_guelph_ghibelline_cheaper_wars_against_opposite_party: "[Concept('guelphs','Guelfové')|E] mohou levněji vyhlašovat [Concept('wars','války')|E] [ghibellines|E] a naopak" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ situation_parameter_guelph_ghibelline_cheaper_wars_against_guelphs: "[Concept('ghibellines','Ghibellini')|E] mohou levněji vyhlašovat [Concept('wars','války')|E] [Concept('guelphs','guelfů')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ situation_parameter_guelph_ghibelline_cheaper_wars_against_ghibellines: "[Concept('guelphs','Guelfové')|E] mohou levněji vyhlašovat [Concept('wars','války')|E] [ghibellines|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ displace_guelph_ghibelline_ruler_cb: "Sesadit protistranického vládce" # todo: NEW TRANSLATION
+ DISPLACE_GUELPH_GHIBELLINE_RULER_CB_NAME: "Sesadit vládce [DEFENDER.Custom('GetGuelphGhibelline')]" # todo: NEW TRANSLATION
+ DISPLACE_GUELPH_GHIBELLINE_RULER_WAR_NAME: "[ConcatIfNeitherEmpty('$ORDER|q$', ' ')][ATTACKER.GetPrimaryTitle.GetAdjective] válka o sesazení" # todo: NEW TRANSLATION
+ DISPLACE_GUELPH_GHIBELLINE_RULER_WAR_NAME_BASE: "[ATTACKER.GetPrimaryTitle.GetAdjective][DEFENDER.GetPrimaryTitle.GetName]" # todo: NEW TRANSLATION
+ displace_guelph_ghibelline_ruler_cb_victory_vassal_desc: "[defender.GetShortUIName|U] [CharAreIs( defender )] bude nahrazen jedním ze [Concept('vassals','vazalů')|E] [attacker.Custom('GetGuelphGhibellineConcept')] [defender.GetHerHis]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ displace_guelph_ghibelline_ruler_cb_victory_other_desc: "[defender.GetShortUIName|U] [CharAreIs( defender )] bude nahrazen věrným stoupencem [attacker.Custom('GetGuelphGhibellineConcept')]." # todo: NEW TRANSLATION
+ displace_guelph_ghibelline_ruler_cb_white_peace_desc: "[defender.GetShortUIName|U] [CharAreIs( defender )] nebude nahrazen." # todo: NEW TRANSLATION
+ displace_guelph_ghibelline_ruler_cb_defeat_desc: "$displace_guelph_ghibelline_ruler_cb_white_peace_desc$" # todo: NEW TRANSLATION
+ displace_guelph_ghibelline_ruler_cb_ended_invalid.desc: "[war.GetName] skončila: buď [attacker.GetShortUIName] a [defender.GetShortUIName] už nestojí na opačných stranách, nebo [defender.GetShortUIName] už nemá vhodného [Concept('vassal','vazala')|E] stejné strany jako [attacker.GetShortUIName], kterého by bylo možné dosadit." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ displace_gg_ruler_created_character_tt: "[defender.GetShortUIName|U] [CharAreIs( defender )] bude nahrazen věrným stoupencem [attacker.Custom('GetGuelphGhibelline')]" # todo: NEW TRANSLATION
+ displace_gg_ruler_use_reinstate_cb_instead_tt: "Pro tento [Concept('title','titul')|E] nyní existuje sesazený bývalý [Concept('ruler','vládce')|E] [attacker.Custom('GetGuelphGhibellineConcept')]; místo toho použijte [Concept('interaction','interakce')|E] $gg_invite_guelph_exiles_interaction|V$ a zahajte [GetCasusBelliType('reinstate_guelph_ghibelline_ruler_cb').GetName|V] [Concept('casus_belli','casus belli')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ RECIPIENT_WAS_BANISHED_BY_ACTOR: "[recipient.GetShortUIName] byl vykázán [actor.GetShortUIName] a [Select_CString(actor.IsFemale,'přišla','přišel')] o [recipient.GetHerHis] [Concept('titles','tituly')|E]: $VALUE|=+0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ RECIPIENT_WAS_GHIBELLINE_SIDE: "[recipient.GetShortUIName] je sesazený $ghibelline|U$: $VALUE|=+0$" # todo: NEW TRANSLATION
+ RECIPIENT_WAS_GUELPH_SIDE: "[recipient.GetShortUIName] je sesazený $guelph|U$: $VALUE|=+0$" # todo: NEW TRANSLATION
+ RECIPIENT_WAS_DISPLACED_BY_ACTOR: "[recipient.GetShortUIName] byl sesazen [actor.GetShortUIName] a [Select_CString(actor.IsFemale,'přišla','přišel')] o [recipient.GetHerHis] [Concept('titles','tituly')|E]: $VALUE|=+0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ reinstate_guelph_ghibelline_ruler_cb: "Obnovit spřízněného vládce" # todo: NEW TRANSLATION
+ REINSTATE_GUELPH_GHIBELLINE_RULER_CB_NAME: "Obnovit vládce [ATTACKER.Custom('GetGuelphGhibelline')]" # todo: NEW TRANSLATION
+ REINSTATE_GUELPH_GHIBELLINE_RULER_WAR_NAME: "[ConcatIfNeitherEmpty('$ORDER|q$', ' ')][ATTACKER.GetPrimaryTitle.GetAdjective] válka o obnovení" # todo: NEW TRANSLATION
+ REINSTATE_GUELPH_GHIBELLINE_RULER_WAR_NAME_BASE: "[ATTACKER.GetPrimaryTitle.GetAdjective][DEFENDER.GetPrimaryTitle.GetName]" # todo: NEW TRANSLATION
+ reinstate_guelph_ghibelline_ruler_cb_victory_desc: "Vyhnaný vládce [attacker.Custom('GetGuelphGhibelline')] se vrátí na trůn a získá sporný [Concept('title','titul')|E]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ reinstate_guelph_ghibelline_ruler_cb_white_peace_desc: "[defender.GetShortUIName|U] si ponechá sporný [Concept('title','titul')|E]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ reinstate_guelph_ghibelline_ruler_cb_defeat_desc: "[defender.GetShortUIName|U] si ponechá[_s( defender )] sporný [Concept('title','titul')|E]. Vyhnaného vládce [attacker.Custom('GetGuelphGhibelline')] už nelze vrátit na trůn." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ reinstate_guelph_ghibelline_ruler_loses_claims_tt: "" # todo: NEW TRANSLATION
+ dissolve_lombard_league_cb: "$DISSOLVE_LOMBARD_LEAGUE_CB_NAME$" # todo: NEW TRANSLATION
+ DISSOLVE_LOMBARD_LEAGUE_CB_NAME: "Rozpustit Lombardskou ligu" # todo: NEW TRANSLATION
+ DISSOLVE_LOMBARD_LEAGUE_WAR_NAME: "[ConcatIfNeitherEmpty('$ORDER|q$', ' ')][ATTACKER.GetPrimaryTitle.GetAdjective] válka za rozpuštění Lombardské ligy" # todo: NEW TRANSLATION
+ DISSOLVE_LOMBARD_LEAGUE_WAR_NAME_BASE: "[ATTACKER.GetPrimaryTitle.GetAdjective][DEFENDER.GetPrimaryTitle.GetName]" # todo: NEW TRANSLATION
+ dissolve_lombard_league_cb_victory_desc: "[defender.GetConfederation.GetName] bude rozpuštěna a [defender.GetShortUIName] se stane[_s( defender )] [Concept('vassal','vazal')|E] [attacker.Custom('CZ_ShortUIName_G')]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ dissolve_lombard_league_cb_white_peace_desc: "[defender.GetConfederation.GetName] nebude rozpuštěna a [defender.GetShortUIName] zůstane[_s( defender )] nezávislý." # todo: NEW TRANSLATION
+ dissolve_lombard_league_cb_defeat_desc: "$dissolve_lombard_league_cb_white_peace_desc$" # todo: NEW TRANSLATION
+ dissolve_lombard_league_cb_ended_invalid.desc: "[war.GetName] skončila: buď situace [Concept('guelph_ghibelline_situation','guelfové a Ghibellini')|E] skončila, nebo [defender.GetShortUIName] už není součástí $lombard_league_name$." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ catalyst_torture_opposite_party: "Mučení příslušníka protistrany" # todo: NEW TRANSLATION
+ catalyst_torture_opposite_party_desc: "[Concept('guelph','Guelf')|E] nebo [Concept('ghibelline','ghibellin')|E] mučí příslušníka protistrany" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ catalyst_maim_opposite_party: "Zmrzačení příslušníka protistrany" # todo: NEW TRANSLATION
+ catalyst_maim_opposite_party_desc: "[Concept('guelph','Guelf')|E] nebo [Concept('ghibelline','ghibellin')|E] oslepí či vykastruje příslušníka protistrany" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ catalyst_attempt_imprison_opposite_party: "Pokus o uvěznění příslušníka protistrany" # todo: NEW TRANSLATION
+ catalyst_attempt_imprison_opposite_party_desc: "[Concept('guelph','Guelf')|E] nebo [Concept('ghibelline','ghibellin')|E] se pokusí [Concept('imprison','uvěznit')|E] příslušníka protistrany" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ catalyst_execute_opposite_party: "Poprava příslušníka protistrany" # todo: NEW TRANSLATION
+ catalyst_execute_opposite_party_desc: "[Concept('guelph','Guelf')|E] nebo [Concept('ghibelline','ghibellin')|E] popraví příslušníka protistrany" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ catalyst_attempt_abduct_opposite_party: "Pokus o únos příslušníka protistrany" # todo: NEW TRANSLATION
+ catalyst_attempt_abduct_opposite_party_desc: "[Concept('guelph','Guelf')|E] nebo [Concept('ghibelline','ghibellin')|E] se pokusí o [GetScheme('abduct').GetTypeName] příslušníka protistrany" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gg_abduct_might_have_consequences_tt_global: "@alert_icon!#alert_trial Odhalená či neúspěšná [Concept('scheme','intrika')|E] [GetScheme('abduct').GetTypeName] proti stoupenci [CHARACTER.Custom('GuelphGhibellineGetOppositeConcept')] vyvolá [Concept('situation_catalysts','spouštěče situace')|E] fáze [GetSituation('guelph_ghibelline').GetTopCurrentPhase.GetType.GetName]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gg_abduct_might_have_consequences_tt_first: "$gg_abduct_might_have_consequences_tt_global$" # todo: NEW TRANSLATION
+ gg_abduct_might_have_consequences_tt_third: "$gg_abduct_might_have_consequences_tt_global$" # todo: NEW TRANSLATION
+ catalyst_attempt_murder_opposite_party: "Pokus o vraždu příslušníka protistrany" # todo: NEW TRANSLATION
+ catalyst_attempt_murder_opposite_party_desc: "[Concept('guelph','Guelf')|E] nebo [Concept('ghibelline','ghibellin')|E] se pokusí o [GetScheme('murder').GetTypeName] příslušníka protistrany" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gg_murder_might_have_consequences_tt_global: "@alert_icon!#alert_trial Odhalená či neúspěšná [Concept('scheme','intrika')|E] [GetScheme('murder').GetTypeName] proti stoupenci [CHARACTER.Custom('GuelphGhibellineGetOppositeConcept')] vyvolá [Concept('situation_catalysts','spouštěče situace')|E] fáze [GetSituation('guelph_ghibelline').GetTopCurrentPhase.GetType.GetName]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gg_murder_might_have_consequences_tt_first: "$gg_murder_might_have_consequences_tt_global$" # todo: NEW TRANSLATION
+ gg_murder_might_have_consequences_tt_third: "$gg_murder_might_have_consequences_tt_global$" # todo: NEW TRANSLATION
+ catalyst_hostility_decay: "Slábnutí nepřátelství" # todo: NEW TRANSLATION
+ catalyst_hostility_decay_desc: "Bez nových incidentů, které by nepřátelství rozdmýchávaly, začíná chladnout" # todo: NEW TRANSLATION
+ catalyst_banish_opposite_party: "Vykázání příslušníků protistrany" # todo: NEW TRANSLATION
+ catalyst_banish_opposite_party_desc: "[Concept('guelph','Guelf')|E] nebo [Concept('ghibelline','ghibellin')|E] [Concept('banishes','vyhání')|E] rodinu příslušníka protistrany" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ catalyst_gg_leader_imprisoned: "Vůdce protistrany uvězněn" # todo: NEW TRANSLATION
+ catalyst_gg_leader_imprisoned_desc: "Vůdce [Concept('guelph','guelf')|E] nebo [Concept('ghibelline','ghibellin')|E] je [Concept('imprisoned','uvězněnou')|E] protistranou" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ catalyst_excommunicated_hre: "Exkomunikace [GetTitleByKey('e_hre').GetHolder.GetTitleAsName|U]" # todo: NEW TRANSLATION
+ catalyst_excommunicated_hre_desc: "[GetTitleByKey('e_hre').GetHolder.GetTitleAsName|UV] je [Concept('excommunicated','exkomunikovaný')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ catalyst_excommunicated_ghibellines: "Exkomunikace $ghibelline$" # todo: NEW TRANSLATION
+ catalyst_excommunicated_ghibellines_desc: "[GetSituation('guelph_ghibelline').GetTopParticipantGroupByKey( 'ghibelline_member' ).GetName] je [Concept('excommunicated','exkomunikovaný')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ catalyst_grudge_hre_pope: "Zášť mezi vůdci" # todo: NEW TRANSLATION
+ catalyst_grudge_hre_pope_desc: "[GetTitleByKey('e_hre').GetHolder.GetTitleAsName|UV] nebo [GetTitleByKey('k_papal_state').GetHolder.GetUINameNotMe|U] začne chovat vůči druhému [Concept('grudge','křivdě')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ catalyst_rival_hre_pope: "Rivalita mezi vůdci" # todo: NEW TRANSLATION
+ catalyst_rival_hre_pope_desc: "[GetTitleByKey('e_hre').GetHolder.GetTitleAsName|UV] a [GetTitleByKey('k_papal_state').GetHolder.GetUINameNotMe|U] se stanou [rivals|E]" # todo: NEW TRANSLATION
+ catalyst_nemesis_hre_pope: "Úhlavní nepřátelé mezi vůdci" # todo: NEW TRANSLATION
+ catalyst_nemesis_hre_pope_desc: "[GetTitleByKey('e_hre').GetHolder.GetTitleAsName|UV] a [GetTitleByKey('k_papal_state').GetHolder.GetUINameNotMe|U] se stanou [Concept('nemeses','úhlavními nepřáteli')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ catalyst_gg_coup: "Svržení republiky" # todo: NEW TRANSLATION
+ catalyst_gg_coup_desc: "[Concept('guelph','Guelf')|E] nebo [Concept('ghibelline','ghibellin')|E] svrhne vládu [Concept('republic','republiku')|E] příslušníka protistrany" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ catalyst_gg_ruler_displaced: "Výměna vládce" # todo: NEW TRANSLATION
+ catalyst_gg_ruler_displaced_desc: "[Concept('guelph','Guelf')|E] nebo [Concept('ghibelline','ghibellin')|E] nahradí vládce protistrany někým ze své strany" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ catalyst_gg_house_feud: "Rodová vendeta" # todo: NEW TRANSLATION
+ catalyst_gg_house_feud_desc: "Rod [Concept('guelph','guelf')|E] [Concept('house','rodu')|E] a rod [Concept('ghibelline','ghibellin')|E] jeden se dostanou do otevřeného [house_feud|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ catalyst_gg_antipope_declared: "Prohlášen vzdoropapež" # todo: NEW TRANSLATION
+ catalyst_gg_antipope_declared_desc: "Je prohlášen [Concept('challenger_hof','konkurenční hlava víry')|E], čímž se křesťanstvo rozdělí mezi dva uchazeče o úřad $religiousheadname_pope$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ catalyst_gg_lay_investiture: "Laická investitura" # todo: NEW TRANSLATION
+ catalyst_gg_lay_investiture_desc: "Světští [Concept('guelph','guelf')|E] nebo [Concept('ghibelline','ghibellin')|E] ovlivní jmenování [Concept('clerical_title','duchovní titul')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ catalyst_gg_papal_election_interference: "Zásah do volby papeže" # todo: NEW TRANSLATION
+ catalyst_gg_papal_election_interference_desc: "Světští [Concept('guelph','guelf')|E] nebo [Concept('ghibelline','ghibellin')|E] ovlivní volbu příštího $religiousheadname_pope$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ catalyst_gg_emperor_crowned_by_antipope: "Korunován vzdoropapežem" # todo: NEW TRANSLATION
+ catalyst_gg_emperor_crowned_by_antipope_desc: "[Concept('ghibelline','Ghibellin')|E] Svatý římský [GetTitleByKey('e_hre').GetHolder.Custom('my_title')|U] je korunován [Concept('challenger_hof','konkurenční hlava víry')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ catalyst_gg_anointment_refused: "Císařské pomazání odmítnuto" # todo: NEW TRANSLATION
+ catalyst_gg_anointment_refused_desc: "[Concept('guelph','Guelf')|E] $religiousheadname_pope$ odmítne pomazat [Concept('ghibelline','ghibellin')|E] Svatého římského [GetTitleByKey('e_hre').GetHolder.Custom('my_title')|U]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ catalyst_gg_investiture_council_settled: "$investiture_crisis$ vyřešena" # todo: NEW TRANSLATION
+ catalyst_gg_investiture_council_settled_desc: "[Concept('the_christian_church_chapter_short','Kapitola')|E] [Concept('the_christian_church','Křesťanská církev')|E] zvaná $investiture_crisis$ končí" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ catalyst_gg_rome_occupied: "Dobyt Řím" # todo: NEW TRANSLATION
+ catalyst_gg_rome_occupied_desc: "Armáda [Concept('ghibelline','ghibellin')|E] [Concept('occupies','obsazuje')|E] Řím ovládaný [Concept('guelph','guelf')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ catalyst_gg_war_declared_on_opposite_party: "Vyhlášení války opačné straně" # todo: NEW TRANSLATION
+ catalyst_gg_war_declared_on_opposite_party_desc: "[Concept('guelph','Guelf')|E] nebo [Concept('ghibelline','ghibellin')|E] vyhlásí [Concept('war','válka')|E] členovi opačné strany" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ catalyst_gg_war_won_against_opposite_party: "Vítězství ve válce proti opačné straně" # todo: NEW TRANSLATION
+ catalyst_gg_war_won_against_opposite_party_desc: "[Concept('guelph','Guelf')|E] nebo [Concept('ghibelline','ghibellin')|E] vyhraje [Concept('war','válka')|E] proti členovi opačné strany" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ catalyst_gg_imperial_overreach: "Císařské překročení pravomocí" # todo: NEW TRANSLATION
+ catalyst_gg_imperial_overreach_desc: "Svatý římský [GetTitleByKey('e_hre').GetHolder.Custom('my_title')|U] zpřísní [Concept('vassal_contract','vazalská smlouva')|E] vazala [Concept('vassal','vazala')|E], který není [Concept('ghibelline','ghibellin')|E], v [Concept('region','regionu')|E] [GetGeographicalRegion('gdp_guelph_ghibelline_northern_italy_region').GetName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ catalyst_gg_title_revoked_from_opposite_party: "Odebrání titulu opačné straně" # todo: NEW TRANSLATION
+ catalyst_gg_title_revoked_from_opposite_party_desc: "[Concept('guelph','Guelf')|E] nebo [Concept('ghibelline','ghibellin')|E] odebere [Concept('title','titul')|E] vazalovi [Concept('vassal','vazalovi')|E] z opačné strany" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ catalyst_gg_partisan_poached: "Přetáhnutí straníka" # todo: NEW TRANSLATION
+ catalyst_gg_partisan_poached_desc: "[Concept('guelph','Guelf')|E] nebo [Concept('ghibelline','ghibellin')|E] je přesvědčen, aby opustil svou stranu a přidal se k té druhé" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ catalyst_gg_undecided_aligned: "Přesvědčení nerozhodnutého vládce" # todo: NEW TRANSLATION
+ catalyst_gg_undecided_aligned_desc: "Nerozhodnutý vládce je přesvědčen, aby se přidal k [Concept('guelphs','guelfům')|E] nebo [ghibellines|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ catalyst_gg_hostile_scheme_discovered: "Odhalena nepřátelská intrika" # todo: NEW TRANSLATION
+ catalyst_gg_hostile_scheme_discovered_desc: "Je odhalena nepřátelská [Concept('scheme','intrika')|E] namířená proti členovi opačné strany" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gg_hostile_scheme_might_have_consequences_tt_global: "@alert_icon!#alert_trial Odhalená nepřátelská [Concept('scheme','intrika')|E] namířená proti podporovateli [CHARACTER.Custom('GuelphGhibellineGetOppositeConcept')] vyvolá [Concept('situation_catalysts','spouštěče situace')|E] v situaci [GetSituation('guelph_ghibelline').GetTopCurrentPhase.GetType.GetName]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gg_hostile_scheme_might_have_consequences_tt_first: "$gg_hostile_scheme_might_have_consequences_tt_global$" # todo: NEW TRANSLATION
+ gg_hostile_scheme_might_have_consequences_tt_third: "$gg_hostile_scheme_might_have_consequences_tt_global$" # todo: NEW TRANSLATION
+ catalyst_gg_cross_party_alliance: "Mezistranická aliance" # todo: NEW TRANSLATION
+ catalyst_gg_cross_party_alliance_desc: "[Concept('guelph','Guelf')|E] a [Concept('ghibelline','ghibellin')|E] uzavřou [Concept('alliance','aliance')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ catalyst_gg_cross_party_marriage: "Mezistranický sňatek" # todo: NEW TRANSLATION
+ catalyst_gg_cross_party_marriage_desc: "Rod [Concept('guelph','guelf')|E] [Concept('house','rodu')|E] a rod [Concept('ghibelline','ghibellin')|E] jeden spojí [Concept('marriage','sňatek')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ catalyst_gg_excommunication_lifted: "Zrušení exkomunikace" # todo: NEW TRANSLATION
+ catalyst_gg_excommunication_lifted_desc: "[Concept('guelph','Guelf')|E] zprostí viny [Concept('excommunicated','exkomunikovaný')|E] [Concept('ghibelline','ghibellina')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ catalyst_gg_antipope_removed: "Sesazen vzdoropapež" # todo: NEW TRANSLATION
+ catalyst_gg_antipope_removed_desc: "[Concept('challenger_hof','Konkurenční hlava víry')|E] je sesazen" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ catalyst_gg_emperor_crowned_by_pope: "Císařská korunovace" # todo: NEW TRANSLATION
+ catalyst_gg_emperor_crowned_by_pope_desc: "[Concept('guelph','Guelf')|E] $religiousheadname_pope$ korunuje [Concept('ghibelline','ghibellin')|E] Svatého římského [GetTitleByKey('e_hre').GetHolder.Custom('my_title')|U]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ catalyst_gg_emperor_took_the_cross: "Císař přijímá kříž" # todo: NEW TRANSLATION
+ catalyst_gg_emperor_took_the_cross_desc: "[Concept('ghibelline','Ghibellin')|E] Svatý římský [GetTitleByKey('e_hre').GetHolder.Custom('my_title')|U] táhne na [Concept('great_holy_war','velkou svatou válku')|E] po boku [Concept('guelph','guelfa')|E] $religiousheadname_pope$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ catalyst_gg_submission_to_pope: "Podrobení se $religiousheadname_pope$" # todo: NEW TRANSLATION
+ catalyst_gg_submission_to_pope_desc: "Vůdce [Concept('ghibellines','ghibellini')|E] veřejně přenechá investituru [Concept('bishops','biskupy')|E] [Concept('guelph','guelfa')|E] $religiousheadname_pope$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gg_catalyst_in_situation_tt: "[Concept('situation_catalyst','Katalyzátor situace')|E] v situaci [GetSituation('guelph_ghibelline').GetName] [Concept('situation','situaci')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ catalyst_torture_opposite_party_triggered_tt: "Vyvolá #EMP $catalyst_torture_opposite_party$#! $gg_catalyst_in_situation_tt$" # todo: NEW TRANSLATION
+ catalyst_maim_opposite_party_triggered_tt: "Vyvolá #EMP $catalyst_maim_opposite_party$#! $gg_catalyst_in_situation_tt$" # todo: NEW TRANSLATION
+ catalyst_attempt_imprison_opposite_party_triggered_tt: "Vyvolá #EMP $catalyst_attempt_imprison_opposite_party$#! $gg_catalyst_in_situation_tt$" # todo: NEW TRANSLATION
+ catalyst_execute_opposite_party_triggered_tt: "Vyvolá #EMP $catalyst_execute_opposite_party$#! $gg_catalyst_in_situation_tt$" # todo: NEW TRANSLATION
+ catalyst_banish_opposite_party_triggered_tt: "Vyvolá #EMP $catalyst_banish_opposite_party$#! $gg_catalyst_in_situation_tt$" # todo: NEW TRANSLATION
+ catalyst_banish_opposite_party_may_be_triggered_tt: "@alert_icon!#alert_trial Tím vyvoláte $catalyst_banish_opposite_party$ $gg_catalyst_in_situation_tt$#!" # todo: NEW TRANSLATION
+ catalyst_gg_leader_imprisoned_triggered_tt: "Vyvolá #EMP $catalyst_gg_leader_imprisoned$#! $gg_catalyst_in_situation_tt$" # todo: NEW TRANSLATION
+ catalyst_attempt_murder_opposite_party_triggered_tt: "Vyvolá #EMP $catalyst_attempt_murder_opposite_party$#! $gg_catalyst_in_situation_tt$" # todo: NEW TRANSLATION
+ catalyst_attempt_abduct_opposite_party_triggered_tt: "Vyvolá #EMP $catalyst_attempt_abduct_opposite_party$#! $gg_catalyst_in_situation_tt$" # todo: NEW TRANSLATION
+ catalyst_excommunicated_hre_triggered_tt: "Vyvolá #EMP $catalyst_excommunicated_hre$#! $gg_catalyst_in_situation_tt$" # todo: NEW TRANSLATION
+ catalyst_excommunicated_ghibellines_triggered_tt: "Vyvolá #EMP $catalyst_excommunicated_ghibellines$#! $gg_catalyst_in_situation_tt$" # todo: NEW TRANSLATION
+ catalyst_gg_antipope_declared_triggered_tt: "Vyvolá #EMP $catalyst_gg_antipope_declared$#! $gg_catalyst_in_situation_tt$" # todo: NEW TRANSLATION
+ catalyst_gg_lay_investiture_triggered_tt: "Vyvolá #EMP $catalyst_gg_lay_investiture$#! $gg_catalyst_in_situation_tt$" # todo: NEW TRANSLATION
+ catalyst_gg_papal_election_interference_triggered_tt: "Vyvolá #EMP $catalyst_gg_papal_election_interference$#! $gg_catalyst_in_situation_tt$" # todo: NEW TRANSLATION
+ catalyst_grudge_hre_pope_triggered_tt: "Vyvolá #EMP $catalyst_grudge_hre_pope$#! $gg_catalyst_in_situation_tt$" # todo: NEW TRANSLATION
+ catalyst_rival_hre_pope_triggered_tt: "Vyvolá #EMP $catalyst_rival_hre_pope$#! $gg_catalyst_in_situation_tt$" # todo: NEW TRANSLATION
+ catalyst_nemesis_hre_pope_triggered_tt: "Vyvolá #EMP $catalyst_nemesis_hre_pope$#! $gg_catalyst_in_situation_tt$" # todo: NEW TRANSLATION
+ catalyst_gg_war_declared_on_opposite_party_triggered_tt: "Vyvolá #EMP $catalyst_gg_war_declared_on_opposite_party$#! $gg_catalyst_in_situation_tt$" # todo: NEW TRANSLATION
+ catalyst_gg_war_won_against_opposite_party_triggered_tt: "Vyvolá #EMP $catalyst_gg_war_won_against_opposite_party$#! $gg_catalyst_in_situation_tt$" # todo: NEW TRANSLATION
+ catalyst_gg_imperial_overreach_triggered_tt: "Vyvolá #EMP $catalyst_gg_imperial_overreach$#! $gg_catalyst_in_situation_tt$" # todo: NEW TRANSLATION
+ catalyst_gg_title_revoked_from_opposite_party_triggered_tt: "Vyvolá #EMP $catalyst_gg_title_revoked_from_opposite_party$#! $gg_catalyst_in_situation_tt$" # todo: NEW TRANSLATION
+ catalyst_gg_coup_triggered_tt: "Vyvolá #EMP $catalyst_gg_coup$#! $gg_catalyst_in_situation_tt$" # todo: NEW TRANSLATION
+ catalyst_gg_ruler_displaced_triggered_tt: "Vyvolá #EMP $catalyst_gg_ruler_displaced$#! $gg_catalyst_in_situation_tt$" # todo: NEW TRANSLATION
+ catalyst_gg_house_feud_triggered_tt: "Vyvolá #EMP $catalyst_gg_house_feud$#! $gg_catalyst_in_situation_tt$" # todo: NEW TRANSLATION
+ catalyst_gg_partisan_poached_triggered_tt: "Vyvolá #EMP $catalyst_gg_partisan_poached$#! $gg_catalyst_in_situation_tt$" # todo: NEW TRANSLATION
+ catalyst_gg_undecided_aligned_triggered_tt: "Vyvolá #EMP $catalyst_gg_undecided_aligned$#! $gg_catalyst_in_situation_tt$" # todo: NEW TRANSLATION
+ catalyst_gg_hostile_scheme_discovered_triggered_tt: "Vyvolá #EMP $catalyst_gg_hostile_scheme_discovered$#! $gg_catalyst_in_situation_tt$" # todo: NEW TRANSLATION
+ catalyst_gg_cross_party_alliance_triggered_tt: "Vyvolá #EMP $catalyst_gg_cross_party_alliance$#! $gg_catalyst_in_situation_tt$" # todo: NEW TRANSLATION
+ catalyst_gg_cross_party_marriage_triggered_tt: "Vyvolá #EMP $catalyst_gg_cross_party_marriage$#! $gg_catalyst_in_situation_tt$" # todo: NEW TRANSLATION
+ catalyst_gg_excommunication_lifted_triggered_tt: "Vyvolá #EMP $catalyst_gg_excommunication_lifted$#! $gg_catalyst_in_situation_tt$" # todo: NEW TRANSLATION
+ catalyst_gg_antipope_removed_triggered_tt: "Vyvolá #EMP $catalyst_gg_antipope_removed$#! $gg_catalyst_in_situation_tt$" # todo: NEW TRANSLATION
+ catalyst_gg_emperor_crowned_by_antipope_triggered_tt: "Vyvolá #EMP $catalyst_gg_emperor_crowned_by_antipope$#! $gg_catalyst_in_situation_tt$" # todo: NEW TRANSLATION
+ catalyst_gg_anointment_refused_triggered_tt: "Vyvolá #EMP $catalyst_gg_anointment_refused$#! $gg_catalyst_in_situation_tt$" # todo: NEW TRANSLATION
+ catalyst_gg_investiture_council_settled_triggered_tt: "Vyvolá #EMP $catalyst_gg_investiture_council_settled$#! $gg_catalyst_in_situation_tt$" # todo: NEW TRANSLATION
+ catalyst_gg_rome_occupied_triggered_tt: "Vyvolá #EMP $catalyst_gg_rome_occupied$#! $gg_catalyst_in_situation_tt$" # todo: NEW TRANSLATION
+ catalyst_gg_emperor_crowned_by_pope_triggered_tt: "Vyvolá #EMP $catalyst_gg_emperor_crowned_by_pope$#! $gg_catalyst_in_situation_tt$" # todo: NEW TRANSLATION
+ catalyst_gg_emperor_took_the_cross_triggered_tt: "Vyvolá #EMP $catalyst_gg_emperor_took_the_cross$#! $gg_catalyst_in_situation_tt$" # todo: NEW TRANSLATION
+ catalyst_gg_submission_to_pope_triggered_tt: "Vyvolá #EMP $catalyst_gg_submission_to_pope$#! $gg_catalyst_in_situation_tt$" # todo: NEW TRANSLATION
+ catalyst_gg_coup_may_be_triggered_tt: "@alert_icon!#alert_trial Úspěch vyvolá $catalyst_gg_coup$ $gg_catalyst_in_situation_tt$#!" # todo: NEW TRANSLATION
+ catalyst_gg_ruler_displaced_may_be_triggered_tt: "@alert_icon!#alert_trial Úspěch vyvolá $catalyst_gg_ruler_displaced$ $gg_catalyst_in_situation_tt$#!" # todo: NEW TRANSLATION
+ catalyst_gg_partisan_poached_may_be_triggered_tt: "@alert_icon!#alert_trial Úspěch vyvolá $catalyst_gg_partisan_poached$ $gg_catalyst_in_situation_tt$#!" # todo: NEW TRANSLATION
+ catalyst_gg_undecided_aligned_may_be_triggered_tt: "@alert_icon!#alert_trial Úspěch vyvolá $catalyst_gg_undecided_aligned$ $gg_catalyst_in_situation_tt$#!" # todo: NEW TRANSLATION
+ gg_involvement_scheme_potential_success_outcome_tt: "Při #P úspěchu#!:\n$EFFECT_LIST_BULLET$$gg_involvement_scheme_success_tt$" # todo: NEW TRANSLATION
+ gg_involvement_scheme_potential_success_invalidation_outcome_tt: "Při #P úspěchu#!:\n$EFFECT_LIST_BULLET$$gg_situation_is_invalidated_tt$" # todo: NEW TRANSLATION
+ gg_involvement_scheme_potential_failure_outcome_tt: "Při #N neúspěchu#!:\n$EFFECT_LIST_BULLET$$gg_involvement_scheme_failure_tt$" # todo: NEW TRANSLATION
+ gg_involvement_scheme_success_tt: "Získáš [gg_involvement_i] #V [EmptyScope.ScriptValue('gg_involvement_scheme_success_value')]#! [Concept('gg_involvement','zapojení')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gg_involvement_scheme_failure_tt: "Získáš [gg_involvement_i] #V [EmptyScope.ScriptValue('gg_involvement_scheme_failure_value')]#! [Concept('gg_involvement','zapojení')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gg_involvement_cb_success_tt: "Na základě svého [Concept('war_contribution','válečného příspěvku')|E] získáš až [gg_involvement_i] #V [EmptyScope.ScriptValue('gg_involvement_cb_success_value')]#! [Concept('gg_involvement','zapojení')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gg_involvement_cb_success_actual_tt: "Získáš [gg_involvement_i] #V [actual_involvement_gain]#! [Concept('gg_involvement','zapojení')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gg_involvement_cb_participant_tt: "Spojenci získají až [gg_involvement_i] #V [EmptyScope.ScriptValue('gg_involvement_cb_participant_value')]#! [Concept('gg_involvement','zapojení')|E] podle svého [Concept('war_contribution','válečného příspěvku')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gg_involvement_cb_participant_actual_tt: "[participant_temp.GetShortUIName] získá [gg_involvement_i] #V [participant_actual_involvement_gain]#! [Concept('gg_involvement','zapojení')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gg_involvement_cb_failure_tt: "Získáš [gg_involvement_i] #V [EmptyScope.ScriptValue('gg_involvement_cb_failure_value')]#! [Concept('gg_involvement','zapojení')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gg_involvement_change_phase_decision_tt: "Získáš [gg_involvement_i] #V [EmptyScope.ScriptValue('gg_involvement_change_phase_decision_value')]#! [Concept('gg_involvement','zapojení')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gg_involvement_triggered_catalyst_tt: "Získáš [gg_involvement_i] #V [EmptyScope.ScriptValue('gg_involvement_triggered_catalyst_value')]#! [Concept('gg_involvement','zapojení')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gg_involvement_interaction_tt: "Získáš [gg_involvement_i] #V [EmptyScope.ScriptValue('gg_involvement_interaction_value')]#! [Concept('gg_involvement','zapojení')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gg_involvement_catalyst_interaction_tt: "Získáš [gg_involvement_i] #V [EmptyScope.ScriptValue('gg_involvement_catalyst_interaction_value')]#! [Concept('gg_involvement','zapojení')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gg_has_minor_involvement_trigger.tt: "Potřebuješ alespoň [gg_involvement_i] #V [EmptyScope.ScriptValue('gg_involvement_minor_value')]#! [Concept('gg_involvement','zapojení')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gg_has_medium_involvement_trigger.tt: "Potřebuješ alespoň [gg_involvement_i] #V [EmptyScope.ScriptValue('gg_involvement_medium_value')]#! [Concept('gg_involvement','zapojení')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gg_situation_is_invalidated_tt: "#warning Situace [GetSituation('guelph_ghibelline').GetName] [Concept('situation','situace')|E] je zneplatněna#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gg_claim_unites_pope_and_emperor_tt: "#warning Situace [GetSituation('guelph_ghibelline').GetName] [Concept('situation','situace')|E] je zneplatněna, protože jedna postava bude držet tituly [GetTitleByKey('k_papal_state').Custom('CZ_LandedName_A')] a [GetTitleByKey('e_hre').Custom('CZ_LandedName_A')] [Concept('titles','tituly')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ is_part_of_gg_situation_desc: "Jsi součástí situace [GetSituation('guelph_ghibelline').GetName] [Concept('situation','situace')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gg_invalidation_title: "Situace zneplatněna" # todo: NEW TRANSLATION
+ gg_invalidation_missing_guelph_leader_tt: "[Concept('guelph_ghibelline_situation','Guelfové a Ghibellini')|E] nemá platného vůdce [Concept('guelph','guelf')|E] a skončila" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gg_invalidation_missing_ghibelline_leader_tt: "[Concept('guelph_ghibelline_situation','Guelfové a Ghibellini')|E] nemá platného vůdce [Concept('ghibelline','ghibellin')|E] a skončila" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gg_invalidation_missing_hre_leader_tt: "[Concept('guelph_ghibelline_situation','Guelfové a Ghibellini')|E] nemá platného držitele titulu [GetTitleByKey('e_hre').Custom('CZ_LandedName_G')] [Concept('title','titulu')|E] a skončila" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gg_invalidation_missing_hre_leader_dictatus_tt: "Držitel titulu [GetTitleByKey('e_hre').Custom('CZ_LandedName_G')] [Concept('title','titulu')|E] již není [GetSituation('guelph_ghibelline').GetTopParticipantGroupByKey( 'ghibelline_leader' ).GetName], čímž se [Concept('guelph_ghibelline_situation','guelfy a Ghibellini')|E] zneplatní, pokud právě probíhá fáze [GetSituationType('guelph_ghibelline').GetPhaseType('dictatus_papae').GetName] [Concept('situation_phase','fáze situace')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gg_invalidation_missing_pope_leader_dictatus_tt: "Držitel titulu [GetTitleByKey('k_papal_state').Custom('CZ_LandedName_G')] [Concept('title','titulu')|E] již není [GetSituation('guelph_ghibelline').GetTopParticipantGroupByKey( 'guelph_leader' ).GetName], čímž se [Concept('guelph_ghibelline_situation','guelfy a Ghibellini')|E] zneplatní, pokud právě probíhá fáze [GetSituationType('guelph_ghibelline').GetPhaseType('dictatus_papae').GetName] [Concept('situation_phase','fáze situace')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gg_invalidation_missing_pope_leader_tt: "[Concept('guelph_ghibelline_situation','Guelfové a Ghibellini')|E] nemá platného držitele titulu [GetTitleByKey('k_papal_state').Custom('CZ_LandedName_G')] [Concept('title','titulu')|E] a skončila" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gg_invalidation_pope_is_emperor_tt: "Držitel titulu [GetTitleByKey('k_papal_state').Custom('CZ_LandedName_G')] [Concept('title','titulu')|E] drží také titul [GetTitleByKey('e_hre').Custom('CZ_LandedName_A')] [Concept('title','titul')|E], čímž se [Concept('guelph_ghibelline_situation','guelfy a Ghibellini')|E] zneplatní" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ GG_WINDOW_HISTORY_LIST: "Historie situace" # todo: NEW TRANSLATION
+ gg_history_button: "Historie" # todo: NEW TRANSLATION
+ situation_gg_start_situation_phase_entry: "#S Vypuká situace [GetSituation('guelph_ghibelline').GetName] [Concept('situation','situace')|E], která začíná fází [GetSituationType('guelph_ghibelline').GetPhaseType('in_nomine_domini').GetName] [Concept('situation_phase','fází situace')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gg_history_key_treaty_of_melfi: "Melfská smlouva udělila [SituationHistoryEntry.GetVariable( 'robert_guiscard' ).Char.GetShortUIName] titul [GetTitleByKey('d_calabria').Custom('CZ_LandedName_A')] [Concept('title','titul')|E], který mu propůjčil [SituationHistoryEntry.GetVariable( 'nicolaus_ii' ).Char.Custom('CZ_ShortUIName_N')]; na oplátku přísahal věrnost $religiousheadname_pope$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gg_history_key_alexander_ii_election: "[SituationHistoryEntry.GetVariable( 'alexander_ii' ).Char.GetShortUIName] je zvolen $religiousheadname_pope$ v souladu s papežskou bulou [Glossary( 'In nomine Domini', 'IN_NOMINE_DOMINI_GLOSS' )], která zcela vylučuje jakýkoli vliv držitele Svaté říše římské [GetTitleByKey('e_hre').GetHolder.Custom('my_title')|U]" # todo: NEW TRANSLATION
+ gg_history_key_gregory_vii_election: "[SituationHistoryEntry.GetVariable( 'gregory_vii' ).Char.GetShortUIName] je zvolen $religiousheadname_pope$" # todo: NEW TRANSLATION
+ situation_gg_dictatus_papae_situation_phase_entry: "#S Nová fáze [Concept('situation_phase','fáze situace')|E]: [GetSituationType('guelph_ghibelline').GetPhaseType('dictatus_papae').GetName]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ situation_gg_repose_situation_phase_entry: "#S Nová fáze [Concept('situation_phase','fáze situace')|E]: [GetSituationType('guelph_ghibelline').GetPhaseType('repose').GetName]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ situation_gg_agitation_situation_phase_entry: "#S Nová fáze [Concept('situation_phase','fáze situace')|E]: [GetSituationType('guelph_ghibelline').GetPhaseType('agitation').GetName]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gg_history_key_battle_of_langelsalza: "[SituationHistoryEntry.GetVariable( 'henry_iv' ).Char.Custom('CZ_ShortUIName_I')] a vzbouření saští šlechtici svedli první bitvu u Langensalzy" # todo: NEW TRANSLATION
+ gg_history_key_henry_iv_excommunicated: "[SituationHistoryEntry.GetVariable( 'gregorious_vii' ).Char.GetShortUIName] exkomunikoval [SituationHistoryEntry.GetVariable( 'henry_iv' ).Char.Custom('CZ_ShortUIName_A')] [Concept('excommunicated','exkomunikovaný')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gg_history_key_walk_to_canossa: "[SituationHistoryEntry.GetVariable( 'henry_iv' ).Char.GetShortUIName] podniká cestu do Canossy a úspěšně ruší [Select_CString(SituationHistoryEntry.GetVariable( 'henry_iv' ).Char.IsFemale,'její','jeho')] exkomunikaci" # todo: NEW TRANSLATION
+ gg_history_key_henry_iv_excommunicated_again: "[SituationHistoryEntry.GetVariable( 'gregorious_vii' ).Char.GetShortUIName] znovu exkomunikuje [SituationHistoryEntry.GetVariable( 'henry_iv' ).Char.Custom('CZ_ShortUIName_A')] [Concept('excommunicated','exkomunikovaný')|E], což zpochybnil [SituationHistoryEntry.GetVariable( 'henry_iv' ).Char.GetTitleAsNameNoTooltip|U]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gg_history_key_henry_iv_crowned_by_antipope: "[SituationHistoryEntry.GetVariable( 'henry_iv' ).Char.GetShortUIName] je během obléhání [SituationHistoryEntry.GetVariable( 'gregorious_vii' ).Char.Custom('CZ_ShortUIName_G')] korunován v Římě vzdoropapežem Klementem III." # todo: NEW TRANSLATION
+ gg_history_key_concordat_of_worms: "Byl podepsán Wormský konkordát, v němž [SituationHistoryEntry.GetVariable( 'henry_v' ).Char.GetShortUIName] a [SituationHistoryEntry.GetVariable( 'callistus_ii' ).Char.GetShortUIName] dosáhli kompromisu ohledně vlivu na místní duchovenstvo a jeho volby" # todo: NEW TRANSLATION
+ gg_history_key_veronese_league_is_created: "Veronská liga vznikla ve snaze omezit rostoucí imperialismus [GetTitleByKey('e_hre').Custom('CZ_LandedName_G')] vůči severoitalským městským státům" # todo: NEW TRANSLATION
+ gg_history_key_alexander_iii_election: "[SituationHistoryEntry.GetVariable( 'alexander_iii' ).Char.GetShortUIName] je zvolen $religiousheadname_pope$" # todo: NEW TRANSLATION
+ gg_history_key_lombard_league_is_created: "Veronská liga a Lombardská liga se spojily proti [GetTitleByKey('e_hre').Custom('CZ_LandedName_D')]" # todo: NEW TRANSLATION
+ gg_history_key_precursor_league_is_created: "[SituationHistoryEntry.GetVariable( 'league_creator' ).Char.GetShortUIName|U] [Select_CString( SituationHistoryEntry.GetVariable( 'league_creator' ).Char.IsLocalPlayer, 'form', 'forms' )] zakládá [Concept('lombard_league','lombardská liga')|E] proti [GetTitleByKey('e_hre').Custom('CZ_LandedName_D')]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gg_history_key_battle_of_legnano: "Vojska [SituationHistoryEntry.GetVariable( 'barbarossa' ).Char.Custom('CZ_ShortUIName_G')] byla poražena v bitvě u Legnana" # todo: NEW TRANSLATION
+ gg_history_key_treaty_of_venice: "Mezi Lombardskou ligou a [GetTitleByKey('e_hre').Custom('CZ_LandedName_I')] bylo uzavřeno příměří, stvrzené Benátskou smlouvou" # todo: NEW TRANSLATION
+ TRUCE_TREATY_OF_VENICE: "Benátská smlouva" # todo: NEW TRANSLATION
+ lombard_name: "Lombardská" # todo: NEW TRANSLATION
+ lombard_league_name: "$lombard_name$ Lombardská liga" # todo: NEW TRANSLATION
+ gg_league_created.t: "Vznikla [new_confederation.GetName]" # todo: NEW TRANSLATION
+ gg_league_created_and_independence.desc: "Po osamostatnění [Concept('independent','nezávislém')|E] [league_creator.GetShortUIName|U] vznikla [new_confederation.GetName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ gg_league_created.desc: "[league_creator.GetShortUIName|U] založil [new_confederation.GetName]" # todo: NEW TRANSLATION
+ gg_join_league.tt: "[title_to_add.GetHolder.GetShortUIName|U] se připojí k #V [lombard_league_conf.GetName]#! #weak (aktuálně #V [lombard_league_conf.GetMemberCount]#! členů)#!" # todo: NEW TRANSLATION
+ situation_gg_guelph_advantage_situation_phase_entry: "#S Nová fáze [Concept('situation_phase','fáze situace')|E]: [GetSituationType('guelph_ghibelline').GetPhaseType('guelph_advantage').GetName]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ situation_gg_ghibelline_advantage_situation_phase_entry: "#S Nová fáze [Concept('situation_phase','fáze situace')|E]: [GetSituationType('guelph_ghibelline').GetPhaseType('ghibelline_advantage').GetName]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ situation_gg_guelph_score_header: "#T Síla guelfů: [EmptyScope.ScriptValue('situation_guelph_group_score')|V0]#!" # todo: NEW TRANSLATION
+ situation_gg_ghibelline_score_header: "#T Síla ghibellinů: [EmptyScope.ScriptValue('situation_ghibelline_group_score')|V0]#!" # todo: NEW TRANSLATION
+ situation_gg_total_score_header: "#T Celková síla: [EmptyScope.ScriptValue('situation_guelph_ghibelline_score_total')|V0]" # todo: NEW TRANSLATION
+ situation_gg_guelph_total_score: "Guelfové" # todo: NEW TRANSLATION
+ situation_gg_ghibelline_total_score: "Ghibellini" # todo: NEW TRANSLATION
+ situation_gg_total_member_score: "Celková síla členů skupiny:" # todo: NEW TRANSLATION
+ situation_gg_ghibelline_empire_ruler_score: "Členové skupiny [GetSituation('guelph_ghibelline').GetTopParticipantGroupByKey( 'ghibelline_member' ).GetName] s titulem [Concept('empire','říší')|E] nebo vyšším [Concept('title_tier','úrovněmi')|E]:" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ situation_gg_ghibelline_kingdom_ruler_score: "Členové skupiny [GetSituation('guelph_ghibelline').GetTopParticipantGroupByKey( 'ghibelline_member' ).GetName] s titulem [Concept('kingdom','královstvím')|E] [Concept('title_tier','úrovně')|E]:" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ situation_gg_ghibelline_duchy_ruler_score: "Členové skupiny [GetSituation('guelph_ghibelline').GetTopParticipantGroupByKey( 'ghibelline_member' ).GetName] s titulem [Concept('duchy','vévodstvím')|E] [Concept('title_tier','úrovně')|E]:" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ situation_gg_ghibelline_county_ruler_score: "Členové skupiny [GetSituation('guelph_ghibelline').GetTopParticipantGroupByKey( 'ghibelline_member' ).GetName] s titulem [Concept('county','hrabstvím')|E] [Concept('title_tier','úrovně')|E]:" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ situation_gg_ghibelline_rest_ruler_score: "Členové skupiny [GetSituation('guelph_ghibelline').GetTopParticipantGroupByKey( 'ghibelline_member' ).GetName] s titulem [Concept('baron','baronem')|E] nebo [Concept('unlanded','bezzemek')|E] [Concept('title_tier','úrovně')|E]:" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ situation_gg_guelph_empire_ruler_score: "Členové skupiny [GetSituation('guelph_ghibelline').GetTopParticipantGroupByKey( 'guelph_member' ).GetName] s titulem [Concept('empire','říší')|E] nebo vyšším [Concept('title_tier','úrovněmi')|E]:" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ situation_gg_guelph_kingdom_ruler_score: "Členové skupiny [GetSituation('guelph_ghibelline').GetTopParticipantGroupByKey( 'guelph_member' ).GetName] s titulem [Concept('kingdom','královstvím')|E] [Concept('title_tier','úrovně')|E]:" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ situation_gg_guelph_duchy_ruler_score: "Členové skupiny [GetSituation('guelph_ghibelline').GetTopParticipantGroupByKey( 'guelph_member' ).GetName] s titulem [Concept('duchy','vévodstvím')|E] [Concept('title_tier','úrovně')|E]:" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ situation_gg_guelph_county_ruler_score: "Členové skupiny [GetSituation('guelph_ghibelline').GetTopParticipantGroupByKey( 'guelph_member' ).GetName] s titulem [Concept('county','hrabstvím')|E] [Concept('title_tier','úrovně')|E]:" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ situation_gg_guelph_rest_ruler_score: "Členové skupiny [GetSituation('guelph_ghibelline').GetTopParticipantGroupByKey( 'guelph_member' ).GetName] s titulem [Concept('baron','baronem')|E] nebo [Concept('unlanded','bezzemek')|E] [Concept('title_tier','úrovně')|E]:" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ situation_gg_guelph_leader_imprisoned_score: "[GetSituation('guelph_ghibelline').GetTopParticipantGroupByKey('guelph_leader').GetTopParticipant.GetShortUIName|U] [CharAreIs( GetSituation('guelph_ghibelline').GetTopParticipantGroupByKey('ghibelline_leader').GetTopParticipant )] je uvězněn:" # todo: NEW TRANSLATION
+ situation_gg_ghibelline_leader_imprisoned_score: "[GetSituation('guelph_ghibelline').GetTopParticipantGroupByKey('ghibelline_leader').GetTopParticipant.GetShortUIName|U] [CharAreIs( GetSituation('guelph_ghibelline').GetTopParticipantGroupByKey('ghibelline_leader').GetTopParticipant )] je uvězněn:" # todo: NEW TRANSLATION
+ situation_gg_ghibelline_leader_uncrowned_score: "[GetSituation('guelph_ghibelline').GetTopParticipantGroupByKey('ghibelline_leader').GetTopParticipant.GetShortUIName|U] [CharAreIs( GetSituation('guelph_ghibelline').GetTopParticipantGroupByKey('ghibelline_leader').GetTopParticipant )] není korunován:" # todo: NEW TRANSLATION
+ situation_gg_ghibelline_leader_excommunicated_score: "[GetSituation('guelph_ghibelline').GetTopParticipantGroupByKey('ghibelline_leader').GetTopParticipant.GetShortUIName|U] [CharAreIs( GetSituation('guelph_ghibelline').GetTopParticipantGroupByKey('ghibelline_leader').GetTopParticipant )] je exkomunikován:" # todo: NEW TRANSLATION
+ situation_gg_guelph_leader_is_pope_score: "[GetSituation('guelph_ghibelline').GetTopParticipantGroupByKey('guelph_leader').GetTopParticipant.GetShortUIName] je $religiousheadname_pope$:" # todo: NEW TRANSLATION
+ IN_NOMINE_DOMINI_GLOSS: "Ve jménu Páně." # todo: MOVED KEY
+ DICTATUS_PAPAE_GLOSS: "Papežský diktát — soubor 27 výroků o autoritě, na niž si činí nárok $religiousheadname_pope$. Nadiktoval jej $religiousheadname_pope$ Řehoř VII. roku 1075, přibližně v době, kdy vypukl spor o investituru." # todo: NEW TRANSLATION
+ highest_skill_wits: "důvtip" # todo: NEW TRANSLATION
+ highest_skill_charms: "osobní kouzlo" # todo: NEW TRANSLATION
+ highest_skill_strength: "síla" # todo: NEW TRANSLATION
+ target_diplomacy: "mezilidské schopnosti" # todo: NEW TRANSLATION
+ target_martial: "vojenské schopnosti" # todo: NEW TRANSLATION
+ target_stewardship: "organizační schopnosti" # todo: NEW TRANSLATION
+ target_intrigue: "důvtip" # todo: NEW TRANSLATION
+ target_learning: "inteligence" # todo: NEW TRANSLATION

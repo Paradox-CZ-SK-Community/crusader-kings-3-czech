@@ -44,7 +44,7 @@
  borrow_from_holy_order_decision_desc: "Potřebuji peníze, a koho jiného požádat o pomoc než služebníky božstva [ROOT.Char.GetFaith.HighGodName]? Mohu rozeslat dopisy a doufat, že mi někdo odpoví."
  borrow_from_holy_order_decision_confirm: "Rozešli žádosti!"
  borrow_from_holy_order_decision_effect_tooltip: "Vypůjčíš si [SCOPE.ScriptValue('holy_order_gold_value')|P00] [gold_i][Concept('gold','zlata')|E] od [Concept('military_holy_order','vojenského řádu')|E]\n\n@warning_icon! Pokud půjčku nesplatíš, začne na tebe [Concept('military_holy_order','vojenský řád')|E] vznášet požadavky\n@warning_icon! Dokud tuto půjčku nesplatíš, nemůžeš si vypůjčit další peníze"
- borrow_from_holy_order_gold_condition: "Žádný [CHARACTER.GetFaith.GetAdjective] vojenský řád nemá zároveň dostatek [gold_i][Concept('gold','zlata')|E] a dostatečně dobré mínění o tobě"
+ borrow_from_holy_order_gold_condition: "Žádný [CHARACTER.GetFaith.GetAdjective] vojenský řád nemá dostatek [Concept('gold_i','@gold_icon!')|E][Concept('gold','zlata')|E], nemá k tobě příznivé mínění a dosud ti neposkytl půjčku" # todo: CHANGED (predtym: Žádný [CHARACTER.GetFaith.GetAdjective] vojenský řád nemá zároveň dostatek [gold_i][Concept('gold','zlata')|E] a dostate) # todo: CONCEPT CASE
  escape_from_prison_decision: "Uprchnout z vězení"
  escape_from_prison_decision_tooltip: "Pokusíš se uprchnout z vězení"
  escape_from_prison_decision_desc: "Stejné zdi, stejný denní řád, stále tatáž kaše – každý den je jako ten předchozí. Toto vězení mě pomalu užírá a já už to déle nesnesu!"
@@ -86,7 +86,7 @@
  commit_suicide_decision_desc_leper: "Hniloba pevně zachvátila mé smrtelné tělo. Několik prstů na nohou mi již odpadlo a z ran vytéká hnis. Jak dlouho ještě musím snášet tento příšerný osud?"
  commit_suicide_decision_desc_great_pox: "Mé tělo nyní pokrývají neštovice a každý vřed je větší a bolestivější než ten předchozí. V očích svých poddaných nevidím nic než strach a odpor. Bude se to už jen zhoršovat..."
  commit_suicide_decision_desc_lunatic: "Nemohu uniknout neustálému šeptání plnému nenávisti a zklamání. Nabádá mě k věcem, které bych neměl[Select_CString( ROOT.Char.IsFemale, 'a', '' )] dělat. Nic nedává smysl a skutečnost sama sobě odporuje. Vysvobodí mě jedině smrt?"
- commit_suicide_decision_desc_parent: "Nedokážu jít dál. Žal nad ztrátou dítěte mě drží v zajetí. [ROOT.Var('mourning_parent').Char.Custom2('MyCharacterIntroduction', ROOT.Char)|U] pro mě znamenal[Select_CString( ROOT.Var('mourning_parent').Char.IsFemale, 'a', '' )] celý svět. Jaký smysl má žít, když život přišel o jediný zdroj radosti a smíchu?"
+ commit_suicide_decision_desc_parent: "Nedokážu jít dál. Žal nad ztrátou dítěte mě drží v zajetí. [ROOT.Var('mourning_parent').Char.Custom2('MyCharacterIntroduction', ROOT.Char)|U] pro mě znamenal[Select_CString( ROOT.Var('mourning_parent').Char.IsFemale, 'a', '' )] celý svět. Jaký smysl má žít, když život [Select_CString(ROOT.Char.IsFemale,'přišla','přišel')] o jediný zdroj radosti a smíchu?"
  commit_suicide_decision_desc_soulmate: "Už nedokážu snášet prázdnotu ve své duši. Život bez tebe, [ROOT.Var('mourning_soulmate').Char.GetFirstName], je pouhým břemenem. Pokud se mohu vrátit do tvého náručí jedině odchodem z tohoto světa, budiž."
  commit_suicide_decision_desc_friend: "Život je příliš bezútěšný, když jej nemohu sdílet s opravdovým přítelem. Okamžiky, kterým bychom se s [ROOT.Var('mourning_friend').Char.GetFirstName] celé hodiny smáli, mě nyní naplňují jen zoufalstvím. Tato cesta osamění není pro mě."
  commit_suicide_decision_desc_demoted: "Jen málokdo zažil takové ponížení jako já. Kdysi jsem stál[Select_CString( ROOT.Char.IsFemale, 'a', '' )] na vrcholu, ale nyní se musím plazit jako všichni ti hlupáci. Možná bych měl[Select_CString( ROOT.Char.IsFemale, 'a', '' )] vzít svůj osud do vlastních rukou a odejít způsobem, který si sám[Select_CString( ROOT.Char.IsFemale, 'a', '' )] zvolím."
@@ -119,10 +119,26 @@
  repay_loan_decision_decision_tooltip: "Splatíš svůj dluh"
  repay_loan_decision_decision_desc: "Nesplacený dluh se pro postavu s titulem [ROOT.Char.GetTitleAsNameNoTooltip] nehodí – nastal čas vrátit dlužné peníze."
  repay_loan_decision_confirm: "Vrať peníze!"
+ repay_loan_decision_afford_tt: "Nemůžeš si dovolit splatit tento [Concept('creditor','věřitel')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ repay_loan_decision_afford_any_tt: "Nemůžeš si dovolit splatit žádného ze svých [Concept('creditors','věřitelů')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  ho_loan_inherited_title: "Zděděná půjčka"
- ho_loan_inherited_tt: "Zděděna [loan_passer_temp.GetShortUINamePossessive] půjčka ve výši [gold_i|E][loan_inheritor.MakeScope.Var('loan_amount_owed').GetValue|0] vůči [loan_inheritor.MakeScope.Var('loan_holder').Char.Custom('CZ_ShortUIName_D')]"
- ho_loan_inherited_debtor_tt: "Zděděna [loan_passer.GetShortUINamePossessive] půjčka ve výši [gold_i|E][loan_inheritor.MakeScope.Var('loan_amount_owed').GetValue|0] od [loan_inheritor.MakeScope.Var('loan_holder').Char.Custom('CZ_ShortUIName_G')]"
- ho_loan_inherited_loaner_tt: "[loan_inheritor.GetShortUIName] zdědil[Select_CString( loan_inheritor.IsFemale, 'a', '' )] tvou půjčku ve výši [gold_i|E][loan_inheritor.MakeScope.Var('loan_amount_owed').GetValue|0] poskytnutou [loan_passer.Custom('CZ_ShortUIName_D')]"
+ ho_loan_inherited_tt: "Zděděna [loan_passer_temp.GetShortUINamePossessive] [Concept('loan','půjčka')|E] ve výši [gold_i|E][loan_inheritor.MakeScope.Var('loan_amount_owed').GetValue|0] vůči [loan_inheritor.MakeScope.Var('loan_holder').Char.Custom('CZ_ShortUIName_D')]" # todo: CHANGED (predtym: Zděděna [loan_passer_temp.GetShortUINamePossessive] půjčka ve výši [gold_i|E][loan_inheritor.MakeScope.Var('loan_amount_)
+ ho_loan_wiped_title: "Půjčka zrušena" # todo: NEW TRANSLATION
+ ho_loan_repaid_title: "Půjčka splacena" # todo: NEW TRANSLATION
+ ho_loan_inherited_debtor_tt: "Zděděna [CHARACTER.Custom('CZ_ShortUIName_G')] [Concept('loan','půjčka')|E] ve výši [gold_i|E]$VALUE|0V$ od [TARGET_CHARACTER.GetShortUIName]" # todo: CHANGED (predtym: Zděděna [loan_passer.GetShortUINamePossessive] půjčka ve výši [gold_i|E][loan_inheritor.MakeScope.Var('loan_amount_owed')
+ ho_loan_inherited_loaner_tt: "[loan_inheritor.GetShortUIName] [Select_CString(loan_inheritor.IsFemale,'zdědila','zdědil')][Select_CString( loan_inheritor.IsFemale, 'a', '' )] tvou [Concept('loan','půjčku')|E] ve výši [gold_i|E][loan_inheritor.MakeScope.Var('loan_amount_owed').GetValue|0] poskytnutou [loan_passer.Custom('CZ_ShortUIName_D')]" # todo: CHANGED (predtym: [loan_inheritor.GetShortUIName] zdědil[Select_CString( loan_inheritor.IsFemale, 'a', '' )] tvou půjčku ve výši [gold_i|E)
+ ho_loan_inherited_lender_tt: "[CHARACTER.GetShortUIName|U] [Select_CString(CHARACTER.IsFemale,'zdědila','zdědil')] tvou [Concept('loan','půjčku')|E] ve výši [gold_i|E]$VALUE|0V$ vůči [TARGET_CHARACTER.Custom('CZ_ShortUIName_D')]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ ho_loan_wiped_loaner_tt: "[CHARACTER.Custom('CZ_ShortUIName_G')|U] [Concept('loan','Půjčka')|E] ve výši [gold_i|E]$VALUE|0V$ vůči [TARGET_CHARACTER.GetShortUIName] byla zrušena, protože [Select_CString(TARGET_CHARACTER.IsFemale,'zemřela','zemřel')] bez [Concept('heir','dědice')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ ho_debt_inherited_title: "Dluh zděděn" # todo: NEW TRANSLATION
+ ho_debt_wiped_title: "Dluh zrušen" # todo: NEW TRANSLATION
+ ho_debt_repaid_title: "Dluh splacen" # todo: NEW TRANSLATION
+ ho_debt_inherited_debtor_tt: "[CHARACTER.GetShortUIName|U] [Select_CString(CHARACTER.IsFemale,'zdědila','zdědil')] tvůj dluh ve výši [gold_i|E]$VALUE|0V$ vůči [TARGET_CHARACTER.Custom('CZ_ShortUIName_D')]" # todo: NEW TRANSLATION
+ ho_debt_inherited_lender_tt: "[Select_CString(ROOT.Char.IsFemale,'Zdědila','Zdědil')] jsi dluh [CHARACTER.Custom('CZ_ShortUIName_G')] ve výši [gold_i|E]$VALUE|0V$ vůči [TARGET_CHARACTER.GetShortUIName]" # todo: NEW TRANSLATION
+ ho_debt_wiped_debtor_tt: "Dluh [CHARACTER.Custom('CZ_ShortUIName_G')|U] ve výši [gold_i|E]$VALUE|0V$ vůči [TARGET_CHARACTER.GetShortUIName] byl zrušen, protože [Select_CString(TARGET_CHARACTER.IsFemale,'zemřela','zemřel')] bez [Concept('heir','dědice')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ ho_loan_forgiven_title: "Půjčka prominuta" # todo: NEW TRANSLATION
+ ho_debt_forgiven_title: "Dluh prominut" # todo: NEW TRANSLATION
+ ho_debt_forgiven_debtor_tt: "Dluh [CHARACTER.Custom('CZ_ShortUIName_G')|U] ve výši [gold_i|E]$VALUE|0V$ vůči [TARGET_CHARACTER.GetShortUIName] byl prominut" # todo: NEW TRANSLATION
+ ho_loan_forgiven_lender_tt: "[Concept('loan','Půjčka')|E] [TARGET_CHARACTER.Custom('CZ_ShortUIName_G')|U] ve výši [gold_i|E]$VALUE|0V$ vůči [CHARACTER.GetShortUIName] byla prominuta" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  create_cadet_branch_decision: "Založit kadetskou větev"
  create_cadet_branch_decision_tooltip: "Založíš kadetskou větev"
  create_cadet_branch_decision_desc: "Možná nastal čas, aby má rodina opustila odkaz rodu [ROOT.Char.GetHouse.GetNameNoTooltip] a vytyčila si vlastní cestu dějinami, v jejímž čele budu stát jako hlava nové větve naší velké dynastie."
@@ -133,6 +149,7 @@
  I_NOT_CREATE_CADET_BRANCH_DECISION_ANCESTOR_IN_HOUSE: "Žádný z tvých žijících předků nenáleží k tvému současnému [Concept('house','rodu')|E]"
  created_cadet_branch_toast_new_house_desc: "Nový rod"
  created_cadet_branch_toast_new_house_other_tt: "Nyní náležíš k rodu [new_house.GetName]"
+ create_cadet_branch_children_tt: "[THIS.Char.GetName] se stává členem nový [Concept('house','rodu')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  take_vow_of_poverty_decision: "Složit slib chudoby"
  take_vow_of_poverty_decision_tooltip: "Slíbíš, že nebudeš hromadit nepřiměřené bohatství"
  take_vow_of_poverty_decision_desc: "Peníze jsou kořenem všeho zla. Nemohu sice rozdat úplně vše a zároveň zůstat postavou s titulem [ROOT.Char.GetTitleAsNameNoTooltip], ale mohu slíbit, že každý měsíc rozdám část svých příjmů."
@@ -395,6 +412,7 @@
  form_cumbria_decision_house_modifier: "Vládci Cumbrie"
  form_cumbria_decision_house_modifier_desc: "Osvědčení vládci lidu Cumbrie, uznávaní a ctění v celém kraji.\n\n"
  custom_cumbria_development_growth: "$MOD_MONTHLY_DEVELOPMENT_GROWTH_FACTOR$ v [Concept('region','regionu')|El] [GetGeographicalRegion('custom_cumbria').GetName]"
+ custom_cumbria_prosperity_growth: "$MOD_MONTHLY_PROSPERITY_GROWTH_FACTOR$ v [Concept('region','regionu')|E] [GetGeographicalRegion('custom_cumbria').GetName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  major_decisions.3500.t: "Země Cumbrie"
  major_decisions.3500.desc: "Větrem bičované kopce Cumbrie nyní nesou ozvěnu noviny: země se pod mou vládou zrodila znovu.\n\nPříliš dlouho lid šeptal pouze o tom, co bylo ztraceno. Nyní rod [ROOT.Char.GetHouse.GetName] navrací této zemi její hlas. Ať ti, kdo si kdysi osobovali vládu nad námi, pohlédnou na toto království a pochopí, že náš osud je opět v našich rukou."
  major_decisions.3500.a: "Za můj lid a za rod [ROOT.Char.GetHouse.GetNameNoTooltip]!"
@@ -480,10 +498,14 @@
  dismantle_papacy_decision_tooltip: "Papežství bude navždy zničeno."
  dismantle_papacy_decision_effect_tooltip: "Papežství bude navždy zničeno"
  reform_carolingian_empire_decision: "Obnovit karolinské hranice"
- reform_carolingian_empire_decision_confirm: "Za říši Franků!"
- reform_carolingian_empire_decision_desc: "Sen Karla Velikého o sjednocené Evropě rozvrátili jeho synové a malichernost německých knížat. Přesto se může naplnit, pokud se Frankové sjednotí za tímto jediným cílem."
+ reform_carolingian_empire_decision_confirm: "Jeho dědictví právem náleží mně!" # todo: CHANGED (predtym: Za říši Franků!)
+ reform_carolingian_empire_decision_desc: "Sen Karla Velikého o sjednocené Evropě rozvrátili jeho synové a malichernost německých knížat. Frankové, Němci a Italové, všichni kdysi sjednoceni pod jedinou korunou, jediným zákonem a jediným cílem. Tato jednota nepřežila muže, který ji vybudoval.\n\nAle její vzpomínka přetrvala. Znovu sjednotím to, co bylo rozbito, a nechám říši Karla Velikého znovu ožít nejen jménem." # todo: CHANGED (predtym: Sen Karla Velikého o sjednocené Evropě rozvrátili jeho synové a malichernost německých knížat. Přesto se může naplnit, p)
  reform_carolingian_empire_decision_tooltip: "Karolinské hranice budou obnoveny."
  reform_carolingian_empire_decision_effect_tooltip: "Karolinské hranice budou obnoveny"
+ carolingian_primary_title_france_check: "Tvůj hlavní titul je [GetTitleByKey('e_france').GetName]" # todo: NEW TRANSLATION
+ carolingian_primary_title_hre_check: "Tvůj hlavní titul je [GetTitleByKey('e_hre').GetName]" # todo: NEW TRANSLATION
+ carolingian_border_other_empires_check: "Žádný soupeřící císař nedrží [current_title_check.GetName]" # todo: NEW TRANSLATION
+ carolingian_hre_rename_tooltip: "[GetTitleByKey('h_carolingian').GetName|V] bude přejmenována na Svatou říši římskou" # todo: NEW TRANSLATION
  unify_burgundy_kingdom_decision: "Sjednotit burgundské země"
  unify_burgundy_kingdom_decision_confirm: "Ať je panství opět celistvé!"
  unify_burgundy_kingdom_decision_desc: "Od chvíle, kdy se dostaly pod franskou nadvládu, jsou země Burgundů roztříštěné a rozdělené mezi cizí krále. Kdyby byly všechny burgundské země sjednoceny pod jediným praporem, mohly by konečně znovu zaujmout své místo jako svrchovaná mocnost v Evropě."
@@ -516,11 +538,11 @@
  convert_whole_realm_to_feudalism_decision_tooltip: "Změň [Concept('government','formu vlády')|El] přijetím [Concept('feudalism','feudalismu')|El]"
  islamic_vassals_will_convert: "Protože vyznávám islám, moji [Concept('tribal','kmenoví')|El] vazalové přejdou na [Concept('clan','klanové zřízení')|El]"
  other_vassals_will_convert: "Moji [Concept('tribal','kmenoví')|El] vazalové přejdou na [Concept('feudalism','feudální zřízení')|El]"
- clan_liege_vassals_will_convert: "Protože můj [Concept('liege','lenní pán')|El] používá [Concept('clan_government','klanovou vládu')|El], moji [Concept('tribal','kmenoví')|El] vazalové přejdou na $game_concept_clan$"
- feudal_liege_vassals_will_convert: "Protože můj [Concept('liege','lenní pán')|El] používá [Concept('feudal_government','feudální vládu')|El], moji [Concept('tribal','kmenoví')|El] vazalové se stanou $game_concept_feudal$"
+ clan_liege_vassals_will_convert: "Protože můj [Concept('liege','lenní pán')|El] používá [Concept('clan_government','klanovou vládu')|El], moji [Concept('tribal','kmenoví')|El] vazalové přejdou na klan" # todo: CONCEPT CASE
+ feudal_liege_vassals_will_convert: "Protože můj [Concept('liege','lenní pán')|El] používá [Concept('feudal_government','feudální vládu')|El], moji [Concept('tribal','kmenoví')|El] vazalové se stanou feudálním" # todo: CONCEPT CASE
  all_holding_will_change: "Všechny [Concept('tribal_holdings','kmenové državy')|El] v panství se stanou [Concept('castle_holdings','hradními državami')|El]"
  all_vassals_will_convert: "Všichni tvoji vazalové přejdou na [Concept('feudalism','feudalismus')|El]"
- all_permafrost_will_clear: "Všechna [Concept('counties','hrabství')|El] v [Concept('realm','panství')|El] přijdou o [Concept('modifiers','modifikátory')|El] [GetModifier('mpo_siberian_permafrost_modifier').GetNameWithTooltip] a [GetModifier('mpo_siberian_permafrost_modifier_bad').GetNameWithTooltip]"
+ all_permafrost_will_clear: "Všechno [Concept('counties','hrabství')|El] v [Concept('realm','panství')|El] přijdou o [Concept('modifiers','modifikátory')|El] [GetModifier('mpo_siberian_permafrost_modifier').GetNameWithTooltip] a [GetModifier('mpo_siberian_permafrost_modifier_bad').GetNameWithTooltip]" # todo: CONCEPT CASE
  unify_italian_empire_decision_tooltip: "Sicílie a Chorvatsko se znovu stanou [Concept('de_jure','de iure')|El] součástí Itálie."
  unify_italian_empire_decision_effect_tooltip: "Sicílie a Chorvatsko se znovu stanou [Concept('de_jure','de iure')|El] součástí Itálie"
  create_outremer_empire_decision: "Založit Říši Zámoří"
@@ -626,7 +648,7 @@
  create_armenian_empire_decision_desc: "Řecko a Persie nejsou jedinými zeměmi, jež kdy požívaly císařské důstojnosti. Kdysi dávno, ještě než Řím poznal císaře, byl náš panovník králem králů. Ta doba může znovu nastat."
  create_armenian_empire_decision_tooltip: "Arménie se stane [Concept('de_jure','de iure')|El] [Concept('empire','říší')|El]"
  create_armenian_empire_decision_effects_de_jure_tt_a: "Pokud je držíš, následující [Concept('kingdoms','království')|El] se stanou [Concept('de_jure','de iure')|El] součástí titulu [armenian_armenia_empire.GetNameNoTier]:\n[armenian_georgia.GetNameNoTier], [armenian_daylam.GetNameNoTier], [armenian_jazira.GetNameNoTier], [armenian_syria.GetNameNoTier], [armenian_anatolia.GetNameNoTier], [armenian_pontus.GetNameNoTier], [armenian_jerusalem.GetNameNoTier]"
- create_armenian_empire_decision_effects_de_jure_tt_b: "Všechna [Concept('duchies','vévodství')|El] v $custom_greater_armenia$ se stanou [Concept('de_jure','de iure')|El] součástí titulu [armenian_armenia.GetNameNoTier], nebo zůstanou součástí svého stávajícího [Concept('kingdom','království')|El], pokud tento titul držíš"
+ create_armenian_empire_decision_effects_de_jure_tt_b: "Všechno [Concept('duchies','vévodství')|El] v $custom_greater_armenia$ se stanou [Concept('de_jure','de iure')|El] součástí titulu [armenian_armenia.GetNameNoTier], nebo zůstanou součástí svého stávajícího [Concept('kingdom','království')|El], pokud tento titul držíš" # todo: CONCEPT CASE
  create_armenian_empire_decision_confirm: "Znovu od moře k moři."
  declare_bloodline_holy_decision: "Posvětit pokrevní linii"
  declare_bloodline_holy_decision_desc: "Prokážu-li dostatečnou oddanost a získám-li přízeň duchovenstva, mohu zajistit, aby má dynastie byla navždy velebena jako svatá pokrevní linie pod božskou ochranou."
@@ -647,12 +669,12 @@
  accept_cannibalism_decision_custom_not: "Tvůj [Concept('court_chaplain','dvorní kaplan')|El] nesmí být [GetTrait('cannibal').GetName( GetPlayer )]"
  found_university_decision: "Založit univerzitu"
  found_university_decision_desc: "V mém panství se v poslední době shromažďují učení vzdělanci. Mnozí jsou vyhledávanými učiteli, ale potřebují místo, kde by mohli soustředit a předávat své znalosti."
- found_university_decision_tooltip: "Zpřístupní se slot [Concept('special_building','zvláštní budovy')|El]: [GetBuilding('generic_university').GetName]"
+ found_university_decision_tooltip: "Zpřístupní se slot [Concept('special_district','zvláštního okrsku')|El]: [GetBuildingType('generic_university').GetName]" # todo: CHANGED (predtym: Zpřístupní se slot [Concept('special_building','zvláštní budovy')|El]: [GetBuilding('generic_university').GetName])
  found_university_decision_confirm: "Položit základní kámen!"
  found_university_decision_custom: "Ve vhodném baronství"
- no_built_university: "[Concept('holding','Država')|El] nemá žádnou [Concept('special_building','zvláštní budovu')|El]"
- no_special_building_slot: "[Concept('holding','Država')|El] dosud nemá slot [Concept('special_building','zvláštní budovy')|El]"
- decision_found_university_custom: "Všechna hlavní sídla hrabství bez budovy [GetBuilding('generic_university').GetName]"
+ no_built_university: "[Concept('holding','Država')|El] nemá žádný [Concept('special_district','zvláštní okrsek')|El]" # todo: CHANGED (predtym: [Concept('holding','Država')|El] nemá žádnou [Concept('special_building','zvláštní budovu')|El])
+ no_special_building_slot: "[Concept('holding','Država')|El] dosud nemá slot [Concept('special_district','zvláštního okrsku')|El]" # todo: CHANGED (predtym: [Concept('holding','Država')|El] dosud nemá slot [Concept('special_building','zvláštní budovy')|El])
+ decision_found_university_custom: "Všechna hlavní sídla hrabství bez budovy [GetBuildingType('generic_university').GetName]" # todo: CHANGED (predtym: Všechna hlavní sídla hrabství bez budovy [GetBuilding('generic_university').GetName])
  empower_sicilian_parliament_decision: "Posílit Sicilský parlament"
  empower_sicilian_parliament_decision_desc: "Propojením zástupců šlechty, duchovenstva a měšťanů se starými římskými institucemi může vzniknout nový poradní orgán ku prospěchu panovníka i poddaných."
  empower_sicilian_parliament_decision_tooltip: "Zřiď poradní shromáždění stavů"
@@ -672,16 +694,17 @@
  promote_gothic_innovations_decision_confirm: "Investovat do mecenášství"
  lunatic_building_decision: "Postavit skleněný monument"
  lunatic_building_decision_desc: "Zdálo se mi o budově celé ze skla, v níž slunce hřeje jako v letním dni i během nejhlubší zimy a rostliny mohou růst po celý rok!"
- lunatic_building_decision_tooltip: "Bude postavena budova [GetBuilding('special_greenhouse_01').GetName]"
+ lunatic_building_decision_tooltip: "Bude postavena budova [GetBuildingType('special_greenhouse_01').GetName]" # todo: CHANGED (predtym: Bude postavena budova [GetBuilding('special_greenhouse_01').GetName])
  lunatic_building_decision_confirm: "Polapím slunce!"
  promote_hungarian_settlement_decision: "Podpořit křesťanské osídlení"
- promote_hungarian_settlement_decision_desc: "Otevřením titulu [ROOT.Char.GetPrimaryTitle.GetName] obchodníkům a osadníkům z okolních křesťanských panství urychlím rozvoj své země a posílím naše pouto se všeobecnou církví."
+ promote_hungarian_settlement_decision_desc: "Otevřením titulu [ROOT.Char.GetPrimaryTitle.GetName] obchodníkům a osadníkům z okolních křesťanských panství zvýším prosperitu své země a posílím naše pouto se všeobecnou církví." # todo: CHANGED (predtym: Otevřením titulu [ROOT.Char.GetPrimaryTitle.GetName] obchodníkům a osadníkům z okolních křesťanských panství urychlím ro)
  promote_hungarian_settlement_decision_tooltip: "Přivítej nové křesťanské osadníky v titulu [ROOT.Char.GetPrimaryTitle.GetNameNoTooltip]"
  promote_hungarian_settlement_decision_ecumenical_christian: "Tvoje [Concept('faith','víra')|El] patří mezi křesťanské [Concept('faith','víry')|El] s doktrínou [GetDoctrineType('special_doctrine_ecumenical_christian').GetBaseName]"
  promote_hungarian_settlement_decision_confirm: "Rozeslat oznámení!"
  promote_hungarian_settlement_decision_every_vassal_custom: "Každý vazal a dvořan maďarské kultury"
  promote_hungarian_settlement_decision_every_province_custom: "Každé hrabství maďarské kultury v Uherském království"
  promote_hungarian_settlement_decision_increased_development: "Získá #V 1#! bod [Concept('development','rozvoje')|El], pokud má právě méně než 5 bodů [Concept('development','rozvoje')|El]"
+ promote_hungarian_settlement_decision_increased_prosperity: "Získá #V 1#! [Concept('prosperity','rozkvět')|E], pokud máš právě méně než 5 [prosperity]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  promote_hungarian_settlement_decision_convert_county: "Může konvertovat k blízké křesťanské [Concept('faith','víře')|El]"
  revive_magyar_paganism_decision: "Obnovit $magyar_pagan$"
  revive_magyar_paganism_decision_desc: "Náboženství [ROOT.Char.GetFaith.GetReligion.GetNameNoTooltip] může mít své výhody, ale mezi našimi poddanými způsobilo bezpočet útrap a nepokojů. Možná nastal čas obnovit naše pouto s dávnými obřady..."
@@ -689,7 +712,7 @@
  revive_magyar_paganism_decision_confirm: "Zavrhnout víru [ROOT.Char.GetFaith.GetNameNoTooltip]"
  revive_magyar_paganism_decision_scripted_effect.county_conversions.tt: "[Concept('counties','Hrabství')|El] ve tvém [Concept('realm','panství')|El], která mají stejné [Concept('cultural','kulturní')|El] [Concept('heritage','dědictví')|El] jako ty, mohou konvertovat k $magyar_pagan$"
  revive_magyar_paganism_decision.adjust_the_faith.tt: "Můžeš nahradit některé principy víry $magyar_pagan$"
- hungarian_resettlement.every_converted_province: "$EFFECT_LIST_BULLET$ Všechna [Concept('counties','hrabství')|El], která konvertují"
+ hungarian_resettlement.every_converted_province: "$EFFECT_LIST_BULLET$ Všechno [Concept('counties','hrabství')|El], která konvertují" # todo: CONCEPT CASE
  dynasty_of_many_crowns_decision: "Dynastie mnoha korun"
  dynasty_of_many_crowns_decision_desc: "Jednoho dne bude naše dynastie vládnout panstvím po celém světě. Díky sňatkům a výbojům bude jméno [ROOT.Char.GetDynasty.GetBaseNameNoTooltip] znát každý."
  dynasty_of_many_crowns_decision_confirm: "Náš odkaz přetrvá navěky!"
@@ -718,6 +741,7 @@
  unite_the_southern_slavs_decision_confirm: "Sjednotit jižní Slovany"
  unite_the_southern_slavs_decision_desc: "Když jsme poprvé přišli do těchto zemí, byli jsme jedním lidem. Během let jsme se rozptýlili a rozdělili do mnoha kmenů.\n\nNyní nás obklopují mocné říše s cizími zvyky. Pod jejich vlivem náš vlastní způsob života pomalu mizí. To nesmíme dopustit – nastal čas se znovu sjednotit."
  unite_the_southern_slavs_decision_titles_tt: "Každý jihoslovanský [Concept('title','titul')|El] na úrovni [Concept('kingdom','království')|El], který držíš kromě svého [Concept('primary_title','hlavního titulu')|El], bude zničen a jeho území se stanou [Concept('de_jure','de iure')|El] součástí tvého primárního titulu ([THIS.Char.GetPrimaryTitle.GetNameNoTier])"
+ unite_the_southern_slavs_decision_titles_empire_tt: "Každý jihoslovanský [Concept('kingdom','království')|E] [Concept('title','titulu')|E], který zcela ovládáš (kromě svého [Concept('primary_title','hlavního titulu')|E]), se stane [Concept('de_jure','de iure')|E] součástí tvé [Concept('empire','říše')|E] ([THIS.Char.GetPrimaryTitle.GetNameNoTier])" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  unite_the_slavs_decision: "Sjednotit Slovany"
  unite_the_slavs_decision_tooltip: "Sjednoť slovanské národy a založ [Concept('empire','říši')|El] Slávii"
  unite_the_slavs_decision_confirm: "Založit Slávii"
@@ -765,7 +789,7 @@
  declare_canarias_decision_desc: "Od nepaměti se každý z ostrovů označoval za „království“, nyní se však naše obzory rozšiřují a Kanárským ostrovům se začíná otevírat svět. Konečně nastal čas sjednotit tato království pod jedinou korunou."
  declare_canarias_decision_confirm: "Sjednotit Kanárské ostrovy"
  declare_canarias_decision_tooltip: "Založ [Concept('kingdom','království')|El] Kanárských ostrovů"
- canarias_must_be_developed_tt: "Každé [Concept('county','hrabství')|El] v titulu [GetTitleByKey('d_canarias').GetNameNoTier] musí mít alespoň 10 bodů [Concept('development','rozvoje')|El]"
+ canarias_must_be_developed_tt: "Každé [Concept('county','hrabství')|El] v titulu [GetTitleByKey('d_canarias').GetNameNoTier] musí mít alespoň 10 bodů [Concept('prosperity','prosperity')|El]" # todo: CHANGED (predtym: Každé [Concept('county','hrabství')|El] v titulu [GetTitleByKey('d_canarias').GetNameNoTier] musí mít alespoň 10 bodů [C)
  canarias_must_be_filled_tt: "Každé [Concept('barony','baronství')|El] v titulu [GetTitleByKey('d_canarias').GetNameNoTier] musí obsahovat [Concept('holding','državu')|El]"
  government_is_feudal_tt: "Tvá [Concept('government','vláda')|El] je [GetGovernment('feudal_government').GetNameWithIcon]"
  government_is_clan_tt: "Tvá [Concept('government','vláda')|El] je [GetGovernment('clan_government').GetNameWithIcon]"
@@ -773,6 +797,7 @@
  government_is_adventurer_tt: "Tvá [Concept('government','vláda')|El] je [GetGovernment('landless_adventurer_government').GetNameWithIcon]"
  government_is_celestial_tt: "Tvá [Concept('government','vláda')|El] je [GetGovernment('celestial_government').GetNameWithIcon]"
  you_are_an_adventurer_tt: "Jsi [GetGovernment('landless_adventurer_government').GetNameWithIcon]"
+ you_are_a_merchant_tt: "Jsi [GetGovernment('merchant_government').GetNameWithIcon]" # todo: NEW TRANSLATION
  found_kingdom_decision: "Založit nové království"
  found_kingdom_decision_desc: "Sjednotím své panství pod novým královským titulem, který bude navždy náležet mé dynastii."
  found_kingdom_decision_confirm: "Sjednotit panství"
@@ -879,7 +904,7 @@
  adopt_special_succession_decision: "Přijmout zvláštní typ nástupnictví"
  adopt_special_succession_decision_desc: "Dělené nástupnictví nás oslabuje a rozděluje. Možná by velmoži panství přijali některou z historických alternativ..."
  adopt_special_succession_decision_confirm: "Promyslet záležitost"
- adopt_special_succession_decision_tooltip: "Nahraď své dělené [Concept('succession','nástupnictví')|El] místním typem volitelného $game_concept_succession$"
+ adopt_special_succession_decision_tooltip: "Nahraď své dělené [Concept('succession','nástupnictví')|El] místním typem volitelného nástupnictví" # todo: CONCEPT CASE
  adopt_special_succession_decision_effects.tt: "Podle své [Concept('culture','kultury')|El] si můžeš vybrat tradiční formu volitelného [Concept('succession','nástupnictví')|El]\n$EFFECT_LIST_BULLET$Bude použita u všech tvých [Concept('titles','titulů')|El] nejvyšší [Concept('rank','hodnosti')|El] s děleným [Concept('succession','nástupnictvím')|El]"
  implemented_traditional_succession_law_opinion: "Zavedení tradičního zákona nástupnictví"
  found_kingdom_decision_advanced_succesion: "Nemáš zákon pokročilého nástupnictví"
@@ -890,6 +915,21 @@
  establish_norman_culture_decision_tooltip: "Sluč naši severskou kulturu s místní francouzskou kulturou"
  establish_norman_culture_decision_effect.tt: "[new_culture.GetName] kultura přijmou všechna hrabství a všechny postavy [old_culture_1.GetName] a [old_culture_2.GetName] kultur v severní Francii"
  establish_norman_culture_decision_effect.tt.2: "[normandy_title.GetName] bude přejmenována na $d_normandy$"
+ establish_norse_gael_culture_decision: "Ustanovit norskogaelskou kulturu" # todo: NEW TRANSLATION
+ establish_norse_gael_culture_decision_desc: "$establish_norman_culture_decision_desc$" # todo: NEW TRANSLATION
+ establish_norse_gael_culture_decision_confirm: "Ostrovy povstanou!" # todo: NEW TRANSLATION
+ establish_norse_gael_culture_decision_tooltip: "Sloučit naši norskou kulturu s místní gaelskou kulturou" # todo: NEW TRANSLATION
+ establish_norse_gael_culture_decision_effect.tt: "Všechna hrabství a postavy [old_culture_1.GetName] a [old_culture_2.GetName] na Ostrovech přijmou kulturu [new_culture.GetName]" # todo: NEW TRANSLATION
+ establish_italo_norman_culture_decision: "Ustanovit italonormanskou kulturu" # todo: NEW TRANSLATION
+ establish_italo_norman_culture_decision_desc: "$establish_norman_culture_decision_desc$" # todo: NEW TRANSLATION
+ establish_italo_norman_culture_decision_confirm: "Jih povstane!" # todo: NEW TRANSLATION
+ establish_italo_norman_culture_decision_tooltip: "Sloučit naši normanskou kulturu s místní sicilskou kulturou" # todo: NEW TRANSLATION
+ establish_italo_norman_culture_decision_effect.tt: "Všechna hrabství a postavy [old_culture_1.GetName] a [old_culture_2.GetName] v jižní Itálii přijmou kulturu [new_culture.GetName]" # todo: NEW TRANSLATION
+ establish_novgorodian_culture_decision: "Ustanovit novgorodskou kulturu" # todo: NEW TRANSLATION
+ establish_novgorodian_culture_decision_desc: "$establish_norman_culture_decision_desc$" # todo: NEW TRANSLATION
+ establish_novgorodian_culture_decision_confirm: "Novgorod povstane!" # todo: NEW TRANSLATION
+ establish_novgorodian_culture_decision_tooltip: "Sloučit naši ilmeňskou a ruskou kulturu" # todo: NEW TRANSLATION
+ establish_novgorodian_culture_decision_effect.tt: "Všechna hrabství a postavy [old_culture_1.GetName] a [old_culture_2.GetName] v okolí Ilmeňského jezera přijmou kulturu [new_culture.GetName]" # todo: NEW TRANSLATION
  form_the_kingdom_of_aragon_decision: "Založit Aragonské království"
  form_the_kingdom_of_aragon_decision_desc: "Děti mohutné řeky Ebro byly po staletí odsouvány stranou. Římany, Vizigóty, Franky i Araby. Dokud budou dřít pro cizí dobyvatele a vzdálená hlavní města, jejich země jim nebudou skutečně náležet a lid bude volat po vlastním místním království."
  form_the_kingdom_of_aragon_decision_confirm: "Náš domov, naše království!"
@@ -992,6 +1032,9 @@
  stress_loss_athletic_decision_tooltip: "Ve zdravém těle zdravý duch"
  stress_loss_athletic_decision_confirm: "Do toho!"
  DECISION_COOLDOWN_WARNING: "@alert_icon! #alert_trial $DECISION_NAME$ nebude dostupné po dobu $COOLDOWN$#!"
+ DECISION_VASSAL_DISAPPROVAL: "[SelectLocalization( GetPlayer.GetGovernment.UsesAssembly, 'DECISION_ASSEMBLY_MEMBER', 'DECISION_POWERFUL_VASSAL' )]" # todo: NEW TRANSLATION
+ DECISION_POWERFUL_VASSAL: "@warning_icon! #warning Jeden či více tvých [Concept('powerful_vassals','mocných vazalů')|E] s tímto rozhodnutím nesouhlasí#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ DECISION_ASSEMBLY_MEMBER: "@warning_icon! #warning Tvé shromáždění s tímto rozhodnutím nesouhlasí#!" # todo: NEW TRANSLATION
  all_courtiers_except_confidant: "Všichni [Concept('courtiers','dvořané')|El] kromě důvěrné osoby"
  found_kingdom_of_bosnia_decision: "Založit Bosenské království"
  found_kingdom_of_bosnia_decision_desc: "Hory a lesy střední Bosny bez ustání přecházejí z rukou pánů ze severu do rukou pánů z jihu. Možná už ne nadlouho..."
@@ -1054,6 +1097,11 @@
  diligent_development_focus_decision_tooltip: "Zlepši rozvoj svého hlavního sídla"
  diligent_development_focus_decision_confirm: "Naplánovat rozvoj"
  msg_diligent_development_focus: "Tvé svědomité plánování přináší ovoce!"
+ diligent_prosperity_focus_decision: "Rozvíjet hlavní sídlo" # todo: NEW TRANSLATION
+ diligent_prosperity_focus_decision_desc: "Sním o tom, že [ROOT.Char.GetCapitalLocation.GetTitle.GetNameNoTierNoTooltip] bude jednoho dne předmětem závisti všech vládců pod sluncem. Musím se snažit stát se tím, kdo z něj učiní klenot Země. Stačí jen, abych ještě trochu [Select_CString(ROOT.Char.IsFemale,'přiložila','přiložil')] ruku k dílu...\n\nKdo by také potřeboval spát?" # todo: NEW TRANSLATION
+ diligent_prosperity_focus_decision_tooltip: "Zvýšit prosperitu svého hlavního sídla" # todo: NEW TRANSLATION
+ diligent_prosperity_focus_decision_confirm: "Naplánovat rozvoj" # todo: NEW TRANSLATION
+ msg_diligent_prosperity_focus: "Tvé svědomité plánování přináší ovoce!" # todo: NEW TRANSLATION
  impatient_rushing_all_schemes_decision: "Urychlit intriky"
  impatient_rushing_all_schemes_decision_desc: "Proč čekat věčně, když je vše připraveno? Zkusím své štěstí hned!"
  impatient_rushing_all_schemes_decision_tooltip: "Riskni předčasné završení svých intrik"
@@ -1120,6 +1168,7 @@
  convert_whole_realm_to_feudalism_west_african_pagan_decision_tooltip: "$convert_whole_realm_to_feudalism_decision_tooltip$"
  convert_whole_realm_to_feudalism_west_african_pagan_decision.tt.vassal_count: "Máš alespoň [EmptyScope.ScriptValue('convert_whole_realm_to_feudalism_west_african_pagan_decision_vassal_count_value')|0] [Concept('vassals','vazalů')|El] v [Concept('rank','hodnosti')|El] [Concept('count','hraběte')|El] nebo vyšší"
  convert_whole_realm_to_feudalism_west_african_pagan_decision.tt.wa_capital_development: "Tvé [Concept('capital','hlavní sídlo')|El] se nachází v regionu [GetGeographicalRegion('world_africa_west').GetName] a má alespoň [EmptyScope.ScriptValue('convert_whole_realm_to_feudalism_west_african_pagan_decision_wa_capital_development_value')|0] bodů [Concept('development','rozvoje')|El]"
+ convert_whole_realm_to_feudalism_west_african_pagan_decision.tt.wa_capital_prosperity: "Tvé [Concept('capital','hlavní sídlo')|E] se nachází v oblasti [GetGeographicalRegion('world_africa_west').GetName] a má alespoň [EmptyScope.ScriptValue('convert_whole_realm_to_feudalism_west_african_pagan_decision_wa_capital_prosperity_value')|0] [Concept('prosperity','rozkvět')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  faith_qualifies_for_west_african_pagan_feudalisation_trigger.tt: "Tvá [Concept('faith','víra')|El] je [GetDoctrineType('west_african_unreformed_faith_doctrine').GetBaseName]"
  appoint_a_righteous_caliph_decision: "Ustanovit pravověrného chalífu"
  appoint_a_righteous_caliph_decision_desc: "[ROOT.Char.GetFaith.GetReligiousHead.GetTitledFirstName] je vzdálenou a nehodnou postavou, která není připravena vést ummu. Protože vyznává [ROOT.Char.GetFaith.GetReligiousHead.GetFaith.GetAdjective] víru, jednoduše #EMP nechápe#! mnohé jemné pravdy [ROOT.Char.GetFaith.GetAdjective] nauky.\n\nMožná jim nerozumí, ale #EMP já#! ano..."
@@ -1232,15 +1281,15 @@
  switch_to_original_language_tt: "Jazykem tvé nové kultury bude [target_other_culture.GetLanguage.GetNameNoTooltip]."
  at_least_10_jewish_counties_tt: "Musíš držet alespoň 10 židovských [Concept('counties','hrabství')|El] své [Concept('culture','kultury')|El]"
  DECISION_TOOLTIP_TITLE: "$EFFECT_LIST_BULLET$ [Decision.GetName]"
- clear_ground_legendary_shrine_desc: "Jedno držené [Concept('barony','baronství')|El] získá slot [Concept('special_building','zvláštní budovy')|El] pro budovu [GetBuilding('legendary_shrine').GetName]"
+ clear_ground_legendary_shrine_desc: "Jedno držené [Concept('barony','baronství')|El] získá slot [Concept('special_district','zvláštního okrsku')|El] pro budovu [GetBuildingType('legendary_shrine').GetName]" # todo: CHANGED (predtym: Jedno držené [Concept('barony','baronství')|El] získá slot [Concept('special_building','zvláštní budovy')|El] pro budovu)
  clear_ground_legendary_shrine: "$building_type_legendary_shrine$"
- clear_ground_legendary_statue_desc: "Jedno držené [Concept('barony','baronství')|El] získá slot [Concept('special_building','zvláštní budovy')|El] pro budovu [GetBuilding('legendary_statue').GetName]"
+ clear_ground_legendary_statue_desc: "Jedno držené [Concept('barony','baronství')|El] získá slot [Concept('special_district','zvláštního okrsku')|El] pro budovu [GetBuildingType('legendary_statue').GetName]" # todo: CHANGED (predtym: Jedno držené [Concept('barony','baronství')|El] získá slot [Concept('special_building','zvláštní budovy')|El] pro budovu)
  clear_ground_legendary_statue: "$building_type_legendary_statue$"
- clear_ground_legendary_palace_desc: "Jedno držené [Concept('barony','baronství')|El] získá slot [Concept('special_building','zvláštní budovy')|El] pro budovu [GetBuilding('legendary_palace').GetName]"
+ clear_ground_legendary_palace_desc: "Jedno držené [Concept('barony','baronství')|El] získá slot [Concept('special_district','zvláštního okrsku')|El] pro budovu [GetBuildingType('legendary_palace').GetName]" # todo: CHANGED (predtym: Jedno držené [Concept('barony','baronství')|El] získá slot [Concept('special_building','zvláštní budovy')|El] pro budovu)
  clear_ground_legendary_palace: "$building_type_legendary_palace$"
- clear_ground_legendary_watchtower_desc: "Jedno držené [Concept('barony','baronství')|El] získá slot [Concept('special_building','zvláštní budovy')|El] pro budovu [GetBuilding('legendary_watchtower').GetName]"
+ clear_ground_legendary_watchtower_desc: "Jedno držené [Concept('barony','baronství')|El] získá slot [Concept('special_district','zvláštního okrsku')|El] pro budovu [GetBuildingType('legendary_watchtower').GetName]" # todo: CHANGED (predtym: Jedno držené [Concept('barony','baronství')|El] získá slot [Concept('special_building','zvláštní budovy')|El] pro budovu)
  clear_ground_legendary_watchtower: "$building_type_legendary_watchtower$"
- clear_ground_legendary_hunting_lodge_desc: "Jedno držené [Concept('barony','baronství')|El] získá slot [Concept('special_building','zvláštní budovy')|El] pro budovu [GetBuilding('legendary_hunting_lodge').GetName]"
+ clear_ground_legendary_hunting_lodge_desc: "Jedno držené [Concept('barony','baronství')|El] získá slot [Concept('special_district','zvláštního okrsku')|El] pro budovu [GetBuildingType('legendary_hunting_lodge').GetName]" # todo: CHANGED (predtym: Jedno držené [Concept('barony','baronství')|El] získá slot [Concept('special_building','zvláštní budovy')|El] pro budovu)
  clear_ground_legendary_hunting_lodge: "$building_type_legendary_hunting_lodge$"
  clear_ground_legendary_shrine_tooltip: "$clear_ground_legendary_shrine_desc$"
  clear_ground_legendary_statue_tooltip: "$clear_ground_legendary_statue_desc$"
@@ -1248,27 +1297,27 @@
  clear_ground_legendary_watchtower_tooltip: "$clear_ground_legendary_watchtower_desc$"
  clear_ground_legendary_hunting_lodge_tooltip: "$clear_ground_legendary_hunting_lodge_desc$"
  clear_ground_for_legendary_building: "Připravit pozemek pro legendární budovu"
- clear_ground_for_legendary_building_tooltip: "Odemkni slot [Concept('special_building','zvláštní budovy')|El] v jednom ze svých baronství"
+ clear_ground_for_legendary_building_tooltip: "Odemkni slot [Concept('special_district','zvláštního okrsku')|El] v jednom ze svých baronství" # todo: CHANGED (predtym: Odemkni slot [Concept('special_building','zvláštní budovy')|El] v jednom ze svých baronství)
  clear_ground_for_legendary_building_desc: "Legenda je dokončena a můj lid naplnila inspirací. Mé země jsou připraveny na nový monument věnovaný mé legendě, co přesně by však mělo být postaveno?"
  clear_ground_for_legendary_building_confirm: "Vybrat baronství"
- clear_ground_for_legendary_building_no_barony_tt: "Musíš držet [Concept('barony','baronství')|El], které je hlavním sídlem svého [Concept('county','hrabství')|El], není [Concept('leased','pronajaté')|El] a dosud nemá slot [Concept('special_building','zvláštní budovy')|El]#!"
+ clear_ground_for_legendary_building_no_barony_tt: "Musíš držet [Concept('barony','baronství')|El], které je hlavním sídlem svého [Concept('county','hrabství')|El], není [Concept('leased','pronajaté')|El] a dosud nemá slot [Concept('special_district','zvláštního okrsku')|El]#!" # todo: CHANGED (predtym: Musíš držet [Concept('barony','baronství')|El], které je hlavním sídlem svého [Concept('county','hrabství')|El], není [C)
  clear_ground_legendary_hunting_lodge_tt: "Musíš mít dokončenou mýtickou nebo věhlasnou [Concept('legend','legendu')|El] o šelmě, mít u rysu [GetTrait('lifestyle_hunter').GetName( GetNullCharacter )] #V 50#! bodů [Concept('trait_level_track_xp','zkušeností rysu')|El] na cestě #EMP Venator#!, nebo mít [Concept('tradition','tradici')|El] [GetCultureTradition('tradition_hunters').GetName] či [GetCultureTradition('tradition_ep2_avid_falconers').GetName]"
  clear_ground_legendary_watchtower_tt: "Musíš mít dokončenou mýtickou nebo věhlasnou [Concept('legend','legendu')|El] a zároveň mít [Concept('dynasty_perk','dynastický odkaz')|El] [GetDynastyPerk('ce1_heroic_legacy_5').GetName]"
  clear_ground_legendary_shrine_tt: "Musíš mít dokončenou mýtickou nebo věhlasnou svatou [Concept('legend','legendu')|El]"
  clear_ground_legendary_statue_tt: "Musíš mít dokončenou mýtickou nebo věhlasnou hrdinskou [Concept('legend','legendu')|El]"
  clear_ground_legendary_palace_tt: "Musíš mít dokončenou mýtickou nebo věhlasnou legitimační [Concept('legend','legendu')|El]"
- can_build_legendary_shrine_tt: "Získáš přístup k možnosti [GetBuilding('legendary_shrine').GetName] v [Concept('decision','rozhodnutí')|El] #EMP $clear_ground_for_legendary_building$#!"
- can_build_legendary_statue_tt: "Získáš přístup k možnosti [GetBuilding('legendary_statue').GetName] v [Concept('decision','rozhodnutí')|El] #EMP $clear_ground_for_legendary_building$#!"
- can_build_legendary_palace_tt: "Získáš přístup k možnosti [GetBuilding('legendary_palace').GetName] v [Concept('decision','rozhodnutí')|El] #EMP $clear_ground_for_legendary_building$#!"
- can_build_legendary_watchtower_tt: "Získáš přístup k možnosti [GetBuilding('legendary_watchtower').GetName] v [Concept('decision','rozhodnutí')|El] #EMP $clear_ground_for_legendary_building$#!"
- can_build_legendary_hunting_lodge_tt: "Získáš přístup k možnosti [GetBuilding('legendary_hunting_lodge').GetName] v [Concept('decision','rozhodnutí')|El] #EMP $clear_ground_for_legendary_building$#!"
+ can_build_legendary_shrine_tt: "Získáš přístup k možnosti [GetBuildingType('legendary_shrine').GetName] v [Concept('decision','rozhodnutí')|El] #EMP $clear_ground_for_legendary_building$#!" # todo: CHANGED (predtym: Získáš přístup k možnosti [GetBuilding('legendary_shrine').GetName] v [Concept('decision','rozhodnutí')|El] EMP $clear_g)
+ can_build_legendary_statue_tt: "Získáš přístup k možnosti [GetBuildingType('legendary_statue').GetName] v [Concept('decision','rozhodnutí')|El] #EMP $clear_ground_for_legendary_building$#!" # todo: CHANGED (predtym: Získáš přístup k možnosti [GetBuilding('legendary_statue').GetName] v [Concept('decision','rozhodnutí')|El] EMP $clear_g)
+ can_build_legendary_palace_tt: "Získáš přístup k možnosti [GetBuildingType('legendary_palace').GetName] v [Concept('decision','rozhodnutí')|El] #EMP $clear_ground_for_legendary_building$#!" # todo: CHANGED (predtym: Získáš přístup k možnosti [GetBuilding('legendary_palace').GetName] v [Concept('decision','rozhodnutí')|El] EMP $clear_g)
+ can_build_legendary_watchtower_tt: "Získáš přístup k možnosti [GetBuildingType('legendary_watchtower').GetName] v [Concept('decision','rozhodnutí')|El] #EMP $clear_ground_for_legendary_building$#!" # todo: CHANGED (predtym: Získáš přístup k možnosti [GetBuilding('legendary_watchtower').GetName] v [Concept('decision','rozhodnutí')|El] EMP $cle)
+ can_build_legendary_hunting_lodge_tt: "Získáš přístup k možnosti [GetBuildingType('legendary_hunting_lodge').GetName] v [Concept('decision','rozhodnutí')|El] #EMP $clear_ground_for_legendary_building$#!" # todo: CHANGED (predtym: Získáš přístup k možnosti [GetBuilding('legendary_hunting_lodge').GetName] v [Concept('decision','rozhodnutí')|El] EMP $)
  CHOOSE_LEGENDARY_BUILDING: "Vyber legendární budovu"
  clear_ground_for_legendary_building.toast: "Pozemek je připraven"
  pick_legendary_barony_decision: "$clear_ground_for_legendary_building$"
  pick_legendary_barony_decision_desc: "$clear_ground_for_legendary_building_desc$"
  pick_legendary_barony_decision_tooltip: "$clear_ground_for_legendary_building_tooltip$"
  pick_legendary_barony_decision_confirm: "Připravit pozemek"
- clear_ground_for_legendary_building_custom_tt: "Nyní vybereš držené [Concept('barony','baronství')|El] pro svou legendární [Concept('building','budovu')|El]\n#weak Musí být hlavním sídlem svého [Concept('county','hrabství')|El], nesmí být [Concept('leased','pronajaté')|El] a nesmí již mít slot [Concept('special_building','zvláštní budovy')|El]#!"
+ clear_ground_for_legendary_building_custom_tt: "Nyní vybereš držené [Concept('barony','baronství')|El] pro svou legendární [Concept('building','budovu')|El]\n#weak Musí být hlavním sídlem svého [Concept('county','hrabství')|El], nesmí být [Concept('leased','pronajaté')|El] a nesmí již mít slot [Concept('special_district','zvláštního okrsku')|El]#!" # todo: CHANGED (predtym: Nyní vybereš držené [Concept('barony','baronství')|El] pro svou legendární [Concept('building','budovu')|El]\n weak Musí)
  PICK_LEGENDARY_BARONY_DECISION_LABEL: "Umístění:"
  isolate_family_decision: "Uchýlit se do ústraní"
  isolate_family_decision_tooltip: "Zvyš svou odolnost i odolnost své [Concept('close_family','blízké rodiny')|El] vůči [Concept('epidemics','morům')|El]"
@@ -1408,7 +1457,7 @@
  local_arbitration_modifier_1_desc: "Po návštěvě místního lenního pána vzrostl v provincii zájem o vstup do vojska a obranu panství."
  local_arbitration_modifier_2: "Potlačování korupce"
  local_arbitration_modifier_2_desc: "Bylo vynaloženo zvláštní úsilí, aby k dani nebyla vybírána žádná místní „přirážka“."
- local_arbitration_modifier_3: "Investice do rozvoje"
+ local_arbitration_modifier_3: "Investice do prosperity" # todo: CHANGED (predtym: Investice do rozvoje)
  local_arbitration_modifier_3_desc: "Lenní pán i několik místních zeměpánů investovali do rozvoje této provincie čas a peníze."
  has_locations_to_map_tt: "Mapy lze vytvářet pouze pro navštívená místa, která jsou:\n[Concept('points_of_interest','body zájmu')|El]\n[Concept('capital','hlavními sídly')|El] cizích [Concept('kingdom','království')|El]\nV tvé vlastní [Concept('domain','doméně')|El]\n[Concept('capital','hlavním sídlem')|El] tvého [Concept('vassal','vazala')|El]"
  draw_up_new_charts_decision: "Sestavit cestovní itinerář"
@@ -1469,16 +1518,16 @@
  cossack_custom_county_culture: "Každé držené [Concept('de_jure','de iure')|El] [Concept('county','hrabství')|El] titulu [GetTitleByKey('k_cossack').GetDefinitiveName] přijme [new_culture.GetName] [Concept('culture','kulturu')|El]"
  cossack_custom_county_culture_fallback: "Každé držené [Concept('de_jure','de iure')|El] [Concept('county','hrabství')|El] titulu [GetTitleByKey('k_cossack').GetDefinitiveName] přijme #V kozáckou#! [Concept('culture','kulturu')|El]"
  mpo_pleasure_dome_decision: "Navrhnout palác rozkoší"
- mpo_pleasure_dome_decision_tooltip: "Odemkni slot [Concept('special_building','zvláštní budovy')|El] v jednom ze svých baronství"
- mpo_pleasure_dome_tt: "V jednom z tvých baronství se odemkne slot [Concept('special_building','zvláštní budovy')|El]."
+ mpo_pleasure_dome_decision_tooltip: "Odemkni slot [Concept('special_district','zvláštního okrsku')|El] v jednom ze svých baronství" # todo: CHANGED (predtym: Odemkni slot [Concept('special_building','zvláštní budovy')|El] v jednom ze svých baronství)
+ mpo_pleasure_dome_tt: "V jednom z tvých baronství se odemkne slot [Concept('special_district','zvláštního okrsku')|El]." # todo: CHANGED (predtym: V jednom z tvých baronství se odemkne slot [Concept('special_building','zvláštní budovy')|El].)
  mpo_pleasure_dome_decision_desc: "Když jsou mé země zajištěny a domov uspořádán, mé myšlenky se přirozeně obracejí k tomu, jakou stopu bych mohl na tomto světě zanechat. Co by mohlo být lepší než palác dokonalé nádhery? Místo, kde vysoké fontány tryskají vínem a zahradami v celé jejich majestátnosti zurčí potůčky."
  mpo_pleasure_dome_decision_confirm: "Tento palác zapíše mé jméno do dějin!"
- mpo_pleasure_dome_no_barony_tt: "Musíš držet [Concept('barony','baronství')|El], které je hlavním sídlem svého [Concept('county','hrabství')|El], není [Concept('leased','pronajaté')|El] a dosud nemá slot [Concept('special_building','zvláštní budovy')|El]#!"
+ mpo_pleasure_dome_no_barony_tt: "Musíš držet [Concept('barony','baronství')|El], které je hlavním sídlem svého [Concept('county','hrabství')|El], není [Concept('leased','pronajaté')|El] a dosud nemá slot [Concept('special_district','zvláštního okrsku')|El]#!" # todo: CHANGED (predtym: Musíš držet [Concept('barony','baronství')|El], které je hlavním sídlem svého [Concept('county','hrabství')|El], není [C)
  mpo_pleasure_dome_not_settled: "Musíš být usazen"
  mpo_pleasure_dome_slot_added.toast: "Rozhodnutí bylo učiněno"
- mpo_add_pleasure_dome_effect_tt: "Vybraná [Concept('holding','država')|El] získá [Concept('special_building','zvláštní budovu')|El] [GetBuilding('pleasure_dome').GetName]"
- mpo_pleasure_dome_barony_decision_tt_first: "#weak Država musí být hlavním sídlem svého [Concept('county','hrabství')|El], nesmí být [Concept('leased','pronajatá')|El], nesmí již mít slot [Concept('special_building','zvláštní budovy')|El] a musí se nacházet ve [Concept('the_great_steppe','Velké stepi')|El]#!\n@warning_icon! #weak #color_red Toto umístění nebudeš později moci změnit!#!"
- mpo_pleasure_dome_barony_decision_tooltip: "Vyber baronství pro svou [Concept('special_building','zvláštní budovu')|El]!"
+ mpo_add_pleasure_dome_effect_tt: "Vybraná [Concept('holding','država')|El] získá [Concept('special_district','zvláštní okrsek')|El] [GetBuildingType('pleasure_dome').GetName]" # todo: CHANGED (predtym: Vybraná [Concept('holding','država')|El] získá [Concept('special_building','zvláštní budovu')|El] [GetBuilding('pleasure)
+ mpo_pleasure_dome_barony_decision_tt_first: "#weak Država musí být hlavním sídlem svého [Concept('county','hrabství')|El], nesmí být [Concept('leased','pronajatá')|El], nesmí již mít slot [Concept('special_district','zvláštního okrsku')|El] a musí se nacházet ve [Concept('the_great_steppe','Velké stepi')|El]#!\n@warning_icon! #weak #color_red Toto umístění nebudeš později moci změnit!#!" # todo: CHANGED (predtym: weak Država musí být hlavním sídlem svého [Concept('county','hrabství')|El], nesmí být [Concept('leased','pronajatá')|El)
+ mpo_pleasure_dome_barony_decision_tooltip: "Vyber baronství pro svůj [Concept('special_district','zvláštní okrsek')|El]!" # todo: CHANGED (predtym: Vyber baronství pro svou [Concept('special_building','zvláštní budovu')|El]!)
  mpo_pleasure_dome_decision_steppe_admin: "Máš [Concept('law','zákon')|El] [GetLaw('meritocratic_bureaucracy_2').GetName] nebo [GetLaw('meritocratic_bureaucracy_3').GetName]"
  mpo_divination_decision: "Dotázat se nebes"
  mpo_divination_decision_tooltip: "Odvaž se nahlédnout do budoucnosti"
@@ -1520,7 +1569,7 @@
  found_duchy_decision_tooltip: "Založím nové [Concept('duchy','vévodství')|El], které bude vládnout zemím titulu [ROOT.Char.GetPrimaryTitle.GetNameNoTier]"
  found_duchy_decision_confirm: "Vládnout je mým právem"
  create_new_duchy: "Vytvoříš [Concept('duchy','vévodství')|El] [root_scope.GetPrimaryTitle.GetNameNoTierNoTooltip]"
- create_custom_duchy_de_jure_changes: "[root_scope.GetPrimaryTitle.GetName]:\n$EFFECT_LIST_BULLET$ Stane se [Concept('de_jure','de iure')|El] [Concept('county','hrabstvím')|El] tvého nového [Concept('duchy','vévodství')|El]"
+ create_custom_duchy_de_jure_changes: "[root_scope.GetPrimaryTitle.GetName]:\n$EFFECT_LIST_BULLET$ Stane se [Concept('de_jure','de iure')|El] [Concept('county','hrabstvím')|El] tvého nové [Concept('duchy','vévodství')|El]" # todo: CONCEPT CASE
  expand_duchy_decision: "Rozšířit vévodství"
  expand_duchy_decision_desc: "S růstem mého panství je jen přirozené, aby se spolu s ním rozrůstaly i ústřední země titulu [ROOT.Char.GetPrimaryTitle.GetNameNoTierNoTooltip]."
  expand_duchy_decision_tooltip: "Nastal čas rozšířit moc titulu [ROOT.Char.GetPrimaryTitle.GetNameNoTier] do nových zemí"
@@ -1544,7 +1593,7 @@
  set_de_jure_capital_already_done_tooltip: "[current_capital.GetName] není [Concept('de_jure_capital','de iure hlavním sídlem')|El] titulu [current_de_jure.GetName]"
  set_de_jure_capital_hold_current_capital_tooltip: "Současné [Concept('de_jure_capital','de iure hlavní sídlo')|El] titulu [current_de_jure.GetName] #weak (#color_white [title_check.GetName]#!)#! je součástí [Concept('realm','panství')|El]"
  set_de_jure_capital_effect_tooltip: "[current_capital_scope.GetName] se stane novým [Concept('de_jure_capital','de iure hlavním sídlem')|El] titulu [current_de_jure_scope.GetName]"
- set_de_jure_capital_warning: "$set_de_jure_capital_effect_tooltip$\n@warning_icon! #color_red Zničí současnou [Concept('duchy_building','vévodskou budovu')|El]#!"
+ set_de_jure_capital_warning: "$set_de_jure_capital_effect_tooltip$\n@warning_icon! #color_red Zničí současný [Concept('duchy_district','vévodský okrsek')|El]#!" # todo: CHANGED (predtym: $set_de_jure_capital_effect_tooltip$\n@warning_icon! color_red Zničí současnou [Concept('duchy_building','vévodskou budo)
  sacrifice_bear_decision: "Obětovat medvěda"
  sacrifice_bear_decision_desc: "Abychom tohoto ducha poslali zpět k jeho předkům, měli bychom uspořádat obřad, při němž medvěda obětujeme a sníme jeho maso."
  sacrifice_bear_decision_tooltip: "Obětuj [GetModifier('hunt_captive_beast_modifier').GetNameWithTooltip], kterého jsi získal při [CZActivity('activity_hunt','L')]"
@@ -1556,7 +1605,7 @@
  adopt_han_culture_decision_confirm: "Rozšíříme čínskou kulturu"
  invite_religious_exiles_decision: "Pozvat náboženské vyhnance"
  invite_religious_exiles_decision_desc: "Ve vzdálených zemích putují vyhnaní věřící a hledají místo, které by mohli nazývat domovem, neboť je pronásledování vyhnalo z jejich rodišť.\n\nMohl bych tato vysídlená společenství přivítat ve svém panství a nechat jejich vědomosti obohatit mé země – s jejich příchodem však dorazí i jejich víra..."
- invite_religious_exiles_decision_tooltip: "Pozvi náboženské vyhnance, aby se usadili ve tvých [Concept('counties','hrabstvích')|El], zvýšili jejich [Concept('development','rozvoj')|El], ale změnili jejich [Concept('faith','víru')|El]."
+ invite_religious_exiles_decision_tooltip: "Pozvi náboženské vyhnance, aby se usadili ve tvých [Concept('counties','hrabstvích')|El], zvýšili jejich [Concept('prosperity','prosperitu')|El], ale změnili jejich [Concept('faith','víru')|El]." # todo: CHANGED (predtym: Pozvi náboženské vyhnance, aby se usadili ve tvých [Concept('counties','hrabstvích')|El], zvýšili jejich [Concept('devel)
  CHOOSE_EXILES_DECISION_NEXT_STEP_BUTTON: "Pozvat vyhnance"
  invite_religious_exiles_decision_confirm: "$CHOOSE_EXILES_DECISION_NEXT_STEP_BUTTON$"
  invite_all_exiles: "Přivítat všechny"
@@ -1565,10 +1614,10 @@
  invite_same_rite_exiles: "Přivítat stoupence stejného ritu"
  invite_all_exiles_tooltip: "Pozvi vyhnance jakékoli [Concept('faith','víry')|El]\n\n$invite_religious_exiles_decision_effect$"
  invite_same_religion_exiles_tooltip: "Pozvi vyhnance svého [Concept('religion','náboženství')|El]\n\n$invite_religious_exiles_decision_effect$"
- invite_same_faith_exiles_tooltip: "Pozvi vyhnance své [Concept('faith','víry')|El]\n\nOsloví tě skupina vyhnanců, která tě požádá o možnost usadit se ve tvých [Concept('counties','hrabstvích')|El] a zvýšit jejich [Concept('development','rozvoj')|El]."
- invite_same_rite_exiles_tooltip: "Pozvat vyhnance tvého [Concept('rite','ritu')|E]\n\nOsloví tě skupina vyhnanců tvého konkrétního ritu a požádá o usazení ve tvých [Concept('counties','hrabstvích')|E], čímž zvýší [Concept('development','rozvoj')|E]."
+ invite_same_faith_exiles_tooltip: "Pozvi vyhnance své [Concept('faith','víry')|El]\n\nOsloví tě skupina vyhnanců, která tě požádá o možnost usadit se ve tvých [Concept('counties','hrabstvích')|El] a zvýšit jejich [Concept('prosperity','prosperitu')|El]." # todo: CHANGED (predtym: Pozvi vyhnance své [Concept('faith','víry')|El]\n\nOsloví tě skupina vyhnanců, která tě požádá o možnost usadit se ve tv)
+ invite_same_rite_exiles_tooltip: "Pozvat vyhnance tvého [Concept('rite','ritu')|E]\n\nOsloví tě skupina vyhnanců tvého konkrétního ritu a požádá o usazení ve tvých [Concept('counties','hrabstvích')|E], čímž zvýší [Concept('prosperity','prosperitu')|E]." # todo: CHANGED (predtym: Pozvat vyhnance tvého [Concept('rite','ritu')|E]\n\nOsloví tě skupina vyhnanců tvého konkrétního ritu a požádá o usazení)
  invite_exiles_req: "V dosahu nejsou žádní vyhnanci tohoto typu, které bys mohl pozvat"
- invite_religious_exiles_decision_effect: "Osloví tě skupina vyhnanců, která tě požádá o možnost usadit se ve tvých [Concept('counties','hrabstvích')|El], zvýšit jejich [Concept('development','rozvoj')|El], ale změnit jejich [Concept('faith','víru')|El]."
+ invite_religious_exiles_decision_effect: "Osloví tě skupina vyhnanců, která tě požádá o možnost usadit se ve tvých [Concept('counties','hrabstvích')|El], zvýšit jejich [Concept('prosperity','prosperitu')|El], ale změnit jejich [Concept('faith','víru')|El]." # todo: CHANGED (predtym: Osloví tě skupina vyhnanců, která tě požádá o možnost usadit se ve tvých [Concept('counties','hrabstvích')|El], zvýšit j)
  invite_exiles_anyone_req: "V dosahu nejsou žádní vyhnanci, které bys mohl pozvat"
  invite_exiles_same_faith_county_req: "Nemáš žádné [Concept('county','hrabství')|El] své [Concept('faith','víry')|El]"
  CHOOSE_CONFUCIAN_FAITH_TO_CONVERT_TO: "Přijmout konfuciánskou víru"
@@ -1647,7 +1696,7 @@
  form_siam_kingdom_decision: "Založit Siamské království"
  form_siam_kingdom_decision_desc: "Po staletích putování můj lid podle mého názoru konečně nalezl místo, které může nazývat vlastním, a pevně se usadil mezi kmeny země a moře. Potřebuje už jen důvěryhodného vládce, který mu pomůže naplnit jeho potenciál."
  form_siam_kingdom_decision_tooltip: "Siam se stane [Concept('de_jure','de iure')|El] [Concept('kingdom','královstvím')|El]"
- form_siam_kingdom_decision_effects_de_jure_tt_a: "Pokud je držíš, tituly [sukhotai_duchy.GetNameNoTier] a [lop_buri_duchy.GetNameNoTier] se stanou [Concept('de_jure','de iure')|El] součástí titulu [siam_kingdom.GetName]"
+ form_siam_kingdom_decision_effects_de_jure_tt_a: "Pokud je držíš, tituly [GetTitleByKey('d_sukhothai').GetNameNoTier] a [GetTitleByKey('d_lop_buri').GetNameNoTier] se stanou [Concept('de_jure','de iure')|El] součástí titulu [siam_kingdom.GetName]" # todo: CHANGED (predtym: Pokud je držíš, tituly [sukhotai_duchy.GetNameNoTier] a [lop_buri_duchy.GetNameNoTier] se stanou [Concept('de_jure','de )
  form_siam_kingdom_decision_requirement_1_tt: "Ty nebo tví [Concept('vassals','vazalové')|El] držíte [Concept('title','titul')|El] [GetTitleByKey('d_lop_buri').GetName]"
  form_siam_kingdom_decision_requirement_2_tt: "Ty nebo tví [Concept('vassals','vazalové')|El] držíte [Concept('title','titul')|El] [GetTitleByKey('d_sukhothai').GetName]"
  form_siam_kingdom_decision_confirm: "Za zemi svobodných!"
@@ -1685,10 +1734,11 @@
  restore_carthage_decision_tooltip: "Obnov slávu Kartáginské říše"
  restore_carthage_decision_confirm: "Sláva Kartáginské říši!"
  custom_carthaginian_empire_development_growth: "$MOD_MONTHLY_DEVELOPMENT_GROWTH_FACTOR$ v [Concept('region','regionu')|El] [GetGeographicalRegion('custom_carthaginian_empire').GetName]"
+ custom_carthaginian_empire_prosperity_growth: "$MOD_MONTHLY_PROSPERITY_GROWTH_FACTOR$ v [Concept('region','regionu')|E] [GetGeographicalRegion('custom_carthaginian_empire').GetName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  restore_carthage_house_modifier: "Kartáginští vládci"
  restore_carthage_house_modifier_desc: "Vládci říše navrácené k někdejší slávě, s nimiž bude tento region opět vzkvétat."
  create_cossack_kingdom_decision: "Založit Kozácké království"
- create_cossack_kingdom_decision_desc: "Spoj Kazaky a příslušníky [ROOT.Char.GetCulture.GetName] kultury v novou [Concept('culture','kulturu')|El] a nové [Concept('kingdom','království')|El]"
+ create_cossack_kingdom_decision_desc: "Spoj Kazaky a příslušníky [ROOT.Char.GetCulture.GetName] kultury v nové [Concept('culture','kulturu')|El] a nové [Concept('kingdom','království')|El]" # todo: CONCEPT CASE
  create_cossack_kingdom_decision_tooltip: "Vytvoř kozáckou [Concept('culture','kulturu')|El] a [Concept('kingdom','království')|El]"
  create_cossack_kingdom_decision_confirm: "Shromáždit všechny svobodné muže!"
  create_cossack_tribal_tooltip: "Všechny [Concept('nomadic_holdings','kočovné državy')|El] v [Concept('realm','panství')|El] se stanou [Concept('tribal_holdings','kmenovými državami')|El]"
@@ -1719,6 +1769,23 @@
  movement_order_tenet_popularity_tt: "[Concept('core_tenet','zásada')|EU] tvého nového řádu získá @tenet_popularity:4![Concept('tenet_popularity','rozšířenost zásady')|E]"
  monastic_tenet_pick_unformed_order_tt: "[tenet_pick.GetBaseName|U] se stane [Concept('core_tenet','zásadou')|E] řádu"
  pick_becomes_unformed_monastic_order_leader_tt: "[chosen_leader.GetShortUIName|U] se stane [Concept('ruler',Select_CString(chosen_leader.IsFemale,'vládkyní','vládcem'))|E] nového řádu"
+ debase_the_coinage_decision: "Znehodnotit mince" # todo: NEW TRANSLATION
+ debase_the_coinage_decision_desc: "Pokladnice je prázdná, naše dluhy nesplacené a čas je luxus, který si nemůžeme dovolit. Zbývá nám jediné: odebrat drahý kov z mincí panství a vyrazit další z úspor." # todo: NEW TRANSLATION
+ debase_the_coinage_decision_tooltip: "Znehodnotit měnu panství, abys [Select_CString(ROOT.Char.IsFemale,'splatila','splatil')] naléhavé dluhy, za cenu výrazného snížení [Concept('prosperity','rozkvět')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ debase_the_coinage_decision_confirm: "Ztenčit mince. Naplnit pokladnici." # todo: NEW TRANSLATION
+ debase_the_coinage_decision_county_custom: "Každé [Concept('county','hrabství')|E] v [THIS.Char.GetPrimaryTitle.GetName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ debase_the_coinage_decision_county_vassal_custom: "Každý [Concept('vassal','vazal')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ debase_coinage_ruler_modifier: "[Select_CString(ROOT.Char.IsFemale,'Znehodnotila','Znehodnotil')] mince" # todo: NEW TRANSLATION
+ debase_coinage_ruler_modifier_desc: "Tato postava ořezala své mince, aby odvrátila finanční katastrofu. Pokud však nelze věřit hmotnosti mince, nelze věřit ani tomu, kdo ji razil." # todo: NEW TRANSLATION
+ debase_coinage_county_modifier: "Znehodnocené mince" # todo: NEW TRANSLATION
+ debase_coinage_county_modifier_desc: "Mince jsou lehčí než dřív. Všichni to vědí a nikdo o tom nemluví, ale ceny mluví dost hlasitě." # todo: NEW TRANSLATION
+ visit_genizah_decision: "Prozkoumat genizu" # todo: NEW TRANSLATION
+ visit_genizah_decision_tooltip: "Prohledat [Glossary( 'genizah', 'genizah_GLOSS' )] místní [ROOT.Char.GetFaith.HouseOfWorship]" # todo: NEW TRANSLATION
+ visit_genizah_decision_desc: "V [ROOT.Char.GetFaith.HouseOfWorship] se nachází [Glossary( 'genizah', 'genizah_GLOSS' )], zaplněná dopisy a dokumenty, dávno zapomenutými i nedávno odloženými. Kdo ví, jaké poznatky se ukrývají mezi vším tím inkoustem?" # todo: NEW TRANSLATION
+ visit_genizah_decision_confirm: "Jaké poklady tu čekají?" # todo: NEW TRANSLATION
+ visit_genizah_tooltip_trade: "Můžeš ztratit [Concept('stress','stres')|E], získat [Concept('piety','zbožnost')|E], zlepšit své [Concept('skills','dovednosti')|E] nebo objevit poznatky o [Concept('trade','obchod')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ visit_genizah_tooltip: "Můžeš ztratit [Concept('stress','stres')|E], získat [Concept('piety','zbožnost')|E] nebo zlepšit své [Concept('skills','dovednosti')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ genizah_GLOSS: "#bold Geniza#! je skladovací místnost v synagoze, kam se ukládají vyřazené dokumenty obsahující Boží jméno, aby nedošlo k jeho znesvěcení zničením těchto dokumentů.\n\nBoží jméno se objevuje v nejrůznějších písemnostech, od soukromé korespondence po veřejná prohlášení. Geniza proto představuje pokladnici místní historie a informací." # todo: NEW TRANSLATION
  launch_undirected_great_holy_war_decision: "Vyhlásit [ROOT.Char.GetFaith.GHWName]"
  launch_undirected_great_holy_war_decision_desc: "Nevěřící drží zemi, která by měla náležet věřícím. Jako hlava víry musím svolat všechny spravedlivé bojovníky a dobýt království zpět. [ROOT.Char.GetFaith.HighGodName|U] — to je jméno, v němž budou bojovat."
  launch_undirected_great_holy_war_decision_tooltip: "Zahájíš [Concept('preparation_phase','přípravnou fázi')|E] [Concept('undirected_great_holy_war','nesměrované velké svaté války')|E] proti vybranému [Concept('kingdom','království')|E]"

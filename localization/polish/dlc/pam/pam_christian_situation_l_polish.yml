@@ -1,8 +1,8 @@
 ﻿l_polish:
- situation_the_christian_church: "$game_concept_the_christian_church$"
+ situation_the_christian_church: "Křesťanská církev" # todo: CONCEPT CASE
  situation_the_christian_church_desc: "$game_concept_the_christian_church_desc$"
  the_christian_church.tt.forbid_title_destruction: "Tento [Concept('title','titul')|E] nelze zničit, dokud trvá [GetSituation('the_christian_church').GetName]"
- the_christian_church_sub_region_core: "$game_concept_christendom$"
+ the_christian_church_sub_region_core: "Křesťanstvo" # todo: CONCEPT CASE
  the_christian_church_sub_region_core_desc: "$game_concept_christendom_desc$"
  the_christian_church_participant_group_christian_clerical_main_power_rulers: "Hlavní mocnost (duchovní)"
  the_christian_church_participant_group_christian_clerical_main_power_rulers_desc: "[Concept('ruler','Vládce')|EU] s [Concept('theocratic_government','teokratickou vládou')|E] nebo [Concept('ecclesiastical_government','církevní vládou')|E], jehož [Concept('title_tier','úroveň')|E] odpovídá alespoň [Concept('county','hrabství')|E] a který vyznává křesťanskou [Concept('faith','víru')|E], jež v současnosti ovládá nejvíce [Concept('counties','hrabství')|E] na světě."
@@ -38,6 +38,7 @@
  the_christian_church_investiture_crisis_situation_phase: "$investiture_crisis$"
  CHRISTIAN_CHURCH_INVESTITURE_TIME_REMAINING: "Příští koncil: [GetGameTimeDifferenceForDiffDays( Situation.MakeScope.VarRemaining('investiture_council_countdown') )]"
  CHRISTIAN_CHURCH_INVESTITURE_TIME_REMAINING_TT: "Čas zbývající do vyvrcholení a vyřešení fáze [GetSituationType('the_christian_church').GetPhaseType('investiture_crisis').GetName].\n\nJakmile odpočet skončí, sejde se investiturní koncil, aby projednal [Concept('doctrine','doktrínu')|E] jmenování duchovních [GetDoctrineType('doctrine_clerical_succession_conditional').GetBaseName] a podle výsledku hlasování ji nahradil buď doktrínou [GetDoctrineType('doctrine_clerical_succession_spiritual_fixed_appointment').GetBaseName], nebo doktrínou [GetDoctrineType('doctrine_clerical_succession_spiritual_appointment').GetBaseName]. Světští [Concept('rulers','vládci')|E] mohou donutit [Concept('clergy','duchovenstvo')|E] hlasovat opačně prostřednictvím [Concept('casus_belli','casus belli')|E] $PAM_INVESTITURE_CONFLICT_WAR_CB_NAME$ nebo získáním [Concept('puppets','loutek')|E]."
+ CHRISTIAN_CHURCH_INVESTITURE_AWAITING_COUNCIL: "#weak Čeká se na rozhodnutí rady#!" # todo: NEW TRANSLATION
  CHRISTIAN_CHURCH_INVESTITURE_VOTE_CHURCH_AHEAD: "#weak Církev má navrch#!"
  CHRISTIAN_CHURCH_INVESTITURE_VOTE_CROWN_AHEAD: "#weak Koruny mají navrch#!"
  CHRISTIAN_CHURCH_INVESTITURE_VOTE_BALANCED: "#weak Nadcházející hlasování je nerozhodné.#!"
@@ -114,7 +115,7 @@
  situation_parameter_the_christian_church_mass_rite_conversion_decision: "[Concept('great_project','Velký projekt')|EU] [GetGreatProjectType('pam_mass_rite_conversion').GetName] stojí #P méně#! a lze jej zaměřit i na organizované [Concept('faiths','víry')|E]"
  situation_parameter_the_christian_church_faster_county_control_task: "[Concept('councillor_task','Úkol rádce')|EU] #high $task_increase_control$#! postupuje o #P 25 %#! rychleji"
  pam_the_christian_church_faster_county_control_task_desc: "[GetSituation('the_christian_church').GetTopCurrentPhase.GetType.GetName|U] – [Concept('the_christian_church_chapter_short','kapitola')|E]"
- situation_parameter_the_christian_church_faster_cathedrals: "Doba výstavby budovy [GetBuilding('great_project_cathedral_01').GetName] je zkrácena o #P 15 %#!"
+ situation_parameter_the_christian_church_faster_cathedrals: "Doba výstavby budovy [GetBuildingType('great_project_cathedral_01').GetName] je zkrácena o #P 15 %#!" # todo: CHANGED (predtym: Doba výstavby budovy [GetBuilding('great_project_cathedral_01').GetName] je zkrácena o P 15 % !)
  situation_parameter_the_christian_church_better_take_the_vows_acceptance: "[Concept('characters','Postavy')|EU] ochotněji přijímají [Concept('character_interaction','interakci s postavou')|E] #high $take_vows_interaction$#!"
  pam_the_christian_church_better_take_the_vows_acceptance_desc: "[GetSituation('the_christian_church').GetTopCurrentPhase.GetType.GetName|U] – [Concept('the_christian_church_chapter_short','kapitola')|E]: $VALUE|=+0$"
  situation_parameter_the_christian_church_desire_more_cardinals: "[Concept('head_of_faith','Hlava víry')|EU] mnohem ochotněji využívá [Concept('character_interaction','interakci s postavou')|E] #high $appoint_cardinal_interaction$#!"
@@ -122,10 +123,12 @@
  situation_parameter_the_christian_church_mending_the_schism_active: "[Concept('emperors','Císaři')|EU] a výše postavení vládci nebo [Concept('clergy','duchovenstvo')|E] mohou přijmout [Concept('decision','rozhodnutí')|E] [GetDecisionWithKey('mend_the_great_schism_decision').GetName] nebo [GetDecisionWithKey('pam_mend_great_schism_decision').GetName]"
  situation_parameter_the_christian_church_seduction_scheme_bonus: "Vyšší šance na úspěch [Concept('schemes','intrik')|E] typu [GetScheme('seduce').GetTypeName|l]"
  situation_parameter_the_christian_church_increased_theocratic_heir_candidacy: "[Concept('character_interaction','Interakce s postavou')|EU] #high $increase_theocratic_heir_candidacy$#! přináší tvému teokratickému dědici o #P 25 %#! více bodů kandidatury"
- the_christian_church_christian_clerical_main_power_rulers: "$the_christian_church_participant_group_christian_clerical_main_power_rulers$"
- the_christian_church_christian_regular_main_power_rulers: "$the_christian_church_participant_group_christian_regular_main_power_rulers$"
- the_christian_church_christian_clerical_secondary_powers_rulers: "$the_christian_church_participant_group_christian_clerical_secondary_powers_rulers$"
- the_christian_church_christian_regular_secondary_powers_rulers: "$the_christian_church_participant_group_christian_regular_secondary_powers_rulers$"
+ the_christian_church_christian_clerical_main_power_rulers: "$PARTICIPANT_GROUP$" # todo: CHANGED (predtym: $the_christian_church_participant_group_christian_clerical_main_power_rulers$)
+ the_christian_church_christian_regular_main_power_rulers: "$PARTICIPANT_GROUP$" # todo: CHANGED (predtym: $the_christian_church_participant_group_christian_regular_main_power_rulers$)
+ the_christian_church_christian_clerical_secondary_powers_rulers: "$PARTICIPANT_GROUP$" # todo: CHANGED (predtym: $the_christian_church_participant_group_christian_clerical_secondary_powers_rulers$)
+ the_christian_church_christian_regular_secondary_powers_rulers: "$PARTICIPANT_GROUP$" # todo: CHANGED (predtym: $the_christian_church_participant_group_christian_regular_secondary_powers_rulers$)
+ the_christian_church_christian_clerical_heretic_rulers: "$PARTICIPANT_GROUP$" # todo: NEW TRANSLATION
+ the_christian_church_christian_regular_heretic_rulers: "$PARTICIPANT_GROUP$" # todo: NEW TRANSLATION
  pam_christian_church_instability_tt: "[Concept('the_christian_church','Křesťanská církev')|EU] prochází [Concept('the_christian_church_unstable','kapitolou nestability')|E]"
  pam_christian_church_zeal_tt: "[Concept('the_christian_church','Křesťanská církev')|EU] prochází [Concept('the_christian_church_zeal','kapitolou horlivosti')|E]"
  pam_christian_church_stability_tt: "[Concept('the_christian_church','Křesťanská církev')|EU] prochází fází [GetSituationType('the_christian_church').GetPhaseType('concord').GetName], [GetSituationType('the_christian_church').GetPhaseType('crusade_phase').GetName] nebo [GetSituationType('the_christian_church').GetPhaseType('conversion_phase').GetName]" # todo: CHANGED (predtym: [Concept('the_christian_church','Křesťanská církev')|EU] prochází [Concept('the_christian_church_stability','kapitolou s)

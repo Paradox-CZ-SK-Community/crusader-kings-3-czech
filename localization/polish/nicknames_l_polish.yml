@@ -59,7 +59,7 @@
  nick_the_conqueror: "[Select_CString( CHARACTER.IsFemale, 'Dobyvatelka', 'Dobyvatel' )]"
  nick_the_conqueror_desc: "Jaký mocnější čin lze zapsat do análů než podmanění #EMP celého#! panství? [Select_CString( CHARACTER.IsLocalPlayer, 'rozhodně nedovolíš', Concatenate( CHARACTER.GetShortUINameNoTooltipNoFormat, ' rozhodně nedovolí' ) )|U], aby lidé na tento úspěch zapomněli."
  nick_the_cruel: "[Select_CString( CHARACTER.IsFemale, 'Krutá', 'Krutý' )]"
- nick_the_cruel_desc: "[Select_CString( CHARACTER.IsLocalPlayer, 'namlouváš si', Concatenate( CHARACTER.GetShortUINameNoTooltipNoFormat, ' si namlouvá' ) )|U] [Select_CString( CHARACTER.IsFemale, 'ráda', 'rád' )], že [Select_CString( CHARACTER.IsLocalPlayer, 'máš', 'má' )] vlastně docela slunnou povahu. Lidé jen nechápou [Select_CString( CHARACTER.IsLocalPlayer, 'tvůj', Select_CString( CHARACTER.IsFemale, 'její', 'jeho' ) )] smysl pro #EMP humor#!."
+ nick_the_cruel_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] si libuje[_s(CHARACTER)] v představě, že [CharYouSheHe(CHARACTER)] [CharHaveHas(CHARACTER)] vlastně docela slunnou povahu. Lidé jen nechápou [CharYourHerHis(CHARACTER)] smysl pro #EMP humor#!." # todo: CHANGED (predtym: [Select_CString( CHARACTER.IsLocalPlayer, 'namlouváš si', Concatenate( CHARACTER.GetShortUINameNoTooltipNoFormat, ' si n)
  nick_the_child_of_devilgod: "[Select_CString( CHARACTER.IsFemale, 'Zplozenkyně', 'Zplozenec' )] [CHARACTER.GetFaith.DevilName|U]"
  nick_the_child_of_devilgod_desc: "Zlé jazyky tvrdí, že [Select_CString( CHARACTER.IsLocalPlayer, 'jsi', Concatenate( CHARACTER.GetShortUINameNoTooltipNoFormat, ' je' ) )] nepodařeným potomkem [CHARACTER.GetFaith.DevilName|U]. Alespoň dokud jim[Select_CString( CHARACTER.IsLocalPlayer, '', Concatenate( ' ', CHARACTER.GetShortUINameNoTooltipNoFormat ) )] ty jazyky nevytrhne[Select_CString( CHARACTER.IsLocalPlayer, 'š', '' )]."
  nick_the_crusader: "[Select_CString( CHARACTER.IsFemale, 'Křižačka', 'Křižák' )]"
@@ -408,7 +408,7 @@
  nick_the_glass: "[Select_CString( CHARACTER.IsFemale, 'Skleněná žena', 'Skleněný muž' )]"
  nick_the_glass_desc: "[Select_CString( CHARACTER.IsLocalPlayer, 'Tvá posedlost', Concatenate( 'Posedlost ', CHARACTER.Custom('CZ_ShortUINameNoTooltipNoFormat_G') ) )] stavbou podivných skleněných přístřešků je stejně často probíraná jako nepochopitelná."
  nick_the_trojan: "[Select_CString( CHARACTER.IsFemale, 'Trójanka', 'Trójan' )]"
- nick_the_trojan_desc: "[CZProDropSeNF(CHARACTER,'vyrovnala','vyrovnal')|U] činům dávného Corinea a [Select_CString( CHARACTER.IsFemale, 'obnovila', 'obnovil' )] pravého dědice Tróje, Dumnonii."
+ nick_the_trojan_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] činí totéž co dávný Corineus: oživuje pravého dědice Tróje — Dumnonii." # todo: CHANGED (predtym: [CZProDropSeNF(CHARACTER,'vyrovnala','vyrovnal')|U] činům dávného Corinea a [Select_CString( CHARACTER.IsFemale, 'obnovi)
  nick_the_butcher: "[Select_CString( CHARACTER.IsFemale, 'Řeznice', 'Řezník' )]"
  nick_the_butcher_desc: "Maso jako maso. Nakonec všechno přestane křičet."
  nick_the_fishy: "Rybí"
@@ -454,7 +454,7 @@
  nick_hand: "Nešťastná ruka"
  nick_hand_desc: "[Select_CString( CHARACTER.IsLocalPlayer, 'Tvůj nedostatek štěstí a sklon', Concatenate( 'Nedostatek štěstí a sklon ', CHARACTER.Custom('CZ_ShortUINameNoTooltipNoFormat_G') ) )] k rozhodnutím, která se později ukážou jako katastrofální, již občas neušly pozornosti."
  nick_bloody: "[Select_CString( CHARACTER.IsFemale, 'Krvavá', 'Krvavý' )]"
- nick_bloody_desc: "Není neobvyklé, aby šlechtic za svůj život zabil několik nepřátel. Někteří se však s obavami ptají, kolik jich [Select_CString( CHARACTER.IsLocalPlayer, 'jsi ', '' )][Select_CString( CHARACTER.IsFemale, 'musela', 'musel' )] #EMP zabít[Select_CString( CHARACTER.IsLocalPlayer, '', Concatenate( ' ', CHARACTER.GetShortUINameNoTooltipNoFormat ) )]#!, když [Select_CString( CHARACTER.IsLocalPlayer, 'tě', Select_CString( CHARACTER.IsFemale, 'ji', 'ho' ) )] proslavilo právě to."
+ nick_bloody_desc: "Není neobvyklé, aby šlechtic za svůj život [Select_CString(ROOT.Char.IsFemale,'zabila','zabil')] několik nepřátel. Někteří se však s obavami ptají, kolik jich [Select_CString( CHARACTER.IsLocalPlayer, 'jsi ', '' )][Select_CString( CHARACTER.IsFemale, 'musela', 'musel' )] #EMP zabít[Select_CString( CHARACTER.IsLocalPlayer, '', Concatenate( ' ', CHARACTER.GetShortUINameNoTooltipNoFormat ) )]#!, když [Select_CString( CHARACTER.IsLocalPlayer, 'tě', Select_CString( CHARACTER.IsFemale, 'ji', 'ho' ) )] proslavilo právě to."
  nick_the_oathbreaker: "[Select_CString( CHARACTER.IsFemale, 'Křivopřísežnice', 'Křivopřísežník' )]"
  nick_the_oathbreaker_desc: "Člověk má takovou cenu jako jeho slovo."
  nick_little: "[Select_CString( CHARACTER.IsFemale, 'Malá', 'Malý' )]"
@@ -696,7 +696,7 @@
  nick_the_green: "[Select_CString( CHARACTER.IsFemale, 'Zelená', 'Zelený' )]"
  nick_the_green_desc: "[Select_CString( CHARACTER.IsLocalPlayer, 'jsi', Concatenate( CHARACTER.GetShortUINameNoTooltipNoFormat, ' je' ) )|U] [Select_CString( CHARACTER.IsFemale, 'považována', 'považován' )] za velmi obratného zahradníka."
  nick_saltfish: "Solená ryba"
- nick_saltfish_desc: "[Select_CString( CHARACTER.IsLocalPlayer, Select_CString( CHARACTER.IsFemale, 'osvojila sis', 'osvojil sis' ), Concatenate( CHARACTER.GetShortUINameNoTooltipNoFormat, Select_CString( CHARACTER.IsFemale, ' si osvojila', ' si osvojil' ) ) )|U] pohodlný a spokojený způsob života, ale kdo ví, co bude dál?"
+ nick_saltfish_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat] [CharHaveHas(CHARACTER)] pohodlný a spokojený životní styl, ale kdo ví, co bude dál?" # todo: CHANGED (predtym: [Select_CString( CHARACTER.IsLocalPlayer, Select_CString( CHARACTER.IsFemale, 'osvojila sis', 'osvojil sis' ), Concatena)
  nick_king_of_fashion: "[CHARACTER.GetTitleAsNameNoTooltip] módy"
  nick_king_of_fashion_desc: "Ve světě hedvábí a soboliny [Select_CString( CHARACTER.IsLocalPlayer, 'sis', Concatenate( 'si ', CHARACTER.GetShortUINameNoTooltipNoFormat ) )] [Select_CString( CHARACTER.IsFemale, 'vydobyla', 'vydobyl' )] moc a vliv."
  nick_prince_of_fashion: "[CHARACTER.Custom('GetPrincessPrince')] módy"
@@ -945,9 +945,9 @@
  nick_do_nothing: "[Select_CString( CHARACTER.IsFemale, 'Budižkničemka', 'Budižkničemu' )]"
  nick_do_nothing_desc: "[Select_CString( CHARACTER.IsLocalPlayer, 'jsi', Concatenate( CHARACTER.GetShortUINameNoTooltipNoFormat, ' je' ) )|U] [Select_CString( CHARACTER.IsFemale, 'známá', 'známý' )] leností, nečinností a nedostatkem ctižádosti."
  nick_the_indolent: "[Select_CString( CHARACTER.IsFemale, 'Zahálčivá', 'Zahálčivý' )]"
- nick_the_indolent_desc: "[Select_CString( CHARACTER.IsLocalPlayer, 'jsi', Concatenate( CHARACTER.GetShortUINameNoTooltipNoFormat, ' je' ) )|U] [Select_CString( CHARACTER.IsFemale, 'známá', 'známý' )] svou umíněnou zahálčivostí."
+ nick_the_indolent_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] [CharAreIs(CHARACTER)] zosobněním umíněné zahálčivosti." # todo: CHANGED (predtym: [Select_CString( CHARACTER.IsLocalPlayer, 'jsi', Concatenate( CHARACTER.GetShortUINameNoTooltipNoFormat, ' je' ) )|U] [S)
  nick_the_sluggard: "[Select_CString( CHARACTER.IsFemale, 'Lenoška', 'Lenoch' )]"
- nick_the_sluggard_desc: "[Select_CString( CHARACTER.IsLocalPlayer, 'dáváš si', Concatenate( CHARACTER.GetShortUINameNoTooltipNoFormat, ' si dává' ) )|U] načas naprosto se #EMP vším#!..."
+ nick_the_sluggard_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] věnuje[_s(CHARACTER)] [CharYourHerHis( CHARACTER )] čas naprosto #EMP všemu#!..." # todo: CHANGED (predtym: [Select_CString( CHARACTER.IsLocalPlayer, 'dáváš si', Concatenate( CHARACTER.GetShortUINameNoTooltipNoFormat, ' si dává')
  nick_the_idle: "[Select_CString( CHARACTER.IsFemale, 'Nečinná', 'Nečinný' )]"
  nick_the_idle_desc: "[Select_CString( CHARACTER.IsLocalPlayer, 'jsi', Concatenate( CHARACTER.GetShortUINameNoTooltipNoFormat, ' je' ) )|U] [Select_CString( CHARACTER.IsFemale, 'známá', 'známý' )] tím, že... nedělá[Select_CString( CHARACTER.IsLocalPlayer, 'š', '' )] nic."
  nick_the_short: "[Select_CString( CHARACTER.IsFemale, 'Krátká', 'Krátký' )]"
@@ -1173,31 +1173,31 @@
  nick_shibl_al_dawla: "Šibl ad-Dawla"
  nick_shibl_al_dawla_desc: "[Select_CString( CHARACTER.IsLocalPlayer, 'neseš', Concatenate( CHARACTER.GetShortUINameNoTooltipNoFormat, ' nese' ) )|U] čestné jméno Šibl ad-Dawla, tedy Lvíče státu."
  nick_muizz_al_dawla: "Muizz ad-Dawla"
- nick_muizz_al_dawla_desc: "[Select_CString( CHARACTER.IsLocalPlayer, 'neseš', Concatenate( CHARACTER.GetShortUINameNoTooltipNoFormat, ' nese' ) )|U] čestné jméno Muizz ad-Dawla, tedy Oslavitel státu."
+ nick_muizz_al_dawla_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] nosí čestné jméno Muizz ad-Dawla, tedy Oslavitel státu." # todo: CHANGED (predtym: [Select_CString( CHARACTER.IsLocalPlayer, 'neseš', Concatenate( CHARACTER.GetShortUINameNoTooltipNoFormat, ' nese' ) )|U)
  nick_muayyid_al_din: "Muajjid ad-Dín"
- nick_muayyid_al_din_desc: "[Select_CString( CHARACTER.IsLocalPlayer, 'neseš', Concatenate( CHARACTER.GetShortUINameNoTooltipNoFormat, ' nese' ) )|U] čestné jméno Muajjid ad-Dín, tedy Opora víry."
+ nick_muayyid_al_din_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] nosí čestné jméno Muajjid ad-Dín, tedy Opora víry." # todo: CHANGED (predtym: [Select_CString( CHARACTER.IsLocalPlayer, 'neseš', Concatenate( CHARACTER.GetShortUINameNoTooltipNoFormat, ' nese' ) )|U)
  nick_imad_al_dawla: "Imád ad-Dawla"
  nick_imad_al_dawla_desc: "[Select_CString( CHARACTER.IsLocalPlayer, 'neseš', Concatenate( CHARACTER.GetShortUINameNoTooltipNoFormat, ' nese' ) )|U] čestné jméno Imád ad-Dawla, tedy Pilíř státu."
  nick_alam_al_din: "Alam ad-Dín"
- nick_alam_al_din_desc: "[Select_CString( CHARACTER.IsLocalPlayer, 'neseš', Concatenate( CHARACTER.GetShortUINameNoTooltipNoFormat, ' nese' ) )|U] čestné jméno Alam ad-Dín, tedy Korouhev víry."
+ nick_alam_al_din_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] nosí čestné jméno Alam ad-Dín, tedy Korouhev víry." # todo: CHANGED (predtym: [Select_CString( CHARACTER.IsLocalPlayer, 'neseš', Concatenate( CHARACTER.GetShortUINameNoTooltipNoFormat, ' nese' ) )|U)
  nick_nizam_al_dawla: "Nizám ad-Dawla"
  nick_nizam_al_dawla_desc: "[Select_CString( CHARACTER.IsLocalPlayer, 'neseš', Concatenate( CHARACTER.GetShortUINameNoTooltipNoFormat, ' nese' ) )|U] čestné jméno Nizám ad-Dawla, tedy Řád státu."
  nick_yumm_al_din: "Jumm ad-Dín"
  nick_yumm_al_din_desc: "[Select_CString( CHARACTER.IsLocalPlayer, 'neseš', Concatenate( CHARACTER.GetShortUINameNoTooltipNoFormat, ' nese' ) )|U] čestné jméno Jumm ad-Dín, tedy Den víry."
  nick_adud_al_dawla: "Adud ad-Dawla"
- nick_adud_al_dawla_desc: "[Select_CString( CHARACTER.IsLocalPlayer, 'neseš', Concatenate( CHARACTER.GetShortUINameNoTooltipNoFormat, ' nese' ) )|U] čestné jméno Adud ad-Dawla, tedy Paže státu."
+ nick_adud_al_dawla_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] nosí čestné jméno Adud ad-Dawla, tedy Paže státu." # todo: CHANGED (predtym: [Select_CString( CHARACTER.IsLocalPlayer, 'neseš', Concatenate( CHARACTER.GetShortUINameNoTooltipNoFormat, ' nese' ) )|U)
  nick_samsam_al_dawla: "Samsám ad-Dawla"
  nick_samsam_al_dawla_desc: "[Select_CString( CHARACTER.IsLocalPlayer, 'neseš', Concatenate( CHARACTER.GetShortUINameNoTooltipNoFormat, ' nese' ) )|U] čestné jméno Samsám ad-Dawla, tedy Meč státu."
  nick_sharaf_al_dawla: "Šaraf ad-Dawla"
  nick_sharaf_al_dawla_desc: "[Select_CString( CHARACTER.IsLocalPlayer, 'neseš', Concatenate( CHARACTER.GetShortUINameNoTooltipNoFormat, ' nese' ) )|U] čestné jméno Šaraf ad-Dawla, tedy Čest státu."
  nick_baha_al_dawla: "Bahá ad-Dawla"
- nick_baha_al_dawla_desc: "[Select_CString( CHARACTER.IsLocalPlayer, 'neseš', Concatenate( CHARACTER.GetShortUINameNoTooltipNoFormat, ' nese' ) )|U] čestné jméno Bahá ad-Dawla, tedy Lesk státu."
+ nick_baha_al_dawla_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] nosí čestné jméno Bahá ad-Dawla, tedy Lesk státu." # todo: CHANGED (predtym: [Select_CString( CHARACTER.IsLocalPlayer, 'neseš', Concatenate( CHARACTER.GetShortUINameNoTooltipNoFormat, ' nese' ) )|U)
  nick_sultan_al_dawla: "Sultán ad-Dawla"
  nick_sultan_al_dawla_desc: "[Select_CString( CHARACTER.IsLocalPlayer, 'neseš', Concatenate( CHARACTER.GetShortUINameNoTooltipNoFormat, ' nese' ) )|U] čestné jméno Sultán ad-Dawla, tedy Sultán státu."
  nick_musharraf_al_dawla: "Mušarraf ad-Dawla"
  nick_musharraf_al_dawla_desc: "[Select_CString( CHARACTER.IsLocalPlayer, 'neseš', Concatenate( CHARACTER.GetShortUINameNoTooltipNoFormat, ' nese' ) )|U] čestné jméno Mušarraf ad-Dawla, tedy Povznesený státem."
  nick_ala_al_dawla: "Alá ad-Dawla"
- nick_ala_al_dawla_desc: "[Select_CString( CHARACTER.IsLocalPlayer, 'neseš', Concatenate( CHARACTER.GetShortUINameNoTooltipNoFormat, ' nese' ) )|U] čestné jméno Alá ad-Dawla, tedy Vznešenost státu."
+ nick_ala_al_dawla_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] nosí čestné jméno Alá ad-Dawla, tedy Vznešenost státu." # todo: CHANGED (predtym: [Select_CString( CHARACTER.IsLocalPlayer, 'neseš', Concatenate( CHARACTER.GetShortUINameNoTooltipNoFormat, ' nese' ) )|U)
  nick_nizam_al_din: "Nizám ad-Dín"
  nick_nizam_al_din_desc: "[Select_CString( CHARACTER.IsLocalPlayer, 'neseš', Concatenate( CHARACTER.GetShortUINameNoTooltipNoFormat, ' nese' ) )|U] čestné jméno Nizám ad-Dín, tedy Řád víry."
  nick_mubaraz_al_din: "Mubáraz ad-Dín"
@@ -1223,9 +1223,9 @@
  nick_wolf_mother: "Matka vlků"
  nick_wolf_mother_desc: "$nick_wolf_father_desc$"
  nick_old_man_of_the_mountain: "Stařec z hor"
- nick_old_man_of_the_mountain_desc: "S dlouhým bílým vousem a křivou holí nahání[Select_CString( CHARACTER.IsLocalPlayer, 'š', '' )][Select_CString( CHARACTER.IsLocalPlayer, '', Concatenate( ' ', CHARACTER.GetShortUINameNoTooltipNoFormat ) )] nevěřícím strach jako organizátor a vůdce obávaných asasínů ze své horské pevnosti."
+ nick_old_man_of_the_mountain_desc: "S dlouhým bílým vousem a křivou holí [CHARACTER.GetShortUINameNoTooltipNoFormat] [CharAreIs(CHARACTER)] postrachem nevěřících díky organizaci a vedení obávaných asasínů ze [CharYourHerHis( CHARACTER )] horské pevnosti." # todo: CHANGED (predtym: S dlouhým bílým vousem a křivou holí nahání[Select_CString( CHARACTER.IsLocalPlayer, 'š', '' )][Select_CString( CHARACTE)
  nick_barbarossa: "Barbarossa"
- nick_barbarossa_desc: "Na pochybnou počest kdysi rudého porostu zdobícího [Select_CString( CHARACTER.IsLocalPlayer, 'tvou', Select_CString( CHARACTER.IsFemale, 'její', 'jeho' ) )] bradu [Select_CString( CHARACTER.IsLocalPlayer, 'ti udělili italští nepřátelé', Concatenate( 'udělili italští nepřátelé ', CHARACTER.Custom('CZ_ShortUINameNoTooltipNoFormat_D') ) )] přízvisko #italic Barbarossa#! neboli Rudovous."
+ nick_barbarossa_desc: "Na pochybnou počest kdysi rudého porostu zdobícího [CharYourHerHis( CHARACTER )] bradu [CHARACTER.GetShortUINameNoTooltipNoFormat] [CharWereWas(CHARACTER)] od [CharYourHerHis( CHARACTER )] italských nepřátel poctěn přízviskem #italic Barbarossa#! neboli Rudovous." # todo: CHANGED (predtym: Na pochybnou počest kdysi rudého porostu zdobícího [Select_CString( CHARACTER.IsLocalPlayer, 'tvou', Select_CString( CHA)
  nick_danishmend: "Danišmend"
  nick_danishmend_desc: "[Select_CString( CHARACTER.IsLocalPlayer, 'Tvé hluboké vědomosti', 'Hluboké vědomosti' )][Select_CString( CHARACTER.IsLocalPlayer, '', Concatenate( ' ', CHARACTER.GetShortUINamePossessiveNoTooltipNoFormat ) )] jsou všeobecně známé a těší se úctě mnoha lidí."
  nick_protosebastos: "Protosebastos"
@@ -1243,13 +1243,13 @@
  nick_the_pirate_queen: "Pirátská královna"
  nick_the_pirate_queen_desc: "[Select_CString( CHARACTER.IsLocalPlayer, 'jsi', Concatenate( CHARACTER.GetShortUINameNoTooltipNoFormat, ' je' ) )|U] postrachem moří a zasévá[Select_CString( CHARACTER.IsLocalPlayer, 'š', '' )] strach do srdcí všech, kdo se odváží vyplout."
  nick_the_rhymer: "[Select_CString( CHARACTER.IsFemale, 'Rýmotepkyně', 'Rýmotepec' )]"
- nick_the_rhymer_desc: "[Select_CString( CHARACTER.IsLocalPlayer, 'vládneš', Concatenate( CHARACTER.GetShortUINameNoTooltipNoFormat, ' vládne' ) )|U] aliterací i souzvučnými dvojveršími a druhové obdivují obratnost, s níž zachází[Select_CString( CHARACTER.IsLocalPlayer, 'š', '' )] s verši."
+ nick_the_rhymer_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat] [CharAreIs(CHARACTER)] mezi [CharYourHerHis( CHARACTER )] vrstevníky vzorem obratného užívání aliterací, souzvučných dvojverší i veršů." # todo: CHANGED (predtym: [Select_CString( CHARACTER.IsLocalPlayer, 'vládneš', Concatenate( CHARACTER.GetShortUINameNoTooltipNoFormat, ' vládne' ))
  nick_the_elegist: "[Select_CString( CHARACTER.IsFemale, 'Elegička', 'Elegik' )]"
  nick_the_elegist_desc: "Truchlivé a melancholické verše, jimiž [CZProDropSubNF(CHARACTER)] [Select_CString( CHARACTER.IsFemale, 'proslula', 'proslul' )], vhánějí slzy do očí i těm nejzatvrzelejším posluchačům."
  nick_the_poetaster: "[Select_CString( CHARACTER.IsFemale, 'Veršotepkyně', 'Veršotepec' )]"
  nick_the_poetaster_desc: "[Select_CString( CHARACTER.IsLocalPlayer, 'Tvá poezie', Concatenate( 'Poezie ', CHARACTER.GetShortUINamePossessiveNoTooltipNoFormat ) )] je proslulá, patrně však nikoli z důvodu, který by [Select_CString( CHARACTER.IsLocalPlayer, 'sis', 'si' )] [Select_CString( CHARACTER.IsFemale, 'přála', 'přál' )]."
  nick_the_elysian_muse: "Elysejská múza"
- nick_the_elysian_muse_desc: "[CZProDropNF(CHARACTER,'proslula','proslul')|U] v této i mnoha dalších zemích nadpozemskou schopností tvořit velkolepé verše a dokonale ovládá[Select_CString( CHARACTER.IsLocalPlayer, 'š', '' )] mluvené slovo ve všech jeho podobách."
+ nick_the_elysian_muse_desc: "Proslulý v této i mnoha dalších zemích [CharYourHerHis( CHARACTER )] nadpozemskou schopností tvořit velkolepé verše, [CHARACTER.GetShortUINameNoTooltipNoFormat] dokonale ovládá mluvené slovo ve všech jeho podobách." # todo: CHANGED (predtym: [CZProDropNF(CHARACTER,'proslula','proslul')|U] v této i mnoha dalších zemích nadpozemskou schopností tvořit velkolepé v)
  nick_iscariot: "[Select_CString( CHARACTER.IsFemale, 'Iškariotská', 'Iškariotský' )]"
  nick_iscariot_desc: "[Select_CString( CHARACTER.IsLocalPlayer, 'jsi', Concatenate( CHARACTER.GetShortUINameNoTooltipNoFormat, ' je' ) )|U] [Select_CString( CHARACTER.IsFemale, 'známá', 'známý' )] tím, že [Select_CString( CHARACTER.IsLocalPlayer, 'jsi ', '' )]pro vlastní prospěch [Select_CString( CHARACTER.IsFemale, 'zradila', 'zradil' )] nejpevnější a nejdražší zásady svého srdce."
  nick_the_foreign_mother: "z [CHARACTER.GetMother.GetCulture.GetNameNoTooltip] kultury"
@@ -1313,11 +1313,15 @@
  nick_tenjin: "Tendžin"
  nick_tenjin_desc: "Věří se, že [Select_CString( CHARACTER.IsLocalPlayer, 'ses', Concatenate( 'se ', CHARACTER.GetShortUINameNoTooltipNoFormat ) )] po nespravedlivém zacházení [Select_CString( CHARACTER.IsFemale, 'stala', 'stal' )] pomstychtivým duchem a nyní [Select_CString( CHARACTER.IsLocalPlayer, 'jsi', 'je' )] [Select_CString( CHARACTER.IsFemale, 'uctívána', 'uctíván' )] jako nebeská bytost."
  nick_ushiwakamaru: "Ušiwakamaru"
- nick_ushiwakamaru_desc: "[Select_CString( CHARACTER.IsLocalPlayer, 'jsi', Concatenate( CHARACTER.GetShortUINameNoTooltipNoFormat, ' je' ) )|U] [Select_CString( CHARACTER.IsFemale, 'známá', 'známý' )] silou a houževnatostí mladého býka a lidé v okolí se [Select_CString( CHARACTER.IsLocalPlayer, 'tě', CHARACTER.Custom('CZ_ShortUINameNoTooltipNoFormat_G') )] obávají."
+ nick_ushiwakamaru_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] vyniká silou a houževnatostí mladého býka a lidé v okolí [CharYourHerHim(CHARACTER)] se ho obávají." # todo: CHANGED (predtym: [Select_CString( CHARACTER.IsLocalPlayer, 'jsi', Concatenate( CHARACTER.GetShortUINameNoTooltipNoFormat, ' je' ) )|U] [S)
  nick_ho_seung: "Hosung"
  nick_ho_seung_desc: "[Select_CString( CHARACTER.IsLocalPlayer, 'jsi', Concatenate( CHARACTER.GetShortUINameNoTooltipNoFormat, ' je' ) )|U] [Select_CString( CHARACTER.IsFemale, 'opředena', 'opředen' )] legendou o tygrovi, který zahynul po pádu do jámy, znovuzrodil se jako člověk a stal se mnichem. Podle této legendy není oním mnichem nikdo jiný než [Select_CString( CHARACTER.IsLocalPlayer, 'ty', CHARACTER.GetShortUINameNoTooltipNoFormat )]."
+ nick_zenji: "Zenji" # todo: NEW TRANSLATION
+ nick_zenji_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] [CharAreIs(CHARACTER)] uznáván jako zručný praktik [Select_CString(CHARACTER.IsFemale,'jejího','jeho')] esoterického řemesla." # todo: NEW TRANSLATION
  nick_the_virgin: "Panna"
  nick_the_virgin_desc: "[CZProDropNF(CHARACTER,'byla','byl')|U] matkou Ježíše Krista a Královnou nebes. $pam_luke_1_42_default_short$"
+ nick_profession: "[CHARACTER.Custom('CraftsmanDescOption')]" # todo: NEW TRANSLATION
+ nick_profession_desc: "Mistr řemesla [CHARACTER.Custom('CraftsmanDescOption')]." # todo: NEW TRANSLATION
  nick_the_angelic: "Andělský"
  nick_the_angelic_desc: "[Select_CString( CHARACTER.IsLocalPlayer, 'jsi', Concatenate( CHARACTER.GetShortUINameNoTooltipNoFormat, ' je' ) )|U] [Select_CString( CHARACTER.IsFemale, 'zahalena', 'zahalen' )] do skutečně mystické, nadpozemské svatosti."
  nick_blotsven: "Blót-Sven"
@@ -1336,3 +1340,25 @@
  nick_the_harvester_desc: "[Select_CString( CHARACTER.IsLocalPlayer, 'jsi', Concatenate( CHARACTER.GetShortUINameNoTooltipNoFormat, ' je' ) )|U] [Select_CString( CHARACTER.IsFemale, 'obdivována', 'obdivován' )] za bohatou úrodu, kterou [Select_CString( CHARACTER.IsLocalPlayer, 'jsi ', '' )][Select_CString( CHARACTER.IsFemale, 'nashromáždila', 'nashromáždil' )] ve svém náručí a [Select_CString( CHARACTER.IsFemale, 'rozdělila', 'rozdělil' )] se o ni s lidmi."
  nick_the_scribe: "Písař"
  nick_the_scribe_desc: "[Select_CString( CHARACTER.IsLocalPlayer, 'vlastní rukou jsi', Concatenate( CHARACTER.GetShortUINameNoTooltipNoFormat, ' vlastní rukou' ) )|U] [Select_CString( CHARACTER.IsFemale, 'opisovala, překládala a zapisovala', 'opisoval, překládal a zapisoval' )] moudrosti, které jsou ctěny po celé zemi."
+ nick_the_rapacious: "Dravý" # todo: NEW TRANSLATION
+ nick_the_rapacious_desc: "Ohavné a nemilosrdné vedení války [CHARACTER.GetShortUINamePossessiveNoTooltipNoFormat] z [CHARACTER.GetHerHim] učinilo metlu lidu." # todo: NEW TRANSLATION
+ nick_heir_of_lothair: "Dědic Lothaira" # todo: NEW TRANSLATION
+ nick_heir_of_lothair_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] [CharHaveHas(CHARACTER)] znovu sjednotil rozdrobenou střední říši [GetScriptedCharacterByHistoryID('30227').GetShortUIName|U], od Fríska po Itálii, a přihlásil se k odkazu velkého Karlovského království, jehož jméno nedokázal udržet." # todo: NEW TRANSLATION
+ nick_negus_nagast: "Negus Nagast" # todo: NEW TRANSLATION
+ nick_negus_nagast_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] [CharHaveHas(CHARACTER)] obnovil starověkou říši Aksúm, ovládl obě pobřeží Rudého moře a navrátil titul krále králů etiopským vysočinám." # todo: NEW TRANSLATION
+ nick_the_caravaneer: "Karavaník" # todo: NEW TRANSLATION
+ nick_the_caravaneer_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] [CharHaveHas(CHARACTER)] procestoval nespočet krajů a nakupoval i prodával zboží ze vzdálených zemí." # todo: NEW TRANSLATION
+ nick_the_artisan: "Umělec" # todo: NEW TRANSLATION
+ nick_the_artisan_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] [CharHaveHas(CHARACTER)] bezkonkurenční pověst díky objednávání, oceňování a prodeji pozoruhodných a krásných předmětů." # todo: NEW TRANSLATION
+ nick_the_lender: "Věřitel" # todo: NEW TRANSLATION
+ nick_the_lender_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U] [CharHaveHas(CHARACTER)] prsty v obchodech po celém kraji a prodává i získává přízeň bohatých a mocných." # todo: NEW TRANSLATION
+ nick_amator_maris: "Amator Maris" # todo: NEW TRANSLATION
+ nick_amator_maris_desc: "Milovník moře. [CHARACTER.GetShortUINameNoTooltipNoFormat|U] si před celou republikou vzal za ženu vlny a tento slib dodržuje při každém dalším přeplutí." # todo: NEW TRANSLATION
+ nick_fubo_jiangjun: "Generál, který utišil vlny" # todo: NEW TRANSLATION
+ nick_fubo_jiangjun_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat] strávil celý život bojem ve válečných taženích napříč zemí a opakovaně dosahoval mimořádných výsledků. Byl jmenován #EMP Fu-po ťiang-ťün#! – generálem, který utišil vlny, a svět jej proto znal jako [Character.GetDynasty.GetBaseNameNoTooltip] Fu-po." # todo: NEW TRANSLATION
+ nick_mingde_huanghou: "Císařovna Ming-te" # todo: NEW TRANSLATION
+ nick_mingde_huanghou_desc: "Jako císařovna císaře Minga [CharYouSheHe(CHARACTER)] [CharWereWas(CHARACTER)] věrná, pokorná a ctnostná, a proto [CharWereWas(CHARACTER)] jí byl posmrtně udělen titul #EMP císařovna Ming-te#! – ctnostná císařovna císaře Minga." # todo: NEW TRANSLATION
+ nick_guanxi_kongzi: "Konfucius z Kuan-si" # todo: NEW TRANSLATION
+ nick_guanxi_kongzi_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat] dokonale ovládal konfuciánské klasiky, měl široké znalosti a důkladně zkoumal všechna témata. Učení muži své doby mu říkali #EMP Konfucius z Kuan-si#!." # todo: NEW TRANSLATION
+ nick_taiyangzi: "Tchaj-jang-c'" # todo: NEW TRANSLATION
+ nick_taiyangzi_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat] dosáhl úspěchu v taoistickém kultivačním cvičení a přijal jméno $nick_taiyangzi$." # todo: NEW TRANSLATION

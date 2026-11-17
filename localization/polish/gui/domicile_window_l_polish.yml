@@ -38,7 +38,7 @@
  DOMICILE_WINDOW_BOOKMARK_OVERVIEW_RESOURCES: "Zdroje"
  DOMICILE_WINDOW_BOOKMARK_OVERVIEW_BUILDINGS_LIST: "Současné budovy"
  DOMICILE_WINDOW_BOOKMARK_PATRONS_TT: "#T $DOMICILE_WINDOW_BOOKMARK_PATRONS_TITLE$#!\n#I Kliknutím zobrazíš $game_concept_contact_list_contacts$ [DomicileWindow.GetCharacter.Custom('CZ_ShortUINameNoTooltip_G')]#!"
- DOMICILE_WINDOW_BOOKMARK_PATRONS_TITLE: "$game_concept_contact_list$"
+ DOMICILE_WINDOW_BOOKMARK_PATRONS_TITLE: "Seznam patronů" # todo: CONCEPT CASE
  DOMICILE_WINDOW_BOOKMARK_PATRONS_INFO: "Místní [Concept('contact_list_contacts','patroni')|E]"
  DOMICILE_WINDOW_BOOKMARK_PATRONS_FAR_AWAY: "Vzdálení [Concept('contact_list_contacts','patroni')|E]"
  DOMICILE_WINDOW_BOOKMARK_FOLLOWERS_TT: "#T $DOMICILE_WINDOW_BOOKMARK_FOLLOWERS_TITLE$#!\n#I Kliknutím zobrazíš stoupence [DomicileWindow.GetCharacter.Custom('CZ_ShortUINameNoTooltip_G')]#!"
@@ -52,12 +52,19 @@
  DOMICILE_WINDOW_BOOKMARK_FOLLOWERS_TEMPERAMENT_POSITIVE: "Neochvějná"
  DOMICILE_WINDOW_BOOKMARK_FOLLOWERS_TEMPERAMENT_NEUTRAL: "Uklidněná"
  DOMICILE_WINDOW_BOOKMARK_FOLLOWERS_TEMPERAMENT_NEGATIVE: "Vzpurná"
+ DOMICILE_WINDOW_BOOKMARK_ARTIFACTS_TITLE: "Artefakty v domicilu" # todo: NEW TRANSLATION
+ DOMICILE_WINDOW_BOOKMARK_ARTIFACTS_TT: "#T $DOMICILE_WINDOW_BOOKMARK_ARTIFACTS_TITLE$#!\n#I Kliknutím zobrazíš artefakty v domicilu" # todo: NEW TRANSLATION
  DOMICILE_WINDOW_BOOKMARK_DISCIPLES_TITLE: "Starší a učedníci"
  DOMICILE_WINDOW_BOOKMARK_DISCIPLES_DISCIPLE: "[Concept('disciples','Učedníci')|E] [DomicileWindow.GetCharacter.Custom('CZ_ShortUINameNoTooltip_G')]$TAB$[Concept('disciple_limit_short','limit učedníků')|E]: #V [GetDataModelSize( DomicileWindow.GetRelationOfType( GetRelation( 'disciple' ) ) )]/[Character.MakeScope().ScriptValue('disciples_limit_value')]#!"
  DOMICILE_WINDOW_BOOKMARK_DISCIPLES_FIND: "#T Najít [Concept('disciples','učedníky')|E]#!\n\n#I Kliknutím otevřeš interakci $request_mentoring_interaction$ cílenou na svůj dvůr"
  DOMICILE_WINDOW_BOOKMARK_DISCIPLES_ELDER: "[Concept('elder','Starší')|E] [DomicileWindow.GetCharacter.Custom('CZ_ShortUINameNoTooltip_G')]"
  DOMICILE_WINDOW_BOOKMARK_DISCIPLES_DISCIPLE_FELLOW: "Spolužáci mezi [Concept('disciples','učedníky')|E] [Concept('elder','staršího')|E] [DomicileWindow.GetCharacter.GetShortUINameNoTooltip]"
  DOMICILE_WINDOW_BOOKMARK_DISCIPLES_TT: "#T $DOMICILE_WINDOW_BOOKMARK_DISCIPLES_TITLE$#!\n#I Kliknutím zobrazíš staršího a učedníky [DomicileWindow.GetCharacter.Custom('CZ_ShortUINameNoTooltip_G')]#!"
+ DOMICILE_WINDOW_BOOKMARK_DEBTORS_TITLE: "Soupis dlužníků" # todo: NEW TRANSLATION
+ DOMICILE_WINDOW_BOOKMARK_DEBTORS_TT: "#T $DOMICILE_WINDOW_BOOKMARK_DEBTORS_TITLE$#!\n#I Kliknutím zobrazíš [Concept('debtors','dlužníci')|E], kteří dluží [DomicileWindow.GetCharacter.Custom('CZ_ShortUINameNoTooltip_D')] [Concept('gold','zlato')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ DOMICILE_WINDOW_BOOKMARK_DEBTORS_TOTAL: "[DomicileWindow.GetCharacter.Custom('CZ_ShortUINameNoTooltip_G')|U] [Concept('debtors','Dlužníci')|E]: #V [GetDataModelSize( DomicileWindow.GetRelationOfType( GetRelation( 'debtor' ) ) )]#!$TAB$Dluží: #V [Concept('gold_i','@gold_icon!')|E][DomicileWindow.GetCharacter.MakeScope.ScriptValue('sum_debtors_owed_gold_value')|0]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ DOMICILE_WINDOW_BOOKMARK_DEBTORS_OWED: "#V [Concept('gold_i','@gold_icon!')|E][Character.MakeScope.Var('loan_amount_owed').GetValue|0]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ DOMICILE_WINDOW_BOOKMARK_DEBTORS_AGE: "#weak Stáří půjčky: [Character.MakeScope.Var('years_since_loan').GetValue|0] let#!" # todo: NEW TRANSLATION
  DOMICILE_WINDOW_DENY_UPGRADE_EXISTS_TT: "@warning_icon! #X [DOMICILE_BUILDING_TYPE.GetName] je již postaveno#!"
  DOMICILE_WINDOW_DENY_UPGRADE_CONSTRUCTION_TT: "@warning_icon! #X V tomto domicilu se již staví [DOMICILE_BUILDING_TYPE.GetName]#!\nDokončení za $DAYS$"
  DOMICILE_WINDOW_DENY_UPGRADE_MISSING_TT: "@warning_icon! #X Vyžaduje postavení budovy [DOMICILE_BUILDING_TYPE.GetName]#!"
@@ -72,9 +79,10 @@
  DOMICILE_WINDOW_DEMOLISH_TITLE: "Zbourat budovu"
  DOMICILE_WINDOW_DEMOLISH_TEXT: "Odstranění budovy [DOMICILE_BUILDING_TYPE.GetName] umožní zde postavit jinou budovu."
  DOMICILE_WINDOW_DEMOLISH_ACCEPT: "Zbourat"
- MOVE_DOMICILE_TRAVEL: "@warning_icon! #X Nelze přesunout [Domicile.GetType.GetNameNoTooltip], když už cestuješ#!"
- MOVE_DOMICILE_IMPRISONED: "@warning_icon! #X Nelze přesunout [Domicile.GetType.GetNameNoTooltip], když jsi uvězněn#!"
+ MOVE_DOMICILE_TRAVEL: "@warning_icon! #X Nelze přesunout [Domicile.GetType.GetNameNoTooltip], když už [Concept('traveling','cestuješ')|E]#!" # todo: CHANGED (predtym: @warning_icon! X Nelze přesunout [Domicile.GetType.GetNameNoTooltip], když už cestuješ !)
+ MOVE_DOMICILE_IMPRISONED: "@warning_icon! #X Nelze přesunout [Domicile.GetType.GetNameNoTooltip], když jsi [Concept('imprisoned','uvězněn')|E]#!" # todo: CHANGED (predtym: @warning_icon! X Nelze přesunout [Domicile.GetType.GetNameNoTooltip], když jsi uvězněn !)
  MOVE_DOMICILE_LANDLESS_AWAY: "@warning_icon! #X Nelze přesunout [Domicile.GetType.GetNameNoTooltip], když jsi pryč#!"
+ MOVE_DOMICILE_COMMISSION_ROUTE: "@warning_icon! #X Během aktivní [Concept('commission_route','zakázkové trasy')|E] nelze přesunout [Domicile.GetType.GetNameNoTooltip]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  HIDE_UI_BUTTON_TEXT_SHOW: "#T Zobrazit rozhraní"
  HIDE_UI_BUTON_TEXT_HIDE: "#T Skrýt rozhraní"
  MOVE_DOMICILE_TO_WATER: "@warning_icon! #X Nelze přesunout [Domicile.GetType.GetNameNoTooltip] na vodu #!"
@@ -82,8 +90,14 @@
  can_move_domicile_estate_realm_tt: "[Concept('estate','Statek')|E] nelze přesunout mimo [owner.GetTopLiege.GetPrimaryTitle.GetDefinitiveName]"
  can_move_domicile_estate_war_tt: "[Concept('estate','Statek')|E] nelze přesunout, dokud v [owner.GetTopLiege.GetPrimaryTitle.GetDefinitiveName] probíhá [Concept('war','válka')|E]"
  can_move_domicile_estate_same_location_tt: "[Concept('estate','Statek')|E] se již nachází v [province_temp.GetBaronyNameExplicitly]"
+ can_move_domicile_estate_republic_tt: "[Concept('patricians','Patricijové')|E] mohou svůj [Concept('domicile','domicil')|E] přesunout pouze do [Concept('county_capital','hlavního sídla hrabství')|E] svého [Concept('republic_possessive','republik')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ can_move_domicile_consortery_same_location_tt: "[Concept('consortery','Konzorterie')|E] se již nachází v [province_temp.GetBaronyNameExplicitly]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ can_move_domicile_company_market_capital_tt: "[Concept('merchants','Kupci')|E] mohou svou [Concept('company','společnost')|E] přesunout pouze do [Concept('market_capital','tržního hlavního sídla')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ can_move_domicile_company_range_tt: "[Concept('merchants','Kupci')|E] mohou svou [Concept('company','společnost')|E] přesunout jen na omezenou vzdálenost, která závisí na její velikosti" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  DOMICILE_WINDOW_CONSTRUCT_BUILDING_TT: "#T Postavit novou [Concept('domicile_building','budovu domicilu')|E]#!"
  DOMICILE_WINDOW_CONSTRUCT_BUILDING_LOCKED_TT: "$DOMICILE_WINDOW_CONSTRUCT_BUILDING_TT$\n@warning_icon!#X Úroveň [Concept('domicile_building','budovy domicilu')|E] [Domicile.GetMainBuilding.GetName] je příliš nízká#!"
  CHARACTER_MODIFIERS_LABEL: "#low Vlastník:#!"
  PROVINCE_MODIFIERS_LABEL: "#low Baronství:#!"
- DOMICILE_ARTICACT_SLOT_TT: "#T Slot [InventorySlot.GetName]\n#![SelectLocalization( DomicileWindow.IsSelectedArtifactSlot( InventorySlot.Self ), 'SELECT_ARTIFACT_FOR_SLOT', 'SELECT_INVENTORY_SLOT' )]"
+ DOMICILE_ARTIFACT_SLOT_UNAVAILABLE_HEADER: "#T Pozice: [InventorySlot.GetName]#!" # todo: NEW TRANSLATION
+ DOMICILE_ARTIFACT_SLOT_UNAVAILABLE_TT: "Než sem umístíš artefakt typu [InventorySlot.GetName], musíš tuto pozici odemknout." # todo: NEW TRANSLATION
+ DOMICILE_ARTIFACT_SLOT_TT: "#T Pozice: [InventorySlot.GetName]\n#![SelectLocalization( DomicileWindow.IsSelectedArtifactSlot( InventorySlot.Self ), 'SELECT_ARTIFACT_FOR_SLOT', 'SELECT_INVENTORY_SLOT' )]" # todo: NEW TRANSLATION

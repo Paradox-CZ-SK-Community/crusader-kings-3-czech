@@ -29,14 +29,15 @@
  SCHEME_WINDOW_OPPORTUNITIES_INFO.COUNT.GREATER_THAN_ONE: "[Concept('scheme_opportunity_opportunities','Výhody')|E]: [Scheme.GetAgentCharges]"
  SCHEME_WINDOW_OPEN_PREP_EXPLANATION_TT: "Vynalož [Concept('scheme_opportunity_opportunities','výhody')|E] na interakci se svou [Concept('scheme','intrikou')|E] [Scheme.GetName]"
  SCHEME_WINDOW_OPEN_PREP_TT: "Provést intriku"
+ SCHEME_WINDOW_PUSH_FOR_ADVANTAGES_TT: "Usilovat o výhody" # todo: NEW TRANSLATION
  SCHEME_WINDOW_INVITE_TOOLTIP: "#T Pozvat spolčence do intriky#!\n[SchemeItem.GetNumberOfPotentialOwnerAgents|V] postav lze přesvědčit, aby se připojily"
  SCHEME_WINDOW_NOT_OWNED_SCHEMES: "Neprobíhá žádná #high [SkillSchemeGroup.GetTypeName]#! [Concept('scheme','intrika')|E]\nZahájíš ji interakcí s jinou postavou"
  SCHEME_WINDOW_NOT_KNOWN_SCHEMES: "#weak Dosud nebyly odhaleny žádné [Concept('schemes','intriky')|E]#!"
  SCHEME_WINDOW_UNKNOWN_OWNER_TOOLTIP: "Osnovatel této intriky není znám"
- SCHEME_WINDOW_MODIFIERS: "[modifiers|E]:"
+ SCHEME_WINDOW_MODIFIERS: "[Concept('modifiers','Modifikátory')|E]:" # todo: CONCEPT CASE
  SCHEME_WINDOW_TT_SPEED: "[Concept('scheme_speed','Délka fáze intriky')|E]: $SPEED|1V$"
- SCHEME_RESISTANCE_DESCRIPTION_HEADER: "[scheme_resistance|E]"
- SCHEME_PHASE_DURATION_DESCRIPTION_HEADER: "#T [Concept('scheme_speed','Délka fáze intriky')|E]#!\nPočet dnů na $game_concept_scheme_phase_phase$"
+ SCHEME_RESISTANCE_DESCRIPTION_HEADER: "[Concept('scheme_resistance','Odolnost vůči intrikám')|E]" # todo: CONCEPT CASE
+ SCHEME_PHASE_DURATION_DESCRIPTION_HEADER: "#T [Concept('scheme_speed','Délka fáze intriky')|E]#!\nPočet dnů na fázi" # todo: CONCEPT CASE
  SCHEME_TIER_INFLUENCE: "Hodnost [CHARACTER.GetShortUINamePossessive|U]"
  SCHEME_SPYMASTER: "Špehmistr [CHARACTER.GetShortUINamePossessive|U]"
  SCHEME_WINDOW_TT_CHARACTER_EXPOSED: "@warning_icon! #X @exposed_icon!Aktuálně odhaleno#!"
@@ -79,8 +80,11 @@
  SCHEME_TIME_READY: "Připraveno"
  HOSTILE_SCHEME: "Nepřátelská"
  CONTRACT_SCHEME: "[GetPlayer.Custom('GetContractOrIssue')]"
+ CONTRACT_SCHEME_CONCEPT: "[GetPlayer.Custom('GetContractOrIssueGameConcept')]" # todo: NEW TRANSLATION
+ CONTRACT_SCHEMES_CONCEPT: "[GetPlayer.Custom('GetContractOrIssueGameConceptPlural')]" # todo: NEW TRANSLATION
  PERSONAL_SCHEME: "Osobní"
  POLITICAL_SCHEME: "Politická"
+ TRADE_SCHEME: "Obchod" # todo: NEW TRANSLATION
  SCHEME_COOLDOWN_DATE_FORMAT: "[DATE.GetStringShort|V]"
  SCHEME_WINDOW_SUCCESS_CHANCE_MAIN: "#V [SelectLocalization(EqualTo_CFixedPoint(Scheme.GetMaxSuccessChance, Scheme.GetSuccessChance), '#SUCGLOW ', '')][Scheme.GetSuccessChance|%/0][SelectLocalization(EqualTo_CFixedPoint(Scheme.GetMaxSuccessChance, Scheme.GetSuccessChance), '#!', '')] #weak ([Scheme.GetSuccessChanceGrowth|/1%P=]/$game_concept_scheme_phase_phase$)#! [SelectLocalization(EqualTo_CFixedPoint(Scheme.GetMaxSuccessChance, Scheme.GetSuccessChance), '#SUCGLOW ', '')]z [Scheme.GetMaxSuccessChance|0%/]#![SelectLocalization(EqualTo_CFixedPoint(Scheme.GetMaxSuccessChance, Scheme.GetSuccessChance), '#!', '')] [Concept('success_chance','šance na úspěch')|E]"
  SCHEME_WINDOW_SUCCESS_CHANCE: "$SCHEME_WIDGET_SUCCESS_CHANCE$ [Concept('success_chance','šance na úspěch')|E]"
@@ -88,7 +92,7 @@
  SCHEME_WIDGET_SUCCESS_CHANCE_SHORT: "[Scheme.GetSuccessChance|%/0]"
  SCHEME_WIDGET_NO_PULSE_ACTION: "Bez změny"
  SCHEME_WINDOW_SECRECY: "#V [Scheme.GetSecrecy|%/]#! [Concept('secrecy','utajení')|E] #DIE1 #WEAK [SelectLocalization(LessThanOrEqualTo_CFixedPoint( Scheme.MakeScope.Var('secrecy_grace_period').GetValue, '(CFixedPoint)0' ), '', 'SCHEME_WINDOW_SECRECY_GRACE_PERIOD_TIMER')]#!#!"
- SCHEME_WINDOW_SECRECY_LABEL: "[secrecy|E]:"
+ SCHEME_WINDOW_SECRECY_LABEL: "[Concept('secrecy','Utajení')|E]:" # todo: CONCEPT CASE
  SCHEME_WINDOW_SECRECY_GRACE_PERIOD_TIMER: "([Concept('secrecy_grace','Ochranná lhůta')|E]: [Select_CString( EqualTo_CFixedPoint( Scheme.MakeScope.Var('secrecy_grace_period').GetValue, '(CFixedPoint)1' ), 'zbývá', Select_CString( LessThanOrEqualTo_CFixedPoint( Scheme.MakeScope.Var('secrecy_grace_period').GetValue, '(CFixedPoint)4' ), Select_CString( GreaterThan_CFixedPoint( Scheme.MakeScope.Var('secrecy_grace_period').GetValue, '(CFixedPoint)1' ), 'zbývají', 'zbývá' ), 'zbývá' ) )] [Scheme.MakeScope.Var('secrecy_grace_period').GetValue] [Select_CString( EqualTo_CFixedPoint( Scheme.MakeScope.Var('secrecy_grace_period').GetValue, '(CFixedPoint)1' ), 'měsíc', Select_CString( LessThanOrEqualTo_CFixedPoint( Scheme.MakeScope.Var('secrecy_grace_period').GetValue, '(CFixedPoint)4' ), Select_CString( GreaterThan_CFixedPoint( Scheme.MakeScope.Var('secrecy_grace_period').GetValue, '(CFixedPoint)1' ), 'měsíce', 'měsíců' ), 'měsíců' ) )])"
  SCHEME_WINDOW_SECRECY_MONTHLY_REVEAL_CHANCE: "([Scheme.MakeScope.ScriptValue('monthly_scheme_discovery_chance_value')|%/1] měsíční šance na odhalení)"
  SCHEME_WIDGET_SECRECY_SHORT: "[Scheme.GetSecrecy|%/]"
@@ -104,7 +108,7 @@
  SCHEME_PREPARATIONS_WINDOW_SUCCESS_CHANCE_NEUTRAL: "[Scheme.GetSuccessChance|%/1]"
  SCHEME_PREPARATIONS_WINDOW_SUCCESS_CHANCE_GLOW: "#SUCGLOW [Scheme.GetSuccessChance|%/1]#!"
  SCHEME_PREPARATIONS_WINDOW_SECRECY: "#V [Scheme.GetSecrecy|%/]#! #DIE1 #WEAK [SelectLocalization(LessThanOrEqualTo_CFixedPoint( Scheme.MakeScope.Var('secrecy_grace_period').GetValue, '(CFixedPoint)0' ), 'SCHEME_WINDOW_SECRECY_MONTHLY_REVEAL_CHANCE', 'SCHEME_WINDOW_SECRECY_GRACE_PERIOD_TIMER')]#!#!"
- SCHEME_PREPARATIONS_WINDOW_OPPORTUNITIES: "[Concept('scheme_opportunity_opportunities','Výhody')|E]: [Scheme.GetAgentCharges()]"
+ SCHEME_PREPARATIONS_WINDOW_OPPORTUNITIES: "[Scheme.GetAgentCharges()|V] Výhody" # todo: CHANGED (predtym: [Concept('scheme_opportunity_opportunities','Výhody')|E]: [Scheme.GetAgentCharges()])
  SCHEME_ITEM_PROGRESS_TOOLTIP: "#T [Scheme.GetProgressDescription]#!\n\n[Scheme.GetSpeedDescription]\n\n[Scheme.GetResistanceDescription]"
  SCHEME_SUCCESS_FROM_AGENTS: "Od [Concept('agents','spolčenců')|E]: $MOD_SUCCESS_PREFIX$ $VALUE|+%/1=$"
  SCHEME_SUCCESS_GROWTH_FROM_AGENTS: "Od [Concept('agents','spolčenců')|E]: $MOD_SUCCESS_GROWTH_PREFIX$$VALUE|+%/1=$$MOD_PER_SCHEME_PHASE_POSTFIX$"
@@ -353,6 +357,7 @@
  SCHEME_TRAIT_FICKLE: "[GetTrait('fickle').GetName( owner.Self )]: $VALUE|+0=$"
  SCHEME_TRAIT_POET: "[GetTrait('lifestyle_poet').GetName( owner.Self )]: $VALUE|+0=$"
  SCHEME_TRAIT_ERUDITE: "[GetTrait('erudite').GetName( owner.Self )|U]: $VALUE|+0=$"
+ SCHEME_TRAIT_DILIGENT: "[GetTrait('diligent').GetName( owner.Self )]: $VALUE|+0=$" # todo: NEW TRANSLATION
  STUDY_RITE_ADAPTIVE: "[GetTenetType('tenet_adaptive').GetBaseName|U]: $VALUE|+0=$"
  STUDY_RITE_SINITIC_SYNCRETISM: "[GetTenetType('tenet_sinitic_syncretism').GetBaseName|U]: $VALUE|+0=$"
  STUDY_RITE_EASTERN_SYNCRETISM: "[GetTenetType('tenet_eastern_syncretism').GetBaseName|U]: $VALUE|+0=$"
@@ -373,6 +378,7 @@
  SCHEME_KNOWN_LANGUAGES_MODIFIER: "Počet již naučených [Concept('languages','jazyků')|E]: $VALUE|+0=$"
  SCHEME_TARGET_FRIEND: "S [target.GetShortUINamePossessive] tě pojí [Concept('friend','přátelství')|E]: $VALUE|+0=$"
  SCHEME_SCHOLAR_OFFICIALS_MODIFIER: "Z [Concept('traditions','tradic')|E] při učení [target.GetCulture.GetLanguage.GetName]: $VALUE|+0=$"
+ SCHEME_ANTIQUARIAN_APTITUDE_MODIFIER: "Tvoje [GetCourtPositionType('antiquarian_court_position').GetName()] [Concept('aptitude','způsobilost')|E]: $VALUE|+0=$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  SCHEME_TARGET_TRAIT_AMBITIOUS: "[target.GetShortUIName] má [GetTrait('ambitious').GetName( target.Self )]: $VALUE|+0=$"
  scheme_executes_immediately: "[Concept('scheme','Intrika')|E] se provede okamžitě"
  OPEN_SCHEMES_TAB: "Intriky"
@@ -408,7 +414,7 @@
  INTRIGUE_WINDOW_HOOK_SHOW_ALL: "#T Viditelnost pák#!\n#I Kliknutím přepneš mezi zobrazením všech pák a pouze těch použitelných#!"
  INTRIGUE_WINDOW_AGENT_DISCOVERED: "Odhalen!"
  INTRIGUE_WINDOW_AGENT_DISCOVERED_TT: "#T $INTRIGUE_WINDOW_AGENT_DISCOVERED$#!\nOdhaleným spolčencům hrozí uvěznění"
- INTRIGUE_WINDOW_REMOVE_AGENT_TT: "Odebrat [Character.GetUIName] z [Character.GetHerHis] pozice [SchemeAgentSlotItem.GetSlot.GetName]"
+ INTRIGUE_WINDOW_REMOVE_AGENT_TT: "Odebrat [Character.GetUIName] z [Select_CString(Character.IsFemale,'její','jeho')] pozice [SchemeAgentSlotItem.GetSlot.GetName]"
  INTRIGUE_WINDOW_SCHEME_CONTRIBUTION_TT: "#T Přínos:#! [SchemeAgentSlotItem.GetContributionDesc] \n [SchemeAgentSlotItem.GetContributionBreakdown]"
  INTRIGUE_WINDOW_SCHEME_CONTRIBUTION_SPEED_DESC: "#T [Concept('scheme_speed','Délka fáze intriky')|E]#!"
  INTRIGUE_WINDOW_SCHEME_CONTRIBUTION_SECRECY_DESC: "#T [Concept('secrecy','Utajení')|E]#!"
@@ -436,8 +442,8 @@
  SCHEME_WNIGHT_COURT_MEMENTO: "Od [target.GetShortUIName] máš památku na svatební noc symbolizující vaši lásku: $VALUE|+0=$"
  SCHEME_WNIGHT_SEDUCE_MEMENTO: "Od [target.GetShortUIName] máš památku na svatební noc symbolizující vaši společnou touhu: $VALUE|+0=$"
  SCHEME_DISCOVERED_ESCAPE_TUNNEL: "Objev únikového tunelu [target.GetShortUINamePossessiveNoTooltip]: $VALUE|+0=$"
- SCHEME_WBANQUET_FRIEND_INSIGHT: "Informace od přítele [target.GetShortUIName] o [target.GetHerHis] zájmech: $VALUE|+0=$"
- SCHEME_WNIGHT_VICTIM_CHAMBER: "Sledování [target.GetShortUIName] až do [target.GetHerHis] komnat: $VALUE|+0=$"
+ SCHEME_WBANQUET_FRIEND_INSIGHT: "Informace od přítele [target.GetShortUIName] o [Select_CString(target.IsFemale,'jejích','jeho')] zájmech: $VALUE|+0=$"
+ SCHEME_WNIGHT_VICTIM_CHAMBER: "Sledování [target.GetShortUIName] až do [Select_CString(target.IsFemale,'jejích','jeho')] komnat: $VALUE|+0=$"
  SCHEME_LUST_DEMON_MODIFIER: "$possessed_by_lust_demon_modifier$: $VALUE|+0=$"
  IMAGINARY_FRIEND_MURDER_BONUS: "Tvůj imaginární přítel tě přesvědčil o oprávněnosti této vraždy: $VALUE|+0=$"
  SCHEME_HEAD_OF_FAITH_REASON: "[target.GetShortUINameNoTooltip] je #EMP [target.GetTitleAsNameNoTooltip]#!: $VALUE|+0=$"
@@ -512,7 +518,7 @@
  puppet_other_actions_custom_list_head: "[Character.GetShortUINameNoTooltip|U] ti také [Select_CString(Character.IsLocalPlayer,'umožňuješ','umožňuje')|l]:"
  puppet_available_condition_header: "[PuppetType.GetNameNoTooltip|VU] bude [Concept('rulers','vládcům')|E] k dispozici, pokud:"
  puppet_available_unconditionally: "Každý [Concept('ruler','vládce')|E] může manipulovat s [PuppetType.GetNameNoTooltip|V]."
- puppets_section_title: "$game_concept_puppets$"
+ puppets_section_title: "Loutky" # todo: CONCEPT CASE
  puppet_interaction_category_tt_title: "Interakce: [PuppetInteractionGroup.GetCategory.GetName( GetPlayer )]"
  puppet_interaction_category_tt_header: "[PuppetInteractionGroup.GetPuppetType.GetName|U] může provést následující speciální [Concept('interactions','interakce')|e] v kategorii [PuppetInteractionGroup.GetCategory.GetName( GetPlayer )]:" # todo: CHANGED (predtym: [PuppetInteractionGroup.GetPuppetType.GetNameNoTooltip|U] může provést následující speciální interakce v kategorii [Pupp)
  puppet_interaction_category_tt_special_content: "[PuppetInteractionGroup.GetSpecialInteractionList]"
@@ -524,7 +530,7 @@
  puppet_other_actions_tt_title: "Další akce"
  puppet_other_actions_tt_header: "[PuppetEntry.GetPuppetType.GetName|U] umožňuje také následující:"
  puppet_other_actions_tt_decisions: "[Concept('decisions','Rozhodnutí')|e], pokud zastává úřad [Concept('head_of_faith','hlavy víry')|e]:"
- puppet_other_actions_tt_great_projects: "[great_projects|e]:"
+ puppet_other_actions_tt_great_projects: "[Concept('great_projects','Velké projekty')|e]:" # todo: CONCEPT CASE
  puppet_other_actions_tt_additional: "Pokud takovou postavu ovládáš, můžeš navíc:"
  puppet_other_actions_tt_item: "$BULLET_WITH_TAB$[PuppetActionItem.GetText]"
  puppet_interaction_no_interactions_available: "Nejsou k dispozici žádné [Concept('interactions','interakce')|E]"
@@ -534,5 +540,5 @@
  puppet_window_choose_puppet_tt: "#T Žádná [PuppetEntry.GetPuppetType.GetNameNoTooltip|V]#!\n\nMůžeš hledat [PuppetEntry.GetPuppetType.GetName|V].\n\n#I Kliknutím otevři zobrazení#!"
  puppet_cancel_scheme_tt: "#T Zrušit intriku#!\n\nJsi [Concept('puppeteer','loutkářem')|E] [PuppetEntry.GetPuppet.Custom('CZ_ShortUINameNoTooltip_G')] a můžeš [PuppetEntry.GetPuppet.Custom('CZ_ShortUIName_A')] přimět k ukončení této [Concept('scheme','intriky')|E] typu [Scheme.GetSchemeType.GetTypeNameNoTooltip|l].\n\n#I Kliknutím intriku zrušíš#!"
  PUPPET_TYPE_DESCRIPTION_TEXT: "[PuppetType.Localize('concept_desc')]"
- puppet_interaction_category_tt_no_special_interactions: "#weak Nejsou k dispozici žádné speciální interakce#!" # todo: NOT IN ENGLISH
- PUPPET_INTERACTION_LABEL: "[Concept('interactions','interakce')|eU]:" # todo: NOT IN ENGLISH
+ SCHEME_WINDOW_OPEN_PUSH_FOR_ADVANTAGES_TT: "Pokusit se získat další [Concept('scheme_opportunity_opportunities','výhody')|E] pro svou intriku [Scheme.GetName] [Concept('scheme','intriku')|E]\n[SelectLocalization(GetPlayer.MakeScope.HasFlag('push_for_advantage_cooldown'), 'SCHEME_WINDOW_OPEN_PUSH_FOR_ADVANTAGES_COOLDOWN_TT', '')]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ SCHEME_WINDOW_OPEN_PUSH_FOR_ADVANTAGES_COOLDOWN_TT: "@warning_icon! #X Usilovat o výhody nebude dostupné do [GetCurrentDateWithDiff( GetVarTimeRemaining( GetPlayer.MakeScope, 'push_for_advantage_cooldown') )]#!" # todo: NEW TRANSLATION

@@ -2,7 +2,11 @@
  domicile_name: "[CHARACTER.GetDynastyHouseNameNoTooltip] [DOMICILE_TYPE.GetNameNoTooltip]"
  unowned_domicile_name: "[TITLE.GetNameNoTooltip] [DOMICILE_TYPE.GetNameNoTooltip]"
  domicile_name_possessive: "[CHARACTER.GetDynastyHouseNameNoTooltip] [DOMICILE_TYPE.GetNamePossessiveNoTooltip]"
- noble_family_name: "[Select_CString( CHARACTER.GetHouse.IsValid, CHARACTER.GetHouse.GetBaseNameNoTooltip, CHARACTER.GetNameNoTooltip)] Rodina"
+ noble_family_name: "[Select_CString( CHARACTER.GetHouse.IsValid, CHARACTER.GetHouse.GetBaseNameNoTooltip, CHARACTER.GetNameNoTooltip)] [CHARACTER.Custom('GetNobleFamilySuffix')]" # todo: CHANGED (predtym: [Select_CString( CHARACTER.GetHouse.IsValid, CHARACTER.GetHouse.GetBaseNameNoTooltip, CHARACTER.GetNameNoTooltip)] Rodin)
+ c_nf_default_suffix: "Rodina" # todo: NEW TRANSLATION
+ c_nf_jin_suffix: "Rodina" # todo: NEW TRANSLATION
+ c_nf_china_suffix: "Rodina" # todo: NEW TRANSLATION
+ patrician_family_name_001: "[new_patrician.GetHouse.GetBaseNameNoTooltip] [new_patrician.Custom('GetNobleFamilySuffix')]" # todo: NEW TRANSLATION
  adventurer_name: "[new_landless_adventurer.Custom('CZ_FirstNamePossessiveNoTooltip_M')] tábor"
  adventurer_name_001: "[new_landless_adventurer.Custom('GetAdventureNamePrefixes')|U] [new_landless_adventurer.Custom('GetAdventureNameAnimals')|U]"
  adventurer_name_002: "[new_landless_adventurer_house.GetBaseNameNoTooltip|U] [new_landless_adventurer.Custom('GetAdventureNameBand')|U]"
@@ -65,12 +69,13 @@
  laamp_vassal_breakaway_tt: "Každý vazal má šanci odtrhnout se"
  contract_title: "[CHARACTER.GetDynastyHouseNameNoTooltip] Smlouva"
  ep3_laamp_diplo_range_trigger_tt_desc: "[Concept('capital','Hlavní sídlo')|E] [TARGET_CHARACTER.Custom('CZ_ShortUIName_G')] je v dosahu [Concept('camp','tábora')|E] [CHARACTER.Custom('CZ_ShortUIName_G')]."
- ep3_laamp_diplo_range_trigger_tt_not_desc: "[Concept('capital','Hlavní sídlo')|E] [TARGET_CHARACTER.Custom('CZ_ShortUIName_G')] je příliš daleko. [Concept('camp','Tábor')|E] [CHARACTER.Custom('CZ_ShortUIName_G')] je třeba přesunout blíž."
+ ep3_laamp_diplo_range_trigger_tt_not_desc: "[Concept('capital','Hlavní sídlo')|E] [TARGET_CHARACTER.Custom('CZ_ShortUIName_G')] je příliš daleko.\n#help [Concept('camp','Tábor')|E] [CHARACTER.Custom('CZ_ShortUIName_G')] je třeba přesunout blíž" # todo: CHANGED (predtym: [Concept('capital','Hlavní sídlo')|E] [TARGET_CHARACTER.Custom('CZ_ShortUIName_G')] je příliš daleko. [Concept('camp','T)
  PROVISION_COST_TO_OWNER_TRIGGER: "Náklady na [Concept('provisions','proviant')|E] mezi $DOMICILE_LOCATION$ a $OWNER_LOCATION$ jsou $COMPARATOR$ $NUM|V$"
  PROVISION_COST_TO_DOMICILE_TRIGGER: "Náklady na [Concept('provisions','proviant')|E] mezi $DOMICILE_LOCATION$ a $OWNER_LOCATION$ jsou $COMPARATOR$ $NUM|V$"
- PROVISIONS_GREATER_OR_EQUAL_TRIGGER: "[Concept('provisions','Proviant')|E] je větší nebo roven $NUM|V$"
- NOT_PROVISIONS_GREATER_OR_EQUAL_TRIGGER: "[Concept('provisions','Proviant')|E] není větší nebo roven @provisions_icon!$NUM|V0$"
+ PROVISIONS_GREATER_OR_EQUAL_TRIGGER: "[Concept('provisions','Proviant')|E] činí alespoň $NUM|V$" # todo: CHANGED (predtym: [Concept('provisions','Proviant')|E] je větší nebo roven $NUM|V$)
+ NOT_PROVISIONS_GREATER_OR_EQUAL_TRIGGER: "[Concept('provisions','Proviant')|E] je menší než @provisions_icon!$NUM|V0$" # todo: CHANGED (predtym: [Concept('provisions','Proviant')|E] není větší nebo roven @provisions_icon!$NUM|V0$)
  destroy_laamp_effect.tt.domicile_liquidated: "Všechny budovy [Concept('camp','tábora')|E] budou zbourány a část jejich nákladů bude navrácena"
  destroy_laamp_effect.tt.domicile_liquidated_title: "Tábor zlikvidován"
  can_move_domicile_camp_exile.tt: "[Concept('holder','Držitel')|E] tohoto [Concept('county','hrabství')|E], nebo [Concept('liege','lenní pán')|E], vás vyhostil"
  LAAMP_AGE_LIMIT: "Nemůžete vytvořit dobrodruha mladšího než 16 let."
+ fleeing_republic_landless_adventurer_created_message_eradicate_tt: "Označení za nepřítele státu přimělo [new_landless_adventurer.Custom('CZ_ShortUIName_A')|U] k útěku na cesty před pronásledováním." # todo: NEW TRANSLATION

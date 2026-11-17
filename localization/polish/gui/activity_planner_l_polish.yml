@@ -31,19 +31,21 @@
  ACTIVITY_PLANNER_SUMMARY: "Souhrn"
  ACTIVITY_SUMMARY_COOLDOWN_HEADER: "Prodleva"
  ACTIVITY_COOLDOWN: "@alert_icon! #alert_trial Další [ActivityType.GetNameNoTooltip] nemůžeš pořádat po dobu [GetTimeDifferenceWithDays( ActivityType.CalcCooldownDays( GetPlayer ) )]#!"
- activity_filter_capital: "[realm_capital|E]"
- activity_filter_domain: "[domain|E]"
- activity_filter_realm: "[realm|E]"
- activity_filter_top_realm: "[top_realm|E]"
- activity_filter_holy_sites: "[holy_sites|E]"
- activity_filter_domicile: "[domicile|E]"
+ activity_filter_capital: "[Concept('realm_capital','Hlavní sídlo panství')|E]" # todo: CONCEPT CASE
+ activity_filter_domain: "[Concept('domain','Doména')|E]" # todo: CONCEPT CASE
+ activity_filter_realm: "[Concept('realm','Panství')|E]" # todo: CONCEPT CASE
+ activity_filter_top_realm: "[Concept('top_realm','Nejvyšší říše')|E]" # todo: CONCEPT CASE
+ activity_filter_holy_sites: "[Concept('holy_sites','Svatá místa')|E]" # todo: CONCEPT CASE
+ activity_filter_domicile: "[Concept('domicile','Domicil')|E]" # todo: CONCEPT CASE
  activity_filter_domicile_domain: "[Concept('domicile','Domicil')|E] [Concept('domain','domény')|E]"
  activity_filter_domicile_realm: "[Concept('domicile','Domicil')|E] [Concept('realm','panství')|E]"
  activity_filter_anointment_candidates: "[Concept('holy_sites','svatá místa')|EU], [Concept('realm','panství')|E] nebo sídlo [Concept('head_of_rite','hlavy ritu')|E]"
  GOVERNMENT_ADJECTIVE: "[Character.GetGovernment.GetAdjective]"
+ GOVERNMENT_ADJECTIVE_ICON_ONLY: "[Character.Custom('GetGovernmentIcon')] [Character.GetGovernment.GetAdjective]" # todo: NEW TRANSLATION
  GOVERNMENT_ADJECTIVE_ICON: "[Character.Custom('GetGovernmentIcon')] [Character.GetGovernment.GetAdjective] [Concept('realm','panství')|E]"
  GOVERNMENT_ADJECTIVE_ICON_NOMAD: "[Character.Custom('GetGovernmentIcon')] [Character.GetGovernment.GetAdjective] [Concept('realm','panství')|E] – [Character.GetDomicile.GetRite.GetAdjective] [Character.GetDomicile.GetCulture.GetCollectiveNoun]"
  GOVERNMENT_ADJECTIVE_ICON_ADVENTURER: "[Character.Custom('GetGovernmentIcon')] [Character.GetGovernment.GetAdjective]"
+ GOVERNMENT_ADJECTIVE_ICON_MERCHANT: "[Character.Custom('GetGovernmentIcon')] [Character.GetGovernment.GetAdjective]" # todo: NEW TRANSLATION
  GOVERNORSHIP_TOOLTIP: "[ROOT.Char.GetVassalContract.GetAdminDivisionTextIcon] [SelectLocalization( ROOT.Char.GetGovernment.IsValid(), 'GOVERNMENT_ADJECTIVE', '' )] [Concept('governorship','guvernérství')|E]"
  VASSAL_TOOLTIP: "[SelectLocalization( ROOT.Char.GetGovernment.IsValid(), 'GOVERNMENT_ADJECTIVE_ICON', '' )] [Concept('vassal','vazal')|E]"
  REALM_TOOLTIP: "[SelectLocalization( ROOT.Char.GetGovernment.IsValid(), 'GOVERNMENT_ADJECTIVE_ICON', '' )]"

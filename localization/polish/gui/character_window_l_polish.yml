@@ -1,19 +1,19 @@
 ﻿l_polish:
- SPOUSE: "[spouse|E]"
+ SPOUSE: "[Concept('spouse','Choť')|E]" # todo: CONCEPT CASE
  FORMER_SPOUSE: "Bývalá [Concept('spouse','choť')|E]"
  SPOUSE_DIARCH: "$SPOUSE$-[Character.GetDiarchTitle]"
- BETROTHED: "[betrothed|E]"
+ BETROTHED: "[Concept('betrothed','Zasnoubený')|E]" # todo: CONCEPT CASE
  SPOUSES: "Choti"
- CONCUBINES: "[concubines|E]"
- GAME_CONCEPT_CONCUBINE: "[concubine|EU]"
+ CONCUBINES: "[Concept('concubines','Konkubíny')|E]" # todo: CONCEPT CASE
+ GAME_CONCEPT_CONCUBINE: "[Concept('concubine','Konkubína')|EU]" # todo: CONCEPT CASE
  CONCUBINE_IS_VISIBLE_INFERTILE: "@warning_icon! #X Je neplodná#!"
- CONCUBINE_MAN: "[concubine_male|E]"
- CONCUBINE_WOMAN: "[concubine_female|E]"
- REGULAR_MARRIAGE: "[marriage|E]"
- MATRILINEAL_MARRIAGE: "[matrilineal|E]"
- REGULAR_BETROTHAL: "[betrothal|E]"
- MATRILINEAL_BETROTHAL: "[matrilineal|E]"
- CONCUBINE_MARRIAGE: "[concubinage|E]"
+ CONCUBINE_MAN: "[Concept('concubine_male','Konkubín')|E]" # todo: CONCEPT CASE
+ CONCUBINE_WOMAN: "[Concept('concubine_female','Konkubína')|E]" # todo: CONCEPT CASE
+ REGULAR_MARRIAGE: "[Concept('marriage','Sňatek')|E]" # todo: CONCEPT CASE
+ MATRILINEAL_MARRIAGE: "[Concept('matrilineal','Matrilineární')|E]" # todo: CONCEPT CASE
+ REGULAR_BETROTHAL: "[Concept('betrothal','Zasnoubení')|E]" # todo: CONCEPT CASE
+ MATRILINEAL_BETROTHAL: "[Concept('matrilineal','Matrilineární')|E]" # todo: CONCEPT CASE
+ CONCUBINE_MARRIAGE: "[Concept('concubinage','Konkubinát')|E]" # todo: CONCEPT CASE
  CHARACTER_VIEW_NAME: "[Character.GetUINameNotMeNoTooltip], "
  CHARACTER_VIEW_NAME_SHORT: "[Character.GetShortUINameNotMeNoTooltip], "
  CHARACTER_VIEW_NAME_TT: "[Character.GetUINameNotMeNoTooltip]"
@@ -34,30 +34,32 @@
  TITLE_NAME_NO_TOOLTIP: "[Title.GetNameNoTooltip|U]"
  IMPRISONED_BY: "[Concept( 'jailor', 'Žalářník @crime_icon!' )|E]"
  WARDEN_OF: "[Concept( 'warden', 'Strážce @hostage_icon!' )|E]"
- SKILLS: "[skills|E]"
- TRAITS: "[traits|E]"
- CLAIMS: "[claims|E]"
- MODIFIERS: "[modifiers|E]"
- PERSONALITY_TRAITS: "[personality_traits|E]"
+ SUZERAIN_OR_PATRON: "[GetSuzerainRelationship(Character)]" # todo: NEW TRANSLATION
+ PATRON: "[Concept('merchant_patron','Patron')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ SKILLS: "[Concept('skills','Dovednosti')|E]" # todo: CONCEPT CASE
+ TRAITS: "[Concept('traits','Rysy')|E]" # todo: CONCEPT CASE
+ CLAIMS: "[Concept('claims','Nároky')|E]" # todo: CONCEPT CASE
+ MODIFIERS: "[Concept('modifiers','Modifikátory')|E]" # todo: CONCEPT CASE
+ PERSONALITY_TRAITS: "[Concept('personality_traits','Osobnostní rysy')|E]" # todo: CONCEPT CASE
  CV_NO_MODIFIERS: "Žádné aktuální modifikátory postavy"
- CV_TITLES: "[GetDataModelSize(CharacterWindow.GetTitles)|V] [titles|E]"
- CV_TITLES_NOCOUNT: "[titles|E]"
- CV_TITLES_SINGULAR: "[GetDataModelSize(CharacterWindow.GetTitles)|V] [title|E]"
+ CV_TITLES: "[GetDataModelSize(CharacterWindow.GetTitles)|V] [Concept('titles','Tituly')|E]" # todo: CONCEPT CASE
+ CV_TITLES_NOCOUNT: "[Concept('titles','Tituly')|E]" # todo: CONCEPT CASE
+ CV_TITLES_SINGULAR: "[GetDataModelSize(CharacterWindow.GetTitles)|V] [Concept('title','Titul')|E]" # todo: CONCEPT CASE
  CV_TITLES_SHOW_TT: "#I Klikni pro rozbalení položek [Concept('title','titulů')|E]#!"
  CV_TITLES_HIDE_TT: "#I Klikni pro skrytí rozbalených položek [Concept('title','titulů')|E]#!"
  CV_REALM_TYPE: "[Character.Custom('GetRealmOrDomicileTooltip')]"
  CV_REALM_TYPE_LANDED: "[Character.GetGovernment.GetAdjective] [Character.GetPrimaryTitle.GetRankConcept]"
  CV_REALM_TYPE_HOLY_ORDER: "[SelectLocalization( ROOT.Char.GetGovernment.IsValid(), 'GOVERNMENT_ADJECTIVE_ICON', '' )] ([ROOT.Char.GetFaith.GetAdjective])"
  CV_REALM_TYPE_MERCENARY: "[SelectLocalization( ROOT.Char.GetGovernment.IsValid(), 'GOVERNMENT_ADJECTIVE_ICON', '' )]"
- CV_REALM_TYPE_HOF: "[SelectLocalization( ROOT.Char.GetGovernment.IsValid(), 'GOVERNMENT_ADJECTIVE_ICON', '' )] [vassal|E] ([head_of_faith|E])"
- CV_REALM_TYPE_HOF_LANDED: "[SelectLocalization( ROOT.Char.GetGovernment.IsValid(), 'GOVERNMENT_ADJECTIVE_ICON', '' )] ([head_of_faith|E])"
+ CV_REALM_TYPE_HOF: "[SelectLocalization( ROOT.Char.GetGovernment.IsValid(), 'GOVERNMENT_ADJECTIVE_ICON', '' )] [Concept('vassal','Vazal')|E] ([Concept('head_of_faith','hlava víry')|E])" # todo: CONCEPT CASE
+ CV_REALM_TYPE_HOF_LANDED: "[SelectLocalization( ROOT.Char.GetGovernment.IsValid(), 'GOVERNMENT_ADJECTIVE_ICON', '' )] ([Concept('head_of_faith','hlava víry')|E])" # todo: CONCEPT CASE
  CV_CIVIL_WAR_FACTION: "[Concept('faction','Frakce')|E] v [Concept('civil_war','občanské válce')|E]"
  CV_DIPLOMACY: "Diplomacie"
  CV_DIPLOMACY_SHOW_TT: "#I Klikni pro rozbalení položek diplomacie a přepnutí mapového režimu diplomatických vztahů#!"
  CV_DIPLOMACY_HIDE_TT: "#I Klikni pro skrytí rozbalených položek diplomacie a přepnutí mapového režimu diplomatických vztahů#!"
- CV_CLAIMS: "[GetDataModelSize(CharacterWindow.GetClaims)|V] [claims|E]"
- CV_CLAIMS_NOCOUNT: "[claims|E]"
- CV_CLAIMS_SINGULAR: "[GetDataModelSize(CharacterWindow.GetClaims)|V] [claim|E]"
+ CV_CLAIMS: "[GetDataModelSize(CharacterWindow.GetClaims)|V] [Concept('claims','Nároky')|E]" # todo: CONCEPT CASE
+ CV_CLAIMS_NOCOUNT: "[Concept('claims','Nároky')|E]" # todo: CONCEPT CASE
+ CV_CLAIMS_SINGULAR: "[GetDataModelSize(CharacterWindow.GetClaims)|V] [Concept('claim','Nárok')|E]" # todo: CONCEPT CASE
  CV_CLAIMS_SHOW_TT: "#I Klikni pro rozbalení položek [Concept('claim','nároků')|E]#!"
  CV_CLAIMS_HIDE_TT: "#I Klikni pro skrytí rozbalených položek [Concept('claim','nároků')|E]#!"
  CHARACTER_WINDOW_MODIFIERS_SHOW_TT: "#I Klikni pro rozbalení [Concept('modifiers','modifikátorů')|E]#!"
@@ -65,16 +67,16 @@
  CHARACTER_WINDOW_MODIFIERS: "[SelectLocalization( CharacterWindow.AreModifiersExpanded, 'CHARACTER_WINDOW_MODIFIERS_HIDE_TT', 'CHARACTER_WINDOW_MODIFIERS_SHOW_TT' )]"
  CHARACTER_WINDOW_EXTRA_MODIFIERS: "+[CharacterWindow.GetExtraModifiersNumber]"
  SEXUALITY_TT: "#T Sexuální orientace: [Character.GetSexuality]#!\nPohlaví: [Select_CString( Character.IsFemale, 'žena', 'muž' )]"
- HAS_STRONG_CLAIM_ON: "#T [TITLE.GetBaseNameNoTooltip]#!\n@pressed_claim![pressed_claim|E]"
- HAS_WEAK_CLAIM_ON: "#T [TITLE.GetBaseNameNoTooltip]#!\n@unpressed_claim![unpressed_claim|E]"
- HAS_IMPLICIT_CLAIM_ON: "#T [TITLE.GetBaseNameNoTooltip]#!\n[implicit_claim|E]"
+ HAS_STRONG_CLAIM_ON: "#T [TITLE.GetBaseNameNoTooltip]#!\n@pressed_claim![Concept('pressed_claim','Uplatněný nárok')|E]" # todo: CONCEPT CASE
+ HAS_WEAK_CLAIM_ON: "#T [TITLE.GetBaseNameNoTooltip]#!\n@unpressed_claim![Concept('unpressed_claim','Neuplatněný nárok')|E]" # todo: CONCEPT CASE
+ HAS_IMPLICIT_CLAIM_ON: "#T [TITLE.GetBaseNameNoTooltip]#!\n[Concept('implicit_claim','Implicitní nárok')|E]" # todo: CONCEPT CASE
  CHARACTER_TT_NAME_AGE: "[Character.GetUINameNotMeNoTooltip]#medium , [Character.GetAge]#!"
  CHARACTER_TT_NAME: "[Character.GetUINameNotMeNoTooltip]"
  CHARACTER_TT_AGE: "[Character.GetAge] let"
  CV_TRAITS_SHOW_TT: "#I Klikni pro rozbalení položek [Concept('traits','rysů')|E]#!"
  CV_TRAITS_HIDE_TT: "#I Klikni pro skrytí rozbalených položek [Concept('traits','rysů')|E]#!"
  COURTIERS: "[Character.Custom('GetCourtierPlural')|U]"
- CV_UNLANDED: "[unlanded|E]"
+ CV_UNLANDED: "[Concept('unlanded','Bezzemek')|E]" # todo: CONCEPT CASE
  CV_TAB_FAMILY: "Rodina"
  CV_TAB_RELATIONS: "Vztahy"
  CV_TAB_COURT: "[Character.Custom('GetCourtierPlural')|U]"
@@ -105,12 +107,12 @@
  VICTIMS_LABEL: "Oběti"
  DISCIPLE_LABEL: "Učedníci #weak ([GetDataModelSize( CharacterWindow.GetRelationsOfType( GetRelation( 'disciple' ) ) )]/[Character.MakeScope().ScriptValue('disciples_limit_value')])#!"
  ELDER_LABEL: "Starší"
- CV_SECRETS_HEADER: "[CharacterWindow.GetCharacter.GetNamePossessiveOrMy|U] [secrets|E]"
+ CV_SECRETS_HEADER: "[CharacterWindow.GetCharacter.GetNamePossessiveOrMy|U] [Concept('secrets','Tajemství')|E]" # todo: CONCEPT CASE
  CV_KNOWN_SECRETS_HEADER: "[Concept('secrets','Tajemství')|E], která zná [CharacterWindow.GetCharacter.GetNameOrMe]"
  CV_HOOKS_HEADER: "Tvé [Concept('hooks','páky')|E]"
  CV_HOOKS_ON_CHARACTER_HEADER: "Tvé [Concept('hooks','páky')|E] na [CharacterWindow.GetCharacter.GetNameOrMe]"
  CV_TARGET_HOOKS_HEADER: "[CharacterWindow.GetCharacter.GetNamePossessiveOrMy|U] [Concept('hooks','páky')|E] na tebe"
- HEALTH_INFO: "[health|E]: $STATE$"
+ HEALTH_INFO: "[Concept('health','Zdraví')|E]: $STATE$" # todo: CONCEPT CASE
  HEALTH_DYING: "#N Umírá#!"
  HEALTH_NEAR_DEATH: "#N Na prahu smrti#!"
  HEALTH_POOR: "#Z Špatné#!"
@@ -140,16 +142,16 @@
  CHARACTER_WINDOW_CHOOSE_EDUCATION_FOCUS: "#I Klikni pro výběr vzdělávacího zaměření#!"
  CHARACTER_WINDOW_VIEW_LIFESTYLE_FOCUS: "#I Klikni pro zobrazení životního stylu#!"
  CHARACTER_WINDOW_VIEW_EDUCATION_FOCUS: "#I Klikni pro zobrazení vzdělávacího zaměření#!"
- LIFESTYLE_FOCUS_ICON_HEADER: "#T [lifestyle|E]: [CHARACTER.GetFocus.GetName]#!"
- LIFESTYLE_FOCUS_ICON_HEADER_NO_FOCUS: "#T [lifestyle|E]: žádný#!"
+ LIFESTYLE_FOCUS_ICON_HEADER: "#T [Concept('lifestyle','Životní styl')|E]: [CHARACTER.GetFocus.GetName]#!" # todo: CONCEPT CASE
+ LIFESTYLE_FOCUS_ICON_HEADER_NO_FOCUS: "#T [Concept('lifestyle','Životní styl')|E]: žádný#!" # todo: CONCEPT CASE
  EDUCATION_FOCUS_ICON_HEADER: "#T Vzdělávací zaměření: [CHARACTER.GetFocus.GetNameNoTooltip]#!"
  EDUCATION_FOCUS_ICON_HEADER_NO_FOCUS: "#T Vzdělávací zaměření: žádné#!"
  SKILL_ITEM_VALUE: "[SkillItem.GetValue]"
  SKILL_ITEM_TOOLTIP: "[SkillItem.GetSkillBreakdownTooltip]\n\n#S Účinky:#!\n[SkillItem.GetSkillEffects]"
  SKILL_NO_EFFECT: "Žádné účinky na této úrovni"
  HOOK_FOR_MAX_OPINION_NONE: "žádná páka"
- HOOK_FOR_MAX_OPINION_WEAK: "[hook|E]"
- HOOK_FOR_MAX_OPINION_STRONG: "[strong_hook|E]"
+ HOOK_FOR_MAX_OPINION_WEAK: "[Concept('hook','Páka')|E]" # todo: CONCEPT CASE
+ HOOK_FOR_MAX_OPINION_STRONG: "[Concept('strong_hook','Silná páka')|E]" # todo: CONCEPT CASE
  HAS_LEASE_APPROVAL_FROM_ORGANIZATION: "Ty i [Character.GetShortUIName] patříte k [Concept('clergy','duchovenstvu')|E] a ty jsi [Concept('liege','lenním pánem')|E] [Character.Custom('CZ_ShortUIName_G')]"
  HAS_LEASE_APPROVAL_FROM_HOOK: "máš $TYPE$ na [CHARACTER.Custom('CZ_ShortUIName_A')]"
  HAS_LEASE_APPROVAL_FROM_OPINION: "[Concept('opinion','Mínění')|E], které o tobě má [CHARACTER.GetShortUIName], je $THRESHOLD|+=$ nebo vyšší"
@@ -161,7 +163,10 @@
  THEOCRACY_LESSEE_APPROVAL_ENDORSE: "#T Tvůj [Concept('realm_priest','vrchní duchovní')|E] tě podporuje#!\nProtože $REASON$."
  THEOCRACY_LESSEE_APPROVAL_NO_ENDORSE: "#T Tvůj [Concept('realm_priest','vrchní duchovní')|E] tě #emphasis nepodporuje#!#!\nProtože $REASON$."
  THEOCRACY_LESSEE_INCOME_SECTION: "#bold [Concept('church_obligations','církevní odvody')|EU]#!\n[Concept('taxes','daně')|E]: [gold_i][TARGET_CHARACTER.GetIncomeFromTheocraticLease|1+=]/měsíc (z možných [gold_i][TARGET_CHARACTER.GetMaxIncomeFromTheocraticLease|1+=]/měsíc )\n[Concept('levies','odvedenci')|EU]: [soldier_i][TARGET_CHARACTER.GetLeviesFromTheocraticLease|V] (z možných [soldier_i][TARGET_CHARACTER.GetMaxLeviesFromTheocraticLease|V] )\n\nRozpis daňových povinností (max. #V [TARGET_CHARACTER.GetTheocraticRulerMaxTaxSplit|%0]#!):\n[TARGET_CHARACTER.GetTheocraticRulerIncomeRules]"
- CV_THEOCRACY_LESSEE_TOOLTIP: "#T [Concept('church_property','církevní državy')|EU]#!\n[Character.GetNumTitlesFromTheocraticLease] chrámů na základě smlouvy [Character.GetFaith.GetTheocracyLeaseContractType.GetName] [Concept('lease_contract','nájemní smlouvy')|E]\n\n[Concept('taxes','daně')|EU]: [gold_i][Character.GetBalanceFromTheocraticLease|1+=]/měsíc\n\n#T [Concept('income','příjem')|EU]: [gold_i][Character.GetIncomeFromTheocraticLease|1+=]/měsíc#!\n[Character.GetIncomeBreakdownFromTheocraticLease]\n\n#T $EXPENSES_FROM_THEOCRACY_LEASE$: [gold_i][Character.GetExpensesFromTheocraticLease|1+=]/měsíc#!\n[Character.GetExpensesBreakdownFromTheocraticLease]\n\n[Concept('levies','odvedenci')|E]: [soldier_i][Character.GetLeviesFromTheocraticLease|V]\n[Character.GetLeviesBreakdownFromTheocraticLease]"
+ CV_THEOCRACY_LESSEE_TOOLTIP_HEADER: "#T [Concept('church_property','Církevní državy')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ CV_THEOCRACY_LEASED_HOLDINGS: "[Character.GetNumTitlesFromTheocraticLease] chrámů pronajatých na základě [Concept('lease_contract','nájemní smlouvě')|E] [Character.GetFaith.GetTheocracyLeaseContractType.GetName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ CV_THEOCRACY_BALANCE_ENTRY: "Bilance [Concept('taxes','daně')|E] [Concept('lessee','nájemce')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ BREAKDOWN_INCOME_ENTRY: "[Concept('income','Příjem')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  CV_THEOCRACY_RELIGIOUS_HEAD_TOOLTIP: "#T $RELIGIOUS_HEAD$#!\n\n[Concept('taxes','daně')|E]: [gold_i]$VALUE|1+=$/měsíc"
  THEOCRATIC_LEASE_BREAKDOWN_TO_RULER: "Pro [CHARACTER.Custom('CZ_ShortUIName_A')]"
  THEOCRATIC_LEASE_BREAKDOWN_TO_LEASE_LIEGE: "Pro [CHARACTER.Custom('CZ_ShortUIName_A')]"
@@ -183,10 +188,12 @@
  TT_HOUSE_HEAD_DESC: "[CHARACTER.LocalPlayerString( 'Jsi', 'THIRD_IS' )] [Concept('house_head','hlavou rodu')|E] [CHARACTER.GetHouse.GetBaseName]"
  TT_DYNAST_DESC: "[CHARACTER.LocalPlayerString( 'Jsi', 'THIRD_IS' )] [Concept('dynast','hlavou dynastie')|E] [CHARACTER.GetHouse.GetDynasty.GetName] a zároveň [Concept('house_head','hlavou rodu')|E] [CHARACTER.GetHouse.GetBaseName]"
  THIRD_IS: "[CHARACTER.GetUIName] je"
- CV_COURTIER_SPONSOR_INSPIRATION: ", nebo když se staneš [Concept('sponsor','mecenášem')|E] [Character.GetHerHis] inspirace [Character.GetCurrentInspiration.GetName]"
- CV_COURTIER_STAY_REASON: "například zaměstnání jako $knight_culture_player$ nebo [Concept('councillor','rádce')|E][SelectLocalization( CHARACTER.HasInspiration, 'CV_COURTIER_SPONSOR_INSPIRATION', '' )]"
+ CV_COURTIER_SPONSOR_INSPIRATION: ", nebo když se staneš [Concept('sponsor','mecenášem')|E] [Select_CString(Character.IsFemale,'její','jeho')] inspirace [Character.GetCurrentInspiration.GetName]"
+ CV_COURTIER_STAY_REASON: "například zaměstnání jako $knight_culture_player_consonant$ $knight_culture_player$ nebo [CHARACTER.Custom('GetCourtPositionOrAssociate')][SelectLocalization( CHARACTER.HasInspiration, 'CV_COURTIER_SPONSOR_INSPIRATION', '' )]" # todo: CHANGED (predtym: například zaměstnání jako $knight_culture_player$ nebo [Concept('councillor','rádce')|E][SelectLocalization( CHARACTER.H)
  CV_COURTIER_WANTS_TO_LEAVE_COURT: "[CHARACTER.GetShortUINameNoTooltip] může opustit [CHARACTER.Custom('GetCourtConcept')] [TARGET_CHARACTER.Custom('CZ_ShortUIName_G')]. [CHARACTER.GetSheHe|U] zůstane, pokud k tomu dostane důvod, $CV_COURTIER_STAY_REASON$."
  CV_COURTIER_WILL_LEAVE_COURT: "[CHARACTER.GetShortUINameNoTooltip] brzy opustí [CHARACTER.Custom('GetCourtConcept')] [TARGET_CHARACTER.Custom('CZ_ShortUIName_G')]. [CHARACTER.GetSheHe|U] zůstane pouze tehdy, pokud k tomu dostane důvod, $CV_COURTIER_STAY_REASON$."
+ COURTIER_COUNCILLOR: "[Concept('councillor','Rádce')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ ASSOCIATE_DEPUTY: "[Concept('deputy','Zástupce')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  CHARACTER_WINDOW_CLAIM_TOOLTIP: "[Claim.GetTooltip|U]\n$COA_TOOLTIP_CLICK_INFO_GUI$"
  CHARACTER_WINDOW_FULL_DESCRIPTION: "$RELATION$ • #TOOLTIP:AI_PERSONALITY_TOOLTIP $PERSONALITY$ #!"
  CHARACTER_WINDOW_PERSONALITY_DESCRIPTION: "#TOOLTIP:AI_PERSONALITY_TOOLTIP $PERSONALITY$ #!"
@@ -215,13 +222,22 @@
  FIND_SPOUSE: "Najít [Concept('spouse','choť')|E]"
  KNOWN_LANGUAGES_TOOLTIP: "#T Známé [Concept('languages','jazyky')|E]#!\n[Character.GetKnownLanguagesString]\n\n#weak Současný [Concept('language_limit','limit cizích jazyků')|E]: [Character.MakeScope.ScriptValue('current_extra_languages')|V0] z [Character.MakeScope.ScriptValue('language_soft_cap')|V0]#!"
  REQUEST_CONTRIBUTION_TOOLTIP: "[AddLocalizationIf(Not(CharacterListItem.IsSelectable),'REQUEST_CONTRIBUTION_ERROR_TOOLTIP')]"
- REQUEST_CONTRIBUTION_ERROR_TOOLTIP: "@warning_icon! [great_project_contributor|E] nelze vybrat, dokud nejsou splněny všechny požadavky pro [Concept('contribution','příspěvek')|E]"
+ REQUEST_CONTRIBUTION_ERROR_TOOLTIP: "@warning_icon! [Concept('great_project_contributor','Přispěvatel')|E] nelze vybrat, dokud nejsou splněny všechny požadavky pro [Concept('contribution','příspěvek')|E]" # todo: CONCEPT CASE
  EXTENDED_RELATIONS_TOOLTIP: "[Character.GetRelationToStringExtended( GetPlayer )]"
  CHARACTER_WINDOW_LEGITIMACY_LEVEL: "[LegitimacyLevel.GetIndex|V]/[Subtract_int32( GetDataModelSize( LegitimacyType.GetLevels ), '(int32)1' )|V]"
  DIARCH_ICON_TOOLTIP: "#T Aktivní [Concept('power_sharing','sdílení moci')|E]\n#![Character.GetShortUIName|U] [Select_CString( Character.IsLocalPlayer, 'jsi', 'je' )] [Character.GetLiege.GetShortUINamePossessive] [Character.GetLiege.GetDiarchTitle]"
- RADIANCE_TOOLTIP_HEADER: "[mandala_radiance|E]: $RADIANCE$/#V [GetDefine( 'NMandala', 'MAX_RADIANCE' )]#!"
- RADIANCE_TOOLTIP_DISABLED: "@warning_icon! #WARNING Postava musí mít #HIGH $building_mandala_capital_01$#! [Concept('great_building','velkolepou budovu')|E] nebo vyšší úrovně, aby mohla mít [Concept('mandala_radiance','záři mandaly')|E]#!"
- MANDALA_ASPECT_DESC: "[mandala_aspect|E]"
+ RADIANCE_TOOLTIP_HEADER: "[Concept('mandala_radiance','Záře mandaly')|E]: $RADIANCE$/#V [GetDefine( 'NMandala', 'MAX_RADIANCE' )]#!" # todo: CONCEPT CASE
+ RADIANCE_TOOLTIP_DISABLED: "@warning_icon! #WARNING Postava musí mít #HIGH $mandala_capital_01$#! [Concept('great_district','velkou čtvrť')|E] nebo vyšší úrovně, aby mohla mít [Concept('mandala_radiance','záři mandaly')|E]#!" # todo: CHANGED (predtym: @warning_icon! WARNING Postava musí mít HIGH $building_mandala_capital_01$ ! [Concept('great_building','velkolepou budov)
+ CHARACTER_VIEW_TRADE_POSTS: "[Character.GetNumTradePosts]/[Character.GetMaxTradePosts]" # todo: NEW TRANSLATION
+ CHARACTER_VIEW_TRADE_POSTS_TT: "[Concept('trade_post_districts','Čtvrti obchodních stanic')|E]: #V [Character.GetNumTradePosts]/[Character.GetMaxTradePosts]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ CHARACTER_VIEW_TRADE_POST_DISTRICT: "@trade_post_icon! [District.GetHolding.GetName] #weak ([TradeMarket.GetName])#!" # todo: NEW TRANSLATION
+ CHARACTER_VIEW_TRADE_POST_LIMIT: "[Concept('trade_post_limit','Limit obchodních stanic')|E]: [Character.GetMaxTradePosts|V]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ CHARACTER_VIEW_TRADE_POST_BASE_LIMIT: "Základ: #P $VALUE$#!" # todo: NEW TRANSLATION
+ CHARACTER_VIEW_TRADE_POST_OVER_LIMIT_HEADER: "@warning_icon! #WARNING #EMP Překračujete [Concept('trade_post_limit','limit obchodních stanic')|E]. Zvažte rozebrání některých [Concept('trade_posts','obchodních stanic')|E], abyste se vyhnuli postihům.#!#!\nÚčinky za každý [Concept('trade_post','obchodní stanice')|E] nad limit:" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ CHARACTER_VIEW_PROFIT_ROUTES: "[Character.GetCurrentProfitRouteCount]" # todo: NEW TRANSLATION
+ CHARACTER_VIEW_PROFIT_ROUTES_TT: "[Concept('profit_routes','Výnosné trasy')|E]: [Character.GetCurrentProfitRouteCount|V]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ CHARACTER_VIEW_PROFIT_ROUTE_NAME: "[TradeRoute.GetName]" # todo: NEW TRANSLATION
+ MANDALA_ASPECT_DESC: "[Concept('mandala_aspect','Aspekt mandaly')|E]" # todo: CONCEPT CASE
  ROSE_FROM_THE_ASHES: "[GetModifier('mandala_rise_from_the_ashes_modifier').GetNameWithTooltip]"
  I_AM_A_TRIBUTARY_OF_A_MANDALA: "[Concept('tributary','Tributář')|E] božského krále"
  I_AM_A_VASSAL: "Jsem [Concept('vassal','vazal')|E]"

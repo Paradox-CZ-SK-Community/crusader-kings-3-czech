@@ -89,8 +89,8 @@
  FAITH_MILITARY_HOLY_ORDERS_HEADER: "[Concept('military_holy_orders','Vojenské řády')|E]"
  FAITH_RITE_HOLY_SITES_NONE: "[Rite.GetAdherentNamePluralNoTooltip] nemají pod kontrolou žádná [CZFaithAdjDecline(Faith,'á')] [Concept('holy_sites','svatá místa')|E]"
  FAITH_RITE_HOLY_SITES_HEADER: "[Rite.GetAdherentNamePluralNoTooltip] ovládají [CZFaithAdjDecline(Rite.GetFaith,'á')] [Concept('holy_sites','svatá místa')|e]"
- FAITH_OTHER_RITES_HOLY_SITES_HEADER: "$game_concept_holy_sites$ – jiné [CZFaithAdjDecline(Faith,'é')] $game_concept_rites$"
- FAITH_OTHER_FAITHS_HOLY_SITES_HEADER: "$game_concept_holy_sites$ – jiné $game_concept_faiths$"
+ FAITH_OTHER_RITES_HOLY_SITES_HEADER: "Svatá místa – jiné [CZFaithAdjDecline(Faith,'é')] $game_concept_rites$" # todo: CONCEPT CASE
+ FAITH_OTHER_FAITHS_HOLY_SITES_HEADER: "Svatá místa – jiné $game_concept_faiths$" # todo: CONCEPT CASE
  FAITH_HOLY_SITE_TIER: "[SelectLocalization(Faith.IsEminentHolySite(HolySite.Self),'FAITH_HOLY_SITE_TIER_EMINENT','FAITH_HOLY_SITE_TIER_REGULAR')]"
  FAITH_HOLY_SITE_TIER_EMINENT: "[Concept('eminent_holy_site','Významné svaté místo')|E]"
  FAITH_HOLY_SITE_TIER_REGULAR: "[Concept('holy_site','Svaté místo')|E]"
@@ -128,8 +128,8 @@
  FAITH_TENET_ITEM_DIVERGENT: "@divergence_icon! [Concept('mainline_rite','Hlavní ritus')|E] ji nepraktikuje ([Concept('divergence','Odlišná')|E])"
  FAITH_SHOW_ALL: "Zobrazit všechny doktríny"
  FAITH_HIDE: "Skrýt"
- TENET_TOOLTIP_SINS: "@sin_icon! #E $game_concept_sins$#!"
- TENET_TOOLTIP_VIRTUES: "#E $game_concept_virtues$#! @virtue_icon!"
+ TENET_TOOLTIP_SINS: "@sin_icon! #E Hříchy#!" # todo: CONCEPT CASE
+ TENET_TOOLTIP_VIRTUES: "#E Ctnosti#! @virtue_icon!" # todo: CONCEPT CASE
  TENET_TOOLTIP_NO_SINS: "Tato [Concept('tenet','zásada')|E] nečiní žádné [Concept('traits','rysy')|E] [Concept('sinful','hříšnými')|E]"
  TENET_TOOLTIP_NO_VIRTUES: "Tato [Concept('tenet','zásada')|E] nečiní žádné [Concept('traits','rysy')|E] [Concept('virtuous','ctnostnými')|E]"
  TENET_TOOLTIP_TRAIT_FULFILLMENT_GAIN: "@spiritual_fulfillment_gain_icon![TenetType.GetTraitFulfillmentValue( Trait.Self, Rite.Self )|0+=]"
@@ -260,7 +260,7 @@
  FERVOR_HERESY_NEGATION_MODIFIER: "Bonus za nezapočítaná kacířství"
  FERVOR_ENTRY_DIVERGENT_RITES_PROTECTION: "Ignorované postihy za odlišné rity"
  FERVOR_HERESY_THRESHOLD: "Práh [Concept('rite_divergence','odlišnosti')|E] pro [Concept('heresies','kacířství')|E]"
- FAITH_VIEW_COLLEGE_OF_CARDINALS: "#T $game_concept_college_of_cardinals$#!\n\n#I Kliknutím zobrazíš#!"
+ FAITH_VIEW_COLLEGE_OF_CARDINALS: "#T Kardinálské kolegium#!\n\n#I Kliknutím zobrazíš#!" # todo: CONCEPT CASE
  FAITH_VIEW_HOLY_ORDER_DIVERGENCE: "@divergence_icon! [HolyOrder.GetDivergence|V0]"
  FAITH_VIEW_HOLY_ORDER_HOLDINGS: "[Concept('holdings','Državy')|E]: #underline;high [GetDataModelSize(HolyOrder.GetLeasedTitles)]#!"
  FAITH_VIEW_HOLY_ORDER_INTERACTIONS_BUTTON_TT: "#T Zobrazit interakce svatého řádu#!"
@@ -296,10 +296,10 @@
  FAITH_VIEW_HOR_NONE_TT: "#T Hlava ritu#!\n[Concept('head_of_rite','Hlava ritu')|E]: Žádná\n\n[Rite.GetName] nemá [Concept('head_of_rite','hlavu ritu')|E]"
  faith_find_adherent: "Najít stoupence"
  faith_find_adherent_tt: "#T Spustit intriku a najít stoupence víry [Faith.GetNameNoTooltip].#!\n\n#I Kliknutím intriku spustíš.#!"
- belief_tab_rites: "$game_concept_rites$"
- belief_tab_tenets: "$game_concept_core_tenets$"
- belief_tab_doctrines: "$game_concept_doctrines$"
- belief_tab_saints: "$game_concept_canonized$"
+ belief_tab_rites: "Rity" # todo: CONCEPT CASE
+ belief_tab_tenets: "Zásady" # todo: CONCEPT CASE
+ belief_tab_doctrines: "Doktríny" # todo: CONCEPT CASE
+ belief_tab_saints: "Kanonizovaný" # todo: CONCEPT CASE
  belief_saint_location: "[Select_CString(SaintItem.GetSaint.IsAlive,'Původ:','Pohřbení:')] [SaintItem.GetLocation.GetName]"
  belief_saint_remaining_relics: "Další dostupné [Concept('holy_relics','svaté relikvie')|E]: [SaintItem.GetAvailableRelics|V]"
  belief_saint_relics: "Zbývající [Concept('holy_relics','svaté relikvie')|E]:"
@@ -313,4 +313,3 @@
  doctrine_status_rite_mainline: "Hlavní doktrína"
  doctrine_status_known: "Známá"
  doctrine_status_unknown: "Neznámá"
- FAITH_WINDOW_TENET_TOOLTIP: "#T [TenetType.GetNameNoTooltip(Rite.Self)]#!\n[TenetType.GetEffectsDescription(Rite.Self)]\n\n[TenetType.GetDescription(Rite.Self)|F]" # todo: NOT IN ENGLISH

@@ -3,7 +3,7 @@
  offer_hostage_interaction_desc: "Pošli [recipient.GetShortUINameNoTooltip] [Concept('hostage','rukojmí')|E] jako záruku, že proti [recipient.GetShortUINameNoTooltip] nezaútočíš"
  offer_hostage_interaction_notification: "Nabídnuto rukojmí"
  offer_hostage_interaction_extra_icon: "$arrange_marriage_interaction_extra_icon$"
- actor_secondary_offer_hostage_interaction: "[hostage|E]"
+ actor_secondary_offer_hostage_interaction: "[Concept('hostage','Rukojmí')|E]" # todo: CONCEPT CASE
  OFFER_HOSTAGE_PROPOSAL: "V zájmu míru ti nabízím rukojmí: [actor.Custom2('RelationToMeShort', SCOPE.sC('secondary_actor'))] [secondary_actor.GetTitledFirstName]."
  OFFER_HOSTAGE_SELECT_HOSTAGE_TO_TRANSFER: "Vyber [Concept('hostage','rukojmí')|E] k nabídnutí"
  NOT_I_HAVE_VALID_HOSTAGE_TO_OFFER: "Nemáš žádné vhodné [Concept('hostages','rukojmí')|El], které můžeš nabídnout [TARGET_CHARACTER.GetShortUIName]"
@@ -13,7 +13,7 @@
  demand_hostage_interaction_desc: "Požaduj po [recipient.GetShortUINameNoTooltip] zaslání [Concept('hostage','rukojmí')|El] jako záruku, že proti tobě nezaútočí"
  demand_hostage_interaction_notification: "Vznesen požadavek na rukojmí"
  demand_hostage_interaction_extra_icon: "$arrange_marriage_interaction_extra_icon$"
- recipient_secondary_demand_hostage_interaction: "[hostage|E]"
+ recipient_secondary_demand_hostage_interaction: "[Concept('hostage','Rukojmí')|E]" # todo: CONCEPT CASE
  DEMAND_HOSTAGE_PROPOSAL: "Musím požadovat, abys na můj dvůr poslal rukojmí: [recipient.Custom2('RelationToMeShort', SCOPE.sC('secondary_recipient'))] [secondary_recipient.GetTitledFirstName] — je to nejlepší záruka míru."
  DEMAND_HOSTAGE_SELECT_HOSTAGE_TO_OFFER: "Vyber [Concept('hostage','rukojmí')|E], které budeš požadovat"
  NOT_I_HAVE_VALID_HOSTAGE_TO_DEMAND: "[TARGET_CHARACTER.GetShortUIName] nemá žádné vhodné [Concept('hostages','rukojmí')|El], které můžeš požadovat"
@@ -31,12 +31,12 @@
  return_hostage_interaction_desc: "Pošli jednoho z [recipient.GetShortUINamePossessive] [Concept('hostages','rukojmích')|El] domů"
  return_hostage_interaction_notification: "Rukojmí navráceno"
  return_hostage_interaction_extra_icon: "$arrange_marriage_interaction_extra_icon$"
- recipient_secondary_return_hostage_interaction: "[hostage|E]"
+ recipient_secondary_return_hostage_interaction: "[Concept('hostage','Rukojmí')|E]" # todo: CONCEPT CASE
  recall_hostage_interaction: "Požádat o návrat rukojmí"
  recall_hostage_interaction_desc: "Požádej [recipient.GetShortUINamePossessive] o navrácení jednoho z tvých [Concept('hostages','rukojmích')|El]"
  recall_hostage_interaction_notification: "Vyžádán návrat rukojmí"
  recall_hostage_interaction_extra_icon: "$arrange_marriage_interaction_extra_icon$"
- recipient_secondary_recall_hostage_interaction: "[hostage|E]"
+ recipient_secondary_recall_hostage_interaction: "[Concept('hostage','Rukojmí')|E]" # todo: CONCEPT CASE
  RECALL_HOSTAGE_PROPOSAL: "Musím požadovat okamžité navrácení mého rukojmí na můj dvůr: [actor.Custom2('RelationToMeShort', SCOPE.sC('secondary_recipient'))] [secondary_recipient.GetTitledFirstName]."
  TRUCE_OFFER_HOSTAGE: "[hostage_sender.GetShortUIName|U] nabídl[Select_CString( hostage_sender.IsFemale, 'a', '' )] [Concept('hostage','rukojmí')|E] [hostage_taker.GetShortUIName] ([hostage.GetShortUIName])"
  TRUCE_DEMAND_HOSTAGE: "[hostage_taker.GetShortUIName|U] požadoval[Select_CString( hostage_taker.IsFemale, 'a', '' )] [Concept('hostage','rukojmí')|E] od [hostage_sender.GetShortUIName] ([hostage.GetShortUIName])"
@@ -61,13 +61,13 @@
  hostage_travelling_tt: "[THIS.Char.GetShortUIName|U] cestuje, aby se [Select_CString( THIS.Char.IsFemale, 'stala', 'stal' )] [Concept('hostage','rukojmím')|E]"
  hostage_attack_warning_tt: "@warning_icon! #X [Concept('home_courts','Domovské dvory')|E] a [Concept('wardens','strážci')|E] utrpí postihy, pokud na sebe vzájemně zaútočí#!"
  hostage_execution_warning_tt: "@warning_icon! #X [Concept('wardens','Strážci')|E], kteří vedou [Concept('war','válku')|E] s [Concept('home_courts','domovskými dvory')|E], mohou bez postihu popravovat [Concept('hostages','rukojmí')|E]#!"
- hostage_prestige_income_tt: "[CHARACTER.GetShortUIName|U] bude získávat [prestige_i|E][Concept('prestige','prestiž')|E]"
+ hostage_prestige_income_tt: "[CHARACTER.GetShortUIName|U] bude získávat [Concept('prestige_i','@prestige_icon!')|E][Concept('prestige','prestiž')|E]" # todo: CONCEPT CASE
  hostage_prestige_income_tt_past: "$hostage_prestige_income_tt$"
- hostage_prestige_renown_income_tt: "[CHARACTER.GetShortUIName|U] bude získávat [prestige_i|E][Concept('prestige','prestiž')|E] a [dynasty_prestige_i|E][Concept('dynasty_prestige','věhlas')|E]"
- hostage_prestige_piety_renown_income_tt: "[CHARACTER.GetShortUIName|U] bude získávat [prestige_i|E][Concept('prestige','prestiž')|E], [dynasty_prestige_i|E][Concept('dynasty_prestige','věhlas')|E] a [piety_i|E][Concept('piety','zbožnost')|E]"
- hostage_prestige_income_loss_tt: "Přijde o příjem [prestige_i|E][Concept('prestige','prestiže')|E]"
- hostage_prestige_renown_income_loss_tt: "Přijde o příjem [prestige_i|E][Concept('prestige','prestiže')|E] a [dynasty_prestige_i|E][Concept('dynasty_prestige','věhlasu')|E]"
- hostage_prestige_piety_renown_income_loss_tt: "Přijde o příjem [prestige_i|E][Concept('prestige','prestiže')|E], [dynasty_prestige_i|E][Concept('dynasty_prestige','věhlasu')|E] a [piety_i|E][Concept('piety','zbožnosti')|E]"
+ hostage_prestige_renown_income_tt: "[CHARACTER.GetShortUIName|U] bude získávat [Concept('prestige_i','@prestige_icon!')|E][Concept('prestige','prestiž')|E] a [Concept('dynasty_prestige_i','@dynasty_prestige_icon!')|E][Concept('dynasty_prestige','věhlas')|E]" # todo: CONCEPT CASE
+ hostage_prestige_piety_renown_income_tt: "[CHARACTER.GetShortUIName|U] bude získávat [Concept('prestige_i','@prestige_icon!')|E][Concept('prestige','prestiž')|E], [Concept('dynasty_prestige_i','@dynasty_prestige_icon!')|E][Concept('dynasty_prestige','věhlas')|E] a [Concept('piety_i','[GetLocalPlayerPietyTextIcon]')|E][Concept('piety','zbožnost')|E]" # todo: CONCEPT CASE
+ hostage_prestige_income_loss_tt: "Přijde o příjem [Concept('prestige_i','@prestige_icon!')|E][Concept('prestige','prestiže')|E]" # todo: CONCEPT CASE
+ hostage_prestige_renown_income_loss_tt: "Přijde o příjem [Concept('prestige_i','@prestige_icon!')|E][Concept('prestige','prestiže')|E] a [Concept('dynasty_prestige_i','@dynasty_prestige_icon!')|E][Concept('dynasty_prestige','věhlasu')|E]" # todo: CONCEPT CASE
+ hostage_prestige_piety_renown_income_loss_tt: "Přijde o příjem [Concept('prestige_i','@prestige_icon!')|E][Concept('prestige','prestiže')|E], [Concept('dynasty_prestige_i','@dynasty_prestige_icon!')|E][Concept('dynasty_prestige','věhlasu')|E] a [Concept('piety_i','[GetLocalPlayerPietyTextIcon]')|E][Concept('piety','zbožnosti')|E]" # todo: CONCEPT CASE
  warden_lower_title_tier_tt: "#weak [TARGET_CHARACTER.GetPrimaryTitle.GetNameNoTier] je na vyšší [Concept('title_tier','úrovni')|E] než [CHARACTER.GetPrimaryTitle.GetNameNoTier]#!"
  warden_lower_dynasty_renown_tt: "#weak [TARGET_CHARACTER.GetDynasty.GetBaseName] má vyšší [Concept('dynasty_prestige_level','úroveň věhlasu')|E] než [CHARACTER.GetDynasty.GetBaseName]#!"
  hostage_faith_hostility_tt: "#weak [TARGET_CHARACTER.GetFaith.GetAdherentNamePlural] považují [Concept('faith','víru')|E] [CHARACTER.GetFaith.GetName] za [TARGET_CHARACTER.Custom2('ToleranceValue', CHARACTER.Self)|U]#!"
@@ -82,7 +82,7 @@
  hostage_truce_ending_tt: "@warning_icon! #negative_value [actor.GetShortUIName|U] a [recipient.GetShortUIName] na sebe nyní mohou bez omezení útočit#!"
  spared_me_opinion: "Ušetřil mě"
  spared_hostage_opinion: "Ušetřil rukojmí"
- killed_hostage_opinion: "Zabil rukojmí"
+ killed_hostage_opinion: "[Select_CString(ROOT.Char.IsFemale,'Zabila','Zabil')] rukojmí"
  hostage_died_opinion: "Rukojmí zemřel"
  liege_demanded_hostage_opinion: "Lenní pán požadoval rukojmí"
  vassal_refused_hostage_demand_opinion: "Vazal odmítl vydat rukojmí"
@@ -120,7 +120,7 @@
  HOSTAGE_ALREADY_DEMANDED_REASON: "$already_have_their_hostage_tt$: $VALUE|=+0$"
  HOSTAGE_PREVIOUSLY_DIED_REASON: "Dopustil[Select_CString( recipient.IsFemale, 'a', '' )] smrt [Concept('hostage','rukojmí')|E]:  $VALUE|=+0$"
  HOSTAGE_PREVIOUSLY_DIED_HOME_COURT_REASON: "Dopustil[Select_CString( recipient.IsFemale, 'a', '' )] smrt mého [Concept('hostage','rukojmí')|E]:  $VALUE|=+0$"
- HOSTAGE_KILLED_REASON: "Zabil[Select_CString( recipient.IsFemale, 'a', '' )] mé [Concept('hostage','rukojmí')|E]: $VALUE|=+0$"
+ HOSTAGE_KILLED_REASON: "[Select_CString(ROOT.Char.IsFemale,'Zabila','Zabil')][Select_CString( recipient.IsFemale, 'a', '' )] mé [Concept('hostage','rukojmí')|E]: $VALUE|=+0$"
  HOSTAGE_SICK_REASON: "Zdraví [Concept('hostage','rukojmí')|E]: $VALUE|=+0$"
  HOSTAGE_HEALTHY_REASON: "$HOSTAGE_SICK_REASON$"
  HOSTAGE_REALM_LAW_REASON: "[Concept('crown_authority','Korunní autorita')|E] činí neuposlechnutí [Concept('liege','lenního pána')|E] nečestným: $VALUE|=+0$"
@@ -164,9 +164,9 @@
  char_interaction.0311.desc: "Přestaň se prosím pokoušet sjednat mezi námi příměří. V tuto chvíli nemohu souhlasit s výměnou rukojmích."
  char_interaction.0311.a: "Budiž."
  char_interaction.0320.opening: "[actor.Custom2('AppropriateGreetingPositive', recipient )]"
- char_interaction.0320.desc: "Nenašel se žádný důvod, proč bych měl nadále držet jako [actor.GetPrimaryTitle.GetAdjectiveNoTooltip] rukojmí tuto osobu: [Select_CString(SCOPE.sC('secondary_recipient').IsFemale,'tvá','tvůj')] [recipient.Custom2('RelationToMeShort', SCOPE.sC('secondary_recipient'))], [secondary_recipient.GetFirstName]."
+ char_interaction.0320.desc: "[Select_CString(ROOT.Char.IsFemale,'Nenašla','Nenašel')] se žádný důvod, proč bych měl nadále držet jako [actor.GetPrimaryTitle.GetAdjectiveNoTooltip] rukojmí tuto osobu: [Select_CString(SCOPE.sC('secondary_recipient').IsFemale,'tvá','tvůj')] [recipient.Custom2('RelationToMeShort', SCOPE.sC('secondary_recipient'))], [secondary_recipient.GetFirstName]."
  char_interaction.0320.a: "[secondary_recipient.GetSheHe|U] se vrátil[Select_CString( secondary_recipient.IsFemale, 'a', '' )]!"
- char_interaction.0330.desc: "S radostí přijmu jako své rukojmí tuto osobu: [Select_CString(SCOPE.sC('hostage').IsFemale,'tvá','tvůj')] [hostage_sender.Custom2('RelationToMeShort', SCOPE.sC('hostage'))], [hostage.GetFirstName].\n\nTěším se na [hostage.GetHerHis] příjezd do [CZProvNameNoTooltip(hostage_taker.GetCapitalLocation,'G')]."
+ char_interaction.0330.desc: "S radostí přijmu jako své rukojmí tuto osobu: [Select_CString(SCOPE.sC('hostage').IsFemale,'tvá','tvůj')] [hostage_sender.Custom2('RelationToMeShort', SCOPE.sC('hostage'))], [hostage.GetFirstName].\n\nTěším se na [Select_CString(hostage.IsFemale,'její','jeho')] příjezd do [CZProvNameNoTooltip(hostage_taker.GetCapitalLocation,'G')]."
  char_interaction.0330.a: "Výborně."
  char_interaction.0331.desc: "Nezbývá mi než přijmout tvůj požadavek a vydat ti jako rukojmí tuto osobu: [Select_CString(SCOPE.sC('hostage').IsFemale,'má','můj')] [hostage_sender.Custom2('RelationToMeShort', SCOPE.sC('hostage'))], [hostage.GetFirstName].\n\n[hostage.GetSheHe|U] okamžitě vyrazí do [CZProvNameNoTooltip(hostage_taker.GetCapitalLocation,'G')]."
  char_interaction.0331.a: "Skvělé."
@@ -187,7 +187,7 @@
  action_can_offer_hostage_combined_label: "[recipient.GetUINameNoTooltip]"
  action_can_offer_hostage_combined_unimportant: "@warning_icon! #X Potenciální cíle proti tobě nemají žádný [Concept('casus_bellis','casus belli')|E] nebo s tebou již mají uzavřené [Concept('truce','příměří')|E]#!"
  action_can_offer_hostage_unimportant: "@warning_icon! #X Proti tobě neexistuje žádný [Concept('casus_bellis','casus belli')|E] ze strany [recipient.GetShortUIName] nebo mezi vámi již platí [Concept('truce','příměří')|E]#!"
- hostage_benefit_tt: "#help Rukojmí mohou odradit či neutralizovat hrozby, takže můžeš svou pozornost zaměřit jinam, a [Concept('warden','strážci')|E] přinášejí měsíční [prestige_i|E][Concept('prestige','prestiž')|E].#!"
+ hostage_benefit_tt: "#help Rukojmí mohou odradit či neutralizovat hrozby, takže můžeš svou pozornost zaměřit jinam, a [Concept('warden','strážci')|E] přinášejí měsíční [Concept('prestige_i','@prestige_icon!')|E][Concept('prestige','prestiž')|E].#!" # todo: CONCEPT CASE
  action_can_demand_hostage: "@hostage! Můžeš požadovat rukojmí"
  action_can_demand_hostage_label: "@hostage! Můžeš požadovat [Concept('hostage','rukojmí')|E] od [recipient.GetUINameNoTooltip]"
  action_can_demand_hostage_desc: "[recipient.GetUINameNoTooltip] přijme tvůj požadavek na [Concept('hostage','rukojmí')|E].\n\n$hostage_benefit_tt$"
@@ -216,4 +216,4 @@
  action_can_recall_hostage_combined_group_label: "@hostage! Můžeš požádat o návrat rukojmích"
  action_can_recall_hostage_combined_group_description: "Několik [Concept('hostages_possessive','rukojmích')|E] si můžeš vyžádat zpět od jejich [Concept('warden','strážců')|E]."
  action_can_recall_hostage_combined_label: "[recipient.GetUINameNoTooltip]"
- halved_hostage_prestige_tt: "[THIS.Char.GetShortUINamePossessive|U] příjem [prestige_i|E][Concept('prestige','prestiže')|E] z [Concept('hostages','rukojmích')|E] je na [SCOPE.ScriptValue('hostage_adulthood_retained_halved_prestige_duration_value')|0V] let snížen"
+ halved_hostage_prestige_tt: "[THIS.Char.GetShortUINamePossessive|U] příjem [Concept('prestige_i','@prestige_icon!')|E][Concept('prestige','prestiže')|E] z [Concept('hostages','rukojmích')|E] je na [SCOPE.ScriptValue('hostage_adulthood_retained_halved_prestige_duration_value')|0V] let snížen" # todo: CONCEPT CASE

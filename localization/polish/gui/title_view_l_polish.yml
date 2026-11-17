@@ -4,8 +4,8 @@
  TITLE_VIEW_UNOWNED_TITLES: "Dosud nevytvořeno"
  PREVIOUS_TITLE: "#T Zobrazit předchozí [Concept('title','titul')|E]#!\n[TITLE.GetName]"
  PREVIOUS_NO_TITLE: "#T Zobrazit předchozí [Concept('title','titul')|E]#!\n@warning_icon! #X Není žádný titul, ke kterému se lze vrátit#!"
- TEMP_TITLE_LAND_TYPE_BARONY: "[holding|E]"
- TEMP_TITLE_LAND_TYPE_COUNTY: "[county_capital|E]"
+ TEMP_TITLE_LAND_TYPE_BARONY: "[Concept('holding','Država')|E]" # todo: CONCEPT CASE
+ TEMP_TITLE_LAND_TYPE_COUNTY: "[Concept('county_capital','Hlavní sídlo hrabství')|E]" # todo: CONCEPT CASE
  TEMP_TITLE_LAND_TYPE_UNKNOWN: "Toto by se nemělo zobrazit"
  TITLE_VIEW_HOLDING_TAXES: "[Concept('taxes','Daně')|E]: [Holding.GetIncome|1V]"
  TITLE_VIEW_HOLDING_LEVIES: "[Concept('levies','Odvedenci')|E]: [Holding.GetMaxLevySize|0V]"
@@ -13,7 +13,7 @@
  TITLE_VIEW_MY_PRIMARY_TITLE: "Tvůj [Concept('primary_title','hlavní titul')|E]"
  TITLE_VIEW_HOLDER: "Současný [Concept('holder','držitel')|E]"
  TITLE_VIEW_PRIMARY_TITLE: "[CHARACTER.GetHerHisMy|U] [Concept('primary_title','hlavní titul')|E]"
- TITLE_VIEW_TOP_LIEGE: "[top_liege|E]"
+ TITLE_VIEW_TOP_LIEGE: "[Concept('top_liege','Nejvyšší lenní pán')|E]" # todo: CONCEPT CASE
  TITLE_VIEW_DESTROY_TITLE: "Zničit titul"
  TITLE_VIEW_NOT_CREATED: "Dosud nevytvořeno"
  TITLE_VIEW_CREATE_TITLE: "Vytvořit titul"
@@ -80,7 +80,7 @@
  CREATE_TITLE_COST_TREASURY: "Náklady: [treasury_i]$VALUE|0V$"
  CREATE_TITLE_WOULD_GO_INDEPENDENT: "Titul má stejnou nebo vyšší hodnost než hlavní titul tvého [Concept('liege','lenního pána')|E]"
  USURP_TITLE_TOOLTIP_PRESTIGE_GAIN: "Po uzurpaci:\nZískáš [prestige_i]$PRESTIGE|0V$"
- USURP_TITLE_HOLDER_OPINION: "[TITLE.GetHolder.GetUIName] o tobě ztratí $OPINION_CHANGE|N$ bodů mínění\n[TITLE.GetHolder.GetUIName] ztratí [legitimacy_i|E][Concept('legitimacy','legitimitu')|E]"
+ USURP_TITLE_HOLDER_OPINION: "[TITLE.GetHolder.GetUIName] o tobě ztratí $OPINION_CHANGE|N$ bodů mínění\n[TITLE.GetHolder.GetUIName] ztratí [Concept('legitimacy_i','[GetLocalPlayerLegitimacyTextIcon]')|E][Concept('legitimacy','legitimitu')|E]" # todo: CONCEPT CASE
  USURP_TITLE_PRIMARY_IN_WAR: "@warning_icon! #X Nelze uzurpovat [Concept('primary_title','hlavní titul')|E] někoho, kdo vede válku#!"
  USURP_TITLE_LIEGE_OR_ABOVE: "@warning_icon! #X Nelze uzurpovat titul náležející tvému [Concept('liege','lennímu pánovi')|E]#!"
  USURP_TITLE_WOULD_GO_INDEPENDENT: "@warning_icon! #X Nelze uzurpovat titul stejné nebo vyšší hodnosti, než jakou má hlavní titul tvého [Concept('liege','lenního pána')|E]#!"
@@ -108,6 +108,7 @@
  independency_history: "Získána nezávislost"
  swear_fealty_history: "Složena lenní přísaha"
  stepped_down_history: "Předchozí [Concept('holder','držitel')|E] odstoupil"
+ term_end_history: "Funkční období skončilo" # todo: NEW TRANSLATION
  migration_history: "Migrace"
  CLAIMANT_SORT_STRENGTH: "Vojenská síla"
  CLAIMANT_SORT_NAME: "Jméno"
@@ -122,16 +123,16 @@
  CLAIMANT_NOT_A_THREAT: "#T Nelze uplatnit [Concept('claim','nárok')|E]#!\n[GuiClaimant.IsAllyDesc]"
  CAN_ATTACK_IS_SUBJECT_OF: "[CHARACTER.GetShortUIName|U] je [Concept('vassal','vazalem')|E] [TARGET_CHARACTER.Custom('CZ_ShortUIName_G')]"
  CAN_ATTACK_NOT_LANDED: "[CHARACTER.GetShortUIName|U] není zeměpánem"
- STRONG_CLAIM: "[pressed_claim_i][pressed_claim|E]"
- WEAK_CLAIM: "[unpressed_claim_i][unpressed_claim|E]"
- IMPLICIT_CLAIM: "[implicit_claim_i][implicit_claim|E]"
+ STRONG_CLAIM: "[pressed_claim_i][Concept('pressed_claim','Uplatněný nárok')|E]" # todo: CONCEPT CASE
+ WEAK_CLAIM: "[unpressed_claim_i][Concept('unpressed_claim','Neuplatněný nárok')|E]" # todo: CONCEPT CASE
+ IMPLICIT_CLAIM: "[implicit_claim_i][Concept('implicit_claim','Implicitní nárok')|E]" # todo: CONCEPT CASE
  TITLE_HISTORY: "Historie titulu"
  SHOW_TITLE_HISTORY: "#T Zobrazit historii titulu#!"
  HIDE_TITLE_HISTORY: "#T Skrýt historii titulu#!"
  TITLE_VIEW_MAKE_PRIMARY: "Nastavit jako hlavní"
  TITLE_MAKE_PRIMARY_TOOLTIP: "#T Nastavit [TitleViewWindow.GetTitle.GetName] jako svůj [Concept('primary_title','hlavní titul')|E]#!"
  TV_TIER_INFO: "[Concept('title','Titul')|E] hodnosti [Title.GetRankConcept]"
- TV_HOLY_ORDER_LABEL: "[FAITH.GetReligion.GetAdjective] [holy_order|E]"
+ TV_HOLY_ORDER_LABEL: "[FAITH.GetReligion.GetAdjective] [Concept('holy_order','Svatý řád')|E]" # todo: CONCEPT CASE
  TV_PROVINCE_LABEL: "Provinční [Concept('title','titul')|E] [Concept('title_tier','úrovně')|E] [TITLE.GetRankConcept]"
  TV_CLERICAL_REGION_LABEL: "[FAITH.GetTextIcon] [CZFaithAdjDecline(FAITH,'á')|l] [Concept('clerical_region','církevní oblast')|e]"
  TV_CLERICAL_REGION_LABEL_NO_HOLDER: "[Concept('clerical_region','církevní oblast')|eU]"
@@ -146,11 +147,11 @@
  TITLE_VIEW_CANT_HAVE_CLAIMS: "#weak Na tento [Concept('title','titul')|E] nelze mít nároky#!"
  TITLE_VIEW_CANT_HAVE_CLAIMS_TT: "Nároky nelze mít na tituly [Concept('mercenary_company','žoldnéřských družin')|E], [Concept('holy_orders','svatých řádů')|E], [Concept('baronies','baronství')|E] a [Concept('head_of_faith','hlav víry')|E]"
  TITLE_ALLEGIANCE_VASSAL_LIST: "Vazalové přísahající [Concept('title_allegiance','věrnost titulu')|E]"
- TITLE_VIEW_SUCCESSION: "[line_of_succession|E]"
+ TITLE_VIEW_SUCCESSION: "[Concept('line_of_succession','Linie následnictví')|E]" # todo: CONCEPT CASE
  TITLE_VIEW_SUCCESSION_NONE: "Bez nástupnictví"
  TITLE_VIEW_SUCCESSION_DESCRIPTION_CHARACTER: "[Concept('succession','Nástupnictví')|EU] panství: Bude zděděno podle [Concept('law','zákona')|E] $LAWS$ [CHARACTER.Custom('CZ_ShortUIName_G')][AddLocalizationIf( Character.HasCustomFallbackSuccession, 'succession_result_type_tooltip_fallback' )]"
  TITLE_VIEW_SUCCESSION_DESCRIPTION_TITLE: "[Concept('title_succession','Následnictví titulu')|E]: Bude zděděn podle [Concept('law','zákona')|E] $LAWS$ platného pro [TITLE.Custom('CZ_LandedName_A')]"
- TITLE_VIEW_ELECTION: "$game_concept_nominate_heir$"
+ TITLE_VIEW_ELECTION: "Nominovat dědice" # todo: CONCEPT CASE
  TITLE_VIEW_DE_JURE: "De iure"
  TITLE_VIEW_VASSALS: "Věrnost titulu"
  TITLE_VIEW_BUILDING_TYPE: "Typ budovy: [Holding.GetType.GetName]"
@@ -179,7 +180,7 @@
  TITLE_VIEW_CLERICAL_REGION_CAPITAL: "[Concept('clerical_region_capital','sídlo církevní oblasti')|EU]:"
  TITLE_VIEW_DE_JURE_PART_OF: "Součást [Concept('de_jure','de iure')|E]:"
  TITLE_VIEW_TITLE_ADD_LAW_LABEL: "Přidat zákon následnictví"
- TITLE_VIEW_TITLE_ADD_LAW_INFO: "Přidej titulu [Title.GetName] [Concept('title_specific_succession','následnictví specifické pro titul')|E] podle vybraného [Concept('succession_law','zákona následnictví')|E].\n\nTento $game_concept_law$ se bude vztahovat pouze na tento konkrétní [Concept('title','titul')|E] a neovlivní žádné jiné $game_concept_titles$ v tvém [Concept('realm','panství')|E].\n\n[rulers|E] alespoň [Concept('king','královské')|E] [Concept('title_rank','hodnosti titulu')|E] mohou namísto toho přijmout $adopt_special_succession_decision$ [Concept('decision','rozhodnutí')|E], pokud mají přístup ke kulturnímu volebnímu $game_concept_succession$."
+ TITLE_VIEW_TITLE_ADD_LAW_INFO: "Přidej titulu [Title.GetName] [Concept('title_specific_succession','následnictví specifické pro titul')|E] podle vybraného [Concept('succession_law','zákona následnictví')|E].\n\nTento $game_concept_law$ se bude vztahovat pouze na tento konkrétní [Concept('title','titul')|E] a neovlivní žádné jiné $game_concept_titles$ v tvém [Concept('realm','panství')|E].\n\n[Concept('rulers','Vládci')|E] alespoň [Concept('king','královské')|E] [Concept('title_rank','hodnosti titulu')|E] mohou namísto toho přijmout $adopt_special_succession_decision$ [Concept('decision','rozhodnutí')|E], pokud mají přístup ke kulturnímu volebnímu nástupnictví." # todo: CONCEPT CASE
  TITLE_VIEW_SHOW_ADD_LAWS: "Přidat zákony"
  TITLE_VIEW_TITLE_ADD_LAW_CONFIRM: "Přidat zákon"
  TITLE_VIEW_TITLE_ADD_LAW_POSSIBLE_LAWS: "Možné zákony následnictví"
@@ -195,10 +196,10 @@
  FIND_VASSAL_BUTTON_TOOLTIP_SEGMENT: "[Concept('titles','Tituly')|E] můžeš udělit některému ze svých [Concept('vassals','vazalů')|E], [Concept('guests','hostů')|E] nebo kterémukoli [Concept('courtiers','dvořanovi')|E] ve svém [Concept('realm','panství')|E]"
  GRANT_TO_SAME_CULTURE_NOBLE_HEADER: "Šlechtic tvé kultury"
  GRANT_TO_SAME_CULTURE_NOBLE_INFO: "Udělit titul šlechtici #V tvé kultury#!, jehož ritus je [Select_CString( GetPlayer.GetTopLiege.GetGovernment.HasRule( 'state_faith' ), GetPlayer.GetTopLiege.GetPrimaryTitle.GetStateRite.GetAdjectiveNoTooltip, GetPlayer.GetRite.GetAdjectiveNoTooltip )|l]"
- GRANT_TO_SAME_CULTURE_NOBLE_BUTTON_HOLDING_VIEW_TOOLTIP: "#T Udělit šlechtici stejné kultury#!\nKultura: [GetPlayer.GetCulture.GetName]\n\nV [Concept('county','hrabství')|E], které drží [Concept('ruler','vládce')|E] jiné než místní [Concept('culture','kultury')|E], bude sníženo [Concept('county_opinion','lidové mínění')|E].\n\n[Concept('vassals','Vazalové')|E] stejné [Concept('culture','kultury')|E] mají vyšší [Concept('opinion','mínění')|E] o svém [Concept('liege','lenním pánovi')|E].\n\n#I Kliknutím udělíš#!"
+ GRANT_TO_SAME_CULTURE_NOBLE_BUTTON_HOLDING_VIEW_TOOLTIP: "#T Udělit šlechtici stejné kultury [GetPlayer.GetCulture.GetName]#!\nV [Concept('county','hrabství')|E], které drží [Concept('ruler','vládce')|E] jiné než místní [Concept('culture','kultury')|E], bude sníženo [Concept('popular_opinion','lidové mínění')|E].\n\n[Concept('vassals','Vazalové')|E] stejné [Concept('culture','kultury')|E] mají vyšší [Concept('opinion','mínění')|E] o svém [Concept('liege','lenním pánovi')|E].\n\n#I Kliknutím udělíš#!" # todo: CHANGED (predtym: T Udělit šlechtici stejné kultury !\nKultura: [GetPlayer.GetCulture.GetName]\n\nV [Concept('county','hrabství')|E], kter)
  GRANT_TO_LOCAL_CULTURE_NOBLE_HEADER: "Místní šlechtic"
  GRANT_TO_LOCAL_CULTURE_NOBLE_INFO: "Udělit titul šlechtici #V místní kultury#!, jehož ritus je [Select_CString( GetPlayer.GetTopLiege.GetGovernment.HasRule( 'state_faith' ), GetPlayer.GetTopLiege.GetPrimaryTitle.GetStateRite.GetAdjectiveNoTooltip, GetPlayer.GetRite.GetAdjectiveNoTooltip )|l]"
- GRANT_TO_LOCAL_CULTURE_NOBLE_BUTTON_HOLDING_VIEW_BASE_TOOLTIP: "#T Udělit šlechtici místní kultury#!\nKultura: [FindVassalListWindow.GetTitle.GetProvince.GetCulture.GetName]\n\nV [Concept('county','hrabství')|E], které drží [Concept('ruler','vládce')|E] místní [Concept('culture','kultury')|E], nebude sníženo [Concept('county_opinion','lidové mínění')|E].\n\n[Concept('vassals','Vazalové')|E] místní [Concept('culture','kultury')|E] zvýší [Concept('cultural_acceptance','kulturní přijetí')|E]."
+ GRANT_TO_LOCAL_CULTURE_NOBLE_BUTTON_HOLDING_VIEW_BASE_TOOLTIP: "#T Udělit šlechtici místní kultury [FindVassalListWindow.GetTitle.GetProvince.GetCulture.GetName]#!\nV [Concept('county','hrabství')|E], které drží [Concept('ruler','vládce')|E] místní [Concept('culture','kultury')|E], nebude sníženo [Concept('popular_opinion','lidové mínění')|E].\n\n[Concept('vassals','Vazalové')|E] místní [Concept('culture','kultury')|E] zvýší [Concept('cultural_acceptance','kulturní přijetí')|E]." # todo: CHANGED (predtym: T Udělit šlechtici místní kultury !\nKultura: [FindVassalListWindow.GetTitle.GetProvince.GetCulture.GetName]\n\nV [Conce)
  GRANT_TO_LOCAL_CULTURE_NOBLE_BUTTON_HOLDING_VIEW_BARONY_TOOLTIP: "$GRANT_TO_LOCAL_CULTURE_NOBLE_BUTTON_HOLDING_VIEW_BASE_TOOLTIP$\n\n#I Kliknutím udělíš#!"
  GRANT_TO_LOCAL_CULTURE_NOBLE_BUTTON_HOLDING_VIEW_COUNTY_TOOLTIP: "$GRANT_TO_LOCAL_CULTURE_NOBLE_BUTTON_HOLDING_VIEW_BASE_TOOLTIP$\n\n#S Dopady#! \n[FindVassalListWindow.GetTitle.GetAutoGrantCountyToLocalRulerEffectDesc(GetPlayer)]\n\n#I Kliknutím udělíš#!"
  GRANT_TO_LOCAL_CULTURE_NOBLE_ACCEPTANCE: "Zvýší se tím přijetí"
@@ -212,8 +213,8 @@
  CREATE_TITLE_PERCENTAGE_LEGITIMACY_DISCOUNT_REDUCED: "Mírná sleva za [Concept('legitimacy_level','úroveň legitimity')|E]"
  CREATE_TITLE_PERCENTAGE_LEGITIMACY_DISCOUNT_NONE: "Sleva za [Concept('legitimacy_level','úroveň legitimity')|E]"
  TITLE_VIEW_APPOINTMENT: "Zobrazit následnictví"
- TITLE_VIEW_APPOINTMENT_TOOLTIP: "#T Zobrazit následnictví jmenováním#!\nNáslednictví bude stejné jako u titulu [Title.GetHolder.GetPrimaryTitle.GetName]"
- TITLE_VIEW_APPOINTMENT_FOLLOW_PRIMARY: "[Title.GetNameNoTooltip|U] se bude dědit společně s [Concept('primary_title','hlavním titulem')|E] [Title.GetHolder.Custom('CZ_ShortUINamePossessive')] #low ([Title.GetHolder.GetPrimaryTitle.GetName])#!"
+ TITLE_VIEW_APPOINTMENT_TOOLTIP: "#T Zobrazit následnictví jmenováním#!" # todo: CHANGED (predtym: T Zobrazit následnictví jmenováním !\nNáslednictví bude stejné jako u titulu [Title.GetHolder.GetPrimaryTitle.GetName])
+ TITLE_VIEW_APPOINTMENT_FOLLOW: "[Title.GetNameNoTooltip] bude zděděn spolu s titulem [Title.GetHolder.Custom('CZ_ShortUIName_G')] #low ([TitleViewWindow.GetFollowAppointmentTitle.GetName])#!" # todo: NEW TRANSLATION
  TITLE_VIEW_PRIMARY_APPOINTMENT_GROUP: "Společně s tímto [Concept('title','titulem')|E] se dědí:"
  ADD_LAWS_TOOLTIP: "#T Přidat zákon následnictví"
  CREATE_TITLE_FAIL_REASON_ADMIN_VASSAL: "@warning_icon! #X [Concept('government','Forma vlády')|E] tvého [Concept('top_liege','nejvyššího lenního pána')|E] nedovoluje [Concept('vassals','vazalům')|E] mít [Concept('royal_court','královský dvůr')|E]#!"
@@ -235,6 +236,7 @@
  prominence_breakdown_header: "Skóre [Concept('appointment_prominence','významnosti jmenování')|E]: #V [Title.MakeScope.ScriptValue('appointment_title_value')|0]#!"
  TITLE_VIEW_RULERS_IN_REGION: "[Concept('independent_rulers','nezávislí vládci')|eU] s [Concept('capitals','hlavními sídly')|e] v oblasti"
  TITLE_VIEW_RITE_NAME: "[Title.GetHolder.GetRite.GetName|U]"
+ TITLE_VIEW_HOLY_ORDER_RITE_NAME: "[Title.GetHolyOrder.GetRite.GetName]" # todo: NEW TRANSLATION
  TITLE_VIEW_RITE_HEADING: "#weak [Concept('rite','ritus')|eU] oblasti $game_concept_holder$#!"
  TITLE_VIEW_HOLY_ORDER_HEADING: "#weak [Concept('rite','ritus')|eU] řádu#!"
  TITLE_VIEW_HOLDER_TREASURY: "@treasury_icon! [Title.GetHolder.GetTreasury|V0]"

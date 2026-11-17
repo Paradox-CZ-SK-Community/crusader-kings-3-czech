@@ -1,10 +1,11 @@
 ﻿l_polish:
  activity_pilgrimage: "Pouť"
  activity_pilgrimage_desc: "$game_concept_pilgrimage_desc$"
- activity_pilgrimage_host_desc: "$BULLET_WITH_TAB$[piety_i|E][Concept('piety','Zbožnost')|E]\n$BULLET_WITH_TAB$[legitimacy_i] [Concept('legitimacy','Legitimita')|E]\n$BULLET_WITH_TAB$[stress_loss_i][Concept('stress_loss','Úbytek stresu')|E]\n[GetPlayer.Custom('GetPilgrimOrHajjiTrait')]"
- activity_pilgrimage_pilgrim_custom_host_desc: "$BULLET_WITH_TAB$@pilgrim_trait_icon! [GetTrait('pilgrim').GetName( GetNullCharacter )] [Concept('trait','rys')|E] / [GetTrait('pilgrim').GetName( GetNullCharacter )] [Concept('trait_level_track_xp','zkušenosti rysu')|E]\n$BULLET_WITH_TAB$@gallowsbait_trait_icon! Ztráta [Concept('trait','rysu')|E] [GetTrait('gallowsbait').GetName( GetNullCharacter )] během zbožné [Concept('pilgrimage','pouti')|E]"
+ activity_pilgrimage_host_desc: "$BULLET_WITH_TAB$[Concept('piety_i','[GetLocalPlayerPietyTextIcon]')|E] [Concept('piety','Zbožnost')|E]\n$BULLET_WITH_TAB$[legitimacy_i] [Concept('legitimacy','Legitimita')|E]\n$BULLET_WITH_TAB$[stress_loss_i] [Concept('stress_loss','Úbytek stresu')|E]\n[GetPlayer.Custom('GetPilgrimOrHajjiTrait')][SelectLocalization( GetPlayer.GetGovernment.HasGovernmentFlag( 'government_is_merchant' ), 'activity_pilgrimage_expertise_desc', '' )]" # todo: CHANGED (predtym: $BULLET_WITH_TAB$[piety_i|E][Concept('piety','Zbožnost')|E]\n$BULLET_WITH_TAB$[legitimacy_i] [Concept('legitimacy','Legi) # todo: CONCEPT CASE
+ activity_pilgrimage_expertise_desc: "\n$BULLET_WITH_TAB$[GetTradeGoodCategory('trade_category_incense').GetNameWithIcon] [Concept('trade_expertise','Obchodní zkušenost')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ activity_pilgrimage_pilgrim_custom_host_desc: "$BULLET_WITH_TAB$@pilgrim_trait_icon! [GetTrait('pilgrim').GetName( GetNullCharacter )] [Concept('trait','rys')|E] / [Concept('trait_level_track_xp','zkušenosti rysu')|E]\n$BULLET_WITH_TAB$@gallowsbait_trait_icon! Ztráta [Concept('trait','rysu')|E] [GetTrait('gallowsbait').GetName( GetNullCharacter )] během zbožné [Concept('pilgrimage','pouti')|E]" # todo: CHANGED (predtym: $BULLET_WITH_TAB$@pilgrim_trait_icon! [GetTrait('pilgrim').GetName( GetNullCharacter )] [Concept('trait','rys')|E] / [Ge)
  activity_pilgrimage_hajjaj_custom_host_desc: "$BULLET_WITH_TAB$@hajjaj_trait_icon! [GetTrait('hajjaj').GetName( GetNullCharacter )] [Concept('trait','rys')|E]\n$BULLET_WITH_TAB$@gallowsbait_trait_icon! Ztráta [Concept('trait','rysu')|E] [GetTrait('gallowsbait').GetName( GetNullCharacter )] během zbožného [Concept('hajj','hadždže')|E]"
- activity_pilgrimage_selection_tooltip: "Vydej se na [Concept('pilgrimage','pouť')|E] a prokaž svou oddanost. [GetPlayer.GetFaith.PantheonTerm] bude svědkem tvého odhodlání.\n\nOčekávané odměny:\n$BULLET_WITH_TAB$[piety_i] Zisk [Concept('piety','zbožnosti')|E]\n$BULLET_WITH_TAB$[legitimacy_i] Zisk [Concept('legitimacy','legitimity')|E]\n$BULLET_WITH_TAB$[stress_loss_i] [Concept('stress_loss','Úbytek stresu')|E]"
+ activity_pilgrimage_selection_tooltip: "Vydej se na [Concept('pilgrimage','pouť')|E] a prokaž svou oddanost. [GetPlayer.GetFaith.PantheonTerm] bude svědkem tvého odhodlání.\n\nOčekávané odměny:\n$BULLET_WITH_TAB$[piety_i] [Concept('piety','zbožnosti')|E]\n$BULLET_WITH_TAB$[legitimacy_i] [Concept('legitimacy','legitimity')|E]\n$BULLET_WITH_TAB$[stress_loss_i] [Concept('stress_loss','Úbytek stresu')|E]\n$BULLET_WITH_TAB$@pilgrim_trait_icon! [GetTrait('pilgrim').GetName( GetNullCharacter )] [Concept('trait','rys')|E][SelectLocalization( GetPlayer.GetGovernment.HasGovernmentFlag( 'government_is_merchant' ), 'activity_pilgrimage_expertise_desc', '' )]" # todo: CHANGED (predtym: Vydej se na [Concept('pilgrimage','pouť')|E] a prokaž svou oddanost. [GetPlayer.GetFaith.PantheonTerm] bude svědkem tvéh)
  activity_pilgrimage_destination_selection: "Čím dále od tvého hlavního sídla se cíl nachází, tím více prokážeš svou oddanost. [GetPlayer.GetFaith.PantheonTerm] bude svědkem tvého odhodlání a ty získáš více [Concept('piety','zbožnosti')|E]."
  activity_pilgrimage_owner: "Poutník"
  activity_pilgrimage_name: "Pouť"
@@ -22,9 +23,9 @@
  activity_pilgrimage_province_very_far_desc: "\n#positive_value +++ Velmi daleko#!\n#negative_value --- Nákladné#!\n\nDodatečné náklady: [gold_i][SCOPE.ScriptValue('pilgrimage_length_cost_tier_6')|0]"
  activity_pilgrimage_province_extraordinarily_far_desc: "\n#positive_value +++ Mimořádně daleko#!\n#negative_value --- Velmi nákladné#!\n\nDodatečné náklady: [gold_i][SCOPE.ScriptValue('pilgrimage_length_cost_tier_7')|0]"
  activity_pilgrimage_imaginary_friend_location_desc: "\n#positive_value +++ Ucti svého imaginárního přítele#!"
- activity_pilgrimage_province_medium_mult_desc: "\n\n#bold Účinky pořádání aktivity [GetActivityType('activity_pilgrimage').GetName] na tomto místě#!\n$BULLET_WITH_TAB$[piety_i|E]Odměna aktivity v podobě [Concept('piety','zbožnosti')|E]: #p +[EmptyScope.ScriptValue('medium_pilgrimage_piety_multiplier')|0]%#!"
- activity_pilgrimage_province_long_mult_desc: "\n\n#bold Účinky pořádání aktivity [GetActivityType('activity_pilgrimage').GetName] na tomto místě#!\n$BULLET_WITH_TAB$[piety_i|E]Odměna aktivity v podobě [Concept('piety','zbožnosti')|E]: #p +[EmptyScope.ScriptValue('long_pilgrimage_piety_multiplier')|0]%#!"
- activity_pilgrimage_province_very_long_mult_desc: "\n\n#bold Účinky pořádání aktivity [GetActivityType('activity_pilgrimage').GetName] na tomto místě#!\n$BULLET_WITH_TAB$[piety_i|E]Odměna aktivity v podobě [Concept('piety','zbožnosti')|E]: #p +[EmptyScope.ScriptValue('very_long_pilgrimage_piety_multiplier')|0]%#!"
+ activity_pilgrimage_province_medium_mult_desc: "\n\n#bold Účinky pořádání aktivity [GetActivityType('activity_pilgrimage').GetName] na tomto místě#!\n$BULLET_WITH_TAB$[Concept('piety_i','[GetLocalPlayerPietyTextIcon]')|E]Odměna aktivity v podobě [Concept('piety','zbožnosti')|E]: #p +[EmptyScope.ScriptValue('medium_pilgrimage_piety_multiplier')|0]%#!" # todo: CONCEPT CASE
+ activity_pilgrimage_province_long_mult_desc: "\n\n#bold Účinky pořádání aktivity [GetActivityType('activity_pilgrimage').GetName] na tomto místě#!\n$BULLET_WITH_TAB$[Concept('piety_i','[GetLocalPlayerPietyTextIcon]')|E]Odměna aktivity v podobě [Concept('piety','zbožnosti')|E]: #p +[EmptyScope.ScriptValue('long_pilgrimage_piety_multiplier')|0]%#!" # todo: CONCEPT CASE
+ activity_pilgrimage_province_very_long_mult_desc: "\n\n#bold Účinky pořádání aktivity [GetActivityType('activity_pilgrimage').GetName] na tomto místě#!\n$BULLET_WITH_TAB$[Concept('piety_i','[GetLocalPlayerPietyTextIcon]')|E]Odměna aktivity v podobě [Concept('piety','zbožnosti')|E]: #p +[EmptyScope.ScriptValue('very_long_pilgrimage_piety_multiplier')|0]%#!" # todo: CONCEPT CASE
  activity_pilgrimage_conclusion_desc: "Naše pouť byla úspěšně dokončena"
  pilgrimage_header: "[ROOT.Char.Custom('PilgrimageHeader')]"
  ACTIVITY_PILGRIMATE_VISITED_HOLY_SITE: "Navštíveno [Concept('holy_site','svaté místo')|E] $ACTIVITY_CURRENT_LOCATION$"
@@ -445,7 +446,7 @@
  pilgrimage.2502.t: "$pilgrimage.2501.t$"
  pilgrimage.2502.desc.gave: "„Ano! Ano, děkuji, [ROOT.Char.Custom('LadyLordWomanMan')], děkuji... a také... [ROOT.Char.GetFaith.HighGodName], že ano? Tak děkuji i za to! Ale, ó štědrý [ROOT.Char.Custom('LadyLordWomanMan')], mohl bych tě požádat ještě o jednu laskavost?“"
  pilgrimage.2502.desc.refused: "„Ne! Ne, [ROOT.Char.Custom('LadyLordWomanMan')], prosím, slituj se!“"
- pilgrimage.2502.desc.end: "Má sestra je nemocná a zoufale potřebuje léky! Tvé peníze by jí mohly zachránit život, prosím! Byli bychom ti nesmírně vděční!“"
+ pilgrimage.2502.desc.end: "Má sestra je nemocná a zoufale potřebuje léky! Tvé peníze by jí mohly zachránit život, prosím! Byli bychom ti nesmírně vděční!„"
  pilgrimage.2502.a: "Ehm... ano. Dobře. Na ty léky."
  pilgrimage.2502.b: "Ne, nemůžu! Tohle přece #EMP není správné#!!"
  pilgrimage.2502.c.gave: "Ne, svůj díl už jsem udělal[Select_CString(ROOT.Char.IsFemale,'a','')]!"
@@ -526,7 +527,7 @@
  pilgrimage.3302.c: "Ta sůl by měla být moje!"
  pilgrimage.3302.c.flavor: "Nasbíráš sůl určenou k prodeji."
  pilgrimage.3303.t: "$pilgrimage_header$ Sútra z [place_to_teach.GetBaronyNameExplicitlyNoTooltip]"
- pilgrimage.3303.desc: "Když procházíme [place_to_teach.GetBaronyNameExplicitlyNoTooltip], přistoupí ke mně několik zmateně vyhlížejících místních vedených [wisdom_seeker.GetName].\n\n„Ctihodný [ROOT.Char.GetTitleAsName], [place_to_teach.GetBaronyNameExplicitlyNoTooltip] navštěvují [place_to_teach.GetCounty.GetFaith.PriestNeuterPlural]. Vychvalují ctnosti svého učení, zatímco na přesvědčení ostatních se vrhají jako [ROOT.Char.Custom('RegionalOnlyFerociousAnimalPlural')] a trhají je na kusy. Pak přijdou jiní [place_to_teach.GetCounty.GetFaith.PriestNeuterPlural] a ti zase opovrhují učením předchozí skupiny a hanobí je.\n\nZmítá námi nejistota a pochybnosti nám každý den klepou na dveře. Kteří z těchto ctihodných [place_to_teach.GetCounty.GetFaith.PriestNeuterPlural] mluvili pravdu a kteří lhali?“"
+ pilgrimage.3303.desc: "Když procházíme [place_to_teach.GetBaronyNameExplicitlyNoTooltip], přistoupí ke mně několik zmateně vyhlížejících místních vedených [wisdom_seeker.GetName].\n\n„Ctihodný [ROOT.Char.GetTitleAsName], [place_to_teach.GetBaronyNameExplicitlyNoTooltip] navštěvují [place_to_teach.GetCounty.GetFaith.PriestNeuterPlural]. Vychvalují ctnosti svého učení, zatímco na přesvědčení ostatních se vrhají jako [ROOT.Char.Custom('RegionalOnlyFerociousAnimalPlural')] a trhají je na kusy. Pak přijdou jiní [place_to_teach.GetCounty.GetFaith.PriestNeuterPlural] a ti zase opovrhují učením předchozí skupiny a hanobí je.\n\nZmítá námi nejistota a pochybnosti nám každý den klepou na dveře. Kteří z těchto ctihodných [place_to_teach.GetCounty.GetFaith.PriestNeuterPlural] mluvili pravdu a kteří lhali?„"
  pilgrimage.3303.a: "Následujte nikoli klamné úvahy, ale pravou cestu. [ROOT.Char.GetFaith.HighGodName] vám ji ukáže!"
  pilgrimage.3303.b: "Ze všech pramenů, z nichž pijete, který vám dodává sílu?"
  pilgrimage.3303.b.flavor: "[ROOT.Char.GetCurrentLocation.GetBaronyNameExplicitlyNoTooltip] časem nalezne správný způsob uvažování."
@@ -729,7 +730,7 @@
  pilgrimage.6770.desc.buddhist: "[SCOPE.Custom('BuddhismRelicName')|U]!"
  pilgrimage.6770.desc.judaism: "[SCOPE.Custom('JudaismRelicName')|U]!"
  pilgrimage.6770.desc.fallback: "[merchant_relic.GetName|U]!"
- pilgrimage.6770.desc.outro: "Nalezena právě v této svaté svatyni, teprve před několika dny!“"
+ pilgrimage.6770.desc.outro: "Nalezena právě v této svaté svatyni, teprve před několika dny!„"
  pilgrimage.6770.a: "#EMP Musí#! být moje."
  pilgrimage.6770.b: "„Jistě bys nechtěl prodávat relikvii za tak chamtivou cenu...“"
  pilgrimage.6770.b.success: "[relic_merchant.GetShortUIName] sníží cenu"
@@ -786,11 +787,11 @@
  pilgrimage.6840.a: "„Prosím, ať [blessed_artifact.GetNameNoTooltip] získá více posvátnosti!“"
  pilgrimage.6840.b: "„Ať každý pozná slávu, kterou nese [blessed_artifact.GetNameNoTooltip]!“"
  pilgrimage.6840.c: "Pro své zlato mám lepší využití."
- pilgrimage.6840.a.tt: "Získá [piety_i|E]#positive_value +2%#! měsíční [Concept('piety','zbožnosti')|E]"
- pilgrimage.6840.b.tt: "Získá [prestige_i|E]#positive_value +0.5%#! měsíční [Concept('prestige','prestiže')|E]"
+ pilgrimage.6840.a.tt: "Získá [Concept('piety_i','[GetLocalPlayerPietyTextIcon]')|E]#positive_value +2%#! měsíční [Concept('piety','zbožnosti')|E]" # todo: CONCEPT CASE
+ pilgrimage.6840.b.tt: "Získá [Concept('prestige_i','@prestige_icon!')|E]#positive_value +0.5%#! měsíční [Concept('prestige','prestiže')|E]" # todo: CONCEPT CASE
  blessed_artifact_desc: "[blessed_artifact.GetDesc]\n\nPo požehnání na svatém místě [holy_site_scope.GetNameNoTooltip] z něj vyzařuje neposkvrněná aura."
  pilgrimage.6850.t: "Mistr zloděj"
- pilgrimage.6850.desc: "Probudím se z neklidného spánku a ve tmě přede mnou se tyčí jakási postava. Zatímco už v duchu přemýšlím o příštím životě, ze stínů vystoupí [wise_priest.GetName] s potutelným úsměvem na tváři.\n\n„Vznešený [ROOT.Char.GetTitleAsNameNoTooltip], odpusť naše vniknutí, ale některé lekce je třeba zažít, aby jim člověk porozuměl.\n\nZloděj při svém zločinu využívá stínů, slepých míst a zkorumpovaných úředníků. Stejně tak se zkažený [ROOT.Char.GetFaith.PriestNeuter] ve stínech oddává nemravnostem, ve tvých slepých místech káže falešné učení a díky zkorumpovaným úředníkům stoupá do vysokého postavení.“"
+ pilgrimage.6850.desc: "Probudím se z neklidného spánku a ve tmě přede mnou se tyčí jakási postava. Zatímco už v duchu přemýšlím o příštím životě, ze stínů vystoupí [wise_priest.GetName] s potutelným úsměvem na tváři.\n\n„Vznešený [ROOT.Char.GetTitleAsNameNoTooltip], odpusť naše vniknutí, ale některé lekce je třeba zažít, aby jim člověk porozuměl.\n\nZloděj při svém zločinu využívá stínů, slepých míst a zkorumpovaných úředníků. Stejně tak se zkažený [ROOT.Char.GetFaith.PriestNeuter] ve stínech oddává nemravnostem, ve tvých slepých místech káže falešné učení a díky zkorumpovaným úředníkům stoupá do vysokého postavení.„"
  pilgrimage.6850.a: "Posvítím všude tam, kde se skrývá stín."
  pilgrimage.6850.b: "Pokud jsem slepý[Select_CString(ROOT.Char.IsFemale,'á','')], můj [ROOT.Char.GetCouncillorPosition( 'councillor_spymaster' ).GetPositionName] bude mýma očima."
  pilgrimage.6850.c: "Znám jednoho zkorumpovaného úředníka, který je zároveň zkaženým [ROOT.Char.GetFaith.PriestNeuter]."
@@ -930,7 +931,7 @@
  pilgrimage_seasia.1100.c: "Heh. Ať si tam [local_character.GetFirstNameNoTooltip] visí."
  RATTAN_GLOSS: "Popínavá palma ceněná pro svou pevnost a pružnost. Ratan se splétá do košů, vazeb a pastí a je běžnou součástí života v džungli, kterou využívají lovci, obchodníci i vesničané."
  pilgrimage_seasia.1200.t: "$pilgrimage_header$ Poutník z Nálandy"
- pilgrimage_seasia.1200.desc: "Když sestupujeme po klikaté stezce, spatříme [GetTrait('devoted').GetName( local_character )], jak táboří vedle [background_terrain_scope.Custom('GetRandomRegionalDangerSingular')] [background_terrain_scope.Custom('CZ_TerrainTypeProvince_In')].\n\n„Zdravím vás, poutníci,“ tiše pronese [local_character.GetFirstNameNoTooltip]. „Jsem učenec [local_character.GetFaith.GetAdjective] víry z [GetBuilding('nalanda_university').GetName] a hledám v [exploration_target.GetBaseNameNoTier] ta nejklidnější místa k meditaci. Podělíte se se mnou o své znalosti této země?“"
+ pilgrimage_seasia.1200.desc: "Když sestupujeme po klikaté stezce, spatříme [GetTrait('devoted').GetName( local_character )], jak táboří vedle [background_terrain_scope.Custom('GetRandomRegionalDangerSingular')] [background_terrain_scope.Custom('TerrainTypeProvince')].\n\n„Zdravím vás, poutníci,“ tiše pronese [local_character.GetWomanMan]. „Jsem učenec [local_character.GetFaith.GetAdjective] víry z [GetBuildingType('nalanda_university').GetName] a hledám v [exploration_target.GetBaseNameNoTier] ta nejklidnější místa k meditaci. Podělíte se se mnou o své znalosti této země?“" # todo: CHANGED (predtym: Když sestupujeme po klikaté stezce, spatříme [GetTrait('devoted').GetName( local_character )], jak táboří vedle [backgro)
  pilgrimage_seasia.1200.a: "Pokud mi na oplátku povíš o své [local_character.GetFaith.GetAdjectiveNoTooltip] víře!"
  pilgrimage_seasia.1200.b: "Ano, pokud požehnáš můj artefakt „[blessed_artifact.GetNameNoTooltip]“."
  pilgrimage_seasia.1200.c: "[other_barony.GetBaseNameNoTierNoTooltip] je pro meditaci nejklidnější."
@@ -958,8 +959,8 @@
  good_weather_modifier_desc: "Tento doprovod provází příznivé počasí."
  pilgrimage.2060.t: "$pilgrimage_header$ Příběhy [CZPrepZ(ROOT.Char.GetCurrentLocation.GetNameNoTooltip)] [CZProvNameNoTooltip(ROOT.Char.GetCurrentLocation,'G')]"
  pilgrimage.2060.desc.intro: "Uprostřed cestovatelů [Select_CString(pilgrim.IsFemale,'má','můj')] [ROOT.Char.Custom2('RelationToMe', SCOPE.sC('pilgrim'))] [pilgrim.GetFirstName] odsouvá stranou pokrm [pilgrim.Custom('GetLocalStreetFood')] a začíná mluvit:\n\n„Zdá se mi, že k vyprávění příběhu není vhodnější chvíle než večer v hostinci."
- pilgrimage.2060.desc.memory: "Není to tak dávno, co [memory.GetDescription]...“"
- pilgrimage.2060.desc.fallback: "Kdysi se v těchto krajích často objevovalo stvoření známé jako [ROOT.Char.Custom('RegionalMythicalCreature')]...“"
+ pilgrimage.2060.desc.memory: "Není to tak dávno, co [memory.GetDescription]...„"
+ pilgrimage.2060.desc.fallback: "Kdysi se v těchto krajích často objevovalo stvoření známé jako [ROOT.Char.Custom('RegionalMythicalCreature')]...„"
  pilgrimage.2060.a: "Konečně nějaká zábava."
  pilgrimage.2060.b: "„Vyměň příběhy za modlitby.“"
  pilgrimage.2060.b.catholic: "„Nech příběhů a pomodli se Ave Maria.“"

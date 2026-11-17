@@ -6,7 +6,7 @@
  death_smallpox: "[Select_CString(CHARACTER.IsFemale, 'podlehla', 'podlehl')] nemoci známé jako [GetTrait('smallpox').GetName( CHARACTER.Self )]"
  death_measles: "[Select_CString(CHARACTER.IsFemale, 'podlehla', 'podlehl')] nemoci známé jako [GetTrait('measles').GetName( CHARACTER.Self )]"
  death_dysentery: "[Select_CString(CHARACTER.IsFemale, 'podlehla', 'podlehl')] nemoci známé jako [GetTrait('dysentery').GetName( CHARACTER.Self )]"
- death_ergotism: "[Select_CString(CHARACTER.IsFemale, 'utančila', 'utančil')] se k smrti během šílenství způsobeného nemocí [GetTrait('ergotism').GetName( CHARACTER.Self )]"
+ death_ergotism: "[Select_CString(CHARACTER.IsFemale, 'utančila', 'utančil')] [CHARACTER.GetHerselfHimself] k smrti během šílenství způsobeného nemocí [GetTrait('ergotism').GetName( CHARACTER.Self )]" # todo: CHANGED (predtym: [Select_CString(CHARACTER.IsFemale, 'utančila', 'utančil')] se k smrti během šílenství způsobeného nemocí [GetTrait('erg)
  death_typhus: "[Select_CString(CHARACTER.IsFemale, 'podlehla', 'podlehl')] nemoci známé jako [GetTrait('typhus').GetName( CHARACTER.Self )]"
  death_cancer: "[Select_CString(CHARACTER.IsFemale, 'podlehla', 'podlehl')] nemoci známé jako [GetTrait('cancer').GetName( CHARACTER.Self )]"
  death_pneumonic: "[Select_CString(CHARACTER.IsFemale, 'podlehla', 'podlehl')] nemoci známé jako [GetTrait('pneumonic').GetName( CHARACTER.Self )]"
@@ -139,8 +139,8 @@
  death_attacked: "[Select_CString(CHARACTER.IsFemale, 'byla zabita', 'byl zabit')] při útoku"
  death_attacked_killer: "[Select_CString(CHARACTER.IsFemale, 'byla napadena a zabita', 'byl napaden a zabit')] [TARGET_CHARACTER.Custom('CZ_UIName_I')]"
  death_feast_accident: "[Select_CString(CHARACTER.IsFemale, 'zemřela', 'zemřel')], když se hostina děsivě zvrtla"
- death_fall: "[Select_CString(CHARACTER.IsFemale, 'spadla', 'spadl')] a zabil[Select_CString(CHARACTER.IsFemale, 'a', '')] se"
- death_fell_bedchamber: "[Select_CString(CHARACTER.IsFemale, 'vypadla', 'vypadl')] z okna své ložnice a zabil[Select_CString(CHARACTER.IsFemale, 'a', '')] se"
+ death_fall: "[Select_CString(CHARACTER.IsFemale, 'spadla', 'spadl')] a [Select_CString(CHARACTER.IsFemale,'zabila','zabil')][Select_CString(CHARACTER.IsFemale, 'a', '')] se"
+ death_fell_bedchamber: "[Select_CString(CHARACTER.IsFemale, 'vypadla', 'vypadl')] z okna své ložnice a [Select_CString(CHARACTER.IsFemale,'zabila','zabil')][Select_CString(CHARACTER.IsFemale, 'a', '')] se"
  death_fell_wilderness: "Během cesty [Select_CString(CHARACTER.IsFemale, 'spadla', 'spadl')] z koně a zlomil[Select_CString(CHARACTER.IsFemale, 'a', '')] si vaz"
  death_drowned: "[Select_CString(CHARACTER.IsFemale, 'utonula', 'utonul')]"
  death_drowned_killer: "[Select_CString(CHARACTER.IsFemale, 'byla utopena', 'byl utopen')] [TARGET_CHARACTER.Custom('CZ_UIName_I')]"
@@ -233,7 +233,6 @@
  death_trampled: "[Select_CString(CHARACTER.IsFemale, 'byla ušlapána', 'byl ušlapán')] k smrti"
  death_trampled_killer: "[Select_CString(CHARACTER.IsFemale, 'byla ušlapána', 'byl ušlapán')] k smrti na rozkaz [TARGET_CHARACTER.Custom('CZ_UIName_G')]"
  death_lost_in_the_forest: "[Select_CString(CHARACTER.IsFemale, 'ztratila', 'ztratil')] se v lese a už [Select_CString(CHARACTER.IsFemale, 'ji', 'ho')] nikdo nespatřil"
- death_trampled_by_horse: "[Select_CString(CHARACTER.IsFemale,'byla ušlapána','byl ušlapán')|l] koňmi"
  death_cuteness_overload: "[Select_CString(CHARACTER.IsFemale, 'spatřila', 'spatřil')] něco tak roztomilého, že [Select_CString(CHARACTER.IsFemale, 'zemřela', 'zemřel')]"
  death_maimed_by_wild_beast: "[Select_CString(CHARACTER.IsFemale, 'byla zmrzačena', 'byl zmrzačen')] divokou šelmou"
  death_crushed_by_elephant: "[Select_CString(CHARACTER.IsFemale, 'byla rozdrcena', 'byl rozdrcen')] slonem"
@@ -327,6 +326,12 @@
  death_assassinated_by_soldiers: "[Select_CString(CHARACTER.IsFemale, 'byla zavražděna', 'byl zavražděn')] nespokojenými vojáky"
  death_cut_off_by_enemy_troops_offensive: "[Select_CString(CHARACTER.IsFemale, 'byla pobita', 'byl pobit')] nepřátelskými vojáky poté, co při postupu pronikl[Select_CString(CHARACTER.IsFemale, 'a', '')] příliš daleko bez podpory"
  death_cut_off_by_enemy_troops_defensive: "[Select_CString(CHARACTER.IsFemale, 'byla pobita', 'byl pobit')] nepřátelskými vojáky během chaotického ústupu"
+ death_trampled_by_horse: "[Select_CString(CHARACTER.IsFemale,'byla ušlapána','byl ušlapán')|l] koněm" # todo: CHANGED (predtym: [Select_CString(CHARACTER.IsFemale,'byla ušlapána','byl ušlapán')|l] koňmi)
+ death_trampled_by_horse_killer: "byl ušlapán k smrti koněm, jehož majitelem byl [TARGET_CHARACTER.GetUIName]" # todo: NEW TRANSLATION
+ death_single_arrow: "byl [Select_CString(ROOT.Char.IsFemale,'zabita','zabit')] jediným dobře mířeným šípem" # todo: NEW TRANSLATION
+ death_single_arrow_killer: "byl [Select_CString(ROOT.Char.IsFemale,'zabita','zabit')] jediným dobře mířeným šípem, který vystřelil [TARGET_CHARACTER.GetUIName]" # todo: NEW TRANSLATION
+ death_sliced_in_two: "projíždějící jezdec ho rozťal vejpůl" # todo: NEW TRANSLATION
+ death_sliced_in_two_killer: "byl rozťat vejpůl, když [TARGET_CHARACTER.GetUIName] projížděl na koni" # todo: NEW TRANSLATION
  death_fallen_from_a_mountain: "[Select_CString(CHARACTER.IsFemale, 'spadla', 'spadl')] z horské stezky"
  death_mountain_rescue_operation: "[Select_CString(CHARACTER.IsFemale, 'zemřela', 'zemřel')] na horském svahu při hrdinském pokusu zachránit spolucestujícího"
  death_fall_in_hole: "[Select_CString(CHARACTER.IsFemale, 'spadla', 'spadl')] do jámy"
@@ -391,3 +396,16 @@
  death_ritual_suicide: "[Select_CString(CHARACTER.IsFemale, 'spáchala', 'spáchal')] rituální sebevraždu"
  death_immurement: "[Select_CString(CHARACTER.IsFemale,'byla zaživa zazděna','byl zaživa zazděn')|l] v cele anachorety, [Select_CString(CHARACTER.IsFemale,'odříznutá','odříznutý')|l] od světa"
  death_abandonment: "[Select_CString(CHARACTER.IsFemale,'byla opuštěna a ponechána','byl opuštěn a ponechán')|l] zemřít na následky vystavení živlům"
+ death_juggling_knives: "zemřel při pokusu o žonglování s noži" # todo: NEW TRANSLATION
+ death_ambushed_during_detente: "zemřel po bodnutí dýkou" # todo: NEW TRANSLATION
+ death_ambushed_during_detente_killer: "$death_ambushed_during_detente$ během období uvolnění napětí, když ho bodl [TARGET_CHARACTER.GetUIName]" # todo: NEW TRANSLATION
+ death_fell_off_roof: "zemřel po pádu ze střechy" # todo: NEW TRANSLATION
+ death_thirsty_for_honey: "vyzvracel krev a zemřel, když se mu nesplnila touha po medové vodě" # todo: NEW TRANSLATION
+ death_dismemberment: "byl rozčtvrcen vozy" # todo: NEW TRANSLATION
+ death_dismemberment_killer: "byl rozčtvrcen vozy na příkaz [TARGET_CHARACTER.GetUIName]" # todo: NEW TRANSLATION
+ death_imperial_forced_suicide: "byl donucen spáchat sebevraždu císařským výnosem" # todo: NEW TRANSLATION
+ death_imperial_forced_suicide_killer: "byl donucen spáchat sebevraždu císařským výnosem [TARGET_CHARACTER.GetUIName]" # todo: NEW TRANSLATION
+ death_drowned_in_alcohol: "utopil se v alkoholu" # todo: NEW TRANSLATION
+ death_drowned_in_alcohol_killer: "utopil se v alkoholu poté, co mu byly na příkaz [TARGET_CHARACTER.GetUIName] useknuty končetiny" # todo: NEW TRANSLATION
+ death_lacquered_head: "byl veřejně rozčtvrcen a sťat; jeho tělo pak snědl dav a hlavu vyvařili a nalakovali jako artefakt, který byl uložen ve zbrojnici" # todo: NEW TRANSLATION
+ death_lacquered_head_killer: "byl veřejně rozčtvrcen a sťat na příkaz [TARGET_CHARACTER.GetUIName]; jeho tělo pak snědl dav a hlavu vyvařili a nalakovali jako artefakt, který byl uložen ve zbrojnici" # todo: NEW TRANSLATION

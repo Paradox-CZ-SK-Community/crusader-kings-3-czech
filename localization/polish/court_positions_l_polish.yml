@@ -32,7 +32,7 @@
  COURT_WINDOW_COURT_POSITIONS: "[CourtWindow.GetCourtOwner.Custom('GetCourtPositionPlural')|U]"
  COURT_POSITION_REPLACE: "#T Nahradit [Character.GetShortUINameNoTooltip]#!"
  COURT_POSITION_REVOKE: "#T Odvolat [Character.GetShortUINameNoTooltip]#!"
- COURT_POSITION_POWERFUL_AGENT: "@alert_icon! #alert_trial Mocný [Concept('agent','spolčenec')|E] v [Concept('hostile_schemes','nepřátelských intrikách')|E] proti svému $game_concept_liege$#!"
+ COURT_POSITION_POWERFUL_AGENT: "@alert_icon! #alert_trial Mocný [Concept('agent','spolčenec')|E] v [Concept('hostile_schemes','nepřátelských intrikách')|E] proti svému lennímu pánovi#!" # todo: CONCEPT CASE
  COURT_POSITION_OPINION_BONUS: "Bonus k [Concept('opinion','mínění')|e]: [CourtPosition.GetOpinionBonus|=+]"
  COURT_POSITION_TOGGLE_AUTOMATION: "#T Přepnout automatizaci #!\n$COURT_POSITION_AUTOMATION_CURRENT$\n#I Kliknutím přepneš možnosti automatizace#!"
  COURT_POSITION_AUTOMATION_DISABLE_TOOLTIP: "#T Aktuální automatizace #!\n$COURT_POSITION_AUTOMATION_CURRENT$\n#I Kliknutím automatizaci vypneš#!"
@@ -68,8 +68,8 @@
  COURT_POSITIONS_SALARIES_PAID: "Vyplacené platy"
  COURT_POSITIONS_SALARIES_GAINED: "Získané platy"
  COURT_POSITION_TYPE_SCALING_MODIFIER_DESCRIPTION: "$MODIFIER$: $RANGED_MODIFIER$ (podle [Concept('aptitude','způsobilosti')|E])"
- COURT_POSITIONS_your_positions_in_liege_court: "Tvé [Concept('court_positions','dvorské úřady')|E] u dvora tvého [Concept('liege','lenního pána')|e]"
- COURT_POSITIONS_no_positions_with_liege: "U dvora svého [Concept('liege','lenního pána')|e] nemáš žádné [Concept('court_positions','dvorské úřady')|E]"
+ COURT_POSITIONS_your_positions_in_liege_court: "Tvé [Concept('court_positions','dvorské úřady')|E] u dvora [Concept('liege_possessive','lenního pána')|E]" # todo: CHANGED (predtym: Tvé [Concept('court_positions','dvorské úřady')|E] u dvora tvého [Concept('liege','lenního pána')|e]) # todo: CONCEPT CASE
+ COURT_POSITIONS_no_positions_with_liege: "U dvora [Concept('liege_possessive','lenního pána')|E] nemáš žádné [Concept('court_positions','dvorské úřady')|E]" # todo: CHANGED (predtym: U dvora svého [Concept('liege','lenního pána')|e] nemáš žádné [Concept('court_positions','dvorské úřady')|E]) # todo: CONCEPT CASE
  COURT_POSITIONS_no_positions_in_your_court: "U svého dvora jsi nikoho nezaměstnal v žádném [Concept('court_position','dvorském úřadu')|E]."
  COURT_POSITIONS_cannot_hire_more_positions: "Nemůžeš najmout žádné další [Concept('court_positions','dvorské úřady')|E]."
  COURT_POSITIONS_cannot_hire_more_positions_in_category: "V této kategorii nemůžeš najmout žádné další [Concept('court_positions','dvorské úřady')|E]."
@@ -135,7 +135,7 @@
  COURT_POSITION_TYPE_TOOLTIP_REVOKE_COST: "Cena za odvolání: [CourtPositionType.GetRevokeCostText|V]"
  COURT_POSITION_SALARY_BREAKDOWN_BASE: "Základní plat"
  COURT_POSITION_TASK_COST_BREAKDOWN_BASE: "Cena [Concept('court_position_task_short','úkolu úřadu')|E]"
- COURT_POSITION_TASK: "[court_position_task_short|E]"
+ COURT_POSITION_TASK: "[Concept('court_position_task_short','Úkol')|E]" # todo: CONCEPT CASE
  COURT_POSITION_TASK_HEADER: "#T [CourtPositionTaskType.GetName]#!"
  COURT_POSITION_TASK_CLICK_TT: "[SelectLocalization( CourtPosition.IsActiveTask( CourtPositionTaskType.Self ), 'ACTIVE_COURT_POSITION_TASK_CLICK_TT', 'POTENTIAL_COURT_POSITION_TASK_CLICK_TT' )]"
  ACTIVE_COURT_POSITION_TASK_CLICK_TT: "Kliknutím deaktivuješ [CourtPositionTaskType.GetName]"
@@ -147,7 +147,7 @@
  COURT_POSITION_NO_ACTIVE_TASK_COST: "@gold_icon! #weak 0 #!"
  COURT_POSITION_TASK_EFFECTS_HEADER: "#S Účinky#!\n"
  COURT_POSITION_TASK_EMPLOYER_EFFECTS: "#S Účinek na [Concept('liege','lenního pána')|E]:#!#indent_newline:2 \n[CourtPositionTaskType.GetEmployerModifierDescription( CourtPosition.Self )]#!"
- COURT_POSITION_TASK_EMPLOYER_COURT_EFFECTS: "#S Účinek na [Concept('liege','dvůr lenního pána')|E] – [GetPlayer.Custom('GetCourtiersTypeConcept')|U]:#!#indent_newline:2 \n[CourtPositionTaskType.GetEmployerCourtModifierDescription( CourtPosition.Self )]#!"
+ COURT_POSITION_TASK_EMPLOYER_COURT_EFFECTS: "#S Účinek na dvůr [Concept('liege_possessive','lenního pána')|E] – [GetPlayer.Custom('GetCourtiersTypeConcept')|U]:#!#indent_newline:2 \n[CourtPositionTaskType.GetEmployerCourtModifierDescription( CourtPosition.Self )]#!" # todo: CHANGED (predtym: S Účinek na [Concept('liege','dvůr lenního pána')|E] – [GetPlayer.Custom('GetCourtiersTypeConcept')|U]: ! indent_newline) # todo: CONCEPT CASE
  COURT_POSITION_TASK_EMPLOYEE_EFFECTS: "#S Účinek na [CourtPositionType.GetName]:#!#indent_newline:2 \n[CourtPositionTaskType.GetEmployeeModifierDescription]#!"
  COURT_POSITION_TASK_START_EFFECTS: "#S Při zahájení:#!#indent_newline:2 \n[CourtPositionTaskType.GetOnStartEffectDesc( CourtPosition.Self )]#!"
  COURT_POSITION_TASK_END_EFFECTS: "#S Při ukončení:#!#indent_newline:2 \n[CourtPositionTaskType.GetOnEndEffectDesc( CourtPosition.Self )]#!"
@@ -155,7 +155,7 @@
  COURT_POSITION_TASK_HINT: "Možné [Concept('court_position_tasks_short','úkoly')|E]:"
  COURT_POSITION_TASK_GENERIC_TT: "Můj [CourtPositionType.GetNameNoTooltip] bude aktivně plnit [Concept('court_position_task_short','úkol')|e] [CourtPositionTaskType.GetName|V]."
  COURT_POSITION_TASK_EMPLOYER_GENERIC_EFFECTS: "#S Účinek na [Concept('liege','lenního pána')|E]:#!#indent_newline:2 \n[CourtPositionTaskType.GetEmployerModifierGenericDescription]#!"
- COURT_POSITION_TASK_EMPLOYER_COURT_GENERIC_EFFECTS: "#S Účinek na [Concept('liege','dvůr lenního pána')|E] – [GetPlayer.Custom('GetCourtiersTypeConcept')|U]:#!#indent_newline:2 \n[CourtPositionTaskType.GetEmployerCourtModifierGenericDescription]#!"
+ COURT_POSITION_TASK_EMPLOYER_COURT_GENERIC_EFFECTS: "#S Účinek na dvůr [Concept('liege_possessive','lenního pána')|E] – [GetPlayer.Custom('GetCourtiersTypeConcept')|U]:#!#indent_newline:2 \n[CourtPositionTaskType.GetEmployerCourtModifierGenericDescription]#!" # todo: CHANGED (predtym: S Účinek na [Concept('liege','dvůr lenního pána')|E] – [GetPlayer.Custom('GetCourtiersTypeConcept')|U]: ! indent_newline) # todo: CONCEPT CASE
  COURT_POSITION_TASK_START_GENERIC_EFFECTS: "#S Při zahájení:#!#indent_newline:2 \n[CourtPositionTaskType.GetOnStartEffectGenericDesc]#!"
  COURT_POSITION_TASK_END_GENERIC_EFFECTS: "#S Při ukončení:#!#indent_newline:2 \n[CourtPositionTaskType.GetOnEndEffectGenericDesc]#!"
  COURT_POSITION_TASK_GENERIC_COST: "#S Cena za měsíc:#!#indent_newline:2 \n[CourtPositionTaskType.GetEmployerCostText( GetPlayer )]#!"
@@ -165,7 +165,7 @@
  physician_treat_epidemic: "Potírat mory"
  physician_treat_epidemic_desc: "Tato postava má za úkol zvyšovat [Concept('epidemic_resistance','odolnost vůči moru')|E] každého [Concept('barony','baronství')|E], které vlastní její [Concept('liege','lenní pán')|E]."
  physician_guard_family: "Pokročilé bádání"
- physician_guard_family_desc: "Tato postava má za úkol pomáhat s učeností svého [Concept('liege','lenního pána')|E]."
+ physician_guard_family_desc: "Tato postava má za úkol pomáhat s učeností svého [Concept('liege_possessive','lenním pánem')|E]." # todo: CHANGED (predtym: Tato postava má za úkol pomáhat s učeností svého [Concept('liege','lenního pána')|E].) # todo: CONCEPT CASE
  physician_improve_self: "Zlepšovat dovednosti"
  physician_improve_self_desc: "Tato postava se soustředí na zlepšování svých lékařských dovedností."
  physician_improve_self_tt: "Každý měsíc má tato postava šanci získat [Concept('trait_level_track_xp','zkušenosti rysu')|E] [GetTrait('lifestyle_physician').GetName( root_scope )] nebo [learning_i][Concept('learning_skill','učenost')|E]"
@@ -173,7 +173,7 @@
  high_almoner_attend_poor: "Zbožná dobročinnost"
  high_almoner_attend_poor_desc: "Tato postava má za úkol pořádat dobročinnost tvým jménem."
  chronicler_promote_legend_realm: "Velebit domácí legendu"
- chronicler_promote_legend_realm_desc: "Tato postava má za úkol oslavovat [Concept('legend','legendu')|E] svého [Concept('liege','lenního pána')|E] a posilovat její šíření."
+ chronicler_promote_legend_realm_desc: "Tato postava má za úkol oslavovat [Concept('legend','legendu')|E] svého [Concept('liege_possessive','lenního pána')|E] a posilovat její šíření." # todo: CHANGED (predtym: Tato postava má za úkol oslavovat [Concept('legend','legendu')|E] svého [Concept('liege','lenního pána')|E] a posilovat ) # todo: CONCEPT CASE
  culture_era_late_medieval_salary_mod: "#V $culture_era_late_medieval$#! [Concept('era','éra')|E]"
  culture_era_high_medieval_salary_mod: "#V $culture_era_high_medieval$#! [Concept('era','éra')|E]"
  culture_era_early_medieval_salary_mod: "#V $culture_era_early_medieval$#! [Concept('era','éra')|E]"
@@ -182,11 +182,16 @@
  tribal_salary_mod: "[Concept('tribal','kmenový')|E]"
  nomad_salary_mod: "[Concept('nomad','nomád')|E]"
  ecclesiastical_salary_mod: "[Concept('ecclesiastical','církevní')|EU]"
+ merchant_reduction_salary_mod: "[Concept('company_sentiment','Směřování společnosti')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_salary_mod: "[Concept('merchant','Kupec')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_court_position_base_cost_mod: "Sleva na [Concept('merchant','kupce')|E] [Concept('court_position','dvorský úřad')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_company_size_court_position_mod: "[Concept('company_size','Velikost společnosti')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  small_realm_salary_mod: "Významná [Concept('realm_size','velikost panství')|E] #low (30+)#!"
  medium_realm_salary_mod: "Velká [Concept('realm_size','velikost panství')|E] #low (60+)#!"
  large_realm_salary_mod: "Velmi velká [Concept('realm_size','velikost panství')|E] #low (90+)#!"
  enormous_realm_salary_mod: "Obrovská [Concept('realm_size','velikost panství')|E] #low (120+)#!"
  holds_court_position_opinion: "$POSITION$: $VALUE|=+$"
+ merchant_benevolent_intent_court_position_opinion_desc: "[GetPerk('benevolent_intent_perk').GetName( SCOPE.sC('liege') )]" # todo: NEW TRANSLATION
  COURT_POSITION_APTITUDE_TOOLTIP_HEADER: "Způsobilost"
  COURT_POSITION_aptitude_description_position: "[Concept('aptitude','Způsobilost')|e]: [CourtPosition.GetAptitudeText|V]"
  COURT_POSITION_aptitude_breakdown: "[Concept('aptitude','Způsobilost')|e] [CHARACTER.Custom('CZ_ShortUINameNoTooltip_G')] jako $COURT_POSITION$ je ovlivněna:"
@@ -219,12 +224,14 @@
  court_position_intellect_good_3_trait: "[GetTrait('intellect_good_3').GetName( ROOT.Char )]"
  court_position_intellect_good_2_trait: "[GetTrait('intellect_good_2').GetName( ROOT.Char )]"
  court_position_intellect_good_1_trait: "[GetTrait('intellect_good_1').GetName( ROOT.Char )]"
+ court_position_intellect_bad_3_trait: "[GetTrait('intellect_bad_3').GetName( ROOT.Char )]" # todo: NEW TRANSLATION
+ court_position_intellect_bad_2_trait: "[GetTrait('intellect_bad_2').GetName( ROOT.Char )]" # todo: NEW TRANSLATION
+ court_position_intellect_bad_1_trait: "[GetTrait('intellect_bad_1').GetName( ROOT.Char )]" # todo: NEW TRANSLATION
  court_position_physique_good_3_trait: "[GetTrait('physique_good_3').GetName( ROOT.Char )]"
  court_position_physique_good_2_trait: "[GetTrait('physique_good_2').GetName( ROOT.Char )]"
  court_position_physique_good_1_trait: "[GetTrait('physique_good_1').GetName( ROOT.Char )]"
  court_position_strong_trait: "[GetTrait('strong').GetName( ROOT.Char )]"
  court_position_loyal_trait: "[GetTrait('loyal').GetName( ROOT.Char )]"
- court_position_disloyal_trait: "[GetTrait('disloyal').GetName( ROOT.Char )|U]"
  court_position_patient_trait: "[GetTrait('patient').GetName( ROOT.Char )]"
  court_position_calm_trait: "[GetTrait('calm').GetName( ROOT.Char )]"
  court_position_impatient_trait: "[GetTrait('impatient').GetName( ROOT.Char )]"
@@ -232,7 +239,6 @@
  court_position_greedy_trait: "[GetTrait('greedy').GetName( ROOT.Char )]"
  court_position_profligate_trait: "[GetTrait('profligate').GetName( ROOT.Char )]"
  court_position_scholar_trait: "[GetTrait('erudite').GetName( ROOT.Char )|U]"
- court_position_erudite_trait: "[GetTrait('erudite').GetName( ROOT.Char )|U]"
  court_position_shrewd_trait: "[GetTrait('shrewd').GetName( ROOT.Char )]"
  court_position_theologian_trait: "[GetTrait('theologian').GetName( ROOT.Char )]"
  court_position_architect_trait: "[GetTrait('architect').GetName( ROOT.Char )]"
@@ -291,6 +297,8 @@
  court_position_faith_warrior_trait: "[GetTrait('faith_warrior').GetName( ROOT.Char )]"
  court_position_diligent_trait: "[GetTrait('diligent').GetName( ROOT.Char )]"
  court_position_lazy_trait: "[GetTrait('lazy').GetName( ROOT.Char )]"
+ court_position_lifestyle_merchant_trait: "[GetTrait('lifestyle_merchant').GetName( ROOT.Char )]" # todo: NEW TRANSLATION
+ court_position_merchant_associate_trait: "[GetTrait('merchant_associate').GetName( ROOT.Char )]" # todo: NEW TRANSLATION
  court_position_reveler_trait: "[GetTrait('lifestyle_reveler').GetName( ROOT.Char )]"
  court_position_flagellant_trait: "[GetTrait('flagellant').GetName( ROOT.Char )]"
  court_position_seducer_trait: "[GetTrait('seducer').GetName( ROOT.Char )]"
@@ -338,8 +346,8 @@
  yeke_jarquchi_improve_court_aptitude_desc: "[GetCourtPositionType('yeke_jarquchi_court_position').GetName()] organizuje dvůr"
  khlon_glan_improve_court_aptitude_desc: "[GetCourtPositionType('khlon_glan_court_position').GetName()|U] Organizace dvora"
  court_position_tenet_celestial_hierarchy: "[GetTenetType('tenet_celestial_hierarchy').GetName( GetPlayer.GetRite )|U]"
- court_position_merit_level: "[merit_level|E]"
- court_position_disciples: "[disciples|E]"
+ court_position_merit_level: "[Concept('merit_level','Hodnost zásluh')|E]" # todo: CONCEPT CASE
+ court_position_disciples: "[Concept('disciples','Učedníci')|E]" # todo: CONCEPT CASE
  court_position_your_disciple: "Tvůj [Concept('disciple','učedník')|E]"
  court_position_tgp_dynasty_legacy: "[GetDynastyPerk( 'tgp_chinese_legacy_5' ).GetName]"
  court_position_surveyor_trait: "[GetTrait('lifestyle_surveyor').GetName( ROOT.Char )]"
@@ -353,7 +361,8 @@
  court_position_tradition_desert_nomads: "[Concept('culture_tradition','kulturní tradice')|E] $tradition_desert_nomads_name$"
  court_physician_court_position: "Osobní lékař"
  court_physician_tradition_bonus: "Z [Concept('culture_tradition','kulturní tradice')|E]"
- court_physician_court_position_desc: "$court_physician_court_position$ odpovídá za zdraví a blaho [Concept('court','dvora')|E], u něhož působí. Bude podle svých nejlepších schopností léčit nemoci a sešívat rány."
+ court_physician_court_position_desc_boilerplate: "odpovídá za zdraví a blaho svého [Concept('court','dvora')|E], [Concept('camp','táboru')|E] nebo [Concept('company','společnost')|E]. Bude léčit nemoci a podle svých schopností ošetřovat rány." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ court_physician_court_position_desc: "$court_physician_court_position$ $court_physician_court_position_desc_boilerplate$" # todo: CHANGED (predtym: $court_physician_court_position$ odpovídá za zdraví a blaho [Concept('court','dvora')|E], u něhož působí. Bude podle svý)
  court_physician_landless_adventurer: "Osobní lékař"
  court_physician_landless_adventurer_desc: "$court_physician_landless_adventurer$ odpovídá za zdraví a pohodu tábora, v němž se nachází. Podle svých nejlepších schopností bude léčit nemoci a zašívat rány."
  court_physician_employer_custom_effect_description: "$BULLET$Provádí [Concept('medical_treatments','lékařská ošetření')|E]"
@@ -403,6 +412,7 @@
  seneschal_handling_estate_desc: "Tato postava má za úkol pečovat o statek svého lenního pána."
  antiquarian_court_position: "Antikvář"
  antiquarian_court_position_desc: "$antiquarian_court_position$ odpovídá za údržbu, péči a obstarávání artefaktů."
+ antiquarian_court_position_parameter_tt: "Máš [Concept('company_purpose','zaměření společnosti')|E] [GetLaw('company_purpose_artisan').GetName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  court_tutor_court_position: "Dvorní učitel"
  court_tutor_court_position_desc: "$court_tutor_court_position$ má na starosti [Concept('education','vzdělání')|E] všech dětí u dvora a jeho dovednosti ovlivní, nakolik bude na žáky působit. Děti mohou mít i nadále jednotlivé [Concept('guardians','poručníky')|E]."
  court_tutor_employer_custom_effect_description: "$BULLET$Působí jako [Concept('guardian','poručník')|E] pro [Concept('children','děti')|E], které žádného nemají\n$BULLET$Zpřístupňuje [Concept('interaction','interakci')|E] #V $make_child_learn_language_interaction$#!"
@@ -422,7 +432,7 @@
  royal_architect_fortify_lands: "Opevňovat země"
  royal_architect_fortify_lands_desc: "Tato postava má za úkol zajišťovat bezpečí zemí a lidu svého lenního pána."
  royal_architect_public_works: "Veřejné stavby"
- royal_architect_public_works_desc: "Tato postava má za úkol řídit rozvoj hlavního sídla."
+ royal_architect_public_works_desc: "Tato postava má za úkol řídit prosperitu hlavního sídla." # todo: CHANGED (predtym: Tato postava má za úkol řídit rozvoj hlavního sídla.)
  court_poet_court_position: "Dvorní básník"
  court_poet_employer_custom_effect_description: "$BULLET$Může se náhodně stát [Concept('inspired','inspirovaným')|E]"
  court_poet_court_position_desc: "$court_poet_court_position$ je znalcem slov a veršů, který svému lennímu pánovi i všem u dvora poskytuje zábavu, intelektuální podněty a citové prožitky."
@@ -461,7 +471,7 @@
  lady_in_waiting_court_position: "Dvorní dáma"
  lady_in_waiting_court_position_desc: "$lady_in_waiting_court_position$ je pomocnice a společnice královny nebo císařovny, která se stará o každou její potřebu a plní každý její rozmar."
  executioner_court_position: "Popravčí"
- executioner_employer_custom_effect_description: "$BULLET$Může veřejně [Concept('execute','popravovat')|E] [Concept('prisoners','vězně')|E] za účelem zvýšení [Concept('control','kontroly')|E] a [Concept('county_opinion','lidového mínění')|E]\n@warning_icon! #X Zločiny postavy budou odpuštěny#!"
+ executioner_employer_custom_effect_description: "$BULLET$Může veřejně [Concept('execute','popravovat')|E] [Concept('prisoners','vězně')|E] za účelem zvýšení [Concept('control','kontroly')|E] a [Concept('popular_opinion','lidového mínění')|E]\n@warning_icon! #X Zločiny postavy budou odpuštěny#!" # todo: CHANGED (predtym: $BULLET$Může veřejně [Concept('execute','popravovat')|E] [Concept('prisoners','vězně')|E] za účelem zvýšení [Concept('co)
  executioner_court_position_desc: "Popravčí jsou zločinci, kteří výměnou za svobodu musí popravovat veškeré nepřátele trůnu. Někdo by to nazval poctou, jiný břemenem."
  executioner_terrify_court: "Děsit dvůr"
  executioner_terrify_court_desc: "Tato postava je voděna po dvoře, aby každý věděl, že ho od špalku dělí jen jediný krok."
@@ -486,11 +496,12 @@
  IS_NOT_APPLICABLE_DIARCH_COURT_POSITION: "Momentálně #bold nesdílí moc#! a nejsou v [Concept('line_of_succession','linii následnictví')|E], aby mohli [Concept('share_power','sdílet moc')|E]"
  IS_NOT_GONE_ADVENTURING: "#bold Nevydali se#! za dobrodružstvím"
  none_has_no_particular_noble_roots_trigger: "Jsou [Concept('lowborn','nízkého původu')|E] nebo pocházejí z nevýznamné [Concept('dynasty','dynastie')|E]"
- faith_allows_recruitment_court_position: "#bold Nejsou#! součástí [Concept('clergy','duchovenstva')|E], nebo víra jejich [Concept('liege','lenního pána')|E] umožňuje najímání [Concept('clergy','duchovenstva')|E]"
+ faith_allows_recruitment_court_position: "#bold Nejsou#! součástí [Concept('clergy','duchovenstva')|E], nebo [Concept('faith','víra')|E] jejich [Concept('liege_possessive','lenního pána')|E] umožňuje najímání [Concept('clergy','duchovenstva')|E]" # todo: CHANGED (predtym: bold Nejsou ! součástí [Concept('clergy','duchovenstva')|E], nebo víra jejich [Concept('liege','lenního pána')|E] umožňu) # todo: CONCEPT CASE
  is_imprisoned_court_position_executioner: "Jsou uvězněni a #bold nejsou#! momentálně zaměstnáni jako [GetCourtPositionType('executioner_court_position').GetName()]"
  faith_allows_master_assassin: "Jejich [Concept('faith','víra')|E]:\n$BULLET$Má [Concept('core_tenet','zásadu')|E] [GetTenetType('tenet_fp3_fedayeen').GetBaseName]\n$BULLET$#bold Nemá#! [Concept('core_tenet','zásadu')|E] [GetTenetType('tenet_pacifism').GetBaseName] ani [Concept('core_tenet','zásadu')|E] [GetTenetType('tenet_dharmic_pacifism').GetBaseName]"
  is_not_a_ceremonial_liege_trigger: "#bold Nejsou#! [Concept('ceremonial_liege','obřadním panovníkem')|E]"
  not_travel_option_character: "#bold Nejsou#! najati z [Concept('travel_option','možnosti cestování')|e]"
+ gdp_not_already_trader_for_employer_tt: "Už pro tebe #bold ne#! pracují jako [Concept('trader','obchodník')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  clan_tax_collector_court_position: "Výběrčí daní"
  clan_tax_collector_court_position_desc: "$clan_tax_collector_court_position$ má za úkol organizovat a vybírat daně a zajistit, aby [Concept('clan','klanoví')|E] [Concept('vassals','vazalové')|E] řádně plnili své povinnosti."
  court_position_khvarenah_legacy_4: "[Concept('dynasty','Dynastie')|E] zaměstnavatele má [GetDynastyPerk( 'fp3_khvarenah_legacy_4' ).GetName]"
@@ -500,7 +511,7 @@
  opinion_of_liege: "Mínění o [Concept('liege','lenním pánovi')|E]"
  cave_hermit_court_position: "Zahradní poustevník"
  cave_hermit_court_position_desc: "$cave_hermit_court_position$ je někdo, kdo bude přebývat v areálu tvého hradu a bavit tvé hosty proroctvími a hádankami. Někteří říkají, že může jít o skutečného mystika."
- cave_hermit_court_position_tt: "Během svých [Concept('travels','cest')|E] jsi našel[Select_CString( GetPlayer.IsFemale, 'a', '' )] #V [GetCourtPositionType( 'cave_hermit_court_position' ).GetName()]#!"
+ cave_hermit_court_position_tt: "Během svých [Concept('travels','cest')|E] jsi [Select_CString(ROOT.Char.IsFemale,'našla','našel')][Select_CString( GetPlayer.IsFemale, 'a', '' )] #V [GetCourtPositionType( 'cave_hermit_court_position' ).GetName()]#!"
  travel_leader_court_position: "Vůdce karavany"
  travel_leader_court_position_desc: "$travel_leader_court_position$ ti pomáhá při cestování a má na starosti všechny itineráře. Snaží se zajistit, abys do cíle dorazil[Select_CString( GetPlayer.IsFemale, 'a', '' )] bezpečně a včas."
  hire_travel_leader_decision: "Vyhledat postavu $travel_leader_court_position$"
@@ -526,9 +537,9 @@
  caravan_master_improve_self_fallback_tt: "Každý měsíc má tato postava šanci získat [GetTrait('lifestyle_traveler').GetName( GetNullCharacter )] [Concept('trait_level_track_xp','zkušenosti rysu')|E], [martial_i][Concept('martial_skill','válečnickou dovednost')|E] nebo [stewardship_i][Concept('stewardship_skill','správcovskou dovednost')|E]"
  wet_nurse_court_position: "Kojná"
  wet_nurse_court_position_desc: "$wet_nurse_court_position$ pečuje o tvé [Concept('children','děti')|E] a dětské [Concept('hostages','rukojmí')|E]."
- wet_nurse_employer_custom_effect_description: "$BULLET$Přijetí [Concept('influence_ward_personality','ovlivnění osobnosti schovance')|E]: #P +10#!\n$BULLET$Snižuje šanci, že [Concept('children','děti')|E] onemocní [Concept('illnesses','nemocemi')|E]\n$BULLET$Možnost událostí vývoje [Concept('child','dítěte')|E]"
+ wet_nurse_employer_custom_effect_description: "$BULLET$Přijetí [Concept('influence_ward_personality','ovlivnění osobnosti schovance')|E]: #P +10#!\n$BULLET$Snižuje šanci, že [Concept('children','děti')|E] onemocní [Concept('illnesses','nemocemi')|E]\n$BULLET$Možnost událostí vývoje [Concept('child','dítěte')|E]" # todo: TERMINOLOGY development -> rozvoj
  find_wet_nurse_decision: "Vyhledat postavu $wet_nurse_court_position$"
- find_wet_nurse_decision_desc: "$wet_nurse_court_position$ je symbolem bohatství a prosperity dvora: žena pověřená kojením dětí, jejich ochranou před nemocemi a dohledem nad jejich vývojem. Zdatná a zdravá kandidátka je nezbytná."
+ find_wet_nurse_decision_desc: "$wet_nurse_court_position$ je symbolem bohatství a prosperity dvora: žena pověřená kojením dětí, jejich ochranou před nemocemi a dohledem nad jejich vývojem. Zdatná a zdravá kandidátka je nezbytná." # todo: TERMINOLOGY development -> rozvoj
  find_wet_nurse_decision_tooltip: "Tví služebníci navrhnou několik vhodných kandidátek na úřad [GetCourtPositionType('wet_nurse_court_position').GetName()]"
  find_wet_nurse_decision_confirm: "Zahájit hledání"
  court_position_has_child: "Má dítě"
@@ -551,7 +562,7 @@
  chronicler_court_position_desc: "$chronicler_court_position$ má za úkol svěřovat činy svého zaměstnavatele papíru."
  chronicler_court_position_nomadic_tribal_desc: "$chronicler_court_position_nomadic_tribal$ má čest šířit největší skutky a příběhy svého lenního pána široko daleko."
  chronicler_generate_seeds: "Hledat legendy"
- chronicler_generate_seeds_desc: "Tvůj $chronicler_court_position$ bude prohledávat záznamy, aby našel důvody, proč tě zvěčnit jako legendu."
+ chronicler_generate_seeds_desc: "Tvůj $chronicler_court_position$ bude prohledávat záznamy, aby [Select_CString(ROOT.Char.IsFemale,'našla','našel')] důvody, proč tě zvěčnit jako legendu."
  yearly_legend_seed_tt: "Každý rok budeš mít náhodnou šanci získat [Concept('legend_seed','zárodek legendy')|E]. Vyšší úrovně [Concept('aptitude','způsobilosti')|E] zvýší pravděpodobnost, že k tomu dojde."
  chronicler_espouse_legend: "Šířit legendu v cizině"
  chronicler_espouse_legend_desc: "Tato postava bude cestovat tvým panstvím i za jeho hranice, aby přesvědčila [Concept('vassals','vazaly')|E] a sousední [Concept('rulers','vládce')|E], aby z tvé legendy učinili svou [Concept('promoted_legend','propagovanou legendu')|E]"
@@ -584,7 +595,7 @@
  court_brewmaster_court_position: "Dvorní sládek"
  court_brewmaster_court_position_desc: "$court_brewmaster_court_position$ je zástupce vybraný k přímému jednání se sládky panství, aby zajistil, že lenní pán získá to nejlepší pivo."
  court_brewmaster_employer_custom_effect_description: "$BULLET$Náklady na aktivitu [GetActivityType( 'activity_feast' ).GetName] sníženy o #positive_value @gold_icon!-5%#! až #positive_value @gold_icon!-25%#! podle [Concept('aptitude','způsobilosti')|E]\n$BULLET$Odměny z aktivity [GetActivityType( 'activity_feast' ).GetName] zvýšeny o #positive_value +5%#! až #positive_value +25%#! podle [Concept('aptitude','způsobilosti')|E]"
- court_brewmaster_requirement_tt: "[Concept('barony','Baronství')|E] ve tvé [Concept('domain','doméně')|E] má #color_white [GetBuilding('breweries_01').GetName]#! jako [Concept('building','budovu')|E] nebo některé z jejích vylepšení"
+ court_brewmaster_requirement_tt: "[Concept('barony','Baronství')|E] ve tvé [Concept('domain','doméně')|E] má #color_white [GetBuildingType('beer_brewery_1').GetName]#! jako [Concept('building','budovu')|E] nebo některé z jejích vylepšení" # todo: CHANGED (predtym: [Concept('barony','Baronství')|E] ve tvé [Concept('domain','doméně')|E] má color_white [GetBuilding('breweries_01').GetN)
  court_brewmaster_popular_opinion: "Vyprázdnit sklepy"
  court_brewmaster_popular_opinion_desc: "Zvýšit výrobu napříč panstvím, abychom se mohli pravidelně dělit s lidem o některá z našich lepších piv."
  court_brewmaster_court_opinion: "Podělit se s dvorem"
@@ -597,8 +608,8 @@
  court_position_palace_politics: "[GetCultureTradition('tradition_ep3_palace_politics').GetName]"
  court_position_north_germanic: "Jejich kultura je $heritage_north_germanic_name$ [Concept('heritage','dědictví')|E]"
  court_position_west_germanic: "Jejich kultura je $heritage_west_germanic_name$ [Concept('heritage','dědictví')|E]"
- court_position_not_same_culture_heritage: "Jiné [Concept('heritage','dědictví')|E] než [Concept('culture','kultura')|E] [Concept('liege','lenního pána')|E]"
- court_position_not_same_culture_language: "Jiný [Concept('language','jazyk')|E] než [Concept('culture','kultura')|E] [Concept('liege','lenního pána')|E]"
+ court_position_not_same_culture_heritage: "Jiné [Concept('heritage','dědictví')|E] než [Concept('culture','kultura')|E] [Concept('liege_possessive','lenního pána')|E]" # todo: CHANGED (predtym: Jiné [Concept('heritage','dědictví')|E] než [Concept('culture','kultura')|E] [Concept('liege','lenního pána')|E]) # todo: CONCEPT CASE
+ court_position_not_same_culture_language: "Jiný [Concept('language','jazyk')|E] než [Concept('culture','kultura')|E] [Concept('liege_possessive','lenního pána')|E]" # todo: CHANGED (predtym: Jiný [Concept('language','jazyk')|E] než [Concept('culture','kultura')|E] [Concept('liege','lenního pána')|E]) # todo: CONCEPT CASE
  eparch_court_position: "Eparcha"
  eparch_court_position_desc: "Eparcha je hlavním správcem a nejvyšší autoritou hlavního města, hned po vládnoucím panovníkovi."
  eparch_appease_populace: "Uklidňovat lid"
@@ -609,18 +620,14 @@
  eparch_enforce_public_order_desc: "[GetCourtPositionType('eparch_court_position').GetNameNoTooltip()] nechá vojáky hlídkovat v ulicích, aby za každou cenu udrželi klid a zajistili veřejný pořádek."
  eparch_development: "Rozvíjet hlavní město"
  eparch_development_desc: "[GetCourtPositionType('eparch_court_position').GetNameNoTooltip()] využije městské správce k rozvoji a zlepšení města."
- eparch_base_desc: "$EFFECT_LIST_BULLET$[Concept('governor_efficiency','efektivita guvernéra')|E]"
- eparch_base_family_desc: "$EFFECT_LIST_BULLET$[Concept('governor_efficiency','efektivita guvernéra')|E] pro vlastníky [Concept('estates','statků')|E] nacházejících se v [Concept('capital','hlavním sídle')|E]"
- eparch_terrible_desc: "$eparch_base_desc$: #P +2%#!\n$eparch_base_family_desc$: #P +1%#!"
- eparch_poor_desc: "$eparch_base_desc$: #P +4%#!\n$eparch_base_family_desc$: #P +2%#!"
- eparch_average_desc: "$eparch_base_desc$: #P +6%#!\n$eparch_base_family_desc$: #P +3%#!"
- eparch_good_desc: "$eparch_base_desc$: #P +8%#!\n$eparch_base_family_desc$: #P +4%#!"
- eparch_excellent_desc: "$eparch_base_desc$: #P +10%#!\n$eparch_base_family_desc$: #P +5%#!"
- eparch_range_desc: "$eparch_base_desc$: #P +2%#! až #P +10%#! podle [Concept('aptitude','způsobilosti')|E]\n$eparch_base_family_desc$: #P +1%#! až #P +5%#! podle [Concept('aptitude','způsobilosti')|E]"
+ eparch_prosperity: "Rozvíjet hlavní sídlo" # todo: NEW TRANSLATION
+ eparch_prosperity_desc: "[GetCourtPositionType('eparch_court_position').GetNameNoTooltip()] účelně využije městské správce k rozvoji a zvelebení města." # todo: NEW TRANSLATION
  eparch_distance_trigger_desc: "Spravuje [GetPlayer.Custom( 'GetProvinceConcept' )] blízko [Concept('capital','hlavního sídla')|E]"
  eparch_custom_effect_desc: "$EFFECT_LIST_BULLET$[GetCourtPositionType('eparch_court_position').GetNameNoTooltip()] bude dohlížet na správu hlavního města"
  eparch_capital_has_grain_dole_desc: "[Concept('capital','Hlavní sídlo')|E] má [GetModifier('panem_et_circenses_county_modifier').GetNameWithTooltip]"
- eparch_capital_bureau: "[GetBuilding('capital_bureau_02').GetTypeName] – řada [Concept('building','budov')|E]"
+ eparch_capital_bureau: "[GetBuildingType('capital_magistracy_1').GetTypeName] – řada [Concept('building','budova')|E]" # todo: CHANGED (predtym: [GetBuilding('capital_bureau_02').GetTypeName] – řada [Concept('building','budov')|E]) # todo: CONCEPT CASE
+ household_palace_library_aptitude_desc: "Řada [Concept('building','budova')|E] typu [GetBuildingType('royal_palace_library_1').GetTypeName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ household_inner_court_aptitude_desc: "Řada [Concept('building','budova')|E] typu [GetBuildingType('royal_inner_court_1').GetTypeName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  landless_government_tt: "Patříš mezi [Concept('adventurer','dobrodruhy')|E]"
  camp_with_following_buildings_tt: "Máš [Concept('camp','tábor')|E] s jednou z následujících [Concept('buildings','budov')|E]:"
  officer_positions: "Pozice [Concept('officer','důstojníků')|E]"
@@ -750,7 +757,7 @@
  court_astrologer_handling_weather_white_zud: "$court_astrologer_handling_weather_tt$$MOD_MONTHLY_COUNTY_FERTILITY_GROWTH$: #P +20%#!"
  court_astrologer_handling_weather_cold_zud: "$court_astrologer_handling_weather_tt$$MOD_MONTHLY_COUNTY_FERTILITY_GROWTH$: #P +0.25#!"
  court_astrologer_handling_weather_severe_drought: "$court_astrologer_handling_weather_tt$$MOD_MONTHLY_COUNTY_FERTILITY_DECLINE$: #P -30%#!"
- court_astrologer_handling_weather_havsarsan_zud: "$court_astrologer_handling_weather_tt$$game_concept_domicile_travel_speed$: #P +33%#!"
+ court_astrologer_handling_weather_havsarsan_zud: "$court_astrologer_handling_weather_tt$Rychlost přesunu [Concept('domicile','domicilu')|E]: #P +33%#!" # todo: CONCEPT CASE
  court_astrologer_abundant_grazing_modifier: "$court_astrologer_handling_weather$: $situation_steppe_abundant_grazing_season$"
  court_astrologer_warm_nights_modifier: "$court_astrologer_handling_weather$: $situation_steppe_warm_nights_season$"
  court_astrologer_sky_blessing_modifier: "$court_astrologer_handling_weather$: $situation_steppe_sky_blessing_season$"
@@ -818,7 +825,7 @@
  yeke_jarquchi_culture_acceptance_tt: "[Concept('cultural_acceptance','Kulturní přijetí')|E] mezi kulturou [liege.GetCulture.GetName] a ostatními [Concept('cultures','kulturami')|E] v [Concept('realm','panství')|E] se každý rok zvýší o [liege.Custom('GetAptitudeYekeJarquchiLoc')] #weak (max. #V 50#!)#!"
  yeke_jarquchi_aptitude: "[ROOT.Char.MakeScope.ScriptValue('yeke_jarquchi_aptitude_tooltip')|P0]"
  yeke_jarquchi_missing_aptitude: "#P 2–10#! podle [Concept('aptitude','způsobilosti')|E]"
- yeke_jarquchi_culture_acceptance_trigger_tt: "Všechna [Concept('counties','hrabství')|E] v [Concept('realm','panství')|E] mají kulturu [liege.GetCulture.GetName]"
+ yeke_jarquchi_culture_acceptance_trigger_tt: "Všechno [Concept('counties','hrabství')|E] v [Concept('realm','panství')|E] mají kulturu [liege.GetCulture.GetName]" # todo: CONCEPT CASE
  culture_acceptance_desc_yeke_jarquchi: "[liege.GetName] podporoval[Select_CString( liege.IsFemale, 'a', '' )] tuto [Concept('culture','kulturu')|E] ve svém [Concept('realm','panství')|E]"
  yeke_jarquchi_validity_trigger_tt: "[diplomacy_i][Concept('diplomacy','Diplomacie')|E] je #high 12#! nebo vyšší"
  foreign_emissary_court_position: "Cizí vyslanec"
@@ -829,15 +836,15 @@
  foreign_emissary_missing_aptitude: "#P 2–10#! podle [Concept('aptitude','způsobilosti')|E]"
  foreign_emissary_culture_acceptance: "Přizpůsobit tributáře"
  foreign_emissary_culture_acceptance_desc: "Tato postava zajistí, aby se tributáři podřídili svému suverénovi, a to jakýmikoli nezbytnými prostředky."
- culture_acceptance_desc_foreign_emissary: "[liege.GetName] vyšel[Select_CString( liege.IsFemale, 'a', '' )] vstříc svým tributářům této [Concept('culture','kultury')|E]"
+ culture_acceptance_desc_foreign_emissary: "[liege.GetName] [liege.GetHerHis] vyšel[Select_CString( liege.IsFemale, 'a', '' )] vstříc svým tributářům této [Concept('culture','kultury')|E]" # todo: CHANGED (predtym: [liege.GetName] vyšel[Select_CString( liege.IsFemale, 'a', '' )] vstříc svým tributářům této [Concept('culture','kultury)
  foreign_emissary_culture_acceptance_trigger_tt: "Žádní [Concept('tributaries','tributáři')|E] jiné [Concept('culture','kultury')|E]"
  keeper_of_the_horses_court_position: "Strážce koní"
  keeper_of_the_horses_court_position_desc: "$keeper_of_the_horses_court_position$ je prestižní úřad, který má na starosti oře a stáje svého lenního pána."
  court_position_confucian_education_trait: "[GetTrait('confucian_education').GetName( ROOT.Char )]"
  court_physician_celestial_imperial: "Palácový lékař"
- court_physician_celestial_imperial_desc: "$court_physician_celestial_imperial$ odpovídá za zdraví a blaho [Concept('court','dvora')|E], u něhož působí. Bude podle svých nejlepších schopností léčit nemoci a sešívat rány."
+ court_physician_celestial_imperial_desc: "$court_physician_celestial_imperial$ $court_physician_court_position_desc_boilerplate$" # todo: CHANGED (predtym: $court_physician_celestial_imperial$ odpovídá za zdraví a blaho [Concept('court','dvora')|E], u něhož působí. Bude podle)
  court_physician_celestial: "Vrchní lékař"
- court_physician_celestial_desc: "$court_physician_celestial$ odpovídá za zdraví a blaho [Concept('court','dvora')|E], u něhož působí. Bude podle svých nejlepších schopností léčit nemoci a sešívat rány."
+ court_physician_celestial_desc: "$court_physician_celestial$ $court_physician_court_position_desc_boilerplate$" # todo: CHANGED (predtym: $court_physician_celestial$ odpovídá za zdraví a blaho [Concept('court','dvora')|E], u něhož působí. Bude podle svých ne)
  court_astrologer_celestial_imperial: "Velký astrolog"
  court_astrologer_celestial_imperial_desc: "$court_astrologer_celestial_imperial$ zkoumá nebesa, aby předpověděl, jaký osud nás může potkat."
  court_astrologer_celestial: "Věštec"
@@ -976,3 +983,94 @@
  minister_bureaucrat_court_position: "Pomocník oddělení"
  minister_bureaucrat_court_position_desc: "Ve vyšších patrech nebeské vlády je zapotřebí rozsáhlé množství byrokratů. Ručně vybíraní hlavou každého oddělení zajišťují, aby vše běželo hladce."
  minister_bureaucrat_court_position_mod_desc: "$EFFECT_LIST_BULLET$Pomocník zlepšuje různé úkoly související s [Concept('ministry','ministerstvem')|E], například [Concept('great_projects','velké projekty')|E] podle [Concept('aptitude','způsobilosti')|E]"
+ deputy_positions: "Úřady [Concept('deputy','zástupce')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ court_physician_merchant: "Lékař společnosti" # todo: NEW TRANSLATION
+ court_physician_merchant_desc: "$court_physician_merchant$ odpovídá za zdraví a blaho [Concept('company','společnost')|E]. Od pohmožděných kloubů a říznutí papírem až po prevenci a léčbu nemocí." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ travel_leader_merchant: "Velitel karavany" # todo: NEW TRANSLATION
+ travel_leader_merchant_desc: "$travel_leader_merchant$ pomáhá [Concept('company','společnost')|E] na cestách a zodpovídá za veškeré itineráře. Dbá na to, abys bezpečně a včas dorazil do cíle." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ master_of_hunt_merchant: "Lovčí" # todo: NEW TRANSLATION
+ master_of_hunt_merchant_desc: "$master_of_hunt_merchant$ odpovídá za všechny lovecké výpravy pořádané [Concept('company','společnost')|E]. Stará se také o psince a lovecké psy." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ champion_merchant: "Sponzorovaný šampion" # todo: NEW TRANSLATION
+ champion_merchant_desc: "$champion_merchant$ je schopný a smrtící bojovník, který si vydobyl dostatečnou pověst, aby ho [Concept('company','společnost')|E] sponzorovala." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ court_tutor_merchant: "Lektor" # todo: NEW TRANSLATION
+ court_tutor_merchant_desc: "$court_tutor_merchant$ zodpovídá za [Concept('education','vzdělání')|E] všech dětí pracujících pro [Concept('company','společnost')|E]. Jeho schopnosti ovlivňují, jak dobře dokáže studenty vzdělávat. Děti mohou mít i individuální [Concept('guardians','poručníci')|E]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ antiquarian_merchant: "Kurátor" # todo: NEW TRANSLATION
+ antiquarian_merchant_desc: "$antiquarian_merchant$ odpovídá za údržbu, péči o artefakty a jejich získávání." # todo: NEW TRANSLATION
+ gardener_merchant: "Zahradník" # todo: NEW TRANSLATION
+ gardener_merchant_desc: "$gardener_merchant$ odpovídá za péči o zahrady [Concept('company_possessive','společnosti')|E] a věnuje svůj čas i schopnosti tomu, aby skutečně vzkvétaly." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ brewmaster_merchant: "Sládek" # todo: NEW TRANSLATION
+ brewmaster_merchant_desc: "$brewmaster_merchant$ je zástupce, který jedná přímo se sládky [Concept('company','společnost')|E] a zajišťuje, aby se společnost dostala k těm nejlepším pivům." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ partner_court_position: "Partner" # todo: NEW TRANSLATION
+ partner_court_position_desc: "$partner_court_position$ je všeobecně považován za zástupce majitele [Concept('company','společnost')|E]. Přebírá odpovědnost za každodenní provoz a často také nese následky jeho chyb." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ partner_spouse_aptitude: "Je tvůj [Concept('spouse','choť')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ partner_handle_trade: "Řídit obchod" # todo: NEW TRANSLATION
+ partner_handle_trade_desc: "Tato postava má na starosti rozšiřování trhu obchodních tras." # todo: NEW TRANSLATION
+ partner_mentoring: "Vzdělávat společníky" # todo: NEW TRANSLATION
+ partner_mentoring_desc: "Tato postava má za úkol zlepšovat schopnosti důležitých společníků [Concept('company','společnosti')|E]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ partner_mentoring_fallback_tt: "Zaměstnavatel nebo důležití [Concept('family_members','členové rodiny')|E] v [Concept('company','společnosti')|E] mohou každý měsíc získat příslušné [Concept('skills','dovednosti')|E], zkušenosti se [stewardship_i] [Concept('stewardship_lifestyle','správcovským životním stylem')|E] nebo příslušné [Concept('traits','rysy')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ fixer_court_position: "Vyřizovač" # todo: NEW TRANSLATION
+ fixer_court_position_desc: "$fixer_court_position$ odpovídá za zahlazování stop, které by jinak mohly ohrozit zájmy [Concept('company_possessive','společnosti')|E]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ fixer_unite_house: "Sjednotit rod" # todo: NEW TRANSLATION
+ fixer_unite_house_desc: "Tato postava dbá na to, aby zájmy [Concept('house_possessive','rodu')|E] měly přednost před malichernými spory." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ fixer_unite_house_title: "[ROOT.Char.GetName] sjednocuje rod" # todo: NEW TRANSLATION
+ clan_unity_fixer_increase.desc: "byl najat, aby posílil [Concept('house_unity','jednota rodu')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ fixer_unite_house_fallback_tt: "@company_sentiment_icon! [Concept('company_sentiment','Směřování společnosti')|E] se může každý měsíc zvýšit" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ fixer_unite_house_notification_desc: "[ROOT.Char.GetShortUIName] zvýšil [Concept('company_sentiment','směřování společnosti')|E] rodu [liege.GetHouse.GetName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ fixer_sow_dissent: "Podněcovat neshody" # todo: NEW TRANSLATION
+ fixer_sow_dissent_desc: "Tato postava šíří mezi členy [Concept('house','rod')|E] zvěsti a nespokojenost." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ fixer_sow_dissent_title: "[ROOT.Char.GetName] podněcuje neshody" # todo: NEW TRANSLATION
+ fixer_sow_dissent_notification_desc: "[ROOT.Char.GetShortUIName] snížil [Concept('company_sentiment','směřování společnosti')|E] rodu [liege.GetHouse.GetName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ clan_unity_fixer_decrease.desc: "byl najat, aby podněcoval neshody v [Concept('house','rodě')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ fixer_sow_dissent_fallback_tt: "@company_sentiment_icon! [Concept('company_sentiment','Směřování společnosti')|E] se může každý měsíc snížit" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ fixer_investigate_competition: "Prověřovat konkurenci" # todo: NEW TRANSLATION
+ fixer_investigate_competition_desc: "Tato postava odhaluje slabiny konkurenčních obchodníků a zlepšuje [Concept('trade_competitiveness','obchodní konkurenceschopnost')|E] [Concept('company_possessive','společností')|E]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ translator_court_position: "Překladatel" # todo: NEW TRANSLATION
+ translator_court_position_desc: "Obchodování se zbožím napříč známým světem vyžaduje dobrou komunikaci. $translator_court_position$ zprostředkovává jednání s nejrůznějšími klienty [Concept('company','společnost')|E]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ translator_learn_language: "Učit se jazyky" # todo: NEW TRANSLATION
+ translator_learn_language_desc: "Tato postava se zaměřuje na studium jazyků a pomáhá [Concept('company','společnost')|E] rozšiřovat obzory na trhu." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ translator_facilitate_communication: "Usnadňovat komunikaci" # todo: NEW TRANSLATION
+ translator_facilitate_communication_desc: "Tato postava dbá na to, aby byly požadavky stávajících zahraničních trhů správně pochopeny." # todo: NEW TRANSLATION
+ translator_foreign_deals: "Zahraniční obchody" # todo: NEW TRANSLATION
+ translator_foreign_deals_desc: "Tato postava rozšiřuje [Concept('trade_routes','obchodní trasy')|E] [Concept('company_possessive','společností')|E] hlouběji na zahraniční [Concept('markets','trhy')|E]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ translator_language_req: "Musí ovládat alespoň 2 [Concept('languages','jazyky')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ court_position_known_languages: "Počet známých [Concept('languages','jazyků')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ court_position_education_learning_trait: "Má [Concept('education','vzdělání')|E] v [learning_i] [Concept('learning','učenosti')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ court_position_erudite_trait: "[GetTrait('erudite').GetName( ROOT.Char )|U]"
+ court_position_disloyal_trait: "[GetTrait('disloyal').GetName( ROOT.Char )|U]"
+ market_agent_court_position: "Obchodní agent" # todo: NEW TRANSLATION
+ market_agent_court_position_desc: "$market_agent_court_position$ udržuje rozsáhlou síť [Concept('company_possessive','společnosti')|E] a aktualizuje informace o cenách a karavanách." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ market_agent_extend_networks: "Zajišťovat zakázky" # todo: NEW TRANSLATION
+ market_agent_extend_networks_desc: "Tato postava navazuje kontakty i ve vzdálenějších krajích a zlepšuje [Concept('trade_expertise','obchodní zkušenost')|E] [Concept('company_possessive','společností')|E]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ market_agent_negotiate_contracts: "Vyjednávat smlouvy" # todo: NEW TRANSLATION
+ market_agent_negotiate_contracts_desc: "Tato postava sjednává obchody na hromadný nákup konkrétního zboží pro [Concept('company','společnost')|E]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ market_agent_court_position_parameter_tt: "Máš [Concept('company_purpose','zaměření společnosti')|E] [GetLaw('company_purpose_caravaneer').GetName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ bailiff_court_position: "Exekutor" # todo: NEW TRANSLATION
+ bailiff_court_position_desc: "$bailiff_court_position$ sleduje problémové dlužníky [Concept('company_possessive','společnosti')|E], řeší potíže ještě předtím, než nastanou, a vymáhá splácení dluhů." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ bailiff_threaten_debtors: "Vyhrožovat dlužníkům" # todo: NEW TRANSLATION
+ bailiff_threaten_debtors_desc: "Tato postava vyvíjí nátlak na ty, kteří se zdráhají splatit, co dluží [Concept('company','společnost')|E]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ bailiff_collect_loans: "Vymáhat půjčky" # todo: NEW TRANSLATION
+ bailiff_collect_loans_desc: "Tato postava naléhá na [Concept('debtors','dlužníky')|E], aby splatili své dluhy vůči [Concept('company','společnosti')|E]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ bailiff_collect_loans_title: "Exekutor vymáhá půjčku" # todo: NEW TRANSLATION
+ bailiff_collect_loans_fallback_tt: "[Concept('debtor','Dlužník')|E] může každý měsíc splatit část své [Concept('loan','půjčky')|E] ve výši od [gold_i][EmptyScope.ScriptValue('tiny_gold_min_value')|0V] do [gold_i][EmptyScope.ScriptValue('tiny_gold_max_value_static')|0V] (podle [Concept('aptitude','způsobilosti')|E])" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ bailiff_collect_loans_notification_desc: "[ROOT.Char.GetShortUIName] vymohl splátku od [debtor.Custom('CZ_ShortUIName_G')]" # todo: NEW TRANSLATION
+ bailiff_collect_loans_remaining_tt: "[THIS.Story.GetOwner.GetShortUIName] ti nyní dluží [gold_i][outstanding|V0]" # todo: NEW TRANSLATION
+ bailiff_court_position_parameter_tt: "Máš [Concept('company_purpose','zaměření společnosti')|E] [GetLaw('company_purpose_creditor').GetName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ liege_has_meritocracy_perk: "Zaměstnavatel má talent [GetPerk('meritocracy_perk').GetName( GetNullCharacter )]" # todo: NEW TRANSLATION
+ roman_censor_court_position: "Římský cenzor" # todo: NEW TRANSLATION
+ roman_censor_court_position_desc: "$roman_censor_court_position$ je prestižní úřad, který dbá na veřejnou morálku a dohlíží na různé senátorské a vládní záležitosti." # todo: NEW TRANSLATION
+ roman_censor_terrible_desc: "$EFFECT_LIST_BULLET$[Concept('patrician_rating','Hodnocení patricije')|E]: #V 0#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ roman_censor_poor_desc: "$EFFECT_LIST_BULLET$[Concept('patrician_rating','Hodnocení patricije')|E]: [EmptyScope.ScriptValue('roman_censor_employer_rating_1_value')|+=0]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ roman_censor_average_desc: "$EFFECT_LIST_BULLET$[Concept('patrician_rating','Hodnocení patricije')|E]: [EmptyScope.ScriptValue('roman_censor_employer_rating_2_value')|+=0]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ roman_censor_good_desc: "$EFFECT_LIST_BULLET$[Concept('patrician_rating','Hodnocení patricije')|E]: [EmptyScope.ScriptValue('roman_censor_employer_rating_3_value')|+=0]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ roman_censor_excellent_desc: "$EFFECT_LIST_BULLET$[Concept('patrician_rating','Hodnocení patricije')|E]: [EmptyScope.ScriptValue('roman_censor_employer_rating_4_value')|+=0]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ roman_censor_range_desc: "$EFFECT_LIST_BULLET$[Concept('patrician_rating','Hodnocení patricije')|E] se zvýší o: #V 0#! až [EmptyScope.ScriptValue('roman_censor_employer_rating_4_value')|+=0] (podle [Concept('aptitude','způsobilosti')|E])" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ roman_censor_employee_desc: "[Concept('patrician_rating','Hodnocení patricije')|E]: [EmptyScope.ScriptValue('roman_censor_employee_rating_value')|+=0]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ roman_censor_court_position_name_desc: "[GetCourtPositionType('roman_censor_court_position').GetName]" # todo: NEW TRANSLATION
+ house_member_is_roman_censor_desc: "Člen [Concept('house','rod')|E] je [GetCourtPositionType('roman_censor_court_position').GetName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ roman_censor_appoint_senators: "Jmenovat senátory" # todo: NEW TRANSLATION
+ roman_censor_appoint_senators_desc: "Úřad $roman_censor_court_position$ bude pravidelně jmenovat [Concept('republic_senators','senátory')|E], aby obsadil všechna volná místa v [Concept('republic_senate','senátě')|E]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ roman_censor_appoint_senators_effect_desc: "Na všechna volná místa budou jmenováni [Concept('republic_senators','senátoři')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ roman_censor_appointed_senator_msg_t: "Jmenován senátor" # todo: NEW TRANSLATION
+ roman_censor_appointed_senator_msg_desc: "[CZProDrop(roman_censor,'jmenovala','jmenoval')|U] [CharHaveHas( roman_censor )] [new_senator.Custom('CZ_ShortUIName_I')] senátorem [Concept('republic_senator','senátorem')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ roman_censor_public_morale: "Zlepšit veřejnou morálku" # todo: NEW TRANSLATION
+ roman_censor_public_morale_desc: "Úřad $roman_censor_court_position$ se bude snažit zlepšit veřejnou morálku v [Concept('realm_capital','hlavním sídle panství')|E]." # todo: NEW TRANSLATION # todo: CONCEPT CASE

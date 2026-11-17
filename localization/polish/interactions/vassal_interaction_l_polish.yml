@@ -21,6 +21,7 @@
  general_rebellion_decline_summary_warning: "@warning_icon! #X Pokud [ROOT.Char.GetShortUIName] odmítne, povstane spolu s dalšími nespokojenými [Concept('vassals','vazaly')|E]!#!"
  general_rebellion_decline_summary_bloc: "@warning_icon! #X Pokud [ROOT.Char.GetShortUIName] odmítne, povstane spolu se všemi ostatními členy [ROOT.Char.GetConfederation.GetName|V] a dalšími nespokojenými [Concept('vassals','vazaly')|E]!#!"
  general_rebellion_decline_summary_auto_accept: ""
+ general_rebellion_decline_summary_refusal_allowed: "[ROOT.Char.GetShortUIName|U] může odmítnout bez následků podle [GetLaw('republic_vassal_refusal_1_allowed').GetName] [Concept('law','zákona')|E]" # todo: NEW TRANSLATION
  stop_attacker_vassal_war_interaction: "Zastavit vazalskou válku"
  stop_defender_vassal_war_interaction: "Požadovat kapitulaci ve vazalské válce"
  STOP_VASSAL_WAR_ATTACKER: "Vyber válku, jejíž ukončení požaduješ"
@@ -71,7 +72,7 @@
  subrealm_has_county_of_other_culture: "[recipient.GetFullName] #bold nemá#! žádné [Concept('county','hrabství')|E] jiné [Concept('culture','kultury')|E]"
  subrealm_has_county_of_other_faith: "[recipient.GetFullName] #bold nemá#! žádné [Concept('county','hrabství')|E] jiné [Concept('faith','víry')|E]"
  has_admin_gov: "[recipient.GetShortUIName|U] [Select_CString(recipient.IsLocalPlayer,'máš','má')] [Concept('government_bureaucratic_type','byrokratickou')|E] vládu"
- improve_development: "@task_develop_county! Zvyšovat [Concept('development','rozvoj')|E]"
+ improve_prosperity: "@task_develop_county! Zlepšit [Concept('prosperity','prosperitu')|E]" # todo: NEW TRANSLATION
  train_commanders: "@task_train_commanders! Posilovat [Concept('men_at_arms','ozbrojence')|E]"
  build_maa: "@directive_maa! Verbovat [Concept('men_at_arms','ozbrojence')|E]"
  convert_faith: "@task_conversion! Prosazovat [Concept('faith','víru')|E]"
@@ -90,7 +91,7 @@
  remove_directive: "@directive_refusal! Odstranit stávající [Concept('directive','směrnici')|E]"
  no_directive: "@directive_none! Žádná"
  refusing_directive: "@directive_refusal! [Concept('vassal','Tento vazal')|E] odmítá plnit tvou [Concept('directive','směrnici')|E]!"
- improve_development_icon: "@task_develop_county!"
+ improve_prosperity_icon: "@task_develop_county!" # todo: NEW TRANSLATION
  train_commanders_icon: "@task_train_commanders!"
  build_maa_icon: "@directive_maa!"
  convert_faith_icon: "@task_conversion!"
@@ -105,7 +106,7 @@
  building_focus_fortification_icon: "@directive_fortification!"
  building_focus_military_icon: "@directive_military!"
  building_focus_economy_icon: "@directive_economical!"
- vassal_directive_improve_development: "[recipient.GetUIName|U] se [Select_CString(recipient.IsLocalPlayer,'zaměříš','zaměří')] na používání [Concept('councillor_task','úkolu rádce')|E] #V $task_develop_county$#!"
+ vassal_directive_improve_prosperity: "[recipient.GetUIName] se zaměří na plnění #V $task_develop_county$#! [Concept('councillor_task','úkolu rádce')|E]" # todo: NEW TRANSLATION
  vassal_directive_train_commanders: "[recipient.GetUIName|U] se [Select_CString(recipient.IsLocalPlayer,'zaměříš','zaměří')] na používání [Concept('councillor_task','úkolu rádce')|E] #V $task_train_commanders$#!"
  vassal_directive_build_maa: "[recipient.GetUIName|U] [Select_CString(recipient.IsLocalPlayer,'zaměříš','zaměří')] své hospodářství na verbování [Concept('men_at_arms','ozbrojenců')|E]"
  vassal_directive_convert_faith: "[recipient.GetUIName|U] se [Select_CString(recipient.IsLocalPlayer,'zaměříš','zaměří')] na používání [Concept('councillor_task','úkolu rádce')|E] #V $task_conversion$#!\n#weak (Víra: [recipient.GetFaith.GetName])#!"
@@ -120,12 +121,12 @@
  vassal_directive_raid_herd_intent: "[recipient.GetUIName|U] se [Select_CString(recipient.IsLocalPlayer,'zaměříš','zaměří')] na [Concept('raiding','plenění')|E] za účelem získávání [Concept('herd','stáda')|E]"
  vassal_directive_remove_directive: "[recipient.GetUIName|U] [Select_CString(recipient.IsLocalPlayer,'přijdeš','přijde')] o svou současnou [Concept('directive','směrnici')|E]"
  removes_directive_refusal_perk_effect: "[Concept('vassals','Vazalové')|E] už neodmítají [Concept('directives','směrnice')|E]"
+ improve_prosperity_text: "Plnění #V $task_develop_county$#! [Concept('councillor_task','úkolu rádce')|E]" # todo: NEW TRANSLATION
 
 
 
 
 
- improve_development_text: "Používání [Concept('councillor_task','úkolu rádce')|E] #V $task_develop_county$#!"
  train_commanders_text: "Používání [Concept('councillor_task','úkolu rádce')|E] #V $task_train_commanders$#!"
  build_maa_text: "Verbování [Concept('men_at_arms','ozbrojenců')|E]"
  convert_faith_text: "Používání [Concept('councillor_task','úkolu rádce')|E] #V $task_conversion$#!"
@@ -152,7 +153,7 @@
  pardon_interaction_toast_minister: "[Select_CString(actor.IsFemale,'Tvá laskavá ministryně spravedlnosti','Tvůj laskavý ministr spravedlnosti')], [actor.GetFirstName], ti [Select_CString(actor.IsFemale,'odpustila','odpustil')] tvé zločiny!"
  pardon_interaction_toast_minister_liege: "[Concept('minister_of_justice',Select_CString(actor.IsFemale,'Ministryně spravedlnosti','Ministr spravedlnosti'))|E] [actor.GetFirstName] [Select_CString(recipient.IsLocalPlayer,'ti',recipient.Custom('CZ_ShortUIName_D'))] [Select_CString(actor.IsFemale,'udělila','udělil')] milost!"
  pardon_interaction_toast_title: "Milost udělena"
- county_must_have_city_tt: "[CHARACTER.GetPrimaryTitle.GetNameNoTooltip] musí obsahovat alespoň jedno [Concept('city','město')|E] nebo mít [Concept('development','rozvoj')|E] vyšší než 20."
+ county_must_have_city_tt: "[CHARACTER.GetPrimaryTitle.GetNameNoTooltip] musí obsahovat alespoň jedno [Concept('city','město')|E] nebo mít [Concept('prosperity','prosperitu')|E] vyšší než 20." # todo: CHANGED (predtym: [CHARACTER.GetPrimaryTitle.GetNameNoTooltip] musí obsahovat alespoň jedno [Concept('city','město')|E] nebo mít [Concept()
  county_must_have_culture_tt: "[CHARACTER.GetPrimaryTitle.GetNameNoTooltip] musí patřit ke [Concept('culture','kultuře')|E], která má tradici $tradition_republican_legacy_name$."
  too_many_republics_tt: "Už máš [SCOPE.ScriptValue('republican_vassal_interaction_limit')|0] republikánských vazalů."
  must_not_be_heir_to_any_title_tt: "[CHARACTER.GetNameNoTooltip] nesmí být dědicem žádného titulu"
@@ -162,8 +163,11 @@
  request_court_position: "Požádat o dvorský úřad"
  request_court_position_desc: "Požádej o [Concept('court_position','dvorský úřad')|E] u [Select_CString(recipient.IsLocalPlayer,'tebe',recipient.Custom('CZ_ShortUINameNoTooltip_G'))]"
  request_court_position_notification: "Můj talent zahálí a to neprospívá ani jednomu z nás. Uděl mi úřad u svého dvora a já se ti za tuto čest odvděčím věrnou službou."
- grant_court_position: "Udělit dvorský úřad"
- grant_court_position_desc: "Uděl [Select_CString(recipient.IsLocalPlayer,'ti',recipient.Custom('CZ_ShortUINameNoTooltip_D'))] [Concept('court_position','dvorský úřad')|E]"
+ grant_court_position: "[GetPlayer.Custom('GetGrantCourtPositionName')]" # todo: CHANGED (predtym: Udělit dvorský úřad)
+ grant_court_position_court: "Udělit dvorský úřad" # todo: NEW TRANSLATION
+ grant_court_position_deputy: "Udělit úřad zástupce" # todo: NEW TRANSLATION
+ grant_court_position_officer: "Udělit úřad úředníka" # todo: NEW TRANSLATION
+ grant_court_position_desc: "Uděl [Select_CString(recipient.IsLocalPlayer,'ti',recipient.Custom('CZ_ShortUIName_D'))] jeden z tvých [actor.Custom('GetCourtOrOfficerPositionConceptPlural')]" # todo: CHANGED, CHECK FORMAT (predtym: Uděl [Select_CString(recipient.IsLocalPlayer,'ti',recipient.Custom('CZ_ShortUINameNoTooltip_D'))] [Concept('court_positi) # todo: FORMAT chýba [recipient.GetShortUIName]
  request_court_position_extra_icon: "$hook_extra_icon$"
  celestial_extinguish_noble_family_interaction: "Vyhladit šlechtickou rodinu"
  celestial_extinguish_noble_family_interaction_desc: "[Concept('execute','Poprav')|E] [recipient.Custom('CZ_ShortUIName_A')] a [Select_CString(recipient.IsFemale,'její','jeho')] dospělé dědice a z [Concept('realm','panství')|E] [Concept('banish','vyžeň')|E] zbytek jejího příbuzenstva"

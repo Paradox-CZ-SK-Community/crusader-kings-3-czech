@@ -39,9 +39,9 @@
  SCHEME_AGENT_MANDALA_TRICKSTER: "Využít svůj [Concept('aspect_of_trickery','aspekt lstivosti')|El]"
  scheme_change_herd_value: "Ztrácí [herd_i][SCOPE.ScriptValue('herd_bribe_value')|0N] [Concept('herd','stáda')|El]"
  SCHEME_TT_HEADER: "#T [SCHEME.GetFullActionName]#!"
- SCHEME_TT_BODY: "Cíl: [SCHEME.GetTarget.GetName]\nAktuální [Concept('success_chance','šance na úspěch')|El]: $SUCCESS_CHANCE|%/0V$\n[Concept('scheme_potential','Potenciál intriky')|El]: [SCHEME.GetMaxSuccessChance|%/0V]\nAktuální [Concept('scheme_opportunity_opportunities','výhody intriky')|El]: [SCHEME.GetAgentCharges|V]\nDélka [Concept('scheme_phase','fáze intriky')|El]: [SCHEME.GetProgressGoal|V] #V dní#!"
- SCHEME_TT_BODY_BASIC: "Cíl: [SCHEME.GetTarget.GetName]\nAktuální [Concept('success_chance','šance na úspěch')|El]: $SUCCESS_CHANCE|%/0V$\n[Concept('scheme_potential','Potenciál intriky')|El]: [SCHEME.GetMaxSuccessChance|%/0V]\nDélka [Concept('scheme_phase','fáze intriky')|El]: [SCHEME.GetProgressGoal|V] #V dní#!"
- SCHEME_TT_SECRECY: "[Concept('secrecy','Utajení')|El]: #V $SECRECY$%#!"
+ SCHEME_TT_BODY: "Cíl: [SCHEME.GetTarget.GetName]\nAktuální [Concept('success_chance_i','@scheme_success_icon!')|E][Concept('success_chance','šance na úspěch')|El]: $SUCCESS_CHANCE|%/0V$\n[Concept('success_chance_max_i','@scheme_success_max_icon!')|E][Concept('scheme_potential','Potenciál intriky')|El]: [SCHEME.GetMaxSuccessChance|%/0V]\nAktuální [Concept('scheme_opportunity_i','@scheme_opportunity_icon!')|E][Concept('scheme_opportunity_opportunities','výhody intriky')|El]: [SCHEME.GetAgentCharges|V]\n[Concept('scheme_speed_i','@scheme_phase_duration_icon!')|E][Concept('scheme_speed','rychlost intriky')|El]: [SCHEME.GetProgressGoal|V] #V dní#!" # todo: CHANGED (predtym: Cíl: [SCHEME.GetTarget.GetName]\nAktuální [Concept('success_chance','šance na úspěch')|El]: $SUCCESS_CHANCE|%/0V$\n[Conc) # todo: CONCEPT CASE
+ SCHEME_TT_BODY_BASIC: "Cíl: [SCHEME.GetTarget.GetName]\nAktuální [Concept('success_chance_i','@scheme_success_icon!')|E][Concept('success_chance','šance na úspěch')|El]: $SUCCESS_CHANCE|%/0V$\n[Concept('success_chance_max_i','@scheme_success_max_icon!')|E][Concept('scheme_potential','Potenciál intriky')|El]: [SCHEME.GetMaxSuccessChance|%/0V]\n[Concept('scheme_speed_i','@scheme_phase_duration_icon!')|E][Concept('scheme_speed','rychlost intriky')|El]: [SCHEME.GetProgressGoal|V] #V dní#!" # todo: CHANGED (predtym: Cíl: [SCHEME.GetTarget.GetName]\nAktuální [Concept('success_chance','šance na úspěch')|El]: $SUCCESS_CHANCE|%/0V$\n[Conc) # todo: CONCEPT CASE
+ SCHEME_TT_SECRECY: "[Concept('secrecy_i','@scheme_secrecy_icon!')|E][Concept('secrecy','Utajení')|El]: #V $SECRECY$%#!" # todo: CHANGED (predtym: [Concept('secrecy','Utajení')|El]: V $SECRECY$% !) # todo: CONCEPT CASE
  SCHEME_TT_EXPOSED: "#X Intrika byla odhalena#!"
  SCHEME_OWNER_NOT_EXPOSED: "Totožnost osnovatele intriky dosud nebyla odhalena"
  SCHEME_SOME_AGENTS_NOT_EXPOSED: "Totožnost některých spolčenců intriky dosud nebyla odhalena"
@@ -327,6 +327,7 @@
  sway_complete: "Získal jsi u [target.Custom('CZ_ShortUIName_G')] veškerou možnou přízeň"
  sway_invalidated_title: "@personal_scheme_icon! Intrika Získat přízeň končí"
  YOU_SPEAK_THE_LANGUAGE: "Hovoříš tímto jazykem ([target.GetCulture.GetLanguage.GetName]): $VALUE|=+0$"
+ YOU_DONT_SPEAK_THE_LANGUAGE: "Nemluvíš jazykem [target.GetCulture.GetLanguage.GetName]: $VALUE|=+0$" # todo: NEW TRANSLATION
  claim_throne: "Nárok na trůn"
  claim_throne_desc: "Vznesu nárok na trůn [SCHEME.GetTargetCharacter.Custom('CZ_ShortUINameNoTooltip_G')]!"
  claim_throne_desc_general: "[Concept('hostile_scheme','Nepřátelská intrika')|El], která postavě umožňuje získat [Concept('claim','nárok')|El] na [Concept('primary_title','hlavní titul')|El] jejího přímého [Concept('liege','lenního pána')|El]."
@@ -443,6 +444,9 @@
  OVERTHROW_REGENT_SUCCESS_DESC: "$ABDUCT_SUCCESS_DESC$"
  OVERTHROW_REGENT_DISCOVERY_DESC: "$ABDUCT_DISCOVERY_DESC$"
  i_could_not_take_their_place: "Nemohu převzít úřad [TARGET_CHARACTER.GetDiarchTitle]"
+ OVERTHROW_GOVERNMENT_SUCCESS_DESC: "Sesadíš svého [Concept('liege','lenního pána')|E] a převezmeš kontrolu nad republikou." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ OVERTHROW_GOVERNMENT_DISCOVERY_DESC: "Pokud budeš odhalen, ty a tvoji [Concept('agents','spolčence')|E] budete prohlášeni za nepřátele státu." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ overthrow_government_scheme_invalidated_title: "Intrika o svržení vlády končí" # todo: NEW TRANSLATION
  schemes.t.scheme_precaution: "[Concept('scheme_precaution','Dodatečné opatření')|El]"
  schemes.t.scheme_precautions: "[Concept('scheme_precautions','Dodatečná opatření')|El]"
  begin_scheme_with_starter_package_tooltip_effect.tt: "#WEAK Protože volíš $schemes.t.scheme_precaution$:#!"
@@ -537,6 +541,10 @@
  celestial_siphon_treasury_interaction.tt.agent_focus_success: "$schemes.tt.agent_packages.list_boilerplate$\n$EFFECT_LIST_BULLET$[success_chance_max_i] [GetAgentSlotType( 'agent_muscle' ).GetName]\n$EFFECT_LIST_BULLET$[success_chance_max_i] [GetAgentSlotType( 'agent_muscle' ).GetName]\n$EFFECT_LIST_BULLET$[success_chance_max_i] [GetAgentSlotType( 'agent_diplomat' ).GetName]\n$EFFECT_LIST_BULLET$[scheme_speed_i] [GetAgentSlotType( 'agent_infiltrator' ).GetName]\n$EFFECT_LIST_BULLET$[secrecy_i] [GetAgentSlotType( 'agent_lookout' ).GetName]"
  celestial_siphon_treasury_interaction.tt.agent_focus_speed: "$schemes.tt.agent_packages.list_boilerplate$\n$EFFECT_LIST_BULLET$[scheme_speed_i] [GetAgentSlotType( 'agent_infiltrator' ).GetName]\n$EFFECT_LIST_BULLET$[scheme_speed_i] [GetAgentSlotType( 'agent_footpad' ).GetName]\n$EFFECT_LIST_BULLET$[scheme_speed_i] [GetAgentSlotType( 'agent_planner' ).GetName]\n$EFFECT_LIST_BULLET$[success_chance_max_i] [GetAgentSlotType( 'agent_muscle' ).GetName]\n$EFFECT_LIST_BULLET$[secrecy_i] [GetAgentSlotType( 'agent_lookout' ).GetName]"
  celestial_siphon_treasury_interaction.tt.agent_focus_secrecy: "$schemes.tt.agent_packages.list_boilerplate$\n$EFFECT_LIST_BULLET$[secrecy_i] [GetAgentSlotType( 'agent_lookout' ).GetName]\n$EFFECT_LIST_BULLET$[secrecy_i] [GetAgentSlotType( 'agent_decoy' ).GetName]\n$EFFECT_LIST_BULLET$[secrecy_i] [GetAgentSlotType( 'agent_decoy' ).GetName]\n$EFFECT_LIST_BULLET$[success_chance_max_i] [GetAgentSlotType( 'agent_muscle' ).GetName]\n$EFFECT_LIST_BULLET$[scheme_speed_i] [GetAgentSlotType( 'agent_infiltrator' ).GetName]"
+ overthrow_government_interaction.tt.agent_focus_balance: "$schemes.tt.agent_packages.list_boilerplate$\n$EFFECT_LIST_BULLET$[success_chance_max_i] [GetAgentSlotType( 'agent_conspirator' ).GetName]\n$EFFECT_LIST_BULLET$[success_chance_max_i] [GetAgentSlotType( 'agent_demagogue' ).GetName]\n$EFFECT_LIST_BULLET$[scheme_speed_i] [GetAgentSlotType( 'agent_financier' ).GetName]\n$EFFECT_LIST_BULLET$[scheme_speed_i] [GetAgentSlotType( 'agent_financier' ).GetName]\n$EFFECT_LIST_BULLET$[secrecy_i] [GetAgentSlotType( 'agent_commander' ).GetName]" # todo: NEW TRANSLATION
+ overthrow_government_interaction.tt.agent_focus_success: "$schemes.tt.agent_packages.list_boilerplate$\n$EFFECT_LIST_BULLET$[success_chance_i] [GetAgentSlotType( 'agent_conspirator' ).GetName]\n$EFFECT_LIST_BULLET$[success_chance_i] [GetAgentSlotType( 'agent_conspirator' ).GetName]\n$EFFECT_LIST_BULLET$[success_chance_max_i] [GetAgentSlotType( 'agent_demagogue' ).GetName]\n$EFFECT_LIST_BULLET$[scheme_speed_i] [GetAgentSlotType( 'agent_infiltrator' ).GetName]\n$EFFECT_LIST_BULLET$[secrecy_i] [GetAgentSlotType( 'agent_lookout' ).GetName]" # todo: NEW TRANSLATION
+ overthrow_government_interaction.tt.agent_focus_speed: "$schemes.tt.agent_packages.list_boilerplate$\n$EFFECT_LIST_BULLET$[scheme_speed_i] [GetAgentSlotType( 'agent_financier' ).GetName]\n$EFFECT_LIST_BULLET$[scheme_speed_i] [GetAgentSlotType( 'agent_financier' ).GetName]\n$EFFECT_LIST_BULLET$[scheme_speed_i] [GetAgentSlotType( 'agent_financier' ).GetName]\n$EFFECT_LIST_BULLET$[success_chance_max_i] [GetAgentSlotType( 'agent_demagogue' ).GetName]\n$EFFECT_LIST_BULLET$[secrecy_i] [GetAgentSlotType( 'agent_commander' ).GetName]" # todo: NEW TRANSLATION
+ overthrow_government_interaction.tt.agent_focus_secrecy: "$schemes.tt.agent_packages.list_boilerplate$\n$EFFECT_LIST_BULLET$[secrecy_i] [GetAgentSlotType( 'agent_commander' ).GetName]\n$EFFECT_LIST_BULLET$[secrecy_i] [GetAgentSlotType( 'agent_commander' ).GetName]\n$EFFECT_LIST_BULLET$[secrecy_i] [GetAgentSlotType( 'agent_lookout' ).GetName]\n$EFFECT_LIST_BULLET$[success_chance_i] [GetAgentSlotType( 'agent_conspirator' ).GetName]\n$EFFECT_LIST_BULLET$[scheme_speed_i] [GetAgentSlotType( 'agent_financier' ).GetName]" # todo: NEW TRANSLATION
  scheme_prep_mod_base_success_chance_level.t: "Každá příležitost se počítá"
  scheme_prep_mod_base_success_chance_level_01: "$scheme_prep_mod_max_success_chance_level.t$ #WEAK (1. úroveň)#!"
  scheme_prep_mod_base_success_chance_level_01_desc: "Každou příležitost, byť sebemenší, lze využít."
@@ -1538,10 +1546,10 @@
  scheme_odds.owner.relation.owner_is_spouse_of_target: "[target.GetFirstNamePossessive] [Concept('spouse','choť')|El]"
  scheme_odds.owner.relation.owner_is_consort_of_target: "[target.GetFirstNamePossessive] choť"
  scheme_odds.owner.relation.owner_is_close_family_of_target: "[target.GetFirstNamePossessive] [Concept('close_family','blízký příbuzný')|El]"
- scheme_odds.agents.owner.number_of_valid_courtiers_agents: "Možní [Concept('agents','spolčenci')|El] na tvém [Concept('court','dvoře')|El]"
+ scheme_odds.agents.owner.number_of_valid_courtiers_agents: "Možní [Concept('agents','spolčenci')|El] na tvém [owner.Custom('GetCourtConcept')]" # todo: CHANGED (predtym: Možní [Concept('agents','spolčenci')|El] na tvém [Concept('court','dvoře')|El])
  scheme_odds.agents.owner.number_of_valid_friend_agents: "Možní [Concept('agents','spolčenci')|El] mezi tvými [Concept('friends','přáteli')|El]"
  scheme_odds.agents.owner.number_of_valid_lover_agents: "Možní [Concept('agents','spolčenci')|El] mezi tvými [Concept('lovers','milenci')|El]"
- scheme_odds.agents.target.number_of_valid_courtiers_agents: "Možní [Concept('agents','spolčenci')|El] na [target.GetFirstNamePossessive] [Concept('court','dvoře')|El]"
+ scheme_odds.agents.target.number_of_valid_courtiers_agents: "Možní [Concept('agents','spolčenci')|El] na [target.GetFirstNamePossessive] [target.Custom('GetCourtConcept')]" # todo: CHANGED (predtym: Možní [Concept('agents','spolčenci')|El] na [target.GetFirstNamePossessive] [Concept('court','dvoře')|El])
  scheme_odds.agents.target.number_of_valid_vassal_agents: "Možní [Concept('agents','spolčenci')|El] mezi [target.GetHerHis] [Concept('vassals','vazaly')|El]"
  scheme_odds.agents.target_holder.number_of_valid_courtiers_agents: "Možní [Concept('agents','spolčenci')|El] na [target.GetHolder.GetFirstNamePossessive] [Concept('court','dvoře')|El]"
  scheme_odds.agents.target_holder.number_of_valid_vassal_agents: "Možní [Concept('agents','spolčenci')|El] mezi [target.GetHolder.GetHerHis] [Concept('vassals','vazaly')|El]"
@@ -1566,15 +1574,19 @@
  scheme_odds.diplomacy.target_holder: "[target.GetHolder.GetFirstName] – [Concept('diplomacy','diplomacie')|El]"
  scheme_odds.martial.owner: "Tvé [Concept('martial','válečnictví')|El]"
  scheme_odds.martial.target: "[target.GetFirstName] – [Concept('martial','válečnictví')|El]"
+ scheme_odds.martial.target_holder: "[target.GetHolder.GetFirstNamePossessive] [Concept('martial','válečnictví')|E]" # todo: NEW TRANSLATION
  scheme_odds.stewardship.owner: "Tvé [Concept('stewardship','správcovství')|El]"
  scheme_odds.stewardship.target: "[target.GetFirstName] – [Concept('stewardship','správcovství')|El]"
+ scheme_odds.stewardship.target_holder: "[target.GetHolder.GetFirstNamePossessive] [Concept('stewardship','správcovství')|E]" # todo: NEW TRANSLATION
  scheme_odds.intrigue.owner: "Tvé [Concept('intrigue','pletichářství')|El]"
  scheme_odds.intrigue.target: "[target.GetFirstName] – [Concept('intrigue','pletichářství')|El]"
  scheme_odds.intrigue.target_holder: "[target.GetHolder.GetFirstName] – [Concept('intrigue','pletichářství')|El]"
  scheme_odds.learning.owner: "Tvá [Concept('learning','učenost')|El]"
  scheme_odds.learning.target: "[target.GetFirstName] – [Concept('learning','učenost')|El]"
+ scheme_odds.learning.target_holder: "[target.GetHolder.GetFirstNamePossessive] [Concept('learning','učenost')|E]" # todo: NEW TRANSLATION
  scheme_odds.prowess.owner: "Tvá [Concept('prowess','udatnost')|El]"
  scheme_odds.prowess.target: "[target.GetFirstName] – [Concept('prowess','udatnost')|El]"
+ scheme_odds.prowess.target_holder: "[target.GetHolder.GetFirstNamePossessive] [Concept('prowess','udatnost')|E]" # todo: NEW TRANSLATION
  scheme_odds.piety_level.owner: "Tvoje [Concept('piety_level','úroveň oddanosti')|E]"
  scheme_odds.intellect_good_1.owner: "Jsi [GetTrait('intellect_good_1').GetName( owner.Self )]"
  scheme_odds.intellect_good_2.owner: "Jsi [GetTrait('intellect_good_2').GetName( owner.Self )]"
@@ -1605,7 +1617,18 @@
  scheme_odds.realm_size: "[Concept('realm_size','Velikost panství')|El] – [target.GetShortUIName|U]"
  scheme_odds.target_suzerain_has_greater_radiance: "[Concept('radiance','Záře')|El] [Concept('suzerain','suzeréna')|El] [target.GetSuzerain.GetShortUIName]"
  scheme_odds.not_same_mandala_aspect: "Tvůj [Concept('aspect','aspekt')|El] se liší od aspektu cíle"
+ scheme_odds.target.is_guelph_leader: "[target.GetFirstName|U] je [GetSituation('guelph_ghibelline').GetTopParticipantGroupByKey( 'guelph_leader' ).GetName]" # todo: NEW TRANSLATION
+ scheme_odds.target.is_ghibelline_leader: "[target.GetFirstName|U] je [GetSituation('guelph_ghibelline').GetTopParticipantGroupByKey( 'ghibelline_leader' ).GetName]" # todo: NEW TRANSLATION
+ scheme_odds.target.is_kaiser: "[target.GetFirstName|U] je [GetTitleByKey('e_hre').GetHolder.Custom('my_title')|U]" # todo: NEW TRANSLATION
+ scheme_odds.target.is_pope: "[target.GetFirstName|U] je $religiousheadname_pope$" # todo: NEW TRANSLATION
+ scheme_odds.target.is_theocratic: "[target.GetFirstName|U] má $ecclesiastical_government_adjective$ vládu" # todo: NEW TRANSLATION
+ scheme_odds.is_guelph_leader: "Jsi [GetSituation('guelph_ghibelline').GetTopParticipantGroupByKey( 'guelph_leader' ).GetName]" # todo: NEW TRANSLATION
+ scheme_odds.is_ghibelline_leader: "Jsi [GetSituation('guelph_ghibelline').GetTopParticipantGroupByKey( 'ghibelline_leader' ).GetName]" # todo: NEW TRANSLATION
+ scheme_odds.is_dictatus_papae: "Fáze [Concept('situation','situace')|E] [Concept('situation_phase_phase','fáze')|E] je [GetSituationType('guelph_ghibelline').GetPhaseType('dictatus_papae').GetName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ scheme_odds.gg_same_side: "Oba jsou [target.Custom('GetGuelphGhibellineConcept')]" # todo: NEW TRANSLATION
+ scheme_odds.gg_opposite_side: "[target.Custom('CZ_ShortUIName_G')|U] je [target.Custom('GetGuelphGhibellineConcept')], zatímco [owner.GetShortUIName] [CharAreIs( owner )] [owner.Custom('GetGuelphGhibellineConcept')]" # todo: NEW TRANSLATION
  scheme_odds.misc_modifiers: "[Concept('modifiers','Modifikátory')|El] [Concept('scheme','intriky')|El]"
+ scheme_odds.target_at_war: "[target.GetFirstName|U] je ve [Concept('war','válce')|E]" # todo: NEW TRANSLATION
  SCHEME_TARGET_MARTIAL: "[target.GetShortUIName|U] – [Concept('martial','válečnictví')|El]: $VALUE|+=0$"
  SCHEME_TARGET_IMPATIENT: "[target.GetShortUIName|U] má rys [GetTrait('lazy').GetName( target )]: $VALUE|+0=$"
  SCHEME_OWNER_STUBBORN: "Máš rys [GetTrait('stubborn').GetName( owner )]: $VALUE|+0=$"
@@ -1627,6 +1650,60 @@
  SCHEME_SUZERAIN_ASPECT_SKILL_DESTRUCTION: "[target.GetFirstName|U] má stejný [Concept('aspect','aspekt')|El] jako [target.GetHerHis] [Concept('suzerain','suzerén')|El] #weak (podle [Concept('martial','válečnictví')|El] [target.GetSuzerain.Custom('CZ_ShortUIName_G')|U])#!: $VALUE|+=0$"
  SCHEME_SUZERAIN_ASPECT_SKILL_TRICKERY: "[target.GetFirstName|U] má stejný [Concept('aspect','aspekt')|El] jako [target.GetHerHis] [Concept('suzerain','suzerén')|El] #weak (podle [Concept('intrigue','pletichářství')|El] [target.GetSuzerain.Custom('CZ_ShortUIName_G')|U])#!: $VALUE|+=0$"
  SUZERAIN_HAS_GREATER_RADIANCE: "[Concept('suzerain','Suzerén')|El] [target.GetSuzerain.GetShortUIName] má větší [Concept('radiance','zář')|El]: $VALUE|+=0$"
+ SCHEME_YOU_ARE_GUELPH_LEADER: "$scheme_odds.is_guelph_leader$: $VALUE|+=0$" # todo: NEW TRANSLATION
+ SCHEME_YOU_ARE_GHIBELLINE_LEADER: "$scheme_odds.is_ghibelline_leader$: $VALUE|+=0$" # todo: NEW TRANSLATION
+ SCHEME_TARGET_IS_POPE: "$scheme_odds.target.is_pope$: $VALUE|+=0$" # todo: NEW TRANSLATION
+ SCHEME_TARGET_IS_THEOCRATIC: "$scheme_odds.target.is_theocratic$: $VALUE|+=0$" # todo: NEW TRANSLATION
+ SCHEME_TARGET_IS_GUELPH_LEADER: "$scheme_odds.target.is_guelph_leader$: $VALUE|+=0$" # todo: NEW TRANSLATION
+ SCHEME_TARGET_IS_GHIBELLINE_LEADER: "$scheme_odds.target.is_ghibelline_leader$: $VALUE|+=0$" # todo: NEW TRANSLATION
+ SCHEME_TARGET_IS_KAISER: "$scheme_odds.target.is_kaiser$: $VALUE|+=0$" # todo: NEW TRANSLATION
+ DICTATUS_PAPAE_SITUATION_PHASE: "[GetSituationType('guelph_ghibelline').GetPhaseType('dictatus_papae').GetName] – fáze [Concept('situation','situace')|E] [Concept('situation_phase_phase','fáze')|E]: $VALUE|+=0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ SCHEME_GG_INVOLVEMENT_COMPARED_TO_LEADER: "Tvoje [Concept('gg_involvement','zapojení')|E] ve srovnání s [target.Custom('CZ_ShortUIName_G')]: $VALUE|+=0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ SCHEME_GG_PRESTIGE_LEVEL_COMPARED_TO_LEADER: "Tvoje [Concept('prestige_level','úroveň slávy')|E] převyšuje úroveň [target.Custom('CZ_ShortUIName_G')]: $VALUE|+=0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ SCHEME_GG_TARGET_UNCROWNED: "[target.GetShortUIName|U] nemá [Concept('coronation','korunovaci')|E]: $VALUE|+=0$" # todo: NEW TRANSLATION
+ influence_house_ambition: "Ovlivnit ambici rodu" # todo: NEW TRANSLATION
+ influence_house_ambition_action: "Ovlivnit ambici rodu postavy" # todo: NEW TRANSLATION
+ influence_house_ambition_desc: "Pokusím se přimět [SCHEME.GetTargetCharacter.GetShortUINameNoTooltip], aby změnil [SCHEME.GetTargetCharacter.GetHerHis] [Concept('house_ambitions','ambice rodů')|E] pro tuto [Concept('republic','republiku')|E]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ influence_house_ambition_desc_general: "Ovlivnění ambice rodu je [Concept('personal_scheme','osobní intrika')|E], jehož cílem je změnit [Concept('house_ambition','ambice rodu')|E] jiné postavy tak, aby odpovídala ambici tvého rodu. Tato intrika závisí především na tvé [Concept('diplomacy','diplomacii')|E]. Jelikož nejde o [Concept('hostile_scheme','nepřátelskou intriku')|E], není [Concept('secret_scheme_single','tajnou')|E] a nevyužívá [Concept('agents','spolčence')|E]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ scheme_interaction_tt_influence_house_ambition_approved: "Pokusit se přimět [recipient.GetShortUINameNoTooltip], aby přijal ambici tvého rodu." # todo: NEW TRANSLATION
+ influence_house_ambition_same_ambition: "Oba rody už mají stejnou ambici" # todo: NEW TRANSLATION
+ influence_house_ambition_success_message: "[target.GetShortUINameNoTooltip] změnil [target.GetHerHis] [Concept('house_ambition','ambice rodu')|E], aby odpovídala té tvé." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ influence_house_ambition_failed_message: "[target.GetShortUINameNoTooltip] odmítl změnit [target.GetHerHis] [Concept('house_ambition','ambice rodu')|E]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ SCHEME_WEALTHIER: "Máš více [Concept('gold','zlato')|E] než [target.GetShortUINameNoTooltip]: $VALUE|+=0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ SCHEME_ADMINISTRATOR_LIFESTYLE: "Jsi schopný správce: $VALUE|+=0$" # todo: NEW TRANSLATION
+ SCHEME_ARCHITECT_LIFESTYLE: "Jsi schopný architekt: $VALUE|+=0$" # todo: NEW TRANSLATION
+ SCHEME_NO_INCLINATION: "[target.GetShortUINameNoTooltip] nemá rád tvou [Concept('house_ambition','ambice rodu')|E]: $VALUE|+=0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ SCHEME_HOUSE_RELATIONS: "Vztahy mezi rody: [Concept('house_relation','vztah rodů')|E] $VALUE|+=0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ SCHEME_FRIEND: "Tvůj přítel: $VALUE|+=0$" # todo: NEW TRANSLATION
+ overthrow_government: "Svrhnout vládu" # todo: NEW TRANSLATION
+ overthrow_government_desc: "$overthrow_government_desc_general$" # todo: NEW TRANSLATION
+ overthrow_government_action: "Svrhnout" # todo: NEW TRANSLATION
+ overthrow_government_desc_general: "Nepřátelská [Concept('scheme','intrika')|E], která umožňuje postavě svrhnout vládu [Concept('republic','republiku')|E], sesadit svého [Concept('liege','lenního pána')|E] a dosadit nového." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ scheme_interaction_tt_overthrow_government_approved: "Pokusit se svrhnout současnou vládu republiky, odstranit jejího vůdce a vytvořit novou vládu." # todo: NEW TRANSLATION
+ overthrow_government_interaction_notification: "Svržení vlády" # todo: NEW TRANSLATION
+ OVERTHROW_GOVERNMENT_TARGET_DILIGENT: "[target.GetShortUIName|U] má rys [GetTrait('diligent').GetName( target )]: $VALUE|=+0$" # todo: NEW TRANSLATION
+ OVERTHROW_GOVERNMENT_TARGET_AUGUST: "[target.GetShortUIName|U] má rys [GetTrait('august').GetName( target )]: $VALUE|=+0$" # todo: NEW TRANSLATION
+ OVERTHROW_GOVERNMENT_TARGET_OVERSEER: "[target.GetShortUIName|U] má rys [GetTrait('overseer').GetName( target )]: $VALUE|=+0$" # todo: NEW TRANSLATION
+ OVERTHROW_GOVERNMENT_TARGET_DIPLOMAT: "[target.GetShortUIName|U] má rys [GetTrait('diplomat').GetName( target )]: $VALUE|=+0$" # todo: NEW TRANSLATION
+ OVERTHROW_GOVERNMENT_TARGET_EXCOMMUNICATED: "[target.GetShortUIName|U] má rys [GetTrait('excommunicated').GetName( target )]: $VALUE|=+0$" # todo: NEW TRANSLATION
+ OVERTHROW_GOVERNMENT_TARGET_DRUNKARD: "[target.GetShortUIName|U] má rys [GetTrait('drunkard').GetName( target )]: $VALUE|=+0$" # todo: NEW TRANSLATION
+ OVERTHROW_GOVERNMENT_TARGET_UNPOPULAR: "[target.GetShortUIName|U] je v [Concept('capital','hlavním sídle')|E] neoblíbený: $VALUE|=+0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ OVERTHROW_GOVERNMENT_TARGET_VERY_UNPOPULAR: "[target.GetShortUIName|U] je v [Concept('capital','hlavním sídle')|E] velmi neoblíbený: $VALUE|=+0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ OVERTHROW_GOVERNMENT_TARGET_POPULAR: "[target.GetShortUIName|U] je v [Concept('capital','hlavním sídle')|E] oblíbený: $VALUE|=+0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ OVERTHROW_GOVERNMENT_TARGET_VERY_POPULAR: "[target.GetShortUIName|U] je v [Concept('capital','hlavním sídle')|E] velmi oblíbený: $VALUE|=+0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ OVERTHROW_GOVERNMENT_TARGET_FAMILY_FIRST: "[target.GetShortUIName|U] má rys [GetTrait('family_first').GetName( target )]: $VALUE|=+0$" # todo: NEW TRANSLATION
+ OVERTHROW_GOVERNMENT_TARGET_VERY_LOW_CONTROL: "[target.Custom('CZ_ShortUIName_G')|U] [Concept('capital','Hlavní sídlo')|E] má velmi nízkou [Concept('control','kontrolu')|E]: $VALUE|=+0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ OVERTHROW_GOVERNMENT_TARGET_LOW_CONTROL: "[target.Custom('CZ_ShortUIName_G')|U] [Concept('capital','Hlavní sídlo')|E] má nízkou [Concept('control','kontroly')|E]: $VALUE|=+0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ OVERTHROW_GOVERNMENT_TARGET_VERY_HIGH_CONTROL: "[target.Custom('CZ_ShortUIName_G')|U] [Concept('capital','Hlavní sídlo')|E] má velmi vysokou [Concept('control','kontrolu')|E]: $VALUE|=+0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ OVERTHROW_GOVERNMENT_SECRET_LOW_CONTROL: "Nízká kontrola" # todo: NEW TRANSLATION
+ OVERTHROW_GOVERNMENT_SECRET_UNPOPULAR: "Neoblíbenost" # todo: NEW TRANSLATION
+ republic_promote_candidate_scheme: "Prosadit kandidáta" # todo: NEW TRANSLATION
+ republic_promote_candidate_scheme_action: "Prosadit" # todo: NEW TRANSLATION
+ republic_promote_candidate_scheme_desc: "Pokusím se prosadit [SCHEME.GetTargetCharacter.GetShortUIName] jako kandidáta na post guvernéra v [SCHEME.MakeScope.Var( 'target_candidate_title' ).Title.GetNameNoTier]" # todo: NEW TRANSLATION
+ republic_promote_candidate_scheme_desc_general: "[Concept('personal_scheme','Osobní intrika')|E], která umožňuje postavě prosadit kandidáta na guvernérský úřad v rámci [Concept('realm','panství')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ republic_promote_candidate_scheme_title_desc: "[secondary_recipient.GetShortUIName|U] bude prosazen na [target.GetName]" # todo: NEW TRANSLATION
+ republic_promote_candidate_scheme_success_t: "Prosazení kandidáta uspělo" # todo: NEW TRANSLATION
+ republic_promote_candidate_scheme_failure_t: "Prosazení kandidáta selhalo" # todo: NEW TRANSLATION
  coup_ceremonial_liege_interaction.tt.agent_focus_balance: "$schemes.tt.agent_packages.list_boilerplate$\n$EFFECT_LIST_BULLET$[success_chance_max_i] [GetAgentSlotType( 'agent_muscle' ).GetName]\n$EFFECT_LIST_BULLET$[success_chance_max_i] [GetAgentSlotType( 'agent_muscle' ).GetName]\n$EFFECT_LIST_BULLET$[scheme_speed_i] [GetAgentSlotType( 'agent_infiltrator' ).GetName]\n$EFFECT_LIST_BULLET$[scheme_speed_i] [GetAgentSlotType( 'agent_planner' ).GetName]\n$EFFECT_LIST_BULLET$[secrecy_i] [GetAgentSlotType( 'agent_lookout' ).GetName]"
  coup_ceremonial_liege_interaction.tt.agent_focus_success: "$schemes.tt.agent_packages.list_boilerplate$\n$EFFECT_LIST_BULLET$[success_chance_max_i] [GetAgentSlotType( 'agent_muscle' ).GetName]\n$EFFECT_LIST_BULLET$[success_chance_max_i] [GetAgentSlotType( 'agent_muscle' ).GetName]\n$EFFECT_LIST_BULLET$[success_chance_max_i] [GetAgentSlotType( 'agent_diplomat' ).GetName]\n$EFFECT_LIST_BULLET$[scheme_speed_i] [GetAgentSlotType( 'agent_infiltrator' ).GetName]\n$EFFECT_LIST_BULLET$[secrecy_i] [GetAgentSlotType( 'agent_lookout' ).GetName]"
  coup_ceremonial_liege_interaction.tt.agent_focus_speed: "$schemes.tt.agent_packages.list_boilerplate$\n$EFFECT_LIST_BULLET$[scheme_speed_i] [GetAgentSlotType( 'agent_infiltrator' ).GetName]\n$EFFECT_LIST_BULLET$[scheme_speed_i] [GetAgentSlotType( 'agent_footpad' ).GetName]\n$EFFECT_LIST_BULLET$[scheme_speed_i] [GetAgentSlotType( 'agent_planner' ).GetName]\n$EFFECT_LIST_BULLET$[success_chance_max_i] [GetAgentSlotType( 'agent_muscle' ).GetName]\n$EFFECT_LIST_BULLET$[secrecy_i] [GetAgentSlotType( 'agent_lookout' ).GetName]"

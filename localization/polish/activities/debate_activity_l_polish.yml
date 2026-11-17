@@ -5,7 +5,7 @@
  activity_debate_selection_tooltip: "[GetActivityType('activity_debate').GetName] ti umožní soupeřit o politickou moc — získej ji pro sebe nebo své hnutí $activity_debate_host_rewards$"
  activity_debate_desc: "Zásluhy, vliv, #EMP moc#! — nic z toho mnoho neznamená, pokud nedokážeš přednést pádné argumenty na podporu sebe a své věci.\n\nSvolej debatu a přesvědč ostatní, že si zasloužíš více moci, nebo vyzvi jiné hnutí a zajisti tomu svému výhodnější postavení."
  activity_debate_host_desc: "$activity_debate_host_rewards$$activity_debate_guest_rewards$"
- activity_debate_host_rewards: "\n$BULLET_WITH_TAB$[movement_power_i] [Concept('movement_power','Síla hnutí')|E]\n$BULLET_WITH_TAB$[influence_i|E] [Concept('influence','Vliv')|E]\n$BULLET_WITH_TAB$[merit_i|E] [Concept('merit','Zásluhy')|E]"
+ activity_debate_host_rewards: "\n$BULLET_WITH_TAB$[movement_power_i] [Concept('movement_power','Síla hnutí')|E]\n$BULLET_WITH_TAB$[Concept('influence_i','@influence_icon!')|E] [Concept('influence','Vliv')|E]\n$BULLET_WITH_TAB$[Concept('merit_i','@merit_icon!')|E] [Concept('merit','Zásluhy')|E]" # todo: CONCEPT CASE
  activity_debate_guest_desc: "\n$BULLET_WITH_TAB$Můžeš získat [Concept('disciples','učedníky')|E]\n$BULLET_WITH_TAB$Můžeš získat další [Concept('trait_level_track_xp','zkušenosti rysu')|E] pro [GetTrait('confucian_education').GetName( GetNullCharacter )]"
  activity_debate_guest_rewards: "\n$BULLET_WITH_TAB$Účastníci mohou získat [Concept('trait_level_track_xp','zkušenosti rysu')|E] pro [GetTrait('confucian_education').GetName( GetNullCharacter )]\n$BULLET_WITH_TAB$Účastníci mohou získat vztah [Concept('elder','Starší')|E]"
  debate_base_cost: "Základní náklady"
@@ -34,7 +34,7 @@
  debate_phase_discussion_desc: "Studijní síně ožívají zdvořilými diskusemi, zatímco debatéři se snaží odhadnout, které postoje jsou strategicky nejvýhodnější."
  debate_phase_debate: "Debata"
  debate_phase_debate_desc: "Nastal čas řádné debaty. Zvítězí jen nejbystřejší mysl."
- debate_type_leadership: "Debata: $Movement$"
+ debate_type_leadership: "Debata: $game_concept_movement$" # todo: CHANGED (predtym: Debata: $Movement$)
  debate_type_leadership_desc: "$EFFECT_LIST_BULLET$ Vyzvi členy svého hnutí k debatě a staň se [Concept('movement_leader','vůdcem hnutí')|E]\n\n#weak Důvtipem či lstí budu stát v čele.#!"
  debate_type_favor: "Císařská debata"
  debate_type_favor_desc: "$EFFECT_LIST_BULLET$ Vyzvi jiné hnutí k debatě před [Concept('son_of_heaven','Synem Nebes')|E] a dosáhni toho, aby se [GetPlayer.Custom('GetMyMovementNoTooltip')] stalo [Concept('favored_movement','upřednostněným hnutím')|E]\n\n#weak Loď by měla řídit správná posádka.#!"
@@ -58,7 +58,7 @@
  activity_debate_conclusion_desc_favor_loser: "Nepodařilo se mi pro [GetPlayer.Custom('GetMyMovement')] získat [ROOT.Char.GetTopLiege.GetTitleAsNamePossessiveNoTooltip] přízeň. Příště se budu muset snažit víc."
  debate_conclusion_fallback: "[GetActivityType( 'activity_debate' ).GetName] skončila."
  debate_become_movement_leader_reward_title: "Vedení převzato"
- debate_become_movement_leader_reward: "[debate_winner.GetShortUIName] vyhrál debatu a stal se novým [Concept('movement_leader','vůdcem hnutí')|E] [debate_winner.Custom('GetMyMovement')]"
+ debate_become_movement_leader_reward: "[debate_winner.GetShortUIName] vyhrál debatu a stal se novými [Concept('movement_leader','vůdcem hnutí')|E] [debate_winner.Custom('GetMyMovement')]" # todo: CONCEPT CASE
  debate_remain_movement_leader_reward_title: "Vedení obhájeno"
  debate_remain_movement_leader_reward: "[debate_winner.GetShortUIName] vyhrál debatu a zůstává [Concept('movement_leader','vůdcem hnutí')|E] [debate_winner.Custom('GetMyMovement')]"
  debate_increase_movement_power_reward_title: "Hnutí posíleno"

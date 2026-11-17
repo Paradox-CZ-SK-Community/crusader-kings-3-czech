@@ -52,6 +52,8 @@
  IncorrectLineality_Patrilineal: "Patrilineární"
  MATRILINEAL_PATRILINEAL_REASON: "[secondary_recipient.Custom('IncorrectLineality')] sňatek: $VALUE|=+0$"
  NO_PRESTIGE_MUSLIM_MARRIAGE: "[Concept('characters','Postavy')|E] vyznávající [Concept('faiths','víry')|E] s naukou [GetDoctrineType('doctrine_polygamy').GetBaseName] nezískávají ze sňatku žádnou [Concept('prestige','prestiž')|E]"
+ NO_PRESTIGE_HOUSELESS_MERCHANT_MARRIAGE: "[Concept('merchants','Kupci')|E] a [Concept('characters','postavy')|E] bez [Concept('house','rodu')|E] nezískají [Concept('prestige','prestiže')|E] za to, že se vezmou" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ NO_PRESTIGE_MERCHANT_TO_MERCHANT_MARRIAGE: "[Concept('merchants','Kupci')|E] nezískají [Concept('prestige','prestiž')|E] za sňatek s někým z jiného obchodnického [Concept('house','rodu')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  CONTRACT_RELIGIOUS_EXEMPTION_REASON: "Náboženská výjimka: $VALUE|=+0$"
  CONTRACT_RELIGIOUS_TAXATION_REASON: "Náboženské zdanění: $VALUE|=+0$"
  CONTRACT_LOW_TAXES_REASON: "Nízké feudální povinnosti: $VALUE|=+0$"
@@ -132,7 +134,7 @@
  medium_wanua_tribute_barter_goods: "$tributary_contract_starts_with_common$ [GetSubjectContractType( 'barter_goods_obligations' ).GetObligationName( 'barter_goods_medium' )]"
  low_wanua_tribute_barter_goods: "$tributary_contract_starts_with_common$ [GetSubjectContractType( 'barter_goods_obligations' ).GetObligationName( 'barter_goods_low' )]"
  AI_ELOPE_CONSEQUENCES: "[recipient.GetShortUIName|U] se obává následků: $VALUE|=+0$"
- AI_SPOUSE_OPINION: "Mínění [CHARACTER.GetShortUINamePossessive] o [CHARACTER.GetHerHis] choti: $VALUE|=+0$"
+ AI_SPOUSE_OPINION: "Mínění [CHARACTER.GetShortUINamePossessive] o [Select_CString(CHARACTER.IsFemale,'její','jeho')] choti: $VALUE|=+0$"
  AI_ELOPE_WEAK_HOOK: "[recipient.GetLiege.GetShortUIName] má na [recipient.GetShortUIName] [Concept('weak_hook','slabou páku')|E]: $VALUE|=+0$"
  AI_ELOPE_STRONG_HOOK: "[recipient.GetLiege.GetShortUIName] má na [recipient.GetShortUIName] [Concept('strong_hook','silnou páku')|E]: $VALUE|=+0$"
  AI_ELOPE_INHERITANCE: "[recipient.GetShortUIName|U] zdědí [Concept('title','titul')|E]: $VALUE|=+0$"
@@ -163,7 +165,7 @@
  WONT_FIGHT_BEST_FRIEND_REASON: "Nebude bojovat proti [Concept('best_friend','nejlepšímu příteli')|E]: $VALUE|=+0$"
  WONT_FIGHT_LOVER_REASON: "Nebude bojovat proti [Concept('lover','milenci')|E]: $VALUE|=+0$"
  WONT_FIGHT_SOULMATE_REASON: "Nebude bojovat proti [Concept('soulmate','spřízněné duši')|E]: $VALUE|=+0$"
- WONT_FIGHT_OBEDIENT_REASON: "Nebude bojovat proti [Concept('suzerain','suzerénovi')|E]: $VALUE|=+0$"
+ WONT_FIGHT_OBEDIENT_REASON: "Nebude bojovat proti [GetSuzerainRelationship(GetPlayer)]: $VALUE|=+0$" # todo: CHANGED (predtym: Nebude bojovat proti [Concept('suzerain','suzerénovi')|E]: $VALUE|=+0$)
  WONT_FIGHT_MEANINGLESS_REASON: "Nezúčastní se bezvýznamného konfliktu: $VALUE|=+0$"
  MANDALA_GUARANTEE_REASON: "Záruka mandaly: $VALUE|=+0$"
  HAS_YOUR_SUPPORT_REASON: "Má tvou podporu: $VALUE|=+0$"
@@ -190,7 +192,6 @@
  SAME_CULTURE_AS_SEAT_REASON: "[puppet_or_actor.GetShortUIName|U] [Select_CString(puppet_or_actor.IsLocalPlayer,'máš','má')|l] stejnou [Concept('culture','kulturu')|E] jako sídlo [Concept('county','hrabství')|E] [target.GetName]: $VALUE|=+0$"
  SAME_CULTURE_AS_SEAT_NONAME_REASON: "[puppet_or_actor.GetShortUIName|U] [Select_CString(puppet_or_actor.IsLocalPlayer,'máš','má')|l] stejnou [Concept('culture','kulturu')|E] jako sídlo [Concept('county','hrabství')|E]: $VALUE|=+0$"
  GREATER_PIETY_LEVEL_THAN_HOLDER_HOF_REASON: "[Concept('piety_level','úroveň oddanosti')|EU] [puppet_or_actor.Custom('CZ_ShortUIName_G')] je vyšší než u současného držitele a [Concept('head_of_faith','hlavy víry')|E]: $VALUE|=+0$"
- GREATER_PIETY_LEVEL_THAN_RECIPIENT: "[Concept('piety_level','úroveň oddanosti')|EU] [puppet_or_actor.Custom('CZ_ShortUIName_G')] je vyšší než u [recipient.Custom('CZ_ShortUIName_G')]: $VALUE|=+0$"
  GREATER_PIETY_LEVEL_THAN_HOLDER_REASON: "[Concept('piety_level','úroveň oddanosti')|EU] [puppet_or_actor.Custom('CZ_ShortUIName_G')] je vyšší než u současného držitele: $VALUE|=+0$"
  LOWER_PIETY_LEVEL_THAN_HOLDER_REASON: "[Concept('piety_level','úroveň oddanosti')|EU] [puppet_or_actor.Custom('CZ_ShortUIName_G')] je nižší než u současného držitele: $VALUE|=+0$"
  BELOW_PIETY_LEVEL_4_REASON: "[puppet_or_actor.GetShortUIName|U] [Select_CString(puppet_or_actor.IsLocalPlayer,'jsi ','')|l][Select_CString(puppet_or_actor.IsFemale,'nedosáhla','nedosáhl')|l] [Concept('piety_level','úrovně oddanosti')|E] 4: $VALUE|=+0$"
@@ -198,6 +199,7 @@
  PETITIONER_IS_UNLANDED_REASON: "[puppet_or_actor.GetShortUIName|U] [Select_CString(puppet_or_actor.IsLocalPlayer,'jsi','je')|l] [Concept('unlanded','bezzemek')|E]: $VALUE|=+0$"
  GREATER_PRESTIGE_LEVEL_THAN_HOLDER_REASON: "[Concept('prestige_level','úroveň slávy')|EU] [puppet_or_actor.Custom('CZ_ShortUIName_G')] je vyšší než u současného držitele: $VALUE|=+0$"
  GREATER_PRESTIGE_LEVEL_THAN_RECIPIENT: "[Concept('prestige_level','úroveň slávy')|EU] [puppet_or_actor.Custom('CZ_ShortUIName_G')] je vyšší než u [recipient.Custom('CZ_ShortUIName_G')]: $VALUE|=+0$"
+ GREATER_PIETY_LEVEL_THAN_RECIPIENT: "[Concept('piety_level','úroveň oddanosti')|EU] [puppet_or_actor.Custom('CZ_ShortUIName_G')] je vyšší než u [recipient.Custom('CZ_ShortUIName_G')]: $VALUE|=+0$"
  TITLE_LONG_YEARS_HELD_REASON: "Dlouhá vláda současného [Concept('holder_possessive','držitele')|E]: $VALUE|=+0$"
  TITLE_SHORT_YEARS_HELD_REASON: "Krátká vláda současného [Concept('holder_possessive','držitele')|E]: $VALUE|=+0$"
  AI_OPINION_REASON_CANDIDATE_OVER_REALM_PRIEST: "[recipient.GetShortUIName|U] [Select_CString(recipient.IsLocalPlayer,'máš','má')|l] lepší mínění o [secondary_recipient.Custom('CZ_ShortUIName_L')] než o současném [Concept( 'realm_priest', actor.GetCouncillorPosition( 'councillor_court_chaplain' ).GetPositionName )|E]: $VALUE|=+0$"
@@ -207,8 +209,8 @@
  AI_OPINION_REASON: "[Concept('opinion','Mínění')|E] [CHARACTER.GetShortUINamePossessive] o [TARGET_CHARACTER.GetShortUIName]: $VALUE|=+0$"
  AI_OPINION_REASON_SPOUSE: "[Concept('opinion','Mínění')|E] [CHARACTER.GetShortUINamePossessive] o choti [TARGET_CHARACTER.GetShortUIName]: $VALUE|=+0$"
  AI_OPINION_REASON_ACTOR: "[Concept('opinion','Mínění')|E] [CHARACTER.GetShortUINamePossessive] o dohazovači [TARGET_CHARACTER.GetShortUIName]: $VALUE|=+0$"
- AI_OPINION_REASON_LIEGE: "[Concept('opinion','mínění')|EU] [CHARACTER.Custom('CZ_ShortUIName_G')] vůči [Concept('liege','lennímu pánovi')|E] [puppet_or_actor.Custom('CZ_ShortUIName_G')]: $VALUE|=+0$"
  AI_CONTRACT_BALANCE: "Výhody smlouvy: $VALUE|=+0$"
+ AI_GOLD_BALANCE: "Vyplacené zlato: $VALUE|=+0$" # todo: NEW TRANSLATION
  AI_REFUSAL_IS_TREASON: "Odmítnutí je zradou: $VALUE|=+0$"
  AI_CLAIMANT_PENALTY: "Podpora [recipient.GetShortUIName|U] frakcí: $VALUE|=+0$"
  AI_PRISON_FEUDAL_COMPLEX_PERK: "[GetPerk( 'prison_feudal_complex_perk' ).GetName( GetPlayer )]: $VALUE|=+0$"
@@ -257,6 +259,7 @@
  AI_REASON_NOMADIC_AUTHORITY_5: "[Concept('dominance','Dominance')|E] [actor.GetShortUIName|U]: [GetLaw('nomadic_authority_5').GetName]: $VALUE|=+0$"
  LIEGE_REASON: "Jsi [recipient.GetHerHis] [Concept('liege','lenním pánem')|E]: $VALUE|=+0$"
  NOT_LIEGE_REASON: "[puppet_or_actor.GetShortUIName|U] [Select_CString(puppet_or_actor.IsLocalPlayer,'nejsi','není')|l] [Concept('liege',Select_CString(puppet_or_actor.IsFemale,'lenní paní','lenním pánem'))|E] [recipient.Custom('CZ_ShortUIName_G')]: $VALUE|=+0$"
+ LIEGE_SUPPORT_REASON: "[GetSubjectContractType( 'merchant_marriage' ).GetObligationName( 'marriage_support' )]: $VALUE|=+0$" # todo: NEW TRANSLATION
  RITE_CHANGE_REASON: "[recipient.GetShortUIName|U] již [Select_CString(recipient.IsLocalPlayer,'jsi ','')|l][Select_CString(recipient.IsFemale,'přijala','přijal')|l] jiný ritus: $VALUE|=+0$"
  RECIPIENT_RITE_GRACE_PERIOD_REASON: "[Concept('rite','ritus')|EU] [recipient.Custom('CZ_ShortUIName_G')] byl založen nedávno: $VALUE|=+0$"
  FOREIGN_COURT_REASON: "Přesun [secondary_recipient.GetShortUIName|U] na cizí [Concept('court','dvůr')|E]: $VALUE|=+0$"
@@ -302,10 +305,10 @@
  grant_titles_interaction_notification_effect_5: "[recipient.GetUINameNotMe] je nyní spoluvazalem"
  grant_titles_interaction_notification_effect_6: "[recipient.GetUINameNotMe] nyní drží [loc_title.GetBaseName]"
  grant_titles_interaction_notification_effect_7: "[recipient.GetUINameNotMe] se stal tvým [Concept('tributary','tributářem')|E]"
- NOT_grant_titles_interaction_can_only_give_diarch_de_jure_liege_to_diarch: "Jelikož je [CHARACTER.GetShortUIName] tvým [CHARACTER.GetDiarchTitle], můžeš [CHARACTER.GetHerHim] udělit pouze [Concept('title','titul')|E] [Concept('de_jure','de iure')|E] [Concept('liege','lenního pána')|E]"
+ NOT_grant_titles_interaction_can_only_give_diarch_de_jure_liege_to_diarch: "Jelikož je [CHARACTER.GetShortUIName] [TARGET_CHARACTER.Custom('CZ_ShortUIName_G')] [CHARACTER.GetDiarchTitle], můžeš [CHARACTER.GetHerHis] [CHARACTER.GetHerHim] udělit pouze [Concept('title','titul')|E] [Concept('de_jure','de iure')|E] [Concept('liege','lenního pána')|E]" # todo: CHANGED (predtym: Jelikož je [CHARACTER.GetShortUIName] tvým [CHARACTER.GetDiarchTitle], můžeš [CHARACTER.GetHerHim] udělit pouze [Concept)
  grant_titles_interaction_children_not_allowed_temple: "Příliš nízký věk [recipient.GetUINameNotMe] neumožňuje plnit náboženské povinnosti spojené se správou [Concept('temple','chrámu')|E]!"
  NOT_grant_titles_interaction_children_not_allowed_temple: "Děti nemohou plnit náboženské povinnosti spojené se správou [Concept('temple','chrámu')|E]!"
- grant_titles_interaction_title_being_wagered: "Nemůžeš udělit [Concept('title','titul')|E], o který právě sázíš"
+ grant_titles_interaction_title_being_wagered: "[CHARACTER.GetShortUIName|U] nemůže udělit [Concept('title','titul')|E], o který [CHARACTER.GetShortUIName] [CharAreIs(CHARACTER)] právě sází" # todo: CHANGED (predtym: Nemůžeš udělit [Concept('title','titul')|E], o který právě sázíš)
  is_not_theocratic_court_chaplain: "[recipient.GetShortUIName|U] [Select_CString(recipient.IsLocalPlayer,'nejsi','není')|l] $councillor_court_chaplain$ [GetDoctrineType('doctrine_theocracy_temporal').GetBaseName] [Concept('rite','ritu')|E]"
  NOT_is_not_theocratic_court_chaplain: "[recipient.GetShortUIName|U] [Select_CString(recipient.IsLocalPlayer,'jsi','je')|l] $councillor_court_chaplain$ [GetDoctrineType('doctrine_theocracy_temporal').GetBaseName] [Concept('rite','ritu')|E] a nelze mu udělit [Concept('titles','tituly')|E]"
  grant_title_stealing_acclaimed_knight: "[recipient.GetShortUIName|U] [Select_CString(recipient.IsLocalPlayer,'nejsi','není')|l] [Concept('acclaimed_knight','uznávaným rytířem')|e] jiného [Concept('ruler','vládce')|E]"
@@ -367,6 +370,7 @@
  GRANT_TITLES_ITEM_CANT_GIVE_NOMAD_TITLE: "Nemůžeš udělit svůj [Concept('nomad','nomádský')|E] titul"
  GRANT_TITLES_ITEM_CANT_GIVE_CEREMONIAL_TITLE: "Nemůžeš udělit titul svého [Concept('ceremonial_liege','obřadního panovníka')|E]"
  GRANT_TITLES_ITEM_CANT_GIVE_NOMADIC_TITLES_TO_NON_NOMADS_TITLE: "[Concept('rulers','Vládci')|E], kteří nejsou [GetGovernment( 'nomad_government' ).GetName], mohou udělit [GetGovernment( 'nomad_government' ).GetName] [Concept('titles','tituly')|E] pouze stávajícím [Concept('vassals','vazalům')|E]\n@alert_icon! #alert_trial Vylepši [Concept('holding','državu')|E] za [gold_i][Concept('gold','zlato')|E], abys toto omezení odstranil#!"
+ GRANT_TITLES_ITEM_CANT_GIVE_ABOVE_COUNTY_TO_HERDER: "[Concept('rulers','Vládci')|E] s vládou [GetGovernment( 'herder_government' ).GetName] mohou získat pouze [Concept('counties','hrabství')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  GRANT_TITLES_ITEM_CANT_GIVE_ADMIN_PRIMARY: "Nemůžeš udělit své hlavní [Concept('governorship','guvernérství')|E]"
  GRANT_TITLES_ITEM_CANT_GIVE_CLERICAL_TITLE: "[puppet_or_actor.GetShortUIName|U] [Select_CString(puppet_or_actor.IsLocalPlayer,'nemůžeš','nemůže')|l] udělit [Concept('clerical_titles','duchovní tituly')|E]"
  GRANT_TITLES_ITEM_CANT_GIVE_CLERICAL_ELECTOR: "[puppet_or_actor.GetShortUIName|U] [Select_CString(puppet_or_actor.IsLocalPlayer,'nemůžeš','nemůže')|l] udělit [Concept('cardinalates','kardinálské tituly')|E]"
@@ -393,7 +397,7 @@
  GRANT_VASSAL_DOING_TOOLTIP: "Převádíš [CHARACTER.GetUIName]"
  RETRACT_VASSAL_CAN_TOOLTIP: "Můžeš odejmout [CHARACTER.GetUIName]\n#I Kliknutím vybereš [CHARACTER.GetUIName]#!"
  RETRACT_VASSAL_DOING_TOOLTIP: "Odnímáš [CHARACTER.GetUIName]"
- GRANT_TITLE_NOT_IN_DOMAIN: "@warning_icon! #X Lze udělit pouze tituly z vlastní [Concept('domain','domény')|E]#!"
+ GRANT_TITLE_NOT_IN_DOMAIN: "@warning_icon! #X Lze udělit pouze tituly z vlastních [Concept('domain','domény')|E]#!" # todo: CONCEPT CASE
  REVOKE_TITLE_NOT_IN_DOMAIN: "@warning_icon! #X Lze odebrat pouze tituly z osobní [Concept('domain','domény')|E]#!"
  GRANT_REVOKE_VASSAL_DOMAIN: "@warning_icon! #X Lze pouze převádět vazaly#!"
  GOLD_POSITIVE_REASON: "[recipient.GetSheHe|U] dostane zaplaceno [Concept('gold','zlatem')|E]: $VALUE|=+0$"
@@ -578,29 +582,22 @@
  REVOKE_HOLY_ORDER_DECISION_BARONY_LABEL: "Hrabství:"
  CREATE_HOLY_ORDER_DECISION_CHANGE_CAPITAL: "Změnit baronství"
  CREATE_HOLY_ORDER_DECISION_SELECT_CAPITAL: "Vybrat baronství"
+ SELECT_KINGDOM_TITLE_CHANGE: "Změnit království" # todo: NEW TRANSLATION
+ SELECT_KINGDOM_TITLE_SELECT: "Vybrat království" # todo: NEW TRANSLATION
  LEASE_OUT_BARONIES_TITLE: "Vybrat državu"
  LEASE_OUT_BARONIES_NO_TITLES: "Žádné dostupné državy"
  LEASE_OUT_BARONIES_TOOLTIP: "#T [SelectLocalization( DecisionViewWidgetSelectBarony.HasValidTitles, 'LEASE_OUT_BARONIES_TITLE', 'LEASE_OUT_BARONIES_NO_TITLES' )] #!"
  LEASE_OUT_BARONIES_CONFIRM: "Vybrat"
- SELECT_TITLE_HINT_BARONY: "Vyber [Concept('barony','baronství')|E]"
- SELECT_TITLE_HINT_COUNTY: "Vyber [Concept('county','hrabství')|E]"
- SELECT_TITLE_HINT_DUCHY: "Vyber [Concept('duchy','vévodství')|E]"
- SELECT_TITLE_HINT_KINGDOM: "Vyber [Concept('kingdom','království')|E]"
- SELECT_TITLE_HINT_EMPIRE: "Vyber [Concept('empire','říši')|E]"
- SELECT_TITLE_HINT_HEGEMONY: "Vyber [Concept('hegemony','hegemonii')|E]"
- SELECT_TITLE_CHANGE: "Změnit titul"
- SELECT_TITLE_SELECT: "Vybrat titul"
- TITLE_SELECTOR_TEXT: "[SelectLocalization( DecisionViewWidgetSelectTitleOfTier.HasCurrentTitle, 'SELECT_TITLE_CHANGE', 'SELECT_TITLE_SELECT' )]"
- TITLE_SELECTOR_TITLE: "Vybrat titul"
- TITLE_SELECTOR_NO_TITLES: "Žádné dostupné tituly"
- TITLE_SELECTOR_NO_TITLE_SELECTED: "Není vybrán žádný titul"
- TITLE_SELECTOR_TOOLTIP: "#T $TITLE_SELECTOR_TEXT$#!"
- TITLE_SELECTOR_CONFIRM: "Vybrat"
+ KINGDOM_SELECTOR_TITLE: "Vybrat království" # todo: NEW TRANSLATION
+ KINGDOM_SELECTOR_NO_TITLES: "Žádná dostupná království" # todo: NEW TRANSLATION
+ KINGDOM_SELECTOR_TOOLTIP: "#T [Select_CString( DecisionViewWidgetSelectKingdomTitle.HasCurrentTitle, '$SELECT_KINGDOM_TITLE_CHANGE|q$', '$SELECT_KINGDOM_TITLE_SELECT|q$' )] #!" # todo: NEW TRANSLATION
+ KINGDOM_SELECTOR_CONFIRM: "Vybrat" # todo: NEW TRANSLATION
  CREATE_HOLY_ORDER_HINT: "#I Vyber [Concept('barony','baronství')|E], které není [Concept('county_capital','hlavním sídlem hrabství')|E]#!"
  REVOKE_HOLY_ORDER_HINT: "#I Vyber [Concept('barony','baronství')|E] pronajaté [Concept('holy_order','svatému řádu')|E]#!"
  GRANT_TITLE_LEASED_OUT_VASSAL: "#T Včetně [Concept('leased','pronajatých')|E] [Concept('holdings','držav')|E]: #!\n[Title.GetLeasedOutVassalList]"
  THEOCRATIC_LEASE_VASSAL: "[TITLE.GetName] ([Concept('church_property','církevní majetek')|E])"
  REVOKABLE_LEASE_VASSAL: "[TITLE.GetName] ([TITLE_2.GetName])"
+ TITLE_CONTAINS_MARKET_CAPITAL: "Drží [Concept('market_capital','tržní hlavní sídlo')|E] titulu [Title.GetTradeMarketCapitalTitle.GetTradeMarket.GetNameNoTooltip]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  REVOKE_TITLE_PRESSED_CLAIM: "Na [Title.Custom('CZ_LandedName_A')] máš [Concept('pressed_claim','uplatněný nárok')|E]"
  REVOKE_TITLE_UNPRESSED_CLAIM: "Na [Title.Custom('CZ_LandedName_A')] máš [Concept('unpressed_claim','neuplatněný nárok')|E]"
  FAITH_IS_REFORMED: "[CHARACTER.GetFaith.GetName] je [Concept('organized','organizovanou')|E] [Concept('faith','vírou')|E]"
@@ -615,7 +612,7 @@
  INTERFERE_IN_WAR_DESCRIPTION: "#I Vyber jednu z válek [Character.GetShortUINamePossessive]#!"
  INTERFERE_IN_WAR_ITEM_SELECT: "#T Zasáhnout do války [WAR.GetName|V] [CHARACTER.GetShortUINamePossessiveNoTooltip]#!"
  INTERFERE_IN_WAR_ALREADY_IN_WAR: "@warning_icon! #X [CHARACTER.GetShortUINameNoTooltip|U] [Select_CString( CHARACTER.IsLocalPlayer, 'již bojuješ', 'již bojuje' )] v této válce#!"
- INTERFERE_IN_WAR_ALREADY_CALLED_TO_WAR: "@warning_icon! #X [CHARACTER.GetShortUINameNoTooltip] [Select_CString( CHARACTER.IsLocalPlayer, 'už jsi byl povolán', 'již byl povolán' )] do této války#!"
+ INTERFERE_IN_WAR_ALREADY_CALLED_TO_WAR: "@warning_icon! #X [CHARACTER.GetShortUINameNoTooltip] [Select_CString( CHARACTER.IsLocalPlayer, 'už jsi [Select_CString(ROOT.Char.IsFemale,'byla povolána','byl povolán')]', 'již byl povolán' )] do této války#!"
  RANK_DIFFERENCE_REASON: "Rozdíl v [Concept('title_rank','hodnosti titulu')|E]: $VALUE|=+0$"
  SKILL_DIFFERENCE_LEARNING_REASON: "Rozdíl ve [Concept('skill','dovednosti')|E] [Concept('learning','učenosti')|E]: $VALUE|=+0$"
  I_AM_MORE_VIRTOUS_THAN_THEM_REASON: "Rozdíl v [Concept('virtuous','ctnostných')|E] [Concept('traits','rysech')|E]: $VALUE|=+0$"
@@ -627,7 +624,7 @@
  DECLARED_WAR_REASON: "Vyhlášení [Concept('war','války')|E] proti mně: $VALUE|=+0$"
  IS_AT_WAR_REASON: "Jsi ve [Concept('war','válce')|E]: $VALUE|=+0$"
  IS_AT_WAR_WITH_TARGET_REASON: "[secondary_recipient.GetShortUIName] válčí s [recipient.GetShortUIName]: $VALUE|+0$"
- IS_POW_REASON: "[secondary_recipient.GetShortUIName] je válečným zajatcem: $VALUE|+0$"
+ IS_POW_REASON: "[secondary_recipient.GetShortUIName] je [Concept('prisoner','zajatcem')|E] v probíhajících [Concept('war','válce')|E] [recipient.Custom('CZ_ShortUIName_G')]: $VALUE|+0$" # todo: CHANGED (predtym: [secondary_recipient.GetShortUIName] je válečným zajatcem: $VALUE|+0$) # todo: CONCEPT CASE
  GRANT_REVOKE_VIEW_WRONG_HOLDING_TYPE: "#T Nesprávný typ [Concept('holding','državy')|E]#!\nPostavy s vládou [GetPlayer.GetGovernment.GetName] nemohou efektivně držet državy typu [Title.GetProvince.GetHolding.GetType.GetName|V], a proto z nich nezískají žádné [Concept('taxes','daně')|E] ani [Concept('levies','odvedence')|E]"
  EXISTING_ALLIANCES_REASON: "Tvůj současný počet [Concept('alliances','aliancí')|E]: $VALUE|=+0$"
  THEIR_EXISTING_ALLIANCES_REASON: "Současný počet [Concept('alliances','aliancí')|E] [recipient.GetShortUINamePossessive]: $VALUE|=+0$"
@@ -665,8 +662,8 @@
  GRANT_AS_GOVERNMENT_TYPE_NONE: "[GrantTitlesInteractionWindow.GetConfirmationWindow.GetActor.Custom('GetGovernmentIcon')|U] Výchozí"
  GRANT_AS_GOVERNMENT_TYPE_NONE_TOOLTIP: "Typ vlády bude určen podle udělených [Concept('titles','titulů')|E] a [Concept('government','vlády')|E] současného držitele."
  GRANT_AS_GOVERNMENT_TYPE_ITEM: "[GovernmentType.Custom('GetGovernmentTypeIcon')|U] [GovernmentType.GetNameNoTooltip]"
- GRANT_GOVERNMENT_TOO_MANY_THEOCRACY_VASSALS: "Příliš velkou část [Concept('realm','panství')|E] [puppet_or_actor.Custom('CZ_ShortUIName_G')] již drží [Concept('theocratic_vassals','teokratičtí vazalové')|E]"
- GRANT_GOVERNMENT_COOLDOWN_ACTIVE: "[puppet_or_actor.GetShortUIName|U] nedávno [Select_CString(puppet_or_actor.IsLocalPlayer,'jsi ','')|l][Select_CString(puppet_or_actor.IsFemale,'udělila','udělil')|l] zvláštní typ [Concept('government','vlády')|E] a před dalším udělením [Select_CString(puppet_or_actor.IsLocalPlayer,'musíš','musí')|l] počkat do [GetCurrentDateWithDiff( GetVarTimeRemaining( puppet_or_actor.MakeScope, 'grant_vassal_government_cooldown') )]"
+ GRANT_GOVERNMENT_TOO_MANY_THEOCRACY_VASSALS: "Příliš velkou část [Concept('realm','panství')|E] [CHARACTER.Custom('CZ_ShortUIName_G')] již drží [Concept('theocratic_vassals','teokratičtí vazalové')|E]" # todo: CHANGED (predtym: Příliš velkou část [Concept('realm','panství')|E] [puppet_or_actor.Custom('CZ_ShortUIName_G')] již drží [Concept('theocr)
+ GRANT_GOVERNMENT_COOLDOWN_ACTIVE: "[CHARACTER.GetShortUIName|U] [CHARACTER.LocalPlayerString( 'have', 'has' )] nedávno [Select_CString(CHARACTER.IsLocalPlayer,'jsi ','')|l][Select_CString(CHARACTER.IsFemale,'udělila','udělil')|l] zvláštní typ [Concept('government','vlády')|E] a před dalším udělením [Select_CString(CHARACTER.IsLocalPlayer,'musíš','musí')|l] počkat do [GetCurrentDateWithDiff( GetVarTimeRemaining( CHARACTER.MakeScope, 'grant_vassal_government_cooldown') )]" # todo: CHANGED (predtym: [puppet_or_actor.GetShortUIName|U] nedávno [Select_CString(puppet_or_actor.IsLocalPlayer,'jsi ','')|l][Select_CString(pu)
  GRANT_GOVERNMENT_KINGDOM_BLOCKED: "Udělení jiného typu [Concept('government','vlády')|E] je omezeno na tituly [Concept('county','hrabství')|E] a [Concept('duchy','vévodství')|E]"
  GRANT_GOVERNMENT_NOMAD_SETTLED_ONLY: "[Concept('nomadic','kočovní')|EU] vládci mohou udělit usazený [Concept('government','vládu')|E] pouze [Concept('county','hrabství')|E], jehož hlavním držitelem je [Concept('castle','hrad')|E], [Concept('city','město')|E] nebo [Concept('temple','chrám')|E]"
  MATCHMAKER_INTERACTION_ALLIANCE: "#T Potenciální aliance#!\n[Character.GetPrimaryTitle.GetName]"
@@ -685,7 +682,7 @@
  UNITY_PERK_BONUS: "$fp2_coterie_legacy_3_name$: $VALUE|=+0$"
  AI_RELEVANT_TRAITS: "Příslušné rysy: $VALUE|=+0$"
  AI_COMMON_TRAITS: "Společné [Concept('traits','rysy')|E]: $VALUE|=+0$"
- GRAND_WEDDING_PROMISE_INFO: "#T Přepnout příslib velkolepé svatby\n#!Přislíbíš uspořádání [CZActivity('activity_wedding','G')], čímž zvýšíš pravděpodobnost přijetí nabídky [Concept('marriage','sňatku')|E]\n\nPrůměrné náklady: [gold_i] [actor.MakeScope.ScriptValue('ui_avg_wedding_cost')|0V]\n\n@alert_icon! #alert_trial Pokud jsou oba [Concept('spouses','snoubenci')|E] [Concept('adults','dospělí')|E], máš na splnění slibu 3 roky, jinak nastanou vážné následky!#!"
+ GRAND_WEDDING_PROMISE_INFO: "#T Přepnout příslib velkolepé svatby\n#!Přislíbíš uspořádání [CZActivity('activity_wedding','G')], čímž zvýšíš pravděpodobnost přijetí nabídky [Concept('marriage','sňatku')|E]\n\nPrůměrné náklady: [gold_i] [actor.MakeScope.ScriptValue('ui_avg_wedding_cost')|0V]\n\n@alert_icon! #alert_trial Pokud jsou oba [Concept('spouses','snoubenci')|E] [Concept('adults','dospělí')|E], máš na splnění slibu 3 roky, jinak nastanou vážné následky!#!" # todo: TERMINOLOGY spouse -> choť / manželský protějšek / manžel / manželka (Concept 'spouses': 'snoubenci')
  grand_wedding_already_promised_tt: "Současně můžeš přislíbit pouze jednu [GetActivityType( 'activity_wedding' ).GetName]"
  grand_wedding_only_dominant_side: "Uspořádání [CZActivity('activity_wedding','G')] může nabídnout pouze dominantní strana zasnoubení"
  grand_wedding_only_family: "[GetActivityType( 'activity_wedding' ).GetName] můžeš uspořádat pouze pro členy vlastní rodiny"
@@ -722,8 +719,8 @@
  THEY_HAVE_STEWARDSHIP_SKILL_REASON: "[Concept('stewardship_skill','správcovská dovednost')|EU] [secondary_recipient.Custom('CZ_ShortUIName_G')]: $VALUE|=+0$"
  THEY_HAVE_LEARNING_SKILL_REASON: "[Concept('learning_skill','učenost')|EU] [secondary_recipient.Custom('CZ_ShortUIName_G')]: $VALUE|=+0$"
  THEY_HAVE_PROWESS_SKILL_REASON: "[Concept('prowess_skill','udatnost')|EU] [secondary_recipient.Custom('CZ_ShortUIName_G')]: $VALUE|=+0$"
- INCREASE_UNITY_DESC: "Chce zvýšit [Concept('house_unity','jednotu rodu')|E]"
- DECREASE_UNITY_DESC: "Chce snížit [Concept('house_unity','jednotu rodu')|E]"
+ INCREASE_UNITY_DESC: "Chce zvýšit [Concept('house_unity','jednotu rodu')|E]: $VALUE|=+0$" # todo: CHANGED (predtym: Chce zvýšit [Concept('house_unity','jednotu rodu')|E])
+ DECREASE_UNITY_DESC: "Chce snížit [Concept('house_unity','jednotu rodu')|E]: $VALUE|=+0$" # todo: CHANGED (predtym: Chce snížit [Concept('house_unity','jednotu rodu')|E])
  LOW_LEGITIMACY_REASON: "Nízká [Concept('legitimacy','legitimita')|E] [actor.GetShortUINamePossessive|U]: $VALUE|=+0$"
  RECIPIENT_LOW_LEGITIMACY_REASON: "Nízká [Concept('legitimacy','legitimita')|E] [recipient.GetShortUINamePossessive|U]: $VALUE|=+0$"
  HIGH_LEGITIMACY_REASON: "Vysoká [Concept('legitimacy','legitimita')|E] [actor.GetShortUINamePossessive|U]: $VALUE|=+0$"
@@ -743,10 +740,15 @@
  AI_OPINION_PRESTIGE_LEVEL_ILLUSTRIOUS: "[Concept('prestige_level','Úroveň slávy')|E] – [GetPrestigeLevelName('(int32)3')]: $VALUE|=+0$"
  AI_OPINION_PRESTIGE_LEVEL_EXALTED: "[Concept('prestige_level','Úroveň slávy')|E] – [GetPrestigeLevelName('(int32)4')]: $VALUE|=+0$"
  AI_OPINION_PRESTIGE_LEVEL_LEGENDARY: "[Concept('prestige_level','Úroveň slávy')|E] – [GetPrestigeLevelName('(int32)5')]: $VALUE|=+0$"
+ AI_OPINION_DEALBREAKER_ACTOR: "[actor.GetShortUIName|U] [CharAreIs(actor)] [GetTrait('dealbreaker').GetName( GetNullCharacter )]: $VALUE|=+0$" # todo: NEW TRANSLATION
+ AI_OPINION_DEALBREAKER_RECIPIENT: "[recipient.GetShortUIName|U] [CharAreIs(recipient)] [GetTrait('dealbreaker').GetName( GetNullCharacter )]: $VALUE|=+0$" # todo: NEW TRANSLATION
+ AI_OPINION_FAITH_ASTRAY_ACTOR: "[recipient.GetSheHe|U] považuje [actor.GetFaith.GetAdherentNamePlural] za [Concept('faith_astray','zbloudilého')|E]: $VALUE|=+0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ AI_OPINION_FAITH_HOSTILE_ACTOR: "[recipient.GetSheHe|U] považuje [actor.GetFaith.GetAdherentNamePlural] za [Concept('faith_hostile','nepřátelský')|E]: $VALUE|=+0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ AI_OPINION_FAITH_EVIL_ACTOR: "[recipient.GetSheHe|U] považuje [actor.GetFaith.GetAdherentNamePlural] za [Concept('faith_evil','zavrženíhodného')|E]: $VALUE|=+0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  AI_OPINION_MERIT_LEVEL: "[Concept('merit_level','Hodnost zásluh')|E]: $VALUE|=+0$"
  offer_nothing: "Nenabízet nic"
  TRADE_INFLUENCE_FOR_BETTER_AI_ACCEPTANCE: "Nabídnout svůj [influence_i|E][Concept('influence','vliv')|E]"
- DEMAND_INFLUENCE_AI_ACCEPTANCE: "Požadovat [influence_i|E][Concept('influence','vliv')|E]"
+ DEMAND_INFLUENCE_AI_ACCEPTANCE: "Požadovat [Concept('influence_i','@influence_icon!')|E][Concept('influence','vliv')|E]" # todo: CONCEPT CASE
  INFLUENCE_INTERACTION_ACCEPTANCE_SEND_OPTION: "Vynaložení [Concept('influence','vlivu')|E]: $VALUE|=+0$"
  not_same_realm_tt: "Ty a [recipient.GetShortUIName] #BOLD nejste#! ve stejném panství"
  not_same_realm_value_tt: "[puppet_or_actor.GetShortUIName|U] a [recipient.GetShortUIName] #BOLD [Select_CString(Or(puppet_or_actor.IsLocalPlayer,recipient.IsLocalPlayer),'nejste','nejsou')|l]#! ve stejné říši: $VALUE|=+0$"
@@ -794,6 +796,36 @@
  I_AM_SUPERIOR_REASON: "[puppet_or_actor.GetShortUIName|U] [Select_CString(puppet_or_actor.IsLocalPlayer,'jsi','je')|l] [Concept('religious_superior',Select_CString(puppet_or_actor.IsFemale,'nadřízenou duchovní','nadřízeným duchovním'))|E] [recipient.Custom('CZ_ShortUIName_G')]: $VALUE|=+0$"
  I_HAVE_A_DIFFERENT_RITE: "Odlišný [Concept('rite','ritus')|E]: $VALUE|=+0$"
  I_HAVE_A_HERETICAL_RITE: "Kacířsky [Concept( 'rite_divergent', 'odlišný' )|E] [Concept('rite','ritus')|E]: $VALUE|=+0$"
+ GENERIC_OFFER_A_HOOK: "Nabídnout [hook_i][Concept('hook','páky')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ GENERIC_OFFER_GOLD: "Nabídnout [Concept('gold_i','@gold_icon!')|E][Concept('gold','zlata')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ GENERIC_SPEND_TREASURY: "Použít [treasury_i][Concept('treasury','pokladnice')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ GENERIC_PAY_GOLD: "Zaplatit [gold_i][Concept('gold','zlata')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ GENERIC_PAY_TREASURY: "Zaplatit [treasury_i][Concept('treasury','pokladnice')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ GENERIC_PAY_GOLD_SUBSTANTIAL: "Zaplatit značné množství [gold_i][Concept('gold','zlata')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ GENERIC_PAY_TREASURY_SUBSTANTIAL: "Zaplatit značnou část [treasury_i][Concept('treasury','pokladnice')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ SMALL_DOMAIN_REASON: "Malá [Concept('domain','doména')|E]: $VALUE|=+0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ AI_OPINION_SIZE_ASPIRING: "[actor.Custom('CZ_ShortUIName_G')|U] [Concept('company_size','Velikost společnosti')|E] je [GetLaw('company_size_small').GetName]: $VALUE|=+0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ AI_OPINION_SIZE_ESTABLISHMENT: "[actor.Custom('CZ_ShortUIName_G')|U] [Concept('company_size','Velikost společnosti')|E] je [GetLaw('company_size_medium').GetName]: $VALUE|=+0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ AI_OPINION_SIZE_PROMINENT: "[actor.Custom('CZ_ShortUIName_G')|U] [Concept('company_size','Velikost společnosti')|E] je [GetLaw('company_size_large').GetName]: $VALUE|=+0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ AI_OPINION_SIZE_EMPIRE: "[actor.Custom('CZ_ShortUIName_G')|U] [Concept('company_size','Velikost společnosti')|E] je [GetLaw('company_size_huge').GetName]: $VALUE|=+0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ request_monopoly_trade_expertise_acceptance: "[trade_good_category_type.GetNameWithIcon] [Concept('trade_expertise','Obchodní zkušenost')|E] #weak ([trade_good_category_type.GetTradeGoodCategoryLevel( actor.Self )]/[trade_good_category_type.GetTradeGoodCategoryMaxLevel])#!: $VALUE|=+0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MONOPOLY_EXPLOITATIVE_REASON: "[exploitative_monopoly_i] [Concept('exploitative_monopoly','Vykořisťovatelský monopol')|E]: $VALUE|=+0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MONOPOLY_COMPLETE_REASON: "[complete_monopoly_i] [Concept('complete_monopoly','Úplný monopol')|E]: $VALUE|=+0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ AI_OPINION_REASON_LIEGE: "[Concept('opinion','mínění')|EU] [CHARACTER.Custom('CZ_ShortUIName_G')] vůči [Concept('liege','lennímu pánovi')|E] [puppet_or_actor.Custom('CZ_ShortUIName_G')]: $VALUE|=+0$"
+ SELECT_TITLE_HINT_BARONY: "Vyber [Concept('barony','baronství')|E]"
+ SELECT_TITLE_HINT_COUNTY: "Vyber [Concept('county','hrabství')|E]"
+ SELECT_TITLE_HINT_DUCHY: "Vyber [Concept('duchy','vévodství')|E]"
+ SELECT_TITLE_HINT_KINGDOM: "Vyber [Concept('kingdom','království')|E]"
+ SELECT_TITLE_HINT_EMPIRE: "Vyber [Concept('empire','říši')|E]"
+ SELECT_TITLE_HINT_HEGEMONY: "Vyber [Concept('hegemony','hegemonii')|E]"
+ SELECT_TITLE_CHANGE: "Změnit titul"
+ SELECT_TITLE_SELECT: "Vybrat titul"
+ TITLE_SELECTOR_TEXT: "[SelectLocalization( DecisionViewWidgetSelectTitleOfTier.HasCurrentTitle, 'SELECT_TITLE_CHANGE', 'SELECT_TITLE_SELECT' )]"
+ TITLE_SELECTOR_TITLE: "Vybrat titul"
+ TITLE_SELECTOR_NO_TITLES: "Žádné dostupné tituly"
+ TITLE_SELECTOR_NO_TITLE_SELECTED: "Není vybrán žádný titul"
+ TITLE_SELECTOR_TOOLTIP: "#T $TITLE_SELECTOR_TEXT$#!"
+ TITLE_SELECTOR_CONFIRM: "Vybrat"
  I_HAVE_THE_SAME_RITE: "Stejný [Concept('rite','ritus')|E]: $VALUE|=+0$"
  SMALL_ADJACENT_CLERICAL_REGION_REASON: "Malá sousední [Concept('clerical_region','církevní oblast')|E]: $VALUE|=+0$"
  EXPAND_SAME_FAITH_OUTSIDE_HOME_KINGDOM_REASON: "Území stejné [Concept('faith','víry')|E] mimo [Concept('kingdom','království')|E] [Concept('de_jure','de iure')|E] této [Concept('clerical_region','církevní oblasti')|E]: $VALUE|=+0$"
@@ -813,6 +845,7 @@
  COURT_CHAPLAIN_CELIBATE: "[actor.GetCouncillor( 'councillor_court_chaplain' ).GetShortUIName|U] [Select_CString(actor.GetCouncillor( 'councillor_court_chaplain' ).IsLocalPlayer,'jsi','je')|l] [GetTrait('celibate').GetName(actor.GetCouncillor( 'councillor_court_chaplain' ))]: $VALUE|=+0$"
  COURT_CHAPLAIN_DEVOTED: "[actor.GetCouncillor( 'councillor_court_chaplain' ).GetShortUIName|U] [Select_CString(actor.GetCouncillor( 'councillor_court_chaplain' ).IsLocalPlayer,'jsi','je')|l] [GetTrait('devoted').GetName(actor.GetCouncillor( 'councillor_court_chaplain' ))]: $VALUE|=+0$"
  COURT_CHAPLAIN_LOW_PIETY: "[actor.GetCouncillor( 'councillor_court_chaplain' ).GetShortUIName|U] [Select_CString(actor.GetCouncillor( 'councillor_court_chaplain' ).IsLocalPlayer,'nemáš','nemá')|l] téměř žádnou [Concept('piety','zbožnost')|E]: $VALUE|=+0$"
+ COURT_CHAPLAIN_GHIBELLINE_TIES: "[actor.GetCouncillor( 'councillor_court_chaplain' ).GetShortUIName] je spjatý s [Concept('ghibelline','ghibellinem')|E] věcí: $VALUE|=+0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  COLLEGE_OF_CARDINALS_UNDERMANNED_REASON: "[Concept('college_of_cardinals','kardinálské kolegium')|EU] nemá dostatek [Concept('cardinals','kardinálů')|E]: $VALUE|=+0$"
  COLLEGE_OF_CARDINALS_SEVERELY_UNDERMANNED_REASON: "[Concept('college_of_cardinals','kardinálské kolegium')|EU] má velký nedostatek [Concept('cardinals','kardinálů')|E]: $VALUE|=+0$"
  HOF_IS_CYNICAL_REASON: "[recipient.GetShortUIName|U] [Select_CString(recipient.IsLocalPlayer,'máš','má')|l] rys [GetTrait('cynical').GetName(recipient)]: $VALUE|=+0$"
@@ -827,3 +860,17 @@
  SWAY_TO_RITE_CATHEDRAL_STARTED_REASON: "$pam_grand_cathedral_started_modifier$: $VALUE|=+0$"
  SWAY_TO_RITE_CATHEDRAL_COMPLETED_REASON: "$pam_grand_cathedral_completed_modifier$: $VALUE|=+0$"
  SWAY_TO_RITE_ESTATE_REASON: "[Concept('ecclesiastical_domicile_building','budova církevního domicilu')|EU] [GetDomicileBuilding('ecclesiastical_domicile_main_02').GetName]: $VALUE|=+0$"
+ AI_ACTOR_RECIPIENT_SPOUSE_REASON: "[actor.GetShortUIName] [CharAreIs(actor)] [recipient.Custom('CZ_ShortUIName_G')|U] [Concept('spouse','Choť')|E]: $VALUE|=+0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ AI_ACTOR_RECIPIENT_CLOSE_FAMILY_REASON: "[actor.GetShortUIName] [CharAreIs(actor)] [recipient.Custom('CZ_ShortUIName_G')|U] [Concept('close_family','Blízká rodina')|E]: $VALUE|=+0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ AI_RECIPIENT_GOLD_REASON: "[recipient.Custom('CZ_ShortUIName_G')|U] [Concept('gold_i','@gold_icon!')|E][Concept('gold','Zlato')|E]: $VALUE|=+0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ AI_RECIPIENT_AFFORD_ACTOR_LOAN_REASON: "[recipient.Custom('CZ_ShortUIName_G')|U] si nemůže dovolit splatit: $VALUE|=+0$" # todo: NEW TRANSLATION
+ AI_RECIPIENT_CAN_REPUDIATE_LOAN_REASON: "[recipient.Custom('CZ_ShortUIName_G')|U] [Concept('faith','Víra')|E] může odmítnout [Concept('usury','lichva')|E]: $VALUE|=+0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ AI_ACTOR_RECIPIENT_ALLIED_REASON: "[actor.GetShortUIName] [CharAreIs(actor)] [recipient.Custom('CZ_ShortUIName_G')|U] [Concept('ally','Spojenec')|E]: $VALUE|=+0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ RECIPIENT_TRADE_ROUTES_IN_ACTOR_CAPITAL_MARKET_REASON: "[recipient.Custom('CZ_ShortUIName_G')|U] [Concept('routes','Trasy')|E] na trhu [actor.GetCapitalLocation.GetTitle.GetTradeMarket.GetName|l]: $VALUE|=+0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ RECIPIENT_NOT_TRADING_IN_ACTOR_CAPITAL_MARKET_REASON: "[recipient.GetSheHe|U] neobchoduje na trhu [actor.GetCapitalLocation.GetTitle.GetTradeMarket.GetName|l]: $VALUE|=+0$" # todo: NEW TRANSLATION
+ RECIPIENT_ACTOR_DIASPORIC_REASON: "Sdílená [Concept('tradition','tradice')|E] [GetCultureTradition('tradition_diasporic').GetName]: $VALUE|=+0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ SAME_FAITH_REASON: "Sdílená [actor.GetFaith.GetAdjective] [Concept('faith','víra')|E]: $VALUE|=+0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ AI_RECIPIENT_IS_REPUBLIC_REASON: "[recipient.GetSheHe|U] je [Concept('republican','republikánský')|E]: $VALUE|=+0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ AI_RECIPIENT_INHERITED_LOAN_REASON: "[recipient.GetShortUIName|U] [CharAreIs(recipient)] se chce zbavit zděděné [Concept('loan','půjčka')|E]: $VALUE|=+0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ AI_RECIPIENT_LOAN_DURATION_REASON: "[recipient.Custom('CZ_ShortUIName_G')|U] [Concept('loan','Půjčka')|E] je dlouhodobá: $VALUE|=+0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ AI_RECIPIENT_LOAN_REMINDERS_REASON: "Upomínky ohledně [Concept('loan','půjčky')|E] od [actor.Custom('CZ_ShortUIName_G')|U]: $VALUE|=+0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE

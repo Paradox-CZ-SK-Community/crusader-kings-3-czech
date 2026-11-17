@@ -68,7 +68,7 @@
  feast_default.1013.a: "Kdo by řekl, že příbor může být tak ostrý?"
  feast_default.1013.a_1: "Doufám, že [ROOT.Char.GetFaith.NegativeAfterLife] přivítá toho [guest_to_kill.Custom2('CZ_InsultAdjective_A', ROOT.Char)] [guest_to_kill.Custom2('CZ_InsultNoun_A', ROOT.Char)] s otevřenou náručí."
  feast_default.1013.b: "Ten nůž odrazím!"
- feast_default.1013.b.success: "Nikdo nebude zraněn"
+ feast_default.1013.b.success: "Nikdo nebude [Select_CString(ROOT.Char.IsFemale,'zraněna','zraněn')]"
  feast_default.1013.b.failure: "#EMP Téměř#! se mi to podaří"
  feast_default.1013.b.big_failure: "Selžu"
  feast_default.1013.c: "...a rovnou se vrhnu do bezpečí."
@@ -156,7 +156,7 @@
  feast_default.1030.courtly: "A co [knight_4.GetFirstName] a [Select_CString(knight_4.IsFemale,'její','jeho')] věrná přátelství?"
  feast_default.1030.militant: "A co [knight_4.GetFirstName] a [Select_CString(knight_4.IsFemale,'její','jeho')] vyhrané bitvy?"
  feast_default.1030.fighty_neutral: "A co [knight_4.GetFirstName] a [Select_CString(knight_4.IsFemale,'její','jeho')] čestně dodržené přísahy?"
- feast_default.1030.wrap_up: "Tito válečníci se vyrovnají hrdinům dávných časů!“\n\nAž se účinkující z této hostiny rozejdou k dalším dvorům, můj oblíbený příběh bude bezpochyby vyprávěn znovu a znovu."
+ feast_default.1030.wrap_up: "Tito válečníci se vyrovnají hrdinům dávných časů!„\n\nAž se účinkující z této hostiny rozejdou k dalším dvorům, můj oblíbený příběh bude bezpochyby vyprávěn znovu a znovu."
  feast_default.1030.a: "[knight_1.GetFirstNameNoTooltip], [accolade_1.GetNameNoTooltip]!"
  feast_default.1030.a.tt: "Ať převyprávění tohoto příběhu inspiruje všechny od nejprostších sluhů až po největší $knight_culture_player_plural_no_tooltip_lowercase$."
  feast_default.1030.b: "[knight_2.GetFirstNameNoTooltip], [accolade_2.GetNameNoTooltip]!"
@@ -184,8 +184,8 @@
  feast_default.2002.c: "Tohle má na svědomí [crush_3.GetFirstNameNoTooltip]."
  feast_default.2002.potential_lover_tt: "Pokud máš pravdu, bude mnohem snazší získat tuto osobu za [Concept('lover',Select_CString(letterAuthor.IsFemale,'milenku','milence'))|E]"
  feast_default.2003.t: "Na stejné vlně"
- feast_default.2003.desc: "Co začalo jako obyčejná hostina, se díky přítomnosti [other_guest.GetTitledFirstName] změnilo v něco výjimečného!\n\nCelý večer jsme si povídali o všem možném a ukázalo se, že toho máme spoustu společného! Opravdu jsem si ten večer [Select_CString(ROOT.Char.IsFemale,'užila','užil')]."
- feast_default.2003.a: "To byl ale příjemný večer!"
+ feast_default.2003.desc: "Co začalo jako obyčejná hostina, se díky přítomnosti [other_guest.GetName] změnilo v něco výjimečného!\n\nCelý večer jsme si povídali o [other_guest.Custom('herhis_subject_of_interest')] a všem možném. Zdá se, že toho máme spoustu společného! Opravdu jsem si ten večer [Select_CString(ROOT.Char.IsFemale,'užila','užil')] s [other_guest.GetHerHim]." # todo: CHANGED (predtym: Co začalo jako obyčejná hostina, se díky přítomnosti [other_guest.GetTitledFirstName] změnilo v něco výjimečného!\n\nCel)
+ feast_default.2003.a: "To byl ale skvělý večer!" # todo: CHANGED (predtym: To byl ale příjemný večer!)
  feast_default.2005.t: "[ROOT.Char.Custom('GetClothingArticle')|U] a zvratky"
  feast_default.2005.desc: "Všem nám bylo jasné, že [drunk.GetTitledFirstName] toho vypil[Select_CString(drunk.IsFemale,'a','')] příliš mnoho. [Select_CString(drunk.IsFemale,'Přesto se nám snažila předvést, jak je střízlivá.','Přesto se nám snažil předvést, jak je střízlivý.')]\n\n[Select_CString(drunk.IsFemale,'Už samotný pokus vstát ze židle byl nad její síly','Už samotný pokus vstát ze židle byl nad jeho síly')] a teď jsem celý potřísněný[Select_CString(ROOT.Char.IsFemale,'á','')] páchnoucími zvratky!"
  feast_default.2005.a: "„[Select_CString(drunk.IsFemale,'Měla by ses za sebe stydět','Měl by ses za sebe stydět')], [drunk.GetFirstNameNoTooltip]!“"
@@ -335,8 +335,8 @@
  feast_default.6002.b: "„Veškerou zásluhu má [spouse.GetFirstNameNoTooltip].“"
  feast_default.6003.t: "V mém domě"
  feast_default.6003.opening: "Snažím se ze všech sil zajistit, aby mezi [fighter_1.GetTitledFirstName] a [fighter_2.GetTitledFirstName] zůstával co největší odstup. Nestačí to a teď se uprostřed mé hostiny málem pustili do sebe!"
- feast_default.6003.bodyguard: "\n[bodyguard.GetTitledFirstName] stojí nedaleko rvačky a čeká na můj pokyn, zda má zasáhnout."
- feast_default.6003.guard: "\nNedaleko rvačky stojí jeden z mých strážných a čeká na můj pokyn, zda má zasáhnout."
+ feast_default.6003.bodyguard: "\n\nMůj [ROOT.Char.Custom2('RelationToMe', SCOPE.sC('bodyguard'))], [bodyguard.GetTitledFirstName] stojí nedaleko rvačky a čeká na můj pokyn, zda má zasáhnout." # todo: CHANGED (predtym: \n[bodyguard.GetTitledFirstName] stojí nedaleko rvačky a čeká na můj pokyn, zda má zasáhnout.)
+ feast_default.6003.guard: "\n\nNedaleko rvačky stojí jeden z mých strážných a čeká na můj pokyn, zda má zasáhnout." # todo: CHANGED (predtym: \nNedaleko rvačky stojí jeden z mých strážných a čeká na můj pokyn, zda má zasáhnout.)
  feast_default.6003.a: "Vyhoď [fighter_2.GetFirstNameNoTooltip] ven, ať zchladne."
  feast_default.6003.b: "Zadrž [fighter_1.GetFirstNameNoTooltip], dokud se situace neuklidní."
  feast_default.6003.c: "„Dost! Promluvíme si o tom později.“"
@@ -346,18 +346,20 @@
  feast_default.6101.desc_disliked: "A [troubled_guest.GetTitleTierName] se chová takhle..."
  feast_default.6101.desc_disliked_unlanded: "A [ROOT.Char.Custom2('RelationToMe', SCOPE.sC('troubled_guest'))] se chová takhle..."
  feast_default.6101.a: "Odvedu pozornost blížících se hostů."
- feast_default.6101.b: "No tak, [troubled_guest.GetFirstNameNoTooltip]. Pověz nám nějaký příběh!"
- feast_default.6101.c: "[troubled_guest.GetFirstNameNoTooltip]! Potřebuji s tebou mluvit. O samotě."
+ feast_default.6101.b: "No tak, [troubled_guest.GetFirstNameNoTooltip]. Pověz nám nějaký příběh!" # todo: CHANGED MINOR
+ feast_default.6101.c: "[troubled_guest.GetFirstNameNoTooltip]! Potřebuji s tebou mluvit. O samotě." # todo: CHANGED MINOR
  feast_default.6101.c.tt: "Oběma by nám prospěla přestávka..."
+ feast_default.6101.c.traits: "Musíš mít rys [GetTrait('shy').GetName( GetNullCharacter )] nebo [GetTrait('reclusive').GetName( GetNullCharacter )] [Concept('trait','rys')|E]" # todo: NEW TRANSLATION
  feast_default.6111.t: "Společnost k hovoru"
- feast_default.6111.desc: "Zatímco jeden chod střídá druhý, [guest_to_talk_to.GetTitledFirstName], [ROOT.Char.Custom2('RelationToMe', SCOPE.sC('guest_to_talk_to'))], nepřestává vyprávět o [guest_to_talk_to.Custom('subject_of_interest')].\n\n„...a tak jsme se z toho maléru dostali! Určitě tě nenudím, [ROOT.Char.Custom('FormOfAddressForLiege')]?“"
- feast_default.6111.a: "Ne, ne, jen pokračuj!"
- feast_default.6111.b: "Co kdybychom místo toho mluvili víc o tobě?"
- feast_default.6111.c: "Jak by mě mohlo nudit, když ze sebe děláš hlupáka?"
+ feast_default.6111.desc: "Zatímco jeden chod střídá druhý, [guest_to_talk_to.GetTitledFirstName], [ROOT.Char.Custom2('RelationToMe', SCOPE.sC('guest_to_talk_to'))], nepřestává vyprávět o [guest_to_talk_to.Custom('subject_of_interest')].\n\n„...a tak jsme se z toho maléru dostali! Určitě tě nenudím?“" # todo: CHANGED (predtym: Zatímco jeden chod střídá druhý, [guest_to_talk_to.GetTitledFirstName], [ROOT.Char.Custom2('RelationToMe', SCOPE.sC('gue)
+ feast_default.6111.a: "Ne, ne, jen pokračuj!" # todo: CHANGED MINOR
+ feast_default.6111.b: "Co kdybychom místo toho mluvili víc o tobě?" # todo: CHANGED MINOR
+ feast_default.6111.c: "Dělat ze sebe hlupáka by mě nikdy nemohlo nudit!" # todo: CHANGED (predtym: Jak by mě mohlo nudit, když ze sebe děláš hlupáka?)
  feast_default.6111.d: "[Select_CString(ROOT.Char.IsFemale,'Vyprávěla','Vyprávěl')] jsem ti už o [ROOT.Char.GetPromotedLegend.GetName]?"
  feast_default.6111.d.success: "Tvá legenda je poutavá"
  feast_default.6111.d.failure: "Nudíš"
- feast_default.6111.e: "Fascinující, jistě, ale co kdybychom si promluvili o mně?"
+ feast_default.6111.e: "Fascinující, jistě, ale co kdybychom si promluvili o mně?" # todo: CHANGED MINOR
+ feast_default.6111.f: "„Každopádně... všichni, slyšeli jste už o mém nejnovějším počinu?“" # todo: NEW TRANSLATION
  every_evil_guest_scope_tt: "Každý bezcitný host"
  feast_default.6121.t: "Vkusná urážka"
  feast_default.6121.desc: "Když do síně přinášejí jeden chod za druhým, dolehne ke mně nezaměnitelná vůně a já se usměji. Že je [hated_guest.GetTitledFirstName] [Select_CString(hated_guest.IsFemale,'citlivá','citlivý')] na [ROOT.GetCharacter.Custom('GetFoodDetail')], jsem kuchaři #EMP bohužel#! [Select_CString(ROOT.Char.IsFemale,'zapomněla','zapomněl')] říct.\n\n„Vítám vás všechny a doufám, že vám bude chutnat.“"
@@ -365,11 +367,15 @@
  feast_default.6121.b: "Výraz [hated_guest.GetFirstNameNoTooltip], když [Select_CString(ROOT.Char.IsFemale,'předstírám, že ji zachraňuji','předstírám, že ho zachraňuji')] před jídlem, mi rozhodně chutná!"
  feast_default.6231.t: "Pohroma"
  feast_default.6231.desc: "„[ROOT.Char.Custom('FormOfAddressForLiege')|U]. Víno... Narazili jsme další sud a je zkažené. Je zkažené #EMP všechno#!!“\n\nHostina je stále v plném proudu, ale bez pití nálada jistě rychle opadne."
- feast_default.6231.a: "Obchodník s vínem by měl být ještě ve městě!"
+ feast_default.6231.a.merchant: "„Ať někdo přivede obchodníka s vínem!“" # todo: NEW TRANSLATION
+ feast_default.6231.a: "Obchodník s vínem by měl být ještě ve městě!" # todo: CHANGED MINOR
  every_drunkard_guest_scope_tt: "Každý přítomný opilec"
- feast_default.6231.b: "Musíme se složit všichni. Tak do toho."
- feast_default.6231.c: "Je čas otevřít mé tajné zásoby."
- feast_default.6231.d: "Přinesme má lepší vína."
+ feast_default.6231.b: "Musíme se složit všichni. Tak do toho." # todo: CHANGED MINOR
+ feast_default.6231.c: "Je čas otevřít mé tajné zásoby." # todo: CHANGED MINOR
+ feast_default.6231.d: "Přinesme má lepší vína." # todo: CHANGED MINOR
+ feast_default.6231.d.japanese_manor: "„Pojďme vytáhnout mou vlastní produkci.“" # todo: NEW TRANSLATION
+ feast_default.6231.e: "„Sáhněte do skladu společnosti.“" # todo: NEW TRANSLATION
+ feast_default.6231.f: "„Znám přesně toho pravého!“" # todo: NEW TRANSLATION
  feast_default.6251.t: "Dilema"
  feast_default.6251.desc: "Hostina se pomalu chýlí ke konci a já se zabírám do hovoru s [guest.GetTitledFirstName].\n\n[guest.GetTitledFirstNameNoTooltip] se mě zeptá na můj názor na [guest.Custom('subject_of_interest')] – téma, které [Select_CString(guest.IsFemale,'ji hluboce zajímá','ho hluboce zajímá')]."
  feast_default.6251.a: "Tohle téma mě také fascinuje!"
@@ -439,7 +445,7 @@
  feast_default.6410.desc: "[Select_CString(guest.IsFemale,'Má','Můj')] [ROOT.Char.Custom2('RelationToMe', SCOPE.sC('guest'))] [guest.GetTitledFirstName] ke mně opatrně přistupuje:"
  feast_default.6410.segway.close: "„Ty jsi [Select_CString(ROOT.Char.IsFemale,'má','můj')] [guest.Custom2('RelationToMe', ROOT.Char )|U] a "
  feast_default.6410.segway: "„[ROOT.Char.Custom('CZ_TitledFirstName_V')], "
- feast_default.6410.desc.outro: "už nějakou dobu obdivuji tvůj odznak [my_badge.GetName] a říkám si, zda bys ho náhodou [Select_CString(ROOT.Char.IsFemale,'nechtěla','nechtěl')] vyměnit...“\n\nStydlivě vytahuje svůj odznak [their_badge.GetName] a pomalu s ním pohybuje, aby zachytil světlo v celé své nádheře.\n\n„Co říkáš?“ [guest.GetFirstNameNoTooltip] se na mě usmívá a přikyvuje."
+ feast_default.6410.desc.outro: "už nějakou dobu obdivuji tvůj odznak [my_badge.GetName] a říkám si, zda bys ho náhodou [Select_CString(ROOT.Char.IsFemale,'nechtěla','nechtěl')] vyměnit...„\n\nStydlivě vytahuje svůj odznak [their_badge.GetName] a pomalu s ním pohybuje, aby zachytil světlo v celé své nádheře.\n\n„Co říkáš?“ [guest.GetFirstNameNoTooltip] se na mě usmívá a přikyvuje."
  feast_default.6410.a: "„To zní spravedlivě!“"
  feast_default.6410.b: "„Hmm, raději ne.“"
  feast_default.6501.t: "Dvojsmysl"

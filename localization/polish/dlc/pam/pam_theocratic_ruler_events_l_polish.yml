@@ -6,8 +6,8 @@
  pam_theocratic_ruler_events.0001.c: "Do pokladnice, s vděčností a péčí."
  pam_theocratic_ruler_events.0001.b.success: "Boží cesty jsou nevyzpytatelné"
  pam_theocratic_ruler_events.0001.b.failure: "[Select_CString(subordinate_priest.IsFemale,'Kněžka','Kněz')] odmítá rozumné argumenty"
- pam_theocratic_ruler_events.0001.b.toast.success: "Přesvědčíš [Select_CString(subordinate_priest.IsFemale,'ji','ho')] a převezmeš odkaz."
- pam_theocratic_ruler_events.0001.b.toast.failure: "Dar si ponechá ve službě víře, kterou nám zvěstuje [ROOT.Char.GetFaith.HighGodName]."
+ pam_theocratic_ruler_events.0001.b.toast.success: "Přesvědčíš [Select_CString(subordinate_priest.IsFemale,'ji','ho')] a převezmeš odkaz." # todo: CHANGED MINOR
+ pam_theocratic_ruler_events.0001.b.toast.failure: "Dar si ponechá ve službě víře, kterou nám zvěstuje [ROOT.Char.GetFaith.HighGodName]." # todo: CHANGED MINOR
  pam_theocratic_ruler_events.0002.t: "Cestovatel ze sousední země"
  pam_theocratic_ruler_events.0002.desc: "[foreign_ruler.GetTitledFirstName], [Select_CString(foreign_ruler.IsFemale,'má sousedka a vyznavačka','můj soused a vyznavač')] starých tradic víry [foreign_ruler.GetFaith.GetName], [Select_CString(foreign_ruler.IsFemale,'vstoupila','vstoupil')] na mé území.\n\nMalá družina míří jinam, ale prochází tak blízko, že mi zvyklosti velí formálně ji při průjezdu pozdravit.\n\nJak ji mám přijmout?"
  pam_theocratic_ruler_events.0002.a: "Skromný dar a nabídka míru."
@@ -40,9 +40,9 @@
  pam_theocratic_ruler_events.0006.t: "Desátky, nebo milosrdenství"
  pam_theocratic_ruler_events.0006.desc: "[local_peasant_leader.GetTitledFirstName], [Select_CString(local_peasant_leader.IsFemale,'místní vůdkyně','místní vůdce')], je [Select_CString(local_peasant_leader.IsFemale,'předvedena','předveden')] přede mě. [Select_CString(local_peasant_leader.IsFemale,'Její','Jeho')] vesničané odmítli odvést církevní desátek a odvolávají se na těžké časy.\n\n„Zima byla krutá, [Select_CString(ROOT.Char.IsFemale,'má paní','můj pane')], a naše sýpky jsou téměř prázdné,“ naříká.\n\nVidím jen málo možností: tyto nespokojené duše musím buď zastrašit, nebo jim pomoci svým milosrdenstvím."
  pam_theocratic_ruler_events.0006.a: "Žádné výjimky. Zatkněte vůdce vzpoury."
- pam_theocratic_ruler_events.0006.a.tt: "Získáš [gold_i][EmptyScope.ScriptValue('minor_gold_value')|0], uvězníš [local_peasant_leader.Custom('CZ_ShortUINameNoTooltip_A')] a [troubled_county.GetName] získá na 5 let modifikátor #N Vynucené desátky#! (#N -20#! [Concept('county_opinion','lidové mínění')|EU])."
+ pam_theocratic_ruler_events.0006.a.tt: "Získáš [gold_i][EmptyScope.ScriptValue('minor_gold_value')|0], uvězníš [local_peasant_leader.Custom('CZ_ShortUINameNoTooltip_A')] a [troubled_county.GetName] získá na 5 let modifikátor #N Vynucené desátky#! (#N -20#! [Concept('popular_opinion','lidové mínění')|EU])." # todo: CHANGED (predtym: Získáš [gold_i][EmptyScope.ScriptValue('minor_gold_value')|0], uvězníš [local_peasant_leader.Custom('CZ_ShortUINameNoToo)
  pam_theocratic_ruler_events.0006.b: "Nechám to být. I milosrdenství může sloužit Bohu."
- pam_theocratic_ruler_events.0006.b.tt: "Získáš [piety_i][EmptyScope.ScriptValue('minor_piety_gain')|0] a [troubled_county.GetName] získá na 5 let modifikátor #P Milosrdné desátky#! (#P +20#! [Concept('county_opinion','lidové mínění')|EU])."
+ pam_theocratic_ruler_events.0006.b.tt: "Získáš [piety_i][EmptyScope.ScriptValue('minor_piety_gain')|0] a [troubled_county.GetName] získá na 5 let modifikátor #P Milosrdné desátky#! (#P +20#! [Concept('popular_opinion','lidové mínění')|EU])." # todo: CHANGED (predtym: Získáš [piety_i][EmptyScope.ScriptValue('minor_piety_gain')|0] a [troubled_county.GetName] získá na 5 let modifikátor P )
  pam_theocratic_ruler_events.0006.c: "[Select_CString(ROOT.Char.GetCouncillor('councillor_steward').IsFemale,'Má správkyně mě zklamala. Vina padá na ni.','Můj správce mě zklamal. Vina padá na něj.')]"
  pam_theocratic_ruler_events.0006.c.tt: "Pokud je to možné, získáš [Concept('hook','páku')|E] na [ROOT.Char.GetCouncillor('councillor_steward').Custom('CZ_ShortUINameNoTooltip_A')] (přednost má silnější páka ze závazku, je-li dostupná). [ROOT.Char.GetCouncillor('councillor_steward').GetShortUINameNoTooltip|U] [Select_CString(ROOT.Char.GetCouncillor('councillor_steward').IsLocalPlayer,'ztratíš','ztratí')] [Concept('opinion','mínění')|E] o tobě (#N -20#!, během 5 let se vytratí)."
  pam_theocratic_ruler_events.0007.t: "Blažená harmonie"
@@ -51,7 +51,7 @@
  pam_theocratic_ruler_events.0007.b: "Šiř evangelium spořádaného, bohabojného života."
  pam_theocratic_ruler_events.0007.c: "Jen naslouchat a mlčet."
  pam_theocratic_ruler_events.0008.t: "Kámen ke kameni"
- pam_theocratic_ruler_events.0008.desc: "Od chvíle, kdy jsem [Select_CString(ROOT.Char.IsFemale,'zdědila','zdědil')] hrad [CZProvName(stone_province,'N')] s opevněním [GetBuilding('curtain_walls_01').GetName], obdivuji jeho působivé kamenné zdivo, vystavěné pro světskou vládu. Potřebují věřící skutečně takovou obranu?\n\n[GetDomicileBuilding('episcopal_palace_01').GetName|U] na mém panství dosud nestojí v podobě hodné mého jména, a tesaný kámen je tu k dispozici."
+ pam_theocratic_ruler_events.0008.desc: "Od chvíle, kdy jsem [Select_CString(ROOT.Char.IsFemale,'zdědila','zdědil')] hrad [CZProvName(stone_province,'N')] s opevněním [GetBuildingType('outer_walls_1').GetName], obdivuji jeho působivé kamenné zdivo, vystavěné pro světskou vládu. Potřebují věřící skutečně takovou obranu?\n\n[GetDomicileBuilding('episcopal_palace_01').GetName|U] na mém panství dosud nestojí v podobě hodné mého jména, a tesaný kámen je tu k dispozici." # todo: CHANGED (predtym: Od chvíle, kdy jsem [Select_CString(ROOT.Char.IsFemale,'zdědila','zdědil')] hrad [CZProvName(stone_province,'N')] s opev)
  pam_theocratic_ruler_events.0008.a: "Přebytečný kámen z těchto primitivních hradeb mohu využít."
  pam_theocratic_ruler_events.0008.b: "Strhněte hradby. Na mém panství vyroste [GetDomicileBuilding('episcopal_palace_01').GetNameNoTooltip]."
  pam_theocratic_ruler_events.0008.c: "Každé dílo lidských rukou je zviditelněnou modlitbou."
@@ -88,16 +88,16 @@
  pam_theocratic_ruler_events.0012.b: "Ukaž mi ty háje."
  pam_theocratic_ruler_events.0012.b.success: "Tví muži se později vrátí pro dřevo"
  pam_theocratic_ruler_events.0012.b.failure: "[grove_subject.GetShortUINameNoTooltip|U] [Select_CString(grove_subject.IsLocalPlayer,'prohlédneš','prohlédne')] tvou lest"
- pam_theocratic_ruler_events.0012.b.toast.success: "Starobylé stromy byly odvezeny a prodány."
- pam_theocratic_ruler_events.0012.b.toast.failure: "[grove_subject.GetShortUINameNoTooltip|U] [Select_CString(grove_subject.IsLocalPlayer,'rozhlásíš','rozhlásí')], že jsi [Select_CString(ROOT.Char.IsFemale,'znesvětila','znesvětil')] posvátné místo."
+ pam_theocratic_ruler_events.0012.b.toast.success: "Starobylé stromy byly odvezeny a prodány." # todo: CHANGED MINOR
+ pam_theocratic_ruler_events.0012.b.toast.failure: "[grove_subject.GetShortUINameNoTooltip|U] [Select_CString(grove_subject.IsLocalPlayer,'rozhlásíš','rozhlásí')], že jsi [Select_CString(ROOT.Char.IsFemale,'znesvětila','znesvětil')] posvátné místo." # todo: CHANGED MINOR
  pam_theocratic_ruler_events.0012.c: "Tato pustina páchne ďáblem."
  pam_theocratic_ruler_events.0013.t: "Andělská inspirace"
  pam_theocratic_ruler_events.0013.desc: "Při dnešní mši se nad hlas kantora vznesl hlas, jako by jej zasáhla božská inspirace. Byl jasný a svou krásou nadpozemský.\n\nVěřící ztichnou, když [angelic_singer.GetTitledFirstName] začne zpívat, a ještě dlouho poté, co dozněla poslední nota, se přistihnu, jak naslouchám."
  pam_theocratic_ruler_events.0013.a: "„Tvůj dar ti svěřuje [ROOT.Char.GetFaith.HighGodName]. Slož sliby a dej se do služby.“"
  pam_theocratic_ruler_events.0013.a.success: "Tvá slova [Select_CString(angelic_singer.IsFemale,'ji','ho')] přimějí oddat se víře"
  pam_theocratic_ruler_events.0013.a.failure: "[angelic_singer.GetShortUINameNoTooltip|U] se přesvědčit [Select_CString(angelic_singer.IsLocalPlayer,'nenecháš','nenechá')]"
- pam_theocratic_ruler_events.0013.a.toast.success: "[angelic_singer.GetShortUINameNoTooltip|U] [Select_CString(angelic_singer.IsLocalPlayer,'složíš sliby a připojíš se','složí sliby a připojí se')] k tvému dvoru."
- pam_theocratic_ruler_events.0013.a.toast.failure: "[angelic_singer.GetShortUINameNoTooltip|U] [Select_CString(angelic_singer.IsLocalPlayer,'odmítneš a odejdeš','odmítne a odejde')]."
+ pam_theocratic_ruler_events.0013.a.toast.success: "[angelic_singer.GetShortUINameNoTooltip|U] [Select_CString(angelic_singer.IsLocalPlayer,'složíš sliby a připojíš se','složí sliby a připojí se')] k tvému dvoru." # todo: CHANGED MINOR
+ pam_theocratic_ruler_events.0013.a.toast.failure: "[angelic_singer.GetShortUINameNoTooltip|U] [Select_CString(angelic_singer.IsLocalPlayer,'odmítneš a odejdeš','odmítne a odejde')]." # todo: CHANGED MINOR
  pam_theocratic_ruler_events.0013.b: "Zůstaň mým hostem. [Select_CString(ROOT.Char.IsFemale,'Ráda bych ten hlas znovu slyšela.','Rád bych ten hlas znovu slyšel.')]"
  pam_theocratic_ruler_events.0013.c: "Ať zpívají naši pěvci."
  pam_theocratic_ruler_events.0014.t: "Prosba obrácence"
@@ -111,12 +111,42 @@
  pam_theocratic_ruler_events.0014.c.tt: "Tvůj příští příspěvek #V $great_project_type_pam_mass_rite_conversion_contribution_integrate_existing_rituals$#! na [Concept('great_project','velký projekt')|E] [GetGreatProjectType('pam_mass_rite_conversion').GetName|V] bude zdarma."
  pam_theocratic_ruler_events.0014.d: "Vede snad ovce svého pastýře?"
  pam_theocratic_ruler_events_0014_mass_conversion_discount_desc: "Prosba obrácence"
- pam_theocratic_ruler_events.0015.t: "Vedení nástupců"
+ pam_theocratic_ruler_events.0015.t: "Připravenost vládnout" # todo: CHANGED (predtym: Vedení nástupců)
  pam_theocratic_ruler_events.0015.desc: "Po mé smrti bude stolice potřebovat pastýře, který dokáže vést lid v modlitbách i při vynášení rozsudků. [succession_heir_first.GetTitledFirstName], první v pořadí nástupnictví, a [succession_heir_second.GetTitledFirstName], hned na druhém místě, přicházejí na mé zavolání, aby přede mnou v soukromí předříkávali Písmo svaté.\n\nNěkdo z nich zdědí mé břímě a dnes nemohu stejnou měrou formovat oba.\n\n„Mé děti ve víře. Ukažte mi nejen to, co jste se naučily nazpaměť, ale i to, co jste přijaly za své.“"
  pam_theocratic_ruler_events.0015.a: "Vyučím [succession_heir_first.Custom('CZ_FirstNameNoTooltip_A')] Písmu svatému."
  pam_theocratic_ruler_events.0015.b: "Provedu [succession_heir_second.Custom('CZ_FirstNameNoTooltip_A')] posvátnými texty."
  pam_theocratic_ruler_events.0015.c: "Ještě jsem [Select_CString(ROOT.Char.IsFemale,'pastýřkou','pastýřem')] já. Recitovat budu [Select_CString(ROOT.Char.IsFemale,'sama','sám')]."
  pam_theocratic_ruler_events.0015.c.success: "Tvá učenost předčí jejich recitaci"
  pam_theocratic_ruler_events.0015.c.failure: "Zadrhneš se u pasáže, kterou znají nazpaměť"
- pam_theocratic_ruler_events.0015.c.toast.success: "Tvá znalost učení na ně zapůsobí."
- pam_theocratic_ruler_events.0015.c.toast.failure: "Tví podřízení si vymění pohledy nad tvou chybou."
+ pam_theocratic_ruler_events.0015.c.toast.success: "Tvá znalost učení na ně zapůsobí." # todo: CHANGED MINOR
+ pam_theocratic_ruler_events.0015.c.toast.failure: "Tví podřízení si vymění pohledy nad tvou chybou." # todo: CHANGED MINOR
+ pam_theocratic_ruler_events.0016.t: "Biskupové lámou chléb" # todo: NEW TRANSLATION
+ pam_theocratic_ruler_events.0016.desc: "Po svém posledním kázání zvu své [Concept('subordinates','podřízení')|E] [subordinate_bishop_1.Custom('CZ_TitledFirstName_A')] a [subordinate_bishop_2.Custom('CZ_TitledFirstName_A')] ke svému stolu.\n\nLámání chleba a sdílení poháru vína brzy přejde k Písmu, farním účtům a břemenům, která nese každý pastýř duší [ROOT.Char.GetFaith.GetAdjectiveNoTooltip].\n\n„Duchovní, podobně jako učedníci, i my máme své společenství.“" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ pam_theocratic_ruler_events.0016.a: "[friend_subordinate_bishop.Custom('CZ_TitledFirstName_V')], budu se opírat o tvou podporu." # todo: NEW TRANSLATION, CHECK FORMAT # todo: FORMAT chýba [friend_subordinate_bishop.GetFirstName]; navyše [friend_subordinate_bishop.GetTitledFirstName]
+ pam_theocratic_ruler_events.0016.b: "Pohovořme o tom, jak spravovat farnost." # todo: NEW TRANSLATION
+ pam_theocratic_ruler_events.0016.b.success: "Vaše rady bystří jejich úsudek" # todo: NEW TRANSLATION
+ pam_theocratic_ruler_events.0016.b.failure: "Ne každé slovo vede k moudrosti" # todo: NEW TRANSLATION
+ pam_theocratic_ruler_events.0016.b.toast.success: "Společenství vede k poznání" # todo: NEW TRANSLATION
+ pam_theocratic_ruler_events.0016.b.toast.failure: "Diskuse přeroste v rozkol" # todo: NEW TRANSLATION
+ pam_theocratic_ruler_events.0016.c: "Pověz mi více o [shared_tenet.GetBaseNameNoTooltip]." # todo: NEW TRANSLATION
+ pam_theocratic_ruler_events.0016.d: "Můžeš se mi svěřit se svými břemeny." # todo: NEW TRANSLATION
+ friend_broke_bread_over_faith_reason: "[CHARACTER.GetShortUIName|U] lámal chléb s [TARGET_CHARACTER.Custom('CZ_ShortUIName_I')] a vřele hovořil o víře." # todo: NEW TRANSLATION
+ friend_broke_bread_over_faith_reason_corresponding: "[TARGET_CHARACTER.GetShortUIName|U] lámal chléb s [CHARACTER.Custom('CZ_ShortUIName_I')] a vřele hovořil o víře." # todo: NEW TRANSLATION
+ pam_theocratic_ruler_events.0017.t: "Upřímné úmysly" # todo: NEW TRANSLATION
+ pam_theocratic_ruler_events.0017.desc: "Můj [chancellor.GetCouncilTitle] [chancellor.GetTitledFirstName] mě po zasedání rady vyhledá s dopisem od [church_authority.Custom('CZ_TitledFirstName_G')], který stále drží v [Select_CString(chancellor.IsFemale,'její','jeho')] rukou.\n\n„[church_authority.GetTitledFirstNameNoTooltip] si všiml vašeho úsilí [GetDecision('pam_shape_the_christian_church_decision').GetName]. [church_authority.GetSheHe|U] je zvědavý na vaše zapojení a na to, jaké máte úmysly.“" # todo: NEW TRANSLATION
+ pam_theocratic_ruler_events.0017.a: "Mohl bych toho udělat mnohem víc." # todo: NEW TRANSLATION
+ pam_theocratic_ruler_events.0017.a.cooldown_tt: "[GetDecision('pam_shape_the_christian_church_decision').GetName] [Concept('decision','Rozhodnutí')|E] už pro mě není v prodlevě." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ pam_theocratic_ruler_events.0017.b: "Mým úmyslem je vždy chválit [ROOT.Char.GetFaith.HighGodName]." # todo: NEW TRANSLATION
+ pam_theocratic_ruler_events.0017.c: "Nikdo nezpochybňuje mé přesvědčení." # todo: NEW TRANSLATION
+ pam_theocratic_ruler_events.0018.t: "Biskup, nebo obchodník" # todo: NEW TRANSLATION
+ pam_theocratic_ruler_events.0018.desc: "Můj [Concept('subordinate','podřízený')|E] [political_bishop.GetTitledFirstName] popisuje [Select_CString(political_bishop.IsFemale,'její','jeho')] nejnovější pokrok.\n\n„A pak jsem zprostředkoval dohodu s místními cechy. Jejich cena za kadidlo a jemné látky byla očividně přemrštěná.“\n\nTo vše odpovídá pověstem, že [political_bishop.GetSheHe] zanedbává [Select_CString(political_bishop.IsFemale,'její','jeho')] duchovní povinnosti a v srdci se z něj stal obchodník." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ pam_theocratic_ruler_events.0018.a: "Pochval [Select_CString(political_bishop.IsFemale,'její','jeho')] světské obchody." # todo: NEW TRANSLATION
+ pam_theocratic_ruler_events.0018.b: "Požaduj návrat k duchovním povinnostem." # todo: NEW TRANSLATION
+ pam_theocratic_ruler_events.0019.t: "Uprostřed nepřátelství" # todo: NEW TRANSLATION
+ pam_theocratic_ruler_events.0019.desc: "Ocitl jsem se mezi dvěma mocnými, kteří se navzájem nesnesou. [animosity_liege.Custom('CZ_TitledFirstName_G')] a [animosity_superior.Custom('CZ_TitledFirstName_G')] nechali své vzájemné pohrdání přerůst v otevřenou hádku.\n\nKaždý očekává mou loajalitu a každý sleduje, na čí straně budu stát. Dát přednost jednomu znamená urazit druhého, přičemž oba mají moc nad mými zeměmi i mým posláním." # todo: NEW TRANSLATION
+ pam_theocratic_ruler_events.0019.a: "Otevřeně se postav na stranu [animosity_liege.Custom('CZ_TitledFirstName_G')]." # todo: NEW TRANSLATION
+ pam_theocratic_ruler_events.0019.b: "Věnuj své kázání [animosity_superior.Custom('CZ_TitledFirstName_D')]." # todo: NEW TRANSLATION
+ pam_theocratic_ruler_events.0019.c: "Potají přiživuj jejich svár." # todo: NEW TRANSLATION
+ pam_theocratic_ruler_events.0019.c.flavor: "Šeptání do správných uší nic nestojí a z jejich nesváru se mohu poučit." # todo: NEW TRANSLATION
+ pam_theocratic_ruler_events.0019.d: "Pomoz jim najít společnou řeč." # todo: NEW TRANSLATION
+ pam_theocratic_ruler_events.0019.d.flavor: "Trpělivé slovo ke každému z nich by ještě mohlo zchladit jejich hněv." # todo: NEW TRANSLATION

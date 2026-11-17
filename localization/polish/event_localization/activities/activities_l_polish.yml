@@ -46,10 +46,14 @@
  bloody_wedding_activity_cost_desc: "$wedding_type_bloody$"
  activity_feast_desc: "Upevni pouta věrnosti tím, že pozveš vazaly a sousedy do svých síní, aby jedli, pili a veselili se!\n\nHostiny pořádané ve správnou chvíli pomohou udržet tvé panství stabilní, uklidní poddané a otevřou cestu k novým přátelstvím."
  activity_feast_owner: "Hostitel"
- activity_feast_destination_selection: "Vybrané hrabství získá na 5 let modifikátor [GetModifier( 'feast_recent_fest_modifier' ).GetNameWithTooltip|L]."
- activity_feast_selection_tooltip: "Uspořádej velkolepou hostinu a upevni své vztahy\n\nOčekávané odměny:\n$BULLET_WITH_TAB$[opinion_i] [Concept('opinion','mínění')|E]\n$BULLET_WITH_TAB$[stress_loss_i] [Concept('stress_loss','úbytek stresu')|E]"
+ activity_feast_destination_selection: "Vybrané [Concept('county','hrabství')|E] získá [GetModifier( 'feast_recent_fest_modifier' ).GetNameWithTooltip|L] na #V 5 let#!." # todo: CHANGED (predtym: Vybrané hrabství získá na 5 let modifikátor [GetModifier( 'feast_recent_fest_modifier' ).GetNameWithTooltip|L].) # todo: CONCEPT CASE
+ activity_feast_selection_tooltip: "Uspořádej velkolepou hostinu a upevni své vztahy\n\nOčekávané odměny:\n$BULLET_WITH_TAB$[Concept('prestige_i','@prestige_icon!')|E] [Concept('prestige','Prestiž')|E]\n$BULLET_WITH_TAB$[opinion_i] [Concept('opinion','mínění')|E]\n$BULLET_WITH_TAB$[stress_loss_i] [Concept('stress_loss','úbytek stresu')|E]\n$BULLET_WITH_TAB$@reveler_trait_icon! [GetTrait('lifestyle_reveler').GetName( GetNullCharacter )] [Concept('trait','Rys')|E][SelectLocalization( GetPlayer.GetGovernment.HasGovernmentFlag( 'government_is_merchant' ), 'activity_feast_expertise_desc', '' )]" # todo: CHANGED (predtym: Uspořádej velkolepou hostinu a upevni své vztahy\n\nOčekávané odměny:\n$BULLET_WITH_TAB$[opinion_i] [Concept('opinion',') # todo: CONCEPT CASE
  activity_feast_amenity_effect: "$BULLET_WITH_TAB$Odměny se zvyšují podle úrovně stravy v rámci [Concept('court_amenities','dvorského komfortu')|E]"
- activity_feast_host_desc: "$BULLET_WITH_TAB$Můžeš získat [Concept('opinion','mínění')|E] [Concept('vassal','vazalů')|E] s postojem [GetVassalStance( 'courtly' ).GetTextIcon][GetVassalStance( 'courtly' ).GetName]\n$BULLET_WITH_TAB$Můžeš získat [prestige_i][Concept('prestige','prestiž')|E]\n$BULLET_WITH_TAB$Můžeš získat [legitimacy_i] [Concept('legitimacy','legitimitu')|E]\n$BULLET_WITH_TAB$Účastníci si mohou zlepšit [Concept('opinion','mínění')|E] přítomných postav\n$BULLET_WITH_TAB$Účastníci si mohou snížit [stress_loss_i][Concept('stress','stres')|E]\n$BULLET_WITH_TAB$Účastníci mohou získat [GetTrait('lifestyle_reveler').GetName( GetNullCharacter )] [Concept('trait','rys')|E]\n[SelectLocalization( HasDlcFeature( 'royal_court' ), 'activity_feast_amenity_effect', 'blank_line' )]"
+ activity_feast_host_desc: "[SelectLocalization( ROOT.Char.GetGovernment.HasGovernmentFlag( 'government_is_merchant' ), 'activity_feast_guest_opinion_desc', 'activity_feast_courtly_opinion_desc' )]\n$BULLET_WITH_TAB$Můžeš získat [prestige_i][Concept('prestige','prestiže')|E][SelectLocalization( ROOT.Char.ShouldShowLegitimacy, 'activity_feast_legitimacy_desc', '' )]\n$BULLET_WITH_TAB$Účastníci si mohou zlepšit mínění ostatních [Concept('activity_guests_short_possessive','hostů')|E] [opinion_i] [Concept('opinion','mínění')|E]\n$BULLET_WITH_TAB$Účastníci si mohou snížit [stress_loss_i][Concept('stress','stres')|E]\n$BULLET_WITH_TAB$@reveler_trait_icon! [GetTrait('lifestyle_reveler').GetName( GetNullCharacter )] [Concept('trait','Rys')|E] / [Concept('trait_level_track_xp','zkušenosti rysu')|E][SelectLocalization( GetPlayer.GetGovernment.HasGovernmentFlag( 'government_is_merchant' ), 'activity_feast_expertise_desc', '' )]\n[SelectLocalization( HasDlcFeature( 'royal_court' ), 'activity_feast_amenity_effect', 'blank_line' )]" # todo: CHANGED (predtym: $BULLET_WITH_TAB$Můžeš získat [Concept('opinion','mínění')|E] [Concept('vassal','vazalů')|E] s postojem [GetVassalStance) # todo: CONCEPT CASE
+ activity_feast_courtly_opinion_desc: "$BULLET_WITH_TAB$Může zlepšit [GetVassalStance( 'courtly' ).GetTextIcon][GetVassalStance( 'courtly' ).GetName] [Concept('vassals_possessive','vazalů')|E] [opinion_i|E] [Concept('opinion','mínění')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ activity_feast_guest_opinion_desc: "$BULLET_WITH_TAB$Může zlepšit [Concept('activity_guest_short','host')|E] [opinion_i] [Concept('opinion','mínění')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ activity_feast_legitimacy_desc: "\n$BULLET_WITH_TAB$Může získat [legitimacy_i] [Concept('legitimacy','legitimity')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ activity_feast_expertise_desc: "\n$BULLET_WITH_TAB$[GetTradeGoodCategory('trade_category_alcohol').GetNameWithIcon] [Concept('trade_expertise','Obchodní zkušenost')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  activity_feast_conclusion_desc: "[GetActivityType( 'activity_feast' ).GetName] skončila"
  activity_feast_magnificence_greagarious_desc: "Tvůj věhlas jako [GetTrait('lifestyle_reveler').GetName( GetNullCharacter )] je legendární"
  feast_recent_fest_modifier: "Velkolepá hostina"
@@ -83,11 +87,14 @@
  feast_cost_discount_doges_palace: "Místo má $building_type_doges_palace_01$"
  feast_cost_discount_ghana_palace: "Místo má $building_type_ghana_palace_01$"
  feast_cost_discount_kyz_kala: "Místo má $building_type_kyz_kala_01$"
- feast_cost_discount_palace_of_aachen: "Místo má $building_palace_of_aachen_01$"
- feast_cost_discount_alhambra: "Místo má $building_alhambra_02$"
- feast_cost_discount_citadel_of_aleppo: "Místo má $building_citadel_of_aleppo_02$"
- feast_cost_discount_theodosian_walls: "Místo má $building_theodosian_walls_01$"
+ feast_cost_discount_public_opinion: "Oblíbený režim" # todo: NEW TRANSLATION
+ feast_cost_discount_palace_of_aachen: "Místo má $palace_of_aachen_01$" # todo: CHANGED (predtym: Místo má $building_palace_of_aachen_01$)
+ feast_cost_discount_alhambra: "Místo má $alhambra_02$" # todo: CHANGED (predtym: Místo má $building_alhambra_02$)
+ feast_cost_discount_citadel_of_aleppo: "Místo má $citadel_of_aleppo_02$" # todo: CHANGED (predtym: Místo má $building_citadel_of_aleppo_02$)
+ feast_cost_discount_theodosian_walls: "Místo má $theodosian_walls_01$" # todo: CHANGED (predtym: Místo má $building_theodosian_walls_01$)
  feast_cost_discount_hall_of_heroes: "Místo má $building_type_hall_of_heroes_01$"
+ feast_cost_discount_harvest_festivals: "Místo má $harvest_festivals$" # todo: NEW TRANSLATION
+ feast_cost_discount_royal_great_hall: "Místo má $building_type_royal_great_hall_1$" # todo: NEW TRANSLATION
  feast_cost_discount_transubstantiation: "[Concept('personal_tenet','Osobní zásada')|E]: $tenet_transubstantiation_default_name$"
  activity_feast_province_desc_theodosian_walls: "#P +++ $building_type_theodosian_walls_01$#!\n"
  activity_feast_province_desc_hall_of_heroes: "#P +++ $building_type_hall_of_heroes_01$#!\n"
@@ -97,6 +104,7 @@
  activity_feast_province_desc_ghana_palace_01: "#P +++ $building_type_ghana_palace_01$#!\n"
  activity_feast_province_desc_kyz_kala_01: "#P +++ $building_type_kyz_kala_01$#!\n"
  activity_feast_province_desc_leisure_palace: "#P +++ $building_type_leisure_palace_01$#!\n"
+ activity_feast_province_desc_royal_great_hall: "#P ++ $building_type_royal_great_hall_1$#!\n" # todo: NEW TRANSLATION
  activity_feast_province_desc_alhambra: "#P +++ $building_type_alhambra_01$#!\n"
  activity_feast_province_desc_farm_estates: "#P ++ $building_type_farm_estates_01$#!\n"
  activity_feast_province_desc_paddy_fields: "#P ++ $building_type_paddy_fields_01$#!\n"
@@ -120,7 +128,7 @@
  food_bad_reward_tt_title: "$final_reward_tt$"
  food_bad_reward_tt: "Složitost pokrmů hosty zklamala"
  court_musician_increased_opinion_tt_title: "$court_musician_increased_opinion_tt$"
- court_musician_increased_opinion_tt: "[first.GetShortUINameNoTooltip] baví účastníky hrou na hudební nástroje."
+ court_musician_increased_opinion_tt: "[CHARACTER.GetShortUINameNoTooltip] baví účastníky hrou na hudební nástroje." # todo: CHANGED (predtym: [first.GetShortUINameNoTooltip] baví účastníky hrou na hudební nástroje.)
  not_poor_health_tt: "[Concept('health','Zdraví')|E] je #V Špatné#! nebo horší"
  activity_feast_guest_help_text: "Všichni pozvaní [Concept('activity_guests','hosté aktivity')|E] budou mít příležitost zapojit se do dění s ostatními účastníky a zlepšit si jejich [Concept('opinion','mínění')|E].\n\nHostiny jsou také ideální příležitostí jednoduše si odpočinout a zbavit se části [Concept('stress','stresu')|E]."
  murder_feast_failed_tt_title: "Neúspěšná vražda"
@@ -162,7 +170,7 @@
  activity_gruesome_festival_selection_tooltip: "Pozvi své poddané k účasti na posvátném a nákladném obřadu"
  activity_gruesome_festival_desc: "Je nejvyšší čas, aby se všichni mí poddaní sešli ke společné oběti pro [GetPlayer.GetFaith.PantheonTerm]. Tyto obřady nejen stmelují věřící, ale také potvrzují mé postavení coby [GetPlayer.GetTitleAsNameNoTooltip] celé země."
  activity_gruesome_festival_owner: "Hostitel"
- activity_gruesome_festival_host_desc: "\nUspořádáš $gruesomefestivalname_blot$, jehož součástí je:\n#indent_newline:0 $EFFECT_LIST_BULLET$ Určení rozsahu slavnosti\n#indent_newline:0 $EFFECT_LIST_BULLET$ Výběr toho, co bude obětováno, včetně možnosti zvolit jednoho ze svých [Concept('prisoners','vězňů')|E] jako [Concept('designate_chief_sacrifice_chief_sacrifice','hlavní oběť')|E]\n#indent_newline:0 $EFFECT_LIST_BULLET$ Získávání či ztrácení [Concept('county_opinion','lidového mínění')|E] a [Concept('opinion','mínění')|E] [Concept('character','postav')|E] podle [Concept('core_tenets','zásad')|E] [Concept('faith','víry')|E] tvých poddaných"
+ activity_gruesome_festival_host_desc: "\nUspořádáš $gruesomefestivalname_blot$, jehož součástí je:\n#indent_newline:0 $EFFECT_LIST_BULLET$ Určení rozsahu slavnosti\n#indent_newline:0 $EFFECT_LIST_BULLET$ Výběr toho, co bude obětováno, včetně možnosti zvolit jednoho ze svých [Concept('prisoners','vězňů')|E] jako [Concept('designate_chief_sacrifice_chief_sacrifice','hlavní oběť')|E]\n#indent_newline:0 $EFFECT_LIST_BULLET$ Získávání či ztrácení [Concept('popular_opinion','lidového mínění')|E] a [Concept('opinion','mínění')|E] [Concept('character','postav')|E] podle [Concept('core_tenets','zásad')|E] [Concept('faith','víry')|E] tvých poddaných" # todo: CHANGED (predtym: \nUspořádáš $gruesomefestivalname_blot$, jehož součástí je:\n indent_newline:0 $EFFECT_LIST_BULLET$ Určení rozsahu slavn)
  activity_gruesome_festival_guest_help_text: "Pozvaní [Concept('guests','hosté')|E] se zúčastní oběti a následné hostiny. Jejich [Concept('opinion','mínění')|E] o tobě se zlepší nebo zhorší podle [Concept('core_tenets','zásad')|E] jejich [Concept('faith','víry')|E]."
  activity_gruesome_festival_province_desc: "$gruesome_festival_size_small_desc$"
  activity_gruesome_festival_fallback_name: "Rituální oběť"
@@ -232,6 +240,7 @@
  activity_pilgrimage.is_valid.hajjed_recently: "Na hadždž se můžeš vydat pouze jednou za [EmptyScope.ScriptValue('hajj_cooldown_value')|0] let"
  ACTIVITY_TYPE_ON_COOLDOWN: "@warning_icon! #X Tuto aktivitu nelze pořádat po dobu [DATE.GetTimeToDate()]#!"
  is_activity_type_on_cooldown: "Tuto aktivitu nelze pořádat po dobu [DATE.GetTimeToDate()]"
+ not_is_activity_type_on_cooldown_third: "[CZProDrop(CHARACTER,'nemůže','nemůže')|U] pořádat tuto aktivitu po dobu [DATE.GetTimeToDate()]" # todo: NEW TRANSLATION
  is_healthy_tt: "Zdraví je v pořádku"
  level_5_reward_tt_title: "Konec turné"
  level_4_reward_tt_title: "$level_5_reward_tt_title$"
@@ -240,13 +249,14 @@
  level_1_reward_tt_title: "$level_5_reward_tt_title$"
  failed_to_get_reward_tt_title: "Nepodařilo se získat žádné odměny"
  tournament_activity_cost_discount_war_camps_desc: "Místo má $building_type_war_camps_01$"
+ tournament_activity_cost_discount_martial_festivals_desc: "Místo má $martial_festivals$" # todo: NEW TRANSLATION
  tournament_activity_cost_discount_barracks_desc: "Místo má $building_type_barracks_01$"
  tournament_activity_cost_max_discount_desc: "Místo má $building_type_hall_of_heroes_01$"
  tournament_melee_contest_cost_discount_desc: "Místo má $building_type_royal_armory_01$"
  tournament_melee_contest_cost_low_discount_desc: "$tournament_joust_contest_cost_low_discount_desc$"
  tournament_duel_contest_cost_discount_desc: "Místo má $building_type_blacksmiths_01$"
  tournament_duel_contest_cost_low_discount_desc: "Místo má $building_type_smiths_01$"
- tournament_wrestling_contest_cost_discount_desc: "Místo má $building_type_regimental_grounds_01$"
+ tournament_wrestling_contest_cost_discount_desc: "Místo má $building_type_royal_knights_hall_1$" # todo: CHANGED (predtym: Místo má $building_type_regimental_grounds_01$)
  tournament_wrestling_contest_cost_low_discount_desc: "Místo má $building_type_regimental_grounds_01$"
  tournament_archery_contest_cost_discount_desc: "Místo má $building_type_archery_ranges_01$"
  tournament_archery_contest_cost_low_discount_desc: "Místo má $building_type_military_camps_01$"
@@ -255,7 +265,7 @@
  tournament_horse_racing_contest_cost_discount_desc: "$tournament_joust_contest_cost_discount_desc$"
  tournament_horse_racing_contest_cost_low_discount_desc: "$tournament_joust_contest_cost_low_discount_desc$"
  tournament_board_games_contest_cost_discount_desc: "Místo má $building_type_generic_university$"
- tournament_board_games_contest_cost_low_discount_desc: "Místo má $building_type_warrior_lodges_01$"
+ tournament_board_games_contest_cost_low_discount_desc: "Místo má $building_type_royal_palace_library_1$" # todo: CHANGED (predtym: Místo má $building_type_warrior_lodges_01$)
  tournament_recital_contest_cost_discount_desc: "$tournament_board_games_contest_cost_discount_desc$"
  tournament_recital_contest_cost_low_discount_desc: "$tournament_board_games_contest_cost_low_discount_desc$"
  increased_activity_cost: "Cena [Concept('activities','aktivit')|E]: [gold_i]#negative_value +25%#!"
@@ -264,6 +274,7 @@
  activity_tournament_predicted_cost: "Kolik bude [GetActivityType( 'activity_tournament' ).GetNameNoTooltip] stát, závisí především na počtu [Concept('contests','soutěží')|E], které se rozhodneš uspořádat, a na zvolených [Concept('activity_options','možnostech aktivity')|E]."
  activity_tour_predicted_cost: "Kolik bude [GetActivityType( 'activity_tour' ).GetNameNoTooltip] stát, závisí především na počtu [Concept('tour_stops','zastávek turné')|E], které se rozhodneš uskutečnit, a na zvolených [Concept('activity_options','možnostech aktivity')|E]."
  activity_wedding_predicted_cost: "Kolik bude [GetActivityType( 'activity_wedding' ).GetNameNoTooltip] stát, závisí především na zvolených [Concept('activity_options','možnostech aktivity')|E]."
+ activity_carnival_predicted_cost: "Náklady na [GetActivityType( 'activity_carnival' ).GetNameNoTooltip] ovlivňuje především [Concept('activity_type','typ aktivity')|E] [Concept('activity_options','možností aktivity')|E], které vybereš." # todo: NEW TRANSLATION # todo: CONCEPT CASE
  activity_hunt_predicted_cost: "Kolik bude [GetActivityType( 'activity_hunt' ).GetNameNoTooltip] stát, závisí především na [Concept('activity_type','typu aktivity')|E] a zvolených [Concept('activity_options','možnostech aktivity')|E]. Například sokolnické lovy jsou dražší."
  activity_feast_predicted_cost: "Kolik bude [GetActivityType( 'activity_feast' ).GetNameNoTooltip] stát, závisí především na [Concept('activity_type','typu aktivity')|E] a zvolených [Concept('activity_options','možnostech aktivity')|E]. Například vražedné hostiny jsou výrazně dražší než běžné hostiny."
  activity_pilgrimage_predicted_cost: "Kolik bude [GetActivityType( 'activity_pilgrimage' ).GetNameNoTooltip] stát, závisí především na vzdálenosti ke zvolenému [Concept('holy_site','posvátnému místu')|E] a na zvolených [Concept('activity_options','možnostech aktivity')|E]."

@@ -67,9 +67,9 @@
  coronation_events.6011.c: "„Bojuj se mnou, nejstatečnější duše [loyal_vassal.GetCulture.GetName] kultury!“"
  coronation_events.6011.d_house: "„Rod [ROOT.Char.GetHouse.GetName|U] brání toto panství.“"
  coronation_events.6011.d: "„Odpočívej. Bdít je má povinnost jako [ROOT.Char.GetTitleAsNameNoTooltip].“"
- mass_mob_dev_tt: "Každé [Concept('county','hrabství')|E] v [Concept('domain','doméně')|E], kterou drží [supporter.GetShortUIName], má [Concept('development','rozvoj')|E] snížený o #N [supporter.MakeScope.Var('mass_mobilitization_development_value').GetValue|0]#!"
+ mass_mob_pros_tt: "V každém [Concept('county','hrabství')|E] v [Concept('domain','doméně')|E] [supporter.Custom('CZ_ShortUIName_G')] se [Concept('prosperity','prosperita')|E] sníží o #N [supporter.MakeScope.Var('mass_mobilitization_prosperity_value').GetValue|0]#!" # todo: NEW TRANSLATION
  mass_mob_fertility_tt: "Každé [Concept('county','hrabství')|E] v [Concept('domain','doméně')|E], kterou drží [supporter.GetShortUIName], má [Concept('county_fertility','úrodnost hrabství')|E] sníženou o #N [supporter.MakeScope.Var('mass_mobilitization_fertility_value').GetValue|0]#!"
- mass_mob_dev_progress_tt: "Každé [Concept('county','hrabství')|E] v [Concept('domain','doméně')|E], kterou drží [supporter.GetShortUIName], má [Concept('development_growth','růst rozvoje')|E] snížený o #N [supporter.MakeScope.Var('mass_mobilitization_development_progress_value').GetValue|0]#!"
+ mass_mob_pros_progress_tt: "V každém [Concept('county','hrabství')|E] v [Concept('domain','doméně')|E] [supporter.Custom('CZ_ShortUIName_G')] se [Concept('prosperity_growth','růst prosperity')|E] sníží o #N [supporter.MakeScope.Var('mass_mobilitization_prosperity_progress_value').GetValue|0]#!" # todo: NEW TRANSLATION
  coronation_mobilized_army_name: "Velká hotovost [host.GetTitleAsNameNoTooltip]"
  coronation_supporter_declare_war_tt: "[supporter.GetShortUIName] zahájí válku proti [foe.GetShortUIName] o [title_claim_1.Custom('CZ_LandedName_A')]"
  coronation_supporter_declare_war_no_title_tt: "[supporter.GetShortUIName] zahájí válku proti [foe.GetShortUIName]"
@@ -404,6 +404,7 @@
  coronation_piety_harmed_by_sinful_traits: "#weak [Concept('piety','Zbožnost')|E] snížena kvůli hříšným, opovrhovaným nebo zločinným [Concept('traits','rysům')|E]#!"
  coronation_piety_improved_by_piety_level: "#weak [Concept('piety','Zbožnost')|E] zvýšena díky [Concept('piety_level','úrovni oddanosti')|E]#!"
  coronation_piety_harmed_by_piety_level: "#weak [Concept('piety','Zbožnost')|E] snížena kvůli [Concept('piety_level','úrovni oddanosti')|E]#!"
+ coronation_piety_improved_by_anointment: "#weak [Concept('piety','zbožnost')|E] zvýšena díky #high Pomazání#! při [Concept('coronation','korunovaci')|E]#!" # todo: NEW TRANSLATION
  coronation_prestige_improved_by_supporters: "#weak [Concept('prestige','Prestiž')|E] zvýšena díky [Concept('coronation_supporters','podporovatelům')|E]#!"
  coronation_prestige_harmed_by_detractors: "#weak [Concept('prestige','Prestiž')|E] snížena kvůli [Concept('coronation_detractors','odpůrcům')|E]#!"
  coronation_prestige_harmed_by_factions: "#weak [Concept('prestige','Prestiž')|E] snížena kvůli nepřátelským [Concept('factions','frakcím')|E]#!"
@@ -412,9 +413,10 @@
  coronation_prestige_improved_by_noble_traits: "#weak [Concept('prestige','Prestiž')|E] zvýšena díky vznešeným [Concept('traits','rysům')|E]#!"
  coronation_prestige_improved_by_legitimacy: "#weak [Concept('prestige','Prestiž')|E] zvýšena díky vysoké [Concept('legitimacy','legitimitě')|E]#!"
  coronation_legit_improved_by_peasant_leader: "#weak [Concept('legitimacy','Legitimita')|E] zvýšena díky rysu [GetTrait('peasant_leader').GetName(GetNullCharacter)] nebo [GetTrait('populist_leader').GetName(GetNullCharacter)]#!"
- coronation_legit_improved_by_county_opinion: "#weak [Concept('legitimacy','Legitimita')|E] zvýšena díky [Concept('county_opinion','lidovému mínění')|E] [CZPrepV(location.GetCounty.GetNameNoTooltip)] [location.GetCounty.Custom('CZ_LandedName_L')]#!"
+ coronation_legit_improved_by_popular_opinion: "#weak [Concept('legitimacy','legitimita')|E] zvýšena díky [Concept('popular_opinion','lidovému mínění')|E] v [location.GetCounty.Custom('CZ_LandedName_L')]#!" # todo: NEW TRANSLATION
+ coronation_legit_improved_by_royal_chapel: "#weak [Concept('legitimacy','legitimita')|E] zvýšena díky $building_type_royal_chapel_1$ na daném místě#!" # todo: NEW TRANSLATION
  coronation_legit_improved_by_anointment: "#weak [Concept('legitimacy','Legitimita')|E] zvýšena díky #high Pomazání#! při [Concept('coronation','korunovaci')|E]#!"
- coronation_legit_harmed_by_county_opinion: "#weak [Concept('legitimacy','Legitimita')|E] snížena kvůli [Concept('county_opinion','lidovému mínění')|E] [CZPrepV(location.GetCounty.GetNameNoTooltip)] [location.GetCounty.Custom('CZ_LandedName_L')]#!"
+ coronation_legit_harmed_by_popular_opinion: "#weak [Concept('legitimacy','legitimita')|E] snížena kvůli [Concept('popular_opinion','lidovému mínění')|E] v [location.GetCounty.Custom('CZ_LandedName_L')]#!" # todo: NEW TRANSLATION
  coronation_legit_harmed_by_county_control: "#weak [Concept('legitimacy','Legitimita')|E] snížena kvůli [Concept('county_control','kontrole hrabství')|E] [CZPrepV(location.GetCounty.GetNameNoTooltip)] [location.GetCounty.Custom('CZ_LandedName_L')]#!"
  coronation_legit_harmed_by_county_faction: "#weak [Concept('legitimacy','Legitimita')|E] snížena kvůli [Concept('faction','frakci')|E] [CZPrepV(location.GetCounty.GetNameNoTooltip)] [location.GetCounty.Custom('CZ_LandedName_L')]#!"
  coronation_legitimacy_harmed_by_tyranny: "#weak [Concept('legitimacy','Legitimita')|E] snížena kvůli [Concept('tyranny','tyranii')|E] při nedostatečné [Concept('dread','hrůze')|E]#!"

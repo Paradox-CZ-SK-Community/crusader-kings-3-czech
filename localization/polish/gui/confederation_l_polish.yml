@@ -3,31 +3,48 @@
  CONFEDERATION_WINDOW_TYPE: "Typ: [Confederation.GetType.GetName]"
  CONFEDERATION_WINDOW_LEADING_HOUSE: "[Concept('leading_house','Vůdčí rod')|E]: [Confederation.GetLeadingHouse.GetName]"
  CONFEDERATION_WINDOW_LEADING_HOUSE_HEAD: "[Concept('house_head','Hlava rodu')|E] [Concept('leading_house','vůdčího rodu')|El]"
- CONFEDERATION_WINDOW_COHESION: "#T [Concept('bloc_cohesion','Soudržnost bloku')|E]: [Confederation.GetCohesion|V2]#!"
+ CONFEDERATION_WINDOW_COHESION: "#T [Concept('cohesion','Soudržnost')|E]: [Confederation.GetCohesion|V2]#!" # todo: CHANGED (predtym: T [Concept('bloc_cohesion','Soudržnost bloku')|E]: [Confederation.GetCohesion|V2] !)
  CONFEDERATION_WINDOW_COHESION_LEVEL_NAME: "Úroveň [Concept('cohesion','soudržnosti')|El]: [Confederation.GetCohesionLevelName|V]"
  CONFEDERATION_WINDOW_COHESION_MONTHLY_CHANGE: "#UNDERLINE [Confederation.GetCohesionChangePerMonth|+=2]#!/měsíc"
  CONFEDERATION_WINDOW_COHESION_PER_HOUSE: "[Concept('cohesion','Soudržnost')|E]: #UNDERLINE [Confederation.GetCohesionPerHouse( DynastyHouse.Self )|+=2]#!"
  CONFEDERATION_WINDOW_COHESION_PER_HOUSE_VALUE: "#UNDERLINE [Confederation.GetCohesionPerHouse( DynastyHouse.Self )|+=2]#!"
+ CONFEDERATION_WINDOW_COHESION_PER_TITLE_VALUE: "#UNDERLINE [Confederation.GetCohesionPerTitle( Title.Self )|+=2]#!" # todo: NEW TRANSLATION
  CONFEDERATION_WINDOW_COHESION_PER_HOUSE_TOOLTIP_TITLE: "Od [Concept('house','rodu')|El] [DYNASTY_HOUSE.GetName]"
+ CONFEDERATION_WINDOW_COHESION_PER_TITLE_TOOLTIP_TITLE: "Za [TITLE.Custom('CZ_LandedName_G')]" # todo: NEW TRANSLATION
  CONFEDERATION_WINDOW_COHESION_PER_HOUSE_TOOLTIP_RELATION_HEAD: "Ze [Concept('house_relations','vztahů rodů')|El] v rámci [Concept('bloc','bloku')|El]:"
  CONFEDERATION_WINDOW_COHESION_PER_HOUSE_TOOLTIP_RELATION_ITEM: "$EFFECT_LIST_BULLET$ [HOUSE_RELATION.GetName] ([HOUSE_RELATION.GetLevel.GetName]):"
  CONFEDERATION_WINDOW_COHESION_BASE_CHANGE_PER_HOUSE_MONTHLY_TOOLTIP: "$EFFECT_LIST_BULLET$ Základní změna"
  CONFEDERATION_WINDOW_MEMBER_HOUSE_COUNT: "[Concept('bloc_member_houses','Členské rody bloku')|E]: [GetDataModelSize( Confederation.GetMemberHouses )|V]"
+ CONFEDERATION_WINDOW_MEMBER_TITLE_COUNT: "[Concept('trade_league_members','Členové obchodní ligy')|E]: [GetDataModelSize( Confederation.GetMemberTitles )|V]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  CONFEDERATION_WINDOW_ACTIVE_HOUSE_ASPIRATION: "[Concept('aspiration','Aspirace')|E]:"
- CONFEDERATION_WINDOW_LEADING_HOUSE_ASPIRATION_TOOLTIP: "#T [Concept('aspiration','Aspirace')|E] [Concept('leading_house','vůdčího rodu')|El]: [DynastyHouse.GetHouseAspiration.GetName|V]#!\n[Concept('bloc_member_houses','Členské rody bloku')|E], které nesdílejí tuto $game_concept_house_aspiration$, sníží [Concept('bloc_cohesion','soudržnost bloku')|El] a výhody vysoké $game_concept_cohesion$ vycházejí z této $game_concept_aspiration$."
+ CONFEDERATION_WINDOW_LEADING_HOUSE_ASPIRATION_TOOLTIP: "#T [Concept('aspiration','Aspirace')|E] [Concept('leading_house','vůdčího rodu')|El]: [DynastyHouse.GetHouseAspiration.GetName|V]#!\n[Concept('bloc_member_houses','Členské rody bloku')|E], které nesdílejí tuto aspiraci rodu, sníží [Concept('bloc_cohesion','soudržnost bloku')|El] a výhody vysoké $game_concept_cohesion$ vycházejí z této aspirace." # todo: CONCEPT CASE
  CONFEDERATION_WINDOW_INDIVIDUAL_MEMBER_CHARACTER_COUNT: "Samostatní [Concept('bloc_rulers','vládci bloku')|El]: [GetDataModelSize( Confederation.GetIndividualMembers )|V]"
  CONFEDERATION_WINDOW_TOTAL_MEMBER_CHARACTER_COUNT: "Celkem [Concept('bloc_rulers','vládců bloku')|El]: [GetDataModelSize( Confederation.GetMembers )|V]"
  CONFEDERATION_WINDOW_CHARACTER_ENTRY: "[Character.GetName]"
  CONFEDERATION_WINDOW_HOUSE_ENTRY: "[DynastyHouse.GetNameNoTooltip]"
+ CONFEDERATION_WINDOW_TITLE_ENTRY: "[Title.GetNameNoTooltip]" # todo: NEW TRANSLATION
  CONFEDERATION_TT_TOOLTIP: "[Confederation.GetName]"
  COHESION_LEVEL_TOOLTIP: "#T [CohesionLevel.GetName]#! #weak ([CohesionLevel.GetThreshold])#!\n[CohesionLevel.GetParameterDesc]\n\n[CohesionLevel.GetModifierDesc]"
- COHESION_TRACK_TITLE: "[Concept('cohesion','Soudržnost')|E]: [Confederation.GetCohesion|V1]/[GetDefine('NConfederation', 'MAX_COHESION')|V^0]"
+ COHESION_TRACK_TITLE: "[SelectLocalization( Confederation.GetType.IsHouseBasedConfederation, 'COHESION_TRACK_TITLE_BLOC', 'COHESION_TRACK_TITLE_LEAGUE' )]" # todo: CHANGED (predtym: [Concept('cohesion','Soudržnost')|E]: [Confederation.GetCohesion|V1]/[GetDefine('NConfederation', 'MAX_COHESION')|V^0])
+ COHESION_TRACK_TITLE_BLOC: "[bloc_cohesion|E]: [Confederation.GetCohesion|V1]/[GetDefine('NConfederation', 'MAX_COHESION')|V^0]" # todo: NEW TRANSLATION
+ COHESION_TRACK_TITLE_LEAGUE: "[Concept('league_cohesion','Soudržnost ligy')|E]: [Confederation.GetCohesion|V1]/[GetDefine('NConfederation', 'MAX_COHESION')|V^0]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  CONFEDERATION_WINDOW_COMBINED_MILITARY_STRENGTH_TOOLTIP: "[ConfederationWindow.GetCombinedMilitaryStrengthTooltip]"
  CONFEDERATION_WINDOW_BLOC_LEADER_ICON_TOOLTIP: "#T [Concept('leading_house','Vůdčí rod')|E]#!\n[Concept('house','Rod')|E] [DynastyHouse.GetName] je $game_concept_leading_house$ [Confederation.GetName]"
+ CONFEDERATION_WINDOW_LEAGUE_LEADER_ICON_TOOLTIP: "#T Vedoucí titul#!\n[Title.GetName] je [Concept('trade_league_leader_short','vůdce')|E] [Title.GetHolder.GetConfederation.GetName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  CONFEDERATION_WINDOW_CHARACTER_MILITARY_STRENGTH_TOOLTIP: "[ConfederationWindow.GetCharacterMilitaryStrengthTooltip(Character.Self)]"
  CONFEDERATION_WINDOW_HOUSE_MILITARY_STRENGTH_TOOLTIP: "[ConfederationWindow.GetHouseMilitaryStrengthTooltip(DynastyHouse.Self)]"
+ CONFEDERATION_WINDOW_LEAGUE_MILITARY_STRENGTH_TOOLTIP: "[ConfederationWindow.GetTitleMilitaryStrengthTooltip(Title.Self)]" # todo: NEW TRANSLATION
+ CONFEDERATION_WINDOW_REALM_TRADE_POSTS: "[Character.MakeScope.ScriptValue( 'gdp_realm_trade_post_count_value' )|0]" # todo: NEW TRANSLATION
+ CONFEDERATION_WINDOW_REALM_TRADE_POSTS_TT: "[Concept('trade_post_districts','Čtvrti obchodních stanic')|E]: [Character.MakeScope.ScriptValue( 'gdp_realm_trade_post_count_value' )|V0]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ CONFEDERATION_WINDOW_TRADE_POSTS_OWNER: "#high #UNDERLINE [Character.GetFullNameNoTooltip]#!#!: [Character.GetNumTradePosts|V]" # todo: NEW TRANSLATION
+ CONFEDERATION_WINDOW_TRADE_POSTS_OWNER_TT: "[Character.GetFullNameNoTooltip]: [Concept('trade_post_districts','čtvrti obchodních stanic')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ CONFEDERATION_WINDOW_REALM_PROFIT_ROUTES: "[Character.MakeScope.ScriptValue( 'gdp_realm_profit_route_count_value' )|0]" # todo: NEW TRANSLATION
+ CONFEDERATION_WINDOW_REALM_PROFIT_ROUTES_TT: "[Concept('profit_routes','Výnosné trasy')|E]: [Character.MakeScope.ScriptValue( 'gdp_realm_profit_route_count_value' )|V0]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ CONFEDERATION_WINDOW_PROFIT_ROUTES_OWNER: "#high #UNDERLINE [Character.GetFullNameNoTooltip]#!#!: [Character.GetCurrentProfitRouteCount|V]" # todo: NEW TRANSLATION
+ CONFEDERATION_WINDOW_PROFIT_ROUTES_OWNER_TT: "[Character.GetFullNameNoTooltip]: [Concept('profit_routes','výnosné trasy')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  CONFEDERATION_WINDOW_CHARACTER_TITLE: "#T [Character.GetName]#!"
  CONFEDERATION_WINDOW_HOUSE_TITLE: "#T [DynastyHouse.GetName]#!"
+ CONFEDERATION_WINDOW_TITLE_NAME: "#T [Title.GetName]#!" # todo: NEW TRANSLATION
  CONFEDERATION_WINDOW_CONFEDERATION_TITLE: "#T Celková síla [Confederation.GetName]#!"
  CONFEDERATION_WINDOW_COHESION_BREAKDOWN_FROM_HOUSE: "$EFFECT_LIST_BULLET$ od [DYNASTY_HOUSE.GetName]:"
  CONFEDERATION_WINDOW_COHESION_BREAKDOWN_FROM_BASE_CHANGE_MONTHLY: "Základní hodnota [Concept('cohesion','soudržnosti')|El]"
@@ -39,8 +56,16 @@
  CONFEDERATION_SORT_OPTION_OPINION: "Mínění"
  CONFEDERATION_CONCEPT: "[Concept('confederation','Konfederace')|E]"
  CONFEDERATION_BLOC_CONCEPT: "[Concept('bloc','Blok')|E]"
- CONFEDERATION_YOURS_HEADER: "Tvá [Concept('confederation','konfederace')|El]"
- CONFEDERATION_BLOC_YOURS_HEADER: "Tvůj [Concept('house_bloc','rodový blok')|El]"
+ CONFEDERATION_RELATION_HEADER: "[SelectLocalization( Confederation.GetType.IsHouseBasedConfederation, 'CONFEDERATION_HEADER_BLOC', SelectLocalization( Confederation.GetType.IsTitleBasedConfederation, 'CONFEDERATION_HEADER_LEAGUE', 'CONFEDERATION_HEADER_DEFAULT' ) )]" # todo: NEW TRANSLATION
+ CONFEDERATION_HEADER_DEFAULT: "[SelectLocalization( ObjectsEqual( Confederation.Self, GetPlayer.GetConfederation.Self ), 'CONFEDERATION_HEADER_DEFAULT_YOURS', 'CONFEDERATION_HEADER_DEFAULT_NOT_YOURS' )]" # todo: NEW TRANSLATION
+ CONFEDERATION_HEADER_BLOC: "[SelectLocalization( ObjectsEqual( Confederation.Self, GetPlayer.GetConfederation.Self ), 'CONFEDERATION_HEADER_BLOC_YOURS', 'CONFEDERATION_HEADER_BLOC_NOT_YOURS' )]" # todo: NEW TRANSLATION
+ CONFEDERATION_HEADER_LEAGUE: "[SelectLocalization( ObjectsEqual( Confederation.Self, GetPlayer.GetConfederation.Self ), 'CONFEDERATION_HEADER_LEAGUE_YOURS', 'CONFEDERATION_HEADER_LEAGUE_NOT_YOURS' )]" # todo: NEW TRANSLATION
+ CONFEDERATION_HEADER_DEFAULT_YOURS: "Tvoje [Concept('confederation','konfederace')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ CONFEDERATION_HEADER_DEFAULT_NOT_YOURS: "[Concept('confederation','Konfederace')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ CONFEDERATION_HEADER_BLOC_YOURS: "Tvůj [house_bloc|E]" # todo: NEW TRANSLATION
+ CONFEDERATION_HEADER_BLOC_NOT_YOURS: "[house_bloc|E]" # todo: NEW TRANSLATION
+ CONFEDERATION_HEADER_LEAGUE_YOURS: "Tvoje [Concept('trade_league','obchodní liga')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ CONFEDERATION_HEADER_LEAGUE_NOT_YOURS: "[Concept('trade_league','Obchodní liga')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  CONFEDERATION_TOOLTIP_CHARACTER: "#high [CHARACTER.GetName]#! je "
  CONFEDERATION_TOOLTIP_IS_YOU: "#high Ty#! jsi "
  CONFEDERATION_TOOLTIP_MEMBER_OF: "[Concept('confederate','konfederátem')|El] #high [CONFEDERATION.GetName]#!"
@@ -50,6 +75,10 @@
  CONFEDERATION_BLOC_TOOLTIP_MEMBER_OF_BLOC: "[Concept('bloc_member_house','členským rodem bloku')|El] #high [CONFEDERATION.GetName]#!."
  CONFEDERATION_BLOC_TOOLTIP_HEAD_OF_BLOC: "$game_concept_leading_house$ #high [CONFEDERATION.GetName]#!."
  CONFEDERATION_BLOC_TOOLTIP_NUMBER_OF_MEMBERS: "[Concept('bloc_member_houses','Členské rody bloku')|E]: [CONFEDERATION.GetMemberCount|V]"
+ CONFEDERATION_BLOC_TOOLTIP_HEAD_OF_LEAGUE: "[Concept('trade_league_leader','Vůdce obchodní ligy')|E] #high [CONFEDERATION.GetName]#!." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ CONFEDERATION_BLOC_TOOLTIP_MEMBER_OF_LEAGUE: "[Concept('trade_league_member','Člen obchodní ligy')|E] #high [CONFEDERATION.GetName]#!." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ CONFEDERATION_LEAGUE_TOOLTIP_NUMBER_OF_MEMBERS: "Počet [Concept('trade_league_members','členové obchodní ligy')|E]: [CONFEDERATION.GetMemberCount|V]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ CONFEDERATION_WINDOW_LEADING_TITLE_HOLDER: "[Concept('holder','Držitel')|E] [Concept('leading_title','Vedoucí titul')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  CONFEDERATION_WINDOW_HOUSE_ASPIRATION_MISMATCH_TOOLTIP: "#T $ADMINISTRATIVE_GOVERNMENT_BONUS_TOOLTIP_HEADING$#!\n#X @warning_icon! [Concept('bloc_cohesion','Soudržnost bloku')|E] je nižší, protože [Concept('house_aspiration','aspirace rodu')|El] rodu [DynastyHouse.GetName] se liší od aspirace [Concept('leading_house','vůdčího rodu')|El]#!"
  house_bloc_level_00: "Rozdělený"
  house_bloc_level_01: "Snášenlivý"
@@ -99,6 +128,12 @@
  HOUSE_BLOC_COHESION_MISMATCHED_ASPIRATION: "[Concept('house_aspiration','Aspirace rodu')|E] se liší od [Concept('leading_house','vůdčího rodu')|El]:"
  HOUSE_BLOC_COHESION_MISMATCHED_GOVERNMENT: "[Concept('government','Vláda')|E] se liší od [Concept('leading_house','vůdčího rodu')|El]:"
  HOUSE_BLOC_SAME_DYNASTY_LEGACY_PERK: "[GetDynastyPerk('tgp_japan_legacy_1').GetName]"
+ CONFEDERATION_COHESION_LEVEL_LEADING_TITLE_HOLDER_MODIFIER: "[Concept('holder','Držitel')|E] [Concept('leading_title','Vedoucí titul')|E] [Concept('trade_league','Obchodní liga')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ CONFEDERATION_COHESION_LEVEL_LEADING_TITLE_NOBLE_FAMILY_MODIFIER: "[Concept('trade_league_leader','Vůdce obchodní ligy')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ CONFEDERATION_COHESION_LEVEL_LEADING_TITLE_LANDED_VASSAL_MODIFIER: "[Concept('landed','Zeměpán')|E] [Concept('vassal','Vazal')|E] [Concept('leading_title','Vedoucí titul')|E] [Concept('trade_league','Obchodní liga')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ CONFEDERATION_COHESION_LEVEL_MEMBER_TITLE_HOLDER_MODIFIER: "[Concept('holder','Držitel')|E] [Concept('member_title','Členský titul')|E] [Concept('trade_league','Obchodní liga')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ CONFEDERATION_COHESION_LEVEL_MEMBER_TITLE_NOBLE_FAMILY_MODIFIER: "[Concept('trade_league_member','Člen obchodní ligy')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ CONFEDERATION_COHESION_LEVEL_MEMBER_TITLE_LANDED_VASSAL_MODIFIER: "[Concept('landed','Zeměpán')|E] [Concept('vassal','Vazal')|E] [Concept('member_title','Členský titul')|E] [Concept('trade_league','Obchodní liga')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  house_bloc_ceremony_level_parameter_any_member_ceremonial_house_marriage_acceptance: "Přijetí [Concept('marriage','sňatku')|El] s [Concept('ceremonial_house','obřadním rodem')|El] pro všechny členy: #P +25#!"
  house_bloc_ceremony_level_parameter_any_member_increased_feast_rewards: "Odměny za [GetActivityType('activity_feast').GetTextIcon][GetActivityType('activity_feast').GetName] pro všechny členy: #P +10 %#!"
  house_bloc_ceremony_level_parameter_any_member_house_continued_appointment_score: "Skóre [Concept('appointment','jmenování')|El] všech členů v [Concept('governorships','guvernérstvích')|El] držených členy: #P +25 %#!"
@@ -114,13 +149,46 @@
  house_bloc_service_level_parameter_any_member_house_governor_appointment_score: "Skóre jmenování do [Concept('governorship','guvernérství')|El] pro všechny členy: #P +10 %#!"
  house_bloc_service_level_parameter_bloc_leader_unlocks_restore_emperor_faction: "[Concept('house_head','Hlava rodu')|E] [Concept('leading_house','vůdčího rodu')|El] může založit [Concept('faction','frakci')|El] $restore_ceremonial_liege_faction_name$"
  bloc_leader_unlocks_restore_emperor_faction_tt: "[Concept('house','Rod')|E] musí mít [Concept('house_aspiration','aspiraci rodu')|El] [GetHouseAspiration( 'service' ).GetName|V]"
- house_bloc_service_level_parameter_any_member_house_governor_efficiency_boost: "[Concept('governor_efficiency','Efektivita guvernéra')|E] všech členů: #P +10 %#!"
  house_bloc_service_level_parameter_bloc_members_promote_leading_house: "Všichni členové budou prosazovat [Concept('leading_house','vůdčí rod')|El] za [Concept('ceremonial_regent','vládnoucího regenta')|El]"
  house_bloc_strength_level_parameter_any_member_casus_belli_cost_reduction: "Cena [Concept('casus_belli','casus belli')|El] pro všechny členy: #P -15 %#!"
  house_bloc_strength_level_parameter_any_member_extra_capture_chance: "Šance všech členů na zajetí [Concept('prisoners_of_war','válečných zajatců')|El] v [Concept('battle','bitvě')|El]: #P +25 %#!"
  house_bloc_strength_level_parameter_bloc_members_join_leaders_offensive_internal_wars: "Členové [Concept('bloc','bloku')|El] se přidají k útočným vnitřním [Concept('wars','válkám')|El] [Concept('house_heads_possessive','hlavy rodu')|El] [Concept('leading_house_possessive','vůdčího rodu')|El]"
- DETERMINATION_BLOC_COHESION_REASON: "[Concept('cohesion','Soudržnost')|E] [Concept('bloc','bloku')|El]: $VALUE|=+0$"
+ DETERMINATION_BLOC_COHESION_REASON: "[Concept('bloc_cohesion','Soudržnost bloku')|E]: $VALUE|=+0$" # todo: CHANGED (predtym: [Concept('cohesion','Soudržnost')|E] [Concept('bloc','bloku')|El]: $VALUE|=+0$)
  CB_COHESION_PARAMETER_DISCOUNT: "[Concept('house_bloc','Rodový blok')|E]"
  ACTIVITY_GUEST_HOUSE_BLOC_REASON: "[Concept('house_bloc','Rodový blok')|E]"
  HOUSE_BLOC_COHESION_FROM_SIZE: "Počet [Concept('landed','zeměpanských')|El] [Concept('rulers','vládců')|El] v [Concept('bloc','bloku')|El]:"
  HOUSE_BLOC_COHESION_FROM_SIZE_HOUSE: "Počet [Concept('member_houses','členských rodů')|El] v [Concept('bloc','bloku')|El]:"
+ trade_league_level_00: "Nahodilý směnný obchod" # todo: NEW TRANSLATION
+ trade_league_level_01: "Společné trhy" # todo: NEW TRANSLATION
+ trade_league_level_02: "Společné podniky" # todo: NEW TRANSLATION
+ trade_league_level_03: "Obchodní konsorcium" # todo: NEW TRANSLATION
+ trade_league_level_04: "Obchodní unie" # todo: NEW TRANSLATION
+ trade_league_level_parameter_trade_league_can_request_monopolies: "[Concept('trade_league_members_short','Členové')|E] mohou jménem [Concept('trade_league','obchodní ligou')|E] žádat o [Concept('monopolies','monopoly')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ trade_league_level_parameter_trade_league_can_build_arsenals: "Odemkne [Concept('buildings','budovy')|E] [Concept('trade_post','obchodních stanic')|E]:\n$BULLET_WITH_TAB$[GetBuildingType('trade_league_arsenal_01').GetName|V]\n$BULLET_WITH_TAB$[GetBuildingType('trade_league_treasury_01').GetName|V]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ trade_league_level_parameter_trade_league_can_set_focused_category: "[Concept('trade_league_leader','Vůdce obchodní ligy')|E] může určit [Concept('league_focus','zaměření ligy')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ trade_league_level_parameter_trade_league_can_wage_trade_wars: "Odemkne [Concept('casus_belli','casus belli')|E]: [GetCasusBelliType('trade_league_trade_war_cb').GetName|V]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ trade_league_level_parameter_trade_league_unlocks_casus_bellis: "Odemkne [Concept('casus_belli','casus belli')|E]:\n$BULLET_WITH_TAB$[GetCasusBelliType('trade_league_trade_war_cb').GetName|V]\n$BULLET_WITH_TAB$[GetCasusBelliType('trade_league_commune_cb').GetName|V]\n$BULLET_WITH_TAB$[GetCasusBelliType('trade_league_monopoly_cb').GetName|V]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ your_trade_league_not_at_cohesion_level_1_desc: "Tvoje [Concept('trade_league','obchodní liga')|E] #bold nedosahuje#! úrovně [Concept('cohesion','soudržnosti')|E] $trade_league_level_01|V$ #weak (1)#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ NEIGHBOR_IN_TRADE_A_LEAGUE: "Sousední [Concept('ruler','vládce')|E] je členem [Concept('trade_league','obchodní ligy')|E]: $VALUE|=+0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ RECENTLY_LOST_WAR: "Nedávno prohrál [Concept('war','válka')|E]: $VALUE|=+0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ NEIGHBOR_POWERFUL_NON_REPUBLIC: "Mocnější soused, který není [Concept('republic','republika')|E]: $VALUE|=+0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ SAME_CULTURE: "Stejná [Concept('culture','kultura')|E]: $VALUE|=+0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ SAME_CULTURE_PILLAR: "Stejné [Concept('heritage','dědictví')|E]: $VALUE|=+0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ SAME_LANGUAGE: "Stejný [Concept('language','jazyk')|E]: $VALUE|=+0$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ NUMBER_OF_TRADE_LEAGUE_MEMBERS: "Počet [Concept('trade_league_members','členové obchodní ligy')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ LEAGUE_HAS_TOO_FEW_MEMBERS: "[Concept('trade_league','Obchodní liga')|E] má méně než [EmptyScope.ScriptValue('gdp_trade_league_min_member_penalty_value')|V0] [Concept('trade_league_members_short','členové')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ LEAGUE_HAS_TOO_MANY_MEMBERS: "[Concept('trade_league','Obchodní liga')|E] má více než [EmptyScope.ScriptValue('gdp_trade_league_max_member_penalty_value')|V0] [Concept('trade_league_members_short','členové')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ LEAGUE_HAS_TRADE_MONOPOLIES: "Vlastněné [Concept('trade_monopolies','obchodní monopoly')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ capital_province_size_level_desc: "[Concept('settlement_size','Velikost sídla')|E] [Concept('capital','Hlavní sídlo')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ capital_has_league_chapter_house_desc: "[Concept('capital','Hlavní sídlo')|E] má [GetBuildingType('republic_league_chapter_house_01').GetName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ trade_league_cohesion_bonus_desc: "[GetCultureTradition('tradition_republican_legacy').GetName]" # todo: NEW TRANSLATION
+ TRADE_LEAGUE_LEADER: "Vůdce [Concept('trade_league','obchodní liga')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ CONFEDERATION_WINDOW_LEAGUE_FOCUS: "Zaměření ligy" # todo: NEW TRANSLATION
+ CONFEDERATION_WINDOW_LEAGUE_FOCUS_NONE: "Žádné" # todo: NEW TRANSLATION
+ CONFEDERATION_WINDOW_LEAGUE_FOCUS_TOOLTIP: "#T [Concept('league_focus','Zaměření ligy')|E]: [TradeGoodCategory.GetName]#!\nPouze [Concept('holder','držitel')|E] každého [Concept('member_title','členského titulu')|E] získá bonusy k [Concept('expertise','zkušenosti')|E], [Concept('production','produkci')|E] a [Concept('sell_price','prodejní ceně')|E] pro tuto [Concept('trade_category','kategorii zboží')|E]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ CONFEDERATION_WINDOW_LEAGUE_FOCUS_EMPTY_TOOLTIP: "#T [Concept('league_focus','Zaměření ligy')|E]#!\n[Concept('trade_league_leader','Vůdce obchodní ligy')|E] zatím neurčil zaměřenou [Concept('trade_category','kategorii zboží')|E]. Na úrovni [Concept('league_cohesion','soudržnosti ligy')|E] #V $trade_league_level_01$#! může určit jednu kategorii, která poskytne [Concept('holder','držitel')|E] každého [Concept('member_title','členského titulu')|E] bonusy k [Concept('expertise','zkušenosti')|E], [Concept('production','produkci')|E] a [Concept('sell_price','prodejní ceně')|E]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ CONFEDERATION_WINDOW_TRADE_LEAGUE_MEMBER_INTERACTIONS_TOOLTIP: "#T Zobrazit interakce [Concept('trade_league','obchodní liga')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ CONFEDERATION_WINDOW_TAB_MEMBERS: "Členové" # todo: NEW TRANSLATION
+ CONFEDERATION_WINDOW_TAB_TRADE_MONOPOLIES: "Monopoly" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ CONFEDERATION_WINDOW_LIST_OF_TRADE_MONOPOLIES: "[Concept('trade_monopolies','Obchodní monopoly')|E] konfederace [Confederation.GetName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ CONFEDERATION_WINDOW_LEAGUE_NO_MONOPOLY: "Žádné monopoly\nMonopol můžeš získat pomocí interakce\n $request_trade_monopoly_for_trade_league_interaction|V$" # todo: NEW TRANSLATION

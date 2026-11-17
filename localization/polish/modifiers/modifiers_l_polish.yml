@@ -49,10 +49,10 @@
  MOD_INTRIGUE_PER_STRESS_LEVEL: "[Concept('intrigue','Pletichářství')|E] za [Concept('stress_level','úroveň stresu')|E]"
  MOD_LEARNING_PER_STRESS_LEVEL: "[Concept('learning','Učenost')|E] za [Concept('stress_level','úroveň stresu')|E]"
  MOD_PROWESS_PER_STRESS_LEVEL: "[Concept('prowess','Udatnost')|E] za [Concept('stress_level','úroveň stresu')|E]"
- MOD_PIETY_LEVEL_IMPACT_MULT: "[piety_i|E][piety_level_impact|E]"
- MOD_PRESTIGE_LEVEL_IMPACT_MULT: "[prestige_i|E][prestige_level_impact|E]"
- MOD_INFLUENCE_LEVEL_IMPACT_MULT: "[influence_i|E][influence_level_impact|E]"
- MOD_MERIT_LEVEL_IMPACT_MULT: "[merit_i|E]Vliv [Concept('merit_level','hodnosti zásluh')|E]"
+ MOD_PIETY_LEVEL_IMPACT_MULT: "[Concept('piety_i','[GetLocalPlayerPietyTextIcon]')|E][Concept('piety_level_impact','Dopad úrovně oddanosti')|E]" # todo: CONCEPT CASE
+ MOD_PRESTIGE_LEVEL_IMPACT_MULT: "[Concept('prestige_i','@prestige_icon!')|E][Concept('prestige_level_impact','Dopad úrovně slávy')|E]" # todo: CONCEPT CASE
+ MOD_INFLUENCE_LEVEL_IMPACT_MULT: "[Concept('influence_i','@influence_icon!')|E][Concept('influence_level_impact','Dopad úrovně vlivu')|E]" # todo: CONCEPT CASE
+ MOD_MERIT_LEVEL_IMPACT_MULT: "[Concept('merit_i','@merit_icon!')|E]Vliv [Concept('merit_level','hodnosti zásluh')|E]" # todo: CONCEPT CASE
  MOD_DIPLOMACY_NEGATE_PENALTY: "Zrušený postih k [Concept('diplomacy','diplomacii')|E]"
  MOD_INTRIGUE_NEGATE_PENALTY: "Zrušený postih k [Concept('intrigue','pletichářství')|E]"
  MOD_STEWARDSHIP_NEGATE_PENALTY: "Zrušený postih k [Concept('stewardship','správcovství')|E]"
@@ -71,12 +71,14 @@
  MOD_COMBAT_PURSUE_EFFICIENCY: "[Concept('command_modifier_i','@command_modifier_icon!')|E]Efektivita [Concept('pursuit','pronásledování')|E]"
  MOD_COMBAT_COUNTER_RESISTANCE: "Odolnost vůči [Concept('men_at_arms_counter','kontrování ozbrojenců')|E]"
  MOD_COMBAT_COUNTER_EFFICIENCY: "Efektivita [Concept('men_at_arms_counter','kontrování ozbrojenců')|E]"
- MOD_SIEGE_PHASE_TIME: "[Concept('command_modifier_i','@command_modifier_icon!')|E]Doba fáze [Concept('siege','obléhání')|E]"
+ MOD_SIEGE_PHASE_TIME: "Doba fáze [Concept('siege','obléhání')|E]" # todo: CHANGED (predtym: [Concept('command_modifier_i','@command_modifier_icon!')|E]Doba fáze [Concept('siege','obléhání')|E])
  MOD_SIEGE_MORALE_LOSS: "[Concept('command_modifier_i','@command_modifier_icon!')|E]Denní [Concept('siege_progress','postup obléhání')|E]"
  MOD_CONTROLLED_PROVINCE_ADVANTAGE: "[Concept('advantage','Výhoda')|E] obránce na ovládaném území"
  MOD_REVOLTING_SIEGE_MORALE_LOSS_ADD: "[Concept('siege_progress','Postup obléhání')|E] proti [Concept('revolts','povstání')|E]"
  MOD_REVOLTING_SIEGE_MORALE_LOSS_MULT: "$MOD_REVOLTING_SIEGE_MORALE_LOSS_ADD$"
  MOD_MOVEMENT_SPEED: "Rychlost pohybu [Concept('army','armády')|E]"
+ MOD_PROVINCE_MOVEMENT_SPEED: "Rychlost pohybu [Concept('army','armády')|E] v [Concept('holding','državě')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_COUNTY_MOVEMENT_SPEED: "Rychlost pohybu [Concept('army','armády')|E] v [Concept('county','hrabství')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  MOD_MOVEMENT_SPEED_LAND_RAIDING: "Rychlost pohybu po souši při [Concept('raiding','plenění')|e]"
  MOD_RETREAT_LOSSES: "[Concept('command_modifier_i','@command_modifier_icon!')|E]Ztráty při [Concept('retreat','ústupu')|E]"
  MOD_HARD_CASUALTY_MODIFIER: "[Concept('command_modifier_i','@command_modifier_icon!')|E]Přátelské [Concept('dead_soldiers','smrtelné ztráty')|E]"
@@ -85,7 +87,8 @@
  MOD_ATTACKER_ADVANTAGE: "[Concept('command_modifier_i','@command_modifier_icon!')|E][Concept('advantage','Výhoda')|E] útočníka"
  MOD_DEFENDER_ADVANTAGE: "[Concept('command_modifier_i','@command_modifier_icon!')|E][Concept('advantage','Výhoda')|E] obránce"
  MOD_DEFENDER_HOLDING_ADVANTAGE: "[Concept('command_modifier_i','@command_modifier_icon!')|E][Concept('advantage','Výhoda')|E] obránce [Concept('holding','državy')|E]"
- MOD_NUM_BUILDING_SLOTS: "Další sloty pro [Concept('building','budovy')|E]"
+ MOD_BUILDING_SLOT_ADD: "Dodatečné sloty pro [Concept('building','budovu')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_DISTRICT_SLOT_ADD: "Dodatečné sloty pro [Concept('standard_district','běžnou čtvrť')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  MOD_NO_WATER_CROSSING_PENALTY: "[Concept('command_modifier_i','@command_modifier_icon!')|E]Překračuje řeky a průlivy bez postihu k [Concept('advantage','výhodě')|E]"
  MOD_NO_DISEMBARK_PENALTY: "[Concept('command_modifier_i','@command_modifier_icon!')|E]Žádný postih k [Concept('advantage','výhodě')|E] po [Concept('recently_disembarked','nedávném vylodění')|E]"
  MOD_ENEMY_TERRAIN_ADVANTAGE: "[Concept('command_modifier_i','@command_modifier_icon!')|E]Nepřátelská obranná [Concept('advantage','výhoda')|E]"
@@ -120,15 +123,17 @@
  MOD_SAME_HERITAGE_COUNTY_ADVANTAGE: "[Concept('command_modifier_i','@command_modifier_icon!')|E][Concept('advantage','Výhoda')|E] v provinciích se stejným [Concept('cultural','kulturním')|E] [Concept('heritage','dědictvím')|E]"
  MOD_INDEPENDENT_PRIMARY_DEFENDER_ADVANTAGE: "[Concept('command_modifier_i','@command_modifier_icon!')|E][Concept('advantage','Výhoda')|E] když je hlavním obráncem a je nezávislý"
  MOD_INDEPENDENT_PRIMARY_ATTACKER_ADVANTAGE: "[Concept('command_modifier_i','@command_modifier_icon!')|E][Concept('advantage','Výhoda')|E] když je hlavním útočníkem a je nezávislý"
- MOD_ARMY_SIEGE_VALUE_MULT: "Účinnost armádních [Concept('siege_weapon','obléhacích zbraní')|E]"
+ MOD_ARMY_SIEGE_VALUE_MULT: "Armádní [Concept('siege_weapon','obléhacích zbraní')|E]" # todo: CHANGED (predtym: Účinnost armádních [Concept('siege_weapon','obléhacích zbraní')|E])
  MOD_ARMY_DAMAGE_MULT: "Armádní [Concept('damage','poškození')|E]"
  MOD_ARMY_TOUGHNESS_MULT: "Armádní [Concept('toughness','houževnatost')|E]"
  MOD_ARMY_PURSUIT_MULT: "Armádní [Concept('pursuit','pronásledování')|E]"
  MOD_ARMY_SCREEN_MULT: "Armádní [Concept('screen','krytí')|E]"
+ MOD_BUILDING_SLOTS_FOR_HOST_DISTRICT_ADD: "Sloty pro [Concept('building','budovu')|E] v [Concept('district','čtvrti')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  MOD_MERCENARY_HIRE_COST_ADD: "Náklady na najmutí [Concept('mercenary','žoldnéřů')|E]"
  MOD_MERCENARY_HIRE_COST_MULT: "$MOD_MERCENARY_HIRE_COST_ADD$"
  MOD_MERCENARY_HIRE_TIME_MULT: "Doba najmutí [Concept('mercenary','žoldnéřů')|E]"
  MOD_HOLY_ORDER_HIRE_COST_ADD: "Náklady na najmutí [Concept('military_holy_order','vojenského řádu')|E]"
+ MOD_MERCENARY_HIRE_LIMIT: "[Concept('mercenary_limit','Limit žoldnéřů')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  MOD_HOLY_ORDER_HIRE_COST_MULT: "$MOD_HOLY_ORDER_HIRE_COST_ADD$"
  MOD_SAME_CULTURE_MERCENARY_HIRE_COST_ADD: "Náklady na najmutí [Concept('mercenary','žoldnéřů')|E] stejné [Concept('culture','kultury')|E]"
  MOD_SAME_CULTURE_MERCENARY_HIRE_COST_MULT: "$MOD_SAME_CULTURE_MERCENARY_HIRE_COST_ADD$"
@@ -210,7 +215,7 @@
  terraced_hills_cancel_negative_supply: "[Concept('command_modifier_i','@command_modifier_icon!')|E]Ruší postih k [Concept('supply_limit','limitu zásobování')|E] v terasovitých kopcích"
  terraced_hills_max_combat_roll: "[Concept('command_modifier_i','@command_modifier_icon!')|E]Maximální [Concept('combat_roll','bojový hod kostkou')|E] v terasovitých kopcích"
  terraced_hills_min_combat_roll: "[Concept('command_modifier_i','@command_modifier_icon!')|E]Minimální [Concept('combat_roll','bojový hod kostkou')|E] v terasovitých kopcích"
- siege_weapon_siege_value_mult: "Účinnost [Concept('siege_weapon','obléhacích zbraní')|E]"
+ siege_weapon_siege_value_mult: "[Concept('siege_weapon','obléhacích zbraní')|E]" # todo: CHANGED (predtym: Účinnost [Concept('siege_weapon','obléhacích zbraní')|E])
  siege_weapon_toughness_add: "[Concept('toughness','Houževnatost')|E] [Concept('siege_weapon','obléhacích zbraní')|E]"
  siege_weapon_max_size_add: "Maximální velikost [Concept('regiments','pluků')|E] [Concept('siege_weapon','obléhacích zbraní')|E]"
  siege_weapon_maintenance_mult: "Údržba [Concept('siege_weapon','obléhacích zbraní')|E]"
@@ -319,6 +324,7 @@
  elephant_cavalry_maintenance_mult: "Údržba [Concept('elephant_cavalry','sloní jízdy')|E]"
  elephant_cavalry_recruitment_cost_mult: "Náklady na nábor [Concept('elephant_cavalry','sloní jízdy')|E]"
  elephant_cavalry_max_size_add: "Maximální velikost [Concept('regiments','pluků')|E] [Concept('elephant_cavalry','sloní jízdy')|E]"
+ elephant_cavalry_control_value_add: "[Concept('elephant_cavalry','Sloní jízda')|E] [Concept('control','Kontrola')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  nomadic_horde_damage_add: "[Concept('damage','Poškození')|E] [Concept('horde','nomádské hordy')|E]"
  nomadic_horde_damage_mult: "$nomadic_horde_damage_add$"
  nomadic_horde_toughness_add: "[Concept('toughness','Houževnatost')|E] [Concept('horde','nomádské hordy')|E]"
@@ -342,7 +348,7 @@
  gunpowder_recruitment_cost_mult: "Náklady na nábor [Concept('gunpowder','střelců')|E]"
  gunpowder_max_size_add: "Maximální velikost [Concept('regiments','pluků')|E] [Concept('gunpowder','střelců')|E]"
  gunpowder_siege_value_add: "[Concept('siege_progress','Postup obléhání')|E] [Concept('gunpowder','střelců')|E]"
- gunpowder_siege_value_mult: "Účinnost [Concept('siege_weapon','obléhacích zbraní')|E] [Concept('gunpowder','střelců')|E]"
+ gunpowder_siege_value_mult: " [Concept('siege_weapon','obléhacích zbraní')|E] [Concept('gunpowder','střelců')|E]" # todo: CHANGED (predtym: Účinnost [Concept('siege_weapon','obléhacích zbraní')|E] [Concept('gunpowder','střelců')|E])
  peasant_militia_damage_add: "[Concept('damage','Poškození')|E] [Concept('peasant_militia','selské domobrany')|E]"
  peasant_militia_damage_mult: "$peasant_militia_damage_add$"
  peasant_militia_toughness_add: "[Concept('toughness','Houževnatost')|E] [Concept('peasant_militia','selské domobrany')|E]"
@@ -355,7 +361,7 @@
  peasant_militia_recruitment_cost_mult: "Náklady na nábor [Concept('peasant_militia','selské domobrany')|E]"
  peasant_militia_max_size_add: "Maximální velikost [Concept('regiments','pluků')|E] [Concept('peasant_militia','selské domobrany')|E]"
  peasant_militia_siege_value_add: "[Concept('siege_progress','Postup obléhání')|E] [Concept('peasant_militia','selské domobrany')|E]"
- peasant_militia_siege_value_mult: "Účinnost [Concept('siege_weapon','obléhacích zbraní')|E] [Concept('peasant_militia','selské domobrany')|E]"
+ peasant_militia_siege_value_mult: " [Concept('siege_weapon','obléhacích zbraní')|E] [Concept('peasant_militia','selské domobrany')|E]" # todo: CHANGED (predtym: Účinnost [Concept('siege_weapon','obléhacích zbraní')|E] [Concept('peasant_militia','selské domobrany')|E])
  MOD_COUNTY_FERTILITY_PREFIX: "@county_fertility_icon!"
  MOD_MOVEMENT_SPEED_PREFIX: "@movement_speed_icon!"
  MOD_DREAD_PREFIX: "@dread_icon!"
@@ -388,7 +394,12 @@
  MOD_MAA_SCREEN_ADD: "[Concept('screen','Krytí')|E] [Concept('men_at_arms','ozbrojenců')|E]"
  MOD_MAA_SCREEN_MULT: "$MOD_MAA_SCREEN_ADD$"
  MOD_MAA_SIEGE_VALUE_ADD: "[Concept('siege_progress','Postup obléhání')|E] [Concept('men_at_arms','ozbrojenců')|E]"
- MOD_MAA_SIEGE_VALUE_MULT: "Účinnost [Concept('siege_weapon','obléhacích zbraní')|E] [Concept('men_at_arms','ozbrojenců')|E]"
+ MOD_MAA_SIEGE_VALUE_MULT: "[Concept('siege_weapon','obléhacích zbraní')|E] [Concept('men_at_arms','ozbrojenců')|E]" # todo: CHANGED (predtym: Účinnost [Concept('siege_weapon','obléhacích zbraní')|E] [Concept('men_at_arms','ozbrojenců')|E])
+ MOD_MAA_CONTROL_VALUE_ADD: "[Concept('men_at_arms','Ozbrojenci')|E] [Concept('control','Kontrola')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_MAA_CONTROL_VALUE_MULT: "[Concept('men_at_arms','Ozbrojenci')|E] [Concept('control','Kontrola')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_MAA_MAINTENANCE_LOW_ADD: "[Concept('men_at_arms','Ozbrojenci')|E] [Concept('reduced_maintenance','Snížené náklady na údržbu')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_MAA_MAINTENANCE_HIGH_ADD: "[Concept('men_at_arms','Ozbrojenci')|E] [Concept('full_maintenance','Plné náklady na údržbu')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_MAA_REINFORCEMENT_RATE: "Rychlost doplňování [Concept('men_at_arms','ozbrojenci')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  MOD_STATIONED_MAA_DAMAGE_ADD: "[Concept('damage','Poškození')|E] [Concept('stationed','umístěných')|E] [Concept('men_at_arms','ozbrojenců')|E]"
  MOD_STATIONED_MAA_DAMAGE_MULT: "$MOD_STATIONED_MAA_DAMAGE_ADD$"
  MOD_STATIONED_MAA_TOUGHNESS_ADD: "[Concept('toughness','Houževnatost')|E] [Concept('stationed','umístěných')|E] [Concept('men_at_arms','ozbrojenců')|E]"
@@ -398,7 +409,12 @@
  MOD_STATIONED_MAA_SCREEN_ADD: "[Concept('screen','Krytí')|E] [Concept('stationed','umístěných')|E] [Concept('men_at_arms','ozbrojenců')|E]"
  MOD_STATIONED_MAA_SCREEN_MULT: "$MOD_STATIONED_MAA_SCREEN_ADD$"
  MOD_STATIONED_MAA_SIEGE_VALUE_ADD: "[Concept('siege_progress','Postup obléhání')|E] [Concept('stationed','umístěných')|E] [Concept('men_at_arms','ozbrojenců')|E]"
- MOD_STATIONED_MAA_SIEGE_VALUE_MULT: "Účinnost [Concept('siege_weapon','obléhacích zbraní')|E] [Concept('stationed','umístěných')|E] [Concept('men_at_arms','ozbrojenců')|E]"
+ MOD_STATIONED_MAA_SIEGE_VALUE_MULT: "[Concept('siege_weapon','obléhacích zbraní')|E] [Concept('stationed','umístěných')|E] [Concept('men_at_arms','ozbrojenců')|E]" # todo: CHANGED (predtym: Účinnost [Concept('siege_weapon','obléhacích zbraní')|E] [Concept('stationed','umístěných')|E] [Concept('men_at_arms','o)
+ MOD_STATIONED_MAA_CONTROL_VALUE_ADD: "[Concept('stationed','Umístěno')|E] [Concept('men_at_arms','Ozbrojenci')|E] [Concept('control','Kontrola')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_STATIONED_MAA_CONTROL_VALUE_MULT: "[Concept('stationed','Umístěno')|E] [Concept('men_at_arms','Ozbrojenci')|E] [Concept('control','Kontrola')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_STATIONED_MAA_MAINTENANCE_LOW: "[Concept('stationed','Umístěno')|E] [Concept('men_at_arms','Ozbrojenci')|E] [Concept('reduced_maintenance','Snížené náklady na údržbu')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_STATIONED_MAA_MAINTENANCE_HIGH: "[Concept('stationed','Umístěno')|E] [Concept('men_at_arms','Ozbrojenci')|E] [Concept('full_maintenance','Plné náklady na údržbu')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_STATIONED_MAA_REINFORCEMENT_RATE: "Rychlost doplňování [Concept('stationed','umístěno')|E] [Concept('men_at_arms','ozbrojenců')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  stationed_skirmishers_damage_add: "[Concept('damage','Poškození')|E] [Concept('stationed','umístěných')|E] [Concept('skirmishers','harcovníků')|E]"
  stationed_skirmishers_damage_mult: "$stationed_skirmishers_damage_add$"
  stationed_skirmishers_toughness_add: "[Concept('toughness','Houževnatost')|E] [Concept('stationed','umístěných')|E] [Concept('skirmishers','harcovníků')|E]"
@@ -408,6 +424,8 @@
  stationed_skirmishers_screen_add: "[Concept('screen','Krytí')|E] [Concept('stationed','umístěných')|E] [Concept('skirmishers','harcovníků')|E]"
  stationed_skirmishers_screen_mult: "$stationed_skirmishers_screen_add$"
  stationed_skirmishers_siege_value_add: "[Concept('siege_progress','Postup obléhání')|E] [Concept('stationed','umístěných')|E] [Concept('skirmishers','harcovníků')|E]"
+ stationed_skirmishers_maintenance_low_modifier: "[Concept('stationed','Umístěno')|E] [Concept('skirmishers','Harcovníci')|E] [Concept('reduced_maintenance','Snížené náklady na údržbu')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ stationed_skirmishers_maintenance_high_modifier: "[Concept('stationed','Umístěno')|E] [Concept('skirmishers','Harcovníci')|E] [Concept('full_maintenance','Plné náklady na údržbu')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  stationed_archers_damage_add: "[Concept('damage','Poškození')|E] [Concept('stationed','umístěných')|E] [Concept('archers','lučištníků')|E]"
  stationed_archers_damage_mult: "$stationed_archers_damage_add$"
  stationed_archers_toughness_add: "[Concept('toughness','Houževnatost')|E] [Concept('stationed','umístěných')|E] [Concept('archers','lučištníků')|E]"
@@ -489,7 +507,7 @@
  stationed_siege_weapon_screen_add: "[Concept('screen','Krytí')|E] [Concept('stationed','umístěných')|E] [Concept('siege_weapon','obléhacích zbraní')|E]"
  stationed_siege_weapon_screen_mult: "$stationed_siege_weapon_screen_add$"
  stationed_siege_weapon_siege_value_add: "[Concept('siege_progress','Postup obléhání')|E] [Concept('stationed','umístěných')|E] [Concept('siege_weapon','obléhacích zbraní')|E]"
- stationed_siege_weapon_siege_value_mult: "Účinnost [Concept('stationed','umístěných')|E] [Concept('siege_weapon','obléhacích zbraní')|E]"
+ stationed_siege_weapon_siege_value_mult: "[Concept('stationed','umístěných')|E] [Concept('siege_weapon','obléhacích zbraní')|E]" # todo: CHANGED (predtym: Účinnost [Concept('stationed','umístěných')|E] [Concept('siege_weapon','obléhacích zbraní')|E])
  stationed_gunpowder_damage_add: "[Concept('damage','Poškození')|E] [Concept('stationed','umístěných')|E] [Concept('gunpowder','střelců')|E]"
  stationed_gunpowder_damage_mult: "$stationed_gunpowder_damage_add$"
  stationed_gunpowder_toughness_add: "[Concept('toughness','Houževnatost')|E] [Concept('stationed','umístěných')|E] [Concept('gunpowder','střelců')|E]"
@@ -499,7 +517,49 @@
  stationed_gunpowder_screen_add: "[Concept('screen','Krytí')|E] [Concept('stationed','umístěných')|E] [Concept('gunpowder','střelců')|E]"
  stationed_gunpowder_screen_mult: "$stationed_gunpowder_screen_add$"
  stationed_gunpowder_siege_value_add: "[Concept('siege_progress','Postup obléhání')|E] [Concept('stationed','umístěných')|E] [Concept('gunpowder','střelců')|E]"
- stationed_gunpowder_siege_value_mult: "Účinnost [Concept('stationed','umístěných')|E] [Concept('gunpowder','střelců')|E]"
+ stationed_gunpowder_siege_value_mult: " [Concept('stationed','umístěných')|E] [Concept('gunpowder','střelců')|E]" # todo: CHANGED (predtym: Účinnost [Concept('stationed','umístěných')|E] [Concept('gunpowder','střelců')|E])
+ stationed_skirmishers_control_value_add: "[Concept('stationed','Umístěno')|E] [Concept('skirmishers','Harcovníci')|E] [Concept('control','Kontrola')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ stationed_skirmishers_reinforcement_rate: "Rychlost doplňování [Concept('stationed','umístěno')|E] [Concept('skirmishers','harcovníků')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ stationed_archers_control_value_add: "[Concept('stationed','Umístěno')|E] [Concept('archers','Lučištníci')|E] [Concept('control','Kontrola')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ stationed_archers_reinforcement_rate: "Rychlost doplňování [Concept('stationed','umístěno')|E] [Concept('archers','lučištníků')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ stationed_heavy_infantry_control_value_add: "[Concept('stationed','Umístěno')|E] [Concept('heavy_infantry','Těžká pěchota')|E] [Concept('control','Kontrola')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ stationed_heavy_infantry_reinforcement_rate: "Rychlost doplňování [Concept('stationed','umístěno')|E] [Concept('heavy_infantry','těžké pěchoty')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ stationed_pikemen_control_value_add: "[Concept('stationed','Umístěno')|E] [Concept('spearmen','Kopiníci')|E] [Concept('control','Kontrola')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ stationed_pikemen_reinforcement_rate: "Rychlost doplňování [Concept('stationed','umístěno')|E] [Concept('spearmen','kopiníků')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ stationed_heavy_cavalry_control_value_add: "[Concept('stationed','Umístěno')|E] [Concept('heavy_cavalry','Těžká jízda')|E] [Concept('control','Kontrola')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ stationed_heavy_cavalry_reinforcement_rate: "Rychlost doplňování [Concept('stationed','umístěno')|E] [Concept('heavy_cavalry','těžké jízdy')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ stationed_archer_cavalry_control_value_add: "[Concept('stationed','Umístěno')|E] [Concept('archer_cavalry','Jízdní lučištníci')|E] [Concept('control','Kontrola')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ stationed_archer_cavalry_reinforcement_rate: "Rychlost doplňování [Concept('stationed','umístěno')|E] [Concept('archer_cavalry','jízdních lučištníků')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ stationed_camel_cavalry_control_value_add: "[Concept('stationed','Umístěno')|E] [Concept('camel_cavalry','Velbloudí jízda')|E] [Concept('control','Kontrola')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ stationed_camel_cavalry_reinforcement_rate: "Rychlost doplňování [Concept('stationed','umístěno')|E] [Concept('camel_cavalry','velbloudí jízdy')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ stationed_elephant_cavalry_control_value_add: "[Concept('stationed','Umístěno')|E] [Concept('elephant_cavalry','Sloní jízda')|E] [Concept('control','Kontrola')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ stationed_elephant_cavalry_reinforcement_rate: "Rychlost doplňování [Concept('stationed','umístěno')|E] [Concept('elephant_cavalry','sloní jízdy')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ stationed_light_cavalry_control_value_add: "[Concept('stationed','Umístěno')|E] [Concept('light_cavalry','Lehká jízda')|E] [Concept('control','Kontrola')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ stationed_light_cavalry_reinforcement_rate: "Rychlost doplňování [Concept('stationed','umístěno')|E] [Concept('light_cavalry','lehké jízdy')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ stationed_gunpowder_control_value_add: "[Concept('stationed','Umístěno')|E] [Concept('gunpowder','Střelec')|E] [Concept('control','Kontrola')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ stationed_gunpowder_reinforcement_rate: "Rychlost doplňování [Concept('stationed','umístěno')|E] [Concept('gunpowder','střelce')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ stationed_maa_maintenance_low_modifier: "[Concept('stationed','Umístěno')|E] [Concept('men_at_arms','Ozbrojenci')|E] [Concept('reduced_maintenance','Snížené náklady na údržbu')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ stationed_maa_maintenance_high_modifier: "[Concept('stationed','Umístěno')|E] [Concept('men_at_arms','Ozbrojenci')|E] [Concept('full_maintenance','Plné náklady na údržbu')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ stationed_gunpowder_maintenance_low_modifier: "[Concept('stationed','Umístěno')|E] [Concept('gunpowder','Střelec')|E] [Concept('reduced_maintenance','Snížené náklady na údržbu')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ stationed_gunpowder_maintenance_high_modifier: "[Concept('stationed','Umístěno')|E] [Concept('gunpowder','Střelec')|E] [Concept('full_maintenance','Plné náklady na údržbu')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ stationed_siege_weapon_maintenance_low_modifier: "[Concept('stationed','Umístěno')|E] [Concept('siege_weapon','Obléhací zbraň')|E] [Concept('reduced_maintenance','Snížené náklady na údržbu')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ stationed_siege_weapon_maintenance_high_modifier: "[Concept('stationed','Umístěno')|E] [Concept('siege_weapon','Obléhací zbraň')|E] [Concept('full_maintenance','Plné náklady na údržbu')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ stationed_archers_maintenance_low_modifier: "[Concept('stationed','Umístěno')|E] [Concept('archers','Lučištníci')|E] [Concept('reduced_maintenance','Snížené náklady na údržbu')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ stationed_archers_maintenance_high_modifier: "[Concept('stationed','Umístěno')|E] [Concept('archers','Lučištníci')|E] [Concept('full_maintenance','Plné náklady na údržbu')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ stationed_pikemen_maintenance_low_modifier: "[Concept('stationed','Umístěno')|E] [Concept('spearmen','Kopiníci')|E] [Concept('reduced_maintenance','Snížené náklady na údržbu')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ stationed_pikemen_maintenance_high_modifier: "[Concept('stationed','Umístěno')|E] [Concept('spearmen','Kopiníci')|E] [Concept('full_maintenance','Plné náklady na údržbu')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ stationed_heavy_infantry_maintenance_low_modifier: "[Concept('stationed','Umístěno')|E] [Concept('heavy_infantry','Těžká pěchota')|E] [Concept('reduced_maintenance','Snížené náklady na údržbu')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ stationed_heavy_infantry_maintenance_high_modifier: "[Concept('stationed','Umístěno')|E] [Concept('heavy_infantry','Těžká pěchota')|E] [Concept('full_maintenance','Plné náklady na údržbu')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ stationed_light_cavalry_maintenance_low_modifier: "[Concept('stationed','Umístěno')|E] [Concept('light_cavalry','Lehká jízda')|E] [Concept('reduced_maintenance','Snížené náklady na údržbu')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ stationed_light_cavalry_maintenance_high_modifier: "[Concept('stationed','Umístěno')|E] [Concept('light_cavalry','Lehká jízda')|E] [Concept('full_maintenance','Plné náklady na údržbu')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ stationed_heavy_cavalry_maintenance_low_modifier: "[Concept('stationed','Umístěno')|E] [Concept('heavy_cavalry','Těžká jízda')|E] [Concept('reduced_maintenance','Snížené náklady na údržbu')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ stationed_heavy_cavalry_maintenance_high_modifier: "[Concept('stationed','Umístěno')|E] [Concept('heavy_cavalry','Těžká jízda')|E] [Concept('full_maintenance','Plné náklady na údržbu')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ stationed_archer_cavalry_maintenance_low_modifier: "[Concept('stationed','Umístěno')|E] [Concept('archer_cavalry','Jízdní lučištníci')|E] [Concept('reduced_maintenance','Snížené náklady na údržbu')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ stationed_archer_cavalry_maintenance_high_modifier: "[Concept('stationed','Umístěno')|E] [Concept('archer_cavalry','Jízdní lučištníci')|E] [Concept('full_maintenance','Plné náklady na údržbu')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ stationed_camel_cavalry_maintenance_low_modifier: "[Concept('stationed','Umístěno')|E] [Concept('camel_cavalry','Velbloudí jízda')|E] [Concept('reduced_maintenance','Snížené náklady na údržbu')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ stationed_camel_cavalry_maintenance_high_modifier: "[Concept('stationed','Umístěno')|E] [Concept('camel_cavalry','Velbloudí jízda')|E] [Concept('full_maintenance','Plné náklady na údržbu')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ stationed_elephant_cavalry_maintenance_low_modifier: "[Concept('stationed','Umístěno')|E] [Concept('elephant_cavalry','Sloní jízda')|E] [Concept('reduced_maintenance','Snížené náklady na údržbu')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ stationed_elephant_cavalry_maintenance_high_modifier: "[Concept('stationed','Umístěno')|E] [Concept('elephant_cavalry','Sloní jízda')|E] [Concept('full_maintenance','Plné náklady na údržbu')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  river_crossing_modifier: "Přechod přes řeku"
  attacker_river_crossing_modifier: "Přechod přes řeku"
  major_river_crossing_modifier: "Přechod přes velkou řeku"
@@ -559,6 +619,18 @@
  MOD_COWED_VASSAL_BARTER_GOODS_CONTRIBUTION_MULT: "[Concept('modifier_contribution','Příspěvek')|E] [Concept('barter_goods','směnného zboží')|E] [Concept('cowed','vyděšeného')|E] [Concept('vassal','vazala')|E]"
  MOD_HAPPY_POWERFUL_VASSAL_BARTER_GOODS_CONTRIBUTION_ADD: "[Concept('modifier_base_contribution','Základní příspěvek')|E] [Concept('barter_goods','směnného zboží')|E] [Concept('powerful_vassal','mocného vazala')|E] jako [Concept('councillor','rádce')|E]"
  MOD_HAPPY_POWERFUL_VASSAL_BARTER_GOODS_CONTRIBUTION_MULT: "[Concept('modifier_contribution','Příspěvek')|E] [Concept('barter_goods','směnného zboží')|E] [Concept('powerful_vassal','mocného vazala')|E] jako [Concept('councillor','rádce')|E]"
+ MOD_BARON_TAX_CONTRIBUTION_ADD: "[Concept('baron','Baron')|E] [Concept('tax','Daň')|E] [Concept('modifier_base_contribution','Základní příspěvek')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_BARON_TAX_CONTRIBUTION_MULT: "[Concept('baron','Baron')|E] [Concept('tax','Daň')|E] [Concept('modifier_contribution','Příspěvek')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_BARON_LEVY_CONTRIBUTION_ADD: "[Concept('baron','Baron')|E] [Concept('levy','Odvedenec')|E] [Concept('modifier_base_contribution','Základní příspěvek')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_BARON_LEVY_CONTRIBUTION_MULT: "[Concept('baron','Baron')|E] [Concept('levy','Odvedenec')|E] [Concept('modifier_contribution','Příspěvek')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_BARON_HERD_CONTRIBUTION_ADD: "[Concept('baron','Baron')|E] [Concept('herd','Stádo')|E] [Concept('modifier_base_contribution','Základní příspěvek')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_BARON_HERD_CONTRIBUTION_MULT: "[Concept('baron','Baron')|E] [Concept('herd','Stádo')|E] [Concept('modifier_contribution','Příspěvek')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_BARON_PRESTIGE_CONTRIBUTION_ADD: "[Concept('baron','Baron')|E] [Concept('prestige','Prestiž')|E] [Concept('modifier_base_contribution','Základní příspěvek')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_BARON_PRESTIGE_CONTRIBUTION_MULT: "[Concept('baron','Baron')|E] [Concept('prestige','Prestiž')|E] [Concept('modifier_contribution','Příspěvek')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_BARON_PIETY_CONTRIBUTION_ADD: "[Concept('baron','Baron')|E] [Concept('piety','Zbožnost')|E] [Concept('modifier_base_contribution','Základní příspěvek')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_BARON_PIETY_CONTRIBUTION_MULT: "[Concept('baron','Baron')|E] [Concept('piety','Zbožnost')|E] [Concept('modifier_contribution','Příspěvek')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_BARON_BARTER_GOODS_CONTRIBUTION_ADD: "[Concept('baron','Baron')|E] [Concept('barter_goods','Směnné zboží')|E] [Concept('modifier_base_contribution','Základní příspěvek')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_BARON_BARTER_GOODS_CONTRIBUTION_MULT: "[Concept('baron','Baron')|E] [Concept('barter_goods','Směnné zboží')|E] [Concept('modifier_contribution','Příspěvek')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  republic_government_tax_contribution_add: "[Concept('modifier_base_contribution','Základní příspěvek')|E] [Concept('tax','daní')|E] [Concept('vassal','vazala')|E] [Concept('republican','republikánské')|E] vlády"
  republic_government_tax_contribution_mult: "[Concept('modifier_contribution','Příspěvek')|E] [Concept('tax','daní')|E] [Concept('vassal','vazala')|E] [Concept('republican','republikánské')|E] vlády"
  meritocratic_government_tax_contribution_add: "[Concept('modifier_base_contribution','Základní příspěvek')|E] [Concept('tax','daní')|E] [Concept('vassal','vazala')|E] [Concept('meritocratic','meritokratické')|E] vlády"
@@ -583,10 +655,12 @@
  MOD_CONTRACT_SCHEME_PHASE_DURATION_ADD: "[Concept('scheme_speed','Délka fáze')|E] [Concept('task_contract','zakázky')|E]"
  MOD_PERSONAL_SCHEME_PHASE_DURATION_ADD: "[Concept('scheme_speed','Délka fáze')|E] [Concept('personal','osobní intriky')|E]"
  MOD_POLITICAL_SCHEME_PHASE_DURATION_ADD: "[Concept('scheme_speed','Délka fáze')|E] [Concept('political','politické intriky')|E]"
+ MOD_TRADE_SCHEME_PHASE_DURATION_ADD: "[Concept('trade_scheme','Obchodní intrika')|E] [Concept('scheme_speed','Délka fáze intriky')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  MOD_ENEMY_HOSTILE_SCHEME_PHASE_DURATION_ADD: "Protivník: $MOD_HOSTILE_SCHEME_PHASE_DURATION_ADD$"
  MOD_ENEMY_CONTRACT_SCHEME_PHASE_DURATION_ADD: "Protivník: $MOD_CONTRACT_SCHEME_PHASE_DURATION_ADD$"
  MOD_ENEMY_PERSONAL_SCHEME_PHASE_DURATION_ADD: "Protivník: $MOD_PERSONAL_SCHEME_PHASE_DURATION_ADD$"
  MOD_ENEMY_POLITICAL_SCHEME_PHASE_DURATION_ADD: "Protivník: $MOD_POLITICAL_SCHEME_PHASE_DURATION_ADD$"
+ MOD_ENEMY_TRADE_SCHEME_PHASE_DURATION_ADD: "Nepřátelská $MOD_TRADE_SCHEME_PHASE_DURATION_ADD$" # todo: NEW TRANSLATION
  MOD_HEALTH: "[Concept('health','Zdraví')|E]"
  MOD_CHILD_HEALTH: "[Concept('child_health','Dětské zdraví')|E]"
  MOD_ADULT_HEALTH: "[Concept('adult_health','Zdraví dospělých')|E]"
@@ -595,6 +669,37 @@
  MOD_HEALTH_NEGATE_PENALTY: "Odolnost vůči nemocem ([Concept('health','zdraví')|E])"
  MOD_MONTHLY_INCOME: "[Concept('tax','Daň')|E]"
  MOD_MONTHLY_INCOME_MULT: "Měsíční [Concept('income','příjem')|E]"
+ MOD_MONTHLY_AGRICULTURAL_INCOME: "[Concept('agricultural_income','Zemědělský příjem')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_MONTHLY_AGRICULTURAL_INCOME_MULT: "[Concept('agricultural_income','Zemědělský příjem')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_MONTHLY_MINING_INCOME: "[Concept('mining_income','Příjem z těžby')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_MONTHLY_MINING_INCOME_MULT: "[Concept('mining_income','Příjem z těžby')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_MONTHLY_RELIGIOUS_INCOME: "[Concept('religious_income','Náboženský příjem')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_MONTHLY_RELIGIOUS_INCOME_MULT: "[Concept('religious_income','Náboženský příjem')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_MONTHLY_URBAN_INCOME: "[Concept('urban_income','Městský příjem')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_MONTHLY_URBAN_INCOME_MULT: "[Concept('urban_income','Městský příjem')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_MONTHLY_ARTISAN_INCOME: "[Concept('artisan_income','Řemeslnický příjem')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_MONTHLY_ARTISAN_INCOME_MULT: "[Concept('artisan_income','Řemeslnický příjem')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_MONTHLY_MARITIME_INCOME: "[Concept('maritime_income','Námořní příjem')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_MONTHLY_MARITIME_INCOME_MULT: "[Concept('maritime_income','Námořní příjem')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_MONTHLY_TRIBAL_INCOME: "[Concept('tribal_income','Kmenový příjem')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_MONTHLY_TRIBAL_INCOME_MULT: "[Concept('tribal_income','Kmenový příjem')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_MONTHLY_CIVIC_INCOME: "[Concept('civic_income','Správní příjem')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_MONTHLY_CIVIC_INCOME_MULT: "[Concept('civic_income','Správní příjem')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_MONTHLY_WOODLAND_INCOME: "[Concept('woodland_income','Příjmy ze zázemí')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_MONTHLY_WOODLAND_INCOME_MULT: "[Concept('woodland_income','Příjmy ze zázemí')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_MONTHLY_COMMERCE_INCOME: "[Concept('commerce_income','Příjmy z obchodu')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_MONTHLY_COMMERCE_INCOME_MULT: "[Concept('commerce_income','Příjmy z obchodu')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_MONTHLY_GENERIC_TAX: "[Concept('tax','Daň')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_MONTHLY_AGRICULTURAL_TAX: "[Concept('agricultural_taxes','Zemědělské daně')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_MONTHLY_MINING_TAX: "[Concept('mining_taxes','Důlní daně')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_MONTHLY_RELIGIOUS_TAX: "[Concept('religious_taxes','Náboženské daně')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_MONTHLY_URBAN_TAX: "[Concept('urban_taxes','Městské daně')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_MONTHLY_ARTISAN_TAX: "[Concept('artisan_taxes','Řemeslnické daně')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_MONTHLY_MARITIME_TAX: "[Concept('maritime_taxes','Námořní daně')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_MONTHLY_TRIBAL_TAX: "[Concept('tribal_taxes','Kmenové daně')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_MONTHLY_CIVIC_TAX: "[Concept('civic_taxes','Správní daně')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_MONTHLY_WOODLAND_TAX: "[Concept('woodland_taxes','Daně ze zázemí')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_MONTHLY_COMMERCE_TAX: "[Concept('commerce_taxes','Obchodní daně')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  MOD_MONTHLY_WAR_INCOME_ADD: "[Concept('income','Příjem')|E] [Concept('gold','zlata')|E] během [Concept('war','války')|E]"
  MOD_MONTHLY_WAR_INCOME_MULT: "Měsíční [Concept('income','příjem')|E] [Concept('gold','zlata')|E] během [Concept('war','války')|E]"
  MOD_MONTHLY_WAR_PRESTIGE_INCOME_ADD: "[Concept('income','Příjem')|E] [Concept('prestige','prestiže')|E] během [Concept('war','války')|E]"
@@ -608,6 +713,7 @@
  MOD_MONTHLY_INCOME_PER_STRESS_LEVEL_ADD: "[Concept('income','Příjem')|E] za [Concept('stress_level','úroveň stresu')|E]"
  MOD_MONTHLY_INCOME_PER_STRESS_LEVEL_MULT: "Měsíční [Concept('income','příjem')|E] za [Concept('stress_level','úroveň stresu')|E]"
  MOD_MONTHLY_INCOME_FROM_HERD_MULT: "Měsíční [Concept('income','příjem')|E] ze [Concept('herd','stáda')|E]"
+ MOD_MONTHLY_INCOME_FROM_TRADE_MULT: "Měsíční [Concept('income','příjem')|E] z [Concept('trade','obchodu')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  MOD_MONTHLY_TREASURY_FROM_VASSALS: "Příjem do [Concept('treasury','pokladnice')|E] od [Concept('vassals','vazalů')|E]"
  MOD_MONTHLY_TREASURY_FROM_VASSALS_MULT: "Příjem do [Concept('treasury','pokladnice')|E] od [Concept('vassals','vazalů')|E]"
  MOD_MONTHLY_TREASURY_FROM_NON_VASSALS: "Příjem do [Concept('treasury','pokladnice')|E] z jiných zdrojů než od [Concept('vassals','vazalů')|E]"
@@ -668,7 +774,7 @@
  MOD_TYRANNY_GAIN_MULT: "Získávání [Concept('tyranny','tyranie')|E]"
  MOD_TYRANNY_LOSS_MULT: "Ztráta [Concept('tyranny','tyranie')|E]"
  MOD_MONTHLY_TYRANNY: "Měsíční [Concept('tyranny','tyranie')|E]"
- MOD_DREAD_BASELINE_ADD: "Přirozená [Concept('dread','hrůza')|E]"
+ MOD_DREAD_BASELINE_ADD: "Základní úroveň [Concept('dread','hrůzy')|E]" # todo: CHANGED (predtym: Přirozená [Concept('dread','hrůza')|E])
  MOD_DREAD_DECAY_ADD: "Úbytek [Concept('dread','hrůzy')|E]"
  MOD_DREAD_DECAY_MULT: "$MOD_DREAD_DECAY_ADD$"
  MOD_DREAD_PER_TYRANNY_ADD: "Zisk [Concept('dread','hrůzy')|E] za [Concept('tyranny','tyranii')|E]"
@@ -680,11 +786,22 @@
  MOD_GENERAL_OPINION_WITH_VALUE: "Obecný názor: $VALUE|+=0$"
  MOD_MONTHLY_INCOME_PREFIX: "[gold_i]"
  MOD_MONTHLY_INCOME_MULT_PREFIX: "[gold_i]"
+ MOD_AGRICULTURAL_TAX_PREFIX: "[agricultural_tax_i]" # todo: NEW TRANSLATION
+ MOD_MINING_TAX_PREFIX: "[mining_tax_i]" # todo: NEW TRANSLATION
+ MOD_RELIGIOUS_TAX_PREFIX: "[religious_tax_i]" # todo: NEW TRANSLATION
+ MOD_URBAN_TAX_PREFIX: "[urban_tax_i]" # todo: NEW TRANSLATION
+ MOD_ARTISAN_TAX_PREFIX: "[artisan_tax_i]" # todo: NEW TRANSLATION
+ MOD_MARITIME_TAX_PREFIX: "[maritime_tax_i]" # todo: NEW TRANSLATION
+ MOD_TRIBAL_TAX_PREFIX: "[tribal_tax_i]" # todo: NEW TRANSLATION
+ MOD_CIVIC_TAX_PREFIX: "[civic_tax_i]" # todo: NEW TRANSLATION
+ MOD_WOODLAND_TAX_PREFIX: "[woodland_tax_i]" # todo: NEW TRANSLATION
+ MOD_COMMERCE_TAX_PREFIX: "[commerce_tax_i]" # todo: NEW TRANSLATION
  MOD_MONTHLY_HERD_PREFIX: "[herd_i]"
  MOD_MONTHLY_HERD_MULT_PREFIX: "[herd_i]"
  MOD_MONTHLY_TREASURY_PREFIX: "[treasury_i]"
  MOD_MONTHLY_TREASURY_MULT_PREFIX: "[treasury_i]"
- MOD_DEVELOPMENT_PREFIX: "[development_i]"
+ MOD_PROSPERITY_PREFIX: "[prosperity_i]" # todo: NEW TRANSLATION
+ MOD_PROVINCE_SIZE_PREFIX: "[settlement_size_i]" # todo: NEW TRANSLATION
  MOD_LEGEND_PREFIX: "[legend_i]"
  MOD_PLAGUE_PREFIX: "[epidemic_i]"
  MOD_LEGITIMACY_PREFIX: "[legitimacy_i]"
@@ -705,31 +822,38 @@
  MOD_MONTHLY_POSTFIX: "/měsíc"
  MOD_MAX_PERSONAL_SCHEMES_ADD: "Maximální počet [Concept('personal_schemes','osobních intrik')|E]"
  MOD_MAX_POLITICAL_SCHEMES_ADD: "Maximální počet [Concept('political_schemes','politických intrik')|E]"
+ MOD_MAX_TRADE_SCHEMES_ADD: "Maximální počet [Concept('trade_schemes','obchodní intriky')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  MOD_MAX_CONTRACT_SCHEMES_ADD: "Maximální počet [Concept('contract_schemes','intrik zakázek')|E]"
  MOD_MAX_HOSTILE_SCHEMES_ADD: "Maximální počet [Concept('hostile_schemes','nepřátelských intrik')|E]"
  MOD_OWNED_PERSONAL_SCHEME_SUCCESS_ADD: "Počáteční [Concept('success_chance','šance na úspěch')|E] [Concept('personal_scheme','osobní intriky')|E]"
  MOD_OWNED_POLITICAL_SCHEME_SUCCESS_ADD: "Počáteční [Concept('success_chance','šance na úspěch')|E] [Concept('political_scheme','politické intriky')|E]"
+ MOD_OWNED_TRADE_SCHEME_SUCCESS_ADD: "Počáteční [Concept('success_chance','šance na úspěch')|E] [Concept('trade_scheme','obchodní intriky')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  MOD_OWNED_CONTRACT_SCHEME_SUCCESS_ADD: "Počáteční [Concept('success_chance','šance na úspěch')|E] [Concept('contract_scheme','intriky zakázky')|E]"
  MOD_OWNED_HOSTILE_SCHEME_SUCCESS_ADD: "Počáteční [Concept('success_chance','šance na úspěch')|E] [Concept('hostile_scheme','nepřátelské intriky')|E]"
  MOD_ENEMY_PERSONAL_SCHEME_SUCCESS_ADD: "Počáteční [Concept('success_chance','šance na úspěch')|E] [Concept('personal_scheme','osobní intriky')|E] protivníka"
  MOD_ENEMY_POLITICAL_SCHEME_SUCCESS_ADD: "Počáteční [Concept('success_chance','šance na úspěch')|E] [Concept('political_scheme','politické intriky')|E] protivníka"
+ MOD_ENEMY_TRADE_SCHEME_SUCCESS_ADD: "Počáteční [Concept('success_chance','šance na úspěch')|E] nepřátelská [Concept('trade_scheme','obchodní intrika')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  MOD_ENEMY_CONTRACT_SCHEME_SUCCESS_ADD: "Počáteční [Concept('success_chance','šance na úspěch')|E] [Concept('contract_scheme','intriky zakázky')|E] protivníka"
  MOD_ENEMY_HOSTILE_SCHEME_SUCCESS_ADD: "Počáteční [Concept('success_chance','šance na úspěch')|E] [Concept('hostile_scheme','nepřátelské intriky')|E] protivníka"
  MOD_OWNED_PERSONAL_SCHEME_SUCCESS_GROWTH_ADD: "[Concept('scheme_growth_growth','Růst')|E] [Concept('personal_scheme','osobní intriky')|E]"
  MOD_OWNED_POLITICAL_SCHEME_SUCCESS_GROWTH_ADD: "[Concept('scheme_growth_growth','Růst')|E] [Concept('political_scheme','politické intriky')|E]"
+ MOD_OWNED_TRADE_SCHEME_SUCCESS_GROWTH_ADD: "[Concept('scheme_growth_growth','Růst')|E] [Concept('trade_scheme','Obchodní intrika')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  MOD_OWNED_CONTRACT_SCHEME_SUCCESS_GROWTH_ADD: "[Concept('scheme_growth_growth','Růst')|E] [Concept('contract_scheme','intriky zakázky')|E]"
  MOD_OWNED_HOSTILE_SCHEME_SUCCESS_GROWTH_ADD: "[Concept('scheme_growth_growth','Růst')|E] [Concept('hostile_scheme','nepřátelské intriky')|E]"
  MOD_ENEMY_PERSONAL_SCHEME_SUCCESS_GROWTH_ADD: "[Concept('scheme_growth_growth','Růst')|E] [Concept('personal_scheme','osobní intriky')|E] protivníka"
  MOD_ENEMY_POLITICAL_SCHEME_SUCCESS_GROWTH_ADD: "[Concept('scheme_growth_growth','Růst')|E] [Concept('political_scheme','politické intriky')|E] protivníka"
+ MOD_ENEMY_TRADE_SCHEME_SUCCESS_GROWTH_ADD: "[Concept('scheme_growth_growth','Růst')|E] nepřátelská [Concept('trade_scheme','obchodní intrika')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  MOD_ENEMY_CONTRACT_SCHEME_SUCCESS_GROWTH_ADD: "[Concept('scheme_growth_growth','Růst')|E] [Concept('contract_scheme','intriky zakázky')|E] protivníka"
  MOD_ENEMY_HOSTILE_SCHEME_SUCCESS_GROWTH_ADD: "[Concept('scheme_growth_growth','Růst')|E] [Concept('hostile_scheme','nepřátelské intriky')|E] protivníka"
  MOD_SCHEME_SUCCESS_GROWTH: "[Concept('scheme_growth','Růst intriky')|E]"
  MOD_OWNED_PERSONAL_SCHEME_SUCCESS_MAX_ADD: "[Concept('scheme_potential_potential','Potenciál')|E] [Concept('personal_scheme','osobní intriky')|E]"
  MOD_OWNED_POLITICAL_SCHEME_SUCCESS_MAX_ADD: "[Concept('scheme_potential_potential','Potenciál')|E] [Concept('political_scheme','politické intriky')|E]"
+ MOD_OWNED_TRADE_SCHEME_SUCCESS_MAX_ADD: "[Concept('scheme_potential_potential','Potenciál')|E] [Concept('trade_scheme','Obchodní intrika')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  MOD_OWNED_CONTRACT_SCHEME_SUCCESS_MAX_ADD: "[Concept('scheme_potential_potential','Potenciál')|E] [Concept('contract_scheme','intriky zakázky')|E]"
  MOD_OWNED_HOSTILE_SCHEME_SUCCESS_MAX_ADD: "[Concept('scheme_potential_potential','Potenciál')|E] [Concept('hostile_scheme','nepřátelské intriky')|E]"
  MOD_ENEMY_PERSONAL_SCHEME_SUCCESS_MAX_ADD: "[Concept('scheme_potential_potential','Potenciál')|E] [Concept('personal_scheme','osobní intriky')|E] protivníka"
  MOD_ENEMY_POLITICAL_SCHEME_SUCCESS_MAX_ADD: "[Concept('scheme_potential_potential','Potenciál')|E] [Concept('political_scheme','politické intriky')|E] protivníka"
+ MOD_ENEMY_TRADE_SCHEME_SUCCESS_MAX_ADD: "[Concept('scheme_potential_potential','Potenciál')|E] nepřátelská [Concept('trade_scheme','obchodní intrika')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  MOD_ENEMY_CONTRACT_SCHEME_SUCCESS_MAX_ADD: "[Concept('scheme_potential_potential','Potenciál')|E] [Concept('contract_scheme','intriky zakázky')|E] protivníka"
  MOD_ENEMY_HOSTILE_SCHEME_SUCCESS_MAX_ADD: "[Concept('scheme_potential_potential','Potenciál')|E] [Concept('hostile_scheme','nepřátelské intriky')|E] protivníka"
  MOD_SCHEME_SUCCESS_MAX: "Maximální [Concept('success_chance','šance na úspěch')|E]"
@@ -765,6 +889,10 @@
  commander_trait_advantage: "Rysy velitele"
  MODIFIER_TIME_LEFT: "#weak Do [DATE.GetString]#!"
  MODIFIER_MULTIPLE_INSTANCES: "$NAME$ ($NUMBER|V$)"
+ MODIFIER_STACKS: "Vrstvy: [GetDataModelSize( TimedModifierPreviewList.GetItems )|V0]" # todo: NEW TRANSLATION
+ MODIFIER_MORE_STACKS: "+[Subtract_int32( GetDataModelSize( TimedModifierPreviewList.GetItems ), GetDefine( 'NGui', 'MAX_MODIFIER_STACKS_IN_TOOLTIP' ) )] dalších" # todo: NEW TRANSLATION
+ MODIFIER_STACKS_HEADER: "#T #E [ModifierItem.GetStaticModifier.GetName]#!: vrstvy#!" # todo: NEW TRANSLATION
+ MODIFIER_MORE_STACKS_HEADER: "#T #E [ModifierItem.GetStaticModifier.GetName]#!: další vrstvy#!" # todo: NEW TRANSLATION
  dungeon: "Žalář"
  house_arrest: "Domácí vězení"
  MOD_IMPRISONED_RELATIVE_OPINION: "Názor příbuzných na věznitele"
@@ -835,15 +963,38 @@
  county_capital_province_modifier: "Hlavní sídlo hrabství"
  temporary_fort_province_modifier: "Dočasné opevnění"
  temporary_fort_province_modifier_desc: "Provizorní opevnění vytvořené pouze na dobu probíhající války."
+ province_size_level_1_stabilization_modifier: "Populační nárůst" # todo: NEW TRANSLATION
+ province_size_level_1_stabilization_modifier_desc: "V této provincii došlo k výraznému nárůstu počtu obyvatel. Než se plně projeví potřeby nových obyvatel, bude nějakou dobu trvat, než se situace ustálí." # todo: NEW TRANSLATION
+ province_size_level_2_stabilization_modifier: "$province_size_level_1_stabilization_modifier$" # todo: NEW TRANSLATION
+ province_size_level_2_stabilization_modifier_desc: "$province_size_level_1_stabilization_modifier_desc$" # todo: NEW TRANSLATION
+ province_size_level_3_stabilization_modifier: "$province_size_level_1_stabilization_modifier$" # todo: NEW TRANSLATION
+ province_size_level_3_stabilization_modifier_desc: "$province_size_level_1_stabilization_modifier_desc$" # todo: NEW TRANSLATION
+ province_size_level_4_stabilization_modifier: "$province_size_level_1_stabilization_modifier$" # todo: NEW TRANSLATION
+ province_size_level_4_stabilization_modifier_desc: "$province_size_level_1_stabilization_modifier_desc$" # todo: NEW TRANSLATION
+ province_size_level_5_stabilization_modifier: "$province_size_level_1_stabilization_modifier$" # todo: NEW TRANSLATION
+ province_size_level_5_stabilization_modifier_desc: "$province_size_level_1_stabilization_modifier_desc$" # todo: NEW TRANSLATION
+ province_size_level_6_stabilization_modifier: "$province_size_level_1_stabilization_modifier$" # todo: NEW TRANSLATION
+ province_size_level_6_stabilization_modifier_desc: "$province_size_level_1_stabilization_modifier_desc$" # todo: NEW TRANSLATION
+ province_size_level_7_stabilization_modifier: "$province_size_level_1_stabilization_modifier$" # todo: NEW TRANSLATION
+ province_size_level_7_stabilization_modifier_desc: "$province_size_level_1_stabilization_modifier_desc$" # todo: NEW TRANSLATION
+ province_size_level_8_stabilization_modifier: "$province_size_level_1_stabilization_modifier$" # todo: NEW TRANSLATION
+ province_size_level_8_stabilization_modifier_desc: "$province_size_level_1_stabilization_modifier_desc$" # todo: NEW TRANSLATION
+ province_size_level_9_stabilization_modifier: "$province_size_level_1_stabilization_modifier$" # todo: NEW TRANSLATION
+ province_size_level_9_stabilization_modifier_desc: "$province_size_level_1_stabilization_modifier_desc$" # todo: NEW TRANSLATION
+ province_size_level_10_stabilization_modifier: "$province_size_level_1_stabilization_modifier$" # todo: NEW TRANSLATION
+ province_size_level_10_stabilization_modifier_desc: "$province_size_level_1_stabilization_modifier_desc$" # todo: NEW TRANSLATION
+ below_food_requirement_modifier: "Nedostatek požadovaných zásob [Concept('food_supply','zásob potravin')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ above_trade_post_limit_modifier: "Překročen [Concept('trade_post_limit','limit obchodních stanic')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  disabled_fort_province_modifier: "$MOD_HOLDING_FORT_LEVEL$"
  independent_realm_capital_province_modifier: "Hlavní sídlo nezávislého [Concept('realm','panství')|E]"
  high_tier_vassal_capital_province_modifier: "Hlavní sídlo [Concept('realm','panství')|E] vysoce postaveného vazala"
  capital_province_modifier: "[Concept('realm_capital','Hlavní sídlo panství')|E]"
  nomad_capital_province_modifier: "[GetGovernment( 'nomad_government' ).GetName] – [Concept('realm_capital','hlavní sídlo panství')|E]"
  capital_duchy_province_modifier: "[Concept('capital_duchy','Hlavní vévodství')|E]"
- coastal_province_modifier: "Pobřežní"
  coastal_land_province_modifier: "Pobřežní"
  coastal_land_county_capital_province_modifier: "Pobřežní hlavní sídlo"
+ riverside_land_province_modifier: "U řeky" # todo: NEW TRANSLATION
+ lakeside_land_province_modifier: "U jezera" # todo: NEW TRANSLATION
  allied_province_modifier: "Spojenecké území"
  occupied_allied_province_modifier: "Obsazené spojenecké území"
  neighbor_allied_province_modifier: "Sousední spojenecké území"
@@ -861,11 +1012,39 @@
  modifier_religious_understanding_modifier: "Náboženské porozumění"
  modifier_religious_understanding_modifier_desc: "Pán těchto zemí projevil pochopení pro místní náboženství."
  fertile_desert_mountains_modifier: "Al-Yamnat"
- fertile_desert_mountains_modifier_desc: "Již od starověku je jižní část Arábie známa jako úrodná neboli šťastná Arábie. Tento region je lidnatější a úrodnější než okolní části poloostrova.\nLze postavit [GetBuilding('cereal_fields_01').GetName]"
+ fertile_desert_mountains_modifier_desc: "Již od starověku je jižní část Arábie známa jako úrodná neboli šťastná Arábie. Tento region je lidnatější a úrodnější než okolní části poloostrova." # todo: CHANGED (predtym: Již od starověku je jižní část Arábie známa jako úrodná neboli šťastná Arábie. Tento region je lidnatější a úrodnější ne)
+ bounty_of_the_nile_modifier: "Dar Nilu" # todo: NEW TRANSLATION
+ bounty_of_the_nile_modifier_desc: "Od dávných dob řeka Nil díky své bohaté úrodě živí obyvatele Egypta i společnosti kolem Středozemního moře." # todo: NEW TRANSLATION
+ granary_of_the_mediterranean_modifier: "Sýpka Středomoří" # todo: NEW TRANSLATION
+ granary_of_the_mediterranean_modifier_desc: "Úrodná půda na ostrově Sicílie mu už od dob Římské říše vynesla pověst sýpky Středomoří." # todo: NEW TRANSLATION
+ granary_of_hindustan_modifier: "Gangská nížina" # todo: NEW TRANSLATION
+ granary_of_hindustan_modifier_desc: "Gangská nížina patří k nejúrodnějším oblastem na světě a byla domovským územím mnoha indických říší." # todo: NEW TRANSLATION
+ granary_of_the_south_modifier: "Sýpka jihu" # todo: NEW TRANSLATION
+ granary_of_the_south_modifier_desc: "Vodní toky dolního Jang-c’-ťiang vytvořily oblast, která přináší mimořádně bohatou úrodu." # todo: NEW TRANSLATION
+ cedars_of_lebanon_modifier: "Libanonské cedry" # todo: NEW TRANSLATION
+ cedars_of_lebanon_modifier_desc: "Už od dob starověkých Féničanů je tato oblast zdrojem kvalitního a odolného dřeva." # todo: NEW TRANSLATION
+ pearl_fishing_banks_modifier: "Lovná místa perel" # todo: NEW TRANSLATION
+ pearl_fishing_banks_modifier_desc: "Tato oblast je proslulá svými perlami a místní rybáři po generace soupeří v jejich vylovování. \n\n[GetDistrictType('fish_district').GetName] v tomto [Concept('county','hrabství')|E] může stavět budovy [GetBuildingType('pearl_fishery_1').GetName].\n\n" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ walrus_ivory_modifier: "Mroží slonovina" # todo: NEW TRANSLATION
+ walrus_ivory_modifier_desc: "Mroži, kteří obývají tuto oblast, jsou zdejší zvláštností a zároveň zdrojem cenné slonoviny.\n\n[GetDistrictType('fish_district').GetName] nebo [GetDistrictType('furs_district').GetName] v tomto [Concept('county','hrabství')|E] může stavět budovy [GetBuildingType('walrus_hunting_camp_1').GetName].\n\n" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ naphta_modifier: "Nafta" # todo: NEW TRANSLATION
+ naphta_modifier_desc: "V této oblasti se ze země přirozeně dostává na povrch neobvyklý druh ropy. Po tisíciletí se používá k udržování věčných ohňů v místních chrámech. Ve velkém se také vyváží pro svícení v lampách, k lékařským účelům nebo k léčbě zvířat.\n\nJakýkoli [Concept('resource_district','zdrojová čtvrť')|E] v tomto [Concept('county','hrabství')|E] může stavět budovy [GetBuildingType('naphta_pit_1').GetName].\n\n" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ carrara_marble_modifier: "Mramor z Carrary" # todo: NEW TRANSLATION
+ carrara_marble_modifier_desc: "Mramor z Luni je proslulý svou vysokou kvalitou už od pozdního období Římské říše." # todo: NEW TRANSLATION
+ mastic_of_chios_modifier: "Chioský mastix" # todo: NEW TRANSLATION
+ mastic_of_chios_modifier_desc: "Už od dob samotného Hippokrata se věří, že žvýkací pryskyřice z tohoto ostrova léčí zažívací potíže a nachlazení. Mastix, který údajně stojí svou váhu ve zlatě, si často přivlastňovali císaři a vesnice, kde se vyrábí, jsou opevněné jako hrady." # todo: NEW TRANSLATION
+ kashi_lustreware_modifier: "Kášská lustrová keramika" # todo: NEW TRANSLATION
+ kashi_lustreware_modifier_desc: "Tento kraj je proslulý třpytivou, téměř kovově lesklou glazurou své keramiky. Je tak věhlasná, že se Kashi stalo synonymem pro samotné dlaždice i pro architektonický styl, který je využívá." # todo: NEW TRANSLATION
+ venetian_glass_modifier: "Benátské sklo" # todo: NEW TRANSLATION
+ venetian_glass_modifier_desc: "Benátky jsou střediskem výroby skla už od raného středověku. Postupem času sem však benátští skláři přilákali zkušenější mistry z východu. Výroba se nakonec soustředila na ostrově Murano a dosáhla technické dokonalosti, jaká se v západním světě vídá jen zřídka." # todo: NEW TRANSLATION
+ toledo_bladesmiths_modifier: "Toledští mečíři" # todo: NEW TRANSLATION
+ toledo_bladesmiths_modifier_desc: "Kováři z Toleda jsou proslulí svým řemeslem už od dob Římské říše a jejich pověst v křesťanském světě dodnes nemá konkurenci.\nLze postavit budovu [GetBuildingType('bladesmiths_of_toledo_1').GetName]" # todo: NEW TRANSLATION
+ samarkandi_paper_modifier: "Samarkandský papír" # todo: NEW TRANSLATION
+ samarkandi_paper_modifier_desc: "Papír se v tomto kraji vyrábí už po staletí a samarkandský papír slouží v celém islámském světě jako měřítko kvality." # todo: NEW TRANSLATION
  dodekapolis_modifier: "Dodekapolis"
- dodekapolis_modifier_desc: "Od dob Homéra, kdy eolští a iónští kolonisté přistáli na západním pobřeží Anatolie, 12 měst anatolského pobřeží — #EMP dodekapolis#! — stojí jako zářivé majáky civilizace a lidského rozvoje.\nLze postavit [GetBuilding('cereal_fields_01').GetName]"
+ dodekapolis_modifier_desc: "Od dob Homéra, kdy eolští a iónští kolonisté přistáli na západním pobřeží Anatolie, 12 měst anatolského pobřeží — #EMP dodekapolis#! — stojí jako zářivé majáky civilizace a lidského rozvoje." # todo: CHANGED (predtym: Od dob Homéra, kdy eolští a iónští kolonisté přistáli na západním pobřeží Anatolie, 12 měst anatolského pobřeží — EMP do)
  backwater_county_modifier: "Okrajová oblast"
- backwater_county_modifier_desc: "Čím větší jsou, tím tvrději padají. Toto hrabství, kdysi území neúprosných vládců Hellady, bohužel postihl neslavný úpadek. Ač je nyní pouhým stínem své někdejší slávy, může opět dosáhnout velikosti.\n\n#X @warning_icon! Tento modifikátor lze odstranit pomocí [Concept('decision','rozhodnutí')|E] [GetDecisionWithKey('restore_backwater_counties_decision').GetName], jakmile [Concept('development','rozvoj')|E] tohoto [Concept('county','hrabství')|E] dosáhne hodnoty #V 50#! nebo vyšší!#!\n\n"
+ backwater_county_modifier_desc: "Čím větší jsou, tím tvrději padají. Toto hrabství, kdysi území neúprosných vládců Hellady, bohužel postihl neslavný úpadek. Ač je nyní pouhým stínem své někdejší slávy, může opět dosáhnout velikosti.\n\n#X @warning_icon! Tento modifikátor lze odstranit pomocí [Concept('decision','rozhodnutí')|E] [GetDecisionWithKey('restore_backwater_counties_decision').GetName], jakmile [Concept('prosperity','prosperity')|E] tohoto [Concept('county','hrabství')|E] dosáhne hodnoty #V 50#! nebo vyšší!#!\n\n" # todo: CHANGED (predtym: Čím větší jsou, tím tvrději padají. Toto hrabství, kdysi území neúprosných vládců Hellady, bohužel postihl neslavný úpad)
  dance_plague_modifier: "Bagatelizovaný taneční mor"
  dance_plague_modifier_desc: "Vládci těchto zemí ignorovali prosby o pomoc sedláků z oblasti postižené ergotismem."
  disease_spreading_modifier: "Zpustošeno nemocí"
@@ -876,26 +1055,26 @@
  winter_harsh_modifier: "Krutá [Concept('winter','tuhost zimy')|E]"
  spurned_by_traders: "Odmítnutí ze strany obchodníků"
  elevate_mann_and_the_isles_modifier: "Povýšení království Mann a ostrovů"
- extra_building_slot: "$MOD_NUM_BUILDING_SLOTS$"
+ extra_building_slot: "$MOD_BUILDING_SLOT_ADD$" # todo: CHANGED (predtym: $MOD_NUM_BUILDING_SLOTS$)
  army_fortification_province_modifier: "Opevnění"
- MOD_CONSTRUCTION_SPEED: "Doba výstavby [Concept('building','budovy')|E]"
+ MOD_BUILDING_CONSTRUCTION_SPEED: "Doba výstavby [Concept('building','budova')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  game_concept_great_project_build_speed: "Doba výstavby [Concept('great_project','velkého projektu')|E]"
- MOD_CONSTRUCTION_GOLD_COST: "Cena výstavby [Concept('building','budovy')|E]"
- plains_construction_gold_cost: "$MOD_CONSTRUCTION_GOLD_COST$ na rovinách"
- farmlands_construction_gold_cost: "$MOD_CONSTRUCTION_GOLD_COST$ v zemědělských oblastech"
- hills_construction_gold_cost: "$MOD_CONSTRUCTION_GOLD_COST$ v kopcích"
- mountains_construction_gold_cost: "$MOD_CONSTRUCTION_GOLD_COST$ v horách"
- desert_construction_gold_cost: "$MOD_CONSTRUCTION_GOLD_COST$ v poušti"
- desert_mountains_construction_gold_cost: "$MOD_CONSTRUCTION_GOLD_COST$ v pouštních horách"
- oasis_construction_gold_cost: "$MOD_CONSTRUCTION_GOLD_COST$ v oáze"
- jungle_construction_gold_cost: "$MOD_CONSTRUCTION_GOLD_COST$ v džungli"
- forest_construction_gold_cost: "$MOD_CONSTRUCTION_GOLD_COST$ v lese"
- taiga_construction_gold_cost: "$MOD_CONSTRUCTION_GOLD_COST$ v tajze"
- wetlands_construction_gold_cost: "$MOD_CONSTRUCTION_GOLD_COST$ v mokřadech"
- steppe_construction_gold_cost: "$MOD_CONSTRUCTION_GOLD_COST$ ve stepi"
- floodplains_construction_gold_cost: "$MOD_CONSTRUCTION_GOLD_COST$ na záplavových pláních"
- drylands_construction_gold_cost: "$MOD_CONSTRUCTION_GOLD_COST$ v suchých oblastech"
- terraced_hills_construction_gold_cost: "$MOD_CONSTRUCTION_GOLD_COST$ v terasovaných kopcích"
+ MOD_BUILDING_CONSTRUCTION_GOLD_COST: "Cena výstavby [Concept('building','budova')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ plains_construction_gold_cost: "$MOD_BUILDING_CONSTRUCTION_GOLD_COST$ na rovinách" # todo: CHANGED (predtym: $MOD_CONSTRUCTION_GOLD_COST$ na rovinách)
+ farmlands_construction_gold_cost: "$MOD_BUILDING_CONSTRUCTION_GOLD_COST$ v zemědělských oblastech" # todo: CHANGED (predtym: $MOD_CONSTRUCTION_GOLD_COST$ v zemědělských oblastech)
+ hills_construction_gold_cost: "$MOD_BUILDING_CONSTRUCTION_GOLD_COST$ v kopcích" # todo: CHANGED (predtym: $MOD_CONSTRUCTION_GOLD_COST$ v kopcích)
+ mountains_construction_gold_cost: "$MOD_BUILDING_CONSTRUCTION_GOLD_COST$ v horách" # todo: CHANGED (predtym: $MOD_CONSTRUCTION_GOLD_COST$ v horách)
+ desert_construction_gold_cost: "$MOD_BUILDING_CONSTRUCTION_GOLD_COST$ v poušti" # todo: CHANGED (predtym: $MOD_CONSTRUCTION_GOLD_COST$ v poušti)
+ desert_mountains_construction_gold_cost: "$MOD_BUILDING_CONSTRUCTION_GOLD_COST$ v pouštních horách" # todo: CHANGED (predtym: $MOD_CONSTRUCTION_GOLD_COST$ v pouštních horách)
+ oasis_construction_gold_cost: "$MOD_BUILDING_CONSTRUCTION_GOLD_COST$ v oáze" # todo: CHANGED (predtym: $MOD_CONSTRUCTION_GOLD_COST$ v oáze)
+ jungle_construction_gold_cost: "$MOD_BUILDING_CONSTRUCTION_GOLD_COST$ v džungli" # todo: CHANGED (predtym: $MOD_CONSTRUCTION_GOLD_COST$ v džungli)
+ forest_construction_gold_cost: "$MOD_BUILDING_CONSTRUCTION_GOLD_COST$ v lese" # todo: CHANGED (predtym: $MOD_CONSTRUCTION_GOLD_COST$ v lese)
+ taiga_construction_gold_cost: "$MOD_BUILDING_CONSTRUCTION_GOLD_COST$ v tajze" # todo: CHANGED (predtym: $MOD_CONSTRUCTION_GOLD_COST$ v tajze)
+ wetlands_construction_gold_cost: "$MOD_BUILDING_CONSTRUCTION_GOLD_COST$ v mokřadech" # todo: CHANGED (predtym: $MOD_CONSTRUCTION_GOLD_COST$ v mokřadech)
+ steppe_construction_gold_cost: "$MOD_BUILDING_CONSTRUCTION_GOLD_COST$ ve stepi" # todo: CHANGED (predtym: $MOD_CONSTRUCTION_GOLD_COST$ ve stepi)
+ floodplains_construction_gold_cost: "$MOD_BUILDING_CONSTRUCTION_GOLD_COST$ na záplavových pláních" # todo: CHANGED (predtym: $MOD_CONSTRUCTION_GOLD_COST$ na záplavových pláních)
+ drylands_construction_gold_cost: "$MOD_BUILDING_CONSTRUCTION_GOLD_COST$ v suchých oblastech" # todo: CHANGED (predtym: $MOD_CONSTRUCTION_GOLD_COST$ v suchých oblastech)
+ terraced_hills_construction_gold_cost: "$MOD_BUILDING_CONSTRUCTION_GOLD_COST$ v terasovaných kopcích" # todo: CHANGED (predtym: $MOD_CONSTRUCTION_GOLD_COST$ v terasovaných kopcích)
  plains_construction_prestige_cost: "$plains_construction_gold_cost$"
  farmlands_construction_prestige_cost: "$farmlands_construction_gold_cost$"
  hills_construction_prestige_cost: "$hills_construction_gold_cost$"
@@ -910,61 +1089,101 @@
  steppe_construction_prestige_cost: "$steppe_construction_gold_cost$"
  floodplains_construction_prestige_cost: "$floodplains_construction_gold_cost$"
  drylands_construction_prestige_cost: "$drylands_construction_gold_cost$"
- MOD_CONSTRUCTION_PIETY_COST: "Cena výstavby [Concept('building','budovy')|E]"
- MONTHLY_DEVELOPMENT_GROWTH: "Měsíční růst [Concept('development','rozvoje')|E]"
+ MOD_BUILDING_CONSTRUCTION_PIETY_COST: "Cena výstavby [Concept('building','budova')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MONTHLY_PROSPERITY_GROWTH: "Měsíční růst [Concept('prosperity','rozkvět')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  FROM_NEIGHTBOURS: "Od sousedů"
- MOD_MONTHLY_DEVELOPMENT_GROWTH: "Růst [Concept('development','rozvoje')|E]"
- MOD_MONTHLY_DEVELOPMENT_DECLINE: "Pokles [Concept('development','rozvoje')|E]"
- MOD_CHARACTER_CAPITAL_MONTHLY_DEVELOPMENT_GROWTH_ADD: "Růst [Concept('development','rozvoje')|E] v [Concept('realm_capital','hlavním sídle panství')|E]"
- MOD_CHARACTER_CAPITAL_MONTHLY_CONTROL_ADD: "[Concept('control','Kontrola')|E] v [Concept('realm_capital','hlavním sídle panství')|E]"
- MOD_MONTHLY_DEVELOPMENT_GROWTH_FACTOR: "Růst [Concept('development','rozvoje')|E]"
- MOD_MONTHLY_DEVELOPMENT_DECLINE_FACTOR: "Pokles [Concept('development','rozvoje')|E]"
- plains_development_growth: "$MOD_MONTHLY_DEVELOPMENT_GROWTH$ na rovinách"
- farmlands_development_growth: "$MOD_MONTHLY_DEVELOPMENT_GROWTH$ v zemědělských oblastech"
- hills_development_growth: "$MOD_MONTHLY_DEVELOPMENT_GROWTH$ v kopcích"
- mountains_development_growth: "$MOD_MONTHLY_DEVELOPMENT_GROWTH$ v horách"
- desert_development_growth: "$MOD_MONTHLY_DEVELOPMENT_GROWTH$ v poušti"
- desert_mountains_development_growth: "$MOD_MONTHLY_DEVELOPMENT_GROWTH$ v pouštních horách"
- oasis_development_growth: "$MOD_MONTHLY_DEVELOPMENT_GROWTH$ v oáze"
- jungle_development_growth: "$MOD_MONTHLY_DEVELOPMENT_GROWTH$ v džungli"
- forest_development_growth: "$MOD_MONTHLY_DEVELOPMENT_GROWTH$ v lese"
- taiga_development_growth: "$MOD_MONTHLY_DEVELOPMENT_GROWTH$ v tajze"
- wetlands_development_growth: "$MOD_MONTHLY_DEVELOPMENT_GROWTH$ v mokřadech"
- steppe_development_growth: "$MOD_MONTHLY_DEVELOPMENT_GROWTH$ ve stepi"
- floodplains_development_growth: "$MOD_MONTHLY_DEVELOPMENT_GROWTH$ na záplavových pláních"
- drylands_development_growth: "$MOD_MONTHLY_DEVELOPMENT_GROWTH$ v suchých oblastech"
- plains_development_growth_factor: "$MOD_MONTHLY_DEVELOPMENT_GROWTH_FACTOR$ na rovinách"
- farmlands_development_growth_factor: "$MOD_MONTHLY_DEVELOPMENT_GROWTH_FACTOR$ v zemědělských oblastech"
- hills_development_growth_factor: "$MOD_MONTHLY_DEVELOPMENT_GROWTH_FACTOR$ v kopcích"
- mountains_development_growth_factor: "$MOD_MONTHLY_DEVELOPMENT_GROWTH_FACTOR$ v horách"
- desert_development_growth_factor: "$MOD_MONTHLY_DEVELOPMENT_GROWTH_FACTOR$ v poušti"
- desert_mountains_development_growth_factor: "$MOD_MONTHLY_DEVELOPMENT_GROWTH_FACTOR$ v pouštních horách"
- oasis_development_growth_factor: "$MOD_MONTHLY_DEVELOPMENT_GROWTH_FACTOR$ v oáze"
- jungle_development_growth_factor: "$MOD_MONTHLY_DEVELOPMENT_GROWTH_FACTOR$ v džungli"
- forest_development_growth_factor: "$MOD_MONTHLY_DEVELOPMENT_GROWTH_FACTOR$ v lese"
- taiga_development_growth_factor: "$MOD_MONTHLY_DEVELOPMENT_GROWTH_FACTOR$ v tajze"
- wetlands_development_growth_factor: "$MOD_MONTHLY_DEVELOPMENT_GROWTH_FACTOR$ v mokřadech"
- steppe_development_growth_factor: "$MOD_MONTHLY_DEVELOPMENT_GROWTH_FACTOR$ ve stepi"
- floodplains_development_growth_factor: "$MOD_MONTHLY_DEVELOPMENT_GROWTH_FACTOR$ na záplavových pláních"
- drylands_development_growth_factor: "$MOD_MONTHLY_DEVELOPMENT_GROWTH_FACTOR$ v suchých oblastech"
- terraced_hills_development_growth_factor: "$MOD_MONTHLY_DEVELOPMENT_GROWTH_FACTOR$ v terasovaných kopcích"
- world_steppe_development_growth_factor: "$MOD_MONTHLY_DEVELOPMENT_GROWTH_FACTOR$ v [Concept('region','regionu')|E] [GetGeographicalRegion('world_steppe').GetName]"
+ MOD_MONTHLY_PROSPERITY_GROWTH: "[Concept('prosperity','Rozkvět')|E]: růst" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_MONTHLY_PROSPERITY_DECLINE: "[Concept('prosperity','Rozkvět')|E]: pokles" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_CHARACTER_CAPITAL_MONTHLY_PROSPERITY_GROWTH_ADD: "[Concept('prosperity','Rozkvět')|E]: růst v [Concept('realm_capital','hlavním sídle panství')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_CHARACTER_CAPITAL_MONTHLY_PROSPERITY_GROWTH_FACTOR: "[Concept('prosperity','Rozkvět')|E]: růst v [Concept('realm_capital','hlavním sídle panství')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_CHARACTER_CAPITAL_MONTHLY_PROSPERITY_DECLINE_ADD: "[Concept('prosperity','Rozkvět')|E]: pokles v [Concept('realm_capital','hlavním sídle panství')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_CHARACTER_CAPITAL_MONTHLY_PROSPERITY_DECLINE_FACTOR: "[Concept('prosperity','Rozkvět')|E]: pokles v [Concept('realm_capital','hlavním sídle panství')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_CHARACTER_CAPITAL_CONTROL_CHANGE_ADD: "[Concept('control','Kontrola')|E] v [Concept('realm_capital','hlavním sídle panství')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_CHARACTER_CAPITAL_CONTROL_CHANGE_MULT: "[Concept('control','Kontrola')|E] v [Concept('realm_capital','hlavním sídle panství')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_MONTHLY_PROSPERITY_GROWTH_FACTOR: "[Concept('prosperity','Rozkvět')|E]: růst" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_MONTHLY_PROSPERITY_DECLINE_FACTOR: "[Concept('prosperity','Rozkvět')|E]: pokles" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ plains_prosperity_growth: "$MOD_MONTHLY_PROSPERITY_GROWTH$ v rovinách" # todo: NEW TRANSLATION
+ farmlands_prosperity_growth: "$MOD_MONTHLY_PROSPERITY_GROWTH$ na zemědělské půdě" # todo: NEW TRANSLATION
+ hills_prosperity_growth: "$MOD_MONTHLY_PROSPERITY_GROWTH$ v kopcích" # todo: NEW TRANSLATION
+ mountains_prosperity_growth: "$MOD_MONTHLY_PROSPERITY_GROWTH$ v horách" # todo: NEW TRANSLATION
+ desert_prosperity_growth: "$MOD_MONTHLY_PROSPERITY_GROWTH$ v poušti" # todo: NEW TRANSLATION
+ desert_mountains_prosperity_growth: "$MOD_MONTHLY_PROSPERITY_GROWTH$ v pouštních horách" # todo: NEW TRANSLATION
+ oasis_prosperity_growth: "$MOD_MONTHLY_PROSPERITY_GROWTH$ v oáze" # todo: NEW TRANSLATION
+ jungle_prosperity_growth: "$MOD_MONTHLY_PROSPERITY_GROWTH$ v džungli" # todo: NEW TRANSLATION
+ forest_prosperity_growth: "$MOD_MONTHLY_PROSPERITY_GROWTH$ v lese" # todo: NEW TRANSLATION
+ taiga_prosperity_growth: "$MOD_MONTHLY_PROSPERITY_GROWTH$ v tajze" # todo: NEW TRANSLATION
+ wetlands_prosperity_growth: "$MOD_MONTHLY_PROSPERITY_GROWTH$ v mokřadech" # todo: NEW TRANSLATION
+ steppe_prosperity_growth: "$MOD_MONTHLY_PROSPERITY_GROWTH$ ve stepi" # todo: NEW TRANSLATION
+ floodplains_prosperity_growth: "$MOD_MONTHLY_PROSPERITY_GROWTH$ v záplavových územích" # todo: NEW TRANSLATION
+ drylands_prosperity_growth: "$MOD_MONTHLY_PROSPERITY_GROWTH$ v suchých územích" # todo: NEW TRANSLATION
+ plains_prosperity_growth_factor: "$MOD_MONTHLY_PROSPERITY_GROWTH_FACTOR$ na pláních" # todo: NEW TRANSLATION
+ farmlands_prosperity_growth_factor: "$MOD_MONTHLY_PROSPERITY_GROWTH_FACTOR$ na zemědělské půdě" # todo: NEW TRANSLATION
+ hills_prosperity_growth_factor: "$MOD_MONTHLY_PROSPERITY_GROWTH_FACTOR$ v kopcích" # todo: NEW TRANSLATION
+ mountains_prosperity_growth_factor: "$MOD_MONTHLY_PROSPERITY_GROWTH_FACTOR$ v horách" # todo: NEW TRANSLATION
+ desert_prosperity_growth_factor: "$MOD_MONTHLY_PROSPERITY_GROWTH_FACTOR$ v poušti" # todo: NEW TRANSLATION
+ desert_mountains_prosperity_growth_factor: "$MOD_MONTHLY_PROSPERITY_GROWTH_FACTOR$ v pouštních horách" # todo: NEW TRANSLATION
+ oasis_prosperity_growth_factor: "$MOD_MONTHLY_PROSPERITY_GROWTH_FACTOR$ v oáze" # todo: NEW TRANSLATION
+ jungle_prosperity_growth_factor: "$MOD_MONTHLY_PROSPERITY_GROWTH_FACTOR$ v džungli" # todo: NEW TRANSLATION
+ forest_prosperity_growth_factor: "$MOD_MONTHLY_PROSPERITY_GROWTH_FACTOR$ v lese" # todo: NEW TRANSLATION
+ taiga_prosperity_growth_factor: "$MOD_MONTHLY_PROSPERITY_GROWTH_FACTOR$ v tajze" # todo: NEW TRANSLATION
+ wetlands_prosperity_growth_factor: "$MOD_MONTHLY_PROSPERITY_GROWTH_FACTOR$ v mokřadech" # todo: NEW TRANSLATION
+ steppe_prosperity_growth_factor: "$MOD_MONTHLY_PROSPERITY_GROWTH_FACTOR$ ve stepi" # todo: NEW TRANSLATION
+ floodplains_prosperity_growth_factor: "$MOD_MONTHLY_PROSPERITY_GROWTH_FACTOR$ v záplavových územích" # todo: NEW TRANSLATION
+ drylands_prosperity_growth_factor: "$MOD_MONTHLY_PROSPERITY_GROWTH_FACTOR$ v suchých územích" # todo: NEW TRANSLATION
+ terraced_hills_prosperity_growth_factor: "$MOD_MONTHLY_PROSPERITY_GROWTH_FACTOR$ v terasovitých kopcích" # todo: NEW TRANSLATION
+ world_steppe_prosperity_growth_factor: "$MOD_MONTHLY_PROSPERITY_GROWTH_FACTOR$ v regionu [GetGeographicalRegion('world_steppe').GetName] [Concept('region','regionu')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_COUNTY_CAPITAL_PROVINCE_SIZE_BASELINE_ADD: "Základní hodnota [Concept('settlement_size','velikost sídla')|E] v [Concept('county_capital','hlavním sídle hrabství')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_PROVINCE_SIZE_BASELINE_ADD: "Základní hodnota [Concept('settlement_size','velikost sídla')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_MONTHLY_PROVINCE_SIZE_CHANGE: "Měsíční změna [Concept('settlement_size','velikost sídla')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_MONTHLY_PROVINCE_SIZE_CHANGE_MULT: "Měsíční změna [Concept('settlement_size','velikost sídla')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_MONTHLY_PROVINCE_SIZE_CHANGE_WHEN_BELOW_BASELINE_ADD: "Růst [Concept('settlement_size','velikost sídla')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_MONTHLY_PROVINCE_SIZE_CHANGE_WHEN_BELOW_BASELINE_MULT: "Růst [Concept('settlement_size','velikost sídla')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_MONTHLY_PROVINCE_SIZE_CHANGE_WHEN_ABOVE_BASELINE_ADD: "Pokles [Concept('settlement_size','velikost sídla')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_MONTHLY_PROVINCE_SIZE_CHANGE_WHEN_ABOVE_BASELINE_MULT: "Pokles [Concept('settlement_size','velikost sídla')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_CONTROL_BASELINE_PER_PROVINCE_SIZE_LEVEL: "[control_i] [Concept('control_baseline','Základní úroveň kontroly')|E] za každou úroveň [Concept('settlement_size','velikost sídla')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_MONTHLY_CONTROL_CHANGE_PER_PROVINCE_SIZE_LEVEL: "Měsíční změna [Concept('control','kontrola')|E] za každou úroveň [Concept('settlement_size','velikost sídla')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_PROSPERITY_PER_PROVINCE_SIZE_LEVEL: "[Concept('prosperity','Rozkvět')|E] za každou úroveň [Concept('settlement_size','velikost sídla')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_PROSPERITY_GROWTH_FACTOR_PER_PROVINCE_SIZE_LEVEL: "[Concept('prosperity_growth','Růst rozkvětu')|E] za každou úroveň [Concept('settlement_size','velikost sídla')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_CONTROL_BASELINE_PER_PROVINCE_SIZE_LEVEL_UNDER_MAX: "[Concept('control_baseline','Základní úroveň kontroly')|E] za každou úroveň [Concept('settlement_size','velikost sídla')|E] pod maximem" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_MONTHLY_CONTROL_CHANGE_PER_PROVINCE_SIZE_LEVEL_UNDER_MAX: "Měsíční změna [Concept('control','kontrola')|E] za každou úroveň [Concept('settlement_size','velikost sídla')|E] pod maximem" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_INVERTED_PROSPERITY_PER_PROVINCE_SIZE_LEVEL: "[Concept('prosperity','Rozkvět')|E] za každou úroveň [Concept('settlement_size','velikost sídla')|E] pod maximem" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_INVERTED_PROSPERITY_GROWTH_FACTOR_PER_PROVINCE_SIZE_LEVEL: "[Concept('prosperity_growth','Růst rozkvětu')|E] za každou úroveň [Concept('settlement_size','velikost sídla')|E] pod maximem" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_CHARACTER_CAPITAL_PROVINCE_SIZE_BASELINE_ADD: "Základní hodnota [Concept('settlement_size','velikost sídla')|E] v [Concept('capital','hlavním sídle')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_CHARACTER_CAPITAL_MONTHLY_PROVINCE_SIZE_CHANGE_ADD: "Měsíční změna [Concept('settlement_size','velikost sídla')|E] v [Concept('capital','hlavním sídle')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_CHARACTER_CAPITAL_MONTHLY_PROVINCE_SIZE_CHANGE_MULT: "Měsíční změna [Concept('settlement_size','velikost sídla')|E] v [Concept('capital','hlavním sídle')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_CHARACTER_CAPITAL_MONTHLY_PROVINCE_SIZE_CHANGE_WHEN_ABOVE_BASELINE_ADD: "Měsíční změna [Concept('settlement_size','velikost sídla')|E] v [Concept('capital','hlavním sídle')|E] nad základní hodnotou" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_CHARACTER_CAPITAL_MONTHLY_PROVINCE_SIZE_CHANGE_WHEN_ABOVE_BASELINE_MULT: "Měsíční změna [Concept('settlement_size','velikost sídla')|E] v [Concept('capital','hlavním sídle')|E] nad základní hodnotou" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_CHARACTER_CAPITAL_MONTHLY_PROVINCE_SIZE_CHANGE_WHEN_BELOW_BASELINE_ADD: "Měsíční změna [Concept('settlement_size','velikost sídla')|E] v [Concept('capital','hlavním sídle')|E] pod základní hodnotou" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_CHARACTER_CAPITAL_MONTHLY_PROVINCE_SIZE_CHANGE_WHEN_BELOW_BASELINE_MULT: "Měsíční změna [Concept('settlement_size','velikost sídla')|E] v [Concept('capital','hlavním sídle')|E] pod základní hodnotou" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_CHARACTER_CAPITAL_POPULAR_OPINION_ADD: "Základní hodnota [Concept('popular_opinion','lidové mínění')|E] v [Concept('capital','hlavním sídle')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_MONTHLY_CHARACTER_CAPITAL_POPULAR_OPINION_CHANGE: "Měsíční změna [Concept('popular_opinion','lidové mínění')|E] v [Concept('capital','hlavním sídle')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_MONTHLY_CHARACTER_CAPITAL_POPULAR_OPINION_CHANGE_FACTOR: "Násobitel měsíční změny [Concept('popular_opinion','lidové mínění')|E] v [Concept('capital','hlavním sídle')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_POPULAR_OPINION_PREFIX: "[popular_opinion_i]" # todo: NEW TRANSLATION
+ COUNTY_PROVINCE_MODIFIER_GROUP: "[PROVINCE.GetHolding.GetName] ([Concept('county','hrabství')|E])" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ COUNTY_PROSPERITY_FROM_PROVINCE_SETTLEMENT_SIZE_GROUP: "[Concept('settlement_size','Velikost sídla')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ COUNTY_PROSPERITY_FROM_PROVINCE_SETTLEMENT_SIZE_MODIFIERS: "[PROVINCE.GetHolding.GetName] – [GetProvinceSizeLevelNameNoTooltip( PROVINCE.GetProvinceSizeLevel )] ([PROVINCE.GetProvinceSizeLevel]/[PROVINCE.GetProvinceSizeLevelMax])" # todo: NEW TRANSLATION
+ COUNTY_PROSPERITY_FROM_PROVINCE_LAND_MODIFIERS: "[Concept('terrain','Terén')|E] a [Concept('region','region')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  COUNTY_PROVINCE_MODIFIER: "[PROVINCE.GetHolding.GetName]"
  COUNTY_CAPITAL_PROVINCE_MODIFIER: "$COUNTY_PROVINCE_MODIFIER$ ([Concept('county_capital','hlavní sídlo hrabství')|E])"
- MOD_MONTHLY_COUNTY_CONTROL_GROWTH: "Růst [Concept('control','kontroly')|E]"
- MOD_MONTHLY_COUNTY_CONTROL_GROWTH_EVEN_IF_BARON: "$MOD_MONTHLY_COUNTY_CONTROL_GROWTH$"
- MOD_MONTHLY_COUNTY_CONTROL_GROWTH_FACTOR: "Růst [Concept('control','kontroly')|E]"
- MOD_MONTHLY_COUNTY_CONTROL_GROWTH_FACTOR_EVEN_IF_BARON: "$MOD_MONTHLY_COUNTY_CONTROL_GROWTH_FACTOR$"
- MOD_MONTHLY_COUNTY_CONTROL_GROWTH_AT_WAR: "Růst [Concept('control','kontroly')|E] během [Concept('war','války')|E]"
- MOD_MONTHLY_COUNTY_CONTROL_GROWTH_FACTOR_AT_WAR: "Růst [Concept('control','kontroly')|E] během [Concept('war','války')|E]"
- MOD_MONTHLY_COUNTY_CONTROL_DECLINE: "Pokles [Concept('control','kontroly')|E]"
- MOD_MONTHLY_COUNTY_CONTROL_DECLINE_EVEN_IF_BARON: "$MOD_MONTHLY_COUNTY_CONTROL_DECLINE$"
- MOD_MONTHLY_COUNTY_CONTROL_DECLINE_FACTOR: "Pokles [Concept('control','kontroly')|E]"
- MOD_MONTHLY_COUNTY_CONTROL_DECLINE_FACTOR_EVEN_IF_BARON: "$MOD_MONTHLY_COUNTY_CONTROL_DECLINE_FACTOR$"
- MOD_MONTHLY_COUNTY_CONTROL_DECLINE_AT_WAR: "Pokles [Concept('control','kontroly')|E] během [Concept('war','války')|E]"
- MOD_MONTHLY_COUNTY_CONTROL_DECLINE_FACTOR_AT_WAR: "Pokles [Concept('control','kontroly')|E] během [Concept('war','války')|E]"
- MOD_CONSTRUCTION_PRESTIGE_COST: "Cena výstavby [Concept('building','budovy')|E]"
- MOD_CONSTRUCTION_HERD_COST: "Cena výstavby [Concept('building','budovy')|E]"
+ MOD_MONTHLY_CONTROL_CHANGE: "Měsíční změna [Concept('control','kontrola')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_MONTHLY_CONTROL_CHANGE_MULT: "Měsíční změna [Concept('control','kontrola')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_MONTHLY_CONTROL_CHANGE_AT_WAR: "Měsíční změna [Concept('control','kontrola')|E] během [Concept('war','války')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_MONTHLY_CONTROL_CHANGE_AT_WAR_MULT: "Měsíční změna [Concept('control','kontrola')|E] během [Concept('war','války')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_MONTHLY_CONTROL_CHANGE_WHEN_ABOVE_BASELINE_ADD: "Měsíční změna [Concept('control','kontrola')|E] nad [Concept('control_baseline','základní úrovní kontroly')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_MONTHLY_CONTROL_CHANGE_WHEN_ABOVE_BASELINE_MULT: "Pokles [Concept('control','kontrola')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_MONTHLY_CONTROL_CHANGE_WHEN_BELOW_BASELINE_ADD: "Růst [Concept('control','kontrola')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_MONTHLY_CONTROL_CHANGE_WHEN_BELOW_BASELINE_MULT: "Růst [Concept('control','kontrola')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_CONTROL_BASELINE_ADD: "[Concept('control_baseline','Základní úroveň kontroly')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_CONTROL_BASELINE_ADD_EVEN_IF_BARON: "$MOD_CONTROL_BASELINE_ADD$" # todo: NEW TRANSLATION
+ MOD_CHARACTER_CAPITAL_CONTROL_BASELINE_ADD: "[Concept('control_baseline','Základní úroveň kontroly')|E] v [Concept('capital','hlavním sídle')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_CHARACTER_CAPITAL_MONTHLY_CONTROL_AT_WAR_ADD: "Měsíční změna [Concept('control','kontrola')|E] v [Concept('capital','hlavním sídle')|E] během [Concept('war','války')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_CHARACTER_CAPITAL_MONTHLY_CONTROL_AT_WAR_MULT: "Měsíční změna [Concept('control','kontrola')|E] v [Concept('capital','hlavním sídle')|E] během [Concept('war','války')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_CHARACTER_CAPITAL_MONTHLY_CONTROL_WHEN_ABOVE_BASELINE_ADD: "Měsíční změna [Concept('control','kontrola')|E] v [Concept('capital','hlavním sídle')|E] nad [Concept('control_baseline','základní úrovní kontroly')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_CHARACTER_CAPITAL_MONTHLY_CONTROL_WHEN_ABOVE_BASELINE_MULT: "Pokles [Concept('control','kontrola')|E] v [Concept('capital','hlavním sídle')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_CHARACTER_CAPITAL_MONTHLY_CONTROL_WHEN_BELOW_BASELINE_ADD: "Růst [Concept('control','kontrola')|E] v [Concept('capital','hlavním sídle')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_CHARACTER_CAPITAL_MONTHLY_CONTROL_WHEN_BELOW_BASELINE_MULT: "Růst [Concept('control','kontrola')|E] v [Concept('capital','hlavním sídle')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_BUILDING_CONSTRUCTION_PRESTIGE_COST: "Náklady na výstavbu [Concept('building','budovu')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_BUILDING_CONSTRUCTION_HERD_COST: "[Concept('building','Budova')|E] – náklady na výstavbu" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  MOD_DOMAIN_LIMIT: "[Concept('domain_limit','Limit domény')|E]"
  MOD_DOMAIN_LIMIT_WITH_VALUE: "[Concept('domain_limit','Limit domény')|E]: $VALUE|0=+$"
  MOD_DOMAIN_LIMIT_MIN: "Minimální [Concept('domain_limit','limit domény')|E]"
@@ -997,33 +1216,34 @@
  theocracy_government_opinion_same_faith: "[Concept('theocracy_i','@government_type_theocracy!')|E] Názor [Concept('theocratic','teokratických vládců')|E] stejné [Concept('faith','víry')|E]"
  clan_government_opinion_same_faith: "[Concept('clan_i','@government_type_clan!')|E] Názor [Concept('clan','klanových vládců')|E] stejné [Concept('faith','víry')|E]"
  mandala_government_opinion_same_faith: "[Concept('mandala_i','@government_type_mandala!')|E] Názor [Concept('mandala','mandalových vládců')|E] stejné [Concept('faith','víry')|E]"
- nomad_government_opinion_same_faith: "[nomad_i|E] Názor vládců stejné [Concept('faith','víry')|E], kteří jsou [Concept('nomad','nomády')|E]"
- tribal_government_opinion_same_faith: "[tribal_i|E] Názor [Concept('tribal','kmenových')|E] vládců stejné [Concept('faith','víry')|E]"
- wanua_government_opinion_same_faith: "[wanua_i|E] Názor vládců [Concept('wanua','wanua')|E] stejné [Concept('faith','víry')|E]"
+ republic_government_opinion_same_faith: "[Concept('republic_i','@government_type_republic!')|E] Mínění vládce [Concept('republic','republika')|E] stejné [Concept('faith','víra')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ nomad_government_opinion_same_faith: "[Concept('nomad_i','@government_type_nomad!')|E] Názor vládců stejné [Concept('faith','víry')|E], kteří jsou [Concept('nomad','nomády')|E]" # todo: CONCEPT CASE
+ tribal_government_opinion_same_faith: "[Concept('tribal_i','@government_type_tribal!')|E] Názor [Concept('tribal','kmenových')|E] vládců stejné [Concept('faith','víry')|E]" # todo: CONCEPT CASE
+ wanua_government_opinion_same_faith: "[Concept('wanua_i','@government_type_wanua!')|E] Názor vládců [Concept('wanua','wanua')|E] stejné [Concept('faith','víry')|E]" # todo: CONCEPT CASE
  theocracy_government_opinion: "[Concept('theocracy_i','@government_type_theocracy!')|E] Názor [Concept('theocratic','teokratických vládců')|E]"
- ecclesiastical_government_opinion: "[ecclesiastical_i|E] Názor [Concept('ecclesiastical','církevních')|E] vládců"
+ ecclesiastical_government_opinion: "[Concept('ecclesiastical_i','@government_type_ecclesiastical!')|E] Názor [Concept('ecclesiastical','církevních')|E] vládců" # todo: CONCEPT CASE
  republic_government_opinion: "[Concept('republic_i','@government_type_republic!')|E] Názor [Concept('republican','republikánských vládců')|E]"
  tribal_government_opinion: "[Concept('tribal_i','@government_type_tribal!')|E] Názor [Concept('tribal','kmenových vládců')|E]"
  feudal_government_opinion: "[Concept('feudal_i','@government_type_feudal!')|E] Názor [Concept('feudal','feudálních vládců')|E]"
  administrative_government_opinion: "[Concept('administrative_i','@government_type_administrative!')|E] Názor [Concept('administrative','administrativních vládců')|E]"
  landless_adventurer_government_opinion: "[Concept('adventurer_i','@government_type_adventurer!')|E] Názor [Concept('adventurer','dobrodruhů')|E]"
- MOD_INDEPENDENT_RULER_OPINION: "Názor nezávislého vládce"
+ MOD_INDEPENDENT_RULER_OPINION: "Názor [Concept('independent_ruler','nezávislý vládce')|E]" # todo: CHANGED (predtym: Názor nezávislého vládce) # todo: CONCEPT CASE
  MOD_OPINION_OF_LIEGE: "Názor na [Concept('liege','lenního pána')|E]"
- MOD_OPINION_OF_SUZERAIN: "Názor na [Concept('suzerain','suzeréna')|E]"
+ MOD_OPINION_OF_SUZERAIN: "Názor na [GetSuzerainRelationship(GetPlayer)]" # todo: CHANGED (predtym: Názor na [Concept('suzerain','suzeréna')|E])
  MOD_OPINION_OF_PARENTS: "Názor rodičů"
  MOD_OPINION_OF_VASSAL: "Názor na [Concept('vassals','vazaly')|E]"
  MOD_OPINION_OF_TRIBUTARY: "Názor na [Concept('tributary','tributáře')|E]"
  MOD_OPINION_OF_DIFFERENT_FAITH_LIEGE: "Názor na [Concept('liege','lenního pána')|E] jiné [Concept('faith','víry')|E]"
- MOD_OPINION_OF_DIFFERENT_FAITH_SUZERAIN: "Názor na [Concept('suzerain','suzeréna')|E] jiné [Concept('faith','víry')|E]"
+ MOD_OPINION_OF_DIFFERENT_FAITH_SUZERAIN: "Názor na [GetSuzerainRelationship(GetPlayer)] jiné [Concept('faith','víry')|E]" # todo: CHANGED (predtym: Názor na [Concept('suzerain','suzeréna')|E] jiné [Concept('faith','víry')|E])
  MOD_SPOUSE_OPINION: "Názor [Concept('spouse','choti')|E]"
  MOD_TWIN_OPINION: "Názor dvojčete"
  MOD_CLOSE_RELATIVE_OPINION: "Názor [Concept('close_family','blízké rodiny')|E]"
  MOD_DYNASTY_HOUSE_OPINION: "Názor [Concept('house','rodu')|E]"
  MOD_DYNASTY_OPINION: "Názor [Concept('dynasty','dynastie')|E]"
  MOD_LIEGE_OPINION: "Názor [Concept('liege','lenního pána')|E]"
- MOD_SUZERAIN_OPINION: "Názor [Concept('suzerain','suzeréna')|E]"
+ MOD_SUZERAIN_OPINION: "Názor [GetSuzerainRelationship(GetPlayer)]" # todo: CHANGED (predtym: Názor [Concept('suzerain','suzeréna')|E])
  MOD_DIFFERENT_FAITH_LIEGE_OPINION: "Názor [Concept('liege','lenního pána')|E] jiné [Concept('faith','víry')|E]"
- MOD_DIFFERENT_FAITH_SUZERAIN_OPINION: "Názor [Concept('suzerain','suzeréna')|E] jiné [Concept('faith','víry')|E]"
+ MOD_DIFFERENT_FAITH_SUZERAIN_OPINION: "Názor [GetSuzerainRelationship(GetPlayer)] jiné [Concept('faith','víry')|E]" # todo: CHANGED (predtym: Názor [Concept('suzerain','suzeréna')|E] jiné [Concept('faith','víry')|E])
  MOD_VASSAL_OPINION: "Názor [Concept('vassal','vazalů')|E]"
  MOD_TRIBUTARY_OPINION: "Názor [Concept('tributary','tributářů')|E]"
  MOD_CLERGY_OPINION: "Názor [Concept('clergy','duchovenstva')|E]"
@@ -1048,7 +1268,7 @@
  mercenary_government_vassal_opinion: "[Concept('mercenary_i','@government_type_mercenary!')|E] Názor [Concept('mercenary','žoldnéřských')|E] [Concept('vassal','vazalů')|E]"
  holy_order_government_vassal_opinion: "[Concept('holy_order_i','@government_type_holy_order!')|E] Názor [Concept('vassal','vazalů')|E] s [Concept('holy_order','vládou svatého řádu')|E]"
  theocracy_government_vassal_opinion: "[Concept('theocracy_i','@government_type_theocracy!')|E] Názor [Concept('theocracy','teokratických')|E] [Concept('vassal','vazalů')|E]"
- ecclesiastical_government_vassal_opinion: "[ecclesiastical_i|E] Názor [Concept('ecclesiastical','církevních')|E] [Concept('vassal','vazalů')|E]"
+ ecclesiastical_government_vassal_opinion: "[Concept('ecclesiastical_i','@government_type_ecclesiastical!')|E] Názor [Concept('ecclesiastical','církevních')|E] [Concept('vassal','vazalů')|E]" # todo: CONCEPT CASE
  tribal_government_vassal_opinion: "[Concept('tribal_i','@government_type_tribal!')|E] Názor [Concept('tribal','kmenových')|E] [Concept('vassal','vazalů')|E]"
  nomad_government_vassal_opinion: "[Concept('nomad_i','@government_type_nomad!')|E] Názor [Concept('nomad','nomádských')|E] [Concept('vassal','vazalů')|E]"
  administrative_government_vassal_opinion: "Názor [Concept('administrative','administrativních')|E] [Concept('vassal','vazalů')|E]"
@@ -1058,6 +1278,10 @@
  MOD_DOMAIN_TAX_SAME_FAITH_MULT_EVEN_IF_BARON: "$MOD_DOMAIN_TAX_SAME_FAITH_MULT$"
  MOD_DOMAIN_TAX_DIFFERENT_FAITH_MULT: "[Concept('taxes','Daně')|E] [Concept('domain','domény')|E] (jiné [Concept('faith','víry')|E])"
  MOD_DOMAIN_TAX_DIFFERENT_FAITH_MULT_EVEN_IF_BARON: "$MOD_DOMAIN_TAX_DIFFERENT_FAITH_MULT$"
+ MOD_DOMAIN_TAX_SAME_RELIGION_MULT: "[Concept('taxes','Daně')|E] z [Concept('domain','domény')|E] (stejné [Concept('religion','náboženství')|E])" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_DOMAIN_TAX_SAME_RELIGION_MULT_EVEN_IF_BARON: "$MOD_DOMAIN_TAX_SAME_RELIGION_MULT$" # todo: NEW TRANSLATION
+ MOD_DOMAIN_TAX_DIFFERENT_RELIGION_MULT: "[Concept('taxes','Daně')|E] z [Concept('domain','domény')|E] (odlišné [Concept('religion','náboženství')|E])" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_DOMAIN_TAX_DIFFERENT_RELIGION_MULT_EVEN_IF_BARON: "$MOD_DOMAIN_TAX_DIFFERENT_RELIGION_MULT$" # todo: NEW TRANSLATION
  MOD_VASSAL_TAX_MULT: "[Concept('taxes','Daně')|E] [Concept('vassal','vazalů')|E]"
  MOD_TRIBUTARY_TAX_MULT: "[Concept('taxes','Daně')|E] [Concept('tributary','tributářů')|E]"
  MOD_TRIBUTARY_PIETY_CONTRIBUTION_MULT: "Příspěvky [Concept('piety','zbožnosti')|E] od [Concept('tributary','tributářů')|E]"
@@ -1105,9 +1329,21 @@
  steppe_holding_construction_prestige_cost: "$steppe_holding_construction_gold_cost$"
  floodplains_holding_construction_prestige_cost: "$floodplains_holding_construction_gold_cost$"
  drylands_holding_construction_prestige_cost: "$drylands_holding_construction_gold_cost$"
+ terraced_hills_holding_construction_prestige_cost: "$terraced_hills_holding_construction_gold_cost$" # todo: NEW TRANSLATION
  MOD_HOLDING_CONSTRUCTION_PIETY_COST: "Cena výstavby [Concept('holding','državy')|E]"
  MOD_HOLDING_CONSTRUCTION_PRESTIGE_COST: "Cena výstavby [Concept('holding','državy')|E]"
- MOD_TAX_MULT: "[Concept('taxes','Daně')|E] [Concept('holding','državy')|E]"
+ MOD_ALL_TAX_MULT: "[Concept('taxes','Daně')|E] z [Concept('holding','državy')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_GENERIC_TAX_MULT: "[Concept('taxes','Daně')|E] z [Concept('holding','državy')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_AGRICULTURAL_TAX_MULT: "[Concept('agricultural_taxes','Zemědělské daně')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_MINING_TAX_MULT: "[Concept('mining_taxes','Důlní daně')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_RELIGIOUS_TAX_MULT: "[Concept('religious_taxes','Náboženské daně')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_URBAN_TAX_MULT: "[Concept('urban_taxes','Městské daně')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_ARTISAN_TAX_MULT: "[Concept('artisan_taxes','Řemeslnické daně')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_MARITIME_TAX_MULT: "[Concept('maritime_taxes','Námořní daně')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_TRIBAL_TAX_MULT: "[Concept('tribal_taxes','Kmenové daně')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_CIVIC_TAX_MULT: "[Concept('civic_taxes','Správní daně')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_WOODLAND_TAX_MULT: "[Concept('woodland_taxes','Daně ze zázemí')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_COMMERCE_TAX_MULT: "[Concept('commerce_taxes','Obchodní daně')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  MOD_MEN_AT_ARMS_RECRUITMENT_COST: "Náklady na nábor [Concept('men_at_arms','ozbrojenců')|E]"
  MOD_MEN_AT_ARMS_MAINTENANCE: "Údržba [Concept('men_at_arms','ozbrojenců')|E]"
  MOD_MEN_AT_ARMS_MAINTENANCE_PER_DREAD_MULT: "Údržba [Concept('men_at_arms','ozbrojenců')|E] za [Concept('dread','bod hrůzy')|E]"
@@ -1130,12 +1366,15 @@
  OPINION_HOSTILE_FAITH_COUNTY: "Horlivost ($FERVOR|0V%/$) a [Rite.GetName] je $LEVEL$"
  OPINION_DIVINE_MARRIAGE: "Božské manželství"
  NEGATED_SKILL_PENALTY_HEADER: "\n#weak Rušení $ACTUAL_NEGATION|P$/$MAX_NEGATION|P$ postihů:#!"
- MOD_COUNTY_OPINION_ADD: "[Concept('county_opinion','Lidové mínění')|E]"
- MOD_COUNTY_OPINION_ADD_EVEN_IF_BARON: "$MOD_COUNTY_OPINION_ADD$"
- MOD_COUNTY_OPINION_DIFFERENT_FAITH_MULT: "[Concept('county_opinion','Lidové mínění')|E] jiné [Concept('faith','víry')|E]"
- MOD_COUNTY_OPINION_DIFFERENT_FAITH_MULT_EVEN_IF_BARON: "$MOD_COUNTY_OPINION_DIFFERENT_FAITH_MULT$"
- MOD_COUNTY_OPINION_SAME_RITE_ADD: "[Concept('county_opinion','Lidové mínění')|E] vyznavačů stejného [Concept('rite','ritu')|E]"
- MOD_COUNTY_OPINION_SAME_FAITH_DIFFERENT_RITE_ADD: "[Concept('county_opinion','Lidové mínění')|E] vyznavačů stejné [Concept('faith','víry')|E] a odlišného [Concept('rite','ritu')|E]"
+ MOD_POPULAR_OPINION_ADD: "Základní hodnota [Concept('popular_opinion','lidové mínění')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_POPULAR_OPINION_ADD_EVEN_IF_BARON: "$MOD_POPULAR_OPINION_ADD$" # todo: NEW TRANSLATION
+ MOD_POPULAR_OPINION_DIFFERENT_FAITH_MULT: "[Concept('popular_opinion','Lidové mínění')|E] odlišné [Concept('faith','víra')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_POPULAR_OPINION_DIFFERENT_FAITH_MULT_EVEN_IF_BARON: "$MOD_POPULAR_OPINION_DIFFERENT_FAITH_MULT$" # todo: NEW TRANSLATION
+ MOD_CHARACTER_CAPITAL_POPULAR_OPINION_DIFFERENT_FAITH_MULT: "[Concept('popular_opinion','Lidové mínění')|E] odlišné [Concept('faith','víra')|E] v [Concept('capital','hlavním sídle')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_MONTHLY_POPULAR_OPINION_CHANGE: "Měsíční změna [Concept('popular_opinion','lidové mínění')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_MONTHLY_POPULAR_OPINION_CHANGE_FACTOR: "[Concept('popular_opinion','lidového mínění')|E] – měsíční změna" # todo: NEW TRANSLATION
+ MOD_POPULAR_OPINION_SAME_RITE_ADD: "[Concept('popular_opinion','Lidové mínění')|E] při stejném [Concept('rite','ritu')|E]" # todo: NEW TRANSLATION
+ MOD_POPULAR_OPINION_SAME_FAITH_DIFFERENT_RITE_ADD: "[Concept('popular_opinion','Lidové mínění')|E] při stejné [Concept('faith','víře')|E] a odlišném [Concept('rite','ritu')|E]" # todo: NEW TRANSLATION
  MOD_CULTURE_MERCENARY_MULT: "Dostupné [Concept('mercenary','žoldnéřské')|E] společnosti"
  MOD_CULTURAL_FASCINATION_INNOVATION_ADD: "Pokrok [Concept('cultural_fascination','kulturní fascinace')|E]"
  MOD_CULTURAL_FASCINATION_INNOVATION_MULT: "$MOD_CULTURAL_FASCINATION_INNOVATION_ADD$"
@@ -1145,6 +1384,7 @@
  NAMED_OPINION_MODIFIER: "$MODIFIER$ ([CHARACTER.GetShortUIName])"
  MODIFIER_FROM_PROVINCES: "Z domény"
  MODIFIER_FROM_TITLE_LAWS: "[Concept('title_laws','Zákony titulu')|E] [TITLE.GetNamePossessive|U]"
+ MODIFIER_FROM_TRADE_EXPERTISE: "[TRADE_GOOD_CATEGORY_TYPE.GetName] – [Concept('trade_expertise','obchodní odbornost')|E]" # todo: NEW TRANSLATION
  MOD_ATTRACTION_OPINION: "Názor z [Concept('attraction','přitažlivosti')|E]"
  MOD_MIN_COMBAT_ROLL: "[Concept('command_modifier_i','@command_modifier_icon!')|E]Minimální [Concept('combat_roll','bojový hod kostkou')|E]"
  MOD_MAX_COMBAT_ROLL: "[Concept('command_modifier_i','@command_modifier_icon!')|E]Maximální [Concept('combat_roll','bojový hod kostkou')|E]"
@@ -1169,24 +1409,24 @@
  martial_lifestyle_xp_gain_add: "Zisk zkušeností válečnického [Concept('lifestyle','životního stylu')|E]"
  martial_lifestyle_xp_gain_mult: "$martial_lifestyle_xp_gain_add$"
  monthly_martial_lifestyle_xp_gain_add: "$monthly_martial_lifestyle_xp_gain_mult$"
- monthly_martial_lifestyle_xp_gain_mult: "Měsíční zkušenosti válečnického [Concept('lifestyle','životního stylu')|E]"
+ monthly_martial_lifestyle_xp_gain_mult: "Měsíční zkušenosti [Concept('focused','soustředěný')|E] zaměřeného válečnického [Concept('lifestyle','životního stylu')|E]" # todo: CHANGED (predtym: Měsíční zkušenosti válečnického [Concept('lifestyle','životního stylu')|E]) # todo: CONCEPT CASE
  diplomacy_lifestyle_xp_gain_add: "Zisk zkušeností diplomatického [Concept('lifestyle','životního stylu')|E]"
  diplomacy_lifestyle_xp_gain_mult: "$diplomacy_lifestyle_xp_gain_add$"
  monthly_diplomacy_lifestyle_xp_gain_add: "$monthly_diplomacy_lifestyle_xp_gain_mult$"
- monthly_diplomacy_lifestyle_xp_gain_mult: "Měsíční zkušenosti diplomatického [Concept('lifestyle','životního stylu')|E]"
+ monthly_diplomacy_lifestyle_xp_gain_mult: "Měsíční zkušenosti [Concept('focused','soustředěný')|E] zaměřeného diplomatického [Concept('lifestyle','životního stylu')|E]" # todo: CHANGED (predtym: Měsíční zkušenosti diplomatického [Concept('lifestyle','životního stylu')|E]) # todo: CONCEPT CASE
  stewardship_lifestyle_xp_gain_add: "Zisk zkušeností správcovského [Concept('lifestyle','životního stylu')|E]"
  stewardship_lifestyle_xp_gain_mult: "$stewardship_lifestyle_xp_gain_add$"
  monthly_stewardship_lifestyle_xp_gain_add: "$monthly_stewardship_lifestyle_xp_gain_mult$"
- monthly_stewardship_lifestyle_xp_gain_mult: "Měsíční zkušenosti správcovského [Concept('lifestyle','životního stylu')|E]"
+ monthly_stewardship_lifestyle_xp_gain_mult: "Měsíční zkušenosti [Concept('focused','soustředěný')|E] zaměřeného správcovského [Concept('lifestyle','životního stylu')|E]" # todo: CHANGED (predtym: Měsíční zkušenosti správcovského [Concept('lifestyle','životního stylu')|E]) # todo: CONCEPT CASE
  learning_lifestyle_xp_gain_add: "Zisk zkušeností učeného [Concept('lifestyle','životního stylu')|E]"
  learning_lifestyle_xp_gain_mult: "$learning_lifestyle_xp_gain_add$"
  monthly_learning_lifestyle_xp_gain_add: "$monthly_learning_lifestyle_xp_gain_mult$"
- monthly_learning_lifestyle_xp_gain_mult: "Měsíční zkušenosti učeného [Concept('lifestyle','životního stylu')|E]"
+ monthly_learning_lifestyle_xp_gain_mult: "Měsíční zkušenosti [Concept('focused','soustředěný')|E] zaměřeného učeného [Concept('lifestyle','životního stylu')|E]" # todo: CHANGED (predtym: Měsíční zkušenosti učeného [Concept('lifestyle','životního stylu')|E]) # todo: CONCEPT CASE
  intrigue_lifestyle_xp_gain_add: "Zisk zkušeností pletichářského [Concept('lifestyle','životního stylu')|E]"
  intrigue_lifestyle_xp_gain_mult: "$intrigue_lifestyle_xp_gain_add$"
  monthly_intrigue_lifestyle_xp_gain_add: "$monthly_intrigue_lifestyle_xp_gain_mult$"
- monthly_intrigue_lifestyle_xp_gain_mult: "Měsíční zkušenosti pletichářského [Concept('lifestyle','životního stylu')|E]"
- monthly_wanderer_lifestyle_xp_gain_mult: "Měsíční zkušenosti potulného [Concept('lifestyle','životního stylu')|E]"
+ monthly_intrigue_lifestyle_xp_gain_mult: "Měsíční zkušenosti [Concept('focused','soustředěný')|E] zaměřeného pletichářského [Concept('lifestyle','životního stylu')|E]" # todo: CHANGED (predtym: Měsíční zkušenosti pletichářského [Concept('lifestyle','životního stylu')|E]) # todo: CONCEPT CASE
+ monthly_wanderer_lifestyle_xp_gain_mult: "Měsíční zkušenosti [Concept('focused','soustředěný')|E] zaměřeného potulného [Concept('lifestyle','životního stylu')|E]" # todo: CHANGED (predtym: Měsíční zkušenosti potulného [Concept('lifestyle','životního stylu')|E]) # todo: CONCEPT CASE
  wanderer_lifestyle_xp_gain_mult: "Zkušenosti potulného [Concept('lifestyle','životního stylu')|E]"
  MOD_FAITH_CONVERSION_PIETY_COST_ADD: "Cena změny [Concept('faith','víry')|E]"
  MOD_FAITH_CONVERSION_PIETY_COST_MULT: "$MOD_FAITH_CONVERSION_PIETY_COST_ADD$"
@@ -1210,6 +1450,16 @@
  MOD_MONTHLY_MERIT_PER_TITLE_MAA_VALUE_PREFIX: "[Concept('merit_i','@merit_icon!')|E]"
  MOD_MONTHLY_MERIT_PER_LIEGE_TAX: "Měsíční [Concept('merit','zásluhy')|E] za celkové [Concept('tax','daně')|E] placené [Concept('liege','lennímu pánovi')|E]"
  MOD_MONTHLY_MERIT_PER_LIEGE_TAX_PREFIX: "[Concept('merit_i','@merit_icon!')|E]"
+ MOD_GOVERNOR_EFFICIENCY_ADD: "Základní [Concept('governor_efficiency','efektivita guvernéra')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_GOVERNOR_EFFICIENCY_MULT: "[Concept('governor_efficiency','Efektivita guvernéra')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_GOVERNOR_EFFICIENCY_PREFIX: "[Concept('governor_efficiency_i','@governor_efficiency!')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_GOVERNOR_EFFICIENCY_PER_DIPLOMACY_ADD: "[Concept('governor_efficiency','Efektivita guvernéra')|E] za každý bod [Concept('diplomacy_i','@skill_diplomacy_icon!')|E][Concept('diplomacy','diplomacie')|E] [Concept('skill','dovednosti')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_GOVERNOR_EFFICIENCY_PER_MARTIAL_ADD: "[Concept('governor_efficiency','Efektivita guvernéra')|E] za každý bod [Concept('martial_i','@skill_martial_icon!')|E][Concept('martial','válečnictví')|E] [Concept('skill','dovednosti')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_GOVERNOR_EFFICIENCY_PER_STEWARDSHIP_ADD: "[Concept('governor_efficiency','Efektivita guvernéra')|E] za každý bod [Concept('stewardship_i','@skill_stewardship_icon!')|E][Concept('stewardship','správcovství')|E] [Concept('skill','dovednosti')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_GOVERNOR_EFFICIENCY_PER_PROWESS_ADD: "[Concept('governor_efficiency','Efektivita guvernéra')|E] za každý bod [Concept('prowess_i','@skill_prowess_icon!')|E][Concept('prowess','udatnosti')|E] [Concept('skill','dovednosti')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_GOVERNOR_EFFICIENCY_PER_PRESTIGE_LEVEL_ADD: "[Concept('governor_efficiency','Efektivita guvernéra')|E] za každou [Concept('prestige_level','úroveň prestiže')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_REALM_GOVERNOR_EFFICIENCY_ADD: "[Concept('governor_efficiency','Efektivita guvernéra')|E] v [Concept('realm','panství')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_REALM_GOVERNOR_EFFICIENCY_PER_LEGITIMACY_LEVEL_ADD: "[Concept('governor_efficiency','Efektivita guvernéra')|E] v [Concept('realm','panství')|E] za každou [Concept('legitimacy_level','úroveň legitimity')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  MOD_RAID_SPEED: "[Concept('command_modifier_i','@command_modifier_icon!')|E]Rychlost [Concept('raid','nájezdu')|E]"
  MOD_HOSTILE_RAID_TIME: "Doba nepřátelského [Concept('raid','nájezdu')|E]"
  MOD_HOLDING_FORT_LEVEL_PREFIX: "@fort_icon!"
@@ -1228,6 +1478,25 @@
  castle_holding_holding_build_speed: "Doba výstavby hradní [Concept('holding','državy')|E]"
  tribal_holding_holding_build_speed: "Doba výstavby kmenové [Concept('holding','državy')|E]"
  temple_citadel_holding_holding_build_speed: "Doba výstavby [Concept('holding','državy')|E] chrámové citadely"
+ guild_district_district_build_speed: "[GetDistrictType('guild_district').GetName] – doba výstavby [Concept('buildings','budovy')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ market_district_district_build_speed: "[GetDistrictType('market_district').GetName] – doba výstavby [Concept('buildings','budovy')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ port_district_district_build_speed: "[GetDistrictType('port_district').GetName] – doba výstavby [Concept('buildings','budovy')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ border_forts_district_district_build_speed: "[GetDistrictType('border_forts_district').GetName] – doba výstavby [Concept('buildings','budovy')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ walls_district_district_build_speed: "[GetDistrictType('walls_district').GetName] – doba výstavby [Concept('buildings','budovy')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ military_district_district_build_speed: "[GetDistrictType('military_district').GetName] – doba výstavby [Concept('buildings','budovy')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ bureaucratic_district_district_build_speed: "[GetDistrictType('bureaucratic_district').GetName] – doba výstavby [Concept('buildings','budovy')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ household_district_district_build_speed: "[GetDistrictType('household_district').GetName] – doba výstavby [Concept('buildings','budovy')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ temple_district_district_build_speed: "[GetDistrictType('temple_district').GetName] – doba výstavby [Concept('buildings','budovy')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ mandala_district_district_build_speed: "[GetDistrictType('mandala_district').GetName] – doba výstavby [Concept('buildings','budovy')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ entertainment_district_district_build_speed: "[GetDistrictType('entertainment_district').GetName] – doba výstavby [Concept('buildings','budovy')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ patrician_district_district_build_speed: "[GetDistrictType('patrician_district').GetName] – doba výstavby [Concept('buildings','budovy')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ urban_housing_district_district_build_speed: "[GetDistrictType('urban_housing_district').GetName] – doba výstavby [Concept('buildings','budovy')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ manor_houses_district_district_build_speed: "[GetDistrictType('manor_houses_district').GetName] – doba výstavby [Concept('buildings','budovy')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ religious_community_district_district_build_speed: "[GetDistrictType('religious_community_district').GetName] – doba výstavby [Concept('buildings','budovy')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ villages_district_district_build_speed: "[GetDistrictType('villages_district').GetName] – doba výstavby [Concept('buildings','budovy')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ tribal_economy_prestige_district_district_build_speed: "[GetDistrictType('tribal_economy_prestige_district').GetName] – doba výstavby [Concept('buildings','budovy')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ tribal_military_district_district_build_speed: "[GetDistrictType('tribal_military_district').GetName] – doba výstavby [Concept('buildings','budovy')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ tribal_wanua_district_district_build_speed: "[GetDistrictType('tribal_wanua_district').GetName] – doba výstavby [Concept('buildings','budovy')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  city_holding_holding_build_gold_cost: "Náklady na výstavbu městské [Concept('holding','državy')|E]"
  church_holding_holding_build_gold_cost: "Náklady na výstavbu chrámové [Concept('holding','državy')|E]"
  church_holding_holding_build_piety_cost: "Cena výstavby chrámové [Concept('holding','državy')|E]"
@@ -1236,21 +1505,21 @@
  temple_citadel_holding_build_gold_cost: "Náklady na výstavbu [Concept('holding','državy')|E] chrámové citadely"
  temple_citadel_holding_build_piety_cost: "Náklady na výstavbu [Concept('building','budovy')|E] chrámové citadely"
  temple_citadel_holding_holding_build_gold_cost: "Náklady na výstavbu [Concept('holding','državy')|E] chrámové citadely"
- plains_tax_mult: "$MOD_TAX_MULT$ na rovinách"
- farmlands_tax_mult: "$MOD_TAX_MULT$ v zemědělských oblastech"
- hills_tax_mult: "$MOD_TAX_MULT$ v kopcích"
- terraced_hills_tax_mult: "$MOD_TAX_MULT$ v terasovaných kopcích"
- mountains_tax_mult: "$MOD_TAX_MULT$ v horách"
- desert_tax_mult: "$MOD_TAX_MULT$ v poušti"
- desert_mountains_tax_mult: "$MOD_TAX_MULT$ v pouštních horách"
- oasis_tax_mult: "$MOD_TAX_MULT$ v oáze"
- jungle_tax_mult: "$MOD_TAX_MULT$ v džungli"
- forest_tax_mult: "$MOD_TAX_MULT$ v lese"
- taiga_tax_mult: "$MOD_TAX_MULT$ v tajze"
- wetlands_tax_mult: "$MOD_TAX_MULT$ v mokřadech"
- steppe_tax_mult: "$MOD_TAX_MULT$ ve stepi"
- floodplains_tax_mult: "$MOD_TAX_MULT$ na záplavových pláních"
- drylands_tax_mult: "$MOD_TAX_MULT$ v suchých oblastech"
+ plains_tax_mult: "[Concept('holding','državy')|E] [Concept('taxes','Daně')|E] na rovinách" # todo: CHANGED (predtym: $MOD_TAX_MULT$ na rovinách) # todo: CONCEPT CASE
+ farmlands_tax_mult: "[Concept('holding','državy')|E] [Concept('taxes','Daně')|E] v zemědělských oblastech" # todo: CHANGED (predtym: $MOD_TAX_MULT$ v zemědělských oblastech) # todo: CONCEPT CASE
+ hills_tax_mult: "[Concept('holding','državy')|E] [Concept('taxes','Daně')|E] v kopcích" # todo: CHANGED (predtym: $MOD_TAX_MULT$ v kopcích) # todo: CONCEPT CASE
+ terraced_hills_tax_mult: "[Concept('holding','državy')|E] [Concept('taxes','Daně')|E] v terasovaných kopcích" # todo: CHANGED (predtym: $MOD_TAX_MULT$ v terasovaných kopcích) # todo: CONCEPT CASE
+ mountains_tax_mult: "[Concept('holding','državy')|E] [Concept('taxes','Daně')|E] v horách" # todo: CHANGED (predtym: $MOD_TAX_MULT$ v horách) # todo: CONCEPT CASE
+ desert_tax_mult: "[Concept('holding','državy')|E] [Concept('taxes','Daně')|E] v poušti" # todo: CHANGED (predtym: $MOD_TAX_MULT$ v poušti) # todo: CONCEPT CASE
+ desert_mountains_tax_mult: "[Concept('holding','državy')|E] [Concept('taxes','Daně')|E] v pouštních horách" # todo: CHANGED (predtym: $MOD_TAX_MULT$ v pouštních horách) # todo: CONCEPT CASE
+ oasis_tax_mult: "[Concept('holding','državy')|E] [Concept('taxes','Daně')|E] v oáze" # todo: CHANGED (predtym: $MOD_TAX_MULT$ v oáze) # todo: CONCEPT CASE
+ jungle_tax_mult: "[Concept('holding','državy')|E] [Concept('taxes','Daně')|E] v džungli" # todo: CHANGED (predtym: $MOD_TAX_MULT$ v džungli) # todo: CONCEPT CASE
+ forest_tax_mult: "[Concept('holding','državy')|E] [Concept('taxes','Daně')|E] v lese" # todo: CHANGED (predtym: $MOD_TAX_MULT$ v lese) # todo: CONCEPT CASE
+ taiga_tax_mult: "[Concept('holding','državy')|E] [Concept('taxes','Daně')|E] v tajze" # todo: CHANGED (predtym: $MOD_TAX_MULT$ v tajze) # todo: CONCEPT CASE
+ wetlands_tax_mult: "[Concept('holding','državy')|E] [Concept('taxes','Daně')|E] v mokřadech" # todo: CHANGED (predtym: $MOD_TAX_MULT$ v mokřadech) # todo: CONCEPT CASE
+ steppe_tax_mult: "[Concept('holding','državy')|E] [Concept('taxes','Daně')|E] ve stepi" # todo: CHANGED (predtym: $MOD_TAX_MULT$ ve stepi) # todo: CONCEPT CASE
+ floodplains_tax_mult: "[Concept('holding','državy')|E] [Concept('taxes','Daně')|E] na záplavových pláních" # todo: CHANGED (predtym: $MOD_TAX_MULT$ na záplavových pláních) # todo: CONCEPT CASE
+ drylands_tax_mult: "[Concept('holding','državy')|E] [Concept('taxes','Daně')|E] v suchých oblastech" # todo: CHANGED (predtym: $MOD_TAX_MULT$ v suchých oblastech) # todo: CONCEPT CASE
  plains_levy_size: "$MOD_LEVY_SIZE$ na rovinách"
  farmlands_levy_size: "$MOD_LEVY_SIZE$ v zemědělských oblastech"
  hills_levy_size: "$MOD_LEVY_SIZE$ v kopcích"
@@ -1321,6 +1590,70 @@
  county_base_modifier: "Základní hodnota"
  reclaim_britannia_culture_modifier: "Znovuzískaná Británie"
  reclaim_britannia_culture_modifier_desc: "Rychlost plnění úkolu [Concept('promote_culture','$task_promote_culture|q$')|E] (pouze pro kultury skupiny $celtic_group$): #P +75%#!"
+ county_control_level_0: "Úroveň kontroly −10" # todo: NEW TRANSLATION
+ county_control_level_0_desc: "" # todo: NEW TRANSLATION
+ county_control_level_1: "Úroveň kontroly −9" # todo: NEW TRANSLATION
+ county_control_level_1_desc: "" # todo: NEW TRANSLATION
+ county_control_level_2: "Úroveň kontroly −8" # todo: NEW TRANSLATION
+ county_control_level_2_desc: "" # todo: NEW TRANSLATION
+ county_control_level_3: "Úroveň kontroly −7" # todo: NEW TRANSLATION
+ county_control_level_3_desc: "" # todo: NEW TRANSLATION
+ county_control_level_4: "Úroveň kontroly −6" # todo: NEW TRANSLATION
+ county_control_level_4_desc: "" # todo: NEW TRANSLATION
+ county_control_level_5: "Úroveň kontroly −5" # todo: NEW TRANSLATION
+ county_control_level_5_desc: "" # todo: NEW TRANSLATION
+ county_control_level_6: "Úroveň kontroly −4" # todo: NEW TRANSLATION
+ county_control_level_6_desc: "" # todo: NEW TRANSLATION
+ county_control_level_7: "Úroveň kontroly −3" # todo: NEW TRANSLATION
+ county_control_level_7_desc: "" # todo: NEW TRANSLATION
+ county_control_level_8: "Úroveň kontroly −2" # todo: NEW TRANSLATION
+ county_control_level_8_desc: "" # todo: NEW TRANSLATION
+ county_control_level_9: "Úroveň kontroly −1" # todo: NEW TRANSLATION
+ county_control_level_9_desc: "" # todo: NEW TRANSLATION
+ county_control_level_10: "Úroveň kontroly 0" # todo: NEW TRANSLATION
+ county_control_level_10_desc: "" # todo: NEW TRANSLATION
+ county_control_level_11: "Úroveň kontroly 1" # todo: NEW TRANSLATION
+ county_control_level_11_desc: "" # todo: NEW TRANSLATION
+ county_control_level_12: "Úroveň kontroly 2" # todo: NEW TRANSLATION
+ county_control_level_12_desc: "" # todo: NEW TRANSLATION
+ county_control_level_13: "Úroveň kontroly 3" # todo: NEW TRANSLATION
+ county_control_level_13_desc: "" # todo: NEW TRANSLATION
+ county_control_level_14: "Úroveň kontroly 4" # todo: NEW TRANSLATION
+ county_control_level_14_desc: "" # todo: NEW TRANSLATION
+ county_control_level_15: "Úroveň kontroly 5" # todo: NEW TRANSLATION
+ county_control_level_15_desc: "" # todo: NEW TRANSLATION
+ county_control_level_16: "Úroveň kontroly 6" # todo: NEW TRANSLATION
+ county_control_level_16_desc: "" # todo: NEW TRANSLATION
+ county_control_level_17: "Úroveň kontroly 7" # todo: NEW TRANSLATION
+ county_control_level_17_desc: "" # todo: NEW TRANSLATION
+ county_control_level_18: "Úroveň kontroly 8" # todo: NEW TRANSLATION
+ county_control_level_18_desc: "" # todo: NEW TRANSLATION
+ county_control_level_19: "Úroveň kontroly 9" # todo: NEW TRANSLATION
+ county_control_level_19_desc: "" # todo: NEW TRANSLATION
+ county_control_level_20: "Úroveň kontroly 10" # todo: NEW TRANSLATION
+ county_control_level_20_desc: "" # todo: NEW TRANSLATION
+ popular_opinion_level_0: "Nenáviděný" # todo: NEW TRANSLATION
+ popular_opinion_level_0_desc: "" # todo: NEW TRANSLATION
+ popular_opinion_level_1: "Opovrhovaný" # todo: NEW TRANSLATION
+ popular_opinion_level_1_desc: "" # todo: NEW TRANSLATION
+ popular_opinion_level_2: "Nemilovaný" # todo: NEW TRANSLATION
+ popular_opinion_level_2_desc: "" # todo: NEW TRANSLATION
+ popular_opinion_level_3: "Neoblíbený" # todo: NEW TRANSLATION
+ popular_opinion_level_3_desc: "" # todo: NEW TRANSLATION
+ popular_opinion_level_4: "Neutrální" # todo: NEW TRANSLATION
+ popular_opinion_level_4_desc: "" # todo: NEW TRANSLATION
+ popular_opinion_level_5: "Vážení" # todo: NEW TRANSLATION
+ popular_opinion_level_5_desc: "[GetPlayer.Custom('RepublicPopularOpinionLvl5')]" # todo: NEW TRANSLATION
+ popular_opinion_level_5_republic_desc: "Je-li [Concept('capital','hlavním sídlem')|E] [Concept('republic','republiky')|E]:\n$BULLET$Odemkne: [GetDecisionWithKey('gdp_civic_labor_decision').GetName]\n\n[Concept('modifiers','Modifikátory')|E]:" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ popular_opinion_level_6: "Oblíbení" # todo: NEW TRANSLATION
+ popular_opinion_level_6_desc: "[GetPlayer.Custom('RepublicPopularOpinionLvl6')]" # todo: NEW TRANSLATION
+ popular_opinion_level_6_republic_desc: "Je-li [Concept('capital','hlavním sídlem')|E] [Concept('republic','republiky')|E]:\n$BULLET$Odemkne: [GetDecisionWithKey('gdp_civic_labor_decision').GetName]\n$BULLET$Odemkne: [GetDecisionWithKey('gdp_popular_mandate_decision').GetName]\n\n[Concept('modifiers','Modifikátory')|E]:" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ popular_opinion_level_7: "Populární" # todo: NEW TRANSLATION
+ popular_opinion_level_7_desc: "[GetPlayer.Custom('RepublicPopularOpinionLvl7')]" # todo: NEW TRANSLATION
+ popular_opinion_level_7_republic_desc: "Je-li [Concept('capital','hlavním sídlem')|E] [Concept('republic','republiky')|E]:\n$BULLET$Odemkne: [GetDecisionWithKey('gdp_civic_labor_decision').GetName]\n$BULLET$Odemkne: [GetDecisionWithKey('gdp_popular_mandate_decision').GetName]\n$BULLET$Odemkne: [GetDecisionWithKey('gdp_popular_gifts_decision').GetName]\n\n[Concept('modifiers','Modifikátory')|E]:" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ popular_opinion_level_8: "Milovaní" # todo: NEW TRANSLATION
+ popular_opinion_level_8_desc: "[GetPlayer.Custom('RepublicPopularOpinionLvl8')]" # todo: NEW TRANSLATION
+ popular_opinion_level_8_republic_desc: "Je-li [Concept('capital','hlavním sídlem')|E] [Concept('republic','republiky')|E]:\n$BULLET$Odemkne: [GetDecisionWithKey('gdp_civic_labor_decision').GetName]\n$BULLET$Odemkne: [GetDecisionWithKey('gdp_popular_mandate_decision').GetName]\n$BULLET$Odemkne: [GetDecisionWithKey('gdp_popular_gifts_decision').GetName]\n\n[Concept('modifiers','Modifikátory')|E]:" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  unlanded_modifier: "Bez půdy"
  baron_modifier: "Baron"
  count_modifier: "Hrabě"
@@ -1432,17 +1765,18 @@
  CUSTOM_MOD_CULTURE_CONVERSION_SPEED: "Rychlost úkolu $task_promote_culture$: "
  CUSTOM_MOD_FABRICATE_CLAIM_SPEED: "Rychlost úkolu $task_fabricate_claim$: "
  CUSTOM_MOD_ENABLES_STRESS_LOSS_DECISIONS: "Umožňuje zvláštní [Concept('decision','rozhodnutí')|E], které #P snižuje#! [Concept('stress','stres')|E]"
- world_innovation_elephants_development_growth_factor: "$MOD_MONTHLY_DEVELOPMENT_GROWTH_FACTOR$ v [Concept('region','oblasti')|E] [GetGeographicalRegion('world_innovation_elephants').GetName]"
- world_persian_empire_development_growth_factor: "$MOD_MONTHLY_DEVELOPMENT_GROWTH_FACTOR$ v [Concept('region','oblasti')|E] [GetGeographicalRegion('world_persian_empire').GetName]"
- MOD_TRAVEL_SPEED: "Rychlost [Concept('travel','cestování')|E]"
+ world_innovation_elephants_prosperity_growth_factor: "$MOD_MONTHLY_PROSPERITY_GROWTH_FACTOR$ v [GetGeographicalRegion('world_innovation_elephants').GetName], [Concept('region','regionu')|E]" # todo: NEW TRANSLATION
+ world_persian_empire_prosperity_growth_factor: "$MOD_MONTHLY_PROSPERITY_GROWTH_FACTOR$ v [GetGeographicalRegion('world_persian_empire').GetName], [Concept('region','regionu')|E]" # todo: NEW TRANSLATION
+ MOD_ROAD_CONSTRUCTION_SPEED: "Rychlost výstavby cest" # todo: NEW TRANSLATION
+ MOD_TRAVEL_SPEED: "[Concept('travel_speed','Rychlost')|E] [Concept('travel','cestování')|E]" # todo: CHANGED (predtym: Rychlost [Concept('travel','cestování')|E])
  MOD_TRAVEL_SPEED_MULT: "$MOD_TRAVEL_SPEED$"
- MOD_TRAVEL_SAFETY: "Bezpečnost [Concept('travel','cestování')|E]"
+ MOD_TRAVEL_SAFETY: "[Concept('travel_safety','Bezpečnost')|E] [Concept('travel','cestování')|E]" # todo: CHANGED (predtym: Bezpečnost [Concept('travel','cestování')|E])
  MOD_TRAVEL_SAFETY_MULT: "$MOD_TRAVEL_SAFETY$"
  MOD_CHARACTER_TRAVEL_SPEED: "$MOD_TRAVEL_SPEED$"
  MOD_CHARACTER_TRAVEL_SPEED_MULT: "$MOD_TRAVEL_SPEED$"
  MOD_CHARACTER_TRAVEL_SAFETY: "$MOD_TRAVEL_SAFETY$"
  MOD_CHARACTER_TRAVEL_SAFETY_MULT: "$MOD_TRAVEL_SAFETY$"
- MOD_TRAVEL_DANGER: "[Concept('travel_danger','Nebezpečí při cestování')|E]"
+ MOD_TRAVEL_DANGER: "[Concept('travel','cestování')|E] [Concept('travel_danger','Nebezpečí při cestování')|E]" # todo: CHANGED (predtym: [Concept('travel_danger','Nebezpečí při cestování')|E])
  MOD_TRAVEL_DANGER_EPIDEMIC: "[Concept('travel_danger','Nebezpečí při cestování')|E] kvůli [Concept('epidemic','epidemii')|E]"
  hills_travel_danger: "[Concept('travel_danger','Nebezpečí při cestování')|E]: [GetTerrain( 'hills' ).GetName]"
  mountains_travel_danger: "[Concept('travel_danger','Nebezpečí při cestování')|E]: [GetTerrain( 'mountains' ).GetName]"
@@ -1486,8 +1820,8 @@
  MOD_KNIGHT_EFFECTIVENESS_PER_LEARNING: "[Concept('knight_effectiveness','Účinnost rytířů')|E] za bod [Concept('skill','dovednosti')|E] [learning_i|E][Concept('learning','Učenost')|E]"
  MOD_KNIGHT_EFFECTIVENESS_PER_MARTIAL: "[Concept('knight_effectiveness','Účinnost rytířů')|E] za bod [Concept('skill','dovednosti')|E] [martial_i|E][Concept('martial','Válečnictví')|E]"
  MOD_KNIGHT_EFFECTIVENESS_PER_STEWARDSHIP: "[Concept('knight_effectiveness','Účinnost rytířů')|E] za bod [Concept('skill','dovednosti')|E] [stewardship_i|E][Concept('stewardship','Správcovství')|E]"
- MOD_STRESS_LOSS_PER_PIETY_LEVEL: "[stress_loss_i|E] [Concept('stress_loss','Úbytek stresu')|E] za [Concept('piety_level','úroveň oddanosti')|E]"
- MOD_STRESS_LOSS_PER_PRESTIGE_LEVEL: "[stress_loss_i|E] [Concept('stress_loss','Úbytek stresu')|E] za [Concept('prestige_level','úroveň slávy')|E]"
+ MOD_STRESS_LOSS_PER_PIETY_LEVEL: "[Concept('stress_loss_i','@stress_loss_icon!')|E] [Concept('stress_loss','Úbytek stresu')|E] za [Concept('piety_level','úroveň oddanosti')|E]" # todo: CONCEPT CASE
+ MOD_STRESS_LOSS_PER_PRESTIGE_LEVEL: "[Concept('stress_loss_i','@stress_loss_icon!')|E] [Concept('stress_loss','Úbytek stresu')|E] za [Concept('prestige_level','úroveň slávy')|E]" # todo: CONCEPT CASE
  pilgrim_xp_gain_mult: "Zisk [Concept('trait_level_track_xp','zkušeností rysu')|E] – [GetTrait('pilgrim').GetName( GetNullCharacter )]"
  governor_xp_gain_mult: "Zisk [Concept('trait_level_track_xp','zkušeností rysu')|E] – [GetTrait('governor').GetName( GetNullCharacter )]"
  confucian_education_xp_gain_mult: "Zisk [Concept('trait_level_track_xp','zkušeností rysu')|E] – [GetTrait('confucian_education').GetName( GetNullCharacter )]"
@@ -1498,6 +1832,7 @@
  trait_track_falconer_xp_gain_mult: "Zisk [Concept('trait_level_track_xp','zkušeností rysu')|E]: Sokolník #weak ([GetTrait('lifestyle_hunter').GetName( GetNullCharacter )])#!"
  trait_track_lifestyle_poet_xp_gain_mult: "Zisk [Concept('trait_level_track_xp','zkušeností rysu')|E]: Poezie #weak ([GetTrait('lifestyle_poet').GetName( GetNullCharacter )])#!"
  trait_track_peasant_leader_xp_gain_mult: "Zisk [Concept('trait_level_track_xp','zkušeností rysu')|E]: Pověst #weak ([GetTrait('peasant_leader').GetName( GetNullCharacter )])#!"
+ trait_track_rough_terrain_expert_xp_gain_mult: "Zisk [Concept('trait_level_track_xp','zkušenosti rysu')|E] pro [GetTrait('rough_terrain_expert').GetName( GetNullCharacter )]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  lifestyle_mystic_xp_gain_mult: "Zisk [Concept('trait_level_track_xp','zkušeností rysu')|E] – [GetTrait('lifestyle_mystic').GetName( GetNullCharacter )]"
  lifestyle_scholar_xp_gain_mult: "Získávání [Concept('trait_level_track_xp','zkušeností rysu')|E] „[GetTrait('lifestyle_scholar').GetName( GetNullCharacter )]“"
  trait_track_travel_xp_gain_mult: "Zisk [Concept('trait_level_track_xp','zkušeností rysu')|E]: Cestovatel #weak ([GetTrait('lifestyle_traveler').GetName( GetNullCharacter )])#!"
@@ -1590,8 +1925,9 @@
  MOD_DOMICILE_MONTHLY_INFLUENCE_MULT: "Měsíční $MOD_DOMICILE_MONTHLY_INFLUENCE_ADD$"
  MOD_DOMICILE_MONTHLY_HERD_MULT: "Měsíční $MOD_DOMICILE_MONTHLY_HERD_ADD$"
  MOD_DOMICILE_BUILD_GOLD_COST: "Náklady na výstavbu [Concept('domicile_building','budovy domicilu')|E]"
- MOD_DOMICILE_CONSTRUCTION_SPEED: "$game_concept_domicile_build_speed$"
- MOD_DOMICILE_TRAVEL_SPEED: "$game_concept_domicile_travel_speed$"
+ MOD_DOMICILE_BUILD_PRESTIGE_COST: "Náklady na výstavbu [Concept('domicile_building','budovu domicilu')|E] v prestiži" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_DOMICILE_CONSTRUCTION_SPEED: "Doba výstavby [Concept('domicile_building','budovy domicilu')|E]" # todo: CONCEPT CASE
+ MOD_DOMICILE_TRAVEL_SPEED: "Rychlost přesunu [Concept('domicile','domicilu')|E]" # todo: CONCEPT CASE
  MOD_DOMICILE_EXTERNAL_SLOTS_CAPACITY_ADD: "Počet [Concept('domicile_building_slots','pozic pro budovy domicilu')|E]"
  MOD_PROVISIONS_USE_MULT: "Spotřeba [Concept('provisions','proviantu')|E]"
  plains_provisions_use_mult: "Spotřeba [Concept('provisions','proviantu')|E]: [GetTerrain( 'plains' ).GetName]"
@@ -1624,7 +1960,7 @@
  desert_mountains_barter_goods_mult: "[Concept('barter_goods','Směnné zboží')|E]: [GetTerrain( 'desert_mountains' ).GetName]"
  drylands_barter_goods_mult: "[Concept('barter_goods','Směnné zboží')|E] – [GetTerrain( 'drylands' ).GetName]"
  terraced_hills_barter_goods_mult: "[Concept('barter_goods','Směnné zboží')|E] – [GetTerrain( 'terraced_hills' ).GetName]"
- black_sea_coast_region_development_growth: "$MOD_MONTHLY_DEVELOPMENT_GROWTH_FACTOR$ v [Concept('region','regionu')|E] „[GetGeographicalRegion('black_sea_coast_region').GetName]“"
+ black_sea_coast_region_prosperity_growth: "$MOD_MONTHLY_PROSPERITY_GROWTH_FACTOR$ v [Concept('region','regionu')|E] [GetGeographicalRegion('black_sea_coast_region').GetName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  charioteer_blue_xp_gain_mult: "[GetTrait('charioteer_blue').GetName( GetNullCharacter )] – zisk [Concept('trait_level_track_xp','zkušeností rysu')|E]"
  charioteer_green_xp_gain_mult: "[GetTrait('charioteer_green').GetName( GetNullCharacter )] – zisk [Concept('trait_level_track_xp','zkušeností rysu')|E]"
  charioteer_white_xp_gain_mult: "[GetTrait('charioteer_white').GetName( GetNullCharacter )] – zisk [Concept('trait_level_track_xp','zkušeností rysu')|E]"
@@ -1634,9 +1970,11 @@
  MOD_MONTHLY_COUNTY_FERTILITY_GROWTH_ADD: "$MOD_MONTHLY_COUNTY_FERTILITY_GROWTH$"
  MOD_MONTHLY_COUNTY_FERTILITY_GROWTH_MULT: "$MOD_MONTHLY_COUNTY_FERTILITY_GROWTH$"
  MOD_CHARACTER_CAPITAL_MONTHLY_COUNTY_FERTILITY_GROWTH_ADD: "[Concept('capital','Hlavní sídlo')|E]: $MOD_MONTHLY_COUNTY_FERTILITY_GROWTH$"
+ MOD_CHARACTER_CAPITAL_MONTHLY_COUNTY_FERTILITY_GROWTH_MULT: "$MOD_MONTHLY_COUNTY_FERTILITY_GROWTH$ v [Concept('capital','hlavním sídle')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  MOD_MONTHLY_COUNTY_FERTILITY_DECLINE_ADD: "$MOD_MONTHLY_COUNTY_FERTILITY_DECLINE$"
  MOD_MONTHLY_COUNTY_FERTILITY_DECLINE_MULT: "$MOD_MONTHLY_COUNTY_FERTILITY_DECLINE$"
  MOD_CHARACTER_CAPITAL_MONTHLY_COUNTY_FERTILITY_DECLINE_ADD: "[Concept('capital','Hlavní sídlo')|E]: $MOD_MONTHLY_COUNTY_FERTILITY_DECLINE$"
+ MOD_CHARACTER_CAPITAL_MONTHLY_COUNTY_FERTILITY_DECLINE_MULT: "$MOD_MONTHLY_COUNTY_FERTILITY_DECLINE$ v [Concept('capital','hlavním sídle')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  MONTHLY_COUNTY_FERTILITY_APPLIED_CHANGE_DIFF: "Aktuální modifikátor [Concept('county_fertility','úrodnosti hrabství')|E]"
  plains_fertility_growth_add: "Růst [Concept('county_fertility','úrodnosti hrabství')|E] na [Concept('terrain','pláních')|E]"
  plains_fertility_growth_mult: "$plains_fertility_growth_add$"
@@ -1698,6 +2036,81 @@
  terraced_hills_fertility_growth_mult: "$terraced_hills_fertility_growth_add$"
  terraced_hills_fertility_decline_add: "Pokles [Concept('county_fertility','úrodnosti hrabství')|E] v [Concept('terrain','terasovitých kopcích')|E]"
  terraced_hills_fertility_decline_mult: "$terraced_hills_fertility_decline_add$"
+ plains_control: "$MOD_MONTHLY_CONTROL_CHANGE$ v rovinách" # todo: NEW TRANSLATION
+ plains_province_size_baseline_add: "$MOD_PROVINCE_SIZE_BASELINE_ADD$ v rovinách" # todo: NEW TRANSLATION
+ plains_monthly_popular_opinion_change: "$MOD_MONTHLY_POPULAR_OPINION_CHANGE$ v rovinách" # todo: NEW TRANSLATION
+ plains_monthly_popular_opinion_change_factor: "$MOD_MONTHLY_POPULAR_OPINION_CHANGE_FACTOR$ v rovinách" # todo: NEW TRANSLATION
+ plains_popular_opinion_add: "$MOD_POPULAR_OPINION_ADD$ v rovinách" # todo: NEW TRANSLATION
+ farmlands_control: "$MOD_MONTHLY_CONTROL_CHANGE$ v zemědělské krajině" # todo: NEW TRANSLATION
+ farmlands_province_size_baseline_add: "$MOD_PROVINCE_SIZE_BASELINE_ADD$ v zemědělské krajině" # todo: NEW TRANSLATION
+ farmlands_monthly_popular_opinion_change: "$MOD_MONTHLY_POPULAR_OPINION_CHANGE$ v zemědělské krajině" # todo: NEW TRANSLATION
+ farmlands_monthly_popular_opinion_change_factor: "$MOD_MONTHLY_POPULAR_OPINION_CHANGE_FACTOR$ v zemědělské krajině" # todo: NEW TRANSLATION
+ farmlands_popular_opinion_add: "$MOD_POPULAR_OPINION_ADD$ v zemědělské krajině" # todo: NEW TRANSLATION
+ hills_control: "$MOD_MONTHLY_CONTROL_CHANGE$ v kopcích" # todo: NEW TRANSLATION
+ hills_province_size_baseline_add: "$MOD_PROVINCE_SIZE_BASELINE_ADD$ v kopcích" # todo: NEW TRANSLATION
+ hills_monthly_popular_opinion_change: "$MOD_MONTHLY_POPULAR_OPINION_CHANGE$ v kopcích" # todo: NEW TRANSLATION
+ hills_monthly_popular_opinion_change_factor: "$MOD_MONTHLY_POPULAR_OPINION_CHANGE_FACTOR$ v kopcích" # todo: NEW TRANSLATION
+ hills_popular_opinion_add: "$MOD_POPULAR_OPINION_ADD$ v kopcích" # todo: NEW TRANSLATION
+ terraced_hills_control: "$MOD_MONTHLY_CONTROL_CHANGE$ v terasovitých kopcích" # todo: NEW TRANSLATION
+ terraced_hills_province_size_baseline_add: "$MOD_PROVINCE_SIZE_BASELINE_ADD$ v terasovitých kopcích" # todo: NEW TRANSLATION
+ terraced_hills_monthly_popular_opinion_change: "$MOD_MONTHLY_POPULAR_OPINION_CHANGE$ v terasovitých kopcích" # todo: NEW TRANSLATION
+ terraced_hills_monthly_popular_opinion_change_factor: "$MOD_MONTHLY_POPULAR_OPINION_CHANGE_FACTOR$ v terasovitých kopcích" # todo: NEW TRANSLATION
+ terraced_hills_popular_opinion_add: "$MOD_POPULAR_OPINION_ADD$ v terasovitých kopcích" # todo: NEW TRANSLATION
+ mountains_control: "$MOD_MONTHLY_CONTROL_CHANGE$ v horách" # todo: NEW TRANSLATION
+ mountains_province_size_baseline_add: "$MOD_PROVINCE_SIZE_BASELINE_ADD$ v horách" # todo: NEW TRANSLATION
+ mountains_monthly_popular_opinion_change: "$MOD_MONTHLY_POPULAR_OPINION_CHANGE$ v horách" # todo: NEW TRANSLATION
+ mountains_monthly_popular_opinion_change_factor: "$MOD_MONTHLY_POPULAR_OPINION_CHANGE_FACTOR$ v horách" # todo: NEW TRANSLATION
+ mountains_popular_opinion_add: "$MOD_POPULAR_OPINION_ADD$ v horách" # todo: NEW TRANSLATION
+ desert_control: "$MOD_MONTHLY_CONTROL_CHANGE$ v poušti" # todo: NEW TRANSLATION
+ desert_province_size_baseline_add: "$MOD_PROVINCE_SIZE_BASELINE_ADD$ v poušti" # todo: NEW TRANSLATION
+ desert_monthly_popular_opinion_change: "$MOD_MONTHLY_POPULAR_OPINION_CHANGE$ v poušti" # todo: NEW TRANSLATION
+ desert_monthly_popular_opinion_change_factor: "$MOD_MONTHLY_POPULAR_OPINION_CHANGE_FACTOR$ v poušti" # todo: NEW TRANSLATION
+ desert_popular_opinion_add: "$MOD_POPULAR_OPINION_ADD$ v poušti" # todo: NEW TRANSLATION
+ desert_mountains_control: "$MOD_MONTHLY_CONTROL_CHANGE$ v pouštních horách" # todo: NEW TRANSLATION
+ desert_mountains_province_size_baseline_add: "$MOD_PROVINCE_SIZE_BASELINE_ADD$ v pouštních horách" # todo: NEW TRANSLATION
+ desert_mountains_monthly_popular_opinion_change: "$MOD_MONTHLY_POPULAR_OPINION_CHANGE$ v pouštních horách" # todo: NEW TRANSLATION
+ desert_mountains_monthly_popular_opinion_change_factor: "$MOD_MONTHLY_POPULAR_OPINION_CHANGE_FACTOR$ v pouštních horách" # todo: NEW TRANSLATION
+ desert_mountains_popular_opinion_add: "$MOD_POPULAR_OPINION_ADD$ v pouštních horách" # todo: NEW TRANSLATION
+ oasis_control: "$MOD_MONTHLY_CONTROL_CHANGE$ v oáze" # todo: NEW TRANSLATION
+ oasis_province_size_baseline_add: "$MOD_PROVINCE_SIZE_BASELINE_ADD$ v oáze" # todo: NEW TRANSLATION
+ oasis_monthly_popular_opinion_change: "$MOD_MONTHLY_POPULAR_OPINION_CHANGE$ v oáze" # todo: NEW TRANSLATION
+ oasis_monthly_popular_opinion_change_factor: "$MOD_MONTHLY_POPULAR_OPINION_CHANGE_FACTOR$ v oáze" # todo: NEW TRANSLATION
+ oasis_popular_opinion_add: "$MOD_POPULAR_OPINION_ADD$ v oáze" # todo: NEW TRANSLATION
+ jungle_control: "$MOD_MONTHLY_CONTROL_CHANGE$ v džungli" # todo: NEW TRANSLATION
+ jungle_province_size_baseline_add: "$MOD_PROVINCE_SIZE_BASELINE_ADD$ v džungli" # todo: NEW TRANSLATION
+ jungle_monthly_popular_opinion_change: "$MOD_MONTHLY_POPULAR_OPINION_CHANGE$ v džungli" # todo: NEW TRANSLATION
+ jungle_monthly_popular_opinion_change_factor: "$MOD_MONTHLY_POPULAR_OPINION_CHANGE_FACTOR$ v džungli" # todo: NEW TRANSLATION
+ jungle_popular_opinion_add: "$MOD_POPULAR_OPINION_ADD$ v džungli" # todo: NEW TRANSLATION
+ forest_control: "$MOD_MONTHLY_CONTROL_CHANGE$ v lese" # todo: NEW TRANSLATION
+ forest_province_size_baseline_add: "$MOD_PROVINCE_SIZE_BASELINE_ADD$ v lese" # todo: NEW TRANSLATION
+ forest_monthly_popular_opinion_change: "$MOD_MONTHLY_POPULAR_OPINION_CHANGE$ v lese" # todo: NEW TRANSLATION
+ forest_monthly_popular_opinion_change_factor: "$MOD_MONTHLY_POPULAR_OPINION_CHANGE_FACTOR$ v lese" # todo: NEW TRANSLATION
+ forest_popular_opinion_add: "$MOD_POPULAR_OPINION_ADD$ v lese" # todo: NEW TRANSLATION
+ taiga_control: "$MOD_MONTHLY_CONTROL_CHANGE$ v tajze" # todo: NEW TRANSLATION
+ taiga_province_size_baseline_add: "$MOD_PROVINCE_SIZE_BASELINE_ADD$ v tajze" # todo: NEW TRANSLATION
+ taiga_monthly_popular_opinion_change: "$MOD_MONTHLY_POPULAR_OPINION_CHANGE$ v tajze" # todo: NEW TRANSLATION
+ taiga_monthly_popular_opinion_change_factor: "$MOD_MONTHLY_POPULAR_OPINION_CHANGE_FACTOR$ v tajze" # todo: NEW TRANSLATION
+ taiga_popular_opinion_add: "$MOD_POPULAR_OPINION_ADD$ v tajze" # todo: NEW TRANSLATION
+ wetlands_control: "$MOD_MONTHLY_CONTROL_CHANGE$ v mokřadech" # todo: NEW TRANSLATION
+ wetlands_province_size_baseline_add: "$MOD_PROVINCE_SIZE_BASELINE_ADD$ v mokřadech" # todo: NEW TRANSLATION
+ wetlands_monthly_popular_opinion_change: "$MOD_MONTHLY_POPULAR_OPINION_CHANGE$ v mokřadech" # todo: NEW TRANSLATION
+ wetlands_monthly_popular_opinion_change_factor: "$MOD_MONTHLY_POPULAR_OPINION_CHANGE_FACTOR$ v mokřadech" # todo: NEW TRANSLATION
+ wetlands_popular_opinion_add: "$MOD_POPULAR_OPINION_ADD$ v mokřadech" # todo: NEW TRANSLATION
+ steppe_control: "$MOD_MONTHLY_CONTROL_CHANGE$ ve stepi" # todo: NEW TRANSLATION
+ steppe_province_size_baseline_add: "$MOD_PROVINCE_SIZE_BASELINE_ADD$ ve stepi" # todo: NEW TRANSLATION
+ steppe_monthly_popular_opinion_change: "$MOD_MONTHLY_POPULAR_OPINION_CHANGE$ ve stepi" # todo: NEW TRANSLATION
+ steppe_monthly_popular_opinion_change_factor: "$MOD_MONTHLY_POPULAR_OPINION_CHANGE_FACTOR$ ve stepi" # todo: NEW TRANSLATION
+ steppe_popular_opinion_add: "$MOD_POPULAR_OPINION_ADD$ ve stepi" # todo: NEW TRANSLATION
+ floodplains_control: "$MOD_MONTHLY_CONTROL_CHANGE$ v záplavových územích" # todo: NEW TRANSLATION
+ floodplains_province_size_baseline_add: "$MOD_PROVINCE_SIZE_BASELINE_ADD$ v záplavových územích" # todo: NEW TRANSLATION
+ floodplains_monthly_popular_opinion_change: "$MOD_MONTHLY_POPULAR_OPINION_CHANGE$ v záplavových územích" # todo: NEW TRANSLATION
+ floodplains_monthly_popular_opinion_change_factor: "$MOD_MONTHLY_POPULAR_OPINION_CHANGE_FACTOR$ v záplavových územích" # todo: NEW TRANSLATION
+ floodplains_popular_opinion_add: "$MOD_POPULAR_OPINION_ADD$ v záplavových územích" # todo: NEW TRANSLATION
+ drylands_control: "$MOD_MONTHLY_CONTROL_CHANGE$ v suchých oblastech" # todo: NEW TRANSLATION
+ drylands_province_size_baseline_add: "$MOD_PROVINCE_SIZE_BASELINE_ADD$ v suchých oblastech" # todo: NEW TRANSLATION
+ drylands_monthly_popular_opinion_change: "$MOD_MONTHLY_POPULAR_OPINION_CHANGE$ v suchých oblastech" # todo: NEW TRANSLATION
+ drylands_monthly_popular_opinion_change_factor: "$MOD_MONTHLY_POPULAR_OPINION_CHANGE_FACTOR$ v suchých oblastech" # todo: NEW TRANSLATION
+ drylands_popular_opinion_add: "$MOD_POPULAR_OPINION_ADD$ v suchých oblastech" # todo: NEW TRANSLATION
  MOD_HERD_GAIN: "Přírůstek [Concept('herd','stáda')|E]"
  MOD_HERD_GAIN_MULT: "$MOD_HERD_GAIN$"
  MOD_HERD_CONVERSION: "Převod [Concept('herd','stáda')|E] na $nomadic_riders$"
@@ -1721,7 +2134,7 @@
  game_rule_extra_nomads_arabs_supply_limit_add: "[Concept('supply_limit','Limit zásobování')|E] v oblasti $situation_game_rule_extra_nomads_arabs$"
  game_rule_extra_nomads_arabs_supply_limit_mult: "[Concept('supply_limit','Limit zásobování')|E] v oblasti $situation_game_rule_extra_nomads_arabs$"
  MOD_MAX_MIGRATION_DISTANCE_MULT: "Maximální vzdálenost [Concept('migration','migrace')|E]"
- specialized_herds_modifier_camel: "$building_camel_farms_01$"
+ specialized_herds_modifier_camel: "$camel_farms_01$" # todo: CHANGED (predtym: $building_camel_farms_01$)
  specialized_herds_modifier_sheep: "$goat_yurt_01_domicile_building$, $sheep_yurt_01_domicile_building$"
  specialized_herds_modifier_hunting: "$mpo_hunt_steppe$"
  specialized_herds_modifier_horses: "$building_type_horse_pastures_01$"
@@ -1764,10 +2177,10 @@
  steppe_admin_government_tax_contribution_mult: "[Concept('steppe_admin_i','@government_type_steppe_admin!')|E] [Concept('modifier_contribution','Příspěvek')|E] [Concept('vassal','vazala')|E] [Concept('steppe_admin','meritokratického chanátu')|E] na [Concept('tax','daních')|E]"
  steppe_admin_government_levy_contribution_add: "[Concept('steppe_admin_i','@government_type_steppe_admin!')|E] [Concept('modifier_base_contribution','Základní příspěvek')|E] [Concept('vassal','vazala')|E] [Concept('steppe_admin','meritokratického chanátu')|E] v [Concept('levy','odvedencích')|E]"
  steppe_admin_government_levy_contribution_mult: "[Concept('steppe_admin_i','@government_type_steppe_admin!')|E] [Concept('modifier_contribution','Příspěvek')|E] [Concept('vassal','vazala')|E] [Concept('steppe_admin','meritokratického chanátu')|E] v [Concept('levy','odvedencích')|E]"
- ecclesiastical_government_tax_contribution_add: "[ecclesiastical_i|E] [Concept('modifier_base_contribution','Základní příspěvek')|E] [Concept('tax','daní')|E] od [Concept('vassal','vazalů')|E] s [Concept('ecclesiastical_government','církevní vládou')|E]"
- ecclesiastical_government_tax_contribution_mult: "[ecclesiastical_i|E] [Concept('modifier_contribution','Příspěvek')|E] [Concept('tax','daní')|E] od [Concept('vassal','vazalů')|E] s [Concept('ecclesiastical_government','církevní vládou')|E]"
- ecclesiastical_government_levy_contribution_add: "[ecclesiastical_i|E] [Concept('modifier_base_contribution','Základní příspěvek')|E] [Concept('levy','odvedenců')|E] od [Concept('vassal','vazalů')|E] s [Concept('ecclesiastical_government','církevní vládou')|E]"
- ecclesiastical_government_levy_contribution_mult: "[ecclesiastical_i|E] [Concept('modifier_contribution','Příspěvek')|E] [Concept('levy','odvedenců')|E] od [Concept('vassal','vazalů')|E] s [Concept('ecclesiastical_government','církevní vládou')|E]"
+ ecclesiastical_government_tax_contribution_add: "[Concept('ecclesiastical_i','@government_type_ecclesiastical!')|E] [Concept('modifier_base_contribution','Základní příspěvek')|E] [Concept('tax','daní')|E] od [Concept('vassal','vazalů')|E] s [Concept('ecclesiastical_government','církevní vládou')|E]" # todo: CONCEPT CASE
+ ecclesiastical_government_tax_contribution_mult: "[Concept('ecclesiastical_i','@government_type_ecclesiastical!')|E] [Concept('modifier_contribution','Příspěvek')|E] [Concept('tax','daní')|E] od [Concept('vassal','vazalů')|E] s [Concept('ecclesiastical_government','církevní vládou')|E]" # todo: CONCEPT CASE
+ ecclesiastical_government_levy_contribution_add: "[Concept('ecclesiastical_i','@government_type_ecclesiastical!')|E] [Concept('modifier_base_contribution','Základní příspěvek')|E] [Concept('levy','odvedenců')|E] od [Concept('vassal','vazalů')|E] s [Concept('ecclesiastical_government','církevní vládou')|E]" # todo: CONCEPT CASE
+ ecclesiastical_government_levy_contribution_mult: "[Concept('ecclesiastical_i','@government_type_ecclesiastical!')|E] [Concept('modifier_contribution','Příspěvek')|E] [Concept('levy','odvedenců')|E] od [Concept('vassal','vazalů')|E] s [Concept('ecclesiastical_government','církevní vládou')|E]" # todo: CONCEPT CASE
  subject_salary_expense: "Výdaje na platy"
  subject_salary_income: "Příjem z platu"
  subject_salary_expense_breakdown: "Platy [Concept('subject','subjektů')|E]"
@@ -2006,8 +2419,17 @@
  government_merit_level_entry: "Maximální [Concept('merit_level','hodnost zásluh')|E] ([Character.GetGovernment.GetName]): $LEVEL$"
  MOD_STATIONED_MAA_DAMAGE_MULT_PER_PIETY_LEVEL: "$MOD_STATIONED_MAA_DAMAGE_ADD$ za každou [Concept('piety_level','úroveň oddanosti')|E]"
  MOD_STATIONED_MAA_TOUGHNESS_MULT_PER_PIETY_LEVEL: "$MOD_STATIONED_MAA_TOUGHNESS_ADD$ za každou [Concept('piety_level','úroveň oddanosti')|E]"
- MOD_TAX_PER_PIETY_LEVEL: "[Concept('tax','Daň')|E] za každou [Concept('piety_level','úroveň oddanosti')|E]"
- MOD_MONTHLY_INCOME_PER_PIETY_LEVEL_ADD: "$MOD_MONTHLY_INCOME_MULT$ za každou [Concept('piety_level','úroveň oddanosti')|E]"
+ MOD_GENERIC_TAX_PER_PIETY_LEVEL: "[Concept('tax','Daň')|E] za každou úroveň [Concept('piety_level','úroveň oddanosti')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_AGRICULTURAL_TAX_PER_PIETY_LEVEL: "[Concept('agricultural_taxes','Zemědělské daně')|E] za každou úroveň [Concept('piety_level','úroveň oddanosti')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_MINING_TAX_PER_PIETY_LEVEL: "[Concept('mining_taxes','Důlní daně')|E] za každou úroveň [Concept('piety_level','úroveň oddanosti')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_RELIGIOUS_TAX_PER_PIETY_LEVEL: "[Concept('religious_taxes','Náboženské daně')|E] za každou úroveň [Concept('piety_level','úroveň oddanosti')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_URBAN_TAX_PER_PIETY_LEVEL: "[Concept('urban_taxes','Městské daně')|E] za každou úroveň [Concept('piety_level','úroveň oddanosti')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_ARTISAN_TAX_PER_PIETY_LEVEL: "[Concept('artisan_taxes','Řemeslnické daně')|E] za každou úroveň [Concept('piety_level','úroveň oddanosti')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_MARITIME_TAX_PER_PIETY_LEVEL: "[Concept('maritime_taxes','Námořní daně')|E] za každou úroveň [Concept('piety_level','úroveň oddanosti')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_TRIBAL_TAX_PER_PIETY_LEVEL: "[Concept('tribal_taxes','Kmenové daně')|E] za každou úroveň [Concept('piety_level','úroveň oddanosti')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_CIVIC_TAX_PER_PIETY_LEVEL: "[Concept('civic_taxes','Správní daně')|E] za každou úroveň [Concept('piety_level','úroveň oddanosti')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_WOODLAND_TAX_PER_PIETY_LEVEL: "[Concept('woodland_taxes','Daně ze zázemí')|E] za každou úroveň [Concept('piety_level','úroveň oddanosti')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_COMMERCE_TAX_PER_PIETY_LEVEL: "[Concept('commerce_taxes','Obchodní daně')|E] za každou úroveň [Concept('piety_level','úroveň oddanosti')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  MOD_MONTHLY_BARTER_GOODS_PREFIX: "[barter_goods_i]"
  MOD_MONTHLY_BARTER_GOODS: "[Concept('barter_goods','Směnné zboží')|E]"
  MOD_MONTHLY_BARTER_GOODS_MULT: "Měsíční [Concept('barter_goods','směnné zboží')|E]"
@@ -2018,6 +2440,7 @@
  study_scripture_scheme_phase_duration_add: "[Concept('scheme_speed_single','Délka fáze')|E] intriky „[GetScheme('study_scripture').GetTypeName]“"
  mentoring_scheme_phase_duration_add: "[GetScheme('mentoring').GetTypeName] – [Concept('scheme_speed_single','délka fáze')|E]"
  study_faith_scheme_phase_duration_add: "[Concept('scheme_speed_single','Délka fáze')|E] intriky „[GetScheme('study_faith').GetTypeName]“"
+ gdp_civic_agitation_scheme_scheme_phase_duration_add: "[GetScheme('gdp_civic_agitation_scheme').GetTypeName] [Concept('scheme_speed_single','Délka fáze')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  merit_income_per_liege_tax_entry: "[Concept('merit','Zásluhy')|E] za [Concept('taxes','daně')|E] [Concept('governor','guvernéra')|E]"
  merit_income_per_army_value_entry: "[Concept('merit','Zásluhy')|E] za [Concept('title_men_at_arms','titulové ozbrojence')|E] [Concept('governor','guvernéra')|E]"
  merit_income_per_tax_mult_entry: "[Concept('merit','Zásluhy')|E] za každou zaplacenou [Concept('tax','daň')|E]"
@@ -2031,3 +2454,13 @@
  MOD_SPIRITUAL_FULFILLMENT_GAIN_MULT: "Zisk [Concept('spiritual_fulfillment','duchovního naplnění')|E]"
  MOD_SPIRITUAL_FULFILLMENT_LOSS_MULT: "Ztráta [Concept('spiritual_fulfillment','duchovního naplnění')|E]"
  MOD_PERSONAL_TENET_SLOT_ADD: "[Concept('personal_tenets','Osobní zásady')|E]"
+ MOD_DISTRICT_CONSTRUCTION_SPEED: "Doba výstavby [Concept('district','čtvrť')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_DISTRICT_CONSTRUCTION_GOLD_COST: "Náklady na výstavbu [Concept('district','čtvrť')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_DISTRICT_CONSTRUCTION_PRESTIGE_COST: "Náklady na výstavbu [Concept('district','čtvrť')|E] v prestiži" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MOD_DISTRICT_CONSTRUCTION_PIETY_COST: "Náklady na výstavbu [Concept('district','čtvrť')|E] ve zbožnosti" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ desert_district_gold_cost: "$MOD_DISTRICT_CONSTRUCTION_GOLD_COST$ v poušti" # todo: NEW TRANSLATION
+ drylands_district_gold_cost: "$MOD_DISTRICT_CONSTRUCTION_GOLD_COST$ v suchých oblastech" # todo: NEW TRANSLATION
+ trait_track_caravaneer_xp_gain_mult: "$trait_track_caravaneer$ #weak ([GetTrait('lifestyle_merchant').GetName( GetNullCharacter )])#! Zisk [Concept('trait_level_track_xp','zkušenosti rysu')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ trait_track_artisan_xp_gain_mult: "$trait_track_artisan$ #weak ([GetTrait('lifestyle_merchant').GetName( GetNullCharacter )])#! Zisk [Concept('trait_level_track_xp','zkušenosti rysu')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ trait_track_creditor_xp_gain_mult: "$trait_track_creditor$ #weak ([GetTrait('lifestyle_merchant').GetName( GetNullCharacter )])#! [Concept('trait_level_track_xp','zkušenosti rysu')|E] Zisk" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ merchant_government_opinion: "[merchant_i] [Concept('merchant','Kupec')|E] [Concept('opinion','Mínění')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE

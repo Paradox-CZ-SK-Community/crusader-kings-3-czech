@@ -131,7 +131,7 @@
  set_favored_minister_interaction_desc: "[recipient.GetFirstName|U] [Select_CString(recipient.IsLocalPlayer,'zastáváš','zastává')|l] úřad [recipient.GetCouncilTitle|l]. Uděl mu svou přízeň: zvýšíš přidělený podíl z [Concept('treasury','pokladnice')|E] a poskytneš další výhody."
  recipient_favored_minister_aptitude_tt: "[recipient.GetUIName|U] [Select_CString(recipient.IsLocalPlayer,'máš','má')|l] [Concept('aptitude','způsobilost')|E] [recipient.GetCourtPositionAptitude(GetCourtPositionType('favored_minister_court_position'))|l]"
  tgp_interaction_minister_personnel_highlight_reason: "Ministr personálu má v tomto [Concept('interaction','interakci')|E] výrazně větší vliv"
- request_governorship_interaction_celestial_desc: "Požádej [recipient.Custom('CZ_ShortUIName_A')], aby tě ministerstvo personálu zařadilo mezi další kandidáty v [Concept('line','linii')|E] na [Concept('governorship','guvernérství')|E]"
+ request_governorship_interaction_celestial_desc: "Požádej [recipient.Custom('CZ_ShortUIName_A')], [Concept('minister_of_personnel','ministra personálu')|E], aby tě zařadil mezi další kandidáty v [Concept('line','linii')|E] na [Concept('governorship','guvernérství')|E]" # todo: CHANGED (predtym: Požádej [recipient.Custom('CZ_ShortUIName_A')], aby tě ministerstvo personálu zařadilo mezi další kandidáty v [Concept(')
  recipient_above_retirement_age_desc: "[recipient.GetShortUIName|U] je nad oficiálním důchodovým věkem"
  recipient_above_retirement_age_value_desc: "[recipient.GetShortUIName|U] je nad oficiálním důchodovým věkem: $VALUE|=+0$"
  is_above_retirement_age_desc: "Věk #weak (nad věkem odchodu do důchodu)#!"
@@ -318,8 +318,8 @@
  msg_bloc_leader_aspiration_changed: "Aspirace vůdce bloku se změnila"
  msg_bloc_member_aspiration_changed: "Aspirace člena bloku se změnila"
  msg_bloc_member_aspiration_changed_tt: "[Concept('house','Rod')|EU] [house.GetName] přijal [Concept('house_aspiration','aspiraci rodu')|E] [house.GetHouseAspiration.GetName|V]"
- msg_bloc_member_aspiration_match_tt: "To odpovídá [Concept('leading_house_possessive','vůdčího rodu')|E] $game_concept_aspiration$ ([house.GetConfederation.GetLeadingHouse.GetName|V])"
- msg_bloc_member_aspiration_diverge_tt: "To se liší od $game_concept_aspiration$ [Concept('leading_house_possessive','vůdčího rodu')|E] [house.GetConfederation.GetLeadingHouse.GetName|V], který sleduje cíl [house.GetConfederation.GetLeadingHouse.GetHouseAspiration.GetName]"
+ msg_bloc_member_aspiration_match_tt: "To odpovídá [Concept('leading_house_possessive','vůdčího rodu')|E] aspirace ([house.GetConfederation.GetLeadingHouse.GetName|V])" # todo: CONCEPT CASE
+ msg_bloc_member_aspiration_diverge_tt: "To se liší od aspirace [Concept('leading_house_possessive','vůdčího rodu')|E] [house.GetConfederation.GetLeadingHouse.GetName|V], který sleduje cíl [house.GetConfederation.GetLeadingHouse.GetHouseAspiration.GetName]" # todo: CONCEPT CASE
  msg_bloc_new_leading_house: "Nový vůdce bloku: [leader.GetBaseNameNoTooltip|V]"
  msg_bloc_new_leading_house_desc: "[Concept('house','Rod')|EU] [leader.GetBaseName] nahradil rod [old_leader.GetBaseName] jako [Concept('leading_house','vůdčí rod')|E] [bloc.GetName|V]"
  TRUCE_LEFT_BLOC: "Odchod z bloku [bloc.GetName]"
@@ -429,7 +429,7 @@
  bolstered_career_notification: "[actor.GetTitledFirstName|U] [Select_CString(actor.IsFemale,'posílila','posílil')|l] vaši kariéru"
  exam_bypass_notification: "Byla vám udělena výjimka ze zkoušek"
  has_passed_all_exams: "[recipient.GetShortUIName|U] již [Select_CString(recipient.IsFemale,'složila','složil')|l] potřebné [Concept('examinations','zkoušky')|E]"
- pay_treasury_debt_interaction: "Oddlužení"
+ pay_treasury_debt_interaction: "Zbav se dluhem pokladnice" # todo: CHANGED (predtym: Oddlužení) # todo: CONCEPT CASE
  pay_treasury_debt_interaction_desc: "Uhradit [Concept('treasury_debt','dluh pokladnice')|E], který [recipient.GetShortUIName] [Select_CString(recipient.IsLocalPlayer,'máš','má')|l] #weak ([treasury_i]#V [recipient.GetTreasury|0]#!)#!"
  pay_treasury_debt_interaction_notification: "Dluh plodí nepořádek, a ten já nestrpím. Splatím z vlastních zásob, co tvá pokladnice dluží — nezapomeň na tuto štědrost a zařiď, aby už jí nikdy nebylo třeba."
  MINISTER_OF_REVENUE_REASON: "Zastáváš úřad [Concept('minister_of_revenue','ministra příjmů')|E]: $VALUE|=+0$"
@@ -442,6 +442,7 @@
  ASKING_FOR_WEAK_HOOK_ACCEPTANCE_TT: "Požadavek na [hook_i][Concept('weak_hook','slabou páku')|E]: $VALUE|=+0$"
  demand_conversion_minister_rites_interaction: "Donutit ke konverzi"
  compel_conversion_interaction_desc: "Pokus se donutit [recipient.Custom('CZ_ShortUINameNoTooltip_A')] ke konverzi na jinou [Concept('faith','víru')|E]"
+ demand_conversion_minister_rites_interaction_notice: "Nemohu ti už déle dovolit setrvávat v bludné víře; konvertuj a přidej se do řad spravedlivých!" # todo: NEW TRANSLATION
  MINISTER_FAITH: "Donutit ke konverzi na [GetPlayer.GetFaith.GetName]"
  TOP_LIEGE_FAITH: "Donutit ke konverzi na [GetPlayer.GetTopLiege.GetFaith.GetName]"
  CAPITAL_FAITH: "Donutit ke konverzi na [GetPlayer.GetTopLiege.GetCapitalLocation.GetCounty.GetFaith.GetName]"

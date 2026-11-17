@@ -1,7 +1,7 @@
 ﻿l_polish:
  GOTO_CHARACTER: "#T Přejít na místo [Character.Custom('CZ_ShortUINameNoTooltip_G')]#!\n[Character.GetLocationDesc]"
  CHARACTER_INTERACTION_ITEM_TOOLTIP_HEADER: "$NAME|T$"
- CHARACTER_INTERACTION_ITEM_TOOLTIP_SCHEME_ODDS: "[predicted_difficulty|E]:$NAME$"
+ CHARACTER_INTERACTION_ITEM_TOOLTIP_SCHEME_ODDS: "[Concept('predicted_difficulty','Předpokládaná obtížnost')|E]:$NAME$" # todo: CONCEPT CASE
  CHARACTER_INTERACTION_ITEM_TOOLTIP_SCHEME_TYPE: "#S Intrika $NAME$#!"
  SHOW_MORE_INTERACTIONS_TT: "#T Zobrazit více: [CharacterInteractionCategory.GetDescription]#!"
  PIN_TT: "#T [Select_CString( Character.IsPinned, 'Odepnout', 'Připnout' )]\n#!Sleduj tuto postavu tím, že si ji připneš do přehledu na pravé straně obrazovky"
@@ -16,8 +16,10 @@
  interaction_category_vassal: "[GetPlayer.Custom2('CharacterInteractionCategoryVassal', CHARACTER.Self )]"
  interaction_category_vassal_governor: "[second.Custom('GetGovernorConceptNoTooltip')]"
  interaction_category_vassal_vassal: "Vazal"
+ interaction_category_vassal_client: "Klient" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  interaction_category_vassal_tributary: "Tributář"
  interaction_category_vassal_liege: "Lenní pán"
+ interaction_category_vassal_patron: "Patron" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  interaction_category_vassal_suzerain: "Suzerén"
  interaction_category_vassal_fellow_vassal: "Spoluvazal"
  interaction_category_vassal_fellow_governor: "Kolega [second.Custom('GetGovernorConceptNoTooltip')]"
@@ -26,6 +28,7 @@
  interaction_category_religion: "Náboženství"
  interaction_category_house_head: "Hlava rodu"
  interaction_category_prison: "Vězení"
+ interaction_category_situation: "Situace" # todo: NEW TRANSLATION
  interaction_category_diarch: "[GetPlayer.Custom2('CharacterInteractionCategoryPowerSharing', CHARACTER.Self )]"
  interaction_category_diarch_diarch: "[GetPlayer.GetDiarchTitle]"
  interaction_category_diarch_fallback: "Sdílení moci"
@@ -35,6 +38,8 @@
  interaction_category_prison_filter_tag_desc: "Interakce s [Concept('prison','vězením')|E]"
  RELIGIOUS_INTERACTIONS_BUTTON_TOOLTIP: "#T Zobrazit náboženské interakce#!"
  interaction_category_religion_filter_tag_desc: "Náboženské interakce"
+ interaction_category_situation_filter_tag_desc: "Interakce: [Concept('situation','situace')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ assembly_interaction_filter_tag_desc: "Interakce: [Concept('assembly','shromáždění')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  ADMIN_GOVERNMENT_LIEGE_INTERACTIONS_BUTTON_TOOLTIP: "#T Zobrazit interakce [Concept('administrative_government','administrativní vlády')|E] s tvým [Concept('liege','lenním pánem')|E]#!"
  ADMIN_GOVERNMENT_HOUSE_HEAD_INTERACTIONS_BUTTON_TOOLTIP: "#T Zobrazit interakce [Concept('administrative_government','administrativní vlády')|E] s [Concept('house_heads','hlavami rodů')|E]#!"
  ADMIN_GOVERNMENT_CEREMONIAL_LIEGE_INTERACTIONS_BUTTON_TOOLTIP: "#T Zobrazit interakce [Concept('administrative_government','administrativní vlády')|E] s tvým [Concept('ceremonial_liege','obřadním panovníkem')|E]#!"
@@ -43,6 +48,8 @@
  admin_house_head_filter_tag_desc: "Interakce s [Concept('house_head','hlavou rodu')|E]"
  admin_governor_filter_tag_desc: "Interakce s [CHARACTER.Custom('GetGovernorConceptNoTooltip')]"
  ceremonial_liege_filter_tag_desc: "Interakce s [Concept('ceremonial_liege','obřadním panovníkem')|E]"
+ market_owner_filter_tag_desc: "Interakce: [Concept('market_owner','vlastník trhu')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ INTERACTION_SELECTED_DISTRICT: "[District.GetType.GetName] v [District.GetHolding.GetName]" # todo: NEW TRANSLATION
  INTERACTION_SENDER: "Odesílatel"
  INTERACTION_RECIPIENT: "Příjemce"
  INTERACTION_SPOUSE: "Choť"
@@ -50,4 +57,3 @@
  INTERACTION_SHOW_ACCEPT_EFFECTS: "Při přijetí"
  INTERACTION_SHOW_INTERMEDIARY_DECLINE_EFFECTS: "Při vetu"
  INTERACTION_SHOW_DECLINE_EFFECTS: "Při odmítnutí"
- HOF_INTERACTIONS_BUTTON_TOOLTIP: "#T Zobrazit interakce s [Concept('head_of_faith','hlavou víry')|E]#!" # todo: NOT IN ENGLISH

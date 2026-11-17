@@ -50,11 +50,13 @@
  PROVINCE_TOOLTIP_CULTURE: "Kultura: [COUNTY.GetCulture.GetNameNoTooltip|V]"
  PROVINCE_TOOLTIP_FAITH: "Víra: [COUNTY.GetFaith.GetNameNoTooltip|V]"
  PROVINCE_TOOLTIP_TERRAIN: "#size:6 \n #!@[PROVINCE.GetTerrainKey]_big! #size:17 [PROVINCE.GetTerrain.GetNameNoTooltip|V] #!"
- PROVINCE_TOOLTIP_DEVELOPMENT: "Rozvoj: [COUNTY.GetDevelopmentLevel|V]"
+ PROVINCE_TOOLTIP_PROSPERITY: "Prosperita: [COUNTY.GetProsperityLevel|V]" # todo: NEW TRANSLATION
  PROVINCE_TOOLTIP_NO_HOLDING: "Država není postavena"
  PROVINCE_TOOLTIP_HOLDING_TITLE: "Titul državy: [PROVINCE.GetTitle.GetNameNoTooltip|V]"
  PROVINCE_TOOLTIP_COUNTY_TITLE: "Titul hrabství: [TITLE.GetNameNoTooltip|V]"
  PROVINCE_DEBUG: "\nID: [PROVINCE.GetID] [PROVINCE.GetTag]"
+ PROVINCE_MIN_POP_DEBUG: "Minimální populace: $VALUE$" # todo: NEW TRANSLATION
+ PROVINCE_CURRENT_POP_DEBUG: "Současná populace: $VALUE$" # todo: NEW TRANSLATION
  PROVINCE_TOOLTIP_EMBARKING_IMPLIED: "#I Zaplatíš poplatky za nalodění#!"
  PROVINCE_TOOLTIP_NO_PATH_ALL: "@warning_icon! #X Sem nemůžeš pochodovat#!"
  PROVINCE_TOOLTIP_NOT_ALLOWED_TO_MOVE_AUTOMATED_ARMY: "@warning_icon! #X Nemůžeš vydávat rozkazy, dokud $ARMY_AUTOMATION_FEATURE_NAME$ řídí tvé armády#!"
@@ -97,23 +99,50 @@
  MAP_COUNTY_REALM_EXPLORE_CLICK: "#I Ctrl+kliknutím rozbalíš panství#!"
  MAP_COUNTY_REALM_EXPLORE_UNDO_CLICK: "#I Ctrl+kliknutím pravým tlačítkem sbalíš panství#!"
  MAP_OCCUPANT_TEXT: "Okupant: [CHARACTER.GetUINameNoTooltip|UV]"
+ MARKET_TT_PLAYER_HAS_COMPLETE_MONOPOLY: "@trade_monopoly!Na tomto trhu máš [Concept('complete_monopoly','úplný monopol')|E]" # todo: NEW TRANSLATION
+ MARKET_TT_OTHER_CHARACTER_HAS_COMPLETE_MONOPOLY: "@alert_icon! #alert_trial [Character.GetNameNoTooltip] má na tomto trhu [Concept('complete_monopoly','úplný monopol')|E]#!" # todo: NEW TRANSLATION
+ MARKET_TT_TITLE_HAS_COMPLETE_MONOPOLY: "@trade_monopoly![Title.GetNameNoTooltip] má na tomto trhu [Concept('complete_monopoly','úplný monopol')|E]" # todo: NEW TRANSLATION
+ MARKET_TT_OTHER_TITLE_HAS_COMPLETE_MONOPOLY: "@alert_icon! #alert_trial [Title.GetNameNoTooltip] má na tomto trhu [Concept('complete_monopoly','úplný monopol')|E]#!" # todo: NEW TRANSLATION
+ MARKET_TT_CONFEDERATION_HAS_COMPLETE_MONOPOLY: "@trade_monopoly!Konfederace [Confederation.GetName] má na tomto trhu [Concept('complete_monopoly','úplný monopol')|E]" # todo: NEW TRANSLATION
+ MARKET_TT_OTHER_CONFEDERATION_HAS_COMPLETE_MONOPOLY: "@trade_monopoly!@alert_icon! #alert_trial Konfederace [Confederation.GetName] má na tomto trhu [Concept('complete_monopoly','úplný monopol')|E]#!" # todo: NEW TRANSLATION
+ MARKET_TT_PLAYER_HAS_EXPLOITATIVE_MONOPOLY: "@trade_monopoly_exploitative!Na tomto trhu máš [Concept('exploitative_monopoly','vykořisťovatelský monopol')|E] na [TradeGoodCategory.GetName]$MARKET_TT_EXPLOITATIVE_TAKING$" # todo: NEW TRANSLATION
+ MARKET_TT_TITLE_HAS_EXPLOITATIVE_MONOPOLY: "@trade_monopoly_exploitative![Title.GetNameNoTooltip] má na tomto trhu [Concept('exploitative_monopoly','vykořisťovatelský monopol')|E] na [TradeGoodCategory.GetName]$MARKET_TT_EXPLOITATIVE_TAKING$" # todo: NEW TRANSLATION
+ MARKET_TT_CONFEDERATION_HAS_EXPLOITATIVE_MONOPOLY: "@trade_monopoly_exploitative!Konfederace [Confederation.GetName] má na tomto trhu [Concept('exploitative_monopoly','vykořisťovatelský monopol')|E] na [TradeGoodCategory.GetName]$MARKET_TT_EXPLOITATIVE_TAKING$" # todo: NEW TRANSLATION
+ MARKET_TT_EXPLOITATIVE_TAKING: "[SelectLocalization( GreaterThan_CFixedPoint( TradeMonopoly.GetExploitativeExports, '(CFixedPoint)0' ), 'MARKET_TT_EXPLOITATIVE_TAKING_AMOUNT', '' )]" # todo: NEW TRANSLATION
+ MARKET_TT_EXPLOITATIVE_TAKING_AMOUNT: ", přičemž si bere [TradeMonopoly.GetExploitativeExports|1^] [Concept('goods','zboží')|E] ještě před uspokojením místních [Concept('needs','potřeb')|E]" # todo: NEW TRANSLATION
+ MARKET_TT_PLAYER_HAS_MONOPOLY: "@trade_monopoly!Na tomto trhu máš [Concept('monopoly','monopol')|E] na [TradeGoodCategory.GetName]" # todo: NEW TRANSLATION
+ MARKET_TT_TITLE_HAS_MONOPOLY: "@trade_monopoly![Title.GetNameNoTooltip] má na tomto trhu [Concept('monopoly','monopol')|E] na [TradeGoodCategory.GetName]" # todo: NEW TRANSLATION
+ MARKET_TT_CONFEDERATION_HAS_MONOPOLY: "@trade_monopoly!Konfederace [Confederation.GetName] má na tomto trhu [Concept('monopoly','monopol')|E] na [TradeGoodCategory.GetName]" # todo: NEW TRANSLATION
+ MARKET_TT_MARKET_OWNER: "[Concept('market_owner','vlastník trhu')|E]: [Character.GetNameNoTooltip]" # todo: NEW TRANSLATION
+ MARKET_TT_MARKET_CAPITAL: "[Concept('market_capital','hlavní sídlo trhu')|E]: [Title.GetNameNoTooltip]" # todo: NEW TRANSLATION
  HOUSES_MAP_MODE_TOOLTIP: "#T Rod [ROOT.Province.GetTitle.GetHouseMapModeTitleHolder.Custom('CZ_NameNoTooltip_G')]#!:\n[ROOT.Province.GetTitle.GetHouseMapModeTitleHolder.GetHouse.GetBaseNameNoTooltip]"
  houses_MAP_MODE_TOOLTIP_CLICK_TO_SELECT: "\n#I Kliknutím vybereš#!\n#I Ctrl+kliknutím zobrazíš rody subjektů#!"
  GOVERNMENTS_MAP_MODE_TOOLTIP: "#T Držitel hrabství\nTyp vlády#!: [ROOT.Province.GetCounty.GetTitle.GetHolder.GetGovernment.GetNameNoTooltip]\nNejvyšší lenní pán\nTyp vlády: [ROOT.Province.GetCounty.GetTitle.GetDeFactoTopLiege.GetHolder.GetGovernment.GetNameNoTooltip]"
  governments_MAP_MODE_TOOLTIP_CLICK_TO_SELECT: "\n#I Kliknutím otevřeš přehled panství#!"
- DEJURE_DUCHIES_MAPMODE_TOOLTIP: "[ROOT.Province.GetTitle.GetDeJureLiegeOfTier('duchy').GetNameNoTooltip]\n[ROOT.Province.GetTitle.GetDeJureLiegeOfTier('county').GetDeJureDriftTooltip]"
- DEJURE_KINGDOMS_MAPMODE_TOOLTIP: "[ROOT.Province.GetTitle.GetDeJureLiegeOfTier('kingdom').GetNameNoTooltip]\n[ROOT.Province.GetTitle.GetDeJureLiegeOfTier('duchy').GetDeJureDriftTooltip]"
- DEJURE_EMPIRES_MAPMODE_TOOLTIP: "[ROOT.Province.GetTitle.GetDeJureLiegeOfTier('empire').GetNameNoTooltip]\n[ROOT.Province.GetTitle.GetDeJureLiegeOfTier('kingdom').GetDeJureDriftTooltip]"
+ DEJURE_COUNTIES_MAPMODE_TOOLTIP: "#T [ROOT.Province.GetTitle.GetDeJureLiegeOfTier('county').GetNameNoTooltip|U]#!" # todo: NEW TRANSLATION
+ DEJURE_DUCHIES_MAPMODE_TOOLTIP: "#T [ROOT.Province.GetTitle.GetDeJureLiegeOfTier('duchy').GetNameNoTooltip|U]#!\n[ROOT.Province.GetTitle.GetDeJureLiegeOfTier('county').GetDeJureDriftTooltip]" # todo: CHANGED (predtym: [ROOT.Province.GetTitle.GetDeJureLiegeOfTier('duchy').GetNameNoTooltip]\n[ROOT.Province.GetTitle.GetDeJureLiegeOfTier('c)
+ TRADE_GOODS_MAPMODE_TOOLTIP: "#T;V [ROOT.Province.GetTradeMarket.GetNameNoTooltip]#!\n[ROOT.Province.GetTradeMarket.GetMarketTooltip]\n" # todo: NEW TRANSLATION
+ TRADE_GOOD_POTENTIAL_PRODUCTION_MAPMODE_TOOLTIP: "[ROOT.Province.GetFocusGoodPotentialTooltip]" # todo: NEW TRANSLATION
+ TRADE_GOOD_TOP_PRODUCTION_MAPMODE_TOOLTIP: "[ROOT.Province.GetTopProductionTooltip]" # todo: NEW TRANSLATION
+ TRADE_GOOD_TOP_PRODUCTION_MAPMODE_TT_TOP: "#T [TradeGoodType.GetNameWithIconNoTooltip]: $AMOUNT|+=1^$#!\nNejvětším producentem [TradeGoodType.GetNameNoTooltip|V] je [TITLE.GetNameNoTierPossessiveNoTooltip|V]" # todo: NEW TRANSLATION
+ TRADE_GOOD_TOP_PRODUCTION_MAPMODE_TT_NONE: "[TITLE.GetNameNoTierNoTooltip] nevyrábí žádné [Concept('trade_goods','obchodní zboží')|E]" # todo: NEW TRANSLATION
+ TRADE_GOOD_PRODUCTION_MAPMODE_TT_PRODUCING: "#T Vyrábí [TradeGoodType.GetNameWithIconNoTooltip]: $AMOUNT|+=1^$#!\n$RANK_DESC$" # todo: NEW TRANSLATION
+ TRADE_GOOD_PRODUCTION_MAPMODE_TT_RANK_TOP: "[PROVINCE.GetCounty.GetTitle.GetNameNoTooltip] je #high největším#! producentem [TradeGoodType.GetNameWithIconNoTooltip] na světě" # todo: NEW TRANSLATION
+ TRADE_GOOD_PRODUCTION_MAPMODE_TT_RANK: "[PROVINCE.GetCounty.GetTitle.GetNameNoTooltip|V] je $RANK|V0O$. největším producentem [TradeGoodType.GetNameNoTooltip] na světě" # todo: NEW TRANSLATION
+ TRADE_GOOD_PRODUCTION_MAPMODE_TT_POTENTIAL: "#T Lze vyrábět [TradeGoodType.GetNameWithIconNoTooltip]#!\nZdrojová čtvrť v [PROVINCE.GetCounty.GetTitle.GetNameNoTooltip|V] může vyrábět [TradeGoodType.GetNameNoTooltip]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TRADE_GOOD_PRODUCTION_MAPMODE_TT_IMPOSSIBLE: "#T Nelze vyrábět [TradeGoodType.GetNameNoTooltip]#!\nZdrojová čtvrť v [PROVINCE.GetCounty.GetTitle.GetNameNoTooltip|V] nikdy nebude moci vyrábět [TradeGoodType.GetNameNoTooltip]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ DEJURE_KINGDOMS_MAPMODE_TOOLTIP: "#T [ROOT.Province.GetTitle.GetDeJureLiegeOfTier('kingdom').GetNameNoTooltip|U]#!\n[ROOT.Province.GetTitle.GetDeJureLiegeOfTier('duchy').GetDeJureDriftTooltip]" # todo: CHANGED (predtym: [ROOT.Province.GetTitle.GetDeJureLiegeOfTier('kingdom').GetNameNoTooltip]\n[ROOT.Province.GetTitle.GetDeJureLiegeOfTier()
+ DEJURE_EMPIRES_MAPMODE_TOOLTIP: "#T [ROOT.Province.GetTitle.GetDeJureLiegeOfTier('empire').GetNameNoTooltip|U]#!\n[ROOT.Province.GetTitle.GetDeJureLiegeOfTier('kingdom').GetDeJureDriftTooltip]" # todo: CHANGED (predtym: [ROOT.Province.GetTitle.GetDeJureLiegeOfTier('empire').GetNameNoTooltip]\n[ROOT.Province.GetTitle.GetDeJureLiegeOfTier(')
  DEJURE_HEGEMONIES_MAPMODE_TOOLTIP: "[ROOT.Province.GetTitle.GetHegemonyMapModeTooltip]"
- DEJURE_HEGEMONIES_MAPMODE_WITH_TOOLTIP: "[Title.GetNameNoTooltip]\n[Title.GetDeJureDriftTooltip]"
- DEJURE_HEGEMONIES_MAPMODE_NONE_TOOLTIP: "[Province.GetTitle.GetDeJureLiegeOfTier('empire').GetNameNoTooltip]\n[Province.GetTitle.GetDeJureLiegeOfTier('empire').GetDeJureDriftTooltip]"
+ DEJURE_HEGEMONIES_MAPMODE_WITH_TOOLTIP: "#T [Title.GetNameNoTooltip|U]#!\n[Title.GetDeJureDriftTooltip]\n" # todo: CHANGED (predtym: [Title.GetNameNoTooltip]\n[Title.GetDeJureDriftTooltip])
+ DEJURE_HEGEMONIES_MAPMODE_NONE_TOOLTIP: "#T  [Province.GetTitle.GetDeJureLiegeOfTier('empire').GetNameNoTooltip|U]#!\n[Province.GetTitle.GetDeJureLiegeOfTier('empire').GetDeJureDriftTooltip]\n" # todo: CHANGED (predtym: [Province.GetTitle.GetDeJureLiegeOfTier('empire').GetNameNoTooltip]\n[Province.GetTitle.GetDeJureLiegeOfTier('empire').G)
  CULTURES_MAP_MODE_TOOLTIP: "#T Kultura hrabství#!: [ROOT.Province.GetCounty.GetCulture.GetNameNoTooltip]\nKultura nejvyššího lenního pána: [ROOT.Province.GetTitle.GetDeFactoTopLiege.GetHolder.GetCulture.GetNameNoTooltip]"
  cultures_MAP_MODE_TOOLTIP_CLICK_TO_SELECT: "\n#I Kliknutím vybereš kulturu [PROVINCE.GetCounty.GetCulture.GetNameNoTooltip]#!"
  FAITHS_MAP_MODE_TOOLTIP: "#T Ritus hrabství: [ROOT.Province.GetCounty.GetRite.GetNameNoTooltip]#!\n#weak [ROOT.Province.GetCounty.GetRite.GetFaith.Custom('CZ_AdjectiveNoTooltip_yy')|l] [SelectLocalization( ROOT.Province.GetCounty.GetRite.IsMain, 'FAITHS_MAP_MODE_TOOLTIP_RITE_MAINLINE', 'FAITHS_MAP_MODE_TOOLTIP_RITE_BRANCH' )]#!\n\nObřad držitele: #high [ROOT.Province.GetCounty.GetTitle.GetHolder.GetRite.GetNameNoTooltip]#![ROOT.Province.Custom('GetTopLiegeRiteLine')|l][AddLocalizationIf( Not( EqualTo_string( ROOT.Province.GetCounty.GetTitle.GetHolder.GetFaith.GetNameNoTooltip, ROOT.Province.GetCounty.GetRite.GetFaith.GetNameNoTooltip ) ), 'FAITHS_MAP_MODE_TOOLTIP_FAITH_MISMATCH' )][ROOT.Province.GetBeingConvertedInClericalRegionText]"
- FAITHS_MAP_MODE_TOOLTIP_RITE_MAINLINE: "$game_concept_mainline_rite$"
- FAITHS_MAP_MODE_TOOLTIP_RITE_BRANCH: "$game_concept_rite$"
- FAITHS_MAP_MODE_TOOLTIP_TOP_LIEGE_RITE: "\nObřad nejvyššího lenního pána: #high [county_top_liege.GetRite.GetNameNoTooltip]#!"
  FAITHS_MAP_MODE_TOOLTIP_FAITH_MISMATCH: "\n\n@alert_icon! #alert_trial Držitel vyznává jinou víru#!"
+ FAITHS_MAP_MODE_TOOLTIP_RITE_MAINLINE: "Hlavní ritus" # todo: CONCEPT CASE
+ FAITHS_MAP_MODE_TOOLTIP_RITE_BRANCH: "Ritus" # todo: CONCEPT CASE
+ FAITHS_MAP_MODE_TOOLTIP_TOP_LIEGE_RITE: "\nObřad nejvyššího lenního pána: #high [county_top_liege.GetRite.GetNameNoTooltip]#!"
  FAITHS_MAP_MODE_TOOLTIP_CLERICAL_REGION_CONVERSION: "\n\n@alert_icon! #alert_trial [Rite.GetNameNoTooltip|U] se v tomto [Concept('county','hrabství')|E] šíří prostřednictvím [Character.Custom('CZ_ShortUINameNoTooltip_G')]! Obrácení bude dokončeno přibližně [Date.GetString|V]#!"
  FAITHS_MAP_MODE_CONVERSION_WIDGET_TOOLTIP: "#T [ClericalRegionConversionProgressIcon.GetConversionRite.GetNameNoTooltip|U] se šíří [CZPrepV(ClericalRegionConversionProgressIcon.GetCountyTitle.GetNameNoTooltip)] [ClericalRegionConversionProgressIcon.GetCountyTitle.Custom('CZ_LandedName_L')] prostřednictvím [ClericalRegionConversionProgressIcon.GetClericalRegionTitle.GetHolder.Custom('CZ_ShortUIName_G')]#!\n\nObrácení bude dokončeno přibližně [ClericalRegionConversionProgressIcon.GetConversionEndDate.GetString|V]"
  faiths_MAP_MODE_TOOLTIP_CLICK_TO_SELECT: "\n#I Kliknutím vybereš ritus [PROVINCE.GetCounty.GetRite.GetNameNoTooltip]\nCtrl+kliknutím prozkoumáš rity s vírou\nCtrl+kliknutím pravým tlačítkem zrušíš prozkoumání.#!"
@@ -121,7 +150,7 @@
  CLERICAL_REGIONS_MAP_MODE_TOOLTIP_HELD: "#T [clerical_region_title.GetNameNoTooltip|U]#!\nDržitel: [clerical_region_title.GetHolder.GetShortUINameNoTooltip]\nObřad duchovní oblasti: #high [clerical_region_title.GetHolder.GetRite.GetNameNoTooltip]#![ROOT.Province.GetBeingConvertedInClericalRegionText]"
  CLERICAL_REGIONS_MAP_MODE_TOOLTIP_HELD_DIVERGENT: "#T [clerical_region_title.GetNameNoTooltip|U]#!\nDržitel: [clerical_region_title.GetHolder.GetShortUINameNoTooltip]\nObřad duchovní oblasti: #high [clerical_region_title.GetHolder.GetRite.GetNameNoTooltip]#!\nObřad hrabství: #high [ROOT.Province.GetCounty.GetRite.GetNameNoTooltip]#![ROOT.Province.GetBeingConvertedInClericalRegionText]"
  CLERICAL_REGIONS_MAP_MODE_TOOLTIP_UNHELD: "#T [clerical_region_title.GetNameNoTooltip|U]#!\n$TV_NO_HOLDER$"
- CLERICAL_REGIONS_MAP_MODE_TOOLTIP_NONE: "#T [ROOT.Province.GetCounty.GetTitle.GetNameNoTooltip|U]#!\nNení součástí $game_concept_clerical_region$"
+ CLERICAL_REGIONS_MAP_MODE_TOOLTIP_NONE: "#T [ROOT.Province.GetCounty.GetTitle.GetNameNoTooltip|U]#!\nNení součástí církevní oblastí" # todo: CONCEPT CASE
  clerical_regions_MAP_MODE_TOOLTIP_CLICK_TO_SELECT: "\n$CLICK_TO_SELECT$"
  DYNASTIC_CYCLE_MAPMODE_TOOLTIP: "[ROOT.Province.GetDynasticCycleMapModeTooltip]"
  DYNASTIC_CYCLE_MAPMODE_TOOLTIP_PARTICIPANT_GROUP: "#T [SituationParticipantGroup.GetNameNoTooltip]#!\n[SituationParticipantGroup.GetDescription]\n\n[Province.GetNameNoTooltip]"
@@ -139,9 +168,11 @@
  COURT_LANGUAGES_SELECTION_TOOLTIP_LIEGES_LIEGE: "\n#I Kliknutím vybereš $COURT_LANGUAGES_MAP_MODE_LIEGES_LIEGE$#!"
  COURT_LANGUAGES_SELECTION_TOOLTIP_TOP_LIEGE: "\n#I Kliknutím vybereš $COURT_LANGUAGES_MAP_MODE_TOP_LIEGE$#!"
  ECONOMY_MAP_TOOLTIP_ENTRY: "\n[HOLDING.GetType.GetName] [HOLDING.GetNameNoTooltip]: @gold_icon![HOLDING.GetIncome|+=1]/měsíc"
- ECONOMY_MAP_TOOLTIP: "#T Hrabství [ROOT.Province.GetCounty.GetName]#!\n[GetEconomyMapModeTooltip( ROOT.Province )]"
+ ECONOMY_MAP_TOOLTIP: "#T [ROOT.Province.GetCounty.GetTitle.GetNameNoTooltip]#!\n[GetEconomyMapModeTooltip( ROOT.Province )]" # todo: CHANGED (predtym: T Hrabství [ROOT.Province.GetCounty.GetName] !\n[GetEconomyMapModeTooltip( ROOT.Province )])
  DEBUG_CONSTRUCTION_MAP_TOOLTIP: "#T [ROOT.Province.GetHolding.GetType.GetName|V] [ROOT.Province.GetName]#!\nDržitel: [ROOT.Province.GetHolding.GetLesseeOrHolder.GetPrimaryTitle.GetRankConcept] [ROOT.Province.GetHolding.GetLesseeOrHolder.GetUIName]\nVe výstavbě: [Select_CString( ROOT.Province.GetHolding.GetConstructionBuilding.IsValid, ROOT.Province.GetHolding.GetConstructionBuilding.GetName, 'Žádné')|V] Úroveň##[ROOT.Province.GetHolding.GetConstructionBuilding.GetLevel] ([ROOT.Province.GetHolding.GetConstructionProgress|%/])\n[ROOT.Province.GetHolding.GetLesseeOrHolder.Custom( 'AIEconomicPersonality' )]\nZlato: [gold_i] [ROOT.Province.GetHolding.GetLesseeOrHolder.GetGold|0]\nPokladnice: [treasury_i] [ROOT.Province.GetHolding.GetLesseeOrHolder.GetTreasury|0]\n\n[ROOT.Province.GetHolding.GetLesseeOrHolder.GetAiBudgetDescription]"
- COUNTY_CONTROL_MAP_MODE_TOOLTIP: "#T [Concept('control','Kontrola')|E] hrabství [ROOT.Province.GetCounty.GetName]: [ROOT.Province.GetCounty.GetControlLevelOutOfMax]#!\n[ROOT.Province.GetCounty.GetCountyControlEffectsDesc]"
+ COUNTY_CONTROL_MAP_MODE_TOOLTIP: "#T Hrabství $game_concept_control$: [ROOT.Province.GetCounty.GetControlLevelOutOfMax]#!\n[ROOT.Province.GetCounty.GetTitle.GetNameNoTooltip]\n\nZákladní hodnota: [ROOT.Province.GetCounty.GetBaseControl|V0]\nMěsíční změna: [ROOT.Province.GetCounty.GetMonthlyControlChange|=+V1]" # todo: CHANGED (predtym: T [Concept('control','Kontrola')|E] hrabství [ROOT.Province.GetCounty.GetName]: [ROOT.Province.GetCounty.GetControlLevel)
+ PROSPERITY_MAP_MODE_TOOLTIP: "#T Rozkvět: [ROOT.Province.GetCounty.GetProsperityLevel|V]/100#!\n[ROOT.Province.GetCounty.GetTitle.GetNameNoTooltip]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ POPULAR_OPINION_MAP_MODE_TOOLTIP: "#T Lidové mínění: [GetPopularOpinionLevelNameNoTooltip( ROOT.Province.GetCounty.GetOpinionLevel )|V] ([ROOT.Province.GetCounty.GetCurrentOpinion|=+V])#!\n[ROOT.Province.GetCounty.GetTitle.GetNameNoTooltip]\n\nZáklad: [GetPopularOpinionLevelNameNoTooltip( ROOT.Province.GetCounty.GetBaseOpinionLevel )|V] ([ROOT.Province.GetCounty.GetBaseOpinion|+V])\nMěsíční změna: [ROOT.Province.GetCounty.GetMonthlyOpinionChange|=+1]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  ADDITIONAL_MAPMODES: "Další režimy"
  ADDITIONAL_MAP_SETTINGS: "Další nastavení"
  ZOOM_LEVEL_PAPER_MAP: "Papírová mapa"
@@ -161,6 +192,7 @@
  duchies_MAP_MODE_TOOLTIP_CLICK_TO_SELECT: "\n$CLICK_TO_SELECT$"
  counties_MAP_MODE_TOOLTIP_CLICK_TO_SELECT: "\n$CLICK_TO_SELECT$"
  players_MAP_MODE_TOOLTIP_CLICK_TO_SELECT: "\n$CLICK_TO_SELECT$"
+ county_capital_holdings_MAP_MODE_TOOLTIP_CLICK_TO_SELECT: "\n$CLICK_TO_SELECT$" # todo: NEW TRANSLATION
  PROVINCE_VIEW_TOOLTIP_WINTER: "#T $winter$ #!\nTuhost: [Province.GetWinterSeverityName|V]\n\n[Province.GetWinterEffectsDesc]"
  PROVINCE_WINTER_LEVEL_NONE: "Žádná"
  PROVINCE_WINTER_LEVEL_MILD: "Mírná"
@@ -197,7 +229,7 @@
  ADMIN_VASSAL_TYPES_MAP_MODE_TT_TOP_REALM: "Nejvyšší panství: [TITLE.GetName]"
  ADMIN_VASSAL_TYPES_MAP_MODE_TT_LEFT_CLICK: "#I Kliknutím levým tlačítkem otevřeš podrobnosti#!"
  ADMIN_VASSAL_TYPES_MAP_MODE_TT_RIGHT_CLICK: "#I Kliknutím pravým tlačítkem zobrazíš [CHARACTER.GetShortUINameNoTooltip]#!"
- MIGRATION_COUNTIES_MAPMODE_TOOLTIP: "#T [ROOT.Province.GetTitle.GetDeJureLiegeOfTier('county').GetNameNoTooltip]#!\nPlodnost: [ROOT.Province.GetTitle.GetDeJureLiegeOfTier('county').GetAverageFertility|0]"
+ MIGRATION_COUNTIES_MAPMODE_TOOLTIP: "#T Plodnost: [ROOT.Province.GetTitle.GetDeJureLiegeOfTier('county').GetAverageFertility|V0]#!\n[ROOT.Province.GetCounty.GetTitle.GetNameNoTooltip]\n" # todo: CHANGED (predtym: T [ROOT.Province.GetTitle.GetDeJureLiegeOfTier('county').GetNameNoTooltip] !\nPlodnost: [ROOT.Province.GetTitle.GetDeJur)
  MIGRATION_DUCHIES_MAPMODE_TOOLTIP: "#T [ROOT.Province.GetTitle.GetDeJureLiegeOfTier('duchy').GetNameNoTooltip]#!\n[ROOT.Province.GetTitle.GetDeJureLiegeOfTier('duchy').GetDeJureDriftTooltip]\nPrůměrná plodnost: [ROOT.Province.GetTitle.GetDeJureLiegeOfTier('duchy').GetAverageFertility|0]"
  MIGRATION_KINGDOMS_MAPMODE_TOOLTIP: "#T [ROOT.Province.GetTitle.GetDeJureLiegeOfTier('kingdom').GetNameNoTooltip]#!\n[ROOT.Province.GetTitle.GetDeJureLiegeOfTier('kingdom').GetDeJureDriftTooltip]\nPrůměrná plodnost: [ROOT.Province.GetTitle.GetDeJureLiegeOfTier('kingdom').GetAverageFertility|0]"
  MIGRATION_EMPIRES_MAPMODE_TOOLTIP: "#T [ROOT.Province.GetTitle.GGetDeJureLiegeOfTier('empire').GetNameNoTooltip]#!\n[ROOT.Province.GetTitle.GetDeJureLiegeOfTier('empire').GetDeJureDriftTooltip]\nPrůměrná plodnost: [ROOT.Province.GetTitle.GetDeJureLiegeOfTier('empire').GetAverageFertility|0]"
@@ -228,3 +260,10 @@
  CONFEDERATIONS_MAP_MODE_TOOLTIP: "[ROOT.Province.GetTitle.GetDeFactoLiege.GetHolder.GetConfederationTooltip]"
  CONFEDERATION_FOUND: "#T [CONFEDERATION.GetName]#!\n#I Kliknutím vybereš#!"
  CONFEDERATION_NOT_FOUND: "#T Žádná konfederace#!"
+ SETTLEMENT_SIZE_MAPMODE_TOOLTIP: "[ROOT.Province.GetProvinceSizeMapModeTooltip]" # todo: NEW TRANSLATION
+ SETTLEMENT_SIZE_MAPMODE_EMPTY: "#T Bez državy#!" # todo: NEW TRANSLATION
+ SETTLEMENT_SIZE_MAPMODE_SETTLED: "#T Velikost sídla: [PROVINCE.GetProvinceSizeName] ([PROVINCE.GetProvinceSizeLevel]/[PROVINCE.GetMaxProvinceSize])#!\n[PROVINCE.GetTitle.GetNameNoTooltip]\n\nPostup: [PROVINCE.GetProvinceSizeValue|V0]/[PROVINCE.GetNextSizeLevelValue|V0]\nZáklad: [PROVINCE.GetProvinceSizeBaseline|V0]\n[PROVINCE.GetMonthlyProvinceSizeChange|V+=2]/měsíc" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ TERRAIN_MAP_MODE_TOOLTIP: "@[ROOT.Province.GetTerrainKey]_big! #T [ROOT.Province.GetTerrain.GetNameNoTooltip|V] v [CZPrepV(ROOT.Province.GetNameNoTooltip)] [CZProvName(ROOT.Province,'L')]#!\n[ROOT.Province.GetTerrainTooltipFor(GetPlayer)]" # todo: NEW TRANSLATION
+ LANDLESS_RULER_FILTER_GOVERNMENT_TOOLTIP: "Zobrazit vládce bez země se státním zřízením #V #bold [GovernmentType.GetName]#!#![AccessLandlessRulerFilterWindow.GetFoldedGovernmentsDesc( GovernmentType.Self )]" # todo: NEW TRANSLATION
+ LANDLESS_RULER_NO_FILTER_TOOLTIP: "Zobrazit všechny vládce bez země" # todo: NEW TRANSLATION
+ LANDLESS_RULER_FILTER_ALSO_INCLUDES: "#weak Zahrnuje také:#!\n" # todo: NEW TRANSLATION

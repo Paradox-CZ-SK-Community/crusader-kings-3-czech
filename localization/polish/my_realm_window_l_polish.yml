@@ -1,9 +1,11 @@
 ﻿l_polish:
- MY_REALM_WINDOW_TITLE: "Mé panství"
+ MY_REALM_WINDOW_TITLE: "Tvé panství" # todo: CHANGED (predtym: Mé panství)
  MY_REALM_WINDOW_BOOKMARK_DOMAIN_TT: "#T Doména#!\nTvé [Concept('holdings','državy')|E] a [Concept('domiciles','domicily')|E]\n\n$CLICK_TO_VIEW$"
  MY_REALM_WINDOW_BOOKMARK_SUBJECTS_TT: "#T Subjekty#!\nTví [Concept('vassals','vazalové')|E] a [Concept('tributaries','tributáři')|E]\n\n$CLICK_TO_VIEW$"
  MY_REALM_WINDOW_BOOKMARK_SUCCESSION_TT: "#T Nástupnictví#!\nKdo zdědí tvé [Concept('titles','tituly')|E]\n\n$CLICK_TO_VIEW$"
  MY_REALM_WINDOW_BOOKMARK_LAWS_TT: "#T Zákony#!\n[Concept('laws','Zákony')|E] tvého [Concept('realm','panství')|E]\n\n$CLICK_TO_VIEW$"
+ MY_REALM_WINDOW_BOOKMARK_OVERVIEW_TT: "#T Přehled#!\nSoučasný stav tvé [Concept('company','společnost')|E] a jejích [Concept('laws','zákonů')|E]\n\n$CLICK_TO_VIEW$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MY_REALM_WINDOW_BOOKMARK_PATRONAGE_TT: "#T Patronát#!\nTvůj [Concept('merchant_patron','patron')|E] a jeho další [Concept('clients','klienti')|E]\n\n$CLICK_TO_VIEW$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  MY_REALM_WINDOW_LAWS_PROGRESS_BAR_DESC: "Ke změně zákonů ve tvém panství je zapotřebí souhlas mocných vazalů"
  MY_REALM_WINDOW_LAWS_PROGRESS_BAR_TITLE: "Souhlas [Concept('powerful_vassal','mocných vazalů')|E]"
  MY_REALM_WINDOW_LAWS_PROGRESS_BAR_APPROVES: "[MyRealmWindow.GetPowerfulVassalLawApproves] souhlasí"
@@ -23,11 +25,15 @@
  MY_REALM_WINDOW_LAW_NAME_AND_LEVEL: "[Law.GetName] #low ([Add_int32( Law.GetIndexInLawGroup, '(int32)1' )])#!"
  MY_REALM_WINDOW_LAW_NAME: "[Law.GetName]"
  MY_REALM_WINDOW_LAW_LEVEL: "[Add_int32( Law.GetIndexInLawGroup, '(int32)1' )]"
+ MY_REALM_WINDOW_LAW_GROUP_NAME: "[LawGroup.GetNameSingular]:" # todo: NEW TRANSLATION
  MY_REALM_WINDOW_YOUR_INCOME: "Tvůj příjem:"
  MY_REALM_WINDOW_TAX_JURISDICTION: "[Concept('tax_jurisdiction','Daňová jurisdikce')|E]"
  MY_REALM_WINDOW_BODY_TITLE_SUBJECTS: "Subjekty"
  MY_REALM_WINDOW_BODY_TITLE_SUCCESSION: "Nástupnictví"
  MY_REALM_WINDOW_BODY_TITLE_LAWS: "Zákony"
+ MY_REALM_SUBHEADER_LAWS: "[Concept('laws','Zákony')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MY_REALM_WINDOW_BODY_TITLE_OVERVIEW: "Přehled" # todo: NEW TRANSLATION
+ MY_REALM_WINDOW_BODY_TITLE_PATRONAGE: "Patronát" # todo: NEW TRANSLATION
  MY_REALM_WINDOW_SUBJECTS_NO_SUBJECTS: "Nemáš žádné [Concept('subjects','subjekty')|E]"
  MY_REALM_WINDOW_SUCCESSION_PREFERRED_BY: "Upřednostňují jej tyto [Concept('vassal_stances','vazalské postoje')|E]:"
  MY_REALM_WINDOW_SUCCESSION_DESIGNATE_HEIR: "Určit dědice"
@@ -36,7 +42,7 @@
  MY_REALM_WINDOW_SUCCESSION_TITLE_LOST_TO: "Titul získá [Character.GetShortUIName]"
  MY_REALM_WINDOW_SUCCESSION_TITLES_LOST_TO: "$VALUE$ titulů získá [Character.GetShortUIName]"
  MY_REALM_WINDOW_MY_LIEGE: "Můj [Concept('liege','lenní pán')|E]"
- MY_REALM_WINDOW_MY_SUZERAIN: "Můj [Concept('suzerain','suzerén')|E]"
+ MY_REALM_WINDOW_MY_SUZERAIN: "Můj [GetSuzerainRelationship(GetPlayer)]" # todo: CHANGED (predtym: Můj [Concept('suzerain','suzerén')|E])
  MY_REALM_WINDOW_MY_OBLIGATIONS: "$SUBJECT_CONTRACT_MY_OBLIGATIONS_TITLE$: [SubjectContract.GetShortObligationLevelNameWithHighlightFor( 'feudal_government_taxes' )]\n$SUBJECT_CONTRACT_MY_OBLIGATIONS_TITLE_LEVIES$: [SubjectContract.GetShortObligationLevelNameWithHighlightFor( 'feudal_government_levies' )]"
  MY_REALM_WINDOW_MY_TAX_LEVEL: "$SUBJECT_CONTRACT_MY_OBLIGATIONS_TITLE$: [SubjectContract.GetShortObligationLevelNameWithHighlightFor( 'feudal_government_taxes' )]"
  MY_REALM_WINDOW_MY_LEVIES_LEVEL: "$SUBJECT_CONTRACT_MY_OBLIGATIONS_TITLE_LEVIES$: [SubjectContract.GetShortObligationLevelNameWithHighlightFor( 'feudal_government_levies' )]"
@@ -45,6 +51,7 @@
  MY_REALM_WINDOW_TAX_TO_LIEGE: "Daň: [MyRealmWindow.GetCachedTaxToLiege|=1]/měsíc"
  MY_REALM_WINDOW_LEVIES_TO_LIEGE: "Odvedenci: [MyRealmWindow.GetCachedLeviesToLiege]"
  MY_REALM_WINDOW_TYPE: "[GetPlayer.GetGovernment.GetName] [Character.GetPrimaryTitle.GetRankConcept]"
+ MY_REALM_WINDOW_TERM_END_DATE: "Funkční období končí [GetPlayer.GetRealmTermEndDate.GetString|V]" # todo: NEW TRANSLATION
  MY_REALM_WINDOW_VASSALS: "Vazalové"
  MY_REALM_WINDOW_SUCCESSION: "Nástupnictví"
  MY_REALM_WINDOW_CURRENT_SUCCESSION: "[Concept('succession_law','Zákon nástupnictví')|E] panství"
@@ -59,10 +66,10 @@
  MRW_TT_TAXES_TO_MY_LIEGE: "#weak [Concept('taxes','Daně')|E], které platíš svému [Concept('liege','lennímu pánovi')|E]#!"
  MRW_TT_LEVIES_TO_MY_LIEGE: "#weak [Concept('levies','Odvedenci')|E], které poskytuješ svému [Concept('liege','lennímu pánovi')|E]#!"
  MRW_TT_HERD_TO_MY_LIEGE: "#weak [Concept('herd','Stádo')|E], které poskytuješ svému [Concept('liege','lennímu pánovi')|E]#!"
- MRW_TT_TAXES_TO_MY_SUZERAIN: "#weak [Concept('taxes','Daně')|E], které platíš svému [Concept('suzerain','suzerénovi')|E]#!"
- MRW_TT_LEVIES_TO_MY_SUZERAIN: "#weak [Concept('levies','Odvedenci')|E], které poskytuješ svému [Concept('suzerain','suzerénovi')|E]#!"
+ MRW_TT_TAXES_TO_MY_SUZERAIN: "#weak [Concept('taxes','Daně')|E], které platíš svému [GetSuzerainRelationship(GetPlayer)]#!" # todo: CHANGED (predtym: weak [Concept('taxes','Daně')|E], které platíš svému [Concept('suzerain','suzerénovi')|E] !)
+ MRW_TT_LEVIES_TO_MY_SUZERAIN: "#weak [Concept('levies','Odvedenci')|E], které poskytuješ svému [GetSuzerainRelationship(GetPlayer)]#!" # todo: CHANGED (predtym: weak [Concept('levies','Odvedenci')|E], které poskytuješ svému [Concept('suzerain','suzerénovi')|E] !)
  MRW_TT_HERD_TO_MY_SUZERAIN: "#weak [Concept('herd','Stádo')|E], které poskytuješ svému [Concept('suzerain','suzerénovi')|E]#!"
- MRW_TT_PRESTIGE_TO_MY_SUZERAIN: "#weak [Concept('prestige','Prestiž')|E], kterou poskytuješ svému [Concept('suzerain','suzerénovi')|E]#!"
+ MRW_TT_PRESTIGE_TO_MY_SUZERAIN: "#weak [Concept('prestige','Prestiž')|E], kterou poskytuješ svému [GetSuzerainRelationship(GetPlayer)]#!" # todo: CHANGED (predtym: weak [Concept('prestige','Prestiž')|E], kterou poskytuješ svému [Concept('suzerain','suzerénovi')|E] !)
  MRW_TT_PRESTIGE_TO_MY_LIEGE: "#weak [Concept('prestige','Prestiž')|E], kterou poskytuješ svému [Concept('liege','lennímu pánovi')|E]#!"
  MRW_TT_PIETY_TO_MY_OVERLORD: "#weak [Concept('piety','Zbožnost')|E], kterou poskytuješ svému [Concept('overlord','vrchnímu pánovi')|E]#!"
  MRW_TT_TAXES_TO_ME: "#weak [Concept('taxes','Daně')|E], které ti platí tvůj [Concept('subject','subjekt')|E]#!"
@@ -103,12 +110,12 @@
  SUBJECT_CONTRACT_OBLIGATION_LEVEL_TAX_EFFECT_TOOLTIP_CURRENT: "Daň: $TAX|%1V$"
  SUBJECT_CONTRACT_OBLIGATION_LEVEL_LEVIES_EFFECT_TOOLTIP: "Odvedenci: $LEVIES|%1V$ ($LEVIES_CHANGE|+=%1$)"
  SUBJECT_CONTRACT_OBLIGATION_LEVEL_LEVIES_EFFECT_TOOLTIP_CURRENT: "Odvedenci: $LEVIES|%1V$"
- SUBJECT_CONTRACT_OBLIGATION_LEVEL_HERD_EFFECT_TOOLTIP: "$game_concept_herd$: $HERD|%1V$ ($HERD_CHANGE|+=%1$)"
- SUBJECT_CONTRACT_OBLIGATION_LEVEL_HERD_EFFECT_TOOLTIP_CURRENT: "$game_concept_herd$: $HERD|%1V$"
- SUBJECT_CONTRACT_OBLIGATION_LEVEL_PIETY_EFFECT_TOOLTIP: "$game_concept_piety$: $PIETY|%1V$ ($PIETY_CHANGE|+=%1$)"
- SUBJECT_CONTRACT_OBLIGATION_LEVEL_PIETY_EFFECT_TOOLTIP_CURRENT: "$game_concept_piety$: $PIETY|%1V$"
- SUBJECT_CONTRACT_OBLIGATION_LEVEL_PRESTIGE_EFFECT_TOOLTIP: "$game_concept_prestige$: $PRESTIGE|%1V$ ($PRESTIGE_CHANGE|+=%1$)"
- SUBJECT_CONTRACT_OBLIGATION_LEVEL_PRESTIGE_EFFECT_TOOLTIP_CURRENT: "$game_concept_prestige$: $PRESTIGE|%1V$"
+ SUBJECT_CONTRACT_OBLIGATION_LEVEL_HERD_EFFECT_TOOLTIP: "Stádo: $HERD|%1V$ ($HERD_CHANGE|+=%1$)" # todo: CONCEPT CASE
+ SUBJECT_CONTRACT_OBLIGATION_LEVEL_HERD_EFFECT_TOOLTIP_CURRENT: "Stádo: $HERD|%1V$" # todo: CONCEPT CASE
+ SUBJECT_CONTRACT_OBLIGATION_LEVEL_PIETY_EFFECT_TOOLTIP: "Zbožnost: $PIETY|%1V$ ($PIETY_CHANGE|+=%1$)" # todo: CONCEPT CASE
+ SUBJECT_CONTRACT_OBLIGATION_LEVEL_PIETY_EFFECT_TOOLTIP_CURRENT: "Zbožnost: $PIETY|%1V$" # todo: CONCEPT CASE
+ SUBJECT_CONTRACT_OBLIGATION_LEVEL_PRESTIGE_EFFECT_TOOLTIP: "Prestiž: $PRESTIGE|%1V$ ($PRESTIGE_CHANGE|+=%1$)" # todo: CONCEPT CASE
+ SUBJECT_CONTRACT_OBLIGATION_LEVEL_PRESTIGE_EFFECT_TOOLTIP_CURRENT: "Prestiž: $PRESTIGE|%1V$" # todo: CONCEPT CASE
  SUBJECT_CONTRACT_OBLIGATION_PREVIEW_TOOLTIP_CURRENT: "#weak Aktuální úroveň povinnosti#!"
  SUBJECT_CONTRACT_LIEGE_IS_NOT_RIGHTFUL_LIEGE_NOTICE: "[SubjectContract.GetLiege.GetNameOrMe|U] [Select_CString(SubjectContract.GetLiege.IsPlayer, 'nejsi', 'není')] [Select_CString(SubjectContract.GetSubject.IsPlayer, 'tvým', 'jeho')] [Concept('rightful_liege','právoplatným lenním pánem')|E]"
  subject_contract_obligation_cannot_change_tt: "Nesplňuješ požadavky pro změnu této úrovně povinnosti:"
@@ -145,7 +152,7 @@
  MY_REALM_WINDOW_CAN_DESIGNATE: "Vybrat a určit dědice"
  MY_REALM_WINDOW_CANT_DESIGNATE: "@warning_icon! #X Dědice můžeš určit pouze tehdy, pokud jsi [Concept('dynast','hlavou dynastie')|E] nebo máš [Concept('absolute_crown_authority','absolutní korunní autoritu')|E]#!"
  MY_REALM_WINDOW_NO_CHILDREN: "@warning_icon! #X Nemáš žádné dítě, které bys mohl určit za svého dědice#!"
- MY_REALM_WINDOW_BUILDING_TT: "#T [Concept('building','Budova')|E]: [Building.GetName]\n#![Building.GetEffectDescription( GetPlayer )]\n\n[Building.GetDescription]"
+ MY_REALM_WINDOW_BUILDING_TT: "#T [Concept('building','Budova')|E]: [BuildingType.GetName]\n#![Building.GetEffectDescription( GetPlayer )]\n\n[Building.GetDescription]" # todo: CHANGED (predtym: T [Concept('building','Budova')|E]: [Building.GetName]\n ![Building.GetEffectDescription( GetPlayer )]\n\n[Building.GetD)
  MY_REALM_WINDOW_BUILDING_CONSTRUCTION_TT: "#T Probíhá výstavba: [HoldingItem.GetConstructionBuilding.GetName]\n#![HoldingItem.GetConstructionBuilding.GetEffectDescription( GetPlayer )]\n\n[HoldingItem.GetHolding.GetConstructionTimeLeft]\n\n[HoldingItem.GetConstructionBuilding.GetDescription]"
  MY_REALM_WINDOW_HOLDING_NAME: "#high [HoldingItem.GetBarony.GetNameNoTierNoTooltip]#! - [Holding.GetType.GetName]"
  MY_REALM_WINDOW_HOLDING_TAX: "@gold_icon! [Holding.GetIncome|1V]"
@@ -156,6 +163,8 @@
  MY_REALM_WINDOW_CURRENT_CONSTRUCTION: "$BULDING$ se postaví za [DATE.GetTimeDiffFromNow]"
  MY_REALM_WINDOW_CONSTRUCT_HOLDING: "Lze vystavět novou državu"
  MY_REALM_WINDOW_CONSTRUCT_BUILDING: "Lze vystavět budovu"
+ MY_REALM_WINDOW_CONSTRUCT_IN_TRADE_POST: "Lze stavět v obchodní stanici" # todo: NEW TRANSLATION
+ MY_REALM_WINDOW_TRADE_POST_HEADER: "Tvé obchodní stanice" # todo: NEW TRANSLATION
  MY_REALM_WINDOW_UNDER_OCCUPATION: "#X Obsazeno#!"
  MY_REALM_WINDOW_HOLDINGS: "Državy"
  MY_REALM_WINDOW_HEADER: "Doména"
@@ -168,7 +177,7 @@
  MY_REALM_WINDOW_FROM_TRIBUTARIES: "[Concept('tributaries','Tributáři')|E]"
  MY_REALM_WINDOW_FROM_TO_LIEGE: "Pro [Concept('liege','lenního pána')|E]:"
  MY_REALM_WINDOW_FROM_TO_LIEGE_CLAN: "Pro [Concept('liege','lenního pána')|E] #high #L ([TaxSlot.GetObligation.GetName])#!#!:"
- MY_REALM_WINDOW_FROM_TO_SUZERAIN: "Pro [Concept('suzerain','suzeréna')|E]:"
+ MY_REALM_WINDOW_FROM_TO_SUZERAIN: "Pro [GetSuzerainRelationship(GetPlayer)]:" # todo: CHANGED (predtym: Pro [Concept('suzerain','suzeréna')|E]:)
  MY_REALM_WINDOW_TAXES: "@gold_icon! [Concept('taxes','Daně')|E]"
  MY_REALM_WINDOW_LEVIES: "@soldier_icon! [Concept('levies','Odvedenci')|E]"
  MY_REALM_WINDOW_HERD: "@herd_icon! [Concept('herd','Stádo')|E]"
@@ -190,14 +199,14 @@
  MY_REALM_WINDOW_VASSAL_LIMIT_VALUE: "#V [GetPlayer.GetNumVassalsTowardsLimit]/[GetPlayer.GetVassalLimit]#!"
  VASSAL_LIMIT_TOOLTIP_START: "#T [Concept('vassals','Vazalové')|E] s vyšší hodností než [Concept('baron','baron')|E]: [CHARACTER.GetNumVassalsTowardsLimit|V]/[CHARACTER.GetVassalLimit|V]#!"
  VASSAL_LIMIT_TOOLTIP_END: "[CHARACTER.GetVassalLimitBreakdown]"
- SUBJECT_CONTRACT_OBLIGATION_NO_EFFECT: "Toto je aktuální [SelectLocalization(SubjectContract.IsTributary,tributary_contract,vassal_contract)|E] včetně [Concept('obligations','povinností')|E]"
+ SUBJECT_CONTRACT_OBLIGATION_NO_EFFECT: "Toto je aktuální [SubjectContract.GetSubject.Custom('GetSubjectContractGroupGameConcept')] včetně [Concept('obligations','povinností')|E]" # todo: CHANGED (predtym: Toto je aktuální [SelectLocalization(SubjectContract.IsTributary,tributary_contract,vassal_contract)|E] včetně [Concept()
  VASSAL_CONTRACT_OBLIGATION_ONLY_ONCE: "#weak [Concept('vassal_contract','Vazalskou smlouvu')|E] každé postavy můžeš změnit pouze jednou#!"
  PROVINCE_ADMINISTRATION_CHANGE_INFO: "Správu lze změnit pouze jednou za [EmptyScope.ScriptValue('admin_contract_cooldown_value')|0] let"
  MODIFY_SUBJECT_CONTRACT_NOT_ADJACENT_LEVEL: "@warning_icon! #X Aktuální úroveň $CONTRACT_LEVEL_NAME$ a navrhovaná úroveň $PROPOSED_LEVEL_NAME$ na sebe nenavazují#!"
  OBLIGATION_LIEGE_MODIFIER: "#S [Concept('liege','Lenní pán')|E]:#!"
  OBLIGATION_VASSAL_MODIFIER: "#S [Concept('vassal','Vazal')|E]:#!"
  RESET_CONTRACT_CHANGES: "Obnovit"
- CONTRACT_NAME: "Smlouva: [SubjectContract.GetContractGroup.GetName]"
+ CONTRACT_NAME: "Smlouva: [SubjectContract.GetContractGroup.GetNameNoTooltip]" # todo: CHANGED (predtym: Smlouva: [SubjectContract.GetContractGroup.GetName])
  VASSAL_CONTRACT_NOT_DEFAULT: "Tato [Concept('vassal_contract','vazalská smlouva')|E] byla v minulosti změněna tak, že obsahuje nestandardní [Concept('obligations','povinnosti')|E]."
  VASSAL_CONTRACT_IS_BLOCKED: "Tato [Concept('vassal_contract','vazalská smlouva')|E] již byla změněna a nemůžeš ji znovu upravit.\n\nStále si můžeš zobrazit aktuální [Concept('obligations','povinnosti')|E]."
  TAX_CONTRIBUTION_KNOWN_VALUE: "@gold_icon! [Concept('taxes','Daně')|E]: $VALUE|+=%1$"
@@ -251,7 +260,7 @@
  RELEASE_TRIBUTARY_CONFIRMATION_TEXT: "Ukončit [Concept('tributary','tributární')|E] vztah mezi tebou a [Character.Custom('CZ_NameNoTooltip_I')]"
  RELEASE_TRIBUTARY_CONFIRMATION_ACCEPT: "Ukončit"
  RELEASE_TRIBUTARY_TOOLTIP: "Ukončit tributární vztah"
- MY_REALM_WINDOW_TRIBUTARY_BREAK_FREE: "Vymanit se z područí svého [Concept('suzerain','suzeréna')|E]"
+ MY_REALM_WINDOW_TRIBUTARY_BREAK_FREE: "Vymanit se z područí svého [GetSuzerainRelationship(GetPlayer)]" # todo: CHANGED (predtym: Vymanit se z područí svého [Concept('suzerain','suzeréna')|E])
  MY_REALM_WINDOW_CEASE_PAYING_TRIBUTE_CHANCE_TT: "Roční šance, že [Concept('tributary','tributář')|E] přestane odvádět tribut: [SubjectContract.GetCeasePayingTributeChance|0%/]\n\n[SubjectContract.GetCeasePayingTributeChanceDesc]"
  MY_REALM_WINDOW_CEASE_PAYING_TRIBUTE_CHANCE: "Šance přestat odvádět tribut: [SubjectContract.GetCeasePayingTributeChanceLabel]"
  MY_REALM_WINDOW_SUBJECT_STANDING: "Aktuální [SubjectContract.GetSubject.Custom('SubjectStanding')]: [ConcatIfNeitherEmpty(SubjectContract.GetSubject.Custom('SubjectStandingIcon'),' ')][SubjectContract.GetSubjectStanding|V0]"
@@ -274,8 +283,30 @@
  chaotic_succession_disobedient_kurultai_none: "Neposlušné [Concept('kurultais','kurultaje')|E]"
  is_kurultai_succession_chaotic_empty_kurultai: "$is_kurultai_succession_chaotic_empty_kurultai_none$ #weak ([root_scope.MakeScope.ScriptValue('mpo_missing_kurultai_value')|V0])#!"
  is_kurultai_succession_chaotic_empty_kurultai_none: "Ve svém [Concept('kurultai','kurultaji')|E] máš neobsazené pozice"
- MY_REALM_WINDOW_SUZERAIN_NAME: "[Concept('suzerain','Suzerén')|E] : [Character.GetSuzerain.GetShortUIName]"
+ MY_REALM_WINDOW_SUZERAIN_NAME: "[GetSuzerainRelationship(GetPlayer)] : [Character.GetSuzerain.GetShortUIName]" # todo: CHANGED (predtym: [Concept('suzerain','Suzerén')|E] : [Character.GetSuzerain.GetShortUIName])
  MY_REALM_WINDOW_LIEGE_NAME: "[Concept('liege','Lenní pán')|E] : [Character.GetLiege.GetShortUIName]"
  SUBJECT_CONTRACT_OBLIGATIONS_TITLE_BARTER_GOODS: "Směnné zboží"
  CANT_CHANGE_LAW_TOOLTIP: "Nejsou dostupné žádné další [Concept('succession_laws','zákony nástupnictví')|E]"
  CANT_CHANGE_PAPAL_LAW_TOOLTIP: "[Concept('succession_laws','zákony nástupnictví')|EU] papežství nelze změnit"
+ CHANGE_COMPANY_PURPOSE_CALL_TO_ACTION: "#I Kliknutím změníš $game_concept_company_purpose$#!" # todo: NEW TRANSLATION
+ CHANGE_COMPANY_PURPOSE_TITLE: "Změnit účel společnosti" # todo: NEW TRANSLATION
+ SHORT_COMPANY_PURPOSE_DESC: "Zaměření společnosti jsou směrnice, které utvářejí [Concept('company','společnost')|E] a její [Concept('merchant_family','kupecká rodina')|E], poskytují jedinečné [Concept('interactions','interakce')|E], místa [Concept('deputy','zástupce')|E] a bonusy k [Concept('trade','obchodu')|E]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ CHANGE_PURPOSE_BUTTON: "Změnit účel" # todo: NEW TRANSLATION
+ MERCHANT_DOMICILE_RESOURCES: "Zdroje" # todo: NEW TRANSLATION
+ REALM_MERCHANT_ROUTES_TT: "#T [Concept('trade_routes','Obchodní trasy')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ REALM_MERCHANT_ACUMEN_TT: "#T [Concept('acumen','Důvtip')|E]#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ REALM_COMPANY_SIZE_LABEL: "[Concept('company_size','Velikost společnosti')|E]: [Character.GetActiveLawInGroupWithFlag('company_size').GetName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ REALM_MERCHANT_PATRON_BENEFICIARIES: "[Concept('merchant_patron_possessive','Patrona')|E] [Concept('clients','Klienti')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ BENEFICIARY_NAME_TITLE: "[Character.GetUINameNotMeNoTooltip]  [Character.GetPrimaryTitle.GetNameNoTooltip]" # todo: NEW TRANSLATION
+ BENEFICIARY_PATRON_CHARTER_HOLDER_TT: "#T [Concept('charter','Listina')|E]#!\n[Character.Custom('CZ_ShortUIName_A')|U] drží [Concept('charter','listina')|E] [GetPlayer.GetSuzerain.Custom('CZ_ShortUIName_G')|V]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ BENEFICIARY_SORT_COMPANY_SIZE: "[Concept('company_size','Velikost společnosti')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ BENEFICIARY_SORT_ACUMEN: "[Concept('acumen','Důvtip')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ BENEFICIARY_SORT_COMPETITIVENESS: "[Concept('trade_competitiveness','Obchodní konkurenceschopnost')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ SHORT_REPUBLIC_ADMINISTRATION_DESC: "[Concept('republic_administration','Správa republiky')|E] určuje, na co se [Concept('republic','republikou')|E] specializuje a v čem vyniká. Poskytuje různé výhody a mění způsob, jakým se za ni hraje." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ CHANGE_REPUBLIC_ADMINISTRATION: "#I Kliknutím změníš $game_concept_republic_administration$#!" # todo: NEW TRANSLATION
+ MY_REALM_WINDOW_HOLDING_PROVINCE_SIZE: "@settlement_size_icon! [Province.GetProvinceSizeLevel]" # todo: NEW TRANSLATION
+ MY_REALM_WINDOW_PROSPERITY: "@prosperity_icon! [Concept('prosperity','Rozkvět')|E] [County.GetProsperityLevel|V]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MY_REALM_WINDOW_CONTROL: "@control_icon! [CountyGroup.GetCountyControlColored]" # todo: NEW TRANSLATION
+ MY_REALM_WINDOW_MARKET_COUNTIES: "Tržní hrabství" # todo: NEW TRANSLATION
+ MY_REALM_WINDOW_MARKET_UNMET_NEEDS: "Neuspokojené [Concept('needs','potřeby')|EU]:" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ MY_REALM_WINDOW_POPULAR_OPINION: "[Concept('popular_opinion','Lidové mínění')|E] [County.GetCurrentOpinion|V]" # todo: NEW TRANSLATION # todo: CONCEPT CASE

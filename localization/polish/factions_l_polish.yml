@@ -15,18 +15,18 @@
  FACTION_SUCCESSFUL_IMPRISONMENT_RETALIATION: "[actor.GetShortUIName] neprávem [Select_CString(actor.IsFemale, 'uvěznila', 'uvěznil')] [recipient.GetShortUIName]. [recipient.GetShortUIName] stejně jako já patří k této frakci."
  FACTION_IMPRISONMENT_RETALIATION_END: "\n\n[retaliating_faction.GetName] čelí tak troufalému útoku, že jej lze chápat jedině jako vyhlášení války. Pokud se neubráníme hned teď, jednoho po druhém nás zničí!"
  FACTION_IMPRISONMENT_RETALIATION_OPT: "Do války!"
- independence_faction: "$game_concept_independence_faction$"
- independence_faction_desc: "Členové [Concept('faction','frakce za nezávislost')|E] usilují o nezávislost na svém [Concept('liege','lenním pánovi')|E].\n\n#S Ultimátum#!\nVšichni členové frakce se stanou [Concept('independent','nezávislými')|E]\n[Concept('liege','Lenní pán')|E] ztratí [prestige|E]"
+ independence_faction: "Frakce za nezávislost" # todo: CONCEPT CASE
+ independence_faction_desc: "Členové [Concept('faction','frakce za nezávislost')|E] usilují o nezávislost na svém [Concept('liege','lenním pánovi')|E].\n\n#S Ultimátum#!\nVšichni členové frakce se stanou [Concept('independent','nezávislými')|E]\n[Concept('liege','Lenní pán')|E] ztratí [Concept('prestige','prestiží')|E]" # todo: CONCEPT CASE
  independence_faction_short_effect_desc: "Usiluje o nezávislost na svém [Concept('liege','lenním pánovi')|E]"
  nation_fracturing_faction: "Frakce za rozpad"
- nation_fracturing_faction_desc: "Členové $nation_fracturing_faction$ usilují o rozpad [realm|E] svého [Concept('liege','lenního pána')|E].\n\n#S Ultimátum#!\nVšichni členové frakce se stanou [Concept('independent','nezávislými')|E]\n[Concept('liege','Lenní pán')|E] ztratí svůj [Concept('primary_title','hlavní titul')|E] a další [Concept('titles','tituly')|E] stejné [Concept('title_tier','úrovně')|E]"
- nation_fracturing_faction_short_effect_desc: "Usiluje o rozpad [realm|E] svého [Concept('liege','lenního pána')|E]"
+ nation_fracturing_faction_desc: "Členové $nation_fracturing_faction$ usilují o rozpad [Concept('realm','panství')|E] svého [Concept('liege','lenního pána')|E].\n\n#S Ultimátum#!\nVšichni členové frakce se stanou [Concept('independent','nezávislými')|E]\n[Concept('liege','Lenní pán')|E] ztratí svůj [Concept('primary_title','hlavní titul')|E] a další [Concept('titles','tituly')|E] stejné [Concept('title_tier','úrovně')|E]" # todo: CONCEPT CASE
+ nation_fracturing_faction_short_effect_desc: "Usiluje o rozpad [Concept('realm','panství')|E] svého [Concept('liege','lenního pána')|E]" # todo: CONCEPT CASE
  liege_primary_title_dissolution: "Nyní vládneš nezávisle!"
- liege_primary_title_dissolution_desc: "Tvůj [Concept('liege','lenní pán')|E] přišel o svůj [Concept('primary_title','hlavní titul')|E] v důsledku požadavků $nation_fracturing_faction$"
+ liege_primary_title_dissolution_desc: "Tvůj [Concept('liege','lenní pán')|E] [Select_CString(ROOT.Char.IsFemale,'přišla','přišel')] o svůj [Concept('primary_title','hlavní titul')|E] v důsledku požadavků $nation_fracturing_faction$"
  FACTION_DEMAND_COLLAPSE: "[faction_target.GetPrimaryTitle.GetNameNoTier]: Požadavek na rozpad"
  FACTION_DEMAND_COLLAPSE_DESC: "[faction_leader.Custom2('AppropriateGreetingNegative', ROOT.Char)]\n\nJe načase přiznat si, že [faction_target.GetPrimaryTitle.GetNameNoTier] se pod tvou vládou nedokáže udržet pohromadě. Je načase skoncovat s tvou vládou i s vládou kohokoli dalšího; tato země potřebuje více svobody. Přijmi naše požadavky, nebo se s námi střetni na bojišti!"
  FACTION_DEMAND_COLLAPSE_ACCEPTED: "Požadavky na rozpad přijaty"
- FACTION_DEMAND_COLLAPSE_ACCEPTED_DESC: "[faction_target.Custom2('AppropriateGreetingNegative', ROOT.Char)]\n\nVaše pomýlené požadavky nás všechny jen oslabí. Přesto nechci [realm|E] uvrhnout do zbytečného krveprolití, a proto mi nezbývá než přijmout váš požadavek na nezávislost."
+ FACTION_DEMAND_COLLAPSE_ACCEPTED_DESC: "[faction_target.Custom2('AppropriateGreetingNegative', ROOT.Char)]\n\nVaše pomýlené požadavky nás všechny jen oslabí. Přesto nechci [Concept('realm','panství')|E] uvrhnout do zbytečného krveprolití, a proto mi nezbývá než přijmout váš požadavek na nezávislost." # todo: CONCEPT CASE
  FACTION_DEMAND_COLLAPSE_REFUSED: "Požadavky na rozpad odmítnuty"
  FACTION_DEMAND_COLLAPSE_REFUSED_DESC: "[faction_target.Custom2('AppropriateGreetingNegative', ROOT.Char)]\n\nVáš hanebný pokus o vydírání selhal. Ať jste ke svému plánu zlákali sebevíc zkažených duší, bez boje neustoupím. Raději zemřu při obraně toho, co mi právem náleží!"
  FACTION_DEMAND_COLLAPSE_SEND_DEMAND_NOTIFICATION: "Ať [faction_target.GetPrimaryTitle.GetNameNoTier] skončí!"
@@ -35,14 +35,14 @@
  FACTION_DEMAND_INDEPENDENCE: "Požadavek na nezávislost"
  FACTION_DEMAND_INDEPENDENCE_DESC: "[faction_leader.Custom2('AppropriateGreetingNegative', ROOT.Char)]\n\nJe načase, abys uznal plnou nezávislost [faction_leader.GetPrimaryTitle.GetNameNoTier] i ostatních států, které zastupuje [faction.GetName]. Přijmi naše požadavky, nebo se s námi střetni na bojišti!"
  FACTION_DEMAND_INDEPENDENCE_ACCEPTED: "Požadavky na nezávislost přijaty"
- FACTION_DEMAND_INDEPENDENCE_ACCEPTED_DESC: "[faction_target.Custom2('AppropriateGreetingNegative', ROOT.Char)]\n\nVaše pomýlené požadavky nás všechny jen oslabí. Přesto nechci [realm|E] uvrhnout do zbytečného krveprolití, a proto mi nezbývá než přijmout váš požadavek na nezávislost."
+ FACTION_DEMAND_INDEPENDENCE_ACCEPTED_DESC: "[faction_target.Custom2('AppropriateGreetingNegative', ROOT.Char)]\n\nVaše pomýlené požadavky nás všechny jen oslabí. Přesto nechci [Concept('realm','panství')|E] uvrhnout do zbytečného krveprolití, a proto mi nezbývá než přijmout váš požadavek na nezávislost." # todo: CONCEPT CASE
  FACTION_DEMAND_INDEPENDENCE_REFUSED: "Požadavky na nezávislost odmítnuty"
  FACTION_DEMAND_INDEPENDENCE_REFUSED_DESC: "[faction_target.Custom2('AppropriateGreetingNegative', ROOT.Char)]\n\nVáš hanebný pokus o vydírání selhal. Ať jste ke svému plánu zlákali sebevíc zkažených duší, bez boje neustoupím. Raději zemřu při obraně toho, co mi právem náleží!"
  FACTION_DEMAND_INDEPENDENCE_SEND_DEMAND_NOTIFICATION: "Nezávislost!"
  FACTION_DEMAND_INDEPENDENCE_SEND_DEMAND_NOTIFICATION_DESC: "Nadešel čas! [faction.GetName] mluví jedním hlasem: právo [faction_target.GetName] vládnout je minulostí. Nezávislost nám bude přiznána, nebo si ji vezmeme silou!"
  faction_demand.0002.tt: "Všichni členové frakce získají nezávislost!"
  FACTION_DEMAND_BRIBE_CO_EMPEROR: "Snad je ještě přiměje ke spolupráci nabídka úřadu?"
- FACTION_DEMAND_BRIBE_CO_EMPEROR_REASON: "[faction_leader.GetShortUIName|U] musí být [Concept('claimant','pretendentem')|E] [faction|E] #weak ([faction.GetSpecialCharacter.GetTitledFirstName])#!"
+ FACTION_DEMAND_BRIBE_CO_EMPEROR_REASON: "[faction_leader.GetShortUIName|U] musí být [Concept('claimant','pretendentem')|E] [Concept('faction','frakcí')|E] #weak ([faction.GetSpecialCharacter.GetTitledFirstName])#!" # todo: CONCEPT CASE
  faction_demand.0000.faction_leader_accepts: "Pokud vůdce frakce přijme tvou nabídku"
  faction_demand.0000.faction_leader_rejects: "Pokud vůdce frakce odmítne tvou nabídku"
  faction_demand.0000.enter_co_rule_avoiding_worst_effects: "[faction_target.GetShortUIName|U] [Select_CString( faction_target.IsLocalPlayer, 'jmenuješ', 'jmenuje' )] [faction_leader.GetShortUIName] [Concept('co_emperor','spolucísařem')|E], čímž se [Select_CString( faction_target.IsLocalPlayer, 'vyhneš', 'vyhne' )] nejhorším důsledkům [faction.GetName]"
@@ -60,10 +60,10 @@
  FACTION_DEMAND_COUNTER_OFFER_MEMBER_NOTIFICATION.A: "Byli jsme tak blízko..."
  FACTION_DEMAND_COUNTER_OFFER_MEMBER_NOTIFICATION.B: "Ten sobecký hlupák!"
  peasant_faction: "Selská frakce"
- peasant_faction_desc: "Selská [faction|E] chce osvobodit lid od cizí či bezvěrecké nadvlády a usiluje o nahrazení lenního pána, který nesdílí [culture|E] a [faith|E] prostého lidu v [counties|E]."
+ peasant_faction_desc: "Selská [Concept('faction','frakce')|E] chce osvobodit lid od cizí či bezvěrecké nadvlády a usiluje o nahrazení lenního pána, který nesdílí [Concept('culture','kultura')|E] a [Concept('faith','víra')|E] prostého lidu v [Concept('counties','hrabství')|E]." # todo: CONCEPT CASE
  peasant_faction_short_effect_desc: "Usiluje o nižší [Concept('county_control','kontrolu hrabství')|E]"
- peasant_faction_every_county: "Každé [county|E] ve [faction|E]"
- peasant_faction_spawn_county_levies: "Povolá [new_title.GetAdjective] [army|E] úměrnou počtu svých [levies|E]"
+ peasant_faction_every_county: "Každé [Concept('county','hrabství')|E] ve [Concept('faction','frakcích')|E]" # todo: CONCEPT CASE
+ peasant_faction_spawn_county_levies: "Povolá [new_title.GetAdjective] [Concept('army','armáda')|E] úměrnou počtu svých [Concept('levies','odvedenců')|E]" # todo: CONCEPT CASE
  FACTION_DEMAND_PEASANT: "[ROOT.Char.Custom2('InsultAdjective', ROOT.Char)] [ROOT.Char.GetTitledFirstName]"
  FACTION_DEMAND_PEASANT_DESC: "Příliš dlouho jsme snášeli břemeno tvých utlačovatelských zákonů. Dost! Už ti nebudeme platit daně.\n\nAž tvé pokladnice vyschnou a sýpky zejí prázdnotou, budeš litovat, že ses k nám nechoval spravedlivěji."
  FACTION_DEMAND_PEASANT_ACCEPT: "Asi bych mohl přistoupit na daňovou úlevu..."
@@ -72,7 +72,7 @@
  FACTION_PEASANT_TITLE_NAME: "Selské povstání"
  nomadic_faction: "Kočovná frakce"
  nomadic_faction_desc: "Kočovná [Concept('faction','frakce')|E] chce, aby jí vládl [Concept('ruler','vládce')|E] s vládou typu [GetGovernment( 'nomad_government' ).GetName], jehož [Concept('yurt','kočovné hlavní sídlo')|E] má stejnou [Concept('culture','kulturu')|E] a [Concept('faith','víru')|E] jako její členové."
- nomadic_faction_short_effect_desc: "Chce založit nová [Concept('realms','panství')|E] s vládou typu [GetGovernment( 'nomad_government' ).GetName]"
+ nomadic_faction_short_effect_desc: "Chce založit nové [Concept('realms','panství')|E] s vládou typu [GetGovernment( 'nomad_government' ).GetName]" # todo: CONCEPT CASE
  FACTION_DEMAND_NOMADIC: "[ROOT.Char.Custom2('InsultAdjective', SCOPE.sC('peasant_leader'))] [ROOT.Char.GetTitledFirstName]"
  FACTION_DEMAND_NOMADIC_DESC: "Už se nebudeme sklánět pod jhem tvého útlaku! My, hrdí [peasant_leader.GetCulture.GetCollectiveNoun] s vládou typu [GetGovernment( 'nomad_government' ).GetName], jsme se narodili, abychom se svobodně toulali pod tímto nekonečným nebem.\n\n[peasant_leader.GetFaith.WarGodName] vede naše jezdce, a tak se vymaníme z tvé žalostné nadvlády a znovu zaujmeme své místo na širé stepi!"
  FACTION_DEMAND_NOMADIC_ACCEPT_GRANT_INDEPENDENCE: "Dobrá! V mém panství není místo pro vaše špinavá stáda."
@@ -182,7 +182,9 @@
  FACTION_REASON_GAME_RULE_REALM_STABILITY_EXTREME: "Herní pravidlo extrémní stability panství: $VALUE|0+=$"
  FACTION_REASON_CAPITAL_COUNTY: "[Concept('realm_capital','Hlavní sídlo panství')|E] [Concept('liege','lenního pána')|E]: $VALUE|0+=$"
  FACTION_REASON_GLORY_LEGACY_4: "[GetDynastyPerk('glory_legacy_4').GetName]: $VALUE|0+=$"
- FACTION_REASON_COUNTY_OPINION: "Nízké [Concept('county_opinion','lidové mínění')|E]: $VALUE|0+=$"
+ FACTION_REASON_POPULAR_OPINION: "Nízké [Concept('popular_opinion','lidové mínění')|E]: $VALUE|0+=$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ FACTION_REASON_HIGH_COUNTY_CONTROL: "Vysoká [Concept('county_control','kontrola hrabství')|E]: $VALUE|0+=$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ FACTION_REASON_STATIONED_GARRISON: "Umístění [Concept('men_at_arms','ozbrojenci')|E]: $VALUE|0+=$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  FACTION_REASON_TARGET_FRIEND_LOVER: "[Concept('relation','Zvláštní vztah')|E] s [Concept('liege','lenním pánem')|E]: $VALUE|0+=$"
  FACTION_REASON_POWER_HALFWAY_THRESHOLD: "Silná [Concept('faction_military_power','vojenská síla frakce')|E]: $FACTOR|0%+=$"
  FACTION_REASON_POWER_PUSHING_THRESHOLD: "Hrozivá [Concept('faction_military_power','vojenská síla frakce')|E]: $FACTOR|0%+=$"
@@ -389,9 +391,9 @@
  escalated_peasant_faction: "Vyhrocená selská frakce"
  escalated_peasant_faction_desc: "[Concept('escalated_peasant_faction','Vyhrocená selská frakce')|E] chce osvobození od nespravedlivé vlády a usiluje o nezávislost na svém lenním pánovi."
  escalated_peasant_faction_short_effect_desc: "Usiluje o nezávislost na svém [Concept('liege','lenním pánovi')|E]"
- county_and_leader_join_faction_against_top_liege: "Všechna [Concept('counties','hrabství')|E] se připojí k [Concept('escalated_peasant_faction','vyhrocené selské frakci')|E] proti [defender.GetTopLiege.GetName]"
+ county_and_leader_join_faction_against_top_liege: "Všechno [Concept('counties','hrabství')|E] se připojí k [Concept('escalated_peasant_faction','vyhrocené selské frakci')|E] proti [defender.GetTopLiege.GetName]" # todo: CONCEPT CASE
  peasant_leader_army_name: "[ROOT.Char.GetFirstName]: [ROOT.Char.Custom('GetTurbanRebellionColor')|U] [ROOT.Char.Custom('RegionalPeasantHeadgearPlural')|U]"
- peasant_leader_title_name: "Povstání: [ROOT.Char.Custom('GetTurbanRebellionColor')|U] [ROOT.Char.Custom('RegionalPeasantHeadgearPlural')|U]"
+ peasant_leader_title_name: "Povstání: [attacker.Custom('GetTurbanRebellionColor')|U] [attacker.Custom('RegionalPeasantHeadgearPlural')|U]" # todo: CHANGED (predtym: Povstání: [ROOT.Char.Custom('GetTurbanRebellionColor')|U] [ROOT.Char.Custom('RegionalPeasantHeadgearPlural')|U])
  peasant_troops_name: "Domobrana: [ROOT.Char.GetCurrentLocation.GetName]"
  border_war_increased_peasant_discontent: "[GetLaw('top_liege_not_redirected_to_border_wars_law').GetName]: $VALUE|0+=$"
  instability_increased_peasant_discontent: "[Concept('dynastic_cycle_era_type_unstable','Nestabilní éra')|E]: $VALUE|0+=$"
@@ -406,3 +408,10 @@
  FACTION_REASON_SAME_HOUSE_TARGET: "Stejný [Concept('house','rod')|E] jako u cíle [Concept('faction','frakce')|E]: $VALUE|+0=$"
  FACTION_REASON_SAME_DYNASTY_TARGET: "Stejná [Concept('dynasty','dynastie')|E] jako u cíle [Concept('faction','frakce')|E]: $VALUE|+0=$"
  FACTION_REASON_BLOC_HEAD_IS_LEADER: "Vůdce [Concept('house_bloc','rodového bloku')|E] je zároveň vůdcem [Concept('faction','frakce')|E]: $VALUE|+0=$"
+ republic_popular_faction: "Povstání v hlavním sídle" # todo: NEW TRANSLATION
+ republic_popular_faction_desc: "Lidová [Concept('faction','frakce')|E] v [Concept('capital','hlavním sídle')|E], která požaduje, aby [Concept('ruler','vládce')|E] řešil křivdy lidu.\n\nTato frakce vzniká, když má hlavní sídlo nízké [Concept('popular_opinion','lidové mínění')|E]. Dokud se nespokojenost lidu nevyřeší, bude postupně narůstat, až se lid obrátí na svého [Concept('liege','lenního pána')|E].\n\nVýsledek frakce závisí na aktuální úrovni lidového mínění. Čím nižší je lidové mínění, tím závažnější budou důsledky pro vládce.\n\nSituaci lze vyřešit buď zvýšením lidového mínění v [Concept('county','hrabství')|E], nebo zvýšením [Concept('control','kontrole')|E] natolik, aby vyvážilo nárůst nespokojenosti způsobený lidovým míněním." # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ FACTION_REPUBLIC_POPULAR_NAME: "$republic_popular_faction$" # todo: NEW TRANSLATION
+ republic_popular_faction_short_effect_desc: "Požaduje, aby vládce řešil křivdy lidu" # todo: NEW TRANSLATION
+ FACTION_DISCONTENT_POPULAR_OPINION: "[Concept('popular_opinion','Lidové mínění')|E]: $VALUE|0-=$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ FACTION_DISCONTENT_LOW_CONTROL: "Nízká [Concept('county_control','kontrola hrabství')|E]: $VALUE|0-=$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ FACTION_DISCONTENT_HIGH_CONTROL: "Vysoká [Concept('county_control','kontrola hrabství')|E]: $VALUE|0-=$" # todo: NEW TRANSLATION # todo: CONCEPT CASE

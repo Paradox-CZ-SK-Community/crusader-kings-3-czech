@@ -190,7 +190,7 @@
  artifact_filter: "Vlastnictví artefaktů"
  has_any_artifact_filter_option: "Má nějaký artefakt"
  has_any_artifact_filter_option_desc: "Zobrazit pouze postavy, které mají alespoň jeden [Concept('artifact','artefakt')|E]"
- has_any_court_artifact_filter_option: "Má nějaký dvorský artefakt"
+ has_any_court_artifact_filter_option: "Má nějaký vystavený artefakt" # todo: CHANGED (predtym: Má nějaký dvorský artefakt)
  has_any_court_artifact_filter_option_desc: "Zobrazit pouze postavy, které mají alespoň jeden [Concept('court_artifact','dvorský artefakt')|E]"
  has_any_inventory_artifact_filter_option: "Má nějaký osobní artefakt"
  has_any_inventory_artifact_filter_option_desc: "Zobrazit pouze postavy, které mají alespoň jeden [Concept('inventory_artifact','osobní artefakt')|E]"
@@ -200,8 +200,8 @@
  CHARACTER_LIST_TEXT_FILTER_TOOLTIP: "#T Textové vyhledávání\n#!Zadej část jména postavy, dynastického rodu, rysu, kultury nebo víry"
  CHARACTER_LIST_TEXT_FILTER_TITLE: "Odpovídající položky"
  CHARACTER_LIST_TEXT_FILTER_MATCH_NAME: "Křestní jméno odpovídá „[PatternItem.GetName]“"
- CHARACTER_LIST_CULTURE_GROUP_TT: "#T [heritage|E]: [PatternItem.GetHeritage.GetNameNoTooltip]#!"
- CHARACTER_LIST_GOVERNMENT_TT: "#T [government|E]: [PatternItem.GetGovernment.GetNameNoTooltip]#!"
+ CHARACTER_LIST_CULTURE_GROUP_TT: "#T [Concept('heritage','Dědictví')|E]: [PatternItem.GetHeritage.GetNameNoTooltip]#!" # todo: CONCEPT CASE
+ CHARACTER_LIST_GOVERNMENT_TT: "#T [Concept('government','Vláda')|E]: [PatternItem.GetGovernment.GetNameNoTooltip]#!" # todo: CONCEPT CASE
  CHARACTER_LIST_FILTER_NAME_TT: "#T Křestní jméno#!"
  CHARACTER_FINDER_NO_MATCH: "Současnému filtru neodpovídají žádné postavy"
  special_filter_category: "Zvláštní"
@@ -254,45 +254,46 @@
  any_dynasty_house_filter: "Urozený"
  any_dynasty_house_filter_desc: "Zobrazit pouze postavy, které patří k nějakému [Concept('house','rodu')|E]"
  government_filter: "Vláda"
- feudal_government_filter_option: "$game_concept_feudal$"
- republic_government_filter_option: "$game_concept_republic$"
- theocracy_government_filter_option: "$game_concept_theocracy$"
- clan_government_filter_option: "$game_concept_clan$"
- tribal_government_filter_option: "$game_concept_tribal$"
- mercenary_government_filter_option: "$game_concept_mercenary$"
- holy_order_government_filter_option: "$game_concept_holy_order$"
- administrative_government_filter_option: "$game_concept_administrative$"
- landless_adventurer_government_filter_option: "$game_concept_adventurer$"
+ feudal_government_filter_option: "Feudální" # todo: CONCEPT CASE
+ republic_government_filter_option: "Republika" # todo: CONCEPT CASE
+ theocracy_government_filter_option: "Teokracie" # todo: CONCEPT CASE
+ clan_government_filter_option: "Klan" # todo: CONCEPT CASE
+ tribal_government_filter_option: "Kmenový" # todo: CONCEPT CASE
+ mercenary_government_filter_option: "Žoldnéř" # todo: CONCEPT CASE
+ holy_order_government_filter_option: "Svatý řád" # todo: CONCEPT CASE
+ administrative_government_filter_option: "Administrativní" # todo: CONCEPT CASE
+ landless_adventurer_government_filter_option: "Dobrodruh" # todo: CONCEPT CASE
  nomad_government_filter_option: "$nomad_government$"
- herder_government_filter_option: "$game_concept_herder$"
- wanua_government_filter_option: "$game_concept_wanua$"
- celestial_government_filter_option: "$game_concept_celestial$"
- mandala_government_filter_option: "$game_concept_mandala$"
- steppe_admin_government_filter_option: "$game_concept_steppe_admin$"
- meritocratic_government_filter_option: "$game_concept_meritocratic$"
- japan_administrative_government_filter_option: "$game_concept_japan_administrative$"
- japan_feudal_government_filter_option: "$game_concept_japan_feudal$"
- monastic_holy_order_government_filter_option: "$game_concept_monastic_holy_order$"
- ecclesiastical_government_filter_option: "$game_concept_ecclesiastical$"
- feudal_government_filter_option_desc: "Zobrazit pouze postavy s [Concept('feudal_government','feudální vládou')|E]"
- republic_government_filter_option_desc: "Zobrazit pouze postavy s [Concept('republic_government','republikánskou vládou')|E]"
- theocracy_government_filter_option_desc: "Zobrazit pouze postavy s [Concept('theocracy_government','teokratickou vládou')|E]"
- clan_government_filter_option_desc: "Zobrazit pouze postavy s [Concept('clan_government','klanovou vládou')|E]"
- tribal_government_filter_option_desc: "Zobrazit pouze postavy s [Concept('tribal_government','kmenovou vládou')|E]"
- mercenary_government_filter_option_desc: "Zobrazit pouze postavy s [Concept('mercenary','žoldnéřskou vládou')|E]"
- holy_order_government_filter_option_desc: "Zobrazit pouze postavy s [Concept('holy_order','vládou svatého řádu')|E]"
- administrative_government_filter_option_desc: "Zobrazit pouze postavy s [Concept('administrative_government','administrativní vládou')|E]"
- landless_adventurer_government_filter_option_desc: "Zobrazit pouze postavy s [Concept('adventurer','vládou dobrodruha')|E]"
- nomad_government_filter_option_desc: "Zobrazit pouze postavy s [Concept('nomadic_government','kočovnou vládou')|E]"
- herder_government_filter_option_desc: "Zobrazit pouze postavy s [Concept('herder','pasteveckou vládou')|E]"
- wanua_government_filter_option_desc: "Zobrazit pouze postavy s [Concept('wanua_government','vládou wanua')|E]"
- celestial_government_filter_option_desc: "Zobrazit pouze postavy s [Concept('celestial_government','nebeskou vládou')|E]"
- mandala_government_filter_option_desc: "Zobrazit pouze postavy s [Concept('mandala_government','vládou mandaly')|E]"
- steppe_admin_government_filter_option_desc: "Zobrazit pouze postavy s [Concept('steppe_admin','meritokratickým chanátem')|E]"
- meritocratic_government_filter_option_desc: "Zobrazit pouze postavy s [Concept('meritocratic','meritokratickou vládou')|E]"
- japan_administrative_government_filter_option_desc: "Zobrazit pouze postavy s [Concept('japan_administrative','japonskou administrativní vládou')|E]"
- japan_feudal_government_filter_option_desc: "Zobrazit pouze postavy s [Concept('japan_feudal','japonskou feudální vládou')|E]"
- monastic_holy_order_government_filter_option_desc: "Zobrazovat pouze postavy s [Concept('government','vládou')|E] [Concept('monastic_holy_order','mnišského řádu')|E]"
- ecclesiastical_government_filter_option_desc: "Zobrazovat pouze postavy s [Concept('government','vládou')|E] [Concept('ecclesiastical','církevní')|E]"
+ herder_government_filter_option: "Pastevec" # todo: CONCEPT CASE
+ wanua_government_filter_option: "Wanua" # todo: CONCEPT CASE
+ celestial_government_filter_option: "Nebeská" # todo: CONCEPT CASE
+ mandala_government_filter_option: "Mandala" # todo: CONCEPT CASE
+ steppe_admin_government_filter_option: "Meritokratický chanát" # todo: CONCEPT CASE
+ meritocratic_government_filter_option: "Meritokratická" # todo: CONCEPT CASE
+ japan_administrative_government_filter_option: "$japan_administrative_government$" # todo: CONCEPT CASE
+ japan_feudal_government_filter_option: "$japan_feudal_government$" # todo: CONCEPT CASE
+ monastic_holy_order_government_filter_option: "Mnišský řád" # todo: CONCEPT CASE
+ ecclesiastical_government_filter_option: "Církevní" # todo: CONCEPT CASE
+ merchant_government_filter_option: "Kupec" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ feudal_government_filter_option_desc: "Zobrazit pouze postavy s [feudal_i|E][Concept('feudal','feudálním')|E] [Concept('government','vládou')|E]" # todo: CHANGED (predtym: Zobrazit pouze postavy s [Concept('feudal_government','feudální vládou')|E]) # todo: CONCEPT CASE
+ republic_government_filter_option_desc: "Zobrazit pouze postavy s [republic_i|E][Concept('republic','republikou')|E] [Concept('government','vládou')|E]" # todo: CHANGED (predtym: Zobrazit pouze postavy s [Concept('republic_government','republikánskou vládou')|E]) # todo: CONCEPT CASE
+ theocracy_government_filter_option_desc: "Zobrazit pouze postavy s [theocracy_i|E][Concept('theocracy','teokracií')|E] [Concept('government','vládou')|E]" # todo: CHANGED (predtym: Zobrazit pouze postavy s [Concept('theocracy_government','teokratickou vládou')|E]) # todo: CONCEPT CASE
+ clan_government_filter_option_desc: "Zobrazit pouze postavy s [clan_i|E][Concept('clan','klanem')|E] [Concept('government','vládou')|E]" # todo: CHANGED (predtym: Zobrazit pouze postavy s [Concept('clan_government','klanovou vládou')|E]) # todo: CONCEPT CASE
+ tribal_government_filter_option_desc: "Zobrazit pouze postavy s [tribal_i|E][Concept('tribal','kmenovým')|E] [Concept('government','vládou')|E]" # todo: CHANGED (predtym: Zobrazit pouze postavy s [Concept('tribal_government','kmenovou vládou')|E]) # todo: CONCEPT CASE
+ mercenary_government_filter_option_desc: "Zobrazit pouze postavy s [mercenary_i|E][Concept('mercenary','žoldnéřem')|E] [Concept('government','vládou')|E]" # todo: CHANGED (predtym: Zobrazit pouze postavy s [Concept('mercenary','žoldnéřskou vládou')|E]) # todo: CONCEPT CASE
+ holy_order_government_filter_option_desc: "Zobrazit pouze postavy s [holy_order_i|E][Concept('holy_order','svatým řádem')|E] [Concept('government','vládou')|E]" # todo: CHANGED (predtym: Zobrazit pouze postavy s [Concept('holy_order','vládou svatého řádu')|E]) # todo: CONCEPT CASE
+ monastic_holy_order_government_filter_option_desc: "Zobrazovat pouze postavy s [holy_order_i|E][Concept('holy_order','svatým řádem')|E] [Concept('government','vládou')|E]" # todo: CHANGED (predtym: Zobrazovat pouze postavy s [Concept('government','vládou')|E] [Concept('monastic_holy_order','mnišského řádu')|E]) # todo: CONCEPT CASE
+ administrative_government_filter_option_desc: "Zobrazit pouze postavy s [administrative_i|E][Concept('administrative','administrativním')|E] [Concept('government','vládou')|E]" # todo: CHANGED (predtym: Zobrazit pouze postavy s [Concept('administrative_government','administrativní vládou')|E]) # todo: CONCEPT CASE
+ landless_adventurer_government_filter_option_desc: "Zobrazit pouze postavy s [adventurer_i|E][Concept('adventurer','dobrodruhem')|E] [Concept('government','vládou')|E]" # todo: CHANGED (predtym: Zobrazit pouze postavy s [Concept('adventurer','vládou dobrodruha')|E]) # todo: CONCEPT CASE
+ nomad_government_filter_option_desc: "Zobrazit pouze postavy s [nomad_i|E][Concept('nomadic','kočovným')|E] [Concept('government','vládou')|E]" # todo: CHANGED (predtym: Zobrazit pouze postavy s [Concept('nomadic_government','kočovnou vládou')|E]) # todo: CONCEPT CASE
+ herder_government_filter_option_desc: "Zobrazit pouze postavy s [herder_i|E][Concept('herder','pastevcem')|E] [Concept('government','vládou')|E]" # todo: CHANGED (predtym: Zobrazit pouze postavy s [Concept('herder','pasteveckou vládou')|E]) # todo: CONCEPT CASE
+ wanua_government_filter_option_desc: "Zobrazit pouze postavy s [wanua_i|E][wanua|E] [Concept('government','vládou')|E]" # todo: CHANGED (predtym: Zobrazit pouze postavy s [Concept('wanua_government','vládou wanua')|E]) # todo: CONCEPT CASE
+ celestial_government_filter_option_desc: "Zobrazit pouze postavy s [celestial_i|E][Concept('celestial','nebeskou')|E] [Concept('government','vládou')|E]" # todo: CHANGED (predtym: Zobrazit pouze postavy s [Concept('celestial_government','nebeskou vládou')|E]) # todo: CONCEPT CASE
+ mandala_government_filter_option_desc: "Zobrazit pouze postavy s [mandala_i|E][Concept('mandala','mandalou')|E] [Concept('government','vládou')|E]" # todo: CHANGED (predtym: Zobrazit pouze postavy s [Concept('mandala_government','vládou mandaly')|E]) # todo: CONCEPT CASE
+ steppe_admin_government_filter_option_desc: "Zobrazit pouze postavy s [steppe_admin_i|E][Concept('steppe_admin','meritokratickým chanátem')|E] [Concept('government','vládou')|E]" # todo: CHANGED (predtym: Zobrazit pouze postavy s [Concept('steppe_admin','meritokratickým chanátem')|E]) # todo: CONCEPT CASE
+ meritocratic_government_filter_option_desc: "Zobrazit pouze postavy s [meritocratic_i|E][Concept('meritocratic','meritokratickou')|E] [Concept('government','vládou')|E]" # todo: CHANGED (predtym: Zobrazit pouze postavy s [Concept('meritocratic','meritokratickou vládou')|E]) # todo: CONCEPT CASE
+ japan_administrative_government_filter_option_desc: "Zobrazit pouze postavy s [ritsuryo_i|E][japan_administrative|E] [Concept('government','vládou')|E]" # todo: CHANGED (predtym: Zobrazit pouze postavy s [Concept('japan_administrative','japonskou administrativní vládou')|E]) # todo: CONCEPT CASE
+ japan_feudal_government_filter_option_desc: "Zobrazit pouze postavy s [soryo_i|E][japan_feudal|E] [Concept('government','vládou')|E]" # todo: CHANGED (predtym: Zobrazit pouze postavy s [Concept('japan_feudal','japonskou feudální vládou')|E]) # todo: CONCEPT CASE
+ merchant_government_filter_option_desc: "Zobrazovat pouze postavy s [merchant_i|E][Concept('merchant','kupeckou')|E] [Concept('government','vládou')|E]" # todo: NEW TRANSLATION
  CHARACTER_FINDER_NAME: "[Character.GetUINameNoTooltip|U]"
  CHARACTER_FINDER_NAME_RELATION: "[Character.GetShortUINameNoTooltip|U] • [Character.GetRelationToString( GetPlayer )]"

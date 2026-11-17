@@ -42,7 +42,7 @@
  FAITH_WINDOW_HOLY_SITE_TOOLTIP: "#T [ConceptByKey( Select_CString( HolySiteItem.GetFaith.IsEminentHolySite( HolySite.Self ), 'eminent_holy_site', 'holy_site' ) )|E] [HolySite.GetName]#!\n[HolySiteItem.GetControlDesc][AddLine(AddLocalizationIf( IsZero( HolySite.GetTotalActiveArtifactRarity ), 'HOLY_SITE_WINDOW_HOLY_SITE_NO_ENSHRINED_ARTIFACTS'))][AddParagraph( HolySite.GetActiveEffectDesc( HolySiteItem.GetFaith.Self ) )][AddParagraph(HolySite.GetInactiveEffectDesc( HolySiteItem.GetFaith.Self ))][AddParagraph( HolySite.GetInventoryDesc( HolySiteItem.GetFaith.Self ) )]\n\n#I Kliknutím zobrazíš podrobnosti o svatém místě [HolySite.GetName]#!"
  FERVOR_BASE_GROWTH: "Základní nárůst"
  FERVOR_GAIN_FROM_HOLY_SITES: "Ze [Concept('holy_sites','svatých míst')|E]"
- PIETY_HEAD_OF_FAITH: "[head_of_faith|E]"
+ PIETY_HEAD_OF_FAITH: "[Concept('head_of_faith','Hlava víry')|E]" # todo: CONCEPT CASE
  FERVOR_GAIN_SIZE_MODIFIER: "Velikost [Concept('faith','víry')|E]"
  RITE_CAPITAL_MAP_TOOLTIP: "#T [Rite.GetNameNoTooltip]#!\nSídlo tohoto ritu.\n#I Kliknutím zobrazíš [Rite.GetNameNoTooltip]#!"
  fervor_gain_built_temple_holding: "Nová chrámová država [CZPrepV(temple_location.GetNameNoTooltip)] [CZProvName(temple_location,'L')]"
@@ -132,7 +132,7 @@
  faith_conversion_cost_pluralists: "Obě [Concept('faiths','víry')|E] jsou [GetDoctrineType('doctrine_pluralism_pluralistic').GetBaseName]"
  faith_conversion_cost_pluralist: "Tvá [Concept('faith','víra')|E] je [GetDoctrineType('doctrine_pluralism_pluralistic').GetBaseName]"
  faith_conversion_cost_unreformed_converting_to_reformed: "Konverze z nereformované víry k [Concept('organized','organizované')|E] víře"
- faith_conversion_cost_spouse: "Konverze k víře manželského protějšku"
+ faith_conversion_cost_spouse: "Konverze k ritu manželského protějšku" # todo: CHANGED (predtym: Konverze k víře manželského protějšku)
  faith_conversion_cost_present: "Tato [Concept('faith','víra')|E] je přítomna v tvém [Concept('realm','panství')|E] nebo v jeho blízkosti"
  faith_conversion_cost_concubine: "Konverze k víře konkubíny"
  faith_conversion_cost_unreformed_spouse: "Konverze nereformovaného pohana k [Concept('organized','organizované')|E] víře manželského protějšku"
@@ -146,7 +146,7 @@
  faith_conversion_cost_conversion_blocked_till_decision_taken: "Tuto [Concept('faith','víru')|E] je nutné zpřístupnit prostřednictvím [Concept('decision','rozhodnutí')|E]"
  faith_conversion_cost_conversion_blocked_till_nebulous_circumstances: "Tuto [Concept('faith','víru')|E] je nutné zpřístupnit za #EMP záhadných okolností#!"
  faith_conversion_cost_unreformed_to_organized: "Konverze [GetDoctrineType('unreformed_faith_doctrine').GetBaseName] [Concept('faith','víry')|E] k [Concept('organized','organizované')|E] [faith]"
- faith_conversion_cost_suzerains_missionary: "Misionář tvého [Concept('suzerain','suzeréna')|E] prosazuje tuto [Concept('faith','víru')|E] na tvém dvoře"
+ faith_conversion_cost_suzerains_missionary: "Misionář tvého [GetSuzerainRelationship(GetPlayer)] prosazuje tuto [Concept('faith','víru')|E] na tvém dvoře" # todo: CHANGED (predtym: Misionář tvého [Concept('suzerain','suzeréna')|E] prosazuje tuto [Concept('faith','víru')|E] na tvém dvoře)
  faith_conversion_cost_immaterial_harmony: "Konverze k jiné [GetDoctrineType('special_doctrine_immaterial_harmony').GetBaseName] [Concept('faith','víře')|E]"
  faith_reformation_via_decision: "Tuto [Concept('faith','víru')|E] lze reformovat pouze prostřednictvím [Concept('decision','rozhodnutí')|E]"
  faith_conversion_recently_converted: "Po nedávném obrácení na jiný [Concept('rite','ritus')|E] nebo jinou [Concept('faith','víru')|E] zatím nemůžeš přestoupit znovu"
@@ -476,9 +476,9 @@
  rf_sinitic: "Sinitské"
  sinful_theocrat_exposed_title: "Hríšn[Select_CString( sinful_theocrat.IsFemale, 'á', 'ý' )] [sinful_theocrat.Custom('GetActualBishopTitle')|l] odhalen[Select_CString( sinful_theocrat.IsFemale, 'a', '' )]"
  virtuous_theocrat_celebrated_title: "Ctnostn[Select_CString( virtuous_theocrat.IsFemale, 'á', 'ý' )] [virtuous_theocrat.Custom('GetActualBishopTitle')|l] oslavován[Select_CString( virtuous_theocrat.IsFemale, 'a', '' )]"
- doctrine_spouse_parameter_multiple_spouses: "Vládci mohou mít až $VALUE|V0$ chotí, pokud to umožňuje [Concept('gender_law','zákon o pohlaví')|E]"
- doctrine_spouse_parameter_only_one_spouse: "Postavy mohou mít pouze jednoho [Concept('spouse','chotě')|E]"
- doctrine_parameter_marriage_event: "[Concept('rulers','Vládci')|E] získají při prvním sňatku významný bonus"
+ doctrine_spouse_parameter_multiple_spouses: "[Concept('rulers','Vládci')|E] mohou mít až $VALUE|V0$ [Concept('spouses','chotí')|E], pokud to umožňuje [Concept('gender_law','zákon o pohlaví')|E]" # todo: CHANGED (predtym: Vládci mohou mít až $VALUE|V0$ chotí, pokud to umožňuje [Concept('gender_law','zákon o pohlaví')|E])
+ doctrine_spouse_parameter_only_one_spouse: "[Concept('characters','Postavy')|E] mohou mít pouze jednoho [Concept('spouse','chotě')|E]" # todo: CHANGED (predtym: Postavy mohou mít pouze jednoho [Concept('spouse','chotě')|E])
+ doctrine_parameter_marriage_event: "[Concept('rulers','Vládci')|E] získají při prvním [Concept('marry','sňatku')|E] významný bonus" # todo: CHANGED (predtym: [Concept('rulers','Vládci')|E] získají při prvním sňatku významný bonus)
  doctrine_parameter_spouse_piety_loss: "Příliš nízký počet [Concept('spouses','manželských protějšků')|E] způsobuje postih ke [Concept('piety','zbožnosti')|E]"
  doctrine_parameter_number_of_consorts: "[Concept('rulers','Vládci')|E] mohou mít až $VALUE|V0$ [Concept('concubines','konkubín')|E], pokud to dovoluje [Concept('gender_law','zákon o postavení pohlaví')|E]"
  doctrine_parameter_fervor_gain: "Dodatečný roční zisk [Concept('fervor','horlivosti')|E]: [fervor_i]$VALUE|1+=$"
@@ -619,7 +619,68 @@
  special_doctrine_naked_priests_name: "Nazí kněží"
  special_doctrine_naked_priests_descriptive_name: "$special_doctrine_naked_priests_name$"
  special_doctrine_naked_priests_desc: "Naši kněží vědí, že oděv spoutává ducha a brání nám dosáhnout skutečného osvícení. Pouze odložením šatů můžeme probudit své duše a zakusit lásku [ROOT.Faith.HighGodNamePossessive]."
- doctrine_parameter_naked_priests_active: "Kněží a horlivé postavy nenosí oděv."
+ doctrine_parameter_naked_priests_active: "Kněží a horlivé postavy nenosí oděv." # todo: CHANGED MINOR
+ ahimsa_doctrine_name: "Ahimsa" # todo: NEW TRANSLATION
+ special_doctrine_ahimsa_name: "Ahimsa" # todo: NEW TRANSLATION
+ special_doctrine_ahimsa_descriptive_name: "$special_doctrine_ahimsa_name$" # todo: NEW TRANSLATION
+ special_doctrine_ahimsa_desc: "Džinisté věří, že proti živým tvorům se nesmí používat násilí. Ani proti jiným lidem, ani proti zvířatům, ani proti tvorům žijícím v zemi či ve vodě. V praxi to znamená, že věřící nesmějí vykonávat mnohá povolání, od tradičního zemědělství až po život válečníka. Mnozí se místo toho věnují duchovně ušlechtilejším činnostem." # todo: NEW TRANSLATION
+ doctrine_parameter_martial_education_worse_outcomes: "[Concept('children','Děti')|E] mívají o něco horší výsledky ve [Concept('martial','válečnictví')|E] [Concept('education','vzdělání')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ doctrine_parameter_better_stewardship_education: "[Concept('children','Děti')|E] této [Concept('faith','víře')|E] mají větší šanci získat dobrou [Concept('education','vzdělání')|E] ve [Concept('stewardship','správcovství')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ alcohol_restrictions_name: "Postoj k alkoholu" # todo: NEW TRANSLATION
+ doctrine_alcohol_permitted_name: "Alkohol povolen" # todo: NEW TRANSLATION
+ doctrine_alcohol_permitted_descriptive_name: "$doctrine_alcohol_permitted_name$" # todo: NEW TRANSLATION
+ doctrine_alcohol_permitted_desc: "Naše víra nepotřebuje přísné zákazy alkoholu. Umírněnost je ctnost, ale alkohol zakázán není." # todo: NEW TRANSLATION
+ doctrine_parameter_alcohol_permitted: "Lze stavět řady [Concept('building','budova')|E] [GetBuildingType('tavern_street_1').GetName] a [GetBuildingType('sailors_taverns_1').GetName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ doctrine_alcohol_highborn_only_name: "Alkohol pro urozené" # todo: NEW TRANSLATION
+ doctrine_alcohol_highborn_only_descriptive_name: "$doctrine_alcohol_highborn_only_name$" # todo: NEW TRANSLATION
+ doctrine_alcohol_highborn_only_desc: "Lidové masy neodolají zhoubnému vlivu alkoholu, není však třeba jej zakazovat vyšším vrstvám." # todo: NEW TRANSLATION
+ special_doctrine_alcohol_forbidden_name: "Alkohol zakázán" # todo: NEW TRANSLATION
+ special_doctrine_alcohol_forbidden_descriptive_name: "$special_doctrine_alcohol_forbidden_name$" # todo: NEW TRANSLATION
+ special_doctrine_alcohol_forbidden_desc: "Nemůžeme snést, když nápoje a povzbuzující látky kalí mysl věřících. V této víře se alkohol nesmí ani vařit, ani podávat." # todo: NEW TRANSLATION
+ doctrine_parameter_alcohol_forbidden: "[Concept('buildings','Budovy')|E] v provinciích této [Concept('faith','víře')|E] nepotřebují [GetTradeGoodCategory('trade_category_alcohol').GetName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ doctrine_parameter_alcohol_buildings_forbidden: "Řady [Concept('building','budova')|E] [GetBuildingType('tavern_street_1').GetName] a [GetBuildingType('sailors_taverns_1').GetName] nelze stavět" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ doctrine_parameter_alcohol_production_forbidden: "Všechny budovy vyrábějící [GetTradeGoodCategory('trade_category_alcohol').GetName] jsou zakázány" # todo: NEW TRANSLATION
+ doctrine_parameter_alcohol_forbidden_strict: "Řady [Concept('building','budova')|E] [GetBuildingType('wine_cellars_1').GetName] a [GetBuildingType('manor_parlor_1').GetName] mají postih k [Concept('piety','zbožnosti')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ dietary_restrictions_name: "Stravovací omezení" # todo: NEW TRANSLATION
+ special_doctrine_meat_only_name: "Pouze maso" # todo: NEW TRANSLATION
+ special_doctrine_meat_only_descriptive_name: "$special_doctrine_meat_only_name$" # todo: NEW TRANSLATION
+ special_doctrine_meat_only_desc: "Naší potravou mohou být pouze živí tvorové. Pěstované plodiny a zeleň jsou pro naše méněcenné." # todo: NEW TRANSLATION
+ doctrine_parameter_diet_needs_meat: "[Concept('buildings','Budovy')|E] této [Concept('faith','víře')|E] potřebují [GetTradeGoodCategory('trade_category_meat').GetName] místo [GetTradeGoodCategory('trade_category_cereals').GetName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ doctrine_parameter_meat_in_demand: "Prodejní cena [GetTradeGoodCategory('trade_category_meat').GetName] se zvýší o 1 %" # todo: NEW TRANSLATION
+ doctrine_parameter_granary_buildings_forbidden: "Řadu [Concept('building','budovu')|E] [GetBuildingType('village_granaries_1').GetName] nelze stavět" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ doctrine_diet_unrestricted_name: "Bez stravovacích omezení" # todo: NEW TRANSLATION
+ doctrine_diet_unrestricted_descriptive_name: "$doctrine_diet_unrestricted_name$" # todo: NEW TRANSLATION
+ doctrine_diet_unrestricted_desc: "Člověk je nejvyšší bytostí stvoření. Jíst jiné živé tvory není problém a naše víra na to nehledí s opovržením." # todo: NEW TRANSLATION
+ doctrine_parameter_diet_unrestricted: "Všechny budovy související s [GetTradeGoodCategory('trade_category_meat').GetName] jsou povoleny" # todo: NEW TRANSLATION
+ special_doctrine_meat_forbidden_temples_name: "Umírněné duchovenstvo" # todo: NEW TRANSLATION
+ special_doctrine_meat_forbidden_temples_descriptive_name: "$special_doctrine_meat_forbidden_temples_name$" # todo: NEW TRANSLATION
+ special_doctrine_meat_forbidden_temples_desc: "Na tom, že obyčejní muži a ženy porážejí zvířata a jedí je, není nic špatného, od duchovenstva však musíme očekávat vyšší standard." # todo: NEW TRANSLATION
+ doctrine_parameter_diet_needs_comforts_temples: "[Concept('temple_holdings','Chrámové državy')|E] této [Concept('faith','víře')|E] potřebují [GetTradeGoodCategory('trade_category_comforts').GetName] místo [GetTradeGoodCategory('trade_category_meat').GetName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ doctrine_parameter_comforts_in_demand_temples: "Prodejní cena [GetTradeGoodCategory('trade_category_comforts').GetName] v [Concept('temple_holdings','chrámových državách')|E] se zvýší o 1 %" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ special_doctrine_meat_forbidden_temples_fish_name: "Vyvolení půstem" # todo: NEW TRANSLATION
+ special_doctrine_meat_forbidden_temples_fish_descriptive_name: "$special_doctrine_meat_forbidden_temples_fish_name$" # todo: NEW TRANSLATION
+ special_doctrine_meat_forbidden_temples_fish_desc: "Duchovenstvo se musí zdržet masa i všech zvířat, která žijí na souši. Ryby jsou přijatelnou náhradou." # todo: NEW TRANSLATION
+ doctrine_parameter_diet_needs_fish_temples: "[Concept('temple_holdings','Chrámové državy')|E] této [Concept('faith','víře')|E] potřebují [GetTradeGoodType('trade_good_fish').GetName] místo [GetTradeGoodCategory('trade_category_meat').GetName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ doctrine_parameter_fish_in_demand_temples: "Prodejní cena [GetTradeGoodType('trade_good_fish').GetName] v [Concept('temple_holdings','chrámových državách')|E] se zvýší o 1 %" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ special_doctrine_meat_forbidden_fish_name: "Ryby povoleny" # todo: NEW TRANSLATION
+ special_doctrine_meat_forbidden_fish_descriptive_name: "$special_doctrine_meat_forbidden_fish_name$" # todo: NEW TRANSLATION
+ special_doctrine_meat_forbidden_fish_desc: "Nebudeme jíst žádného živého tvora z tohoto stvoření. Ryby jsou však přijatelnou potravou pro muže i kněze." # todo: NEW TRANSLATION
+ doctrine_parameter_diet_needs_fish: "[Concept('buildings','Budovy')|E] této [Concept('faith','víře')|E] potřebují [GetTradeGoodType('trade_good_fish').GetName] místo [GetTradeGoodCategory('trade_category_meat').GetName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ doctrine_parameter_fish_in_demand: "Prodejní cena [GetTradeGoodType('trade_good_fish').GetName] se zvýší o 1 %" # todo: NEW TRANSLATION
+ special_doctrine_meat_forbidden_name: "Veškeré maso zakázáno" # todo: NEW TRANSLATION
+ special_doctrine_meat_forbidden_descriptive_name: "$special_doctrine_meat_forbidden_name$" # todo: NEW TRANSLATION
+ special_doctrine_meat_forbidden_desc: "Žádný tvor není náš, abychom ho zabíjeli pro potěšení z vlastního nasycení." # todo: NEW TRANSLATION
+ doctrine_parameter_meat_buildings_forbidden: "Řady [Concept('building','budova')|E] [GetBuildingType('butchery_1').GetName], [GetBuildingType('guild_butchery_1').GetName], [GetBuildingType('village_butcher_1').GetName], [GetBuildingType('tallow_rendering_1').GetName], [GetBuildingType('hunting_lodges_1').GetName], [GetBuildingType('hunters_lodges_1').GetName], [GetBuildingType('hunter_lodgings_1').GetName] a [GetBuildingType('village_hunter_1').GetName] nelze stavět" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ doctrine_parameter_meat_buildings_forbidden_slain: "$doctrine_parameter_meat_buildings_forbidden$" # todo: NEW TRANSLATION
+ doctrine_parameter_meat_buildings_forbidden_fish: "$doctrine_parameter_meat_buildings_forbidden$" # todo: NEW TRANSLATION
+ doctrine_parameter_diet_needs_comforts: "[Concept('buildings','Budovy')|E] této [Concept('faith','víře')|E] potřebují [GetTradeGoodCategory('trade_category_comforts').GetName] místo [GetTradeGoodCategory('trade_category_meat').GetName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ doctrine_parameter_comforts_in_demand: "Prodejní cena [GetTradeGoodCategory('trade_category_comforts').GetName] se zvýší o 1 %" # todo: NEW TRANSLATION
+ special_doctrine_nothing_of_the_slain_name: "Nic z uloveného" # todo: NEW TRANSLATION
+ special_doctrine_nothing_of_the_slain_descriptive_name: "$special_doctrine_nothing_of_the_slain_name$" # todo: NEW TRANSLATION
+ special_doctrine_nothing_of_the_slain_desc: "Nesmíme jíst maso žádného zvířete ani používat jeho kůži či kožešinu. Dokonce i naši vodu před pitím filtrujeme a převařujeme, protože nesneseme pomyšlení, že bychom ublížili byť jen tvorům příliš malým na to, abychom je viděli." # todo: NEW TRANSLATION
+ doctrine_parameter_leather_forbidden: "[Concept('buildings','Budovy')|E] této [Concept('faith','víře')|E] potřebují [GetTradeGoodType('trade_good_textiles').GetName], [GetTradeGoodCategory('trade_category_fabrics').GetName] nebo [GetTradeGoodType('trade_good_hemp').GetName] namísto [GetTradeGoodType('trade_good_leather').GetName] a [GetTradeGoodType('trade_good_furs').GetName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ doctrine_parameter_leather_buildings_forbidden: "Řady [Concept('building','budova')|E] [GetBuildingType('cattle_tannery_1').GetName], [GetBuildingType('wool_tannery_1').GetName], [GetBuildingType('furs_tannery_1').GetName], [GetBuildingType('cordwainers_1').GetName], [GetBuildingType('saddlers_1').GetName], [GetBuildingType('guild_tannery_1').GetName] a [GetBuildingType('guild_parchment_workshop_1').GetName] nelze stavět" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ doctrine_parameter_textiles_in_demand: "Prodejní cena [GetTradeGoodType('trade_good_textiles').GetName] se zvýší o 1 %" # todo: NEW TRANSLATION
  doctrine_gender_name: "Postoj k pohlaví"
  doctrine_gender_male_dominated_name: "Nadvláda mužů"
  doctrine_gender_male_dominated_descriptive_name: "Společnost ovládaná muži"
@@ -760,7 +821,7 @@
  doctrine_theocracy_lay_clergy_name: "Laické duchovenstvo"
  doctrine_theocracy_lay_clergy_descriptive_name: "$doctrine_theocracy_lay_clergy_name$"
  doctrine_theocracy_lay_clergy_desc: "Každý oddaný vyznavač je více než schopný chápat, následovat a hlásat doktríny naší víry."
- doctrine_parameter_theocracy_temple_ownership: "Světští [Concept('rulers','vládci')|E] přímo ovládají své chrámové [Concept('holdings','državy')|E] a získávají všechny související výhody."
+ doctrine_parameter_theocracy_temple_ownership: "Světští [Concept('rulers','vládci')|E] přímo ovládají své chrámové [Concept('holdings','državy')|E] a získávají všechny související výhody." # todo: CHANGED MINOR
  doctrine_parameter_lay_clergy: ""
  doctrine_parameter_allowed_holding_type_church_holding: ""
  doctrine_clerical_function_name: "Úloha duchovenstva"
@@ -774,6 +835,13 @@
  doctrine_clerical_function_recruitment_descriptive_name: "Vojenské úlohy duchovenstva"
  doctrine_clerical_function_recruitment_desc: "Naši [ROOT.Faith.PriestNeuterPlural] mohou pozvednout zbraně a bránit naši víru. Odpovědnost jít ostatním příkladem jim dodává v boji větší sílu."
  doctrine_parameter_clergy_can_fight: "Členové [Concept('clergy','duchovenstva')|E] mohou sloužit jako [Concept('commanders','velitelé')|E] nebo $knight_culture_player_plural$"
+ doctrine_parameter_clerical_function_temple_holding_control_baseline: "[Concept('temple_holdings','Chrámové državy')|E] a [Concept('temple_citadels','chrámové citadely')|E]: @control_icon![Concept('control_baseline','základní úroveň kontroly')|E] za úroveň [Concept('holding','država')|E]: #P +1#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ doctrine_parameter_clerical_function_temple_district_popular_opinion_penalty: "[Concept('districts','Čtvrti')|E] [GetDistrictType('temple_district').GetName]: @popular_opinion_icon![Concept('popular_opinion','lidové mínění')|E]: #N -2#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ doctrine_parameter_clerical_function_temple_district_books_control: "[GetDistrictType('temple_district').GetName] získá [Concept('building_need','potřeba budovy')|E] na [GetTradeGoodType('trade_good_books_paper').GetNameWithIcon], jehož splnění poskytne @control_icon![Concept('control_baseline','základní úroveň kontroly')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ doctrine_parameter_clerical_function_temple_district_comfort_popular_opinion: "[GetDistrictType('temple_district').GetName] získá [Concept('building_need','potřeba budovy')|E] na oblíbené komfortní zboží své [Concept('culture','kultury')|E], jehož splnění poskytne @popular_opinion_icon![Concept('popular_opinion','lidové mínění')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ doctrine_parameter_clerical_function_temple_holding_popular_opinion: "[Concept('temple_holdings','Chrámové državy')|E] a [Concept('temple_citadels','chrámové citadely')|E]: @popular_opinion_icon![Concept('popular_opinion','lidové mínění')|E] za úroveň [Concept('holding','država')|E]: #P +1#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ doctrine_parameter_clerical_function_temple_holding_maa_maintenance: "[Concept('temple_holdings','Chrámové državy')|E] a [Concept('temple_citadels','chrámové citadely')|E]: údržba [Concept('stationed','umístěno')|E] [Concept('men_at_arms','ozbrojenců')|E]: #P -10%#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ doctrine_parameter_clerical_function_temple_district_votive_maa_toughness: "[GetDistrictType('temple_district').GetName] získá [Concept('building_need','potřeba budovy')|E] na votivní dar své [Concept('culture','kultury')|E], jehož splnění poskytne [Concept('stationed','umístěno')|E] [Concept('men_at_arms','ozbrojenců')|E] [Concept('toughness','houževnatosti')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  doctrine_clerical_gender_name: "Pohlaví duchovenstva"
  doctrine_clerical_gender_male_only_name: "Pouze muži"
  doctrine_clerical_gender_male_only_descriptive_name: "Duchovenstvo tvořené pouze muži"
@@ -799,6 +867,33 @@
  doctrine_clerical_marriage_disallowed_descriptive_name: "Zakázané sňatky duchovenstva"
  doctrine_clerical_marriage_disallowed_desc: "Stát se [ROOT.Faith.PriestNeuter] znamená zasvětit svůj život [ROOT.Faith.HighGodName]. Pomýšlet vedle toho na přijetí smrtelného manželského protějšku je ze své podstaty nevěrné."
  doctrine_parameter_clergy_can_marry_disabled: "Členům [Concept('clergy','duchovenstva')|E] je zakázáno uzavírat [Concept('marrying','manželství')|E]"
+ doctrine_usury_name: "Úrokové půjčky" # todo: NEW TRANSLATION
+ doctrine_usury_accepted_name: "Přijatelné" # todo: NEW TRANSLATION
+ doctrine_usury_accepted_descriptive_name: "Přijatelné úrokové půjčky" # todo: NEW TRANSLATION
+ doctrine_usury_accepted_desc: "Věřitel, který si za podstoupené riziko nic nevezme, brzy nebude mít co půjčovat. Sazba, na níž se dobrovolně dohodnou dvě ochotné strany, nehanobí ani jednu z nich." # todo: NEW TRANSLATION
+ doctrine_parameter_usury_accepted: "Půjčování [Concept('gold','zlato')|E] na [Concept('usury','lichvu')|E] se nepostihuje" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ doctrine_usury_discouraged_name: "Odradit" # todo: NEW TRANSLATION
+ doctrine_usury_discouraged_descriptive_name: "Odradit od úrokových půjček" # todo: NEW TRANSLATION
+ doctrine_usury_discouraged_desc: "Peníze jsou neplodné: nepracují, nesejí ani nenesou plody a mince zrozená z mincí světu nic nepřináší. Půjčovat na úrok není zločin, ale čest si tím člověk nezíská." # todo: NEW TRANSLATION
+ doctrine_parameter_usury_discouraged: "Půjčování [Concept('gold','zlato')|E] na otevřený [Concept('usury','lichva')|E]: #N Menší ztráta zbožnosti a duchovního naplnění#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ doctrine_parameter_usury_discouraged_creditor_standing: "[Concept('merchants','Kupci')|E], jejichž [Concept('company','společnost')|E] má účel $company_purpose_creditor$: #N -10%#! k zisku [Concept('prestige','prestiži')|E], #N -10#! k mínění [Concept('clergy','duchovenstvu')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ doctrine_usury_outsiders_only_name: "Pouze vůči cizincům" # todo: NEW TRANSLATION
+ doctrine_usury_outsiders_only_descriptive_name: "Úrokové půjčky cizincům povoleny" # todo: NEW TRANSLATION
+ doctrine_usury_outsiders_only_desc: "Nesmíme těžit z nouze těch, kdo sdílejí naše náboženství, neboť nás pojí příbuzenství, nikoli obchod. Co je zakázáno uvnitř naší obce, je za jejími hranicemi dovoleno." # todo: NEW TRANSLATION
+ doctrine_parameter_usury_outsiders_only: "Půjčování [Concept('gold','zlato')|E] na otevřený [Concept('usury','lichva')|E] v rámci vlastní [Concept('religion','náboženství')|E]: #N Ztráta zbožnosti a duchovního naplnění#!; půjčování mimo ni se nepostihuje" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ doctrine_parameter_usury_outsider_creditor_standing: "[Concept('merchants','Kupci')|E], jejichž [Concept('company','společnost')|E] má účel $company_purpose_creditor$: #N -10%#! k zisku [Concept('prestige','prestiži')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ doctrine_parameter_usury_outsider_debts_voidable: "Dluhy z půjček na otevřený [Concept('usury','lichva')|E] od věřitele stejné [Concept('religion','náboženství')|E] lze místo splacení zrušit pomocí [Concept('decision','rozhodnutí')|E] [GetDecisionWithKey('gdp_repudiate_usurious_loan_decision').GetName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ doctrine_usury_forbidden_name: "Zakázané" # todo: NEW TRANSLATION
+ doctrine_usury_forbidden_descriptive_name: "Zakázané úrokové půjčky" # todo: NEW TRANSLATION
+ doctrine_usury_forbidden_desc: "Požadovat zpět více, než bylo půjčeno, znamená bohatnout na cizím neštěstí a hřešit proti [ROOT.Faith.HighGodName]. Ti, kdo obchodují s nouzí druhých, si žádnou úctu nezaslouží." # todo: NEW TRANSLATION
+ doctrine_parameter_usury_forbidden: "Půjčování [Concept('gold','zlato')|E] na otevřený [Concept('usury','lichva')|E]: #N Ztráta zbožnosti a duchovního naplnění#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ doctrine_parameter_usury_forbidden_creditor_standing: "[Concept('merchants','Kupci')|E] s [Concept('company_purpose','zaměřením společnosti')|E] [GetLaw('company_purpose_creditor').GetName]:\n$EFFECT_LIST_BULLET$Zisk [Concept('prestige','prestiž')|E]: [prestige_i]#N -20%#!\n$EFFECT_LIST_BULLET$Zisk [Concept('piety','zbožnost')|E]: [piety_i]#N -20%#!\n$EFFECT_LIST_BULLET$[Concept('opinion','Mínění')|E] [Concept('clergy','Duchovenstvo')|E]: #N -20#!\n$EFFECT_LIST_BULLET$[Concept('opinion','Mínění')|E] stejné [Concept('faith','víra')|E]: #N -10#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ doctrine_parameter_usury_debts_voidable: "Dluhy z půjček na otevřený [Concept('usury','lichva')|E] lze místo splacení zrušit pomocí [Concept('decision','rozhodnutí')|E] [GetDecisionWithKey('gdp_repudiate_usurious_loan_decision').GetName]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ doctrine_parameter_usury_charitable_lending: "Půjčování [Concept('gold','zlato')|E] bez [Concept('usury','lichvy')|E]: #P Menší zisk zbožnosti#!" # todo: NEW TRANSLATION # todo: CONCEPT CASE
+ usury_accepted_name: "$doctrine_usury_accepted_descriptive_name$" # todo: NEW TRANSLATION
+ usury_discouraged_name: "$doctrine_usury_discouraged_descriptive_name$" # todo: NEW TRANSLATION
+ usury_outsiders_only_name: "$doctrine_usury_outsiders_only_descriptive_name$" # todo: NEW TRANSLATION
+ usury_forbidden_name: "$doctrine_usury_forbidden_descriptive_name$" # todo: NEW TRANSLATION
  doctrine_clerical_succession_name: "Jmenování duchovních"
  doctrine_clerical_succession_temporal_appointment_name: "Světské, odvolatelné"
  doctrine_clerical_succession_temporal_appointment_descriptive_name: "Světské odvolatelné jmenování duchovenstva"
@@ -857,6 +952,7 @@
  special_doctrine_adoptionist_school_radical_doctrine_name: "Radikální škola"
  special_doctrine_adoptionist_school_radical_doctrine_desc: "Radikální $adoptionist_adherent_plural$ neuznávají jiného Boha než Otce, nepřipouštějí žádné božství smrtelného těla a za $christianity_religion_adherent_plural$ nepovažují nikoho kromě sebe. Přijmout Krista bez souhlasu s každým #EMP písmenem#! kánonu znamená přiznat odpadlictví."
  doctrine_parameter_has_clerical_regions: "Má [Concept('clerical_region','církevní oblast')|E]"
+ doctrine_parameter_amber_prayer_beads: "[GetBuildingType('temple_religious_fairs_1').GetName] mají [Concept('need','potřeba')|E] na [GetTradeGoodType('trade_good_amber').GetNameWithIcon], jehož splnění poskytuje dodatečné [Concept('religious_tax','náboženská daň')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  special_doctrine_is_christian_faith_name: "Ježíšovo učení"
  is_christian_faith_name: "$special_doctrine_is_christian_faith_name$"
  special_doctrine_is_christian_faith_desc: "Na světě žijí lidé, kteří následují Ježíšovo učení, aniž by uznávali jeho božství. Ačkoli je to rouhavé, měli bychom těmto pomýleným duším projevovat soucit, neboť se jednoho dne mohou obrátit k pravé víře."
@@ -871,7 +967,7 @@
  not_allowed_to_hof_name: "$special_doctrine_not_allowed_to_hof_name$"
  prophecy_of_malachi_desc: "Podle tradiční židovské doktríny může být nový velekněz jmenován pouze s příchodem Proroka nebo tehdy, bude-li nalezen Áronův potomek způsobilý ke kněžské službě."
  special_doctrine_not_allowed_to_hof_desc: "Velekněžství této víry bylo zcela rozvráceno. Jakýkoli pokus jmenovat velekněze by nejprve vyžadoval důkladnou obnovu tradičního náboženského uspořádání."
- doctrine_parameter_block_from_create_hof_parameter: "Tato víra nemůže za běžných okolností obnovit svou [Concept('head_of_faith','hlavu víry')|E]."
+ doctrine_parameter_block_from_create_hof_parameter: "Tato víra nemůže za běžných okolností obnovit svou [Concept('head_of_faith','hlavu víry')|E]." # todo: CHANGED MINOR
  special_doctrine_is_eastern_faith_name: "Mnohonáboženské prolínání"
  is_eastern_faith_name: "$special_doctrine_is_eastern_faith_name$"
  special_doctrine_is_eastern_faith_desc: "Nespojuje nás jediná víra, nýbrž množství věr, které tvoří náboženskou strukturu naší společnosti. Ačkoli se nazýváme různými jmény a kráčíme rozdílnými cestami, někteří lidé mimo náš vlastní systém přesvědčení se naučili žít v naší společnosti, jako by byli jedněmi z nás."
@@ -883,6 +979,9 @@
  special_doctrine_is_gnostic_faith_name: "$tenet_gnosticism_name$"
  is_gnostic_faith_name: "$special_doctrine_is_gnostic_faith_name$"
  special_doctrine_is_gnostic_faith_desc: "$tenet_gnosticism_desc$"
+ special_doctrine_is_yazidi_faith_name: "$yazidi_religion$" # todo: NEW TRANSLATION
+ is_yazidi_faith_name: "$special_doctrine_is_yazidi_faith_name$" # todo: NEW TRANSLATION
+ special_doctrine_is_yazidi_faith_desc: "Tuto doktrínu má každá [Concept('faith','víry')|E] náboženství $yazidi_religion$ [Concept('religion','náboženství')|E]." # todo: NEW TRANSLATION # todo: CONCEPT CASE
  special_doctrine_fire_worship_name: "Posvátný oheň"
  fire_worship_name: "$special_doctrine_fire_worship_name$"
  special_doctrine_fire_worship_desc: "Všechny nás spojuje úcta k ohni, nejčistšímu živlu a prostředku božské slávy. Naší posvátnou povinností je udržovat věčné ohně světa a jejich září zahánět lež a zlo."
@@ -957,7 +1056,7 @@
  pantheon_term_have: "mají"
  FAITH_CREATION_DUCHY_OR_HIGHER_FIRST_NOT: "Nejvyšší [Concept('title','titul')|E], který držíš, #bold není#! vévodstvím ani vyšším titulem"
  FAITH_HOSTILITY_OPINION: "$BULLET_WITH_TAB$ [Concept('opinion','Mínění')|E] postav: $VALUE|=+$"
- FAITH_HOSTILITY_COUNTY_OPINION: "$BULLET_WITH_TAB$ Maximální postih k [Concept('county_opinion','lidovému mínění')|E]: $VALUE|=+$"
+ FAITH_HOSTILITY_POPULAR_OPINION: "$BULLET_WITH_TAB$ Maximální postih k [Concept('popular_opinion','lidovému mínění')|E]: $VALUE|=+$" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  FAITH_HOSTILITY_NO_USURP: "$BULLET_WITH_TAB$ Jejich [Concept('titles','tituly')|E] #bold nelze#! [Concept('usurp','uzurpovat')|E]"
  FAITH_HOSTILITY_GHW: "$BULLET_WITH_TAB$ Lze proti nim zahájit [Concept('great_holy_wars','velké svaté války')|E]"
  FAITH_HOSTILITY_USURP: "$BULLET_WITH_TAB$ Jejich [Concept('titles','tituly')|E] lze [Concept('usurp','uzurpovat')|E]"
@@ -1091,49 +1190,3 @@
  cannot_convert_rite_same_rite: "[Character.GetShortUIName] již vyznává [Concept('rite','ritus')|E] [Rite.GetNameNoTooltip]"
  holy_site_for_faith_header: "#T [Province.GetName] je [Concept('holy_site','svatým místem')|E] pro následující [Concept('faiths','víry')|E]:#!\n"
  holy_site_for_faith_entry: "$BULLET_WITH_TAB$ [Faith.GetName] [SelectLocalization( Faith.IsEminentHolySite( HolySite.Self ), 'HOLY_SITE_FAITH_EMINENT', 'HOLY_SITE_FAITH_REGULAR' )]"
- CLERGY_OF_FAITH_MODIFIER: "#T Veškeré [FAITH.GetAdjective] [Concept('clergy','duchovenstvo')|E]:#!" # todo: NOT IN ENGLISH
- CLERGY_OF_UNKNOWN_FAITH_MODIFIER: "#T Veškeré duchovenstvo víry:#!" # todo: NOT IN ENGLISH
- holy_site_napata_name: "Napata" # todo: NOT IN ENGLISH
- holy_site_colonea_name: "Koloneia" # todo: NOT IN ENGLISH
- holy_site_armagh_name: "Armagh" # todo: NOT IN ENGLISH
- holy_site_siffa_name: "Siffa" # todo: NOT IN ENGLISH
- holy_site_yamama_name: "Jamáma" # todo: NOT IN ENGLISH
- holy_site_qom_name: "Qom" # todo: NOT IN ENGLISH
- holy_site_kusinagara_name: "Lumbiní" # todo: NOT IN ENGLISH
- holy_site_sagya_name: "Sakja" # todo: NOT IN ENGLISH
- holy_site_ava_name: "Ava" # todo: NOT IN ENGLISH
- holy_site_sittaung_name: "Sittaung" # todo: NOT IN ENGLISH
- holy_site_shaolin_name: "Šaolin" # todo: NOT IN ENGLISH
- holy_site_emei_name: "Hora E-mej" # todo: NOT IN ENGLISH
- holy_site_jiuhua_name: "Hora Ťiou-chua" # todo: NOT IN ENGLISH
- holy_site_putuo_name: "Hora Pchu-tchuo" # todo: NOT IN ENGLISH
- holy_site_bulguksa_name: "Pulguksa" # todo: NOT IN ENGLISH
- holy_site_magadha_name: "Magadha" # todo: NOT IN ENGLISH
- holy_site_prambanan_name: "Prambanan" # todo: NOT IN ENGLISH
- holy_site_preah_vihear_name: "Preah Vihear" # todo: NOT IN ENGLISH
- holy_site_bumiayu_name: "Bumiayu" # todo: NOT IN ENGLISH
- holy_site_shringeri_name: "Šringerí" # todo: NOT IN ENGLISH
- holy_site_badrinath_name: "Badrínáth" # todo: NOT IN ENGLISH
- holy_site_puri_name: "Purí" # todo: NOT IN ENGLISH
- holy_site_lejre_name: "Lejre" # todo: NOT IN ENGLISH
- holy_site_zeeland_name: "Zeeland" # todo: NOT IN ENGLISH
- holy_site_sparta_name: "Sparta" # todo: NOT IN ENGLISH
- holy_site_suzhou_name: "Su-čou" # todo: NOT IN ENGLISH
- holy_site_mount_kunyu_name: "Hora Kchun-jü" # todo: NOT IN ENGLISH
- holy_site_shicheng_name: "Š’-čcheng" # todo: NOT IN ENGLISH
- holy_site_jianchang_name: "Ťien-čchang" # todo: NOT IN ENGLISH
- holy_site_tate_name: "Tate" # todo: NOT IN ENGLISH
- holy_site_quzhou_name: "Čchü-čou" # todo: NOT IN ENGLISH
- holy_site_linzi_name: "Lin-c’" # todo: NOT IN ENGLISH
- holy_site_mogao_name: "Mogao" # todo: NOT IN ENGLISH
- holy_site_gaeseong_name: "Gaeseong" # todo: NOT IN ENGLISH
- holy_site_goseong_name: "Goseong" # todo: NOT IN ENGLISH
- holy_site_cheongju_name: "Cheongju" # todo: NOT IN ENGLISH
- holy_site_wehale_name: "Wehale" # todo: NOT IN ENGLISH
- holy_site_dongting_name: "Tung-tching" # todo: NOT IN ENGLISH
- holy_site_zhuolu_name: "Čuo-lu" # todo: NOT IN ENGLISH
- holy_site_turpan_name: "Turfan" # todo: NOT IN ENGLISH
- holy_site_quanzhou_name: "Čchüan-čou" # todo: NOT IN ENGLISH
- holy_site_awa_name: "Awa" # todo: NOT IN ENGLISH
- holy_site_hangzhou_name: "$c_hangzhou$" # todo: NOT IN ENGLISH
- holy_site_danai_name: "$b_danai$" # todo: NOT IN ENGLISH

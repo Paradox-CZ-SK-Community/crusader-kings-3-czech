@@ -20,7 +20,7 @@
  feast_courses_good_desc: "$EFFECT_LIST_BULLET$ Velké zvýšení [Concept('opinion','mínění')|E]\n$EFFECT_LIST_BULLET$ Větší zvýšení [Concept('opinion','mínění')|E] [GetVassalStance( 'courtly' ).GetTextIcon] [GetVassalStance( 'courtly' ).GetName] [Concept('vassal','vazalů')|E]\n\n#weak Přes dva tucty chodů z blízkých i vzdálených zemí! Tradiční pokrmy! Novinky! Polévky! Chody na pročištění chuti! Moučníky, hlavní chody a ještě mnohem víc!#!"
  feast_phase_meal: "Hodování"
  feast_phase_toast: "Závěrečný přípitek"
- every_guest_scope_tt: "Každý host"
+ every_guest_scope_tt: "Každý [Concept('activity_guest_short','host')|E]" # todo: CHANGED (predtym: Každý host) # todo: CONCEPT CASE
  every_ruler_guest_scope_tt: "Každý [Concept('ruler','vládce')|E] mezi hosty"
  feast.0010.desc: "Proč jsi přijal[Select_CString(ROOT.Char.IsFemale,'a','')] mé pozvání, jen abys místo toho zamířil[Select_CString(ROOT.Char.IsFemale,'a','')] na hostinu [other_host.GetTitledFirstNameNoTooltip], netuším. Ale věz, že na to nezapomenu."
  feast.0010.a: "To je nemilé."
@@ -49,6 +49,7 @@
  feast.2001.desc_nerd: "$feast.2001.desc_intro$ Obvykle dávám před lidmi přednost společnosti knih, ale povinnost je povinnost.$feast.2001.desc_outro$"
  feast.2001.desc_martial: "$feast.2001.desc_intro$ Musím přiznat, že zákaz zbraní oslavám poněkud ubírá na půvabu.$feast.2001.desc_outro$"
  feast.2001.desc_lustful: "$feast.2001.desc_intro$ Tolik... #EMP soust#! na výběr.$feast.2001.desc_outro$"
+ feast.2001.desc_merchant: "Hosté se scházejí v síni — kupci z [ROOT.Char.GetCapitalLocation.GetBaronyNameExplicitly] i z dalekých krajů, páni a paní z panství. Nad pohárem lahodného [ROOT.Char.Custom('RegionalDrink')] už bylo uzavřeno nejedno obchodní ujednání. Kdo ví, jaké příležitosti se naskytnou? $feast.2001.desc_outro$" # todo: NEW TRANSLATION
  feast.2001.desc_outro: "\n\nNálada je skvělá, všichni jsou rozjaření a hostina začíná!"
  feast.2001.desc_murder_feast: "Jak hosté jeden po druhém vstupují do síně, postupně si je prohlížím. [honorary_guest.GetTitledFirstName]... jak se vůbec opovažuje vstoupit do mého domu? A celý ten doprovod... samí mí nepřátelé, nepřátelé panství!\n\nKdyž služebnictvo zapálí oheň ve velkém krbu, náhle mě něco napadne. Co kdyby se téhle pohromy dalo zbavit jednou provždy?"
  feast.2001.a: "Vítejte, přátelé!"
@@ -113,7 +114,9 @@
  feast.7002.a.good: "Čeká nás nádherný večer!"
  feast.7002.a.bad: "Už se nemohu dočkat, až pojedu domů."
  feast.7101.t: "Konec oslav"
- feast.7101.desc: "Po odchodu posledního hosta už hoří jen několik svíček. Jakmile se zavřou dveře, zaslechnu dva služebníky, jak si úlevně povzdechnou. Jídlo na talířích je ještě teplé.\n\nBrzy se zpráva donese do všech koutů panství a každý šlechtic, který za něco stojí, bude vědět, že mé velkoleposti se nikdo nevyrovná."
+ feast.7101.desc: "Po odchodu posledního hosta už hoří jen několik svíček. Jakmile se zavřou dveře, zaslechnu dva služebníky, jak si úlevně povzdechnou. Jídlo na talířích je ještě teplé." # todo: CHANGED (predtym: Po odchodu posledního hosta už hoří jen několik svíček. Jakmile se zavřou dveře, zaslechnu dva služebníky, jak si úlevně)
+ feast.7101.outro_merchant: "\n\nBrzy se bude o mé pohostinnosti mluvit mezi kupci i šlechtici po celém panství." # todo: NEW TRANSLATION
+ feast.7101.outro: "\n\nBrzy se zpráva rozšíří do všech koutů panství a každý urozený člověk, který za něco stojí, bude vědět, že se mé velkoleposti nic nevyrovná." # todo: NEW TRANSLATION
  feast.7101.a: "A tím je vše hotovo."
  feast.7110.t: "Šťastný konec"
  feast.7110.desc.entourage: "Ve světle svíček vypadá krev rozlitá po podlaze jako sametová tapisérie. Konečně se znovu nadechnu, když vidím posledního z mých $knight_culture_player_plural_no_tooltip$, jak si čistí meč. [my_knight.GetFirstNameNoTooltip] mi tiše přikývne.\n\nPokynu [Select_CString(my_knight.IsFemale,'jedné z žen','jednomu z mužů')], aby zavřel[Select_CString(my_knight.IsFemale,'a','')] dveře. Loučím se s hosty. „Skutečná škoda...“"
@@ -123,13 +126,13 @@
  feast.7110.desc.target: "$feast.7110.desc.target_intro$„Kdo to mohl udělat? Takhle zkazit hostinu... spiklenci jsou všude,“ zamumlá jeden z dvořanů a já se prudce otočím ke služebnictvu. „Je čas zavřít dveře.“"
  feast.7110.desc.sneaky: "$feast.7110.desc.target_intro$ „Tak strašný způsob smrti!“ pronese poslední z hostů a přivolá služebnictvo. „Udušení!“ „Ani první, ani poslední, koho to takhle potkalo,“ zamumlá služebník, zatímco dvořané odcházejí. Dveře se za nimi zavřou."
  feast.7110.desc.failed: "„Děkujeme za velkolepou hostinu!“ Několik hostů se kolem mě shromáždilo, aby mi před odchodem vyjádřili svou vděčnost. „Bylo to naprosto skvělé!“ Ani nedokážu rozeznat, kdo právě mluví, protože mé myšlenky zaměstnává jediné.\n\nU východu spatřím [honorary_guest.GetTitledFirstName]. Když se [honorary_guest.GetFirstNameNoTooltip] s úsměvem loučí, jen mě to ještě víc rozzuří."
- murder_feast_family_opinion: "Zabil rodinu během hostiny"
+ murder_feast_family_opinion: "[Select_CString(ROOT.Char.IsFemale,'Zabila','Zabil')] rodinu během hostiny"
  bloody_wedding_family_opinion: "Rodina zemřela během Krvavé svatby"
  murder_feast_murderer_modifier: "Pletichářský hostitel"
  murder_feast_great_murderer_modifier: "Ponurá večeře"
  murder_feast_murderer_modifier_desc: "Tato postava nedokázala na své hostině ochránit $honorary_guest$."
  murder_feast_great_murderer_modifier_desc: "$murder_feast_murderer_modifier_desc$"
- feast_every_guest: "Každý host"
+ feast_every_guest: "Každý [Concept('activity_guest_short','host')|E]" # todo: CHANGED (predtym: Každý host) # todo: CONCEPT CASE
  feast.7102.opening: "[avenging_family.Custom2('AppropriateGreeting', ROOT.Char)]"
  feast.7102.desc: "Vím, co jsi [Select_CString(ROOT.Char.IsFemale,'udělala','udělal')]."
  feast.7102.a: "Máš štěstí, že jsi tam [Select_CString(ROOT.Char.IsFemale,'nebyla','nebyl')]."
@@ -167,9 +170,9 @@
  feast.7202.c.tt: "[goh.GetFirstNameNoTooltip] si to vezme osobně"
  feast.7203.t: "$feast.7201.t$"
  feast.7203.desc.intro: "$feast.7202.desc.intro$"
- feast.7203.desc.honoured: "[goh.GetTitledFirstName]\n\nJe to slušný proslov, i když trochu rozvláčný, ale tak už to při podobných příležitostech bývá. Když skončí, shromáždění hosté zdvořile tleskají a jásají, někteří nadšeněji než jiní."
- feast.7203.desc.slagged_off: "[goh.GetTitledFirstName]\n\nK našemu úžasu se [host.GetFirstNameNoTooltip] obrátí k čestnému hostu, ale místo chvály se okamžitě pustí do hlasitého a popravdě docela nápaditého projevu zpochybňujícího inteligenci [goh.GetFirstNameNoTooltip], morální charakter i celkový tělesný pach. My ostatní zůstáváme téměř beze slov."
- feast.7203.desc.bragged: "[goh.GetTitledFirstName]\n\nPřekvapivě, ale vlastně ne až tak překvapivě, se [host.GetFirstNameNoTooltip] přes čestného hosta téměř přenese a místo toho začne vychvalovat vlastní zásluhy na kvalitě uspořádané hostiny. Přinejmenším trochu nezdvořilé a množství potlesku tomu odpovídá."
+ feast.7203.desc.honoured: "[goh.GetTitledFirstName]\n\nJe to slušný proslov, i když trochu rozvláčný, ale tak už to při podobných příležitostech bývá. Když skončí, shromáždění hosté zdvořile tleskají a jásají, někteří nadšeněji než jiní." # todo: CHANGED MINOR
+ feast.7203.desc.slagged_off: "[goh.GetTitledFirstName]\n\nK našemu úžasu se [host.GetFirstNameNoTooltip] obrátí k čestnému hostu, ale místo chvály se okamžitě pustí do hlasitého a popravdě docela nápaditého projevu zpochybňujícího inteligenci [goh.GetFirstNameNoTooltip], morální charakter i celkový tělesný pach. My ostatní zůstáváme téměř beze slov." # todo: CHANGED MINOR
+ feast.7203.desc.bragged: "[goh.GetTitledFirstName]\n\nPřekvapivě, ale vlastně ne až tak překvapivě, se [host.GetFirstNameNoTooltip] přes čestného hosta téměř přenese a místo toho začne vychvalovat vlastní zásluhy na kvalitě uspořádané hostiny. Přinejmenším trochu nezdvořilé a množství potlesku tomu odpovídá." # todo: CHANGED MINOR
  feast.7203.a: "Sláva! Sláva!"
  feast.7203.b.goh_honoured: "Popravdě jsem [goh.GetFirstNameNoTooltip] nikdy [Select_CString(ROOT.Char.IsFemale,'neměla','neměl')] příliš v oblibě."
  feast.7203.b.goh_dishonoured: "To bylo nevhodné."
@@ -199,7 +202,7 @@
  feast.0800.tt: "[GetActivityType('activity_feast').GetName] pořádaná [host.GetShortUINameNoTooltip] byla zrušena"
  feast_events_flavor.0001.t: "Slyšel jsem o tobě"
  feast_events_flavor.0001.desc.intro: "„[ROOT.Char.GetTitledFirstName]!“ zavolá na mě [guest.GetTitledFirstName|U], [ROOT.Char.Custom2('RelationToMeShort', SCOPE.sC('guest'))].\n\n"
- feast_events_flavor.0001.desc.good: "[Select_CString(relation_target.IsFemale,'Má drahá','Můj drahý')] [guest.Custom2('RelationToMeShort', SCOPE.sC('relation_target'))] [relation_target.GetFirstName] o tobě mluví s láskou.“ Hrdě to pronáší a upíjí nápoj [guest.Custom('RegionalDrink')] ze svého poháru. „Na společné hodování s tebou se těším už dlouho.“"
+ feast_events_flavor.0001.desc.good: "[Select_CString(relation_target.IsFemale,'Má drahá','Můj drahý')] [guest.Custom2('RelationToMeShort', SCOPE.sC('relation_target'))] [relation_target.GetFirstName] o tobě mluví s láskou.„ Hrdě to pronáší a upíjí nápoj [guest.Custom('RegionalDrink')] ze svého poháru. ‚Na společné hodování s tebou se těším už dlouho.‘"
  feast_events_flavor.0001.desc.bad: "„[relation_target.GetFirstName], [guest.Custom2('RelationToMeShort', SCOPE.sC('relation_target'))], mi o tobě vypráví opravdu nelichotivé věci. Prý se k tobě dokonale hodí označení #EMP [ROOT.Char.Custom2('InsultAdjective', SCOPE.sC('relation_target'))]#!. Pevně doufám, že jsou ty zvěsti nepravdivé a jde jen o nedorozumění.“"
  feast_events_flavor.0001.aa: "„Ať rody [ROOT.Char.GetDynasty.GetBaseNameNoTooltip] a [guest.GetDynasty.GetBaseNameNoTooltip] spojí své síly!“"
  feast_alliance_effect_tooltip: "S [guest.GetTitledFirstName] uzavřeme vzájemnou [Concept('alliance','alianci')|E]"

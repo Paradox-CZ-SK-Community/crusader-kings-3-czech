@@ -8,7 +8,7 @@
  warning: "Varování"
  warning_desc: "Mnohým [Concept('natural_disasters','přírodním pohromám')|E] předcházejí varovná znamení. Ať už jsou tyto změny v okolní přírodě zjevné, nebo sotva postřehnutelné, mohou upozornit na blížící se nebezpečí. Pozorný vládce, který jim věnuje náležitou pozornost, může včas zasáhnout a omezit ztráty."
  impact: "Úder"
- impact_desc: "Když pohroma udeří, vládcovy přípravy projdou skutečnou zkouškou. Navzdory veškerému úsilí si katastrofa pravděpodobně vyžádá oběti na životech a zastaví pokrok v zasažené oblasti. Ztráta [Concept('development','rozvoje')|E] a poškození stávající infrastruktury uvrhnou celý region do období nestability."
+ impact_desc: "Když pohroma udeří, vládcovy přípravy projdou skutečnou zkouškou. Navzdory veškerému úsilí si katastrofa pravděpodobně vyžádá oběti na životech a zastaví pokrok v zasažené oblasti. Ztráta [Concept('prosperity','prosperity')|E] a poškození stávající infrastruktury uvrhnou celý region do období nestability." # todo: CHANGED (predtym: Když pohroma udeří, vládcovy přípravy projdou skutečnou zkouškou. Navzdory veškerému úsilí si katastrofa pravděpodobně v)
  recovery: "Obnova"
  recovery_desc: "Jakmile pohroma odezní, je nezbytné zahájit obnovu zasažené oblasti, případně prostřednictvím [Concept('great_project','velkého projektu')|E]. Prozíravý panovník rovněž přijme preventivní opatření, aby zmírnil následky případné další [Concept('natural_disaster','přírodní pohromy')|E]."
  every_disaster_county_custom: "Každé [Concept('county','hrabství')|E] v oblasti [situation_sub_region.GetName] v rámci [situation.GetName]"
@@ -18,7 +18,7 @@
  every_realm_disaster_county_great_project_custom: "Každé [Concept('county','hrabství')|E] patřící do [Concept('realm','panství')|E] v oblasti [great_project.MakeScope.Var('situation').Situation.GetName]"
  situation_type_natural_disaster_earthquake: "$natural_disaster_earthquake_situation$"
  situation_natural_disaster_earthquake: "$natural_disaster_earthquake_situation$"
- situation_type_natural_disaster_earthquake_desc: "[Concept('earthquake','Zemětřesení')|EU] je druh [Concept('natural_disaster','přírodní pohromy')|E], který náhle způsobuje rozsáhlou zkázu v malém počtu [Concept('counties','hrabství')|E].\n\n$game_concept_earthquakes$ se mohou vyskytnout pouze v oblastech se zvýšenou seismickou aktivitou."
+ situation_type_natural_disaster_earthquake_desc: "[Concept('earthquake','Zemětřesení')|EU] je druh [Concept('natural_disaster','přírodní pohromy')|E], který náhle způsobuje rozsáhlou zkázu v malém počtu [Concept('counties','hrabství')|E].\n\nZemětřesení se mohou vyskytnout pouze v oblastech se zvýšenou seismickou aktivitou." # todo: CONCEPT CASE
  situation_natural_disaster_earthquake_desc: "$situation_type_natural_disaster_earthquake_desc$"
  natural_disaster_earthquake_situation: "Zemětřesení [CZPrepV(Situation.MakeScope.Var('epicenter_county').Title.GetNameNoTierNoTooltip)] [Situation.MakeScope.Var('epicenter_county').Title.Custom('CZ_LandedNameNoTierNoTooltip_L')]"
  natural_disaster_earthquake_situation_desc: "$situation_type_natural_disaster_earthquake_desc$"
@@ -42,8 +42,8 @@
  natural_disaster_earthquake_sub_region_disaster_area: "Zasažená oblast"
  natural_disaster_earthquake_sub_region_disaster_area_desc: "Zasažená území: [SituationSubRegion.GetAffectedTitlesList]"
  natural_disaster_earthquake_sub_region_disaster_neighbours: "Sousední oblasti pohromy"
- natural_disaster_earthquake_participant_group_affected_ruler: "$game_concept_independent_rulers$"
- natural_disaster_earthquake_participant_group_affected_vassal: "$game_concept_vassals$"
+ natural_disaster_earthquake_participant_group_affected_ruler: "Nezávislí vládci" # todo: CONCEPT CASE
+ natural_disaster_earthquake_participant_group_affected_vassal: "Vazalové" # todo: CONCEPT CASE
  natural_disaster_earthquake_participant_group_affected_vassal_desc: "[Concept('vassals','Vazalové')|EU], jejichž [Concept('realm','panství')|E] zasáhla [Concept('disaster','pohroma')|E]"
  natural_disaster_earthquake_participant_group_affected_ruler_desc: "[Concept('independent_rulers','Nezávislí vládci')|EU], jejichž [Concept('realm','panství')|E] zasáhla [Concept('disaster','pohroma')|E]"
  situation_type_natural_disaster_flood: "$natural_disaster_flood_situation$"
@@ -65,8 +65,8 @@
  flood_recovery: "$natural_disaster_flood_recovery_situation_phase$"
  flood_recovery_effects: "Obnova po povodni"
  flood_recovery_effects_concept: "[Concept('natural_disaster','Přírodní pohroma')|EU]"
- natural_disaster_flood_participant_group_affected_ruler: "$game_concept_independent_rulers$"
- natural_disaster_flood_participant_group_affected_vassal: "$game_concept_vassals$"
+ natural_disaster_flood_participant_group_affected_ruler: "Nezávislí vládci" # todo: CONCEPT CASE
+ natural_disaster_flood_participant_group_affected_vassal: "Vazalové" # todo: CONCEPT CASE
  natural_disaster_flood_sub_region_disaster_area: "$natural_disaster_earthquake_sub_region_disaster_area$"
  natural_disaster_flood_sub_region_disaster_area_desc: "$natural_disaster_earthquake_sub_region_disaster_area_desc$"
  natural_disaster_flood_sub_region_disaster_neighbours: "$natural_disaster_earthquake_sub_region_disaster_neighbours$"
@@ -93,8 +93,8 @@
  great_project_contribution_cost_num_affected_realm_counties: "Podle počtu zasažených [Concept('counties','hrabství')|E] v [Concept('realm','panství')|E]"
  great_project_contribution_cost_situation_severity: "Podle závažnosti [Concept('disaster','pohromy')|E]"
  great_project_contribution_discount: "Díky účinnému zvládání pohromy"
- great_project_contribution_discount_from_train_troops_gp: "Díky modifikátoru [GetModifier('tgp_minister_project_train_troops_natural_disaster_test_modifier').GetNameWithTooltip]"
- great_project_contribution_total_development_factor: "Podle úrovně [Concept('development','rozvoje')|E] v zasažených [Concept('counties','hrabstvích')|E]"
+ great_project_contribution_discount_from_train_troops_gp: "Díky modifikátoru [GetModifier('tgp_minister_project_train_troops_nautral_disaster_test_modifier').GetNameWithTooltip]" # todo: CHANGED (predtym: Díky modifikátoru [GetModifier('tgp_minister_project_train_troops_natural_disaster_test_modifier').GetNameWithTooltip])
+ great_project_contribution_total_prosperity_factor: "Z [Concept('prosperity','prosperity')|E] napříč dotčenými [Concept('counties','hrabstvími')|E]" # todo: NEW TRANSLATION # todo: CONCEPT CASE
  natural_disaster_realm_counties_steward_stewardship_skill_cost_factor: "Podle úrovně [Concept('stewardship','správcovství')|E] – [ROOT.Char.Custom('GetCouncillorForDisasterRecovery')]"
  great_project_contribution_cost_innovation_court_officials: "#weak Díky inovaci $innovation_court_officials$ odpadají daňové důsledky#!"
  great_project_contribution_cost_innovation_ledger: "#weak Snížení nákladů díky inovaci $innovation_ledger$:#!"
@@ -104,18 +104,18 @@
  great_project_contribution_cost_innovation_guilds: "#weak Snížení nákladů díky inovaci $innovation_guilds$:#!"
  great_project_contribution_cost_innovation_bannus: "#weak Snížení nákladů díky inovaci $innovation_bannus$:#!"
  great_project_contribution_cost_innovation_elephantry: "#weak Snížení nákladů díky inovaci $innovation_elephantry$:#!"
- great_project_contribution_cost_innovation_development_02: "#weak Snížení nákladů díky inovaci $innovation_development_02$:#!"
+ great_project_contribution_cost_innovation_prosperity_02: "#weak Vylepšeno díky $innovation_prosperity_02$#!" # todo: NEW TRANSLATION
  great_project_contribution_cost_innovation_city_planning: "#weak Snížení nákladů díky inovaci $innovation_city_planning$:#!"
  great_project_contribution_cost_innovation_double_entry_bookkeeping: "#weak Snížení nákladů díky inovaci $innovation_double_entry_bookkeeping$:#!"
  great_project_contribution_cost_innovation_manorialism: "#weak Snížení nákladů díky inovaci $innovation_manorialism$#!"
  great_project_contribution_cost_innovation_windmills: "#weak Snížení nákladů díky inovaci $innovation_windmills$#!"
  great_project_contribution_cost_innovation_crop_rotation: "#weak Snížení nákladů díky inovaci $innovation_crop_rotation$#!"
- great_project_contribution_cost_innovation_development_01: "#weak Snížení nákladů díky inovaci $innovation_development_01$#!"
+ great_project_contribution_cost_innovation_prosperity_01: "#weak Vylepšeno díky $innovation_prosperity_01$#!" # todo: NEW TRANSLATION
  great_project_contribution_cost_innovation_currency_02: "#weak Snížení nákladů díky inovaci $innovation_currency_02$#!"
  great_project_contribution_cost_innovation_currency_03: "#weak Snížení nákladů díky inovaci $innovation_currency_03$#!"
  great_project_contribution_cost_innovation_fp3_innovation_mural_sextant: "#weak Snížení nákladů díky inovaci $fp3_innovation_mural_sextant$#!"
  great_project_contribution_cost_innovation_currency_04: "#weak Snížení nákladů díky inovaci $innovation_currency_04$#!"
- great_project_contribution_cost_innovation_development_03: "#weak Snížení nákladů díky inovaci $innovation_development_03$#!"
+ great_project_contribution_cost_innovation_prosperity_03: "#weak Vylepšeno díky $innovation_prosperity_03$#!" # todo: NEW TRANSLATION
  great_project_contribution_cost_innovation_divine_right: "#weak Snížení nákladů díky inovaci $innovation_divine_right$#!"
  great_project_contribution_cost_innovation_sanitation: "#weak Snížení nákladů díky inovaci $innovation_sanitation$#!"
  great_project_contribution_cost_innovation_pharmacopoeia: "#weak Snížení nákladů díky inovaci $innovation_pharmacopoeia$#!"
@@ -196,6 +196,6 @@
  councillor_is_available_for_disaster_recovery_entourage: "Člen [Concept('entourage','doprovodu')|E]"
  councillor_is_available_for_disaster_recovery_steward: "[Concept( 'steward', ROOT.Char.GetCouncillorPosition( 'councillor_steward' ).GetPositionName )|E]"
  SITUATION_NATURAL_DISASTER_IMPACT_EFFECTS_HEADER: "#bold #italic Účinky#!#!"
- SITUATION_NATURAL_DISASTER_IMPACT_EFFECTS: "$BULLET$#weak Budou nastávat události, jejichž možným následkem jsou #N $game_concept_fatalities$#!#!\n$BULLET$#weak Budou nastávat události s možným následkem: #N $game_concept_development$ – ztráta hodnoty#!#!"
+ SITUATION_NATURAL_DISASTER_IMPACT_EFFECTS: "$BULLET$#weak Budou nastávat události, jejichž možným následkem jsou #N $game_concept_fatalities$#!#!\n$BULLET$#weak Budou nastávat události s možným následkem: #N rozkvětem – ztráta hodnoty#!#!" # todo: CHANGED (predtym: $BULLET$ weak Budou nastávat události, jejichž možným následkem jsou N $game_concept_fatalities$ ! !\n$BULLET$ weak Budo) # todo: CONCEPT CASE
  SITUATION_NATURAL_DISASTER_PARTICIPANT_WINDOW_HEADER_SINGLE_SUBREGION: "Postavy zasažené situací [Situation.GetNameNoTooltip]"
  SITUATION_NATURAL_DISASTER_PARTICIPANT_GROUPS_TITLE: "Zasažené postavy"
